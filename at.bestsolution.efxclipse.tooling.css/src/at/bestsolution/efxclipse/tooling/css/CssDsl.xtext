@@ -150,38 +150,38 @@ fx_font_family_property:
 	property=(
 		'-fx-font-family' | '-fx-title-font-family' | '-fx-pie-label-font-family' | '-fx-pie-value-label-font-family' 
 		| '-fx-label-font-family' | '-fx-tick-label-font-family'
-	) ':' value=FONTFAMILY
+	) WS* ':' WS* value=FONTFAMILY
 ;
 
 fx_font_size_property:
 	property=(
 		'-fx-font-size' | '-fx-title-font-size' | '-fx-pie-label-font-size' | '-fx-pie-value-label-font-size' 
 		| '-fx-label-font-size' | '-fx-tick-label-font-size'
-		) ':' value=SIZE
+		) WS* ':' WS* value=SIZE
 ;
 
 fx_font_style_property:
 	property=(
 		'-fx-font-style' | '-fx-title-font-style' | '-fx-pie-label-font-style' | '-fx-pie-value-label-font-style' 
 		| '-fx-label-font-style' | '-fx-tick-label-font-style'
-	) ':' value=FONTSTYLE
+	) WS* ':' WS* value=FONTSTYLE
 ;
 
 fx_font_weight_property:
 	property=(
 		'-fx-font-weight' | '-fx-title-font-weight' | '-fx-pie-label-font-weight' | '-fx-pie-value-label-font-weight' 
 		| '-fx-label-font-weight' | '-fx-tick-label-font-weight'
-	) ':' value=FONTWEIGHT
+	) WS* ':' WS* value=FONTWEIGHT
 ;
 
 fx_cursor_property:
 	property=(
 		'-fx-cursor'
-	) ':' value=( 'crosshair' | 'default' | 'hand' | 'move' | 'e-resize' | 'h-resize' | 'ne-resize' | 'nw-resize' | 'n-resize' | 'se-resize' | 'sw-resize' | 's-resize' | 'w-resize' | 'v-resize' | 'text' | 'wait' )
+	) WS* ':' WS*value=( 'crosshair' | 'default' | 'hand' | 'move' | 'e-resize' | 'h-resize' | 'ne-resize' | 'nw-resize' | 'n-resize' | 'se-resize' | 'sw-resize' | 's-resize' | 'w-resize' | 'v-resize' | 'text' | 'wait' )
 ;
 
 fx_effect_property:
-	'-fx-effect' ':' value=Effect
+	'-fx-effect' WS*':' WS*value=Effect
 ;
 
 fx_boolean_property:
@@ -192,7 +192,7 @@ fx_boolean_property:
 		| '-fx-snap-to-ticks' | '-fx-show-tick-marks' | '-fx-show-tick-labels' | '-fx-fit-to-width' | '-fx-minor-tick-visible'
 		| '-fx-gap-start-and-end' | '-fx-tick-mark-visible' | '-fx-tick-labels-visible' | '-fx-fit-to-height'
 		| '-fx-click-to-position' | '-fx-text-wrap' | '-fx-position-shape'
-	) ':' value=('true'|'false')
+	) WS*':'WS* value=('true'|'false')
 ;
 
 fx_size_property:
@@ -204,7 +204,7 @@ fx_size_property:
 		| '-fx-pie-thickness' | '-fx-pie-stroke-width' | '-fx-title-gap' | '-fx-legend-gap' | '-fx-hover-stroke-width'
 		| '-fx-chart-background-stroke-width' | '-fx-offset-y' | '-fx-offset-x' | '-fx-category-gap'
 		| '-fx-bar-gap' | '-fx-graphic-text-gap' | '-fx-tab-spacing'
-		) ':' value=SIZE
+		) WS*':'WS* value=SIZE
 ;
 
 fx_number_property:
@@ -215,13 +215,13 @@ fx_number_property:
 		| '-fx-unit-increment' | '-fx-major-tick-unit' | '-fx-data-opacity'
 		| '-fx-radius-scale' | '-fx-pie-to-label-line-one-length' | '-fx-pie-to-label-line-stroke-width'
 		| '-fx-pie-to-label-line-two-length' | '-fx-start-angle' | '-fx-tick-unit' | '-fx-indent'
-	) ':' value=NUMBER
+	) WS*':'WS* value=NUMBER
 ;
 
 fx_integer_property:
 	property=(
 		'-fx-columns' | '-fx-rows' | '-fx-lines' | '-fx-minor-tick-count'
-	) ':' value=integer
+	) WS*':'WS* value=integer
 ;
 
 fx_paint_property:
@@ -235,158 +235,158 @@ fx_paint_property:
 		| '-fx-vertical-alternate-row-fill' | '-fx-vertical-grid-line-stroke' | '-fx-axis-stroke'
 		| '-fx-tick-label-fill' | '-fx-label-fill' | '-fx-tick-mark-stroke' | '-fx-hover-fill'
 		
-	) ':' value=Paint
+	) WS*':'WS* value=Paint
 ;
 
 fx_blend_property:
 	property=(
 		'-fx-blend-mode'
-	) ':' value=( 'add' | 'blue' | 'color-burn' | 'color-dodge' | 'darken' | 'difference' | 'exclusion' | 'green' | 'hard-light' | 'lighten' | 'multiply' | 'overlay' | 'red' | 'screen' | 'soft-light' | 'src-atop' | 'src-in' | 'src-out' | 'src-over' )
+	) WS*':'WS* value=( 'add' | 'blue' | 'color-burn' | 'color-dodge' | 'darken' | 'difference' | 'exclusion' | 'green' | 'hard-light' | 'lighten' | 'multiply' | 'overlay' | 'red' | 'screen' | 'soft-light' | 'src-atop' | 'src-in' | 'src-out' | 'src-over' )
 ;
 
 fx_url_property:
 	property=(
 		'-fx-image' | '-fx-graphic' | '-fx-border-image-source'
-	) ':' value=URI
+	) WS*':'WS* value=URI
 ;
 
 fx_paint_properties:
 	property=(
 		'-fx-background-color'
-	) ':' (((values+=Paint) (COMMA values+=Paint)*) | 'null')
+	) WS*':'WS* (((values+=Paint) (COMMA values+=Paint)*) | 'null')
 ;
 
 fx_multisize_properties:
 	property=(
 		'-fx-background-insets' | '-fx-background-radius' | '-fx-border-insets' | '-fx-border-radius'
 		| '-fx-border-width' | '-fx-border-image-insets' | '-fx-border-image-width'
-	) ':' values+=Dim4Size ( COMMA values+=Dim4Size )*
+	) WS*':'WS* values+=Dim4Size ( COMMA values+=Dim4Size )*
 ;
 
 fx_hposition_property:
 	property=(
 		'-fx-hpos' | '-fx-node-hpos' | '-fx-graphic-hpos'
-	) ':' value=HPosition
+	) WS*':'WS* value=HPosition
 ;
 
 fx_vposition_property:
 	property=(
 		'-fx-vpos' | '-fx-node-vpos' | '-fx-graphic-vpos'
-	) ':' value=VPosition
+	) WS*':'WS* value=VPosition
 ;
 
 fx_side_property:
 	property=(
 		'-fx-legend-side' | '-fx-title-side' | '-fx-side'
-	) ':' value=( 'top' | 'bottom' | 'left' | 'right' )
+	) WS*':'WS* value=( 'top' | 'bottom' | 'left' | 'right' )
 ;
 
 fx_bar_policy_property:
 	property=(
 		'-fx-hbar-policy' | '-fx-vbar-policy'
-	) ':' value=( 'never' | 'always' | 'as_needed' )
+	) WS*':'WS* value=( 'never' | 'always' | 'as_needed' )
 ;
 
 fx_url_properties:
 	property=(
 		'-fx-background-image' | '-fx-border-image'
-	) ':' values+=URI ( COMMA values+=URI )*
+	) WS*':'WS* values+=URI ( COMMA values+=URI )*
 ;
 
 fx_repeat_properties:
 	property=(
 		'-fx-background-image-repeat' | '-fx-border-image-repeat' | '-fx-background-repeat'
-	) ':' values+=RepeatStyle (COMMA values+=RepeatStyle)*
+	) WS*':'WS* values+=RepeatStyle (COMMA values+=RepeatStyle)*
 ;
 
 fx_multisize_property:
 	property=(
 		'-fx-padding'
-	) ':' value=Dim4Size
+	) WS*':'WS* value=Dim4Size
 ;
 
 fx_size_properties:
 	property=(
 		'-fx-stroke-dash-array'
-	) ':' values+=SIZE
+	) WS*':'WS* values+=SIZE
 ;
 
 fx_stroke_line_cap_property:
 	property=(
 		'-fx-stroke-line-cap' 
-	) ':' value=('square' | 'butt' | 'round')
+	) WS*':'WS* value=('square' | 'butt' | 'round')
 ;
 
 fx_stroke_line_join_property:
 	property=(
 		'-fx-stroke-line-join' 
-	)':' value=( 'miter' | 'bevel' | 'round' )
+	) WS*':'WS* value=( 'miter' | 'bevel' | 'round' )
 ;
 
 fx_alignment_property:
 	property = (
 		'-fx-text-alignment' | '-fx-alignment'
-	) ':' value=('left' | 'center' | 'right' | 'justify')
+	) WS*':'WS* value=('left' | 'center' | 'right' | 'justify')
 ;
 
 fx_text_origin_property:
 	property=(
 		'-fx-text-origin' 
-	) ':' value=('baseline' | 'top' | 'bottom')
+	) WS*':'WS* value=('baseline' | 'top' | 'bottom')
 ;
 
 fx_position_property:
 	property=(
 		'-fx-background-image-position' | '-fx-background-position'
-	) ':' values+=BgPosition (COMMA values+=BgPosition)*
+	) WS*':'WS* values+=BgPosition (COMMA values+=BgPosition)*
 ;
 
 fx_background_image_size_property:
 	property=(
 		'-fx-background-image-size' 
-	) ':' values+=BgSize (COMMA values+=BgSize)*
+	) WS*':'WS* values+=BgSize (COMMA values+=BgSize)*
 ;
 
 fx_border_style_property:
 	property=(
 		'-fx-border-style' 
-	) ':' values+=BorderStyle (COMMA values+=BorderStyle)*
+	) WS*':'WS* values+=BorderStyle (COMMA values+=BorderStyle)*
 ;
 
 fx_border_image_slice_property:
 	property=(
 		'-fx-border-image-slice' 
-	) ':' values+=SizeFill (COMMA values+=SizeFill)*
+	) WS*':'WS* values+=SizeFill (COMMA values+=SizeFill)*
 ;
 
 fx_text_overrun_property:
 	property=(
 		'-fx-text-overrun'
-	) ':' value=( 'center-ellipses' | 'center-word-ellipses' | 'clip' | 'ellipses' | 'leading-ellipses' | 'leading-word-ellipses' | 'word-ellipses' )
+	) WS*':'WS* value=( 'center-ellipses' | 'center-word-ellipses' | 'clip' | 'ellipses' | 'leading-ellipses' | 'leading-word-ellipses' | 'word-ellipses' )
 ;
 
 fx_insets_property:
 	property=(
 		'-fx-insets'
-	) ':' value+=NUMBER | ( value+=NUMBER value+=NUMBER value+=NUMBER value+=NUMBER )
+	) WS*':'WS* value+=NUMBER | ( value+=NUMBER value+=NUMBER value+=NUMBER value+=NUMBER )
 ;
 
 fx_number_properties:
 	property=(
 		'-fx-horizontal-grid-line-stroke-dash-array' | '-fx-vertical-grid-line-stroke-dash-array'
-	) ':' value+=NUMBER+
+	) WS*':'WS* value+=NUMBER+
 ;
 
 fx_multi_paint_properties:
 	property=(
 		'-fx-border-color'
-	) ':' ((values+=MultiPaint (COMMA values+=MultiPaint)*) | 'null')	
+	) WS*':'WS* ((values+=MultiPaint (COMMA values+=MultiPaint)*) | 'null')	
 ;
 
 fx_string_property:
 	property=(
 		'-fx-skin' | '-fx-shape' | '-fx-text' | '-fx-echo-char'
-	) ':' ( value=STRING | 'null' )
+	) WS*':'WS* ( value=STRING | 'null' )
 ;
 
 Effect:
@@ -439,12 +439,12 @@ RepeatStyle:
 ;
 
 Dim4Size:
-	( values+=SIZE | (values+=SIZE values+=SIZE values+=SIZE values+=SIZE) )
+	( values+=SIZE | (values+=SIZE WS* values+=SIZE WS* values+=SIZE WS* values+=SIZE) )
 ;
 
 BgPosition:
 	(
-		( absx=SIZE | relx=('left' | 'center' | 'right') ) ( absy=SIZE | rely=('top' | 'center' | 'bottom') )
+		( absx=SIZE | relx=('left' | 'center' | 'right') ) WS* ( absy=SIZE | rely=('top' | 'center' | 'bottom') )
 	)
 //	|
 //	(
@@ -581,7 +581,7 @@ FONTSTYLE:
 ;
 
 SIZE:
-	NUMBER|PERCENTAGE|EMS|EXS|LENGTH
+	unary_operator? (NUMBER|PERCENTAGE|EMS|EXS|LENGTH)
 ;
 
 BLUR:
@@ -594,7 +594,7 @@ terminal HEXCOLOR: '#' (('0'..'9') ('0'..'9') ('0'..'9')) | (('0'..'9')('0'..'9'
 
 
 terminal IDENT: ('_' | 'a'..'z' | 'A'..'Z' ) ('_' | '-' | 'a'..'z' | 'A'..'Z' | '0..9' )*;
-terminal COMMA: ',';
+terminal COMMA: WS* ',' WS*;
 terminal ML_COMMENT	: '/*' -> '*/';
 terminal WS			: (' '|'\t'|'\r'|'\n')+;
 terminal STRING	: 

@@ -16,26 +16,124 @@ import org.eclipse.xtext.serializer.sequencer.AbstractSyntacticSequencer;
 public class AbstractCssDslSyntacticSequencer extends AbstractSyntacticSequencer {
 
 	protected CssDslGrammarAccess grammarAccess;
+	protected AbstractElementAlias match_BgPosition_WSTerminalRuleCall_1_a;
+	protected AbstractElementAlias match_Dim4Size_WSTerminalRuleCall_1_1_a;
+	protected AbstractElementAlias match_Dim4Size_WSTerminalRuleCall_1_3_a;
+	protected AbstractElementAlias match_Dim4Size_WSTerminalRuleCall_1_5_a;
 	protected AbstractElementAlias match_css_generic_declaration_WSTerminalRuleCall_2_a;
+	protected AbstractElementAlias match_fx_alignment_property_WSTerminalRuleCall_1_a_ColonKeyword_2_WSTerminalRuleCall_3_a;
+	protected AbstractElementAlias match_fx_background_image_size_property_WSTerminalRuleCall_1_a;
+	protected AbstractElementAlias match_fx_background_image_size_property_WSTerminalRuleCall_1_a_ColonKeyword_2_WSTerminalRuleCall_3_p;
+	protected AbstractElementAlias match_fx_bar_policy_property_WSTerminalRuleCall_1_a_ColonKeyword_2_WSTerminalRuleCall_3_a;
+	protected AbstractElementAlias match_fx_blend_property_WSTerminalRuleCall_1_a_ColonKeyword_2_WSTerminalRuleCall_3_a;
+	protected AbstractElementAlias match_fx_boolean_property_WSTerminalRuleCall_1_a_ColonKeyword_2_WSTerminalRuleCall_3_a;
+	protected AbstractElementAlias match_fx_border_image_slice_property_WSTerminalRuleCall_1_a;
+	protected AbstractElementAlias match_fx_border_image_slice_property_WSTerminalRuleCall_1_a_ColonKeyword_2_WSTerminalRuleCall_3_p;
+	protected AbstractElementAlias match_fx_border_style_property_WSTerminalRuleCall_1_a_ColonKeyword_2_WSTerminalRuleCall_3_p;
+	protected AbstractElementAlias match_fx_cursor_property_WSTerminalRuleCall_1_a_ColonKeyword_2_WSTerminalRuleCall_3_a;
+	protected AbstractElementAlias match_fx_effect_property_WSTerminalRuleCall_1_a;
+	protected AbstractElementAlias match_fx_effect_property_WSTerminalRuleCall_1_a_ColonKeyword_2_WSTerminalRuleCall_3_p;
+	protected AbstractElementAlias match_fx_font_family_property_WSTerminalRuleCall_1_a_ColonKeyword_2_WSTerminalRuleCall_3_a;
+	protected AbstractElementAlias match_fx_font_size_property_WSTerminalRuleCall_1_a_ColonKeyword_2_WSTerminalRuleCall_3_a;
+	protected AbstractElementAlias match_fx_font_style_property_WSTerminalRuleCall_1_a;
+	protected AbstractElementAlias match_fx_font_style_property_WSTerminalRuleCall_1_a_ColonKeyword_2_WSTerminalRuleCall_3_p;
+	protected AbstractElementAlias match_fx_font_weight_property_WSTerminalRuleCall_1_a;
+	protected AbstractElementAlias match_fx_hposition_property_WSTerminalRuleCall_1_a_ColonKeyword_2_WSTerminalRuleCall_3_a;
+	protected AbstractElementAlias match_fx_insets_property_WSTerminalRuleCall_0_1_a_ColonKeyword_0_2_WSTerminalRuleCall_0_3_a;
+	protected AbstractElementAlias match_fx_integer_property_WSTerminalRuleCall_1_a_ColonKeyword_2_WSTerminalRuleCall_3_a;
+	protected AbstractElementAlias match_fx_multi_paint_properties_WSTerminalRuleCall_1_a;
+	protected AbstractElementAlias match_fx_multi_paint_properties_WSTerminalRuleCall_1_a_ColonKeyword_2_WSTerminalRuleCall_3_a;
+	protected AbstractElementAlias match_fx_multi_paint_properties_WSTerminalRuleCall_1_a_ColonKeyword_2_WSTerminalRuleCall_3_p;
+	protected AbstractElementAlias match_fx_multisize_properties_WSTerminalRuleCall_1_a;
+	protected AbstractElementAlias match_fx_multisize_properties_WSTerminalRuleCall_1_a_ColonKeyword_2_WSTerminalRuleCall_3_p;
+	protected AbstractElementAlias match_fx_multisize_property_WSTerminalRuleCall_1_a;
+	protected AbstractElementAlias match_fx_multisize_property_WSTerminalRuleCall_1_a_ColonKeyword_2_WSTerminalRuleCall_3_p;
+	protected AbstractElementAlias match_fx_number_properties_WSTerminalRuleCall_1_a_ColonKeyword_2_WSTerminalRuleCall_3_a;
+	protected AbstractElementAlias match_fx_number_property_WSTerminalRuleCall_1_a_ColonKeyword_2_WSTerminalRuleCall_3_a;
+	protected AbstractElementAlias match_fx_paint_properties_WSTerminalRuleCall_1_a;
+	protected AbstractElementAlias match_fx_paint_properties_WSTerminalRuleCall_1_a_ColonKeyword_2_WSTerminalRuleCall_3_a;
+	protected AbstractElementAlias match_fx_paint_properties_WSTerminalRuleCall_1_a_ColonKeyword_2_WSTerminalRuleCall_3_p;
+	protected AbstractElementAlias match_fx_paint_property_WSTerminalRuleCall_1_a;
+	protected AbstractElementAlias match_fx_position_property_WSTerminalRuleCall_1_a;
+	protected AbstractElementAlias match_fx_position_property_WSTerminalRuleCall_1_a_ColonKeyword_2_WSTerminalRuleCall_3_p;
+	protected AbstractElementAlias match_fx_repeat_properties_WSTerminalRuleCall_1_a;
+	protected AbstractElementAlias match_fx_side_property_WSTerminalRuleCall_1_a_ColonKeyword_2_WSTerminalRuleCall_3_a;
+	protected AbstractElementAlias match_fx_size_properties_WSTerminalRuleCall_1_a_ColonKeyword_2_WSTerminalRuleCall_3_a;
+	protected AbstractElementAlias match_fx_size_property_WSTerminalRuleCall_1_a_ColonKeyword_2_WSTerminalRuleCall_3_a;
+	protected AbstractElementAlias match_fx_string_property_WSTerminalRuleCall_1_a_ColonKeyword_2_WSTerminalRuleCall_3_a;
+	protected AbstractElementAlias match_fx_stroke_line_cap_property_WSTerminalRuleCall_1_a_ColonKeyword_2_WSTerminalRuleCall_3_a;
+	protected AbstractElementAlias match_fx_stroke_line_join_property_WSTerminalRuleCall_1_a_ColonKeyword_2_WSTerminalRuleCall_3_a;
+	protected AbstractElementAlias match_fx_text_origin_property_WSTerminalRuleCall_1_a_ColonKeyword_2_WSTerminalRuleCall_3_a;
+	protected AbstractElementAlias match_fx_text_overrun_property_WSTerminalRuleCall_1_a_ColonKeyword_2_WSTerminalRuleCall_3_a;
+	protected AbstractElementAlias match_fx_url_properties_WSTerminalRuleCall_1_a_ColonKeyword_2_WSTerminalRuleCall_3_a;
+	protected AbstractElementAlias match_fx_url_property_WSTerminalRuleCall_1_a_ColonKeyword_2_WSTerminalRuleCall_3_a;
+	protected AbstractElementAlias match_fx_vposition_property_WSTerminalRuleCall_1_a_ColonKeyword_2_WSTerminalRuleCall_3_a;
 	protected AbstractElementAlias match_media_WSTerminalRuleCall_1_a;
 	protected AbstractElementAlias match_media_WSTerminalRuleCall_4_a;
 	protected AbstractElementAlias match_media_WSTerminalRuleCall_4_p;
 	protected AbstractElementAlias match_ruleset_WSTerminalRuleCall_3_a_RightCurlyBracketKeyword_5_WSTerminalRuleCall_6_p;
-	protected AbstractElementAlias match_ruleset_WSTerminalRuleCall_3_p;
 	protected AbstractElementAlias match_ruleset_WSTerminalRuleCall_4_2_a_RightCurlyBracketKeyword_5_WSTerminalRuleCall_6_p;
-	protected AbstractElementAlias match_selector_WSTerminalRuleCall_1_1_0_p;
 	
 	@Inject
 	protected void init(IGrammarAccess access) {
 		grammarAccess = (CssDslGrammarAccess) access;
+		match_BgPosition_WSTerminalRuleCall_1_a = new TokenAlias(true, true, grammarAccess.getBgPositionAccess().getWSTerminalRuleCall_1());
+		match_Dim4Size_WSTerminalRuleCall_1_1_a = new TokenAlias(true, true, grammarAccess.getDim4SizeAccess().getWSTerminalRuleCall_1_1());
+		match_Dim4Size_WSTerminalRuleCall_1_3_a = new TokenAlias(true, true, grammarAccess.getDim4SizeAccess().getWSTerminalRuleCall_1_3());
+		match_Dim4Size_WSTerminalRuleCall_1_5_a = new TokenAlias(true, true, grammarAccess.getDim4SizeAccess().getWSTerminalRuleCall_1_5());
 		match_css_generic_declaration_WSTerminalRuleCall_2_a = new TokenAlias(true, true, grammarAccess.getCss_generic_declarationAccess().getWSTerminalRuleCall_2());
+		match_fx_alignment_property_WSTerminalRuleCall_1_a_ColonKeyword_2_WSTerminalRuleCall_3_a = new GroupAlias(false, false, new TokenAlias(true, true, grammarAccess.getFx_alignment_propertyAccess().getWSTerminalRuleCall_1()), new TokenAlias(false, false, grammarAccess.getFx_alignment_propertyAccess().getColonKeyword_2()), new TokenAlias(true, true, grammarAccess.getFx_alignment_propertyAccess().getWSTerminalRuleCall_3()));
+		match_fx_background_image_size_property_WSTerminalRuleCall_1_a = new TokenAlias(true, true, grammarAccess.getFx_background_image_size_propertyAccess().getWSTerminalRuleCall_1());
+		match_fx_background_image_size_property_WSTerminalRuleCall_1_a_ColonKeyword_2_WSTerminalRuleCall_3_p = new GroupAlias(false, false, new TokenAlias(true, true, grammarAccess.getFx_background_image_size_propertyAccess().getWSTerminalRuleCall_1()), new TokenAlias(false, false, grammarAccess.getFx_background_image_size_propertyAccess().getColonKeyword_2()), new TokenAlias(false, true, grammarAccess.getFx_background_image_size_propertyAccess().getWSTerminalRuleCall_3()));
+		match_fx_bar_policy_property_WSTerminalRuleCall_1_a_ColonKeyword_2_WSTerminalRuleCall_3_a = new GroupAlias(false, false, new TokenAlias(true, true, grammarAccess.getFx_bar_policy_propertyAccess().getWSTerminalRuleCall_1()), new TokenAlias(false, false, grammarAccess.getFx_bar_policy_propertyAccess().getColonKeyword_2()), new TokenAlias(true, true, grammarAccess.getFx_bar_policy_propertyAccess().getWSTerminalRuleCall_3()));
+		match_fx_blend_property_WSTerminalRuleCall_1_a_ColonKeyword_2_WSTerminalRuleCall_3_a = new GroupAlias(false, false, new TokenAlias(true, true, grammarAccess.getFx_blend_propertyAccess().getWSTerminalRuleCall_1()), new TokenAlias(false, false, grammarAccess.getFx_blend_propertyAccess().getColonKeyword_2()), new TokenAlias(true, true, grammarAccess.getFx_blend_propertyAccess().getWSTerminalRuleCall_3()));
+		match_fx_boolean_property_WSTerminalRuleCall_1_a_ColonKeyword_2_WSTerminalRuleCall_3_a = new GroupAlias(false, false, new TokenAlias(true, true, grammarAccess.getFx_boolean_propertyAccess().getWSTerminalRuleCall_1()), new TokenAlias(false, false, grammarAccess.getFx_boolean_propertyAccess().getColonKeyword_2()), new TokenAlias(true, true, grammarAccess.getFx_boolean_propertyAccess().getWSTerminalRuleCall_3()));
+		match_fx_border_image_slice_property_WSTerminalRuleCall_1_a = new TokenAlias(true, true, grammarAccess.getFx_border_image_slice_propertyAccess().getWSTerminalRuleCall_1());
+		match_fx_border_image_slice_property_WSTerminalRuleCall_1_a_ColonKeyword_2_WSTerminalRuleCall_3_p = new GroupAlias(false, false, new TokenAlias(true, true, grammarAccess.getFx_border_image_slice_propertyAccess().getWSTerminalRuleCall_1()), new TokenAlias(false, false, grammarAccess.getFx_border_image_slice_propertyAccess().getColonKeyword_2()), new TokenAlias(false, true, grammarAccess.getFx_border_image_slice_propertyAccess().getWSTerminalRuleCall_3()));
+		match_fx_border_style_property_WSTerminalRuleCall_1_a_ColonKeyword_2_WSTerminalRuleCall_3_p = new GroupAlias(false, false, new TokenAlias(true, true, grammarAccess.getFx_border_style_propertyAccess().getWSTerminalRuleCall_1()), new TokenAlias(false, false, grammarAccess.getFx_border_style_propertyAccess().getColonKeyword_2()), new TokenAlias(false, true, grammarAccess.getFx_border_style_propertyAccess().getWSTerminalRuleCall_3()));
+		match_fx_cursor_property_WSTerminalRuleCall_1_a_ColonKeyword_2_WSTerminalRuleCall_3_a = new GroupAlias(false, false, new TokenAlias(true, true, grammarAccess.getFx_cursor_propertyAccess().getWSTerminalRuleCall_1()), new TokenAlias(false, false, grammarAccess.getFx_cursor_propertyAccess().getColonKeyword_2()), new TokenAlias(true, true, grammarAccess.getFx_cursor_propertyAccess().getWSTerminalRuleCall_3()));
+		match_fx_effect_property_WSTerminalRuleCall_1_a = new TokenAlias(true, true, grammarAccess.getFx_effect_propertyAccess().getWSTerminalRuleCall_1());
+		match_fx_effect_property_WSTerminalRuleCall_1_a_ColonKeyword_2_WSTerminalRuleCall_3_p = new GroupAlias(false, false, new TokenAlias(true, true, grammarAccess.getFx_effect_propertyAccess().getWSTerminalRuleCall_1()), new TokenAlias(false, false, grammarAccess.getFx_effect_propertyAccess().getColonKeyword_2()), new TokenAlias(false, true, grammarAccess.getFx_effect_propertyAccess().getWSTerminalRuleCall_3()));
+		match_fx_font_family_property_WSTerminalRuleCall_1_a_ColonKeyword_2_WSTerminalRuleCall_3_a = new GroupAlias(false, false, new TokenAlias(true, true, grammarAccess.getFx_font_family_propertyAccess().getWSTerminalRuleCall_1()), new TokenAlias(false, false, grammarAccess.getFx_font_family_propertyAccess().getColonKeyword_2()), new TokenAlias(true, true, grammarAccess.getFx_font_family_propertyAccess().getWSTerminalRuleCall_3()));
+		match_fx_font_size_property_WSTerminalRuleCall_1_a_ColonKeyword_2_WSTerminalRuleCall_3_a = new GroupAlias(false, false, new TokenAlias(true, true, grammarAccess.getFx_font_size_propertyAccess().getWSTerminalRuleCall_1()), new TokenAlias(false, false, grammarAccess.getFx_font_size_propertyAccess().getColonKeyword_2()), new TokenAlias(true, true, grammarAccess.getFx_font_size_propertyAccess().getWSTerminalRuleCall_3()));
+		match_fx_font_style_property_WSTerminalRuleCall_1_a = new TokenAlias(true, true, grammarAccess.getFx_font_style_propertyAccess().getWSTerminalRuleCall_1());
+		match_fx_font_style_property_WSTerminalRuleCall_1_a_ColonKeyword_2_WSTerminalRuleCall_3_p = new GroupAlias(false, false, new TokenAlias(true, true, grammarAccess.getFx_font_style_propertyAccess().getWSTerminalRuleCall_1()), new TokenAlias(false, false, grammarAccess.getFx_font_style_propertyAccess().getColonKeyword_2()), new TokenAlias(false, true, grammarAccess.getFx_font_style_propertyAccess().getWSTerminalRuleCall_3()));
+		match_fx_font_weight_property_WSTerminalRuleCall_1_a = new TokenAlias(true, true, grammarAccess.getFx_font_weight_propertyAccess().getWSTerminalRuleCall_1());
+		match_fx_hposition_property_WSTerminalRuleCall_1_a_ColonKeyword_2_WSTerminalRuleCall_3_a = new GroupAlias(false, false, new TokenAlias(true, true, grammarAccess.getFx_hposition_propertyAccess().getWSTerminalRuleCall_1()), new TokenAlias(false, false, grammarAccess.getFx_hposition_propertyAccess().getColonKeyword_2()), new TokenAlias(true, true, grammarAccess.getFx_hposition_propertyAccess().getWSTerminalRuleCall_3()));
+		match_fx_insets_property_WSTerminalRuleCall_0_1_a_ColonKeyword_0_2_WSTerminalRuleCall_0_3_a = new GroupAlias(false, false, new TokenAlias(true, true, grammarAccess.getFx_insets_propertyAccess().getWSTerminalRuleCall_0_1()), new TokenAlias(false, false, grammarAccess.getFx_insets_propertyAccess().getColonKeyword_0_2()), new TokenAlias(true, true, grammarAccess.getFx_insets_propertyAccess().getWSTerminalRuleCall_0_3()));
+		match_fx_integer_property_WSTerminalRuleCall_1_a_ColonKeyword_2_WSTerminalRuleCall_3_a = new GroupAlias(false, false, new TokenAlias(true, true, grammarAccess.getFx_integer_propertyAccess().getWSTerminalRuleCall_1()), new TokenAlias(false, false, grammarAccess.getFx_integer_propertyAccess().getColonKeyword_2()), new TokenAlias(true, true, grammarAccess.getFx_integer_propertyAccess().getWSTerminalRuleCall_3()));
+		match_fx_multi_paint_properties_WSTerminalRuleCall_1_a = new TokenAlias(true, true, grammarAccess.getFx_multi_paint_propertiesAccess().getWSTerminalRuleCall_1());
+		match_fx_multi_paint_properties_WSTerminalRuleCall_1_a_ColonKeyword_2_WSTerminalRuleCall_3_a = new GroupAlias(false, false, new TokenAlias(true, true, grammarAccess.getFx_multi_paint_propertiesAccess().getWSTerminalRuleCall_1()), new TokenAlias(false, false, grammarAccess.getFx_multi_paint_propertiesAccess().getColonKeyword_2()), new TokenAlias(true, true, grammarAccess.getFx_multi_paint_propertiesAccess().getWSTerminalRuleCall_3()));
+		match_fx_multi_paint_properties_WSTerminalRuleCall_1_a_ColonKeyword_2_WSTerminalRuleCall_3_p = new GroupAlias(false, false, new TokenAlias(true, true, grammarAccess.getFx_multi_paint_propertiesAccess().getWSTerminalRuleCall_1()), new TokenAlias(false, false, grammarAccess.getFx_multi_paint_propertiesAccess().getColonKeyword_2()), new TokenAlias(false, true, grammarAccess.getFx_multi_paint_propertiesAccess().getWSTerminalRuleCall_3()));
+		match_fx_multisize_properties_WSTerminalRuleCall_1_a = new TokenAlias(true, true, grammarAccess.getFx_multisize_propertiesAccess().getWSTerminalRuleCall_1());
+		match_fx_multisize_properties_WSTerminalRuleCall_1_a_ColonKeyword_2_WSTerminalRuleCall_3_p = new GroupAlias(false, false, new TokenAlias(true, true, grammarAccess.getFx_multisize_propertiesAccess().getWSTerminalRuleCall_1()), new TokenAlias(false, false, grammarAccess.getFx_multisize_propertiesAccess().getColonKeyword_2()), new TokenAlias(false, true, grammarAccess.getFx_multisize_propertiesAccess().getWSTerminalRuleCall_3()));
+		match_fx_multisize_property_WSTerminalRuleCall_1_a = new TokenAlias(true, true, grammarAccess.getFx_multisize_propertyAccess().getWSTerminalRuleCall_1());
+		match_fx_multisize_property_WSTerminalRuleCall_1_a_ColonKeyword_2_WSTerminalRuleCall_3_p = new GroupAlias(false, false, new TokenAlias(true, true, grammarAccess.getFx_multisize_propertyAccess().getWSTerminalRuleCall_1()), new TokenAlias(false, false, grammarAccess.getFx_multisize_propertyAccess().getColonKeyword_2()), new TokenAlias(false, true, grammarAccess.getFx_multisize_propertyAccess().getWSTerminalRuleCall_3()));
+		match_fx_number_properties_WSTerminalRuleCall_1_a_ColonKeyword_2_WSTerminalRuleCall_3_a = new GroupAlias(false, false, new TokenAlias(true, true, grammarAccess.getFx_number_propertiesAccess().getWSTerminalRuleCall_1()), new TokenAlias(false, false, grammarAccess.getFx_number_propertiesAccess().getColonKeyword_2()), new TokenAlias(true, true, grammarAccess.getFx_number_propertiesAccess().getWSTerminalRuleCall_3()));
+		match_fx_number_property_WSTerminalRuleCall_1_a_ColonKeyword_2_WSTerminalRuleCall_3_a = new GroupAlias(false, false, new TokenAlias(true, true, grammarAccess.getFx_number_propertyAccess().getWSTerminalRuleCall_1()), new TokenAlias(false, false, grammarAccess.getFx_number_propertyAccess().getColonKeyword_2()), new TokenAlias(true, true, grammarAccess.getFx_number_propertyAccess().getWSTerminalRuleCall_3()));
+		match_fx_paint_properties_WSTerminalRuleCall_1_a = new TokenAlias(true, true, grammarAccess.getFx_paint_propertiesAccess().getWSTerminalRuleCall_1());
+		match_fx_paint_properties_WSTerminalRuleCall_1_a_ColonKeyword_2_WSTerminalRuleCall_3_a = new GroupAlias(false, false, new TokenAlias(true, true, grammarAccess.getFx_paint_propertiesAccess().getWSTerminalRuleCall_1()), new TokenAlias(false, false, grammarAccess.getFx_paint_propertiesAccess().getColonKeyword_2()), new TokenAlias(true, true, grammarAccess.getFx_paint_propertiesAccess().getWSTerminalRuleCall_3()));
+		match_fx_paint_properties_WSTerminalRuleCall_1_a_ColonKeyword_2_WSTerminalRuleCall_3_p = new GroupAlias(false, false, new TokenAlias(true, true, grammarAccess.getFx_paint_propertiesAccess().getWSTerminalRuleCall_1()), new TokenAlias(false, false, grammarAccess.getFx_paint_propertiesAccess().getColonKeyword_2()), new TokenAlias(false, true, grammarAccess.getFx_paint_propertiesAccess().getWSTerminalRuleCall_3()));
+		match_fx_paint_property_WSTerminalRuleCall_1_a = new TokenAlias(true, true, grammarAccess.getFx_paint_propertyAccess().getWSTerminalRuleCall_1());
+		match_fx_position_property_WSTerminalRuleCall_1_a = new TokenAlias(true, true, grammarAccess.getFx_position_propertyAccess().getWSTerminalRuleCall_1());
+		match_fx_position_property_WSTerminalRuleCall_1_a_ColonKeyword_2_WSTerminalRuleCall_3_p = new GroupAlias(false, false, new TokenAlias(true, true, grammarAccess.getFx_position_propertyAccess().getWSTerminalRuleCall_1()), new TokenAlias(false, false, grammarAccess.getFx_position_propertyAccess().getColonKeyword_2()), new TokenAlias(false, true, grammarAccess.getFx_position_propertyAccess().getWSTerminalRuleCall_3()));
+		match_fx_repeat_properties_WSTerminalRuleCall_1_a = new TokenAlias(true, true, grammarAccess.getFx_repeat_propertiesAccess().getWSTerminalRuleCall_1());
+		match_fx_side_property_WSTerminalRuleCall_1_a_ColonKeyword_2_WSTerminalRuleCall_3_a = new GroupAlias(false, false, new TokenAlias(true, true, grammarAccess.getFx_side_propertyAccess().getWSTerminalRuleCall_1()), new TokenAlias(false, false, grammarAccess.getFx_side_propertyAccess().getColonKeyword_2()), new TokenAlias(true, true, grammarAccess.getFx_side_propertyAccess().getWSTerminalRuleCall_3()));
+		match_fx_size_properties_WSTerminalRuleCall_1_a_ColonKeyword_2_WSTerminalRuleCall_3_a = new GroupAlias(false, false, new TokenAlias(true, true, grammarAccess.getFx_size_propertiesAccess().getWSTerminalRuleCall_1()), new TokenAlias(false, false, grammarAccess.getFx_size_propertiesAccess().getColonKeyword_2()), new TokenAlias(true, true, grammarAccess.getFx_size_propertiesAccess().getWSTerminalRuleCall_3()));
+		match_fx_size_property_WSTerminalRuleCall_1_a_ColonKeyword_2_WSTerminalRuleCall_3_a = new GroupAlias(false, false, new TokenAlias(true, true, grammarAccess.getFx_size_propertyAccess().getWSTerminalRuleCall_1()), new TokenAlias(false, false, grammarAccess.getFx_size_propertyAccess().getColonKeyword_2()), new TokenAlias(true, true, grammarAccess.getFx_size_propertyAccess().getWSTerminalRuleCall_3()));
+		match_fx_string_property_WSTerminalRuleCall_1_a_ColonKeyword_2_WSTerminalRuleCall_3_a = new GroupAlias(false, false, new TokenAlias(true, true, grammarAccess.getFx_string_propertyAccess().getWSTerminalRuleCall_1()), new TokenAlias(false, false, grammarAccess.getFx_string_propertyAccess().getColonKeyword_2()), new TokenAlias(true, true, grammarAccess.getFx_string_propertyAccess().getWSTerminalRuleCall_3()));
+		match_fx_stroke_line_cap_property_WSTerminalRuleCall_1_a_ColonKeyword_2_WSTerminalRuleCall_3_a = new GroupAlias(false, false, new TokenAlias(true, true, grammarAccess.getFx_stroke_line_cap_propertyAccess().getWSTerminalRuleCall_1()), new TokenAlias(false, false, grammarAccess.getFx_stroke_line_cap_propertyAccess().getColonKeyword_2()), new TokenAlias(true, true, grammarAccess.getFx_stroke_line_cap_propertyAccess().getWSTerminalRuleCall_3()));
+		match_fx_stroke_line_join_property_WSTerminalRuleCall_1_a_ColonKeyword_2_WSTerminalRuleCall_3_a = new GroupAlias(false, false, new TokenAlias(true, true, grammarAccess.getFx_stroke_line_join_propertyAccess().getWSTerminalRuleCall_1()), new TokenAlias(false, false, grammarAccess.getFx_stroke_line_join_propertyAccess().getColonKeyword_2()), new TokenAlias(true, true, grammarAccess.getFx_stroke_line_join_propertyAccess().getWSTerminalRuleCall_3()));
+		match_fx_text_origin_property_WSTerminalRuleCall_1_a_ColonKeyword_2_WSTerminalRuleCall_3_a = new GroupAlias(false, false, new TokenAlias(true, true, grammarAccess.getFx_text_origin_propertyAccess().getWSTerminalRuleCall_1()), new TokenAlias(false, false, grammarAccess.getFx_text_origin_propertyAccess().getColonKeyword_2()), new TokenAlias(true, true, grammarAccess.getFx_text_origin_propertyAccess().getWSTerminalRuleCall_3()));
+		match_fx_text_overrun_property_WSTerminalRuleCall_1_a_ColonKeyword_2_WSTerminalRuleCall_3_a = new GroupAlias(false, false, new TokenAlias(true, true, grammarAccess.getFx_text_overrun_propertyAccess().getWSTerminalRuleCall_1()), new TokenAlias(false, false, grammarAccess.getFx_text_overrun_propertyAccess().getColonKeyword_2()), new TokenAlias(true, true, grammarAccess.getFx_text_overrun_propertyAccess().getWSTerminalRuleCall_3()));
+		match_fx_url_properties_WSTerminalRuleCall_1_a_ColonKeyword_2_WSTerminalRuleCall_3_a = new GroupAlias(false, false, new TokenAlias(true, true, grammarAccess.getFx_url_propertiesAccess().getWSTerminalRuleCall_1()), new TokenAlias(false, false, grammarAccess.getFx_url_propertiesAccess().getColonKeyword_2()), new TokenAlias(true, true, grammarAccess.getFx_url_propertiesAccess().getWSTerminalRuleCall_3()));
+		match_fx_url_property_WSTerminalRuleCall_1_a_ColonKeyword_2_WSTerminalRuleCall_3_a = new GroupAlias(false, false, new TokenAlias(true, true, grammarAccess.getFx_url_propertyAccess().getWSTerminalRuleCall_1()), new TokenAlias(false, false, grammarAccess.getFx_url_propertyAccess().getColonKeyword_2()), new TokenAlias(true, true, grammarAccess.getFx_url_propertyAccess().getWSTerminalRuleCall_3()));
+		match_fx_vposition_property_WSTerminalRuleCall_1_a_ColonKeyword_2_WSTerminalRuleCall_3_a = new GroupAlias(false, false, new TokenAlias(true, true, grammarAccess.getFx_vposition_propertyAccess().getWSTerminalRuleCall_1()), new TokenAlias(false, false, grammarAccess.getFx_vposition_propertyAccess().getColonKeyword_2()), new TokenAlias(true, true, grammarAccess.getFx_vposition_propertyAccess().getWSTerminalRuleCall_3()));
 		match_media_WSTerminalRuleCall_1_a = new TokenAlias(true, true, grammarAccess.getMediaAccess().getWSTerminalRuleCall_1());
 		match_media_WSTerminalRuleCall_4_a = new TokenAlias(true, true, grammarAccess.getMediaAccess().getWSTerminalRuleCall_4());
 		match_media_WSTerminalRuleCall_4_p = new TokenAlias(false, true, grammarAccess.getMediaAccess().getWSTerminalRuleCall_4());
 		match_ruleset_WSTerminalRuleCall_3_a_RightCurlyBracketKeyword_5_WSTerminalRuleCall_6_p = new GroupAlias(false, false, new TokenAlias(true, true, grammarAccess.getRulesetAccess().getWSTerminalRuleCall_3()), new TokenAlias(false, false, grammarAccess.getRulesetAccess().getRightCurlyBracketKeyword_5()), new TokenAlias(false, true, grammarAccess.getRulesetAccess().getWSTerminalRuleCall_6()));
-		match_ruleset_WSTerminalRuleCall_3_p = new TokenAlias(false, true, grammarAccess.getRulesetAccess().getWSTerminalRuleCall_3());
 		match_ruleset_WSTerminalRuleCall_4_2_a_RightCurlyBracketKeyword_5_WSTerminalRuleCall_6_p = new GroupAlias(false, false, new TokenAlias(true, true, grammarAccess.getRulesetAccess().getWSTerminalRuleCall_4_2()), new TokenAlias(false, false, grammarAccess.getRulesetAccess().getRightCurlyBracketKeyword_5()), new TokenAlias(false, true, grammarAccess.getRulesetAccess().getWSTerminalRuleCall_6()));
-		match_selector_WSTerminalRuleCall_1_1_0_p = new TokenAlias(false, true, grammarAccess.getSelectorAccess().getWSTerminalRuleCall_1_1_0());
 	}
 	
 	@Override
@@ -69,8 +167,110 @@ public class AbstractCssDslSyntacticSequencer extends AbstractSyntacticSequencer
 	protected void emitUnassignedTokens(EObject semanticObject, ISynTransition transition, INode fromNode, INode toNode) {
 		if (!transition.isSyntacticallyAmbiguous())
 			return;
-		if(match_css_generic_declaration_WSTerminalRuleCall_2_a.equals(transition.getAmbiguousSyntax()))
+		if(match_BgPosition_WSTerminalRuleCall_1_a.equals(transition.getAmbiguousSyntax()))
+			emit_BgPosition_WSTerminalRuleCall_1_a(semanticObject, transition, fromNode, toNode);
+		else if(match_Dim4Size_WSTerminalRuleCall_1_1_a.equals(transition.getAmbiguousSyntax()))
+			emit_Dim4Size_WSTerminalRuleCall_1_1_a(semanticObject, transition, fromNode, toNode);
+		else if(match_Dim4Size_WSTerminalRuleCall_1_3_a.equals(transition.getAmbiguousSyntax()))
+			emit_Dim4Size_WSTerminalRuleCall_1_3_a(semanticObject, transition, fromNode, toNode);
+		else if(match_Dim4Size_WSTerminalRuleCall_1_5_a.equals(transition.getAmbiguousSyntax()))
+			emit_Dim4Size_WSTerminalRuleCall_1_5_a(semanticObject, transition, fromNode, toNode);
+		else if(match_css_generic_declaration_WSTerminalRuleCall_2_a.equals(transition.getAmbiguousSyntax()))
 			emit_css_generic_declaration_WSTerminalRuleCall_2_a(semanticObject, transition, fromNode, toNode);
+		else if(match_fx_alignment_property_WSTerminalRuleCall_1_a_ColonKeyword_2_WSTerminalRuleCall_3_a.equals(transition.getAmbiguousSyntax()))
+			emit_fx_alignment_property_WSTerminalRuleCall_1_a_ColonKeyword_2_WSTerminalRuleCall_3_a(semanticObject, transition, fromNode, toNode);
+		else if(match_fx_background_image_size_property_WSTerminalRuleCall_1_a.equals(transition.getAmbiguousSyntax()))
+			emit_fx_background_image_size_property_WSTerminalRuleCall_1_a(semanticObject, transition, fromNode, toNode);
+		else if(match_fx_background_image_size_property_WSTerminalRuleCall_1_a_ColonKeyword_2_WSTerminalRuleCall_3_p.equals(transition.getAmbiguousSyntax()))
+			emit_fx_background_image_size_property_WSTerminalRuleCall_1_a_ColonKeyword_2_WSTerminalRuleCall_3_p(semanticObject, transition, fromNode, toNode);
+		else if(match_fx_bar_policy_property_WSTerminalRuleCall_1_a_ColonKeyword_2_WSTerminalRuleCall_3_a.equals(transition.getAmbiguousSyntax()))
+			emit_fx_bar_policy_property_WSTerminalRuleCall_1_a_ColonKeyword_2_WSTerminalRuleCall_3_a(semanticObject, transition, fromNode, toNode);
+		else if(match_fx_blend_property_WSTerminalRuleCall_1_a_ColonKeyword_2_WSTerminalRuleCall_3_a.equals(transition.getAmbiguousSyntax()))
+			emit_fx_blend_property_WSTerminalRuleCall_1_a_ColonKeyword_2_WSTerminalRuleCall_3_a(semanticObject, transition, fromNode, toNode);
+		else if(match_fx_boolean_property_WSTerminalRuleCall_1_a_ColonKeyword_2_WSTerminalRuleCall_3_a.equals(transition.getAmbiguousSyntax()))
+			emit_fx_boolean_property_WSTerminalRuleCall_1_a_ColonKeyword_2_WSTerminalRuleCall_3_a(semanticObject, transition, fromNode, toNode);
+		else if(match_fx_border_image_slice_property_WSTerminalRuleCall_1_a.equals(transition.getAmbiguousSyntax()))
+			emit_fx_border_image_slice_property_WSTerminalRuleCall_1_a(semanticObject, transition, fromNode, toNode);
+		else if(match_fx_border_image_slice_property_WSTerminalRuleCall_1_a_ColonKeyword_2_WSTerminalRuleCall_3_p.equals(transition.getAmbiguousSyntax()))
+			emit_fx_border_image_slice_property_WSTerminalRuleCall_1_a_ColonKeyword_2_WSTerminalRuleCall_3_p(semanticObject, transition, fromNode, toNode);
+		else if(match_fx_border_style_property_WSTerminalRuleCall_1_a_ColonKeyword_2_WSTerminalRuleCall_3_p.equals(transition.getAmbiguousSyntax()))
+			emit_fx_border_style_property_WSTerminalRuleCall_1_a_ColonKeyword_2_WSTerminalRuleCall_3_p(semanticObject, transition, fromNode, toNode);
+		else if(match_fx_cursor_property_WSTerminalRuleCall_1_a_ColonKeyword_2_WSTerminalRuleCall_3_a.equals(transition.getAmbiguousSyntax()))
+			emit_fx_cursor_property_WSTerminalRuleCall_1_a_ColonKeyword_2_WSTerminalRuleCall_3_a(semanticObject, transition, fromNode, toNode);
+		else if(match_fx_effect_property_WSTerminalRuleCall_1_a.equals(transition.getAmbiguousSyntax()))
+			emit_fx_effect_property_WSTerminalRuleCall_1_a(semanticObject, transition, fromNode, toNode);
+		else if(match_fx_effect_property_WSTerminalRuleCall_1_a_ColonKeyword_2_WSTerminalRuleCall_3_p.equals(transition.getAmbiguousSyntax()))
+			emit_fx_effect_property_WSTerminalRuleCall_1_a_ColonKeyword_2_WSTerminalRuleCall_3_p(semanticObject, transition, fromNode, toNode);
+		else if(match_fx_font_family_property_WSTerminalRuleCall_1_a_ColonKeyword_2_WSTerminalRuleCall_3_a.equals(transition.getAmbiguousSyntax()))
+			emit_fx_font_family_property_WSTerminalRuleCall_1_a_ColonKeyword_2_WSTerminalRuleCall_3_a(semanticObject, transition, fromNode, toNode);
+		else if(match_fx_font_size_property_WSTerminalRuleCall_1_a_ColonKeyword_2_WSTerminalRuleCall_3_a.equals(transition.getAmbiguousSyntax()))
+			emit_fx_font_size_property_WSTerminalRuleCall_1_a_ColonKeyword_2_WSTerminalRuleCall_3_a(semanticObject, transition, fromNode, toNode);
+		else if(match_fx_font_style_property_WSTerminalRuleCall_1_a.equals(transition.getAmbiguousSyntax()))
+			emit_fx_font_style_property_WSTerminalRuleCall_1_a(semanticObject, transition, fromNode, toNode);
+		else if(match_fx_font_style_property_WSTerminalRuleCall_1_a_ColonKeyword_2_WSTerminalRuleCall_3_p.equals(transition.getAmbiguousSyntax()))
+			emit_fx_font_style_property_WSTerminalRuleCall_1_a_ColonKeyword_2_WSTerminalRuleCall_3_p(semanticObject, transition, fromNode, toNode);
+		else if(match_fx_font_weight_property_WSTerminalRuleCall_1_a.equals(transition.getAmbiguousSyntax()))
+			emit_fx_font_weight_property_WSTerminalRuleCall_1_a(semanticObject, transition, fromNode, toNode);
+		else if(match_fx_hposition_property_WSTerminalRuleCall_1_a_ColonKeyword_2_WSTerminalRuleCall_3_a.equals(transition.getAmbiguousSyntax()))
+			emit_fx_hposition_property_WSTerminalRuleCall_1_a_ColonKeyword_2_WSTerminalRuleCall_3_a(semanticObject, transition, fromNode, toNode);
+		else if(match_fx_insets_property_WSTerminalRuleCall_0_1_a_ColonKeyword_0_2_WSTerminalRuleCall_0_3_a.equals(transition.getAmbiguousSyntax()))
+			emit_fx_insets_property_WSTerminalRuleCall_0_1_a_ColonKeyword_0_2_WSTerminalRuleCall_0_3_a(semanticObject, transition, fromNode, toNode);
+		else if(match_fx_integer_property_WSTerminalRuleCall_1_a_ColonKeyword_2_WSTerminalRuleCall_3_a.equals(transition.getAmbiguousSyntax()))
+			emit_fx_integer_property_WSTerminalRuleCall_1_a_ColonKeyword_2_WSTerminalRuleCall_3_a(semanticObject, transition, fromNode, toNode);
+		else if(match_fx_multi_paint_properties_WSTerminalRuleCall_1_a.equals(transition.getAmbiguousSyntax()))
+			emit_fx_multi_paint_properties_WSTerminalRuleCall_1_a(semanticObject, transition, fromNode, toNode);
+		else if(match_fx_multi_paint_properties_WSTerminalRuleCall_1_a_ColonKeyword_2_WSTerminalRuleCall_3_a.equals(transition.getAmbiguousSyntax()))
+			emit_fx_multi_paint_properties_WSTerminalRuleCall_1_a_ColonKeyword_2_WSTerminalRuleCall_3_a(semanticObject, transition, fromNode, toNode);
+		else if(match_fx_multi_paint_properties_WSTerminalRuleCall_1_a_ColonKeyword_2_WSTerminalRuleCall_3_p.equals(transition.getAmbiguousSyntax()))
+			emit_fx_multi_paint_properties_WSTerminalRuleCall_1_a_ColonKeyword_2_WSTerminalRuleCall_3_p(semanticObject, transition, fromNode, toNode);
+		else if(match_fx_multisize_properties_WSTerminalRuleCall_1_a.equals(transition.getAmbiguousSyntax()))
+			emit_fx_multisize_properties_WSTerminalRuleCall_1_a(semanticObject, transition, fromNode, toNode);
+		else if(match_fx_multisize_properties_WSTerminalRuleCall_1_a_ColonKeyword_2_WSTerminalRuleCall_3_p.equals(transition.getAmbiguousSyntax()))
+			emit_fx_multisize_properties_WSTerminalRuleCall_1_a_ColonKeyword_2_WSTerminalRuleCall_3_p(semanticObject, transition, fromNode, toNode);
+		else if(match_fx_multisize_property_WSTerminalRuleCall_1_a.equals(transition.getAmbiguousSyntax()))
+			emit_fx_multisize_property_WSTerminalRuleCall_1_a(semanticObject, transition, fromNode, toNode);
+		else if(match_fx_multisize_property_WSTerminalRuleCall_1_a_ColonKeyword_2_WSTerminalRuleCall_3_p.equals(transition.getAmbiguousSyntax()))
+			emit_fx_multisize_property_WSTerminalRuleCall_1_a_ColonKeyword_2_WSTerminalRuleCall_3_p(semanticObject, transition, fromNode, toNode);
+		else if(match_fx_number_properties_WSTerminalRuleCall_1_a_ColonKeyword_2_WSTerminalRuleCall_3_a.equals(transition.getAmbiguousSyntax()))
+			emit_fx_number_properties_WSTerminalRuleCall_1_a_ColonKeyword_2_WSTerminalRuleCall_3_a(semanticObject, transition, fromNode, toNode);
+		else if(match_fx_number_property_WSTerminalRuleCall_1_a_ColonKeyword_2_WSTerminalRuleCall_3_a.equals(transition.getAmbiguousSyntax()))
+			emit_fx_number_property_WSTerminalRuleCall_1_a_ColonKeyword_2_WSTerminalRuleCall_3_a(semanticObject, transition, fromNode, toNode);
+		else if(match_fx_paint_properties_WSTerminalRuleCall_1_a.equals(transition.getAmbiguousSyntax()))
+			emit_fx_paint_properties_WSTerminalRuleCall_1_a(semanticObject, transition, fromNode, toNode);
+		else if(match_fx_paint_properties_WSTerminalRuleCall_1_a_ColonKeyword_2_WSTerminalRuleCall_3_a.equals(transition.getAmbiguousSyntax()))
+			emit_fx_paint_properties_WSTerminalRuleCall_1_a_ColonKeyword_2_WSTerminalRuleCall_3_a(semanticObject, transition, fromNode, toNode);
+		else if(match_fx_paint_properties_WSTerminalRuleCall_1_a_ColonKeyword_2_WSTerminalRuleCall_3_p.equals(transition.getAmbiguousSyntax()))
+			emit_fx_paint_properties_WSTerminalRuleCall_1_a_ColonKeyword_2_WSTerminalRuleCall_3_p(semanticObject, transition, fromNode, toNode);
+		else if(match_fx_paint_property_WSTerminalRuleCall_1_a.equals(transition.getAmbiguousSyntax()))
+			emit_fx_paint_property_WSTerminalRuleCall_1_a(semanticObject, transition, fromNode, toNode);
+		else if(match_fx_position_property_WSTerminalRuleCall_1_a.equals(transition.getAmbiguousSyntax()))
+			emit_fx_position_property_WSTerminalRuleCall_1_a(semanticObject, transition, fromNode, toNode);
+		else if(match_fx_position_property_WSTerminalRuleCall_1_a_ColonKeyword_2_WSTerminalRuleCall_3_p.equals(transition.getAmbiguousSyntax()))
+			emit_fx_position_property_WSTerminalRuleCall_1_a_ColonKeyword_2_WSTerminalRuleCall_3_p(semanticObject, transition, fromNode, toNode);
+		else if(match_fx_repeat_properties_WSTerminalRuleCall_1_a.equals(transition.getAmbiguousSyntax()))
+			emit_fx_repeat_properties_WSTerminalRuleCall_1_a(semanticObject, transition, fromNode, toNode);
+		else if(match_fx_side_property_WSTerminalRuleCall_1_a_ColonKeyword_2_WSTerminalRuleCall_3_a.equals(transition.getAmbiguousSyntax()))
+			emit_fx_side_property_WSTerminalRuleCall_1_a_ColonKeyword_2_WSTerminalRuleCall_3_a(semanticObject, transition, fromNode, toNode);
+		else if(match_fx_size_properties_WSTerminalRuleCall_1_a_ColonKeyword_2_WSTerminalRuleCall_3_a.equals(transition.getAmbiguousSyntax()))
+			emit_fx_size_properties_WSTerminalRuleCall_1_a_ColonKeyword_2_WSTerminalRuleCall_3_a(semanticObject, transition, fromNode, toNode);
+		else if(match_fx_size_property_WSTerminalRuleCall_1_a_ColonKeyword_2_WSTerminalRuleCall_3_a.equals(transition.getAmbiguousSyntax()))
+			emit_fx_size_property_WSTerminalRuleCall_1_a_ColonKeyword_2_WSTerminalRuleCall_3_a(semanticObject, transition, fromNode, toNode);
+		else if(match_fx_string_property_WSTerminalRuleCall_1_a_ColonKeyword_2_WSTerminalRuleCall_3_a.equals(transition.getAmbiguousSyntax()))
+			emit_fx_string_property_WSTerminalRuleCall_1_a_ColonKeyword_2_WSTerminalRuleCall_3_a(semanticObject, transition, fromNode, toNode);
+		else if(match_fx_stroke_line_cap_property_WSTerminalRuleCall_1_a_ColonKeyword_2_WSTerminalRuleCall_3_a.equals(transition.getAmbiguousSyntax()))
+			emit_fx_stroke_line_cap_property_WSTerminalRuleCall_1_a_ColonKeyword_2_WSTerminalRuleCall_3_a(semanticObject, transition, fromNode, toNode);
+		else if(match_fx_stroke_line_join_property_WSTerminalRuleCall_1_a_ColonKeyword_2_WSTerminalRuleCall_3_a.equals(transition.getAmbiguousSyntax()))
+			emit_fx_stroke_line_join_property_WSTerminalRuleCall_1_a_ColonKeyword_2_WSTerminalRuleCall_3_a(semanticObject, transition, fromNode, toNode);
+		else if(match_fx_text_origin_property_WSTerminalRuleCall_1_a_ColonKeyword_2_WSTerminalRuleCall_3_a.equals(transition.getAmbiguousSyntax()))
+			emit_fx_text_origin_property_WSTerminalRuleCall_1_a_ColonKeyword_2_WSTerminalRuleCall_3_a(semanticObject, transition, fromNode, toNode);
+		else if(match_fx_text_overrun_property_WSTerminalRuleCall_1_a_ColonKeyword_2_WSTerminalRuleCall_3_a.equals(transition.getAmbiguousSyntax()))
+			emit_fx_text_overrun_property_WSTerminalRuleCall_1_a_ColonKeyword_2_WSTerminalRuleCall_3_a(semanticObject, transition, fromNode, toNode);
+		else if(match_fx_url_properties_WSTerminalRuleCall_1_a_ColonKeyword_2_WSTerminalRuleCall_3_a.equals(transition.getAmbiguousSyntax()))
+			emit_fx_url_properties_WSTerminalRuleCall_1_a_ColonKeyword_2_WSTerminalRuleCall_3_a(semanticObject, transition, fromNode, toNode);
+		else if(match_fx_url_property_WSTerminalRuleCall_1_a_ColonKeyword_2_WSTerminalRuleCall_3_a.equals(transition.getAmbiguousSyntax()))
+			emit_fx_url_property_WSTerminalRuleCall_1_a_ColonKeyword_2_WSTerminalRuleCall_3_a(semanticObject, transition, fromNode, toNode);
+		else if(match_fx_vposition_property_WSTerminalRuleCall_1_a_ColonKeyword_2_WSTerminalRuleCall_3_a.equals(transition.getAmbiguousSyntax()))
+			emit_fx_vposition_property_WSTerminalRuleCall_1_a_ColonKeyword_2_WSTerminalRuleCall_3_a(semanticObject, transition, fromNode, toNode);
 		else if(match_media_WSTerminalRuleCall_1_a.equals(transition.getAmbiguousSyntax()))
 			emit_media_WSTerminalRuleCall_1_a(semanticObject, transition, fromNode, toNode);
 		else if(match_media_WSTerminalRuleCall_4_a.equals(transition.getAmbiguousSyntax()))
@@ -79,12 +279,8 @@ public class AbstractCssDslSyntacticSequencer extends AbstractSyntacticSequencer
 			emit_media_WSTerminalRuleCall_4_p(semanticObject, transition, fromNode, toNode);
 		else if(match_ruleset_WSTerminalRuleCall_3_a_RightCurlyBracketKeyword_5_WSTerminalRuleCall_6_p.equals(transition.getAmbiguousSyntax()))
 			emit_ruleset_WSTerminalRuleCall_3_a_RightCurlyBracketKeyword_5_WSTerminalRuleCall_6_p(semanticObject, transition, fromNode, toNode);
-		else if(match_ruleset_WSTerminalRuleCall_3_p.equals(transition.getAmbiguousSyntax()))
-			emit_ruleset_WSTerminalRuleCall_3_p(semanticObject, transition, fromNode, toNode);
 		else if(match_ruleset_WSTerminalRuleCall_4_2_a_RightCurlyBracketKeyword_5_WSTerminalRuleCall_6_p.equals(transition.getAmbiguousSyntax()))
 			emit_ruleset_WSTerminalRuleCall_4_2_a_RightCurlyBracketKeyword_5_WSTerminalRuleCall_6_p(semanticObject, transition, fromNode, toNode);
-		else if(match_selector_WSTerminalRuleCall_1_1_0_p.equals(transition.getAmbiguousSyntax()))
-			emit_selector_WSTerminalRuleCall_1_1_0_p(semanticObject, transition, fromNode, toNode);
 		else acceptNodes(transition, fromNode, toNode);
 	}
 
@@ -92,7 +288,415 @@ public class AbstractCssDslSyntacticSequencer extends AbstractSyntacticSequencer
 	 * Syntax:
 	 *     WS*
 	 */
+	protected void emit_BgPosition_WSTerminalRuleCall_1_a(EObject semanticObject, ISynTransition transition, INode fromNode, INode toNode) {
+		acceptNodes(transition, fromNode, toNode);
+	}
+	
+	/**
+	 * Syntax:
+	 *     WS*
+	 */
+	protected void emit_Dim4Size_WSTerminalRuleCall_1_1_a(EObject semanticObject, ISynTransition transition, INode fromNode, INode toNode) {
+		acceptNodes(transition, fromNode, toNode);
+	}
+	
+	/**
+	 * Syntax:
+	 *     WS*
+	 */
+	protected void emit_Dim4Size_WSTerminalRuleCall_1_3_a(EObject semanticObject, ISynTransition transition, INode fromNode, INode toNode) {
+		acceptNodes(transition, fromNode, toNode);
+	}
+	
+	/**
+	 * Syntax:
+	 *     WS*
+	 */
+	protected void emit_Dim4Size_WSTerminalRuleCall_1_5_a(EObject semanticObject, ISynTransition transition, INode fromNode, INode toNode) {
+		acceptNodes(transition, fromNode, toNode);
+	}
+	
+	/**
+	 * Syntax:
+	 *     WS*
+	 */
 	protected void emit_css_generic_declaration_WSTerminalRuleCall_2_a(EObject semanticObject, ISynTransition transition, INode fromNode, INode toNode) {
+		acceptNodes(transition, fromNode, toNode);
+	}
+	
+	/**
+	 * Syntax:
+	 *     WS* ':' WS*
+	 */
+	protected void emit_fx_alignment_property_WSTerminalRuleCall_1_a_ColonKeyword_2_WSTerminalRuleCall_3_a(EObject semanticObject, ISynTransition transition, INode fromNode, INode toNode) {
+		acceptNodes(transition, fromNode, toNode);
+	}
+	
+	/**
+	 * Syntax:
+	 *     WS*
+	 */
+	protected void emit_fx_background_image_size_property_WSTerminalRuleCall_1_a(EObject semanticObject, ISynTransition transition, INode fromNode, INode toNode) {
+		acceptNodes(transition, fromNode, toNode);
+	}
+	
+	/**
+	 * Syntax:
+	 *     WS* ':' WS+
+	 */
+	protected void emit_fx_background_image_size_property_WSTerminalRuleCall_1_a_ColonKeyword_2_WSTerminalRuleCall_3_p(EObject semanticObject, ISynTransition transition, INode fromNode, INode toNode) {
+		acceptNodes(transition, fromNode, toNode);
+	}
+	
+	/**
+	 * Syntax:
+	 *     WS* ':' WS*
+	 */
+	protected void emit_fx_bar_policy_property_WSTerminalRuleCall_1_a_ColonKeyword_2_WSTerminalRuleCall_3_a(EObject semanticObject, ISynTransition transition, INode fromNode, INode toNode) {
+		acceptNodes(transition, fromNode, toNode);
+	}
+	
+	/**
+	 * Syntax:
+	 *     WS* ':' WS*
+	 */
+	protected void emit_fx_blend_property_WSTerminalRuleCall_1_a_ColonKeyword_2_WSTerminalRuleCall_3_a(EObject semanticObject, ISynTransition transition, INode fromNode, INode toNode) {
+		acceptNodes(transition, fromNode, toNode);
+	}
+	
+	/**
+	 * Syntax:
+	 *     WS* ':' WS*
+	 */
+	protected void emit_fx_boolean_property_WSTerminalRuleCall_1_a_ColonKeyword_2_WSTerminalRuleCall_3_a(EObject semanticObject, ISynTransition transition, INode fromNode, INode toNode) {
+		acceptNodes(transition, fromNode, toNode);
+	}
+	
+	/**
+	 * Syntax:
+	 *     WS*
+	 */
+	protected void emit_fx_border_image_slice_property_WSTerminalRuleCall_1_a(EObject semanticObject, ISynTransition transition, INode fromNode, INode toNode) {
+		acceptNodes(transition, fromNode, toNode);
+	}
+	
+	/**
+	 * Syntax:
+	 *     WS* ':' WS+
+	 */
+	protected void emit_fx_border_image_slice_property_WSTerminalRuleCall_1_a_ColonKeyword_2_WSTerminalRuleCall_3_p(EObject semanticObject, ISynTransition transition, INode fromNode, INode toNode) {
+		acceptNodes(transition, fromNode, toNode);
+	}
+	
+	/**
+	 * Syntax:
+	 *     WS* ':' WS+
+	 */
+	protected void emit_fx_border_style_property_WSTerminalRuleCall_1_a_ColonKeyword_2_WSTerminalRuleCall_3_p(EObject semanticObject, ISynTransition transition, INode fromNode, INode toNode) {
+		acceptNodes(transition, fromNode, toNode);
+	}
+	
+	/**
+	 * Syntax:
+	 *     WS* ':' WS*
+	 */
+	protected void emit_fx_cursor_property_WSTerminalRuleCall_1_a_ColonKeyword_2_WSTerminalRuleCall_3_a(EObject semanticObject, ISynTransition transition, INode fromNode, INode toNode) {
+		acceptNodes(transition, fromNode, toNode);
+	}
+	
+	/**
+	 * Syntax:
+	 *     WS*
+	 */
+	protected void emit_fx_effect_property_WSTerminalRuleCall_1_a(EObject semanticObject, ISynTransition transition, INode fromNode, INode toNode) {
+		acceptNodes(transition, fromNode, toNode);
+	}
+	
+	/**
+	 * Syntax:
+	 *     WS* ':' WS+
+	 */
+	protected void emit_fx_effect_property_WSTerminalRuleCall_1_a_ColonKeyword_2_WSTerminalRuleCall_3_p(EObject semanticObject, ISynTransition transition, INode fromNode, INode toNode) {
+		acceptNodes(transition, fromNode, toNode);
+	}
+	
+	/**
+	 * Syntax:
+	 *     WS* ':' WS*
+	 */
+	protected void emit_fx_font_family_property_WSTerminalRuleCall_1_a_ColonKeyword_2_WSTerminalRuleCall_3_a(EObject semanticObject, ISynTransition transition, INode fromNode, INode toNode) {
+		acceptNodes(transition, fromNode, toNode);
+	}
+	
+	/**
+	 * Syntax:
+	 *     WS* ':' WS*
+	 */
+	protected void emit_fx_font_size_property_WSTerminalRuleCall_1_a_ColonKeyword_2_WSTerminalRuleCall_3_a(EObject semanticObject, ISynTransition transition, INode fromNode, INode toNode) {
+		acceptNodes(transition, fromNode, toNode);
+	}
+	
+	/**
+	 * Syntax:
+	 *     WS*
+	 */
+	protected void emit_fx_font_style_property_WSTerminalRuleCall_1_a(EObject semanticObject, ISynTransition transition, INode fromNode, INode toNode) {
+		acceptNodes(transition, fromNode, toNode);
+	}
+	
+	/**
+	 * Syntax:
+	 *     WS* ':' WS+
+	 */
+	protected void emit_fx_font_style_property_WSTerminalRuleCall_1_a_ColonKeyword_2_WSTerminalRuleCall_3_p(EObject semanticObject, ISynTransition transition, INode fromNode, INode toNode) {
+		acceptNodes(transition, fromNode, toNode);
+	}
+	
+	/**
+	 * Syntax:
+	 *     WS*
+	 */
+	protected void emit_fx_font_weight_property_WSTerminalRuleCall_1_a(EObject semanticObject, ISynTransition transition, INode fromNode, INode toNode) {
+		acceptNodes(transition, fromNode, toNode);
+	}
+	
+	/**
+	 * Syntax:
+	 *     WS* ':' WS*
+	 */
+	protected void emit_fx_hposition_property_WSTerminalRuleCall_1_a_ColonKeyword_2_WSTerminalRuleCall_3_a(EObject semanticObject, ISynTransition transition, INode fromNode, INode toNode) {
+		acceptNodes(transition, fromNode, toNode);
+	}
+	
+	/**
+	 * Syntax:
+	 *     WS* ':' WS*
+	 */
+	protected void emit_fx_insets_property_WSTerminalRuleCall_0_1_a_ColonKeyword_0_2_WSTerminalRuleCall_0_3_a(EObject semanticObject, ISynTransition transition, INode fromNode, INode toNode) {
+		acceptNodes(transition, fromNode, toNode);
+	}
+	
+	/**
+	 * Syntax:
+	 *     WS* ':' WS*
+	 */
+	protected void emit_fx_integer_property_WSTerminalRuleCall_1_a_ColonKeyword_2_WSTerminalRuleCall_3_a(EObject semanticObject, ISynTransition transition, INode fromNode, INode toNode) {
+		acceptNodes(transition, fromNode, toNode);
+	}
+	
+	/**
+	 * Syntax:
+	 *     WS*
+	 */
+	protected void emit_fx_multi_paint_properties_WSTerminalRuleCall_1_a(EObject semanticObject, ISynTransition transition, INode fromNode, INode toNode) {
+		acceptNodes(transition, fromNode, toNode);
+	}
+	
+	/**
+	 * Syntax:
+	 *     WS* ':' WS*
+	 */
+	protected void emit_fx_multi_paint_properties_WSTerminalRuleCall_1_a_ColonKeyword_2_WSTerminalRuleCall_3_a(EObject semanticObject, ISynTransition transition, INode fromNode, INode toNode) {
+		acceptNodes(transition, fromNode, toNode);
+	}
+	
+	/**
+	 * Syntax:
+	 *     WS* ':' WS+
+	 */
+	protected void emit_fx_multi_paint_properties_WSTerminalRuleCall_1_a_ColonKeyword_2_WSTerminalRuleCall_3_p(EObject semanticObject, ISynTransition transition, INode fromNode, INode toNode) {
+		acceptNodes(transition, fromNode, toNode);
+	}
+	
+	/**
+	 * Syntax:
+	 *     WS*
+	 */
+	protected void emit_fx_multisize_properties_WSTerminalRuleCall_1_a(EObject semanticObject, ISynTransition transition, INode fromNode, INode toNode) {
+		acceptNodes(transition, fromNode, toNode);
+	}
+	
+	/**
+	 * Syntax:
+	 *     WS* ':' WS+
+	 */
+	protected void emit_fx_multisize_properties_WSTerminalRuleCall_1_a_ColonKeyword_2_WSTerminalRuleCall_3_p(EObject semanticObject, ISynTransition transition, INode fromNode, INode toNode) {
+		acceptNodes(transition, fromNode, toNode);
+	}
+	
+	/**
+	 * Syntax:
+	 *     WS*
+	 */
+	protected void emit_fx_multisize_property_WSTerminalRuleCall_1_a(EObject semanticObject, ISynTransition transition, INode fromNode, INode toNode) {
+		acceptNodes(transition, fromNode, toNode);
+	}
+	
+	/**
+	 * Syntax:
+	 *     WS* ':' WS+
+	 */
+	protected void emit_fx_multisize_property_WSTerminalRuleCall_1_a_ColonKeyword_2_WSTerminalRuleCall_3_p(EObject semanticObject, ISynTransition transition, INode fromNode, INode toNode) {
+		acceptNodes(transition, fromNode, toNode);
+	}
+	
+	/**
+	 * Syntax:
+	 *     WS* ':' WS*
+	 */
+	protected void emit_fx_number_properties_WSTerminalRuleCall_1_a_ColonKeyword_2_WSTerminalRuleCall_3_a(EObject semanticObject, ISynTransition transition, INode fromNode, INode toNode) {
+		acceptNodes(transition, fromNode, toNode);
+	}
+	
+	/**
+	 * Syntax:
+	 *     WS* ':' WS*
+	 */
+	protected void emit_fx_number_property_WSTerminalRuleCall_1_a_ColonKeyword_2_WSTerminalRuleCall_3_a(EObject semanticObject, ISynTransition transition, INode fromNode, INode toNode) {
+		acceptNodes(transition, fromNode, toNode);
+	}
+	
+	/**
+	 * Syntax:
+	 *     WS*
+	 */
+	protected void emit_fx_paint_properties_WSTerminalRuleCall_1_a(EObject semanticObject, ISynTransition transition, INode fromNode, INode toNode) {
+		acceptNodes(transition, fromNode, toNode);
+	}
+	
+	/**
+	 * Syntax:
+	 *     WS* ':' WS*
+	 */
+	protected void emit_fx_paint_properties_WSTerminalRuleCall_1_a_ColonKeyword_2_WSTerminalRuleCall_3_a(EObject semanticObject, ISynTransition transition, INode fromNode, INode toNode) {
+		acceptNodes(transition, fromNode, toNode);
+	}
+	
+	/**
+	 * Syntax:
+	 *     WS* ':' WS+
+	 */
+	protected void emit_fx_paint_properties_WSTerminalRuleCall_1_a_ColonKeyword_2_WSTerminalRuleCall_3_p(EObject semanticObject, ISynTransition transition, INode fromNode, INode toNode) {
+		acceptNodes(transition, fromNode, toNode);
+	}
+	
+	/**
+	 * Syntax:
+	 *     WS*
+	 */
+	protected void emit_fx_paint_property_WSTerminalRuleCall_1_a(EObject semanticObject, ISynTransition transition, INode fromNode, INode toNode) {
+		acceptNodes(transition, fromNode, toNode);
+	}
+	
+	/**
+	 * Syntax:
+	 *     WS*
+	 */
+	protected void emit_fx_position_property_WSTerminalRuleCall_1_a(EObject semanticObject, ISynTransition transition, INode fromNode, INode toNode) {
+		acceptNodes(transition, fromNode, toNode);
+	}
+	
+	/**
+	 * Syntax:
+	 *     WS* ':' WS+
+	 */
+	protected void emit_fx_position_property_WSTerminalRuleCall_1_a_ColonKeyword_2_WSTerminalRuleCall_3_p(EObject semanticObject, ISynTransition transition, INode fromNode, INode toNode) {
+		acceptNodes(transition, fromNode, toNode);
+	}
+	
+	/**
+	 * Syntax:
+	 *     WS*
+	 */
+	protected void emit_fx_repeat_properties_WSTerminalRuleCall_1_a(EObject semanticObject, ISynTransition transition, INode fromNode, INode toNode) {
+		acceptNodes(transition, fromNode, toNode);
+	}
+	
+	/**
+	 * Syntax:
+	 *     WS* ':' WS*
+	 */
+	protected void emit_fx_side_property_WSTerminalRuleCall_1_a_ColonKeyword_2_WSTerminalRuleCall_3_a(EObject semanticObject, ISynTransition transition, INode fromNode, INode toNode) {
+		acceptNodes(transition, fromNode, toNode);
+	}
+	
+	/**
+	 * Syntax:
+	 *     WS* ':' WS*
+	 */
+	protected void emit_fx_size_properties_WSTerminalRuleCall_1_a_ColonKeyword_2_WSTerminalRuleCall_3_a(EObject semanticObject, ISynTransition transition, INode fromNode, INode toNode) {
+		acceptNodes(transition, fromNode, toNode);
+	}
+	
+	/**
+	 * Syntax:
+	 *     WS* ':' WS*
+	 */
+	protected void emit_fx_size_property_WSTerminalRuleCall_1_a_ColonKeyword_2_WSTerminalRuleCall_3_a(EObject semanticObject, ISynTransition transition, INode fromNode, INode toNode) {
+		acceptNodes(transition, fromNode, toNode);
+	}
+	
+	/**
+	 * Syntax:
+	 *     WS* ':' WS*
+	 */
+	protected void emit_fx_string_property_WSTerminalRuleCall_1_a_ColonKeyword_2_WSTerminalRuleCall_3_a(EObject semanticObject, ISynTransition transition, INode fromNode, INode toNode) {
+		acceptNodes(transition, fromNode, toNode);
+	}
+	
+	/**
+	 * Syntax:
+	 *     WS* ':' WS*
+	 */
+	protected void emit_fx_stroke_line_cap_property_WSTerminalRuleCall_1_a_ColonKeyword_2_WSTerminalRuleCall_3_a(EObject semanticObject, ISynTransition transition, INode fromNode, INode toNode) {
+		acceptNodes(transition, fromNode, toNode);
+	}
+	
+	/**
+	 * Syntax:
+	 *     WS* ':' WS*
+	 */
+	protected void emit_fx_stroke_line_join_property_WSTerminalRuleCall_1_a_ColonKeyword_2_WSTerminalRuleCall_3_a(EObject semanticObject, ISynTransition transition, INode fromNode, INode toNode) {
+		acceptNodes(transition, fromNode, toNode);
+	}
+	
+	/**
+	 * Syntax:
+	 *     WS* ':' WS*
+	 */
+	protected void emit_fx_text_origin_property_WSTerminalRuleCall_1_a_ColonKeyword_2_WSTerminalRuleCall_3_a(EObject semanticObject, ISynTransition transition, INode fromNode, INode toNode) {
+		acceptNodes(transition, fromNode, toNode);
+	}
+	
+	/**
+	 * Syntax:
+	 *     WS* ':' WS*
+	 */
+	protected void emit_fx_text_overrun_property_WSTerminalRuleCall_1_a_ColonKeyword_2_WSTerminalRuleCall_3_a(EObject semanticObject, ISynTransition transition, INode fromNode, INode toNode) {
+		acceptNodes(transition, fromNode, toNode);
+	}
+	
+	/**
+	 * Syntax:
+	 *     WS* ':' WS*
+	 */
+	protected void emit_fx_url_properties_WSTerminalRuleCall_1_a_ColonKeyword_2_WSTerminalRuleCall_3_a(EObject semanticObject, ISynTransition transition, INode fromNode, INode toNode) {
+		acceptNodes(transition, fromNode, toNode);
+	}
+	
+	/**
+	 * Syntax:
+	 *     WS* ':' WS*
+	 */
+	protected void emit_fx_url_property_WSTerminalRuleCall_1_a_ColonKeyword_2_WSTerminalRuleCall_3_a(EObject semanticObject, ISynTransition transition, INode fromNode, INode toNode) {
+		acceptNodes(transition, fromNode, toNode);
+	}
+	
+	/**
+	 * Syntax:
+	 *     WS* ':' WS*
+	 */
+	protected void emit_fx_vposition_property_WSTerminalRuleCall_1_a_ColonKeyword_2_WSTerminalRuleCall_3_a(EObject semanticObject, ISynTransition transition, INode fromNode, INode toNode) {
 		acceptNodes(transition, fromNode, toNode);
 	}
 	
@@ -130,25 +734,9 @@ public class AbstractCssDslSyntacticSequencer extends AbstractSyntacticSequencer
 	
 	/**
 	 * Syntax:
-	 *     WS+
-	 */
-	protected void emit_ruleset_WSTerminalRuleCall_3_p(EObject semanticObject, ISynTransition transition, INode fromNode, INode toNode) {
-		acceptNodes(transition, fromNode, toNode);
-	}
-	
-	/**
-	 * Syntax:
 	 *     WS* '}' WS+
 	 */
 	protected void emit_ruleset_WSTerminalRuleCall_4_2_a_RightCurlyBracketKeyword_5_WSTerminalRuleCall_6_p(EObject semanticObject, ISynTransition transition, INode fromNode, INode toNode) {
-		acceptNodes(transition, fromNode, toNode);
-	}
-	
-	/**
-	 * Syntax:
-	 *     WS+
-	 */
-	protected void emit_selector_WSTerminalRuleCall_1_1_0_p(EObject semanticObject, ISynTransition transition, INode fromNode, INode toNode) {
 		acceptNodes(transition, fromNode, toNode);
 	}
 	

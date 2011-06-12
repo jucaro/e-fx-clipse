@@ -1570,7 +1570,7 @@ public class AbstractCssDslSemanticSequencer extends AbstractSemanticSequencer {
 		}
 		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
 		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
-		feeder.accept(grammarAccess.getFx_effect_propertyAccess().getValueEffectParserRuleCall_2_0(), semanticObject.getValue());
+		feeder.accept(grammarAccess.getFx_effect_propertyAccess().getValueEffectParserRuleCall_4_0(), semanticObject.getValue());
 		feeder.finish();
 	}
 	
@@ -1791,7 +1791,7 @@ public class AbstractCssDslSemanticSequencer extends AbstractSemanticSequencer {
 		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
 		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
 		feeder.accept(grammarAccess.getFx_multisize_propertyAccess().getPropertyFxPaddingKeyword_0_0(), semanticObject.getProperty());
-		feeder.accept(grammarAccess.getFx_multisize_propertyAccess().getValueDim4SizeParserRuleCall_2_0(), semanticObject.getValue());
+		feeder.accept(grammarAccess.getFx_multisize_propertyAccess().getValueDim4SizeParserRuleCall_4_0(), semanticObject.getValue());
 		feeder.finish();
 	}
 	
