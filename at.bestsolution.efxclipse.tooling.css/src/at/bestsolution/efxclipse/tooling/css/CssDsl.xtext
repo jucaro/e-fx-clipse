@@ -551,7 +551,7 @@ ColorFunction:
 ;
 
 HexColor:
-	'#' value=hexdigits
+	'#' value=(hexdigits|integer)
 ;
 URI:
 	'url(' STRING ')'

@@ -30104,46 +30104,93 @@ public class InternalCssDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleHexColor"
-    // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:11974:1: ruleHexColor returns [EObject current=null] : (otherlv_0= '#' ( (lv_value_1_0= RULE_HEXDIGITS ) ) ) ;
+    // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:11974:1: ruleHexColor returns [EObject current=null] : (otherlv_0= '#' ( ( (lv_value_1_1= RULE_HEXDIGITS | lv_value_1_2= RULE_INTEGER ) ) ) ) ;
     public final EObject ruleHexColor() throws RecognitionException {
         EObject current = null;
 
         Token otherlv_0=null;
-        Token lv_value_1_0=null;
+        Token lv_value_1_1=null;
+        Token lv_value_1_2=null;
 
          enterRule(); 
             
         try {
-            // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:11977:28: ( (otherlv_0= '#' ( (lv_value_1_0= RULE_HEXDIGITS ) ) ) )
-            // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:11978:1: (otherlv_0= '#' ( (lv_value_1_0= RULE_HEXDIGITS ) ) )
+            // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:11977:28: ( (otherlv_0= '#' ( ( (lv_value_1_1= RULE_HEXDIGITS | lv_value_1_2= RULE_INTEGER ) ) ) ) )
+            // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:11978:1: (otherlv_0= '#' ( ( (lv_value_1_1= RULE_HEXDIGITS | lv_value_1_2= RULE_INTEGER ) ) ) )
             {
-            // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:11978:1: (otherlv_0= '#' ( (lv_value_1_0= RULE_HEXDIGITS ) ) )
-            // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:11978:3: otherlv_0= '#' ( (lv_value_1_0= RULE_HEXDIGITS ) )
+            // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:11978:1: (otherlv_0= '#' ( ( (lv_value_1_1= RULE_HEXDIGITS | lv_value_1_2= RULE_INTEGER ) ) ) )
+            // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:11978:3: otherlv_0= '#' ( ( (lv_value_1_1= RULE_HEXDIGITS | lv_value_1_2= RULE_INTEGER ) ) )
             {
             otherlv_0=(Token)match(input,17,FOLLOW_17_in_ruleHexColor28456); 
 
                 	newLeafNode(otherlv_0, grammarAccess.getHexColorAccess().getNumberSignKeyword_0());
                 
-            // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:11982:1: ( (lv_value_1_0= RULE_HEXDIGITS ) )
-            // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:11983:1: (lv_value_1_0= RULE_HEXDIGITS )
+            // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:11982:1: ( ( (lv_value_1_1= RULE_HEXDIGITS | lv_value_1_2= RULE_INTEGER ) ) )
+            // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:11983:1: ( (lv_value_1_1= RULE_HEXDIGITS | lv_value_1_2= RULE_INTEGER ) )
             {
-            // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:11983:1: (lv_value_1_0= RULE_HEXDIGITS )
-            // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:11984:3: lv_value_1_0= RULE_HEXDIGITS
+            // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:11983:1: ( (lv_value_1_1= RULE_HEXDIGITS | lv_value_1_2= RULE_INTEGER ) )
+            // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:11984:1: (lv_value_1_1= RULE_HEXDIGITS | lv_value_1_2= RULE_INTEGER )
             {
-            lv_value_1_0=(Token)match(input,RULE_HEXDIGITS,FOLLOW_RULE_HEXDIGITS_in_ruleHexColor28473); 
+            // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:11984:1: (lv_value_1_1= RULE_HEXDIGITS | lv_value_1_2= RULE_INTEGER )
+            int alt252=2;
+            int LA252_0 = input.LA(1);
 
-            			newLeafNode(lv_value_1_0, grammarAccess.getHexColorAccess().getValueHexdigitsTerminalRuleCall_1_0()); 
-            		
+            if ( (LA252_0==RULE_HEXDIGITS) ) {
+                alt252=1;
+            }
+            else if ( (LA252_0==RULE_INTEGER) ) {
+                alt252=2;
+            }
+            else {
+                NoViableAltException nvae =
+                    new NoViableAltException("", 252, 0, input);
 
-            	        if (current==null) {
-            	            current = createModelElement(grammarAccess.getHexColorRule());
-            	        }
-                   		setWithLastConsumed(
-                   			current, 
-                   			"value",
-                    		lv_value_1_0, 
-                    		"hexdigits");
-            	    
+                throw nvae;
+            }
+            switch (alt252) {
+                case 1 :
+                    // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:11985:3: lv_value_1_1= RULE_HEXDIGITS
+                    {
+                    lv_value_1_1=(Token)match(input,RULE_HEXDIGITS,FOLLOW_RULE_HEXDIGITS_in_ruleHexColor28475); 
+
+                    			newLeafNode(lv_value_1_1, grammarAccess.getHexColorAccess().getValueHexdigitsTerminalRuleCall_1_0_0()); 
+                    		
+
+                    	        if (current==null) {
+                    	            current = createModelElement(grammarAccess.getHexColorRule());
+                    	        }
+                           		setWithLastConsumed(
+                           			current, 
+                           			"value",
+                            		lv_value_1_1, 
+                            		"hexdigits");
+                    	    
+
+                    }
+                    break;
+                case 2 :
+                    // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12000:8: lv_value_1_2= RULE_INTEGER
+                    {
+                    lv_value_1_2=(Token)match(input,RULE_INTEGER,FOLLOW_RULE_INTEGER_in_ruleHexColor28495); 
+
+                    			newLeafNode(lv_value_1_2, grammarAccess.getHexColorAccess().getValueIntegerTerminalRuleCall_1_0_1()); 
+                    		
+
+                    	        if (current==null) {
+                    	            current = createModelElement(grammarAccess.getHexColorRule());
+                    	        }
+                           		setWithLastConsumed(
+                           			current, 
+                           			"value",
+                            		lv_value_1_2, 
+                            		"integer");
+                    	    
+
+                    }
+                    break;
+
+            }
+
 
             }
 
@@ -30171,7 +30218,7 @@ public class InternalCssDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleURI"
-    // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12008:1: entryRuleURI returns [String current=null] : iv_ruleURI= ruleURI EOF ;
+    // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12026:1: entryRuleURI returns [String current=null] : iv_ruleURI= ruleURI EOF ;
     public final String entryRuleURI() throws RecognitionException {
         String current = null;
 
@@ -30179,17 +30226,17 @@ public class InternalCssDslParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12009:2: (iv_ruleURI= ruleURI EOF )
-            // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12010:2: iv_ruleURI= ruleURI EOF
+            // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12027:2: (iv_ruleURI= ruleURI EOF )
+            // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12028:2: iv_ruleURI= ruleURI EOF
             {
              newCompositeNode(grammarAccess.getURIRule()); 
-            pushFollow(FOLLOW_ruleURI_in_entryRuleURI28515);
+            pushFollow(FOLLOW_ruleURI_in_entryRuleURI28540);
             iv_ruleURI=ruleURI();
 
             state._fsp--;
 
              current =iv_ruleURI.getText(); 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleURI28526); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleURI28551); 
 
             }
 
@@ -30207,7 +30254,7 @@ public class InternalCssDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleURI"
-    // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12017:1: ruleURI returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (kw= 'url(' this_STRING_1= RULE_STRING kw= ')' ) ;
+    // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12035:1: ruleURI returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (kw= 'url(' this_STRING_1= RULE_STRING kw= ')' ) ;
     public final AntlrDatatypeRuleToken ruleURI() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
@@ -30217,25 +30264,25 @@ public class InternalCssDslParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12020:28: ( (kw= 'url(' this_STRING_1= RULE_STRING kw= ')' ) )
-            // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12021:1: (kw= 'url(' this_STRING_1= RULE_STRING kw= ')' )
+            // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12038:28: ( (kw= 'url(' this_STRING_1= RULE_STRING kw= ')' ) )
+            // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12039:1: (kw= 'url(' this_STRING_1= RULE_STRING kw= ')' )
             {
-            // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12021:1: (kw= 'url(' this_STRING_1= RULE_STRING kw= ')' )
-            // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12022:2: kw= 'url(' this_STRING_1= RULE_STRING kw= ')'
+            // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12039:1: (kw= 'url(' this_STRING_1= RULE_STRING kw= ')' )
+            // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12040:2: kw= 'url(' this_STRING_1= RULE_STRING kw= ')'
             {
-            kw=(Token)match(input,471,FOLLOW_471_in_ruleURI28564); 
+            kw=(Token)match(input,471,FOLLOW_471_in_ruleURI28589); 
 
                     current.merge(kw);
                     newLeafNode(kw, grammarAccess.getURIAccess().getUrlKeyword_0()); 
                 
-            this_STRING_1=(Token)match(input,RULE_STRING,FOLLOW_RULE_STRING_in_ruleURI28579); 
+            this_STRING_1=(Token)match(input,RULE_STRING,FOLLOW_RULE_STRING_in_ruleURI28604); 
 
             		current.merge(this_STRING_1);
                 
              
                 newLeafNode(this_STRING_1, grammarAccess.getURIAccess().getSTRINGTerminalRuleCall_1()); 
                 
-            kw=(Token)match(input,284,FOLLOW_284_in_ruleURI28597); 
+            kw=(Token)match(input,284,FOLLOW_284_in_ruleURI28622); 
 
                     current.merge(kw);
                     newLeafNode(kw, grammarAccess.getURIAccess().getRightParenthesisKeyword_2()); 
@@ -30261,7 +30308,7 @@ public class InternalCssDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleNUMBER"
-    // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12048:1: entryRuleNUMBER returns [String current=null] : iv_ruleNUMBER= ruleNUMBER EOF ;
+    // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12066:1: entryRuleNUMBER returns [String current=null] : iv_ruleNUMBER= ruleNUMBER EOF ;
     public final String entryRuleNUMBER() throws RecognitionException {
         String current = null;
 
@@ -30269,17 +30316,17 @@ public class InternalCssDslParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12049:2: (iv_ruleNUMBER= ruleNUMBER EOF )
-            // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12050:2: iv_ruleNUMBER= ruleNUMBER EOF
+            // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12067:2: (iv_ruleNUMBER= ruleNUMBER EOF )
+            // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12068:2: iv_ruleNUMBER= ruleNUMBER EOF
             {
              newCompositeNode(grammarAccess.getNUMBERRule()); 
-            pushFollow(FOLLOW_ruleNUMBER_in_entryRuleNUMBER28638);
+            pushFollow(FOLLOW_ruleNUMBER_in_entryRuleNUMBER28663);
             iv_ruleNUMBER=ruleNUMBER();
 
             state._fsp--;
 
              current =iv_ruleNUMBER.getText(); 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleNUMBER28649); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleNUMBER28674); 
 
             }
 
@@ -30297,7 +30344,7 @@ public class InternalCssDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleNUMBER"
-    // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12057:1: ruleNUMBER returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : this_num_0= rulenum ;
+    // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12075:1: ruleNUMBER returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : this_num_0= rulenum ;
     public final AntlrDatatypeRuleToken ruleNUMBER() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
@@ -30307,13 +30354,13 @@ public class InternalCssDslParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12060:28: (this_num_0= rulenum )
-            // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12062:5: this_num_0= rulenum
+            // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12078:28: (this_num_0= rulenum )
+            // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12080:5: this_num_0= rulenum
             {
              
                     newCompositeNode(grammarAccess.getNUMBERAccess().getNumParserRuleCall()); 
                 
-            pushFollow(FOLLOW_rulenum_in_ruleNUMBER28695);
+            pushFollow(FOLLOW_rulenum_in_ruleNUMBER28720);
             this_num_0=rulenum();
 
             state._fsp--;
@@ -30342,7 +30389,7 @@ public class InternalCssDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRulePERCENTAGE"
-    // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12080:1: entryRulePERCENTAGE returns [String current=null] : iv_rulePERCENTAGE= rulePERCENTAGE EOF ;
+    // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12098:1: entryRulePERCENTAGE returns [String current=null] : iv_rulePERCENTAGE= rulePERCENTAGE EOF ;
     public final String entryRulePERCENTAGE() throws RecognitionException {
         String current = null;
 
@@ -30350,17 +30397,17 @@ public class InternalCssDslParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12081:2: (iv_rulePERCENTAGE= rulePERCENTAGE EOF )
-            // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12082:2: iv_rulePERCENTAGE= rulePERCENTAGE EOF
+            // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12099:2: (iv_rulePERCENTAGE= rulePERCENTAGE EOF )
+            // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12100:2: iv_rulePERCENTAGE= rulePERCENTAGE EOF
             {
              newCompositeNode(grammarAccess.getPERCENTAGERule()); 
-            pushFollow(FOLLOW_rulePERCENTAGE_in_entryRulePERCENTAGE28740);
+            pushFollow(FOLLOW_rulePERCENTAGE_in_entryRulePERCENTAGE28765);
             iv_rulePERCENTAGE=rulePERCENTAGE();
 
             state._fsp--;
 
              current =iv_rulePERCENTAGE.getText(); 
-            match(input,EOF,FOLLOW_EOF_in_entryRulePERCENTAGE28751); 
+            match(input,EOF,FOLLOW_EOF_in_entryRulePERCENTAGE28776); 
 
             }
 
@@ -30378,7 +30425,7 @@ public class InternalCssDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "rulePERCENTAGE"
-    // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12089:1: rulePERCENTAGE returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (this_num_0= rulenum kw= '%' ) ;
+    // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12107:1: rulePERCENTAGE returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (this_num_0= rulenum kw= '%' ) ;
     public final AntlrDatatypeRuleToken rulePERCENTAGE() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
@@ -30389,16 +30436,16 @@ public class InternalCssDslParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12092:28: ( (this_num_0= rulenum kw= '%' ) )
-            // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12093:1: (this_num_0= rulenum kw= '%' )
+            // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12110:28: ( (this_num_0= rulenum kw= '%' ) )
+            // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12111:1: (this_num_0= rulenum kw= '%' )
             {
-            // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12093:1: (this_num_0= rulenum kw= '%' )
-            // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12094:5: this_num_0= rulenum kw= '%'
+            // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12111:1: (this_num_0= rulenum kw= '%' )
+            // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12112:5: this_num_0= rulenum kw= '%'
             {
              
                     newCompositeNode(grammarAccess.getPERCENTAGEAccess().getNumParserRuleCall_0()); 
                 
-            pushFollow(FOLLOW_rulenum_in_rulePERCENTAGE28798);
+            pushFollow(FOLLOW_rulenum_in_rulePERCENTAGE28823);
             this_num_0=rulenum();
 
             state._fsp--;
@@ -30409,7 +30456,7 @@ public class InternalCssDslParser extends AbstractInternalAntlrParser {
              
                     afterParserOrEnumRuleCall();
                 
-            kw=(Token)match(input,465,FOLLOW_465_in_rulePERCENTAGE28816); 
+            kw=(Token)match(input,465,FOLLOW_465_in_rulePERCENTAGE28841); 
 
                     current.merge(kw);
                     newLeafNode(kw, grammarAccess.getPERCENTAGEAccess().getPercentSignKeyword_1()); 
@@ -30435,7 +30482,7 @@ public class InternalCssDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleEMS"
-    // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12118:1: entryRuleEMS returns [String current=null] : iv_ruleEMS= ruleEMS EOF ;
+    // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12136:1: entryRuleEMS returns [String current=null] : iv_ruleEMS= ruleEMS EOF ;
     public final String entryRuleEMS() throws RecognitionException {
         String current = null;
 
@@ -30443,17 +30490,17 @@ public class InternalCssDslParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12119:2: (iv_ruleEMS= ruleEMS EOF )
-            // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12120:2: iv_ruleEMS= ruleEMS EOF
+            // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12137:2: (iv_ruleEMS= ruleEMS EOF )
+            // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12138:2: iv_ruleEMS= ruleEMS EOF
             {
              newCompositeNode(grammarAccess.getEMSRule()); 
-            pushFollow(FOLLOW_ruleEMS_in_entryRuleEMS28857);
+            pushFollow(FOLLOW_ruleEMS_in_entryRuleEMS28882);
             iv_ruleEMS=ruleEMS();
 
             state._fsp--;
 
              current =iv_ruleEMS.getText(); 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleEMS28868); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleEMS28893); 
 
             }
 
@@ -30471,7 +30518,7 @@ public class InternalCssDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleEMS"
-    // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12127:1: ruleEMS returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (this_num_0= rulenum kw= 'em' ) ;
+    // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12145:1: ruleEMS returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (this_num_0= rulenum kw= 'em' ) ;
     public final AntlrDatatypeRuleToken ruleEMS() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
@@ -30482,16 +30529,16 @@ public class InternalCssDslParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12130:28: ( (this_num_0= rulenum kw= 'em' ) )
-            // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12131:1: (this_num_0= rulenum kw= 'em' )
+            // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12148:28: ( (this_num_0= rulenum kw= 'em' ) )
+            // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12149:1: (this_num_0= rulenum kw= 'em' )
             {
-            // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12131:1: (this_num_0= rulenum kw= 'em' )
-            // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12132:5: this_num_0= rulenum kw= 'em'
+            // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12149:1: (this_num_0= rulenum kw= 'em' )
+            // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12150:5: this_num_0= rulenum kw= 'em'
             {
              
                     newCompositeNode(grammarAccess.getEMSAccess().getNumParserRuleCall_0()); 
                 
-            pushFollow(FOLLOW_rulenum_in_ruleEMS28915);
+            pushFollow(FOLLOW_rulenum_in_ruleEMS28940);
             this_num_0=rulenum();
 
             state._fsp--;
@@ -30502,7 +30549,7 @@ public class InternalCssDslParser extends AbstractInternalAntlrParser {
              
                     afterParserOrEnumRuleCall();
                 
-            kw=(Token)match(input,472,FOLLOW_472_in_ruleEMS28933); 
+            kw=(Token)match(input,472,FOLLOW_472_in_ruleEMS28958); 
 
                     current.merge(kw);
                     newLeafNode(kw, grammarAccess.getEMSAccess().getEmKeyword_1()); 
@@ -30528,7 +30575,7 @@ public class InternalCssDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleEXS"
-    // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12156:1: entryRuleEXS returns [String current=null] : iv_ruleEXS= ruleEXS EOF ;
+    // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12174:1: entryRuleEXS returns [String current=null] : iv_ruleEXS= ruleEXS EOF ;
     public final String entryRuleEXS() throws RecognitionException {
         String current = null;
 
@@ -30536,17 +30583,17 @@ public class InternalCssDslParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12157:2: (iv_ruleEXS= ruleEXS EOF )
-            // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12158:2: iv_ruleEXS= ruleEXS EOF
+            // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12175:2: (iv_ruleEXS= ruleEXS EOF )
+            // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12176:2: iv_ruleEXS= ruleEXS EOF
             {
              newCompositeNode(grammarAccess.getEXSRule()); 
-            pushFollow(FOLLOW_ruleEXS_in_entryRuleEXS28974);
+            pushFollow(FOLLOW_ruleEXS_in_entryRuleEXS28999);
             iv_ruleEXS=ruleEXS();
 
             state._fsp--;
 
              current =iv_ruleEXS.getText(); 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleEXS28985); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleEXS29010); 
 
             }
 
@@ -30564,7 +30611,7 @@ public class InternalCssDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleEXS"
-    // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12165:1: ruleEXS returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (this_num_0= rulenum kw= 'ex' ) ;
+    // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12183:1: ruleEXS returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (this_num_0= rulenum kw= 'ex' ) ;
     public final AntlrDatatypeRuleToken ruleEXS() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
@@ -30575,16 +30622,16 @@ public class InternalCssDslParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12168:28: ( (this_num_0= rulenum kw= 'ex' ) )
-            // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12169:1: (this_num_0= rulenum kw= 'ex' )
+            // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12186:28: ( (this_num_0= rulenum kw= 'ex' ) )
+            // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12187:1: (this_num_0= rulenum kw= 'ex' )
             {
-            // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12169:1: (this_num_0= rulenum kw= 'ex' )
-            // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12170:5: this_num_0= rulenum kw= 'ex'
+            // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12187:1: (this_num_0= rulenum kw= 'ex' )
+            // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12188:5: this_num_0= rulenum kw= 'ex'
             {
              
                     newCompositeNode(grammarAccess.getEXSAccess().getNumParserRuleCall_0()); 
                 
-            pushFollow(FOLLOW_rulenum_in_ruleEXS29032);
+            pushFollow(FOLLOW_rulenum_in_ruleEXS29057);
             this_num_0=rulenum();
 
             state._fsp--;
@@ -30595,7 +30642,7 @@ public class InternalCssDslParser extends AbstractInternalAntlrParser {
              
                     afterParserOrEnumRuleCall();
                 
-            kw=(Token)match(input,473,FOLLOW_473_in_ruleEXS29050); 
+            kw=(Token)match(input,473,FOLLOW_473_in_ruleEXS29075); 
 
                     current.merge(kw);
                     newLeafNode(kw, grammarAccess.getEXSAccess().getExKeyword_1()); 
@@ -30621,7 +30668,7 @@ public class InternalCssDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleLENGTH"
-    // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12194:1: entryRuleLENGTH returns [String current=null] : iv_ruleLENGTH= ruleLENGTH EOF ;
+    // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12212:1: entryRuleLENGTH returns [String current=null] : iv_ruleLENGTH= ruleLENGTH EOF ;
     public final String entryRuleLENGTH() throws RecognitionException {
         String current = null;
 
@@ -30629,17 +30676,17 @@ public class InternalCssDslParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12195:2: (iv_ruleLENGTH= ruleLENGTH EOF )
-            // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12196:2: iv_ruleLENGTH= ruleLENGTH EOF
+            // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12213:2: (iv_ruleLENGTH= ruleLENGTH EOF )
+            // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12214:2: iv_ruleLENGTH= ruleLENGTH EOF
             {
              newCompositeNode(grammarAccess.getLENGTHRule()); 
-            pushFollow(FOLLOW_ruleLENGTH_in_entryRuleLENGTH29091);
+            pushFollow(FOLLOW_ruleLENGTH_in_entryRuleLENGTH29116);
             iv_ruleLENGTH=ruleLENGTH();
 
             state._fsp--;
 
              current =iv_ruleLENGTH.getText(); 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleLENGTH29102); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleLENGTH29127); 
 
             }
 
@@ -30657,7 +30704,7 @@ public class InternalCssDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleLENGTH"
-    // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12203:1: ruleLENGTH returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (this_num_0= rulenum (kw= 'px' | kw= 'cm' | kw= 'mm' | kw= 'in' | kw= 'pt' | kw= 'pc' ) ) ;
+    // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12221:1: ruleLENGTH returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (this_num_0= rulenum (kw= 'px' | kw= 'cm' | kw= 'mm' | kw= 'in' | kw= 'pt' | kw= 'pc' ) ) ;
     public final AntlrDatatypeRuleToken ruleLENGTH() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
@@ -30668,16 +30715,16 @@ public class InternalCssDslParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12206:28: ( (this_num_0= rulenum (kw= 'px' | kw= 'cm' | kw= 'mm' | kw= 'in' | kw= 'pt' | kw= 'pc' ) ) )
-            // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12207:1: (this_num_0= rulenum (kw= 'px' | kw= 'cm' | kw= 'mm' | kw= 'in' | kw= 'pt' | kw= 'pc' ) )
+            // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12224:28: ( (this_num_0= rulenum (kw= 'px' | kw= 'cm' | kw= 'mm' | kw= 'in' | kw= 'pt' | kw= 'pc' ) ) )
+            // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12225:1: (this_num_0= rulenum (kw= 'px' | kw= 'cm' | kw= 'mm' | kw= 'in' | kw= 'pt' | kw= 'pc' ) )
             {
-            // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12207:1: (this_num_0= rulenum (kw= 'px' | kw= 'cm' | kw= 'mm' | kw= 'in' | kw= 'pt' | kw= 'pc' ) )
-            // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12208:5: this_num_0= rulenum (kw= 'px' | kw= 'cm' | kw= 'mm' | kw= 'in' | kw= 'pt' | kw= 'pc' )
+            // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12225:1: (this_num_0= rulenum (kw= 'px' | kw= 'cm' | kw= 'mm' | kw= 'in' | kw= 'pt' | kw= 'pc' ) )
+            // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12226:5: this_num_0= rulenum (kw= 'px' | kw= 'cm' | kw= 'mm' | kw= 'in' | kw= 'pt' | kw= 'pc' )
             {
              
                     newCompositeNode(grammarAccess.getLENGTHAccess().getNumParserRuleCall_0()); 
                 
-            pushFollow(FOLLOW_rulenum_in_ruleLENGTH29149);
+            pushFollow(FOLLOW_rulenum_in_ruleLENGTH29174);
             this_num_0=rulenum();
 
             state._fsp--;
@@ -30688,51 +30735,51 @@ public class InternalCssDslParser extends AbstractInternalAntlrParser {
              
                     afterParserOrEnumRuleCall();
                 
-            // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12218:1: (kw= 'px' | kw= 'cm' | kw= 'mm' | kw= 'in' | kw= 'pt' | kw= 'pc' )
-            int alt252=6;
+            // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12236:1: (kw= 'px' | kw= 'cm' | kw= 'mm' | kw= 'in' | kw= 'pt' | kw= 'pc' )
+            int alt253=6;
             switch ( input.LA(1) ) {
             case 474:
                 {
-                alt252=1;
+                alt253=1;
                 }
                 break;
             case 475:
                 {
-                alt252=2;
+                alt253=2;
                 }
                 break;
             case 476:
                 {
-                alt252=3;
+                alt253=3;
                 }
                 break;
             case 477:
                 {
-                alt252=4;
+                alt253=4;
                 }
                 break;
             case 478:
                 {
-                alt252=5;
+                alt253=5;
                 }
                 break;
             case 479:
                 {
-                alt252=6;
+                alt253=6;
                 }
                 break;
             default:
                 NoViableAltException nvae =
-                    new NoViableAltException("", 252, 0, input);
+                    new NoViableAltException("", 253, 0, input);
 
                 throw nvae;
             }
 
-            switch (alt252) {
+            switch (alt253) {
                 case 1 :
-                    // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12219:2: kw= 'px'
+                    // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12237:2: kw= 'px'
                     {
-                    kw=(Token)match(input,474,FOLLOW_474_in_ruleLENGTH29168); 
+                    kw=(Token)match(input,474,FOLLOW_474_in_ruleLENGTH29193); 
 
                             current.merge(kw);
                             newLeafNode(kw, grammarAccess.getLENGTHAccess().getPxKeyword_1_0()); 
@@ -30741,9 +30788,9 @@ public class InternalCssDslParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12226:2: kw= 'cm'
+                    // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12244:2: kw= 'cm'
                     {
-                    kw=(Token)match(input,475,FOLLOW_475_in_ruleLENGTH29187); 
+                    kw=(Token)match(input,475,FOLLOW_475_in_ruleLENGTH29212); 
 
                             current.merge(kw);
                             newLeafNode(kw, grammarAccess.getLENGTHAccess().getCmKeyword_1_1()); 
@@ -30752,9 +30799,9 @@ public class InternalCssDslParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 3 :
-                    // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12233:2: kw= 'mm'
+                    // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12251:2: kw= 'mm'
                     {
-                    kw=(Token)match(input,476,FOLLOW_476_in_ruleLENGTH29206); 
+                    kw=(Token)match(input,476,FOLLOW_476_in_ruleLENGTH29231); 
 
                             current.merge(kw);
                             newLeafNode(kw, grammarAccess.getLENGTHAccess().getMmKeyword_1_2()); 
@@ -30763,9 +30810,9 @@ public class InternalCssDslParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 4 :
-                    // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12240:2: kw= 'in'
+                    // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12258:2: kw= 'in'
                     {
-                    kw=(Token)match(input,477,FOLLOW_477_in_ruleLENGTH29225); 
+                    kw=(Token)match(input,477,FOLLOW_477_in_ruleLENGTH29250); 
 
                             current.merge(kw);
                             newLeafNode(kw, grammarAccess.getLENGTHAccess().getInKeyword_1_3()); 
@@ -30774,9 +30821,9 @@ public class InternalCssDslParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 5 :
-                    // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12247:2: kw= 'pt'
+                    // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12265:2: kw= 'pt'
                     {
-                    kw=(Token)match(input,478,FOLLOW_478_in_ruleLENGTH29244); 
+                    kw=(Token)match(input,478,FOLLOW_478_in_ruleLENGTH29269); 
 
                             current.merge(kw);
                             newLeafNode(kw, grammarAccess.getLENGTHAccess().getPtKeyword_1_4()); 
@@ -30785,9 +30832,9 @@ public class InternalCssDslParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 6 :
-                    // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12254:2: kw= 'pc'
+                    // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12272:2: kw= 'pc'
                     {
-                    kw=(Token)match(input,479,FOLLOW_479_in_ruleLENGTH29263); 
+                    kw=(Token)match(input,479,FOLLOW_479_in_ruleLENGTH29288); 
 
                             current.merge(kw);
                             newLeafNode(kw, grammarAccess.getLENGTHAccess().getPcKeyword_1_5()); 
@@ -30819,7 +30866,7 @@ public class InternalCssDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleANGLE"
-    // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12267:1: entryRuleANGLE returns [String current=null] : iv_ruleANGLE= ruleANGLE EOF ;
+    // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12285:1: entryRuleANGLE returns [String current=null] : iv_ruleANGLE= ruleANGLE EOF ;
     public final String entryRuleANGLE() throws RecognitionException {
         String current = null;
 
@@ -30827,17 +30874,17 @@ public class InternalCssDslParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12268:2: (iv_ruleANGLE= ruleANGLE EOF )
-            // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12269:2: iv_ruleANGLE= ruleANGLE EOF
+            // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12286:2: (iv_ruleANGLE= ruleANGLE EOF )
+            // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12287:2: iv_ruleANGLE= ruleANGLE EOF
             {
              newCompositeNode(grammarAccess.getANGLERule()); 
-            pushFollow(FOLLOW_ruleANGLE_in_entryRuleANGLE29305);
+            pushFollow(FOLLOW_ruleANGLE_in_entryRuleANGLE29330);
             iv_ruleANGLE=ruleANGLE();
 
             state._fsp--;
 
              current =iv_ruleANGLE.getText(); 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleANGLE29316); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleANGLE29341); 
 
             }
 
@@ -30855,7 +30902,7 @@ public class InternalCssDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleANGLE"
-    // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12276:1: ruleANGLE returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (this_num_0= rulenum (kw= 'deg' | kw= 'rad' | kw= 'grad' ) ) ;
+    // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12294:1: ruleANGLE returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (this_num_0= rulenum (kw= 'deg' | kw= 'rad' | kw= 'grad' ) ) ;
     public final AntlrDatatypeRuleToken ruleANGLE() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
@@ -30866,16 +30913,16 @@ public class InternalCssDslParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12279:28: ( (this_num_0= rulenum (kw= 'deg' | kw= 'rad' | kw= 'grad' ) ) )
-            // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12280:1: (this_num_0= rulenum (kw= 'deg' | kw= 'rad' | kw= 'grad' ) )
+            // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12297:28: ( (this_num_0= rulenum (kw= 'deg' | kw= 'rad' | kw= 'grad' ) ) )
+            // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12298:1: (this_num_0= rulenum (kw= 'deg' | kw= 'rad' | kw= 'grad' ) )
             {
-            // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12280:1: (this_num_0= rulenum (kw= 'deg' | kw= 'rad' | kw= 'grad' ) )
-            // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12281:5: this_num_0= rulenum (kw= 'deg' | kw= 'rad' | kw= 'grad' )
+            // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12298:1: (this_num_0= rulenum (kw= 'deg' | kw= 'rad' | kw= 'grad' ) )
+            // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12299:5: this_num_0= rulenum (kw= 'deg' | kw= 'rad' | kw= 'grad' )
             {
              
                     newCompositeNode(grammarAccess.getANGLEAccess().getNumParserRuleCall_0()); 
                 
-            pushFollow(FOLLOW_rulenum_in_ruleANGLE29363);
+            pushFollow(FOLLOW_rulenum_in_ruleANGLE29388);
             this_num_0=rulenum();
 
             state._fsp--;
@@ -30886,36 +30933,36 @@ public class InternalCssDslParser extends AbstractInternalAntlrParser {
              
                     afterParserOrEnumRuleCall();
                 
-            // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12291:1: (kw= 'deg' | kw= 'rad' | kw= 'grad' )
-            int alt253=3;
+            // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12309:1: (kw= 'deg' | kw= 'rad' | kw= 'grad' )
+            int alt254=3;
             switch ( input.LA(1) ) {
             case 480:
                 {
-                alt253=1;
+                alt254=1;
                 }
                 break;
             case 481:
                 {
-                alt253=2;
+                alt254=2;
                 }
                 break;
             case 482:
                 {
-                alt253=3;
+                alt254=3;
                 }
                 break;
             default:
                 NoViableAltException nvae =
-                    new NoViableAltException("", 253, 0, input);
+                    new NoViableAltException("", 254, 0, input);
 
                 throw nvae;
             }
 
-            switch (alt253) {
+            switch (alt254) {
                 case 1 :
-                    // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12292:2: kw= 'deg'
+                    // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12310:2: kw= 'deg'
                     {
-                    kw=(Token)match(input,480,FOLLOW_480_in_ruleANGLE29382); 
+                    kw=(Token)match(input,480,FOLLOW_480_in_ruleANGLE29407); 
 
                             current.merge(kw);
                             newLeafNode(kw, grammarAccess.getANGLEAccess().getDegKeyword_1_0()); 
@@ -30924,9 +30971,9 @@ public class InternalCssDslParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12299:2: kw= 'rad'
+                    // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12317:2: kw= 'rad'
                     {
-                    kw=(Token)match(input,481,FOLLOW_481_in_ruleANGLE29401); 
+                    kw=(Token)match(input,481,FOLLOW_481_in_ruleANGLE29426); 
 
                             current.merge(kw);
                             newLeafNode(kw, grammarAccess.getANGLEAccess().getRadKeyword_1_1()); 
@@ -30935,9 +30982,9 @@ public class InternalCssDslParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 3 :
-                    // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12306:2: kw= 'grad'
+                    // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12324:2: kw= 'grad'
                     {
-                    kw=(Token)match(input,482,FOLLOW_482_in_ruleANGLE29420); 
+                    kw=(Token)match(input,482,FOLLOW_482_in_ruleANGLE29445); 
 
                             current.merge(kw);
                             newLeafNode(kw, grammarAccess.getANGLEAccess().getGradKeyword_1_2()); 
@@ -30969,7 +31016,7 @@ public class InternalCssDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleTIME"
-    // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12319:1: entryRuleTIME returns [String current=null] : iv_ruleTIME= ruleTIME EOF ;
+    // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12337:1: entryRuleTIME returns [String current=null] : iv_ruleTIME= ruleTIME EOF ;
     public final String entryRuleTIME() throws RecognitionException {
         String current = null;
 
@@ -30977,17 +31024,17 @@ public class InternalCssDslParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12320:2: (iv_ruleTIME= ruleTIME EOF )
-            // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12321:2: iv_ruleTIME= ruleTIME EOF
+            // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12338:2: (iv_ruleTIME= ruleTIME EOF )
+            // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12339:2: iv_ruleTIME= ruleTIME EOF
             {
              newCompositeNode(grammarAccess.getTIMERule()); 
-            pushFollow(FOLLOW_ruleTIME_in_entryRuleTIME29462);
+            pushFollow(FOLLOW_ruleTIME_in_entryRuleTIME29487);
             iv_ruleTIME=ruleTIME();
 
             state._fsp--;
 
              current =iv_ruleTIME.getText(); 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleTIME29473); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleTIME29498); 
 
             }
 
@@ -31005,7 +31052,7 @@ public class InternalCssDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleTIME"
-    // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12328:1: ruleTIME returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (this_num_0= rulenum (kw= 'ms' | kw= 's' ) ) ;
+    // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12346:1: ruleTIME returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (this_num_0= rulenum (kw= 'ms' | kw= 's' ) ) ;
     public final AntlrDatatypeRuleToken ruleTIME() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
@@ -31016,16 +31063,16 @@ public class InternalCssDslParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12331:28: ( (this_num_0= rulenum (kw= 'ms' | kw= 's' ) ) )
-            // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12332:1: (this_num_0= rulenum (kw= 'ms' | kw= 's' ) )
+            // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12349:28: ( (this_num_0= rulenum (kw= 'ms' | kw= 's' ) ) )
+            // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12350:1: (this_num_0= rulenum (kw= 'ms' | kw= 's' ) )
             {
-            // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12332:1: (this_num_0= rulenum (kw= 'ms' | kw= 's' ) )
-            // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12333:5: this_num_0= rulenum (kw= 'ms' | kw= 's' )
+            // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12350:1: (this_num_0= rulenum (kw= 'ms' | kw= 's' ) )
+            // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12351:5: this_num_0= rulenum (kw= 'ms' | kw= 's' )
             {
              
                     newCompositeNode(grammarAccess.getTIMEAccess().getNumParserRuleCall_0()); 
                 
-            pushFollow(FOLLOW_rulenum_in_ruleTIME29520);
+            pushFollow(FOLLOW_rulenum_in_ruleTIME29545);
             this_num_0=rulenum();
 
             state._fsp--;
@@ -31036,27 +31083,27 @@ public class InternalCssDslParser extends AbstractInternalAntlrParser {
              
                     afterParserOrEnumRuleCall();
                 
-            // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12343:1: (kw= 'ms' | kw= 's' )
-            int alt254=2;
-            int LA254_0 = input.LA(1);
+            // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12361:1: (kw= 'ms' | kw= 's' )
+            int alt255=2;
+            int LA255_0 = input.LA(1);
 
-            if ( (LA254_0==483) ) {
-                alt254=1;
+            if ( (LA255_0==483) ) {
+                alt255=1;
             }
-            else if ( (LA254_0==484) ) {
-                alt254=2;
+            else if ( (LA255_0==484) ) {
+                alt255=2;
             }
             else {
                 NoViableAltException nvae =
-                    new NoViableAltException("", 254, 0, input);
+                    new NoViableAltException("", 255, 0, input);
 
                 throw nvae;
             }
-            switch (alt254) {
+            switch (alt255) {
                 case 1 :
-                    // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12344:2: kw= 'ms'
+                    // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12362:2: kw= 'ms'
                     {
-                    kw=(Token)match(input,483,FOLLOW_483_in_ruleTIME29539); 
+                    kw=(Token)match(input,483,FOLLOW_483_in_ruleTIME29564); 
 
                             current.merge(kw);
                             newLeafNode(kw, grammarAccess.getTIMEAccess().getMsKeyword_1_0()); 
@@ -31065,9 +31112,9 @@ public class InternalCssDslParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12351:2: kw= 's'
+                    // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12369:2: kw= 's'
                     {
-                    kw=(Token)match(input,484,FOLLOW_484_in_ruleTIME29558); 
+                    kw=(Token)match(input,484,FOLLOW_484_in_ruleTIME29583); 
 
                             current.merge(kw);
                             newLeafNode(kw, grammarAccess.getTIMEAccess().getSKeyword_1_1()); 
@@ -31099,7 +31146,7 @@ public class InternalCssDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleFREQ"
-    // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12364:1: entryRuleFREQ returns [String current=null] : iv_ruleFREQ= ruleFREQ EOF ;
+    // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12382:1: entryRuleFREQ returns [String current=null] : iv_ruleFREQ= ruleFREQ EOF ;
     public final String entryRuleFREQ() throws RecognitionException {
         String current = null;
 
@@ -31107,17 +31154,17 @@ public class InternalCssDslParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12365:2: (iv_ruleFREQ= ruleFREQ EOF )
-            // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12366:2: iv_ruleFREQ= ruleFREQ EOF
+            // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12383:2: (iv_ruleFREQ= ruleFREQ EOF )
+            // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12384:2: iv_ruleFREQ= ruleFREQ EOF
             {
              newCompositeNode(grammarAccess.getFREQRule()); 
-            pushFollow(FOLLOW_ruleFREQ_in_entryRuleFREQ29600);
+            pushFollow(FOLLOW_ruleFREQ_in_entryRuleFREQ29625);
             iv_ruleFREQ=ruleFREQ();
 
             state._fsp--;
 
              current =iv_ruleFREQ.getText(); 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleFREQ29611); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleFREQ29636); 
 
             }
 
@@ -31135,7 +31182,7 @@ public class InternalCssDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleFREQ"
-    // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12373:1: ruleFREQ returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (this_num_0= rulenum (kw= 'hz' | kw= 'khz' ) ) ;
+    // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12391:1: ruleFREQ returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (this_num_0= rulenum (kw= 'hz' | kw= 'khz' ) ) ;
     public final AntlrDatatypeRuleToken ruleFREQ() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
@@ -31146,16 +31193,16 @@ public class InternalCssDslParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12376:28: ( (this_num_0= rulenum (kw= 'hz' | kw= 'khz' ) ) )
-            // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12377:1: (this_num_0= rulenum (kw= 'hz' | kw= 'khz' ) )
+            // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12394:28: ( (this_num_0= rulenum (kw= 'hz' | kw= 'khz' ) ) )
+            // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12395:1: (this_num_0= rulenum (kw= 'hz' | kw= 'khz' ) )
             {
-            // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12377:1: (this_num_0= rulenum (kw= 'hz' | kw= 'khz' ) )
-            // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12378:5: this_num_0= rulenum (kw= 'hz' | kw= 'khz' )
+            // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12395:1: (this_num_0= rulenum (kw= 'hz' | kw= 'khz' ) )
+            // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12396:5: this_num_0= rulenum (kw= 'hz' | kw= 'khz' )
             {
              
                     newCompositeNode(grammarAccess.getFREQAccess().getNumParserRuleCall_0()); 
                 
-            pushFollow(FOLLOW_rulenum_in_ruleFREQ29658);
+            pushFollow(FOLLOW_rulenum_in_ruleFREQ29683);
             this_num_0=rulenum();
 
             state._fsp--;
@@ -31166,27 +31213,27 @@ public class InternalCssDslParser extends AbstractInternalAntlrParser {
              
                     afterParserOrEnumRuleCall();
                 
-            // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12388:1: (kw= 'hz' | kw= 'khz' )
-            int alt255=2;
-            int LA255_0 = input.LA(1);
+            // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12406:1: (kw= 'hz' | kw= 'khz' )
+            int alt256=2;
+            int LA256_0 = input.LA(1);
 
-            if ( (LA255_0==485) ) {
-                alt255=1;
+            if ( (LA256_0==485) ) {
+                alt256=1;
             }
-            else if ( (LA255_0==486) ) {
-                alt255=2;
+            else if ( (LA256_0==486) ) {
+                alt256=2;
             }
             else {
                 NoViableAltException nvae =
-                    new NoViableAltException("", 255, 0, input);
+                    new NoViableAltException("", 256, 0, input);
 
                 throw nvae;
             }
-            switch (alt255) {
+            switch (alt256) {
                 case 1 :
-                    // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12389:2: kw= 'hz'
+                    // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12407:2: kw= 'hz'
                     {
-                    kw=(Token)match(input,485,FOLLOW_485_in_ruleFREQ29677); 
+                    kw=(Token)match(input,485,FOLLOW_485_in_ruleFREQ29702); 
 
                             current.merge(kw);
                             newLeafNode(kw, grammarAccess.getFREQAccess().getHzKeyword_1_0()); 
@@ -31195,9 +31242,9 @@ public class InternalCssDslParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12396:2: kw= 'khz'
+                    // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12414:2: kw= 'khz'
                     {
-                    kw=(Token)match(input,486,FOLLOW_486_in_ruleFREQ29696); 
+                    kw=(Token)match(input,486,FOLLOW_486_in_ruleFREQ29721); 
 
                             current.merge(kw);
                             newLeafNode(kw, grammarAccess.getFREQAccess().getKhzKeyword_1_1()); 
@@ -31229,7 +31276,7 @@ public class InternalCssDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleFONT"
-    // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12409:1: entryRuleFONT returns [EObject current=null] : iv_ruleFONT= ruleFONT EOF ;
+    // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12427:1: entryRuleFONT returns [EObject current=null] : iv_ruleFONT= ruleFONT EOF ;
     public final EObject entryRuleFONT() throws RecognitionException {
         EObject current = null;
 
@@ -31237,17 +31284,17 @@ public class InternalCssDslParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12410:2: (iv_ruleFONT= ruleFONT EOF )
-            // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12411:2: iv_ruleFONT= ruleFONT EOF
+            // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12428:2: (iv_ruleFONT= ruleFONT EOF )
+            // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12429:2: iv_ruleFONT= ruleFONT EOF
             {
              newCompositeNode(grammarAccess.getFONTRule()); 
-            pushFollow(FOLLOW_ruleFONT_in_entryRuleFONT29737);
+            pushFollow(FOLLOW_ruleFONT_in_entryRuleFONT29762);
             iv_ruleFONT=ruleFONT();
 
             state._fsp--;
 
              current =iv_ruleFONT; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleFONT29747); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleFONT29772); 
 
             }
 
@@ -31265,7 +31312,7 @@ public class InternalCssDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleFONT"
-    // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12418:1: ruleFONT returns [EObject current=null] : ( ( ( ( ( (lv_styleOrWeightString_0_1= 'italic' | lv_styleOrWeightString_0_2= 'oblique' | lv_styleOrWeightString_0_3= 'normal' | lv_styleOrWeightString_0_4= 'bold' | lv_styleOrWeightString_0_5= 'bolder' | lv_styleOrWeightString_0_6= 'lighter' ) ) ) | ( (lv_weight_1_0= rulenum ) ) ) (this_WS_2= RULE_WS )+ )? ( (lv_size_3_0= ruleSIZE ) ) (this_WS_4= RULE_WS )* ( (lv_family_5_0= ruleFONTFAMILY ) ) ) ;
+    // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12436:1: ruleFONT returns [EObject current=null] : ( ( ( ( ( (lv_styleOrWeightString_0_1= 'italic' | lv_styleOrWeightString_0_2= 'oblique' | lv_styleOrWeightString_0_3= 'normal' | lv_styleOrWeightString_0_4= 'bold' | lv_styleOrWeightString_0_5= 'bolder' | lv_styleOrWeightString_0_6= 'lighter' ) ) ) | ( (lv_weight_1_0= rulenum ) ) ) (this_WS_2= RULE_WS )+ )? ( (lv_size_3_0= ruleSIZE ) ) (this_WS_4= RULE_WS )* ( (lv_family_5_0= ruleFONTFAMILY ) ) ) ;
     public final EObject ruleFONT() throws RecognitionException {
         EObject current = null;
 
@@ -31287,90 +31334,90 @@ public class InternalCssDslParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12421:28: ( ( ( ( ( ( (lv_styleOrWeightString_0_1= 'italic' | lv_styleOrWeightString_0_2= 'oblique' | lv_styleOrWeightString_0_3= 'normal' | lv_styleOrWeightString_0_4= 'bold' | lv_styleOrWeightString_0_5= 'bolder' | lv_styleOrWeightString_0_6= 'lighter' ) ) ) | ( (lv_weight_1_0= rulenum ) ) ) (this_WS_2= RULE_WS )+ )? ( (lv_size_3_0= ruleSIZE ) ) (this_WS_4= RULE_WS )* ( (lv_family_5_0= ruleFONTFAMILY ) ) ) )
-            // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12422:1: ( ( ( ( ( (lv_styleOrWeightString_0_1= 'italic' | lv_styleOrWeightString_0_2= 'oblique' | lv_styleOrWeightString_0_3= 'normal' | lv_styleOrWeightString_0_4= 'bold' | lv_styleOrWeightString_0_5= 'bolder' | lv_styleOrWeightString_0_6= 'lighter' ) ) ) | ( (lv_weight_1_0= rulenum ) ) ) (this_WS_2= RULE_WS )+ )? ( (lv_size_3_0= ruleSIZE ) ) (this_WS_4= RULE_WS )* ( (lv_family_5_0= ruleFONTFAMILY ) ) )
+            // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12439:28: ( ( ( ( ( ( (lv_styleOrWeightString_0_1= 'italic' | lv_styleOrWeightString_0_2= 'oblique' | lv_styleOrWeightString_0_3= 'normal' | lv_styleOrWeightString_0_4= 'bold' | lv_styleOrWeightString_0_5= 'bolder' | lv_styleOrWeightString_0_6= 'lighter' ) ) ) | ( (lv_weight_1_0= rulenum ) ) ) (this_WS_2= RULE_WS )+ )? ( (lv_size_3_0= ruleSIZE ) ) (this_WS_4= RULE_WS )* ( (lv_family_5_0= ruleFONTFAMILY ) ) ) )
+            // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12440:1: ( ( ( ( ( (lv_styleOrWeightString_0_1= 'italic' | lv_styleOrWeightString_0_2= 'oblique' | lv_styleOrWeightString_0_3= 'normal' | lv_styleOrWeightString_0_4= 'bold' | lv_styleOrWeightString_0_5= 'bolder' | lv_styleOrWeightString_0_6= 'lighter' ) ) ) | ( (lv_weight_1_0= rulenum ) ) ) (this_WS_2= RULE_WS )+ )? ( (lv_size_3_0= ruleSIZE ) ) (this_WS_4= RULE_WS )* ( (lv_family_5_0= ruleFONTFAMILY ) ) )
             {
-            // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12422:1: ( ( ( ( ( (lv_styleOrWeightString_0_1= 'italic' | lv_styleOrWeightString_0_2= 'oblique' | lv_styleOrWeightString_0_3= 'normal' | lv_styleOrWeightString_0_4= 'bold' | lv_styleOrWeightString_0_5= 'bolder' | lv_styleOrWeightString_0_6= 'lighter' ) ) ) | ( (lv_weight_1_0= rulenum ) ) ) (this_WS_2= RULE_WS )+ )? ( (lv_size_3_0= ruleSIZE ) ) (this_WS_4= RULE_WS )* ( (lv_family_5_0= ruleFONTFAMILY ) ) )
-            // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12422:2: ( ( ( ( (lv_styleOrWeightString_0_1= 'italic' | lv_styleOrWeightString_0_2= 'oblique' | lv_styleOrWeightString_0_3= 'normal' | lv_styleOrWeightString_0_4= 'bold' | lv_styleOrWeightString_0_5= 'bolder' | lv_styleOrWeightString_0_6= 'lighter' ) ) ) | ( (lv_weight_1_0= rulenum ) ) ) (this_WS_2= RULE_WS )+ )? ( (lv_size_3_0= ruleSIZE ) ) (this_WS_4= RULE_WS )* ( (lv_family_5_0= ruleFONTFAMILY ) )
+            // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12440:1: ( ( ( ( ( (lv_styleOrWeightString_0_1= 'italic' | lv_styleOrWeightString_0_2= 'oblique' | lv_styleOrWeightString_0_3= 'normal' | lv_styleOrWeightString_0_4= 'bold' | lv_styleOrWeightString_0_5= 'bolder' | lv_styleOrWeightString_0_6= 'lighter' ) ) ) | ( (lv_weight_1_0= rulenum ) ) ) (this_WS_2= RULE_WS )+ )? ( (lv_size_3_0= ruleSIZE ) ) (this_WS_4= RULE_WS )* ( (lv_family_5_0= ruleFONTFAMILY ) ) )
+            // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12440:2: ( ( ( ( (lv_styleOrWeightString_0_1= 'italic' | lv_styleOrWeightString_0_2= 'oblique' | lv_styleOrWeightString_0_3= 'normal' | lv_styleOrWeightString_0_4= 'bold' | lv_styleOrWeightString_0_5= 'bolder' | lv_styleOrWeightString_0_6= 'lighter' ) ) ) | ( (lv_weight_1_0= rulenum ) ) ) (this_WS_2= RULE_WS )+ )? ( (lv_size_3_0= ruleSIZE ) ) (this_WS_4= RULE_WS )* ( (lv_family_5_0= ruleFONTFAMILY ) )
             {
-            // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12422:2: ( ( ( ( (lv_styleOrWeightString_0_1= 'italic' | lv_styleOrWeightString_0_2= 'oblique' | lv_styleOrWeightString_0_3= 'normal' | lv_styleOrWeightString_0_4= 'bold' | lv_styleOrWeightString_0_5= 'bolder' | lv_styleOrWeightString_0_6= 'lighter' ) ) ) | ( (lv_weight_1_0= rulenum ) ) ) (this_WS_2= RULE_WS )+ )?
-            int alt259=2;
-            alt259 = dfa259.predict(input);
-            switch (alt259) {
+            // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12440:2: ( ( ( ( (lv_styleOrWeightString_0_1= 'italic' | lv_styleOrWeightString_0_2= 'oblique' | lv_styleOrWeightString_0_3= 'normal' | lv_styleOrWeightString_0_4= 'bold' | lv_styleOrWeightString_0_5= 'bolder' | lv_styleOrWeightString_0_6= 'lighter' ) ) ) | ( (lv_weight_1_0= rulenum ) ) ) (this_WS_2= RULE_WS )+ )?
+            int alt260=2;
+            alt260 = dfa260.predict(input);
+            switch (alt260) {
                 case 1 :
-                    // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12422:3: ( ( ( (lv_styleOrWeightString_0_1= 'italic' | lv_styleOrWeightString_0_2= 'oblique' | lv_styleOrWeightString_0_3= 'normal' | lv_styleOrWeightString_0_4= 'bold' | lv_styleOrWeightString_0_5= 'bolder' | lv_styleOrWeightString_0_6= 'lighter' ) ) ) | ( (lv_weight_1_0= rulenum ) ) ) (this_WS_2= RULE_WS )+
+                    // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12440:3: ( ( ( (lv_styleOrWeightString_0_1= 'italic' | lv_styleOrWeightString_0_2= 'oblique' | lv_styleOrWeightString_0_3= 'normal' | lv_styleOrWeightString_0_4= 'bold' | lv_styleOrWeightString_0_5= 'bolder' | lv_styleOrWeightString_0_6= 'lighter' ) ) ) | ( (lv_weight_1_0= rulenum ) ) ) (this_WS_2= RULE_WS )+
                     {
-                    // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12422:3: ( ( ( (lv_styleOrWeightString_0_1= 'italic' | lv_styleOrWeightString_0_2= 'oblique' | lv_styleOrWeightString_0_3= 'normal' | lv_styleOrWeightString_0_4= 'bold' | lv_styleOrWeightString_0_5= 'bolder' | lv_styleOrWeightString_0_6= 'lighter' ) ) ) | ( (lv_weight_1_0= rulenum ) ) )
-                    int alt257=2;
-                    int LA257_0 = input.LA(1);
+                    // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12440:3: ( ( ( (lv_styleOrWeightString_0_1= 'italic' | lv_styleOrWeightString_0_2= 'oblique' | lv_styleOrWeightString_0_3= 'normal' | lv_styleOrWeightString_0_4= 'bold' | lv_styleOrWeightString_0_5= 'bolder' | lv_styleOrWeightString_0_6= 'lighter' ) ) ) | ( (lv_weight_1_0= rulenum ) ) )
+                    int alt258=2;
+                    int LA258_0 = input.LA(1);
 
-                    if ( ((LA257_0>=487 && LA257_0<=492)) ) {
-                        alt257=1;
+                    if ( ((LA258_0>=487 && LA258_0<=492)) ) {
+                        alt258=1;
                     }
-                    else if ( ((LA257_0>=RULE_INTEGER && LA257_0<=RULE_REAL)) ) {
-                        alt257=2;
+                    else if ( ((LA258_0>=RULE_INTEGER && LA258_0<=RULE_REAL)) ) {
+                        alt258=2;
                     }
                     else {
                         NoViableAltException nvae =
-                            new NoViableAltException("", 257, 0, input);
+                            new NoViableAltException("", 258, 0, input);
 
                         throw nvae;
                     }
-                    switch (alt257) {
+                    switch (alt258) {
                         case 1 :
-                            // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12422:4: ( ( (lv_styleOrWeightString_0_1= 'italic' | lv_styleOrWeightString_0_2= 'oblique' | lv_styleOrWeightString_0_3= 'normal' | lv_styleOrWeightString_0_4= 'bold' | lv_styleOrWeightString_0_5= 'bolder' | lv_styleOrWeightString_0_6= 'lighter' ) ) )
+                            // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12440:4: ( ( (lv_styleOrWeightString_0_1= 'italic' | lv_styleOrWeightString_0_2= 'oblique' | lv_styleOrWeightString_0_3= 'normal' | lv_styleOrWeightString_0_4= 'bold' | lv_styleOrWeightString_0_5= 'bolder' | lv_styleOrWeightString_0_6= 'lighter' ) ) )
                             {
-                            // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12422:4: ( ( (lv_styleOrWeightString_0_1= 'italic' | lv_styleOrWeightString_0_2= 'oblique' | lv_styleOrWeightString_0_3= 'normal' | lv_styleOrWeightString_0_4= 'bold' | lv_styleOrWeightString_0_5= 'bolder' | lv_styleOrWeightString_0_6= 'lighter' ) ) )
-                            // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12423:1: ( (lv_styleOrWeightString_0_1= 'italic' | lv_styleOrWeightString_0_2= 'oblique' | lv_styleOrWeightString_0_3= 'normal' | lv_styleOrWeightString_0_4= 'bold' | lv_styleOrWeightString_0_5= 'bolder' | lv_styleOrWeightString_0_6= 'lighter' ) )
+                            // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12440:4: ( ( (lv_styleOrWeightString_0_1= 'italic' | lv_styleOrWeightString_0_2= 'oblique' | lv_styleOrWeightString_0_3= 'normal' | lv_styleOrWeightString_0_4= 'bold' | lv_styleOrWeightString_0_5= 'bolder' | lv_styleOrWeightString_0_6= 'lighter' ) ) )
+                            // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12441:1: ( (lv_styleOrWeightString_0_1= 'italic' | lv_styleOrWeightString_0_2= 'oblique' | lv_styleOrWeightString_0_3= 'normal' | lv_styleOrWeightString_0_4= 'bold' | lv_styleOrWeightString_0_5= 'bolder' | lv_styleOrWeightString_0_6= 'lighter' ) )
                             {
-                            // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12423:1: ( (lv_styleOrWeightString_0_1= 'italic' | lv_styleOrWeightString_0_2= 'oblique' | lv_styleOrWeightString_0_3= 'normal' | lv_styleOrWeightString_0_4= 'bold' | lv_styleOrWeightString_0_5= 'bolder' | lv_styleOrWeightString_0_6= 'lighter' ) )
-                            // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12424:1: (lv_styleOrWeightString_0_1= 'italic' | lv_styleOrWeightString_0_2= 'oblique' | lv_styleOrWeightString_0_3= 'normal' | lv_styleOrWeightString_0_4= 'bold' | lv_styleOrWeightString_0_5= 'bolder' | lv_styleOrWeightString_0_6= 'lighter' )
+                            // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12441:1: ( (lv_styleOrWeightString_0_1= 'italic' | lv_styleOrWeightString_0_2= 'oblique' | lv_styleOrWeightString_0_3= 'normal' | lv_styleOrWeightString_0_4= 'bold' | lv_styleOrWeightString_0_5= 'bolder' | lv_styleOrWeightString_0_6= 'lighter' ) )
+                            // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12442:1: (lv_styleOrWeightString_0_1= 'italic' | lv_styleOrWeightString_0_2= 'oblique' | lv_styleOrWeightString_0_3= 'normal' | lv_styleOrWeightString_0_4= 'bold' | lv_styleOrWeightString_0_5= 'bolder' | lv_styleOrWeightString_0_6= 'lighter' )
                             {
-                            // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12424:1: (lv_styleOrWeightString_0_1= 'italic' | lv_styleOrWeightString_0_2= 'oblique' | lv_styleOrWeightString_0_3= 'normal' | lv_styleOrWeightString_0_4= 'bold' | lv_styleOrWeightString_0_5= 'bolder' | lv_styleOrWeightString_0_6= 'lighter' )
-                            int alt256=6;
+                            // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12442:1: (lv_styleOrWeightString_0_1= 'italic' | lv_styleOrWeightString_0_2= 'oblique' | lv_styleOrWeightString_0_3= 'normal' | lv_styleOrWeightString_0_4= 'bold' | lv_styleOrWeightString_0_5= 'bolder' | lv_styleOrWeightString_0_6= 'lighter' )
+                            int alt257=6;
                             switch ( input.LA(1) ) {
                             case 487:
                                 {
-                                alt256=1;
+                                alt257=1;
                                 }
                                 break;
                             case 488:
                                 {
-                                alt256=2;
+                                alt257=2;
                                 }
                                 break;
                             case 489:
                                 {
-                                alt256=3;
+                                alt257=3;
                                 }
                                 break;
                             case 490:
                                 {
-                                alt256=4;
+                                alt257=4;
                                 }
                                 break;
                             case 491:
                                 {
-                                alt256=5;
+                                alt257=5;
                                 }
                                 break;
                             case 492:
                                 {
-                                alt256=6;
+                                alt257=6;
                                 }
                                 break;
                             default:
                                 NoViableAltException nvae =
-                                    new NoViableAltException("", 256, 0, input);
+                                    new NoViableAltException("", 257, 0, input);
 
                                 throw nvae;
                             }
 
-                            switch (alt256) {
+                            switch (alt257) {
                                 case 1 :
-                                    // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12425:3: lv_styleOrWeightString_0_1= 'italic'
+                                    // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12443:3: lv_styleOrWeightString_0_1= 'italic'
                                     {
-                                    lv_styleOrWeightString_0_1=(Token)match(input,487,FOLLOW_487_in_ruleFONT29794); 
+                                    lv_styleOrWeightString_0_1=(Token)match(input,487,FOLLOW_487_in_ruleFONT29819); 
 
                                             newLeafNode(lv_styleOrWeightString_0_1, grammarAccess.getFONTAccess().getStyleOrWeightStringItalicKeyword_0_0_0_0_0());
                                         
@@ -31384,9 +31431,9 @@ public class InternalCssDslParser extends AbstractInternalAntlrParser {
                                     }
                                     break;
                                 case 2 :
-                                    // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12437:8: lv_styleOrWeightString_0_2= 'oblique'
+                                    // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12455:8: lv_styleOrWeightString_0_2= 'oblique'
                                     {
-                                    lv_styleOrWeightString_0_2=(Token)match(input,488,FOLLOW_488_in_ruleFONT29823); 
+                                    lv_styleOrWeightString_0_2=(Token)match(input,488,FOLLOW_488_in_ruleFONT29848); 
 
                                             newLeafNode(lv_styleOrWeightString_0_2, grammarAccess.getFONTAccess().getStyleOrWeightStringObliqueKeyword_0_0_0_0_1());
                                         
@@ -31400,9 +31447,9 @@ public class InternalCssDslParser extends AbstractInternalAntlrParser {
                                     }
                                     break;
                                 case 3 :
-                                    // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12449:8: lv_styleOrWeightString_0_3= 'normal'
+                                    // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12467:8: lv_styleOrWeightString_0_3= 'normal'
                                     {
-                                    lv_styleOrWeightString_0_3=(Token)match(input,489,FOLLOW_489_in_ruleFONT29852); 
+                                    lv_styleOrWeightString_0_3=(Token)match(input,489,FOLLOW_489_in_ruleFONT29877); 
 
                                             newLeafNode(lv_styleOrWeightString_0_3, grammarAccess.getFONTAccess().getStyleOrWeightStringNormalKeyword_0_0_0_0_2());
                                         
@@ -31416,9 +31463,9 @@ public class InternalCssDslParser extends AbstractInternalAntlrParser {
                                     }
                                     break;
                                 case 4 :
-                                    // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12461:8: lv_styleOrWeightString_0_4= 'bold'
+                                    // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12479:8: lv_styleOrWeightString_0_4= 'bold'
                                     {
-                                    lv_styleOrWeightString_0_4=(Token)match(input,490,FOLLOW_490_in_ruleFONT29881); 
+                                    lv_styleOrWeightString_0_4=(Token)match(input,490,FOLLOW_490_in_ruleFONT29906); 
 
                                             newLeafNode(lv_styleOrWeightString_0_4, grammarAccess.getFONTAccess().getStyleOrWeightStringBoldKeyword_0_0_0_0_3());
                                         
@@ -31432,9 +31479,9 @@ public class InternalCssDslParser extends AbstractInternalAntlrParser {
                                     }
                                     break;
                                 case 5 :
-                                    // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12473:8: lv_styleOrWeightString_0_5= 'bolder'
+                                    // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12491:8: lv_styleOrWeightString_0_5= 'bolder'
                                     {
-                                    lv_styleOrWeightString_0_5=(Token)match(input,491,FOLLOW_491_in_ruleFONT29910); 
+                                    lv_styleOrWeightString_0_5=(Token)match(input,491,FOLLOW_491_in_ruleFONT29935); 
 
                                             newLeafNode(lv_styleOrWeightString_0_5, grammarAccess.getFONTAccess().getStyleOrWeightStringBolderKeyword_0_0_0_0_4());
                                         
@@ -31448,9 +31495,9 @@ public class InternalCssDslParser extends AbstractInternalAntlrParser {
                                     }
                                     break;
                                 case 6 :
-                                    // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12485:8: lv_styleOrWeightString_0_6= 'lighter'
+                                    // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12503:8: lv_styleOrWeightString_0_6= 'lighter'
                                     {
-                                    lv_styleOrWeightString_0_6=(Token)match(input,492,FOLLOW_492_in_ruleFONT29939); 
+                                    lv_styleOrWeightString_0_6=(Token)match(input,492,FOLLOW_492_in_ruleFONT29964); 
 
                                             newLeafNode(lv_styleOrWeightString_0_6, grammarAccess.getFONTAccess().getStyleOrWeightStringLighterKeyword_0_0_0_0_5());
                                         
@@ -31476,18 +31523,18 @@ public class InternalCssDslParser extends AbstractInternalAntlrParser {
                             }
                             break;
                         case 2 :
-                            // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12501:6: ( (lv_weight_1_0= rulenum ) )
+                            // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12519:6: ( (lv_weight_1_0= rulenum ) )
                             {
-                            // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12501:6: ( (lv_weight_1_0= rulenum ) )
-                            // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12502:1: (lv_weight_1_0= rulenum )
+                            // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12519:6: ( (lv_weight_1_0= rulenum ) )
+                            // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12520:1: (lv_weight_1_0= rulenum )
                             {
-                            // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12502:1: (lv_weight_1_0= rulenum )
-                            // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12503:3: lv_weight_1_0= rulenum
+                            // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12520:1: (lv_weight_1_0= rulenum )
+                            // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12521:3: lv_weight_1_0= rulenum
                             {
                              
                             	        newCompositeNode(grammarAccess.getFONTAccess().getWeightNumParserRuleCall_0_0_1_0()); 
                             	    
-                            pushFollow(FOLLOW_rulenum_in_ruleFONT29982);
+                            pushFollow(FOLLOW_rulenum_in_ruleFONT30007);
                             lv_weight_1_0=rulenum();
 
                             state._fsp--;
@@ -31515,23 +31562,23 @@ public class InternalCssDslParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12519:3: (this_WS_2= RULE_WS )+
-                    int cnt258=0;
-                    loop258:
+                    // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12537:3: (this_WS_2= RULE_WS )+
+                    int cnt259=0;
+                    loop259:
                     do {
-                        int alt258=2;
-                        int LA258_0 = input.LA(1);
+                        int alt259=2;
+                        int LA259_0 = input.LA(1);
 
-                        if ( (LA258_0==RULE_WS) ) {
-                            alt258=1;
+                        if ( (LA259_0==RULE_WS) ) {
+                            alt259=1;
                         }
 
 
-                        switch (alt258) {
+                        switch (alt259) {
                     	case 1 :
-                    	    // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12519:4: this_WS_2= RULE_WS
+                    	    // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12537:4: this_WS_2= RULE_WS
                     	    {
-                    	    this_WS_2=(Token)match(input,RULE_WS,FOLLOW_RULE_WS_in_ruleFONT29995); 
+                    	    this_WS_2=(Token)match(input,RULE_WS,FOLLOW_RULE_WS_in_ruleFONT30020); 
                     	     
                     	        newLeafNode(this_WS_2, grammarAccess.getFONTAccess().getWSTerminalRuleCall_0_1()); 
                     	        
@@ -31540,12 +31587,12 @@ public class InternalCssDslParser extends AbstractInternalAntlrParser {
                     	    break;
 
                     	default :
-                    	    if ( cnt258 >= 1 ) break loop258;
+                    	    if ( cnt259 >= 1 ) break loop259;
                                 EarlyExitException eee =
-                                    new EarlyExitException(258, input);
+                                    new EarlyExitException(259, input);
                                 throw eee;
                         }
-                        cnt258++;
+                        cnt259++;
                     } while (true);
 
 
@@ -31554,16 +31601,16 @@ public class InternalCssDslParser extends AbstractInternalAntlrParser {
 
             }
 
-            // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12523:5: ( (lv_size_3_0= ruleSIZE ) )
-            // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12524:1: (lv_size_3_0= ruleSIZE )
+            // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12541:5: ( (lv_size_3_0= ruleSIZE ) )
+            // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12542:1: (lv_size_3_0= ruleSIZE )
             {
-            // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12524:1: (lv_size_3_0= ruleSIZE )
-            // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12525:3: lv_size_3_0= ruleSIZE
+            // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12542:1: (lv_size_3_0= ruleSIZE )
+            // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12543:3: lv_size_3_0= ruleSIZE
             {
              
             	        newCompositeNode(grammarAccess.getFONTAccess().getSizeSIZEParserRuleCall_1_0()); 
             	    
-            pushFollow(FOLLOW_ruleSIZE_in_ruleFONT30019);
+            pushFollow(FOLLOW_ruleSIZE_in_ruleFONT30044);
             lv_size_3_0=ruleSIZE();
 
             state._fsp--;
@@ -31585,22 +31632,22 @@ public class InternalCssDslParser extends AbstractInternalAntlrParser {
 
             }
 
-            // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12541:2: (this_WS_4= RULE_WS )*
-            loop260:
+            // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12559:2: (this_WS_4= RULE_WS )*
+            loop261:
             do {
-                int alt260=2;
-                int LA260_0 = input.LA(1);
+                int alt261=2;
+                int LA261_0 = input.LA(1);
 
-                if ( (LA260_0==RULE_WS) ) {
-                    alt260=1;
+                if ( (LA261_0==RULE_WS) ) {
+                    alt261=1;
                 }
 
 
-                switch (alt260) {
+                switch (alt261) {
             	case 1 :
-            	    // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12541:3: this_WS_4= RULE_WS
+            	    // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12559:3: this_WS_4= RULE_WS
             	    {
-            	    this_WS_4=(Token)match(input,RULE_WS,FOLLOW_RULE_WS_in_ruleFONT30031); 
+            	    this_WS_4=(Token)match(input,RULE_WS,FOLLOW_RULE_WS_in_ruleFONT30056); 
             	     
             	        newLeafNode(this_WS_4, grammarAccess.getFONTAccess().getWSTerminalRuleCall_2()); 
             	        
@@ -31609,20 +31656,20 @@ public class InternalCssDslParser extends AbstractInternalAntlrParser {
             	    break;
 
             	default :
-            	    break loop260;
+            	    break loop261;
                 }
             } while (true);
 
-            // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12545:3: ( (lv_family_5_0= ruleFONTFAMILY ) )
-            // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12546:1: (lv_family_5_0= ruleFONTFAMILY )
+            // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12563:3: ( (lv_family_5_0= ruleFONTFAMILY ) )
+            // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12564:1: (lv_family_5_0= ruleFONTFAMILY )
             {
-            // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12546:1: (lv_family_5_0= ruleFONTFAMILY )
-            // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12547:3: lv_family_5_0= ruleFONTFAMILY
+            // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12564:1: (lv_family_5_0= ruleFONTFAMILY )
+            // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12565:3: lv_family_5_0= ruleFONTFAMILY
             {
              
             	        newCompositeNode(grammarAccess.getFONTAccess().getFamilyFONTFAMILYParserRuleCall_3_0()); 
             	    
-            pushFollow(FOLLOW_ruleFONTFAMILY_in_ruleFONT30053);
+            pushFollow(FOLLOW_ruleFONTFAMILY_in_ruleFONT30078);
             lv_family_5_0=ruleFONTFAMILY();
 
             state._fsp--;
@@ -31665,7 +31712,7 @@ public class InternalCssDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleFONTFAMILY"
-    // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12571:1: entryRuleFONTFAMILY returns [String current=null] : iv_ruleFONTFAMILY= ruleFONTFAMILY EOF ;
+    // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12589:1: entryRuleFONTFAMILY returns [String current=null] : iv_ruleFONTFAMILY= ruleFONTFAMILY EOF ;
     public final String entryRuleFONTFAMILY() throws RecognitionException {
         String current = null;
 
@@ -31673,17 +31720,17 @@ public class InternalCssDslParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12572:2: (iv_ruleFONTFAMILY= ruleFONTFAMILY EOF )
-            // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12573:2: iv_ruleFONTFAMILY= ruleFONTFAMILY EOF
+            // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12590:2: (iv_ruleFONTFAMILY= ruleFONTFAMILY EOF )
+            // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12591:2: iv_ruleFONTFAMILY= ruleFONTFAMILY EOF
             {
              newCompositeNode(grammarAccess.getFONTFAMILYRule()); 
-            pushFollow(FOLLOW_ruleFONTFAMILY_in_entryRuleFONTFAMILY30090);
+            pushFollow(FOLLOW_ruleFONTFAMILY_in_entryRuleFONTFAMILY30115);
             iv_ruleFONTFAMILY=ruleFONTFAMILY();
 
             state._fsp--;
 
              current =iv_ruleFONTFAMILY.getText(); 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleFONTFAMILY30101); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleFONTFAMILY30126); 
 
             }
 
@@ -31701,7 +31748,7 @@ public class InternalCssDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleFONTFAMILY"
-    // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12580:1: ruleFONTFAMILY returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : this_STRING_0= RULE_STRING ;
+    // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12598:1: ruleFONTFAMILY returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : this_STRING_0= RULE_STRING ;
     public final AntlrDatatypeRuleToken ruleFONTFAMILY() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
@@ -31710,10 +31757,10 @@ public class InternalCssDslParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12583:28: (this_STRING_0= RULE_STRING )
-            // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12584:5: this_STRING_0= RULE_STRING
+            // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12601:28: (this_STRING_0= RULE_STRING )
+            // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12602:5: this_STRING_0= RULE_STRING
             {
-            this_STRING_0=(Token)match(input,RULE_STRING,FOLLOW_RULE_STRING_in_ruleFONTFAMILY30140); 
+            this_STRING_0=(Token)match(input,RULE_STRING,FOLLOW_RULE_STRING_in_ruleFONTFAMILY30165); 
 
             		current.merge(this_STRING_0);
                 
@@ -31738,7 +31785,7 @@ public class InternalCssDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleFONTWEIGHT"
-    // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12599:1: entryRuleFONTWEIGHT returns [EObject current=null] : iv_ruleFONTWEIGHT= ruleFONTWEIGHT EOF ;
+    // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12617:1: entryRuleFONTWEIGHT returns [EObject current=null] : iv_ruleFONTWEIGHT= ruleFONTWEIGHT EOF ;
     public final EObject entryRuleFONTWEIGHT() throws RecognitionException {
         EObject current = null;
 
@@ -31746,17 +31793,17 @@ public class InternalCssDslParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12600:2: (iv_ruleFONTWEIGHT= ruleFONTWEIGHT EOF )
-            // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12601:2: iv_ruleFONTWEIGHT= ruleFONTWEIGHT EOF
+            // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12618:2: (iv_ruleFONTWEIGHT= ruleFONTWEIGHT EOF )
+            // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12619:2: iv_ruleFONTWEIGHT= ruleFONTWEIGHT EOF
             {
              newCompositeNode(grammarAccess.getFONTWEIGHTRule()); 
-            pushFollow(FOLLOW_ruleFONTWEIGHT_in_entryRuleFONTWEIGHT30184);
+            pushFollow(FOLLOW_ruleFONTWEIGHT_in_entryRuleFONTWEIGHT30209);
             iv_ruleFONTWEIGHT=ruleFONTWEIGHT();
 
             state._fsp--;
 
              current =iv_ruleFONTWEIGHT; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleFONTWEIGHT30194); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleFONTWEIGHT30219); 
 
             }
 
@@ -31774,7 +31821,7 @@ public class InternalCssDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleFONTWEIGHT"
-    // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12608:1: ruleFONTWEIGHT returns [EObject current=null] : ( ( ( (lv_valueString_0_1= 'normal' | lv_valueString_0_2= 'bold' | lv_valueString_0_3= 'bolder' | lv_valueString_0_4= 'lighter' ) ) ) | ( (lv_valueInt_1_0= RULE_INTEGER ) ) ) ;
+    // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12626:1: ruleFONTWEIGHT returns [EObject current=null] : ( ( ( (lv_valueString_0_1= 'normal' | lv_valueString_0_2= 'bold' | lv_valueString_0_3= 'bolder' | lv_valueString_0_4= 'lighter' ) ) ) | ( (lv_valueInt_1_0= RULE_INTEGER ) ) ) ;
     public final EObject ruleFONTWEIGHT() throws RecognitionException {
         EObject current = null;
 
@@ -31787,70 +31834,70 @@ public class InternalCssDslParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12611:28: ( ( ( ( (lv_valueString_0_1= 'normal' | lv_valueString_0_2= 'bold' | lv_valueString_0_3= 'bolder' | lv_valueString_0_4= 'lighter' ) ) ) | ( (lv_valueInt_1_0= RULE_INTEGER ) ) ) )
-            // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12612:1: ( ( ( (lv_valueString_0_1= 'normal' | lv_valueString_0_2= 'bold' | lv_valueString_0_3= 'bolder' | lv_valueString_0_4= 'lighter' ) ) ) | ( (lv_valueInt_1_0= RULE_INTEGER ) ) )
+            // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12629:28: ( ( ( ( (lv_valueString_0_1= 'normal' | lv_valueString_0_2= 'bold' | lv_valueString_0_3= 'bolder' | lv_valueString_0_4= 'lighter' ) ) ) | ( (lv_valueInt_1_0= RULE_INTEGER ) ) ) )
+            // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12630:1: ( ( ( (lv_valueString_0_1= 'normal' | lv_valueString_0_2= 'bold' | lv_valueString_0_3= 'bolder' | lv_valueString_0_4= 'lighter' ) ) ) | ( (lv_valueInt_1_0= RULE_INTEGER ) ) )
             {
-            // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12612:1: ( ( ( (lv_valueString_0_1= 'normal' | lv_valueString_0_2= 'bold' | lv_valueString_0_3= 'bolder' | lv_valueString_0_4= 'lighter' ) ) ) | ( (lv_valueInt_1_0= RULE_INTEGER ) ) )
-            int alt262=2;
-            int LA262_0 = input.LA(1);
+            // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12630:1: ( ( ( (lv_valueString_0_1= 'normal' | lv_valueString_0_2= 'bold' | lv_valueString_0_3= 'bolder' | lv_valueString_0_4= 'lighter' ) ) ) | ( (lv_valueInt_1_0= RULE_INTEGER ) ) )
+            int alt263=2;
+            int LA263_0 = input.LA(1);
 
-            if ( ((LA262_0>=489 && LA262_0<=492)) ) {
-                alt262=1;
+            if ( ((LA263_0>=489 && LA263_0<=492)) ) {
+                alt263=1;
             }
-            else if ( (LA262_0==RULE_INTEGER) ) {
-                alt262=2;
+            else if ( (LA263_0==RULE_INTEGER) ) {
+                alt263=2;
             }
             else {
                 NoViableAltException nvae =
-                    new NoViableAltException("", 262, 0, input);
+                    new NoViableAltException("", 263, 0, input);
 
                 throw nvae;
             }
-            switch (alt262) {
+            switch (alt263) {
                 case 1 :
-                    // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12612:2: ( ( (lv_valueString_0_1= 'normal' | lv_valueString_0_2= 'bold' | lv_valueString_0_3= 'bolder' | lv_valueString_0_4= 'lighter' ) ) )
+                    // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12630:2: ( ( (lv_valueString_0_1= 'normal' | lv_valueString_0_2= 'bold' | lv_valueString_0_3= 'bolder' | lv_valueString_0_4= 'lighter' ) ) )
                     {
-                    // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12612:2: ( ( (lv_valueString_0_1= 'normal' | lv_valueString_0_2= 'bold' | lv_valueString_0_3= 'bolder' | lv_valueString_0_4= 'lighter' ) ) )
-                    // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12613:1: ( (lv_valueString_0_1= 'normal' | lv_valueString_0_2= 'bold' | lv_valueString_0_3= 'bolder' | lv_valueString_0_4= 'lighter' ) )
+                    // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12630:2: ( ( (lv_valueString_0_1= 'normal' | lv_valueString_0_2= 'bold' | lv_valueString_0_3= 'bolder' | lv_valueString_0_4= 'lighter' ) ) )
+                    // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12631:1: ( (lv_valueString_0_1= 'normal' | lv_valueString_0_2= 'bold' | lv_valueString_0_3= 'bolder' | lv_valueString_0_4= 'lighter' ) )
                     {
-                    // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12613:1: ( (lv_valueString_0_1= 'normal' | lv_valueString_0_2= 'bold' | lv_valueString_0_3= 'bolder' | lv_valueString_0_4= 'lighter' ) )
-                    // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12614:1: (lv_valueString_0_1= 'normal' | lv_valueString_0_2= 'bold' | lv_valueString_0_3= 'bolder' | lv_valueString_0_4= 'lighter' )
+                    // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12631:1: ( (lv_valueString_0_1= 'normal' | lv_valueString_0_2= 'bold' | lv_valueString_0_3= 'bolder' | lv_valueString_0_4= 'lighter' ) )
+                    // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12632:1: (lv_valueString_0_1= 'normal' | lv_valueString_0_2= 'bold' | lv_valueString_0_3= 'bolder' | lv_valueString_0_4= 'lighter' )
                     {
-                    // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12614:1: (lv_valueString_0_1= 'normal' | lv_valueString_0_2= 'bold' | lv_valueString_0_3= 'bolder' | lv_valueString_0_4= 'lighter' )
-                    int alt261=4;
+                    // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12632:1: (lv_valueString_0_1= 'normal' | lv_valueString_0_2= 'bold' | lv_valueString_0_3= 'bolder' | lv_valueString_0_4= 'lighter' )
+                    int alt262=4;
                     switch ( input.LA(1) ) {
                     case 489:
                         {
-                        alt261=1;
+                        alt262=1;
                         }
                         break;
                     case 490:
                         {
-                        alt261=2;
+                        alt262=2;
                         }
                         break;
                     case 491:
                         {
-                        alt261=3;
+                        alt262=3;
                         }
                         break;
                     case 492:
                         {
-                        alt261=4;
+                        alt262=4;
                         }
                         break;
                     default:
                         NoViableAltException nvae =
-                            new NoViableAltException("", 261, 0, input);
+                            new NoViableAltException("", 262, 0, input);
 
                         throw nvae;
                     }
 
-                    switch (alt261) {
+                    switch (alt262) {
                         case 1 :
-                            // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12615:3: lv_valueString_0_1= 'normal'
+                            // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12633:3: lv_valueString_0_1= 'normal'
                             {
-                            lv_valueString_0_1=(Token)match(input,489,FOLLOW_489_in_ruleFONTWEIGHT30239); 
+                            lv_valueString_0_1=(Token)match(input,489,FOLLOW_489_in_ruleFONTWEIGHT30264); 
 
                                     newLeafNode(lv_valueString_0_1, grammarAccess.getFONTWEIGHTAccess().getValueStringNormalKeyword_0_0_0());
                                 
@@ -31864,9 +31911,9 @@ public class InternalCssDslParser extends AbstractInternalAntlrParser {
                             }
                             break;
                         case 2 :
-                            // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12627:8: lv_valueString_0_2= 'bold'
+                            // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12645:8: lv_valueString_0_2= 'bold'
                             {
-                            lv_valueString_0_2=(Token)match(input,490,FOLLOW_490_in_ruleFONTWEIGHT30268); 
+                            lv_valueString_0_2=(Token)match(input,490,FOLLOW_490_in_ruleFONTWEIGHT30293); 
 
                                     newLeafNode(lv_valueString_0_2, grammarAccess.getFONTWEIGHTAccess().getValueStringBoldKeyword_0_0_1());
                                 
@@ -31880,9 +31927,9 @@ public class InternalCssDslParser extends AbstractInternalAntlrParser {
                             }
                             break;
                         case 3 :
-                            // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12639:8: lv_valueString_0_3= 'bolder'
+                            // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12657:8: lv_valueString_0_3= 'bolder'
                             {
-                            lv_valueString_0_3=(Token)match(input,491,FOLLOW_491_in_ruleFONTWEIGHT30297); 
+                            lv_valueString_0_3=(Token)match(input,491,FOLLOW_491_in_ruleFONTWEIGHT30322); 
 
                                     newLeafNode(lv_valueString_0_3, grammarAccess.getFONTWEIGHTAccess().getValueStringBolderKeyword_0_0_2());
                                 
@@ -31896,9 +31943,9 @@ public class InternalCssDslParser extends AbstractInternalAntlrParser {
                             }
                             break;
                         case 4 :
-                            // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12651:8: lv_valueString_0_4= 'lighter'
+                            // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12669:8: lv_valueString_0_4= 'lighter'
                             {
-                            lv_valueString_0_4=(Token)match(input,492,FOLLOW_492_in_ruleFONTWEIGHT30326); 
+                            lv_valueString_0_4=(Token)match(input,492,FOLLOW_492_in_ruleFONTWEIGHT30351); 
 
                                     newLeafNode(lv_valueString_0_4, grammarAccess.getFONTWEIGHTAccess().getValueStringLighterKeyword_0_0_3());
                                 
@@ -31924,15 +31971,15 @@ public class InternalCssDslParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12667:6: ( (lv_valueInt_1_0= RULE_INTEGER ) )
+                    // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12685:6: ( (lv_valueInt_1_0= RULE_INTEGER ) )
                     {
-                    // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12667:6: ( (lv_valueInt_1_0= RULE_INTEGER ) )
-                    // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12668:1: (lv_valueInt_1_0= RULE_INTEGER )
+                    // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12685:6: ( (lv_valueInt_1_0= RULE_INTEGER ) )
+                    // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12686:1: (lv_valueInt_1_0= RULE_INTEGER )
                     {
-                    // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12668:1: (lv_valueInt_1_0= RULE_INTEGER )
-                    // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12669:3: lv_valueInt_1_0= RULE_INTEGER
+                    // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12686:1: (lv_valueInt_1_0= RULE_INTEGER )
+                    // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12687:3: lv_valueInt_1_0= RULE_INTEGER
                     {
-                    lv_valueInt_1_0=(Token)match(input,RULE_INTEGER,FOLLOW_RULE_INTEGER_in_ruleFONTWEIGHT30365); 
+                    lv_valueInt_1_0=(Token)match(input,RULE_INTEGER,FOLLOW_RULE_INTEGER_in_ruleFONTWEIGHT30390); 
 
                     			newLeafNode(lv_valueInt_1_0, grammarAccess.getFONTWEIGHTAccess().getValueIntIntegerTerminalRuleCall_1_0()); 
                     		
@@ -31976,7 +32023,7 @@ public class InternalCssDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleFONTSTYLE"
-    // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12693:1: entryRuleFONTSTYLE returns [EObject current=null] : iv_ruleFONTSTYLE= ruleFONTSTYLE EOF ;
+    // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12711:1: entryRuleFONTSTYLE returns [EObject current=null] : iv_ruleFONTSTYLE= ruleFONTSTYLE EOF ;
     public final EObject entryRuleFONTSTYLE() throws RecognitionException {
         EObject current = null;
 
@@ -31984,17 +32031,17 @@ public class InternalCssDslParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12694:2: (iv_ruleFONTSTYLE= ruleFONTSTYLE EOF )
-            // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12695:2: iv_ruleFONTSTYLE= ruleFONTSTYLE EOF
+            // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12712:2: (iv_ruleFONTSTYLE= ruleFONTSTYLE EOF )
+            // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12713:2: iv_ruleFONTSTYLE= ruleFONTSTYLE EOF
             {
              newCompositeNode(grammarAccess.getFONTSTYLERule()); 
-            pushFollow(FOLLOW_ruleFONTSTYLE_in_entryRuleFONTSTYLE30406);
+            pushFollow(FOLLOW_ruleFONTSTYLE_in_entryRuleFONTSTYLE30431);
             iv_ruleFONTSTYLE=ruleFONTSTYLE();
 
             state._fsp--;
 
              current =iv_ruleFONTSTYLE; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleFONTSTYLE30416); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleFONTSTYLE30441); 
 
             }
 
@@ -32012,7 +32059,7 @@ public class InternalCssDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleFONTSTYLE"
-    // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12702:1: ruleFONTSTYLE returns [EObject current=null] : ( ( (lv_value_0_1= 'normal' | lv_value_0_2= 'italic' | lv_value_0_3= 'oblique' ) ) ) ;
+    // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12720:1: ruleFONTSTYLE returns [EObject current=null] : ( ( (lv_value_0_1= 'normal' | lv_value_0_2= 'italic' | lv_value_0_3= 'oblique' ) ) ) ;
     public final EObject ruleFONTSTYLE() throws RecognitionException {
         EObject current = null;
 
@@ -32023,45 +32070,45 @@ public class InternalCssDslParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12705:28: ( ( ( (lv_value_0_1= 'normal' | lv_value_0_2= 'italic' | lv_value_0_3= 'oblique' ) ) ) )
-            // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12706:1: ( ( (lv_value_0_1= 'normal' | lv_value_0_2= 'italic' | lv_value_0_3= 'oblique' ) ) )
+            // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12723:28: ( ( ( (lv_value_0_1= 'normal' | lv_value_0_2= 'italic' | lv_value_0_3= 'oblique' ) ) ) )
+            // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12724:1: ( ( (lv_value_0_1= 'normal' | lv_value_0_2= 'italic' | lv_value_0_3= 'oblique' ) ) )
             {
-            // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12706:1: ( ( (lv_value_0_1= 'normal' | lv_value_0_2= 'italic' | lv_value_0_3= 'oblique' ) ) )
-            // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12707:1: ( (lv_value_0_1= 'normal' | lv_value_0_2= 'italic' | lv_value_0_3= 'oblique' ) )
+            // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12724:1: ( ( (lv_value_0_1= 'normal' | lv_value_0_2= 'italic' | lv_value_0_3= 'oblique' ) ) )
+            // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12725:1: ( (lv_value_0_1= 'normal' | lv_value_0_2= 'italic' | lv_value_0_3= 'oblique' ) )
             {
-            // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12707:1: ( (lv_value_0_1= 'normal' | lv_value_0_2= 'italic' | lv_value_0_3= 'oblique' ) )
-            // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12708:1: (lv_value_0_1= 'normal' | lv_value_0_2= 'italic' | lv_value_0_3= 'oblique' )
+            // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12725:1: ( (lv_value_0_1= 'normal' | lv_value_0_2= 'italic' | lv_value_0_3= 'oblique' ) )
+            // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12726:1: (lv_value_0_1= 'normal' | lv_value_0_2= 'italic' | lv_value_0_3= 'oblique' )
             {
-            // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12708:1: (lv_value_0_1= 'normal' | lv_value_0_2= 'italic' | lv_value_0_3= 'oblique' )
-            int alt263=3;
+            // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12726:1: (lv_value_0_1= 'normal' | lv_value_0_2= 'italic' | lv_value_0_3= 'oblique' )
+            int alt264=3;
             switch ( input.LA(1) ) {
             case 489:
                 {
-                alt263=1;
+                alt264=1;
                 }
                 break;
             case 487:
                 {
-                alt263=2;
+                alt264=2;
                 }
                 break;
             case 488:
                 {
-                alt263=3;
+                alt264=3;
                 }
                 break;
             default:
                 NoViableAltException nvae =
-                    new NoViableAltException("", 263, 0, input);
+                    new NoViableAltException("", 264, 0, input);
 
                 throw nvae;
             }
 
-            switch (alt263) {
+            switch (alt264) {
                 case 1 :
-                    // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12709:3: lv_value_0_1= 'normal'
+                    // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12727:3: lv_value_0_1= 'normal'
                     {
-                    lv_value_0_1=(Token)match(input,489,FOLLOW_489_in_ruleFONTSTYLE30460); 
+                    lv_value_0_1=(Token)match(input,489,FOLLOW_489_in_ruleFONTSTYLE30485); 
 
                             newLeafNode(lv_value_0_1, grammarAccess.getFONTSTYLEAccess().getValueNormalKeyword_0_0());
                         
@@ -32075,9 +32122,9 @@ public class InternalCssDslParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12721:8: lv_value_0_2= 'italic'
+                    // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12739:8: lv_value_0_2= 'italic'
                     {
-                    lv_value_0_2=(Token)match(input,487,FOLLOW_487_in_ruleFONTSTYLE30489); 
+                    lv_value_0_2=(Token)match(input,487,FOLLOW_487_in_ruleFONTSTYLE30514); 
 
                             newLeafNode(lv_value_0_2, grammarAccess.getFONTSTYLEAccess().getValueItalicKeyword_0_1());
                         
@@ -32091,9 +32138,9 @@ public class InternalCssDslParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 3 :
-                    // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12733:8: lv_value_0_3= 'oblique'
+                    // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12751:8: lv_value_0_3= 'oblique'
                     {
-                    lv_value_0_3=(Token)match(input,488,FOLLOW_488_in_ruleFONTSTYLE30518); 
+                    lv_value_0_3=(Token)match(input,488,FOLLOW_488_in_ruleFONTSTYLE30543); 
 
                             newLeafNode(lv_value_0_3, grammarAccess.getFONTSTYLEAccess().getValueObliqueKeyword_0_2());
                         
@@ -32133,7 +32180,7 @@ public class InternalCssDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleSIZE"
-    // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12756:1: entryRuleSIZE returns [String current=null] : iv_ruleSIZE= ruleSIZE EOF ;
+    // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12774:1: entryRuleSIZE returns [String current=null] : iv_ruleSIZE= ruleSIZE EOF ;
     public final String entryRuleSIZE() throws RecognitionException {
         String current = null;
 
@@ -32141,17 +32188,17 @@ public class InternalCssDslParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12757:2: (iv_ruleSIZE= ruleSIZE EOF )
-            // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12758:2: iv_ruleSIZE= ruleSIZE EOF
+            // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12775:2: (iv_ruleSIZE= ruleSIZE EOF )
+            // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12776:2: iv_ruleSIZE= ruleSIZE EOF
             {
              newCompositeNode(grammarAccess.getSIZERule()); 
-            pushFollow(FOLLOW_ruleSIZE_in_entryRuleSIZE30570);
+            pushFollow(FOLLOW_ruleSIZE_in_entryRuleSIZE30595);
             iv_ruleSIZE=ruleSIZE();
 
             state._fsp--;
 
              current =iv_ruleSIZE.getText(); 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleSIZE30581); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleSIZE30606); 
 
             }
 
@@ -32169,7 +32216,7 @@ public class InternalCssDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleSIZE"
-    // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12765:1: ruleSIZE returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : ( (this_unary_operator_0= ruleunary_operator )? (this_NUMBER_1= ruleNUMBER | this_PERCENTAGE_2= rulePERCENTAGE | this_EMS_3= ruleEMS | this_EXS_4= ruleEXS | this_LENGTH_5= ruleLENGTH ) ) ;
+    // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12783:1: ruleSIZE returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : ( (this_unary_operator_0= ruleunary_operator )? (this_NUMBER_1= ruleNUMBER | this_PERCENTAGE_2= rulePERCENTAGE | this_EMS_3= ruleEMS | this_EXS_4= ruleEXS | this_LENGTH_5= ruleLENGTH ) ) ;
     public final AntlrDatatypeRuleToken ruleSIZE() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
@@ -32189,27 +32236,27 @@ public class InternalCssDslParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12768:28: ( ( (this_unary_operator_0= ruleunary_operator )? (this_NUMBER_1= ruleNUMBER | this_PERCENTAGE_2= rulePERCENTAGE | this_EMS_3= ruleEMS | this_EXS_4= ruleEXS | this_LENGTH_5= ruleLENGTH ) ) )
-            // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12769:1: ( (this_unary_operator_0= ruleunary_operator )? (this_NUMBER_1= ruleNUMBER | this_PERCENTAGE_2= rulePERCENTAGE | this_EMS_3= ruleEMS | this_EXS_4= ruleEXS | this_LENGTH_5= ruleLENGTH ) )
+            // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12786:28: ( ( (this_unary_operator_0= ruleunary_operator )? (this_NUMBER_1= ruleNUMBER | this_PERCENTAGE_2= rulePERCENTAGE | this_EMS_3= ruleEMS | this_EXS_4= ruleEXS | this_LENGTH_5= ruleLENGTH ) ) )
+            // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12787:1: ( (this_unary_operator_0= ruleunary_operator )? (this_NUMBER_1= ruleNUMBER | this_PERCENTAGE_2= rulePERCENTAGE | this_EMS_3= ruleEMS | this_EXS_4= ruleEXS | this_LENGTH_5= ruleLENGTH ) )
             {
-            // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12769:1: ( (this_unary_operator_0= ruleunary_operator )? (this_NUMBER_1= ruleNUMBER | this_PERCENTAGE_2= rulePERCENTAGE | this_EMS_3= ruleEMS | this_EXS_4= ruleEXS | this_LENGTH_5= ruleLENGTH ) )
-            // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12769:2: (this_unary_operator_0= ruleunary_operator )? (this_NUMBER_1= ruleNUMBER | this_PERCENTAGE_2= rulePERCENTAGE | this_EMS_3= ruleEMS | this_EXS_4= ruleEXS | this_LENGTH_5= ruleLENGTH )
+            // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12787:1: ( (this_unary_operator_0= ruleunary_operator )? (this_NUMBER_1= ruleNUMBER | this_PERCENTAGE_2= rulePERCENTAGE | this_EMS_3= ruleEMS | this_EXS_4= ruleEXS | this_LENGTH_5= ruleLENGTH ) )
+            // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12787:2: (this_unary_operator_0= ruleunary_operator )? (this_NUMBER_1= ruleNUMBER | this_PERCENTAGE_2= rulePERCENTAGE | this_EMS_3= ruleEMS | this_EXS_4= ruleEXS | this_LENGTH_5= ruleLENGTH )
             {
-            // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12769:2: (this_unary_operator_0= ruleunary_operator )?
-            int alt264=2;
-            int LA264_0 = input.LA(1);
+            // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12787:2: (this_unary_operator_0= ruleunary_operator )?
+            int alt265=2;
+            int LA265_0 = input.LA(1);
 
-            if ( (LA264_0==19||LA264_0==22) ) {
-                alt264=1;
+            if ( (LA265_0==19||LA265_0==22) ) {
+                alt265=1;
             }
-            switch (alt264) {
+            switch (alt265) {
                 case 1 :
-                    // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12770:5: this_unary_operator_0= ruleunary_operator
+                    // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12788:5: this_unary_operator_0= ruleunary_operator
                     {
                      
                             newCompositeNode(grammarAccess.getSIZEAccess().getUnary_operatorParserRuleCall_0()); 
                         
-                    pushFollow(FOLLOW_ruleunary_operator_in_ruleSIZE30629);
+                    pushFollow(FOLLOW_ruleunary_operator_in_ruleSIZE30654);
                     this_unary_operator_0=ruleunary_operator();
 
                     state._fsp--;
@@ -32226,25 +32273,15 @@ public class InternalCssDslParser extends AbstractInternalAntlrParser {
 
             }
 
-            // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12780:3: (this_NUMBER_1= ruleNUMBER | this_PERCENTAGE_2= rulePERCENTAGE | this_EMS_3= ruleEMS | this_EXS_4= ruleEXS | this_LENGTH_5= ruleLENGTH )
-            int alt265=5;
-            int LA265_0 = input.LA(1);
+            // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12798:3: (this_NUMBER_1= ruleNUMBER | this_PERCENTAGE_2= rulePERCENTAGE | this_EMS_3= ruleEMS | this_EXS_4= ruleEXS | this_LENGTH_5= ruleLENGTH )
+            int alt266=5;
+            int LA266_0 = input.LA(1);
 
-            if ( (LA265_0==RULE_INTEGER) ) {
+            if ( (LA266_0==RULE_INTEGER) ) {
                 switch ( input.LA(2) ) {
                 case 465:
                     {
-                    alt265=2;
-                    }
-                    break;
-                case 473:
-                    {
-                    alt265=4;
-                    }
-                    break;
-                case 472:
-                    {
-                    alt265=3;
+                    alt266=2;
                     }
                     break;
                 case 474:
@@ -32254,7 +32291,17 @@ public class InternalCssDslParser extends AbstractInternalAntlrParser {
                 case 478:
                 case 479:
                     {
-                    alt265=5;
+                    alt266=5;
+                    }
+                    break;
+                case 472:
+                    {
+                    alt266=3;
+                    }
+                    break;
+                case 473:
+                    {
+                    alt266=4;
                     }
                     break;
                 case EOF:
@@ -32274,32 +32321,32 @@ public class InternalCssDslParser extends AbstractInternalAntlrParser {
                 case 300:
                 case 312:
                     {
-                    alt265=1;
+                    alt266=1;
                     }
                     break;
                 default:
                     NoViableAltException nvae =
-                        new NoViableAltException("", 265, 1, input);
+                        new NoViableAltException("", 266, 1, input);
 
                     throw nvae;
                 }
 
             }
-            else if ( (LA265_0==RULE_REAL) ) {
+            else if ( (LA266_0==RULE_REAL) ) {
                 switch ( input.LA(2) ) {
                 case 473:
                     {
-                    alt265=4;
+                    alt266=4;
                     }
                     break;
-                case 474:
-                case 475:
-                case 476:
-                case 477:
-                case 478:
-                case 479:
+                case 472:
                     {
-                    alt265=5;
+                    alt266=3;
+                    }
+                    break;
+                case 465:
+                    {
+                    alt266=2;
                     }
                     break;
                 case EOF:
@@ -32319,22 +32366,22 @@ public class InternalCssDslParser extends AbstractInternalAntlrParser {
                 case 300:
                 case 312:
                     {
-                    alt265=1;
+                    alt266=1;
                     }
                     break;
-                case 472:
+                case 474:
+                case 475:
+                case 476:
+                case 477:
+                case 478:
+                case 479:
                     {
-                    alt265=3;
-                    }
-                    break;
-                case 465:
-                    {
-                    alt265=2;
+                    alt266=5;
                     }
                     break;
                 default:
                     NoViableAltException nvae =
-                        new NoViableAltException("", 265, 2, input);
+                        new NoViableAltException("", 266, 2, input);
 
                     throw nvae;
                 }
@@ -32342,18 +32389,18 @@ public class InternalCssDslParser extends AbstractInternalAntlrParser {
             }
             else {
                 NoViableAltException nvae =
-                    new NoViableAltException("", 265, 0, input);
+                    new NoViableAltException("", 266, 0, input);
 
                 throw nvae;
             }
-            switch (alt265) {
+            switch (alt266) {
                 case 1 :
-                    // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12781:5: this_NUMBER_1= ruleNUMBER
+                    // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12799:5: this_NUMBER_1= ruleNUMBER
                     {
                      
                             newCompositeNode(grammarAccess.getSIZEAccess().getNUMBERParserRuleCall_1_0()); 
                         
-                    pushFollow(FOLLOW_ruleNUMBER_in_ruleSIZE30659);
+                    pushFollow(FOLLOW_ruleNUMBER_in_ruleSIZE30684);
                     this_NUMBER_1=ruleNUMBER();
 
                     state._fsp--;
@@ -32368,12 +32415,12 @@ public class InternalCssDslParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12793:5: this_PERCENTAGE_2= rulePERCENTAGE
+                    // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12811:5: this_PERCENTAGE_2= rulePERCENTAGE
                     {
                      
                             newCompositeNode(grammarAccess.getSIZEAccess().getPERCENTAGEParserRuleCall_1_1()); 
                         
-                    pushFollow(FOLLOW_rulePERCENTAGE_in_ruleSIZE30692);
+                    pushFollow(FOLLOW_rulePERCENTAGE_in_ruleSIZE30717);
                     this_PERCENTAGE_2=rulePERCENTAGE();
 
                     state._fsp--;
@@ -32388,12 +32435,12 @@ public class InternalCssDslParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 3 :
-                    // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12805:5: this_EMS_3= ruleEMS
+                    // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12823:5: this_EMS_3= ruleEMS
                     {
                      
                             newCompositeNode(grammarAccess.getSIZEAccess().getEMSParserRuleCall_1_2()); 
                         
-                    pushFollow(FOLLOW_ruleEMS_in_ruleSIZE30725);
+                    pushFollow(FOLLOW_ruleEMS_in_ruleSIZE30750);
                     this_EMS_3=ruleEMS();
 
                     state._fsp--;
@@ -32408,12 +32455,12 @@ public class InternalCssDslParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 4 :
-                    // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12817:5: this_EXS_4= ruleEXS
+                    // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12835:5: this_EXS_4= ruleEXS
                     {
                      
                             newCompositeNode(grammarAccess.getSIZEAccess().getEXSParserRuleCall_1_3()); 
                         
-                    pushFollow(FOLLOW_ruleEXS_in_ruleSIZE30758);
+                    pushFollow(FOLLOW_ruleEXS_in_ruleSIZE30783);
                     this_EXS_4=ruleEXS();
 
                     state._fsp--;
@@ -32428,12 +32475,12 @@ public class InternalCssDslParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 5 :
-                    // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12829:5: this_LENGTH_5= ruleLENGTH
+                    // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12847:5: this_LENGTH_5= ruleLENGTH
                     {
                      
                             newCompositeNode(grammarAccess.getSIZEAccess().getLENGTHParserRuleCall_1_4()); 
                         
-                    pushFollow(FOLLOW_ruleLENGTH_in_ruleSIZE30791);
+                    pushFollow(FOLLOW_ruleLENGTH_in_ruleSIZE30816);
                     this_LENGTH_5=ruleLENGTH();
 
                     state._fsp--;
@@ -32471,7 +32518,7 @@ public class InternalCssDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleBLUR"
-    // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12847:1: entryRuleBLUR returns [String current=null] : iv_ruleBLUR= ruleBLUR EOF ;
+    // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12865:1: entryRuleBLUR returns [String current=null] : iv_ruleBLUR= ruleBLUR EOF ;
     public final String entryRuleBLUR() throws RecognitionException {
         String current = null;
 
@@ -32479,17 +32526,17 @@ public class InternalCssDslParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12848:2: (iv_ruleBLUR= ruleBLUR EOF )
-            // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12849:2: iv_ruleBLUR= ruleBLUR EOF
+            // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12866:2: (iv_ruleBLUR= ruleBLUR EOF )
+            // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12867:2: iv_ruleBLUR= ruleBLUR EOF
             {
              newCompositeNode(grammarAccess.getBLURRule()); 
-            pushFollow(FOLLOW_ruleBLUR_in_entryRuleBLUR30838);
+            pushFollow(FOLLOW_ruleBLUR_in_entryRuleBLUR30863);
             iv_ruleBLUR=ruleBLUR();
 
             state._fsp--;
 
              current =iv_ruleBLUR.getText(); 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleBLUR30849); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleBLUR30874); 
 
             }
 
@@ -32507,7 +32554,7 @@ public class InternalCssDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleBLUR"
-    // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12856:1: ruleBLUR returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (kw= 'gaussian' | kw= 'one-pass-box' | kw= 'three-pass-box' | kw= 'two-pass-box' ) ;
+    // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12874:1: ruleBLUR returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (kw= 'gaussian' | kw= 'one-pass-box' | kw= 'three-pass-box' | kw= 'two-pass-box' ) ;
     public final AntlrDatatypeRuleToken ruleBLUR() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
@@ -32516,44 +32563,44 @@ public class InternalCssDslParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12859:28: ( (kw= 'gaussian' | kw= 'one-pass-box' | kw= 'three-pass-box' | kw= 'two-pass-box' ) )
-            // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12860:1: (kw= 'gaussian' | kw= 'one-pass-box' | kw= 'three-pass-box' | kw= 'two-pass-box' )
+            // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12877:28: ( (kw= 'gaussian' | kw= 'one-pass-box' | kw= 'three-pass-box' | kw= 'two-pass-box' ) )
+            // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12878:1: (kw= 'gaussian' | kw= 'one-pass-box' | kw= 'three-pass-box' | kw= 'two-pass-box' )
             {
-            // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12860:1: (kw= 'gaussian' | kw= 'one-pass-box' | kw= 'three-pass-box' | kw= 'two-pass-box' )
-            int alt266=4;
+            // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12878:1: (kw= 'gaussian' | kw= 'one-pass-box' | kw= 'three-pass-box' | kw= 'two-pass-box' )
+            int alt267=4;
             switch ( input.LA(1) ) {
             case 493:
                 {
-                alt266=1;
+                alt267=1;
                 }
                 break;
             case 494:
                 {
-                alt266=2;
+                alt267=2;
                 }
                 break;
             case 495:
                 {
-                alt266=3;
+                alt267=3;
                 }
                 break;
             case 496:
                 {
-                alt266=4;
+                alt267=4;
                 }
                 break;
             default:
                 NoViableAltException nvae =
-                    new NoViableAltException("", 266, 0, input);
+                    new NoViableAltException("", 267, 0, input);
 
                 throw nvae;
             }
 
-            switch (alt266) {
+            switch (alt267) {
                 case 1 :
-                    // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12861:2: kw= 'gaussian'
+                    // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12879:2: kw= 'gaussian'
                     {
-                    kw=(Token)match(input,493,FOLLOW_493_in_ruleBLUR30887); 
+                    kw=(Token)match(input,493,FOLLOW_493_in_ruleBLUR30912); 
 
                             current.merge(kw);
                             newLeafNode(kw, grammarAccess.getBLURAccess().getGaussianKeyword_0()); 
@@ -32562,9 +32609,9 @@ public class InternalCssDslParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12868:2: kw= 'one-pass-box'
+                    // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12886:2: kw= 'one-pass-box'
                     {
-                    kw=(Token)match(input,494,FOLLOW_494_in_ruleBLUR30906); 
+                    kw=(Token)match(input,494,FOLLOW_494_in_ruleBLUR30931); 
 
                             current.merge(kw);
                             newLeafNode(kw, grammarAccess.getBLURAccess().getOnePassBoxKeyword_1()); 
@@ -32573,9 +32620,9 @@ public class InternalCssDslParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 3 :
-                    // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12875:2: kw= 'three-pass-box'
+                    // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12893:2: kw= 'three-pass-box'
                     {
-                    kw=(Token)match(input,495,FOLLOW_495_in_ruleBLUR30925); 
+                    kw=(Token)match(input,495,FOLLOW_495_in_ruleBLUR30950); 
 
                             current.merge(kw);
                             newLeafNode(kw, grammarAccess.getBLURAccess().getThreePassBoxKeyword_2()); 
@@ -32584,9 +32631,9 @@ public class InternalCssDslParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 4 :
-                    // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12882:2: kw= 'two-pass-box'
+                    // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12900:2: kw= 'two-pass-box'
                     {
-                    kw=(Token)match(input,496,FOLLOW_496_in_ruleBLUR30944); 
+                    kw=(Token)match(input,496,FOLLOW_496_in_ruleBLUR30969); 
 
                             current.merge(kw);
                             newLeafNode(kw, grammarAccess.getBLURAccess().getTwoPassBoxKeyword_3()); 
@@ -32615,7 +32662,7 @@ public class InternalCssDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleHPosition"
-    // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12895:1: ruleHPosition returns [Enumerator current=null] : ( (enumLiteral_0= 'left' ) | (enumLiteral_1= 'center' ) | (enumLiteral_2= 'right' ) | (enumLiteral_3= 'leading' ) | (enumLiteral_4= 'trailing' ) ) ;
+    // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12913:1: ruleHPosition returns [Enumerator current=null] : ( (enumLiteral_0= 'left' ) | (enumLiteral_1= 'center' ) | (enumLiteral_2= 'right' ) | (enumLiteral_3= 'leading' ) | (enumLiteral_4= 'trailing' ) ) ;
     public final Enumerator ruleHPosition() throws RecognitionException {
         Enumerator current = null;
 
@@ -32627,52 +32674,52 @@ public class InternalCssDslParser extends AbstractInternalAntlrParser {
 
          enterRule(); 
         try {
-            // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12897:28: ( ( (enumLiteral_0= 'left' ) | (enumLiteral_1= 'center' ) | (enumLiteral_2= 'right' ) | (enumLiteral_3= 'leading' ) | (enumLiteral_4= 'trailing' ) ) )
-            // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12898:1: ( (enumLiteral_0= 'left' ) | (enumLiteral_1= 'center' ) | (enumLiteral_2= 'right' ) | (enumLiteral_3= 'leading' ) | (enumLiteral_4= 'trailing' ) )
+            // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12915:28: ( ( (enumLiteral_0= 'left' ) | (enumLiteral_1= 'center' ) | (enumLiteral_2= 'right' ) | (enumLiteral_3= 'leading' ) | (enumLiteral_4= 'trailing' ) ) )
+            // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12916:1: ( (enumLiteral_0= 'left' ) | (enumLiteral_1= 'center' ) | (enumLiteral_2= 'right' ) | (enumLiteral_3= 'leading' ) | (enumLiteral_4= 'trailing' ) )
             {
-            // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12898:1: ( (enumLiteral_0= 'left' ) | (enumLiteral_1= 'center' ) | (enumLiteral_2= 'right' ) | (enumLiteral_3= 'leading' ) | (enumLiteral_4= 'trailing' ) )
-            int alt267=5;
+            // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12916:1: ( (enumLiteral_0= 'left' ) | (enumLiteral_1= 'center' ) | (enumLiteral_2= 'right' ) | (enumLiteral_3= 'leading' ) | (enumLiteral_4= 'trailing' ) )
+            int alt268=5;
             switch ( input.LA(1) ) {
             case 234:
                 {
-                alt267=1;
+                alt268=1;
                 }
                 break;
             case 257:
                 {
-                alt267=2;
+                alt268=2;
                 }
                 break;
             case 235:
                 {
-                alt267=3;
+                alt268=3;
                 }
                 break;
             case 497:
                 {
-                alt267=4;
+                alt268=4;
                 }
                 break;
             case 498:
                 {
-                alt267=5;
+                alt268=5;
                 }
                 break;
             default:
                 NoViableAltException nvae =
-                    new NoViableAltException("", 267, 0, input);
+                    new NoViableAltException("", 268, 0, input);
 
                 throw nvae;
             }
 
-            switch (alt267) {
+            switch (alt268) {
                 case 1 :
-                    // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12898:2: (enumLiteral_0= 'left' )
+                    // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12916:2: (enumLiteral_0= 'left' )
                     {
-                    // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12898:2: (enumLiteral_0= 'left' )
-                    // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12898:4: enumLiteral_0= 'left'
+                    // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12916:2: (enumLiteral_0= 'left' )
+                    // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12916:4: enumLiteral_0= 'left'
                     {
-                    enumLiteral_0=(Token)match(input,234,FOLLOW_234_in_ruleHPosition30998); 
+                    enumLiteral_0=(Token)match(input,234,FOLLOW_234_in_ruleHPosition31023); 
 
                             current = grammarAccess.getHPositionAccess().getLeftEnumLiteralDeclaration_0().getEnumLiteral().getInstance();
                             newLeafNode(enumLiteral_0, grammarAccess.getHPositionAccess().getLeftEnumLiteralDeclaration_0()); 
@@ -32684,12 +32731,12 @@ public class InternalCssDslParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12904:6: (enumLiteral_1= 'center' )
+                    // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12922:6: (enumLiteral_1= 'center' )
                     {
-                    // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12904:6: (enumLiteral_1= 'center' )
-                    // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12904:8: enumLiteral_1= 'center'
+                    // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12922:6: (enumLiteral_1= 'center' )
+                    // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12922:8: enumLiteral_1= 'center'
                     {
-                    enumLiteral_1=(Token)match(input,257,FOLLOW_257_in_ruleHPosition31015); 
+                    enumLiteral_1=(Token)match(input,257,FOLLOW_257_in_ruleHPosition31040); 
 
                             current = grammarAccess.getHPositionAccess().getCenterEnumLiteralDeclaration_1().getEnumLiteral().getInstance();
                             newLeafNode(enumLiteral_1, grammarAccess.getHPositionAccess().getCenterEnumLiteralDeclaration_1()); 
@@ -32701,12 +32748,12 @@ public class InternalCssDslParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 3 :
-                    // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12910:6: (enumLiteral_2= 'right' )
+                    // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12928:6: (enumLiteral_2= 'right' )
                     {
-                    // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12910:6: (enumLiteral_2= 'right' )
-                    // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12910:8: enumLiteral_2= 'right'
+                    // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12928:6: (enumLiteral_2= 'right' )
+                    // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12928:8: enumLiteral_2= 'right'
                     {
-                    enumLiteral_2=(Token)match(input,235,FOLLOW_235_in_ruleHPosition31032); 
+                    enumLiteral_2=(Token)match(input,235,FOLLOW_235_in_ruleHPosition31057); 
 
                             current = grammarAccess.getHPositionAccess().getRightEnumLiteralDeclaration_2().getEnumLiteral().getInstance();
                             newLeafNode(enumLiteral_2, grammarAccess.getHPositionAccess().getRightEnumLiteralDeclaration_2()); 
@@ -32718,12 +32765,12 @@ public class InternalCssDslParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 4 :
-                    // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12916:6: (enumLiteral_3= 'leading' )
+                    // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12934:6: (enumLiteral_3= 'leading' )
                     {
-                    // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12916:6: (enumLiteral_3= 'leading' )
-                    // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12916:8: enumLiteral_3= 'leading'
+                    // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12934:6: (enumLiteral_3= 'leading' )
+                    // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12934:8: enumLiteral_3= 'leading'
                     {
-                    enumLiteral_3=(Token)match(input,497,FOLLOW_497_in_ruleHPosition31049); 
+                    enumLiteral_3=(Token)match(input,497,FOLLOW_497_in_ruleHPosition31074); 
 
                             current = grammarAccess.getHPositionAccess().getLeadingEnumLiteralDeclaration_3().getEnumLiteral().getInstance();
                             newLeafNode(enumLiteral_3, grammarAccess.getHPositionAccess().getLeadingEnumLiteralDeclaration_3()); 
@@ -32735,12 +32782,12 @@ public class InternalCssDslParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 5 :
-                    // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12922:6: (enumLiteral_4= 'trailing' )
+                    // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12940:6: (enumLiteral_4= 'trailing' )
                     {
-                    // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12922:6: (enumLiteral_4= 'trailing' )
-                    // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12922:8: enumLiteral_4= 'trailing'
+                    // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12940:6: (enumLiteral_4= 'trailing' )
+                    // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12940:8: enumLiteral_4= 'trailing'
                     {
-                    enumLiteral_4=(Token)match(input,498,FOLLOW_498_in_ruleHPosition31066); 
+                    enumLiteral_4=(Token)match(input,498,FOLLOW_498_in_ruleHPosition31091); 
 
                             current = grammarAccess.getHPositionAccess().getTrailingEnumLiteralDeclaration_4().getEnumLiteral().getInstance();
                             newLeafNode(enumLiteral_4, grammarAccess.getHPositionAccess().getTrailingEnumLiteralDeclaration_4()); 
@@ -32782,25 +32829,27 @@ public class InternalCssDslParser extends AbstractInternalAntlrParser {
     protected DFA207 dfa207 = new DFA207(this);
     protected DFA218 dfa218 = new DFA218(this);
     protected DFA247 dfa247 = new DFA247(this);
-    protected DFA259 dfa259 = new DFA259(this);
+    protected DFA260 dfa260 = new DFA260(this);
     static final String DFA45_eotS =
         "\13\uffff";
     static final String DFA45_eofS =
-        "\1\uffff\2\7\10\uffff";
+        "\1\uffff\2\12\10\uffff";
     static final String DFA45_minS =
         "\1\11\2\4\10\uffff";
     static final String DFA45_maxS =
         "\1\12\2\u01e6\10\uffff";
     static final String DFA45_acceptS =
-        "\3\uffff\1\5\1\4\1\6\1\3\1\1\1\10\1\2\1\7";
+        "\3\uffff\1\7\1\10\1\2\1\6\1\5\1\4\1\3\1\1";
     static final String DFA45_specialS =
         "\13\uffff}>";
     static final String[] DFA45_transitionS = {
             "\1\1\1\2",
-            "\4\7\1\uffff\2\7\4\uffff\1\7\1\uffff\1\7\1\uffff\1\7\1\uffff"+
-            "\2\7\u01ba\uffff\1\11\5\uffff\1\7\1\4\1\3\6\6\3\5\2\12\2\10",
-            "\4\7\1\uffff\2\7\4\uffff\1\7\1\uffff\1\7\1\uffff\1\7\1\uffff"+
-            "\2\7\u01ba\uffff\1\11\5\uffff\1\7\1\4\1\3\6\6\3\5\2\12\2\10",
+            "\4\12\1\uffff\2\12\4\uffff\1\12\1\uffff\1\12\1\uffff\1\12"+
+            "\1\uffff\2\12\u01ba\uffff\1\5\5\uffff\1\12\1\10\1\7\6\11\3\6"+
+            "\2\3\2\4",
+            "\4\12\1\uffff\2\12\4\uffff\1\12\1\uffff\1\12\1\uffff\1\12"+
+            "\1\uffff\2\12\u01ba\uffff\1\5\5\uffff\1\12\1\10\1\7\6\11\3\6"+
+            "\2\3\2\4",
             "",
             "",
             "",
@@ -33228,46 +33277,46 @@ public class InternalCssDslParser extends AbstractInternalAntlrParser {
     static final String DFA218_eotS =
         "\21\uffff";
     static final String DFA218_eofS =
-        "\3\uffff\14\20\2\uffff";
+        "\3\uffff\2\5\1\uffff\12\5\1\uffff";
     static final String DFA218_minS =
-        "\3\11\14\4\2\uffff";
+        "\3\11\2\4\1\uffff\12\4\1\uffff";
     static final String DFA218_maxS =
-        "\1\26\2\12\2\u01df\12\u0138\2\uffff";
+        "\1\26\2\12\2\u01df\1\uffff\12\u0138\1\uffff";
     static final String DFA218_acceptS =
-        "\17\uffff\1\2\1\1";
+        "\5\uffff\1\1\12\uffff\1\2";
     static final String DFA218_specialS =
         "\21\uffff}>";
     static final String[] DFA218_transitionS = {
             "\1\3\1\4\10\uffff\1\2\2\uffff\1\1",
             "\1\3\1\4",
             "\1\3\1\4",
-            "\1\16\1\20\3\uffff\2\17\4\uffff\1\20\3\uffff\1\17\2\uffff"+
-            "\1\17\u0121\uffff\1\20\u0098\uffff\1\15\6\uffff\1\13\1\14\1"+
-            "\5\1\6\1\7\1\10\1\11\1\12",
-            "\1\16\1\20\3\uffff\2\17\4\uffff\1\20\3\uffff\1\17\2\uffff"+
-            "\1\17\u0121\uffff\1\20\u0098\uffff\1\15\6\uffff\1\13\1\14\1"+
-            "\5\1\6\1\7\1\10\1\11\1\12",
-            "\1\16\1\20\3\uffff\2\17\4\uffff\1\20\3\uffff\1\17\2\uffff"+
-            "\1\17\u0121\uffff\1\20",
-            "\1\16\1\20\3\uffff\2\17\4\uffff\1\20\3\uffff\1\17\2\uffff"+
-            "\1\17\u0121\uffff\1\20",
-            "\1\16\1\20\3\uffff\2\17\4\uffff\1\20\3\uffff\1\17\2\uffff"+
-            "\1\17\u0121\uffff\1\20",
-            "\1\16\1\20\3\uffff\2\17\4\uffff\1\20\3\uffff\1\17\2\uffff"+
-            "\1\17\u0121\uffff\1\20",
-            "\1\16\1\20\3\uffff\2\17\4\uffff\1\20\3\uffff\1\17\2\uffff"+
-            "\1\17\u0121\uffff\1\20",
-            "\1\16\1\20\3\uffff\2\17\4\uffff\1\20\3\uffff\1\17\2\uffff"+
-            "\1\17\u0121\uffff\1\20",
-            "\1\16\1\20\3\uffff\2\17\4\uffff\1\20\3\uffff\1\17\2\uffff"+
-            "\1\17\u0121\uffff\1\20",
-            "\1\16\1\20\3\uffff\2\17\4\uffff\1\20\3\uffff\1\17\2\uffff"+
-            "\1\17\u0121\uffff\1\20",
-            "\1\16\1\20\3\uffff\2\17\4\uffff\1\20\3\uffff\1\17\2\uffff"+
-            "\1\17\u0121\uffff\1\20",
-            "\1\16\1\20\3\uffff\2\17\4\uffff\1\20\3\uffff\1\17\2\uffff"+
-            "\1\17\u0121\uffff\1\20",
+            "\1\6\1\5\3\uffff\2\20\4\uffff\1\5\3\uffff\1\20\2\uffff\1\20"+
+            "\u0121\uffff\1\5\u0098\uffff\1\17\6\uffff\1\16\1\15\1\7\1\10"+
+            "\1\11\1\12\1\13\1\14",
+            "\1\6\1\5\3\uffff\2\20\4\uffff\1\5\3\uffff\1\20\2\uffff\1\20"+
+            "\u0121\uffff\1\5\u0098\uffff\1\17\6\uffff\1\16\1\15\1\7\1\10"+
+            "\1\11\1\12\1\13\1\14",
             "",
+            "\1\6\1\5\3\uffff\2\20\4\uffff\1\5\3\uffff\1\20\2\uffff\1\20"+
+            "\u0121\uffff\1\5",
+            "\1\6\1\5\3\uffff\2\20\4\uffff\1\5\3\uffff\1\20\2\uffff\1\20"+
+            "\u0121\uffff\1\5",
+            "\1\6\1\5\3\uffff\2\20\4\uffff\1\5\3\uffff\1\20\2\uffff\1\20"+
+            "\u0121\uffff\1\5",
+            "\1\6\1\5\3\uffff\2\20\4\uffff\1\5\3\uffff\1\20\2\uffff\1\20"+
+            "\u0121\uffff\1\5",
+            "\1\6\1\5\3\uffff\2\20\4\uffff\1\5\3\uffff\1\20\2\uffff\1\20"+
+            "\u0121\uffff\1\5",
+            "\1\6\1\5\3\uffff\2\20\4\uffff\1\5\3\uffff\1\20\2\uffff\1\20"+
+            "\u0121\uffff\1\5",
+            "\1\6\1\5\3\uffff\2\20\4\uffff\1\5\3\uffff\1\20\2\uffff\1\20"+
+            "\u0121\uffff\1\5",
+            "\1\6\1\5\3\uffff\2\20\4\uffff\1\5\3\uffff\1\20\2\uffff\1\20"+
+            "\u0121\uffff\1\5",
+            "\1\6\1\5\3\uffff\2\20\4\uffff\1\5\3\uffff\1\20\2\uffff\1\20"+
+            "\u0121\uffff\1\5",
+            "\1\6\1\5\3\uffff\2\20\4\uffff\1\5\3\uffff\1\20\2\uffff\1\20"+
+            "\u0121\uffff\1\5",
             ""
     };
 
@@ -33364,19 +33413,19 @@ public class InternalCssDslParser extends AbstractInternalAntlrParser {
             return "11207:1: ( ( (lv_hexcolor_0_0= ruleHexColor ) ) | (otherlv_1= 'rgb' otherlv_2= '(' (this_WS_3= RULE_WS )* ( (lv_r_4_0= RULE_INTEGER ) ) this_COMMA_5= RULE_COMMA ( (lv_g_6_0= RULE_INTEGER ) ) this_COMMA_7= RULE_COMMA ( (lv_b_8_0= RULE_INTEGER ) ) (this_WS_9= RULE_WS )* otherlv_10= ')' ) | (otherlv_11= 'rgb' otherlv_12= '(' ( (lv_rp_13_0= RULE_INTEGER ) ) otherlv_14= '%' this_COMMA_15= RULE_COMMA ( (lv_gp_16_0= RULE_INTEGER ) ) otherlv_17= '%' this_COMMA_18= RULE_COMMA ( (lv_bp_19_0= RULE_INTEGER ) ) otherlv_20= '%' otherlv_21= ')' ) | (otherlv_22= 'rgba' otherlv_23= '(' ( (lv_r_24_0= RULE_INTEGER ) ) this_COMMA_25= RULE_COMMA ( (lv_g_26_0= RULE_INTEGER ) ) this_COMMA_27= RULE_COMMA ( (lv_b_28_0= RULE_INTEGER ) ) this_COMMA_29= RULE_COMMA ( (lv_alpha_30_0= ruleNUMBER ) ) otherlv_31= ')' ) | (otherlv_32= 'rgba' otherlv_33= '(' ( (lv_rp_34_0= RULE_INTEGER ) ) otherlv_35= '%' this_COMMA_36= RULE_COMMA ( (lv_gp_37_0= RULE_INTEGER ) ) otherlv_38= '%' this_COMMA_39= RULE_COMMA ( (lv_bp_40_0= RULE_INTEGER ) ) otherlv_41= '%' this_COMMA_42= RULE_COMMA ( (lv_alpha_43_0= ruleNUMBER ) ) otherlv_44= ')' ) )";
         }
     }
-    static final String DFA259_eotS =
+    static final String DFA260_eotS =
         "\6\uffff";
-    static final String DFA259_eofS =
+    static final String DFA260_eofS =
         "\6\uffff";
-    static final String DFA259_minS =
+    static final String DFA260_minS =
         "\1\11\1\uffff\2\4\1\uffff\1\4";
-    static final String DFA259_maxS =
+    static final String DFA260_maxS =
         "\1\u01ec\1\uffff\2\u01df\1\uffff\1\26";
-    static final String DFA259_acceptS =
+    static final String DFA260_acceptS =
         "\1\uffff\1\1\2\uffff\1\2\1\uffff";
-    static final String DFA259_specialS =
+    static final String DFA260_specialS =
         "\6\uffff}>";
-    static final String[] DFA259_transitionS = {
+    static final String[] DFA260_transitionS = {
             "\1\2\1\3\10\uffff\1\4\2\uffff\1\4\u01d0\uffff\6\1",
             "",
             "\1\5\2\uffff\1\4\u01c9\uffff\1\4\6\uffff\10\4",
@@ -33385,37 +33434,37 @@ public class InternalCssDslParser extends AbstractInternalAntlrParser {
             "\1\5\2\uffff\1\4\1\uffff\2\1\10\uffff\1\1\2\uffff\1\1"
     };
 
-    static final short[] DFA259_eot = DFA.unpackEncodedString(DFA259_eotS);
-    static final short[] DFA259_eof = DFA.unpackEncodedString(DFA259_eofS);
-    static final char[] DFA259_min = DFA.unpackEncodedStringToUnsignedChars(DFA259_minS);
-    static final char[] DFA259_max = DFA.unpackEncodedStringToUnsignedChars(DFA259_maxS);
-    static final short[] DFA259_accept = DFA.unpackEncodedString(DFA259_acceptS);
-    static final short[] DFA259_special = DFA.unpackEncodedString(DFA259_specialS);
-    static final short[][] DFA259_transition;
+    static final short[] DFA260_eot = DFA.unpackEncodedString(DFA260_eotS);
+    static final short[] DFA260_eof = DFA.unpackEncodedString(DFA260_eofS);
+    static final char[] DFA260_min = DFA.unpackEncodedStringToUnsignedChars(DFA260_minS);
+    static final char[] DFA260_max = DFA.unpackEncodedStringToUnsignedChars(DFA260_maxS);
+    static final short[] DFA260_accept = DFA.unpackEncodedString(DFA260_acceptS);
+    static final short[] DFA260_special = DFA.unpackEncodedString(DFA260_specialS);
+    static final short[][] DFA260_transition;
 
     static {
-        int numStates = DFA259_transitionS.length;
-        DFA259_transition = new short[numStates][];
+        int numStates = DFA260_transitionS.length;
+        DFA260_transition = new short[numStates][];
         for (int i=0; i<numStates; i++) {
-            DFA259_transition[i] = DFA.unpackEncodedString(DFA259_transitionS[i]);
+            DFA260_transition[i] = DFA.unpackEncodedString(DFA260_transitionS[i]);
         }
     }
 
-    class DFA259 extends DFA {
+    class DFA260 extends DFA {
 
-        public DFA259(BaseRecognizer recognizer) {
+        public DFA260(BaseRecognizer recognizer) {
             this.recognizer = recognizer;
-            this.decisionNumber = 259;
-            this.eot = DFA259_eot;
-            this.eof = DFA259_eof;
-            this.min = DFA259_min;
-            this.max = DFA259_max;
-            this.accept = DFA259_accept;
-            this.special = DFA259_special;
-            this.transition = DFA259_transition;
+            this.decisionNumber = 260;
+            this.eot = DFA260_eot;
+            this.eof = DFA260_eof;
+            this.min = DFA260_min;
+            this.max = DFA260_max;
+            this.accept = DFA260_accept;
+            this.special = DFA260_special;
+            this.transition = DFA260_transition;
         }
         public String getDescription() {
-            return "12422:2: ( ( ( ( (lv_styleOrWeightString_0_1= 'italic' | lv_styleOrWeightString_0_2= 'oblique' | lv_styleOrWeightString_0_3= 'normal' | lv_styleOrWeightString_0_4= 'bold' | lv_styleOrWeightString_0_5= 'bolder' | lv_styleOrWeightString_0_6= 'lighter' ) ) ) | ( (lv_weight_1_0= rulenum ) ) ) (this_WS_2= RULE_WS )+ )?";
+            return "12440:2: ( ( ( ( (lv_styleOrWeightString_0_1= 'italic' | lv_styleOrWeightString_0_2= 'oblique' | lv_styleOrWeightString_0_3= 'normal' | lv_styleOrWeightString_0_4= 'bold' | lv_styleOrWeightString_0_5= 'bolder' | lv_styleOrWeightString_0_6= 'lighter' ) ) ) | ( (lv_weight_1_0= rulenum ) ) ) (this_WS_2= RULE_WS )+ )?";
         }
     }
  
@@ -34553,99 +34602,100 @@ public class InternalCssDslParser extends AbstractInternalAntlrParser {
     public static final BitSet FOLLOW_284_in_ruleColorFunction28370 = new BitSet(new long[]{0x0000000000000002L,0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000000008000000L});
     public static final BitSet FOLLOW_ruleHexColor_in_entryRuleHexColor28409 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleHexColor28419 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_17_in_ruleHexColor28456 = new BitSet(new long[]{0x0000000000000100L});
-    public static final BitSet FOLLOW_RULE_HEXDIGITS_in_ruleHexColor28473 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleURI_in_entryRuleURI28515 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleURI28526 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_471_in_ruleURI28564 = new BitSet(new long[]{0x0000000000000080L});
-    public static final BitSet FOLLOW_RULE_STRING_in_ruleURI28579 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000000010000000L});
-    public static final BitSet FOLLOW_284_in_ruleURI28597 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleNUMBER_in_entryRuleNUMBER28638 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleNUMBER28649 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rulenum_in_ruleNUMBER28695 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rulePERCENTAGE_in_entryRulePERCENTAGE28740 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRulePERCENTAGE28751 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rulenum_in_rulePERCENTAGE28798 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000000000020000L});
-    public static final BitSet FOLLOW_465_in_rulePERCENTAGE28816 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleEMS_in_entryRuleEMS28857 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleEMS28868 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rulenum_in_ruleEMS28915 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000000001000000L});
-    public static final BitSet FOLLOW_472_in_ruleEMS28933 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleEXS_in_entryRuleEXS28974 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleEXS28985 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rulenum_in_ruleEXS29032 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000000002000000L});
-    public static final BitSet FOLLOW_473_in_ruleEXS29050 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleLENGTH_in_entryRuleLENGTH29091 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleLENGTH29102 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rulenum_in_ruleLENGTH29149 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x00000000FC000000L});
-    public static final BitSet FOLLOW_474_in_ruleLENGTH29168 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_475_in_ruleLENGTH29187 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_476_in_ruleLENGTH29206 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_477_in_ruleLENGTH29225 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_478_in_ruleLENGTH29244 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_479_in_ruleLENGTH29263 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleANGLE_in_entryRuleANGLE29305 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleANGLE29316 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rulenum_in_ruleANGLE29363 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000000700000000L});
-    public static final BitSet FOLLOW_480_in_ruleANGLE29382 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_481_in_ruleANGLE29401 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_482_in_ruleANGLE29420 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleTIME_in_entryRuleTIME29462 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleTIME29473 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rulenum_in_ruleTIME29520 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000001800000000L});
-    public static final BitSet FOLLOW_483_in_ruleTIME29539 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_484_in_ruleTIME29558 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleFREQ_in_entryRuleFREQ29600 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleFREQ29611 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rulenum_in_ruleFREQ29658 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000006000000000L});
-    public static final BitSet FOLLOW_485_in_ruleFREQ29677 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_486_in_ruleFREQ29696 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleFONT_in_entryRuleFONT29737 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleFONT29747 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_487_in_ruleFONT29794 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_488_in_ruleFONT29823 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_489_in_ruleFONT29852 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_490_in_ruleFONT29881 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_491_in_ruleFONT29910 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_492_in_ruleFONT29939 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_rulenum_in_ruleFONT29982 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_RULE_WS_in_ruleFONT29995 = new BitSet(new long[]{0x0000000000480610L,0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000000000040000L,0x0000000000000000L,0x0000000000000000L,0x00001F8000000000L});
-    public static final BitSet FOLLOW_ruleSIZE_in_ruleFONT30019 = new BitSet(new long[]{0x0000000000000090L});
-    public static final BitSet FOLLOW_RULE_WS_in_ruleFONT30031 = new BitSet(new long[]{0x0000000000000090L});
-    public static final BitSet FOLLOW_ruleFONTFAMILY_in_ruleFONT30053 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleFONTFAMILY_in_entryRuleFONTFAMILY30090 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleFONTFAMILY30101 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_STRING_in_ruleFONTFAMILY30140 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleFONTWEIGHT_in_entryRuleFONTWEIGHT30184 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleFONTWEIGHT30194 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_489_in_ruleFONTWEIGHT30239 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_490_in_ruleFONTWEIGHT30268 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_491_in_ruleFONTWEIGHT30297 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_492_in_ruleFONTWEIGHT30326 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_INTEGER_in_ruleFONTWEIGHT30365 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleFONTSTYLE_in_entryRuleFONTSTYLE30406 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleFONTSTYLE30416 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_489_in_ruleFONTSTYLE30460 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_487_in_ruleFONTSTYLE30489 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_488_in_ruleFONTSTYLE30518 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleSIZE_in_entryRuleSIZE30570 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleSIZE30581 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleunary_operator_in_ruleSIZE30629 = new BitSet(new long[]{0x0000000000000600L,0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000000000040000L});
-    public static final BitSet FOLLOW_ruleNUMBER_in_ruleSIZE30659 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rulePERCENTAGE_in_ruleSIZE30692 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleEMS_in_ruleSIZE30725 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleEXS_in_ruleSIZE30758 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleLENGTH_in_ruleSIZE30791 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleBLUR_in_entryRuleBLUR30838 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleBLUR30849 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_493_in_ruleBLUR30887 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_494_in_ruleBLUR30906 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_495_in_ruleBLUR30925 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_496_in_ruleBLUR30944 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_234_in_ruleHPosition30998 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_257_in_ruleHPosition31015 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_235_in_ruleHPosition31032 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_497_in_ruleHPosition31049 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_498_in_ruleHPosition31066 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_17_in_ruleHexColor28456 = new BitSet(new long[]{0x0000000000000300L});
+    public static final BitSet FOLLOW_RULE_HEXDIGITS_in_ruleHexColor28475 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_INTEGER_in_ruleHexColor28495 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleURI_in_entryRuleURI28540 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleURI28551 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_471_in_ruleURI28589 = new BitSet(new long[]{0x0000000000000080L});
+    public static final BitSet FOLLOW_RULE_STRING_in_ruleURI28604 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000000010000000L});
+    public static final BitSet FOLLOW_284_in_ruleURI28622 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleNUMBER_in_entryRuleNUMBER28663 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleNUMBER28674 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rulenum_in_ruleNUMBER28720 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rulePERCENTAGE_in_entryRulePERCENTAGE28765 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRulePERCENTAGE28776 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rulenum_in_rulePERCENTAGE28823 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000000000020000L});
+    public static final BitSet FOLLOW_465_in_rulePERCENTAGE28841 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleEMS_in_entryRuleEMS28882 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleEMS28893 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rulenum_in_ruleEMS28940 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000000001000000L});
+    public static final BitSet FOLLOW_472_in_ruleEMS28958 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleEXS_in_entryRuleEXS28999 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleEXS29010 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rulenum_in_ruleEXS29057 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000000002000000L});
+    public static final BitSet FOLLOW_473_in_ruleEXS29075 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleLENGTH_in_entryRuleLENGTH29116 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleLENGTH29127 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rulenum_in_ruleLENGTH29174 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x00000000FC000000L});
+    public static final BitSet FOLLOW_474_in_ruleLENGTH29193 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_475_in_ruleLENGTH29212 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_476_in_ruleLENGTH29231 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_477_in_ruleLENGTH29250 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_478_in_ruleLENGTH29269 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_479_in_ruleLENGTH29288 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleANGLE_in_entryRuleANGLE29330 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleANGLE29341 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rulenum_in_ruleANGLE29388 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000000700000000L});
+    public static final BitSet FOLLOW_480_in_ruleANGLE29407 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_481_in_ruleANGLE29426 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_482_in_ruleANGLE29445 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleTIME_in_entryRuleTIME29487 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleTIME29498 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rulenum_in_ruleTIME29545 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000001800000000L});
+    public static final BitSet FOLLOW_483_in_ruleTIME29564 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_484_in_ruleTIME29583 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleFREQ_in_entryRuleFREQ29625 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleFREQ29636 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rulenum_in_ruleFREQ29683 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000006000000000L});
+    public static final BitSet FOLLOW_485_in_ruleFREQ29702 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_486_in_ruleFREQ29721 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleFONT_in_entryRuleFONT29762 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleFONT29772 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_487_in_ruleFONT29819 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_488_in_ruleFONT29848 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_489_in_ruleFONT29877 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_490_in_ruleFONT29906 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_491_in_ruleFONT29935 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_492_in_ruleFONT29964 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_rulenum_in_ruleFONT30007 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_RULE_WS_in_ruleFONT30020 = new BitSet(new long[]{0x0000000000480610L,0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000000000040000L,0x0000000000000000L,0x0000000000000000L,0x00001F8000000000L});
+    public static final BitSet FOLLOW_ruleSIZE_in_ruleFONT30044 = new BitSet(new long[]{0x0000000000000090L});
+    public static final BitSet FOLLOW_RULE_WS_in_ruleFONT30056 = new BitSet(new long[]{0x0000000000000090L});
+    public static final BitSet FOLLOW_ruleFONTFAMILY_in_ruleFONT30078 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleFONTFAMILY_in_entryRuleFONTFAMILY30115 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleFONTFAMILY30126 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_STRING_in_ruleFONTFAMILY30165 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleFONTWEIGHT_in_entryRuleFONTWEIGHT30209 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleFONTWEIGHT30219 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_489_in_ruleFONTWEIGHT30264 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_490_in_ruleFONTWEIGHT30293 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_491_in_ruleFONTWEIGHT30322 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_492_in_ruleFONTWEIGHT30351 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_INTEGER_in_ruleFONTWEIGHT30390 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleFONTSTYLE_in_entryRuleFONTSTYLE30431 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleFONTSTYLE30441 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_489_in_ruleFONTSTYLE30485 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_487_in_ruleFONTSTYLE30514 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_488_in_ruleFONTSTYLE30543 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleSIZE_in_entryRuleSIZE30595 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleSIZE30606 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleunary_operator_in_ruleSIZE30654 = new BitSet(new long[]{0x0000000000000600L,0x0000000000000000L,0x0000000000000000L,0x0000000000000000L,0x0000000000040000L});
+    public static final BitSet FOLLOW_ruleNUMBER_in_ruleSIZE30684 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rulePERCENTAGE_in_ruleSIZE30717 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleEMS_in_ruleSIZE30750 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleEXS_in_ruleSIZE30783 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleLENGTH_in_ruleSIZE30816 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleBLUR_in_entryRuleBLUR30863 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleBLUR30874 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_493_in_ruleBLUR30912 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_494_in_ruleBLUR30931 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_495_in_ruleBLUR30950 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_496_in_ruleBLUR30969 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_234_in_ruleHPosition31023 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_257_in_ruleHPosition31040 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_235_in_ruleHPosition31057 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_497_in_ruleHPosition31074 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_498_in_ruleHPosition31091 = new BitSet(new long[]{0x0000000000000002L});
 
 }

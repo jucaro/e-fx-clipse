@@ -11981,9 +11981,10 @@ ruleHexColor returns [EObject current=null]
     }
 (
 (
-		lv_value_1_0=RULE_HEXDIGITS
+(
+		lv_value_1_1=RULE_HEXDIGITS
 		{
-			newLeafNode(lv_value_1_0, grammarAccess.getHexColorAccess().getValueHexdigitsTerminalRuleCall_1_0()); 
+			newLeafNode(lv_value_1_1, grammarAccess.getHexColorAccess().getValueHexdigitsTerminalRuleCall_1_0_0()); 
 		}
 		{
 	        if ($current==null) {
@@ -11992,9 +11993,26 @@ ruleHexColor returns [EObject current=null]
        		setWithLastConsumed(
        			$current, 
        			"value",
-        		lv_value_1_0, 
+        		lv_value_1_1, 
         		"hexdigits");
 	    }
+
+    |		lv_value_1_2=RULE_INTEGER
+		{
+			newLeafNode(lv_value_1_2, grammarAccess.getHexColorAccess().getValueIntegerTerminalRuleCall_1_0_1()); 
+		}
+		{
+	        if ($current==null) {
+	            $current = createModelElement(grammarAccess.getHexColorRule());
+	        }
+       		setWithLastConsumed(
+       			$current, 
+       			"value",
+        		lv_value_1_2, 
+        		"integer");
+	    }
+
+)
 
 )
 ))

@@ -6334,23 +6334,31 @@ public class CssDslGrammarAccess extends AbstractGrammarElementFinder {
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Keyword cNumberSignKeyword_0 = (Keyword)cGroup.eContents().get(0);
 		private final Assignment cValueAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final RuleCall cValueHexdigitsTerminalRuleCall_1_0 = (RuleCall)cValueAssignment_1.eContents().get(0);
+		private final Alternatives cValueAlternatives_1_0 = (Alternatives)cValueAssignment_1.eContents().get(0);
+		private final RuleCall cValueHexdigitsTerminalRuleCall_1_0_0 = (RuleCall)cValueAlternatives_1_0.eContents().get(0);
+		private final RuleCall cValueIntegerTerminalRuleCall_1_0_1 = (RuleCall)cValueAlternatives_1_0.eContents().get(1);
 		
 		//HexColor:
-		//	"#" value=hexdigits;
+		//	"#" value=(hexdigits | integer);
 		public ParserRule getRule() { return rule; }
 
-		//"#" value=hexdigits
+		//"#" value=(hexdigits | integer)
 		public Group getGroup() { return cGroup; }
 
 		//"#"
 		public Keyword getNumberSignKeyword_0() { return cNumberSignKeyword_0; }
 
-		//value=hexdigits
+		//value=(hexdigits | integer)
 		public Assignment getValueAssignment_1() { return cValueAssignment_1; }
 
+		//hexdigits | integer
+		public Alternatives getValueAlternatives_1_0() { return cValueAlternatives_1_0; }
+
 		//hexdigits
-		public RuleCall getValueHexdigitsTerminalRuleCall_1_0() { return cValueHexdigitsTerminalRuleCall_1_0; }
+		public RuleCall getValueHexdigitsTerminalRuleCall_1_0_0() { return cValueHexdigitsTerminalRuleCall_1_0_0; }
+
+		//integer
+		public RuleCall getValueIntegerTerminalRuleCall_1_0_1() { return cValueIntegerTerminalRuleCall_1_0_1; }
 	}
 
 	public class URIElements extends AbstractParserRuleElementFinder {
@@ -7901,7 +7909,7 @@ public class CssDslGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//HexColor:
-	//	"#" value=hexdigits;
+	//	"#" value=(hexdigits | integer);
 	public HexColorElements getHexColorAccess() {
 		return (pHexColor != null) ? pHexColor : (pHexColor = new HexColorElements());
 	}

@@ -272,12 +272,12 @@ public class AbstractCssDslSemanticSequencer extends AbstractSemanticSequencer {
 				}
 				else break;
 			case CssDslPackage.ELEMENT_NAME:
-				if(context == grammarAccess.getElement_nameRule()) {
-					sequence_element_name_element_name(context, (element_name) semanticObject); 
+				if(context == grammarAccess.getSimple_selectorRule()) {
+					sequence_simple_selector_element_name(context, (element_name) semanticObject); 
 					return; 
 				}
-				else if(context == grammarAccess.getSimple_selectorRule()) {
-					sequence_simple_selector_element_name(context, (element_name) semanticObject); 
+				else if(context == grammarAccess.getElement_nameRule()) {
+					sequence_element_name_element_name(context, (element_name) semanticObject); 
 					return; 
 				}
 				else break;
@@ -911,20 +911,13 @@ public class AbstractCssDslSemanticSequencer extends AbstractSemanticSequencer {
 	
 	/**
 	 * Constraint:
-	 *     value=hexdigits
+	 *     (value=hexdigits | value=integer)
 	 *
 	 * Features:
-	 *    value[1, 1]
+	 *    value[0, 2]
 	 */
 	protected void sequence_HexColor_HexColor(EObject context, HexColor semanticObject) {
-		if(errorAcceptor != null) {
-			if(transientValues.isValueTransient(semanticObject, CssDslPackage.Literals.HEX_COLOR__VALUE) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, CssDslPackage.Literals.HEX_COLOR__VALUE));
-		}
-		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
-		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
-		feeder.accept(grammarAccess.getHexColorAccess().getValueHexdigitsTerminalRuleCall_1_0(), semanticObject.getValue());
-		feeder.finish();
+		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	

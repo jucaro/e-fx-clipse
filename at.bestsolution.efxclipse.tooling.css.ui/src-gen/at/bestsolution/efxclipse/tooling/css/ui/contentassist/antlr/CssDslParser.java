@@ -114,6 +114,7 @@ public class CssDslParser extends AbstractContentAssistParser {
 					put(grammarAccess.getRGBColorAccess().getAlternatives(), "rule__RGBColor__Alternatives");
 					put(grammarAccess.getHSBColorAccess().getAlternatives(), "rule__HSBColor__Alternatives");
 					put(grammarAccess.getColorFunctionAccess().getAlternatives(), "rule__ColorFunction__Alternatives");
+					put(grammarAccess.getHexColorAccess().getValueAlternatives_1_0(), "rule__HexColor__ValueAlternatives_1_0");
 					put(grammarAccess.getLENGTHAccess().getAlternatives_1(), "rule__LENGTH__Alternatives_1");
 					put(grammarAccess.getANGLEAccess().getAlternatives_1(), "rule__ANGLE__Alternatives_1");
 					put(grammarAccess.getTIMEAccess().getAlternatives_1(), "rule__TIME__Alternatives_1");

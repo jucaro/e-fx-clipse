@@ -7832,6 +7832,28 @@ finally {
 	restoreStackSize(stackSize);
 }
 
+rule__HexColor__ValueAlternatives_1_0
+    @init {
+		int stackSize = keepStackSize();
+    }
+:
+(
+{ before(grammarAccess.getHexColorAccess().getValueHexdigitsTerminalRuleCall_1_0_0()); }
+	RULE_HEXDIGITS
+{ after(grammarAccess.getHexColorAccess().getValueHexdigitsTerminalRuleCall_1_0_0()); }
+)
+
+    |(
+{ before(grammarAccess.getHexColorAccess().getValueIntegerTerminalRuleCall_1_0_1()); }
+	RULE_INTEGER
+{ after(grammarAccess.getHexColorAccess().getValueIntegerTerminalRuleCall_1_0_1()); }
+)
+
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
 rule__LENGTH__Alternatives_1
     @init {
 		int stackSize = keepStackSize();
@@ -28575,8 +28597,9 @@ rule__HexColor__ValueAssignment_1
     }
 :
 (
-{ before(grammarAccess.getHexColorAccess().getValueHexdigitsTerminalRuleCall_1_0()); }
-	RULE_HEXDIGITS{ after(grammarAccess.getHexColorAccess().getValueHexdigitsTerminalRuleCall_1_0()); }
+{ before(grammarAccess.getHexColorAccess().getValueAlternatives_1_0()); }
+(rule__HexColor__ValueAlternatives_1_0)
+{ after(grammarAccess.getHexColorAccess().getValueAlternatives_1_0()); }
 )
 
 ;
