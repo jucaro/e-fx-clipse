@@ -5,7 +5,7 @@ import org.eclipse.xtext.generator.*
 import org.eclipse.xtext.ui.generator.*
 
 var grammarURI = "classpath:/at/bestsolution/efxclipse/tooling/css/CssDsl.xtext"
-var file.extensions = "css"
+var file.extensions = "fxcss"
 var projectName = "at.bestsolution.efxclipse.tooling.css"
 var runtimeProject = "../${projectName}"
 
