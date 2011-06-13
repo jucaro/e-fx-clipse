@@ -17,7 +17,7 @@ public class InternalCssDslLexer extends Lexer {
     public static final int T__91=91;
     public static final int T__92=92;
     public static final int T__90=90;
-    public static final int RULE_REAL=7;
+    public static final int RULE_REAL=6;
     public static final int T__99=99;
     public static final int T__98=98;
     public static final int T__97=97;
@@ -33,7 +33,7 @@ public class InternalCssDslLexer extends Lexer {
     public static final int T__86=86;
     public static final int T__89=89;
     public static final int T__88=88;
-    public static final int RULE_ML_COMMENT=11;
+    public static final int RULE_ML_COMMENT=10;
     public static final int T__71=71;
     public static final int T__72=72;
     public static final int T__70=70;
@@ -73,18 +73,18 @@ public class InternalCssDslLexer extends Lexer {
     public static final int T__17=17;
     public static final int T__12=12;
     public static final int T__386=386;
+    public static final int T__11=11;
     public static final int T__385=385;
     public static final int T__388=388;
     public static final int T__14=14;
-    public static final int T__13=13;
     public static final int T__387=387;
+    public static final int T__13=13;
     public static final int T__382=382;
     public static final int T__381=381;
     public static final int T__384=384;
     public static final int T__383=383;
     public static final int T__378=378;
     public static final int T__379=379;
-    public static final int T__498=498;
     public static final int T__497=497;
     public static final int T__496=496;
     public static final int T__495=495;
@@ -108,7 +108,7 @@ public class InternalCssDslLexer extends Lexer {
     public static final int T__489=489;
     public static final int T__200=200;
     public static final int T__201=201;
-    public static final int RULE_IDENT=8;
+    public static final int RULE_IDENT=7;
     public static final int T__332=332;
     public static final int T__68=68;
     public static final int T__333=333;
@@ -463,9 +463,8 @@ public class InternalCssDslLexer extends Lexer {
     public static final int T__234=234;
     public static final int T__233=233;
     public static final int T__230=230;
-    public static final int RULE_HEXCOLOR=5;
-    public static final int RULE_COMMA=10;
-    public static final int RULE_INTEGER=6;
+    public static final int RULE_COMMA=9;
+    public static final int RULE_INTEGER=5;
     public static final int T__199=199;
     public static final int T__198=198;
     public static final int T__292=292;
@@ -506,7 +505,7 @@ public class InternalCssDslLexer extends Lexer {
     public static final int T__176=176;
     public static final int T__171=171;
     public static final int T__170=170;
-    public static final int RULE_WS=9;
+    public static final int RULE_WS=8;
     public static final int T__169=169;
 
     // delegates
@@ -522,15 +521,35 @@ public class InternalCssDslLexer extends Lexer {
     }
     public String getGrammarFileName() { return "../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g"; }
 
-    // $ANTLR start "T__12"
-    public final void mT__12() throws RecognitionException {
+    // $ANTLR start "T__11"
+    public final void mT__11() throws RecognitionException {
         try {
-            int _type = T__12;
+            int _type = T__11;
             int _channel = DEFAULT_TOKEN_CHANNEL;
             // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:11:7: ( '+' )
             // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:11:9: '+'
             {
             match('+'); 
+
+            }
+
+            state.type = _type;
+            state.channel = _channel;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end "T__11"
+
+    // $ANTLR start "T__12"
+    public final void mT__12() throws RecognitionException {
+        try {
+            int _type = T__12;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:12:7: ( '>' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:12:9: '>'
+            {
+            match('>'); 
 
             }
 
@@ -547,10 +566,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__13;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:12:7: ( '>' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:12:9: '>'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:13:7: ( '-' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:13:9: '-'
             {
-            match('>'); 
+            match('-'); 
 
             }
 
@@ -567,10 +586,11 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__14;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:13:7: ( '-' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:13:9: '-'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:14:7: ( '-fx-font' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:14:9: '-fx-font'
             {
-            match('-'); 
+            match("-fx-font"); 
+
 
             }
 
@@ -587,10 +607,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__15;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:14:7: ( '-fx-font' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:14:9: '-fx-font'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:15:7: ( '-fx-title-font' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:15:9: '-fx-title-font'
             {
-            match("-fx-font"); 
+            match("-fx-title-font"); 
 
 
             }
@@ -608,10 +628,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__16;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:15:7: ( '-fx-title-font' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:15:9: '-fx-title-font'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:16:7: ( '-fx-pie-label-font' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:16:9: '-fx-pie-label-font'
             {
-            match("-fx-title-font"); 
+            match("-fx-pie-label-font"); 
 
 
             }
@@ -629,10 +649,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__17;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:16:7: ( '-fx-pie-label-font' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:16:9: '-fx-pie-label-font'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:17:7: ( '-fx-pie-value-label-font' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:17:9: '-fx-pie-value-label-font'
             {
-            match("-fx-pie-label-font"); 
+            match("-fx-pie-value-label-font"); 
 
 
             }
@@ -650,10 +670,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__18;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:17:7: ( '-fx-pie-value-label-font' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:17:9: '-fx-pie-value-label-font'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:18:7: ( '-fx-label-font' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:18:9: '-fx-label-font'
             {
-            match("-fx-pie-value-label-font"); 
+            match("-fx-label-font"); 
 
 
             }
@@ -671,10 +691,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__19;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:18:7: ( '-fx-label-font' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:18:9: '-fx-label-font'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:19:7: ( '-fx-tick-label-font' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:19:9: '-fx-tick-label-font'
             {
-            match("-fx-label-font"); 
+            match("-fx-tick-label-font"); 
 
 
             }
@@ -692,10 +712,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__20;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:19:7: ( '-fx-tick-label-font' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:19:9: '-fx-tick-label-font'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:20:7: ( '-fx-font-family' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:20:9: '-fx-font-family'
             {
-            match("-fx-tick-label-font"); 
+            match("-fx-font-family"); 
 
 
             }
@@ -713,10 +733,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__21;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:20:7: ( '-fx-font-family' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:20:9: '-fx-font-family'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:21:7: ( '-fx-title-font-family' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:21:9: '-fx-title-font-family'
             {
-            match("-fx-font-family"); 
+            match("-fx-title-font-family"); 
 
 
             }
@@ -734,10 +754,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__22;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:21:7: ( '-fx-title-font-family' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:21:9: '-fx-title-font-family'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:22:7: ( '-fx-pie-label-font-family' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:22:9: '-fx-pie-label-font-family'
             {
-            match("-fx-title-font-family"); 
+            match("-fx-pie-label-font-family"); 
 
 
             }
@@ -755,10 +775,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__23;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:22:7: ( '-fx-pie-label-font-family' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:22:9: '-fx-pie-label-font-family'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:23:7: ( '-fx-pie-value-label-font-family' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:23:9: '-fx-pie-value-label-font-family'
             {
-            match("-fx-pie-label-font-family"); 
+            match("-fx-pie-value-label-font-family"); 
 
 
             }
@@ -776,10 +796,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__24;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:23:7: ( '-fx-pie-value-label-font-family' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:23:9: '-fx-pie-value-label-font-family'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:24:7: ( '-fx-label-font-family' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:24:9: '-fx-label-font-family'
             {
-            match("-fx-pie-value-label-font-family"); 
+            match("-fx-label-font-family"); 
 
 
             }
@@ -797,10 +817,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__25;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:24:7: ( '-fx-label-font-family' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:24:9: '-fx-label-font-family'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:25:7: ( '-fx-tick-label-font-family' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:25:9: '-fx-tick-label-font-family'
             {
-            match("-fx-label-font-family"); 
+            match("-fx-tick-label-font-family"); 
 
 
             }
@@ -818,10 +838,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__26;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:25:7: ( '-fx-tick-label-font-family' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:25:9: '-fx-tick-label-font-family'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:26:7: ( '-fx-font-size' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:26:9: '-fx-font-size'
             {
-            match("-fx-tick-label-font-family"); 
+            match("-fx-font-size"); 
 
 
             }
@@ -839,10 +859,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__27;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:26:7: ( '-fx-font-size' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:26:9: '-fx-font-size'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:27:7: ( '-fx-title-font-size' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:27:9: '-fx-title-font-size'
             {
-            match("-fx-font-size"); 
+            match("-fx-title-font-size"); 
 
 
             }
@@ -860,10 +880,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__28;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:27:7: ( '-fx-title-font-size' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:27:9: '-fx-title-font-size'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:28:7: ( '-fx-pie-label-font-size' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:28:9: '-fx-pie-label-font-size'
             {
-            match("-fx-title-font-size"); 
+            match("-fx-pie-label-font-size"); 
 
 
             }
@@ -881,10 +901,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__29;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:28:7: ( '-fx-pie-label-font-size' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:28:9: '-fx-pie-label-font-size'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:29:7: ( '-fx-pie-value-label-font-size' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:29:9: '-fx-pie-value-label-font-size'
             {
-            match("-fx-pie-label-font-size"); 
+            match("-fx-pie-value-label-font-size"); 
 
 
             }
@@ -902,10 +922,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__30;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:29:7: ( '-fx-pie-value-label-font-size' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:29:9: '-fx-pie-value-label-font-size'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:30:7: ( '-fx-label-font-size' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:30:9: '-fx-label-font-size'
             {
-            match("-fx-pie-value-label-font-size"); 
+            match("-fx-label-font-size"); 
 
 
             }
@@ -923,10 +943,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__31;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:30:7: ( '-fx-label-font-size' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:30:9: '-fx-label-font-size'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:31:7: ( '-fx-tick-label-font-size' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:31:9: '-fx-tick-label-font-size'
             {
-            match("-fx-label-font-size"); 
+            match("-fx-tick-label-font-size"); 
 
 
             }
@@ -944,10 +964,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__32;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:31:7: ( '-fx-tick-label-font-size' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:31:9: '-fx-tick-label-font-size'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:32:7: ( '-fx-font-style' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:32:9: '-fx-font-style'
             {
-            match("-fx-tick-label-font-size"); 
+            match("-fx-font-style"); 
 
 
             }
@@ -965,10 +985,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__33;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:32:7: ( '-fx-font-style' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:32:9: '-fx-font-style'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:33:7: ( '-fx-title-font-style' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:33:9: '-fx-title-font-style'
             {
-            match("-fx-font-style"); 
+            match("-fx-title-font-style"); 
 
 
             }
@@ -986,10 +1006,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__34;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:33:7: ( '-fx-title-font-style' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:33:9: '-fx-title-font-style'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:34:7: ( '-fx-pie-label-font-style' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:34:9: '-fx-pie-label-font-style'
             {
-            match("-fx-title-font-style"); 
+            match("-fx-pie-label-font-style"); 
 
 
             }
@@ -1007,10 +1027,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__35;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:34:7: ( '-fx-pie-label-font-style' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:34:9: '-fx-pie-label-font-style'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:35:7: ( '-fx-pie-value-label-font-style' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:35:9: '-fx-pie-value-label-font-style'
             {
-            match("-fx-pie-label-font-style"); 
+            match("-fx-pie-value-label-font-style"); 
 
 
             }
@@ -1028,10 +1048,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__36;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:35:7: ( '-fx-pie-value-label-font-style' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:35:9: '-fx-pie-value-label-font-style'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:36:7: ( '-fx-label-font-style' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:36:9: '-fx-label-font-style'
             {
-            match("-fx-pie-value-label-font-style"); 
+            match("-fx-label-font-style"); 
 
 
             }
@@ -1049,10 +1069,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__37;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:36:7: ( '-fx-label-font-style' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:36:9: '-fx-label-font-style'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:37:7: ( '-fx-tick-label-font-style' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:37:9: '-fx-tick-label-font-style'
             {
-            match("-fx-label-font-style"); 
+            match("-fx-tick-label-font-style"); 
 
 
             }
@@ -1070,10 +1090,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__38;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:37:7: ( '-fx-tick-label-font-style' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:37:9: '-fx-tick-label-font-style'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:38:7: ( '-fx-font-weight' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:38:9: '-fx-font-weight'
             {
-            match("-fx-tick-label-font-style"); 
+            match("-fx-font-weight"); 
 
 
             }
@@ -1091,10 +1111,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__39;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:38:7: ( '-fx-font-weight' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:38:9: '-fx-font-weight'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:39:7: ( '-fx-title-font-weight' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:39:9: '-fx-title-font-weight'
             {
-            match("-fx-font-weight"); 
+            match("-fx-title-font-weight"); 
 
 
             }
@@ -1112,10 +1132,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__40;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:39:7: ( '-fx-title-font-weight' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:39:9: '-fx-title-font-weight'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:40:7: ( '-fx-pie-label-font-weight' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:40:9: '-fx-pie-label-font-weight'
             {
-            match("-fx-title-font-weight"); 
+            match("-fx-pie-label-font-weight"); 
 
 
             }
@@ -1133,10 +1153,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__41;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:40:7: ( '-fx-pie-label-font-weight' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:40:9: '-fx-pie-label-font-weight'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:41:7: ( '-fx-pie-value-label-font-weight' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:41:9: '-fx-pie-value-label-font-weight'
             {
-            match("-fx-pie-label-font-weight"); 
+            match("-fx-pie-value-label-font-weight"); 
 
 
             }
@@ -1154,10 +1174,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__42;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:41:7: ( '-fx-pie-value-label-font-weight' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:41:9: '-fx-pie-value-label-font-weight'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:42:7: ( '-fx-label-font-weight' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:42:9: '-fx-label-font-weight'
             {
-            match("-fx-pie-value-label-font-weight"); 
+            match("-fx-label-font-weight"); 
 
 
             }
@@ -1175,10 +1195,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__43;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:42:7: ( '-fx-label-font-weight' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:42:9: '-fx-label-font-weight'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:43:7: ( '-fx-tick-label-font-weight' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:43:9: '-fx-tick-label-font-weight'
             {
-            match("-fx-label-font-weight"); 
+            match("-fx-tick-label-font-weight"); 
 
 
             }
@@ -1196,10 +1216,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__44;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:43:7: ( '-fx-tick-label-font-weight' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:43:9: '-fx-tick-label-font-weight'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:44:7: ( 'crosshair' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:44:9: 'crosshair'
             {
-            match("-fx-tick-label-font-weight"); 
+            match("crosshair"); 
 
 
             }
@@ -1217,10 +1237,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__45;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:44:7: ( 'crosshair' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:44:9: 'crosshair'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:45:7: ( 'default' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:45:9: 'default'
             {
-            match("crosshair"); 
+            match("default"); 
 
 
             }
@@ -1238,10 +1258,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__46;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:45:7: ( 'default' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:45:9: 'default'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:46:7: ( 'hand' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:46:9: 'hand'
             {
-            match("default"); 
+            match("hand"); 
 
 
             }
@@ -1259,10 +1279,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__47;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:46:7: ( 'hand' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:46:9: 'hand'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:47:7: ( 'move' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:47:9: 'move'
             {
-            match("hand"); 
+            match("move"); 
 
 
             }
@@ -1280,10 +1300,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__48;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:47:7: ( 'move' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:47:9: 'move'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:48:7: ( 'e-resize' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:48:9: 'e-resize'
             {
-            match("move"); 
+            match("e-resize"); 
 
 
             }
@@ -1301,10 +1321,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__49;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:48:7: ( 'e-resize' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:48:9: 'e-resize'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:49:7: ( 'h-resize' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:49:9: 'h-resize'
             {
-            match("e-resize"); 
+            match("h-resize"); 
 
 
             }
@@ -1322,10 +1342,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__50;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:49:7: ( 'h-resize' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:49:9: 'h-resize'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:50:7: ( 'ne-resize' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:50:9: 'ne-resize'
             {
-            match("h-resize"); 
+            match("ne-resize"); 
 
 
             }
@@ -1343,10 +1363,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__51;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:50:7: ( 'ne-resize' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:50:9: 'ne-resize'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:51:7: ( 'nw-resize' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:51:9: 'nw-resize'
             {
-            match("ne-resize"); 
+            match("nw-resize"); 
 
 
             }
@@ -1364,10 +1384,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__52;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:51:7: ( 'nw-resize' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:51:9: 'nw-resize'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:52:7: ( 'n-resize' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:52:9: 'n-resize'
             {
-            match("nw-resize"); 
+            match("n-resize"); 
 
 
             }
@@ -1385,10 +1405,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__53;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:52:7: ( 'n-resize' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:52:9: 'n-resize'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:53:7: ( 'se-resize' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:53:9: 'se-resize'
             {
-            match("n-resize"); 
+            match("se-resize"); 
 
 
             }
@@ -1406,10 +1426,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__54;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:53:7: ( 'se-resize' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:53:9: 'se-resize'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:54:7: ( 'sw-resize' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:54:9: 'sw-resize'
             {
-            match("se-resize"); 
+            match("sw-resize"); 
 
 
             }
@@ -1427,10 +1447,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__55;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:54:7: ( 'sw-resize' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:54:9: 'sw-resize'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:55:7: ( 's-resize' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:55:9: 's-resize'
             {
-            match("sw-resize"); 
+            match("s-resize"); 
 
 
             }
@@ -1448,10 +1468,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__56;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:55:7: ( 's-resize' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:55:9: 's-resize'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:56:7: ( 'w-resize' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:56:9: 'w-resize'
             {
-            match("s-resize"); 
+            match("w-resize"); 
 
 
             }
@@ -1469,10 +1489,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__57;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:56:7: ( 'w-resize' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:56:9: 'w-resize'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:57:7: ( 'v-resize' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:57:9: 'v-resize'
             {
-            match("w-resize"); 
+            match("v-resize"); 
 
 
             }
@@ -1490,10 +1510,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__58;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:57:7: ( 'v-resize' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:57:9: 'v-resize'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:58:7: ( 'text' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:58:9: 'text'
             {
-            match("v-resize"); 
+            match("text"); 
 
 
             }
@@ -1511,10 +1531,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__59;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:58:7: ( 'text' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:58:9: 'text'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:59:7: ( 'wait' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:59:9: 'wait'
             {
-            match("text"); 
+            match("wait"); 
 
 
             }
@@ -1532,10 +1552,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__60;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:59:7: ( 'wait' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:59:9: 'wait'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:60:7: ( '-fx-focus-traversable' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:60:9: '-fx-focus-traversable'
             {
-            match("wait"); 
+            match("-fx-focus-traversable"); 
 
 
             }
@@ -1553,10 +1573,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__61;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:60:7: ( '-fx-focus-traversable' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:60:9: '-fx-focus-traversable'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:61:7: ( '-fx-pannable' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:61:9: '-fx-pannable'
             {
-            match("-fx-focus-traversable"); 
+            match("-fx-pannable"); 
 
 
             }
@@ -1574,10 +1594,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__62;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:61:7: ( '-fx-pannable' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:61:9: '-fx-pannable'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:62:7: ( '-fx-hgap' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:62:9: '-fx-hgap'
             {
-            match("-fx-pannable"); 
+            match("-fx-hgap"); 
 
 
             }
@@ -1595,10 +1615,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__63;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:62:7: ( '-fx-hgap' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:62:9: '-fx-hgap'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:63:7: ( '-fx-vpos' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:63:9: '-fx-vpos'
             {
-            match("-fx-hgap"); 
+            match("-fx-vpos"); 
 
 
             }
@@ -1616,10 +1636,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__64;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:63:7: ( '-fx-vpos' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:63:9: '-fx-vpos'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:64:7: ( '-fx-snap-to-pixel' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:64:9: '-fx-snap-to-pixel'
             {
-            match("-fx-vpos"); 
+            match("-fx-snap-to-pixel"); 
 
 
             }
@@ -1637,10 +1657,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__65;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:64:7: ( '-fx-snap-to-pixel' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:64:9: '-fx-snap-to-pixel'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:65:7: ( '-fx-vertical' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:65:9: '-fx-vertical'
             {
-            match("-fx-snap-to-pixel"); 
+            match("-fx-vertical"); 
 
 
             }
@@ -1658,10 +1678,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__66;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:65:7: ( '-fx-vertical' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:65:9: '-fx-vertical'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:66:7: ( '-fx-smooth' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:66:9: '-fx-smooth'
             {
-            match("-fx-vertical"); 
+            match("-fx-smooth"); 
 
 
             }
@@ -1679,10 +1699,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__67;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:66:7: ( '-fx-smooth' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:66:9: '-fx-smooth'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:67:7: ( '-fx-strikethrough' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:67:9: '-fx-strikethrough'
             {
-            match("-fx-smooth"); 
+            match("-fx-strikethrough"); 
 
 
             }
@@ -1700,10 +1720,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__68;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:67:7: ( '-fx-strikethrough' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:67:9: '-fx-strikethrough'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:68:7: ( '-fx-underline' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:68:9: '-fx-underline'
             {
-            match("-fx-strikethrough"); 
+            match("-fx-underline"); 
 
 
             }
@@ -1721,10 +1741,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__69;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:68:7: ( '-fx-underline' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:68:9: '-fx-underline'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:69:7: ( '-fx-scale-shape' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:69:9: '-fx-scale-shape'
             {
-            match("-fx-underline"); 
+            match("-fx-scale-shape"); 
 
 
             }
@@ -1742,10 +1762,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__70;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:69:7: ( '-fx-scale-shape' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:69:9: '-fx-scale-shape'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:70:7: ( '-fx-vertical-zero-line-visible' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:70:9: '-fx-vertical-zero-line-visible'
             {
-            match("-fx-scale-shape"); 
+            match("-fx-vertical-zero-line-visible"); 
 
 
             }
@@ -1763,10 +1783,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__71;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:70:7: ( '-fx-vertical-zero-line-visible' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:70:9: '-fx-vertical-zero-line-visible'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:71:7: ( '-fx-vertical-grid-line-visible' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:71:9: '-fx-vertical-grid-line-visible'
             {
-            match("-fx-vertical-zero-line-visible"); 
+            match("-fx-vertical-grid-line-visible"); 
 
 
             }
@@ -1784,10 +1804,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__72;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:71:7: ( '-fx-vertical-grid-line-visible' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:71:9: '-fx-vertical-grid-line-visible'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:72:7: ( '-fx-horizontal-zero-line-visible' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:72:9: '-fx-horizontal-zero-line-visible'
             {
-            match("-fx-vertical-grid-line-visible"); 
+            match("-fx-horizontal-zero-line-visible"); 
 
 
             }
@@ -1805,10 +1825,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__73;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:72:7: ( '-fx-horizontal-zero-line-visible' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:72:9: '-fx-horizontal-zero-line-visible'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:73:7: ( '-fx-horizontal-grid-line-visible' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:73:9: '-fx-horizontal-grid-line-visible'
             {
-            match("-fx-horizontal-zero-line-visible"); 
+            match("-fx-horizontal-grid-line-visible"); 
 
 
             }
@@ -1826,10 +1846,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__74;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:73:7: ( '-fx-horizontal-grid-line-visible' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:73:9: '-fx-horizontal-grid-line-visible'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:74:7: ( '-fx-pie-value-visible' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:74:9: '-fx-pie-value-visible'
             {
-            match("-fx-horizontal-grid-line-visible"); 
+            match("-fx-pie-value-visible"); 
 
 
             }
@@ -1847,10 +1867,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__75;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:74:7: ( '-fx-pie-value-visible' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:74:9: '-fx-pie-value-visible'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:75:7: ( '-fx-pie-to-label-line-curved' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:75:9: '-fx-pie-to-label-line-curved'
             {
-            match("-fx-pie-value-visible"); 
+            match("-fx-pie-to-label-line-curved"); 
 
 
             }
@@ -1868,10 +1888,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__76;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:75:7: ( '-fx-pie-to-label-line-curved' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:75:9: '-fx-pie-to-label-line-curved'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:76:7: ( '-fx-pie-label-visible' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:76:9: '-fx-pie-label-visible'
             {
-            match("-fx-pie-to-label-line-curved"); 
+            match("-fx-pie-label-visible"); 
 
 
             }
@@ -1889,10 +1909,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__77;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:76:7: ( '-fx-pie-label-visible' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:76:9: '-fx-pie-label-visible'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:77:7: ( '-fx-clockwise' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:77:9: '-fx-clockwise'
             {
-            match("-fx-pie-label-visible"); 
+            match("-fx-clockwise"); 
 
 
             }
@@ -1910,10 +1930,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__78;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:77:7: ( '-fx-clockwise' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:77:9: '-fx-clockwise'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:78:7: ( '-fx-show-symbols' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:78:9: '-fx-show-symbols'
             {
-            match("-fx-clockwise"); 
+            match("-fx-show-symbols"); 
 
 
             }
@@ -1931,10 +1951,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__79;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:78:7: ( '-fx-show-symbols' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:78:9: '-fx-show-symbols'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:79:7: ( '-fx-legend-visible' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:79:9: '-fx-legend-visible'
             {
-            match("-fx-show-symbols"); 
+            match("-fx-legend-visible"); 
 
 
             }
@@ -1952,10 +1972,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__80;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:79:7: ( '-fx-legend-visible' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:79:9: '-fx-legend-visible'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:80:7: ( '-fx-scale-bubble-radius-using-axis' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:80:9: '-fx-scale-bubble-radius-using-axis'
             {
-            match("-fx-legend-visible"); 
+            match("-fx-scale-bubble-radius-using-axis"); 
 
 
             }
@@ -1973,10 +1993,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__81;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:80:7: ( '-fx-scale-bubble-radius-using-axis' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:80:9: '-fx-scale-bubble-radius-using-axis'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:81:7: ( '-fx-select-on-focus' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:81:9: '-fx-select-on-focus'
             {
-            match("-fx-scale-bubble-radius-using-axis"); 
+            match("-fx-select-on-focus"); 
 
 
             }
@@ -1994,10 +2014,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__82;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:81:7: ( '-fx-select-on-focus' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:81:9: '-fx-select-on-focus'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:82:7: ( '-fx-editable' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:82:9: '-fx-editable'
             {
-            match("-fx-select-on-focus"); 
+            match("-fx-editable"); 
 
 
             }
@@ -2015,10 +2035,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__83;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:82:7: ( '-fx-editable' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:82:9: '-fx-editable'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:83:7: ( '-fx-snap-to-ticks' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:83:9: '-fx-snap-to-ticks'
             {
-            match("-fx-editable"); 
+            match("-fx-snap-to-ticks"); 
 
 
             }
@@ -2036,10 +2056,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__84;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:83:7: ( '-fx-snap-to-ticks' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:83:9: '-fx-snap-to-ticks'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:84:7: ( '-fx-show-tick-marks' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:84:9: '-fx-show-tick-marks'
             {
-            match("-fx-snap-to-ticks"); 
+            match("-fx-show-tick-marks"); 
 
 
             }
@@ -2057,10 +2077,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__85;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:84:7: ( '-fx-show-tick-marks' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:84:9: '-fx-show-tick-marks'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:85:7: ( '-fx-show-tick-labels' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:85:9: '-fx-show-tick-labels'
             {
-            match("-fx-show-tick-marks"); 
+            match("-fx-show-tick-labels"); 
 
 
             }
@@ -2078,10 +2098,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__86;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:85:7: ( '-fx-show-tick-labels' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:85:9: '-fx-show-tick-labels'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:86:7: ( '-fx-fit-to-width' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:86:9: '-fx-fit-to-width'
             {
-            match("-fx-show-tick-labels"); 
+            match("-fx-fit-to-width"); 
 
 
             }
@@ -2099,10 +2119,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__87;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:86:7: ( '-fx-fit-to-width' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:86:9: '-fx-fit-to-width'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:87:7: ( '-fx-minor-tick-visible' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:87:9: '-fx-minor-tick-visible'
             {
-            match("-fx-fit-to-width"); 
+            match("-fx-minor-tick-visible"); 
 
 
             }
@@ -2120,10 +2140,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__88;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:87:7: ( '-fx-minor-tick-visible' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:87:9: '-fx-minor-tick-visible'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:88:7: ( '-fx-gap-start-and-end' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:88:9: '-fx-gap-start-and-end'
             {
-            match("-fx-minor-tick-visible"); 
+            match("-fx-gap-start-and-end"); 
 
 
             }
@@ -2141,10 +2161,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__89;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:88:7: ( '-fx-gap-start-and-end' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:88:9: '-fx-gap-start-and-end'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:89:7: ( '-fx-tick-mark-visible' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:89:9: '-fx-tick-mark-visible'
             {
-            match("-fx-gap-start-and-end"); 
+            match("-fx-tick-mark-visible"); 
 
 
             }
@@ -2162,10 +2182,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__90;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:89:7: ( '-fx-tick-mark-visible' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:89:9: '-fx-tick-mark-visible'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:90:7: ( '-fx-tick-labels-visible' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:90:9: '-fx-tick-labels-visible'
             {
-            match("-fx-tick-mark-visible"); 
+            match("-fx-tick-labels-visible"); 
 
 
             }
@@ -2183,10 +2203,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__91;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:90:7: ( '-fx-tick-labels-visible' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:90:9: '-fx-tick-labels-visible'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:91:7: ( '-fx-fit-to-height' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:91:9: '-fx-fit-to-height'
             {
-            match("-fx-tick-labels-visible"); 
+            match("-fx-fit-to-height"); 
 
 
             }
@@ -2204,10 +2224,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__92;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:91:7: ( '-fx-fit-to-height' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:91:9: '-fx-fit-to-height'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:92:7: ( '-fx-click-to-position' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:92:9: '-fx-click-to-position'
             {
-            match("-fx-fit-to-height"); 
+            match("-fx-click-to-position"); 
 
 
             }
@@ -2225,10 +2245,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__93;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:92:7: ( '-fx-click-to-position' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:92:9: '-fx-click-to-position'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:93:7: ( '-fx-text-wrap' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:93:9: '-fx-text-wrap'
             {
-            match("-fx-click-to-position"); 
+            match("-fx-text-wrap"); 
 
 
             }
@@ -2246,10 +2266,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__94;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:93:7: ( '-fx-text-wrap' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:93:9: '-fx-text-wrap'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:94:7: ( '-fx-position-shape' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:94:9: '-fx-position-shape'
             {
-            match("-fx-text-wrap"); 
+            match("-fx-position-shape"); 
 
 
             }
@@ -2267,10 +2287,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__95;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:94:7: ( '-fx-position-shape' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:94:9: '-fx-position-shape'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:95:7: ( 'true' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:95:9: 'true'
             {
-            match("-fx-position-shape"); 
+            match("true"); 
 
 
             }
@@ -2288,10 +2308,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__96;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:95:7: ( 'true' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:95:9: 'true'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:96:7: ( 'false' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:96:9: 'false'
             {
-            match("true"); 
+            match("false"); 
 
 
             }
@@ -2309,10 +2329,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__97;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:96:7: ( 'false' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:96:9: 'false'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:97:7: ( '-fx-spacing' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:97:9: '-fx-spacing'
             {
-            match("false"); 
+            match("-fx-spacing"); 
 
 
             }
@@ -2330,10 +2350,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__98;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:97:7: ( '-fx-spacing' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:97:9: '-fx-spacing'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:98:7: ( '-fx-arc-height' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:98:9: '-fx-arc-height'
             {
-            match("-fx-spacing"); 
+            match("-fx-arc-height"); 
 
 
             }
@@ -2351,10 +2371,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__99;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:98:7: ( '-fx-arc-height' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:98:9: '-fx-arc-height'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:99:7: ( '-fx-arc-width' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:99:9: '-fx-arc-width'
             {
-            match("-fx-arc-height"); 
+            match("-fx-arc-width"); 
 
 
             }
@@ -2372,10 +2392,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__100;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:99:8: ( '-fx-arc-width' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:99:10: '-fx-arc-width'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:100:8: ( '-fx-minor-tick-length' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:100:10: '-fx-minor-tick-length'
             {
-            match("-fx-arc-width"); 
+            match("-fx-minor-tick-length"); 
 
 
             }
@@ -2393,10 +2413,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__101;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:100:8: ( '-fx-minor-tick-length' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:100:10: '-fx-minor-tick-length'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:101:8: ( '-fx-stroke-width' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:101:10: '-fx-stroke-width'
             {
-            match("-fx-minor-tick-length"); 
+            match("-fx-stroke-width"); 
 
 
             }
@@ -2414,10 +2434,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__102;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:101:8: ( '-fx-stroke-width' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:101:10: '-fx-stroke-width'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:102:8: ( '-fx-start-margin' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:102:10: '-fx-start-margin'
             {
-            match("-fx-stroke-width"); 
+            match("-fx-start-margin"); 
 
 
             }
@@ -2435,10 +2455,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__103;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:102:8: ( '-fx-start-margin' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:102:10: '-fx-start-margin'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:103:8: ( '-fx-end-margin' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:103:10: '-fx-end-margin'
             {
-            match("-fx-start-margin"); 
+            match("-fx-end-margin"); 
 
 
             }
@@ -2456,10 +2476,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__104;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:103:8: ( '-fx-end-margin' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:103:10: '-fx-end-margin'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:104:8: ( '-fx-tick-mark-stroke-width' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:104:10: '-fx-tick-mark-stroke-width'
             {
-            match("-fx-end-margin"); 
+            match("-fx-tick-mark-stroke-width"); 
 
 
             }
@@ -2477,10 +2497,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__105;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:104:8: ( '-fx-tick-mark-stroke-width' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:104:10: '-fx-tick-mark-stroke-width'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:105:8: ( '-fx-tick-mark-length' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:105:10: '-fx-tick-mark-length'
             {
-            match("-fx-tick-mark-stroke-width"); 
+            match("-fx-tick-mark-length"); 
 
 
             }
@@ -2498,10 +2518,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__106;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:105:8: ( '-fx-tick-mark-length' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:105:10: '-fx-tick-mark-length'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:106:8: ( '-fx-tick-label-tick-gap' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:106:10: '-fx-tick-label-tick-gap'
             {
-            match("-fx-tick-mark-length"); 
+            match("-fx-tick-label-tick-gap"); 
 
 
             }
@@ -2519,10 +2539,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__107;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:106:8: ( '-fx-tick-label-tick-gap' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:106:10: '-fx-tick-label-tick-gap'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:107:8: ( '-fx-axis-stroke-width' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:107:10: '-fx-axis-stroke-width'
             {
-            match("-fx-tick-label-tick-gap"); 
+            match("-fx-axis-stroke-width"); 
 
 
             }
@@ -2540,10 +2560,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__108;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:107:8: ( '-fx-axis-stroke-width' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:107:10: '-fx-axis-stroke-width'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:108:8: ( '-fx-label-tick-gap' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:108:10: '-fx-label-tick-gap'
             {
-            match("-fx-axis-stroke-width"); 
+            match("-fx-label-tick-gap"); 
 
 
             }
@@ -2561,10 +2581,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__109;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:108:8: ( '-fx-label-tick-gap' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:108:10: '-fx-label-tick-gap'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:109:8: ( '-fx-vertical-grid-line-stroke-width' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:109:10: '-fx-vertical-grid-line-stroke-width'
             {
-            match("-fx-label-tick-gap"); 
+            match("-fx-vertical-grid-line-stroke-width"); 
 
 
             }
@@ -2582,10 +2602,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__110;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:109:8: ( '-fx-vertical-grid-line-stroke-width' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:109:10: '-fx-vertical-grid-line-stroke-width'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:110:8: ( '-fx-plot-background-stroke-width' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:110:10: '-fx-plot-background-stroke-width'
             {
-            match("-fx-vertical-grid-line-stroke-width"); 
+            match("-fx-plot-background-stroke-width"); 
 
 
             }
@@ -2603,10 +2623,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__111;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:110:8: ( '-fx-plot-background-stroke-width' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:110:10: '-fx-plot-background-stroke-width'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:111:8: ( '-fx-horizontal-grid-line-stroke-width' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:111:10: '-fx-horizontal-grid-line-stroke-width'
             {
-            match("-fx-plot-background-stroke-width"); 
+            match("-fx-horizontal-grid-line-stroke-width"); 
 
 
             }
@@ -2624,10 +2644,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__112;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:111:8: ( '-fx-horizontal-grid-line-stroke-width' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:111:10: '-fx-horizontal-grid-line-stroke-width'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:112:8: ( '-fx-pie-thickness' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:112:10: '-fx-pie-thickness'
             {
-            match("-fx-horizontal-grid-line-stroke-width"); 
+            match("-fx-pie-thickness"); 
 
 
             }
@@ -2645,10 +2665,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__113;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:112:8: ( '-fx-pie-thickness' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:112:10: '-fx-pie-thickness'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:113:8: ( '-fx-pie-stroke-width' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:113:10: '-fx-pie-stroke-width'
             {
-            match("-fx-pie-thickness"); 
+            match("-fx-pie-stroke-width"); 
 
 
             }
@@ -2666,10 +2686,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__114;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:113:8: ( '-fx-pie-stroke-width' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:113:10: '-fx-pie-stroke-width'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:114:8: ( '-fx-title-gap' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:114:10: '-fx-title-gap'
             {
-            match("-fx-pie-stroke-width"); 
+            match("-fx-title-gap"); 
 
 
             }
@@ -2687,10 +2707,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__115;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:114:8: ( '-fx-title-gap' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:114:10: '-fx-title-gap'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:115:8: ( '-fx-legend-gap' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:115:10: '-fx-legend-gap'
             {
-            match("-fx-title-gap"); 
+            match("-fx-legend-gap"); 
 
 
             }
@@ -2708,10 +2728,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__116;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:115:8: ( '-fx-legend-gap' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:115:10: '-fx-legend-gap'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:116:8: ( '-fx-hover-stroke-width' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:116:10: '-fx-hover-stroke-width'
             {
-            match("-fx-legend-gap"); 
+            match("-fx-hover-stroke-width"); 
 
 
             }
@@ -2729,10 +2749,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__117;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:116:8: ( '-fx-hover-stroke-width' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:116:10: '-fx-hover-stroke-width'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:117:8: ( '-fx-chart-background-stroke-width' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:117:10: '-fx-chart-background-stroke-width'
             {
-            match("-fx-hover-stroke-width"); 
+            match("-fx-chart-background-stroke-width"); 
 
 
             }
@@ -2750,10 +2770,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__118;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:117:8: ( '-fx-chart-background-stroke-width' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:117:10: '-fx-chart-background-stroke-width'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:118:8: ( '-fx-offset-y' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:118:10: '-fx-offset-y'
             {
-            match("-fx-chart-background-stroke-width"); 
+            match("-fx-offset-y"); 
 
 
             }
@@ -2771,10 +2791,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__119;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:118:8: ( '-fx-offset-y' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:118:10: '-fx-offset-y'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:119:8: ( '-fx-offset-x' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:119:10: '-fx-offset-x'
             {
-            match("-fx-offset-y"); 
+            match("-fx-offset-x"); 
 
 
             }
@@ -2792,10 +2812,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__120;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:119:8: ( '-fx-offset-x' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:119:10: '-fx-offset-x'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:120:8: ( '-fx-category-gap' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:120:10: '-fx-category-gap'
             {
-            match("-fx-offset-x"); 
+            match("-fx-category-gap"); 
 
 
             }
@@ -2813,10 +2833,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__121;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:120:8: ( '-fx-category-gap' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:120:10: '-fx-category-gap'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:121:8: ( '-fx-bar-gap' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:121:10: '-fx-bar-gap'
             {
-            match("-fx-category-gap"); 
+            match("-fx-bar-gap"); 
 
 
             }
@@ -2834,10 +2854,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__122;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:121:8: ( '-fx-bar-gap' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:121:10: '-fx-bar-gap'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:122:8: ( '-fx-graphic-text-gap' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:122:10: '-fx-graphic-text-gap'
             {
-            match("-fx-bar-gap"); 
+            match("-fx-graphic-text-gap"); 
 
 
             }
@@ -2855,10 +2875,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__123;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:122:8: ( '-fx-graphic-text-gap' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:122:10: '-fx-graphic-text-gap'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:123:8: ( '-fx-tab-spacing' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:123:10: '-fx-tab-spacing'
             {
-            match("-fx-graphic-text-gap"); 
+            match("-fx-tab-spacing"); 
 
 
             }
@@ -2876,10 +2896,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__124;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:123:8: ( '-fx-tab-spacing' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:123:10: '-fx-tab-spacing'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:124:8: ( '-fx-rotate' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:124:10: '-fx-rotate'
             {
-            match("-fx-tab-spacing"); 
+            match("-fx-rotate"); 
 
 
             }
@@ -2897,10 +2917,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__125;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:124:8: ( '-fx-rotate' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:124:10: '-fx-rotate'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:125:8: ( '-fx-scale-x' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:125:10: '-fx-scale-x'
             {
-            match("-fx-rotate"); 
+            match("-fx-scale-x"); 
 
 
             }
@@ -2918,10 +2938,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__126;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:125:8: ( '-fx-scale-x' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:125:10: '-fx-scale-x'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:126:8: ( '-fx-scale-y' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:126:10: '-fx-scale-y'
             {
-            match("-fx-scale-x"); 
+            match("-fx-scale-y"); 
 
 
             }
@@ -2939,10 +2959,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__127;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:126:8: ( '-fx-scale-y' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:126:10: '-fx-scale-y'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:127:8: ( '-fx-scale-z' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:127:10: '-fx-scale-z'
             {
-            match("-fx-scale-y"); 
+            match("-fx-scale-z"); 
 
 
             }
@@ -2960,10 +2980,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__128;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:127:8: ( '-fx-scale-z' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:127:10: '-fx-scale-z'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:128:8: ( '-fx-translate-x' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:128:10: '-fx-translate-x'
             {
-            match("-fx-scale-z"); 
+            match("-fx-translate-x"); 
 
 
             }
@@ -2981,10 +3001,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__129;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:128:8: ( '-fx-translate-x' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:128:10: '-fx-translate-x'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:129:8: ( '-fx-translate-y' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:129:10: '-fx-translate-y'
             {
-            match("-fx-translate-x"); 
+            match("-fx-translate-y"); 
 
 
             }
@@ -3002,10 +3022,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__130;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:129:8: ( '-fx-translate-y' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:129:10: '-fx-translate-y'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:130:8: ( '-fx-translate-z' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:130:10: '-fx-translate-z'
             {
-            match("-fx-translate-y"); 
+            match("-fx-translate-z"); 
 
 
             }
@@ -3023,10 +3043,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__131;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:130:8: ( '-fx-translate-z' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:130:10: '-fx-translate-z'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:131:8: ( '-fx-vgap' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:131:10: '-fx-vgap'
             {
-            match("-fx-translate-z"); 
+            match("-fx-vgap"); 
 
 
             }
@@ -3044,10 +3064,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__132;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:131:8: ( '-fx-vgap' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:131:10: '-fx-vgap'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:132:8: ( '-fx-tile-height' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:132:10: '-fx-tile-height'
             {
-            match("-fx-vgap"); 
+            match("-fx-tile-height"); 
 
 
             }
@@ -3065,10 +3085,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__133;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:132:8: ( '-fx-tile-height' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:132:10: '-fx-tile-height'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:133:8: ( '-fx-tile-width' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:133:10: '-fx-tile-width'
             {
-            match("-fx-tile-height"); 
+            match("-fx-tile-width"); 
 
 
             }
@@ -3086,10 +3106,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__134;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:133:8: ( '-fx-tile-width' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:133:10: '-fx-tile-width'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:134:8: ( '-fx-stroke-dash-offset' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:134:10: '-fx-stroke-dash-offset'
             {
-            match("-fx-tile-width"); 
+            match("-fx-stroke-dash-offset"); 
 
 
             }
@@ -3107,10 +3127,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__135;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:134:8: ( '-fx-stroke-dash-offset' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:134:10: '-fx-stroke-dash-offset'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:135:8: ( '-fx-stroke-miter-limit' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:135:10: '-fx-stroke-miter-limit'
             {
-            match("-fx-stroke-dash-offset"); 
+            match("-fx-stroke-miter-limit"); 
 
 
             }
@@ -3128,10 +3148,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__136;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:135:8: ( '-fx-stroke-miter-limit' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:135:10: '-fx-stroke-miter-limit'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:136:8: ( '-fx-block-increment' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:136:10: '-fx-block-increment'
             {
-            match("-fx-stroke-miter-limit"); 
+            match("-fx-block-increment"); 
 
 
             }
@@ -3149,10 +3169,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__137;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:136:8: ( '-fx-block-increment' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:136:10: '-fx-block-increment'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:137:8: ( '-fx-unit-increment' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:137:10: '-fx-unit-increment'
             {
-            match("-fx-block-increment"); 
+            match("-fx-unit-increment"); 
 
 
             }
@@ -3170,10 +3190,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__138;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:137:8: ( '-fx-unit-increment' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:137:10: '-fx-unit-increment'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:138:8: ( '-fx-major-tick-unit' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:138:10: '-fx-major-tick-unit'
             {
-            match("-fx-unit-increment"); 
+            match("-fx-major-tick-unit"); 
 
 
             }
@@ -3191,10 +3211,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__139;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:138:8: ( '-fx-major-tick-unit' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:138:10: '-fx-major-tick-unit'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:139:8: ( '-fx-data-opacity' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:139:10: '-fx-data-opacity'
             {
-            match("-fx-major-tick-unit"); 
+            match("-fx-data-opacity"); 
 
 
             }
@@ -3212,10 +3232,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__140;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:139:8: ( '-fx-data-opacity' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:139:10: '-fx-data-opacity'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:140:8: ( '-fx-radius-scale' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:140:10: '-fx-radius-scale'
             {
-            match("-fx-data-opacity"); 
+            match("-fx-radius-scale"); 
 
 
             }
@@ -3233,10 +3253,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__141;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:140:8: ( '-fx-radius-scale' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:140:10: '-fx-radius-scale'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:141:8: ( '-fx-pie-to-label-line-one-length' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:141:10: '-fx-pie-to-label-line-one-length'
             {
-            match("-fx-radius-scale"); 
+            match("-fx-pie-to-label-line-one-length"); 
 
 
             }
@@ -3254,10 +3274,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__142;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:141:8: ( '-fx-pie-to-label-line-one-length' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:141:10: '-fx-pie-to-label-line-one-length'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:142:8: ( '-fx-pie-to-label-line-stroke-width' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:142:10: '-fx-pie-to-label-line-stroke-width'
             {
-            match("-fx-pie-to-label-line-one-length"); 
+            match("-fx-pie-to-label-line-stroke-width"); 
 
 
             }
@@ -3275,10 +3295,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__143;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:142:8: ( '-fx-pie-to-label-line-stroke-width' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:142:10: '-fx-pie-to-label-line-stroke-width'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:143:8: ( '-fx-pie-to-label-line-two-length' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:143:10: '-fx-pie-to-label-line-two-length'
             {
-            match("-fx-pie-to-label-line-stroke-width"); 
+            match("-fx-pie-to-label-line-two-length"); 
 
 
             }
@@ -3296,10 +3316,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__144;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:143:8: ( '-fx-pie-to-label-line-two-length' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:143:10: '-fx-pie-to-label-line-two-length'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:144:8: ( '-fx-start-angle' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:144:10: '-fx-start-angle'
             {
-            match("-fx-pie-to-label-line-two-length"); 
+            match("-fx-start-angle"); 
 
 
             }
@@ -3317,10 +3337,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__145;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:144:8: ( '-fx-start-angle' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:144:10: '-fx-start-angle'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:145:8: ( '-fx-tick-unit' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:145:10: '-fx-tick-unit'
             {
-            match("-fx-start-angle"); 
+            match("-fx-tick-unit"); 
 
 
             }
@@ -3338,10 +3358,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__146;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:145:8: ( '-fx-tick-unit' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:145:10: '-fx-tick-unit'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:146:8: ( '-fx-indent' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:146:10: '-fx-indent'
             {
-            match("-fx-tick-unit"); 
+            match("-fx-indent"); 
 
 
             }
@@ -3359,10 +3379,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__147;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:146:8: ( '-fx-indent' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:146:10: '-fx-indent'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:147:8: ( '-fx-columns' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:147:10: '-fx-columns'
             {
-            match("-fx-indent"); 
+            match("-fx-columns"); 
 
 
             }
@@ -3380,10 +3400,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__148;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:147:8: ( '-fx-columns' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:147:10: '-fx-columns'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:148:8: ( '-fx-rows' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:148:10: '-fx-rows'
             {
-            match("-fx-columns"); 
+            match("-fx-rows"); 
 
 
             }
@@ -3401,10 +3421,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__149;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:148:8: ( '-fx-rows' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:148:10: '-fx-rows'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:149:8: ( '-fx-lines' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:149:10: '-fx-lines'
             {
-            match("-fx-rows"); 
+            match("-fx-lines"); 
 
 
             }
@@ -3422,10 +3442,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__150;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:149:8: ( '-fx-lines' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:149:10: '-fx-lines'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:150:8: ( '-fx-minor-tick-count' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:150:10: '-fx-minor-tick-count'
             {
-            match("-fx-lines"); 
+            match("-fx-minor-tick-count"); 
 
 
             }
@@ -3443,10 +3463,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__151;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:150:8: ( '-fx-minor-tick-count' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:150:10: '-fx-minor-tick-count'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:151:8: ( '-fx-fill' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:151:10: '-fx-fill'
             {
-            match("-fx-minor-tick-count"); 
+            match("-fx-fill"); 
 
 
             }
@@ -3464,10 +3484,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__152;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:151:8: ( '-fx-fill' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:151:10: '-fx-fill'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:152:8: ( '-fx-stroke' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:152:10: '-fx-stroke'
             {
-            match("-fx-fill"); 
+            match("-fx-stroke"); 
 
 
             }
@@ -3485,10 +3505,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__153;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:152:8: ( '-fx-stroke' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:152:10: '-fx-stroke'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:153:8: ( '-fx-text-fill' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:153:10: '-fx-text-fill'
             {
-            match("-fx-stroke"); 
+            match("-fx-text-fill"); 
 
 
             }
@@ -3506,10 +3526,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__154;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:153:8: ( '-fx-text-fill' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:153:10: '-fx-text-fill'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:154:8: ( '-fx-bar-fill' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:154:10: '-fx-bar-fill'
             {
-            match("-fx-text-fill"); 
+            match("-fx-bar-fill"); 
 
 
             }
@@ -3527,10 +3547,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__155;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:154:8: ( '-fx-bar-fill' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:154:10: '-fx-bar-fill'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:155:8: ( '-fx-bar-stroke' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:155:10: '-fx-bar-stroke'
             {
-            match("-fx-bar-fill"); 
+            match("-fx-bar-stroke"); 
 
 
             }
@@ -3548,10 +3568,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__156;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:155:8: ( '-fx-bar-stroke' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:155:10: '-fx-bar-stroke'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:156:8: ( '-fx-bottom-shelf-fill' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:156:10: '-fx-bottom-shelf-fill'
             {
-            match("-fx-bar-stroke"); 
+            match("-fx-bottom-shelf-fill"); 
 
 
             }
@@ -3569,10 +3589,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__157;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:156:8: ( '-fx-bottom-shelf-fill' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:156:10: '-fx-bottom-shelf-fill'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:157:8: ( '-fx-bottom-shelf-stroke' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:157:10: '-fx-bottom-shelf-stroke'
             {
-            match("-fx-bottom-shelf-fill"); 
+            match("-fx-bottom-shelf-stroke"); 
 
 
             }
@@ -3590,10 +3610,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__158;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:157:8: ( '-fx-bottom-shelf-stroke' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:157:10: '-fx-bottom-shelf-stroke'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:158:8: ( '-fx-side-shelf-fill' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:158:10: '-fx-side-shelf-fill'
             {
-            match("-fx-bottom-shelf-stroke"); 
+            match("-fx-side-shelf-fill"); 
 
 
             }
@@ -3611,10 +3631,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__159;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:158:8: ( '-fx-side-shelf-fill' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:158:10: '-fx-side-shelf-fill'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:159:8: ( '-fx-side-shelf-stroke' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:159:10: '-fx-side-shelf-stroke'
             {
-            match("-fx-side-shelf-fill"); 
+            match("-fx-side-shelf-stroke"); 
 
 
             }
@@ -3632,10 +3652,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__160;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:159:8: ( '-fx-side-shelf-stroke' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:159:10: '-fx-side-shelf-stroke'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:160:8: ( '-fx-zero-shelf-fill' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:160:10: '-fx-zero-shelf-fill'
             {
-            match("-fx-side-shelf-stroke"); 
+            match("-fx-zero-shelf-fill"); 
 
 
             }
@@ -3653,10 +3673,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__161;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:160:8: ( '-fx-zero-shelf-fill' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:160:10: '-fx-zero-shelf-fill'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:161:8: ( '-fx-zero-shelf-stroke' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:161:10: '-fx-zero-shelf-stroke'
             {
-            match("-fx-zero-shelf-fill"); 
+            match("-fx-zero-shelf-stroke"); 
 
 
             }
@@ -3674,10 +3694,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__162;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:161:8: ( '-fx-zero-shelf-stroke' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:161:10: '-fx-zero-shelf-stroke'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:162:8: ( '-fx-chart-background-fill' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:162:10: '-fx-chart-background-fill'
             {
-            match("-fx-zero-shelf-stroke"); 
+            match("-fx-chart-background-fill"); 
 
 
             }
@@ -3695,10 +3715,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__163;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:162:8: ( '-fx-chart-background-fill' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:162:10: '-fx-chart-background-fill'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:163:8: ( '-fx-chart-background-stroke' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:163:10: '-fx-chart-background-stroke'
             {
-            match("-fx-chart-background-fill"); 
+            match("-fx-chart-background-stroke"); 
 
 
             }
@@ -3716,10 +3736,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__164;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:163:8: ( '-fx-chart-background-stroke' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:163:10: '-fx-chart-background-stroke'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:164:8: ( '-fx-hover-stroke' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:164:10: '-fx-hover-stroke'
             {
-            match("-fx-chart-background-stroke"); 
+            match("-fx-hover-stroke"); 
 
 
             }
@@ -3737,10 +3757,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__165;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:164:8: ( '-fx-hover-stroke' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:164:10: '-fx-hover-stroke'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:165:8: ( '-fx-title-fill' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:165:10: '-fx-title-fill'
             {
-            match("-fx-hover-stroke"); 
+            match("-fx-title-fill"); 
 
 
             }
@@ -3758,10 +3778,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__166;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:165:8: ( '-fx-title-fill' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:165:10: '-fx-title-fill'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:166:8: ( '-fx-pie-label-fill' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:166:10: '-fx-pie-label-fill'
             {
-            match("-fx-title-fill"); 
+            match("-fx-pie-label-fill"); 
 
 
             }
@@ -3779,10 +3799,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__167;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:166:8: ( '-fx-pie-label-fill' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:166:10: '-fx-pie-label-fill'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:167:8: ( '-fx-pie-stroke' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:167:10: '-fx-pie-stroke'
             {
-            match("-fx-pie-label-fill"); 
+            match("-fx-pie-stroke"); 
 
 
             }
@@ -3800,10 +3820,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__168;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:167:8: ( '-fx-pie-stroke' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:167:10: '-fx-pie-stroke'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:168:8: ( '-fx-pie-to-label-line-stroke' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:168:10: '-fx-pie-to-label-line-stroke'
             {
-            match("-fx-pie-stroke"); 
+            match("-fx-pie-to-label-line-stroke"); 
 
 
             }
@@ -3821,10 +3841,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__169;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:168:8: ( '-fx-pie-to-label-line-stroke' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:168:10: '-fx-pie-to-label-line-stroke'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:169:8: ( '-fx-pie-value-label-fill' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:169:10: '-fx-pie-value-label-fill'
             {
-            match("-fx-pie-to-label-line-stroke"); 
+            match("-fx-pie-value-label-fill"); 
 
 
             }
@@ -3842,10 +3862,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__170;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:169:8: ( '-fx-pie-value-label-fill' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:169:10: '-fx-pie-value-label-fill'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:170:8: ( '-fx-horizontal-alternate-row-fill' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:170:10: '-fx-horizontal-alternate-row-fill'
             {
-            match("-fx-pie-value-label-fill"); 
+            match("-fx-horizontal-alternate-row-fill"); 
 
 
             }
@@ -3863,10 +3883,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__171;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:170:8: ( '-fx-horizontal-alternate-row-fill' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:170:10: '-fx-horizontal-alternate-row-fill'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:171:8: ( '-fx-plot-background-fill' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:171:10: '-fx-plot-background-fill'
             {
-            match("-fx-horizontal-alternate-row-fill"); 
+            match("-fx-plot-background-fill"); 
 
 
             }
@@ -3884,10 +3904,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__172;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:171:8: ( '-fx-plot-background-fill' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:171:10: '-fx-plot-background-fill'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:172:8: ( '-fx-horizontal-grid-line-stroke' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:172:10: '-fx-horizontal-grid-line-stroke'
             {
-            match("-fx-plot-background-fill"); 
+            match("-fx-horizontal-grid-line-stroke"); 
 
 
             }
@@ -3905,10 +3925,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__173;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:172:8: ( '-fx-horizontal-grid-line-stroke' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:172:10: '-fx-horizontal-grid-line-stroke'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:173:8: ( '-fx-plot-background-stroke' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:173:10: '-fx-plot-background-stroke'
             {
-            match("-fx-horizontal-grid-line-stroke"); 
+            match("-fx-plot-background-stroke"); 
 
 
             }
@@ -3926,10 +3946,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__174;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:173:8: ( '-fx-plot-background-stroke' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:173:10: '-fx-plot-background-stroke'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:174:8: ( '-fx-vertical-alternate-row-fill' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:174:10: '-fx-vertical-alternate-row-fill'
             {
-            match("-fx-plot-background-stroke"); 
+            match("-fx-vertical-alternate-row-fill"); 
 
 
             }
@@ -3947,10 +3967,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__175;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:174:8: ( '-fx-vertical-alternate-row-fill' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:174:10: '-fx-vertical-alternate-row-fill'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:175:8: ( '-fx-vertical-grid-line-stroke' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:175:10: '-fx-vertical-grid-line-stroke'
             {
-            match("-fx-vertical-alternate-row-fill"); 
+            match("-fx-vertical-grid-line-stroke"); 
 
 
             }
@@ -3968,10 +3988,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__176;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:175:8: ( '-fx-vertical-grid-line-stroke' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:175:10: '-fx-vertical-grid-line-stroke'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:176:8: ( '-fx-axis-stroke' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:176:10: '-fx-axis-stroke'
             {
-            match("-fx-vertical-grid-line-stroke"); 
+            match("-fx-axis-stroke"); 
 
 
             }
@@ -3989,10 +4009,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__177;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:176:8: ( '-fx-axis-stroke' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:176:10: '-fx-axis-stroke'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:177:8: ( '-fx-tick-label-fill' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:177:10: '-fx-tick-label-fill'
             {
-            match("-fx-axis-stroke"); 
+            match("-fx-tick-label-fill"); 
 
 
             }
@@ -4010,10 +4030,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__178;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:177:8: ( '-fx-tick-label-fill' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:177:10: '-fx-tick-label-fill'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:178:8: ( '-fx-label-fill' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:178:10: '-fx-label-fill'
             {
-            match("-fx-tick-label-fill"); 
+            match("-fx-label-fill"); 
 
 
             }
@@ -4031,10 +4051,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__179;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:178:8: ( '-fx-label-fill' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:178:10: '-fx-label-fill'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:179:8: ( '-fx-tick-mark-stroke' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:179:10: '-fx-tick-mark-stroke'
             {
-            match("-fx-label-fill"); 
+            match("-fx-tick-mark-stroke"); 
 
 
             }
@@ -4052,10 +4072,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__180;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:179:8: ( '-fx-tick-mark-stroke' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:179:10: '-fx-tick-mark-stroke'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:180:8: ( '-fx-hover-fill' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:180:10: '-fx-hover-fill'
             {
-            match("-fx-tick-mark-stroke"); 
+            match("-fx-hover-fill"); 
 
 
             }
@@ -4073,10 +4093,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__181;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:180:8: ( '-fx-hover-fill' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:180:10: '-fx-hover-fill'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:181:8: ( 'add' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:181:10: 'add'
             {
-            match("-fx-hover-fill"); 
+            match("add"); 
 
 
             }
@@ -4094,10 +4114,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__182;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:181:8: ( 'add' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:181:10: 'add'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:182:8: ( 'blue' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:182:10: 'blue'
             {
-            match("add"); 
+            match("blue"); 
 
 
             }
@@ -4115,10 +4135,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__183;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:182:8: ( 'blue' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:182:10: 'blue'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:183:8: ( 'color-burn' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:183:10: 'color-burn'
             {
-            match("blue"); 
+            match("color-burn"); 
 
 
             }
@@ -4136,10 +4156,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__184;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:183:8: ( 'color-burn' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:183:10: 'color-burn'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:184:8: ( 'color-dodge' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:184:10: 'color-dodge'
             {
-            match("color-burn"); 
+            match("color-dodge"); 
 
 
             }
@@ -4157,10 +4177,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__185;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:184:8: ( 'color-dodge' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:184:10: 'color-dodge'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:185:8: ( 'darken' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:185:10: 'darken'
             {
-            match("color-dodge"); 
+            match("darken"); 
 
 
             }
@@ -4178,10 +4198,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__186;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:185:8: ( 'darken' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:185:10: 'darken'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:186:8: ( 'difference' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:186:10: 'difference'
             {
-            match("darken"); 
+            match("difference"); 
 
 
             }
@@ -4199,10 +4219,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__187;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:186:8: ( 'difference' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:186:10: 'difference'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:187:8: ( 'exclusion' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:187:10: 'exclusion'
             {
-            match("difference"); 
+            match("exclusion"); 
 
 
             }
@@ -4220,10 +4240,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__188;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:187:8: ( 'exclusion' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:187:10: 'exclusion'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:188:8: ( 'green' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:188:10: 'green'
             {
-            match("exclusion"); 
+            match("green"); 
 
 
             }
@@ -4241,10 +4261,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__189;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:188:8: ( 'green' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:188:10: 'green'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:189:8: ( 'hard-light' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:189:10: 'hard-light'
             {
-            match("green"); 
+            match("hard-light"); 
 
 
             }
@@ -4262,10 +4282,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__190;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:189:8: ( 'hard-light' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:189:10: 'hard-light'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:190:8: ( 'lighten' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:190:10: 'lighten'
             {
-            match("hard-light"); 
+            match("lighten"); 
 
 
             }
@@ -4283,10 +4303,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__191;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:190:8: ( 'lighten' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:190:10: 'lighten'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:191:8: ( 'multiply' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:191:10: 'multiply'
             {
-            match("lighten"); 
+            match("multiply"); 
 
 
             }
@@ -4304,10 +4324,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__192;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:191:8: ( 'multiply' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:191:10: 'multiply'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:192:8: ( 'overlay' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:192:10: 'overlay'
             {
-            match("multiply"); 
+            match("overlay"); 
 
 
             }
@@ -4325,10 +4345,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__193;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:192:8: ( 'overlay' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:192:10: 'overlay'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:193:8: ( 'red' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:193:10: 'red'
             {
-            match("overlay"); 
+            match("red"); 
 
 
             }
@@ -4346,10 +4366,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__194;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:193:8: ( 'red' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:193:10: 'red'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:194:8: ( 'screen' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:194:10: 'screen'
             {
-            match("red"); 
+            match("screen"); 
 
 
             }
@@ -4367,10 +4387,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__195;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:194:8: ( 'screen' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:194:10: 'screen'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:195:8: ( 'soft-light' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:195:10: 'soft-light'
             {
-            match("screen"); 
+            match("soft-light"); 
 
 
             }
@@ -4388,10 +4408,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__196;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:195:8: ( 'soft-light' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:195:10: 'soft-light'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:196:8: ( 'src-atop' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:196:10: 'src-atop'
             {
-            match("soft-light"); 
+            match("src-atop"); 
 
 
             }
@@ -4409,10 +4429,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__197;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:196:8: ( 'src-atop' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:196:10: 'src-atop'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:197:8: ( 'src-in' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:197:10: 'src-in'
             {
-            match("src-atop"); 
+            match("src-in"); 
 
 
             }
@@ -4430,10 +4450,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__198;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:197:8: ( 'src-in' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:197:10: 'src-in'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:198:8: ( 'src-out' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:198:10: 'src-out'
             {
-            match("src-in"); 
+            match("src-out"); 
 
 
             }
@@ -4451,10 +4471,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__199;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:198:8: ( 'src-out' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:198:10: 'src-out'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:199:8: ( 'src-over' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:199:10: 'src-over'
             {
-            match("src-out"); 
+            match("src-over"); 
 
 
             }
@@ -4472,10 +4492,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__200;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:199:8: ( 'src-over' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:199:10: 'src-over'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:200:8: ( '-fx-image' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:200:10: '-fx-image'
             {
-            match("src-over"); 
+            match("-fx-image"); 
 
 
             }
@@ -4493,10 +4513,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__201;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:200:8: ( '-fx-image' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:200:10: '-fx-image'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:201:8: ( '-fx-graphic' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:201:10: '-fx-graphic'
             {
-            match("-fx-image"); 
+            match("-fx-graphic"); 
 
 
             }
@@ -4514,10 +4534,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__202;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:201:8: ( '-fx-graphic' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:201:10: '-fx-graphic'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:202:8: ( '-fx-border-image-source' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:202:10: '-fx-border-image-source'
             {
-            match("-fx-graphic"); 
+            match("-fx-border-image-source"); 
 
 
             }
@@ -4535,10 +4555,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__203;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:202:8: ( '-fx-border-image-source' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:202:10: '-fx-border-image-source'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:203:8: ( 'null' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:203:10: 'null'
             {
-            match("-fx-border-image-source"); 
+            match("null"); 
 
 
             }
@@ -4556,10 +4576,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__204;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:203:8: ( 'null' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:203:10: 'null'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:204:8: ( '-fx-background-insets' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:204:10: '-fx-background-insets'
             {
-            match("null"); 
+            match("-fx-background-insets"); 
 
 
             }
@@ -4577,10 +4597,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__205;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:204:8: ( '-fx-background-insets' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:204:10: '-fx-background-insets'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:205:8: ( '-fx-background-radius' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:205:10: '-fx-background-radius'
             {
-            match("-fx-background-insets"); 
+            match("-fx-background-radius"); 
 
 
             }
@@ -4598,10 +4618,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__206;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:205:8: ( '-fx-background-radius' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:205:10: '-fx-background-radius'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:206:8: ( '-fx-border-insets' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:206:10: '-fx-border-insets'
             {
-            match("-fx-background-radius"); 
+            match("-fx-border-insets"); 
 
 
             }
@@ -4619,10 +4639,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__207;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:206:8: ( '-fx-border-insets' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:206:10: '-fx-border-insets'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:207:8: ( '-fx-border-radius' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:207:10: '-fx-border-radius'
             {
-            match("-fx-border-insets"); 
+            match("-fx-border-radius"); 
 
 
             }
@@ -4640,10 +4660,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__208;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:207:8: ( '-fx-border-radius' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:207:10: '-fx-border-radius'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:208:8: ( '-fx-border-width' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:208:10: '-fx-border-width'
             {
-            match("-fx-border-radius"); 
+            match("-fx-border-width"); 
 
 
             }
@@ -4661,10 +4681,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__209;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:208:8: ( '-fx-border-width' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:208:10: '-fx-border-width'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:209:8: ( '-fx-border-image-insets' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:209:10: '-fx-border-image-insets'
             {
-            match("-fx-border-width"); 
+            match("-fx-border-image-insets"); 
 
 
             }
@@ -4682,10 +4702,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__210;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:209:8: ( '-fx-border-image-insets' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:209:10: '-fx-border-image-insets'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:210:8: ( '-fx-border-image-width' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:210:10: '-fx-border-image-width'
             {
-            match("-fx-border-image-insets"); 
+            match("-fx-border-image-width"); 
 
 
             }
@@ -4703,10 +4723,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__211;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:210:8: ( '-fx-border-image-width' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:210:10: '-fx-border-image-width'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:211:8: ( '-fx-hpos' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:211:10: '-fx-hpos'
             {
-            match("-fx-border-image-width"); 
+            match("-fx-hpos"); 
 
 
             }
@@ -4724,10 +4744,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__212;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:211:8: ( '-fx-hpos' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:211:10: '-fx-hpos'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:212:8: ( '-fx-node-hpos' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:212:10: '-fx-node-hpos'
             {
-            match("-fx-hpos"); 
+            match("-fx-node-hpos"); 
 
 
             }
@@ -4745,10 +4765,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__213;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:212:8: ( '-fx-node-hpos' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:212:10: '-fx-node-hpos'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:213:8: ( '-fx-graphic-hpos' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:213:10: '-fx-graphic-hpos'
             {
-            match("-fx-node-hpos"); 
+            match("-fx-graphic-hpos"); 
 
 
             }
@@ -4766,10 +4786,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__214;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:213:8: ( '-fx-graphic-hpos' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:213:10: '-fx-graphic-hpos'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:214:8: ( '-fx-node-vpos' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:214:10: '-fx-node-vpos'
             {
-            match("-fx-graphic-hpos"); 
+            match("-fx-node-vpos"); 
 
 
             }
@@ -4787,10 +4807,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__215;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:214:8: ( '-fx-node-vpos' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:214:10: '-fx-node-vpos'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:215:8: ( '-fx-graphic-vpos' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:215:10: '-fx-graphic-vpos'
             {
-            match("-fx-node-vpos"); 
+            match("-fx-graphic-vpos"); 
 
 
             }
@@ -4808,10 +4828,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__216;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:215:8: ( '-fx-graphic-vpos' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:215:10: '-fx-graphic-vpos'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:216:8: ( '-fx-legend-side' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:216:10: '-fx-legend-side'
             {
-            match("-fx-graphic-vpos"); 
+            match("-fx-legend-side"); 
 
 
             }
@@ -4829,10 +4849,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__217;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:216:8: ( '-fx-legend-side' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:216:10: '-fx-legend-side'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:217:8: ( '-fx-title-side' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:217:10: '-fx-title-side'
             {
-            match("-fx-legend-side"); 
+            match("-fx-title-side"); 
 
 
             }
@@ -4850,10 +4870,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__218;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:217:8: ( '-fx-title-side' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:217:10: '-fx-title-side'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:218:8: ( '-fx-side' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:218:10: '-fx-side'
             {
-            match("-fx-title-side"); 
+            match("-fx-side"); 
 
 
             }
@@ -4871,10 +4891,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__219;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:218:8: ( '-fx-side' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:218:10: '-fx-side'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:219:8: ( 'top' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:219:10: 'top'
             {
-            match("-fx-side"); 
+            match("top"); 
 
 
             }
@@ -4892,10 +4912,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__220;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:219:8: ( 'top' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:219:10: 'top'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:220:8: ( 'bottom' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:220:10: 'bottom'
             {
-            match("top"); 
+            match("bottom"); 
 
 
             }
@@ -4913,10 +4933,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__221;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:220:8: ( 'bottom' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:220:10: 'bottom'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:221:8: ( 'left' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:221:10: 'left'
             {
-            match("bottom"); 
+            match("left"); 
 
 
             }
@@ -4934,10 +4954,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__222;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:221:8: ( 'left' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:221:10: 'left'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:222:8: ( 'right' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:222:10: 'right'
             {
-            match("left"); 
+            match("right"); 
 
 
             }
@@ -4955,10 +4975,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__223;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:222:8: ( 'right' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:222:10: 'right'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:223:8: ( '-fx-hbar-policy' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:223:10: '-fx-hbar-policy'
             {
-            match("right"); 
+            match("-fx-hbar-policy"); 
 
 
             }
@@ -4976,10 +4996,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__224;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:223:8: ( '-fx-hbar-policy' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:223:10: '-fx-hbar-policy'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:224:8: ( '-fx-vbar-policy' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:224:10: '-fx-vbar-policy'
             {
-            match("-fx-hbar-policy"); 
+            match("-fx-vbar-policy"); 
 
 
             }
@@ -4997,10 +5017,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__225;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:224:8: ( '-fx-vbar-policy' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:224:10: '-fx-vbar-policy'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:225:8: ( 'never' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:225:10: 'never'
             {
-            match("-fx-vbar-policy"); 
+            match("never"); 
 
 
             }
@@ -5018,10 +5038,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__226;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:225:8: ( 'never' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:225:10: 'never'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:226:8: ( 'always' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:226:10: 'always'
             {
-            match("never"); 
+            match("always"); 
 
 
             }
@@ -5039,10 +5059,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__227;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:226:8: ( 'always' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:226:10: 'always'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:227:8: ( 'as_needed' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:227:10: 'as_needed'
             {
-            match("always"); 
+            match("as_needed"); 
 
 
             }
@@ -5060,10 +5080,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__228;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:227:8: ( 'as_needed' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:227:10: 'as_needed'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:228:8: ( '-fx-background-image' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:228:10: '-fx-background-image'
             {
-            match("as_needed"); 
+            match("-fx-background-image"); 
 
 
             }
@@ -5081,10 +5101,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__229;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:228:8: ( '-fx-background-image' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:228:10: '-fx-background-image'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:229:8: ( '-fx-border-image' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:229:10: '-fx-border-image'
             {
-            match("-fx-background-image"); 
+            match("-fx-border-image"); 
 
 
             }
@@ -5102,10 +5122,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__230;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:229:8: ( '-fx-border-image' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:229:10: '-fx-border-image'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:230:8: ( '-fx-background-image-repeat' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:230:10: '-fx-background-image-repeat'
             {
-            match("-fx-border-image"); 
+            match("-fx-background-image-repeat"); 
 
 
             }
@@ -5123,10 +5143,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__231;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:230:8: ( '-fx-background-image-repeat' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:230:10: '-fx-background-image-repeat'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:231:8: ( '-fx-border-image-repeat' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:231:10: '-fx-border-image-repeat'
             {
-            match("-fx-background-image-repeat"); 
+            match("-fx-border-image-repeat"); 
 
 
             }
@@ -5144,10 +5164,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__232;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:231:8: ( '-fx-border-image-repeat' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:231:10: '-fx-border-image-repeat'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:232:8: ( '-fx-background-repeat' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:232:10: '-fx-background-repeat'
             {
-            match("-fx-border-image-repeat"); 
+            match("-fx-background-repeat"); 
 
 
             }
@@ -5165,10 +5185,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__233;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:232:8: ( '-fx-background-repeat' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:232:10: '-fx-background-repeat'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:233:8: ( 'square' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:233:10: 'square'
             {
-            match("-fx-background-repeat"); 
+            match("square"); 
 
 
             }
@@ -5186,10 +5206,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__234;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:233:8: ( 'square' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:233:10: 'square'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:234:8: ( 'butt' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:234:10: 'butt'
             {
-            match("square"); 
+            match("butt"); 
 
 
             }
@@ -5207,10 +5227,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__235;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:234:8: ( 'butt' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:234:10: 'butt'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:235:8: ( 'round' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:235:10: 'round'
             {
-            match("butt"); 
+            match("round"); 
 
 
             }
@@ -5228,10 +5248,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__236;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:235:8: ( 'round' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:235:10: 'round'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:236:8: ( 'miter' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:236:10: 'miter'
             {
-            match("round"); 
+            match("miter"); 
 
 
             }
@@ -5249,10 +5269,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__237;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:236:8: ( 'miter' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:236:10: 'miter'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:237:8: ( 'bevel' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:237:10: 'bevel'
             {
-            match("miter"); 
+            match("bevel"); 
 
 
             }
@@ -5270,10 +5290,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__238;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:237:8: ( 'bevel' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:237:10: 'bevel'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:238:8: ( '-fx-text-alignment' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:238:10: '-fx-text-alignment'
             {
-            match("bevel"); 
+            match("-fx-text-alignment"); 
 
 
             }
@@ -5291,10 +5311,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__239;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:238:8: ( '-fx-text-alignment' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:238:10: '-fx-text-alignment'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:239:8: ( '-fx-alignment' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:239:10: '-fx-alignment'
             {
-            match("-fx-text-alignment"); 
+            match("-fx-alignment"); 
 
 
             }
@@ -5312,10 +5332,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__240;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:239:8: ( '-fx-alignment' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:239:10: '-fx-alignment'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:240:8: ( 'center' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:240:10: 'center'
             {
-            match("-fx-alignment"); 
+            match("center"); 
 
 
             }
@@ -5333,10 +5353,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__241;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:240:8: ( 'center' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:240:10: 'center'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:241:8: ( 'justify' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:241:10: 'justify'
             {
-            match("center"); 
+            match("justify"); 
 
 
             }
@@ -5354,10 +5374,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__242;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:241:8: ( 'justify' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:241:10: 'justify'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:242:8: ( 'baseline' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:242:10: 'baseline'
             {
-            match("justify"); 
+            match("baseline"); 
 
 
             }
@@ -5375,10 +5395,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__243;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:242:8: ( 'baseline' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:242:10: 'baseline'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:243:8: ( '-fx-background-image-position' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:243:10: '-fx-background-image-position'
             {
-            match("baseline"); 
+            match("-fx-background-image-position"); 
 
 
             }
@@ -5396,10 +5416,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__244;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:243:8: ( '-fx-background-image-position' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:243:10: '-fx-background-image-position'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:244:8: ( '-fx-background-position' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:244:10: '-fx-background-position'
             {
-            match("-fx-background-image-position"); 
+            match("-fx-background-position"); 
 
 
             }
@@ -5417,10 +5437,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__245;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:244:8: ( '-fx-background-position' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:244:10: '-fx-background-position'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:245:8: ( 'center-ellipses' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:245:10: 'center-ellipses'
             {
-            match("-fx-background-position"); 
+            match("center-ellipses"); 
 
 
             }
@@ -5438,10 +5458,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__246;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:245:8: ( 'center-ellipses' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:245:10: 'center-ellipses'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:246:8: ( 'center-word-ellipses' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:246:10: 'center-word-ellipses'
             {
-            match("center-ellipses"); 
+            match("center-word-ellipses"); 
 
 
             }
@@ -5459,10 +5479,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__247;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:246:8: ( 'center-word-ellipses' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:246:10: 'center-word-ellipses'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:247:8: ( 'clip' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:247:10: 'clip'
             {
-            match("center-word-ellipses"); 
+            match("clip"); 
 
 
             }
@@ -5480,10 +5500,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__248;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:247:8: ( 'clip' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:247:10: 'clip'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:248:8: ( 'ellipses' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:248:10: 'ellipses'
             {
-            match("clip"); 
+            match("ellipses"); 
 
 
             }
@@ -5501,10 +5521,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__249;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:248:8: ( 'ellipses' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:248:10: 'ellipses'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:249:8: ( 'leading-ellipses' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:249:10: 'leading-ellipses'
             {
-            match("ellipses"); 
+            match("leading-ellipses"); 
 
 
             }
@@ -5522,10 +5542,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__250;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:249:8: ( 'leading-ellipses' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:249:10: 'leading-ellipses'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:250:8: ( 'leading-word-ellipses' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:250:10: 'leading-word-ellipses'
             {
-            match("leading-ellipses"); 
+            match("leading-word-ellipses"); 
 
 
             }
@@ -5543,10 +5563,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__251;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:250:8: ( 'leading-word-ellipses' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:250:10: 'leading-word-ellipses'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:251:8: ( 'word-ellipses' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:251:10: 'word-ellipses'
             {
-            match("leading-word-ellipses"); 
+            match("word-ellipses"); 
 
 
             }
@@ -5564,10 +5584,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__252;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:251:8: ( 'word-ellipses' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:251:10: 'word-ellipses'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:252:8: ( '-fx-horizontal-grid-line-stroke-dash-array' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:252:10: '-fx-horizontal-grid-line-stroke-dash-array'
             {
-            match("word-ellipses"); 
+            match("-fx-horizontal-grid-line-stroke-dash-array"); 
 
 
             }
@@ -5585,10 +5605,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__253;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:252:8: ( '-fx-horizontal-grid-line-stroke-dash-array' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:252:10: '-fx-horizontal-grid-line-stroke-dash-array'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:253:8: ( '-fx-vertical-grid-line-stroke-dash-array' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:253:10: '-fx-vertical-grid-line-stroke-dash-array'
             {
-            match("-fx-horizontal-grid-line-stroke-dash-array"); 
+            match("-fx-vertical-grid-line-stroke-dash-array"); 
 
 
             }
@@ -5606,10 +5626,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__254;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:253:8: ( '-fx-vertical-grid-line-stroke-dash-array' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:253:10: '-fx-vertical-grid-line-stroke-dash-array'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:254:8: ( '-fx-skin' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:254:10: '-fx-skin'
             {
-            match("-fx-vertical-grid-line-stroke-dash-array"); 
+            match("-fx-skin"); 
 
 
             }
@@ -5627,10 +5647,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__255;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:254:8: ( '-fx-skin' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:254:10: '-fx-skin'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:255:8: ( '-fx-shape' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:255:10: '-fx-shape'
             {
-            match("-fx-skin"); 
+            match("-fx-shape"); 
 
 
             }
@@ -5648,10 +5668,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__256;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:255:8: ( '-fx-shape' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:255:10: '-fx-shape'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:256:8: ( '-fx-text' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:256:10: '-fx-text'
             {
-            match("-fx-shape"); 
+            match("-fx-text"); 
 
 
             }
@@ -5669,10 +5689,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__257;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:256:8: ( '-fx-text' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:256:10: '-fx-text'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:257:8: ( '-fx-echo-char' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:257:10: '-fx-echo-char'
             {
-            match("-fx-text"); 
+            match("-fx-echo-char"); 
 
 
             }
@@ -5690,10 +5710,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__258;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:257:8: ( '-fx-echo-char' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:257:10: '-fx-echo-char'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:258:8: ( 'repeat' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:258:10: 'repeat'
             {
-            match("-fx-echo-char"); 
+            match("repeat"); 
 
 
             }
@@ -5711,10 +5731,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__259;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:258:8: ( 'repeat' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:258:10: 'repeat'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:259:8: ( 'reflect' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:259:10: 'reflect'
             {
-            match("repeat"); 
+            match("reflect"); 
 
 
             }
@@ -5732,10 +5752,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__260;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:259:8: ( 'reflect' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:259:10: 'reflect'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:260:8: ( 'page-end' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:260:10: 'page-end'
             {
-            match("reflect"); 
+            match("page-end"); 
 
 
             }
@@ -5753,10 +5773,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__261;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:260:8: ( 'page-end' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:260:10: 'page-end'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:261:8: ( 'page-start' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:261:10: 'page-start'
             {
-            match("page-end"); 
+            match("page-start"); 
 
 
             }
@@ -5774,10 +5794,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__262;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:261:8: ( 'page-start' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:261:10: 'page-start'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:262:8: ( 'repeat-x' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:262:10: 'repeat-x'
             {
-            match("page-start"); 
+            match("repeat-x"); 
 
 
             }
@@ -5795,10 +5815,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__263;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:262:8: ( 'repeat-x' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:262:10: 'repeat-x'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:263:8: ( 'repeat-y' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:263:10: 'repeat-y'
             {
-            match("repeat-x"); 
+            match("repeat-y"); 
 
 
             }
@@ -5816,10 +5836,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__264;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:263:8: ( 'repeat-y' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:263:10: 'repeat-y'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:264:8: ( 'space' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:264:10: 'space'
             {
-            match("repeat-y"); 
+            match("space"); 
 
 
             }
@@ -5837,10 +5857,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__265;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:264:8: ( 'space' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:264:10: 'space'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:265:8: ( 'no-repeat' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:265:10: 'no-repeat'
             {
-            match("space"); 
+            match("no-repeat"); 
 
 
             }
@@ -5858,10 +5878,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__266;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:265:8: ( 'no-repeat' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:265:10: 'no-repeat'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:266:8: ( 'stretch' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:266:10: 'stretch'
             {
-            match("no-repeat"); 
+            match("stretch"); 
 
 
             }
@@ -5879,10 +5899,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__267;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:266:8: ( 'stretch' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:266:10: 'stretch'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:267:8: ( 'auto' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:267:10: 'auto'
             {
-            match("stretch"); 
+            match("auto"); 
 
 
             }
@@ -5900,10 +5920,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__268;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:267:8: ( 'auto' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:267:10: 'auto'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:268:8: ( 'cover' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:268:10: 'cover'
             {
-            match("auto"); 
+            match("cover"); 
 
 
             }
@@ -5921,10 +5941,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__269;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:268:8: ( 'cover' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:268:10: 'cover'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:269:8: ( 'contain' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:269:10: 'contain'
             {
-            match("cover"); 
+            match("contain"); 
 
 
             }
@@ -5942,10 +5962,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__270;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:269:8: ( 'contain' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:269:10: 'contain'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:270:8: ( 'none' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:270:10: 'none'
             {
-            match("contain"); 
+            match("none"); 
 
 
             }
@@ -5963,10 +5983,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__271;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:270:8: ( 'none' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:270:10: 'none'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:271:8: ( 'solid' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:271:10: 'solid'
             {
-            match("none"); 
+            match("solid"); 
 
 
             }
@@ -5984,10 +6004,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__272;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:271:8: ( 'solid' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:271:10: 'solid'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:272:8: ( 'dotted' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:272:10: 'dotted'
             {
-            match("solid"); 
+            match("dotted"); 
 
 
             }
@@ -6005,10 +6025,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__273;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:272:8: ( 'dotted' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:272:10: 'dotted'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:273:8: ( 'dashed' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:273:10: 'dashed'
             {
-            match("dotted"); 
+            match("dashed"); 
 
 
             }
@@ -6026,10 +6046,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__274;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:273:8: ( 'dashed' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:273:10: 'dashed'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:274:8: ( 'centered' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:274:10: 'centered'
             {
-            match("dashed"); 
+            match("centered"); 
 
 
             }
@@ -6047,10 +6067,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__275;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:274:8: ( 'centered' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:274:10: 'centered'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:275:8: ( 'inside' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:275:10: 'inside'
             {
-            match("centered"); 
+            match("inside"); 
 
 
             }
@@ -6068,10 +6088,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__276;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:275:8: ( 'inside' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:275:10: 'inside'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:276:8: ( 'outside' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:276:10: 'outside'
             {
-            match("inside"); 
+            match("outside"); 
 
 
             }
@@ -6089,10 +6109,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__277;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:276:8: ( 'outside' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:276:10: 'outside'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:277:8: ( '-fx-color' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:277:10: '-fx-color'
             {
-            match("outside"); 
+            match("-fx-color"); 
 
 
             }
@@ -6110,10 +6130,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__278;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:277:8: ( '-fx-color' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:277:10: '-fx-color'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:278:8: ( '-fx-light-text-color' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:278:10: '-fx-light-text-color'
             {
-            match("-fx-color"); 
+            match("-fx-light-text-color"); 
 
 
             }
@@ -6131,10 +6151,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__279;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:278:8: ( '-fx-light-text-color' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:278:10: '-fx-light-text-color'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:279:8: ( '-fx-accent' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:279:10: '-fx-accent'
             {
-            match("-fx-light-text-color"); 
+            match("-fx-accent"); 
 
 
             }
@@ -6152,10 +6172,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__280;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:279:8: ( '-fx-accent' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:279:10: '-fx-accent'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:280:8: ( '-fx-selection-bar' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:280:10: '-fx-selection-bar'
             {
-            match("-fx-accent"); 
+            match("-fx-selection-bar"); 
 
 
             }
@@ -6173,10 +6193,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__281;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:280:8: ( '-fx-selection-bar' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:280:10: '-fx-selection-bar'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:281:8: ( '-fx-selection-bar-text' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:281:10: '-fx-selection-bar-text'
             {
-            match("-fx-selection-bar"); 
+            match("-fx-selection-bar-text"); 
 
 
             }
@@ -6194,10 +6214,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__282;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:281:8: ( '-fx-selection-bar-text' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:281:10: '-fx-selection-bar-text'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:282:8: ( '-fx-background' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:282:10: '-fx-background'
             {
-            match("-fx-selection-bar-text"); 
+            match("-fx-background"); 
 
 
             }
@@ -6215,10 +6235,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__283;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:282:8: ( '-fx-background' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:282:10: '-fx-background'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:283:8: ( 'aliceblue' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:283:10: 'aliceblue'
             {
-            match("-fx-background"); 
+            match("aliceblue"); 
 
 
             }
@@ -6236,10 +6256,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__284;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:283:8: ( 'aliceblue' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:283:10: 'aliceblue'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:284:8: ( 'antiquewhite' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:284:10: 'antiquewhite'
             {
-            match("aliceblue"); 
+            match("antiquewhite"); 
 
 
             }
@@ -6257,10 +6277,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__285;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:284:8: ( 'antiquewhite' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:284:10: 'antiquewhite'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:285:8: ( 'aqua' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:285:10: 'aqua'
             {
-            match("antiquewhite"); 
+            match("aqua"); 
 
 
             }
@@ -6278,10 +6298,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__286;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:285:8: ( 'aqua' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:285:10: 'aqua'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:286:8: ( 'aquamarine' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:286:10: 'aquamarine'
             {
-            match("aqua"); 
+            match("aquamarine"); 
 
 
             }
@@ -6299,10 +6319,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__287;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:286:8: ( 'aquamarine' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:286:10: 'aquamarine'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:287:8: ( 'azure' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:287:10: 'azure'
             {
-            match("aquamarine"); 
+            match("azure"); 
 
 
             }
@@ -6320,10 +6340,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__288;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:287:8: ( 'azure' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:287:10: 'azure'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:288:8: ( 'beige' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:288:10: 'beige'
             {
-            match("azure"); 
+            match("beige"); 
 
 
             }
@@ -6341,10 +6361,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__289;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:288:8: ( 'beige' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:288:10: 'beige'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:289:8: ( 'bisque' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:289:10: 'bisque'
             {
-            match("beige"); 
+            match("bisque"); 
 
 
             }
@@ -6362,10 +6382,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__290;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:289:8: ( 'bisque' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:289:10: 'bisque'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:290:8: ( 'black' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:290:10: 'black'
             {
-            match("bisque"); 
+            match("black"); 
 
 
             }
@@ -6383,10 +6403,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__291;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:290:8: ( 'black' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:290:10: 'black'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:291:8: ( 'blanchedalmond' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:291:10: 'blanchedalmond'
             {
-            match("black"); 
+            match("blanchedalmond"); 
 
 
             }
@@ -6404,10 +6424,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__292;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:291:8: ( 'blanchedalmond' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:291:10: 'blanchedalmond'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:292:8: ( 'blueviolet' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:292:10: 'blueviolet'
             {
-            match("blanchedalmond"); 
+            match("blueviolet"); 
 
 
             }
@@ -6425,10 +6445,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__293;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:292:8: ( 'blueviolet' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:292:10: 'blueviolet'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:293:8: ( 'brown' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:293:10: 'brown'
             {
-            match("blueviolet"); 
+            match("brown"); 
 
 
             }
@@ -6446,10 +6466,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__294;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:293:8: ( 'brown' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:293:10: 'brown'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:294:8: ( 'burlywood' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:294:10: 'burlywood'
             {
-            match("brown"); 
+            match("burlywood"); 
 
 
             }
@@ -6467,10 +6487,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__295;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:294:8: ( 'burlywood' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:294:10: 'burlywood'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:295:8: ( 'cadetblue' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:295:10: 'cadetblue'
             {
-            match("burlywood"); 
+            match("cadetblue"); 
 
 
             }
@@ -6488,10 +6508,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__296;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:295:8: ( 'cadetblue' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:295:10: 'cadetblue'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:296:8: ( 'chartreuse' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:296:10: 'chartreuse'
             {
-            match("cadetblue"); 
+            match("chartreuse"); 
 
 
             }
@@ -6509,10 +6529,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__297;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:296:8: ( 'chartreuse' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:296:10: 'chartreuse'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:297:8: ( 'chocolate' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:297:10: 'chocolate'
             {
-            match("chartreuse"); 
+            match("chocolate"); 
 
 
             }
@@ -6530,10 +6550,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__298;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:297:8: ( 'chocolate' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:297:10: 'chocolate'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:298:8: ( 'coral' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:298:10: 'coral'
             {
-            match("chocolate"); 
+            match("coral"); 
 
 
             }
@@ -6551,10 +6571,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__299;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:298:8: ( 'coral' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:298:10: 'coral'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:299:8: ( 'cornflowerblue' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:299:10: 'cornflowerblue'
             {
-            match("coral"); 
+            match("cornflowerblue"); 
 
 
             }
@@ -6572,10 +6592,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__300;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:299:8: ( 'cornflowerblue' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:299:10: 'cornflowerblue'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:300:8: ( 'cornsilk' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:300:10: 'cornsilk'
             {
-            match("cornflowerblue"); 
+            match("cornsilk"); 
 
 
             }
@@ -6593,10 +6613,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__301;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:300:8: ( 'cornsilk' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:300:10: 'cornsilk'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:301:8: ( 'crimson' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:301:10: 'crimson'
             {
-            match("cornsilk"); 
+            match("crimson"); 
 
 
             }
@@ -6614,10 +6634,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__302;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:301:8: ( 'crimson' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:301:10: 'crimson'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:302:8: ( 'cyan' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:302:10: 'cyan'
             {
-            match("crimson"); 
+            match("cyan"); 
 
 
             }
@@ -6635,10 +6655,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__303;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:302:8: ( 'cyan' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:302:10: 'cyan'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:303:8: ( 'darkblue' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:303:10: 'darkblue'
             {
-            match("cyan"); 
+            match("darkblue"); 
 
 
             }
@@ -6656,10 +6676,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__304;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:303:8: ( 'darkblue' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:303:10: 'darkblue'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:304:8: ( 'darkcyan' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:304:10: 'darkcyan'
             {
-            match("darkblue"); 
+            match("darkcyan"); 
 
 
             }
@@ -6677,10 +6697,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__305;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:304:8: ( 'darkcyan' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:304:10: 'darkcyan'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:305:8: ( 'darkgoldenrod' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:305:10: 'darkgoldenrod'
             {
-            match("darkcyan"); 
+            match("darkgoldenrod"); 
 
 
             }
@@ -6698,10 +6718,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__306;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:305:8: ( 'darkgoldenrod' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:305:10: 'darkgoldenrod'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:306:8: ( 'darkgray' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:306:10: 'darkgray'
             {
-            match("darkgoldenrod"); 
+            match("darkgray"); 
 
 
             }
@@ -6719,10 +6739,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__307;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:306:8: ( 'darkgray' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:306:10: 'darkgray'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:307:8: ( 'darkgreen' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:307:10: 'darkgreen'
             {
-            match("darkgray"); 
+            match("darkgreen"); 
 
 
             }
@@ -6740,10 +6760,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__308;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:307:8: ( 'darkgreen' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:307:10: 'darkgreen'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:308:8: ( 'darkgrey' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:308:10: 'darkgrey'
             {
-            match("darkgreen"); 
+            match("darkgrey"); 
 
 
             }
@@ -6761,10 +6781,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__309;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:308:8: ( 'darkgrey' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:308:10: 'darkgrey'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:309:8: ( 'darkkhaki' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:309:10: 'darkkhaki'
             {
-            match("darkgrey"); 
+            match("darkkhaki"); 
 
 
             }
@@ -6782,10 +6802,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__310;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:309:8: ( 'darkkhaki' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:309:10: 'darkkhaki'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:310:8: ( 'darkmagenta' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:310:10: 'darkmagenta'
             {
-            match("darkkhaki"); 
+            match("darkmagenta"); 
 
 
             }
@@ -6803,10 +6823,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__311;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:310:8: ( 'darkmagenta' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:310:10: 'darkmagenta'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:311:8: ( 'darkolivegreen' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:311:10: 'darkolivegreen'
             {
-            match("darkmagenta"); 
+            match("darkolivegreen"); 
 
 
             }
@@ -6824,10 +6844,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__312;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:311:8: ( 'darkolivegreen' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:311:10: 'darkolivegreen'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:312:8: ( 'darkorange' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:312:10: 'darkorange'
             {
-            match("darkolivegreen"); 
+            match("darkorange"); 
 
 
             }
@@ -6845,10 +6865,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__313;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:312:8: ( 'darkorange' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:312:10: 'darkorange'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:313:8: ( 'darkorchid' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:313:10: 'darkorchid'
             {
-            match("darkorange"); 
+            match("darkorchid"); 
 
 
             }
@@ -6866,10 +6886,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__314;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:313:8: ( 'darkorchid' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:313:10: 'darkorchid'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:314:8: ( 'darkred' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:314:10: 'darkred'
             {
-            match("darkorchid"); 
+            match("darkred"); 
 
 
             }
@@ -6887,10 +6907,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__315;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:314:8: ( 'darkred' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:314:10: 'darkred'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:315:8: ( 'darksalmon' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:315:10: 'darksalmon'
             {
-            match("darkred"); 
+            match("darksalmon"); 
 
 
             }
@@ -6908,10 +6928,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__316;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:315:8: ( 'darksalmon' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:315:10: 'darksalmon'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:316:8: ( 'darkseagreen' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:316:10: 'darkseagreen'
             {
-            match("darksalmon"); 
+            match("darkseagreen"); 
 
 
             }
@@ -6929,10 +6949,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__317;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:316:8: ( 'darkseagreen' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:316:10: 'darkseagreen'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:317:8: ( 'darkslateblue' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:317:10: 'darkslateblue'
             {
-            match("darkseagreen"); 
+            match("darkslateblue"); 
 
 
             }
@@ -6950,10 +6970,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__318;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:317:8: ( 'darkslateblue' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:317:10: 'darkslateblue'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:318:8: ( 'darkslategray' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:318:10: 'darkslategray'
             {
-            match("darkslateblue"); 
+            match("darkslategray"); 
 
 
             }
@@ -6971,10 +6991,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__319;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:318:8: ( 'darkslategray' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:318:10: 'darkslategray'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:319:8: ( 'darkslategrey' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:319:10: 'darkslategrey'
             {
-            match("darkslategray"); 
+            match("darkslategrey"); 
 
 
             }
@@ -6992,10 +7012,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__320;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:319:8: ( 'darkslategrey' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:319:10: 'darkslategrey'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:320:8: ( 'darkturquoise' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:320:10: 'darkturquoise'
             {
-            match("darkslategrey"); 
+            match("darkturquoise"); 
 
 
             }
@@ -7013,10 +7033,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__321;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:320:8: ( 'darkturquoise' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:320:10: 'darkturquoise'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:321:8: ( 'darkviolet' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:321:10: 'darkviolet'
             {
-            match("darkturquoise"); 
+            match("darkviolet"); 
 
 
             }
@@ -7034,10 +7054,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__322;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:321:8: ( 'darkviolet' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:321:10: 'darkviolet'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:322:8: ( 'deeppink' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:322:10: 'deeppink'
             {
-            match("darkviolet"); 
+            match("deeppink"); 
 
 
             }
@@ -7055,10 +7075,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__323;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:322:8: ( 'deeppink' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:322:10: 'deeppink'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:323:8: ( 'deepskyblue' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:323:10: 'deepskyblue'
             {
-            match("deeppink"); 
+            match("deepskyblue"); 
 
 
             }
@@ -7076,10 +7096,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__324;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:323:8: ( 'deepskyblue' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:323:10: 'deepskyblue'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:324:8: ( 'dimgray' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:324:10: 'dimgray'
             {
-            match("deepskyblue"); 
+            match("dimgray"); 
 
 
             }
@@ -7097,10 +7117,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__325;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:324:8: ( 'dimgray' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:324:10: 'dimgray'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:325:8: ( 'dimgrey' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:325:10: 'dimgrey'
             {
-            match("dimgray"); 
+            match("dimgrey"); 
 
 
             }
@@ -7118,10 +7138,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__326;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:325:8: ( 'dimgrey' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:325:10: 'dimgrey'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:326:8: ( 'dodgerblue' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:326:10: 'dodgerblue'
             {
-            match("dimgrey"); 
+            match("dodgerblue"); 
 
 
             }
@@ -7139,10 +7159,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__327;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:326:8: ( 'dodgerblue' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:326:10: 'dodgerblue'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:327:8: ( 'firebrick' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:327:10: 'firebrick'
             {
-            match("dodgerblue"); 
+            match("firebrick"); 
 
 
             }
@@ -7160,10 +7180,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__328;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:327:8: ( 'firebrick' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:327:10: 'firebrick'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:328:8: ( 'floralwhite' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:328:10: 'floralwhite'
             {
-            match("firebrick"); 
+            match("floralwhite"); 
 
 
             }
@@ -7181,10 +7201,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__329;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:328:8: ( 'floralwhite' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:328:10: 'floralwhite'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:329:8: ( 'forestgreen' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:329:10: 'forestgreen'
             {
-            match("floralwhite"); 
+            match("forestgreen"); 
 
 
             }
@@ -7202,10 +7222,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__330;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:329:8: ( 'forestgreen' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:329:10: 'forestgreen'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:330:8: ( 'fuchsia' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:330:10: 'fuchsia'
             {
-            match("forestgreen"); 
+            match("fuchsia"); 
 
 
             }
@@ -7223,10 +7243,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__331;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:330:8: ( 'fuchsia' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:330:10: 'fuchsia'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:331:8: ( 'gainsboro' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:331:10: 'gainsboro'
             {
-            match("fuchsia"); 
+            match("gainsboro"); 
 
 
             }
@@ -7244,10 +7264,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__332;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:331:8: ( 'gainsboro' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:331:10: 'gainsboro'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:332:8: ( 'ghostwhite' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:332:10: 'ghostwhite'
             {
-            match("gainsboro"); 
+            match("ghostwhite"); 
 
 
             }
@@ -7265,10 +7285,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__333;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:332:8: ( 'ghostwhite' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:332:10: 'ghostwhite'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:333:8: ( 'gold' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:333:10: 'gold'
             {
-            match("ghostwhite"); 
+            match("gold"); 
 
 
             }
@@ -7286,10 +7306,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__334;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:333:8: ( 'gold' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:333:10: 'gold'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:334:8: ( 'goldenrod' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:334:10: 'goldenrod'
             {
-            match("gold"); 
+            match("goldenrod"); 
 
 
             }
@@ -7307,10 +7327,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__335;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:334:8: ( 'goldenrod' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:334:10: 'goldenrod'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:335:8: ( 'gray' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:335:10: 'gray'
             {
-            match("goldenrod"); 
+            match("gray"); 
 
 
             }
@@ -7328,10 +7348,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__336;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:335:8: ( 'gray' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:335:10: 'gray'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:336:8: ( 'greenyellow' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:336:10: 'greenyellow'
             {
-            match("gray"); 
+            match("greenyellow"); 
 
 
             }
@@ -7349,10 +7369,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__337;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:336:8: ( 'greenyellow' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:336:10: 'greenyellow'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:337:8: ( 'grey' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:337:10: 'grey'
             {
-            match("greenyellow"); 
+            match("grey"); 
 
 
             }
@@ -7370,10 +7390,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__338;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:337:8: ( 'grey' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:337:10: 'grey'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:338:8: ( 'honeydew' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:338:10: 'honeydew'
             {
-            match("grey"); 
+            match("honeydew"); 
 
 
             }
@@ -7391,10 +7411,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__339;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:338:8: ( 'honeydew' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:338:10: 'honeydew'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:339:8: ( 'hotpink' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:339:10: 'hotpink'
             {
-            match("honeydew"); 
+            match("hotpink"); 
 
 
             }
@@ -7412,10 +7432,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__340;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:339:8: ( 'hotpink' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:339:10: 'hotpink'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:340:8: ( 'indianred' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:340:10: 'indianred'
             {
-            match("hotpink"); 
+            match("indianred"); 
 
 
             }
@@ -7433,10 +7453,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__341;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:340:8: ( 'indianred' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:340:10: 'indianred'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:341:8: ( 'indigo' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:341:10: 'indigo'
             {
-            match("indianred"); 
+            match("indigo"); 
 
 
             }
@@ -7454,10 +7474,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__342;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:341:8: ( 'indigo' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:341:10: 'indigo'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:342:8: ( 'ivory' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:342:10: 'ivory'
             {
-            match("indigo"); 
+            match("ivory"); 
 
 
             }
@@ -7475,10 +7495,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__343;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:342:8: ( 'ivory' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:342:10: 'ivory'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:343:8: ( 'khaki' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:343:10: 'khaki'
             {
-            match("ivory"); 
+            match("khaki"); 
 
 
             }
@@ -7496,10 +7516,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__344;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:343:8: ( 'khaki' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:343:10: 'khaki'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:344:8: ( 'lavender' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:344:10: 'lavender'
             {
-            match("khaki"); 
+            match("lavender"); 
 
 
             }
@@ -7517,10 +7537,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__345;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:344:8: ( 'lavender' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:344:10: 'lavender'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:345:8: ( 'lavenderblush' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:345:10: 'lavenderblush'
             {
-            match("lavender"); 
+            match("lavenderblush"); 
 
 
             }
@@ -7538,10 +7558,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__346;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:345:8: ( 'lavenderblush' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:345:10: 'lavenderblush'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:346:8: ( 'lawngreen' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:346:10: 'lawngreen'
             {
-            match("lavenderblush"); 
+            match("lawngreen"); 
 
 
             }
@@ -7559,10 +7579,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__347;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:346:8: ( 'lawngreen' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:346:10: 'lawngreen'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:347:8: ( 'lemonchiffon' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:347:10: 'lemonchiffon'
             {
-            match("lawngreen"); 
+            match("lemonchiffon"); 
 
 
             }
@@ -7580,10 +7600,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__348;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:347:8: ( 'lemonchiffon' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:347:10: 'lemonchiffon'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:348:8: ( 'lightblue' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:348:10: 'lightblue'
             {
-            match("lemonchiffon"); 
+            match("lightblue"); 
 
 
             }
@@ -7601,10 +7621,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__349;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:348:8: ( 'lightblue' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:348:10: 'lightblue'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:349:8: ( 'lightcoral' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:349:10: 'lightcoral'
             {
-            match("lightblue"); 
+            match("lightcoral"); 
 
 
             }
@@ -7622,10 +7642,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__350;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:349:8: ( 'lightcoral' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:349:10: 'lightcoral'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:350:8: ( 'lightcyan' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:350:10: 'lightcyan'
             {
-            match("lightcoral"); 
+            match("lightcyan"); 
 
 
             }
@@ -7643,10 +7663,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__351;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:350:8: ( 'lightcyan' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:350:10: 'lightcyan'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:351:8: ( 'lightgoldenrodyellow' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:351:10: 'lightgoldenrodyellow'
             {
-            match("lightcyan"); 
+            match("lightgoldenrodyellow"); 
 
 
             }
@@ -7664,10 +7684,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__352;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:351:8: ( 'lightgoldenrodyellow' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:351:10: 'lightgoldenrodyellow'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:352:8: ( 'lightgray' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:352:10: 'lightgray'
             {
-            match("lightgoldenrodyellow"); 
+            match("lightgray"); 
 
 
             }
@@ -7685,10 +7705,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__353;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:352:8: ( 'lightgray' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:352:10: 'lightgray'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:353:8: ( 'lightgreen' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:353:10: 'lightgreen'
             {
-            match("lightgray"); 
+            match("lightgreen"); 
 
 
             }
@@ -7706,10 +7726,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__354;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:353:8: ( 'lightgreen' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:353:10: 'lightgreen'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:354:8: ( 'lightgrey' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:354:10: 'lightgrey'
             {
-            match("lightgreen"); 
+            match("lightgrey"); 
 
 
             }
@@ -7727,10 +7747,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__355;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:354:8: ( 'lightgrey' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:354:10: 'lightgrey'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:355:8: ( 'lightpink' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:355:10: 'lightpink'
             {
-            match("lightgrey"); 
+            match("lightpink"); 
 
 
             }
@@ -7748,10 +7768,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__356;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:355:8: ( 'lightpink' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:355:10: 'lightpink'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:356:8: ( 'lightsalmon' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:356:10: 'lightsalmon'
             {
-            match("lightpink"); 
+            match("lightsalmon"); 
 
 
             }
@@ -7769,10 +7789,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__357;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:356:8: ( 'lightsalmon' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:356:10: 'lightsalmon'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:357:8: ( 'lightseagreen' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:357:10: 'lightseagreen'
             {
-            match("lightsalmon"); 
+            match("lightseagreen"); 
 
 
             }
@@ -7790,10 +7810,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__358;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:357:8: ( 'lightseagreen' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:357:10: 'lightseagreen'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:358:8: ( 'lightskyblue' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:358:10: 'lightskyblue'
             {
-            match("lightseagreen"); 
+            match("lightskyblue"); 
 
 
             }
@@ -7811,10 +7831,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__359;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:358:8: ( 'lightskyblue' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:358:10: 'lightskyblue'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:359:8: ( 'lightslategray' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:359:10: 'lightslategray'
             {
-            match("lightskyblue"); 
+            match("lightslategray"); 
 
 
             }
@@ -7832,10 +7852,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__360;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:359:8: ( 'lightslategray' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:359:10: 'lightslategray'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:360:8: ( 'lightslategrey' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:360:10: 'lightslategrey'
             {
-            match("lightslategray"); 
+            match("lightslategrey"); 
 
 
             }
@@ -7853,10 +7873,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__361;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:360:8: ( 'lightslategrey' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:360:10: 'lightslategrey'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:361:8: ( 'lightsteelblue' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:361:10: 'lightsteelblue'
             {
-            match("lightslategrey"); 
+            match("lightsteelblue"); 
 
 
             }
@@ -7874,10 +7894,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__362;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:361:8: ( 'lightsteelblue' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:361:10: 'lightsteelblue'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:362:8: ( 'lightyellow' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:362:10: 'lightyellow'
             {
-            match("lightsteelblue"); 
+            match("lightyellow"); 
 
 
             }
@@ -7895,10 +7915,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__363;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:362:8: ( 'lightyellow' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:362:10: 'lightyellow'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:363:8: ( 'lime' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:363:10: 'lime'
             {
-            match("lightyellow"); 
+            match("lime"); 
 
 
             }
@@ -7916,10 +7936,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__364;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:363:8: ( 'lime' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:363:10: 'lime'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:364:8: ( 'limegreen' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:364:10: 'limegreen'
             {
-            match("lime"); 
+            match("limegreen"); 
 
 
             }
@@ -7937,10 +7957,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__365;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:364:8: ( 'limegreen' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:364:10: 'limegreen'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:365:8: ( 'linen' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:365:10: 'linen'
             {
-            match("limegreen"); 
+            match("linen"); 
 
 
             }
@@ -7958,10 +7978,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__366;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:365:8: ( 'linen' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:365:10: 'linen'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:366:8: ( 'magenta' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:366:10: 'magenta'
             {
-            match("linen"); 
+            match("magenta"); 
 
 
             }
@@ -7979,10 +7999,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__367;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:366:8: ( 'magenta' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:366:10: 'magenta'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:367:8: ( 'maroon' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:367:10: 'maroon'
             {
-            match("magenta"); 
+            match("maroon"); 
 
 
             }
@@ -8000,10 +8020,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__368;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:367:8: ( 'maroon' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:367:10: 'maroon'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:368:8: ( 'mediumaquamarine' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:368:10: 'mediumaquamarine'
             {
-            match("maroon"); 
+            match("mediumaquamarine"); 
 
 
             }
@@ -8021,10 +8041,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__369;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:368:8: ( 'mediumaquamarine' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:368:10: 'mediumaquamarine'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:369:8: ( 'mediumblue' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:369:10: 'mediumblue'
             {
-            match("mediumaquamarine"); 
+            match("mediumblue"); 
 
 
             }
@@ -8042,10 +8062,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__370;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:369:8: ( 'mediumblue' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:369:10: 'mediumblue'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:370:8: ( 'mediumorchid' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:370:10: 'mediumorchid'
             {
-            match("mediumblue"); 
+            match("mediumorchid"); 
 
 
             }
@@ -8063,10 +8083,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__371;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:370:8: ( 'mediumorchid' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:370:10: 'mediumorchid'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:371:8: ( 'mediumpurple' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:371:10: 'mediumpurple'
             {
-            match("mediumorchid"); 
+            match("mediumpurple"); 
 
 
             }
@@ -8084,10 +8104,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__372;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:371:8: ( 'mediumpurple' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:371:10: 'mediumpurple'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:372:8: ( 'mediumseagreen' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:372:10: 'mediumseagreen'
             {
-            match("mediumpurple"); 
+            match("mediumseagreen"); 
 
 
             }
@@ -8105,10 +8125,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__373;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:372:8: ( 'mediumseagreen' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:372:10: 'mediumseagreen'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:373:8: ( 'mediumslateblue' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:373:10: 'mediumslateblue'
             {
-            match("mediumseagreen"); 
+            match("mediumslateblue"); 
 
 
             }
@@ -8126,10 +8146,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__374;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:373:8: ( 'mediumslateblue' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:373:10: 'mediumslateblue'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:374:8: ( 'mediumspringgreen' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:374:10: 'mediumspringgreen'
             {
-            match("mediumslateblue"); 
+            match("mediumspringgreen"); 
 
 
             }
@@ -8147,10 +8167,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__375;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:374:8: ( 'mediumspringgreen' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:374:10: 'mediumspringgreen'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:375:8: ( 'mediumturquoise' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:375:10: 'mediumturquoise'
             {
-            match("mediumspringgreen"); 
+            match("mediumturquoise"); 
 
 
             }
@@ -8168,10 +8188,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__376;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:375:8: ( 'mediumturquoise' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:375:10: 'mediumturquoise'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:376:8: ( 'mediumvioletred' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:376:10: 'mediumvioletred'
             {
-            match("mediumturquoise"); 
+            match("mediumvioletred"); 
 
 
             }
@@ -8189,10 +8209,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__377;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:376:8: ( 'mediumvioletred' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:376:10: 'mediumvioletred'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:377:8: ( 'midnightblue' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:377:10: 'midnightblue'
             {
-            match("mediumvioletred"); 
+            match("midnightblue"); 
 
 
             }
@@ -8210,10 +8230,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__378;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:377:8: ( 'midnightblue' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:377:10: 'midnightblue'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:378:8: ( 'mintcream' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:378:10: 'mintcream'
             {
-            match("midnightblue"); 
+            match("mintcream"); 
 
 
             }
@@ -8231,10 +8251,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__379;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:378:8: ( 'mintcream' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:378:10: 'mintcream'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:379:8: ( 'mistyrose' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:379:10: 'mistyrose'
             {
-            match("mintcream"); 
+            match("mistyrose"); 
 
 
             }
@@ -8252,10 +8272,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__380;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:379:8: ( 'mistyrose' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:379:10: 'mistyrose'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:380:8: ( 'moccasin' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:380:10: 'moccasin'
             {
-            match("mistyrose"); 
+            match("moccasin"); 
 
 
             }
@@ -8273,10 +8293,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__381;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:380:8: ( 'moccasin' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:380:10: 'moccasin'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:381:8: ( 'navajowhite' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:381:10: 'navajowhite'
             {
-            match("moccasin"); 
+            match("navajowhite"); 
 
 
             }
@@ -8294,10 +8314,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__382;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:381:8: ( 'navajowhite' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:381:10: 'navajowhite'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:382:8: ( 'navy' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:382:10: 'navy'
             {
-            match("navajowhite"); 
+            match("navy"); 
 
 
             }
@@ -8315,10 +8335,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__383;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:382:8: ( 'navy' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:382:10: 'navy'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:383:8: ( 'oldlace' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:383:10: 'oldlace'
             {
-            match("navy"); 
+            match("oldlace"); 
 
 
             }
@@ -8336,10 +8356,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__384;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:383:8: ( 'oldlace' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:383:10: 'oldlace'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:384:8: ( 'olive' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:384:10: 'olive'
             {
-            match("oldlace"); 
+            match("olive"); 
 
 
             }
@@ -8357,10 +8377,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__385;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:384:8: ( 'olive' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:384:10: 'olive'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:385:8: ( 'olivedrab' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:385:10: 'olivedrab'
             {
-            match("olive"); 
+            match("olivedrab"); 
 
 
             }
@@ -8378,10 +8398,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__386;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:385:8: ( 'olivedrab' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:385:10: 'olivedrab'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:386:8: ( 'orange' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:386:10: 'orange'
             {
-            match("olivedrab"); 
+            match("orange"); 
 
 
             }
@@ -8399,10 +8419,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__387;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:386:8: ( 'orange' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:386:10: 'orange'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:387:8: ( 'orangered' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:387:10: 'orangered'
             {
-            match("orange"); 
+            match("orangered"); 
 
 
             }
@@ -8420,10 +8440,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__388;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:387:8: ( 'orangered' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:387:10: 'orangered'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:388:8: ( 'orchid' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:388:10: 'orchid'
             {
-            match("orangered"); 
+            match("orchid"); 
 
 
             }
@@ -8441,10 +8461,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__389;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:388:8: ( 'orchid' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:388:10: 'orchid'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:389:8: ( 'palegoldenrod' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:389:10: 'palegoldenrod'
             {
-            match("orchid"); 
+            match("palegoldenrod"); 
 
 
             }
@@ -8462,10 +8482,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__390;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:389:8: ( 'palegoldenrod' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:389:10: 'palegoldenrod'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:390:8: ( 'palegreen' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:390:10: 'palegreen'
             {
-            match("palegoldenrod"); 
+            match("palegreen"); 
 
 
             }
@@ -8483,10 +8503,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__391;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:390:8: ( 'palegreen' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:390:10: 'palegreen'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:391:8: ( 'paleturquoise' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:391:10: 'paleturquoise'
             {
-            match("palegreen"); 
+            match("paleturquoise"); 
 
 
             }
@@ -8504,10 +8524,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__392;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:391:8: ( 'paleturquoise' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:391:10: 'paleturquoise'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:392:8: ( 'palevioletred' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:392:10: 'palevioletred'
             {
-            match("paleturquoise"); 
+            match("palevioletred"); 
 
 
             }
@@ -8525,10 +8545,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__393;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:392:8: ( 'palevioletred' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:392:10: 'palevioletred'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:393:8: ( 'papayawhip' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:393:10: 'papayawhip'
             {
-            match("palevioletred"); 
+            match("papayawhip"); 
 
 
             }
@@ -8546,10 +8566,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__394;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:393:8: ( 'papayawhip' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:393:10: 'papayawhip'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:394:8: ( 'peachpuff' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:394:10: 'peachpuff'
             {
-            match("papayawhip"); 
+            match("peachpuff"); 
 
 
             }
@@ -8567,10 +8587,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__395;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:394:8: ( 'peachpuff' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:394:10: 'peachpuff'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:395:8: ( 'peru' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:395:10: 'peru'
             {
-            match("peachpuff"); 
+            match("peru"); 
 
 
             }
@@ -8588,10 +8608,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__396;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:395:8: ( 'peru' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:395:10: 'peru'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:396:8: ( 'pink' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:396:10: 'pink'
             {
-            match("peru"); 
+            match("pink"); 
 
 
             }
@@ -8609,10 +8629,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__397;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:396:8: ( 'pink' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:396:10: 'pink'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:397:8: ( 'plum' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:397:10: 'plum'
             {
-            match("pink"); 
+            match("plum"); 
 
 
             }
@@ -8630,10 +8650,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__398;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:397:8: ( 'plum' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:397:10: 'plum'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:398:8: ( 'powderblue' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:398:10: 'powderblue'
             {
-            match("plum"); 
+            match("powderblue"); 
 
 
             }
@@ -8651,10 +8671,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__399;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:398:8: ( 'powderblue' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:398:10: 'powderblue'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:399:8: ( 'purple' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:399:10: 'purple'
             {
-            match("powderblue"); 
+            match("purple"); 
 
 
             }
@@ -8672,10 +8692,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__400;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:399:8: ( 'purple' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:399:10: 'purple'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:400:8: ( 'rosybrown' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:400:10: 'rosybrown'
             {
-            match("purple"); 
+            match("rosybrown"); 
 
 
             }
@@ -8693,10 +8713,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__401;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:400:8: ( 'rosybrown' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:400:10: 'rosybrown'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:401:8: ( 'royalblue' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:401:10: 'royalblue'
             {
-            match("rosybrown"); 
+            match("royalblue"); 
 
 
             }
@@ -8714,10 +8734,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__402;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:401:8: ( 'royalblue' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:401:10: 'royalblue'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:402:8: ( 'saddlebrown' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:402:10: 'saddlebrown'
             {
-            match("royalblue"); 
+            match("saddlebrown"); 
 
 
             }
@@ -8735,10 +8755,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__403;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:402:8: ( 'saddlebrown' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:402:10: 'saddlebrown'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:403:8: ( 'salmon' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:403:10: 'salmon'
             {
-            match("saddlebrown"); 
+            match("salmon"); 
 
 
             }
@@ -8756,10 +8776,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__404;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:403:8: ( 'salmon' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:403:10: 'salmon'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:404:8: ( 'sandybrown' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:404:10: 'sandybrown'
             {
-            match("salmon"); 
+            match("sandybrown"); 
 
 
             }
@@ -8777,10 +8797,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__405;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:404:8: ( 'sandybrown' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:404:10: 'sandybrown'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:405:8: ( 'seagreen' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:405:10: 'seagreen'
             {
-            match("sandybrown"); 
+            match("seagreen"); 
 
 
             }
@@ -8798,10 +8818,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__406;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:405:8: ( 'seagreen' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:405:10: 'seagreen'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:406:8: ( 'seashell' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:406:10: 'seashell'
             {
-            match("seagreen"); 
+            match("seashell"); 
 
 
             }
@@ -8819,10 +8839,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__407;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:406:8: ( 'seashell' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:406:10: 'seashell'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:407:8: ( 'sienna' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:407:10: 'sienna'
             {
-            match("seashell"); 
+            match("sienna"); 
 
 
             }
@@ -8840,10 +8860,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__408;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:407:8: ( 'sienna' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:407:10: 'sienna'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:408:8: ( 'silver' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:408:10: 'silver'
             {
-            match("sienna"); 
+            match("silver"); 
 
 
             }
@@ -8861,10 +8881,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__409;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:408:8: ( 'silver' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:408:10: 'silver'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:409:8: ( 'skyblue' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:409:10: 'skyblue'
             {
-            match("silver"); 
+            match("skyblue"); 
 
 
             }
@@ -8882,10 +8902,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__410;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:409:8: ( 'skyblue' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:409:10: 'skyblue'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:410:8: ( 'slateblue' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:410:10: 'slateblue'
             {
-            match("skyblue"); 
+            match("slateblue"); 
 
 
             }
@@ -8903,10 +8923,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__411;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:410:8: ( 'slateblue' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:410:10: 'slateblue'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:411:8: ( 'slategray' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:411:10: 'slategray'
             {
-            match("slateblue"); 
+            match("slategray"); 
 
 
             }
@@ -8924,10 +8944,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__412;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:411:8: ( 'slategray' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:411:10: 'slategray'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:412:8: ( 'slategrey' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:412:10: 'slategrey'
             {
-            match("slategray"); 
+            match("slategrey"); 
 
 
             }
@@ -8945,10 +8965,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__413;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:412:8: ( 'slategrey' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:412:10: 'slategrey'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:413:8: ( 'snow' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:413:10: 'snow'
             {
-            match("slategrey"); 
+            match("snow"); 
 
 
             }
@@ -8966,10 +8986,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__414;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:413:8: ( 'snow' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:413:10: 'snow'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:414:8: ( 'springgreen' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:414:10: 'springgreen'
             {
-            match("snow"); 
+            match("springgreen"); 
 
 
             }
@@ -8987,10 +9007,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__415;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:414:8: ( 'springgreen' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:414:10: 'springgreen'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:415:8: ( 'steelblue' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:415:10: 'steelblue'
             {
-            match("springgreen"); 
+            match("steelblue"); 
 
 
             }
@@ -9008,10 +9028,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__416;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:415:8: ( 'steelblue' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:415:10: 'steelblue'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:416:8: ( 'tan' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:416:10: 'tan'
             {
-            match("steelblue"); 
+            match("tan"); 
 
 
             }
@@ -9029,10 +9049,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__417;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:416:8: ( 'tan' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:416:10: 'tan'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:417:8: ( 'teal' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:417:10: 'teal'
             {
-            match("tan"); 
+            match("teal"); 
 
 
             }
@@ -9050,10 +9070,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__418;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:417:8: ( 'teal' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:417:10: 'teal'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:418:8: ( 'thistle' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:418:10: 'thistle'
             {
-            match("teal"); 
+            match("thistle"); 
 
 
             }
@@ -9071,10 +9091,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__419;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:418:8: ( 'thistle' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:418:10: 'thistle'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:419:8: ( 'tomato' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:419:10: 'tomato'
             {
-            match("thistle"); 
+            match("tomato"); 
 
 
             }
@@ -9092,10 +9112,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__420;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:419:8: ( 'tomato' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:419:10: 'tomato'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:420:8: ( 'turquoise' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:420:10: 'turquoise'
             {
-            match("tomato"); 
+            match("turquoise"); 
 
 
             }
@@ -9113,10 +9133,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__421;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:420:8: ( 'turquoise' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:420:10: 'turquoise'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:421:8: ( 'violet' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:421:10: 'violet'
             {
-            match("turquoise"); 
+            match("violet"); 
 
 
             }
@@ -9134,10 +9154,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__422;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:421:8: ( 'violet' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:421:10: 'violet'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:422:8: ( 'wheat' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:422:10: 'wheat'
             {
-            match("violet"); 
+            match("wheat"); 
 
 
             }
@@ -9155,10 +9175,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__423;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:422:8: ( 'wheat' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:422:10: 'wheat'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:423:8: ( 'white' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:423:10: 'white'
             {
-            match("wheat"); 
+            match("white"); 
 
 
             }
@@ -9176,10 +9196,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__424;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:423:8: ( 'white' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:423:10: 'white'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:424:8: ( 'whitesmoke' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:424:10: 'whitesmoke'
             {
-            match("white"); 
+            match("whitesmoke"); 
 
 
             }
@@ -9197,10 +9217,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__425;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:424:8: ( 'whitesmoke' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:424:10: 'whitesmoke'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:425:8: ( 'yellow' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:425:10: 'yellow'
             {
-            match("whitesmoke"); 
+            match("yellow"); 
 
 
             }
@@ -9218,10 +9238,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__426;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:425:8: ( 'yellow' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:425:10: 'yellow'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:426:8: ( 'yellowgreen' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:426:10: 'yellowgreen'
             {
-            match("yellow"); 
+            match("yellowgreen"); 
 
 
             }
@@ -9239,10 +9259,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__427;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:426:8: ( 'yellowgreen' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:426:10: 'yellowgreen'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:427:8: ( 'transparent' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:427:10: 'transparent'
             {
-            match("yellowgreen"); 
+            match("transparent"); 
 
 
             }
@@ -9260,10 +9280,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__428;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:427:8: ( 'transparent' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:427:10: 'transparent'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:428:8: ( 'px' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:428:10: 'px'
             {
-            match("transparent"); 
+            match("px"); 
 
 
             }
@@ -9281,10 +9301,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__429;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:428:8: ( 'px' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:428:10: 'px'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:429:8: ( 'cm' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:429:10: 'cm'
             {
-            match("px"); 
+            match("cm"); 
 
 
             }
@@ -9302,10 +9322,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__430;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:429:8: ( 'cm' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:429:10: 'cm'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:430:8: ( 'mm' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:430:10: 'mm'
             {
-            match("cm"); 
+            match("mm"); 
 
 
             }
@@ -9323,10 +9343,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__431;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:430:8: ( 'mm' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:430:10: 'mm'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:431:8: ( 'in' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:431:10: 'in'
             {
-            match("mm"); 
+            match("in"); 
 
 
             }
@@ -9344,10 +9364,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__432;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:431:8: ( 'in' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:431:10: 'in'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:432:8: ( 'pt' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:432:10: 'pt'
             {
-            match("in"); 
+            match("pt"); 
 
 
             }
@@ -9365,10 +9385,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__433;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:432:8: ( 'pt' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:432:10: 'pt'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:433:8: ( 'pc' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:433:10: 'pc'
             {
-            match("pt"); 
+            match("pc"); 
 
 
             }
@@ -9386,10 +9406,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__434;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:433:8: ( 'pc' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:433:10: 'pc'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:434:8: ( 'deg' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:434:10: 'deg'
             {
-            match("pc"); 
+            match("deg"); 
 
 
             }
@@ -9407,10 +9427,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__435;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:434:8: ( 'deg' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:434:10: 'deg'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:435:8: ( 'rad' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:435:10: 'rad'
             {
-            match("deg"); 
+            match("rad"); 
 
 
             }
@@ -9428,10 +9448,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__436;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:435:8: ( 'rad' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:435:10: 'rad'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:436:8: ( 'grad' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:436:10: 'grad'
             {
-            match("rad"); 
+            match("grad"); 
 
 
             }
@@ -9449,10 +9469,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__437;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:436:8: ( 'grad' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:436:10: 'grad'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:437:8: ( 'ms' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:437:10: 'ms'
             {
-            match("grad"); 
+            match("ms"); 
 
 
             }
@@ -9470,11 +9490,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__438;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:437:8: ( 'ms' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:437:10: 'ms'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:438:8: ( 's' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:438:10: 's'
             {
-            match("ms"); 
-
+            match('s'); 
 
             }
 
@@ -9491,10 +9510,11 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__439;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:438:8: ( 's' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:438:10: 's'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:439:8: ( 'hz' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:439:10: 'hz'
             {
-            match('s'); 
+            match("hz"); 
+
 
             }
 
@@ -9511,10 +9531,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__440;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:439:8: ( 'hz' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:439:10: 'hz'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:440:8: ( 'khz' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:440:10: 'khz'
             {
-            match("hz"); 
+            match("khz"); 
 
 
             }
@@ -9532,10 +9552,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__441;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:440:8: ( 'khz' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:440:10: 'khz'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:441:8: ( 'italic' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:441:10: 'italic'
             {
-            match("khz"); 
+            match("italic"); 
 
 
             }
@@ -9553,10 +9573,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__442;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:441:8: ( 'italic' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:441:10: 'italic'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:442:8: ( 'oblique' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:442:10: 'oblique'
             {
-            match("italic"); 
+            match("oblique"); 
 
 
             }
@@ -9574,10 +9594,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__443;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:442:8: ( 'oblique' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:442:10: 'oblique'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:443:8: ( 'normal' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:443:10: 'normal'
             {
-            match("oblique"); 
+            match("normal"); 
 
 
             }
@@ -9595,10 +9615,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__444;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:443:8: ( 'normal' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:443:10: 'normal'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:444:8: ( 'bold' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:444:10: 'bold'
             {
-            match("normal"); 
+            match("bold"); 
 
 
             }
@@ -9616,10 +9636,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__445;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:444:8: ( 'bold' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:444:10: 'bold'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:445:8: ( 'bolder' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:445:10: 'bolder'
             {
-            match("bold"); 
+            match("bolder"); 
 
 
             }
@@ -9637,10 +9657,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__446;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:445:8: ( 'bolder' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:445:10: 'bolder'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:446:8: ( 'lighter' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:446:10: 'lighter'
             {
-            match("bolder"); 
+            match("lighter"); 
 
 
             }
@@ -9658,10 +9678,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__447;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:446:8: ( 'lighter' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:446:10: 'lighter'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:447:8: ( 'gaussian' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:447:10: 'gaussian'
             {
-            match("lighter"); 
+            match("gaussian"); 
 
 
             }
@@ -9679,10 +9699,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__448;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:447:8: ( 'gaussian' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:447:10: 'gaussian'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:448:8: ( 'one-pass-box' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:448:10: 'one-pass-box'
             {
-            match("gaussian"); 
+            match("one-pass-box"); 
 
 
             }
@@ -9700,10 +9720,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__449;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:448:8: ( 'one-pass-box' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:448:10: 'one-pass-box'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:449:8: ( 'three-pass-box' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:449:10: 'three-pass-box'
             {
-            match("one-pass-box"); 
+            match("three-pass-box"); 
 
 
             }
@@ -9721,10 +9741,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__450;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:449:8: ( 'three-pass-box' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:449:10: 'three-pass-box'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:450:8: ( 'two-pass-box' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:450:10: 'two-pass-box'
             {
-            match("three-pass-box"); 
+            match("two-pass-box"); 
 
 
             }
@@ -9742,10 +9762,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__451;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:450:8: ( 'two-pass-box' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:450:10: 'two-pass-box'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:451:8: ( 'leading' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:451:10: 'leading'
             {
-            match("two-pass-box"); 
+            match("leading"); 
 
 
             }
@@ -9763,10 +9783,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__452;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:451:8: ( 'leading' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:451:10: 'leading'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:452:8: ( 'trailing' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:452:10: 'trailing'
             {
-            match("leading"); 
+            match("trailing"); 
 
 
             }
@@ -9784,10 +9804,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__453;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:452:8: ( 'trailing' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:452:10: 'trailing'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:453:8: ( 'media' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:453:10: 'media'
             {
-            match("trailing"); 
+            match("media"); 
 
 
             }
@@ -9805,11 +9825,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__454;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:453:8: ( 'media' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:453:10: 'media'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:454:8: ( '{' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:454:10: '{'
             {
-            match("media"); 
-
+            match('{'); 
 
             }
 
@@ -9826,10 +9845,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__455;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:454:8: ( '{' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:454:10: '{'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:455:8: ( '}' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:455:10: '}'
             {
-            match('{'); 
+            match('}'); 
 
             }
 
@@ -9846,10 +9865,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__456;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:455:8: ( '}' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:455:10: '}'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:456:8: ( ';' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:456:10: ';'
             {
-            match('}'); 
+            match(';'); 
 
             }
 
@@ -9866,10 +9885,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__457;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:456:8: ( ';' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:456:10: ';'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:457:8: ( '.' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:457:10: '.'
             {
-            match(';'); 
+            match('.'); 
 
             }
 
@@ -9886,10 +9905,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__458;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:457:8: ( '.' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:457:10: '.'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:458:8: ( '#' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:458:10: '#'
             {
-            match('.'); 
+            match('#'); 
 
             }
 
@@ -9906,10 +9925,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__459;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:458:8: ( '#' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:458:10: '#'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:459:8: ( ':' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:459:10: ':'
             {
-            match('#'); 
+            match(':'); 
 
             }
 
@@ -9926,10 +9945,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__460;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:459:8: ( ':' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:459:10: ':'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:460:8: ( '/' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:460:10: '/'
             {
-            match(':'); 
+            match('/'); 
 
             }
 
@@ -9946,10 +9965,11 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__461;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:460:8: ( '/' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:460:10: '/'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:461:8: ( '-fx-effect' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:461:10: '-fx-effect'
             {
-            match('/'); 
+            match("-fx-effect"); 
+
 
             }
 
@@ -9966,10 +9986,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__462;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:461:8: ( '-fx-effect' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:461:10: '-fx-effect'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:462:8: ( 'dropshadow' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:462:10: 'dropshadow'
             {
-            match("-fx-effect"); 
+            match("dropshadow"); 
 
 
             }
@@ -9987,11 +10007,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__463;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:462:8: ( 'dropshadow' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:462:10: 'dropshadow'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:463:8: ( '(' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:463:10: '('
             {
-            match("dropshadow"); 
-
+            match('('); 
 
             }
 
@@ -10008,10 +10027,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__464;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:463:8: ( '(' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:463:10: '('
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:464:8: ( ')' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:464:10: ')'
             {
-            match('('); 
+            match(')'); 
 
             }
 
@@ -10028,10 +10047,11 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__465;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:464:8: ( ')' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:464:10: ')'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:465:8: ( 'innershadow(' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:465:10: 'innershadow('
             {
-            match(')'); 
+            match("innershadow("); 
+
 
             }
 
@@ -10048,10 +10068,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__466;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:465:8: ( 'innershadow(' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:465:10: 'innershadow('
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:466:8: ( 'linear' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:466:10: 'linear'
             {
-            match("innershadow("); 
+            match("linear"); 
 
 
             }
@@ -10069,10 +10089,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__467;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:466:8: ( 'linear' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:466:10: 'linear'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:467:8: ( 'to' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:467:10: 'to'
             {
-            match("linear"); 
+            match("to"); 
 
 
             }
@@ -10090,10 +10110,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__468;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:467:8: ( 'to' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:467:10: 'to'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:468:8: ( 'stops' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:468:10: 'stops'
             {
-            match("to"); 
+            match("stops"); 
 
 
             }
@@ -10111,10 +10131,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__469;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:468:8: ( 'stops' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:468:10: 'stops'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:469:8: ( 'radial' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:469:10: 'radial'
             {
-            match("stops"); 
+            match("radial"); 
 
 
             }
@@ -10132,10 +10152,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__470;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:469:8: ( 'radial' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:469:10: 'radial'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:470:8: ( 'focus' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:470:10: 'focus'
             {
-            match("radial"); 
+            match("focus"); 
 
 
             }
@@ -10153,10 +10173,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__471;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:470:8: ( 'focus' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:470:10: 'focus'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:471:8: ( 'line-join' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:471:10: 'line-join'
             {
-            match("focus"); 
+            match("line-join"); 
 
 
             }
@@ -10174,10 +10194,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__472;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:471:8: ( 'line-join' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:471:10: 'line-join'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:472:8: ( 'line-cap' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:472:10: 'line-cap'
             {
-            match("line-join"); 
+            match("line-cap"); 
 
 
             }
@@ -10195,10 +10215,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__473;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:472:8: ( 'line-cap' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:472:10: 'line-cap'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:473:8: ( 'rgb' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:473:10: 'rgb'
             {
-            match("line-cap"); 
+            match("rgb"); 
 
 
             }
@@ -10216,11 +10236,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__474;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:473:8: ( 'rgb' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:473:10: 'rgb'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:474:8: ( '%' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:474:10: '%'
             {
-            match("rgb"); 
-
+            match('%'); 
 
             }
 
@@ -10237,8 +10256,8 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__475;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:474:8: ( 'rgba' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:474:10: 'rgba'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:475:8: ( 'rgba' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:475:10: 'rgba'
             {
             match("rgba"); 
 
@@ -10258,10 +10277,11 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__476;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:475:8: ( '%' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:475:10: '%'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:476:8: ( 'hsb' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:476:10: 'hsb'
             {
-            match('%'); 
+            match("hsb"); 
+
 
             }
 
@@ -10278,10 +10298,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__477;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:476:8: ( 'hsb' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:476:10: 'hsb'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:477:8: ( 'hsba' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:477:10: 'hsba'
             {
-            match("hsb"); 
+            match("hsba"); 
 
 
             }
@@ -10299,10 +10319,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__478;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:477:8: ( 'hsba' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:477:10: 'hsba'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:478:8: ( 'derive' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:478:10: 'derive'
             {
-            match("hsba"); 
+            match("derive"); 
 
 
             }
@@ -10320,10 +10340,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__479;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:478:8: ( 'derive' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:478:10: 'derive'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:479:8: ( 'ladder' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:479:10: 'ladder'
             {
-            match("derive"); 
+            match("ladder"); 
 
 
             }
@@ -10341,10 +10361,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__480;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:479:8: ( 'ladder' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:479:10: 'ladder'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:480:8: ( 'url(' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:480:10: 'url('
             {
-            match("ladder"); 
+            match("url("); 
 
 
             }
@@ -10362,10 +10382,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__481;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:480:8: ( 'url(' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:480:10: 'url('
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:481:8: ( 'em' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:481:10: 'em'
             {
-            match("url("); 
+            match("em"); 
 
 
             }
@@ -10383,10 +10403,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__482;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:481:8: ( 'em' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:481:10: 'em'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:482:8: ( 'ex' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:482:10: 'ex'
             {
-            match("em"); 
+            match("ex"); 
 
 
             }
@@ -10404,10 +10424,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__483;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:482:8: ( 'ex' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:482:10: 'ex'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:483:8: ( '-fx-cursor' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:483:10: '-fx-cursor'
             {
-            match("ex"); 
+            match("-fx-cursor"); 
 
 
             }
@@ -10425,10 +10445,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__484;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:483:8: ( '-fx-cursor' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:483:10: '-fx-cursor'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:484:8: ( '-fx-blend-mode' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:484:10: '-fx-blend-mode'
             {
-            match("-fx-cursor"); 
+            match("-fx-blend-mode"); 
 
 
             }
@@ -10446,10 +10466,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__485;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:484:8: ( '-fx-blend-mode' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:484:10: '-fx-blend-mode'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:485:8: ( '-fx-background-color' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:485:10: '-fx-background-color'
             {
-            match("-fx-blend-mode"); 
+            match("-fx-background-color"); 
 
 
             }
@@ -10467,10 +10487,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__486;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:485:8: ( '-fx-background-color' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:485:10: '-fx-background-color'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:486:8: ( '-fx-padding' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:486:10: '-fx-padding'
             {
-            match("-fx-background-color"); 
+            match("-fx-padding"); 
 
 
             }
@@ -10488,10 +10508,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__487;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:486:8: ( '-fx-padding' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:486:10: '-fx-padding'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:487:8: ( '-fx-stroke-dash-array' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:487:10: '-fx-stroke-dash-array'
             {
-            match("-fx-padding"); 
+            match("-fx-stroke-dash-array"); 
 
 
             }
@@ -10509,10 +10529,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__488;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:487:8: ( '-fx-stroke-dash-array' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:487:10: '-fx-stroke-dash-array'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:488:8: ( '-fx-stroke-line-cap' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:488:10: '-fx-stroke-line-cap'
             {
-            match("-fx-stroke-dash-array"); 
+            match("-fx-stroke-line-cap"); 
 
 
             }
@@ -10530,10 +10550,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__489;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:488:8: ( '-fx-stroke-line-cap' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:488:10: '-fx-stroke-line-cap'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:489:8: ( '-fx-stroke-line-join' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:489:10: '-fx-stroke-line-join'
             {
-            match("-fx-stroke-line-cap"); 
+            match("-fx-stroke-line-join"); 
 
 
             }
@@ -10551,10 +10571,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__490;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:489:8: ( '-fx-stroke-line-join' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:489:10: '-fx-stroke-line-join'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:490:8: ( '-fx-text-origin' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:490:10: '-fx-text-origin'
             {
-            match("-fx-stroke-line-join"); 
+            match("-fx-text-origin"); 
 
 
             }
@@ -10572,10 +10592,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__491;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:490:8: ( '-fx-text-origin' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:490:10: '-fx-text-origin'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:491:8: ( '-fx-background-image-size' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:491:10: '-fx-background-image-size'
             {
-            match("-fx-text-origin"); 
+            match("-fx-background-image-size"); 
 
 
             }
@@ -10593,10 +10613,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__492;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:491:8: ( '-fx-background-image-size' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:491:10: '-fx-background-image-size'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:492:8: ( '-fx-border-style' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:492:10: '-fx-border-style'
             {
-            match("-fx-background-image-size"); 
+            match("-fx-border-style"); 
 
 
             }
@@ -10614,10 +10634,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__493;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:492:8: ( '-fx-border-style' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:492:10: '-fx-border-style'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:493:8: ( '-fx-border-image-slice' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:493:10: '-fx-border-image-slice'
             {
-            match("-fx-border-style"); 
+            match("-fx-border-image-slice"); 
 
 
             }
@@ -10635,10 +10655,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__494;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:493:8: ( '-fx-border-image-slice' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:493:10: '-fx-border-image-slice'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:494:8: ( '-fx-text-overrun' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:494:10: '-fx-text-overrun'
             {
-            match("-fx-border-image-slice"); 
+            match("-fx-text-overrun"); 
 
 
             }
@@ -10656,10 +10676,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__495;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:494:8: ( '-fx-text-overrun' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:494:10: '-fx-text-overrun'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:495:8: ( '-fx-insets' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:495:10: '-fx-insets'
             {
-            match("-fx-text-overrun"); 
+            match("-fx-insets"); 
 
 
             }
@@ -10677,10 +10697,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__496;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:495:8: ( '-fx-insets' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:495:10: '-fx-insets'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:496:8: ( '-fx-border-color' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:496:10: '-fx-border-color'
             {
-            match("-fx-insets"); 
+            match("-fx-border-color"); 
 
 
             }
@@ -10698,27 +10718,6 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__497;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:496:8: ( '-fx-border-color' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:496:10: '-fx-border-color'
-            {
-            match("-fx-border-color"); 
-
-
-            }
-
-            state.type = _type;
-            state.channel = _channel;
-        }
-        finally {
-        }
-    }
-    // $ANTLR end "T__497"
-
-    // $ANTLR start "T__498"
-    public final void mT__498() throws RecognitionException {
-        try {
-            int _type = T__498;
-            int _channel = DEFAULT_TOKEN_CHANNEL;
             // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:497:8: ( 'fill' )
             // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:497:10: 'fill'
             {
@@ -10733,17 +10732,17 @@ public class InternalCssDslLexer extends Lexer {
         finally {
         }
     }
-    // $ANTLR end "T__498"
+    // $ANTLR end "T__497"
 
     // $ANTLR start "RULE_INTEGER"
     public final void mRULE_INTEGER() throws RecognitionException {
         try {
             int _type = RULE_INTEGER;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:26980:14: ( ( '0' .. '9' )+ )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:26980:16: ( '0' .. '9' )+
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:27480:14: ( ( '0' .. '9' )+ )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:27480:16: ( '0' .. '9' )+
             {
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:26980:16: ( '0' .. '9' )+
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:27480:16: ( '0' .. '9' )+
             int cnt1=0;
             loop1:
             do {
@@ -10757,7 +10756,7 @@ public class InternalCssDslLexer extends Lexer {
 
                 switch (alt1) {
             	case 1 :
-            	    // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:26980:17: '0' .. '9'
+            	    // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:27480:17: '0' .. '9'
             	    {
             	    matchRange('0','9'); 
 
@@ -10789,10 +10788,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = RULE_REAL;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:26982:11: ( ( '0' .. '9' )* '.' ( '0' .. '9' )+ )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:26982:13: ( '0' .. '9' )* '.' ( '0' .. '9' )+
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:27482:11: ( ( '0' .. '9' )* '.' ( '0' .. '9' )+ )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:27482:13: ( '0' .. '9' )* '.' ( '0' .. '9' )+
             {
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:26982:13: ( '0' .. '9' )*
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:27482:13: ( '0' .. '9' )*
             loop2:
             do {
                 int alt2=2;
@@ -10805,7 +10804,7 @@ public class InternalCssDslLexer extends Lexer {
 
                 switch (alt2) {
             	case 1 :
-            	    // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:26982:14: '0' .. '9'
+            	    // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:27482:14: '0' .. '9'
             	    {
             	    matchRange('0','9'); 
 
@@ -10818,7 +10817,7 @@ public class InternalCssDslLexer extends Lexer {
             } while (true);
 
             match('.'); 
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:26982:29: ( '0' .. '9' )+
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:27482:29: ( '0' .. '9' )+
             int cnt3=0;
             loop3:
             do {
@@ -10832,7 +10831,7 @@ public class InternalCssDslLexer extends Lexer {
 
                 switch (alt3) {
             	case 1 :
-            	    // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:26982:30: '0' .. '9'
+            	    // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:27482:30: '0' .. '9'
             	    {
             	    matchRange('0','9'); 
 
@@ -10859,74 +10858,13 @@ public class InternalCssDslLexer extends Lexer {
     }
     // $ANTLR end "RULE_REAL"
 
-    // $ANTLR start "RULE_HEXCOLOR"
-    public final void mRULE_HEXCOLOR() throws RecognitionException {
-        try {
-            int _type = RULE_HEXCOLOR;
-            int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:26984:15: ( ( '#' '0' .. '9' '0' .. '9' '0' .. '9' | '0' .. '9' '0' .. '9' '0' .. '9' '0' .. '9' '0' .. '9' '0' .. '9' ) )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:26984:17: ( '#' '0' .. '9' '0' .. '9' '0' .. '9' | '0' .. '9' '0' .. '9' '0' .. '9' '0' .. '9' '0' .. '9' '0' .. '9' )
-            {
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:26984:17: ( '#' '0' .. '9' '0' .. '9' '0' .. '9' | '0' .. '9' '0' .. '9' '0' .. '9' '0' .. '9' '0' .. '9' '0' .. '9' )
-            int alt4=2;
-            int LA4_0 = input.LA(1);
-
-            if ( (LA4_0=='#') ) {
-                alt4=1;
-            }
-            else if ( ((LA4_0>='0' && LA4_0<='9')) ) {
-                alt4=2;
-            }
-            else {
-                NoViableAltException nvae =
-                    new NoViableAltException("", 4, 0, input);
-
-                throw nvae;
-            }
-            switch (alt4) {
-                case 1 :
-                    // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:26984:18: '#' '0' .. '9' '0' .. '9' '0' .. '9'
-                    {
-                    match('#'); 
-                    matchRange('0','9'); 
-                    matchRange('0','9'); 
-                    matchRange('0','9'); 
-
-                    }
-                    break;
-                case 2 :
-                    // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:26984:49: '0' .. '9' '0' .. '9' '0' .. '9' '0' .. '9' '0' .. '9' '0' .. '9'
-                    {
-                    matchRange('0','9'); 
-                    matchRange('0','9'); 
-                    matchRange('0','9'); 
-                    matchRange('0','9'); 
-                    matchRange('0','9'); 
-                    matchRange('0','9'); 
-
-                    }
-                    break;
-
-            }
-
-
-            }
-
-            state.type = _type;
-            state.channel = _channel;
-        }
-        finally {
-        }
-    }
-    // $ANTLR end "RULE_HEXCOLOR"
-
     // $ANTLR start "RULE_IDENT"
     public final void mRULE_IDENT() throws RecognitionException {
         try {
             int _type = RULE_IDENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:26986:12: ( ( '_' | 'a' .. 'z' | 'A' .. 'Z' ) ( '_' | '-' | 'a' .. 'z' | 'A' .. 'Z' | '0..9' )* )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:26986:14: ( '_' | 'a' .. 'z' | 'A' .. 'Z' ) ( '_' | '-' | 'a' .. 'z' | 'A' .. 'Z' | '0..9' )*
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:27484:12: ( ( '_' | 'a' .. 'z' | 'A' .. 'Z' ) ( '_' | '-' | 'a' .. 'z' | 'A' .. 'Z' | '0..9' )* )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:27484:14: ( '_' | 'a' .. 'z' | 'A' .. 'Z' ) ( '_' | '-' | 'a' .. 'z' | 'A' .. 'Z' | '0..9' )*
             {
             if ( (input.LA(1)>='A' && input.LA(1)<='Z')||input.LA(1)=='_'||(input.LA(1)>='a' && input.LA(1)<='z') ) {
                 input.consume();
@@ -10937,19 +10875,19 @@ public class InternalCssDslLexer extends Lexer {
                 recover(mse);
                 throw mse;}
 
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:26986:38: ( '_' | '-' | 'a' .. 'z' | 'A' .. 'Z' | '0..9' )*
-            loop5:
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:27484:38: ( '_' | '-' | 'a' .. 'z' | 'A' .. 'Z' | '0..9' )*
+            loop4:
             do {
-                int alt5=6;
+                int alt4=6;
                 switch ( input.LA(1) ) {
                 case '_':
                     {
-                    alt5=1;
+                    alt4=1;
                     }
                     break;
                 case '-':
                     {
-                    alt5=2;
+                    alt4=2;
                     }
                     break;
                 case 'a':
@@ -10979,7 +10917,7 @@ public class InternalCssDslLexer extends Lexer {
                 case 'y':
                 case 'z':
                     {
-                    alt5=3;
+                    alt4=3;
                     }
                     break;
                 case 'A':
@@ -11009,48 +10947,48 @@ public class InternalCssDslLexer extends Lexer {
                 case 'Y':
                 case 'Z':
                     {
-                    alt5=4;
+                    alt4=4;
                     }
                     break;
                 case '0':
                     {
-                    alt5=5;
+                    alt4=5;
                     }
                     break;
 
                 }
 
-                switch (alt5) {
+                switch (alt4) {
             	case 1 :
-            	    // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:26986:39: '_'
+            	    // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:27484:39: '_'
             	    {
             	    match('_'); 
 
             	    }
             	    break;
             	case 2 :
-            	    // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:26986:43: '-'
+            	    // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:27484:43: '-'
             	    {
             	    match('-'); 
 
             	    }
             	    break;
             	case 3 :
-            	    // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:26986:47: 'a' .. 'z'
+            	    // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:27484:47: 'a' .. 'z'
             	    {
             	    matchRange('a','z'); 
 
             	    }
             	    break;
             	case 4 :
-            	    // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:26986:56: 'A' .. 'Z'
+            	    // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:27484:56: 'A' .. 'Z'
             	    {
             	    matchRange('A','Z'); 
 
             	    }
             	    break;
             	case 5 :
-            	    // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:26986:65: '0..9'
+            	    // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:27484:65: '0..9'
             	    {
             	    match("0..9"); 
 
@@ -11059,7 +10997,7 @@ public class InternalCssDslLexer extends Lexer {
             	    break;
 
             	default :
-            	    break loop5;
+            	    break loop4;
                 }
             } while (true);
 
@@ -11079,10 +11017,36 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = RULE_COMMA;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:26988:12: ( ( RULE_WS )* ',' ( RULE_WS )* )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:26988:14: ( RULE_WS )* ',' ( RULE_WS )*
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:27486:12: ( ( RULE_WS )* ',' ( RULE_WS )* )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:27486:14: ( RULE_WS )* ',' ( RULE_WS )*
             {
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:26988:14: ( RULE_WS )*
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:27486:14: ( RULE_WS )*
+            loop5:
+            do {
+                int alt5=2;
+                int LA5_0 = input.LA(1);
+
+                if ( ((LA5_0>='\t' && LA5_0<='\n')||LA5_0=='\r'||LA5_0==' ') ) {
+                    alt5=1;
+                }
+
+
+                switch (alt5) {
+            	case 1 :
+            	    // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:27486:14: RULE_WS
+            	    {
+            	    mRULE_WS(); 
+
+            	    }
+            	    break;
+
+            	default :
+            	    break loop5;
+                }
+            } while (true);
+
+            match(','); 
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:27486:27: ( RULE_WS )*
             loop6:
             do {
                 int alt6=2;
@@ -11095,7 +11059,7 @@ public class InternalCssDslLexer extends Lexer {
 
                 switch (alt6) {
             	case 1 :
-            	    // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:26988:14: RULE_WS
+            	    // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:27486:27: RULE_WS
             	    {
             	    mRULE_WS(); 
 
@@ -11104,32 +11068,6 @@ public class InternalCssDslLexer extends Lexer {
 
             	default :
             	    break loop6;
-                }
-            } while (true);
-
-            match(','); 
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:26988:27: ( RULE_WS )*
-            loop7:
-            do {
-                int alt7=2;
-                int LA7_0 = input.LA(1);
-
-                if ( ((LA7_0>='\t' && LA7_0<='\n')||LA7_0=='\r'||LA7_0==' ') ) {
-                    alt7=1;
-                }
-
-
-                switch (alt7) {
-            	case 1 :
-            	    // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:26988:27: RULE_WS
-            	    {
-            	    mRULE_WS(); 
-
-            	    }
-            	    break;
-
-            	default :
-            	    break loop7;
                 }
             } while (true);
 
@@ -11149,37 +11087,37 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = RULE_ML_COMMENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:26990:17: ( '/*' ( options {greedy=false; } : . )* '*/' )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:26990:19: '/*' ( options {greedy=false; } : . )* '*/'
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:27488:17: ( '/*' ( options {greedy=false; } : . )* '*/' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:27488:19: '/*' ( options {greedy=false; } : . )* '*/'
             {
             match("/*"); 
 
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:26990:24: ( options {greedy=false; } : . )*
-            loop8:
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:27488:24: ( options {greedy=false; } : . )*
+            loop7:
             do {
-                int alt8=2;
-                int LA8_0 = input.LA(1);
+                int alt7=2;
+                int LA7_0 = input.LA(1);
 
-                if ( (LA8_0=='*') ) {
-                    int LA8_1 = input.LA(2);
+                if ( (LA7_0=='*') ) {
+                    int LA7_1 = input.LA(2);
 
-                    if ( (LA8_1=='/') ) {
-                        alt8=2;
+                    if ( (LA7_1=='/') ) {
+                        alt7=2;
                     }
-                    else if ( ((LA8_1>='\u0000' && LA8_1<='.')||(LA8_1>='0' && LA8_1<='\uFFFF')) ) {
-                        alt8=1;
+                    else if ( ((LA7_1>='\u0000' && LA7_1<='.')||(LA7_1>='0' && LA7_1<='\uFFFF')) ) {
+                        alt7=1;
                     }
 
 
                 }
-                else if ( ((LA8_0>='\u0000' && LA8_0<=')')||(LA8_0>='+' && LA8_0<='\uFFFF')) ) {
-                    alt8=1;
+                else if ( ((LA7_0>='\u0000' && LA7_0<=')')||(LA7_0>='+' && LA7_0<='\uFFFF')) ) {
+                    alt7=1;
                 }
 
 
-                switch (alt8) {
+                switch (alt7) {
             	case 1 :
-            	    // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:26990:52: .
+            	    // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:27488:52: .
             	    {
             	    matchAny(); 
 
@@ -11187,7 +11125,7 @@ public class InternalCssDslLexer extends Lexer {
             	    break;
 
             	default :
-            	    break loop8;
+            	    break loop7;
                 }
             } while (true);
 
@@ -11209,22 +11147,22 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = RULE_WS;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:26992:9: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:26992:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:27490:9: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:27490:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
             {
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:26992:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
-            int cnt9=0;
-            loop9:
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:27490:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
+            int cnt8=0;
+            loop8:
             do {
-                int alt9=2;
-                int LA9_0 = input.LA(1);
+                int alt8=2;
+                int LA8_0 = input.LA(1);
 
-                if ( ((LA9_0>='\t' && LA9_0<='\n')||LA9_0=='\r'||LA9_0==' ') ) {
-                    alt9=1;
+                if ( ((LA8_0>='\t' && LA8_0<='\n')||LA8_0=='\r'||LA8_0==' ') ) {
+                    alt8=1;
                 }
 
 
-                switch (alt9) {
+                switch (alt8) {
             	case 1 :
             	    // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:
             	    {
@@ -11242,12 +11180,12 @@ public class InternalCssDslLexer extends Lexer {
             	    break;
 
             	default :
-            	    if ( cnt9 >= 1 ) break loop9;
+            	    if ( cnt8 >= 1 ) break loop8;
                         EarlyExitException eee =
-                            new EarlyExitException(9, input);
+                            new EarlyExitException(8, input);
                         throw eee;
                 }
-                cnt9++;
+                cnt8++;
             } while (true);
 
 
@@ -11266,47 +11204,47 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = RULE_STRING;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:26994:13: ( ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' ) )
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:26994:15: ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:27492:13: ( ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' ) )
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:27492:15: ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
             {
-            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:26994:15: ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
-            int alt12=2;
-            int LA12_0 = input.LA(1);
+            // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:27492:15: ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
+            int alt11=2;
+            int LA11_0 = input.LA(1);
 
-            if ( (LA12_0=='\"') ) {
-                alt12=1;
+            if ( (LA11_0=='\"') ) {
+                alt11=1;
             }
-            else if ( (LA12_0=='\'') ) {
-                alt12=2;
+            else if ( (LA11_0=='\'') ) {
+                alt11=2;
             }
             else {
                 NoViableAltException nvae =
-                    new NoViableAltException("", 12, 0, input);
+                    new NoViableAltException("", 11, 0, input);
 
                 throw nvae;
             }
-            switch (alt12) {
+            switch (alt11) {
                 case 1 :
-                    // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:26994:16: '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"'
+                    // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:27492:16: '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"'
                     {
                     match('\"'); 
-                    // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:26994:20: ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )*
-                    loop10:
+                    // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:27492:20: ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )*
+                    loop9:
                     do {
-                        int alt10=3;
-                        int LA10_0 = input.LA(1);
+                        int alt9=3;
+                        int LA9_0 = input.LA(1);
 
-                        if ( (LA10_0=='\\') ) {
-                            alt10=1;
+                        if ( (LA9_0=='\\') ) {
+                            alt9=1;
                         }
-                        else if ( ((LA10_0>='\u0000' && LA10_0<='!')||(LA10_0>='#' && LA10_0<='[')||(LA10_0>=']' && LA10_0<='\uFFFF')) ) {
-                            alt10=2;
+                        else if ( ((LA9_0>='\u0000' && LA9_0<='!')||(LA9_0>='#' && LA9_0<='[')||(LA9_0>=']' && LA9_0<='\uFFFF')) ) {
+                            alt9=2;
                         }
 
 
-                        switch (alt10) {
+                        switch (alt9) {
                     	case 1 :
-                    	    // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:26994:21: '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' )
+                    	    // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:27492:21: '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' )
                     	    {
                     	    match('\\'); 
                     	    if ( input.LA(1)=='\"'||input.LA(1)=='\''||input.LA(1)=='\\'||input.LA(1)=='b'||input.LA(1)=='f'||input.LA(1)=='n'||input.LA(1)=='r'||(input.LA(1)>='t' && input.LA(1)<='u') ) {
@@ -11322,7 +11260,7 @@ public class InternalCssDslLexer extends Lexer {
                     	    }
                     	    break;
                     	case 2 :
-                    	    // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:26994:66: ~ ( ( '\\\\' | '\"' ) )
+                    	    // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:27492:66: ~ ( ( '\\\\' | '\"' ) )
                     	    {
                     	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='!')||(input.LA(1)>='#' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFF') ) {
                     	        input.consume();
@@ -11338,7 +11276,7 @@ public class InternalCssDslLexer extends Lexer {
                     	    break;
 
                     	default :
-                    	    break loop10;
+                    	    break loop9;
                         }
                     } while (true);
 
@@ -11347,26 +11285,26 @@ public class InternalCssDslLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:26994:86: '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\''
+                    // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:27492:86: '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\''
                     {
                     match('\''); 
-                    // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:26994:91: ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )*
-                    loop11:
+                    // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:27492:91: ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )*
+                    loop10:
                     do {
-                        int alt11=3;
-                        int LA11_0 = input.LA(1);
+                        int alt10=3;
+                        int LA10_0 = input.LA(1);
 
-                        if ( (LA11_0=='\\') ) {
-                            alt11=1;
+                        if ( (LA10_0=='\\') ) {
+                            alt10=1;
                         }
-                        else if ( ((LA11_0>='\u0000' && LA11_0<='&')||(LA11_0>='(' && LA11_0<='[')||(LA11_0>=']' && LA11_0<='\uFFFF')) ) {
-                            alt11=2;
+                        else if ( ((LA10_0>='\u0000' && LA10_0<='&')||(LA10_0>='(' && LA10_0<='[')||(LA10_0>=']' && LA10_0<='\uFFFF')) ) {
+                            alt10=2;
                         }
 
 
-                        switch (alt11) {
+                        switch (alt10) {
                     	case 1 :
-                    	    // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:26994:92: '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' )
+                    	    // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:27492:92: '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' )
                     	    {
                     	    match('\\'); 
                     	    if ( input.LA(1)=='\"'||input.LA(1)=='\''||input.LA(1)=='\\'||input.LA(1)=='b'||input.LA(1)=='f'||input.LA(1)=='n'||input.LA(1)=='r'||(input.LA(1)>='t' && input.LA(1)<='u') ) {
@@ -11382,7 +11320,7 @@ public class InternalCssDslLexer extends Lexer {
                     	    }
                     	    break;
                     	case 2 :
-                    	    // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:26994:137: ~ ( ( '\\\\' | '\\'' ) )
+                    	    // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:27492:137: ~ ( ( '\\\\' | '\\'' ) )
                     	    {
                     	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='&')||(input.LA(1)>='(' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFF') ) {
                     	        input.consume();
@@ -11398,7 +11336,7 @@ public class InternalCssDslLexer extends Lexer {
                     	    break;
 
                     	default :
-                    	    break loop11;
+                    	    break loop10;
                         }
                     } while (true);
 
@@ -11421,3470 +11359,3463 @@ public class InternalCssDslLexer extends Lexer {
     // $ANTLR end "RULE_STRING"
 
     public void mTokens() throws RecognitionException {
-        // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:8: ( T__12 | T__13 | T__14 | T__15 | T__16 | T__17 | T__18 | T__19 | T__20 | T__21 | T__22 | T__23 | T__24 | T__25 | T__26 | T__27 | T__28 | T__29 | T__30 | T__31 | T__32 | T__33 | T__34 | T__35 | T__36 | T__37 | T__38 | T__39 | T__40 | T__41 | T__42 | T__43 | T__44 | T__45 | T__46 | T__47 | T__48 | T__49 | T__50 | T__51 | T__52 | T__53 | T__54 | T__55 | T__56 | T__57 | T__58 | T__59 | T__60 | T__61 | T__62 | T__63 | T__64 | T__65 | T__66 | T__67 | T__68 | T__69 | T__70 | T__71 | T__72 | T__73 | T__74 | T__75 | T__76 | T__77 | T__78 | T__79 | T__80 | T__81 | T__82 | T__83 | T__84 | T__85 | T__86 | T__87 | T__88 | T__89 | T__90 | T__91 | T__92 | T__93 | T__94 | T__95 | T__96 | T__97 | T__98 | T__99 | T__100 | T__101 | T__102 | T__103 | T__104 | T__105 | T__106 | T__107 | T__108 | T__109 | T__110 | T__111 | T__112 | T__113 | T__114 | T__115 | T__116 | T__117 | T__118 | T__119 | T__120 | T__121 | T__122 | T__123 | T__124 | T__125 | T__126 | T__127 | T__128 | T__129 | T__130 | T__131 | T__132 | T__133 | T__134 | T__135 | T__136 | T__137 | T__138 | T__139 | T__140 | T__141 | T__142 | T__143 | T__144 | T__145 | T__146 | T__147 | T__148 | T__149 | T__150 | T__151 | T__152 | T__153 | T__154 | T__155 | T__156 | T__157 | T__158 | T__159 | T__160 | T__161 | T__162 | T__163 | T__164 | T__165 | T__166 | T__167 | T__168 | T__169 | T__170 | T__171 | T__172 | T__173 | T__174 | T__175 | T__176 | T__177 | T__178 | T__179 | T__180 | T__181 | T__182 | T__183 | T__184 | T__185 | T__186 | T__187 | T__188 | T__189 | T__190 | T__191 | T__192 | T__193 | T__194 | T__195 | T__196 | T__197 | T__198 | T__199 | T__200 | T__201 | T__202 | T__203 | T__204 | T__205 | T__206 | T__207 | T__208 | T__209 | T__210 | T__211 | T__212 | T__213 | T__214 | T__215 | T__216 | T__217 | T__218 | T__219 | T__220 | T__221 | T__222 | T__223 | T__224 | T__225 | T__226 | T__227 | T__228 | T__229 | T__230 | T__231 | T__232 | T__233 | T__234 | T__235 | T__236 | T__237 | T__238 | T__239 | T__240 | T__241 | T__242 | T__243 | T__244 | T__245 | T__246 | T__247 | T__248 | T__249 | T__250 | T__251 | T__252 | T__253 | T__254 | T__255 | T__256 | T__257 | T__258 | T__259 | T__260 | T__261 | T__262 | T__263 | T__264 | T__265 | T__266 | T__267 | T__268 | T__269 | T__270 | T__271 | T__272 | T__273 | T__274 | T__275 | T__276 | T__277 | T__278 | T__279 | T__280 | T__281 | T__282 | T__283 | T__284 | T__285 | T__286 | T__287 | T__288 | T__289 | T__290 | T__291 | T__292 | T__293 | T__294 | T__295 | T__296 | T__297 | T__298 | T__299 | T__300 | T__301 | T__302 | T__303 | T__304 | T__305 | T__306 | T__307 | T__308 | T__309 | T__310 | T__311 | T__312 | T__313 | T__314 | T__315 | T__316 | T__317 | T__318 | T__319 | T__320 | T__321 | T__322 | T__323 | T__324 | T__325 | T__326 | T__327 | T__328 | T__329 | T__330 | T__331 | T__332 | T__333 | T__334 | T__335 | T__336 | T__337 | T__338 | T__339 | T__340 | T__341 | T__342 | T__343 | T__344 | T__345 | T__346 | T__347 | T__348 | T__349 | T__350 | T__351 | T__352 | T__353 | T__354 | T__355 | T__356 | T__357 | T__358 | T__359 | T__360 | T__361 | T__362 | T__363 | T__364 | T__365 | T__366 | T__367 | T__368 | T__369 | T__370 | T__371 | T__372 | T__373 | T__374 | T__375 | T__376 | T__377 | T__378 | T__379 | T__380 | T__381 | T__382 | T__383 | T__384 | T__385 | T__386 | T__387 | T__388 | T__389 | T__390 | T__391 | T__392 | T__393 | T__394 | T__395 | T__396 | T__397 | T__398 | T__399 | T__400 | T__401 | T__402 | T__403 | T__404 | T__405 | T__406 | T__407 | T__408 | T__409 | T__410 | T__411 | T__412 | T__413 | T__414 | T__415 | T__416 | T__417 | T__418 | T__419 | T__420 | T__421 | T__422 | T__423 | T__424 | T__425 | T__426 | T__427 | T__428 | T__429 | T__430 | T__431 | T__432 | T__433 | T__434 | T__435 | T__436 | T__437 | T__438 | T__439 | T__440 | T__441 | T__442 | T__443 | T__444 | T__445 | T__446 | T__447 | T__448 | T__449 | T__450 | T__451 | T__452 | T__453 | T__454 | T__455 | T__456 | T__457 | T__458 | T__459 | T__460 | T__461 | T__462 | T__463 | T__464 | T__465 | T__466 | T__467 | T__468 | T__469 | T__470 | T__471 | T__472 | T__473 | T__474 | T__475 | T__476 | T__477 | T__478 | T__479 | T__480 | T__481 | T__482 | T__483 | T__484 | T__485 | T__486 | T__487 | T__488 | T__489 | T__490 | T__491 | T__492 | T__493 | T__494 | T__495 | T__496 | T__497 | T__498 | RULE_INTEGER | RULE_REAL | RULE_HEXCOLOR | RULE_IDENT | RULE_COMMA | RULE_ML_COMMENT | RULE_WS | RULE_STRING )
-        int alt13=495;
-        alt13 = dfa13.predict(input);
-        switch (alt13) {
+        // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:8: ( T__11 | T__12 | T__13 | T__14 | T__15 | T__16 | T__17 | T__18 | T__19 | T__20 | T__21 | T__22 | T__23 | T__24 | T__25 | T__26 | T__27 | T__28 | T__29 | T__30 | T__31 | T__32 | T__33 | T__34 | T__35 | T__36 | T__37 | T__38 | T__39 | T__40 | T__41 | T__42 | T__43 | T__44 | T__45 | T__46 | T__47 | T__48 | T__49 | T__50 | T__51 | T__52 | T__53 | T__54 | T__55 | T__56 | T__57 | T__58 | T__59 | T__60 | T__61 | T__62 | T__63 | T__64 | T__65 | T__66 | T__67 | T__68 | T__69 | T__70 | T__71 | T__72 | T__73 | T__74 | T__75 | T__76 | T__77 | T__78 | T__79 | T__80 | T__81 | T__82 | T__83 | T__84 | T__85 | T__86 | T__87 | T__88 | T__89 | T__90 | T__91 | T__92 | T__93 | T__94 | T__95 | T__96 | T__97 | T__98 | T__99 | T__100 | T__101 | T__102 | T__103 | T__104 | T__105 | T__106 | T__107 | T__108 | T__109 | T__110 | T__111 | T__112 | T__113 | T__114 | T__115 | T__116 | T__117 | T__118 | T__119 | T__120 | T__121 | T__122 | T__123 | T__124 | T__125 | T__126 | T__127 | T__128 | T__129 | T__130 | T__131 | T__132 | T__133 | T__134 | T__135 | T__136 | T__137 | T__138 | T__139 | T__140 | T__141 | T__142 | T__143 | T__144 | T__145 | T__146 | T__147 | T__148 | T__149 | T__150 | T__151 | T__152 | T__153 | T__154 | T__155 | T__156 | T__157 | T__158 | T__159 | T__160 | T__161 | T__162 | T__163 | T__164 | T__165 | T__166 | T__167 | T__168 | T__169 | T__170 | T__171 | T__172 | T__173 | T__174 | T__175 | T__176 | T__177 | T__178 | T__179 | T__180 | T__181 | T__182 | T__183 | T__184 | T__185 | T__186 | T__187 | T__188 | T__189 | T__190 | T__191 | T__192 | T__193 | T__194 | T__195 | T__196 | T__197 | T__198 | T__199 | T__200 | T__201 | T__202 | T__203 | T__204 | T__205 | T__206 | T__207 | T__208 | T__209 | T__210 | T__211 | T__212 | T__213 | T__214 | T__215 | T__216 | T__217 | T__218 | T__219 | T__220 | T__221 | T__222 | T__223 | T__224 | T__225 | T__226 | T__227 | T__228 | T__229 | T__230 | T__231 | T__232 | T__233 | T__234 | T__235 | T__236 | T__237 | T__238 | T__239 | T__240 | T__241 | T__242 | T__243 | T__244 | T__245 | T__246 | T__247 | T__248 | T__249 | T__250 | T__251 | T__252 | T__253 | T__254 | T__255 | T__256 | T__257 | T__258 | T__259 | T__260 | T__261 | T__262 | T__263 | T__264 | T__265 | T__266 | T__267 | T__268 | T__269 | T__270 | T__271 | T__272 | T__273 | T__274 | T__275 | T__276 | T__277 | T__278 | T__279 | T__280 | T__281 | T__282 | T__283 | T__284 | T__285 | T__286 | T__287 | T__288 | T__289 | T__290 | T__291 | T__292 | T__293 | T__294 | T__295 | T__296 | T__297 | T__298 | T__299 | T__300 | T__301 | T__302 | T__303 | T__304 | T__305 | T__306 | T__307 | T__308 | T__309 | T__310 | T__311 | T__312 | T__313 | T__314 | T__315 | T__316 | T__317 | T__318 | T__319 | T__320 | T__321 | T__322 | T__323 | T__324 | T__325 | T__326 | T__327 | T__328 | T__329 | T__330 | T__331 | T__332 | T__333 | T__334 | T__335 | T__336 | T__337 | T__338 | T__339 | T__340 | T__341 | T__342 | T__343 | T__344 | T__345 | T__346 | T__347 | T__348 | T__349 | T__350 | T__351 | T__352 | T__353 | T__354 | T__355 | T__356 | T__357 | T__358 | T__359 | T__360 | T__361 | T__362 | T__363 | T__364 | T__365 | T__366 | T__367 | T__368 | T__369 | T__370 | T__371 | T__372 | T__373 | T__374 | T__375 | T__376 | T__377 | T__378 | T__379 | T__380 | T__381 | T__382 | T__383 | T__384 | T__385 | T__386 | T__387 | T__388 | T__389 | T__390 | T__391 | T__392 | T__393 | T__394 | T__395 | T__396 | T__397 | T__398 | T__399 | T__400 | T__401 | T__402 | T__403 | T__404 | T__405 | T__406 | T__407 | T__408 | T__409 | T__410 | T__411 | T__412 | T__413 | T__414 | T__415 | T__416 | T__417 | T__418 | T__419 | T__420 | T__421 | T__422 | T__423 | T__424 | T__425 | T__426 | T__427 | T__428 | T__429 | T__430 | T__431 | T__432 | T__433 | T__434 | T__435 | T__436 | T__437 | T__438 | T__439 | T__440 | T__441 | T__442 | T__443 | T__444 | T__445 | T__446 | T__447 | T__448 | T__449 | T__450 | T__451 | T__452 | T__453 | T__454 | T__455 | T__456 | T__457 | T__458 | T__459 | T__460 | T__461 | T__462 | T__463 | T__464 | T__465 | T__466 | T__467 | T__468 | T__469 | T__470 | T__471 | T__472 | T__473 | T__474 | T__475 | T__476 | T__477 | T__478 | T__479 | T__480 | T__481 | T__482 | T__483 | T__484 | T__485 | T__486 | T__487 | T__488 | T__489 | T__490 | T__491 | T__492 | T__493 | T__494 | T__495 | T__496 | T__497 | RULE_INTEGER | RULE_REAL | RULE_IDENT | RULE_COMMA | RULE_ML_COMMENT | RULE_WS | RULE_STRING )
+        int alt12=494;
+        alt12 = dfa12.predict(input);
+        switch (alt12) {
             case 1 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:10: T__12
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:10: T__11
+                {
+                mT__11(); 
+
+                }
+                break;
+            case 2 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:16: T__12
                 {
                 mT__12(); 
 
                 }
                 break;
-            case 2 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:16: T__13
+            case 3 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:22: T__13
                 {
                 mT__13(); 
 
                 }
                 break;
-            case 3 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:22: T__14
+            case 4 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:28: T__14
                 {
                 mT__14(); 
 
                 }
                 break;
-            case 4 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:28: T__15
+            case 5 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:34: T__15
                 {
                 mT__15(); 
 
                 }
                 break;
-            case 5 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:34: T__16
+            case 6 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:40: T__16
                 {
                 mT__16(); 
 
                 }
                 break;
-            case 6 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:40: T__17
+            case 7 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:46: T__17
                 {
                 mT__17(); 
 
                 }
                 break;
-            case 7 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:46: T__18
+            case 8 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:52: T__18
                 {
                 mT__18(); 
 
                 }
                 break;
-            case 8 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:52: T__19
+            case 9 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:58: T__19
                 {
                 mT__19(); 
 
                 }
                 break;
-            case 9 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:58: T__20
+            case 10 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:64: T__20
                 {
                 mT__20(); 
 
                 }
                 break;
-            case 10 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:64: T__21
+            case 11 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:70: T__21
                 {
                 mT__21(); 
 
                 }
                 break;
-            case 11 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:70: T__22
+            case 12 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:76: T__22
                 {
                 mT__22(); 
 
                 }
                 break;
-            case 12 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:76: T__23
+            case 13 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:82: T__23
                 {
                 mT__23(); 
 
                 }
                 break;
-            case 13 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:82: T__24
+            case 14 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:88: T__24
                 {
                 mT__24(); 
 
                 }
                 break;
-            case 14 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:88: T__25
+            case 15 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:94: T__25
                 {
                 mT__25(); 
 
                 }
                 break;
-            case 15 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:94: T__26
+            case 16 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:100: T__26
                 {
                 mT__26(); 
 
                 }
                 break;
-            case 16 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:100: T__27
+            case 17 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:106: T__27
                 {
                 mT__27(); 
 
                 }
                 break;
-            case 17 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:106: T__28
+            case 18 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:112: T__28
                 {
                 mT__28(); 
 
                 }
                 break;
-            case 18 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:112: T__29
+            case 19 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:118: T__29
                 {
                 mT__29(); 
 
                 }
                 break;
-            case 19 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:118: T__30
+            case 20 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:124: T__30
                 {
                 mT__30(); 
 
                 }
                 break;
-            case 20 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:124: T__31
+            case 21 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:130: T__31
                 {
                 mT__31(); 
 
                 }
                 break;
-            case 21 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:130: T__32
+            case 22 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:136: T__32
                 {
                 mT__32(); 
 
                 }
                 break;
-            case 22 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:136: T__33
+            case 23 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:142: T__33
                 {
                 mT__33(); 
 
                 }
                 break;
-            case 23 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:142: T__34
+            case 24 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:148: T__34
                 {
                 mT__34(); 
 
                 }
                 break;
-            case 24 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:148: T__35
+            case 25 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:154: T__35
                 {
                 mT__35(); 
 
                 }
                 break;
-            case 25 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:154: T__36
+            case 26 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:160: T__36
                 {
                 mT__36(); 
 
                 }
                 break;
-            case 26 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:160: T__37
+            case 27 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:166: T__37
                 {
                 mT__37(); 
 
                 }
                 break;
-            case 27 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:166: T__38
+            case 28 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:172: T__38
                 {
                 mT__38(); 
 
                 }
                 break;
-            case 28 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:172: T__39
+            case 29 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:178: T__39
                 {
                 mT__39(); 
 
                 }
                 break;
-            case 29 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:178: T__40
+            case 30 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:184: T__40
                 {
                 mT__40(); 
 
                 }
                 break;
-            case 30 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:184: T__41
+            case 31 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:190: T__41
                 {
                 mT__41(); 
 
                 }
                 break;
-            case 31 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:190: T__42
+            case 32 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:196: T__42
                 {
                 mT__42(); 
 
                 }
                 break;
-            case 32 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:196: T__43
+            case 33 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:202: T__43
                 {
                 mT__43(); 
 
                 }
                 break;
-            case 33 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:202: T__44
+            case 34 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:208: T__44
                 {
                 mT__44(); 
 
                 }
                 break;
-            case 34 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:208: T__45
+            case 35 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:214: T__45
                 {
                 mT__45(); 
 
                 }
                 break;
-            case 35 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:214: T__46
+            case 36 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:220: T__46
                 {
                 mT__46(); 
 
                 }
                 break;
-            case 36 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:220: T__47
+            case 37 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:226: T__47
                 {
                 mT__47(); 
 
                 }
                 break;
-            case 37 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:226: T__48
+            case 38 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:232: T__48
                 {
                 mT__48(); 
 
                 }
                 break;
-            case 38 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:232: T__49
+            case 39 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:238: T__49
                 {
                 mT__49(); 
 
                 }
                 break;
-            case 39 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:238: T__50
+            case 40 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:244: T__50
                 {
                 mT__50(); 
 
                 }
                 break;
-            case 40 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:244: T__51
+            case 41 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:250: T__51
                 {
                 mT__51(); 
 
                 }
                 break;
-            case 41 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:250: T__52
+            case 42 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:256: T__52
                 {
                 mT__52(); 
 
                 }
                 break;
-            case 42 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:256: T__53
+            case 43 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:262: T__53
                 {
                 mT__53(); 
 
                 }
                 break;
-            case 43 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:262: T__54
+            case 44 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:268: T__54
                 {
                 mT__54(); 
 
                 }
                 break;
-            case 44 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:268: T__55
+            case 45 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:274: T__55
                 {
                 mT__55(); 
 
                 }
                 break;
-            case 45 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:274: T__56
+            case 46 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:280: T__56
                 {
                 mT__56(); 
 
                 }
                 break;
-            case 46 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:280: T__57
+            case 47 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:286: T__57
                 {
                 mT__57(); 
 
                 }
                 break;
-            case 47 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:286: T__58
+            case 48 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:292: T__58
                 {
                 mT__58(); 
 
                 }
                 break;
-            case 48 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:292: T__59
+            case 49 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:298: T__59
                 {
                 mT__59(); 
 
                 }
                 break;
-            case 49 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:298: T__60
+            case 50 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:304: T__60
                 {
                 mT__60(); 
 
                 }
                 break;
-            case 50 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:304: T__61
+            case 51 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:310: T__61
                 {
                 mT__61(); 
 
                 }
                 break;
-            case 51 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:310: T__62
+            case 52 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:316: T__62
                 {
                 mT__62(); 
 
                 }
                 break;
-            case 52 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:316: T__63
+            case 53 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:322: T__63
                 {
                 mT__63(); 
 
                 }
                 break;
-            case 53 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:322: T__64
+            case 54 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:328: T__64
                 {
                 mT__64(); 
 
                 }
                 break;
-            case 54 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:328: T__65
+            case 55 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:334: T__65
                 {
                 mT__65(); 
 
                 }
                 break;
-            case 55 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:334: T__66
+            case 56 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:340: T__66
                 {
                 mT__66(); 
 
                 }
                 break;
-            case 56 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:340: T__67
+            case 57 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:346: T__67
                 {
                 mT__67(); 
 
                 }
                 break;
-            case 57 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:346: T__68
+            case 58 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:352: T__68
                 {
                 mT__68(); 
 
                 }
                 break;
-            case 58 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:352: T__69
+            case 59 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:358: T__69
                 {
                 mT__69(); 
 
                 }
                 break;
-            case 59 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:358: T__70
+            case 60 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:364: T__70
                 {
                 mT__70(); 
 
                 }
                 break;
-            case 60 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:364: T__71
+            case 61 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:370: T__71
                 {
                 mT__71(); 
 
                 }
                 break;
-            case 61 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:370: T__72
+            case 62 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:376: T__72
                 {
                 mT__72(); 
 
                 }
                 break;
-            case 62 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:376: T__73
+            case 63 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:382: T__73
                 {
                 mT__73(); 
 
                 }
                 break;
-            case 63 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:382: T__74
+            case 64 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:388: T__74
                 {
                 mT__74(); 
 
                 }
                 break;
-            case 64 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:388: T__75
+            case 65 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:394: T__75
                 {
                 mT__75(); 
 
                 }
                 break;
-            case 65 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:394: T__76
+            case 66 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:400: T__76
                 {
                 mT__76(); 
 
                 }
                 break;
-            case 66 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:400: T__77
+            case 67 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:406: T__77
                 {
                 mT__77(); 
 
                 }
                 break;
-            case 67 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:406: T__78
+            case 68 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:412: T__78
                 {
                 mT__78(); 
 
                 }
                 break;
-            case 68 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:412: T__79
+            case 69 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:418: T__79
                 {
                 mT__79(); 
 
                 }
                 break;
-            case 69 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:418: T__80
+            case 70 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:424: T__80
                 {
                 mT__80(); 
 
                 }
                 break;
-            case 70 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:424: T__81
+            case 71 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:430: T__81
                 {
                 mT__81(); 
 
                 }
                 break;
-            case 71 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:430: T__82
+            case 72 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:436: T__82
                 {
                 mT__82(); 
 
                 }
                 break;
-            case 72 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:436: T__83
+            case 73 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:442: T__83
                 {
                 mT__83(); 
 
                 }
                 break;
-            case 73 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:442: T__84
+            case 74 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:448: T__84
                 {
                 mT__84(); 
 
                 }
                 break;
-            case 74 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:448: T__85
+            case 75 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:454: T__85
                 {
                 mT__85(); 
 
                 }
                 break;
-            case 75 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:454: T__86
+            case 76 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:460: T__86
                 {
                 mT__86(); 
 
                 }
                 break;
-            case 76 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:460: T__87
+            case 77 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:466: T__87
                 {
                 mT__87(); 
 
                 }
                 break;
-            case 77 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:466: T__88
+            case 78 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:472: T__88
                 {
                 mT__88(); 
 
                 }
                 break;
-            case 78 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:472: T__89
+            case 79 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:478: T__89
                 {
                 mT__89(); 
 
                 }
                 break;
-            case 79 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:478: T__90
+            case 80 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:484: T__90
                 {
                 mT__90(); 
 
                 }
                 break;
-            case 80 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:484: T__91
+            case 81 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:490: T__91
                 {
                 mT__91(); 
 
                 }
                 break;
-            case 81 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:490: T__92
+            case 82 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:496: T__92
                 {
                 mT__92(); 
 
                 }
                 break;
-            case 82 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:496: T__93
+            case 83 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:502: T__93
                 {
                 mT__93(); 
 
                 }
                 break;
-            case 83 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:502: T__94
+            case 84 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:508: T__94
                 {
                 mT__94(); 
 
                 }
                 break;
-            case 84 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:508: T__95
+            case 85 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:514: T__95
                 {
                 mT__95(); 
 
                 }
                 break;
-            case 85 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:514: T__96
+            case 86 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:520: T__96
                 {
                 mT__96(); 
 
                 }
                 break;
-            case 86 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:520: T__97
+            case 87 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:526: T__97
                 {
                 mT__97(); 
 
                 }
                 break;
-            case 87 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:526: T__98
+            case 88 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:532: T__98
                 {
                 mT__98(); 
 
                 }
                 break;
-            case 88 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:532: T__99
+            case 89 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:538: T__99
                 {
                 mT__99(); 
 
                 }
                 break;
-            case 89 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:538: T__100
+            case 90 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:544: T__100
                 {
                 mT__100(); 
 
                 }
                 break;
-            case 90 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:545: T__101
+            case 91 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:551: T__101
                 {
                 mT__101(); 
 
                 }
                 break;
-            case 91 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:552: T__102
+            case 92 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:558: T__102
                 {
                 mT__102(); 
 
                 }
                 break;
-            case 92 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:559: T__103
+            case 93 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:565: T__103
                 {
                 mT__103(); 
 
                 }
                 break;
-            case 93 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:566: T__104
+            case 94 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:572: T__104
                 {
                 mT__104(); 
 
                 }
                 break;
-            case 94 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:573: T__105
+            case 95 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:579: T__105
                 {
                 mT__105(); 
 
                 }
                 break;
-            case 95 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:580: T__106
+            case 96 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:586: T__106
                 {
                 mT__106(); 
 
                 }
                 break;
-            case 96 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:587: T__107
+            case 97 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:593: T__107
                 {
                 mT__107(); 
 
                 }
                 break;
-            case 97 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:594: T__108
+            case 98 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:600: T__108
                 {
                 mT__108(); 
 
                 }
                 break;
-            case 98 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:601: T__109
+            case 99 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:607: T__109
                 {
                 mT__109(); 
 
                 }
                 break;
-            case 99 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:608: T__110
+            case 100 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:614: T__110
                 {
                 mT__110(); 
 
                 }
                 break;
-            case 100 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:615: T__111
+            case 101 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:621: T__111
                 {
                 mT__111(); 
 
                 }
                 break;
-            case 101 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:622: T__112
+            case 102 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:628: T__112
                 {
                 mT__112(); 
 
                 }
                 break;
-            case 102 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:629: T__113
+            case 103 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:635: T__113
                 {
                 mT__113(); 
 
                 }
                 break;
-            case 103 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:636: T__114
+            case 104 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:642: T__114
                 {
                 mT__114(); 
 
                 }
                 break;
-            case 104 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:643: T__115
+            case 105 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:649: T__115
                 {
                 mT__115(); 
 
                 }
                 break;
-            case 105 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:650: T__116
+            case 106 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:656: T__116
                 {
                 mT__116(); 
 
                 }
                 break;
-            case 106 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:657: T__117
+            case 107 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:663: T__117
                 {
                 mT__117(); 
 
                 }
                 break;
-            case 107 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:664: T__118
+            case 108 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:670: T__118
                 {
                 mT__118(); 
 
                 }
                 break;
-            case 108 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:671: T__119
+            case 109 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:677: T__119
                 {
                 mT__119(); 
 
                 }
                 break;
-            case 109 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:678: T__120
+            case 110 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:684: T__120
                 {
                 mT__120(); 
 
                 }
                 break;
-            case 110 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:685: T__121
+            case 111 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:691: T__121
                 {
                 mT__121(); 
 
                 }
                 break;
-            case 111 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:692: T__122
+            case 112 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:698: T__122
                 {
                 mT__122(); 
 
                 }
                 break;
-            case 112 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:699: T__123
+            case 113 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:705: T__123
                 {
                 mT__123(); 
 
                 }
                 break;
-            case 113 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:706: T__124
+            case 114 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:712: T__124
                 {
                 mT__124(); 
 
                 }
                 break;
-            case 114 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:713: T__125
+            case 115 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:719: T__125
                 {
                 mT__125(); 
 
                 }
                 break;
-            case 115 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:720: T__126
+            case 116 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:726: T__126
                 {
                 mT__126(); 
 
                 }
                 break;
-            case 116 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:727: T__127
+            case 117 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:733: T__127
                 {
                 mT__127(); 
 
                 }
                 break;
-            case 117 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:734: T__128
+            case 118 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:740: T__128
                 {
                 mT__128(); 
 
                 }
                 break;
-            case 118 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:741: T__129
+            case 119 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:747: T__129
                 {
                 mT__129(); 
 
                 }
                 break;
-            case 119 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:748: T__130
+            case 120 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:754: T__130
                 {
                 mT__130(); 
 
                 }
                 break;
-            case 120 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:755: T__131
+            case 121 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:761: T__131
                 {
                 mT__131(); 
 
                 }
                 break;
-            case 121 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:762: T__132
+            case 122 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:768: T__132
                 {
                 mT__132(); 
 
                 }
                 break;
-            case 122 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:769: T__133
+            case 123 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:775: T__133
                 {
                 mT__133(); 
 
                 }
                 break;
-            case 123 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:776: T__134
+            case 124 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:782: T__134
                 {
                 mT__134(); 
 
                 }
                 break;
-            case 124 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:783: T__135
+            case 125 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:789: T__135
                 {
                 mT__135(); 
 
                 }
                 break;
-            case 125 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:790: T__136
+            case 126 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:796: T__136
                 {
                 mT__136(); 
 
                 }
                 break;
-            case 126 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:797: T__137
+            case 127 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:803: T__137
                 {
                 mT__137(); 
 
                 }
                 break;
-            case 127 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:804: T__138
+            case 128 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:810: T__138
                 {
                 mT__138(); 
 
                 }
                 break;
-            case 128 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:811: T__139
+            case 129 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:817: T__139
                 {
                 mT__139(); 
 
                 }
                 break;
-            case 129 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:818: T__140
+            case 130 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:824: T__140
                 {
                 mT__140(); 
 
                 }
                 break;
-            case 130 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:825: T__141
+            case 131 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:831: T__141
                 {
                 mT__141(); 
 
                 }
                 break;
-            case 131 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:832: T__142
+            case 132 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:838: T__142
                 {
                 mT__142(); 
 
                 }
                 break;
-            case 132 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:839: T__143
+            case 133 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:845: T__143
                 {
                 mT__143(); 
 
                 }
                 break;
-            case 133 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:846: T__144
+            case 134 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:852: T__144
                 {
                 mT__144(); 
 
                 }
                 break;
-            case 134 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:853: T__145
+            case 135 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:859: T__145
                 {
                 mT__145(); 
 
                 }
                 break;
-            case 135 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:860: T__146
+            case 136 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:866: T__146
                 {
                 mT__146(); 
 
                 }
                 break;
-            case 136 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:867: T__147
+            case 137 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:873: T__147
                 {
                 mT__147(); 
 
                 }
                 break;
-            case 137 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:874: T__148
+            case 138 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:880: T__148
                 {
                 mT__148(); 
 
                 }
                 break;
-            case 138 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:881: T__149
+            case 139 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:887: T__149
                 {
                 mT__149(); 
 
                 }
                 break;
-            case 139 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:888: T__150
+            case 140 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:894: T__150
                 {
                 mT__150(); 
 
                 }
                 break;
-            case 140 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:895: T__151
+            case 141 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:901: T__151
                 {
                 mT__151(); 
 
                 }
                 break;
-            case 141 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:902: T__152
+            case 142 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:908: T__152
                 {
                 mT__152(); 
 
                 }
                 break;
-            case 142 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:909: T__153
+            case 143 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:915: T__153
                 {
                 mT__153(); 
 
                 }
                 break;
-            case 143 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:916: T__154
+            case 144 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:922: T__154
                 {
                 mT__154(); 
 
                 }
                 break;
-            case 144 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:923: T__155
+            case 145 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:929: T__155
                 {
                 mT__155(); 
 
                 }
                 break;
-            case 145 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:930: T__156
+            case 146 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:936: T__156
                 {
                 mT__156(); 
 
                 }
                 break;
-            case 146 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:937: T__157
+            case 147 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:943: T__157
                 {
                 mT__157(); 
 
                 }
                 break;
-            case 147 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:944: T__158
+            case 148 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:950: T__158
                 {
                 mT__158(); 
 
                 }
                 break;
-            case 148 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:951: T__159
+            case 149 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:957: T__159
                 {
                 mT__159(); 
 
                 }
                 break;
-            case 149 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:958: T__160
+            case 150 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:964: T__160
                 {
                 mT__160(); 
 
                 }
                 break;
-            case 150 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:965: T__161
+            case 151 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:971: T__161
                 {
                 mT__161(); 
 
                 }
                 break;
-            case 151 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:972: T__162
+            case 152 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:978: T__162
                 {
                 mT__162(); 
 
                 }
                 break;
-            case 152 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:979: T__163
+            case 153 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:985: T__163
                 {
                 mT__163(); 
 
                 }
                 break;
-            case 153 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:986: T__164
+            case 154 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:992: T__164
                 {
                 mT__164(); 
 
                 }
                 break;
-            case 154 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:993: T__165
+            case 155 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:999: T__165
                 {
                 mT__165(); 
 
                 }
                 break;
-            case 155 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:1000: T__166
+            case 156 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:1006: T__166
                 {
                 mT__166(); 
 
                 }
                 break;
-            case 156 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:1007: T__167
+            case 157 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:1013: T__167
                 {
                 mT__167(); 
 
                 }
                 break;
-            case 157 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:1014: T__168
+            case 158 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:1020: T__168
                 {
                 mT__168(); 
 
                 }
                 break;
-            case 158 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:1021: T__169
+            case 159 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:1027: T__169
                 {
                 mT__169(); 
 
                 }
                 break;
-            case 159 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:1028: T__170
+            case 160 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:1034: T__170
                 {
                 mT__170(); 
 
                 }
                 break;
-            case 160 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:1035: T__171
+            case 161 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:1041: T__171
                 {
                 mT__171(); 
 
                 }
                 break;
-            case 161 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:1042: T__172
+            case 162 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:1048: T__172
                 {
                 mT__172(); 
 
                 }
                 break;
-            case 162 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:1049: T__173
+            case 163 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:1055: T__173
                 {
                 mT__173(); 
 
                 }
                 break;
-            case 163 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:1056: T__174
+            case 164 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:1062: T__174
                 {
                 mT__174(); 
 
                 }
                 break;
-            case 164 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:1063: T__175
+            case 165 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:1069: T__175
                 {
                 mT__175(); 
 
                 }
                 break;
-            case 165 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:1070: T__176
+            case 166 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:1076: T__176
                 {
                 mT__176(); 
 
                 }
                 break;
-            case 166 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:1077: T__177
+            case 167 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:1083: T__177
                 {
                 mT__177(); 
 
                 }
                 break;
-            case 167 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:1084: T__178
+            case 168 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:1090: T__178
                 {
                 mT__178(); 
 
                 }
                 break;
-            case 168 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:1091: T__179
+            case 169 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:1097: T__179
                 {
                 mT__179(); 
 
                 }
                 break;
-            case 169 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:1098: T__180
+            case 170 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:1104: T__180
                 {
                 mT__180(); 
 
                 }
                 break;
-            case 170 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:1105: T__181
+            case 171 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:1111: T__181
                 {
                 mT__181(); 
 
                 }
                 break;
-            case 171 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:1112: T__182
+            case 172 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:1118: T__182
                 {
                 mT__182(); 
 
                 }
                 break;
-            case 172 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:1119: T__183
+            case 173 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:1125: T__183
                 {
                 mT__183(); 
 
                 }
                 break;
-            case 173 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:1126: T__184
+            case 174 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:1132: T__184
                 {
                 mT__184(); 
 
                 }
                 break;
-            case 174 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:1133: T__185
+            case 175 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:1139: T__185
                 {
                 mT__185(); 
 
                 }
                 break;
-            case 175 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:1140: T__186
+            case 176 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:1146: T__186
                 {
                 mT__186(); 
 
                 }
                 break;
-            case 176 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:1147: T__187
+            case 177 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:1153: T__187
                 {
                 mT__187(); 
 
                 }
                 break;
-            case 177 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:1154: T__188
+            case 178 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:1160: T__188
                 {
                 mT__188(); 
 
                 }
                 break;
-            case 178 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:1161: T__189
+            case 179 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:1167: T__189
                 {
                 mT__189(); 
 
                 }
                 break;
-            case 179 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:1168: T__190
+            case 180 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:1174: T__190
                 {
                 mT__190(); 
 
                 }
                 break;
-            case 180 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:1175: T__191
+            case 181 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:1181: T__191
                 {
                 mT__191(); 
 
                 }
                 break;
-            case 181 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:1182: T__192
+            case 182 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:1188: T__192
                 {
                 mT__192(); 
 
                 }
                 break;
-            case 182 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:1189: T__193
+            case 183 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:1195: T__193
                 {
                 mT__193(); 
 
                 }
                 break;
-            case 183 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:1196: T__194
+            case 184 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:1202: T__194
                 {
                 mT__194(); 
 
                 }
                 break;
-            case 184 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:1203: T__195
+            case 185 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:1209: T__195
                 {
                 mT__195(); 
 
                 }
                 break;
-            case 185 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:1210: T__196
+            case 186 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:1216: T__196
                 {
                 mT__196(); 
 
                 }
                 break;
-            case 186 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:1217: T__197
+            case 187 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:1223: T__197
                 {
                 mT__197(); 
 
                 }
                 break;
-            case 187 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:1224: T__198
+            case 188 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:1230: T__198
                 {
                 mT__198(); 
 
                 }
                 break;
-            case 188 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:1231: T__199
+            case 189 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:1237: T__199
                 {
                 mT__199(); 
 
                 }
                 break;
-            case 189 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:1238: T__200
+            case 190 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:1244: T__200
                 {
                 mT__200(); 
 
                 }
                 break;
-            case 190 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:1245: T__201
+            case 191 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:1251: T__201
                 {
                 mT__201(); 
 
                 }
                 break;
-            case 191 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:1252: T__202
+            case 192 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:1258: T__202
                 {
                 mT__202(); 
 
                 }
                 break;
-            case 192 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:1259: T__203
+            case 193 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:1265: T__203
                 {
                 mT__203(); 
 
                 }
                 break;
-            case 193 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:1266: T__204
+            case 194 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:1272: T__204
                 {
                 mT__204(); 
 
                 }
                 break;
-            case 194 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:1273: T__205
+            case 195 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:1279: T__205
                 {
                 mT__205(); 
 
                 }
                 break;
-            case 195 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:1280: T__206
+            case 196 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:1286: T__206
                 {
                 mT__206(); 
 
                 }
                 break;
-            case 196 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:1287: T__207
+            case 197 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:1293: T__207
                 {
                 mT__207(); 
 
                 }
                 break;
-            case 197 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:1294: T__208
+            case 198 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:1300: T__208
                 {
                 mT__208(); 
 
                 }
                 break;
-            case 198 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:1301: T__209
+            case 199 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:1307: T__209
                 {
                 mT__209(); 
 
                 }
                 break;
-            case 199 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:1308: T__210
+            case 200 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:1314: T__210
                 {
                 mT__210(); 
 
                 }
                 break;
-            case 200 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:1315: T__211
+            case 201 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:1321: T__211
                 {
                 mT__211(); 
 
                 }
                 break;
-            case 201 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:1322: T__212
+            case 202 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:1328: T__212
                 {
                 mT__212(); 
 
                 }
                 break;
-            case 202 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:1329: T__213
+            case 203 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:1335: T__213
                 {
                 mT__213(); 
 
                 }
                 break;
-            case 203 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:1336: T__214
+            case 204 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:1342: T__214
                 {
                 mT__214(); 
 
                 }
                 break;
-            case 204 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:1343: T__215
+            case 205 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:1349: T__215
                 {
                 mT__215(); 
 
                 }
                 break;
-            case 205 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:1350: T__216
+            case 206 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:1356: T__216
                 {
                 mT__216(); 
 
                 }
                 break;
-            case 206 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:1357: T__217
+            case 207 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:1363: T__217
                 {
                 mT__217(); 
 
                 }
                 break;
-            case 207 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:1364: T__218
+            case 208 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:1370: T__218
                 {
                 mT__218(); 
 
                 }
                 break;
-            case 208 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:1371: T__219
+            case 209 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:1377: T__219
                 {
                 mT__219(); 
 
                 }
                 break;
-            case 209 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:1378: T__220
+            case 210 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:1384: T__220
                 {
                 mT__220(); 
 
                 }
                 break;
-            case 210 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:1385: T__221
+            case 211 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:1391: T__221
                 {
                 mT__221(); 
 
                 }
                 break;
-            case 211 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:1392: T__222
+            case 212 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:1398: T__222
                 {
                 mT__222(); 
 
                 }
                 break;
-            case 212 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:1399: T__223
+            case 213 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:1405: T__223
                 {
                 mT__223(); 
 
                 }
                 break;
-            case 213 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:1406: T__224
+            case 214 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:1412: T__224
                 {
                 mT__224(); 
 
                 }
                 break;
-            case 214 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:1413: T__225
+            case 215 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:1419: T__225
                 {
                 mT__225(); 
 
                 }
                 break;
-            case 215 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:1420: T__226
+            case 216 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:1426: T__226
                 {
                 mT__226(); 
 
                 }
                 break;
-            case 216 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:1427: T__227
+            case 217 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:1433: T__227
                 {
                 mT__227(); 
 
                 }
                 break;
-            case 217 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:1434: T__228
+            case 218 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:1440: T__228
                 {
                 mT__228(); 
 
                 }
                 break;
-            case 218 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:1441: T__229
+            case 219 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:1447: T__229
                 {
                 mT__229(); 
 
                 }
                 break;
-            case 219 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:1448: T__230
+            case 220 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:1454: T__230
                 {
                 mT__230(); 
 
                 }
                 break;
-            case 220 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:1455: T__231
+            case 221 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:1461: T__231
                 {
                 mT__231(); 
 
                 }
                 break;
-            case 221 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:1462: T__232
+            case 222 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:1468: T__232
                 {
                 mT__232(); 
 
                 }
                 break;
-            case 222 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:1469: T__233
+            case 223 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:1475: T__233
                 {
                 mT__233(); 
 
                 }
                 break;
-            case 223 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:1476: T__234
+            case 224 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:1482: T__234
                 {
                 mT__234(); 
 
                 }
                 break;
-            case 224 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:1483: T__235
+            case 225 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:1489: T__235
                 {
                 mT__235(); 
 
                 }
                 break;
-            case 225 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:1490: T__236
+            case 226 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:1496: T__236
                 {
                 mT__236(); 
 
                 }
                 break;
-            case 226 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:1497: T__237
+            case 227 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:1503: T__237
                 {
                 mT__237(); 
 
                 }
                 break;
-            case 227 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:1504: T__238
+            case 228 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:1510: T__238
                 {
                 mT__238(); 
 
                 }
                 break;
-            case 228 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:1511: T__239
+            case 229 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:1517: T__239
                 {
                 mT__239(); 
 
                 }
                 break;
-            case 229 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:1518: T__240
+            case 230 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:1524: T__240
                 {
                 mT__240(); 
 
                 }
                 break;
-            case 230 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:1525: T__241
+            case 231 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:1531: T__241
                 {
                 mT__241(); 
 
                 }
                 break;
-            case 231 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:1532: T__242
+            case 232 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:1538: T__242
                 {
                 mT__242(); 
 
                 }
                 break;
-            case 232 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:1539: T__243
+            case 233 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:1545: T__243
                 {
                 mT__243(); 
 
                 }
                 break;
-            case 233 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:1546: T__244
+            case 234 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:1552: T__244
                 {
                 mT__244(); 
 
                 }
                 break;
-            case 234 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:1553: T__245
+            case 235 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:1559: T__245
                 {
                 mT__245(); 
 
                 }
                 break;
-            case 235 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:1560: T__246
+            case 236 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:1566: T__246
                 {
                 mT__246(); 
 
                 }
                 break;
-            case 236 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:1567: T__247
+            case 237 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:1573: T__247
                 {
                 mT__247(); 
 
                 }
                 break;
-            case 237 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:1574: T__248
+            case 238 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:1580: T__248
                 {
                 mT__248(); 
 
                 }
                 break;
-            case 238 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:1581: T__249
+            case 239 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:1587: T__249
                 {
                 mT__249(); 
 
                 }
                 break;
-            case 239 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:1588: T__250
+            case 240 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:1594: T__250
                 {
                 mT__250(); 
 
                 }
                 break;
-            case 240 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:1595: T__251
+            case 241 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:1601: T__251
                 {
                 mT__251(); 
 
                 }
                 break;
-            case 241 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:1602: T__252
+            case 242 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:1608: T__252
                 {
                 mT__252(); 
 
                 }
                 break;
-            case 242 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:1609: T__253
+            case 243 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:1615: T__253
                 {
                 mT__253(); 
 
                 }
                 break;
-            case 243 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:1616: T__254
+            case 244 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:1622: T__254
                 {
                 mT__254(); 
 
                 }
                 break;
-            case 244 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:1623: T__255
+            case 245 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:1629: T__255
                 {
                 mT__255(); 
 
                 }
                 break;
-            case 245 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:1630: T__256
+            case 246 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:1636: T__256
                 {
                 mT__256(); 
 
                 }
                 break;
-            case 246 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:1637: T__257
+            case 247 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:1643: T__257
                 {
                 mT__257(); 
 
                 }
                 break;
-            case 247 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:1644: T__258
+            case 248 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:1650: T__258
                 {
                 mT__258(); 
 
                 }
                 break;
-            case 248 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:1651: T__259
+            case 249 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:1657: T__259
                 {
                 mT__259(); 
 
                 }
                 break;
-            case 249 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:1658: T__260
+            case 250 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:1664: T__260
                 {
                 mT__260(); 
 
                 }
                 break;
-            case 250 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:1665: T__261
+            case 251 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:1671: T__261
                 {
                 mT__261(); 
 
                 }
                 break;
-            case 251 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:1672: T__262
+            case 252 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:1678: T__262
                 {
                 mT__262(); 
 
                 }
                 break;
-            case 252 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:1679: T__263
+            case 253 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:1685: T__263
                 {
                 mT__263(); 
 
                 }
                 break;
-            case 253 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:1686: T__264
+            case 254 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:1692: T__264
                 {
                 mT__264(); 
 
                 }
                 break;
-            case 254 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:1693: T__265
+            case 255 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:1699: T__265
                 {
                 mT__265(); 
 
                 }
                 break;
-            case 255 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:1700: T__266
+            case 256 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:1706: T__266
                 {
                 mT__266(); 
 
                 }
                 break;
-            case 256 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:1707: T__267
+            case 257 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:1713: T__267
                 {
                 mT__267(); 
 
                 }
                 break;
-            case 257 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:1714: T__268
+            case 258 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:1720: T__268
                 {
                 mT__268(); 
 
                 }
                 break;
-            case 258 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:1721: T__269
+            case 259 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:1727: T__269
                 {
                 mT__269(); 
 
                 }
                 break;
-            case 259 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:1728: T__270
+            case 260 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:1734: T__270
                 {
                 mT__270(); 
 
                 }
                 break;
-            case 260 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:1735: T__271
+            case 261 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:1741: T__271
                 {
                 mT__271(); 
 
                 }
                 break;
-            case 261 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:1742: T__272
+            case 262 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:1748: T__272
                 {
                 mT__272(); 
 
                 }
                 break;
-            case 262 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:1749: T__273
+            case 263 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:1755: T__273
                 {
                 mT__273(); 
 
                 }
                 break;
-            case 263 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:1756: T__274
+            case 264 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:1762: T__274
                 {
                 mT__274(); 
 
                 }
                 break;
-            case 264 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:1763: T__275
+            case 265 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:1769: T__275
                 {
                 mT__275(); 
 
                 }
                 break;
-            case 265 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:1770: T__276
+            case 266 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:1776: T__276
                 {
                 mT__276(); 
 
                 }
                 break;
-            case 266 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:1777: T__277
+            case 267 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:1783: T__277
                 {
                 mT__277(); 
 
                 }
                 break;
-            case 267 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:1784: T__278
+            case 268 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:1790: T__278
                 {
                 mT__278(); 
 
                 }
                 break;
-            case 268 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:1791: T__279
+            case 269 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:1797: T__279
                 {
                 mT__279(); 
 
                 }
                 break;
-            case 269 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:1798: T__280
+            case 270 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:1804: T__280
                 {
                 mT__280(); 
 
                 }
                 break;
-            case 270 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:1805: T__281
+            case 271 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:1811: T__281
                 {
                 mT__281(); 
 
                 }
                 break;
-            case 271 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:1812: T__282
+            case 272 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:1818: T__282
                 {
                 mT__282(); 
 
                 }
                 break;
-            case 272 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:1819: T__283
+            case 273 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:1825: T__283
                 {
                 mT__283(); 
 
                 }
                 break;
-            case 273 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:1826: T__284
+            case 274 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:1832: T__284
                 {
                 mT__284(); 
 
                 }
                 break;
-            case 274 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:1833: T__285
+            case 275 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:1839: T__285
                 {
                 mT__285(); 
 
                 }
                 break;
-            case 275 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:1840: T__286
+            case 276 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:1846: T__286
                 {
                 mT__286(); 
 
                 }
                 break;
-            case 276 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:1847: T__287
+            case 277 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:1853: T__287
                 {
                 mT__287(); 
 
                 }
                 break;
-            case 277 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:1854: T__288
+            case 278 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:1860: T__288
                 {
                 mT__288(); 
 
                 }
                 break;
-            case 278 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:1861: T__289
+            case 279 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:1867: T__289
                 {
                 mT__289(); 
 
                 }
                 break;
-            case 279 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:1868: T__290
+            case 280 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:1874: T__290
                 {
                 mT__290(); 
 
                 }
                 break;
-            case 280 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:1875: T__291
+            case 281 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:1881: T__291
                 {
                 mT__291(); 
 
                 }
                 break;
-            case 281 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:1882: T__292
+            case 282 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:1888: T__292
                 {
                 mT__292(); 
 
                 }
                 break;
-            case 282 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:1889: T__293
+            case 283 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:1895: T__293
                 {
                 mT__293(); 
 
                 }
                 break;
-            case 283 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:1896: T__294
+            case 284 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:1902: T__294
                 {
                 mT__294(); 
 
                 }
                 break;
-            case 284 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:1903: T__295
+            case 285 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:1909: T__295
                 {
                 mT__295(); 
 
                 }
                 break;
-            case 285 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:1910: T__296
+            case 286 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:1916: T__296
                 {
                 mT__296(); 
 
                 }
                 break;
-            case 286 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:1917: T__297
+            case 287 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:1923: T__297
                 {
                 mT__297(); 
 
                 }
                 break;
-            case 287 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:1924: T__298
+            case 288 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:1930: T__298
                 {
                 mT__298(); 
 
                 }
                 break;
-            case 288 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:1931: T__299
+            case 289 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:1937: T__299
                 {
                 mT__299(); 
 
                 }
                 break;
-            case 289 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:1938: T__300
+            case 290 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:1944: T__300
                 {
                 mT__300(); 
 
                 }
                 break;
-            case 290 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:1945: T__301
+            case 291 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:1951: T__301
                 {
                 mT__301(); 
 
                 }
                 break;
-            case 291 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:1952: T__302
+            case 292 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:1958: T__302
                 {
                 mT__302(); 
 
                 }
                 break;
-            case 292 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:1959: T__303
+            case 293 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:1965: T__303
                 {
                 mT__303(); 
 
                 }
                 break;
-            case 293 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:1966: T__304
+            case 294 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:1972: T__304
                 {
                 mT__304(); 
 
                 }
                 break;
-            case 294 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:1973: T__305
+            case 295 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:1979: T__305
                 {
                 mT__305(); 
 
                 }
                 break;
-            case 295 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:1980: T__306
+            case 296 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:1986: T__306
                 {
                 mT__306(); 
 
                 }
                 break;
-            case 296 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:1987: T__307
+            case 297 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:1993: T__307
                 {
                 mT__307(); 
 
                 }
                 break;
-            case 297 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:1994: T__308
+            case 298 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:2000: T__308
                 {
                 mT__308(); 
 
                 }
                 break;
-            case 298 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:2001: T__309
+            case 299 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:2007: T__309
                 {
                 mT__309(); 
 
                 }
                 break;
-            case 299 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:2008: T__310
+            case 300 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:2014: T__310
                 {
                 mT__310(); 
 
                 }
                 break;
-            case 300 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:2015: T__311
+            case 301 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:2021: T__311
                 {
                 mT__311(); 
 
                 }
                 break;
-            case 301 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:2022: T__312
+            case 302 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:2028: T__312
                 {
                 mT__312(); 
 
                 }
                 break;
-            case 302 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:2029: T__313
+            case 303 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:2035: T__313
                 {
                 mT__313(); 
 
                 }
                 break;
-            case 303 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:2036: T__314
+            case 304 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:2042: T__314
                 {
                 mT__314(); 
 
                 }
                 break;
-            case 304 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:2043: T__315
+            case 305 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:2049: T__315
                 {
                 mT__315(); 
 
                 }
                 break;
-            case 305 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:2050: T__316
+            case 306 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:2056: T__316
                 {
                 mT__316(); 
 
                 }
                 break;
-            case 306 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:2057: T__317
+            case 307 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:2063: T__317
                 {
                 mT__317(); 
 
                 }
                 break;
-            case 307 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:2064: T__318
+            case 308 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:2070: T__318
                 {
                 mT__318(); 
 
                 }
                 break;
-            case 308 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:2071: T__319
+            case 309 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:2077: T__319
                 {
                 mT__319(); 
 
                 }
                 break;
-            case 309 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:2078: T__320
+            case 310 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:2084: T__320
                 {
                 mT__320(); 
 
                 }
                 break;
-            case 310 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:2085: T__321
+            case 311 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:2091: T__321
                 {
                 mT__321(); 
 
                 }
                 break;
-            case 311 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:2092: T__322
+            case 312 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:2098: T__322
                 {
                 mT__322(); 
 
                 }
                 break;
-            case 312 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:2099: T__323
+            case 313 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:2105: T__323
                 {
                 mT__323(); 
 
                 }
                 break;
-            case 313 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:2106: T__324
+            case 314 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:2112: T__324
                 {
                 mT__324(); 
 
                 }
                 break;
-            case 314 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:2113: T__325
+            case 315 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:2119: T__325
                 {
                 mT__325(); 
 
                 }
                 break;
-            case 315 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:2120: T__326
+            case 316 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:2126: T__326
                 {
                 mT__326(); 
 
                 }
                 break;
-            case 316 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:2127: T__327
+            case 317 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:2133: T__327
                 {
                 mT__327(); 
 
                 }
                 break;
-            case 317 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:2134: T__328
+            case 318 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:2140: T__328
                 {
                 mT__328(); 
 
                 }
                 break;
-            case 318 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:2141: T__329
+            case 319 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:2147: T__329
                 {
                 mT__329(); 
 
                 }
                 break;
-            case 319 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:2148: T__330
+            case 320 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:2154: T__330
                 {
                 mT__330(); 
 
                 }
                 break;
-            case 320 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:2155: T__331
+            case 321 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:2161: T__331
                 {
                 mT__331(); 
 
                 }
                 break;
-            case 321 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:2162: T__332
+            case 322 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:2168: T__332
                 {
                 mT__332(); 
 
                 }
                 break;
-            case 322 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:2169: T__333
+            case 323 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:2175: T__333
                 {
                 mT__333(); 
 
                 }
                 break;
-            case 323 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:2176: T__334
+            case 324 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:2182: T__334
                 {
                 mT__334(); 
 
                 }
                 break;
-            case 324 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:2183: T__335
+            case 325 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:2189: T__335
                 {
                 mT__335(); 
 
                 }
                 break;
-            case 325 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:2190: T__336
+            case 326 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:2196: T__336
                 {
                 mT__336(); 
 
                 }
                 break;
-            case 326 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:2197: T__337
+            case 327 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:2203: T__337
                 {
                 mT__337(); 
 
                 }
                 break;
-            case 327 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:2204: T__338
+            case 328 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:2210: T__338
                 {
                 mT__338(); 
 
                 }
                 break;
-            case 328 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:2211: T__339
+            case 329 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:2217: T__339
                 {
                 mT__339(); 
 
                 }
                 break;
-            case 329 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:2218: T__340
+            case 330 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:2224: T__340
                 {
                 mT__340(); 
 
                 }
                 break;
-            case 330 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:2225: T__341
+            case 331 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:2231: T__341
                 {
                 mT__341(); 
 
                 }
                 break;
-            case 331 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:2232: T__342
+            case 332 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:2238: T__342
                 {
                 mT__342(); 
 
                 }
                 break;
-            case 332 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:2239: T__343
+            case 333 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:2245: T__343
                 {
                 mT__343(); 
 
                 }
                 break;
-            case 333 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:2246: T__344
+            case 334 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:2252: T__344
                 {
                 mT__344(); 
 
                 }
                 break;
-            case 334 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:2253: T__345
+            case 335 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:2259: T__345
                 {
                 mT__345(); 
 
                 }
                 break;
-            case 335 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:2260: T__346
+            case 336 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:2266: T__346
                 {
                 mT__346(); 
 
                 }
                 break;
-            case 336 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:2267: T__347
+            case 337 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:2273: T__347
                 {
                 mT__347(); 
 
                 }
                 break;
-            case 337 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:2274: T__348
+            case 338 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:2280: T__348
                 {
                 mT__348(); 
 
                 }
                 break;
-            case 338 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:2281: T__349
+            case 339 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:2287: T__349
                 {
                 mT__349(); 
 
                 }
                 break;
-            case 339 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:2288: T__350
+            case 340 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:2294: T__350
                 {
                 mT__350(); 
 
                 }
                 break;
-            case 340 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:2295: T__351
+            case 341 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:2301: T__351
                 {
                 mT__351(); 
 
                 }
                 break;
-            case 341 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:2302: T__352
+            case 342 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:2308: T__352
                 {
                 mT__352(); 
 
                 }
                 break;
-            case 342 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:2309: T__353
+            case 343 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:2315: T__353
                 {
                 mT__353(); 
 
                 }
                 break;
-            case 343 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:2316: T__354
+            case 344 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:2322: T__354
                 {
                 mT__354(); 
 
                 }
                 break;
-            case 344 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:2323: T__355
+            case 345 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:2329: T__355
                 {
                 mT__355(); 
 
                 }
                 break;
-            case 345 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:2330: T__356
+            case 346 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:2336: T__356
                 {
                 mT__356(); 
 
                 }
                 break;
-            case 346 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:2337: T__357
+            case 347 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:2343: T__357
                 {
                 mT__357(); 
 
                 }
                 break;
-            case 347 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:2344: T__358
+            case 348 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:2350: T__358
                 {
                 mT__358(); 
 
                 }
                 break;
-            case 348 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:2351: T__359
+            case 349 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:2357: T__359
                 {
                 mT__359(); 
 
                 }
                 break;
-            case 349 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:2358: T__360
+            case 350 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:2364: T__360
                 {
                 mT__360(); 
 
                 }
                 break;
-            case 350 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:2365: T__361
+            case 351 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:2371: T__361
                 {
                 mT__361(); 
 
                 }
                 break;
-            case 351 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:2372: T__362
+            case 352 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:2378: T__362
                 {
                 mT__362(); 
 
                 }
                 break;
-            case 352 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:2379: T__363
+            case 353 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:2385: T__363
                 {
                 mT__363(); 
 
                 }
                 break;
-            case 353 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:2386: T__364
+            case 354 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:2392: T__364
                 {
                 mT__364(); 
 
                 }
                 break;
-            case 354 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:2393: T__365
+            case 355 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:2399: T__365
                 {
                 mT__365(); 
 
                 }
                 break;
-            case 355 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:2400: T__366
+            case 356 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:2406: T__366
                 {
                 mT__366(); 
 
                 }
                 break;
-            case 356 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:2407: T__367
+            case 357 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:2413: T__367
                 {
                 mT__367(); 
 
                 }
                 break;
-            case 357 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:2414: T__368
+            case 358 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:2420: T__368
                 {
                 mT__368(); 
 
                 }
                 break;
-            case 358 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:2421: T__369
+            case 359 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:2427: T__369
                 {
                 mT__369(); 
 
                 }
                 break;
-            case 359 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:2428: T__370
+            case 360 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:2434: T__370
                 {
                 mT__370(); 
 
                 }
                 break;
-            case 360 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:2435: T__371
+            case 361 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:2441: T__371
                 {
                 mT__371(); 
 
                 }
                 break;
-            case 361 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:2442: T__372
+            case 362 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:2448: T__372
                 {
                 mT__372(); 
 
                 }
                 break;
-            case 362 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:2449: T__373
+            case 363 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:2455: T__373
                 {
                 mT__373(); 
 
                 }
                 break;
-            case 363 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:2456: T__374
+            case 364 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:2462: T__374
                 {
                 mT__374(); 
 
                 }
                 break;
-            case 364 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:2463: T__375
+            case 365 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:2469: T__375
                 {
                 mT__375(); 
 
                 }
                 break;
-            case 365 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:2470: T__376
+            case 366 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:2476: T__376
                 {
                 mT__376(); 
 
                 }
                 break;
-            case 366 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:2477: T__377
+            case 367 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:2483: T__377
                 {
                 mT__377(); 
 
                 }
                 break;
-            case 367 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:2484: T__378
+            case 368 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:2490: T__378
                 {
                 mT__378(); 
 
                 }
                 break;
-            case 368 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:2491: T__379
+            case 369 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:2497: T__379
                 {
                 mT__379(); 
 
                 }
                 break;
-            case 369 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:2498: T__380
+            case 370 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:2504: T__380
                 {
                 mT__380(); 
 
                 }
                 break;
-            case 370 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:2505: T__381
+            case 371 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:2511: T__381
                 {
                 mT__381(); 
 
                 }
                 break;
-            case 371 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:2512: T__382
+            case 372 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:2518: T__382
                 {
                 mT__382(); 
 
                 }
                 break;
-            case 372 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:2519: T__383
+            case 373 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:2525: T__383
                 {
                 mT__383(); 
 
                 }
                 break;
-            case 373 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:2526: T__384
+            case 374 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:2532: T__384
                 {
                 mT__384(); 
 
                 }
                 break;
-            case 374 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:2533: T__385
+            case 375 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:2539: T__385
                 {
                 mT__385(); 
 
                 }
                 break;
-            case 375 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:2540: T__386
+            case 376 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:2546: T__386
                 {
                 mT__386(); 
 
                 }
                 break;
-            case 376 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:2547: T__387
+            case 377 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:2553: T__387
                 {
                 mT__387(); 
 
                 }
                 break;
-            case 377 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:2554: T__388
+            case 378 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:2560: T__388
                 {
                 mT__388(); 
 
                 }
                 break;
-            case 378 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:2561: T__389
+            case 379 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:2567: T__389
                 {
                 mT__389(); 
 
                 }
                 break;
-            case 379 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:2568: T__390
+            case 380 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:2574: T__390
                 {
                 mT__390(); 
 
                 }
                 break;
-            case 380 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:2575: T__391
+            case 381 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:2581: T__391
                 {
                 mT__391(); 
 
                 }
                 break;
-            case 381 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:2582: T__392
+            case 382 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:2588: T__392
                 {
                 mT__392(); 
 
                 }
                 break;
-            case 382 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:2589: T__393
+            case 383 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:2595: T__393
                 {
                 mT__393(); 
 
                 }
                 break;
-            case 383 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:2596: T__394
+            case 384 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:2602: T__394
                 {
                 mT__394(); 
 
                 }
                 break;
-            case 384 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:2603: T__395
+            case 385 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:2609: T__395
                 {
                 mT__395(); 
 
                 }
                 break;
-            case 385 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:2610: T__396
+            case 386 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:2616: T__396
                 {
                 mT__396(); 
 
                 }
                 break;
-            case 386 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:2617: T__397
+            case 387 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:2623: T__397
                 {
                 mT__397(); 
 
                 }
                 break;
-            case 387 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:2624: T__398
+            case 388 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:2630: T__398
                 {
                 mT__398(); 
 
                 }
                 break;
-            case 388 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:2631: T__399
+            case 389 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:2637: T__399
                 {
                 mT__399(); 
 
                 }
                 break;
-            case 389 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:2638: T__400
+            case 390 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:2644: T__400
                 {
                 mT__400(); 
 
                 }
                 break;
-            case 390 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:2645: T__401
+            case 391 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:2651: T__401
                 {
                 mT__401(); 
 
                 }
                 break;
-            case 391 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:2652: T__402
+            case 392 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:2658: T__402
                 {
                 mT__402(); 
 
                 }
                 break;
-            case 392 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:2659: T__403
+            case 393 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:2665: T__403
                 {
                 mT__403(); 
 
                 }
                 break;
-            case 393 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:2666: T__404
+            case 394 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:2672: T__404
                 {
                 mT__404(); 
 
                 }
                 break;
-            case 394 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:2673: T__405
+            case 395 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:2679: T__405
                 {
                 mT__405(); 
 
                 }
                 break;
-            case 395 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:2680: T__406
+            case 396 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:2686: T__406
                 {
                 mT__406(); 
 
                 }
                 break;
-            case 396 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:2687: T__407
+            case 397 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:2693: T__407
                 {
                 mT__407(); 
 
                 }
                 break;
-            case 397 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:2694: T__408
+            case 398 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:2700: T__408
                 {
                 mT__408(); 
 
                 }
                 break;
-            case 398 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:2701: T__409
+            case 399 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:2707: T__409
                 {
                 mT__409(); 
 
                 }
                 break;
-            case 399 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:2708: T__410
+            case 400 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:2714: T__410
                 {
                 mT__410(); 
 
                 }
                 break;
-            case 400 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:2715: T__411
+            case 401 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:2721: T__411
                 {
                 mT__411(); 
 
                 }
                 break;
-            case 401 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:2722: T__412
+            case 402 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:2728: T__412
                 {
                 mT__412(); 
 
                 }
                 break;
-            case 402 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:2729: T__413
+            case 403 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:2735: T__413
                 {
                 mT__413(); 
 
                 }
                 break;
-            case 403 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:2736: T__414
+            case 404 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:2742: T__414
                 {
                 mT__414(); 
 
                 }
                 break;
-            case 404 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:2743: T__415
+            case 405 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:2749: T__415
                 {
                 mT__415(); 
 
                 }
                 break;
-            case 405 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:2750: T__416
+            case 406 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:2756: T__416
                 {
                 mT__416(); 
 
                 }
                 break;
-            case 406 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:2757: T__417
+            case 407 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:2763: T__417
                 {
                 mT__417(); 
 
                 }
                 break;
-            case 407 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:2764: T__418
+            case 408 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:2770: T__418
                 {
                 mT__418(); 
 
                 }
                 break;
-            case 408 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:2771: T__419
+            case 409 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:2777: T__419
                 {
                 mT__419(); 
 
                 }
                 break;
-            case 409 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:2778: T__420
+            case 410 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:2784: T__420
                 {
                 mT__420(); 
 
                 }
                 break;
-            case 410 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:2785: T__421
+            case 411 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:2791: T__421
                 {
                 mT__421(); 
 
                 }
                 break;
-            case 411 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:2792: T__422
+            case 412 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:2798: T__422
                 {
                 mT__422(); 
 
                 }
                 break;
-            case 412 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:2799: T__423
+            case 413 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:2805: T__423
                 {
                 mT__423(); 
 
                 }
                 break;
-            case 413 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:2806: T__424
+            case 414 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:2812: T__424
                 {
                 mT__424(); 
 
                 }
                 break;
-            case 414 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:2813: T__425
+            case 415 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:2819: T__425
                 {
                 mT__425(); 
 
                 }
                 break;
-            case 415 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:2820: T__426
+            case 416 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:2826: T__426
                 {
                 mT__426(); 
 
                 }
                 break;
-            case 416 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:2827: T__427
+            case 417 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:2833: T__427
                 {
                 mT__427(); 
 
                 }
                 break;
-            case 417 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:2834: T__428
+            case 418 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:2840: T__428
                 {
                 mT__428(); 
 
                 }
                 break;
-            case 418 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:2841: T__429
+            case 419 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:2847: T__429
                 {
                 mT__429(); 
 
                 }
                 break;
-            case 419 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:2848: T__430
+            case 420 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:2854: T__430
                 {
                 mT__430(); 
 
                 }
                 break;
-            case 420 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:2855: T__431
+            case 421 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:2861: T__431
                 {
                 mT__431(); 
 
                 }
                 break;
-            case 421 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:2862: T__432
+            case 422 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:2868: T__432
                 {
                 mT__432(); 
 
                 }
                 break;
-            case 422 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:2869: T__433
+            case 423 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:2875: T__433
                 {
                 mT__433(); 
 
                 }
                 break;
-            case 423 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:2876: T__434
+            case 424 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:2882: T__434
                 {
                 mT__434(); 
 
                 }
                 break;
-            case 424 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:2883: T__435
+            case 425 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:2889: T__435
                 {
                 mT__435(); 
 
                 }
                 break;
-            case 425 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:2890: T__436
+            case 426 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:2896: T__436
                 {
                 mT__436(); 
 
                 }
                 break;
-            case 426 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:2897: T__437
+            case 427 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:2903: T__437
                 {
                 mT__437(); 
 
                 }
                 break;
-            case 427 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:2904: T__438
+            case 428 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:2910: T__438
                 {
                 mT__438(); 
 
                 }
                 break;
-            case 428 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:2911: T__439
+            case 429 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:2917: T__439
                 {
                 mT__439(); 
 
                 }
                 break;
-            case 429 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:2918: T__440
+            case 430 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:2924: T__440
                 {
                 mT__440(); 
 
                 }
                 break;
-            case 430 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:2925: T__441
+            case 431 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:2931: T__441
                 {
                 mT__441(); 
 
                 }
                 break;
-            case 431 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:2932: T__442
+            case 432 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:2938: T__442
                 {
                 mT__442(); 
 
                 }
                 break;
-            case 432 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:2939: T__443
+            case 433 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:2945: T__443
                 {
                 mT__443(); 
 
                 }
                 break;
-            case 433 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:2946: T__444
+            case 434 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:2952: T__444
                 {
                 mT__444(); 
 
                 }
                 break;
-            case 434 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:2953: T__445
+            case 435 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:2959: T__445
                 {
                 mT__445(); 
 
                 }
                 break;
-            case 435 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:2960: T__446
+            case 436 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:2966: T__446
                 {
                 mT__446(); 
 
                 }
                 break;
-            case 436 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:2967: T__447
+            case 437 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:2973: T__447
                 {
                 mT__447(); 
 
                 }
                 break;
-            case 437 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:2974: T__448
+            case 438 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:2980: T__448
                 {
                 mT__448(); 
 
                 }
                 break;
-            case 438 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:2981: T__449
+            case 439 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:2987: T__449
                 {
                 mT__449(); 
 
                 }
                 break;
-            case 439 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:2988: T__450
+            case 440 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:2994: T__450
                 {
                 mT__450(); 
 
                 }
                 break;
-            case 440 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:2995: T__451
+            case 441 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:3001: T__451
                 {
                 mT__451(); 
 
                 }
                 break;
-            case 441 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:3002: T__452
+            case 442 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:3008: T__452
                 {
                 mT__452(); 
 
                 }
                 break;
-            case 442 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:3009: T__453
+            case 443 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:3015: T__453
                 {
                 mT__453(); 
 
                 }
                 break;
-            case 443 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:3016: T__454
+            case 444 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:3022: T__454
                 {
                 mT__454(); 
 
                 }
                 break;
-            case 444 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:3023: T__455
+            case 445 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:3029: T__455
                 {
                 mT__455(); 
 
                 }
                 break;
-            case 445 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:3030: T__456
+            case 446 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:3036: T__456
                 {
                 mT__456(); 
 
                 }
                 break;
-            case 446 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:3037: T__457
+            case 447 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:3043: T__457
                 {
                 mT__457(); 
 
                 }
                 break;
-            case 447 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:3044: T__458
+            case 448 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:3050: T__458
                 {
                 mT__458(); 
 
                 }
                 break;
-            case 448 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:3051: T__459
+            case 449 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:3057: T__459
                 {
                 mT__459(); 
 
                 }
                 break;
-            case 449 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:3058: T__460
+            case 450 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:3064: T__460
                 {
                 mT__460(); 
 
                 }
                 break;
-            case 450 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:3065: T__461
+            case 451 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:3071: T__461
                 {
                 mT__461(); 
 
                 }
                 break;
-            case 451 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:3072: T__462
+            case 452 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:3078: T__462
                 {
                 mT__462(); 
 
                 }
                 break;
-            case 452 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:3079: T__463
+            case 453 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:3085: T__463
                 {
                 mT__463(); 
 
                 }
                 break;
-            case 453 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:3086: T__464
+            case 454 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:3092: T__464
                 {
                 mT__464(); 
 
                 }
                 break;
-            case 454 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:3093: T__465
+            case 455 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:3099: T__465
                 {
                 mT__465(); 
 
                 }
                 break;
-            case 455 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:3100: T__466
+            case 456 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:3106: T__466
                 {
                 mT__466(); 
 
                 }
                 break;
-            case 456 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:3107: T__467
+            case 457 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:3113: T__467
                 {
                 mT__467(); 
 
                 }
                 break;
-            case 457 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:3114: T__468
+            case 458 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:3120: T__468
                 {
                 mT__468(); 
 
                 }
                 break;
-            case 458 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:3121: T__469
+            case 459 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:3127: T__469
                 {
                 mT__469(); 
 
                 }
                 break;
-            case 459 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:3128: T__470
+            case 460 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:3134: T__470
                 {
                 mT__470(); 
 
                 }
                 break;
-            case 460 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:3135: T__471
+            case 461 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:3141: T__471
                 {
                 mT__471(); 
 
                 }
                 break;
-            case 461 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:3142: T__472
+            case 462 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:3148: T__472
                 {
                 mT__472(); 
 
                 }
                 break;
-            case 462 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:3149: T__473
+            case 463 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:3155: T__473
                 {
                 mT__473(); 
 
                 }
                 break;
-            case 463 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:3156: T__474
+            case 464 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:3162: T__474
                 {
                 mT__474(); 
 
                 }
                 break;
-            case 464 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:3163: T__475
+            case 465 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:3169: T__475
                 {
                 mT__475(); 
 
                 }
                 break;
-            case 465 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:3170: T__476
+            case 466 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:3176: T__476
                 {
                 mT__476(); 
 
                 }
                 break;
-            case 466 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:3177: T__477
+            case 467 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:3183: T__477
                 {
                 mT__477(); 
 
                 }
                 break;
-            case 467 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:3184: T__478
+            case 468 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:3190: T__478
                 {
                 mT__478(); 
 
                 }
                 break;
-            case 468 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:3191: T__479
+            case 469 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:3197: T__479
                 {
                 mT__479(); 
 
                 }
                 break;
-            case 469 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:3198: T__480
+            case 470 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:3204: T__480
                 {
                 mT__480(); 
 
                 }
                 break;
-            case 470 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:3205: T__481
+            case 471 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:3211: T__481
                 {
                 mT__481(); 
 
                 }
                 break;
-            case 471 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:3212: T__482
+            case 472 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:3218: T__482
                 {
                 mT__482(); 
 
                 }
                 break;
-            case 472 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:3219: T__483
+            case 473 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:3225: T__483
                 {
                 mT__483(); 
 
                 }
                 break;
-            case 473 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:3226: T__484
+            case 474 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:3232: T__484
                 {
                 mT__484(); 
 
                 }
                 break;
-            case 474 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:3233: T__485
+            case 475 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:3239: T__485
                 {
                 mT__485(); 
 
                 }
                 break;
-            case 475 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:3240: T__486
+            case 476 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:3246: T__486
                 {
                 mT__486(); 
 
                 }
                 break;
-            case 476 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:3247: T__487
+            case 477 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:3253: T__487
                 {
                 mT__487(); 
 
                 }
                 break;
-            case 477 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:3254: T__488
+            case 478 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:3260: T__488
                 {
                 mT__488(); 
 
                 }
                 break;
-            case 478 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:3261: T__489
+            case 479 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:3267: T__489
                 {
                 mT__489(); 
 
                 }
                 break;
-            case 479 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:3268: T__490
+            case 480 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:3274: T__490
                 {
                 mT__490(); 
 
                 }
                 break;
-            case 480 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:3275: T__491
+            case 481 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:3281: T__491
                 {
                 mT__491(); 
 
                 }
                 break;
-            case 481 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:3282: T__492
+            case 482 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:3288: T__492
                 {
                 mT__492(); 
 
                 }
                 break;
-            case 482 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:3289: T__493
+            case 483 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:3295: T__493
                 {
                 mT__493(); 
 
                 }
                 break;
-            case 483 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:3296: T__494
+            case 484 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:3302: T__494
                 {
                 mT__494(); 
 
                 }
                 break;
-            case 484 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:3303: T__495
+            case 485 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:3309: T__495
                 {
                 mT__495(); 
 
                 }
                 break;
-            case 485 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:3310: T__496
+            case 486 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:3316: T__496
                 {
                 mT__496(); 
 
                 }
                 break;
-            case 486 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:3317: T__497
+            case 487 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:3323: T__497
                 {
                 mT__497(); 
 
                 }
                 break;
-            case 487 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:3324: T__498
-                {
-                mT__498(); 
-
-                }
-                break;
             case 488 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:3331: RULE_INTEGER
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:3330: RULE_INTEGER
                 {
                 mRULE_INTEGER(); 
 
                 }
                 break;
             case 489 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:3344: RULE_REAL
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:3343: RULE_REAL
                 {
                 mRULE_REAL(); 
 
                 }
                 break;
             case 490 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:3354: RULE_HEXCOLOR
-                {
-                mRULE_HEXCOLOR(); 
-
-                }
-                break;
-            case 491 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:3368: RULE_IDENT
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:3353: RULE_IDENT
                 {
                 mRULE_IDENT(); 
 
                 }
                 break;
-            case 492 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:3379: RULE_COMMA
+            case 491 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:3364: RULE_COMMA
                 {
                 mRULE_COMMA(); 
 
                 }
                 break;
-            case 493 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:3390: RULE_ML_COMMENT
+            case 492 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:3375: RULE_ML_COMMENT
                 {
                 mRULE_ML_COMMENT(); 
 
                 }
                 break;
-            case 494 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:3406: RULE_WS
+            case 493 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:3391: RULE_WS
                 {
                 mRULE_WS(); 
 
                 }
                 break;
-            case 495 :
-                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:3414: RULE_STRING
+            case 494 :
+                // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:1:3399: RULE_STRING
                 {
                 mRULE_STRING(); 
 
@@ -14896,105 +14827,104 @@ public class InternalCssDslLexer extends Lexer {
     }
 
 
-    protected DFA13 dfa13 = new DFA13(this);
-    static final String DFA13_eotS =
-        "\3\uffff\1\53\6\46\1\135\17\46\3\uffff\1\u009f\1\u00a2\1\uffff"+
-        "\1\u00a4\3\uffff\1\46\1\u00a7\1\uffff\1\u00a8\4\uffff\7\46\1\u00b6"+
-        "\10\46\1\u00c7\6\46\1\u00d3\1\u00d4\1\46\1\u00d7\1\46\1\u00d9\24"+
-        "\46\1\uffff\10\46\1\u0106\60\46\1\u0150\1\u0151\1\u0152\1\u0156"+
-        "\4\46\6\uffff\1\46\1\u00a7\3\uffff\14\46\1\uffff\2\46\1\u016e\15"+
-        "\46\1\uffff\1\u017d\12\46\2\uffff\2\46\1\uffff\1\46\1\uffff\52\46"+
-        "\1\u01b8\1\46\1\uffff\1\u01ba\13\46\1\u01c6\51\46\1\u01f3\6\46\1"+
-        "\u01fb\1\u01fd\12\46\3\uffff\3\46\1\uffff\3\46\1\u020e\2\46\1\u00a7"+
-        "\1\uffff\10\46\1\u022f\3\46\1\u0233\2\46\1\uffff\10\46\1\u0249\4"+
-        "\46\1\u024e\1\uffff\1\u024f\20\46\1\u0261\1\46\1\u0263\2\46\1\u0266"+
-        "\26\46\1\u027f\1\46\1\u0281\5\46\1\u0287\1\u0288\1\u0289\2\46\1"+
-        "\uffff\1\46\1\uffff\6\46\1\u0293\4\46\1\uffff\3\46\1\u029b\1\46"+
-        "\1\u029e\1\46\1\u02a1\3\46\1\u02a6\1\u02a7\7\46\1\u02af\1\u02b0"+
-        "\1\u02b1\3\46\1\u02b6\1\46\1\u02b9\1\46\1\u02bd\15\46\1\uffff\7"+
-        "\46\1\uffff\1\u02d2\1\uffff\5\46\1\u02da\1\u02db\1\u02dc\10\46\1"+
-        "\uffff\1\46\1\uffff\1\u00a7\24\uffff\3\46\1\u0325\1\46\1\u0327\3"+
-        "\46\1\uffff\3\46\1\uffff\25\46\1\uffff\4\46\2\uffff\2\46\1\u034e"+
-        "\6\46\1\u0355\4\46\1\u035a\2\46\1\uffff\1\46\1\uffff\2\46\1\uffff"+
-        "\7\46\1\u0367\4\46\1\u036d\3\46\1\u0371\7\46\1\uffff\1\46\1\uffff"+
-        "\1\46\1\u037c\1\u037e\2\46\3\uffff\7\46\1\u0388\1\46\1\uffff\2\46"+
-        "\1\u038c\4\46\1\uffff\2\46\1\uffff\1\u0393\1\46\1\uffff\1\u0395"+
-        "\3\46\2\uffff\1\46\1\u039a\1\u039b\2\46\1\u039e\1\u03a0\3\uffff"+
-        "\4\46\1\uffff\2\46\1\uffff\1\u03ad\2\46\1\uffff\10\46\1\u03ba\6"+
-        "\46\1\u03c1\1\u03c2\3\46\1\uffff\7\46\3\uffff\6\46\1\u03d5\1\46"+
-        "\1\u03d7\1\46\1\u00a7\72\uffff\3\46\1\uffff\1\46\1\uffff\2\46\1"+
-        "\u0416\6\46\1\u041d\1\u041e\16\46\1\u042f\3\46\1\u0433\10\46\1\uffff"+
-        "\4\46\1\u0440\1\46\1\uffff\4\46\1\uffff\3\46\1\u044f\6\46\1\u0456"+
-        "\1\46\1\uffff\1\46\1\u0459\2\46\1\u045c\1\uffff\3\46\1\uffff\1\46"+
-        "\1\u0461\1\46\1\u0463\1\u0464\5\46\1\uffff\1\46\1\uffff\1\46\1\u046c"+
-        "\2\46\1\u046f\4\46\1\uffff\3\46\1\uffff\1\46\1\u0478\4\46\1\uffff"+
-        "\1\46\1\uffff\1\46\1\u047f\1\u0480\1\46\2\uffff\1\46\1\u0483\1\uffff"+
-        "\1\46\1\uffff\14\46\1\uffff\1\u0498\6\46\1\u049f\4\46\1\uffff\1"+
-        "\u04a5\1\u04a6\2\46\1\u04aa\1\46\2\uffff\2\46\1\u04ae\12\46\1\u04b9"+
-        "\1\u04ba\1\46\1\u04bc\1\46\1\uffff\1\u04be\1\uffff\1\u04c0\1\u00a7"+
-        "\63\uffff\1\46\1\u04e7\2\46\1\u04ea\4\46\1\uffff\3\46\1\u04f3\2"+
-        "\46\2\uffff\12\46\1\u0501\5\46\1\uffff\1\46\1\u0508\1\u0509\1\uffff"+
-        "\5\46\1\u050f\5\46\1\u0515\1\uffff\16\46\1\uffff\6\46\1\uffff\2"+
-        "\46\1\uffff\1\u052e\1\46\1\uffff\1\46\1\u0531\2\46\1\uffff\1\46"+
-        "\2\uffff\1\u0535\6\46\1\uffff\2\46\1\uffff\1\u053f\6\46\1\u0546"+
-        "\1\uffff\6\46\2\uffff\2\46\1\uffff\5\46\1\u0554\1\u0555\15\46\1"+
-        "\uffff\2\46\1\u0567\3\46\1\uffff\1\u056b\1\u056c\1\u056d\2\46\2"+
-        "\uffff\1\u0570\2\46\1\uffff\1\u0574\2\46\1\uffff\1\u0577\11\46\2"+
-        "\uffff\1\46\1\uffff\1\46\1\uffff\1\46\1\uffff\1\u00a7\1\u0585\4"+
-        "\uffff\1\u058b\17\uffff\1\u059e\16\uffff\1\46\1\uffff\2\46\1\uffff"+
-        "\1\46\1\u05b2\2\46\1\u05b5\3\46\1\uffff\1\u05b9\1\46\1\u05bb\1\u05bc"+
-        "\1\46\1\u05be\1\46\1\u05c0\5\46\1\uffff\6\46\2\uffff\3\46\1\u05cf"+
-        "\1\u05d0\1\uffff\1\u05d1\1\u05d2\3\46\1\uffff\11\46\1\u05df\1\46"+
-        "\1\u05e1\2\46\1\u05e4\3\46\1\u05e8\1\u05e9\1\46\1\u05eb\1\46\1\u05ed"+
-        "\1\uffff\1\u05ee\1\46\1\uffff\3\46\1\uffff\3\46\1\u05f6\2\46\1\u05f9"+
-        "\1\46\1\u05fb\1\uffff\6\46\1\uffff\7\46\1\u0609\2\46\1\u060c\2\46"+
-        "\2\uffff\17\46\1\u061f\1\46\1\uffff\1\46\1\u0624\1\46\3\uffff\2"+
-        "\46\1\uffff\1\46\1\u0629\1\u062a\1\uffff\2\46\1\uffff\1\u062d\13"+
-        "\46\52\uffff\1\u0666\3\46\1\uffff\2\46\1\uffff\1\u066c\1\46\1\u066e"+
-        "\1\uffff\1\46\2\uffff\1\46\1\uffff\1\u0671\1\uffff\1\u0672\15\46"+
-        "\4\uffff\1\46\1\u0682\1\u0683\11\46\1\uffff\1\u068d\1\uffff\1\u068e"+
-        "\1\u068f\1\uffff\1\u0690\1\46\1\u0692\2\uffff\1\u0693\1\uffff\1"+
-        "\46\2\uffff\1\46\1\u0696\2\46\1\u0699\1\u069a\1\u069b\1\uffff\2"+
-        "\46\1\uffff\1\46\1\uffff\1\46\1\u06a0\1\46\1\u06a2\2\46\1\u06a5"+
-        "\1\u06a6\4\46\1\u06ab\1\uffff\1\46\1\u06ad\1\uffff\1\46\1\u06af"+
-        "\1\u06b0\1\46\1\u06b2\1\46\1\u06b4\1\46\1\u06b6\1\u06b7\6\46\1\u06be"+
-        "\1\u06bf\1\uffff\4\46\1\uffff\1\u06c4\1\u06c5\1\u06c6\1\46\2\uffff"+
-        "\1\u06c8\1\u06c9\1\uffff\2\46\1\u06cc\3\46\1\u06d0\1\46\1\u06d2"+
-        "\2\46\33\uffff\1\u06ee\22\uffff\1\u0703\4\46\1\uffff\1\u0708\1\uffff"+
-        "\2\46\2\uffff\2\46\1\u070d\1\u070e\1\u070f\4\46\1\u0714\1\u0715"+
-        "\1\u0716\1\u0717\1\u0718\1\46\2\uffff\1\46\1\u071b\7\46\4\uffff"+
-        "\1\46\2\uffff\1\u0724\1\46\1\uffff\1\46\1\u0727\3\uffff\1\46\1\u0729"+
-        "\2\46\1\uffff\1\46\1\uffff\2\46\2\uffff\1\46\1\u0730\1\u0731\1\46"+
-        "\1\uffff\1\46\1\uffff\1\u0734\2\uffff\1\u0735\1\uffff\1\46\1\uffff"+
-        "\1\u0737\2\uffff\6\46\2\uffff\4\46\3\uffff\1\46\2\uffff\1\u0743"+
-        "\1\46\1\uffff\2\46\1\u0747\1\uffff\1\u0748\1\uffff\2\46\47\uffff"+
-        "\1\u076a\7\uffff\1\u0776\3\46\1\uffff\1\u077a\1\46\1\u077c\1\46"+
-        "\3\uffff\4\46\5\uffff\2\46\1\uffff\7\46\1\u078c\1\uffff\1\u078d"+
-        "\1\u078e\1\uffff\1\46\1\uffff\1\u0790\2\46\1\u0793\1\u0794\1\46"+
-        "\2\uffff\1\46\1\u0797\2\uffff\1\46\1\uffff\1\u0799\4\46\1\u079e"+
-        "\5\46\1\uffff\3\46\2\uffff\1\46\1\u07a8\23\uffff\1\u07b6\30\uffff"+
-        "\3\46\1\uffff\1\46\1\uffff\1\46\1\u07ce\4\46\1\u07d3\1\46\1\u07d5"+
-        "\1\u07d6\5\46\3\uffff\1\46\1\uffff\1\46\1\u07de\2\uffff\1\u07df"+
-        "\1\46\1\uffff\1\46\1\uffff\1\46\1\u07e3\2\46\1\uffff\2\46\1\u07e9"+
-        "\1\46\1\u07eb\3\46\42\uffff\3\46\1\u080d\1\46\1\uffff\1\u080f\1"+
-        "\u0810\1\u0811\1\u0812\1\uffff\1\46\2\uffff\5\46\1\u0819\1\46\2"+
-        "\uffff\2\46\1\u081d\1\uffff\5\46\1\uffff\1\u0823\1\uffff\1\u0824"+
-        "\1\u0825\1\u0826\1\u0828\6\uffff\1\u0837\1\uffff\1\u083a\15\uffff"+
-        "\1\u0848\3\uffff\1\u084c\2\46\1\uffff\1\u084f\4\uffff\1\46\1\u0851"+
-        "\4\46\1\uffff\1\u0856\1\u0857\1\46\1\uffff\1\u0859\1\u085a\1\u085b"+
-        "\2\46\43\uffff\1\u087b\6\uffff\1\u0884\1\46\1\uffff\1\46\1\uffff"+
-        "\1\u0887\1\46\1\u0889\1\u088a\2\uffff\1\46\3\uffff\2\46\21\uffff"+
-        "\1\u089b\21\uffff\1\u08a9\3\uffff\1\46\1\u08ab\1\uffff\1\46\2\uffff"+
-        "\1\46\1\u08ae\1\46\23\uffff\1\u08b9\10\uffff\1\46\1\uffff\1\u08c3"+
-        "\1\46\1\uffff\1\46\2\uffff\1\u08c9\17\uffff\1\46\1\uffff\2\46\1"+
-        "\u08d7\14\uffff\3\46\2\uffff\1\u08ea\11\uffff\1\u08f5\1\u08f6\1"+
-        "\u08f7\1\46\22\uffff\1\u0906\27\uffff\1\u0918\21\uffff\1\u092b\13"+
-        "\uffff\1\u0933\1\u0935\7\uffff\1\u093a\3\uffff\1\u093f\6\uffff";
-    static final String DFA13_eofS =
-        "\u0942\uffff";
-    static final String DFA13_minS =
+    protected DFA12 dfa12 = new DFA12(this);
+    static final String DFA12_eotS =
+        "\3\uffff\1\53\6\46\1\135\17\46\3\uffff\1\u009f\2\uffff\1\u00a2"+
+        "\3\uffff\1\46\1\u00a4\1\uffff\1\u00a5\4\uffff\7\46\1\u00b3\10\46"+
+        "\1\u00c4\6\46\1\u00d0\1\u00d1\1\46\1\u00d4\1\46\1\u00d6\24\46\1"+
+        "\uffff\10\46\1\u0103\60\46\1\u014d\1\u014e\1\u014f\1\u0153\4\46"+
+        "\4\uffff\1\46\3\uffff\14\46\1\uffff\2\46\1\u016a\15\46\1\uffff\1"+
+        "\u0179\12\46\2\uffff\2\46\1\uffff\1\46\1\uffff\52\46\1\u01b4\1\46"+
+        "\1\uffff\1\u01b6\13\46\1\u01c2\51\46\1\u01ef\6\46\1\u01f7\1\u01f9"+
+        "\12\46\3\uffff\3\46\1\uffff\3\46\1\u020a\2\46\1\uffff\10\46\1\u022a"+
+        "\3\46\1\u022e\2\46\1\uffff\10\46\1\u0244\4\46\1\u0249\1\uffff\1"+
+        "\u024a\20\46\1\u025c\1\46\1\u025e\2\46\1\u0261\26\46\1\u027a\1\46"+
+        "\1\u027c\5\46\1\u0282\1\u0283\1\u0284\2\46\1\uffff\1\46\1\uffff"+
+        "\6\46\1\u028e\4\46\1\uffff\3\46\1\u0296\1\46\1\u0299\1\46\1\u029c"+
+        "\3\46\1\u02a1\1\u02a2\7\46\1\u02aa\1\u02ab\1\u02ac\3\46\1\u02b1"+
+        "\1\46\1\u02b4\1\46\1\u02b8\15\46\1\uffff\7\46\1\uffff\1\u02cd\1"+
+        "\uffff\5\46\1\u02d5\1\u02d6\1\u02d7\10\46\1\uffff\1\46\25\uffff"+
+        "\3\46\1\u031f\1\46\1\u0321\3\46\1\uffff\3\46\1\uffff\25\46\1\uffff"+
+        "\4\46\2\uffff\2\46\1\u0348\6\46\1\u034f\4\46\1\u0354\2\46\1\uffff"+
+        "\1\46\1\uffff\2\46\1\uffff\7\46\1\u0361\4\46\1\u0367\3\46\1\u036b"+
+        "\7\46\1\uffff\1\46\1\uffff\1\46\1\u0376\1\u0378\2\46\3\uffff\7\46"+
+        "\1\u0382\1\46\1\uffff\2\46\1\u0386\4\46\1\uffff\2\46\1\uffff\1\u038d"+
+        "\1\46\1\uffff\1\u038f\3\46\2\uffff\1\46\1\u0394\1\u0395\2\46\1\u0398"+
+        "\1\u039a\3\uffff\4\46\1\uffff\2\46\1\uffff\1\u03a7\2\46\1\uffff"+
+        "\10\46\1\u03b4\6\46\1\u03bb\1\u03bc\3\46\1\uffff\7\46\3\uffff\6"+
+        "\46\1\u03cf\1\46\1\u03d1\1\46\72\uffff\3\46\1\uffff\1\46\1\uffff"+
+        "\2\46\1\u040f\6\46\1\u0416\1\u0417\16\46\1\u0428\3\46\1\u042c\10"+
+        "\46\1\uffff\4\46\1\u0439\1\46\1\uffff\4\46\1\uffff\3\46\1\u0448"+
+        "\6\46\1\u044f\1\46\1\uffff\1\46\1\u0452\2\46\1\u0455\1\uffff\3\46"+
+        "\1\uffff\1\46\1\u045a\1\46\1\u045c\1\u045d\5\46\1\uffff\1\46\1\uffff"+
+        "\1\46\1\u0465\2\46\1\u0468\4\46\1\uffff\3\46\1\uffff\1\46\1\u0471"+
+        "\4\46\1\uffff\1\46\1\uffff\1\46\1\u0478\1\u0479\1\46\2\uffff\1\46"+
+        "\1\u047c\1\uffff\1\46\1\uffff\14\46\1\uffff\1\u0491\6\46\1\u0498"+
+        "\4\46\1\uffff\1\u049e\1\u049f\2\46\1\u04a3\1\46\2\uffff\2\46\1\u04a7"+
+        "\12\46\1\u04b2\1\u04b3\1\46\1\u04b5\1\46\1\uffff\1\u04b7\1\uffff"+
+        "\1\u04b9\63\uffff\1\46\1\u04df\2\46\1\u04e2\4\46\1\uffff\3\46\1"+
+        "\u04eb\2\46\2\uffff\12\46\1\u04f9\5\46\1\uffff\1\46\1\u0500\1\u0501"+
+        "\1\uffff\5\46\1\u0507\5\46\1\u050d\1\uffff\16\46\1\uffff\6\46\1"+
+        "\uffff\2\46\1\uffff\1\u0526\1\46\1\uffff\1\46\1\u0529\2\46\1\uffff"+
+        "\1\46\2\uffff\1\u052d\6\46\1\uffff\2\46\1\uffff\1\u0537\6\46\1\u053e"+
+        "\1\uffff\6\46\2\uffff\2\46\1\uffff\5\46\1\u054c\1\u054d\15\46\1"+
+        "\uffff\2\46\1\u055f\3\46\1\uffff\1\u0563\1\u0564\1\u0565\2\46\2"+
+        "\uffff\1\u0568\2\46\1\uffff\1\u056c\2\46\1\uffff\1\u056f\11\46\2"+
+        "\uffff\1\46\1\uffff\1\46\1\uffff\1\46\1\uffff\1\u057d\4\uffff\1"+
+        "\u0583\17\uffff\1\u0596\16\uffff\1\46\1\uffff\2\46\1\uffff\1\46"+
+        "\1\u05aa\2\46\1\u05ad\3\46\1\uffff\1\u05b1\1\46\1\u05b3\1\u05b4"+
+        "\1\46\1\u05b6\1\46\1\u05b8\5\46\1\uffff\6\46\2\uffff\3\46\1\u05c7"+
+        "\1\u05c8\1\uffff\1\u05c9\1\u05ca\3\46\1\uffff\11\46\1\u05d7\1\46"+
+        "\1\u05d9\2\46\1\u05dc\3\46\1\u05e0\1\u05e1\1\46\1\u05e3\1\46\1\u05e5"+
+        "\1\uffff\1\u05e6\1\46\1\uffff\3\46\1\uffff\3\46\1\u05ee\2\46\1\u05f1"+
+        "\1\46\1\u05f3\1\uffff\6\46\1\uffff\7\46\1\u0601\2\46\1\u0604\2\46"+
+        "\2\uffff\17\46\1\u0617\1\46\1\uffff\1\46\1\u061c\1\46\3\uffff\2"+
+        "\46\1\uffff\1\46\1\u0621\1\u0622\1\uffff\2\46\1\uffff\1\u0625\13"+
+        "\46\52\uffff\1\u065e\3\46\1\uffff\2\46\1\uffff\1\u0664\1\46\1\u0666"+
+        "\1\uffff\1\46\2\uffff\1\46\1\uffff\1\u0669\1\uffff\1\u066a\15\46"+
+        "\4\uffff\1\46\1\u067a\1\u067b\11\46\1\uffff\1\u0685\1\uffff\1\u0686"+
+        "\1\u0687\1\uffff\1\u0688\1\46\1\u068a\2\uffff\1\u068b\1\uffff\1"+
+        "\46\2\uffff\1\46\1\u068e\2\46\1\u0691\1\u0692\1\u0693\1\uffff\2"+
+        "\46\1\uffff\1\46\1\uffff\1\46\1\u0698\1\46\1\u069a\2\46\1\u069d"+
+        "\1\u069e\4\46\1\u06a3\1\uffff\1\46\1\u06a5\1\uffff\1\46\1\u06a7"+
+        "\1\u06a8\1\46\1\u06aa\1\46\1\u06ac\1\46\1\u06ae\1\u06af\6\46\1\u06b6"+
+        "\1\u06b7\1\uffff\4\46\1\uffff\1\u06bc\1\u06bd\1\u06be\1\46\2\uffff"+
+        "\1\u06c0\1\u06c1\1\uffff\2\46\1\u06c4\3\46\1\u06c8\1\46\1\u06ca"+
+        "\2\46\33\uffff\1\u06e6\22\uffff\1\u06fb\4\46\1\uffff\1\u0700\1\uffff"+
+        "\2\46\2\uffff\2\46\1\u0705\1\u0706\1\u0707\4\46\1\u070c\1\u070d"+
+        "\1\u070e\1\u070f\1\u0710\1\46\2\uffff\1\46\1\u0713\7\46\4\uffff"+
+        "\1\46\2\uffff\1\u071c\1\46\1\uffff\1\46\1\u071f\3\uffff\1\46\1\u0721"+
+        "\2\46\1\uffff\1\46\1\uffff\2\46\2\uffff\1\46\1\u0728\1\u0729\1\46"+
+        "\1\uffff\1\46\1\uffff\1\u072c\2\uffff\1\u072d\1\uffff\1\46\1\uffff"+
+        "\1\u072f\2\uffff\6\46\2\uffff\4\46\3\uffff\1\46\2\uffff\1\u073b"+
+        "\1\46\1\uffff\2\46\1\u073f\1\uffff\1\u0740\1\uffff\2\46\47\uffff"+
+        "\1\u0762\7\uffff\1\u076e\3\46\1\uffff\1\u0772\1\46\1\u0774\1\46"+
+        "\3\uffff\4\46\5\uffff\2\46\1\uffff\7\46\1\u0784\1\uffff\1\u0785"+
+        "\1\u0786\1\uffff\1\46\1\uffff\1\u0788\2\46\1\u078b\1\u078c\1\46"+
+        "\2\uffff\1\46\1\u078f\2\uffff\1\46\1\uffff\1\u0791\4\46\1\u0796"+
+        "\5\46\1\uffff\3\46\2\uffff\1\46\1\u07a0\23\uffff\1\u07ae\30\uffff"+
+        "\3\46\1\uffff\1\46\1\uffff\1\46\1\u07c6\4\46\1\u07cb\1\46\1\u07cd"+
+        "\1\u07ce\5\46\3\uffff\1\46\1\uffff\1\46\1\u07d6\2\uffff\1\u07d7"+
+        "\1\46\1\uffff\1\46\1\uffff\1\46\1\u07db\2\46\1\uffff\2\46\1\u07e1"+
+        "\1\46\1\u07e3\3\46\42\uffff\3\46\1\u0805\1\46\1\uffff\1\u0807\1"+
+        "\u0808\1\u0809\1\u080a\1\uffff\1\46\2\uffff\5\46\1\u0811\1\46\2"+
+        "\uffff\2\46\1\u0815\1\uffff\5\46\1\uffff\1\u081b\1\uffff\1\u081c"+
+        "\1\u081d\1\u081e\1\u0820\6\uffff\1\u082f\1\uffff\1\u0832\15\uffff"+
+        "\1\u0840\3\uffff\1\u0844\2\46\1\uffff\1\u0847\4\uffff\1\46\1\u0849"+
+        "\4\46\1\uffff\1\u084e\1\u084f\1\46\1\uffff\1\u0851\1\u0852\1\u0853"+
+        "\2\46\43\uffff\1\u0873\6\uffff\1\u087c\1\46\1\uffff\1\46\1\uffff"+
+        "\1\u087f\1\46\1\u0881\1\u0882\2\uffff\1\46\3\uffff\2\46\21\uffff"+
+        "\1\u0893\21\uffff\1\u08a1\3\uffff\1\46\1\u08a3\1\uffff\1\46\2\uffff"+
+        "\1\46\1\u08a6\1\46\23\uffff\1\u08b1\10\uffff\1\46\1\uffff\1\u08bb"+
+        "\1\46\1\uffff\1\46\2\uffff\1\u08c1\17\uffff\1\46\1\uffff\2\46\1"+
+        "\u08cf\14\uffff\3\46\2\uffff\1\u08e2\11\uffff\1\u08ed\1\u08ee\1"+
+        "\u08ef\1\46\22\uffff\1\u08fe\27\uffff\1\u0910\21\uffff\1\u0923\13"+
+        "\uffff\1\u092b\1\u092d\7\uffff\1\u0932\3\uffff\1\u0937\6\uffff";
+    static final String DFA12_eofS =
+        "\u093a\uffff";
+    static final String DFA12_minS =
         "\1\11\2\uffff\1\146\2\141\1\55\1\141\5\55\2\141\1\144\3\141\1\142"+
-        "\1\141\1\165\1\141\1\156\1\150\1\145\3\uffff\2\60\1\uffff\1\52\3"+
+        "\1\141\1\165\1\141\1\156\1\150\1\145\3\uffff\1\60\2\uffff\1\52\3"+
         "\uffff\1\162\1\56\1\uffff\1\11\2\uffff\1\170\1\uffff\1\151\1\154"+
         "\1\156\1\151\1\144\2\141\1\55\1\145\1\162\1\146\1\144\1\157\1\156"+
         "\1\162\1\156\1\55\1\142\1\143\1\154\1\144\1\147\1\144\2\55\1\162"+
@@ -15004,13 +14934,13 @@ public class InternalCssDslLexer extends Lexer {
         "\1\157\2\143\1\144\1\151\1\137\2\164\2\165\1\141\1\154\1\162\1\151"+
         "\2\163\1\157\1\141\1\151\1\157\1\154\1\147\1\141\1\144\1\145\1\164"+
         "\1\144\1\141\1\154\1\145\1\144\1\147\1\163\1\144\1\142\1\163\1\147"+
-        "\1\141\1\156\1\165\1\167\1\162\4\55\1\157\2\141\1\154\6\uffff\1"+
-        "\154\1\56\2\uffff\1\55\1\163\1\155\1\157\1\145\1\164\1\141\1\164"+
-        "\1\160\1\145\1\162\1\143\1\156\1\uffff\1\141\1\160\1\55\1\151\1"+
-        "\153\1\150\1\146\1\147\1\164\1\147\1\160\2\144\2\145\1\160\1\uffff"+
-        "\1\55\1\145\1\143\1\164\1\145\1\156\2\164\1\145\1\157\1\151\2\uffff"+
-        "\1\145\1\154\1\uffff\1\151\1\uffff\1\162\1\145\1\162\1\145\1\154"+
-        "\1\162\1\145\1\155\1\141\1\162\1\147\1\162\2\145\1\164\1\151\1\55"+
+        "\1\141\1\156\1\165\1\167\1\162\4\55\1\157\2\141\1\154\4\uffff\1"+
+        "\154\2\uffff\1\55\1\163\1\155\1\157\1\145\1\164\1\141\1\164\1\160"+
+        "\1\145\1\162\1\143\1\156\1\uffff\1\141\1\160\1\55\1\151\1\153\1"+
+        "\150\1\146\1\147\1\164\1\147\1\160\2\144\2\145\1\160\1\uffff\1\55"+
+        "\1\145\1\143\1\164\1\145\1\156\2\164\1\145\1\157\1\151\2\uffff\1"+
+        "\145\1\154\1\uffff\1\151\1\uffff\1\162\1\145\1\162\1\145\1\154\1"+
+        "\162\1\145\1\155\1\141\1\162\1\147\1\162\2\145\1\164\1\151\1\55"+
         "\1\141\1\143\1\151\2\145\1\160\1\144\1\155\1\144\1\156\1\166\1\142"+
         "\1\164\1\167\1\145\1\164\1\144\1\141\1\164\1\145\1\154\1\164\1\154"+
         "\1\145\1\151\1\55\1\141\1\uffff\1\55\1\163\1\145\1\161\1\55\1\163"+
@@ -15020,176 +14950,175 @@ public class InternalCssDslLexer extends Lexer {
         "\1\144\1\157\1\145\1\156\1\144\1\162\1\163\1\154\1\166\1\156\1\150"+
         "\1\151\2\55\1\145\1\154\1\150\1\156\1\171\1\141\2\55\1\164\2\145"+
         "\1\141\1\143\1\165\1\153\1\155\1\144\1\160\3\uffff\2\151\1\145\1"+
-        "\uffff\1\162\1\154\1\153\1\55\1\154\1\50\1\56\1\141\2\163\2\162"+
-        "\1\141\1\154\1\146\1\145\1\55\2\164\1\157\1\55\1\165\1\160\1\uffff"+
-        "\1\166\1\142\2\145\1\162\2\145\1\163\2\55\1\163\1\171\1\151\1\55"+
-        "\1\uffff\1\55\1\141\1\151\1\162\1\151\1\143\1\171\1\156\1\157\1"+
-        "\141\1\163\1\165\1\160\1\145\1\162\1\145\1\163\1\55\1\145\1\55\1"+
-        "\141\1\152\1\55\1\145\1\162\1\150\1\145\1\163\1\145\1\55\1\144\1"+
-        "\141\1\162\1\145\1\156\1\164\1\154\1\163\1\154\1\157\1\171\1\156"+
-        "\1\145\1\154\1\145\1\55\1\163\2\55\1\164\1\145\1\163\1\145\3\55"+
-        "\1\163\1\154\1\uffff\1\164\1\uffff\1\164\1\145\1\165\1\160\1\145"+
-        "\1\142\1\55\1\141\3\163\1\uffff\1\171\2\145\1\55\1\161\1\55\1\145"+
-        "\1\55\1\153\1\143\1\157\2\55\1\171\1\154\1\145\1\154\1\165\2\156"+
-        "\3\55\2\163\1\164\1\55\1\164\3\55\1\151\2\156\1\147\1\145\1\154"+
-        "\1\151\1\141\1\145\1\147\1\151\1\161\1\160\1\uffff\1\141\1\145\1"+
-        "\164\1\144\1\142\1\154\1\141\1\uffff\1\55\1\uffff\1\151\1\55\1\147"+
-        "\1\171\1\150\3\55\1\145\1\154\1\144\1\141\1\162\1\171\2\151\1\uffff"+
-        "\1\157\1\uffff\1\56\1\151\3\141\2\142\1\143\1\156\1\141\1\143\2"+
-        "\141\1\143\1\146\2\141\1\uffff\1\155\1\145\1\157\1\150\1\157\2\55"+
-        "\1\151\1\55\1\154\1\151\1\162\1\uffff\1\142\1\162\1\154\1\uffff"+
-        "\1\154\1\151\1\153\1\145\1\156\1\154\1\171\1\157\1\150\1\141\1\154"+
-        "\1\145\1\141\1\165\1\151\1\144\1\162\1\141\1\144\1\162\1\150\1\uffff"+
-        "\1\154\1\151\1\144\1\156\2\uffff\1\163\1\160\1\55\1\147\2\162\1"+
-        "\164\1\156\1\155\1\55\1\151\3\163\1\55\1\163\1\151\1\uffff\1\160"+
-        "\1\uffff\1\154\1\157\1\uffff\1\163\2\145\1\163\1\151\1\156\1\154"+
-        "\1\55\1\164\1\156\1\165\1\145\1\55\1\147\1\143\1\142\1\55\1\145"+
-        "\1\156\1\142\1\141\1\162\1\165\1\142\1\uffff\1\151\1\uffff\1\145"+
-        "\2\55\1\151\1\164\3\uffff\1\160\1\151\1\157\1\154\1\55\1\157\1\141"+
-        "\1\55\1\162\1\uffff\1\154\1\164\1\55\1\151\1\163\1\142\1\145\1\uffff"+
-        "\1\165\1\141\1\uffff\1\55\1\151\1\uffff\1\55\1\150\1\155\1\162\2"+
-        "\uffff\1\167\2\55\1\151\1\145\2\55\3\uffff\1\142\1\151\1\167\1\156"+
-        "\1\uffff\1\142\1\162\1\uffff\1\55\1\162\1\143\1\uffff\1\156\1\143"+
-        "\1\144\2\162\1\141\1\144\1\143\1\55\1\145\1\144\1\165\1\141\1\164"+
-        "\1\143\2\55\1\162\1\142\1\154\1\uffff\1\146\1\145\1\157\1\165\1"+
-        "\151\1\141\1\160\3\uffff\1\162\2\145\1\156\1\157\1\163\1\55\1\143"+
-        "\1\55\1\167\1\56\1\143\1\154\1\143\1\170\1\uffff\1\141\1\145\1\144"+
-        "\1\uffff\1\157\1\142\2\147\1\uffff\1\162\3\uffff\1\162\2\uffff\1"+
-        "\141\1\uffff\3\141\1\154\1\uffff\1\144\1\uffff\1\144\1\151\1\141"+
-        "\1\uffff\1\154\5\uffff\1\156\2\uffff\1\141\1\143\1\151\2\uffff\1"+
-        "\146\1\143\1\145\1\162\1\164\1\uffff\1\144\1\uffff\1\162\1\144\1"+
-        "\141\1\156\1\142\1\uffff\1\156\1\uffff\1\157\1\154\1\55\1\154\1"+
-        "\145\1\141\1\164\1\156\1\171\2\55\1\165\1\141\1\154\2\141\1\147"+
-        "\1\151\1\141\1\144\1\154\2\141\1\162\1\157\1\55\1\145\2\171\1\55"+
-        "\1\142\1\141\1\151\1\172\1\145\1\153\1\151\1\154\1\uffff\1\150\1"+
-        "\145\1\157\1\141\1\55\1\141\1\uffff\1\172\1\151\1\145\1\151\1\uffff"+
-        "\1\151\1\172\1\145\1\55\1\167\1\151\1\145\1\154\1\151\1\172\1\55"+
-        "\1\151\1\uffff\1\157\1\55\1\164\1\145\1\55\1\uffff\1\147\1\150\1"+
-        "\154\1\uffff\1\142\1\55\1\162\2\55\1\145\1\154\1\162\1\172\1\154"+
-        "\1\uffff\1\155\1\uffff\1\172\1\55\1\141\1\156\1\55\1\145\1\160\1"+
-        "\151\1\163\1\uffff\1\151\1\167\1\147\1\uffff\1\141\1\55\1\154\1"+
-        "\144\1\145\1\162\1\uffff\1\157\1\uffff\1\145\2\55\1\157\2\uffff"+
-        "\1\156\1\55\1\uffff\1\145\1\uffff\1\157\1\141\1\150\1\162\1\156"+
-        "\1\154\2\157\1\151\1\141\2\145\1\uffff\1\55\1\157\1\141\1\147\1"+
-        "\150\2\145\1\55\1\171\2\145\1\162\1\uffff\2\55\1\145\1\163\1\55"+
-        "\1\164\2\uffff\1\157\1\154\1\55\1\171\1\156\1\164\1\154\1\145\1"+
-        "\162\1\157\1\167\1\165\1\142\2\55\1\162\1\55\1\150\1\uffff\1\55"+
-        "\1\uffff\1\55\1\56\1\164\1\uffff\1\55\1\uffff\1\154\1\153\1\145"+
-        "\1\164\1\156\1\55\2\uffff\1\164\2\145\2\uffff\1\151\1\145\1\164"+
-        "\1\160\1\151\1\162\1\154\1\167\1\uffff\2\145\4\uffff\1\162\2\157"+
-        "\1\160\1\55\2\163\1\55\1\153\2\uffff\1\164\1\144\4\uffff\1\157\1"+
-        "\145\1\151\1\55\1\165\1\157\1\55\1\167\1\153\1\145\1\144\1\uffff"+
-        "\2\165\1\164\1\55\1\153\1\142\2\uffff\1\145\1\156\1\144\1\171\1"+
-        "\145\1\153\1\145\1\166\1\156\1\150\1\55\1\155\1\147\1\164\1\161"+
-        "\1\154\1\uffff\1\156\2\55\1\uffff\1\154\1\144\1\147\1\145\1\167"+
-        "\1\55\1\156\1\171\1\164\1\141\1\163\1\55\1\uffff\1\161\1\154\1\162"+
-        "\1\165\1\145\1\165\1\151\1\145\1\157\1\163\2\172\1\145\1\141\1\uffff"+
-        "\1\150\1\172\1\156\1\154\1\172\1\145\1\uffff\1\147\1\160\1\uffff"+
-        "\1\55\1\162\1\uffff\1\162\1\55\1\165\1\162\1\uffff\1\157\2\uffff"+
-        "\1\55\1\165\1\141\1\145\1\154\1\157\1\145\1\uffff\1\162\1\147\1"+
-        "\uffff\1\55\1\141\2\163\1\143\1\150\1\162\1\55\1\uffff\1\165\1\145"+
-        "\1\167\1\151\1\154\1\144\2\uffff\1\157\1\145\1\uffff\1\154\1\162"+
-        "\1\156\1\151\1\157\2\55\1\165\1\162\1\141\1\154\1\141\1\156\1\154"+
-        "\1\141\1\171\1\141\1\145\1\154\1\145\1\uffff\1\151\1\160\1\55\1"+
-        "\151\1\162\1\145\1\uffff\3\55\1\141\1\145\2\uffff\1\55\1\163\1\170"+
-        "\1\uffff\1\55\1\167\1\165\1\uffff\1\55\1\144\1\141\1\144\1\145\1"+
-        "\161\1\154\1\150\1\146\1\154\2\uffff\1\145\1\uffff\1\141\1\uffff"+
-        "\1\162\1\uffff\1\56\1\55\1\164\1\145\3\55\1\163\1\154\1\55\1\154"+
-        "\1\156\1\172\1\162\1\151\1\55\1\uffff\1\153\1\164\1\145\1\55\1\143"+
-        "\1\55\1\164\2\uffff\1\162\2\150\1\55\1\145\1\146\1\147\1\157\1\145"+
-        "\2\55\1\162\1\uffff\1\162\1\144\1\uffff\1\145\1\55\1\154\1\157\1"+
-        "\55\1\145\1\163\1\145\1\uffff\1\55\1\154\2\55\1\145\1\55\1\156\1"+
-        "\55\1\151\1\156\1\145\1\147\1\151\1\uffff\1\157\1\162\1\145\1\165"+
-        "\1\145\1\143\2\uffff\1\165\1\157\1\150\2\55\1\uffff\2\55\1\142\1"+
-        "\155\1\145\1\uffff\2\165\1\143\1\162\2\141\2\162\1\157\1\55\1\156"+
-        "\1\55\2\145\1\55\1\164\1\151\1\145\2\55\1\145\1\55\1\150\1\55\1"+
-        "\uffff\1\55\1\145\1\uffff\1\145\1\157\1\167\1\uffff\1\145\2\171"+
-        "\1\55\1\151\1\153\1\55\1\145\1\55\1\uffff\1\163\1\145\1\55\1\153"+
-        "\1\151\1\145\1\uffff\1\145\1\144\1\150\1\156\1\145\1\141\1\144\1"+
-        "\55\1\154\1\157\1\55\1\164\1\144\2\uffff\1\145\1\141\1\156\1\144"+
-        "\1\171\1\145\1\153\1\155\1\147\1\142\1\164\1\145\1\154\2\156\1\55"+
-        "\1\145\1\uffff\1\146\1\55\1\156\3\uffff\1\142\1\144\1\uffff\3\55"+
-        "\1\uffff\1\156\1\145\1\uffff\1\55\1\162\1\145\1\156\1\165\1\145"+
-        "\1\151\1\146\1\165\2\144\1\145\1\146\1\uffff\1\157\1\55\1\154\1"+
-        "\150\1\141\1\uffff\1\154\2\141\1\150\1\164\1\142\1\55\1\144\1\157"+
-        "\1\55\1\143\1\164\1\145\2\55\1\163\1\164\1\163\1\uffff\2\55\1\151"+
-        "\2\uffff\1\163\1\164\3\uffff\1\162\1\155\1\162\1\163\1\150\1\55"+
-        "\1\156\1\147\1\162\1\uffff\1\154\1\162\1\uffff\1\55\1\145\1\55\1"+
-        "\uffff\1\165\2\uffff\1\156\1\uffff\1\55\1\uffff\1\55\1\164\1\147"+
-        "\1\145\1\144\1\156\1\145\1\142\1\157\1\164\2\145\1\167\1\164\4\uffff"+
-        "\1\154\2\55\1\141\1\145\1\150\1\160\1\147\1\164\1\151\1\161\1\154"+
-        "\1\uffff\1\55\1\uffff\2\55\1\uffff\1\55\1\164\1\55\2\uffff\1\55"+
-        "\1\uffff\1\164\2\uffff\1\145\1\55\1\167\1\156\3\55\1\uffff\1\160"+
-        "\1\145\1\uffff\1\156\1\uffff\1\163\1\55\1\142\1\55\1\164\1\145\2"+
-        "\55\1\151\1\145\1\164\1\154\1\55\1\uffff\1\157\1\55\1\uffff\1\145"+
-        "\2\55\1\154\1\55\1\145\1\55\1\156\2\55\1\157\1\162\1\154\1\145\1"+
-        "\154\1\157\2\55\1\uffff\1\154\1\157\1\146\1\154\1\uffff\3\55\1\142"+
-        "\2\uffff\2\55\1\uffff\1\164\1\156\1\55\1\157\1\164\1\160\1\55\1"+
-        "\145\1\55\1\157\1\145\1\uffff\1\151\1\uffff\1\55\1\146\2\141\6\uffff"+
-        "\1\162\1\141\1\142\1\154\1\55\1\uffff\1\162\1\141\1\146\1\55\1\156"+
-        "\1\146\1\141\1\157\1\55\1\141\1\142\1\uffff\1\151\1\55\1\150\1\142"+
-        "\1\164\1\143\1\164\1\55\1\157\2\55\1\150\3\uffff\1\55\1\145\1\142"+
-        "\1\151\1\144\1\uffff\1\55\1\uffff\1\145\1\162\2\uffff\1\141\1\162"+
-        "\3\55\1\145\1\154\1\162\1\151\5\55\1\165\2\uffff\1\155\1\55\1\151"+
-        "\1\154\1\162\1\145\1\156\1\165\1\145\4\uffff\1\145\2\uffff\1\55"+
-        "\1\156\1\uffff\1\156\1\55\3\uffff\1\163\1\55\1\164\1\55\1\uffff"+
-        "\1\157\1\uffff\1\145\1\156\2\uffff\1\164\2\55\1\155\1\uffff\1\167"+
-        "\1\uffff\1\55\2\uffff\1\55\1\uffff\1\156\1\uffff\1\55\2\uffff\1"+
-        "\156\1\145\1\165\1\147\1\142\1\167\2\uffff\1\154\1\162\1\157\1\165"+
-        "\3\uffff\1\157\2\uffff\1\55\1\162\1\uffff\1\151\1\162\1\55\1\uffff"+
-        "\1\55\1\uffff\1\167\1\156\2\uffff\1\150\1\151\2\uffff\1\142\1\162"+
-        "\2\uffff\1\164\1\145\1\165\1\154\1\157\1\143\1\151\1\uffff\1\147"+
-        "\2\164\1\uffff\1\154\1\55\1\144\10\uffff\1\143\1\uffff\1\157\1\145"+
-        "\1\141\1\151\1\55\1\162\1\170\1\165\1\163\1\143\1\145\1\uffff\1"+
-        "\55\1\154\1\160\1\55\1\uffff\1\55\1\157\1\55\1\145\3\uffff\1\156"+
-        "\1\165\1\141\1\163\5\uffff\1\145\1\141\1\uffff\1\144\2\145\1\142"+
-        "\1\147\1\157\1\164\1\55\1\uffff\2\55\1\uffff\1\145\1\uffff\1\55"+
-        "\1\142\1\170\2\55\1\145\2\uffff\1\157\1\55\2\uffff\1\162\1\uffff"+
-        "\1\55\2\145\1\162\1\154\1\55\1\151\1\144\1\156\1\163\1\170\1\uffff"+
-        "\1\157\1\163\1\145\2\uffff\1\50\1\55\2\uffff\1\156\1\uffff\1\145"+
-        "\1\153\1\145\1\154\1\145\1\141\2\153\1\156\4\uffff\1\141\1\162\1"+
-        "\55\1\160\1\uffff\1\141\1\uffff\1\151\1\153\1\156\1\154\2\143\1"+
-        "\150\1\uffff\1\157\2\uffff\1\156\1\150\1\155\4\uffff\1\154\1\uffff"+
-        "\1\165\1\163\1\145\1\uffff\1\144\1\uffff\1\145\1\55\1\145\2\171"+
-        "\1\145\1\55\1\162\2\55\1\145\1\154\1\147\1\151\1\162\3\uffff\1\163"+
-        "\1\uffff\1\157\1\55\2\uffff\1\55\1\156\1\uffff\1\157\1\uffff\1\156"+
-        "\1\55\1\141\1\165\1\uffff\1\160\2\55\1\150\1\55\1\144\1\145\1\144"+
-        "\2\uffff\1\164\1\154\4\55\1\142\1\145\1\147\1\164\1\154\1\157\1"+
-        "\141\3\uffff\1\163\1\156\2\55\1\146\2\153\3\uffff\1\153\1\144\1"+
-        "\145\1\141\1\uffff\1\146\2\145\1\154\1\55\1\156\1\uffff\4\55\1\uffff"+
-        "\1\151\2\uffff\1\156\1\165\1\162\1\163\1\145\1\55\1\170\2\uffff"+
-        "\2\144\1\55\1\uffff\2\171\1\145\1\163\1\145\1\uffff\1\55\1\uffff"+
-        "\5\55\1\154\1\170\1\146\1\154\1\145\1\55\1\162\2\55\1\153\1\uffff"+
-        "\1\162\1\uffff\1\150\1\145\1\154\1\142\1\55\1\147\1\55\1\145\1\55"+
-        "\1\154\1\147\2\55\1\163\1\154\1\uffff\1\55\4\uffff\1\156\1\55\3"+
-        "\145\1\144\1\uffff\2\55\1\171\1\uffff\3\55\1\145\1\154\4\uffff\1"+
-        "\146\1\uffff\1\146\2\uffff\1\164\4\uffff\1\151\1\uffff\1\141\1\uffff"+
-        "\1\154\2\uffff\1\157\1\146\1\uffff\1\141\1\145\1\151\2\55\2\uffff"+
-        "\1\141\1\146\1\162\1\143\1\55\1\143\1\uffff\1\146\1\145\1\146\1"+
-        "\uffff\1\55\1\151\1\uffff\1\145\1\uffff\1\55\1\145\2\55\2\uffff"+
-        "\1\145\3\uffff\1\163\1\154\1\uffff\1\151\1\uffff\1\151\1\uffff\1"+
-        "\162\1\156\1\uffff\1\142\1\55\1\165\1\uffff\1\151\2\uffff\1\162"+
-        "\1\uffff\1\55\1\144\1\141\1\143\1\162\2\uffff\1\157\5\uffff\1\155"+
-        "\1\141\2\uffff\2\55\3\uffff\1\160\1\55\1\uffff\1\156\2\uffff\1\154"+
-        "\1\55\1\151\2\uffff\1\156\1\uffff\1\157\1\164\1\145\1\154\1\156"+
-        "\2\uffff\1\151\2\uffff\1\55\4\uffff\1\55\1\165\1\uffff\1\141\2\uffff"+
-        "\1\146\1\151\1\uffff\1\163\1\uffff\1\55\1\154\1\uffff\1\160\1\164"+
-        "\1\153\1\55\1\154\1\151\2\144\1\154\2\uffff\1\156\1\147\2\uffff"+
-        "\1\154\3\uffff\1\145\1\uffff\1\157\1\163\1\55\1\145\1\146\1\uffff"+
-        "\1\55\1\156\2\55\1\151\1\144\1\145\2\uffff\1\163\1\167\1\145\1\146"+
-        "\1\uffff\1\55\1\uffff\1\151\1\uffff\1\146\1\145\1\146\1\154\1\156"+
-        "\4\55\1\163\1\uffff\1\151\5\uffff\1\151\1\55\1\164\1\uffff\1\151"+
-        "\1\145\1\146\1\160\3\uffff\1\55\2\uffff\1\156\1\uffff\1\143\1\162"+
-        "\1\156\1\55\1\164\5\uffff\1\164\2\uffff\1\164\1\uffff\1\157\1\145"+
-        "\1\163\1\162\1\55\1\162\1\153\1\55\1\uffff\1\164\1\157\1\146\1\uffff"+
-        "\1\157\1\145\1\163\1\162\1\153\1\uffff\1\151\1\uffff\1\153\1\55"+
-        "\1\uffff\1\164\1\157\1\145\2\uffff\1\145\2\uffff\1\162\1\153\2\55"+
-        "\1\157\1\145\4\uffff\1\153\1\55\1\145\1\144\1\uffff\1\55\2\uffff"+
-        "\1\144\3\uffff";
-    static final String DFA13_maxS =
+        "\uffff\1\162\1\154\1\153\1\55\1\154\1\50\1\141\2\163\2\162\1\141"+
+        "\1\154\1\146\1\145\1\55\2\164\1\157\1\55\1\165\1\160\1\uffff\1\166"+
+        "\1\142\2\145\1\162\2\145\1\163\2\55\1\163\1\171\1\151\1\55\1\uffff"+
+        "\1\55\1\141\1\151\1\162\1\151\1\143\1\171\1\156\1\157\1\141\1\163"+
+        "\1\165\1\160\1\145\1\162\1\145\1\163\1\55\1\145\1\55\1\141\1\152"+
+        "\1\55\1\145\1\162\1\150\1\145\1\163\1\145\1\55\1\144\1\141\1\162"+
+        "\1\145\1\156\1\164\1\154\1\163\1\154\1\157\1\171\1\156\1\145\1\154"+
+        "\1\145\1\55\1\163\2\55\1\164\1\145\1\163\1\145\3\55\1\163\1\154"+
+        "\1\uffff\1\164\1\uffff\1\164\1\145\1\165\1\160\1\145\1\142\1\55"+
+        "\1\141\3\163\1\uffff\1\171\2\145\1\55\1\161\1\55\1\145\1\55\1\153"+
+        "\1\143\1\157\2\55\1\171\1\154\1\145\1\154\1\165\2\156\3\55\2\163"+
+        "\1\164\1\55\1\164\3\55\1\151\2\156\1\147\1\145\1\154\1\151\1\141"+
+        "\1\145\1\147\1\151\1\161\1\160\1\uffff\1\141\1\145\1\164\1\144\1"+
+        "\142\1\154\1\141\1\uffff\1\55\1\uffff\1\151\1\55\1\147\1\171\1\150"+
+        "\3\55\1\145\1\154\1\144\1\141\1\162\1\171\2\151\1\uffff\1\157\1"+
+        "\uffff\1\151\3\141\2\142\1\143\1\156\1\141\1\143\2\141\1\143\1\146"+
+        "\2\141\1\uffff\1\155\1\145\1\157\1\150\1\157\2\55\1\151\1\55\1\154"+
+        "\1\151\1\162\1\uffff\1\142\1\162\1\154\1\uffff\1\154\1\151\1\153"+
+        "\1\145\1\156\1\154\1\171\1\157\1\150\1\141\1\154\1\145\1\141\1\165"+
+        "\1\151\1\144\1\162\1\141\1\144\1\162\1\150\1\uffff\1\154\1\151\1"+
+        "\144\1\156\2\uffff\1\163\1\160\1\55\1\147\2\162\1\164\1\156\1\155"+
+        "\1\55\1\151\3\163\1\55\1\163\1\151\1\uffff\1\160\1\uffff\1\154\1"+
+        "\157\1\uffff\1\163\2\145\1\163\1\151\1\156\1\154\1\55\1\164\1\156"+
+        "\1\165\1\145\1\55\1\147\1\143\1\142\1\55\1\145\1\156\1\142\1\141"+
+        "\1\162\1\165\1\142\1\uffff\1\151\1\uffff\1\145\2\55\1\151\1\164"+
+        "\3\uffff\1\160\1\151\1\157\1\154\1\55\1\157\1\141\1\55\1\162\1\uffff"+
+        "\1\154\1\164\1\55\1\151\1\163\1\142\1\145\1\uffff\1\165\1\141\1"+
+        "\uffff\1\55\1\151\1\uffff\1\55\1\150\1\155\1\162\2\uffff\1\167\2"+
+        "\55\1\151\1\145\2\55\3\uffff\1\142\1\151\1\167\1\156\1\uffff\1\142"+
+        "\1\162\1\uffff\1\55\1\162\1\143\1\uffff\1\156\1\143\1\144\2\162"+
+        "\1\141\1\144\1\143\1\55\1\145\1\144\1\165\1\141\1\164\1\143\2\55"+
+        "\1\162\1\142\1\154\1\uffff\1\146\1\145\1\157\1\165\1\151\1\141\1"+
+        "\160\3\uffff\1\162\2\145\1\156\1\157\1\163\1\55\1\143\1\55\1\167"+
+        "\1\143\1\154\1\143\1\170\1\uffff\1\141\1\145\1\144\1\uffff\1\157"+
+        "\1\142\2\147\1\uffff\1\162\3\uffff\1\162\2\uffff\1\141\1\uffff\3"+
+        "\141\1\154\1\uffff\1\144\1\uffff\1\144\1\151\1\141\1\uffff\1\154"+
+        "\5\uffff\1\156\2\uffff\1\141\1\143\1\151\2\uffff\1\146\1\143\1\145"+
+        "\1\162\1\164\1\uffff\1\144\1\uffff\1\162\1\144\1\141\1\156\1\142"+
+        "\1\uffff\1\156\1\uffff\1\157\1\154\1\55\1\154\1\145\1\141\1\164"+
+        "\1\156\1\171\2\55\1\165\1\141\1\154\2\141\1\147\1\151\1\141\1\144"+
+        "\1\154\2\141\1\162\1\157\1\55\1\145\2\171\1\55\1\142\1\141\1\151"+
+        "\1\172\1\145\1\153\1\151\1\154\1\uffff\1\150\1\145\1\157\1\141\1"+
+        "\55\1\141\1\uffff\1\172\1\151\1\145\1\151\1\uffff\1\151\1\172\1"+
+        "\145\1\55\1\167\1\151\1\145\1\154\1\151\1\172\1\55\1\151\1\uffff"+
+        "\1\157\1\55\1\164\1\145\1\55\1\uffff\1\147\1\150\1\154\1\uffff\1"+
+        "\142\1\55\1\162\2\55\1\145\1\154\1\162\1\172\1\154\1\uffff\1\155"+
+        "\1\uffff\1\172\1\55\1\141\1\156\1\55\1\145\1\160\1\151\1\163\1\uffff"+
+        "\1\151\1\167\1\147\1\uffff\1\141\1\55\1\154\1\144\1\145\1\162\1"+
+        "\uffff\1\157\1\uffff\1\145\2\55\1\157\2\uffff\1\156\1\55\1\uffff"+
+        "\1\145\1\uffff\1\157\1\141\1\150\1\162\1\156\1\154\2\157\1\151\1"+
+        "\141\2\145\1\uffff\1\55\1\157\1\141\1\147\1\150\2\145\1\55\1\171"+
+        "\2\145\1\162\1\uffff\2\55\1\145\1\163\1\55\1\164\2\uffff\1\157\1"+
+        "\154\1\55\1\171\1\156\1\164\1\154\1\145\1\162\1\157\1\167\1\165"+
+        "\1\142\2\55\1\162\1\55\1\150\1\uffff\1\55\1\uffff\1\55\1\164\1\uffff"+
+        "\1\55\1\uffff\1\154\1\153\1\145\1\164\1\156\1\55\2\uffff\1\164\2"+
+        "\145\2\uffff\1\151\1\145\1\164\1\160\1\151\1\162\1\154\1\167\1\uffff"+
+        "\2\145\4\uffff\1\162\2\157\1\160\1\55\2\163\1\55\1\153\2\uffff\1"+
+        "\164\1\144\4\uffff\1\157\1\145\1\151\1\55\1\165\1\157\1\55\1\167"+
+        "\1\153\1\145\1\144\1\uffff\2\165\1\164\1\55\1\153\1\142\2\uffff"+
+        "\1\145\1\156\1\144\1\171\1\145\1\153\1\145\1\166\1\156\1\150\1\55"+
+        "\1\155\1\147\1\164\1\161\1\154\1\uffff\1\156\2\55\1\uffff\1\154"+
+        "\1\144\1\147\1\145\1\167\1\55\1\156\1\171\1\164\1\141\1\163\1\55"+
+        "\1\uffff\1\161\1\154\1\162\1\165\1\145\1\165\1\151\1\145\1\157\1"+
+        "\163\2\172\1\145\1\141\1\uffff\1\150\1\172\1\156\1\154\1\172\1\145"+
+        "\1\uffff\1\147\1\160\1\uffff\1\55\1\162\1\uffff\1\162\1\55\1\165"+
+        "\1\162\1\uffff\1\157\2\uffff\1\55\1\165\1\141\1\145\1\154\1\157"+
+        "\1\145\1\uffff\1\162\1\147\1\uffff\1\55\1\141\2\163\1\143\1\150"+
+        "\1\162\1\55\1\uffff\1\165\1\145\1\167\1\151\1\154\1\144\2\uffff"+
+        "\1\157\1\145\1\uffff\1\154\1\162\1\156\1\151\1\157\2\55\1\165\1"+
+        "\162\1\141\1\154\1\141\1\156\1\154\1\141\1\171\1\141\1\145\1\154"+
+        "\1\145\1\uffff\1\151\1\160\1\55\1\151\1\162\1\145\1\uffff\3\55\1"+
+        "\141\1\145\2\uffff\1\55\1\163\1\170\1\uffff\1\55\1\167\1\165\1\uffff"+
+        "\1\55\1\144\1\141\1\144\1\145\1\161\1\154\1\150\1\146\1\154\2\uffff"+
+        "\1\145\1\uffff\1\141\1\uffff\1\162\1\uffff\1\55\1\164\1\145\3\55"+
+        "\1\163\1\154\1\55\1\154\1\156\1\172\1\162\1\151\1\55\1\uffff\1\153"+
+        "\1\164\1\145\1\55\1\143\1\55\1\164\2\uffff\1\162\2\150\1\55\1\145"+
+        "\1\146\1\147\1\157\1\145\2\55\1\162\1\uffff\1\162\1\144\1\uffff"+
+        "\1\145\1\55\1\154\1\157\1\55\1\145\1\163\1\145\1\uffff\1\55\1\154"+
+        "\2\55\1\145\1\55\1\156\1\55\1\151\1\156\1\145\1\147\1\151\1\uffff"+
+        "\1\157\1\162\1\145\1\165\1\145\1\143\2\uffff\1\165\1\157\1\150\2"+
+        "\55\1\uffff\2\55\1\142\1\155\1\145\1\uffff\2\165\1\143\1\162\2\141"+
+        "\2\162\1\157\1\55\1\156\1\55\2\145\1\55\1\164\1\151\1\145\2\55\1"+
+        "\145\1\55\1\150\1\55\1\uffff\1\55\1\145\1\uffff\1\145\1\157\1\167"+
+        "\1\uffff\1\145\2\171\1\55\1\151\1\153\1\55\1\145\1\55\1\uffff\1"+
+        "\163\1\145\1\55\1\153\1\151\1\145\1\uffff\1\145\1\144\1\150\1\156"+
+        "\1\145\1\141\1\144\1\55\1\154\1\157\1\55\1\164\1\144\2\uffff\1\145"+
+        "\1\141\1\156\1\144\1\171\1\145\1\153\1\155\1\147\1\142\1\164\1\145"+
+        "\1\154\2\156\1\55\1\145\1\uffff\1\146\1\55\1\156\3\uffff\1\142\1"+
+        "\144\1\uffff\3\55\1\uffff\1\156\1\145\1\uffff\1\55\1\162\1\145\1"+
+        "\156\1\165\1\145\1\151\1\146\1\165\2\144\1\145\1\146\1\uffff\1\157"+
+        "\1\55\1\154\1\150\1\141\1\uffff\1\154\2\141\1\150\1\164\1\142\1"+
+        "\55\1\144\1\157\1\55\1\143\1\164\1\145\2\55\1\163\1\164\1\163\1"+
+        "\uffff\2\55\1\151\2\uffff\1\163\1\164\3\uffff\1\162\1\155\1\162"+
+        "\1\163\1\150\1\55\1\156\1\147\1\162\1\uffff\1\154\1\162\1\uffff"+
+        "\1\55\1\145\1\55\1\uffff\1\165\2\uffff\1\156\1\uffff\1\55\1\uffff"+
+        "\1\55\1\164\1\147\1\145\1\144\1\156\1\145\1\142\1\157\1\164\2\145"+
+        "\1\167\1\164\4\uffff\1\154\2\55\1\141\1\145\1\150\1\160\1\147\1"+
+        "\164\1\151\1\161\1\154\1\uffff\1\55\1\uffff\2\55\1\uffff\1\55\1"+
+        "\164\1\55\2\uffff\1\55\1\uffff\1\164\2\uffff\1\145\1\55\1\167\1"+
+        "\156\3\55\1\uffff\1\160\1\145\1\uffff\1\156\1\uffff\1\163\1\55\1"+
+        "\142\1\55\1\164\1\145\2\55\1\151\1\145\1\164\1\154\1\55\1\uffff"+
+        "\1\157\1\55\1\uffff\1\145\2\55\1\154\1\55\1\145\1\55\1\156\2\55"+
+        "\1\157\1\162\1\154\1\145\1\154\1\157\2\55\1\uffff\1\154\1\157\1"+
+        "\146\1\154\1\uffff\3\55\1\142\2\uffff\2\55\1\uffff\1\164\1\156\1"+
+        "\55\1\157\1\164\1\160\1\55\1\145\1\55\1\157\1\145\1\uffff\1\151"+
+        "\1\uffff\1\55\1\146\2\141\6\uffff\1\162\1\141\1\142\1\154\1\55\1"+
+        "\uffff\1\162\1\141\1\146\1\55\1\156\1\146\1\141\1\157\1\55\1\141"+
+        "\1\142\1\uffff\1\151\1\55\1\150\1\142\1\164\1\143\1\164\1\55\1\157"+
+        "\2\55\1\150\3\uffff\1\55\1\145\1\142\1\151\1\144\1\uffff\1\55\1"+
+        "\uffff\1\145\1\162\2\uffff\1\141\1\162\3\55\1\145\1\154\1\162\1"+
+        "\151\5\55\1\165\2\uffff\1\155\1\55\1\151\1\154\1\162\1\145\1\156"+
+        "\1\165\1\145\4\uffff\1\145\2\uffff\1\55\1\156\1\uffff\1\156\1\55"+
+        "\3\uffff\1\163\1\55\1\164\1\55\1\uffff\1\157\1\uffff\1\145\1\156"+
+        "\2\uffff\1\164\2\55\1\155\1\uffff\1\167\1\uffff\1\55\2\uffff\1\55"+
+        "\1\uffff\1\156\1\uffff\1\55\2\uffff\1\156\1\145\1\165\1\147\1\142"+
+        "\1\167\2\uffff\1\154\1\162\1\157\1\165\3\uffff\1\157\2\uffff\1\55"+
+        "\1\162\1\uffff\1\151\1\162\1\55\1\uffff\1\55\1\uffff\1\167\1\156"+
+        "\2\uffff\1\150\1\151\2\uffff\1\142\1\162\2\uffff\1\164\1\145\1\165"+
+        "\1\154\1\157\1\143\1\151\1\uffff\1\147\2\164\1\uffff\1\154\1\55"+
+        "\1\144\10\uffff\1\143\1\uffff\1\157\1\145\1\141\1\151\1\55\1\162"+
+        "\1\170\1\165\1\163\1\143\1\145\1\uffff\1\55\1\154\1\160\1\55\1\uffff"+
+        "\1\55\1\157\1\55\1\145\3\uffff\1\156\1\165\1\141\1\163\5\uffff\1"+
+        "\145\1\141\1\uffff\1\144\2\145\1\142\1\147\1\157\1\164\1\55\1\uffff"+
+        "\2\55\1\uffff\1\145\1\uffff\1\55\1\142\1\170\2\55\1\145\2\uffff"+
+        "\1\157\1\55\2\uffff\1\162\1\uffff\1\55\2\145\1\162\1\154\1\55\1"+
+        "\151\1\144\1\156\1\163\1\170\1\uffff\1\157\1\163\1\145\2\uffff\1"+
+        "\50\1\55\2\uffff\1\156\1\uffff\1\145\1\153\1\145\1\154\1\145\1\141"+
+        "\2\153\1\156\4\uffff\1\141\1\162\1\55\1\160\1\uffff\1\141\1\uffff"+
+        "\1\151\1\153\1\156\1\154\2\143\1\150\1\uffff\1\157\2\uffff\1\156"+
+        "\1\150\1\155\4\uffff\1\154\1\uffff\1\165\1\163\1\145\1\uffff\1\144"+
+        "\1\uffff\1\145\1\55\1\145\2\171\1\145\1\55\1\162\2\55\1\145\1\154"+
+        "\1\147\1\151\1\162\3\uffff\1\163\1\uffff\1\157\1\55\2\uffff\1\55"+
+        "\1\156\1\uffff\1\157\1\uffff\1\156\1\55\1\141\1\165\1\uffff\1\160"+
+        "\2\55\1\150\1\55\1\144\1\145\1\144\2\uffff\1\164\1\154\4\55\1\142"+
+        "\1\145\1\147\1\164\1\154\1\157\1\141\3\uffff\1\163\1\156\2\55\1"+
+        "\146\2\153\3\uffff\1\153\1\144\1\145\1\141\1\uffff\1\146\2\145\1"+
+        "\154\1\55\1\156\1\uffff\4\55\1\uffff\1\151\2\uffff\1\156\1\165\1"+
+        "\162\1\163\1\145\1\55\1\170\2\uffff\2\144\1\55\1\uffff\2\171\1\145"+
+        "\1\163\1\145\1\uffff\1\55\1\uffff\5\55\1\154\1\170\1\146\1\154\1"+
+        "\145\1\55\1\162\2\55\1\153\1\uffff\1\162\1\uffff\1\150\1\145\1\154"+
+        "\1\142\1\55\1\147\1\55\1\145\1\55\1\154\1\147\2\55\1\163\1\154\1"+
+        "\uffff\1\55\4\uffff\1\156\1\55\3\145\1\144\1\uffff\2\55\1\171\1"+
+        "\uffff\3\55\1\145\1\154\4\uffff\1\146\1\uffff\1\146\2\uffff\1\164"+
+        "\4\uffff\1\151\1\uffff\1\141\1\uffff\1\154\2\uffff\1\157\1\146\1"+
+        "\uffff\1\141\1\145\1\151\2\55\2\uffff\1\141\1\146\1\162\1\143\1"+
+        "\55\1\143\1\uffff\1\146\1\145\1\146\1\uffff\1\55\1\151\1\uffff\1"+
+        "\145\1\uffff\1\55\1\145\2\55\2\uffff\1\145\3\uffff\1\163\1\154\1"+
+        "\uffff\1\151\1\uffff\1\151\1\uffff\1\162\1\156\1\uffff\1\142\1\55"+
+        "\1\165\1\uffff\1\151\2\uffff\1\162\1\uffff\1\55\1\144\1\141\1\143"+
+        "\1\162\2\uffff\1\157\5\uffff\1\155\1\141\2\uffff\2\55\3\uffff\1"+
+        "\160\1\55\1\uffff\1\156\2\uffff\1\154\1\55\1\151\2\uffff\1\156\1"+
+        "\uffff\1\157\1\164\1\145\1\154\1\156\2\uffff\1\151\2\uffff\1\55"+
+        "\4\uffff\1\55\1\165\1\uffff\1\141\2\uffff\1\146\1\151\1\uffff\1"+
+        "\163\1\uffff\1\55\1\154\1\uffff\1\160\1\164\1\153\1\55\1\154\1\151"+
+        "\2\144\1\154\2\uffff\1\156\1\147\2\uffff\1\154\3\uffff\1\145\1\uffff"+
+        "\1\157\1\163\1\55\1\145\1\146\1\uffff\1\55\1\156\2\55\1\151\1\144"+
+        "\1\145\2\uffff\1\163\1\167\1\145\1\146\1\uffff\1\55\1\uffff\1\151"+
+        "\1\uffff\1\146\1\145\1\146\1\154\1\156\4\55\1\163\1\uffff\1\151"+
+        "\5\uffff\1\151\1\55\1\164\1\uffff\1\151\1\145\1\146\1\160\3\uffff"+
+        "\1\55\2\uffff\1\156\1\uffff\1\143\1\162\1\156\1\55\1\164\5\uffff"+
+        "\1\164\2\uffff\1\164\1\uffff\1\157\1\145\1\163\1\162\1\55\1\162"+
+        "\1\153\1\55\1\uffff\1\164\1\157\1\146\1\uffff\1\157\1\145\1\163"+
+        "\1\162\1\153\1\uffff\1\151\1\uffff\1\153\1\55\1\uffff\1\164\1\157"+
+        "\1\145\2\uffff\1\145\2\uffff\1\162\1\153\2\55\1\157\1\145\4\uffff"+
+        "\1\153\1\55\1\145\1\144\1\uffff\1\55\2\uffff\1\144\3\uffff";
+    static final String DFA12_maxS =
         "\1\175\2\uffff\1\146\1\171\1\162\1\172\1\165\1\170\1\167\1\172"+
         "\1\157\1\151\1\167\1\165\1\172\1\165\1\162\1\151\1\166\1\157\1\165"+
-        "\1\170\1\166\1\150\1\145\3\uffff\2\71\1\uffff\1\52\3\uffff\1\162"+
+        "\1\170\1\166\1\150\1\145\3\uffff\1\71\2\uffff\1\52\3\uffff\1\162"+
         "\1\71\1\uffff\1\54\2\uffff\1\170\1\uffff\1\157\1\166\1\156\1\151"+
         "\1\144\1\157\1\141\1\172\1\162\1\163\1\155\1\164\1\157\2\162\1\164"+
         "\1\172\1\142\1\166\1\154\1\164\1\162\1\144\2\172\1\162\1\172\1\154"+
@@ -15200,9 +15129,9 @@ public class InternalCssDslLexer extends Lexer {
         "\1\166\2\163\1\157\1\145\1\165\1\157\1\154\1\156\1\155\1\167\1\145"+
         "\1\164\1\151\1\143\1\154\1\145\1\160\1\147\1\171\1\144\1\142\1\163"+
         "\1\160\1\162\1\156\1\165\1\167\1\162\4\172\1\157\1\141\1\172\1\154"+
-        "\6\uffff\1\154\1\71\2\uffff\1\55\1\163\1\155\1\157\1\145\1\164\1"+
-        "\156\1\164\1\160\1\145\1\162\1\143\1\156\1\uffff\1\141\1\160\1\172"+
-        "\1\151\1\153\1\150\1\146\1\147\1\164\1\147\1\160\2\144\2\145\1\160"+
+        "\4\uffff\1\154\2\uffff\1\55\1\163\1\155\1\157\1\145\1\164\1\156"+
+        "\1\164\1\160\1\145\1\162\1\143\1\156\1\uffff\1\141\1\160\1\172\1"+
+        "\151\1\153\1\150\1\146\1\147\1\164\1\147\1\160\2\144\2\145\1\160"+
         "\1\uffff\1\172\1\145\1\143\1\164\1\145\1\156\2\164\1\145\1\157\1"+
         "\151\2\uffff\1\145\1\154\1\uffff\1\151\1\uffff\1\162\1\145\1\162"+
         "\1\145\1\154\1\162\1\145\1\155\1\171\1\162\1\163\1\162\2\145\1\164"+
@@ -15215,8 +15144,8 @@ public class InternalCssDslLexer extends Lexer {
         "\2\145\1\164\1\144\1\157\1\145\1\156\1\144\1\162\1\163\1\154\1\166"+
         "\1\156\1\150\1\151\1\55\1\172\1\145\1\154\1\150\1\156\1\171\1\141"+
         "\2\172\1\164\2\145\1\141\1\143\1\165\1\153\1\155\1\144\1\160\3\uffff"+
-        "\2\151\1\145\1\uffff\1\162\1\154\1\153\1\172\1\154\1\50\1\71\1\172"+
-        "\2\163\2\162\1\141\1\154\1\163\1\145\1\172\2\164\1\157\1\172\1\165"+
+        "\2\151\1\145\1\uffff\1\162\1\154\1\153\1\172\1\154\1\50\1\172\2"+
+        "\163\2\162\1\141\1\154\1\163\1\145\1\172\2\164\1\157\1\172\1\165"+
         "\1\163\1\uffff\2\166\2\145\1\162\2\145\1\163\1\172\1\55\1\163\1"+
         "\171\1\151\1\172\1\uffff\1\172\1\141\1\151\1\162\1\151\1\143\1\171"+
         "\1\156\1\157\1\165\1\163\1\165\1\160\1\145\1\162\1\145\1\163\1\172"+
@@ -15230,11 +15159,11 @@ public class InternalCssDslLexer extends Lexer {
         "\1\172\1\151\2\156\1\147\1\145\1\154\1\151\1\141\1\145\1\147\1\151"+
         "\1\161\1\160\1\uffff\1\141\1\145\1\164\1\144\1\142\1\154\1\141\1"+
         "\uffff\1\172\1\uffff\1\151\1\55\1\166\1\171\1\150\3\172\1\145\1"+
-        "\154\1\144\1\147\1\162\1\171\2\151\1\uffff\1\157\1\uffff\1\71\1"+
-        "\157\1\162\1\157\1\151\2\160\1\164\1\156\1\165\1\156\1\151\1\162"+
-        "\1\170\1\146\2\157\1\uffff\1\156\1\145\1\157\1\150\1\157\1\55\1"+
-        "\172\1\151\1\172\1\154\1\151\1\162\1\uffff\1\142\1\162\1\154\1\uffff"+
-        "\1\154\1\151\1\153\1\145\1\156\1\154\1\171\1\162\1\150\1\141\1\162"+
+        "\154\1\144\1\147\1\162\1\171\2\151\1\uffff\1\157\1\uffff\1\157\1"+
+        "\162\1\157\1\151\2\160\1\164\1\156\1\165\1\156\1\151\1\162\1\170"+
+        "\1\146\2\157\1\uffff\1\156\1\145\1\157\1\150\1\157\1\55\1\172\1"+
+        "\151\1\172\1\154\1\151\1\162\1\uffff\1\142\1\162\1\154\1\uffff\1"+
+        "\154\1\151\1\153\1\145\1\156\1\154\1\171\1\162\1\150\1\141\1\162"+
         "\1\145\1\154\1\165\1\151\1\144\1\162\1\145\1\144\1\162\1\150\1\uffff"+
         "\1\154\1\151\1\144\1\156\2\uffff\1\163\1\160\1\172\1\147\2\162\1"+
         "\164\1\156\1\155\1\172\1\151\3\163\1\172\1\163\1\151\1\uffff\1\160"+
@@ -15249,37 +15178,37 @@ public class InternalCssDslLexer extends Lexer {
         "\1\156\1\143\1\144\2\162\1\141\1\144\1\143\1\172\1\145\1\144\1\165"+
         "\1\141\1\164\1\143\2\172\1\162\1\142\1\154\1\uffff\1\146\1\163\1"+
         "\162\1\165\1\151\1\141\1\160\3\uffff\1\162\2\145\1\156\1\157\1\163"+
-        "\1\172\1\143\1\172\1\167\1\71\1\156\2\164\1\170\1\uffff\1\141\1"+
-        "\145\1\156\1\uffff\1\157\1\142\1\147\1\156\1\uffff\1\166\3\uffff"+
-        "\1\162\2\uffff\1\141\1\uffff\1\162\1\141\1\157\1\154\1\uffff\1\144"+
-        "\1\uffff\1\151\1\157\1\141\1\uffff\1\154\5\uffff\1\156\2\uffff\1"+
-        "\141\1\143\1\151\2\uffff\1\146\1\162\1\157\1\164\1\167\1\uffff\1"+
-        "\163\1\uffff\1\162\1\144\1\141\1\156\1\144\1\uffff\1\156\1\uffff"+
-        "\1\157\1\154\1\172\1\154\1\145\1\141\1\164\1\156\1\171\2\172\1\165"+
-        "\1\141\1\154\1\145\1\141\1\147\1\151\1\143\1\144\1\154\2\141\1\162"+
-        "\1\157\1\172\1\145\2\171\1\172\1\142\1\141\1\151\1\172\1\145\1\153"+
-        "\1\151\1\154\1\uffff\1\150\1\145\1\157\1\141\1\172\1\166\1\uffff"+
-        "\1\172\1\151\1\145\1\151\1\uffff\1\151\1\172\1\145\1\172\1\167\1"+
-        "\151\1\145\1\154\1\151\2\172\1\151\1\uffff\1\157\1\172\1\164\1\145"+
-        "\1\172\1\uffff\1\147\1\150\1\154\1\uffff\1\142\1\172\1\162\2\172"+
-        "\1\145\1\154\1\162\1\172\1\154\1\uffff\1\155\1\uffff\2\172\1\141"+
-        "\1\156\1\172\1\145\1\160\1\151\1\163\1\uffff\1\151\1\167\1\147\1"+
-        "\uffff\1\141\1\172\1\154\1\144\1\145\1\162\1\uffff\1\157\1\uffff"+
-        "\1\145\2\172\1\157\2\uffff\1\156\1\172\1\uffff\1\145\1\uffff\1\157"+
-        "\1\141\1\150\2\162\1\154\1\171\1\162\1\151\1\164\2\145\1\uffff\1"+
-        "\172\1\157\1\141\1\147\1\150\2\145\1\172\1\171\2\145\1\162\1\uffff"+
-        "\2\172\1\145\1\163\1\172\1\164\2\uffff\1\157\1\154\1\172\1\171\1"+
-        "\156\1\164\1\154\1\145\1\162\1\157\1\167\1\165\1\142\2\172\1\162"+
-        "\1\172\1\150\1\uffff\1\172\1\uffff\1\172\1\71\1\164\1\uffff\1\55"+
-        "\1\uffff\1\154\1\153\1\145\1\164\1\156\1\55\2\uffff\1\164\2\145"+
-        "\2\uffff\1\151\1\145\1\164\1\160\1\157\1\162\1\154\1\167\1\uffff"+
-        "\2\145\4\uffff\1\162\1\165\1\157\1\160\1\55\2\163\1\55\1\153\2\uffff"+
-        "\1\164\1\144\4\uffff\1\157\1\145\1\151\1\172\1\165\1\157\1\172\1"+
-        "\167\1\153\1\167\1\144\1\uffff\2\165\1\164\1\172\1\153\1\142\2\uffff"+
-        "\1\145\1\156\1\144\2\171\1\153\1\145\1\166\1\156\1\150\1\172\1\155"+
-        "\1\147\1\164\1\161\1\154\1\uffff\1\156\2\172\1\uffff\1\154\1\144"+
-        "\1\147\1\145\1\167\1\172\1\156\1\171\1\164\1\141\1\163\1\172\1\uffff"+
-        "\1\161\1\154\1\162\1\165\1\160\1\165\1\151\1\145\1\157\1\163\2\172"+
+        "\1\172\1\143\1\172\1\167\1\156\2\164\1\170\1\uffff\1\141\1\145\1"+
+        "\156\1\uffff\1\157\1\142\1\147\1\156\1\uffff\1\166\3\uffff\1\162"+
+        "\2\uffff\1\141\1\uffff\1\162\1\141\1\157\1\154\1\uffff\1\144\1\uffff"+
+        "\1\151\1\157\1\141\1\uffff\1\154\5\uffff\1\156\2\uffff\1\141\1\143"+
+        "\1\151\2\uffff\1\146\1\162\1\157\1\164\1\167\1\uffff\1\163\1\uffff"+
+        "\1\162\1\144\1\141\1\156\1\144\1\uffff\1\156\1\uffff\1\157\1\154"+
+        "\1\172\1\154\1\145\1\141\1\164\1\156\1\171\2\172\1\165\1\141\1\154"+
+        "\1\145\1\141\1\147\1\151\1\143\1\144\1\154\2\141\1\162\1\157\1\172"+
+        "\1\145\2\171\1\172\1\142\1\141\1\151\1\172\1\145\1\153\1\151\1\154"+
+        "\1\uffff\1\150\1\145\1\157\1\141\1\172\1\166\1\uffff\1\172\1\151"+
+        "\1\145\1\151\1\uffff\1\151\1\172\1\145\1\172\1\167\1\151\1\145\1"+
+        "\154\1\151\2\172\1\151\1\uffff\1\157\1\172\1\164\1\145\1\172\1\uffff"+
+        "\1\147\1\150\1\154\1\uffff\1\142\1\172\1\162\2\172\1\145\1\154\1"+
+        "\162\1\172\1\154\1\uffff\1\155\1\uffff\2\172\1\141\1\156\1\172\1"+
+        "\145\1\160\1\151\1\163\1\uffff\1\151\1\167\1\147\1\uffff\1\141\1"+
+        "\172\1\154\1\144\1\145\1\162\1\uffff\1\157\1\uffff\1\145\2\172\1"+
+        "\157\2\uffff\1\156\1\172\1\uffff\1\145\1\uffff\1\157\1\141\1\150"+
+        "\2\162\1\154\1\171\1\162\1\151\1\164\2\145\1\uffff\1\172\1\157\1"+
+        "\141\1\147\1\150\2\145\1\172\1\171\2\145\1\162\1\uffff\2\172\1\145"+
+        "\1\163\1\172\1\164\2\uffff\1\157\1\154\1\172\1\171\1\156\1\164\1"+
+        "\154\1\145\1\162\1\157\1\167\1\165\1\142\2\172\1\162\1\172\1\150"+
+        "\1\uffff\1\172\1\uffff\1\172\1\164\1\uffff\1\55\1\uffff\1\154\1"+
+        "\153\1\145\1\164\1\156\1\55\2\uffff\1\164\2\145\2\uffff\1\151\1"+
+        "\145\1\164\1\160\1\157\1\162\1\154\1\167\1\uffff\2\145\4\uffff\1"+
+        "\162\1\165\1\157\1\160\1\55\2\163\1\55\1\153\2\uffff\1\164\1\144"+
+        "\4\uffff\1\157\1\145\1\151\1\172\1\165\1\157\1\172\1\167\1\153\1"+
+        "\167\1\144\1\uffff\2\165\1\164\1\172\1\153\1\142\2\uffff\1\145\1"+
+        "\156\1\144\2\171\1\153\1\145\1\166\1\156\1\150\1\172\1\155\1\147"+
+        "\1\164\1\161\1\154\1\uffff\1\156\2\172\1\uffff\1\154\1\144\1\147"+
+        "\1\145\1\167\1\172\1\156\1\171\1\164\1\141\1\163\1\172\1\uffff\1"+
+        "\161\1\154\1\162\1\165\1\160\1\165\1\151\1\145\1\157\1\163\2\172"+
         "\1\145\1\141\1\uffff\1\150\1\172\1\156\1\154\1\172\1\145\1\uffff"+
         "\1\147\1\160\1\uffff\1\172\1\162\1\uffff\1\162\1\172\1\165\1\162"+
         "\1\uffff\1\157\2\uffff\1\172\1\165\2\145\1\154\1\157\1\145\1\uffff"+
@@ -15290,19 +15219,19 @@ public class InternalCssDslLexer extends Lexer {
         "\151\1\160\1\172\1\151\1\162\1\145\1\uffff\3\172\1\141\1\145\2\uffff"+
         "\1\172\1\163\1\171\1\uffff\1\172\1\167\1\165\1\uffff\1\172\1\144"+
         "\1\141\1\144\1\145\1\161\1\154\1\150\1\146\1\154\2\uffff\1\145\1"+
-        "\uffff\1\141\1\uffff\1\162\1\uffff\1\71\1\55\1\164\1\145\3\55\1"+
-        "\163\1\166\1\55\1\154\1\156\1\172\1\162\1\151\1\55\1\uffff\1\153"+
-        "\1\164\1\145\1\55\1\143\1\55\1\164\2\uffff\1\162\1\150\1\167\1\55"+
-        "\1\145\1\163\1\147\1\157\1\145\2\55\1\162\1\uffff\1\162\1\144\1"+
-        "\uffff\1\145\1\172\1\154\1\157\1\172\1\145\1\163\1\145\1\uffff\1"+
-        "\172\1\154\2\172\1\145\1\172\1\156\1\172\1\151\1\156\1\145\1\147"+
-        "\1\151\1\uffff\1\157\1\162\1\145\1\165\1\145\1\143\2\uffff\1\165"+
-        "\1\157\1\150\2\172\1\uffff\2\172\1\142\1\155\1\145\1\uffff\2\165"+
-        "\1\143\1\162\2\141\2\162\1\157\1\172\1\156\1\172\2\145\1\172\1\164"+
-        "\1\151\1\145\2\172\1\145\1\172\1\150\1\172\1\uffff\1\172\1\145\1"+
-        "\uffff\1\145\1\157\1\167\1\uffff\1\145\2\171\1\172\1\151\1\153\1"+
-        "\172\1\145\1\172\1\uffff\1\163\1\145\1\55\1\153\1\151\1\145\1\uffff"+
-        "\1\145\1\144\1\150\1\156\1\145\1\141\1\144\1\172\1\154\1\157\1\172"+
+        "\uffff\1\141\1\uffff\1\162\1\uffff\1\55\1\164\1\145\3\55\1\163\1"+
+        "\166\1\55\1\154\1\156\1\172\1\162\1\151\1\55\1\uffff\1\153\1\164"+
+        "\1\145\1\55\1\143\1\55\1\164\2\uffff\1\162\1\150\1\167\1\55\1\145"+
+        "\1\163\1\147\1\157\1\145\2\55\1\162\1\uffff\1\162\1\144\1\uffff"+
+        "\1\145\1\172\1\154\1\157\1\172\1\145\1\163\1\145\1\uffff\1\172\1"+
+        "\154\2\172\1\145\1\172\1\156\1\172\1\151\1\156\1\145\1\147\1\151"+
+        "\1\uffff\1\157\1\162\1\145\1\165\1\145\1\143\2\uffff\1\165\1\157"+
+        "\1\150\2\172\1\uffff\2\172\1\142\1\155\1\145\1\uffff\2\165\1\143"+
+        "\1\162\2\141\2\162\1\157\1\172\1\156\1\172\2\145\1\172\1\164\1\151"+
+        "\1\145\2\172\1\145\1\172\1\150\1\172\1\uffff\1\172\1\145\1\uffff"+
+        "\1\145\1\157\1\167\1\uffff\1\145\2\171\1\172\1\151\1\153\1\172\1"+
+        "\145\1\172\1\uffff\1\163\1\145\1\55\1\153\1\151\1\145\1\uffff\1"+
+        "\145\1\144\1\150\1\156\1\145\1\141\1\144\1\172\1\154\1\157\1\172"+
         "\1\164\1\144\2\uffff\1\145\1\141\1\156\1\144\2\171\1\153\1\155\1"+
         "\147\1\142\1\164\1\145\1\154\2\156\1\172\1\167\1\uffff\1\146\1\172"+
         "\1\156\3\uffff\1\142\1\144\1\uffff\1\55\2\172\1\uffff\1\156\1\145"+
@@ -15384,90 +15313,90 @@ public class InternalCssDslLexer extends Lexer {
         "\1\164\1\157\1\145\2\uffff\1\145\2\uffff\1\162\1\153\2\55\1\157"+
         "\1\145\4\uffff\1\153\1\55\1\145\1\167\1\uffff\1\55\2\uffff\1\167"+
         "\3\uffff";
-    static final String DFA13_acceptS =
-        "\1\uffff\1\1\1\2\27\uffff\1\u01bc\1\u01bd\1\u01be\2\uffff\1\u01c1"+
-        "\1\uffff\1\u01c5\1\u01c6\1\u01d1\2\uffff\1\u01eb\1\uffff\1\u01ec"+
-        "\1\u01ef\1\uffff\1\3\61\uffff\1\u01ac\101\uffff\1\u01bf\1\u01e9"+
-        "\1\u01ea\1\u01c0\1\u01ed\1\u01c2\2\uffff\1\u01e8\1\u01ee\15\uffff"+
-        "\1\u01a3\20\uffff\1\u01ad\13\uffff\1\u01a4\1\u01ab\2\uffff\1\u01d8"+
-        "\1\uffff\1\u01d7\54\uffff\1\u01c9\111\uffff\1\u01a2\1\u01a6\1\u01a7"+
-        "\3\uffff\1\u01a5\27\uffff\1\u01a8\16\uffff\1\u01d2\72\uffff\1\u00d1"+
-        "\1\uffff\1\u0196\13\uffff\1\u00ab\54\uffff\1\u00b7\7\uffff\1\u01a9"+
-        "\1\uffff\1\u01cf\20\uffff\1\u01ae\1\uffff\1\u01d6\21\uffff\1\u0081"+
-        "\14\uffff\1\u00ed\3\uffff\1\u0124\25\uffff\1\44\4\uffff\1\u01d3"+
-        "\1\45\21\uffff\1\u00c1\1\uffff\1\u0104\2\uffff\1\u0174\30\uffff"+
-        "\1\u0193\1\uffff\1\61\5\uffff\1\60\1\u0197\1\125\11\uffff\1\u01e7"+
-        "\7\uffff\1\u0101\2\uffff\1\u0113\2\uffff\1\u00ac\4\uffff\1\u01b2"+
-        "\1\u00e0\7\uffff\1\u0147\1\u0145\1\u01aa\4\uffff\1\u0143\2\uffff"+
-        "\1\u0161\3\uffff\1\u00d3\24\uffff\1\u01d0\7\uffff\1\u0181\1\u0182"+
-        "\1\u0183\17\uffff\1\161\3\uffff\1\124\4\uffff\1\64\1\uffff\1\u00c9"+
-        "\1\u00d5\1\65\1\uffff\1\171\1\u00d6\1\uffff\1\70\4\uffff\1\127\1"+
-        "\uffff\1\u00f4\3\uffff\1\156\1\uffff\1\u01d9\1\110\1\135\1\u00f7"+
-        "\1\u01c3\1\uffff\1\u0080\1\116\3\uffff\1\u00e5\1\u010d\5\uffff\1"+
-        "\u0082\1\uffff\1\u00be\5\uffff\1\u0102\1\uffff\1\u0120\46\uffff"+
-        "\1\u00e2\6\uffff\1\u01bb\4\uffff\1\u00d7\14\uffff\1\u0105\5\uffff"+
-        "\1\u00fe\3\uffff\1\u01ca\12\uffff\1\u019c\1\uffff\1\u019d\11\uffff"+
-        "\1\126\3\uffff\1\u01cc\6\uffff\1\u0115\1\uffff\1\u0118\4\uffff\1"+
-        "\u00e3\1\u0116\2\uffff\1\u011b\1\uffff\1\u00b2\14\uffff\1\u0163"+
-        "\14\uffff\1\u0176\6\uffff\1\u00d4\1\u00e1\22\uffff\1\u014c\1\uffff"+
-        "\1\u014d\3\uffff\1\62\1\uffff\1\u008d\6\uffff\1\63\1\u01dc\3\uffff"+
-        "\1\u008b\1\u010c\10\uffff\1\u00f5\2\uffff\1\72\1\177\1\103\1\122"+
-        "\11\uffff\1\176\1\u01da\2\uffff\1\162\1\u008a\1\u0088\1\u01e5\13"+
-        "\uffff\1\u00e6\6\uffff\1\u01d4\1\u00af\20\uffff\1\u0107\3\uffff"+
-        "\1\u0106\14\uffff\1\u0165\16\uffff\1\u01b1\6\uffff\1\u00b8\2\uffff"+
-        "\1\u00bb\2\uffff\1\u00df\4\uffff\1\u0189\1\uffff\1\u018d\1\u018e"+
-        "\7\uffff\1\u019b\2\uffff\1\u0199\10\uffff\1\u00d8\6\uffff\1\u00d2"+
-        "\1\u01b3\2\uffff\1\u0117\24\uffff\1\u01c8\6\uffff\1\u01d5\5\uffff"+
-        "\1\u0178\1\u017a\3\uffff\1\u00f8\3\uffff\1\u01cb\12\uffff\1\u0185"+
-        "\1\u0109\1\uffff\1\u014b\1\uffff\1\u01af\1\uffff\1\u019f\20\uffff"+
-        "\1\71\7\uffff\1\u0089\1\u010b\14\uffff\1\u0123\2\uffff\1\u0103\10"+
-        "\uffff\1\43\15\uffff\1\u0130\6\uffff\1\u013a\1\u013b\5\uffff\1\u0149"+
-        "\5\uffff\1\u0164\30\uffff\1\u00bc\2\uffff\1\u0100\3\uffff\1\u018f"+
-        "\11\uffff\1\u0198\6\uffff\1\u0140\15\uffff\1\u00b4\1\u01b4\21\uffff"+
-        "\1\u01b9\3\uffff\1\u00b6\1\u010a\1\u0175\2\uffff\1\u01b0\3\uffff"+
-        "\1\u00f9\2\uffff\1\u00e7\15\uffff\1\4\5\uffff\1\u00f6\22\uffff\1"+
-        "\u00d0\3\uffff\1\130\1\131\2\uffff\1\157\1\u0090\1\u0091\11\uffff"+
-        "\1\u0122\2\uffff\1\u0108\3\uffff\1\u0138\1\uffff\1\u0125\1\u0126"+
-        "\1\uffff\1\u0128\1\uffff\1\u012a\16\uffff\1\47\1\u0148\1\u0172\1"+
-        "\u00b5\14\uffff\1\46\1\uffff\1\u00ee\2\uffff\1\52\3\uffff\1\u018b"+
-        "\1\u018c\1\uffff\1\55\1\uffff\1\u00ba\1\u00bd\7\uffff\1\56\2\uffff"+
-        "\1\57\1\uffff\1\u01ba\15\uffff\1\u00e8\2\uffff\1\u01b5\22\uffff"+
-        "\1\u01ce\4\uffff\1\u014e\4\uffff\1\u00fc\1\u00fd\2\uffff\1\u00fa"+
-        "\13\uffff\1\12\1\uffff\1\34\4\uffff\1\u0087\1\172\1\173\1\123\1"+
-        "\u008f\1\u00e4\5\uffff\1\146\13\uffff\1\104\14\uffff\1\u00ca\1\u00cc"+
-        "\1\42\5\uffff\1\u011d\1\uffff\1\u011f\2\uffff\1\u0129\1\u012b\17"+
-        "\uffff\1\u0170\1\u0171\11\uffff\1\u00b1\1\50\1\51\1\u00ff\1\uffff"+
-        "\1\53\1\54\2\uffff\1\u0195\2\uffff\1\u0190\1\u0191\1\u0192\4\uffff"+
-        "\1\u019a\1\uffff\1\u013d\2\uffff\1\u0111\1\u00d9\4\uffff\1\u011c"+
-        "\1\uffff\1\u0141\1\uffff\1\u0144\1\u0152\1\uffff\1\u0154\1\uffff"+
-        "\1\u0156\1\uffff\1\u0158\1\u0159\6\uffff\1\u0162\1\u01cd\4\uffff"+
-        "\1\u0150\1\u0177\1\u0179\1\uffff\1\u0186\1\u0187\2\uffff\1\u017c"+
-        "\3\uffff\1\u0180\1\uffff\1\u014a\2\uffff\1\20\1\26\2\uffff\1\150"+
-        "\1\u00cf\2\uffff\1\u01e0\1\u01e4\7\uffff\1\142\3\uffff\1\u00aa\3"+
-        "\uffff\1\u008e\1\134\1\u0086\1\73\1\106\1\163\1\164\1\165\1\uffff"+
-        "\1\107\13\uffff\1\u00ad\4\uffff\1\u011e\4\uffff\1\u012e\1\u012f"+
-        "\1\u0131\4\uffff\1\u0137\1\u00b0\1\u013c\1\u01c4\1\u00b3\2\uffff"+
-        "\1\u0167\10\uffff\1\u00b9\2\uffff\1\u018a\1\uffff\1\u019e\6\uffff"+
-        "\1\u0114\1\u011a\2\uffff\1\u0142\1\u0153\1\uffff\1\u0157\13\uffff"+
-        "\1\u00fb\3\uffff\1\u017f\1\u0184\2\uffff\1\114\1\121\1\uffff\1\u009b"+
-        "\11\uffff\1\u00a8\1\105\1\151\1\u00ce\4\uffff\1\133\1\uffff\1\175"+
-        "\7\uffff\1\u00bf\1\uffff\1\154\1\155\3\uffff\1\u00c5\1\u00c6\1\u01e2"+
-        "\1\u01e6\1\uffff\1\u00ae\3\uffff\1\u0139\1\uffff\1\u012c\17\uffff"+
-        "\1\u0173\1\u0194\1\u0188\1\uffff\1\u01a1\2\uffff\1\u013e\1\u013f"+
-        "\2\uffff\1\u0146\1\uffff\1\u015a\4\uffff\1\u0160\10\uffff\1\u01c7"+
-        "\1\u01a0\15\uffff\1\67\1\66\1\111\7\uffff\1\160\1\u00cb\1\u00cd"+
-        "\4\uffff\1\u00c4\6\uffff\1\u0132\4\uffff\1\u016f\1\uffff\1\u0168"+
-        "\1\u0169\7\uffff\1\u01b8\1\u0112\3\uffff\1\u015c\5\uffff\1\u0151"+
-        "\1\uffff\1\u01b6\17\uffff\1\74\1\uffff\1\u00a4\17\uffff\1\u0127"+
-        "\1\uffff\1\u0133\1\u0134\1\u0135\1\u0136\6\uffff\1\u00f1\3\uffff"+
-        "\1\u015b\5\uffff\1\u014f\1\u017b\1\u017d\1\u017e\1\uffff\1\5\1\uffff"+
-        "\1\120\1\117\1\uffff\1\137\1\166\1\167\1\170\1\uffff\1\102\1\uffff"+
-        "\1\100\1\uffff\1\147\1\u009d\2\uffff\1\10\5\uffff\1\112\1\113\6"+
-        "\uffff\1\u0110\3\uffff\1\u0121\2\uffff\1\u012d\1\uffff\1\u016a\4"+
-        "\uffff\1\u01b7\1\u0119\1\uffff\1\u015d\1\u015e\1\u015f\2\uffff\1"+
-        "\13\1\uffff\1\35\1\uffff\1\140\2\uffff\1\u009c\3\uffff\1\16\1\uffff"+
-        "\1\40\1\76\1\uffff\1\u00a0\5\uffff\1\u0094\1\u0095\1\uffff\1\115"+
-        "\1\132\1\u008c\1\141\1\u00a6\2\uffff\1\u00ea\1\u01db\2\uffff\1\u0096"+
+    static final String DFA12_acceptS =
+        "\1\uffff\1\1\1\2\27\uffff\1\u01bc\1\u01bd\1\u01be\1\uffff\1\u01c0"+
+        "\1\u01c1\1\uffff\1\u01c5\1\u01c6\1\u01d0\2\uffff\1\u01ea\1\uffff"+
+        "\1\u01eb\1\u01ee\1\uffff\1\3\61\uffff\1\u01ac\101\uffff\1\u01bf"+
+        "\1\u01e9\1\u01ec\1\u01c2\1\uffff\1\u01e8\1\u01ed\15\uffff\1\u01a3"+
+        "\20\uffff\1\u01ad\13\uffff\1\u01a4\1\u01ab\2\uffff\1\u01d8\1\uffff"+
+        "\1\u01d7\54\uffff\1\u01c9\111\uffff\1\u01a2\1\u01a6\1\u01a7\3\uffff"+
+        "\1\u01a5\26\uffff\1\u01a8\16\uffff\1\u01d2\72\uffff\1\u00d1\1\uffff"+
+        "\1\u0196\13\uffff\1\u00ab\54\uffff\1\u00b7\7\uffff\1\u01a9\1\uffff"+
+        "\1\u01cf\20\uffff\1\u01ae\1\uffff\1\u01d6\20\uffff\1\u0081\14\uffff"+
+        "\1\u00ed\3\uffff\1\u0124\25\uffff\1\44\4\uffff\1\u01d3\1\45\21\uffff"+
+        "\1\u00c1\1\uffff\1\u0104\2\uffff\1\u0174\30\uffff\1\u0193\1\uffff"+
+        "\1\61\5\uffff\1\60\1\u0197\1\125\11\uffff\1\u01e7\7\uffff\1\u0101"+
+        "\2\uffff\1\u0113\2\uffff\1\u00ac\4\uffff\1\u01b2\1\u00e0\7\uffff"+
+        "\1\u0147\1\u0145\1\u01aa\4\uffff\1\u0143\2\uffff\1\u0161\3\uffff"+
+        "\1\u00d3\24\uffff\1\u01d1\7\uffff\1\u0181\1\u0182\1\u0183\16\uffff"+
+        "\1\161\3\uffff\1\124\4\uffff\1\64\1\uffff\1\u00c9\1\u00d5\1\65\1"+
+        "\uffff\1\171\1\u00d6\1\uffff\1\70\4\uffff\1\127\1\uffff\1\u00f4"+
+        "\3\uffff\1\156\1\uffff\1\u01d9\1\110\1\135\1\u00f7\1\u01c3\1\uffff"+
+        "\1\u0080\1\116\3\uffff\1\u00e5\1\u010d\5\uffff\1\u0082\1\uffff\1"+
+        "\u00be\5\uffff\1\u0102\1\uffff\1\u0120\46\uffff\1\u00e2\6\uffff"+
+        "\1\u01bb\4\uffff\1\u00d7\14\uffff\1\u0105\5\uffff\1\u00fe\3\uffff"+
+        "\1\u01ca\12\uffff\1\u019c\1\uffff\1\u019d\11\uffff\1\126\3\uffff"+
+        "\1\u01cc\6\uffff\1\u0115\1\uffff\1\u0118\4\uffff\1\u00e3\1\u0116"+
+        "\2\uffff\1\u011b\1\uffff\1\u00b2\14\uffff\1\u0163\14\uffff\1\u0176"+
+        "\6\uffff\1\u00d4\1\u00e1\22\uffff\1\u014c\1\uffff\1\u014d\2\uffff"+
+        "\1\62\1\uffff\1\u008d\6\uffff\1\63\1\u01dc\3\uffff\1\u008b\1\u010c"+
+        "\10\uffff\1\u00f5\2\uffff\1\72\1\177\1\103\1\122\11\uffff\1\176"+
+        "\1\u01da\2\uffff\1\162\1\u008a\1\u0088\1\u01e5\13\uffff\1\u00e6"+
+        "\6\uffff\1\u01d4\1\u00af\20\uffff\1\u0107\3\uffff\1\u0106\14\uffff"+
+        "\1\u0165\16\uffff\1\u01b1\6\uffff\1\u00b8\2\uffff\1\u00bb\2\uffff"+
+        "\1\u00df\4\uffff\1\u0189\1\uffff\1\u018d\1\u018e\7\uffff\1\u019b"+
+        "\2\uffff\1\u0199\10\uffff\1\u00d8\6\uffff\1\u00d2\1\u01b3\2\uffff"+
+        "\1\u0117\24\uffff\1\u01c8\6\uffff\1\u01d5\5\uffff\1\u0178\1\u017a"+
+        "\3\uffff\1\u00f8\3\uffff\1\u01cb\12\uffff\1\u0185\1\u0109\1\uffff"+
+        "\1\u014b\1\uffff\1\u01af\1\uffff\1\u019f\17\uffff\1\71\7\uffff\1"+
+        "\u0089\1\u010b\14\uffff\1\u0123\2\uffff\1\u0103\10\uffff\1\43\15"+
+        "\uffff\1\u0130\6\uffff\1\u013a\1\u013b\5\uffff\1\u0149\5\uffff\1"+
+        "\u0164\30\uffff\1\u00bc\2\uffff\1\u0100\3\uffff\1\u018f\11\uffff"+
+        "\1\u0198\6\uffff\1\u0140\15\uffff\1\u00b4\1\u01b4\21\uffff\1\u01b9"+
+        "\3\uffff\1\u00b6\1\u010a\1\u0175\2\uffff\1\u01b0\3\uffff\1\u00f9"+
+        "\2\uffff\1\u00e7\15\uffff\1\4\5\uffff\1\u00f6\22\uffff\1\u00d0\3"+
+        "\uffff\1\130\1\131\2\uffff\1\157\1\u0090\1\u0091\11\uffff\1\u0122"+
+        "\2\uffff\1\u0108\3\uffff\1\u0138\1\uffff\1\u0125\1\u0126\1\uffff"+
+        "\1\u0128\1\uffff\1\u012a\16\uffff\1\47\1\u0148\1\u0172\1\u00b5\14"+
+        "\uffff\1\46\1\uffff\1\u00ee\2\uffff\1\52\3\uffff\1\u018b\1\u018c"+
+        "\1\uffff\1\55\1\uffff\1\u00ba\1\u00bd\7\uffff\1\56\2\uffff\1\57"+
+        "\1\uffff\1\u01ba\15\uffff\1\u00e8\2\uffff\1\u01b5\22\uffff\1\u01ce"+
+        "\4\uffff\1\u014e\4\uffff\1\u00fc\1\u00fd\2\uffff\1\u00fa\13\uffff"+
+        "\1\12\1\uffff\1\34\4\uffff\1\u0087\1\172\1\173\1\123\1\u008f\1\u00e4"+
+        "\5\uffff\1\146\13\uffff\1\104\14\uffff\1\u00ca\1\u00cc\1\42\5\uffff"+
+        "\1\u011d\1\uffff\1\u011f\2\uffff\1\u0129\1\u012b\17\uffff\1\u0170"+
+        "\1\u0171\11\uffff\1\u00b1\1\50\1\51\1\u00ff\1\uffff\1\53\1\54\2"+
+        "\uffff\1\u0195\2\uffff\1\u0190\1\u0191\1\u0192\4\uffff\1\u019a\1"+
+        "\uffff\1\u013d\2\uffff\1\u0111\1\u00d9\4\uffff\1\u011c\1\uffff\1"+
+        "\u0141\1\uffff\1\u0144\1\u0152\1\uffff\1\u0154\1\uffff\1\u0156\1"+
+        "\uffff\1\u0158\1\u0159\6\uffff\1\u0162\1\u01cd\4\uffff\1\u0150\1"+
+        "\u0177\1\u0179\1\uffff\1\u0186\1\u0187\2\uffff\1\u017c\3\uffff\1"+
+        "\u0180\1\uffff\1\u014a\2\uffff\1\20\1\26\2\uffff\1\150\1\u00cf\2"+
+        "\uffff\1\u01e0\1\u01e4\7\uffff\1\142\3\uffff\1\u00aa\3\uffff\1\u008e"+
+        "\1\134\1\u0086\1\73\1\106\1\163\1\164\1\165\1\uffff\1\107\13\uffff"+
+        "\1\u00ad\4\uffff\1\u011e\4\uffff\1\u012e\1\u012f\1\u0131\4\uffff"+
+        "\1\u0137\1\u00b0\1\u013c\1\u01c4\1\u00b3\2\uffff\1\u0167\10\uffff"+
+        "\1\u00b9\2\uffff\1\u018a\1\uffff\1\u019e\6\uffff\1\u0114\1\u011a"+
+        "\2\uffff\1\u0142\1\u0153\1\uffff\1\u0157\13\uffff\1\u00fb\3\uffff"+
+        "\1\u017f\1\u0184\2\uffff\1\114\1\121\1\uffff\1\u009b\11\uffff\1"+
+        "\u00a8\1\105\1\151\1\u00ce\4\uffff\1\133\1\uffff\1\175\7\uffff\1"+
+        "\u00bf\1\uffff\1\154\1\155\3\uffff\1\u00c5\1\u00c6\1\u01e2\1\u01e6"+
+        "\1\uffff\1\u00ae\3\uffff\1\u0139\1\uffff\1\u012c\17\uffff\1\u0173"+
+        "\1\u0194\1\u0188\1\uffff\1\u01a1\2\uffff\1\u013e\1\u013f\2\uffff"+
+        "\1\u0146\1\uffff\1\u015a\4\uffff\1\u0160\10\uffff\1\u01c7\1\u01a0"+
+        "\15\uffff\1\67\1\66\1\111\7\uffff\1\160\1\u00cb\1\u00cd\4\uffff"+
+        "\1\u00c4\6\uffff\1\u0132\4\uffff\1\u016f\1\uffff\1\u0168\1\u0169"+
+        "\7\uffff\1\u01b8\1\u0112\3\uffff\1\u015c\5\uffff\1\u0151\1\uffff"+
+        "\1\u01b6\17\uffff\1\74\1\uffff\1\u00a4\17\uffff\1\u0127\1\uffff"+
+        "\1\u0133\1\u0134\1\u0135\1\u0136\6\uffff\1\u00f1\3\uffff\1\u015b"+
+        "\5\uffff\1\u014f\1\u017b\1\u017d\1\u017e\1\uffff\1\5\1\uffff\1\120"+
+        "\1\117\1\uffff\1\137\1\166\1\167\1\170\1\uffff\1\102\1\uffff\1\100"+
+        "\1\uffff\1\147\1\u009d\2\uffff\1\10\5\uffff\1\112\1\113\6\uffff"+
+        "\1\u0110\3\uffff\1\u0121\2\uffff\1\u012d\1\uffff\1\u016a\4\uffff"+
+        "\1\u01b7\1\u0119\1\uffff\1\u015d\1\u015e\1\u015f\2\uffff\1\13\1"+
+        "\uffff\1\35\1\uffff\1\140\2\uffff\1\u009c\3\uffff\1\16\1\uffff\1"+
+        "\40\1\76\1\uffff\1\u00a0\5\uffff\1\u0094\1\u0095\1\uffff\1\115\1"+
+        "\132\1\u008c\1\141\1\u00a6\2\uffff\1\u00ea\1\u01db\2\uffff\1\u0096"+
         "\1\u0097\1\u00eb\2\uffff\1\u016b\1\uffff\1\u016d\1\u016e\3\uffff"+
         "\1\21\1\27\1\uffff\1\u00a7\5\uffff\1\24\1\32\1\uffff\1\152\1\u009a"+
         "\1\uffff\1\174\1\u01dd\1\u01de\1\u01df\2\uffff\1\u00c2\1\uffff\1"+
@@ -15482,9 +15411,9 @@ public class InternalCssDslLexer extends Lexer {
         "\uffff\1\23\1\31\1\uffff\1\144\1\u00a3\6\uffff\1\153\1\u0099\1\u0084"+
         "\1\u009e\4\uffff\1\u00a5\1\uffff\1\143\1\u00f3\1\uffff\1\u00a2\1"+
         "\145\1\u00f2";
-    static final String DFA13_specialS =
-        "\u0942\uffff}>";
-    static final String[] DFA13_transitionS = {
+    static final String DFA12_specialS =
+        "\u093a\uffff}>";
+    static final String[] DFA12_transitionS = {
             "\2\47\2\uffff\1\47\22\uffff\1\47\1\uffff\1\51\1\36\1\uffff"+
             "\1\43\1\uffff\1\51\1\41\1\42\1\uffff\1\1\1\50\1\3\1\35\1\40"+
             "\12\45\1\37\1\34\2\uffff\1\2\2\uffff\32\46\4\uffff\1\46\1\uffff"+
@@ -15533,134 +15462,134 @@ public class InternalCssDslLexer extends Lexer {
             "",
             "",
             "\12\u00a0",
-            "\12\u00a1",
+            "",
+            "",
+            "\1\u00a1",
+            "",
+            "",
             "",
             "\1\u00a3",
-            "",
-            "",
-            "",
-            "\1\u00a5",
-            "\1\u00a0\1\uffff\12\u00a6",
+            "\1\u00a0\1\uffff\12\45",
             "",
             "\2\47\2\uffff\1\47\22\uffff\1\47\13\uffff\1\50",
             "",
             "",
-            "\1\u00a9",
+            "\1\u00a6",
             "",
-            "\1\u00ab\5\uffff\1\u00aa",
-            "\1\u00ac\1\uffff\1\u00ae\3\uffff\1\u00af\3\uffff\1\u00ad",
-            "\1\u00b0",
-            "\1\u00b1",
+            "\1\u00a8\5\uffff\1\u00a7",
+            "\1\u00a9\1\uffff\1\u00ab\3\uffff\1\u00ac\3\uffff\1\u00aa",
+            "\1\u00ad",
+            "\1\u00ae",
+            "\1\u00af",
+            "\1\u00b0\15\uffff\1\u00b1",
             "\1\u00b2",
-            "\1\u00b3\15\uffff\1\u00b4",
-            "\1\u00b5",
             "\1\46\2\uffff\1\46\20\uffff\32\46\4\uffff\1\46\1\uffff\32"+
             "\46",
-            "\1\u00b8\1\u00b7\1\u00b9\12\uffff\1\u00ba",
-            "\1\u00bb\1\u00bc",
-            "\1\u00bd\6\uffff\1\u00be",
-            "\1\u00c0\17\uffff\1\u00bf",
+            "\1\u00b5\1\u00b4\1\u00b6\12\uffff\1\u00b7",
+            "\1\u00b8\1\u00b9",
+            "\1\u00ba\6\uffff\1\u00bb",
+            "\1\u00bd\17\uffff\1\u00bc",
+            "\1\u00be",
+            "\1\u00bf\3\uffff\1\u00c0",
             "\1\u00c1",
-            "\1\u00c2\3\uffff\1\u00c3",
-            "\1\u00c4",
-            "\1\u00c5\5\uffff\1\u00c6",
+            "\1\u00c2\5\uffff\1\u00c3",
             "\1\46\2\uffff\1\46\20\uffff\32\46\4\uffff\1\46\1\uffff\32"+
             "\46",
+            "\1\u00c5",
+            "\1\u00c7\22\uffff\1\u00c6",
             "\1\u00c8",
-            "\1\u00ca\22\uffff\1\u00c9",
-            "\1\u00cb",
-            "\1\u00cd\11\uffff\1\u00ce\4\uffff\1\u00cf\1\u00cc",
-            "\1\u00d0\12\uffff\1\u00d1",
+            "\1\u00ca\11\uffff\1\u00cb\4\uffff\1\u00cc\1\u00c9",
+            "\1\u00cd\12\uffff\1\u00ce",
+            "\1\u00cf",
+            "\1\46\2\uffff\1\46\20\uffff\32\46\4\uffff\1\46\1\uffff\32"+
+            "\46",
+            "\1\46\2\uffff\1\46\20\uffff\32\46\4\uffff\1\46\1\uffff\32"+
+            "\46",
             "\1\u00d2",
-            "\1\46\2\uffff\1\46\20\uffff\32\46\4\uffff\1\46\1\uffff\32"+
-            "\46",
-            "\1\46\2\uffff\1\46\20\uffff\32\46\4\uffff\1\46\1\uffff\32"+
-            "\46",
-            "\1\u00d5",
             "\1\46\2\uffff\1\46\20\uffff\32\46\4\uffff\1\46\1\uffff\2\46"+
-            "\1\u00d6\27\46",
-            "\1\u00d8",
+            "\1\u00d3\27\46",
+            "\1\u00d5",
             "\1\46\2\uffff\1\46\20\uffff\32\46\4\uffff\1\46\1\uffff\32"+
             "\46",
-            "\1\u00da\110\uffff\1\u00db",
-            "\1\u00dc",
-            "\1\u00dd",
-            "\1\u00de",
-            "\1\u00df\100\uffff\1\u00e0\3\uffff\1\u00e1",
+            "\1\u00d7\110\uffff\1\u00d8",
+            "\1\u00d9",
+            "\1\u00da",
+            "\1\u00db",
+            "\1\u00dc\100\uffff\1\u00dd\3\uffff\1\u00de",
+            "\1\u00df",
+            "\1\u00e0\63\uffff\1\u00e1",
             "\1\u00e2",
-            "\1\u00e3\63\uffff\1\u00e4",
-            "\1\u00e5",
-            "\1\u00e6",
+            "\1\u00e3",
+            "\1\u00e4",
+            "\1\u00e5\5\uffff\1\u00e6",
             "\1\u00e7",
-            "\1\u00e8\5\uffff\1\u00e9",
-            "\1\u00ea",
-            "\1\u00eb",
-            "\1\u00ec\20\uffff\1\u00ed",
-            "\1\u00ef\11\uffff\1\u00f0\2\uffff\1\u00ee",
-            "\1\u00f1\7\uffff\1\u00f2\1\uffff\1\u00f3",
-            "\1\u00f4\6\uffff\1\u00f5",
+            "\1\u00e8",
+            "\1\u00e9\20\uffff\1\u00ea",
+            "\1\u00ec\11\uffff\1\u00ed\2\uffff\1\u00eb",
+            "\1\u00ee\7\uffff\1\u00ef\1\uffff\1\u00f0",
+            "\1\u00f1\6\uffff\1\u00f2",
+            "\1\u00f3",
+            "\1\u00f4",
+            "\1\u00f5",
+            "",
             "\1\u00f6",
             "\1\u00f7",
             "\1\u00f8",
-            "",
-            "\1\u00f9",
-            "\1\u00fa",
+            "\1\u00f9\3\uffff\1\u00fa",
             "\1\u00fb",
-            "\1\u00fc\3\uffff\1\u00fd",
-            "\1\u00fe",
-            "\1\u00ff",
-            "\1\u0101\26\uffff\1\u0100",
-            "\1\u0103\23\uffff\1\u0102",
+            "\1\u00fc",
+            "\1\u00fe\26\uffff\1\u00fd",
+            "\1\u0100\23\uffff\1\u00ff",
             "\1\46\2\uffff\1\46\20\uffff\32\46\4\uffff\1\46\1\uffff\14"+
-            "\46\1\u0105\2\46\1\u0104\12\46",
+            "\46\1\u0102\2\46\1\u0101\12\46",
+            "\1\u0104",
+            "\1\u0105\10\uffff\1\u0106",
             "\1\u0107",
-            "\1\u0108\10\uffff\1\u0109",
-            "\1\u010a",
-            "\1\u010b",
+            "\1\u0108",
+            "\1\u0109",
+            "\1\u010b\5\uffff\1\u010a",
             "\1\u010c",
-            "\1\u010e\5\uffff\1\u010d",
+            "\1\u010e\16\uffff\1\u010d",
             "\1\u010f",
-            "\1\u0111\16\uffff\1\u0110",
-            "\1\u0112",
+            "\1\u0110",
+            "\1\u0112\15\uffff\1\u0111",
             "\1\u0113",
-            "\1\u0115\15\uffff\1\u0114",
+            "\1\u0114",
+            "\1\u0115",
             "\1\u0116",
             "\1\u0117",
-            "\1\u0118",
-            "\1\u0119",
-            "\1\u011a",
-            "\1\u011c\23\uffff\1\u011b",
-            "\1\u011e\7\uffff\1\u011d",
-            "\1\u0120\1\uffff\1\u011f",
-            "\1\u0122\14\uffff\1\u0121",
-            "\1\u0123",
-            "\1\u0124",
-            "\1\u0125",
-            "\1\u0127\3\uffff\1\u0126",
-            "\1\u0128\13\uffff\1\u0129",
-            "\1\u012a",
-            "\1\u012b",
-            "\1\u012c\5\uffff\1\u012d\1\u012e",
-            "\1\u0130\4\uffff\1\u012f\6\uffff\1\u0131",
-            "\1\u0134\21\uffff\1\u0132\1\u0133",
-            "\1\u0135",
-            "\1\u0136",
-            "\1\u0137\4\uffff\1\u0138",
-            "\1\u0139\1\uffff\1\u013a",
-            "\1\u013b",
-            "\1\u013c",
-            "\1\u013d\1\uffff\1\u013f\11\uffff\1\u013e",
-            "\1\u0140",
-            "\1\u0142\1\uffff\1\u0141\3\uffff\1\u0143",
-            "\1\u0144",
-            "\1\u0145",
-            "\1\u0146",
-            "\1\u0147\4\uffff\1\u0148\3\uffff\1\u0149",
-            "\1\u014a\20\uffff\1\u014b",
+            "\1\u0119\23\uffff\1\u0118",
+            "\1\u011b\7\uffff\1\u011a",
+            "\1\u011d\1\uffff\1\u011c",
+            "\1\u011f\14\uffff\1\u011e",
+            "\1\u0120",
+            "\1\u0121",
+            "\1\u0122",
+            "\1\u0124\3\uffff\1\u0123",
+            "\1\u0125\13\uffff\1\u0126",
+            "\1\u0127",
+            "\1\u0128",
+            "\1\u0129\5\uffff\1\u012a\1\u012b",
+            "\1\u012d\4\uffff\1\u012c\6\uffff\1\u012e",
+            "\1\u0131\21\uffff\1\u012f\1\u0130",
+            "\1\u0132",
+            "\1\u0133",
+            "\1\u0134\4\uffff\1\u0135",
+            "\1\u0136\1\uffff\1\u0137",
+            "\1\u0138",
+            "\1\u0139",
+            "\1\u013a\1\uffff\1\u013c\11\uffff\1\u013b",
+            "\1\u013d",
+            "\1\u013f\1\uffff\1\u013e\3\uffff\1\u0140",
+            "\1\u0141",
+            "\1\u0142",
+            "\1\u0143",
+            "\1\u0144\4\uffff\1\u0145\3\uffff\1\u0146",
+            "\1\u0147\20\uffff\1\u0148",
+            "\1\u0149",
+            "\1\u014a",
+            "\1\u014b",
             "\1\u014c",
-            "\1\u014d",
-            "\1\u014e",
-            "\1\u014f",
             "\1\46\2\uffff\1\46\20\uffff\32\46\4\uffff\1\46\1\uffff\32"+
             "\46",
             "\1\46\2\uffff\1\46\20\uffff\32\46\4\uffff\1\46\1\uffff\32"+
@@ -15668,39 +15597,40 @@ public class InternalCssDslLexer extends Lexer {
             "\1\46\2\uffff\1\46\20\uffff\32\46\4\uffff\1\46\1\uffff\32"+
             "\46",
             "\1\46\2\uffff\1\46\20\uffff\32\46\4\uffff\1\46\1\uffff\3\46"+
-            "\1\u0154\11\46\1\u0155\4\46\1\u0153\7\46",
-            "\1\u0157",
+            "\1\u0151\11\46\1\u0152\4\46\1\u0150\7\46",
+            "\1\u0154",
+            "\1\u0155",
+            "\1\u0156\30\uffff\1\u0157",
             "\1\u0158",
-            "\1\u0159\30\uffff\1\u015a",
+            "",
+            "",
+            "",
+            "",
+            "\1\u0159",
+            "",
+            "",
+            "\1\u015a",
             "\1\u015b",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
             "\1\u015c",
-            "\1\u00a0\1\uffff\12\u015d",
-            "",
-            "",
+            "\1\u015d",
             "\1\u015e",
             "\1\u015f",
-            "\1\u0160",
-            "\1\u0161",
+            "\1\u0160\14\uffff\1\u0161",
             "\1\u0162",
             "\1\u0163",
-            "\1\u0164\14\uffff\1\u0165",
+            "\1\u0164",
+            "\1\u0165",
             "\1\u0166",
             "\1\u0167",
+            "",
             "\1\u0168",
             "\1\u0169",
-            "\1\u016a",
-            "\1\u016b",
-            "",
-            "\1\u016c",
-            "\1\u016d",
             "\1\46\2\uffff\1\46\20\uffff\32\46\4\uffff\1\46\1\uffff\32"+
             "\46",
+            "\1\u016b",
+            "\1\u016c",
+            "\1\u016d",
+            "\1\u016e",
             "\1\u016f",
             "\1\u0170",
             "\1\u0171",
@@ -15710,41 +15640,41 @@ public class InternalCssDslLexer extends Lexer {
             "\1\u0175",
             "\1\u0176",
             "\1\u0177",
-            "\1\u0178",
-            "\1\u0179",
+            "",
+            "\1\46\2\uffff\1\46\20\uffff\32\46\4\uffff\1\46\1\uffff\1\u0178"+
+            "\31\46",
             "\1\u017a",
             "\1\u017b",
-            "",
-            "\1\46\2\uffff\1\46\20\uffff\32\46\4\uffff\1\46\1\uffff\1\u017c"+
-            "\31\46",
+            "\1\u017c",
+            "\1\u017d",
             "\1\u017e",
             "\1\u017f",
             "\1\u0180",
             "\1\u0181",
             "\1\u0182",
             "\1\u0183",
+            "",
+            "",
             "\1\u0184",
             "\1\u0185",
+            "",
             "\1\u0186",
+            "",
             "\1\u0187",
-            "",
-            "",
             "\1\u0188",
             "\1\u0189",
-            "",
             "\1\u018a",
-            "",
             "\1\u018b",
             "\1\u018c",
             "\1\u018d",
             "\1\u018e",
-            "\1\u018f",
-            "\1\u0190",
+            "\1\u018f\27\uffff\1\u0190",
             "\1\u0191",
-            "\1\u0192",
-            "\1\u0193\27\uffff\1\u0194",
+            "\1\u0192\13\uffff\1\u0193",
+            "\1\u0194",
             "\1\u0195",
-            "\1\u0196\13\uffff\1\u0197",
+            "\1\u0196",
+            "\1\u0197",
             "\1\u0198",
             "\1\u0199",
             "\1\u019a",
@@ -15771,17 +15701,17 @@ public class InternalCssDslLexer extends Lexer {
             "\1\u01af",
             "\1\u01b0",
             "\1\u01b1",
-            "\1\u01b2",
-            "\1\u01b3",
-            "\1\u01b4",
-            "\1\u01b5",
-            "\1\u01b7\4\uffff\1\u01b6",
+            "\1\u01b3\4\uffff\1\u01b2",
             "\1\46\2\uffff\1\46\20\uffff\32\46\4\uffff\1\46\1\uffff\32"+
             "\46",
-            "\1\u01b9",
+            "\1\u01b5",
             "",
             "\1\46\2\uffff\1\46\20\uffff\32\46\4\uffff\1\46\1\uffff\32"+
             "\46",
+            "\1\u01b7",
+            "\1\u01b8",
+            "\1\u01b9",
+            "\1\u01ba",
             "\1\u01bb",
             "\1\u01bc",
             "\1\u01bd",
@@ -15789,32 +15719,32 @@ public class InternalCssDslLexer extends Lexer {
             "\1\u01bf",
             "\1\u01c0",
             "\1\u01c1",
-            "\1\u01c2",
+            "\1\46\2\uffff\1\46\20\uffff\32\46\4\uffff\1\46\1\uffff\32"+
+            "\46",
             "\1\u01c3",
             "\1\u01c4",
             "\1\u01c5",
-            "\1\46\2\uffff\1\46\20\uffff\32\46\4\uffff\1\46\1\uffff\32"+
-            "\46",
+            "\1\u01c6",
             "\1\u01c7",
             "\1\u01c8",
             "\1\u01c9",
             "\1\u01ca",
-            "\1\u01cb",
-            "\1\u01cc",
+            "\1\u01cb\12\uffff\1\u01cc",
             "\1\u01cd",
             "\1\u01ce",
-            "\1\u01cf\12\uffff\1\u01d0",
+            "\1\u01cf",
+            "\1\u01d0",
             "\1\u01d1",
             "\1\u01d2",
             "\1\u01d3",
             "\1\u01d4",
             "\1\u01d5",
-            "\1\u01d6",
-            "\1\u01d7",
-            "\1\u01d8",
-            "\1\u01d9",
-            "\1\u01da\23\uffff\1\u01db",
-            "\1\u01dd\24\uffff\1\u01dc",
+            "\1\u01d6\23\uffff\1\u01d7",
+            "\1\u01d9\24\uffff\1\u01d8",
+            "\1\u01da",
+            "\1\u01db",
+            "\1\u01dc",
+            "\1\u01dd",
             "\1\u01de",
             "\1\u01df",
             "\1\u01e0",
@@ -15832,123 +15762,123 @@ public class InternalCssDslLexer extends Lexer {
             "\1\u01ec",
             "\1\u01ed",
             "\1\u01ee",
-            "\1\u01ef",
+            "\1\46\2\uffff\1\46\20\uffff\32\46\4\uffff\1\46\1\uffff\32"+
+            "\46",
             "\1\u01f0",
             "\1\u01f1",
             "\1\u01f2",
-            "\1\46\2\uffff\1\46\20\uffff\32\46\4\uffff\1\46\1\uffff\32"+
-            "\46",
+            "\1\u01f3",
             "\1\u01f4",
             "\1\u01f5",
-            "\1\u01f6",
-            "\1\u01f7",
-            "\1\u01f8",
-            "\1\u01f9",
             "\1\46\2\uffff\1\46\20\uffff\32\46\4\uffff\1\46\1\uffff\10"+
-            "\46\1\u01fa\21\46",
-            "\1\46\2\uffff\1\46\20\uffff\32\46\4\uffff\1\46\1\uffff\1\u01fc"+
+            "\46\1\u01f6\21\46",
+            "\1\46\2\uffff\1\46\20\uffff\32\46\4\uffff\1\46\1\uffff\1\u01f8"+
             "\31\46",
+            "\1\u01fa",
+            "\1\u01fb",
+            "\1\u01fc",
+            "\1\u01fd",
             "\1\u01fe",
             "\1\u01ff",
             "\1\u0200",
             "\1\u0201",
             "\1\u0202",
             "\1\u0203",
+            "",
+            "",
+            "",
             "\1\u0204",
             "\1\u0205",
             "\1\u0206",
+            "",
             "\1\u0207",
-            "",
-            "",
-            "",
             "\1\u0208",
             "\1\u0209",
-            "\1\u020a",
-            "",
+            "\1\46\2\uffff\1\46\20\uffff\32\46\4\uffff\1\46\1\uffff\32"+
+            "\46",
             "\1\u020b",
             "\1\u020c",
-            "\1\u020d",
-            "\1\46\2\uffff\1\46\20\uffff\32\46\4\uffff\1\46\1\uffff\32"+
-            "\46",
-            "\1\u020f",
-            "\1\u0210",
-            "\1\u00a0\1\uffff\12\u0211",
-            "\1\u021e\1\u0220\1\u021a\1\u0222\1\u021b\1\u0212\1\u021d\1"+
-            "\u0216\1\u0223\2\uffff\1\u0215\1\u021c\1\u0225\1\u021f\1\u0214"+
-            "\1\uffff\1\u0221\1\u0218\1\u0213\1\u0219\1\u0217\3\uffff\1\u0224",
+            "\1\u0219\1\u021b\1\u0215\1\u021d\1\u0216\1\u020d\1\u0218\1"+
+            "\u0211\1\u021e\2\uffff\1\u0210\1\u0217\1\u0220\1\u021a\1\u020f"+
+            "\1\uffff\1\u021c\1\u0213\1\u020e\1\u0214\1\u0212\3\uffff\1\u021f",
+            "\1\u0221",
+            "\1\u0222",
+            "\1\u0223",
+            "\1\u0224",
+            "\1\u0225",
             "\1\u0226",
-            "\1\u0227",
-            "\1\u0228",
+            "\1\u0227\14\uffff\1\u0228",
             "\1\u0229",
-            "\1\u022a",
+            "\1\46\2\uffff\1\46\20\uffff\32\46\4\uffff\1\46\1\uffff\32"+
+            "\46",
             "\1\u022b",
-            "\1\u022c\14\uffff\1\u022d",
-            "\1\u022e",
+            "\1\u022c",
+            "\1\u022d",
             "\1\46\2\uffff\1\46\20\uffff\32\46\4\uffff\1\46\1\uffff\32"+
             "\46",
-            "\1\u0230",
-            "\1\u0231",
-            "\1\u0232",
-            "\1\46\2\uffff\1\46\20\uffff\32\46\4\uffff\1\46\1\uffff\32"+
-            "\46",
-            "\1\u0234",
-            "\1\u0235\2\uffff\1\u0236",
+            "\1\u022f",
+            "\1\u0230\2\uffff\1\u0231",
             "",
-            "\1\u0237",
-            "\1\u0239\1\u023a\1\uffff\1\u0238\1\uffff\1\u023b\3\uffff\1"+
-            "\u023c\1\uffff\1\u023d\1\uffff\1\u023e\2\uffff\1\u023f\1\u0240"+
-            "\1\u0241\1\uffff\1\u0242",
+            "\1\u0232",
+            "\1\u0234\1\u0235\1\uffff\1\u0233\1\uffff\1\u0236\3\uffff\1"+
+            "\u0237\1\uffff\1\u0238\1\uffff\1\u0239\2\uffff\1\u023a\1\u023b"+
+            "\1\u023c\1\uffff\1\u023d",
+            "\1\u023e",
+            "\1\u023f",
+            "\1\u0240",
+            "\1\u0241",
+            "\1\u0242",
             "\1\u0243",
-            "\1\u0244",
+            "\1\46\2\uffff\1\46\20\uffff\32\46\4\uffff\1\46\1\uffff\32"+
+            "\46",
             "\1\u0245",
             "\1\u0246",
             "\1\u0247",
             "\1\u0248",
             "\1\46\2\uffff\1\46\20\uffff\32\46\4\uffff\1\46\1\uffff\32"+
             "\46",
-            "\1\u024a",
-            "\1\u024b",
-            "\1\u024c",
-            "\1\u024d",
-            "\1\46\2\uffff\1\46\20\uffff\32\46\4\uffff\1\46\1\uffff\32"+
-            "\46",
             "",
             "\1\46\2\uffff\1\46\20\uffff\32\46\4\uffff\1\46\1\uffff\32"+
             "\46",
+            "\1\u024b",
+            "\1\u024c",
+            "\1\u024d",
+            "\1\u024e",
+            "\1\u024f",
             "\1\u0250",
             "\1\u0251",
             "\1\u0252",
-            "\1\u0253",
-            "\1\u0254",
+            "\1\u0254\23\uffff\1\u0253",
             "\1\u0255",
             "\1\u0256",
             "\1\u0257",
-            "\1\u0259\23\uffff\1\u0258",
+            "\1\u0258",
+            "\1\u0259",
             "\1\u025a",
             "\1\u025b",
-            "\1\u025c",
+            "\1\46\2\uffff\1\46\20\uffff\32\46\4\uffff\1\46\1\uffff\32"+
+            "\46",
             "\1\u025d",
-            "\1\u025e",
+            "\1\46\2\uffff\1\46\20\uffff\32\46\4\uffff\1\46\1\uffff\32"+
+            "\46",
             "\1\u025f",
             "\1\u0260",
             "\1\46\2\uffff\1\46\20\uffff\32\46\4\uffff\1\46\1\uffff\32"+
             "\46",
             "\1\u0262",
-            "\1\46\2\uffff\1\46\20\uffff\32\46\4\uffff\1\46\1\uffff\32"+
-            "\46",
+            "\1\u0263",
             "\1\u0264",
             "\1\u0265",
-            "\1\46\2\uffff\1\46\20\uffff\32\46\4\uffff\1\46\1\uffff\32"+
-            "\46",
+            "\1\u0266",
             "\1\u0267",
             "\1\u0268",
             "\1\u0269",
-            "\1\u026a",
-            "\1\u026b",
-            "\1\u026c",
+            "\1\u026a\7\uffff\1\u026b\5\uffff\1\u026c",
             "\1\u026d",
             "\1\u026e",
-            "\1\u026f\7\uffff\1\u0270\5\uffff\1\u0271",
+            "\1\u026f",
+            "\1\u0270",
+            "\1\u0271",
             "\1\u0272",
             "\1\u0273",
             "\1\u0274",
@@ -15957,87 +15887,87 @@ public class InternalCssDslLexer extends Lexer {
             "\1\u0277",
             "\1\u0278",
             "\1\u0279",
-            "\1\u027a",
+            "\1\46\2\uffff\1\46\20\uffff\32\46\4\uffff\1\46\1\uffff\32"+
+            "\46",
             "\1\u027b",
-            "\1\u027c",
+            "\1\46\2\uffff\1\46\20\uffff\32\46\4\uffff\1\46\1\uffff\32"+
+            "\46",
             "\1\u027d",
             "\1\u027e",
-            "\1\46\2\uffff\1\46\20\uffff\32\46\4\uffff\1\46\1\uffff\32"+
-            "\46",
+            "\1\u027f",
             "\1\u0280",
+            "\1\u0281",
             "\1\46\2\uffff\1\46\20\uffff\32\46\4\uffff\1\46\1\uffff\32"+
             "\46",
-            "\1\u0282",
-            "\1\u0283",
-            "\1\u0284",
+            "\1\46\2\uffff\1\46\20\uffff\32\46\4\uffff\1\46\1\uffff\32"+
+            "\46",
+            "\1\46\2\uffff\1\46\20\uffff\32\46\4\uffff\1\46\1\uffff\32"+
+            "\46",
             "\1\u0285",
             "\1\u0286",
-            "\1\46\2\uffff\1\46\20\uffff\32\46\4\uffff\1\46\1\uffff\32"+
-            "\46",
-            "\1\46\2\uffff\1\46\20\uffff\32\46\4\uffff\1\46\1\uffff\32"+
-            "\46",
-            "\1\46\2\uffff\1\46\20\uffff\32\46\4\uffff\1\46\1\uffff\32"+
-            "\46",
+            "",
+            "\1\u0287",
+            "",
+            "\1\u0288",
+            "\1\u0289",
             "\1\u028a",
             "\1\u028b",
-            "",
             "\1\u028c",
-            "",
             "\1\u028d",
-            "\1\u028e",
+            "\1\46\2\uffff\1\46\20\uffff\32\46\4\uffff\1\46\1\uffff\32"+
+            "\46",
             "\1\u028f",
             "\1\u0290",
             "\1\u0291",
             "\1\u0292",
-            "\1\46\2\uffff\1\46\20\uffff\32\46\4\uffff\1\46\1\uffff\32"+
-            "\46",
+            "",
+            "\1\u0293",
             "\1\u0294",
             "\1\u0295",
-            "\1\u0296",
-            "\1\u0297",
-            "",
-            "\1\u0298",
-            "\1\u0299",
-            "\1\u029a",
             "\1\46\2\uffff\1\46\20\uffff\32\46\4\uffff\1\46\1\uffff\32"+
             "\46",
-            "\1\u029c",
+            "\1\u0297",
             "\1\46\2\uffff\1\46\20\uffff\32\46\4\uffff\1\46\1\uffff\14"+
-            "\46\1\u029d\15\46",
-            "\1\u029f",
+            "\46\1\u0298\15\46",
+            "\1\u029a",
             "\1\46\2\uffff\1\46\20\uffff\32\46\4\uffff\1\46\1\uffff\25"+
-            "\46\1\u02a0\4\46",
-            "\1\u02a2",
+            "\46\1\u029b\4\46",
+            "\1\u029d",
+            "\1\u029e",
+            "\1\u029f",
+            "\1\46\2\uffff\1\46\20\uffff\32\46\4\uffff\1\46\1\uffff\4\46"+
+            "\1\u02a0\25\46",
+            "\1\46\2\uffff\1\46\20\uffff\32\46\4\uffff\1\46\1\uffff\32"+
+            "\46",
             "\1\u02a3",
             "\1\u02a4",
-            "\1\46\2\uffff\1\46\20\uffff\32\46\4\uffff\1\46\1\uffff\4\46"+
-            "\1\u02a5\25\46",
-            "\1\46\2\uffff\1\46\20\uffff\32\46\4\uffff\1\46\1\uffff\32"+
-            "\46",
+            "\1\u02a5",
+            "\1\u02a6",
+            "\1\u02a7",
             "\1\u02a8",
             "\1\u02a9",
-            "\1\u02aa",
-            "\1\u02ab",
-            "\1\u02ac",
+            "\1\46\2\uffff\1\46\20\uffff\32\46\4\uffff\1\46\1\uffff\32"+
+            "\46",
+            "\1\46\2\uffff\1\46\20\uffff\32\46\4\uffff\1\46\1\uffff\32"+
+            "\46",
+            "\1\46\2\uffff\1\46\20\uffff\32\46\4\uffff\1\46\1\uffff\32"+
+            "\46",
             "\1\u02ad",
             "\1\u02ae",
-            "\1\46\2\uffff\1\46\20\uffff\32\46\4\uffff\1\46\1\uffff\32"+
-            "\46",
-            "\1\46\2\uffff\1\46\20\uffff\32\46\4\uffff\1\46\1\uffff\32"+
-            "\46",
-            "\1\46\2\uffff\1\46\20\uffff\32\46\4\uffff\1\46\1\uffff\32"+
-            "\46",
-            "\1\u02b2",
-            "\1\u02b3",
-            "\1\u02b4",
+            "\1\u02af",
             "\1\46\2\uffff\1\46\20\uffff\32\46\4\uffff\1\46\1\uffff\4\46"+
-            "\1\u02b5\25\46",
-            "\1\u02b7",
+            "\1\u02b0\25\46",
+            "\1\u02b2",
             "\1\46\2\uffff\1\46\20\uffff\32\46\4\uffff\1\46\1\uffff\6\46"+
-            "\1\u02b8\23\46",
-            "\1\u02bc\63\uffff\1\u02bb\14\uffff\1\u02ba",
+            "\1\u02b3\23\46",
+            "\1\u02b7\63\uffff\1\u02b6\14\uffff\1\u02b5",
             "\1\46\2\uffff\1\46\20\uffff\32\46\4\uffff\1\46\1\uffff\32"+
             "\46",
+            "\1\u02b9",
+            "\1\u02ba",
+            "\1\u02bb",
+            "\1\u02bc",
+            "\1\u02bd",
             "\1\u02be",
             "\1\u02bf",
             "\1\u02c0",
@@ -16046,2142 +15976,2133 @@ public class InternalCssDslLexer extends Lexer {
             "\1\u02c3",
             "\1\u02c4",
             "\1\u02c5",
+            "",
             "\1\u02c6",
             "\1\u02c7",
             "\1\u02c8",
             "\1\u02c9",
             "\1\u02ca",
-            "",
             "\1\u02cb",
             "\1\u02cc",
-            "\1\u02cd",
+            "",
+            "\1\46\2\uffff\1\46\20\uffff\32\46\4\uffff\1\46\1\uffff\32"+
+            "\46",
+            "",
             "\1\u02ce",
             "\1\u02cf",
-            "\1\u02d0",
-            "\1\u02d1",
-            "",
-            "\1\46\2\uffff\1\46\20\uffff\32\46\4\uffff\1\46\1\uffff\32"+
-            "\46",
-            "",
+            "\1\u02d0\14\uffff\1\u02d1\1\uffff\1\u02d2",
             "\1\u02d3",
             "\1\u02d4",
-            "\1\u02d5\14\uffff\1\u02d6\1\uffff\1\u02d7",
+            "\1\46\2\uffff\1\46\20\uffff\32\46\4\uffff\1\46\1\uffff\32"+
+            "\46",
+            "\1\46\2\uffff\1\46\20\uffff\32\46\4\uffff\1\46\1\uffff\32"+
+            "\46",
+            "\1\46\2\uffff\1\46\20\uffff\32\46\4\uffff\1\46\1\uffff\32"+
+            "\46",
             "\1\u02d8",
             "\1\u02d9",
-            "\1\46\2\uffff\1\46\20\uffff\32\46\4\uffff\1\46\1\uffff\32"+
-            "\46",
-            "\1\46\2\uffff\1\46\20\uffff\32\46\4\uffff\1\46\1\uffff\32"+
-            "\46",
-            "\1\46\2\uffff\1\46\20\uffff\32\46\4\uffff\1\46\1\uffff\32"+
-            "\46",
+            "\1\u02da",
+            "\1\u02db\5\uffff\1\u02dc",
             "\1\u02dd",
             "\1\u02de",
             "\1\u02df",
-            "\1\u02e0\5\uffff\1\u02e1",
-            "\1\u02e2",
-            "\1\u02e3",
-            "\1\u02e4",
-            "\1\u02e5",
+            "\1\u02e0",
             "",
-            "\1\u02e6",
+            "\1\u02e1",
             "",
-            "\1\u00a0\1\uffff\12\u02e7",
-            "\1\u02e9\5\uffff\1\u02e8",
-            "\1\u02ec\3\uffff\1\u02eb\3\uffff\1\u02ea\10\uffff\1\u02ed",
-            "\1\u02ef\7\uffff\1\u02ee\2\uffff\1\u02f1\2\uffff\1\u02f0",
-            "\1\u02f2\3\uffff\1\u02f3\3\uffff\1\u02f4",
-            "\1\u02f8\4\uffff\1\u02f5\7\uffff\1\u02f6\1\u02f7",
-            "\1\u02fc\2\uffff\1\u02fa\1\uffff\1\u02fb\10\uffff\1\u02f9",
-            "\1\u0300\1\uffff\1\u0302\2\uffff\1\u0301\1\u0304\1\uffff\1"+
-            "\u0305\1\uffff\1\u02fe\1\u02fd\1\uffff\1\u0303\3\uffff\1\u02ff",
-            "\1\u0306",
-            "\1\u0309\6\uffff\1\u0308\3\uffff\1\u0307\2\uffff\1\u030a\5"+
-            "\uffff\1\u030b",
-            "\1\u030e\1\u030c\1\uffff\1\u030f\7\uffff\1\u030d",
-            "\1\u0311\7\uffff\1\u0310",
-            "\1\u0312\20\uffff\1\u0313",
-            "\1\u0317\10\uffff\1\u0316\5\uffff\1\u0314\5\uffff\1\u0315",
-            "\1\u0318",
-            "\1\u0319\12\uffff\1\u031a\2\uffff\1\u031b",
-            "\1\u031d\15\uffff\1\u031c",
+            "\1\u02e3\5\uffff\1\u02e2",
+            "\1\u02e6\3\uffff\1\u02e5\3\uffff\1\u02e4\10\uffff\1\u02e7",
+            "\1\u02e9\7\uffff\1\u02e8\2\uffff\1\u02eb\2\uffff\1\u02ea",
+            "\1\u02ec\3\uffff\1\u02ed\3\uffff\1\u02ee",
+            "\1\u02f2\4\uffff\1\u02ef\7\uffff\1\u02f0\1\u02f1",
+            "\1\u02f6\2\uffff\1\u02f4\1\uffff\1\u02f5\10\uffff\1\u02f3",
+            "\1\u02fa\1\uffff\1\u02fc\2\uffff\1\u02fb\1\u02fe\1\uffff\1"+
+            "\u02ff\1\uffff\1\u02f8\1\u02f7\1\uffff\1\u02fd\3\uffff\1\u02f9",
+            "\1\u0300",
+            "\1\u0303\6\uffff\1\u0302\3\uffff\1\u0301\2\uffff\1\u0304\5"+
+            "\uffff\1\u0305",
+            "\1\u0308\1\u0306\1\uffff\1\u0309\7\uffff\1\u0307",
+            "\1\u030b\7\uffff\1\u030a",
+            "\1\u030c\20\uffff\1\u030d",
+            "\1\u0311\10\uffff\1\u0310\5\uffff\1\u030e\5\uffff\1\u030f",
+            "\1\u0312",
+            "\1\u0313\12\uffff\1\u0314\2\uffff\1\u0315",
+            "\1\u0317\15\uffff\1\u0316",
             "",
-            "\1\u031f\1\u031e",
+            "\1\u0319\1\u0318",
+            "\1\u031a",
+            "\1\u031b",
+            "\1\u031c",
+            "\1\u031d",
+            "\1\u031e",
+            "\1\46\2\uffff\1\46\20\uffff\32\46\4\uffff\1\46\1\uffff\32"+
+            "\46",
             "\1\u0320",
-            "\1\u0321",
+            "\1\46\2\uffff\1\46\20\uffff\32\46\4\uffff\1\46\1\uffff\32"+
+            "\46",
             "\1\u0322",
             "\1\u0323",
             "\1\u0324",
-            "\1\46\2\uffff\1\46\20\uffff\32\46\4\uffff\1\46\1\uffff\32"+
-            "\46",
+            "",
+            "\1\u0325",
             "\1\u0326",
-            "\1\46\2\uffff\1\46\20\uffff\32\46\4\uffff\1\46\1\uffff\32"+
-            "\46",
+            "\1\u0327",
+            "",
             "\1\u0328",
             "\1\u0329",
             "\1\u032a",
-            "",
             "\1\u032b",
             "\1\u032c",
             "\1\u032d",
-            "",
             "\1\u032e",
-            "\1\u032f",
-            "\1\u0330",
+            "\1\u032f\2\uffff\1\u0330",
             "\1\u0331",
             "\1\u0332",
-            "\1\u0333",
-            "\1\u0334",
-            "\1\u0335\2\uffff\1\u0336",
-            "\1\u0337",
-            "\1\u0338",
-            "\1\u0339\5\uffff\1\u033a",
+            "\1\u0333\5\uffff\1\u0334",
+            "\1\u0335",
+            "\1\u0336\3\uffff\1\u0337\6\uffff\1\u0338",
+            "\1\u0339",
+            "\1\u033a",
             "\1\u033b",
-            "\1\u033c\3\uffff\1\u033d\6\uffff\1\u033e",
+            "\1\u033c",
+            "\1\u033d\3\uffff\1\u033e",
             "\1\u033f",
             "\1\u0340",
             "\1\u0341",
+            "",
             "\1\u0342",
-            "\1\u0343\3\uffff\1\u0344",
+            "\1\u0343",
+            "\1\u0344",
             "\1\u0345",
+            "",
+            "",
             "\1\u0346",
             "\1\u0347",
-            "",
-            "\1\u0348",
+            "\1\46\2\uffff\1\46\20\uffff\32\46\4\uffff\1\46\1\uffff\32"+
+            "\46",
             "\1\u0349",
             "\1\u034a",
             "\1\u034b",
-            "",
-            "",
             "\1\u034c",
             "\1\u034d",
+            "\1\u034e",
             "\1\46\2\uffff\1\46\20\uffff\32\46\4\uffff\1\46\1\uffff\32"+
             "\46",
-            "\1\u034f",
             "\1\u0350",
             "\1\u0351",
             "\1\u0352",
             "\1\u0353",
-            "\1\u0354",
             "\1\46\2\uffff\1\46\20\uffff\32\46\4\uffff\1\46\1\uffff\32"+
             "\46",
+            "\1\u0355",
             "\1\u0356",
+            "",
             "\1\u0357",
+            "",
             "\1\u0358",
             "\1\u0359",
-            "\1\46\2\uffff\1\46\20\uffff\32\46\4\uffff\1\46\1\uffff\32"+
-            "\46",
+            "",
+            "\1\u035a",
             "\1\u035b",
             "\1\u035c",
-            "",
             "\1\u035d",
-            "",
             "\1\u035e",
             "\1\u035f",
-            "",
             "\1\u0360",
-            "\1\u0361",
+            "\1\46\2\uffff\1\46\20\uffff\32\46\4\uffff\1\46\1\uffff\32"+
+            "\46",
             "\1\u0362",
             "\1\u0363",
-            "\1\u0364",
-            "\1\u0365",
+            "\1\u0364\1\u0365",
             "\1\u0366",
             "\1\46\2\uffff\1\46\20\uffff\32\46\4\uffff\1\46\1\uffff\32"+
             "\46",
             "\1\u0368",
             "\1\u0369",
-            "\1\u036a\1\u036b",
-            "\1\u036c",
+            "\1\u036a",
             "\1\46\2\uffff\1\46\20\uffff\32\46\4\uffff\1\46\1\uffff\32"+
             "\46",
+            "\1\u036c",
+            "\1\u036d",
             "\1\u036e",
             "\1\u036f",
             "\1\u0370",
-            "\1\46\2\uffff\1\46\20\uffff\32\46\4\uffff\1\46\1\uffff\32"+
-            "\46",
-            "\1\u0372",
-            "\1\u0373",
+            "\1\u0371",
+            "\1\u0372\4\uffff\1\u0373",
+            "",
             "\1\u0374",
+            "",
             "\1\u0375",
-            "\1\u0376",
-            "\1\u0377",
-            "\1\u0378\4\uffff\1\u0379",
-            "",
-            "\1\u037a",
-            "",
-            "\1\u037b",
             "\1\46\2\uffff\1\46\20\uffff\32\46\4\uffff\1\46\1\uffff\32"+
             "\46",
             "\1\46\2\uffff\1\46\20\uffff\32\46\4\uffff\1\46\1\uffff\22"+
-            "\46\1\u037d\7\46",
+            "\46\1\u0377\7\46",
+            "\1\u0379",
+            "\1\u037a",
+            "",
+            "",
+            "",
+            "\1\u037b",
+            "\1\u037c",
+            "\1\u037d",
+            "\1\u037e",
             "\1\u037f",
             "\1\u0380",
-            "",
-            "",
-            "",
             "\1\u0381",
-            "\1\u0382",
+            "\1\46\2\uffff\1\46\20\uffff\32\46\4\uffff\1\46\1\uffff\32"+
+            "\46",
             "\1\u0383",
+            "",
             "\1\u0384",
             "\1\u0385",
-            "\1\u0386",
+            "\1\46\2\uffff\1\46\20\uffff\32\46\4\uffff\1\46\1\uffff\32"+
+            "\46",
             "\1\u0387",
-            "\1\46\2\uffff\1\46\20\uffff\32\46\4\uffff\1\46\1\uffff\32"+
-            "\46",
+            "\1\u0388",
             "\1\u0389",
-            "",
             "\1\u038a",
+            "",
             "\1\u038b",
+            "\1\u038c",
+            "",
             "\1\46\2\uffff\1\46\20\uffff\32\46\4\uffff\1\46\1\uffff\32"+
             "\46",
-            "\1\u038d",
             "\1\u038e",
-            "\1\u038f",
-            "\1\u0390",
             "",
+            "\1\46\2\uffff\1\46\20\uffff\32\46\4\uffff\1\46\1\uffff\32"+
+            "\46",
+            "\1\u0390",
             "\1\u0391",
             "\1\u0392",
             "",
+            "",
+            "\1\u0393",
             "\1\46\2\uffff\1\46\20\uffff\32\46\4\uffff\1\46\1\uffff\32"+
             "\46",
-            "\1\u0394",
-            "",
             "\1\46\2\uffff\1\46\20\uffff\32\46\4\uffff\1\46\1\uffff\32"+
             "\46",
             "\1\u0396",
             "\1\u0397",
-            "\1\u0398",
-            "",
-            "",
-            "\1\u0399",
-            "\1\46\2\uffff\1\46\20\uffff\32\46\4\uffff\1\46\1\uffff\32"+
-            "\46",
-            "\1\46\2\uffff\1\46\20\uffff\32\46\4\uffff\1\46\1\uffff\32"+
-            "\46",
-            "\1\u039c",
-            "\1\u039d",
             "\1\46\2\uffff\1\46\20\uffff\32\46\4\uffff\1\46\1\uffff\32"+
             "\46",
             "\1\46\2\uffff\1\46\20\uffff\32\46\4\uffff\1\46\1\uffff\30"+
-            "\46\1\u039f\1\46",
+            "\46\1\u0399\1\46",
             "",
             "",
             "",
-            "\1\u03a1",
-            "\1\u03a2",
-            "\1\u03a3",
-            "\1\u03a4",
+            "\1\u039b",
+            "\1\u039c",
+            "\1\u039d",
+            "\1\u039e",
             "",
-            "\1\u03a6\1\u03a7\1\uffff\1\u03a5\1\uffff\1\u03a8\10\uffff"+
-            "\1\u03a9\2\uffff\1\u03aa\5\uffff\1\u03ab",
-            "\1\u03ac",
+            "\1\u03a0\1\u03a1\1\uffff\1\u039f\1\uffff\1\u03a2\10\uffff"+
+            "\1\u03a3\2\uffff\1\u03a4\5\uffff\1\u03a5",
+            "\1\u03a6",
             "",
             "\1\46\2\uffff\1\46\20\uffff\32\46\4\uffff\1\46\1\uffff\32"+
             "\46",
-            "\1\u03ae",
-            "\1\u03b0\6\uffff\1\u03af",
+            "\1\u03a8",
+            "\1\u03aa\6\uffff\1\u03a9",
             "",
+            "\1\u03ab",
+            "\1\u03ac",
+            "\1\u03ad",
+            "\1\u03ae",
+            "\1\u03af",
+            "\1\u03b0",
             "\1\u03b1",
             "\1\u03b2",
-            "\1\u03b3",
-            "\1\u03b4",
+            "\1\46\2\uffff\1\46\20\uffff\32\46\4\uffff\1\46\1\uffff\3\46"+
+            "\1\u03b3\26\46",
             "\1\u03b5",
             "\1\u03b6",
             "\1\u03b7",
             "\1\u03b8",
-            "\1\46\2\uffff\1\46\20\uffff\32\46\4\uffff\1\46\1\uffff\3\46"+
-            "\1\u03b9\26\46",
-            "\1\u03bb",
-            "\1\u03bc",
+            "\1\u03b9",
+            "\1\u03ba",
+            "\1\46\2\uffff\1\46\20\uffff\32\46\4\uffff\1\46\1\uffff\32"+
+            "\46",
+            "\1\46\2\uffff\1\46\20\uffff\32\46\4\uffff\1\46\1\uffff\32"+
+            "\46",
             "\1\u03bd",
             "\1\u03be",
             "\1\u03bf",
-            "\1\u03c0",
-            "\1\46\2\uffff\1\46\20\uffff\32\46\4\uffff\1\46\1\uffff\32"+
-            "\46",
-            "\1\46\2\uffff\1\46\20\uffff\32\46\4\uffff\1\46\1\uffff\32"+
-            "\46",
-            "\1\u03c3",
-            "\1\u03c4",
-            "\1\u03c5",
             "",
+            "\1\u03c0",
+            "\1\u03c1\15\uffff\1\u03c2",
+            "\1\u03c3\2\uffff\1\u03c4",
+            "\1\u03c5",
             "\1\u03c6",
-            "\1\u03c7\15\uffff\1\u03c8",
-            "\1\u03c9\2\uffff\1\u03ca",
+            "\1\u03c7",
+            "\1\u03c8",
+            "",
+            "",
+            "",
+            "\1\u03c9",
+            "\1\u03ca",
             "\1\u03cb",
             "\1\u03cc",
             "\1\u03cd",
             "\1\u03ce",
-            "",
-            "",
-            "",
-            "\1\u03cf",
+            "\1\46\2\uffff\1\46\20\uffff\32\46\4\uffff\1\46\1\uffff\32"+
+            "\46",
             "\1\u03d0",
-            "\1\u03d1",
+            "\1\46\2\uffff\1\46\20\uffff\32\46\4\uffff\1\46\1\uffff\32"+
+            "\46",
             "\1\u03d2",
-            "\1\u03d3",
-            "\1\u03d4",
-            "\1\46\2\uffff\1\46\20\uffff\32\46\4\uffff\1\46\1\uffff\32"+
-            "\46",
-            "\1\u03d6",
-            "\1\46\2\uffff\1\46\20\uffff\32\46\4\uffff\1\46\1\uffff\32"+
-            "\46",
-            "\1\u03d8",
-            "\1\u00a0\1\uffff\12\u03d9",
-            "\1\u03db\12\uffff\1\u03da",
-            "\1\u03dd\7\uffff\1\u03dc",
-            "\1\u03df\10\uffff\1\u03e0\7\uffff\1\u03de",
-            "\1\u03e1",
+            "\1\u03d4\12\uffff\1\u03d3",
+            "\1\u03d6\7\uffff\1\u03d5",
+            "\1\u03d8\10\uffff\1\u03d9\7\uffff\1\u03d7",
+            "\1\u03da",
             "",
-            "\1\u03e2",
-            "\1\u03e3",
-            "\1\u03e5\11\uffff\1\u03e4",
+            "\1\u03db",
+            "\1\u03dc",
+            "\1\u03de\11\uffff\1\u03dd",
+            "",
+            "\1\u03df",
+            "\1\u03e0",
+            "\1\u03e1",
+            "\1\u03e3\6\uffff\1\u03e2",
+            "",
+            "\1\u03e4\3\uffff\1\u03e5",
+            "",
+            "",
             "",
             "\1\u03e6",
+            "",
+            "",
             "\1\u03e7",
-            "\1\u03e8",
-            "\1\u03ea\6\uffff\1\u03e9",
             "",
-            "\1\u03eb\3\uffff\1\u03ec",
-            "",
-            "",
-            "",
+            "\1\u03e9\20\uffff\1\u03e8",
+            "\1\u03ea",
+            "\1\u03ec\15\uffff\1\u03eb",
             "\1\u03ed",
-            "",
             "",
             "\1\u03ee",
             "",
-            "\1\u03f0\20\uffff\1\u03ef",
-            "\1\u03f1",
-            "\1\u03f3\15\uffff\1\u03f2",
+            "\1\u03ef\4\uffff\1\u03f0",
+            "\1\u03f2\5\uffff\1\u03f1",
+            "\1\u03f3",
+            "",
             "\1\u03f4",
+            "",
+            "",
+            "",
+            "",
             "",
             "\1\u03f5",
             "",
-            "\1\u03f6\4\uffff\1\u03f7",
-            "\1\u03f9\5\uffff\1\u03f8",
-            "\1\u03fa",
             "",
-            "\1\u03fb",
-            "",
+            "\1\u03f6",
+            "\1\u03f7",
+            "\1\u03f8",
             "",
             "",
+            "\1\u03f9",
+            "\1\u03fb\16\uffff\1\u03fa",
+            "\1\u03fd\11\uffff\1\u03fc",
+            "\1\u03ff\1\uffff\1\u03fe",
+            "\1\u0400\2\uffff\1\u0401",
             "",
+            "\1\u0402\16\uffff\1\u0403",
             "",
-            "\1\u03fc",
+            "\1\u0404",
+            "\1\u0405",
+            "\1\u0406",
+            "\1\u0407",
+            "\1\u0408\1\uffff\1\u0409",
             "",
-            "",
-            "\1\u03fd",
-            "\1\u03fe",
-            "\1\u03ff",
-            "",
-            "",
-            "\1\u0400",
-            "\1\u0402\16\uffff\1\u0401",
-            "\1\u0404\11\uffff\1\u0403",
-            "\1\u0406\1\uffff\1\u0405",
-            "\1\u0407\2\uffff\1\u0408",
-            "",
-            "\1\u0409\16\uffff\1\u040a",
+            "\1\u040a",
             "",
             "\1\u040b",
             "\1\u040c",
-            "\1\u040d",
-            "\1\u040e",
-            "\1\u040f\1\uffff\1\u0410",
-            "",
+            "\1\u040d\2\uffff\1\46\20\uffff\32\46\4\uffff\1\46\1\uffff"+
+            "\4\46\1\u040e\25\46",
+            "\1\u0410",
             "\1\u0411",
-            "",
             "\1\u0412",
             "\1\u0413",
-            "\1\u0414\2\uffff\1\46\20\uffff\32\46\4\uffff\1\46\1\uffff"+
-            "\4\46\1\u0415\25\46",
-            "\1\u0417",
+            "\1\u0414",
+            "\1\u0415",
+            "\1\46\2\uffff\1\46\20\uffff\32\46\4\uffff\1\46\1\uffff\32"+
+            "\46",
+            "\1\46\2\uffff\1\46\20\uffff\32\46\4\uffff\1\46\1\uffff\32"+
+            "\46",
             "\1\u0418",
             "\1\u0419",
             "\1\u041a",
-            "\1\u041b",
-            "\1\u041c",
-            "\1\46\2\uffff\1\46\20\uffff\32\46\4\uffff\1\46\1\uffff\32"+
-            "\46",
-            "\1\46\2\uffff\1\46\20\uffff\32\46\4\uffff\1\46\1\uffff\32"+
-            "\46",
+            "\1\u041b\3\uffff\1\u041c",
+            "\1\u041d",
+            "\1\u041e",
             "\1\u041f",
-            "\1\u0420",
-            "\1\u0421",
-            "\1\u0422\3\uffff\1\u0423",
+            "\1\u0420\1\uffff\1\u0421",
+            "\1\u0422",
+            "\1\u0423",
             "\1\u0424",
             "\1\u0425",
             "\1\u0426",
-            "\1\u0427\1\uffff\1\u0428",
+            "\1\u0427",
+            "\1\46\2\uffff\1\46\20\uffff\32\46\4\uffff\1\46\1\uffff\32"+
+            "\46",
             "\1\u0429",
             "\1\u042a",
             "\1\u042b",
-            "\1\u042c",
-            "\1\u042d",
-            "\1\u042e",
             "\1\46\2\uffff\1\46\20\uffff\32\46\4\uffff\1\46\1\uffff\32"+
             "\46",
+            "\1\u042d",
+            "\1\u042e",
+            "\1\u042f",
             "\1\u0430",
             "\1\u0431",
             "\1\u0432",
-            "\1\46\2\uffff\1\46\20\uffff\32\46\4\uffff\1\46\1\uffff\32"+
-            "\46",
+            "\1\u0433",
             "\1\u0434",
+            "",
             "\1\u0435",
             "\1\u0436",
             "\1\u0437",
             "\1\u0438",
-            "\1\u0439",
-            "\1\u043a",
-            "\1\u043b",
-            "",
-            "\1\u043c",
-            "\1\u043d",
-            "\1\u043e",
-            "\1\u043f",
             "\1\46\2\uffff\1\46\20\uffff\32\46\4\uffff\1\46\1\uffff\32"+
             "\46",
-            "\1\u0441\1\u0442\14\uffff\1\u0443\1\u0444\2\uffff\1\u0445"+
-            "\1\u0446\1\uffff\1\u0447",
+            "\1\u043a\1\u043b\14\uffff\1\u043c\1\u043d\2\uffff\1\u043e"+
+            "\1\u043f\1\uffff\1\u0440",
             "",
-            "\1\u0448",
+            "\1\u0441",
+            "\1\u0442",
+            "\1\u0443",
+            "\1\u0444",
+            "",
+            "\1\u0445",
+            "\1\u0446",
+            "\1\u0447",
+            "\1\46\2\uffff\1\46\20\uffff\32\46\4\uffff\1\46\1\uffff\32"+
+            "\46",
             "\1\u0449",
             "\1\u044a",
             "\1\u044b",
-            "",
             "\1\u044c",
             "\1\u044d",
             "\1\u044e",
             "\1\46\2\uffff\1\46\20\uffff\32\46\4\uffff\1\46\1\uffff\32"+
             "\46",
             "\1\u0450",
+            "",
             "\1\u0451",
-            "\1\u0452",
+            "\1\46\2\uffff\1\46\20\uffff\32\46\4\uffff\1\46\1\uffff\32"+
+            "\46",
             "\1\u0453",
             "\1\u0454",
-            "\1\u0455",
             "\1\46\2\uffff\1\46\20\uffff\32\46\4\uffff\1\46\1\uffff\32"+
             "\46",
-            "\1\u0457",
             "",
+            "\1\u0456",
+            "\1\u0457",
             "\1\u0458",
+            "",
+            "\1\u0459",
             "\1\46\2\uffff\1\46\20\uffff\32\46\4\uffff\1\46\1\uffff\32"+
             "\46",
-            "\1\u045a",
             "\1\u045b",
             "\1\46\2\uffff\1\46\20\uffff\32\46\4\uffff\1\46\1\uffff\32"+
             "\46",
-            "",
-            "\1\u045d",
+            "\1\46\2\uffff\1\46\20\uffff\32\46\4\uffff\1\46\1\uffff\32"+
+            "\46",
             "\1\u045e",
             "\1\u045f",
-            "",
             "\1\u0460",
-            "\1\46\2\uffff\1\46\20\uffff\32\46\4\uffff\1\46\1\uffff\32"+
-            "\46",
+            "\1\u0461",
             "\1\u0462",
+            "",
+            "\1\u0463",
+            "",
+            "\1\u0464",
             "\1\46\2\uffff\1\46\20\uffff\32\46\4\uffff\1\46\1\uffff\32"+
             "\46",
-            "\1\46\2\uffff\1\46\20\uffff\32\46\4\uffff\1\46\1\uffff\32"+
-            "\46",
-            "\1\u0465",
             "\1\u0466",
             "\1\u0467",
-            "\1\u0468",
-            "\1\u0469",
-            "",
-            "\1\u046a",
-            "",
-            "\1\u046b",
             "\1\46\2\uffff\1\46\20\uffff\32\46\4\uffff\1\46\1\uffff\32"+
             "\46",
+            "\1\u0469",
+            "\1\u046a",
+            "\1\u046b",
+            "\1\u046c",
+            "",
             "\1\u046d",
             "\1\u046e",
+            "\1\u046f",
+            "",
+            "\1\u0470",
             "\1\46\2\uffff\1\46\20\uffff\32\46\4\uffff\1\46\1\uffff\32"+
             "\46",
-            "\1\u0470",
-            "\1\u0471",
             "\1\u0472",
             "\1\u0473",
-            "",
             "\1\u0474",
             "\1\u0475",
+            "",
             "\1\u0476",
             "",
             "\1\u0477",
             "\1\46\2\uffff\1\46\20\uffff\32\46\4\uffff\1\46\1\uffff\32"+
             "\46",
-            "\1\u0479",
+            "\1\46\2\uffff\1\46\20\uffff\32\46\4\uffff\1\46\1\uffff\32"+
+            "\46",
             "\1\u047a",
+            "",
+            "",
             "\1\u047b",
-            "\1\u047c",
+            "\1\46\2\uffff\1\46\20\uffff\32\46\4\uffff\1\46\1\uffff\32"+
+            "\46",
             "",
             "\1\u047d",
             "",
             "\1\u047e",
-            "\1\46\2\uffff\1\46\20\uffff\32\46\4\uffff\1\46\1\uffff\32"+
-            "\46",
-            "\1\46\2\uffff\1\46\20\uffff\32\46\4\uffff\1\46\1\uffff\32"+
-            "\46",
+            "\1\u047f",
+            "\1\u0480",
             "\1\u0481",
+            "\1\u0482\3\uffff\1\u0483",
+            "\1\u0484",
+            "\1\u0485\11\uffff\1\u0486",
+            "\1\u0487\2\uffff\1\u0488",
+            "\1\u0489",
+            "\1\u048a\3\uffff\1\u048b\5\uffff\1\u048c\1\u048d\7\uffff\1"+
+            "\u048e",
+            "\1\u048f",
+            "\1\u0490",
             "",
-            "",
-            "\1\u0482",
             "\1\46\2\uffff\1\46\20\uffff\32\46\4\uffff\1\46\1\uffff\32"+
             "\46",
-            "",
-            "\1\u0484",
-            "",
-            "\1\u0485",
-            "\1\u0486",
-            "\1\u0487",
-            "\1\u0488",
-            "\1\u0489\3\uffff\1\u048a",
-            "\1\u048b",
-            "\1\u048c\11\uffff\1\u048d",
-            "\1\u048e\2\uffff\1\u048f",
-            "\1\u0490",
-            "\1\u0491\3\uffff\1\u0492\5\uffff\1\u0493\1\u0494\7\uffff\1"+
-            "\u0495",
+            "\1\u0492",
+            "\1\u0493",
+            "\1\u0494",
+            "\1\u0495",
             "\1\u0496",
             "\1\u0497",
-            "",
             "\1\46\2\uffff\1\46\20\uffff\32\46\4\uffff\1\46\1\uffff\32"+
             "\46",
             "\1\u0499",
             "\1\u049a",
             "\1\u049b",
             "\1\u049c",
-            "\1\u049d",
-            "\1\u049e",
+            "",
+            "\1\46\2\uffff\1\46\20\uffff\32\46\4\uffff\1\46\1\uffff\21"+
+            "\46\1\u049d\10\46",
             "\1\46\2\uffff\1\46\20\uffff\32\46\4\uffff\1\46\1\uffff\32"+
             "\46",
             "\1\u04a0",
             "\1\u04a1",
-            "\1\u04a2",
-            "\1\u04a3",
+            "\1\u04a2\2\uffff\1\46\20\uffff\32\46\4\uffff\1\46\1\uffff"+
+            "\32\46",
+            "\1\u04a4",
             "",
-            "\1\46\2\uffff\1\46\20\uffff\32\46\4\uffff\1\46\1\uffff\21"+
-            "\46\1\u04a4\10\46",
+            "",
+            "\1\u04a5",
+            "\1\u04a6",
             "\1\46\2\uffff\1\46\20\uffff\32\46\4\uffff\1\46\1\uffff\32"+
             "\46",
-            "\1\u04a7",
             "\1\u04a8",
-            "\1\u04a9\2\uffff\1\46\20\uffff\32\46\4\uffff\1\46\1\uffff"+
-            "\32\46",
+            "\1\u04a9",
+            "\1\u04aa",
             "\1\u04ab",
-            "",
-            "",
             "\1\u04ac",
             "\1\u04ad",
-            "\1\46\2\uffff\1\46\20\uffff\32\46\4\uffff\1\46\1\uffff\32"+
-            "\46",
+            "\1\u04ae",
             "\1\u04af",
             "\1\u04b0",
             "\1\u04b1",
-            "\1\u04b2",
-            "\1\u04b3",
+            "\1\46\2\uffff\1\46\20\uffff\32\46\4\uffff\1\46\1\uffff\32"+
+            "\46",
+            "\1\46\2\uffff\1\46\20\uffff\32\46\4\uffff\1\46\1\uffff\32"+
+            "\46",
             "\1\u04b4",
-            "\1\u04b5",
+            "\1\46\2\uffff\1\46\20\uffff\32\46\4\uffff\1\46\1\uffff\32"+
+            "\46",
             "\1\u04b6",
-            "\1\u04b7",
-            "\1\u04b8",
-            "\1\46\2\uffff\1\46\20\uffff\32\46\4\uffff\1\46\1\uffff\32"+
-            "\46",
-            "\1\46\2\uffff\1\46\20\uffff\32\46\4\uffff\1\46\1\uffff\32"+
-            "\46",
-            "\1\u04bb",
-            "\1\46\2\uffff\1\46\20\uffff\32\46\4\uffff\1\46\1\uffff\32"+
-            "\46",
-            "\1\u04bd",
             "",
             "\1\46\2\uffff\1\46\20\uffff\32\46\4\uffff\1\46\1\uffff\32"+
             "\46",
             "",
             "\1\46\2\uffff\1\46\20\uffff\32\46\4\uffff\1\46\1\uffff\6\46"+
-            "\1\u04bf\23\46",
-            "\1\u00a0\1\uffff\12\u04c1",
+            "\1\u04b8\23\46",
+            "\1\u04ba",
+            "",
+            "\1\u04bb",
+            "",
+            "\1\u04bc",
+            "\1\u04bd",
+            "\1\u04be",
+            "\1\u04bf",
+            "\1\u04c0",
+            "\1\u04c1",
+            "",
+            "",
             "\1\u04c2",
-            "",
             "\1\u04c3",
-            "",
             "\1\u04c4",
+            "",
+            "",
             "\1\u04c5",
             "\1\u04c6",
             "\1\u04c7",
             "\1\u04c8",
-            "\1\u04c9",
-            "",
-            "",
-            "\1\u04ca",
+            "\1\u04c9\5\uffff\1\u04ca",
             "\1\u04cb",
             "\1\u04cc",
-            "",
-            "",
             "\1\u04cd",
+            "",
             "\1\u04ce",
             "\1\u04cf",
+            "",
+            "",
+            "",
+            "",
             "\1\u04d0",
-            "\1\u04d1\5\uffff\1\u04d2",
+            "\1\u04d2\5\uffff\1\u04d1",
             "\1\u04d3",
             "\1\u04d4",
             "\1\u04d5",
-            "",
             "\1\u04d6",
             "\1\u04d7",
-            "",
-            "",
-            "",
-            "",
             "\1\u04d8",
-            "\1\u04da\5\uffff\1\u04d9",
+            "\1\u04d9",
+            "",
+            "",
+            "\1\u04da",
             "\1\u04db",
+            "",
+            "",
+            "",
+            "",
             "\1\u04dc",
             "\1\u04dd",
             "\1\u04de",
-            "\1\u04df",
+            "\1\46\2\uffff\1\46\20\uffff\32\46\4\uffff\1\46\1\uffff\32"+
+            "\46",
             "\1\u04e0",
             "\1\u04e1",
-            "",
-            "",
-            "\1\u04e2",
-            "\1\u04e3",
-            "",
-            "",
-            "",
-            "",
-            "\1\u04e4",
-            "\1\u04e5",
-            "\1\u04e6",
             "\1\46\2\uffff\1\46\20\uffff\32\46\4\uffff\1\46\1\uffff\32"+
             "\46",
+            "\1\u04e3",
+            "\1\u04e4",
+            "\1\u04e5\21\uffff\1\u04e6",
+            "\1\u04e7",
+            "",
             "\1\u04e8",
             "\1\u04e9",
+            "\1\u04ea",
             "\1\46\2\uffff\1\46\20\uffff\32\46\4\uffff\1\46\1\uffff\32"+
             "\46",
-            "\1\u04eb",
             "\1\u04ec",
-            "\1\u04ed\21\uffff\1\u04ee",
-            "\1\u04ef",
+            "\1\u04ed",
             "",
+            "",
+            "\1\u04ee",
+            "\1\u04ef",
             "\1\u04f0",
             "\1\u04f1",
-            "\1\u04f2",
-            "\1\46\2\uffff\1\46\20\uffff\32\46\4\uffff\1\46\1\uffff\32"+
-            "\46",
+            "\1\u04f2\23\uffff\1\u04f3",
             "\1\u04f4",
             "\1\u04f5",
-            "",
-            "",
             "\1\u04f6",
             "\1\u04f7",
             "\1\u04f8",
-            "\1\u04f9",
-            "\1\u04fa\23\uffff\1\u04fb",
+            "\1\46\2\uffff\1\46\20\uffff\32\46\4\uffff\1\46\1\uffff\32"+
+            "\46",
+            "\1\u04fa",
+            "\1\u04fb",
             "\1\u04fc",
             "\1\u04fd",
             "\1\u04fe",
+            "",
             "\1\u04ff",
-            "\1\u0500",
             "\1\46\2\uffff\1\46\20\uffff\32\46\4\uffff\1\46\1\uffff\32"+
             "\46",
+            "\1\46\2\uffff\1\46\20\uffff\32\46\4\uffff\1\46\1\uffff\32"+
+            "\46",
+            "",
             "\1\u0502",
             "\1\u0503",
             "\1\u0504",
             "\1\u0505",
             "\1\u0506",
-            "",
-            "\1\u0507",
             "\1\46\2\uffff\1\46\20\uffff\32\46\4\uffff\1\46\1\uffff\32"+
             "\46",
-            "\1\46\2\uffff\1\46\20\uffff\32\46\4\uffff\1\46\1\uffff\32"+
-            "\46",
-            "",
+            "\1\u0508",
+            "\1\u0509",
             "\1\u050a",
             "\1\u050b",
             "\1\u050c",
-            "\1\u050d",
-            "\1\u050e",
-            "\1\46\2\uffff\1\46\20\uffff\32\46\4\uffff\1\46\1\uffff\32"+
-            "\46",
-            "\1\u0510",
-            "\1\u0511",
-            "\1\u0512",
-            "\1\u0513",
-            "\1\u0514",
             "\1\46\2\uffff\1\46\20\uffff\32\46\4\uffff\1\46\1\uffff\32"+
             "\46",
             "",
+            "\1\u050e",
+            "\1\u050f",
+            "\1\u0510",
+            "\1\u0511",
+            "\1\u0512\6\uffff\1\u0513\3\uffff\1\u0514",
+            "\1\u0515",
             "\1\u0516",
             "\1\u0517",
             "\1\u0518",
             "\1\u0519",
-            "\1\u051a\6\uffff\1\u051b\3\uffff\1\u051c",
+            "\1\u051a",
+            "\1\u051b",
+            "\1\u051c",
             "\1\u051d",
+            "",
             "\1\u051e",
             "\1\u051f",
             "\1\u0520",
             "\1\u0521",
             "\1\u0522",
             "\1\u0523",
+            "",
             "\1\u0524",
             "\1\u0525",
             "",
-            "\1\u0526",
+            "\1\46\2\uffff\1\46\20\uffff\32\46\4\uffff\1\46\1\uffff\32"+
+            "\46",
             "\1\u0527",
+            "",
             "\1\u0528",
-            "\1\u0529",
+            "\1\46\2\uffff\1\46\20\uffff\32\46\4\uffff\1\46\1\uffff\32"+
+            "\46",
             "\1\u052a",
             "\1\u052b",
             "",
             "\1\u052c",
-            "\1\u052d",
+            "",
             "",
             "\1\46\2\uffff\1\46\20\uffff\32\46\4\uffff\1\46\1\uffff\32"+
             "\46",
-            "\1\u052f",
-            "",
-            "\1\u0530",
-            "\1\46\2\uffff\1\46\20\uffff\32\46\4\uffff\1\46\1\uffff\32"+
-            "\46",
+            "\1\u052e",
+            "\1\u052f\3\uffff\1\u0530",
+            "\1\u0531",
             "\1\u0532",
             "\1\u0533",
-            "",
             "\1\u0534",
             "",
+            "\1\u0535",
+            "\1\u0536",
             "",
             "\1\46\2\uffff\1\46\20\uffff\32\46\4\uffff\1\46\1\uffff\32"+
             "\46",
-            "\1\u0536",
-            "\1\u0537\3\uffff\1\u0538",
+            "\1\u0538",
             "\1\u0539",
             "\1\u053a",
             "\1\u053b",
             "\1\u053c",
-            "",
             "\1\u053d",
-            "\1\u053e",
-            "",
             "\1\46\2\uffff\1\46\20\uffff\32\46\4\uffff\1\46\1\uffff\32"+
             "\46",
+            "",
+            "\1\u053f",
             "\1\u0540",
             "\1\u0541",
             "\1\u0542",
             "\1\u0543",
             "\1\u0544",
+            "",
+            "",
             "\1\u0545",
-            "\1\46\2\uffff\1\46\20\uffff\32\46\4\uffff\1\46\1\uffff\32"+
-            "\46",
+            "\1\u0546",
             "",
             "\1\u0547",
             "\1\u0548",
             "\1\u0549",
             "\1\u054a",
             "\1\u054b",
-            "\1\u054c",
-            "",
-            "",
-            "\1\u054d",
+            "\1\46\2\uffff\1\46\20\uffff\32\46\4\uffff\1\46\1\uffff\32"+
+            "\46",
+            "\1\46\2\uffff\1\46\20\uffff\32\46\4\uffff\1\46\1\uffff\32"+
+            "\46",
             "\1\u054e",
-            "",
             "\1\u054f",
             "\1\u0550",
             "\1\u0551",
-            "\1\u0552",
-            "\1\u0553",
-            "\1\46\2\uffff\1\46\20\uffff\32\46\4\uffff\1\46\1\uffff\32"+
-            "\46",
-            "\1\46\2\uffff\1\46\20\uffff\32\46\4\uffff\1\46\1\uffff\32"+
-            "\46",
+            "\1\u0552\3\uffff\1\u0553",
+            "\1\u0554",
+            "\1\u0555",
             "\1\u0556",
             "\1\u0557",
             "\1\u0558",
             "\1\u0559",
-            "\1\u055a\3\uffff\1\u055b",
+            "\1\u055a",
+            "\1\u055b",
+            "",
             "\1\u055c",
             "\1\u055d",
-            "\1\u055e",
-            "\1\u055f",
+            "\1\u055e\2\uffff\1\46\20\uffff\32\46\4\uffff\1\46\1\uffff"+
+            "\32\46",
             "\1\u0560",
             "\1\u0561",
             "\1\u0562",
-            "\1\u0563",
             "",
-            "\1\u0564",
-            "\1\u0565",
-            "\1\u0566\2\uffff\1\46\20\uffff\32\46\4\uffff\1\46\1\uffff"+
-            "\32\46",
-            "\1\u0568",
+            "\1\46\2\uffff\1\46\20\uffff\32\46\4\uffff\1\46\1\uffff\32"+
+            "\46",
+            "\1\46\2\uffff\1\46\20\uffff\32\46\4\uffff\1\46\1\uffff\32"+
+            "\46",
+            "\1\46\2\uffff\1\46\20\uffff\32\46\4\uffff\1\46\1\uffff\32"+
+            "\46",
+            "\1\u0566",
+            "\1\u0567",
+            "",
+            "",
+            "\1\46\2\uffff\1\46\20\uffff\32\46\4\uffff\1\46\1\uffff\32"+
+            "\46",
             "\1\u0569",
-            "\1\u056a",
+            "\1\u056a\1\u056b",
             "",
             "\1\46\2\uffff\1\46\20\uffff\32\46\4\uffff\1\46\1\uffff\32"+
             "\46",
-            "\1\46\2\uffff\1\46\20\uffff\32\46\4\uffff\1\46\1\uffff\32"+
-            "\46",
-            "\1\46\2\uffff\1\46\20\uffff\32\46\4\uffff\1\46\1\uffff\32"+
-            "\46",
+            "\1\u056d",
             "\1\u056e",
-            "\1\u056f",
-            "",
             "",
             "\1\46\2\uffff\1\46\20\uffff\32\46\4\uffff\1\46\1\uffff\32"+
             "\46",
+            "\1\u0570",
             "\1\u0571",
-            "\1\u0572\1\u0573",
-            "",
-            "\1\46\2\uffff\1\46\20\uffff\32\46\4\uffff\1\46\1\uffff\32"+
-            "\46",
+            "\1\u0572",
+            "\1\u0573",
+            "\1\u0574",
             "\1\u0575",
             "\1\u0576",
-            "",
-            "\1\46\2\uffff\1\46\20\uffff\32\46\4\uffff\1\46\1\uffff\32"+
-            "\46",
+            "\1\u0577",
             "\1\u0578",
+            "",
+            "",
             "\1\u0579",
+            "",
             "\1\u057a",
+            "",
             "\1\u057b",
+            "",
             "\1\u057c",
-            "\1\u057d",
             "\1\u057e",
             "\1\u057f",
             "\1\u0580",
-            "",
-            "",
             "\1\u0581",
-            "",
             "\1\u0582",
-            "",
-            "\1\u0583",
-            "",
-            "\1\u00a0\1\uffff\12\u04c1",
             "\1\u0584",
-            "\1\u0586",
-            "\1\u0587",
-            "\1\u0588",
+            "\1\u0585\6\uffff\1\u0588\1\u0587\1\uffff\1\u0586",
             "\1\u0589",
             "\1\u058a",
+            "\1\u058b",
             "\1\u058c",
-            "\1\u058d\6\uffff\1\u0590\1\u058f\1\uffff\1\u058e",
+            "\1\u058d",
+            "\1\u058e",
+            "\1\u058f",
+            "",
+            "\1\u0590",
             "\1\u0591",
             "\1\u0592",
             "\1\u0593",
             "\1\u0594",
             "\1\u0595",
-            "\1\u0596",
             "\1\u0597",
+            "",
             "",
             "\1\u0598",
             "\1\u0599",
-            "\1\u059a",
-            "\1\u059b",
+            "\1\u059a\16\uffff\1\u059b",
             "\1\u059c",
             "\1\u059d",
-            "\1\u059f",
-            "",
-            "",
-            "\1\u05a0",
+            "\1\u059f\1\u059e\13\uffff\1\u05a0",
             "\1\u05a1",
-            "\1\u05a2\16\uffff\1\u05a3",
+            "\1\u05a2",
+            "\1\u05a3",
             "\1\u05a4",
             "\1\u05a5",
-            "\1\u05a7\1\u05a6\13\uffff\1\u05a8",
+            "\1\u05a6",
+            "",
+            "\1\u05a7",
+            "\1\u05a8",
+            "",
             "\1\u05a9",
-            "\1\u05aa",
+            "\1\46\2\uffff\1\46\20\uffff\32\46\4\uffff\1\46\1\uffff\32"+
+            "\46",
             "\1\u05ab",
             "\1\u05ac",
-            "\1\u05ad",
+            "\1\46\2\uffff\1\46\20\uffff\32\46\4\uffff\1\46\1\uffff\32"+
+            "\46",
             "\1\u05ae",
-            "",
             "\1\u05af",
             "\1\u05b0",
             "",
-            "\1\u05b1",
             "\1\46\2\uffff\1\46\20\uffff\32\46\4\uffff\1\46\1\uffff\32"+
             "\46",
-            "\1\u05b3",
-            "\1\u05b4",
+            "\1\u05b2",
             "\1\46\2\uffff\1\46\20\uffff\32\46\4\uffff\1\46\1\uffff\32"+
             "\46",
-            "\1\u05b6",
+            "\1\46\2\uffff\1\46\20\uffff\32\46\4\uffff\1\46\1\uffff\32"+
+            "\46",
+            "\1\u05b5",
+            "\1\46\2\uffff\1\46\20\uffff\32\46\4\uffff\1\46\1\uffff\32"+
+            "\46",
             "\1\u05b7",
-            "\1\u05b8",
-            "",
             "\1\46\2\uffff\1\46\20\uffff\32\46\4\uffff\1\46\1\uffff\32"+
             "\46",
+            "\1\u05b9",
             "\1\u05ba",
-            "\1\46\2\uffff\1\46\20\uffff\32\46\4\uffff\1\46\1\uffff\32"+
-            "\46",
-            "\1\46\2\uffff\1\46\20\uffff\32\46\4\uffff\1\46\1\uffff\32"+
-            "\46",
+            "\1\u05bb",
+            "\1\u05bc",
             "\1\u05bd",
-            "\1\46\2\uffff\1\46\20\uffff\32\46\4\uffff\1\46\1\uffff\32"+
-            "\46",
+            "",
+            "\1\u05be",
             "\1\u05bf",
-            "\1\46\2\uffff\1\46\20\uffff\32\46\4\uffff\1\46\1\uffff\32"+
-            "\46",
+            "\1\u05c0",
             "\1\u05c1",
             "\1\u05c2",
             "\1\u05c3",
+            "",
+            "",
             "\1\u05c4",
             "\1\u05c5",
-            "",
             "\1\u05c6",
-            "\1\u05c7",
-            "\1\u05c8",
-            "\1\u05c9",
-            "\1\u05ca",
+            "\1\46\2\uffff\1\46\20\uffff\32\46\4\uffff\1\46\1\uffff\32"+
+            "\46",
+            "\1\46\2\uffff\1\46\20\uffff\32\46\4\uffff\1\46\1\uffff\32"+
+            "\46",
+            "",
+            "\1\46\2\uffff\1\46\20\uffff\32\46\4\uffff\1\46\1\uffff\32"+
+            "\46",
+            "\1\46\2\uffff\1\46\20\uffff\32\46\4\uffff\1\46\1\uffff\32"+
+            "\46",
             "\1\u05cb",
-            "",
-            "",
             "\1\u05cc",
             "\1\u05cd",
-            "\1\u05ce",
-            "\1\46\2\uffff\1\46\20\uffff\32\46\4\uffff\1\46\1\uffff\32"+
-            "\46",
-            "\1\46\2\uffff\1\46\20\uffff\32\46\4\uffff\1\46\1\uffff\32"+
-            "\46",
             "",
-            "\1\46\2\uffff\1\46\20\uffff\32\46\4\uffff\1\46\1\uffff\32"+
-            "\46",
-            "\1\46\2\uffff\1\46\20\uffff\32\46\4\uffff\1\46\1\uffff\32"+
-            "\46",
+            "\1\u05ce",
+            "\1\u05cf",
+            "\1\u05d0",
+            "\1\u05d1",
+            "\1\u05d2",
             "\1\u05d3",
             "\1\u05d4",
             "\1\u05d5",
-            "",
             "\1\u05d6",
-            "\1\u05d7",
-            "\1\u05d8",
-            "\1\u05d9",
-            "\1\u05da",
-            "\1\u05db",
-            "\1\u05dc",
-            "\1\u05dd",
-            "\1\u05de",
             "\1\46\2\uffff\1\46\20\uffff\32\46\4\uffff\1\46\1\uffff\32"+
             "\46",
-            "\1\u05e0",
+            "\1\u05d8",
+            "\1\46\2\uffff\1\46\20\uffff\32\46\4\uffff\1\46\1\uffff\32"+
+            "\46",
+            "\1\u05da",
+            "\1\u05db",
+            "\1\46\2\uffff\1\46\20\uffff\32\46\4\uffff\1\46\1\uffff\32"+
+            "\46",
+            "\1\u05dd",
+            "\1\u05de",
+            "\1\u05df",
+            "\1\46\2\uffff\1\46\20\uffff\32\46\4\uffff\1\46\1\uffff\32"+
+            "\46",
             "\1\46\2\uffff\1\46\20\uffff\32\46\4\uffff\1\46\1\uffff\32"+
             "\46",
             "\1\u05e2",
-            "\1\u05e3",
             "\1\46\2\uffff\1\46\20\uffff\32\46\4\uffff\1\46\1\uffff\32"+
             "\46",
-            "\1\u05e5",
-            "\1\u05e6",
-            "\1\u05e7",
-            "\1\46\2\uffff\1\46\20\uffff\32\46\4\uffff\1\46\1\uffff\32"+
-            "\46",
-            "\1\46\2\uffff\1\46\20\uffff\32\46\4\uffff\1\46\1\uffff\32"+
-            "\46",
-            "\1\u05ea",
-            "\1\46\2\uffff\1\46\20\uffff\32\46\4\uffff\1\46\1\uffff\32"+
-            "\46",
-            "\1\u05ec",
+            "\1\u05e4",
             "\1\46\2\uffff\1\46\20\uffff\32\46\4\uffff\1\46\1\uffff\32"+
             "\46",
             "",
+            "\1\46\2\uffff\1\46\20\uffff\32\46\4\uffff\1\46\1\uffff\32"+
+            "\46",
+            "\1\u05e7",
+            "",
+            "\1\u05e8",
+            "\1\u05e9",
+            "\1\u05ea",
+            "",
+            "\1\u05eb",
+            "\1\u05ec",
+            "\1\u05ed",
             "\1\46\2\uffff\1\46\20\uffff\32\46\4\uffff\1\46\1\uffff\32"+
             "\46",
             "\1\u05ef",
-            "",
             "\1\u05f0",
-            "\1\u05f1",
+            "\1\46\2\uffff\1\46\20\uffff\32\46\4\uffff\1\46\1\uffff\32"+
+            "\46",
             "\1\u05f2",
+            "\1\46\2\uffff\1\46\20\uffff\32\46\4\uffff\1\46\1\uffff\32"+
+            "\46",
             "",
-            "\1\u05f3",
             "\1\u05f4",
             "\1\u05f5",
-            "\1\46\2\uffff\1\46\20\uffff\32\46\4\uffff\1\46\1\uffff\32"+
-            "\46",
+            "\1\u05f6",
             "\1\u05f7",
             "\1\u05f8",
-            "\1\46\2\uffff\1\46\20\uffff\32\46\4\uffff\1\46\1\uffff\32"+
-            "\46",
-            "\1\u05fa",
-            "\1\46\2\uffff\1\46\20\uffff\32\46\4\uffff\1\46\1\uffff\32"+
-            "\46",
+            "\1\u05f9",
             "",
+            "\1\u05fa",
+            "\1\u05fb",
             "\1\u05fc",
             "\1\u05fd",
             "\1\u05fe",
             "\1\u05ff",
             "\1\u0600",
-            "\1\u0601",
-            "",
+            "\1\46\2\uffff\1\46\20\uffff\32\46\4\uffff\1\46\1\uffff\32"+
+            "\46",
             "\1\u0602",
             "\1\u0603",
-            "\1\u0604",
+            "\1\46\2\uffff\1\46\20\uffff\32\46\4\uffff\1\46\1\uffff\32"+
+            "\46",
             "\1\u0605",
             "\1\u0606",
+            "",
+            "",
             "\1\u0607",
             "\1\u0608",
-            "\1\46\2\uffff\1\46\20\uffff\32\46\4\uffff\1\46\1\uffff\32"+
-            "\46",
+            "\1\u0609",
             "\1\u060a",
             "\1\u060b",
-            "\1\46\2\uffff\1\46\20\uffff\32\46\4\uffff\1\46\1\uffff\32"+
-            "\46",
-            "\1\u060d",
+            "\1\u060c\23\uffff\1\u060d",
             "\1\u060e",
-            "",
-            "",
             "\1\u060f",
             "\1\u0610",
             "\1\u0611",
             "\1\u0612",
             "\1\u0613",
-            "\1\u0614\23\uffff\1\u0615",
+            "\1\u0614",
+            "\1\u0615",
             "\1\u0616",
-            "\1\u0617",
-            "\1\u0618",
-            "\1\u0619",
-            "\1\u061a",
-            "\1\u061b",
-            "\1\u061c",
-            "\1\u061d",
-            "\1\u061e",
             "\1\46\2\uffff\1\46\20\uffff\32\46\4\uffff\1\46\1\uffff\32"+
             "\46",
-            "\1\u0620\21\uffff\1\u0621",
+            "\1\u0618\21\uffff\1\u0619",
             "",
-            "\1\u0622",
+            "\1\u061a",
             "\1\46\2\uffff\1\46\20\uffff\32\46\4\uffff\1\46\1\uffff\1\46"+
-            "\1\u0623\30\46",
-            "\1\u0625",
+            "\1\u061b\30\46",
+            "\1\u061d",
             "",
             "",
             "",
+            "\1\u061e",
+            "\1\u061f",
+            "",
+            "\1\u0620",
+            "\1\46\2\uffff\1\46\20\uffff\32\46\4\uffff\1\46\1\uffff\32"+
+            "\46",
+            "\1\46\2\uffff\1\46\20\uffff\32\46\4\uffff\1\46\1\uffff\32"+
+            "\46",
+            "",
+            "\1\u0623",
+            "\1\u0624",
+            "",
+            "\1\46\2\uffff\1\46\20\uffff\32\46\4\uffff\1\46\1\uffff\32"+
+            "\46",
             "\1\u0626",
             "\1\u0627",
-            "",
             "\1\u0628",
-            "\1\46\2\uffff\1\46\20\uffff\32\46\4\uffff\1\46\1\uffff\32"+
-            "\46",
-            "\1\46\2\uffff\1\46\20\uffff\32\46\4\uffff\1\46\1\uffff\32"+
-            "\46",
-            "",
+            "\1\u0629",
+            "\1\u062a",
             "\1\u062b",
             "\1\u062c",
-            "",
-            "\1\46\2\uffff\1\46\20\uffff\32\46\4\uffff\1\46\1\uffff\32"+
-            "\46",
+            "\1\u062d",
             "\1\u062e",
             "\1\u062f",
             "\1\u0630",
-            "\1\u0631",
-            "\1\u0632",
-            "\1\u0633",
+            "\1\u0631\14\uffff\1\u0632\3\uffff\1\u0633",
+            "",
             "\1\u0634",
             "\1\u0635",
-            "\1\u0636",
-            "\1\u0637",
-            "\1\u0638",
-            "\1\u0639\14\uffff\1\u063a\3\uffff\1\u063b",
+            "\1\u0636\1\u0637\7\uffff\1\u0638",
+            "\1\u0639\16\uffff\1\u063a",
+            "\1\u063d\4\uffff\1\u063c\10\uffff\1\u063e\7\uffff\1\u063b",
             "",
-            "\1\u063c",
-            "\1\u063d",
-            "\1\u063e\1\u063f\7\uffff\1\u0640",
-            "\1\u0641\16\uffff\1\u0642",
-            "\1\u0645\4\uffff\1\u0644\10\uffff\1\u0646\7\uffff\1\u0643",
-            "",
+            "\1\u063f",
+            "\1\u0640",
+            "\1\u0641",
+            "\1\u0643\6\uffff\1\u0642",
+            "\1\u0644",
+            "\1\u0645",
+            "\1\u0646",
             "\1\u0647",
             "\1\u0648",
             "\1\u0649",
-            "\1\u064b\6\uffff\1\u064a",
+            "\1\u064a",
+            "\1\u064b",
             "\1\u064c",
             "\1\u064d",
             "\1\u064e",
-            "\1\u064f",
-            "\1\u0650",
+            "\1\u064f\1\u0650",
             "\1\u0651",
             "\1\u0652",
+            "",
             "\1\u0653",
             "\1\u0654",
             "\1\u0655",
+            "",
+            "",
             "\1\u0656",
-            "\1\u0657\1\u0658",
+            "\1\u0657",
+            "",
+            "",
+            "",
+            "\1\u0658",
             "\1\u0659",
             "\1\u065a",
-            "",
             "\1\u065b",
-            "\1\u065c",
-            "\1\u065d",
-            "",
-            "",
-            "\1\u065e",
+            "\1\u065c\15\uffff\1\u065d",
+            "\1\46\2\uffff\1\46\20\uffff\32\46\4\uffff\1\46\1\uffff\32"+
+            "\46",
             "\1\u065f",
-            "",
-            "",
-            "",
             "\1\u0660",
             "\1\u0661",
+            "",
             "\1\u0662",
             "\1\u0663",
-            "\1\u0664\15\uffff\1\u0665",
+            "",
             "\1\46\2\uffff\1\46\20\uffff\32\46\4\uffff\1\46\1\uffff\32"+
             "\46",
+            "\1\u0665",
+            "\1\46\2\uffff\1\46\20\uffff\32\46\4\uffff\1\46\1\uffff\32"+
+            "\46",
+            "",
             "\1\u0667",
+            "",
+            "",
             "\1\u0668",
-            "\1\u0669",
             "",
-            "\1\u066a",
+            "\1\46\2\uffff\1\46\20\uffff\32\46\4\uffff\1\46\1\uffff\32"+
+            "\46",
+            "",
+            "\1\46\2\uffff\1\46\20\uffff\32\46\4\uffff\1\46\1\uffff\32"+
+            "\46",
             "\1\u066b",
-            "",
-            "\1\46\2\uffff\1\46\20\uffff\32\46\4\uffff\1\46\1\uffff\32"+
-            "\46",
+            "\1\u066c",
             "\1\u066d",
-            "\1\46\2\uffff\1\46\20\uffff\32\46\4\uffff\1\46\1\uffff\32"+
-            "\46",
-            "",
+            "\1\u066e",
             "\1\u066f",
-            "",
-            "",
             "\1\u0670",
-            "",
-            "\1\46\2\uffff\1\46\20\uffff\32\46\4\uffff\1\46\1\uffff\32"+
-            "\46",
-            "",
-            "\1\46\2\uffff\1\46\20\uffff\32\46\4\uffff\1\46\1\uffff\32"+
-            "\46",
+            "\1\u0671\4\uffff\1\u0672",
             "\1\u0673",
             "\1\u0674",
             "\1\u0675",
             "\1\u0676",
             "\1\u0677",
             "\1\u0678",
-            "\1\u0679\4\uffff\1\u067a",
-            "\1\u067b",
+            "",
+            "",
+            "",
+            "",
+            "\1\u0679",
+            "\1\46\2\uffff\1\46\20\uffff\32\46\4\uffff\1\46\1\uffff\32"+
+            "\46",
+            "\1\46\2\uffff\1\46\20\uffff\32\46\4\uffff\1\46\1\uffff\32"+
+            "\46",
             "\1\u067c",
             "\1\u067d",
             "\1\u067e",
             "\1\u067f",
             "\1\u0680",
-            "",
-            "",
-            "",
-            "",
             "\1\u0681",
-            "\1\46\2\uffff\1\46\20\uffff\32\46\4\uffff\1\46\1\uffff\32"+
-            "\46",
-            "\1\46\2\uffff\1\46\20\uffff\32\46\4\uffff\1\46\1\uffff\32"+
-            "\46",
+            "\1\u0682",
+            "\1\u0683",
             "\1\u0684",
-            "\1\u0685",
-            "\1\u0686",
-            "\1\u0687",
-            "\1\u0688",
+            "",
+            "\1\46\2\uffff\1\46\20\uffff\32\46\4\uffff\1\46\1\uffff\32"+
+            "\46",
+            "",
+            "\1\46\2\uffff\1\46\20\uffff\32\46\4\uffff\1\46\1\uffff\32"+
+            "\46",
+            "\1\46\2\uffff\1\46\20\uffff\32\46\4\uffff\1\46\1\uffff\32"+
+            "\46",
+            "",
+            "\1\46\2\uffff\1\46\20\uffff\32\46\4\uffff\1\46\1\uffff\32"+
+            "\46",
             "\1\u0689",
-            "\1\u068a",
-            "\1\u068b",
+            "\1\46\2\uffff\1\46\20\uffff\32\46\4\uffff\1\46\1\uffff\32"+
+            "\46",
+            "",
+            "",
+            "\1\46\2\uffff\1\46\20\uffff\32\46\4\uffff\1\46\1\uffff\32"+
+            "\46",
+            "",
             "\1\u068c",
             "",
-            "\1\46\2\uffff\1\46\20\uffff\32\46\4\uffff\1\46\1\uffff\32"+
-            "\46",
             "",
+            "\1\u068d",
+            "\1\46\2\uffff\1\46\20\uffff\32\46\4\uffff\1\46\1\uffff\32"+
+            "\46",
+            "\1\u068f",
+            "\1\u0690",
             "\1\46\2\uffff\1\46\20\uffff\32\46\4\uffff\1\46\1\uffff\32"+
             "\46",
             "\1\46\2\uffff\1\46\20\uffff\32\46\4\uffff\1\46\1\uffff\32"+
             "\46",
-            "",
-            "\1\46\2\uffff\1\46\20\uffff\32\46\4\uffff\1\46\1\uffff\32"+
-            "\46",
-            "\1\u0691",
-            "\1\46\2\uffff\1\46\20\uffff\32\46\4\uffff\1\46\1\uffff\32"+
-            "\46",
-            "",
-            "",
             "\1\46\2\uffff\1\46\20\uffff\32\46\4\uffff\1\46\1\uffff\32"+
             "\46",
             "",
             "\1\u0694",
-            "",
-            "",
             "\1\u0695",
-            "\1\46\2\uffff\1\46\20\uffff\32\46\4\uffff\1\46\1\uffff\32"+
-            "\46",
+            "",
+            "\1\u0696",
+            "",
             "\1\u0697",
-            "\1\u0698",
             "\1\46\2\uffff\1\46\20\uffff\32\46\4\uffff\1\46\1\uffff\32"+
             "\46",
+            "\1\u0699",
             "\1\46\2\uffff\1\46\20\uffff\32\46\4\uffff\1\46\1\uffff\32"+
             "\46",
-            "\1\46\2\uffff\1\46\20\uffff\32\46\4\uffff\1\46\1\uffff\32"+
-            "\46",
-            "",
+            "\1\u069b",
             "\1\u069c",
-            "\1\u069d",
-            "",
-            "\1\u069e",
-            "",
+            "\1\46\2\uffff\1\46\20\uffff\32\46\4\uffff\1\46\1\uffff\32"+
+            "\46",
+            "\1\46\2\uffff\1\46\20\uffff\32\46\4\uffff\1\46\1\uffff\32"+
+            "\46",
             "\1\u069f",
-            "\1\46\2\uffff\1\46\20\uffff\32\46\4\uffff\1\46\1\uffff\32"+
-            "\46",
+            "\1\u06a0",
             "\1\u06a1",
+            "\1\u06a2",
             "\1\46\2\uffff\1\46\20\uffff\32\46\4\uffff\1\46\1\uffff\32"+
             "\46",
-            "\1\u06a3",
+            "",
             "\1\u06a4",
             "\1\46\2\uffff\1\46\20\uffff\32\46\4\uffff\1\46\1\uffff\32"+
             "\46",
+            "",
+            "\1\u06a6",
             "\1\46\2\uffff\1\46\20\uffff\32\46\4\uffff\1\46\1\uffff\32"+
             "\46",
-            "\1\u06a7",
-            "\1\u06a8",
+            "\1\46\2\uffff\1\46\20\uffff\32\46\4\uffff\1\46\1\uffff\32"+
+            "\46",
             "\1\u06a9",
-            "\1\u06aa",
             "\1\46\2\uffff\1\46\20\uffff\32\46\4\uffff\1\46\1\uffff\32"+
             "\46",
-            "",
-            "\1\u06ac",
+            "\1\u06ab",
             "\1\46\2\uffff\1\46\20\uffff\32\46\4\uffff\1\46\1\uffff\32"+
             "\46",
-            "",
-            "\1\u06ae",
+            "\1\u06ad",
             "\1\46\2\uffff\1\46\20\uffff\32\46\4\uffff\1\46\1\uffff\32"+
             "\46",
             "\1\46\2\uffff\1\46\20\uffff\32\46\4\uffff\1\46\1\uffff\32"+
             "\46",
+            "\1\u06b0",
             "\1\u06b1",
-            "\1\46\2\uffff\1\46\20\uffff\32\46\4\uffff\1\46\1\uffff\32"+
-            "\46",
+            "\1\u06b2",
             "\1\u06b3",
-            "\1\46\2\uffff\1\46\20\uffff\32\46\4\uffff\1\46\1\uffff\32"+
-            "\46",
+            "\1\u06b4",
             "\1\u06b5",
             "\1\46\2\uffff\1\46\20\uffff\32\46\4\uffff\1\46\1\uffff\32"+
             "\46",
             "\1\46\2\uffff\1\46\20\uffff\32\46\4\uffff\1\46\1\uffff\32"+
             "\46",
+            "",
             "\1\u06b8",
             "\1\u06b9",
             "\1\u06ba",
             "\1\u06bb",
-            "\1\u06bc",
-            "\1\u06bd",
+            "",
+            "\1\46\2\uffff\1\46\20\uffff\32\46\4\uffff\1\46\1\uffff\32"+
+            "\46",
+            "\1\46\2\uffff\1\46\20\uffff\32\46\4\uffff\1\46\1\uffff\32"+
+            "\46",
+            "\1\46\2\uffff\1\46\20\uffff\32\46\4\uffff\1\46\1\uffff\32"+
+            "\46",
+            "\1\u06bf",
+            "",
+            "",
             "\1\46\2\uffff\1\46\20\uffff\32\46\4\uffff\1\46\1\uffff\32"+
             "\46",
             "\1\46\2\uffff\1\46\20\uffff\32\46\4\uffff\1\46\1\uffff\32"+
             "\46",
             "",
-            "\1\u06c0",
-            "\1\u06c1",
             "\1\u06c2",
             "\1\u06c3",
-            "",
             "\1\46\2\uffff\1\46\20\uffff\32\46\4\uffff\1\46\1\uffff\32"+
             "\46",
-            "\1\46\2\uffff\1\46\20\uffff\32\46\4\uffff\1\46\1\uffff\32"+
-            "\46",
-            "\1\46\2\uffff\1\46\20\uffff\32\46\4\uffff\1\46\1\uffff\32"+
-            "\46",
+            "\1\u06c5",
+            "\1\u06c6",
             "\1\u06c7",
-            "",
-            "",
             "\1\46\2\uffff\1\46\20\uffff\32\46\4\uffff\1\46\1\uffff\32"+
             "\46",
+            "\1\u06c9",
             "\1\46\2\uffff\1\46\20\uffff\32\46\4\uffff\1\46\1\uffff\32"+
             "\46",
-            "",
-            "\1\u06ca",
             "\1\u06cb",
-            "\1\46\2\uffff\1\46\20\uffff\32\46\4\uffff\1\46\1\uffff\32"+
-            "\46",
-            "\1\u06cd",
-            "\1\u06ce",
+            "\1\u06cc",
+            "",
+            "\1\u06cd\12\uffff\1\u06ce",
+            "",
             "\1\u06cf",
-            "\1\46\2\uffff\1\46\20\uffff\32\46\4\uffff\1\46\1\uffff\32"+
-            "\46",
-            "\1\u06d1",
-            "\1\46\2\uffff\1\46\20\uffff\32\46\4\uffff\1\46\1\uffff\32"+
-            "\46",
+            "\1\u06d0\1\u06d1\13\uffff\1\u06d2",
             "\1\u06d3",
             "\1\u06d4",
             "",
-            "\1\u06d5\12\uffff\1\u06d6",
             "",
+            "",
+            "",
+            "",
+            "",
+            "\1\u06d5\3\uffff\1\u06d6",
             "\1\u06d7",
-            "\1\u06d8\1\u06d9\13\uffff\1\u06da",
+            "\1\u06d8",
+            "\1\u06d9",
+            "\1\u06da",
+            "",
             "\1\u06db",
             "\1\u06dc",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "\1\u06dd\3\uffff\1\u06de",
+            "\1\u06dd\15\uffff\1\u06de",
             "\1\u06df",
             "\1\u06e0",
-            "\1\u06e1",
-            "\1\u06e2",
-            "",
+            "\1\u06e2\14\uffff\1\u06e1",
             "\1\u06e3",
             "\1\u06e4",
-            "\1\u06e5\15\uffff\1\u06e6",
-            "\1\u06e7",
-            "\1\u06e8",
-            "\1\u06ea\14\uffff\1\u06e9",
-            "\1\u06eb",
-            "\1\u06ec",
-            "\1\u06ed",
-            "\1\u06f0\13\uffff\1\u06ef",
-            "\1\u06f2\20\uffff\1\u06f1\4\uffff\1\u06f3\1\u06f4\1\u06f5",
+            "\1\u06e5",
+            "\1\u06e8\13\uffff\1\u06e7",
+            "\1\u06ea\20\uffff\1\u06e9\4\uffff\1\u06eb\1\u06ec\1\u06ed",
             "",
+            "\1\u06ee",
+            "\1\u06ef\73\uffff\1\u06f0",
+            "\1\u06f1",
+            "\1\u06f2",
+            "\1\u06f3",
+            "\1\u06f4",
+            "\1\u06f5",
             "\1\u06f6",
-            "\1\u06f7\73\uffff\1\u06f8",
+            "\1\u06f7",
+            "\1\u06f8",
             "\1\u06f9",
             "\1\u06fa",
-            "\1\u06fb",
+            "",
+            "",
+            "",
+            "\1\46\2\uffff\1\46\20\uffff\32\46\4\uffff\1\46\1\uffff\32"+
+            "\46",
             "\1\u06fc",
             "\1\u06fd",
             "\1\u06fe",
             "\1\u06ff",
-            "\1\u0700",
+            "",
+            "\1\46\2\uffff\1\46\20\uffff\32\46\4\uffff\1\46\1\uffff\32"+
+            "\46",
+            "",
             "\1\u0701",
             "\1\u0702",
             "",
             "",
-            "",
-            "\1\46\2\uffff\1\46\20\uffff\32\46\4\uffff\1\46\1\uffff\32"+
-            "\46",
+            "\1\u0703",
             "\1\u0704",
-            "\1\u0705",
-            "\1\u0706",
-            "\1\u0707",
-            "",
             "\1\46\2\uffff\1\46\20\uffff\32\46\4\uffff\1\46\1\uffff\32"+
             "\46",
-            "",
+            "\1\46\2\uffff\1\46\20\uffff\32\46\4\uffff\1\46\1\uffff\32"+
+            "\46",
+            "\1\46\2\uffff\1\46\20\uffff\32\46\4\uffff\1\46\1\uffff\32"+
+            "\46",
+            "\1\u0708",
             "\1\u0709",
             "\1\u070a",
-            "",
-            "",
             "\1\u070b",
-            "\1\u070c",
             "\1\46\2\uffff\1\46\20\uffff\32\46\4\uffff\1\46\1\uffff\32"+
             "\46",
             "\1\46\2\uffff\1\46\20\uffff\32\46\4\uffff\1\46\1\uffff\32"+
             "\46",
             "\1\46\2\uffff\1\46\20\uffff\32\46\4\uffff\1\46\1\uffff\32"+
             "\46",
-            "\1\u0710",
+            "\1\46\2\uffff\1\46\20\uffff\32\46\4\uffff\1\46\1\uffff\32"+
+            "\46",
+            "\1\46\2\uffff\1\46\20\uffff\32\46\4\uffff\1\46\1\uffff\32"+
+            "\46",
             "\1\u0711",
+            "",
+            "",
             "\1\u0712",
-            "\1\u0713",
             "\1\46\2\uffff\1\46\20\uffff\32\46\4\uffff\1\46\1\uffff\32"+
             "\46",
-            "\1\46\2\uffff\1\46\20\uffff\32\46\4\uffff\1\46\1\uffff\32"+
-            "\46",
-            "\1\46\2\uffff\1\46\20\uffff\32\46\4\uffff\1\46\1\uffff\32"+
-            "\46",
-            "\1\46\2\uffff\1\46\20\uffff\32\46\4\uffff\1\46\1\uffff\32"+
-            "\46",
-            "\1\46\2\uffff\1\46\20\uffff\32\46\4\uffff\1\46\1\uffff\32"+
-            "\46",
+            "\1\u0714",
+            "\1\u0715",
+            "\1\u0716",
+            "\1\u0717",
+            "\1\u0718",
             "\1\u0719",
-            "",
-            "",
             "\1\u071a",
+            "",
+            "",
+            "",
+            "",
+            "\1\u071b",
+            "",
+            "",
             "\1\46\2\uffff\1\46\20\uffff\32\46\4\uffff\1\46\1\uffff\32"+
             "\46",
-            "\1\u071c",
             "\1\u071d",
+            "",
             "\1\u071e",
-            "\1\u071f",
+            "\1\46\2\uffff\1\46\20\uffff\32\46\4\uffff\1\46\1\uffff\32"+
+            "\46",
+            "",
+            "",
+            "",
             "\1\u0720",
-            "\1\u0721",
+            "\1\46\2\uffff\1\46\20\uffff\32\46\4\uffff\1\46\1\uffff\32"+
+            "\46",
             "\1\u0722",
-            "",
-            "",
-            "",
-            "",
             "\1\u0723",
             "",
+            "\1\u0724",
             "",
-            "\1\46\2\uffff\1\46\20\uffff\32\46\4\uffff\1\46\1\uffff\32"+
-            "\46",
             "\1\u0725",
-            "",
             "\1\u0726",
+            "",
+            "",
+            "\1\u0727",
             "\1\46\2\uffff\1\46\20\uffff\32\46\4\uffff\1\46\1\uffff\32"+
             "\46",
-            "",
-            "",
-            "",
-            "\1\u0728",
             "\1\46\2\uffff\1\46\20\uffff\32\46\4\uffff\1\46\1\uffff\32"+
             "\46",
             "\1\u072a",
+            "",
             "\1\u072b",
             "",
-            "\1\u072c",
+            "\1\46\2\uffff\1\46\20\uffff\32\46\4\uffff\1\46\1\uffff\32"+
+            "\46",
             "",
-            "\1\u072d",
+            "",
+            "\1\46\2\uffff\1\46\20\uffff\32\46\4\uffff\1\46\1\uffff\32"+
+            "\46",
+            "",
             "\1\u072e",
             "",
+            "\1\46\2\uffff\1\46\20\uffff\32\46\4\uffff\1\46\1\uffff\32"+
+            "\46",
             "",
-            "\1\u072f",
-            "\1\46\2\uffff\1\46\20\uffff\32\46\4\uffff\1\46\1\uffff\32"+
-            "\46",
-            "\1\46\2\uffff\1\46\20\uffff\32\46\4\uffff\1\46\1\uffff\32"+
-            "\46",
+            "",
+            "\1\u0730",
+            "\1\u0731",
             "\1\u0732",
-            "",
             "\1\u0733",
+            "\1\u0734",
+            "\1\u0735",
             "",
-            "\1\46\2\uffff\1\46\20\uffff\32\46\4\uffff\1\46\1\uffff\32"+
-            "\46",
-            "",
-            "",
-            "\1\46\2\uffff\1\46\20\uffff\32\46\4\uffff\1\46\1\uffff\32"+
-            "\46",
             "",
             "\1\u0736",
+            "\1\u0737",
+            "\1\u0738",
+            "\1\u0739",
+            "",
+            "",
+            "",
+            "\1\u073a",
+            "",
+            "",
+            "\1\46\2\uffff\1\46\20\uffff\32\46\4\uffff\1\46\1\uffff\32"+
+            "\46",
+            "\1\u073c",
+            "",
+            "\1\u073d",
+            "\1\u073e",
+            "\1\46\2\uffff\1\46\20\uffff\32\46\4\uffff\1\46\1\uffff\32"+
+            "\46",
             "",
             "\1\46\2\uffff\1\46\20\uffff\32\46\4\uffff\1\46\1\uffff\32"+
             "\46",
             "",
-            "",
-            "\1\u0738",
-            "\1\u0739",
-            "\1\u073a",
-            "\1\u073b",
-            "\1\u073c",
-            "\1\u073d",
-            "",
-            "",
-            "\1\u073e",
-            "\1\u073f",
-            "\1\u0740",
             "\1\u0741",
-            "",
-            "",
-            "",
             "\1\u0742",
             "",
             "",
-            "\1\46\2\uffff\1\46\20\uffff\32\46\4\uffff\1\46\1\uffff\32"+
-            "\46",
-            "\1\u0744",
+            "\1\u0744\16\uffff\1\u0743",
+            "\1\u0746\5\uffff\1\u0745",
             "",
-            "\1\u0745",
-            "\1\u0746",
-            "\1\46\2\uffff\1\46\20\uffff\32\46\4\uffff\1\46\1\uffff\32"+
-            "\46",
             "",
-            "\1\46\2\uffff\1\46\20\uffff\32\46\4\uffff\1\46\1\uffff\32"+
-            "\46",
+            "\1\u0747",
+            "\1\u0748",
+            "",
             "",
             "\1\u0749",
             "\1\u074a",
+            "\1\u074b",
+            "\1\u074c",
+            "\1\u074d",
+            "\1\u074e",
+            "\1\u0750\5\uffff\1\u074f",
             "",
-            "",
-            "\1\u074c\16\uffff\1\u074b",
-            "\1\u074e\5\uffff\1\u074d",
-            "",
-            "",
-            "\1\u074f",
-            "\1\u0750",
-            "",
-            "",
-            "\1\u0751",
-            "\1\u0752",
-            "\1\u0753",
+            "\1\u0752\13\uffff\1\u0753\2\uffff\1\u0751",
             "\1\u0754",
             "\1\u0755",
+            "",
             "\1\u0756",
-            "\1\u0758\5\uffff\1\u0757",
+            "\1\u0757",
+            "\1\u0759\7\uffff\1\u075b\1\u075a\11\uffff\1\u0758",
             "",
-            "\1\u075a\13\uffff\1\u075b\2\uffff\1\u0759",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
             "\1\u075c",
-            "\1\u075d",
             "",
+            "\1\u075d",
             "\1\u075e",
             "\1\u075f",
-            "\1\u0761\7\uffff\1\u0763\1\u0762\11\uffff\1\u0760",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "\1\u0764",
-            "",
-            "\1\u0765",
+            "\1\u0760",
+            "\1\u0761",
+            "\1\u0763",
+            "\1\u0765\1\u0764",
             "\1\u0766",
             "\1\u0767",
-            "\1\u0768",
-            "\1\u0769",
-            "\1\u076b",
-            "\1\u076d\1\u076c",
-            "\1\u076e",
+            "\1\u076c\5\uffff\1\u0768\10\uffff\1\u0769\1\u076b\3\uffff"+
+            "\1\u076a",
+            "\1\u076d",
+            "",
+            "\1\46\2\uffff\1\46\20\uffff\32\46\4\uffff\1\46\1\uffff\32"+
+            "\46",
             "\1\u076f",
-            "\1\u0774\5\uffff\1\u0770\10\uffff\1\u0771\1\u0773\3\uffff"+
-            "\1\u0772",
+            "\1\u0770",
+            "\1\u0771",
+            "",
+            "\1\46\2\uffff\1\46\20\uffff\32\46\4\uffff\1\46\1\uffff\32"+
+            "\46",
+            "\1\u0773",
+            "\1\46\2\uffff\1\46\20\uffff\32\46\4\uffff\1\46\1\uffff\32"+
+            "\46",
             "\1\u0775",
             "",
-            "\1\46\2\uffff\1\46\20\uffff\32\46\4\uffff\1\46\1\uffff\32"+
-            "\46",
+            "",
+            "",
+            "\1\u0776",
             "\1\u0777",
-            "\1\u0778",
-            "\1\u0779",
+            "\1\u0778\3\uffff\1\u0779",
+            "\1\u077a",
             "",
-            "\1\46\2\uffff\1\46\20\uffff\32\46\4\uffff\1\46\1\uffff\32"+
-            "\46",
+            "",
+            "",
+            "",
+            "",
             "\1\u077b",
-            "\1\46\2\uffff\1\46\20\uffff\32\46\4\uffff\1\46\1\uffff\32"+
-            "\46",
+            "\1\u077c",
+            "",
             "\1\u077d",
-            "",
-            "",
-            "",
             "\1\u077e",
             "\1\u077f",
-            "\1\u0780\3\uffff\1\u0781",
+            "\1\u0780",
+            "\1\u0781",
             "\1\u0782",
-            "",
-            "",
-            "",
-            "",
-            "",
             "\1\u0783",
-            "\1\u0784",
+            "\1\46\2\uffff\1\46\20\uffff\32\46\4\uffff\1\46\1\uffff\32"+
+            "\46",
             "",
-            "\1\u0785",
-            "\1\u0786",
+            "\1\46\2\uffff\1\46\20\uffff\32\46\4\uffff\1\46\1\uffff\32"+
+            "\46",
+            "\1\46\2\uffff\1\46\20\uffff\32\46\4\uffff\1\46\1\uffff\32"+
+            "\46",
+            "",
             "\1\u0787",
-            "\1\u0788",
+            "",
+            "\1\46\2\uffff\1\46\20\uffff\32\46\4\uffff\1\46\1\uffff\32"+
+            "\46",
             "\1\u0789",
             "\1\u078a",
-            "\1\u078b",
+            "\1\46\2\uffff\1\46\20\uffff\32\46\4\uffff\1\46\1\uffff\32"+
+            "\46",
+            "\1\46\2\uffff\1\46\20\uffff\32\46\4\uffff\1\46\1\uffff\32"+
+            "\46",
+            "\1\u078d",
+            "",
+            "",
+            "\1\u078e",
             "\1\46\2\uffff\1\46\20\uffff\32\46\4\uffff\1\46\1\uffff\32"+
             "\46",
             "",
-            "\1\46\2\uffff\1\46\20\uffff\32\46\4\uffff\1\46\1\uffff\32"+
-            "\46",
-            "\1\46\2\uffff\1\46\20\uffff\32\46\4\uffff\1\46\1\uffff\32"+
-            "\46",
             "",
-            "\1\u078f",
+            "\1\u0790",
             "",
             "\1\46\2\uffff\1\46\20\uffff\32\46\4\uffff\1\46\1\uffff\32"+
             "\46",
-            "\1\u0791",
             "\1\u0792",
-            "\1\46\2\uffff\1\46\20\uffff\32\46\4\uffff\1\46\1\uffff\32"+
-            "\46",
-            "\1\46\2\uffff\1\46\20\uffff\32\46\4\uffff\1\46\1\uffff\32"+
-            "\46",
+            "\1\u0793",
+            "\1\u0794",
             "\1\u0795",
-            "",
-            "",
-            "\1\u0796",
             "\1\46\2\uffff\1\46\20\uffff\32\46\4\uffff\1\46\1\uffff\32"+
             "\46",
-            "",
-            "",
+            "\1\u0797",
             "\1\u0798",
-            "",
-            "\1\46\2\uffff\1\46\20\uffff\32\46\4\uffff\1\46\1\uffff\32"+
-            "\46",
+            "\1\u0799",
             "\1\u079a",
             "\1\u079b",
+            "",
             "\1\u079c",
             "\1\u079d",
+            "\1\u079e",
+            "",
+            "",
+            "\1\u079f",
             "\1\46\2\uffff\1\46\20\uffff\32\46\4\uffff\1\46\1\uffff\32"+
             "\46",
-            "\1\u079f",
-            "\1\u07a0",
+            "",
+            "",
             "\1\u07a1",
+            "",
             "\1\u07a2",
             "\1\u07a3",
-            "",
             "\1\u07a4",
             "\1\u07a5",
             "\1\u07a6",
-            "",
-            "",
             "\1\u07a7",
-            "\1\46\2\uffff\1\46\20\uffff\32\46\4\uffff\1\46\1\uffff\32"+
-            "\46",
-            "",
-            "",
+            "\1\u07a8",
             "\1\u07a9",
-            "",
             "\1\u07aa",
+            "",
+            "",
+            "",
+            "",
             "\1\u07ab",
             "\1\u07ac",
             "\1\u07ad",
-            "\1\u07ae",
-            "\1\u07af",
-            "\1\u07b0",
+            "\1\u07af\3\uffff\1\u07b0",
+            "",
             "\1\u07b1",
+            "",
             "\1\u07b2",
-            "",
-            "",
-            "",
-            "",
             "\1\u07b3",
             "\1\u07b4",
             "\1\u07b5",
-            "\1\u07b7\3\uffff\1\u07b8",
+            "\1\u07b6",
+            "\1\u07b7",
+            "\1\u07b9\13\uffff\1\u07b8\1\uffff\1\u07ba",
             "",
-            "\1\u07b9",
-            "",
-            "\1\u07ba",
             "\1\u07bb",
+            "",
+            "",
             "\1\u07bc",
             "\1\u07bd",
-            "\1\u07be",
-            "\1\u07bf",
-            "\1\u07c1\13\uffff\1\u07c0\1\uffff\1\u07c2",
+            "\1\u07be\1\u07bf",
             "",
+            "",
+            "",
+            "",
+            "\1\u07c0",
+            "",
+            "\1\u07c1",
+            "\1\u07c2",
             "\1\u07c3",
             "",
-            "",
             "\1\u07c4",
+            "",
             "\1\u07c5",
-            "\1\u07c6\1\u07c7",
-            "",
-            "",
-            "",
-            "",
+            "\1\46\2\uffff\1\46\20\uffff\32\46\4\uffff\1\46\1\uffff\32"+
+            "\46",
+            "\1\u07c7",
             "\1\u07c8",
-            "",
             "\1\u07c9",
             "\1\u07ca",
-            "\1\u07cb",
-            "",
+            "\1\46\2\uffff\1\46\20\uffff\32\46\4\uffff\1\46\1\uffff\32"+
+            "\46",
             "\1\u07cc",
-            "",
-            "\1\u07cd",
+            "\1\46\2\uffff\1\46\20\uffff\32\46\4\uffff\1\46\1\uffff\32"+
+            "\46",
             "\1\46\2\uffff\1\46\20\uffff\32\46\4\uffff\1\46\1\uffff\32"+
             "\46",
             "\1\u07cf",
             "\1\u07d0",
             "\1\u07d1",
             "\1\u07d2",
-            "\1\46\2\uffff\1\46\20\uffff\32\46\4\uffff\1\46\1\uffff\32"+
-            "\46",
+            "\1\u07d3",
+            "",
+            "",
+            "",
             "\1\u07d4",
+            "",
+            "\1\u07d5",
             "\1\46\2\uffff\1\46\20\uffff\32\46\4\uffff\1\46\1\uffff\32"+
             "\46",
+            "",
+            "",
             "\1\46\2\uffff\1\46\20\uffff\32\46\4\uffff\1\46\1\uffff\32"+
             "\46",
-            "\1\u07d7",
             "\1\u07d8",
+            "",
             "\1\u07d9",
+            "",
             "\1\u07da",
-            "\1\u07db",
-            "",
-            "",
-            "",
-            "\1\u07dc",
-            "",
-            "\1\u07dd",
             "\1\46\2\uffff\1\46\20\uffff\32\46\4\uffff\1\46\1\uffff\32"+
             "\46",
+            "\1\u07dc\3\uffff\1\u07dd",
+            "\1\u07de",
             "",
-            "",
-            "\1\46\2\uffff\1\46\20\uffff\32\46\4\uffff\1\46\1\uffff\32"+
-            "\46",
+            "\1\u07df",
             "\1\u07e0",
-            "",
-            "\1\u07e1",
-            "",
+            "\1\46\2\uffff\1\46\20\uffff\32\46\4\uffff\1\46\1\uffff\32"+
+            "\46",
             "\1\u07e2",
             "\1\46\2\uffff\1\46\20\uffff\32\46\4\uffff\1\46\1\uffff\32"+
             "\46",
-            "\1\u07e4\3\uffff\1\u07e5",
+            "\1\u07e4",
+            "\1\u07e5",
             "\1\u07e6",
+            "",
             "",
             "\1\u07e7",
             "\1\u07e8",
-            "\1\46\2\uffff\1\46\20\uffff\32\46\4\uffff\1\46\1\uffff\32"+
-            "\46",
+            "\1\u07e9",
             "\1\u07ea",
-            "\1\46\2\uffff\1\46\20\uffff\32\46\4\uffff\1\46\1\uffff\32"+
-            "\46",
+            "\1\u07eb",
             "\1\u07ec",
             "\1\u07ed",
             "\1\u07ee",
-            "",
-            "",
             "\1\u07ef",
             "\1\u07f0",
             "\1\u07f1",
             "\1\u07f2",
-            "\1\u07f3",
-            "\1\u07f4",
-            "\1\u07f5",
+            "\1\u07f5\5\uffff\1\u07f4\22\uffff\1\u07f3",
+            "",
+            "",
+            "",
             "\1\u07f6",
             "\1\u07f7",
             "\1\u07f8",
             "\1\u07f9",
             "\1\u07fa",
-            "\1\u07fd\5\uffff\1\u07fc\22\uffff\1\u07fb",
+            "\1\u07fb",
+            "\1\u07fc",
             "",
             "",
             "",
+            "\1\u07fd",
             "\1\u07fe",
             "\1\u07ff",
             "\1\u0800",
+            "",
             "\1\u0801",
             "\1\u0802",
             "\1\u0803",
             "\1\u0804",
-            "",
-            "",
-            "",
-            "\1\u0805",
+            "\1\46\2\uffff\1\46\20\uffff\32\46\4\uffff\1\46\1\uffff\32"+
+            "\46",
             "\1\u0806",
-            "\1\u0807",
-            "\1\u0808",
             "",
-            "\1\u0809",
-            "\1\u080a",
+            "\1\46\2\uffff\1\46\20\uffff\32\46\4\uffff\1\46\1\uffff\32"+
+            "\46",
+            "\1\46\2\uffff\1\46\20\uffff\32\46\4\uffff\1\46\1\uffff\32"+
+            "\46",
+            "\1\46\2\uffff\1\46\20\uffff\32\46\4\uffff\1\46\1\uffff\32"+
+            "\46",
+            "\1\46\2\uffff\1\46\20\uffff\32\46\4\uffff\1\46\1\uffff\32"+
+            "\46",
+            "",
             "\1\u080b",
-            "\1\u080c",
-            "\1\46\2\uffff\1\46\20\uffff\32\46\4\uffff\1\46\1\uffff\32"+
-            "\46",
-            "\1\u080e",
             "",
+            "",
+            "\1\u080c",
+            "\1\u080d",
+            "\1\u080e",
+            "\1\u080f",
+            "\1\u0810",
             "\1\46\2\uffff\1\46\20\uffff\32\46\4\uffff\1\46\1\uffff\32"+
             "\46",
-            "\1\46\2\uffff\1\46\20\uffff\32\46\4\uffff\1\46\1\uffff\32"+
-            "\46",
-            "\1\46\2\uffff\1\46\20\uffff\32\46\4\uffff\1\46\1\uffff\32"+
-            "\46",
-            "\1\46\2\uffff\1\46\20\uffff\32\46\4\uffff\1\46\1\uffff\32"+
-            "\46",
+            "\1\u0812",
+            "",
             "",
             "\1\u0813",
-            "",
-            "",
             "\1\u0814",
-            "\1\u0815",
+            "\1\46\2\uffff\1\46\20\uffff\32\46\4\uffff\1\46\1\uffff\32"+
+            "\46",
+            "",
             "\1\u0816",
             "\1\u0817",
             "\1\u0818",
-            "\1\46\2\uffff\1\46\20\uffff\32\46\4\uffff\1\46\1\uffff\32"+
-            "\46",
+            "\1\u0819",
             "\1\u081a",
             "",
-            "",
-            "\1\u081b",
-            "\1\u081c",
             "\1\46\2\uffff\1\46\20\uffff\32\46\4\uffff\1\46\1\uffff\32"+
             "\46",
             "",
-            "\1\u081e",
+            "\1\46\2\uffff\1\46\20\uffff\32\46\4\uffff\1\46\1\uffff\32"+
+            "\46",
+            "\1\46\2\uffff\1\46\20\uffff\32\46\4\uffff\1\46\1\uffff\32"+
+            "\46",
+            "\1\46\2\uffff\1\46\20\uffff\32\46\4\uffff\1\46\1\uffff\32"+
+            "\46",
             "\1\u081f",
-            "\1\u0820",
-            "\1\u0821",
-            "\1\u0822",
+            "\1\u0821\105\uffff\1\u0822",
+            "\1\u0825\6\uffff\1\u0824\2\uffff\1\u0823",
+            "\1\u0826\1\u0827\1\u0828",
+            "\1\u0829\17\uffff\1\u082a",
+            "\1\u082b\11\uffff\1\u082c",
+            "\1\u082d",
+            "\1\u082e",
+            "\1\u0830",
+            "\1\u0831",
+            "\1\u0833",
+            "\1\u0834",
             "",
-            "\1\46\2\uffff\1\46\20\uffff\32\46\4\uffff\1\46\1\uffff\32"+
-            "\46",
-            "",
-            "\1\46\2\uffff\1\46\20\uffff\32\46\4\uffff\1\46\1\uffff\32"+
-            "\46",
-            "\1\46\2\uffff\1\46\20\uffff\32\46\4\uffff\1\46\1\uffff\32"+
-            "\46",
-            "\1\46\2\uffff\1\46\20\uffff\32\46\4\uffff\1\46\1\uffff\32"+
-            "\46",
-            "\1\u0827",
-            "\1\u0829\105\uffff\1\u082a",
-            "\1\u082d\6\uffff\1\u082c\2\uffff\1\u082b",
-            "\1\u082e\1\u082f\1\u0830",
-            "\1\u0831\17\uffff\1\u0832",
-            "\1\u0833\11\uffff\1\u0834",
             "\1\u0835",
+            "",
             "\1\u0836",
-            "\1\u0838",
-            "\1\u0839",
+            "\1\u0837",
+            "\1\u0839\1\u0838",
+            "\1\u083a",
             "\1\u083b",
             "\1\u083c",
-            "",
             "\1\u083d",
-            "",
             "\1\u083e",
             "\1\u083f",
-            "\1\u0841\1\u0840",
+            "\1\u0841",
             "\1\u0842",
             "\1\u0843",
-            "\1\u0844",
+            "\1\46\2\uffff\1\46\20\uffff\32\46\4\uffff\1\46\1\uffff\32"+
+            "\46",
             "\1\u0845",
             "\1\u0846",
-            "\1\u0847",
-            "\1\u0849",
+            "",
+            "\1\46\2\uffff\1\46\20\uffff\32\46\4\uffff\1\46\1\uffff\32"+
+            "\46",
+            "",
+            "",
+            "",
+            "",
+            "\1\u0848",
+            "\1\46\2\uffff\1\46\20\uffff\32\46\4\uffff\1\46\1\uffff\32"+
+            "\46",
             "\1\u084a",
             "\1\u084b",
-            "\1\46\2\uffff\1\46\20\uffff\32\46\4\uffff\1\46\1\uffff\32"+
-            "\46",
+            "\1\u084c",
             "\1\u084d",
-            "\1\u084e",
             "",
             "\1\46\2\uffff\1\46\20\uffff\32\46\4\uffff\1\46\1\uffff\32"+
             "\46",
-            "",
-            "",
-            "",
-            "",
+            "\1\46\2\uffff\1\46\20\uffff\32\46\4\uffff\1\46\1\uffff\32"+
+            "\46",
             "\1\u0850",
+            "",
             "\1\46\2\uffff\1\46\20\uffff\32\46\4\uffff\1\46\1\uffff\32"+
             "\46",
-            "\1\u0852",
-            "\1\u0853",
+            "\1\46\2\uffff\1\46\20\uffff\32\46\4\uffff\1\46\1\uffff\32"+
+            "\46",
+            "\1\46\2\uffff\1\46\20\uffff\32\46\4\uffff\1\46\1\uffff\32"+
+            "\46",
             "\1\u0854",
             "\1\u0855",
             "",
-            "\1\46\2\uffff\1\46\20\uffff\32\46\4\uffff\1\46\1\uffff\32"+
-            "\46",
-            "\1\46\2\uffff\1\46\20\uffff\32\46\4\uffff\1\46\1\uffff\32"+
-            "\46",
-            "\1\u0858",
             "",
-            "\1\46\2\uffff\1\46\20\uffff\32\46\4\uffff\1\46\1\uffff\32"+
-            "\46",
-            "\1\46\2\uffff\1\46\20\uffff\32\46\4\uffff\1\46\1\uffff\32"+
-            "\46",
-            "\1\46\2\uffff\1\46\20\uffff\32\46\4\uffff\1\46\1\uffff\32"+
-            "\46",
-            "\1\u085c",
-            "\1\u085d",
+            "",
+            "",
+            "\1\u0856\14\uffff\1\u0857\3\uffff\1\u0858",
+            "",
+            "\1\u0859\15\uffff\1\u085a",
+            "",
+            "",
+            "\1\u085b",
             "",
             "",
             "",
             "",
-            "\1\u085e\14\uffff\1\u085f\3\uffff\1\u0860",
+            "\1\u085d\5\uffff\1\u085c",
             "",
-            "\1\u0861\15\uffff\1\u0862",
+            "\1\u085e",
             "",
-            "",
-            "\1\u0863",
-            "",
+            "\1\u085f",
             "",
             "",
+            "\1\u0860",
+            "\1\u0861\14\uffff\1\u0862\3\uffff\1\u0863",
             "",
-            "\1\u0865\5\uffff\1\u0864",
-            "",
-            "\1\u0866",
-            "",
+            "\1\u0866\5\uffff\1\u0865\22\uffff\1\u0864",
             "\1\u0867",
-            "",
-            "",
             "\1\u0868",
-            "\1\u0869\14\uffff\1\u086a\3\uffff\1\u086b",
+            "\1\u0869",
+            "\1\u086a",
             "",
-            "\1\u086e\5\uffff\1\u086d\22\uffff\1\u086c",
-            "\1\u086f",
-            "\1\u0870",
-            "\1\u0871",
+            "",
+            "\1\u086b",
+            "\1\u086c\14\uffff\1\u086d",
+            "\1\u086e",
+            "\1\u0871\10\uffff\1\u0870\11\uffff\1\u086f",
             "\1\u0872",
+            "\1\u0877\5\uffff\1\u0874\6\uffff\1\u0876\1\uffff\1\u0875",
             "",
-            "",
-            "\1\u0873",
-            "\1\u0874\14\uffff\1\u0875",
-            "\1\u0876",
-            "\1\u0879\10\uffff\1\u0878\11\uffff\1\u0877",
-            "\1\u087a",
-            "\1\u087f\5\uffff\1\u087c\6\uffff\1\u087e\1\uffff\1\u087d",
-            "",
-            "\1\u0880",
-            "\1\u0881",
-            "\1\u0882\14\uffff\1\u0883",
+            "\1\u0878",
+            "\1\u0879",
+            "\1\u087a\14\uffff\1\u087b",
             "",
             "\1\46\2\uffff\1\46\20\uffff\32\46\4\uffff\1\46\1\uffff\32"+
             "\46",
+            "\1\u087d",
+            "",
+            "\1\u087e",
+            "",
+            "\1\46\2\uffff\1\46\20\uffff\32\46\4\uffff\1\46\1\uffff\32"+
+            "\46",
+            "\1\u0880",
+            "\1\46\2\uffff\1\46\20\uffff\32\46\4\uffff\1\46\1\uffff\32"+
+            "\46",
+            "\1\46\2\uffff\1\46\20\uffff\32\46\4\uffff\1\46\1\uffff\32"+
+            "\46",
+            "",
+            "",
+            "\1\u0883",
+            "",
+            "",
+            "",
+            "\1\u0884",
             "\1\u0885",
             "",
-            "\1\u0886",
+            "\1\u0886\12\uffff\1\u0887",
             "",
-            "\1\46\2\uffff\1\46\20\uffff\32\46\4\uffff\1\46\1\uffff\32"+
-            "\46",
-            "\1\u0888",
-            "\1\46\2\uffff\1\46\20\uffff\32\46\4\uffff\1\46\1\uffff\32"+
-            "\46",
-            "\1\46\2\uffff\1\46\20\uffff\32\46\4\uffff\1\46\1\uffff\32"+
-            "\46",
+            "\1\u0889\5\uffff\1\u0888",
             "",
-            "",
+            "\1\u088a",
             "\1\u088b",
-            "",
-            "",
             "",
             "\1\u088c",
             "\1\u088d",
+            "\1\u088e",
             "",
-            "\1\u088e\12\uffff\1\u088f",
+            "\1\u088f\12\uffff\1\u0890",
             "",
-            "\1\u0891\5\uffff\1\u0890",
+            "",
+            "\1\u0891",
             "",
             "\1\u0892",
-            "\1\u0893",
-            "",
             "\1\u0894",
-            "\1\u0895",
-            "\1\u0896",
-            "",
-            "\1\u0897\12\uffff\1\u0898",
-            "",
-            "",
+            "\1\u0896\15\uffff\1\u0895",
+            "\1\u0897\6\uffff\1\u0898",
             "\1\u0899",
             "",
+            "",
             "\1\u089a",
-            "\1\u089c",
-            "\1\u089e\15\uffff\1\u089d",
-            "\1\u089f\6\uffff\1\u08a0",
-            "\1\u08a1",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "\1\u089c\1\u089b",
+            "\1\u089d\3\uffff\1\u089e",
+            "",
+            "",
+            "\1\u089f",
+            "\1\u08a0",
+            "",
             "",
             "",
             "\1\u08a2",
+            "\1\46\2\uffff\1\46\20\uffff\32\46\4\uffff\1\46\1\uffff\32"+
+            "\46",
+            "",
+            "\1\u08a4",
             "",
             "",
-            "",
-            "",
-            "",
-            "\1\u08a4\1\u08a3",
-            "\1\u08a5\3\uffff\1\u08a6",
-            "",
-            "",
+            "\1\u08a5",
+            "\1\46\2\uffff\1\46\20\uffff\32\46\4\uffff\1\46\1\uffff\32"+
+            "\46",
             "\1\u08a7",
+            "",
+            "",
             "\1\u08a8",
             "",
-            "",
-            "",
+            "\1\u08a9",
             "\1\u08aa",
-            "\1\46\2\uffff\1\46\20\uffff\32\46\4\uffff\1\46\1\uffff\32"+
-            "\46",
-            "",
+            "\1\u08ab",
             "\1\u08ac",
-            "",
-            "",
             "\1\u08ad",
-            "\1\46\2\uffff\1\46\20\uffff\32\46\4\uffff\1\46\1\uffff\32"+
-            "\46",
+            "",
+            "",
+            "\1\u08ae",
+            "",
+            "",
             "\1\u08af",
             "",
             "",
+            "",
+            "",
             "\1\u08b0",
-            "",
-            "\1\u08b1",
             "\1\u08b2",
+            "",
             "\1\u08b3",
-            "\1\u08b4",
-            "\1\u08b5",
             "",
             "",
-            "\1\u08b6",
+            "\1\u08b4\14\uffff\1\u08b5",
+            "\1\u08b7\10\uffff\1\u08b9\1\u08b6\3\uffff\1\u08b8",
             "",
-            "",
-            "\1\u08b7",
-            "",
-            "",
-            "",
-            "",
-            "\1\u08b8",
             "\1\u08ba",
-            "",
-            "\1\u08bb",
-            "",
-            "",
-            "\1\u08bc\14\uffff\1\u08bd",
-            "\1\u08bf\10\uffff\1\u08c1\1\u08be\3\uffff\1\u08c0",
-            "",
-            "\1\u08c2",
             "",
             "\1\46\2\uffff\1\46\20\uffff\32\46\4\uffff\1\46\1\uffff\32"+
             "\46",
-            "\1\u08c4",
+            "\1\u08bc",
             "",
+            "\1\u08bd",
+            "\1\u08be",
+            "\1\u08bf",
+            "\1\u08c0",
+            "\1\u08c2",
+            "\1\u08c3",
+            "\1\u08c4",
             "\1\u08c5",
             "\1\u08c6",
+            "",
+            "",
             "\1\u08c7",
             "\1\u08c8",
-            "\1\u08ca",
+            "",
+            "",
+            "\1\u08ca\2\uffff\1\u08c9",
+            "",
+            "",
+            "",
             "\1\u08cb",
+            "",
             "\1\u08cc",
             "\1\u08cd",
             "\1\u08ce",
-            "",
-            "",
-            "\1\u08cf",
             "\1\u08d0",
-            "",
-            "",
-            "\1\u08d2\2\uffff\1\u08d1",
-            "",
-            "",
-            "",
-            "\1\u08d3",
+            "\1\u08d1\14\uffff\1\u08d2\3\uffff\1\u08d3",
             "",
             "\1\u08d4",
             "\1\u08d5",
             "\1\u08d6",
+            "\1\u08d7",
             "\1\u08d8",
-            "\1\u08d9\14\uffff\1\u08da\3\uffff\1\u08db",
+            "\1\u08d9",
+            "\1\u08da",
             "",
+            "",
+            "\1\u08db",
             "\1\u08dc",
             "\1\u08dd",
-            "\1\u08de",
-            "\1\u08df",
-            "\1\u08e0",
+            "\1\u08de\14\uffff\1\u08df\3\uffff\1\u08e0",
+            "",
             "\1\u08e1",
-            "\1\u08e2",
             "",
+            "\1\u08e3\12\uffff\1\u08e4",
             "",
-            "\1\u08e3",
-            "\1\u08e4",
             "\1\u08e5",
-            "\1\u08e6\14\uffff\1\u08e7\3\uffff\1\u08e8",
-            "",
+            "\1\u08e6",
+            "\1\u08e8\14\uffff\1\u08e7",
             "\1\u08e9",
-            "",
-            "\1\u08eb\12\uffff\1\u08ec",
-            "",
-            "\1\u08ed",
-            "\1\u08ee",
-            "\1\u08f0\14\uffff\1\u08ef",
-            "\1\u08f1",
-            "\1\u08f2",
-            "\1\u08f3",
-            "\1\u08f4",
+            "\1\u08ea",
+            "\1\u08eb",
+            "\1\u08ec",
             "\1\46\2\uffff\1\46\20\uffff\32\46\4\uffff\1\46\1\uffff\32"+
             "\46",
             "\1\46\2\uffff\1\46\20\uffff\32\46\4\uffff\1\46\1\uffff\32"+
             "\46",
+            "\1\u08f0",
+            "",
+            "\1\u08f1\12\uffff\1\u08f2",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "\1\u08f4\5\uffff\1\u08f3",
+            "\1\u08f5",
+            "\1\u08f6",
+            "",
+            "\1\u08f7",
             "\1\u08f8",
-            "",
-            "\1\u08f9\12\uffff\1\u08fa",
-            "",
-            "",
+            "\1\u08fa\14\uffff\1\u08f9",
+            "\1\u08fc\1\uffff\1\u08fb\1\u08fd",
             "",
             "",
             "",
-            "\1\u08fc\5\uffff\1\u08fb",
-            "\1\u08fd",
-            "\1\u08fe",
+            "\1\46\2\uffff\1\46\20\uffff\32\46\4\uffff\1\46\1\uffff\32"+
+            "\46",
+            "",
             "",
             "\1\u08ff",
-            "\1\u0900",
-            "\1\u0902\14\uffff\1\u0901",
-            "\1\u0904\1\uffff\1\u0903\1\u0905",
             "",
-            "",
-            "",
-            "\1\46\2\uffff\1\46\20\uffff\32\46\4\uffff\1\46\1\uffff\32"+
-            "\46",
-            "",
-            "",
+            "\1\u0900\13\uffff\1\u0901\3\uffff\1\u0902\1\u0903",
+            "\1\u0904",
+            "\1\u0905",
+            "\1\u0906",
             "\1\u0907",
             "",
-            "\1\u0908\13\uffff\1\u0909\3\uffff\1\u090a\1\u090b",
-            "\1\u090c",
-            "\1\u090d",
+            "",
+            "",
+            "",
+            "",
+            "\1\u0908",
+            "",
+            "",
+            "\1\u0909",
+            "",
+            "\1\u090a",
+            "\1\u090b",
+            "\1\u090d\2\uffff\1\u090c",
             "\1\u090e",
             "\1\u090f",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "\1\u0910",
-            "",
-            "",
             "\1\u0911",
-            "",
             "\1\u0912",
             "\1\u0913",
-            "\1\u0915\2\uffff\1\u0914",
-            "\1\u0916",
-            "\1\u0917",
+            "",
+            "\1\u0914",
+            "\1\u0915",
+            "\1\u0916\14\uffff\1\u0917\3\uffff\1\u0918",
+            "",
             "\1\u0919",
             "\1\u091a",
-            "\1\u091b",
-            "",
-            "\1\u091c",
+            "\1\u091c\2\uffff\1\u091b",
             "\1\u091d",
-            "\1\u091e\14\uffff\1\u091f\3\uffff\1\u0920",
+            "\1\u091e",
+            "",
+            "\1\u091f\12\uffff\1\u0920",
             "",
             "\1\u0921",
             "\1\u0922",
-            "\1\u0924\2\uffff\1\u0923",
+            "",
+            "\1\u0924",
             "\1\u0925",
             "\1\u0926",
             "",
-            "\1\u0927\12\uffff\1\u0928",
             "",
+            "\1\u0927",
+            "",
+            "",
+            "\1\u0928",
             "\1\u0929",
             "\1\u092a",
-            "",
             "\1\u092c",
-            "\1\u092d",
             "\1\u092e",
-            "",
-            "",
             "\1\u092f",
+            "",
+            "",
             "",
             "",
             "\1\u0930",
             "\1\u0931",
-            "\1\u0932",
-            "\1\u0934",
+            "\1\u0933",
+            "\1\u0935\22\uffff\1\u0934",
+            "",
             "\1\u0936",
-            "\1\u0937",
             "",
             "",
-            "",
-            "",
-            "\1\u0938",
-            "\1\u0939",
-            "\1\u093b",
-            "\1\u093d\22\uffff\1\u093c",
-            "",
-            "\1\u093e",
-            "",
-            "",
-            "\1\u0941\22\uffff\1\u0940",
+            "\1\u0939\22\uffff\1\u0938",
             "",
             "",
             ""
     };
 
-    static final short[] DFA13_eot = DFA.unpackEncodedString(DFA13_eotS);
-    static final short[] DFA13_eof = DFA.unpackEncodedString(DFA13_eofS);
-    static final char[] DFA13_min = DFA.unpackEncodedStringToUnsignedChars(DFA13_minS);
-    static final char[] DFA13_max = DFA.unpackEncodedStringToUnsignedChars(DFA13_maxS);
-    static final short[] DFA13_accept = DFA.unpackEncodedString(DFA13_acceptS);
-    static final short[] DFA13_special = DFA.unpackEncodedString(DFA13_specialS);
-    static final short[][] DFA13_transition;
+    static final short[] DFA12_eot = DFA.unpackEncodedString(DFA12_eotS);
+    static final short[] DFA12_eof = DFA.unpackEncodedString(DFA12_eofS);
+    static final char[] DFA12_min = DFA.unpackEncodedStringToUnsignedChars(DFA12_minS);
+    static final char[] DFA12_max = DFA.unpackEncodedStringToUnsignedChars(DFA12_maxS);
+    static final short[] DFA12_accept = DFA.unpackEncodedString(DFA12_acceptS);
+    static final short[] DFA12_special = DFA.unpackEncodedString(DFA12_specialS);
+    static final short[][] DFA12_transition;
 
     static {
-        int numStates = DFA13_transitionS.length;
-        DFA13_transition = new short[numStates][];
+        int numStates = DFA12_transitionS.length;
+        DFA12_transition = new short[numStates][];
         for (int i=0; i<numStates; i++) {
-            DFA13_transition[i] = DFA.unpackEncodedString(DFA13_transitionS[i]);
+            DFA12_transition[i] = DFA.unpackEncodedString(DFA12_transitionS[i]);
         }
     }
 
-    class DFA13 extends DFA {
+    class DFA12 extends DFA {
 
-        public DFA13(BaseRecognizer recognizer) {
+        public DFA12(BaseRecognizer recognizer) {
             this.recognizer = recognizer;
-            this.decisionNumber = 13;
-            this.eot = DFA13_eot;
-            this.eof = DFA13_eof;
-            this.min = DFA13_min;
-            this.max = DFA13_max;
-            this.accept = DFA13_accept;
-            this.special = DFA13_special;
-            this.transition = DFA13_transition;
+            this.decisionNumber = 12;
+            this.eot = DFA12_eot;
+            this.eof = DFA12_eof;
+            this.min = DFA12_min;
+            this.max = DFA12_max;
+            this.accept = DFA12_accept;
+            this.special = DFA12_special;
+            this.transition = DFA12_transition;
         }
         public String getDescription() {
-            return "1:1: Tokens : ( T__12 | T__13 | T__14 | T__15 | T__16 | T__17 | T__18 | T__19 | T__20 | T__21 | T__22 | T__23 | T__24 | T__25 | T__26 | T__27 | T__28 | T__29 | T__30 | T__31 | T__32 | T__33 | T__34 | T__35 | T__36 | T__37 | T__38 | T__39 | T__40 | T__41 | T__42 | T__43 | T__44 | T__45 | T__46 | T__47 | T__48 | T__49 | T__50 | T__51 | T__52 | T__53 | T__54 | T__55 | T__56 | T__57 | T__58 | T__59 | T__60 | T__61 | T__62 | T__63 | T__64 | T__65 | T__66 | T__67 | T__68 | T__69 | T__70 | T__71 | T__72 | T__73 | T__74 | T__75 | T__76 | T__77 | T__78 | T__79 | T__80 | T__81 | T__82 | T__83 | T__84 | T__85 | T__86 | T__87 | T__88 | T__89 | T__90 | T__91 | T__92 | T__93 | T__94 | T__95 | T__96 | T__97 | T__98 | T__99 | T__100 | T__101 | T__102 | T__103 | T__104 | T__105 | T__106 | T__107 | T__108 | T__109 | T__110 | T__111 | T__112 | T__113 | T__114 | T__115 | T__116 | T__117 | T__118 | T__119 | T__120 | T__121 | T__122 | T__123 | T__124 | T__125 | T__126 | T__127 | T__128 | T__129 | T__130 | T__131 | T__132 | T__133 | T__134 | T__135 | T__136 | T__137 | T__138 | T__139 | T__140 | T__141 | T__142 | T__143 | T__144 | T__145 | T__146 | T__147 | T__148 | T__149 | T__150 | T__151 | T__152 | T__153 | T__154 | T__155 | T__156 | T__157 | T__158 | T__159 | T__160 | T__161 | T__162 | T__163 | T__164 | T__165 | T__166 | T__167 | T__168 | T__169 | T__170 | T__171 | T__172 | T__173 | T__174 | T__175 | T__176 | T__177 | T__178 | T__179 | T__180 | T__181 | T__182 | T__183 | T__184 | T__185 | T__186 | T__187 | T__188 | T__189 | T__190 | T__191 | T__192 | T__193 | T__194 | T__195 | T__196 | T__197 | T__198 | T__199 | T__200 | T__201 | T__202 | T__203 | T__204 | T__205 | T__206 | T__207 | T__208 | T__209 | T__210 | T__211 | T__212 | T__213 | T__214 | T__215 | T__216 | T__217 | T__218 | T__219 | T__220 | T__221 | T__222 | T__223 | T__224 | T__225 | T__226 | T__227 | T__228 | T__229 | T__230 | T__231 | T__232 | T__233 | T__234 | T__235 | T__236 | T__237 | T__238 | T__239 | T__240 | T__241 | T__242 | T__243 | T__244 | T__245 | T__246 | T__247 | T__248 | T__249 | T__250 | T__251 | T__252 | T__253 | T__254 | T__255 | T__256 | T__257 | T__258 | T__259 | T__260 | T__261 | T__262 | T__263 | T__264 | T__265 | T__266 | T__267 | T__268 | T__269 | T__270 | T__271 | T__272 | T__273 | T__274 | T__275 | T__276 | T__277 | T__278 | T__279 | T__280 | T__281 | T__282 | T__283 | T__284 | T__285 | T__286 | T__287 | T__288 | T__289 | T__290 | T__291 | T__292 | T__293 | T__294 | T__295 | T__296 | T__297 | T__298 | T__299 | T__300 | T__301 | T__302 | T__303 | T__304 | T__305 | T__306 | T__307 | T__308 | T__309 | T__310 | T__311 | T__312 | T__313 | T__314 | T__315 | T__316 | T__317 | T__318 | T__319 | T__320 | T__321 | T__322 | T__323 | T__324 | T__325 | T__326 | T__327 | T__328 | T__329 | T__330 | T__331 | T__332 | T__333 | T__334 | T__335 | T__336 | T__337 | T__338 | T__339 | T__340 | T__341 | T__342 | T__343 | T__344 | T__345 | T__346 | T__347 | T__348 | T__349 | T__350 | T__351 | T__352 | T__353 | T__354 | T__355 | T__356 | T__357 | T__358 | T__359 | T__360 | T__361 | T__362 | T__363 | T__364 | T__365 | T__366 | T__367 | T__368 | T__369 | T__370 | T__371 | T__372 | T__373 | T__374 | T__375 | T__376 | T__377 | T__378 | T__379 | T__380 | T__381 | T__382 | T__383 | T__384 | T__385 | T__386 | T__387 | T__388 | T__389 | T__390 | T__391 | T__392 | T__393 | T__394 | T__395 | T__396 | T__397 | T__398 | T__399 | T__400 | T__401 | T__402 | T__403 | T__404 | T__405 | T__406 | T__407 | T__408 | T__409 | T__410 | T__411 | T__412 | T__413 | T__414 | T__415 | T__416 | T__417 | T__418 | T__419 | T__420 | T__421 | T__422 | T__423 | T__424 | T__425 | T__426 | T__427 | T__428 | T__429 | T__430 | T__431 | T__432 | T__433 | T__434 | T__435 | T__436 | T__437 | T__438 | T__439 | T__440 | T__441 | T__442 | T__443 | T__444 | T__445 | T__446 | T__447 | T__448 | T__449 | T__450 | T__451 | T__452 | T__453 | T__454 | T__455 | T__456 | T__457 | T__458 | T__459 | T__460 | T__461 | T__462 | T__463 | T__464 | T__465 | T__466 | T__467 | T__468 | T__469 | T__470 | T__471 | T__472 | T__473 | T__474 | T__475 | T__476 | T__477 | T__478 | T__479 | T__480 | T__481 | T__482 | T__483 | T__484 | T__485 | T__486 | T__487 | T__488 | T__489 | T__490 | T__491 | T__492 | T__493 | T__494 | T__495 | T__496 | T__497 | T__498 | RULE_INTEGER | RULE_REAL | RULE_HEXCOLOR | RULE_IDENT | RULE_COMMA | RULE_ML_COMMENT | RULE_WS | RULE_STRING );";
+            return "1:1: Tokens : ( T__11 | T__12 | T__13 | T__14 | T__15 | T__16 | T__17 | T__18 | T__19 | T__20 | T__21 | T__22 | T__23 | T__24 | T__25 | T__26 | T__27 | T__28 | T__29 | T__30 | T__31 | T__32 | T__33 | T__34 | T__35 | T__36 | T__37 | T__38 | T__39 | T__40 | T__41 | T__42 | T__43 | T__44 | T__45 | T__46 | T__47 | T__48 | T__49 | T__50 | T__51 | T__52 | T__53 | T__54 | T__55 | T__56 | T__57 | T__58 | T__59 | T__60 | T__61 | T__62 | T__63 | T__64 | T__65 | T__66 | T__67 | T__68 | T__69 | T__70 | T__71 | T__72 | T__73 | T__74 | T__75 | T__76 | T__77 | T__78 | T__79 | T__80 | T__81 | T__82 | T__83 | T__84 | T__85 | T__86 | T__87 | T__88 | T__89 | T__90 | T__91 | T__92 | T__93 | T__94 | T__95 | T__96 | T__97 | T__98 | T__99 | T__100 | T__101 | T__102 | T__103 | T__104 | T__105 | T__106 | T__107 | T__108 | T__109 | T__110 | T__111 | T__112 | T__113 | T__114 | T__115 | T__116 | T__117 | T__118 | T__119 | T__120 | T__121 | T__122 | T__123 | T__124 | T__125 | T__126 | T__127 | T__128 | T__129 | T__130 | T__131 | T__132 | T__133 | T__134 | T__135 | T__136 | T__137 | T__138 | T__139 | T__140 | T__141 | T__142 | T__143 | T__144 | T__145 | T__146 | T__147 | T__148 | T__149 | T__150 | T__151 | T__152 | T__153 | T__154 | T__155 | T__156 | T__157 | T__158 | T__159 | T__160 | T__161 | T__162 | T__163 | T__164 | T__165 | T__166 | T__167 | T__168 | T__169 | T__170 | T__171 | T__172 | T__173 | T__174 | T__175 | T__176 | T__177 | T__178 | T__179 | T__180 | T__181 | T__182 | T__183 | T__184 | T__185 | T__186 | T__187 | T__188 | T__189 | T__190 | T__191 | T__192 | T__193 | T__194 | T__195 | T__196 | T__197 | T__198 | T__199 | T__200 | T__201 | T__202 | T__203 | T__204 | T__205 | T__206 | T__207 | T__208 | T__209 | T__210 | T__211 | T__212 | T__213 | T__214 | T__215 | T__216 | T__217 | T__218 | T__219 | T__220 | T__221 | T__222 | T__223 | T__224 | T__225 | T__226 | T__227 | T__228 | T__229 | T__230 | T__231 | T__232 | T__233 | T__234 | T__235 | T__236 | T__237 | T__238 | T__239 | T__240 | T__241 | T__242 | T__243 | T__244 | T__245 | T__246 | T__247 | T__248 | T__249 | T__250 | T__251 | T__252 | T__253 | T__254 | T__255 | T__256 | T__257 | T__258 | T__259 | T__260 | T__261 | T__262 | T__263 | T__264 | T__265 | T__266 | T__267 | T__268 | T__269 | T__270 | T__271 | T__272 | T__273 | T__274 | T__275 | T__276 | T__277 | T__278 | T__279 | T__280 | T__281 | T__282 | T__283 | T__284 | T__285 | T__286 | T__287 | T__288 | T__289 | T__290 | T__291 | T__292 | T__293 | T__294 | T__295 | T__296 | T__297 | T__298 | T__299 | T__300 | T__301 | T__302 | T__303 | T__304 | T__305 | T__306 | T__307 | T__308 | T__309 | T__310 | T__311 | T__312 | T__313 | T__314 | T__315 | T__316 | T__317 | T__318 | T__319 | T__320 | T__321 | T__322 | T__323 | T__324 | T__325 | T__326 | T__327 | T__328 | T__329 | T__330 | T__331 | T__332 | T__333 | T__334 | T__335 | T__336 | T__337 | T__338 | T__339 | T__340 | T__341 | T__342 | T__343 | T__344 | T__345 | T__346 | T__347 | T__348 | T__349 | T__350 | T__351 | T__352 | T__353 | T__354 | T__355 | T__356 | T__357 | T__358 | T__359 | T__360 | T__361 | T__362 | T__363 | T__364 | T__365 | T__366 | T__367 | T__368 | T__369 | T__370 | T__371 | T__372 | T__373 | T__374 | T__375 | T__376 | T__377 | T__378 | T__379 | T__380 | T__381 | T__382 | T__383 | T__384 | T__385 | T__386 | T__387 | T__388 | T__389 | T__390 | T__391 | T__392 | T__393 | T__394 | T__395 | T__396 | T__397 | T__398 | T__399 | T__400 | T__401 | T__402 | T__403 | T__404 | T__405 | T__406 | T__407 | T__408 | T__409 | T__410 | T__411 | T__412 | T__413 | T__414 | T__415 | T__416 | T__417 | T__418 | T__419 | T__420 | T__421 | T__422 | T__423 | T__424 | T__425 | T__426 | T__427 | T__428 | T__429 | T__430 | T__431 | T__432 | T__433 | T__434 | T__435 | T__436 | T__437 | T__438 | T__439 | T__440 | T__441 | T__442 | T__443 | T__444 | T__445 | T__446 | T__447 | T__448 | T__449 | T__450 | T__451 | T__452 | T__453 | T__454 | T__455 | T__456 | T__457 | T__458 | T__459 | T__460 | T__461 | T__462 | T__463 | T__464 | T__465 | T__466 | T__467 | T__468 | T__469 | T__470 | T__471 | T__472 | T__473 | T__474 | T__475 | T__476 | T__477 | T__478 | T__479 | T__480 | T__481 | T__482 | T__483 | T__484 | T__485 | T__486 | T__487 | T__488 | T__489 | T__490 | T__491 | T__492 | T__493 | T__494 | T__495 | T__496 | T__497 | RULE_INTEGER | RULE_REAL | RULE_IDENT | RULE_COMMA | RULE_ML_COMMENT | RULE_WS | RULE_STRING );";
         }
     }
  

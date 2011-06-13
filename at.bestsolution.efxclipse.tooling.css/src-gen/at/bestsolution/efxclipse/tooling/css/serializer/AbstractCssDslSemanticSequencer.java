@@ -1109,7 +1109,7 @@ public class AbstractCssDslSemanticSequencer extends AbstractSemanticSequencer {
 	 *     (
 	 *         hex=HEXCOLOR | 
 	 *         (r=integer g=integer b=integer) | 
-	 *         (rp=PERCENTAGE gp=PERCENTAGE bp=PERCENTAGE) | 
+	 *         (rp=integer gp=integer bp=integer) | 
 	 *         (r=integer g=integer b=integer alpha=NUMBER) | 
 	 *         (rp=integer gp=integer bp=integer alpha=NUMBER)
 	 *     )

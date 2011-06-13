@@ -253,7 +253,7 @@ fx_url_property:
 fx_paint_properties:
 	property=(
 		'-fx-background-color'
-	) WS*':'WS* (((values+=Paint) (COMMA values+=Paint)*) | 'null')
+	) WS*':'WS* (((values+=Paint) (COMMA values+=Paint WS*)*) | 'null')
 ;
 
 fx_multisize_properties:
@@ -380,7 +380,7 @@ fx_number_properties:
 fx_multi_paint_properties:
 	property=(
 		'-fx-border-color'
-	) WS*':'WS* ((values+=MultiPaint (COMMA values+=MultiPaint)*) | 'null')	
+	) WS*':'WS* ((values+=MultiPaint WS* (COMMA values+=MultiPaint)*) | 'null')	
 ;
 
 fx_string_property:
@@ -403,7 +403,7 @@ EffectInnerShadow:
 ;
 
 MultiPaint:
-	values+=Paint+ 
+	(values+=Paint)+ 
 	// values+=PaintValue values+=PaintValue values+=PaintValue values+=PaintValue
 	// values+=PaintValue // | (values+=PaintValue values+=PaintValue values+=PaintValue values+=PaintValue)
 	// (values+=PaintValue | values+=PaintValue values+=PaintValue values+=PaintValue values+=PaintValue)
@@ -415,7 +415,7 @@ Paint:
 
 
 LinearGradient:
-	'linear' '(' x1=SIZE COMMA y1=SIZE ')' 'to' '(' x2=SIZE COMMA y2=SIZE ')' 'stops' ( '(' stops+=StopValue ')' )+ ( 'repeat' | 'reflect' )?
+	'linear' WS* '(' x1=SIZE COMMA y1=SIZE ')' WS* 'to' WS* '(' x2=SIZE COMMA y2=SIZE ')' WS* 'stops' ( WS* '(' stops+=StopValue ')' )+ ( 'repeat' | 'reflect' )?
 ;
 
 RadialGradient:
@@ -465,7 +465,7 @@ BorderStyle:
 ;
 
 SizeFill:
-	value=Dim4Size fill='fill'?
+	value=Dim4Size WS* fill='fill'?
 ;
 
 Color:
@@ -529,9 +529,9 @@ NamedColor:
 RGBColor:
 	hex=HEXCOLOR
 	|
-	('rgb' '(' r=integer COMMA g=integer COMMA b=integer ')' )
+	('rgb' '(' WS* r=integer COMMA g=integer COMMA b=integer WS* ')' )
 	|
-	('rgb' '(' rp=PERCENTAGE COMMA gp=PERCENTAGE COMMA bp=PERCENTAGE ')' )
+	('rgb' '(' rp=integer '%' COMMA gp=integer '%' COMMA bp=integer '%' ')' )
 	|
 	('rgba' '(' r=integer COMMA g=integer COMMA b=integer COMMA alpha=NUMBER ')' )
 	|
@@ -588,10 +588,12 @@ BLUR:
 	'gaussian' | 'one-pass-box' | 'three-pass-box' | 'two-pass-box'
 ;
 
+HEXCOLOR: '#' IDENT; //((hexdigit hexdigit hexdigit) | (hexdigit hexdigit hexdigit hexdigit hexdigit hexdigit));
+
+//terminal digit:('0'..'9');
 terminal integer:('0'..'9')+;
 terminal real: (('0'..'9')*"."('0'..'9')+);
-terminal HEXCOLOR: '#' (('0'..'9') ('0'..'9') ('0'..'9')) | (('0'..'9')('0'..'9')('0'..'9')('0'..'9')('0'..'9')('0'..'9'));
-
+//terminal HEXCOLOR: '#' IDENT;
 
 terminal IDENT: ('_' | 'a'..'z' | 'A'..'Z' ) ('_' | '-' | 'a'..'z' | 'A'..'Z' | '0..9' )*;
 terminal COMMA: WS* ',' WS*;
