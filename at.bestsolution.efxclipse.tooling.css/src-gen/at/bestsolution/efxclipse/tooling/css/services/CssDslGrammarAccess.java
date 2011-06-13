@@ -5828,76 +5828,88 @@ public class CssDslGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cHexcolorHexColorParserRuleCall_0_0 = (RuleCall)cHexcolorAssignment_0.eContents().get(0);
 		private final Group cGroup_1 = (Group)cAlternatives.eContents().get(1);
 		private final Keyword cRgbKeyword_1_0 = (Keyword)cGroup_1.eContents().get(0);
-		private final Keyword cLeftParenthesisKeyword_1_1 = (Keyword)cGroup_1.eContents().get(1);
-		private final RuleCall cWSTerminalRuleCall_1_2 = (RuleCall)cGroup_1.eContents().get(2);
-		private final Assignment cRAssignment_1_3 = (Assignment)cGroup_1.eContents().get(3);
-		private final RuleCall cRIntegerTerminalRuleCall_1_3_0 = (RuleCall)cRAssignment_1_3.eContents().get(0);
-		private final RuleCall cCOMMATerminalRuleCall_1_4 = (RuleCall)cGroup_1.eContents().get(4);
-		private final Assignment cGAssignment_1_5 = (Assignment)cGroup_1.eContents().get(5);
-		private final RuleCall cGIntegerTerminalRuleCall_1_5_0 = (RuleCall)cGAssignment_1_5.eContents().get(0);
-		private final RuleCall cCOMMATerminalRuleCall_1_6 = (RuleCall)cGroup_1.eContents().get(6);
-		private final Assignment cBAssignment_1_7 = (Assignment)cGroup_1.eContents().get(7);
-		private final RuleCall cBIntegerTerminalRuleCall_1_7_0 = (RuleCall)cBAssignment_1_7.eContents().get(0);
-		private final RuleCall cWSTerminalRuleCall_1_8 = (RuleCall)cGroup_1.eContents().get(8);
-		private final Keyword cRightParenthesisKeyword_1_9 = (Keyword)cGroup_1.eContents().get(9);
+		private final RuleCall cWSTerminalRuleCall_1_1 = (RuleCall)cGroup_1.eContents().get(1);
+		private final Keyword cLeftParenthesisKeyword_1_2 = (Keyword)cGroup_1.eContents().get(2);
+		private final RuleCall cWSTerminalRuleCall_1_3 = (RuleCall)cGroup_1.eContents().get(3);
+		private final Assignment cRAssignment_1_4 = (Assignment)cGroup_1.eContents().get(4);
+		private final RuleCall cRIntegerTerminalRuleCall_1_4_0 = (RuleCall)cRAssignment_1_4.eContents().get(0);
+		private final RuleCall cCOMMATerminalRuleCall_1_5 = (RuleCall)cGroup_1.eContents().get(5);
+		private final Assignment cGAssignment_1_6 = (Assignment)cGroup_1.eContents().get(6);
+		private final RuleCall cGIntegerTerminalRuleCall_1_6_0 = (RuleCall)cGAssignment_1_6.eContents().get(0);
+		private final RuleCall cCOMMATerminalRuleCall_1_7 = (RuleCall)cGroup_1.eContents().get(7);
+		private final Assignment cBAssignment_1_8 = (Assignment)cGroup_1.eContents().get(8);
+		private final RuleCall cBIntegerTerminalRuleCall_1_8_0 = (RuleCall)cBAssignment_1_8.eContents().get(0);
+		private final RuleCall cWSTerminalRuleCall_1_9 = (RuleCall)cGroup_1.eContents().get(9);
+		private final Keyword cRightParenthesisKeyword_1_10 = (Keyword)cGroup_1.eContents().get(10);
 		private final Group cGroup_2 = (Group)cAlternatives.eContents().get(2);
 		private final Keyword cRgbKeyword_2_0 = (Keyword)cGroup_2.eContents().get(0);
-		private final Keyword cLeftParenthesisKeyword_2_1 = (Keyword)cGroup_2.eContents().get(1);
-		private final Assignment cRpAssignment_2_2 = (Assignment)cGroup_2.eContents().get(2);
-		private final RuleCall cRpIntegerTerminalRuleCall_2_2_0 = (RuleCall)cRpAssignment_2_2.eContents().get(0);
-		private final Keyword cPercentSignKeyword_2_3 = (Keyword)cGroup_2.eContents().get(3);
-		private final RuleCall cCOMMATerminalRuleCall_2_4 = (RuleCall)cGroup_2.eContents().get(4);
-		private final Assignment cGpAssignment_2_5 = (Assignment)cGroup_2.eContents().get(5);
-		private final RuleCall cGpIntegerTerminalRuleCall_2_5_0 = (RuleCall)cGpAssignment_2_5.eContents().get(0);
-		private final Keyword cPercentSignKeyword_2_6 = (Keyword)cGroup_2.eContents().get(6);
-		private final RuleCall cCOMMATerminalRuleCall_2_7 = (RuleCall)cGroup_2.eContents().get(7);
-		private final Assignment cBpAssignment_2_8 = (Assignment)cGroup_2.eContents().get(8);
-		private final RuleCall cBpIntegerTerminalRuleCall_2_8_0 = (RuleCall)cBpAssignment_2_8.eContents().get(0);
-		private final Keyword cPercentSignKeyword_2_9 = (Keyword)cGroup_2.eContents().get(9);
-		private final Keyword cRightParenthesisKeyword_2_10 = (Keyword)cGroup_2.eContents().get(10);
+		private final RuleCall cWSTerminalRuleCall_2_1 = (RuleCall)cGroup_2.eContents().get(1);
+		private final Keyword cLeftParenthesisKeyword_2_2 = (Keyword)cGroup_2.eContents().get(2);
+		private final RuleCall cWSTerminalRuleCall_2_3 = (RuleCall)cGroup_2.eContents().get(3);
+		private final Assignment cRpAssignment_2_4 = (Assignment)cGroup_2.eContents().get(4);
+		private final RuleCall cRpIntegerTerminalRuleCall_2_4_0 = (RuleCall)cRpAssignment_2_4.eContents().get(0);
+		private final Keyword cPercentSignKeyword_2_5 = (Keyword)cGroup_2.eContents().get(5);
+		private final RuleCall cCOMMATerminalRuleCall_2_6 = (RuleCall)cGroup_2.eContents().get(6);
+		private final Assignment cGpAssignment_2_7 = (Assignment)cGroup_2.eContents().get(7);
+		private final RuleCall cGpIntegerTerminalRuleCall_2_7_0 = (RuleCall)cGpAssignment_2_7.eContents().get(0);
+		private final Keyword cPercentSignKeyword_2_8 = (Keyword)cGroup_2.eContents().get(8);
+		private final RuleCall cCOMMATerminalRuleCall_2_9 = (RuleCall)cGroup_2.eContents().get(9);
+		private final Assignment cBpAssignment_2_10 = (Assignment)cGroup_2.eContents().get(10);
+		private final RuleCall cBpIntegerTerminalRuleCall_2_10_0 = (RuleCall)cBpAssignment_2_10.eContents().get(0);
+		private final Keyword cPercentSignKeyword_2_11 = (Keyword)cGroup_2.eContents().get(11);
+		private final RuleCall cWSTerminalRuleCall_2_12 = (RuleCall)cGroup_2.eContents().get(12);
+		private final Keyword cRightParenthesisKeyword_2_13 = (Keyword)cGroup_2.eContents().get(13);
 		private final Group cGroup_3 = (Group)cAlternatives.eContents().get(3);
 		private final Keyword cRgbaKeyword_3_0 = (Keyword)cGroup_3.eContents().get(0);
-		private final Keyword cLeftParenthesisKeyword_3_1 = (Keyword)cGroup_3.eContents().get(1);
-		private final Assignment cRAssignment_3_2 = (Assignment)cGroup_3.eContents().get(2);
-		private final RuleCall cRIntegerTerminalRuleCall_3_2_0 = (RuleCall)cRAssignment_3_2.eContents().get(0);
-		private final RuleCall cCOMMATerminalRuleCall_3_3 = (RuleCall)cGroup_3.eContents().get(3);
-		private final Assignment cGAssignment_3_4 = (Assignment)cGroup_3.eContents().get(4);
-		private final RuleCall cGIntegerTerminalRuleCall_3_4_0 = (RuleCall)cGAssignment_3_4.eContents().get(0);
+		private final RuleCall cWSTerminalRuleCall_3_1 = (RuleCall)cGroup_3.eContents().get(1);
+		private final Keyword cLeftParenthesisKeyword_3_2 = (Keyword)cGroup_3.eContents().get(2);
+		private final RuleCall cWSTerminalRuleCall_3_3 = (RuleCall)cGroup_3.eContents().get(3);
+		private final Assignment cRAssignment_3_4 = (Assignment)cGroup_3.eContents().get(4);
+		private final RuleCall cRIntegerTerminalRuleCall_3_4_0 = (RuleCall)cRAssignment_3_4.eContents().get(0);
 		private final RuleCall cCOMMATerminalRuleCall_3_5 = (RuleCall)cGroup_3.eContents().get(5);
-		private final Assignment cBAssignment_3_6 = (Assignment)cGroup_3.eContents().get(6);
-		private final RuleCall cBIntegerTerminalRuleCall_3_6_0 = (RuleCall)cBAssignment_3_6.eContents().get(0);
+		private final Assignment cGAssignment_3_6 = (Assignment)cGroup_3.eContents().get(6);
+		private final RuleCall cGIntegerTerminalRuleCall_3_6_0 = (RuleCall)cGAssignment_3_6.eContents().get(0);
 		private final RuleCall cCOMMATerminalRuleCall_3_7 = (RuleCall)cGroup_3.eContents().get(7);
-		private final Assignment cAlphaAssignment_3_8 = (Assignment)cGroup_3.eContents().get(8);
-		private final RuleCall cAlphaNUMBERParserRuleCall_3_8_0 = (RuleCall)cAlphaAssignment_3_8.eContents().get(0);
-		private final Keyword cRightParenthesisKeyword_3_9 = (Keyword)cGroup_3.eContents().get(9);
+		private final Assignment cBAssignment_3_8 = (Assignment)cGroup_3.eContents().get(8);
+		private final RuleCall cBIntegerTerminalRuleCall_3_8_0 = (RuleCall)cBAssignment_3_8.eContents().get(0);
+		private final RuleCall cCOMMATerminalRuleCall_3_9 = (RuleCall)cGroup_3.eContents().get(9);
+		private final Assignment cAlphaAssignment_3_10 = (Assignment)cGroup_3.eContents().get(10);
+		private final RuleCall cAlphaNUMBERParserRuleCall_3_10_0 = (RuleCall)cAlphaAssignment_3_10.eContents().get(0);
+		private final RuleCall cWSTerminalRuleCall_3_11 = (RuleCall)cGroup_3.eContents().get(11);
+		private final Keyword cRightParenthesisKeyword_3_12 = (Keyword)cGroup_3.eContents().get(12);
 		private final Group cGroup_4 = (Group)cAlternatives.eContents().get(4);
 		private final Keyword cRgbaKeyword_4_0 = (Keyword)cGroup_4.eContents().get(0);
-		private final Keyword cLeftParenthesisKeyword_4_1 = (Keyword)cGroup_4.eContents().get(1);
-		private final Assignment cRpAssignment_4_2 = (Assignment)cGroup_4.eContents().get(2);
-		private final RuleCall cRpIntegerTerminalRuleCall_4_2_0 = (RuleCall)cRpAssignment_4_2.eContents().get(0);
-		private final Keyword cPercentSignKeyword_4_3 = (Keyword)cGroup_4.eContents().get(3);
-		private final RuleCall cCOMMATerminalRuleCall_4_4 = (RuleCall)cGroup_4.eContents().get(4);
-		private final Assignment cGpAssignment_4_5 = (Assignment)cGroup_4.eContents().get(5);
-		private final RuleCall cGpIntegerTerminalRuleCall_4_5_0 = (RuleCall)cGpAssignment_4_5.eContents().get(0);
-		private final Keyword cPercentSignKeyword_4_6 = (Keyword)cGroup_4.eContents().get(6);
-		private final RuleCall cCOMMATerminalRuleCall_4_7 = (RuleCall)cGroup_4.eContents().get(7);
-		private final Assignment cBpAssignment_4_8 = (Assignment)cGroup_4.eContents().get(8);
-		private final RuleCall cBpIntegerTerminalRuleCall_4_8_0 = (RuleCall)cBpAssignment_4_8.eContents().get(0);
-		private final Keyword cPercentSignKeyword_4_9 = (Keyword)cGroup_4.eContents().get(9);
-		private final RuleCall cCOMMATerminalRuleCall_4_10 = (RuleCall)cGroup_4.eContents().get(10);
-		private final Assignment cAlphaAssignment_4_11 = (Assignment)cGroup_4.eContents().get(11);
-		private final RuleCall cAlphaNUMBERParserRuleCall_4_11_0 = (RuleCall)cAlphaAssignment_4_11.eContents().get(0);
-		private final Keyword cRightParenthesisKeyword_4_12 = (Keyword)cGroup_4.eContents().get(12);
+		private final RuleCall cWSTerminalRuleCall_4_1 = (RuleCall)cGroup_4.eContents().get(1);
+		private final Keyword cLeftParenthesisKeyword_4_2 = (Keyword)cGroup_4.eContents().get(2);
+		private final RuleCall cWSTerminalRuleCall_4_3 = (RuleCall)cGroup_4.eContents().get(3);
+		private final Assignment cRpAssignment_4_4 = (Assignment)cGroup_4.eContents().get(4);
+		private final RuleCall cRpIntegerTerminalRuleCall_4_4_0 = (RuleCall)cRpAssignment_4_4.eContents().get(0);
+		private final Keyword cPercentSignKeyword_4_5 = (Keyword)cGroup_4.eContents().get(5);
+		private final RuleCall cCOMMATerminalRuleCall_4_6 = (RuleCall)cGroup_4.eContents().get(6);
+		private final Assignment cGpAssignment_4_7 = (Assignment)cGroup_4.eContents().get(7);
+		private final RuleCall cGpIntegerTerminalRuleCall_4_7_0 = (RuleCall)cGpAssignment_4_7.eContents().get(0);
+		private final Keyword cPercentSignKeyword_4_8 = (Keyword)cGroup_4.eContents().get(8);
+		private final RuleCall cCOMMATerminalRuleCall_4_9 = (RuleCall)cGroup_4.eContents().get(9);
+		private final Assignment cBpAssignment_4_10 = (Assignment)cGroup_4.eContents().get(10);
+		private final RuleCall cBpIntegerTerminalRuleCall_4_10_0 = (RuleCall)cBpAssignment_4_10.eContents().get(0);
+		private final Keyword cPercentSignKeyword_4_11 = (Keyword)cGroup_4.eContents().get(11);
+		private final RuleCall cCOMMATerminalRuleCall_4_12 = (RuleCall)cGroup_4.eContents().get(12);
+		private final Assignment cAlphaAssignment_4_13 = (Assignment)cGroup_4.eContents().get(13);
+		private final RuleCall cAlphaNUMBERParserRuleCall_4_13_0 = (RuleCall)cAlphaAssignment_4_13.eContents().get(0);
+		private final RuleCall cWSTerminalRuleCall_4_14 = (RuleCall)cGroup_4.eContents().get(14);
+		private final Keyword cRightParenthesisKeyword_4_15 = (Keyword)cGroup_4.eContents().get(15);
 		
 		//RGBColor:
-		//	hexcolor=HexColor | "rgb" "(" WS* r=integer COMMA g=integer COMMA b=integer WS* ")" | "rgb" "(" rp=integer "%" COMMA
-		//	gp=integer "%" COMMA bp=integer "%" ")" | "rgba" "(" r=integer COMMA g=integer COMMA b=integer COMMA alpha=NUMBER ")"
-		//	| "rgba" "(" rp=integer "%" COMMA gp=integer "%" COMMA bp=integer "%" COMMA alpha=NUMBER ")";
+		//	hexcolor=HexColor | "rgb" WS* "(" WS* r=integer COMMA g=integer COMMA b=integer WS* ")" | "rgb" WS* "(" WS* rp=integer
+		//	"%" COMMA gp=integer "%" COMMA bp=integer "%" WS* ")" | "rgba" WS* "(" WS* r=integer COMMA g=integer COMMA b=integer
+		//	COMMA alpha=NUMBER WS* ")" | "rgba" WS* "(" WS* rp=integer "%" COMMA gp=integer "%" COMMA bp=integer "%" COMMA
+		//	alpha=NUMBER WS* ")";
 		public ParserRule getRule() { return rule; }
 
-		//hexcolor=HexColor | "rgb" "(" WS* r=integer COMMA g=integer COMMA b=integer WS* ")" | "rgb" "(" rp=integer "%" COMMA
-		//gp=integer "%" COMMA bp=integer "%" ")" | "rgba" "(" r=integer COMMA g=integer COMMA b=integer COMMA alpha=NUMBER ")" |
-		//"rgba" "(" rp=integer "%" COMMA gp=integer "%" COMMA bp=integer "%" COMMA alpha=NUMBER ")"
+		//hexcolor=HexColor | "rgb" WS* "(" WS* r=integer COMMA g=integer COMMA b=integer WS* ")" | "rgb" WS* "(" WS* rp=integer
+		//"%" COMMA gp=integer "%" COMMA bp=integer "%" WS* ")" | "rgba" WS* "(" WS* r=integer COMMA g=integer COMMA b=integer
+		//COMMA alpha=NUMBER WS* ")" | "rgba" WS* "(" WS* rp=integer "%" COMMA gp=integer "%" COMMA bp=integer "%" COMMA
+		//alpha=NUMBER WS* ")"
 		public Alternatives getAlternatives() { return cAlternatives; }
 
 		//hexcolor=HexColor
@@ -5906,191 +5918,221 @@ public class CssDslGrammarAccess extends AbstractGrammarElementFinder {
 		//HexColor
 		public RuleCall getHexcolorHexColorParserRuleCall_0_0() { return cHexcolorHexColorParserRuleCall_0_0; }
 
-		//"rgb" "(" WS* r=integer COMMA g=integer COMMA b=integer WS* ")"
+		//"rgb" WS* "(" WS* r=integer COMMA g=integer COMMA b=integer WS* ")"
 		public Group getGroup_1() { return cGroup_1; }
 
 		//"rgb"
 		public Keyword getRgbKeyword_1_0() { return cRgbKeyword_1_0; }
 
+		//WS*
+		public RuleCall getWSTerminalRuleCall_1_1() { return cWSTerminalRuleCall_1_1; }
+
 		//"("
-		public Keyword getLeftParenthesisKeyword_1_1() { return cLeftParenthesisKeyword_1_1; }
+		public Keyword getLeftParenthesisKeyword_1_2() { return cLeftParenthesisKeyword_1_2; }
 
 		//WS*
-		public RuleCall getWSTerminalRuleCall_1_2() { return cWSTerminalRuleCall_1_2; }
+		public RuleCall getWSTerminalRuleCall_1_3() { return cWSTerminalRuleCall_1_3; }
 
 		//r=integer
-		public Assignment getRAssignment_1_3() { return cRAssignment_1_3; }
+		public Assignment getRAssignment_1_4() { return cRAssignment_1_4; }
 
 		//integer
-		public RuleCall getRIntegerTerminalRuleCall_1_3_0() { return cRIntegerTerminalRuleCall_1_3_0; }
+		public RuleCall getRIntegerTerminalRuleCall_1_4_0() { return cRIntegerTerminalRuleCall_1_4_0; }
 
 		//COMMA
-		public RuleCall getCOMMATerminalRuleCall_1_4() { return cCOMMATerminalRuleCall_1_4; }
+		public RuleCall getCOMMATerminalRuleCall_1_5() { return cCOMMATerminalRuleCall_1_5; }
 
 		//g=integer
-		public Assignment getGAssignment_1_5() { return cGAssignment_1_5; }
+		public Assignment getGAssignment_1_6() { return cGAssignment_1_6; }
 
 		//integer
-		public RuleCall getGIntegerTerminalRuleCall_1_5_0() { return cGIntegerTerminalRuleCall_1_5_0; }
+		public RuleCall getGIntegerTerminalRuleCall_1_6_0() { return cGIntegerTerminalRuleCall_1_6_0; }
 
 		//COMMA
-		public RuleCall getCOMMATerminalRuleCall_1_6() { return cCOMMATerminalRuleCall_1_6; }
+		public RuleCall getCOMMATerminalRuleCall_1_7() { return cCOMMATerminalRuleCall_1_7; }
 
 		//b=integer
-		public Assignment getBAssignment_1_7() { return cBAssignment_1_7; }
+		public Assignment getBAssignment_1_8() { return cBAssignment_1_8; }
 
 		//integer
-		public RuleCall getBIntegerTerminalRuleCall_1_7_0() { return cBIntegerTerminalRuleCall_1_7_0; }
+		public RuleCall getBIntegerTerminalRuleCall_1_8_0() { return cBIntegerTerminalRuleCall_1_8_0; }
 
 		//WS*
-		public RuleCall getWSTerminalRuleCall_1_8() { return cWSTerminalRuleCall_1_8; }
+		public RuleCall getWSTerminalRuleCall_1_9() { return cWSTerminalRuleCall_1_9; }
 
 		//")"
-		public Keyword getRightParenthesisKeyword_1_9() { return cRightParenthesisKeyword_1_9; }
+		public Keyword getRightParenthesisKeyword_1_10() { return cRightParenthesisKeyword_1_10; }
 
-		//"rgb" "(" rp=integer "%" COMMA gp=integer "%" COMMA bp=integer "%" ")"
+		//"rgb" WS* "(" WS* rp=integer "%" COMMA gp=integer "%" COMMA bp=integer "%" WS* ")"
 		public Group getGroup_2() { return cGroup_2; }
 
 		//"rgb"
 		public Keyword getRgbKeyword_2_0() { return cRgbKeyword_2_0; }
 
+		//WS*
+		public RuleCall getWSTerminalRuleCall_2_1() { return cWSTerminalRuleCall_2_1; }
+
 		//"("
-		public Keyword getLeftParenthesisKeyword_2_1() { return cLeftParenthesisKeyword_2_1; }
+		public Keyword getLeftParenthesisKeyword_2_2() { return cLeftParenthesisKeyword_2_2; }
+
+		//WS*
+		public RuleCall getWSTerminalRuleCall_2_3() { return cWSTerminalRuleCall_2_3; }
 
 		//rp=integer
-		public Assignment getRpAssignment_2_2() { return cRpAssignment_2_2; }
+		public Assignment getRpAssignment_2_4() { return cRpAssignment_2_4; }
 
 		//integer
-		public RuleCall getRpIntegerTerminalRuleCall_2_2_0() { return cRpIntegerTerminalRuleCall_2_2_0; }
+		public RuleCall getRpIntegerTerminalRuleCall_2_4_0() { return cRpIntegerTerminalRuleCall_2_4_0; }
 
 		//"%"
-		public Keyword getPercentSignKeyword_2_3() { return cPercentSignKeyword_2_3; }
+		public Keyword getPercentSignKeyword_2_5() { return cPercentSignKeyword_2_5; }
 
 		//COMMA
-		public RuleCall getCOMMATerminalRuleCall_2_4() { return cCOMMATerminalRuleCall_2_4; }
+		public RuleCall getCOMMATerminalRuleCall_2_6() { return cCOMMATerminalRuleCall_2_6; }
 
 		//gp=integer
-		public Assignment getGpAssignment_2_5() { return cGpAssignment_2_5; }
+		public Assignment getGpAssignment_2_7() { return cGpAssignment_2_7; }
 
 		//integer
-		public RuleCall getGpIntegerTerminalRuleCall_2_5_0() { return cGpIntegerTerminalRuleCall_2_5_0; }
+		public RuleCall getGpIntegerTerminalRuleCall_2_7_0() { return cGpIntegerTerminalRuleCall_2_7_0; }
 
 		//"%"
-		public Keyword getPercentSignKeyword_2_6() { return cPercentSignKeyword_2_6; }
+		public Keyword getPercentSignKeyword_2_8() { return cPercentSignKeyword_2_8; }
 
 		//COMMA
-		public RuleCall getCOMMATerminalRuleCall_2_7() { return cCOMMATerminalRuleCall_2_7; }
+		public RuleCall getCOMMATerminalRuleCall_2_9() { return cCOMMATerminalRuleCall_2_9; }
 
 		//bp=integer
-		public Assignment getBpAssignment_2_8() { return cBpAssignment_2_8; }
+		public Assignment getBpAssignment_2_10() { return cBpAssignment_2_10; }
 
 		//integer
-		public RuleCall getBpIntegerTerminalRuleCall_2_8_0() { return cBpIntegerTerminalRuleCall_2_8_0; }
+		public RuleCall getBpIntegerTerminalRuleCall_2_10_0() { return cBpIntegerTerminalRuleCall_2_10_0; }
 
 		//"%"
-		public Keyword getPercentSignKeyword_2_9() { return cPercentSignKeyword_2_9; }
+		public Keyword getPercentSignKeyword_2_11() { return cPercentSignKeyword_2_11; }
+
+		//WS*
+		public RuleCall getWSTerminalRuleCall_2_12() { return cWSTerminalRuleCall_2_12; }
 
 		//")"
-		public Keyword getRightParenthesisKeyword_2_10() { return cRightParenthesisKeyword_2_10; }
+		public Keyword getRightParenthesisKeyword_2_13() { return cRightParenthesisKeyword_2_13; }
 
-		//"rgba" "(" r=integer COMMA g=integer COMMA b=integer COMMA alpha=NUMBER ")"
+		//"rgba" WS* "(" WS* r=integer COMMA g=integer COMMA b=integer COMMA alpha=NUMBER WS* ")"
 		public Group getGroup_3() { return cGroup_3; }
 
 		//"rgba"
 		public Keyword getRgbaKeyword_3_0() { return cRgbaKeyword_3_0; }
 
+		//WS*
+		public RuleCall getWSTerminalRuleCall_3_1() { return cWSTerminalRuleCall_3_1; }
+
 		//"("
-		public Keyword getLeftParenthesisKeyword_3_1() { return cLeftParenthesisKeyword_3_1; }
+		public Keyword getLeftParenthesisKeyword_3_2() { return cLeftParenthesisKeyword_3_2; }
+
+		//WS*
+		public RuleCall getWSTerminalRuleCall_3_3() { return cWSTerminalRuleCall_3_3; }
 
 		//r=integer
-		public Assignment getRAssignment_3_2() { return cRAssignment_3_2; }
+		public Assignment getRAssignment_3_4() { return cRAssignment_3_4; }
 
 		//integer
-		public RuleCall getRIntegerTerminalRuleCall_3_2_0() { return cRIntegerTerminalRuleCall_3_2_0; }
-
-		//COMMA
-		public RuleCall getCOMMATerminalRuleCall_3_3() { return cCOMMATerminalRuleCall_3_3; }
-
-		//g=integer
-		public Assignment getGAssignment_3_4() { return cGAssignment_3_4; }
-
-		//integer
-		public RuleCall getGIntegerTerminalRuleCall_3_4_0() { return cGIntegerTerminalRuleCall_3_4_0; }
+		public RuleCall getRIntegerTerminalRuleCall_3_4_0() { return cRIntegerTerminalRuleCall_3_4_0; }
 
 		//COMMA
 		public RuleCall getCOMMATerminalRuleCall_3_5() { return cCOMMATerminalRuleCall_3_5; }
 
-		//b=integer
-		public Assignment getBAssignment_3_6() { return cBAssignment_3_6; }
+		//g=integer
+		public Assignment getGAssignment_3_6() { return cGAssignment_3_6; }
 
 		//integer
-		public RuleCall getBIntegerTerminalRuleCall_3_6_0() { return cBIntegerTerminalRuleCall_3_6_0; }
+		public RuleCall getGIntegerTerminalRuleCall_3_6_0() { return cGIntegerTerminalRuleCall_3_6_0; }
 
 		//COMMA
 		public RuleCall getCOMMATerminalRuleCall_3_7() { return cCOMMATerminalRuleCall_3_7; }
 
+		//b=integer
+		public Assignment getBAssignment_3_8() { return cBAssignment_3_8; }
+
+		//integer
+		public RuleCall getBIntegerTerminalRuleCall_3_8_0() { return cBIntegerTerminalRuleCall_3_8_0; }
+
+		//COMMA
+		public RuleCall getCOMMATerminalRuleCall_3_9() { return cCOMMATerminalRuleCall_3_9; }
+
 		//alpha=NUMBER
-		public Assignment getAlphaAssignment_3_8() { return cAlphaAssignment_3_8; }
+		public Assignment getAlphaAssignment_3_10() { return cAlphaAssignment_3_10; }
 
 		//NUMBER
-		public RuleCall getAlphaNUMBERParserRuleCall_3_8_0() { return cAlphaNUMBERParserRuleCall_3_8_0; }
+		public RuleCall getAlphaNUMBERParserRuleCall_3_10_0() { return cAlphaNUMBERParserRuleCall_3_10_0; }
+
+		//WS*
+		public RuleCall getWSTerminalRuleCall_3_11() { return cWSTerminalRuleCall_3_11; }
 
 		//")"
-		public Keyword getRightParenthesisKeyword_3_9() { return cRightParenthesisKeyword_3_9; }
+		public Keyword getRightParenthesisKeyword_3_12() { return cRightParenthesisKeyword_3_12; }
 
-		//"rgba" "(" rp=integer "%" COMMA gp=integer "%" COMMA bp=integer "%" COMMA alpha=NUMBER ")"
+		//"rgba" WS* "(" WS* rp=integer "%" COMMA gp=integer "%" COMMA bp=integer "%" COMMA alpha=NUMBER WS* ")"
 		public Group getGroup_4() { return cGroup_4; }
 
 		//"rgba"
 		public Keyword getRgbaKeyword_4_0() { return cRgbaKeyword_4_0; }
 
+		//WS*
+		public RuleCall getWSTerminalRuleCall_4_1() { return cWSTerminalRuleCall_4_1; }
+
 		//"("
-		public Keyword getLeftParenthesisKeyword_4_1() { return cLeftParenthesisKeyword_4_1; }
+		public Keyword getLeftParenthesisKeyword_4_2() { return cLeftParenthesisKeyword_4_2; }
+
+		//WS*
+		public RuleCall getWSTerminalRuleCall_4_3() { return cWSTerminalRuleCall_4_3; }
 
 		//rp=integer
-		public Assignment getRpAssignment_4_2() { return cRpAssignment_4_2; }
+		public Assignment getRpAssignment_4_4() { return cRpAssignment_4_4; }
 
 		//integer
-		public RuleCall getRpIntegerTerminalRuleCall_4_2_0() { return cRpIntegerTerminalRuleCall_4_2_0; }
+		public RuleCall getRpIntegerTerminalRuleCall_4_4_0() { return cRpIntegerTerminalRuleCall_4_4_0; }
 
 		//"%"
-		public Keyword getPercentSignKeyword_4_3() { return cPercentSignKeyword_4_3; }
+		public Keyword getPercentSignKeyword_4_5() { return cPercentSignKeyword_4_5; }
 
 		//COMMA
-		public RuleCall getCOMMATerminalRuleCall_4_4() { return cCOMMATerminalRuleCall_4_4; }
+		public RuleCall getCOMMATerminalRuleCall_4_6() { return cCOMMATerminalRuleCall_4_6; }
 
 		//gp=integer
-		public Assignment getGpAssignment_4_5() { return cGpAssignment_4_5; }
+		public Assignment getGpAssignment_4_7() { return cGpAssignment_4_7; }
 
 		//integer
-		public RuleCall getGpIntegerTerminalRuleCall_4_5_0() { return cGpIntegerTerminalRuleCall_4_5_0; }
+		public RuleCall getGpIntegerTerminalRuleCall_4_7_0() { return cGpIntegerTerminalRuleCall_4_7_0; }
 
 		//"%"
-		public Keyword getPercentSignKeyword_4_6() { return cPercentSignKeyword_4_6; }
+		public Keyword getPercentSignKeyword_4_8() { return cPercentSignKeyword_4_8; }
 
 		//COMMA
-		public RuleCall getCOMMATerminalRuleCall_4_7() { return cCOMMATerminalRuleCall_4_7; }
+		public RuleCall getCOMMATerminalRuleCall_4_9() { return cCOMMATerminalRuleCall_4_9; }
 
 		//bp=integer
-		public Assignment getBpAssignment_4_8() { return cBpAssignment_4_8; }
+		public Assignment getBpAssignment_4_10() { return cBpAssignment_4_10; }
 
 		//integer
-		public RuleCall getBpIntegerTerminalRuleCall_4_8_0() { return cBpIntegerTerminalRuleCall_4_8_0; }
+		public RuleCall getBpIntegerTerminalRuleCall_4_10_0() { return cBpIntegerTerminalRuleCall_4_10_0; }
 
 		//"%"
-		public Keyword getPercentSignKeyword_4_9() { return cPercentSignKeyword_4_9; }
+		public Keyword getPercentSignKeyword_4_11() { return cPercentSignKeyword_4_11; }
 
 		//COMMA
-		public RuleCall getCOMMATerminalRuleCall_4_10() { return cCOMMATerminalRuleCall_4_10; }
+		public RuleCall getCOMMATerminalRuleCall_4_12() { return cCOMMATerminalRuleCall_4_12; }
 
 		//alpha=NUMBER
-		public Assignment getAlphaAssignment_4_11() { return cAlphaAssignment_4_11; }
+		public Assignment getAlphaAssignment_4_13() { return cAlphaAssignment_4_13; }
 
 		//NUMBER
-		public RuleCall getAlphaNUMBERParserRuleCall_4_11_0() { return cAlphaNUMBERParserRuleCall_4_11_0; }
+		public RuleCall getAlphaNUMBERParserRuleCall_4_13_0() { return cAlphaNUMBERParserRuleCall_4_13_0; }
+
+		//WS*
+		public RuleCall getWSTerminalRuleCall_4_14() { return cWSTerminalRuleCall_4_14; }
 
 		//")"
-		public Keyword getRightParenthesisKeyword_4_12() { return cRightParenthesisKeyword_4_12; }
+		public Keyword getRightParenthesisKeyword_4_15() { return cRightParenthesisKeyword_4_15; }
 	}
 
 	public class HSBColorElements extends AbstractParserRuleElementFinder {
@@ -6098,121 +6140,145 @@ public class CssDslGrammarAccess extends AbstractGrammarElementFinder {
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
 		private final Group cGroup_0 = (Group)cAlternatives.eContents().get(0);
 		private final Keyword cHsbKeyword_0_0 = (Keyword)cGroup_0.eContents().get(0);
-		private final Keyword cLeftParenthesisKeyword_0_1 = (Keyword)cGroup_0.eContents().get(1);
-		private final Assignment cHueAssignment_0_2 = (Assignment)cGroup_0.eContents().get(2);
-		private final RuleCall cHueNUMBERParserRuleCall_0_2_0 = (RuleCall)cHueAssignment_0_2.eContents().get(0);
-		private final RuleCall cCOMMATerminalRuleCall_0_3 = (RuleCall)cGroup_0.eContents().get(3);
-		private final Assignment cSaturationAssignment_0_4 = (Assignment)cGroup_0.eContents().get(4);
-		private final RuleCall cSaturationPERCENTAGEParserRuleCall_0_4_0 = (RuleCall)cSaturationAssignment_0_4.eContents().get(0);
+		private final RuleCall cWSTerminalRuleCall_0_1 = (RuleCall)cGroup_0.eContents().get(1);
+		private final Keyword cLeftParenthesisKeyword_0_2 = (Keyword)cGroup_0.eContents().get(2);
+		private final RuleCall cWSTerminalRuleCall_0_3 = (RuleCall)cGroup_0.eContents().get(3);
+		private final Assignment cHueAssignment_0_4 = (Assignment)cGroup_0.eContents().get(4);
+		private final RuleCall cHueNUMBERParserRuleCall_0_4_0 = (RuleCall)cHueAssignment_0_4.eContents().get(0);
 		private final RuleCall cCOMMATerminalRuleCall_0_5 = (RuleCall)cGroup_0.eContents().get(5);
-		private final Assignment cBrightnessAssignment_0_6 = (Assignment)cGroup_0.eContents().get(6);
-		private final RuleCall cBrightnessPERCENTAGEParserRuleCall_0_6_0 = (RuleCall)cBrightnessAssignment_0_6.eContents().get(0);
-		private final Keyword cRightParenthesisKeyword_0_7 = (Keyword)cGroup_0.eContents().get(7);
+		private final Assignment cSaturationAssignment_0_6 = (Assignment)cGroup_0.eContents().get(6);
+		private final RuleCall cSaturationPERCENTAGEParserRuleCall_0_6_0 = (RuleCall)cSaturationAssignment_0_6.eContents().get(0);
+		private final RuleCall cCOMMATerminalRuleCall_0_7 = (RuleCall)cGroup_0.eContents().get(7);
+		private final Assignment cBrightnessAssignment_0_8 = (Assignment)cGroup_0.eContents().get(8);
+		private final RuleCall cBrightnessPERCENTAGEParserRuleCall_0_8_0 = (RuleCall)cBrightnessAssignment_0_8.eContents().get(0);
+		private final RuleCall cWSTerminalRuleCall_0_9 = (RuleCall)cGroup_0.eContents().get(9);
+		private final Keyword cRightParenthesisKeyword_0_10 = (Keyword)cGroup_0.eContents().get(10);
 		private final Group cGroup_1 = (Group)cAlternatives.eContents().get(1);
 		private final Keyword cHsbaKeyword_1_0 = (Keyword)cGroup_1.eContents().get(0);
-		private final Keyword cLeftParenthesisKeyword_1_1 = (Keyword)cGroup_1.eContents().get(1);
-		private final Assignment cHueAssignment_1_2 = (Assignment)cGroup_1.eContents().get(2);
-		private final RuleCall cHueNUMBERParserRuleCall_1_2_0 = (RuleCall)cHueAssignment_1_2.eContents().get(0);
-		private final RuleCall cCOMMATerminalRuleCall_1_3 = (RuleCall)cGroup_1.eContents().get(3);
-		private final Assignment cSaturationAssignment_1_4 = (Assignment)cGroup_1.eContents().get(4);
-		private final RuleCall cSaturationPERCENTAGEParserRuleCall_1_4_0 = (RuleCall)cSaturationAssignment_1_4.eContents().get(0);
+		private final RuleCall cWSTerminalRuleCall_1_1 = (RuleCall)cGroup_1.eContents().get(1);
+		private final Keyword cLeftParenthesisKeyword_1_2 = (Keyword)cGroup_1.eContents().get(2);
+		private final RuleCall cWSTerminalRuleCall_1_3 = (RuleCall)cGroup_1.eContents().get(3);
+		private final Assignment cHueAssignment_1_4 = (Assignment)cGroup_1.eContents().get(4);
+		private final RuleCall cHueNUMBERParserRuleCall_1_4_0 = (RuleCall)cHueAssignment_1_4.eContents().get(0);
 		private final RuleCall cCOMMATerminalRuleCall_1_5 = (RuleCall)cGroup_1.eContents().get(5);
-		private final Assignment cBrightnessAssignment_1_6 = (Assignment)cGroup_1.eContents().get(6);
-		private final RuleCall cBrightnessPERCENTAGEParserRuleCall_1_6_0 = (RuleCall)cBrightnessAssignment_1_6.eContents().get(0);
+		private final Assignment cSaturationAssignment_1_6 = (Assignment)cGroup_1.eContents().get(6);
+		private final RuleCall cSaturationPERCENTAGEParserRuleCall_1_6_0 = (RuleCall)cSaturationAssignment_1_6.eContents().get(0);
 		private final RuleCall cCOMMATerminalRuleCall_1_7 = (RuleCall)cGroup_1.eContents().get(7);
-		private final Assignment cAlphaAssignment_1_8 = (Assignment)cGroup_1.eContents().get(8);
-		private final RuleCall cAlphaNUMBERParserRuleCall_1_8_0 = (RuleCall)cAlphaAssignment_1_8.eContents().get(0);
-		private final Keyword cRightParenthesisKeyword_1_9 = (Keyword)cGroup_1.eContents().get(9);
+		private final Assignment cBrightnessAssignment_1_8 = (Assignment)cGroup_1.eContents().get(8);
+		private final RuleCall cBrightnessPERCENTAGEParserRuleCall_1_8_0 = (RuleCall)cBrightnessAssignment_1_8.eContents().get(0);
+		private final RuleCall cCOMMATerminalRuleCall_1_9 = (RuleCall)cGroup_1.eContents().get(9);
+		private final Assignment cAlphaAssignment_1_10 = (Assignment)cGroup_1.eContents().get(10);
+		private final RuleCall cAlphaNUMBERParserRuleCall_1_10_0 = (RuleCall)cAlphaAssignment_1_10.eContents().get(0);
+		private final RuleCall cWSTerminalRuleCall_1_11 = (RuleCall)cGroup_1.eContents().get(11);
+		private final Keyword cRightParenthesisKeyword_1_12 = (Keyword)cGroup_1.eContents().get(12);
 		
 		//HSBColor:
-		//	"hsb" "(" hue=NUMBER COMMA saturation=PERCENTAGE COMMA brightness=PERCENTAGE ")" | "hsba" "(" hue=NUMBER COMMA
-		//	saturation=PERCENTAGE COMMA brightness=PERCENTAGE COMMA alpha=NUMBER ")";
+		//	"hsb" WS* "(" WS* hue=NUMBER COMMA saturation=PERCENTAGE COMMA brightness=PERCENTAGE WS* ")" | "hsba" WS* "(" WS*
+		//	hue=NUMBER COMMA saturation=PERCENTAGE COMMA brightness=PERCENTAGE COMMA alpha=NUMBER WS* ")";
 		public ParserRule getRule() { return rule; }
 
-		//"hsb" "(" hue=NUMBER COMMA saturation=PERCENTAGE COMMA brightness=PERCENTAGE ")" | "hsba" "(" hue=NUMBER COMMA
-		//saturation=PERCENTAGE COMMA brightness=PERCENTAGE COMMA alpha=NUMBER ")"
+		//"hsb" WS* "(" WS* hue=NUMBER COMMA saturation=PERCENTAGE COMMA brightness=PERCENTAGE WS* ")" | "hsba" WS* "(" WS*
+		//hue=NUMBER COMMA saturation=PERCENTAGE COMMA brightness=PERCENTAGE COMMA alpha=NUMBER WS* ")"
 		public Alternatives getAlternatives() { return cAlternatives; }
 
-		//"hsb" "(" hue=NUMBER COMMA saturation=PERCENTAGE COMMA brightness=PERCENTAGE ")"
+		//"hsb" WS* "(" WS* hue=NUMBER COMMA saturation=PERCENTAGE COMMA brightness=PERCENTAGE WS* ")"
 		public Group getGroup_0() { return cGroup_0; }
 
 		//"hsb"
 		public Keyword getHsbKeyword_0_0() { return cHsbKeyword_0_0; }
 
+		//WS*
+		public RuleCall getWSTerminalRuleCall_0_1() { return cWSTerminalRuleCall_0_1; }
+
 		//"("
-		public Keyword getLeftParenthesisKeyword_0_1() { return cLeftParenthesisKeyword_0_1; }
+		public Keyword getLeftParenthesisKeyword_0_2() { return cLeftParenthesisKeyword_0_2; }
+
+		//WS*
+		public RuleCall getWSTerminalRuleCall_0_3() { return cWSTerminalRuleCall_0_3; }
 
 		//hue=NUMBER
-		public Assignment getHueAssignment_0_2() { return cHueAssignment_0_2; }
+		public Assignment getHueAssignment_0_4() { return cHueAssignment_0_4; }
 
 		//NUMBER
-		public RuleCall getHueNUMBERParserRuleCall_0_2_0() { return cHueNUMBERParserRuleCall_0_2_0; }
-
-		//COMMA
-		public RuleCall getCOMMATerminalRuleCall_0_3() { return cCOMMATerminalRuleCall_0_3; }
-
-		//saturation=PERCENTAGE
-		public Assignment getSaturationAssignment_0_4() { return cSaturationAssignment_0_4; }
-
-		//PERCENTAGE
-		public RuleCall getSaturationPERCENTAGEParserRuleCall_0_4_0() { return cSaturationPERCENTAGEParserRuleCall_0_4_0; }
+		public RuleCall getHueNUMBERParserRuleCall_0_4_0() { return cHueNUMBERParserRuleCall_0_4_0; }
 
 		//COMMA
 		public RuleCall getCOMMATerminalRuleCall_0_5() { return cCOMMATerminalRuleCall_0_5; }
 
-		//brightness=PERCENTAGE
-		public Assignment getBrightnessAssignment_0_6() { return cBrightnessAssignment_0_6; }
+		//saturation=PERCENTAGE
+		public Assignment getSaturationAssignment_0_6() { return cSaturationAssignment_0_6; }
 
 		//PERCENTAGE
-		public RuleCall getBrightnessPERCENTAGEParserRuleCall_0_6_0() { return cBrightnessPERCENTAGEParserRuleCall_0_6_0; }
+		public RuleCall getSaturationPERCENTAGEParserRuleCall_0_6_0() { return cSaturationPERCENTAGEParserRuleCall_0_6_0; }
+
+		//COMMA
+		public RuleCall getCOMMATerminalRuleCall_0_7() { return cCOMMATerminalRuleCall_0_7; }
+
+		//brightness=PERCENTAGE
+		public Assignment getBrightnessAssignment_0_8() { return cBrightnessAssignment_0_8; }
+
+		//PERCENTAGE
+		public RuleCall getBrightnessPERCENTAGEParserRuleCall_0_8_0() { return cBrightnessPERCENTAGEParserRuleCall_0_8_0; }
+
+		//WS*
+		public RuleCall getWSTerminalRuleCall_0_9() { return cWSTerminalRuleCall_0_9; }
 
 		//")"
-		public Keyword getRightParenthesisKeyword_0_7() { return cRightParenthesisKeyword_0_7; }
+		public Keyword getRightParenthesisKeyword_0_10() { return cRightParenthesisKeyword_0_10; }
 
-		//"hsba" "(" hue=NUMBER COMMA saturation=PERCENTAGE COMMA brightness=PERCENTAGE COMMA alpha=NUMBER ")"
+		//"hsba" WS* "(" WS* hue=NUMBER COMMA saturation=PERCENTAGE COMMA brightness=PERCENTAGE COMMA alpha=NUMBER WS* ")"
 		public Group getGroup_1() { return cGroup_1; }
 
 		//"hsba"
 		public Keyword getHsbaKeyword_1_0() { return cHsbaKeyword_1_0; }
 
+		//WS*
+		public RuleCall getWSTerminalRuleCall_1_1() { return cWSTerminalRuleCall_1_1; }
+
 		//"("
-		public Keyword getLeftParenthesisKeyword_1_1() { return cLeftParenthesisKeyword_1_1; }
+		public Keyword getLeftParenthesisKeyword_1_2() { return cLeftParenthesisKeyword_1_2; }
+
+		//WS*
+		public RuleCall getWSTerminalRuleCall_1_3() { return cWSTerminalRuleCall_1_3; }
 
 		//hue=NUMBER
-		public Assignment getHueAssignment_1_2() { return cHueAssignment_1_2; }
+		public Assignment getHueAssignment_1_4() { return cHueAssignment_1_4; }
 
 		//NUMBER
-		public RuleCall getHueNUMBERParserRuleCall_1_2_0() { return cHueNUMBERParserRuleCall_1_2_0; }
-
-		//COMMA
-		public RuleCall getCOMMATerminalRuleCall_1_3() { return cCOMMATerminalRuleCall_1_3; }
-
-		//saturation=PERCENTAGE
-		public Assignment getSaturationAssignment_1_4() { return cSaturationAssignment_1_4; }
-
-		//PERCENTAGE
-		public RuleCall getSaturationPERCENTAGEParserRuleCall_1_4_0() { return cSaturationPERCENTAGEParserRuleCall_1_4_0; }
+		public RuleCall getHueNUMBERParserRuleCall_1_4_0() { return cHueNUMBERParserRuleCall_1_4_0; }
 
 		//COMMA
 		public RuleCall getCOMMATerminalRuleCall_1_5() { return cCOMMATerminalRuleCall_1_5; }
 
-		//brightness=PERCENTAGE
-		public Assignment getBrightnessAssignment_1_6() { return cBrightnessAssignment_1_6; }
+		//saturation=PERCENTAGE
+		public Assignment getSaturationAssignment_1_6() { return cSaturationAssignment_1_6; }
 
 		//PERCENTAGE
-		public RuleCall getBrightnessPERCENTAGEParserRuleCall_1_6_0() { return cBrightnessPERCENTAGEParserRuleCall_1_6_0; }
+		public RuleCall getSaturationPERCENTAGEParserRuleCall_1_6_0() { return cSaturationPERCENTAGEParserRuleCall_1_6_0; }
 
 		//COMMA
 		public RuleCall getCOMMATerminalRuleCall_1_7() { return cCOMMATerminalRuleCall_1_7; }
 
+		//brightness=PERCENTAGE
+		public Assignment getBrightnessAssignment_1_8() { return cBrightnessAssignment_1_8; }
+
+		//PERCENTAGE
+		public RuleCall getBrightnessPERCENTAGEParserRuleCall_1_8_0() { return cBrightnessPERCENTAGEParserRuleCall_1_8_0; }
+
+		//COMMA
+		public RuleCall getCOMMATerminalRuleCall_1_9() { return cCOMMATerminalRuleCall_1_9; }
+
 		//alpha=NUMBER
-		public Assignment getAlphaAssignment_1_8() { return cAlphaAssignment_1_8; }
+		public Assignment getAlphaAssignment_1_10() { return cAlphaAssignment_1_10; }
 
 		//NUMBER
-		public RuleCall getAlphaNUMBERParserRuleCall_1_8_0() { return cAlphaNUMBERParserRuleCall_1_8_0; }
+		public RuleCall getAlphaNUMBERParserRuleCall_1_10_0() { return cAlphaNUMBERParserRuleCall_1_10_0; }
+
+		//WS*
+		public RuleCall getWSTerminalRuleCall_1_11() { return cWSTerminalRuleCall_1_11; }
 
 		//")"
-		public Keyword getRightParenthesisKeyword_1_9() { return cRightParenthesisKeyword_1_9; }
+		public Keyword getRightParenthesisKeyword_1_12() { return cRightParenthesisKeyword_1_12; }
 	}
 
 	public class ColorFunctionElements extends AbstractParserRuleElementFinder {
@@ -6220,113 +6286,149 @@ public class CssDslGrammarAccess extends AbstractGrammarElementFinder {
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
 		private final Group cGroup_0 = (Group)cAlternatives.eContents().get(0);
 		private final Keyword cDeriveKeyword_0_0 = (Keyword)cGroup_0.eContents().get(0);
-		private final Keyword cLeftParenthesisKeyword_0_1 = (Keyword)cGroup_0.eContents().get(1);
-		private final Assignment cOrigAssignment_0_2 = (Assignment)cGroup_0.eContents().get(2);
-		private final RuleCall cOrigColorParserRuleCall_0_2_0 = (RuleCall)cOrigAssignment_0_2.eContents().get(0);
-		private final RuleCall cCOMMATerminalRuleCall_0_3 = (RuleCall)cGroup_0.eContents().get(3);
-		private final Assignment cModAssignment_0_4 = (Assignment)cGroup_0.eContents().get(4);
-		private final RuleCall cModUnary_operatorParserRuleCall_0_4_0 = (RuleCall)cModAssignment_0_4.eContents().get(0);
-		private final RuleCall cPERCENTAGEParserRuleCall_0_5 = (RuleCall)cGroup_0.eContents().get(5);
-		private final Keyword cRightParenthesisKeyword_0_6 = (Keyword)cGroup_0.eContents().get(6);
+		private final RuleCall cWSTerminalRuleCall_0_1 = (RuleCall)cGroup_0.eContents().get(1);
+		private final Keyword cLeftParenthesisKeyword_0_2 = (Keyword)cGroup_0.eContents().get(2);
+		private final RuleCall cWSTerminalRuleCall_0_3 = (RuleCall)cGroup_0.eContents().get(3);
+		private final Assignment cOrigAssignment_0_4 = (Assignment)cGroup_0.eContents().get(4);
+		private final RuleCall cOrigColorParserRuleCall_0_4_0 = (RuleCall)cOrigAssignment_0_4.eContents().get(0);
+		private final RuleCall cCOMMATerminalRuleCall_0_5 = (RuleCall)cGroup_0.eContents().get(5);
+		private final Assignment cModAssignment_0_6 = (Assignment)cGroup_0.eContents().get(6);
+		private final RuleCall cModUnary_operatorParserRuleCall_0_6_0 = (RuleCall)cModAssignment_0_6.eContents().get(0);
+		private final RuleCall cPERCENTAGEParserRuleCall_0_7 = (RuleCall)cGroup_0.eContents().get(7);
+		private final RuleCall cWSTerminalRuleCall_0_8 = (RuleCall)cGroup_0.eContents().get(8);
+		private final Keyword cRightParenthesisKeyword_0_9 = (Keyword)cGroup_0.eContents().get(9);
 		private final Group cGroup_1 = (Group)cAlternatives.eContents().get(1);
 		private final Keyword cLadderKeyword_1_0 = (Keyword)cGroup_1.eContents().get(0);
-		private final Keyword cLeftParenthesisKeyword_1_1 = (Keyword)cGroup_1.eContents().get(1);
-		private final Assignment cOrigAssignment_1_2 = (Assignment)cGroup_1.eContents().get(2);
-		private final RuleCall cOrigColorParserRuleCall_1_2_0 = (RuleCall)cOrigAssignment_1_2.eContents().get(0);
-		private final Keyword cRightParenthesisKeyword_1_3 = (Keyword)cGroup_1.eContents().get(3);
-		private final Keyword cStopsKeyword_1_4 = (Keyword)cGroup_1.eContents().get(4);
-		private final Group cGroup_1_5 = (Group)cGroup_1.eContents().get(5);
-		private final Keyword cLeftParenthesisKeyword_1_5_0 = (Keyword)cGroup_1_5.eContents().get(0);
-		private final Assignment cStopNumbersAssignment_1_5_1 = (Assignment)cGroup_1_5.eContents().get(1);
-		private final RuleCall cStopNumbersNUMBERParserRuleCall_1_5_1_0 = (RuleCall)cStopNumbersAssignment_1_5_1.eContents().get(0);
-		private final RuleCall cCOMMATerminalRuleCall_1_5_2 = (RuleCall)cGroup_1_5.eContents().get(2);
-		private final Assignment cStopColorsAssignment_1_5_3 = (Assignment)cGroup_1_5.eContents().get(3);
-		private final RuleCall cStopColorsColorParserRuleCall_1_5_3_0 = (RuleCall)cStopColorsAssignment_1_5_3.eContents().get(0);
-		private final Keyword cRightParenthesisKeyword_1_5_4 = (Keyword)cGroup_1_5.eContents().get(4);
+		private final RuleCall cWSTerminalRuleCall_1_1 = (RuleCall)cGroup_1.eContents().get(1);
+		private final Keyword cLeftParenthesisKeyword_1_2 = (Keyword)cGroup_1.eContents().get(2);
+		private final RuleCall cWSTerminalRuleCall_1_3 = (RuleCall)cGroup_1.eContents().get(3);
+		private final Assignment cOrigAssignment_1_4 = (Assignment)cGroup_1.eContents().get(4);
+		private final RuleCall cOrigColorParserRuleCall_1_4_0 = (RuleCall)cOrigAssignment_1_4.eContents().get(0);
+		private final RuleCall cWSTerminalRuleCall_1_5 = (RuleCall)cGroup_1.eContents().get(5);
+		private final Keyword cRightParenthesisKeyword_1_6 = (Keyword)cGroup_1.eContents().get(6);
+		private final Keyword cStopsKeyword_1_7 = (Keyword)cGroup_1.eContents().get(7);
+		private final Group cGroup_1_8 = (Group)cGroup_1.eContents().get(8);
+		private final RuleCall cWSTerminalRuleCall_1_8_0 = (RuleCall)cGroup_1_8.eContents().get(0);
+		private final Keyword cLeftParenthesisKeyword_1_8_1 = (Keyword)cGroup_1_8.eContents().get(1);
+		private final RuleCall cWSTerminalRuleCall_1_8_2 = (RuleCall)cGroup_1_8.eContents().get(2);
+		private final Assignment cStopNumbersAssignment_1_8_3 = (Assignment)cGroup_1_8.eContents().get(3);
+		private final RuleCall cStopNumbersNUMBERParserRuleCall_1_8_3_0 = (RuleCall)cStopNumbersAssignment_1_8_3.eContents().get(0);
+		private final RuleCall cCOMMATerminalRuleCall_1_8_4 = (RuleCall)cGroup_1_8.eContents().get(4);
+		private final Assignment cStopColorsAssignment_1_8_5 = (Assignment)cGroup_1_8.eContents().get(5);
+		private final RuleCall cStopColorsColorParserRuleCall_1_8_5_0 = (RuleCall)cStopColorsAssignment_1_8_5.eContents().get(0);
+		private final RuleCall cWSTerminalRuleCall_1_8_6 = (RuleCall)cGroup_1_8.eContents().get(6);
+		private final Keyword cRightParenthesisKeyword_1_8_7 = (Keyword)cGroup_1_8.eContents().get(7);
 		
 		//ColorFunction:
-		//	"derive" "(" orig=Color COMMA mod=unary_operator? PERCENTAGE ")" | "ladder" "(" orig=Color ")" "stops" ("("
-		//	stopNumbers+=NUMBER COMMA stopColors+=Color ")")+;
+		//	"derive" WS* "(" WS* orig=Color COMMA mod=unary_operator? PERCENTAGE WS* ")" | "ladder" WS* "(" WS* orig=Color WS* ")"
+		//	"stops" (WS* "(" WS* stopNumbers+=NUMBER COMMA stopColors+=Color WS* ")")+;
 		public ParserRule getRule() { return rule; }
 
-		//"derive" "(" orig=Color COMMA mod=unary_operator? PERCENTAGE ")" | "ladder" "(" orig=Color ")" "stops" ("("
-		//stopNumbers+=NUMBER COMMA stopColors+=Color ")")+
+		//"derive" WS* "(" WS* orig=Color COMMA mod=unary_operator? PERCENTAGE WS* ")" | "ladder" WS* "(" WS* orig=Color WS* ")"
+		//"stops" (WS* "(" WS* stopNumbers+=NUMBER COMMA stopColors+=Color WS* ")")+
 		public Alternatives getAlternatives() { return cAlternatives; }
 
-		//"derive" "(" orig=Color COMMA mod=unary_operator? PERCENTAGE ")"
+		//"derive" WS* "(" WS* orig=Color COMMA mod=unary_operator? PERCENTAGE WS* ")"
 		public Group getGroup_0() { return cGroup_0; }
 
 		//"derive"
 		public Keyword getDeriveKeyword_0_0() { return cDeriveKeyword_0_0; }
 
+		//WS*
+		public RuleCall getWSTerminalRuleCall_0_1() { return cWSTerminalRuleCall_0_1; }
+
 		//"("
-		public Keyword getLeftParenthesisKeyword_0_1() { return cLeftParenthesisKeyword_0_1; }
+		public Keyword getLeftParenthesisKeyword_0_2() { return cLeftParenthesisKeyword_0_2; }
+
+		//WS*
+		public RuleCall getWSTerminalRuleCall_0_3() { return cWSTerminalRuleCall_0_3; }
 
 		//orig=Color
-		public Assignment getOrigAssignment_0_2() { return cOrigAssignment_0_2; }
+		public Assignment getOrigAssignment_0_4() { return cOrigAssignment_0_4; }
 
 		//Color
-		public RuleCall getOrigColorParserRuleCall_0_2_0() { return cOrigColorParserRuleCall_0_2_0; }
+		public RuleCall getOrigColorParserRuleCall_0_4_0() { return cOrigColorParserRuleCall_0_4_0; }
 
 		//COMMA
-		public RuleCall getCOMMATerminalRuleCall_0_3() { return cCOMMATerminalRuleCall_0_3; }
+		public RuleCall getCOMMATerminalRuleCall_0_5() { return cCOMMATerminalRuleCall_0_5; }
 
 		//mod=unary_operator?
-		public Assignment getModAssignment_0_4() { return cModAssignment_0_4; }
+		public Assignment getModAssignment_0_6() { return cModAssignment_0_6; }
 
 		//unary_operator
-		public RuleCall getModUnary_operatorParserRuleCall_0_4_0() { return cModUnary_operatorParserRuleCall_0_4_0; }
+		public RuleCall getModUnary_operatorParserRuleCall_0_6_0() { return cModUnary_operatorParserRuleCall_0_6_0; }
 
 		//PERCENTAGE
-		public RuleCall getPERCENTAGEParserRuleCall_0_5() { return cPERCENTAGEParserRuleCall_0_5; }
+		public RuleCall getPERCENTAGEParserRuleCall_0_7() { return cPERCENTAGEParserRuleCall_0_7; }
+
+		//WS*
+		public RuleCall getWSTerminalRuleCall_0_8() { return cWSTerminalRuleCall_0_8; }
 
 		//")"
-		public Keyword getRightParenthesisKeyword_0_6() { return cRightParenthesisKeyword_0_6; }
+		public Keyword getRightParenthesisKeyword_0_9() { return cRightParenthesisKeyword_0_9; }
 
-		//"ladder" "(" orig=Color ")" "stops" ("(" stopNumbers+=NUMBER COMMA stopColors+=Color ")")+
+		//"ladder" WS* "(" WS* orig=Color WS* ")" "stops" (WS* "(" WS* stopNumbers+=NUMBER COMMA stopColors+=Color WS* ")")+
 		public Group getGroup_1() { return cGroup_1; }
 
 		//"ladder"
 		public Keyword getLadderKeyword_1_0() { return cLadderKeyword_1_0; }
 
+		//WS*
+		public RuleCall getWSTerminalRuleCall_1_1() { return cWSTerminalRuleCall_1_1; }
+
 		//"("
-		public Keyword getLeftParenthesisKeyword_1_1() { return cLeftParenthesisKeyword_1_1; }
+		public Keyword getLeftParenthesisKeyword_1_2() { return cLeftParenthesisKeyword_1_2; }
+
+		//WS*
+		public RuleCall getWSTerminalRuleCall_1_3() { return cWSTerminalRuleCall_1_3; }
 
 		//orig=Color
-		public Assignment getOrigAssignment_1_2() { return cOrigAssignment_1_2; }
+		public Assignment getOrigAssignment_1_4() { return cOrigAssignment_1_4; }
 
 		//Color
-		public RuleCall getOrigColorParserRuleCall_1_2_0() { return cOrigColorParserRuleCall_1_2_0; }
+		public RuleCall getOrigColorParserRuleCall_1_4_0() { return cOrigColorParserRuleCall_1_4_0; }
+
+		//WS*
+		public RuleCall getWSTerminalRuleCall_1_5() { return cWSTerminalRuleCall_1_5; }
 
 		//")"
-		public Keyword getRightParenthesisKeyword_1_3() { return cRightParenthesisKeyword_1_3; }
+		public Keyword getRightParenthesisKeyword_1_6() { return cRightParenthesisKeyword_1_6; }
 
 		//"stops"
-		public Keyword getStopsKeyword_1_4() { return cStopsKeyword_1_4; }
+		public Keyword getStopsKeyword_1_7() { return cStopsKeyword_1_7; }
 
-		//("(" stopNumbers+=NUMBER COMMA stopColors+=Color ")")+
-		public Group getGroup_1_5() { return cGroup_1_5; }
+		//(WS* "(" WS* stopNumbers+=NUMBER COMMA stopColors+=Color WS* ")")+
+		public Group getGroup_1_8() { return cGroup_1_8; }
+
+		//WS*
+		public RuleCall getWSTerminalRuleCall_1_8_0() { return cWSTerminalRuleCall_1_8_0; }
 
 		//"("
-		public Keyword getLeftParenthesisKeyword_1_5_0() { return cLeftParenthesisKeyword_1_5_0; }
+		public Keyword getLeftParenthesisKeyword_1_8_1() { return cLeftParenthesisKeyword_1_8_1; }
+
+		//WS*
+		public RuleCall getWSTerminalRuleCall_1_8_2() { return cWSTerminalRuleCall_1_8_2; }
 
 		//stopNumbers+=NUMBER
-		public Assignment getStopNumbersAssignment_1_5_1() { return cStopNumbersAssignment_1_5_1; }
+		public Assignment getStopNumbersAssignment_1_8_3() { return cStopNumbersAssignment_1_8_3; }
 
 		//NUMBER
-		public RuleCall getStopNumbersNUMBERParserRuleCall_1_5_1_0() { return cStopNumbersNUMBERParserRuleCall_1_5_1_0; }
+		public RuleCall getStopNumbersNUMBERParserRuleCall_1_8_3_0() { return cStopNumbersNUMBERParserRuleCall_1_8_3_0; }
 
 		//COMMA
-		public RuleCall getCOMMATerminalRuleCall_1_5_2() { return cCOMMATerminalRuleCall_1_5_2; }
+		public RuleCall getCOMMATerminalRuleCall_1_8_4() { return cCOMMATerminalRuleCall_1_8_4; }
 
 		//stopColors+=Color
-		public Assignment getStopColorsAssignment_1_5_3() { return cStopColorsAssignment_1_5_3; }
+		public Assignment getStopColorsAssignment_1_8_5() { return cStopColorsAssignment_1_8_5; }
 
 		//Color
-		public RuleCall getStopColorsColorParserRuleCall_1_5_3_0() { return cStopColorsColorParserRuleCall_1_5_3_0; }
+		public RuleCall getStopColorsColorParserRuleCall_1_8_5_0() { return cStopColorsColorParserRuleCall_1_8_5_0; }
+
+		//WS*
+		public RuleCall getWSTerminalRuleCall_1_8_6() { return cWSTerminalRuleCall_1_8_6; }
 
 		//")"
-		public Keyword getRightParenthesisKeyword_1_5_4() { return cRightParenthesisKeyword_1_5_4; }
+		public Keyword getRightParenthesisKeyword_1_8_7() { return cRightParenthesisKeyword_1_8_7; }
 	}
 
 	public class HexColorElements extends AbstractParserRuleElementFinder {
@@ -6365,24 +6467,40 @@ public class CssDslGrammarAccess extends AbstractGrammarElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "URI");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Keyword cUrlKeyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final RuleCall cSTRINGTerminalRuleCall_1 = (RuleCall)cGroup.eContents().get(1);
-		private final Keyword cRightParenthesisKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		private final RuleCall cWSTerminalRuleCall_1 = (RuleCall)cGroup.eContents().get(1);
+		private final Keyword cLeftParenthesisKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		private final RuleCall cWSTerminalRuleCall_3 = (RuleCall)cGroup.eContents().get(3);
+		private final RuleCall cSTRINGTerminalRuleCall_4 = (RuleCall)cGroup.eContents().get(4);
+		private final RuleCall cWSTerminalRuleCall_5 = (RuleCall)cGroup.eContents().get(5);
+		private final Keyword cRightParenthesisKeyword_6 = (Keyword)cGroup.eContents().get(6);
 		
 		//URI:
-		//	"url(" STRING ")";
+		//	"url" WS* "(" WS* STRING WS* ")";
 		public ParserRule getRule() { return rule; }
 
-		//"url(" STRING ")"
+		//"url" WS* "(" WS* STRING WS* ")"
 		public Group getGroup() { return cGroup; }
 
-		//"url("
+		//"url"
 		public Keyword getUrlKeyword_0() { return cUrlKeyword_0; }
 
+		//WS*
+		public RuleCall getWSTerminalRuleCall_1() { return cWSTerminalRuleCall_1; }
+
+		//"("
+		public Keyword getLeftParenthesisKeyword_2() { return cLeftParenthesisKeyword_2; }
+
+		//WS*
+		public RuleCall getWSTerminalRuleCall_3() { return cWSTerminalRuleCall_3; }
+
 		//STRING
-		public RuleCall getSTRINGTerminalRuleCall_1() { return cSTRINGTerminalRuleCall_1; }
+		public RuleCall getSTRINGTerminalRuleCall_4() { return cSTRINGTerminalRuleCall_4; }
+
+		//WS*
+		public RuleCall getWSTerminalRuleCall_5() { return cWSTerminalRuleCall_5; }
 
 		//")"
-		public Keyword getRightParenthesisKeyword_2() { return cRightParenthesisKeyword_2; }
+		public Keyword getRightParenthesisKeyword_6() { return cRightParenthesisKeyword_6; }
 	}
 
 	public class NUMBERElements extends AbstractParserRuleElementFinder {
@@ -7875,9 +7993,10 @@ public class CssDslGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//RGBColor:
-	//	hexcolor=HexColor | "rgb" "(" WS* r=integer COMMA g=integer COMMA b=integer WS* ")" | "rgb" "(" rp=integer "%" COMMA
-	//	gp=integer "%" COMMA bp=integer "%" ")" | "rgba" "(" r=integer COMMA g=integer COMMA b=integer COMMA alpha=NUMBER ")"
-	//	| "rgba" "(" rp=integer "%" COMMA gp=integer "%" COMMA bp=integer "%" COMMA alpha=NUMBER ")";
+	//	hexcolor=HexColor | "rgb" WS* "(" WS* r=integer COMMA g=integer COMMA b=integer WS* ")" | "rgb" WS* "(" WS* rp=integer
+	//	"%" COMMA gp=integer "%" COMMA bp=integer "%" WS* ")" | "rgba" WS* "(" WS* r=integer COMMA g=integer COMMA b=integer
+	//	COMMA alpha=NUMBER WS* ")" | "rgba" WS* "(" WS* rp=integer "%" COMMA gp=integer "%" COMMA bp=integer "%" COMMA
+	//	alpha=NUMBER WS* ")";
 	public RGBColorElements getRGBColorAccess() {
 		return (pRGBColor != null) ? pRGBColor : (pRGBColor = new RGBColorElements());
 	}
@@ -7887,8 +8006,8 @@ public class CssDslGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//HSBColor:
-	//	"hsb" "(" hue=NUMBER COMMA saturation=PERCENTAGE COMMA brightness=PERCENTAGE ")" | "hsba" "(" hue=NUMBER COMMA
-	//	saturation=PERCENTAGE COMMA brightness=PERCENTAGE COMMA alpha=NUMBER ")";
+	//	"hsb" WS* "(" WS* hue=NUMBER COMMA saturation=PERCENTAGE COMMA brightness=PERCENTAGE WS* ")" | "hsba" WS* "(" WS*
+	//	hue=NUMBER COMMA saturation=PERCENTAGE COMMA brightness=PERCENTAGE COMMA alpha=NUMBER WS* ")";
 	public HSBColorElements getHSBColorAccess() {
 		return (pHSBColor != null) ? pHSBColor : (pHSBColor = new HSBColorElements());
 	}
@@ -7898,8 +8017,8 @@ public class CssDslGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//ColorFunction:
-	//	"derive" "(" orig=Color COMMA mod=unary_operator? PERCENTAGE ")" | "ladder" "(" orig=Color ")" "stops" ("("
-	//	stopNumbers+=NUMBER COMMA stopColors+=Color ")")+;
+	//	"derive" WS* "(" WS* orig=Color COMMA mod=unary_operator? PERCENTAGE WS* ")" | "ladder" WS* "(" WS* orig=Color WS* ")"
+	//	"stops" (WS* "(" WS* stopNumbers+=NUMBER COMMA stopColors+=Color WS* ")")+;
 	public ColorFunctionElements getColorFunctionAccess() {
 		return (pColorFunction != null) ? pColorFunction : (pColorFunction = new ColorFunctionElements());
 	}
@@ -7919,7 +8038,7 @@ public class CssDslGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//URI:
-	//	"url(" STRING ")";
+	//	"url" WS* "(" WS* STRING WS* ")";
 	public URIElements getURIAccess() {
 		return (pURI != null) ? pURI : (pURI = new URIElements());
 	}

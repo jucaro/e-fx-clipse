@@ -10153,10 +10153,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = T__471;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:470:8: ( 'url(' )
-            // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:470:10: 'url('
+            // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:470:8: ( 'url' )
+            // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:470:10: 'url'
             {
-            match("url("); 
+            match("url"); 
 
 
             }
@@ -10740,10 +10740,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = RULE_INTEGER;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12949:14: ( ( '0' .. '9' )+ )
-            // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12949:16: ( '0' .. '9' )+
+            // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:13076:14: ( ( '0' .. '9' )+ )
+            // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:13076:16: ( '0' .. '9' )+
             {
-            // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12949:16: ( '0' .. '9' )+
+            // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:13076:16: ( '0' .. '9' )+
             int cnt1=0;
             loop1:
             do {
@@ -10757,7 +10757,7 @@ public class InternalCssDslLexer extends Lexer {
 
                 switch (alt1) {
             	case 1 :
-            	    // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12949:17: '0' .. '9'
+            	    // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:13076:17: '0' .. '9'
             	    {
             	    matchRange('0','9'); 
 
@@ -10789,10 +10789,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = RULE_REAL;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12951:11: ( ( '0' .. '9' )* '.' ( '0' .. '9' )+ )
-            // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12951:13: ( '0' .. '9' )* '.' ( '0' .. '9' )+
+            // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:13078:11: ( ( '0' .. '9' )* '.' ( '0' .. '9' )+ )
+            // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:13078:13: ( '0' .. '9' )* '.' ( '0' .. '9' )+
             {
-            // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12951:13: ( '0' .. '9' )*
+            // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:13078:13: ( '0' .. '9' )*
             loop2:
             do {
                 int alt2=2;
@@ -10805,7 +10805,7 @@ public class InternalCssDslLexer extends Lexer {
 
                 switch (alt2) {
             	case 1 :
-            	    // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12951:14: '0' .. '9'
+            	    // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:13078:14: '0' .. '9'
             	    {
             	    matchRange('0','9'); 
 
@@ -10818,7 +10818,7 @@ public class InternalCssDslLexer extends Lexer {
             } while (true);
 
             match('.'); 
-            // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12951:29: ( '0' .. '9' )+
+            // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:13078:29: ( '0' .. '9' )+
             int cnt3=0;
             loop3:
             do {
@@ -10832,7 +10832,7 @@ public class InternalCssDslLexer extends Lexer {
 
                 switch (alt3) {
             	case 1 :
-            	    // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12951:30: '0' .. '9'
+            	    // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:13078:30: '0' .. '9'
             	    {
             	    matchRange('0','9'); 
 
@@ -10864,10 +10864,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = RULE_HEXDIGITS;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12953:16: ( ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' )+ )
-            // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12953:18: ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' )+
+            // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:13080:16: ( ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' )+ )
+            // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:13080:18: ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' )+
             {
-            // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12953:18: ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' )+
+            // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:13080:18: ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' )+
             int cnt4=0;
             loop4:
             do {
@@ -10921,8 +10921,8 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = RULE_IDENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12955:12: ( ( '_' | 'a' .. 'z' | 'A' .. 'Z' ) ( '_' | '-' | 'a' .. 'z' | 'A' .. 'Z' | '0..9' )* )
-            // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12955:14: ( '_' | 'a' .. 'z' | 'A' .. 'Z' ) ( '_' | '-' | 'a' .. 'z' | 'A' .. 'Z' | '0..9' )*
+            // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:13082:12: ( ( '_' | 'a' .. 'z' | 'A' .. 'Z' ) ( '_' | '-' | 'a' .. 'z' | 'A' .. 'Z' | '0..9' )* )
+            // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:13082:14: ( '_' | 'a' .. 'z' | 'A' .. 'Z' ) ( '_' | '-' | 'a' .. 'z' | 'A' .. 'Z' | '0..9' )*
             {
             if ( (input.LA(1)>='A' && input.LA(1)<='Z')||input.LA(1)=='_'||(input.LA(1)>='a' && input.LA(1)<='z') ) {
                 input.consume();
@@ -10933,7 +10933,7 @@ public class InternalCssDslLexer extends Lexer {
                 recover(mse);
                 throw mse;}
 
-            // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12955:38: ( '_' | '-' | 'a' .. 'z' | 'A' .. 'Z' | '0..9' )*
+            // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:13082:38: ( '_' | '-' | 'a' .. 'z' | 'A' .. 'Z' | '0..9' )*
             loop5:
             do {
                 int alt5=6;
@@ -11018,35 +11018,35 @@ public class InternalCssDslLexer extends Lexer {
 
                 switch (alt5) {
             	case 1 :
-            	    // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12955:39: '_'
+            	    // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:13082:39: '_'
             	    {
             	    match('_'); 
 
             	    }
             	    break;
             	case 2 :
-            	    // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12955:43: '-'
+            	    // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:13082:43: '-'
             	    {
             	    match('-'); 
 
             	    }
             	    break;
             	case 3 :
-            	    // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12955:47: 'a' .. 'z'
+            	    // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:13082:47: 'a' .. 'z'
             	    {
             	    matchRange('a','z'); 
 
             	    }
             	    break;
             	case 4 :
-            	    // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12955:56: 'A' .. 'Z'
+            	    // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:13082:56: 'A' .. 'Z'
             	    {
             	    matchRange('A','Z'); 
 
             	    }
             	    break;
             	case 5 :
-            	    // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12955:65: '0..9'
+            	    // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:13082:65: '0..9'
             	    {
             	    match("0..9"); 
 
@@ -11075,10 +11075,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = RULE_COMMA;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12957:12: ( ( RULE_WS )* ',' ( RULE_WS )* )
-            // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12957:14: ( RULE_WS )* ',' ( RULE_WS )*
+            // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:13084:12: ( ( RULE_WS )* ',' ( RULE_WS )* )
+            // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:13084:14: ( RULE_WS )* ',' ( RULE_WS )*
             {
-            // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12957:14: ( RULE_WS )*
+            // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:13084:14: ( RULE_WS )*
             loop6:
             do {
                 int alt6=2;
@@ -11091,7 +11091,7 @@ public class InternalCssDslLexer extends Lexer {
 
                 switch (alt6) {
             	case 1 :
-            	    // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12957:14: RULE_WS
+            	    // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:13084:14: RULE_WS
             	    {
             	    mRULE_WS(); 
 
@@ -11104,7 +11104,7 @@ public class InternalCssDslLexer extends Lexer {
             } while (true);
 
             match(','); 
-            // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12957:27: ( RULE_WS )*
+            // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:13084:27: ( RULE_WS )*
             loop7:
             do {
                 int alt7=2;
@@ -11117,7 +11117,7 @@ public class InternalCssDslLexer extends Lexer {
 
                 switch (alt7) {
             	case 1 :
-            	    // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12957:27: RULE_WS
+            	    // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:13084:27: RULE_WS
             	    {
             	    mRULE_WS(); 
 
@@ -11145,12 +11145,12 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = RULE_ML_COMMENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12959:17: ( '/*' ( options {greedy=false; } : . )* '*/' )
-            // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12959:19: '/*' ( options {greedy=false; } : . )* '*/'
+            // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:13086:17: ( '/*' ( options {greedy=false; } : . )* '*/' )
+            // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:13086:19: '/*' ( options {greedy=false; } : . )* '*/'
             {
             match("/*"); 
 
-            // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12959:24: ( options {greedy=false; } : . )*
+            // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:13086:24: ( options {greedy=false; } : . )*
             loop8:
             do {
                 int alt8=2;
@@ -11175,7 +11175,7 @@ public class InternalCssDslLexer extends Lexer {
 
                 switch (alt8) {
             	case 1 :
-            	    // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12959:52: .
+            	    // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:13086:52: .
             	    {
             	    matchAny(); 
 
@@ -11205,10 +11205,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = RULE_WS;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12961:9: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
-            // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12961:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
+            // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:13088:9: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
+            // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:13088:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
             {
-            // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12961:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
+            // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:13088:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
             int cnt9=0;
             loop9:
             do {
@@ -11262,10 +11262,10 @@ public class InternalCssDslLexer extends Lexer {
         try {
             int _type = RULE_STRING;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12963:13: ( ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' ) )
-            // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12963:15: ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
+            // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:13090:13: ( ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' ) )
+            // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:13090:15: ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
             {
-            // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12963:15: ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
+            // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:13090:15: ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
             int alt12=2;
             int LA12_0 = input.LA(1);
 
@@ -11283,10 +11283,10 @@ public class InternalCssDslLexer extends Lexer {
             }
             switch (alt12) {
                 case 1 :
-                    // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12963:16: '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"'
+                    // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:13090:16: '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"'
                     {
                     match('\"'); 
-                    // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12963:20: ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )*
+                    // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:13090:20: ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )*
                     loop10:
                     do {
                         int alt10=3;
@@ -11302,7 +11302,7 @@ public class InternalCssDslLexer extends Lexer {
 
                         switch (alt10) {
                     	case 1 :
-                    	    // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12963:21: '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' )
+                    	    // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:13090:21: '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' )
                     	    {
                     	    match('\\'); 
                     	    if ( input.LA(1)=='\"'||input.LA(1)=='\''||input.LA(1)=='\\'||input.LA(1)=='b'||input.LA(1)=='f'||input.LA(1)=='n'||input.LA(1)=='r'||(input.LA(1)>='t' && input.LA(1)<='u') ) {
@@ -11318,7 +11318,7 @@ public class InternalCssDslLexer extends Lexer {
                     	    }
                     	    break;
                     	case 2 :
-                    	    // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12963:66: ~ ( ( '\\\\' | '\"' ) )
+                    	    // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:13090:66: ~ ( ( '\\\\' | '\"' ) )
                     	    {
                     	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='!')||(input.LA(1)>='#' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFF') ) {
                     	        input.consume();
@@ -11343,10 +11343,10 @@ public class InternalCssDslLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12963:86: '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\''
+                    // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:13090:86: '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\''
                     {
                     match('\''); 
-                    // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12963:91: ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )*
+                    // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:13090:91: ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )*
                     loop11:
                     do {
                         int alt11=3;
@@ -11362,7 +11362,7 @@ public class InternalCssDslLexer extends Lexer {
 
                         switch (alt11) {
                     	case 1 :
-                    	    // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12963:92: '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' )
+                    	    // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:13090:92: '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' )
                     	    {
                     	    match('\\'); 
                     	    if ( input.LA(1)=='\"'||input.LA(1)=='\''||input.LA(1)=='\\'||input.LA(1)=='b'||input.LA(1)=='f'||input.LA(1)=='n'||input.LA(1)=='r'||(input.LA(1)>='t' && input.LA(1)<='u') ) {
@@ -11378,7 +11378,7 @@ public class InternalCssDslLexer extends Lexer {
                     	    }
                     	    break;
                     	case 2 :
-                    	    // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:12963:137: ~ ( ( '\\\\' | '\\'' ) )
+                    	    // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:13090:137: ~ ( ( '\\\\' | '\\'' ) )
                     	    {
                     	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='&')||(input.LA(1)>='(' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFF') ) {
                     	        input.consume();
@@ -14894,7 +14894,7 @@ public class InternalCssDslLexer extends Lexer {
 
     protected DFA13 dfa13 = new DFA13(this);
     static final String DFA13_eotS =
-        "\1\uffff\1\47\3\uffff\1\62\4\uffff\1\65\1\67\2\103\1\47\1\103\1"+
+        "\1\uffff\1\47\3\uffff\1\63\4\uffff\1\65\1\67\2\103\1\47\1\103\1"+
         "\47\1\146\3\47\3\103\5\47\2\uffff\4\47\1\uffff\1\47\1\u00a9\1\103"+
         "\1\uffff\1\u00aa\2\uffff\5\47\1\u00b5\1\u00b6\6\uffff\2\47\1\103"+
         "\1\47\1\103\2\47\1\u00c4\3\103\1\uffff\2\103\7\47\1\u00d6\1\47\1"+
@@ -14903,27 +14903,27 @@ public class InternalCssDslLexer extends Lexer {
         "\47\2\uffff\12\47\3\uffff\10\47\1\103\3\47\1\uffff\2\103\1\47\1"+
         "\u017a\14\47\1\u0188\1\uffff\2\47\1\uffff\1\47\1\uffff\52\47\1\u01b9"+
         "\1\47\1\uffff\1\u01bb\13\47\1\u01c7\51\47\1\u01f4\6\47\1\u01fc\1"+
-        "\u01fe\4\47\1\uffff\13\47\3\uffff\1\47\1\u020f\3\47\1\u0214\10\47"+
-        "\1\uffff\10\47\1\u023a\1\103\2\47\1\u023e\1\103\2\47\1\uffff\7\47"+
-        "\1\u0254\4\47\1\u0259\1\uffff\7\47\1\u0261\1\47\1\u0263\2\47\1\u0266"+
-        "\26\47\1\u027f\1\47\1\u0281\5\47\1\u0287\1\u0288\1\u0289\2\47\1"+
-        "\uffff\1\47\1\uffff\7\47\1\u0294\3\47\1\uffff\3\47\1\u029b\1\47"+
-        "\1\u029e\1\47\1\u02a1\3\47\1\u02a6\1\u02a7\7\47\1\u02af\1\u02b0"+
-        "\1\u02b1\3\47\1\u02b6\2\47\1\u02bc\1\u02bd\15\47\1\uffff\7\47\1"+
-        "\uffff\1\u02d2\1\uffff\12\47\1\u02e0\1\u02e1\1\u02e2\3\47\1\uffff"+
-        "\1\47\1\uffff\1\u02e7\1\47\1\uffff\2\47\1\u02eb\5\47\24\uffff\3"+
-        "\47\1\u032e\1\47\1\u0330\3\47\1\uffff\3\47\1\uffff\25\47\1\uffff"+
-        "\4\47\1\uffff\4\47\1\u0359\2\47\1\uffff\1\47\1\uffff\2\47\1\uffff"+
-        "\7\47\1\u0366\4\47\1\u036c\2\47\1\u036f\10\47\1\uffff\1\47\1\uffff"+
-        "\1\47\1\u037b\1\u037d\2\47\3\uffff\7\47\1\u0387\1\u0388\1\47\1\uffff"+
-        "\6\47\1\uffff\2\47\1\uffff\1\u0392\1\47\1\uffff\1\u0394\3\47\2\uffff"+
-        "\1\47\1\u0399\1\u039a\2\47\1\u039d\1\u039f\3\uffff\4\47\1\uffff"+
-        "\3\47\1\u03ae\1\47\2\uffff\10\47\1\u03b9\6\47\1\u03c0\1\u03c1\3"+
-        "\47\1\uffff\5\47\1\u03ca\7\47\3\uffff\2\47\1\u03d6\1\47\1\uffff"+
-        "\3\47\1\uffff\4\47\1\u03e5\72\uffff\3\47\1\uffff\1\47\1\uffff\2"+
-        "\47\1\u0422\6\47\1\u0429\1\u042a\16\47\1\u043b\4\47\1\u0440\11\47"+
-        "\1\uffff\3\47\1\u044d\6\47\1\u0454\1\47\1\uffff\1\47\1\u0457\2\47"+
-        "\1\u045a\1\uffff\2\47\1\uffff\2\47\1\u045f\1\47\1\u0461\1\u0462"+
+        "\u01fe\4\47\1\uffff\13\47\3\uffff\1\47\1\u020f\1\47\1\u0211\1\47"+
+        "\1\u0214\10\47\1\uffff\10\47\1\u023a\1\103\2\47\1\u023e\1\103\2"+
+        "\47\1\uffff\7\47\1\u0254\4\47\1\u0259\1\uffff\7\47\1\u0261\1\47"+
+        "\1\u0263\2\47\1\u0266\26\47\1\u027f\1\47\1\u0281\5\47\1\u0287\1"+
+        "\u0288\1\u0289\2\47\1\uffff\1\47\1\uffff\7\47\1\u0294\3\47\1\uffff"+
+        "\3\47\1\u029b\1\47\1\u029e\1\47\1\u02a1\3\47\1\u02a6\1\u02a7\7\47"+
+        "\1\u02af\1\u02b0\1\u02b1\3\47\1\u02b6\2\47\1\u02bc\1\u02bd\15\47"+
+        "\1\uffff\7\47\1\uffff\1\u02d2\1\uffff\12\47\1\u02e0\1\u02e1\1\u02e2"+
+        "\3\47\1\uffff\1\47\1\uffff\1\u02e7\1\47\1\uffff\2\47\1\u02eb\5\47"+
+        "\24\uffff\3\47\1\u032e\1\47\1\u0330\3\47\1\uffff\3\47\1\uffff\25"+
+        "\47\1\uffff\4\47\1\uffff\4\47\1\u0359\2\47\1\uffff\1\47\1\uffff"+
+        "\2\47\1\uffff\7\47\1\u0366\4\47\1\u036c\2\47\1\u036f\10\47\1\uffff"+
+        "\1\47\1\uffff\1\47\1\u037b\1\u037d\2\47\3\uffff\7\47\1\u0387\1\u0388"+
+        "\1\47\1\uffff\6\47\1\uffff\2\47\1\uffff\1\u0392\1\47\1\uffff\1\u0394"+
+        "\3\47\2\uffff\1\47\1\u0399\1\u039a\2\47\1\u039d\1\u039f\3\uffff"+
+        "\4\47\1\uffff\3\47\1\u03ae\1\47\2\uffff\10\47\1\u03b9\6\47\1\u03c0"+
+        "\1\u03c1\3\47\1\uffff\5\47\1\u03ca\7\47\3\uffff\2\47\1\u03d6\1\47"+
+        "\1\uffff\3\47\1\uffff\4\47\1\u03e5\72\uffff\3\47\1\uffff\1\47\1"+
+        "\uffff\2\47\1\u0422\6\47\1\u0429\1\u042a\16\47\1\u043b\4\47\1\u0440"+
+        "\11\47\1\uffff\3\47\1\u044d\6\47\1\u0454\1\47\1\uffff\1\47\1\u0457"+
+        "\2\47\1\u045a\1\uffff\2\47\1\uffff\2\47\1\u045f\1\47\1\u0461\1\u0462"+
         "\5\47\1\uffff\1\47\1\uffff\1\47\1\u046a\2\47\1\u046d\4\47\2\uffff"+
         "\4\47\1\u0476\4\47\1\uffff\1\47\1\uffff\1\47\1\u047d\1\u047e\1\47"+
         "\2\uffff\1\47\1\u0481\1\uffff\1\47\1\uffff\13\47\1\u0495\2\47\1"+
@@ -15016,7 +15016,7 @@ public class InternalCssDslLexer extends Lexer {
         "\1\164\1\144\1\157\1\145\1\156\1\144\1\162\1\163\1\154\1\166\1\156"+
         "\1\150\1\151\2\55\1\145\1\154\1\150\1\156\1\171\1\141\2\55\1\164"+
         "\1\145\2\151\1\uffff\1\162\1\154\2\145\1\141\1\143\1\165\1\153\1"+
-        "\155\1\144\1\160\3\uffff\1\153\1\55\1\154\1\50\1\141\1\55\1\141"+
+        "\155\1\144\1\160\3\uffff\1\153\1\55\1\154\1\55\1\141\1\55\1\141"+
         "\1\151\1\162\1\151\1\143\1\171\1\156\1\157\1\141\2\163\2\162\1\141"+
         "\1\154\1\146\1\145\2\55\1\164\1\157\2\55\1\160\1\166\1\uffff\1\142"+
         "\2\145\1\162\1\163\2\145\2\55\1\163\1\171\1\151\1\55\1\uffff\1\163"+
@@ -15211,7 +15211,7 @@ public class InternalCssDslLexer extends Lexer {
         "\1\156\1\144\1\162\1\163\1\154\1\166\1\156\1\150\1\151\1\55\1\172"+
         "\1\145\1\154\1\150\1\156\1\171\1\141\2\172\1\164\1\145\2\151\1\uffff"+
         "\1\162\1\154\2\145\1\141\1\143\1\165\1\153\1\155\1\144\1\160\3\uffff"+
-        "\1\153\1\172\1\154\1\50\1\165\1\172\1\141\1\151\1\162\1\151\1\143"+
+        "\1\153\1\172\1\154\1\172\1\165\1\172\1\141\1\151\1\162\1\151\1\143"+
         "\1\171\1\156\1\157\1\172\2\163\2\162\1\141\1\154\1\163\1\145\2\172"+
         "\1\164\1\157\2\172\1\163\1\166\1\uffff\1\166\2\145\1\162\1\163\2"+
         "\145\1\172\1\55\1\163\1\171\1\151\1\172\1\uffff\1\163\1\165\1\160"+
@@ -15382,7 +15382,7 @@ public class InternalCssDslLexer extends Lexer {
     static final String DFA13_acceptS =
         "\2\uffff\1\2\1\3\1\4\1\uffff\1\6\1\7\1\10\1\11\23\uffff\1\u0110"+
         "\1\u0111\4\uffff\1\u01c6\3\uffff\1\u01eb\1\uffff\1\u01ec\1\u01ef"+
-        "\7\uffff\1\5\1\u01e9\1\u01ed\1\12\1\uffff\1\13\13\uffff\1\u01ea"+
+        "\7\uffff\1\u01e9\1\5\1\u01ed\1\12\1\uffff\1\13\13\uffff\1\u01ea"+
         "\42\uffff\1\u01d9\102\uffff\1\u01e8\1\u01ee\12\uffff\1\u01d1\1\u01d8"+
         "\15\uffff\1\u01d0\21\uffff\1\u01da\2\uffff\1\u01ce\1\uffff\1\u01cd"+
         "\54\uffff\1\u0114\103\uffff\1\u01d2\13\uffff\1\u01cf\1\u01d3\1\u01d4"+
@@ -15491,7 +15491,7 @@ public class InternalCssDslLexer extends Lexer {
             "",
             "",
             "",
-            "\12\63",
+            "\12\62",
             "",
             "",
             "",
@@ -15542,7 +15542,7 @@ public class InternalCssDslLexer extends Lexer {
             "\1\u00a7",
             "",
             "\1\u00a8",
-            "\1\63\1\uffff\12\45\7\uffff\6\103\32\uffff\6\103",
+            "\1\62\1\uffff\12\45\7\uffff\6\103\32\uffff\6\103",
             "\1\47\2\uffff\1\102\20\uffff\6\101\24\47\4\uffff\1\47\1\uffff"+
             "\6\100\24\47",
             "",
@@ -15889,7 +15889,8 @@ public class InternalCssDslLexer extends Lexer {
             "\1\47\2\uffff\1\47\20\uffff\32\47\4\uffff\1\47\1\uffff\32"+
             "\47",
             "\1\u0210",
-            "\1\u0211",
+            "\1\47\2\uffff\1\47\20\uffff\32\47\4\uffff\1\47\1\uffff\32"+
+            "\47",
             "\1\u0212\23\uffff\1\u0213",
             "\1\47\2\uffff\1\47\20\uffff\32\47\4\uffff\1\47\1\uffff\32"+
             "\47",

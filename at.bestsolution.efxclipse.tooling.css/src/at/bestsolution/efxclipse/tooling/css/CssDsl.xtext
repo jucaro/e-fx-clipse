@@ -535,32 +535,32 @@ NamedColor:
 RGBColor:
 	hexcolor=HexColor
 	|
-	('rgb' '(' WS* r=integer COMMA g=integer COMMA b=integer WS* ')' )
+	('rgb' WS* '(' WS* r=integer COMMA g=integer COMMA b=integer WS* ')' )
 	|
-	('rgb' '(' rp=integer '%' COMMA gp=integer '%' COMMA bp=integer '%' ')' )
+	('rgb' WS* '(' WS* rp=integer '%' COMMA gp=integer '%' COMMA bp=integer '%' WS* ')' )
 	|
-	('rgba' '(' r=integer COMMA g=integer COMMA b=integer COMMA alpha=NUMBER ')' )
+	('rgba' WS* '(' WS* r=integer COMMA g=integer COMMA b=integer COMMA alpha=NUMBER WS* ')' )
 	|
-	('rgba' '(' rp=integer '%' COMMA gp=integer '%' COMMA bp=integer '%' COMMA alpha=NUMBER ')' )
+	('rgba' WS* '(' WS* rp=integer '%' COMMA gp=integer '%' COMMA bp=integer '%' COMMA alpha=NUMBER WS* ')' )
 ;
 
 HSBColor:
-	('hsb' '(' hue=NUMBER COMMA saturation=PERCENTAGE COMMA brightness=PERCENTAGE ')')
+	('hsb' WS* '(' WS* hue=NUMBER COMMA saturation=PERCENTAGE COMMA brightness=PERCENTAGE WS* ')')
 	|
-	('hsba' '(' hue=NUMBER COMMA saturation=PERCENTAGE COMMA brightness=PERCENTAGE COMMA alpha=NUMBER ')')
+	('hsba' WS* '(' WS* hue=NUMBER COMMA saturation=PERCENTAGE COMMA brightness=PERCENTAGE COMMA alpha=NUMBER WS* ')')
 ;
 
 ColorFunction:
-	( 'derive' '(' orig=Color COMMA mod=unary_operator? PERCENTAGE ')' )
+	( 'derive' WS* '(' WS* orig=Color COMMA mod=unary_operator? PERCENTAGE WS* ')' )
 	|
-	( 'ladder' '(' orig=Color ')' 'stops' ( '(' stopNumbers+=NUMBER COMMA stopColors+=Color ')' )+ )
+	( 'ladder' WS* '(' WS* orig=Color WS* ')' 'stops' ( WS* '(' WS* stopNumbers+=NUMBER COMMA stopColors+=Color WS* ')' )+ )
 ;
 
 HexColor:
 	'#' value=(hexdigits|integer)
 ;
 URI:
-	'url(' STRING ')'
+	'url' WS* '(' WS* STRING WS* ')'
 ;
 
 NUMBER: num;

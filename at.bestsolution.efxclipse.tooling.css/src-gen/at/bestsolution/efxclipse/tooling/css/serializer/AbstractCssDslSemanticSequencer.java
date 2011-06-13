@@ -272,12 +272,12 @@ public class AbstractCssDslSemanticSequencer extends AbstractSemanticSequencer {
 				}
 				else break;
 			case CssDslPackage.ELEMENT_NAME:
-				if(context == grammarAccess.getSimple_selectorRule()) {
-					sequence_simple_selector_element_name(context, (element_name) semanticObject); 
+				if(context == grammarAccess.getElement_nameRule()) {
+					sequence_element_name_element_name(context, (element_name) semanticObject); 
 					return; 
 				}
-				else if(context == grammarAccess.getElement_nameRule()) {
-					sequence_element_name_element_name(context, (element_name) semanticObject); 
+				else if(context == grammarAccess.getSimple_selectorRule()) {
+					sequence_simple_selector_element_name(context, (element_name) semanticObject); 
 					return; 
 				}
 				else break;
