@@ -800,14 +800,22 @@ rulecss_id returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()]
         $current.merge(kw);
         newLeafNode(kw, grammarAccess.getCss_idAccess().getNumberSignKeyword_0()); 
     }
-    this_IDENT_1=RULE_IDENT    {
-		$current.merge(this_IDENT_1);
+(    this_hexdigits_1=RULE_HEXDIGITS    {
+		$current.merge(this_hexdigits_1);
     }
 
     { 
-    newLeafNode(this_IDENT_1, grammarAccess.getCss_idAccess().getIDENTTerminalRuleCall_1()); 
+    newLeafNode(this_hexdigits_1, grammarAccess.getCss_idAccess().getHexdigitsTerminalRuleCall_1_0()); 
     }
-)
+
+    |    this_IDENT_2=RULE_IDENT    {
+		$current.merge(this_IDENT_2);
+    }
+
+    { 
+    newLeafNode(this_IDENT_2, grammarAccess.getCss_idAccess().getIDENTTerminalRuleCall_1_1()); 
+    }
+))
     ;
 
 
