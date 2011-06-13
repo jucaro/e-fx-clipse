@@ -111,28 +111,6 @@ public class CssDslSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case CssDslPackage.ELEMENT_NAME:
-      {
-        element_name element_name = (element_name)theEObject;
-        T result = caseelement_name(element_name);
-        if (result == null) result = casesimple_selector(element_name);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
-      case CssDslPackage.CSS_CLASS:
-      {
-        css_class css_class = (css_class)theEObject;
-        T result = casecss_class(css_class);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
-      case CssDslPackage.CSS_ID:
-      {
-        css_id css_id = (css_id)theEObject;
-        T result = casecss_id(css_id);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
       case CssDslPackage.CSS_DECLARATION:
       {
         css_declaration css_declaration = (css_declaration)theEObject;
@@ -653,10 +631,10 @@ public class CssDslSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case CssDslPackage.HEX_COLOR:
+      case CssDslPackage.URL_TYPE:
       {
-        HexColor hexColor = (HexColor)theEObject;
-        T result = caseHexColor(hexColor);
+        URLType urlType = (URLType)theEObject;
+        T result = caseURLType(urlType);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -761,54 +739,6 @@ public class CssDslSwitch<T> extends Switch<T>
    * @generated
    */
   public T casesimple_selector(simple_selector object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>element name</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>element name</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseelement_name(element_name object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>css class</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>css class</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T casecss_class(css_class object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>css id</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>css id</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T casecss_id(css_id object)
   {
     return null;
   }
@@ -1790,17 +1720,17 @@ public class CssDslSwitch<T> extends Switch<T>
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Hex Color</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>URL Type</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Hex Color</em>'.
+   * @return the result of interpreting the object as an instance of '<em>URL Type</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseHexColor(HexColor object)
+  public T caseURLType(URLType object)
   {
     return null;
   }

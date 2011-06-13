@@ -7,14 +7,11 @@
 package at.bestsolution.efxclipse.tooling.css.cssDsl.impl;
 
 import at.bestsolution.efxclipse.tooling.css.cssDsl.CssDslPackage;
-import at.bestsolution.efxclipse.tooling.css.cssDsl.HexColor;
 import at.bestsolution.efxclipse.tooling.css.cssDsl.RGBColor;
 
 import org.eclipse.emf.common.notify.Notification;
-import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
@@ -41,14 +38,24 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 public class RGBColorImpl extends ColorImpl implements RGBColor
 {
   /**
-   * The cached value of the '{@link #getHexcolor() <em>Hexcolor</em>}' containment reference.
+   * The default value of the '{@link #getHexcolor() <em>Hexcolor</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @see #getHexcolor()
    * @generated
    * @ordered
    */
-  protected HexColor hexcolor;
+  protected static final String HEXCOLOR_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getHexcolor() <em>Hexcolor</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getHexcolor()
+   * @generated
+   * @ordered
+   */
+  protected String hexcolor = HEXCOLOR_EDEFAULT;
 
   /**
    * The default value of the '{@link #getR() <em>R</em>}' attribute.
@@ -216,7 +223,7 @@ public class RGBColorImpl extends ColorImpl implements RGBColor
    * <!-- end-user-doc -->
    * @generated
    */
-  public HexColor getHexcolor()
+  public String getHexcolor()
   {
     return hexcolor;
   }
@@ -226,37 +233,12 @@ public class RGBColorImpl extends ColorImpl implements RGBColor
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetHexcolor(HexColor newHexcolor, NotificationChain msgs)
+  public void setHexcolor(String newHexcolor)
   {
-    HexColor oldHexcolor = hexcolor;
+    String oldHexcolor = hexcolor;
     hexcolor = newHexcolor;
     if (eNotificationRequired())
-    {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, CssDslPackage.RGB_COLOR__HEXCOLOR, oldHexcolor, newHexcolor);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
-    }
-    return msgs;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setHexcolor(HexColor newHexcolor)
-  {
-    if (newHexcolor != hexcolor)
-    {
-      NotificationChain msgs = null;
-      if (hexcolor != null)
-        msgs = ((InternalEObject)hexcolor).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - CssDslPackage.RGB_COLOR__HEXCOLOR, null, msgs);
-      if (newHexcolor != null)
-        msgs = ((InternalEObject)newHexcolor).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - CssDslPackage.RGB_COLOR__HEXCOLOR, null, msgs);
-      msgs = basicSetHexcolor(newHexcolor, msgs);
-      if (msgs != null) msgs.dispatch();
-    }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, CssDslPackage.RGB_COLOR__HEXCOLOR, newHexcolor, newHexcolor));
+      eNotify(new ENotificationImpl(this, Notification.SET, CssDslPackage.RGB_COLOR__HEXCOLOR, oldHexcolor, hexcolor));
   }
 
   /**
@@ -426,22 +408,6 @@ public class RGBColorImpl extends ColorImpl implements RGBColor
    * @generated
    */
   @Override
-  public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
-  {
-    switch (featureID)
-    {
-      case CssDslPackage.RGB_COLOR__HEXCOLOR:
-        return basicSetHexcolor(null, msgs);
-    }
-    return super.eInverseRemove(otherEnd, featureID, msgs);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
   public Object eGet(int featureID, boolean resolve, boolean coreType)
   {
     switch (featureID)
@@ -477,7 +443,7 @@ public class RGBColorImpl extends ColorImpl implements RGBColor
     switch (featureID)
     {
       case CssDslPackage.RGB_COLOR__HEXCOLOR:
-        setHexcolor((HexColor)newValue);
+        setHexcolor((String)newValue);
         return;
       case CssDslPackage.RGB_COLOR__R:
         setR((String)newValue);
@@ -515,7 +481,7 @@ public class RGBColorImpl extends ColorImpl implements RGBColor
     switch (featureID)
     {
       case CssDslPackage.RGB_COLOR__HEXCOLOR:
-        setHexcolor((HexColor)null);
+        setHexcolor(HEXCOLOR_EDEFAULT);
         return;
       case CssDslPackage.RGB_COLOR__R:
         setR(R_EDEFAULT);
@@ -553,7 +519,7 @@ public class RGBColorImpl extends ColorImpl implements RGBColor
     switch (featureID)
     {
       case CssDslPackage.RGB_COLOR__HEXCOLOR:
-        return hexcolor != null;
+        return HEXCOLOR_EDEFAULT == null ? hexcolor != null : !HEXCOLOR_EDEFAULT.equals(hexcolor);
       case CssDslPackage.RGB_COLOR__R:
         return R_EDEFAULT == null ? r != null : !R_EDEFAULT.equals(r);
       case CssDslPackage.RGB_COLOR__G:
@@ -583,7 +549,9 @@ public class RGBColorImpl extends ColorImpl implements RGBColor
     if (eIsProxy()) return super.toString();
 
     StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (r: ");
+    result.append(" (hexcolor: ");
+    result.append(hexcolor);
+    result.append(", r: ");
     result.append(r);
     result.append(", g: ");
     result.append(g);

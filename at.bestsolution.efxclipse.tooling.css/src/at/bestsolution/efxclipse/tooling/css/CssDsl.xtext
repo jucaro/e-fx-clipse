@@ -39,7 +39,7 @@ selector:
 ;
 
 simple_selector:
-	(element_name id=css_id? class=css_class? pseudoclasses+=css_pseudo*)
+	(element=element_name id=css_id? class=css_class? pseudoclasses+=css_pseudo*)
 	|
 	(id=css_id class=css_class? pseudoclasses+=css_pseudo*)
 	|
@@ -49,15 +49,15 @@ simple_selector:
 ;
 
 element_name:
-	name=IDENT
+	IDENT
 ;
 
 css_class
-  : '.' cssClass=IDENT
+  : '.' IDENT
   ;
 
 css_id:
-	'#' id=IDENT
+	'#' IDENT
 ;
 
 css_declaration:
@@ -253,7 +253,7 @@ fx_blend_property:
 fx_url_property:
 	property=(
 		'-fx-image' | '-fx-graphic' | '-fx-border-image-source'
-	) WS*':'WS* value=URI
+	) WS*':'WS* value=URLType
 ;
 
 fx_paint_properties:
@@ -296,7 +296,7 @@ fx_bar_policy_property:
 fx_url_properties:
 	property=(
 		'-fx-background-image' | '-fx-border-image'
-	) WS*':'WS* values+=URI ( COMMA values+=URI )*
+	) WS*':'WS* values+=URLType ( COMMA values+=URLType )*
 ;
 
 fx_repeat_properties:
@@ -557,10 +557,14 @@ ColorFunction:
 ;
 
 HexColor:
-	'#' value=(hexdigits|integer)
+	'#'(hexdigits|integer)
 ;
 URI:
 	'url' WS* '(' WS* STRING WS* ')'
+;
+
+URLType:
+	'url' WS* '(' WS* url=STRING WS* ')'
 ;
 
 NUMBER: num;

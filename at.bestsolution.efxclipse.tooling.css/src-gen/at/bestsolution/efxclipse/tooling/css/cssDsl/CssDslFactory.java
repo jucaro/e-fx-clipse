@@ -72,33 +72,6 @@ public interface CssDslFactory extends EFactory
   simple_selector createsimple_selector();
 
   /**
-   * Returns a new object of class '<em>element name</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>element name</em>'.
-   * @generated
-   */
-  element_name createelement_name();
-
-  /**
-   * Returns a new object of class '<em>css class</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>css class</em>'.
-   * @generated
-   */
-  css_class createcss_class();
-
-  /**
-   * Returns a new object of class '<em>css id</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>css id</em>'.
-   * @generated
-   */
-  css_id createcss_id();
-
-  /**
    * Returns a new object of class '<em>css declaration</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -648,13 +621,13 @@ public interface CssDslFactory extends EFactory
   ColorFunction createColorFunction();
 
   /**
-   * Returns a new object of class '<em>Hex Color</em>'.
+   * Returns a new object of class '<em>URL Type</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Hex Color</em>'.
+   * @return a new object of class '<em>URL Type</em>'.
    * @generated
    */
-  HexColor createHexColor();
+  URLType createURLType();
 
   /**
    * Returns a new object of class '<em>FONT</em>'.

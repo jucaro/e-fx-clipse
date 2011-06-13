@@ -7,19 +7,15 @@
 package at.bestsolution.efxclipse.tooling.css.cssDsl.impl;
 
 import at.bestsolution.efxclipse.tooling.css.cssDsl.CssDslPackage;
-import at.bestsolution.efxclipse.tooling.css.cssDsl.css_class;
-import at.bestsolution.efxclipse.tooling.css.cssDsl.css_id;
 import at.bestsolution.efxclipse.tooling.css.cssDsl.simple_selector;
 
 import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
-import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
@@ -33,6 +29,7 @@ import org.eclipse.emf.ecore.util.EDataTypeEList;
  * <p>
  * The following features are implemented:
  * <ul>
+ *   <li>{@link at.bestsolution.efxclipse.tooling.css.cssDsl.impl.simple_selectorImpl#getElement <em>Element</em>}</li>
  *   <li>{@link at.bestsolution.efxclipse.tooling.css.cssDsl.impl.simple_selectorImpl#getId <em>Id</em>}</li>
  *   <li>{@link at.bestsolution.efxclipse.tooling.css.cssDsl.impl.simple_selectorImpl#getClass_ <em>Class</em>}</li>
  *   <li>{@link at.bestsolution.efxclipse.tooling.css.cssDsl.impl.simple_selectorImpl#getPseudoclasses <em>Pseudoclasses</em>}</li>
@@ -44,24 +41,64 @@ import org.eclipse.emf.ecore.util.EDataTypeEList;
 public class simple_selectorImpl extends MinimalEObjectImpl.Container implements simple_selector
 {
   /**
-   * The cached value of the '{@link #getId() <em>Id</em>}' containment reference.
+   * The default value of the '{@link #getElement() <em>Element</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getElement()
+   * @generated
+   * @ordered
+   */
+  protected static final String ELEMENT_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getElement() <em>Element</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getElement()
+   * @generated
+   * @ordered
+   */
+  protected String element = ELEMENT_EDEFAULT;
+
+  /**
+   * The default value of the '{@link #getId() <em>Id</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @see #getId()
    * @generated
    * @ordered
    */
-  protected css_id id;
+  protected static final String ID_EDEFAULT = null;
 
   /**
-   * The cached value of the '{@link #getClass_() <em>Class</em>}' containment reference.
+   * The cached value of the '{@link #getId() <em>Id</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getId()
+   * @generated
+   * @ordered
+   */
+  protected String id = ID_EDEFAULT;
+
+  /**
+   * The default value of the '{@link #getClass_() <em>Class</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @see #getClass_()
    * @generated
    * @ordered
    */
-  protected css_class class_;
+  protected static final String CLASS_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getClass_() <em>Class</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getClass_()
+   * @generated
+   * @ordered
+   */
+  protected String class_ = CLASS_EDEFAULT;
 
   /**
    * The cached value of the '{@link #getPseudoclasses() <em>Pseudoclasses</em>}' attribute list.
@@ -99,7 +136,30 @@ public class simple_selectorImpl extends MinimalEObjectImpl.Container implements
    * <!-- end-user-doc -->
    * @generated
    */
-  public css_id getId()
+  public String getElement()
+  {
+    return element;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setElement(String newElement)
+  {
+    String oldElement = element;
+    element = newElement;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, CssDslPackage.SIMPLE_SELECTOR__ELEMENT, oldElement, element));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public String getId()
   {
     return id;
   }
@@ -109,16 +169,12 @@ public class simple_selectorImpl extends MinimalEObjectImpl.Container implements
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetId(css_id newId, NotificationChain msgs)
+  public void setId(String newId)
   {
-    css_id oldId = id;
+    String oldId = id;
     id = newId;
     if (eNotificationRequired())
-    {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, CssDslPackage.SIMPLE_SELECTOR__ID, oldId, newId);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
-    }
-    return msgs;
+      eNotify(new ENotificationImpl(this, Notification.SET, CssDslPackage.SIMPLE_SELECTOR__ID, oldId, id));
   }
 
   /**
@@ -126,28 +182,7 @@ public class simple_selectorImpl extends MinimalEObjectImpl.Container implements
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setId(css_id newId)
-  {
-    if (newId != id)
-    {
-      NotificationChain msgs = null;
-      if (id != null)
-        msgs = ((InternalEObject)id).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - CssDslPackage.SIMPLE_SELECTOR__ID, null, msgs);
-      if (newId != null)
-        msgs = ((InternalEObject)newId).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - CssDslPackage.SIMPLE_SELECTOR__ID, null, msgs);
-      msgs = basicSetId(newId, msgs);
-      if (msgs != null) msgs.dispatch();
-    }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, CssDslPackage.SIMPLE_SELECTOR__ID, newId, newId));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public css_class getClass_()
+  public String getClass_()
   {
     return class_;
   }
@@ -157,37 +192,12 @@ public class simple_selectorImpl extends MinimalEObjectImpl.Container implements
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetClass(css_class newClass, NotificationChain msgs)
+  public void setClass(String newClass)
   {
-    css_class oldClass = class_;
+    String oldClass = class_;
     class_ = newClass;
     if (eNotificationRequired())
-    {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, CssDslPackage.SIMPLE_SELECTOR__CLASS, oldClass, newClass);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
-    }
-    return msgs;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setClass(css_class newClass)
-  {
-    if (newClass != class_)
-    {
-      NotificationChain msgs = null;
-      if (class_ != null)
-        msgs = ((InternalEObject)class_).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - CssDslPackage.SIMPLE_SELECTOR__CLASS, null, msgs);
-      if (newClass != null)
-        msgs = ((InternalEObject)newClass).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - CssDslPackage.SIMPLE_SELECTOR__CLASS, null, msgs);
-      msgs = basicSetClass(newClass, msgs);
-      if (msgs != null) msgs.dispatch();
-    }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, CssDslPackage.SIMPLE_SELECTOR__CLASS, newClass, newClass));
+      eNotify(new ENotificationImpl(this, Notification.SET, CssDslPackage.SIMPLE_SELECTOR__CLASS, oldClass, class_));
   }
 
   /**
@@ -210,28 +220,12 @@ public class simple_selectorImpl extends MinimalEObjectImpl.Container implements
    * @generated
    */
   @Override
-  public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
-  {
-    switch (featureID)
-    {
-      case CssDslPackage.SIMPLE_SELECTOR__ID:
-        return basicSetId(null, msgs);
-      case CssDslPackage.SIMPLE_SELECTOR__CLASS:
-        return basicSetClass(null, msgs);
-    }
-    return super.eInverseRemove(otherEnd, featureID, msgs);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
   public Object eGet(int featureID, boolean resolve, boolean coreType)
   {
     switch (featureID)
     {
+      case CssDslPackage.SIMPLE_SELECTOR__ELEMENT:
+        return getElement();
       case CssDslPackage.SIMPLE_SELECTOR__ID:
         return getId();
       case CssDslPackage.SIMPLE_SELECTOR__CLASS:
@@ -253,11 +247,14 @@ public class simple_selectorImpl extends MinimalEObjectImpl.Container implements
   {
     switch (featureID)
     {
+      case CssDslPackage.SIMPLE_SELECTOR__ELEMENT:
+        setElement((String)newValue);
+        return;
       case CssDslPackage.SIMPLE_SELECTOR__ID:
-        setId((css_id)newValue);
+        setId((String)newValue);
         return;
       case CssDslPackage.SIMPLE_SELECTOR__CLASS:
-        setClass((css_class)newValue);
+        setClass((String)newValue);
         return;
       case CssDslPackage.SIMPLE_SELECTOR__PSEUDOCLASSES:
         getPseudoclasses().clear();
@@ -277,11 +274,14 @@ public class simple_selectorImpl extends MinimalEObjectImpl.Container implements
   {
     switch (featureID)
     {
+      case CssDslPackage.SIMPLE_SELECTOR__ELEMENT:
+        setElement(ELEMENT_EDEFAULT);
+        return;
       case CssDslPackage.SIMPLE_SELECTOR__ID:
-        setId((css_id)null);
+        setId(ID_EDEFAULT);
         return;
       case CssDslPackage.SIMPLE_SELECTOR__CLASS:
-        setClass((css_class)null);
+        setClass(CLASS_EDEFAULT);
         return;
       case CssDslPackage.SIMPLE_SELECTOR__PSEUDOCLASSES:
         getPseudoclasses().clear();
@@ -300,10 +300,12 @@ public class simple_selectorImpl extends MinimalEObjectImpl.Container implements
   {
     switch (featureID)
     {
+      case CssDslPackage.SIMPLE_SELECTOR__ELEMENT:
+        return ELEMENT_EDEFAULT == null ? element != null : !ELEMENT_EDEFAULT.equals(element);
       case CssDslPackage.SIMPLE_SELECTOR__ID:
-        return id != null;
+        return ID_EDEFAULT == null ? id != null : !ID_EDEFAULT.equals(id);
       case CssDslPackage.SIMPLE_SELECTOR__CLASS:
-        return class_ != null;
+        return CLASS_EDEFAULT == null ? class_ != null : !CLASS_EDEFAULT.equals(class_);
       case CssDslPackage.SIMPLE_SELECTOR__PSEUDOCLASSES:
         return pseudoclasses != null && !pseudoclasses.isEmpty();
     }
@@ -321,7 +323,13 @@ public class simple_selectorImpl extends MinimalEObjectImpl.Container implements
     if (eIsProxy()) return super.toString();
 
     StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (pseudoclasses: ");
+    result.append(" (element: ");
+    result.append(element);
+    result.append(", id: ");
+    result.append(id);
+    result.append(", class: ");
+    result.append(class_);
+    result.append(", pseudoclasses: ");
     result.append(pseudoclasses);
     result.append(')');
     return result.toString();

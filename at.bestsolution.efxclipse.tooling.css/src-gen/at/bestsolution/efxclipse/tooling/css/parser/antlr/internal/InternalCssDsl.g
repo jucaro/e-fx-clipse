@@ -508,16 +508,25 @@ rulesimple_selector returns [EObject current=null]
     @init { enterRule(); 
     }
     @after { leaveRule(); }:
-((
-    { 
-        newCompositeNode(grammarAccess.getSimple_selectorAccess().getElement_nameParserRuleCall_0_0()); 
-    }
-    this_element_name_0=ruleelement_name
-    { 
-        $current = $this_element_name_0.current; 
-        afterParserOrEnumRuleCall();
-    }
+(((
 (
+		{ 
+	        newCompositeNode(grammarAccess.getSimple_selectorAccess().getElementElement_nameParserRuleCall_0_0_0()); 
+	    }
+		lv_element_0_0=ruleelement_name		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getSimple_selectorRule());
+	        }
+       		set(
+       			$current, 
+       			"element",
+        		lv_element_0_0, 
+        		"element_name");
+	        afterParserOrEnumRuleCall();
+	    }
+
+)
+)(
 (
 		{ 
 	        newCompositeNode(grammarAccess.getSimple_selectorAccess().getIdCss_idParserRuleCall_0_1_0()); 
@@ -690,125 +699,96 @@ rulesimple_selector returns [EObject current=null]
 
 
 // Entry rule entryRuleelement_name
-entryRuleelement_name returns [EObject current=null] 
+entryRuleelement_name returns [String current=null] 
 	:
-	{ newCompositeNode(grammarAccess.getElement_nameRule()); }
+	{ newCompositeNode(grammarAccess.getElement_nameRule()); } 
 	 iv_ruleelement_name=ruleelement_name 
-	 { $current=$iv_ruleelement_name.current; } 
+	 { $current=$iv_ruleelement_name.current.getText(); }  
 	 EOF 
 ;
 
 // Rule element_name
-ruleelement_name returns [EObject current=null] 
+ruleelement_name returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] 
     @init { enterRule(); 
     }
     @after { leaveRule(); }:
-(
-(
-		lv_name_0_0=RULE_IDENT
-		{
-			newLeafNode(lv_name_0_0, grammarAccess.getElement_nameAccess().getNameIDENTTerminalRuleCall_0()); 
-		}
-		{
-	        if ($current==null) {
-	            $current = createModelElement(grammarAccess.getElement_nameRule());
-	        }
-       		setWithLastConsumed(
-       			$current, 
-       			"name",
-        		lv_name_0_0, 
-        		"IDENT");
-	    }
+    this_IDENT_0=RULE_IDENT    {
+		$current.merge(this_IDENT_0);
+    }
 
-)
-)
-;
+    { 
+    newLeafNode(this_IDENT_0, grammarAccess.getElement_nameAccess().getIDENTTerminalRuleCall()); 
+    }
+
+    ;
 
 
 
 
 
 // Entry rule entryRulecss_class
-entryRulecss_class returns [EObject current=null] 
+entryRulecss_class returns [String current=null] 
 	:
-	{ newCompositeNode(grammarAccess.getCss_classRule()); }
+	{ newCompositeNode(grammarAccess.getCss_classRule()); } 
 	 iv_rulecss_class=rulecss_class 
-	 { $current=$iv_rulecss_class.current; } 
+	 { $current=$iv_rulecss_class.current.getText(); }  
 	 EOF 
 ;
 
 // Rule css_class
-rulecss_class returns [EObject current=null] 
+rulecss_class returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] 
     @init { enterRule(); 
     }
     @after { leaveRule(); }:
-(	otherlv_0='.' 
+(
+	kw='.' 
     {
-    	newLeafNode(otherlv_0, grammarAccess.getCss_classAccess().getFullStopKeyword_0());
+        $current.merge(kw);
+        newLeafNode(kw, grammarAccess.getCss_classAccess().getFullStopKeyword_0()); 
     }
-(
-(
-		lv_cssClass_1_0=RULE_IDENT
-		{
-			newLeafNode(lv_cssClass_1_0, grammarAccess.getCss_classAccess().getCssClassIDENTTerminalRuleCall_1_0()); 
-		}
-		{
-	        if ($current==null) {
-	            $current = createModelElement(grammarAccess.getCss_classRule());
-	        }
-       		setWithLastConsumed(
-       			$current, 
-       			"cssClass",
-        		lv_cssClass_1_0, 
-        		"IDENT");
-	    }
+    this_IDENT_1=RULE_IDENT    {
+		$current.merge(this_IDENT_1);
+    }
 
+    { 
+    newLeafNode(this_IDENT_1, grammarAccess.getCss_classAccess().getIDENTTerminalRuleCall_1()); 
+    }
 )
-))
-;
+    ;
 
 
 
 
 
 // Entry rule entryRulecss_id
-entryRulecss_id returns [EObject current=null] 
+entryRulecss_id returns [String current=null] 
 	:
-	{ newCompositeNode(grammarAccess.getCss_idRule()); }
+	{ newCompositeNode(grammarAccess.getCss_idRule()); } 
 	 iv_rulecss_id=rulecss_id 
-	 { $current=$iv_rulecss_id.current; } 
+	 { $current=$iv_rulecss_id.current.getText(); }  
 	 EOF 
 ;
 
 // Rule css_id
-rulecss_id returns [EObject current=null] 
+rulecss_id returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] 
     @init { enterRule(); 
     }
     @after { leaveRule(); }:
-(	otherlv_0='#' 
+(
+	kw='#' 
     {
-    	newLeafNode(otherlv_0, grammarAccess.getCss_idAccess().getNumberSignKeyword_0());
+        $current.merge(kw);
+        newLeafNode(kw, grammarAccess.getCss_idAccess().getNumberSignKeyword_0()); 
     }
-(
-(
-		lv_id_1_0=RULE_IDENT
-		{
-			newLeafNode(lv_id_1_0, grammarAccess.getCss_idAccess().getIdIDENTTerminalRuleCall_1_0()); 
-		}
-		{
-	        if ($current==null) {
-	            $current = createModelElement(grammarAccess.getCss_idRule());
-	        }
-       		setWithLastConsumed(
-       			$current, 
-       			"id",
-        		lv_id_1_0, 
-        		"IDENT");
-	    }
+    this_IDENT_1=RULE_IDENT    {
+		$current.merge(this_IDENT_1);
+    }
 
+    { 
+    newLeafNode(this_IDENT_1, grammarAccess.getCss_idAccess().getIDENTTerminalRuleCall_1()); 
+    }
 )
-))
-;
+    ;
 
 
 
@@ -4865,9 +4845,9 @@ rulefx_url_property returns [EObject current=null]
 )*(
 (
 		{ 
-	        newCompositeNode(grammarAccess.getFx_url_propertyAccess().getValueURIParserRuleCall_4_0()); 
+	        newCompositeNode(grammarAccess.getFx_url_propertyAccess().getValueURLTypeParserRuleCall_4_0()); 
 	    }
-		lv_value_4_0=ruleURI		{
+		lv_value_4_0=ruleURLType		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getFx_url_propertyRule());
 	        }
@@ -4875,7 +4855,7 @@ rulefx_url_property returns [EObject current=null]
        			$current, 
        			"value",
         		lv_value_4_0, 
-        		"URI");
+        		"URLType");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -5626,9 +5606,9 @@ rulefx_url_properties returns [EObject current=null]
 )*(
 (
 		{ 
-	        newCompositeNode(grammarAccess.getFx_url_propertiesAccess().getValuesURIParserRuleCall_4_0()); 
+	        newCompositeNode(grammarAccess.getFx_url_propertiesAccess().getValuesURLTypeParserRuleCall_4_0()); 
 	    }
-		lv_values_4_0=ruleURI		{
+		lv_values_4_0=ruleURLType		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getFx_url_propertiesRule());
 	        }
@@ -5636,7 +5616,7 @@ rulefx_url_properties returns [EObject current=null]
        			$current, 
        			"values",
         		lv_values_4_0, 
-        		"URI");
+        		"URLType");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -5648,9 +5628,9 @@ rulefx_url_properties returns [EObject current=null]
 (
 (
 		{ 
-	        newCompositeNode(grammarAccess.getFx_url_propertiesAccess().getValuesURIParserRuleCall_5_1_0()); 
+	        newCompositeNode(grammarAccess.getFx_url_propertiesAccess().getValuesURLTypeParserRuleCall_5_1_0()); 
 	    }
-		lv_values_6_0=ruleURI		{
+		lv_values_6_0=ruleURLType		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getFx_url_propertiesRule());
 	        }
@@ -5658,7 +5638,7 @@ rulefx_url_properties returns [EObject current=null]
        			$current, 
        			"values",
         		lv_values_6_0, 
-        		"URI");
+        		"URLType");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -12062,61 +12042,42 @@ rulePERCENTAGE
 
 
 // Entry rule entryRuleHexColor
-entryRuleHexColor returns [EObject current=null] 
+entryRuleHexColor returns [String current=null] 
 	:
-	{ newCompositeNode(grammarAccess.getHexColorRule()); }
+	{ newCompositeNode(grammarAccess.getHexColorRule()); } 
 	 iv_ruleHexColor=ruleHexColor 
-	 { $current=$iv_ruleHexColor.current; } 
+	 { $current=$iv_ruleHexColor.current.getText(); }  
 	 EOF 
 ;
 
 // Rule HexColor
-ruleHexColor returns [EObject current=null] 
+ruleHexColor returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] 
     @init { enterRule(); 
     }
     @after { leaveRule(); }:
-(	otherlv_0='#' 
+(
+	kw='#' 
     {
-    	newLeafNode(otherlv_0, grammarAccess.getHexColorAccess().getNumberSignKeyword_0());
+        $current.merge(kw);
+        newLeafNode(kw, grammarAccess.getHexColorAccess().getNumberSignKeyword_0()); 
     }
-(
-(
-(
-		lv_value_1_1=RULE_HEXDIGITS
-		{
-			newLeafNode(lv_value_1_1, grammarAccess.getHexColorAccess().getValueHexdigitsTerminalRuleCall_1_0_0()); 
-		}
-		{
-	        if ($current==null) {
-	            $current = createModelElement(grammarAccess.getHexColorRule());
-	        }
-       		setWithLastConsumed(
-       			$current, 
-       			"value",
-        		lv_value_1_1, 
-        		"hexdigits");
-	    }
+(    this_hexdigits_1=RULE_HEXDIGITS    {
+		$current.merge(this_hexdigits_1);
+    }
 
-    |		lv_value_1_2=RULE_INTEGER
-		{
-			newLeafNode(lv_value_1_2, grammarAccess.getHexColorAccess().getValueIntegerTerminalRuleCall_1_0_1()); 
-		}
-		{
-	        if ($current==null) {
-	            $current = createModelElement(grammarAccess.getHexColorRule());
-	        }
-       		setWithLastConsumed(
-       			$current, 
-       			"value",
-        		lv_value_1_2, 
-        		"integer");
-	    }
+    { 
+    newLeafNode(this_hexdigits_1, grammarAccess.getHexColorAccess().getHexdigitsTerminalRuleCall_1_0()); 
+    }
 
-)
+    |    this_integer_2=RULE_INTEGER    {
+		$current.merge(this_integer_2);
+    }
 
-)
+    { 
+    newLeafNode(this_integer_2, grammarAccess.getHexColorAccess().getIntegerTerminalRuleCall_1_1()); 
+    }
 ))
-;
+    ;
 
 
 
@@ -12184,6 +12145,69 @@ ruleURI returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()]
     }
 )
     ;
+
+
+
+
+
+// Entry rule entryRuleURLType
+entryRuleURLType returns [EObject current=null] 
+	:
+	{ newCompositeNode(grammarAccess.getURLTypeRule()); }
+	 iv_ruleURLType=ruleURLType 
+	 { $current=$iv_ruleURLType.current; } 
+	 EOF 
+;
+
+// Rule URLType
+ruleURLType returns [EObject current=null] 
+    @init { enterRule(); 
+    }
+    @after { leaveRule(); }:
+(	otherlv_0='url' 
+    {
+    	newLeafNode(otherlv_0, grammarAccess.getURLTypeAccess().getUrlKeyword_0());
+    }
+(this_WS_1=RULE_WS
+    { 
+    newLeafNode(this_WS_1, grammarAccess.getURLTypeAccess().getWSTerminalRuleCall_1()); 
+    }
+)*	otherlv_2='(' 
+    {
+    	newLeafNode(otherlv_2, grammarAccess.getURLTypeAccess().getLeftParenthesisKeyword_2());
+    }
+(this_WS_3=RULE_WS
+    { 
+    newLeafNode(this_WS_3, grammarAccess.getURLTypeAccess().getWSTerminalRuleCall_3()); 
+    }
+)*(
+(
+		lv_url_4_0=RULE_STRING
+		{
+			newLeafNode(lv_url_4_0, grammarAccess.getURLTypeAccess().getUrlSTRINGTerminalRuleCall_4_0()); 
+		}
+		{
+	        if ($current==null) {
+	            $current = createModelElement(grammarAccess.getURLTypeRule());
+	        }
+       		setWithLastConsumed(
+       			$current, 
+       			"url",
+        		lv_url_4_0, 
+        		"STRING");
+	    }
+
+)
+)(this_WS_5=RULE_WS
+    { 
+    newLeafNode(this_WS_5, grammarAccess.getURLTypeAccess().getWSTerminalRuleCall_5()); 
+    }
+)*	otherlv_6=')' 
+    {
+    	newLeafNode(otherlv_6, grammarAccess.getURLTypeAccess().getRightParenthesisKeyword_6());
+    }
+)
+;
 
 
 

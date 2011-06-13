@@ -12,7 +12,6 @@ import at.bestsolution.efxclipse.tooling.css.cssDsl.FONT;
 import at.bestsolution.efxclipse.tooling.css.cssDsl.FONTSTYLE;
 import at.bestsolution.efxclipse.tooling.css.cssDsl.FONTWEIGHT;
 import at.bestsolution.efxclipse.tooling.css.cssDsl.HSBColor;
-import at.bestsolution.efxclipse.tooling.css.cssDsl.HexColor;
 import at.bestsolution.efxclipse.tooling.css.cssDsl.LinearGradient;
 import at.bestsolution.efxclipse.tooling.css.cssDsl.LookedUpColor;
 import at.bestsolution.efxclipse.tooling.css.cssDsl.MultiPaint;
@@ -22,10 +21,8 @@ import at.bestsolution.efxclipse.tooling.css.cssDsl.RadialGradient;
 import at.bestsolution.efxclipse.tooling.css.cssDsl.RepeatStyle;
 import at.bestsolution.efxclipse.tooling.css.cssDsl.SizeFill;
 import at.bestsolution.efxclipse.tooling.css.cssDsl.StopValue;
-import at.bestsolution.efxclipse.tooling.css.cssDsl.css_class;
+import at.bestsolution.efxclipse.tooling.css.cssDsl.URLType;
 import at.bestsolution.efxclipse.tooling.css.cssDsl.css_generic_declaration;
-import at.bestsolution.efxclipse.tooling.css.cssDsl.css_id;
-import at.bestsolution.efxclipse.tooling.css.cssDsl.element_name;
 import at.bestsolution.efxclipse.tooling.css.cssDsl.fx_alignment_property;
 import at.bestsolution.efxclipse.tooling.css.cssDsl.fx_background_image_size_property;
 import at.bestsolution.efxclipse.tooling.css.cssDsl.fx_bar_policy_property;
@@ -184,12 +181,6 @@ public class AbstractCssDslSemanticSequencer extends AbstractSemanticSequencer {
 					return; 
 				}
 				else break;
-			case CssDslPackage.HEX_COLOR:
-				if(context == grammarAccess.getHexColorRule()) {
-					sequence_HexColor_HexColor(context, (HexColor) semanticObject); 
-					return; 
-				}
-				else break;
 			case CssDslPackage.LINEAR_GRADIENT:
 				if(context == grammarAccess.getPaintRule() ||
 				   context == grammarAccess.getLinearGradientRule()) {
@@ -252,9 +243,9 @@ public class AbstractCssDslSemanticSequencer extends AbstractSemanticSequencer {
 					return; 
 				}
 				else break;
-			case CssDslPackage.CSS_CLASS:
-				if(context == grammarAccess.getCss_classRule()) {
-					sequence_css_class_css_class(context, (css_class) semanticObject); 
+			case CssDslPackage.URL_TYPE:
+				if(context == grammarAccess.getURLTypeRule()) {
+					sequence_URLType_URLType(context, (URLType) semanticObject); 
 					return; 
 				}
 				else break;
@@ -262,22 +253,6 @@ public class AbstractCssDslSemanticSequencer extends AbstractSemanticSequencer {
 				if(context == grammarAccess.getCss_declarationRule() ||
 				   context == grammarAccess.getCss_generic_declarationRule()) {
 					sequence_css_generic_declaration_css_generic_declaration(context, (css_generic_declaration) semanticObject); 
-					return; 
-				}
-				else break;
-			case CssDslPackage.CSS_ID:
-				if(context == grammarAccess.getCss_idRule()) {
-					sequence_css_id_css_id(context, (css_id) semanticObject); 
-					return; 
-				}
-				else break;
-			case CssDslPackage.ELEMENT_NAME:
-				if(context == grammarAccess.getElement_nameRule()) {
-					sequence_element_name_element_name(context, (element_name) semanticObject); 
-					return; 
-				}
-				else if(context == grammarAccess.getSimple_selectorRule()) {
-					sequence_simple_selector_element_name(context, (element_name) semanticObject); 
 					return; 
 				}
 				else break;
@@ -911,18 +886,6 @@ public class AbstractCssDslSemanticSequencer extends AbstractSemanticSequencer {
 	
 	/**
 	 * Constraint:
-	 *     (value=hexdigits | value=integer)
-	 *
-	 * Features:
-	 *    value[0, 2]
-	 */
-	protected void sequence_HexColor_HexColor(EObject context, HexColor semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
-	}
-	
-	
-	/**
-	 * Constraint:
 	 *     (x1=SIZE y1=SIZE x2=SIZE y2=SIZE stops+=StopValue+)
 	 *
 	 * Features:
@@ -1294,19 +1257,19 @@ public class AbstractCssDslSemanticSequencer extends AbstractSemanticSequencer {
 	
 	/**
 	 * Constraint:
-	 *     cssClass=IDENT
+	 *     url=STRING
 	 *
 	 * Features:
-	 *    cssClass[1, 1]
+	 *    url[1, 1]
 	 */
-	protected void sequence_css_class_css_class(EObject context, css_class semanticObject) {
+	protected void sequence_URLType_URLType(EObject context, URLType semanticObject) {
 		if(errorAcceptor != null) {
-			if(transientValues.isValueTransient(semanticObject, CssDslPackage.Literals.CSS_CLASS__CSS_CLASS) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, CssDslPackage.Literals.CSS_CLASS__CSS_CLASS));
+			if(transientValues.isValueTransient(semanticObject, CssDslPackage.Literals.URL_TYPE__URL) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, CssDslPackage.Literals.URL_TYPE__URL));
 		}
 		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
 		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
-		feeder.accept(grammarAccess.getCss_classAccess().getCssClassIDENTTerminalRuleCall_1_0(), semanticObject.getCssClass());
+		feeder.accept(grammarAccess.getURLTypeAccess().getUrlSTRINGTerminalRuleCall_4_0(), semanticObject.getUrl());
 		feeder.finish();
 	}
 	
@@ -1331,37 +1294,6 @@ public class AbstractCssDslSemanticSequencer extends AbstractSemanticSequencer {
 		feeder.accept(grammarAccess.getCss_generic_declarationAccess().getPropertyCss_propertyParserRuleCall_0_0(), semanticObject.getProperty());
 		feeder.accept(grammarAccess.getCss_generic_declarationAccess().getExpressionExprParserRuleCall_3_0(), semanticObject.getExpression());
 		feeder.finish();
-	}
-	
-	
-	/**
-	 * Constraint:
-	 *     id=IDENT
-	 *
-	 * Features:
-	 *    id[1, 1]
-	 */
-	protected void sequence_css_id_css_id(EObject context, css_id semanticObject) {
-		if(errorAcceptor != null) {
-			if(transientValues.isValueTransient(semanticObject, CssDslPackage.Literals.CSS_ID__ID) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, CssDslPackage.Literals.CSS_ID__ID));
-		}
-		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
-		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
-		feeder.accept(grammarAccess.getCss_idAccess().getIdIDENTTerminalRuleCall_1_0(), semanticObject.getId());
-		feeder.finish();
-	}
-	
-	
-	/**
-	 * Constraint:
-	 *     name=IDENT
-	 *
-	 * Features:
-	 *    name[1, 1]
-	 */
-	protected void sequence_element_name_element_name(EObject context, element_name semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	
@@ -2105,7 +2037,7 @@ public class AbstractCssDslSemanticSequencer extends AbstractSemanticSequencer {
 	
 	/**
 	 * Constraint:
-	 *     ((property='-fx-background-image' | property='-fx-border-image') values+=URI values+=URI*)
+	 *     ((property='-fx-background-image' | property='-fx-border-image') values+=URLType values+=URLType*)
 	 *
 	 * Features:
 	 *    property[0, 2]
@@ -2118,7 +2050,7 @@ public class AbstractCssDslSemanticSequencer extends AbstractSemanticSequencer {
 	
 	/**
 	 * Constraint:
-	 *     ((property='-fx-image' | property='-fx-graphic' | property='-fx-border-image-source') value=URI)
+	 *     ((property='-fx-image' | property='-fx-graphic' | property='-fx-border-image-source') value=URLType)
 	 *
 	 * Features:
 	 *    property[0, 3]
@@ -2183,31 +2115,29 @@ public class AbstractCssDslSemanticSequencer extends AbstractSemanticSequencer {
 	
 	/**
 	 * Constraint:
-	 *     (name=IDENT id=css_id? class=css_class? pseudoclasses+=css_pseudo*)
+	 *     (
+	 *         (element=element_name id=css_id? class=css_class? pseudoclasses+=css_pseudo*) | 
+	 *         (id=css_id class=css_class? pseudoclasses+=css_pseudo*) | 
+	 *         (class=css_class pseudoclasses+=css_pseudo*) | 
+	 *         pseudoclasses+=css_pseudo+
+	 *     )
 	 *
 	 * Features:
-	 *    id[0, 1]
-	 *    class[0, 1]
-	 *    pseudoclasses[0, *]
-	 *    name[1, 1]
-	 */
-	protected void sequence_simple_selector_element_name(EObject context, element_name semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
-	}
-	
-	
-	/**
-	 * Constraint:
-	 *     ((id=css_id class=css_class? pseudoclasses+=css_pseudo*) | (class=css_class pseudoclasses+=css_pseudo*) | pseudoclasses+=css_pseudo+)
-	 *
-	 * Features:
-	 *    id[1, 1]
+	 *    element[1, 1]
+	 *         MANDATORY_IF_SET id
 	 *         MANDATORY_IF_SET class
 	 *         MANDATORY_IF_SET pseudoclasses
+	 *         EXCLUDE_IF_SET id
+	 *         EXCLUDE_IF_SET class
+	 *         EXCLUDE_IF_SET pseudoclasses
 	 *         EXCLUDE_IF_SET class
 	 *         EXCLUDE_IF_SET pseudoclasses
 	 *         EXCLUDE_IF_SET pseudoclasses
-	 *    class[1, 2]
+	 *    id[1, 2]
+	 *         EXCLUDE_IF_SET class
+	 *         EXCLUDE_IF_SET pseudoclasses
+	 *         EXCLUDE_IF_SET pseudoclasses
+	 *    class[1, 3]
 	 *         EXCLUDE_IF_SET pseudoclasses
 	 *    pseudoclasses[0, *]
 	 */

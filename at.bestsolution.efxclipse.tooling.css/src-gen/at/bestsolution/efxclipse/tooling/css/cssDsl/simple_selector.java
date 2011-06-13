@@ -18,6 +18,7 @@ import org.eclipse.emf.ecore.EObject;
  * <p>
  * The following features are supported:
  * <ul>
+ *   <li>{@link at.bestsolution.efxclipse.tooling.css.cssDsl.simple_selector#getElement <em>Element</em>}</li>
  *   <li>{@link at.bestsolution.efxclipse.tooling.css.cssDsl.simple_selector#getId <em>Id</em>}</li>
  *   <li>{@link at.bestsolution.efxclipse.tooling.css.cssDsl.simple_selector#getClass_ <em>Class</em>}</li>
  *   <li>{@link at.bestsolution.efxclipse.tooling.css.cssDsl.simple_selector#getPseudoclasses <em>Pseudoclasses</em>}</li>
@@ -31,56 +32,82 @@ import org.eclipse.emf.ecore.EObject;
 public interface simple_selector extends EObject
 {
   /**
-   * Returns the value of the '<em><b>Id</b></em>' containment reference.
+   * Returns the value of the '<em><b>Element</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Id</em>' containment reference isn't clear,
+   * If the meaning of the '<em>Element</em>' attribute isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Id</em>' containment reference.
-   * @see #setId(css_id)
-   * @see at.bestsolution.efxclipse.tooling.css.cssDsl.CssDslPackage#getsimple_selector_Id()
-   * @model containment="true"
+   * @return the value of the '<em>Element</em>' attribute.
+   * @see #setElement(String)
+   * @see at.bestsolution.efxclipse.tooling.css.cssDsl.CssDslPackage#getsimple_selector_Element()
+   * @model
    * @generated
    */
-  css_id getId();
+  String getElement();
 
   /**
-   * Sets the value of the '{@link at.bestsolution.efxclipse.tooling.css.cssDsl.simple_selector#getId <em>Id</em>}' containment reference.
+   * Sets the value of the '{@link at.bestsolution.efxclipse.tooling.css.cssDsl.simple_selector#getElement <em>Element</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Id</em>' containment reference.
+   * @param value the new value of the '<em>Element</em>' attribute.
+   * @see #getElement()
+   * @generated
+   */
+  void setElement(String value);
+
+  /**
+   * Returns the value of the '<em><b>Id</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Id</em>' attribute isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Id</em>' attribute.
+   * @see #setId(String)
+   * @see at.bestsolution.efxclipse.tooling.css.cssDsl.CssDslPackage#getsimple_selector_Id()
+   * @model
+   * @generated
+   */
+  String getId();
+
+  /**
+   * Sets the value of the '{@link at.bestsolution.efxclipse.tooling.css.cssDsl.simple_selector#getId <em>Id</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Id</em>' attribute.
    * @see #getId()
    * @generated
    */
-  void setId(css_id value);
+  void setId(String value);
 
   /**
-   * Returns the value of the '<em><b>Class</b></em>' containment reference.
+   * Returns the value of the '<em><b>Class</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Class</em>' containment reference isn't clear,
+   * If the meaning of the '<em>Class</em>' attribute isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Class</em>' containment reference.
-   * @see #setClass(css_class)
+   * @return the value of the '<em>Class</em>' attribute.
+   * @see #setClass(String)
    * @see at.bestsolution.efxclipse.tooling.css.cssDsl.CssDslPackage#getsimple_selector_Class()
-   * @model containment="true"
+   * @model
    * @generated
    */
-  css_class getClass_();
+  String getClass_();
 
   /**
-   * Sets the value of the '{@link at.bestsolution.efxclipse.tooling.css.cssDsl.simple_selector#getClass_ <em>Class</em>}' containment reference.
+   * Sets the value of the '{@link at.bestsolution.efxclipse.tooling.css.cssDsl.simple_selector#getClass_ <em>Class</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Class</em>' containment reference.
+   * @param value the new value of the '<em>Class</em>' attribute.
    * @see #getClass_()
    * @generated
    */
-  void setClass(css_class value);
+  void setClass(String value);
 
   /**
    * Returns the value of the '<em><b>Pseudoclasses</b></em>' attribute list.

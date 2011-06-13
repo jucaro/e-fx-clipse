@@ -104,21 +104,6 @@ public class CssDslAdapterFactory extends AdapterFactoryImpl
         return createsimple_selectorAdapter();
       }
       @Override
-      public Adapter caseelement_name(element_name object)
-      {
-        return createelement_nameAdapter();
-      }
-      @Override
-      public Adapter casecss_class(css_class object)
-      {
-        return createcss_classAdapter();
-      }
-      @Override
-      public Adapter casecss_id(css_id object)
-      {
-        return createcss_idAdapter();
-      }
-      @Override
       public Adapter casecss_declaration(css_declaration object)
       {
         return createcss_declarationAdapter();
@@ -424,9 +409,9 @@ public class CssDslAdapterFactory extends AdapterFactoryImpl
         return createColorFunctionAdapter();
       }
       @Override
-      public Adapter caseHexColor(HexColor object)
+      public Adapter caseURLType(URLType object)
       {
-        return createHexColorAdapter();
+        return createURLTypeAdapter();
       }
       @Override
       public Adapter caseFONT(FONT object)
@@ -536,51 +521,6 @@ public class CssDslAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createsimple_selectorAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link at.bestsolution.efxclipse.tooling.css.cssDsl.element_name <em>element name</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see at.bestsolution.efxclipse.tooling.css.cssDsl.element_name
-   * @generated
-   */
-  public Adapter createelement_nameAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link at.bestsolution.efxclipse.tooling.css.cssDsl.css_class <em>css class</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see at.bestsolution.efxclipse.tooling.css.cssDsl.css_class
-   * @generated
-   */
-  public Adapter createcss_classAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link at.bestsolution.efxclipse.tooling.css.cssDsl.css_id <em>css id</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see at.bestsolution.efxclipse.tooling.css.cssDsl.css_id
-   * @generated
-   */
-  public Adapter createcss_idAdapter()
   {
     return null;
   }
@@ -1501,16 +1441,16 @@ public class CssDslAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link at.bestsolution.efxclipse.tooling.css.cssDsl.HexColor <em>Hex Color</em>}'.
+   * Creates a new adapter for an object of class '{@link at.bestsolution.efxclipse.tooling.css.cssDsl.URLType <em>URL Type</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see at.bestsolution.efxclipse.tooling.css.cssDsl.HexColor
+   * @see at.bestsolution.efxclipse.tooling.css.cssDsl.URLType
    * @generated
    */
-  public Adapter createHexColorAdapter()
+  public Adapter createURLTypeAdapter()
   {
     return null;
   }

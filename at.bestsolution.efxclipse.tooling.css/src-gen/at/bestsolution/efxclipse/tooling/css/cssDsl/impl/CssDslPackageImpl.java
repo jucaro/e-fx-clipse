@@ -19,7 +19,6 @@ import at.bestsolution.efxclipse.tooling.css.cssDsl.EffectDropShadow;
 import at.bestsolution.efxclipse.tooling.css.cssDsl.EffectInnerShadow;
 import at.bestsolution.efxclipse.tooling.css.cssDsl.HPosition;
 import at.bestsolution.efxclipse.tooling.css.cssDsl.HSBColor;
-import at.bestsolution.efxclipse.tooling.css.cssDsl.HexColor;
 import at.bestsolution.efxclipse.tooling.css.cssDsl.LinearGradient;
 import at.bestsolution.efxclipse.tooling.css.cssDsl.LookedUpColor;
 import at.bestsolution.efxclipse.tooling.css.cssDsl.MultiPaint;
@@ -30,12 +29,10 @@ import at.bestsolution.efxclipse.tooling.css.cssDsl.RadialGradient;
 import at.bestsolution.efxclipse.tooling.css.cssDsl.RepeatStyle;
 import at.bestsolution.efxclipse.tooling.css.cssDsl.SizeFill;
 import at.bestsolution.efxclipse.tooling.css.cssDsl.StopValue;
-import at.bestsolution.efxclipse.tooling.css.cssDsl.css_class;
+import at.bestsolution.efxclipse.tooling.css.cssDsl.URLType;
 import at.bestsolution.efxclipse.tooling.css.cssDsl.css_declaration;
 import at.bestsolution.efxclipse.tooling.css.cssDsl.css_fx_declaration;
 import at.bestsolution.efxclipse.tooling.css.cssDsl.css_generic_declaration;
-import at.bestsolution.efxclipse.tooling.css.cssDsl.css_id;
-import at.bestsolution.efxclipse.tooling.css.cssDsl.element_name;
 import at.bestsolution.efxclipse.tooling.css.cssDsl.fx_alignment_property;
 import at.bestsolution.efxclipse.tooling.css.cssDsl.fx_background_image_size_property;
 import at.bestsolution.efxclipse.tooling.css.cssDsl.fx_bar_policy_property;
@@ -130,27 +127,6 @@ public class CssDslPackageImpl extends EPackageImpl implements CssDslPackage
    * @generated
    */
   private EClass simple_selectorEClass = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  private EClass element_nameEClass = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  private EClass css_classEClass = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  private EClass css_idEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -584,7 +560,7 @@ public class CssDslPackageImpl extends EPackageImpl implements CssDslPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass hexColorEClass = null;
+  private EClass urlTypeEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -812,9 +788,9 @@ public class CssDslPackageImpl extends EPackageImpl implements CssDslPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getsimple_selector_Id()
+  public EAttribute getsimple_selector_Element()
   {
-    return (EReference)simple_selectorEClass.getEStructuralFeatures().get(0);
+    return (EAttribute)simple_selectorEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -822,9 +798,9 @@ public class CssDslPackageImpl extends EPackageImpl implements CssDslPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getsimple_selector_Class()
+  public EAttribute getsimple_selector_Id()
   {
-    return (EReference)simple_selectorEClass.getEStructuralFeatures().get(1);
+    return (EAttribute)simple_selectorEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -832,7 +808,7 @@ public class CssDslPackageImpl extends EPackageImpl implements CssDslPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getsimple_selector_Pseudoclasses()
+  public EAttribute getsimple_selector_Class()
   {
     return (EAttribute)simple_selectorEClass.getEStructuralFeatures().get(2);
   }
@@ -842,59 +818,9 @@ public class CssDslPackageImpl extends EPackageImpl implements CssDslPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getelement_name()
+  public EAttribute getsimple_selector_Pseudoclasses()
   {
-    return element_nameEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EAttribute getelement_name_Name()
-  {
-    return (EAttribute)element_nameEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EClass getcss_class()
-  {
-    return css_classEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EAttribute getcss_class_CssClass()
-  {
-    return (EAttribute)css_classEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EClass getcss_id()
-  {
-    return css_idEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EAttribute getcss_id_Id()
-  {
-    return (EAttribute)css_idEClass.getEStructuralFeatures().get(0);
+    return (EAttribute)simple_selectorEClass.getEStructuralFeatures().get(3);
   }
 
   /**
@@ -1352,9 +1278,9 @@ public class CssDslPackageImpl extends EPackageImpl implements CssDslPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getfx_url_property_Value()
+  public EReference getfx_url_property_Value()
   {
-    return (EAttribute)fx_url_propertyEClass.getEStructuralFeatures().get(1);
+    return (EReference)fx_url_propertyEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -1562,9 +1488,9 @@ public class CssDslPackageImpl extends EPackageImpl implements CssDslPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getfx_url_properties_Values()
+  public EReference getfx_url_properties_Values()
   {
-    return (EAttribute)fx_url_propertiesEClass.getEStructuralFeatures().get(1);
+    return (EReference)fx_url_propertiesEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -2662,9 +2588,9 @@ public class CssDslPackageImpl extends EPackageImpl implements CssDslPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getRGBColor_Hexcolor()
+  public EAttribute getRGBColor_Hexcolor()
   {
-    return (EReference)rgbColorEClass.getEStructuralFeatures().get(0);
+    return (EAttribute)rgbColorEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -2842,9 +2768,9 @@ public class CssDslPackageImpl extends EPackageImpl implements CssDslPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getHexColor()
+  public EClass getURLType()
   {
-    return hexColorEClass;
+    return urlTypeEClass;
   }
 
   /**
@@ -2852,9 +2778,9 @@ public class CssDslPackageImpl extends EPackageImpl implements CssDslPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getHexColor_Value()
+  public EAttribute getURLType_Url()
   {
-    return (EAttribute)hexColorEClass.getEStructuralFeatures().get(0);
+    return (EAttribute)urlTypeEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -3014,18 +2940,10 @@ public class CssDslPackageImpl extends EPackageImpl implements CssDslPackage
     createEReference(selectorEClass, SELECTOR__SELECTOR);
 
     simple_selectorEClass = createEClass(SIMPLE_SELECTOR);
-    createEReference(simple_selectorEClass, SIMPLE_SELECTOR__ID);
-    createEReference(simple_selectorEClass, SIMPLE_SELECTOR__CLASS);
+    createEAttribute(simple_selectorEClass, SIMPLE_SELECTOR__ELEMENT);
+    createEAttribute(simple_selectorEClass, SIMPLE_SELECTOR__ID);
+    createEAttribute(simple_selectorEClass, SIMPLE_SELECTOR__CLASS);
     createEAttribute(simple_selectorEClass, SIMPLE_SELECTOR__PSEUDOCLASSES);
-
-    element_nameEClass = createEClass(ELEMENT_NAME);
-    createEAttribute(element_nameEClass, ELEMENT_NAME__NAME);
-
-    css_classEClass = createEClass(CSS_CLASS);
-    createEAttribute(css_classEClass, CSS_CLASS__CSS_CLASS);
-
-    css_idEClass = createEClass(CSS_ID);
-    createEAttribute(css_idEClass, CSS_ID__ID);
 
     css_declarationEClass = createEClass(CSS_DECLARATION);
 
@@ -3088,7 +3006,7 @@ public class CssDslPackageImpl extends EPackageImpl implements CssDslPackage
 
     fx_url_propertyEClass = createEClass(FX_URL_PROPERTY);
     createEAttribute(fx_url_propertyEClass, FX_URL_PROPERTY__PROPERTY);
-    createEAttribute(fx_url_propertyEClass, FX_URL_PROPERTY__VALUE);
+    createEReference(fx_url_propertyEClass, FX_URL_PROPERTY__VALUE);
 
     fx_paint_propertiesEClass = createEClass(FX_PAINT_PROPERTIES);
     createEAttribute(fx_paint_propertiesEClass, FX_PAINT_PROPERTIES__PROPERTY);
@@ -3116,7 +3034,7 @@ public class CssDslPackageImpl extends EPackageImpl implements CssDslPackage
 
     fx_url_propertiesEClass = createEClass(FX_URL_PROPERTIES);
     createEAttribute(fx_url_propertiesEClass, FX_URL_PROPERTIES__PROPERTY);
-    createEAttribute(fx_url_propertiesEClass, FX_URL_PROPERTIES__VALUES);
+    createEReference(fx_url_propertiesEClass, FX_URL_PROPERTIES__VALUES);
 
     fx_repeat_propertiesEClass = createEClass(FX_REPEAT_PROPERTIES);
     createEAttribute(fx_repeat_propertiesEClass, FX_REPEAT_PROPERTIES__PROPERTY);
@@ -3261,7 +3179,7 @@ public class CssDslPackageImpl extends EPackageImpl implements CssDslPackage
     createEAttribute(namedColorEClass, NAMED_COLOR__VALUE);
 
     rgbColorEClass = createEClass(RGB_COLOR);
-    createEReference(rgbColorEClass, RGB_COLOR__HEXCOLOR);
+    createEAttribute(rgbColorEClass, RGB_COLOR__HEXCOLOR);
     createEAttribute(rgbColorEClass, RGB_COLOR__R);
     createEAttribute(rgbColorEClass, RGB_COLOR__G);
     createEAttribute(rgbColorEClass, RGB_COLOR__B);
@@ -3282,8 +3200,8 @@ public class CssDslPackageImpl extends EPackageImpl implements CssDslPackage
     createEAttribute(colorFunctionEClass, COLOR_FUNCTION__STOP_NUMBERS);
     createEReference(colorFunctionEClass, COLOR_FUNCTION__STOP_COLORS);
 
-    hexColorEClass = createEClass(HEX_COLOR);
-    createEAttribute(hexColorEClass, HEX_COLOR__VALUE);
+    urlTypeEClass = createEClass(URL_TYPE);
+    createEAttribute(urlTypeEClass, URL_TYPE__URL);
 
     fontEClass = createEClass(FONT);
     createEAttribute(fontEClass, FONT__STYLE_OR_WEIGHT_STRING);
@@ -3331,7 +3249,6 @@ public class CssDslPackageImpl extends EPackageImpl implements CssDslPackage
     // Set bounds for type parameters
 
     // Add supertypes to classes
-    element_nameEClass.getESuperTypes().add(this.getsimple_selector());
     css_generic_declarationEClass.getESuperTypes().add(this.getcss_declaration());
     css_fx_declarationEClass.getESuperTypes().add(this.getcss_declaration());
     fx_font_propertyEClass.getESuperTypes().add(this.getcss_fx_declaration());
@@ -3401,18 +3318,10 @@ public class CssDslPackageImpl extends EPackageImpl implements CssDslPackage
     initEReference(getselector_Selector(), this.getselector(), null, "selector", null, 0, 1, selector.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(simple_selectorEClass, simple_selector.class, "simple_selector", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getsimple_selector_Id(), this.getcss_id(), null, "id", null, 0, 1, simple_selector.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getsimple_selector_Class(), this.getcss_class(), null, "class", null, 0, 1, simple_selector.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getsimple_selector_Element(), ecorePackage.getEString(), "element", null, 0, 1, simple_selector.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getsimple_selector_Id(), ecorePackage.getEString(), "id", null, 0, 1, simple_selector.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getsimple_selector_Class(), ecorePackage.getEString(), "class", null, 0, 1, simple_selector.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getsimple_selector_Pseudoclasses(), ecorePackage.getEString(), "pseudoclasses", null, 0, -1, simple_selector.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(element_nameEClass, element_name.class, "element_name", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getelement_name_Name(), ecorePackage.getEString(), "name", null, 0, 1, element_name.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(css_classEClass, css_class.class, "css_class", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getcss_class_CssClass(), ecorePackage.getEString(), "cssClass", null, 0, 1, css_class.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(css_idEClass, css_id.class, "css_id", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getcss_id_Id(), ecorePackage.getEString(), "id", null, 0, 1, css_id.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(css_declarationEClass, css_declaration.class, "css_declaration", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
@@ -3475,7 +3384,7 @@ public class CssDslPackageImpl extends EPackageImpl implements CssDslPackage
 
     initEClass(fx_url_propertyEClass, fx_url_property.class, "fx_url_property", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getfx_url_property_Property(), ecorePackage.getEString(), "property", null, 0, 1, fx_url_property.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getfx_url_property_Value(), ecorePackage.getEString(), "value", null, 0, 1, fx_url_property.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getfx_url_property_Value(), this.getURLType(), null, "value", null, 0, 1, fx_url_property.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(fx_paint_propertiesEClass, fx_paint_properties.class, "fx_paint_properties", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getfx_paint_properties_Property(), ecorePackage.getEString(), "property", null, 0, 1, fx_paint_properties.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -3503,7 +3412,7 @@ public class CssDslPackageImpl extends EPackageImpl implements CssDslPackage
 
     initEClass(fx_url_propertiesEClass, fx_url_properties.class, "fx_url_properties", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getfx_url_properties_Property(), ecorePackage.getEString(), "property", null, 0, 1, fx_url_properties.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getfx_url_properties_Values(), ecorePackage.getEString(), "values", null, 0, -1, fx_url_properties.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getfx_url_properties_Values(), this.getURLType(), null, "values", null, 0, -1, fx_url_properties.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(fx_repeat_propertiesEClass, fx_repeat_properties.class, "fx_repeat_properties", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getfx_repeat_properties_Property(), ecorePackage.getEString(), "property", null, 0, 1, fx_repeat_properties.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -3648,7 +3557,7 @@ public class CssDslPackageImpl extends EPackageImpl implements CssDslPackage
     initEAttribute(getNamedColor_Value(), ecorePackage.getEString(), "value", null, 0, 1, NamedColor.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(rgbColorEClass, RGBColor.class, "RGBColor", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getRGBColor_Hexcolor(), this.getHexColor(), null, "hexcolor", null, 0, 1, RGBColor.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getRGBColor_Hexcolor(), ecorePackage.getEString(), "hexcolor", null, 0, 1, RGBColor.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getRGBColor_R(), ecorePackage.getEString(), "r", null, 0, 1, RGBColor.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getRGBColor_G(), ecorePackage.getEString(), "g", null, 0, 1, RGBColor.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getRGBColor_B(), ecorePackage.getEString(), "b", null, 0, 1, RGBColor.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -3669,8 +3578,8 @@ public class CssDslPackageImpl extends EPackageImpl implements CssDslPackage
     initEAttribute(getColorFunction_StopNumbers(), ecorePackage.getEString(), "stopNumbers", null, 0, -1, ColorFunction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getColorFunction_StopColors(), this.getColor(), null, "stopColors", null, 0, -1, ColorFunction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-    initEClass(hexColorEClass, HexColor.class, "HexColor", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getHexColor_Value(), ecorePackage.getEString(), "value", null, 0, 1, HexColor.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEClass(urlTypeEClass, URLType.class, "URLType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getURLType_Url(), ecorePackage.getEString(), "url", null, 0, 1, URLType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(fontEClass, at.bestsolution.efxclipse.tooling.css.cssDsl.FONT.class, "FONT", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getFONT_StyleOrWeightString(), ecorePackage.getEString(), "styleOrWeightString", null, 0, 1, at.bestsolution.efxclipse.tooling.css.cssDsl.FONT.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

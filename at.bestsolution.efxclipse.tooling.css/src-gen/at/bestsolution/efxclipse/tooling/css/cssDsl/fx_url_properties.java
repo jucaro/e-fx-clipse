@@ -54,19 +54,19 @@ public interface fx_url_properties extends css_fx_declaration
   void setProperty(String value);
 
   /**
-   * Returns the value of the '<em><b>Values</b></em>' attribute list.
-   * The list contents are of type {@link java.lang.String}.
+   * Returns the value of the '<em><b>Values</b></em>' containment reference list.
+   * The list contents are of type {@link at.bestsolution.efxclipse.tooling.css.cssDsl.URLType}.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Values</em>' attribute list isn't clear,
+   * If the meaning of the '<em>Values</em>' containment reference list isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Values</em>' attribute list.
+   * @return the value of the '<em>Values</em>' containment reference list.
    * @see at.bestsolution.efxclipse.tooling.css.cssDsl.CssDslPackage#getfx_url_properties_Values()
-   * @model unique="false"
+   * @model containment="true"
    * @generated
    */
-  EList<String> getValues();
+  EList<URLType> getValues();
 
 } // fx_url_properties

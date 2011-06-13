@@ -7,19 +7,23 @@
 package at.bestsolution.efxclipse.tooling.css.cssDsl.impl;
 
 import at.bestsolution.efxclipse.tooling.css.cssDsl.CssDslPackage;
+import at.bestsolution.efxclipse.tooling.css.cssDsl.URLType;
 import at.bestsolution.efxclipse.tooling.css.cssDsl.fx_url_properties;
 
 import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
-import org.eclipse.emf.ecore.util.EDataTypeEList;
+import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -58,14 +62,14 @@ public class fx_url_propertiesImpl extends css_fx_declarationImpl implements fx_
   protected String property = PROPERTY_EDEFAULT;
 
   /**
-   * The cached value of the '{@link #getValues() <em>Values</em>}' attribute list.
+   * The cached value of the '{@link #getValues() <em>Values</em>}' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @see #getValues()
    * @generated
    * @ordered
    */
-  protected EList<String> values;
+  protected EList<URLType> values;
 
   /**
    * <!-- begin-user-doc -->
@@ -116,13 +120,29 @@ public class fx_url_propertiesImpl extends css_fx_declarationImpl implements fx_
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<String> getValues()
+  public EList<URLType> getValues()
   {
     if (values == null)
     {
-      values = new EDataTypeEList<String>(String.class, this, CssDslPackage.FX_URL_PROPERTIES__VALUES);
+      values = new EObjectContainmentEList<URLType>(URLType.class, this, CssDslPackage.FX_URL_PROPERTIES__VALUES);
     }
     return values;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
+  {
+    switch (featureID)
+    {
+      case CssDslPackage.FX_URL_PROPERTIES__VALUES:
+        return ((InternalEList<?>)getValues()).basicRemove(otherEnd, msgs);
+    }
+    return super.eInverseRemove(otherEnd, featureID, msgs);
   }
 
   /**
@@ -159,7 +179,7 @@ public class fx_url_propertiesImpl extends css_fx_declarationImpl implements fx_
         return;
       case CssDslPackage.FX_URL_PROPERTIES__VALUES:
         getValues().clear();
-        getValues().addAll((Collection<? extends String>)newValue);
+        getValues().addAll((Collection<? extends URLType>)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -216,8 +236,6 @@ public class fx_url_propertiesImpl extends css_fx_declarationImpl implements fx_
     StringBuffer result = new StringBuffer(super.toString());
     result.append(" (property: ");
     result.append(property);
-    result.append(", values: ");
-    result.append(values);
     result.append(')');
     return result.toString();
   }

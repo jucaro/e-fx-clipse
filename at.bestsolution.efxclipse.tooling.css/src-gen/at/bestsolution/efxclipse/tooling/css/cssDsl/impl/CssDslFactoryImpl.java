@@ -74,9 +74,6 @@ public class CssDslFactoryImpl extends EFactoryImpl implements CssDslFactory
       case CssDslPackage.RULESET: return createruleset();
       case CssDslPackage.SELECTOR: return createselector();
       case CssDslPackage.SIMPLE_SELECTOR: return createsimple_selector();
-      case CssDslPackage.ELEMENT_NAME: return createelement_name();
-      case CssDslPackage.CSS_CLASS: return createcss_class();
-      case CssDslPackage.CSS_ID: return createcss_id();
       case CssDslPackage.CSS_DECLARATION: return createcss_declaration();
       case CssDslPackage.CSS_GENERIC_DECLARATION: return createcss_generic_declaration();
       case CssDslPackage.CSS_FX_DECLARATION: return createcss_fx_declaration();
@@ -138,7 +135,7 @@ public class CssDslFactoryImpl extends EFactoryImpl implements CssDslFactory
       case CssDslPackage.RGB_COLOR: return createRGBColor();
       case CssDslPackage.HSB_COLOR: return createHSBColor();
       case CssDslPackage.COLOR_FUNCTION: return createColorFunction();
-      case CssDslPackage.HEX_COLOR: return createHexColor();
+      case CssDslPackage.URL_TYPE: return createURLType();
       case CssDslPackage.FONT: return createFONT();
       case CssDslPackage.FONTWEIGHT: return createFONTWEIGHT();
       case CssDslPackage.FONTSTYLE: return createFONTSTYLE();
@@ -234,39 +231,6 @@ public class CssDslFactoryImpl extends EFactoryImpl implements CssDslFactory
   {
     simple_selectorImpl simple_selector = new simple_selectorImpl();
     return simple_selector;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public element_name createelement_name()
-  {
-    element_nameImpl element_name = new element_nameImpl();
-    return element_name;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public css_class createcss_class()
-  {
-    css_classImpl css_class = new css_classImpl();
-    return css_class;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public css_id createcss_id()
-  {
-    css_idImpl css_id = new css_idImpl();
-    return css_id;
   }
 
   /**
@@ -945,10 +909,10 @@ public class CssDslFactoryImpl extends EFactoryImpl implements CssDslFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public HexColor createHexColor()
+  public URLType createURLType()
   {
-    HexColorImpl hexColor = new HexColorImpl();
-    return hexColor;
+    URLTypeImpl urlType = new URLTypeImpl();
+    return urlType;
   }
 
   /**

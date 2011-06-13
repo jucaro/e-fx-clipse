@@ -7,11 +7,14 @@
 package at.bestsolution.efxclipse.tooling.css.cssDsl.impl;
 
 import at.bestsolution.efxclipse.tooling.css.cssDsl.CssDslPackage;
+import at.bestsolution.efxclipse.tooling.css.cssDsl.URLType;
 import at.bestsolution.efxclipse.tooling.css.cssDsl.fx_url_property;
 
 import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
@@ -52,24 +55,14 @@ public class fx_url_propertyImpl extends css_fx_declarationImpl implements fx_ur
   protected String property = PROPERTY_EDEFAULT;
 
   /**
-   * The default value of the '{@link #getValue() <em>Value</em>}' attribute.
+   * The cached value of the '{@link #getValue() <em>Value</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @see #getValue()
    * @generated
    * @ordered
    */
-  protected static final String VALUE_EDEFAULT = null;
-
-  /**
-   * The cached value of the '{@link #getValue() <em>Value</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getValue()
-   * @generated
-   * @ordered
-   */
-  protected String value = VALUE_EDEFAULT;
+  protected URLType value;
 
   /**
    * <!-- begin-user-doc -->
@@ -120,7 +113,7 @@ public class fx_url_propertyImpl extends css_fx_declarationImpl implements fx_ur
    * <!-- end-user-doc -->
    * @generated
    */
-  public String getValue()
+  public URLType getValue()
   {
     return value;
   }
@@ -130,12 +123,53 @@ public class fx_url_propertyImpl extends css_fx_declarationImpl implements fx_ur
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setValue(String newValue)
+  public NotificationChain basicSetValue(URLType newValue, NotificationChain msgs)
   {
-    String oldValue = value;
+    URLType oldValue = value;
     value = newValue;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, CssDslPackage.FX_URL_PROPERTY__VALUE, oldValue, value));
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, CssDslPackage.FX_URL_PROPERTY__VALUE, oldValue, newValue);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setValue(URLType newValue)
+  {
+    if (newValue != value)
+    {
+      NotificationChain msgs = null;
+      if (value != null)
+        msgs = ((InternalEObject)value).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - CssDslPackage.FX_URL_PROPERTY__VALUE, null, msgs);
+      if (newValue != null)
+        msgs = ((InternalEObject)newValue).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - CssDslPackage.FX_URL_PROPERTY__VALUE, null, msgs);
+      msgs = basicSetValue(newValue, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, CssDslPackage.FX_URL_PROPERTY__VALUE, newValue, newValue));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
+  {
+    switch (featureID)
+    {
+      case CssDslPackage.FX_URL_PROPERTY__VALUE:
+        return basicSetValue(null, msgs);
+    }
+    return super.eInverseRemove(otherEnd, featureID, msgs);
   }
 
   /**
@@ -170,7 +204,7 @@ public class fx_url_propertyImpl extends css_fx_declarationImpl implements fx_ur
         setProperty((String)newValue);
         return;
       case CssDslPackage.FX_URL_PROPERTY__VALUE:
-        setValue((String)newValue);
+        setValue((URLType)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -190,7 +224,7 @@ public class fx_url_propertyImpl extends css_fx_declarationImpl implements fx_ur
         setProperty(PROPERTY_EDEFAULT);
         return;
       case CssDslPackage.FX_URL_PROPERTY__VALUE:
-        setValue(VALUE_EDEFAULT);
+        setValue((URLType)null);
         return;
     }
     super.eUnset(featureID);
@@ -209,7 +243,7 @@ public class fx_url_propertyImpl extends css_fx_declarationImpl implements fx_ur
       case CssDslPackage.FX_URL_PROPERTY__PROPERTY:
         return PROPERTY_EDEFAULT == null ? property != null : !PROPERTY_EDEFAULT.equals(property);
       case CssDslPackage.FX_URL_PROPERTY__VALUE:
-        return VALUE_EDEFAULT == null ? value != null : !VALUE_EDEFAULT.equals(value);
+        return value != null;
     }
     return super.eIsSet(featureID);
   }
@@ -227,8 +261,6 @@ public class fx_url_propertyImpl extends css_fx_declarationImpl implements fx_ur
     StringBuffer result = new StringBuffer(super.toString());
     result.append(" (property: ");
     result.append(property);
-    result.append(", value: ");
-    result.append(value);
     result.append(')');
     return result.toString();
   }

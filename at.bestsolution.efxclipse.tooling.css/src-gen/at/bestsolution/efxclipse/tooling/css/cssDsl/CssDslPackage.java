@@ -220,133 +220,13 @@ public interface CssDslPackage extends EPackage
   int SIMPLE_SELECTOR = 4;
 
   /**
-   * The feature id for the '<em><b>Id</b></em>' containment reference.
+   * The feature id for the '<em><b>Element</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int SIMPLE_SELECTOR__ID = 0;
-
-  /**
-   * The feature id for the '<em><b>Class</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int SIMPLE_SELECTOR__CLASS = 1;
-
-  /**
-   * The feature id for the '<em><b>Pseudoclasses</b></em>' attribute list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int SIMPLE_SELECTOR__PSEUDOCLASSES = 2;
-
-  /**
-   * The number of structural features of the '<em>simple selector</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int SIMPLE_SELECTOR_FEATURE_COUNT = 3;
-
-  /**
-   * The meta object id for the '{@link at.bestsolution.efxclipse.tooling.css.cssDsl.impl.element_nameImpl <em>element name</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see at.bestsolution.efxclipse.tooling.css.cssDsl.impl.element_nameImpl
-   * @see at.bestsolution.efxclipse.tooling.css.cssDsl.impl.CssDslPackageImpl#getelement_name()
-   * @generated
-   */
-  int ELEMENT_NAME = 5;
-
-  /**
-   * The feature id for the '<em><b>Id</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int ELEMENT_NAME__ID = SIMPLE_SELECTOR__ID;
-
-  /**
-   * The feature id for the '<em><b>Class</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int ELEMENT_NAME__CLASS = SIMPLE_SELECTOR__CLASS;
-
-  /**
-   * The feature id for the '<em><b>Pseudoclasses</b></em>' attribute list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int ELEMENT_NAME__PSEUDOCLASSES = SIMPLE_SELECTOR__PSEUDOCLASSES;
-
-  /**
-   * The feature id for the '<em><b>Name</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int ELEMENT_NAME__NAME = SIMPLE_SELECTOR_FEATURE_COUNT + 0;
-
-  /**
-   * The number of structural features of the '<em>element name</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int ELEMENT_NAME_FEATURE_COUNT = SIMPLE_SELECTOR_FEATURE_COUNT + 1;
-
-  /**
-   * The meta object id for the '{@link at.bestsolution.efxclipse.tooling.css.cssDsl.impl.css_classImpl <em>css class</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see at.bestsolution.efxclipse.tooling.css.cssDsl.impl.css_classImpl
-   * @see at.bestsolution.efxclipse.tooling.css.cssDsl.impl.CssDslPackageImpl#getcss_class()
-   * @generated
-   */
-  int CSS_CLASS = 6;
-
-  /**
-   * The feature id for the '<em><b>Css Class</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int CSS_CLASS__CSS_CLASS = 0;
-
-  /**
-   * The number of structural features of the '<em>css class</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int CSS_CLASS_FEATURE_COUNT = 1;
-
-  /**
-   * The meta object id for the '{@link at.bestsolution.efxclipse.tooling.css.cssDsl.impl.css_idImpl <em>css id</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see at.bestsolution.efxclipse.tooling.css.cssDsl.impl.css_idImpl
-   * @see at.bestsolution.efxclipse.tooling.css.cssDsl.impl.CssDslPackageImpl#getcss_id()
-   * @generated
-   */
-  int CSS_ID = 7;
+  int SIMPLE_SELECTOR__ELEMENT = 0;
 
   /**
    * The feature id for the '<em><b>Id</b></em>' attribute.
@@ -355,16 +235,34 @@ public interface CssDslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CSS_ID__ID = 0;
+  int SIMPLE_SELECTOR__ID = 1;
 
   /**
-   * The number of structural features of the '<em>css id</em>' class.
+   * The feature id for the '<em><b>Class</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int CSS_ID_FEATURE_COUNT = 1;
+  int SIMPLE_SELECTOR__CLASS = 2;
+
+  /**
+   * The feature id for the '<em><b>Pseudoclasses</b></em>' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SIMPLE_SELECTOR__PSEUDOCLASSES = 3;
+
+  /**
+   * The number of structural features of the '<em>simple selector</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SIMPLE_SELECTOR_FEATURE_COUNT = 4;
 
   /**
    * The meta object id for the '{@link at.bestsolution.efxclipse.tooling.css.cssDsl.impl.css_declarationImpl <em>css declaration</em>}' class.
@@ -374,7 +272,7 @@ public interface CssDslPackage extends EPackage
    * @see at.bestsolution.efxclipse.tooling.css.cssDsl.impl.CssDslPackageImpl#getcss_declaration()
    * @generated
    */
-  int CSS_DECLARATION = 8;
+  int CSS_DECLARATION = 5;
 
   /**
    * The number of structural features of the '<em>css declaration</em>' class.
@@ -393,7 +291,7 @@ public interface CssDslPackage extends EPackage
    * @see at.bestsolution.efxclipse.tooling.css.cssDsl.impl.CssDslPackageImpl#getcss_generic_declaration()
    * @generated
    */
-  int CSS_GENERIC_DECLARATION = 9;
+  int CSS_GENERIC_DECLARATION = 6;
 
   /**
    * The feature id for the '<em><b>Property</b></em>' attribute.
@@ -430,7 +328,7 @@ public interface CssDslPackage extends EPackage
    * @see at.bestsolution.efxclipse.tooling.css.cssDsl.impl.CssDslPackageImpl#getcss_fx_declaration()
    * @generated
    */
-  int CSS_FX_DECLARATION = 10;
+  int CSS_FX_DECLARATION = 7;
 
   /**
    * The number of structural features of the '<em>css fx declaration</em>' class.
@@ -449,7 +347,7 @@ public interface CssDslPackage extends EPackage
    * @see at.bestsolution.efxclipse.tooling.css.cssDsl.impl.CssDslPackageImpl#getfx_font_property()
    * @generated
    */
-  int FX_FONT_PROPERTY = 11;
+  int FX_FONT_PROPERTY = 8;
 
   /**
    * The feature id for the '<em><b>Property</b></em>' attribute.
@@ -486,7 +384,7 @@ public interface CssDslPackage extends EPackage
    * @see at.bestsolution.efxclipse.tooling.css.cssDsl.impl.CssDslPackageImpl#getfx_font_family_property()
    * @generated
    */
-  int FX_FONT_FAMILY_PROPERTY = 12;
+  int FX_FONT_FAMILY_PROPERTY = 9;
 
   /**
    * The feature id for the '<em><b>Property</b></em>' attribute.
@@ -523,7 +421,7 @@ public interface CssDslPackage extends EPackage
    * @see at.bestsolution.efxclipse.tooling.css.cssDsl.impl.CssDslPackageImpl#getfx_font_size_property()
    * @generated
    */
-  int FX_FONT_SIZE_PROPERTY = 13;
+  int FX_FONT_SIZE_PROPERTY = 10;
 
   /**
    * The feature id for the '<em><b>Property</b></em>' attribute.
@@ -560,7 +458,7 @@ public interface CssDslPackage extends EPackage
    * @see at.bestsolution.efxclipse.tooling.css.cssDsl.impl.CssDslPackageImpl#getfx_font_style_property()
    * @generated
    */
-  int FX_FONT_STYLE_PROPERTY = 14;
+  int FX_FONT_STYLE_PROPERTY = 11;
 
   /**
    * The feature id for the '<em><b>Property</b></em>' attribute.
@@ -597,7 +495,7 @@ public interface CssDslPackage extends EPackage
    * @see at.bestsolution.efxclipse.tooling.css.cssDsl.impl.CssDslPackageImpl#getfx_font_weight_property()
    * @generated
    */
-  int FX_FONT_WEIGHT_PROPERTY = 15;
+  int FX_FONT_WEIGHT_PROPERTY = 12;
 
   /**
    * The feature id for the '<em><b>Property</b></em>' attribute.
@@ -634,7 +532,7 @@ public interface CssDslPackage extends EPackage
    * @see at.bestsolution.efxclipse.tooling.css.cssDsl.impl.CssDslPackageImpl#getfx_cursor_property()
    * @generated
    */
-  int FX_CURSOR_PROPERTY = 16;
+  int FX_CURSOR_PROPERTY = 13;
 
   /**
    * The feature id for the '<em><b>Property</b></em>' attribute.
@@ -671,7 +569,7 @@ public interface CssDslPackage extends EPackage
    * @see at.bestsolution.efxclipse.tooling.css.cssDsl.impl.CssDslPackageImpl#getfx_effect_property()
    * @generated
    */
-  int FX_EFFECT_PROPERTY = 17;
+  int FX_EFFECT_PROPERTY = 14;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' containment reference.
@@ -699,7 +597,7 @@ public interface CssDslPackage extends EPackage
    * @see at.bestsolution.efxclipse.tooling.css.cssDsl.impl.CssDslPackageImpl#getfx_boolean_property()
    * @generated
    */
-  int FX_BOOLEAN_PROPERTY = 18;
+  int FX_BOOLEAN_PROPERTY = 15;
 
   /**
    * The feature id for the '<em><b>Property</b></em>' attribute.
@@ -736,7 +634,7 @@ public interface CssDslPackage extends EPackage
    * @see at.bestsolution.efxclipse.tooling.css.cssDsl.impl.CssDslPackageImpl#getfx_size_property()
    * @generated
    */
-  int FX_SIZE_PROPERTY = 19;
+  int FX_SIZE_PROPERTY = 16;
 
   /**
    * The feature id for the '<em><b>Property</b></em>' attribute.
@@ -773,7 +671,7 @@ public interface CssDslPackage extends EPackage
    * @see at.bestsolution.efxclipse.tooling.css.cssDsl.impl.CssDslPackageImpl#getfx_number_property()
    * @generated
    */
-  int FX_NUMBER_PROPERTY = 20;
+  int FX_NUMBER_PROPERTY = 17;
 
   /**
    * The feature id for the '<em><b>Property</b></em>' attribute.
@@ -810,7 +708,7 @@ public interface CssDslPackage extends EPackage
    * @see at.bestsolution.efxclipse.tooling.css.cssDsl.impl.CssDslPackageImpl#getfx_integer_property()
    * @generated
    */
-  int FX_INTEGER_PROPERTY = 21;
+  int FX_INTEGER_PROPERTY = 18;
 
   /**
    * The feature id for the '<em><b>Property</b></em>' attribute.
@@ -847,7 +745,7 @@ public interface CssDslPackage extends EPackage
    * @see at.bestsolution.efxclipse.tooling.css.cssDsl.impl.CssDslPackageImpl#getfx_paint_property()
    * @generated
    */
-  int FX_PAINT_PROPERTY = 22;
+  int FX_PAINT_PROPERTY = 19;
 
   /**
    * The feature id for the '<em><b>Property</b></em>' attribute.
@@ -884,7 +782,7 @@ public interface CssDslPackage extends EPackage
    * @see at.bestsolution.efxclipse.tooling.css.cssDsl.impl.CssDslPackageImpl#getfx_blend_property()
    * @generated
    */
-  int FX_BLEND_PROPERTY = 23;
+  int FX_BLEND_PROPERTY = 20;
 
   /**
    * The feature id for the '<em><b>Property</b></em>' attribute.
@@ -921,7 +819,7 @@ public interface CssDslPackage extends EPackage
    * @see at.bestsolution.efxclipse.tooling.css.cssDsl.impl.CssDslPackageImpl#getfx_url_property()
    * @generated
    */
-  int FX_URL_PROPERTY = 24;
+  int FX_URL_PROPERTY = 21;
 
   /**
    * The feature id for the '<em><b>Property</b></em>' attribute.
@@ -933,7 +831,7 @@ public interface CssDslPackage extends EPackage
   int FX_URL_PROPERTY__PROPERTY = CSS_FX_DECLARATION_FEATURE_COUNT + 0;
 
   /**
-   * The feature id for the '<em><b>Value</b></em>' attribute.
+   * The feature id for the '<em><b>Value</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -958,7 +856,7 @@ public interface CssDslPackage extends EPackage
    * @see at.bestsolution.efxclipse.tooling.css.cssDsl.impl.CssDslPackageImpl#getfx_paint_properties()
    * @generated
    */
-  int FX_PAINT_PROPERTIES = 25;
+  int FX_PAINT_PROPERTIES = 22;
 
   /**
    * The feature id for the '<em><b>Property</b></em>' attribute.
@@ -995,7 +893,7 @@ public interface CssDslPackage extends EPackage
    * @see at.bestsolution.efxclipse.tooling.css.cssDsl.impl.CssDslPackageImpl#getfx_multisize_properties()
    * @generated
    */
-  int FX_MULTISIZE_PROPERTIES = 26;
+  int FX_MULTISIZE_PROPERTIES = 23;
 
   /**
    * The feature id for the '<em><b>Property</b></em>' attribute.
@@ -1032,7 +930,7 @@ public interface CssDslPackage extends EPackage
    * @see at.bestsolution.efxclipse.tooling.css.cssDsl.impl.CssDslPackageImpl#getfx_hposition_property()
    * @generated
    */
-  int FX_HPOSITION_PROPERTY = 27;
+  int FX_HPOSITION_PROPERTY = 24;
 
   /**
    * The feature id for the '<em><b>Property</b></em>' attribute.
@@ -1069,7 +967,7 @@ public interface CssDslPackage extends EPackage
    * @see at.bestsolution.efxclipse.tooling.css.cssDsl.impl.CssDslPackageImpl#getfx_vposition_property()
    * @generated
    */
-  int FX_VPOSITION_PROPERTY = 28;
+  int FX_VPOSITION_PROPERTY = 25;
 
   /**
    * The feature id for the '<em><b>Property</b></em>' attribute.
@@ -1106,7 +1004,7 @@ public interface CssDslPackage extends EPackage
    * @see at.bestsolution.efxclipse.tooling.css.cssDsl.impl.CssDslPackageImpl#getfx_side_property()
    * @generated
    */
-  int FX_SIDE_PROPERTY = 29;
+  int FX_SIDE_PROPERTY = 26;
 
   /**
    * The feature id for the '<em><b>Property</b></em>' attribute.
@@ -1143,7 +1041,7 @@ public interface CssDslPackage extends EPackage
    * @see at.bestsolution.efxclipse.tooling.css.cssDsl.impl.CssDslPackageImpl#getfx_bar_policy_property()
    * @generated
    */
-  int FX_BAR_POLICY_PROPERTY = 30;
+  int FX_BAR_POLICY_PROPERTY = 27;
 
   /**
    * The feature id for the '<em><b>Property</b></em>' attribute.
@@ -1180,7 +1078,7 @@ public interface CssDslPackage extends EPackage
    * @see at.bestsolution.efxclipse.tooling.css.cssDsl.impl.CssDslPackageImpl#getfx_url_properties()
    * @generated
    */
-  int FX_URL_PROPERTIES = 31;
+  int FX_URL_PROPERTIES = 28;
 
   /**
    * The feature id for the '<em><b>Property</b></em>' attribute.
@@ -1192,7 +1090,7 @@ public interface CssDslPackage extends EPackage
   int FX_URL_PROPERTIES__PROPERTY = CSS_FX_DECLARATION_FEATURE_COUNT + 0;
 
   /**
-   * The feature id for the '<em><b>Values</b></em>' attribute list.
+   * The feature id for the '<em><b>Values</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -1217,7 +1115,7 @@ public interface CssDslPackage extends EPackage
    * @see at.bestsolution.efxclipse.tooling.css.cssDsl.impl.CssDslPackageImpl#getfx_repeat_properties()
    * @generated
    */
-  int FX_REPEAT_PROPERTIES = 32;
+  int FX_REPEAT_PROPERTIES = 29;
 
   /**
    * The feature id for the '<em><b>Property</b></em>' attribute.
@@ -1254,7 +1152,7 @@ public interface CssDslPackage extends EPackage
    * @see at.bestsolution.efxclipse.tooling.css.cssDsl.impl.CssDslPackageImpl#getfx_multisize_property()
    * @generated
    */
-  int FX_MULTISIZE_PROPERTY = 33;
+  int FX_MULTISIZE_PROPERTY = 30;
 
   /**
    * The feature id for the '<em><b>Property</b></em>' attribute.
@@ -1291,7 +1189,7 @@ public interface CssDslPackage extends EPackage
    * @see at.bestsolution.efxclipse.tooling.css.cssDsl.impl.CssDslPackageImpl#getfx_size_properties()
    * @generated
    */
-  int FX_SIZE_PROPERTIES = 34;
+  int FX_SIZE_PROPERTIES = 31;
 
   /**
    * The feature id for the '<em><b>Property</b></em>' attribute.
@@ -1328,7 +1226,7 @@ public interface CssDslPackage extends EPackage
    * @see at.bestsolution.efxclipse.tooling.css.cssDsl.impl.CssDslPackageImpl#getfx_stroke_line_cap_property()
    * @generated
    */
-  int FX_STROKE_LINE_CAP_PROPERTY = 35;
+  int FX_STROKE_LINE_CAP_PROPERTY = 32;
 
   /**
    * The feature id for the '<em><b>Property</b></em>' attribute.
@@ -1365,7 +1263,7 @@ public interface CssDslPackage extends EPackage
    * @see at.bestsolution.efxclipse.tooling.css.cssDsl.impl.CssDslPackageImpl#getfx_stroke_line_join_property()
    * @generated
    */
-  int FX_STROKE_LINE_JOIN_PROPERTY = 36;
+  int FX_STROKE_LINE_JOIN_PROPERTY = 33;
 
   /**
    * The feature id for the '<em><b>Property</b></em>' attribute.
@@ -1402,7 +1300,7 @@ public interface CssDslPackage extends EPackage
    * @see at.bestsolution.efxclipse.tooling.css.cssDsl.impl.CssDslPackageImpl#getfx_alignment_property()
    * @generated
    */
-  int FX_ALIGNMENT_PROPERTY = 37;
+  int FX_ALIGNMENT_PROPERTY = 34;
 
   /**
    * The feature id for the '<em><b>Property</b></em>' attribute.
@@ -1439,7 +1337,7 @@ public interface CssDslPackage extends EPackage
    * @see at.bestsolution.efxclipse.tooling.css.cssDsl.impl.CssDslPackageImpl#getfx_text_origin_property()
    * @generated
    */
-  int FX_TEXT_ORIGIN_PROPERTY = 38;
+  int FX_TEXT_ORIGIN_PROPERTY = 35;
 
   /**
    * The feature id for the '<em><b>Property</b></em>' attribute.
@@ -1476,7 +1374,7 @@ public interface CssDslPackage extends EPackage
    * @see at.bestsolution.efxclipse.tooling.css.cssDsl.impl.CssDslPackageImpl#getfx_position_property()
    * @generated
    */
-  int FX_POSITION_PROPERTY = 39;
+  int FX_POSITION_PROPERTY = 36;
 
   /**
    * The feature id for the '<em><b>Property</b></em>' attribute.
@@ -1513,7 +1411,7 @@ public interface CssDslPackage extends EPackage
    * @see at.bestsolution.efxclipse.tooling.css.cssDsl.impl.CssDslPackageImpl#getfx_background_image_size_property()
    * @generated
    */
-  int FX_BACKGROUND_IMAGE_SIZE_PROPERTY = 40;
+  int FX_BACKGROUND_IMAGE_SIZE_PROPERTY = 37;
 
   /**
    * The feature id for the '<em><b>Property</b></em>' attribute.
@@ -1550,7 +1448,7 @@ public interface CssDslPackage extends EPackage
    * @see at.bestsolution.efxclipse.tooling.css.cssDsl.impl.CssDslPackageImpl#getfx_border_style_property()
    * @generated
    */
-  int FX_BORDER_STYLE_PROPERTY = 41;
+  int FX_BORDER_STYLE_PROPERTY = 38;
 
   /**
    * The feature id for the '<em><b>Property</b></em>' attribute.
@@ -1587,7 +1485,7 @@ public interface CssDslPackage extends EPackage
    * @see at.bestsolution.efxclipse.tooling.css.cssDsl.impl.CssDslPackageImpl#getfx_border_image_slice_property()
    * @generated
    */
-  int FX_BORDER_IMAGE_SLICE_PROPERTY = 42;
+  int FX_BORDER_IMAGE_SLICE_PROPERTY = 39;
 
   /**
    * The feature id for the '<em><b>Property</b></em>' attribute.
@@ -1624,7 +1522,7 @@ public interface CssDslPackage extends EPackage
    * @see at.bestsolution.efxclipse.tooling.css.cssDsl.impl.CssDslPackageImpl#getfx_text_overrun_property()
    * @generated
    */
-  int FX_TEXT_OVERRUN_PROPERTY = 43;
+  int FX_TEXT_OVERRUN_PROPERTY = 40;
 
   /**
    * The feature id for the '<em><b>Property</b></em>' attribute.
@@ -1661,7 +1559,7 @@ public interface CssDslPackage extends EPackage
    * @see at.bestsolution.efxclipse.tooling.css.cssDsl.impl.CssDslPackageImpl#getfx_insets_property()
    * @generated
    */
-  int FX_INSETS_PROPERTY = 44;
+  int FX_INSETS_PROPERTY = 41;
 
   /**
    * The feature id for the '<em><b>Property</b></em>' attribute.
@@ -1698,7 +1596,7 @@ public interface CssDslPackage extends EPackage
    * @see at.bestsolution.efxclipse.tooling.css.cssDsl.impl.CssDslPackageImpl#getfx_number_properties()
    * @generated
    */
-  int FX_NUMBER_PROPERTIES = 45;
+  int FX_NUMBER_PROPERTIES = 42;
 
   /**
    * The feature id for the '<em><b>Property</b></em>' attribute.
@@ -1735,7 +1633,7 @@ public interface CssDslPackage extends EPackage
    * @see at.bestsolution.efxclipse.tooling.css.cssDsl.impl.CssDslPackageImpl#getfx_multi_paint_properties()
    * @generated
    */
-  int FX_MULTI_PAINT_PROPERTIES = 46;
+  int FX_MULTI_PAINT_PROPERTIES = 43;
 
   /**
    * The feature id for the '<em><b>Property</b></em>' attribute.
@@ -1772,7 +1670,7 @@ public interface CssDslPackage extends EPackage
    * @see at.bestsolution.efxclipse.tooling.css.cssDsl.impl.CssDslPackageImpl#getfx_string_property()
    * @generated
    */
-  int FX_STRING_PROPERTY = 47;
+  int FX_STRING_PROPERTY = 44;
 
   /**
    * The feature id for the '<em><b>Property</b></em>' attribute.
@@ -1809,7 +1707,7 @@ public interface CssDslPackage extends EPackage
    * @see at.bestsolution.efxclipse.tooling.css.cssDsl.impl.CssDslPackageImpl#getEffect()
    * @generated
    */
-  int EFFECT = 48;
+  int EFFECT = 45;
 
   /**
    * The feature id for the '<em><b>Blur</b></em>' attribute.
@@ -1873,7 +1771,7 @@ public interface CssDslPackage extends EPackage
    * @see at.bestsolution.efxclipse.tooling.css.cssDsl.impl.CssDslPackageImpl#getEffectDropShadow()
    * @generated
    */
-  int EFFECT_DROP_SHADOW = 49;
+  int EFFECT_DROP_SHADOW = 46;
 
   /**
    * The feature id for the '<em><b>Blur</b></em>' attribute.
@@ -1946,7 +1844,7 @@ public interface CssDslPackage extends EPackage
    * @see at.bestsolution.efxclipse.tooling.css.cssDsl.impl.CssDslPackageImpl#getEffectInnerShadow()
    * @generated
    */
-  int EFFECT_INNER_SHADOW = 50;
+  int EFFECT_INNER_SHADOW = 47;
 
   /**
    * The feature id for the '<em><b>Blur</b></em>' attribute.
@@ -2019,7 +1917,7 @@ public interface CssDslPackage extends EPackage
    * @see at.bestsolution.efxclipse.tooling.css.cssDsl.impl.CssDslPackageImpl#getMultiPaint()
    * @generated
    */
-  int MULTI_PAINT = 51;
+  int MULTI_PAINT = 48;
 
   /**
    * The feature id for the '<em><b>Values</b></em>' containment reference list.
@@ -2047,7 +1945,7 @@ public interface CssDslPackage extends EPackage
    * @see at.bestsolution.efxclipse.tooling.css.cssDsl.impl.CssDslPackageImpl#getPaint()
    * @generated
    */
-  int PAINT = 52;
+  int PAINT = 49;
 
   /**
    * The number of structural features of the '<em>Paint</em>' class.
@@ -2066,7 +1964,7 @@ public interface CssDslPackage extends EPackage
    * @see at.bestsolution.efxclipse.tooling.css.cssDsl.impl.CssDslPackageImpl#getLinearGradient()
    * @generated
    */
-  int LINEAR_GRADIENT = 53;
+  int LINEAR_GRADIENT = 50;
 
   /**
    * The feature id for the '<em><b>X1</b></em>' attribute.
@@ -2130,7 +2028,7 @@ public interface CssDslPackage extends EPackage
    * @see at.bestsolution.efxclipse.tooling.css.cssDsl.impl.CssDslPackageImpl#getRadialGradient()
    * @generated
    */
-  int RADIAL_GRADIENT = 54;
+  int RADIAL_GRADIENT = 51;
 
   /**
    * The feature id for the '<em><b>Cx</b></em>' attribute.
@@ -2203,7 +2101,7 @@ public interface CssDslPackage extends EPackage
    * @see at.bestsolution.efxclipse.tooling.css.cssDsl.impl.CssDslPackageImpl#getStopValue()
    * @generated
    */
-  int STOP_VALUE = 55;
+  int STOP_VALUE = 52;
 
   /**
    * The feature id for the '<em><b>Pos</b></em>' attribute.
@@ -2240,7 +2138,7 @@ public interface CssDslPackage extends EPackage
    * @see at.bestsolution.efxclipse.tooling.css.cssDsl.impl.CssDslPackageImpl#getRepeatStyle()
    * @generated
    */
-  int REPEAT_STYLE = 56;
+  int REPEAT_STYLE = 53;
 
   /**
    * The feature id for the '<em><b>V</b></em>' attribute.
@@ -2277,7 +2175,7 @@ public interface CssDslPackage extends EPackage
    * @see at.bestsolution.efxclipse.tooling.css.cssDsl.impl.CssDslPackageImpl#getDim4Size()
    * @generated
    */
-  int DIM4_SIZE = 57;
+  int DIM4_SIZE = 54;
 
   /**
    * The feature id for the '<em><b>Values</b></em>' attribute list.
@@ -2305,7 +2203,7 @@ public interface CssDslPackage extends EPackage
    * @see at.bestsolution.efxclipse.tooling.css.cssDsl.impl.CssDslPackageImpl#getBgPosition()
    * @generated
    */
-  int BG_POSITION = 58;
+  int BG_POSITION = 55;
 
   /**
    * The feature id for the '<em><b>Absx</b></em>' attribute.
@@ -2360,7 +2258,7 @@ public interface CssDslPackage extends EPackage
    * @see at.bestsolution.efxclipse.tooling.css.cssDsl.impl.CssDslPackageImpl#getfx_color_property()
    * @generated
    */
-  int FX_COLOR_PROPERTY = 59;
+  int FX_COLOR_PROPERTY = 56;
 
   /**
    * The feature id for the '<em><b>Property</b></em>' attribute.
@@ -2397,7 +2295,7 @@ public interface CssDslPackage extends EPackage
    * @see at.bestsolution.efxclipse.tooling.css.cssDsl.impl.CssDslPackageImpl#getBgSize()
    * @generated
    */
-  int BG_SIZE = 60;
+  int BG_SIZE = 57;
 
   /**
    * The feature id for the '<em><b>Xsize</b></em>' attribute.
@@ -2443,7 +2341,7 @@ public interface CssDslPackage extends EPackage
    * @see at.bestsolution.efxclipse.tooling.css.cssDsl.impl.CssDslPackageImpl#getBorderStyle()
    * @generated
    */
-  int BORDER_STYLE = 61;
+  int BORDER_STYLE = 58;
 
   /**
    * The feature id for the '<em><b>Dash Style</b></em>' attribute.
@@ -2507,7 +2405,7 @@ public interface CssDslPackage extends EPackage
    * @see at.bestsolution.efxclipse.tooling.css.cssDsl.impl.CssDslPackageImpl#getSizeFill()
    * @generated
    */
-  int SIZE_FILL = 62;
+  int SIZE_FILL = 59;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' containment reference.
@@ -2544,7 +2442,7 @@ public interface CssDslPackage extends EPackage
    * @see at.bestsolution.efxclipse.tooling.css.cssDsl.impl.CssDslPackageImpl#getColor()
    * @generated
    */
-  int COLOR = 63;
+  int COLOR = 60;
 
   /**
    * The number of structural features of the '<em>Color</em>' class.
@@ -2563,7 +2461,7 @@ public interface CssDslPackage extends EPackage
    * @see at.bestsolution.efxclipse.tooling.css.cssDsl.impl.CssDslPackageImpl#getLookedUpColor()
    * @generated
    */
-  int LOOKED_UP_COLOR = 64;
+  int LOOKED_UP_COLOR = 61;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -2591,7 +2489,7 @@ public interface CssDslPackage extends EPackage
    * @see at.bestsolution.efxclipse.tooling.css.cssDsl.impl.CssDslPackageImpl#getNamedColor()
    * @generated
    */
-  int NAMED_COLOR = 65;
+  int NAMED_COLOR = 62;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -2619,10 +2517,10 @@ public interface CssDslPackage extends EPackage
    * @see at.bestsolution.efxclipse.tooling.css.cssDsl.impl.CssDslPackageImpl#getRGBColor()
    * @generated
    */
-  int RGB_COLOR = 66;
+  int RGB_COLOR = 63;
 
   /**
-   * The feature id for the '<em><b>Hexcolor</b></em>' containment reference.
+   * The feature id for the '<em><b>Hexcolor</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -2710,7 +2608,7 @@ public interface CssDslPackage extends EPackage
    * @see at.bestsolution.efxclipse.tooling.css.cssDsl.impl.CssDslPackageImpl#getHSBColor()
    * @generated
    */
-  int HSB_COLOR = 67;
+  int HSB_COLOR = 64;
 
   /**
    * The feature id for the '<em><b>Hue</b></em>' attribute.
@@ -2765,7 +2663,7 @@ public interface CssDslPackage extends EPackage
    * @see at.bestsolution.efxclipse.tooling.css.cssDsl.impl.CssDslPackageImpl#getColorFunction()
    * @generated
    */
-  int COLOR_FUNCTION = 68;
+  int COLOR_FUNCTION = 65;
 
   /**
    * The feature id for the '<em><b>Orig</b></em>' containment reference.
@@ -2813,32 +2711,32 @@ public interface CssDslPackage extends EPackage
   int COLOR_FUNCTION_FEATURE_COUNT = COLOR_FEATURE_COUNT + 4;
 
   /**
-   * The meta object id for the '{@link at.bestsolution.efxclipse.tooling.css.cssDsl.impl.HexColorImpl <em>Hex Color</em>}' class.
+   * The meta object id for the '{@link at.bestsolution.efxclipse.tooling.css.cssDsl.impl.URLTypeImpl <em>URL Type</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see at.bestsolution.efxclipse.tooling.css.cssDsl.impl.HexColorImpl
-   * @see at.bestsolution.efxclipse.tooling.css.cssDsl.impl.CssDslPackageImpl#getHexColor()
+   * @see at.bestsolution.efxclipse.tooling.css.cssDsl.impl.URLTypeImpl
+   * @see at.bestsolution.efxclipse.tooling.css.cssDsl.impl.CssDslPackageImpl#getURLType()
    * @generated
    */
-  int HEX_COLOR = 69;
+  int URL_TYPE = 66;
 
   /**
-   * The feature id for the '<em><b>Value</b></em>' attribute.
+   * The feature id for the '<em><b>Url</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int HEX_COLOR__VALUE = 0;
+  int URL_TYPE__URL = 0;
 
   /**
-   * The number of structural features of the '<em>Hex Color</em>' class.
+   * The number of structural features of the '<em>URL Type</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int HEX_COLOR_FEATURE_COUNT = 1;
+  int URL_TYPE_FEATURE_COUNT = 1;
 
   /**
    * The meta object id for the '{@link at.bestsolution.efxclipse.tooling.css.cssDsl.impl.FONTImpl <em>FONT</em>}' class.
@@ -2848,7 +2746,7 @@ public interface CssDslPackage extends EPackage
    * @see at.bestsolution.efxclipse.tooling.css.cssDsl.impl.CssDslPackageImpl#getFONT()
    * @generated
    */
-  int FONT = 70;
+  int FONT = 67;
 
   /**
    * The feature id for the '<em><b>Style Or Weight String</b></em>' attribute.
@@ -2903,7 +2801,7 @@ public interface CssDslPackage extends EPackage
    * @see at.bestsolution.efxclipse.tooling.css.cssDsl.impl.CssDslPackageImpl#getFONTWEIGHT()
    * @generated
    */
-  int FONTWEIGHT = 71;
+  int FONTWEIGHT = 68;
 
   /**
    * The feature id for the '<em><b>Value String</b></em>' attribute.
@@ -2940,7 +2838,7 @@ public interface CssDslPackage extends EPackage
    * @see at.bestsolution.efxclipse.tooling.css.cssDsl.impl.CssDslPackageImpl#getFONTSTYLE()
    * @generated
    */
-  int FONTSTYLE = 72;
+  int FONTSTYLE = 69;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -2968,7 +2866,7 @@ public interface CssDslPackage extends EPackage
    * @see at.bestsolution.efxclipse.tooling.css.cssDsl.impl.CssDslPackageImpl#getHPosition()
    * @generated
    */
-  int HPOSITION = 73;
+  int HPOSITION = 70;
 
 
   /**
@@ -3110,26 +3008,37 @@ public interface CssDslPackage extends EPackage
   EClass getsimple_selector();
 
   /**
-   * Returns the meta object for the containment reference '{@link at.bestsolution.efxclipse.tooling.css.cssDsl.simple_selector#getId <em>Id</em>}'.
+   * Returns the meta object for the attribute '{@link at.bestsolution.efxclipse.tooling.css.cssDsl.simple_selector#getElement <em>Element</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Id</em>'.
+   * @return the meta object for the attribute '<em>Element</em>'.
+   * @see at.bestsolution.efxclipse.tooling.css.cssDsl.simple_selector#getElement()
+   * @see #getsimple_selector()
+   * @generated
+   */
+  EAttribute getsimple_selector_Element();
+
+  /**
+   * Returns the meta object for the attribute '{@link at.bestsolution.efxclipse.tooling.css.cssDsl.simple_selector#getId <em>Id</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Id</em>'.
    * @see at.bestsolution.efxclipse.tooling.css.cssDsl.simple_selector#getId()
    * @see #getsimple_selector()
    * @generated
    */
-  EReference getsimple_selector_Id();
+  EAttribute getsimple_selector_Id();
 
   /**
-   * Returns the meta object for the containment reference '{@link at.bestsolution.efxclipse.tooling.css.cssDsl.simple_selector#getClass_ <em>Class</em>}'.
+   * Returns the meta object for the attribute '{@link at.bestsolution.efxclipse.tooling.css.cssDsl.simple_selector#getClass_ <em>Class</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Class</em>'.
+   * @return the meta object for the attribute '<em>Class</em>'.
    * @see at.bestsolution.efxclipse.tooling.css.cssDsl.simple_selector#getClass_()
    * @see #getsimple_selector()
    * @generated
    */
-  EReference getsimple_selector_Class();
+  EAttribute getsimple_selector_Class();
 
   /**
    * Returns the meta object for the attribute list '{@link at.bestsolution.efxclipse.tooling.css.cssDsl.simple_selector#getPseudoclasses <em>Pseudoclasses</em>}'.
@@ -3141,69 +3050,6 @@ public interface CssDslPackage extends EPackage
    * @generated
    */
   EAttribute getsimple_selector_Pseudoclasses();
-
-  /**
-   * Returns the meta object for class '{@link at.bestsolution.efxclipse.tooling.css.cssDsl.element_name <em>element name</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>element name</em>'.
-   * @see at.bestsolution.efxclipse.tooling.css.cssDsl.element_name
-   * @generated
-   */
-  EClass getelement_name();
-
-  /**
-   * Returns the meta object for the attribute '{@link at.bestsolution.efxclipse.tooling.css.cssDsl.element_name#getName <em>Name</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Name</em>'.
-   * @see at.bestsolution.efxclipse.tooling.css.cssDsl.element_name#getName()
-   * @see #getelement_name()
-   * @generated
-   */
-  EAttribute getelement_name_Name();
-
-  /**
-   * Returns the meta object for class '{@link at.bestsolution.efxclipse.tooling.css.cssDsl.css_class <em>css class</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>css class</em>'.
-   * @see at.bestsolution.efxclipse.tooling.css.cssDsl.css_class
-   * @generated
-   */
-  EClass getcss_class();
-
-  /**
-   * Returns the meta object for the attribute '{@link at.bestsolution.efxclipse.tooling.css.cssDsl.css_class#getCssClass <em>Css Class</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Css Class</em>'.
-   * @see at.bestsolution.efxclipse.tooling.css.cssDsl.css_class#getCssClass()
-   * @see #getcss_class()
-   * @generated
-   */
-  EAttribute getcss_class_CssClass();
-
-  /**
-   * Returns the meta object for class '{@link at.bestsolution.efxclipse.tooling.css.cssDsl.css_id <em>css id</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>css id</em>'.
-   * @see at.bestsolution.efxclipse.tooling.css.cssDsl.css_id
-   * @generated
-   */
-  EClass getcss_id();
-
-  /**
-   * Returns the meta object for the attribute '{@link at.bestsolution.efxclipse.tooling.css.cssDsl.css_id#getId <em>Id</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Id</em>'.
-   * @see at.bestsolution.efxclipse.tooling.css.cssDsl.css_id#getId()
-   * @see #getcss_id()
-   * @generated
-   */
-  EAttribute getcss_id_Id();
 
   /**
    * Returns the meta object for class '{@link at.bestsolution.efxclipse.tooling.css.cssDsl.css_declaration <em>css declaration</em>}'.
@@ -3684,15 +3530,15 @@ public interface CssDslPackage extends EPackage
   EAttribute getfx_url_property_Property();
 
   /**
-   * Returns the meta object for the attribute '{@link at.bestsolution.efxclipse.tooling.css.cssDsl.fx_url_property#getValue <em>Value</em>}'.
+   * Returns the meta object for the containment reference '{@link at.bestsolution.efxclipse.tooling.css.cssDsl.fx_url_property#getValue <em>Value</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Value</em>'.
+   * @return the meta object for the containment reference '<em>Value</em>'.
    * @see at.bestsolution.efxclipse.tooling.css.cssDsl.fx_url_property#getValue()
    * @see #getfx_url_property()
    * @generated
    */
-  EAttribute getfx_url_property_Value();
+  EReference getfx_url_property_Value();
 
   /**
    * Returns the meta object for class '{@link at.bestsolution.efxclipse.tooling.css.cssDsl.fx_paint_properties <em>fx paint properties</em>}'.
@@ -3908,15 +3754,15 @@ public interface CssDslPackage extends EPackage
   EAttribute getfx_url_properties_Property();
 
   /**
-   * Returns the meta object for the attribute list '{@link at.bestsolution.efxclipse.tooling.css.cssDsl.fx_url_properties#getValues <em>Values</em>}'.
+   * Returns the meta object for the containment reference list '{@link at.bestsolution.efxclipse.tooling.css.cssDsl.fx_url_properties#getValues <em>Values</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute list '<em>Values</em>'.
+   * @return the meta object for the containment reference list '<em>Values</em>'.
    * @see at.bestsolution.efxclipse.tooling.css.cssDsl.fx_url_properties#getValues()
    * @see #getfx_url_properties()
    * @generated
    */
-  EAttribute getfx_url_properties_Values();
+  EReference getfx_url_properties_Values();
 
   /**
    * Returns the meta object for class '{@link at.bestsolution.efxclipse.tooling.css.cssDsl.fx_repeat_properties <em>fx repeat properties</em>}'.
@@ -5083,15 +4929,15 @@ public interface CssDslPackage extends EPackage
   EClass getRGBColor();
 
   /**
-   * Returns the meta object for the containment reference '{@link at.bestsolution.efxclipse.tooling.css.cssDsl.RGBColor#getHexcolor <em>Hexcolor</em>}'.
+   * Returns the meta object for the attribute '{@link at.bestsolution.efxclipse.tooling.css.cssDsl.RGBColor#getHexcolor <em>Hexcolor</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Hexcolor</em>'.
+   * @return the meta object for the attribute '<em>Hexcolor</em>'.
    * @see at.bestsolution.efxclipse.tooling.css.cssDsl.RGBColor#getHexcolor()
    * @see #getRGBColor()
    * @generated
    */
-  EReference getRGBColor_Hexcolor();
+  EAttribute getRGBColor_Hexcolor();
 
   /**
    * Returns the meta object for the attribute '{@link at.bestsolution.efxclipse.tooling.css.cssDsl.RGBColor#getR <em>R</em>}'.
@@ -5279,25 +5125,25 @@ public interface CssDslPackage extends EPackage
   EReference getColorFunction_StopColors();
 
   /**
-   * Returns the meta object for class '{@link at.bestsolution.efxclipse.tooling.css.cssDsl.HexColor <em>Hex Color</em>}'.
+   * Returns the meta object for class '{@link at.bestsolution.efxclipse.tooling.css.cssDsl.URLType <em>URL Type</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Hex Color</em>'.
-   * @see at.bestsolution.efxclipse.tooling.css.cssDsl.HexColor
+   * @return the meta object for class '<em>URL Type</em>'.
+   * @see at.bestsolution.efxclipse.tooling.css.cssDsl.URLType
    * @generated
    */
-  EClass getHexColor();
+  EClass getURLType();
 
   /**
-   * Returns the meta object for the attribute '{@link at.bestsolution.efxclipse.tooling.css.cssDsl.HexColor#getValue <em>Value</em>}'.
+   * Returns the meta object for the attribute '{@link at.bestsolution.efxclipse.tooling.css.cssDsl.URLType#getUrl <em>Url</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Value</em>'.
-   * @see at.bestsolution.efxclipse.tooling.css.cssDsl.HexColor#getValue()
-   * @see #getHexColor()
+   * @return the meta object for the attribute '<em>Url</em>'.
+   * @see at.bestsolution.efxclipse.tooling.css.cssDsl.URLType#getUrl()
+   * @see #getURLType()
    * @generated
    */
-  EAttribute getHexColor_Value();
+  EAttribute getURLType_Url();
 
   /**
    * Returns the meta object for class '{@link at.bestsolution.efxclipse.tooling.css.cssDsl.FONT <em>FONT</em>}'.
@@ -5554,20 +5400,28 @@ public interface CssDslPackage extends EPackage
     EClass SIMPLE_SELECTOR = eINSTANCE.getsimple_selector();
 
     /**
-     * The meta object literal for the '<em><b>Id</b></em>' containment reference feature.
+     * The meta object literal for the '<em><b>Element</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference SIMPLE_SELECTOR__ID = eINSTANCE.getsimple_selector_Id();
+    EAttribute SIMPLE_SELECTOR__ELEMENT = eINSTANCE.getsimple_selector_Element();
 
     /**
-     * The meta object literal for the '<em><b>Class</b></em>' containment reference feature.
+     * The meta object literal for the '<em><b>Id</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference SIMPLE_SELECTOR__CLASS = eINSTANCE.getsimple_selector_Class();
+    EAttribute SIMPLE_SELECTOR__ID = eINSTANCE.getsimple_selector_Id();
+
+    /**
+     * The meta object literal for the '<em><b>Class</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute SIMPLE_SELECTOR__CLASS = eINSTANCE.getsimple_selector_Class();
 
     /**
      * The meta object literal for the '<em><b>Pseudoclasses</b></em>' attribute list feature.
@@ -5576,60 +5430,6 @@ public interface CssDslPackage extends EPackage
      * @generated
      */
     EAttribute SIMPLE_SELECTOR__PSEUDOCLASSES = eINSTANCE.getsimple_selector_Pseudoclasses();
-
-    /**
-     * The meta object literal for the '{@link at.bestsolution.efxclipse.tooling.css.cssDsl.impl.element_nameImpl <em>element name</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see at.bestsolution.efxclipse.tooling.css.cssDsl.impl.element_nameImpl
-     * @see at.bestsolution.efxclipse.tooling.css.cssDsl.impl.CssDslPackageImpl#getelement_name()
-     * @generated
-     */
-    EClass ELEMENT_NAME = eINSTANCE.getelement_name();
-
-    /**
-     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute ELEMENT_NAME__NAME = eINSTANCE.getelement_name_Name();
-
-    /**
-     * The meta object literal for the '{@link at.bestsolution.efxclipse.tooling.css.cssDsl.impl.css_classImpl <em>css class</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see at.bestsolution.efxclipse.tooling.css.cssDsl.impl.css_classImpl
-     * @see at.bestsolution.efxclipse.tooling.css.cssDsl.impl.CssDslPackageImpl#getcss_class()
-     * @generated
-     */
-    EClass CSS_CLASS = eINSTANCE.getcss_class();
-
-    /**
-     * The meta object literal for the '<em><b>Css Class</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute CSS_CLASS__CSS_CLASS = eINSTANCE.getcss_class_CssClass();
-
-    /**
-     * The meta object literal for the '{@link at.bestsolution.efxclipse.tooling.css.cssDsl.impl.css_idImpl <em>css id</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see at.bestsolution.efxclipse.tooling.css.cssDsl.impl.css_idImpl
-     * @see at.bestsolution.efxclipse.tooling.css.cssDsl.impl.CssDslPackageImpl#getcss_id()
-     * @generated
-     */
-    EClass CSS_ID = eINSTANCE.getcss_id();
-
-    /**
-     * The meta object literal for the '<em><b>Id</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute CSS_ID__ID = eINSTANCE.getcss_id_Id();
 
     /**
      * The meta object literal for the '{@link at.bestsolution.efxclipse.tooling.css.cssDsl.impl.css_declarationImpl <em>css declaration</em>}' class.
@@ -6026,12 +5826,12 @@ public interface CssDslPackage extends EPackage
     EAttribute FX_URL_PROPERTY__PROPERTY = eINSTANCE.getfx_url_property_Property();
 
     /**
-     * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>Value</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute FX_URL_PROPERTY__VALUE = eINSTANCE.getfx_url_property_Value();
+    EReference FX_URL_PROPERTY__VALUE = eINSTANCE.getfx_url_property_Value();
 
     /**
      * The meta object literal for the '{@link at.bestsolution.efxclipse.tooling.css.cssDsl.impl.fx_paint_propertiesImpl <em>fx paint properties</em>}' class.
@@ -6208,12 +6008,12 @@ public interface CssDslPackage extends EPackage
     EAttribute FX_URL_PROPERTIES__PROPERTY = eINSTANCE.getfx_url_properties_Property();
 
     /**
-     * The meta object literal for the '<em><b>Values</b></em>' attribute list feature.
+     * The meta object literal for the '<em><b>Values</b></em>' containment reference list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute FX_URL_PROPERTIES__VALUES = eINSTANCE.getfx_url_properties_Values();
+    EReference FX_URL_PROPERTIES__VALUES = eINSTANCE.getfx_url_properties_Values();
 
     /**
      * The meta object literal for the '{@link at.bestsolution.efxclipse.tooling.css.cssDsl.impl.fx_repeat_propertiesImpl <em>fx repeat properties</em>}' class.
@@ -7158,12 +6958,12 @@ public interface CssDslPackage extends EPackage
     EClass RGB_COLOR = eINSTANCE.getRGBColor();
 
     /**
-     * The meta object literal for the '<em><b>Hexcolor</b></em>' containment reference feature.
+     * The meta object literal for the '<em><b>Hexcolor</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference RGB_COLOR__HEXCOLOR = eINSTANCE.getRGBColor_Hexcolor();
+    EAttribute RGB_COLOR__HEXCOLOR = eINSTANCE.getRGBColor_Hexcolor();
 
     /**
      * The meta object literal for the '<em><b>R</b></em>' attribute feature.
@@ -7306,22 +7106,22 @@ public interface CssDslPackage extends EPackage
     EReference COLOR_FUNCTION__STOP_COLORS = eINSTANCE.getColorFunction_StopColors();
 
     /**
-     * The meta object literal for the '{@link at.bestsolution.efxclipse.tooling.css.cssDsl.impl.HexColorImpl <em>Hex Color</em>}' class.
+     * The meta object literal for the '{@link at.bestsolution.efxclipse.tooling.css.cssDsl.impl.URLTypeImpl <em>URL Type</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see at.bestsolution.efxclipse.tooling.css.cssDsl.impl.HexColorImpl
-     * @see at.bestsolution.efxclipse.tooling.css.cssDsl.impl.CssDslPackageImpl#getHexColor()
+     * @see at.bestsolution.efxclipse.tooling.css.cssDsl.impl.URLTypeImpl
+     * @see at.bestsolution.efxclipse.tooling.css.cssDsl.impl.CssDslPackageImpl#getURLType()
      * @generated
      */
-    EClass HEX_COLOR = eINSTANCE.getHexColor();
+    EClass URL_TYPE = eINSTANCE.getURLType();
 
     /**
-     * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>Url</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute HEX_COLOR__VALUE = eINSTANCE.getHexColor_Value();
+    EAttribute URL_TYPE__URL = eINSTANCE.getURLType_Url();
 
     /**
      * The meta object literal for the '{@link at.bestsolution.efxclipse.tooling.css.cssDsl.impl.FONTImpl <em>FONT</em>}' class.
