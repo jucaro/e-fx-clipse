@@ -38,7 +38,6 @@ public class AbstractCssDslSyntacticSequencer extends AbstractSyntacticSequencer
 	protected AbstractElementAlias match_RadialGradient_WSTerminalRuleCall_4_8_a_RightParenthesisKeyword_4_9_WSTerminalRuleCall_5_a_StopsKeyword_6_WSTerminalRuleCall_7_0_a;
 	protected AbstractElementAlias match_RepeatStyle_WSTerminalRuleCall_1_1_0_p;
 	protected AbstractElementAlias match_SizeFill_WSTerminalRuleCall_1_a;
-	protected AbstractElementAlias match_SizeFill_WSTerminalRuleCall_1_p;
 	protected AbstractElementAlias match_css_generic_declaration_WSTerminalRuleCall_2_a;
 	protected AbstractElementAlias match_fx_alignment_property_WSTerminalRuleCall_1_a_ColonKeyword_2_WSTerminalRuleCall_3_a;
 	protected AbstractElementAlias match_fx_background_image_size_property_WSTerminalRuleCall_1_a;
@@ -46,8 +45,8 @@ public class AbstractCssDslSyntacticSequencer extends AbstractSyntacticSequencer
 	protected AbstractElementAlias match_fx_bar_policy_property_WSTerminalRuleCall_1_a_ColonKeyword_2_WSTerminalRuleCall_3_a;
 	protected AbstractElementAlias match_fx_blend_property_WSTerminalRuleCall_1_a_ColonKeyword_2_WSTerminalRuleCall_3_a;
 	protected AbstractElementAlias match_fx_boolean_property_WSTerminalRuleCall_1_a_ColonKeyword_2_WSTerminalRuleCall_3_a;
-	protected AbstractElementAlias match_fx_border_image_slice_property_WSTerminalRuleCall_1_a_ColonKeyword_2_WSTerminalRuleCall_3_p;
-	protected AbstractElementAlias match_fx_border_style_property_WSTerminalRuleCall_1_a;
+	protected AbstractElementAlias match_fx_border_image_slice_property_WSTerminalRuleCall_1_a;
+	protected AbstractElementAlias match_fx_border_style_property_WSTerminalRuleCall_1_a_ColonKeyword_2_WSTerminalRuleCall_3_p;
 	protected AbstractElementAlias match_fx_color_property_WSTerminalRuleCall_1_a;
 	protected AbstractElementAlias match_fx_color_property_WSTerminalRuleCall_1_a_ColonKeyword_2_WSTerminalRuleCall_3_p;
 	protected AbstractElementAlias match_fx_cursor_property_WSTerminalRuleCall_1_a_ColonKeyword_2_WSTerminalRuleCall_3_a;
@@ -57,8 +56,9 @@ public class AbstractCssDslSyntacticSequencer extends AbstractSyntacticSequencer
 	protected AbstractElementAlias match_fx_font_property_WSTerminalRuleCall_1_a;
 	protected AbstractElementAlias match_fx_font_property_WSTerminalRuleCall_1_a_ColonKeyword_2_WSTerminalRuleCall_3_p;
 	protected AbstractElementAlias match_fx_font_size_property_WSTerminalRuleCall_1_a_ColonKeyword_2_WSTerminalRuleCall_3_a;
+	protected AbstractElementAlias match_fx_font_style_property_WSTerminalRuleCall_1_a;
 	protected AbstractElementAlias match_fx_font_style_property_WSTerminalRuleCall_1_a_ColonKeyword_2_WSTerminalRuleCall_3_p;
-	protected AbstractElementAlias match_fx_font_weight_property_WSTerminalRuleCall_1_a_ColonKeyword_2_WSTerminalRuleCall_3_p;
+	protected AbstractElementAlias match_fx_font_weight_property_WSTerminalRuleCall_1_a;
 	protected AbstractElementAlias match_fx_hposition_property_WSTerminalRuleCall_1_a_ColonKeyword_2_WSTerminalRuleCall_3_a;
 	protected AbstractElementAlias match_fx_insets_property_WSTerminalRuleCall_0_1_a_ColonKeyword_0_2_WSTerminalRuleCall_0_3_a;
 	protected AbstractElementAlias match_fx_insets_property_WSTerminalRuleCall_1_1_p;
@@ -82,6 +82,7 @@ public class AbstractCssDslSyntacticSequencer extends AbstractSyntacticSequencer
 	protected AbstractElementAlias match_fx_paint_properties_WSTerminalRuleCall_4_0_1_2_p;
 	protected AbstractElementAlias match_fx_paint_property_WSTerminalRuleCall_1_a;
 	protected AbstractElementAlias match_fx_paint_property_WSTerminalRuleCall_1_a_ColonKeyword_2_WSTerminalRuleCall_3_p;
+	protected AbstractElementAlias match_fx_position_property_WSTerminalRuleCall_1_a;
 	protected AbstractElementAlias match_fx_position_property_WSTerminalRuleCall_1_a_ColonKeyword_2_WSTerminalRuleCall_3_p;
 	protected AbstractElementAlias match_fx_repeat_properties_WSTerminalRuleCall_1_a;
 	protected AbstractElementAlias match_fx_repeat_properties_WSTerminalRuleCall_1_a_ColonKeyword_2_WSTerminalRuleCall_3_p;
@@ -98,10 +99,10 @@ public class AbstractCssDslSyntacticSequencer extends AbstractSyntacticSequencer
 	protected AbstractElementAlias match_fx_vposition_property_WSTerminalRuleCall_1_a_ColonKeyword_2_WSTerminalRuleCall_3_a;
 	protected AbstractElementAlias match_media_WSTerminalRuleCall_1_a;
 	protected AbstractElementAlias match_media_WSTerminalRuleCall_4_a_RightCurlyBracketKeyword_6_WSTerminalRuleCall_7_p;
-	protected AbstractElementAlias match_media_WSTerminalRuleCall_4_p;
 	protected AbstractElementAlias match_media_WSTerminalRuleCall_7_p;
 	protected AbstractElementAlias match_ruleset_WSTerminalRuleCall_3_a_RightCurlyBracketKeyword_5_WSTerminalRuleCall_6_p;
 	protected AbstractElementAlias match_ruleset_WSTerminalRuleCall_4_2_a_RightCurlyBracketKeyword_5_WSTerminalRuleCall_6_p;
+	protected AbstractElementAlias match_selector_WSTerminalRuleCall_1_1_0_p;
 	
 	@Inject
 	protected void init(IGrammarAccess access) {
@@ -128,7 +129,6 @@ public class AbstractCssDslSyntacticSequencer extends AbstractSyntacticSequencer
 		match_RadialGradient_WSTerminalRuleCall_4_8_a_RightParenthesisKeyword_4_9_WSTerminalRuleCall_5_a_StopsKeyword_6_WSTerminalRuleCall_7_0_a = new GroupAlias(false, false, new TokenAlias(true, true, grammarAccess.getRadialGradientAccess().getWSTerminalRuleCall_4_8()), new TokenAlias(false, false, grammarAccess.getRadialGradientAccess().getRightParenthesisKeyword_4_9()), new TokenAlias(true, true, grammarAccess.getRadialGradientAccess().getWSTerminalRuleCall_5()), new TokenAlias(false, false, grammarAccess.getRadialGradientAccess().getStopsKeyword_6()), new TokenAlias(true, true, grammarAccess.getRadialGradientAccess().getWSTerminalRuleCall_7_0()));
 		match_RepeatStyle_WSTerminalRuleCall_1_1_0_p = new TokenAlias(false, true, grammarAccess.getRepeatStyleAccess().getWSTerminalRuleCall_1_1_0());
 		match_SizeFill_WSTerminalRuleCall_1_a = new TokenAlias(true, true, grammarAccess.getSizeFillAccess().getWSTerminalRuleCall_1());
-		match_SizeFill_WSTerminalRuleCall_1_p = new TokenAlias(false, true, grammarAccess.getSizeFillAccess().getWSTerminalRuleCall_1());
 		match_css_generic_declaration_WSTerminalRuleCall_2_a = new TokenAlias(true, true, grammarAccess.getCss_generic_declarationAccess().getWSTerminalRuleCall_2());
 		match_fx_alignment_property_WSTerminalRuleCall_1_a_ColonKeyword_2_WSTerminalRuleCall_3_a = new GroupAlias(false, false, new TokenAlias(true, true, grammarAccess.getFx_alignment_propertyAccess().getWSTerminalRuleCall_1()), new TokenAlias(false, false, grammarAccess.getFx_alignment_propertyAccess().getColonKeyword_2()), new TokenAlias(true, true, grammarAccess.getFx_alignment_propertyAccess().getWSTerminalRuleCall_3()));
 		match_fx_background_image_size_property_WSTerminalRuleCall_1_a = new TokenAlias(true, true, grammarAccess.getFx_background_image_size_propertyAccess().getWSTerminalRuleCall_1());
@@ -136,8 +136,8 @@ public class AbstractCssDslSyntacticSequencer extends AbstractSyntacticSequencer
 		match_fx_bar_policy_property_WSTerminalRuleCall_1_a_ColonKeyword_2_WSTerminalRuleCall_3_a = new GroupAlias(false, false, new TokenAlias(true, true, grammarAccess.getFx_bar_policy_propertyAccess().getWSTerminalRuleCall_1()), new TokenAlias(false, false, grammarAccess.getFx_bar_policy_propertyAccess().getColonKeyword_2()), new TokenAlias(true, true, grammarAccess.getFx_bar_policy_propertyAccess().getWSTerminalRuleCall_3()));
 		match_fx_blend_property_WSTerminalRuleCall_1_a_ColonKeyword_2_WSTerminalRuleCall_3_a = new GroupAlias(false, false, new TokenAlias(true, true, grammarAccess.getFx_blend_propertyAccess().getWSTerminalRuleCall_1()), new TokenAlias(false, false, grammarAccess.getFx_blend_propertyAccess().getColonKeyword_2()), new TokenAlias(true, true, grammarAccess.getFx_blend_propertyAccess().getWSTerminalRuleCall_3()));
 		match_fx_boolean_property_WSTerminalRuleCall_1_a_ColonKeyword_2_WSTerminalRuleCall_3_a = new GroupAlias(false, false, new TokenAlias(true, true, grammarAccess.getFx_boolean_propertyAccess().getWSTerminalRuleCall_1()), new TokenAlias(false, false, grammarAccess.getFx_boolean_propertyAccess().getColonKeyword_2()), new TokenAlias(true, true, grammarAccess.getFx_boolean_propertyAccess().getWSTerminalRuleCall_3()));
-		match_fx_border_image_slice_property_WSTerminalRuleCall_1_a_ColonKeyword_2_WSTerminalRuleCall_3_p = new GroupAlias(false, false, new TokenAlias(true, true, grammarAccess.getFx_border_image_slice_propertyAccess().getWSTerminalRuleCall_1()), new TokenAlias(false, false, grammarAccess.getFx_border_image_slice_propertyAccess().getColonKeyword_2()), new TokenAlias(false, true, grammarAccess.getFx_border_image_slice_propertyAccess().getWSTerminalRuleCall_3()));
-		match_fx_border_style_property_WSTerminalRuleCall_1_a = new TokenAlias(true, true, grammarAccess.getFx_border_style_propertyAccess().getWSTerminalRuleCall_1());
+		match_fx_border_image_slice_property_WSTerminalRuleCall_1_a = new TokenAlias(true, true, grammarAccess.getFx_border_image_slice_propertyAccess().getWSTerminalRuleCall_1());
+		match_fx_border_style_property_WSTerminalRuleCall_1_a_ColonKeyword_2_WSTerminalRuleCall_3_p = new GroupAlias(false, false, new TokenAlias(true, true, grammarAccess.getFx_border_style_propertyAccess().getWSTerminalRuleCall_1()), new TokenAlias(false, false, grammarAccess.getFx_border_style_propertyAccess().getColonKeyword_2()), new TokenAlias(false, true, grammarAccess.getFx_border_style_propertyAccess().getWSTerminalRuleCall_3()));
 		match_fx_color_property_WSTerminalRuleCall_1_a = new TokenAlias(true, true, grammarAccess.getFx_color_propertyAccess().getWSTerminalRuleCall_1());
 		match_fx_color_property_WSTerminalRuleCall_1_a_ColonKeyword_2_WSTerminalRuleCall_3_p = new GroupAlias(false, false, new TokenAlias(true, true, grammarAccess.getFx_color_propertyAccess().getWSTerminalRuleCall_1()), new TokenAlias(false, false, grammarAccess.getFx_color_propertyAccess().getColonKeyword_2()), new TokenAlias(false, true, grammarAccess.getFx_color_propertyAccess().getWSTerminalRuleCall_3()));
 		match_fx_cursor_property_WSTerminalRuleCall_1_a_ColonKeyword_2_WSTerminalRuleCall_3_a = new GroupAlias(false, false, new TokenAlias(true, true, grammarAccess.getFx_cursor_propertyAccess().getWSTerminalRuleCall_1()), new TokenAlias(false, false, grammarAccess.getFx_cursor_propertyAccess().getColonKeyword_2()), new TokenAlias(true, true, grammarAccess.getFx_cursor_propertyAccess().getWSTerminalRuleCall_3()));
@@ -147,8 +147,9 @@ public class AbstractCssDslSyntacticSequencer extends AbstractSyntacticSequencer
 		match_fx_font_property_WSTerminalRuleCall_1_a = new TokenAlias(true, true, grammarAccess.getFx_font_propertyAccess().getWSTerminalRuleCall_1());
 		match_fx_font_property_WSTerminalRuleCall_1_a_ColonKeyword_2_WSTerminalRuleCall_3_p = new GroupAlias(false, false, new TokenAlias(true, true, grammarAccess.getFx_font_propertyAccess().getWSTerminalRuleCall_1()), new TokenAlias(false, false, grammarAccess.getFx_font_propertyAccess().getColonKeyword_2()), new TokenAlias(false, true, grammarAccess.getFx_font_propertyAccess().getWSTerminalRuleCall_3()));
 		match_fx_font_size_property_WSTerminalRuleCall_1_a_ColonKeyword_2_WSTerminalRuleCall_3_a = new GroupAlias(false, false, new TokenAlias(true, true, grammarAccess.getFx_font_size_propertyAccess().getWSTerminalRuleCall_1()), new TokenAlias(false, false, grammarAccess.getFx_font_size_propertyAccess().getColonKeyword_2()), new TokenAlias(true, true, grammarAccess.getFx_font_size_propertyAccess().getWSTerminalRuleCall_3()));
+		match_fx_font_style_property_WSTerminalRuleCall_1_a = new TokenAlias(true, true, grammarAccess.getFx_font_style_propertyAccess().getWSTerminalRuleCall_1());
 		match_fx_font_style_property_WSTerminalRuleCall_1_a_ColonKeyword_2_WSTerminalRuleCall_3_p = new GroupAlias(false, false, new TokenAlias(true, true, grammarAccess.getFx_font_style_propertyAccess().getWSTerminalRuleCall_1()), new TokenAlias(false, false, grammarAccess.getFx_font_style_propertyAccess().getColonKeyword_2()), new TokenAlias(false, true, grammarAccess.getFx_font_style_propertyAccess().getWSTerminalRuleCall_3()));
-		match_fx_font_weight_property_WSTerminalRuleCall_1_a_ColonKeyword_2_WSTerminalRuleCall_3_p = new GroupAlias(false, false, new TokenAlias(true, true, grammarAccess.getFx_font_weight_propertyAccess().getWSTerminalRuleCall_1()), new TokenAlias(false, false, grammarAccess.getFx_font_weight_propertyAccess().getColonKeyword_2()), new TokenAlias(false, true, grammarAccess.getFx_font_weight_propertyAccess().getWSTerminalRuleCall_3()));
+		match_fx_font_weight_property_WSTerminalRuleCall_1_a = new TokenAlias(true, true, grammarAccess.getFx_font_weight_propertyAccess().getWSTerminalRuleCall_1());
 		match_fx_hposition_property_WSTerminalRuleCall_1_a_ColonKeyword_2_WSTerminalRuleCall_3_a = new GroupAlias(false, false, new TokenAlias(true, true, grammarAccess.getFx_hposition_propertyAccess().getWSTerminalRuleCall_1()), new TokenAlias(false, false, grammarAccess.getFx_hposition_propertyAccess().getColonKeyword_2()), new TokenAlias(true, true, grammarAccess.getFx_hposition_propertyAccess().getWSTerminalRuleCall_3()));
 		match_fx_insets_property_WSTerminalRuleCall_0_1_a_ColonKeyword_0_2_WSTerminalRuleCall_0_3_a = new GroupAlias(false, false, new TokenAlias(true, true, grammarAccess.getFx_insets_propertyAccess().getWSTerminalRuleCall_0_1()), new TokenAlias(false, false, grammarAccess.getFx_insets_propertyAccess().getColonKeyword_0_2()), new TokenAlias(true, true, grammarAccess.getFx_insets_propertyAccess().getWSTerminalRuleCall_0_3()));
 		match_fx_insets_property_WSTerminalRuleCall_1_1_p = new TokenAlias(false, true, grammarAccess.getFx_insets_propertyAccess().getWSTerminalRuleCall_1_1());
@@ -172,6 +173,7 @@ public class AbstractCssDslSyntacticSequencer extends AbstractSyntacticSequencer
 		match_fx_paint_properties_WSTerminalRuleCall_4_0_1_2_p = new TokenAlias(false, true, grammarAccess.getFx_paint_propertiesAccess().getWSTerminalRuleCall_4_0_1_2());
 		match_fx_paint_property_WSTerminalRuleCall_1_a = new TokenAlias(true, true, grammarAccess.getFx_paint_propertyAccess().getWSTerminalRuleCall_1());
 		match_fx_paint_property_WSTerminalRuleCall_1_a_ColonKeyword_2_WSTerminalRuleCall_3_p = new GroupAlias(false, false, new TokenAlias(true, true, grammarAccess.getFx_paint_propertyAccess().getWSTerminalRuleCall_1()), new TokenAlias(false, false, grammarAccess.getFx_paint_propertyAccess().getColonKeyword_2()), new TokenAlias(false, true, grammarAccess.getFx_paint_propertyAccess().getWSTerminalRuleCall_3()));
+		match_fx_position_property_WSTerminalRuleCall_1_a = new TokenAlias(true, true, grammarAccess.getFx_position_propertyAccess().getWSTerminalRuleCall_1());
 		match_fx_position_property_WSTerminalRuleCall_1_a_ColonKeyword_2_WSTerminalRuleCall_3_p = new GroupAlias(false, false, new TokenAlias(true, true, grammarAccess.getFx_position_propertyAccess().getWSTerminalRuleCall_1()), new TokenAlias(false, false, grammarAccess.getFx_position_propertyAccess().getColonKeyword_2()), new TokenAlias(false, true, grammarAccess.getFx_position_propertyAccess().getWSTerminalRuleCall_3()));
 		match_fx_repeat_properties_WSTerminalRuleCall_1_a = new TokenAlias(true, true, grammarAccess.getFx_repeat_propertiesAccess().getWSTerminalRuleCall_1());
 		match_fx_repeat_properties_WSTerminalRuleCall_1_a_ColonKeyword_2_WSTerminalRuleCall_3_p = new GroupAlias(false, false, new TokenAlias(true, true, grammarAccess.getFx_repeat_propertiesAccess().getWSTerminalRuleCall_1()), new TokenAlias(false, false, grammarAccess.getFx_repeat_propertiesAccess().getColonKeyword_2()), new TokenAlias(false, true, grammarAccess.getFx_repeat_propertiesAccess().getWSTerminalRuleCall_3()));
@@ -188,10 +190,10 @@ public class AbstractCssDslSyntacticSequencer extends AbstractSyntacticSequencer
 		match_fx_vposition_property_WSTerminalRuleCall_1_a_ColonKeyword_2_WSTerminalRuleCall_3_a = new GroupAlias(false, false, new TokenAlias(true, true, grammarAccess.getFx_vposition_propertyAccess().getWSTerminalRuleCall_1()), new TokenAlias(false, false, grammarAccess.getFx_vposition_propertyAccess().getColonKeyword_2()), new TokenAlias(true, true, grammarAccess.getFx_vposition_propertyAccess().getWSTerminalRuleCall_3()));
 		match_media_WSTerminalRuleCall_1_a = new TokenAlias(true, true, grammarAccess.getMediaAccess().getWSTerminalRuleCall_1());
 		match_media_WSTerminalRuleCall_4_a_RightCurlyBracketKeyword_6_WSTerminalRuleCall_7_p = new GroupAlias(false, false, new TokenAlias(true, true, grammarAccess.getMediaAccess().getWSTerminalRuleCall_4()), new TokenAlias(false, false, grammarAccess.getMediaAccess().getRightCurlyBracketKeyword_6()), new TokenAlias(false, true, grammarAccess.getMediaAccess().getWSTerminalRuleCall_7()));
-		match_media_WSTerminalRuleCall_4_p = new TokenAlias(false, true, grammarAccess.getMediaAccess().getWSTerminalRuleCall_4());
 		match_media_WSTerminalRuleCall_7_p = new TokenAlias(false, true, grammarAccess.getMediaAccess().getWSTerminalRuleCall_7());
 		match_ruleset_WSTerminalRuleCall_3_a_RightCurlyBracketKeyword_5_WSTerminalRuleCall_6_p = new GroupAlias(false, false, new TokenAlias(true, true, grammarAccess.getRulesetAccess().getWSTerminalRuleCall_3()), new TokenAlias(false, false, grammarAccess.getRulesetAccess().getRightCurlyBracketKeyword_5()), new TokenAlias(false, true, grammarAccess.getRulesetAccess().getWSTerminalRuleCall_6()));
 		match_ruleset_WSTerminalRuleCall_4_2_a_RightCurlyBracketKeyword_5_WSTerminalRuleCall_6_p = new GroupAlias(false, false, new TokenAlias(true, true, grammarAccess.getRulesetAccess().getWSTerminalRuleCall_4_2()), new TokenAlias(false, false, grammarAccess.getRulesetAccess().getRightCurlyBracketKeyword_5()), new TokenAlias(false, true, grammarAccess.getRulesetAccess().getWSTerminalRuleCall_6()));
+		match_selector_WSTerminalRuleCall_1_1_0_p = new TokenAlias(false, true, grammarAccess.getSelectorAccess().getWSTerminalRuleCall_1_1_0());
 	}
 	
 	@Override
@@ -276,8 +278,6 @@ public class AbstractCssDslSyntacticSequencer extends AbstractSyntacticSequencer
 			emit_RepeatStyle_WSTerminalRuleCall_1_1_0_p(semanticObject, transition, fromNode, toNode);
 		else if(match_SizeFill_WSTerminalRuleCall_1_a.equals(transition.getAmbiguousSyntax()))
 			emit_SizeFill_WSTerminalRuleCall_1_a(semanticObject, transition, fromNode, toNode);
-		else if(match_SizeFill_WSTerminalRuleCall_1_p.equals(transition.getAmbiguousSyntax()))
-			emit_SizeFill_WSTerminalRuleCall_1_p(semanticObject, transition, fromNode, toNode);
 		else if(match_css_generic_declaration_WSTerminalRuleCall_2_a.equals(transition.getAmbiguousSyntax()))
 			emit_css_generic_declaration_WSTerminalRuleCall_2_a(semanticObject, transition, fromNode, toNode);
 		else if(match_fx_alignment_property_WSTerminalRuleCall_1_a_ColonKeyword_2_WSTerminalRuleCall_3_a.equals(transition.getAmbiguousSyntax()))
@@ -292,10 +292,10 @@ public class AbstractCssDslSyntacticSequencer extends AbstractSyntacticSequencer
 			emit_fx_blend_property_WSTerminalRuleCall_1_a_ColonKeyword_2_WSTerminalRuleCall_3_a(semanticObject, transition, fromNode, toNode);
 		else if(match_fx_boolean_property_WSTerminalRuleCall_1_a_ColonKeyword_2_WSTerminalRuleCall_3_a.equals(transition.getAmbiguousSyntax()))
 			emit_fx_boolean_property_WSTerminalRuleCall_1_a_ColonKeyword_2_WSTerminalRuleCall_3_a(semanticObject, transition, fromNode, toNode);
-		else if(match_fx_border_image_slice_property_WSTerminalRuleCall_1_a_ColonKeyword_2_WSTerminalRuleCall_3_p.equals(transition.getAmbiguousSyntax()))
-			emit_fx_border_image_slice_property_WSTerminalRuleCall_1_a_ColonKeyword_2_WSTerminalRuleCall_3_p(semanticObject, transition, fromNode, toNode);
-		else if(match_fx_border_style_property_WSTerminalRuleCall_1_a.equals(transition.getAmbiguousSyntax()))
-			emit_fx_border_style_property_WSTerminalRuleCall_1_a(semanticObject, transition, fromNode, toNode);
+		else if(match_fx_border_image_slice_property_WSTerminalRuleCall_1_a.equals(transition.getAmbiguousSyntax()))
+			emit_fx_border_image_slice_property_WSTerminalRuleCall_1_a(semanticObject, transition, fromNode, toNode);
+		else if(match_fx_border_style_property_WSTerminalRuleCall_1_a_ColonKeyword_2_WSTerminalRuleCall_3_p.equals(transition.getAmbiguousSyntax()))
+			emit_fx_border_style_property_WSTerminalRuleCall_1_a_ColonKeyword_2_WSTerminalRuleCall_3_p(semanticObject, transition, fromNode, toNode);
 		else if(match_fx_color_property_WSTerminalRuleCall_1_a.equals(transition.getAmbiguousSyntax()))
 			emit_fx_color_property_WSTerminalRuleCall_1_a(semanticObject, transition, fromNode, toNode);
 		else if(match_fx_color_property_WSTerminalRuleCall_1_a_ColonKeyword_2_WSTerminalRuleCall_3_p.equals(transition.getAmbiguousSyntax()))
@@ -314,10 +314,12 @@ public class AbstractCssDslSyntacticSequencer extends AbstractSyntacticSequencer
 			emit_fx_font_property_WSTerminalRuleCall_1_a_ColonKeyword_2_WSTerminalRuleCall_3_p(semanticObject, transition, fromNode, toNode);
 		else if(match_fx_font_size_property_WSTerminalRuleCall_1_a_ColonKeyword_2_WSTerminalRuleCall_3_a.equals(transition.getAmbiguousSyntax()))
 			emit_fx_font_size_property_WSTerminalRuleCall_1_a_ColonKeyword_2_WSTerminalRuleCall_3_a(semanticObject, transition, fromNode, toNode);
+		else if(match_fx_font_style_property_WSTerminalRuleCall_1_a.equals(transition.getAmbiguousSyntax()))
+			emit_fx_font_style_property_WSTerminalRuleCall_1_a(semanticObject, transition, fromNode, toNode);
 		else if(match_fx_font_style_property_WSTerminalRuleCall_1_a_ColonKeyword_2_WSTerminalRuleCall_3_p.equals(transition.getAmbiguousSyntax()))
 			emit_fx_font_style_property_WSTerminalRuleCall_1_a_ColonKeyword_2_WSTerminalRuleCall_3_p(semanticObject, transition, fromNode, toNode);
-		else if(match_fx_font_weight_property_WSTerminalRuleCall_1_a_ColonKeyword_2_WSTerminalRuleCall_3_p.equals(transition.getAmbiguousSyntax()))
-			emit_fx_font_weight_property_WSTerminalRuleCall_1_a_ColonKeyword_2_WSTerminalRuleCall_3_p(semanticObject, transition, fromNode, toNode);
+		else if(match_fx_font_weight_property_WSTerminalRuleCall_1_a.equals(transition.getAmbiguousSyntax()))
+			emit_fx_font_weight_property_WSTerminalRuleCall_1_a(semanticObject, transition, fromNode, toNode);
 		else if(match_fx_hposition_property_WSTerminalRuleCall_1_a_ColonKeyword_2_WSTerminalRuleCall_3_a.equals(transition.getAmbiguousSyntax()))
 			emit_fx_hposition_property_WSTerminalRuleCall_1_a_ColonKeyword_2_WSTerminalRuleCall_3_a(semanticObject, transition, fromNode, toNode);
 		else if(match_fx_insets_property_WSTerminalRuleCall_0_1_a_ColonKeyword_0_2_WSTerminalRuleCall_0_3_a.equals(transition.getAmbiguousSyntax()))
@@ -364,6 +366,8 @@ public class AbstractCssDslSyntacticSequencer extends AbstractSyntacticSequencer
 			emit_fx_paint_property_WSTerminalRuleCall_1_a(semanticObject, transition, fromNode, toNode);
 		else if(match_fx_paint_property_WSTerminalRuleCall_1_a_ColonKeyword_2_WSTerminalRuleCall_3_p.equals(transition.getAmbiguousSyntax()))
 			emit_fx_paint_property_WSTerminalRuleCall_1_a_ColonKeyword_2_WSTerminalRuleCall_3_p(semanticObject, transition, fromNode, toNode);
+		else if(match_fx_position_property_WSTerminalRuleCall_1_a.equals(transition.getAmbiguousSyntax()))
+			emit_fx_position_property_WSTerminalRuleCall_1_a(semanticObject, transition, fromNode, toNode);
 		else if(match_fx_position_property_WSTerminalRuleCall_1_a_ColonKeyword_2_WSTerminalRuleCall_3_p.equals(transition.getAmbiguousSyntax()))
 			emit_fx_position_property_WSTerminalRuleCall_1_a_ColonKeyword_2_WSTerminalRuleCall_3_p(semanticObject, transition, fromNode, toNode);
 		else if(match_fx_repeat_properties_WSTerminalRuleCall_1_a.equals(transition.getAmbiguousSyntax()))
@@ -396,14 +400,14 @@ public class AbstractCssDslSyntacticSequencer extends AbstractSyntacticSequencer
 			emit_media_WSTerminalRuleCall_1_a(semanticObject, transition, fromNode, toNode);
 		else if(match_media_WSTerminalRuleCall_4_a_RightCurlyBracketKeyword_6_WSTerminalRuleCall_7_p.equals(transition.getAmbiguousSyntax()))
 			emit_media_WSTerminalRuleCall_4_a_RightCurlyBracketKeyword_6_WSTerminalRuleCall_7_p(semanticObject, transition, fromNode, toNode);
-		else if(match_media_WSTerminalRuleCall_4_p.equals(transition.getAmbiguousSyntax()))
-			emit_media_WSTerminalRuleCall_4_p(semanticObject, transition, fromNode, toNode);
 		else if(match_media_WSTerminalRuleCall_7_p.equals(transition.getAmbiguousSyntax()))
 			emit_media_WSTerminalRuleCall_7_p(semanticObject, transition, fromNode, toNode);
 		else if(match_ruleset_WSTerminalRuleCall_3_a_RightCurlyBracketKeyword_5_WSTerminalRuleCall_6_p.equals(transition.getAmbiguousSyntax()))
 			emit_ruleset_WSTerminalRuleCall_3_a_RightCurlyBracketKeyword_5_WSTerminalRuleCall_6_p(semanticObject, transition, fromNode, toNode);
 		else if(match_ruleset_WSTerminalRuleCall_4_2_a_RightCurlyBracketKeyword_5_WSTerminalRuleCall_6_p.equals(transition.getAmbiguousSyntax()))
 			emit_ruleset_WSTerminalRuleCall_4_2_a_RightCurlyBracketKeyword_5_WSTerminalRuleCall_6_p(semanticObject, transition, fromNode, toNode);
+		else if(match_selector_WSTerminalRuleCall_1_1_0_p.equals(transition.getAmbiguousSyntax()))
+			emit_selector_WSTerminalRuleCall_1_1_0_p(semanticObject, transition, fromNode, toNode);
 		else acceptNodes(transition, fromNode, toNode);
 	}
 
@@ -585,14 +589,6 @@ public class AbstractCssDslSyntacticSequencer extends AbstractSyntacticSequencer
 	
 	/**
 	 * Syntax:
-	 *     WS+
-	 */
-	protected void emit_SizeFill_WSTerminalRuleCall_1_p(EObject semanticObject, ISynTransition transition, INode fromNode, INode toNode) {
-		acceptNodes(transition, fromNode, toNode);
-	}
-	
-	/**
-	 * Syntax:
 	 *     WS*
 	 */
 	protected void emit_css_generic_declaration_WSTerminalRuleCall_2_a(EObject semanticObject, ISynTransition transition, INode fromNode, INode toNode) {
@@ -649,17 +645,17 @@ public class AbstractCssDslSyntacticSequencer extends AbstractSyntacticSequencer
 	
 	/**
 	 * Syntax:
-	 *     WS* ':' WS+
+	 *     WS*
 	 */
-	protected void emit_fx_border_image_slice_property_WSTerminalRuleCall_1_a_ColonKeyword_2_WSTerminalRuleCall_3_p(EObject semanticObject, ISynTransition transition, INode fromNode, INode toNode) {
+	protected void emit_fx_border_image_slice_property_WSTerminalRuleCall_1_a(EObject semanticObject, ISynTransition transition, INode fromNode, INode toNode) {
 		acceptNodes(transition, fromNode, toNode);
 	}
 	
 	/**
 	 * Syntax:
-	 *     WS*
+	 *     WS* ':' WS+
 	 */
-	protected void emit_fx_border_style_property_WSTerminalRuleCall_1_a(EObject semanticObject, ISynTransition transition, INode fromNode, INode toNode) {
+	protected void emit_fx_border_style_property_WSTerminalRuleCall_1_a_ColonKeyword_2_WSTerminalRuleCall_3_p(EObject semanticObject, ISynTransition transition, INode fromNode, INode toNode) {
 		acceptNodes(transition, fromNode, toNode);
 	}
 	
@@ -737,6 +733,14 @@ public class AbstractCssDslSyntacticSequencer extends AbstractSyntacticSequencer
 	
 	/**
 	 * Syntax:
+	 *     WS*
+	 */
+	protected void emit_fx_font_style_property_WSTerminalRuleCall_1_a(EObject semanticObject, ISynTransition transition, INode fromNode, INode toNode) {
+		acceptNodes(transition, fromNode, toNode);
+	}
+	
+	/**
+	 * Syntax:
 	 *     WS* ':' WS+
 	 */
 	protected void emit_fx_font_style_property_WSTerminalRuleCall_1_a_ColonKeyword_2_WSTerminalRuleCall_3_p(EObject semanticObject, ISynTransition transition, INode fromNode, INode toNode) {
@@ -745,9 +749,9 @@ public class AbstractCssDslSyntacticSequencer extends AbstractSyntacticSequencer
 	
 	/**
 	 * Syntax:
-	 *     WS* ':' WS+
+	 *     WS*
 	 */
-	protected void emit_fx_font_weight_property_WSTerminalRuleCall_1_a_ColonKeyword_2_WSTerminalRuleCall_3_p(EObject semanticObject, ISynTransition transition, INode fromNode, INode toNode) {
+	protected void emit_fx_font_weight_property_WSTerminalRuleCall_1_a(EObject semanticObject, ISynTransition transition, INode fromNode, INode toNode) {
 		acceptNodes(transition, fromNode, toNode);
 	}
 	
@@ -937,6 +941,14 @@ public class AbstractCssDslSyntacticSequencer extends AbstractSyntacticSequencer
 	
 	/**
 	 * Syntax:
+	 *     WS*
+	 */
+	protected void emit_fx_position_property_WSTerminalRuleCall_1_a(EObject semanticObject, ISynTransition transition, INode fromNode, INode toNode) {
+		acceptNodes(transition, fromNode, toNode);
+	}
+	
+	/**
+	 * Syntax:
 	 *     WS* ':' WS+
 	 */
 	protected void emit_fx_position_property_WSTerminalRuleCall_1_a_ColonKeyword_2_WSTerminalRuleCall_3_p(EObject semanticObject, ISynTransition transition, INode fromNode, INode toNode) {
@@ -1067,14 +1079,6 @@ public class AbstractCssDslSyntacticSequencer extends AbstractSyntacticSequencer
 	 * Syntax:
 	 *     WS+
 	 */
-	protected void emit_media_WSTerminalRuleCall_4_p(EObject semanticObject, ISynTransition transition, INode fromNode, INode toNode) {
-		acceptNodes(transition, fromNode, toNode);
-	}
-	
-	/**
-	 * Syntax:
-	 *     WS+
-	 */
 	protected void emit_media_WSTerminalRuleCall_7_p(EObject semanticObject, ISynTransition transition, INode fromNode, INode toNode) {
 		acceptNodes(transition, fromNode, toNode);
 	}
@@ -1092,6 +1096,14 @@ public class AbstractCssDslSyntacticSequencer extends AbstractSyntacticSequencer
 	 *     WS* '}' WS+
 	 */
 	protected void emit_ruleset_WSTerminalRuleCall_4_2_a_RightCurlyBracketKeyword_5_WSTerminalRuleCall_6_p(EObject semanticObject, ISynTransition transition, INode fromNode, INode toNode) {
+		acceptNodes(transition, fromNode, toNode);
+	}
+	
+	/**
+	 * Syntax:
+	 *     WS+
+	 */
+	protected void emit_selector_WSTerminalRuleCall_1_1_0_p(EObject semanticObject, ISynTransition transition, INode fromNode, INode toNode) {
 		acceptNodes(transition, fromNode, toNode);
 	}
 	

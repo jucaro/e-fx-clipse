@@ -2325,6 +2325,34 @@ finally {
 
 
 
+// Entry rule entryRuleHexColor
+entryRuleHexColor 
+:
+{ before(grammarAccess.getHexColorRule()); }
+	 ruleHexColor
+{ after(grammarAccess.getHexColorRule()); } 
+	 EOF 
+;
+
+// Rule HexColor
+ruleHexColor
+    @init {
+		int stackSize = keepStackSize();
+    }
+	:
+(
+{ before(grammarAccess.getHexColorAccess().getGroup()); }
+(rule__HexColor__Group__0)
+{ after(grammarAccess.getHexColorAccess().getGroup()); }
+)
+
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+
+
 // Entry rule entryRuleURI
 entryRuleURI 
 :
@@ -2745,34 +2773,6 @@ finally {
 
 
 
-// Entry rule entryRuleHEXCOLOR
-entryRuleHEXCOLOR 
-:
-{ before(grammarAccess.getHEXCOLORRule()); }
-	 ruleHEXCOLOR
-{ after(grammarAccess.getHEXCOLORRule()); } 
-	 EOF 
-;
-
-// Rule HEXCOLOR
-ruleHEXCOLOR
-    @init {
-		int stackSize = keepStackSize();
-    }
-	:
-(
-{ before(grammarAccess.getHEXCOLORAccess().getGroup()); }
-(rule__HEXCOLOR__Group__0)
-{ after(grammarAccess.getHEXCOLORAccess().getGroup()); }
-)
-
-;
-finally {
-	restoreStackSize(stackSize);
-}
-
-
-
 
 // Rule HPosition
 ruleHPosition
@@ -3004,9 +3004,9 @@ rule__Term__Alternatives
 )
 
     |(
-{ before(grammarAccess.getTermAccess().getHEXCOLORParserRuleCall_4()); }
-	ruleHEXCOLOR
-{ after(grammarAccess.getTermAccess().getHEXCOLORParserRuleCall_4()); }
+{ before(grammarAccess.getTermAccess().getGroup_4()); }
+(rule__Term__Group_4__0)
+{ after(grammarAccess.getTermAccess().getGroup_4()); }
 )
 
 ;
@@ -7754,9 +7754,9 @@ rule__RGBColor__Alternatives
     }
 :
 (
-{ before(grammarAccess.getRGBColorAccess().getHexAssignment_0()); }
-(rule__RGBColor__HexAssignment_0)
-{ after(grammarAccess.getRGBColorAccess().getHexAssignment_0()); }
+{ before(grammarAccess.getRGBColorAccess().getHexcolorAssignment_0()); }
+(rule__RGBColor__HexcolorAssignment_0)
+{ after(grammarAccess.getRGBColorAccess().getHexcolorAssignment_0()); }
 )
 
     |(
@@ -10993,6 +10993,69 @@ rule__Term__Group_3__1__Impl
 { before(grammarAccess.getTermAccess().getWSTerminalRuleCall_3_1()); }
 (	RULE_WS)*
 { after(grammarAccess.getTermAccess().getWSTerminalRuleCall_3_1()); }
+)
+
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+
+
+
+
+
+rule__Term__Group_4__0
+    @init {
+		int stackSize = keepStackSize();
+    }
+:
+	rule__Term__Group_4__0__Impl
+	rule__Term__Group_4__1
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__Term__Group_4__0__Impl
+    @init {
+		int stackSize = keepStackSize();
+    }
+:
+(
+{ before(grammarAccess.getTermAccess().getNumberSignKeyword_4_0()); }
+
+	'#' 
+
+{ after(grammarAccess.getTermAccess().getNumberSignKeyword_4_0()); }
+)
+
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+
+rule__Term__Group_4__1
+    @init {
+		int stackSize = keepStackSize();
+    }
+:
+	rule__Term__Group_4__1__Impl
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__Term__Group_4__1__Impl
+    @init {
+		int stackSize = keepStackSize();
+    }
+:
+(
+{ before(grammarAccess.getTermAccess().getHexdigitsTerminalRuleCall_4_1()); }
+	RULE_HEXDIGITS
+{ after(grammarAccess.getTermAccess().getHexdigitsTerminalRuleCall_4_1()); }
 )
 
 ;
@@ -24645,6 +24708,69 @@ finally {
 
 
 
+rule__HexColor__Group__0
+    @init {
+		int stackSize = keepStackSize();
+    }
+:
+	rule__HexColor__Group__0__Impl
+	rule__HexColor__Group__1
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__HexColor__Group__0__Impl
+    @init {
+		int stackSize = keepStackSize();
+    }
+:
+(
+{ before(grammarAccess.getHexColorAccess().getNumberSignKeyword_0()); }
+
+	'#' 
+
+{ after(grammarAccess.getHexColorAccess().getNumberSignKeyword_0()); }
+)
+
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+
+rule__HexColor__Group__1
+    @init {
+		int stackSize = keepStackSize();
+    }
+:
+	rule__HexColor__Group__1__Impl
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__HexColor__Group__1__Impl
+    @init {
+		int stackSize = keepStackSize();
+    }
+:
+(
+{ before(grammarAccess.getHexColorAccess().getValueAssignment_1()); }
+(rule__HexColor__ValueAssignment_1)
+{ after(grammarAccess.getHexColorAccess().getValueAssignment_1()); }
+)
+
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+
+
+
+
+
 rule__URI__Group__0
     @init {
 		int stackSize = keepStackSize();
@@ -25414,69 +25540,6 @@ rule__SIZE__Group__1__Impl
 { before(grammarAccess.getSIZEAccess().getAlternatives_1()); }
 (rule__SIZE__Alternatives_1)
 { after(grammarAccess.getSIZEAccess().getAlternatives_1()); }
-)
-
-;
-finally {
-	restoreStackSize(stackSize);
-}
-
-
-
-
-
-
-rule__HEXCOLOR__Group__0
-    @init {
-		int stackSize = keepStackSize();
-    }
-:
-	rule__HEXCOLOR__Group__0__Impl
-	rule__HEXCOLOR__Group__1
-;
-finally {
-	restoreStackSize(stackSize);
-}
-
-rule__HEXCOLOR__Group__0__Impl
-    @init {
-		int stackSize = keepStackSize();
-    }
-:
-(
-{ before(grammarAccess.getHEXCOLORAccess().getNumberSignKeyword_0()); }
-
-	'#' 
-
-{ after(grammarAccess.getHEXCOLORAccess().getNumberSignKeyword_0()); }
-)
-
-;
-finally {
-	restoreStackSize(stackSize);
-}
-
-
-rule__HEXCOLOR__Group__1
-    @init {
-		int stackSize = keepStackSize();
-    }
-:
-	rule__HEXCOLOR__Group__1__Impl
-;
-finally {
-	restoreStackSize(stackSize);
-}
-
-rule__HEXCOLOR__Group__1__Impl
-    @init {
-		int stackSize = keepStackSize();
-    }
-:
-(
-{ before(grammarAccess.getHEXCOLORAccess().getIDENTTerminalRuleCall_1()); }
-	RULE_IDENT
-{ after(grammarAccess.getHEXCOLORAccess().getIDENTTerminalRuleCall_1()); }
 )
 
 ;
@@ -28101,14 +28164,14 @@ finally {
 	restoreStackSize(stackSize);
 }
 
-rule__RGBColor__HexAssignment_0
+rule__RGBColor__HexcolorAssignment_0
     @init {
 		int stackSize = keepStackSize();
     }
 :
 (
-{ before(grammarAccess.getRGBColorAccess().getHexHEXCOLORParserRuleCall_0_0()); }
-	ruleHEXCOLOR{ after(grammarAccess.getRGBColorAccess().getHexHEXCOLORParserRuleCall_0_0()); }
+{ before(grammarAccess.getRGBColorAccess().getHexcolorHexColorParserRuleCall_0_0()); }
+	ruleHexColor{ after(grammarAccess.getRGBColorAccess().getHexcolorHexColorParserRuleCall_0_0()); }
 )
 
 ;
@@ -28506,6 +28569,21 @@ finally {
 	restoreStackSize(stackSize);
 }
 
+rule__HexColor__ValueAssignment_1
+    @init {
+		int stackSize = keepStackSize();
+    }
+:
+(
+{ before(grammarAccess.getHexColorAccess().getValueHexdigitsTerminalRuleCall_1_0()); }
+	RULE_HEXDIGITS{ after(grammarAccess.getHexColorAccess().getValueHexdigitsTerminalRuleCall_1_0()); }
+)
+
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
 rule__FONT__StyleOrWeightStringAssignment_0_0_0
     @init {
 		int stackSize = keepStackSize();
@@ -28618,6 +28696,8 @@ finally {
 RULE_INTEGER : ('0'..'9')+;
 
 RULE_REAL : ('0'..'9')* '.' ('0'..'9')+;
+
+RULE_HEXDIGITS : ('0'..'9'|'a'..'f'|'A'..'F')+;
 
 RULE_IDENT : ('_'|'a'..'z'|'A'..'Z') ('_'|'-'|'a'..'z'|'A'..'Z'|'0..9')*;
 

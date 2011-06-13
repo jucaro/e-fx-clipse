@@ -12,6 +12,7 @@ import at.bestsolution.efxclipse.tooling.css.cssDsl.FONT;
 import at.bestsolution.efxclipse.tooling.css.cssDsl.FONTSTYLE;
 import at.bestsolution.efxclipse.tooling.css.cssDsl.FONTWEIGHT;
 import at.bestsolution.efxclipse.tooling.css.cssDsl.HSBColor;
+import at.bestsolution.efxclipse.tooling.css.cssDsl.HexColor;
 import at.bestsolution.efxclipse.tooling.css.cssDsl.LinearGradient;
 import at.bestsolution.efxclipse.tooling.css.cssDsl.LookedUpColor;
 import at.bestsolution.efxclipse.tooling.css.cssDsl.MultiPaint;
@@ -180,6 +181,12 @@ public class AbstractCssDslSemanticSequencer extends AbstractSemanticSequencer {
 				   context == grammarAccess.getColorRule() ||
 				   context == grammarAccess.getHSBColorRule()) {
 					sequence_HSBColor_HSBColor(context, (HSBColor) semanticObject); 
+					return; 
+				}
+				else break;
+			case CssDslPackage.HEX_COLOR:
+				if(context == grammarAccess.getHexColorRule()) {
+					sequence_HexColor_HexColor(context, (HexColor) semanticObject); 
 					return; 
 				}
 				else break;
@@ -904,6 +911,25 @@ public class AbstractCssDslSemanticSequencer extends AbstractSemanticSequencer {
 	
 	/**
 	 * Constraint:
+	 *     value=hexdigits
+	 *
+	 * Features:
+	 *    value[1, 1]
+	 */
+	protected void sequence_HexColor_HexColor(EObject context, HexColor semanticObject) {
+		if(errorAcceptor != null) {
+			if(transientValues.isValueTransient(semanticObject, CssDslPackage.Literals.HEX_COLOR__VALUE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, CssDslPackage.Literals.HEX_COLOR__VALUE));
+		}
+		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
+		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
+		feeder.accept(grammarAccess.getHexColorAccess().getValueHexdigitsTerminalRuleCall_1_0(), semanticObject.getValue());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Constraint:
 	 *     (x1=SIZE y1=SIZE x2=SIZE y2=SIZE stops+=StopValue+)
 	 *
 	 * Features:
@@ -1106,7 +1132,7 @@ public class AbstractCssDslSemanticSequencer extends AbstractSemanticSequencer {
 	/**
 	 * Constraint:
 	 *     (
-	 *         hex=HEXCOLOR | 
+	 *         hexcolor=HexColor | 
 	 *         (r=integer g=integer b=integer) | 
 	 *         (rp=integer gp=integer bp=integer) | 
 	 *         (r=integer g=integer b=integer alpha=NUMBER) | 
@@ -1114,7 +1140,7 @@ public class AbstractCssDslSemanticSequencer extends AbstractSemanticSequencer {
 	 *     )
 	 *
 	 * Features:
-	 *    hex[0, 1]
+	 *    hexcolor[0, 1]
 	 *         EXCLUDE_IF_SET r
 	 *         EXCLUDE_IF_SET g
 	 *         EXCLUDE_IF_SET b
@@ -1130,7 +1156,7 @@ public class AbstractCssDslSemanticSequencer extends AbstractSemanticSequencer {
 	 *         EXCLUDE_IF_SET bp
 	 *         EXCLUDE_IF_SET alpha
 	 *    r[2, 2]
-	 *         EXCLUDE_IF_SET hex
+	 *         EXCLUDE_IF_SET hexcolor
 	 *         EXCLUDE_IF_SET rp
 	 *         EXCLUDE_IF_SET gp
 	 *         EXCLUDE_IF_SET bp
@@ -1139,7 +1165,7 @@ public class AbstractCssDslSemanticSequencer extends AbstractSemanticSequencer {
 	 *         EXCLUDE_IF_SET bp
 	 *         EXCLUDE_IF_SET alpha
 	 *    g[2, 2]
-	 *         EXCLUDE_IF_SET hex
+	 *         EXCLUDE_IF_SET hexcolor
 	 *         EXCLUDE_IF_SET rp
 	 *         EXCLUDE_IF_SET gp
 	 *         EXCLUDE_IF_SET bp
@@ -1148,7 +1174,7 @@ public class AbstractCssDslSemanticSequencer extends AbstractSemanticSequencer {
 	 *         EXCLUDE_IF_SET bp
 	 *         EXCLUDE_IF_SET alpha
 	 *    b[2, 2]
-	 *         EXCLUDE_IF_SET hex
+	 *         EXCLUDE_IF_SET hexcolor
 	 *         EXCLUDE_IF_SET rp
 	 *         EXCLUDE_IF_SET gp
 	 *         EXCLUDE_IF_SET bp
@@ -1157,7 +1183,7 @@ public class AbstractCssDslSemanticSequencer extends AbstractSemanticSequencer {
 	 *         EXCLUDE_IF_SET bp
 	 *         EXCLUDE_IF_SET alpha
 	 *    rp[2, 2]
-	 *         EXCLUDE_IF_SET hex
+	 *         EXCLUDE_IF_SET hexcolor
 	 *         EXCLUDE_IF_SET r
 	 *         EXCLUDE_IF_SET g
 	 *         EXCLUDE_IF_SET b
@@ -1166,7 +1192,7 @@ public class AbstractCssDslSemanticSequencer extends AbstractSemanticSequencer {
 	 *         EXCLUDE_IF_SET b
 	 *         EXCLUDE_IF_SET alpha
 	 *    gp[2, 2]
-	 *         EXCLUDE_IF_SET hex
+	 *         EXCLUDE_IF_SET hexcolor
 	 *         EXCLUDE_IF_SET r
 	 *         EXCLUDE_IF_SET g
 	 *         EXCLUDE_IF_SET b
@@ -1175,7 +1201,7 @@ public class AbstractCssDslSemanticSequencer extends AbstractSemanticSequencer {
 	 *         EXCLUDE_IF_SET b
 	 *         EXCLUDE_IF_SET alpha
 	 *    bp[2, 2]
-	 *         EXCLUDE_IF_SET hex
+	 *         EXCLUDE_IF_SET hexcolor
 	 *         EXCLUDE_IF_SET r
 	 *         EXCLUDE_IF_SET g
 	 *         EXCLUDE_IF_SET b
@@ -1184,7 +1210,7 @@ public class AbstractCssDslSemanticSequencer extends AbstractSemanticSequencer {
 	 *         EXCLUDE_IF_SET b
 	 *         EXCLUDE_IF_SET alpha
 	 *    alpha[2, 2]
-	 *         EXCLUDE_IF_SET hex
+	 *         EXCLUDE_IF_SET hexcolor
 	 *         EXCLUDE_IF_SET r
 	 *         EXCLUDE_IF_SET g
 	 *         EXCLUDE_IF_SET b

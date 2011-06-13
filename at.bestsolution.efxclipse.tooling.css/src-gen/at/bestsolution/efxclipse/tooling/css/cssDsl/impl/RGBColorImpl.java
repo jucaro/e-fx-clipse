@@ -7,11 +7,14 @@
 package at.bestsolution.efxclipse.tooling.css.cssDsl.impl;
 
 import at.bestsolution.efxclipse.tooling.css.cssDsl.CssDslPackage;
+import at.bestsolution.efxclipse.tooling.css.cssDsl.HexColor;
 import at.bestsolution.efxclipse.tooling.css.cssDsl.RGBColor;
 
 import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
@@ -22,7 +25,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link at.bestsolution.efxclipse.tooling.css.cssDsl.impl.RGBColorImpl#getHex <em>Hex</em>}</li>
+ *   <li>{@link at.bestsolution.efxclipse.tooling.css.cssDsl.impl.RGBColorImpl#getHexcolor <em>Hexcolor</em>}</li>
  *   <li>{@link at.bestsolution.efxclipse.tooling.css.cssDsl.impl.RGBColorImpl#getR <em>R</em>}</li>
  *   <li>{@link at.bestsolution.efxclipse.tooling.css.cssDsl.impl.RGBColorImpl#getG <em>G</em>}</li>
  *   <li>{@link at.bestsolution.efxclipse.tooling.css.cssDsl.impl.RGBColorImpl#getB <em>B</em>}</li>
@@ -38,24 +41,14 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 public class RGBColorImpl extends ColorImpl implements RGBColor
 {
   /**
-   * The default value of the '{@link #getHex() <em>Hex</em>}' attribute.
+   * The cached value of the '{@link #getHexcolor() <em>Hexcolor</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getHex()
+   * @see #getHexcolor()
    * @generated
    * @ordered
    */
-  protected static final String HEX_EDEFAULT = null;
-
-  /**
-   * The cached value of the '{@link #getHex() <em>Hex</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getHex()
-   * @generated
-   * @ordered
-   */
-  protected String hex = HEX_EDEFAULT;
+  protected HexColor hexcolor;
 
   /**
    * The default value of the '{@link #getR() <em>R</em>}' attribute.
@@ -223,9 +216,9 @@ public class RGBColorImpl extends ColorImpl implements RGBColor
    * <!-- end-user-doc -->
    * @generated
    */
-  public String getHex()
+  public HexColor getHexcolor()
   {
-    return hex;
+    return hexcolor;
   }
 
   /**
@@ -233,12 +226,37 @@ public class RGBColorImpl extends ColorImpl implements RGBColor
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setHex(String newHex)
+  public NotificationChain basicSetHexcolor(HexColor newHexcolor, NotificationChain msgs)
   {
-    String oldHex = hex;
-    hex = newHex;
+    HexColor oldHexcolor = hexcolor;
+    hexcolor = newHexcolor;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, CssDslPackage.RGB_COLOR__HEX, oldHex, hex));
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, CssDslPackage.RGB_COLOR__HEXCOLOR, oldHexcolor, newHexcolor);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setHexcolor(HexColor newHexcolor)
+  {
+    if (newHexcolor != hexcolor)
+    {
+      NotificationChain msgs = null;
+      if (hexcolor != null)
+        msgs = ((InternalEObject)hexcolor).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - CssDslPackage.RGB_COLOR__HEXCOLOR, null, msgs);
+      if (newHexcolor != null)
+        msgs = ((InternalEObject)newHexcolor).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - CssDslPackage.RGB_COLOR__HEXCOLOR, null, msgs);
+      msgs = basicSetHexcolor(newHexcolor, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, CssDslPackage.RGB_COLOR__HEXCOLOR, newHexcolor, newHexcolor));
   }
 
   /**
@@ -408,12 +426,28 @@ public class RGBColorImpl extends ColorImpl implements RGBColor
    * @generated
    */
   @Override
+  public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
+  {
+    switch (featureID)
+    {
+      case CssDslPackage.RGB_COLOR__HEXCOLOR:
+        return basicSetHexcolor(null, msgs);
+    }
+    return super.eInverseRemove(otherEnd, featureID, msgs);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public Object eGet(int featureID, boolean resolve, boolean coreType)
   {
     switch (featureID)
     {
-      case CssDslPackage.RGB_COLOR__HEX:
-        return getHex();
+      case CssDslPackage.RGB_COLOR__HEXCOLOR:
+        return getHexcolor();
       case CssDslPackage.RGB_COLOR__R:
         return getR();
       case CssDslPackage.RGB_COLOR__G:
@@ -442,8 +476,8 @@ public class RGBColorImpl extends ColorImpl implements RGBColor
   {
     switch (featureID)
     {
-      case CssDslPackage.RGB_COLOR__HEX:
-        setHex((String)newValue);
+      case CssDslPackage.RGB_COLOR__HEXCOLOR:
+        setHexcolor((HexColor)newValue);
         return;
       case CssDslPackage.RGB_COLOR__R:
         setR((String)newValue);
@@ -480,8 +514,8 @@ public class RGBColorImpl extends ColorImpl implements RGBColor
   {
     switch (featureID)
     {
-      case CssDslPackage.RGB_COLOR__HEX:
-        setHex(HEX_EDEFAULT);
+      case CssDslPackage.RGB_COLOR__HEXCOLOR:
+        setHexcolor((HexColor)null);
         return;
       case CssDslPackage.RGB_COLOR__R:
         setR(R_EDEFAULT);
@@ -518,8 +552,8 @@ public class RGBColorImpl extends ColorImpl implements RGBColor
   {
     switch (featureID)
     {
-      case CssDslPackage.RGB_COLOR__HEX:
-        return HEX_EDEFAULT == null ? hex != null : !HEX_EDEFAULT.equals(hex);
+      case CssDslPackage.RGB_COLOR__HEXCOLOR:
+        return hexcolor != null;
       case CssDslPackage.RGB_COLOR__R:
         return R_EDEFAULT == null ? r != null : !R_EDEFAULT.equals(r);
       case CssDslPackage.RGB_COLOR__G:
@@ -549,9 +583,7 @@ public class RGBColorImpl extends ColorImpl implements RGBColor
     if (eIsProxy()) return super.toString();
 
     StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (hex: ");
-    result.append(hex);
-    result.append(", r: ");
+    result.append(" (r: ");
     result.append(r);
     result.append(", g: ");
     result.append(g);

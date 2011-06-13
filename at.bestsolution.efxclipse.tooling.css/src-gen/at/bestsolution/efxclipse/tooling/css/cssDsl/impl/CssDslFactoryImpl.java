@@ -138,6 +138,7 @@ public class CssDslFactoryImpl extends EFactoryImpl implements CssDslFactory
       case CssDslPackage.RGB_COLOR: return createRGBColor();
       case CssDslPackage.HSB_COLOR: return createHSBColor();
       case CssDslPackage.COLOR_FUNCTION: return createColorFunction();
+      case CssDslPackage.HEX_COLOR: return createHexColor();
       case CssDslPackage.FONT: return createFONT();
       case CssDslPackage.FONTWEIGHT: return createFONTWEIGHT();
       case CssDslPackage.FONTSTYLE: return createFONTSTYLE();
@@ -937,6 +938,17 @@ public class CssDslFactoryImpl extends EFactoryImpl implements CssDslFactory
   {
     ColorFunctionImpl colorFunction = new ColorFunctionImpl();
     return colorFunction;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public HexColor createHexColor()
+  {
+    HexColorImpl hexColor = new HexColorImpl();
+    return hexColor;
   }
 
   /**

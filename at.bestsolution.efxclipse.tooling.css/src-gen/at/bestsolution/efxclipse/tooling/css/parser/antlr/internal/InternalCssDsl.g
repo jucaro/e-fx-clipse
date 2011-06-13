@@ -1385,18 +1385,20 @@ ruleterm returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()]
     newLeafNode(this_WS_22, grammarAccess.getTermAccess().getWSTerminalRuleCall_3_1()); 
     }
 )*)
-    |
-    { 
-        newCompositeNode(grammarAccess.getTermAccess().getHEXCOLORParserRuleCall_4()); 
+    |(
+	kw='#' 
+    {
+        $current.merge(kw);
+        newLeafNode(kw, grammarAccess.getTermAccess().getNumberSignKeyword_4_0()); 
     }
-    this_HEXCOLOR_23=ruleHEXCOLOR    {
-		$current.merge(this_HEXCOLOR_23);
+    this_hexdigits_24=RULE_HEXDIGITS    {
+		$current.merge(this_hexdigits_24);
     }
 
     { 
-        afterParserOrEnumRuleCall();
+    newLeafNode(this_hexdigits_24, grammarAccess.getTermAccess().getHexdigitsTerminalRuleCall_4_1()); 
     }
-)
+))
     ;
 
 
@@ -11205,17 +11207,17 @@ ruleRGBColor returns [EObject current=null]
 ((
 (
 		{ 
-	        newCompositeNode(grammarAccess.getRGBColorAccess().getHexHEXCOLORParserRuleCall_0_0()); 
+	        newCompositeNode(grammarAccess.getRGBColorAccess().getHexcolorHexColorParserRuleCall_0_0()); 
 	    }
-		lv_hex_0_0=ruleHEXCOLOR		{
+		lv_hexcolor_0_0=ruleHexColor		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getRGBColorRule());
 	        }
        		set(
        			$current, 
-       			"hex",
-        		lv_hex_0_0, 
-        		"HEXCOLOR");
+       			"hexcolor",
+        		lv_hexcolor_0_0, 
+        		"HexColor");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -11953,6 +11955,49 @@ rulePERCENTAGE
     	newLeafNode(otherlv_16, grammarAccess.getColorFunctionAccess().getRightParenthesisKeyword_1_5_4());
     }
 )+))
+;
+
+
+
+
+
+// Entry rule entryRuleHexColor
+entryRuleHexColor returns [EObject current=null] 
+	:
+	{ newCompositeNode(grammarAccess.getHexColorRule()); }
+	 iv_ruleHexColor=ruleHexColor 
+	 { $current=$iv_ruleHexColor.current; } 
+	 EOF 
+;
+
+// Rule HexColor
+ruleHexColor returns [EObject current=null] 
+    @init { enterRule(); 
+    }
+    @after { leaveRule(); }:
+(	otherlv_0='#' 
+    {
+    	newLeafNode(otherlv_0, grammarAccess.getHexColorAccess().getNumberSignKeyword_0());
+    }
+(
+(
+		lv_value_1_0=RULE_HEXDIGITS
+		{
+			newLeafNode(lv_value_1_0, grammarAccess.getHexColorAccess().getValueHexdigitsTerminalRuleCall_1_0()); 
+		}
+		{
+	        if ($current==null) {
+	            $current = createModelElement(grammarAccess.getHexColorRule());
+	        }
+       		setWithLastConsumed(
+       			$current, 
+       			"value",
+        		lv_value_1_0, 
+        		"hexdigits");
+	    }
+
+)
+))
 ;
 
 
@@ -12846,40 +12891,6 @@ ruleBLUR returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()]
 
 
 
-// Entry rule entryRuleHEXCOLOR
-entryRuleHEXCOLOR returns [String current=null] 
-	:
-	{ newCompositeNode(grammarAccess.getHEXCOLORRule()); } 
-	 iv_ruleHEXCOLOR=ruleHEXCOLOR 
-	 { $current=$iv_ruleHEXCOLOR.current.getText(); }  
-	 EOF 
-;
-
-// Rule HEXCOLOR
-ruleHEXCOLOR returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] 
-    @init { enterRule(); 
-    }
-    @after { leaveRule(); }:
-(
-	kw='#' 
-    {
-        $current.merge(kw);
-        newLeafNode(kw, grammarAccess.getHEXCOLORAccess().getNumberSignKeyword_0()); 
-    }
-    this_IDENT_1=RULE_IDENT    {
-		$current.merge(this_IDENT_1);
-    }
-
-    { 
-    newLeafNode(this_IDENT_1, grammarAccess.getHEXCOLORAccess().getIDENTTerminalRuleCall_1()); 
-    }
-)
-    ;
-
-
-
-
-
 // Rule HPosition
 ruleHPosition returns [Enumerator current=null] 
     @init { enterRule(); }
@@ -12920,6 +12931,8 @@ ruleHPosition returns [Enumerator current=null]
 RULE_INTEGER : ('0'..'9')+;
 
 RULE_REAL : ('0'..'9')* '.' ('0'..'9')+;
+
+RULE_HEXDIGITS : ('0'..'9'|'a'..'f'|'A'..'F')+;
 
 RULE_IDENT : ('_'|'a'..'z'|'A'..'Z') ('_'|'-'|'a'..'z'|'A'..'Z'|'0..9')*;
 

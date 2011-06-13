@@ -91,7 +91,7 @@ term
   : (unary_operator? 
     ( (NUMBER WS*) | (PERCENTAGE WS*) | (LENGTH WS*) | (EMS WS*) | (EXS WS*) | (ANGLE WS*) |
       (TIME WS*) | (FREQ WS*) ))
-  | STRING WS* | IDENT WS* | URI WS* | HEXCOLOR //| function
+  | STRING WS* | IDENT WS* | URI WS* | ('#' hexdigits) //| function
   ;
   
 num:
@@ -527,7 +527,7 @@ NamedColor:
 ;
 
 RGBColor:
-	hex=HEXCOLOR
+	hexcolor=HexColor
 	|
 	('rgb' '(' WS* r=integer COMMA g=integer COMMA b=integer WS* ')' )
 	|
@@ -550,7 +550,9 @@ ColorFunction:
 	( 'ladder' '(' orig=Color ')' 'stops' ( '(' stopNumbers+=NUMBER COMMA stopColors+=Color ')' )+ )
 ;
 
-
+HexColor:
+	'#' value=hexdigits
+;
 URI:
 	'url(' STRING ')'
 ;
@@ -588,12 +590,9 @@ BLUR:
 	'gaussian' | 'one-pass-box' | 'three-pass-box' | 'two-pass-box'
 ;
 
-HEXCOLOR: '#' IDENT; //((hexdigit hexdigit hexdigit) | (hexdigit hexdigit hexdigit hexdigit hexdigit hexdigit));
-
-//terminal digit:('0'..'9');
 terminal integer:('0'..'9')+;
 terminal real: (('0'..'9')*"."('0'..'9')+);
-//terminal HEXCOLOR: '#' IDENT;
+terminal hexdigits:('0'..'9'|'a'..'f' | 'A'..'F')+;
 
 terminal IDENT: ('_' | 'a'..'z' | 'A'..'Z' ) ('_' | '-' | 'a'..'z' | 'A'..'Z' | '0..9' )*;
 terminal COMMA: WS* ',' WS*;

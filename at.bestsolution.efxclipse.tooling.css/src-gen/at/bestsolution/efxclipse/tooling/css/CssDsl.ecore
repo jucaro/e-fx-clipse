@@ -323,7 +323,8 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="RGBColor" eSuperTypes="platform:/resource/at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/CssDsl.ecore#//Color">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="hex" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="hexcolor" eType="ecore:EClass platform:/resource/at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/CssDsl.ecore#//HexColor"
+        containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="r" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="g" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="b" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
@@ -347,6 +348,9 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="stopColors" upperBound="-1"
         eType="ecore:EClass platform:/resource/at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/CssDsl.ecore#//Color"
         containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="HexColor">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="FONT">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="styleOrWeightString" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>

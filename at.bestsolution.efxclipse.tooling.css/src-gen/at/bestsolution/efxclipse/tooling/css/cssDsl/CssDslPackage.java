@@ -2622,13 +2622,13 @@ public interface CssDslPackage extends EPackage
   int RGB_COLOR = 66;
 
   /**
-   * The feature id for the '<em><b>Hex</b></em>' attribute.
+   * The feature id for the '<em><b>Hexcolor</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int RGB_COLOR__HEX = COLOR_FEATURE_COUNT + 0;
+  int RGB_COLOR__HEXCOLOR = COLOR_FEATURE_COUNT + 0;
 
   /**
    * The feature id for the '<em><b>R</b></em>' attribute.
@@ -2813,6 +2813,34 @@ public interface CssDslPackage extends EPackage
   int COLOR_FUNCTION_FEATURE_COUNT = COLOR_FEATURE_COUNT + 4;
 
   /**
+   * The meta object id for the '{@link at.bestsolution.efxclipse.tooling.css.cssDsl.impl.HexColorImpl <em>Hex Color</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see at.bestsolution.efxclipse.tooling.css.cssDsl.impl.HexColorImpl
+   * @see at.bestsolution.efxclipse.tooling.css.cssDsl.impl.CssDslPackageImpl#getHexColor()
+   * @generated
+   */
+  int HEX_COLOR = 69;
+
+  /**
+   * The feature id for the '<em><b>Value</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int HEX_COLOR__VALUE = 0;
+
+  /**
+   * The number of structural features of the '<em>Hex Color</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int HEX_COLOR_FEATURE_COUNT = 1;
+
+  /**
    * The meta object id for the '{@link at.bestsolution.efxclipse.tooling.css.cssDsl.impl.FONTImpl <em>FONT</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -2820,7 +2848,7 @@ public interface CssDslPackage extends EPackage
    * @see at.bestsolution.efxclipse.tooling.css.cssDsl.impl.CssDslPackageImpl#getFONT()
    * @generated
    */
-  int FONT = 69;
+  int FONT = 70;
 
   /**
    * The feature id for the '<em><b>Style Or Weight String</b></em>' attribute.
@@ -2875,7 +2903,7 @@ public interface CssDslPackage extends EPackage
    * @see at.bestsolution.efxclipse.tooling.css.cssDsl.impl.CssDslPackageImpl#getFONTWEIGHT()
    * @generated
    */
-  int FONTWEIGHT = 70;
+  int FONTWEIGHT = 71;
 
   /**
    * The feature id for the '<em><b>Value String</b></em>' attribute.
@@ -2912,7 +2940,7 @@ public interface CssDslPackage extends EPackage
    * @see at.bestsolution.efxclipse.tooling.css.cssDsl.impl.CssDslPackageImpl#getFONTSTYLE()
    * @generated
    */
-  int FONTSTYLE = 71;
+  int FONTSTYLE = 72;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -2940,7 +2968,7 @@ public interface CssDslPackage extends EPackage
    * @see at.bestsolution.efxclipse.tooling.css.cssDsl.impl.CssDslPackageImpl#getHPosition()
    * @generated
    */
-  int HPOSITION = 72;
+  int HPOSITION = 73;
 
 
   /**
@@ -5055,15 +5083,15 @@ public interface CssDslPackage extends EPackage
   EClass getRGBColor();
 
   /**
-   * Returns the meta object for the attribute '{@link at.bestsolution.efxclipse.tooling.css.cssDsl.RGBColor#getHex <em>Hex</em>}'.
+   * Returns the meta object for the containment reference '{@link at.bestsolution.efxclipse.tooling.css.cssDsl.RGBColor#getHexcolor <em>Hexcolor</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Hex</em>'.
-   * @see at.bestsolution.efxclipse.tooling.css.cssDsl.RGBColor#getHex()
+   * @return the meta object for the containment reference '<em>Hexcolor</em>'.
+   * @see at.bestsolution.efxclipse.tooling.css.cssDsl.RGBColor#getHexcolor()
    * @see #getRGBColor()
    * @generated
    */
-  EAttribute getRGBColor_Hex();
+  EReference getRGBColor_Hexcolor();
 
   /**
    * Returns the meta object for the attribute '{@link at.bestsolution.efxclipse.tooling.css.cssDsl.RGBColor#getR <em>R</em>}'.
@@ -5249,6 +5277,27 @@ public interface CssDslPackage extends EPackage
    * @generated
    */
   EReference getColorFunction_StopColors();
+
+  /**
+   * Returns the meta object for class '{@link at.bestsolution.efxclipse.tooling.css.cssDsl.HexColor <em>Hex Color</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Hex Color</em>'.
+   * @see at.bestsolution.efxclipse.tooling.css.cssDsl.HexColor
+   * @generated
+   */
+  EClass getHexColor();
+
+  /**
+   * Returns the meta object for the attribute '{@link at.bestsolution.efxclipse.tooling.css.cssDsl.HexColor#getValue <em>Value</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Value</em>'.
+   * @see at.bestsolution.efxclipse.tooling.css.cssDsl.HexColor#getValue()
+   * @see #getHexColor()
+   * @generated
+   */
+  EAttribute getHexColor_Value();
 
   /**
    * Returns the meta object for class '{@link at.bestsolution.efxclipse.tooling.css.cssDsl.FONT <em>FONT</em>}'.
@@ -7109,12 +7158,12 @@ public interface CssDslPackage extends EPackage
     EClass RGB_COLOR = eINSTANCE.getRGBColor();
 
     /**
-     * The meta object literal for the '<em><b>Hex</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>Hexcolor</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute RGB_COLOR__HEX = eINSTANCE.getRGBColor_Hex();
+    EReference RGB_COLOR__HEXCOLOR = eINSTANCE.getRGBColor_Hexcolor();
 
     /**
      * The meta object literal for the '<em><b>R</b></em>' attribute feature.
@@ -7255,6 +7304,24 @@ public interface CssDslPackage extends EPackage
      * @generated
      */
     EReference COLOR_FUNCTION__STOP_COLORS = eINSTANCE.getColorFunction_StopColors();
+
+    /**
+     * The meta object literal for the '{@link at.bestsolution.efxclipse.tooling.css.cssDsl.impl.HexColorImpl <em>Hex Color</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see at.bestsolution.efxclipse.tooling.css.cssDsl.impl.HexColorImpl
+     * @see at.bestsolution.efxclipse.tooling.css.cssDsl.impl.CssDslPackageImpl#getHexColor()
+     * @generated
+     */
+    EClass HEX_COLOR = eINSTANCE.getHexColor();
+
+    /**
+     * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute HEX_COLOR__VALUE = eINSTANCE.getHexColor_Value();
 
     /**
      * The meta object literal for the '{@link at.bestsolution.efxclipse.tooling.css.cssDsl.impl.FONTImpl <em>FONT</em>}' class.

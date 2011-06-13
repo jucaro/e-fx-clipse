@@ -15,7 +15,7 @@ package at.bestsolution.efxclipse.tooling.css.cssDsl;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link at.bestsolution.efxclipse.tooling.css.cssDsl.RGBColor#getHex <em>Hex</em>}</li>
+ *   <li>{@link at.bestsolution.efxclipse.tooling.css.cssDsl.RGBColor#getHexcolor <em>Hexcolor</em>}</li>
  *   <li>{@link at.bestsolution.efxclipse.tooling.css.cssDsl.RGBColor#getR <em>R</em>}</li>
  *   <li>{@link at.bestsolution.efxclipse.tooling.css.cssDsl.RGBColor#getG <em>G</em>}</li>
  *   <li>{@link at.bestsolution.efxclipse.tooling.css.cssDsl.RGBColor#getB <em>B</em>}</li>
@@ -33,30 +33,30 @@ package at.bestsolution.efxclipse.tooling.css.cssDsl;
 public interface RGBColor extends Color
 {
   /**
-   * Returns the value of the '<em><b>Hex</b></em>' attribute.
+   * Returns the value of the '<em><b>Hexcolor</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Hex</em>' attribute isn't clear,
+   * If the meaning of the '<em>Hexcolor</em>' containment reference isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Hex</em>' attribute.
-   * @see #setHex(String)
-   * @see at.bestsolution.efxclipse.tooling.css.cssDsl.CssDslPackage#getRGBColor_Hex()
-   * @model
+   * @return the value of the '<em>Hexcolor</em>' containment reference.
+   * @see #setHexcolor(HexColor)
+   * @see at.bestsolution.efxclipse.tooling.css.cssDsl.CssDslPackage#getRGBColor_Hexcolor()
+   * @model containment="true"
    * @generated
    */
-  String getHex();
+  HexColor getHexcolor();
 
   /**
-   * Sets the value of the '{@link at.bestsolution.efxclipse.tooling.css.cssDsl.RGBColor#getHex <em>Hex</em>}' attribute.
+   * Sets the value of the '{@link at.bestsolution.efxclipse.tooling.css.cssDsl.RGBColor#getHexcolor <em>Hexcolor</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Hex</em>' attribute.
-   * @see #getHex()
+   * @param value the new value of the '<em>Hexcolor</em>' containment reference.
+   * @see #getHexcolor()
    * @generated
    */
-  void setHex(String value);
+  void setHexcolor(HexColor value);
 
   /**
    * Returns the value of the '<em><b>R</b></em>' attribute.

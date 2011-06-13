@@ -648,6 +648,15 @@ public interface CssDslFactory extends EFactory
   ColorFunction createColorFunction();
 
   /**
+   * Returns a new object of class '<em>Hex Color</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Hex Color</em>'.
+   * @generated
+   */
+  HexColor createHexColor();
+
+  /**
    * Returns a new object of class '<em>FONT</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->

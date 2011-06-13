@@ -19,6 +19,7 @@ import at.bestsolution.efxclipse.tooling.css.cssDsl.EffectDropShadow;
 import at.bestsolution.efxclipse.tooling.css.cssDsl.EffectInnerShadow;
 import at.bestsolution.efxclipse.tooling.css.cssDsl.HPosition;
 import at.bestsolution.efxclipse.tooling.css.cssDsl.HSBColor;
+import at.bestsolution.efxclipse.tooling.css.cssDsl.HexColor;
 import at.bestsolution.efxclipse.tooling.css.cssDsl.LinearGradient;
 import at.bestsolution.efxclipse.tooling.css.cssDsl.LookedUpColor;
 import at.bestsolution.efxclipse.tooling.css.cssDsl.MultiPaint;
@@ -577,6 +578,13 @@ public class CssDslPackageImpl extends EPackageImpl implements CssDslPackage
    * @generated
    */
   private EClass colorFunctionEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass hexColorEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -2654,9 +2662,9 @@ public class CssDslPackageImpl extends EPackageImpl implements CssDslPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getRGBColor_Hex()
+  public EReference getRGBColor_Hexcolor()
   {
-    return (EAttribute)rgbColorEClass.getEStructuralFeatures().get(0);
+    return (EReference)rgbColorEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -2827,6 +2835,26 @@ public class CssDslPackageImpl extends EPackageImpl implements CssDslPackage
   public EReference getColorFunction_StopColors()
   {
     return (EReference)colorFunctionEClass.getEStructuralFeatures().get(3);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getHexColor()
+  {
+    return hexColorEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getHexColor_Value()
+  {
+    return (EAttribute)hexColorEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -3233,7 +3261,7 @@ public class CssDslPackageImpl extends EPackageImpl implements CssDslPackage
     createEAttribute(namedColorEClass, NAMED_COLOR__VALUE);
 
     rgbColorEClass = createEClass(RGB_COLOR);
-    createEAttribute(rgbColorEClass, RGB_COLOR__HEX);
+    createEReference(rgbColorEClass, RGB_COLOR__HEXCOLOR);
     createEAttribute(rgbColorEClass, RGB_COLOR__R);
     createEAttribute(rgbColorEClass, RGB_COLOR__G);
     createEAttribute(rgbColorEClass, RGB_COLOR__B);
@@ -3253,6 +3281,9 @@ public class CssDslPackageImpl extends EPackageImpl implements CssDslPackage
     createEAttribute(colorFunctionEClass, COLOR_FUNCTION__MOD);
     createEAttribute(colorFunctionEClass, COLOR_FUNCTION__STOP_NUMBERS);
     createEReference(colorFunctionEClass, COLOR_FUNCTION__STOP_COLORS);
+
+    hexColorEClass = createEClass(HEX_COLOR);
+    createEAttribute(hexColorEClass, HEX_COLOR__VALUE);
 
     fontEClass = createEClass(FONT);
     createEAttribute(fontEClass, FONT__STYLE_OR_WEIGHT_STRING);
@@ -3617,7 +3648,7 @@ public class CssDslPackageImpl extends EPackageImpl implements CssDslPackage
     initEAttribute(getNamedColor_Value(), ecorePackage.getEString(), "value", null, 0, 1, NamedColor.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(rgbColorEClass, RGBColor.class, "RGBColor", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getRGBColor_Hex(), ecorePackage.getEString(), "hex", null, 0, 1, RGBColor.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getRGBColor_Hexcolor(), this.getHexColor(), null, "hexcolor", null, 0, 1, RGBColor.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getRGBColor_R(), ecorePackage.getEString(), "r", null, 0, 1, RGBColor.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getRGBColor_G(), ecorePackage.getEString(), "g", null, 0, 1, RGBColor.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getRGBColor_B(), ecorePackage.getEString(), "b", null, 0, 1, RGBColor.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -3637,6 +3668,9 @@ public class CssDslPackageImpl extends EPackageImpl implements CssDslPackage
     initEAttribute(getColorFunction_Mod(), ecorePackage.getEString(), "mod", null, 0, 1, ColorFunction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getColorFunction_StopNumbers(), ecorePackage.getEString(), "stopNumbers", null, 0, -1, ColorFunction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getColorFunction_StopColors(), this.getColor(), null, "stopColors", null, 0, -1, ColorFunction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(hexColorEClass, HexColor.class, "HexColor", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getHexColor_Value(), ecorePackage.getEString(), "value", null, 0, 1, HexColor.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(fontEClass, at.bestsolution.efxclipse.tooling.css.cssDsl.FONT.class, "FONT", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getFONT_StyleOrWeightString(), ecorePackage.getEString(), "styleOrWeightString", null, 0, 1, at.bestsolution.efxclipse.tooling.css.cssDsl.FONT.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

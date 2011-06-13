@@ -689,17 +689,17 @@ public class CssDslGrammarAccess extends AbstractGrammarElementFinder {
 		private final Group cGroup_3 = (Group)cAlternatives.eContents().get(3);
 		private final RuleCall cURIParserRuleCall_3_0 = (RuleCall)cGroup_3.eContents().get(0);
 		private final RuleCall cWSTerminalRuleCall_3_1 = (RuleCall)cGroup_3.eContents().get(1);
-		private final RuleCall cHEXCOLORParserRuleCall_4 = (RuleCall)cAlternatives.eContents().get(4);
+		private final Group cGroup_4 = (Group)cAlternatives.eContents().get(4);
+		private final Keyword cNumberSignKeyword_4_0 = (Keyword)cGroup_4.eContents().get(0);
+		private final RuleCall cHexdigitsTerminalRuleCall_4_1 = (RuleCall)cGroup_4.eContents().get(1);
 		
 		//term:
-		//	unary_operator? (NUMBER WS* | PERCENTAGE WS* | LENGTH WS* | EMS WS* | EXS WS* | ANGLE WS* | TIME WS* | FREQ WS*) |
-		//	STRING WS* | IDENT WS* | URI WS* | //| function
-		//	HEXCOLOR;
+		//	unary_operator? (NUMBER WS* | PERCENTAGE WS* | LENGTH WS* | EMS WS* | EXS WS* | ANGLE WS* | TIME WS* | FREQ WS*) //| function
+		//	| STRING WS* | IDENT WS* | URI WS* | "#" hexdigits;
 		public ParserRule getRule() { return rule; }
 
-		//unary_operator? (NUMBER WS* | PERCENTAGE WS* | LENGTH WS* | EMS WS* | EXS WS* | ANGLE WS* | TIME WS* | FREQ WS*) |
-		//STRING WS* | IDENT WS* | URI WS* | //| function
-		//HEXCOLOR
+		//unary_operator? (NUMBER WS* | PERCENTAGE WS* | LENGTH WS* | EMS WS* | EXS WS* | ANGLE WS* | TIME WS* | FREQ WS*) //| function
+		//| STRING WS* | IDENT WS* | URI WS* | "#" hexdigits
 		public Alternatives getAlternatives() { return cAlternatives; }
 
 		//unary_operator? (NUMBER WS* | PERCENTAGE WS* | LENGTH WS* | EMS WS* | EXS WS* | ANGLE WS* | TIME WS* | FREQ WS*)
@@ -810,9 +810,14 @@ public class CssDslGrammarAccess extends AbstractGrammarElementFinder {
 		//WS*
 		public RuleCall getWSTerminalRuleCall_3_1() { return cWSTerminalRuleCall_3_1; }
 
-		////| function
-		//HEXCOLOR
-		public RuleCall getHEXCOLORParserRuleCall_4() { return cHEXCOLORParserRuleCall_4; }
+		//"#" hexdigits
+		public Group getGroup_4() { return cGroup_4; }
+
+		//"#"
+		public Keyword getNumberSignKeyword_4_0() { return cNumberSignKeyword_4_0; }
+
+		//hexdigits
+		public RuleCall getHexdigitsTerminalRuleCall_4_1() { return cHexdigitsTerminalRuleCall_4_1; }
 	}
 
 	public class NumElements extends AbstractParserRuleElementFinder {
@@ -5819,8 +5824,8 @@ public class CssDslGrammarAccess extends AbstractGrammarElementFinder {
 	public class RGBColorElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "RGBColor");
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
-		private final Assignment cHexAssignment_0 = (Assignment)cAlternatives.eContents().get(0);
-		private final RuleCall cHexHEXCOLORParserRuleCall_0_0 = (RuleCall)cHexAssignment_0.eContents().get(0);
+		private final Assignment cHexcolorAssignment_0 = (Assignment)cAlternatives.eContents().get(0);
+		private final RuleCall cHexcolorHexColorParserRuleCall_0_0 = (RuleCall)cHexcolorAssignment_0.eContents().get(0);
 		private final Group cGroup_1 = (Group)cAlternatives.eContents().get(1);
 		private final Keyword cRgbKeyword_1_0 = (Keyword)cGroup_1.eContents().get(0);
 		private final Keyword cLeftParenthesisKeyword_1_1 = (Keyword)cGroup_1.eContents().get(1);
@@ -5885,21 +5890,21 @@ public class CssDslGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cRightParenthesisKeyword_4_12 = (Keyword)cGroup_4.eContents().get(12);
 		
 		//RGBColor:
-		//	hex=HEXCOLOR | "rgb" "(" WS* r=integer COMMA g=integer COMMA b=integer WS* ")" | "rgb" "(" rp=integer "%" COMMA
+		//	hexcolor=HexColor | "rgb" "(" WS* r=integer COMMA g=integer COMMA b=integer WS* ")" | "rgb" "(" rp=integer "%" COMMA
 		//	gp=integer "%" COMMA bp=integer "%" ")" | "rgba" "(" r=integer COMMA g=integer COMMA b=integer COMMA alpha=NUMBER ")"
 		//	| "rgba" "(" rp=integer "%" COMMA gp=integer "%" COMMA bp=integer "%" COMMA alpha=NUMBER ")";
 		public ParserRule getRule() { return rule; }
 
-		//hex=HEXCOLOR | "rgb" "(" WS* r=integer COMMA g=integer COMMA b=integer WS* ")" | "rgb" "(" rp=integer "%" COMMA
+		//hexcolor=HexColor | "rgb" "(" WS* r=integer COMMA g=integer COMMA b=integer WS* ")" | "rgb" "(" rp=integer "%" COMMA
 		//gp=integer "%" COMMA bp=integer "%" ")" | "rgba" "(" r=integer COMMA g=integer COMMA b=integer COMMA alpha=NUMBER ")" |
 		//"rgba" "(" rp=integer "%" COMMA gp=integer "%" COMMA bp=integer "%" COMMA alpha=NUMBER ")"
 		public Alternatives getAlternatives() { return cAlternatives; }
 
-		//hex=HEXCOLOR
-		public Assignment getHexAssignment_0() { return cHexAssignment_0; }
+		//hexcolor=HexColor
+		public Assignment getHexcolorAssignment_0() { return cHexcolorAssignment_0; }
 
-		//HEXCOLOR
-		public RuleCall getHexHEXCOLORParserRuleCall_0_0() { return cHexHEXCOLORParserRuleCall_0_0; }
+		//HexColor
+		public RuleCall getHexcolorHexColorParserRuleCall_0_0() { return cHexcolorHexColorParserRuleCall_0_0; }
 
 		//"rgb" "(" WS* r=integer COMMA g=integer COMMA b=integer WS* ")"
 		public Group getGroup_1() { return cGroup_1; }
@@ -6322,6 +6327,30 @@ public class CssDslGrammarAccess extends AbstractGrammarElementFinder {
 
 		//")"
 		public Keyword getRightParenthesisKeyword_1_5_4() { return cRightParenthesisKeyword_1_5_4; }
+	}
+
+	public class HexColorElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "HexColor");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cNumberSignKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Assignment cValueAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cValueHexdigitsTerminalRuleCall_1_0 = (RuleCall)cValueAssignment_1.eContents().get(0);
+		
+		//HexColor:
+		//	"#" value=hexdigits;
+		public ParserRule getRule() { return rule; }
+
+		//"#" value=hexdigits
+		public Group getGroup() { return cGroup; }
+
+		//"#"
+		public Keyword getNumberSignKeyword_0() { return cNumberSignKeyword_0; }
+
+		//value=hexdigits
+		public Assignment getValueAssignment_1() { return cValueAssignment_1; }
+
+		//hexdigits
+		public RuleCall getValueHexdigitsTerminalRuleCall_1_0() { return cValueHexdigitsTerminalRuleCall_1_0; }
 	}
 
 	public class URIElements extends AbstractParserRuleElementFinder {
@@ -6789,27 +6818,6 @@ public class CssDslGrammarAccess extends AbstractGrammarElementFinder {
 		//"two-pass-box"
 		public Keyword getTwoPassBoxKeyword_3() { return cTwoPassBoxKeyword_3; }
 	}
-
-	public class HEXCOLORElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "HEXCOLOR");
-		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Keyword cNumberSignKeyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final RuleCall cIDENTTerminalRuleCall_1 = (RuleCall)cGroup.eContents().get(1);
-		
-		////((hexdigit hexdigit hexdigit) | (hexdigit hexdigit hexdigit hexdigit hexdigit hexdigit));
-		//HEXCOLOR:
-		//	"#" IDENT;
-		public ParserRule getRule() { return rule; }
-
-		//"#" IDENT
-		public Group getGroup() { return cGroup; }
-
-		//"#"
-		public Keyword getNumberSignKeyword_0() { return cNumberSignKeyword_0; }
-
-		//IDENT
-		public RuleCall getIDENTTerminalRuleCall_1() { return cIDENTTerminalRuleCall_1; }
-	}
 	
 	
 	public class HPositionElements extends AbstractEnumRuleElementFinder {
@@ -6946,6 +6954,7 @@ public class CssDslGrammarAccess extends AbstractGrammarElementFinder {
 	private RGBColorElements pRGBColor;
 	private HSBColorElements pHSBColor;
 	private ColorFunctionElements pColorFunction;
+	private HexColorElements pHexColor;
 	private URIElements pURI;
 	private NUMBERElements pNUMBER;
 	private PERCENTAGEElements pPERCENTAGE;
@@ -6961,9 +6970,9 @@ public class CssDslGrammarAccess extends AbstractGrammarElementFinder {
 	private FONTSTYLEElements pFONTSTYLE;
 	private SIZEElements pSIZE;
 	private BLURElements pBLUR;
-	private HEXCOLORElements pHEXCOLOR;
 	private TerminalRule tInteger;
 	private TerminalRule tReal;
+	private TerminalRule tHexdigits;
 	private TerminalRule tIDENT;
 	private TerminalRule tCOMMA;
 	private TerminalRule tML_COMMENT;
@@ -7165,9 +7174,8 @@ public class CssDslGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//term:
-	//	unary_operator? (NUMBER WS* | PERCENTAGE WS* | LENGTH WS* | EMS WS* | EXS WS* | ANGLE WS* | TIME WS* | FREQ WS*) |
-	//	STRING WS* | IDENT WS* | URI WS* | //| function
-	//	HEXCOLOR;
+	//	unary_operator? (NUMBER WS* | PERCENTAGE WS* | LENGTH WS* | EMS WS* | EXS WS* | ANGLE WS* | TIME WS* | FREQ WS*) //| function
+	//	| STRING WS* | IDENT WS* | URI WS* | "#" hexdigits;
 	public TermElements getTermAccess() {
 		return (pTerm != null) ? pTerm : (pTerm = new TermElements());
 	}
@@ -7859,7 +7867,7 @@ public class CssDslGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//RGBColor:
-	//	hex=HEXCOLOR | "rgb" "(" WS* r=integer COMMA g=integer COMMA b=integer WS* ")" | "rgb" "(" rp=integer "%" COMMA
+	//	hexcolor=HexColor | "rgb" "(" WS* r=integer COMMA g=integer COMMA b=integer WS* ")" | "rgb" "(" rp=integer "%" COMMA
 	//	gp=integer "%" COMMA bp=integer "%" ")" | "rgba" "(" r=integer COMMA g=integer COMMA b=integer COMMA alpha=NUMBER ")"
 	//	| "rgba" "(" rp=integer "%" COMMA gp=integer "%" COMMA bp=integer "%" COMMA alpha=NUMBER ")";
 	public RGBColorElements getRGBColorAccess() {
@@ -7890,6 +7898,16 @@ public class CssDslGrammarAccess extends AbstractGrammarElementFinder {
 	
 	public ParserRule getColorFunctionRule() {
 		return getColorFunctionAccess().getRule();
+	}
+
+	//HexColor:
+	//	"#" value=hexdigits;
+	public HexColorElements getHexColorAccess() {
+		return (pHexColor != null) ? pHexColor : (pHexColor = new HexColorElements());
+	}
+	
+	public ParserRule getHexColorRule() {
+		return getHexColorAccess().getRule();
 	}
 
 	//URI:
@@ -8043,18 +8061,6 @@ public class CssDslGrammarAccess extends AbstractGrammarElementFinder {
 		return getBLURAccess().getRule();
 	}
 
-	////((hexdigit hexdigit hexdigit) | (hexdigit hexdigit hexdigit hexdigit hexdigit hexdigit));
-	//HEXCOLOR:
-	//	"#" IDENT;
-	public HEXCOLORElements getHEXCOLORAccess() {
-		return (pHEXCOLOR != null) ? pHEXCOLOR : (pHEXCOLOR = new HEXCOLORElements());
-	}
-	
-	public ParserRule getHEXCOLORRule() {
-		return getHEXCOLORAccess().getRule();
-	}
-
-	////terminal digit:('0'..'9');
 	//terminal integer:
 	//	"0".."9"+;
 	public TerminalRule getIntegerRule() {
@@ -8067,7 +8073,12 @@ public class CssDslGrammarAccess extends AbstractGrammarElementFinder {
 		return (tReal != null) ? tReal : (tReal = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "real"));
 	} 
 
-	////terminal HEXCOLOR: '#' IDENT;
+	//terminal hexdigits:
+	//	("0".."9" | "a".."f" | "A".."F")+;
+	public TerminalRule getHexdigitsRule() {
+		return (tHexdigits != null) ? tHexdigits : (tHexdigits = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "hexdigits"));
+	} 
+
 	//terminal IDENT:
 	//	("_" | "a".."z" | "A".."Z") ("_" | "-" | "a".."z" | "A".."Z" | "0..9")*;
 	public TerminalRule getIDENTRule() {

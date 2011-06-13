@@ -161,6 +161,7 @@ public class CssDslParser extends AbstractContentAssistParser {
 					put(grammarAccess.getTermAccess().getGroup_1(), "rule__Term__Group_1__0");
 					put(grammarAccess.getTermAccess().getGroup_2(), "rule__Term__Group_2__0");
 					put(grammarAccess.getTermAccess().getGroup_3(), "rule__Term__Group_3__0");
+					put(grammarAccess.getTermAccess().getGroup_4(), "rule__Term__Group_4__0");
 					put(grammarAccess.getFx_font_propertyAccess().getGroup(), "rule__Fx_font_property__Group__0");
 					put(grammarAccess.getFx_font_family_propertyAccess().getGroup(), "rule__Fx_font_family_property__Group__0");
 					put(grammarAccess.getFx_font_size_propertyAccess().getGroup(), "rule__Fx_font_size_property__Group__0");
@@ -243,6 +244,7 @@ public class CssDslParser extends AbstractContentAssistParser {
 					put(grammarAccess.getColorFunctionAccess().getGroup_0(), "rule__ColorFunction__Group_0__0");
 					put(grammarAccess.getColorFunctionAccess().getGroup_1(), "rule__ColorFunction__Group_1__0");
 					put(grammarAccess.getColorFunctionAccess().getGroup_1_5(), "rule__ColorFunction__Group_1_5__0");
+					put(grammarAccess.getHexColorAccess().getGroup(), "rule__HexColor__Group__0");
 					put(grammarAccess.getURIAccess().getGroup(), "rule__URI__Group__0");
 					put(grammarAccess.getPERCENTAGEAccess().getGroup(), "rule__PERCENTAGE__Group__0");
 					put(grammarAccess.getEMSAccess().getGroup(), "rule__EMS__Group__0");
@@ -254,7 +256,6 @@ public class CssDslParser extends AbstractContentAssistParser {
 					put(grammarAccess.getFONTAccess().getGroup(), "rule__FONT__Group__0");
 					put(grammarAccess.getFONTAccess().getGroup_0(), "rule__FONT__Group_0__0");
 					put(grammarAccess.getSIZEAccess().getGroup(), "rule__SIZE__Group__0");
-					put(grammarAccess.getHEXCOLORAccess().getGroup(), "rule__HEXCOLOR__Group__0");
 					put(grammarAccess.getStylesheetAccess().getRulesetAssignment_0(), "rule__Stylesheet__RulesetAssignment_0");
 					put(grammarAccess.getStylesheetAccess().getMediaAssignment_1(), "rule__Stylesheet__MediaAssignment_1");
 					put(grammarAccess.getMediaAccess().getMedialistAssignment_2(), "rule__Media__MedialistAssignment_2");
@@ -418,7 +419,7 @@ public class CssDslParser extends AbstractContentAssistParser {
 					put(grammarAccess.getSizeFillAccess().getFillAssignment_2(), "rule__SizeFill__FillAssignment_2");
 					put(grammarAccess.getLookedUpColorAccess().getValueAssignment(), "rule__LookedUpColor__ValueAssignment");
 					put(grammarAccess.getNamedColorAccess().getValueAssignment(), "rule__NamedColor__ValueAssignment");
-					put(grammarAccess.getRGBColorAccess().getHexAssignment_0(), "rule__RGBColor__HexAssignment_0");
+					put(grammarAccess.getRGBColorAccess().getHexcolorAssignment_0(), "rule__RGBColor__HexcolorAssignment_0");
 					put(grammarAccess.getRGBColorAccess().getRAssignment_1_3(), "rule__RGBColor__RAssignment_1_3");
 					put(grammarAccess.getRGBColorAccess().getGAssignment_1_5(), "rule__RGBColor__GAssignment_1_5");
 					put(grammarAccess.getRGBColorAccess().getBAssignment_1_7(), "rule__RGBColor__BAssignment_1_7");
@@ -445,6 +446,7 @@ public class CssDslParser extends AbstractContentAssistParser {
 					put(grammarAccess.getColorFunctionAccess().getOrigAssignment_1_2(), "rule__ColorFunction__OrigAssignment_1_2");
 					put(grammarAccess.getColorFunctionAccess().getStopNumbersAssignment_1_5_1(), "rule__ColorFunction__StopNumbersAssignment_1_5_1");
 					put(grammarAccess.getColorFunctionAccess().getStopColorsAssignment_1_5_3(), "rule__ColorFunction__StopColorsAssignment_1_5_3");
+					put(grammarAccess.getHexColorAccess().getValueAssignment_1(), "rule__HexColor__ValueAssignment_1");
 					put(grammarAccess.getFONTAccess().getStyleOrWeightStringAssignment_0_0_0(), "rule__FONT__StyleOrWeightStringAssignment_0_0_0");
 					put(grammarAccess.getFONTAccess().getWeightAssignment_0_0_1(), "rule__FONT__WeightAssignment_0_0_1");
 					put(grammarAccess.getFONTAccess().getSizeAssignment_1(), "rule__FONT__SizeAssignment_1");
