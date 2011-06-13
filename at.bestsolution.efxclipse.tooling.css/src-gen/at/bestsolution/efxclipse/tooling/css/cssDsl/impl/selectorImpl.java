@@ -34,6 +34,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * The following features are implemented:
  * <ul>
  *   <li>{@link at.bestsolution.efxclipse.tooling.css.cssDsl.impl.selectorImpl#getSimpleselectors <em>Simpleselectors</em>}</li>
+ *   <li>{@link at.bestsolution.efxclipse.tooling.css.cssDsl.impl.selectorImpl#getCombinator <em>Combinator</em>}</li>
  *   <li>{@link at.bestsolution.efxclipse.tooling.css.cssDsl.impl.selectorImpl#getSelector <em>Selector</em>}</li>
  * </ul>
  * </p>
@@ -51,6 +52,26 @@ public class selectorImpl extends MinimalEObjectImpl.Container implements select
    * @ordered
    */
   protected EList<simple_selector> simpleselectors;
+
+  /**
+   * The default value of the '{@link #getCombinator() <em>Combinator</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getCombinator()
+   * @generated
+   * @ordered
+   */
+  protected static final String COMBINATOR_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getCombinator() <em>Combinator</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getCombinator()
+   * @generated
+   * @ordered
+   */
+  protected String combinator = COMBINATOR_EDEFAULT;
 
   /**
    * The cached value of the '{@link #getSelector() <em>Selector</em>}' containment reference.
@@ -95,6 +116,29 @@ public class selectorImpl extends MinimalEObjectImpl.Container implements select
       simpleselectors = new EObjectContainmentEList<simple_selector>(simple_selector.class, this, CssDslPackage.SELECTOR__SIMPLESELECTORS);
     }
     return simpleselectors;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public String getCombinator()
+  {
+    return combinator;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setCombinator(String newCombinator)
+  {
+    String oldCombinator = combinator;
+    combinator = newCombinator;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, CssDslPackage.SELECTOR__COMBINATOR, oldCombinator, combinator));
   }
 
   /**
@@ -175,6 +219,8 @@ public class selectorImpl extends MinimalEObjectImpl.Container implements select
     {
       case CssDslPackage.SELECTOR__SIMPLESELECTORS:
         return getSimpleselectors();
+      case CssDslPackage.SELECTOR__COMBINATOR:
+        return getCombinator();
       case CssDslPackage.SELECTOR__SELECTOR:
         return getSelector();
     }
@@ -196,6 +242,9 @@ public class selectorImpl extends MinimalEObjectImpl.Container implements select
         getSimpleselectors().clear();
         getSimpleselectors().addAll((Collection<? extends simple_selector>)newValue);
         return;
+      case CssDslPackage.SELECTOR__COMBINATOR:
+        setCombinator((String)newValue);
+        return;
       case CssDslPackage.SELECTOR__SELECTOR:
         setSelector((selector)newValue);
         return;
@@ -216,6 +265,9 @@ public class selectorImpl extends MinimalEObjectImpl.Container implements select
       case CssDslPackage.SELECTOR__SIMPLESELECTORS:
         getSimpleselectors().clear();
         return;
+      case CssDslPackage.SELECTOR__COMBINATOR:
+        setCombinator(COMBINATOR_EDEFAULT);
+        return;
       case CssDslPackage.SELECTOR__SELECTOR:
         setSelector((selector)null);
         return;
@@ -235,10 +287,29 @@ public class selectorImpl extends MinimalEObjectImpl.Container implements select
     {
       case CssDslPackage.SELECTOR__SIMPLESELECTORS:
         return simpleselectors != null && !simpleselectors.isEmpty();
+      case CssDslPackage.SELECTOR__COMBINATOR:
+        return COMBINATOR_EDEFAULT == null ? combinator != null : !COMBINATOR_EDEFAULT.equals(combinator);
       case CssDslPackage.SELECTOR__SELECTOR:
         return selector != null;
     }
     return super.eIsSet(featureID);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public String toString()
+  {
+    if (eIsProxy()) return super.toString();
+
+    StringBuffer result = new StringBuffer(super.toString());
+    result.append(" (combinator: ");
+    result.append(combinator);
+    result.append(')');
+    return result.toString();
   }
 
 } //selectorImpl

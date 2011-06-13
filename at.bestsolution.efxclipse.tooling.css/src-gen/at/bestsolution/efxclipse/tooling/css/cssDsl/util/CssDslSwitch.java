@@ -527,6 +527,13 @@ public class CssDslSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case CssDslPackage.POINT_VALUE:
+      {
+        PointValue pointValue = (PointValue)theEObject;
+        T result = casePointValue(pointValue);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       case CssDslPackage.REPEAT_STYLE:
       {
         RepeatStyle repeatStyle = (RepeatStyle)theEObject;
@@ -656,6 +663,13 @@ public class CssDslSwitch<T> extends Switch<T>
       {
         FONTSTYLE fontstyle = (FONTSTYLE)theEObject;
         T result = caseFONTSTYLE(fontstyle);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case CssDslPackage.SIZE_TYPE:
+      {
+        SizeType sizeType = (SizeType)theEObject;
+        T result = caseSizeType(sizeType);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -1512,6 +1526,22 @@ public class CssDslSwitch<T> extends Switch<T>
   }
 
   /**
+   * Returns the result of interpreting the object as an instance of '<em>Point Value</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Point Value</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T casePointValue(PointValue object)
+  {
+    return null;
+  }
+
+  /**
    * Returns the result of interpreting the object as an instance of '<em>Repeat Style</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
@@ -1779,6 +1809,22 @@ public class CssDslSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseFONTSTYLE(FONTSTYLE object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Size Type</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Size Type</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseSizeType(SizeType object)
   {
     return null;
   }

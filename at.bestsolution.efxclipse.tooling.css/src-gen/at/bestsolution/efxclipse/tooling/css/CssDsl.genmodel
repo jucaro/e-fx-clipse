@@ -30,6 +30,7 @@
     </genClasses>
     <genClasses ecoreClass="platform:/resource/at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/CssDsl.ecore#//selector">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/CssDsl.ecore#//selector/simpleselectors"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/CssDsl.ecore#//selector/combinator"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/CssDsl.ecore#//selector/selector"/>
     </genClasses>
     <genClasses ecoreClass="platform:/resource/at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/CssDsl.ecore#//simple_selector">
@@ -209,23 +210,23 @@
     </genClasses>
     <genClasses ecoreClass="platform:/resource/at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/CssDsl.ecore#//Paint"/>
     <genClasses ecoreClass="platform:/resource/at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/CssDsl.ecore#//LinearGradient">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/CssDsl.ecore#//LinearGradient/x1"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/CssDsl.ecore#//LinearGradient/y1"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/CssDsl.ecore#//LinearGradient/x2"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/CssDsl.ecore#//LinearGradient/y2"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/CssDsl.ecore#//LinearGradient/start"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/CssDsl.ecore#//LinearGradient/end"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/CssDsl.ecore#//LinearGradient/stops"/>
     </genClasses>
     <genClasses ecoreClass="platform:/resource/at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/CssDsl.ecore#//RadialGradient">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/CssDsl.ecore#//RadialGradient/cx"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/CssDsl.ecore#//RadialGradient/cy"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/CssDsl.ecore#//RadialGradient/radius"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/CssDsl.ecore#//RadialGradient/fx"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/CssDsl.ecore#//RadialGradient/fy"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/CssDsl.ecore#//RadialGradient/center"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/CssDsl.ecore#//RadialGradient/radius"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/CssDsl.ecore#//RadialGradient/focus"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/CssDsl.ecore#//RadialGradient/stops"/>
     </genClasses>
     <genClasses ecoreClass="platform:/resource/at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/CssDsl.ecore#//StopValue">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/CssDsl.ecore#//StopValue/pos"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/CssDsl.ecore#//StopValue/pos"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/CssDsl.ecore#//StopValue/color"/>
+    </genClasses>
+    <genClasses ecoreClass="platform:/resource/at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/CssDsl.ecore#//PointValue">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/CssDsl.ecore#//PointValue/x"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/CssDsl.ecore#//PointValue/y"/>
     </genClasses>
     <genClasses ecoreClass="platform:/resource/at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/CssDsl.ecore#//RepeatStyle">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/CssDsl.ecore#//RepeatStyle/v"/>
@@ -304,6 +305,9 @@
     </genClasses>
     <genClasses ecoreClass="platform:/resource/at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/CssDsl.ecore#//FONTSTYLE">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/CssDsl.ecore#//FONTSTYLE/value"/>
+    </genClasses>
+    <genClasses ecoreClass="platform:/resource/at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/CssDsl.ecore#//SizeType">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/CssDsl.ecore#//SizeType/value"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

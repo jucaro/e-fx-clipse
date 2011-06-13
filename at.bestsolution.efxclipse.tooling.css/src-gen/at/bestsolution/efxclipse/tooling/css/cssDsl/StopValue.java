@@ -28,30 +28,30 @@ import org.eclipse.emf.ecore.EObject;
 public interface StopValue extends EObject
 {
   /**
-   * Returns the value of the '<em><b>Pos</b></em>' attribute.
+   * Returns the value of the '<em><b>Pos</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Pos</em>' attribute isn't clear,
+   * If the meaning of the '<em>Pos</em>' containment reference isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Pos</em>' attribute.
-   * @see #setPos(String)
+   * @return the value of the '<em>Pos</em>' containment reference.
+   * @see #setPos(SizeType)
    * @see at.bestsolution.efxclipse.tooling.css.cssDsl.CssDslPackage#getStopValue_Pos()
-   * @model
+   * @model containment="true"
    * @generated
    */
-  String getPos();
+  SizeType getPos();
 
   /**
-   * Sets the value of the '{@link at.bestsolution.efxclipse.tooling.css.cssDsl.StopValue#getPos <em>Pos</em>}' attribute.
+   * Sets the value of the '{@link at.bestsolution.efxclipse.tooling.css.cssDsl.StopValue#getPos <em>Pos</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Pos</em>' attribute.
+   * @param value the new value of the '<em>Pos</em>' containment reference.
    * @see #getPos()
    * @generated
    */
-  void setPos(String value);
+  void setPos(SizeType value);
 
   /**
    * Returns the value of the '<em><b>Color</b></em>' containment reference.

@@ -35,7 +35,7 @@ ruleset:
 ;
 
 selector:
-	simpleselectors+=simple_selector ( combinator selector=selector | WS+ ( combinator? selector=selector )? )?
+	simpleselectors+=simple_selector ( combinator=combinator selector=selector | WS+ ( combinator=combinator? selector=selector )? )?
 ;
 
 simple_selector:
@@ -421,15 +421,19 @@ Paint:
 
 
 LinearGradient:
-	'linear' WS* '(' x1=SIZE COMMA y1=SIZE ')' WS* 'to' WS* '(' x2=SIZE COMMA y2=SIZE ')' WS* 'stops' ( WS* '(' stops+=StopValue ')' )+ ( WS+ ('repeat' | 'reflect') )?
+	'linear' WS* '(' start=PointValue ')' WS* 'to' WS* '(' end=PointValue ')' WS* 'stops' ( WS* '(' stops+=StopValue ')' )+ ( WS+ ('repeat' | 'reflect') )?
 ;
 
 RadialGradient:
-	'radial' WS* ( '(' cx=SIZE COMMA cy=SIZE ')' COMMA )? radius=SIZE ( WS* 'focus' WS* '(' WS* fx=SIZE COMMA fy=SIZE WS* ')' ) WS* 'stops' ( WS* '(' stops+=StopValue ')' )+ ( WS+ ( 'repeat' | 'reflect' ))?
+	'radial' WS* ( '(' center=PointValue ')' COMMA )? radius=SizeType ( WS* 'focus' WS* '(' WS* focus=PointValue WS* ')' ) WS* 'stops' ( WS* '(' stops+=StopValue ')' )+ ( WS+ ( 'repeat' | 'reflect' ))?
 ;
 
 StopValue:
-	pos=SIZE COMMA color=Color
+	pos=SizeType COMMA color=Color
+;
+
+PointValue:
+	x=SizeType COMMA y=SizeType
 ;
 
 enum HPosition:
@@ -594,6 +598,10 @@ FONTSTYLE:
 
 SIZE:
 	unary_operator? (NUMBER|PERCENTAGE|EMS|EXS|LENGTH)
+;
+
+SizeType:
+	value=SIZE
 ;
 
 BLUR:

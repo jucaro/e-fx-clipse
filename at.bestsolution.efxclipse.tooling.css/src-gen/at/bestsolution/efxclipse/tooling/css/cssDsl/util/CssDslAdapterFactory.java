@@ -344,6 +344,11 @@ public class CssDslAdapterFactory extends AdapterFactoryImpl
         return createStopValueAdapter();
       }
       @Override
+      public Adapter casePointValue(PointValue object)
+      {
+        return createPointValueAdapter();
+      }
+      @Override
       public Adapter caseRepeatStyle(RepeatStyle object)
       {
         return createRepeatStyleAdapter();
@@ -427,6 +432,11 @@ public class CssDslAdapterFactory extends AdapterFactoryImpl
       public Adapter caseFONTSTYLE(FONTSTYLE object)
       {
         return createFONTSTYLEAdapter();
+      }
+      @Override
+      public Adapter caseSizeType(SizeType object)
+      {
+        return createSizeTypeAdapter();
       }
       @Override
       public Adapter defaultCase(EObject object)
@@ -1246,6 +1256,21 @@ public class CssDslAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
+   * Creates a new adapter for an object of class '{@link at.bestsolution.efxclipse.tooling.css.cssDsl.PointValue <em>Point Value</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see at.bestsolution.efxclipse.tooling.css.cssDsl.PointValue
+   * @generated
+   */
+  public Adapter createPointValueAdapter()
+  {
+    return null;
+  }
+
+  /**
    * Creates a new adapter for an object of class '{@link at.bestsolution.efxclipse.tooling.css.cssDsl.RepeatStyle <em>Repeat Style</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
@@ -1496,6 +1521,21 @@ public class CssDslAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createFONTSTYLEAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link at.bestsolution.efxclipse.tooling.css.cssDsl.SizeType <em>Size Type</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see at.bestsolution.efxclipse.tooling.css.cssDsl.SizeType
+   * @generated
+   */
+  public Adapter createSizeTypeAdapter()
   {
     return null;
   }

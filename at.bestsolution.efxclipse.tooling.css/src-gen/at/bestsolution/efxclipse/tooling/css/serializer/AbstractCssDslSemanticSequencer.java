@@ -16,10 +16,12 @@ import at.bestsolution.efxclipse.tooling.css.cssDsl.LinearGradient;
 import at.bestsolution.efxclipse.tooling.css.cssDsl.LookedUpColor;
 import at.bestsolution.efxclipse.tooling.css.cssDsl.MultiPaint;
 import at.bestsolution.efxclipse.tooling.css.cssDsl.NamedColor;
+import at.bestsolution.efxclipse.tooling.css.cssDsl.PointValue;
 import at.bestsolution.efxclipse.tooling.css.cssDsl.RGBColor;
 import at.bestsolution.efxclipse.tooling.css.cssDsl.RadialGradient;
 import at.bestsolution.efxclipse.tooling.css.cssDsl.RepeatStyle;
 import at.bestsolution.efxclipse.tooling.css.cssDsl.SizeFill;
+import at.bestsolution.efxclipse.tooling.css.cssDsl.SizeType;
 import at.bestsolution.efxclipse.tooling.css.cssDsl.StopValue;
 import at.bestsolution.efxclipse.tooling.css.cssDsl.URLType;
 import at.bestsolution.efxclipse.tooling.css.cssDsl.css_generic_declaration;
@@ -210,6 +212,12 @@ public class AbstractCssDslSemanticSequencer extends AbstractSemanticSequencer {
 					return; 
 				}
 				else break;
+			case CssDslPackage.POINT_VALUE:
+				if(context == grammarAccess.getPointValueRule()) {
+					sequence_PointValue_PointValue(context, (PointValue) semanticObject); 
+					return; 
+				}
+				else break;
 			case CssDslPackage.RGB_COLOR:
 				if(context == grammarAccess.getPaintRule() ||
 				   context == grammarAccess.getColorRule() ||
@@ -234,6 +242,12 @@ public class AbstractCssDslSemanticSequencer extends AbstractSemanticSequencer {
 			case CssDslPackage.SIZE_FILL:
 				if(context == grammarAccess.getSizeFillRule()) {
 					sequence_SizeFill_SizeFill(context, (SizeFill) semanticObject); 
+					return; 
+				}
+				else break;
+			case CssDslPackage.SIZE_TYPE:
+				if(context == grammarAccess.getSizeTypeRule()) {
+					sequence_SizeType_SizeType(context, (SizeType) semanticObject); 
 					return; 
 				}
 				else break;
@@ -886,13 +900,11 @@ public class AbstractCssDslSemanticSequencer extends AbstractSemanticSequencer {
 	
 	/**
 	 * Constraint:
-	 *     (x1=SIZE y1=SIZE x2=SIZE y2=SIZE stops+=StopValue+)
+	 *     (start=PointValue end=PointValue stops+=StopValue+)
 	 *
 	 * Features:
-	 *    x1[1, 1]
-	 *    y1[1, 1]
-	 *    x2[1, 1]
-	 *    y2[1, 1]
+	 *    start[1, 1]
+	 *    end[1, 1]
 	 *    stops[1, *]
 	 */
 	protected void sequence_LinearGradient_LinearGradient(EObject context, LinearGradient semanticObject) {
@@ -1087,6 +1099,29 @@ public class AbstractCssDslSemanticSequencer extends AbstractSemanticSequencer {
 	
 	/**
 	 * Constraint:
+	 *     (x=SizeType y=SizeType)
+	 *
+	 * Features:
+	 *    x[1, 1]
+	 *    y[1, 1]
+	 */
+	protected void sequence_PointValue_PointValue(EObject context, PointValue semanticObject) {
+		if(errorAcceptor != null) {
+			if(transientValues.isValueTransient(semanticObject, CssDslPackage.Literals.POINT_VALUE__X) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, CssDslPackage.Literals.POINT_VALUE__X));
+			if(transientValues.isValueTransient(semanticObject, CssDslPackage.Literals.POINT_VALUE__Y) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, CssDslPackage.Literals.POINT_VALUE__Y));
+		}
+		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
+		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
+		feeder.accept(grammarAccess.getPointValueAccess().getXSizeTypeParserRuleCall_0_0(), semanticObject.getX());
+		feeder.accept(grammarAccess.getPointValueAccess().getYSizeTypeParserRuleCall_2_0(), semanticObject.getY());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Constraint:
 	 *     (
 	 *         hexcolor=HexColor | 
 	 *         (r=integer g=integer b=integer) | 
@@ -1181,18 +1216,12 @@ public class AbstractCssDslSemanticSequencer extends AbstractSemanticSequencer {
 	
 	/**
 	 * Constraint:
-	 *     ((cx=SIZE cy=SIZE)? radius=SIZE fx=SIZE fy=SIZE stops+=StopValue+)
+	 *     (center=PointValue? radius=SizeType focus=PointValue stops+=StopValue+)
 	 *
 	 * Features:
-	 *    cx[0, 1]
-	 *         EXCLUDE_IF_UNSET cy
-	 *         MANDATORY_IF_SET cy
-	 *    cy[0, 1]
-	 *         EXCLUDE_IF_UNSET cx
-	 *         MANDATORY_IF_SET cx
+	 *    center[0, 1]
 	 *    radius[1, 1]
-	 *    fx[1, 1]
-	 *    fy[1, 1]
+	 *    focus[1, 1]
 	 *    stops[1, *]
 	 */
 	protected void sequence_RadialGradient_RadialGradient(EObject context, RadialGradient semanticObject) {
@@ -1234,7 +1263,26 @@ public class AbstractCssDslSemanticSequencer extends AbstractSemanticSequencer {
 	
 	/**
 	 * Constraint:
-	 *     (pos=SIZE color=Color)
+	 *     value=SIZE
+	 *
+	 * Features:
+	 *    value[1, 1]
+	 */
+	protected void sequence_SizeType_SizeType(EObject context, SizeType semanticObject) {
+		if(errorAcceptor != null) {
+			if(transientValues.isValueTransient(semanticObject, CssDslPackage.Literals.SIZE_TYPE__VALUE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, CssDslPackage.Literals.SIZE_TYPE__VALUE));
+		}
+		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
+		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
+		feeder.accept(grammarAccess.getSizeTypeAccess().getValueSIZEParserRuleCall_0(), semanticObject.getValue());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     (pos=SizeType color=Color)
 	 *
 	 * Features:
 	 *    pos[1, 1]
@@ -1249,7 +1297,7 @@ public class AbstractCssDslSemanticSequencer extends AbstractSemanticSequencer {
 		}
 		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
 		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
-		feeder.accept(grammarAccess.getStopValueAccess().getPosSIZEParserRuleCall_0_0(), semanticObject.getPos());
+		feeder.accept(grammarAccess.getStopValueAccess().getPosSizeTypeParserRuleCall_0_0(), semanticObject.getPos());
 		feeder.accept(grammarAccess.getStopValueAccess().getColorColorParserRuleCall_2_0(), semanticObject.getColor());
 		feeder.finish();
 	}
@@ -2102,11 +2150,12 @@ public class AbstractCssDslSemanticSequencer extends AbstractSemanticSequencer {
 	
 	/**
 	 * Constraint:
-	 *     (simpleselectors+=simple_selector (selector=selector | selector=selector?)?)
+	 *     (simpleselectors+=simple_selector ((combinator=combinator selector=selector) | (combinator=combinator? selector=selector)?)?)
 	 *
 	 * Features:
 	 *    simpleselectors[1, 1]
-	 *    selector[0, 2]
+	 *    combinator[1, 2]
+	 *    selector[1, 2]
 	 */
 	protected void sequence_selector_selector(EObject context, selector semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);

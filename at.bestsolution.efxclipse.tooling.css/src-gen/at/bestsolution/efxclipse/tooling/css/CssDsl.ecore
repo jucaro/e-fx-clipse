@@ -29,6 +29,7 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="simpleselectors" upperBound="-1"
         eType="ecore:EClass platform:/resource/at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/CssDsl.ecore#//simple_selector"
         containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="combinator" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="selector" eType="ecore:EClass platform:/resource/at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/CssDsl.ecore#//selector"
         containment="true"/>
   </eClassifiers>
@@ -241,27 +242,35 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Paint"/>
   <eClassifiers xsi:type="ecore:EClass" name="LinearGradient" eSuperTypes="platform:/resource/at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/CssDsl.ecore#//Paint">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="x1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="y1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="x2" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="y2" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="start" eType="ecore:EClass platform:/resource/at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/CssDsl.ecore#//PointValue"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="end" eType="ecore:EClass platform:/resource/at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/CssDsl.ecore#//PointValue"
+        containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="stops" upperBound="-1"
         eType="ecore:EClass platform:/resource/at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/CssDsl.ecore#//StopValue"
         containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="RadialGradient" eSuperTypes="platform:/resource/at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/CssDsl.ecore#//Paint">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="cx" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="cy" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="radius" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="fx" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="fy" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="center" eType="ecore:EClass platform:/resource/at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/CssDsl.ecore#//PointValue"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="radius" eType="ecore:EClass platform:/resource/at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/CssDsl.ecore#//SizeType"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="focus" eType="ecore:EClass platform:/resource/at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/CssDsl.ecore#//PointValue"
+        containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="stops" upperBound="-1"
         eType="ecore:EClass platform:/resource/at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/CssDsl.ecore#//StopValue"
         containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="StopValue">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="pos" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="pos" eType="ecore:EClass platform:/resource/at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/CssDsl.ecore#//SizeType"
+        containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="color" eType="ecore:EClass platform:/resource/at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/CssDsl.ecore#//Color"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="PointValue">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="x" eType="ecore:EClass platform:/resource/at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/CssDsl.ecore#//SizeType"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="y" eType="ecore:EClass platform:/resource/at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/CssDsl.ecore#//SizeType"
         containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="HPosition">
@@ -354,6 +363,9 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="valueInt" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="FONTSTYLE">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SizeType">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
 </ecore:EPackage>

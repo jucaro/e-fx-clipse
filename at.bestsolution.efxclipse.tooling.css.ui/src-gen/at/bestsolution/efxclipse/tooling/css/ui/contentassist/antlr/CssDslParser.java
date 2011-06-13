@@ -86,7 +86,7 @@ public class CssDslParser extends AbstractContentAssistParser {
 					put(grammarAccess.getFx_string_propertyAccess().getAlternatives_4(), "rule__Fx_string_property__Alternatives_4");
 					put(grammarAccess.getEffectAccess().getAlternatives(), "rule__Effect__Alternatives");
 					put(grammarAccess.getPaintAccess().getAlternatives(), "rule__Paint__Alternatives");
-					put(grammarAccess.getLinearGradientAccess().getAlternatives_18_1(), "rule__LinearGradient__Alternatives_18_1");
+					put(grammarAccess.getLinearGradientAccess().getAlternatives_14_1(), "rule__LinearGradient__Alternatives_14_1");
 					put(grammarAccess.getRadialGradientAccess().getAlternatives_8_1(), "rule__RadialGradient__Alternatives_8_1");
 					put(grammarAccess.getVPositionAccess().getAlternatives(), "rule__VPosition__Alternatives");
 					put(grammarAccess.getRepeatStyleAccess().getAlternatives(), "rule__RepeatStyle__Alternatives");
@@ -217,14 +217,15 @@ public class CssDslParser extends AbstractContentAssistParser {
 					put(grammarAccess.getMultiPaintAccess().getGroup(), "rule__MultiPaint__Group__0");
 					put(grammarAccess.getMultiPaintAccess().getGroup_1(), "rule__MultiPaint__Group_1__0");
 					put(grammarAccess.getLinearGradientAccess().getGroup(), "rule__LinearGradient__Group__0");
-					put(grammarAccess.getLinearGradientAccess().getGroup_17(), "rule__LinearGradient__Group_17__0");
-					put(grammarAccess.getLinearGradientAccess().getGroup_18(), "rule__LinearGradient__Group_18__0");
+					put(grammarAccess.getLinearGradientAccess().getGroup_13(), "rule__LinearGradient__Group_13__0");
+					put(grammarAccess.getLinearGradientAccess().getGroup_14(), "rule__LinearGradient__Group_14__0");
 					put(grammarAccess.getRadialGradientAccess().getGroup(), "rule__RadialGradient__Group__0");
 					put(grammarAccess.getRadialGradientAccess().getGroup_2(), "rule__RadialGradient__Group_2__0");
 					put(grammarAccess.getRadialGradientAccess().getGroup_4(), "rule__RadialGradient__Group_4__0");
 					put(grammarAccess.getRadialGradientAccess().getGroup_7(), "rule__RadialGradient__Group_7__0");
 					put(grammarAccess.getRadialGradientAccess().getGroup_8(), "rule__RadialGradient__Group_8__0");
 					put(grammarAccess.getStopValueAccess().getGroup(), "rule__StopValue__Group__0");
+					put(grammarAccess.getPointValueAccess().getGroup(), "rule__PointValue__Group__0");
 					put(grammarAccess.getRepeatStyleAccess().getGroup_1(), "rule__RepeatStyle__Group_1__0");
 					put(grammarAccess.getRepeatStyleAccess().getGroup_1_1(), "rule__RepeatStyle__Group_1_1__0");
 					put(grammarAccess.getDim4SizeAccess().getGroup_1(), "rule__Dim4Size__Group_1__0");
@@ -266,7 +267,9 @@ public class CssDslParser extends AbstractContentAssistParser {
 					put(grammarAccess.getRulesetAccess().getSelectorsAssignment_1_1(), "rule__Ruleset__SelectorsAssignment_1_1");
 					put(grammarAccess.getRulesetAccess().getDeclarationsAssignment_4_0(), "rule__Ruleset__DeclarationsAssignment_4_0");
 					put(grammarAccess.getSelectorAccess().getSimpleselectorsAssignment_0(), "rule__Selector__SimpleselectorsAssignment_0");
+					put(grammarAccess.getSelectorAccess().getCombinatorAssignment_1_0_0(), "rule__Selector__CombinatorAssignment_1_0_0");
 					put(grammarAccess.getSelectorAccess().getSelectorAssignment_1_0_1(), "rule__Selector__SelectorAssignment_1_0_1");
+					put(grammarAccess.getSelectorAccess().getCombinatorAssignment_1_1_1_0(), "rule__Selector__CombinatorAssignment_1_1_1_0");
 					put(grammarAccess.getSelectorAccess().getSelectorAssignment_1_1_1_1(), "rule__Selector__SelectorAssignment_1_1_1_1");
 					put(grammarAccess.getSimple_selectorAccess().getElementAssignment_0_0(), "rule__Simple_selector__ElementAssignment_0_0");
 					put(grammarAccess.getSimple_selectorAccess().getIdAssignment_0_1(), "rule__Simple_selector__IdAssignment_0_1");
@@ -380,19 +383,17 @@ public class CssDslParser extends AbstractContentAssistParser {
 					put(grammarAccess.getEffectInnerShadowAccess().getOffsetYAssignment_14(), "rule__EffectInnerShadow__OffsetYAssignment_14");
 					put(grammarAccess.getMultiPaintAccess().getValuesAssignment_0(), "rule__MultiPaint__ValuesAssignment_0");
 					put(grammarAccess.getMultiPaintAccess().getValuesAssignment_1_1(), "rule__MultiPaint__ValuesAssignment_1_1");
-					put(grammarAccess.getLinearGradientAccess().getX1Assignment_3(), "rule__LinearGradient__X1Assignment_3");
-					put(grammarAccess.getLinearGradientAccess().getY1Assignment_5(), "rule__LinearGradient__Y1Assignment_5");
-					put(grammarAccess.getLinearGradientAccess().getX2Assignment_11(), "rule__LinearGradient__X2Assignment_11");
-					put(grammarAccess.getLinearGradientAccess().getY2Assignment_13(), "rule__LinearGradient__Y2Assignment_13");
-					put(grammarAccess.getLinearGradientAccess().getStopsAssignment_17_2(), "rule__LinearGradient__StopsAssignment_17_2");
-					put(grammarAccess.getRadialGradientAccess().getCxAssignment_2_1(), "rule__RadialGradient__CxAssignment_2_1");
-					put(grammarAccess.getRadialGradientAccess().getCyAssignment_2_3(), "rule__RadialGradient__CyAssignment_2_3");
+					put(grammarAccess.getLinearGradientAccess().getStartAssignment_3(), "rule__LinearGradient__StartAssignment_3");
+					put(grammarAccess.getLinearGradientAccess().getEndAssignment_9(), "rule__LinearGradient__EndAssignment_9");
+					put(grammarAccess.getLinearGradientAccess().getStopsAssignment_13_2(), "rule__LinearGradient__StopsAssignment_13_2");
+					put(grammarAccess.getRadialGradientAccess().getCenterAssignment_2_1(), "rule__RadialGradient__CenterAssignment_2_1");
 					put(grammarAccess.getRadialGradientAccess().getRadiusAssignment_3(), "rule__RadialGradient__RadiusAssignment_3");
-					put(grammarAccess.getRadialGradientAccess().getFxAssignment_4_5(), "rule__RadialGradient__FxAssignment_4_5");
-					put(grammarAccess.getRadialGradientAccess().getFyAssignment_4_7(), "rule__RadialGradient__FyAssignment_4_7");
+					put(grammarAccess.getRadialGradientAccess().getFocusAssignment_4_5(), "rule__RadialGradient__FocusAssignment_4_5");
 					put(grammarAccess.getRadialGradientAccess().getStopsAssignment_7_2(), "rule__RadialGradient__StopsAssignment_7_2");
 					put(grammarAccess.getStopValueAccess().getPosAssignment_0(), "rule__StopValue__PosAssignment_0");
 					put(grammarAccess.getStopValueAccess().getColorAssignment_2(), "rule__StopValue__ColorAssignment_2");
+					put(grammarAccess.getPointValueAccess().getXAssignment_0(), "rule__PointValue__XAssignment_0");
+					put(grammarAccess.getPointValueAccess().getYAssignment_2(), "rule__PointValue__YAssignment_2");
 					put(grammarAccess.getRepeatStyleAccess().getVAssignment_0(), "rule__RepeatStyle__VAssignment_0");
 					put(grammarAccess.getRepeatStyleAccess().getVAssignment_1_0(), "rule__RepeatStyle__VAssignment_1_0");
 					put(grammarAccess.getRepeatStyleAccess().getV2Assignment_1_1_1(), "rule__RepeatStyle__V2Assignment_1_1_1");
@@ -454,6 +455,7 @@ public class CssDslParser extends AbstractContentAssistParser {
 					put(grammarAccess.getFONTWEIGHTAccess().getValueStringAssignment_0(), "rule__FONTWEIGHT__ValueStringAssignment_0");
 					put(grammarAccess.getFONTWEIGHTAccess().getValueIntAssignment_1(), "rule__FONTWEIGHT__ValueIntAssignment_1");
 					put(grammarAccess.getFONTSTYLEAccess().getValueAssignment(), "rule__FONTSTYLE__ValueAssignment");
+					put(grammarAccess.getSizeTypeAccess().getValueAssignment(), "rule__SizeType__ValueAssignment");
 				}
 			};
 		}

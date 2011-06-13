@@ -504,6 +504,15 @@ public interface CssDslFactory extends EFactory
   StopValue createStopValue();
 
   /**
+   * Returns a new object of class '<em>Point Value</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Point Value</em>'.
+   * @generated
+   */
+  PointValue createPointValue();
+
+  /**
    * Returns a new object of class '<em>Repeat Style</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -655,6 +664,15 @@ public interface CssDslFactory extends EFactory
    * @generated
    */
   FONTSTYLE createFONTSTYLE();
+
+  /**
+   * Returns a new object of class '<em>Size Type</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Size Type</em>'.
+   * @generated
+   */
+  SizeType createSizeType();
 
   /**
    * Returns the package supported by this factory.

@@ -3,12 +3,70 @@
 */
 package at.bestsolution.efxclipse.tooling.css.ui.outline;
 
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.xtext.ui.editor.outline.IOutlineNode;
 import org.eclipse.xtext.ui.editor.outline.impl.DefaultOutlineTreeProvider;
+
+import at.bestsolution.efxclipse.tooling.css.cssDsl.ruleset;
+import at.bestsolution.efxclipse.tooling.css.cssDsl.selector;
+import at.bestsolution.efxclipse.tooling.css.cssDsl.simple_selector;
 
 /**
  * customization of the default outline structure
  * 
  */
 public class CssDslOutlineTreeProvider extends DefaultOutlineTreeProvider {
+//	protected void _createChildren(DocumentRootNode parentNode, EObject modelElement) {
+//		System.err.println("Create children for: " + modelElement);
+//		super._createChildren(parentNode, modelElement);
+//	}
+//	@Override
+//	protected void _createChildren(EStructuralFeatureNode parentNode,
+//			EObject modelElement) {
+//		System.err.println("Create children for: " + parentNode.getText() + " => " + modelElement);
+//		super._createChildren(parentNode, modelElement);
+//	}
+//	
+//	@Override
+//	protected void _createChildren(Object parent, Object element) {
+//		System.err.println("create children: " + parent + ", " + element);
+//		super._createChildren(parent, element);
+//	}
 	
+	@Override
+	protected void _createChildren(IOutlineNode parentNode, EObject modelElement) {
+		System.err.println("create children: " + parentNode + ", " + modelElement);
+		if( modelElement instanceof ruleset ) {
+			ruleset s = (ruleset) modelElement;
+			
+			if( s.getSelectors().size() == 1 ) {
+//				System.err.println("Simple: " + s.getSelectors().get(0).getSimpleselectors().size());
+//				System.err.println("Sub: " + s.getSelectors().get(0).getSelector());
+				if( s.getSelectors().get(0).getSimpleselectors().size() == 1 && s.getSelectors().get(0).getSelector() == null ) {
+					for (EObject childElement : modelElement.eContents()) {
+//						System.err.println("Child: " + childElement);
+						if( !(childElement instanceof selector) ) {
+//							System.err.println("creating child");
+							createNode(parentNode, childElement);
+						}
+					}
+					return;
+				}
+				
+			}
+		} else if( modelElement instanceof selector ) {
+			selector s = (selector) modelElement;
+			if( s.getSimpleselectors().size() == 1 && s.getSelector() == null ) {
+				for (EObject childElement : modelElement.eContents()) {
+//					System.err.println("Child: " + childElement);
+					if( !(childElement instanceof simple_selector) ) {
+//						System.err.println("creating child");
+						createNode(parentNode, childElement);
+					}
+				}
+				return;
+			}
+		}
+		super._createChildren(parentNode, modelElement);
+	}
 }

@@ -192,13 +192,22 @@ public interface CssDslPackage extends EPackage
   int SELECTOR__SIMPLESELECTORS = 0;
 
   /**
+   * The feature id for the '<em><b>Combinator</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SELECTOR__COMBINATOR = 1;
+
+  /**
    * The feature id for the '<em><b>Selector</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int SELECTOR__SELECTOR = 1;
+  int SELECTOR__SELECTOR = 2;
 
   /**
    * The number of structural features of the '<em>selector</em>' class.
@@ -207,7 +216,7 @@ public interface CssDslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int SELECTOR_FEATURE_COUNT = 2;
+  int SELECTOR_FEATURE_COUNT = 3;
 
   /**
    * The meta object id for the '{@link at.bestsolution.efxclipse.tooling.css.cssDsl.impl.simple_selectorImpl <em>simple selector</em>}' class.
@@ -1967,40 +1976,22 @@ public interface CssDslPackage extends EPackage
   int LINEAR_GRADIENT = 50;
 
   /**
-   * The feature id for the '<em><b>X1</b></em>' attribute.
+   * The feature id for the '<em><b>Start</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int LINEAR_GRADIENT__X1 = PAINT_FEATURE_COUNT + 0;
+  int LINEAR_GRADIENT__START = PAINT_FEATURE_COUNT + 0;
 
   /**
-   * The feature id for the '<em><b>Y1</b></em>' attribute.
+   * The feature id for the '<em><b>End</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int LINEAR_GRADIENT__Y1 = PAINT_FEATURE_COUNT + 1;
-
-  /**
-   * The feature id for the '<em><b>X2</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int LINEAR_GRADIENT__X2 = PAINT_FEATURE_COUNT + 2;
-
-  /**
-   * The feature id for the '<em><b>Y2</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int LINEAR_GRADIENT__Y2 = PAINT_FEATURE_COUNT + 3;
+  int LINEAR_GRADIENT__END = PAINT_FEATURE_COUNT + 1;
 
   /**
    * The feature id for the '<em><b>Stops</b></em>' containment reference list.
@@ -2009,7 +2000,7 @@ public interface CssDslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int LINEAR_GRADIENT__STOPS = PAINT_FEATURE_COUNT + 4;
+  int LINEAR_GRADIENT__STOPS = PAINT_FEATURE_COUNT + 2;
 
   /**
    * The number of structural features of the '<em>Linear Gradient</em>' class.
@@ -2018,7 +2009,7 @@ public interface CssDslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int LINEAR_GRADIENT_FEATURE_COUNT = PAINT_FEATURE_COUNT + 5;
+  int LINEAR_GRADIENT_FEATURE_COUNT = PAINT_FEATURE_COUNT + 3;
 
   /**
    * The meta object id for the '{@link at.bestsolution.efxclipse.tooling.css.cssDsl.impl.RadialGradientImpl <em>Radial Gradient</em>}' class.
@@ -2031,49 +2022,31 @@ public interface CssDslPackage extends EPackage
   int RADIAL_GRADIENT = 51;
 
   /**
-   * The feature id for the '<em><b>Cx</b></em>' attribute.
+   * The feature id for the '<em><b>Center</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int RADIAL_GRADIENT__CX = PAINT_FEATURE_COUNT + 0;
+  int RADIAL_GRADIENT__CENTER = PAINT_FEATURE_COUNT + 0;
 
   /**
-   * The feature id for the '<em><b>Cy</b></em>' attribute.
+   * The feature id for the '<em><b>Radius</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int RADIAL_GRADIENT__CY = PAINT_FEATURE_COUNT + 1;
+  int RADIAL_GRADIENT__RADIUS = PAINT_FEATURE_COUNT + 1;
 
   /**
-   * The feature id for the '<em><b>Radius</b></em>' attribute.
+   * The feature id for the '<em><b>Focus</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int RADIAL_GRADIENT__RADIUS = PAINT_FEATURE_COUNT + 2;
-
-  /**
-   * The feature id for the '<em><b>Fx</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int RADIAL_GRADIENT__FX = PAINT_FEATURE_COUNT + 3;
-
-  /**
-   * The feature id for the '<em><b>Fy</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int RADIAL_GRADIENT__FY = PAINT_FEATURE_COUNT + 4;
+  int RADIAL_GRADIENT__FOCUS = PAINT_FEATURE_COUNT + 2;
 
   /**
    * The feature id for the '<em><b>Stops</b></em>' containment reference list.
@@ -2082,7 +2055,7 @@ public interface CssDslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int RADIAL_GRADIENT__STOPS = PAINT_FEATURE_COUNT + 5;
+  int RADIAL_GRADIENT__STOPS = PAINT_FEATURE_COUNT + 3;
 
   /**
    * The number of structural features of the '<em>Radial Gradient</em>' class.
@@ -2091,7 +2064,7 @@ public interface CssDslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int RADIAL_GRADIENT_FEATURE_COUNT = PAINT_FEATURE_COUNT + 6;
+  int RADIAL_GRADIENT_FEATURE_COUNT = PAINT_FEATURE_COUNT + 4;
 
   /**
    * The meta object id for the '{@link at.bestsolution.efxclipse.tooling.css.cssDsl.impl.StopValueImpl <em>Stop Value</em>}' class.
@@ -2104,7 +2077,7 @@ public interface CssDslPackage extends EPackage
   int STOP_VALUE = 52;
 
   /**
-   * The feature id for the '<em><b>Pos</b></em>' attribute.
+   * The feature id for the '<em><b>Pos</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -2131,6 +2104,43 @@ public interface CssDslPackage extends EPackage
   int STOP_VALUE_FEATURE_COUNT = 2;
 
   /**
+   * The meta object id for the '{@link at.bestsolution.efxclipse.tooling.css.cssDsl.impl.PointValueImpl <em>Point Value</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see at.bestsolution.efxclipse.tooling.css.cssDsl.impl.PointValueImpl
+   * @see at.bestsolution.efxclipse.tooling.css.cssDsl.impl.CssDslPackageImpl#getPointValue()
+   * @generated
+   */
+  int POINT_VALUE = 53;
+
+  /**
+   * The feature id for the '<em><b>X</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int POINT_VALUE__X = 0;
+
+  /**
+   * The feature id for the '<em><b>Y</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int POINT_VALUE__Y = 1;
+
+  /**
+   * The number of structural features of the '<em>Point Value</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int POINT_VALUE_FEATURE_COUNT = 2;
+
+  /**
    * The meta object id for the '{@link at.bestsolution.efxclipse.tooling.css.cssDsl.impl.RepeatStyleImpl <em>Repeat Style</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -2138,7 +2148,7 @@ public interface CssDslPackage extends EPackage
    * @see at.bestsolution.efxclipse.tooling.css.cssDsl.impl.CssDslPackageImpl#getRepeatStyle()
    * @generated
    */
-  int REPEAT_STYLE = 53;
+  int REPEAT_STYLE = 54;
 
   /**
    * The feature id for the '<em><b>V</b></em>' attribute.
@@ -2175,7 +2185,7 @@ public interface CssDslPackage extends EPackage
    * @see at.bestsolution.efxclipse.tooling.css.cssDsl.impl.CssDslPackageImpl#getDim4Size()
    * @generated
    */
-  int DIM4_SIZE = 54;
+  int DIM4_SIZE = 55;
 
   /**
    * The feature id for the '<em><b>Values</b></em>' attribute list.
@@ -2203,7 +2213,7 @@ public interface CssDslPackage extends EPackage
    * @see at.bestsolution.efxclipse.tooling.css.cssDsl.impl.CssDslPackageImpl#getBgPosition()
    * @generated
    */
-  int BG_POSITION = 55;
+  int BG_POSITION = 56;
 
   /**
    * The feature id for the '<em><b>Absx</b></em>' attribute.
@@ -2258,7 +2268,7 @@ public interface CssDslPackage extends EPackage
    * @see at.bestsolution.efxclipse.tooling.css.cssDsl.impl.CssDslPackageImpl#getfx_color_property()
    * @generated
    */
-  int FX_COLOR_PROPERTY = 56;
+  int FX_COLOR_PROPERTY = 57;
 
   /**
    * The feature id for the '<em><b>Property</b></em>' attribute.
@@ -2295,7 +2305,7 @@ public interface CssDslPackage extends EPackage
    * @see at.bestsolution.efxclipse.tooling.css.cssDsl.impl.CssDslPackageImpl#getBgSize()
    * @generated
    */
-  int BG_SIZE = 57;
+  int BG_SIZE = 58;
 
   /**
    * The feature id for the '<em><b>Xsize</b></em>' attribute.
@@ -2341,7 +2351,7 @@ public interface CssDslPackage extends EPackage
    * @see at.bestsolution.efxclipse.tooling.css.cssDsl.impl.CssDslPackageImpl#getBorderStyle()
    * @generated
    */
-  int BORDER_STYLE = 58;
+  int BORDER_STYLE = 59;
 
   /**
    * The feature id for the '<em><b>Dash Style</b></em>' attribute.
@@ -2405,7 +2415,7 @@ public interface CssDslPackage extends EPackage
    * @see at.bestsolution.efxclipse.tooling.css.cssDsl.impl.CssDslPackageImpl#getSizeFill()
    * @generated
    */
-  int SIZE_FILL = 59;
+  int SIZE_FILL = 60;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' containment reference.
@@ -2442,7 +2452,7 @@ public interface CssDslPackage extends EPackage
    * @see at.bestsolution.efxclipse.tooling.css.cssDsl.impl.CssDslPackageImpl#getColor()
    * @generated
    */
-  int COLOR = 60;
+  int COLOR = 61;
 
   /**
    * The number of structural features of the '<em>Color</em>' class.
@@ -2461,7 +2471,7 @@ public interface CssDslPackage extends EPackage
    * @see at.bestsolution.efxclipse.tooling.css.cssDsl.impl.CssDslPackageImpl#getLookedUpColor()
    * @generated
    */
-  int LOOKED_UP_COLOR = 61;
+  int LOOKED_UP_COLOR = 62;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -2489,7 +2499,7 @@ public interface CssDslPackage extends EPackage
    * @see at.bestsolution.efxclipse.tooling.css.cssDsl.impl.CssDslPackageImpl#getNamedColor()
    * @generated
    */
-  int NAMED_COLOR = 62;
+  int NAMED_COLOR = 63;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -2517,7 +2527,7 @@ public interface CssDslPackage extends EPackage
    * @see at.bestsolution.efxclipse.tooling.css.cssDsl.impl.CssDslPackageImpl#getRGBColor()
    * @generated
    */
-  int RGB_COLOR = 63;
+  int RGB_COLOR = 64;
 
   /**
    * The feature id for the '<em><b>Hexcolor</b></em>' attribute.
@@ -2608,7 +2618,7 @@ public interface CssDslPackage extends EPackage
    * @see at.bestsolution.efxclipse.tooling.css.cssDsl.impl.CssDslPackageImpl#getHSBColor()
    * @generated
    */
-  int HSB_COLOR = 64;
+  int HSB_COLOR = 65;
 
   /**
    * The feature id for the '<em><b>Hue</b></em>' attribute.
@@ -2663,7 +2673,7 @@ public interface CssDslPackage extends EPackage
    * @see at.bestsolution.efxclipse.tooling.css.cssDsl.impl.CssDslPackageImpl#getColorFunction()
    * @generated
    */
-  int COLOR_FUNCTION = 65;
+  int COLOR_FUNCTION = 66;
 
   /**
    * The feature id for the '<em><b>Orig</b></em>' containment reference.
@@ -2718,7 +2728,7 @@ public interface CssDslPackage extends EPackage
    * @see at.bestsolution.efxclipse.tooling.css.cssDsl.impl.CssDslPackageImpl#getURLType()
    * @generated
    */
-  int URL_TYPE = 66;
+  int URL_TYPE = 67;
 
   /**
    * The feature id for the '<em><b>Url</b></em>' attribute.
@@ -2746,7 +2756,7 @@ public interface CssDslPackage extends EPackage
    * @see at.bestsolution.efxclipse.tooling.css.cssDsl.impl.CssDslPackageImpl#getFONT()
    * @generated
    */
-  int FONT = 67;
+  int FONT = 68;
 
   /**
    * The feature id for the '<em><b>Style Or Weight String</b></em>' attribute.
@@ -2801,7 +2811,7 @@ public interface CssDslPackage extends EPackage
    * @see at.bestsolution.efxclipse.tooling.css.cssDsl.impl.CssDslPackageImpl#getFONTWEIGHT()
    * @generated
    */
-  int FONTWEIGHT = 68;
+  int FONTWEIGHT = 69;
 
   /**
    * The feature id for the '<em><b>Value String</b></em>' attribute.
@@ -2838,7 +2848,7 @@ public interface CssDslPackage extends EPackage
    * @see at.bestsolution.efxclipse.tooling.css.cssDsl.impl.CssDslPackageImpl#getFONTSTYLE()
    * @generated
    */
-  int FONTSTYLE = 69;
+  int FONTSTYLE = 70;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -2859,6 +2869,34 @@ public interface CssDslPackage extends EPackage
   int FONTSTYLE_FEATURE_COUNT = 1;
 
   /**
+   * The meta object id for the '{@link at.bestsolution.efxclipse.tooling.css.cssDsl.impl.SizeTypeImpl <em>Size Type</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see at.bestsolution.efxclipse.tooling.css.cssDsl.impl.SizeTypeImpl
+   * @see at.bestsolution.efxclipse.tooling.css.cssDsl.impl.CssDslPackageImpl#getSizeType()
+   * @generated
+   */
+  int SIZE_TYPE = 71;
+
+  /**
+   * The feature id for the '<em><b>Value</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SIZE_TYPE__VALUE = 0;
+
+  /**
+   * The number of structural features of the '<em>Size Type</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SIZE_TYPE_FEATURE_COUNT = 1;
+
+  /**
    * The meta object id for the '{@link at.bestsolution.efxclipse.tooling.css.cssDsl.HPosition <em>HPosition</em>}' enum.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -2866,7 +2904,7 @@ public interface CssDslPackage extends EPackage
    * @see at.bestsolution.efxclipse.tooling.css.cssDsl.impl.CssDslPackageImpl#getHPosition()
    * @generated
    */
-  int HPOSITION = 70;
+  int HPOSITION = 72;
 
 
   /**
@@ -2985,6 +3023,17 @@ public interface CssDslPackage extends EPackage
    * @generated
    */
   EReference getselector_Simpleselectors();
+
+  /**
+   * Returns the meta object for the attribute '{@link at.bestsolution.efxclipse.tooling.css.cssDsl.selector#getCombinator <em>Combinator</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Combinator</em>'.
+   * @see at.bestsolution.efxclipse.tooling.css.cssDsl.selector#getCombinator()
+   * @see #getselector()
+   * @generated
+   */
+  EAttribute getselector_Combinator();
 
   /**
    * Returns the meta object for the containment reference '{@link at.bestsolution.efxclipse.tooling.css.cssDsl.selector#getSelector <em>Selector</em>}'.
@@ -4425,48 +4474,26 @@ public interface CssDslPackage extends EPackage
   EClass getLinearGradient();
 
   /**
-   * Returns the meta object for the attribute '{@link at.bestsolution.efxclipse.tooling.css.cssDsl.LinearGradient#getX1 <em>X1</em>}'.
+   * Returns the meta object for the containment reference '{@link at.bestsolution.efxclipse.tooling.css.cssDsl.LinearGradient#getStart <em>Start</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>X1</em>'.
-   * @see at.bestsolution.efxclipse.tooling.css.cssDsl.LinearGradient#getX1()
+   * @return the meta object for the containment reference '<em>Start</em>'.
+   * @see at.bestsolution.efxclipse.tooling.css.cssDsl.LinearGradient#getStart()
    * @see #getLinearGradient()
    * @generated
    */
-  EAttribute getLinearGradient_X1();
+  EReference getLinearGradient_Start();
 
   /**
-   * Returns the meta object for the attribute '{@link at.bestsolution.efxclipse.tooling.css.cssDsl.LinearGradient#getY1 <em>Y1</em>}'.
+   * Returns the meta object for the containment reference '{@link at.bestsolution.efxclipse.tooling.css.cssDsl.LinearGradient#getEnd <em>End</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Y1</em>'.
-   * @see at.bestsolution.efxclipse.tooling.css.cssDsl.LinearGradient#getY1()
+   * @return the meta object for the containment reference '<em>End</em>'.
+   * @see at.bestsolution.efxclipse.tooling.css.cssDsl.LinearGradient#getEnd()
    * @see #getLinearGradient()
    * @generated
    */
-  EAttribute getLinearGradient_Y1();
-
-  /**
-   * Returns the meta object for the attribute '{@link at.bestsolution.efxclipse.tooling.css.cssDsl.LinearGradient#getX2 <em>X2</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>X2</em>'.
-   * @see at.bestsolution.efxclipse.tooling.css.cssDsl.LinearGradient#getX2()
-   * @see #getLinearGradient()
-   * @generated
-   */
-  EAttribute getLinearGradient_X2();
-
-  /**
-   * Returns the meta object for the attribute '{@link at.bestsolution.efxclipse.tooling.css.cssDsl.LinearGradient#getY2 <em>Y2</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Y2</em>'.
-   * @see at.bestsolution.efxclipse.tooling.css.cssDsl.LinearGradient#getY2()
-   * @see #getLinearGradient()
-   * @generated
-   */
-  EAttribute getLinearGradient_Y2();
+  EReference getLinearGradient_End();
 
   /**
    * Returns the meta object for the containment reference list '{@link at.bestsolution.efxclipse.tooling.css.cssDsl.LinearGradient#getStops <em>Stops</em>}'.
@@ -4490,59 +4517,37 @@ public interface CssDslPackage extends EPackage
   EClass getRadialGradient();
 
   /**
-   * Returns the meta object for the attribute '{@link at.bestsolution.efxclipse.tooling.css.cssDsl.RadialGradient#getCx <em>Cx</em>}'.
+   * Returns the meta object for the containment reference '{@link at.bestsolution.efxclipse.tooling.css.cssDsl.RadialGradient#getCenter <em>Center</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Cx</em>'.
-   * @see at.bestsolution.efxclipse.tooling.css.cssDsl.RadialGradient#getCx()
+   * @return the meta object for the containment reference '<em>Center</em>'.
+   * @see at.bestsolution.efxclipse.tooling.css.cssDsl.RadialGradient#getCenter()
    * @see #getRadialGradient()
    * @generated
    */
-  EAttribute getRadialGradient_Cx();
+  EReference getRadialGradient_Center();
 
   /**
-   * Returns the meta object for the attribute '{@link at.bestsolution.efxclipse.tooling.css.cssDsl.RadialGradient#getCy <em>Cy</em>}'.
+   * Returns the meta object for the containment reference '{@link at.bestsolution.efxclipse.tooling.css.cssDsl.RadialGradient#getRadius <em>Radius</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Cy</em>'.
-   * @see at.bestsolution.efxclipse.tooling.css.cssDsl.RadialGradient#getCy()
-   * @see #getRadialGradient()
-   * @generated
-   */
-  EAttribute getRadialGradient_Cy();
-
-  /**
-   * Returns the meta object for the attribute '{@link at.bestsolution.efxclipse.tooling.css.cssDsl.RadialGradient#getRadius <em>Radius</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Radius</em>'.
+   * @return the meta object for the containment reference '<em>Radius</em>'.
    * @see at.bestsolution.efxclipse.tooling.css.cssDsl.RadialGradient#getRadius()
    * @see #getRadialGradient()
    * @generated
    */
-  EAttribute getRadialGradient_Radius();
+  EReference getRadialGradient_Radius();
 
   /**
-   * Returns the meta object for the attribute '{@link at.bestsolution.efxclipse.tooling.css.cssDsl.RadialGradient#getFx <em>Fx</em>}'.
+   * Returns the meta object for the containment reference '{@link at.bestsolution.efxclipse.tooling.css.cssDsl.RadialGradient#getFocus <em>Focus</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Fx</em>'.
-   * @see at.bestsolution.efxclipse.tooling.css.cssDsl.RadialGradient#getFx()
+   * @return the meta object for the containment reference '<em>Focus</em>'.
+   * @see at.bestsolution.efxclipse.tooling.css.cssDsl.RadialGradient#getFocus()
    * @see #getRadialGradient()
    * @generated
    */
-  EAttribute getRadialGradient_Fx();
-
-  /**
-   * Returns the meta object for the attribute '{@link at.bestsolution.efxclipse.tooling.css.cssDsl.RadialGradient#getFy <em>Fy</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Fy</em>'.
-   * @see at.bestsolution.efxclipse.tooling.css.cssDsl.RadialGradient#getFy()
-   * @see #getRadialGradient()
-   * @generated
-   */
-  EAttribute getRadialGradient_Fy();
+  EReference getRadialGradient_Focus();
 
   /**
    * Returns the meta object for the containment reference list '{@link at.bestsolution.efxclipse.tooling.css.cssDsl.RadialGradient#getStops <em>Stops</em>}'.
@@ -4566,15 +4571,15 @@ public interface CssDslPackage extends EPackage
   EClass getStopValue();
 
   /**
-   * Returns the meta object for the attribute '{@link at.bestsolution.efxclipse.tooling.css.cssDsl.StopValue#getPos <em>Pos</em>}'.
+   * Returns the meta object for the containment reference '{@link at.bestsolution.efxclipse.tooling.css.cssDsl.StopValue#getPos <em>Pos</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Pos</em>'.
+   * @return the meta object for the containment reference '<em>Pos</em>'.
    * @see at.bestsolution.efxclipse.tooling.css.cssDsl.StopValue#getPos()
    * @see #getStopValue()
    * @generated
    */
-  EAttribute getStopValue_Pos();
+  EReference getStopValue_Pos();
 
   /**
    * Returns the meta object for the containment reference '{@link at.bestsolution.efxclipse.tooling.css.cssDsl.StopValue#getColor <em>Color</em>}'.
@@ -4586,6 +4591,38 @@ public interface CssDslPackage extends EPackage
    * @generated
    */
   EReference getStopValue_Color();
+
+  /**
+   * Returns the meta object for class '{@link at.bestsolution.efxclipse.tooling.css.cssDsl.PointValue <em>Point Value</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Point Value</em>'.
+   * @see at.bestsolution.efxclipse.tooling.css.cssDsl.PointValue
+   * @generated
+   */
+  EClass getPointValue();
+
+  /**
+   * Returns the meta object for the containment reference '{@link at.bestsolution.efxclipse.tooling.css.cssDsl.PointValue#getX <em>X</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>X</em>'.
+   * @see at.bestsolution.efxclipse.tooling.css.cssDsl.PointValue#getX()
+   * @see #getPointValue()
+   * @generated
+   */
+  EReference getPointValue_X();
+
+  /**
+   * Returns the meta object for the containment reference '{@link at.bestsolution.efxclipse.tooling.css.cssDsl.PointValue#getY <em>Y</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Y</em>'.
+   * @see at.bestsolution.efxclipse.tooling.css.cssDsl.PointValue#getY()
+   * @see #getPointValue()
+   * @generated
+   */
+  EReference getPointValue_Y();
 
   /**
    * Returns the meta object for class '{@link at.bestsolution.efxclipse.tooling.css.cssDsl.RepeatStyle <em>Repeat Style</em>}'.
@@ -5253,6 +5290,27 @@ public interface CssDslPackage extends EPackage
   EAttribute getFONTSTYLE_Value();
 
   /**
+   * Returns the meta object for class '{@link at.bestsolution.efxclipse.tooling.css.cssDsl.SizeType <em>Size Type</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Size Type</em>'.
+   * @see at.bestsolution.efxclipse.tooling.css.cssDsl.SizeType
+   * @generated
+   */
+  EClass getSizeType();
+
+  /**
+   * Returns the meta object for the attribute '{@link at.bestsolution.efxclipse.tooling.css.cssDsl.SizeType#getValue <em>Value</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Value</em>'.
+   * @see at.bestsolution.efxclipse.tooling.css.cssDsl.SizeType#getValue()
+   * @see #getSizeType()
+   * @generated
+   */
+  EAttribute getSizeType_Value();
+
+  /**
    * Returns the meta object for enum '{@link at.bestsolution.efxclipse.tooling.css.cssDsl.HPosition <em>HPosition</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -5380,6 +5438,14 @@ public interface CssDslPackage extends EPackage
      * @generated
      */
     EReference SELECTOR__SIMPLESELECTORS = eINSTANCE.getselector_Simpleselectors();
+
+    /**
+     * The meta object literal for the '<em><b>Combinator</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute SELECTOR__COMBINATOR = eINSTANCE.getselector_Combinator();
 
     /**
      * The meta object literal for the '<em><b>Selector</b></em>' containment reference feature.
@@ -6556,36 +6622,20 @@ public interface CssDslPackage extends EPackage
     EClass LINEAR_GRADIENT = eINSTANCE.getLinearGradient();
 
     /**
-     * The meta object literal for the '<em><b>X1</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>Start</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute LINEAR_GRADIENT__X1 = eINSTANCE.getLinearGradient_X1();
+    EReference LINEAR_GRADIENT__START = eINSTANCE.getLinearGradient_Start();
 
     /**
-     * The meta object literal for the '<em><b>Y1</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>End</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute LINEAR_GRADIENT__Y1 = eINSTANCE.getLinearGradient_Y1();
-
-    /**
-     * The meta object literal for the '<em><b>X2</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute LINEAR_GRADIENT__X2 = eINSTANCE.getLinearGradient_X2();
-
-    /**
-     * The meta object literal for the '<em><b>Y2</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute LINEAR_GRADIENT__Y2 = eINSTANCE.getLinearGradient_Y2();
+    EReference LINEAR_GRADIENT__END = eINSTANCE.getLinearGradient_End();
 
     /**
      * The meta object literal for the '<em><b>Stops</b></em>' containment reference list feature.
@@ -6606,44 +6656,28 @@ public interface CssDslPackage extends EPackage
     EClass RADIAL_GRADIENT = eINSTANCE.getRadialGradient();
 
     /**
-     * The meta object literal for the '<em><b>Cx</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>Center</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute RADIAL_GRADIENT__CX = eINSTANCE.getRadialGradient_Cx();
+    EReference RADIAL_GRADIENT__CENTER = eINSTANCE.getRadialGradient_Center();
 
     /**
-     * The meta object literal for the '<em><b>Cy</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>Radius</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute RADIAL_GRADIENT__CY = eINSTANCE.getRadialGradient_Cy();
+    EReference RADIAL_GRADIENT__RADIUS = eINSTANCE.getRadialGradient_Radius();
 
     /**
-     * The meta object literal for the '<em><b>Radius</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>Focus</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute RADIAL_GRADIENT__RADIUS = eINSTANCE.getRadialGradient_Radius();
-
-    /**
-     * The meta object literal for the '<em><b>Fx</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute RADIAL_GRADIENT__FX = eINSTANCE.getRadialGradient_Fx();
-
-    /**
-     * The meta object literal for the '<em><b>Fy</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute RADIAL_GRADIENT__FY = eINSTANCE.getRadialGradient_Fy();
+    EReference RADIAL_GRADIENT__FOCUS = eINSTANCE.getRadialGradient_Focus();
 
     /**
      * The meta object literal for the '<em><b>Stops</b></em>' containment reference list feature.
@@ -6664,12 +6698,12 @@ public interface CssDslPackage extends EPackage
     EClass STOP_VALUE = eINSTANCE.getStopValue();
 
     /**
-     * The meta object literal for the '<em><b>Pos</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>Pos</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute STOP_VALUE__POS = eINSTANCE.getStopValue_Pos();
+    EReference STOP_VALUE__POS = eINSTANCE.getStopValue_Pos();
 
     /**
      * The meta object literal for the '<em><b>Color</b></em>' containment reference feature.
@@ -6678,6 +6712,32 @@ public interface CssDslPackage extends EPackage
      * @generated
      */
     EReference STOP_VALUE__COLOR = eINSTANCE.getStopValue_Color();
+
+    /**
+     * The meta object literal for the '{@link at.bestsolution.efxclipse.tooling.css.cssDsl.impl.PointValueImpl <em>Point Value</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see at.bestsolution.efxclipse.tooling.css.cssDsl.impl.PointValueImpl
+     * @see at.bestsolution.efxclipse.tooling.css.cssDsl.impl.CssDslPackageImpl#getPointValue()
+     * @generated
+     */
+    EClass POINT_VALUE = eINSTANCE.getPointValue();
+
+    /**
+     * The meta object literal for the '<em><b>X</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference POINT_VALUE__X = eINSTANCE.getPointValue_X();
+
+    /**
+     * The meta object literal for the '<em><b>Y</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference POINT_VALUE__Y = eINSTANCE.getPointValue_Y();
 
     /**
      * The meta object literal for the '{@link at.bestsolution.efxclipse.tooling.css.cssDsl.impl.RepeatStyleImpl <em>Repeat Style</em>}' class.
@@ -7208,6 +7268,24 @@ public interface CssDslPackage extends EPackage
      * @generated
      */
     EAttribute FONTSTYLE__VALUE = eINSTANCE.getFONTSTYLE_Value();
+
+    /**
+     * The meta object literal for the '{@link at.bestsolution.efxclipse.tooling.css.cssDsl.impl.SizeTypeImpl <em>Size Type</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see at.bestsolution.efxclipse.tooling.css.cssDsl.impl.SizeTypeImpl
+     * @see at.bestsolution.efxclipse.tooling.css.cssDsl.impl.CssDslPackageImpl#getSizeType()
+     * @generated
+     */
+    EClass SIZE_TYPE = eINSTANCE.getSizeType();
+
+    /**
+     * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute SIZE_TYPE__VALUE = eINSTANCE.getSizeType_Value();
 
     /**
      * The meta object literal for the '{@link at.bestsolution.efxclipse.tooling.css.cssDsl.HPosition <em>HPosition</em>}' enum.

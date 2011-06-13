@@ -8,6 +8,7 @@ package at.bestsolution.efxclipse.tooling.css.cssDsl.impl;
 
 import at.bestsolution.efxclipse.tooling.css.cssDsl.Color;
 import at.bestsolution.efxclipse.tooling.css.cssDsl.CssDslPackage;
+import at.bestsolution.efxclipse.tooling.css.cssDsl.SizeType;
 import at.bestsolution.efxclipse.tooling.css.cssDsl.StopValue;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -36,24 +37,14 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 public class StopValueImpl extends MinimalEObjectImpl.Container implements StopValue
 {
   /**
-   * The default value of the '{@link #getPos() <em>Pos</em>}' attribute.
+   * The cached value of the '{@link #getPos() <em>Pos</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @see #getPos()
    * @generated
    * @ordered
    */
-  protected static final String POS_EDEFAULT = null;
-
-  /**
-   * The cached value of the '{@link #getPos() <em>Pos</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getPos()
-   * @generated
-   * @ordered
-   */
-  protected String pos = POS_EDEFAULT;
+  protected SizeType pos;
 
   /**
    * The cached value of the '{@link #getColor() <em>Color</em>}' containment reference.
@@ -91,7 +82,7 @@ public class StopValueImpl extends MinimalEObjectImpl.Container implements StopV
    * <!-- end-user-doc -->
    * @generated
    */
-  public String getPos()
+  public SizeType getPos()
   {
     return pos;
   }
@@ -101,12 +92,37 @@ public class StopValueImpl extends MinimalEObjectImpl.Container implements StopV
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setPos(String newPos)
+  public NotificationChain basicSetPos(SizeType newPos, NotificationChain msgs)
   {
-    String oldPos = pos;
+    SizeType oldPos = pos;
     pos = newPos;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, CssDslPackage.STOP_VALUE__POS, oldPos, pos));
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, CssDslPackage.STOP_VALUE__POS, oldPos, newPos);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setPos(SizeType newPos)
+  {
+    if (newPos != pos)
+    {
+      NotificationChain msgs = null;
+      if (pos != null)
+        msgs = ((InternalEObject)pos).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - CssDslPackage.STOP_VALUE__POS, null, msgs);
+      if (newPos != null)
+        msgs = ((InternalEObject)newPos).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - CssDslPackage.STOP_VALUE__POS, null, msgs);
+      msgs = basicSetPos(newPos, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, CssDslPackage.STOP_VALUE__POS, newPos, newPos));
   }
 
   /**
@@ -167,6 +183,8 @@ public class StopValueImpl extends MinimalEObjectImpl.Container implements StopV
   {
     switch (featureID)
     {
+      case CssDslPackage.STOP_VALUE__POS:
+        return basicSetPos(null, msgs);
       case CssDslPackage.STOP_VALUE__COLOR:
         return basicSetColor(null, msgs);
     }
@@ -202,7 +220,7 @@ public class StopValueImpl extends MinimalEObjectImpl.Container implements StopV
     switch (featureID)
     {
       case CssDslPackage.STOP_VALUE__POS:
-        setPos((String)newValue);
+        setPos((SizeType)newValue);
         return;
       case CssDslPackage.STOP_VALUE__COLOR:
         setColor((Color)newValue);
@@ -222,7 +240,7 @@ public class StopValueImpl extends MinimalEObjectImpl.Container implements StopV
     switch (featureID)
     {
       case CssDslPackage.STOP_VALUE__POS:
-        setPos(POS_EDEFAULT);
+        setPos((SizeType)null);
         return;
       case CssDslPackage.STOP_VALUE__COLOR:
         setColor((Color)null);
@@ -242,28 +260,11 @@ public class StopValueImpl extends MinimalEObjectImpl.Container implements StopV
     switch (featureID)
     {
       case CssDslPackage.STOP_VALUE__POS:
-        return POS_EDEFAULT == null ? pos != null : !POS_EDEFAULT.equals(pos);
+        return pos != null;
       case CssDslPackage.STOP_VALUE__COLOR:
         return color != null;
     }
     return super.eIsSet(featureID);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public String toString()
-  {
-    if (eIsProxy()) return super.toString();
-
-    StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (pos: ");
-    result.append(pos);
-    result.append(')');
-    return result.toString();
   }
 
 } //StopValueImpl

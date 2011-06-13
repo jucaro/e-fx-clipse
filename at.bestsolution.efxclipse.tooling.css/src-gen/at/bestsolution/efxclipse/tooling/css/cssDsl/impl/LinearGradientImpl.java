@@ -8,6 +8,7 @@ package at.bestsolution.efxclipse.tooling.css.cssDsl.impl;
 
 import at.bestsolution.efxclipse.tooling.css.cssDsl.CssDslPackage;
 import at.bestsolution.efxclipse.tooling.css.cssDsl.LinearGradient;
+import at.bestsolution.efxclipse.tooling.css.cssDsl.PointValue;
 import at.bestsolution.efxclipse.tooling.css.cssDsl.StopValue;
 
 import java.util.Collection;
@@ -32,10 +33,8 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link at.bestsolution.efxclipse.tooling.css.cssDsl.impl.LinearGradientImpl#getX1 <em>X1</em>}</li>
- *   <li>{@link at.bestsolution.efxclipse.tooling.css.cssDsl.impl.LinearGradientImpl#getY1 <em>Y1</em>}</li>
- *   <li>{@link at.bestsolution.efxclipse.tooling.css.cssDsl.impl.LinearGradientImpl#getX2 <em>X2</em>}</li>
- *   <li>{@link at.bestsolution.efxclipse.tooling.css.cssDsl.impl.LinearGradientImpl#getY2 <em>Y2</em>}</li>
+ *   <li>{@link at.bestsolution.efxclipse.tooling.css.cssDsl.impl.LinearGradientImpl#getStart <em>Start</em>}</li>
+ *   <li>{@link at.bestsolution.efxclipse.tooling.css.cssDsl.impl.LinearGradientImpl#getEnd <em>End</em>}</li>
  *   <li>{@link at.bestsolution.efxclipse.tooling.css.cssDsl.impl.LinearGradientImpl#getStops <em>Stops</em>}</li>
  * </ul>
  * </p>
@@ -45,84 +44,24 @@ import org.eclipse.emf.ecore.util.InternalEList;
 public class LinearGradientImpl extends PaintImpl implements LinearGradient
 {
   /**
-   * The default value of the '{@link #getX1() <em>X1</em>}' attribute.
+   * The cached value of the '{@link #getStart() <em>Start</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getX1()
+   * @see #getStart()
    * @generated
    * @ordered
    */
-  protected static final String X1_EDEFAULT = null;
+  protected PointValue start;
 
   /**
-   * The cached value of the '{@link #getX1() <em>X1</em>}' attribute.
+   * The cached value of the '{@link #getEnd() <em>End</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getX1()
+   * @see #getEnd()
    * @generated
    * @ordered
    */
-  protected String x1 = X1_EDEFAULT;
-
-  /**
-   * The default value of the '{@link #getY1() <em>Y1</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getY1()
-   * @generated
-   * @ordered
-   */
-  protected static final String Y1_EDEFAULT = null;
-
-  /**
-   * The cached value of the '{@link #getY1() <em>Y1</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getY1()
-   * @generated
-   * @ordered
-   */
-  protected String y1 = Y1_EDEFAULT;
-
-  /**
-   * The default value of the '{@link #getX2() <em>X2</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getX2()
-   * @generated
-   * @ordered
-   */
-  protected static final String X2_EDEFAULT = null;
-
-  /**
-   * The cached value of the '{@link #getX2() <em>X2</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getX2()
-   * @generated
-   * @ordered
-   */
-  protected String x2 = X2_EDEFAULT;
-
-  /**
-   * The default value of the '{@link #getY2() <em>Y2</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getY2()
-   * @generated
-   * @ordered
-   */
-  protected static final String Y2_EDEFAULT = null;
-
-  /**
-   * The cached value of the '{@link #getY2() <em>Y2</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getY2()
-   * @generated
-   * @ordered
-   */
-  protected String y2 = Y2_EDEFAULT;
+  protected PointValue end;
 
   /**
    * The cached value of the '{@link #getStops() <em>Stops</em>}' containment reference list.
@@ -160,9 +99,9 @@ public class LinearGradientImpl extends PaintImpl implements LinearGradient
    * <!-- end-user-doc -->
    * @generated
    */
-  public String getX1()
+  public PointValue getStart()
   {
-    return x1;
+    return start;
   }
 
   /**
@@ -170,12 +109,16 @@ public class LinearGradientImpl extends PaintImpl implements LinearGradient
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setX1(String newX1)
+  public NotificationChain basicSetStart(PointValue newStart, NotificationChain msgs)
   {
-    String oldX1 = x1;
-    x1 = newX1;
+    PointValue oldStart = start;
+    start = newStart;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, CssDslPackage.LINEAR_GRADIENT__X1, oldX1, x1));
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, CssDslPackage.LINEAR_GRADIENT__START, oldStart, newStart);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
   }
 
   /**
@@ -183,9 +126,20 @@ public class LinearGradientImpl extends PaintImpl implements LinearGradient
    * <!-- end-user-doc -->
    * @generated
    */
-  public String getY1()
+  public void setStart(PointValue newStart)
   {
-    return y1;
+    if (newStart != start)
+    {
+      NotificationChain msgs = null;
+      if (start != null)
+        msgs = ((InternalEObject)start).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - CssDslPackage.LINEAR_GRADIENT__START, null, msgs);
+      if (newStart != null)
+        msgs = ((InternalEObject)newStart).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - CssDslPackage.LINEAR_GRADIENT__START, null, msgs);
+      msgs = basicSetStart(newStart, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, CssDslPackage.LINEAR_GRADIENT__START, newStart, newStart));
   }
 
   /**
@@ -193,12 +147,26 @@ public class LinearGradientImpl extends PaintImpl implements LinearGradient
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setY1(String newY1)
+  public PointValue getEnd()
   {
-    String oldY1 = y1;
-    y1 = newY1;
+    return end;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NotificationChain basicSetEnd(PointValue newEnd, NotificationChain msgs)
+  {
+    PointValue oldEnd = end;
+    end = newEnd;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, CssDslPackage.LINEAR_GRADIENT__Y1, oldY1, y1));
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, CssDslPackage.LINEAR_GRADIENT__END, oldEnd, newEnd);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
   }
 
   /**
@@ -206,45 +174,20 @@ public class LinearGradientImpl extends PaintImpl implements LinearGradient
    * <!-- end-user-doc -->
    * @generated
    */
-  public String getX2()
+  public void setEnd(PointValue newEnd)
   {
-    return x2;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setX2(String newX2)
-  {
-    String oldX2 = x2;
-    x2 = newX2;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, CssDslPackage.LINEAR_GRADIENT__X2, oldX2, x2));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public String getY2()
-  {
-    return y2;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setY2(String newY2)
-  {
-    String oldY2 = y2;
-    y2 = newY2;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, CssDslPackage.LINEAR_GRADIENT__Y2, oldY2, y2));
+    if (newEnd != end)
+    {
+      NotificationChain msgs = null;
+      if (end != null)
+        msgs = ((InternalEObject)end).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - CssDslPackage.LINEAR_GRADIENT__END, null, msgs);
+      if (newEnd != null)
+        msgs = ((InternalEObject)newEnd).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - CssDslPackage.LINEAR_GRADIENT__END, null, msgs);
+      msgs = basicSetEnd(newEnd, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, CssDslPackage.LINEAR_GRADIENT__END, newEnd, newEnd));
   }
 
   /**
@@ -271,6 +214,10 @@ public class LinearGradientImpl extends PaintImpl implements LinearGradient
   {
     switch (featureID)
     {
+      case CssDslPackage.LINEAR_GRADIENT__START:
+        return basicSetStart(null, msgs);
+      case CssDslPackage.LINEAR_GRADIENT__END:
+        return basicSetEnd(null, msgs);
       case CssDslPackage.LINEAR_GRADIENT__STOPS:
         return ((InternalEList<?>)getStops()).basicRemove(otherEnd, msgs);
     }
@@ -287,14 +234,10 @@ public class LinearGradientImpl extends PaintImpl implements LinearGradient
   {
     switch (featureID)
     {
-      case CssDslPackage.LINEAR_GRADIENT__X1:
-        return getX1();
-      case CssDslPackage.LINEAR_GRADIENT__Y1:
-        return getY1();
-      case CssDslPackage.LINEAR_GRADIENT__X2:
-        return getX2();
-      case CssDslPackage.LINEAR_GRADIENT__Y2:
-        return getY2();
+      case CssDslPackage.LINEAR_GRADIENT__START:
+        return getStart();
+      case CssDslPackage.LINEAR_GRADIENT__END:
+        return getEnd();
       case CssDslPackage.LINEAR_GRADIENT__STOPS:
         return getStops();
     }
@@ -312,17 +255,11 @@ public class LinearGradientImpl extends PaintImpl implements LinearGradient
   {
     switch (featureID)
     {
-      case CssDslPackage.LINEAR_GRADIENT__X1:
-        setX1((String)newValue);
+      case CssDslPackage.LINEAR_GRADIENT__START:
+        setStart((PointValue)newValue);
         return;
-      case CssDslPackage.LINEAR_GRADIENT__Y1:
-        setY1((String)newValue);
-        return;
-      case CssDslPackage.LINEAR_GRADIENT__X2:
-        setX2((String)newValue);
-        return;
-      case CssDslPackage.LINEAR_GRADIENT__Y2:
-        setY2((String)newValue);
+      case CssDslPackage.LINEAR_GRADIENT__END:
+        setEnd((PointValue)newValue);
         return;
       case CssDslPackage.LINEAR_GRADIENT__STOPS:
         getStops().clear();
@@ -342,17 +279,11 @@ public class LinearGradientImpl extends PaintImpl implements LinearGradient
   {
     switch (featureID)
     {
-      case CssDslPackage.LINEAR_GRADIENT__X1:
-        setX1(X1_EDEFAULT);
+      case CssDslPackage.LINEAR_GRADIENT__START:
+        setStart((PointValue)null);
         return;
-      case CssDslPackage.LINEAR_GRADIENT__Y1:
-        setY1(Y1_EDEFAULT);
-        return;
-      case CssDslPackage.LINEAR_GRADIENT__X2:
-        setX2(X2_EDEFAULT);
-        return;
-      case CssDslPackage.LINEAR_GRADIENT__Y2:
-        setY2(Y2_EDEFAULT);
+      case CssDslPackage.LINEAR_GRADIENT__END:
+        setEnd((PointValue)null);
         return;
       case CssDslPackage.LINEAR_GRADIENT__STOPS:
         getStops().clear();
@@ -371,41 +302,14 @@ public class LinearGradientImpl extends PaintImpl implements LinearGradient
   {
     switch (featureID)
     {
-      case CssDslPackage.LINEAR_GRADIENT__X1:
-        return X1_EDEFAULT == null ? x1 != null : !X1_EDEFAULT.equals(x1);
-      case CssDslPackage.LINEAR_GRADIENT__Y1:
-        return Y1_EDEFAULT == null ? y1 != null : !Y1_EDEFAULT.equals(y1);
-      case CssDslPackage.LINEAR_GRADIENT__X2:
-        return X2_EDEFAULT == null ? x2 != null : !X2_EDEFAULT.equals(x2);
-      case CssDslPackage.LINEAR_GRADIENT__Y2:
-        return Y2_EDEFAULT == null ? y2 != null : !Y2_EDEFAULT.equals(y2);
+      case CssDslPackage.LINEAR_GRADIENT__START:
+        return start != null;
+      case CssDslPackage.LINEAR_GRADIENT__END:
+        return end != null;
       case CssDslPackage.LINEAR_GRADIENT__STOPS:
         return stops != null && !stops.isEmpty();
     }
     return super.eIsSet(featureID);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public String toString()
-  {
-    if (eIsProxy()) return super.toString();
-
-    StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (x1: ");
-    result.append(x1);
-    result.append(", y1: ");
-    result.append(y1);
-    result.append(", x2: ");
-    result.append(x2);
-    result.append(", y2: ");
-    result.append(y2);
-    result.append(')');
-    return result.toString();
   }
 
 } //LinearGradientImpl

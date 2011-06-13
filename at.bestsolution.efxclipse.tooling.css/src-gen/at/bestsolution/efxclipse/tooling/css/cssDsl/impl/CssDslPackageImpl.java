@@ -24,10 +24,12 @@ import at.bestsolution.efxclipse.tooling.css.cssDsl.LookedUpColor;
 import at.bestsolution.efxclipse.tooling.css.cssDsl.MultiPaint;
 import at.bestsolution.efxclipse.tooling.css.cssDsl.NamedColor;
 import at.bestsolution.efxclipse.tooling.css.cssDsl.Paint;
+import at.bestsolution.efxclipse.tooling.css.cssDsl.PointValue;
 import at.bestsolution.efxclipse.tooling.css.cssDsl.RGBColor;
 import at.bestsolution.efxclipse.tooling.css.cssDsl.RadialGradient;
 import at.bestsolution.efxclipse.tooling.css.cssDsl.RepeatStyle;
 import at.bestsolution.efxclipse.tooling.css.cssDsl.SizeFill;
+import at.bestsolution.efxclipse.tooling.css.cssDsl.SizeType;
 import at.bestsolution.efxclipse.tooling.css.cssDsl.StopValue;
 import at.bestsolution.efxclipse.tooling.css.cssDsl.URLType;
 import at.bestsolution.efxclipse.tooling.css.cssDsl.css_declaration;
@@ -469,6 +471,13 @@ public class CssDslPackageImpl extends EPackageImpl implements CssDslPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  private EClass pointValueEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   private EClass repeatStyleEClass = null;
 
   /**
@@ -582,6 +591,13 @@ public class CssDslPackageImpl extends EPackageImpl implements CssDslPackage
    * @generated
    */
   private EClass fontstyleEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass sizeTypeEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -768,9 +784,19 @@ public class CssDslPackageImpl extends EPackageImpl implements CssDslPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  public EAttribute getselector_Combinator()
+  {
+    return (EAttribute)selectorEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EReference getselector_Selector()
   {
-    return (EReference)selectorEClass.getEStructuralFeatures().get(1);
+    return (EReference)selectorEClass.getEStructuralFeatures().get(2);
   }
 
   /**
@@ -2118,9 +2144,9 @@ public class CssDslPackageImpl extends EPackageImpl implements CssDslPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getLinearGradient_X1()
+  public EReference getLinearGradient_Start()
   {
-    return (EAttribute)linearGradientEClass.getEStructuralFeatures().get(0);
+    return (EReference)linearGradientEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -2128,29 +2154,9 @@ public class CssDslPackageImpl extends EPackageImpl implements CssDslPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getLinearGradient_Y1()
+  public EReference getLinearGradient_End()
   {
-    return (EAttribute)linearGradientEClass.getEStructuralFeatures().get(1);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EAttribute getLinearGradient_X2()
-  {
-    return (EAttribute)linearGradientEClass.getEStructuralFeatures().get(2);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EAttribute getLinearGradient_Y2()
-  {
-    return (EAttribute)linearGradientEClass.getEStructuralFeatures().get(3);
+    return (EReference)linearGradientEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -2160,7 +2166,7 @@ public class CssDslPackageImpl extends EPackageImpl implements CssDslPackage
    */
   public EReference getLinearGradient_Stops()
   {
-    return (EReference)linearGradientEClass.getEStructuralFeatures().get(4);
+    return (EReference)linearGradientEClass.getEStructuralFeatures().get(2);
   }
 
   /**
@@ -2178,9 +2184,9 @@ public class CssDslPackageImpl extends EPackageImpl implements CssDslPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getRadialGradient_Cx()
+  public EReference getRadialGradient_Center()
   {
-    return (EAttribute)radialGradientEClass.getEStructuralFeatures().get(0);
+    return (EReference)radialGradientEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -2188,9 +2194,9 @@ public class CssDslPackageImpl extends EPackageImpl implements CssDslPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getRadialGradient_Cy()
+  public EReference getRadialGradient_Radius()
   {
-    return (EAttribute)radialGradientEClass.getEStructuralFeatures().get(1);
+    return (EReference)radialGradientEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -2198,29 +2204,9 @@ public class CssDslPackageImpl extends EPackageImpl implements CssDslPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getRadialGradient_Radius()
+  public EReference getRadialGradient_Focus()
   {
-    return (EAttribute)radialGradientEClass.getEStructuralFeatures().get(2);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EAttribute getRadialGradient_Fx()
-  {
-    return (EAttribute)radialGradientEClass.getEStructuralFeatures().get(3);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EAttribute getRadialGradient_Fy()
-  {
-    return (EAttribute)radialGradientEClass.getEStructuralFeatures().get(4);
+    return (EReference)radialGradientEClass.getEStructuralFeatures().get(2);
   }
 
   /**
@@ -2230,7 +2216,7 @@ public class CssDslPackageImpl extends EPackageImpl implements CssDslPackage
    */
   public EReference getRadialGradient_Stops()
   {
-    return (EReference)radialGradientEClass.getEStructuralFeatures().get(5);
+    return (EReference)radialGradientEClass.getEStructuralFeatures().get(3);
   }
 
   /**
@@ -2248,9 +2234,9 @@ public class CssDslPackageImpl extends EPackageImpl implements CssDslPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getStopValue_Pos()
+  public EReference getStopValue_Pos()
   {
-    return (EAttribute)stopValueEClass.getEStructuralFeatures().get(0);
+    return (EReference)stopValueEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -2261,6 +2247,36 @@ public class CssDslPackageImpl extends EPackageImpl implements CssDslPackage
   public EReference getStopValue_Color()
   {
     return (EReference)stopValueEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getPointValue()
+  {
+    return pointValueEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getPointValue_X()
+  {
+    return (EReference)pointValueEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getPointValue_Y()
+  {
+    return (EReference)pointValueEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -2888,6 +2904,26 @@ public class CssDslPackageImpl extends EPackageImpl implements CssDslPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  public EClass getSizeType()
+  {
+    return sizeTypeEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getSizeType_Value()
+  {
+    return (EAttribute)sizeTypeEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EEnum getHPosition()
   {
     return hPositionEEnum;
@@ -2937,6 +2973,7 @@ public class CssDslPackageImpl extends EPackageImpl implements CssDslPackage
 
     selectorEClass = createEClass(SELECTOR);
     createEReference(selectorEClass, SELECTOR__SIMPLESELECTORS);
+    createEAttribute(selectorEClass, SELECTOR__COMBINATOR);
     createEReference(selectorEClass, SELECTOR__SELECTOR);
 
     simple_selectorEClass = createEClass(SIMPLE_SELECTOR);
@@ -3119,23 +3156,23 @@ public class CssDslPackageImpl extends EPackageImpl implements CssDslPackage
     paintEClass = createEClass(PAINT);
 
     linearGradientEClass = createEClass(LINEAR_GRADIENT);
-    createEAttribute(linearGradientEClass, LINEAR_GRADIENT__X1);
-    createEAttribute(linearGradientEClass, LINEAR_GRADIENT__Y1);
-    createEAttribute(linearGradientEClass, LINEAR_GRADIENT__X2);
-    createEAttribute(linearGradientEClass, LINEAR_GRADIENT__Y2);
+    createEReference(linearGradientEClass, LINEAR_GRADIENT__START);
+    createEReference(linearGradientEClass, LINEAR_GRADIENT__END);
     createEReference(linearGradientEClass, LINEAR_GRADIENT__STOPS);
 
     radialGradientEClass = createEClass(RADIAL_GRADIENT);
-    createEAttribute(radialGradientEClass, RADIAL_GRADIENT__CX);
-    createEAttribute(radialGradientEClass, RADIAL_GRADIENT__CY);
-    createEAttribute(radialGradientEClass, RADIAL_GRADIENT__RADIUS);
-    createEAttribute(radialGradientEClass, RADIAL_GRADIENT__FX);
-    createEAttribute(radialGradientEClass, RADIAL_GRADIENT__FY);
+    createEReference(radialGradientEClass, RADIAL_GRADIENT__CENTER);
+    createEReference(radialGradientEClass, RADIAL_GRADIENT__RADIUS);
+    createEReference(radialGradientEClass, RADIAL_GRADIENT__FOCUS);
     createEReference(radialGradientEClass, RADIAL_GRADIENT__STOPS);
 
     stopValueEClass = createEClass(STOP_VALUE);
-    createEAttribute(stopValueEClass, STOP_VALUE__POS);
+    createEReference(stopValueEClass, STOP_VALUE__POS);
     createEReference(stopValueEClass, STOP_VALUE__COLOR);
+
+    pointValueEClass = createEClass(POINT_VALUE);
+    createEReference(pointValueEClass, POINT_VALUE__X);
+    createEReference(pointValueEClass, POINT_VALUE__Y);
 
     repeatStyleEClass = createEClass(REPEAT_STYLE);
     createEAttribute(repeatStyleEClass, REPEAT_STYLE__V);
@@ -3215,6 +3252,9 @@ public class CssDslPackageImpl extends EPackageImpl implements CssDslPackage
 
     fontstyleEClass = createEClass(FONTSTYLE);
     createEAttribute(fontstyleEClass, FONTSTYLE__VALUE);
+
+    sizeTypeEClass = createEClass(SIZE_TYPE);
+    createEAttribute(sizeTypeEClass, SIZE_TYPE__VALUE);
 
     // Create enums
     hPositionEEnum = createEEnum(HPOSITION);
@@ -3315,6 +3355,7 @@ public class CssDslPackageImpl extends EPackageImpl implements CssDslPackage
 
     initEClass(selectorEClass, selector.class, "selector", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getselector_Simpleselectors(), this.getsimple_selector(), null, "simpleselectors", null, 0, -1, selector.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getselector_Combinator(), ecorePackage.getEString(), "combinator", null, 0, 1, selector.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getselector_Selector(), this.getselector(), null, "selector", null, 0, 1, selector.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(simple_selectorEClass, simple_selector.class, "simple_selector", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -3497,23 +3538,23 @@ public class CssDslPackageImpl extends EPackageImpl implements CssDslPackage
     initEClass(paintEClass, Paint.class, "Paint", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
     initEClass(linearGradientEClass, LinearGradient.class, "LinearGradient", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getLinearGradient_X1(), ecorePackage.getEString(), "x1", null, 0, 1, LinearGradient.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getLinearGradient_Y1(), ecorePackage.getEString(), "y1", null, 0, 1, LinearGradient.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getLinearGradient_X2(), ecorePackage.getEString(), "x2", null, 0, 1, LinearGradient.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getLinearGradient_Y2(), ecorePackage.getEString(), "y2", null, 0, 1, LinearGradient.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getLinearGradient_Start(), this.getPointValue(), null, "start", null, 0, 1, LinearGradient.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getLinearGradient_End(), this.getPointValue(), null, "end", null, 0, 1, LinearGradient.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getLinearGradient_Stops(), this.getStopValue(), null, "stops", null, 0, -1, LinearGradient.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(radialGradientEClass, RadialGradient.class, "RadialGradient", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getRadialGradient_Cx(), ecorePackage.getEString(), "cx", null, 0, 1, RadialGradient.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getRadialGradient_Cy(), ecorePackage.getEString(), "cy", null, 0, 1, RadialGradient.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getRadialGradient_Radius(), ecorePackage.getEString(), "radius", null, 0, 1, RadialGradient.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getRadialGradient_Fx(), ecorePackage.getEString(), "fx", null, 0, 1, RadialGradient.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getRadialGradient_Fy(), ecorePackage.getEString(), "fy", null, 0, 1, RadialGradient.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getRadialGradient_Center(), this.getPointValue(), null, "center", null, 0, 1, RadialGradient.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getRadialGradient_Radius(), this.getSizeType(), null, "radius", null, 0, 1, RadialGradient.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getRadialGradient_Focus(), this.getPointValue(), null, "focus", null, 0, 1, RadialGradient.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getRadialGradient_Stops(), this.getStopValue(), null, "stops", null, 0, -1, RadialGradient.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(stopValueEClass, StopValue.class, "StopValue", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getStopValue_Pos(), ecorePackage.getEString(), "pos", null, 0, 1, StopValue.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getStopValue_Pos(), this.getSizeType(), null, "pos", null, 0, 1, StopValue.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getStopValue_Color(), this.getColor(), null, "color", null, 0, 1, StopValue.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(pointValueEClass, PointValue.class, "PointValue", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getPointValue_X(), this.getSizeType(), null, "x", null, 0, 1, PointValue.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getPointValue_Y(), this.getSizeType(), null, "y", null, 0, 1, PointValue.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(repeatStyleEClass, RepeatStyle.class, "RepeatStyle", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getRepeatStyle_V(), ecorePackage.getEString(), "v", null, 0, 1, RepeatStyle.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -3593,6 +3634,9 @@ public class CssDslPackageImpl extends EPackageImpl implements CssDslPackage
 
     initEClass(fontstyleEClass, at.bestsolution.efxclipse.tooling.css.cssDsl.FONTSTYLE.class, "FONTSTYLE", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getFONTSTYLE_Value(), ecorePackage.getEString(), "value", null, 0, 1, at.bestsolution.efxclipse.tooling.css.cssDsl.FONTSTYLE.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(sizeTypeEClass, SizeType.class, "SizeType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getSizeType_Value(), ecorePackage.getEString(), "value", null, 0, 1, SizeType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     // Initialize enums and add enum literals
     initEEnum(hPositionEEnum, HPosition.class, "HPosition");

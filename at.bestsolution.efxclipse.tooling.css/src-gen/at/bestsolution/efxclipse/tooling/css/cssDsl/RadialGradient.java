@@ -16,11 +16,9 @@ import org.eclipse.emf.common.util.EList;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link at.bestsolution.efxclipse.tooling.css.cssDsl.RadialGradient#getCx <em>Cx</em>}</li>
- *   <li>{@link at.bestsolution.efxclipse.tooling.css.cssDsl.RadialGradient#getCy <em>Cy</em>}</li>
+ *   <li>{@link at.bestsolution.efxclipse.tooling.css.cssDsl.RadialGradient#getCenter <em>Center</em>}</li>
  *   <li>{@link at.bestsolution.efxclipse.tooling.css.cssDsl.RadialGradient#getRadius <em>Radius</em>}</li>
- *   <li>{@link at.bestsolution.efxclipse.tooling.css.cssDsl.RadialGradient#getFx <em>Fx</em>}</li>
- *   <li>{@link at.bestsolution.efxclipse.tooling.css.cssDsl.RadialGradient#getFy <em>Fy</em>}</li>
+ *   <li>{@link at.bestsolution.efxclipse.tooling.css.cssDsl.RadialGradient#getFocus <em>Focus</em>}</li>
  *   <li>{@link at.bestsolution.efxclipse.tooling.css.cssDsl.RadialGradient#getStops <em>Stops</em>}</li>
  * </ul>
  * </p>
@@ -32,134 +30,82 @@ import org.eclipse.emf.common.util.EList;
 public interface RadialGradient extends Paint
 {
   /**
-   * Returns the value of the '<em><b>Cx</b></em>' attribute.
+   * Returns the value of the '<em><b>Center</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Cx</em>' attribute isn't clear,
+   * If the meaning of the '<em>Center</em>' containment reference isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Cx</em>' attribute.
-   * @see #setCx(String)
-   * @see at.bestsolution.efxclipse.tooling.css.cssDsl.CssDslPackage#getRadialGradient_Cx()
-   * @model
+   * @return the value of the '<em>Center</em>' containment reference.
+   * @see #setCenter(PointValue)
+   * @see at.bestsolution.efxclipse.tooling.css.cssDsl.CssDslPackage#getRadialGradient_Center()
+   * @model containment="true"
    * @generated
    */
-  String getCx();
+  PointValue getCenter();
 
   /**
-   * Sets the value of the '{@link at.bestsolution.efxclipse.tooling.css.cssDsl.RadialGradient#getCx <em>Cx</em>}' attribute.
+   * Sets the value of the '{@link at.bestsolution.efxclipse.tooling.css.cssDsl.RadialGradient#getCenter <em>Center</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Cx</em>' attribute.
-   * @see #getCx()
+   * @param value the new value of the '<em>Center</em>' containment reference.
+   * @see #getCenter()
    * @generated
    */
-  void setCx(String value);
+  void setCenter(PointValue value);
 
   /**
-   * Returns the value of the '<em><b>Cy</b></em>' attribute.
+   * Returns the value of the '<em><b>Radius</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Cy</em>' attribute isn't clear,
+   * If the meaning of the '<em>Radius</em>' containment reference isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Cy</em>' attribute.
-   * @see #setCy(String)
-   * @see at.bestsolution.efxclipse.tooling.css.cssDsl.CssDslPackage#getRadialGradient_Cy()
-   * @model
-   * @generated
-   */
-  String getCy();
-
-  /**
-   * Sets the value of the '{@link at.bestsolution.efxclipse.tooling.css.cssDsl.RadialGradient#getCy <em>Cy</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Cy</em>' attribute.
-   * @see #getCy()
-   * @generated
-   */
-  void setCy(String value);
-
-  /**
-   * Returns the value of the '<em><b>Radius</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <p>
-   * If the meaning of the '<em>Radius</em>' attribute isn't clear,
-   * there really should be more of a description here...
-   * </p>
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Radius</em>' attribute.
-   * @see #setRadius(String)
+   * @return the value of the '<em>Radius</em>' containment reference.
+   * @see #setRadius(SizeType)
    * @see at.bestsolution.efxclipse.tooling.css.cssDsl.CssDslPackage#getRadialGradient_Radius()
-   * @model
+   * @model containment="true"
    * @generated
    */
-  String getRadius();
+  SizeType getRadius();
 
   /**
-   * Sets the value of the '{@link at.bestsolution.efxclipse.tooling.css.cssDsl.RadialGradient#getRadius <em>Radius</em>}' attribute.
+   * Sets the value of the '{@link at.bestsolution.efxclipse.tooling.css.cssDsl.RadialGradient#getRadius <em>Radius</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Radius</em>' attribute.
+   * @param value the new value of the '<em>Radius</em>' containment reference.
    * @see #getRadius()
    * @generated
    */
-  void setRadius(String value);
+  void setRadius(SizeType value);
 
   /**
-   * Returns the value of the '<em><b>Fx</b></em>' attribute.
+   * Returns the value of the '<em><b>Focus</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Fx</em>' attribute isn't clear,
+   * If the meaning of the '<em>Focus</em>' containment reference isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Fx</em>' attribute.
-   * @see #setFx(String)
-   * @see at.bestsolution.efxclipse.tooling.css.cssDsl.CssDslPackage#getRadialGradient_Fx()
-   * @model
+   * @return the value of the '<em>Focus</em>' containment reference.
+   * @see #setFocus(PointValue)
+   * @see at.bestsolution.efxclipse.tooling.css.cssDsl.CssDslPackage#getRadialGradient_Focus()
+   * @model containment="true"
    * @generated
    */
-  String getFx();
+  PointValue getFocus();
 
   /**
-   * Sets the value of the '{@link at.bestsolution.efxclipse.tooling.css.cssDsl.RadialGradient#getFx <em>Fx</em>}' attribute.
+   * Sets the value of the '{@link at.bestsolution.efxclipse.tooling.css.cssDsl.RadialGradient#getFocus <em>Focus</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Fx</em>' attribute.
-   * @see #getFx()
+   * @param value the new value of the '<em>Focus</em>' containment reference.
+   * @see #getFocus()
    * @generated
    */
-  void setFx(String value);
-
-  /**
-   * Returns the value of the '<em><b>Fy</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <p>
-   * If the meaning of the '<em>Fy</em>' attribute isn't clear,
-   * there really should be more of a description here...
-   * </p>
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Fy</em>' attribute.
-   * @see #setFy(String)
-   * @see at.bestsolution.efxclipse.tooling.css.cssDsl.CssDslPackage#getRadialGradient_Fy()
-   * @model
-   * @generated
-   */
-  String getFy();
-
-  /**
-   * Sets the value of the '{@link at.bestsolution.efxclipse.tooling.css.cssDsl.RadialGradient#getFy <em>Fy</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Fy</em>' attribute.
-   * @see #getFy()
-   * @generated
-   */
-  void setFy(String value);
+  void setFocus(PointValue value);
 
   /**
    * Returns the value of the '<em><b>Stops</b></em>' containment reference list.

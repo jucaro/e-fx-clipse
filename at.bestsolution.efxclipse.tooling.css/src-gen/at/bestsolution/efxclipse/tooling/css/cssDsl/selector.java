@@ -19,6 +19,7 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * <ul>
  *   <li>{@link at.bestsolution.efxclipse.tooling.css.cssDsl.selector#getSimpleselectors <em>Simpleselectors</em>}</li>
+ *   <li>{@link at.bestsolution.efxclipse.tooling.css.cssDsl.selector#getCombinator <em>Combinator</em>}</li>
  *   <li>{@link at.bestsolution.efxclipse.tooling.css.cssDsl.selector#getSelector <em>Selector</em>}</li>
  * </ul>
  * </p>
@@ -44,6 +45,32 @@ public interface selector extends EObject
    * @generated
    */
   EList<simple_selector> getSimpleselectors();
+
+  /**
+   * Returns the value of the '<em><b>Combinator</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Combinator</em>' attribute isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Combinator</em>' attribute.
+   * @see #setCombinator(String)
+   * @see at.bestsolution.efxclipse.tooling.css.cssDsl.CssDslPackage#getselector_Combinator()
+   * @model
+   * @generated
+   */
+  String getCombinator();
+
+  /**
+   * Sets the value of the '{@link at.bestsolution.efxclipse.tooling.css.cssDsl.selector#getCombinator <em>Combinator</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Combinator</em>' attribute.
+   * @see #getCombinator()
+   * @generated
+   */
+  void setCombinator(String value);
 
   /**
    * Returns the value of the '<em><b>Selector</b></em>' containment reference.

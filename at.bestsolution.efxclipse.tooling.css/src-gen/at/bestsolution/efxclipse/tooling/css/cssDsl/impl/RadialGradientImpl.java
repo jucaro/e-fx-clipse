@@ -7,7 +7,9 @@
 package at.bestsolution.efxclipse.tooling.css.cssDsl.impl;
 
 import at.bestsolution.efxclipse.tooling.css.cssDsl.CssDslPackage;
+import at.bestsolution.efxclipse.tooling.css.cssDsl.PointValue;
 import at.bestsolution.efxclipse.tooling.css.cssDsl.RadialGradient;
+import at.bestsolution.efxclipse.tooling.css.cssDsl.SizeType;
 import at.bestsolution.efxclipse.tooling.css.cssDsl.StopValue;
 
 import java.util.Collection;
@@ -32,11 +34,9 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link at.bestsolution.efxclipse.tooling.css.cssDsl.impl.RadialGradientImpl#getCx <em>Cx</em>}</li>
- *   <li>{@link at.bestsolution.efxclipse.tooling.css.cssDsl.impl.RadialGradientImpl#getCy <em>Cy</em>}</li>
+ *   <li>{@link at.bestsolution.efxclipse.tooling.css.cssDsl.impl.RadialGradientImpl#getCenter <em>Center</em>}</li>
  *   <li>{@link at.bestsolution.efxclipse.tooling.css.cssDsl.impl.RadialGradientImpl#getRadius <em>Radius</em>}</li>
- *   <li>{@link at.bestsolution.efxclipse.tooling.css.cssDsl.impl.RadialGradientImpl#getFx <em>Fx</em>}</li>
- *   <li>{@link at.bestsolution.efxclipse.tooling.css.cssDsl.impl.RadialGradientImpl#getFy <em>Fy</em>}</li>
+ *   <li>{@link at.bestsolution.efxclipse.tooling.css.cssDsl.impl.RadialGradientImpl#getFocus <em>Focus</em>}</li>
  *   <li>{@link at.bestsolution.efxclipse.tooling.css.cssDsl.impl.RadialGradientImpl#getStops <em>Stops</em>}</li>
  * </ul>
  * </p>
@@ -46,104 +46,34 @@ import org.eclipse.emf.ecore.util.InternalEList;
 public class RadialGradientImpl extends PaintImpl implements RadialGradient
 {
   /**
-   * The default value of the '{@link #getCx() <em>Cx</em>}' attribute.
+   * The cached value of the '{@link #getCenter() <em>Center</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getCx()
+   * @see #getCenter()
    * @generated
    * @ordered
    */
-  protected static final String CX_EDEFAULT = null;
+  protected PointValue center;
 
   /**
-   * The cached value of the '{@link #getCx() <em>Cx</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getCx()
-   * @generated
-   * @ordered
-   */
-  protected String cx = CX_EDEFAULT;
-
-  /**
-   * The default value of the '{@link #getCy() <em>Cy</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getCy()
-   * @generated
-   * @ordered
-   */
-  protected static final String CY_EDEFAULT = null;
-
-  /**
-   * The cached value of the '{@link #getCy() <em>Cy</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getCy()
-   * @generated
-   * @ordered
-   */
-  protected String cy = CY_EDEFAULT;
-
-  /**
-   * The default value of the '{@link #getRadius() <em>Radius</em>}' attribute.
+   * The cached value of the '{@link #getRadius() <em>Radius</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @see #getRadius()
    * @generated
    * @ordered
    */
-  protected static final String RADIUS_EDEFAULT = null;
+  protected SizeType radius;
 
   /**
-   * The cached value of the '{@link #getRadius() <em>Radius</em>}' attribute.
+   * The cached value of the '{@link #getFocus() <em>Focus</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getRadius()
+   * @see #getFocus()
    * @generated
    * @ordered
    */
-  protected String radius = RADIUS_EDEFAULT;
-
-  /**
-   * The default value of the '{@link #getFx() <em>Fx</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getFx()
-   * @generated
-   * @ordered
-   */
-  protected static final String FX_EDEFAULT = null;
-
-  /**
-   * The cached value of the '{@link #getFx() <em>Fx</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getFx()
-   * @generated
-   * @ordered
-   */
-  protected String fx = FX_EDEFAULT;
-
-  /**
-   * The default value of the '{@link #getFy() <em>Fy</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getFy()
-   * @generated
-   * @ordered
-   */
-  protected static final String FY_EDEFAULT = null;
-
-  /**
-   * The cached value of the '{@link #getFy() <em>Fy</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getFy()
-   * @generated
-   * @ordered
-   */
-  protected String fy = FY_EDEFAULT;
+  protected PointValue focus;
 
   /**
    * The cached value of the '{@link #getStops() <em>Stops</em>}' containment reference list.
@@ -181,9 +111,9 @@ public class RadialGradientImpl extends PaintImpl implements RadialGradient
    * <!-- end-user-doc -->
    * @generated
    */
-  public String getCx()
+  public PointValue getCenter()
   {
-    return cx;
+    return center;
   }
 
   /**
@@ -191,12 +121,16 @@ public class RadialGradientImpl extends PaintImpl implements RadialGradient
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setCx(String newCx)
+  public NotificationChain basicSetCenter(PointValue newCenter, NotificationChain msgs)
   {
-    String oldCx = cx;
-    cx = newCx;
+    PointValue oldCenter = center;
+    center = newCenter;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, CssDslPackage.RADIAL_GRADIENT__CX, oldCx, cx));
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, CssDslPackage.RADIAL_GRADIENT__CENTER, oldCenter, newCenter);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
   }
 
   /**
@@ -204,9 +138,20 @@ public class RadialGradientImpl extends PaintImpl implements RadialGradient
    * <!-- end-user-doc -->
    * @generated
    */
-  public String getCy()
+  public void setCenter(PointValue newCenter)
   {
-    return cy;
+    if (newCenter != center)
+    {
+      NotificationChain msgs = null;
+      if (center != null)
+        msgs = ((InternalEObject)center).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - CssDslPackage.RADIAL_GRADIENT__CENTER, null, msgs);
+      if (newCenter != null)
+        msgs = ((InternalEObject)newCenter).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - CssDslPackage.RADIAL_GRADIENT__CENTER, null, msgs);
+      msgs = basicSetCenter(newCenter, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, CssDslPackage.RADIAL_GRADIENT__CENTER, newCenter, newCenter));
   }
 
   /**
@@ -214,20 +159,7 @@ public class RadialGradientImpl extends PaintImpl implements RadialGradient
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setCy(String newCy)
-  {
-    String oldCy = cy;
-    cy = newCy;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, CssDslPackage.RADIAL_GRADIENT__CY, oldCy, cy));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public String getRadius()
+  public SizeType getRadius()
   {
     return radius;
   }
@@ -237,12 +169,16 @@ public class RadialGradientImpl extends PaintImpl implements RadialGradient
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setRadius(String newRadius)
+  public NotificationChain basicSetRadius(SizeType newRadius, NotificationChain msgs)
   {
-    String oldRadius = radius;
+    SizeType oldRadius = radius;
     radius = newRadius;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, CssDslPackage.RADIAL_GRADIENT__RADIUS, oldRadius, radius));
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, CssDslPackage.RADIAL_GRADIENT__RADIUS, oldRadius, newRadius);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
   }
 
   /**
@@ -250,9 +186,20 @@ public class RadialGradientImpl extends PaintImpl implements RadialGradient
    * <!-- end-user-doc -->
    * @generated
    */
-  public String getFx()
+  public void setRadius(SizeType newRadius)
   {
-    return fx;
+    if (newRadius != radius)
+    {
+      NotificationChain msgs = null;
+      if (radius != null)
+        msgs = ((InternalEObject)radius).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - CssDslPackage.RADIAL_GRADIENT__RADIUS, null, msgs);
+      if (newRadius != null)
+        msgs = ((InternalEObject)newRadius).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - CssDslPackage.RADIAL_GRADIENT__RADIUS, null, msgs);
+      msgs = basicSetRadius(newRadius, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, CssDslPackage.RADIAL_GRADIENT__RADIUS, newRadius, newRadius));
   }
 
   /**
@@ -260,12 +207,26 @@ public class RadialGradientImpl extends PaintImpl implements RadialGradient
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setFx(String newFx)
+  public PointValue getFocus()
   {
-    String oldFx = fx;
-    fx = newFx;
+    return focus;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NotificationChain basicSetFocus(PointValue newFocus, NotificationChain msgs)
+  {
+    PointValue oldFocus = focus;
+    focus = newFocus;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, CssDslPackage.RADIAL_GRADIENT__FX, oldFx, fx));
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, CssDslPackage.RADIAL_GRADIENT__FOCUS, oldFocus, newFocus);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
   }
 
   /**
@@ -273,22 +234,20 @@ public class RadialGradientImpl extends PaintImpl implements RadialGradient
    * <!-- end-user-doc -->
    * @generated
    */
-  public String getFy()
+  public void setFocus(PointValue newFocus)
   {
-    return fy;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setFy(String newFy)
-  {
-    String oldFy = fy;
-    fy = newFy;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, CssDslPackage.RADIAL_GRADIENT__FY, oldFy, fy));
+    if (newFocus != focus)
+    {
+      NotificationChain msgs = null;
+      if (focus != null)
+        msgs = ((InternalEObject)focus).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - CssDslPackage.RADIAL_GRADIENT__FOCUS, null, msgs);
+      if (newFocus != null)
+        msgs = ((InternalEObject)newFocus).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - CssDslPackage.RADIAL_GRADIENT__FOCUS, null, msgs);
+      msgs = basicSetFocus(newFocus, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, CssDslPackage.RADIAL_GRADIENT__FOCUS, newFocus, newFocus));
   }
 
   /**
@@ -315,6 +274,12 @@ public class RadialGradientImpl extends PaintImpl implements RadialGradient
   {
     switch (featureID)
     {
+      case CssDslPackage.RADIAL_GRADIENT__CENTER:
+        return basicSetCenter(null, msgs);
+      case CssDslPackage.RADIAL_GRADIENT__RADIUS:
+        return basicSetRadius(null, msgs);
+      case CssDslPackage.RADIAL_GRADIENT__FOCUS:
+        return basicSetFocus(null, msgs);
       case CssDslPackage.RADIAL_GRADIENT__STOPS:
         return ((InternalEList<?>)getStops()).basicRemove(otherEnd, msgs);
     }
@@ -331,16 +296,12 @@ public class RadialGradientImpl extends PaintImpl implements RadialGradient
   {
     switch (featureID)
     {
-      case CssDslPackage.RADIAL_GRADIENT__CX:
-        return getCx();
-      case CssDslPackage.RADIAL_GRADIENT__CY:
-        return getCy();
+      case CssDslPackage.RADIAL_GRADIENT__CENTER:
+        return getCenter();
       case CssDslPackage.RADIAL_GRADIENT__RADIUS:
         return getRadius();
-      case CssDslPackage.RADIAL_GRADIENT__FX:
-        return getFx();
-      case CssDslPackage.RADIAL_GRADIENT__FY:
-        return getFy();
+      case CssDslPackage.RADIAL_GRADIENT__FOCUS:
+        return getFocus();
       case CssDslPackage.RADIAL_GRADIENT__STOPS:
         return getStops();
     }
@@ -358,20 +319,14 @@ public class RadialGradientImpl extends PaintImpl implements RadialGradient
   {
     switch (featureID)
     {
-      case CssDslPackage.RADIAL_GRADIENT__CX:
-        setCx((String)newValue);
-        return;
-      case CssDslPackage.RADIAL_GRADIENT__CY:
-        setCy((String)newValue);
+      case CssDslPackage.RADIAL_GRADIENT__CENTER:
+        setCenter((PointValue)newValue);
         return;
       case CssDslPackage.RADIAL_GRADIENT__RADIUS:
-        setRadius((String)newValue);
+        setRadius((SizeType)newValue);
         return;
-      case CssDslPackage.RADIAL_GRADIENT__FX:
-        setFx((String)newValue);
-        return;
-      case CssDslPackage.RADIAL_GRADIENT__FY:
-        setFy((String)newValue);
+      case CssDslPackage.RADIAL_GRADIENT__FOCUS:
+        setFocus((PointValue)newValue);
         return;
       case CssDslPackage.RADIAL_GRADIENT__STOPS:
         getStops().clear();
@@ -391,20 +346,14 @@ public class RadialGradientImpl extends PaintImpl implements RadialGradient
   {
     switch (featureID)
     {
-      case CssDslPackage.RADIAL_GRADIENT__CX:
-        setCx(CX_EDEFAULT);
-        return;
-      case CssDslPackage.RADIAL_GRADIENT__CY:
-        setCy(CY_EDEFAULT);
+      case CssDslPackage.RADIAL_GRADIENT__CENTER:
+        setCenter((PointValue)null);
         return;
       case CssDslPackage.RADIAL_GRADIENT__RADIUS:
-        setRadius(RADIUS_EDEFAULT);
+        setRadius((SizeType)null);
         return;
-      case CssDslPackage.RADIAL_GRADIENT__FX:
-        setFx(FX_EDEFAULT);
-        return;
-      case CssDslPackage.RADIAL_GRADIENT__FY:
-        setFy(FY_EDEFAULT);
+      case CssDslPackage.RADIAL_GRADIENT__FOCUS:
+        setFocus((PointValue)null);
         return;
       case CssDslPackage.RADIAL_GRADIENT__STOPS:
         getStops().clear();
@@ -423,45 +372,16 @@ public class RadialGradientImpl extends PaintImpl implements RadialGradient
   {
     switch (featureID)
     {
-      case CssDslPackage.RADIAL_GRADIENT__CX:
-        return CX_EDEFAULT == null ? cx != null : !CX_EDEFAULT.equals(cx);
-      case CssDslPackage.RADIAL_GRADIENT__CY:
-        return CY_EDEFAULT == null ? cy != null : !CY_EDEFAULT.equals(cy);
+      case CssDslPackage.RADIAL_GRADIENT__CENTER:
+        return center != null;
       case CssDslPackage.RADIAL_GRADIENT__RADIUS:
-        return RADIUS_EDEFAULT == null ? radius != null : !RADIUS_EDEFAULT.equals(radius);
-      case CssDslPackage.RADIAL_GRADIENT__FX:
-        return FX_EDEFAULT == null ? fx != null : !FX_EDEFAULT.equals(fx);
-      case CssDslPackage.RADIAL_GRADIENT__FY:
-        return FY_EDEFAULT == null ? fy != null : !FY_EDEFAULT.equals(fy);
+        return radius != null;
+      case CssDslPackage.RADIAL_GRADIENT__FOCUS:
+        return focus != null;
       case CssDslPackage.RADIAL_GRADIENT__STOPS:
         return stops != null && !stops.isEmpty();
     }
     return super.eIsSet(featureID);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public String toString()
-  {
-    if (eIsProxy()) return super.toString();
-
-    StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (cx: ");
-    result.append(cx);
-    result.append(", cy: ");
-    result.append(cy);
-    result.append(", radius: ");
-    result.append(radius);
-    result.append(", fx: ");
-    result.append(fx);
-    result.append(", fy: ");
-    result.append(fy);
-    result.append(')');
-    return result.toString();
   }
 
 } //RadialGradientImpl

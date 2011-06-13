@@ -122,6 +122,7 @@ public class CssDslFactoryImpl extends EFactoryImpl implements CssDslFactory
       case CssDslPackage.LINEAR_GRADIENT: return createLinearGradient();
       case CssDslPackage.RADIAL_GRADIENT: return createRadialGradient();
       case CssDslPackage.STOP_VALUE: return createStopValue();
+      case CssDslPackage.POINT_VALUE: return createPointValue();
       case CssDslPackage.REPEAT_STYLE: return createRepeatStyle();
       case CssDslPackage.DIM4_SIZE: return createDim4Size();
       case CssDslPackage.BG_POSITION: return createBgPosition();
@@ -139,6 +140,7 @@ public class CssDslFactoryImpl extends EFactoryImpl implements CssDslFactory
       case CssDslPackage.FONT: return createFONT();
       case CssDslPackage.FONTWEIGHT: return createFONTWEIGHT();
       case CssDslPackage.FONTSTYLE: return createFONTSTYLE();
+      case CssDslPackage.SIZE_TYPE: return createSizeType();
       default:
         throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
     }
@@ -766,6 +768,17 @@ public class CssDslFactoryImpl extends EFactoryImpl implements CssDslFactory
    * <!-- end-user-doc -->
    * @generated
    */
+  public PointValue createPointValue()
+  {
+    PointValueImpl pointValue = new PointValueImpl();
+    return pointValue;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public RepeatStyle createRepeatStyle()
   {
     RepeatStyleImpl repeatStyle = new RepeatStyleImpl();
@@ -946,6 +959,17 @@ public class CssDslFactoryImpl extends EFactoryImpl implements CssDslFactory
   {
     FONTSTYLEImpl fontstyle = new FONTSTYLEImpl();
     return fontstyle;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public SizeType createSizeType()
+  {
+    SizeTypeImpl sizeType = new SizeTypeImpl();
+    return sizeType;
   }
 
   /**
