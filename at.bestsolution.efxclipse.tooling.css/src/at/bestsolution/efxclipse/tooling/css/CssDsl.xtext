@@ -143,7 +143,7 @@ fx_font_property:
 	property=(
 		'-fx-font' | '-fx-title-font' | '-fx-pie-label-font' | '-fx-pie-value-label-font' 
 		| '-fx-label-font' | '-fx-tick-label-font'
-	) ':' value=FONT
+	) WS* ':' WS* value=FONT
 ;
 
 fx_font_family_property:
@@ -368,7 +368,7 @@ fx_text_overrun_property:
 fx_insets_property:
 	property=(
 		'-fx-insets'
-	) WS*':'WS* value+=NUMBER | ( value+=NUMBER value+=NUMBER value+=NUMBER value+=NUMBER )
+	) WS*':'WS* value+=NUMBER | ( value+=NUMBER WS+ value+=NUMBER WS+ value+=NUMBER WS+ value+=NUMBER )
 ;
 
 fx_number_properties:
@@ -394,16 +394,16 @@ Effect:
 ;
 
 EffectDropShadow:
-	'dropshadow' '(' blur=BLUR COMMA color=Color COMMA blurRadius=NUMBER COMMA spread=NUMBER COMMA offsetX=NUMBER COMMA offsetY=NUMBER ')'
+	'dropshadow' WS* '(' WS* blur=BLUR COMMA color=Color COMMA blurRadius=NUMBER COMMA spread=NUMBER COMMA offsetX=NUMBER COMMA offsetY=NUMBER WS* ')'
 ;
 
 
 EffectInnerShadow:
-	'innershadow(' blur=BLUR COMMA color=Color COMMA blurRadius=NUMBER COMMA choke=NUMBER COMMA offsetX=NUMBER COMMA offsetY=NUMBER ')'
+	'innershadow' WS* '(' WS* blur=BLUR COMMA color=Color COMMA blurRadius=NUMBER COMMA choke=NUMBER COMMA offsetX=NUMBER COMMA offsetY=NUMBER WS* ')'
 ;
 
 MultiPaint:
-	(values+=Paint)+ 
+	values+=Paint (WS* values+=Paint)*
 	// values+=PaintValue values+=PaintValue values+=PaintValue values+=PaintValue
 	// values+=PaintValue // | (values+=PaintValue values+=PaintValue values+=PaintValue values+=PaintValue)
 	// (values+=PaintValue | values+=PaintValue values+=PaintValue values+=PaintValue values+=PaintValue)
@@ -415,11 +415,11 @@ Paint:
 
 
 LinearGradient:
-	'linear' WS* '(' x1=SIZE COMMA y1=SIZE ')' WS* 'to' WS* '(' x2=SIZE COMMA y2=SIZE ')' WS* 'stops' ( WS* '(' stops+=StopValue ')' )+ ( 'repeat' | 'reflect' )?
+	'linear' WS* '(' x1=SIZE COMMA y1=SIZE ')' WS* 'to' WS* '(' x2=SIZE COMMA y2=SIZE ')' WS* 'stops' ( WS* '(' stops+=StopValue ')' )+ ( WS+ ('repeat' | 'reflect') )?
 ;
 
 RadialGradient:
-	'radial' ('(' cx=SIZE COMMA cy=SIZE ')' COMMA )? radius=SIZE ( 'focus' '(' fx=SIZE COMMA fy=SIZE ')' ) 'stops' ( '(' stops+=StopValue ')' )+ ( 'repeat' | 'reflect' )?
+	'radial' WS* ( '(' cx=SIZE COMMA cy=SIZE ')' COMMA )? radius=SIZE ( WS* 'focus' WS* '(' WS* fx=SIZE COMMA fy=SIZE WS* ')' ) WS* 'stops' ( WS* '(' stops+=StopValue ')' )+ ( WS+ ( 'repeat' | 'reflect' ))?
 ;
 
 StopValue:
@@ -435,7 +435,7 @@ VPosition:
 ;
 
 RepeatStyle:
-	v = ('repeat-x' | 'repeat-y') | (  v=('repeat' | 'space' | 'round' | 'no-repeat' | 'stretch') v2=('repeat' | 'space' | 'round' | 'no-repeat'| 'stretch')?)
+	v = ('repeat-x' | 'repeat-y') | (  v=('repeat' | 'space' | 'round' | 'no-repeat' | 'stretch') (WS+ v2=('repeat' | 'space' | 'round' | 'no-repeat'| 'stretch'))?)
 ;
 
 Dim4Size:
@@ -453,7 +453,7 @@ BgPosition:
 ;
 
 fx_color_property:
-	property=COLOR_PROPERTIES':' value=Color
+	property=COLOR_PROPERTIES WS* ':' WS* value=Color
 ;
 
 BgSize:
@@ -545,7 +545,7 @@ HSBColor:
 ;
 
 ColorFunction:
-	( 'derive' '(' orig=Color COMMA mod=PERCENTAGE ')' )
+	( 'derive' '(' orig=Color COMMA mod=unary_operator? PERCENTAGE ')' )
 	|
 	( 'ladder' '(' orig=Color ')' 'stops' ( '(' stopNumbers+=NUMBER COMMA stopColors+=Color ')' )+ )
 ;
@@ -565,7 +565,7 @@ TIME: num ('ms'| 's' );
 FREQ: num ('hz' | 'khz');
 
 FONT:
-	( styleOrWeightString=('italic' | 'oblique' | 'normal' | 'bold' | 'bolder' | 'lighter') | weight=num )? size=SIZE family=FONTFAMILY
+	( (styleOrWeightString=('italic' | 'oblique' | 'normal' | 'bold' | 'bolder' | 'lighter') | weight=num) WS+)? size=SIZE WS* family=FONTFAMILY
 ;
 
 FONTFAMILY:

@@ -265,12 +265,12 @@ public class AbstractCssDslSemanticSequencer extends AbstractSemanticSequencer {
 				}
 				else break;
 			case CssDslPackage.ELEMENT_NAME:
-				if(context == grammarAccess.getSimple_selectorRule()) {
-					sequence_simple_selector_element_name(context, (element_name) semanticObject); 
+				if(context == grammarAccess.getElement_nameRule()) {
+					sequence_element_name_element_name(context, (element_name) semanticObject); 
 					return; 
 				}
-				else if(context == grammarAccess.getElement_nameRule()) {
-					sequence_element_name_element_name(context, (element_name) semanticObject); 
+				else if(context == grammarAccess.getSimple_selectorRule()) {
+					sequence_simple_selector_element_name(context, (element_name) semanticObject); 
 					return; 
 				}
 				else break;
@@ -683,13 +683,12 @@ public class AbstractCssDslSemanticSequencer extends AbstractSemanticSequencer {
 	
 	/**
 	 * Constraint:
-	 *     ((orig=Color mod=PERCENTAGE) | (orig=Color (stopNumbers+=NUMBER stopColors+=Color)+))
+	 *     ((orig=Color mod=unary_operator?) | (orig=Color (stopNumbers+=NUMBER stopColors+=Color)+))
 	 *
 	 * Features:
 	 *    orig[2, 2]
-	 *    mod[1, 1]
+	 *    mod[0, 1]
 	 *         EXCLUDE_IF_UNSET orig
-	 *         MANDATORY_IF_SET orig
 	 *         EXCLUDE_IF_SET orig
 	 *         EXCLUDE_IF_SET stopNumbers
 	 *         EXCLUDE_IF_SET stopColors
@@ -759,12 +758,12 @@ public class AbstractCssDslSemanticSequencer extends AbstractSemanticSequencer {
 		}
 		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
 		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
-		feeder.accept(grammarAccess.getEffectDropShadowAccess().getBlurBLURParserRuleCall_2_0(), semanticObject.getBlur());
-		feeder.accept(grammarAccess.getEffectDropShadowAccess().getColorColorParserRuleCall_4_0(), semanticObject.getColor());
-		feeder.accept(grammarAccess.getEffectDropShadowAccess().getBlurRadiusNUMBERParserRuleCall_6_0(), semanticObject.getBlurRadius());
-		feeder.accept(grammarAccess.getEffectDropShadowAccess().getSpreadNUMBERParserRuleCall_8_0(), semanticObject.getSpread());
-		feeder.accept(grammarAccess.getEffectDropShadowAccess().getOffsetXNUMBERParserRuleCall_10_0(), semanticObject.getOffsetX());
-		feeder.accept(grammarAccess.getEffectDropShadowAccess().getOffsetYNUMBERParserRuleCall_12_0(), semanticObject.getOffsetY());
+		feeder.accept(grammarAccess.getEffectDropShadowAccess().getBlurBLURParserRuleCall_4_0(), semanticObject.getBlur());
+		feeder.accept(grammarAccess.getEffectDropShadowAccess().getColorColorParserRuleCall_6_0(), semanticObject.getColor());
+		feeder.accept(grammarAccess.getEffectDropShadowAccess().getBlurRadiusNUMBERParserRuleCall_8_0(), semanticObject.getBlurRadius());
+		feeder.accept(grammarAccess.getEffectDropShadowAccess().getSpreadNUMBERParserRuleCall_10_0(), semanticObject.getSpread());
+		feeder.accept(grammarAccess.getEffectDropShadowAccess().getOffsetXNUMBERParserRuleCall_12_0(), semanticObject.getOffsetX());
+		feeder.accept(grammarAccess.getEffectDropShadowAccess().getOffsetYNUMBERParserRuleCall_14_0(), semanticObject.getOffsetY());
 		feeder.finish();
 	}
 	
@@ -805,12 +804,12 @@ public class AbstractCssDslSemanticSequencer extends AbstractSemanticSequencer {
 		}
 		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
 		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
-		feeder.accept(grammarAccess.getEffectInnerShadowAccess().getBlurBLURParserRuleCall_1_0(), semanticObject.getBlur());
-		feeder.accept(grammarAccess.getEffectInnerShadowAccess().getColorColorParserRuleCall_3_0(), semanticObject.getColor());
-		feeder.accept(grammarAccess.getEffectInnerShadowAccess().getBlurRadiusNUMBERParserRuleCall_5_0(), semanticObject.getBlurRadius());
-		feeder.accept(grammarAccess.getEffectInnerShadowAccess().getChokeNUMBERParserRuleCall_7_0(), semanticObject.getChoke());
-		feeder.accept(grammarAccess.getEffectInnerShadowAccess().getOffsetXNUMBERParserRuleCall_9_0(), semanticObject.getOffsetX());
-		feeder.accept(grammarAccess.getEffectInnerShadowAccess().getOffsetYNUMBERParserRuleCall_11_0(), semanticObject.getOffsetY());
+		feeder.accept(grammarAccess.getEffectInnerShadowAccess().getBlurBLURParserRuleCall_4_0(), semanticObject.getBlur());
+		feeder.accept(grammarAccess.getEffectInnerShadowAccess().getColorColorParserRuleCall_6_0(), semanticObject.getColor());
+		feeder.accept(grammarAccess.getEffectInnerShadowAccess().getBlurRadiusNUMBERParserRuleCall_8_0(), semanticObject.getBlurRadius());
+		feeder.accept(grammarAccess.getEffectInnerShadowAccess().getChokeNUMBERParserRuleCall_10_0(), semanticObject.getChoke());
+		feeder.accept(grammarAccess.getEffectInnerShadowAccess().getOffsetXNUMBERParserRuleCall_12_0(), semanticObject.getOffsetX());
+		feeder.accept(grammarAccess.getEffectInnerShadowAccess().getOffsetYNUMBERParserRuleCall_14_0(), semanticObject.getOffsetY());
 		feeder.finish();
 	}
 	
@@ -933,7 +932,7 @@ public class AbstractCssDslSemanticSequencer extends AbstractSemanticSequencer {
 	
 	/**
 	 * Constraint:
-	 *     values+=Paint+
+	 *     (values+=Paint values+=Paint*)
 	 *
 	 * Features:
 	 *    values[1, *]
@@ -1518,7 +1517,7 @@ public class AbstractCssDslSemanticSequencer extends AbstractSemanticSequencer {
 		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
 		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
 		feeder.accept(grammarAccess.getFx_color_propertyAccess().getPropertyCOLOR_PROPERTIESParserRuleCall_0_0(), semanticObject.getProperty());
-		feeder.accept(grammarAccess.getFx_color_propertyAccess().getValueColorParserRuleCall_2_0(), semanticObject.getValue());
+		feeder.accept(grammarAccess.getFx_color_propertyAccess().getValueColorParserRuleCall_4_0(), semanticObject.getValue());
 		feeder.finish();
 	}
 	
