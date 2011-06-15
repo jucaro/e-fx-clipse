@@ -32,6 +32,7 @@ import org.eclipse.emf.ecore.util.EDataTypeEList;
  *   <li>{@link at.bestsolution.efxclipse.tooling.css.cssDsl.impl.simple_selectorImpl#getElement <em>Element</em>}</li>
  *   <li>{@link at.bestsolution.efxclipse.tooling.css.cssDsl.impl.simple_selectorImpl#getId <em>Id</em>}</li>
  *   <li>{@link at.bestsolution.efxclipse.tooling.css.cssDsl.impl.simple_selectorImpl#getClass_ <em>Class</em>}</li>
+ *   <li>{@link at.bestsolution.efxclipse.tooling.css.cssDsl.impl.simple_selectorImpl#getAttrib <em>Attrib</em>}</li>
  *   <li>{@link at.bestsolution.efxclipse.tooling.css.cssDsl.impl.simple_selectorImpl#getPseudoclasses <em>Pseudoclasses</em>}</li>
  * </ul>
  * </p>
@@ -99,6 +100,26 @@ public class simple_selectorImpl extends MinimalEObjectImpl.Container implements
    * @ordered
    */
   protected String class_ = CLASS_EDEFAULT;
+
+  /**
+   * The default value of the '{@link #getAttrib() <em>Attrib</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getAttrib()
+   * @generated
+   * @ordered
+   */
+  protected static final String ATTRIB_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getAttrib() <em>Attrib</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getAttrib()
+   * @generated
+   * @ordered
+   */
+  protected String attrib = ATTRIB_EDEFAULT;
 
   /**
    * The cached value of the '{@link #getPseudoclasses() <em>Pseudoclasses</em>}' attribute list.
@@ -205,6 +226,29 @@ public class simple_selectorImpl extends MinimalEObjectImpl.Container implements
    * <!-- end-user-doc -->
    * @generated
    */
+  public String getAttrib()
+  {
+    return attrib;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setAttrib(String newAttrib)
+  {
+    String oldAttrib = attrib;
+    attrib = newAttrib;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, CssDslPackage.SIMPLE_SELECTOR__ATTRIB, oldAttrib, attrib));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EList<String> getPseudoclasses()
   {
     if (pseudoclasses == null)
@@ -230,6 +274,8 @@ public class simple_selectorImpl extends MinimalEObjectImpl.Container implements
         return getId();
       case CssDslPackage.SIMPLE_SELECTOR__CLASS:
         return getClass_();
+      case CssDslPackage.SIMPLE_SELECTOR__ATTRIB:
+        return getAttrib();
       case CssDslPackage.SIMPLE_SELECTOR__PSEUDOCLASSES:
         return getPseudoclasses();
     }
@@ -255,6 +301,9 @@ public class simple_selectorImpl extends MinimalEObjectImpl.Container implements
         return;
       case CssDslPackage.SIMPLE_SELECTOR__CLASS:
         setClass((String)newValue);
+        return;
+      case CssDslPackage.SIMPLE_SELECTOR__ATTRIB:
+        setAttrib((String)newValue);
         return;
       case CssDslPackage.SIMPLE_SELECTOR__PSEUDOCLASSES:
         getPseudoclasses().clear();
@@ -283,6 +332,9 @@ public class simple_selectorImpl extends MinimalEObjectImpl.Container implements
       case CssDslPackage.SIMPLE_SELECTOR__CLASS:
         setClass(CLASS_EDEFAULT);
         return;
+      case CssDslPackage.SIMPLE_SELECTOR__ATTRIB:
+        setAttrib(ATTRIB_EDEFAULT);
+        return;
       case CssDslPackage.SIMPLE_SELECTOR__PSEUDOCLASSES:
         getPseudoclasses().clear();
         return;
@@ -306,6 +358,8 @@ public class simple_selectorImpl extends MinimalEObjectImpl.Container implements
         return ID_EDEFAULT == null ? id != null : !ID_EDEFAULT.equals(id);
       case CssDslPackage.SIMPLE_SELECTOR__CLASS:
         return CLASS_EDEFAULT == null ? class_ != null : !CLASS_EDEFAULT.equals(class_);
+      case CssDslPackage.SIMPLE_SELECTOR__ATTRIB:
+        return ATTRIB_EDEFAULT == null ? attrib != null : !ATTRIB_EDEFAULT.equals(attrib);
       case CssDslPackage.SIMPLE_SELECTOR__PSEUDOCLASSES:
         return pseudoclasses != null && !pseudoclasses.isEmpty();
     }
@@ -329,6 +383,8 @@ public class simple_selectorImpl extends MinimalEObjectImpl.Container implements
     result.append(id);
     result.append(", class: ");
     result.append(class_);
+    result.append(", attrib: ");
+    result.append(attrib);
     result.append(", pseudoclasses: ");
     result.append(pseudoclasses);
     result.append(')');

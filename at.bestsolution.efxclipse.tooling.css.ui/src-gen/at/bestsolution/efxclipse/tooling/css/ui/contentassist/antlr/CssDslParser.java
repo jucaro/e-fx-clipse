@@ -41,6 +41,8 @@ public class CssDslParser extends AbstractContentAssistParser {
 					put(grammarAccess.getSelectorAccess().getAlternatives_1(), "rule__Selector__Alternatives_1");
 					put(grammarAccess.getSimple_selectorAccess().getAlternatives(), "rule__Simple_selector__Alternatives");
 					put(grammarAccess.getCss_idAccess().getAlternatives_1(), "rule__Css_id__Alternatives_1");
+					put(grammarAccess.getCss_attribAccess().getAlternatives_2_0(), "rule__Css_attrib__Alternatives_2_0");
+					put(grammarAccess.getCss_attribAccess().getAlternatives_2_1(), "rule__Css_attrib__Alternatives_2_1");
 					put(grammarAccess.getCss_declarationAccess().getAlternatives(), "rule__Css_declaration__Alternatives");
 					put(grammarAccess.getCombinatorAccess().getAlternatives(), "rule__Combinator__Alternatives");
 					put(grammarAccess.getOperatorAccess().getAlternatives(), "rule__Operator__Alternatives");
@@ -143,6 +145,8 @@ public class CssDslParser extends AbstractContentAssistParser {
 					put(grammarAccess.getSimple_selectorAccess().getGroup_2(), "rule__Simple_selector__Group_2__0");
 					put(grammarAccess.getCss_classAccess().getGroup(), "rule__Css_class__Group__0");
 					put(grammarAccess.getCss_idAccess().getGroup(), "rule__Css_id__Group__0");
+					put(grammarAccess.getCss_attribAccess().getGroup(), "rule__Css_attrib__Group__0");
+					put(grammarAccess.getCss_attribAccess().getGroup_2(), "rule__Css_attrib__Group_2__0");
 					put(grammarAccess.getCss_generic_declarationAccess().getGroup(), "rule__Css_generic_declaration__Group__0");
 					put(grammarAccess.getCss_pseudoAccess().getGroup(), "rule__Css_pseudo__Group__0");
 					put(grammarAccess.getExprAccess().getGroup(), "rule__Expr__Group__0");
@@ -255,12 +259,15 @@ public class CssDslParser extends AbstractContentAssistParser {
 					put(grammarAccess.getSimple_selectorAccess().getElementAssignment_0_0(), "rule__Simple_selector__ElementAssignment_0_0");
 					put(grammarAccess.getSimple_selectorAccess().getIdAssignment_0_1(), "rule__Simple_selector__IdAssignment_0_1");
 					put(grammarAccess.getSimple_selectorAccess().getClassAssignment_0_2(), "rule__Simple_selector__ClassAssignment_0_2");
-					put(grammarAccess.getSimple_selectorAccess().getPseudoclassesAssignment_0_3(), "rule__Simple_selector__PseudoclassesAssignment_0_3");
+					put(grammarAccess.getSimple_selectorAccess().getAttribAssignment_0_3(), "rule__Simple_selector__AttribAssignment_0_3");
+					put(grammarAccess.getSimple_selectorAccess().getPseudoclassesAssignment_0_4(), "rule__Simple_selector__PseudoclassesAssignment_0_4");
 					put(grammarAccess.getSimple_selectorAccess().getIdAssignment_1_0(), "rule__Simple_selector__IdAssignment_1_0");
 					put(grammarAccess.getSimple_selectorAccess().getClassAssignment_1_1(), "rule__Simple_selector__ClassAssignment_1_1");
-					put(grammarAccess.getSimple_selectorAccess().getPseudoclassesAssignment_1_2(), "rule__Simple_selector__PseudoclassesAssignment_1_2");
+					put(grammarAccess.getSimple_selectorAccess().getAttribAssignment_1_2(), "rule__Simple_selector__AttribAssignment_1_2");
+					put(grammarAccess.getSimple_selectorAccess().getPseudoclassesAssignment_1_3(), "rule__Simple_selector__PseudoclassesAssignment_1_3");
 					put(grammarAccess.getSimple_selectorAccess().getClassAssignment_2_0(), "rule__Simple_selector__ClassAssignment_2_0");
-					put(grammarAccess.getSimple_selectorAccess().getPseudoclassesAssignment_2_1(), "rule__Simple_selector__PseudoclassesAssignment_2_1");
+					put(grammarAccess.getSimple_selectorAccess().getAttribAssignment_2_1(), "rule__Simple_selector__AttribAssignment_2_1");
+					put(grammarAccess.getSimple_selectorAccess().getPseudoclassesAssignment_2_2(), "rule__Simple_selector__PseudoclassesAssignment_2_2");
 					put(grammarAccess.getSimple_selectorAccess().getPseudoclassesAssignment_3(), "rule__Simple_selector__PseudoclassesAssignment_3");
 					put(grammarAccess.getCss_generic_declarationAccess().getPropertyAssignment_0(), "rule__Css_generic_declaration__PropertyAssignment_0");
 					put(grammarAccess.getCss_generic_declarationAccess().getExpressionAssignment_2(), "rule__Css_generic_declaration__ExpressionAssignment_2");

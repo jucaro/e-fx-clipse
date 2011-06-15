@@ -268,33 +268,41 @@ public class CssDslGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cIdCss_idParserRuleCall_0_1_0 = (RuleCall)cIdAssignment_0_1.eContents().get(0);
 		private final Assignment cClassAssignment_0_2 = (Assignment)cGroup_0.eContents().get(2);
 		private final RuleCall cClassCss_classParserRuleCall_0_2_0 = (RuleCall)cClassAssignment_0_2.eContents().get(0);
-		private final Assignment cPseudoclassesAssignment_0_3 = (Assignment)cGroup_0.eContents().get(3);
-		private final RuleCall cPseudoclassesCss_pseudoParserRuleCall_0_3_0 = (RuleCall)cPseudoclassesAssignment_0_3.eContents().get(0);
+		private final Assignment cAttribAssignment_0_3 = (Assignment)cGroup_0.eContents().get(3);
+		private final RuleCall cAttribCss_attribParserRuleCall_0_3_0 = (RuleCall)cAttribAssignment_0_3.eContents().get(0);
+		private final Assignment cPseudoclassesAssignment_0_4 = (Assignment)cGroup_0.eContents().get(4);
+		private final RuleCall cPseudoclassesCss_pseudoParserRuleCall_0_4_0 = (RuleCall)cPseudoclassesAssignment_0_4.eContents().get(0);
 		private final Group cGroup_1 = (Group)cAlternatives.eContents().get(1);
 		private final Assignment cIdAssignment_1_0 = (Assignment)cGroup_1.eContents().get(0);
 		private final RuleCall cIdCss_idParserRuleCall_1_0_0 = (RuleCall)cIdAssignment_1_0.eContents().get(0);
 		private final Assignment cClassAssignment_1_1 = (Assignment)cGroup_1.eContents().get(1);
 		private final RuleCall cClassCss_classParserRuleCall_1_1_0 = (RuleCall)cClassAssignment_1_1.eContents().get(0);
-		private final Assignment cPseudoclassesAssignment_1_2 = (Assignment)cGroup_1.eContents().get(2);
-		private final RuleCall cPseudoclassesCss_pseudoParserRuleCall_1_2_0 = (RuleCall)cPseudoclassesAssignment_1_2.eContents().get(0);
+		private final Assignment cAttribAssignment_1_2 = (Assignment)cGroup_1.eContents().get(2);
+		private final RuleCall cAttribCss_attribParserRuleCall_1_2_0 = (RuleCall)cAttribAssignment_1_2.eContents().get(0);
+		private final Assignment cPseudoclassesAssignment_1_3 = (Assignment)cGroup_1.eContents().get(3);
+		private final RuleCall cPseudoclassesCss_pseudoParserRuleCall_1_3_0 = (RuleCall)cPseudoclassesAssignment_1_3.eContents().get(0);
 		private final Group cGroup_2 = (Group)cAlternatives.eContents().get(2);
 		private final Assignment cClassAssignment_2_0 = (Assignment)cGroup_2.eContents().get(0);
 		private final RuleCall cClassCss_classParserRuleCall_2_0_0 = (RuleCall)cClassAssignment_2_0.eContents().get(0);
-		private final Assignment cPseudoclassesAssignment_2_1 = (Assignment)cGroup_2.eContents().get(1);
-		private final RuleCall cPseudoclassesCss_pseudoParserRuleCall_2_1_0 = (RuleCall)cPseudoclassesAssignment_2_1.eContents().get(0);
+		private final Assignment cAttribAssignment_2_1 = (Assignment)cGroup_2.eContents().get(1);
+		private final RuleCall cAttribCss_attribParserRuleCall_2_1_0 = (RuleCall)cAttribAssignment_2_1.eContents().get(0);
+		private final Assignment cPseudoclassesAssignment_2_2 = (Assignment)cGroup_2.eContents().get(2);
+		private final RuleCall cPseudoclassesCss_pseudoParserRuleCall_2_2_0 = (RuleCall)cPseudoclassesAssignment_2_2.eContents().get(0);
 		private final Assignment cPseudoclassesAssignment_3 = (Assignment)cAlternatives.eContents().get(3);
 		private final RuleCall cPseudoclassesCss_pseudoParserRuleCall_3_0 = (RuleCall)cPseudoclassesAssignment_3.eContents().get(0);
 		
 		//simple_selector:
-		//	element=element_name id=css_id? class=css_class? pseudoclasses+=css_pseudo* | id=css_id class=css_class?
-		//	pseudoclasses+=css_pseudo* | class=css_class pseudoclasses+=css_pseudo* | pseudoclasses+=css_pseudo+;
+		//	element=element_name id=css_id? class=css_class? attrib=css_attrib? pseudoclasses+=css_pseudo* | id=css_id
+		//	class=css_class? attrib=css_attrib? pseudoclasses+=css_pseudo* | class=css_class attrib=css_attrib?
+		//	pseudoclasses+=css_pseudo* | pseudoclasses+=css_pseudo+;
 		public ParserRule getRule() { return rule; }
 
-		//element=element_name id=css_id? class=css_class? pseudoclasses+=css_pseudo* | id=css_id class=css_class?
-		//pseudoclasses+=css_pseudo* | class=css_class pseudoclasses+=css_pseudo* | pseudoclasses+=css_pseudo+
+		//element=element_name id=css_id? class=css_class? attrib=css_attrib? pseudoclasses+=css_pseudo* | id=css_id
+		//class=css_class? attrib=css_attrib? pseudoclasses+=css_pseudo* | class=css_class attrib=css_attrib?
+		//pseudoclasses+=css_pseudo* | pseudoclasses+=css_pseudo+
 		public Alternatives getAlternatives() { return cAlternatives; }
 
-		//element=element_name id=css_id? class=css_class? pseudoclasses+=css_pseudo*
+		//element=element_name id=css_id? class=css_class? attrib=css_attrib? pseudoclasses+=css_pseudo*
 		public Group getGroup_0() { return cGroup_0; }
 
 		//element=element_name
@@ -315,13 +323,19 @@ public class CssDslGrammarAccess extends AbstractGrammarElementFinder {
 		//css_class
 		public RuleCall getClassCss_classParserRuleCall_0_2_0() { return cClassCss_classParserRuleCall_0_2_0; }
 
+		//attrib=css_attrib?
+		public Assignment getAttribAssignment_0_3() { return cAttribAssignment_0_3; }
+
+		//css_attrib
+		public RuleCall getAttribCss_attribParserRuleCall_0_3_0() { return cAttribCss_attribParserRuleCall_0_3_0; }
+
 		//pseudoclasses+=css_pseudo*
-		public Assignment getPseudoclassesAssignment_0_3() { return cPseudoclassesAssignment_0_3; }
+		public Assignment getPseudoclassesAssignment_0_4() { return cPseudoclassesAssignment_0_4; }
 
 		//css_pseudo
-		public RuleCall getPseudoclassesCss_pseudoParserRuleCall_0_3_0() { return cPseudoclassesCss_pseudoParserRuleCall_0_3_0; }
+		public RuleCall getPseudoclassesCss_pseudoParserRuleCall_0_4_0() { return cPseudoclassesCss_pseudoParserRuleCall_0_4_0; }
 
-		//id=css_id class=css_class? pseudoclasses+=css_pseudo*
+		//id=css_id class=css_class? attrib=css_attrib? pseudoclasses+=css_pseudo*
 		public Group getGroup_1() { return cGroup_1; }
 
 		//id=css_id
@@ -336,13 +350,19 @@ public class CssDslGrammarAccess extends AbstractGrammarElementFinder {
 		//css_class
 		public RuleCall getClassCss_classParserRuleCall_1_1_0() { return cClassCss_classParserRuleCall_1_1_0; }
 
+		//attrib=css_attrib?
+		public Assignment getAttribAssignment_1_2() { return cAttribAssignment_1_2; }
+
+		//css_attrib
+		public RuleCall getAttribCss_attribParserRuleCall_1_2_0() { return cAttribCss_attribParserRuleCall_1_2_0; }
+
 		//pseudoclasses+=css_pseudo*
-		public Assignment getPseudoclassesAssignment_1_2() { return cPseudoclassesAssignment_1_2; }
+		public Assignment getPseudoclassesAssignment_1_3() { return cPseudoclassesAssignment_1_3; }
 
 		//css_pseudo
-		public RuleCall getPseudoclassesCss_pseudoParserRuleCall_1_2_0() { return cPseudoclassesCss_pseudoParserRuleCall_1_2_0; }
+		public RuleCall getPseudoclassesCss_pseudoParserRuleCall_1_3_0() { return cPseudoclassesCss_pseudoParserRuleCall_1_3_0; }
 
-		//class=css_class pseudoclasses+=css_pseudo*
+		//class=css_class attrib=css_attrib? pseudoclasses+=css_pseudo*
 		public Group getGroup_2() { return cGroup_2; }
 
 		//class=css_class
@@ -351,11 +371,17 @@ public class CssDslGrammarAccess extends AbstractGrammarElementFinder {
 		//css_class
 		public RuleCall getClassCss_classParserRuleCall_2_0_0() { return cClassCss_classParserRuleCall_2_0_0; }
 
+		//attrib=css_attrib?
+		public Assignment getAttribAssignment_2_1() { return cAttribAssignment_2_1; }
+
+		//css_attrib
+		public RuleCall getAttribCss_attribParserRuleCall_2_1_0() { return cAttribCss_attribParserRuleCall_2_1_0; }
+
 		//pseudoclasses+=css_pseudo*
-		public Assignment getPseudoclassesAssignment_2_1() { return cPseudoclassesAssignment_2_1; }
+		public Assignment getPseudoclassesAssignment_2_2() { return cPseudoclassesAssignment_2_2; }
 
 		//css_pseudo
-		public RuleCall getPseudoclassesCss_pseudoParserRuleCall_2_1_0() { return cPseudoclassesCss_pseudoParserRuleCall_2_1_0; }
+		public RuleCall getPseudoclassesCss_pseudoParserRuleCall_2_2_0() { return cPseudoclassesCss_pseudoParserRuleCall_2_2_0; }
 
 		//pseudoclasses+=css_pseudo+
 		public Assignment getPseudoclassesAssignment_3() { return cPseudoclassesAssignment_3; }
@@ -422,6 +448,62 @@ public class CssDslGrammarAccess extends AbstractGrammarElementFinder {
 
 		//IDENT
 		public RuleCall getIDENTTerminalRuleCall_1_1() { return cIDENTTerminalRuleCall_1_1; }
+	}
+
+	public class Css_attribElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "css_attrib");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cLeftSquareBracketKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final RuleCall cIDENTTerminalRuleCall_1 = (RuleCall)cGroup.eContents().get(1);
+		private final Group cGroup_2 = (Group)cGroup.eContents().get(2);
+		private final Alternatives cAlternatives_2_0 = (Alternatives)cGroup_2.eContents().get(0);
+		private final Keyword cEqualsSignKeyword_2_0_0 = (Keyword)cAlternatives_2_0.eContents().get(0);
+		private final RuleCall cINCLUDESTerminalRuleCall_2_0_1 = (RuleCall)cAlternatives_2_0.eContents().get(1);
+		private final RuleCall cDASHMATCHTerminalRuleCall_2_0_2 = (RuleCall)cAlternatives_2_0.eContents().get(2);
+		private final Alternatives cAlternatives_2_1 = (Alternatives)cGroup_2.eContents().get(1);
+		private final RuleCall cIDENTTerminalRuleCall_2_1_0 = (RuleCall)cAlternatives_2_1.eContents().get(0);
+		private final RuleCall cSTRINGTerminalRuleCall_2_1_1 = (RuleCall)cAlternatives_2_1.eContents().get(1);
+		private final Keyword cRightSquareBracketKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		
+		//css_attrib:
+		//	"[" IDENT (("=" | INCLUDES | DASHMATCH) (IDENT | STRING))? "]";
+		public ParserRule getRule() { return rule; }
+
+		//"[" IDENT (("=" | INCLUDES | DASHMATCH) (IDENT | STRING))? "]"
+		public Group getGroup() { return cGroup; }
+
+		//"["
+		public Keyword getLeftSquareBracketKeyword_0() { return cLeftSquareBracketKeyword_0; }
+
+		//IDENT
+		public RuleCall getIDENTTerminalRuleCall_1() { return cIDENTTerminalRuleCall_1; }
+
+		//(("=" | INCLUDES | DASHMATCH) (IDENT | STRING))?
+		public Group getGroup_2() { return cGroup_2; }
+
+		//"=" | INCLUDES | DASHMATCH
+		public Alternatives getAlternatives_2_0() { return cAlternatives_2_0; }
+
+		//"="
+		public Keyword getEqualsSignKeyword_2_0_0() { return cEqualsSignKeyword_2_0_0; }
+
+		//INCLUDES
+		public RuleCall getINCLUDESTerminalRuleCall_2_0_1() { return cINCLUDESTerminalRuleCall_2_0_1; }
+
+		//DASHMATCH
+		public RuleCall getDASHMATCHTerminalRuleCall_2_0_2() { return cDASHMATCHTerminalRuleCall_2_0_2; }
+
+		//IDENT | STRING
+		public Alternatives getAlternatives_2_1() { return cAlternatives_2_1; }
+
+		//IDENT
+		public RuleCall getIDENTTerminalRuleCall_2_1_0() { return cIDENTTerminalRuleCall_2_1_0; }
+
+		//STRING
+		public RuleCall getSTRINGTerminalRuleCall_2_1_1() { return cSTRINGTerminalRuleCall_2_1_1; }
+
+		//"]"
+		public Keyword getRightSquareBracketKeyword_3() { return cRightSquareBracketKeyword_3; }
 	}
 
 	public class Css_declarationElements extends AbstractParserRuleElementFinder {
@@ -6304,6 +6386,7 @@ public class CssDslGrammarAccess extends AbstractGrammarElementFinder {
 	private Element_nameElements pElement_name;
 	private Css_classElements pCss_class;
 	private Css_idElements pCss_id;
+	private Css_attribElements pCss_attrib;
 	private Css_declarationElements pCss_declaration;
 	private Css_generic_declarationElements pCss_generic_declaration;
 	private Css_propertyElements pCss_property;
@@ -6403,6 +6486,8 @@ public class CssDslGrammarAccess extends AbstractGrammarElementFinder {
 	private TerminalRule tML_COMMENT;
 	private TerminalRule tWS;
 	private TerminalRule tSTRING;
+	private TerminalRule tINCLUDES;
+	private TerminalRule tDASHMATCH;
 	
 	private final GrammarProvider grammarProvider;
 
@@ -6479,8 +6564,9 @@ public class CssDslGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//simple_selector:
-	//	element=element_name id=css_id? class=css_class? pseudoclasses+=css_pseudo* | id=css_id class=css_class?
-	//	pseudoclasses+=css_pseudo* | class=css_class pseudoclasses+=css_pseudo* | pseudoclasses+=css_pseudo+;
+	//	element=element_name id=css_id? class=css_class? attrib=css_attrib? pseudoclasses+=css_pseudo* | id=css_id
+	//	class=css_class? attrib=css_attrib? pseudoclasses+=css_pseudo* | class=css_class attrib=css_attrib?
+	//	pseudoclasses+=css_pseudo* | pseudoclasses+=css_pseudo+;
 	public Simple_selectorElements getSimple_selectorAccess() {
 		return (pSimple_selector != null) ? pSimple_selector : (pSimple_selector = new Simple_selectorElements());
 	}
@@ -6517,6 +6603,16 @@ public class CssDslGrammarAccess extends AbstractGrammarElementFinder {
 	
 	public ParserRule getCss_idRule() {
 		return getCss_idAccess().getRule();
+	}
+
+	//css_attrib:
+	//	"[" IDENT (("=" | INCLUDES | DASHMATCH) (IDENT | STRING))? "]";
+	public Css_attribElements getCss_attribAccess() {
+		return (pCss_attrib != null) ? pCss_attrib : (pCss_attrib = new Css_attribElements());
+	}
+	
+	public ParserRule getCss_attribRule() {
+		return getCss_attribAccess().getRule();
 	}
 
 	//css_declaration:
@@ -7560,5 +7656,17 @@ public class CssDslGrammarAccess extends AbstractGrammarElementFinder {
 	//	"n" | "f" | "r" | "u" | "\"" | "\'" | "\\") | !("\\" | "\'"))* "\'";
 	public TerminalRule getSTRINGRule() {
 		return (tSTRING != null) ? tSTRING : (tSTRING = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "STRING"));
+	} 
+
+	//terminal INCLUDES:
+	//	"~=";
+	public TerminalRule getINCLUDESRule() {
+		return (tINCLUDES != null) ? tINCLUDES : (tINCLUDES = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "INCLUDES"));
+	} 
+
+	//terminal DASHMATCH:
+	//	"|=";
+	public TerminalRule getDASHMATCHRule() {
+		return (tDASHMATCH != null) ? tDASHMATCH : (tDASHMATCH = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "DASHMATCH"));
 	} 
 }

@@ -2165,9 +2165,9 @@ public class AbstractCssDslSemanticSequencer extends AbstractSemanticSequencer {
 	/**
 	 * Constraint:
 	 *     (
-	 *         (element=element_name id=css_id? class=css_class? pseudoclasses+=css_pseudo*) | 
-	 *         (id=css_id class=css_class? pseudoclasses+=css_pseudo*) | 
-	 *         (class=css_class pseudoclasses+=css_pseudo*) | 
+	 *         (element=element_name id=css_id? class=css_class? attrib=css_attrib? pseudoclasses+=css_pseudo*) | 
+	 *         (id=css_id class=css_class? attrib=css_attrib? pseudoclasses+=css_pseudo*) | 
+	 *         (class=css_class attrib=css_attrib? pseudoclasses+=css_pseudo*) | 
 	 *         pseudoclasses+=css_pseudo+
 	 *     )
 	 *
@@ -2175,18 +2175,24 @@ public class AbstractCssDslSemanticSequencer extends AbstractSemanticSequencer {
 	 *    element[1, 1]
 	 *         MANDATORY_IF_SET id
 	 *         MANDATORY_IF_SET class
+	 *         MANDATORY_IF_SET attrib
 	 *         MANDATORY_IF_SET pseudoclasses
 	 *         EXCLUDE_IF_SET id
 	 *         EXCLUDE_IF_SET class
+	 *         EXCLUDE_IF_SET attrib
 	 *         EXCLUDE_IF_SET pseudoclasses
 	 *         EXCLUDE_IF_SET class
+	 *         EXCLUDE_IF_SET attrib
 	 *         EXCLUDE_IF_SET pseudoclasses
 	 *         EXCLUDE_IF_SET pseudoclasses
 	 *    id[1, 2]
 	 *         EXCLUDE_IF_SET class
+	 *         EXCLUDE_IF_SET attrib
 	 *         EXCLUDE_IF_SET pseudoclasses
 	 *         EXCLUDE_IF_SET pseudoclasses
 	 *    class[1, 3]
+	 *         EXCLUDE_IF_SET pseudoclasses
+	 *    attrib[0, 3]
 	 *         EXCLUDE_IF_SET pseudoclasses
 	 *    pseudoclasses[0, *]
 	 */

@@ -844,9 +844,19 @@ public class CssDslPackageImpl extends EPackageImpl implements CssDslPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getsimple_selector_Pseudoclasses()
+  public EAttribute getsimple_selector_Attrib()
   {
     return (EAttribute)simple_selectorEClass.getEStructuralFeatures().get(3);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getsimple_selector_Pseudoclasses()
+  {
+    return (EAttribute)simple_selectorEClass.getEStructuralFeatures().get(4);
   }
 
   /**
@@ -2980,6 +2990,7 @@ public class CssDslPackageImpl extends EPackageImpl implements CssDslPackage
     createEAttribute(simple_selectorEClass, SIMPLE_SELECTOR__ELEMENT);
     createEAttribute(simple_selectorEClass, SIMPLE_SELECTOR__ID);
     createEAttribute(simple_selectorEClass, SIMPLE_SELECTOR__CLASS);
+    createEAttribute(simple_selectorEClass, SIMPLE_SELECTOR__ATTRIB);
     createEAttribute(simple_selectorEClass, SIMPLE_SELECTOR__PSEUDOCLASSES);
 
     css_declarationEClass = createEClass(CSS_DECLARATION);
@@ -3362,6 +3373,7 @@ public class CssDslPackageImpl extends EPackageImpl implements CssDslPackage
     initEAttribute(getsimple_selector_Element(), ecorePackage.getEString(), "element", null, 0, 1, simple_selector.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getsimple_selector_Id(), ecorePackage.getEString(), "id", null, 0, 1, simple_selector.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getsimple_selector_Class(), ecorePackage.getEString(), "class", null, 0, 1, simple_selector.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getsimple_selector_Attrib(), ecorePackage.getEString(), "attrib", null, 0, 1, simple_selector.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getsimple_selector_Pseudoclasses(), ecorePackage.getEString(), "pseudoclasses", null, 0, -1, simple_selector.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(css_declarationEClass, css_declaration.class, "css_declaration", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);

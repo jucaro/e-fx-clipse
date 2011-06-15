@@ -256,13 +256,22 @@ public interface CssDslPackage extends EPackage
   int SIMPLE_SELECTOR__CLASS = 2;
 
   /**
+   * The feature id for the '<em><b>Attrib</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SIMPLE_SELECTOR__ATTRIB = 3;
+
+  /**
    * The feature id for the '<em><b>Pseudoclasses</b></em>' attribute list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int SIMPLE_SELECTOR__PSEUDOCLASSES = 3;
+  int SIMPLE_SELECTOR__PSEUDOCLASSES = 4;
 
   /**
    * The number of structural features of the '<em>simple selector</em>' class.
@@ -271,7 +280,7 @@ public interface CssDslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int SIMPLE_SELECTOR_FEATURE_COUNT = 4;
+  int SIMPLE_SELECTOR_FEATURE_COUNT = 5;
 
   /**
    * The meta object id for the '{@link at.bestsolution.efxclipse.tooling.css.cssDsl.impl.css_declarationImpl <em>css declaration</em>}' class.
@@ -3090,6 +3099,17 @@ public interface CssDslPackage extends EPackage
   EAttribute getsimple_selector_Class();
 
   /**
+   * Returns the meta object for the attribute '{@link at.bestsolution.efxclipse.tooling.css.cssDsl.simple_selector#getAttrib <em>Attrib</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Attrib</em>'.
+   * @see at.bestsolution.efxclipse.tooling.css.cssDsl.simple_selector#getAttrib()
+   * @see #getsimple_selector()
+   * @generated
+   */
+  EAttribute getsimple_selector_Attrib();
+
+  /**
    * Returns the meta object for the attribute list '{@link at.bestsolution.efxclipse.tooling.css.cssDsl.simple_selector#getPseudoclasses <em>Pseudoclasses</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -5488,6 +5508,14 @@ public interface CssDslPackage extends EPackage
      * @generated
      */
     EAttribute SIMPLE_SELECTOR__CLASS = eINSTANCE.getsimple_selector_Class();
+
+    /**
+     * The meta object literal for the '<em><b>Attrib</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute SIMPLE_SELECTOR__ATTRIB = eINSTANCE.getsimple_selector_Attrib();
 
     /**
      * The meta object literal for the '<em><b>Pseudoclasses</b></em>' attribute list feature.

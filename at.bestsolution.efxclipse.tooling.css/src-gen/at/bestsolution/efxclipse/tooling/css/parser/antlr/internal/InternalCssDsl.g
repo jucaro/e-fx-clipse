@@ -557,16 +557,34 @@ rulesimple_selector returns [EObject current=null]
 )?(
 (
 		{ 
-	        newCompositeNode(grammarAccess.getSimple_selectorAccess().getPseudoclassesCss_pseudoParserRuleCall_0_3_0()); 
+	        newCompositeNode(grammarAccess.getSimple_selectorAccess().getAttribCss_attribParserRuleCall_0_3_0()); 
 	    }
-		lv_pseudoclasses_3_0=rulecss_pseudo		{
+		lv_attrib_3_0=rulecss_attrib		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getSimple_selectorRule());
+	        }
+       		set(
+       			$current, 
+       			"attrib",
+        		lv_attrib_3_0, 
+        		"css_attrib");
+	        afterParserOrEnumRuleCall();
+	    }
+
+)
+)?(
+(
+		{ 
+	        newCompositeNode(grammarAccess.getSimple_selectorAccess().getPseudoclassesCss_pseudoParserRuleCall_0_4_0()); 
+	    }
+		lv_pseudoclasses_4_0=rulecss_pseudo		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getSimple_selectorRule());
 	        }
        		add(
        			$current, 
        			"pseudoclasses",
-        		lv_pseudoclasses_3_0, 
+        		lv_pseudoclasses_4_0, 
         		"css_pseudo");
 	        afterParserOrEnumRuleCall();
 	    }
@@ -578,14 +596,14 @@ rulesimple_selector returns [EObject current=null]
 		{ 
 	        newCompositeNode(grammarAccess.getSimple_selectorAccess().getIdCss_idParserRuleCall_1_0_0()); 
 	    }
-		lv_id_4_0=rulecss_id		{
+		lv_id_5_0=rulecss_id		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getSimple_selectorRule());
 	        }
        		set(
        			$current, 
        			"id",
-        		lv_id_4_0, 
+        		lv_id_5_0, 
         		"css_id");
 	        afterParserOrEnumRuleCall();
 	    }
@@ -596,14 +614,14 @@ rulesimple_selector returns [EObject current=null]
 		{ 
 	        newCompositeNode(grammarAccess.getSimple_selectorAccess().getClassCss_classParserRuleCall_1_1_0()); 
 	    }
-		lv_class_5_0=rulecss_class		{
+		lv_class_6_0=rulecss_class		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getSimple_selectorRule());
 	        }
        		set(
        			$current, 
        			"class",
-        		lv_class_5_0, 
+        		lv_class_6_0, 
         		"css_class");
 	        afterParserOrEnumRuleCall();
 	    }
@@ -612,44 +630,25 @@ rulesimple_selector returns [EObject current=null]
 )?(
 (
 		{ 
-	        newCompositeNode(grammarAccess.getSimple_selectorAccess().getPseudoclassesCss_pseudoParserRuleCall_1_2_0()); 
+	        newCompositeNode(grammarAccess.getSimple_selectorAccess().getAttribCss_attribParserRuleCall_1_2_0()); 
 	    }
-		lv_pseudoclasses_6_0=rulecss_pseudo		{
-	        if ($current==null) {
-	            $current = createModelElementForParent(grammarAccess.getSimple_selectorRule());
-	        }
-       		add(
-       			$current, 
-       			"pseudoclasses",
-        		lv_pseudoclasses_6_0, 
-        		"css_pseudo");
-	        afterParserOrEnumRuleCall();
-	    }
-
-)
-)*)
-    |((
-(
-		{ 
-	        newCompositeNode(grammarAccess.getSimple_selectorAccess().getClassCss_classParserRuleCall_2_0_0()); 
-	    }
-		lv_class_7_0=rulecss_class		{
+		lv_attrib_7_0=rulecss_attrib		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getSimple_selectorRule());
 	        }
        		set(
        			$current, 
-       			"class",
-        		lv_class_7_0, 
-        		"css_class");
+       			"attrib",
+        		lv_attrib_7_0, 
+        		"css_attrib");
 	        afterParserOrEnumRuleCall();
 	    }
 
 )
-)(
+)?(
 (
 		{ 
-	        newCompositeNode(grammarAccess.getSimple_selectorAccess().getPseudoclassesCss_pseudoParserRuleCall_2_1_0()); 
+	        newCompositeNode(grammarAccess.getSimple_selectorAccess().getPseudoclassesCss_pseudoParserRuleCall_1_3_0()); 
 	    }
 		lv_pseudoclasses_8_0=rulecss_pseudo		{
 	        if ($current==null) {
@@ -665,19 +664,74 @@ rulesimple_selector returns [EObject current=null]
 
 )
 )*)
-    |(
+    |((
 (
 		{ 
-	        newCompositeNode(grammarAccess.getSimple_selectorAccess().getPseudoclassesCss_pseudoParserRuleCall_3_0()); 
+	        newCompositeNode(grammarAccess.getSimple_selectorAccess().getClassCss_classParserRuleCall_2_0_0()); 
 	    }
-		lv_pseudoclasses_9_0=rulecss_pseudo		{
+		lv_class_9_0=rulecss_class		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getSimple_selectorRule());
+	        }
+       		set(
+       			$current, 
+       			"class",
+        		lv_class_9_0, 
+        		"css_class");
+	        afterParserOrEnumRuleCall();
+	    }
+
+)
+)(
+(
+		{ 
+	        newCompositeNode(grammarAccess.getSimple_selectorAccess().getAttribCss_attribParserRuleCall_2_1_0()); 
+	    }
+		lv_attrib_10_0=rulecss_attrib		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getSimple_selectorRule());
+	        }
+       		set(
+       			$current, 
+       			"attrib",
+        		lv_attrib_10_0, 
+        		"css_attrib");
+	        afterParserOrEnumRuleCall();
+	    }
+
+)
+)?(
+(
+		{ 
+	        newCompositeNode(grammarAccess.getSimple_selectorAccess().getPseudoclassesCss_pseudoParserRuleCall_2_2_0()); 
+	    }
+		lv_pseudoclasses_11_0=rulecss_pseudo		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getSimple_selectorRule());
 	        }
        		add(
        			$current, 
        			"pseudoclasses",
-        		lv_pseudoclasses_9_0, 
+        		lv_pseudoclasses_11_0, 
+        		"css_pseudo");
+	        afterParserOrEnumRuleCall();
+	    }
+
+)
+)*)
+    |(
+(
+		{ 
+	        newCompositeNode(grammarAccess.getSimple_selectorAccess().getPseudoclassesCss_pseudoParserRuleCall_3_0()); 
+	    }
+		lv_pseudoclasses_12_0=rulecss_pseudo		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getSimple_selectorRule());
+	        }
+       		add(
+       			$current, 
+       			"pseudoclasses",
+        		lv_pseudoclasses_12_0, 
         		"css_pseudo");
 	        afterParserOrEnumRuleCall();
 	    }
@@ -788,6 +842,83 @@ rulecss_id returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()]
     newLeafNode(this_IDENT_2, grammarAccess.getCss_idAccess().getIDENTTerminalRuleCall_1_1()); 
     }
 ))
+    ;
+
+
+
+
+
+// Entry rule entryRulecss_attrib
+entryRulecss_attrib returns [String current=null] 
+	:
+	{ newCompositeNode(grammarAccess.getCss_attribRule()); } 
+	 iv_rulecss_attrib=rulecss_attrib 
+	 { $current=$iv_rulecss_attrib.current.getText(); }  
+	 EOF 
+;
+
+// Rule css_attrib
+rulecss_attrib returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] 
+    @init { enterRule(); 
+    }
+    @after { leaveRule(); }:
+(
+	kw='[' 
+    {
+        $current.merge(kw);
+        newLeafNode(kw, grammarAccess.getCss_attribAccess().getLeftSquareBracketKeyword_0()); 
+    }
+    this_IDENT_1=RULE_IDENT    {
+		$current.merge(this_IDENT_1);
+    }
+
+    { 
+    newLeafNode(this_IDENT_1, grammarAccess.getCss_attribAccess().getIDENTTerminalRuleCall_1()); 
+    }
+((
+	kw='=' 
+    {
+        $current.merge(kw);
+        newLeafNode(kw, grammarAccess.getCss_attribAccess().getEqualsSignKeyword_2_0_0()); 
+    }
+
+    |    this_INCLUDES_3=RULE_INCLUDES    {
+		$current.merge(this_INCLUDES_3);
+    }
+
+    { 
+    newLeafNode(this_INCLUDES_3, grammarAccess.getCss_attribAccess().getINCLUDESTerminalRuleCall_2_0_1()); 
+    }
+
+    |    this_DASHMATCH_4=RULE_DASHMATCH    {
+		$current.merge(this_DASHMATCH_4);
+    }
+
+    { 
+    newLeafNode(this_DASHMATCH_4, grammarAccess.getCss_attribAccess().getDASHMATCHTerminalRuleCall_2_0_2()); 
+    }
+)(    this_IDENT_5=RULE_IDENT    {
+		$current.merge(this_IDENT_5);
+    }
+
+    { 
+    newLeafNode(this_IDENT_5, grammarAccess.getCss_attribAccess().getIDENTTerminalRuleCall_2_1_0()); 
+    }
+
+    |    this_STRING_6=RULE_STRING    {
+		$current.merge(this_STRING_6);
+    }
+
+    { 
+    newLeafNode(this_STRING_6, grammarAccess.getCss_attribAccess().getSTRINGTerminalRuleCall_2_1_1()); 
+    }
+))?
+	kw=']' 
+    {
+        $current.merge(kw);
+        newLeafNode(kw, grammarAccess.getCss_attribAccess().getRightSquareBracketKeyword_3()); 
+    }
+)
     ;
 
 
@@ -12441,5 +12572,9 @@ RULE_ML_COMMENT : '/*' ( options {greedy=false;} : . )*'*/';
 RULE_WS : (' '|'\t'|'\r'|'\n')+;
 
 RULE_STRING : ('"' ('\\' ('b'|'t'|'n'|'f'|'r'|'u'|'"'|'\''|'\\')|~(('\\'|'"')))* '"'|'\'' ('\\' ('b'|'t'|'n'|'f'|'r'|'u'|'"'|'\''|'\\')|~(('\\'|'\'')))* '\'');
+
+RULE_INCLUDES : '~=';
+
+RULE_DASHMATCH : '|=';
 
 

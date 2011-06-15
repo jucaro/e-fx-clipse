@@ -21,6 +21,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link at.bestsolution.efxclipse.tooling.css.cssDsl.simple_selector#getElement <em>Element</em>}</li>
  *   <li>{@link at.bestsolution.efxclipse.tooling.css.cssDsl.simple_selector#getId <em>Id</em>}</li>
  *   <li>{@link at.bestsolution.efxclipse.tooling.css.cssDsl.simple_selector#getClass_ <em>Class</em>}</li>
+ *   <li>{@link at.bestsolution.efxclipse.tooling.css.cssDsl.simple_selector#getAttrib <em>Attrib</em>}</li>
  *   <li>{@link at.bestsolution.efxclipse.tooling.css.cssDsl.simple_selector#getPseudoclasses <em>Pseudoclasses</em>}</li>
  * </ul>
  * </p>
@@ -108,6 +109,32 @@ public interface simple_selector extends EObject
    * @generated
    */
   void setClass(String value);
+
+  /**
+   * Returns the value of the '<em><b>Attrib</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Attrib</em>' attribute isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Attrib</em>' attribute.
+   * @see #setAttrib(String)
+   * @see at.bestsolution.efxclipse.tooling.css.cssDsl.CssDslPackage#getsimple_selector_Attrib()
+   * @model
+   * @generated
+   */
+  String getAttrib();
+
+  /**
+   * Sets the value of the '{@link at.bestsolution.efxclipse.tooling.css.cssDsl.simple_selector#getAttrib <em>Attrib</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Attrib</em>' attribute.
+   * @see #getAttrib()
+   * @generated
+   */
+  void setAttrib(String value);
 
   /**
    * Returns the value of the '<em><b>Pseudoclasses</b></em>' attribute list.

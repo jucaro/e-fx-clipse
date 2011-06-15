@@ -39,11 +39,11 @@ selector hidden():
 ;
 
 simple_selector:
-	(element=element_name id=css_id? class=css_class? pseudoclasses+=css_pseudo*)
+	(element=element_name id=css_id? class=css_class? attrib=css_attrib? pseudoclasses+=css_pseudo*)
 	|
-	(id=css_id class=css_class? pseudoclasses+=css_pseudo*)
+	(id=css_id class=css_class? attrib=css_attrib? pseudoclasses+=css_pseudo*)
 	|
-	(class=css_class pseudoclasses+=css_pseudo*)
+	(class=css_class attrib=css_attrib? pseudoclasses+=css_pseudo*)
 	|
 	pseudoclasses+=css_pseudo+
 ;
@@ -58,6 +58,10 @@ css_class
 
 css_id:
 	'#' (hexdigits | IDENT)  
+;
+
+css_attrib:
+	'[' IDENT ( ( '=' | INCLUDES | DASHMATCH ) (IDENT | STRING ) )? ']'
 ;
 
 css_declaration:
@@ -151,6 +155,11 @@ fx_font_property:
 		| '-fx-label-font' | '-fx-tick-label-font'
 	) ':' value=FONT
 ;
+
+/*enum FxFontLiterals:
+	fxFont='-fx-font' | fxTitleFont='-fx-title-font' | fxPieLabelFont='-fx-pie-label-font' | fxPieValueLabelFont='-fx-pie-value-label-font' 
+		| fxLabelFont='-fx-label-font' | fxTickLabelFont='-fx-tick-label-font'
+;*/
 
 fx_font_family_property:
 	property=(
@@ -619,3 +628,6 @@ terminal WS			: (' '|'\t'|'\r'|'\n')+;
 terminal STRING	: 
 			'"' ( '\\' ('b'|'t'|'n'|'f'|'r'|'u'|'"'|"'"|'\\') | !('\\'|'"') )* '"' |
 			"'" ( '\\' ('b'|'t'|'n'|'f'|'r'|'u'|'"'|"'"|'\\') | !('\\'|"'") )* "'";
+			
+terminal INCLUDES: "~=";
+terminal DASHMATCH: "|=";

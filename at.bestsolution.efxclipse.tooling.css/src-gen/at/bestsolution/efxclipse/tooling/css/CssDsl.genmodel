@@ -37,6 +37,7 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/CssDsl.ecore#//simple_selector/element"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/CssDsl.ecore#//simple_selector/id"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/CssDsl.ecore#//simple_selector/class"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/CssDsl.ecore#//simple_selector/attrib"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/CssDsl.ecore#//simple_selector/pseudoclasses"/>
     </genClasses>
     <genClasses ecoreClass="platform:/resource/at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/CssDsl.ecore#//css_declaration"/>
