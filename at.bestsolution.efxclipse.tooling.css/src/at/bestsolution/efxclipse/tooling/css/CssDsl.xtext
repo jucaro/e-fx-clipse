@@ -65,7 +65,7 @@ css_attrib:
 ;
 
 css_declaration:
-	css_generic_declaration | css_fx_declaration
+	css_generic_declaration | css_fx_declaration //| css_21_declaration
 ;
 
 css_generic_declaration:
@@ -107,7 +107,396 @@ term
 num:
 	integer | real
 ;
-  
+
+
+//css_21_declaration:
+//	// Chapter 8
+//	  css_21_margin_property
+//	| css_21_margins_property
+//	
+//	| css_21_padding_property
+//	| css_21_paddings_property
+//	
+//	| css_21_borderwidth_property
+//	| css_21_borderwidths_property
+//	
+//	| css_21_bordercolor_property
+//	| css_21_bordercolors_property
+//	
+//	| css_21_borderstyle_property
+//	| css_21_borderstyles_property
+//	| css_21_border_property
+//	
+//	// Chapter 9
+//	| css_21_display_property
+//	| css_21_position_property
+//	| css_21_boxoffset_property
+//	| css_21_float_property
+//	| css_21_clear_property
+//	| css_21_zindex_property
+//	| css_21_direction_property
+//	| css_21_unicodebidi_property
+//	
+//	// Chapter 10
+//	// Chapter 11
+//	| css_21_overflow_property
+//	| css_21_clip_property
+//	| css_21_visibility_property
+//	// Chapter 12
+//	| css_21_content_property
+//	| css_21_quotes_property
+//	| css_21_counter_property
+//	| css_21_list_style_type_prpoperty
+//	| css_21_list_style_image_property
+//	| css_21_list_style_position_property
+//	| css_21_list_style
+//	// Chapter 13
+//	// Chapter 14
+//	// Chapter 15
+//	// Chapter 16
+//	| css_21_text_ident_property
+//	| css_21_text_align_property
+//	| css_21_text_decoration_property
+//	| css_21_letter_spacing_property
+//	| css_21_wordspacing_property
+//	| css_21_text_transform_property
+//	| css_21_whitespace_property
+//	// Chapter 17
+//	| css_21_caption_side_property
+//	| css_21_table_layout_property
+//	| css_21_border_collapse_property
+//	| css_21_border_spacing_property
+//	| css_21_empty_cells_property
+//	// Chapter 18
+//;
+//
+//css_21_margin_property:
+//	property=(
+//		  'margin-top' | 'margin-right'| 'margin-bottom' | 'margin-left'
+//	) ':' value=(vt_margin_width | 'inherited' )
+//;
+//
+//vt_margin_width:
+//	(unary_operator? (LENGTH | PERCENTAGE) ) | 'auto' 
+//;
+//
+//css_21_margins_property:
+//	property=(
+//		'margin'
+//	) ':' values+=vt_margin_width ( values+=vt_margin_width values+=vt_margin_width values+=vt_margin_width )?
+//;
+//
+//css_21_padding_property:
+//	property=(
+//		  'padding-top' | 'padding-right' | 'padding-bottom' | 'padding-left'
+//	) ':' value=vt_padding_width
+//;
+//
+//css_21_paddings_property:
+//	property=(
+//		'padding'
+//	) ':' values+=vt_padding_width ( values+=vt_padding_width values+=vt_padding_width values+=vt_padding_width )?
+//;
+//
+//vt_padding_width:
+//	unary_operator? (LENGTH | PERCENTAGE)
+//;
+//
+//css_21_borderwidth_property:
+//	property=(
+//		'border-top-width' | 'border-right-width' | 'border-bottom-width'| 'border-left-width'
+//	) ':' value=vt_border_width
+//;
+//
+//css_21_borderwidths_property:
+//	property=(
+//		'border-width'
+//	) ':' values+=vt_border_width ( values+=vt_border_width values+=vt_border_width values+=vt_border_width )?
+//;
+//
+//
+//vt_border_width:
+//	'thin' | 'medium' | 'thick' | (unary_operator? LENGTH)
+//;
+//
+//
+//css_21_bordercolor_property:
+//	property=(
+//		'border-top-color' | 'border-right-color' | 'border-bottom-color' | 'border-left-color' 
+//	) ':' value=Color
+//;
+//
+//css_21_bordercolors_property:
+//	property=(
+//		'border-color'
+//	) ':' values+=Color ( values+=Color values+=Color values+=Color )?
+//;
+//
+//css_21_borderstyle_property:
+//	property=(
+//		'border-top-style' | 'border-right-style' |'border-bottom-style' | 'border-left-style'
+//	) ':' value=vt_border_style
+//;
+//
+//css_21_borderstyles_property:
+//	property=(
+//		'border-style'
+//	) ':' values+=vt_border_style ( values+=vt_border_style values+=vt_border_style values+=vt_border_style )?
+//;
+//
+//vt_border_style:
+//	'none' | 'hidden' | 'dotted' | 'dashed' | 'solid' | 'double' | 'groove' | 'ridge' | 'inset' | 'outset' 
+//;
+//
+//css_21_border_property:
+//	property=(
+//		'border-top' | 'border-right' | 'border-bottom' | 'border-left' | 'border'
+//	) ':' width=vt_border_width style=vt_border_style color=Color
+//;
+//
+//css_21_display_property:
+//	property=(
+//		'display'
+//	) ':' value=vt_display
+//;
+//
+//vt_display:
+//	'inline' | 'block' | 'list-item' | 'inline-block' | 'table' | 'inline-table' | 'table-row-group' | 'table-header-group' | 'table-footer-group' | 'table-row' | 'table-column-group' | 'table-column' | 'table-cell' | 'table-caption' | 'none' | 'inherit'
+//;
+//
+//css_21_position_property:
+//	property=(
+//		'position'
+//	) ':' value=vt_position
+//;
+//
+//vt_position:
+//	'static' | 'relative' | 'absolute' | 'fixed'
+//;
+//
+//css_21_boxoffset_property:
+//	property=(
+//		'top' | 'right' | 'bottom' | 'left'
+//	) ':' value=vt_boxoffset
+//;
+//
+//vt_boxoffset:
+//	(unary_operator? (LENGTH | PERCENTAGE) ) | 'auto' | 'inherit'
+//;
+//
+//css_21_float_property:
+//	property=(
+//		'float'
+//	) ':' value=vt_float
+//;
+//
+//vt_float:
+//	'left' | 'right' | 'none' | 'inherit'
+//;
+//
+//css_21_clear_property:
+//	property=(
+//		'clear'
+//	) ':' value=vt_clear
+//;
+//
+//vt_clear:
+//	'none' | 'left' | 'right' | 'both' | 'inherit'
+//;
+//
+//css_21_zindex_property:
+//	property=(
+//		'z-index'
+//	) ':' value=('auto'|integer|'inherit')
+//;
+//
+//css_21_direction_property:
+//	property=(
+//		'direction'
+//	) ':' value=('ltr' | 'rtl' | 'inherit')
+//;
+//
+//css_21_unicodebidi_property:
+//	property=(
+//		'unicode-bidi'
+//	) ':' value=('normal' | 'embed' | 'bidi-override' | 'inherit')
+//;
+//
+//css_21_overflow_property:
+//	property=(
+//		'overflow'
+//	) ':' value=('visible' | 'hidden' | 'scroll' | 'auto' | 'inherit')
+//;
+//
+//css_21_clip_property:
+//	property=(
+//		'clip'
+//	) ':' (shape=css_21_shape | value=('auto' | 'inherit')) 
+//;
+//
+//css_21_shape:
+//	'rect' '(' top=LENGTH COMMA right=LENGTH COMMA bottom=LENGTH COMMA left=LENGTH ')'
+//;
+//
+//css_21_visibility_property:
+//	property=(
+//		'visibility'
+//	) ':' value=('visible' | 'hidden' | 'collapse' | 'inherit')
+//;
+//
+//
+//css_21_content_property:
+//	property=(
+//		'content'
+//	) ':' ( value=('normal' | 'none' | 'inherit') | values+=(STRING|URI|vt_counter|vt_attr|'open-quote'|'close-quote'|'no-open-quote'|'no-close-quote') )
+//;
+//
+//vt_counter:
+//	'counter(' IDENT (COMMA IDENT)? ')'
+//;
+//
+//vt_attr:
+//	'attr(' IDENT ')'
+//;
+//
+//css_21_quotes_property:
+//	property=(
+//		'quotes'
+//	) ':' ((pairValues+=STRING pairValues+=STRING ) | value=('none' | 'inherit'))
+//;
+//
+//
+//css_21_counter_property:
+//	property=(
+//		'counter-reset' | 'counter-increment'
+//	) ':' ( pairValues+=vt_reset | value=('none' | 'inherit') )
+//;
+//
+//vt_reset:
+//	IDENT integer?
+//;
+//
+//css_21_list_style_type_prpoperty:
+//	property=(
+//		'list-style-type'
+//	) ':' value=vt_list_style_type
+//;
+//
+//vt_list_style_type:
+//	'disc' | 'circle' | 'square' | 'decimal' | 'decimal-leading-zero' | 'lower-roman' | 'upper-roman' | 'lower-greek' | 'lower-latin' | 'upper-latin' | 'armenian' | 'georgian' | 'lower-alpha' | 'upper-alpha' | 'none' | 'inherit'
+//;
+//
+//css_21_list_style_image_property:
+//	property=(
+//		'list-style-image'
+//	) ':' value=vt_list_style_image
+//;
+//
+//vt_list_style_image:
+//	URI|'none'|'inherit'
+//;
+//
+//css_21_list_style_position_property:
+//	property=(
+//		'list-style-position'
+//	) ':' value=vt_list_style_position
+//;
+//
+//vt_list_style_position:
+//	'inside' | 'outside' | 'inherit'
+//;
+//
+//
+//css_21_list_style:
+//	property=(
+//		'list-style'
+//	) ':' ((type=vt_list_style_type position=vt_list_style_position image=vt_list_style_image) | value='inherit')
+//;
+//
+//css_21_text_ident_property:
+//	property=(
+//		'text-indet'
+//	) ':' value=vt_text_ident
+//;
+//
+//vt_text_ident:
+//	(unary_operator? (LENGTH | PERCENTAGE) ) | 'inherit'
+//;
+//
+//css_21_text_align_property:
+//	property=(
+//		'text-align'
+//	) ':' value=('left' | 'right' | 'center' | 'justify' | 'inherit')
+//;
+//
+//css_21_text_decoration_property:
+//	property=(
+//		'text-decoration'
+//	) ':' value=('none' | 'underline' | 'overline' | 'line-through' | 'blink' | 'inherit')
+//;
+//
+//css_21_letter_spacing_property:
+//	property=(
+//		'letter-spacing'
+//	) ':' value=vt_letter_spacing
+//;
+//
+//vt_letter_spacing:
+//	'normal' | LENGTH | 'inherit'
+//;
+//
+//css_21_wordspacing_property:
+//	property=(
+//		'word-spacing'
+//	) ':' value=vt_word_spacing
+//;
+//
+//vt_word_spacing:
+//	'normal' | LENGTH | 'inherit'
+//;
+//
+//css_21_text_transform_property:
+//	property=(
+//		'text-transform'
+//	) ':' value=('capitalize' | 'uppercase' | 'lowercase' | 'none' | 'inherit')
+//;
+//
+//css_21_whitespace_property:
+//	property=(
+//		'white-space'
+//	) ':' value=('normal' | 'pre' | 'nowrap' | 'pre-wrap' | 'pre-line' | 'inherit')
+//;
+//
+//css_21_caption_side_property:
+//	property=(
+//		'caption-side'
+//	) ':' value=('top' | 'bottom' | 'inherit')
+//;
+//
+//css_21_table_layout_property:
+//	property=(
+//		'table-layout'
+//	) ':' value=('auto' | 'fixed' | 'inherit' )
+//;
+//
+//css_21_border_collapse_property:
+//	property=(
+//		'border-collapse'
+//	) ':' value=('collapse' | 'separate' | 'inherit' )
+//;
+//
+//css_21_border_spacing_property:
+//	property=(
+//		'border-spacing'
+//	) ':' ((lengths+=LENGTH (lengths+=LENGTH)? ) | value='inherit')
+//;
+//
+//css_21_empty_cells_property:
+//	property=(
+//		'empty-cells'
+//	) ':' value=('show' | 'hide' | 'inherit')
+//;
+
 css_fx_declaration:
 	  fx_font_property 
 	| fx_font_family_property 
@@ -582,9 +971,12 @@ URLType:
 
 NUMBER: num;
 PERCENTAGE: num'%';
+//SIGNED_PERCENTAGE: unary_operator? PERCENTAGE;
 EMS: num 'em';
 EXS: num 'ex';
 LENGTH: num  ('px' | 'cm' | 'mm' | 'in' | 'pt' | 'pc' ) ;
+//SIGNED_LENGTH: unary_operator? LENGTH;
+
 ANGLE: num ('deg' | 'rad' | 'grad' );
 TIME: num ('ms'| 's' );
 FREQ: num ('hz' | 'khz');
