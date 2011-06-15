@@ -1,4 +1,4 @@
-grammar at.bestsolution.efxclipse.tooling.css.CssDsl hidden(ML_COMMENT)
+grammar at.bestsolution.efxclipse.tooling.css.CssDsl hidden(WS, ML_COMMENT)
 
 /*
  * TODOS:
@@ -18,23 +18,23 @@ stylesheet:
 ;
 
 media
-  : 'media' WS* medialist=media_list '{' WS* rulesets+=ruleset* '}' WS*
+  : 'media'medialist=media_list '{' rulesets+=ruleset* '}'
   ;
 
 media_list
-  : medium ( COMMA WS* medium)*
+  : medium ( COMMA medium)*
   ;
 medium
-  : IDENT WS*
+  : IDENT
   ;
 
 ruleset:
-	selectors+=selector ( COMMA selectors+=selector )* '{' WS*
-		(declarations+=css_declaration ';' WS*)*
-	'}' WS*
+	selectors+=selector ( COMMA selectors+=selector )* '{'
+		(declarations+=css_declaration ';' )*
+	'}'
 ;
 
-selector:
+selector hidden():
 	simpleselectors+=simple_selector ( combinator=combinator selector=selector | WS+ ( combinator=combinator? selector=selector )? )?
 ;
 
@@ -65,11 +65,11 @@ css_declaration:
 ;
 
 css_generic_declaration:
-	property=css_property ':' WS* expression=expr
+	property=css_property ':' expression=expr
 ;
 
 css_property:
-	IDENT WS*
+	IDENT
 ;
 
 css_pseudo
@@ -82,7 +82,7 @@ combinator
   ;
   
 operator
-  : '/' WS* | COMMA WS*
+  : '/' | COMMA
   ;
   
 unary_operator
@@ -95,9 +95,9 @@ expr
   
 term
   : (unary_operator? 
-    ( (NUMBER WS*) | (PERCENTAGE WS*) | (LENGTH WS*) | (EMS WS*) | (EXS WS*) | (ANGLE WS*) |
-      (TIME WS*) | (FREQ WS*) ))
-  | STRING WS* | IDENT WS* | URI WS* | ('#' hexdigits) //| function
+    ( (NUMBER) | (PERCENTAGE) | (LENGTH) | (EMS) | (EXS) | (ANGLE) |
+      (TIME) | (FREQ) ))
+  | STRING | IDENT | URI | ('#' hexdigits) //| function
   ;
   
 num:
@@ -149,45 +149,45 @@ fx_font_property:
 	property=(
 		'-fx-font' | '-fx-title-font' | '-fx-pie-label-font' | '-fx-pie-value-label-font' 
 		| '-fx-label-font' | '-fx-tick-label-font'
-	) WS* ':' WS* value=FONT
+	) ':' value=FONT
 ;
 
 fx_font_family_property:
 	property=(
 		'-fx-font-family' | '-fx-title-font-family' | '-fx-pie-label-font-family' | '-fx-pie-value-label-font-family' 
 		| '-fx-label-font-family' | '-fx-tick-label-font-family'
-	) WS* ':' WS* value=FONTFAMILY
+	) ':' value=FONTFAMILY
 ;
 
 fx_font_size_property:
 	property=(
 		'-fx-font-size' | '-fx-title-font-size' | '-fx-pie-label-font-size' | '-fx-pie-value-label-font-size' 
 		| '-fx-label-font-size' | '-fx-tick-label-font-size'
-		) WS* ':' WS* value=SIZE
+		) ':' value=SIZE
 ;
 
 fx_font_style_property:
 	property=(
 		'-fx-font-style' | '-fx-title-font-style' | '-fx-pie-label-font-style' | '-fx-pie-value-label-font-style' 
 		| '-fx-label-font-style' | '-fx-tick-label-font-style'
-	) WS* ':' WS* value=FONTSTYLE
+	) ':' value=FONTSTYLE
 ;
 
 fx_font_weight_property:
 	property=(
 		'-fx-font-weight' | '-fx-title-font-weight' | '-fx-pie-label-font-weight' | '-fx-pie-value-label-font-weight' 
 		| '-fx-label-font-weight' | '-fx-tick-label-font-weight'
-	) WS* ':' WS* value=FONTWEIGHT
+	) ':' value=FONTWEIGHT
 ;
 
 fx_cursor_property:
 	property=(
 		'-fx-cursor'
-	) WS* ':' WS*value=( 'crosshair' | 'default' | 'hand' | 'move' | 'e-resize' | 'h-resize' | 'ne-resize' | 'nw-resize' | 'n-resize' | 'se-resize' | 'sw-resize' | 's-resize' | 'w-resize' | 'v-resize' | 'text' | 'wait' )
+	) ':' value=( 'crosshair' | 'default' | 'hand' | 'move' | 'e-resize' | 'h-resize' | 'ne-resize' | 'nw-resize' | 'n-resize' | 'se-resize' | 'sw-resize' | 's-resize' | 'w-resize' | 'v-resize' | 'text' | 'wait' )
 ;
 
 fx_effect_property:
-	'-fx-effect' WS*':' WS*value=Effect
+	'-fx-effect' ':' value=Effect
 ;
 
 fx_boolean_property:
@@ -198,7 +198,7 @@ fx_boolean_property:
 		| '-fx-snap-to-ticks' | '-fx-show-tick-marks' | '-fx-show-tick-labels' | '-fx-fit-to-width' | '-fx-minor-tick-visible'
 		| '-fx-gap-start-and-end' | '-fx-tick-mark-visible' | '-fx-tick-labels-visible' | '-fx-fit-to-height'
 		| '-fx-click-to-position' | '-fx-text-wrap' | '-fx-position-shape'
-	) WS*':'WS* value=('true'|'false')
+	) ':' value=('true'|'false')
 ;
 
 fx_size_property:
@@ -210,7 +210,7 @@ fx_size_property:
 		| '-fx-pie-thickness' | '-fx-pie-stroke-width' | '-fx-title-gap' | '-fx-legend-gap' | '-fx-hover-stroke-width'
 		| '-fx-chart-background-stroke-width' | '-fx-offset-y' | '-fx-offset-x' | '-fx-category-gap'
 		| '-fx-bar-gap' | '-fx-graphic-text-gap' | '-fx-tab-spacing'
-		) WS*':'WS* value=SIZE
+		) ':' value=SIZE
 ;
 
 fx_number_property:
@@ -221,13 +221,13 @@ fx_number_property:
 		| '-fx-unit-increment' | '-fx-major-tick-unit' | '-fx-data-opacity'
 		| '-fx-radius-scale' | '-fx-pie-to-label-line-one-length' | '-fx-pie-to-label-line-stroke-width'
 		| '-fx-pie-to-label-line-two-length' | '-fx-start-angle' | '-fx-tick-unit' | '-fx-indent'
-	) WS*':'WS* value=NUMBER
+	) ':' value=NUMBER
 ;
 
 fx_integer_property:
 	property=(
 		'-fx-columns' | '-fx-rows' | '-fx-lines' | '-fx-minor-tick-count'
-	) WS*':'WS* value=integer
+	) ':' value=integer
 ;
 
 fx_paint_property:
@@ -241,158 +241,158 @@ fx_paint_property:
 		| '-fx-vertical-alternate-row-fill' | '-fx-vertical-grid-line-stroke' | '-fx-axis-stroke'
 		| '-fx-tick-label-fill' | '-fx-label-fill' | '-fx-tick-mark-stroke' | '-fx-hover-fill'
 		
-	) WS*':'WS* value=Paint
+	) ':' value=Paint
 ;
 
 fx_blend_property:
 	property=(
 		'-fx-blend-mode'
-	) WS*':'WS* value=( 'add' | 'blue' | 'color-burn' | 'color-dodge' | 'darken' | 'difference' | 'exclusion' | 'green' | 'hard-light' | 'lighten' | 'multiply' | 'overlay' | 'red' | 'screen' | 'soft-light' | 'src-atop' | 'src-in' | 'src-out' | 'src-over' )
+	) ':' value=( 'add' | 'blue' | 'color-burn' | 'color-dodge' | 'darken' | 'difference' | 'exclusion' | 'green' | 'hard-light' | 'lighten' | 'multiply' | 'overlay' | 'red' | 'screen' | 'soft-light' | 'src-atop' | 'src-in' | 'src-out' | 'src-over' )
 ;
 
 fx_url_property:
 	property=(
 		'-fx-image' | '-fx-graphic' | '-fx-border-image-source'
-	) WS*':'WS* value=URLType
+	) ':' value=URLType
 ;
 
 fx_paint_properties:
 	property=(
 		'-fx-background-color'
-	) WS*':'WS* (((values+=Paint) (COMMA values+=Paint WS*)*) | 'null')
+	) ':' (((values+=Paint) (COMMA values+=Paint)*) | 'null')
 ;
 
 fx_multisize_properties:
 	property=(
 		'-fx-background-insets' | '-fx-background-radius' | '-fx-border-insets' | '-fx-border-radius'
 		| '-fx-border-width' | '-fx-border-image-insets' | '-fx-border-image-width'
-	) WS*':'WS* values+=Dim4Size ( COMMA values+=Dim4Size )*
+	) ':' values+=Dim4Size ( COMMA values+=Dim4Size )*
 ;
 
 fx_hposition_property:
 	property=(
 		'-fx-hpos' | '-fx-node-hpos' | '-fx-graphic-hpos'
-	) WS*':'WS* value=HPosition
+	) ':' value=HPosition
 ;
 
 fx_vposition_property:
 	property=(
 		'-fx-vpos' | '-fx-node-vpos' | '-fx-graphic-vpos'
-	) WS*':'WS* value=VPosition
+	) ':' value=VPosition
 ;
 
 fx_side_property:
 	property=(
 		'-fx-legend-side' | '-fx-title-side' | '-fx-side'
-	) WS*':'WS* value=( 'top' | 'bottom' | 'left' | 'right' )
+	) ':' value=( 'top' | 'bottom' | 'left' | 'right' )
 ;
 
 fx_bar_policy_property:
 	property=(
 		'-fx-hbar-policy' | '-fx-vbar-policy'
-	) WS*':'WS* value=( 'never' | 'always' | 'as_needed' )
+	) ':' value=( 'never' | 'always' | 'as_needed' )
 ;
 
 fx_url_properties:
 	property=(
 		'-fx-background-image' | '-fx-border-image'
-	) WS*':'WS* values+=URLType ( COMMA values+=URLType )*
+	) ':' values+=URLType ( COMMA values+=URLType )*
 ;
 
 fx_repeat_properties:
 	property=(
 		'-fx-background-image-repeat' | '-fx-border-image-repeat' | '-fx-background-repeat'
-	) WS*':'WS* values+=RepeatStyle (COMMA values+=RepeatStyle)*
+	) ':' values+=RepeatStyle (COMMA values+=RepeatStyle)*
 ;
 
 fx_multisize_property:
 	property=(
 		'-fx-padding'
-	) WS*':'WS* value=Dim4Size
+	) ':' value=Dim4Size
 ;
 
 fx_size_properties:
 	property=(
 		'-fx-stroke-dash-array'
-	) WS*':'WS* values+=SIZE
+	) ':' values+=SIZE
 ;
 
 fx_stroke_line_cap_property:
 	property=(
 		'-fx-stroke-line-cap' 
-	) WS*':'WS* value=('square' | 'butt' | 'round')
+	) ':' value=('square' | 'butt' | 'round')
 ;
 
 fx_stroke_line_join_property:
 	property=(
 		'-fx-stroke-line-join' 
-	) WS*':'WS* value=( 'miter' | 'bevel' | 'round' )
+	) ':' value=( 'miter' | 'bevel' | 'round' )
 ;
 
 fx_alignment_property:
 	property = (
 		'-fx-text-alignment' | '-fx-alignment'
-	) WS*':'WS* value=('left' | 'center' | 'right' | 'justify')
+	) ':' value=('left' | 'center' | 'right' | 'justify')
 ;
 
 fx_text_origin_property:
 	property=(
 		'-fx-text-origin' 
-	) WS*':'WS* value=('baseline' | 'top' | 'bottom')
+	) ':' value=('baseline' | 'top' | 'bottom')
 ;
 
 fx_position_property:
 	property=(
 		'-fx-background-image-position' | '-fx-background-position'
-	) WS*':'WS* values+=BgPosition (COMMA values+=BgPosition)*
+	) ':' values+=BgPosition (COMMA values+=BgPosition)*
 ;
 
 fx_background_image_size_property:
 	property=(
 		'-fx-background-image-size' 
-	) WS*':'WS* values+=BgSize (COMMA values+=BgSize)*
+	) ':' values+=BgSize (COMMA values+=BgSize)*
 ;
 
 fx_border_style_property:
 	property=(
 		'-fx-border-style' 
-	) WS*':'WS* values+=BorderStyle (COMMA values+=BorderStyle)*
+	) ':' values+=BorderStyle (COMMA values+=BorderStyle)*
 ;
 
 fx_border_image_slice_property:
 	property=(
 		'-fx-border-image-slice' 
-	) WS*':'WS* values+=SizeFill (COMMA values+=SizeFill)*
+	) ':' values+=SizeFill (COMMA values+=SizeFill)*
 ;
 
 fx_text_overrun_property:
 	property=(
 		'-fx-text-overrun'
-	) WS*':'WS* value=( 'center-ellipses' | 'center-word-ellipses' | 'clip' | 'ellipses' | 'leading-ellipses' | 'leading-word-ellipses' | 'word-ellipses' )
+	) ':' value=( 'center-ellipses' | 'center-word-ellipses' | 'clip' | 'ellipses' | 'leading-ellipses' | 'leading-word-ellipses' | 'word-ellipses' )
 ;
 
 fx_insets_property:
 	property=(
 		'-fx-insets'
-	) WS*':'WS* value+=NUMBER | ( value+=NUMBER WS+ value+=NUMBER WS+ value+=NUMBER WS+ value+=NUMBER )
+	) ':' value+=NUMBER | ( value+=NUMBER value+=NUMBER value+=NUMBER value+=NUMBER )
 ;
 
 fx_number_properties:
 	property=(
 		'-fx-horizontal-grid-line-stroke-dash-array' | '-fx-vertical-grid-line-stroke-dash-array'
-	) WS*':'WS* value+=NUMBER+
+	) ':' value+=NUMBER+
 ;
 
 fx_multi_paint_properties:
 	property=(
 		'-fx-border-color'
-	) WS*':'WS* ((values+=MultiPaint WS* (COMMA values+=MultiPaint)*) | 'null')	
+	) ':' ((values+=MultiPaint (COMMA values+=MultiPaint)*) | 'null')	
 ;
 
 fx_string_property:
 	property=(
 		'-fx-skin' | '-fx-shape' | '-fx-text' | '-fx-echo-char'
-	) WS*':'WS* ( value=STRING | 'null' )
+	) ':' ( value=STRING | 'null' )
 ;
 
 Effect:
@@ -400,16 +400,16 @@ Effect:
 ;
 
 EffectDropShadow:
-	'dropshadow' WS* '(' WS* blur=BLUR COMMA color=Color COMMA blurRadius=NUMBER COMMA spread=NUMBER COMMA offsetX=NUMBER COMMA offsetY=NUMBER WS* ')'
+	'dropshadow' '(' blur=BLUR COMMA color=Color COMMA blurRadius=NUMBER COMMA spread=NUMBER COMMA offsetX=NUMBER COMMA offsetY=NUMBER ')'
 ;
 
 
 EffectInnerShadow:
-	'innershadow' WS* '(' WS* blur=BLUR COMMA color=Color COMMA blurRadius=NUMBER COMMA choke=NUMBER COMMA offsetX=NUMBER COMMA offsetY=NUMBER WS* ')'
+	'innershadow' '(' blur=BLUR COMMA color=Color COMMA blurRadius=NUMBER COMMA choke=NUMBER COMMA offsetX=NUMBER COMMA offsetY=NUMBER ')'
 ;
 
 MultiPaint:
-	values+=Paint (WS* values+=Paint)*
+	values+=Paint (values+=Paint)*
 	// values+=PaintValue values+=PaintValue values+=PaintValue values+=PaintValue
 	// values+=PaintValue // | (values+=PaintValue values+=PaintValue values+=PaintValue values+=PaintValue)
 	// (values+=PaintValue | values+=PaintValue values+=PaintValue values+=PaintValue values+=PaintValue)
@@ -421,11 +421,11 @@ Paint:
 
 
 LinearGradient:
-	'linear' WS* '(' start=PointValue ')' WS* 'to' WS* '(' end=PointValue ')' WS* 'stops' ( WS* '(' stops+=StopValue ')' )+ ( WS+ ('repeat' | 'reflect') )?
+	'linear' '(' start=PointValue ')' 'to' '(' end=PointValue ')' 'stops' ( '(' stops+=StopValue ')' )+ ( ('repeat' | 'reflect') )?
 ;
 
 RadialGradient:
-	'radial' WS* ( '(' center=PointValue ')' COMMA )? radius=SizeType ( WS* 'focus' WS* '(' WS* focus=PointValue WS* ')' ) WS* 'stops' ( WS* '(' stops+=StopValue ')' )+ ( WS+ ( 'repeat' | 'reflect' ))?
+	'radial' ( '(' center=PointValue ')' COMMA )? radius=SizeType ( 'focus' '(' focus=PointValue ')' ) 'stops' ( '(' stops+=StopValue ')' )+ ( ( 'repeat' | 'reflect' ))?
 ;
 
 StopValue:
@@ -445,16 +445,16 @@ VPosition:
 ;
 
 RepeatStyle:
-	v = ('repeat-x' | 'repeat-y') | (  v=('repeat' | 'space' | 'round' | 'no-repeat' | 'stretch') (WS+ v2=('repeat' | 'space' | 'round' | 'no-repeat'| 'stretch'))?)
+	v = ('repeat-x' | 'repeat-y') | (  v=('repeat' | 'space' | 'round' | 'no-repeat' | 'stretch') (v2=('repeat' | 'space' | 'round' | 'no-repeat'| 'stretch'))?)
 ;
 
 Dim4Size:
-	( values+=SIZE | (values+=SIZE WS* values+=SIZE WS* values+=SIZE WS* values+=SIZE) )
+	( values+=SIZE | (values+=SIZE values+=SIZE values+=SIZE values+=SIZE) )
 ;
 
 BgPosition:
 	(
-		( absx=SIZE | relx=('left' | 'center' | 'right') ) WS* ( absy=SIZE | rely=('top' | 'center' | 'bottom') )
+		( absx=SIZE | relx=('left' | 'center' | 'right') ) ( absy=SIZE | rely=('top' | 'center' | 'bottom') )
 	)
 //	|
 //	(
@@ -463,7 +463,7 @@ BgPosition:
 ;
 
 fx_color_property:
-	property=COLOR_PROPERTIES WS* ':' WS* value=Color
+	property=COLOR_PROPERTIES ':' value=Color
 ;
 
 BgSize:
@@ -475,7 +475,7 @@ BorderStyle:
 ;
 
 SizeFill:
-	value=Dim4Size WS* fill='fill'?
+	value=Dim4Size fill='fill'?
 ;
 
 Color:
@@ -539,36 +539,36 @@ NamedColor:
 RGBColor:
 	hexcolor=HexColor
 	|
-	('rgb' WS* '(' WS* r=integer COMMA g=integer COMMA b=integer WS* ')' )
+	('rgb' '(' r=integer COMMA g=integer COMMA b=integer ')' )
 	|
-	('rgb' WS* '(' WS* rp=integer '%' COMMA gp=integer '%' COMMA bp=integer '%' WS* ')' )
+	('rgb' '(' rp=integer '%' COMMA gp=integer '%' COMMA bp=integer '%' ')' )
 	|
-	('rgba' WS* '(' WS* r=integer COMMA g=integer COMMA b=integer COMMA alpha=NUMBER WS* ')' )
+	('rgba' '(' r=integer COMMA g=integer COMMA b=integer COMMA alpha=NUMBER ')' )
 	|
-	('rgba' WS* '(' WS* rp=integer '%' COMMA gp=integer '%' COMMA bp=integer '%' COMMA alpha=NUMBER WS* ')' )
+	('rgba' '(' rp=integer '%' COMMA gp=integer '%' COMMA bp=integer '%' COMMA alpha=NUMBER ')' )
 ;
 
 HSBColor:
-	('hsb' WS* '(' WS* hue=NUMBER COMMA saturation=PERCENTAGE COMMA brightness=PERCENTAGE WS* ')')
+	('hsb' '(' hue=NUMBER COMMA saturation=PERCENTAGE COMMA brightness=PERCENTAGE ')')
 	|
-	('hsba' WS* '(' WS* hue=NUMBER COMMA saturation=PERCENTAGE COMMA brightness=PERCENTAGE COMMA alpha=NUMBER WS* ')')
+	('hsba' '(' hue=NUMBER COMMA saturation=PERCENTAGE COMMA brightness=PERCENTAGE COMMA alpha=NUMBER ')')
 ;
 
 ColorFunction:
-	( 'derive' WS* '(' WS* orig=Color COMMA mod=unary_operator? PERCENTAGE WS* ')' )
+	( 'derive' '(' orig=Color COMMA mod=unary_operator? PERCENTAGE ')' )
 	|
-	( 'ladder' WS* '(' WS* orig=Color WS* ')' 'stops' ( WS* '(' WS* stopNumbers+=NUMBER COMMA stopColors+=Color WS* ')' )+ )
+	( 'ladder' '(' orig=Color ')' 'stops' ( '(' stopNumbers+=NUMBER COMMA stopColors+=Color ')' )+ )
 ;
 
 HexColor:
 	'#'(hexdigits|integer)
 ;
 URI:
-	'url' WS* '(' WS* STRING WS* ')'
+	'url' '(' STRING ')'
 ;
 
 URLType:
-	'url' WS* '(' WS* url=STRING WS* ')'
+	'url' '(' url=STRING ')'
 ;
 
 NUMBER: num;
@@ -581,7 +581,7 @@ TIME: num ('ms'| 's' );
 FREQ: num ('hz' | 'khz');
 
 FONT:
-	( (styleOrWeightString=('italic' | 'oblique' | 'normal' | 'bold' | 'bolder' | 'lighter') | weight=num) WS+)? size=SIZE WS* family=FONTFAMILY
+	( (styleOrWeightString=('italic' | 'oblique' | 'normal' | 'bold' | 'bolder' | 'lighter') | weight=num))? size=SIZE family=FONTFAMILY
 ;
 
 FONTFAMILY:
@@ -613,7 +613,7 @@ terminal real: (('0'..'9')*"."('0'..'9')+);
 terminal hexdigits:('0'..'9'|'a'..'f' | 'A'..'F')+;
 
 terminal IDENT: ('_' | 'a'..'z' | 'A'..'Z' ) ('_' | '-' | 'a'..'z' | 'A'..'Z' | '0..9' )*;
-terminal COMMA: WS* ',' WS*;
+terminal COMMA: ',';
 terminal ML_COMMENT	: '/*' -> '*/';
 terminal WS			: (' '|'\t'|'\r'|'\n')+;
 terminal STRING	: 

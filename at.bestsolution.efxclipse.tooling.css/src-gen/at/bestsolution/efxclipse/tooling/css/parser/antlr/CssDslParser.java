@@ -15,7 +15,7 @@ public class CssDslParser extends org.eclipse.xtext.parser.antlr.AbstractAntlrPa
 	
 	@Override
 	protected void setInitialHiddenTokens(XtextTokenStream tokenStream) {
-		tokenStream.setInitialHiddenTokens("RULE_ML_COMMENT");
+		tokenStream.setInitialHiddenTokens("RULE_WS", "RULE_ML_COMMENT");
 	}
 	
 	@Override
