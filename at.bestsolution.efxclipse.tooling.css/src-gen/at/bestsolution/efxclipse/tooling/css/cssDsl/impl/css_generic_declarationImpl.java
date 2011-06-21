@@ -8,10 +8,13 @@ package at.bestsolution.efxclipse.tooling.css.cssDsl.impl;
 
 import at.bestsolution.efxclipse.tooling.css.cssDsl.CssDslPackage;
 import at.bestsolution.efxclipse.tooling.css.cssDsl.css_generic_declaration;
+import at.bestsolution.efxclipse.tooling.css.cssDsl.expr;
 
 import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
@@ -52,24 +55,14 @@ public class css_generic_declarationImpl extends css_declarationImpl implements 
   protected String property = PROPERTY_EDEFAULT;
 
   /**
-   * The default value of the '{@link #getExpression() <em>Expression</em>}' attribute.
+   * The cached value of the '{@link #getExpression() <em>Expression</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @see #getExpression()
    * @generated
    * @ordered
    */
-  protected static final String EXPRESSION_EDEFAULT = null;
-
-  /**
-   * The cached value of the '{@link #getExpression() <em>Expression</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getExpression()
-   * @generated
-   * @ordered
-   */
-  protected String expression = EXPRESSION_EDEFAULT;
+  protected expr expression;
 
   /**
    * <!-- begin-user-doc -->
@@ -120,7 +113,7 @@ public class css_generic_declarationImpl extends css_declarationImpl implements 
    * <!-- end-user-doc -->
    * @generated
    */
-  public String getExpression()
+  public expr getExpression()
   {
     return expression;
   }
@@ -130,12 +123,53 @@ public class css_generic_declarationImpl extends css_declarationImpl implements 
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setExpression(String newExpression)
+  public NotificationChain basicSetExpression(expr newExpression, NotificationChain msgs)
   {
-    String oldExpression = expression;
+    expr oldExpression = expression;
     expression = newExpression;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, CssDslPackage.CSS_GENERIC_DECLARATION__EXPRESSION, oldExpression, expression));
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, CssDslPackage.CSS_GENERIC_DECLARATION__EXPRESSION, oldExpression, newExpression);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setExpression(expr newExpression)
+  {
+    if (newExpression != expression)
+    {
+      NotificationChain msgs = null;
+      if (expression != null)
+        msgs = ((InternalEObject)expression).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - CssDslPackage.CSS_GENERIC_DECLARATION__EXPRESSION, null, msgs);
+      if (newExpression != null)
+        msgs = ((InternalEObject)newExpression).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - CssDslPackage.CSS_GENERIC_DECLARATION__EXPRESSION, null, msgs);
+      msgs = basicSetExpression(newExpression, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, CssDslPackage.CSS_GENERIC_DECLARATION__EXPRESSION, newExpression, newExpression));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
+  {
+    switch (featureID)
+    {
+      case CssDslPackage.CSS_GENERIC_DECLARATION__EXPRESSION:
+        return basicSetExpression(null, msgs);
+    }
+    return super.eInverseRemove(otherEnd, featureID, msgs);
   }
 
   /**
@@ -170,7 +204,7 @@ public class css_generic_declarationImpl extends css_declarationImpl implements 
         setProperty((String)newValue);
         return;
       case CssDslPackage.CSS_GENERIC_DECLARATION__EXPRESSION:
-        setExpression((String)newValue);
+        setExpression((expr)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -190,7 +224,7 @@ public class css_generic_declarationImpl extends css_declarationImpl implements 
         setProperty(PROPERTY_EDEFAULT);
         return;
       case CssDslPackage.CSS_GENERIC_DECLARATION__EXPRESSION:
-        setExpression(EXPRESSION_EDEFAULT);
+        setExpression((expr)null);
         return;
     }
     super.eUnset(featureID);
@@ -209,7 +243,7 @@ public class css_generic_declarationImpl extends css_declarationImpl implements 
       case CssDslPackage.CSS_GENERIC_DECLARATION__PROPERTY:
         return PROPERTY_EDEFAULT == null ? property != null : !PROPERTY_EDEFAULT.equals(property);
       case CssDslPackage.CSS_GENERIC_DECLARATION__EXPRESSION:
-        return EXPRESSION_EDEFAULT == null ? expression != null : !EXPRESSION_EDEFAULT.equals(expression);
+        return expression != null;
     }
     return super.eIsSet(featureID);
   }
@@ -227,8 +261,6 @@ public class css_generic_declarationImpl extends css_declarationImpl implements 
     StringBuffer result = new StringBuffer(super.toString());
     result.append(" (property: ");
     result.append(property);
-    result.append(", expression: ");
-    result.append(expression);
     result.append(')');
     return result.toString();
   }

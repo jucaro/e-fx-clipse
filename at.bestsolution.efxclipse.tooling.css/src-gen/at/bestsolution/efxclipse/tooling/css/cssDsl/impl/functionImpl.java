@@ -6,28 +6,30 @@
  */
 package at.bestsolution.efxclipse.tooling.css.cssDsl.impl;
 
-import at.bestsolution.efxclipse.tooling.css.cssDsl.Color;
 import at.bestsolution.efxclipse.tooling.css.cssDsl.CssDslPackage;
+import at.bestsolution.efxclipse.tooling.css.cssDsl.function;
 
 import org.eclipse.emf.ecore.EClass;
 
+import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
+
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Color</b></em>'.
+ * An implementation of the model object '<em><b>function</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * </p>
  *
  * @generated
  */
-public class ColorImpl extends PaintImpl implements Color
+public class functionImpl extends MinimalEObjectImpl.Container implements function
 {
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  protected ColorImpl()
+  protected functionImpl()
   {
     super();
   }
@@ -40,7 +42,7 @@ public class ColorImpl extends PaintImpl implements Color
   @Override
   protected EClass eStaticClass()
   {
-    return CssDslPackage.Literals.COLOR;
+    return CssDslPackage.Literals.FUNCTION;
   }
 
-} //ColorImpl
+} //functionImpl

@@ -6,12 +6,6 @@ package at.bestsolution.efxclipse.tooling.css.ui.labeling;
 import org.eclipse.emf.edit.ui.provider.AdapterFactoryLabelProvider;
 import org.eclipse.xtext.ui.label.DefaultEObjectLabelProvider;
 
-import at.bestsolution.efxclipse.tooling.css.cssDsl.BgSize;
-import at.bestsolution.efxclipse.tooling.css.cssDsl.CssDslPackage;
-import at.bestsolution.efxclipse.tooling.css.cssDsl.Dim4Size;
-import at.bestsolution.efxclipse.tooling.css.cssDsl.LinearGradient;
-import at.bestsolution.efxclipse.tooling.css.cssDsl.PointValue;
-import at.bestsolution.efxclipse.tooling.css.cssDsl.StopValue;
 import at.bestsolution.efxclipse.tooling.css.cssDsl.ruleset;
 import at.bestsolution.efxclipse.tooling.css.cssDsl.selector;
 import at.bestsolution.efxclipse.tooling.css.cssDsl.simple_selector;
@@ -83,52 +77,52 @@ public class CssDslLabelProvider extends DefaultEObjectLabelProvider {
 		return b.toString();
 	}
 	
-	String text(Dim4Size value) {
-		StringBuilder b = new StringBuilder();
-		
-		for( String s : value.getValues() ) {
-			if( b.length() > 0 ) {
-				b.append(" ");
-			}
-			b.append(s);
-		}
-		
-		return b.toString();
-	}
-	
-	String text(PointValue value) {
-		if( value.eContainer() != null  && value.eContainer().eClass().equals(CssDslPackage.Literals.LINEAR_GRADIENT) ) {
-			if( value.eContainingFeature() != null && value.eContainingFeature().equals(CssDslPackage.Literals.LINEAR_GRADIENT__START) ) {
-				return "start";
-			} else {
-				return "end";
-			}
-		}
-		
-		return "point";
-	}
-	
-	
-	String text(StopValue value) {
-		return "stop";
-	}
-	
-	String text(LinearGradient value) {
-		return "linear-gradient";
-	}
-	
+//	String text(Dim4Size value) {
+//		StringBuilder b = new StringBuilder();
+//		
+//		for( String s : value.getValues() ) {
+//			if( b.length() > 0 ) {
+//				b.append(" ");
+//			}
+//			b.append(s);
+//		}
+//		
+//		return b.toString();
+//	}
+//	
+//	String text(PointValue value) {
+//		if( value.eContainer() != null  && value.eContainer().eClass().equals(CssDslPackage.Literals.LINEAR_GRADIENT) ) {
+//			if( value.eContainingFeature() != null && value.eContainingFeature().equals(CssDslPackage.Literals.LINEAR_GRADIENT__START) ) {
+//				return "start";
+//			} else {
+//				return "end";
+//			}
+//		}
+//		
+//		return "point";
+//	}
+//	
+//	
+//	String text(StopValue value) {
+//		return "stop";
+//	}
+//	
+//	String text(LinearGradient value) {
+//		return "linear-gradient";
+//	}
+//	
 	String text(stylesheet value) {
 		return "stylesheet";
 	}
 	
-	String text(BgSize value) {
-		if( value.getPredefined() != null ) {
-			return value.getPredefined();
-		} else {
-			return value.getYsize() != null ? value.getXsize() + " " + value.getYsize() : value.getXsize();
-		}
-	}
-	
+//	String text(BgSize value) {
+//		if( value.getPredefined() != null ) {
+//			return value.getPredefined();
+//		} else {
+//			return value.getYsize() != null ? value.getXsize() + " " + value.getYsize() : value.getXsize();
+//		}
+//	}
+//	
 //	String text(fx_background_image_size_property value) {
 //		StringBuilder b = new StringBuilder();
 //		

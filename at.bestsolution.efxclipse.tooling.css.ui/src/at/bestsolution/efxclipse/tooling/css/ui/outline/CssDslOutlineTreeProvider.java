@@ -35,7 +35,7 @@ public class CssDslOutlineTreeProvider extends DefaultOutlineTreeProvider {
 	
 	@Override
 	protected void _createChildren(IOutlineNode parentNode, EObject modelElement) {
-		System.err.println("create children: " + parentNode + ", " + modelElement);
+//		System.err.println("create children: " + parentNode + ", " + modelElement);
 		if( modelElement instanceof ruleset ) {
 			ruleset s = (ruleset) modelElement;
 			

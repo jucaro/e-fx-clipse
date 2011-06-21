@@ -7,6 +7,7 @@ import org.eclipse.xtext.IGrammarAccess;
 import org.eclipse.xtext.RuleCall;
 import org.eclipse.xtext.nodemodel.INode;
 import org.eclipse.xtext.serializer.analysis.GrammarAlias.AbstractElementAlias;
+import org.eclipse.xtext.serializer.analysis.GrammarAlias.GroupAlias;
 import org.eclipse.xtext.serializer.analysis.GrammarAlias.TokenAlias;
 import org.eclipse.xtext.serializer.analysis.ISyntacticSequencerPDAProvider.ISynTransition;
 import org.eclipse.xtext.serializer.sequencer.AbstractSyntacticSequencer;
@@ -15,11 +16,15 @@ import org.eclipse.xtext.serializer.sequencer.AbstractSyntacticSequencer;
 public class AbstractCssDslSyntacticSequencer extends AbstractSyntacticSequencer {
 
 	protected CssDslGrammarAccess grammarAccess;
+	protected AbstractElementAlias match_function_HyphenMinusKeyword_0_q_IDENTTerminalRuleCall_1_LeftParenthesisKeyword_2_WSTerminalRuleCall_3_p;
+	protected AbstractElementAlias match_function_WSTerminalRuleCall_5_a;
 	protected AbstractElementAlias match_selector_WSTerminalRuleCall_1_1_0_p;
 	
 	@Inject
 	protected void init(IGrammarAccess access) {
 		grammarAccess = (CssDslGrammarAccess) access;
+		match_function_HyphenMinusKeyword_0_q_IDENTTerminalRuleCall_1_LeftParenthesisKeyword_2_WSTerminalRuleCall_3_p = new GroupAlias(false, false, new TokenAlias(true, false, grammarAccess.getFunctionAccess().getHyphenMinusKeyword_0()), new TokenAlias(false, false, grammarAccess.getFunctionAccess().getIDENTTerminalRuleCall_1()), new TokenAlias(false, false, grammarAccess.getFunctionAccess().getLeftParenthesisKeyword_2()), new TokenAlias(false, true, grammarAccess.getFunctionAccess().getWSTerminalRuleCall_3()));
+		match_function_WSTerminalRuleCall_5_a = new TokenAlias(true, true, grammarAccess.getFunctionAccess().getWSTerminalRuleCall_5());
 		match_selector_WSTerminalRuleCall_1_1_0_p = new TokenAlias(false, true, grammarAccess.getSelectorAccess().getWSTerminalRuleCall_1_1_0());
 	}
 	
@@ -27,10 +32,12 @@ public class AbstractCssDslSyntacticSequencer extends AbstractSyntacticSequencer
 	protected String getUnassignedRuleCallToken(RuleCall ruleCall, INode node) {
 		if(ruleCall.getRule() == grammarAccess.getCOMMARule())
 			return getCOMMAToken(ruleCall, node);
-		else if(ruleCall.getRule() == grammarAccess.getPERCENTAGERule())
-			return getPERCENTAGEToken(ruleCall, node);
+		else if(ruleCall.getRule() == grammarAccess.getIDENTRule())
+			return getIDENTToken(ruleCall, node);
 		else if(ruleCall.getRule() == grammarAccess.getWSRule())
 			return getWSToken(ruleCall, node);
+		else if(ruleCall.getRule() == grammarAccess.getOperatorRule())
+			return getoperatorToken(ruleCall, node);
 		return "";
 	}
 	
@@ -39,26 +46,51 @@ public class AbstractCssDslSyntacticSequencer extends AbstractSyntacticSequencer
 			return getTokenText(node);
 		return ",";
 	}
-	protected String getPERCENTAGEToken(RuleCall ruleCall, INode node) {
+	protected String getIDENTToken(RuleCall ruleCall, INode node) {
 		if (node != null)
 			return getTokenText(node);
-		return "%";
+		return "_";
 	}
 	protected String getWSToken(RuleCall ruleCall, INode node) {
 		if (node != null)
 			return getTokenText(node);
 		return " ";
 	}
+	protected String getoperatorToken(RuleCall ruleCall, INode node) {
+		if (node != null)
+			return getTokenText(node);
+		return "/";
+	}
 	
 	@Override
 	protected void emitUnassignedTokens(EObject semanticObject, ISynTransition transition, INode fromNode, INode toNode) {
 		if (!transition.isSyntacticallyAmbiguous())
 			return;
-		if(match_selector_WSTerminalRuleCall_1_1_0_p.equals(transition.getAmbiguousSyntax()))
+		if(match_function_HyphenMinusKeyword_0_q_IDENTTerminalRuleCall_1_LeftParenthesisKeyword_2_WSTerminalRuleCall_3_p.equals(transition.getAmbiguousSyntax()))
+			emit_function_HyphenMinusKeyword_0_q_IDENTTerminalRuleCall_1_LeftParenthesisKeyword_2_WSTerminalRuleCall_3_p(semanticObject, transition, fromNode, toNode);
+		else if(match_function_WSTerminalRuleCall_5_a.equals(transition.getAmbiguousSyntax()))
+			emit_function_WSTerminalRuleCall_5_a(semanticObject, transition, fromNode, toNode);
+		else if(match_selector_WSTerminalRuleCall_1_1_0_p.equals(transition.getAmbiguousSyntax()))
 			emit_selector_WSTerminalRuleCall_1_1_0_p(semanticObject, transition, fromNode, toNode);
 		else acceptNodes(transition, fromNode, toNode);
 	}
 
+	/**
+	 * Syntax:
+	 *     '-'? IDENT '(' WS+
+	 */
+	protected void emit_function_HyphenMinusKeyword_0_q_IDENTTerminalRuleCall_1_LeftParenthesisKeyword_2_WSTerminalRuleCall_3_p(EObject semanticObject, ISynTransition transition, INode fromNode, INode toNode) {
+		acceptNodes(transition, fromNode, toNode);
+	}
+	
+	/**
+	 * Syntax:
+	 *     WS*
+	 */
+	protected void emit_function_WSTerminalRuleCall_5_a(EObject semanticObject, ISynTransition transition, INode fromNode, INode toNode) {
+		acceptNodes(transition, fromNode, toNode);
+	}
+	
 	/**
 	 * Syntax:
 	 *     WS+

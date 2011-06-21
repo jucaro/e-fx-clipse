@@ -9,13 +9,6 @@
     editorPluginID="at.bestsolution.efxclipse.tooling.css.editor">
   <genPackages prefix="CssDsl" basePackage="at.bestsolution.efxclipse.tooling.css"
       disposableProviderFactory="true" ecorePackage="platform:/resource/at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/CssDsl.ecore#/">
-    <genEnums typeSafeEnumCompatible="false" ecoreEnum="platform:/resource/at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/CssDsl.ecore#//HPosition">
-      <genEnumLiterals ecoreEnumLiteral="platform:/resource/at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/CssDsl.ecore#//HPosition/left"/>
-      <genEnumLiterals ecoreEnumLiteral="platform:/resource/at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/CssDsl.ecore#//HPosition/center"/>
-      <genEnumLiterals ecoreEnumLiteral="platform:/resource/at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/CssDsl.ecore#//HPosition/right"/>
-      <genEnumLiterals ecoreEnumLiteral="platform:/resource/at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/CssDsl.ecore#//HPosition/leading"/>
-      <genEnumLiterals ecoreEnumLiteral="platform:/resource/at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/CssDsl.ecore#//HPosition/trailing"/>
-    </genEnums>
     <genClasses ecoreClass="platform:/resource/at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/CssDsl.ecore#//stylesheet">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/CssDsl.ecore#//stylesheet/ruleset"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/CssDsl.ecore#//stylesheet/media"/>
@@ -43,272 +36,22 @@
     <genClasses ecoreClass="platform:/resource/at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/CssDsl.ecore#//css_declaration"/>
     <genClasses ecoreClass="platform:/resource/at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/CssDsl.ecore#//css_generic_declaration">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/CssDsl.ecore#//css_generic_declaration/property"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/CssDsl.ecore#//css_generic_declaration/expression"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/CssDsl.ecore#//css_generic_declaration/expression"/>
     </genClasses>
-    <genClasses ecoreClass="platform:/resource/at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/CssDsl.ecore#//css_fx_declaration"/>
-    <genClasses ecoreClass="platform:/resource/at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/CssDsl.ecore#//fx_font_property">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/CssDsl.ecore#//fx_font_property/property"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/CssDsl.ecore#//fx_font_property/value"/>
+    <genClasses ecoreClass="platform:/resource/at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/CssDsl.ecore#//expr">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/CssDsl.ecore#//expr/terms"/>
     </genClasses>
-    <genClasses ecoreClass="platform:/resource/at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/CssDsl.ecore#//fx_font_family_property">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/CssDsl.ecore#//fx_font_family_property/property"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/CssDsl.ecore#//fx_font_family_property/value"/>
+    <genClasses ecoreClass="platform:/resource/at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/CssDsl.ecore#//term">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/CssDsl.ecore#//term/number"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/CssDsl.ecore#//term/stringValue"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/CssDsl.ecore#//term/identifier"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/CssDsl.ecore#//term/url"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/CssDsl.ecore#//term/function"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/CssDsl.ecore#//term/hexColor"/>
     </genClasses>
-    <genClasses ecoreClass="platform:/resource/at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/CssDsl.ecore#//fx_font_size_property">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/CssDsl.ecore#//fx_font_size_property/property"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/CssDsl.ecore#//fx_font_size_property/value"/>
-    </genClasses>
-    <genClasses ecoreClass="platform:/resource/at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/CssDsl.ecore#//fx_font_style_property">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/CssDsl.ecore#//fx_font_style_property/property"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/CssDsl.ecore#//fx_font_style_property/value"/>
-    </genClasses>
-    <genClasses ecoreClass="platform:/resource/at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/CssDsl.ecore#//fx_font_weight_property">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/CssDsl.ecore#//fx_font_weight_property/property"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/CssDsl.ecore#//fx_font_weight_property/value"/>
-    </genClasses>
-    <genClasses ecoreClass="platform:/resource/at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/CssDsl.ecore#//fx_cursor_property">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/CssDsl.ecore#//fx_cursor_property/property"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/CssDsl.ecore#//fx_cursor_property/value"/>
-    </genClasses>
-    <genClasses ecoreClass="platform:/resource/at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/CssDsl.ecore#//fx_effect_property">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/CssDsl.ecore#//fx_effect_property/value"/>
-    </genClasses>
-    <genClasses ecoreClass="platform:/resource/at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/CssDsl.ecore#//fx_boolean_property">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/CssDsl.ecore#//fx_boolean_property/property"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/CssDsl.ecore#//fx_boolean_property/value"/>
-    </genClasses>
-    <genClasses ecoreClass="platform:/resource/at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/CssDsl.ecore#//fx_size_property">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/CssDsl.ecore#//fx_size_property/property"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/CssDsl.ecore#//fx_size_property/value"/>
-    </genClasses>
-    <genClasses ecoreClass="platform:/resource/at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/CssDsl.ecore#//fx_number_property">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/CssDsl.ecore#//fx_number_property/property"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/CssDsl.ecore#//fx_number_property/value"/>
-    </genClasses>
-    <genClasses ecoreClass="platform:/resource/at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/CssDsl.ecore#//fx_integer_property">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/CssDsl.ecore#//fx_integer_property/property"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/CssDsl.ecore#//fx_integer_property/value"/>
-    </genClasses>
-    <genClasses ecoreClass="platform:/resource/at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/CssDsl.ecore#//fx_paint_property">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/CssDsl.ecore#//fx_paint_property/property"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/CssDsl.ecore#//fx_paint_property/value"/>
-    </genClasses>
-    <genClasses ecoreClass="platform:/resource/at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/CssDsl.ecore#//fx_blend_property">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/CssDsl.ecore#//fx_blend_property/property"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/CssDsl.ecore#//fx_blend_property/value"/>
-    </genClasses>
-    <genClasses ecoreClass="platform:/resource/at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/CssDsl.ecore#//fx_url_property">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/CssDsl.ecore#//fx_url_property/property"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/CssDsl.ecore#//fx_url_property/value"/>
-    </genClasses>
-    <genClasses ecoreClass="platform:/resource/at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/CssDsl.ecore#//fx_paint_properties">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/CssDsl.ecore#//fx_paint_properties/property"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/CssDsl.ecore#//fx_paint_properties/values"/>
-    </genClasses>
-    <genClasses ecoreClass="platform:/resource/at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/CssDsl.ecore#//fx_multisize_properties">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/CssDsl.ecore#//fx_multisize_properties/property"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/CssDsl.ecore#//fx_multisize_properties/values"/>
-    </genClasses>
-    <genClasses ecoreClass="platform:/resource/at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/CssDsl.ecore#//fx_hposition_property">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/CssDsl.ecore#//fx_hposition_property/property"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/CssDsl.ecore#//fx_hposition_property/value"/>
-    </genClasses>
-    <genClasses ecoreClass="platform:/resource/at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/CssDsl.ecore#//fx_vposition_property">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/CssDsl.ecore#//fx_vposition_property/property"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/CssDsl.ecore#//fx_vposition_property/value"/>
-    </genClasses>
-    <genClasses ecoreClass="platform:/resource/at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/CssDsl.ecore#//fx_side_property">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/CssDsl.ecore#//fx_side_property/property"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/CssDsl.ecore#//fx_side_property/value"/>
-    </genClasses>
-    <genClasses ecoreClass="platform:/resource/at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/CssDsl.ecore#//fx_bar_policy_property">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/CssDsl.ecore#//fx_bar_policy_property/property"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/CssDsl.ecore#//fx_bar_policy_property/value"/>
-    </genClasses>
-    <genClasses ecoreClass="platform:/resource/at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/CssDsl.ecore#//fx_url_properties">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/CssDsl.ecore#//fx_url_properties/property"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/CssDsl.ecore#//fx_url_properties/values"/>
-    </genClasses>
-    <genClasses ecoreClass="platform:/resource/at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/CssDsl.ecore#//fx_repeat_properties">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/CssDsl.ecore#//fx_repeat_properties/property"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/CssDsl.ecore#//fx_repeat_properties/values"/>
-    </genClasses>
-    <genClasses ecoreClass="platform:/resource/at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/CssDsl.ecore#//fx_multisize_property">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/CssDsl.ecore#//fx_multisize_property/property"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/CssDsl.ecore#//fx_multisize_property/value"/>
-    </genClasses>
-    <genClasses ecoreClass="platform:/resource/at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/CssDsl.ecore#//fx_size_properties">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/CssDsl.ecore#//fx_size_properties/property"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/CssDsl.ecore#//fx_size_properties/values"/>
-    </genClasses>
-    <genClasses ecoreClass="platform:/resource/at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/CssDsl.ecore#//fx_stroke_line_cap_property">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/CssDsl.ecore#//fx_stroke_line_cap_property/property"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/CssDsl.ecore#//fx_stroke_line_cap_property/value"/>
-    </genClasses>
-    <genClasses ecoreClass="platform:/resource/at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/CssDsl.ecore#//fx_stroke_line_join_property">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/CssDsl.ecore#//fx_stroke_line_join_property/property"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/CssDsl.ecore#//fx_stroke_line_join_property/value"/>
-    </genClasses>
-    <genClasses ecoreClass="platform:/resource/at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/CssDsl.ecore#//fx_alignment_property">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/CssDsl.ecore#//fx_alignment_property/property"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/CssDsl.ecore#//fx_alignment_property/value"/>
-    </genClasses>
-    <genClasses ecoreClass="platform:/resource/at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/CssDsl.ecore#//fx_text_origin_property">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/CssDsl.ecore#//fx_text_origin_property/property"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/CssDsl.ecore#//fx_text_origin_property/value"/>
-    </genClasses>
-    <genClasses ecoreClass="platform:/resource/at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/CssDsl.ecore#//fx_position_property">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/CssDsl.ecore#//fx_position_property/property"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/CssDsl.ecore#//fx_position_property/values"/>
-    </genClasses>
-    <genClasses ecoreClass="platform:/resource/at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/CssDsl.ecore#//fx_background_image_size_property">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/CssDsl.ecore#//fx_background_image_size_property/property"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/CssDsl.ecore#//fx_background_image_size_property/values"/>
-    </genClasses>
-    <genClasses ecoreClass="platform:/resource/at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/CssDsl.ecore#//fx_border_style_property">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/CssDsl.ecore#//fx_border_style_property/property"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/CssDsl.ecore#//fx_border_style_property/values"/>
-    </genClasses>
-    <genClasses ecoreClass="platform:/resource/at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/CssDsl.ecore#//fx_border_image_slice_property">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/CssDsl.ecore#//fx_border_image_slice_property/property"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/CssDsl.ecore#//fx_border_image_slice_property/values"/>
-    </genClasses>
-    <genClasses ecoreClass="platform:/resource/at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/CssDsl.ecore#//fx_text_overrun_property">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/CssDsl.ecore#//fx_text_overrun_property/property"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/CssDsl.ecore#//fx_text_overrun_property/value"/>
-    </genClasses>
-    <genClasses ecoreClass="platform:/resource/at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/CssDsl.ecore#//fx_insets_property">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/CssDsl.ecore#//fx_insets_property/property"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/CssDsl.ecore#//fx_insets_property/value"/>
-    </genClasses>
-    <genClasses ecoreClass="platform:/resource/at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/CssDsl.ecore#//fx_number_properties">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/CssDsl.ecore#//fx_number_properties/property"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/CssDsl.ecore#//fx_number_properties/value"/>
-    </genClasses>
-    <genClasses ecoreClass="platform:/resource/at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/CssDsl.ecore#//fx_multi_paint_properties">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/CssDsl.ecore#//fx_multi_paint_properties/property"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/CssDsl.ecore#//fx_multi_paint_properties/values"/>
-    </genClasses>
-    <genClasses ecoreClass="platform:/resource/at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/CssDsl.ecore#//fx_string_property">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/CssDsl.ecore#//fx_string_property/property"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/CssDsl.ecore#//fx_string_property/value"/>
-    </genClasses>
-    <genClasses ecoreClass="platform:/resource/at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/CssDsl.ecore#//Effect">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/CssDsl.ecore#//Effect/blur"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/CssDsl.ecore#//Effect/color"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/CssDsl.ecore#//Effect/blurRadius"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/CssDsl.ecore#//Effect/offsetX"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/CssDsl.ecore#//Effect/offsetY"/>
-    </genClasses>
-    <genClasses ecoreClass="platform:/resource/at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/CssDsl.ecore#//EffectDropShadow">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/CssDsl.ecore#//EffectDropShadow/spread"/>
-    </genClasses>
-    <genClasses ecoreClass="platform:/resource/at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/CssDsl.ecore#//EffectInnerShadow">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/CssDsl.ecore#//EffectInnerShadow/choke"/>
-    </genClasses>
-    <genClasses ecoreClass="platform:/resource/at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/CssDsl.ecore#//MultiPaint">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/CssDsl.ecore#//MultiPaint/values"/>
-    </genClasses>
-    <genClasses ecoreClass="platform:/resource/at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/CssDsl.ecore#//Paint"/>
-    <genClasses ecoreClass="platform:/resource/at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/CssDsl.ecore#//LinearGradient">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/CssDsl.ecore#//LinearGradient/start"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/CssDsl.ecore#//LinearGradient/end"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/CssDsl.ecore#//LinearGradient/stops"/>
-    </genClasses>
-    <genClasses ecoreClass="platform:/resource/at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/CssDsl.ecore#//RadialGradient">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/CssDsl.ecore#//RadialGradient/center"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/CssDsl.ecore#//RadialGradient/radius"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/CssDsl.ecore#//RadialGradient/focus"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/CssDsl.ecore#//RadialGradient/stops"/>
-    </genClasses>
-    <genClasses ecoreClass="platform:/resource/at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/CssDsl.ecore#//StopValue">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/CssDsl.ecore#//StopValue/pos"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/CssDsl.ecore#//StopValue/color"/>
-    </genClasses>
-    <genClasses ecoreClass="platform:/resource/at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/CssDsl.ecore#//PointValue">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/CssDsl.ecore#//PointValue/x"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/CssDsl.ecore#//PointValue/y"/>
-    </genClasses>
-    <genClasses ecoreClass="platform:/resource/at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/CssDsl.ecore#//RepeatStyle">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/CssDsl.ecore#//RepeatStyle/v"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/CssDsl.ecore#//RepeatStyle/v2"/>
-    </genClasses>
-    <genClasses ecoreClass="platform:/resource/at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/CssDsl.ecore#//Dim4Size">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/CssDsl.ecore#//Dim4Size/values"/>
-    </genClasses>
-    <genClasses ecoreClass="platform:/resource/at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/CssDsl.ecore#//BgPosition">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/CssDsl.ecore#//BgPosition/absx"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/CssDsl.ecore#//BgPosition/relx"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/CssDsl.ecore#//BgPosition/absy"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/CssDsl.ecore#//BgPosition/rely"/>
-    </genClasses>
-    <genClasses ecoreClass="platform:/resource/at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/CssDsl.ecore#//fx_color_property">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/CssDsl.ecore#//fx_color_property/property"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/CssDsl.ecore#//fx_color_property/value"/>
-    </genClasses>
-    <genClasses ecoreClass="platform:/resource/at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/CssDsl.ecore#//BgSize">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/CssDsl.ecore#//BgSize/xsize"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/CssDsl.ecore#//BgSize/ysize"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/CssDsl.ecore#//BgSize/predefined"/>
-    </genClasses>
-    <genClasses ecoreClass="platform:/resource/at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/CssDsl.ecore#//BorderStyle">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/CssDsl.ecore#//BorderStyle/dashStyle"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/CssDsl.ecore#//BorderStyle/location"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/CssDsl.ecore#//BorderStyle/miterAbs"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/CssDsl.ecore#//BorderStyle/miterPredefined"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/CssDsl.ecore#//BorderStyle/lineCap"/>
-    </genClasses>
-    <genClasses ecoreClass="platform:/resource/at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/CssDsl.ecore#//SizeFill">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/CssDsl.ecore#//SizeFill/value"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/CssDsl.ecore#//SizeFill/fill"/>
-    </genClasses>
-    <genClasses ecoreClass="platform:/resource/at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/CssDsl.ecore#//Color"/>
-    <genClasses ecoreClass="platform:/resource/at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/CssDsl.ecore#//LookedUpColor">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/CssDsl.ecore#//LookedUpColor/value"/>
-    </genClasses>
-    <genClasses ecoreClass="platform:/resource/at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/CssDsl.ecore#//NamedColor">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/CssDsl.ecore#//NamedColor/value"/>
-    </genClasses>
-    <genClasses ecoreClass="platform:/resource/at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/CssDsl.ecore#//RGBColor">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/CssDsl.ecore#//RGBColor/hexcolor"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/CssDsl.ecore#//RGBColor/r"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/CssDsl.ecore#//RGBColor/g"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/CssDsl.ecore#//RGBColor/b"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/CssDsl.ecore#//RGBColor/rp"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/CssDsl.ecore#//RGBColor/gp"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/CssDsl.ecore#//RGBColor/bp"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/CssDsl.ecore#//RGBColor/alpha"/>
-    </genClasses>
-    <genClasses ecoreClass="platform:/resource/at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/CssDsl.ecore#//HSBColor">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/CssDsl.ecore#//HSBColor/hue"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/CssDsl.ecore#//HSBColor/saturation"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/CssDsl.ecore#//HSBColor/brightness"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/CssDsl.ecore#//HSBColor/alpha"/>
-    </genClasses>
-    <genClasses ecoreClass="platform:/resource/at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/CssDsl.ecore#//ColorFunction">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/CssDsl.ecore#//ColorFunction/orig"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/CssDsl.ecore#//ColorFunction/mod"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/CssDsl.ecore#//ColorFunction/stopNumbers"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/CssDsl.ecore#//ColorFunction/stopColors"/>
-    </genClasses>
+    <genClasses ecoreClass="platform:/resource/at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/CssDsl.ecore#//function"/>
     <genClasses ecoreClass="platform:/resource/at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/CssDsl.ecore#//URLType">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/CssDsl.ecore#//URLType/url"/>
-    </genClasses>
-    <genClasses ecoreClass="platform:/resource/at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/CssDsl.ecore#//FONT">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/CssDsl.ecore#//FONT/styleOrWeightString"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/CssDsl.ecore#//FONT/weight"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/CssDsl.ecore#//FONT/size"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/CssDsl.ecore#//FONT/family"/>
-    </genClasses>
-    <genClasses ecoreClass="platform:/resource/at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/CssDsl.ecore#//FONTWEIGHT">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/CssDsl.ecore#//FONTWEIGHT/valueString"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/CssDsl.ecore#//FONTWEIGHT/valueInt"/>
-    </genClasses>
-    <genClasses ecoreClass="platform:/resource/at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/CssDsl.ecore#//FONTSTYLE">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/CssDsl.ecore#//FONTSTYLE/value"/>
-    </genClasses>
-    <genClasses ecoreClass="platform:/resource/at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/CssDsl.ecore#//SizeType">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/CssDsl.ecore#//SizeType/value"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

@@ -7,55 +7,52 @@
 package at.bestsolution.efxclipse.tooling.css.cssDsl.impl;
 
 import at.bestsolution.efxclipse.tooling.css.cssDsl.CssDslPackage;
-import at.bestsolution.efxclipse.tooling.css.cssDsl.NamedColor;
+import at.bestsolution.efxclipse.tooling.css.cssDsl.expr;
+import at.bestsolution.efxclipse.tooling.css.cssDsl.term;
 
-import org.eclipse.emf.common.notify.Notification;
+import java.util.Collection;
+
+import org.eclipse.emf.common.notify.NotificationChain;
+
+import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.InternalEObject;
 
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Named Color</b></em>'.
+ * An implementation of the model object '<em><b>expr</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link at.bestsolution.efxclipse.tooling.css.cssDsl.impl.NamedColorImpl#getValue <em>Value</em>}</li>
+ *   <li>{@link at.bestsolution.efxclipse.tooling.css.cssDsl.impl.exprImpl#getTerms <em>Terms</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
-public class NamedColorImpl extends ColorImpl implements NamedColor
+public class exprImpl extends functionImpl implements expr
 {
   /**
-   * The default value of the '{@link #getValue() <em>Value</em>}' attribute.
+   * The cached value of the '{@link #getTerms() <em>Terms</em>}' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getValue()
+   * @see #getTerms()
    * @generated
    * @ordered
    */
-  protected static final String VALUE_EDEFAULT = null;
-
-  /**
-   * The cached value of the '{@link #getValue() <em>Value</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getValue()
-   * @generated
-   * @ordered
-   */
-  protected String value = VALUE_EDEFAULT;
+  protected EList<term> terms;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  protected NamedColorImpl()
+  protected exprImpl()
   {
     super();
   }
@@ -68,7 +65,7 @@ public class NamedColorImpl extends ColorImpl implements NamedColor
   @Override
   protected EClass eStaticClass()
   {
-    return CssDslPackage.Literals.NAMED_COLOR;
+    return CssDslPackage.Literals.EXPR;
   }
 
   /**
@@ -76,9 +73,13 @@ public class NamedColorImpl extends ColorImpl implements NamedColor
    * <!-- end-user-doc -->
    * @generated
    */
-  public String getValue()
+  public EList<term> getTerms()
   {
-    return value;
+    if (terms == null)
+    {
+      terms = new EObjectContainmentEList<term>(term.class, this, CssDslPackage.EXPR__TERMS);
+    }
+    return terms;
   }
 
   /**
@@ -86,12 +87,15 @@ public class NamedColorImpl extends ColorImpl implements NamedColor
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setValue(String newValue)
+  @Override
+  public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
   {
-    String oldValue = value;
-    value = newValue;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, CssDslPackage.NAMED_COLOR__VALUE, oldValue, value));
+    switch (featureID)
+    {
+      case CssDslPackage.EXPR__TERMS:
+        return ((InternalEList<?>)getTerms()).basicRemove(otherEnd, msgs);
+    }
+    return super.eInverseRemove(otherEnd, featureID, msgs);
   }
 
   /**
@@ -104,8 +108,8 @@ public class NamedColorImpl extends ColorImpl implements NamedColor
   {
     switch (featureID)
     {
-      case CssDslPackage.NAMED_COLOR__VALUE:
-        return getValue();
+      case CssDslPackage.EXPR__TERMS:
+        return getTerms();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -115,13 +119,15 @@ public class NamedColorImpl extends ColorImpl implements NamedColor
    * <!-- end-user-doc -->
    * @generated
    */
+  @SuppressWarnings("unchecked")
   @Override
   public void eSet(int featureID, Object newValue)
   {
     switch (featureID)
     {
-      case CssDslPackage.NAMED_COLOR__VALUE:
-        setValue((String)newValue);
+      case CssDslPackage.EXPR__TERMS:
+        getTerms().clear();
+        getTerms().addAll((Collection<? extends term>)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -137,8 +143,8 @@ public class NamedColorImpl extends ColorImpl implements NamedColor
   {
     switch (featureID)
     {
-      case CssDslPackage.NAMED_COLOR__VALUE:
-        setValue(VALUE_EDEFAULT);
+      case CssDslPackage.EXPR__TERMS:
+        getTerms().clear();
         return;
     }
     super.eUnset(featureID);
@@ -154,27 +160,10 @@ public class NamedColorImpl extends ColorImpl implements NamedColor
   {
     switch (featureID)
     {
-      case CssDslPackage.NAMED_COLOR__VALUE:
-        return VALUE_EDEFAULT == null ? value != null : !VALUE_EDEFAULT.equals(value);
+      case CssDslPackage.EXPR__TERMS:
+        return terms != null && !terms.isEmpty();
     }
     return super.eIsSet(featureID);
   }
 
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public String toString()
-  {
-    if (eIsProxy()) return super.toString();
-
-    StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (value: ");
-    result.append(value);
-    result.append(')');
-    return result.toString();
-  }
-
-} //NamedColorImpl
+} //exprImpl

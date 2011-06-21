@@ -10,14 +10,14 @@ import org.eclipse.emf.ecore.EObject;
 
 /**
  * <!-- begin-user-doc -->
- * A representation of the model object '<em><b>Paint</b></em>'.
+ * A representation of the model object '<em><b>function</b></em>'.
  * <!-- end-user-doc -->
  *
  *
- * @see at.bestsolution.efxclipse.tooling.css.cssDsl.CssDslPackage#getPaint()
+ * @see at.bestsolution.efxclipse.tooling.css.cssDsl.CssDslPackage#getfunction()
  * @model
  * @generated
  */
-public interface Paint extends EObject
+public interface function extends EObject
 {
-} // Paint
+} // function

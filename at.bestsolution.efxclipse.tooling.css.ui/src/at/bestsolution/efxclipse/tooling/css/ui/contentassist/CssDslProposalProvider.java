@@ -3,10 +3,34 @@
 */
 package at.bestsolution.efxclipse.tooling.css.ui.contentassist;
 
-import at.bestsolution.efxclipse.tooling.css.ui.contentassist.AbstractCssDslProposalProvider;
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.xtext.RuleCall;
+import org.eclipse.xtext.ui.editor.contentassist.ContentAssistContext;
+import org.eclipse.xtext.ui.editor.contentassist.ICompletionProposalAcceptor;
 /**
  * see http://www.eclipse.org/Xtext/documentation/latest/xtext.html#contentAssist on how to customize content assistant
  */
 public class CssDslProposalProvider extends AbstractCssDslProposalProvider {
-
+	@Override
+	public void complete_expr(EObject model, RuleCall ruleCall,
+			ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
+//		if( model instanceof css_generic_declaration ) {
+//			css_generic_declaration o = (css_generic_declaration) model;
+//			for( String s : getProposals(o.getProperty()) ) {
+//				acceptor.accept(createCompletionProposal(s, s, null, context));
+//			}
+//		} else {
+			super.complete_expr(model, ruleCall, context, acceptor);
+//		}
+	}
+	
+//	public static List<String> getProposals(String property) {
+//		if( property.equals("border-top-style") 
+//				|| property.equals("border-right-style") 
+//				|| property.equals("border-bottom-style")
+//				|| property.equals("border-left-style") ) {
+//			return Arrays.asList("none", "hidden", "dotted", "dashed", "solid", "double", "groove", "ridge", "inset", "outset" );
+//		}
+//		return Collections.emptyList();
+//	}
 }
