@@ -3,25 +3,80 @@
 */
 package at.bestsolution.efxclipse.tooling.css.ui.contentassist;
 
+import java.util.List;
+
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.xtext.RuleCall;
 import org.eclipse.xtext.ui.editor.contentassist.ContentAssistContext;
 import org.eclipse.xtext.ui.editor.contentassist.ICompletionProposalAcceptor;
+import org.osgi.framework.BundleContext;
+import org.osgi.framework.ServiceReference;
+
+import at.bestsolution.efxclipse.tooling.css.cssDsl.css_generic_declaration;
+import at.bestsolution.efxclipse.tooling.css.cssDsl.ruleset;
+import at.bestsolution.efxclipse.tooling.css.ui.CssDialectExtension.Property;
+import at.bestsolution.efxclipse.tooling.css.ui.CssDialectExtension.Proposal;
+import at.bestsolution.efxclipse.tooling.css.ui.internal.CssDialectExtensionComponent;
+import at.bestsolution.efxclipse.tooling.css.ui.internal.CssDslActivator;
 /**
  * see http://www.eclipse.org/Xtext/documentation/latest/xtext.html#contentAssist on how to customize content assistant
  */
 public class CssDslProposalProvider extends AbstractCssDslProposalProvider {
+	private CssDialectExtensionComponent extension;
+	
+	public CssDslProposalProvider() {
+		BundleContext context = CssDslActivator.getInstance().getBundle().getBundleContext();
+		ServiceReference<CssDialectExtensionComponent> ref = context.getServiceReference(CssDialectExtensionComponent.class);
+		extension = context.getService(ref);
+	}
+	
+	@Override
+	public void complete_css_property(EObject model, RuleCall ruleCall,
+			ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
+		if( model instanceof ruleset ) {
+			for( Property property : extension.getProperties() ) {
+				acceptor.accept(createCompletionProposal(property.getName(), property.getName(), null, context));
+			}
+			
+		}
+		super.complete_css_property(model, ruleCall, context, acceptor);
+	}
+	
 	@Override
 	public void complete_expr(EObject model, RuleCall ruleCall,
 			ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
-//		if( model instanceof css_generic_declaration ) {
-//			css_generic_declaration o = (css_generic_declaration) model;
-//			for( String s : getProposals(o.getProperty()) ) {
-//				acceptor.accept(createCompletionProposal(s, s, null, context));
-//			}
-//		} else {
+		if( context.getCurrentModel() instanceof css_generic_declaration ) {
+			css_generic_declaration o = (css_generic_declaration) model;
+			Property p = getProperty(extension.getProperties(), o.getProperty());
+			if( p != null ) {
+				for( Proposal proposal : p.getInitialValueProposals() ) {
+					acceptor.accept(createCompletionProposal(proposal.getLabel(), proposal.getLabel(), null, context));
+				}
+			}
+		} else {
 			super.complete_expr(model, ruleCall, context, acceptor);
-//		}
+		}
+	}
+	
+	@Override
+	public void complete_term(EObject model, RuleCall ruleCall,
+			ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
+//		System.err.println("Term: " + model);
+		super.complete_term(model, ruleCall, context, acceptor);
+	}
+	
+	private static Property getProperty(List<Property> properties, String property) {
+		if( property == null || property.trim().length() == 0 ) {
+			return null;
+		}
+		
+		for( Property p : properties ) {
+			if( property.equals(p.getName()) ) {
+				return p;
+			}
+		}
+		
+		return null;
 	}
 	
 //	public static List<String> getProposals(String property) {

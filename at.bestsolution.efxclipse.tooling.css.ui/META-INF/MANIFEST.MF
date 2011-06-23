@@ -19,6 +19,8 @@ Require-Bundle: at.bestsolution.efxclipse.tooling.css;visibility:=reexport,
 Import-Package: org.apache.log4j,
  org.apache.commons.logging
 Bundle-RequiredExecutionEnvironment: J2SE-1.5
-Export-Package: at.bestsolution.efxclipse.tooling.css.ui.contentassist.antlr,
+Export-Package: at.bestsolution.efxclipse.tooling.css.ui,
+ at.bestsolution.efxclipse.tooling.css.ui.contentassist.antlr,
  at.bestsolution.efxclipse.tooling.css.ui.internal
 Bundle-Activator: at.bestsolution.efxclipse.tooling.css.ui.internal.CssDslActivator
+Service-Component: OSGI-INF/component.xml
