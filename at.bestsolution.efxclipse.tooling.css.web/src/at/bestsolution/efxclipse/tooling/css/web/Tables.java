@@ -38,7 +38,7 @@ public class Tables {
 		return PROPERTIES;
 	}
 	
-	private static class BorderSpacing extends Property {
+	public static class BorderSpacing extends Property {
 		private List<Proposal> proposals = new ArrayList<Proposal>();
 		
 		public BorderSpacing(String name) {

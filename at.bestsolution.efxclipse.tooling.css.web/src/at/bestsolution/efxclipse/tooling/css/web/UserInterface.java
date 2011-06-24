@@ -18,7 +18,7 @@ public class UserInterface {
 		return PROPERTIES;
 	}
 	
-	private static class OutlineProperty extends Property {
+	public static class OutlineProperty extends Property {
 		private List<Proposal> proposals = new ArrayList<Proposal>();
 		
 		public OutlineProperty(String name) {
@@ -31,7 +31,7 @@ public class UserInterface {
 		}
 	}
 	
-	private static class OutlineWidthProperty extends Property {
+	public static class OutlineWidthProperty extends Property {
 		private List<Proposal> proposals = new ArrayList<Proposal>();
 		
 		public OutlineWidthProperty(String name) {
@@ -44,7 +44,7 @@ public class UserInterface {
 		}
 	}
 	
-	private static class OutlineStyleProperty extends Property {
+	public static class OutlineStyleProperty extends Property {
 		private List<Proposal> proposals = new ArrayList<Proposal>();
 		
 		public OutlineStyleProperty(String name) {
@@ -57,7 +57,7 @@ public class UserInterface {
 		}
 	}
 	
-	private static class OutlineColorProperty extends Property {
+	public static class OutlineColorProperty extends Property {
 		private List<Proposal> proposals = new ArrayList<Proposal>();
 		
 		public OutlineColorProperty(String name) {

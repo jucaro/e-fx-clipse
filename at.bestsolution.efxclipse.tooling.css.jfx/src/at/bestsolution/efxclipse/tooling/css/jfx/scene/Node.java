@@ -31,7 +31,7 @@ public class Node {
 		return properties;
 	}
 	
-	private static class EffectProperty extends Property {
+	public static class EffectProperty extends Property {
 		private List<Proposal> proposals = new ArrayList<Proposal>();
 		
 		public EffectProperty(String name) {

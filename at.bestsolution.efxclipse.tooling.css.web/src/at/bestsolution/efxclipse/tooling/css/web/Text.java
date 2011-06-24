@@ -40,7 +40,7 @@ public class Text {
 		return PROPERTIES;
 	}
 	
-	private static class TextIdentProperty extends Property {
+	public static class TextIdentProperty extends Property {
 		private List<Proposal> proposals = new ArrayList<Proposal>();
 		
 		public TextIdentProperty(String name) {
@@ -53,7 +53,7 @@ public class Text {
 		}
 	}
 	
-	private static class LetterSpacingProperty extends Property {
+	public static class LetterSpacingProperty extends Property {
 		private List<Proposal> proposals = new ArrayList<Proposal>();
 		
 		public LetterSpacingProperty(String name) {
@@ -66,7 +66,7 @@ public class Text {
 		}
 	}
 	
-	private static class WordSpacingProperty extends Property {
+	public static class WordSpacingProperty extends Property {
 		private List<Proposal> proposals = new ArrayList<Proposal>();
 		
 		public WordSpacingProperty(String name) {

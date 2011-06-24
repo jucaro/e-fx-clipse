@@ -66,7 +66,7 @@ public class BoxModelProperties {
 		return PROPERTIES;
 	}
 	
-	private static class MarginsProperty extends Property {
+	public static class MarginsProperty extends Property {
 		private List<Proposal> proposals = new ArrayList<Proposal>();
 		private List<String> units;
 
@@ -92,7 +92,7 @@ public class BoxModelProperties {
 		}
 	}
 	
-	private static class MarginProperty extends Property {
+	public static class MarginProperty extends Property {
 		private List<Proposal> proposals = new ArrayList<Proposal>();
 		
 		public MarginProperty(String name) {
@@ -108,7 +108,7 @@ public class BoxModelProperties {
 		}
 	}
 	
-	private static class PaddingsProperty extends Property {
+	public static class PaddingsProperty extends Property {
 		private List<Proposal> proposals = new ArrayList<Proposal>();
 		private List<String> units;
 		
@@ -132,7 +132,7 @@ public class BoxModelProperties {
 		}
 	}
 	
-	private static class PaddingProperty extends Property {
+	public static class PaddingProperty extends Property {
 		private List<Proposal> proposals = new ArrayList<Proposal>();
 
 		public PaddingProperty(String name) {
@@ -147,7 +147,7 @@ public class BoxModelProperties {
 		}
 	}
 	
-	private static class BorderWidthProperty extends Property {
+	public static class BorderWidthProperty extends Property {
 		private List<Proposal> proposals = new ArrayList<Proposal>();
 
 		public BorderWidthProperty(String name) {
@@ -162,7 +162,7 @@ public class BoxModelProperties {
 		}
 	}
 	
-	private static class BorderWidthsProperty extends Property {
+	public static class BorderWidthsProperty extends Property {
 		private List<Proposal> proposals = new ArrayList<Proposal>();
 		private List<String> units;
 		private List<String> predefinedValues = Arrays.asList("thin","medium","thick");
@@ -192,7 +192,7 @@ public class BoxModelProperties {
 		}
 	}
 	
-	private static class BorderColorsProperty extends Property {
+	public static class BorderColorsProperty extends Property {
 		private List<Proposal> proposals = new ArrayList<Proposal>();
 		
 		public BorderColorsProperty(String name) {
@@ -211,7 +211,7 @@ public class BoxModelProperties {
 		}
 	}
 	
-	private static class BordersProperty extends Property {
+	public static class BordersProperty extends Property {
 		private List<Proposal> proposals = new ArrayList<Proposal>();
 		
 		public BordersProperty(String name) {

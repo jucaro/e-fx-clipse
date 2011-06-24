@@ -37,7 +37,7 @@ public class Fonts {
 		return PROPERTIES;
 	}
 	
-	private static class FontFamilyProperty extends Property {
+	public static class FontFamilyProperty extends Property {
 		private List<Proposal> proposals = new ArrayList<Proposal>();
 		
 		public FontFamilyProperty(String name) {
@@ -50,7 +50,7 @@ public class Fonts {
 		}
 	}
 	
-	private static class FontSizeProperty extends Property {
+	public static class FontSizeProperty extends Property {
 		private List<Proposal> proposals = new ArrayList<Proposal>();
 		
 		public FontSizeProperty(String name) {
@@ -63,7 +63,7 @@ public class Fonts {
 		}
 	}
 	
-	private static class FontProperty extends Property {
+	public static class FontProperty extends Property {
 		private List<Proposal> proposals = new ArrayList<Proposal>();
 		
 		public FontProperty(String name) {

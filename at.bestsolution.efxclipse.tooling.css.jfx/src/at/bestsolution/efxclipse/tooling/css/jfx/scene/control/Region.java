@@ -33,7 +33,7 @@ public class Region {
 		return properties;
 	}
 	
-	private static class BackgroundPositionProperty extends Property {
+	public static class BackgroundPositionProperty extends Property {
 		private List<Proposal> proposals = new ArrayList<Proposal>();
 		
 		public BackgroundPositionProperty(String name) {
@@ -46,7 +46,7 @@ public class Region {
 		}
 	}
 	
-	private static class BackgroundRepeatProperty extends Property {
+	public static class BackgroundRepeatProperty extends Property {
 		private List<Proposal> proposals = new ArrayList<Proposal>();
 		private List<String> values = Arrays.asList("repeat-x","repeat-y","repeat","space","round","no-repeat");
 		
@@ -60,7 +60,7 @@ public class Region {
 		}
 	}
 	
-	private static class BackgroundImageSizeProperty extends Property {
+	public static class BackgroundImageSizeProperty extends Property {
 		private List<Proposal> proposals = new ArrayList<Proposal>();
 		
 		public BackgroundImageSizeProperty(String name) {
@@ -73,7 +73,7 @@ public class Region {
 		}
 	}
 	
-	private static class BorderStyleProperty extends Property {
+	public static class BorderStyleProperty extends Property {
 		private List<Proposal> proposals = new ArrayList<Proposal>();
 		
 		public BorderStyleProperty(String name) {
@@ -86,7 +86,7 @@ public class Region {
 		}
 	}
 	
-	private static class BorderImageRepeatProperty extends Property {
+	public static class BorderImageRepeatProperty extends Property {
 		private List<Proposal> proposals = new ArrayList<Proposal>();
 		private List<String> values = Arrays.asList("repeat-x","repeat-y","repeat","space","round","no-repeat");
 		

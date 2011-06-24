@@ -41,7 +41,7 @@ public class ContentNumberLists {
 		return PROPERTIES;
 	}
 	
-	private static class ContentProperty extends Property {
+	public static class ContentProperty extends Property {
 		private List<Proposal> proposals = new ArrayList<Proposal>();
 		
 		public ContentProperty(String name) {
@@ -60,7 +60,7 @@ public class ContentNumberLists {
 		}
 	}
 	
-	private static class QuotesProperty extends Property {
+	public static class QuotesProperty extends Property {
 		private List<Proposal> proposals = new ArrayList<Proposal>();
 		
 		public QuotesProperty(String name) {
@@ -76,7 +76,7 @@ public class ContentNumberLists {
 		}
 	}
 	
-	private static class CounterProperty extends Property {
+	public static class CounterProperty extends Property {
 		private List<Proposal> proposals = new ArrayList<Proposal>();
 		
 		public CounterProperty(String name) {
@@ -92,7 +92,7 @@ public class ContentNumberLists {
 		}
 	}
 	
-	private static class ListStyleImageProperty extends Property {
+	public static class ListStyleImageProperty extends Property {
 		private List<Proposal> proposals = new ArrayList<Proposal>();
 		
 		public ListStyleImageProperty(String name) {
@@ -107,7 +107,7 @@ public class ContentNumberLists {
 		}
 	}
 	
-	private static class ListStyleProperty extends Property {
+	public static class ListStyleProperty extends Property {
 		private List<Proposal> proposals = new ArrayList<Proposal>();
 		
 		public ListStyleProperty(String name) {

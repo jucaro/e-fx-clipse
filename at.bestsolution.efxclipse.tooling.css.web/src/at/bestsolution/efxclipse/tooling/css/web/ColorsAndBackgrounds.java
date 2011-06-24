@@ -32,7 +32,7 @@ public class ColorsAndBackgrounds {
 		return PROPERTIES;
 	}
 	
-	private static class BackgroundImageProperty extends Property {
+	public static class BackgroundImageProperty extends Property {
 		private List<Proposal> proposals = new ArrayList<Proposal>();
 		
 		public BackgroundImageProperty(String name) {
@@ -47,7 +47,7 @@ public class ColorsAndBackgrounds {
 		}
 	}
 	
-	private static class BackgroundPositionProperty extends Property {
+	public static class BackgroundPositionProperty extends Property {
 		private List<Proposal> proposals = new ArrayList<Proposal>();
 		
 		public BackgroundPositionProperty(String name) {
@@ -60,7 +60,7 @@ public class ColorsAndBackgrounds {
 		}
 	}
 	
-	private static class BackgroundProperty extends Property {
+	public static class BackgroundProperty extends Property {
 		private List<Proposal> proposals = new ArrayList<Proposal>();
 		
 		public BackgroundProperty(String name) {

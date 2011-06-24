@@ -28,7 +28,7 @@ public class Shape {
 		return properties;
 	}
 	
-	private static class StrokeDashArray extends Property {
+	public static class StrokeDashArray extends Property {
 		private List<Proposal> proposals = new ArrayList<Proposal>();
 		
 		public StrokeDashArray(String name) {
