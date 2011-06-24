@@ -1,5 +1,9 @@
 package at.bestsolution.efxclipse.tooling.css.web;
 
+import static at.bestsolution.efxclipse.tooling.css.ui.CssDialectExtension.Util.createEnumProperties;
+import static at.bestsolution.efxclipse.tooling.css.ui.CssDialectExtension.Util.fromList;
+import static at.bestsolution.efxclipse.tooling.css.ui.CssDialectExtension.Util.createReflective;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -13,17 +17,17 @@ public class ColorsAndBackgrounds {
 	public static List<Property> init() {
 		List<Property> PROPERTIES = new ArrayList<Property>();
 		
-		PROPERTIES.addAll(WebDialectExtension.createReflective(ColorProperty.class, "color"));
-		PROPERTIES.addAll(WebDialectExtension.createReflective(TransparentColorProperty.class, "background-color"));
-		PROPERTIES.addAll(WebDialectExtension.createReflective(BackgroundImageProperty.class, "background-image"));
-		PROPERTIES.addAll(WebDialectExtension.createEnumProperties(
+		PROPERTIES.addAll(createReflective(ColorProperty.class, "color"));
+		PROPERTIES.addAll(createReflective(TransparentColorProperty.class, "background-color"));
+		PROPERTIES.addAll(createReflective(BackgroundImageProperty.class, "background-image"));
+		PROPERTIES.addAll(createEnumProperties(
 			Arrays.asList("repeat","repeat-x","repeat-y","no-repeat"), "background-repeat")
 		);
-		PROPERTIES.addAll(WebDialectExtension.createEnumProperties(
+		PROPERTIES.addAll(createEnumProperties(
 				Arrays.asList("scroll","fixed","inherit"), "background-attachment")
 			);
-		PROPERTIES.addAll(WebDialectExtension.createReflective(BackgroundPositionProperty.class, "background-position"));
-		PROPERTIES.addAll(WebDialectExtension.createReflective(BackgroundProperty.class, "background"));
+		PROPERTIES.addAll(createReflective(BackgroundPositionProperty.class, "background-position"));
+		PROPERTIES.addAll(createReflective(BackgroundProperty.class, "background"));
 		
 		return PROPERTIES;
 	}
@@ -34,7 +38,7 @@ public class ColorsAndBackgrounds {
 		public BackgroundImageProperty(String name) {
 			super(name);
 			proposals.add(new Proposal("url(\"bg.png\")"));
-			proposals.addAll(WebDialectExtension.fromList("none","inherit"));
+			proposals.addAll(fromList("none","inherit"));
 		}
 
 		@Override

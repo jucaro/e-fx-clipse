@@ -1,31 +1,34 @@
 package at.bestsolution.efxclipse.tooling.css.web;
 
+import static at.bestsolution.efxclipse.tooling.css.ui.CssDialectExtension.Util.createEnumProperties;
+import static at.bestsolution.efxclipse.tooling.css.ui.CssDialectExtension.Util.createReflective;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+import at.bestsolution.efxclipse.tooling.css.ui.CssDialectExtension.IntegerProperty;
 import at.bestsolution.efxclipse.tooling.css.ui.CssDialectExtension.Property;
-import at.bestsolution.efxclipse.tooling.css.web.WebDialectExtension.IntegerProperty;
 
 public class PagedMedia {
 	public static List<Property> init() {
 		List<Property> PROPERTIES = new ArrayList<Property>();
 		PROPERTIES.addAll(
-			WebDialectExtension.createEnumProperties(
+			createEnumProperties(
 				Arrays.asList("auto","always","avoid","left","right","inherit"), 
 				"page-break-before")
 		);
 		PROPERTIES.addAll(
-			WebDialectExtension.createEnumProperties(
+			createEnumProperties(
 				Arrays.asList("auto","always","avoid","left","right","inherit"), 
 				"page-break-after")
 		);
 		PROPERTIES.addAll(
-			WebDialectExtension.createEnumProperties(
+			createEnumProperties(
 				Arrays.asList("avoid","auto","inherit"), 
 				"page-break-inside")
 		);
-		PROPERTIES.addAll(WebDialectExtension.createReflective(IntegerProperty.class, "orphans","widows"));
+		PROPERTIES.addAll(createReflective(IntegerProperty.class, "orphans","widows"));
 		
 		return PROPERTIES;
 	}

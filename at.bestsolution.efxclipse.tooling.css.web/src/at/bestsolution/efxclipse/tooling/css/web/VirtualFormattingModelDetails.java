@@ -1,5 +1,8 @@
 package at.bestsolution.efxclipse.tooling.css.web;
 
+import static at.bestsolution.efxclipse.tooling.css.ui.CssDialectExtension.Util.fromList;
+import static at.bestsolution.efxclipse.tooling.css.ui.CssDialectExtension.Util.createReflective;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -9,11 +12,11 @@ import at.bestsolution.efxclipse.tooling.css.ui.CssDialectExtension.Proposal;
 public class VirtualFormattingModelDetails {
 	public static List<Property> init() {
 		List<Property> PROPERTIES = new ArrayList<Property>();
-		PROPERTIES.addAll(WebDialectExtension.createReflective(WidthHeightProperty.class, "width","height"));
-		PROPERTIES.addAll(WebDialectExtension.createReflective(MinWidthHeightProperty.class, "min-width","min-height"));
-		PROPERTIES.addAll(WebDialectExtension.createReflective(MaxWidthHeightProperty.class, "max-width","max-height"));
-		PROPERTIES.addAll(WebDialectExtension.createReflective(LineHeightProperty.class, "line-height"));
-		PROPERTIES.addAll(WebDialectExtension.createReflective(VerticalAlignProperty.class, "vertical-align"));
+		PROPERTIES.addAll(createReflective(WidthHeightProperty.class, "width","height"));
+		PROPERTIES.addAll(createReflective(MinWidthHeightProperty.class, "min-width","min-height"));
+		PROPERTIES.addAll(createReflective(MaxWidthHeightProperty.class, "max-width","max-height"));
+		PROPERTIES.addAll(createReflective(LineHeightProperty.class, "line-height"));
+		PROPERTIES.addAll(createReflective(VerticalAlignProperty.class, "vertical-align"));
 		return PROPERTIES;
 	}
 	
@@ -94,7 +97,7 @@ public class VirtualFormattingModelDetails {
 
 		public VerticalAlignProperty(String name) {
 			super(name);
-			proposals.addAll(WebDialectExtension.fromList("baseline","sub","super","top","text-top","middle","bottom","text-bottom"));
+			proposals.addAll(fromList("baseline","sub","super","top","text-top","middle","bottom","text-bottom"));
 			proposals.addAll(WebDialectExtension.createLengthProprosals());
 			proposals.add(new Proposal("1%"));
 			proposals.add(new Proposal("inherit"));

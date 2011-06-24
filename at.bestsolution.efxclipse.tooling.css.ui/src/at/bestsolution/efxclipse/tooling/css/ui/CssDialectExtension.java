@@ -1,5 +1,10 @@
 package at.bestsolution.efxclipse.tooling.css.ui;
 
+import static at.bestsolution.efxclipse.tooling.css.ui.CssDialectExtension.Util.fromList;
+
+import java.lang.reflect.Constructor;
+import java.lang.reflect.InvocationTargetException;
+import java.util.ArrayList;
 import java.util.List;
 
 public interface CssDialectExtension {
@@ -17,6 +22,133 @@ public interface CssDialectExtension {
 		public abstract List<Proposal> getInitialValueProposals();
 	}
 	
+	public static class IntegerProperty extends Property {
+		private List<Proposal> proposals = new ArrayList<Proposal>();
+		
+		public IntegerProperty(String name) {
+			super(name);
+			proposals.add(new Proposal("0"));
+			proposals.add(new Proposal("1"));
+			proposals.add(new Proposal("inherit"));
+		}
+		
+		@Override
+		public List<Proposal> getInitialValueProposals() {
+			return proposals;
+		}
+	}
+	
+	public static class StringProperty extends Property {
+		private List<Proposal> proposals = new ArrayList<Proposal>();
+		
+		public StringProperty(String name) {
+			super(name);
+		}
+		
+		@Override
+		public List<Proposal> getInitialValueProposals() {
+			return proposals;
+		}
+	}
+	
+	public static class BooleanProperty extends Property {
+		private List<Proposal> proposals = new ArrayList<Proposal>();
+
+		public BooleanProperty(String name) {
+			super(name);
+			proposals.addAll(fromList("true","false"));
+		}
+		
+		@Override
+		public List<Proposal> getInitialValueProposals() {
+			return proposals;
+		}
+	}
+	
+	public static class NumberPropery extends Property {
+		private List<Proposal> proposals = new ArrayList<Proposal>();
+
+		public NumberPropery(String name) {
+			super(name);
+		}
+		
+		@Override
+		public List<Proposal> getInitialValueProposals() {
+			return proposals;
+		}
+	}
+	
+	public static class EnumProperty extends Property {
+		private List<Proposal> proposals = new ArrayList<Proposal>();
+		
+		public EnumProperty(String name, String... enums) {
+			super(name);
+			proposals.addAll(fromList(enums));
+			proposals.add(new Proposal("inherit"));
+		}
+		
+		@Override
+		public List<Proposal> getInitialValueProposals() {
+			return proposals;
+		}
+	}
+	
+	public static class UrlProperty extends Property {
+		private List<Proposal> proposals = new ArrayList<Proposal>();
+
+		public UrlProperty(String name) {
+			super(name);
+			proposals.add(new Proposal("url(\"resource\")"));
+			proposals.add(new Proposal("url('resource')"));
+		}
+
+		@Override
+		public List<Proposal> getInitialValueProposals() {
+			return proposals;
+		}
+	}
+	
+	public static class UrlsProperty extends Property {
+		private List<Proposal> proposals = new ArrayList<Proposal>();
+
+		public UrlsProperty(String name) {
+			super(name);
+			proposals.add(new Proposal("url(\"resource\")"));
+			proposals.add(new Proposal("url('resource')"));
+		}
+
+		@Override
+		public List<Proposal> getInitialValueProposals() {
+			return proposals;
+		}
+	}
+	
+	public static class EnumsProperty extends Property {
+		private List<Proposal> proposals = new ArrayList<Proposal>();
+		private int partCount;
+		
+		public EnumsProperty(String name, int partCount, String... enums) {
+			super(name);
+			this.partCount = partCount;
+			
+			for( String v : enums ) {
+				StringBuilder b = new StringBuilder();
+				for( int i = 0; i < partCount; i++ ) {
+					if( b.length() > 0 ) {
+						b.append(" ");
+					}
+					b.append(v);
+				}
+				proposals.add(new Proposal(b.toString()));
+			}
+			proposals.add(new Proposal("inherit"));
+		}
+		
+		@Override
+		public List<Proposal> getInitialValueProposals() {
+			return proposals;
+		}
+	}
 	
 	public static class Proposal {
 		private String proposal;
@@ -38,6 +170,63 @@ public interface CssDialectExtension {
 		
 		public String getLabel() {
 			return label;
+		}
+	}
+	
+	public static class Util {
+		public static List<Proposal> fromList(String... strings) {
+			List<Proposal> rv = new ArrayList<Proposal>();
+			for( String s : strings ) {
+				rv.add(new Proposal(s));
+			}
+			return rv;
+		}
+		
+		public static List<Property> createEnumProperties(List<String> enums, String... names) {
+			List<Property> rv = new ArrayList<Property>(names.length);
+			String[] arEnums = enums.toArray(new String[0]);
+			
+			for( String name : names ) {
+				rv.add(new EnumProperty(name, arEnums));
+			}
+			
+			return rv;
+		}
+		
+		public static List<Property> createEnumsProperties(List<String> enums, int partCount, String... names) {
+			List<Property> rv = new ArrayList<Property>(names.length);
+			String[] arEnums = enums.toArray(new String[0]);
+			
+			for( String name : names ) {
+				rv.add(new EnumsProperty(name, partCount, arEnums));
+			}
+			
+			return rv;
+		}
+		
+		public static List<Property> createReflective(Class<? extends Property> clazz,String... names) {
+			List<Property> rv = new ArrayList<Property>(names.length);
+			Constructor<? extends Property> c;
+			try {
+				c = clazz.getConstructor(String.class);
+				for( String name : names ) {
+					rv.add(c.newInstance(name));
+				}
+			} catch (SecurityException e) {
+				e.printStackTrace();
+			} catch (NoSuchMethodException e) {
+				e.printStackTrace();
+			} catch (IllegalArgumentException e) {
+				e.printStackTrace();
+			} catch (InstantiationException e) {
+				e.printStackTrace();
+			} catch (IllegalAccessException e) {
+				e.printStackTrace();
+			} catch (InvocationTargetException e) {
+				e.printStackTrace();
+			}
+			
+			return rv;
 		}
 	}
 	

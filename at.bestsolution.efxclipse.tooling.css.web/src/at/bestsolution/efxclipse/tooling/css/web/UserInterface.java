@@ -1,5 +1,7 @@
 package at.bestsolution.efxclipse.tooling.css.web;
 
+import static at.bestsolution.efxclipse.tooling.css.ui.CssDialectExtension.Util.createReflective;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -9,10 +11,10 @@ import at.bestsolution.efxclipse.tooling.css.ui.CssDialectExtension.Proposal;
 public class UserInterface {
 	public static List<Property> init() {
 		List<Property> PROPERTIES = new ArrayList<Property>();
-		PROPERTIES.addAll(WebDialectExtension.createReflective(OutlineProperty.class, "outline"));
-		PROPERTIES.addAll(WebDialectExtension.createReflective(OutlineWidthProperty.class, "outline-width"));
-		PROPERTIES.addAll(WebDialectExtension.createReflective(OutlineStyleProperty.class, "outline-style"));
-		PROPERTIES.addAll(WebDialectExtension.createReflective(OutlineColorProperty.class, "outline-color"));
+		PROPERTIES.addAll(createReflective(OutlineProperty.class, "outline"));
+		PROPERTIES.addAll(createReflective(OutlineWidthProperty.class, "outline-width"));
+		PROPERTIES.addAll(createReflective(OutlineStyleProperty.class, "outline-style"));
+		PROPERTIES.addAll(createReflective(OutlineColorProperty.class, "outline-color"));
 		return PROPERTIES;
 	}
 	

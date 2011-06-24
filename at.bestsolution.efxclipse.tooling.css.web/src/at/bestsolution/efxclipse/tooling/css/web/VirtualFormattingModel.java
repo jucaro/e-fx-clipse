@@ -1,5 +1,9 @@
 package at.bestsolution.efxclipse.tooling.css.web;
 
+import static at.bestsolution.efxclipse.tooling.css.ui.CssDialectExtension.Util.createEnumProperties;
+import static at.bestsolution.efxclipse.tooling.css.ui.CssDialectExtension.Util.fromList;
+import static at.bestsolution.efxclipse.tooling.css.ui.CssDialectExtension.Util.createReflective;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -11,46 +15,46 @@ public class VirtualFormattingModel {
 	public static List<Property> init() {
 		List<Property> PROPERTIES = new ArrayList<Property>();
 		PROPERTIES.addAll(
-				WebDialectExtension.createEnumProperties(
+				createEnumProperties(
 					Arrays.asList("inline","block","list-item","inline-block","table","inline-table","table-row-group","table-header-group","table-footer-group","table-row","table-column-group","table-column","table-cell","table-caption","none","inherit"), 
 					"display"
 				)
 			);
 			
 			PROPERTIES.addAll(
-				WebDialectExtension.createEnumProperties(
+				createEnumProperties(
 					Arrays.asList("static","relative","absolute","fixed"), 
 					"position")
 			);
 			
 			PROPERTIES.addAll(
-				WebDialectExtension.createReflective(BoxOffsetProperty.class, "top","right","bottom","left"));
+				createReflective(BoxOffsetProperty.class, "top","right","bottom","left"));
 		
 			PROPERTIES.addAll(
-				WebDialectExtension.createEnumProperties(
+				createEnumProperties(
 					Arrays.asList("left","right","none","inherit"), 
 					"float"
 				)
 			);
 			
 			PROPERTIES.addAll(
-				WebDialectExtension.createEnumProperties(
+				createEnumProperties(
 					Arrays.asList("none","left","right","both","inherit'"), 
 					"clear"
 				)
 			);
 			
-			PROPERTIES.addAll(WebDialectExtension.createReflective(ZIndexProperty.class, "z-index"));
+			PROPERTIES.addAll(createReflective(ZIndexProperty.class, "z-index"));
 			
 			PROPERTIES.addAll(
-				WebDialectExtension.createEnumProperties(
+				createEnumProperties(
 					Arrays.asList("ltr","rtl","inherit"), 
 					"direction"
 				)
 			);
 			
 			PROPERTIES.addAll(
-				WebDialectExtension.createEnumProperties(
+				createEnumProperties(
 					Arrays.asList("normal","embed","bidi-override","inherit"), 
 					"unicode-bidi"
 				)
@@ -81,8 +85,8 @@ public class VirtualFormattingModel {
 
 		public ZIndexProperty(String name) {
 			super(name);
-			proposals.addAll(WebDialectExtension.fromList("auto","inherit"));
-			proposals.addAll(WebDialectExtension.fromList("1","2","3"));
+			proposals.addAll(fromList("auto","inherit"));
+			proposals.addAll(fromList("1","2","3"));
 		}
 
 		@Override
