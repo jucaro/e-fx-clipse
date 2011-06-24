@@ -17,7 +17,7 @@ public class CssDslHighlightingCalculator implements ISemanticHighlightingCalcul
 	@Override
 	public void provideHighlightingFor(XtextResource resource,
 			IHighlightedPositionAcceptor acceptor) {
-		System.err.println("Called hightlighting calc");
+//		System.err.println("Called hightlighting calc");
 		if( resource == null ) {
 			return;
 		}
@@ -46,7 +46,7 @@ public class CssDslHighlightingCalculator implements ISemanticHighlightingCalcul
 				ICompositeNode n = NodeModelUtils.getNode(sec);
 				acceptor.addPosition(n.getOffset(), n.getLength(), CssDslHighlightingConfiguration.SELECTOR);
 			} else {
-				System.err.println(o);
+//				System.err.println(o);
 			}
 		}
 	}
