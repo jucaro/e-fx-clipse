@@ -6,37 +6,89 @@ import java.util.List;
 
 import at.bestsolution.efxclipse.tooling.css.ui.CssDialectExtension.Property;
 import at.bestsolution.efxclipse.tooling.css.ui.CssDialectExtension.Proposal;
+import at.bestsolution.efxclipse.tooling.css.web.WebDialectExtension.ColorProperty;
+import at.bestsolution.efxclipse.tooling.css.web.WebDialectExtension.TransparentColorProperty;
 
 public class BoxModelProperties {
 	public static List<Property> init() {
 		List<Property> PROPERTIES = new ArrayList<Property>();
+		// ----------------
 		PROPERTIES.addAll(
-				WebDialectExtension.createReflective(MarginProperty.class, "margin-top","margin-right", "margin-bottom","margin-left") 
-			);
+			WebDialectExtension.createReflective(MarginProperty.class, "margin-top","margin-right", "margin-bottom","margin-left") 
+		);
+		PROPERTIES.addAll(WebDialectExtension.createReflective(MarginsProperty.class, "margin"));
+
+		// ----------------
+		PROPERTIES.addAll(
+			WebDialectExtension.createReflective(PaddingProperty.class, "padding-top","padding-right","padding-bottom","padding-left")
+		);
+		PROPERTIES.addAll(WebDialectExtension.createReflective(PaddingsProperty.class, "margin"));
+		
+		// ----------------
+		PROPERTIES.addAll(
+			WebDialectExtension.createReflective(BorderWidthProperty.class, "border-top-width","border-right-width","border-bottom-width","border-left-width")
+		);
+		PROPERTIES.addAll(
+			WebDialectExtension.createReflective(BorderWidthsProperty.class, "border-width")
+		);
+		
+		// ----------------
+		PROPERTIES.addAll(
+			WebDialectExtension.createReflective(TransparentColorProperty.class, "border-top-color","border-right-color","border-bottom-color","border-left-color")
+		);
+		PROPERTIES.addAll(
+			WebDialectExtension.createReflective(BorderColorsProperty.class, "border-color")
+		);
 			
-			PROPERTIES.addAll(
-				WebDialectExtension.createReflective(PaddingProperty.class, "padding-top","padding-right","padding-bottom","padding-left")
-			);
-			
-			PROPERTIES.addAll(
-				WebDialectExtension.createReflective(BorderWidthProperty.class, "border-top-width","border-right-width","border-bottom-width","border-left-width")
-			);
-			
-			PROPERTIES.addAll(
-				WebDialectExtension.createReflective(BorderColorProperty.class, "border-top-color","border-right-color","border-bottom-color","border-left-color")
-			);
-			
-			PROPERTIES.addAll(
-				WebDialectExtension.createEnumProperties(
+		// ----------------
+		PROPERTIES.addAll(
+			WebDialectExtension.createEnumProperties(
+				Arrays.asList("none","hidden","dotted","dashed","solid","double","groove","ridge","inset","outset"),
+				"border-top-style","border-right-style","border-bottom-style","border-left-style"
+			)
+		);
+		PROPERTIES.addAll(
+				WebDialectExtension.createEnumsProperties(
 					Arrays.asList("none","hidden","dotted","dashed","solid","double","groove","ridge","inset","outset"),
-					"border-top-style","border-right-style","border-bottom-style","border-left-style"
+					4,
+					"border-style"
 				)
 			);
+		PROPERTIES.addAll(
+			WebDialectExtension.createReflective(BordersProperty.class, 
+				"border-top", "border-right","border-bottom","border-left","border")
+		);
+		
 		return PROPERTIES;
 	}
 	
+	private static class MarginsProperty extends Property {
+		private List<Proposal> proposals = new ArrayList<Proposal>();
+		private List<String> units;
+
+		public MarginsProperty(String name) {
+			super(name);
+			units = new ArrayList<String>();
+			units.addAll(WebDialectExtension.getLengthUnits());
+			units.add("%");
+			
+			proposals.addAll(WebDialectExtension.fromList("0","0 0 0 0"));
+			for( String u : units ) {
+				proposals.add(new Proposal("0"+u));
+				proposals.add(new Proposal("0"+u+" 0"+u+" 0"+u+" 0"+u));
+			}
+			proposals.add(new Proposal("auto"));
+			proposals.add(new Proposal("auto auto auto auto"));
+			proposals.add(new Proposal("inherit"));
+		}
+		
+		@Override
+		public List<Proposal> getInitialValueProposals() {
+			return proposals;
+		}
+	}
 	
-	public static class MarginProperty extends Property {
+	private static class MarginProperty extends Property {
 		private List<Proposal> proposals = new ArrayList<Proposal>();
 		
 		public MarginProperty(String name) {
@@ -52,7 +104,31 @@ public class BoxModelProperties {
 		}
 	}
 	
-	public static class PaddingProperty extends Property {
+	private static class PaddingsProperty extends Property {
+		private List<Proposal> proposals = new ArrayList<Proposal>();
+		private List<String> units;
+		
+		public PaddingsProperty(String name) {
+			super(name);
+			units = new ArrayList<String>();
+			units.addAll(WebDialectExtension.getLengthUnits());
+			units.add("%");
+			
+			proposals.addAll(WebDialectExtension.fromList("0","0 0 0 0"));
+			for( String u : units ) {
+				proposals.add(new Proposal("0"+u));
+				proposals.add(new Proposal("0"+u+" 0"+u+" 0"+u+" 0"+u));
+			}
+			proposals.add(new Proposal("inherit"));
+		}
+		
+		@Override
+		public List<Proposal> getInitialValueProposals() {
+			return proposals;
+		}
+	}
+	
+	private static class PaddingProperty extends Property {
 		private List<Proposal> proposals = new ArrayList<Proposal>();
 
 		public PaddingProperty(String name) {
@@ -67,7 +143,7 @@ public class BoxModelProperties {
 		}
 	}
 	
-	public static class BorderWidthProperty extends Property {
+	private static class BorderWidthProperty extends Property {
 		private List<Proposal> proposals = new ArrayList<Proposal>();
 
 		public BorderWidthProperty(String name) {
@@ -82,21 +158,65 @@ public class BoxModelProperties {
 		}
 	}
 	
-	public static class BorderColorProperty extends Property {
+	private static class BorderWidthsProperty extends Property {
 		private List<Proposal> proposals = new ArrayList<Proposal>();
-
-		public BorderColorProperty(String name) {
+		private List<String> units;
+		private List<String> predefinedValues = Arrays.asList("thin","medium","thick");
+		
+		public BorderWidthsProperty(String name) {
 			super(name);
-			proposals.addAll(WebDialectExtension.createNamedColorProposals());
-			proposals.add(new Proposal("rgb(0,0,0)"));
-			proposals.add(new Proposal("#000"));
-			proposals.add(new Proposal("#000000"));
-		}
+			units = new ArrayList<String>();
+			units.addAll(WebDialectExtension.getLengthUnits());
 
+			proposals.addAll(WebDialectExtension.fromList("0","0 0 0 0"));
+			for( String u : units ) {
+				proposals.add(new Proposal("0"+u));
+				proposals.add(new Proposal("0"+u+" 0"+u+" 0"+u+" 0"+u));
+			}
+			
+			for( String value : predefinedValues ) {
+				proposals.add(new Proposal(value));
+				proposals.add(new Proposal(value + " " + value + " " + value + " " + value));
+			}
+			
+			proposals.add(new Proposal("inherit"));
+		}
+		
 		@Override
 		public List<Proposal> getInitialValueProposals() {
 			return proposals;
 		}
+	}
+	
+	private static class BorderColorsProperty extends Property {
+		private List<Proposal> proposals = new ArrayList<Proposal>();
 		
+		public BorderColorsProperty(String name) {
+			super(name);
+			
+			for( String v : Arrays.asList("#000","#000000","transparent") ) {
+				proposals.add(new Proposal(v));
+				proposals.add(new Proposal(v + " " + v + " " + v + " " + v));
+			}
+			proposals.add(new Proposal("inherit"));
+		}
+		
+		@Override
+		public List<Proposal> getInitialValueProposals() {
+			return proposals;
+		}
+	}
+	
+	private static class BordersProperty extends Property {
+		private List<Proposal> proposals = new ArrayList<Proposal>();
+		
+		public BordersProperty(String name) {
+			super(name);
+		}
+		
+		@Override
+		public List<Proposal> getInitialValueProposals() {
+			return proposals;
+		}
 	}
 }
