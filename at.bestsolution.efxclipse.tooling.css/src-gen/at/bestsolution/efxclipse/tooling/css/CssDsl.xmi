@@ -164,7 +164,10 @@
     <type metamodel="//@metamodelDeclarations.0">
       <classifier xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     </type>
-    <alternatives xsi:type="xtext:RuleCall" rule="//@rules.36"/>
+    <alternatives xsi:type="xtext:Alternatives">
+      <elements xsi:type="xtext:RuleCall" rule="//@rules.35"/>
+      <elements xsi:type="xtext:RuleCall" rule="//@rules.36"/>
+    </alternatives>
   </rules>
   <rules xsi:type="xtext:ParserRule" name="css_class">
     <type metamodel="//@metamodelDeclarations.0">
@@ -172,7 +175,10 @@
     </type>
     <alternatives xsi:type="xtext:Group">
       <elements xsi:type="xtext:Keyword" value="."/>
-      <elements xsi:type="xtext:RuleCall" rule="//@rules.36"/>
+      <elements xsi:type="xtext:Alternatives">
+        <elements xsi:type="xtext:RuleCall" rule="//@rules.35"/>
+        <elements xsi:type="xtext:RuleCall" rule="//@rules.36"/>
+      </elements>
     </alternatives>
   </rules>
   <rules xsi:type="xtext:ParserRule" name="css_id">
@@ -193,7 +199,10 @@
     </type>
     <alternatives xsi:type="xtext:Group">
       <elements xsi:type="xtext:Keyword" value="["/>
-      <elements xsi:type="xtext:RuleCall" rule="//@rules.36"/>
+      <elements xsi:type="xtext:Alternatives">
+        <elements xsi:type="xtext:RuleCall" rule="//@rules.35"/>
+        <elements xsi:type="xtext:RuleCall" rule="//@rules.36"/>
+      </elements>
       <elements xsi:type="xtext:Group" cardinality="?">
         <elements xsi:type="xtext:Alternatives">
           <elements xsi:type="xtext:Keyword" value="="/>
@@ -201,7 +210,10 @@
           <elements xsi:type="xtext:RuleCall" rule="//@rules.42"/>
         </elements>
         <elements xsi:type="xtext:Alternatives">
-          <elements xsi:type="xtext:RuleCall" rule="//@rules.36"/>
+          <elements xsi:type="xtext:Alternatives">
+            <elements xsi:type="xtext:RuleCall" rule="//@rules.35"/>
+            <elements xsi:type="xtext:RuleCall" rule="//@rules.36"/>
+          </elements>
           <elements xsi:type="xtext:RuleCall" rule="//@rules.40"/>
         </elements>
       </elements>

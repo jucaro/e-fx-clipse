@@ -48,11 +48,11 @@ simple_selector:
 ;
 
 element_name:
-	IDENT
+	(hexdigits | IDENT)
 ;
 
 css_class
-  : '.' IDENT
+  : '.' (hexdigits | IDENT)
   ;
 
 css_id:
@@ -60,7 +60,7 @@ css_id:
 ;
 
 css_attrib:
-	'[' IDENT ( ( '=' | INCLUDES | DASHMATCH ) (IDENT | STRING ) )? ']'
+	'[' (hexdigits | IDENT) ( ( '=' | INCLUDES | DASHMATCH ) ((hexdigits | IDENT) | STRING ) )? ']'
 ;
 
 css_declaration:

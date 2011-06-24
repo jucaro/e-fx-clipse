@@ -40,9 +40,13 @@ public class CssDslParser extends AbstractContentAssistParser {
 					put(grammarAccess.getStylesheetAccess().getAlternatives(), "rule__Stylesheet__Alternatives");
 					put(grammarAccess.getSelectorAccess().getAlternatives_1(), "rule__Selector__Alternatives_1");
 					put(grammarAccess.getSimple_selectorAccess().getAlternatives(), "rule__Simple_selector__Alternatives");
+					put(grammarAccess.getElement_nameAccess().getAlternatives(), "rule__Element_name__Alternatives");
+					put(grammarAccess.getCss_classAccess().getAlternatives_1(), "rule__Css_class__Alternatives_1");
 					put(grammarAccess.getCss_idAccess().getAlternatives_1(), "rule__Css_id__Alternatives_1");
+					put(grammarAccess.getCss_attribAccess().getAlternatives_1(), "rule__Css_attrib__Alternatives_1");
 					put(grammarAccess.getCss_attribAccess().getAlternatives_2_0(), "rule__Css_attrib__Alternatives_2_0");
 					put(grammarAccess.getCss_attribAccess().getAlternatives_2_1(), "rule__Css_attrib__Alternatives_2_1");
+					put(grammarAccess.getCss_attribAccess().getAlternatives_2_1_0(), "rule__Css_attrib__Alternatives_2_1_0");
 					put(grammarAccess.getCombinatorAccess().getAlternatives(), "rule__Combinator__Alternatives");
 					put(grammarAccess.getOperatorAccess().getAlternatives(), "rule__Operator__Alternatives");
 					put(grammarAccess.getUnary_operatorAccess().getAlternatives(), "rule__Unary_operator__Alternatives");

@@ -757,14 +757,22 @@ ruleelement_name returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleTo
     @init { enterRule(); 
     }
     @after { leaveRule(); }:
-    this_IDENT_0=RULE_IDENT    {
-		$current.merge(this_IDENT_0);
+(    this_hexdigits_0=RULE_HEXDIGITS    {
+		$current.merge(this_hexdigits_0);
     }
 
     { 
-    newLeafNode(this_IDENT_0, grammarAccess.getElement_nameAccess().getIDENTTerminalRuleCall()); 
+    newLeafNode(this_hexdigits_0, grammarAccess.getElement_nameAccess().getHexdigitsTerminalRuleCall_0()); 
     }
 
+    |    this_IDENT_1=RULE_IDENT    {
+		$current.merge(this_IDENT_1);
+    }
+
+    { 
+    newLeafNode(this_IDENT_1, grammarAccess.getElement_nameAccess().getIDENTTerminalRuleCall_1()); 
+    }
+)
     ;
 
 
@@ -791,14 +799,22 @@ rulecss_class returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken
         $current.merge(kw);
         newLeafNode(kw, grammarAccess.getCss_classAccess().getFullStopKeyword_0()); 
     }
-    this_IDENT_1=RULE_IDENT    {
-		$current.merge(this_IDENT_1);
+(    this_hexdigits_1=RULE_HEXDIGITS    {
+		$current.merge(this_hexdigits_1);
     }
 
     { 
-    newLeafNode(this_IDENT_1, grammarAccess.getCss_classAccess().getIDENTTerminalRuleCall_1()); 
+    newLeafNode(this_hexdigits_1, grammarAccess.getCss_classAccess().getHexdigitsTerminalRuleCall_1_0()); 
     }
-)
+
+    |    this_IDENT_2=RULE_IDENT    {
+		$current.merge(this_IDENT_2);
+    }
+
+    { 
+    newLeafNode(this_IDENT_2, grammarAccess.getCss_classAccess().getIDENTTerminalRuleCall_1_1()); 
+    }
+))
     ;
 
 
@@ -867,49 +883,65 @@ rulecss_attrib returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToke
         $current.merge(kw);
         newLeafNode(kw, grammarAccess.getCss_attribAccess().getLeftSquareBracketKeyword_0()); 
     }
-    this_IDENT_1=RULE_IDENT    {
-		$current.merge(this_IDENT_1);
+(    this_hexdigits_1=RULE_HEXDIGITS    {
+		$current.merge(this_hexdigits_1);
     }
 
     { 
-    newLeafNode(this_IDENT_1, grammarAccess.getCss_attribAccess().getIDENTTerminalRuleCall_1()); 
+    newLeafNode(this_hexdigits_1, grammarAccess.getCss_attribAccess().getHexdigitsTerminalRuleCall_1_0()); 
     }
-((
+
+    |    this_IDENT_2=RULE_IDENT    {
+		$current.merge(this_IDENT_2);
+    }
+
+    { 
+    newLeafNode(this_IDENT_2, grammarAccess.getCss_attribAccess().getIDENTTerminalRuleCall_1_1()); 
+    }
+)((
 	kw='=' 
     {
         $current.merge(kw);
         newLeafNode(kw, grammarAccess.getCss_attribAccess().getEqualsSignKeyword_2_0_0()); 
     }
 
-    |    this_INCLUDES_3=RULE_INCLUDES    {
-		$current.merge(this_INCLUDES_3);
+    |    this_INCLUDES_4=RULE_INCLUDES    {
+		$current.merge(this_INCLUDES_4);
     }
 
     { 
-    newLeafNode(this_INCLUDES_3, grammarAccess.getCss_attribAccess().getINCLUDESTerminalRuleCall_2_0_1()); 
+    newLeafNode(this_INCLUDES_4, grammarAccess.getCss_attribAccess().getINCLUDESTerminalRuleCall_2_0_1()); 
     }
 
-    |    this_DASHMATCH_4=RULE_DASHMATCH    {
-		$current.merge(this_DASHMATCH_4);
-    }
-
-    { 
-    newLeafNode(this_DASHMATCH_4, grammarAccess.getCss_attribAccess().getDASHMATCHTerminalRuleCall_2_0_2()); 
-    }
-)(    this_IDENT_5=RULE_IDENT    {
-		$current.merge(this_IDENT_5);
+    |    this_DASHMATCH_5=RULE_DASHMATCH    {
+		$current.merge(this_DASHMATCH_5);
     }
 
     { 
-    newLeafNode(this_IDENT_5, grammarAccess.getCss_attribAccess().getIDENTTerminalRuleCall_2_1_0()); 
+    newLeafNode(this_DASHMATCH_5, grammarAccess.getCss_attribAccess().getDASHMATCHTerminalRuleCall_2_0_2()); 
     }
-
-    |    this_STRING_6=RULE_STRING    {
-		$current.merge(this_STRING_6);
+)((    this_hexdigits_6=RULE_HEXDIGITS    {
+		$current.merge(this_hexdigits_6);
     }
 
     { 
-    newLeafNode(this_STRING_6, grammarAccess.getCss_attribAccess().getSTRINGTerminalRuleCall_2_1_1()); 
+    newLeafNode(this_hexdigits_6, grammarAccess.getCss_attribAccess().getHexdigitsTerminalRuleCall_2_1_0_0()); 
+    }
+
+    |    this_IDENT_7=RULE_IDENT    {
+		$current.merge(this_IDENT_7);
+    }
+
+    { 
+    newLeafNode(this_IDENT_7, grammarAccess.getCss_attribAccess().getIDENTTerminalRuleCall_2_1_0_1()); 
+    }
+)
+    |    this_STRING_8=RULE_STRING    {
+		$current.merge(this_STRING_8);
+    }
+
+    { 
+    newLeafNode(this_STRING_8, grammarAccess.getCss_attribAccess().getSTRINGTerminalRuleCall_2_1_1()); 
     }
 ))?
 	kw=']' 

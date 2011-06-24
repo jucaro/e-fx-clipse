@@ -277,9 +277,9 @@ ruleelement_name
     }
 	:
 (
-{ before(grammarAccess.getElement_nameAccess().getIDENTTerminalRuleCall()); }
-	RULE_IDENT
-{ after(grammarAccess.getElement_nameAccess().getIDENTTerminalRuleCall()); }
+{ before(grammarAccess.getElement_nameAccess().getAlternatives()); }
+(rule__Element_name__Alternatives)
+{ after(grammarAccess.getElement_nameAccess().getAlternatives()); }
 )
 
 ;
@@ -1099,6 +1099,50 @@ finally {
 	restoreStackSize(stackSize);
 }
 
+rule__Element_name__Alternatives
+    @init {
+		int stackSize = keepStackSize();
+    }
+:
+(
+{ before(grammarAccess.getElement_nameAccess().getHexdigitsTerminalRuleCall_0()); }
+	RULE_HEXDIGITS
+{ after(grammarAccess.getElement_nameAccess().getHexdigitsTerminalRuleCall_0()); }
+)
+
+    |(
+{ before(grammarAccess.getElement_nameAccess().getIDENTTerminalRuleCall_1()); }
+	RULE_IDENT
+{ after(grammarAccess.getElement_nameAccess().getIDENTTerminalRuleCall_1()); }
+)
+
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__Css_class__Alternatives_1
+    @init {
+		int stackSize = keepStackSize();
+    }
+:
+(
+{ before(grammarAccess.getCss_classAccess().getHexdigitsTerminalRuleCall_1_0()); }
+	RULE_HEXDIGITS
+{ after(grammarAccess.getCss_classAccess().getHexdigitsTerminalRuleCall_1_0()); }
+)
+
+    |(
+{ before(grammarAccess.getCss_classAccess().getIDENTTerminalRuleCall_1_1()); }
+	RULE_IDENT
+{ after(grammarAccess.getCss_classAccess().getIDENTTerminalRuleCall_1_1()); }
+)
+
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
 rule__Css_id__Alternatives_1
     @init {
 		int stackSize = keepStackSize();
@@ -1114,6 +1158,28 @@ rule__Css_id__Alternatives_1
 { before(grammarAccess.getCss_idAccess().getIDENTTerminalRuleCall_1_1()); }
 	RULE_IDENT
 { after(grammarAccess.getCss_idAccess().getIDENTTerminalRuleCall_1_1()); }
+)
+
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__Css_attrib__Alternatives_1
+    @init {
+		int stackSize = keepStackSize();
+    }
+:
+(
+{ before(grammarAccess.getCss_attribAccess().getHexdigitsTerminalRuleCall_1_0()); }
+	RULE_HEXDIGITS
+{ after(grammarAccess.getCss_attribAccess().getHexdigitsTerminalRuleCall_1_0()); }
+)
+
+    |(
+{ before(grammarAccess.getCss_attribAccess().getIDENTTerminalRuleCall_1_1()); }
+	RULE_IDENT
+{ after(grammarAccess.getCss_attribAccess().getIDENTTerminalRuleCall_1_1()); }
 )
 
 ;
@@ -1157,15 +1223,37 @@ rule__Css_attrib__Alternatives_2_1
     }
 :
 (
-{ before(grammarAccess.getCss_attribAccess().getIDENTTerminalRuleCall_2_1_0()); }
-	RULE_IDENT
-{ after(grammarAccess.getCss_attribAccess().getIDENTTerminalRuleCall_2_1_0()); }
+{ before(grammarAccess.getCss_attribAccess().getAlternatives_2_1_0()); }
+(rule__Css_attrib__Alternatives_2_1_0)
+{ after(grammarAccess.getCss_attribAccess().getAlternatives_2_1_0()); }
 )
 
     |(
 { before(grammarAccess.getCss_attribAccess().getSTRINGTerminalRuleCall_2_1_1()); }
 	RULE_STRING
 { after(grammarAccess.getCss_attribAccess().getSTRINGTerminalRuleCall_2_1_1()); }
+)
+
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__Css_attrib__Alternatives_2_1_0
+    @init {
+		int stackSize = keepStackSize();
+    }
+:
+(
+{ before(grammarAccess.getCss_attribAccess().getHexdigitsTerminalRuleCall_2_1_0_0()); }
+	RULE_HEXDIGITS
+{ after(grammarAccess.getCss_attribAccess().getHexdigitsTerminalRuleCall_2_1_0_0()); }
+)
+
+    |(
+{ before(grammarAccess.getCss_attribAccess().getIDENTTerminalRuleCall_2_1_0_1()); }
+	RULE_IDENT
+{ after(grammarAccess.getCss_attribAccess().getIDENTTerminalRuleCall_2_1_0_1()); }
 )
 
 ;
@@ -2775,9 +2863,9 @@ rule__Css_class__Group__1__Impl
     }
 :
 (
-{ before(grammarAccess.getCss_classAccess().getIDENTTerminalRuleCall_1()); }
-	RULE_IDENT
-{ after(grammarAccess.getCss_classAccess().getIDENTTerminalRuleCall_1()); }
+{ before(grammarAccess.getCss_classAccess().getAlternatives_1()); }
+(rule__Css_class__Alternatives_1)
+{ after(grammarAccess.getCss_classAccess().getAlternatives_1()); }
 )
 
 ;
@@ -2902,9 +2990,9 @@ rule__Css_attrib__Group__1__Impl
     }
 :
 (
-{ before(grammarAccess.getCss_attribAccess().getIDENTTerminalRuleCall_1()); }
-	RULE_IDENT
-{ after(grammarAccess.getCss_attribAccess().getIDENTTerminalRuleCall_1()); }
+{ before(grammarAccess.getCss_attribAccess().getAlternatives_1()); }
+(rule__Css_attrib__Alternatives_1)
+{ after(grammarAccess.getCss_attribAccess().getAlternatives_1()); }
 )
 
 ;
