@@ -1,0 +1,32 @@
+package at.bestsolution.efxclipse.tooling.css.jfx.scene.control;
+
+import static at.bestsolution.efxclipse.tooling.css.ui.CssDialectExtension.Util.createReflective;
+import static at.bestsolution.efxclipse.tooling.css.ui.CssDialectExtension.Util.createEnumProperties;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
+import at.bestsolution.efxclipse.tooling.css.jfx.JFXDialectExtension.SizeProperty;
+import at.bestsolution.efxclipse.tooling.css.ui.CssDialectExtension.BooleanProperty;
+import at.bestsolution.efxclipse.tooling.css.ui.CssDialectExtension.Property;
+import at.bestsolution.efxclipse.tooling.css.ui.CssDialectExtension.StringProperty;
+import at.bestsolution.efxclipse.tooling.css.ui.CssDialectExtension.UrlProperty;
+
+public class Labeled {
+	public static List<Property> init() {
+		List<Property> properties = new ArrayList<Property>();
+		properties.addAll(createReflective(UrlProperty.class, "-fx-graphic"));
+		properties.addAll(createEnumProperties(Arrays.asList("left","center","right","leading","trailing"), "-fx-graphic-hpos")); 
+		properties.addAll(createReflective(SizeProperty.class, "-fx-graphic-text-gap"));
+		properties.addAll(createEnumProperties(Arrays.asList("top","center","baseline","bottom","page-end","page-start"), "-fx-graphic-vpos")); 
+		properties.addAll(createEnumProperties(Arrays.asList("left","center","right","leading","trailing"), "-fx-hpos")); 
+		properties.addAll(createReflective(StringProperty.class, "-fx-text"));
+		properties.addAll(createEnumProperties(Arrays.asList("left","center","right","justify"), "-fx-text-alignment")); 
+		properties.addAll(createEnumProperties(Arrays.asList("center-ellipses","center-word-ellipses","clip","ellipses","leading-ellipses","leading-word-ellipses","word-ellipses"), "-fx-text-overrun")); 
+		properties.addAll(createReflective(BooleanProperty.class, "-fx-text-wrap"));
+		properties.addAll(createEnumProperties(Arrays.asList("top","center","baseline","bottom","page-end","page-start"), "-fx-vpos")); 
+		
+		return properties;
+	}
+}
