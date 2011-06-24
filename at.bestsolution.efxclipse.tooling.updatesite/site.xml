@@ -1,4 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <site>
-   <feature url="features/at.bestsolution.efxclipse.feature_0.0.1.jar" id="at.bestsolution.efxclipse.feature" version="0.0.1"/>
+   <feature url="features/at.bestsolution.efxclipse.feature_0.0.1.jar" id="at.bestsolution.efxclipse.feature" version="0.0.1">
+      <category name="e(fx)clipse"/>
+   </feature>
+   <category-def name="e(fx)clipse" label="e(fx)clipse"/>
 </site>
