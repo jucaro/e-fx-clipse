@@ -20,10 +20,10 @@ public class BuildPathSupport {
 			
 			IClasspathAttribute[] attributes;
 			IAccessRule[] accessRules= { };
-			if (javadocLocation.toFile().exists()) {
+			if (!javadocLocation.toFile().exists()) {
 				attributes= new IClasspathAttribute[0];
 			} else {
-				attributes= new IClasspathAttribute[] { JavaCore.newClasspathAttribute(IClasspathAttribute.JAVADOC_LOCATION_ATTRIBUTE_NAME, javadocLocation.toFile().toString()) };
+				attributes= new IClasspathAttribute[] { JavaCore.newClasspathAttribute(IClasspathAttribute.JAVADOC_LOCATION_ATTRIBUTE_NAME, javadocLocation.toFile().toURI().toString()) };
 			}
 			
 			if( jarLocationPath.toFile().exists() ) {
