@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="org.eclipse.jdt.core.classpathContainerInitializer">
+      <classpathContainerInitializer
+            class="at.bestsolution.efxclipse.tooling.jdt.core.internal.JavaFXClasspathContainerInitializer"
+            id="at.bestsolution.efxclipse.tooling.jdt.core.JAVAFX_CONTAINER">
+      </classpathContainerInitializer>
+   </extension>
+
+</plugin>

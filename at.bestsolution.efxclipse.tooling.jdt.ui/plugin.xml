@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="org.eclipse.jdt.ui.classpathContainerPage">
+      <classpathContainerPage
+            class="at.bestsolution.efxclipse.tooling.jdt.ui.internal.buildpath.JavaFXContainerWizardPage"
+            id="at.bestsolution.efxclipse.tooling.jdt.core.JAVAFX_CONTAINER"
+            name="JavaFX Container Page">
+      </classpathContainerPage>
+   </extension>
+   <extension
+         point="org.eclipse.ui.preferencePages">
+      <page
+            class="at.bestsolution.efxclipse.tooling.jdt.ui.internal.buildpath.JavaFXPreferencePage"
+            id="at.bestsolution.efxclipse.tooling.jdt.ui.javafx"
+            name="JavaFX Preferences">
+      </page>
+   </extension>
+
+</plugin>
