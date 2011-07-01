@@ -40,7 +40,7 @@ public class VisualEffects {
 		}
 
 		@Override
-		public List<Proposal> getInitialValueProposals() {
+		public List<Proposal> getInitialTermProposals() {
 			return proposals;
 		}
 		

@@ -8,6 +8,7 @@ import org.eclipse.jdt.core.IClasspathEntry;
 import org.eclipse.jdt.core.IJavaProject;
 import org.eclipse.jdt.core.JavaCore;
 import org.eclipse.jdt.core.JavaModelException;
+import org.eclipse.jdt.internal.ui.JavaPluginImages;
 import org.eclipse.jdt.internal.ui.util.ExceptionHandler;
 import org.eclipse.jdt.ui.wizards.IClasspathContainerPage;
 import org.eclipse.jdt.ui.wizards.IClasspathContainerPageExtension;
@@ -28,7 +29,7 @@ public class JavaFXContainerWizardPage extends NewElementWizardPage implements I
 		
 		setTitle("JavaFX Library");
 		setDescription("JavaFX Library Selection");
-//		setImageDescriptor(JavaPluginImages.DESC_WIZBAN_ADD_LIBRARY);
+		setImageDescriptor(JavaPluginImages.DESC_WIZBAN_ADD_LIBRARY);
 
 		fContainerEntryResult = JavaCore.newContainerEntry(JavaFXCore.JAVAFX_CONTAINER_PATH);
 	}

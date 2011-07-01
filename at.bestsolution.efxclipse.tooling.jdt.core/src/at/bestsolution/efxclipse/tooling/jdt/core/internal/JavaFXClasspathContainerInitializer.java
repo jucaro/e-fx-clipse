@@ -28,7 +28,7 @@ public class JavaFXClasspathContainerInitializer extends
 		}
 
 		public String getDescription() {
-			return "JavaFX";
+			return "JavaFX SDK";
 		}
 
 		public int getKind() {

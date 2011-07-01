@@ -13,7 +13,12 @@ import org.osgi.framework.BundleContext;
 import org.osgi.framework.ServiceReference;
 
 import at.bestsolution.efxclipse.tooling.css.cssDsl.css_generic_declaration;
+import at.bestsolution.efxclipse.tooling.css.cssDsl.expr;
 import at.bestsolution.efxclipse.tooling.css.cssDsl.ruleset;
+import at.bestsolution.efxclipse.tooling.css.cssDsl.term;
+import at.bestsolution.efxclipse.tooling.css.cssDsl.termGroup;
+import at.bestsolution.efxclipse.tooling.css.ui.CssDialectExtension.MultiTermGroupProperty;
+import at.bestsolution.efxclipse.tooling.css.ui.CssDialectExtension.MultiValuesGroupProperty;
 import at.bestsolution.efxclipse.tooling.css.ui.CssDialectExtension.Property;
 import at.bestsolution.efxclipse.tooling.css.ui.CssDialectExtension.Proposal;
 import at.bestsolution.efxclipse.tooling.css.ui.internal.CssDialectExtensionComponent;
@@ -45,11 +50,13 @@ public class CssDslProposalProvider extends AbstractCssDslProposalProvider {
 	@Override
 	public void complete_expr(EObject model, RuleCall ruleCall,
 			ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
+		System.err.println("Expression Proposal: " + model);
 		if( context.getCurrentModel() instanceof css_generic_declaration ) {
 			css_generic_declaration o = (css_generic_declaration) model;
 			Property p = getProperty(extension.getProperties(), o.getProperty());
+			
 			if( p != null ) {
-				for( Proposal proposal : p.getInitialValueProposals() ) {
+				for( Proposal proposal : p.getInitialTermProposals() ) {
 					acceptor.accept(createCompletionProposal(proposal.getLabel(), proposal.getLabel(), null, context));
 				}
 			}
@@ -61,8 +68,43 @@ public class CssDslProposalProvider extends AbstractCssDslProposalProvider {
 	@Override
 	public void complete_term(EObject model, RuleCall ruleCall,
 			ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
-//		System.err.println("Term: " + model);
+		if( model instanceof term ) {
+			term t = (term) model;
+			if( t.eContainer() instanceof termGroup ) {
+				termGroup tgr = (termGroup) t.eContainer();
+				if( tgr.eContainer() instanceof expr ) {
+					expr expression = (expr) tgr.eContainer();
+					if( expression.eContainer() instanceof css_generic_declaration ) {
+						css_generic_declaration dec = (css_generic_declaration) expression.eContainer();
+						if( createExpressionFurtherTermProposals(dec, expression, tgr, t) ) {
+							return;
+						}
+					}
+				}
+			}
+		}
 		super.complete_term(model, ruleCall, context, acceptor);
+	}
+	
+	private boolean createExpressionFurtherTermProposals(css_generic_declaration dec, expr expression, termGroup tgr, term t) {
+		if( expression.getTermGroups().indexOf(tgr) != 0 ) {
+			Property p = getProperty(extension.getProperties(), dec.getProperty());
+			if( p instanceof MultiTermGroupProperty ) {
+				if( tgr.getTerms().indexOf(t) == 0 ) {
+					// Show the initial proposals
+					return true;
+				} else if( p instanceof MultiValuesGroupProperty ) {
+					// Show the extended proposals
+				}
+				
+				return true;
+			}
+		} else {
+			Property p = getProperty(extension.getProperties(), dec.getProperty());
+			
+		}
+		
+		return false;
 	}
 	
 	private static Property getProperty(List<Property> properties, String property) {

@@ -686,37 +686,53 @@ public class CssDslGrammarAccess extends AbstractGrammarElementFinder {
 	public class ExprElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "expr");
 		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Assignment cTermsAssignment_0 = (Assignment)cGroup.eContents().get(0);
-		private final RuleCall cTermsTermParserRuleCall_0_0 = (RuleCall)cTermsAssignment_0.eContents().get(0);
+		private final Assignment cTermGroupsAssignment_0 = (Assignment)cGroup.eContents().get(0);
+		private final RuleCall cTermGroupsTermGroupParserRuleCall_0_0 = (RuleCall)cTermGroupsAssignment_0.eContents().get(0);
 		private final Group cGroup_1 = (Group)cGroup.eContents().get(1);
 		private final RuleCall cOperatorParserRuleCall_1_0 = (RuleCall)cGroup_1.eContents().get(0);
-		private final Assignment cTermsAssignment_1_1 = (Assignment)cGroup_1.eContents().get(1);
-		private final RuleCall cTermsTermParserRuleCall_1_1_0 = (RuleCall)cTermsAssignment_1_1.eContents().get(0);
+		private final Assignment cTermGroupsAssignment_1_1 = (Assignment)cGroup_1.eContents().get(1);
+		private final RuleCall cTermGroupsTermGroupParserRuleCall_1_1_0 = (RuleCall)cTermGroupsAssignment_1_1.eContents().get(0);
 		
 		//expr hidden(WS, ML_COMMENT):
-		//	terms+=term (operator? terms+=term)*;
+		//	termGroups+=termGroup (operator termGroups+=termGroup)*;
 		public ParserRule getRule() { return rule; }
 
-		//terms+=term (operator? terms+=term)*
+		//termGroups+=termGroup (operator termGroups+=termGroup)*
 		public Group getGroup() { return cGroup; }
 
-		//terms+=term
-		public Assignment getTermsAssignment_0() { return cTermsAssignment_0; }
+		//termGroups+=termGroup
+		public Assignment getTermGroupsAssignment_0() { return cTermGroupsAssignment_0; }
 
-		//term
-		public RuleCall getTermsTermParserRuleCall_0_0() { return cTermsTermParserRuleCall_0_0; }
+		//termGroup
+		public RuleCall getTermGroupsTermGroupParserRuleCall_0_0() { return cTermGroupsTermGroupParserRuleCall_0_0; }
 
-		//(operator? terms+=term)*
+		//(operator termGroups+=termGroup)*
 		public Group getGroup_1() { return cGroup_1; }
 
-		//operator?
+		//operator
 		public RuleCall getOperatorParserRuleCall_1_0() { return cOperatorParserRuleCall_1_0; }
 
-		//terms+=term
-		public Assignment getTermsAssignment_1_1() { return cTermsAssignment_1_1; }
+		//termGroups+=termGroup
+		public Assignment getTermGroupsAssignment_1_1() { return cTermGroupsAssignment_1_1; }
+
+		//termGroup
+		public RuleCall getTermGroupsTermGroupParserRuleCall_1_1_0() { return cTermGroupsTermGroupParserRuleCall_1_1_0; }
+	}
+
+	public class TermGroupElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "termGroup");
+		private final Assignment cTermsAssignment = (Assignment)rule.eContents().get(1);
+		private final RuleCall cTermsTermParserRuleCall_0 = (RuleCall)cTermsAssignment.eContents().get(0);
+		
+		//termGroup:
+		//	terms+=term+;
+		public ParserRule getRule() { return rule; }
+
+		//terms+=term+
+		public Assignment getTermsAssignment() { return cTermsAssignment; }
 
 		//term
-		public RuleCall getTermsTermParserRuleCall_1_1_0() { return cTermsTermParserRuleCall_1_1_0; }
+		public RuleCall getTermsTermParserRuleCall_0() { return cTermsTermParserRuleCall_0; }
 	}
 
 	public class TermElements extends AbstractParserRuleElementFinder {
@@ -1200,6 +1216,7 @@ public class CssDslGrammarAccess extends AbstractGrammarElementFinder {
 	private OperatorElements pOperator;
 	private Unary_operatorElements pUnary_operator;
 	private ExprElements pExpr;
+	private TermGroupElements pTermGroup;
 	private TermElements pTerm;
 	private NumberTermElements pNumberTerm;
 	private NumElements pNum;
@@ -1422,13 +1439,23 @@ public class CssDslGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//expr hidden(WS, ML_COMMENT):
-	//	terms+=term (operator? terms+=term)*;
+	//	termGroups+=termGroup (operator termGroups+=termGroup)*;
 	public ExprElements getExprAccess() {
 		return (pExpr != null) ? pExpr : (pExpr = new ExprElements());
 	}
 	
 	public ParserRule getExprRule() {
 		return getExprAccess().getRule();
+	}
+
+	//termGroup:
+	//	terms+=term+;
+	public TermGroupElements getTermGroupAccess() {
+		return (pTermGroup != null) ? pTermGroup : (pTermGroup = new TermGroupElements());
+	}
+	
+	public ParserRule getTermGroupRule() {
+		return getTermGroupAccess().getRule();
 	}
 
 	////  	| gradient=Gradient

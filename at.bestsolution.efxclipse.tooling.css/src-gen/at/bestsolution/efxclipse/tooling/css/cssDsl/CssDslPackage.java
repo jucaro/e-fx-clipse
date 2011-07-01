@@ -345,7 +345,7 @@ public interface CssDslPackage extends EPackage
    * @see at.bestsolution.efxclipse.tooling.css.cssDsl.impl.CssDslPackageImpl#getfunction()
    * @generated
    */
-  int FUNCTION = 9;
+  int FUNCTION = 10;
 
   /**
    * The number of structural features of the '<em>function</em>' class.
@@ -367,13 +367,13 @@ public interface CssDslPackage extends EPackage
   int EXPR = 7;
 
   /**
-   * The feature id for the '<em><b>Terms</b></em>' containment reference list.
+   * The feature id for the '<em><b>Term Groups</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int EXPR__TERMS = FUNCTION_FEATURE_COUNT + 0;
+  int EXPR__TERM_GROUPS = FUNCTION_FEATURE_COUNT + 0;
 
   /**
    * The number of structural features of the '<em>expr</em>' class.
@@ -385,6 +385,34 @@ public interface CssDslPackage extends EPackage
   int EXPR_FEATURE_COUNT = FUNCTION_FEATURE_COUNT + 1;
 
   /**
+   * The meta object id for the '{@link at.bestsolution.efxclipse.tooling.css.cssDsl.impl.termGroupImpl <em>term Group</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see at.bestsolution.efxclipse.tooling.css.cssDsl.impl.termGroupImpl
+   * @see at.bestsolution.efxclipse.tooling.css.cssDsl.impl.CssDslPackageImpl#gettermGroup()
+   * @generated
+   */
+  int TERM_GROUP = 8;
+
+  /**
+   * The feature id for the '<em><b>Terms</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TERM_GROUP__TERMS = 0;
+
+  /**
+   * The number of structural features of the '<em>term Group</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TERM_GROUP_FEATURE_COUNT = 1;
+
+  /**
    * The meta object id for the '{@link at.bestsolution.efxclipse.tooling.css.cssDsl.impl.termImpl <em>term</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -392,7 +420,7 @@ public interface CssDslPackage extends EPackage
    * @see at.bestsolution.efxclipse.tooling.css.cssDsl.impl.CssDslPackageImpl#getterm()
    * @generated
    */
-  int TERM = 8;
+  int TERM = 9;
 
   /**
    * The feature id for the '<em><b>Number</b></em>' attribute.
@@ -465,7 +493,7 @@ public interface CssDslPackage extends EPackage
    * @see at.bestsolution.efxclipse.tooling.css.cssDsl.impl.CssDslPackageImpl#getURLType()
    * @generated
    */
-  int URL_TYPE = 10;
+  int URL_TYPE = 11;
 
   /**
    * The feature id for the '<em><b>Url</b></em>' attribute.
@@ -743,15 +771,36 @@ public interface CssDslPackage extends EPackage
   EClass getexpr();
 
   /**
-   * Returns the meta object for the containment reference list '{@link at.bestsolution.efxclipse.tooling.css.cssDsl.expr#getTerms <em>Terms</em>}'.
+   * Returns the meta object for the containment reference list '{@link at.bestsolution.efxclipse.tooling.css.cssDsl.expr#getTermGroups <em>Term Groups</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Terms</em>'.
-   * @see at.bestsolution.efxclipse.tooling.css.cssDsl.expr#getTerms()
+   * @return the meta object for the containment reference list '<em>Term Groups</em>'.
+   * @see at.bestsolution.efxclipse.tooling.css.cssDsl.expr#getTermGroups()
    * @see #getexpr()
    * @generated
    */
-  EReference getexpr_Terms();
+  EReference getexpr_TermGroups();
+
+  /**
+   * Returns the meta object for class '{@link at.bestsolution.efxclipse.tooling.css.cssDsl.termGroup <em>term Group</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>term Group</em>'.
+   * @see at.bestsolution.efxclipse.tooling.css.cssDsl.termGroup
+   * @generated
+   */
+  EClass gettermGroup();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link at.bestsolution.efxclipse.tooling.css.cssDsl.termGroup#getTerms <em>Terms</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Terms</em>'.
+   * @see at.bestsolution.efxclipse.tooling.css.cssDsl.termGroup#getTerms()
+   * @see #gettermGroup()
+   * @generated
+   */
+  EReference gettermGroup_Terms();
 
   /**
    * Returns the meta object for class '{@link at.bestsolution.efxclipse.tooling.css.cssDsl.term <em>term</em>}'.
@@ -1092,12 +1141,30 @@ public interface CssDslPackage extends EPackage
     EClass EXPR = eINSTANCE.getexpr();
 
     /**
+     * The meta object literal for the '<em><b>Term Groups</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference EXPR__TERM_GROUPS = eINSTANCE.getexpr_TermGroups();
+
+    /**
+     * The meta object literal for the '{@link at.bestsolution.efxclipse.tooling.css.cssDsl.impl.termGroupImpl <em>term Group</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see at.bestsolution.efxclipse.tooling.css.cssDsl.impl.termGroupImpl
+     * @see at.bestsolution.efxclipse.tooling.css.cssDsl.impl.CssDslPackageImpl#gettermGroup()
+     * @generated
+     */
+    EClass TERM_GROUP = eINSTANCE.gettermGroup();
+
+    /**
      * The meta object literal for the '<em><b>Terms</b></em>' containment reference list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference EXPR__TERMS = eINSTANCE.getexpr_Terms();
+    EReference TERM_GROUP__TERMS = eINSTANCE.gettermGroup_Terms();
 
     /**
      * The meta object literal for the '{@link at.bestsolution.efxclipse.tooling.css.cssDsl.impl.termImpl <em>term</em>}' class.

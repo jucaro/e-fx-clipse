@@ -87,7 +87,7 @@ public class BoxModelProperties {
 		}
 		
 		@Override
-		public List<Proposal> getInitialValueProposals() {
+		public List<Proposal> getInitialTermProposals() {
 			return proposals;
 		}
 	}
@@ -103,7 +103,7 @@ public class BoxModelProperties {
 		}
 
 		@Override
-		public List<Proposal> getInitialValueProposals() {
+		public List<Proposal> getInitialTermProposals() {
 			return proposals;
 		}
 	}
@@ -127,7 +127,7 @@ public class BoxModelProperties {
 		}
 		
 		@Override
-		public List<Proposal> getInitialValueProposals() {
+		public List<Proposal> getInitialTermProposals() {
 			return proposals;
 		}
 	}
@@ -142,7 +142,7 @@ public class BoxModelProperties {
 		}
 
 		@Override
-		public List<Proposal> getInitialValueProposals() {
+		public List<Proposal> getInitialTermProposals() {
 			return proposals;
 		}
 	}
@@ -157,7 +157,7 @@ public class BoxModelProperties {
 		}
 
 		@Override
-		public List<Proposal> getInitialValueProposals() {
+		public List<Proposal> getInitialTermProposals() {
 			return proposals;
 		}
 	}
@@ -187,7 +187,7 @@ public class BoxModelProperties {
 		}
 		
 		@Override
-		public List<Proposal> getInitialValueProposals() {
+		public List<Proposal> getInitialTermProposals() {
 			return proposals;
 		}
 	}
@@ -206,7 +206,7 @@ public class BoxModelProperties {
 		}
 		
 		@Override
-		public List<Proposal> getInitialValueProposals() {
+		public List<Proposal> getInitialTermProposals() {
 			return proposals;
 		}
 	}
@@ -219,7 +219,7 @@ public class BoxModelProperties {
 		}
 		
 		@Override
-		public List<Proposal> getInitialValueProposals() {
+		public List<Proposal> getInitialTermProposals() {
 			return proposals;
 		}
 	}

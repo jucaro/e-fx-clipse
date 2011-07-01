@@ -1242,11 +1242,79 @@ ruleexpr returns [EObject current=null]
 ((
 (
 		{ 
-	        newCompositeNode(grammarAccess.getExprAccess().getTermsTermParserRuleCall_0_0()); 
+	        newCompositeNode(grammarAccess.getExprAccess().getTermGroupsTermGroupParserRuleCall_0_0()); 
+	    }
+		lv_termGroups_0_0=ruletermGroup		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getExprRule());
+	        }
+       		add(
+       			$current, 
+       			"termGroups",
+        		lv_termGroups_0_0, 
+        		"termGroup");
+	        afterParserOrEnumRuleCall();
+	    }
+
+)
+)(
+    { 
+        newCompositeNode(grammarAccess.getExprAccess().getOperatorParserRuleCall_1_0()); 
+    }
+ruleoperator
+    { 
+        afterParserOrEnumRuleCall();
+    }
+(
+(
+		{ 
+	        newCompositeNode(grammarAccess.getExprAccess().getTermGroupsTermGroupParserRuleCall_1_1_0()); 
+	    }
+		lv_termGroups_2_0=ruletermGroup		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getExprRule());
+	        }
+       		add(
+       			$current, 
+       			"termGroups",
+        		lv_termGroups_2_0, 
+        		"termGroup");
+	        afterParserOrEnumRuleCall();
+	    }
+
+)
+))*)
+;
+finally {
+	myHiddenTokenState.restore();
+}
+
+
+
+
+
+// Entry rule entryRuletermGroup
+entryRuletermGroup returns [EObject current=null] 
+	:
+	{ newCompositeNode(grammarAccess.getTermGroupRule()); }
+	 iv_ruletermGroup=ruletermGroup 
+	 { $current=$iv_ruletermGroup.current; } 
+	 EOF 
+;
+
+// Rule termGroup
+ruletermGroup returns [EObject current=null] 
+    @init { enterRule(); 
+    }
+    @after { leaveRule(); }:
+(
+(
+		{ 
+	        newCompositeNode(grammarAccess.getTermGroupAccess().getTermsTermParserRuleCall_0()); 
 	    }
 		lv_terms_0_0=ruleterm		{
 	        if ($current==null) {
-	            $current = createModelElementForParent(grammarAccess.getExprRule());
+	            $current = createModelElementForParent(grammarAccess.getTermGroupRule());
 	        }
        		add(
        			$current, 
@@ -1257,37 +1325,8 @@ ruleexpr returns [EObject current=null]
 	    }
 
 )
-)((
-    { 
-        newCompositeNode(grammarAccess.getExprAccess().getOperatorParserRuleCall_1_0()); 
-    }
-ruleoperator
-    { 
-        afterParserOrEnumRuleCall();
-    }
-)?(
-(
-		{ 
-	        newCompositeNode(grammarAccess.getExprAccess().getTermsTermParserRuleCall_1_1_0()); 
-	    }
-		lv_terms_2_0=ruleterm		{
-	        if ($current==null) {
-	            $current = createModelElementForParent(grammarAccess.getExprRule());
-	        }
-       		add(
-       			$current, 
-       			"terms",
-        		lv_terms_2_0, 
-        		"term");
-	        afterParserOrEnumRuleCall();
-	    }
-
-)
-))*)
+)+
 ;
-finally {
-	myHiddenTokenState.restore();
-}
 
 
 

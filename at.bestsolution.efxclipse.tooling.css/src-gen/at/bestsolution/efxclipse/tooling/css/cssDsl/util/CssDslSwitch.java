@@ -134,6 +134,13 @@ public class CssDslSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case CssDslPackage.TERM_GROUP:
+      {
+        termGroup termGroup = (termGroup)theEObject;
+        T result = casetermGroup(termGroup);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       case CssDslPackage.TERM:
       {
         term term = (term)theEObject;
@@ -283,6 +290,22 @@ public class CssDslSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseexpr(expr object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>term Group</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>term Group</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T casetermGroup(termGroup object)
   {
     return null;
   }

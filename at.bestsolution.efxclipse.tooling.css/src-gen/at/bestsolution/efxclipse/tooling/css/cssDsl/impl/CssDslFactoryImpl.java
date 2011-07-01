@@ -76,6 +76,7 @@ public class CssDslFactoryImpl extends EFactoryImpl implements CssDslFactory
       case CssDslPackage.CSS_DECLARATION: return createcss_declaration();
       case CssDslPackage.CSS_GENERIC_DECLARATION: return createcss_generic_declaration();
       case CssDslPackage.EXPR: return createexpr();
+      case CssDslPackage.TERM_GROUP: return createtermGroup();
       case CssDslPackage.TERM: return createterm();
       case CssDslPackage.FUNCTION: return createfunction();
       case CssDslPackage.URL_TYPE: return createURLType();
@@ -170,6 +171,17 @@ public class CssDslFactoryImpl extends EFactoryImpl implements CssDslFactory
   {
     exprImpl expr = new exprImpl();
     return expr;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public termGroup createtermGroup()
+  {
+    termGroupImpl termGroup = new termGroupImpl();
+    return termGroup;
   }
 
   /**

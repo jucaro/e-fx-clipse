@@ -6,7 +6,7 @@
       <classpathContainerPage
             class="at.bestsolution.efxclipse.tooling.jdt.ui.internal.buildpath.JavaFXContainerWizardPage"
             id="at.bestsolution.efxclipse.tooling.jdt.core.JAVAFX_CONTAINER"
-            name="JavaFX Container Page">
+            name="JavaFX SDK">
       </classpathContainerPage>
    </extension>
    <extension
@@ -14,8 +14,21 @@
       <page
             class="at.bestsolution.efxclipse.tooling.jdt.ui.internal.buildpath.JavaFXPreferencePage"
             id="at.bestsolution.efxclipse.tooling.jdt.ui.javafx"
-            name="JavaFX Preferences">
+            name="JavaFX">
       </page>
+   </extension>
+   <extension
+         point="org.eclipse.ui.newWizards">
+      <wizard
+            category="org.eclipse.jdt.ui.java"
+            class="at.bestsolution.efxclipse.tooling.jdt.ui.internal.wizard.JavaFXProjectWizard"
+            finalPerspective="org.eclipse.jdt.ui.JavaPerspective"
+            icon="icons/application_lightning.png"
+            id="at.bestsolution.efxclipse.tooling.jdt.ui.javafx"
+            name="JavaFX Project"
+            preferredPerspectives="org.eclipse.jdt.ui.JavaPerspective,org.eclipse.jdt.ui.JavaBrowsingPerspective,org.eclipse.jdt.ui.JavaHierarchyPerspective"
+            project="true">
+      </wizard>
    </extension>
 
 </plugin>

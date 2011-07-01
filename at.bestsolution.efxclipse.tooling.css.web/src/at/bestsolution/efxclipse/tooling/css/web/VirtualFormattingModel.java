@@ -75,7 +75,7 @@ public class VirtualFormattingModel {
 
 		
 		@Override
-		public List<Proposal> getInitialValueProposals() {
+		public List<Proposal> getInitialTermProposals() {
 			return proposals;
 		}
 	}
@@ -90,7 +90,7 @@ public class VirtualFormattingModel {
 		}
 
 		@Override
-		public List<Proposal> getInitialValueProposals() {
+		public List<Proposal> getInitialTermProposals() {
 			return proposals;
 		}
 		

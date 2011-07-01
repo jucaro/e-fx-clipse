@@ -99,6 +99,15 @@ public interface CssDslFactory extends EFactory
   expr createexpr();
 
   /**
+   * Returns a new object of class '<em>term Group</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>term Group</em>'.
+   * @generated
+   */
+  termGroup createtermGroup();
+
+  /**
    * Returns a new object of class '<em>term</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->

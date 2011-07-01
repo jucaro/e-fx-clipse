@@ -119,6 +119,11 @@ public class CssDslAdapterFactory extends AdapterFactoryImpl
         return createexprAdapter();
       }
       @Override
+      public Adapter casetermGroup(termGroup object)
+      {
+        return createtermGroupAdapter();
+      }
+      @Override
       public Adapter caseterm(term object)
       {
         return createtermAdapter();
@@ -271,6 +276,21 @@ public class CssDslAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createexprAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link at.bestsolution.efxclipse.tooling.css.cssDsl.termGroup <em>term Group</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see at.bestsolution.efxclipse.tooling.css.cssDsl.termGroup
+   * @generated
+   */
+  public Adapter createtermGroupAdapter()
   {
     return null;
   }

@@ -19,6 +19,7 @@ import at.bestsolution.efxclipse.tooling.css.cssDsl.selector;
 import at.bestsolution.efxclipse.tooling.css.cssDsl.simple_selector;
 import at.bestsolution.efxclipse.tooling.css.cssDsl.stylesheet;
 import at.bestsolution.efxclipse.tooling.css.cssDsl.term;
+import at.bestsolution.efxclipse.tooling.css.cssDsl.termGroup;
 
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
@@ -90,6 +91,13 @@ public class CssDslPackageImpl extends EPackageImpl implements CssDslPackage
    * @generated
    */
   private EClass exprEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass termGroupEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -420,9 +428,29 @@ public class CssDslPackageImpl extends EPackageImpl implements CssDslPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getexpr_Terms()
+  public EReference getexpr_TermGroups()
   {
     return (EReference)exprEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass gettermGroup()
+  {
+    return termGroupEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference gettermGroup_Terms()
+  {
+    return (EReference)termGroupEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -586,7 +614,10 @@ public class CssDslPackageImpl extends EPackageImpl implements CssDslPackage
     createEReference(css_generic_declarationEClass, CSS_GENERIC_DECLARATION__EXPRESSION);
 
     exprEClass = createEClass(EXPR);
-    createEReference(exprEClass, EXPR__TERMS);
+    createEReference(exprEClass, EXPR__TERM_GROUPS);
+
+    termGroupEClass = createEClass(TERM_GROUP);
+    createEReference(termGroupEClass, TERM_GROUP__TERMS);
 
     termEClass = createEClass(TERM);
     createEAttribute(termEClass, TERM__NUMBER);
@@ -666,7 +697,10 @@ public class CssDslPackageImpl extends EPackageImpl implements CssDslPackage
     initEReference(getcss_generic_declaration_Expression(), this.getexpr(), null, "expression", null, 0, 1, css_generic_declaration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(exprEClass, expr.class, "expr", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getexpr_Terms(), this.getterm(), null, "terms", null, 0, -1, expr.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getexpr_TermGroups(), this.gettermGroup(), null, "termGroups", null, 0, -1, expr.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(termGroupEClass, termGroup.class, "termGroup", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(gettermGroup_Terms(), this.getterm(), null, "terms", null, 0, -1, termGroup.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(termEClass, term.class, "term", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getterm_Number(), ecorePackage.getEString(), "number", null, 0, 1, term.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

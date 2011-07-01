@@ -7,6 +7,8 @@ import java.lang.reflect.InvocationTargetException;
 import java.util.ArrayList;
 import java.util.List;
 
+import at.bestsolution.efxclipse.tooling.css.cssDsl.css_declaration;
+
 public interface CssDialectExtension {
 	public abstract static class Property {
 		private final String name;
@@ -19,7 +21,15 @@ public interface CssDialectExtension {
 			return name;
 		}
 		
-		public abstract List<Proposal> getInitialValueProposals();
+		public abstract List<Proposal> getInitialTermProposals();
+	}
+	
+	public interface MultiValuesGroupProperty {
+		public List<Proposal> getNextTermProposal(int index, css_declaration currentDeclaration);
+	}
+	
+	public interface MultiTermGroupProperty {
+		public List<Proposal> getInitialTermProposal(int index, css_declaration currentDeclaration);
 	}
 	
 	public static class IntegerProperty extends Property {
@@ -33,7 +43,7 @@ public interface CssDialectExtension {
 		}
 		
 		@Override
-		public List<Proposal> getInitialValueProposals() {
+		public List<Proposal> getInitialTermProposals() {
 			return proposals;
 		}
 	}
@@ -46,7 +56,7 @@ public interface CssDialectExtension {
 		}
 		
 		@Override
-		public List<Proposal> getInitialValueProposals() {
+		public List<Proposal> getInitialTermProposals() {
 			return proposals;
 		}
 	}
@@ -60,7 +70,7 @@ public interface CssDialectExtension {
 		}
 		
 		@Override
-		public List<Proposal> getInitialValueProposals() {
+		public List<Proposal> getInitialTermProposals() {
 			return proposals;
 		}
 	}
@@ -73,7 +83,7 @@ public interface CssDialectExtension {
 		}
 		
 		@Override
-		public List<Proposal> getInitialValueProposals() {
+		public List<Proposal> getInitialTermProposals() {
 			return proposals;
 		}
 	}
@@ -88,7 +98,7 @@ public interface CssDialectExtension {
 		}
 		
 		@Override
-		public List<Proposal> getInitialValueProposals() {
+		public List<Proposal> getInitialTermProposals() {
 			return proposals;
 		}
 	}
@@ -103,7 +113,7 @@ public interface CssDialectExtension {
 		}
 
 		@Override
-		public List<Proposal> getInitialValueProposals() {
+		public List<Proposal> getInitialTermProposals() {
 			return proposals;
 		}
 	}
@@ -118,7 +128,7 @@ public interface CssDialectExtension {
 		}
 
 		@Override
-		public List<Proposal> getInitialValueProposals() {
+		public List<Proposal> getInitialTermProposals() {
 			return proposals;
 		}
 	}
@@ -145,7 +155,7 @@ public interface CssDialectExtension {
 		}
 		
 		@Override
-		public List<Proposal> getInitialValueProposals() {
+		public List<Proposal> getInitialTermProposals() {
 			return proposals;
 		}
 	}

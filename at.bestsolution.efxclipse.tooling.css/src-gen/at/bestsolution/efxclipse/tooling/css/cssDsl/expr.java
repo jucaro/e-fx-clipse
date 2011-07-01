@@ -16,7 +16,7 @@ import org.eclipse.emf.common.util.EList;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link at.bestsolution.efxclipse.tooling.css.cssDsl.expr#getTerms <em>Terms</em>}</li>
+ *   <li>{@link at.bestsolution.efxclipse.tooling.css.cssDsl.expr#getTermGroups <em>Term Groups</em>}</li>
  * </ul>
  * </p>
  *
@@ -27,19 +27,19 @@ import org.eclipse.emf.common.util.EList;
 public interface expr extends function
 {
   /**
-   * Returns the value of the '<em><b>Terms</b></em>' containment reference list.
-   * The list contents are of type {@link at.bestsolution.efxclipse.tooling.css.cssDsl.term}.
+   * Returns the value of the '<em><b>Term Groups</b></em>' containment reference list.
+   * The list contents are of type {@link at.bestsolution.efxclipse.tooling.css.cssDsl.termGroup}.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Terms</em>' containment reference list isn't clear,
+   * If the meaning of the '<em>Term Groups</em>' containment reference list isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Terms</em>' containment reference list.
-   * @see at.bestsolution.efxclipse.tooling.css.cssDsl.CssDslPackage#getexpr_Terms()
+   * @return the value of the '<em>Term Groups</em>' containment reference list.
+   * @see at.bestsolution.efxclipse.tooling.css.cssDsl.CssDslPackage#getexpr_TermGroups()
    * @model containment="true"
    * @generated
    */
-  EList<term> getTerms();
+  EList<termGroup> getTermGroups();
 
 } // expr

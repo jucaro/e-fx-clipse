@@ -10,6 +10,7 @@ import at.bestsolution.efxclipse.tooling.css.cssDsl.selector;
 import at.bestsolution.efxclipse.tooling.css.cssDsl.simple_selector;
 import at.bestsolution.efxclipse.tooling.css.cssDsl.stylesheet;
 import at.bestsolution.efxclipse.tooling.css.cssDsl.term;
+import at.bestsolution.efxclipse.tooling.css.cssDsl.termGroup;
 import at.bestsolution.efxclipse.tooling.css.services.CssDslGrammarAccess;
 import com.google.inject.Inject;
 import com.google.inject.Provider;
@@ -109,6 +110,12 @@ public class AbstractCssDslSemanticSequencer extends AbstractSemanticSequencer {
 					return; 
 				}
 				else break;
+			case CssDslPackage.TERM_GROUP:
+				if(context == grammarAccess.getTermGroupRule()) {
+					sequence_termGroup_termGroup(context, (termGroup) semanticObject); 
+					return; 
+				}
+				else break;
 			}
 		if (errorAcceptor != null) errorAcceptor.accept(diagnosticProvider.createInvalidContextOrTypeDiagnostic(semanticObject, context));
 	}
@@ -157,10 +164,10 @@ public class AbstractCssDslSemanticSequencer extends AbstractSemanticSequencer {
 	
 	/**
 	 * Constraint:
-	 *     (terms+=term terms+=term*)
+	 *     (termGroups+=termGroup termGroups+=termGroup*)
 	 *
 	 * Features:
-	 *    terms[1, *]
+	 *    termGroups[1, *]
 	 */
 	protected void sequence_expr_expr(EObject context, expr semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -255,6 +262,18 @@ public class AbstractCssDslSemanticSequencer extends AbstractSemanticSequencer {
 	 *    media[0, *]
 	 */
 	protected void sequence_stylesheet_stylesheet(EObject context, stylesheet semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     terms+=term+
+	 *
+	 * Features:
+	 *    terms[1, *]
+	 */
+	protected void sequence_termGroup_termGroup(EObject context, termGroup semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	

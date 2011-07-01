@@ -92,9 +92,13 @@ unary_operator
   : '-' | '+'
   ;
 
-expr hidden(WS,ML_COMMENT): terms+=term ( operator? terms+=term )*
+expr hidden(WS,ML_COMMENT): termGroups+=termGroup ( operator termGroups+=termGroup )*
   ;
-  
+
+termGroup:
+	terms+=term+
+;
+
 term
   :   number=numberTerm
   	| stringValue=STRING 

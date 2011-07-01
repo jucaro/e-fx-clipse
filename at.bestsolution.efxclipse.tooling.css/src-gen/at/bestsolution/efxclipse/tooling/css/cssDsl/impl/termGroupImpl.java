@@ -7,7 +7,7 @@
 package at.bestsolution.efxclipse.tooling.css.cssDsl.impl;
 
 import at.bestsolution.efxclipse.tooling.css.cssDsl.CssDslPackage;
-import at.bestsolution.efxclipse.tooling.css.cssDsl.expr;
+import at.bestsolution.efxclipse.tooling.css.cssDsl.term;
 import at.bestsolution.efxclipse.tooling.css.cssDsl.termGroup;
 
 import java.util.Collection;
@@ -19,40 +19,42 @@ import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
+import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
+
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>expr</b></em>'.
+ * An implementation of the model object '<em><b>term Group</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link at.bestsolution.efxclipse.tooling.css.cssDsl.impl.exprImpl#getTermGroups <em>Term Groups</em>}</li>
+ *   <li>{@link at.bestsolution.efxclipse.tooling.css.cssDsl.impl.termGroupImpl#getTerms <em>Terms</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
-public class exprImpl extends functionImpl implements expr
+public class termGroupImpl extends MinimalEObjectImpl.Container implements termGroup
 {
   /**
-   * The cached value of the '{@link #getTermGroups() <em>Term Groups</em>}' containment reference list.
+   * The cached value of the '{@link #getTerms() <em>Terms</em>}' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getTermGroups()
+   * @see #getTerms()
    * @generated
    * @ordered
    */
-  protected EList<termGroup> termGroups;
+  protected EList<term> terms;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  protected exprImpl()
+  protected termGroupImpl()
   {
     super();
   }
@@ -65,7 +67,7 @@ public class exprImpl extends functionImpl implements expr
   @Override
   protected EClass eStaticClass()
   {
-    return CssDslPackage.Literals.EXPR;
+    return CssDslPackage.Literals.TERM_GROUP;
   }
 
   /**
@@ -73,13 +75,13 @@ public class exprImpl extends functionImpl implements expr
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<termGroup> getTermGroups()
+  public EList<term> getTerms()
   {
-    if (termGroups == null)
+    if (terms == null)
     {
-      termGroups = new EObjectContainmentEList<termGroup>(termGroup.class, this, CssDslPackage.EXPR__TERM_GROUPS);
+      terms = new EObjectContainmentEList<term>(term.class, this, CssDslPackage.TERM_GROUP__TERMS);
     }
-    return termGroups;
+    return terms;
   }
 
   /**
@@ -92,8 +94,8 @@ public class exprImpl extends functionImpl implements expr
   {
     switch (featureID)
     {
-      case CssDslPackage.EXPR__TERM_GROUPS:
-        return ((InternalEList<?>)getTermGroups()).basicRemove(otherEnd, msgs);
+      case CssDslPackage.TERM_GROUP__TERMS:
+        return ((InternalEList<?>)getTerms()).basicRemove(otherEnd, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -108,8 +110,8 @@ public class exprImpl extends functionImpl implements expr
   {
     switch (featureID)
     {
-      case CssDslPackage.EXPR__TERM_GROUPS:
-        return getTermGroups();
+      case CssDslPackage.TERM_GROUP__TERMS:
+        return getTerms();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -125,9 +127,9 @@ public class exprImpl extends functionImpl implements expr
   {
     switch (featureID)
     {
-      case CssDslPackage.EXPR__TERM_GROUPS:
-        getTermGroups().clear();
-        getTermGroups().addAll((Collection<? extends termGroup>)newValue);
+      case CssDslPackage.TERM_GROUP__TERMS:
+        getTerms().clear();
+        getTerms().addAll((Collection<? extends term>)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -143,8 +145,8 @@ public class exprImpl extends functionImpl implements expr
   {
     switch (featureID)
     {
-      case CssDslPackage.EXPR__TERM_GROUPS:
-        getTermGroups().clear();
+      case CssDslPackage.TERM_GROUP__TERMS:
+        getTerms().clear();
         return;
     }
     super.eUnset(featureID);
@@ -160,10 +162,10 @@ public class exprImpl extends functionImpl implements expr
   {
     switch (featureID)
     {
-      case CssDslPackage.EXPR__TERM_GROUPS:
-        return termGroups != null && !termGroups.isEmpty();
+      case CssDslPackage.TERM_GROUP__TERMS:
+        return terms != null && !terms.isEmpty();
     }
     return super.eIsSet(featureID);
   }
 
-} //exprImpl
+} //termGroupImpl

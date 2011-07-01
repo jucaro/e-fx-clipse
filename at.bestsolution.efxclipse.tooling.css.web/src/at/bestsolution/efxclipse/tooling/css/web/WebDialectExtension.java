@@ -35,7 +35,7 @@ public class WebDialectExtension implements CssDialectExtension {
 		}
 
 		@Override
-		public List<Proposal> getInitialValueProposals() {
+		public List<Proposal> getInitialTermProposals() {
 			return proposals;
 		}
 	}

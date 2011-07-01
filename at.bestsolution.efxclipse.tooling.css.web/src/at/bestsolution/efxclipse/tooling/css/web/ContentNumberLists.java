@@ -55,7 +55,7 @@ public class ContentNumberLists {
 		}
 
 		@Override
-		public List<Proposal> getInitialValueProposals() {
+		public List<Proposal> getInitialTermProposals() {
 			return proposals;
 		}
 	}
@@ -71,7 +71,7 @@ public class ContentNumberLists {
 		}
 		
 		@Override
-		public List<Proposal> getInitialValueProposals() {
+		public List<Proposal> getInitialTermProposals() {
 			return proposals;
 		}
 	}
@@ -87,7 +87,7 @@ public class ContentNumberLists {
 		}
 		
 		@Override
-		public List<Proposal> getInitialValueProposals() {
+		public List<Proposal> getInitialTermProposals() {
 			return proposals;
 		}
 	}
@@ -102,7 +102,7 @@ public class ContentNumberLists {
 		}
 
 		@Override
-		public List<Proposal> getInitialValueProposals() {
+		public List<Proposal> getInitialTermProposals() {
 			return proposals;
 		}
 	}
@@ -115,7 +115,7 @@ public class ContentNumberLists {
 		}
 		
 		@Override
-		public List<Proposal> getInitialValueProposals() {
+		public List<Proposal> getInitialTermProposals() {
 			return proposals;
 		}
 	}
