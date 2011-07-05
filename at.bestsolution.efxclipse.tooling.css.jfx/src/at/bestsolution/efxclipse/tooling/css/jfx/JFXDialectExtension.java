@@ -2,8 +2,10 @@ package at.bestsolution.efxclipse.tooling.css.jfx;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 
+import at.bestsolution.efxclipse.tooling.css.cssDsl.css_declaration;
 import at.bestsolution.efxclipse.tooling.css.jfx.scene.Group;
 import at.bestsolution.efxclipse.tooling.css.jfx.scene.Node;
 import at.bestsolution.efxclipse.tooling.css.jfx.scene.chart.AreaChart;
@@ -47,12 +49,16 @@ import at.bestsolution.efxclipse.tooling.css.ui.CssDialectExtension;
 
 public class JFXDialectExtension implements CssDialectExtension {
 	private static List<Property> PROPERTIES = new ArrayList<Property>();
+	private static List<Proposal> PREDEFINED_COLORS = new ArrayList<Proposal>();
 	
 	static {
 		init();	
 	}
 	
+	
 	private static void init() {
+		initColors();
+		
 		PROPERTIES.addAll(Node.init());
 		PROPERTIES.addAll(Group.init());
 		PROPERTIES.addAll(ImageView.init());
@@ -92,6 +98,193 @@ public class JFXDialectExtension implements CssDialectExtension {
 		PROPERTIES.addAll(NumberAxis.init());
 		PROPERTIES.addAll(PlotSymbol.init());
 		PROPERTIES.addAll(ValueAxis.init());
+	}
+	
+	private static void initColors() {
+		PREDEFINED_COLORS.add(new Proposal("aliceblue"));
+		PREDEFINED_COLORS.add(new Proposal("aqua"));
+		PREDEFINED_COLORS.add(new Proposal("antiquewhite"));
+		PREDEFINED_COLORS.add(new Proposal("aquamarine"));
+
+		PREDEFINED_COLORS.add(new Proposal("azure"));
+		PREDEFINED_COLORS.add(new Proposal("beige"));
+		PREDEFINED_COLORS.add(new Proposal("bisque"));
+		PREDEFINED_COLORS.add(new Proposal("black"));
+
+		PREDEFINED_COLORS.add(new Proposal("blanchedalmond"));
+		PREDEFINED_COLORS.add(new Proposal("blue"));
+		PREDEFINED_COLORS.add(new Proposal("blueviolet"));
+		PREDEFINED_COLORS.add(new Proposal("brown"));
+
+		PREDEFINED_COLORS.add(new Proposal("burlywood"));
+		PREDEFINED_COLORS.add(new Proposal("cadetblue"));
+		PREDEFINED_COLORS.add(new Proposal("chartreuse"));
+		PREDEFINED_COLORS.add(new Proposal("chocolate"));
+
+		PREDEFINED_COLORS.add(new Proposal("coral"));
+		PREDEFINED_COLORS.add(new Proposal("cornflowerblue"));
+		PREDEFINED_COLORS.add(new Proposal("cornsilk"));
+		PREDEFINED_COLORS.add(new Proposal("crimson"));
+
+		PREDEFINED_COLORS.add(new Proposal("cyan"));
+		PREDEFINED_COLORS.add(new Proposal("darkblue"));
+		PREDEFINED_COLORS.add(new Proposal("darkcyan"));
+		PREDEFINED_COLORS.add(new Proposal("darkgoldenrod"));
+
+		PREDEFINED_COLORS.add(new Proposal("darkgray"));
+		PREDEFINED_COLORS.add(new Proposal("darkgreen"));
+		PREDEFINED_COLORS.add(new Proposal("darkgrey"));
+		PREDEFINED_COLORS.add(new Proposal("darkkhaki"));
+
+		PREDEFINED_COLORS.add(new Proposal("darkmagenta"));
+		PREDEFINED_COLORS.add(new Proposal("darkolivegreen"));
+		PREDEFINED_COLORS.add(new Proposal("darkorange"));
+		PREDEFINED_COLORS.add(new Proposal("darkorchid"));
+
+		PREDEFINED_COLORS.add(new Proposal("darkred"));
+		PREDEFINED_COLORS.add(new Proposal("darksalmon"));
+		PREDEFINED_COLORS.add(new Proposal("darkseagreen"));
+		PREDEFINED_COLORS.add(new Proposal("darkslateblue"));
+
+		PREDEFINED_COLORS.add(new Proposal("darkslategray"));
+		PREDEFINED_COLORS.add(new Proposal("darkslategrey"));
+		PREDEFINED_COLORS.add(new Proposal("darkturquoise"));
+		PREDEFINED_COLORS.add(new Proposal("darkviolet"));
+
+		PREDEFINED_COLORS.add(new Proposal("deeppink"));
+		PREDEFINED_COLORS.add(new Proposal("deepskyblue"));
+		PREDEFINED_COLORS.add(new Proposal("dimgray"));
+		PREDEFINED_COLORS.add(new Proposal("dimgrey"));
+
+		PREDEFINED_COLORS.add(new Proposal("dodgerblue"));
+		PREDEFINED_COLORS.add(new Proposal("firebrick"));
+		PREDEFINED_COLORS.add(new Proposal("floralwhite"));
+		PREDEFINED_COLORS.add(new Proposal("forestgreen"));
+
+		PREDEFINED_COLORS.add(new Proposal("fuchsia"));
+		PREDEFINED_COLORS.add(new Proposal("gainsboro"));
+		PREDEFINED_COLORS.add(new Proposal("ghostwhite"));
+		PREDEFINED_COLORS.add(new Proposal("gold"));
+
+		PREDEFINED_COLORS.add(new Proposal("goldenrod"));
+		PREDEFINED_COLORS.add(new Proposal("gray"));
+		PREDEFINED_COLORS.add(new Proposal("green"));
+		PREDEFINED_COLORS.add(new Proposal("greenyellow"));
+
+		PREDEFINED_COLORS.add(new Proposal("grey"));
+		PREDEFINED_COLORS.add(new Proposal("honeydew"));
+		PREDEFINED_COLORS.add(new Proposal("hotpink"));
+		PREDEFINED_COLORS.add(new Proposal("indianred"));
+
+		PREDEFINED_COLORS.add(new Proposal("indigo"));
+		PREDEFINED_COLORS.add(new Proposal("ivory"));
+		PREDEFINED_COLORS.add(new Proposal("khaki"));
+		PREDEFINED_COLORS.add(new Proposal("lavender"));
+
+		PREDEFINED_COLORS.add(new Proposal("lavenderblush"));
+		PREDEFINED_COLORS.add(new Proposal("lawngreen"));
+		PREDEFINED_COLORS.add(new Proposal("lemonchiffon"));
+		PREDEFINED_COLORS.add(new Proposal("lightblue"));
+
+		PREDEFINED_COLORS.add(new Proposal("lightcoral"));
+		PREDEFINED_COLORS.add(new Proposal("lightcyan"));
+		PREDEFINED_COLORS.add(new Proposal("lightgoldenrodyellow"));
+		PREDEFINED_COLORS.add(new Proposal("lightgray"));
+
+		PREDEFINED_COLORS.add(new Proposal("lightgreen"));
+		PREDEFINED_COLORS.add(new Proposal("lightgrey"));
+		PREDEFINED_COLORS.add(new Proposal("lightpink"));
+		PREDEFINED_COLORS.add(new Proposal("lightsalmon"));
+
+		PREDEFINED_COLORS.add(new Proposal("lightseagreen"));
+		PREDEFINED_COLORS.add(new Proposal("lightskyblue"));
+		PREDEFINED_COLORS.add(new Proposal("lightslategray"));
+		PREDEFINED_COLORS.add(new Proposal("lightslategrey"));
+
+		PREDEFINED_COLORS.add(new Proposal("lightsteelblue"));
+		PREDEFINED_COLORS.add(new Proposal("lightyellow"));
+		PREDEFINED_COLORS.add(new Proposal("lime"));
+		PREDEFINED_COLORS.add(new Proposal("limegreen"));
+
+		PREDEFINED_COLORS.add(new Proposal("linen"));
+		PREDEFINED_COLORS.add(new Proposal("magenta"));
+		PREDEFINED_COLORS.add(new Proposal("maroon"));
+		PREDEFINED_COLORS.add(new Proposal("mediumaquamarine"));
+
+		PREDEFINED_COLORS.add(new Proposal("mediumblue"));
+		PREDEFINED_COLORS.add(new Proposal("mediumorchid"));
+		PREDEFINED_COLORS.add(new Proposal("mediumpurple"));
+		PREDEFINED_COLORS.add(new Proposal("mediumseagreen"));
+
+		PREDEFINED_COLORS.add(new Proposal("mediumslateblue"));
+		PREDEFINED_COLORS.add(new Proposal("mediumspringgreen"));
+		PREDEFINED_COLORS.add(new Proposal("mediumturquoise"));
+		PREDEFINED_COLORS.add(new Proposal("mediumvioletred"));
+
+		PREDEFINED_COLORS.add(new Proposal("midnightblue"));
+		PREDEFINED_COLORS.add(new Proposal("mintcream"));
+		PREDEFINED_COLORS.add(new Proposal("mistyrose"));
+		PREDEFINED_COLORS.add(new Proposal("moccasin"));
+
+		PREDEFINED_COLORS.add(new Proposal("navajowhite"));
+		PREDEFINED_COLORS.add(new Proposal("navy"));
+		PREDEFINED_COLORS.add(new Proposal("oldlace"));
+		PREDEFINED_COLORS.add(new Proposal("olive"));
+
+		PREDEFINED_COLORS.add(new Proposal("olivedrab"));
+		PREDEFINED_COLORS.add(new Proposal("orange"));
+		PREDEFINED_COLORS.add(new Proposal("orangered"));
+		PREDEFINED_COLORS.add(new Proposal("orchid"));
+
+		PREDEFINED_COLORS.add(new Proposal("palegoldenrod"));
+		PREDEFINED_COLORS.add(new Proposal("palegreen"));
+		PREDEFINED_COLORS.add(new Proposal("paleturquoise"));
+		PREDEFINED_COLORS.add(new Proposal("palevioletred"));
+
+		PREDEFINED_COLORS.add(new Proposal("papayawhip"));
+		PREDEFINED_COLORS.add(new Proposal("peachpuff"));
+		PREDEFINED_COLORS.add(new Proposal("peru"));
+		PREDEFINED_COLORS.add(new Proposal("pink"));
+
+		PREDEFINED_COLORS.add(new Proposal("plum"));
+		PREDEFINED_COLORS.add(new Proposal("powderblue"));
+		PREDEFINED_COLORS.add(new Proposal("purple"));
+		PREDEFINED_COLORS.add(new Proposal("red"));
+
+		PREDEFINED_COLORS.add(new Proposal("rosybrown"));
+		PREDEFINED_COLORS.add(new Proposal("royalblue"));
+		PREDEFINED_COLORS.add(new Proposal("saddlebrown"));
+		PREDEFINED_COLORS.add(new Proposal("salmon"));
+
+		PREDEFINED_COLORS.add(new Proposal("sandybrown"));
+		PREDEFINED_COLORS.add(new Proposal("seagreen"));
+		PREDEFINED_COLORS.add(new Proposal("seashell"));
+		PREDEFINED_COLORS.add(new Proposal("sienna"));
+
+		PREDEFINED_COLORS.add(new Proposal("silver"));
+		PREDEFINED_COLORS.add(new Proposal("skyblue"));
+		PREDEFINED_COLORS.add(new Proposal("slateblue"));
+		PREDEFINED_COLORS.add(new Proposal("slategray"));
+
+		PREDEFINED_COLORS.add(new Proposal("slategrey"));
+		PREDEFINED_COLORS.add(new Proposal("snow"));
+		PREDEFINED_COLORS.add(new Proposal("springgreen"));
+		PREDEFINED_COLORS.add(new Proposal("steelblue"));
+
+		PREDEFINED_COLORS.add(new Proposal("tan"));
+		PREDEFINED_COLORS.add(new Proposal("teal"));
+		PREDEFINED_COLORS.add(new Proposal("thistle"));
+		PREDEFINED_COLORS.add(new Proposal("tomato"));
+
+		PREDEFINED_COLORS.add(new Proposal("turquoise"));
+		PREDEFINED_COLORS.add(new Proposal("violet"));
+		PREDEFINED_COLORS.add(new Proposal("wheat"));
+		PREDEFINED_COLORS.add(new Proposal("white"));
+
+		PREDEFINED_COLORS.add(new Proposal("whitesmoke"));
+		PREDEFINED_COLORS.add(new Proposal("yellow"));
+		PREDEFINED_COLORS.add(new Proposal("yellowgreen"));
+		PREDEFINED_COLORS.add(new Proposal("transparent"));
 	}
 	
 	@Override
@@ -136,22 +329,40 @@ public class JFXDialectExtension implements CssDialectExtension {
 		}
 	}
 	
-	public static class MultiSize4TimesProperty extends Property {
+	public static class MultiSize4TimesProperty extends Property implements MultiTermGroupProperty, MultiValuesGroupProperty {
 		private List<Proposal> proposals = new ArrayList<Proposal>();
+		private List<Proposal> singleTerm = new ArrayList<Proposal>();
 		
 		public MultiSize4TimesProperty(String name) {
 			super(name);
 			proposals.add(new Proposal("1"));
+			singleTerm.add(new Proposal("1"));
 			proposals.add(new Proposal("1 1 1 1"));
 			
 			for( String u : sizeUnits() ) {
 				proposals.add(new Proposal("1"+u));
+				singleTerm.add(new Proposal("1"+u));
 				proposals.add(new Proposal("1"+u+" 1"+u+" 1"+u+" 1"+u));
 			}
 		}
 
 		@Override
 		public List<Proposal> getInitialTermProposals() {
+			return proposals;
+		}
+
+		@Override
+		public List<Proposal> getNextTermProposal(int index,
+				css_declaration currentDeclaration) {
+			if( index < 4 ) {
+				return singleTerm;
+			}
+			return Collections.emptyList();
+		}
+
+		@Override
+		public List<Proposal> getInitialTermProposal(int index,
+				css_declaration currentDeclaration) {
 			return proposals;
 		}
 	}
@@ -161,6 +372,20 @@ public class JFXDialectExtension implements CssDialectExtension {
 		
 		public PaintProperty(String name) {
 			super(name);
+			// color stuff
+			proposals.addAll(PREDEFINED_COLORS);
+			proposals.add(new Proposal(2,"#000"));
+			proposals.add(new Proposal(2,"#00000"));
+			proposals.add(new Proposal(2,"rgb(0,0,0)"));
+			proposals.add(new Proposal(2,"rgba(0,0,0,0)"));
+			proposals.add(new Proposal(2,"hsb(0,0%,0%)"));
+			proposals.add(new Proposal(2,"hsb(0,0%,0%,0)"));
+			proposals.add(new Proposal(2,"derive(<color>,0%)"));
+			proposals.add(new Proposal(2,"ladder(<color>) stops (0, <color>)"));
+			
+			// gradient
+			proposals.add(new Proposal(2,"linear ( <size> , <size> ) to ( <size> , <size> ) stops ( <number> , <color> )"));
+			proposals.add(new Proposal(2,"radial <size> stops ( <number> , <color> )"));
 		}
 		
 		@Override
@@ -169,7 +394,7 @@ public class JFXDialectExtension implements CssDialectExtension {
 		}
 	}
 	
-	public static class MultiPaintProperty extends Property {
+	public static class MultiPaintProperty extends Property implements MultiTermGroupProperty {
 		private List<Proposal> proposals = new ArrayList<Proposal>();
 		
 		public MultiPaintProperty(String name) {
@@ -180,9 +405,16 @@ public class JFXDialectExtension implements CssDialectExtension {
 		public List<Proposal> getInitialTermProposals() {
 			return proposals;
 		}
+
+		@Override
+		public List<Proposal> getInitialTermProposal(int index,
+				css_declaration currentDeclaration) {
+			// TODO Auto-generated method stub
+			return Collections.emptyList();
+		}
 	}
 	
-	public static class MultiPaint4TimesProperty extends Property {
+	public static class MultiPaint4TimesProperty extends Property implements MultiValuesGroupProperty, MultiTermGroupProperty {
 		private List<Proposal> proposals = new ArrayList<Proposal>();
 		
 		public MultiPaint4TimesProperty(String name) {
@@ -192,6 +424,20 @@ public class JFXDialectExtension implements CssDialectExtension {
 		@Override
 		public List<Proposal> getInitialTermProposals() {
 			return proposals;
+		}
+
+		@Override
+		public List<Proposal> getInitialTermProposal(int index,
+				css_declaration currentDeclaration) {
+			// TODO Auto-generated method stub
+			return Collections.emptyList();
+		}
+
+		@Override
+		public List<Proposal> getNextTermProposal(int index,
+				css_declaration currentDeclaration) {
+			// TODO Auto-generated method stub
+			return Collections.emptyList();
 		}
 	}
 	

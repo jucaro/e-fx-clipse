@@ -5,7 +5,10 @@ import static at.bestsolution.efxclipse.tooling.css.ui.CssDialectExtension.Util.
 import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
+
+import org.eclipse.swt.graphics.Image;
 
 import at.bestsolution.efxclipse.tooling.css.cssDsl.css_declaration;
 
@@ -133,8 +136,9 @@ public interface CssDialectExtension {
 		}
 	}
 	
-	public static class EnumsProperty extends Property {
+	public static class EnumsProperty extends Property implements MultiValuesGroupProperty {
 		private List<Proposal> proposals = new ArrayList<Proposal>();
+		private List<Proposal> singleTerms = new ArrayList<Proposal>();
 		private int partCount;
 		
 		public EnumsProperty(String name, int partCount, String... enums) {
@@ -149,7 +153,9 @@ public interface CssDialectExtension {
 					}
 					b.append(v);
 				}
+				proposals.add(new Proposal(v));
 				proposals.add(new Proposal(b.toString()));
+				singleTerms.add(new Proposal(v));
 			}
 			proposals.add(new Proposal("inherit"));
 		}
@@ -158,14 +164,30 @@ public interface CssDialectExtension {
 		public List<Proposal> getInitialTermProposals() {
 			return proposals;
 		}
+
+		@Override
+		public List<Proposal> getNextTermProposal(int index,
+				css_declaration currentDeclaration) {
+			if( index < partCount ) {
+				return singleTerms;
+			}
+			return Collections.emptyList();
+		}
 	}
 	
 	public static class Proposal {
 		private String proposal;
 		private String label;
 		private String imageUrl;
+		private int priority = 1;
 		
 		public Proposal(String label) {
+			this.proposal = label;
+			this.label = label;
+		}
+		
+		public Proposal(int priority, String label) {
+			this.priority = priority;
 			this.proposal = label;
 			this.label = label;
 		}
@@ -180,6 +202,10 @@ public interface CssDialectExtension {
 		
 		public String getLabel() {
 			return label;
+		}
+		
+		public int getPriority() {
+			return priority;
 		}
 	}
 	
