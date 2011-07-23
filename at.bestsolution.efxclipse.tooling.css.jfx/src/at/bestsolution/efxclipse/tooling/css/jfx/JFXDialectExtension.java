@@ -6,6 +6,8 @@ import java.util.Collections;
 import java.util.List;
 
 import at.bestsolution.efxclipse.tooling.css.cssDsl.css_declaration;
+import at.bestsolution.efxclipse.tooling.css.cssDsl.term;
+import at.bestsolution.efxclipse.tooling.css.cssDsl.termGroup;
 import at.bestsolution.efxclipse.tooling.css.jfx.scene.Group;
 import at.bestsolution.efxclipse.tooling.css.jfx.scene.Node;
 import at.bestsolution.efxclipse.tooling.css.jfx.scene.chart.AreaChart;
@@ -353,7 +355,7 @@ public class JFXDialectExtension implements CssDialectExtension {
 
 		@Override
 		public List<Proposal> getNextTermProposal(int index,
-				css_declaration currentDeclaration) {
+				termGroup group, term term) {
 			if( index < 4 ) {
 				return singleTerm;
 			}
@@ -435,7 +437,7 @@ public class JFXDialectExtension implements CssDialectExtension {
 
 		@Override
 		public List<Proposal> getNextTermProposal(int index,
-				css_declaration currentDeclaration) {
+				termGroup group, term term) {
 			// TODO Auto-generated method stub
 			return Collections.emptyList();
 		}
