@@ -1642,7 +1642,7 @@ public class CssDslGrammarAccess extends AbstractGrammarElementFinder {
 	} 
 
 	//terminal IDENT:
-	//	("_" | "a".."z" | "A".."Z") ("_" | "-" | "a".."z" | "A".."Z" | "0..9")*;
+	//	("_" | "a".."z" | "A".."Z") ("_" | "-" | "a".."z" | "A".."Z" | "0".."9")*;
 	public TerminalRule getIDENTRule() {
 		return (tIDENT != null) ? tIDENT : (tIDENT = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "IDENT"));
 	} 

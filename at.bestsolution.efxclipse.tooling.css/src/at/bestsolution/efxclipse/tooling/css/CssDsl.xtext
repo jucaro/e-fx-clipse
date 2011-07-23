@@ -169,7 +169,7 @@ terminal integer:('0'..'9')+;
 terminal real: (('0'..'9')*"."('0'..'9')+);
 terminal hexdigits:('0'..'9'|'a'..'f' | 'A'..'F')+;
 
-terminal IDENT: ('_' | 'a'..'z' | 'A'..'Z' ) ('_' | '-' | 'a'..'z' | 'A'..'Z' | '0..9' )*;
+terminal IDENT: ('_' | 'a'..'z' | 'A'..'Z' ) ('_' | '-' | 'a'..'z' | 'A'..'Z' | '0'..'9' )*;
 terminal COMMA: ',';
 terminal ML_COMMENT	: '/*' -> '*/';
 terminal WS			: (' '|'\t'|'\r'|'\n')+;
