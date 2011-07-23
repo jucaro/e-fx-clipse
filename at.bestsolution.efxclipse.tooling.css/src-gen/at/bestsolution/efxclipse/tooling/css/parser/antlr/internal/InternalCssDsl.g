@@ -772,6 +772,13 @@ ruleelement_name returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleTo
     { 
     newLeafNode(this_IDENT_1, grammarAccess.getElement_nameAccess().getIDENTTerminalRuleCall_1()); 
     }
+
+    |
+	kw='*' 
+    {
+        $current.merge(kw);
+        newLeafNode(kw, grammarAccess.getElement_nameAccess().getAsteriskKeyword_2()); 
+    }
 )
     ;
 
@@ -1129,20 +1136,27 @@ rulecombinator returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToke
     @init { enterRule(); 
     }
     @after { leaveRule(); }:
-(
+((
 	kw='+' 
     {
         $current.merge(kw);
-        newLeafNode(kw, grammarAccess.getCombinatorAccess().getPlusSignKeyword_0()); 
+        newLeafNode(kw, grammarAccess.getCombinatorAccess().getPlusSignKeyword_0_0()); 
     }
 
     |
 	kw='>' 
     {
         $current.merge(kw);
-        newLeafNode(kw, grammarAccess.getCombinatorAccess().getGreaterThanSignKeyword_1()); 
+        newLeafNode(kw, grammarAccess.getCombinatorAccess().getGreaterThanSignKeyword_0_1()); 
     }
-)
+)(    this_WS_2=RULE_WS    {
+		$current.merge(this_WS_2);
+    }
+
+    { 
+    newLeafNode(this_WS_2, grammarAccess.getCombinatorAccess().getWSTerminalRuleCall_1()); 
+    }
+)*)
     ;
 
 

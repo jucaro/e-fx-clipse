@@ -395,12 +395,13 @@ public class CssDslGrammarAccess extends AbstractGrammarElementFinder {
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
 		private final RuleCall cHexdigitsTerminalRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
 		private final RuleCall cIDENTTerminalRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
+		private final Keyword cAsteriskKeyword_2 = (Keyword)cAlternatives.eContents().get(2);
 		
 		//element_name:
-		//	hexdigits | IDENT;
+		//	hexdigits | IDENT | "*";
 		public ParserRule getRule() { return rule; }
 
-		//hexdigits | IDENT
+		//hexdigits | IDENT | "*"
 		public Alternatives getAlternatives() { return cAlternatives; }
 
 		//hexdigits
@@ -408,6 +409,9 @@ public class CssDslGrammarAccess extends AbstractGrammarElementFinder {
 
 		//IDENT
 		public RuleCall getIDENTTerminalRuleCall_1() { return cIDENTTerminalRuleCall_1; }
+
+		//"*"
+		public Keyword getAsteriskKeyword_2() { return cAsteriskKeyword_2; }
 	}
 
 	public class Css_classElements extends AbstractParserRuleElementFinder {
@@ -625,22 +629,30 @@ public class CssDslGrammarAccess extends AbstractGrammarElementFinder {
 
 	public class CombinatorElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "combinator");
-		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
-		private final Keyword cPlusSignKeyword_0 = (Keyword)cAlternatives.eContents().get(0);
-		private final Keyword cGreaterThanSignKeyword_1 = (Keyword)cAlternatives.eContents().get(1);
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Alternatives cAlternatives_0 = (Alternatives)cGroup.eContents().get(0);
+		private final Keyword cPlusSignKeyword_0_0 = (Keyword)cAlternatives_0.eContents().get(0);
+		private final Keyword cGreaterThanSignKeyword_0_1 = (Keyword)cAlternatives_0.eContents().get(1);
+		private final RuleCall cWSTerminalRuleCall_1 = (RuleCall)cGroup.eContents().get(1);
 		
 		//combinator:
-		//	"+" | ">";
+		//	("+" | ">") WS*;
 		public ParserRule getRule() { return rule; }
 
+		//("+" | ">") WS*
+		public Group getGroup() { return cGroup; }
+
 		//"+" | ">"
-		public Alternatives getAlternatives() { return cAlternatives; }
+		public Alternatives getAlternatives_0() { return cAlternatives_0; }
 
 		//"+"
-		public Keyword getPlusSignKeyword_0() { return cPlusSignKeyword_0; }
+		public Keyword getPlusSignKeyword_0_0() { return cPlusSignKeyword_0_0; }
 
 		//">"
-		public Keyword getGreaterThanSignKeyword_1() { return cGreaterThanSignKeyword_1; }
+		public Keyword getGreaterThanSignKeyword_0_1() { return cGreaterThanSignKeyword_0_1; }
+
+		//WS*
+		public RuleCall getWSTerminalRuleCall_1() { return cWSTerminalRuleCall_1; }
 	}
 
 	public class OperatorElements extends AbstractParserRuleElementFinder {
@@ -1329,7 +1341,7 @@ public class CssDslGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//element_name:
-	//	hexdigits | IDENT;
+	//	hexdigits | IDENT | "*";
 	public Element_nameElements getElement_nameAccess() {
 		return (pElement_name != null) ? pElement_name : (pElement_name = new Element_nameElements());
 	}
@@ -1409,7 +1421,7 @@ public class CssDslGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//combinator:
-	//	"+" | ">";
+	//	("+" | ">") WS*;
 	public CombinatorElements getCombinatorAccess() {
 		return (pCombinator != null) ? pCombinator : (pCombinator = new CombinatorElements());
 	}

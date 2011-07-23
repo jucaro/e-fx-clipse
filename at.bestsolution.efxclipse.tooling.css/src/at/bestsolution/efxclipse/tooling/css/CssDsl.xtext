@@ -48,7 +48,7 @@ simple_selector:
 ;
 
 element_name:
-	(hexdigits | IDENT)
+	(hexdigits | IDENT | '*')
 ;
 
 css_class
@@ -80,8 +80,8 @@ css_pseudo
   ;
 
 combinator
-  : '+'
-  | '>'
+  : ('+'
+  | '>') WS*
   ;
   
 operator
