@@ -8,9 +8,9 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-import org.eclipse.swt.graphics.Image;
-
 import at.bestsolution.efxclipse.tooling.css.cssDsl.css_declaration;
+import at.bestsolution.efxclipse.tooling.css.cssDsl.term;
+import at.bestsolution.efxclipse.tooling.css.cssDsl.termGroup;
 
 public interface CssDialectExtension {
 	public abstract static class Property {
@@ -28,7 +28,7 @@ public interface CssDialectExtension {
 	}
 	
 	public interface MultiValuesGroupProperty {
-		public List<Proposal> getNextTermProposal(int index, css_declaration currentDeclaration);
+		public List<Proposal> getNextTermProposal(int index, termGroup currentGroup, term term);
 	}
 	
 	public interface MultiTermGroupProperty {
@@ -167,7 +167,7 @@ public interface CssDialectExtension {
 
 		@Override
 		public List<Proposal> getNextTermProposal(int index,
-				css_declaration currentDeclaration) {
+				termGroup currentGroup, term term) {
 			if( index < partCount ) {
 				return singleTerms;
 			}

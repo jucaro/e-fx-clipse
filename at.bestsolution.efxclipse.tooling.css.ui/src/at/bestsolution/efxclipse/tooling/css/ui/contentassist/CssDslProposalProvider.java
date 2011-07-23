@@ -109,7 +109,7 @@ public class CssDslProposalProvider extends AbstractCssDslProposalProvider {
 				Property p = getProperty(extension.getProperties(), dec.getProperty());
 //				System.err.println("This is the first group");
 				if( p instanceof MultiValuesGroupProperty ) {
-					addProposals(((MultiValuesGroupProperty) p).getNextTermProposal(group.getTerms().size(), dec), acceptor, context);
+					addProposals(((MultiValuesGroupProperty) p).getNextTermProposal(group.getTerms().size(), group, null), acceptor, context);
 //					System.err.println("Property with multi terms in a group");
 				}
 			} else {
@@ -117,7 +117,7 @@ public class CssDslProposalProvider extends AbstractCssDslProposalProvider {
 				Property p = getProperty(extension.getProperties(), dec.getProperty());
 				if( p instanceof MultiTermGroupProperty && p instanceof MultiValuesGroupProperty ) {
 //					System.err.println("Property with multi terms in a group");
-					addProposals(((MultiValuesGroupProperty) p).getNextTermProposal(group.getTerms().size(), dec), acceptor, context);
+					addProposals(((MultiValuesGroupProperty) p).getNextTermProposal(group.getTerms().size(), group, null), acceptor, context);
 				}
 			}
 			
@@ -154,7 +154,7 @@ public class CssDslProposalProvider extends AbstractCssDslProposalProvider {
 						} else if( p instanceof MultiValuesGroupProperty ) {
 //							System.err.println("Second term");
 							MultiValuesGroupProperty tmp = (MultiValuesGroupProperty) p;
-							addProposals(tmp.getNextTermProposal(idx, dec), acceptor, context);
+							addProposals(tmp.getNextTermProposal(idx, group, term), acceptor, context);
 						}
 					} else {
 						if( p instanceof MultiTermGroupProperty ) {
@@ -166,7 +166,7 @@ public class CssDslProposalProvider extends AbstractCssDslProposalProvider {
 							} else if( p instanceof MultiValuesGroupProperty ) {
 //								System.err.println("2nd term in > 1 group");
 								MultiValuesGroupProperty tmp2 = (MultiValuesGroupProperty) p;
-								addProposals(tmp2.getNextTermProposal(idx, dec), acceptor, context);
+								addProposals(tmp2.getNextTermProposal(idx, group, term), acceptor, context);
 							}
 						}
 					}
