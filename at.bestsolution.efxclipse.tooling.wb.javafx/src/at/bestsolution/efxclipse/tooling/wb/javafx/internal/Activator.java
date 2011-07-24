@@ -1,4 +1,4 @@
-package at.bestsolution.efxclipse.tooling.wb.javafx;
+package at.bestsolution.efxclipse.tooling.wb.javafx.internal;
 
 import org.eclipse.ui.plugin.AbstractUIPlugin;
 import org.osgi.framework.BundleContext;
