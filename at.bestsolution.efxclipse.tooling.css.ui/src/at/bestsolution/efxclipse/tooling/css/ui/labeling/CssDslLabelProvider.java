@@ -10,6 +10,8 @@ import at.bestsolution.efxclipse.tooling.css.cssDsl.ruleset;
 import at.bestsolution.efxclipse.tooling.css.cssDsl.selector;
 import at.bestsolution.efxclipse.tooling.css.cssDsl.simple_selector;
 import at.bestsolution.efxclipse.tooling.css.cssDsl.stylesheet;
+import at.bestsolution.efxclipse.tooling.css.cssDsl.term;
+import at.bestsolution.efxclipse.tooling.css.cssDsl.termGroup;
 
 import com.google.inject.Inject;
 
@@ -76,6 +78,30 @@ public class CssDslLabelProvider extends DefaultEObjectLabelProvider {
 		
 		return b.toString();
 	}
+	
+	String text(term value) {
+		if( value.getHexColor() != null ) {
+			return value.getHexColor();
+		} else if( value.getIdentifier() != null) {
+			return value.getIdentifier();
+		} else if( value.getNumber() != null ) {
+			return value.getNumber();
+		} else if( value.getStringValue() != null ) {
+			return value.getStringValue();
+		} else if( value.getFunction() != null ) {
+			return "<function>";
+		}
+		
+		return null;
+	}
+	
+	String text(termGroup value) {
+		return "<group>";
+	}
+	
+//	public String text(Object t) {
+//		return t.toString();
+//	}
 	
 //	String text(Dim4Size value) {
 //		StringBuilder b = new StringBuilder();
