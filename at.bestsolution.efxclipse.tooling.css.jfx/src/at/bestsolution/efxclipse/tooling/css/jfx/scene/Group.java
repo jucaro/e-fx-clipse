@@ -1,12 +1,12 @@
 package at.bestsolution.efxclipse.tooling.css.jfx.scene;
 
-import static at.bestsolution.efxclipse.tooling.css.ui.CssDialectExtension.Util.createEnumProperties;
+import static at.bestsolution.efxclipse.tooling.css.CssDialectExtension.Util.createEnumProperties;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-import at.bestsolution.efxclipse.tooling.css.ui.CssDialectExtension.Property;
+import at.bestsolution.efxclipse.tooling.css.CssDialectExtension.Property;
 
 public class Group {
 	public static List<Property> init() {

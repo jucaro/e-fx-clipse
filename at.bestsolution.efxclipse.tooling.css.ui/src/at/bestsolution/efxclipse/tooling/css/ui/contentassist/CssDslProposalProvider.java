@@ -13,15 +13,15 @@ import org.eclipse.xtext.ui.editor.contentassist.ICompletionProposalAcceptor;
 import org.osgi.framework.BundleContext;
 import org.osgi.framework.ServiceReference;
 
+import at.bestsolution.efxclipse.tooling.css.CssDialectExtension.MultiTermGroupProperty;
+import at.bestsolution.efxclipse.tooling.css.CssDialectExtension.MultiValuesGroupProperty;
+import at.bestsolution.efxclipse.tooling.css.CssDialectExtension.Property;
+import at.bestsolution.efxclipse.tooling.css.CssDialectExtension.Proposal;
 import at.bestsolution.efxclipse.tooling.css.cssDsl.css_generic_declaration;
 import at.bestsolution.efxclipse.tooling.css.cssDsl.expr;
 import at.bestsolution.efxclipse.tooling.css.cssDsl.ruleset;
 import at.bestsolution.efxclipse.tooling.css.cssDsl.term;
 import at.bestsolution.efxclipse.tooling.css.cssDsl.termGroup;
-import at.bestsolution.efxclipse.tooling.css.ui.CssDialectExtension.MultiTermGroupProperty;
-import at.bestsolution.efxclipse.tooling.css.ui.CssDialectExtension.MultiValuesGroupProperty;
-import at.bestsolution.efxclipse.tooling.css.ui.CssDialectExtension.Property;
-import at.bestsolution.efxclipse.tooling.css.ui.CssDialectExtension.Proposal;
 import at.bestsolution.efxclipse.tooling.css.ui.internal.CssDialectExtensionComponent;
 import at.bestsolution.efxclipse.tooling.css.ui.internal.CssDslActivator;
 /**

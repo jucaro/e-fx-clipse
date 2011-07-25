@@ -1,12 +1,15 @@
-package at.bestsolution.efxclipse.tooling.css.ui;
+package at.bestsolution.efxclipse.tooling.css;
 
-import static at.bestsolution.efxclipse.tooling.css.ui.CssDialectExtension.Util.fromList;
+import static at.bestsolution.efxclipse.tooling.css.CssDialectExtension.Util.fromList;
 
 import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+
+import org.eclipse.core.runtime.IStatus;
+import org.eclipse.core.runtime.Status;
 
 import at.bestsolution.efxclipse.tooling.css.cssDsl.css_declaration;
 import at.bestsolution.efxclipse.tooling.css.cssDsl.term;
@@ -15,16 +18,30 @@ import at.bestsolution.efxclipse.tooling.css.cssDsl.termGroup;
 public interface CssDialectExtension {
 	public abstract static class Property {
 		private final String name;
+		private final String description;
 		
 		public Property(String name) {
+			this(name,null);
+		}
+		
+		public Property(String name, String description) {
 			this.name = name;
+			this.description = description;
 		}
 		
 		public String getName() {
 			return name;
 		}
 		
+		public String getDescription() {
+			return description;
+		}
+		
 		public abstract List<Proposal> getInitialTermProposals();
+		
+		public IStatus validate(css_declaration dec) {
+			return Status.OK_STATUS;
+		}
 	}
 	
 	public interface MultiValuesGroupProperty {
@@ -95,7 +112,11 @@ public interface CssDialectExtension {
 		private List<Proposal> proposals = new ArrayList<Proposal>();
 		
 		public EnumProperty(String name, String... enums) {
-			super(name);
+			this(name,null,enums);
+		}
+		
+		public EnumProperty(String name, String description, String... enums) {
+			super(name, description);
 			proposals.addAll(fromList(enums));
 			proposals.add(new Proposal("inherit"));
 		}
@@ -142,7 +163,11 @@ public interface CssDialectExtension {
 		private int partCount;
 		
 		public EnumsProperty(String name, int partCount, String... enums) {
-			super(name);
+			this(name,null,partCount,enums);
+		}
+		
+		public EnumsProperty(String name, String description, int partCount, String... enums) {
+			super(name, description);
 			this.partCount = partCount;
 			
 			for( String v : enums ) {
@@ -210,6 +235,20 @@ public interface CssDialectExtension {
 	}
 	
 	public static class Util {
+		public static class DescribedName {
+			private final String name;
+			private final String description;
+			
+			public DescribedName(String name, String description) {
+				this.name = name;
+				this.description = description;
+			}
+			
+			public static DescribedName c(String name, String description) {
+				return new DescribedName(name, description);
+			}
+		}
+		
 		public static List<Proposal> fromList(String... strings) {
 			List<Proposal> rv = new ArrayList<Proposal>();
 			for( String s : strings ) {
@@ -229,6 +268,17 @@ public interface CssDialectExtension {
 			return rv;
 		}
 		
+		public static List<Property> createEnumProperties(List<String> enums, DescribedName... names) {
+			List<Property> rv = new ArrayList<Property>(names.length);
+			String[] arEnums = enums.toArray(new String[0]);
+			
+			for( DescribedName name : names ) {
+				rv.add(new EnumProperty(name.name, name.description, arEnums));
+			}
+			
+			return rv;
+		}
+		
 		public static List<Property> createEnumsProperties(List<String> enums, int partCount, String... names) {
 			List<Property> rv = new ArrayList<Property>(names.length);
 			String[] arEnums = enums.toArray(new String[0]);
@@ -240,7 +290,18 @@ public interface CssDialectExtension {
 			return rv;
 		}
 		
-		public static List<Property> createReflective(Class<? extends Property> clazz,String... names) {
+		public static List<Property> createEnumsProperties(List<String> enums, int partCount, DescribedName... names) {
+			List<Property> rv = new ArrayList<Property>(names.length);
+			String[] arEnums = enums.toArray(new String[0]);
+			
+			for( DescribedName name : names ) {
+				rv.add(new EnumsProperty(name.name, name.description, partCount, arEnums));
+			}
+			
+			return rv;
+		}
+		
+		public static List<Property> createReflective(Class<? extends Property> clazz, String... names) {
 			List<Property> rv = new ArrayList<Property>(names.length);
 			Constructor<? extends Property> c;
 			try {

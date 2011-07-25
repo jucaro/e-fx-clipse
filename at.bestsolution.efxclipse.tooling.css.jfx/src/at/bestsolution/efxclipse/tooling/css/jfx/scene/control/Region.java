@@ -1,13 +1,20 @@
 package at.bestsolution.efxclipse.tooling.css.jfx.scene.control;
 
-import static at.bestsolution.efxclipse.tooling.css.ui.CssDialectExtension.Util.createReflective;
-import static at.bestsolution.efxclipse.tooling.css.ui.CssDialectExtension.Util.fromList;
+import static at.bestsolution.efxclipse.tooling.css.CssDialectExtension.Util.createReflective;
+import static at.bestsolution.efxclipse.tooling.css.CssDialectExtension.Util.fromList;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
+import at.bestsolution.efxclipse.tooling.css.CssDialectExtension.BooleanProperty;
+import at.bestsolution.efxclipse.tooling.css.CssDialectExtension.MultiTermGroupProperty;
+import at.bestsolution.efxclipse.tooling.css.CssDialectExtension.MultiValuesGroupProperty;
+import at.bestsolution.efxclipse.tooling.css.CssDialectExtension.Property;
+import at.bestsolution.efxclipse.tooling.css.CssDialectExtension.Proposal;
+import at.bestsolution.efxclipse.tooling.css.CssDialectExtension.StringProperty;
+import at.bestsolution.efxclipse.tooling.css.CssDialectExtension.UrlsProperty;
 import at.bestsolution.efxclipse.tooling.css.cssDsl.css_declaration;
 import at.bestsolution.efxclipse.tooling.css.cssDsl.term;
 import at.bestsolution.efxclipse.tooling.css.cssDsl.termGroup;
@@ -15,13 +22,6 @@ import at.bestsolution.efxclipse.tooling.css.jfx.JFXDialectExtension;
 import at.bestsolution.efxclipse.tooling.css.jfx.JFXDialectExtension.MultiPaint4TimesProperty;
 import at.bestsolution.efxclipse.tooling.css.jfx.JFXDialectExtension.MultiPaintProperty;
 import at.bestsolution.efxclipse.tooling.css.jfx.JFXDialectExtension.MultiSize4TimesProperty;
-import at.bestsolution.efxclipse.tooling.css.ui.CssDialectExtension.BooleanProperty;
-import at.bestsolution.efxclipse.tooling.css.ui.CssDialectExtension.MultiTermGroupProperty;
-import at.bestsolution.efxclipse.tooling.css.ui.CssDialectExtension.MultiValuesGroupProperty;
-import at.bestsolution.efxclipse.tooling.css.ui.CssDialectExtension.Property;
-import at.bestsolution.efxclipse.tooling.css.ui.CssDialectExtension.Proposal;
-import at.bestsolution.efxclipse.tooling.css.ui.CssDialectExtension.StringProperty;
-import at.bestsolution.efxclipse.tooling.css.ui.CssDialectExtension.UrlsProperty;
 
 public class Region {
 	public static List<Property> init() {

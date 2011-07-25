@@ -2,6 +2,6 @@
 <scr:component xmlns:scr="http://www.osgi.org/xmlns/scr/v1.1.0" name="at.bestsolution.efxclipse.tooling.css.jfx">
    <implementation class="at.bestsolution.efxclipse.tooling.css.jfx.JFXDialectExtension"/>
    <service>
-      <provide interface="at.bestsolution.efxclipse.tooling.css.ui.CssDialectExtension"/>
+      <provide interface="at.bestsolution.efxclipse.tooling.css.CssDialectExtension"/>
    </service>
 </scr:component>

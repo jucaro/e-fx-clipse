@@ -5,6 +5,7 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
+import at.bestsolution.efxclipse.tooling.css.CssDialectExtension;
 import at.bestsolution.efxclipse.tooling.css.cssDsl.css_declaration;
 import at.bestsolution.efxclipse.tooling.css.cssDsl.term;
 import at.bestsolution.efxclipse.tooling.css.cssDsl.termGroup;
@@ -47,7 +48,6 @@ import at.bestsolution.efxclipse.tooling.css.jfx.scene.layout.VBox;
 import at.bestsolution.efxclipse.tooling.css.jfx.scene.shape.Rectangle;
 import at.bestsolution.efxclipse.tooling.css.jfx.scene.shape.Shape;
 import at.bestsolution.efxclipse.tooling.css.jfx.scene.text.Text;
-import at.bestsolution.efxclipse.tooling.css.ui.CssDialectExtension;
 
 public class JFXDialectExtension implements CssDialectExtension {
 	private static List<Property> PROPERTIES = new ArrayList<Property>();

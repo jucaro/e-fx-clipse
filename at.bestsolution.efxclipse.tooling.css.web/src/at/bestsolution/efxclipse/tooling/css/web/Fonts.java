@@ -1,14 +1,14 @@
 package at.bestsolution.efxclipse.tooling.css.web;
 
-import static at.bestsolution.efxclipse.tooling.css.ui.CssDialectExtension.Util.createEnumProperties;
-import static at.bestsolution.efxclipse.tooling.css.ui.CssDialectExtension.Util.createReflective;
+import static at.bestsolution.efxclipse.tooling.css.CssDialectExtension.Util.createEnumProperties;
+import static at.bestsolution.efxclipse.tooling.css.CssDialectExtension.Util.createReflective;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-import at.bestsolution.efxclipse.tooling.css.ui.CssDialectExtension.Property;
-import at.bestsolution.efxclipse.tooling.css.ui.CssDialectExtension.Proposal;
+import at.bestsolution.efxclipse.tooling.css.CssDialectExtension.Property;
+import at.bestsolution.efxclipse.tooling.css.CssDialectExtension.Proposal;
 
 public class Fonts {
 	public static List<Property> init() {

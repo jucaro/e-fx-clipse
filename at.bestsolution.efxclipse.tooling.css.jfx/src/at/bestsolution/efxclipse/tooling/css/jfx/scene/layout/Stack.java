@@ -1,14 +1,14 @@
 package at.bestsolution.efxclipse.tooling.css.jfx.scene.layout;
 
-import static at.bestsolution.efxclipse.tooling.css.ui.CssDialectExtension.Util.createReflective;
-import static at.bestsolution.efxclipse.tooling.css.ui.CssDialectExtension.Util.createEnumProperties;
+import static at.bestsolution.efxclipse.tooling.css.CssDialectExtension.Util.createEnumProperties;
+import static at.bestsolution.efxclipse.tooling.css.CssDialectExtension.Util.createReflective;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+import at.bestsolution.efxclipse.tooling.css.CssDialectExtension.Property;
 import at.bestsolution.efxclipse.tooling.css.jfx.JFXDialectExtension.Size4TimesProperty;
-import at.bestsolution.efxclipse.tooling.css.ui.CssDialectExtension.Property;
 
 public class Stack {
 	public static List<Property> init() {

@@ -3,7 +3,7 @@ package at.bestsolution.efxclipse.tooling.css.ui.internal;
 import java.util.ArrayList;
 import java.util.List;
 
-import at.bestsolution.efxclipse.tooling.css.ui.CssDialectExtension;
+import at.bestsolution.efxclipse.tooling.css.CssDialectExtension;
 
 public class CssDialectExtensionComponent implements CssDialectExtension {
 	private List<CssDialectExtension> extensions = new ArrayList<CssDialectExtension>();

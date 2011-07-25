@@ -1,16 +1,16 @@
 package at.bestsolution.efxclipse.tooling.css.jfx.scene;
 
-import static at.bestsolution.efxclipse.tooling.css.ui.CssDialectExtension.Util.createEnumProperties;
-import static at.bestsolution.efxclipse.tooling.css.ui.CssDialectExtension.Util.createReflective;
+import static at.bestsolution.efxclipse.tooling.css.CssDialectExtension.Util.createEnumProperties;
+import static at.bestsolution.efxclipse.tooling.css.CssDialectExtension.Util.createReflective;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-import at.bestsolution.efxclipse.tooling.css.ui.CssDialectExtension.BooleanProperty;
-import at.bestsolution.efxclipse.tooling.css.ui.CssDialectExtension.NumberPropery;
-import at.bestsolution.efxclipse.tooling.css.ui.CssDialectExtension.Property;
-import at.bestsolution.efxclipse.tooling.css.ui.CssDialectExtension.Proposal;
+import at.bestsolution.efxclipse.tooling.css.CssDialectExtension.BooleanProperty;
+import at.bestsolution.efxclipse.tooling.css.CssDialectExtension.NumberPropery;
+import at.bestsolution.efxclipse.tooling.css.CssDialectExtension.Property;
+import at.bestsolution.efxclipse.tooling.css.CssDialectExtension.Proposal;
 
 public class Node {
 	public static List<Property> init() {
