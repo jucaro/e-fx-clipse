@@ -12,6 +12,7 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EStructuralFeature;
 
 import at.bestsolution.efxclipse.tooling.css.cssDsl.css_declaration;
+import at.bestsolution.efxclipse.tooling.css.cssDsl.css_generic_declaration;
 import at.bestsolution.efxclipse.tooling.css.cssDsl.term;
 import at.bestsolution.efxclipse.tooling.css.cssDsl.termGroup;
 
@@ -61,7 +62,7 @@ public interface CssDialectExtension {
 		
 		public abstract List<Proposal> getInitialTermProposals();
 		
-		public ValidationResult[] validate(css_declaration dec) {
+		public ValidationResult[] validate(css_generic_declaration dec) {
 			return new ValidationResult[0];
 		}
 	}
@@ -146,6 +147,39 @@ public interface CssDialectExtension {
 		@Override
 		public List<Proposal> getInitialTermProposals() {
 			return proposals;
+		}
+		
+		@Override
+		public ValidationResult[] validate(css_generic_declaration dec) {
+			if( dec.getExpression() != null ) {
+				if( dec.getExpression().getTermGroups().size() > 1 ) {
+					return new ValidationResult[] { new ValidationResult(ValidationStatus.ERROR, "The attribute does not support multiple term groups", null, null, -1) };
+				} else if( dec.getExpression().getTermGroups().size() == 1 ) {
+					if( dec.getExpression().getTermGroups().get(0).getTerms().size() > 1 ) {
+						return new ValidationResult[] { new ValidationResult(ValidationStatus.ERROR, "The attribute does not support multiple terms", null, null, -1) };
+					} else if( dec.getExpression().getTermGroups().get(0).getTerms().size() == 1 ) {
+						String id = dec.getExpression().getTermGroups().get(0).getTerms().get(0).getIdentifier();
+						for( Proposal p : proposals ) {
+							if( p.getProposal().equals(id) ) {
+								return new ValidationResult[0];
+							}
+						}
+						
+						StringBuilder b = new StringBuilder();
+						for( Proposal p: proposals ) {
+							b.append("- " + p.getProposal());
+							if( p.getLabel() != null && ! p.getLabel().equals(p.getProposal()) ) {
+								b.append(": " +p.getLabel());
+							}
+							b.append("\n");
+						}
+						
+						return new ValidationResult[] { new ValidationResult(ValidationStatus.ERROR, "The has to be:\n" + b, null, null, -1) };
+					}
+				}
+			}
+			// TODO Auto-generated method stub
+			return super.validate(dec);
 		}
 	}
 	

@@ -10,6 +10,7 @@ public class CssDialectExtensionComponent implements CssDialectExtension {
 	
 	public void addExtension(CssDialectExtension extension) {
 		synchronized (extensions) {
+			System.err.println(extension);
 			extensions.add(extension);
 		}
 	}

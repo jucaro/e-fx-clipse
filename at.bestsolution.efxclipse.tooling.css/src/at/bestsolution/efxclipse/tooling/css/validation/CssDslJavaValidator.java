@@ -39,7 +39,8 @@ public class CssDslJavaValidator extends AbstractCssDslJavaValidator {
 		}
 		
 		for( Property p : extension.getProperties() ) {
-			if( propertyName.equals(p) ) {
+			if( propertyName.equals(p.getName()) ) {
+				System.err.println("Found: " + p);
 				for( ValidationResult r : p.validate(dec) ) {
 					if( r.status == ValidationStatus.ERROR ) {
 						if( r.object == null ) {
@@ -62,6 +63,6 @@ public class CssDslJavaValidator extends AbstractCssDslJavaValidator {
 			}
 		}
 		
-		System.err.println("Checking: " + extension + " => " + dec);
+//		System.err.println("Checking: " + extension + " => " + dec);
 	}
 }
