@@ -8,14 +8,36 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-import org.eclipse.core.runtime.IStatus;
-import org.eclipse.core.runtime.Status;
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.EStructuralFeature;
 
 import at.bestsolution.efxclipse.tooling.css.cssDsl.css_declaration;
 import at.bestsolution.efxclipse.tooling.css.cssDsl.term;
 import at.bestsolution.efxclipse.tooling.css.cssDsl.termGroup;
 
 public interface CssDialectExtension {
+	public enum ValidationStatus {
+		OK,
+		WARNING,
+		ERROR
+	}
+	
+	public static class ValidationResult {
+		public final ValidationStatus status;
+		public final String message;
+		public final EObject object;
+		public final EStructuralFeature feature;
+		public final int index;
+		
+		public ValidationResult(ValidationStatus status, String message, EObject object, EStructuralFeature feature, int index) {
+			this.status = status;
+			this.message = message;
+			this.object = object;
+			this.feature = feature;
+			this.index = index;
+		}
+	}
+	
 	public abstract static class Property {
 		private final String name;
 		private final String description;
@@ -39,8 +61,8 @@ public interface CssDialectExtension {
 		
 		public abstract List<Proposal> getInitialTermProposals();
 		
-		public IStatus validate(css_declaration dec) {
-			return Status.OK_STATUS;
+		public ValidationResult[] validate(css_declaration dec) {
+			return new ValidationResult[0];
 		}
 	}
 	

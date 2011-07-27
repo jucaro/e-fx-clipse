@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<scr:component xmlns:scr="http://www.osgi.org/xmlns/scr/v1.1.0" name="at.bestsolution.efxclipse.tooling.css">
+   <implementation class="at.bestsolution.efxclipse.tooling.css.internal.CssDialectExtensionComponent"/>
+   <reference bind="addExtension" cardinality="0..n" interface="at.bestsolution.efxclipse.tooling.css.CssDialectExtension" name="CssDialectExtension" policy="dynamic" unbind="removeExtension"/>
+   <service>
+      <provide interface="at.bestsolution.efxclipse.tooling.css.internal.CssDialectExtensionComponent"/>
+   </service>
+</scr:component>
