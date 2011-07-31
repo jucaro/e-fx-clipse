@@ -235,7 +235,7 @@ public interface CssDialectExtension {
 							b.append("\n");
 						}
 						
-						return new ValidationResult[] { new ValidationResult(ValidationStatus.ERROR, "The has to be:\n" + b, null, null, -1) };
+						return new ValidationResult[] { new ValidationResult(ValidationStatus.ERROR, "The value has to be:\n" + b, null, null, -1) };
 					}
 				}
 			}
@@ -350,7 +350,6 @@ public interface CssDialectExtension {
 				proposals.add(new Proposal(b.toString()));
 				singleTerms.add(new Proposal(v));
 			}
-			proposals.add(new Proposal("inherit"));
 		}
 		
 		@Override
@@ -367,32 +366,77 @@ public interface CssDialectExtension {
 			return Collections.emptyList();
 		}
 		
-//		@Override
-//		public ValidationResult[] validate(css_generic_declaration dec) {
-//			if( dec.getExpression() != null ) {
-//				if( dec.getExpression().getTermGroups().size() > 1 ) {
-//					return new ValidationResult[] { new ValidationResult(ValidationStatus.ERROR, "The attribute does not support multiple term groups", null, null, -1) };
-//				} else if( dec.getExpression().getTermGroups().size() == 1 ) {
-//					if( dec.getExpression().getTermGroups().get(0).getTerms().size() != partCount ) {
-//						return new ValidationResult[] { new ValidationResult(ValidationStatus.ERROR, "The attribute does not support multiple terms", null, null, -1) };
-//					} else if( dec.getExpression().getTermGroups().get(0).getTerms().size() == 1 ) {
-//						URLType url = dec.getExpression().getTermGroups().get(0).getTerms().get(0).getUrl();
-//						
-//						if( url == null || url.getUrl().trim().length() == 0 ) {
-//							return new ValidationResult[] { new ValidationResult(ValidationStatus.ERROR, "The value is not an url", null, null, -1) };
-//						} else {
-//							try {
-//								new URI(url.getUrl());
-//							} catch (URISyntaxException e) {
-//								return new ValidationResult[] { new ValidationResult(ValidationStatus.ERROR, "The value is not an url", null, null, -1) };
-//							}
-//							
-//						}
-//					}
-//				}
-//			}
-//			return super.validate(dec);
-//		}
+		@Override
+		public ValidationResult[] validate(css_generic_declaration dec) {
+			if( dec.getExpression() != null ) {
+				if( dec.getExpression().getTermGroups().size() > 1 ) {
+					return new ValidationResult[] { new ValidationResult(ValidationStatus.ERROR, "The attribute does not support multiple term groups", null, null, -1) };
+				} else if( dec.getExpression().getTermGroups().size() == 1 ) {
+					if( dec.getExpression().getTermGroups().get(0).getTerms().size() == 1 ) {
+						String value = dec.getExpression().getTermGroups().get(0).getTerms().get(0).getIdentifier();
+						
+						StringBuilder b = new StringBuilder();
+						for( Proposal p: singleTerms ) {
+							b.append("- " + p.getProposal());
+							if( p.getLabel() != null && ! p.getLabel().equals(p.getProposal()) ) {
+								b.append(": " +p.getLabel());
+							}
+							b.append("\n");
+						}
+						
+						if( value == null ) {
+							return new ValidationResult[] { new ValidationResult(ValidationStatus.ERROR, "The value has to be:\n" + b, null, null, -1) };	
+						} else if( ! "inherit".equals(value) ) {
+							for( Proposal p : singleTerms ) {
+								if( value.equals(p.getProposal()) ) {
+									return super.validate(dec);
+								}
+							}
+							
+							return new ValidationResult[] { new ValidationResult(ValidationStatus.ERROR, "The value has to be:\n" + b, dec.getExpression().getTermGroups().get(0).getTerms().get(0), CssDslPackage.Literals.TERM__IDENTIFIER, -1) };
+						}
+						
+					} else if( dec.getExpression().getTermGroups().get(0).getTerms().size() == partCount ) {
+						StringBuilder b = new StringBuilder();
+						for( Proposal p: singleTerms ) {
+							b.append("- " + p.getProposal());
+							if( p.getLabel() != null && ! p.getLabel().equals(p.getProposal()) ) {
+								b.append(": " +p.getLabel());
+							}
+							b.append("\n");
+						}
+						
+						List<ValidationResult> rv = new ArrayList<ValidationResult>();
+						
+						for( term t : dec.getExpression().getTermGroups().get(0).getTerms() ) {
+							String value = t.getIdentifier();
+							
+							if( value == null ) {
+								rv.add(new ValidationResult(ValidationStatus.ERROR, "The value has to be:\n" + b, null, null, -1));
+							} else {
+								boolean v = false;
+								for( Proposal p : singleTerms ) {
+									if( value.equals(p.getProposal()) ) {
+										v = true;
+									}
+								}
+								if( ! v ) {
+									rv.add(new ValidationResult(ValidationStatus.ERROR, "The value has to be:\n" + b, t, CssDslPackage.Literals.TERM__IDENTIFIER, -1) );
+								}
+							}
+						}
+						
+						if( rv.isEmpty() ) {
+							return super.validate(dec);
+						} else {
+							return rv.toArray(new ValidationResult[0]);
+						}
+					}
+				}
+			}
+			
+			return super.validate(dec);
+		}
 	}
 	
 	public static class Proposal {
