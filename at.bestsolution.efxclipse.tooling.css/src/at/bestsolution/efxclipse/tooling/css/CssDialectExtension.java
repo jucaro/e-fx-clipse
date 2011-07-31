@@ -4,6 +4,8 @@ import static at.bestsolution.efxclipse.tooling.css.CssDialectExtension.Util.fro
 
 import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
+import java.net.URI;
+import java.net.URISyntaxException;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -11,6 +13,8 @@ import java.util.List;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EStructuralFeature;
 
+import at.bestsolution.efxclipse.tooling.css.cssDsl.CssDslPackage;
+import at.bestsolution.efxclipse.tooling.css.cssDsl.URLType;
 import at.bestsolution.efxclipse.tooling.css.cssDsl.css_declaration;
 import at.bestsolution.efxclipse.tooling.css.cssDsl.css_generic_declaration;
 import at.bestsolution.efxclipse.tooling.css.cssDsl.term;
@@ -89,6 +93,36 @@ public interface CssDialectExtension {
 		public List<Proposal> getInitialTermProposals() {
 			return proposals;
 		}
+		
+		@Override
+		public ValidationResult[] validate(css_generic_declaration dec) {
+			if( dec.getExpression() != null ) {
+				if( dec.getExpression().getTermGroups().size() > 1 ) {
+					return new ValidationResult[] { new ValidationResult(ValidationStatus.ERROR, "The attribute does not support multiple term groups", null, null, -1) };
+				} else if( dec.getExpression().getTermGroups().size() == 1 ) {
+					if( dec.getExpression().getTermGroups().get(0).getTerms().size() > 1 ) {
+						return new ValidationResult[] { new ValidationResult(ValidationStatus.ERROR, "The attribute does not support multiple terms", null, null, -1) };
+					} else if( dec.getExpression().getTermGroups().get(0).getTerms().size() == 1 ) {
+						String number = dec.getExpression().getTermGroups().get(0).getTerms().get(0).getNumber();
+						
+						if( number == null ) {
+							return new ValidationResult[] { new ValidationResult(ValidationStatus.ERROR, "The value is not a integer value", null, null, -1) };	
+						} else {
+							try {
+								double d = Double.parseDouble(number);	
+								if( d != (int)d ) {
+									return new ValidationResult[] { new ValidationResult(ValidationStatus.WARNING, "The value is floating point number but should be an integer", null, null, -1) };	
+								}
+							} catch( NumberFormatException e ) {
+								return new ValidationResult[] { new ValidationResult(ValidationStatus.ERROR, "The value is not a integer value", null, null, -1) };	
+							}
+							
+						}
+					}
+				}
+			}
+			return super.validate(dec);
+		}
 	}
 	
 	public static class StringProperty extends Property {
@@ -128,6 +162,33 @@ public interface CssDialectExtension {
 		@Override
 		public List<Proposal> getInitialTermProposals() {
 			return proposals;
+		}
+		
+		@Override
+		public ValidationResult[] validate(css_generic_declaration dec) {
+			if( dec.getExpression() != null ) {
+				if( dec.getExpression().getTermGroups().size() > 1 ) {
+					return new ValidationResult[] { new ValidationResult(ValidationStatus.ERROR, "The attribute does not support multiple term groups", null, null, -1) };
+				} else if( dec.getExpression().getTermGroups().size() == 1 ) {
+					if( dec.getExpression().getTermGroups().get(0).getTerms().size() > 1 ) {
+						return new ValidationResult[] { new ValidationResult(ValidationStatus.ERROR, "The attribute does not support multiple terms", null, null, -1) };
+					} else if( dec.getExpression().getTermGroups().get(0).getTerms().size() == 1 ) {
+						String number = dec.getExpression().getTermGroups().get(0).getTerms().get(0).getNumber();
+						
+						if( number == null ) {
+							return new ValidationResult[] { new ValidationResult(ValidationStatus.ERROR, "The value is not a floating point number", null, null, -1) };	
+						} else {
+							try {
+								Double.parseDouble(number);	
+							} catch( NumberFormatException e ) {
+								return new ValidationResult[] { new ValidationResult(ValidationStatus.ERROR, "The value is not a floating point number", null, null, -1) };	
+							}
+							
+						}
+					}
+				}
+			}
+			return super.validate(dec);
 		}
 	}
 	
@@ -178,7 +239,6 @@ public interface CssDialectExtension {
 					}
 				}
 			}
-			// TODO Auto-generated method stub
 			return super.validate(dec);
 		}
 	}
@@ -196,6 +256,33 @@ public interface CssDialectExtension {
 		public List<Proposal> getInitialTermProposals() {
 			return proposals;
 		}
+		
+		@Override
+		public ValidationResult[] validate(css_generic_declaration dec) {
+			if( dec.getExpression() != null ) {
+				if( dec.getExpression().getTermGroups().size() > 1 ) {
+					return new ValidationResult[] { new ValidationResult(ValidationStatus.ERROR, "The attribute does not support multiple term groups", null, null, -1) };
+				} else if( dec.getExpression().getTermGroups().size() == 1 ) {
+					if( dec.getExpression().getTermGroups().get(0).getTerms().size() > 1 ) {
+						return new ValidationResult[] { new ValidationResult(ValidationStatus.ERROR, "The attribute does not support multiple terms", null, null, -1) };
+					} else if( dec.getExpression().getTermGroups().get(0).getTerms().size() == 1 ) {
+						URLType url = dec.getExpression().getTermGroups().get(0).getTerms().get(0).getUrl();
+						
+						if( url == null || url.getUrl().trim().length() == 0 ) {
+							return new ValidationResult[] { new ValidationResult(ValidationStatus.ERROR, "The value is not an url", null, null, -1) };
+						} else {
+							try {
+								new URI(url.getUrl());
+							} catch (URISyntaxException e) {
+								return new ValidationResult[] { new ValidationResult(ValidationStatus.ERROR, "The value is not an url", null, null, -1) };
+							}
+							
+						}
+					}
+				}
+			}
+			return super.validate(dec);
+		}
 	}
 	
 	public static class UrlsProperty extends Property {
@@ -210,6 +297,31 @@ public interface CssDialectExtension {
 		@Override
 		public List<Proposal> getInitialTermProposals() {
 			return proposals;
+		}
+		
+		@Override
+		public ValidationResult[] validate(css_generic_declaration dec) {
+			if( dec.getExpression() != null ) {
+				for( termGroup g : dec.getExpression().getTermGroups() ) {
+					if( g.getTerms().size() > 1 ) {
+						return new ValidationResult[] { new ValidationResult(ValidationStatus.ERROR, "The attribute does not support multiple terms", null, null, -1) };
+					} else if( g.getTerms().size() == 1 ) {
+						URLType url = g.getTerms().get(0).getUrl();
+						
+						if( url == null || url.getUrl().trim().length() == 0 ) {
+							return new ValidationResult[] { new ValidationResult(ValidationStatus.ERROR, "The value is not an url", g.getTerms().get(0), CssDslPackage.Literals.TERM__URL, -1) };
+						} else {
+							try {
+								new URI(url.getUrl());
+							} catch (URISyntaxException e) {
+								return new ValidationResult[] { new ValidationResult(ValidationStatus.ERROR, "The value is not an url", null, null, -1) };
+							}
+							
+						}
+					}
+				}
+			}
+			return super.validate(dec);
 		}
 	}
 	
@@ -254,6 +366,33 @@ public interface CssDialectExtension {
 			}
 			return Collections.emptyList();
 		}
+		
+//		@Override
+//		public ValidationResult[] validate(css_generic_declaration dec) {
+//			if( dec.getExpression() != null ) {
+//				if( dec.getExpression().getTermGroups().size() > 1 ) {
+//					return new ValidationResult[] { new ValidationResult(ValidationStatus.ERROR, "The attribute does not support multiple term groups", null, null, -1) };
+//				} else if( dec.getExpression().getTermGroups().size() == 1 ) {
+//					if( dec.getExpression().getTermGroups().get(0).getTerms().size() != partCount ) {
+//						return new ValidationResult[] { new ValidationResult(ValidationStatus.ERROR, "The attribute does not support multiple terms", null, null, -1) };
+//					} else if( dec.getExpression().getTermGroups().get(0).getTerms().size() == 1 ) {
+//						URLType url = dec.getExpression().getTermGroups().get(0).getTerms().get(0).getUrl();
+//						
+//						if( url == null || url.getUrl().trim().length() == 0 ) {
+//							return new ValidationResult[] { new ValidationResult(ValidationStatus.ERROR, "The value is not an url", null, null, -1) };
+//						} else {
+//							try {
+//								new URI(url.getUrl());
+//							} catch (URISyntaxException e) {
+//								return new ValidationResult[] { new ValidationResult(ValidationStatus.ERROR, "The value is not an url", null, null, -1) };
+//							}
+//							
+//						}
+//					}
+//				}
+//			}
+//			return super.validate(dec);
+//		}
 	}
 	
 	public static class Proposal {
