@@ -1074,14 +1074,22 @@ rulecss_property returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleTo
         $current.merge(kw);
         newLeafNode(kw, grammarAccess.getCss_propertyAccess().getHyphenMinusKeyword_0()); 
     }
-)?    this_IDENT_1=RULE_IDENT    {
+)?(    this_IDENT_1=RULE_IDENT    {
 		$current.merge(this_IDENT_1);
     }
 
     { 
-    newLeafNode(this_IDENT_1, grammarAccess.getCss_propertyAccess().getIDENTTerminalRuleCall_1()); 
+    newLeafNode(this_IDENT_1, grammarAccess.getCss_propertyAccess().getIDENTTerminalRuleCall_1_0()); 
     }
-)
+
+    |    this_hexdigits_2=RULE_HEXDIGITS    {
+		$current.merge(this_hexdigits_2);
+    }
+
+    { 
+    newLeafNode(this_hexdigits_2, grammarAccess.getCss_propertyAccess().getHexdigitsTerminalRuleCall_1_1()); 
+    }
+))
     ;
 
 

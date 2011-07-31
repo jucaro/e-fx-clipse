@@ -591,20 +591,28 @@ public class CssDslGrammarAccess extends AbstractGrammarElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "css_property");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Keyword cHyphenMinusKeyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final RuleCall cIDENTTerminalRuleCall_1 = (RuleCall)cGroup.eContents().get(1);
+		private final Alternatives cAlternatives_1 = (Alternatives)cGroup.eContents().get(1);
+		private final RuleCall cIDENTTerminalRuleCall_1_0 = (RuleCall)cAlternatives_1.eContents().get(0);
+		private final RuleCall cHexdigitsTerminalRuleCall_1_1 = (RuleCall)cAlternatives_1.eContents().get(1);
 		
 		//css_property:
-		//	"-"? IDENT;
+		//	"-"? (IDENT | hexdigits);
 		public ParserRule getRule() { return rule; }
 
-		//"-"? IDENT
+		//"-"? (IDENT | hexdigits)
 		public Group getGroup() { return cGroup; }
 
 		//"-"?
 		public Keyword getHyphenMinusKeyword_0() { return cHyphenMinusKeyword_0; }
 
+		//IDENT | hexdigits
+		public Alternatives getAlternatives_1() { return cAlternatives_1; }
+
 		//IDENT
-		public RuleCall getIDENTTerminalRuleCall_1() { return cIDENTTerminalRuleCall_1; }
+		public RuleCall getIDENTTerminalRuleCall_1_0() { return cIDENTTerminalRuleCall_1_0; }
+
+		//hexdigits
+		public RuleCall getHexdigitsTerminalRuleCall_1_1() { return cHexdigitsTerminalRuleCall_1_1; }
 	}
 
 	public class Css_pseudoElements extends AbstractParserRuleElementFinder {
@@ -1401,7 +1409,7 @@ public class CssDslGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//css_property:
-	//	"-"? IDENT;
+	//	"-"? (IDENT | hexdigits);
 	public Css_propertyElements getCss_propertyAccess() {
 		return (pCss_property != null) ? pCss_property : (pCss_property = new Css_propertyElements());
 	}

@@ -72,7 +72,7 @@ css_generic_declaration:
 ;
 
 css_property:
-	('-')?IDENT
+	('-')?(IDENT|hexdigits)
 ;
 
 css_pseudo

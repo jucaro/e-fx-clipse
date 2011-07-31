@@ -1304,6 +1304,28 @@ finally {
 	restoreStackSize(stackSize);
 }
 
+rule__Css_property__Alternatives_1
+    @init {
+		int stackSize = keepStackSize();
+    }
+:
+(
+{ before(grammarAccess.getCss_propertyAccess().getIDENTTerminalRuleCall_1_0()); }
+	RULE_IDENT
+{ after(grammarAccess.getCss_propertyAccess().getIDENTTerminalRuleCall_1_0()); }
+)
+
+    |(
+{ before(grammarAccess.getCss_propertyAccess().getHexdigitsTerminalRuleCall_1_1()); }
+	RULE_HEXDIGITS
+{ after(grammarAccess.getCss_propertyAccess().getHexdigitsTerminalRuleCall_1_1()); }
+)
+
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
 rule__Combinator__Alternatives_0
     @init {
 		int stackSize = keepStackSize();
@@ -3314,9 +3336,9 @@ rule__Css_property__Group__1__Impl
     }
 :
 (
-{ before(grammarAccess.getCss_propertyAccess().getIDENTTerminalRuleCall_1()); }
-	RULE_IDENT
-{ after(grammarAccess.getCss_propertyAccess().getIDENTTerminalRuleCall_1()); }
+{ before(grammarAccess.getCss_propertyAccess().getAlternatives_1()); }
+(rule__Css_property__Alternatives_1)
+{ after(grammarAccess.getCss_propertyAccess().getAlternatives_1()); }
 )
 
 ;

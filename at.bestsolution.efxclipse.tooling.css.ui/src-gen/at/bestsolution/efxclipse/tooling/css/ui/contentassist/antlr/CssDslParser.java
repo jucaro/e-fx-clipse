@@ -47,6 +47,7 @@ public class CssDslParser extends AbstractContentAssistParser {
 					put(grammarAccess.getCss_attribAccess().getAlternatives_2_0(), "rule__Css_attrib__Alternatives_2_0");
 					put(grammarAccess.getCss_attribAccess().getAlternatives_2_1(), "rule__Css_attrib__Alternatives_2_1");
 					put(grammarAccess.getCss_attribAccess().getAlternatives_2_1_0(), "rule__Css_attrib__Alternatives_2_1_0");
+					put(grammarAccess.getCss_propertyAccess().getAlternatives_1(), "rule__Css_property__Alternatives_1");
 					put(grammarAccess.getCombinatorAccess().getAlternatives_0(), "rule__Combinator__Alternatives_0");
 					put(grammarAccess.getOperatorAccess().getAlternatives(), "rule__Operator__Alternatives");
 					put(grammarAccess.getUnary_operatorAccess().getAlternatives(), "rule__Unary_operator__Alternatives");
