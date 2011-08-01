@@ -854,7 +854,7 @@ public class CssDslGrammarAccess extends AbstractGrammarElementFinder {
 		////pair:
 		////	'(' expr1=expr COMMA expr2=expr ')'
 		////;
-		//numberTerm:
+		//numberTerm hidden():
 		//	unary_operator? (NUMBER | PERCENTAGE | LENGTH | EMS | EXS | ANGLE | TIME | FREQ);
 		public ParserRule getRule() { return rule; }
 
@@ -1096,7 +1096,7 @@ public class CssDslGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cPtKeyword_1_4 = (Keyword)cAlternatives_1.eContents().get(4);
 		private final Keyword cPcKeyword_1_5 = (Keyword)cAlternatives_1.eContents().get(5);
 		
-		//LENGTH:
+		//LENGTH hidden():
 		//	num ("px" | "cm" | "mm" | "in" | "pt" | "pc");
 		public ParserRule getRule() { return rule; }
 
@@ -1513,7 +1513,7 @@ public class CssDslGrammarAccess extends AbstractGrammarElementFinder {
 	////pair:
 	////	'(' expr1=expr COMMA expr2=expr ')'
 	////;
-	//numberTerm:
+	//numberTerm hidden():
 	//	unary_operator? (NUMBER | PERCENTAGE | LENGTH | EMS | EXS | ANGLE | TIME | FREQ);
 	public NumberTermElements getNumberTermAccess() {
 		return (pNumberTerm != null) ? pNumberTerm : (pNumberTerm = new NumberTermElements());
@@ -1603,7 +1603,7 @@ public class CssDslGrammarAccess extends AbstractGrammarElementFinder {
 		return getEXSAccess().getRule();
 	}
 
-	//LENGTH:
+	//LENGTH hidden():
 	//	num ("px" | "cm" | "mm" | "in" | "pt" | "pc");
 	public LENGTHElements getLENGTHAccess() {
 		return (pLENGTH != null) ? pLENGTH : (pLENGTH = new LENGTHElements());
@@ -1643,6 +1643,7 @@ public class CssDslGrammarAccess extends AbstractGrammarElementFinder {
 		return getFREQAccess().getRule();
 	}
 
+	//// hexdigits: '0'|'1'|'2'|'3'|'4'|'5'|'6'|'7'|'8'|'9'|'a'|'b'|'c'|'d'|'e'|'f'|'A'|'B'|'C'|'D'|'E'|'F';
 	//terminal integer:
 	//	"0".."9"+;
 	public TerminalRule getIntegerRule() {

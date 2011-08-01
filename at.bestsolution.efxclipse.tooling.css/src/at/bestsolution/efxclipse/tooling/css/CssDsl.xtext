@@ -133,7 +133,7 @@ term
 //	'(' expr1=expr COMMA expr2=expr ')'
 //;
 
-numberTerm:
+numberTerm hidden():
 	(unary_operator? 
     ( NUMBER | PERCENTAGE | LENGTH | EMS | EXS | ANGLE |
       TIME | FREQ ))
@@ -159,7 +159,7 @@ NUMBER: num;
 PERCENTAGE: num'%';
 EMS: num 'em';
 EXS: num 'ex';
-LENGTH: num  ('px' | 'cm' | 'mm' | 'in' | 'pt' | 'pc' ) ;
+LENGTH hidden(): num ('px' | 'cm' | 'mm' | 'in' | 'pt' | 'pc' ) ;
 
 ANGLE: num ('deg' | 'rad' | 'grad' );
 TIME: num ('ms'| 's' );

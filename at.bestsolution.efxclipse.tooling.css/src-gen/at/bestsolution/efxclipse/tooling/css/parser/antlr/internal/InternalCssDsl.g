@@ -1490,16 +1490,23 @@ ruleterm returns [EObject current=null]
 
 // Entry rule entryRulenumberTerm
 entryRulenumberTerm returns [String current=null] 
+	@init { 
+		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens();
+	}
 	:
 	{ newCompositeNode(grammarAccess.getNumberTermRule()); } 
 	 iv_rulenumberTerm=rulenumberTerm 
 	 { $current=$iv_rulenumberTerm.current.getText(); }  
 	 EOF 
 ;
+finally {
+	myHiddenTokenState.restore();
+}
 
 // Rule numberTerm
 rulenumberTerm returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] 
     @init { enterRule(); 
+		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens();
     }
     @after { leaveRule(); }:
 ((
@@ -1610,6 +1617,9 @@ rulenumberTerm returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToke
     }
 ))
     ;
+finally {
+	myHiddenTokenState.restore();
+}
 
 
 
@@ -1966,16 +1976,23 @@ ruleEXS returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()]
 
 // Entry rule entryRuleLENGTH
 entryRuleLENGTH returns [String current=null] 
+	@init { 
+		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens();
+	}
 	:
 	{ newCompositeNode(grammarAccess.getLENGTHRule()); } 
 	 iv_ruleLENGTH=ruleLENGTH 
 	 { $current=$iv_ruleLENGTH.current.getText(); }  
 	 EOF 
 ;
+finally {
+	myHiddenTokenState.restore();
+}
 
 // Rule LENGTH
 ruleLENGTH returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] 
     @init { enterRule(); 
+		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens();
     }
     @after { leaveRule(); }:
 (
@@ -2032,6 +2049,9 @@ ruleLENGTH returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()]
     }
 ))
     ;
+finally {
+	myHiddenTokenState.restore();
+}
 
 
 

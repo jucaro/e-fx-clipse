@@ -670,16 +670,23 @@ finally {
 
 // Entry rule entryRulenumberTerm
 entryRulenumberTerm 
+@init {
+	HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens();
+}
 :
 { before(grammarAccess.getNumberTermRule()); }
 	 rulenumberTerm
 { after(grammarAccess.getNumberTermRule()); } 
 	 EOF 
 ;
+finally {
+	myHiddenTokenState.restore();
+}
 
 // Rule numberTerm
 rulenumberTerm
     @init {
+		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens();
 		int stackSize = keepStackSize();
     }
 	:
@@ -692,6 +699,7 @@ rulenumberTerm
 ;
 finally {
 	restoreStackSize(stackSize);
+	myHiddenTokenState.restore();
 }
 
 
@@ -938,16 +946,23 @@ finally {
 
 // Entry rule entryRuleLENGTH
 entryRuleLENGTH 
+@init {
+	HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens();
+}
 :
 { before(grammarAccess.getLENGTHRule()); }
 	 ruleLENGTH
 { after(grammarAccess.getLENGTHRule()); } 
 	 EOF 
 ;
+finally {
+	myHiddenTokenState.restore();
+}
 
 // Rule LENGTH
 ruleLENGTH
     @init {
+		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens();
 		int stackSize = keepStackSize();
     }
 	:
@@ -960,6 +975,7 @@ ruleLENGTH
 ;
 finally {
 	restoreStackSize(stackSize);
+	myHiddenTokenState.restore();
 }
 
 

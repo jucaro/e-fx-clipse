@@ -341,7 +341,7 @@
       </elements>
     </alternatives>
   </rules>
-  <rules xsi:type="xtext:ParserRule" name="numberTerm">
+  <rules xsi:type="xtext:ParserRule" name="numberTerm" definesHiddenTokens="true">
     <type metamodel="//@metamodelDeclarations.0">
       <classifier xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     </type>
@@ -440,7 +440,7 @@
       <elements xsi:type="xtext:Keyword" value="ex"/>
     </alternatives>
   </rules>
-  <rules xsi:type="xtext:ParserRule" name="LENGTH">
+  <rules xsi:type="xtext:ParserRule" name="LENGTH" definesHiddenTokens="true">
     <type metamodel="//@metamodelDeclarations.0">
       <classifier xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     </type>

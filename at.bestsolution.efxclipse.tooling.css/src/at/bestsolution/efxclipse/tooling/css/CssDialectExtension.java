@@ -150,6 +150,26 @@ public interface CssDialectExtension {
 		public List<Proposal> getInitialTermProposals() {
 			return proposals;
 		}
+		
+		@Override
+		public ValidationResult[] validate(css_generic_declaration dec) {
+			if( dec.getExpression() != null ) {
+				if( dec.getExpression().getTermGroups().size() > 1 ) {
+					return new ValidationResult[] { new ValidationResult(ValidationStatus.ERROR, "The attribute does not support multiple term groups", null, null, -1) };
+				} else if( dec.getExpression().getTermGroups().size() == 1 ) {
+					if( dec.getExpression().getTermGroups().get(0).getTerms().size() > 1 ) {
+						return new ValidationResult[] { new ValidationResult(ValidationStatus.ERROR, "The attribute does not support multiple terms", null, null, -1) };
+					} else if( dec.getExpression().getTermGroups().get(0).getTerms().size() == 1 ) {
+						String value = dec.getExpression().getTermGroups().get(0).getTerms().get(0).getIdentifier();
+						
+						if( value == null || ! ( value.equals("true") || value.equals("false") ) ) {
+							return new ValidationResult[] { new ValidationResult(ValidationStatus.ERROR, "The value is true or false", null, null, -1) };	
+						}
+					}
+				}
+			}
+			return super.validate(dec);
+		}
 	}
 	
 	public static class NumberPropery extends Property {

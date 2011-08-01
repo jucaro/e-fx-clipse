@@ -4,9 +4,13 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
+import java.util.regex.Pattern;
 
 import at.bestsolution.efxclipse.tooling.css.CssDialectExtension;
+import at.bestsolution.efxclipse.tooling.css.CssDialectExtension.Proposal;
+import at.bestsolution.efxclipse.tooling.css.cssDsl.CssDslPackage;
 import at.bestsolution.efxclipse.tooling.css.cssDsl.css_declaration;
+import at.bestsolution.efxclipse.tooling.css.cssDsl.css_generic_declaration;
 import at.bestsolution.efxclipse.tooling.css.cssDsl.term;
 import at.bestsolution.efxclipse.tooling.css.cssDsl.termGroup;
 import at.bestsolution.efxclipse.tooling.css.jfx.scene.Group;
@@ -308,6 +312,39 @@ public class JFXDialectExtension implements CssDialectExtension {
 		@Override
 		public List<Proposal> getInitialTermProposals() {
 			return proposals;
+		}
+		
+		@Override
+		public ValidationResult[] validate(css_generic_declaration dec) {
+			if( dec.getExpression() != null ) {
+				if( dec.getExpression().getTermGroups().size() > 1 ) {
+					
+				} else if( dec.getExpression().getTermGroups().size() == 1 ) {
+					termGroup g = dec.getExpression().getTermGroups().get(0);
+					if( g.getTerms().size() == 1 ) {
+						if( g.getTerms().get(0).getNumber() == null ) {
+							return new ValidationResult[] { new ValidationResult(ValidationStatus.ERROR, "The value must be a size", dec, CssDslPackage.Literals.CSS_GENERIC_DECLARATION__EXPRESSION, -1) };
+						}
+						
+						// Number with units
+						if( ! Pattern.matches(".*\\d+$",g.getTerms().get(0).getNumber()) ) {
+							for( String u : sizeUnits() ) {
+								if( g.getTerms().get(0).getNumber().endsWith(u) ) {
+									return super.validate(dec);
+								}
+							}
+							
+							StringBuilder b = new StringBuilder();
+							b.append("- <none>\n");
+							for( String p: sizeUnits() ) {
+								b.append("- " + p + "\n");
+							}
+							return new ValidationResult[] { new ValidationResult(ValidationStatus.ERROR, "Supported units are:\n"+b, g.getTerms().get(0), CssDslPackage.Literals.TERM__NUMBER, -1) };
+						}
+					}
+				}
+			}
+			return super.validate(dec);
 		}
 	}
 	
