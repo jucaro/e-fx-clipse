@@ -7,7 +7,6 @@ import java.util.List;
 import java.util.regex.Pattern;
 
 import at.bestsolution.efxclipse.tooling.css.CssDialectExtension;
-import at.bestsolution.efxclipse.tooling.css.CssDialectExtension.Proposal;
 import at.bestsolution.efxclipse.tooling.css.cssDsl.CssDslPackage;
 import at.bestsolution.efxclipse.tooling.css.cssDsl.css_declaration;
 import at.bestsolution.efxclipse.tooling.css.cssDsl.css_generic_declaration;
@@ -318,29 +317,39 @@ public class JFXDialectExtension implements CssDialectExtension {
 		public ValidationResult[] validate(css_generic_declaration dec) {
 			if( dec.getExpression() != null ) {
 				if( dec.getExpression().getTermGroups().size() > 1 ) {
-					
+					return new ValidationResult[] { new ValidationResult(ValidationStatus.ERROR, "The attribute does not support multiple groups", dec, CssDslPackage.Literals.CSS_GENERIC_DECLARATION__EXPRESSION, -1) };
 				} else if( dec.getExpression().getTermGroups().size() == 1 ) {
 					termGroup g = dec.getExpression().getTermGroups().get(0);
-					if( g.getTerms().size() == 1 ) {
-						if( g.getTerms().get(0).getNumber() == null ) {
-							return new ValidationResult[] { new ValidationResult(ValidationStatus.ERROR, "The value must be a size", dec, CssDslPackage.Literals.CSS_GENERIC_DECLARATION__EXPRESSION, -1) };
-						}
-						
-						// Number with units
-						if( ! Pattern.matches(".*\\d+$",g.getTerms().get(0).getNumber()) ) {
-							for( String u : sizeUnits() ) {
-								if( g.getTerms().get(0).getNumber().endsWith(u) ) {
-									return super.validate(dec);
-								}
+					if( g.getTerms().size() == 1 || g.getTerms().size() == 4 ) {
+						List<ValidationResult> rv = new ArrayList<ValidationResult>();
+						for( term t : g.getTerms() ) {
+							if( t.getNumber() == null ) {
+								rv.add(new ValidationResult(ValidationStatus.ERROR, "The value must be a size", t, null, -1));
+								continue;
 							}
 							
-							StringBuilder b = new StringBuilder();
-							b.append("- <none>\n");
-							for( String p: sizeUnits() ) {
-								b.append("- " + p + "\n");
+							// Number with units
+							if( ! Pattern.matches(".*\\d+$",t.getNumber()) ) {
+								for( String u : sizeUnits() ) {
+									if( t.getNumber().endsWith(u) ) {
+										return super.validate(dec);
+									}
+								}
+								
+								StringBuilder b = new StringBuilder();
+								b.append("- <none>\n");
+								for( String p: sizeUnits() ) {
+									b.append("- " + p + "\n");
+								}
+								rv.add(new ValidationResult(ValidationStatus.ERROR, "Supported units are:\n"+b, t, CssDslPackage.Literals.TERM__NUMBER, -1));
 							}
-							return new ValidationResult[] { new ValidationResult(ValidationStatus.ERROR, "Supported units are:\n"+b, g.getTerms().get(0), CssDslPackage.Literals.TERM__NUMBER, -1) };
 						}
+						
+						if( rv.size() != 0 ) {
+							return rv.toArray(new ValidationResult[0]);
+						}
+					} else if( g.getTerms().size() > 1 && g.getTerms().size() != 4 ) {
+						return new ValidationResult[] { new ValidationResult(ValidationStatus.ERROR, "The attribute only supports 1 or 4 sizes", dec, CssDslPackage.Literals.CSS_GENERIC_DECLARATION__EXPRESSION, -1) };
 					}
 				}
 			}
