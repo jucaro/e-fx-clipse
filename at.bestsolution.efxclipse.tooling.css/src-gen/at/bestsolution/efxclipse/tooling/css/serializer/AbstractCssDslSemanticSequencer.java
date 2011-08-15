@@ -4,6 +4,7 @@ import at.bestsolution.efxclipse.tooling.css.cssDsl.CssDslPackage;
 import at.bestsolution.efxclipse.tooling.css.cssDsl.URLType;
 import at.bestsolution.efxclipse.tooling.css.cssDsl.css_generic_declaration;
 import at.bestsolution.efxclipse.tooling.css.cssDsl.expr;
+import at.bestsolution.efxclipse.tooling.css.cssDsl.function;
 import at.bestsolution.efxclipse.tooling.css.cssDsl.media;
 import at.bestsolution.efxclipse.tooling.css.cssDsl.ruleset;
 import at.bestsolution.efxclipse.tooling.css.cssDsl.selector;
@@ -68,9 +69,14 @@ public class AbstractCssDslSemanticSequencer extends AbstractSemanticSequencer {
 				}
 				else break;
 			case CssDslPackage.EXPR:
-				if(context == grammarAccess.getExprRule() ||
-				   context == grammarAccess.getFunctionRule()) {
+				if(context == grammarAccess.getExprRule()) {
 					sequence_expr_expr(context, (expr) semanticObject); 
+					return; 
+				}
+				else break;
+			case CssDslPackage.FUNCTION:
+				if(context == grammarAccess.getFunctionRule()) {
+					sequence_function_function(context, (function) semanticObject); 
 					return; 
 				}
 				else break;
@@ -171,6 +177,29 @@ public class AbstractCssDslSemanticSequencer extends AbstractSemanticSequencer {
 	 */
 	protected void sequence_expr_expr(EObject context, expr semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     (name=IDENT expression=expr)
+	 *
+	 * Features:
+	 *    name[1, 1]
+	 *    expression[1, 1]
+	 */
+	protected void sequence_function_function(EObject context, function semanticObject) {
+		if(errorAcceptor != null) {
+			if(transientValues.isValueTransient(semanticObject, CssDslPackage.Literals.FUNCTION__NAME) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, CssDslPackage.Literals.FUNCTION__NAME));
+			if(transientValues.isValueTransient(semanticObject, CssDslPackage.Literals.FUNCTION__EXPRESSION) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, CssDslPackage.Literals.FUNCTION__EXPRESSION));
+		}
+		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
+		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
+		feeder.accept(grammarAccess.getFunctionAccess().getNameIDENTTerminalRuleCall_1_0(), semanticObject.getName());
+		feeder.accept(grammarAccess.getFunctionAccess().getExpressionExprParserRuleCall_4_0(), semanticObject.getExpression());
+		feeder.finish();
 	}
 	
 	

@@ -3723,9 +3723,9 @@ rule__Function__Group__1__Impl
     }
 :
 (
-{ before(grammarAccess.getFunctionAccess().getIDENTTerminalRuleCall_1()); }
-	RULE_IDENT
-{ after(grammarAccess.getFunctionAccess().getIDENTTerminalRuleCall_1()); }
+{ before(grammarAccess.getFunctionAccess().getNameAssignment_1()); }
+(rule__Function__NameAssignment_1)
+{ after(grammarAccess.getFunctionAccess().getNameAssignment_1()); }
 )
 
 ;
@@ -3812,9 +3812,9 @@ rule__Function__Group__4__Impl
     }
 :
 (
-{ before(grammarAccess.getFunctionAccess().getExprParserRuleCall_4()); }
-	ruleexpr
-{ after(grammarAccess.getFunctionAccess().getExprParserRuleCall_4()); }
+{ before(grammarAccess.getFunctionAccess().getExpressionAssignment_4()); }
+(rule__Function__ExpressionAssignment_4)
+{ after(grammarAccess.getFunctionAccess().getExpressionAssignment_4()); }
 )
 
 ;
@@ -5055,6 +5055,36 @@ rule__Term__HexColorAssignment_5
 (
 { before(grammarAccess.getTermAccess().getHexColorHexColorParserRuleCall_5_0()); }
 	ruleHexColor{ after(grammarAccess.getTermAccess().getHexColorHexColorParserRuleCall_5_0()); }
+)
+
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__Function__NameAssignment_1
+    @init {
+		int stackSize = keepStackSize();
+    }
+:
+(
+{ before(grammarAccess.getFunctionAccess().getNameIDENTTerminalRuleCall_1_0()); }
+	RULE_IDENT{ after(grammarAccess.getFunctionAccess().getNameIDENTTerminalRuleCall_1_0()); }
+)
+
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__Function__ExpressionAssignment_4
+    @init {
+		int stackSize = keepStackSize();
+    }
+:
+(
+{ before(grammarAccess.getFunctionAccess().getExpressionExprParserRuleCall_4_0()); }
+	ruleexpr{ after(grammarAccess.getFunctionAccess().getExpressionExprParserRuleCall_4_0()); }
 )
 
 ;

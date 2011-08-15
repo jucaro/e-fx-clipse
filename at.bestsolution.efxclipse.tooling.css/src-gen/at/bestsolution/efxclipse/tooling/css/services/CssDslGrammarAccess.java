@@ -916,25 +916,30 @@ public class CssDslGrammarAccess extends AbstractGrammarElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "function");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Keyword cHyphenMinusKeyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final RuleCall cIDENTTerminalRuleCall_1 = (RuleCall)cGroup.eContents().get(1);
+		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cNameIDENTTerminalRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
 		private final Keyword cLeftParenthesisKeyword_2 = (Keyword)cGroup.eContents().get(2);
 		private final RuleCall cWSTerminalRuleCall_3 = (RuleCall)cGroup.eContents().get(3);
-		private final RuleCall cExprParserRuleCall_4 = (RuleCall)cGroup.eContents().get(4);
+		private final Assignment cExpressionAssignment_4 = (Assignment)cGroup.eContents().get(4);
+		private final RuleCall cExpressionExprParserRuleCall_4_0 = (RuleCall)cExpressionAssignment_4.eContents().get(0);
 		private final RuleCall cWSTerminalRuleCall_5 = (RuleCall)cGroup.eContents().get(5);
 		private final Keyword cRightParenthesisKeyword_6 = (Keyword)cGroup.eContents().get(6);
 		
 		//function hidden():
-		//	"-"? IDENT "(" WS* expr WS* ")";
+		//	"-"? name=IDENT "(" WS* expression=expr WS* ")";
 		public ParserRule getRule() { return rule; }
 
-		//"-"? IDENT "(" WS* expr WS* ")"
+		//"-"? name=IDENT "(" WS* expression=expr WS* ")"
 		public Group getGroup() { return cGroup; }
 
 		//"-"?
 		public Keyword getHyphenMinusKeyword_0() { return cHyphenMinusKeyword_0; }
 
+		//name=IDENT
+		public Assignment getNameAssignment_1() { return cNameAssignment_1; }
+
 		//IDENT
-		public RuleCall getIDENTTerminalRuleCall_1() { return cIDENTTerminalRuleCall_1; }
+		public RuleCall getNameIDENTTerminalRuleCall_1_0() { return cNameIDENTTerminalRuleCall_1_0; }
 
 		//"("
 		public Keyword getLeftParenthesisKeyword_2() { return cLeftParenthesisKeyword_2; }
@@ -942,8 +947,11 @@ public class CssDslGrammarAccess extends AbstractGrammarElementFinder {
 		//WS*
 		public RuleCall getWSTerminalRuleCall_3() { return cWSTerminalRuleCall_3; }
 
+		//expression=expr
+		public Assignment getExpressionAssignment_4() { return cExpressionAssignment_4; }
+
 		//expr
-		public RuleCall getExprParserRuleCall_4() { return cExprParserRuleCall_4; }
+		public RuleCall getExpressionExprParserRuleCall_4_0() { return cExpressionExprParserRuleCall_4_0; }
 
 		//WS*
 		public RuleCall getWSTerminalRuleCall_5() { return cWSTerminalRuleCall_5; }
@@ -1534,7 +1542,7 @@ public class CssDslGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//function hidden():
-	//	"-"? IDENT "(" WS* expr WS* ")";
+	//	"-"? name=IDENT "(" WS* expression=expr WS* ")";
 	public FunctionElements getFunctionAccess() {
 		return (pFunction != null) ? pFunction : (pFunction = new FunctionElements());
 	}
@@ -1643,7 +1651,6 @@ public class CssDslGrammarAccess extends AbstractGrammarElementFinder {
 		return getFREQAccess().getRule();
 	}
 
-	//// hexdigits: '0'|'1'|'2'|'3'|'4'|'5'|'6'|'7'|'8'|'9'|'a'|'b'|'c'|'d'|'e'|'f'|'A'|'B'|'C'|'D'|'E'|'F';
 	//terminal integer:
 	//	"0".."9"+;
 	public TerminalRule getIntegerRule() {

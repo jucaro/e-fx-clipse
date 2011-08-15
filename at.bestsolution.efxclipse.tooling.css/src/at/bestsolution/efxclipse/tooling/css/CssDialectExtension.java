@@ -584,6 +584,27 @@ public interface CssDialectExtension {
 			
 			return rv;
 		}
+		
+		public static ValidationResult checkNumber(term term, String message) {
+			try {
+				Double.parseDouble(term.getNumber());
+			} catch (NumberFormatException e) {
+				return new ValidationResult(ValidationStatus.ERROR, message, term, null, -1);
+			}
+			return null;
+		}
+		
+		public static ValidationResult checkPercentage(term term, String message, int min) {
+			if( term.getNumber().matches("^\\d+%$") || term.getNumber().matches("^-\\d+%$") ) {
+				int v = Integer.parseInt(term.getNumber().substring(0, term.getNumber().length()-1));
+				if( v < min || v > 100 ) {
+					return new ValidationResult(ValidationStatus.ERROR, message, term, null, -1);
+				}
+			} else {
+				return new ValidationResult(ValidationStatus.ERROR, message, term, null, -1);
+			}
+			return null;
+		}
 	}
 	
 	public List<Property> getProperties();

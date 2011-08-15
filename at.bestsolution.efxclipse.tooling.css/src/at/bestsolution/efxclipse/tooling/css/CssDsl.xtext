@@ -144,7 +144,7 @@ num:
 ;
 
 function hidden():
-	('-')?IDENT '(' WS* expr WS* ')'
+	('-')?name=IDENT '(' WS* expression=expr WS* ')'
 ;
 
 HexColor:

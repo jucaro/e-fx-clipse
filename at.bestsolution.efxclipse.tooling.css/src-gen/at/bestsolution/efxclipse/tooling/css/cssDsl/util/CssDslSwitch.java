@@ -130,7 +130,6 @@ public class CssDslSwitch<T> extends Switch<T>
       {
         expr expr = (expr)theEObject;
         T result = caseexpr(expr);
-        if (result == null) result = casefunction(expr);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }

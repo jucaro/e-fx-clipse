@@ -338,25 +338,6 @@ public interface CssDslPackage extends EPackage
   int CSS_GENERIC_DECLARATION_FEATURE_COUNT = CSS_DECLARATION_FEATURE_COUNT + 2;
 
   /**
-   * The meta object id for the '{@link at.bestsolution.efxclipse.tooling.css.cssDsl.impl.functionImpl <em>function</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see at.bestsolution.efxclipse.tooling.css.cssDsl.impl.functionImpl
-   * @see at.bestsolution.efxclipse.tooling.css.cssDsl.impl.CssDslPackageImpl#getfunction()
-   * @generated
-   */
-  int FUNCTION = 10;
-
-  /**
-   * The number of structural features of the '<em>function</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int FUNCTION_FEATURE_COUNT = 0;
-
-  /**
    * The meta object id for the '{@link at.bestsolution.efxclipse.tooling.css.cssDsl.impl.exprImpl <em>expr</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -373,7 +354,7 @@ public interface CssDslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int EXPR__TERM_GROUPS = FUNCTION_FEATURE_COUNT + 0;
+  int EXPR__TERM_GROUPS = 0;
 
   /**
    * The number of structural features of the '<em>expr</em>' class.
@@ -382,7 +363,7 @@ public interface CssDslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int EXPR_FEATURE_COUNT = FUNCTION_FEATURE_COUNT + 1;
+  int EXPR_FEATURE_COUNT = 1;
 
   /**
    * The meta object id for the '{@link at.bestsolution.efxclipse.tooling.css.cssDsl.impl.termGroupImpl <em>term Group</em>}' class.
@@ -484,6 +465,43 @@ public interface CssDslPackage extends EPackage
    * @ordered
    */
   int TERM_FEATURE_COUNT = 6;
+
+  /**
+   * The meta object id for the '{@link at.bestsolution.efxclipse.tooling.css.cssDsl.impl.functionImpl <em>function</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see at.bestsolution.efxclipse.tooling.css.cssDsl.impl.functionImpl
+   * @see at.bestsolution.efxclipse.tooling.css.cssDsl.impl.CssDslPackageImpl#getfunction()
+   * @generated
+   */
+  int FUNCTION = 10;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FUNCTION__NAME = 0;
+
+  /**
+   * The feature id for the '<em><b>Expression</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FUNCTION__EXPRESSION = 1;
+
+  /**
+   * The number of structural features of the '<em>function</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FUNCTION_FEATURE_COUNT = 2;
 
   /**
    * The meta object id for the '{@link at.bestsolution.efxclipse.tooling.css.cssDsl.impl.URLTypeImpl <em>URL Type</em>}' class.
@@ -889,6 +907,28 @@ public interface CssDslPackage extends EPackage
   EClass getfunction();
 
   /**
+   * Returns the meta object for the attribute '{@link at.bestsolution.efxclipse.tooling.css.cssDsl.function#getName <em>Name</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Name</em>'.
+   * @see at.bestsolution.efxclipse.tooling.css.cssDsl.function#getName()
+   * @see #getfunction()
+   * @generated
+   */
+  EAttribute getfunction_Name();
+
+  /**
+   * Returns the meta object for the containment reference '{@link at.bestsolution.efxclipse.tooling.css.cssDsl.function#getExpression <em>Expression</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Expression</em>'.
+   * @see at.bestsolution.efxclipse.tooling.css.cssDsl.function#getExpression()
+   * @see #getfunction()
+   * @generated
+   */
+  EReference getfunction_Expression();
+
+  /**
    * Returns the meta object for class '{@link at.bestsolution.efxclipse.tooling.css.cssDsl.URLType <em>URL Type</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -1233,6 +1273,22 @@ public interface CssDslPackage extends EPackage
      * @generated
      */
     EClass FUNCTION = eINSTANCE.getfunction();
+
+    /**
+     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute FUNCTION__NAME = eINSTANCE.getfunction_Name();
+
+    /**
+     * The meta object literal for the '<em><b>Expression</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference FUNCTION__EXPRESSION = eINSTANCE.getfunction_Expression();
 
     /**
      * The meta object literal for the '{@link at.bestsolution.efxclipse.tooling.css.cssDsl.impl.URLTypeImpl <em>URL Type</em>}' class.

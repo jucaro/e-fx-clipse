@@ -8,6 +8,8 @@ package at.bestsolution.efxclipse.tooling.css.cssDsl;
 
 import org.eclipse.emf.common.util.EList;
 
+import org.eclipse.emf.ecore.EObject;
+
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>expr</b></em>'.
@@ -24,7 +26,7 @@ import org.eclipse.emf.common.util.EList;
  * @model
  * @generated
  */
-public interface expr extends function
+public interface expr extends EObject
 {
   /**
    * Returns the value of the '<em><b>Term Groups</b></em>' containment reference list.
