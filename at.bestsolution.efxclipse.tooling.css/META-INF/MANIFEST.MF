@@ -1,8 +1,8 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: at.bestsolution.efxclipse.tooling.css
-Bundle-Vendor: My Company
-Bundle-Version: 0.0.2
+Bundle-Vendor: BestSolution.at
+Bundle-Version: 0.0.3
 Bundle-SymbolicName: at.bestsolution.efxclipse.tooling.css; singleton:=true
 Bundle-ActivationPolicy: lazy
 Require-Bundle: org.eclipse.xtext;bundle-version="2.0.0";visibility:=reexport,

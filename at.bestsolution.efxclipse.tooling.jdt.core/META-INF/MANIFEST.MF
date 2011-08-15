@@ -2,7 +2,7 @@ Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: Core
 Bundle-SymbolicName: at.bestsolution.efxclipse.tooling.jdt.core;singleton:=true
-Bundle-Version: 0.0.1
+Bundle-Version: 0.0.3
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Require-Bundle: org.eclipse.jdt.core;bundle-version="3.7.0",
  org.eclipse.equinox.common;bundle-version="3.6.0",
@@ -11,3 +11,4 @@ Bundle-Activator: at.bestsolution.efxclipse.tooling.jdt.core.internal.JavaFXCore
 Bundle-ActivationPolicy: lazy
 Export-Package: at.bestsolution.efxclipse.tooling.jdt.core,
  at.bestsolution.efxclipse.tooling.jdt.core.internal;x-friends:="at.bestsolution.efxclipse.tooling.jdt.ui"
+Bundle-Vendor: BestSolution.at

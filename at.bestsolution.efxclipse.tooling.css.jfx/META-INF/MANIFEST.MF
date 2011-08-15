@@ -2,8 +2,9 @@ Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: Jfx
 Bundle-SymbolicName: at.bestsolution.efxclipse.tooling.css.jfx
-Bundle-Version: 0.0.2
+Bundle-Version: 0.0.3
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Require-Bundle: at.bestsolution.efxclipse.tooling.css.ui;bundle-version="0.0.2"
 Service-Component: OSGI-INF/component.xml
 Bundle-ActivationPolicy: lazy
+Bundle-Vendor: BestSolution.at
