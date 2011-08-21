@@ -8,3 +8,4 @@ Require-Bundle: at.bestsolution.efxclipse.tooling.css.ui;bundle-version="0.0.2"
 Service-Component: OSGI-INF/component.xml
 Bundle-ActivationPolicy: lazy
 Bundle-Vendor: BestSolution.at
+Export-Package: at.bestsolution.efxclipse.tooling.css.jfx;x-friends:="at.bestsolution.efxclipse.tooling.css.jfx.test"
