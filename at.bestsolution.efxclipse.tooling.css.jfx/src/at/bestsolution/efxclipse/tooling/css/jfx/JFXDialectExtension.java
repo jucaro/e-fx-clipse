@@ -817,13 +817,13 @@ public class JFXDialectExtension implements CssDialectExtension {
 									}
 								}
 							} else {
-								list.add(new ValidationResult(ValidationStatus.ERROR, "You need to specify at least one color stop", g, null, -1));
+								list.add(new ValidationResult(ValidationStatus.ERROR, "You need to specify at least one color stop", function, CssDslPackage.Literals.FUNCTION__EXPRESSION, -1));
 							}
 						} else {
-							list.add(new ValidationResult(ValidationStatus.ERROR, "You need to specify at least one color stop", g, null, -1));
+							list.add(new ValidationResult(ValidationStatus.ERROR, "You need to specify at least one color stop", function, CssDslPackage.Literals.FUNCTION__EXPRESSION, -1));
 						}
 					} else {
-						list.add(new ValidationResult(ValidationStatus.ERROR, "First element has to be 'from <size> <size> to <size> <size>'", g, null, -1));
+						list.add(new ValidationResult(ValidationStatus.ERROR, "First element has to be 'from <size> <size> to <size> <size>'", function, CssDslPackage.Literals.FUNCTION__EXPRESSION, -1));
 					}
 				} else if( "to".equals(g.getTerms().get(0).getIdentifier()) ) {
 
@@ -837,10 +837,10 @@ public class JFXDialectExtension implements CssDialectExtension {
 					}
 				}
 			} else {
-				list.add(new ValidationResult(ValidationStatus.ERROR, "A linear-gradient has to have at least 1 argument", g, null, -1));
+				list.add(new ValidationResult(ValidationStatus.ERROR, "You need to specify at least one color stop", function, CssDslPackage.Literals.FUNCTION__EXPRESSION, -1));
 			}
 		} else {
-			list.add(new ValidationResult(ValidationStatus.ERROR, "A linear-gradient has to have at least 1 argument", e, null, -1));
+			list.add(new ValidationResult(ValidationStatus.ERROR, "You need to specify at least one color stop", function, CssDslPackage.Literals.FUNCTION__EXPRESSION, -1));
 		}
 	}
 	
