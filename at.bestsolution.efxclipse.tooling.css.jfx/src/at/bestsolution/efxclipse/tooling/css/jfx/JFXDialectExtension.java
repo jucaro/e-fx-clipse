@@ -823,7 +823,7 @@ public class JFXDialectExtension implements CssDialectExtension {
 							list.add(new ValidationResult(ValidationStatus.ERROR, "You need to specify at least one color stop", function, CssDslPackage.Literals.FUNCTION__EXPRESSION, -1));
 						}
 					} else {
-						list.add(new ValidationResult(ValidationStatus.ERROR, "First element has to be 'from <size> <size> to <size> <size>'", function, CssDslPackage.Literals.FUNCTION__EXPRESSION, -1));
+						list.add(new ValidationResult(ValidationStatus.ERROR, "First element has to be 'from <size> <size> to <size> <size>'", g, null, -1));
 					}
 				} else if( "to".equals(g.getTerms().get(0).getIdentifier()) ) {
 
