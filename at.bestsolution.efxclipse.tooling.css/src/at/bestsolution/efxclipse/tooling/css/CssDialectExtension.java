@@ -41,6 +41,11 @@ public interface CssDialectExtension {
 			this.feature = feature;
 			this.index = index;
 		}
+		
+		@Override
+		public String toString() {
+			return status.name() + " - " + message;
+		}
 	}
 	
 	public abstract static class Property {
