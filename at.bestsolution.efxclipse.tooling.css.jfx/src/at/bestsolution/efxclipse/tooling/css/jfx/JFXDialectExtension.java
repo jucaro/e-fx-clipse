@@ -795,6 +795,33 @@ public class JFXDialectExtension implements CssDialectExtension {
 						}
 						validateSize(g.getTerms().get(4), list);
 						validateSize(g.getTerms().get(5), list);
+						
+						if( e.getTermGroups().size() > 1 ) {
+							g = e.getTermGroups().get(1);
+							if( g.getTerms().size() > 0 ) {
+								if( g.getTerms().size() == 1 ) {
+									if( "repeat".equals(g.getTerms().get(0).getIdentifier()) || "reflect".equals(g.getTerms().get(0).getIdentifier()) ) {
+										if( e.getTermGroups().size() > 2 ) {
+											for( int i = 2; i < e.getTermGroups().size(); i++ ) {
+												validateColorStop(e.getTermGroups().get(i),list);
+											}
+										} else {
+											list.add(new ValidationResult(ValidationStatus.ERROR, "You need to specify at least one color stop", g, null, -1));
+										}
+									} else {
+										list.add(new ValidationResult(ValidationStatus.ERROR, "The value is only allowed to be 'repeat' or 'reflect'", g, null, -1));
+									}
+								} else {
+									for( int i = 1; i < e.getTermGroups().size(); i++ ) {
+										validateColorStop(e.getTermGroups().get(i),list);
+									}
+								}
+							} else {
+								list.add(new ValidationResult(ValidationStatus.ERROR, "You need to specify at least one color stop", g, null, -1));
+							}
+						} else {
+							list.add(new ValidationResult(ValidationStatus.ERROR, "You need to specify at least one color stop", g, null, -1));
+						}
 					} else {
 						list.add(new ValidationResult(ValidationStatus.ERROR, "First element has to be 'from <size> <size> to <size> <size>'", g, null, -1));
 					}
@@ -832,9 +859,9 @@ public class JFXDialectExtension implements CssDialectExtension {
 			return;
 		}
 		
-		if( Pattern.matches("^\\d+%$", term.getNumber()) ) {
+		if( term.getNumber().trim().endsWith("%") ) {
 			int i = Integer.parseInt(term.getNumber().substring(0,term.getNumber().length()-1));
-			if( i > 100 ) {
+			if( i < 0 || i > 100 ) {
 				list.add(new ValidationResult(ValidationStatus.ERROR, "Percentage has to be between 0% and 100%", term, CssDslPackage.Literals.TERM__NUMBER, -1));
 			}
 		} else if( ! Pattern.matches(".*\\d+$",term.getNumber()) ) {
