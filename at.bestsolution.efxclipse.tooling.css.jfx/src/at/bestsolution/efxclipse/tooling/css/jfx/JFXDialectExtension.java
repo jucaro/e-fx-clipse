@@ -809,7 +809,7 @@ public class JFXDialectExtension implements CssDialectExtension {
 											list.add(new ValidationResult(ValidationStatus.ERROR, "You need to specify at least one color stop", g, null, -1));
 										}
 									} else {
-										list.add(new ValidationResult(ValidationStatus.ERROR, "The value is only allowed to be 'repeat' or 'reflect'", g, null, -1));
+										list.add(new ValidationResult(ValidationStatus.ERROR, "The value is only allowed to be 'repeat' or 'reflect'", g.getTerms().get(0), CssDslPackage.Literals.TERM__IDENTIFIER, -1));
 									}
 								} else {
 									for( int i = 1; i < e.getTermGroups().size(); i++ ) {

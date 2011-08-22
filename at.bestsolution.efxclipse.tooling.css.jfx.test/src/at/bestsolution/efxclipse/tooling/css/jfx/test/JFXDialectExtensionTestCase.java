@@ -139,9 +139,8 @@ public class JFXDialectExtensionTestCase extends TestCase {
 			List<ValidationResult> results = new ArrayList<ValidationResult>();
 			assertTrue(JFXDialectExtension.isGradient(term, results));
 			assertEquals(1, results.size());
-			assertEquals(results.get(0).object, t2);
-			assertEquals(results.get(0).feature,
-					CssDslPackage.Literals.TERM__NUMBER);
+			assertEquals(t2,results.get(0).object);
+			assertEquals(CssDslPackage.Literals.TERM__NUMBER,results.get(0).feature);
 		}
 
 		// red 101%, red -1% == Invalid
@@ -177,12 +176,10 @@ public class JFXDialectExtensionTestCase extends TestCase {
 			List<ValidationResult> results = new ArrayList<ValidationResult>();
 			assertTrue(JFXDialectExtension.isGradient(term, results));
 			assertEquals(2, results.size());
-			assertEquals(results.get(0).object, t2);
-			assertEquals(results.get(0).feature,
-					CssDslPackage.Literals.TERM__NUMBER);
-			assertEquals(results.get(1).object, t4);
-			assertEquals(results.get(1).feature,
-					CssDslPackage.Literals.TERM__NUMBER);
+			assertEquals(t2,results.get(0).object);
+			assertEquals(CssDslPackage.Literals.TERM__NUMBER,results.get(0).feature);
+			assertEquals(t4,results.get(1).object);
+			assertEquals(CssDslPackage.Literals.TERM__NUMBER,results.get(1).feature);
 		}
 	}
 
@@ -425,6 +422,75 @@ public class JFXDialectExtensionTestCase extends TestCase {
 			List<ValidationResult> results = new ArrayList<ValidationResult>();
 			assertTrue(JFXDialectExtension.isGradient(term, results));
 			assertEquals(results.toString(), 0, results.size());
+		}
+
+		// from 100px 100px to 200px 200px, unknown, red 0%, red 100% == Invalid
+		{
+			term t1 = CssDslFactory.eINSTANCE.createterm();
+			t1.setIdentifier("from");
+
+			term t2 = CssDslFactory.eINSTANCE.createterm();
+			t2.setNumber("100px");
+
+			term t3 = CssDslFactory.eINSTANCE.createterm();
+			t3.setNumber("100px");
+
+			term t4 = CssDslFactory.eINSTANCE.createterm();
+			t4.setIdentifier("to");
+
+			term t5 = CssDslFactory.eINSTANCE.createterm();
+			t5.setNumber("100px");
+
+			term t6 = CssDslFactory.eINSTANCE.createterm();
+			t6.setNumber("100px");
+
+			termGroup fromToGroup = CssDslFactory.eINSTANCE.createtermGroup();
+			fromToGroup.getTerms()
+					.addAll(Arrays.asList(t1, t2, t3, t4, t5, t6));
+
+			term repeatTerm = CssDslFactory.eINSTANCE.createterm();
+			repeatTerm.setIdentifier("unknown");
+
+			termGroup repeatGroup = CssDslFactory.eINSTANCE.createtermGroup();
+			repeatGroup.getTerms().add(repeatTerm);
+
+			term t7 = CssDslFactory.eINSTANCE.createterm();
+			t7.setIdentifier("red");
+
+			term t8 = CssDslFactory.eINSTANCE.createterm();
+			t8.setNumber("0%");
+
+			termGroup stopGroup1 = CssDslFactory.eINSTANCE.createtermGroup();
+			stopGroup1.getTerms().addAll(Arrays.asList(t7, t8));
+
+			term t9 = CssDslFactory.eINSTANCE.createterm();
+			t9.setIdentifier("red");
+
+			term t10 = CssDslFactory.eINSTANCE.createterm();
+			t10.setNumber("100%");
+
+			termGroup stopGroup2 = CssDslFactory.eINSTANCE.createtermGroup();
+			stopGroup2.getTerms().addAll(Arrays.asList(t9, t10));
+
+			expr expr = CssDslFactory.eINSTANCE.createexpr();
+			expr.getTermGroups().add(fromToGroup);
+			expr.getTermGroups().add(repeatGroup);
+			expr.getTermGroups().add(stopGroup1);
+			expr.getTermGroups().add(stopGroup2);
+
+			function function = CssDslFactory.eINSTANCE.createfunction();
+			function.setName("linear-gradient");
+			function.setExpression(expr);
+
+			term term = CssDslFactory.eINSTANCE.createterm();
+			term.setFunction(function);
+
+			List<ValidationResult> results = new ArrayList<ValidationResult>();
+			assertTrue(JFXDialectExtension.isGradient(term, results));
+			assertEquals(results.toString(), 1, results.size());
+			assertEquals(repeatTerm, results.get(0).object);
+			assertEquals(CssDslPackage.Literals.TERM__IDENTIFIER, results.get(0).feature);
+			
 		}
 	}
 }
