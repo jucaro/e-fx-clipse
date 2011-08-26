@@ -95,7 +95,7 @@ public class JFXDialectExtensionTestCase extends TestCase {
 			t1.setIdentifier("red");
 
 			term t2 = CssDslFactory.eINSTANCE.createterm();
-			t2.setNumber("10px");
+			t2.setNumber("10"+length);
 
 			termGroup group = CssDslFactory.eINSTANCE.createtermGroup();
 			group.getTerms().addAll(Arrays.asList(t1, t2));
@@ -556,8 +556,7 @@ public class JFXDialectExtensionTestCase extends TestCase {
 			t5.setNumber("200px");
 
 			termGroup fromToGroup = CssDslFactory.eINSTANCE.createtermGroup();
-			fromToGroup.getTerms()
-					.addAll(Arrays.asList(t1, t2, t3, t4, t5));
+			fromToGroup.getTerms().addAll(Arrays.asList(t1, t2, t3, t4, t5));
 
 			term t7 = CssDslFactory.eINSTANCE.createterm();
 			t7.setIdentifier("red");
@@ -594,6 +593,125 @@ public class JFXDialectExtensionTestCase extends TestCase {
 			assertEquals(1, results.size());
 			assertEquals(fromToGroup, results.get(0).object);
 			assertNull(results.get(0).feature);
+		}
+
+		// from 100px 100px to 200px 200px, red
+		{
+			term t1 = CssDslFactory.eINSTANCE.createterm();
+			t1.setIdentifier("from");
+
+			term t2 = CssDslFactory.eINSTANCE.createterm();
+			t2.setNumber("100px");
+
+			term t3 = CssDslFactory.eINSTANCE.createterm();
+			t3.setNumber("100px");
+
+			term t4 = CssDslFactory.eINSTANCE.createterm();
+			t4.setIdentifier("to");
+
+			term t5 = CssDslFactory.eINSTANCE.createterm();
+			t5.setNumber("200px");
+
+			term t6 = CssDslFactory.eINSTANCE.createterm();
+			t6.setNumber("200px");
+
+			termGroup fromToGroup = CssDslFactory.eINSTANCE.createtermGroup();
+			fromToGroup.getTerms()
+					.addAll(Arrays.asList(t1, t2, t3, t4, t5, t6));
+
+			term t7 = CssDslFactory.eINSTANCE.createterm();
+			t7.setIdentifier("red");
+
+			termGroup stopGroup = CssDslFactory.eINSTANCE.createtermGroup();
+			stopGroup.getTerms().addAll(Arrays.asList(t7));
+
+			expr expr = CssDslFactory.eINSTANCE.createexpr();
+			expr.getTermGroups().add(fromToGroup);
+			expr.getTermGroups().add(stopGroup);
+
+			function function = CssDslFactory.eINSTANCE.createfunction();
+			function.setName("linear-gradient");
+			function.setExpression(expr);
+
+			term term = CssDslFactory.eINSTANCE.createterm();
+			term.setFunction(function);
+
+			List<ValidationResult> results = new ArrayList<ValidationResult>();
+			assertTrue(JFXDialectExtension.isGradient(term, results));
+			assertEquals(1, results.size());
+			assertEquals(t7, results.get(0).object);
+		}
+		
+		// to bottom, red 100%
+		{
+			term t1 = CssDslFactory.eINSTANCE.createterm();
+			t1.setIdentifier("to");
+			
+			term t2 = CssDslFactory.eINSTANCE.createterm();
+			t2.setIdentifier("bottom");
+			
+			termGroup toGroup = CssDslFactory.eINSTANCE.createtermGroup();
+			toGroup.getTerms().addAll(Arrays.asList(t1,t2));
+			
+			term t3 = CssDslFactory.eINSTANCE.createterm();
+			t3.setIdentifier("red");
+
+			term t4 = CssDslFactory.eINSTANCE.createterm();
+			t4.setNumber("0%");
+
+			termGroup stopGroup = CssDslFactory.eINSTANCE.createtermGroup();
+			stopGroup.getTerms().addAll(Arrays.asList(t3, t4));
+			
+			expr expr = CssDslFactory.eINSTANCE.createexpr();
+			expr.getTermGroups().add(toGroup);
+			expr.getTermGroups().add(stopGroup);
+
+			function function = CssDslFactory.eINSTANCE.createfunction();
+			function.setName("linear-gradient");
+			function.setExpression(expr);
+
+			term term = CssDslFactory.eINSTANCE.createterm();
+			term.setFunction(function);
+			
+			List<ValidationResult> results = new ArrayList<ValidationResult>();
+			assertTrue(JFXDialectExtension.isGradient(term, results));
+			assertEquals(0, results.size());
+		}
+		
+		// to left, red 100%
+		{
+			term t1 = CssDslFactory.eINSTANCE.createterm();
+			t1.setIdentifier("to");
+			
+			term t2 = CssDslFactory.eINSTANCE.createterm();
+			t2.setIdentifier("left");
+			
+			termGroup toGroup = CssDslFactory.eINSTANCE.createtermGroup();
+			toGroup.getTerms().addAll(Arrays.asList(t1,t2));
+			
+			term t3 = CssDslFactory.eINSTANCE.createterm();
+			t3.setIdentifier("red");
+
+			term t4 = CssDslFactory.eINSTANCE.createterm();
+			t4.setNumber("0%");
+
+			termGroup stopGroup = CssDslFactory.eINSTANCE.createtermGroup();
+			stopGroup.getTerms().addAll(Arrays.asList(t3, t4));
+			
+			expr expr = CssDslFactory.eINSTANCE.createexpr();
+			expr.getTermGroups().add(toGroup);
+			expr.getTermGroups().add(stopGroup);
+
+			function function = CssDslFactory.eINSTANCE.createfunction();
+			function.setName("linear-gradient");
+			function.setExpression(expr);
+
+			term term = CssDslFactory.eINSTANCE.createterm();
+			term.setFunction(function);
+			
+			List<ValidationResult> results = new ArrayList<ValidationResult>();
+			assertTrue(JFXDialectExtension.isGradient(term, results));
+			assertEquals(0, results.size());
 		}
 	}
 }

@@ -534,9 +534,13 @@ public class JFXDialectExtension implements CssDialectExtension {
 				} else if( dec.getExpression().getTermGroups().size() == 1 ) {
 					List<ValidationResult> list = new ArrayList<ValidationResult>();
 					if( dec.getExpression().getTermGroups().get(0).getTerms().size() == 1 ) {
-						isColor(dec.getExpression().getTermGroups().get(0).getTerms().get(0),list);
-						if( list.size() > 0 ) {
+						if( isGradient(dec.getExpression().getTermGroups().get(0).getTerms().get(0), list) ) {
 							return list.toArray(new ValidationResult[0]);
+						} else {
+							validateColor(dec.getExpression().getTermGroups().get(0).getTerms().get(0),list);
+							if( list.size() > 0 ) {
+								return list.toArray(new ValidationResult[0]);
+							}
 						}
 					}
 					
@@ -630,11 +634,24 @@ public class JFXDialectExtension implements CssDialectExtension {
 			return proposals;
 		}
 		
-//		@Override
-//		public ValidationResult[] validate(css_generic_declaration dec) {
-//			// TODO Auto-generated method stub
-//			return super.validate(dec);
-//		}
+		@Override
+		public ValidationResult[] validate(css_generic_declaration dec) {
+			List<ValidationResult> rv = new ArrayList<CssDialectExtension.ValidationResult>();
+			if( dec.getExpression().getTermGroups().size() == 1 || dec.getExpression().getTermGroups().size() == 4 ) {
+				for( termGroup g : dec.getExpression().getTermGroups() ) {
+					if( g.getTerms().size() == 1 ) {
+						if( isGradient(g.getTerms().get(0), rv) ) {
+							return rv.toArray(new ValidationResult[0]);
+						} else {
+							validateColor(g.getTerms().get(0), rv);
+						}
+					}
+				}
+			} else {
+				rv.add(new ValidationResult(ValidationStatus.ERROR, "The property has to have 1 or 4 values", dec.getExpression(), null, -1));
+			}
+			return rv.toArray(new ValidationResult[0]);
+		}
 	}
 	
 	public static class Number4TimesProperty extends Property implements MultiValuesGroupProperty {
@@ -826,11 +843,51 @@ public class JFXDialectExtension implements CssDialectExtension {
 						list.add(new ValidationResult(ValidationStatus.ERROR, "First element has to be 'from <size> <size> to <size> <size>'", g, null, -1));
 					}
 				} else if( "to".equals(g.getTerms().get(0).getIdentifier()) ) {
-
-				} else if( "repeat".equals(g.getTerms().get(0).getIdentifier()) ) {
-
-				} else if( "reflect".equals(g.getTerms().get(0).getIdentifier()) ) {
-
+					if( g.getTerms().size() == 2 ) {
+						if( g.getTerms().size() == 2 ) {
+							String v = g.getTerms().get(1).getIdentifier();
+							if( !("bottom".equals(v) || "top".equals(v) || "left".equals(v) || "right".equals(v)) ) {
+								list.add(new ValidationResult(ValidationStatus.ERROR, "The value has to be top or bottom", g, null, -1));
+							}	
+						}
+						
+						if( e.getTermGroups().size() > 1 ) {
+							g = e.getTermGroups().get(1);
+							if( g.getTerms().size() > 0 ) {
+								if( g.getTerms().size() == 1 ) {
+									if( "repeat".equals(g.getTerms().get(0).getIdentifier()) || "reflect".equals(g.getTerms().get(0).getIdentifier()) ) {
+										if( e.getTermGroups().size() > 2 ) {
+											for( int i = 2; i < e.getTermGroups().size(); i++ ) {
+												validateColorStop(e.getTermGroups().get(i),list);
+											}
+										} else {
+											list.add(new ValidationResult(ValidationStatus.ERROR, "You need to specify at least one color stop", g, null, -1));
+										}
+									} else {
+										list.add(new ValidationResult(ValidationStatus.ERROR, "The value is only allowed to be 'repeat' or 'reflect'", g.getTerms().get(0), CssDslPackage.Literals.TERM__IDENTIFIER, -1));
+									}
+								} else {
+									for( int i = 1; i < e.getTermGroups().size(); i++ ) {
+										validateColorStop(e.getTermGroups().get(i),list);
+									}
+								}
+							} else {
+								list.add(new ValidationResult(ValidationStatus.ERROR, "You need to specify at least one color stop", function, CssDslPackage.Literals.FUNCTION__EXPRESSION, -1));
+							}
+						} else {
+							list.add(new ValidationResult(ValidationStatus.ERROR, "You need to specify at least one color stop", function, CssDslPackage.Literals.FUNCTION__EXPRESSION, -1));
+						}
+					} else {
+						list.add(new ValidationResult(ValidationStatus.ERROR, "The to group has to have a 2nd term left, right and top, bottom", g, null, -1));
+					}
+				} else if( "repeat".equals(g.getTerms().get(0).getIdentifier()) || "reflect".equals(g.getTerms().get(0).getIdentifier()) ) {
+					if( e.getTermGroups().size() > 1 ) {
+						for( int i = 1; i < e.getTermGroups().size(); i++ ) {
+							validateColorStop(e.getTermGroups().get(i),list);
+						}
+					} else {
+						list.add(new ValidationResult(ValidationStatus.ERROR, "You need to specify at least one color stop", function, CssDslPackage.Literals.FUNCTION__EXPRESSION, -1));
+					}
 				} else {
 					for( termGroup stopGroup : e.getTermGroups() ) {
 						validateColorStop(stopGroup,list);	
@@ -846,7 +903,7 @@ public class JFXDialectExtension implements CssDialectExtension {
 	
 	public static void validateColorStop(termGroup group, List<ValidationResult> list) {
 		if( group.getTerms().size() == 2 ) {
-			isColor(group.getTerms().get(0), list);
+			validateColor(group.getTerms().get(0), list);
 			validateSize(group.getTerms().get(1), list);
 		} else {
 			list.add(new ValidationResult(ValidationStatus.ERROR, "The color stop has to have a color and a size", group, null, -1));
@@ -881,7 +938,7 @@ public class JFXDialectExtension implements CssDialectExtension {
 		}
 	}
 	
-	public static void isColor(term t, List<ValidationResult> list) {
+	public static void validateColor(term t, List<ValidationResult> list) {
 			if( t.getIdentifier() != null ) {
 				for( Proposal color: PREDEFINED_COLORS ) {
 					if( t.getIdentifier().equals(color.getProposal()) ) {
@@ -1042,7 +1099,7 @@ public class JFXDialectExtension implements CssDialectExtension {
 					expr e = t.getFunction().getExpression();
 					if( e.getTermGroups().size() == 2 ) {
 						if( e.getTermGroups().get(0).getTerms().size() == 1 ) {
-							isColor(e.getTermGroups().get(0).getTerms().get(0), list);
+							validateColor(e.getTermGroups().get(0).getTerms().get(0), list);
 							
 							termGroup g = e.getTermGroups().get(1);
 							if( g.getTerms().size() == 1 ) {
