@@ -582,18 +582,23 @@ public class JFXDialectExtension implements CssDialectExtension {
 			return proposals;
 		}
 		
-//		@Override
-//		public ValidationResult[] validate(css_generic_declaration dec) {
-//			if( dec.getExpression() != null ) {
-//				for( termGroup g : dec.getExpression().getTermGroups() ) {
-//					if( g.getTerms().size() > 1 ) {
-//						
-//					}
-//				}
-//			}
-//			// TODO Auto-generated method stub
-//			return super.validate(dec);
-//		}
+		@Override
+		public ValidationResult[] validate(css_generic_declaration dec) {
+			List<ValidationResult> rv = new ArrayList<CssDialectExtension.ValidationResult>();
+			if( dec.getExpression() != null ) {
+				for( termGroup g : dec.getExpression().getTermGroups() ) {
+					if( g.getTerms().size() == 1 ) {
+						if( ! isGradient(g.getTerms().get(0), rv) ) {
+							validateColor(g.getTerms().get(0), rv);
+						}
+					} else {
+						rv.add(new ValidationResult(ValidationStatus.ERROR, "The property allows only one term", g, null, -1));
+					}
+				}
+			}
+			
+			return rv.toArray(new ValidationResult[0]);
+		}
 	}
 	
 	public static class MultiPaint4TimesProperty extends Property implements MultiValuesGroupProperty, MultiTermGroupProperty {
@@ -844,19 +849,17 @@ public class JFXDialectExtension implements CssDialectExtension {
 					}
 				} else if( "to".equals(g.getTerms().get(0).getIdentifier()) ) {
 					if( g.getTerms().size() == 2 ) {
-						if( g.getTerms().size() == 2 ) {
-							String v = g.getTerms().get(1).getIdentifier();
-							if( !("bottom".equals(v) || "top".equals(v) || "left".equals(v) || "right".equals(v)) ) {
-								list.add(new ValidationResult(ValidationStatus.ERROR, "The value has to be top or bottom", g, null, -1));
-							}	
-						}
+						String v = g.getTerms().get(1).getIdentifier();
+						if( !("bottom".equals(v) || "top".equals(v) || "left".equals(v) || "right".equals(v)) ) {
+							list.add(new ValidationResult(ValidationStatus.ERROR, "The value has to be top or bottom", g, null, -1));
+						}	
 						
 						if( e.getTermGroups().size() > 1 ) {
 							g = e.getTermGroups().get(1);
 							if( g.getTerms().size() > 0 ) {
 								if( g.getTerms().size() == 1 ) {
 									if( "repeat".equals(g.getTerms().get(0).getIdentifier()) || "reflect".equals(g.getTerms().get(0).getIdentifier()) ) {
-										if( e.getTermGroups().size() > 2 ) {
+										if( e.getTermGroups().size() > 1 ) {
 											for( int i = 2; i < e.getTermGroups().size(); i++ ) {
 												validateColorStop(e.getTermGroups().get(i),list);
 											}
@@ -864,7 +867,9 @@ public class JFXDialectExtension implements CssDialectExtension {
 											list.add(new ValidationResult(ValidationStatus.ERROR, "You need to specify at least one color stop", g, null, -1));
 										}
 									} else {
-										list.add(new ValidationResult(ValidationStatus.ERROR, "The value is only allowed to be 'repeat' or 'reflect'", g.getTerms().get(0), CssDslPackage.Literals.TERM__IDENTIFIER, -1));
+										for( int i = 1; i < e.getTermGroups().size(); i++ ) {
+											validateColorStop(e.getTermGroups().get(i),list);
+										}
 									}
 								} else {
 									for( int i = 1; i < e.getTermGroups().size(); i++ ) {
@@ -902,11 +907,13 @@ public class JFXDialectExtension implements CssDialectExtension {
 	}
 	
 	public static void validateColorStop(termGroup group, List<ValidationResult> list) {
-		if( group.getTerms().size() == 2 ) {
+		if( group.getTerms().size() > 0 ) {
 			validateColor(group.getTerms().get(0), list);
-			validateSize(group.getTerms().get(1), list);
+			if( group.getTerms().size() > 1 ) {
+				validateSize(group.getTerms().get(1), list);	
+			}
 		} else {
-			list.add(new ValidationResult(ValidationStatus.ERROR, "The color stop has to have a color and a size", group, null, -1));
+			list.add(new ValidationResult(ValidationStatus.ERROR, "The color stop has to have a color and optional a length", group, null, -1));
 		}
 	}
 	
@@ -946,6 +953,9 @@ public class JFXDialectExtension implements CssDialectExtension {
 					}
 				}
 			} else if( t.getHexColor() != null ) {
+				if( !(t.getHexColor().length() == 4 || t.getHexColor().length() == 7) ) {
+					list.add(new ValidationResult(ValidationStatus.ERROR, "A hex-color definition has to have 3 or 6 hex-digits", t, CssDslPackage.Literals.TERM__HEX_COLOR, -1));
+				}
 				return;
 			} else if( t.getFunction() != null ) {
 				if( "rgb".equals(t.getFunction().getName()) ) {
@@ -971,7 +981,6 @@ public class JFXDialectExtension implements CssDialectExtension {
 							}
 						}
 					} else {
-						System.err.println("NIX DA");
 						list.add(new ValidationResult(ValidationStatus.ERROR, "A RGB value has to be defined with 3 values (red,green,blue)", t.getFunction(), null, -1));
 					}
 				} else if( "rgba".equals(t.getFunction().getName()) ) {
@@ -1000,12 +1009,12 @@ public class JFXDialectExtension implements CssDialectExtension {
 						
 						termGroup g = e.getTermGroups().get(3);
 						if( g.getTerms().size() == 1 ) {
-							if( g.getTerms().get(0).getNumber().matches(".+\\d$") ) {
+							try {
 								double v = Double.parseDouble(g.getTerms().get(0).getNumber());
 								if( v < 0 || v > 1.0 ) {
 									list.add(new ValidationResult(ValidationStatus.ERROR, "The value has to be a single floating point number between 0.0 (=transparent) and 1.0 (=opaque)", g, null, -1));
 								}
-							} else {
+							} catch (Exception ex) {
 								list.add(new ValidationResult(ValidationStatus.ERROR, "The value has to be a single floating point number between 0.0 (=transparent) and 1.0 (=opaque)", g, null, -1));
 							}
 						} else {
