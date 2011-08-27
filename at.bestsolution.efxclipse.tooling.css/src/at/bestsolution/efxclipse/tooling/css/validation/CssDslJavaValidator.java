@@ -17,6 +17,7 @@ public class CssDslJavaValidator extends AbstractCssDslJavaValidator {
 	private CssDialectExtensionComponent extension;
 	
 	public CssDslJavaValidator() {
+		System.err.println("Created Validator instance");
 		BundleContext context = FrameworkUtil.getBundle(CssDslJavaValidator.class).getBundleContext();
 		ServiceReference<CssDialectExtensionComponent> ref = context.getServiceReference(CssDialectExtensionComponent.class);
 		if( ref != null ) {
@@ -41,9 +42,9 @@ public class CssDslJavaValidator extends AbstractCssDslJavaValidator {
 		if( dec.getExpression().getTermGroups().size() == 1 && dec.getExpression().getTermGroups().get(0).getTerms().size() == 1 && "null".equals(dec.getExpression().getTermGroups().get(0).getTerms().get(0).getIdentifier()) ) {
 			return;
 		}
-		
+
 		ValidationResult[] results = new ValidationResult[0];
-		for( Property p : extension.getProperties() ) {
+		for( Property p : extension.getProperties(dec.eResource().getURI()) ) {
 			if( propertyName.equals(p.getName()) ) {
 				System.err.println("Found: " + p);
 				

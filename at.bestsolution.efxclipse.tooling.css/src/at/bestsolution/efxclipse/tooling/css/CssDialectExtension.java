@@ -4,12 +4,12 @@ import static at.bestsolution.efxclipse.tooling.css.CssDialectExtension.Util.fro
 
 import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
-import java.net.URI;
 import java.net.URISyntaxException;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
+import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EStructuralFeature;
 
@@ -297,7 +297,7 @@ public interface CssDialectExtension {
 							return new ValidationResult[] { new ValidationResult(ValidationStatus.ERROR, "The value is not an url", null, null, -1) };
 						} else {
 							try {
-								new URI(url.getUrl());
+								new java.net.URI(url.getUrl());
 							} catch (URISyntaxException e) {
 								return new ValidationResult[] { new ValidationResult(ValidationStatus.ERROR, "The value is not an url", null, null, -1) };
 							}
@@ -337,7 +337,7 @@ public interface CssDialectExtension {
 							return new ValidationResult[] { new ValidationResult(ValidationStatus.ERROR, "The value is not an url", g.getTerms().get(0), CssDslPackage.Literals.TERM__URL, -1) };
 						} else {
 							try {
-								new URI(url.getUrl());
+								new java.net.URI(url.getUrl());
 							} catch (URISyntaxException e) {
 								return new ValidationResult[] { new ValidationResult(ValidationStatus.ERROR, "The value is not an url", null, null, -1) };
 							}
@@ -613,4 +613,5 @@ public interface CssDialectExtension {
 	}
 	
 	public List<Property> getProperties();
+	public boolean isActive(URI uri);
 }

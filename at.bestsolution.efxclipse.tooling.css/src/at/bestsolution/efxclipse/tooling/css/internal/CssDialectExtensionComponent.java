@@ -3,9 +3,12 @@ package at.bestsolution.efxclipse.tooling.css.internal;
 import java.util.ArrayList;
 import java.util.List;
 
-import at.bestsolution.efxclipse.tooling.css.CssDialectExtension;
+import org.eclipse.emf.common.util.URI;
 
-public class CssDialectExtensionComponent implements CssDialectExtension {
+import at.bestsolution.efxclipse.tooling.css.CssDialectExtension;
+import at.bestsolution.efxclipse.tooling.css.CssDialectExtension.Property;
+
+public class CssDialectExtensionComponent {
 	private List<CssDialectExtension> extensions = new ArrayList<CssDialectExtension>();
 	
 	public void addExtension(CssDialectExtension extension) {
@@ -21,22 +24,25 @@ public class CssDialectExtensionComponent implements CssDialectExtension {
 		}
 	}
 
-	@Override
-	public List<Property> getProperties() {
+	public List<Property> getProperties(URI uri) {
 		List<Property> rv = new ArrayList<Property>();
 		
-		for( CssDialectExtension ext : getExtensions() ) {
+		for( CssDialectExtension ext : getExtensions(uri) ) {
 			rv.addAll(ext.getProperties());
 		}
 		
 		return rv;
 	}
 
-	public CssDialectExtension[] getExtensions() {
-		CssDialectExtension[] exts;
+	public CssDialectExtension[] getExtensions(URI uri) {
+		List<CssDialectExtension> exts = new ArrayList<CssDialectExtension>();
 		synchronized (extensions) {
-			exts = extensions.toArray(new CssDialectExtension[0]);	
+			for( CssDialectExtension e : extensions ) {
+				if( e.isActive(uri) ) {
+					exts.add(e);
+				}
+			}
 		}
-		return exts;
+		return exts.toArray(new CssDialectExtension[0]);
 	}
 }
