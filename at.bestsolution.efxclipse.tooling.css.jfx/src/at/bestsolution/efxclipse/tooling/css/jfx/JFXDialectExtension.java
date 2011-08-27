@@ -928,7 +928,7 @@ public class JFXDialectExtension implements CssDialectExtension {
 		}
 		
 		if( term.getNumber().trim().endsWith("%") ) {
-			int i = Integer.parseInt(term.getNumber().substring(0,term.getNumber().length()-1));
+			double i = Double.parseDouble(term.getNumber().substring(0,term.getNumber().length()-1));
 			if( i < 0 || i > 100 ) {
 				list.add(new ValidationResult(ValidationStatus.ERROR, "Percentage has to be between 0% and 100%", term, CssDslPackage.Literals.TERM__NUMBER, -1));
 			}
