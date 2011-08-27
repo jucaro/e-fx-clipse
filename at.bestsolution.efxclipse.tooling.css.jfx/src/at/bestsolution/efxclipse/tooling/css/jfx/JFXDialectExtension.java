@@ -6,6 +6,8 @@ import java.util.Collections;
 import java.util.List;
 import java.util.regex.Pattern;
 
+import org.eclipse.emf.common.util.URI;
+
 import at.bestsolution.efxclipse.tooling.css.CssDialectExtension;
 import at.bestsolution.efxclipse.tooling.css.cssDsl.CssDslPackage;
 import at.bestsolution.efxclipse.tooling.css.cssDsl.css_declaration;
@@ -1146,4 +1148,8 @@ public class JFXDialectExtension implements CssDialectExtension {
 				list.add(new ValidationResult(ValidationStatus.ERROR, "Unsupported color definition", t, null, -1));
 			}
 	}
+	
+	public boolean isActive(URI uri) {
+		return uri.toString().endsWith(".fxcss"); 
+	};
 }

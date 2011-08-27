@@ -31,6 +31,7 @@ public class CssDslProposalProvider extends AbstractCssDslProposalProvider {
 	private CssDialectExtensionComponent extension;
 	
 	public CssDslProposalProvider() {
+		System.err.println("Created proposal instance");
 		BundleContext context = CssDslActivator.getInstance().getBundle().getBundleContext();
 		ServiceReference<CssDialectExtensionComponent> ref = context.getServiceReference(CssDialectExtensionComponent.class);
 		extension = context.getService(ref);
@@ -40,7 +41,7 @@ public class CssDslProposalProvider extends AbstractCssDslProposalProvider {
 	public void complete_css_property(EObject model, RuleCall ruleCall,
 			ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
 		if( model instanceof ruleset ) {
-			for( Property property : extension.getProperties() ) {
+			for( Property property : extension.getProperties(model.eResource().getURI()) ) {
 				acceptor.accept(createCompletionProposal(property.getName(), property.getName(), null, context));
 			}
 			
@@ -92,7 +93,7 @@ public class CssDslProposalProvider extends AbstractCssDslProposalProvider {
 			css_generic_declaration dec = (css_generic_declaration) context.getCurrentModel();
 			if( dec.getExpression() == null || dec.getExpression().getTermGroups().size() == 0) {
 //				System.err.println("This is the initial");
-				Property p = getProperty(extension.getProperties(), dec.getProperty());
+				Property p = getProperty(extension.getProperties(model.eResource().getURI()), dec.getProperty());
 				if( p != null ) {
 					addProposals(p.getInitialTermProposals(), acceptor, context);
 					return;
@@ -106,7 +107,7 @@ public class CssDslProposalProvider extends AbstractCssDslProposalProvider {
 			css_generic_declaration dec = (css_generic_declaration) expression.eContainer();
 			
 			if( expression.getTermGroups().indexOf(group) == 0 ) {
-				Property p = getProperty(extension.getProperties(), dec.getProperty());
+				Property p = getProperty(extension.getProperties(model.eResource().getURI()), dec.getProperty());
 //				System.err.println("This is the first group");
 				if( p instanceof MultiValuesGroupProperty ) {
 					addProposals(((MultiValuesGroupProperty) p).getNextTermProposal(group.getTerms().size(), group, null), acceptor, context);
@@ -114,7 +115,7 @@ public class CssDslProposalProvider extends AbstractCssDslProposalProvider {
 				}
 			} else {
 //				System.err.println("This is 2nd ... in 2nd group");
-				Property p = getProperty(extension.getProperties(), dec.getProperty());
+				Property p = getProperty(extension.getProperties(model.eResource().getURI()), dec.getProperty());
 				if( p instanceof MultiTermGroupProperty && p instanceof MultiValuesGroupProperty ) {
 //					System.err.println("Property with multi terms in a group");
 					addProposals(((MultiValuesGroupProperty) p).getNextTermProposal(group.getTerms().size(), group, null), acceptor, context);
@@ -126,7 +127,7 @@ public class CssDslProposalProvider extends AbstractCssDslProposalProvider {
 			// We get in here on 2nd value of 2nd ... group
 			expr expression = (expr) context.getCurrentModel();
 			css_generic_declaration dec = (css_generic_declaration) expression.eContainer();
-			Property p = getProperty(extension.getProperties(), dec.getProperty());
+			Property p = getProperty(extension.getProperties(model.eResource().getURI()), dec.getProperty());
 			if( p instanceof MultiTermGroupProperty ) {
 				addProposals(((MultiTermGroupProperty) p).getInitialTermProposal(0, dec), acceptor, context);
 			}
@@ -141,7 +142,7 @@ public class CssDslProposalProvider extends AbstractCssDslProposalProvider {
 			if( expression.eContainer() instanceof css_generic_declaration ) {
 				css_generic_declaration dec = (css_generic_declaration) expression.eContainer();
 				
-				Property p = getProperty(extension.getProperties(), dec.getProperty());
+				Property p = getProperty(extension.getProperties(model.eResource().getURI()), dec.getProperty());
 				if( p != null ) {
 					int groupIdx = expression.getTermGroups().indexOf(group);
 					if( groupIdx == 0 ) {
@@ -202,7 +203,7 @@ public class CssDslProposalProvider extends AbstractCssDslProposalProvider {
 	private boolean createExpressionFurtherTermProposals(css_generic_declaration dec, expr expression, termGroup tgr, term t) {
 		// This is the >= 2nd group
 		if( expression.getTermGroups().indexOf(tgr) != 0 ) {
-			Property p = getProperty(extension.getProperties(), dec.getProperty());
+			Property p = getProperty(extension.getProperties(dec.eResource().getURI()), dec.getProperty());
 			if( p instanceof MultiTermGroupProperty ) {
 				if( tgr.getTerms().indexOf(t) == 0 ) {
 					// Show the initial proposals
@@ -214,7 +215,7 @@ public class CssDslProposalProvider extends AbstractCssDslProposalProvider {
 				return true;
 			}
 		} else {
-			Property p = getProperty(extension.getProperties(), dec.getProperty());
+			Property p = getProperty(extension.getProperties(dec.eResource().getURI()), dec.getProperty());
 			if( p instanceof MultiValuesGroupProperty ) {
 				if( tgr.getTerms().indexOf(t) > 0 ) {
 					// Show the extended proposals

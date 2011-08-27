@@ -2,11 +2,11 @@ package at.bestsolution.efxclipse.tooling.css.web;
 
 import static at.bestsolution.efxclipse.tooling.css.CssDialectExtension.Util.fromList;
 
-import java.lang.reflect.Constructor;
-import java.lang.reflect.InvocationTargetException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+
+import org.eclipse.emf.common.util.URI;
 
 import at.bestsolution.efxclipse.tooling.css.CssDialectExtension;
 
@@ -109,5 +109,9 @@ public class WebDialectExtension implements CssDialectExtension {
 	@Override
 	public List<Property> getProperties() {
 		return PROPERTIES;
-	}	
+	}
+	
+	public boolean isActive(URI uri) {
+		return uri.toString().endsWith(".css");
+	}
 }
