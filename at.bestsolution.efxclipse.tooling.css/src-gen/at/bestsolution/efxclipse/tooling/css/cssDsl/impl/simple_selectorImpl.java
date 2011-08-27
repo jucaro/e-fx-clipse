@@ -62,64 +62,34 @@ public class simple_selectorImpl extends MinimalEObjectImpl.Container implements
   protected String element = ELEMENT_EDEFAULT;
 
   /**
-   * The default value of the '{@link #getId() <em>Id</em>}' attribute.
+   * The cached value of the '{@link #getId() <em>Id</em>}' attribute list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @see #getId()
    * @generated
    * @ordered
    */
-  protected static final String ID_EDEFAULT = null;
+  protected EList<String> id;
 
   /**
-   * The cached value of the '{@link #getId() <em>Id</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getId()
-   * @generated
-   * @ordered
-   */
-  protected String id = ID_EDEFAULT;
-
-  /**
-   * The default value of the '{@link #getClass_() <em>Class</em>}' attribute.
+   * The cached value of the '{@link #getClass_() <em>Class</em>}' attribute list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @see #getClass_()
    * @generated
    * @ordered
    */
-  protected static final String CLASS_EDEFAULT = null;
+  protected EList<String> class_;
 
   /**
-   * The cached value of the '{@link #getClass_() <em>Class</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getClass_()
-   * @generated
-   * @ordered
-   */
-  protected String class_ = CLASS_EDEFAULT;
-
-  /**
-   * The default value of the '{@link #getAttrib() <em>Attrib</em>}' attribute.
+   * The cached value of the '{@link #getAttrib() <em>Attrib</em>}' attribute list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @see #getAttrib()
    * @generated
    * @ordered
    */
-  protected static final String ATTRIB_EDEFAULT = null;
-
-  /**
-   * The cached value of the '{@link #getAttrib() <em>Attrib</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getAttrib()
-   * @generated
-   * @ordered
-   */
-  protected String attrib = ATTRIB_EDEFAULT;
+  protected EList<String> attrib;
 
   /**
    * The cached value of the '{@link #getPseudoclasses() <em>Pseudoclasses</em>}' attribute list.
@@ -180,8 +150,12 @@ public class simple_selectorImpl extends MinimalEObjectImpl.Container implements
    * <!-- end-user-doc -->
    * @generated
    */
-  public String getId()
+  public EList<String> getId()
   {
+    if (id == null)
+    {
+      id = new EDataTypeEList<String>(String.class, this, CssDslPackage.SIMPLE_SELECTOR__ID);
+    }
     return id;
   }
 
@@ -190,21 +164,12 @@ public class simple_selectorImpl extends MinimalEObjectImpl.Container implements
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setId(String newId)
+  public EList<String> getClass_()
   {
-    String oldId = id;
-    id = newId;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, CssDslPackage.SIMPLE_SELECTOR__ID, oldId, id));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public String getClass_()
-  {
+    if (class_ == null)
+    {
+      class_ = new EDataTypeEList<String>(String.class, this, CssDslPackage.SIMPLE_SELECTOR__CLASS);
+    }
     return class_;
   }
 
@@ -213,35 +178,13 @@ public class simple_selectorImpl extends MinimalEObjectImpl.Container implements
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setClass(String newClass)
+  public EList<String> getAttrib()
   {
-    String oldClass = class_;
-    class_ = newClass;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, CssDslPackage.SIMPLE_SELECTOR__CLASS, oldClass, class_));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public String getAttrib()
-  {
+    if (attrib == null)
+    {
+      attrib = new EDataTypeEList<String>(String.class, this, CssDslPackage.SIMPLE_SELECTOR__ATTRIB);
+    }
     return attrib;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setAttrib(String newAttrib)
-  {
-    String oldAttrib = attrib;
-    attrib = newAttrib;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, CssDslPackage.SIMPLE_SELECTOR__ATTRIB, oldAttrib, attrib));
   }
 
   /**
@@ -297,13 +240,16 @@ public class simple_selectorImpl extends MinimalEObjectImpl.Container implements
         setElement((String)newValue);
         return;
       case CssDslPackage.SIMPLE_SELECTOR__ID:
-        setId((String)newValue);
+        getId().clear();
+        getId().addAll((Collection<? extends String>)newValue);
         return;
       case CssDslPackage.SIMPLE_SELECTOR__CLASS:
-        setClass((String)newValue);
+        getClass_().clear();
+        getClass_().addAll((Collection<? extends String>)newValue);
         return;
       case CssDslPackage.SIMPLE_SELECTOR__ATTRIB:
-        setAttrib((String)newValue);
+        getAttrib().clear();
+        getAttrib().addAll((Collection<? extends String>)newValue);
         return;
       case CssDslPackage.SIMPLE_SELECTOR__PSEUDOCLASSES:
         getPseudoclasses().clear();
@@ -327,13 +273,13 @@ public class simple_selectorImpl extends MinimalEObjectImpl.Container implements
         setElement(ELEMENT_EDEFAULT);
         return;
       case CssDslPackage.SIMPLE_SELECTOR__ID:
-        setId(ID_EDEFAULT);
+        getId().clear();
         return;
       case CssDslPackage.SIMPLE_SELECTOR__CLASS:
-        setClass(CLASS_EDEFAULT);
+        getClass_().clear();
         return;
       case CssDslPackage.SIMPLE_SELECTOR__ATTRIB:
-        setAttrib(ATTRIB_EDEFAULT);
+        getAttrib().clear();
         return;
       case CssDslPackage.SIMPLE_SELECTOR__PSEUDOCLASSES:
         getPseudoclasses().clear();
@@ -355,11 +301,11 @@ public class simple_selectorImpl extends MinimalEObjectImpl.Container implements
       case CssDslPackage.SIMPLE_SELECTOR__ELEMENT:
         return ELEMENT_EDEFAULT == null ? element != null : !ELEMENT_EDEFAULT.equals(element);
       case CssDslPackage.SIMPLE_SELECTOR__ID:
-        return ID_EDEFAULT == null ? id != null : !ID_EDEFAULT.equals(id);
+        return id != null && !id.isEmpty();
       case CssDslPackage.SIMPLE_SELECTOR__CLASS:
-        return CLASS_EDEFAULT == null ? class_ != null : !CLASS_EDEFAULT.equals(class_);
+        return class_ != null && !class_.isEmpty();
       case CssDslPackage.SIMPLE_SELECTOR__ATTRIB:
-        return ATTRIB_EDEFAULT == null ? attrib != null : !ATTRIB_EDEFAULT.equals(attrib);
+        return attrib != null && !attrib.isEmpty();
       case CssDslPackage.SIMPLE_SELECTOR__PSEUDOCLASSES:
         return pseudoclasses != null && !pseudoclasses.isEmpty();
     }

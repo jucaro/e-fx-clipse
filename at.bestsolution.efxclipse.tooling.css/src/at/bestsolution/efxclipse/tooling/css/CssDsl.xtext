@@ -38,13 +38,9 @@ selector hidden():
 ;
 
 simple_selector:
-	(element=element_name id=css_id? class=css_class? attrib=css_attrib? pseudoclasses+=css_pseudo*)
+	(element = element_name ( id+=css_id | class+=css_class | attrib+=css_attrib | pseudoclasses+=css_pseudo )*)
 	|
-	(id=css_id class=css_class? attrib=css_attrib? pseudoclasses+=css_pseudo*)
-	|
-	(class=css_class attrib=css_attrib? pseudoclasses+=css_pseudo*)
-	|
-	pseudoclasses+=css_pseudo+
+	( id+=css_id | class+=css_class | attrib+=css_attrib | pseudoclasses+=css_pseudo )+
 ;
 
 element_name:

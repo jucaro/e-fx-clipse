@@ -517,16 +517,16 @@ rulesimple_selector returns [EObject current=null]
 	    }
 
 )
-)(
+)((
 (
 		{ 
-	        newCompositeNode(grammarAccess.getSimple_selectorAccess().getIdCss_idParserRuleCall_0_1_0()); 
+	        newCompositeNode(grammarAccess.getSimple_selectorAccess().getIdCss_idParserRuleCall_0_1_0_0()); 
 	    }
 		lv_id_1_0=rulecss_id		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getSimple_selectorRule());
 	        }
-       		set(
+       		add(
        			$current, 
        			"id",
         		lv_id_1_0, 
@@ -535,16 +535,17 @@ rulesimple_selector returns [EObject current=null]
 	    }
 
 )
-)?(
+)
+    |(
 (
 		{ 
-	        newCompositeNode(grammarAccess.getSimple_selectorAccess().getClassCss_classParserRuleCall_0_2_0()); 
+	        newCompositeNode(grammarAccess.getSimple_selectorAccess().getClassCss_classParserRuleCall_0_1_1_0()); 
 	    }
 		lv_class_2_0=rulecss_class		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getSimple_selectorRule());
 	        }
-       		set(
+       		add(
        			$current, 
        			"class",
         		lv_class_2_0, 
@@ -553,16 +554,17 @@ rulesimple_selector returns [EObject current=null]
 	    }
 
 )
-)?(
+)
+    |(
 (
 		{ 
-	        newCompositeNode(grammarAccess.getSimple_selectorAccess().getAttribCss_attribParserRuleCall_0_3_0()); 
+	        newCompositeNode(grammarAccess.getSimple_selectorAccess().getAttribCss_attribParserRuleCall_0_1_2_0()); 
 	    }
 		lv_attrib_3_0=rulecss_attrib		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getSimple_selectorRule());
 	        }
-       		set(
+       		add(
        			$current, 
        			"attrib",
         		lv_attrib_3_0, 
@@ -571,10 +573,11 @@ rulesimple_selector returns [EObject current=null]
 	    }
 
 )
-)?(
+)
+    |(
 (
 		{ 
-	        newCompositeNode(grammarAccess.getSimple_selectorAccess().getPseudoclassesCss_pseudoParserRuleCall_0_4_0()); 
+	        newCompositeNode(grammarAccess.getSimple_selectorAccess().getPseudoclassesCss_pseudoParserRuleCall_0_1_3_0()); 
 	    }
 		lv_pseudoclasses_4_0=rulecss_pseudo		{
 	        if ($current==null) {
@@ -589,7 +592,7 @@ rulesimple_selector returns [EObject current=null]
 	    }
 
 )
-)*)
+))*)
     |((
 (
 		{ 
@@ -599,7 +602,7 @@ rulesimple_selector returns [EObject current=null]
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getSimple_selectorRule());
 	        }
-       		set(
+       		add(
        			$current, 
        			"id",
         		lv_id_5_0, 
@@ -608,7 +611,8 @@ rulesimple_selector returns [EObject current=null]
 	    }
 
 )
-)(
+)
+    |(
 (
 		{ 
 	        newCompositeNode(grammarAccess.getSimple_selectorAccess().getClassCss_classParserRuleCall_1_1_0()); 
@@ -617,7 +621,7 @@ rulesimple_selector returns [EObject current=null]
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getSimple_selectorRule());
 	        }
-       		set(
+       		add(
        			$current, 
        			"class",
         		lv_class_6_0, 
@@ -626,7 +630,8 @@ rulesimple_selector returns [EObject current=null]
 	    }
 
 )
-)?(
+)
+    |(
 (
 		{ 
 	        newCompositeNode(grammarAccess.getSimple_selectorAccess().getAttribCss_attribParserRuleCall_1_2_0()); 
@@ -635,7 +640,7 @@ rulesimple_selector returns [EObject current=null]
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getSimple_selectorRule());
 	        }
-       		set(
+       		add(
        			$current, 
        			"attrib",
         		lv_attrib_7_0, 
@@ -644,7 +649,8 @@ rulesimple_selector returns [EObject current=null]
 	    }
 
 )
-)?(
+)
+    |(
 (
 		{ 
 	        newCompositeNode(grammarAccess.getSimple_selectorAccess().getPseudoclassesCss_pseudoParserRuleCall_1_3_0()); 
@@ -662,81 +668,7 @@ rulesimple_selector returns [EObject current=null]
 	    }
 
 )
-)*)
-    |((
-(
-		{ 
-	        newCompositeNode(grammarAccess.getSimple_selectorAccess().getClassCss_classParserRuleCall_2_0_0()); 
-	    }
-		lv_class_9_0=rulecss_class		{
-	        if ($current==null) {
-	            $current = createModelElementForParent(grammarAccess.getSimple_selectorRule());
-	        }
-       		set(
-       			$current, 
-       			"class",
-        		lv_class_9_0, 
-        		"css_class");
-	        afterParserOrEnumRuleCall();
-	    }
-
-)
-)(
-(
-		{ 
-	        newCompositeNode(grammarAccess.getSimple_selectorAccess().getAttribCss_attribParserRuleCall_2_1_0()); 
-	    }
-		lv_attrib_10_0=rulecss_attrib		{
-	        if ($current==null) {
-	            $current = createModelElementForParent(grammarAccess.getSimple_selectorRule());
-	        }
-       		set(
-       			$current, 
-       			"attrib",
-        		lv_attrib_10_0, 
-        		"css_attrib");
-	        afterParserOrEnumRuleCall();
-	    }
-
-)
-)?(
-(
-		{ 
-	        newCompositeNode(grammarAccess.getSimple_selectorAccess().getPseudoclassesCss_pseudoParserRuleCall_2_2_0()); 
-	    }
-		lv_pseudoclasses_11_0=rulecss_pseudo		{
-	        if ($current==null) {
-	            $current = createModelElementForParent(grammarAccess.getSimple_selectorRule());
-	        }
-       		add(
-       			$current, 
-       			"pseudoclasses",
-        		lv_pseudoclasses_11_0, 
-        		"css_pseudo");
-	        afterParserOrEnumRuleCall();
-	    }
-
-)
-)*)
-    |(
-(
-		{ 
-	        newCompositeNode(grammarAccess.getSimple_selectorAccess().getPseudoclassesCss_pseudoParserRuleCall_3_0()); 
-	    }
-		lv_pseudoclasses_12_0=rulecss_pseudo		{
-	        if ($current==null) {
-	            $current = createModelElementForParent(grammarAccess.getSimple_selectorRule());
-	        }
-       		add(
-       			$current, 
-       			"pseudoclasses",
-        		lv_pseudoclasses_12_0, 
-        		"css_pseudo");
-	        afterParserOrEnumRuleCall();
-	    }
-
-)
-)+)
+))+)
 ;
 
 

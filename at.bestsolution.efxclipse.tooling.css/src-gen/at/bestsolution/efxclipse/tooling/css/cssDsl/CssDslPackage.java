@@ -237,7 +237,7 @@ public interface CssDslPackage extends EPackage
   int SIMPLE_SELECTOR__ELEMENT = 0;
 
   /**
-   * The feature id for the '<em><b>Id</b></em>' attribute.
+   * The feature id for the '<em><b>Id</b></em>' attribute list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -246,7 +246,7 @@ public interface CssDslPackage extends EPackage
   int SIMPLE_SELECTOR__ID = 1;
 
   /**
-   * The feature id for the '<em><b>Class</b></em>' attribute.
+   * The feature id for the '<em><b>Class</b></em>' attribute list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -255,7 +255,7 @@ public interface CssDslPackage extends EPackage
   int SIMPLE_SELECTOR__CLASS = 2;
 
   /**
-   * The feature id for the '<em><b>Attrib</b></em>' attribute.
+   * The feature id for the '<em><b>Attrib</b></em>' attribute list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -693,10 +693,10 @@ public interface CssDslPackage extends EPackage
   EAttribute getsimple_selector_Element();
 
   /**
-   * Returns the meta object for the attribute '{@link at.bestsolution.efxclipse.tooling.css.cssDsl.simple_selector#getId <em>Id</em>}'.
+   * Returns the meta object for the attribute list '{@link at.bestsolution.efxclipse.tooling.css.cssDsl.simple_selector#getId <em>Id</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Id</em>'.
+   * @return the meta object for the attribute list '<em>Id</em>'.
    * @see at.bestsolution.efxclipse.tooling.css.cssDsl.simple_selector#getId()
    * @see #getsimple_selector()
    * @generated
@@ -704,10 +704,10 @@ public interface CssDslPackage extends EPackage
   EAttribute getsimple_selector_Id();
 
   /**
-   * Returns the meta object for the attribute '{@link at.bestsolution.efxclipse.tooling.css.cssDsl.simple_selector#getClass_ <em>Class</em>}'.
+   * Returns the meta object for the attribute list '{@link at.bestsolution.efxclipse.tooling.css.cssDsl.simple_selector#getClass_ <em>Class</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Class</em>'.
+   * @return the meta object for the attribute list '<em>Class</em>'.
    * @see at.bestsolution.efxclipse.tooling.css.cssDsl.simple_selector#getClass_()
    * @see #getsimple_selector()
    * @generated
@@ -715,10 +715,10 @@ public interface CssDslPackage extends EPackage
   EAttribute getsimple_selector_Class();
 
   /**
-   * Returns the meta object for the attribute '{@link at.bestsolution.efxclipse.tooling.css.cssDsl.simple_selector#getAttrib <em>Attrib</em>}'.
+   * Returns the meta object for the attribute list '{@link at.bestsolution.efxclipse.tooling.css.cssDsl.simple_selector#getAttrib <em>Attrib</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Attrib</em>'.
+   * @return the meta object for the attribute list '<em>Attrib</em>'.
    * @see at.bestsolution.efxclipse.tooling.css.cssDsl.simple_selector#getAttrib()
    * @see #getsimple_selector()
    * @generated
@@ -1103,7 +1103,7 @@ public interface CssDslPackage extends EPackage
     EAttribute SIMPLE_SELECTOR__ELEMENT = eINSTANCE.getsimple_selector_Element();
 
     /**
-     * The meta object literal for the '<em><b>Id</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>Id</b></em>' attribute list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
@@ -1111,7 +1111,7 @@ public interface CssDslPackage extends EPackage
     EAttribute SIMPLE_SELECTOR__ID = eINSTANCE.getsimple_selector_Id();
 
     /**
-     * The meta object literal for the '<em><b>Class</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>Class</b></em>' attribute list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
@@ -1119,7 +1119,7 @@ public interface CssDslPackage extends EPackage
     EAttribute SIMPLE_SELECTOR__CLASS = eINSTANCE.getsimple_selector_Class();
 
     /**
-     * The meta object literal for the '<em><b>Attrib</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>Attrib</b></em>' attribute list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
