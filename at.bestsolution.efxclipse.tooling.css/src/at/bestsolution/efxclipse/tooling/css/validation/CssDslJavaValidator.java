@@ -38,6 +38,10 @@ public class CssDslJavaValidator extends AbstractCssDslJavaValidator {
 			return;
 		}
 		
+		if( dec.getExpression().getTermGroups().size() == 1 && dec.getExpression().getTermGroups().get(0).getTerms().size() == 1 && "null".equals(dec.getExpression().getTermGroups().get(0).getTerms().get(0).getIdentifier()) ) {
+			return;
+		}
+		
 		for( Property p : extension.getProperties() ) {
 			if( propertyName.equals(p.getName()) ) {
 				System.err.println("Found: " + p);
