@@ -42,27 +42,38 @@ public class CssDslJavaValidator extends AbstractCssDslJavaValidator {
 			return;
 		}
 		
+		ValidationResult[] results = new ValidationResult[0];
 		for( Property p : extension.getProperties() ) {
 			if( propertyName.equals(p.getName()) ) {
 				System.err.println("Found: " + p);
-				for( ValidationResult r : p.validate(dec) ) {
-					if( r.status == ValidationStatus.ERROR ) {
-						if( r.object == null ) {
-							error( r.message, CssDslPackage.Literals.CSS_GENERIC_DECLARATION__EXPRESSION );
-						} else if( r.index == -1 ) {
-							error(r.message, r.object, r.feature, 0);
-						} else {
-							error(r.message, r.object, r.feature, r.index);
-						}
-					} else if( r.status == ValidationStatus.WARNING ) {
-						if( r.object == null ) {
-							warning( r.message, CssDslPackage.Literals.CSS_GENERIC_DECLARATION__EXPRESSION );
-						} else if( r.index == -1 ) {
-							warning(r.message, r.object, r.feature, 0);
-						} else {
-							warning(r.message, r.object, r.feature, r.index);
-						}
-					}
+				
+				ValidationResult[] r = p.validate(dec);
+				
+				// At least one validation succeed
+				if( r == null || r.length == 0 ) {
+					return;
+				} else if( r != null ) {
+					results = r;
+				}
+			}
+		}
+		
+		for( ValidationResult r : results ) {
+			if( r.status == ValidationStatus.ERROR ) {
+				if( r.object == null ) {
+					error( r.message, CssDslPackage.Literals.CSS_GENERIC_DECLARATION__EXPRESSION );
+				} else if( r.index == -1 ) {
+					error(r.message, r.object, r.feature, 0);
+				} else {
+					error(r.message, r.object, r.feature, r.index);
+				}
+			} else if( r.status == ValidationStatus.WARNING ) {
+				if( r.object == null ) {
+					warning( r.message, CssDslPackage.Literals.CSS_GENERIC_DECLARATION__EXPRESSION );
+				} else if( r.index == -1 ) {
+					warning(r.message, r.object, r.feature, 0);
+				} else {
+					warning(r.message, r.object, r.feature, r.index);
 				}
 			}
 		}
