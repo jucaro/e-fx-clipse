@@ -642,19 +642,21 @@ public class JFXDialectExtension implements CssDialectExtension {
 		@Override
 		public ValidationResult[] validate(css_generic_declaration dec) {
 			List<ValidationResult> rv = new ArrayList<CssDialectExtension.ValidationResult>();
-			if( dec.getExpression().getTermGroups().size() == 1 || dec.getExpression().getTermGroups().size() == 4 ) {
+			
+			if( dec.getExpression() != null ) {
 				for( termGroup g : dec.getExpression().getTermGroups() ) {
-					if( g.getTerms().size() == 1 ) {
-						if( isGradient(g.getTerms().get(0), rv) ) {
-							return rv.toArray(new ValidationResult[0]);
-						} else {
-							validateColor(g.getTerms().get(0), rv);
+					if( g.getTerms().size() == 1 || g.getTerms().size() == 4 ) {
+						for( term t : g.getTerms() ) {
+							if( ! isGradient(t, rv) ) {
+								validateColor(g.getTerms().get(0), rv);
+							}
 						}
+					} else {
+						rv.add(new ValidationResult(ValidationStatus.ERROR, "The group has to have 1 or 4 values", g, null, -1));
 					}
 				}
-			} else {
-				rv.add(new ValidationResult(ValidationStatus.ERROR, "The property has to have 1 or 4 values", dec.getExpression(), null, -1));
 			}
+			
 			return rv.toArray(new ValidationResult[0]);
 		}
 	}
@@ -831,7 +833,9 @@ public class JFXDialectExtension implements CssDialectExtension {
 											list.add(new ValidationResult(ValidationStatus.ERROR, "You need to specify at least one color stop", g, null, -1));
 										}
 									} else {
-										list.add(new ValidationResult(ValidationStatus.ERROR, "The value is only allowed to be 'repeat' or 'reflect'", g.getTerms().get(0), CssDslPackage.Literals.TERM__IDENTIFIER, -1));
+										for( int i = 1; i < e.getTermGroups().size(); i++ ) {
+											validateColorStop(e.getTermGroups().get(i),list);
+										}
 									}
 								} else {
 									for( int i = 1; i < e.getTermGroups().size(); i++ ) {
@@ -951,6 +955,9 @@ public class JFXDialectExtension implements CssDialectExtension {
 					if( t.getIdentifier().equals(color.getProposal()) ) {
 						return;
 					}
+				}
+				if( ! t.getIdentifier().startsWith("-") ) {
+					list.add(new ValidationResult(ValidationStatus.ERROR, "'"+t.getIdentifier()+"' is not a known color", t, CssDslPackage.Literals.TERM__IDENTIFIER, 0));	
 				}
 			} else if( t.getHexColor() != null ) {
 				if( !(t.getHexColor().length() == 4 || t.getHexColor().length() == 7) ) {
