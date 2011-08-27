@@ -73,6 +73,7 @@ public class CssDslFactoryImpl extends EFactoryImpl implements CssDslFactory
       case CssDslPackage.RULESET: return createruleset();
       case CssDslPackage.SELECTOR: return createselector();
       case CssDslPackage.SIMPLE_SELECTOR: return createsimple_selector();
+      case CssDslPackage.SUB_SELECTOR: return createsub_selector();
       case CssDslPackage.CSS_DECLARATION: return createcss_declaration();
       case CssDslPackage.CSS_GENERIC_DECLARATION: return createcss_generic_declaration();
       case CssDslPackage.EXPR: return createexpr();
@@ -138,6 +139,17 @@ public class CssDslFactoryImpl extends EFactoryImpl implements CssDslFactory
   {
     simple_selectorImpl simple_selector = new simple_selectorImpl();
     return simple_selector;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public sub_selector createsub_selector()
+  {
+    sub_selectorImpl sub_selector = new sub_selectorImpl();
+    return sub_selector;
   }
 
   /**

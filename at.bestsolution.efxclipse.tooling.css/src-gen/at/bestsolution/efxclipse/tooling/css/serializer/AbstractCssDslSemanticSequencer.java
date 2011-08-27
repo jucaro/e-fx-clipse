@@ -10,6 +10,7 @@ import at.bestsolution.efxclipse.tooling.css.cssDsl.ruleset;
 import at.bestsolution.efxclipse.tooling.css.cssDsl.selector;
 import at.bestsolution.efxclipse.tooling.css.cssDsl.simple_selector;
 import at.bestsolution.efxclipse.tooling.css.cssDsl.stylesheet;
+import at.bestsolution.efxclipse.tooling.css.cssDsl.sub_selector;
 import at.bestsolution.efxclipse.tooling.css.cssDsl.term;
 import at.bestsolution.efxclipse.tooling.css.cssDsl.termGroup;
 import at.bestsolution.efxclipse.tooling.css.services.CssDslGrammarAccess;
@@ -107,6 +108,12 @@ public class AbstractCssDslSemanticSequencer extends AbstractSemanticSequencer {
 			case CssDslPackage.STYLESHEET:
 				if(context == grammarAccess.getStylesheetRule()) {
 					sequence_stylesheet_stylesheet(context, (stylesheet) semanticObject); 
+					return; 
+				}
+				else break;
+			case CssDslPackage.SUB_SELECTOR:
+				if(context == grammarAccess.getSub_selectorRule()) {
+					sequence_sub_selector_sub_selector(context, (sub_selector) semanticObject); 
 					return; 
 				}
 				else break;
@@ -245,25 +252,13 @@ public class AbstractCssDslSemanticSequencer extends AbstractSemanticSequencer {
 	
 	/**
 	 * Constraint:
-	 *     (
-	 *         (element=element_name (id+=css_id | class+=css_class | attrib+=css_attrib | pseudoclasses+=css_pseudo)*) | 
-	 *         (id+=css_id | class+=css_class | attrib+=css_attrib | pseudoclasses+=css_pseudo)+
-	 *     )
+	 *     ((element=element_name subSelectors+=sub_selector*) | subSelectors+=sub_selector+)
 	 *
 	 * Features:
 	 *    element[1, 1]
-	 *         MANDATORY_IF_SET id
-	 *         MANDATORY_IF_SET class
-	 *         MANDATORY_IF_SET attrib
-	 *         MANDATORY_IF_SET pseudoclasses
-	 *         EXCLUDE_IF_SET id
-	 *         EXCLUDE_IF_SET class
-	 *         EXCLUDE_IF_SET attrib
-	 *         EXCLUDE_IF_SET pseudoclasses
-	 *    id[0, *]
-	 *    class[0, *]
-	 *    attrib[0, *]
-	 *    pseudoclasses[0, *]
+	 *         MANDATORY_IF_SET subSelectors
+	 *         EXCLUDE_IF_SET subSelectors
+	 *    subSelectors[0, *]
 	 */
 	protected void sequence_simple_selector_simple_selector(EObject context, simple_selector semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -279,6 +274,33 @@ public class AbstractCssDslSemanticSequencer extends AbstractSemanticSequencer {
 	 *    media[0, *]
 	 */
 	protected void sequence_stylesheet_stylesheet(EObject context, stylesheet semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     (id=css_id | class=css_class | attrib=css_attrib | pseudoclass=css_pseudo)
+	 *
+	 * Features:
+	 *    id[0, 1]
+	 *         EXCLUDE_IF_SET class
+	 *         EXCLUDE_IF_SET attrib
+	 *         EXCLUDE_IF_SET pseudoclass
+	 *    class[0, 1]
+	 *         EXCLUDE_IF_SET id
+	 *         EXCLUDE_IF_SET attrib
+	 *         EXCLUDE_IF_SET pseudoclass
+	 *    attrib[0, 1]
+	 *         EXCLUDE_IF_SET id
+	 *         EXCLUDE_IF_SET class
+	 *         EXCLUDE_IF_SET pseudoclass
+	 *    pseudoclass[0, 1]
+	 *         EXCLUDE_IF_SET id
+	 *         EXCLUDE_IF_SET class
+	 *         EXCLUDE_IF_SET attrib
+	 */
+	protected void sequence_sub_selector_sub_selector(EObject context, sub_selector semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	

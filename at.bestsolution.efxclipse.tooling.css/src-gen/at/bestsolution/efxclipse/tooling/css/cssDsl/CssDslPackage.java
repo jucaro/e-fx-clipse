@@ -237,40 +237,13 @@ public interface CssDslPackage extends EPackage
   int SIMPLE_SELECTOR__ELEMENT = 0;
 
   /**
-   * The feature id for the '<em><b>Id</b></em>' attribute list.
+   * The feature id for the '<em><b>Sub Selectors</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int SIMPLE_SELECTOR__ID = 1;
-
-  /**
-   * The feature id for the '<em><b>Class</b></em>' attribute list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int SIMPLE_SELECTOR__CLASS = 2;
-
-  /**
-   * The feature id for the '<em><b>Attrib</b></em>' attribute list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int SIMPLE_SELECTOR__ATTRIB = 3;
-
-  /**
-   * The feature id for the '<em><b>Pseudoclasses</b></em>' attribute list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int SIMPLE_SELECTOR__PSEUDOCLASSES = 4;
+  int SIMPLE_SELECTOR__SUB_SELECTORS = 1;
 
   /**
    * The number of structural features of the '<em>simple selector</em>' class.
@@ -279,7 +252,62 @@ public interface CssDslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int SIMPLE_SELECTOR_FEATURE_COUNT = 5;
+  int SIMPLE_SELECTOR_FEATURE_COUNT = 2;
+
+  /**
+   * The meta object id for the '{@link at.bestsolution.efxclipse.tooling.css.cssDsl.impl.sub_selectorImpl <em>sub selector</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see at.bestsolution.efxclipse.tooling.css.cssDsl.impl.sub_selectorImpl
+   * @see at.bestsolution.efxclipse.tooling.css.cssDsl.impl.CssDslPackageImpl#getsub_selector()
+   * @generated
+   */
+  int SUB_SELECTOR = 5;
+
+  /**
+   * The feature id for the '<em><b>Id</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SUB_SELECTOR__ID = 0;
+
+  /**
+   * The feature id for the '<em><b>Class</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SUB_SELECTOR__CLASS = 1;
+
+  /**
+   * The feature id for the '<em><b>Attrib</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SUB_SELECTOR__ATTRIB = 2;
+
+  /**
+   * The feature id for the '<em><b>Pseudoclass</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SUB_SELECTOR__PSEUDOCLASS = 3;
+
+  /**
+   * The number of structural features of the '<em>sub selector</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SUB_SELECTOR_FEATURE_COUNT = 4;
 
   /**
    * The meta object id for the '{@link at.bestsolution.efxclipse.tooling.css.cssDsl.impl.css_declarationImpl <em>css declaration</em>}' class.
@@ -289,7 +317,7 @@ public interface CssDslPackage extends EPackage
    * @see at.bestsolution.efxclipse.tooling.css.cssDsl.impl.CssDslPackageImpl#getcss_declaration()
    * @generated
    */
-  int CSS_DECLARATION = 5;
+  int CSS_DECLARATION = 6;
 
   /**
    * The number of structural features of the '<em>css declaration</em>' class.
@@ -308,7 +336,7 @@ public interface CssDslPackage extends EPackage
    * @see at.bestsolution.efxclipse.tooling.css.cssDsl.impl.CssDslPackageImpl#getcss_generic_declaration()
    * @generated
    */
-  int CSS_GENERIC_DECLARATION = 6;
+  int CSS_GENERIC_DECLARATION = 7;
 
   /**
    * The feature id for the '<em><b>Property</b></em>' attribute.
@@ -345,7 +373,7 @@ public interface CssDslPackage extends EPackage
    * @see at.bestsolution.efxclipse.tooling.css.cssDsl.impl.CssDslPackageImpl#getexpr()
    * @generated
    */
-  int EXPR = 7;
+  int EXPR = 8;
 
   /**
    * The feature id for the '<em><b>Term Groups</b></em>' containment reference list.
@@ -373,7 +401,7 @@ public interface CssDslPackage extends EPackage
    * @see at.bestsolution.efxclipse.tooling.css.cssDsl.impl.CssDslPackageImpl#gettermGroup()
    * @generated
    */
-  int TERM_GROUP = 8;
+  int TERM_GROUP = 9;
 
   /**
    * The feature id for the '<em><b>Terms</b></em>' containment reference list.
@@ -401,7 +429,7 @@ public interface CssDslPackage extends EPackage
    * @see at.bestsolution.efxclipse.tooling.css.cssDsl.impl.CssDslPackageImpl#getterm()
    * @generated
    */
-  int TERM = 9;
+  int TERM = 10;
 
   /**
    * The feature id for the '<em><b>Number</b></em>' attribute.
@@ -474,7 +502,7 @@ public interface CssDslPackage extends EPackage
    * @see at.bestsolution.efxclipse.tooling.css.cssDsl.impl.CssDslPackageImpl#getfunction()
    * @generated
    */
-  int FUNCTION = 10;
+  int FUNCTION = 11;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -511,7 +539,7 @@ public interface CssDslPackage extends EPackage
    * @see at.bestsolution.efxclipse.tooling.css.cssDsl.impl.CssDslPackageImpl#getURLType()
    * @generated
    */
-  int URL_TYPE = 11;
+  int URL_TYPE = 12;
 
   /**
    * The feature id for the '<em><b>Url</b></em>' attribute.
@@ -693,48 +721,69 @@ public interface CssDslPackage extends EPackage
   EAttribute getsimple_selector_Element();
 
   /**
-   * Returns the meta object for the attribute list '{@link at.bestsolution.efxclipse.tooling.css.cssDsl.simple_selector#getId <em>Id</em>}'.
+   * Returns the meta object for the containment reference list '{@link at.bestsolution.efxclipse.tooling.css.cssDsl.simple_selector#getSubSelectors <em>Sub Selectors</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute list '<em>Id</em>'.
-   * @see at.bestsolution.efxclipse.tooling.css.cssDsl.simple_selector#getId()
+   * @return the meta object for the containment reference list '<em>Sub Selectors</em>'.
+   * @see at.bestsolution.efxclipse.tooling.css.cssDsl.simple_selector#getSubSelectors()
    * @see #getsimple_selector()
    * @generated
    */
-  EAttribute getsimple_selector_Id();
+  EReference getsimple_selector_SubSelectors();
 
   /**
-   * Returns the meta object for the attribute list '{@link at.bestsolution.efxclipse.tooling.css.cssDsl.simple_selector#getClass_ <em>Class</em>}'.
+   * Returns the meta object for class '{@link at.bestsolution.efxclipse.tooling.css.cssDsl.sub_selector <em>sub selector</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute list '<em>Class</em>'.
-   * @see at.bestsolution.efxclipse.tooling.css.cssDsl.simple_selector#getClass_()
-   * @see #getsimple_selector()
+   * @return the meta object for class '<em>sub selector</em>'.
+   * @see at.bestsolution.efxclipse.tooling.css.cssDsl.sub_selector
    * @generated
    */
-  EAttribute getsimple_selector_Class();
+  EClass getsub_selector();
 
   /**
-   * Returns the meta object for the attribute list '{@link at.bestsolution.efxclipse.tooling.css.cssDsl.simple_selector#getAttrib <em>Attrib</em>}'.
+   * Returns the meta object for the attribute '{@link at.bestsolution.efxclipse.tooling.css.cssDsl.sub_selector#getId <em>Id</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute list '<em>Attrib</em>'.
-   * @see at.bestsolution.efxclipse.tooling.css.cssDsl.simple_selector#getAttrib()
-   * @see #getsimple_selector()
+   * @return the meta object for the attribute '<em>Id</em>'.
+   * @see at.bestsolution.efxclipse.tooling.css.cssDsl.sub_selector#getId()
+   * @see #getsub_selector()
    * @generated
    */
-  EAttribute getsimple_selector_Attrib();
+  EAttribute getsub_selector_Id();
 
   /**
-   * Returns the meta object for the attribute list '{@link at.bestsolution.efxclipse.tooling.css.cssDsl.simple_selector#getPseudoclasses <em>Pseudoclasses</em>}'.
+   * Returns the meta object for the attribute '{@link at.bestsolution.efxclipse.tooling.css.cssDsl.sub_selector#getClass_ <em>Class</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute list '<em>Pseudoclasses</em>'.
-   * @see at.bestsolution.efxclipse.tooling.css.cssDsl.simple_selector#getPseudoclasses()
-   * @see #getsimple_selector()
+   * @return the meta object for the attribute '<em>Class</em>'.
+   * @see at.bestsolution.efxclipse.tooling.css.cssDsl.sub_selector#getClass_()
+   * @see #getsub_selector()
    * @generated
    */
-  EAttribute getsimple_selector_Pseudoclasses();
+  EAttribute getsub_selector_Class();
+
+  /**
+   * Returns the meta object for the attribute '{@link at.bestsolution.efxclipse.tooling.css.cssDsl.sub_selector#getAttrib <em>Attrib</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Attrib</em>'.
+   * @see at.bestsolution.efxclipse.tooling.css.cssDsl.sub_selector#getAttrib()
+   * @see #getsub_selector()
+   * @generated
+   */
+  EAttribute getsub_selector_Attrib();
+
+  /**
+   * Returns the meta object for the attribute '{@link at.bestsolution.efxclipse.tooling.css.cssDsl.sub_selector#getPseudoclass <em>Pseudoclass</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Pseudoclass</em>'.
+   * @see at.bestsolution.efxclipse.tooling.css.cssDsl.sub_selector#getPseudoclass()
+   * @see #getsub_selector()
+   * @generated
+   */
+  EAttribute getsub_selector_Pseudoclass();
 
   /**
    * Returns the meta object for class '{@link at.bestsolution.efxclipse.tooling.css.cssDsl.css_declaration <em>css declaration</em>}'.
@@ -1103,36 +1152,54 @@ public interface CssDslPackage extends EPackage
     EAttribute SIMPLE_SELECTOR__ELEMENT = eINSTANCE.getsimple_selector_Element();
 
     /**
-     * The meta object literal for the '<em><b>Id</b></em>' attribute list feature.
+     * The meta object literal for the '<em><b>Sub Selectors</b></em>' containment reference list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute SIMPLE_SELECTOR__ID = eINSTANCE.getsimple_selector_Id();
+    EReference SIMPLE_SELECTOR__SUB_SELECTORS = eINSTANCE.getsimple_selector_SubSelectors();
 
     /**
-     * The meta object literal for the '<em><b>Class</b></em>' attribute list feature.
+     * The meta object literal for the '{@link at.bestsolution.efxclipse.tooling.css.cssDsl.impl.sub_selectorImpl <em>sub selector</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
+     * @see at.bestsolution.efxclipse.tooling.css.cssDsl.impl.sub_selectorImpl
+     * @see at.bestsolution.efxclipse.tooling.css.cssDsl.impl.CssDslPackageImpl#getsub_selector()
      * @generated
      */
-    EAttribute SIMPLE_SELECTOR__CLASS = eINSTANCE.getsimple_selector_Class();
+    EClass SUB_SELECTOR = eINSTANCE.getsub_selector();
 
     /**
-     * The meta object literal for the '<em><b>Attrib</b></em>' attribute list feature.
+     * The meta object literal for the '<em><b>Id</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute SIMPLE_SELECTOR__ATTRIB = eINSTANCE.getsimple_selector_Attrib();
+    EAttribute SUB_SELECTOR__ID = eINSTANCE.getsub_selector_Id();
 
     /**
-     * The meta object literal for the '<em><b>Pseudoclasses</b></em>' attribute list feature.
+     * The meta object literal for the '<em><b>Class</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute SIMPLE_SELECTOR__PSEUDOCLASSES = eINSTANCE.getsimple_selector_Pseudoclasses();
+    EAttribute SUB_SELECTOR__CLASS = eINSTANCE.getsub_selector_Class();
+
+    /**
+     * The meta object literal for the '<em><b>Attrib</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute SUB_SELECTOR__ATTRIB = eINSTANCE.getsub_selector_Attrib();
+
+    /**
+     * The meta object literal for the '<em><b>Pseudoclass</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute SUB_SELECTOR__PSEUDOCLASS = eINSTANCE.getsub_selector_Pseudoclass();
 
     /**
      * The meta object literal for the '{@link at.bestsolution.efxclipse.tooling.css.cssDsl.impl.css_declarationImpl <em>css declaration</em>}' class.

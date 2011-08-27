@@ -10,6 +10,7 @@ import at.bestsolution.efxclipse.tooling.css.cssDsl.ruleset;
 import at.bestsolution.efxclipse.tooling.css.cssDsl.selector;
 import at.bestsolution.efxclipse.tooling.css.cssDsl.simple_selector;
 import at.bestsolution.efxclipse.tooling.css.cssDsl.stylesheet;
+import at.bestsolution.efxclipse.tooling.css.cssDsl.sub_selector;
 import at.bestsolution.efxclipse.tooling.css.cssDsl.term;
 import at.bestsolution.efxclipse.tooling.css.cssDsl.termGroup;
 
@@ -64,16 +65,18 @@ public class CssDslLabelProvider extends DefaultEObjectLabelProvider {
 			b.append(value.getElement());
 		}
 		
-		if( value.getId() != null ) {
-			b.append(value.getId());
-		}
-		
-		if( value.getClass_() != null ) {
-			b.append(value.getClass_());
-		}
-		
-		for( String p : value.getPseudoclasses() ) {
-			b.append(p);
+		for( sub_selector sub : value.getSubSelectors() ) {
+			if( sub.getId() != null ) {
+				b.append(sub.getId());
+			}
+			
+			if( sub.getClass_() != null ) {
+				b.append(sub.getClass_());
+			}
+			
+			if( sub.getPseudoclass() != null ) {
+				b.append(sub.getPseudoclass());
+			}
 		}
 		
 		return b.toString();

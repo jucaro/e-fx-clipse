@@ -111,6 +111,13 @@ public class CssDslSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case CssDslPackage.SUB_SELECTOR:
+      {
+        sub_selector sub_selector = (sub_selector)theEObject;
+        T result = casesub_selector(sub_selector);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       case CssDslPackage.CSS_DECLARATION:
       {
         css_declaration css_declaration = (css_declaration)theEObject;
@@ -241,6 +248,22 @@ public class CssDslSwitch<T> extends Switch<T>
    * @generated
    */
   public T casesimple_selector(simple_selector object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>sub selector</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>sub selector</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T casesub_selector(sub_selector object)
   {
     return null;
   }

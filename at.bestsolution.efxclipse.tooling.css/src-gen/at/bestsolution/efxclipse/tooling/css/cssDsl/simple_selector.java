@@ -19,10 +19,7 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * <ul>
  *   <li>{@link at.bestsolution.efxclipse.tooling.css.cssDsl.simple_selector#getElement <em>Element</em>}</li>
- *   <li>{@link at.bestsolution.efxclipse.tooling.css.cssDsl.simple_selector#getId <em>Id</em>}</li>
- *   <li>{@link at.bestsolution.efxclipse.tooling.css.cssDsl.simple_selector#getClass_ <em>Class</em>}</li>
- *   <li>{@link at.bestsolution.efxclipse.tooling.css.cssDsl.simple_selector#getAttrib <em>Attrib</em>}</li>
- *   <li>{@link at.bestsolution.efxclipse.tooling.css.cssDsl.simple_selector#getPseudoclasses <em>Pseudoclasses</em>}</li>
+ *   <li>{@link at.bestsolution.efxclipse.tooling.css.cssDsl.simple_selector#getSubSelectors <em>Sub Selectors</em>}</li>
  * </ul>
  * </p>
  *
@@ -59,67 +56,19 @@ public interface simple_selector extends EObject
   void setElement(String value);
 
   /**
-   * Returns the value of the '<em><b>Id</b></em>' attribute list.
-   * The list contents are of type {@link java.lang.String}.
+   * Returns the value of the '<em><b>Sub Selectors</b></em>' containment reference list.
+   * The list contents are of type {@link at.bestsolution.efxclipse.tooling.css.cssDsl.sub_selector}.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Id</em>' attribute list isn't clear,
+   * If the meaning of the '<em>Sub Selectors</em>' containment reference list isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Id</em>' attribute list.
-   * @see at.bestsolution.efxclipse.tooling.css.cssDsl.CssDslPackage#getsimple_selector_Id()
-   * @model unique="false"
+   * @return the value of the '<em>Sub Selectors</em>' containment reference list.
+   * @see at.bestsolution.efxclipse.tooling.css.cssDsl.CssDslPackage#getsimple_selector_SubSelectors()
+   * @model containment="true"
    * @generated
    */
-  EList<String> getId();
-
-  /**
-   * Returns the value of the '<em><b>Class</b></em>' attribute list.
-   * The list contents are of type {@link java.lang.String}.
-   * <!-- begin-user-doc -->
-   * <p>
-   * If the meaning of the '<em>Class</em>' attribute list isn't clear,
-   * there really should be more of a description here...
-   * </p>
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Class</em>' attribute list.
-   * @see at.bestsolution.efxclipse.tooling.css.cssDsl.CssDslPackage#getsimple_selector_Class()
-   * @model unique="false"
-   * @generated
-   */
-  EList<String> getClass_();
-
-  /**
-   * Returns the value of the '<em><b>Attrib</b></em>' attribute list.
-   * The list contents are of type {@link java.lang.String}.
-   * <!-- begin-user-doc -->
-   * <p>
-   * If the meaning of the '<em>Attrib</em>' attribute list isn't clear,
-   * there really should be more of a description here...
-   * </p>
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Attrib</em>' attribute list.
-   * @see at.bestsolution.efxclipse.tooling.css.cssDsl.CssDslPackage#getsimple_selector_Attrib()
-   * @model unique="false"
-   * @generated
-   */
-  EList<String> getAttrib();
-
-  /**
-   * Returns the value of the '<em><b>Pseudoclasses</b></em>' attribute list.
-   * The list contents are of type {@link java.lang.String}.
-   * <!-- begin-user-doc -->
-   * <p>
-   * If the meaning of the '<em>Pseudoclasses</em>' attribute list isn't clear,
-   * there really should be more of a description here...
-   * </p>
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Pseudoclasses</em>' attribute list.
-   * @see at.bestsolution.efxclipse.tooling.css.cssDsl.CssDslPackage#getsimple_selector_Pseudoclasses()
-   * @model unique="false"
-   * @generated
-   */
-  EList<String> getPseudoclasses();
+  EList<sub_selector> getSubSelectors();
 
 } // simple_selector

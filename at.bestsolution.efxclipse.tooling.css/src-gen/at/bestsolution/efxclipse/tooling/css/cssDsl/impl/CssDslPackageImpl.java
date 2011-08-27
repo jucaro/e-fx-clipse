@@ -18,6 +18,7 @@ import at.bestsolution.efxclipse.tooling.css.cssDsl.ruleset;
 import at.bestsolution.efxclipse.tooling.css.cssDsl.selector;
 import at.bestsolution.efxclipse.tooling.css.cssDsl.simple_selector;
 import at.bestsolution.efxclipse.tooling.css.cssDsl.stylesheet;
+import at.bestsolution.efxclipse.tooling.css.cssDsl.sub_selector;
 import at.bestsolution.efxclipse.tooling.css.cssDsl.term;
 import at.bestsolution.efxclipse.tooling.css.cssDsl.termGroup;
 
@@ -70,6 +71,13 @@ public class CssDslPackageImpl extends EPackageImpl implements CssDslPackage
    * @generated
    */
   private EClass simple_selectorEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass sub_selectorEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -338,9 +346,9 @@ public class CssDslPackageImpl extends EPackageImpl implements CssDslPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getsimple_selector_Id()
+  public EReference getsimple_selector_SubSelectors()
   {
-    return (EAttribute)simple_selectorEClass.getEStructuralFeatures().get(1);
+    return (EReference)simple_selectorEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -348,9 +356,9 @@ public class CssDslPackageImpl extends EPackageImpl implements CssDslPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getsimple_selector_Class()
+  public EClass getsub_selector()
   {
-    return (EAttribute)simple_selectorEClass.getEStructuralFeatures().get(2);
+    return sub_selectorEClass;
   }
 
   /**
@@ -358,9 +366,9 @@ public class CssDslPackageImpl extends EPackageImpl implements CssDslPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getsimple_selector_Attrib()
+  public EAttribute getsub_selector_Id()
   {
-    return (EAttribute)simple_selectorEClass.getEStructuralFeatures().get(3);
+    return (EAttribute)sub_selectorEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -368,9 +376,29 @@ public class CssDslPackageImpl extends EPackageImpl implements CssDslPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getsimple_selector_Pseudoclasses()
+  public EAttribute getsub_selector_Class()
   {
-    return (EAttribute)simple_selectorEClass.getEStructuralFeatures().get(4);
+    return (EAttribute)sub_selectorEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getsub_selector_Attrib()
+  {
+    return (EAttribute)sub_selectorEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getsub_selector_Pseudoclass()
+  {
+    return (EAttribute)sub_selectorEClass.getEStructuralFeatures().get(3);
   }
 
   /**
@@ -622,10 +650,13 @@ public class CssDslPackageImpl extends EPackageImpl implements CssDslPackage
 
     simple_selectorEClass = createEClass(SIMPLE_SELECTOR);
     createEAttribute(simple_selectorEClass, SIMPLE_SELECTOR__ELEMENT);
-    createEAttribute(simple_selectorEClass, SIMPLE_SELECTOR__ID);
-    createEAttribute(simple_selectorEClass, SIMPLE_SELECTOR__CLASS);
-    createEAttribute(simple_selectorEClass, SIMPLE_SELECTOR__ATTRIB);
-    createEAttribute(simple_selectorEClass, SIMPLE_SELECTOR__PSEUDOCLASSES);
+    createEReference(simple_selectorEClass, SIMPLE_SELECTOR__SUB_SELECTORS);
+
+    sub_selectorEClass = createEClass(SUB_SELECTOR);
+    createEAttribute(sub_selectorEClass, SUB_SELECTOR__ID);
+    createEAttribute(sub_selectorEClass, SUB_SELECTOR__CLASS);
+    createEAttribute(sub_selectorEClass, SUB_SELECTOR__ATTRIB);
+    createEAttribute(sub_selectorEClass, SUB_SELECTOR__PSEUDOCLASS);
 
     css_declarationEClass = createEClass(CSS_DECLARATION);
 
@@ -706,10 +737,13 @@ public class CssDslPackageImpl extends EPackageImpl implements CssDslPackage
 
     initEClass(simple_selectorEClass, simple_selector.class, "simple_selector", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getsimple_selector_Element(), ecorePackage.getEString(), "element", null, 0, 1, simple_selector.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getsimple_selector_Id(), ecorePackage.getEString(), "id", null, 0, -1, simple_selector.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getsimple_selector_Class(), ecorePackage.getEString(), "class", null, 0, -1, simple_selector.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getsimple_selector_Attrib(), ecorePackage.getEString(), "attrib", null, 0, -1, simple_selector.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getsimple_selector_Pseudoclasses(), ecorePackage.getEString(), "pseudoclasses", null, 0, -1, simple_selector.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getsimple_selector_SubSelectors(), this.getsub_selector(), null, "subSelectors", null, 0, -1, simple_selector.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(sub_selectorEClass, sub_selector.class, "sub_selector", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getsub_selector_Id(), ecorePackage.getEString(), "id", null, 0, 1, sub_selector.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getsub_selector_Class(), ecorePackage.getEString(), "class", null, 0, 1, sub_selector.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getsub_selector_Attrib(), ecorePackage.getEString(), "attrib", null, 0, 1, sub_selector.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getsub_selector_Pseudoclass(), ecorePackage.getEString(), "pseudoclass", null, 0, 1, sub_selector.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(css_declarationEClass, css_declaration.class, "css_declaration", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 

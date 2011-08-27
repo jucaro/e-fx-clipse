@@ -72,6 +72,15 @@ public interface CssDslFactory extends EFactory
   simple_selector createsimple_selector();
 
   /**
+   * Returns a new object of class '<em>sub selector</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>sub selector</em>'.
+   * @generated
+   */
+  sub_selector createsub_selector();
+
+  /**
    * Returns a new object of class '<em>css declaration</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->

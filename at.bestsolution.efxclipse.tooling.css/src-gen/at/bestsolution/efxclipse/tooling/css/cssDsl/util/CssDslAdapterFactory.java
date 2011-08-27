@@ -104,6 +104,11 @@ public class CssDslAdapterFactory extends AdapterFactoryImpl
         return createsimple_selectorAdapter();
       }
       @Override
+      public Adapter casesub_selector(sub_selector object)
+      {
+        return createsub_selectorAdapter();
+      }
+      @Override
       public Adapter casecss_declaration(css_declaration object)
       {
         return createcss_declarationAdapter();
@@ -231,6 +236,21 @@ public class CssDslAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createsimple_selectorAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link at.bestsolution.efxclipse.tooling.css.cssDsl.sub_selector <em>sub selector</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see at.bestsolution.efxclipse.tooling.css.cssDsl.sub_selector
+   * @generated
+   */
+  public Adapter createsub_selectorAdapter()
   {
     return null;
   }

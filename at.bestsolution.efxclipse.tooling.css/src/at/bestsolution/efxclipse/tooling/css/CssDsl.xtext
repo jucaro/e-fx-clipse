@@ -38,13 +38,17 @@ selector hidden():
 ;
 
 simple_selector:
-	(element = element_name ( id+=css_id | class+=css_class | attrib+=css_attrib | pseudoclasses+=css_pseudo )*)
+	(element = element_name subSelectors+=sub_selector*)
 	|
-	( id+=css_id | class+=css_class | attrib+=css_attrib | pseudoclasses+=css_pseudo )+
+	subSelectors+=sub_selector+
 ;
 
 element_name:
 	(hexdigits | IDENT | '*')
+;
+
+sub_selector:
+	id=css_id | class=css_class | attrib=css_attrib | pseudoclass=css_pseudo
 ;
 
 css_class
