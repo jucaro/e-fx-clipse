@@ -79,7 +79,6 @@ public class JavaFXPreferencePage extends PreferencePage implements IWorkbenchPr
 					IEclipsePreferences pref = InstanceScope.INSTANCE.getNode(JavaFXCorePlugin.PLUGIN_ID);
 					pref.put(JavaFXPreferencesConstants.JAVAFX_DIR,dir);
 					try {
-						pref.sync();
 						pref.flush();
 					} catch (BackingStoreException e) {
 						// TODO Auto-generated catch block
