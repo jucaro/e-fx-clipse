@@ -1,19 +1,50 @@
 package at.bestsolution.efxclipse.tooling.jdt.ui.internal.handler;
 
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
 
-public class RunBuild {
-	public void run(Map<String, Object> properties) {
+public class CreateBuildXML {
+	public File run(Map<String,Object> properties) {
 		AntTemplate template = new AntTemplate();
 		String out = template.generateAnt(properties);
-		System.err.println(out);
+		
+		File f = new File((String) properties.get("jfx.build.stagingdir"));
+		if( !f.exists() ) {
+			f.mkdirs();
+		}
+		
+		FileWriter outFile = null;
+		try {
+			File buildFile = new File(f,"build.xml");
+			outFile = new FileWriter(buildFile);
+			outFile.write(out);
+			outFile.close();
+			outFile = null;
+			return buildFile;
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} finally {
+			if( outFile != null ) {
+				try {
+					outFile.close();
+				} catch (IOException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+			}
+		}
+		return null;
+//		System.err.println(out);
 	}
 	
 	public static void main(String[] args) {
-		Map<String, Object> properties = new HashMap<String, Object>();
+		Map<String,Object> properties = new HashMap<String, Object>();
 		properties.put("projectName","TestExport");
 		properties.put("appVendor", "BestSolution.at");
 		properties.put("appTitle","Test Java FX application");
@@ -36,7 +67,7 @@ public class RunBuild {
 		projectDirs.add("src");
 		properties.put("projectSourceDirs",projectDirs);
 		
-		RunBuild b = new RunBuild();
+		CreateBuildXML b = new CreateBuildXML();
 		b.run(properties);
 	}
 }

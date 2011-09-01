@@ -4,6 +4,7 @@ import java.util.Properties
 import java.util.Set
 import java.util.Map
 import java.util.Collection
+import java.io.File
 
 class AntTemplate {
 	def generateAnt(Map<String,Object> properties) {
@@ -13,10 +14,48 @@ class AntTemplate {
 		<?xml version="1.0" encoding="UTF-8"?>
 			<project name="«projectName»" default="do-deploy" basedir=".">
 			«createInitTaskTarget(properties)»
+			«createLocalSetup(properties)»
 			«compileTarget(properties)»
 			«createDoDeployTarget(properties)»
 		</project>
 		'''.toString
+	}
+	
+	def createLocalSetup(Map<String,Object> properties) {
+		val externalLibs = properties.get("orig.externalLibs") as Collection<File>;
+		val projectSrcDirs = properties.get("orig.projectSourceDirs") as Collection<SetupDirectory>;
+		var projectRefs = properties.get("orig.projectRefSourceDirs") as Collection<SetupDirectory>;
+		'''
+		<target name="setup-staging-area">
+			<delete dir="externalLibs" />
+			<delete dir="project" />
+			<delete dir="projectRefs" />
+			
+			<mkdir dir="externalLibs" />
+			
+			«FOR File l : externalLibs»
+			<copyfile dest="externalLibs/«l.name»" src="«l.absolutePath»"/>
+			«ENDFOR»
+			
+			<mkdir dir="project" />
+			«FOR SetupDirectory d : projectSrcDirs»
+			<copy todir="project">
+				<fileset dir="«d.originalPath.absolutePath»">
+					<include name="«d.relativePath.name»/**" />
+				</fileset>
+			</copy>
+			«ENDFOR»
+			
+			<mkdir dir="projectRefs" />
+			«FOR SetupDirectory d : projectRefs»
+			<copy todir="projectRefs">
+				<fileset dir="«d.originalPath.absolutePath»">
+					<include name="«d.relativePath.path»/**" />
+				</fileset>
+			</copy>
+			«ENDFOR»
+		</target>
+		'''
 	}
 	
 	def createInitTaskTarget(Map<String,Object> properties) {
@@ -52,13 +91,13 @@ class AntTemplate {
 			<mkdir dir="build/classes" />
 		
 			<!-- Copy project-libs references -->
-			«FOR String s : externalLibs»
 			<copy todir="build/libs">
 				<fileset dir="externalLibs">
+					«FOR String s : externalLibs»
 					<include name="«s»"/>
+					«ENDFOR»
 				</fileset>
 			</copy>
-			«ENDFOR»
 		
 			<!-- Copy project references -->
 			«FOR String s : projectRefs»
@@ -96,8 +135,8 @@ class AntTemplate {
 		val projectName = properties.get("projectName") as String;
 		val sdkPath = properties.get("jfxSdk") as String;
 		val mainClass = properties.get("applicationClass") as String;
-		val appletWidth = properties.get("appletWith") as Integer;
-		val appletHeight = properties.get("appletHeight") as Integer;
+		val appletWidth = properties.get("appletWith") as String;
+		val appletHeight = properties.get("appletHeight") as String;
 		val externalLibs = properties.get("externalLibs") as Collection<String>;
 		val appVendor = properties.get("appVendor") as String;
 		val appTitle = properties.get("appTitle") as String;
@@ -107,9 +146,9 @@ class AntTemplate {
 		var keyStorePass = properties.get("keyStorePass") as String;
 		
 		'''
-		<target name="do-deploy" depends="do-compile, init-fx-tasks">
+		<target name="do-deploy" depends="setup-staging-area, do-compile, init-fx-tasks">
 			<delete file="dist"/>
-			<mkdir name="dist" />
+			<mkdir dir="dist" />
 			
 			<fxjar destfile="dist/«projectName».jar" classpath="«FOR String s : externalLibs»«s» «ENDFOR»" applicationClass="«mainClass»">
 				<fileset dir="build/classes"/>
@@ -126,6 +165,7 @@ class AntTemplate {
 			</fxsignjar>
 			«ENDIF»
 		
+			«IF appletWidth != null && appletHeight != null»
 			<fxdeploy width="«appletWidth»" height="«appletHeight»" outdir="deploy" embedJNLP="true" outfile="«projectName»">
 				<info title="«projectName»" vendor="«appVendor»"/>
 				<application name="«projectName»" appclass="«mainClass»"/>
@@ -138,6 +178,7 @@ class AntTemplate {
 					</fileset>	
 				</resources>
 			</fxdeploy>
+			«ENDIF»
 		</target>
 		'''
 	}
