@@ -148,6 +148,7 @@ class AntTemplate {
 		'''
 		<target name="do-deploy" depends="setup-staging-area, do-compile, init-fx-tasks">
 			<delete file="dist"/>
+			<delete file="deploy" />
 			<mkdir dir="dist" />
 			
 			<fxjar destfile="dist/«projectName».jar" classpath="«FOR String s : externalLibs»«s» «ENDFOR»" applicationClass="«mainClass»">
@@ -166,7 +167,9 @@ class AntTemplate {
 			«ENDIF»
 		
 			«IF appletWidth != null && appletHeight != null»
-			<fxdeploy width="«appletWidth»" height="«appletHeight»" outdir="deploy" embedJNLP="true" outfile="«projectName»">
+			<mkdir dir="deploy" />
+			<!-- Need to use ${basedir} because somehow the ant task is calculating the directory differently -->
+			<fxdeploy width="«appletWidth»" height="«appletHeight»" outdir="${basedir}/deploy" embedJNLP="true" outfile="«projectName»">
 				<info title="«projectName»" vendor="«appVendor»"/>
 				<application name="«projectName»" appclass="«mainClass»"/>
 				<resources type="eager">

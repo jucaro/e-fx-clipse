@@ -107,11 +107,4 @@
             name="FX Build Command">
       </command>
    </extension>
-   <extension
-         point="org.eclipse.ant.core.extraClasspathEntries">
-      <extraClasspathEntry
-            library="ant/logger.jar">
-      </extraClasspathEntry>
-   </extension>
-
 </plugin>
