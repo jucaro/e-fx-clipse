@@ -149,9 +149,17 @@ class AntTemplate {
 		<target name="do-deploy" depends="setup-staging-area, do-compile, init-fx-tasks">
 			<delete file="dist"/>
 			<delete file="deploy" />
-			<mkdir dir="dist" />
 			
-			<fxjar destfile="dist/«projectName».jar" classpath="«FOR String s : externalLibs»«s» «ENDFOR»" applicationClass="«mainClass»">
+			<mkdir dir="dist" />
+			<mkdir dir="dist/libs" />
+			
+			<copy todir="dist/libs">
+				<fileset dir="externalLibs">
+					<include name="*" />
+				</fileset>
+			</copy>
+			
+			<fxjar destfile="dist/«projectName».jar" classpath="«FOR String s : externalLibs»libs/«s» «ENDFOR»" applicationClass="«mainClass»">
 				<fileset dir="build/classes"/>
 				<manifest>
 					<attribute name="Implementation-Vendor" value="«appVendor»"/>
@@ -174,11 +182,8 @@ class AntTemplate {
 				<application name="«projectName»" appclass="«mainClass»"/>
 				<resources type="eager">
 					<fileset dir="dist">
-						<include name="«projectName».jar"/>
+						<include name="**/*"/>
 					</fileset>
-					<fileset dir="externalLibs">
-						<include name="*"/>
-					</fileset>	
 				</resources>
 			</fxdeploy>
 			«ENDIF»
