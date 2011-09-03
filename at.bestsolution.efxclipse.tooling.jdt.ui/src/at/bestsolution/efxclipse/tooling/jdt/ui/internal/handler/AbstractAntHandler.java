@@ -39,6 +39,7 @@ public abstract class AbstractAntHandler extends AbstractHandler {
 
 	protected Map<String,Object> prepareBuild(IFile f, Properties properties) {
 		Map<String,Object> map = new HashMap<String, Object>();
+		String workbench = ResourcesPlugin.getWorkspace().getRoot().getLocation().toString();
 		
 		IEclipsePreferences pref = InstanceScope.INSTANCE.getNode(JavaFXCorePlugin.PLUGIN_ID);
 		String dir = pref.get(JavaFXPreferencesConstants.JAVAFX_DIR,"");
@@ -52,8 +53,9 @@ public abstract class AbstractAntHandler extends AbstractHandler {
 			if( directory == null ) {
 				return null;
 			}
+			map.put("jfx.build.stagingdir",directory);
 		} else {
-			map.put("jfx.build.stagingdir", properties.getProperty("jfx.build.stagingdir"));
+			map.put("jfx.build.stagingdir", properties.getProperty("jfx.build.stagingdir").replace("${workspace}", workbench));
 		}
 
 		map.put("builderName", properties.getProperty("jfx.eclipse.buildername"));

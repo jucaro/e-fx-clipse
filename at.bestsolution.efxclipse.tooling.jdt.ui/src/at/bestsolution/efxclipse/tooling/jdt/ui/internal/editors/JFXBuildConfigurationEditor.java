@@ -22,22 +22,47 @@ import java.util.Properties;
 
 import org.eclipse.core.databinding.DataBindingContext;
 import org.eclipse.core.databinding.beans.BeanProperties;
+import org.eclipse.core.resources.IContainer;
+import org.eclipse.core.resources.IFolder;
+import org.eclipse.core.resources.IProject;
 import org.eclipse.core.resources.IResourceChangeEvent;
 import org.eclipse.core.resources.IResourceChangeListener;
 import org.eclipse.core.resources.ResourcesPlugin;
 import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.IProgressMonitor;
+import org.eclipse.core.runtime.preferences.IEclipsePreferences;
+import org.eclipse.core.runtime.preferences.InstanceScope;
+import org.eclipse.jdt.core.IJavaElement;
+import org.eclipse.jdt.core.IJavaProject;
+import org.eclipse.jdt.core.IType;
+import org.eclipse.jdt.core.JavaCore;
+import org.eclipse.jdt.core.search.IJavaSearchScope;
+import org.eclipse.jdt.core.search.SearchEngine;
+import org.eclipse.jdt.internal.ui.dialogs.MainTypeSelectionDialog;
+import org.eclipse.jdt.internal.ui.util.BusyIndicatorRunnableContext;
+import org.eclipse.jdt.internal.ui.wizards.TypedViewerFilter;
+import org.eclipse.jdt.internal.ui.wizards.buildpaths.FolderSelectionDialog;
 import org.eclipse.jface.databinding.swt.IWidgetValueProperty;
 import org.eclipse.jface.databinding.swt.WidgetProperties;
 import org.eclipse.jface.dialogs.ErrorDialog;
+import org.eclipse.jface.dialogs.MessageDialog;
 import org.eclipse.jface.text.DocumentEvent;
 import org.eclipse.jface.text.IDocumentListener;
+import org.eclipse.jface.viewers.ILabelProvider;
+import org.eclipse.jface.viewers.ITreeContentProvider;
+import org.eclipse.jface.viewers.ViewerFilter;
+import org.eclipse.jface.window.Window;
 import org.eclipse.swt.SWT;
+import org.eclipse.swt.events.SelectionAdapter;
+import org.eclipse.swt.events.SelectionEvent;
 import org.eclipse.swt.layout.FillLayout;
 import org.eclipse.swt.layout.GridData;
 import org.eclipse.swt.layout.GridLayout;
+import org.eclipse.swt.widgets.Button;
 import org.eclipse.swt.widgets.Composite;
+import org.eclipse.swt.widgets.DirectoryDialog;
 import org.eclipse.swt.widgets.Display;
+import org.eclipse.swt.widgets.Shell;
 import org.eclipse.swt.widgets.Text;
 import org.eclipse.ui.IEditorInput;
 import org.eclipse.ui.IEditorPart;
@@ -49,12 +74,19 @@ import org.eclipse.ui.forms.widgets.Form;
 import org.eclipse.ui.forms.widgets.FormToolkit;
 import org.eclipse.ui.forms.widgets.ScrolledForm;
 import org.eclipse.ui.forms.widgets.Section;
+import org.eclipse.ui.model.WorkbenchContentProvider;
+import org.eclipse.ui.model.WorkbenchLabelProvider;
 import org.eclipse.ui.part.FileEditorInput;
 import org.eclipse.ui.part.MultiPageEditorPart;
 import org.eclipse.ui.views.contentoutline.IContentOutlinePage;
 
+import at.bestsolution.efxclipse.tooling.jdt.core.internal.JavaFXCorePlugin;
+import at.bestsolution.efxclipse.tooling.jdt.core.internal.JavaFXPreferencesConstants;
+import at.bestsolution.efxclipse.tooling.jdt.ui.internal.buildpath.JavaFXPreferencePage;
 import at.bestsolution.efxclipse.tooling.jdt.ui.internal.editors.outline.PropertyContentOutlinePage;
 
+
+@SuppressWarnings("restriction")
 public class JFXBuildConfigurationEditor extends MultiPageEditorPart implements
 		IResourceChangeListener {
 	private PropertyTextEditor editor;
@@ -193,18 +225,48 @@ public class JFXBuildConfigurationEditor extends MultiPageEditorPart implements
 			
 			{
 				toolkit.createLabel(sectionClient, "Build Directory:");
-				Text t = toolkit.createText(sectionClient, "");
+				final Text t = toolkit.createText(sectionClient, "");
 				t.setLayoutData(new GridData(GridData.FILL_HORIZONTAL));
-				toolkit.createButton(sectionClient, "Filesystem ...", SWT.PUSH);
-				toolkit.createButton(sectionClient, "Workspace ...", SWT.PUSH);
+				toolkit.createButton(sectionClient, "Filesystem ...", SWT.PUSH).addSelectionListener(new SelectionAdapter() {
+					@Override
+					public void widgetSelected(SelectionEvent e) {
+						String dir = handleBuildFilesystemDirectorySelection(t.getShell());
+						if( dir != null ) {
+							t.setText(dir);	
+						}
+					}
+				});
+				toolkit.createButton(sectionClient, "Workspace ...", SWT.PUSH).addSelectionListener(new SelectionAdapter() {
+					@Override
+					public void widgetSelected(SelectionEvent e) {
+						String dir = handleBuildWorkbencDirectorySelection(t.getShell());
+						if( dir != null ) {
+							t.setText(dir);	
+						}
+					}
+				});
 				dbc.bindValue(textModify.observeDelayed(DELAY, t), BeanProperties.value(BUILD_DIRECTORY).observe(bean));
 			}
 			
 			{
+				IEclipsePreferences pref = InstanceScope.INSTANCE.getNode(JavaFXCorePlugin.PLUGIN_ID);
+				final String prefDir = pref.get(JavaFXPreferencesConstants.JAVAFX_DIR,"");
+				
 				toolkit.createLabel(sectionClient, "JFX-SDK Directory:");
-				Text t = toolkit.createText(sectionClient, "");
+				final Text t = toolkit.createText(sectionClient, "");
+				t.setMessage(prefDir);
 				t.setLayoutData(new GridData(GridData.FILL,GridData.CENTER,true,false,2,1));
-				toolkit.createButton(sectionClient, "Browse ...", SWT.PUSH).setLayoutData(new GridData(GridData.FILL, GridData.CENTER, false, false));
+				Button b = toolkit.createButton(sectionClient, "Browse ...", SWT.PUSH);
+				b.addSelectionListener(new SelectionAdapter() {
+					@Override
+					public void widgetSelected(SelectionEvent e) {
+						String dir = handleJFxSDKDirectorySelection(t.getShell(),prefDir);
+						if( dir != null ) {
+							t.setText(dir);	
+						}
+					}
+				});
+				b.setLayoutData(new GridData(GridData.FILL, GridData.CENTER, false, false));
 				dbc.bindValue(textModify.observeDelayed(DELAY, t), BeanProperties.value(BUILD_JFXSDK).observe(bean));
 			}
 			
@@ -231,9 +293,19 @@ public class JFXBuildConfigurationEditor extends MultiPageEditorPart implements
 			
 			{
 				toolkit.createLabel(sectionClient, "Application class*:");
-				Text t = toolkit.createText(sectionClient, "");
+				final Text t = toolkit.createText(sectionClient, "");
 				t.setLayoutData(new GridData(GridData.FILL,GridData.CENTER,true,false,2,1));
-				toolkit.createButton(sectionClient, "Browse ...", SWT.PUSH).setLayoutData(new GridData(GridData.FILL, GridData.CENTER, false, false));
+				Button b = toolkit.createButton(sectionClient, "Browse ...", SWT.PUSH);
+				b.addSelectionListener(new SelectionAdapter() {
+					@Override
+					public void widgetSelected(SelectionEvent e) {
+						String name = handleRootclassSelection(t.getShell());
+						if( name != null ) {
+							t.setText(name);
+						}
+					}
+				});
+				b.setLayoutData(new GridData(GridData.FILL, GridData.CENTER, false, false));
 				dbc.bindValue(textModify.observeDelayed(DELAY, t), BeanProperties.value(BUILD_APPLICATION_CLASS).observe(bean));
 			}
 			
@@ -308,6 +380,77 @@ public class JFXBuildConfigurationEditor extends MultiPageEditorPart implements
 		
 		int index = addPage(composite);
 		setPageText(index, "Build Properties");
+	}
+	
+	String handleJFxSDKDirectorySelection(Shell parent,
+			String originalDir) {
+		DirectoryDialog dialog = new DirectoryDialog(parent);
+		dialog.setFilterPath(originalDir);
+		
+		String dir = dialog.open();
+		if( dir != null ) {
+			if( ! JavaFXPreferencePage.validateSDKDirectory(dir) ) {
+				MessageDialog.openError(parent, "Not a JFX-SDK Directory", "The directory '"+dir+"' is not a valid SDK-directory");
+				return handleJFxSDKDirectorySelection(parent, originalDir);
+			} else {
+				return dir;
+			}
+		}
+		return null;
+	}
+	
+	String handleBuildFilesystemDirectorySelection(Shell parent) {
+		DirectoryDialog dialog = new DirectoryDialog(parent);
+		return dialog.open();
+	}
+	
+	String handleBuildWorkbencDirectorySelection(Shell parent) {
+		ILabelProvider lp= new WorkbenchLabelProvider();
+		ITreeContentProvider cp= new WorkbenchContentProvider();
+
+		Class<?>[] acceptedClasses= new Class[] { IProject.class, IFolder.class };
+		ViewerFilter filter= new TypedViewerFilter(acceptedClasses);
+
+		FolderSelectionDialog dialog= new FolderSelectionDialog(parent, lp, cp);
+		dialog.setTitle("Output directory");
+		dialog.setMessage("Select output directory");
+		dialog.addFilter(filter);
+		dialog.setInput(ResourcesPlugin.getWorkspace().getRoot());
+		if (dialog.open() == Window.OK) {
+			IContainer c = (IContainer)dialog.getFirstResult();
+			return "${workspace}/" + c.getProject().getName() + "/" + c.getProjectRelativePath().toString();
+		}
+		return null;
+	}
+	
+	String handleRootclassSelection(Shell parent) {
+		IFileEditorInput i = (IFileEditorInput) getEditorInput();
+		IJavaProject project= JavaCore.create(i.getFile().getProject());
+		if (project == null) {
+			return null;
+		}
+		
+		IJavaElement[] elements= new IJavaElement[] { project };
+
+		int constraints = IJavaSearchScope.SOURCES;
+		constraints |= IJavaSearchScope.APPLICATION_LIBRARIES;
+		
+		IJavaSearchScope searchScope = SearchEngine.createJavaSearchScope(elements, constraints);		
+		BusyIndicatorRunnableContext context = new BusyIndicatorRunnableContext();
+		
+		MainTypeSelectionDialog dialog = new MainTypeSelectionDialog(parent, context, searchScope, 0);
+		dialog.setTitle("Find class");
+		dialog.setMessage("Find the class used to launch the application");
+		if (dialog.open() == Window.CANCEL) {
+			return null;
+		}
+		Object[] results = dialog.getResult();	
+		IType type = (IType)results[0];
+		if (type != null) {
+			return type.getFullyQualifiedName();
+		}
+		
+		return null;
 	}
 	
 	protected void pageChange(int newPageIndex) {

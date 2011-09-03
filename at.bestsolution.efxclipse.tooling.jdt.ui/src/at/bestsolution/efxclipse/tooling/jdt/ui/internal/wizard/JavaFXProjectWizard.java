@@ -10,20 +10,23 @@
  *******************************************************************************/
 package at.bestsolution.efxclipse.tooling.jdt.ui.internal.wizard;
 
-import org.eclipse.jdt.internal.ui.wizards.JavaProjectWizard;
-import org.eclipse.jdt.internal.ui.wizards.NewElementWizard;
-import org.eclipse.jdt.internal.ui.wizards.NewWizardMessages;
-
 import java.lang.reflect.InvocationTargetException;
-
-import org.eclipse.swt.widgets.Display;
-import org.eclipse.swt.widgets.Shell;
 
 import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.IConfigurationElement;
 import org.eclipse.core.runtime.IExecutableExtension;
 import org.eclipse.core.runtime.IProgressMonitor;
-
+import org.eclipse.jdt.core.IJavaElement;
+import org.eclipse.jdt.internal.ui.JavaPlugin;
+import org.eclipse.jdt.internal.ui.JavaPluginImages;
+import org.eclipse.jdt.internal.ui.packageview.PackageExplorerPart;
+import org.eclipse.jdt.internal.ui.util.ExceptionHandler;
+import org.eclipse.jdt.internal.ui.wizards.NewElementWizard;
+import org.eclipse.jdt.internal.ui.wizards.NewWizardMessages;
+import org.eclipse.jdt.ui.IPackagesViewPart;
+import org.eclipse.jdt.ui.wizards.NewJavaProjectWizardPageOne;
+import org.eclipse.swt.widgets.Display;
+import org.eclipse.swt.widgets.Shell;
 import org.eclipse.ui.IWorkbenchPage;
 import org.eclipse.ui.IWorkbenchPart;
 import org.eclipse.ui.IWorkbenchWindow;
@@ -31,16 +34,7 @@ import org.eclipse.ui.IWorkingSet;
 import org.eclipse.ui.PlatformUI;
 import org.eclipse.ui.wizards.newresource.BasicNewProjectResourceWizard;
 
-import org.eclipse.jdt.core.IJavaElement;
-
-import org.eclipse.jdt.ui.IPackagesViewPart;
-import org.eclipse.jdt.ui.wizards.NewJavaProjectWizardPageOne;
-
-import org.eclipse.jdt.internal.ui.JavaPlugin;
-import org.eclipse.jdt.internal.ui.JavaPluginImages;
-import org.eclipse.jdt.internal.ui.packageview.PackageExplorerPart;
-import org.eclipse.jdt.internal.ui.util.ExceptionHandler;
-
+@SuppressWarnings("restriction")
 public class JavaFXProjectWizard extends NewElementWizard implements IExecutableExtension {
 
 	private NewJavaProjectWizardPageOne fFirstPage;

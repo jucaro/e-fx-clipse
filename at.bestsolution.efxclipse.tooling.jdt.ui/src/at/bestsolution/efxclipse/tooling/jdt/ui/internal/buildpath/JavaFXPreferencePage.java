@@ -79,27 +79,31 @@ public class JavaFXPreferencePage extends PreferencePage implements IWorkbenchPr
 	public boolean performOk() {
 		String dir = sdkDirectory.getText();
 		
+		if( validateSDKDirectory(dir) ) {
+			IEclipsePreferences pref = InstanceScope.INSTANCE.getNode(JavaFXCorePlugin.PLUGIN_ID);
+			pref.put(JavaFXPreferencesConstants.JAVAFX_DIR,dir);
+			try {
+				pref.flush();
+			} catch (BackingStoreException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			
+			return super.performOk();
+		}
+		
+		return false;
+	}
+	
+	public static boolean validateSDKDirectory(String dir) {
 		if( dir.trim().length() > 0 ) {
 			File f = new File(dir);
 			if( f.exists() ) {
 				File jarPath = new File(new File(new File(dir,"rt"),"lib"),"jfxrt.jar");
 				File javaDocPath = new File(new File(new File(dir,"docs"),"api"),"package-list");
-				
-				if( jarPath.exists() && javaDocPath.exists() ) {
-					IEclipsePreferences pref = InstanceScope.INSTANCE.getNode(JavaFXCorePlugin.PLUGIN_ID);
-					pref.put(JavaFXPreferencesConstants.JAVAFX_DIR,dir);
-					try {
-						pref.flush();
-					} catch (BackingStoreException e) {
-						// TODO Auto-generated catch block
-						e.printStackTrace();
-					}
-					
-					return super.performOk();
-				}
+				return jarPath.exists() && javaDocPath.exists();
 			}
 		}
-		
 		return false;
 	}
 }
