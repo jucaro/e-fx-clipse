@@ -47,6 +47,7 @@ import org.eclipse.ui.IWorkbenchPage;
 import org.eclipse.ui.PartInitException;
 import org.eclipse.ui.forms.widgets.Form;
 import org.eclipse.ui.forms.widgets.FormToolkit;
+import org.eclipse.ui.forms.widgets.ScrolledForm;
 import org.eclipse.ui.forms.widgets.Section;
 import org.eclipse.ui.part.FileEditorInput;
 import org.eclipse.ui.part.MultiPageEditorPart;
@@ -64,6 +65,7 @@ public class JFXBuildConfigurationEditor extends MultiPageEditorPart implements
 	private BuildPropertyBean bean = new BuildPropertyBean(properties);
 	private boolean syncForm = true;
 	
+	public static final String BUILD_JFXSDK = "buildJfxSDK";
 	public static final String BUILD_DIRECTORY = "buildDirectory";
 	public static final String BUILD_VENDOR_NAME = "buildVendorName";
 	public static final String BUILD_APP_TITLE = "buildAppTitle";
@@ -72,6 +74,10 @@ public class JFXBuildConfigurationEditor extends MultiPageEditorPart implements
 	
 	public static final String DEPLOY_APPLET_WIDTH = "deployAppletWith";
 	public static final String DEPLOY_APPLET_HEIGHT = "deployAppletHeight";
+	
+	public static final String SIGN_KEYSTORE = "signKeystore";
+	public static final String SIGN_ALIAS    = "signAlias";
+	public static final String SIGN_PASSWORD = "signPassword";
 	
 	private static final int DELAY = 500;
 	
@@ -82,6 +88,7 @@ public class JFXBuildConfigurationEditor extends MultiPageEditorPart implements
 		private static final long serialVersionUID = 1L;
 
 		{
+			put(BUILD_JFXSDK,"jfx.build.jfxsdkdir");
 			put(BUILD_DIRECTORY,"jfx.build.stagingdir");
 			put(BUILD_VENDOR_NAME, "jfx.build.vendorname");
 			put(BUILD_APP_TITLE,"jfx.build.apptitle");
@@ -90,6 +97,10 @@ public class JFXBuildConfigurationEditor extends MultiPageEditorPart implements
 			
 			put(DEPLOY_APPLET_WIDTH,"jfx.deploy.appletWith");
 			put(DEPLOY_APPLET_HEIGHT,"jfx.deploy.appletHeight");
+			
+			put(SIGN_KEYSTORE,"jfx.sign.keystore");
+			put(SIGN_ALIAS,"jfx.sign.alias");
+			put(SIGN_PASSWORD,"jfx.sign.password");
 		}
 	};
 
@@ -155,18 +166,22 @@ public class JFXBuildConfigurationEditor extends MultiPageEditorPart implements
 		composite.setLayout(layout);
 		
 		toolkit = new FormToolkit(composite.getDisplay());
+		
 		form = toolkit.createForm(composite);
 		form.setText("FX Build Configuration");
 		form.setImage(getTitleImage());
+		form.getBody().setLayout(new FillLayout());
 		toolkit.decorateFormHeading(form);
-		
-		form.getBody().setLayout(new GridLayout());
+
+		ScrolledForm scrolledForm = toolkit.createScrolledForm(form.getBody());
+		scrolledForm.getBody().setLayout(new GridLayout());
+		Composite sectionParent = scrolledForm.getBody();
 		
 		dbc = new DataBindingContext();
 		IWidgetValueProperty textModify = WidgetProperties.text(SWT.Modify);
 		
 		{
-			Section section = toolkit.createSection(form.getBody(), 
+			Section section = toolkit.createSection(sectionParent, 
 					  Section.DESCRIPTION|Section.TITLE_BAR|
 					  Section.TWISTIE|Section.EXPANDED);
 			section.setText("Build Properties");
@@ -183,6 +198,14 @@ public class JFXBuildConfigurationEditor extends MultiPageEditorPart implements
 				toolkit.createButton(sectionClient, "Filesystem ...", SWT.PUSH);
 				toolkit.createButton(sectionClient, "Workspace ...", SWT.PUSH);
 				dbc.bindValue(textModify.observeDelayed(DELAY, t), BeanProperties.value(BUILD_DIRECTORY).observe(bean));
+			}
+			
+			{
+				toolkit.createLabel(sectionClient, "JFX-SDK Directory:");
+				Text t = toolkit.createText(sectionClient, "");
+				t.setLayoutData(new GridData(GridData.FILL,GridData.CENTER,true,false,2,1));
+				toolkit.createButton(sectionClient, "Browse ...", SWT.PUSH).setLayoutData(new GridData(GridData.FILL, GridData.CENTER, false, false));
+				dbc.bindValue(textModify.observeDelayed(DELAY, t), BeanProperties.value(BUILD_JFXSDK).observe(bean));
 			}
 			
 			{
@@ -219,7 +242,7 @@ public class JFXBuildConfigurationEditor extends MultiPageEditorPart implements
 		}
 		
 		{
-			Section section = toolkit.createSection(form.getBody(), 
+			Section section = toolkit.createSection(sectionParent, 
 					  Section.DESCRIPTION|Section.TITLE_BAR|
 					  Section.TWISTIE|Section.EXPANDED);
 			section.setText("Deploy Properties");
@@ -227,20 +250,57 @@ public class JFXBuildConfigurationEditor extends MultiPageEditorPart implements
 			section.setLayoutData(new GridData(GridData.FILL_HORIZONTAL));
 			
 			Composite sectionClient = toolkit.createComposite(section);
-			sectionClient.setLayout(new GridLayout(3, false));
+			sectionClient.setLayout(new GridLayout(2, false));
 			
 			{
 				toolkit.createLabel(sectionClient, "Applet Width:");
 				Text t = toolkit.createText(sectionClient, "");
-				t.setLayoutData(new GridData(GridData.FILL,GridData.CENTER,true,false,2,1));
+				t.setLayoutData(new GridData(GridData.FILL_HORIZONTAL));
 				dbc.bindValue(textModify.observeDelayed(DELAY, t), BeanProperties.value(DEPLOY_APPLET_WIDTH).observe(bean));
 			}
 			
 			{
 				toolkit.createLabel(sectionClient, "Applet Height:");
 				Text t = toolkit.createText(sectionClient, "");
-				t.setLayoutData(new GridData(GridData.FILL,GridData.CENTER,true,false,2,1));
+				t.setLayoutData(new GridData(GridData.FILL_HORIZONTAL));
 				dbc.bindValue(textModify.observeDelayed(DELAY, t), BeanProperties.value(DEPLOY_APPLET_HEIGHT).observe(bean));
+			}
+			
+			section.setClient(sectionClient);
+		}
+		
+		{
+			Section section = toolkit.createSection(sectionParent, 
+					  Section.DESCRIPTION|Section.TITLE_BAR|
+					  Section.TWISTIE|Section.EXPANDED);
+			section.setText("Signing Properties");
+			section.setDescription("Information for signing result jar");
+			section.setLayoutData(new GridData(GridData.FILL_HORIZONTAL));
+			
+			Composite sectionClient = toolkit.createComposite(section);
+			sectionClient.setLayout(new GridLayout(4, false));
+			
+			{
+				toolkit.createLabel(sectionClient, "Keystore:");
+				Text t = toolkit.createText(sectionClient, "");
+				t.setLayoutData(new GridData(GridData.FILL_HORIZONTAL));
+				toolkit.createButton(sectionClient, "Filesystem ...", SWT.PUSH);
+				toolkit.createButton(sectionClient, "Workspace ...", SWT.PUSH);
+				dbc.bindValue(textModify.observeDelayed(DELAY, t), BeanProperties.value(SIGN_KEYSTORE).observe(bean));
+			}
+			
+			{
+				toolkit.createLabel(sectionClient, "Alias:");
+				Text t = toolkit.createText(sectionClient, "");
+				t.setLayoutData(new GridData(GridData.FILL,GridData.CENTER,true,false,3,1));
+				dbc.bindValue(textModify.observeDelayed(DELAY, t), BeanProperties.value(SIGN_ALIAS).observe(bean));
+			}
+			
+			{
+				toolkit.createLabel(sectionClient, "Password:");
+				Text t = toolkit.createText(sectionClient, "");
+				t.setLayoutData(new GridData(GridData.FILL,GridData.CENTER,true,false,3,1));
+				dbc.bindValue(textModify.observeDelayed(DELAY, t), BeanProperties.value(SIGN_PASSWORD).observe(bean));
 			}
 			
 			section.setClient(sectionClient);
@@ -459,6 +519,38 @@ public class JFXBuildConfigurationEditor extends MultiPageEditorPart implements
 		
 		public String getDeployAppletHeight() {
 			return get(DEPLOY_APPLET_HEIGHT);
+		}
+		
+		public void setBuildJfxSDK(String value) {
+			set(BUILD_JFXSDK,value);
+		}
+		
+		public String getBuildJfxSDK() {
+			return get(BUILD_JFXSDK);
+		}
+		
+		public void setSignKeystore(String value) {
+			set(SIGN_KEYSTORE,value);
+		}
+		
+		public String getSignKeystore() {
+			return get(SIGN_KEYSTORE);
+		}
+		
+		public void setSignAlias(String value) {
+			set(SIGN_ALIAS,value);
+		}
+		
+		public String getSignAlias() {
+			return get(SIGN_ALIAS);
+		}
+		
+		public void setSignPassword(String value) {
+			set(SIGN_PASSWORD,value);
+		}
+		
+		public String getSignPassword() {
+			return get(SIGN_PASSWORD);
 		}
 	}
 }
