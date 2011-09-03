@@ -18,8 +18,6 @@ import java.util.Properties;
 import java.util.Set;
 
 import org.eclipse.core.commands.AbstractHandler;
-import org.eclipse.core.commands.ExecutionEvent;
-import org.eclipse.core.commands.ExecutionException;
 import org.eclipse.core.resources.IFile;
 import org.eclipse.core.resources.IFolder;
 import org.eclipse.core.resources.IProject;
@@ -40,10 +38,12 @@ import at.bestsolution.efxclipse.tooling.jdt.core.internal.JavaFXPreferencesCons
 public abstract class AbstractAntHandler extends AbstractHandler {
 
 	protected Map<String,Object> prepareBuild(IFile f, Properties properties) {
+		Map<String,Object> map = new HashMap<String, Object>();
+		
 		IEclipsePreferences pref = InstanceScope.INSTANCE.getNode(JavaFXCorePlugin.PLUGIN_ID);
 		String dir = pref.get(JavaFXPreferencesConstants.JAVAFX_DIR,"");
-		Map<String,Object> map = new HashMap<String, Object>();
-		map.put("jfxSdk", dir);
+		
+		map.put("jfxSdk", properties.getProperty("jfx.build.jfxsdk",dir));
 		
 		if( properties.getProperty("jfx.build.stagingdir") == null ) {
 			DirectoryDialog dialog = new DirectoryDialog(PlatformUI.getWorkbench().getActiveWorkbenchWindow().getShell());
