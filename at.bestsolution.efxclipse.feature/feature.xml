@@ -2,7 +2,7 @@
 <feature
       id="at.bestsolution.efxclipse.feature"
       label="efxclipse"
-      version="0.0.3"
+      version="0.0.4"
       provider-name="BestSolution.at">
 
    <description url="https://github.com/tomsontom/e-fx-clipse/wiki">
