@@ -7,13 +7,13 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Iterator;
 import java.util.List;
-import java.util.Properties;
 import java.util.Map.Entry;
+import java.util.Properties;
 
 import org.eclipse.core.runtime.preferences.IEclipsePreferences;
 import org.eclipse.core.runtime.preferences.IEclipsePreferences.IPreferenceChangeListener;
-import org.eclipse.core.runtime.preferences.InstanceScope;
 import org.eclipse.core.runtime.preferences.IEclipsePreferences.PreferenceChangeEvent;
+import org.eclipse.core.runtime.preferences.InstanceScope;
 import org.eclipse.jdt.internal.ui.propertiesfileeditor.PropertiesFileEditor;
 import org.eclipse.jface.action.Action;
 import org.eclipse.jface.action.IAction;
@@ -517,70 +517,4 @@ public class PropertyContentOutlinePage extends ContentOutlinePage {
 			this.value = value;
 		}
 	}
-
-	// public static void main(String[] args) {
-	// Display d = new Display();
-	// final Shell s = new Shell(d);
-	// s.setLayout(new FillLayout());
-	// final PropertyContentOutlinePage page = new PropertyContentOutlinePage();
-	// page.createControl(s);
-	//
-	// final String[][] vals = new String[][] {
-	// {
-	// "ClassA_PropertyA",
-	// "ClassB_PropertyB",
-	// "ClassC_PropertyC",
-	// "ClassD_InnerA_PropertyA"
-	// },
-	// {
-	// "ClassA_PropertyA",
-	// "ClassA_PropertyB",
-	// "ClassB_PropertyB",
-	// "ClassC_PropertyC",
-	// "ClassC_InnerC_PropertyC",
-	// "ClassD_InnerA_PropertyA",
-	// "ClassD_InnerA_PropertyB"
-	// },
-	// {
-	// "ClassA_PropertyA",
-	// "ClassB_PropertyB",
-	// "ClassC_PropertyC",
-	// "ClassD_InnerA_PropertyA"
-	// }
-	// };
-	//
-	// Thread t = new Thread() {
-	// @Override
-	// public void run() {
-	// for( String[] props : vals ) {
-	// final String[] in = props;
-	// s.getDisplay().syncExec(new Runnable() {
-	// public void run() {
-	// page.setProperties(in);
-	// page.getTreeViewer().expandAll();
-	// }
-	// });
-	// try {
-	// Thread.sleep(3000);
-	// } catch (InterruptedException e) {
-	// // TODO Auto-generated catch block
-	// e.printStackTrace();
-	// }
-	//
-	// }
-	// }
-	// };
-	// t.start();
-	//
-	//
-	//
-	//
-	// s.open();
-	//
-	// while( ! s.isDisposed() ) {
-	// if( ! d.readAndDispatch() ) {
-	// d.sleep();
-	// }
-	// }
-	// }
 }

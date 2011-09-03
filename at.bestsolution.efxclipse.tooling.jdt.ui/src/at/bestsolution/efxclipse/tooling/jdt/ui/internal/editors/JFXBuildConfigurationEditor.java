@@ -40,6 +40,9 @@ import org.eclipse.ui.forms.widgets.FormToolkit;
 import org.eclipse.ui.forms.widgets.Section;
 import org.eclipse.ui.part.FileEditorInput;
 import org.eclipse.ui.part.MultiPageEditorPart;
+import org.eclipse.ui.views.contentoutline.IContentOutlinePage;
+
+import at.bestsolution.efxclipse.tooling.jdt.ui.internal.editors.outline.PropertyContentOutlinePage;
 
 public class JFXBuildConfigurationEditor extends MultiPageEditorPart implements
 		IResourceChangeListener {
@@ -52,6 +55,16 @@ public class JFXBuildConfigurationEditor extends MultiPageEditorPart implements
 	private boolean syncForm = true;
 	
 	public static final String BUILD_DIRECTORY = "buildDirectory";
+	public static final String BUILD_VENDOR_NAME = "buildVendorName";
+	public static final String BUILD_APP_TITLE = "buildAppTitle";
+	public static final String BUILD_APP_VERSION = "buildAppVersion";
+	public static final String BUILD_APPLICATION_CLASS = "buildApplicationClass";
+	
+	public static final String DEPLOY_APPLET_WIDTH = "deployAppletWith";
+	public static final String DEPLOY_APPLET_HEIGHT = "deployAppletHeight";
+	
+	private static final int DELAY = 500;
+	
 	public static final Map<String,String> MAPPING = new HashMap<String, String>() { 
 		/**
 		 * 
@@ -60,6 +73,13 @@ public class JFXBuildConfigurationEditor extends MultiPageEditorPart implements
 
 		{
 			put(BUILD_DIRECTORY,"jfx.build.stagingdir");
+			put(BUILD_VENDOR_NAME, "jfx.build.vendorname");
+			put(BUILD_APP_TITLE,"jfx.build.apptitle");
+			put(BUILD_APP_VERSION,"jfx.build.appversion");
+			put(BUILD_APPLICATION_CLASS,"jfx.build.applicationClass");
+			
+			put(DEPLOY_APPLET_WIDTH,"jfx.deploy.appletWith");
+			put(DEPLOY_APPLET_HEIGHT,"jfx.deploy.appletHeight");
 		}
 	};
 
@@ -126,7 +146,8 @@ public class JFXBuildConfigurationEditor extends MultiPageEditorPart implements
 		
 		toolkit = new FormToolkit(composite.getDisplay());
 		form = toolkit.createForm(composite);
-		form.setText("FX Build");
+		form.setText("FX Build Configuration");
+		form.setImage(getTitleImage());
 		toolkit.decorateFormHeading(form);
 		
 		form.getBody().setLayout(new GridLayout());
@@ -143,35 +164,44 @@ public class JFXBuildConfigurationEditor extends MultiPageEditorPart implements
 			section.setLayoutData(new GridData(GridData.FILL_HORIZONTAL));
 			
 			Composite sectionClient = toolkit.createComposite(section);
-			sectionClient.setLayout(new GridLayout(3, false));
+			sectionClient.setLayout(new GridLayout(4, false));
 			
 			{
 				toolkit.createLabel(sectionClient, "Build Directory:");
 				Text t = toolkit.createText(sectionClient, "");
 				t.setLayoutData(new GridData(GridData.FILL_HORIZONTAL));
-				toolkit.createButton(sectionClient, "Browse ...", SWT.PUSH);
-				dbc.bindValue(textModify.observeDelayed(200, t), BeanProperties.value(BUILD_DIRECTORY).observe(bean));
+				toolkit.createButton(sectionClient, "Filesystem ...", SWT.PUSH);
+				toolkit.createButton(sectionClient, "Workspace ...", SWT.PUSH);
+				dbc.bindValue(textModify.observeDelayed(DELAY, t), BeanProperties.value(BUILD_DIRECTORY).observe(bean));
 			}
 			
 			{
 				toolkit.createLabel(sectionClient, "Vendor name*:");
-				toolkit.createText(sectionClient, "").setLayoutData(new GridData(GridData.FILL,GridData.CENTER,true,false,2,1));
+				Text t = toolkit.createText(sectionClient, "");
+				t.setLayoutData(new GridData(GridData.FILL,GridData.CENTER,true,false,3,1));
+				dbc.bindValue(textModify.observeDelayed(DELAY, t), BeanProperties.value(BUILD_VENDOR_NAME).observe(bean));
 			}
 			
 			{
 				toolkit.createLabel(sectionClient, "Application title*:");
-				toolkit.createText(sectionClient, "").setLayoutData(new GridData(GridData.FILL,GridData.CENTER,true,false,2,1));
+				Text t = toolkit.createText(sectionClient, "");
+				t.setLayoutData(new GridData(GridData.FILL,GridData.CENTER,true,false,3,1));
+				dbc.bindValue(textModify.observeDelayed(DELAY, t), BeanProperties.value(BUILD_APP_TITLE).observe(bean));
 			}
 			
 			{
 				toolkit.createLabel(sectionClient, "Application version*:");
-				toolkit.createText(sectionClient, "").setLayoutData(new GridData(GridData.FILL,GridData.CENTER,true,false,2,1));
+				Text t = toolkit.createText(sectionClient, "");
+				t.setLayoutData(new GridData(GridData.FILL,GridData.CENTER,true,false,3,1));
+				dbc.bindValue(textModify.observeDelayed(DELAY, t), BeanProperties.value(BUILD_APP_VERSION).observe(bean));
 			}
 			
 			{
 				toolkit.createLabel(sectionClient, "Application class*:");
-				toolkit.createText(sectionClient, "").setLayoutData(new GridData(GridData.FILL_HORIZONTAL));
-				toolkit.createButton(sectionClient, "Browse ...", SWT.PUSH);	
+				Text t = toolkit.createText(sectionClient, "");
+				t.setLayoutData(new GridData(GridData.FILL,GridData.CENTER,true,false,2,1));
+				toolkit.createButton(sectionClient, "Browse ...", SWT.PUSH).setLayoutData(new GridData(GridData.FILL, GridData.CENTER, false, false));
+				dbc.bindValue(textModify.observeDelayed(DELAY, t), BeanProperties.value(BUILD_APPLICATION_CLASS).observe(bean));
 			}
 			
 			
@@ -191,12 +221,16 @@ public class JFXBuildConfigurationEditor extends MultiPageEditorPart implements
 			
 			{
 				toolkit.createLabel(sectionClient, "Applet Width:");
-				toolkit.createText(sectionClient, "").setLayoutData(new GridData(GridData.FILL,GridData.CENTER,true,false,2,1));
+				Text t = toolkit.createText(sectionClient, "");
+				t.setLayoutData(new GridData(GridData.FILL,GridData.CENTER,true,false,2,1));
+				dbc.bindValue(textModify.observeDelayed(DELAY, t), BeanProperties.value(DEPLOY_APPLET_WIDTH).observe(bean));
 			}
 			
 			{
 				toolkit.createLabel(sectionClient, "Applet Height:");
-				toolkit.createText(sectionClient, "").setLayoutData(new GridData(GridData.FILL,GridData.CENTER,true,false,2,1));
+				Text t = toolkit.createText(sectionClient, "");
+				t.setLayoutData(new GridData(GridData.FILL,GridData.CENTER,true,false,2,1));
+				dbc.bindValue(textModify.observeDelayed(DELAY, t), BeanProperties.value(DEPLOY_APPLET_HEIGHT).observe(bean));
 			}
 			
 			section.setClient(sectionClient);
@@ -228,6 +262,7 @@ public class JFXBuildConfigurationEditor extends MultiPageEditorPart implements
 			editor = new PropertyTextEditor();
 			int index = addPage(editor, getEditorInput());
 			setPageText(index, editor.getTitle());
+			setPartName(editor.getTitle());
 			editor.getDocumentProvider().getDocument(editor.getEditorInput()).addDocumentListener(new IDocumentListener() {
 				
 				@Override
@@ -256,12 +291,33 @@ public class JFXBuildConfigurationEditor extends MultiPageEditorPart implements
 						String line;
 						StringBuilder b = new StringBuilder();
 						try {
+							boolean found = false;
 							while( (line = r.readLine()) != null ) {
 								if( line.startsWith(key) ) {
-									line = key + " = " + evt.getNewValue();
+									if( line.endsWith("\\") ) {
+										while( (line = r.readLine()) != null && line.endsWith("\\") ) {
+											// remove all of them
+										}
+									}
+									
+									if( evt.getNewValue() == null ) {
+										line = null;
+									} else {
+										line = key + " = " + evt.getNewValue();
+									}
+									
+									found = true;
 								}
-								b.append(line + "\n");
+								
+								if( line != null ) {
+									b.append(line + "\n");
+								}
 							}
+							
+							if( ! found && evt.getNewValue() != null ) {
+								b.append(line = key + " = " + evt.getNewValue());
+							}
+							
 							editor.getDocumentProvider().getDocument(editor.getEditorInput()).set(b.toString());
 						} catch (IOException e) {
 							// TODO Auto-generated catch block
@@ -301,6 +357,15 @@ public class JFXBuildConfigurationEditor extends MultiPageEditorPart implements
 		}
 	}
 	
+	public Object getAdapter(@SuppressWarnings("rawtypes") Class adapter) {
+		if (adapter == IContentOutlinePage.class) {
+			final PropertyContentOutlinePage contentOutline = new PropertyContentOutlinePage(editor);
+			return contentOutline;
+		}
+		//
+		return super.getAdapter(adapter);
+	}
+	
 	public static class BuildPropertyBean {
 		private PropertyChangeSupport support = new PropertyChangeSupport(this);
 		private Properties properties;
@@ -317,16 +382,73 @@ public class JFXBuildConfigurationEditor extends MultiPageEditorPart implements
 			support.addPropertyChangeListener(listener);
 		}
 		
-		public void setBuildDirectory(String directory) {
-			if( directory == null || directory.trim().isEmpty() ) {
-				support.firePropertyChange(BUILD_DIRECTORY, properties.remove(MAPPING.get(BUILD_DIRECTORY)), null);
+		
+		private String get(String key) {
+			return properties.getProperty(MAPPING.get(key));
+		}
+		
+		private void set(String key, String value) {
+			if( value == null || value.trim().isEmpty() ) {
+				support.firePropertyChange(key, properties.remove(MAPPING.get(key)), null);
 			} else {
-				support.firePropertyChange(BUILD_DIRECTORY, properties.setProperty(MAPPING.get(BUILD_DIRECTORY), directory), directory);
+				support.firePropertyChange(key, properties.setProperty(MAPPING.get(key), value), value);
 			}
 		}
 		
+		public void setBuildDirectory(String value) {
+			set(BUILD_DIRECTORY,value);
+		}
+		
 		public String getBuildDirectory() {
-			return properties.getProperty("jfx.build.stagingdir");
+			return get(BUILD_DIRECTORY);
+		}
+		
+		public void setBuildVendorName(String value) {
+			set(BUILD_VENDOR_NAME,value);
+		}
+		
+		public String getBuildVendorName() {
+			return get(BUILD_VENDOR_NAME);
+		}
+		
+		public void setBuildAppTitle(String value) {
+			set(BUILD_APP_TITLE,value);
+		}
+		
+		public String getBuildAppTitle() {
+			return get(BUILD_APP_TITLE);
+		}
+		
+		public void setBuildAppVersion(String value) {
+			set(BUILD_APP_VERSION,value);
+		}
+		
+		public String getBuildAppVersion() {
+			return get(BUILD_APP_VERSION);
+		}
+		
+		public void setBuildApplicationClass(String value) {
+			set(BUILD_APPLICATION_CLASS,value);
+		}
+		
+		public String getBuildApplicationClass() {
+			return get(BUILD_APPLICATION_CLASS);
+		}
+		
+		public void setDeployAppletWith(String value) {
+			set(DEPLOY_APPLET_WIDTH,value);
+		}
+		
+		public String getDeployAppletWith() {
+			return get(DEPLOY_APPLET_WIDTH);
+		}
+		
+		public void setDeployAppletHeight(String value) {
+			set(DEPLOY_APPLET_HEIGHT,value);
+		}
+		
+		public String getDeployAppletHeight() {
+			return get(DEPLOY_APPLET_HEIGHT);
 		}
 	}
 }
