@@ -44,7 +44,7 @@
    <extension
          point="org.eclipse.ui.handlers">
       <handler
-            class="at.bestsolution.efxclipse.tooling.jdt.ui.internal.handler.RunBuildHandler"
+            class="at.bestsolution.efxclipse.tooling.jdt.ui.internal.handler.RunFromMenuBuildHandler"
             commandId="at.bestsolution.efxclipse.tooling.jdt.ui.export">
          <enabledWhen>
             <with
@@ -63,6 +63,18 @@
                <count
                      value="1">
                </count>
+            </with>
+         </enabledWhen>
+      </handler>
+      <handler
+            class="at.bestsolution.efxclipse.tooling.jdt.ui.internal.handler.RunFromFileBuildHandler"
+            commandId="at.bestsolution.efxclipse.tooling.jdt.ui.export">
+         <enabledWhen>
+            <with
+                  variable="activeEditorId">
+               <equals
+                     value="at.bestsolution.efxclipse.tooling.jdt.ui.fxbuild">
+               </equals>
             </with>
          </enabledWhen>
       </handler>

@@ -27,41 +27,44 @@ import org.eclipse.debug.core.ILaunchConfigurationType;
 import org.eclipse.debug.core.ILaunchConfigurationWorkingCopy;
 import org.eclipse.debug.core.ILaunchManager;
 import org.eclipse.debug.ui.DebugUITools;
-import org.eclipse.jface.viewers.ISelection;
-import org.eclipse.jface.viewers.IStructuredSelection;
-import org.eclipse.ui.ISources;
 
-public class RunBuildHandler extends AbstractAntHandler {
+/**
+ * @author Tom Schindl
+ *
+ */
+@SuppressWarnings("restriction")
+public abstract class AbstractBuildHandler extends AbstractAntHandler {
 	@Override
 	public Object execute(ExecutionEvent event) throws ExecutionException {
 		IEvaluationContext context = (IEvaluationContext) event.getApplicationContext();
-		ISelection s = (ISelection) context.getVariable(ISources.ACTIVE_MENU_SELECTION_NAME);
-		if( s instanceof IStructuredSelection ) {
-			Object o = ((IStructuredSelection) s).getFirstElement();
-			if( o instanceof IFile ) {
-				IFile f = (IFile) o;
-				try {
-					InputStream in = f.getContents();
-					Properties prop = new Properties();
-					prop.load(in);
-					in.close();
-					Map<String, Object> rv = prepareBuild(f, prop);
-					if( rv != null ) {
-						CreateBuildXML b = new CreateBuildXML();
-						File buildFile = b.run(rv);
-						ILaunchConfiguration cfg = getLaunchConfig(buildFile, rv, f);
-						
-						if( cfg != null ) {
-							DebugUITools.launch(cfg, ILaunchManager.RUN_MODE);
-						}
-					}
-				} catch (Exception e) {
-					throw new ExecutionException("Failed to export application",e);
+		
+		IFile f = getConfigurationFile(context);
+		if( f == null ) {
+			return null;
+		}
+		
+		try {
+			InputStream in = f.getContents();
+			Properties prop = new Properties();
+			prop.load(in);
+			in.close();
+			Map<String, Object> rv = prepareBuild(f, prop);
+			if( rv != null ) {
+				CreateBuildXML b = new CreateBuildXML();
+				File buildFile = b.run(rv);
+				ILaunchConfiguration cfg = getLaunchConfig(buildFile, rv, f);
+				
+				if( cfg != null ) {
+					DebugUITools.launch(cfg, ILaunchManager.RUN_MODE);
 				}
 			}
+		} catch (Exception e) {
+			throw new ExecutionException("Failed to export application",e);
 		}
 		return null;
 	}
+	
+	protected abstract IFile getConfigurationFile(IEvaluationContext context);
 	
 	private ILaunchConfiguration getLaunchConfig(File buildFile, Map<String, Object> cfgData, IFile buildCfgFile) throws CoreException {
 		ILaunchManager mgr = DebugPlugin.getDefault().getLaunchManager();

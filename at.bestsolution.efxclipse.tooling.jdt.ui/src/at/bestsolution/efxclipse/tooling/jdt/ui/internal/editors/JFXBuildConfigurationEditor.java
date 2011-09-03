@@ -42,10 +42,13 @@ import org.eclipse.jdt.internal.ui.dialogs.MainTypeSelectionDialog;
 import org.eclipse.jdt.internal.ui.util.BusyIndicatorRunnableContext;
 import org.eclipse.jdt.internal.ui.wizards.TypedViewerFilter;
 import org.eclipse.jdt.internal.ui.wizards.buildpaths.FolderSelectionDialog;
+import org.eclipse.jface.action.Action;
+import org.eclipse.jface.action.IToolBarManager;
 import org.eclipse.jface.databinding.swt.IWidgetValueProperty;
 import org.eclipse.jface.databinding.swt.WidgetProperties;
 import org.eclipse.jface.dialogs.ErrorDialog;
 import org.eclipse.jface.dialogs.MessageDialog;
+import org.eclipse.jface.resource.ImageDescriptor;
 import org.eclipse.jface.text.DocumentEvent;
 import org.eclipse.jface.text.IDocumentListener;
 import org.eclipse.jface.viewers.ILabelProvider;
@@ -204,7 +207,22 @@ public class JFXBuildConfigurationEditor extends MultiPageEditorPart implements
 		form.setImage(getTitleImage());
 		form.getBody().setLayout(new FillLayout());
 		toolkit.decorateFormHeading(form);
-
+		
+		IToolBarManager mgr = form.getToolBarManager();
+		mgr.add(new Action("Run Build",ImageDescriptor.createFromURL(getClass().getClassLoader().getResource("/icons/exportrunnablejar_wiz.gif"))) {
+			@Override
+			public void run() {
+				
+			}
+		});
+		mgr.add(new Action("Export Ant File",ImageDescriptor.createFromURL(getClass().getClassLoader().getResource("/icons/exportAnt_co.gif"))) {
+			@Override
+			public void run() {
+				
+			}
+		});
+		form.updateToolBar();
+		
 		ScrolledForm scrolledForm = toolkit.createScrolledForm(form.getBody());
 		scrolledForm.getBody().setLayout(new GridLayout());
 		Composite sectionParent = scrolledForm.getBody();
