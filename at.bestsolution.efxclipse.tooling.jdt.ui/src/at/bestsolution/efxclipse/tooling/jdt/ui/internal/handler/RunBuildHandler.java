@@ -14,11 +14,17 @@ import org.eclipse.core.expressions.IEvaluationContext;
 import org.eclipse.core.resources.IFile;
 import org.eclipse.jface.viewers.ISelection;
 import org.eclipse.jface.viewers.IStructuredSelection;
+import org.eclipse.ui.IFileEditorInput;
 import org.eclipse.ui.ISources;
 
-public class RunFromMenuBuildHandler extends AbstractBuildHandler {
+public class RunBuildHandler extends AbstractBuildHandler {
 	@Override
 	protected IFile getConfigurationFile(IEvaluationContext context) {
+		if( "at.bestsolution.efxclipse.tooling.jdt.ui.fxbuild".equals(context.getVariable(ISources.ACTIVE_EDITOR_ID_NAME)) ) {
+			IFileEditorInput input = (IFileEditorInput) context.getVariable(ISources.ACTIVE_EDITOR_INPUT_NAME);
+			return input.getFile();	
+		}
+		
 		ISelection s = (ISelection) context.getVariable(ISources.ACTIVE_MENU_SELECTION_NAME);
 		if( s instanceof IStructuredSelection ) {
 			Object o = ((IStructuredSelection) s).getFirstElement();

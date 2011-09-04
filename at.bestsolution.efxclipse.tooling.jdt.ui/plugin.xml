@@ -44,10 +44,11 @@
    <extension
          point="org.eclipse.ui.handlers">
       <handler
-            class="at.bestsolution.efxclipse.tooling.jdt.ui.internal.handler.RunFromMenuBuildHandler"
+            class="at.bestsolution.efxclipse.tooling.jdt.ui.internal.handler.RunBuildHandler"
             commandId="at.bestsolution.efxclipse.tooling.jdt.ui.export">
          <enabledWhen>
-            <with
+            <or>
+               <with
                   variable="activeMenuSelection">
                <iterate
                      ifEmpty="false"
@@ -63,19 +64,14 @@
                <count
                      value="1">
                </count>
-            </with>
-         </enabledWhen>
-      </handler>
-      <handler
-            class="at.bestsolution.efxclipse.tooling.jdt.ui.internal.handler.RunFromFileBuildHandler"
-            commandId="at.bestsolution.efxclipse.tooling.jdt.ui.export">
-         <enabledWhen>
-            <with
-                  variable="activeEditorId">
-               <equals
-                     value="at.bestsolution.efxclipse.tooling.jdt.ui.fxbuild">
+               </with>
+               <with
+				  variable="activeEditorId">
+			   <equals
+			      value="at.bestsolution.efxclipse.tooling.jdt.ui.fxbuild">
                </equals>
             </with>
+            </or>
          </enabledWhen>
       </handler>
    </extension>

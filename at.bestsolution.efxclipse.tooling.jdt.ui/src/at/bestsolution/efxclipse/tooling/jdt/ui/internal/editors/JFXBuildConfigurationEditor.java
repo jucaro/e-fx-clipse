@@ -20,6 +20,10 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Properties;
 
+import org.eclipse.core.commands.ExecutionException;
+import org.eclipse.core.commands.NotEnabledException;
+import org.eclipse.core.commands.NotHandledException;
+import org.eclipse.core.commands.common.NotDefinedException;
 import org.eclipse.core.databinding.DataBindingContext;
 import org.eclipse.core.databinding.beans.BeanProperties;
 import org.eclipse.core.resources.IContainer;
@@ -73,10 +77,12 @@ import org.eclipse.ui.IEditorSite;
 import org.eclipse.ui.IFileEditorInput;
 import org.eclipse.ui.IWorkbenchPage;
 import org.eclipse.ui.PartInitException;
+import org.eclipse.ui.PlatformUI;
 import org.eclipse.ui.forms.widgets.Form;
 import org.eclipse.ui.forms.widgets.FormToolkit;
 import org.eclipse.ui.forms.widgets.ScrolledForm;
 import org.eclipse.ui.forms.widgets.Section;
+import org.eclipse.ui.handlers.IHandlerService;
 import org.eclipse.ui.model.WorkbenchContentProvider;
 import org.eclipse.ui.model.WorkbenchLabelProvider;
 import org.eclipse.ui.part.FileEditorInput;
@@ -212,15 +218,30 @@ public class JFXBuildConfigurationEditor extends MultiPageEditorPart implements
 		mgr.add(new Action("Run Build",ImageDescriptor.createFromURL(getClass().getClassLoader().getResource("/icons/exportrunnablejar_wiz.gif"))) {
 			@Override
 			public void run() {
-				
+				try {
+					IHandlerService hs = (IHandlerService) PlatformUI.getWorkbench().getService(IHandlerService.class);
+					hs.executeCommand("at.bestsolution.efxclipse.tooling.jdt.ui.export", null);
+				} catch (ExecutionException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				} catch (NotDefinedException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				} catch (NotEnabledException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				} catch (NotHandledException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}				
 			}
 		});
-		mgr.add(new Action("Export Ant File",ImageDescriptor.createFromURL(getClass().getClassLoader().getResource("/icons/exportAnt_co.gif"))) {
-			@Override
-			public void run() {
-				
-			}
-		});
+//		mgr.add(new Action("Export Ant File",ImageDescriptor.createFromURL(getClass().getClassLoader().getResource("/icons/exportAnt_co.gif"))) {
+//			@Override
+//			public void run() {
+//				
+//			}
+//		});
 		form.updateToolBar();
 		
 		ScrolledForm scrolledForm = toolkit.createScrolledForm(form.getBody());
