@@ -58,8 +58,7 @@ public class PropertyContentOutlinePage extends ContentOutlinePage {
 	private List<Object> hierarchicalStructure = new ArrayList<Object>();
 	private List<Property> flatStructure = new ArrayList<Property>();
 	private Pair[] properties = new Pair[0];
-	private IEclipsePreferences preferences = new InstanceScope()
-			.getNode("propertiesoutline");
+	private IEclipsePreferences preferences = InstanceScope.INSTANCE.getNode("propertiesoutline");
 
 	private static final String PREF_SORTED = "sorted";
 	private static final String PREF_HIERARCHICAL = "hierarchical";
