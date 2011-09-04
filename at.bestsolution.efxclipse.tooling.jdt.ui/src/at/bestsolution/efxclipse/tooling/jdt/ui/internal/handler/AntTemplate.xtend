@@ -141,6 +141,7 @@ class AntTemplate {
 		val appVendor = properties.get("appVendor") as String;
 		val appTitle = properties.get("appTitle") as String;
 		val appVersion = properties.get("appVersion") as String;
+		
 		var keyStore = properties.get("keyStore") as String;
 		var keyStoreAlias = properties.get("keyStoreAlias") as String;
 		var keyStorePass = properties.get("keyStorePass") as String;
@@ -169,7 +170,7 @@ class AntTemplate {
 			</fxjar>
 			
 			«IF keyStore != null»
-			<fxsignjar keystore="«keyStore»" alias="«keyStoreAlias»" storepass="«keyStorePass»" destDir="sign">
+			<fxsignjar keystore="«keyStore»" alias="«keyStoreAlias»" «IF keyStorePass != null»storepass="«keyStorePass»" «ENDIF»destDir="dist">
 				<fileset file="dist/«projectName».jar"/>
 			</fxsignjar>
 			«ENDIF»

@@ -76,10 +76,12 @@ public abstract class AbstractBuildHandler extends AbstractAntHandler {
 				name = "JFX Build - " + cfgData.get("projectName");	
 			}
 			
+			File fBuildFile = new File(cfgData.get("jfx.build.stagingdir") + "/build.xml");
+			
 			for( ILaunchConfiguration cfg : mgr.getLaunchConfigurations(type) ) {
 				if( cfg.getName().equals(name) ) {
 					String s = cfg.getAttribute(IExternalToolConstants.ATTR_LOCATION, IExternalToolConstants.EMPTY_STRING);
-					if( s.equals("") && new File(s).equals(buildFile) ) {
+					if( ! s.equals("") && new File(s).equals(fBuildFile) ) {
 						return cfg;
 					} else {
 						cfg.delete();

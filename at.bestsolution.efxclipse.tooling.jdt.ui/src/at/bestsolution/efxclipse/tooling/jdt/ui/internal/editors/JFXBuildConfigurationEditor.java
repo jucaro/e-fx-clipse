@@ -14,8 +14,16 @@ import java.beans.PropertyChangeEvent;
 import java.beans.PropertyChangeListener;
 import java.beans.PropertyChangeSupport;
 import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.StringReader;
+import java.security.KeyStore;
+import java.security.KeyStoreException;
+import java.security.NoSuchAlgorithmException;
+import java.security.UnrecoverableKeyException;
+import java.security.cert.CertificateException;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Properties;
@@ -27,6 +35,7 @@ import org.eclipse.core.commands.common.NotDefinedException;
 import org.eclipse.core.databinding.DataBindingContext;
 import org.eclipse.core.databinding.beans.BeanProperties;
 import org.eclipse.core.resources.IContainer;
+import org.eclipse.core.resources.IFile;
 import org.eclipse.core.resources.IFolder;
 import org.eclipse.core.resources.IProject;
 import org.eclipse.core.resources.IResourceChangeEvent;
@@ -34,6 +43,8 @@ import org.eclipse.core.resources.IResourceChangeListener;
 import org.eclipse.core.resources.ResourcesPlugin;
 import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.IProgressMonitor;
+import org.eclipse.core.runtime.IStatus;
+import org.eclipse.core.runtime.Status;
 import org.eclipse.core.runtime.preferences.IEclipsePreferences;
 import org.eclipse.core.runtime.preferences.InstanceScope;
 import org.eclipse.jdt.core.IJavaElement;
@@ -69,6 +80,7 @@ import org.eclipse.swt.widgets.Button;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.DirectoryDialog;
 import org.eclipse.swt.widgets.Display;
+import org.eclipse.swt.widgets.FileDialog;
 import org.eclipse.swt.widgets.Shell;
 import org.eclipse.swt.widgets.Text;
 import org.eclipse.ui.IEditorInput;
@@ -78,6 +90,11 @@ import org.eclipse.ui.IFileEditorInput;
 import org.eclipse.ui.IWorkbenchPage;
 import org.eclipse.ui.PartInitException;
 import org.eclipse.ui.PlatformUI;
+import org.eclipse.ui.dialogs.ElementTreeSelectionDialog;
+import org.eclipse.ui.dialogs.ISelectionStatusValidator;
+import org.eclipse.ui.forms.events.HyperlinkAdapter;
+import org.eclipse.ui.forms.events.HyperlinkEvent;
+import org.eclipse.ui.forms.events.IHyperlinkListener;
 import org.eclipse.ui.forms.widgets.Form;
 import org.eclipse.ui.forms.widgets.FormToolkit;
 import org.eclipse.ui.forms.widgets.ScrolledForm;
@@ -393,10 +410,32 @@ public class JFXBuildConfigurationEditor extends MultiPageEditorPart implements
 			
 			{
 				toolkit.createLabel(sectionClient, "Keystore:");
-				Text t = toolkit.createText(sectionClient, "");
+//				toolkit.createHyperlink(sectionClient, "Keystore:",SWT.NONE).addHyperlinkListener(new HyperlinkAdapter() {
+//					@Override
+//					public void linkActivated(HyperlinkEvent e) {
+//						
+//					}
+//				});
+				final Text t = toolkit.createText(sectionClient, "");
 				t.setLayoutData(new GridData(GridData.FILL_HORIZONTAL));
-				toolkit.createButton(sectionClient, "Filesystem ...", SWT.PUSH);
-				toolkit.createButton(sectionClient, "Workspace ...", SWT.PUSH);
+				toolkit.createButton(sectionClient, "Filesystem ...", SWT.PUSH).addSelectionListener(new SelectionAdapter() {
+					@Override
+					public void widgetSelected(SelectionEvent e) {
+						String v = handleKeyStoreFilesystemSelection(t.getShell());
+						if( v != null ) {
+							t.setText(v);
+						}
+					}
+				});
+				toolkit.createButton(sectionClient, "Workspace ...", SWT.PUSH).addSelectionListener(new SelectionAdapter() {
+					@Override
+					public void widgetSelected(SelectionEvent e) {
+						String v = handleKeyStoreWorkspaceSelection(t.getShell());
+						if( v != null ) {
+							t.setText(v);
+						}
+					}
+				});
 				dbc.bindValue(textModify.observeDelayed(DELAY, t), BeanProperties.value(SIGN_KEYSTORE).observe(bean));
 			}
 			
@@ -419,6 +458,14 @@ public class JFXBuildConfigurationEditor extends MultiPageEditorPart implements
 		
 		int index = addPage(composite);
 		setPageText(index, "Build Properties");
+	}
+	
+	void handleCreateKeyStore(Shell parent) {
+		
+	}
+	
+	IStatus validateKeystoreAlias(Shell parent, String alias) {
+		return Status.OK_STATUS;
 	}
 	
 	String handleJFxSDKDirectorySelection(Shell parent,
@@ -490,6 +537,85 @@ public class JFXBuildConfigurationEditor extends MultiPageEditorPart implements
 		}
 		
 		return null;
+	}
+	
+	String handleKeyStoreFilesystemSelection(Shell parent) {
+		FileDialog dialog = new FileDialog(parent,SWT.OPEN);
+		String keystore = dialog.open();
+		if( keystore != null ) {
+			IStatus s = validateKeyStore(new File(keystore));
+			if( s.isOK() ) {
+				return keystore;
+			} else {
+				MessageDialog.openError(parent, "Not a keystore", "Looks like the selected file is not a keystore");
+				return handleKeyStoreFilesystemSelection(parent);
+			}
+		}
+		return null;
+	}
+	
+	String handleKeyStoreWorkspaceSelection(Shell parent) {
+		ILabelProvider lp = new WorkbenchLabelProvider();
+		ITreeContentProvider cp = new WorkbenchContentProvider();
+
+		ElementTreeSelectionDialog dialog = new ElementTreeSelectionDialog(parent, lp, cp);
+		dialog.setValidator(new ISelectionStatusValidator() {
+			
+			@Override
+			public IStatus validate(Object[] selection) {
+				if( selection.length > 1 ) {
+					return new Status(IStatus.ERROR, "at.bestsolution.efxclipse.tooling.jdt.ui", "Only one file allowed.");
+				} else if( selection.length == 1 ) {
+					if( selection[0] instanceof IFile ) {
+						IFile f = (IFile) selection[0];
+						return validateKeyStore(f.getLocation().toFile());
+					}
+				}
+				return Status.OK_STATUS;
+			}
+		});
+		dialog.setInput(ResourcesPlugin.getWorkspace().getRoot());
+		
+			
+		if (dialog.open() == Window.OK) {
+			IFile f = (IFile) dialog.getFirstResult();
+			if( f != null ) {
+				return "${workspace}/" + f.getProject().getName() + "/" + f.getProjectRelativePath().toString();
+			}
+		}
+		
+		return null;
+	}
+	
+	IStatus validateKeyStore(File f) {
+		FileInputStream fis = null;
+		try {
+			fis = new FileInputStream(f);
+			KeyStore ks = KeyStore.getInstance(KeyStore.getDefaultType());
+			ks.load(fis, null);
+		} catch (FileNotFoundException e) {
+			return new Status(IStatus.ERROR, "at.bestsolution.efxclipse.tooling.jdt.ui", "The keystore file '"+f.getAbsolutePath()+"' is not found.",e);
+		} catch (KeyStoreException e) {
+			return new Status(IStatus.ERROR,"at.bestsolution.efxclipse.tooling.jdt.ui", "Unable to initialize keystore",e);
+		} catch (NoSuchAlgorithmException e) {
+			return new Status(IStatus.ERROR,"at.bestsolution.efxclipse.tooling.jdt.ui", "Loading keystore failed. Is this a valid keystore?",e);
+		} catch (CertificateException e) {
+			return new Status(IStatus.ERROR,"at.bestsolution.efxclipse.tooling.jdt.ui", "Loading keystore failed. Is this a valid keystore?",e);
+		} catch (IOException e) {
+			if( e.getCause() instanceof UnrecoverableKeyException ) {
+				return Status.OK_STATUS;
+			}
+			return new Status(IStatus.ERROR,"at.bestsolution.efxclipse.tooling.jdt.ui", "Loading keystore failed. Is this a valid keystore?",e);
+		} finally {
+			if( fis != null ) {
+				try {
+					fis.close();
+				} catch (IOException e) {
+				}
+			}
+		}
+		
+		return Status.OK_STATUS;
 	}
 	
 	protected void pageChange(int newPageIndex) {

@@ -64,10 +64,13 @@ public abstract class AbstractAntHandler extends AbstractHandler {
 		map.put("appTitle",properties.getProperty("jfx.build.apptitle"));
 		map.put("appVersion",properties.getProperty("jfx.build.appversion"));
 		
-
 		map.put("applicationClass", properties.getProperty("jfx.build.applicationClass"));
 		map.put("appletWith", properties.getProperty("jfx.deploy.appletWith"));
 		map.put("appletHeight", properties.getProperty("jfx.deploy.appletHeight"));
+		
+		map.put("keyStore", properties.getProperty("jfx.sign.keystore").replace("${workspace}", workbench));
+		map.put("keyStoreAlias", properties.getProperty("jfx.sign.alias"));
+		map.put("keyStorePass", properties.getProperty("jfx.sign.password"));
 		
 		IJavaProject project = JavaCore.create(f.getProject());
 
