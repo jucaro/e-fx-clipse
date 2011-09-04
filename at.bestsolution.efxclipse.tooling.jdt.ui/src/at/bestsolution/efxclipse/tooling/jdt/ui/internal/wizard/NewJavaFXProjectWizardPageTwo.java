@@ -77,6 +77,7 @@ import at.bestsolution.efxclipse.tooling.jdt.core.JavaFXCore;
  *
  * @since 3.4
  */
+@SuppressWarnings("restriction")
 public class NewJavaFXProjectWizardPageTwo extends JavaCapabilityConfigurationPage {
 
 	private static final String FILENAME_PROJECT= ".project"; //$NON-NLS-1$
