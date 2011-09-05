@@ -16,6 +16,7 @@ public class AbstractCssDslSyntacticSequencer extends AbstractSyntacticSequencer
 
 	protected CssDslGrammarAccess grammarAccess;
 	protected AbstractElementAlias match_function_HyphenMinusKeyword_0_q;
+	protected AbstractElementAlias match_function_WSTerminalRuleCall_3_p;
 	protected AbstractElementAlias match_function_WSTerminalRuleCall_5_a;
 	protected AbstractElementAlias match_selector_WSTerminalRuleCall_1_1_0_p;
 	
@@ -23,6 +24,7 @@ public class AbstractCssDslSyntacticSequencer extends AbstractSyntacticSequencer
 	protected void init(IGrammarAccess access) {
 		grammarAccess = (CssDslGrammarAccess) access;
 		match_function_HyphenMinusKeyword_0_q = new TokenAlias(true, false, grammarAccess.getFunctionAccess().getHyphenMinusKeyword_0());
+		match_function_WSTerminalRuleCall_3_p = new TokenAlias(false, true, grammarAccess.getFunctionAccess().getWSTerminalRuleCall_3());
 		match_function_WSTerminalRuleCall_5_a = new TokenAlias(true, true, grammarAccess.getFunctionAccess().getWSTerminalRuleCall_5());
 		match_selector_WSTerminalRuleCall_1_1_0_p = new TokenAlias(false, true, grammarAccess.getSelectorAccess().getWSTerminalRuleCall_1_1_0());
 	}
@@ -60,6 +62,8 @@ public class AbstractCssDslSyntacticSequencer extends AbstractSyntacticSequencer
 			return;
 		if(match_function_HyphenMinusKeyword_0_q.equals(transition.getAmbiguousSyntax()))
 			emit_function_HyphenMinusKeyword_0_q(semanticObject, transition, fromNode, toNode);
+		else if(match_function_WSTerminalRuleCall_3_p.equals(transition.getAmbiguousSyntax()))
+			emit_function_WSTerminalRuleCall_3_p(semanticObject, transition, fromNode, toNode);
 		else if(match_function_WSTerminalRuleCall_5_a.equals(transition.getAmbiguousSyntax()))
 			emit_function_WSTerminalRuleCall_5_a(semanticObject, transition, fromNode, toNode);
 		else if(match_selector_WSTerminalRuleCall_1_1_0_p.equals(transition.getAmbiguousSyntax()))
@@ -72,6 +76,14 @@ public class AbstractCssDslSyntacticSequencer extends AbstractSyntacticSequencer
 	 *     '-'?
 	 */
 	protected void emit_function_HyphenMinusKeyword_0_q(EObject semanticObject, ISynTransition transition, INode fromNode, INode toNode) {
+		acceptNodes(transition, fromNode, toNode);
+	}
+	
+	/**
+	 * Syntax:
+	 *     WS+
+	 */
+	protected void emit_function_WSTerminalRuleCall_3_p(EObject semanticObject, ISynTransition transition, INode fromNode, INode toNode) {
 		acceptNodes(transition, fromNode, toNode);
 	}
 	

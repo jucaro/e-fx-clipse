@@ -9,7 +9,7 @@
             class="at.bestsolution.efxclipse.tooling.css.ui.CssDslExecutableExtensionFactory:org.eclipse.xtext.ui.editor.XtextEditor"
             contributorClass="org.eclipse.ui.editors.text.TextEditorActionContributor"
             default="true"
-            extensions="fxcss"
+            extensions="css"
             id="at.bestsolution.efxclipse.tooling.css.CssDsl"
             name="CssDsl Editor">
         </editor>
@@ -127,13 +127,13 @@
 		point="org.eclipse.emf.ecore.extension_parser">
 		<parser
 			class="at.bestsolution.efxclipse.tooling.css.ui.CssDslExecutableExtensionFactory:org.eclipse.xtext.resource.IResourceFactory"
-			type="fxcss">
+			type="css">
 		</parser>
 	</extension>
 	<extension point="org.eclipse.xtext.extension_resourceServiceProvider">
         <resourceServiceProvider
             class="at.bestsolution.efxclipse.tooling.css.ui.CssDslExecutableExtensionFactory:org.eclipse.xtext.ui.resource.IResourceUIServiceProvider"
-            uriExtension="fxcss">
+            uriExtension="css">
         </resourceServiceProvider>
     </extension>
 
@@ -216,19 +216,19 @@
   <extension point="org.eclipse.compare.contentViewers">
     <viewer id="at.bestsolution.efxclipse.tooling.css.CssDsl.compare.contentViewers"
             class="at.bestsolution.efxclipse.tooling.css.ui.CssDslExecutableExtensionFactory:org.eclipse.xtext.ui.compare.InjectableViewerCreator"
-            extensions="fxcss">
+            extensions="css">
     </viewer>
   </extension>
   <extension point="org.eclipse.compare.contentMergeViewers">
     <viewer id="at.bestsolution.efxclipse.tooling.css.CssDsl.compare.contentMergeViewers"
             class="at.bestsolution.efxclipse.tooling.css.ui.CssDslExecutableExtensionFactory:org.eclipse.xtext.ui.compare.InjectableViewerCreator"
-            extensions="fxcss" label="CssDsl Compare">
+            extensions="css" label="CssDsl Compare">
      </viewer>
   </extension>
   <extension point="org.eclipse.ui.editors.documentProviders">
     <provider id="at.bestsolution.efxclipse.tooling.css.CssDsl.editors.documentProviders"
             class="at.bestsolution.efxclipse.tooling.css.ui.CssDslExecutableExtensionFactory:org.eclipse.xtext.ui.editor.model.XtextDocumentProvider"
-            extensions="fxcss">
+            extensions="css">
     </provider>
   </extension>
 
