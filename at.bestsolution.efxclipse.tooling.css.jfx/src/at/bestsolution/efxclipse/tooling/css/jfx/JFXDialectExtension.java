@@ -1160,6 +1160,6 @@ public class JFXDialectExtension implements CssDialectExtension {
 	}
 	
 	public boolean isActive(URI uri) {
-		return uri.toString().endsWith(".fxcss"); 
+		return uri.toString().endsWith(".css"); 
 	};
 }
