@@ -277,7 +277,7 @@ public class JFXBuildConfigurationEditor extends MultiPageEditorPart implements
 			sectionClient.setLayout(new GridLayout(4, false));
 			
 			{
-				toolkit.createLabel(sectionClient, "Build Directory:");
+				toolkit.createLabel(sectionClient, "Build Directory*:");
 				final Text t = toolkit.createText(sectionClient, "");
 				t.setLayoutData(new GridData(GridData.FILL_HORIZONTAL));
 				toolkit.createButton(sectionClient, "Filesystem ...", SWT.PUSH).addSelectionListener(new SelectionAdapter() {
