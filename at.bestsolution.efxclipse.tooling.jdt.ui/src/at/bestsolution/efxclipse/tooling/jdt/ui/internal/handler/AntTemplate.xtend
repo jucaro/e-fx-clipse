@@ -127,7 +127,16 @@ class AntTemplate {
 					</filelist>
 				</classpath>
 			</javac>
-		</target>
+			
+			<copy todir="build/classes">
+			«FOR String s : projectSourceDirs»
+				<fileset dir="project/«s»">
+					<exclude name="**/*.java"/>
+				</fileset>
+			«ENDFOR»
+			</copy>
+
+		</target>		
 		'''	
 	}
 	
@@ -160,8 +169,14 @@ class AntTemplate {
 				</fileset>
 			</copy>
 			
-			<fxjar destfile="dist/«projectName».jar" classpath="«FOR String s : externalLibs»libs/«s» «ENDFOR»" applicationClass="«mainClass»">
+			<fxjar destfile="dist/«projectName».jar">
+				<application mainclass="«mainClass»"/>
 				<fileset dir="build/classes"/>
+				<resources>
+					<fileset dir="dist">
+						<include name="libs/*"/>
+					</fileset>
+				</resources>
 				<manifest>
 					<attribute name="Implementation-Vendor" value="«appVendor»"/>
 					<attribute name="Implementation-Title" value="«appTitle»"/>
@@ -180,8 +195,8 @@ class AntTemplate {
 			<!-- Need to use ${basedir} because somehow the ant task is calculating the directory differently -->
 			<fxdeploy width="«appletWidth»" height="«appletHeight»" outdir="${basedir}/deploy" embedJNLP="true" outfile="«projectName»">
 				<info title="«projectName»" vendor="«appVendor»"/>
-				<application name="«projectName»" appclass="«mainClass»"/>
-				<resources type="eager">
+				<application name="«projectName»" mainclass="«mainClass»"/>
+				<resources>
 					<fileset dir="dist">
 						<include name="**/*"/>
 					</fileset>
