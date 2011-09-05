@@ -2,8 +2,8 @@ Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: Test
 Bundle-SymbolicName: at.bestsolution.efxclipse.tooling.css.jfx.test
-Bundle-Version: 1.0.0.qualifier
+Bundle-Version: 0.0.5
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Require-Bundle: org.junit;bundle-version="3.8.2",
- at.bestsolution.efxclipse.tooling.css.jfx;bundle-version="0.0.4",
- at.bestsolution.efxclipse.tooling.css;bundle-version="0.0.4"
+ at.bestsolution.efxclipse.tooling.css.jfx;bundle-version="0.0.5",
+ at.bestsolution.efxclipse.tooling.css;bundle-version="0.0.5"
