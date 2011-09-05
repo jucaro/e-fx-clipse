@@ -68,7 +68,7 @@ public abstract class AbstractAntHandler extends AbstractHandler {
 		map.put("appletWith", properties.getProperty("jfx.deploy.appletWith"));
 		map.put("appletHeight", properties.getProperty("jfx.deploy.appletHeight"));
 		
-		map.put("keyStore", properties.getProperty("jfx.sign.keystore").replace("${workspace}", workbench));
+		map.put("keyStore", properties.getProperty("jfx.sign.keystore") != null ? properties.getProperty("jfx.sign.keystore").replace("${workspace}", workbench) : null);
 		map.put("keyStoreAlias", properties.getProperty("jfx.sign.alias"));
 		map.put("keyStorePass", properties.getProperty("jfx.sign.password"));
 		
