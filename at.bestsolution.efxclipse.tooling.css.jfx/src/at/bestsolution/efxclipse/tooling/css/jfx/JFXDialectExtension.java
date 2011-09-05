@@ -984,7 +984,7 @@ public class JFXDialectExtension implements CssDialectExtension {
 							if( g.getTerms().size() == 1 ) {
 								term colorterm = g.getTerms().get(0);
 								if( colorterm.getNumber() != null ) {
-									if( colorterm.getNumber().matches("^\\d$") ) {
+									if( colorterm.getNumber().matches("^\\d+$") ) {
 										int v = Integer.parseInt(colorterm.getNumber());
 										if( v < 0 || v > 255 ) {
 											list.add(new ValidationResult(ValidationStatus.ERROR, "The value has to be an integer between 0 and 255", colorterm, null, -1));
