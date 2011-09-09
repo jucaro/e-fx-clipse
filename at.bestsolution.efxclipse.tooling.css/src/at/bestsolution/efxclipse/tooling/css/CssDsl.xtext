@@ -44,7 +44,7 @@ simple_selector:
 ;
 
 element_name:
-	(hexdigits | IDENT | '*')
+	(IDENT | '*')
 ;
 
 sub_selector:
@@ -52,15 +52,15 @@ sub_selector:
 ;
 
 css_class
-  : '.' (hexdigits | IDENT)
+  : '.' (IDENT)
   ;
 
 css_id:
-	'#' (hexdigits | IDENT)  
+	'#' (IDENT)
 ;
 
 css_attrib:
-	'[' (hexdigits | IDENT) ( ( '=' | INCLUDES | DASHMATCH ) ((hexdigits | IDENT) | STRING ) )? ']'
+	'[' (IDENT) ( ( '=' | INCLUDES | DASHMATCH ) ((IDENT) | STRING ) )? ']'
 ;
 
 css_declaration:
@@ -72,7 +72,7 @@ css_generic_declaration:
 ;
 
 css_property:
-	('-')?(IDENT|hexdigits)
+	('-')?(IDENT)
 ;
 
 css_pseudo
@@ -147,8 +147,8 @@ function hidden():
 	('-')?name=IDENT '(' WS* expression=expr WS* ')'
 ;
 
-HexColor:
-	'#'(hexdigits|integer)
+HexColor hidden():
+	'#' integer? IDENT 
 ;
 
 URLType hidden():
@@ -167,7 +167,7 @@ FREQ: num ('hz' | 'khz');
 
 terminal integer:('0'..'9')+;
 terminal real: (('0'..'9')*"."('0'..'9')+);
-terminal hexdigits:('0'..'9'|'a'..'f' | 'A'..'F')+;
+// terminal hexdigits: '#' ('0'..'9'|'a'..'f' | 'A'..'F')+;
 
 terminal IDENT: ('_' | 'a'..'z' | 'A'..'Z' ) ('_' | '-' | 'a'..'z' | 'A'..'Z' | '0'..'9' )*;
 terminal COMMA: ',';
