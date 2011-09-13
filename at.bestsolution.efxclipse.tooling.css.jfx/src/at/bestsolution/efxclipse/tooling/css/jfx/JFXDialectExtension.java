@@ -23,7 +23,6 @@ import at.bestsolution.efxclipse.tooling.css.cssDsl.CssDslPackage;
 import at.bestsolution.efxclipse.tooling.css.cssDsl.css_declaration;
 import at.bestsolution.efxclipse.tooling.css.cssDsl.css_generic_declaration;
 import at.bestsolution.efxclipse.tooling.css.cssDsl.expr;
-import at.bestsolution.efxclipse.tooling.css.cssDsl.function;
 import at.bestsolution.efxclipse.tooling.css.cssDsl.term;
 import at.bestsolution.efxclipse.tooling.css.cssDsl.termGroup;
 import at.bestsolution.efxclipse.tooling.css.jfx.scene.Group;
@@ -65,6 +64,9 @@ import at.bestsolution.efxclipse.tooling.css.jfx.scene.layout.VBox;
 import at.bestsolution.efxclipse.tooling.css.jfx.scene.shape.Rectangle;
 import at.bestsolution.efxclipse.tooling.css.jfx.scene.shape.Shape;
 import at.bestsolution.efxclipse.tooling.css.jfx.scene.text.Text;
+import at.bestsolution.efxclipse.tooling.css.jfx.validators.GradientValidator;
+import at.bestsolution.efxclipse.tooling.css.jfx.validators.LinearGradientValidator;
+import at.bestsolution.efxclipse.tooling.css.jfx.validators.RadialGradientValidator;
 
 public class JFXDialectExtension implements CssDialectExtension {
 	private static List<Property> PROPERTIES = new ArrayList<Property>();
@@ -800,137 +802,19 @@ public class JFXDialectExtension implements CssDialectExtension {
 		return Arrays.asList("px","mm","cm","in","pt","pc","em","ex");
 	}
 	
+	public static List<String> angles() {
+		return Arrays.asList("grad","deg","rad"); // order is important!!!
+	}
+	
 	public static boolean isGradient(term t, List<ValidationResult> list) {
 		if( t.getFunction() != null && "linear-gradient".equals(t.getFunction().getName()) ) {
-			validateLinearGradient(t.getFunction(), list);
+			LinearGradientValidator.validateLinearGradient(t.getFunction(), list);
+			return true;
+		} else if( t.getFunction() != null && "radial-gradient".equals(t.getFunction().getName()) ) {
+			RadialGradientValidator.validateRadialGradient(t.getFunction(), list);
 			return true;
 		}
 		return false;
-	}
-	
-	/*
-	 * <linear-gradient> = linear-gradient(
-	 *  [ [from <point> to <point>] | [ to <side-or-corner> ] ] ,]? [ [ repeat | reflect ] ,]?
-	 *  <color-stop>[, <color-stop>]+
-	 *  )
-	 *  
-	 * <point> = <percentage> <percentage> | <length> <length>
-	 * <side-or-corner> = [left | right] || [top | bottom] 
-	 */
-	public static void validateLinearGradient(function function, List<ValidationResult> list) {
-		expr e = function.getExpression();
-		if( e.getTermGroups().size() > 0 ) {
-			termGroup g = e.getTermGroups().get(0);
-			if( g.getTerms().size() > 0 ) {
-				if( "from".equals(g.getTerms().get(0).getIdentifier()) ) {
-					if( g.getTerms().size() == 6 ) {
-						validateSize(g.getTerms().get(1), list);
-						validateSize(g.getTerms().get(2), list);
-						if( ! "to".equals(g.getTerms().get(3).getIdentifier()) ) {
-							list.add(new ValidationResult(ValidationStatus.ERROR, "The value has to be 'to'", g.getTerms().get(3), null, -1));
-						}
-						validateSize(g.getTerms().get(4), list);
-						validateSize(g.getTerms().get(5), list);
-						
-						if( e.getTermGroups().size() > 1 ) {
-							g = e.getTermGroups().get(1);
-							if( g.getTerms().size() > 0 ) {
-								if( g.getTerms().size() == 1 ) {
-									if( "repeat".equals(g.getTerms().get(0).getIdentifier()) || "reflect".equals(g.getTerms().get(0).getIdentifier()) ) {
-										if( e.getTermGroups().size() > 2 ) {
-											for( int i = 2; i < e.getTermGroups().size(); i++ ) {
-												validateColorStop(e.getTermGroups().get(i),list);
-											}
-										} else {
-											list.add(new ValidationResult(ValidationStatus.ERROR, "You need to specify at least one color stop", g, null, -1));
-										}
-									} else {
-										for( int i = 1; i < e.getTermGroups().size(); i++ ) {
-											validateColorStop(e.getTermGroups().get(i),list);
-										}
-									}
-								} else {
-									for( int i = 1; i < e.getTermGroups().size(); i++ ) {
-										validateColorStop(e.getTermGroups().get(i),list);
-									}
-								}
-							} else {
-								list.add(new ValidationResult(ValidationStatus.ERROR, "You need to specify at least one color stop", function, CssDslPackage.Literals.FUNCTION__EXPRESSION, -1));
-							}
-						} else {
-							list.add(new ValidationResult(ValidationStatus.ERROR, "You need to specify at least one color stop", function, CssDslPackage.Literals.FUNCTION__EXPRESSION, -1));
-						}
-					} else {
-						list.add(new ValidationResult(ValidationStatus.ERROR, "First element has to be 'from <size> <size> to <size> <size>'", g, null, -1));
-					}
-				} else if( "to".equals(g.getTerms().get(0).getIdentifier()) ) {
-					if( g.getTerms().size() == 2 ) {
-						String v = g.getTerms().get(1).getIdentifier();
-						if( !("bottom".equals(v) || "top".equals(v) || "left".equals(v) || "right".equals(v)) ) {
-							list.add(new ValidationResult(ValidationStatus.ERROR, "The value has to be top or bottom", g, null, -1));
-						}	
-						
-						if( e.getTermGroups().size() > 1 ) {
-							g = e.getTermGroups().get(1);
-							if( g.getTerms().size() > 0 ) {
-								if( g.getTerms().size() == 1 ) {
-									if( "repeat".equals(g.getTerms().get(0).getIdentifier()) || "reflect".equals(g.getTerms().get(0).getIdentifier()) ) {
-										if( e.getTermGroups().size() > 1 ) {
-											for( int i = 2; i < e.getTermGroups().size(); i++ ) {
-												validateColorStop(e.getTermGroups().get(i),list);
-											}
-										} else {
-											list.add(new ValidationResult(ValidationStatus.ERROR, "You need to specify at least one color stop", g, null, -1));
-										}
-									} else {
-										for( int i = 1; i < e.getTermGroups().size(); i++ ) {
-											validateColorStop(e.getTermGroups().get(i),list);
-										}
-									}
-								} else {
-									for( int i = 1; i < e.getTermGroups().size(); i++ ) {
-										validateColorStop(e.getTermGroups().get(i),list);
-									}
-								}
-							} else {
-								list.add(new ValidationResult(ValidationStatus.ERROR, "You need to specify at least one color stop", function, CssDslPackage.Literals.FUNCTION__EXPRESSION, -1));
-							}
-						} else {
-							list.add(new ValidationResult(ValidationStatus.ERROR, "You need to specify at least one color stop", function, CssDslPackage.Literals.FUNCTION__EXPRESSION, -1));
-						}
-					} else {
-						list.add(new ValidationResult(ValidationStatus.ERROR, "The to group has to have a 2nd term left, right and top, bottom", g, null, -1));
-					}
-				} else if( "repeat".equals(g.getTerms().get(0).getIdentifier()) || "reflect".equals(g.getTerms().get(0).getIdentifier()) ) {
-					if( e.getTermGroups().size() > 1 ) {
-						for( int i = 1; i < e.getTermGroups().size(); i++ ) {
-							validateColorStop(e.getTermGroups().get(i),list);
-						}
-					} else {
-						list.add(new ValidationResult(ValidationStatus.ERROR, "You need to specify at least one color stop", function, CssDslPackage.Literals.FUNCTION__EXPRESSION, -1));
-					}
-				} else {
-					for( termGroup stopGroup : e.getTermGroups() ) {
-						validateColorStop(stopGroup,list);	
-					}
-				}
-			} else {
-				list.add(new ValidationResult(ValidationStatus.ERROR, "You need to specify at least one color stop", function, CssDslPackage.Literals.FUNCTION__EXPRESSION, -1));
-			}
-		} else {
-			list.add(new ValidationResult(ValidationStatus.ERROR, "You need to specify at least one color stop", function, CssDslPackage.Literals.FUNCTION__EXPRESSION, -1));
-		}
-	}
-	
-	public static void validateColorStop(termGroup group, List<ValidationResult> list) {
-		if( group.getTerms().size() > 0 ) {
-			validateColor(group.getTerms().get(0), list);
-			if( group.getTerms().size() > 1 ) {
-				validateSize(group.getTerms().get(1), list);	
-			}
-		} else {
-			list.add(new ValidationResult(ValidationStatus.ERROR, "The color stop has to have a color and optional a length", group, null, -1));
-		}
 	}
 	
 	public static void validateSize(term term, List<ValidationResult> list) {
@@ -940,14 +824,18 @@ public class JFXDialectExtension implements CssDialectExtension {
 		}
 		
 		if( term.getNumber().trim().endsWith("%") ) {
-			double i = Double.parseDouble(term.getNumber().substring(0,term.getNumber().length()-1));
-			if( i < 0 || i > 100 ) {
-				list.add(new ValidationResult(ValidationStatus.ERROR, "Percentage has to be between 0% and 100%", term, CssDslPackage.Literals.TERM__NUMBER, -1));
-			}
+			validatePercentage(term, list);
 		} else if( ! Pattern.matches(".*\\d+$",term.getNumber()) ) {
 			// Number with units
 			for( String u : sizeUnits() ) {
 				if( term.getNumber().endsWith(u) ) {
+					String num = term.getNumber().substring(0,term.getNumber().length() - u.length());
+					try {
+						Double.parseDouble(num);	
+					} catch (NumberFormatException e) {
+						list.add(new ValidationResult(ValidationStatus.ERROR, "The angle is not a valid number", term, CssDslPackage.Literals.TERM__NUMBER, 0));
+					}
+					
 					return;
 				}
 			}
@@ -1149,14 +1037,60 @@ public class JFXDialectExtension implements CssDialectExtension {
 					} else {
 						list.add(new ValidationResult(ValidationStatus.ERROR, "The derive function has to be passed 2 arguments (color,brightness)", t.getFunction(), null, -1));
 					}
-				} /*else if( "ladder".equals(t.getFunction().getName()) ) {
-					
-				}*/ else {
+				} else if( "ladder".equals(t.getFunction().getName()) ) {
+					expr e = t.getFunction().getExpression();
+					if( e.getTermGroups().size() >= 2 ) {
+						termGroup colorGroup = e.getTermGroups().get(0);
+						validateColor(colorGroup.getTerms().get(0), list);
+						for( int i = 1; i < e.getTermGroups().size(); i++ ) {
+							GradientValidator.validateColorStop(e.getTermGroups().get(i), list);	
+						}
+					} else {
+						list.add(new ValidationResult(ValidationStatus.ERROR, "The ladder function needs at least 2 arguments. A color and color-stop", e.eContainer(), CssDslPackage.Literals.FUNCTION__EXPRESSION, -1));
+					}
+				} else {
 					list.add(new ValidationResult(ValidationStatus.ERROR, "Unsupported color function", t.getFunction(), null, -1));
 				}
 			} else {
 				list.add(new ValidationResult(ValidationStatus.ERROR, "Unsupported color definition", t, null, -1));
 			}
+	}
+	
+	public static void validateAngle(term term, List<ValidationResult> list) {
+		if( term.getNumber() == null ) {
+			list.add(new ValidationResult(ValidationStatus.ERROR, "The value must be an angle", term, null, -1));
+			return;
+		}
+		
+		for( String a : angles() ) {
+			if( term.getNumber().endsWith(a) ) {
+				String num = term.getNumber().substring(0,term.getNumber().length() - a.length());
+				try {
+					Double.parseDouble(num);
+				} catch (NumberFormatException e) {
+					list.add(new ValidationResult(ValidationStatus.ERROR, "The angle is not a valid number", term, CssDslPackage.Literals.TERM__NUMBER, -1));
+				}
+				return;
+			}
+		}
+		
+		StringBuilder b = new StringBuilder();
+		for( String a: angles() ) {
+			b.append("- " + a + "\n");
+		}
+		list.add(new ValidationResult(ValidationStatus.ERROR, "Supported angle units are:\n"+b, term, CssDslPackage.Literals.TERM__NUMBER, -1));
+	}
+	
+	public static void validatePercentage(term term, List<ValidationResult> list) {
+		if( term.getNumber() == null || ! term.getNumber().endsWith("%") ) {
+			list.add(new ValidationResult(ValidationStatus.ERROR, "The value must be a percentage", term, CssDslPackage.Literals.TERM__NUMBER, -1));
+			return;
+		}
+		
+		double i = Double.parseDouble(term.getNumber().substring(0,term.getNumber().length()-1));
+		if( i < 0 || i > 100 ) {
+			list.add(new ValidationResult(ValidationStatus.ERROR, "Percentage has to be between 0% and 100%", term, CssDslPackage.Literals.TERM__NUMBER, -1));
+		}
 	}
 	
 	public boolean isActive(URI uri) {

@@ -10,7 +10,9 @@
  *******************************************************************************/
 package at.bestsolution.efxclipse.tooling.css.jfx.test;
 
+import at.bestsolution.efxclipse.tooling.css.jfx.test.validators.GradientValidatorTestCase;
 import at.bestsolution.efxclipse.tooling.css.jfx.test.validators.LinearGradientValidatorTestCase;
+import at.bestsolution.efxclipse.tooling.css.jfx.test.validators.RadialGradientValidatorTestCase;
 import junit.framework.Test;
 import junit.framework.TestCase;
 import junit.framework.TestSuite;
@@ -25,8 +27,10 @@ public class JFXDialectExtensionTestSuite extends TestCase {
 		TestSuite suite = new TestSuite(
 				JFXDialectExtensionTestSuite.class.getName());
 		//$JUnit-BEGIN$
-		suite.addTestSuite(JFXDialectExtensionTestCase.class);
+		suite.addTestSuite(GradientValidatorTestCase.class);
 		suite.addTestSuite(LinearGradientValidatorTestCase.class);
+		suite.addTestSuite(RadialGradientValidatorTestCase.class);
+		suite.addTestSuite(JFXDialectExtensionTestCase.class);
 		//$JUnit-END$
 		return suite;
 	}

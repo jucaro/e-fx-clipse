@@ -31,7 +31,7 @@ import at.bestsolution.efxclipse.tooling.css.jfx.validators.LinearGradientValida
  *
  */
 public class LinearGradientValidatorTestCase extends TestCase {
-	public void test_isGradient_ColorStopOnly() {
+	public void test_validateLinearGradient_ColorStopOnly() {
 
 		// red 100%
 		{
@@ -239,7 +239,7 @@ public class LinearGradientValidatorTestCase extends TestCase {
 		}
 	}
 
-	public void test_isGradient_FromTo() {
+	public void test_validateLinearGradient_FromTo() {
 		// from 100px 100px to 200px 200px, red 100%
 		{
 			term t1 = CssDslFactory.eINSTANCE.createterm();
@@ -695,7 +695,7 @@ public class LinearGradientValidatorTestCase extends TestCase {
 		}
 	}
 
-	public void test_isGradient_To() {
+	public void test_validateLinearGradient_To() {
 		// to bottom, red 100%
 		{
 			term t1 = CssDslFactory.eINSTANCE.createterm();
