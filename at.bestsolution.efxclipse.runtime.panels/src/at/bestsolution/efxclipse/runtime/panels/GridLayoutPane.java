@@ -1,26 +1,13 @@
 package at.bestsolution.efxclipse.runtime.panels;
 
 
-import java.util.WeakHashMap;
-
 import javafx.beans.property.SimpleBooleanProperty;
 import javafx.beans.property.SimpleIntegerProperty;
 import javafx.beans.value.WritableBooleanValue;
 import javafx.beans.value.WritableIntegerValue;
 import javafx.scene.Node;
-import javafx.scene.layout.Pane;
 
-public class GridLayoutPane extends Pane {
-	private static final int SWT_DEFAULT = -1;
-	private static final int SWT_BEGINNING = 1;
-	private static final int SWT_FILL = 4;
-	private static final int SWT_LEFT = 16384;
-	private static final int SWT_END = 16777224;
-	private static final int SWT_RIGHT = 131072;
-	private static final int SWT_CENTER = 16777216;
-	private static final int SWT_BOTTOM = 1024;
-	private static final int SWT_TOP = 128;
-
+public class GridLayoutPane extends AbstractLayoutPane<GridLayoutPane.GridData> {
 	private WritableIntegerValue numColumnsProperty = new SimpleIntegerProperty(this, "columns", 1);
 	
 	private WritableBooleanValue makeColumnsEqualWidthProperty = new SimpleBooleanProperty(this,"makeColumnsEqualWidth",false);
@@ -34,8 +21,6 @@ public class GridLayoutPane extends Pane {
 	
 	private WritableIntegerValue horizontalSpacing = new SimpleIntegerProperty(this, "horizontalSpacing", 5);
 	private WritableIntegerValue verticalSpacing = new SimpleIntegerProperty(this, "verticalSpacing", 5);
-	
-	private WeakHashMap<Node, GridData> constraints = new WeakHashMap<Node, GridData>();
 	
 	public static class GridData {
 		/**
@@ -558,50 +543,16 @@ public class GridLayoutPane extends Pane {
 
 	}
 	
-	static class Size {
-		public final int width;
-		public final int height;
-		
-		public Size(int width, int height) {
-			this.width = width;
-			this.height = height;
-		}
-	}
-	
 	@Override
-	protected double computeMaxHeight(double width) {
-		return calculateLayout(true, 0, 0, Double.MAX_VALUE, Double.MAX_VALUE, true).height;
-	}
-	
-	@Override
-	protected double computeMaxWidth(double height) {
-		return calculateLayout(true, 0, 0, Double.MAX_VALUE, Double.MAX_VALUE, true).width;
-	}
-	
-	@Override
-	protected double computeMinHeight(double width) {
-		return calculateLayout(true, 0, 0, SWT_DEFAULT, SWT_DEFAULT, true).height;
-	}
-	
-	@Override
-	protected double computeMinWidth(double height) {
-		return calculateLayout(true, 0, 0, SWT_DEFAULT, SWT_DEFAULT, true).width;
-	}
-	
-	@Override
-	protected double computePrefHeight(double width) {
-		return calculateLayout(true, 0, 0, SWT_DEFAULT, SWT_DEFAULT, true).height;
-	}
-	
-	@Override
-	protected double computePrefWidth(double height) {
-		return calculateLayout(true, 0, 0, SWT_DEFAULT, SWT_DEFAULT, true).width;
+	protected at.bestsolution.efxclipse.runtime.panels.AbstractLayoutPane.Size computeSize(
+			double width, double height, boolean flushCache) {
+		return calculateLayout(false, 0, 0, width, height, flushCache);
 	}
 	
 	@Override
 	protected void layoutChildren() {
 		super.layoutChildren();
-		calculateLayout(true, 0, 0, getLayoutBounds().getWidth(), getLayoutBounds().getHeight(), true);
+		calculateLayout(true, getLayoutBounds().getMinX(), getLayoutBounds().getMinY(), getLayoutBounds().getWidth(), getLayoutBounds().getHeight(), true);
 	}
 	
 	
@@ -615,7 +566,7 @@ public class GridLayoutPane extends Pane {
 		int count = 0;
 		for (int i=0; i<children.length; i++) {
 			Node control = children [i];
-			GridData data = constraints.get(control);
+			GridData data = getConstraint(control);
 			if (data == null || !data.exclude) {
 				children [count++] = children [i];
 			} 
@@ -625,10 +576,10 @@ public class GridLayoutPane extends Pane {
 		}
 		for (int i=0; i<count; i++) {
 			Node child = children [i];
-			GridData data =constraints.get(child);
+			GridData data = getConstraint(child);
 			if (data == null) {
 				data = new GridData ();
-				constraints.put(child, data);
+				setConstraint(child, data);
 			}
 			if (flushCache) data.flushCache ();
 			data.computeSize (child, data.widthHint, data.heightHint, flushCache);
@@ -657,7 +608,7 @@ public class GridLayoutPane extends Pane {
 		Node [][] grid = new Node [4] [columnCount];
 		for (int i=0; i<count; i++) {	
 			Node child = children [i];
-			GridData data = constraints.get(child);
+			GridData data = getConstraint(child);
 			int hSpan = Math.max (1, Math.min (data.horizontalSpan, columnCount));
 			int vSpan = Math.max (1, data.verticalSpan);
 			while (true) {
@@ -1142,7 +1093,7 @@ public class GridLayoutPane extends Pane {
 	GridData getData (Node [][] grid, int row, int column, int rowCount, int columnCount, boolean first) {
 		Node control = grid [row] [column];
 		if (control != null) {
-			GridData data = constraints.get(control);
+			GridData data = getConstraint(control);
 			int hSpan = Math.max (1, Math.min (data.horizontalSpan, columnCount));
 			int vSpan = Math.max (1, data.verticalSpan);
 			int i = first ? row + vSpan - 1 : row - vSpan + 1;
@@ -1180,7 +1131,4 @@ public class GridLayoutPane extends Pane {
 		return makeColumnsEqualWidthProperty;
 	}
 	
-	public void setConstraints(Node n, GridData griddata) {
-		constraints.put(n, griddata);
-	}
 }
