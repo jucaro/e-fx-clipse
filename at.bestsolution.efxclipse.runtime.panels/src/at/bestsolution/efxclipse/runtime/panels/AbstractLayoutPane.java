@@ -15,6 +15,7 @@ public abstract class AbstractLayoutPane<D> extends Pane {
 	static final int SWT_CENTER = 16777216;
 	static final int SWT_BOTTOM = 1024;
 	static final int SWT_TOP = 128;
+	static final int SWT_HORIZONTAL = 256;
 	
 	static class Size {
 		public final double width;
