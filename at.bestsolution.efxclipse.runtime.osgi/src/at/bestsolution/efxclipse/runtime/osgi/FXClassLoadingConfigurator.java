@@ -7,7 +7,8 @@ public class FXClassLoadingConfigurator implements HookConfigurator {
 
 	@Override
 	public void addHooks(HookRegistry hookRegistry) {
-		hookRegistry.addClassLoaderDelegateHook(new FXClassLoaderDelegate());
+		hookRegistry.addClassLoadingHook(new FXClassLoader());
+//		hookRegistry.addClassLoaderDelegateHook(new FXClassLoaderDelegate());
 	}
 
 }
