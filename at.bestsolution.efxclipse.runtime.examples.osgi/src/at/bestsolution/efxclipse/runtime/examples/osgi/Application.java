@@ -74,7 +74,7 @@ public class Application extends AbstractJFXApplication {
 		// play 40s of animation
 		timeline.play(); 
 		
-		primaryStage.setTitle("Hello World"); 
+		primaryStage.setTitle("Hello OSGi World"); 
 		primaryStage.show(); 
 	}	
 }
