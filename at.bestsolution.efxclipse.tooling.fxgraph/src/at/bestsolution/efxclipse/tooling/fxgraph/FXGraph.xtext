@@ -1,0 +1,51 @@
+grammar at.bestsolution.efxclipse.tooling.fxgraph.FXGraph with org.eclipse.xtext.xbase.Xbase
+
+import "http://www.eclipse.org/emf/2002/Ecore" as ecore
+generate fXGraph "http://www.bestsolution.at/efxclipse/tooling/fxgraph/FXGraph"
+
+Model:
+	imports+=Import*
+	rootNode=Element;
+	
+Import:
+	'import' importedNamespace=QualifiedNameWithWildCard;
+
+Element:
+	type=JvmTypeReference ('(' (value = STRING | 'createdby' factory = STRING) ')')? ('id' name=ValidID)? ('{'
+		('|' defines+=Define (',' defines+=Define)* '|')?
+		properties+=Property (',' properties+=Property)*
+	'}')?
+;
+
+Define:
+	element=Element
+;
+
+Property:
+	name=ID ':' value=PropertyValue 
+;
+
+PropertyValue:
+	ListProperty | ValueProperty | Element | ReferenceProperty | IncludeProperty
+;
+
+ListProperty:
+	'[' value += PropertyValue (',' value += PropertyValue)* ']'
+;
+
+ValueProperty:
+	stringValue=STRING | ( negative?='-' realValue=REAL | intValue=INT)
+;
+
+ReferenceProperty:
+	'idref' reference=[Element|ValidID]
+;
+
+IncludeProperty:
+	'include' source=STRING
+;
+
+QualifiedNameWithWildCard :
+	QualifiedName  ('.' '*')?;
+
+terminal REAL returns ecore::EDouble: (('0'..'9')*"."('0'..'9')+);
