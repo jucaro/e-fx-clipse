@@ -5,20 +5,30 @@ generate fXGraph "http://www.bestsolution.at/efxclipse/tooling/fxgraph/FXGraph"
 
 Model:
 	imports+=Import*
+	language=Language?
 	rootNode=Element;
+
+Language:
+	'language' language=ID
+;
 	
 Import:
 	'import' importedNamespace=QualifiedNameWithWildCard;
 
 Element:
-	type=JvmTypeReference ('(' (value = SimpleValueProperty | 'createdby' factory=STRING) ')')? ('id' name=ValidID)? ('{'
-		('|' defines+=Define (',' defines+=Define)* '|')?
+	type=JvmTypeReference ('(' (value = SimpleValueProperty | 'createdby' factory=STRING) ')')? ('id' name=ValidID)? ('controlledby' controller=JvmTypeReference)? ('{'
+		('defines {' defines+=Define (',' defines+=Define)* '}')?
+		scripts+=Script*
 		((properties+=Property | staticProperties+=StaticValueProperty) (',' (properties+=Property | staticProperties+=StaticValueProperty))*)?
 	'}')?
 ;
 
 Define:
 	element=Element
+;
+
+Script:
+	'script' (source=STRING | sourcecode=SCRIPTLITERAL)
 ;
 
 StaticValueProperty:
@@ -34,7 +44,7 @@ ValueProperty:
 ;
 
 SingleValueProperty:
-	SimpleValueProperty | Element | ReferenceValueProperty | IncludeValueProperty | CopyValueProperty
+	SimpleValueProperty | Element | ReferenceValueProperty | IncludeValueProperty | CopyValueProperty | ControllerHandledValueProperty | ScriptValueExpression | ScriptHandlerHandledValueProperty
 ;
 
 MultiValueProperty:
@@ -69,7 +79,20 @@ CopyValueProperty:
 	'copy' reference=[Element|ValidID]
 ;
 
+ControllerHandledValueProperty:
+	'mapto' methodname=ID
+;
+
+ScriptHandlerHandledValueProperty:
+	'scriptmethod' functionname=STRING
+;
+
+ScriptValueExpression:
+	'scriptexpression' sourcecode=SCRIPTLITERAL
+;
+
 QualifiedNameWithWildCard :
 	QualifiedName  ('.' '*')?;
 
 terminal REAL returns ecore::EDouble: (('0'..'9')*"."('0'..'9')+);
+terminal SCRIPTLITERAL	:  '#{' -> '}#';

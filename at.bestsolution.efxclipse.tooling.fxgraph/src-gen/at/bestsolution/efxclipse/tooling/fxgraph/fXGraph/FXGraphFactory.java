@@ -36,6 +36,15 @@ public interface FXGraphFactory extends EFactory
   Model createModel();
 
   /**
+   * Returns a new object of class '<em>Language</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Language</em>'.
+   * @generated
+   */
+  Language createLanguage();
+
+  /**
    * Returns a new object of class '<em>Import</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -61,6 +70,15 @@ public interface FXGraphFactory extends EFactory
    * @generated
    */
   Define createDefine();
+
+  /**
+   * Returns a new object of class '<em>Script</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Script</em>'.
+   * @generated
+   */
+  Script createScript();
 
   /**
    * Returns a new object of class '<em>Static Value Property</em>'.
@@ -169,6 +187,33 @@ public interface FXGraphFactory extends EFactory
    * @generated
    */
   CopyValueProperty createCopyValueProperty();
+
+  /**
+   * Returns a new object of class '<em>Controller Handled Value Property</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Controller Handled Value Property</em>'.
+   * @generated
+   */
+  ControllerHandledValueProperty createControllerHandledValueProperty();
+
+  /**
+   * Returns a new object of class '<em>Script Handler Handled Value Property</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Script Handler Handled Value Property</em>'.
+   * @generated
+   */
+  ScriptHandlerHandledValueProperty createScriptHandlerHandledValueProperty();
+
+  /**
+   * Returns a new object of class '<em>Script Value Expression</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Script Value Expression</em>'.
+   * @generated
+   */
+  ScriptValueExpression createScriptValueExpression();
 
   /**
    * Returns the package supported by this factory.

@@ -23,14 +23,16 @@ public class FXGraphGrammarAccess extends AbstractGrammarElementFinder {
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Assignment cImportsAssignment_0 = (Assignment)cGroup.eContents().get(0);
 		private final RuleCall cImportsImportParserRuleCall_0_0 = (RuleCall)cImportsAssignment_0.eContents().get(0);
-		private final Assignment cRootNodeAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final RuleCall cRootNodeElementParserRuleCall_1_0 = (RuleCall)cRootNodeAssignment_1.eContents().get(0);
+		private final Assignment cLanguageAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cLanguageLanguageParserRuleCall_1_0 = (RuleCall)cLanguageAssignment_1.eContents().get(0);
+		private final Assignment cRootNodeAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cRootNodeElementParserRuleCall_2_0 = (RuleCall)cRootNodeAssignment_2.eContents().get(0);
 		
 		//Model:
-		//	imports+=Import* rootNode=Element;
+		//	imports+=Import* language=Language? rootNode=Element;
 		public ParserRule getRule() { return rule; }
 
-		//imports+=Import* rootNode=Element
+		//imports+=Import* language=Language? rootNode=Element
 		public Group getGroup() { return cGroup; }
 
 		//imports+=Import*
@@ -39,11 +41,41 @@ public class FXGraphGrammarAccess extends AbstractGrammarElementFinder {
 		//Import
 		public RuleCall getImportsImportParserRuleCall_0_0() { return cImportsImportParserRuleCall_0_0; }
 
+		//language=Language?
+		public Assignment getLanguageAssignment_1() { return cLanguageAssignment_1; }
+
+		//Language
+		public RuleCall getLanguageLanguageParserRuleCall_1_0() { return cLanguageLanguageParserRuleCall_1_0; }
+
 		//rootNode=Element
-		public Assignment getRootNodeAssignment_1() { return cRootNodeAssignment_1; }
+		public Assignment getRootNodeAssignment_2() { return cRootNodeAssignment_2; }
 
 		//Element
-		public RuleCall getRootNodeElementParserRuleCall_1_0() { return cRootNodeElementParserRuleCall_1_0; }
+		public RuleCall getRootNodeElementParserRuleCall_2_0() { return cRootNodeElementParserRuleCall_2_0; }
+	}
+
+	public class LanguageElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Language");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cLanguageKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Assignment cLanguageAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cLanguageIDTerminalRuleCall_1_0 = (RuleCall)cLanguageAssignment_1.eContents().get(0);
+		
+		//Language:
+		//	"language" language=ID;
+		public ParserRule getRule() { return rule; }
+
+		//"language" language=ID
+		public Group getGroup() { return cGroup; }
+
+		//"language"
+		public Keyword getLanguageKeyword_0() { return cLanguageKeyword_0; }
+
+		//language=ID
+		public Assignment getLanguageAssignment_1() { return cLanguageAssignment_1; }
+
+		//ID
+		public RuleCall getLanguageIDTerminalRuleCall_1_0() { return cLanguageIDTerminalRuleCall_1_0; }
 	}
 
 	public class ImportElements extends AbstractParserRuleElementFinder {
@@ -90,40 +122,48 @@ public class FXGraphGrammarAccess extends AbstractGrammarElementFinder {
 		private final Assignment cNameAssignment_2_1 = (Assignment)cGroup_2.eContents().get(1);
 		private final RuleCall cNameValidIDParserRuleCall_2_1_0 = (RuleCall)cNameAssignment_2_1.eContents().get(0);
 		private final Group cGroup_3 = (Group)cGroup.eContents().get(3);
-		private final Keyword cLeftCurlyBracketKeyword_3_0 = (Keyword)cGroup_3.eContents().get(0);
-		private final Group cGroup_3_1 = (Group)cGroup_3.eContents().get(1);
-		private final Keyword cVerticalLineKeyword_3_1_0 = (Keyword)cGroup_3_1.eContents().get(0);
-		private final Assignment cDefinesAssignment_3_1_1 = (Assignment)cGroup_3_1.eContents().get(1);
-		private final RuleCall cDefinesDefineParserRuleCall_3_1_1_0 = (RuleCall)cDefinesAssignment_3_1_1.eContents().get(0);
-		private final Group cGroup_3_1_2 = (Group)cGroup_3_1.eContents().get(2);
-		private final Keyword cCommaKeyword_3_1_2_0 = (Keyword)cGroup_3_1_2.eContents().get(0);
-		private final Assignment cDefinesAssignment_3_1_2_1 = (Assignment)cGroup_3_1_2.eContents().get(1);
-		private final RuleCall cDefinesDefineParserRuleCall_3_1_2_1_0 = (RuleCall)cDefinesAssignment_3_1_2_1.eContents().get(0);
-		private final Keyword cVerticalLineKeyword_3_1_3 = (Keyword)cGroup_3_1.eContents().get(3);
-		private final Group cGroup_3_2 = (Group)cGroup_3.eContents().get(2);
-		private final Alternatives cAlternatives_3_2_0 = (Alternatives)cGroup_3_2.eContents().get(0);
-		private final Assignment cPropertiesAssignment_3_2_0_0 = (Assignment)cAlternatives_3_2_0.eContents().get(0);
-		private final RuleCall cPropertiesPropertyParserRuleCall_3_2_0_0_0 = (RuleCall)cPropertiesAssignment_3_2_0_0.eContents().get(0);
-		private final Assignment cStaticPropertiesAssignment_3_2_0_1 = (Assignment)cAlternatives_3_2_0.eContents().get(1);
-		private final RuleCall cStaticPropertiesStaticValuePropertyParserRuleCall_3_2_0_1_0 = (RuleCall)cStaticPropertiesAssignment_3_2_0_1.eContents().get(0);
-		private final Group cGroup_3_2_1 = (Group)cGroup_3_2.eContents().get(1);
-		private final Keyword cCommaKeyword_3_2_1_0 = (Keyword)cGroup_3_2_1.eContents().get(0);
-		private final Alternatives cAlternatives_3_2_1_1 = (Alternatives)cGroup_3_2_1.eContents().get(1);
-		private final Assignment cPropertiesAssignment_3_2_1_1_0 = (Assignment)cAlternatives_3_2_1_1.eContents().get(0);
-		private final RuleCall cPropertiesPropertyParserRuleCall_3_2_1_1_0_0 = (RuleCall)cPropertiesAssignment_3_2_1_1_0.eContents().get(0);
-		private final Assignment cStaticPropertiesAssignment_3_2_1_1_1 = (Assignment)cAlternatives_3_2_1_1.eContents().get(1);
-		private final RuleCall cStaticPropertiesStaticValuePropertyParserRuleCall_3_2_1_1_1_0 = (RuleCall)cStaticPropertiesAssignment_3_2_1_1_1.eContents().get(0);
-		private final Keyword cRightCurlyBracketKeyword_3_3 = (Keyword)cGroup_3.eContents().get(3);
+		private final Keyword cControlledbyKeyword_3_0 = (Keyword)cGroup_3.eContents().get(0);
+		private final Assignment cControllerAssignment_3_1 = (Assignment)cGroup_3.eContents().get(1);
+		private final RuleCall cControllerJvmTypeReferenceParserRuleCall_3_1_0 = (RuleCall)cControllerAssignment_3_1.eContents().get(0);
+		private final Group cGroup_4 = (Group)cGroup.eContents().get(4);
+		private final Keyword cLeftCurlyBracketKeyword_4_0 = (Keyword)cGroup_4.eContents().get(0);
+		private final Group cGroup_4_1 = (Group)cGroup_4.eContents().get(1);
+		private final Keyword cDefinesKeyword_4_1_0 = (Keyword)cGroup_4_1.eContents().get(0);
+		private final Assignment cDefinesAssignment_4_1_1 = (Assignment)cGroup_4_1.eContents().get(1);
+		private final RuleCall cDefinesDefineParserRuleCall_4_1_1_0 = (RuleCall)cDefinesAssignment_4_1_1.eContents().get(0);
+		private final Group cGroup_4_1_2 = (Group)cGroup_4_1.eContents().get(2);
+		private final Keyword cCommaKeyword_4_1_2_0 = (Keyword)cGroup_4_1_2.eContents().get(0);
+		private final Assignment cDefinesAssignment_4_1_2_1 = (Assignment)cGroup_4_1_2.eContents().get(1);
+		private final RuleCall cDefinesDefineParserRuleCall_4_1_2_1_0 = (RuleCall)cDefinesAssignment_4_1_2_1.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_4_1_3 = (Keyword)cGroup_4_1.eContents().get(3);
+		private final Assignment cScriptsAssignment_4_2 = (Assignment)cGroup_4.eContents().get(2);
+		private final RuleCall cScriptsScriptParserRuleCall_4_2_0 = (RuleCall)cScriptsAssignment_4_2.eContents().get(0);
+		private final Group cGroup_4_3 = (Group)cGroup_4.eContents().get(3);
+		private final Alternatives cAlternatives_4_3_0 = (Alternatives)cGroup_4_3.eContents().get(0);
+		private final Assignment cPropertiesAssignment_4_3_0_0 = (Assignment)cAlternatives_4_3_0.eContents().get(0);
+		private final RuleCall cPropertiesPropertyParserRuleCall_4_3_0_0_0 = (RuleCall)cPropertiesAssignment_4_3_0_0.eContents().get(0);
+		private final Assignment cStaticPropertiesAssignment_4_3_0_1 = (Assignment)cAlternatives_4_3_0.eContents().get(1);
+		private final RuleCall cStaticPropertiesStaticValuePropertyParserRuleCall_4_3_0_1_0 = (RuleCall)cStaticPropertiesAssignment_4_3_0_1.eContents().get(0);
+		private final Group cGroup_4_3_1 = (Group)cGroup_4_3.eContents().get(1);
+		private final Keyword cCommaKeyword_4_3_1_0 = (Keyword)cGroup_4_3_1.eContents().get(0);
+		private final Alternatives cAlternatives_4_3_1_1 = (Alternatives)cGroup_4_3_1.eContents().get(1);
+		private final Assignment cPropertiesAssignment_4_3_1_1_0 = (Assignment)cAlternatives_4_3_1_1.eContents().get(0);
+		private final RuleCall cPropertiesPropertyParserRuleCall_4_3_1_1_0_0 = (RuleCall)cPropertiesAssignment_4_3_1_1_0.eContents().get(0);
+		private final Assignment cStaticPropertiesAssignment_4_3_1_1_1 = (Assignment)cAlternatives_4_3_1_1.eContents().get(1);
+		private final RuleCall cStaticPropertiesStaticValuePropertyParserRuleCall_4_3_1_1_1_0 = (RuleCall)cStaticPropertiesAssignment_4_3_1_1_1.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_4_4 = (Keyword)cGroup_4.eContents().get(4);
 		
 		//Element:
-		//	type=JvmTypeReference ("(" (value=SimpleValueProperty | "createdby" factory=STRING) ")")? ("id" name=ValidID)? ("{"
-		//	("|" defines+=Define ("," defines+=Define)* "|")? ((properties+=Property | staticProperties+=StaticValueProperty) (","
-		//	(properties+=Property | staticProperties+=StaticValueProperty))*)? "}")?;
+		//	type=JvmTypeReference ("(" (value=SimpleValueProperty | "createdby" factory=STRING) ")")? ("id" name=ValidID)?
+		//	("controlledby" controller=JvmTypeReference)? ("{" ("defines {" defines+=Define ("," defines+=Define)* "}")?
+		//	scripts+=Script* ((properties+=Property | staticProperties+=StaticValueProperty) ("," (properties+=Property |
+		//	staticProperties+=StaticValueProperty))*)? "}")?;
 		public ParserRule getRule() { return rule; }
 
-		//type=JvmTypeReference ("(" (value=SimpleValueProperty | "createdby" factory=STRING) ")")? ("id" name=ValidID)? ("{" ("|"
-		//defines+=Define ("," defines+=Define)* "|")? ((properties+=Property | staticProperties+=StaticValueProperty) (","
-		//(properties+=Property | staticProperties+=StaticValueProperty))*)? "}")?
+		//type=JvmTypeReference ("(" (value=SimpleValueProperty | "createdby" factory=STRING) ")")? ("id" name=ValidID)?
+		//("controlledby" controller=JvmTypeReference)? ("{" ("defines {" defines+=Define ("," defines+=Define)* "}")?
+		//scripts+=Script* ((properties+=Property | staticProperties+=StaticValueProperty) ("," (properties+=Property |
+		//staticProperties+=StaticValueProperty))*)? "}")?
 		public Group getGroup() { return cGroup; }
 
 		//type=JvmTypeReference
@@ -174,82 +214,100 @@ public class FXGraphGrammarAccess extends AbstractGrammarElementFinder {
 		//ValidID
 		public RuleCall getNameValidIDParserRuleCall_2_1_0() { return cNameValidIDParserRuleCall_2_1_0; }
 
-		//("{" ("|" defines+=Define ("," defines+=Define)* "|")? ((properties+=Property | staticProperties+=StaticValueProperty)
-		//("," (properties+=Property | staticProperties+=StaticValueProperty))*)? "}")?
+		//("controlledby" controller=JvmTypeReference)?
 		public Group getGroup_3() { return cGroup_3; }
 
+		//"controlledby"
+		public Keyword getControlledbyKeyword_3_0() { return cControlledbyKeyword_3_0; }
+
+		//controller=JvmTypeReference
+		public Assignment getControllerAssignment_3_1() { return cControllerAssignment_3_1; }
+
+		//JvmTypeReference
+		public RuleCall getControllerJvmTypeReferenceParserRuleCall_3_1_0() { return cControllerJvmTypeReferenceParserRuleCall_3_1_0; }
+
+		//("{" ("defines {" defines+=Define ("," defines+=Define)* "}")? scripts+=Script* ((properties+=Property |
+		//staticProperties+=StaticValueProperty) ("," (properties+=Property | staticProperties+=StaticValueProperty))*)? "}")?
+		public Group getGroup_4() { return cGroup_4; }
+
 		//"{"
-		public Keyword getLeftCurlyBracketKeyword_3_0() { return cLeftCurlyBracketKeyword_3_0; }
+		public Keyword getLeftCurlyBracketKeyword_4_0() { return cLeftCurlyBracketKeyword_4_0; }
 
-		//("|" defines+=Define ("," defines+=Define)* "|")?
-		public Group getGroup_3_1() { return cGroup_3_1; }
+		//("defines {" defines+=Define ("," defines+=Define)* "}")?
+		public Group getGroup_4_1() { return cGroup_4_1; }
 
-		//"|"
-		public Keyword getVerticalLineKeyword_3_1_0() { return cVerticalLineKeyword_3_1_0; }
+		//"defines {"
+		public Keyword getDefinesKeyword_4_1_0() { return cDefinesKeyword_4_1_0; }
 
 		//defines+=Define
-		public Assignment getDefinesAssignment_3_1_1() { return cDefinesAssignment_3_1_1; }
+		public Assignment getDefinesAssignment_4_1_1() { return cDefinesAssignment_4_1_1; }
 
 		//Define
-		public RuleCall getDefinesDefineParserRuleCall_3_1_1_0() { return cDefinesDefineParserRuleCall_3_1_1_0; }
+		public RuleCall getDefinesDefineParserRuleCall_4_1_1_0() { return cDefinesDefineParserRuleCall_4_1_1_0; }
 
 		//("," defines+=Define)*
-		public Group getGroup_3_1_2() { return cGroup_3_1_2; }
+		public Group getGroup_4_1_2() { return cGroup_4_1_2; }
 
 		//","
-		public Keyword getCommaKeyword_3_1_2_0() { return cCommaKeyword_3_1_2_0; }
+		public Keyword getCommaKeyword_4_1_2_0() { return cCommaKeyword_4_1_2_0; }
 
 		//defines+=Define
-		public Assignment getDefinesAssignment_3_1_2_1() { return cDefinesAssignment_3_1_2_1; }
+		public Assignment getDefinesAssignment_4_1_2_1() { return cDefinesAssignment_4_1_2_1; }
 
 		//Define
-		public RuleCall getDefinesDefineParserRuleCall_3_1_2_1_0() { return cDefinesDefineParserRuleCall_3_1_2_1_0; }
+		public RuleCall getDefinesDefineParserRuleCall_4_1_2_1_0() { return cDefinesDefineParserRuleCall_4_1_2_1_0; }
 
-		//"|"
-		public Keyword getVerticalLineKeyword_3_1_3() { return cVerticalLineKeyword_3_1_3; }
+		//"}"
+		public Keyword getRightCurlyBracketKeyword_4_1_3() { return cRightCurlyBracketKeyword_4_1_3; }
+
+		//scripts+=Script*
+		public Assignment getScriptsAssignment_4_2() { return cScriptsAssignment_4_2; }
+
+		//Script
+		public RuleCall getScriptsScriptParserRuleCall_4_2_0() { return cScriptsScriptParserRuleCall_4_2_0; }
 
 		//((properties+=Property | staticProperties+=StaticValueProperty) ("," (properties+=Property |
 		//staticProperties+=StaticValueProperty))*)?
-		public Group getGroup_3_2() { return cGroup_3_2; }
+		public Group getGroup_4_3() { return cGroup_4_3; }
 
 		//properties+=Property | staticProperties+=StaticValueProperty
-		public Alternatives getAlternatives_3_2_0() { return cAlternatives_3_2_0; }
+		public Alternatives getAlternatives_4_3_0() { return cAlternatives_4_3_0; }
 
 		//properties+=Property
-		public Assignment getPropertiesAssignment_3_2_0_0() { return cPropertiesAssignment_3_2_0_0; }
+		public Assignment getPropertiesAssignment_4_3_0_0() { return cPropertiesAssignment_4_3_0_0; }
 
 		//Property
-		public RuleCall getPropertiesPropertyParserRuleCall_3_2_0_0_0() { return cPropertiesPropertyParserRuleCall_3_2_0_0_0; }
+		public RuleCall getPropertiesPropertyParserRuleCall_4_3_0_0_0() { return cPropertiesPropertyParserRuleCall_4_3_0_0_0; }
 
 		//staticProperties+=StaticValueProperty
-		public Assignment getStaticPropertiesAssignment_3_2_0_1() { return cStaticPropertiesAssignment_3_2_0_1; }
+		public Assignment getStaticPropertiesAssignment_4_3_0_1() { return cStaticPropertiesAssignment_4_3_0_1; }
 
 		//StaticValueProperty
-		public RuleCall getStaticPropertiesStaticValuePropertyParserRuleCall_3_2_0_1_0() { return cStaticPropertiesStaticValuePropertyParserRuleCall_3_2_0_1_0; }
+		public RuleCall getStaticPropertiesStaticValuePropertyParserRuleCall_4_3_0_1_0() { return cStaticPropertiesStaticValuePropertyParserRuleCall_4_3_0_1_0; }
 
 		//("," (properties+=Property | staticProperties+=StaticValueProperty))*
-		public Group getGroup_3_2_1() { return cGroup_3_2_1; }
+		public Group getGroup_4_3_1() { return cGroup_4_3_1; }
 
 		//","
-		public Keyword getCommaKeyword_3_2_1_0() { return cCommaKeyword_3_2_1_0; }
+		public Keyword getCommaKeyword_4_3_1_0() { return cCommaKeyword_4_3_1_0; }
 
 		//properties+=Property | staticProperties+=StaticValueProperty
-		public Alternatives getAlternatives_3_2_1_1() { return cAlternatives_3_2_1_1; }
+		public Alternatives getAlternatives_4_3_1_1() { return cAlternatives_4_3_1_1; }
 
 		//properties+=Property
-		public Assignment getPropertiesAssignment_3_2_1_1_0() { return cPropertiesAssignment_3_2_1_1_0; }
+		public Assignment getPropertiesAssignment_4_3_1_1_0() { return cPropertiesAssignment_4_3_1_1_0; }
 
 		//Property
-		public RuleCall getPropertiesPropertyParserRuleCall_3_2_1_1_0_0() { return cPropertiesPropertyParserRuleCall_3_2_1_1_0_0; }
+		public RuleCall getPropertiesPropertyParserRuleCall_4_3_1_1_0_0() { return cPropertiesPropertyParserRuleCall_4_3_1_1_0_0; }
 
 		//staticProperties+=StaticValueProperty
-		public Assignment getStaticPropertiesAssignment_3_2_1_1_1() { return cStaticPropertiesAssignment_3_2_1_1_1; }
+		public Assignment getStaticPropertiesAssignment_4_3_1_1_1() { return cStaticPropertiesAssignment_4_3_1_1_1; }
 
 		//StaticValueProperty
-		public RuleCall getStaticPropertiesStaticValuePropertyParserRuleCall_3_2_1_1_1_0() { return cStaticPropertiesStaticValuePropertyParserRuleCall_3_2_1_1_1_0; }
+		public RuleCall getStaticPropertiesStaticValuePropertyParserRuleCall_4_3_1_1_1_0() { return cStaticPropertiesStaticValuePropertyParserRuleCall_4_3_1_1_1_0; }
 
 		//"}"
-		public Keyword getRightCurlyBracketKeyword_3_3() { return cRightCurlyBracketKeyword_3_3; }
+		public Keyword getRightCurlyBracketKeyword_4_4() { return cRightCurlyBracketKeyword_4_4; }
 	}
 
 	public class DefineElements extends AbstractParserRuleElementFinder {
@@ -266,6 +324,42 @@ public class FXGraphGrammarAccess extends AbstractGrammarElementFinder {
 
 		//Element
 		public RuleCall getElementElementParserRuleCall_0() { return cElementElementParserRuleCall_0; }
+	}
+
+	public class ScriptElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Script");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cScriptKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Alternatives cAlternatives_1 = (Alternatives)cGroup.eContents().get(1);
+		private final Assignment cSourceAssignment_1_0 = (Assignment)cAlternatives_1.eContents().get(0);
+		private final RuleCall cSourceSTRINGTerminalRuleCall_1_0_0 = (RuleCall)cSourceAssignment_1_0.eContents().get(0);
+		private final Assignment cSourcecodeAssignment_1_1 = (Assignment)cAlternatives_1.eContents().get(1);
+		private final RuleCall cSourcecodeSCRIPTLITERALTerminalRuleCall_1_1_0 = (RuleCall)cSourcecodeAssignment_1_1.eContents().get(0);
+		
+		//Script:
+		//	"script" (source=STRING | sourcecode=SCRIPTLITERAL);
+		public ParserRule getRule() { return rule; }
+
+		//"script" (source=STRING | sourcecode=SCRIPTLITERAL)
+		public Group getGroup() { return cGroup; }
+
+		//"script"
+		public Keyword getScriptKeyword_0() { return cScriptKeyword_0; }
+
+		//source=STRING | sourcecode=SCRIPTLITERAL
+		public Alternatives getAlternatives_1() { return cAlternatives_1; }
+
+		//source=STRING
+		public Assignment getSourceAssignment_1_0() { return cSourceAssignment_1_0; }
+
+		//STRING
+		public RuleCall getSourceSTRINGTerminalRuleCall_1_0_0() { return cSourceSTRINGTerminalRuleCall_1_0_0; }
+
+		//sourcecode=SCRIPTLITERAL
+		public Assignment getSourcecodeAssignment_1_1() { return cSourcecodeAssignment_1_1; }
+
+		//SCRIPTLITERAL
+		public RuleCall getSourcecodeSCRIPTLITERALTerminalRuleCall_1_1_0() { return cSourcecodeSCRIPTLITERALTerminalRuleCall_1_1_0; }
 	}
 
 	public class StaticValuePropertyElements extends AbstractParserRuleElementFinder {
@@ -376,12 +470,17 @@ public class FXGraphGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cReferenceValuePropertyParserRuleCall_2 = (RuleCall)cAlternatives.eContents().get(2);
 		private final RuleCall cIncludeValuePropertyParserRuleCall_3 = (RuleCall)cAlternatives.eContents().get(3);
 		private final RuleCall cCopyValuePropertyParserRuleCall_4 = (RuleCall)cAlternatives.eContents().get(4);
+		private final RuleCall cControllerHandledValuePropertyParserRuleCall_5 = (RuleCall)cAlternatives.eContents().get(5);
+		private final RuleCall cScriptValueExpressionParserRuleCall_6 = (RuleCall)cAlternatives.eContents().get(6);
+		private final RuleCall cScriptHandlerHandledValuePropertyParserRuleCall_7 = (RuleCall)cAlternatives.eContents().get(7);
 		
 		//SingleValueProperty:
-		//	SimpleValueProperty | Element | ReferenceValueProperty | IncludeValueProperty | CopyValueProperty;
+		//	SimpleValueProperty | Element | ReferenceValueProperty | IncludeValueProperty | CopyValueProperty |
+		//	ControllerHandledValueProperty | ScriptValueExpression | ScriptHandlerHandledValueProperty;
 		public ParserRule getRule() { return rule; }
 
-		//SimpleValueProperty | Element | ReferenceValueProperty | IncludeValueProperty | CopyValueProperty
+		//SimpleValueProperty | Element | ReferenceValueProperty | IncludeValueProperty | CopyValueProperty |
+		//ControllerHandledValueProperty | ScriptValueExpression | ScriptHandlerHandledValueProperty
 		public Alternatives getAlternatives() { return cAlternatives; }
 
 		//SimpleValueProperty
@@ -398,6 +497,15 @@ public class FXGraphGrammarAccess extends AbstractGrammarElementFinder {
 
 		//CopyValueProperty
 		public RuleCall getCopyValuePropertyParserRuleCall_4() { return cCopyValuePropertyParserRuleCall_4; }
+
+		//ControllerHandledValueProperty
+		public RuleCall getControllerHandledValuePropertyParserRuleCall_5() { return cControllerHandledValuePropertyParserRuleCall_5; }
+
+		//ScriptValueExpression
+		public RuleCall getScriptValueExpressionParserRuleCall_6() { return cScriptValueExpressionParserRuleCall_6; }
+
+		//ScriptHandlerHandledValueProperty
+		public RuleCall getScriptHandlerHandledValuePropertyParserRuleCall_7() { return cScriptHandlerHandledValuePropertyParserRuleCall_7; }
 	}
 
 	public class MultiValuePropertyElements extends AbstractParserRuleElementFinder {
@@ -680,6 +788,78 @@ public class FXGraphGrammarAccess extends AbstractGrammarElementFinder {
 		public RuleCall getReferenceElementValidIDParserRuleCall_1_0_1() { return cReferenceElementValidIDParserRuleCall_1_0_1; }
 	}
 
+	public class ControllerHandledValuePropertyElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "ControllerHandledValueProperty");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cMaptoKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Assignment cMethodnameAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cMethodnameIDTerminalRuleCall_1_0 = (RuleCall)cMethodnameAssignment_1.eContents().get(0);
+		
+		//ControllerHandledValueProperty:
+		//	"mapto" methodname=ID;
+		public ParserRule getRule() { return rule; }
+
+		//"mapto" methodname=ID
+		public Group getGroup() { return cGroup; }
+
+		//"mapto"
+		public Keyword getMaptoKeyword_0() { return cMaptoKeyword_0; }
+
+		//methodname=ID
+		public Assignment getMethodnameAssignment_1() { return cMethodnameAssignment_1; }
+
+		//ID
+		public RuleCall getMethodnameIDTerminalRuleCall_1_0() { return cMethodnameIDTerminalRuleCall_1_0; }
+	}
+
+	public class ScriptHandlerHandledValuePropertyElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "ScriptHandlerHandledValueProperty");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cScriptmethodKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Assignment cFunctionnameAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cFunctionnameSTRINGTerminalRuleCall_1_0 = (RuleCall)cFunctionnameAssignment_1.eContents().get(0);
+		
+		//ScriptHandlerHandledValueProperty:
+		//	"scriptmethod" functionname=STRING;
+		public ParserRule getRule() { return rule; }
+
+		//"scriptmethod" functionname=STRING
+		public Group getGroup() { return cGroup; }
+
+		//"scriptmethod"
+		public Keyword getScriptmethodKeyword_0() { return cScriptmethodKeyword_0; }
+
+		//functionname=STRING
+		public Assignment getFunctionnameAssignment_1() { return cFunctionnameAssignment_1; }
+
+		//STRING
+		public RuleCall getFunctionnameSTRINGTerminalRuleCall_1_0() { return cFunctionnameSTRINGTerminalRuleCall_1_0; }
+	}
+
+	public class ScriptValueExpressionElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "ScriptValueExpression");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cScriptexpressionKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Assignment cSourcecodeAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cSourcecodeSCRIPTLITERALTerminalRuleCall_1_0 = (RuleCall)cSourcecodeAssignment_1.eContents().get(0);
+		
+		//ScriptValueExpression:
+		//	"scriptexpression" sourcecode=SCRIPTLITERAL;
+		public ParserRule getRule() { return rule; }
+
+		//"scriptexpression" sourcecode=SCRIPTLITERAL
+		public Group getGroup() { return cGroup; }
+
+		//"scriptexpression"
+		public Keyword getScriptexpressionKeyword_0() { return cScriptexpressionKeyword_0; }
+
+		//sourcecode=SCRIPTLITERAL
+		public Assignment getSourcecodeAssignment_1() { return cSourcecodeAssignment_1; }
+
+		//SCRIPTLITERAL
+		public RuleCall getSourcecodeSCRIPTLITERALTerminalRuleCall_1_0() { return cSourcecodeSCRIPTLITERALTerminalRuleCall_1_0; }
+	}
+
 	public class QualifiedNameWithWildCardElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "QualifiedNameWithWildCard");
 		private final Group cGroup = (Group)rule.eContents().get(1);
@@ -710,9 +890,11 @@ public class FXGraphGrammarAccess extends AbstractGrammarElementFinder {
 	
 	
 	private ModelElements pModel;
+	private LanguageElements pLanguage;
 	private ImportElements pImport;
 	private ElementElements pElement;
 	private DefineElements pDefine;
+	private ScriptElements pScript;
 	private StaticValuePropertyElements pStaticValueProperty;
 	private PropertyElements pProperty;
 	private ValuePropertyElements pValueProperty;
@@ -725,8 +907,12 @@ public class FXGraphGrammarAccess extends AbstractGrammarElementFinder {
 	private ReferenceValuePropertyElements pReferenceValueProperty;
 	private IncludeValuePropertyElements pIncludeValueProperty;
 	private CopyValuePropertyElements pCopyValueProperty;
+	private ControllerHandledValuePropertyElements pControllerHandledValueProperty;
+	private ScriptHandlerHandledValuePropertyElements pScriptHandlerHandledValueProperty;
+	private ScriptValueExpressionElements pScriptValueExpression;
 	private QualifiedNameWithWildCardElements pQualifiedNameWithWildCard;
 	private TerminalRule tREAL;
+	private TerminalRule tSCRIPTLITERAL;
 	
 	private final GrammarProvider grammarProvider;
 
@@ -750,13 +936,23 @@ public class FXGraphGrammarAccess extends AbstractGrammarElementFinder {
 
 	
 	//Model:
-	//	imports+=Import* rootNode=Element;
+	//	imports+=Import* language=Language? rootNode=Element;
 	public ModelElements getModelAccess() {
 		return (pModel != null) ? pModel : (pModel = new ModelElements());
 	}
 	
 	public ParserRule getModelRule() {
 		return getModelAccess().getRule();
+	}
+
+	//Language:
+	//	"language" language=ID;
+	public LanguageElements getLanguageAccess() {
+		return (pLanguage != null) ? pLanguage : (pLanguage = new LanguageElements());
+	}
+	
+	public ParserRule getLanguageRule() {
+		return getLanguageAccess().getRule();
 	}
 
 	//Import:
@@ -770,9 +966,10 @@ public class FXGraphGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//Element:
-	//	type=JvmTypeReference ("(" (value=SimpleValueProperty | "createdby" factory=STRING) ")")? ("id" name=ValidID)? ("{"
-	//	("|" defines+=Define ("," defines+=Define)* "|")? ((properties+=Property | staticProperties+=StaticValueProperty) (","
-	//	(properties+=Property | staticProperties+=StaticValueProperty))*)? "}")?;
+	//	type=JvmTypeReference ("(" (value=SimpleValueProperty | "createdby" factory=STRING) ")")? ("id" name=ValidID)?
+	//	("controlledby" controller=JvmTypeReference)? ("{" ("defines {" defines+=Define ("," defines+=Define)* "}")?
+	//	scripts+=Script* ((properties+=Property | staticProperties+=StaticValueProperty) ("," (properties+=Property |
+	//	staticProperties+=StaticValueProperty))*)? "}")?;
 	public ElementElements getElementAccess() {
 		return (pElement != null) ? pElement : (pElement = new ElementElements());
 	}
@@ -789,6 +986,16 @@ public class FXGraphGrammarAccess extends AbstractGrammarElementFinder {
 	
 	public ParserRule getDefineRule() {
 		return getDefineAccess().getRule();
+	}
+
+	//Script:
+	//	"script" (source=STRING | sourcecode=SCRIPTLITERAL);
+	public ScriptElements getScriptAccess() {
+		return (pScript != null) ? pScript : (pScript = new ScriptElements());
+	}
+	
+	public ParserRule getScriptRule() {
+		return getScriptAccess().getRule();
 	}
 
 	//StaticValueProperty:
@@ -822,7 +1029,8 @@ public class FXGraphGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//SingleValueProperty:
-	//	SimpleValueProperty | Element | ReferenceValueProperty | IncludeValueProperty | CopyValueProperty;
+	//	SimpleValueProperty | Element | ReferenceValueProperty | IncludeValueProperty | CopyValueProperty |
+	//	ControllerHandledValueProperty | ScriptValueExpression | ScriptHandlerHandledValueProperty;
 	public SingleValuePropertyElements getSingleValuePropertyAccess() {
 		return (pSingleValueProperty != null) ? pSingleValueProperty : (pSingleValueProperty = new SingleValuePropertyElements());
 	}
@@ -911,6 +1119,36 @@ public class FXGraphGrammarAccess extends AbstractGrammarElementFinder {
 		return getCopyValuePropertyAccess().getRule();
 	}
 
+	//ControllerHandledValueProperty:
+	//	"mapto" methodname=ID;
+	public ControllerHandledValuePropertyElements getControllerHandledValuePropertyAccess() {
+		return (pControllerHandledValueProperty != null) ? pControllerHandledValueProperty : (pControllerHandledValueProperty = new ControllerHandledValuePropertyElements());
+	}
+	
+	public ParserRule getControllerHandledValuePropertyRule() {
+		return getControllerHandledValuePropertyAccess().getRule();
+	}
+
+	//ScriptHandlerHandledValueProperty:
+	//	"scriptmethod" functionname=STRING;
+	public ScriptHandlerHandledValuePropertyElements getScriptHandlerHandledValuePropertyAccess() {
+		return (pScriptHandlerHandledValueProperty != null) ? pScriptHandlerHandledValueProperty : (pScriptHandlerHandledValueProperty = new ScriptHandlerHandledValuePropertyElements());
+	}
+	
+	public ParserRule getScriptHandlerHandledValuePropertyRule() {
+		return getScriptHandlerHandledValuePropertyAccess().getRule();
+	}
+
+	//ScriptValueExpression:
+	//	"scriptexpression" sourcecode=SCRIPTLITERAL;
+	public ScriptValueExpressionElements getScriptValueExpressionAccess() {
+		return (pScriptValueExpression != null) ? pScriptValueExpression : (pScriptValueExpression = new ScriptValueExpressionElements());
+	}
+	
+	public ParserRule getScriptValueExpressionRule() {
+		return getScriptValueExpressionAccess().getRule();
+	}
+
 	//QualifiedNameWithWildCard:
 	//	QualifiedName ("." "*")?;
 	public QualifiedNameWithWildCardElements getQualifiedNameWithWildCardAccess() {
@@ -925,6 +1163,12 @@ public class FXGraphGrammarAccess extends AbstractGrammarElementFinder {
 	//	"0".."9"* "." "0".."9"+;
 	public TerminalRule getREALRule() {
 		return (tREAL != null) ? tREAL : (tREAL = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "REAL"));
+	} 
+
+	//terminal SCRIPTLITERAL:
+	//	"#{"->"}#";
+	public TerminalRule getSCRIPTLITERALRule() {
+		return (tSCRIPTLITERAL != null) ? tSCRIPTLITERAL : (tSCRIPTLITERAL = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "SCRIPTLITERAL"));
 	} 
 
 	//XExpression:

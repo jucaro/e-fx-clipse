@@ -69,9 +69,11 @@ public class FXGraphFactoryImpl extends EFactoryImpl implements FXGraphFactory
     switch (eClass.getClassifierID())
     {
       case FXGraphPackage.MODEL: return createModel();
+      case FXGraphPackage.LANGUAGE: return createLanguage();
       case FXGraphPackage.IMPORT: return createImport();
       case FXGraphPackage.ELEMENT: return createElement();
       case FXGraphPackage.DEFINE: return createDefine();
+      case FXGraphPackage.SCRIPT: return createScript();
       case FXGraphPackage.STATIC_VALUE_PROPERTY: return createStaticValueProperty();
       case FXGraphPackage.PROPERTY: return createProperty();
       case FXGraphPackage.VALUE_PROPERTY: return createValueProperty();
@@ -84,6 +86,9 @@ public class FXGraphFactoryImpl extends EFactoryImpl implements FXGraphFactory
       case FXGraphPackage.REFERENCE_VALUE_PROPERTY: return createReferenceValueProperty();
       case FXGraphPackage.INCLUDE_VALUE_PROPERTY: return createIncludeValueProperty();
       case FXGraphPackage.COPY_VALUE_PROPERTY: return createCopyValueProperty();
+      case FXGraphPackage.CONTROLLER_HANDLED_VALUE_PROPERTY: return createControllerHandledValueProperty();
+      case FXGraphPackage.SCRIPT_HANDLER_HANDLED_VALUE_PROPERTY: return createScriptHandlerHandledValueProperty();
+      case FXGraphPackage.SCRIPT_VALUE_EXPRESSION: return createScriptValueExpression();
       default:
         throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
     }
@@ -98,6 +103,17 @@ public class FXGraphFactoryImpl extends EFactoryImpl implements FXGraphFactory
   {
     ModelImpl model = new ModelImpl();
     return model;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Language createLanguage()
+  {
+    LanguageImpl language = new LanguageImpl();
+    return language;
   }
 
   /**
@@ -131,6 +147,17 @@ public class FXGraphFactoryImpl extends EFactoryImpl implements FXGraphFactory
   {
     DefineImpl define = new DefineImpl();
     return define;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Script createScript()
+  {
+    ScriptImpl script = new ScriptImpl();
+    return script;
   }
 
   /**
@@ -263,6 +290,39 @@ public class FXGraphFactoryImpl extends EFactoryImpl implements FXGraphFactory
   {
     CopyValuePropertyImpl copyValueProperty = new CopyValuePropertyImpl();
     return copyValueProperty;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public ControllerHandledValueProperty createControllerHandledValueProperty()
+  {
+    ControllerHandledValuePropertyImpl controllerHandledValueProperty = new ControllerHandledValuePropertyImpl();
+    return controllerHandledValueProperty;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public ScriptHandlerHandledValueProperty createScriptHandlerHandledValueProperty()
+  {
+    ScriptHandlerHandledValuePropertyImpl scriptHandlerHandledValueProperty = new ScriptHandlerHandledValuePropertyImpl();
+    return scriptHandlerHandledValueProperty;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public ScriptValueExpression createScriptValueExpression()
+  {
+    ScriptValueExpressionImpl scriptValueExpression = new ScriptValueExpressionImpl();
+    return scriptValueExpression;
   }
 
   /**

@@ -11,7 +11,11 @@
       disposableProviderFactory="true" ecorePackage="platform:/resource/at.bestsolution.efxclipse.tooling.fxgraph/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/FXGraph.ecore#/">
     <genClasses ecoreClass="platform:/resource/at.bestsolution.efxclipse.tooling.fxgraph/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/FXGraph.ecore#//Model">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/at.bestsolution.efxclipse.tooling.fxgraph/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/FXGraph.ecore#//Model/imports"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/at.bestsolution.efxclipse.tooling.fxgraph/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/FXGraph.ecore#//Model/language"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/at.bestsolution.efxclipse.tooling.fxgraph/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/FXGraph.ecore#//Model/rootNode"/>
+    </genClasses>
+    <genClasses ecoreClass="platform:/resource/at.bestsolution.efxclipse.tooling.fxgraph/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/FXGraph.ecore#//Language">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/at.bestsolution.efxclipse.tooling.fxgraph/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/FXGraph.ecore#//Language/language"/>
     </genClasses>
     <genClasses ecoreClass="platform:/resource/at.bestsolution.efxclipse.tooling.fxgraph/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/FXGraph.ecore#//Import">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/at.bestsolution.efxclipse.tooling.fxgraph/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/FXGraph.ecore#//Import/importedNamespace"/>
@@ -21,12 +25,18 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/at.bestsolution.efxclipse.tooling.fxgraph/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/FXGraph.ecore#//Element/value"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/at.bestsolution.efxclipse.tooling.fxgraph/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/FXGraph.ecore#//Element/factory"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/at.bestsolution.efxclipse.tooling.fxgraph/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/FXGraph.ecore#//Element/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/at.bestsolution.efxclipse.tooling.fxgraph/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/FXGraph.ecore#//Element/controller"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/at.bestsolution.efxclipse.tooling.fxgraph/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/FXGraph.ecore#//Element/defines"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/at.bestsolution.efxclipse.tooling.fxgraph/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/FXGraph.ecore#//Element/scripts"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/at.bestsolution.efxclipse.tooling.fxgraph/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/FXGraph.ecore#//Element/properties"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/at.bestsolution.efxclipse.tooling.fxgraph/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/FXGraph.ecore#//Element/staticProperties"/>
     </genClasses>
     <genClasses ecoreClass="platform:/resource/at.bestsolution.efxclipse.tooling.fxgraph/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/FXGraph.ecore#//Define">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/at.bestsolution.efxclipse.tooling.fxgraph/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/FXGraph.ecore#//Define/element"/>
+    </genClasses>
+    <genClasses ecoreClass="platform:/resource/at.bestsolution.efxclipse.tooling.fxgraph/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/FXGraph.ecore#//Script">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/at.bestsolution.efxclipse.tooling.fxgraph/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/FXGraph.ecore#//Script/source"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/at.bestsolution.efxclipse.tooling.fxgraph/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/FXGraph.ecore#//Script/sourcecode"/>
     </genClasses>
     <genClasses ecoreClass="platform:/resource/at.bestsolution.efxclipse.tooling.fxgraph/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/FXGraph.ecore#//StaticValueProperty">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/at.bestsolution.efxclipse.tooling.fxgraph/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/FXGraph.ecore#//StaticValueProperty/type"/>
@@ -62,6 +72,15 @@
     </genClasses>
     <genClasses ecoreClass="platform:/resource/at.bestsolution.efxclipse.tooling.fxgraph/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/FXGraph.ecore#//CopyValueProperty">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference platform:/resource/at.bestsolution.efxclipse.tooling.fxgraph/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/FXGraph.ecore#//CopyValueProperty/reference"/>
+    </genClasses>
+    <genClasses ecoreClass="platform:/resource/at.bestsolution.efxclipse.tooling.fxgraph/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/FXGraph.ecore#//ControllerHandledValueProperty">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/at.bestsolution.efxclipse.tooling.fxgraph/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/FXGraph.ecore#//ControllerHandledValueProperty/methodname"/>
+    </genClasses>
+    <genClasses ecoreClass="platform:/resource/at.bestsolution.efxclipse.tooling.fxgraph/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/FXGraph.ecore#//ScriptHandlerHandledValueProperty">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/at.bestsolution.efxclipse.tooling.fxgraph/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/FXGraph.ecore#//ScriptHandlerHandledValueProperty/functionname"/>
+    </genClasses>
+    <genClasses ecoreClass="platform:/resource/at.bestsolution.efxclipse.tooling.fxgraph/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/FXGraph.ecore#//ScriptValueExpression">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/at.bestsolution.efxclipse.tooling.fxgraph/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/FXGraph.ecore#//ScriptValueExpression/sourcecode"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

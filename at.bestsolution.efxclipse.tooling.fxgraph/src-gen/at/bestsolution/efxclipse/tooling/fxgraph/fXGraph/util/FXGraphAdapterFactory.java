@@ -84,6 +84,11 @@ public class FXGraphAdapterFactory extends AdapterFactoryImpl
         return createModelAdapter();
       }
       @Override
+      public Adapter caseLanguage(Language object)
+      {
+        return createLanguageAdapter();
+      }
+      @Override
       public Adapter caseImport(Import object)
       {
         return createImportAdapter();
@@ -97,6 +102,11 @@ public class FXGraphAdapterFactory extends AdapterFactoryImpl
       public Adapter caseDefine(Define object)
       {
         return createDefineAdapter();
+      }
+      @Override
+      public Adapter caseScript(Script object)
+      {
+        return createScriptAdapter();
       }
       @Override
       public Adapter caseStaticValueProperty(StaticValueProperty object)
@@ -159,6 +169,21 @@ public class FXGraphAdapterFactory extends AdapterFactoryImpl
         return createCopyValuePropertyAdapter();
       }
       @Override
+      public Adapter caseControllerHandledValueProperty(ControllerHandledValueProperty object)
+      {
+        return createControllerHandledValuePropertyAdapter();
+      }
+      @Override
+      public Adapter caseScriptHandlerHandledValueProperty(ScriptHandlerHandledValueProperty object)
+      {
+        return createScriptHandlerHandledValuePropertyAdapter();
+      }
+      @Override
+      public Adapter caseScriptValueExpression(ScriptValueExpression object)
+      {
+        return createScriptValueExpressionAdapter();
+      }
+      @Override
       public Adapter defaultCase(EObject object)
       {
         return createEObjectAdapter();
@@ -191,6 +216,21 @@ public class FXGraphAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createModelAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.Language <em>Language</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.Language
+   * @generated
+   */
+  public Adapter createLanguageAdapter()
   {
     return null;
   }
@@ -236,6 +276,21 @@ public class FXGraphAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createDefineAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.Script <em>Script</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.Script
+   * @generated
+   */
+  public Adapter createScriptAdapter()
   {
     return null;
   }
@@ -416,6 +471,51 @@ public class FXGraphAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createCopyValuePropertyAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.ControllerHandledValueProperty <em>Controller Handled Value Property</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.ControllerHandledValueProperty
+   * @generated
+   */
+  public Adapter createControllerHandledValuePropertyAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.ScriptHandlerHandledValueProperty <em>Script Handler Handled Value Property</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.ScriptHandlerHandledValueProperty
+   * @generated
+   */
+  public Adapter createScriptHandlerHandledValuePropertyAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.ScriptValueExpression <em>Script Value Expression</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.ScriptValueExpression
+   * @generated
+   */
+  public Adapter createScriptValueExpressionAdapter()
   {
     return null;
   }

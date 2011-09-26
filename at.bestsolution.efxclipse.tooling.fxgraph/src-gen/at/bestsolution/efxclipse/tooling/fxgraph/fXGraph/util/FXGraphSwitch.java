@@ -83,6 +83,13 @@ public class FXGraphSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case FXGraphPackage.LANGUAGE:
+      {
+        Language language = (Language)theEObject;
+        T result = caseLanguage(language);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       case FXGraphPackage.IMPORT:
       {
         Import import_ = (Import)theEObject;
@@ -104,6 +111,13 @@ public class FXGraphSwitch<T> extends Switch<T>
       {
         Define define = (Define)theEObject;
         T result = caseDefine(define);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case FXGraphPackage.SCRIPT:
+      {
+        Script script = (Script)theEObject;
+        T result = caseScript(script);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -207,6 +221,33 @@ public class FXGraphSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case FXGraphPackage.CONTROLLER_HANDLED_VALUE_PROPERTY:
+      {
+        ControllerHandledValueProperty controllerHandledValueProperty = (ControllerHandledValueProperty)theEObject;
+        T result = caseControllerHandledValueProperty(controllerHandledValueProperty);
+        if (result == null) result = caseSingleValueProperty(controllerHandledValueProperty);
+        if (result == null) result = caseValueProperty(controllerHandledValueProperty);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case FXGraphPackage.SCRIPT_HANDLER_HANDLED_VALUE_PROPERTY:
+      {
+        ScriptHandlerHandledValueProperty scriptHandlerHandledValueProperty = (ScriptHandlerHandledValueProperty)theEObject;
+        T result = caseScriptHandlerHandledValueProperty(scriptHandlerHandledValueProperty);
+        if (result == null) result = caseSingleValueProperty(scriptHandlerHandledValueProperty);
+        if (result == null) result = caseValueProperty(scriptHandlerHandledValueProperty);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case FXGraphPackage.SCRIPT_VALUE_EXPRESSION:
+      {
+        ScriptValueExpression scriptValueExpression = (ScriptValueExpression)theEObject;
+        T result = caseScriptValueExpression(scriptValueExpression);
+        if (result == null) result = caseSingleValueProperty(scriptValueExpression);
+        if (result == null) result = caseValueProperty(scriptValueExpression);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       default: return defaultCase(theEObject);
     }
   }
@@ -223,6 +264,22 @@ public class FXGraphSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseModel(Model object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Language</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Language</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseLanguage(Language object)
   {
     return null;
   }
@@ -271,6 +328,22 @@ public class FXGraphSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseDefine(Define object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Script</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Script</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseScript(Script object)
   {
     return null;
   }
@@ -463,6 +536,54 @@ public class FXGraphSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseCopyValueProperty(CopyValueProperty object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Controller Handled Value Property</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Controller Handled Value Property</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseControllerHandledValueProperty(ControllerHandledValueProperty object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Script Handler Handled Value Property</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Script Handler Handled Value Property</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseScriptHandlerHandledValueProperty(ScriptHandlerHandledValueProperty object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Script Value Expression</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Script Value Expression</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseScriptValueExpression(ScriptValueExpression object)
   {
     return null;
   }

@@ -80,13 +80,22 @@ public interface FXGraphPackage extends EPackage
   int MODEL__IMPORTS = 0;
 
   /**
+   * The feature id for the '<em><b>Language</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int MODEL__LANGUAGE = 1;
+
+  /**
    * The feature id for the '<em><b>Root Node</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int MODEL__ROOT_NODE = 1;
+  int MODEL__ROOT_NODE = 2;
 
   /**
    * The number of structural features of the '<em>Model</em>' class.
@@ -95,7 +104,35 @@ public interface FXGraphPackage extends EPackage
    * @generated
    * @ordered
    */
-  int MODEL_FEATURE_COUNT = 2;
+  int MODEL_FEATURE_COUNT = 3;
+
+  /**
+   * The meta object id for the '{@link at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.impl.LanguageImpl <em>Language</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.impl.LanguageImpl
+   * @see at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.impl.FXGraphPackageImpl#getLanguage()
+   * @generated
+   */
+  int LANGUAGE = 1;
+
+  /**
+   * The feature id for the '<em><b>Language</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int LANGUAGE__LANGUAGE = 0;
+
+  /**
+   * The number of structural features of the '<em>Language</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int LANGUAGE_FEATURE_COUNT = 1;
 
   /**
    * The meta object id for the '{@link at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.impl.ImportImpl <em>Import</em>}' class.
@@ -105,7 +142,7 @@ public interface FXGraphPackage extends EPackage
    * @see at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.impl.FXGraphPackageImpl#getImport()
    * @generated
    */
-  int IMPORT = 1;
+  int IMPORT = 2;
 
   /**
    * The feature id for the '<em><b>Imported Namespace</b></em>' attribute.
@@ -133,7 +170,7 @@ public interface FXGraphPackage extends EPackage
    * @see at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.impl.FXGraphPackageImpl#getValueProperty()
    * @generated
    */
-  int VALUE_PROPERTY = 6;
+  int VALUE_PROPERTY = 8;
 
   /**
    * The number of structural features of the '<em>Value Property</em>' class.
@@ -152,7 +189,7 @@ public interface FXGraphPackage extends EPackage
    * @see at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.impl.FXGraphPackageImpl#getSingleValueProperty()
    * @generated
    */
-  int SINGLE_VALUE_PROPERTY = 7;
+  int SINGLE_VALUE_PROPERTY = 9;
 
   /**
    * The number of structural features of the '<em>Single Value Property</em>' class.
@@ -171,7 +208,7 @@ public interface FXGraphPackage extends EPackage
    * @see at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.impl.FXGraphPackageImpl#getElement()
    * @generated
    */
-  int ELEMENT = 2;
+  int ELEMENT = 3;
 
   /**
    * The feature id for the '<em><b>Type</b></em>' containment reference.
@@ -210,13 +247,31 @@ public interface FXGraphPackage extends EPackage
   int ELEMENT__NAME = SINGLE_VALUE_PROPERTY_FEATURE_COUNT + 3;
 
   /**
+   * The feature id for the '<em><b>Controller</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ELEMENT__CONTROLLER = SINGLE_VALUE_PROPERTY_FEATURE_COUNT + 4;
+
+  /**
    * The feature id for the '<em><b>Defines</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int ELEMENT__DEFINES = SINGLE_VALUE_PROPERTY_FEATURE_COUNT + 4;
+  int ELEMENT__DEFINES = SINGLE_VALUE_PROPERTY_FEATURE_COUNT + 5;
+
+  /**
+   * The feature id for the '<em><b>Scripts</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ELEMENT__SCRIPTS = SINGLE_VALUE_PROPERTY_FEATURE_COUNT + 6;
 
   /**
    * The feature id for the '<em><b>Properties</b></em>' containment reference list.
@@ -225,7 +280,7 @@ public interface FXGraphPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ELEMENT__PROPERTIES = SINGLE_VALUE_PROPERTY_FEATURE_COUNT + 5;
+  int ELEMENT__PROPERTIES = SINGLE_VALUE_PROPERTY_FEATURE_COUNT + 7;
 
   /**
    * The feature id for the '<em><b>Static Properties</b></em>' containment reference list.
@@ -234,7 +289,7 @@ public interface FXGraphPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ELEMENT__STATIC_PROPERTIES = SINGLE_VALUE_PROPERTY_FEATURE_COUNT + 6;
+  int ELEMENT__STATIC_PROPERTIES = SINGLE_VALUE_PROPERTY_FEATURE_COUNT + 8;
 
   /**
    * The number of structural features of the '<em>Element</em>' class.
@@ -243,7 +298,7 @@ public interface FXGraphPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ELEMENT_FEATURE_COUNT = SINGLE_VALUE_PROPERTY_FEATURE_COUNT + 7;
+  int ELEMENT_FEATURE_COUNT = SINGLE_VALUE_PROPERTY_FEATURE_COUNT + 9;
 
   /**
    * The meta object id for the '{@link at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.impl.DefineImpl <em>Define</em>}' class.
@@ -253,7 +308,7 @@ public interface FXGraphPackage extends EPackage
    * @see at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.impl.FXGraphPackageImpl#getDefine()
    * @generated
    */
-  int DEFINE = 3;
+  int DEFINE = 4;
 
   /**
    * The feature id for the '<em><b>Element</b></em>' containment reference.
@@ -274,6 +329,43 @@ public interface FXGraphPackage extends EPackage
   int DEFINE_FEATURE_COUNT = 1;
 
   /**
+   * The meta object id for the '{@link at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.impl.ScriptImpl <em>Script</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.impl.ScriptImpl
+   * @see at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.impl.FXGraphPackageImpl#getScript()
+   * @generated
+   */
+  int SCRIPT = 5;
+
+  /**
+   * The feature id for the '<em><b>Source</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SCRIPT__SOURCE = 0;
+
+  /**
+   * The feature id for the '<em><b>Sourcecode</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SCRIPT__SOURCECODE = 1;
+
+  /**
+   * The number of structural features of the '<em>Script</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SCRIPT_FEATURE_COUNT = 2;
+
+  /**
    * The meta object id for the '{@link at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.impl.StaticValuePropertyImpl <em>Static Value Property</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -281,7 +373,7 @@ public interface FXGraphPackage extends EPackage
    * @see at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.impl.FXGraphPackageImpl#getStaticValueProperty()
    * @generated
    */
-  int STATIC_VALUE_PROPERTY = 4;
+  int STATIC_VALUE_PROPERTY = 6;
 
   /**
    * The feature id for the '<em><b>Type</b></em>' containment reference.
@@ -327,7 +419,7 @@ public interface FXGraphPackage extends EPackage
    * @see at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.impl.FXGraphPackageImpl#getProperty()
    * @generated
    */
-  int PROPERTY = 5;
+  int PROPERTY = 7;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -364,7 +456,7 @@ public interface FXGraphPackage extends EPackage
    * @see at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.impl.FXGraphPackageImpl#getMultiValueProperty()
    * @generated
    */
-  int MULTI_VALUE_PROPERTY = 8;
+  int MULTI_VALUE_PROPERTY = 10;
 
   /**
    * The number of structural features of the '<em>Multi Value Property</em>' class.
@@ -383,7 +475,7 @@ public interface FXGraphPackage extends EPackage
    * @see at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.impl.FXGraphPackageImpl#getListValueElement()
    * @generated
    */
-  int LIST_VALUE_ELEMENT = 9;
+  int LIST_VALUE_ELEMENT = 11;
 
   /**
    * The number of structural features of the '<em>List Value Element</em>' class.
@@ -402,7 +494,7 @@ public interface FXGraphPackage extends EPackage
    * @see at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.impl.FXGraphPackageImpl#getListValueProperty()
    * @generated
    */
-  int LIST_VALUE_PROPERTY = 10;
+  int LIST_VALUE_PROPERTY = 12;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' containment reference list.
@@ -430,7 +522,7 @@ public interface FXGraphPackage extends EPackage
    * @see at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.impl.FXGraphPackageImpl#getMapValueProperty()
    * @generated
    */
-  int MAP_VALUE_PROPERTY = 11;
+  int MAP_VALUE_PROPERTY = 13;
 
   /**
    * The feature id for the '<em><b>Properties</b></em>' containment reference list.
@@ -458,7 +550,7 @@ public interface FXGraphPackage extends EPackage
    * @see at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.impl.FXGraphPackageImpl#getSimpleValueProperty()
    * @generated
    */
-  int SIMPLE_VALUE_PROPERTY = 12;
+  int SIMPLE_VALUE_PROPERTY = 14;
 
   /**
    * The feature id for the '<em><b>String Value</b></em>' attribute.
@@ -522,7 +614,7 @@ public interface FXGraphPackage extends EPackage
    * @see at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.impl.FXGraphPackageImpl#getReferenceValueProperty()
    * @generated
    */
-  int REFERENCE_VALUE_PROPERTY = 13;
+  int REFERENCE_VALUE_PROPERTY = 15;
 
   /**
    * The feature id for the '<em><b>Reference</b></em>' reference.
@@ -550,7 +642,7 @@ public interface FXGraphPackage extends EPackage
    * @see at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.impl.FXGraphPackageImpl#getIncludeValueProperty()
    * @generated
    */
-  int INCLUDE_VALUE_PROPERTY = 14;
+  int INCLUDE_VALUE_PROPERTY = 16;
 
   /**
    * The feature id for the '<em><b>Source</b></em>' attribute.
@@ -578,7 +670,7 @@ public interface FXGraphPackage extends EPackage
    * @see at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.impl.FXGraphPackageImpl#getCopyValueProperty()
    * @generated
    */
-  int COPY_VALUE_PROPERTY = 15;
+  int COPY_VALUE_PROPERTY = 17;
 
   /**
    * The feature id for the '<em><b>Reference</b></em>' reference.
@@ -597,6 +689,90 @@ public interface FXGraphPackage extends EPackage
    * @ordered
    */
   int COPY_VALUE_PROPERTY_FEATURE_COUNT = SINGLE_VALUE_PROPERTY_FEATURE_COUNT + 1;
+
+  /**
+   * The meta object id for the '{@link at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.impl.ControllerHandledValuePropertyImpl <em>Controller Handled Value Property</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.impl.ControllerHandledValuePropertyImpl
+   * @see at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.impl.FXGraphPackageImpl#getControllerHandledValueProperty()
+   * @generated
+   */
+  int CONTROLLER_HANDLED_VALUE_PROPERTY = 18;
+
+  /**
+   * The feature id for the '<em><b>Methodname</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CONTROLLER_HANDLED_VALUE_PROPERTY__METHODNAME = SINGLE_VALUE_PROPERTY_FEATURE_COUNT + 0;
+
+  /**
+   * The number of structural features of the '<em>Controller Handled Value Property</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CONTROLLER_HANDLED_VALUE_PROPERTY_FEATURE_COUNT = SINGLE_VALUE_PROPERTY_FEATURE_COUNT + 1;
+
+  /**
+   * The meta object id for the '{@link at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.impl.ScriptHandlerHandledValuePropertyImpl <em>Script Handler Handled Value Property</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.impl.ScriptHandlerHandledValuePropertyImpl
+   * @see at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.impl.FXGraphPackageImpl#getScriptHandlerHandledValueProperty()
+   * @generated
+   */
+  int SCRIPT_HANDLER_HANDLED_VALUE_PROPERTY = 19;
+
+  /**
+   * The feature id for the '<em><b>Functionname</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SCRIPT_HANDLER_HANDLED_VALUE_PROPERTY__FUNCTIONNAME = SINGLE_VALUE_PROPERTY_FEATURE_COUNT + 0;
+
+  /**
+   * The number of structural features of the '<em>Script Handler Handled Value Property</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SCRIPT_HANDLER_HANDLED_VALUE_PROPERTY_FEATURE_COUNT = SINGLE_VALUE_PROPERTY_FEATURE_COUNT + 1;
+
+  /**
+   * The meta object id for the '{@link at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.impl.ScriptValueExpressionImpl <em>Script Value Expression</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.impl.ScriptValueExpressionImpl
+   * @see at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.impl.FXGraphPackageImpl#getScriptValueExpression()
+   * @generated
+   */
+  int SCRIPT_VALUE_EXPRESSION = 20;
+
+  /**
+   * The feature id for the '<em><b>Sourcecode</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SCRIPT_VALUE_EXPRESSION__SOURCECODE = SINGLE_VALUE_PROPERTY_FEATURE_COUNT + 0;
+
+  /**
+   * The number of structural features of the '<em>Script Value Expression</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SCRIPT_VALUE_EXPRESSION_FEATURE_COUNT = SINGLE_VALUE_PROPERTY_FEATURE_COUNT + 1;
 
 
   /**
@@ -621,6 +797,17 @@ public interface FXGraphPackage extends EPackage
   EReference getModel_Imports();
 
   /**
+   * Returns the meta object for the containment reference '{@link at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.Model#getLanguage <em>Language</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Language</em>'.
+   * @see at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.Model#getLanguage()
+   * @see #getModel()
+   * @generated
+   */
+  EReference getModel_Language();
+
+  /**
    * Returns the meta object for the containment reference '{@link at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.Model#getRootNode <em>Root Node</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -630,6 +817,27 @@ public interface FXGraphPackage extends EPackage
    * @generated
    */
   EReference getModel_RootNode();
+
+  /**
+   * Returns the meta object for class '{@link at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.Language <em>Language</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Language</em>'.
+   * @see at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.Language
+   * @generated
+   */
+  EClass getLanguage();
+
+  /**
+   * Returns the meta object for the attribute '{@link at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.Language#getLanguage <em>Language</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Language</em>'.
+   * @see at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.Language#getLanguage()
+   * @see #getLanguage()
+   * @generated
+   */
+  EAttribute getLanguage_Language();
 
   /**
    * Returns the meta object for class '{@link at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.Import <em>Import</em>}'.
@@ -707,6 +915,17 @@ public interface FXGraphPackage extends EPackage
   EAttribute getElement_Name();
 
   /**
+   * Returns the meta object for the containment reference '{@link at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.Element#getController <em>Controller</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Controller</em>'.
+   * @see at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.Element#getController()
+   * @see #getElement()
+   * @generated
+   */
+  EReference getElement_Controller();
+
+  /**
    * Returns the meta object for the containment reference list '{@link at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.Element#getDefines <em>Defines</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -716,6 +935,17 @@ public interface FXGraphPackage extends EPackage
    * @generated
    */
   EReference getElement_Defines();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.Element#getScripts <em>Scripts</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Scripts</em>'.
+   * @see at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.Element#getScripts()
+   * @see #getElement()
+   * @generated
+   */
+  EReference getElement_Scripts();
 
   /**
    * Returns the meta object for the containment reference list '{@link at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.Element#getProperties <em>Properties</em>}'.
@@ -759,6 +989,38 @@ public interface FXGraphPackage extends EPackage
    * @generated
    */
   EReference getDefine_Element();
+
+  /**
+   * Returns the meta object for class '{@link at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.Script <em>Script</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Script</em>'.
+   * @see at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.Script
+   * @generated
+   */
+  EClass getScript();
+
+  /**
+   * Returns the meta object for the attribute '{@link at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.Script#getSource <em>Source</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Source</em>'.
+   * @see at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.Script#getSource()
+   * @see #getScript()
+   * @generated
+   */
+  EAttribute getScript_Source();
+
+  /**
+   * Returns the meta object for the attribute '{@link at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.Script#getSourcecode <em>Sourcecode</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Sourcecode</em>'.
+   * @see at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.Script#getSourcecode()
+   * @see #getScript()
+   * @generated
+   */
+  EAttribute getScript_Sourcecode();
 
   /**
    * Returns the meta object for class '{@link at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.StaticValueProperty <em>Static Value Property</em>}'.
@@ -1046,6 +1308,69 @@ public interface FXGraphPackage extends EPackage
   EReference getCopyValueProperty_Reference();
 
   /**
+   * Returns the meta object for class '{@link at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.ControllerHandledValueProperty <em>Controller Handled Value Property</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Controller Handled Value Property</em>'.
+   * @see at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.ControllerHandledValueProperty
+   * @generated
+   */
+  EClass getControllerHandledValueProperty();
+
+  /**
+   * Returns the meta object for the attribute '{@link at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.ControllerHandledValueProperty#getMethodname <em>Methodname</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Methodname</em>'.
+   * @see at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.ControllerHandledValueProperty#getMethodname()
+   * @see #getControllerHandledValueProperty()
+   * @generated
+   */
+  EAttribute getControllerHandledValueProperty_Methodname();
+
+  /**
+   * Returns the meta object for class '{@link at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.ScriptHandlerHandledValueProperty <em>Script Handler Handled Value Property</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Script Handler Handled Value Property</em>'.
+   * @see at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.ScriptHandlerHandledValueProperty
+   * @generated
+   */
+  EClass getScriptHandlerHandledValueProperty();
+
+  /**
+   * Returns the meta object for the attribute '{@link at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.ScriptHandlerHandledValueProperty#getFunctionname <em>Functionname</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Functionname</em>'.
+   * @see at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.ScriptHandlerHandledValueProperty#getFunctionname()
+   * @see #getScriptHandlerHandledValueProperty()
+   * @generated
+   */
+  EAttribute getScriptHandlerHandledValueProperty_Functionname();
+
+  /**
+   * Returns the meta object for class '{@link at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.ScriptValueExpression <em>Script Value Expression</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Script Value Expression</em>'.
+   * @see at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.ScriptValueExpression
+   * @generated
+   */
+  EClass getScriptValueExpression();
+
+  /**
+   * Returns the meta object for the attribute '{@link at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.ScriptValueExpression#getSourcecode <em>Sourcecode</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Sourcecode</em>'.
+   * @see at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.ScriptValueExpression#getSourcecode()
+   * @see #getScriptValueExpression()
+   * @generated
+   */
+  EAttribute getScriptValueExpression_Sourcecode();
+
+  /**
    * Returns the factory that creates the instances of the model.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -1087,12 +1412,38 @@ public interface FXGraphPackage extends EPackage
     EReference MODEL__IMPORTS = eINSTANCE.getModel_Imports();
 
     /**
+     * The meta object literal for the '<em><b>Language</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference MODEL__LANGUAGE = eINSTANCE.getModel_Language();
+
+    /**
      * The meta object literal for the '<em><b>Root Node</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
     EReference MODEL__ROOT_NODE = eINSTANCE.getModel_RootNode();
+
+    /**
+     * The meta object literal for the '{@link at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.impl.LanguageImpl <em>Language</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.impl.LanguageImpl
+     * @see at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.impl.FXGraphPackageImpl#getLanguage()
+     * @generated
+     */
+    EClass LANGUAGE = eINSTANCE.getLanguage();
+
+    /**
+     * The meta object literal for the '<em><b>Language</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute LANGUAGE__LANGUAGE = eINSTANCE.getLanguage_Language();
 
     /**
      * The meta object literal for the '{@link at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.impl.ImportImpl <em>Import</em>}' class.
@@ -1155,12 +1506,28 @@ public interface FXGraphPackage extends EPackage
     EAttribute ELEMENT__NAME = eINSTANCE.getElement_Name();
 
     /**
+     * The meta object literal for the '<em><b>Controller</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference ELEMENT__CONTROLLER = eINSTANCE.getElement_Controller();
+
+    /**
      * The meta object literal for the '<em><b>Defines</b></em>' containment reference list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
     EReference ELEMENT__DEFINES = eINSTANCE.getElement_Defines();
+
+    /**
+     * The meta object literal for the '<em><b>Scripts</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference ELEMENT__SCRIPTS = eINSTANCE.getElement_Scripts();
 
     /**
      * The meta object literal for the '<em><b>Properties</b></em>' containment reference list feature.
@@ -1195,6 +1562,32 @@ public interface FXGraphPackage extends EPackage
      * @generated
      */
     EReference DEFINE__ELEMENT = eINSTANCE.getDefine_Element();
+
+    /**
+     * The meta object literal for the '{@link at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.impl.ScriptImpl <em>Script</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.impl.ScriptImpl
+     * @see at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.impl.FXGraphPackageImpl#getScript()
+     * @generated
+     */
+    EClass SCRIPT = eINSTANCE.getScript();
+
+    /**
+     * The meta object literal for the '<em><b>Source</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute SCRIPT__SOURCE = eINSTANCE.getScript_Source();
+
+    /**
+     * The meta object literal for the '<em><b>Sourcecode</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute SCRIPT__SOURCECODE = eINSTANCE.getScript_Sourcecode();
 
     /**
      * The meta object literal for the '{@link at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.impl.StaticValuePropertyImpl <em>Static Value Property</em>}' class.
@@ -1435,6 +1828,60 @@ public interface FXGraphPackage extends EPackage
      * @generated
      */
     EReference COPY_VALUE_PROPERTY__REFERENCE = eINSTANCE.getCopyValueProperty_Reference();
+
+    /**
+     * The meta object literal for the '{@link at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.impl.ControllerHandledValuePropertyImpl <em>Controller Handled Value Property</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.impl.ControllerHandledValuePropertyImpl
+     * @see at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.impl.FXGraphPackageImpl#getControllerHandledValueProperty()
+     * @generated
+     */
+    EClass CONTROLLER_HANDLED_VALUE_PROPERTY = eINSTANCE.getControllerHandledValueProperty();
+
+    /**
+     * The meta object literal for the '<em><b>Methodname</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute CONTROLLER_HANDLED_VALUE_PROPERTY__METHODNAME = eINSTANCE.getControllerHandledValueProperty_Methodname();
+
+    /**
+     * The meta object literal for the '{@link at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.impl.ScriptHandlerHandledValuePropertyImpl <em>Script Handler Handled Value Property</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.impl.ScriptHandlerHandledValuePropertyImpl
+     * @see at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.impl.FXGraphPackageImpl#getScriptHandlerHandledValueProperty()
+     * @generated
+     */
+    EClass SCRIPT_HANDLER_HANDLED_VALUE_PROPERTY = eINSTANCE.getScriptHandlerHandledValueProperty();
+
+    /**
+     * The meta object literal for the '<em><b>Functionname</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute SCRIPT_HANDLER_HANDLED_VALUE_PROPERTY__FUNCTIONNAME = eINSTANCE.getScriptHandlerHandledValueProperty_Functionname();
+
+    /**
+     * The meta object literal for the '{@link at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.impl.ScriptValueExpressionImpl <em>Script Value Expression</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.impl.ScriptValueExpressionImpl
+     * @see at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.impl.FXGraphPackageImpl#getScriptValueExpression()
+     * @generated
+     */
+    EClass SCRIPT_VALUE_EXPRESSION = eINSTANCE.getScriptValueExpression();
+
+    /**
+     * The meta object literal for the '<em><b>Sourcecode</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute SCRIPT_VALUE_EXPRESSION__SOURCECODE = eINSTANCE.getScriptValueExpression_Sourcecode();
 
   }
 

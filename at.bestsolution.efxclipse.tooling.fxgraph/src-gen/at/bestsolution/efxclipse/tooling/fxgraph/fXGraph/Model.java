@@ -19,6 +19,7 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * <ul>
  *   <li>{@link at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.Model#getImports <em>Imports</em>}</li>
+ *   <li>{@link at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.Model#getLanguage <em>Language</em>}</li>
  *   <li>{@link at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.Model#getRootNode <em>Root Node</em>}</li>
  * </ul>
  * </p>
@@ -44,6 +45,32 @@ public interface Model extends EObject
    * @generated
    */
   EList<Import> getImports();
+
+  /**
+   * Returns the value of the '<em><b>Language</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Language</em>' containment reference isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Language</em>' containment reference.
+   * @see #setLanguage(Language)
+   * @see at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.FXGraphPackage#getModel_Language()
+   * @model containment="true"
+   * @generated
+   */
+  Language getLanguage();
+
+  /**
+   * Sets the value of the '{@link at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.Model#getLanguage <em>Language</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Language</em>' containment reference.
+   * @see #getLanguage()
+   * @generated
+   */
+  void setLanguage(Language value);
 
   /**
    * Returns the value of the '<em><b>Root Node</b></em>' containment reference.
