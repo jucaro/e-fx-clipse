@@ -10,6 +10,7 @@ import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.Define;
 import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.Element;
 import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.FXGraphPackage;
 import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.Property;
+import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.SimpleValueProperty;
 
 import java.util.Collection;
 
@@ -46,7 +47,7 @@ import org.eclipse.xtext.common.types.JvmParameterizedTypeReference;
  *
  * @generated
  */
-public class ElementImpl extends PropertyValueImpl implements Element
+public class ElementImpl extends SingleValuePropertyImpl implements Element
 {
   /**
    * The cached value of the '{@link #getType() <em>Type</em>}' containment reference.
@@ -59,24 +60,14 @@ public class ElementImpl extends PropertyValueImpl implements Element
   protected JvmParameterizedTypeReference type;
 
   /**
-   * The default value of the '{@link #getValue() <em>Value</em>}' attribute.
+   * The cached value of the '{@link #getValue() <em>Value</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @see #getValue()
    * @generated
    * @ordered
    */
-  protected static final String VALUE_EDEFAULT = null;
-
-  /**
-   * The cached value of the '{@link #getValue() <em>Value</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getValue()
-   * @generated
-   * @ordered
-   */
-  protected String value = VALUE_EDEFAULT;
+  protected SimpleValueProperty value;
 
   /**
    * The default value of the '{@link #getFactory() <em>Factory</em>}' attribute.
@@ -212,7 +203,7 @@ public class ElementImpl extends PropertyValueImpl implements Element
    * <!-- end-user-doc -->
    * @generated
    */
-  public String getValue()
+  public SimpleValueProperty getValue()
   {
     return value;
   }
@@ -222,12 +213,37 @@ public class ElementImpl extends PropertyValueImpl implements Element
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setValue(String newValue)
+  public NotificationChain basicSetValue(SimpleValueProperty newValue, NotificationChain msgs)
   {
-    String oldValue = value;
+    SimpleValueProperty oldValue = value;
     value = newValue;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, FXGraphPackage.ELEMENT__VALUE, oldValue, value));
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, FXGraphPackage.ELEMENT__VALUE, oldValue, newValue);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setValue(SimpleValueProperty newValue)
+  {
+    if (newValue != value)
+    {
+      NotificationChain msgs = null;
+      if (value != null)
+        msgs = ((InternalEObject)value).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - FXGraphPackage.ELEMENT__VALUE, null, msgs);
+      if (newValue != null)
+        msgs = ((InternalEObject)newValue).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - FXGraphPackage.ELEMENT__VALUE, null, msgs);
+      msgs = basicSetValue(newValue, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, FXGraphPackage.ELEMENT__VALUE, newValue, newValue));
   }
 
   /**
@@ -316,6 +332,8 @@ public class ElementImpl extends PropertyValueImpl implements Element
     {
       case FXGraphPackage.ELEMENT__TYPE:
         return basicSetType(null, msgs);
+      case FXGraphPackage.ELEMENT__VALUE:
+        return basicSetValue(null, msgs);
       case FXGraphPackage.ELEMENT__DEFINES:
         return ((InternalEList<?>)getDefines()).basicRemove(otherEnd, msgs);
       case FXGraphPackage.ELEMENT__PROPERTIES:
@@ -365,7 +383,7 @@ public class ElementImpl extends PropertyValueImpl implements Element
         setType((JvmParameterizedTypeReference)newValue);
         return;
       case FXGraphPackage.ELEMENT__VALUE:
-        setValue((String)newValue);
+        setValue((SimpleValueProperty)newValue);
         return;
       case FXGraphPackage.ELEMENT__FACTORY:
         setFactory((String)newValue);
@@ -399,7 +417,7 @@ public class ElementImpl extends PropertyValueImpl implements Element
         setType((JvmParameterizedTypeReference)null);
         return;
       case FXGraphPackage.ELEMENT__VALUE:
-        setValue(VALUE_EDEFAULT);
+        setValue((SimpleValueProperty)null);
         return;
       case FXGraphPackage.ELEMENT__FACTORY:
         setFactory(FACTORY_EDEFAULT);
@@ -430,7 +448,7 @@ public class ElementImpl extends PropertyValueImpl implements Element
       case FXGraphPackage.ELEMENT__TYPE:
         return type != null;
       case FXGraphPackage.ELEMENT__VALUE:
-        return VALUE_EDEFAULT == null ? value != null : !VALUE_EDEFAULT.equals(value);
+        return value != null;
       case FXGraphPackage.ELEMENT__FACTORY:
         return FACTORY_EDEFAULT == null ? factory != null : !FACTORY_EDEFAULT.equals(factory);
       case FXGraphPackage.ELEMENT__NAME:
@@ -454,9 +472,7 @@ public class ElementImpl extends PropertyValueImpl implements Element
     if (eIsProxy()) return super.toString();
 
     StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (value: ");
-    result.append(value);
-    result.append(", factory: ");
+    result.append(" (factory: ");
     result.append(factory);
     result.append(", name: ");
     result.append(name);

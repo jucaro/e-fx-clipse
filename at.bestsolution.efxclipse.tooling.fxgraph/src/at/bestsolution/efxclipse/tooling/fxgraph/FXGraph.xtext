@@ -11,7 +11,7 @@ Import:
 	'import' importedNamespace=QualifiedNameWithWildCard;
 
 Element:
-	type=JvmTypeReference ('(' (value = STRING | 'createdby' factory = STRING) ')')? ('id' name=ValidID)? ('{'
+	type=JvmTypeReference ('(' (value = SimpleValueProperty | 'createdby' factory=STRING) ')')? ('id' name=ValidID)? ('{'
 		('|' defines+=Define (',' defines+=Define)* '|')?
 		properties+=Property (',' properties+=Property)*
 	'}')?
@@ -22,26 +22,42 @@ Define:
 ;
 
 Property:
-	name=ID ':' value=PropertyValue 
-;
-
-PropertyValue:
-	ListProperty | ValueProperty | Element | ReferenceProperty | IncludeProperty
-;
-
-ListProperty:
-	'[' value += PropertyValue (',' value += PropertyValue)* ']'
+	name=ID ':' value=ValueProperty 
 ;
 
 ValueProperty:
-	stringValue=STRING | ( negative?='-' realValue=REAL | intValue=INT)
+	SingleValueProperty | MultiValueProperty
 ;
 
-ReferenceProperty:
+SingleValueProperty:
+	SimpleValueProperty | Element | ReferenceValueProperty | IncludeValueProperty
+;
+
+MultiValueProperty:
+	ListValueProperty | MapValueProperty
+;
+
+ListValueElement:
+	Element | ReferenceValueProperty | IncludeValueProperty
+;
+
+ListValueProperty:
+	'[' value += ListValueElement (',' value += ListValueElement)* ']'
+;
+
+MapValueProperty:
+	'{' properties+=Property (',' properties+=Property)* '}'
+;
+
+SimpleValueProperty:
+	stringValue=STRING | booleanValue=("true"|"false") | ( (negative?='-')? (intValue=INT | realValue=REAL))
+;
+
+ReferenceValueProperty:
 	'idref' reference=[Element|ValidID]
 ;
 
-IncludeProperty:
+IncludeValueProperty:
 	'include' source=STRING
 ;
 

@@ -73,11 +73,15 @@ public class FXGraphFactoryImpl extends EFactoryImpl implements FXGraphFactory
       case FXGraphPackage.ELEMENT: return createElement();
       case FXGraphPackage.DEFINE: return createDefine();
       case FXGraphPackage.PROPERTY: return createProperty();
-      case FXGraphPackage.PROPERTY_VALUE: return createPropertyValue();
-      case FXGraphPackage.LIST_PROPERTY: return createListProperty();
       case FXGraphPackage.VALUE_PROPERTY: return createValueProperty();
-      case FXGraphPackage.REFERENCE_PROPERTY: return createReferenceProperty();
-      case FXGraphPackage.INCLUDE_PROPERTY: return createIncludeProperty();
+      case FXGraphPackage.SINGLE_VALUE_PROPERTY: return createSingleValueProperty();
+      case FXGraphPackage.MULTI_VALUE_PROPERTY: return createMultiValueProperty();
+      case FXGraphPackage.LIST_VALUE_ELEMENT: return createListValueElement();
+      case FXGraphPackage.LIST_VALUE_PROPERTY: return createListValueProperty();
+      case FXGraphPackage.MAP_VALUE_PROPERTY: return createMapValueProperty();
+      case FXGraphPackage.SIMPLE_VALUE_PROPERTY: return createSimpleValueProperty();
+      case FXGraphPackage.REFERENCE_VALUE_PROPERTY: return createReferenceValueProperty();
+      case FXGraphPackage.INCLUDE_VALUE_PROPERTY: return createIncludeValueProperty();
       default:
         throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
     }
@@ -143,28 +147,6 @@ public class FXGraphFactoryImpl extends EFactoryImpl implements FXGraphFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public PropertyValue createPropertyValue()
-  {
-    PropertyValueImpl propertyValue = new PropertyValueImpl();
-    return propertyValue;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public ListProperty createListProperty()
-  {
-    ListPropertyImpl listProperty = new ListPropertyImpl();
-    return listProperty;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   public ValueProperty createValueProperty()
   {
     ValuePropertyImpl valueProperty = new ValuePropertyImpl();
@@ -176,10 +158,10 @@ public class FXGraphFactoryImpl extends EFactoryImpl implements FXGraphFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public ReferenceProperty createReferenceProperty()
+  public SingleValueProperty createSingleValueProperty()
   {
-    ReferencePropertyImpl referenceProperty = new ReferencePropertyImpl();
-    return referenceProperty;
+    SingleValuePropertyImpl singleValueProperty = new SingleValuePropertyImpl();
+    return singleValueProperty;
   }
 
   /**
@@ -187,10 +169,76 @@ public class FXGraphFactoryImpl extends EFactoryImpl implements FXGraphFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public IncludeProperty createIncludeProperty()
+  public MultiValueProperty createMultiValueProperty()
   {
-    IncludePropertyImpl includeProperty = new IncludePropertyImpl();
-    return includeProperty;
+    MultiValuePropertyImpl multiValueProperty = new MultiValuePropertyImpl();
+    return multiValueProperty;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public ListValueElement createListValueElement()
+  {
+    ListValueElementImpl listValueElement = new ListValueElementImpl();
+    return listValueElement;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public ListValueProperty createListValueProperty()
+  {
+    ListValuePropertyImpl listValueProperty = new ListValuePropertyImpl();
+    return listValueProperty;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public MapValueProperty createMapValueProperty()
+  {
+    MapValuePropertyImpl mapValueProperty = new MapValuePropertyImpl();
+    return mapValueProperty;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public SimpleValueProperty createSimpleValueProperty()
+  {
+    SimpleValuePropertyImpl simpleValueProperty = new SimpleValuePropertyImpl();
+    return simpleValueProperty;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public ReferenceValueProperty createReferenceValueProperty()
+  {
+    ReferenceValuePropertyImpl referenceValueProperty = new ReferenceValuePropertyImpl();
+    return referenceValueProperty;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public IncludeValueProperty createIncludeValueProperty()
+  {
+    IncludeValuePropertyImpl includeValueProperty = new IncludeValuePropertyImpl();
+    return includeValueProperty;
   }
 
   /**

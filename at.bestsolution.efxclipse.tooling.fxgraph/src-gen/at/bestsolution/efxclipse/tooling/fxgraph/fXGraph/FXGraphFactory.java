@@ -72,24 +72,6 @@ public interface FXGraphFactory extends EFactory
   Property createProperty();
 
   /**
-   * Returns a new object of class '<em>Property Value</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Property Value</em>'.
-   * @generated
-   */
-  PropertyValue createPropertyValue();
-
-  /**
-   * Returns a new object of class '<em>List Property</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>List Property</em>'.
-   * @generated
-   */
-  ListProperty createListProperty();
-
-  /**
    * Returns a new object of class '<em>Value Property</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -99,22 +81,76 @@ public interface FXGraphFactory extends EFactory
   ValueProperty createValueProperty();
 
   /**
-   * Returns a new object of class '<em>Reference Property</em>'.
+   * Returns a new object of class '<em>Single Value Property</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Reference Property</em>'.
+   * @return a new object of class '<em>Single Value Property</em>'.
    * @generated
    */
-  ReferenceProperty createReferenceProperty();
+  SingleValueProperty createSingleValueProperty();
 
   /**
-   * Returns a new object of class '<em>Include Property</em>'.
+   * Returns a new object of class '<em>Multi Value Property</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Include Property</em>'.
+   * @return a new object of class '<em>Multi Value Property</em>'.
    * @generated
    */
-  IncludeProperty createIncludeProperty();
+  MultiValueProperty createMultiValueProperty();
+
+  /**
+   * Returns a new object of class '<em>List Value Element</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>List Value Element</em>'.
+   * @generated
+   */
+  ListValueElement createListValueElement();
+
+  /**
+   * Returns a new object of class '<em>List Value Property</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>List Value Property</em>'.
+   * @generated
+   */
+  ListValueProperty createListValueProperty();
+
+  /**
+   * Returns a new object of class '<em>Map Value Property</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Map Value Property</em>'.
+   * @generated
+   */
+  MapValueProperty createMapValueProperty();
+
+  /**
+   * Returns a new object of class '<em>Simple Value Property</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Simple Value Property</em>'.
+   * @generated
+   */
+  SimpleValueProperty createSimpleValueProperty();
+
+  /**
+   * Returns a new object of class '<em>Reference Value Property</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Reference Value Property</em>'.
+   * @generated
+   */
+  ReferenceValueProperty createReferenceValueProperty();
+
+  /**
+   * Returns a new object of class '<em>Include Value Property</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Include Value Property</em>'.
+   * @generated
+   */
+  IncludeValueProperty createIncludeValueProperty();
 
   /**
    * Returns the package supported by this factory.

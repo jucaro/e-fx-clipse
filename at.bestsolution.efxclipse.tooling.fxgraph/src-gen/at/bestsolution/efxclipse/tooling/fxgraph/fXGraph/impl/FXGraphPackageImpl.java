@@ -11,12 +11,16 @@ import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.Element;
 import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.FXGraphFactory;
 import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.FXGraphPackage;
 import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.Import;
-import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.IncludeProperty;
-import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.ListProperty;
+import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.IncludeValueProperty;
+import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.ListValueElement;
+import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.ListValueProperty;
+import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.MapValueProperty;
 import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.Model;
+import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.MultiValueProperty;
 import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.Property;
-import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.PropertyValue;
-import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.ReferenceProperty;
+import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.ReferenceValueProperty;
+import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.SimpleValueProperty;
+import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.SingleValueProperty;
 import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.ValueProperty;
 
 import org.eclipse.emf.ecore.EAttribute;
@@ -76,20 +80,6 @@ public class FXGraphPackageImpl extends EPackageImpl implements FXGraphPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass propertyValueEClass = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  private EClass listPropertyEClass = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   private EClass valuePropertyEClass = null;
 
   /**
@@ -97,14 +87,56 @@ public class FXGraphPackageImpl extends EPackageImpl implements FXGraphPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass referencePropertyEClass = null;
+  private EClass singleValuePropertyEClass = null;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass includePropertyEClass = null;
+  private EClass multiValuePropertyEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass listValueElementEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass listValuePropertyEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass mapValuePropertyEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass simpleValuePropertyEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass referenceValuePropertyEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass includeValuePropertyEClass = null;
 
   /**
    * Creates an instance of the model <b>Package</b>, registered with
@@ -247,9 +279,9 @@ public class FXGraphPackageImpl extends EPackageImpl implements FXGraphPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getElement_Value()
+  public EReference getElement_Value()
   {
-    return (EAttribute)elementEClass.getEStructuralFeatures().get(1);
+    return (EReference)elementEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -347,36 +379,6 @@ public class FXGraphPackageImpl extends EPackageImpl implements FXGraphPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getPropertyValue()
-  {
-    return propertyValueEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EClass getListProperty()
-  {
-    return listPropertyEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EReference getListProperty_Value()
-  {
-    return (EReference)listPropertyEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   public EClass getValueProperty()
   {
     return valuePropertyEClass;
@@ -387,9 +389,9 @@ public class FXGraphPackageImpl extends EPackageImpl implements FXGraphPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getValueProperty_StringValue()
+  public EClass getSingleValueProperty()
   {
-    return (EAttribute)valuePropertyEClass.getEStructuralFeatures().get(0);
+    return singleValuePropertyEClass;
   }
 
   /**
@@ -397,9 +399,9 @@ public class FXGraphPackageImpl extends EPackageImpl implements FXGraphPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getValueProperty_Negative()
+  public EClass getMultiValueProperty()
   {
-    return (EAttribute)valuePropertyEClass.getEStructuralFeatures().get(1);
+    return multiValuePropertyEClass;
   }
 
   /**
@@ -407,9 +409,9 @@ public class FXGraphPackageImpl extends EPackageImpl implements FXGraphPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getValueProperty_RealValue()
+  public EClass getListValueElement()
   {
-    return (EAttribute)valuePropertyEClass.getEStructuralFeatures().get(2);
+    return listValueElementEClass;
   }
 
   /**
@@ -417,9 +419,9 @@ public class FXGraphPackageImpl extends EPackageImpl implements FXGraphPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getValueProperty_IntValue()
+  public EClass getListValueProperty()
   {
-    return (EAttribute)valuePropertyEClass.getEStructuralFeatures().get(3);
+    return listValuePropertyEClass;
   }
 
   /**
@@ -427,9 +429,9 @@ public class FXGraphPackageImpl extends EPackageImpl implements FXGraphPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getReferenceProperty()
+  public EReference getListValueProperty_Value()
   {
-    return referencePropertyEClass;
+    return (EReference)listValuePropertyEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -437,9 +439,9 @@ public class FXGraphPackageImpl extends EPackageImpl implements FXGraphPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getReferenceProperty_Reference()
+  public EClass getMapValueProperty()
   {
-    return (EReference)referencePropertyEClass.getEStructuralFeatures().get(0);
+    return mapValuePropertyEClass;
   }
 
   /**
@@ -447,9 +449,9 @@ public class FXGraphPackageImpl extends EPackageImpl implements FXGraphPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getIncludeProperty()
+  public EReference getMapValueProperty_Properties()
   {
-    return includePropertyEClass;
+    return (EReference)mapValuePropertyEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -457,9 +459,99 @@ public class FXGraphPackageImpl extends EPackageImpl implements FXGraphPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getIncludeProperty_Source()
+  public EClass getSimpleValueProperty()
   {
-    return (EAttribute)includePropertyEClass.getEStructuralFeatures().get(0);
+    return simpleValuePropertyEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getSimpleValueProperty_StringValue()
+  {
+    return (EAttribute)simpleValuePropertyEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getSimpleValueProperty_BooleanValue()
+  {
+    return (EAttribute)simpleValuePropertyEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getSimpleValueProperty_Negative()
+  {
+    return (EAttribute)simpleValuePropertyEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getSimpleValueProperty_IntValue()
+  {
+    return (EAttribute)simpleValuePropertyEClass.getEStructuralFeatures().get(3);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getSimpleValueProperty_RealValue()
+  {
+    return (EAttribute)simpleValuePropertyEClass.getEStructuralFeatures().get(4);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getReferenceValueProperty()
+  {
+    return referenceValuePropertyEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getReferenceValueProperty_Reference()
+  {
+    return (EReference)referenceValuePropertyEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getIncludeValueProperty()
+  {
+    return includeValuePropertyEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getIncludeValueProperty_Source()
+  {
+    return (EAttribute)includeValuePropertyEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -501,7 +593,7 @@ public class FXGraphPackageImpl extends EPackageImpl implements FXGraphPackage
 
     elementEClass = createEClass(ELEMENT);
     createEReference(elementEClass, ELEMENT__TYPE);
-    createEAttribute(elementEClass, ELEMENT__VALUE);
+    createEReference(elementEClass, ELEMENT__VALUE);
     createEAttribute(elementEClass, ELEMENT__FACTORY);
     createEAttribute(elementEClass, ELEMENT__NAME);
     createEReference(elementEClass, ELEMENT__DEFINES);
@@ -514,22 +606,32 @@ public class FXGraphPackageImpl extends EPackageImpl implements FXGraphPackage
     createEAttribute(propertyEClass, PROPERTY__NAME);
     createEReference(propertyEClass, PROPERTY__VALUE);
 
-    propertyValueEClass = createEClass(PROPERTY_VALUE);
-
-    listPropertyEClass = createEClass(LIST_PROPERTY);
-    createEReference(listPropertyEClass, LIST_PROPERTY__VALUE);
-
     valuePropertyEClass = createEClass(VALUE_PROPERTY);
-    createEAttribute(valuePropertyEClass, VALUE_PROPERTY__STRING_VALUE);
-    createEAttribute(valuePropertyEClass, VALUE_PROPERTY__NEGATIVE);
-    createEAttribute(valuePropertyEClass, VALUE_PROPERTY__REAL_VALUE);
-    createEAttribute(valuePropertyEClass, VALUE_PROPERTY__INT_VALUE);
 
-    referencePropertyEClass = createEClass(REFERENCE_PROPERTY);
-    createEReference(referencePropertyEClass, REFERENCE_PROPERTY__REFERENCE);
+    singleValuePropertyEClass = createEClass(SINGLE_VALUE_PROPERTY);
 
-    includePropertyEClass = createEClass(INCLUDE_PROPERTY);
-    createEAttribute(includePropertyEClass, INCLUDE_PROPERTY__SOURCE);
+    multiValuePropertyEClass = createEClass(MULTI_VALUE_PROPERTY);
+
+    listValueElementEClass = createEClass(LIST_VALUE_ELEMENT);
+
+    listValuePropertyEClass = createEClass(LIST_VALUE_PROPERTY);
+    createEReference(listValuePropertyEClass, LIST_VALUE_PROPERTY__VALUE);
+
+    mapValuePropertyEClass = createEClass(MAP_VALUE_PROPERTY);
+    createEReference(mapValuePropertyEClass, MAP_VALUE_PROPERTY__PROPERTIES);
+
+    simpleValuePropertyEClass = createEClass(SIMPLE_VALUE_PROPERTY);
+    createEAttribute(simpleValuePropertyEClass, SIMPLE_VALUE_PROPERTY__STRING_VALUE);
+    createEAttribute(simpleValuePropertyEClass, SIMPLE_VALUE_PROPERTY__BOOLEAN_VALUE);
+    createEAttribute(simpleValuePropertyEClass, SIMPLE_VALUE_PROPERTY__NEGATIVE);
+    createEAttribute(simpleValuePropertyEClass, SIMPLE_VALUE_PROPERTY__INT_VALUE);
+    createEAttribute(simpleValuePropertyEClass, SIMPLE_VALUE_PROPERTY__REAL_VALUE);
+
+    referenceValuePropertyEClass = createEClass(REFERENCE_VALUE_PROPERTY);
+    createEReference(referenceValuePropertyEClass, REFERENCE_VALUE_PROPERTY__REFERENCE);
+
+    includeValuePropertyEClass = createEClass(INCLUDE_VALUE_PROPERTY);
+    createEAttribute(includeValuePropertyEClass, INCLUDE_VALUE_PROPERTY__SOURCE);
   }
 
   /**
@@ -564,11 +666,17 @@ public class FXGraphPackageImpl extends EPackageImpl implements FXGraphPackage
     // Set bounds for type parameters
 
     // Add supertypes to classes
-    elementEClass.getESuperTypes().add(this.getPropertyValue());
-    listPropertyEClass.getESuperTypes().add(this.getPropertyValue());
-    valuePropertyEClass.getESuperTypes().add(this.getPropertyValue());
-    referencePropertyEClass.getESuperTypes().add(this.getPropertyValue());
-    includePropertyEClass.getESuperTypes().add(this.getPropertyValue());
+    elementEClass.getESuperTypes().add(this.getSingleValueProperty());
+    elementEClass.getESuperTypes().add(this.getListValueElement());
+    singleValuePropertyEClass.getESuperTypes().add(this.getValueProperty());
+    multiValuePropertyEClass.getESuperTypes().add(this.getValueProperty());
+    listValuePropertyEClass.getESuperTypes().add(this.getMultiValueProperty());
+    mapValuePropertyEClass.getESuperTypes().add(this.getMultiValueProperty());
+    simpleValuePropertyEClass.getESuperTypes().add(this.getSingleValueProperty());
+    referenceValuePropertyEClass.getESuperTypes().add(this.getSingleValueProperty());
+    referenceValuePropertyEClass.getESuperTypes().add(this.getListValueElement());
+    includeValuePropertyEClass.getESuperTypes().add(this.getSingleValueProperty());
+    includeValuePropertyEClass.getESuperTypes().add(this.getListValueElement());
 
     // Initialize classes and features; add operations and parameters
     initEClass(modelEClass, Model.class, "Model", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -580,7 +688,7 @@ public class FXGraphPackageImpl extends EPackageImpl implements FXGraphPackage
 
     initEClass(elementEClass, Element.class, "Element", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getElement_Type(), theTypesPackage.getJvmParameterizedTypeReference(), null, "type", null, 0, 1, Element.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getElement_Value(), ecorePackage.getEString(), "value", null, 0, 1, Element.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getElement_Value(), this.getSimpleValueProperty(), null, "value", null, 0, 1, Element.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getElement_Factory(), ecorePackage.getEString(), "factory", null, 0, 1, Element.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getElement_Name(), ecorePackage.getEString(), "name", null, 0, 1, Element.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getElement_Defines(), this.getDefine(), null, "defines", null, 0, -1, Element.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -591,24 +699,34 @@ public class FXGraphPackageImpl extends EPackageImpl implements FXGraphPackage
 
     initEClass(propertyEClass, Property.class, "Property", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getProperty_Name(), ecorePackage.getEString(), "name", null, 0, 1, Property.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getProperty_Value(), this.getPropertyValue(), null, "value", null, 0, 1, Property.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(propertyValueEClass, PropertyValue.class, "PropertyValue", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
-    initEClass(listPropertyEClass, ListProperty.class, "ListProperty", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getListProperty_Value(), this.getPropertyValue(), null, "value", null, 0, -1, ListProperty.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getProperty_Value(), this.getValueProperty(), null, "value", null, 0, 1, Property.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(valuePropertyEClass, ValueProperty.class, "ValueProperty", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getValueProperty_StringValue(), ecorePackage.getEString(), "stringValue", null, 0, 1, ValueProperty.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getValueProperty_Negative(), ecorePackage.getEBoolean(), "negative", null, 0, 1, ValueProperty.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getValueProperty_RealValue(), ecorePackage.getEDouble(), "realValue", null, 0, 1, ValueProperty.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getValueProperty_IntValue(), ecorePackage.getEInt(), "intValue", null, 0, 1, ValueProperty.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-    initEClass(referencePropertyEClass, ReferenceProperty.class, "ReferenceProperty", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getReferenceProperty_Reference(), this.getElement(), null, "reference", null, 0, 1, ReferenceProperty.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEClass(singleValuePropertyEClass, SingleValueProperty.class, "SingleValueProperty", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
-    initEClass(includePropertyEClass, IncludeProperty.class, "IncludeProperty", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getIncludeProperty_Source(), ecorePackage.getEString(), "source", null, 0, 1, IncludeProperty.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEClass(multiValuePropertyEClass, MultiValueProperty.class, "MultiValueProperty", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+    initEClass(listValueElementEClass, ListValueElement.class, "ListValueElement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+    initEClass(listValuePropertyEClass, ListValueProperty.class, "ListValueProperty", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getListValueProperty_Value(), this.getListValueElement(), null, "value", null, 0, -1, ListValueProperty.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(mapValuePropertyEClass, MapValueProperty.class, "MapValueProperty", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getMapValueProperty_Properties(), this.getProperty(), null, "properties", null, 0, -1, MapValueProperty.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(simpleValuePropertyEClass, SimpleValueProperty.class, "SimpleValueProperty", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getSimpleValueProperty_StringValue(), ecorePackage.getEString(), "stringValue", null, 0, 1, SimpleValueProperty.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getSimpleValueProperty_BooleanValue(), ecorePackage.getEString(), "booleanValue", null, 0, 1, SimpleValueProperty.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getSimpleValueProperty_Negative(), ecorePackage.getEBoolean(), "negative", null, 0, 1, SimpleValueProperty.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getSimpleValueProperty_IntValue(), ecorePackage.getEInt(), "intValue", null, 0, 1, SimpleValueProperty.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getSimpleValueProperty_RealValue(), ecorePackage.getEDouble(), "realValue", null, 0, 1, SimpleValueProperty.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(referenceValuePropertyEClass, ReferenceValueProperty.class, "ReferenceValueProperty", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getReferenceValueProperty_Reference(), this.getElement(), null, "reference", null, 0, 1, ReferenceValueProperty.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(includeValuePropertyEClass, IncludeValueProperty.class, "IncludeValueProperty", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getIncludeValueProperty_Source(), ecorePackage.getEString(), "source", null, 0, 1, IncludeValueProperty.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     // Create resource
     createResource(eNS_URI);

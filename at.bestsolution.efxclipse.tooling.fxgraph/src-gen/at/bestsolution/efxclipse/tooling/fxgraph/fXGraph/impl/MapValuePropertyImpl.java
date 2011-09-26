@@ -7,8 +7,8 @@
 package at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.impl;
 
 import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.FXGraphPackage;
-import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.ListProperty;
-import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.PropertyValue;
+import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.MapValueProperty;
+import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.Property;
 
 import java.util.Collection;
 
@@ -24,35 +24,35 @@ import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>List Property</b></em>'.
+ * An implementation of the model object '<em><b>Map Value Property</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.impl.ListPropertyImpl#getValue <em>Value</em>}</li>
+ *   <li>{@link at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.impl.MapValuePropertyImpl#getProperties <em>Properties</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
-public class ListPropertyImpl extends PropertyValueImpl implements ListProperty
+public class MapValuePropertyImpl extends MultiValuePropertyImpl implements MapValueProperty
 {
   /**
-   * The cached value of the '{@link #getValue() <em>Value</em>}' containment reference list.
+   * The cached value of the '{@link #getProperties() <em>Properties</em>}' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getValue()
+   * @see #getProperties()
    * @generated
    * @ordered
    */
-  protected EList<PropertyValue> value;
+  protected EList<Property> properties;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  protected ListPropertyImpl()
+  protected MapValuePropertyImpl()
   {
     super();
   }
@@ -65,7 +65,7 @@ public class ListPropertyImpl extends PropertyValueImpl implements ListProperty
   @Override
   protected EClass eStaticClass()
   {
-    return FXGraphPackage.Literals.LIST_PROPERTY;
+    return FXGraphPackage.Literals.MAP_VALUE_PROPERTY;
   }
 
   /**
@@ -73,13 +73,13 @@ public class ListPropertyImpl extends PropertyValueImpl implements ListProperty
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<PropertyValue> getValue()
+  public EList<Property> getProperties()
   {
-    if (value == null)
+    if (properties == null)
     {
-      value = new EObjectContainmentEList<PropertyValue>(PropertyValue.class, this, FXGraphPackage.LIST_PROPERTY__VALUE);
+      properties = new EObjectContainmentEList<Property>(Property.class, this, FXGraphPackage.MAP_VALUE_PROPERTY__PROPERTIES);
     }
-    return value;
+    return properties;
   }
 
   /**
@@ -92,8 +92,8 @@ public class ListPropertyImpl extends PropertyValueImpl implements ListProperty
   {
     switch (featureID)
     {
-      case FXGraphPackage.LIST_PROPERTY__VALUE:
-        return ((InternalEList<?>)getValue()).basicRemove(otherEnd, msgs);
+      case FXGraphPackage.MAP_VALUE_PROPERTY__PROPERTIES:
+        return ((InternalEList<?>)getProperties()).basicRemove(otherEnd, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -108,8 +108,8 @@ public class ListPropertyImpl extends PropertyValueImpl implements ListProperty
   {
     switch (featureID)
     {
-      case FXGraphPackage.LIST_PROPERTY__VALUE:
-        return getValue();
+      case FXGraphPackage.MAP_VALUE_PROPERTY__PROPERTIES:
+        return getProperties();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -125,9 +125,9 @@ public class ListPropertyImpl extends PropertyValueImpl implements ListProperty
   {
     switch (featureID)
     {
-      case FXGraphPackage.LIST_PROPERTY__VALUE:
-        getValue().clear();
-        getValue().addAll((Collection<? extends PropertyValue>)newValue);
+      case FXGraphPackage.MAP_VALUE_PROPERTY__PROPERTIES:
+        getProperties().clear();
+        getProperties().addAll((Collection<? extends Property>)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -143,8 +143,8 @@ public class ListPropertyImpl extends PropertyValueImpl implements ListProperty
   {
     switch (featureID)
     {
-      case FXGraphPackage.LIST_PROPERTY__VALUE:
-        getValue().clear();
+      case FXGraphPackage.MAP_VALUE_PROPERTY__PROPERTIES:
+        getProperties().clear();
         return;
     }
     super.eUnset(featureID);
@@ -160,10 +160,10 @@ public class ListPropertyImpl extends PropertyValueImpl implements ListProperty
   {
     switch (featureID)
     {
-      case FXGraphPackage.LIST_PROPERTY__VALUE:
-        return value != null && !value.isEmpty();
+      case FXGraphPackage.MAP_VALUE_PROPERTY__PROPERTIES:
+        return properties != null && !properties.isEmpty();
     }
     return super.eIsSet(featureID);
   }
 
-} //ListPropertyImpl
+} //MapValuePropertyImpl

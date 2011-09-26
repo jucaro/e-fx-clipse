@@ -8,7 +8,7 @@ package at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.impl;
 
 import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.FXGraphPackage;
 import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.Property;
-import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.PropertyValue;
+import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.ValueProperty;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
@@ -63,7 +63,7 @@ public class PropertyImpl extends MinimalEObjectImpl.Container implements Proper
    * @generated
    * @ordered
    */
-  protected PropertyValue value;
+  protected ValueProperty value;
 
   /**
    * <!-- begin-user-doc -->
@@ -114,7 +114,7 @@ public class PropertyImpl extends MinimalEObjectImpl.Container implements Proper
    * <!-- end-user-doc -->
    * @generated
    */
-  public PropertyValue getValue()
+  public ValueProperty getValue()
   {
     return value;
   }
@@ -124,9 +124,9 @@ public class PropertyImpl extends MinimalEObjectImpl.Container implements Proper
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetValue(PropertyValue newValue, NotificationChain msgs)
+  public NotificationChain basicSetValue(ValueProperty newValue, NotificationChain msgs)
   {
-    PropertyValue oldValue = value;
+    ValueProperty oldValue = value;
     value = newValue;
     if (eNotificationRequired())
     {
@@ -141,7 +141,7 @@ public class PropertyImpl extends MinimalEObjectImpl.Container implements Proper
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setValue(PropertyValue newValue)
+  public void setValue(ValueProperty newValue)
   {
     if (newValue != value)
     {
@@ -205,7 +205,7 @@ public class PropertyImpl extends MinimalEObjectImpl.Container implements Proper
         setName((String)newValue);
         return;
       case FXGraphPackage.PROPERTY__VALUE:
-        setValue((PropertyValue)newValue);
+        setValue((ValueProperty)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -225,7 +225,7 @@ public class PropertyImpl extends MinimalEObjectImpl.Container implements Proper
         setName(NAME_EDEFAULT);
         return;
       case FXGraphPackage.PROPERTY__VALUE:
-        setValue((PropertyValue)null);
+        setValue((ValueProperty)null);
         return;
     }
     super.eUnset(featureID);

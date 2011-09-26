@@ -62,12 +62,12 @@ public interface Property extends EObject
    * </p>
    * <!-- end-user-doc -->
    * @return the value of the '<em>Value</em>' containment reference.
-   * @see #setValue(PropertyValue)
+   * @see #setValue(ValueProperty)
    * @see at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.FXGraphPackage#getProperty_Value()
    * @model containment="true"
    * @generated
    */
-  PropertyValue getValue();
+  ValueProperty getValue();
 
   /**
    * Sets the value of the '{@link at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.Property#getValue <em>Value</em>}' containment reference.
@@ -77,6 +77,6 @@ public interface Property extends EObject
    * @see #getValue()
    * @generated
    */
-  void setValue(PropertyValue value);
+  void setValue(ValueProperty value);
 
 } // Property

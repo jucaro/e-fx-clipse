@@ -126,23 +126,42 @@ public interface FXGraphPackage extends EPackage
   int IMPORT_FEATURE_COUNT = 1;
 
   /**
-   * The meta object id for the '{@link at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.impl.PropertyValueImpl <em>Property Value</em>}' class.
+   * The meta object id for the '{@link at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.impl.ValuePropertyImpl <em>Value Property</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.impl.PropertyValueImpl
-   * @see at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.impl.FXGraphPackageImpl#getPropertyValue()
+   * @see at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.impl.ValuePropertyImpl
+   * @see at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.impl.FXGraphPackageImpl#getValueProperty()
    * @generated
    */
-  int PROPERTY_VALUE = 5;
+  int VALUE_PROPERTY = 5;
 
   /**
-   * The number of structural features of the '<em>Property Value</em>' class.
+   * The number of structural features of the '<em>Value Property</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int PROPERTY_VALUE_FEATURE_COUNT = 0;
+  int VALUE_PROPERTY_FEATURE_COUNT = 0;
+
+  /**
+   * The meta object id for the '{@link at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.impl.SingleValuePropertyImpl <em>Single Value Property</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.impl.SingleValuePropertyImpl
+   * @see at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.impl.FXGraphPackageImpl#getSingleValueProperty()
+   * @generated
+   */
+  int SINGLE_VALUE_PROPERTY = 6;
+
+  /**
+   * The number of structural features of the '<em>Single Value Property</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SINGLE_VALUE_PROPERTY_FEATURE_COUNT = VALUE_PROPERTY_FEATURE_COUNT + 0;
 
   /**
    * The meta object id for the '{@link at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.impl.ElementImpl <em>Element</em>}' class.
@@ -161,16 +180,16 @@ public interface FXGraphPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ELEMENT__TYPE = PROPERTY_VALUE_FEATURE_COUNT + 0;
+  int ELEMENT__TYPE = SINGLE_VALUE_PROPERTY_FEATURE_COUNT + 0;
 
   /**
-   * The feature id for the '<em><b>Value</b></em>' attribute.
+   * The feature id for the '<em><b>Value</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int ELEMENT__VALUE = PROPERTY_VALUE_FEATURE_COUNT + 1;
+  int ELEMENT__VALUE = SINGLE_VALUE_PROPERTY_FEATURE_COUNT + 1;
 
   /**
    * The feature id for the '<em><b>Factory</b></em>' attribute.
@@ -179,7 +198,7 @@ public interface FXGraphPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ELEMENT__FACTORY = PROPERTY_VALUE_FEATURE_COUNT + 2;
+  int ELEMENT__FACTORY = SINGLE_VALUE_PROPERTY_FEATURE_COUNT + 2;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -188,7 +207,7 @@ public interface FXGraphPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ELEMENT__NAME = PROPERTY_VALUE_FEATURE_COUNT + 3;
+  int ELEMENT__NAME = SINGLE_VALUE_PROPERTY_FEATURE_COUNT + 3;
 
   /**
    * The feature id for the '<em><b>Defines</b></em>' containment reference list.
@@ -197,7 +216,7 @@ public interface FXGraphPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ELEMENT__DEFINES = PROPERTY_VALUE_FEATURE_COUNT + 4;
+  int ELEMENT__DEFINES = SINGLE_VALUE_PROPERTY_FEATURE_COUNT + 4;
 
   /**
    * The feature id for the '<em><b>Properties</b></em>' containment reference list.
@@ -206,7 +225,7 @@ public interface FXGraphPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ELEMENT__PROPERTIES = PROPERTY_VALUE_FEATURE_COUNT + 5;
+  int ELEMENT__PROPERTIES = SINGLE_VALUE_PROPERTY_FEATURE_COUNT + 5;
 
   /**
    * The number of structural features of the '<em>Element</em>' class.
@@ -215,7 +234,7 @@ public interface FXGraphPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ELEMENT_FEATURE_COUNT = PROPERTY_VALUE_FEATURE_COUNT + 6;
+  int ELEMENT_FEATURE_COUNT = SINGLE_VALUE_PROPERTY_FEATURE_COUNT + 6;
 
   /**
    * The meta object id for the '{@link at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.impl.DefineImpl <em>Define</em>}' class.
@@ -283,14 +302,52 @@ public interface FXGraphPackage extends EPackage
   int PROPERTY_FEATURE_COUNT = 2;
 
   /**
-   * The meta object id for the '{@link at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.impl.ListPropertyImpl <em>List Property</em>}' class.
+   * The meta object id for the '{@link at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.impl.MultiValuePropertyImpl <em>Multi Value Property</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.impl.ListPropertyImpl
-   * @see at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.impl.FXGraphPackageImpl#getListProperty()
+   * @see at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.impl.MultiValuePropertyImpl
+   * @see at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.impl.FXGraphPackageImpl#getMultiValueProperty()
    * @generated
    */
-  int LIST_PROPERTY = 6;
+  int MULTI_VALUE_PROPERTY = 7;
+
+  /**
+   * The number of structural features of the '<em>Multi Value Property</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int MULTI_VALUE_PROPERTY_FEATURE_COUNT = VALUE_PROPERTY_FEATURE_COUNT + 0;
+
+  /**
+   * The meta object id for the '{@link at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.impl.ListValueElementImpl <em>List Value Element</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.impl.ListValueElementImpl
+   * @see at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.impl.FXGraphPackageImpl#getListValueElement()
+   * @generated
+   */
+  int LIST_VALUE_ELEMENT = 8;
+
+  /**
+   * The number of structural features of the '<em>List Value Element</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int LIST_VALUE_ELEMENT_FEATURE_COUNT = 0;
+
+  /**
+   * The meta object id for the '{@link at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.impl.ListValuePropertyImpl <em>List Value Property</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.impl.ListValuePropertyImpl
+   * @see at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.impl.FXGraphPackageImpl#getListValueProperty()
+   * @generated
+   */
+  int LIST_VALUE_PROPERTY = 9;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' containment reference list.
@@ -299,26 +356,54 @@ public interface FXGraphPackage extends EPackage
    * @generated
    * @ordered
    */
-  int LIST_PROPERTY__VALUE = PROPERTY_VALUE_FEATURE_COUNT + 0;
+  int LIST_VALUE_PROPERTY__VALUE = MULTI_VALUE_PROPERTY_FEATURE_COUNT + 0;
 
   /**
-   * The number of structural features of the '<em>List Property</em>' class.
+   * The number of structural features of the '<em>List Value Property</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int LIST_PROPERTY_FEATURE_COUNT = PROPERTY_VALUE_FEATURE_COUNT + 1;
+  int LIST_VALUE_PROPERTY_FEATURE_COUNT = MULTI_VALUE_PROPERTY_FEATURE_COUNT + 1;
 
   /**
-   * The meta object id for the '{@link at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.impl.ValuePropertyImpl <em>Value Property</em>}' class.
+   * The meta object id for the '{@link at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.impl.MapValuePropertyImpl <em>Map Value Property</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.impl.ValuePropertyImpl
-   * @see at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.impl.FXGraphPackageImpl#getValueProperty()
+   * @see at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.impl.MapValuePropertyImpl
+   * @see at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.impl.FXGraphPackageImpl#getMapValueProperty()
    * @generated
    */
-  int VALUE_PROPERTY = 7;
+  int MAP_VALUE_PROPERTY = 10;
+
+  /**
+   * The feature id for the '<em><b>Properties</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int MAP_VALUE_PROPERTY__PROPERTIES = MULTI_VALUE_PROPERTY_FEATURE_COUNT + 0;
+
+  /**
+   * The number of structural features of the '<em>Map Value Property</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int MAP_VALUE_PROPERTY_FEATURE_COUNT = MULTI_VALUE_PROPERTY_FEATURE_COUNT + 1;
+
+  /**
+   * The meta object id for the '{@link at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.impl.SimpleValuePropertyImpl <em>Simple Value Property</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.impl.SimpleValuePropertyImpl
+   * @see at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.impl.FXGraphPackageImpl#getSimpleValueProperty()
+   * @generated
+   */
+  int SIMPLE_VALUE_PROPERTY = 11;
 
   /**
    * The feature id for the '<em><b>String Value</b></em>' attribute.
@@ -327,7 +412,16 @@ public interface FXGraphPackage extends EPackage
    * @generated
    * @ordered
    */
-  int VALUE_PROPERTY__STRING_VALUE = PROPERTY_VALUE_FEATURE_COUNT + 0;
+  int SIMPLE_VALUE_PROPERTY__STRING_VALUE = SINGLE_VALUE_PROPERTY_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Boolean Value</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SIMPLE_VALUE_PROPERTY__BOOLEAN_VALUE = SINGLE_VALUE_PROPERTY_FEATURE_COUNT + 1;
 
   /**
    * The feature id for the '<em><b>Negative</b></em>' attribute.
@@ -336,16 +430,7 @@ public interface FXGraphPackage extends EPackage
    * @generated
    * @ordered
    */
-  int VALUE_PROPERTY__NEGATIVE = PROPERTY_VALUE_FEATURE_COUNT + 1;
-
-  /**
-   * The feature id for the '<em><b>Real Value</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int VALUE_PROPERTY__REAL_VALUE = PROPERTY_VALUE_FEATURE_COUNT + 2;
+  int SIMPLE_VALUE_PROPERTY__NEGATIVE = SINGLE_VALUE_PROPERTY_FEATURE_COUNT + 2;
 
   /**
    * The feature id for the '<em><b>Int Value</b></em>' attribute.
@@ -354,26 +439,35 @@ public interface FXGraphPackage extends EPackage
    * @generated
    * @ordered
    */
-  int VALUE_PROPERTY__INT_VALUE = PROPERTY_VALUE_FEATURE_COUNT + 3;
+  int SIMPLE_VALUE_PROPERTY__INT_VALUE = SINGLE_VALUE_PROPERTY_FEATURE_COUNT + 3;
 
   /**
-   * The number of structural features of the '<em>Value Property</em>' class.
+   * The feature id for the '<em><b>Real Value</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int VALUE_PROPERTY_FEATURE_COUNT = PROPERTY_VALUE_FEATURE_COUNT + 4;
+  int SIMPLE_VALUE_PROPERTY__REAL_VALUE = SINGLE_VALUE_PROPERTY_FEATURE_COUNT + 4;
 
   /**
-   * The meta object id for the '{@link at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.impl.ReferencePropertyImpl <em>Reference Property</em>}' class.
+   * The number of structural features of the '<em>Simple Value Property</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.impl.ReferencePropertyImpl
-   * @see at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.impl.FXGraphPackageImpl#getReferenceProperty()
+   * @generated
+   * @ordered
+   */
+  int SIMPLE_VALUE_PROPERTY_FEATURE_COUNT = SINGLE_VALUE_PROPERTY_FEATURE_COUNT + 5;
+
+  /**
+   * The meta object id for the '{@link at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.impl.ReferenceValuePropertyImpl <em>Reference Value Property</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.impl.ReferenceValuePropertyImpl
+   * @see at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.impl.FXGraphPackageImpl#getReferenceValueProperty()
    * @generated
    */
-  int REFERENCE_PROPERTY = 8;
+  int REFERENCE_VALUE_PROPERTY = 12;
 
   /**
    * The feature id for the '<em><b>Reference</b></em>' reference.
@@ -382,26 +476,26 @@ public interface FXGraphPackage extends EPackage
    * @generated
    * @ordered
    */
-  int REFERENCE_PROPERTY__REFERENCE = PROPERTY_VALUE_FEATURE_COUNT + 0;
+  int REFERENCE_VALUE_PROPERTY__REFERENCE = SINGLE_VALUE_PROPERTY_FEATURE_COUNT + 0;
 
   /**
-   * The number of structural features of the '<em>Reference Property</em>' class.
+   * The number of structural features of the '<em>Reference Value Property</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int REFERENCE_PROPERTY_FEATURE_COUNT = PROPERTY_VALUE_FEATURE_COUNT + 1;
+  int REFERENCE_VALUE_PROPERTY_FEATURE_COUNT = SINGLE_VALUE_PROPERTY_FEATURE_COUNT + 1;
 
   /**
-   * The meta object id for the '{@link at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.impl.IncludePropertyImpl <em>Include Property</em>}' class.
+   * The meta object id for the '{@link at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.impl.IncludeValuePropertyImpl <em>Include Value Property</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.impl.IncludePropertyImpl
-   * @see at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.impl.FXGraphPackageImpl#getIncludeProperty()
+   * @see at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.impl.IncludeValuePropertyImpl
+   * @see at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.impl.FXGraphPackageImpl#getIncludeValueProperty()
    * @generated
    */
-  int INCLUDE_PROPERTY = 9;
+  int INCLUDE_VALUE_PROPERTY = 13;
 
   /**
    * The feature id for the '<em><b>Source</b></em>' attribute.
@@ -410,16 +504,16 @@ public interface FXGraphPackage extends EPackage
    * @generated
    * @ordered
    */
-  int INCLUDE_PROPERTY__SOURCE = PROPERTY_VALUE_FEATURE_COUNT + 0;
+  int INCLUDE_VALUE_PROPERTY__SOURCE = SINGLE_VALUE_PROPERTY_FEATURE_COUNT + 0;
 
   /**
-   * The number of structural features of the '<em>Include Property</em>' class.
+   * The number of structural features of the '<em>Include Value Property</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int INCLUDE_PROPERTY_FEATURE_COUNT = PROPERTY_VALUE_FEATURE_COUNT + 1;
+  int INCLUDE_VALUE_PROPERTY_FEATURE_COUNT = SINGLE_VALUE_PROPERTY_FEATURE_COUNT + 1;
 
 
   /**
@@ -497,15 +591,15 @@ public interface FXGraphPackage extends EPackage
   EReference getElement_Type();
 
   /**
-   * Returns the meta object for the attribute '{@link at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.Element#getValue <em>Value</em>}'.
+   * Returns the meta object for the containment reference '{@link at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.Element#getValue <em>Value</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Value</em>'.
+   * @return the meta object for the containment reference '<em>Value</em>'.
    * @see at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.Element#getValue()
    * @see #getElement()
    * @generated
    */
-  EAttribute getElement_Value();
+  EReference getElement_Value();
 
   /**
    * Returns the meta object for the attribute '{@link at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.Element#getFactory <em>Factory</em>}'.
@@ -605,37 +699,6 @@ public interface FXGraphPackage extends EPackage
   EReference getProperty_Value();
 
   /**
-   * Returns the meta object for class '{@link at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.PropertyValue <em>Property Value</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Property Value</em>'.
-   * @see at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.PropertyValue
-   * @generated
-   */
-  EClass getPropertyValue();
-
-  /**
-   * Returns the meta object for class '{@link at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.ListProperty <em>List Property</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>List Property</em>'.
-   * @see at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.ListProperty
-   * @generated
-   */
-  EClass getListProperty();
-
-  /**
-   * Returns the meta object for the containment reference list '{@link at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.ListProperty#getValue <em>Value</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Value</em>'.
-   * @see at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.ListProperty#getValue()
-   * @see #getListProperty()
-   * @generated
-   */
-  EReference getListProperty_Value();
-
-  /**
    * Returns the meta object for class '{@link at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.ValueProperty <em>Value Property</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -646,90 +709,183 @@ public interface FXGraphPackage extends EPackage
   EClass getValueProperty();
 
   /**
-   * Returns the meta object for the attribute '{@link at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.ValueProperty#getStringValue <em>String Value</em>}'.
+   * Returns the meta object for class '{@link at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.SingleValueProperty <em>Single Value Property</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Single Value Property</em>'.
+   * @see at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.SingleValueProperty
+   * @generated
+   */
+  EClass getSingleValueProperty();
+
+  /**
+   * Returns the meta object for class '{@link at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.MultiValueProperty <em>Multi Value Property</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Multi Value Property</em>'.
+   * @see at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.MultiValueProperty
+   * @generated
+   */
+  EClass getMultiValueProperty();
+
+  /**
+   * Returns the meta object for class '{@link at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.ListValueElement <em>List Value Element</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>List Value Element</em>'.
+   * @see at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.ListValueElement
+   * @generated
+   */
+  EClass getListValueElement();
+
+  /**
+   * Returns the meta object for class '{@link at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.ListValueProperty <em>List Value Property</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>List Value Property</em>'.
+   * @see at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.ListValueProperty
+   * @generated
+   */
+  EClass getListValueProperty();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.ListValueProperty#getValue <em>Value</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Value</em>'.
+   * @see at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.ListValueProperty#getValue()
+   * @see #getListValueProperty()
+   * @generated
+   */
+  EReference getListValueProperty_Value();
+
+  /**
+   * Returns the meta object for class '{@link at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.MapValueProperty <em>Map Value Property</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Map Value Property</em>'.
+   * @see at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.MapValueProperty
+   * @generated
+   */
+  EClass getMapValueProperty();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.MapValueProperty#getProperties <em>Properties</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Properties</em>'.
+   * @see at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.MapValueProperty#getProperties()
+   * @see #getMapValueProperty()
+   * @generated
+   */
+  EReference getMapValueProperty_Properties();
+
+  /**
+   * Returns the meta object for class '{@link at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.SimpleValueProperty <em>Simple Value Property</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Simple Value Property</em>'.
+   * @see at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.SimpleValueProperty
+   * @generated
+   */
+  EClass getSimpleValueProperty();
+
+  /**
+   * Returns the meta object for the attribute '{@link at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.SimpleValueProperty#getStringValue <em>String Value</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the attribute '<em>String Value</em>'.
-   * @see at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.ValueProperty#getStringValue()
-   * @see #getValueProperty()
+   * @see at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.SimpleValueProperty#getStringValue()
+   * @see #getSimpleValueProperty()
    * @generated
    */
-  EAttribute getValueProperty_StringValue();
+  EAttribute getSimpleValueProperty_StringValue();
 
   /**
-   * Returns the meta object for the attribute '{@link at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.ValueProperty#isNegative <em>Negative</em>}'.
+   * Returns the meta object for the attribute '{@link at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.SimpleValueProperty#getBooleanValue <em>Boolean Value</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Boolean Value</em>'.
+   * @see at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.SimpleValueProperty#getBooleanValue()
+   * @see #getSimpleValueProperty()
+   * @generated
+   */
+  EAttribute getSimpleValueProperty_BooleanValue();
+
+  /**
+   * Returns the meta object for the attribute '{@link at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.SimpleValueProperty#isNegative <em>Negative</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the attribute '<em>Negative</em>'.
-   * @see at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.ValueProperty#isNegative()
-   * @see #getValueProperty()
+   * @see at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.SimpleValueProperty#isNegative()
+   * @see #getSimpleValueProperty()
    * @generated
    */
-  EAttribute getValueProperty_Negative();
+  EAttribute getSimpleValueProperty_Negative();
 
   /**
-   * Returns the meta object for the attribute '{@link at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.ValueProperty#getRealValue <em>Real Value</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Real Value</em>'.
-   * @see at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.ValueProperty#getRealValue()
-   * @see #getValueProperty()
-   * @generated
-   */
-  EAttribute getValueProperty_RealValue();
-
-  /**
-   * Returns the meta object for the attribute '{@link at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.ValueProperty#getIntValue <em>Int Value</em>}'.
+   * Returns the meta object for the attribute '{@link at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.SimpleValueProperty#getIntValue <em>Int Value</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the attribute '<em>Int Value</em>'.
-   * @see at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.ValueProperty#getIntValue()
-   * @see #getValueProperty()
+   * @see at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.SimpleValueProperty#getIntValue()
+   * @see #getSimpleValueProperty()
    * @generated
    */
-  EAttribute getValueProperty_IntValue();
+  EAttribute getSimpleValueProperty_IntValue();
 
   /**
-   * Returns the meta object for class '{@link at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.ReferenceProperty <em>Reference Property</em>}'.
+   * Returns the meta object for the attribute '{@link at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.SimpleValueProperty#getRealValue <em>Real Value</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Reference Property</em>'.
-   * @see at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.ReferenceProperty
+   * @return the meta object for the attribute '<em>Real Value</em>'.
+   * @see at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.SimpleValueProperty#getRealValue()
+   * @see #getSimpleValueProperty()
    * @generated
    */
-  EClass getReferenceProperty();
+  EAttribute getSimpleValueProperty_RealValue();
 
   /**
-   * Returns the meta object for the reference '{@link at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.ReferenceProperty#getReference <em>Reference</em>}'.
+   * Returns the meta object for class '{@link at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.ReferenceValueProperty <em>Reference Value Property</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Reference Value Property</em>'.
+   * @see at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.ReferenceValueProperty
+   * @generated
+   */
+  EClass getReferenceValueProperty();
+
+  /**
+   * Returns the meta object for the reference '{@link at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.ReferenceValueProperty#getReference <em>Reference</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the reference '<em>Reference</em>'.
-   * @see at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.ReferenceProperty#getReference()
-   * @see #getReferenceProperty()
+   * @see at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.ReferenceValueProperty#getReference()
+   * @see #getReferenceValueProperty()
    * @generated
    */
-  EReference getReferenceProperty_Reference();
+  EReference getReferenceValueProperty_Reference();
 
   /**
-   * Returns the meta object for class '{@link at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.IncludeProperty <em>Include Property</em>}'.
+   * Returns the meta object for class '{@link at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.IncludeValueProperty <em>Include Value Property</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Include Property</em>'.
-   * @see at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.IncludeProperty
+   * @return the meta object for class '<em>Include Value Property</em>'.
+   * @see at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.IncludeValueProperty
    * @generated
    */
-  EClass getIncludeProperty();
+  EClass getIncludeValueProperty();
 
   /**
-   * Returns the meta object for the attribute '{@link at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.IncludeProperty#getSource <em>Source</em>}'.
+   * Returns the meta object for the attribute '{@link at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.IncludeValueProperty#getSource <em>Source</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the attribute '<em>Source</em>'.
-   * @see at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.IncludeProperty#getSource()
-   * @see #getIncludeProperty()
+   * @see at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.IncludeValueProperty#getSource()
+   * @see #getIncludeValueProperty()
    * @generated
    */
-  EAttribute getIncludeProperty_Source();
+  EAttribute getIncludeValueProperty_Source();
 
   /**
    * Returns the factory that creates the instances of the model.
@@ -817,12 +973,12 @@ public interface FXGraphPackage extends EPackage
     EReference ELEMENT__TYPE = eINSTANCE.getElement_Type();
 
     /**
-     * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>Value</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute ELEMENT__VALUE = eINSTANCE.getElement_Value();
+    EReference ELEMENT__VALUE = eINSTANCE.getElement_Value();
 
     /**
      * The meta object literal for the '<em><b>Factory</b></em>' attribute feature.
@@ -901,34 +1057,6 @@ public interface FXGraphPackage extends EPackage
     EReference PROPERTY__VALUE = eINSTANCE.getProperty_Value();
 
     /**
-     * The meta object literal for the '{@link at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.impl.PropertyValueImpl <em>Property Value</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.impl.PropertyValueImpl
-     * @see at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.impl.FXGraphPackageImpl#getPropertyValue()
-     * @generated
-     */
-    EClass PROPERTY_VALUE = eINSTANCE.getPropertyValue();
-
-    /**
-     * The meta object literal for the '{@link at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.impl.ListPropertyImpl <em>List Property</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.impl.ListPropertyImpl
-     * @see at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.impl.FXGraphPackageImpl#getListProperty()
-     * @generated
-     */
-    EClass LIST_PROPERTY = eINSTANCE.getListProperty();
-
-    /**
-     * The meta object literal for the '<em><b>Value</b></em>' containment reference list feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference LIST_PROPERTY__VALUE = eINSTANCE.getListProperty_Value();
-
-    /**
      * The meta object literal for the '{@link at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.impl.ValuePropertyImpl <em>Value Property</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -939,12 +1067,96 @@ public interface FXGraphPackage extends EPackage
     EClass VALUE_PROPERTY = eINSTANCE.getValueProperty();
 
     /**
+     * The meta object literal for the '{@link at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.impl.SingleValuePropertyImpl <em>Single Value Property</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.impl.SingleValuePropertyImpl
+     * @see at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.impl.FXGraphPackageImpl#getSingleValueProperty()
+     * @generated
+     */
+    EClass SINGLE_VALUE_PROPERTY = eINSTANCE.getSingleValueProperty();
+
+    /**
+     * The meta object literal for the '{@link at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.impl.MultiValuePropertyImpl <em>Multi Value Property</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.impl.MultiValuePropertyImpl
+     * @see at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.impl.FXGraphPackageImpl#getMultiValueProperty()
+     * @generated
+     */
+    EClass MULTI_VALUE_PROPERTY = eINSTANCE.getMultiValueProperty();
+
+    /**
+     * The meta object literal for the '{@link at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.impl.ListValueElementImpl <em>List Value Element</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.impl.ListValueElementImpl
+     * @see at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.impl.FXGraphPackageImpl#getListValueElement()
+     * @generated
+     */
+    EClass LIST_VALUE_ELEMENT = eINSTANCE.getListValueElement();
+
+    /**
+     * The meta object literal for the '{@link at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.impl.ListValuePropertyImpl <em>List Value Property</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.impl.ListValuePropertyImpl
+     * @see at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.impl.FXGraphPackageImpl#getListValueProperty()
+     * @generated
+     */
+    EClass LIST_VALUE_PROPERTY = eINSTANCE.getListValueProperty();
+
+    /**
+     * The meta object literal for the '<em><b>Value</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference LIST_VALUE_PROPERTY__VALUE = eINSTANCE.getListValueProperty_Value();
+
+    /**
+     * The meta object literal for the '{@link at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.impl.MapValuePropertyImpl <em>Map Value Property</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.impl.MapValuePropertyImpl
+     * @see at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.impl.FXGraphPackageImpl#getMapValueProperty()
+     * @generated
+     */
+    EClass MAP_VALUE_PROPERTY = eINSTANCE.getMapValueProperty();
+
+    /**
+     * The meta object literal for the '<em><b>Properties</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference MAP_VALUE_PROPERTY__PROPERTIES = eINSTANCE.getMapValueProperty_Properties();
+
+    /**
+     * The meta object literal for the '{@link at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.impl.SimpleValuePropertyImpl <em>Simple Value Property</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.impl.SimpleValuePropertyImpl
+     * @see at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.impl.FXGraphPackageImpl#getSimpleValueProperty()
+     * @generated
+     */
+    EClass SIMPLE_VALUE_PROPERTY = eINSTANCE.getSimpleValueProperty();
+
+    /**
      * The meta object literal for the '<em><b>String Value</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute VALUE_PROPERTY__STRING_VALUE = eINSTANCE.getValueProperty_StringValue();
+    EAttribute SIMPLE_VALUE_PROPERTY__STRING_VALUE = eINSTANCE.getSimpleValueProperty_StringValue();
+
+    /**
+     * The meta object literal for the '<em><b>Boolean Value</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute SIMPLE_VALUE_PROPERTY__BOOLEAN_VALUE = eINSTANCE.getSimpleValueProperty_BooleanValue();
 
     /**
      * The meta object literal for the '<em><b>Negative</b></em>' attribute feature.
@@ -952,15 +1164,7 @@ public interface FXGraphPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute VALUE_PROPERTY__NEGATIVE = eINSTANCE.getValueProperty_Negative();
-
-    /**
-     * The meta object literal for the '<em><b>Real Value</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute VALUE_PROPERTY__REAL_VALUE = eINSTANCE.getValueProperty_RealValue();
+    EAttribute SIMPLE_VALUE_PROPERTY__NEGATIVE = eINSTANCE.getSimpleValueProperty_Negative();
 
     /**
      * The meta object literal for the '<em><b>Int Value</b></em>' attribute feature.
@@ -968,17 +1172,25 @@ public interface FXGraphPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute VALUE_PROPERTY__INT_VALUE = eINSTANCE.getValueProperty_IntValue();
+    EAttribute SIMPLE_VALUE_PROPERTY__INT_VALUE = eINSTANCE.getSimpleValueProperty_IntValue();
 
     /**
-     * The meta object literal for the '{@link at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.impl.ReferencePropertyImpl <em>Reference Property</em>}' class.
+     * The meta object literal for the '<em><b>Real Value</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.impl.ReferencePropertyImpl
-     * @see at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.impl.FXGraphPackageImpl#getReferenceProperty()
      * @generated
      */
-    EClass REFERENCE_PROPERTY = eINSTANCE.getReferenceProperty();
+    EAttribute SIMPLE_VALUE_PROPERTY__REAL_VALUE = eINSTANCE.getSimpleValueProperty_RealValue();
+
+    /**
+     * The meta object literal for the '{@link at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.impl.ReferenceValuePropertyImpl <em>Reference Value Property</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.impl.ReferenceValuePropertyImpl
+     * @see at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.impl.FXGraphPackageImpl#getReferenceValueProperty()
+     * @generated
+     */
+    EClass REFERENCE_VALUE_PROPERTY = eINSTANCE.getReferenceValueProperty();
 
     /**
      * The meta object literal for the '<em><b>Reference</b></em>' reference feature.
@@ -986,17 +1198,17 @@ public interface FXGraphPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference REFERENCE_PROPERTY__REFERENCE = eINSTANCE.getReferenceProperty_Reference();
+    EReference REFERENCE_VALUE_PROPERTY__REFERENCE = eINSTANCE.getReferenceValueProperty_Reference();
 
     /**
-     * The meta object literal for the '{@link at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.impl.IncludePropertyImpl <em>Include Property</em>}' class.
+     * The meta object literal for the '{@link at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.impl.IncludeValuePropertyImpl <em>Include Value Property</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.impl.IncludePropertyImpl
-     * @see at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.impl.FXGraphPackageImpl#getIncludeProperty()
+     * @see at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.impl.IncludeValuePropertyImpl
+     * @see at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.impl.FXGraphPackageImpl#getIncludeValueProperty()
      * @generated
      */
-    EClass INCLUDE_PROPERTY = eINSTANCE.getIncludeProperty();
+    EClass INCLUDE_VALUE_PROPERTY = eINSTANCE.getIncludeValueProperty();
 
     /**
      * The meta object literal for the '<em><b>Source</b></em>' attribute feature.
@@ -1004,7 +1216,7 @@ public interface FXGraphPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute INCLUDE_PROPERTY__SOURCE = eINSTANCE.getIncludeProperty_Source();
+    EAttribute INCLUDE_VALUE_PROPERTY__SOURCE = eINSTANCE.getIncludeValueProperty_Source();
 
   }
 

@@ -10,25 +10,25 @@ import org.eclipse.emf.common.util.EList;
 
 /**
  * <!-- begin-user-doc -->
- * A representation of the model object '<em><b>List Property</b></em>'.
+ * A representation of the model object '<em><b>List Value Property</b></em>'.
  * <!-- end-user-doc -->
  *
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.ListProperty#getValue <em>Value</em>}</li>
+ *   <li>{@link at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.ListValueProperty#getValue <em>Value</em>}</li>
  * </ul>
  * </p>
  *
- * @see at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.FXGraphPackage#getListProperty()
+ * @see at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.FXGraphPackage#getListValueProperty()
  * @model
  * @generated
  */
-public interface ListProperty extends PropertyValue
+public interface ListValueProperty extends MultiValueProperty
 {
   /**
    * Returns the value of the '<em><b>Value</b></em>' containment reference list.
-   * The list contents are of type {@link at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.PropertyValue}.
+   * The list contents are of type {@link at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.ListValueElement}.
    * <!-- begin-user-doc -->
    * <p>
    * If the meaning of the '<em>Value</em>' containment reference list isn't clear,
@@ -36,10 +36,10 @@ public interface ListProperty extends PropertyValue
    * </p>
    * <!-- end-user-doc -->
    * @return the value of the '<em>Value</em>' containment reference list.
-   * @see at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.FXGraphPackage#getListProperty_Value()
+   * @see at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.FXGraphPackage#getListValueProperty_Value()
    * @model containment="true"
    * @generated
    */
-  EList<PropertyValue> getValue();
+  EList<ListValueElement> getValue();
 
-} // ListProperty
+} // ListValueProperty

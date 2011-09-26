@@ -7,7 +7,7 @@
 package at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.impl;
 
 import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.FXGraphPackage;
-import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.ValueProperty;
+import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.ListValueElement;
 
 import org.eclipse.emf.ecore.EClass;
 
@@ -15,21 +15,21 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Value Property</b></em>'.
+ * An implementation of the model object '<em><b>List Value Element</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * </p>
  *
  * @generated
  */
-public class ValuePropertyImpl extends MinimalEObjectImpl.Container implements ValueProperty
+public class ListValueElementImpl extends MinimalEObjectImpl.Container implements ListValueElement
 {
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  protected ValuePropertyImpl()
+  protected ListValueElementImpl()
   {
     super();
   }
@@ -42,7 +42,7 @@ public class ValuePropertyImpl extends MinimalEObjectImpl.Container implements V
   @Override
   protected EClass eStaticClass()
   {
-    return FXGraphPackage.Literals.VALUE_PROPERTY;
+    return FXGraphPackage.Literals.LIST_VALUE_ELEMENT;
   }
 
-} //ValuePropertyImpl
+} //ListValueElementImpl

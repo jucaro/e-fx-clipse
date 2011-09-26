@@ -8,7 +8,7 @@ package at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.impl;
 
 import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.Element;
 import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.FXGraphPackage;
-import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.ReferenceProperty;
+import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.ReferenceValueProperty;
 
 import org.eclipse.emf.common.notify.Notification;
 
@@ -19,18 +19,18 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Reference Property</b></em>'.
+ * An implementation of the model object '<em><b>Reference Value Property</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.impl.ReferencePropertyImpl#getReference <em>Reference</em>}</li>
+ *   <li>{@link at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.impl.ReferenceValuePropertyImpl#getReference <em>Reference</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
-public class ReferencePropertyImpl extends PropertyValueImpl implements ReferenceProperty
+public class ReferenceValuePropertyImpl extends SingleValuePropertyImpl implements ReferenceValueProperty
 {
   /**
    * The cached value of the '{@link #getReference() <em>Reference</em>}' reference.
@@ -47,7 +47,7 @@ public class ReferencePropertyImpl extends PropertyValueImpl implements Referenc
    * <!-- end-user-doc -->
    * @generated
    */
-  protected ReferencePropertyImpl()
+  protected ReferenceValuePropertyImpl()
   {
     super();
   }
@@ -60,7 +60,7 @@ public class ReferencePropertyImpl extends PropertyValueImpl implements Referenc
   @Override
   protected EClass eStaticClass()
   {
-    return FXGraphPackage.Literals.REFERENCE_PROPERTY;
+    return FXGraphPackage.Literals.REFERENCE_VALUE_PROPERTY;
   }
 
   /**
@@ -77,7 +77,7 @@ public class ReferencePropertyImpl extends PropertyValueImpl implements Referenc
       if (reference != oldReference)
       {
         if (eNotificationRequired())
-          eNotify(new ENotificationImpl(this, Notification.RESOLVE, FXGraphPackage.REFERENCE_PROPERTY__REFERENCE, oldReference, reference));
+          eNotify(new ENotificationImpl(this, Notification.RESOLVE, FXGraphPackage.REFERENCE_VALUE_PROPERTY__REFERENCE, oldReference, reference));
       }
     }
     return reference;
@@ -103,7 +103,7 @@ public class ReferencePropertyImpl extends PropertyValueImpl implements Referenc
     Element oldReference = reference;
     reference = newReference;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, FXGraphPackage.REFERENCE_PROPERTY__REFERENCE, oldReference, reference));
+      eNotify(new ENotificationImpl(this, Notification.SET, FXGraphPackage.REFERENCE_VALUE_PROPERTY__REFERENCE, oldReference, reference));
   }
 
   /**
@@ -116,7 +116,7 @@ public class ReferencePropertyImpl extends PropertyValueImpl implements Referenc
   {
     switch (featureID)
     {
-      case FXGraphPackage.REFERENCE_PROPERTY__REFERENCE:
+      case FXGraphPackage.REFERENCE_VALUE_PROPERTY__REFERENCE:
         if (resolve) return getReference();
         return basicGetReference();
     }
@@ -133,7 +133,7 @@ public class ReferencePropertyImpl extends PropertyValueImpl implements Referenc
   {
     switch (featureID)
     {
-      case FXGraphPackage.REFERENCE_PROPERTY__REFERENCE:
+      case FXGraphPackage.REFERENCE_VALUE_PROPERTY__REFERENCE:
         setReference((Element)newValue);
         return;
     }
@@ -150,7 +150,7 @@ public class ReferencePropertyImpl extends PropertyValueImpl implements Referenc
   {
     switch (featureID)
     {
-      case FXGraphPackage.REFERENCE_PROPERTY__REFERENCE:
+      case FXGraphPackage.REFERENCE_VALUE_PROPERTY__REFERENCE:
         setReference((Element)null);
         return;
     }
@@ -167,10 +167,10 @@ public class ReferencePropertyImpl extends PropertyValueImpl implements Referenc
   {
     switch (featureID)
     {
-      case FXGraphPackage.REFERENCE_PROPERTY__REFERENCE:
+      case FXGraphPackage.REFERENCE_VALUE_PROPERTY__REFERENCE:
         return reference != null;
     }
     return super.eIsSet(featureID);
   }
 
-} //ReferencePropertyImpl
+} //ReferenceValuePropertyImpl

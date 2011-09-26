@@ -104,29 +104,49 @@ public class FXGraphAdapterFactory extends AdapterFactoryImpl
         return createPropertyAdapter();
       }
       @Override
-      public Adapter casePropertyValue(PropertyValue object)
-      {
-        return createPropertyValueAdapter();
-      }
-      @Override
-      public Adapter caseListProperty(ListProperty object)
-      {
-        return createListPropertyAdapter();
-      }
-      @Override
       public Adapter caseValueProperty(ValueProperty object)
       {
         return createValuePropertyAdapter();
       }
       @Override
-      public Adapter caseReferenceProperty(ReferenceProperty object)
+      public Adapter caseSingleValueProperty(SingleValueProperty object)
       {
-        return createReferencePropertyAdapter();
+        return createSingleValuePropertyAdapter();
       }
       @Override
-      public Adapter caseIncludeProperty(IncludeProperty object)
+      public Adapter caseMultiValueProperty(MultiValueProperty object)
       {
-        return createIncludePropertyAdapter();
+        return createMultiValuePropertyAdapter();
+      }
+      @Override
+      public Adapter caseListValueElement(ListValueElement object)
+      {
+        return createListValueElementAdapter();
+      }
+      @Override
+      public Adapter caseListValueProperty(ListValueProperty object)
+      {
+        return createListValuePropertyAdapter();
+      }
+      @Override
+      public Adapter caseMapValueProperty(MapValueProperty object)
+      {
+        return createMapValuePropertyAdapter();
+      }
+      @Override
+      public Adapter caseSimpleValueProperty(SimpleValueProperty object)
+      {
+        return createSimpleValuePropertyAdapter();
+      }
+      @Override
+      public Adapter caseReferenceValueProperty(ReferenceValueProperty object)
+      {
+        return createReferenceValuePropertyAdapter();
+      }
+      @Override
+      public Adapter caseIncludeValueProperty(IncludeValueProperty object)
+      {
+        return createIncludeValuePropertyAdapter();
       }
       @Override
       public Adapter defaultCase(EObject object)
@@ -226,36 +246,6 @@ public class FXGraphAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.PropertyValue <em>Property Value</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.PropertyValue
-   * @generated
-   */
-  public Adapter createPropertyValueAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.ListProperty <em>List Property</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.ListProperty
-   * @generated
-   */
-  public Adapter createListPropertyAdapter()
-  {
-    return null;
-  }
-
-  /**
    * Creates a new adapter for an object of class '{@link at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.ValueProperty <em>Value Property</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
@@ -271,31 +261,121 @@ public class FXGraphAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.ReferenceProperty <em>Reference Property</em>}'.
+   * Creates a new adapter for an object of class '{@link at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.SingleValueProperty <em>Single Value Property</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.ReferenceProperty
+   * @see at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.SingleValueProperty
    * @generated
    */
-  public Adapter createReferencePropertyAdapter()
+  public Adapter createSingleValuePropertyAdapter()
   {
     return null;
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.IncludeProperty <em>Include Property</em>}'.
+   * Creates a new adapter for an object of class '{@link at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.MultiValueProperty <em>Multi Value Property</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.IncludeProperty
+   * @see at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.MultiValueProperty
    * @generated
    */
-  public Adapter createIncludePropertyAdapter()
+  public Adapter createMultiValuePropertyAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.ListValueElement <em>List Value Element</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.ListValueElement
+   * @generated
+   */
+  public Adapter createListValueElementAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.ListValueProperty <em>List Value Property</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.ListValueProperty
+   * @generated
+   */
+  public Adapter createListValuePropertyAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.MapValueProperty <em>Map Value Property</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.MapValueProperty
+   * @generated
+   */
+  public Adapter createMapValuePropertyAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.SimpleValueProperty <em>Simple Value Property</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.SimpleValueProperty
+   * @generated
+   */
+  public Adapter createSimpleValuePropertyAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.ReferenceValueProperty <em>Reference Value Property</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.ReferenceValueProperty
+   * @generated
+   */
+  public Adapter createReferenceValuePropertyAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.IncludeValueProperty <em>Include Value Property</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.IncludeValueProperty
+   * @generated
+   */
+  public Adapter createIncludeValuePropertyAdapter()
   {
     return null;
   }

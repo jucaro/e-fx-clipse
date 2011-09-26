@@ -7,29 +7,27 @@
 package at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.impl;
 
 import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.FXGraphPackage;
-import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.PropertyValue;
+import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.MultiValueProperty;
 
 import org.eclipse.emf.ecore.EClass;
 
-import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Property Value</b></em>'.
+ * An implementation of the model object '<em><b>Multi Value Property</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * </p>
  *
  * @generated
  */
-public class PropertyValueImpl extends MinimalEObjectImpl.Container implements PropertyValue
+public class MultiValuePropertyImpl extends ValuePropertyImpl implements MultiValueProperty
 {
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  protected PropertyValueImpl()
+  protected MultiValuePropertyImpl()
   {
     super();
   }
@@ -42,7 +40,7 @@ public class PropertyValueImpl extends MinimalEObjectImpl.Container implements P
   @Override
   protected EClass eStaticClass()
   {
-    return FXGraphPackage.Literals.PROPERTY_VALUE;
+    return FXGraphPackage.Literals.MULTI_VALUE_PROPERTY;
   }
 
-} //PropertyValueImpl
+} //MultiValuePropertyImpl

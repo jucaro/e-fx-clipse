@@ -94,7 +94,9 @@ public class FXGraphSwitch<T> extends Switch<T>
       {
         Element element = (Element)theEObject;
         T result = caseElement(element);
-        if (result == null) result = casePropertyValue(element);
+        if (result == null) result = caseSingleValueProperty(element);
+        if (result == null) result = caseListValueElement(element);
+        if (result == null) result = caseValueProperty(element);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -112,42 +114,80 @@ public class FXGraphSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case FXGraphPackage.PROPERTY_VALUE:
-      {
-        PropertyValue propertyValue = (PropertyValue)theEObject;
-        T result = casePropertyValue(propertyValue);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
-      case FXGraphPackage.LIST_PROPERTY:
-      {
-        ListProperty listProperty = (ListProperty)theEObject;
-        T result = caseListProperty(listProperty);
-        if (result == null) result = casePropertyValue(listProperty);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
       case FXGraphPackage.VALUE_PROPERTY:
       {
         ValueProperty valueProperty = (ValueProperty)theEObject;
         T result = caseValueProperty(valueProperty);
-        if (result == null) result = casePropertyValue(valueProperty);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case FXGraphPackage.REFERENCE_PROPERTY:
+      case FXGraphPackage.SINGLE_VALUE_PROPERTY:
       {
-        ReferenceProperty referenceProperty = (ReferenceProperty)theEObject;
-        T result = caseReferenceProperty(referenceProperty);
-        if (result == null) result = casePropertyValue(referenceProperty);
+        SingleValueProperty singleValueProperty = (SingleValueProperty)theEObject;
+        T result = caseSingleValueProperty(singleValueProperty);
+        if (result == null) result = caseValueProperty(singleValueProperty);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case FXGraphPackage.INCLUDE_PROPERTY:
+      case FXGraphPackage.MULTI_VALUE_PROPERTY:
       {
-        IncludeProperty includeProperty = (IncludeProperty)theEObject;
-        T result = caseIncludeProperty(includeProperty);
-        if (result == null) result = casePropertyValue(includeProperty);
+        MultiValueProperty multiValueProperty = (MultiValueProperty)theEObject;
+        T result = caseMultiValueProperty(multiValueProperty);
+        if (result == null) result = caseValueProperty(multiValueProperty);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case FXGraphPackage.LIST_VALUE_ELEMENT:
+      {
+        ListValueElement listValueElement = (ListValueElement)theEObject;
+        T result = caseListValueElement(listValueElement);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case FXGraphPackage.LIST_VALUE_PROPERTY:
+      {
+        ListValueProperty listValueProperty = (ListValueProperty)theEObject;
+        T result = caseListValueProperty(listValueProperty);
+        if (result == null) result = caseMultiValueProperty(listValueProperty);
+        if (result == null) result = caseValueProperty(listValueProperty);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case FXGraphPackage.MAP_VALUE_PROPERTY:
+      {
+        MapValueProperty mapValueProperty = (MapValueProperty)theEObject;
+        T result = caseMapValueProperty(mapValueProperty);
+        if (result == null) result = caseMultiValueProperty(mapValueProperty);
+        if (result == null) result = caseValueProperty(mapValueProperty);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case FXGraphPackage.SIMPLE_VALUE_PROPERTY:
+      {
+        SimpleValueProperty simpleValueProperty = (SimpleValueProperty)theEObject;
+        T result = caseSimpleValueProperty(simpleValueProperty);
+        if (result == null) result = caseSingleValueProperty(simpleValueProperty);
+        if (result == null) result = caseValueProperty(simpleValueProperty);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case FXGraphPackage.REFERENCE_VALUE_PROPERTY:
+      {
+        ReferenceValueProperty referenceValueProperty = (ReferenceValueProperty)theEObject;
+        T result = caseReferenceValueProperty(referenceValueProperty);
+        if (result == null) result = caseSingleValueProperty(referenceValueProperty);
+        if (result == null) result = caseListValueElement(referenceValueProperty);
+        if (result == null) result = caseValueProperty(referenceValueProperty);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case FXGraphPackage.INCLUDE_VALUE_PROPERTY:
+      {
+        IncludeValueProperty includeValueProperty = (IncludeValueProperty)theEObject;
+        T result = caseIncludeValueProperty(includeValueProperty);
+        if (result == null) result = caseSingleValueProperty(includeValueProperty);
+        if (result == null) result = caseListValueElement(includeValueProperty);
+        if (result == null) result = caseValueProperty(includeValueProperty);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -236,38 +276,6 @@ public class FXGraphSwitch<T> extends Switch<T>
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Property Value</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Property Value</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T casePropertyValue(PropertyValue object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>List Property</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>List Property</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseListProperty(ListProperty object)
-  {
-    return null;
-  }
-
-  /**
    * Returns the result of interpreting the object as an instance of '<em>Value Property</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
@@ -284,33 +292,129 @@ public class FXGraphSwitch<T> extends Switch<T>
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Reference Property</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Single Value Property</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Reference Property</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Single Value Property</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseReferenceProperty(ReferenceProperty object)
+  public T caseSingleValueProperty(SingleValueProperty object)
   {
     return null;
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Include Property</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Multi Value Property</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Include Property</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Multi Value Property</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseIncludeProperty(IncludeProperty object)
+  public T caseMultiValueProperty(MultiValueProperty object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>List Value Element</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>List Value Element</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseListValueElement(ListValueElement object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>List Value Property</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>List Value Property</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseListValueProperty(ListValueProperty object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Map Value Property</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Map Value Property</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseMapValueProperty(MapValueProperty object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Simple Value Property</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Simple Value Property</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseSimpleValueProperty(SimpleValueProperty object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Reference Value Property</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Reference Value Property</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseReferenceValueProperty(ReferenceValueProperty object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Include Value Property</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Include Value Property</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseIncludeValueProperty(IncludeValueProperty object)
   {
     return null;
   }

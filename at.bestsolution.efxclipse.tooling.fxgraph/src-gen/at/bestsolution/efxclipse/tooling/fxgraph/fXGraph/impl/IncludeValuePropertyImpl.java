@@ -7,7 +7,7 @@
 package at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.impl;
 
 import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.FXGraphPackage;
-import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.IncludeProperty;
+import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.IncludeValueProperty;
 
 import org.eclipse.emf.common.notify.Notification;
 
@@ -17,18 +17,18 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Include Property</b></em>'.
+ * An implementation of the model object '<em><b>Include Value Property</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.impl.IncludePropertyImpl#getSource <em>Source</em>}</li>
+ *   <li>{@link at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.impl.IncludeValuePropertyImpl#getSource <em>Source</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
-public class IncludePropertyImpl extends PropertyValueImpl implements IncludeProperty
+public class IncludeValuePropertyImpl extends SingleValuePropertyImpl implements IncludeValueProperty
 {
   /**
    * The default value of the '{@link #getSource() <em>Source</em>}' attribute.
@@ -55,7 +55,7 @@ public class IncludePropertyImpl extends PropertyValueImpl implements IncludePro
    * <!-- end-user-doc -->
    * @generated
    */
-  protected IncludePropertyImpl()
+  protected IncludeValuePropertyImpl()
   {
     super();
   }
@@ -68,7 +68,7 @@ public class IncludePropertyImpl extends PropertyValueImpl implements IncludePro
   @Override
   protected EClass eStaticClass()
   {
-    return FXGraphPackage.Literals.INCLUDE_PROPERTY;
+    return FXGraphPackage.Literals.INCLUDE_VALUE_PROPERTY;
   }
 
   /**
@@ -91,7 +91,7 @@ public class IncludePropertyImpl extends PropertyValueImpl implements IncludePro
     String oldSource = source;
     source = newSource;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, FXGraphPackage.INCLUDE_PROPERTY__SOURCE, oldSource, source));
+      eNotify(new ENotificationImpl(this, Notification.SET, FXGraphPackage.INCLUDE_VALUE_PROPERTY__SOURCE, oldSource, source));
   }
 
   /**
@@ -104,7 +104,7 @@ public class IncludePropertyImpl extends PropertyValueImpl implements IncludePro
   {
     switch (featureID)
     {
-      case FXGraphPackage.INCLUDE_PROPERTY__SOURCE:
+      case FXGraphPackage.INCLUDE_VALUE_PROPERTY__SOURCE:
         return getSource();
     }
     return super.eGet(featureID, resolve, coreType);
@@ -120,7 +120,7 @@ public class IncludePropertyImpl extends PropertyValueImpl implements IncludePro
   {
     switch (featureID)
     {
-      case FXGraphPackage.INCLUDE_PROPERTY__SOURCE:
+      case FXGraphPackage.INCLUDE_VALUE_PROPERTY__SOURCE:
         setSource((String)newValue);
         return;
     }
@@ -137,7 +137,7 @@ public class IncludePropertyImpl extends PropertyValueImpl implements IncludePro
   {
     switch (featureID)
     {
-      case FXGraphPackage.INCLUDE_PROPERTY__SOURCE:
+      case FXGraphPackage.INCLUDE_VALUE_PROPERTY__SOURCE:
         setSource(SOURCE_EDEFAULT);
         return;
     }
@@ -154,7 +154,7 @@ public class IncludePropertyImpl extends PropertyValueImpl implements IncludePro
   {
     switch (featureID)
     {
-      case FXGraphPackage.INCLUDE_PROPERTY__SOURCE:
+      case FXGraphPackage.INCLUDE_VALUE_PROPERTY__SOURCE:
         return SOURCE_EDEFAULT == null ? source != null : !SOURCE_EDEFAULT.equals(source);
     }
     return super.eIsSet(featureID);
@@ -177,4 +177,4 @@ public class IncludePropertyImpl extends PropertyValueImpl implements IncludePro
     return result.toString();
   }
 
-} //IncludePropertyImpl
+} //IncludeValuePropertyImpl
