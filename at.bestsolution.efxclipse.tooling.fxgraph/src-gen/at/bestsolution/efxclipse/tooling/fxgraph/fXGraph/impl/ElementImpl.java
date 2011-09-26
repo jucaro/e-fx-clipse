@@ -11,6 +11,7 @@ import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.Element;
 import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.FXGraphPackage;
 import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.Property;
 import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.SimpleValueProperty;
+import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.StaticValueProperty;
 
 import java.util.Collection;
 
@@ -42,6 +43,7 @@ import org.eclipse.xtext.common.types.JvmParameterizedTypeReference;
  *   <li>{@link at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.impl.ElementImpl#getName <em>Name</em>}</li>
  *   <li>{@link at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.impl.ElementImpl#getDefines <em>Defines</em>}</li>
  *   <li>{@link at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.impl.ElementImpl#getProperties <em>Properties</em>}</li>
+ *   <li>{@link at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.impl.ElementImpl#getStaticProperties <em>Static Properties</em>}</li>
  * </ul>
  * </p>
  *
@@ -128,6 +130,16 @@ public class ElementImpl extends SingleValuePropertyImpl implements Element
    * @ordered
    */
   protected EList<Property> properties;
+
+  /**
+   * The cached value of the '{@link #getStaticProperties() <em>Static Properties</em>}' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getStaticProperties()
+   * @generated
+   * @ordered
+   */
+  protected EList<StaticValueProperty> staticProperties;
 
   /**
    * <!-- begin-user-doc -->
@@ -325,6 +337,20 @@ public class ElementImpl extends SingleValuePropertyImpl implements Element
    * <!-- end-user-doc -->
    * @generated
    */
+  public EList<StaticValueProperty> getStaticProperties()
+  {
+    if (staticProperties == null)
+    {
+      staticProperties = new EObjectContainmentEList<StaticValueProperty>(StaticValueProperty.class, this, FXGraphPackage.ELEMENT__STATIC_PROPERTIES);
+    }
+    return staticProperties;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   @Override
   public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
   {
@@ -338,6 +364,8 @@ public class ElementImpl extends SingleValuePropertyImpl implements Element
         return ((InternalEList<?>)getDefines()).basicRemove(otherEnd, msgs);
       case FXGraphPackage.ELEMENT__PROPERTIES:
         return ((InternalEList<?>)getProperties()).basicRemove(otherEnd, msgs);
+      case FXGraphPackage.ELEMENT__STATIC_PROPERTIES:
+        return ((InternalEList<?>)getStaticProperties()).basicRemove(otherEnd, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -364,6 +392,8 @@ public class ElementImpl extends SingleValuePropertyImpl implements Element
         return getDefines();
       case FXGraphPackage.ELEMENT__PROPERTIES:
         return getProperties();
+      case FXGraphPackage.ELEMENT__STATIC_PROPERTIES:
+        return getStaticProperties();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -399,6 +429,10 @@ public class ElementImpl extends SingleValuePropertyImpl implements Element
         getProperties().clear();
         getProperties().addAll((Collection<? extends Property>)newValue);
         return;
+      case FXGraphPackage.ELEMENT__STATIC_PROPERTIES:
+        getStaticProperties().clear();
+        getStaticProperties().addAll((Collection<? extends StaticValueProperty>)newValue);
+        return;
     }
     super.eSet(featureID, newValue);
   }
@@ -431,6 +465,9 @@ public class ElementImpl extends SingleValuePropertyImpl implements Element
       case FXGraphPackage.ELEMENT__PROPERTIES:
         getProperties().clear();
         return;
+      case FXGraphPackage.ELEMENT__STATIC_PROPERTIES:
+        getStaticProperties().clear();
+        return;
     }
     super.eUnset(featureID);
   }
@@ -457,6 +494,8 @@ public class ElementImpl extends SingleValuePropertyImpl implements Element
         return defines != null && !defines.isEmpty();
       case FXGraphPackage.ELEMENT__PROPERTIES:
         return properties != null && !properties.isEmpty();
+      case FXGraphPackage.ELEMENT__STATIC_PROPERTIES:
+        return staticProperties != null && !staticProperties.isEmpty();
     }
     return super.eIsSet(featureID);
   }

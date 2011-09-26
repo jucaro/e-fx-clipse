@@ -13,12 +13,16 @@ Import:
 Element:
 	type=JvmTypeReference ('(' (value = SimpleValueProperty | 'createdby' factory=STRING) ')')? ('id' name=ValidID)? ('{'
 		('|' defines+=Define (',' defines+=Define)* '|')?
-		properties+=Property (',' properties+=Property)*
+		((properties+=Property | staticProperties+=StaticValueProperty) (',' (properties+=Property | staticProperties+=StaticValueProperty))*)?
 	'}')?
 ;
 
 Define:
 	element=Element
+;
+
+StaticValueProperty:
+	'call' type=JvmTypeReference '#' name=ID ':' value=ValueProperty
 ;
 
 Property:
@@ -30,7 +34,7 @@ ValueProperty:
 ;
 
 SingleValueProperty:
-	SimpleValueProperty | Element | ReferenceValueProperty | IncludeValueProperty
+	SimpleValueProperty | Element | ReferenceValueProperty | IncludeValueProperty | CopyValueProperty
 ;
 
 MultiValueProperty:
@@ -59,6 +63,10 @@ ReferenceValueProperty:
 
 IncludeValueProperty:
 	'include' source=STRING
+;
+
+CopyValueProperty:
+	'copy' reference=[Element|ValidID]
 ;
 
 QualifiedNameWithWildCard :

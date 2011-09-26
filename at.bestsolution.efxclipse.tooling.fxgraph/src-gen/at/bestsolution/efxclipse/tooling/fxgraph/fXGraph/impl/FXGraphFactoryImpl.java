@@ -72,6 +72,7 @@ public class FXGraphFactoryImpl extends EFactoryImpl implements FXGraphFactory
       case FXGraphPackage.IMPORT: return createImport();
       case FXGraphPackage.ELEMENT: return createElement();
       case FXGraphPackage.DEFINE: return createDefine();
+      case FXGraphPackage.STATIC_VALUE_PROPERTY: return createStaticValueProperty();
       case FXGraphPackage.PROPERTY: return createProperty();
       case FXGraphPackage.VALUE_PROPERTY: return createValueProperty();
       case FXGraphPackage.SINGLE_VALUE_PROPERTY: return createSingleValueProperty();
@@ -82,6 +83,7 @@ public class FXGraphFactoryImpl extends EFactoryImpl implements FXGraphFactory
       case FXGraphPackage.SIMPLE_VALUE_PROPERTY: return createSimpleValueProperty();
       case FXGraphPackage.REFERENCE_VALUE_PROPERTY: return createReferenceValueProperty();
       case FXGraphPackage.INCLUDE_VALUE_PROPERTY: return createIncludeValueProperty();
+      case FXGraphPackage.COPY_VALUE_PROPERTY: return createCopyValueProperty();
       default:
         throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
     }
@@ -129,6 +131,17 @@ public class FXGraphFactoryImpl extends EFactoryImpl implements FXGraphFactory
   {
     DefineImpl define = new DefineImpl();
     return define;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public StaticValueProperty createStaticValueProperty()
+  {
+    StaticValuePropertyImpl staticValueProperty = new StaticValuePropertyImpl();
+    return staticValueProperty;
   }
 
   /**
@@ -239,6 +252,17 @@ public class FXGraphFactoryImpl extends EFactoryImpl implements FXGraphFactory
   {
     IncludeValuePropertyImpl includeValueProperty = new IncludeValuePropertyImpl();
     return includeValueProperty;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public CopyValueProperty createCopyValueProperty()
+  {
+    CopyValuePropertyImpl copyValueProperty = new CopyValuePropertyImpl();
+    return copyValueProperty;
   }
 
   /**

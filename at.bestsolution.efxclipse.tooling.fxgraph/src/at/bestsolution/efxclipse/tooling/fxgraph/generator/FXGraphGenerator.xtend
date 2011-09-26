@@ -26,6 +26,9 @@ import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.ReferenceValueProperty
 import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.IncludeValueProperty
 import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.ListValueProperty
 import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.MapValueProperty
+import org.eclipse.xtend.typesystem.StaticProperty
+import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.StaticValueProperty
+import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.CopyValueProperty
 
 class FXGraphGenerator implements IGenerator {
 	
@@ -85,13 +88,19 @@ try {
 	def elementContent(Element element, boolean root) '''
 		<«element.type.simpleName»«IF root» xmlns:fx="http://javafx.com/fxml"«ENDIF»«IF element.name != null» fx:id="«element.name»"«ENDIF»«IF element.value != null» fx:value="«simpleAttributeValue(element.value)»"«ELSEIF element.factory != null» fx:factory="«element.factory»"«ENDIF»«IF hasSimpleNoneTexProperties(element)»«FOR p : element.properties»«IF p.value instanceof SimpleValueProperty && (p.value as SimpleValueProperty).stringValue == null» «p.name»="«simpleAttributeValue(p.value as SimpleValueProperty)»"«ENDIF»«ENDFOR»«ENDIF»«IF ! hasNestedProperties(element)»/«ENDIF»> 
 		«IF hasNestedProperties(element)»
-			«propContent(element.properties)»
+			«propContents(element.properties)»
+			«statPropContent(element.staticProperties)»
 		</«element.type.simpleName»>
 		«ENDIF»
 	'''
 	
-	def propContent(List<Property> properties) '''
+	def propContents(List<Property> properties) '''
 		«FOR prop : properties»
+		«propContent(prop)»
+		«ENDFOR»
+	'''
+	
+	def propContent(Property prop) '''
 		«IF prop.value instanceof SimpleValueProperty»
 			«IF (prop.value as SimpleValueProperty).stringValue != null»
 				<«prop.name»>«(prop.value as SimpleValueProperty).stringValue»</«prop.name»>
@@ -102,7 +111,7 @@ try {
 			</«prop.name»>
 		«ELSEIF prop.value instanceof MapValueProperty»
 			<«prop.name»>
-				«propContent((prop.value as MapValueProperty).properties)»
+				«propContents((prop.value as MapValueProperty).properties)»
 			</«prop.name»>
 		«ELSEIF prop.value instanceof Element»
 			<«prop.name»>
@@ -116,6 +125,45 @@ try {
 			<«prop.name»>
 				<fx:include source="«(prop.value as IncludeValueProperty).source»" />
 			</«prop.name»>
+		«ELSEIF prop.value instanceof CopyValueProperty»
+			<«prop.name»>
+				<fx:copy source="«(prop.value as CopyValueProperty).reference.name»" />
+			</«prop.name»>
+		«ENDIF»
+	'''
+	
+	def statPropContent(List<StaticValueProperty> properties) '''
+		«FOR prop : properties»
+		«IF prop.value instanceof SimpleValueProperty»
+			«IF (prop.value as SimpleValueProperty).stringValue != null»
+				<«prop.type.simpleName».«prop.name»>«(prop.value as SimpleValueProperty).stringValue»</«prop.type.simpleName».«prop.name»>
+			«ELSE»
+				<«prop.type.simpleName».«prop.name»>«simpleAttributeValue(prop.value as SimpleValueProperty)»</«prop.type.simpleName».«prop.name»>
+			«ENDIF»
+		«ELSEIF prop.value instanceof ListValueProperty»
+			<«prop.type.simpleName».«prop.name»>
+				«propListContent(prop.value as ListValueProperty)»
+			</«prop.type.simpleName».«prop.name»>
+		«ELSEIF prop.value instanceof MapValueProperty»
+			<«prop.type.simpleName».«prop.name»>
+				«propContents((prop.value as MapValueProperty).properties)»
+			</«prop.type.simpleName».«prop.name»>
+		«ELSEIF prop.value instanceof Element»
+			<«prop.type.simpleName».«prop.name»>
+				«elementContent(prop.value as Element,false)»
+			</«prop.type.simpleName».«prop.name»>
+		«ELSEIF prop.value instanceof ReferenceValueProperty»
+			<«prop.type.simpleName».«prop.name»>
+				<fx:reference source="«(prop.value as ReferenceValueProperty).reference.name»" />
+			</«prop.type.simpleName».«prop.name»>
+		«ELSEIF prop.value instanceof IncludeValueProperty»
+			<«prop.type.simpleName».«prop.name»>
+				<fx:include source="«(prop.value as IncludeValueProperty).source»" />
+			</«prop.type.simpleName».«prop.name»>
+		«ELSEIF prop.value instanceof CopyValueProperty»
+			<«prop.type.simpleName».«prop.name»>
+				<fx:copy source="«(prop.value as CopyValueProperty).reference.name»" />
+			</«prop.type.simpleName».«prop.name»>
 		«ENDIF»
 		«ENDFOR»
 	'''
@@ -164,6 +212,12 @@ try {
 	}
 	
 	def hasNestedProperties(Element element) {
+		if( element.staticProperties.size > 0) {
+			return true;
+		} else if( element.defines.size > 0 ) {
+			return true;
+		}
+		
 		for( property : element.properties ) {
 			if( property.value instanceof SimpleValueProperty ) {
 				if( (property.value as SimpleValueProperty).stringValue != null ) {

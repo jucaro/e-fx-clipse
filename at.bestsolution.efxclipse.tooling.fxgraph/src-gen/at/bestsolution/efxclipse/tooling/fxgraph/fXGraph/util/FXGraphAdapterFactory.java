@@ -99,6 +99,11 @@ public class FXGraphAdapterFactory extends AdapterFactoryImpl
         return createDefineAdapter();
       }
       @Override
+      public Adapter caseStaticValueProperty(StaticValueProperty object)
+      {
+        return createStaticValuePropertyAdapter();
+      }
+      @Override
       public Adapter caseProperty(Property object)
       {
         return createPropertyAdapter();
@@ -147,6 +152,11 @@ public class FXGraphAdapterFactory extends AdapterFactoryImpl
       public Adapter caseIncludeValueProperty(IncludeValueProperty object)
       {
         return createIncludeValuePropertyAdapter();
+      }
+      @Override
+      public Adapter caseCopyValueProperty(CopyValueProperty object)
+      {
+        return createCopyValuePropertyAdapter();
       }
       @Override
       public Adapter defaultCase(EObject object)
@@ -226,6 +236,21 @@ public class FXGraphAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createDefineAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.StaticValueProperty <em>Static Value Property</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.StaticValueProperty
+   * @generated
+   */
+  public Adapter createStaticValuePropertyAdapter()
   {
     return null;
   }
@@ -376,6 +401,21 @@ public class FXGraphAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createIncludeValuePropertyAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.CopyValueProperty <em>Copy Value Property</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.CopyValueProperty
+   * @generated
+   */
+  public Adapter createCopyValuePropertyAdapter()
   {
     return null;
   }

@@ -63,6 +63,15 @@ public interface FXGraphFactory extends EFactory
   Define createDefine();
 
   /**
+   * Returns a new object of class '<em>Static Value Property</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Static Value Property</em>'.
+   * @generated
+   */
+  StaticValueProperty createStaticValueProperty();
+
+  /**
    * Returns a new object of class '<em>Property</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -151,6 +160,15 @@ public interface FXGraphFactory extends EFactory
    * @generated
    */
   IncludeValueProperty createIncludeValueProperty();
+
+  /**
+   * Returns a new object of class '<em>Copy Value Property</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Copy Value Property</em>'.
+   * @generated
+   */
+  CopyValueProperty createCopyValueProperty();
 
   /**
    * Returns the package supported by this factory.
