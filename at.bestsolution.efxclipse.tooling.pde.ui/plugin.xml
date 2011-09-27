@@ -5,6 +5,7 @@
          point="org.eclipse.pde.ui.pluginContent">
       <wizard
             class="at.bestsolution.efxclipse.tooling.pde.ui.FXOSGiAppWizard"
+            icon="icons/application_lightning.png"
             id="at.bestsolution.efxclipse.tooling.pde.ui.osgiapp"
             java="true"
             name="FX OSGi Application"
@@ -19,6 +20,7 @@
       <wizard
             category="org.eclipse.pde.PDE"
             class="at.bestsolution.efxclipse.tooling.pde.ui.NewJavaFXProductFileWizard"
+            icon="icons/application_lightning.png"
             id="at.bestsolution.efxclipse.tooling.pde.ui.jfxproduct"
             name="JavaFX Product Configuration">
       </wizard>
