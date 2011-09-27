@@ -8,6 +8,6 @@ import at.bestsolution.efxclipse.runtime.application.AbstractJFXApplication;
  */
 public class $applicationClass$ extends AbstractJFXApplication {
 	protected void jfxStart(Stage primaryStage) {
-		// Your implementation
+		primaryStage.setTitle("$windowTitle$");
 	}
 }

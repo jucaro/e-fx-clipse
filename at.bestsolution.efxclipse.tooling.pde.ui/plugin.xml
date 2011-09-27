@@ -14,5 +14,14 @@
             ui-content="false">
       </wizard>
    </extension>
+   <extension
+         point="org.eclipse.ui.newWizards">
+      <wizard
+            category="org.eclipse.pde.PDE"
+            class="at.bestsolution.efxclipse.tooling.pde.ui.NewJavaFXProductFileWizard"
+            id="at.bestsolution.efxclipse.tooling.pde.ui.jfxproduct"
+            name="JavaFX Product Configuration">
+      </wizard>
+   </extension>
 
 </plugin>

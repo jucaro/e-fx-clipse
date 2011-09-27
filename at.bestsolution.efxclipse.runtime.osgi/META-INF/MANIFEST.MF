@@ -3,6 +3,6 @@ Bundle-ManifestVersion: 2
 Bundle-Name: Osgi
 Bundle-SymbolicName: at.bestsolution.efxclipse.runtime.osgi
 Bundle-Version: 1.0.0.qualifier
-Fragment-Host: org.eclipse.osgi;bundle-version="3.8.0"
+Fragment-Host: org.eclipse.osgi;bundle-version="3.7.0"
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Export-Package: at.bestsolution.efxclipse.runtime.osgi
