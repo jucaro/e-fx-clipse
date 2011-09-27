@@ -66,7 +66,7 @@ public class FXOSGiAppTemplate extends FXPDETemplateSection {
 
 	@Override
 	public String getSectionId() {
-		return "javaFXRCP"; //$NON-NLS-1$
+		return "javaFXApp"; //$NON-NLS-1$
 	}
 
 	@Override
