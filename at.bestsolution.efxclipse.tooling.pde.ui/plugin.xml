@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="org.eclipse.pde.ui.pluginContent">
+      <wizard
+            class="at.bestsolution.efxclipse.tooling.pde.ui.FXOSGiAppWizard"
+            id="at.bestsolution.efxclipse.tooling.pde.ui.osgiapp"
+            java="true"
+            name="FX OSGi Application"
+            pureOSGi="false"
+            rcp="true"
+            requiresActivator="false"
+            ui-content="false">
+      </wizard>
+   </extension>
+
+</plugin>
