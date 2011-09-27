@@ -2,7 +2,7 @@
 <feature
       id="at.bestsolution.efxclipse.feature"
       label="efxclipse"
-      version="0.0.5"
+      version="0.0.6"
       provider-name="BestSolution.at">
 
    <description url="https://github.com/tomsontom/e-fx-clipse/wiki">
@@ -99,46 +99,12 @@ Everyone is permitted to copy and distribute copies of this Agreement, but in or
 This Agreement is governed by the laws of the State of New York and the intellectual property laws of the United States of America. No party to this Agreement will bring a legal action under this Agreement more than one year after the cause of action arose. Each party waives its rights to a jury trial in any resulting litigation.
    </license>
 
-   <plugin
-         id="at.bestsolution.efxclipse.tooling.css"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
+   <includes
+         id="at.bestsolution.efxclipse.tooling.feature"
+         version="0.0.0"/>
 
-   <plugin
-         id="at.bestsolution.efxclipse.tooling.css.jfx"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
-
-   <plugin
-         id="at.bestsolution.efxclipse.tooling.css.ui"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
-
-   <plugin
-         id="at.bestsolution.efxclipse.tooling.css.web"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
-
-   <plugin
-         id="at.bestsolution.efxclipse.tooling.jdt.core"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
-
-   <plugin
-         id="at.bestsolution.efxclipse.tooling.jdt.ui"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
+   <includes
+         id="at.bestsolution.efxclipse.runtime.feature"
+         version="0.0.0"/>
 
 </feature>
