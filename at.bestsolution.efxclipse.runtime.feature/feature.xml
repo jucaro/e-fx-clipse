@@ -2,7 +2,7 @@
 <feature
       id="at.bestsolution.efxclipse.runtime.feature"
       label="FX Runtime"
-      version="0.0.6"
+      version="0.0.6.qualifier"
       provider-name="BestSolution.at">
 
    <description url="http://www.example.com/description">
@@ -48,20 +48,6 @@
 
    <plugin
          id="at.bestsolution.efxclipse.runtime.panels"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
-
-   <plugin
-         id="at.bestsolution.efxclipse.runtime.workbench"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
-
-   <plugin
-         id="at.bestsolution.efxclipse.runtime.workbench.renderers"
          download-size="0"
          install-size="0"
          version="0.0.0"

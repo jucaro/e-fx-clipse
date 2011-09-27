@@ -2,7 +2,7 @@
 <feature
       id="at.bestsolution.efxclipse.tooling.feature"
       label="FX Tooling"
-      version="0.0.6"
+      version="0.0.6.qualifier"
       provider-name="BestSolution.at">
 
    <description url="http://www.example.com/description">

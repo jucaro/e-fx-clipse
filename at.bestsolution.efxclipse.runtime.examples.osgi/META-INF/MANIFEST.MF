@@ -5,7 +5,7 @@ Bundle-SymbolicName: at.bestsolution.efxclipse.runtime.examples.osgi; singleton:
 Bundle-Version: 1.0.0.qualifier
 Bundle-Activator: at.bestsolution.efxclipse.runtime.examples.osgi.Activator
 Require-Bundle: org.eclipse.core.runtime,
- at.bestsolution.efxclipse.runtime.application;bundle-version="1.0.0"
+ at.bestsolution.efxclipse.runtime.application;bundle-version="0.0.6"
 Bundle-ActivationPolicy: lazy
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Import-Package: javafx.animation;version="2.0.0",
@@ -36,3 +36,4 @@ Import-Package: javafx.animation;version="2.0.0",
  javafx.scene.web;version="2.0.0",
  javafx.stage;version="2.0.0",
  javafx.util;version="2.0.0"
+Bundle-Vendor: BestSolution.at

@@ -2,7 +2,7 @@ Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: Application
 Bundle-SymbolicName: at.bestsolution.efxclipse.runtime.application
-Bundle-Version: 1.0.0.qualifier
+Bundle-Version: 0.0.6.qualifier
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Require-Bundle: org.eclipse.equinox.app;bundle-version="1.3.100"
 Import-Package: javafx.animation;version="2.0.0",
@@ -34,3 +34,4 @@ Import-Package: javafx.animation;version="2.0.0",
  javafx.stage;version="2.0.0",
  javafx.util;version="2.0.0"
 Export-Package: at.bestsolution.efxclipse.runtime.application
+Bundle-Vendor: BestSolution.at
