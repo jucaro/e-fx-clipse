@@ -51,7 +51,7 @@ public class FXOSGiBundleTemplate extends FXPDETemplateSection {
 
 	@Override
 	protected void updateModel(IProgressMonitor monitor) throws CoreException {
-		
+		updateBuildModel();
 	}
 	
 	public IPluginReference[] getDependencies(String schemaVersion) {

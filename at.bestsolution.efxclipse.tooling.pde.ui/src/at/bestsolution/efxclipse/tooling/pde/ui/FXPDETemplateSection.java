@@ -9,8 +9,18 @@ import java.util.ResourceBundle;
 import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.core.runtime.Platform;
+import org.eclipse.core.runtime.preferences.IEclipsePreferences;
+import org.eclipse.core.runtime.preferences.InstanceScope;
+import org.eclipse.pde.core.IEditableModel;
+import org.eclipse.pde.core.build.IBuildEntry;
+import org.eclipse.pde.core.build.IBuildModel;
+import org.eclipse.pde.core.plugin.PluginRegistry;
+import org.eclipse.pde.internal.core.build.WorkspaceBuildModel;
 import org.eclipse.pde.ui.templates.OptionTemplateSection;
 import org.osgi.framework.Bundle;
+
+import at.bestsolution.efxclipse.tooling.jdt.core.internal.JavaFXCorePlugin;
+import at.bestsolution.efxclipse.tooling.jdt.core.internal.JavaFXPreferencesConstants;
 
 public abstract class FXPDETemplateSection extends OptionTemplateSection {
 
@@ -98,5 +108,17 @@ public abstract class FXPDETemplateSection extends OptionTemplateSection {
 
 	protected void createBrandingOptions() {
 		addOption(KEY_PRODUCT_BRANDING, "Product Branding", false, 0);
+	}
+	
+	protected void updateBuildModel() throws CoreException {
+		IEclipsePreferences pref = InstanceScope.INSTANCE.getNode(JavaFXCorePlugin.PLUGIN_ID);
+		String dir = pref.get(JavaFXPreferencesConstants.JAVAFX_DIR,"");
+		dir = dir.replaceAll("\\\\", "/") + "/rt/lib/jfxrt.jar";
+		
+		IBuildModel build = PluginRegistry.createBuildModel(model);
+		IBuildEntry entry = build.getFactory().createEntry("jars.extra.classpath");
+		entry.addToken(dir);
+		build.getBuild().add(entry);
+		((IEditableModel)build).save();
 	}
 }

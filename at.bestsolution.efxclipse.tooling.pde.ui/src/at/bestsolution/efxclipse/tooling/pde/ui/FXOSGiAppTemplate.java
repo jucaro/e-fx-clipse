@@ -7,16 +7,21 @@ import java.util.List;
 import org.eclipse.core.resources.IProject;
 import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.IProgressMonitor;
+import org.eclipse.core.runtime.preferences.IEclipsePreferences;
+import org.eclipse.core.runtime.preferences.InstanceScope;
 import org.eclipse.jdt.core.IClasspathEntry;
 import org.eclipse.jdt.core.IJavaProject;
 import org.eclipse.jdt.core.JavaCore;
 import org.eclipse.jface.wizard.Wizard;
 import org.eclipse.jface.wizard.WizardPage;
+import org.eclipse.pde.core.build.IBuildEntry;
+import org.eclipse.pde.core.build.IBuildModel;
 import org.eclipse.pde.core.plugin.IPluginBase;
 import org.eclipse.pde.core.plugin.IPluginElement;
 import org.eclipse.pde.core.plugin.IPluginExtension;
 import org.eclipse.pde.core.plugin.IPluginModelBase;
 import org.eclipse.pde.core.plugin.IPluginReference;
+import org.eclipse.pde.core.plugin.PluginRegistry;
 import org.eclipse.pde.internal.core.bundle.BundlePluginBase;
 import org.eclipse.pde.internal.core.ibundle.IBundle;
 import org.eclipse.pde.ui.IFieldData;
@@ -24,6 +29,8 @@ import org.eclipse.pde.ui.templates.PluginReference;
 import org.osgi.framework.Constants;
 
 import at.bestsolution.efxclipse.tooling.jdt.core.JavaFXCore;
+import at.bestsolution.efxclipse.tooling.jdt.core.internal.JavaFXCorePlugin;
+import at.bestsolution.efxclipse.tooling.jdt.core.internal.JavaFXPreferencesConstants;
 
 @SuppressWarnings("restriction")
 public class FXOSGiAppTemplate extends FXPDETemplateSection {
@@ -79,6 +86,8 @@ public class FXOSGiAppTemplate extends FXPDETemplateSection {
 		
 		if (getBooleanOption(KEY_PRODUCT_BRANDING))
 			createProductExtension();
+		
+		updateBuildModel();
 	}
 
 	private void createApplicationExtension() throws CoreException {
