@@ -5512,11 +5512,11 @@ rule__ControllerHandledValueProperty__Group__0__Impl
     }
 :
 (
-{ before(grammarAccess.getControllerHandledValuePropertyAccess().getMaptoKeyword_0()); }
+{ before(grammarAccess.getControllerHandledValuePropertyAccess().getControllermethodKeyword_0()); }
 
-	'mapto' 
+	'controllermethod' 
 
-{ after(grammarAccess.getControllerHandledValuePropertyAccess().getMaptoKeyword_0()); }
+{ after(grammarAccess.getControllerHandledValuePropertyAccess().getControllermethodKeyword_0()); }
 )
 
 ;

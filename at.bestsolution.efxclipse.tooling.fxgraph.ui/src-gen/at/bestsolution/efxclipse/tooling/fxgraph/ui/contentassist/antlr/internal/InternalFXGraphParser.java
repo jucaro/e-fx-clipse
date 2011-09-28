@@ -24,7 +24,7 @@ import java.util.HashMap;
 @SuppressWarnings("all")
 public class InternalFXGraphParser extends AbstractInternalContentAssistParser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_ID", "RULE_STRING", "RULE_SCRIPTLITERAL", "RULE_INT", "RULE_REAL", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'='", "'+='", "'||'", "'&&'", "'true'", "'false'", "'=='", "'!='", "'>='", "'<='", "'>'", "'<'", "'->'", "'..'", "'+'", "'-'", "'*'", "'**'", "'/'", "'%'", "'!'", "'.'", "'val'", "'super'", "'language'", "'import'", "'('", "')'", "'createdby'", "'id'", "'controlledby'", "'{'", "'}'", "'defines {'", "','", "'script'", "'call'", "'#'", "':'", "'['", "']'", "'idref'", "'include'", "'copy'", "'mapto'", "'scriptmethod'", "'scriptexpression'", "'instanceof'", "'as'", "'|'", "'if'", "'else'", "'switch'", "'default'", "'case'", "'for'", "'while'", "'do'", "';'", "'::'", "'new'", "'null'", "'typeof'", "'throw'", "'return'", "'try'", "'finally'", "'catch'", "'=>'", "'?'", "'extends'", "'&'", "'?.'", "'*.'", "'var'"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_ID", "RULE_STRING", "RULE_SCRIPTLITERAL", "RULE_INT", "RULE_REAL", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'='", "'+='", "'||'", "'&&'", "'true'", "'false'", "'=='", "'!='", "'>='", "'<='", "'>'", "'<'", "'->'", "'..'", "'+'", "'-'", "'*'", "'**'", "'/'", "'%'", "'!'", "'.'", "'val'", "'super'", "'language'", "'import'", "'('", "')'", "'createdby'", "'id'", "'controlledby'", "'{'", "'}'", "'defines {'", "','", "'script'", "'call'", "'#'", "':'", "'['", "']'", "'idref'", "'include'", "'copy'", "'controllermethod'", "'scriptmethod'", "'scriptexpression'", "'instanceof'", "'as'", "'|'", "'if'", "'else'", "'switch'", "'default'", "'case'", "'for'", "'while'", "'do'", "';'", "'::'", "'new'", "'null'", "'typeof'", "'throw'", "'return'", "'try'", "'finally'", "'catch'", "'=>'", "'?'", "'extends'", "'&'", "'?.'", "'*.'", "'var'"
     };
     public static final int T__68=68;
     public static final int T__69=69;
@@ -17099,24 +17099,24 @@ public class InternalFXGraphParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ControllerHandledValueProperty__Group__0__Impl"
-    // ../at.bestsolution.efxclipse.tooling.fxgraph.ui/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/ui/contentassist/antlr/internal/InternalFXGraph.g:5509:1: rule__ControllerHandledValueProperty__Group__0__Impl : ( 'mapto' ) ;
+    // ../at.bestsolution.efxclipse.tooling.fxgraph.ui/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/ui/contentassist/antlr/internal/InternalFXGraph.g:5509:1: rule__ControllerHandledValueProperty__Group__0__Impl : ( 'controllermethod' ) ;
     public final void rule__ControllerHandledValueProperty__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../at.bestsolution.efxclipse.tooling.fxgraph.ui/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/ui/contentassist/antlr/internal/InternalFXGraph.g:5513:1: ( ( 'mapto' ) )
-            // ../at.bestsolution.efxclipse.tooling.fxgraph.ui/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/ui/contentassist/antlr/internal/InternalFXGraph.g:5514:1: ( 'mapto' )
+            // ../at.bestsolution.efxclipse.tooling.fxgraph.ui/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/ui/contentassist/antlr/internal/InternalFXGraph.g:5513:1: ( ( 'controllermethod' ) )
+            // ../at.bestsolution.efxclipse.tooling.fxgraph.ui/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/ui/contentassist/antlr/internal/InternalFXGraph.g:5514:1: ( 'controllermethod' )
             {
-            // ../at.bestsolution.efxclipse.tooling.fxgraph.ui/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/ui/contentassist/antlr/internal/InternalFXGraph.g:5514:1: ( 'mapto' )
-            // ../at.bestsolution.efxclipse.tooling.fxgraph.ui/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/ui/contentassist/antlr/internal/InternalFXGraph.g:5515:1: 'mapto'
+            // ../at.bestsolution.efxclipse.tooling.fxgraph.ui/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/ui/contentassist/antlr/internal/InternalFXGraph.g:5514:1: ( 'controllermethod' )
+            // ../at.bestsolution.efxclipse.tooling.fxgraph.ui/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/ui/contentassist/antlr/internal/InternalFXGraph.g:5515:1: 'controllermethod'
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getControllerHandledValuePropertyAccess().getMaptoKeyword_0()); 
+               before(grammarAccess.getControllerHandledValuePropertyAccess().getControllermethodKeyword_0()); 
             }
             match(input,57,FOLLOW_57_in_rule__ControllerHandledValueProperty__Group__0__Impl11563); if (state.failed) return ;
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getControllerHandledValuePropertyAccess().getMaptoKeyword_0()); 
+               after(grammarAccess.getControllerHandledValuePropertyAccess().getControllermethodKeyword_0()); 
             }
 
             }
