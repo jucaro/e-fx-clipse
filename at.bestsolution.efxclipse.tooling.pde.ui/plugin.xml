@@ -14,6 +14,17 @@
             requiresActivator="false"
             ui-content="false">
       </wizard>
+      <wizard
+            class="at.bestsolution.efxclipse.tooling.pde.ui.FXOSGiBundleWizard"
+            icon="icons/application_lightning.png"
+            id="at.bestsolution.efxclipse.tooling.pde.ui.bundle"
+            java="true"
+            name="FX OSGi Bundle"
+            pureOSGi="false"
+            rcp="false"
+            requiresActivator="false"
+            ui-content="false">
+      </wizard>
    </extension>
    <extension
          point="org.eclipse.ui.newWizards">
