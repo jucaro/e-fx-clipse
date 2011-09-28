@@ -85,6 +85,7 @@ try {
 		
 		«FOR rootElement : resource.contents.get(0).eContents.filter(typeof(Element))»
 		«val body = elementContent(rootElement, true, importManager)»
+		<?import java.lang.*?>
 		«FOR i:importManager.imports»
 			<?import «i»?>
 		«ENDFOR»
@@ -217,7 +218,7 @@ try {
 		}
 		
 		if( element.controller != null ) {
-			builder.append(" fx:controller=\""+ element.controller.shortName(importManager) + "\"");
+			builder.append(" fx:controller=\""+ element.controller.qualifiedName + "\"");
 		}
 		
 		return builder.toString;
