@@ -336,7 +336,7 @@
         <classifier xsi:type="ecore:EClass" href="http://www.bestsolution.at/efxclipse/tooling/fxgraph/FXGraph#//ControllerHandledValueProperty"/>
       </type>
       <alternatives xsi:type="xtext:Group">
-        <elements xsi:type="xtext:Keyword" value="mapto"/>
+        <elements xsi:type="xtext:Keyword" value="controllermethod"/>
         <elements xsi:type="xtext:Assignment" feature="methodname" operator="=">
           <terminal xsi:type="xtext:RuleCall" rule="/2/@rules.11"/>
         </elements>

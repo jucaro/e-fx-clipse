@@ -80,7 +80,7 @@ CopyValueProperty:
 ;
 
 ControllerHandledValueProperty:
-	'mapto' methodname=ID
+	'controllermethod' methodname=ID
 ;
 
 ScriptHandlerHandledValueProperty:

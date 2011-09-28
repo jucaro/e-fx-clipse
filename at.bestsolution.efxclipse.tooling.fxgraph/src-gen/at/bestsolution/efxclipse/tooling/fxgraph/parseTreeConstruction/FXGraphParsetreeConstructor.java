@@ -3913,11 +3913,11 @@ protected class CopyValueProperty_ReferenceAssignment_1 extends AssignmentToken 
 /************ begin Rule ControllerHandledValueProperty ****************
  *
  * ControllerHandledValueProperty:
- * 	"mapto" methodname=ID;
+ * 	"controllermethod" methodname=ID;
  *
  **/
 
-// "mapto" methodname=ID
+// "controllermethod" methodname=ID
 protected class ControllerHandledValueProperty_Group extends GroupToken {
 	
 	public ControllerHandledValueProperty_Group(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -3946,16 +3946,16 @@ protected class ControllerHandledValueProperty_Group extends GroupToken {
 
 }
 
-// "mapto"
-protected class ControllerHandledValueProperty_MaptoKeyword_0 extends KeywordToken  {
+// "controllermethod"
+protected class ControllerHandledValueProperty_ControllermethodKeyword_0 extends KeywordToken  {
 	
-	public ControllerHandledValueProperty_MaptoKeyword_0(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+	public ControllerHandledValueProperty_ControllermethodKeyword_0(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
 		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
 	}
 	
 	@Override
 	public Keyword getGrammarElement() {
-		return grammarAccess.getControllerHandledValuePropertyAccess().getMaptoKeyword_0();
+		return grammarAccess.getControllerHandledValuePropertyAccess().getControllermethodKeyword_0();
 	}
 
     @Override
@@ -3982,7 +3982,7 @@ protected class ControllerHandledValueProperty_MethodnameAssignment_1 extends As
     @Override
 	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
 		switch(index) {
-			case 0: return new ControllerHandledValueProperty_MaptoKeyword_0(lastRuleCallOrigin, this, 0, inst);
+			case 0: return new ControllerHandledValueProperty_ControllermethodKeyword_0(lastRuleCallOrigin, this, 0, inst);
 			default: return null;
 		}	
 	}

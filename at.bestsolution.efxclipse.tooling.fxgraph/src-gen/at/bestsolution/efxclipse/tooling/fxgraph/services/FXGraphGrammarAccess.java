@@ -791,19 +791,19 @@ public class FXGraphGrammarAccess extends AbstractGrammarElementFinder {
 	public class ControllerHandledValuePropertyElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "ControllerHandledValueProperty");
 		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Keyword cMaptoKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Keyword cControllermethodKeyword_0 = (Keyword)cGroup.eContents().get(0);
 		private final Assignment cMethodnameAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final RuleCall cMethodnameIDTerminalRuleCall_1_0 = (RuleCall)cMethodnameAssignment_1.eContents().get(0);
 		
 		//ControllerHandledValueProperty:
-		//	"mapto" methodname=ID;
+		//	"controllermethod" methodname=ID;
 		public ParserRule getRule() { return rule; }
 
-		//"mapto" methodname=ID
+		//"controllermethod" methodname=ID
 		public Group getGroup() { return cGroup; }
 
-		//"mapto"
-		public Keyword getMaptoKeyword_0() { return cMaptoKeyword_0; }
+		//"controllermethod"
+		public Keyword getControllermethodKeyword_0() { return cControllermethodKeyword_0; }
 
 		//methodname=ID
 		public Assignment getMethodnameAssignment_1() { return cMethodnameAssignment_1; }
@@ -1120,7 +1120,7 @@ public class FXGraphGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//ControllerHandledValueProperty:
-	//	"mapto" methodname=ID;
+	//	"controllermethod" methodname=ID;
 	public ControllerHandledValuePropertyElements getControllerHandledValuePropertyAccess() {
 		return (pControllerHandledValueProperty != null) ? pControllerHandledValueProperty : (pControllerHandledValueProperty = new ControllerHandledValuePropertyElements());
 	}

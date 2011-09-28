@@ -1385,9 +1385,9 @@ ruleControllerHandledValueProperty returns [EObject current=null]
     @init { enterRule(); 
     }
     @after { leaveRule(); }:
-(	otherlv_0='mapto' 
+(	otherlv_0='controllermethod' 
     {
-    	newLeafNode(otherlv_0, grammarAccess.getControllerHandledValuePropertyAccess().getMaptoKeyword_0());
+    	newLeafNode(otherlv_0, grammarAccess.getControllerHandledValuePropertyAccess().getControllermethodKeyword_0());
     }
 (
 (
