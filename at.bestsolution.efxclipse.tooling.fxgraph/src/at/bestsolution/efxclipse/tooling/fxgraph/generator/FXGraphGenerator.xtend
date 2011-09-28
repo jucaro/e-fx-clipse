@@ -65,7 +65,7 @@ try {
 				}
 			}
 			
-			fsa.generateFile(projectRelativePath.replaceFirst(".fxgraph",".fxml"), createContent(resource, projectRelativePath));	
+			fsa.generateFile(projectRelativePath.replaceFirst(".fxgraph$",".fxml"), createContent(resource, projectRelativePath));	
 		}
 		} catch (Exception e) {
 		}
