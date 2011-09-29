@@ -6,12 +6,13 @@
     <extension
             point="org.eclipse.ui.editors">
         <editor
-            class="at.bestsolution.efxclipse.tooling.css.ui.CssDslExecutableExtensionFactory:org.eclipse.xtext.ui.editor.XtextEditor"
-            contributorClass="org.eclipse.ui.editors.text.TextEditorActionContributor"
-            default="true"
-            extensions="css"
-            id="at.bestsolution.efxclipse.tooling.css.CssDsl"
-            name="CssDsl Editor">
+              class="at.bestsolution.efxclipse.tooling.css.ui.CssDslExecutableExtensionFactory:org.eclipse.xtext.ui.editor.XtextEditor"
+              contributorClass="org.eclipse.ui.editors.text.TextEditorActionContributor"
+              default="true"
+              extensions="css"
+              icon="icons/page_white_swoosh.png"
+              id="at.bestsolution.efxclipse.tooling.css.CssDsl"
+              name="CssDsl Editor">
         </editor>
     </extension>
     <extension
