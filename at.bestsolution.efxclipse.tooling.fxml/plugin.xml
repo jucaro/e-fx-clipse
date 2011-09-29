@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+
+   <extension
+         point="org.eclipse.ui.editors">
+      <editor
+            name="FXML Editor"
+            extensions="fxml"
+            icon="icons/sample.gif"
+            contributorClass="org.eclipse.ui.texteditor.BasicTextEditorActionContributor"
+            class="at.bestsolution.efxclipse.tooling.fxml.editors.FXMLEditor"
+            id="at.bestsolution.efxclipse.tooling.fxml.editors.FXMLEditor">
+      </editor>
+   </extension>
+
+</plugin>

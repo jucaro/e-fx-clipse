@@ -1,0 +1,13 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Fxml
+Bundle-SymbolicName: at.bestsolution.efxclipse.tooling.fxml; singleton:=true
+Bundle-Version: 0.0.6.qualifier
+Bundle-Activator: at.bestsolution.efxclipse.tooling.fxml.Activator
+Require-Bundle: org.eclipse.ui,
+ org.eclipse.core.runtime,
+ org.eclipse.jface.text,
+ org.eclipse.ui.editors
+Bundle-ActivationPolicy: lazy
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Bundle-Vendor: BestSolution.at
