@@ -3,6 +3,8 @@ package at.bestsolution.efxclipse.runtime.examples.fxgraph.osgi;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
+import org.eclipse.equinox.app.IApplicationContext;
+
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.JavaFXBuilderFactory;
 import javafx.scene.Scene;
@@ -29,7 +31,7 @@ public class Application extends AbstractJFXApplication {
         return instance;
     }
     
-	protected void jfxStart(Stage primaryStage) {
+	protected void jfxStart(IApplicationContext context, Stage primaryStage) {
 		try {
             stage = primaryStage;
             gotoLogin();
