@@ -6,12 +6,13 @@
     <extension
             point="org.eclipse.ui.editors">
         <editor
-            class="at.bestsolution.efxclipse.tooling.fxgraph.ui.FXGraphExecutableExtensionFactory:org.eclipse.xtext.ui.editor.XtextEditor"
-            contributorClass="org.eclipse.ui.editors.text.TextEditorActionContributor"
-            default="true"
-            extensions="fxgraph"
-            id="at.bestsolution.efxclipse.tooling.fxgraph.FXGraph"
-            name="FXGraph Editor">
+              class="at.bestsolution.efxclipse.tooling.fxgraph.ui.FXGraphExecutableExtensionFactory:org.eclipse.xtext.ui.editor.XtextEditor"
+              contributorClass="org.eclipse.ui.editors.text.TextEditorActionContributor"
+              default="true"
+              extensions="fxgraph"
+              icon="icons/page_white_coldfusion.png"
+              id="at.bestsolution.efxclipse.tooling.fxgraph.FXGraph"
+              name="FXGraph Editor">
         </editor>
     </extension>
     <extension
