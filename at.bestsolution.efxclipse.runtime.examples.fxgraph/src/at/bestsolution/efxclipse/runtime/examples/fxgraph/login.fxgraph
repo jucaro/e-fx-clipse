@@ -8,7 +8,7 @@ import javafx.scene.paint.*
 import javafx.scene.text.*
 import at.bestsolution.efxclipse.runtime.examples.fxgraph.*
 
-AnchorPane id Login controlledby at.bestsolution.efxclipse.runtime.examples.fxgraph.LoginController {
+AnchorPane id Login controlledby LoginController {
 	prefHeight : 280.0,
 	prefWidth : 480.0,
 	children : [
