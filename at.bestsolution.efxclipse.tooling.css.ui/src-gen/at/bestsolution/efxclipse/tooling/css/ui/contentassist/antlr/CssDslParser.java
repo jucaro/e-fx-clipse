@@ -42,6 +42,7 @@ public class CssDslParser extends AbstractContentAssistParser {
 					put(grammarAccess.getSimple_selectorAccess().getAlternatives(), "rule__Simple_selector__Alternatives");
 					put(grammarAccess.getElement_nameAccess().getAlternatives(), "rule__Element_name__Alternatives");
 					put(grammarAccess.getSub_selectorAccess().getAlternatives(), "rule__Sub_selector__Alternatives");
+					put(grammarAccess.getCss_idAccess().getAlternatives(), "rule__Css_id__Alternatives");
 					put(grammarAccess.getCss_attribAccess().getAlternatives_2_0(), "rule__Css_attrib__Alternatives_2_0");
 					put(grammarAccess.getCss_attribAccess().getAlternatives_2_1(), "rule__Css_attrib__Alternatives_2_1");
 					put(grammarAccess.getCombinatorAccess().getAlternatives_0(), "rule__Combinator__Alternatives_0");
@@ -66,7 +67,7 @@ public class CssDslParser extends AbstractContentAssistParser {
 					put(grammarAccess.getSelectorAccess().getGroup_1_1_1(), "rule__Selector__Group_1_1_1__0");
 					put(grammarAccess.getSimple_selectorAccess().getGroup_0(), "rule__Simple_selector__Group_0__0");
 					put(grammarAccess.getCss_classAccess().getGroup(), "rule__Css_class__Group__0");
-					put(grammarAccess.getCss_idAccess().getGroup(), "rule__Css_id__Group__0");
+					put(grammarAccess.getCss_idAccess().getGroup_0(), "rule__Css_id__Group_0__0");
 					put(grammarAccess.getCss_attribAccess().getGroup(), "rule__Css_attrib__Group__0");
 					put(grammarAccess.getCss_attribAccess().getGroup_2(), "rule__Css_attrib__Group_2__0");
 					put(grammarAccess.getCss_generic_declarationAccess().getGroup(), "rule__Css_generic_declaration__Group__0");
@@ -77,7 +78,6 @@ public class CssDslParser extends AbstractContentAssistParser {
 					put(grammarAccess.getExprAccess().getGroup_1(), "rule__Expr__Group_1__0");
 					put(grammarAccess.getNumberTermAccess().getGroup(), "rule__NumberTerm__Group__0");
 					put(grammarAccess.getFunctionAccess().getGroup(), "rule__Function__Group__0");
-					put(grammarAccess.getHexColorAccess().getGroup(), "rule__HexColor__Group__0");
 					put(grammarAccess.getURLTypeAccess().getGroup(), "rule__URLType__Group__0");
 					put(grammarAccess.getPERCENTAGEAccess().getGroup(), "rule__PERCENTAGE__Group__0");
 					put(grammarAccess.getEMSAccess().getGroup(), "rule__EMS__Group__0");

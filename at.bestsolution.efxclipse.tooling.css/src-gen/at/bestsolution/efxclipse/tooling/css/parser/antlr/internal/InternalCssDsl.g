@@ -740,18 +740,26 @@ rulecss_id returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()]
     @init { enterRule(); 
     }
     @after { leaveRule(); }:
-(
+((
 	kw='#' 
     {
         $current.merge(kw);
-        newLeafNode(kw, grammarAccess.getCss_idAccess().getNumberSignKeyword_0()); 
+        newLeafNode(kw, grammarAccess.getCss_idAccess().getNumberSignKeyword_0_0()); 
     }
     this_IDENT_1=RULE_IDENT    {
 		$current.merge(this_IDENT_1);
     }
 
     { 
-    newLeafNode(this_IDENT_1, grammarAccess.getCss_idAccess().getIDENTTerminalRuleCall_1()); 
+    newLeafNode(this_IDENT_1, grammarAccess.getCss_idAccess().getIDENTTerminalRuleCall_0_1()); 
+    }
+)
+    |    this_hexdigits_2=RULE_HEXDIGITS    {
+		$current.merge(this_hexdigits_2);
+    }
+
+    { 
+    newLeafNode(this_hexdigits_2, grammarAccess.getCss_idAccess().getHexdigitsTerminalRuleCall_1()); 
     }
 )
     ;
@@ -1616,50 +1624,27 @@ finally {
 
 // Entry rule entryRuleHexColor
 entryRuleHexColor returns [String current=null] 
-	@init { 
-		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens();
-	}
 	:
 	{ newCompositeNode(grammarAccess.getHexColorRule()); } 
 	 iv_ruleHexColor=ruleHexColor 
 	 { $current=$iv_ruleHexColor.current.getText(); }  
 	 EOF 
 ;
-finally {
-	myHiddenTokenState.restore();
-}
 
 // Rule HexColor
 ruleHexColor returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] 
     @init { enterRule(); 
-		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens();
     }
     @after { leaveRule(); }:
-(
-	kw='#' 
-    {
-        $current.merge(kw);
-        newLeafNode(kw, grammarAccess.getHexColorAccess().getNumberSignKeyword_0()); 
-    }
-(    this_integer_1=RULE_INTEGER    {
-		$current.merge(this_integer_1);
+    this_hexdigits_0=RULE_HEXDIGITS    {
+		$current.merge(this_hexdigits_0);
     }
 
     { 
-    newLeafNode(this_integer_1, grammarAccess.getHexColorAccess().getIntegerTerminalRuleCall_1()); 
-    }
-)?    this_IDENT_2=RULE_IDENT    {
-		$current.merge(this_IDENT_2);
+    newLeafNode(this_hexdigits_0, grammarAccess.getHexColorAccess().getHexdigitsTerminalRuleCall()); 
     }
 
-    { 
-    newLeafNode(this_IDENT_2, grammarAccess.getHexColorAccess().getIDENTTerminalRuleCall_2()); 
-    }
-)
     ;
-finally {
-	myHiddenTokenState.restore();
-}
 
 
 
@@ -2100,6 +2085,8 @@ ruleFREQ returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()]
 RULE_INTEGER : ('0'..'9')+;
 
 RULE_REAL : ('0'..'9')* '.' ('0'..'9')+;
+
+RULE_HEXDIGITS : '#' ('0'..'9'|'a'..'f'|'A'..'F')+;
 
 RULE_IDENT : ('_'|'a'..'z'|'A'..'Z') ('_'|'-'|'a'..'z'|'A'..'Z'|'0'..'9')*;
 
