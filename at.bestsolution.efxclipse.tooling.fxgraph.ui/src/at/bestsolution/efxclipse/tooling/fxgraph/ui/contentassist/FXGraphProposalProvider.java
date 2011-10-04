@@ -516,7 +516,7 @@ public class FXGraphProposalProvider extends AbstractFXGraphProposalProvider {
 		return true;
 	}
 	
-	private String extractAttributename(String name) {
+	public static String extractAttributename(String name) {
 		String rv = null;
 		if( name.startsWith("get") || name.startsWith("set") ) {
 			rv = name.substring(3);
