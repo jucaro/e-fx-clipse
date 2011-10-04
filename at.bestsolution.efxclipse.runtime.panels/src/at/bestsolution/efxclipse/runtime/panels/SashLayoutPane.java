@@ -48,25 +48,32 @@ public class SashLayoutPane extends Pane {
 		public boolean isVisible() {
 			return visible;
 		}
+		
+		public void setWeight(Double weight) {
+			this.weight = weight;
+		}
 	}
 	
 	public static class MGenericTile extends MUIElement {
 		boolean horizontal;
 		List<MUIElement> children = new ArrayList<MUIElement>();
 		
-		MGenericTile() {
+		public MGenericTile() {
+			
 		}
 		
-		public MGenericTile(MGenericTile parent) {
-			if( parent != null ) {
-				parent.children.add(this);
-			}
+		public void setHorizontal(boolean horizontal) {
+			this.horizontal = horizontal;
+		}
+		
+		public void add(MUIElement element) {
+			children.add(element);
 		}
 	}
 	
 	public static class MUIControl extends MUIElement {
-		public MUIControl(MGenericTile parent) {
-			parent.children.add(this);
+		public MUIControl() {
+			
 		}
 	}
 	
