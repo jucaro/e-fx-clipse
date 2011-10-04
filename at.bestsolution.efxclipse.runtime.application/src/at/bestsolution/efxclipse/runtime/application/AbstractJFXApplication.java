@@ -8,34 +8,49 @@ import org.eclipse.equinox.app.IApplicationContext;
 
 public abstract class AbstractJFXApplication implements IApplication {
 	private static AbstractJFXApplication SELF;
+	
 	private IApplicationContext applicationContext;
+	private Object returnValue;
 	
 	public static class JFXApp extends Application {
 		private AbstractJFXApplication osgiApp = SELF;
+		private IApplicationContext applicationContext;
 		
 		@Override
 		public void start(Stage primaryStage) throws Exception {
-			osgiApp.impl_jfxStart(primaryStage);
+			this.applicationContext = osgiApp.applicationContext;
+			osgiApp.jfxStart(applicationContext,this,primaryStage);
 		}
 		
+		@Override
+		public void stop() throws Exception {
+			super.stop();
+			osgiApp.returnValue = osgiApp.jfxStop();
+		}
 	}
 	
 	@Override
-	public Object start(IApplicationContext context) throws Exception {
+	public final Object start(IApplicationContext context) throws Exception {
 		SELF = this;
 		this.applicationContext = context;
+		this.applicationContext.applicationRunning();
 		Application.launch(JFXApp.class, null);
-		return IApplication.EXIT_OK;
+		
+		try {
+			return returnValue == null ? IApplication.EXIT_OK : returnValue;
+		} finally {
+			returnValue = null;
+		}
 	}
 
 	@Override
-	public void stop() {
+	public final void stop() {
 		
 	}
 
-	void impl_jfxStart(Stage primaryStage) {
-		jfxStart(applicationContext, primaryStage);
-	}
+	protected abstract void jfxStart(IApplicationContext applicationContext, Application jfxApplication, Stage primaryStage);
 	
-	protected abstract void jfxStart(IApplicationContext applicationContext, Stage primaryStage);
+	protected Object jfxStop() {
+		return IApplication.EXIT_OK;
+	}
 }

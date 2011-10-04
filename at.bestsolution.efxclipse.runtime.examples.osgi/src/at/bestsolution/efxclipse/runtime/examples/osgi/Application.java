@@ -1,9 +1,6 @@
 package at.bestsolution.efxclipse.runtime.examples.osgi;
 
 import static java.lang.Math.random;
-
-import org.eclipse.equinox.app.IApplicationContext;
-
 import javafx.animation.KeyFrame;
 import javafx.animation.KeyValue;
 import javafx.animation.Timeline;
@@ -21,6 +18,9 @@ import javafx.scene.shape.Rectangle;
 import javafx.scene.shape.StrokeType;
 import javafx.stage.Stage;
 import javafx.util.Duration;
+
+import org.eclipse.equinox.app.IApplicationContext;
+
 import at.bestsolution.efxclipse.runtime.application.AbstractJFXApplication;
 
 /**
@@ -29,7 +29,7 @@ import at.bestsolution.efxclipse.runtime.application.AbstractJFXApplication;
 public class Application extends AbstractJFXApplication {
 
 	@Override
-	protected void jfxStart(IApplicationContext context, Stage primaryStage) {
+	protected void jfxStart(IApplicationContext context, javafx.application.Application jfxApplication, Stage primaryStage) {
 		Group root = new Group();
 		Scene scene = new Scene(root, 800, 600, Color.BLACK);
 		primaryStage.setScene(scene);

@@ -39,8 +39,13 @@ import at.bestsolution.efxclipse.runtime.examples.fxgraph.security.Authenticator
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.JavaFXBuilderFactory;
+import javafx.geometry.Orientation;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
+import javafx.scene.control.SplitPane;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
 
 /**
@@ -70,13 +75,39 @@ public class App extends Application {
     @Override public void start(Stage primaryStage) {
         try {
             stage = primaryStage;
-            gotoLogin();
+//            gotoLogin();
+            test();
+            primaryStage.setWidth(600);
+            primaryStage.setHeight(600);
             primaryStage.show();
         } catch (Exception ex) {
             Logger.getLogger(App.class.getName()).log(Level.SEVERE, null, ex);
         }
+        
+        System.err.println("Start is done");
     }
 
+    private void test() {
+    	
+    	SplitPane pane = new SplitPane();
+    	pane.setMaxSize(Double.MAX_VALUE, Double.MAX_VALUE);
+    	
+    	StackPane stack1 = new StackPane();
+    	stack1.getChildren().add(new Button("b1"));
+    	
+    	StackPane stack2 = new StackPane();
+    	stack2.getChildren().add(new Button("b1"));
+    	
+    	pane.getItems().addAll(stack1, stack2);
+    	pane.setDividerPosition(0, 0.5);
+    	
+    	Scene secene = new Scene(pane, 100, 100);
+    	stage.setHeight(600);
+    	stage.setWidth(800);
+    	stage.setScene(secene);
+    	
+    }
+    
     public User getLoggedUser() {
         return loggedUser;
     }
