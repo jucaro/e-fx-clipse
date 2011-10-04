@@ -30,7 +30,7 @@ public class FillLayoutPane extends AbstractLayoutPane<FillLayoutPane.FillData> 
 	 * <li>VERTICAL: Position the controls vertically from top to bottom</li>
 	 * </ul>
 	 */
-	public WritableBooleanValue horizontal = new SimpleBooleanProperty(this,
+	private WritableBooleanValue horizontal = new SimpleBooleanProperty(this,
 			"horizontal", true);
 
 	/**
@@ -41,7 +41,7 @@ public class FillLayoutPane extends AbstractLayoutPane<FillLayoutPane.FillData> 
 	 * 
 	 * @since 3.0
 	 */
-	public WritableIntegerValue marginWidth = new SimpleIntegerProperty(this,
+	private WritableIntegerValue marginWidth = new SimpleIntegerProperty(this,
 			"marginWidth", 0);
 
 	/**
@@ -52,7 +52,7 @@ public class FillLayoutPane extends AbstractLayoutPane<FillLayoutPane.FillData> 
 	 * 
 	 * @since 3.0
 	 */
-	public WritableIntegerValue marginHeight = new SimpleIntegerProperty(this,
+	private WritableIntegerValue marginHeight = new SimpleIntegerProperty(this,
 			"marginHeight", 0);
 
 	/**
@@ -63,7 +63,7 @@ public class FillLayoutPane extends AbstractLayoutPane<FillLayoutPane.FillData> 
 	 * 
 	 * @since 3.0
 	 */
-	public WritableIntegerValue spacing = new SimpleIntegerProperty(this,
+	private WritableIntegerValue spacing = new SimpleIntegerProperty(this,
 			"spacing", 0);
 
 	static class FillData {
@@ -101,6 +101,42 @@ public class FillLayoutPane extends AbstractLayoutPane<FillLayoutPane.FillData> 
 		}
 	}
 
+	public void setMarginHeight(int marginHeight) {
+		this.marginHeight.set(marginHeight);
+	}
+	
+	public int getMarginHeight() {
+		return this.marginHeight.get();
+	}
+	
+	public void setMarginWidth(int marginWidth) {
+		this.marginWidth.set(marginWidth);
+	}
+	
+	public int getMarginWidth() {
+		return this.marginWidth.get();
+	}
+	
+	public void setHorizontal(boolean horizontal) {
+		this.horizontal.set(horizontal);
+	}
+	
+	public boolean isHorizontal() {
+		return this.horizontal.get();
+	}
+	
+	public WritableIntegerValue marginHeight() {
+		return marginHeight;
+	}
+	
+	public WritableIntegerValue marginWidth() {
+		return marginWidth;
+	}
+	
+	public WritableBooleanValue horizontal() {
+		return horizontal;
+	}
+	
 	protected Size computeSize(double wHint, double hHint, boolean flushCache) {
 		Node[] children = getChildren().toArray(new Node[0]);
 		int count = children.length;

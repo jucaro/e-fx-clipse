@@ -180,6 +180,46 @@ public class SashLayoutPane extends Pane {
 		
 	}
 	
+	public void setMarginLeft(int marginLeft) {
+		this.marginLeft.set(marginLeft);
+	}
+	
+	public int getMarginLeft() {
+		return this.marginLeft.get();
+	}
+	
+	public void setMarginRight(int marginRight) {
+		this.marginRight.set(marginRight);
+	}
+	
+	public int getMarginRight() {
+		return this.marginRight.get();
+	}
+	
+	public void setMarginTop(int marginTop) {
+		this.marginTop.set(marginTop);
+	}
+	
+	public int getMarginTop() {
+		return this.marginTop.get();
+	}
+	
+	public void setMarginBottom(int marginBottom) {
+		this.marginBottom.set(marginBottom);
+	}
+	
+	public int getMarginBottom() {
+		return this.marginBottom.get();
+	}
+	
+	public void setSashWidth(int sashWidth) {
+		this.sashWidth.set(sashWidth);
+	}
+	
+	public int getSashWidth() {
+		return this.sashWidth.get();
+	}
+	
 	protected List<SashRect> getSashRects(double x, double y) {
 		List<SashRect> srs = new ArrayList<SashRect>();
 		boolean inSash = false;
@@ -297,8 +337,8 @@ public class SashLayoutPane extends Pane {
 		return visKids;
 	}
 	
-	private int totalWeight(MGenericTile node) {
-		int total = 0;
+	private double totalWeight(MGenericTile node) {
+		double total = 0;
 		for (MUIElement subNode : node.children) {
 			if (subNode.isVisible())
 				total += getWeight(subNode);
@@ -337,20 +377,18 @@ public class SashLayoutPane extends Pane {
 						: new BoundingBox(bounds.getMinX(), tilePos, bounds.getWidth(),
 								sashWidth.get());
 				sashes.add(new SashRect(sashRect, sashContainer, prev, subNode));
-//FIXME
-//				host.redraw(sashRect.x, sashRect.y, sashRect.width,
-//						sashRect.height, false);
 				tilePos += sashWidth.get();
 			}
 
-
 			// Calc the new size as a %'age of the total
 			double ratio = getWeight(subNode) / totalWeight;
-			int newSize = (int) ((availableWidth * ratio) + 0.5);
-
+			double newSize = availableWidth * ratio;
+			
 			Bounds subBounds = sashContainer.horizontal ? new BoundingBox(
 					tilePos, bounds.getMinY(), newSize, bounds.getHeight()) : new BoundingBox(
 					bounds.getMinX(), tilePos, bounds.getWidth(), newSize);
+					
+					
 			tilePos += newSize;
 
 			tileSubNodes(subBounds, subNode);
