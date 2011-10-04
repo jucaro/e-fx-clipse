@@ -65,6 +65,8 @@ public abstract class AbstractAntHandler extends AbstractHandler {
 		map.put("appVersion",properties.getProperty("jfx.build.appversion"));
 		
 		map.put("applicationClass", properties.getProperty("jfx.build.applicationClass"));
+		map.put("preloaderClass",properties.getProperty("jfx.build.preloaderClass"));
+		
 		map.put("appletWith", properties.getProperty("jfx.deploy.appletWith"));
 		map.put("appletHeight", properties.getProperty("jfx.deploy.appletHeight"));
 		

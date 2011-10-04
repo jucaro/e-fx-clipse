@@ -12,7 +12,7 @@ class AntTemplate {
 		
 		'''
 		<?xml version="1.0" encoding="UTF-8"?>
-			<project name="«projectName»" default="do-deploy" basedir=".">
+			<project name="«projectName»" default="do-deploy" basedir="."  xmlns:fx="javafx:com.sun.javafx.tools.ant">
 			«createInitTaskTarget(properties)»
 			«createLocalSetup(properties)»
 			«compileTarget(properties)»
@@ -64,14 +64,8 @@ class AntTemplate {
 		<target name="init-fx-tasks">
 			<property name="javafx.tools.ant.jar" value="«sdkPath»/tools/ant-javafx.jar"/>
 			
-			<taskdef name="fxdeploy"
-				classname="com.sun.javafx.tools.ant.DeployFXTask"
-				classpath="${javafx.tools.ant.jar}"/>
-			<taskdef name="fxjar"
-				classname="com.sun.javafx.tools.ant.FXJar"
-				classpath="${javafx.tools.ant.jar}"/>
-			<taskdef name="fxsignjar"
-				classname="com.sun.javafx.tools.ant.FXSignJarTask"
+			<taskdef resource="com/sun/javafx/tools/ant/antlib.xml"      
+				uri="javafx:com.sun.javafx.tools.ant"
 				classpath="${javafx.tools.ant.jar}"/>
 		</target>
 		'''
@@ -150,6 +144,14 @@ class AntTemplate {
 		val appVendor = properties.get("appVendor") as String;
 		val appTitle = properties.get("appTitle") as String;
 		val appVersion = properties.get("appVersion") as String;
+		val preloaderClass = properties.get("preloaderClass") as String;
+		var preloaderPath = "";
+		if( preloaderClass == null ) {
+			preloaderPath = null;
+		} else {
+			preloaderPath = preloaderClass.replace('.','/');
+		}
+		val fallBackClass = properties.get("fallbackClass") as String;
 		
 		var keyStore = properties.get("keyStore") as String;
 		var keyStoreAlias = properties.get("keyStoreAlias") as String;
@@ -169,39 +171,66 @@ class AntTemplate {
 				</fileset>
 			</copy>
 			
-			<fxjar destfile="dist/«projectName».jar">
-				<application mainclass="«mainClass»"/>
-				<fileset dir="build/classes"/>
-				<resources>
-					<fileset dir="dist">
-						<include name="libs/*"/>
-					</fileset>
-				</resources>
+			«IF preloaderClass != null»
+			<jar destfile="dist/libs/«projectName»-preloader.jar">
+				<fileset dir="build/classes">
+					<include name="«preloaderPath».class"/>
+				</fileset>
+			</jar>
+			«ENDIF»
+			
+			<fx:resources id="appRes">
+				«IF preloaderClass != null»
+				<fx:fileset dir="dist" requiredFor="preloader"
+					includes="«projectName»-preloader.jar"/>
+				«ENDIF»
+				<fx:fileset dir="dist" includes="«projectName».jar"/>
+				<fx:fileset dir="dist" includes="libs/*"/>
+			</fx:resources> 
+			
+			<fx:application id="fxApplication"
+				name="«projectName»"
+				mainClass="«mainClass»"
+				«IF preloaderClass != null»
+				preloaderClass="«preloaderClass»"
+				«ENDIF»
+				«IF fallBackClass != null»
+				fallbackClass="«fallBackClass»"
+				«ENDIF»
+				/>
+			
+			<fx:jar destfile="dist/«projectName».jar">
+				<fx:application refid="fxApplication"/>
+				<fileset dir="build/classes">
+				«IF preloaderClass != null»
+					<exclude name="«preloaderPath».class" />
+				«ENDIF»
+				</fileset>
+				<fx:resources refid="appRes"/>
+				
 				<manifest>
 					<attribute name="Implementation-Vendor" value="«appVendor»"/>
 					<attribute name="Implementation-Title" value="«appTitle»"/>
 					<attribute name="Implementation-Version" value="«appVersion»"/>
 				</manifest>
-			</fxjar>
+			</fx:jar>
 			
 			«IF keyStore != null»
-			<fxsignjar keystore="«keyStore»" alias="«keyStoreAlias»" «IF keyStorePass != null»storepass="«keyStorePass»" «ENDIF»destDir="dist">
-				<fileset file="dist/«projectName».jar"/>
-			</fxsignjar>
+			<fx:signjar keystore="«keyStore»" alias="«keyStoreAlias»" «IF keyStorePass != null»storepass="«keyStorePass»" «ENDIF»destDir="dist">
+				<fileset dir='dist/*.jar'/>
+				<fileset dir='dist/**/*.jar'/>
+			</fx:signjar>
 			«ENDIF»
 		
 			«IF appletWidth != null && appletHeight != null»
 			<mkdir dir="deploy" />
 			<!-- Need to use ${basedir} because somehow the ant task is calculating the directory differently -->
-			<fxdeploy width="«appletWidth»" height="«appletHeight»" outdir="${basedir}/deploy" embedJNLP="true" outfile="«projectName»">
-				<info title="«projectName»" vendor="«appVendor»"/>
-				<application name="«projectName»" mainclass="«mainClass»"/>
-				<resources>
-					<fileset dir="dist">
-						<include name="**/*"/>
-					</fileset>
-				</resources>
-			</fxdeploy>
+			<fx:deploy width="«appletWidth»" height="«appletHeight»" outdir="${basedir}/deploy" embedJNLP="true" outfile="«projectName»">
+				<fx:info title="«projectName»" vendor="«appVendor»"/>
+				<fx:application refId="fxApplication"/>
+				<fx:resources refid="appRes"/>
+				<fx:permissions elevated="true"/>
+			</fx:deploy>
 			«ENDIF»
 		</target>
 		'''

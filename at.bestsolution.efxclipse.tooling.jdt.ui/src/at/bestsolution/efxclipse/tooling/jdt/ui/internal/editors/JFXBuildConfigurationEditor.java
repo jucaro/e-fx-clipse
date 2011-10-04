@@ -51,12 +51,15 @@ import org.eclipse.jdt.core.IJavaElement;
 import org.eclipse.jdt.core.IJavaProject;
 import org.eclipse.jdt.core.IType;
 import org.eclipse.jdt.core.JavaCore;
+import org.eclipse.jdt.core.JavaModelException;
 import org.eclipse.jdt.core.search.IJavaSearchScope;
 import org.eclipse.jdt.core.search.SearchEngine;
 import org.eclipse.jdt.internal.ui.dialogs.MainTypeSelectionDialog;
 import org.eclipse.jdt.internal.ui.util.BusyIndicatorRunnableContext;
 import org.eclipse.jdt.internal.ui.wizards.TypedViewerFilter;
 import org.eclipse.jdt.internal.ui.wizards.buildpaths.FolderSelectionDialog;
+import org.eclipse.jdt.ui.IJavaElementSearchConstants;
+import org.eclipse.jdt.ui.JavaUI;
 import org.eclipse.jface.action.Action;
 import org.eclipse.jface.action.IToolBarManager;
 import org.eclipse.jface.databinding.swt.IWidgetValueProperty;
@@ -92,6 +95,7 @@ import org.eclipse.ui.PartInitException;
 import org.eclipse.ui.PlatformUI;
 import org.eclipse.ui.dialogs.ElementTreeSelectionDialog;
 import org.eclipse.ui.dialogs.ISelectionStatusValidator;
+import org.eclipse.ui.dialogs.SelectionDialog;
 import org.eclipse.ui.forms.widgets.Form;
 import org.eclipse.ui.forms.widgets.FormToolkit;
 import org.eclipse.ui.forms.widgets.ScrolledForm;
@@ -126,6 +130,7 @@ public class JFXBuildConfigurationEditor extends MultiPageEditorPart implements
 	public static final String BUILD_APP_TITLE = "buildAppTitle";
 	public static final String BUILD_APP_VERSION = "buildAppVersion";
 	public static final String BUILD_APPLICATION_CLASS = "buildApplicationClass";
+	public static final String BUILD_PRELOADER_CLASS = "buildPreloaderClass";
 	
 	public static final String DEPLOY_APPLET_WIDTH = "deployAppletWith";
 	public static final String DEPLOY_APPLET_HEIGHT = "deployAppletHeight";
@@ -149,6 +154,7 @@ public class JFXBuildConfigurationEditor extends MultiPageEditorPart implements
 			put(BUILD_APP_TITLE,"jfx.build.apptitle");
 			put(BUILD_APP_VERSION,"jfx.build.appversion");
 			put(BUILD_APPLICATION_CLASS,"jfx.build.applicationClass");
+			put(BUILD_PRELOADER_CLASS,"jfx.build.preloaderClass");
 			
 			put(DEPLOY_APPLET_WIDTH,"jfx.deploy.appletWith");
 			put(DEPLOY_APPLET_HEIGHT,"jfx.deploy.appletHeight");
@@ -362,6 +368,24 @@ public class JFXBuildConfigurationEditor extends MultiPageEditorPart implements
 				dbc.bindValue(textModify.observeDelayed(DELAY, t), BeanProperties.value(BUILD_APPLICATION_CLASS).observe(bean));
 			}
 			
+			{
+				toolkit.createLabel(sectionClient, "Preloader class*:");
+				final Text t = toolkit.createText(sectionClient, "");
+				t.setLayoutData(new GridData(GridData.FILL,GridData.CENTER,true,false,2,1));
+				Button b = toolkit.createButton(sectionClient, "Browse ...", SWT.PUSH);
+				b.addSelectionListener(new SelectionAdapter() {
+					@Override
+					public void widgetSelected(SelectionEvent e) {
+						String name = handlePreloaderclassSelection(t.getShell());
+						if( name != null ) {
+							t.setText(name);
+						}
+					}
+				});
+				b.setLayoutData(new GridData(GridData.FILL, GridData.CENTER, false, false));
+				dbc.bindValue(textModify.observeDelayed(DELAY, t), BeanProperties.value(BUILD_PRELOADER_CLASS).observe(bean));
+			}
+			
 			
 			section.setClient(sectionClient);
 		}
@@ -531,6 +555,33 @@ public class JFXBuildConfigurationEditor extends MultiPageEditorPart implements
 		IType type = (IType)results[0];
 		if (type != null) {
 			return type.getFullyQualifiedName();
+		}
+		
+		return null;
+	}
+	
+	String handlePreloaderclassSelection(Shell parent) {
+		IFileEditorInput i = (IFileEditorInput) getEditorInput();
+		IJavaProject project= JavaCore.create(i.getFile().getProject());
+		if (project == null) {
+			return null;
+		}
+		
+		try {
+			IType superType = project.findType("javafx.application.Preloader");
+			
+			IJavaSearchScope searchScope = SearchEngine.createStrictHierarchyScope(project, superType, true, false, null);		
+			BusyIndicatorRunnableContext context = new BusyIndicatorRunnableContext();
+			
+			SelectionDialog dialog = JavaUI.createTypeDialog(parent, PlatformUI.getWorkbench().getProgressService(), searchScope, IJavaElementSearchConstants.CONSIDER_CLASSES, false, "");
+			dialog.setTitle("Find Preloader");
+			if (dialog.open() == Window.OK) {
+				IType type = (IType) dialog.getResult()[0];
+				return type.getFullyQualifiedName('$');
+			}	
+		} catch (JavaModelException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
 		}
 		
 		return null;
@@ -808,6 +859,14 @@ public class JFXBuildConfigurationEditor extends MultiPageEditorPart implements
 		
 		public String getBuildApplicationClass() {
 			return get(BUILD_APPLICATION_CLASS);
+		}
+		
+		public void setBuildPreloaderClass(String value) {
+			set(BUILD_PRELOADER_CLASS,value);
+		}
+		
+		public String getBuildPreloaderClass() {
+			return get(BUILD_PRELOADER_CLASS);
 		}
 		
 		public void setDeployAppletWith(String value) {
