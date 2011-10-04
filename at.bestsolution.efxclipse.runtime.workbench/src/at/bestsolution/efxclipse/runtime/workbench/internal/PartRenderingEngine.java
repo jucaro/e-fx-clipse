@@ -1,5 +1,7 @@
 package at.bestsolution.efxclipse.runtime.workbench.internal;
 
+import java.util.Map;
+
 import javafx.scene.Group;
 
 import javax.annotation.PostConstruct;
@@ -107,6 +109,35 @@ public class PartRenderingEngine implements IPresentationEngine {
 		if (!element.isToBeRendered())
 			return null;
 		
+		if (element instanceof MContext) {
+			MContext ctxt = (MContext) element;
+			// Assert.isTrue(ctxt.getContext() == null,
+			// "Before rendering Context should be null");
+			if (ctxt.getContext() == null) {
+				IEclipseContext lclContext = parentContext
+						.createChild(getContextName(element));
+				populateModelInterfaces(ctxt, lclContext, element.getClass()
+						.getInterfaces());
+				ctxt.setContext(lclContext);
+
+				// System.out.println("New Context: " + lclContext.toString()
+				// + " parent: " + parentContext.toString());
+
+				// make sure the context knows about these variables that have
+				// been defined in the model
+				for (String variable : ctxt.getVariables()) {
+					lclContext.declareModifiable(variable);
+				}
+
+				Map<String, String> props = ctxt.getProperties();
+				for (String key : props.keySet()) {
+					lclContext.set(key, props.get(key));
+				}
+
+				E4Workbench.processHierarchy(element);
+			}
+		}
+		
 		Object newWidget = createWidget(element, parentWidget);
 		
 		if (newWidget != null) {
@@ -145,6 +176,18 @@ public class PartRenderingEngine implements IPresentationEngine {
 		}
 		
 		return newWidget;
+	}
+	
+	private static void populateModelInterfaces(MContext contextModel,
+			IEclipseContext context, Class<?>[] interfaces) {
+		for (Class<?> intf : interfaces) {
+//			Activator.trace(Policy.DEBUG_CONTEXTS,
+//					"Adding " + intf.getName() + " for " //$NON-NLS-1$ //$NON-NLS-2$
+//							+ contextModel.getClass().getName(), null);
+			context.set(intf.getName(), contextModel);
+
+			populateModelInterfaces(contextModel, context, intf.getInterfaces());
+		}
 	}
 
 	private IEclipseContext getContext(MUIElement parent) {

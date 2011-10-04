@@ -29,6 +29,9 @@ public class WorkbenchWindowRenderer extends JFXRenderer {
 			stage.setHeight(e.getHeight());
 			stage.setTitle(((MWindow) element).getLocalizedLabel());
 			FillLayoutPane root = new FillLayoutPane();
+			root.setMarginHeight(5);
+			root.setMarginWidth(5);
+			root.setStyle("-fx-background-color: #999;");
 			Scene scene = new Scene(root,Integer.MAX_VALUE,Integer.MAX_VALUE);
 			stage.setScene(scene);
 

@@ -26,7 +26,6 @@ public class SashLayoutPaneRenderer extends JFXRenderer {
 			return t;
 		} else {
 			SashLayoutPane pane = new SashLayoutPane();
-			pane.setStyle("-fx-background-color: red");
 			pane.getRoot().setHorizontal(((MPartSashContainer)(MUIElement)element).isHorizontal());
 			return pane;
 		}
@@ -74,7 +73,7 @@ public class SashLayoutPaneRenderer extends JFXRenderer {
 						
 					} else {
 						try {
-							el.setWeight(Double.parseDouble(data)*100);
+							el.setWeight(Double.parseDouble(data));
 						} catch (Exception e) {
 						}
 						
