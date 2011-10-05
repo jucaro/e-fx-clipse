@@ -1,6 +1,7 @@
 package at.bestsolution.efxclipse.tooling.fxgraph.ui.hover;
 
 import org.eclipse.emf.ecore.EObject;
+import org.eclipse.jdt.core.IField;
 import org.eclipse.jdt.core.IJavaElement;
 import org.eclipse.jdt.core.IMethod;
 import org.eclipse.jdt.core.IType;
@@ -73,8 +74,57 @@ public class FXHoverProvider extends XbaseHoverProvider {
 				}
 				tmp = tmp.eContainer();
 			}
+		} else if( object instanceof Element ) {
+			Element element = (Element) object;
+			if( element.getName() != null ) {
+				EObject tmp = object;
+				while( tmp.eContainer() != null ) {
+					if( tmp.eContainer() instanceof Element ) {
+						Element e = (Element) tmp.eContainer();
+						if( e.getController() != null ) {
+							IInformationControlCreatorProvider rv = findFieldJavaDoc(e.getController().getType(), element.getName(),object,viewer,region);
+							if( rv != null ) {
+								return rv; 
+							}
+						}
+					}
+					tmp = tmp.eContainer();
+				}
+			}
 		}
+		
 		return super.getHoverInfo(object, viewer, region);
+	}
+	
+	private IInformationControlCreatorProvider findFieldJavaDoc(JvmType t, String fieldname, EObject object, ITextViewer viewer, IRegion region) {
+		IType jdtType = (IType) javaElementFinder.findElementFor(t);
+		
+		try {
+			for( IField f : jdtType.getFields() ) {
+				if( f.getElementName().equals(fieldname) ) {
+					return createHover(f, object, viewer, region);
+				}
+			}
+			
+			
+			while (jdtType != null
+					&& jdtType.getSuperclassName() != null) {
+				jdtType = jdtType.getJavaProject()
+						.findType(jdtType.getSuperclassName());
+				if (jdtType != null) {
+					for( IField f : jdtType.getFields() ) {
+						if( f.getElementName().equals(fieldname) ) {
+							return createHover(f, object, viewer, region);
+						}
+					}
+				}
+			}
+		} catch (JavaModelException e) {
+			// TODO: handle exception
+			e.printStackTrace();
+		}
+		
+		return null;
 	}
 	
 	private IInformationControlCreatorProvider findMethodJavaDoc(JvmType t, String method, EObject object, ITextViewer viewer, IRegion region) {
