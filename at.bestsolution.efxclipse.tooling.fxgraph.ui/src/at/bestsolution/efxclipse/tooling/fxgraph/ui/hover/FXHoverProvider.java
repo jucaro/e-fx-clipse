@@ -1,9 +1,5 @@
 package at.bestsolution.efxclipse.tooling.fxgraph.ui.hover;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.jdt.core.IJavaElement;
 import org.eclipse.jdt.core.IMethod;
@@ -13,16 +9,16 @@ import org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover;
 import org.eclipse.jface.text.IInformationControlCreator;
 import org.eclipse.jface.text.IRegion;
 import org.eclipse.jface.text.ITextViewer;
-import org.eclipse.xtext.common.types.JvmIdentifiableElement;
 import org.eclipse.xtext.common.types.JvmType;
 import org.eclipse.xtext.common.types.util.jdt.IJavaElementFinder;
 import org.eclipse.xtext.xbase.ui.hover.XbaseHoverProvider;
 
-import com.google.inject.Inject;
-
+import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.ControllerHandledValueProperty;
 import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.Element;
 import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.Property;
 import at.bestsolution.efxclipse.tooling.fxgraph.ui.contentassist.FXGraphProposalProvider;
+
+import com.google.inject.Inject;
 
 @SuppressWarnings("restriction")
 public class FXHoverProvider extends XbaseHoverProvider {
@@ -57,36 +53,115 @@ public class FXHoverProvider extends XbaseHoverProvider {
 				Property property = (Property) object;
 				Element element = (Element) object.eContainer();
 				
-				JvmType t = element.getType().getType();
-				IType jdtType = (IType) javaElementFinder.findElementFor(t);
-				
-				try {
+				IInformationControlCreatorProvider rv = handleElementProperty(element, property, object, viewer, region);
+				if( rv != null ) {
+					return rv;
+				}
+			}
+		} else if( object instanceof ControllerHandledValueProperty ) {
+			ControllerHandledValueProperty prop = (ControllerHandledValueProperty) object;
+			EObject tmp = object;
+			while( tmp.eContainer() != null ) {
+				if( tmp.eContainer() instanceof Element ) {
+					Element e = (Element) tmp.eContainer();
+					if( e.getController() != null ) {
+						IInformationControlCreatorProvider rv = findMethodJavaDoc(e.getController().getType(), prop.getMethodname(), object, viewer, region);
+						if( rv != null ) {
+							return rv;
+						}
+					}
+				}
+				tmp = tmp.eContainer();
+			}
+		}
+		return super.getHoverInfo(object, viewer, region);
+	}
+	
+	private IInformationControlCreatorProvider findMethodJavaDoc(JvmType t, String method, EObject object, ITextViewer viewer, IRegion region) {
+		IType jdtType = (IType) javaElementFinder.findElementFor(t);
+		
+		try {
+			for( IMethod m : jdtType.getMethods() ) {
+				if( m.getElementName().equals(method) ) {
+					return createHover(m, object, viewer, region);
+				}
+			}
+			
+			while (jdtType != null
+					&& jdtType.getSuperclassName() != null) {
+				jdtType = jdtType.getJavaProject()
+						.findType(jdtType.getSuperclassName());
+				if (jdtType != null) {
+					for( IMethod m : jdtType.getMethods() ) {
+						if( m.getElementName().equals(method) ) {
+							return createHover(m, object, viewer, region);
+						}
+					}
+				}
+			}
+		} catch (JavaModelException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		return null;
+	}
+	
+	private IInformationControlCreatorProvider handleElementProperty(Element element, Property property, EObject object, ITextViewer viewer, IRegion region) {
+		JvmType t = element.getType().getType();
+		IType originalType = (IType) javaElementFinder.findElementFor(t); 
+		IType jdtType = originalType;
+		
+		try {
+			
+			// First check if there's a setter
+			for( IMethod m : jdtType.getMethods() ) {
+				if( m.getElementName().startsWith("set") && property.getName().equals(FXGraphProposalProvider.extractAttributename(m.getElementName())) ) {
+					return createHover(m, object, viewer, region);
+				}
+			}
+			
+			while (jdtType != null
+					&& jdtType.getSuperclassName() != null) {
+				jdtType = jdtType.getJavaProject()
+						.findType(jdtType.getSuperclassName());
+				if (jdtType != null) {
 					for( IMethod m : jdtType.getMethods() ) {
 						if( m.getElementName().startsWith("set") && property.getName().equals(FXGraphProposalProvider.extractAttributename(m.getElementName())) ) {
 							return createHover(m, object, viewer, region);
 						}
 					}
-					
-					while (jdtType != null
-							&& jdtType.getSuperclassName() != null) {
-						jdtType = jdtType.getJavaProject()
-								.findType(jdtType.getSuperclassName());
-						if (jdtType != null) {
-							for( IMethod m : jdtType.getMethods() ) {
-								if( m.getElementName().startsWith("set") && property.getName().equals(FXGraphProposalProvider.extractAttributename(m.getElementName())) ) {
-									return createHover(m, object, viewer, region);
-								}
-							}
-						}
-					}
-					
-				} catch (JavaModelException e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
 				}
 			}
+			
+			jdtType = originalType;
+			
+			// Check if there's a getter
+			for( IMethod m : jdtType.getMethods() ) {
+				if( (m.getElementName().startsWith("get") || m.getElementName().startsWith("is")) && property.getName().equals(FXGraphProposalProvider.extractAttributename(m.getElementName())) ) {
+					return createHover(m, object, viewer, region);
+				}
+			}
+			
+			while (jdtType != null
+					&& jdtType.getSuperclassName() != null) {
+				jdtType = jdtType.getJavaProject()
+						.findType(jdtType.getSuperclassName());
+				if (jdtType != null) {
+					for( IMethod m : jdtType.getMethods() ) {
+						if( (m.getElementName().startsWith("get") || m.getElementName().startsWith("is")) && property.getName().equals(FXGraphProposalProvider.extractAttributename(m.getElementName())) ) {
+							return createHover(m, object, viewer, region);
+						}
+					}
+				}
+			}
+			
+		} catch (JavaModelException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
 		}
-		return super.getHoverInfo(object, viewer, region);
+		
+		return null;
 	}
 	
 	private IInformationControlCreatorProvider createHover(IJavaElement javaElement, EObject eObject, ITextViewer viewer, IRegion region) {
