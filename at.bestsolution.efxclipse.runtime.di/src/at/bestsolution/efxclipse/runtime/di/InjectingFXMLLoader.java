@@ -11,7 +11,7 @@ import org.eclipse.e4.core.contexts.ContextInjectionFactory;
 import org.eclipse.e4.core.contexts.IEclipseContext;
 
 @SuppressWarnings("restriction")
-public class IEclipseContextFXMLoader {
+public class InjectingFXMLLoader {
 	public static <N> N loadFXML(IEclipseContext context, URL url) throws IOException {
 		FXMLLoader loader = new FXMLLoader();
 		loader.setLocation(url);
