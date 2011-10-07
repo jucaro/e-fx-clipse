@@ -35,44 +35,76 @@ import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.ControllerHandledValueP
 import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.ScriptHandlerHandledValueProperty
 import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.ScriptValueExpression
 import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.Language
+import java.io.File
+import java.io.FileOutputStream
+import java.io.BufferedWriter
+import java.io.FileWriter
 
 class FXGraphGenerator implements IGenerator {
 	
-	override void doGenerate(Resource resource, IFileSystemAccess fsa) {
-try {
-		if( resource.URI.platformResource ) {
-			var uri = resource.URI;
-			var root = ResourcesPlugin::workspace.root;
-			var project = root.getProject(uri.segment(1));
-			var projectRelativePath = "";
-			var i = 0;
+	def calculateRelativePath(Resource resource) {
+		
+			if( resource.URI.platformResource ) {
+				var uri = resource.URI;
+				var root = ResourcesPlugin::workspace.root;
+				var project = root.getProject(uri.segment(1));
+				var projectRelativePath = "";
+				var i = 0;
 			
-			for( seg : uri.segments ) {
-				if( i >= 1 ) {
-					projectRelativePath = projectRelativePath + "/" + uri.segment(i);
+				for( seg : uri.segments ) {
+					if( i >= 1 ) {
+						projectRelativePath = projectRelativePath + "/" + uri.segment(i);
+					}
+					i = i + 1;
 				}
-				i = i + 1;
-			}
 			
-			var file = project.getFile(projectRelativePath);
-			var jproject = JavaCore::create(project);
-			var prefix = null;
-			for( packroot: jproject.rawClasspath ) {
-				if( packroot.entryKind == IClasspathEntry::CPE_SOURCE ) {
-					if( projectRelativePath.startsWith(packroot.path.toString) ) {
-						projectRelativePath = projectRelativePath.substring(packroot.path.toString.length);
+				var file = project.getFile(projectRelativePath);
+				var jproject = JavaCore::create(project);
+				var prefix = null;
+				for( packroot: jproject.rawClasspath ) {
+					if( packroot.entryKind == IClasspathEntry::CPE_SOURCE ) {
+						if( projectRelativePath.startsWith(packroot.path.toString) ) {
+							projectRelativePath = projectRelativePath.substring(packroot.path.toString.length);
+						}
 					}
 				}
+				
+				return projectRelativePath;		
+			} else {
+				return null;
 			}
+		
+	}
+	
+	def doGeneratePreview(Resource resource) {
+		try {
+			val projectRelativePath = calculateRelativePath(resource);
+			if( projectRelativePath != null ) {
+				return createContent(resource, projectRelativePath,true).toString;
+			}	
+		} catch(Exception e) {
 			
-			fsa.generateFile(projectRelativePath.replaceFirst(".fxgraph$",".fxml"), createContent(resource, projectRelativePath));	
 		}
-		} catch (Exception e) {
+		
+		return null;
+	}
+		
+	override void doGenerate(Resource resource, IFileSystemAccess fsa) {
+		try {
+			val projectRelativePath = calculateRelativePath(resource);
+		
+			if( projectRelativePath != null ) {
+				val relativeOutPath = projectRelativePath.replaceFirst(".fxgraph$",".fxml");
+				fsa.generateFile(relativeOutPath, createContent(resource, projectRelativePath,false));
+			}	
+		} catch(Exception e) {
+			
 		}
+		
 	}
 	
 	
-	def createContent(Resource resource, String projectRelativePath) '''
+	def createContent(Resource resource, String projectRelativePath, boolean forPreview) '''
 		«val importManager = new ImportManager(true)»
 		<?xml version="1.0" encoding="UTF-8"?>
 		<!-- 
@@ -84,7 +116,7 @@ try {
 		«ENDFOR»
 		
 		«FOR rootElement : resource.contents.get(0).eContents.filter(typeof(Element))»
-		«val body = elementContent(rootElement, true, importManager)»
+		«val body = elementContent(rootElement, true, importManager, forPreview)»
 		<?import java.lang.*?>
 		«FOR i:importManager.imports»
 			<?import «i»?>
@@ -94,52 +126,52 @@ try {
 		«ENDFOR»
 	'''
 	
-	def elementContent(Element element, boolean root, ImportManager importManager) '''
-		<«element.type.shortName(importManager)»«IF root» xmlns:fx="http://javafx.com/fxml"«ENDIF»«fxElementAttributes(element,importManager)»«IF hasAttributeProperties(element)»«elementAttributes(element.properties)»«ENDIF»«IF ! hasNestedProperties(element)»/«ENDIF»> 
+	def elementContent(Element element, boolean root, ImportManager importManager, boolean forPreview) '''
+		<«element.type.shortName(importManager)»«IF root» xmlns:fx="http://javafx.com/fxml"«ENDIF»«fxElementAttributes(element,importManager,forPreview)»«IF hasAttributeProperties(element)»«elementAttributes(element.properties,forPreview)»«ENDIF»«IF ! hasNestedProperties(element)»/«ENDIF»> 
 		«IF hasNestedProperties(element)»
 			«IF element.defines.size > 0»
 			<fx:define>
 				«FOR define : element.defines»
-				«elementContent(define.element,false,importManager)»
+				«elementContent(define.element,false,importManager,forPreview)»
 				«ENDFOR»
 			</fx:define>
 			«ENDIF»
 			«FOR script : element.scripts»
-			«IF script.sourcecode != null»
+			«IF script.sourcecode != null && ! forPreview»
 			<fx:script>«script.sourcecode.substring(2,script.sourcecode.length-2)»
 			</fx:script>
 			«ELSE»
 			<fx:script source="«script.source»"/>
 			«ENDIF»
 			«ENDFOR»
-			«propContents(element.properties,importManager)»
-			«statPropContent(element.staticProperties,importManager)»
+			«propContents(element.properties,importManager,forPreview)»
+			«statPropContent(element.staticProperties,importManager,forPreview)»
 		</«element.type.shortName(importManager)»>
 		«ENDIF»
 	'''
 	
-	def propContents(List<Property> properties, ImportManager importManager) '''
+	def propContents(List<Property> properties, ImportManager importManager, boolean forPreview) '''
 		«FOR prop : properties.filter([Property p|subelementFilter(p)])»
-		«propContent(prop,importManager)»
+		«propContent(prop,importManager,forPreview)»
 		«ENDFOR»
 	'''
 	
-	def propContent(Property prop, ImportManager importManager) '''
+	def propContent(Property prop, ImportManager importManager, boolean forPreview) '''
 		«IF prop.value instanceof SimpleValueProperty»
 			«IF (prop.value as SimpleValueProperty).stringValue != null»
 				<«prop.name»>«(prop.value as SimpleValueProperty).stringValue»</«prop.name»>
 			«ENDIF»
 		«ELSEIF prop.value instanceof ListValueProperty»
 			<«prop.name»>
-				«propListContent(prop.value as ListValueProperty,importManager)»
+				«propListContent(prop.value as ListValueProperty,importManager, forPreview)»
 			</«prop.name»>
 		«ELSEIF prop.value instanceof MapValueProperty»
 			<«prop.name»>
-				«propContents((prop.value as MapValueProperty).properties,importManager)»
+				«propContents((prop.value as MapValueProperty).properties,importManager,forPreview)»
 			</«prop.name»>
 		«ELSEIF prop.value instanceof Element»
 			<«prop.name»>
-				«elementContent(prop.value as Element,false,importManager)»
+				«elementContent(prop.value as Element,false,importManager,forPreview)»
 			</«prop.name»>
 		«ELSEIF prop.value instanceof ReferenceValueProperty»
 			<«prop.name»>
@@ -156,7 +188,7 @@ try {
 		«ENDIF»
 	'''
 	
-	def statPropContent(List<StaticValueProperty> properties, ImportManager importManager) '''
+	def statPropContent(List<StaticValueProperty> properties, ImportManager importManager, boolean forPreview) '''
 		«FOR prop : properties»
 		«IF prop.value instanceof SimpleValueProperty»
 			«IF (prop.value as SimpleValueProperty).stringValue != null»
@@ -166,15 +198,15 @@ try {
 			«ENDIF»
 		«ELSEIF prop.value instanceof ListValueProperty»
 			<«prop.type.shortName(importManager)».«prop.name»>
-				«propListContent(prop.value as ListValueProperty,importManager)»
+				«propListContent(prop.value as ListValueProperty,importManager, forPreview)»
 			</«prop.type.shortName(importManager)».«prop.name»>
 		«ELSEIF prop.value instanceof MapValueProperty»
 			<«prop.type.shortName(importManager)».«prop.name»>
-				«propContents((prop.value as MapValueProperty).properties,importManager)»
+				«propContents((prop.value as MapValueProperty).properties,importManager, forPreview)»
 			</«prop.type.shortName(importManager)».«prop.name»>
 		«ELSEIF prop.value instanceof Element»
 			<«prop.type.shortName(importManager)».«prop.name»>
-				«elementContent(prop.value as Element,false,importManager)»
+				«elementContent(prop.value as Element,false,importManager, forPreview)»
 			</«prop.type.shortName(importManager)».«prop.name»>
 		«ELSEIF prop.value instanceof ReferenceValueProperty»
 			<«prop.type.shortName(importManager)».«prop.name»>
@@ -192,10 +224,10 @@ try {
 		«ENDFOR»
 	'''
 	
-	def propListContent(ListValueProperty listProp, ImportManager importManager) '''
+	def propListContent(ListValueProperty listProp, ImportManager importManager, boolean forPreview) '''
 		«FOR e : listProp.value»
 			«IF e instanceof Element»
-				«elementContent(e as Element,false,importManager)»
+				«elementContent(e as Element,false,importManager,forPreview)»
 			«ELSEIF e instanceof ReferenceValueProperty»
 				<fx:reference source="«(e as ReferenceValueProperty).reference.name»" />
 			«ELSEIF e instanceof IncludeValueProperty»
@@ -204,7 +236,7 @@ try {
 		«ENDFOR»
 	'''
 
-	def fxElementAttributes(Element element, ImportManager importManager) {
+	def fxElementAttributes(Element element, ImportManager importManager, boolean forPreview) {
 		var builder = new StringBuilder();
 		
 		if(element.name != null) {
@@ -213,18 +245,18 @@ try {
 		
 		if( element.value != null ) {
 			builder.append(" fx:value=\""+ simpleAttributeValue(element.value) + "\"");
-		} else if( element.factory != null ) {
+		} else if( element.factory != null && ! forPreview ) {
 			builder.append(" fx:factory=\""+ element.factory + "\"");
 		}
 		
-		if( element.controller != null ) {
+		if( element.controller != null && ! forPreview ) {
 			builder.append(" fx:controller=\""+ element.controller.qualifiedName + "\"");
 		}
 		
 		return builder.toString;
 	}
 	
-	def elementAttributes(List<Property> properties) {
+	def elementAttributes(List<Property> properties, boolean forPreview) {
 		var builder = new StringBuilder();
 		
 		for( p : properties.filter([Property p|elementAttributeFilter(p)]) ) {
@@ -233,11 +265,17 @@ try {
 			} else if( p.value instanceof ReferenceValueProperty ) {
 				builder.append(" " + p.name + "=\"$"+(p.value as ReferenceValueProperty).reference.name+"\"");
 			} else if( p.value instanceof ControllerHandledValueProperty ) {
-				builder.append(" " + p.name + "=\"#"+(p.value as ControllerHandledValueProperty).methodname +"\"");
+				if( ! forPreview ) {
+					builder.append(" " + p.name + "=\"#"+(p.value as ControllerHandledValueProperty).methodname +"\"");
+				}
 			} else if( p.value instanceof ScriptHandlerHandledValueProperty ) {
-				builder.append(" " + p.name + "=\""+(p.value as ScriptHandlerHandledValueProperty).functionname +"\"");
+				if( ! forPreview ) {
+					builder.append(" " + p.name + "=\""+(p.value as ScriptHandlerHandledValueProperty).functionname +"\"");
+				}
 			} else if( p.value instanceof ScriptValueExpression ) {
-				builder.append(" " + p.name + "=\""+(p.value as ScriptValueExpression).sourcecode.substring(2,(p.value as ScriptValueExpression).sourcecode.length-2).trim() +";\"");
+				if( ! forPreview ) {
+					builder.append(" " + p.name + "=\""+(p.value as ScriptValueExpression).sourcecode.substring(2,(p.value as ScriptValueExpression).sourcecode.length-2).trim() +";\"");	
+				}
 			}
 		}
 		
