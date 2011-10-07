@@ -51,9 +51,10 @@
     <extension
             point="org.eclipse.ui.preferencePages">
         <page
-            class="at.bestsolution.efxclipse.tooling.fxgraph.ui.FXGraphExecutableExtensionFactory:org.eclipse.xtext.ui.editor.preferences.LanguageRootPreferencePage"
-            id="at.bestsolution.efxclipse.tooling.fxgraph.FXGraph"
-            name="FXGraph">
+              category="at.bestsolution.efxclipse.tooling.jdt.ui.javafx"
+              class="at.bestsolution.efxclipse.tooling.fxgraph.ui.FXGraphExecutableExtensionFactory:org.eclipse.xtext.ui.editor.preferences.LanguageRootPreferencePage"
+              id="at.bestsolution.efxclipse.tooling.fxgraph.FXGraph"
+              name="FXGraph">
             <keywordReference id="at.bestsolution.efxclipse.tooling.fxgraph.ui.keyword_FXGraph"/>
         </page>
         <page
@@ -69,6 +70,12 @@
             id="at.bestsolution.efxclipse.tooling.fxgraph.FXGraph.templates"
             name="Templates">
             <keywordReference id="at.bestsolution.efxclipse.tooling.fxgraph.ui.keyword_FXGraph"/>
+        </page>
+        <page
+              category="at.bestsolution.efxclipse.tooling.fxgraph.FXGraph"
+              class="at.bestsolution.efxclipse.tooling.fxgraph.ui.preferences.PreviewPage"
+              id="at.bestsolution.efxclipse.tooling.fxgraph.ui.livepreview"
+              name="Preview">
         </page>
     </extension>
     <extension
