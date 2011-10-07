@@ -51,9 +51,10 @@
     <extension
             point="org.eclipse.ui.preferencePages">
         <page
-            class="at.bestsolution.efxclipse.tooling.css.ui.CssDslExecutableExtensionFactory:org.eclipse.xtext.ui.editor.preferences.LanguageRootPreferencePage"
-            id="at.bestsolution.efxclipse.tooling.css.CssDsl"
-            name="CssDsl">
+              category="at.bestsolution.efxclipse.tooling.jdt.ui.javafx"
+              class="at.bestsolution.efxclipse.tooling.css.ui.CssDslExecutableExtensionFactory:org.eclipse.xtext.ui.editor.preferences.LanguageRootPreferencePage"
+              id="at.bestsolution.efxclipse.tooling.css.CssDsl"
+              name="CssDsl">
             <keywordReference id="at.bestsolution.efxclipse.tooling.css.ui.keyword_CssDsl"/>
         </page>
         <page
