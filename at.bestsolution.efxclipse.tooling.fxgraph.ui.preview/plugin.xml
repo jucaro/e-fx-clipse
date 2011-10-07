@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="org.eclipse.ui.views">
+      <view
+            class="at.bestsolution.efxclipse.tooling.fxgraph.ui.preview.bundle.LivePreviewViewExecutableExtensionRegistry:at.bestsolution.efxclipse.tooling.fxgraph.ui.preview.LivePreviewPart"
+            id="at.bestsolution.efxclipse.tooling.fxgraph.ui.preview"
+            name="Preview"
+            restorable="true">
+      </view>
+   </extension>
+
+</plugin>
