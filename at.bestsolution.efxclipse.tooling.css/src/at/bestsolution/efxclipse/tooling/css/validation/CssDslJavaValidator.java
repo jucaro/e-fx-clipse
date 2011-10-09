@@ -49,7 +49,7 @@ public class CssDslJavaValidator extends AbstractCssDslJavaValidator {
 			return;
 		}
 		
-		if( dec.getExpression().getTermGroups().size() == 1 && dec.getExpression().getTermGroups().get(0).getTerms().size() == 1 && "null".equals(dec.getExpression().getTermGroups().get(0).getTerms().get(0).getIdentifier()) ) {
+		if( dec.getExpression().getTermGroups().size() == 1 && dec.getExpression().getTermGroups().get(0).getTerms().size() == 1 && ("null".equals(dec.getExpression().getTermGroups().get(0).getTerms().get(0).getIdentifier()) || "inherit".equals(dec.getExpression().getTermGroups().get(0).getTerms().get(0).getIdentifier()) ) ) {
 			return;
 		}
 
