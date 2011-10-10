@@ -78,11 +78,22 @@ public class LinearGradientValidator extends GradientValidator {
 						list.add(new ValidationResult(ValidationStatus.ERROR, "First element has to be 'from <size> <size> to <size> <size>'", g, null, -1));
 					}
 				} else if( "to".equals(g.getTerms().get(0).getIdentifier()) ) {
-					if( g.getTerms().size() == 2 ) {
+					if( g.getTerms().size() == 2 || g.getTerms().size() == 3 ) {
 						String v = g.getTerms().get(1).getIdentifier();
 						if( !("bottom".equals(v) || "top".equals(v) || "left".equals(v) || "right".equals(v)) ) {
-							list.add(new ValidationResult(ValidationStatus.ERROR, "The value has to be top or bottom", g, null, -1));
-						}	
+							list.add(new ValidationResult(ValidationStatus.ERROR, "The value has to be top, bottom, left, right", g, null, -1));
+						}
+						
+						if( g.getTerms().size() == 3 ) {
+							if( !("bottom".equals(v) || "top".equals(v)) ) {
+								list.add(new ValidationResult(ValidationStatus.ERROR, "The value has to be to or bottom", g, null, -1));
+							}
+							
+							v = g.getTerms().get(2).getIdentifier();
+							if( !("left".equals(v) || "right".equals(v)) ) {
+								list.add(new ValidationResult(ValidationStatus.ERROR, "The value has to be left or right", g, null, -1));
+							}
+						}
 						
 						if( e.getTermGroups().size() > 1 ) {
 							g = e.getTermGroups().get(1);
