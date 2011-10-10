@@ -69,6 +69,9 @@ public class CssDslFactoryImpl extends EFactoryImpl implements CssDslFactory
     switch (eClass.getClassifierID())
     {
       case CssDslPackage.STYLESHEET: return createstylesheet();
+      case CssDslPackage.CHARSET: return createcharset();
+      case CssDslPackage.IMPORT_EXPRESSION: return createimportExpression();
+      case CssDslPackage.PAGE: return createpage();
       case CssDslPackage.MEDIA: return createmedia();
       case CssDslPackage.RULESET: return createruleset();
       case CssDslPackage.SELECTOR: return createselector();
@@ -95,6 +98,39 @@ public class CssDslFactoryImpl extends EFactoryImpl implements CssDslFactory
   {
     stylesheetImpl stylesheet = new stylesheetImpl();
     return stylesheet;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public charset createcharset()
+  {
+    charsetImpl charset = new charsetImpl();
+    return charset;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public importExpression createimportExpression()
+  {
+    importExpressionImpl importExpression = new importExpressionImpl();
+    return importExpression;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public page createpage()
+  {
+    pageImpl page = new pageImpl();
+    return page;
   }
 
   /**

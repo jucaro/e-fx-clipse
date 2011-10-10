@@ -2,10 +2,13 @@ package at.bestsolution.efxclipse.tooling.css.serializer;
 
 import at.bestsolution.efxclipse.tooling.css.cssDsl.CssDslPackage;
 import at.bestsolution.efxclipse.tooling.css.cssDsl.URLType;
+import at.bestsolution.efxclipse.tooling.css.cssDsl.charset;
 import at.bestsolution.efxclipse.tooling.css.cssDsl.css_generic_declaration;
 import at.bestsolution.efxclipse.tooling.css.cssDsl.expr;
 import at.bestsolution.efxclipse.tooling.css.cssDsl.function;
+import at.bestsolution.efxclipse.tooling.css.cssDsl.importExpression;
 import at.bestsolution.efxclipse.tooling.css.cssDsl.media;
+import at.bestsolution.efxclipse.tooling.css.cssDsl.page;
 import at.bestsolution.efxclipse.tooling.css.cssDsl.ruleset;
 import at.bestsolution.efxclipse.tooling.css.cssDsl.selector;
 import at.bestsolution.efxclipse.tooling.css.cssDsl.simple_selector;
@@ -57,8 +60,18 @@ public class AbstractCssDslSemanticSequencer extends AbstractSemanticSequencer {
 	public void createSequence(EObject context, EObject semanticObject) {
 		if(semanticObject.eClass().getEPackage() == CssDslPackage.eINSTANCE) switch(semanticObject.eClass().getClassifierID()) {
 			case CssDslPackage.URL_TYPE:
-				if(context == grammarAccess.getURLTypeRule()) {
+				if(context == grammarAccess.getImportExpressionRule()) {
+					sequence_importExpression_URLType(context, (URLType) semanticObject); 
+					return; 
+				}
+				else if(context == grammarAccess.getURLTypeRule()) {
 					sequence_URLType_URLType(context, (URLType) semanticObject); 
+					return; 
+				}
+				else break;
+			case CssDslPackage.CHARSET:
+				if(context == grammarAccess.getCharsetRule()) {
+					sequence_charset_charset(context, (charset) semanticObject); 
 					return; 
 				}
 				else break;
@@ -81,9 +94,21 @@ public class AbstractCssDslSemanticSequencer extends AbstractSemanticSequencer {
 					return; 
 				}
 				else break;
+			case CssDslPackage.IMPORT_EXPRESSION:
+				if(context == grammarAccess.getImportExpressionRule()) {
+					sequence_importExpression_importExpression(context, (importExpression) semanticObject); 
+					return; 
+				}
+				else break;
 			case CssDslPackage.MEDIA:
 				if(context == grammarAccess.getMediaRule()) {
 					sequence_media_media(context, (media) semanticObject); 
+					return; 
+				}
+				else break;
+			case CssDslPackage.PAGE:
+				if(context == grammarAccess.getPageRule()) {
+					sequence_page_page(context, (page) semanticObject); 
 					return; 
 				}
 				else break;
@@ -141,13 +166,25 @@ public class AbstractCssDslSemanticSequencer extends AbstractSemanticSequencer {
 	 *    url[1, 1]
 	 */
 	protected void sequence_URLType_URLType(EObject context, URLType semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     charset=STRING
+	 *
+	 * Features:
+	 *    charset[1, 1]
+	 */
+	protected void sequence_charset_charset(EObject context, charset semanticObject) {
 		if(errorAcceptor != null) {
-			if(transientValues.isValueTransient(semanticObject, CssDslPackage.Literals.URL_TYPE__URL) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, CssDslPackage.Literals.URL_TYPE__URL));
+			if(transientValues.isValueTransient(semanticObject, CssDslPackage.Literals.CHARSET__CHARSET) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, CssDslPackage.Literals.CHARSET__CHARSET));
 		}
 		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
 		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
-		feeder.accept(grammarAccess.getURLTypeAccess().getUrlSTRINGTerminalRuleCall_2_0(), semanticObject.getUrl());
+		feeder.accept(grammarAccess.getCharsetAccess().getCharsetSTRINGTerminalRuleCall_1_0(), semanticObject.getCharset());
 		feeder.finish();
 	}
 	
@@ -212,6 +249,38 @@ public class AbstractCssDslSemanticSequencer extends AbstractSemanticSequencer {
 	
 	/**
 	 * Constraint:
+	 *     (url=STRING mediaList=media_list?)
+	 *
+	 * Features:
+	 *    mediaList[0, 1]
+	 *    url[1, 1]
+	 */
+	protected void sequence_importExpression_URLType(EObject context, URLType semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     value=STRING
+	 *
+	 * Features:
+	 *    value[1, 1]
+	 */
+	protected void sequence_importExpression_importExpression(EObject context, importExpression semanticObject) {
+		if(errorAcceptor != null) {
+			if(transientValues.isValueTransient(semanticObject, CssDslPackage.Literals.IMPORT_EXPRESSION__VALUE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, CssDslPackage.Literals.IMPORT_EXPRESSION__VALUE));
+		}
+		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
+		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
+		feeder.accept(grammarAccess.getImportExpressionAccess().getValueSTRINGTerminalRuleCall_0_1_0(), semanticObject.getValue());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Constraint:
 	 *     (medialist=media_list rulesets+=ruleset*)
 	 *
 	 * Features:
@@ -219,6 +288,19 @@ public class AbstractCssDslSemanticSequencer extends AbstractSemanticSequencer {
 	 *    rulesets[0, *]
 	 */
 	protected void sequence_media_media(EObject context, media semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     (pseudoPage=pseudo_page? declarations+=css_generic_declaration? declarations+=css_generic_declaration*)
+	 *
+	 * Features:
+	 *    pseudoPage[0, 1]
+	 *    declarations[0, *]
+	 */
+	protected void sequence_page_page(EObject context, page semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
@@ -267,11 +349,14 @@ public class AbstractCssDslSemanticSequencer extends AbstractSemanticSequencer {
 	
 	/**
 	 * Constraint:
-	 *     (ruleset+=ruleset | media+=media)*
+	 *     (charset=charset? imports+=importExpression* (ruleset+=ruleset | media+=media | page+=page)*)
 	 *
 	 * Features:
+	 *    charset[0, 1]
+	 *    imports[0, *]
 	 *    ruleset[0, *]
 	 *    media[0, *]
+	 *    page[0, *]
 	 */
 	protected void sequence_stylesheet_stylesheet(EObject context, stylesheet semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);

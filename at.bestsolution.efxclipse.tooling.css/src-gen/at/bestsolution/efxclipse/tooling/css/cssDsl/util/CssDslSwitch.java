@@ -83,6 +83,27 @@ public class CssDslSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case CssDslPackage.CHARSET:
+      {
+        charset charset = (charset)theEObject;
+        T result = casecharset(charset);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case CssDslPackage.IMPORT_EXPRESSION:
+      {
+        importExpression importExpression = (importExpression)theEObject;
+        T result = caseimportExpression(importExpression);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case CssDslPackage.PAGE:
+      {
+        page page = (page)theEObject;
+        T result = casepage(page);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       case CssDslPackage.MEDIA:
       {
         media media = (media)theEObject;
@@ -165,6 +186,7 @@ public class CssDslSwitch<T> extends Switch<T>
       {
         URLType urlType = (URLType)theEObject;
         T result = caseURLType(urlType);
+        if (result == null) result = caseimportExpression(urlType);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -184,6 +206,54 @@ public class CssDslSwitch<T> extends Switch<T>
    * @generated
    */
   public T casestylesheet(stylesheet object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>charset</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>charset</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T casecharset(charset object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>import Expression</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>import Expression</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseimportExpression(importExpression object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>page</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>page</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T casepage(page object)
   {
     return null;
   }

@@ -36,6 +36,33 @@ public interface CssDslFactory extends EFactory
   stylesheet createstylesheet();
 
   /**
+   * Returns a new object of class '<em>charset</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>charset</em>'.
+   * @generated
+   */
+  charset createcharset();
+
+  /**
+   * Returns a new object of class '<em>import Expression</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>import Expression</em>'.
+   * @generated
+   */
+  importExpression createimportExpression();
+
+  /**
+   * Returns a new object of class '<em>page</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>page</em>'.
+   * @generated
+   */
+  page createpage();
+
+  /**
    * Returns a new object of class '<em>media</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->

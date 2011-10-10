@@ -18,36 +18,248 @@ public class CssDslGrammarAccess extends AbstractGrammarElementFinder {
 	
 	public class StylesheetElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "stylesheet");
-		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
-		private final Assignment cRulesetAssignment_0 = (Assignment)cAlternatives.eContents().get(0);
-		private final RuleCall cRulesetRulesetParserRuleCall_0_0 = (RuleCall)cRulesetAssignment_0.eContents().get(0);
-		private final Assignment cMediaAssignment_1 = (Assignment)cAlternatives.eContents().get(1);
-		private final RuleCall cMediaMediaParserRuleCall_1_0 = (RuleCall)cMediaAssignment_1.eContents().get(0);
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Assignment cCharsetAssignment_0 = (Assignment)cGroup.eContents().get(0);
+		private final RuleCall cCharsetCharsetParserRuleCall_0_0 = (RuleCall)cCharsetAssignment_0.eContents().get(0);
+		private final Assignment cImportsAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cImportsImportExpressionParserRuleCall_1_0 = (RuleCall)cImportsAssignment_1.eContents().get(0);
+		private final Alternatives cAlternatives_2 = (Alternatives)cGroup.eContents().get(2);
+		private final Assignment cRulesetAssignment_2_0 = (Assignment)cAlternatives_2.eContents().get(0);
+		private final RuleCall cRulesetRulesetParserRuleCall_2_0_0 = (RuleCall)cRulesetAssignment_2_0.eContents().get(0);
+		private final Assignment cMediaAssignment_2_1 = (Assignment)cAlternatives_2.eContents().get(1);
+		private final RuleCall cMediaMediaParserRuleCall_2_1_0 = (RuleCall)cMediaAssignment_2_1.eContents().get(0);
+		private final Assignment cPageAssignment_2_2 = (Assignment)cAlternatives_2.eContents().get(2);
+		private final RuleCall cPagePageParserRuleCall_2_2_0 = (RuleCall)cPageAssignment_2_2.eContents().get(0);
 		
 		//stylesheet:
-		//	(ruleset+=ruleset | media+=media)*;
+		//	charset=charset? imports+=importExpression* (ruleset+=ruleset | media+=media | page+=page)*;
 		public ParserRule getRule() { return rule; }
 
-		//(ruleset+=ruleset | media+=media)*
-		public Alternatives getAlternatives() { return cAlternatives; }
+		//charset=charset? imports+=importExpression* (ruleset+=ruleset | media+=media | page+=page)*
+		public Group getGroup() { return cGroup; }
+
+		//charset=charset?
+		public Assignment getCharsetAssignment_0() { return cCharsetAssignment_0; }
+
+		//charset
+		public RuleCall getCharsetCharsetParserRuleCall_0_0() { return cCharsetCharsetParserRuleCall_0_0; }
+
+		//imports+=importExpression*
+		public Assignment getImportsAssignment_1() { return cImportsAssignment_1; }
+
+		//importExpression
+		public RuleCall getImportsImportExpressionParserRuleCall_1_0() { return cImportsImportExpressionParserRuleCall_1_0; }
+
+		//(ruleset+=ruleset | media+=media | page+=page)*
+		public Alternatives getAlternatives_2() { return cAlternatives_2; }
 
 		//ruleset+=ruleset
-		public Assignment getRulesetAssignment_0() { return cRulesetAssignment_0; }
+		public Assignment getRulesetAssignment_2_0() { return cRulesetAssignment_2_0; }
 
 		//ruleset
-		public RuleCall getRulesetRulesetParserRuleCall_0_0() { return cRulesetRulesetParserRuleCall_0_0; }
+		public RuleCall getRulesetRulesetParserRuleCall_2_0_0() { return cRulesetRulesetParserRuleCall_2_0_0; }
 
 		//media+=media
-		public Assignment getMediaAssignment_1() { return cMediaAssignment_1; }
+		public Assignment getMediaAssignment_2_1() { return cMediaAssignment_2_1; }
 
 		//media
-		public RuleCall getMediaMediaParserRuleCall_1_0() { return cMediaMediaParserRuleCall_1_0; }
+		public RuleCall getMediaMediaParserRuleCall_2_1_0() { return cMediaMediaParserRuleCall_2_1_0; }
+
+		//page+=page
+		public Assignment getPageAssignment_2_2() { return cPageAssignment_2_2; }
+
+		//page
+		public RuleCall getPagePageParserRuleCall_2_2_0() { return cPagePageParserRuleCall_2_2_0; }
+	}
+
+	public class CharsetElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "charset");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Alternatives cAlternatives_0 = (Alternatives)cGroup.eContents().get(0);
+		private final Keyword cCharsetKeyword_0_0 = (Keyword)cAlternatives_0.eContents().get(0);
+		private final Keyword cCHARSETKeyword_0_1 = (Keyword)cAlternatives_0.eContents().get(1);
+		private final Assignment cCharsetAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cCharsetSTRINGTerminalRuleCall_1_0 = (RuleCall)cCharsetAssignment_1.eContents().get(0);
+		private final Keyword cSemicolonKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		
+		//charset:
+		//	("@charset" | "@CHARSET") charset=STRING ";";
+		public ParserRule getRule() { return rule; }
+
+		//("@charset" | "@CHARSET") charset=STRING ";"
+		public Group getGroup() { return cGroup; }
+
+		//"@charset" | "@CHARSET"
+		public Alternatives getAlternatives_0() { return cAlternatives_0; }
+
+		//"@charset"
+		public Keyword getCharsetKeyword_0_0() { return cCharsetKeyword_0_0; }
+
+		//"@CHARSET"
+		public Keyword getCHARSETKeyword_0_1() { return cCHARSETKeyword_0_1; }
+
+		//charset=STRING
+		public Assignment getCharsetAssignment_1() { return cCharsetAssignment_1; }
+
+		//STRING
+		public RuleCall getCharsetSTRINGTerminalRuleCall_1_0() { return cCharsetSTRINGTerminalRuleCall_1_0; }
+
+		//";"
+		public Keyword getSemicolonKeyword_2() { return cSemicolonKeyword_2; }
+	}
+
+	public class ImportExpressionElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "importExpression");
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final Group cGroup_0 = (Group)cAlternatives.eContents().get(0);
+		private final Alternatives cAlternatives_0_0 = (Alternatives)cGroup_0.eContents().get(0);
+		private final Keyword cImportKeyword_0_0_0 = (Keyword)cAlternatives_0_0.eContents().get(0);
+		private final Keyword cIMPORTKeyword_0_0_1 = (Keyword)cAlternatives_0_0.eContents().get(1);
+		private final Assignment cValueAssignment_0_1 = (Assignment)cGroup_0.eContents().get(1);
+		private final RuleCall cValueSTRINGTerminalRuleCall_0_1_0 = (RuleCall)cValueAssignment_0_1.eContents().get(0);
+		private final Group cGroup_1 = (Group)cAlternatives.eContents().get(1);
+		private final RuleCall cURLTypeParserRuleCall_1_0 = (RuleCall)cGroup_1.eContents().get(0);
+		private final Assignment cMediaListAssignment_1_1 = (Assignment)cGroup_1.eContents().get(1);
+		private final RuleCall cMediaListMedia_listParserRuleCall_1_1_0 = (RuleCall)cMediaListAssignment_1_1.eContents().get(0);
+		private final Keyword cSemicolonKeyword_1_2 = (Keyword)cGroup_1.eContents().get(2);
+		
+		//importExpression:
+		//	("@import" | "@IMPORT") value=STRING | URLType mediaList=media_list? ";";
+		public ParserRule getRule() { return rule; }
+
+		//("@import" | "@IMPORT") value=STRING | URLType mediaList=media_list? ";"
+		public Alternatives getAlternatives() { return cAlternatives; }
+
+		//("@import" | "@IMPORT") value=STRING
+		public Group getGroup_0() { return cGroup_0; }
+
+		//"@import" | "@IMPORT"
+		public Alternatives getAlternatives_0_0() { return cAlternatives_0_0; }
+
+		//"@import"
+		public Keyword getImportKeyword_0_0_0() { return cImportKeyword_0_0_0; }
+
+		//"@IMPORT"
+		public Keyword getIMPORTKeyword_0_0_1() { return cIMPORTKeyword_0_0_1; }
+
+		//value=STRING
+		public Assignment getValueAssignment_0_1() { return cValueAssignment_0_1; }
+
+		//STRING
+		public RuleCall getValueSTRINGTerminalRuleCall_0_1_0() { return cValueSTRINGTerminalRuleCall_0_1_0; }
+
+		//URLType mediaList=media_list? ";"
+		public Group getGroup_1() { return cGroup_1; }
+
+		//URLType
+		public RuleCall getURLTypeParserRuleCall_1_0() { return cURLTypeParserRuleCall_1_0; }
+
+		//mediaList=media_list?
+		public Assignment getMediaListAssignment_1_1() { return cMediaListAssignment_1_1; }
+
+		//media_list
+		public RuleCall getMediaListMedia_listParserRuleCall_1_1_0() { return cMediaListMedia_listParserRuleCall_1_1_0; }
+
+		//";"
+		public Keyword getSemicolonKeyword_1_2() { return cSemicolonKeyword_1_2; }
+	}
+
+	public class PageElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "page");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Action cPageAction_0 = (Action)cGroup.eContents().get(0);
+		private final Alternatives cAlternatives_1 = (Alternatives)cGroup.eContents().get(1);
+		private final Keyword cPageKeyword_1_0 = (Keyword)cAlternatives_1.eContents().get(0);
+		private final Keyword cPAGEKeyword_1_1 = (Keyword)cAlternatives_1.eContents().get(1);
+		private final Assignment cPseudoPageAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cPseudoPagePseudo_pageParserRuleCall_2_0 = (RuleCall)cPseudoPageAssignment_2.eContents().get(0);
+		private final Keyword cLeftCurlyBracketKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		private final Assignment cDeclarationsAssignment_4 = (Assignment)cGroup.eContents().get(4);
+		private final RuleCall cDeclarationsCss_generic_declarationParserRuleCall_4_0 = (RuleCall)cDeclarationsAssignment_4.eContents().get(0);
+		private final Group cGroup_5 = (Group)cGroup.eContents().get(5);
+		private final Keyword cSemicolonKeyword_5_0 = (Keyword)cGroup_5.eContents().get(0);
+		private final Assignment cDeclarationsAssignment_5_1 = (Assignment)cGroup_5.eContents().get(1);
+		private final RuleCall cDeclarationsCss_generic_declarationParserRuleCall_5_1_0 = (RuleCall)cDeclarationsAssignment_5_1.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_6 = (Keyword)cGroup.eContents().get(6);
+		
+		//page:
+		//	{page} ("@page" | "@PAGE") pseudoPage=pseudo_page? "{" declarations+=css_generic_declaration? (";"
+		//	declarations+=css_generic_declaration?)* "}";
+		public ParserRule getRule() { return rule; }
+
+		//{page} ("@page" | "@PAGE") pseudoPage=pseudo_page? "{" declarations+=css_generic_declaration? (";"
+		//declarations+=css_generic_declaration?)* "}"
+		public Group getGroup() { return cGroup; }
+
+		//{page}
+		public Action getPageAction_0() { return cPageAction_0; }
+
+		//"@page" | "@PAGE"
+		public Alternatives getAlternatives_1() { return cAlternatives_1; }
+
+		//"@page"
+		public Keyword getPageKeyword_1_0() { return cPageKeyword_1_0; }
+
+		//"@PAGE"
+		public Keyword getPAGEKeyword_1_1() { return cPAGEKeyword_1_1; }
+
+		//pseudoPage=pseudo_page?
+		public Assignment getPseudoPageAssignment_2() { return cPseudoPageAssignment_2; }
+
+		//pseudo_page
+		public RuleCall getPseudoPagePseudo_pageParserRuleCall_2_0() { return cPseudoPagePseudo_pageParserRuleCall_2_0; }
+
+		//"{"
+		public Keyword getLeftCurlyBracketKeyword_3() { return cLeftCurlyBracketKeyword_3; }
+
+		//declarations+=css_generic_declaration?
+		public Assignment getDeclarationsAssignment_4() { return cDeclarationsAssignment_4; }
+
+		//css_generic_declaration
+		public RuleCall getDeclarationsCss_generic_declarationParserRuleCall_4_0() { return cDeclarationsCss_generic_declarationParserRuleCall_4_0; }
+
+		//(";" declarations+=css_generic_declaration?)*
+		public Group getGroup_5() { return cGroup_5; }
+
+		//";"
+		public Keyword getSemicolonKeyword_5_0() { return cSemicolonKeyword_5_0; }
+
+		//declarations+=css_generic_declaration?
+		public Assignment getDeclarationsAssignment_5_1() { return cDeclarationsAssignment_5_1; }
+
+		//css_generic_declaration
+		public RuleCall getDeclarationsCss_generic_declarationParserRuleCall_5_1_0() { return cDeclarationsCss_generic_declarationParserRuleCall_5_1_0; }
+
+		//"}"
+		public Keyword getRightCurlyBracketKeyword_6() { return cRightCurlyBracketKeyword_6; }
+	}
+
+	public class Pseudo_pageElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "pseudo_page");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cColonKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final RuleCall cIDENTTerminalRuleCall_1 = (RuleCall)cGroup.eContents().get(1);
+		
+		//pseudo_page:
+		//	":" IDENT;
+		public ParserRule getRule() { return rule; }
+
+		//":" IDENT
+		public Group getGroup() { return cGroup; }
+
+		//":"
+		public Keyword getColonKeyword_0() { return cColonKeyword_0; }
+
+		//IDENT
+		public RuleCall getIDENTTerminalRuleCall_1() { return cIDENTTerminalRuleCall_1; }
 	}
 
 	public class MediaElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "media");
 		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Keyword cMediaKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Alternatives cAlternatives_0 = (Alternatives)cGroup.eContents().get(0);
+		private final Keyword cMediaKeyword_0_0 = (Keyword)cAlternatives_0.eContents().get(0);
+		private final Keyword cMEDIAKeyword_0_1 = (Keyword)cAlternatives_0.eContents().get(1);
 		private final Assignment cMedialistAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final RuleCall cMedialistMedia_listParserRuleCall_1_0 = (RuleCall)cMedialistAssignment_1.eContents().get(0);
 		private final Keyword cLeftCurlyBracketKeyword_2 = (Keyword)cGroup.eContents().get(2);
@@ -56,14 +268,20 @@ public class CssDslGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cRightCurlyBracketKeyword_4 = (Keyword)cGroup.eContents().get(4);
 		
 		//media:
-		//	"media" medialist=media_list "{" rulesets+=ruleset* "}";
+		//	("@media" | "@MEDIA") medialist=media_list "{" rulesets+=ruleset* "}";
 		public ParserRule getRule() { return rule; }
 
-		//"media" medialist=media_list "{" rulesets+=ruleset* "}"
+		//("@media" | "@MEDIA") medialist=media_list "{" rulesets+=ruleset* "}"
 		public Group getGroup() { return cGroup; }
 
-		//"media"
-		public Keyword getMediaKeyword_0() { return cMediaKeyword_0; }
+		//"@media" | "@MEDIA"
+		public Alternatives getAlternatives_0() { return cAlternatives_0; }
+
+		//"@media"
+		public Keyword getMediaKeyword_0_0() { return cMediaKeyword_0_0; }
+
+		//"@MEDIA"
+		public Keyword getMEDIAKeyword_0_1() { return cMEDIAKeyword_0_1; }
 
 		//medialist=media_list
 		public Assignment getMedialistAssignment_1() { return cMedialistAssignment_1; }
@@ -1110,6 +1328,10 @@ public class CssDslGrammarAccess extends AbstractGrammarElementFinder {
 	
 	
 	private StylesheetElements pStylesheet;
+	private CharsetElements pCharset;
+	private ImportExpressionElements pImportExpression;
+	private PageElements pPage;
+	private Pseudo_pageElements pPseudo_page;
 	private MediaElements pMedia;
 	private Media_listElements pMedia_list;
 	private MediumElements pMedium;
@@ -1169,7 +1391,7 @@ public class CssDslGrammarAccess extends AbstractGrammarElementFinder {
 
 	
 	//stylesheet:
-	//	(ruleset+=ruleset | media+=media)*;
+	//	charset=charset? imports+=importExpression* (ruleset+=ruleset | media+=media | page+=page)*;
 	public StylesheetElements getStylesheetAccess() {
 		return (pStylesheet != null) ? pStylesheet : (pStylesheet = new StylesheetElements());
 	}
@@ -1178,8 +1400,49 @@ public class CssDslGrammarAccess extends AbstractGrammarElementFinder {
 		return getStylesheetAccess().getRule();
 	}
 
+	//charset:
+	//	("@charset" | "@CHARSET") charset=STRING ";";
+	public CharsetElements getCharsetAccess() {
+		return (pCharset != null) ? pCharset : (pCharset = new CharsetElements());
+	}
+	
+	public ParserRule getCharsetRule() {
+		return getCharsetAccess().getRule();
+	}
+
+	//importExpression:
+	//	("@import" | "@IMPORT") value=STRING | URLType mediaList=media_list? ";";
+	public ImportExpressionElements getImportExpressionAccess() {
+		return (pImportExpression != null) ? pImportExpression : (pImportExpression = new ImportExpressionElements());
+	}
+	
+	public ParserRule getImportExpressionRule() {
+		return getImportExpressionAccess().getRule();
+	}
+
+	//page:
+	//	{page} ("@page" | "@PAGE") pseudoPage=pseudo_page? "{" declarations+=css_generic_declaration? (";"
+	//	declarations+=css_generic_declaration?)* "}";
+	public PageElements getPageAccess() {
+		return (pPage != null) ? pPage : (pPage = new PageElements());
+	}
+	
+	public ParserRule getPageRule() {
+		return getPageAccess().getRule();
+	}
+
+	//pseudo_page:
+	//	":" IDENT;
+	public Pseudo_pageElements getPseudo_pageAccess() {
+		return (pPseudo_page != null) ? pPseudo_page : (pPseudo_page = new Pseudo_pageElements());
+	}
+	
+	public ParserRule getPseudo_pageRule() {
+		return getPseudo_pageAccess().getRule();
+	}
+
 	//media:
-	//	"media" medialist=media_list "{" rulesets+=ruleset* "}";
+	//	("@media" | "@MEDIA") medialist=media_list "{" rulesets+=ruleset* "}";
 	public MediaElements getMediaAccess() {
 		return (pMedia != null) ? pMedia : (pMedia = new MediaElements());
 	}

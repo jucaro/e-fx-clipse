@@ -84,6 +84,21 @@ public class CssDslAdapterFactory extends AdapterFactoryImpl
         return createstylesheetAdapter();
       }
       @Override
+      public Adapter casecharset(charset object)
+      {
+        return createcharsetAdapter();
+      }
+      @Override
+      public Adapter caseimportExpression(importExpression object)
+      {
+        return createimportExpressionAdapter();
+      }
+      @Override
+      public Adapter casepage(page object)
+      {
+        return createpageAdapter();
+      }
+      @Override
       public Adapter casemedia(media object)
       {
         return createmediaAdapter();
@@ -176,6 +191,51 @@ public class CssDslAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createstylesheetAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link at.bestsolution.efxclipse.tooling.css.cssDsl.charset <em>charset</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see at.bestsolution.efxclipse.tooling.css.cssDsl.charset
+   * @generated
+   */
+  public Adapter createcharsetAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link at.bestsolution.efxclipse.tooling.css.cssDsl.importExpression <em>import Expression</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see at.bestsolution.efxclipse.tooling.css.cssDsl.importExpression
+   * @generated
+   */
+  public Adapter createimportExpressionAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link at.bestsolution.efxclipse.tooling.css.cssDsl.page <em>page</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see at.bestsolution.efxclipse.tooling.css.cssDsl.page
+   * @generated
+   */
+  public Adapter createpageAdapter()
   {
     return null;
   }

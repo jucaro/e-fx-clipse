@@ -71,13 +71,31 @@ public interface CssDslPackage extends EPackage
   int STYLESHEET = 0;
 
   /**
+   * The feature id for the '<em><b>Charset</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int STYLESHEET__CHARSET = 0;
+
+  /**
+   * The feature id for the '<em><b>Imports</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int STYLESHEET__IMPORTS = 1;
+
+  /**
    * The feature id for the '<em><b>Ruleset</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int STYLESHEET__RULESET = 0;
+  int STYLESHEET__RULESET = 2;
 
   /**
    * The feature id for the '<em><b>Media</b></em>' containment reference list.
@@ -86,7 +104,16 @@ public interface CssDslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int STYLESHEET__MEDIA = 1;
+  int STYLESHEET__MEDIA = 3;
+
+  /**
+   * The feature id for the '<em><b>Page</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int STYLESHEET__PAGE = 4;
 
   /**
    * The number of structural features of the '<em>stylesheet</em>' class.
@@ -95,7 +122,100 @@ public interface CssDslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int STYLESHEET_FEATURE_COUNT = 2;
+  int STYLESHEET_FEATURE_COUNT = 5;
+
+  /**
+   * The meta object id for the '{@link at.bestsolution.efxclipse.tooling.css.cssDsl.impl.charsetImpl <em>charset</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see at.bestsolution.efxclipse.tooling.css.cssDsl.impl.charsetImpl
+   * @see at.bestsolution.efxclipse.tooling.css.cssDsl.impl.CssDslPackageImpl#getcharset()
+   * @generated
+   */
+  int CHARSET = 1;
+
+  /**
+   * The feature id for the '<em><b>Charset</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CHARSET__CHARSET = 0;
+
+  /**
+   * The number of structural features of the '<em>charset</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CHARSET_FEATURE_COUNT = 1;
+
+  /**
+   * The meta object id for the '{@link at.bestsolution.efxclipse.tooling.css.cssDsl.impl.importExpressionImpl <em>import Expression</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see at.bestsolution.efxclipse.tooling.css.cssDsl.impl.importExpressionImpl
+   * @see at.bestsolution.efxclipse.tooling.css.cssDsl.impl.CssDslPackageImpl#getimportExpression()
+   * @generated
+   */
+  int IMPORT_EXPRESSION = 2;
+
+  /**
+   * The feature id for the '<em><b>Value</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int IMPORT_EXPRESSION__VALUE = 0;
+
+  /**
+   * The number of structural features of the '<em>import Expression</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int IMPORT_EXPRESSION_FEATURE_COUNT = 1;
+
+  /**
+   * The meta object id for the '{@link at.bestsolution.efxclipse.tooling.css.cssDsl.impl.pageImpl <em>page</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see at.bestsolution.efxclipse.tooling.css.cssDsl.impl.pageImpl
+   * @see at.bestsolution.efxclipse.tooling.css.cssDsl.impl.CssDslPackageImpl#getpage()
+   * @generated
+   */
+  int PAGE = 3;
+
+  /**
+   * The feature id for the '<em><b>Pseudo Page</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PAGE__PSEUDO_PAGE = 0;
+
+  /**
+   * The feature id for the '<em><b>Declarations</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PAGE__DECLARATIONS = 1;
+
+  /**
+   * The number of structural features of the '<em>page</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PAGE_FEATURE_COUNT = 2;
 
   /**
    * The meta object id for the '{@link at.bestsolution.efxclipse.tooling.css.cssDsl.impl.mediaImpl <em>media</em>}' class.
@@ -105,7 +225,7 @@ public interface CssDslPackage extends EPackage
    * @see at.bestsolution.efxclipse.tooling.css.cssDsl.impl.CssDslPackageImpl#getmedia()
    * @generated
    */
-  int MEDIA = 1;
+  int MEDIA = 4;
 
   /**
    * The feature id for the '<em><b>Medialist</b></em>' attribute.
@@ -142,7 +262,7 @@ public interface CssDslPackage extends EPackage
    * @see at.bestsolution.efxclipse.tooling.css.cssDsl.impl.CssDslPackageImpl#getruleset()
    * @generated
    */
-  int RULESET = 2;
+  int RULESET = 5;
 
   /**
    * The feature id for the '<em><b>Selectors</b></em>' containment reference list.
@@ -179,7 +299,7 @@ public interface CssDslPackage extends EPackage
    * @see at.bestsolution.efxclipse.tooling.css.cssDsl.impl.CssDslPackageImpl#getselector()
    * @generated
    */
-  int SELECTOR = 3;
+  int SELECTOR = 6;
 
   /**
    * The feature id for the '<em><b>Simpleselectors</b></em>' containment reference list.
@@ -225,7 +345,7 @@ public interface CssDslPackage extends EPackage
    * @see at.bestsolution.efxclipse.tooling.css.cssDsl.impl.CssDslPackageImpl#getsimple_selector()
    * @generated
    */
-  int SIMPLE_SELECTOR = 4;
+  int SIMPLE_SELECTOR = 7;
 
   /**
    * The feature id for the '<em><b>Element</b></em>' attribute.
@@ -262,7 +382,7 @@ public interface CssDslPackage extends EPackage
    * @see at.bestsolution.efxclipse.tooling.css.cssDsl.impl.CssDslPackageImpl#getsub_selector()
    * @generated
    */
-  int SUB_SELECTOR = 5;
+  int SUB_SELECTOR = 8;
 
   /**
    * The feature id for the '<em><b>Id</b></em>' attribute.
@@ -317,7 +437,7 @@ public interface CssDslPackage extends EPackage
    * @see at.bestsolution.efxclipse.tooling.css.cssDsl.impl.CssDslPackageImpl#getcss_declaration()
    * @generated
    */
-  int CSS_DECLARATION = 6;
+  int CSS_DECLARATION = 9;
 
   /**
    * The number of structural features of the '<em>css declaration</em>' class.
@@ -336,7 +456,7 @@ public interface CssDslPackage extends EPackage
    * @see at.bestsolution.efxclipse.tooling.css.cssDsl.impl.CssDslPackageImpl#getcss_generic_declaration()
    * @generated
    */
-  int CSS_GENERIC_DECLARATION = 7;
+  int CSS_GENERIC_DECLARATION = 10;
 
   /**
    * The feature id for the '<em><b>Property</b></em>' attribute.
@@ -373,7 +493,7 @@ public interface CssDslPackage extends EPackage
    * @see at.bestsolution.efxclipse.tooling.css.cssDsl.impl.CssDslPackageImpl#getexpr()
    * @generated
    */
-  int EXPR = 8;
+  int EXPR = 11;
 
   /**
    * The feature id for the '<em><b>Term Groups</b></em>' containment reference list.
@@ -401,7 +521,7 @@ public interface CssDslPackage extends EPackage
    * @see at.bestsolution.efxclipse.tooling.css.cssDsl.impl.CssDslPackageImpl#gettermGroup()
    * @generated
    */
-  int TERM_GROUP = 9;
+  int TERM_GROUP = 12;
 
   /**
    * The feature id for the '<em><b>Terms</b></em>' containment reference list.
@@ -429,7 +549,7 @@ public interface CssDslPackage extends EPackage
    * @see at.bestsolution.efxclipse.tooling.css.cssDsl.impl.CssDslPackageImpl#getterm()
    * @generated
    */
-  int TERM = 10;
+  int TERM = 13;
 
   /**
    * The feature id for the '<em><b>Number</b></em>' attribute.
@@ -502,7 +622,7 @@ public interface CssDslPackage extends EPackage
    * @see at.bestsolution.efxclipse.tooling.css.cssDsl.impl.CssDslPackageImpl#getfunction()
    * @generated
    */
-  int FUNCTION = 11;
+  int FUNCTION = 14;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -539,7 +659,25 @@ public interface CssDslPackage extends EPackage
    * @see at.bestsolution.efxclipse.tooling.css.cssDsl.impl.CssDslPackageImpl#getURLType()
    * @generated
    */
-  int URL_TYPE = 12;
+  int URL_TYPE = 15;
+
+  /**
+   * The feature id for the '<em><b>Value</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int URL_TYPE__VALUE = IMPORT_EXPRESSION__VALUE;
+
+  /**
+   * The feature id for the '<em><b>Media List</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int URL_TYPE__MEDIA_LIST = IMPORT_EXPRESSION_FEATURE_COUNT + 0;
 
   /**
    * The feature id for the '<em><b>Url</b></em>' attribute.
@@ -548,7 +686,7 @@ public interface CssDslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int URL_TYPE__URL = 0;
+  int URL_TYPE__URL = IMPORT_EXPRESSION_FEATURE_COUNT + 1;
 
   /**
    * The number of structural features of the '<em>URL Type</em>' class.
@@ -557,7 +695,7 @@ public interface CssDslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int URL_TYPE_FEATURE_COUNT = 1;
+  int URL_TYPE_FEATURE_COUNT = IMPORT_EXPRESSION_FEATURE_COUNT + 2;
 
 
   /**
@@ -569,6 +707,28 @@ public interface CssDslPackage extends EPackage
    * @generated
    */
   EClass getstylesheet();
+
+  /**
+   * Returns the meta object for the containment reference '{@link at.bestsolution.efxclipse.tooling.css.cssDsl.stylesheet#getCharset <em>Charset</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Charset</em>'.
+   * @see at.bestsolution.efxclipse.tooling.css.cssDsl.stylesheet#getCharset()
+   * @see #getstylesheet()
+   * @generated
+   */
+  EReference getstylesheet_Charset();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link at.bestsolution.efxclipse.tooling.css.cssDsl.stylesheet#getImports <em>Imports</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Imports</em>'.
+   * @see at.bestsolution.efxclipse.tooling.css.cssDsl.stylesheet#getImports()
+   * @see #getstylesheet()
+   * @generated
+   */
+  EReference getstylesheet_Imports();
 
   /**
    * Returns the meta object for the containment reference list '{@link at.bestsolution.efxclipse.tooling.css.cssDsl.stylesheet#getRuleset <em>Ruleset</em>}'.
@@ -591,6 +751,91 @@ public interface CssDslPackage extends EPackage
    * @generated
    */
   EReference getstylesheet_Media();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link at.bestsolution.efxclipse.tooling.css.cssDsl.stylesheet#getPage <em>Page</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Page</em>'.
+   * @see at.bestsolution.efxclipse.tooling.css.cssDsl.stylesheet#getPage()
+   * @see #getstylesheet()
+   * @generated
+   */
+  EReference getstylesheet_Page();
+
+  /**
+   * Returns the meta object for class '{@link at.bestsolution.efxclipse.tooling.css.cssDsl.charset <em>charset</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>charset</em>'.
+   * @see at.bestsolution.efxclipse.tooling.css.cssDsl.charset
+   * @generated
+   */
+  EClass getcharset();
+
+  /**
+   * Returns the meta object for the attribute '{@link at.bestsolution.efxclipse.tooling.css.cssDsl.charset#getCharset <em>Charset</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Charset</em>'.
+   * @see at.bestsolution.efxclipse.tooling.css.cssDsl.charset#getCharset()
+   * @see #getcharset()
+   * @generated
+   */
+  EAttribute getcharset_Charset();
+
+  /**
+   * Returns the meta object for class '{@link at.bestsolution.efxclipse.tooling.css.cssDsl.importExpression <em>import Expression</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>import Expression</em>'.
+   * @see at.bestsolution.efxclipse.tooling.css.cssDsl.importExpression
+   * @generated
+   */
+  EClass getimportExpression();
+
+  /**
+   * Returns the meta object for the attribute '{@link at.bestsolution.efxclipse.tooling.css.cssDsl.importExpression#getValue <em>Value</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Value</em>'.
+   * @see at.bestsolution.efxclipse.tooling.css.cssDsl.importExpression#getValue()
+   * @see #getimportExpression()
+   * @generated
+   */
+  EAttribute getimportExpression_Value();
+
+  /**
+   * Returns the meta object for class '{@link at.bestsolution.efxclipse.tooling.css.cssDsl.page <em>page</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>page</em>'.
+   * @see at.bestsolution.efxclipse.tooling.css.cssDsl.page
+   * @generated
+   */
+  EClass getpage();
+
+  /**
+   * Returns the meta object for the attribute '{@link at.bestsolution.efxclipse.tooling.css.cssDsl.page#getPseudoPage <em>Pseudo Page</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Pseudo Page</em>'.
+   * @see at.bestsolution.efxclipse.tooling.css.cssDsl.page#getPseudoPage()
+   * @see #getpage()
+   * @generated
+   */
+  EAttribute getpage_PseudoPage();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link at.bestsolution.efxclipse.tooling.css.cssDsl.page#getDeclarations <em>Declarations</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Declarations</em>'.
+   * @see at.bestsolution.efxclipse.tooling.css.cssDsl.page#getDeclarations()
+   * @see #getpage()
+   * @generated
+   */
+  EReference getpage_Declarations();
 
   /**
    * Returns the meta object for class '{@link at.bestsolution.efxclipse.tooling.css.cssDsl.media <em>media</em>}'.
@@ -988,6 +1233,17 @@ public interface CssDslPackage extends EPackage
   EClass getURLType();
 
   /**
+   * Returns the meta object for the attribute '{@link at.bestsolution.efxclipse.tooling.css.cssDsl.URLType#getMediaList <em>Media List</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Media List</em>'.
+   * @see at.bestsolution.efxclipse.tooling.css.cssDsl.URLType#getMediaList()
+   * @see #getURLType()
+   * @generated
+   */
+  EAttribute getURLType_MediaList();
+
+  /**
    * Returns the meta object for the attribute '{@link at.bestsolution.efxclipse.tooling.css.cssDsl.URLType#getUrl <em>Url</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -1032,6 +1288,22 @@ public interface CssDslPackage extends EPackage
     EClass STYLESHEET = eINSTANCE.getstylesheet();
 
     /**
+     * The meta object literal for the '<em><b>Charset</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference STYLESHEET__CHARSET = eINSTANCE.getstylesheet_Charset();
+
+    /**
+     * The meta object literal for the '<em><b>Imports</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference STYLESHEET__IMPORTS = eINSTANCE.getstylesheet_Imports();
+
+    /**
      * The meta object literal for the '<em><b>Ruleset</b></em>' containment reference list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -1046,6 +1318,76 @@ public interface CssDslPackage extends EPackage
      * @generated
      */
     EReference STYLESHEET__MEDIA = eINSTANCE.getstylesheet_Media();
+
+    /**
+     * The meta object literal for the '<em><b>Page</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference STYLESHEET__PAGE = eINSTANCE.getstylesheet_Page();
+
+    /**
+     * The meta object literal for the '{@link at.bestsolution.efxclipse.tooling.css.cssDsl.impl.charsetImpl <em>charset</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see at.bestsolution.efxclipse.tooling.css.cssDsl.impl.charsetImpl
+     * @see at.bestsolution.efxclipse.tooling.css.cssDsl.impl.CssDslPackageImpl#getcharset()
+     * @generated
+     */
+    EClass CHARSET = eINSTANCE.getcharset();
+
+    /**
+     * The meta object literal for the '<em><b>Charset</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute CHARSET__CHARSET = eINSTANCE.getcharset_Charset();
+
+    /**
+     * The meta object literal for the '{@link at.bestsolution.efxclipse.tooling.css.cssDsl.impl.importExpressionImpl <em>import Expression</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see at.bestsolution.efxclipse.tooling.css.cssDsl.impl.importExpressionImpl
+     * @see at.bestsolution.efxclipse.tooling.css.cssDsl.impl.CssDslPackageImpl#getimportExpression()
+     * @generated
+     */
+    EClass IMPORT_EXPRESSION = eINSTANCE.getimportExpression();
+
+    /**
+     * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute IMPORT_EXPRESSION__VALUE = eINSTANCE.getimportExpression_Value();
+
+    /**
+     * The meta object literal for the '{@link at.bestsolution.efxclipse.tooling.css.cssDsl.impl.pageImpl <em>page</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see at.bestsolution.efxclipse.tooling.css.cssDsl.impl.pageImpl
+     * @see at.bestsolution.efxclipse.tooling.css.cssDsl.impl.CssDslPackageImpl#getpage()
+     * @generated
+     */
+    EClass PAGE = eINSTANCE.getpage();
+
+    /**
+     * The meta object literal for the '<em><b>Pseudo Page</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute PAGE__PSEUDO_PAGE = eINSTANCE.getpage_PseudoPage();
+
+    /**
+     * The meta object literal for the '<em><b>Declarations</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference PAGE__DECLARATIONS = eINSTANCE.getpage_Declarations();
 
     /**
      * The meta object literal for the '{@link at.bestsolution.efxclipse.tooling.css.cssDsl.impl.mediaImpl <em>media</em>}' class.
@@ -1366,6 +1708,14 @@ public interface CssDslPackage extends EPackage
      * @generated
      */
     EClass URL_TYPE = eINSTANCE.getURLType();
+
+    /**
+     * The meta object literal for the '<em><b>Media List</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute URL_TYPE__MEDIA_LIST = eINSTANCE.getURLType_MediaList();
 
     /**
      * The meta object literal for the '<em><b>Url</b></em>' attribute feature.

@@ -10,22 +10,43 @@ import "http://www.eclipse.org/emf/2002/Ecore" as ecore
 generate cssDsl "http://www.bestsolution.at/efxclipse/tooling/css/CssDsl"
 
 stylesheet:
+	charset=charset?
+	imports+=importExpression*
 	( 
 		ruleset+=ruleset |
-		media+=media
+		media+=media |
+		page+=page
 	)*
 ;
 
-media
-  : 'media'medialist=media_list '{' rulesets+=ruleset* '}'
-  ;
+charset:
+	('@charset'|'@CHARSET') charset=STRING ';'
+;
 
-media_list
-  : medium ( COMMA medium)*
-  ;
-medium
-  : IDENT
-  ;
+importExpression:
+	('@import'|'@IMPORT') value=STRING | URLType mediaList=media_list? ';'
+;
+
+page:
+	{page} ('@page'|'@PAGE') pseudoPage=pseudo_page?
+    '{' declarations+=css_generic_declaration? ( ';' declarations+=css_generic_declaration? )* '}'	
+;
+
+pseudo_page: 
+	':' IDENT
+;
+
+media: 
+	('@media'|'@MEDIA') medialist=media_list '{' rulesets+=ruleset* '}'
+;
+
+media_list: 
+	medium ( COMMA medium)*
+;
+
+medium: 
+	IDENT
+;
 
 ruleset:
 	selectors+=selector ( COMMA selectors+=selector )* '{'

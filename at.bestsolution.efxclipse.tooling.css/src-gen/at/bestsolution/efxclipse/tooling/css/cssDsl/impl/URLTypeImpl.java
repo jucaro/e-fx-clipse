@@ -14,7 +14,6 @@ import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -23,14 +22,35 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * <p>
  * The following features are implemented:
  * <ul>
+ *   <li>{@link at.bestsolution.efxclipse.tooling.css.cssDsl.impl.URLTypeImpl#getMediaList <em>Media List</em>}</li>
  *   <li>{@link at.bestsolution.efxclipse.tooling.css.cssDsl.impl.URLTypeImpl#getUrl <em>Url</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
-public class URLTypeImpl extends MinimalEObjectImpl.Container implements URLType
+public class URLTypeImpl extends importExpressionImpl implements URLType
 {
+  /**
+   * The default value of the '{@link #getMediaList() <em>Media List</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getMediaList()
+   * @generated
+   * @ordered
+   */
+  protected static final String MEDIA_LIST_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getMediaList() <em>Media List</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getMediaList()
+   * @generated
+   * @ordered
+   */
+  protected String mediaList = MEDIA_LIST_EDEFAULT;
+
   /**
    * The default value of the '{@link #getUrl() <em>Url</em>}' attribute.
    * <!-- begin-user-doc -->
@@ -77,6 +97,29 @@ public class URLTypeImpl extends MinimalEObjectImpl.Container implements URLType
    * <!-- end-user-doc -->
    * @generated
    */
+  public String getMediaList()
+  {
+    return mediaList;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setMediaList(String newMediaList)
+  {
+    String oldMediaList = mediaList;
+    mediaList = newMediaList;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, CssDslPackage.URL_TYPE__MEDIA_LIST, oldMediaList, mediaList));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public String getUrl()
   {
     return url;
@@ -105,6 +148,8 @@ public class URLTypeImpl extends MinimalEObjectImpl.Container implements URLType
   {
     switch (featureID)
     {
+      case CssDslPackage.URL_TYPE__MEDIA_LIST:
+        return getMediaList();
       case CssDslPackage.URL_TYPE__URL:
         return getUrl();
     }
@@ -121,6 +166,9 @@ public class URLTypeImpl extends MinimalEObjectImpl.Container implements URLType
   {
     switch (featureID)
     {
+      case CssDslPackage.URL_TYPE__MEDIA_LIST:
+        setMediaList((String)newValue);
+        return;
       case CssDslPackage.URL_TYPE__URL:
         setUrl((String)newValue);
         return;
@@ -138,6 +186,9 @@ public class URLTypeImpl extends MinimalEObjectImpl.Container implements URLType
   {
     switch (featureID)
     {
+      case CssDslPackage.URL_TYPE__MEDIA_LIST:
+        setMediaList(MEDIA_LIST_EDEFAULT);
+        return;
       case CssDslPackage.URL_TYPE__URL:
         setUrl(URL_EDEFAULT);
         return;
@@ -155,6 +206,8 @@ public class URLTypeImpl extends MinimalEObjectImpl.Container implements URLType
   {
     switch (featureID)
     {
+      case CssDslPackage.URL_TYPE__MEDIA_LIST:
+        return MEDIA_LIST_EDEFAULT == null ? mediaList != null : !MEDIA_LIST_EDEFAULT.equals(mediaList);
       case CssDslPackage.URL_TYPE__URL:
         return URL_EDEFAULT == null ? url != null : !URL_EDEFAULT.equals(url);
     }
@@ -172,7 +225,9 @@ public class URLTypeImpl extends MinimalEObjectImpl.Container implements URLType
     if (eIsProxy()) return super.toString();
 
     StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (url: ");
+    result.append(" (mediaList: ");
+    result.append(mediaList);
+    result.append(", url: ");
     result.append(url);
     result.append(')');
     return result.toString();
