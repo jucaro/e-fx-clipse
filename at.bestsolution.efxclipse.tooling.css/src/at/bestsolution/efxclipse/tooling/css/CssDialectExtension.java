@@ -256,7 +256,7 @@ public interface CssDialectExtension {
 					} else if( dec.getExpression().getTermGroups().get(0).getTerms().size() == 1 ) {
 						String id = dec.getExpression().getTermGroups().get(0).getTerms().get(0).getIdentifier();
 						for( Proposal p : proposals ) {
-							if( p.getProposal().equals(id) ) {
+							if( p.getProposal().equalsIgnoreCase(id) ) {
 								return new ValidationResult[0];
 							}
 						}
@@ -610,9 +610,9 @@ public interface CssDialectExtension {
 		}
 		
 		public static ValidationResult checkPercentage(term term, String message, int min) {
-			if( term.getNumber().matches("^\\d+%$") || term.getNumber().matches("^-\\d+%$") ) {
-				int v = Integer.parseInt(term.getNumber().substring(0, term.getNumber().length()-1));
-				if( v < min || v > 100 ) {
+			if( term.getNumber().matches("^\\d+(\\.\\d+)?%$") || term.getNumber().matches("^-\\d+(\\.\\d+)?%$") ) {
+				double v = Double.parseDouble(term.getNumber().substring(0, term.getNumber().length()-1));
+				if( v < min * 1.0 || v > 100.0 ) {
 					return new ValidationResult(ValidationStatus.ERROR, message, term, null, -1);
 				}
 			} else {

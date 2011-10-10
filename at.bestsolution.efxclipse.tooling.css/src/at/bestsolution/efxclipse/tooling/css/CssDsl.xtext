@@ -56,7 +56,7 @@ css_class
   ;
 
 css_id:
-	('#' (IDENT) | hexdigits )
+	HASH
 ;
 
 css_attrib:
@@ -147,9 +147,10 @@ function hidden():
 	('-')?name=IDENT '(' WS* expression=expr WS* ')'
 ;
 
-HexColor:
-	hexdigits
+HexColor hidden():
+	HASH
 ;
+
 
 URLType hidden():
 	'url' '(' url=STRING ')'
@@ -167,7 +168,7 @@ FREQ: num ('hz' | 'khz');
 
 terminal integer:('0'..'9')+;
 terminal real: (('0'..'9')*"."('0'..'9')+);
-terminal hexdigits: '#' ('0'..'9'|'a'..'f' | 'A'..'F')+;
+terminal HASH: '#' ('_' | '-' | 'a'..'z' | 'A'..'Z' | '0'..'9' )+;
 
 terminal IDENT: ('_' | 'a'..'z' | 'A'..'Z' ) ('_' | '-' | 'a'..'z' | 'A'..'Z' | '0'..'9' )*;
 terminal COMMA: ',';

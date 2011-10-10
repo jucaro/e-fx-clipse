@@ -384,30 +384,14 @@ public class CssDslGrammarAccess extends AbstractGrammarElementFinder {
 
 	public class Css_idElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "css_id");
-		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
-		private final Group cGroup_0 = (Group)cAlternatives.eContents().get(0);
-		private final Keyword cNumberSignKeyword_0_0 = (Keyword)cGroup_0.eContents().get(0);
-		private final RuleCall cIDENTTerminalRuleCall_0_1 = (RuleCall)cGroup_0.eContents().get(1);
-		private final RuleCall cHexdigitsTerminalRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
+		private final RuleCall cHASHTerminalRuleCall = (RuleCall)rule.eContents().get(1);
 		
 		//css_id:
-		//	"#" IDENT | hexdigits;
+		//	HASH;
 		public ParserRule getRule() { return rule; }
 
-		//"#" IDENT | hexdigits
-		public Alternatives getAlternatives() { return cAlternatives; }
-
-		//"#" IDENT
-		public Group getGroup_0() { return cGroup_0; }
-
-		//"#"
-		public Keyword getNumberSignKeyword_0_0() { return cNumberSignKeyword_0_0; }
-
-		//IDENT
-		public RuleCall getIDENTTerminalRuleCall_0_1() { return cIDENTTerminalRuleCall_0_1; }
-
-		//hexdigits
-		public RuleCall getHexdigitsTerminalRuleCall_1() { return cHexdigitsTerminalRuleCall_1; }
+		//HASH
+		public RuleCall getHASHTerminalRuleCall() { return cHASHTerminalRuleCall; }
 	}
 
 	public class Css_attribElements extends AbstractParserRuleElementFinder {
@@ -878,14 +862,14 @@ public class CssDslGrammarAccess extends AbstractGrammarElementFinder {
 
 	public class HexColorElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "HexColor");
-		private final RuleCall cHexdigitsTerminalRuleCall = (RuleCall)rule.eContents().get(1);
+		private final RuleCall cHASHTerminalRuleCall = (RuleCall)rule.eContents().get(1);
 		
-		//HexColor:
-		//	hexdigits;
+		//HexColor hidden():
+		//	HASH;
 		public ParserRule getRule() { return rule; }
 
-		//hexdigits
-		public RuleCall getHexdigitsTerminalRuleCall() { return cHexdigitsTerminalRuleCall; }
+		//HASH
+		public RuleCall getHASHTerminalRuleCall() { return cHASHTerminalRuleCall; }
 	}
 
 	public class URLTypeElements extends AbstractParserRuleElementFinder {
@@ -1162,7 +1146,7 @@ public class CssDslGrammarAccess extends AbstractGrammarElementFinder {
 	private FREQElements pFREQ;
 	private TerminalRule tInteger;
 	private TerminalRule tReal;
-	private TerminalRule tHexdigits;
+	private TerminalRule tHASH;
 	private TerminalRule tIDENT;
 	private TerminalRule tCOMMA;
 	private TerminalRule tML_COMMENT;
@@ -1286,7 +1270,7 @@ public class CssDslGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//css_id:
-	//	"#" IDENT | hexdigits;
+	//	HASH;
 	public Css_idElements getCss_idAccess() {
 		return (pCss_id != null) ? pCss_id : (pCss_id = new Css_idElements());
 	}
@@ -1460,8 +1444,8 @@ public class CssDslGrammarAccess extends AbstractGrammarElementFinder {
 		return getFunctionAccess().getRule();
 	}
 
-	//HexColor:
-	//	hexdigits;
+	//HexColor hidden():
+	//	HASH;
 	public HexColorElements getHexColorAccess() {
 		return (pHexColor != null) ? pHexColor : (pHexColor = new HexColorElements());
 	}
@@ -1572,10 +1556,10 @@ public class CssDslGrammarAccess extends AbstractGrammarElementFinder {
 		return (tReal != null) ? tReal : (tReal = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "real"));
 	} 
 
-	//terminal hexdigits:
-	//	"#" ("0".."9" | "a".."f" | "A".."F")+;
-	public TerminalRule getHexdigitsRule() {
-		return (tHexdigits != null) ? tHexdigits : (tHexdigits = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "hexdigits"));
+	//terminal HASH:
+	//	"#" ("_" | "-" | "a".."z" | "A".."Z" | "0".."9")+;
+	public TerminalRule getHASHRule() {
+		return (tHASH != null) ? tHASH : (tHASH = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "HASH"));
 	} 
 
 	//terminal IDENT:

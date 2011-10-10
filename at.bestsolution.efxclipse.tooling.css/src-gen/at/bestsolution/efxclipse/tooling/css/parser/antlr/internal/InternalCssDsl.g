@@ -740,28 +740,14 @@ rulecss_id returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()]
     @init { enterRule(); 
     }
     @after { leaveRule(); }:
-((
-	kw='#' 
-    {
-        $current.merge(kw);
-        newLeafNode(kw, grammarAccess.getCss_idAccess().getNumberSignKeyword_0_0()); 
-    }
-    this_IDENT_1=RULE_IDENT    {
-		$current.merge(this_IDENT_1);
+    this_HASH_0=RULE_HASH    {
+		$current.merge(this_HASH_0);
     }
 
     { 
-    newLeafNode(this_IDENT_1, grammarAccess.getCss_idAccess().getIDENTTerminalRuleCall_0_1()); 
-    }
-)
-    |    this_hexdigits_2=RULE_HEXDIGITS    {
-		$current.merge(this_hexdigits_2);
+    newLeafNode(this_HASH_0, grammarAccess.getCss_idAccess().getHASHTerminalRuleCall()); 
     }
 
-    { 
-    newLeafNode(this_hexdigits_2, grammarAccess.getCss_idAccess().getHexdigitsTerminalRuleCall_1()); 
-    }
-)
     ;
 
 
@@ -1624,27 +1610,37 @@ finally {
 
 // Entry rule entryRuleHexColor
 entryRuleHexColor returns [String current=null] 
+	@init { 
+		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens();
+	}
 	:
 	{ newCompositeNode(grammarAccess.getHexColorRule()); } 
 	 iv_ruleHexColor=ruleHexColor 
 	 { $current=$iv_ruleHexColor.current.getText(); }  
 	 EOF 
 ;
+finally {
+	myHiddenTokenState.restore();
+}
 
 // Rule HexColor
 ruleHexColor returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] 
     @init { enterRule(); 
+		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens();
     }
     @after { leaveRule(); }:
-    this_hexdigits_0=RULE_HEXDIGITS    {
-		$current.merge(this_hexdigits_0);
+    this_HASH_0=RULE_HASH    {
+		$current.merge(this_HASH_0);
     }
 
     { 
-    newLeafNode(this_hexdigits_0, grammarAccess.getHexColorAccess().getHexdigitsTerminalRuleCall()); 
+    newLeafNode(this_HASH_0, grammarAccess.getHexColorAccess().getHASHTerminalRuleCall()); 
     }
 
     ;
+finally {
+	myHiddenTokenState.restore();
+}
 
 
 
@@ -2086,7 +2082,7 @@ RULE_INTEGER : ('0'..'9')+;
 
 RULE_REAL : ('0'..'9')* '.' ('0'..'9')+;
 
-RULE_HEXDIGITS : '#' ('0'..'9'|'a'..'f'|'A'..'F')+;
+RULE_HASH : '#' ('_'|'-'|'a'..'z'|'A'..'Z'|'0'..'9')+;
 
 RULE_IDENT : ('_'|'a'..'z'|'A'..'Z') ('_'|'-'|'a'..'z'|'A'..'Z'|'0'..'9')*;
 
