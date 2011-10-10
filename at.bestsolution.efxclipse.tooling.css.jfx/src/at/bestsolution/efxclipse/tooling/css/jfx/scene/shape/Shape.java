@@ -18,9 +18,9 @@ import java.util.Arrays;
 import java.util.List;
 
 import at.bestsolution.efxclipse.tooling.css.CssDialectExtension.BooleanProperty;
-import at.bestsolution.efxclipse.tooling.css.CssDialectExtension.NumberPropery;
 import at.bestsolution.efxclipse.tooling.css.CssDialectExtension.Property;
 import at.bestsolution.efxclipse.tooling.css.CssDialectExtension.Proposal;
+import at.bestsolution.efxclipse.tooling.css.jfx.JFXDialectExtension.FxNumberProperty;
 import at.bestsolution.efxclipse.tooling.css.jfx.JFXDialectExtension.PaintProperty;
 import at.bestsolution.efxclipse.tooling.css.jfx.JFXDialectExtension.SizeProperty;
 
@@ -30,7 +30,7 @@ public class Shape {
 		properties.addAll(createReflective(PaintProperty.class, "-fx-fill","-fx-stroke"));
 		properties.addAll(createReflective(BooleanProperty.class, "-fx-smooth"));
 		properties.addAll(createReflective(StrokeDashArray.class, "-fx-stroke-dash-array"));
-		properties.addAll(createReflective(NumberPropery.class, "-fx-stroke-dash-offset","-fx-stroke-miter-limit"));
+		properties.addAll(createReflective(FxNumberProperty.class, "-fx-stroke-dash-offset","-fx-stroke-miter-limit"));
 		properties.addAll(createEnumProperties(Arrays.asList("square","butt","round"), "-fx-stroke-line-cap"));
 		properties.addAll(createEnumProperties(Arrays.asList("miter","bevel","round"), "-fx-stroke-line-join"));
 		properties.addAll(createReflective(SizeProperty.class, "-fx-stroke-width"));

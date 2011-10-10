@@ -18,9 +18,9 @@ import java.util.Arrays;
 import java.util.List;
 
 import at.bestsolution.efxclipse.tooling.css.CssDialectExtension.BooleanProperty;
-import at.bestsolution.efxclipse.tooling.css.CssDialectExtension.NumberPropery;
 import at.bestsolution.efxclipse.tooling.css.CssDialectExtension.Property;
 import at.bestsolution.efxclipse.tooling.css.CssDialectExtension.Proposal;
+import at.bestsolution.efxclipse.tooling.css.jfx.JFXDialectExtension.FxNumberProperty;
 
 public class Node {
 	public static List<Property> init() {
@@ -35,7 +35,7 @@ public class Node {
 		);
 		properties.addAll(createReflective(EffectProperty.class, "-fx-effect"));
 		properties.addAll(createReflective(BooleanProperty.class, "-fx-focus-traversable"));
-		properties.addAll(createReflective(NumberPropery.class, "-fx-opacity","-fx-rotate", "-fx-scale-x","-fx-scale-y",
+		properties.addAll(createReflective(FxNumberProperty.class, "-fx-opacity","-fx-rotate", "-fx-scale-x","-fx-scale-y",
 				"-fx-scale-z", "-fx-translate-x","-fx-translate-y","-fx-translate-z"));
 		
 		return properties;

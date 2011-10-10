@@ -19,8 +19,8 @@ import java.util.List;
 
 import at.bestsolution.efxclipse.tooling.css.CssDialectExtension.BooleanProperty;
 import at.bestsolution.efxclipse.tooling.css.CssDialectExtension.IntegerProperty;
-import at.bestsolution.efxclipse.tooling.css.CssDialectExtension.NumberPropery;
 import at.bestsolution.efxclipse.tooling.css.CssDialectExtension.Property;
+import at.bestsolution.efxclipse.tooling.css.jfx.JFXDialectExtension.FxNumberProperty;
 import at.bestsolution.efxclipse.tooling.css.jfx.JFXDialectExtension.SizeProperty;
 
 public class Tile {
@@ -32,7 +32,7 @@ public class Tile {
 		properties.addAll(createEnumProperties(Arrays.asList("left","center","right","leading","trailing"), "-fx-hpos","-fx-node-hpos"));
 		properties.addAll(createEnumProperties(Arrays.asList("top","center","baseline","bottom","page-end","page-start"), "-fx-vpos","-fx-node-vpos"));
 		properties.addAll(createReflective(IntegerProperty.class, "-fx-rows"));
-		properties.addAll(createReflective(NumberPropery.class, "-fx-tile-height","-fx-tile-width"));
+		properties.addAll(createReflective(FxNumberProperty.class, "-fx-tile-height","-fx-tile-width"));
 		properties.addAll(createReflective(BooleanProperty.class, "-fx-vertical"));
 		
 		return properties;

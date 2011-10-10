@@ -16,13 +16,13 @@ import java.util.ArrayList;
 import java.util.List;
 
 import at.bestsolution.efxclipse.tooling.css.CssDialectExtension.BooleanProperty;
-import at.bestsolution.efxclipse.tooling.css.CssDialectExtension.NumberPropery;
 import at.bestsolution.efxclipse.tooling.css.CssDialectExtension.Property;
+import at.bestsolution.efxclipse.tooling.css.jfx.JFXDialectExtension.FxNumberProperty;
 
 public class LineChart {
 	public static List<Property> init() {
 		List<Property> properties = new ArrayList<Property>();
-		properties.addAll(createReflective(NumberPropery.class, "-fx-data-opacity"));
+		properties.addAll(createReflective(FxNumberProperty.class, "-fx-data-opacity"));
 		properties.addAll(createReflective(BooleanProperty.class, "-fx-show-symbols"));
 		return properties;
 	}

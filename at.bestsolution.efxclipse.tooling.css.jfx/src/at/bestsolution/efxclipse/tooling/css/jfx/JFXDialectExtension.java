@@ -798,12 +798,42 @@ public class JFXDialectExtension implements CssDialectExtension {
 		}
 	}
 	
+	public static class FxNumberProperty extends NumberPropery {
+		public FxNumberProperty(String name) {
+			super(name);
+		}
+		
+		@Override
+		public ValidationResult[] validate(css_generic_declaration dec) {
+			if( isReference(dec) ) {
+				return new ValidationResult[0];
+			}
+			return super.validate(dec);
+		}
+	}
+	
 	public static List<String> sizeUnits() {
 		return Arrays.asList("px","mm","cm","in","pt","pc","em","ex");
 	}
 	
 	public static List<String> angles() {
 		return Arrays.asList("grad","deg","rad"); // order is important!!!
+	}
+	
+	public static boolean isReference(css_generic_declaration dec) {
+		if( dec.getExpression().getTermGroups().size() == 1 ) {
+			termGroup g = dec.getExpression().getTermGroups().get(0);
+			if( g.getTerms().size() == 1 ) {
+				String identifier = g.getTerms().get(0).getIdentifier();
+				
+				//TODO We should get smarter in future and check the referenced value
+				if( identifier != null && identifier.startsWith("-fx-") ) {
+					return true;
+				}
+			}
+		}
+		
+		return false;
 	}
 	
 	public static boolean isGradient(term t, List<ValidationResult> list) {
