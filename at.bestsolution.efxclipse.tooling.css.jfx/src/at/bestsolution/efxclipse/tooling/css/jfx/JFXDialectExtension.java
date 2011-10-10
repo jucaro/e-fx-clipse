@@ -879,6 +879,10 @@ public class JFXDialectExtension implements CssDialectExtension {
 		}
 	}
 	
+	private static boolean isHexDigit(char c) {
+		return (c >= 'a' && c <= 'f') || (c >= 'A' && c <= 'F') || (c >= '0' && c <= '9');
+	}
+	
 	public static void validateColor(term t, List<ValidationResult> list) {
 			if( t.getIdentifier() != null ) {
 				for( Proposal color: PREDEFINED_COLORS ) {
@@ -890,8 +894,15 @@ public class JFXDialectExtension implements CssDialectExtension {
 					list.add(new ValidationResult(ValidationStatus.ERROR, "'"+t.getIdentifier()+"' is not a known color", t, CssDslPackage.Literals.TERM__IDENTIFIER, 0));	
 				}
 			} else if( t.getHexColor() != null ) {
-				if( !(t.getHexColor().length() == 4 || t.getHexColor().length() == 7) ) {
-					list.add(new ValidationResult(ValidationStatus.ERROR, "A hex-color definition has to have 3 or 6 hex-digits", t, CssDslPackage.Literals.TERM__HEX_COLOR, -1));
+				if( !(t.getHexColor().length() == 4 || t.getHexColor().length() == 7 || t.getHexColor().length() == 9) ) {
+					list.add(new ValidationResult(ValidationStatus.ERROR, "A hex-color definition has to have 3, 6 or 9 hex-digits", t, CssDslPackage.Literals.TERM__HEX_COLOR, -1));
+				} else {
+					for( char c : t.getHexColor().substring(1).toCharArray() ) {
+						if( ! isHexDigit(c) ) {
+							list.add(new ValidationResult(ValidationStatus.ERROR, "'"+c+"' is not a valid digit in hexcolors", t, CssDslPackage.Literals.TERM__HEX_COLOR, -1));
+							break;
+						}
+					}
 				}
 				return;
 			} else if( t.getFunction() != null ) {
