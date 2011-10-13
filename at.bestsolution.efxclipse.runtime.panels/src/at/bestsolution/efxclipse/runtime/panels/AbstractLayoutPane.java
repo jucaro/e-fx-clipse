@@ -51,12 +51,12 @@ public abstract class AbstractLayoutPane<D> extends Pane {
 	
 	@Override
 	protected double computeMinHeight(double width) {
-		return computeSize(SWT_DEFAULT, SWT_DEFAULT, true).height;
+		return 0;
 	}
 	
 	@Override
 	protected double computeMinWidth(double height) {
-		return computeSize(SWT_DEFAULT, SWT_DEFAULT, true).width;
+		return 0;
 	}
 	
 	@Override
