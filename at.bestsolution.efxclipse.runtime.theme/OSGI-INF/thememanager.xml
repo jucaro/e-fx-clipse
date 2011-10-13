@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<scr:component xmlns:scr="http://www.osgi.org/xmlns/scr/v1.1.0" name="at.bestsolution.efxclipse.runtime.services.thememanager">
+   <implementation class="at.bestsolution.efxclipse.runtime.theme.internal.DefaultThemeManager"/>
+   <service>
+      <provide interface="at.bestsolution.efxclipse.runtime.services.theme.ThemeManager"/>
+   </service>
+</scr:component>
