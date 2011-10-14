@@ -6,8 +6,7 @@ Bundle-Version: 2.0.0.qualifier
 Require-Bundle: org.eclipse.core.runtime
 Bundle-ActivationPolicy: lazy
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
-Export-Package: at.bestsolution.efxclipse.runtime.javafx;version="2.0.0",
- javafx.animation;version="2.0.0",
+Export-Package: javafx.animation;version="2.0.0",
  javafx.application;version="2.0.0",
  javafx.beans;version="2.0.0",
  javafx.beans.binding;version="2.0.0",
