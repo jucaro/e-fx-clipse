@@ -1,53 +1,39 @@
 package at.bestsolution.efxclipse.runtime.workbench.renderers;
 
-import java.net.URL;
-
-import javafx.scene.control.Button;
+import javafx.geometry.Orientation;
+import javafx.scene.Node;
+import javafx.scene.NodeBuilder;
 import javafx.scene.control.ToolBar;
-import javafx.scene.image.Image;
-import javafx.scene.image.ImageView;
-import javafx.scene.layout.HBox;
+import javafx.scene.layout.FlowPane;
 
 import org.eclipse.e4.ui.model.application.ui.MElementContainer;
 import org.eclipse.e4.ui.model.application.ui.MUIElement;
 import org.eclipse.e4.ui.model.application.ui.MUILabel;
 import org.eclipse.e4.ui.model.application.ui.basic.MPart;
-import org.eclipse.e4.ui.model.application.ui.menu.MDirectToolItem;
-import org.eclipse.e4.ui.model.application.ui.menu.MToolItem;
-import org.eclipse.emf.common.util.URI;
+import org.eclipse.e4.ui.workbench.IPresentationEngine;
 
 @SuppressWarnings("restriction")
-public class ToolbarRenderer extends JFXRenderer {
+public class TrimbarRenderer extends JFXRenderer {
 
 	@Override
 	public Object createWidget(MUIElement element, Object parent) {
-		HBox toolBar = new HBox();
-		return toolBar;
+		ToolBar pane = new ToolBar();
+		return pane;
 	}
 
 	@Override
 	public void processContents(MElementContainer<MUIElement> container) {
-		HBox bar = (HBox) container.getWidget();
+		IPresentationEngine renderer = (IPresentationEngine) context.get(IPresentationEngine.class.getName());
+		ToolBar pane = (ToolBar) container.getWidget();
+		
 		for( MUIElement e : container.getChildren() ) {
-			MToolItem toolItem = (MToolItem) e;
-			if( toolItem instanceof MDirectToolItem ) {
-				bar.getChildren().add(handleDirectToolItem((MDirectToolItem) toolItem));
+			Node n = (Node) renderer.createGui(e);
+			if( n != null ) {
+				pane.getItems().add(n);
 			}
 		}
 	}
 
-	private Button handleDirectToolItem(MDirectToolItem item) {
-		Button b = new Button();
-		
-		if( item.getIconURI() != null ) {
-			URL url = Util.convertToOSGiURL(URI.createURI(item.getIconURI()));
-			Image img = new Image(url.toExternalForm());
-			b.setGraphic(new ImageView(img));
-		}
-		
-		return b;
-	}
-	
 	@Override
 	protected Object getParentWidget(MUIElement element) {
 		// TODO Auto-generated method stub

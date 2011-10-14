@@ -8,7 +8,9 @@ import org.eclipse.e4.ui.model.application.ui.MUIElement;
 import org.eclipse.e4.ui.model.application.ui.basic.MPart;
 import org.eclipse.e4.ui.model.application.ui.basic.MPartSashContainer;
 import org.eclipse.e4.ui.model.application.ui.basic.MPartStack;
+import org.eclipse.e4.ui.model.application.ui.basic.MTrimBar;
 import org.eclipse.e4.ui.model.application.ui.basic.MWindow;
+import org.eclipse.e4.ui.model.application.ui.menu.MToolBar;
 
 import at.bestsolution.efxclipse.runtime.workbench.AbstractPartRenderer;
 import at.bestsolution.efxclipse.runtime.workbench.IRendererFactory;
@@ -16,10 +18,11 @@ import at.bestsolution.efxclipse.runtime.workbench.IRendererFactory;
 @SuppressWarnings("restriction")
 public class WorkbenchRendererFactory implements IRendererFactory {
 	private WorkbenchWindowRenderer workbenchWindowRenderer;
-//	private SashRenderer sashRenderer;
 	private SashLayoutPaneRenderer sashLayoutPaneRender;
 	private PartRenderer partRenderer;
 	private StackRenderer stackRenderer;
+	private ToolbarRenderer toolbarRenderer;
+	private TrimbarRenderer trimRenderer;
 	
 	private IEclipseContext context;
 	
@@ -40,10 +43,6 @@ public class WorkbenchRendererFactory implements IRendererFactory {
 				sashLayoutPaneRender = ContextInjectionFactory.make(SashLayoutPaneRenderer.class, context);
 			}
 			return sashLayoutPaneRender;
-//			if( sashRenderer == null ) {
-//				sashRenderer = ContextInjectionFactory.make(SashRenderer.class, context);
-//			}
-//			return sashRenderer;
 		} else if( uiElement instanceof MPart ) {
 			if( partRenderer == null ) {
 				partRenderer = ContextInjectionFactory.make(PartRenderer.class, context);
@@ -54,6 +53,16 @@ public class WorkbenchRendererFactory implements IRendererFactory {
 				stackRenderer = ContextInjectionFactory.make(StackRenderer.class, context);
 			}
 			return stackRenderer;
+		} else if( uiElement instanceof MToolBar ) {
+			if( toolbarRenderer == null ) {
+				toolbarRenderer = ContextInjectionFactory.make(ToolbarRenderer.class, context);
+			}
+			return toolbarRenderer;
+		} else if( uiElement instanceof MTrimBar ) {
+			if( trimRenderer == null ) {
+				trimRenderer = ContextInjectionFactory.make(TrimbarRenderer.class, context);
+			}
+			return trimRenderer;
 		}
 		return null;
 	}

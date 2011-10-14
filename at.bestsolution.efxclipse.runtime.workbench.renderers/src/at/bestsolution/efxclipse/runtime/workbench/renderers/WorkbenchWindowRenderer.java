@@ -87,8 +87,9 @@ public class WorkbenchWindowRenderer extends JFXRenderer {
 
 	@Override
 	public Object getUIContainer(MUIElement element) {
-		Stage stage = (Stage) element.getParent().getWidget();
-		return stage.getScene().getRoot();
+//		Stage stage = (Stage) element.getParent().getWidget();
+//		return stage.getScene().getRoot();
+		return null;
 	}
 	
 	@Override
