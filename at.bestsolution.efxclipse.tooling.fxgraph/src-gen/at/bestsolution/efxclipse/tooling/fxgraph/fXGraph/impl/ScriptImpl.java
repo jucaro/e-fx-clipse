@@ -23,6 +23,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * <p>
  * The following features are implemented:
  * <ul>
+ *   <li>{@link at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.impl.ScriptImpl#getLanguage <em>Language</em>}</li>
  *   <li>{@link at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.impl.ScriptImpl#getSource <em>Source</em>}</li>
  *   <li>{@link at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.impl.ScriptImpl#getSourcecode <em>Sourcecode</em>}</li>
  * </ul>
@@ -32,6 +33,26 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  */
 public class ScriptImpl extends MinimalEObjectImpl.Container implements Script
 {
+  /**
+   * The default value of the '{@link #getLanguage() <em>Language</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getLanguage()
+   * @generated
+   * @ordered
+   */
+  protected static final String LANGUAGE_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getLanguage() <em>Language</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getLanguage()
+   * @generated
+   * @ordered
+   */
+  protected String language = LANGUAGE_EDEFAULT;
+
   /**
    * The default value of the '{@link #getSource() <em>Source</em>}' attribute.
    * <!-- begin-user-doc -->
@@ -98,6 +119,29 @@ public class ScriptImpl extends MinimalEObjectImpl.Container implements Script
    * <!-- end-user-doc -->
    * @generated
    */
+  public String getLanguage()
+  {
+    return language;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setLanguage(String newLanguage)
+  {
+    String oldLanguage = language;
+    language = newLanguage;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, FXGraphPackage.SCRIPT__LANGUAGE, oldLanguage, language));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public String getSource()
   {
     return source;
@@ -149,6 +193,8 @@ public class ScriptImpl extends MinimalEObjectImpl.Container implements Script
   {
     switch (featureID)
     {
+      case FXGraphPackage.SCRIPT__LANGUAGE:
+        return getLanguage();
       case FXGraphPackage.SCRIPT__SOURCE:
         return getSource();
       case FXGraphPackage.SCRIPT__SOURCECODE:
@@ -167,6 +213,9 @@ public class ScriptImpl extends MinimalEObjectImpl.Container implements Script
   {
     switch (featureID)
     {
+      case FXGraphPackage.SCRIPT__LANGUAGE:
+        setLanguage((String)newValue);
+        return;
       case FXGraphPackage.SCRIPT__SOURCE:
         setSource((String)newValue);
         return;
@@ -187,6 +236,9 @@ public class ScriptImpl extends MinimalEObjectImpl.Container implements Script
   {
     switch (featureID)
     {
+      case FXGraphPackage.SCRIPT__LANGUAGE:
+        setLanguage(LANGUAGE_EDEFAULT);
+        return;
       case FXGraphPackage.SCRIPT__SOURCE:
         setSource(SOURCE_EDEFAULT);
         return;
@@ -207,6 +259,8 @@ public class ScriptImpl extends MinimalEObjectImpl.Container implements Script
   {
     switch (featureID)
     {
+      case FXGraphPackage.SCRIPT__LANGUAGE:
+        return LANGUAGE_EDEFAULT == null ? language != null : !LANGUAGE_EDEFAULT.equals(language);
       case FXGraphPackage.SCRIPT__SOURCE:
         return SOURCE_EDEFAULT == null ? source != null : !SOURCE_EDEFAULT.equals(source);
       case FXGraphPackage.SCRIPT__SOURCECODE:
@@ -226,7 +280,9 @@ public class ScriptImpl extends MinimalEObjectImpl.Container implements Script
     if (eIsProxy()) return super.toString();
 
     StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (source: ");
+    result.append(" (language: ");
+    result.append(language);
+    result.append(", source: ");
     result.append(source);
     result.append(", sourcecode: ");
     result.append(sourcecode);

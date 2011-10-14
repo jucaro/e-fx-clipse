@@ -69,7 +69,7 @@ public class FXGraphFactoryImpl extends EFactoryImpl implements FXGraphFactory
     switch (eClass.getClassifierID())
     {
       case FXGraphPackage.MODEL: return createModel();
-      case FXGraphPackage.LANGUAGE: return createLanguage();
+      case FXGraphPackage.COMPONENT_DEFINITION: return createComponentDefinition();
       case FXGraphPackage.IMPORT: return createImport();
       case FXGraphPackage.ELEMENT: return createElement();
       case FXGraphPackage.DEFINE: return createDefine();
@@ -110,10 +110,10 @@ public class FXGraphFactoryImpl extends EFactoryImpl implements FXGraphFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public Language createLanguage()
+  public ComponentDefinition createComponentDefinition()
   {
-    LanguageImpl language = new LanguageImpl();
-    return language;
+    ComponentDefinitionImpl componentDefinition = new ComponentDefinitionImpl();
+    return componentDefinition;
   }
 
   /**

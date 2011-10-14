@@ -1,0 +1,523 @@
+/**
+ * <copyright>
+ * </copyright>
+ *
+
+ */
+package at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.impl;
+
+import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.ComponentDefinition;
+import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.Define;
+import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.Element;
+import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.FXGraphPackage;
+import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.Script;
+
+import java.util.Collection;
+
+import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.notify.NotificationChain;
+
+import org.eclipse.emf.common.util.EList;
+
+import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.InternalEObject;
+
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
+
+import org.eclipse.emf.ecore.util.EDataTypeEList;
+import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.InternalEList;
+
+import org.eclipse.xtext.common.types.JvmParameterizedTypeReference;
+
+/**
+ * <!-- begin-user-doc -->
+ * An implementation of the model object '<em><b>Component Definition</b></em>'.
+ * <!-- end-user-doc -->
+ * <p>
+ * The following features are implemented:
+ * <ul>
+ *   <li>{@link at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.impl.ComponentDefinitionImpl#getName <em>Name</em>}</li>
+ *   <li>{@link at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.impl.ComponentDefinitionImpl#getController <em>Controller</em>}</li>
+ *   <li>{@link at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.impl.ComponentDefinitionImpl#getCssFiles <em>Css Files</em>}</li>
+ *   <li>{@link at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.impl.ComponentDefinitionImpl#getPreviewResourceBundle <em>Preview Resource Bundle</em>}</li>
+ *   <li>{@link at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.impl.ComponentDefinitionImpl#getScripts <em>Scripts</em>}</li>
+ *   <li>{@link at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.impl.ComponentDefinitionImpl#getDefines <em>Defines</em>}</li>
+ *   <li>{@link at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.impl.ComponentDefinitionImpl#getRootNode <em>Root Node</em>}</li>
+ * </ul>
+ * </p>
+ *
+ * @generated
+ */
+public class ComponentDefinitionImpl extends MinimalEObjectImpl.Container implements ComponentDefinition
+{
+  /**
+   * The default value of the '{@link #getName() <em>Name</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getName()
+   * @generated
+   * @ordered
+   */
+  protected static final String NAME_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getName()
+   * @generated
+   * @ordered
+   */
+  protected String name = NAME_EDEFAULT;
+
+  /**
+   * The cached value of the '{@link #getController() <em>Controller</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getController()
+   * @generated
+   * @ordered
+   */
+  protected JvmParameterizedTypeReference controller;
+
+  /**
+   * The cached value of the '{@link #getCssFiles() <em>Css Files</em>}' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getCssFiles()
+   * @generated
+   * @ordered
+   */
+  protected EList<String> cssFiles;
+
+  /**
+   * The default value of the '{@link #getPreviewResourceBundle() <em>Preview Resource Bundle</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getPreviewResourceBundle()
+   * @generated
+   * @ordered
+   */
+  protected static final String PREVIEW_RESOURCE_BUNDLE_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getPreviewResourceBundle() <em>Preview Resource Bundle</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getPreviewResourceBundle()
+   * @generated
+   * @ordered
+   */
+  protected String previewResourceBundle = PREVIEW_RESOURCE_BUNDLE_EDEFAULT;
+
+  /**
+   * The cached value of the '{@link #getScripts() <em>Scripts</em>}' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getScripts()
+   * @generated
+   * @ordered
+   */
+  protected EList<Script> scripts;
+
+  /**
+   * The cached value of the '{@link #getDefines() <em>Defines</em>}' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getDefines()
+   * @generated
+   * @ordered
+   */
+  protected EList<Define> defines;
+
+  /**
+   * The cached value of the '{@link #getRootNode() <em>Root Node</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getRootNode()
+   * @generated
+   * @ordered
+   */
+  protected Element rootNode;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  protected ComponentDefinitionImpl()
+  {
+    super();
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  protected EClass eStaticClass()
+  {
+    return FXGraphPackage.Literals.COMPONENT_DEFINITION;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public String getName()
+  {
+    return name;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setName(String newName)
+  {
+    String oldName = name;
+    name = newName;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, FXGraphPackage.COMPONENT_DEFINITION__NAME, oldName, name));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public JvmParameterizedTypeReference getController()
+  {
+    return controller;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NotificationChain basicSetController(JvmParameterizedTypeReference newController, NotificationChain msgs)
+  {
+    JvmParameterizedTypeReference oldController = controller;
+    controller = newController;
+    if (eNotificationRequired())
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, FXGraphPackage.COMPONENT_DEFINITION__CONTROLLER, oldController, newController);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setController(JvmParameterizedTypeReference newController)
+  {
+    if (newController != controller)
+    {
+      NotificationChain msgs = null;
+      if (controller != null)
+        msgs = ((InternalEObject)controller).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - FXGraphPackage.COMPONENT_DEFINITION__CONTROLLER, null, msgs);
+      if (newController != null)
+        msgs = ((InternalEObject)newController).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - FXGraphPackage.COMPONENT_DEFINITION__CONTROLLER, null, msgs);
+      msgs = basicSetController(newController, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, FXGraphPackage.COMPONENT_DEFINITION__CONTROLLER, newController, newController));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EList<String> getCssFiles()
+  {
+    if (cssFiles == null)
+    {
+      cssFiles = new EDataTypeEList<String>(String.class, this, FXGraphPackage.COMPONENT_DEFINITION__CSS_FILES);
+    }
+    return cssFiles;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public String getPreviewResourceBundle()
+  {
+    return previewResourceBundle;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setPreviewResourceBundle(String newPreviewResourceBundle)
+  {
+    String oldPreviewResourceBundle = previewResourceBundle;
+    previewResourceBundle = newPreviewResourceBundle;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, FXGraphPackage.COMPONENT_DEFINITION__PREVIEW_RESOURCE_BUNDLE, oldPreviewResourceBundle, previewResourceBundle));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EList<Script> getScripts()
+  {
+    if (scripts == null)
+    {
+      scripts = new EObjectContainmentEList<Script>(Script.class, this, FXGraphPackage.COMPONENT_DEFINITION__SCRIPTS);
+    }
+    return scripts;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EList<Define> getDefines()
+  {
+    if (defines == null)
+    {
+      defines = new EObjectContainmentEList<Define>(Define.class, this, FXGraphPackage.COMPONENT_DEFINITION__DEFINES);
+    }
+    return defines;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Element getRootNode()
+  {
+    return rootNode;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NotificationChain basicSetRootNode(Element newRootNode, NotificationChain msgs)
+  {
+    Element oldRootNode = rootNode;
+    rootNode = newRootNode;
+    if (eNotificationRequired())
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, FXGraphPackage.COMPONENT_DEFINITION__ROOT_NODE, oldRootNode, newRootNode);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setRootNode(Element newRootNode)
+  {
+    if (newRootNode != rootNode)
+    {
+      NotificationChain msgs = null;
+      if (rootNode != null)
+        msgs = ((InternalEObject)rootNode).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - FXGraphPackage.COMPONENT_DEFINITION__ROOT_NODE, null, msgs);
+      if (newRootNode != null)
+        msgs = ((InternalEObject)newRootNode).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - FXGraphPackage.COMPONENT_DEFINITION__ROOT_NODE, null, msgs);
+      msgs = basicSetRootNode(newRootNode, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, FXGraphPackage.COMPONENT_DEFINITION__ROOT_NODE, newRootNode, newRootNode));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
+  {
+    switch (featureID)
+    {
+      case FXGraphPackage.COMPONENT_DEFINITION__CONTROLLER:
+        return basicSetController(null, msgs);
+      case FXGraphPackage.COMPONENT_DEFINITION__SCRIPTS:
+        return ((InternalEList<?>)getScripts()).basicRemove(otherEnd, msgs);
+      case FXGraphPackage.COMPONENT_DEFINITION__DEFINES:
+        return ((InternalEList<?>)getDefines()).basicRemove(otherEnd, msgs);
+      case FXGraphPackage.COMPONENT_DEFINITION__ROOT_NODE:
+        return basicSetRootNode(null, msgs);
+    }
+    return super.eInverseRemove(otherEnd, featureID, msgs);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public Object eGet(int featureID, boolean resolve, boolean coreType)
+  {
+    switch (featureID)
+    {
+      case FXGraphPackage.COMPONENT_DEFINITION__NAME:
+        return getName();
+      case FXGraphPackage.COMPONENT_DEFINITION__CONTROLLER:
+        return getController();
+      case FXGraphPackage.COMPONENT_DEFINITION__CSS_FILES:
+        return getCssFiles();
+      case FXGraphPackage.COMPONENT_DEFINITION__PREVIEW_RESOURCE_BUNDLE:
+        return getPreviewResourceBundle();
+      case FXGraphPackage.COMPONENT_DEFINITION__SCRIPTS:
+        return getScripts();
+      case FXGraphPackage.COMPONENT_DEFINITION__DEFINES:
+        return getDefines();
+      case FXGraphPackage.COMPONENT_DEFINITION__ROOT_NODE:
+        return getRootNode();
+    }
+    return super.eGet(featureID, resolve, coreType);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @SuppressWarnings("unchecked")
+  @Override
+  public void eSet(int featureID, Object newValue)
+  {
+    switch (featureID)
+    {
+      case FXGraphPackage.COMPONENT_DEFINITION__NAME:
+        setName((String)newValue);
+        return;
+      case FXGraphPackage.COMPONENT_DEFINITION__CONTROLLER:
+        setController((JvmParameterizedTypeReference)newValue);
+        return;
+      case FXGraphPackage.COMPONENT_DEFINITION__CSS_FILES:
+        getCssFiles().clear();
+        getCssFiles().addAll((Collection<? extends String>)newValue);
+        return;
+      case FXGraphPackage.COMPONENT_DEFINITION__PREVIEW_RESOURCE_BUNDLE:
+        setPreviewResourceBundle((String)newValue);
+        return;
+      case FXGraphPackage.COMPONENT_DEFINITION__SCRIPTS:
+        getScripts().clear();
+        getScripts().addAll((Collection<? extends Script>)newValue);
+        return;
+      case FXGraphPackage.COMPONENT_DEFINITION__DEFINES:
+        getDefines().clear();
+        getDefines().addAll((Collection<? extends Define>)newValue);
+        return;
+      case FXGraphPackage.COMPONENT_DEFINITION__ROOT_NODE:
+        setRootNode((Element)newValue);
+        return;
+    }
+    super.eSet(featureID, newValue);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void eUnset(int featureID)
+  {
+    switch (featureID)
+    {
+      case FXGraphPackage.COMPONENT_DEFINITION__NAME:
+        setName(NAME_EDEFAULT);
+        return;
+      case FXGraphPackage.COMPONENT_DEFINITION__CONTROLLER:
+        setController((JvmParameterizedTypeReference)null);
+        return;
+      case FXGraphPackage.COMPONENT_DEFINITION__CSS_FILES:
+        getCssFiles().clear();
+        return;
+      case FXGraphPackage.COMPONENT_DEFINITION__PREVIEW_RESOURCE_BUNDLE:
+        setPreviewResourceBundle(PREVIEW_RESOURCE_BUNDLE_EDEFAULT);
+        return;
+      case FXGraphPackage.COMPONENT_DEFINITION__SCRIPTS:
+        getScripts().clear();
+        return;
+      case FXGraphPackage.COMPONENT_DEFINITION__DEFINES:
+        getDefines().clear();
+        return;
+      case FXGraphPackage.COMPONENT_DEFINITION__ROOT_NODE:
+        setRootNode((Element)null);
+        return;
+    }
+    super.eUnset(featureID);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public boolean eIsSet(int featureID)
+  {
+    switch (featureID)
+    {
+      case FXGraphPackage.COMPONENT_DEFINITION__NAME:
+        return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+      case FXGraphPackage.COMPONENT_DEFINITION__CONTROLLER:
+        return controller != null;
+      case FXGraphPackage.COMPONENT_DEFINITION__CSS_FILES:
+        return cssFiles != null && !cssFiles.isEmpty();
+      case FXGraphPackage.COMPONENT_DEFINITION__PREVIEW_RESOURCE_BUNDLE:
+        return PREVIEW_RESOURCE_BUNDLE_EDEFAULT == null ? previewResourceBundle != null : !PREVIEW_RESOURCE_BUNDLE_EDEFAULT.equals(previewResourceBundle);
+      case FXGraphPackage.COMPONENT_DEFINITION__SCRIPTS:
+        return scripts != null && !scripts.isEmpty();
+      case FXGraphPackage.COMPONENT_DEFINITION__DEFINES:
+        return defines != null && !defines.isEmpty();
+      case FXGraphPackage.COMPONENT_DEFINITION__ROOT_NODE:
+        return rootNode != null;
+    }
+    return super.eIsSet(featureID);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public String toString()
+  {
+    if (eIsProxy()) return super.toString();
+
+    StringBuffer result = new StringBuffer(super.toString());
+    result.append(" (name: ");
+    result.append(name);
+    result.append(", cssFiles: ");
+    result.append(cssFiles);
+    result.append(", previewResourceBundle: ");
+    result.append(previewResourceBundle);
+    result.append(')');
+    return result.toString();
+  }
+
+} //ComponentDefinitionImpl

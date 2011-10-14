@@ -6,6 +6,7 @@
  */
 package at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.impl;
 
+import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.ComponentDefinition;
 import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.ControllerHandledValueProperty;
 import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.CopyValueProperty;
 import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.Define;
@@ -14,7 +15,6 @@ import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.FXGraphFactory;
 import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.FXGraphPackage;
 import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.Import;
 import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.IncludeValueProperty;
-import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.Language;
 import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.ListValueElement;
 import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.ListValueProperty;
 import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.MapValueProperty;
@@ -59,7 +59,7 @@ public class FXGraphPackageImpl extends EPackageImpl implements FXGraphPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass languageEClass = null;
+  private EClass componentDefinitionEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -285,7 +285,7 @@ public class FXGraphPackageImpl extends EPackageImpl implements FXGraphPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getModel_Language()
+  public EReference getModel_ComponentDef()
   {
     return (EReference)modelEClass.getEStructuralFeatures().get(1);
   }
@@ -295,9 +295,9 @@ public class FXGraphPackageImpl extends EPackageImpl implements FXGraphPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getModel_RootNode()
+  public EClass getComponentDefinition()
   {
-    return (EReference)modelEClass.getEStructuralFeatures().get(2);
+    return componentDefinitionEClass;
   }
 
   /**
@@ -305,9 +305,9 @@ public class FXGraphPackageImpl extends EPackageImpl implements FXGraphPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getLanguage()
+  public EAttribute getComponentDefinition_Name()
   {
-    return languageEClass;
+    return (EAttribute)componentDefinitionEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -315,9 +315,59 @@ public class FXGraphPackageImpl extends EPackageImpl implements FXGraphPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getLanguage_Language()
+  public EReference getComponentDefinition_Controller()
   {
-    return (EAttribute)languageEClass.getEStructuralFeatures().get(0);
+    return (EReference)componentDefinitionEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getComponentDefinition_CssFiles()
+  {
+    return (EAttribute)componentDefinitionEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getComponentDefinition_PreviewResourceBundle()
+  {
+    return (EAttribute)componentDefinitionEClass.getEStructuralFeatures().get(3);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getComponentDefinition_Scripts()
+  {
+    return (EReference)componentDefinitionEClass.getEStructuralFeatures().get(4);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getComponentDefinition_Defines()
+  {
+    return (EReference)componentDefinitionEClass.getEStructuralFeatures().get(5);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getComponentDefinition_RootNode()
+  {
+    return (EReference)componentDefinitionEClass.getEStructuralFeatures().get(6);
   }
 
   /**
@@ -395,7 +445,7 @@ public class FXGraphPackageImpl extends EPackageImpl implements FXGraphPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getElement_Controller()
+  public EReference getElement_Properties()
   {
     return (EReference)elementEClass.getEStructuralFeatures().get(4);
   }
@@ -405,39 +455,9 @@ public class FXGraphPackageImpl extends EPackageImpl implements FXGraphPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getElement_Defines()
-  {
-    return (EReference)elementEClass.getEStructuralFeatures().get(5);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EReference getElement_Scripts()
-  {
-    return (EReference)elementEClass.getEStructuralFeatures().get(6);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EReference getElement_Properties()
-  {
-    return (EReference)elementEClass.getEStructuralFeatures().get(7);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   public EReference getElement_StaticProperties()
   {
-    return (EReference)elementEClass.getEStructuralFeatures().get(8);
+    return (EReference)elementEClass.getEStructuralFeatures().get(5);
   }
 
   /**
@@ -475,7 +495,7 @@ public class FXGraphPackageImpl extends EPackageImpl implements FXGraphPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getScript_Source()
+  public EAttribute getScript_Language()
   {
     return (EAttribute)scriptEClass.getEStructuralFeatures().get(0);
   }
@@ -485,9 +505,19 @@ public class FXGraphPackageImpl extends EPackageImpl implements FXGraphPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getScript_Sourcecode()
+  public EAttribute getScript_Source()
   {
     return (EAttribute)scriptEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getScript_Sourcecode()
+  {
+    return (EAttribute)scriptEClass.getEStructuralFeatures().get(2);
   }
 
   /**
@@ -852,11 +882,16 @@ public class FXGraphPackageImpl extends EPackageImpl implements FXGraphPackage
     // Create classes and their features
     modelEClass = createEClass(MODEL);
     createEReference(modelEClass, MODEL__IMPORTS);
-    createEReference(modelEClass, MODEL__LANGUAGE);
-    createEReference(modelEClass, MODEL__ROOT_NODE);
+    createEReference(modelEClass, MODEL__COMPONENT_DEF);
 
-    languageEClass = createEClass(LANGUAGE);
-    createEAttribute(languageEClass, LANGUAGE__LANGUAGE);
+    componentDefinitionEClass = createEClass(COMPONENT_DEFINITION);
+    createEAttribute(componentDefinitionEClass, COMPONENT_DEFINITION__NAME);
+    createEReference(componentDefinitionEClass, COMPONENT_DEFINITION__CONTROLLER);
+    createEAttribute(componentDefinitionEClass, COMPONENT_DEFINITION__CSS_FILES);
+    createEAttribute(componentDefinitionEClass, COMPONENT_DEFINITION__PREVIEW_RESOURCE_BUNDLE);
+    createEReference(componentDefinitionEClass, COMPONENT_DEFINITION__SCRIPTS);
+    createEReference(componentDefinitionEClass, COMPONENT_DEFINITION__DEFINES);
+    createEReference(componentDefinitionEClass, COMPONENT_DEFINITION__ROOT_NODE);
 
     importEClass = createEClass(IMPORT);
     createEAttribute(importEClass, IMPORT__IMPORTED_NAMESPACE);
@@ -866,9 +901,6 @@ public class FXGraphPackageImpl extends EPackageImpl implements FXGraphPackage
     createEReference(elementEClass, ELEMENT__VALUE);
     createEAttribute(elementEClass, ELEMENT__FACTORY);
     createEAttribute(elementEClass, ELEMENT__NAME);
-    createEReference(elementEClass, ELEMENT__CONTROLLER);
-    createEReference(elementEClass, ELEMENT__DEFINES);
-    createEReference(elementEClass, ELEMENT__SCRIPTS);
     createEReference(elementEClass, ELEMENT__PROPERTIES);
     createEReference(elementEClass, ELEMENT__STATIC_PROPERTIES);
 
@@ -876,6 +908,7 @@ public class FXGraphPackageImpl extends EPackageImpl implements FXGraphPackage
     createEReference(defineEClass, DEFINE__ELEMENT);
 
     scriptEClass = createEClass(SCRIPT);
+    createEAttribute(scriptEClass, SCRIPT__LANGUAGE);
     createEAttribute(scriptEClass, SCRIPT__SOURCE);
     createEAttribute(scriptEClass, SCRIPT__SOURCECODE);
 
@@ -979,11 +1012,16 @@ public class FXGraphPackageImpl extends EPackageImpl implements FXGraphPackage
     // Initialize classes and features; add operations and parameters
     initEClass(modelEClass, Model.class, "Model", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getModel_Imports(), this.getImport(), null, "imports", null, 0, -1, Model.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getModel_Language(), this.getLanguage(), null, "language", null, 0, 1, Model.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getModel_RootNode(), this.getElement(), null, "rootNode", null, 0, 1, Model.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getModel_ComponentDef(), this.getComponentDefinition(), null, "componentDef", null, 0, 1, Model.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-    initEClass(languageEClass, Language.class, "Language", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getLanguage_Language(), ecorePackage.getEString(), "language", null, 0, 1, Language.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEClass(componentDefinitionEClass, ComponentDefinition.class, "ComponentDefinition", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getComponentDefinition_Name(), ecorePackage.getEString(), "name", null, 0, 1, ComponentDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getComponentDefinition_Controller(), theTypesPackage.getJvmParameterizedTypeReference(), null, "controller", null, 0, 1, ComponentDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getComponentDefinition_CssFiles(), ecorePackage.getEString(), "cssFiles", null, 0, -1, ComponentDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getComponentDefinition_PreviewResourceBundle(), ecorePackage.getEString(), "previewResourceBundle", null, 0, 1, ComponentDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getComponentDefinition_Scripts(), this.getScript(), null, "scripts", null, 0, -1, ComponentDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getComponentDefinition_Defines(), this.getDefine(), null, "defines", null, 0, -1, ComponentDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getComponentDefinition_RootNode(), this.getElement(), null, "rootNode", null, 0, 1, ComponentDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(importEClass, Import.class, "Import", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getImport_ImportedNamespace(), ecorePackage.getEString(), "importedNamespace", null, 0, 1, Import.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -993,9 +1031,6 @@ public class FXGraphPackageImpl extends EPackageImpl implements FXGraphPackage
     initEReference(getElement_Value(), this.getSimpleValueProperty(), null, "value", null, 0, 1, Element.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getElement_Factory(), ecorePackage.getEString(), "factory", null, 0, 1, Element.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getElement_Name(), ecorePackage.getEString(), "name", null, 0, 1, Element.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getElement_Controller(), theTypesPackage.getJvmParameterizedTypeReference(), null, "controller", null, 0, 1, Element.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getElement_Defines(), this.getDefine(), null, "defines", null, 0, -1, Element.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getElement_Scripts(), this.getScript(), null, "scripts", null, 0, -1, Element.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getElement_Properties(), this.getProperty(), null, "properties", null, 0, -1, Element.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getElement_StaticProperties(), this.getStaticValueProperty(), null, "staticProperties", null, 0, -1, Element.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
@@ -1003,6 +1038,7 @@ public class FXGraphPackageImpl extends EPackageImpl implements FXGraphPackage
     initEReference(getDefine_Element(), this.getElement(), null, "element", null, 0, 1, Define.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(scriptEClass, Script.class, "Script", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getScript_Language(), ecorePackage.getEString(), "language", null, 0, 1, Script.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getScript_Source(), ecorePackage.getEString(), "source", null, 0, 1, Script.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getScript_Sourcecode(), ecorePackage.getEString(), "sourcecode", null, 0, 1, Script.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 

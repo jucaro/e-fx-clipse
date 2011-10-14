@@ -5,30 +5,32 @@ generate fXGraph "http://www.bestsolution.at/efxclipse/tooling/fxgraph/FXGraph"
 
 Model:
 	imports+=Import*
-	language=Language?
-	rootNode=Element;
-
-Language:
-	'language' language=ID
+	componentDef=ComponentDefinition
 ;
-	
+
+ComponentDefinition:
+	'component' name=ValidID 'controlledby' controller=JvmTypeReference ('previewCss' '[' cssFiles+=STRING (',' cssFiles+=STRING) ']')? ( 'previewResourceBundle' '[' previewResourceBundle=STRING ']' )? '{'
+		(scripts+=Script)?
+		(defines+=Define (',' defines+=Define)*)?
+		rootNode=Element
+	'}'
+;
+
 Import:
 	'import' importedNamespace=QualifiedNameWithWildCard;
 
 Element:
-	type=JvmTypeReference ('(' (value = SimpleValueProperty | 'createdby' factory=STRING) ')')? ('id' name=ValidID)? ('controlledby' controller=JvmTypeReference)? ('{'
-		('defines {' defines+=Define (',' defines+=Define)* '}')?
-		scripts+=Script*
+	type=JvmTypeReference ('(' (value = SimpleValueProperty | 'createdby' factory=STRING) ')')? ('id' name=ValidID)? ('{'
 		((properties+=Property | staticProperties+=StaticValueProperty) (',' (properties+=Property | staticProperties+=StaticValueProperty))*)?
 	'}')?
 ;
 
 Define:
-	element=Element
+	'define' element=Element
 ;
 
 Script:
-	'script' (source=STRING | sourcecode=SCRIPTLITERAL)
+	'script' language=ID (source=STRING | sourcecode=SCRIPTLITERAL)
 ;
 
 StaticValueProperty:

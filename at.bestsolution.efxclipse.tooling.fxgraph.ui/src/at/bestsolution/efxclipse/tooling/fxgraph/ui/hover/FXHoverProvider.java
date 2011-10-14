@@ -14,8 +14,10 @@ import org.eclipse.xtext.common.types.JvmType;
 import org.eclipse.xtext.common.types.util.jdt.IJavaElementFinder;
 import org.eclipse.xtext.xbase.ui.hover.XbaseHoverProvider;
 
+import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.ComponentDefinition;
 import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.ControllerHandledValueProperty;
 import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.Element;
+import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.Model;
 import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.Property;
 import at.bestsolution.efxclipse.tooling.fxgraph.ui.contentassist.FXGraphProposalProvider;
 
@@ -61,34 +63,32 @@ public class FXHoverProvider extends XbaseHoverProvider {
 			}
 		} else if( object instanceof ControllerHandledValueProperty ) {
 			ControllerHandledValueProperty prop = (ControllerHandledValueProperty) object;
-			EObject tmp = object;
-			while( tmp.eContainer() != null ) {
-				if( tmp.eContainer() instanceof Element ) {
-					Element e = (Element) tmp.eContainer();
-					if( e.getController() != null ) {
-						IInformationControlCreatorProvider rv = findMethodJavaDoc(e.getController().getType(), prop.getMethodname(), object, viewer, region);
+			Model m = (Model) object.eResource().getContents().get(0);
+			
+			if( m != null ) {
+				ComponentDefinition def = m.getComponentDef();
+				if( def != null ) {
+					if( def.getController() != null ) {
+						IInformationControlCreatorProvider rv = findMethodJavaDoc(def.getController().getType(), prop.getMethodname(), object, viewer, region);
 						if( rv != null ) {
 							return rv;
 						}
 					}
 				}
-				tmp = tmp.eContainer();
 			}
 		} else if( object instanceof Element ) {
 			Element element = (Element) object;
 			if( element.getName() != null ) {
-				EObject tmp = object;
-				while( tmp.eContainer() != null ) {
-					if( tmp.eContainer() instanceof Element ) {
-						Element e = (Element) tmp.eContainer();
-						if( e.getController() != null ) {
-							IInformationControlCreatorProvider rv = findFieldJavaDoc(e.getController().getType(), element.getName(),object,viewer,region);
-							if( rv != null ) {
-								return rv; 
-							}
+				Model m = (Model) object.eResource().getContents().get(0);
+				
+				if( m != null ) {
+					ComponentDefinition def = m.getComponentDef();
+					if( def.getController() != null ) {
+						IInformationControlCreatorProvider rv = findFieldJavaDoc(def.getController().getType(), element.getName(),object,viewer,region);
+						if( rv != null ) {
+							return rv; 
 						}
 					}
-					tmp = tmp.eContainer();
 				}
 			}
 		}

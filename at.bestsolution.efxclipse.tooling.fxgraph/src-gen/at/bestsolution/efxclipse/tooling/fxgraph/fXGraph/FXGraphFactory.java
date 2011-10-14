@@ -36,13 +36,13 @@ public interface FXGraphFactory extends EFactory
   Model createModel();
 
   /**
-   * Returns a new object of class '<em>Language</em>'.
+   * Returns a new object of class '<em>Component Definition</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Language</em>'.
+   * @return a new object of class '<em>Component Definition</em>'.
    * @generated
    */
-  Language createLanguage();
+  ComponentDefinition createComponentDefinition();
 
   /**
    * Returns a new object of class '<em>Import</em>'.

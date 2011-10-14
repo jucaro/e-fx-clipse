@@ -80,22 +80,13 @@ public interface FXGraphPackage extends EPackage
   int MODEL__IMPORTS = 0;
 
   /**
-   * The feature id for the '<em><b>Language</b></em>' containment reference.
+   * The feature id for the '<em><b>Component Def</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int MODEL__LANGUAGE = 1;
-
-  /**
-   * The feature id for the '<em><b>Root Node</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int MODEL__ROOT_NODE = 2;
+  int MODEL__COMPONENT_DEF = 1;
 
   /**
    * The number of structural features of the '<em>Model</em>' class.
@@ -104,35 +95,89 @@ public interface FXGraphPackage extends EPackage
    * @generated
    * @ordered
    */
-  int MODEL_FEATURE_COUNT = 3;
+  int MODEL_FEATURE_COUNT = 2;
 
   /**
-   * The meta object id for the '{@link at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.impl.LanguageImpl <em>Language</em>}' class.
+   * The meta object id for the '{@link at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.impl.ComponentDefinitionImpl <em>Component Definition</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.impl.LanguageImpl
-   * @see at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.impl.FXGraphPackageImpl#getLanguage()
+   * @see at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.impl.ComponentDefinitionImpl
+   * @see at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.impl.FXGraphPackageImpl#getComponentDefinition()
    * @generated
    */
-  int LANGUAGE = 1;
+  int COMPONENT_DEFINITION = 1;
 
   /**
-   * The feature id for the '<em><b>Language</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int LANGUAGE__LANGUAGE = 0;
-
-  /**
-   * The number of structural features of the '<em>Language</em>' class.
+   * The feature id for the '<em><b>Name</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int LANGUAGE_FEATURE_COUNT = 1;
+  int COMPONENT_DEFINITION__NAME = 0;
+
+  /**
+   * The feature id for the '<em><b>Controller</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int COMPONENT_DEFINITION__CONTROLLER = 1;
+
+  /**
+   * The feature id for the '<em><b>Css Files</b></em>' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int COMPONENT_DEFINITION__CSS_FILES = 2;
+
+  /**
+   * The feature id for the '<em><b>Preview Resource Bundle</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int COMPONENT_DEFINITION__PREVIEW_RESOURCE_BUNDLE = 3;
+
+  /**
+   * The feature id for the '<em><b>Scripts</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int COMPONENT_DEFINITION__SCRIPTS = 4;
+
+  /**
+   * The feature id for the '<em><b>Defines</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int COMPONENT_DEFINITION__DEFINES = 5;
+
+  /**
+   * The feature id for the '<em><b>Root Node</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int COMPONENT_DEFINITION__ROOT_NODE = 6;
+
+  /**
+   * The number of structural features of the '<em>Component Definition</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int COMPONENT_DEFINITION_FEATURE_COUNT = 7;
 
   /**
    * The meta object id for the '{@link at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.impl.ImportImpl <em>Import</em>}' class.
@@ -247,40 +292,13 @@ public interface FXGraphPackage extends EPackage
   int ELEMENT__NAME = SINGLE_VALUE_PROPERTY_FEATURE_COUNT + 3;
 
   /**
-   * The feature id for the '<em><b>Controller</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int ELEMENT__CONTROLLER = SINGLE_VALUE_PROPERTY_FEATURE_COUNT + 4;
-
-  /**
-   * The feature id for the '<em><b>Defines</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int ELEMENT__DEFINES = SINGLE_VALUE_PROPERTY_FEATURE_COUNT + 5;
-
-  /**
-   * The feature id for the '<em><b>Scripts</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int ELEMENT__SCRIPTS = SINGLE_VALUE_PROPERTY_FEATURE_COUNT + 6;
-
-  /**
    * The feature id for the '<em><b>Properties</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int ELEMENT__PROPERTIES = SINGLE_VALUE_PROPERTY_FEATURE_COUNT + 7;
+  int ELEMENT__PROPERTIES = SINGLE_VALUE_PROPERTY_FEATURE_COUNT + 4;
 
   /**
    * The feature id for the '<em><b>Static Properties</b></em>' containment reference list.
@@ -289,7 +307,7 @@ public interface FXGraphPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ELEMENT__STATIC_PROPERTIES = SINGLE_VALUE_PROPERTY_FEATURE_COUNT + 8;
+  int ELEMENT__STATIC_PROPERTIES = SINGLE_VALUE_PROPERTY_FEATURE_COUNT + 5;
 
   /**
    * The number of structural features of the '<em>Element</em>' class.
@@ -298,7 +316,7 @@ public interface FXGraphPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ELEMENT_FEATURE_COUNT = SINGLE_VALUE_PROPERTY_FEATURE_COUNT + 9;
+  int ELEMENT_FEATURE_COUNT = SINGLE_VALUE_PROPERTY_FEATURE_COUNT + 6;
 
   /**
    * The meta object id for the '{@link at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.impl.DefineImpl <em>Define</em>}' class.
@@ -339,13 +357,22 @@ public interface FXGraphPackage extends EPackage
   int SCRIPT = 5;
 
   /**
+   * The feature id for the '<em><b>Language</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SCRIPT__LANGUAGE = 0;
+
+  /**
    * The feature id for the '<em><b>Source</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int SCRIPT__SOURCE = 0;
+  int SCRIPT__SOURCE = 1;
 
   /**
    * The feature id for the '<em><b>Sourcecode</b></em>' attribute.
@@ -354,7 +381,7 @@ public interface FXGraphPackage extends EPackage
    * @generated
    * @ordered
    */
-  int SCRIPT__SOURCECODE = 1;
+  int SCRIPT__SOURCECODE = 2;
 
   /**
    * The number of structural features of the '<em>Script</em>' class.
@@ -363,7 +390,7 @@ public interface FXGraphPackage extends EPackage
    * @generated
    * @ordered
    */
-  int SCRIPT_FEATURE_COUNT = 2;
+  int SCRIPT_FEATURE_COUNT = 3;
 
   /**
    * The meta object id for the '{@link at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.impl.StaticValuePropertyImpl <em>Static Value Property</em>}' class.
@@ -797,47 +824,102 @@ public interface FXGraphPackage extends EPackage
   EReference getModel_Imports();
 
   /**
-   * Returns the meta object for the containment reference '{@link at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.Model#getLanguage <em>Language</em>}'.
+   * Returns the meta object for the containment reference '{@link at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.Model#getComponentDef <em>Component Def</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Language</em>'.
-   * @see at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.Model#getLanguage()
+   * @return the meta object for the containment reference '<em>Component Def</em>'.
+   * @see at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.Model#getComponentDef()
    * @see #getModel()
    * @generated
    */
-  EReference getModel_Language();
+  EReference getModel_ComponentDef();
 
   /**
-   * Returns the meta object for the containment reference '{@link at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.Model#getRootNode <em>Root Node</em>}'.
+   * Returns the meta object for class '{@link at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.ComponentDefinition <em>Component Definition</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Component Definition</em>'.
+   * @see at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.ComponentDefinition
+   * @generated
+   */
+  EClass getComponentDefinition();
+
+  /**
+   * Returns the meta object for the attribute '{@link at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.ComponentDefinition#getName <em>Name</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Name</em>'.
+   * @see at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.ComponentDefinition#getName()
+   * @see #getComponentDefinition()
+   * @generated
+   */
+  EAttribute getComponentDefinition_Name();
+
+  /**
+   * Returns the meta object for the containment reference '{@link at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.ComponentDefinition#getController <em>Controller</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Controller</em>'.
+   * @see at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.ComponentDefinition#getController()
+   * @see #getComponentDefinition()
+   * @generated
+   */
+  EReference getComponentDefinition_Controller();
+
+  /**
+   * Returns the meta object for the attribute list '{@link at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.ComponentDefinition#getCssFiles <em>Css Files</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute list '<em>Css Files</em>'.
+   * @see at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.ComponentDefinition#getCssFiles()
+   * @see #getComponentDefinition()
+   * @generated
+   */
+  EAttribute getComponentDefinition_CssFiles();
+
+  /**
+   * Returns the meta object for the attribute '{@link at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.ComponentDefinition#getPreviewResourceBundle <em>Preview Resource Bundle</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Preview Resource Bundle</em>'.
+   * @see at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.ComponentDefinition#getPreviewResourceBundle()
+   * @see #getComponentDefinition()
+   * @generated
+   */
+  EAttribute getComponentDefinition_PreviewResourceBundle();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.ComponentDefinition#getScripts <em>Scripts</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Scripts</em>'.
+   * @see at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.ComponentDefinition#getScripts()
+   * @see #getComponentDefinition()
+   * @generated
+   */
+  EReference getComponentDefinition_Scripts();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.ComponentDefinition#getDefines <em>Defines</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Defines</em>'.
+   * @see at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.ComponentDefinition#getDefines()
+   * @see #getComponentDefinition()
+   * @generated
+   */
+  EReference getComponentDefinition_Defines();
+
+  /**
+   * Returns the meta object for the containment reference '{@link at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.ComponentDefinition#getRootNode <em>Root Node</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the containment reference '<em>Root Node</em>'.
-   * @see at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.Model#getRootNode()
-   * @see #getModel()
+   * @see at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.ComponentDefinition#getRootNode()
+   * @see #getComponentDefinition()
    * @generated
    */
-  EReference getModel_RootNode();
-
-  /**
-   * Returns the meta object for class '{@link at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.Language <em>Language</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Language</em>'.
-   * @see at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.Language
-   * @generated
-   */
-  EClass getLanguage();
-
-  /**
-   * Returns the meta object for the attribute '{@link at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.Language#getLanguage <em>Language</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Language</em>'.
-   * @see at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.Language#getLanguage()
-   * @see #getLanguage()
-   * @generated
-   */
-  EAttribute getLanguage_Language();
+  EReference getComponentDefinition_RootNode();
 
   /**
    * Returns the meta object for class '{@link at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.Import <em>Import</em>}'.
@@ -915,39 +997,6 @@ public interface FXGraphPackage extends EPackage
   EAttribute getElement_Name();
 
   /**
-   * Returns the meta object for the containment reference '{@link at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.Element#getController <em>Controller</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Controller</em>'.
-   * @see at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.Element#getController()
-   * @see #getElement()
-   * @generated
-   */
-  EReference getElement_Controller();
-
-  /**
-   * Returns the meta object for the containment reference list '{@link at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.Element#getDefines <em>Defines</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Defines</em>'.
-   * @see at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.Element#getDefines()
-   * @see #getElement()
-   * @generated
-   */
-  EReference getElement_Defines();
-
-  /**
-   * Returns the meta object for the containment reference list '{@link at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.Element#getScripts <em>Scripts</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Scripts</em>'.
-   * @see at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.Element#getScripts()
-   * @see #getElement()
-   * @generated
-   */
-  EReference getElement_Scripts();
-
-  /**
    * Returns the meta object for the containment reference list '{@link at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.Element#getProperties <em>Properties</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -999,6 +1048,17 @@ public interface FXGraphPackage extends EPackage
    * @generated
    */
   EClass getScript();
+
+  /**
+   * Returns the meta object for the attribute '{@link at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.Script#getLanguage <em>Language</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Language</em>'.
+   * @see at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.Script#getLanguage()
+   * @see #getScript()
+   * @generated
+   */
+  EAttribute getScript_Language();
 
   /**
    * Returns the meta object for the attribute '{@link at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.Script#getSource <em>Source</em>}'.
@@ -1412,12 +1472,70 @@ public interface FXGraphPackage extends EPackage
     EReference MODEL__IMPORTS = eINSTANCE.getModel_Imports();
 
     /**
-     * The meta object literal for the '<em><b>Language</b></em>' containment reference feature.
+     * The meta object literal for the '<em><b>Component Def</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference MODEL__LANGUAGE = eINSTANCE.getModel_Language();
+    EReference MODEL__COMPONENT_DEF = eINSTANCE.getModel_ComponentDef();
+
+    /**
+     * The meta object literal for the '{@link at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.impl.ComponentDefinitionImpl <em>Component Definition</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.impl.ComponentDefinitionImpl
+     * @see at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.impl.FXGraphPackageImpl#getComponentDefinition()
+     * @generated
+     */
+    EClass COMPONENT_DEFINITION = eINSTANCE.getComponentDefinition();
+
+    /**
+     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute COMPONENT_DEFINITION__NAME = eINSTANCE.getComponentDefinition_Name();
+
+    /**
+     * The meta object literal for the '<em><b>Controller</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference COMPONENT_DEFINITION__CONTROLLER = eINSTANCE.getComponentDefinition_Controller();
+
+    /**
+     * The meta object literal for the '<em><b>Css Files</b></em>' attribute list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute COMPONENT_DEFINITION__CSS_FILES = eINSTANCE.getComponentDefinition_CssFiles();
+
+    /**
+     * The meta object literal for the '<em><b>Preview Resource Bundle</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute COMPONENT_DEFINITION__PREVIEW_RESOURCE_BUNDLE = eINSTANCE.getComponentDefinition_PreviewResourceBundle();
+
+    /**
+     * The meta object literal for the '<em><b>Scripts</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference COMPONENT_DEFINITION__SCRIPTS = eINSTANCE.getComponentDefinition_Scripts();
+
+    /**
+     * The meta object literal for the '<em><b>Defines</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference COMPONENT_DEFINITION__DEFINES = eINSTANCE.getComponentDefinition_Defines();
 
     /**
      * The meta object literal for the '<em><b>Root Node</b></em>' containment reference feature.
@@ -1425,25 +1543,7 @@ public interface FXGraphPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference MODEL__ROOT_NODE = eINSTANCE.getModel_RootNode();
-
-    /**
-     * The meta object literal for the '{@link at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.impl.LanguageImpl <em>Language</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.impl.LanguageImpl
-     * @see at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.impl.FXGraphPackageImpl#getLanguage()
-     * @generated
-     */
-    EClass LANGUAGE = eINSTANCE.getLanguage();
-
-    /**
-     * The meta object literal for the '<em><b>Language</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute LANGUAGE__LANGUAGE = eINSTANCE.getLanguage_Language();
+    EReference COMPONENT_DEFINITION__ROOT_NODE = eINSTANCE.getComponentDefinition_RootNode();
 
     /**
      * The meta object literal for the '{@link at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.impl.ImportImpl <em>Import</em>}' class.
@@ -1506,30 +1606,6 @@ public interface FXGraphPackage extends EPackage
     EAttribute ELEMENT__NAME = eINSTANCE.getElement_Name();
 
     /**
-     * The meta object literal for the '<em><b>Controller</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference ELEMENT__CONTROLLER = eINSTANCE.getElement_Controller();
-
-    /**
-     * The meta object literal for the '<em><b>Defines</b></em>' containment reference list feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference ELEMENT__DEFINES = eINSTANCE.getElement_Defines();
-
-    /**
-     * The meta object literal for the '<em><b>Scripts</b></em>' containment reference list feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference ELEMENT__SCRIPTS = eINSTANCE.getElement_Scripts();
-
-    /**
      * The meta object literal for the '<em><b>Properties</b></em>' containment reference list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -1572,6 +1648,14 @@ public interface FXGraphPackage extends EPackage
      * @generated
      */
     EClass SCRIPT = eINSTANCE.getScript();
+
+    /**
+     * The meta object literal for the '<em><b>Language</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute SCRIPT__LANGUAGE = eINSTANCE.getScript_Language();
 
     /**
      * The meta object literal for the '<em><b>Source</b></em>' attribute feature.

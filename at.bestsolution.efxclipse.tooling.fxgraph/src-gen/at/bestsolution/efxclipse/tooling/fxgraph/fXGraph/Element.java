@@ -22,9 +22,6 @@ import org.eclipse.xtext.common.types.JvmParameterizedTypeReference;
  *   <li>{@link at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.Element#getValue <em>Value</em>}</li>
  *   <li>{@link at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.Element#getFactory <em>Factory</em>}</li>
  *   <li>{@link at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.Element#getName <em>Name</em>}</li>
- *   <li>{@link at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.Element#getController <em>Controller</em>}</li>
- *   <li>{@link at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.Element#getDefines <em>Defines</em>}</li>
- *   <li>{@link at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.Element#getScripts <em>Scripts</em>}</li>
  *   <li>{@link at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.Element#getProperties <em>Properties</em>}</li>
  *   <li>{@link at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.Element#getStaticProperties <em>Static Properties</em>}</li>
  * </ul>
@@ -139,64 +136,6 @@ public interface Element extends SingleValueProperty, ListValueElement
    * @generated
    */
   void setName(String value);
-
-  /**
-   * Returns the value of the '<em><b>Controller</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <p>
-   * If the meaning of the '<em>Controller</em>' containment reference isn't clear,
-   * there really should be more of a description here...
-   * </p>
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Controller</em>' containment reference.
-   * @see #setController(JvmParameterizedTypeReference)
-   * @see at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.FXGraphPackage#getElement_Controller()
-   * @model containment="true"
-   * @generated
-   */
-  JvmParameterizedTypeReference getController();
-
-  /**
-   * Sets the value of the '{@link at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.Element#getController <em>Controller</em>}' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Controller</em>' containment reference.
-   * @see #getController()
-   * @generated
-   */
-  void setController(JvmParameterizedTypeReference value);
-
-  /**
-   * Returns the value of the '<em><b>Defines</b></em>' containment reference list.
-   * The list contents are of type {@link at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.Define}.
-   * <!-- begin-user-doc -->
-   * <p>
-   * If the meaning of the '<em>Defines</em>' containment reference list isn't clear,
-   * there really should be more of a description here...
-   * </p>
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Defines</em>' containment reference list.
-   * @see at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.FXGraphPackage#getElement_Defines()
-   * @model containment="true"
-   * @generated
-   */
-  EList<Define> getDefines();
-
-  /**
-   * Returns the value of the '<em><b>Scripts</b></em>' containment reference list.
-   * The list contents are of type {@link at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.Script}.
-   * <!-- begin-user-doc -->
-   * <p>
-   * If the meaning of the '<em>Scripts</em>' containment reference list isn't clear,
-   * there really should be more of a description here...
-   * </p>
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Scripts</em>' containment reference list.
-   * @see at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.FXGraphPackage#getElement_Scripts()
-   * @model containment="true"
-   * @generated
-   */
-  EList<Script> getScripts();
 
   /**
    * Returns the value of the '<em><b>Properties</b></em>' containment reference list.

@@ -84,9 +84,9 @@ public class FXGraphAdapterFactory extends AdapterFactoryImpl
         return createModelAdapter();
       }
       @Override
-      public Adapter caseLanguage(Language object)
+      public Adapter caseComponentDefinition(ComponentDefinition object)
       {
-        return createLanguageAdapter();
+        return createComponentDefinitionAdapter();
       }
       @Override
       public Adapter caseImport(Import object)
@@ -221,16 +221,16 @@ public class FXGraphAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.Language <em>Language</em>}'.
+   * Creates a new adapter for an object of class '{@link at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.ComponentDefinition <em>Component Definition</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.Language
+   * @see at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.ComponentDefinition
    * @generated
    */
-  public Adapter createLanguageAdapter()
+  public Adapter createComponentDefinitionAdapter()
   {
     return null;
   }

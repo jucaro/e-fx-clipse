@@ -6,10 +6,9 @@
  */
 package at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.impl;
 
-import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.Element;
+import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.ComponentDefinition;
 import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.FXGraphPackage;
 import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.Import;
-import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.Language;
 import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.Model;
 
 import java.util.Collection;
@@ -36,8 +35,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * The following features are implemented:
  * <ul>
  *   <li>{@link at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.impl.ModelImpl#getImports <em>Imports</em>}</li>
- *   <li>{@link at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.impl.ModelImpl#getLanguage <em>Language</em>}</li>
- *   <li>{@link at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.impl.ModelImpl#getRootNode <em>Root Node</em>}</li>
+ *   <li>{@link at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.impl.ModelImpl#getComponentDef <em>Component Def</em>}</li>
  * </ul>
  * </p>
  *
@@ -56,24 +54,14 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
   protected EList<Import> imports;
 
   /**
-   * The cached value of the '{@link #getLanguage() <em>Language</em>}' containment reference.
+   * The cached value of the '{@link #getComponentDef() <em>Component Def</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getLanguage()
+   * @see #getComponentDef()
    * @generated
    * @ordered
    */
-  protected Language language;
-
-  /**
-   * The cached value of the '{@link #getRootNode() <em>Root Node</em>}' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getRootNode()
-   * @generated
-   * @ordered
-   */
-  protected Element rootNode;
+  protected ComponentDefinition componentDef;
 
   /**
    * <!-- begin-user-doc -->
@@ -115,9 +103,9 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
    * <!-- end-user-doc -->
    * @generated
    */
-  public Language getLanguage()
+  public ComponentDefinition getComponentDef()
   {
-    return language;
+    return componentDef;
   }
 
   /**
@@ -125,13 +113,13 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetLanguage(Language newLanguage, NotificationChain msgs)
+  public NotificationChain basicSetComponentDef(ComponentDefinition newComponentDef, NotificationChain msgs)
   {
-    Language oldLanguage = language;
-    language = newLanguage;
+    ComponentDefinition oldComponentDef = componentDef;
+    componentDef = newComponentDef;
     if (eNotificationRequired())
     {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, FXGraphPackage.MODEL__LANGUAGE, oldLanguage, newLanguage);
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, FXGraphPackage.MODEL__COMPONENT_DEF, oldComponentDef, newComponentDef);
       if (msgs == null) msgs = notification; else msgs.add(notification);
     }
     return msgs;
@@ -142,68 +130,20 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setLanguage(Language newLanguage)
+  public void setComponentDef(ComponentDefinition newComponentDef)
   {
-    if (newLanguage != language)
+    if (newComponentDef != componentDef)
     {
       NotificationChain msgs = null;
-      if (language != null)
-        msgs = ((InternalEObject)language).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - FXGraphPackage.MODEL__LANGUAGE, null, msgs);
-      if (newLanguage != null)
-        msgs = ((InternalEObject)newLanguage).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - FXGraphPackage.MODEL__LANGUAGE, null, msgs);
-      msgs = basicSetLanguage(newLanguage, msgs);
+      if (componentDef != null)
+        msgs = ((InternalEObject)componentDef).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - FXGraphPackage.MODEL__COMPONENT_DEF, null, msgs);
+      if (newComponentDef != null)
+        msgs = ((InternalEObject)newComponentDef).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - FXGraphPackage.MODEL__COMPONENT_DEF, null, msgs);
+      msgs = basicSetComponentDef(newComponentDef, msgs);
       if (msgs != null) msgs.dispatch();
     }
     else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, FXGraphPackage.MODEL__LANGUAGE, newLanguage, newLanguage));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public Element getRootNode()
-  {
-    return rootNode;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public NotificationChain basicSetRootNode(Element newRootNode, NotificationChain msgs)
-  {
-    Element oldRootNode = rootNode;
-    rootNode = newRootNode;
-    if (eNotificationRequired())
-    {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, FXGraphPackage.MODEL__ROOT_NODE, oldRootNode, newRootNode);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
-    }
-    return msgs;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setRootNode(Element newRootNode)
-  {
-    if (newRootNode != rootNode)
-    {
-      NotificationChain msgs = null;
-      if (rootNode != null)
-        msgs = ((InternalEObject)rootNode).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - FXGraphPackage.MODEL__ROOT_NODE, null, msgs);
-      if (newRootNode != null)
-        msgs = ((InternalEObject)newRootNode).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - FXGraphPackage.MODEL__ROOT_NODE, null, msgs);
-      msgs = basicSetRootNode(newRootNode, msgs);
-      if (msgs != null) msgs.dispatch();
-    }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, FXGraphPackage.MODEL__ROOT_NODE, newRootNode, newRootNode));
+      eNotify(new ENotificationImpl(this, Notification.SET, FXGraphPackage.MODEL__COMPONENT_DEF, newComponentDef, newComponentDef));
   }
 
   /**
@@ -218,10 +158,8 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
     {
       case FXGraphPackage.MODEL__IMPORTS:
         return ((InternalEList<?>)getImports()).basicRemove(otherEnd, msgs);
-      case FXGraphPackage.MODEL__LANGUAGE:
-        return basicSetLanguage(null, msgs);
-      case FXGraphPackage.MODEL__ROOT_NODE:
-        return basicSetRootNode(null, msgs);
+      case FXGraphPackage.MODEL__COMPONENT_DEF:
+        return basicSetComponentDef(null, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -238,10 +176,8 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
     {
       case FXGraphPackage.MODEL__IMPORTS:
         return getImports();
-      case FXGraphPackage.MODEL__LANGUAGE:
-        return getLanguage();
-      case FXGraphPackage.MODEL__ROOT_NODE:
-        return getRootNode();
+      case FXGraphPackage.MODEL__COMPONENT_DEF:
+        return getComponentDef();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -261,11 +197,8 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
         getImports().clear();
         getImports().addAll((Collection<? extends Import>)newValue);
         return;
-      case FXGraphPackage.MODEL__LANGUAGE:
-        setLanguage((Language)newValue);
-        return;
-      case FXGraphPackage.MODEL__ROOT_NODE:
-        setRootNode((Element)newValue);
+      case FXGraphPackage.MODEL__COMPONENT_DEF:
+        setComponentDef((ComponentDefinition)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -284,11 +217,8 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
       case FXGraphPackage.MODEL__IMPORTS:
         getImports().clear();
         return;
-      case FXGraphPackage.MODEL__LANGUAGE:
-        setLanguage((Language)null);
-        return;
-      case FXGraphPackage.MODEL__ROOT_NODE:
-        setRootNode((Element)null);
+      case FXGraphPackage.MODEL__COMPONENT_DEF:
+        setComponentDef((ComponentDefinition)null);
         return;
     }
     super.eUnset(featureID);
@@ -306,10 +236,8 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
     {
       case FXGraphPackage.MODEL__IMPORTS:
         return imports != null && !imports.isEmpty();
-      case FXGraphPackage.MODEL__LANGUAGE:
-        return language != null;
-      case FXGraphPackage.MODEL__ROOT_NODE:
-        return rootNode != null;
+      case FXGraphPackage.MODEL__COMPONENT_DEF:
+        return componentDef != null;
     }
     return super.eIsSet(featureID);
   }

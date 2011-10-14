@@ -6,11 +6,9 @@
  */
 package at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.impl;
 
-import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.Define;
 import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.Element;
 import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.FXGraphPackage;
 import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.Property;
-import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.Script;
 import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.SimpleValueProperty;
 import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.StaticValueProperty;
 
@@ -42,9 +40,6 @@ import org.eclipse.xtext.common.types.JvmParameterizedTypeReference;
  *   <li>{@link at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.impl.ElementImpl#getValue <em>Value</em>}</li>
  *   <li>{@link at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.impl.ElementImpl#getFactory <em>Factory</em>}</li>
  *   <li>{@link at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.impl.ElementImpl#getName <em>Name</em>}</li>
- *   <li>{@link at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.impl.ElementImpl#getController <em>Controller</em>}</li>
- *   <li>{@link at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.impl.ElementImpl#getDefines <em>Defines</em>}</li>
- *   <li>{@link at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.impl.ElementImpl#getScripts <em>Scripts</em>}</li>
  *   <li>{@link at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.impl.ElementImpl#getProperties <em>Properties</em>}</li>
  *   <li>{@link at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.impl.ElementImpl#getStaticProperties <em>Static Properties</em>}</li>
  * </ul>
@@ -113,36 +108,6 @@ public class ElementImpl extends SingleValuePropertyImpl implements Element
    * @ordered
    */
   protected String name = NAME_EDEFAULT;
-
-  /**
-   * The cached value of the '{@link #getController() <em>Controller</em>}' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getController()
-   * @generated
-   * @ordered
-   */
-  protected JvmParameterizedTypeReference controller;
-
-  /**
-   * The cached value of the '{@link #getDefines() <em>Defines</em>}' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getDefines()
-   * @generated
-   * @ordered
-   */
-  protected EList<Define> defines;
-
-  /**
-   * The cached value of the '{@link #getScripts() <em>Scripts</em>}' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getScripts()
-   * @generated
-   * @ordered
-   */
-  protected EList<Script> scripts;
 
   /**
    * The cached value of the '{@link #getProperties() <em>Properties</em>}' containment reference list.
@@ -332,82 +297,6 @@ public class ElementImpl extends SingleValuePropertyImpl implements Element
    * <!-- end-user-doc -->
    * @generated
    */
-  public JvmParameterizedTypeReference getController()
-  {
-    return controller;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public NotificationChain basicSetController(JvmParameterizedTypeReference newController, NotificationChain msgs)
-  {
-    JvmParameterizedTypeReference oldController = controller;
-    controller = newController;
-    if (eNotificationRequired())
-    {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, FXGraphPackage.ELEMENT__CONTROLLER, oldController, newController);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
-    }
-    return msgs;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setController(JvmParameterizedTypeReference newController)
-  {
-    if (newController != controller)
-    {
-      NotificationChain msgs = null;
-      if (controller != null)
-        msgs = ((InternalEObject)controller).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - FXGraphPackage.ELEMENT__CONTROLLER, null, msgs);
-      if (newController != null)
-        msgs = ((InternalEObject)newController).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - FXGraphPackage.ELEMENT__CONTROLLER, null, msgs);
-      msgs = basicSetController(newController, msgs);
-      if (msgs != null) msgs.dispatch();
-    }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, FXGraphPackage.ELEMENT__CONTROLLER, newController, newController));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EList<Define> getDefines()
-  {
-    if (defines == null)
-    {
-      defines = new EObjectContainmentEList<Define>(Define.class, this, FXGraphPackage.ELEMENT__DEFINES);
-    }
-    return defines;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EList<Script> getScripts()
-  {
-    if (scripts == null)
-    {
-      scripts = new EObjectContainmentEList<Script>(Script.class, this, FXGraphPackage.ELEMENT__SCRIPTS);
-    }
-    return scripts;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   public EList<Property> getProperties()
   {
     if (properties == null)
@@ -445,12 +334,6 @@ public class ElementImpl extends SingleValuePropertyImpl implements Element
         return basicSetType(null, msgs);
       case FXGraphPackage.ELEMENT__VALUE:
         return basicSetValue(null, msgs);
-      case FXGraphPackage.ELEMENT__CONTROLLER:
-        return basicSetController(null, msgs);
-      case FXGraphPackage.ELEMENT__DEFINES:
-        return ((InternalEList<?>)getDefines()).basicRemove(otherEnd, msgs);
-      case FXGraphPackage.ELEMENT__SCRIPTS:
-        return ((InternalEList<?>)getScripts()).basicRemove(otherEnd, msgs);
       case FXGraphPackage.ELEMENT__PROPERTIES:
         return ((InternalEList<?>)getProperties()).basicRemove(otherEnd, msgs);
       case FXGraphPackage.ELEMENT__STATIC_PROPERTIES:
@@ -477,12 +360,6 @@ public class ElementImpl extends SingleValuePropertyImpl implements Element
         return getFactory();
       case FXGraphPackage.ELEMENT__NAME:
         return getName();
-      case FXGraphPackage.ELEMENT__CONTROLLER:
-        return getController();
-      case FXGraphPackage.ELEMENT__DEFINES:
-        return getDefines();
-      case FXGraphPackage.ELEMENT__SCRIPTS:
-        return getScripts();
       case FXGraphPackage.ELEMENT__PROPERTIES:
         return getProperties();
       case FXGraphPackage.ELEMENT__STATIC_PROPERTIES:
@@ -513,17 +390,6 @@ public class ElementImpl extends SingleValuePropertyImpl implements Element
         return;
       case FXGraphPackage.ELEMENT__NAME:
         setName((String)newValue);
-        return;
-      case FXGraphPackage.ELEMENT__CONTROLLER:
-        setController((JvmParameterizedTypeReference)newValue);
-        return;
-      case FXGraphPackage.ELEMENT__DEFINES:
-        getDefines().clear();
-        getDefines().addAll((Collection<? extends Define>)newValue);
-        return;
-      case FXGraphPackage.ELEMENT__SCRIPTS:
-        getScripts().clear();
-        getScripts().addAll((Collection<? extends Script>)newValue);
         return;
       case FXGraphPackage.ELEMENT__PROPERTIES:
         getProperties().clear();
@@ -559,15 +425,6 @@ public class ElementImpl extends SingleValuePropertyImpl implements Element
       case FXGraphPackage.ELEMENT__NAME:
         setName(NAME_EDEFAULT);
         return;
-      case FXGraphPackage.ELEMENT__CONTROLLER:
-        setController((JvmParameterizedTypeReference)null);
-        return;
-      case FXGraphPackage.ELEMENT__DEFINES:
-        getDefines().clear();
-        return;
-      case FXGraphPackage.ELEMENT__SCRIPTS:
-        getScripts().clear();
-        return;
       case FXGraphPackage.ELEMENT__PROPERTIES:
         getProperties().clear();
         return;
@@ -596,12 +453,6 @@ public class ElementImpl extends SingleValuePropertyImpl implements Element
         return FACTORY_EDEFAULT == null ? factory != null : !FACTORY_EDEFAULT.equals(factory);
       case FXGraphPackage.ELEMENT__NAME:
         return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
-      case FXGraphPackage.ELEMENT__CONTROLLER:
-        return controller != null;
-      case FXGraphPackage.ELEMENT__DEFINES:
-        return defines != null && !defines.isEmpty();
-      case FXGraphPackage.ELEMENT__SCRIPTS:
-        return scripts != null && !scripts.isEmpty();
       case FXGraphPackage.ELEMENT__PROPERTIES:
         return properties != null && !properties.isEmpty();
       case FXGraphPackage.ELEMENT__STATIC_PROPERTIES:

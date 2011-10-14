@@ -16,6 +16,7 @@ import org.eclipse.emf.ecore.EObject;
  * <p>
  * The following features are supported:
  * <ul>
+ *   <li>{@link at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.Script#getLanguage <em>Language</em>}</li>
  *   <li>{@link at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.Script#getSource <em>Source</em>}</li>
  *   <li>{@link at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.Script#getSourcecode <em>Sourcecode</em>}</li>
  * </ul>
@@ -27,6 +28,32 @@ import org.eclipse.emf.ecore.EObject;
  */
 public interface Script extends EObject
 {
+  /**
+   * Returns the value of the '<em><b>Language</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Language</em>' attribute isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Language</em>' attribute.
+   * @see #setLanguage(String)
+   * @see at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.FXGraphPackage#getScript_Language()
+   * @model
+   * @generated
+   */
+  String getLanguage();
+
+  /**
+   * Sets the value of the '{@link at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.Script#getLanguage <em>Language</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Language</em>' attribute.
+   * @see #getLanguage()
+   * @generated
+   */
+  void setLanguage(String value);
+
   /**
    * Returns the value of the '<em><b>Source</b></em>' attribute.
    * <!-- begin-user-doc -->

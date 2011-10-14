@@ -19,8 +19,7 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * <ul>
  *   <li>{@link at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.Model#getImports <em>Imports</em>}</li>
- *   <li>{@link at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.Model#getLanguage <em>Language</em>}</li>
- *   <li>{@link at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.Model#getRootNode <em>Root Node</em>}</li>
+ *   <li>{@link at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.Model#getComponentDef <em>Component Def</em>}</li>
  * </ul>
  * </p>
  *
@@ -47,55 +46,29 @@ public interface Model extends EObject
   EList<Import> getImports();
 
   /**
-   * Returns the value of the '<em><b>Language</b></em>' containment reference.
+   * Returns the value of the '<em><b>Component Def</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Language</em>' containment reference isn't clear,
+   * If the meaning of the '<em>Component Def</em>' containment reference isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Language</em>' containment reference.
-   * @see #setLanguage(Language)
-   * @see at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.FXGraphPackage#getModel_Language()
+   * @return the value of the '<em>Component Def</em>' containment reference.
+   * @see #setComponentDef(ComponentDefinition)
+   * @see at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.FXGraphPackage#getModel_ComponentDef()
    * @model containment="true"
    * @generated
    */
-  Language getLanguage();
+  ComponentDefinition getComponentDef();
 
   /**
-   * Sets the value of the '{@link at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.Model#getLanguage <em>Language</em>}' containment reference.
+   * Sets the value of the '{@link at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.Model#getComponentDef <em>Component Def</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Language</em>' containment reference.
-   * @see #getLanguage()
+   * @param value the new value of the '<em>Component Def</em>' containment reference.
+   * @see #getComponentDef()
    * @generated
    */
-  void setLanguage(Language value);
-
-  /**
-   * Returns the value of the '<em><b>Root Node</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <p>
-   * If the meaning of the '<em>Root Node</em>' containment reference isn't clear,
-   * there really should be more of a description here...
-   * </p>
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Root Node</em>' containment reference.
-   * @see #setRootNode(Element)
-   * @see at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.FXGraphPackage#getModel_RootNode()
-   * @model containment="true"
-   * @generated
-   */
-  Element getRootNode();
-
-  /**
-   * Sets the value of the '{@link at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.Model#getRootNode <em>Root Node</em>}' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Root Node</em>' containment reference.
-   * @see #getRootNode()
-   * @generated
-   */
-  void setRootNode(Element value);
+  void setComponentDef(ComponentDefinition value);
 
 } // Model
