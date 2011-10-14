@@ -10,8 +10,9 @@ import org.eclipse.e4.core.contexts.ContextInjectionFactory;
 import org.eclipse.e4.core.contexts.IEclipseContext;
 import org.osgi.framework.Bundle;
 
-import at.bestsolution.efxclipse.runtime.javafx.OSGiFXMLLoader;
-import at.bestsolution.efxclipse.runtime.javafx.OSGiFXMLLoader.FXMLLoaderProcessor;
+import at.bestsolution.efxclipse.runtime.osgi.util.OSGiFXMLLoader;
+import at.bestsolution.efxclipse.runtime.osgi.util.OSGiFXMLLoader.FXMLLoaderProcessor;
+
 
 @SuppressWarnings("restriction")
 public class InjectingFXMLLoader {
