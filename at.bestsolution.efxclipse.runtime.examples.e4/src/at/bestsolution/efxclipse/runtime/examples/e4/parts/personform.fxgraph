@@ -1,0 +1,78 @@
+import javafx.scene.layout.*
+import javafx.scene.control.*
+
+GridPane {
+	vgap : 10,
+	hgap : 10,
+	children : [
+		Label {
+			text : "Firstname",
+			call GridPane#columnIndex : 0,
+			call GridPane#rowIndex : 0
+		},
+		TextField id firstname {
+			call GridPane#columnIndex : 1,
+			call GridPane#rowIndex : 0,
+			call GridPane#columnSpan : 2,
+			call GridPane#hgrow : "ALWAYS"
+		},
+		Label {
+			text : "Surname",
+			call GridPane#columnIndex : 0,
+			call GridPane#rowIndex : 1
+		},
+		TextField id surname {
+			call GridPane#columnIndex : 1,
+			call GridPane#rowIndex : 1,
+			call GridPane#columnSpan : 2,
+			call GridPane#hgrow : "ALWAYS"
+		},
+		Label {
+			text : "Street",
+			call GridPane#columnIndex : 0,
+			call GridPane#rowIndex : 2
+		},
+		TextField {
+			call GridPane#columnIndex : 1,
+			call GridPane#rowIndex: 2,
+			call GridPane#columnSpan : 2,
+			call GridPane#hgrow: "ALWAYS"
+		},
+		Label {
+			text : "ZIP/City",
+			call GridPane#columnIndex : 0,
+			call GridPane#rowIndex: 3
+		},
+		TextField {
+			call GridPane#columnIndex : 1,
+			call GridPane#rowIndex: 3
+		},
+		TextField {
+			call GridPane#columnIndex : 2,
+			call GridPane#rowIndex: 3,
+			call GridPane#hgrow: "ALWAYS"
+		},
+		Label {
+			text : "Country",
+			call GridPane#columnIndex : 0,
+			call GridPane#rowIndex: 4
+		},
+		ChoiceBox {
+			call GridPane#columnIndex : 1,
+			call GridPane#rowIndex: 4,
+			call GridPane#hgrow: "ALWAYS",
+			call GridPane#columnSpan : 2
+		},
+		Label {
+			text : "Federalstate",
+			call GridPane#columnIndex : 0,
+			call GridPane#rowIndex: 5
+		},
+		ChoiceBox {
+			call GridPane#columnIndex : 1,
+			call GridPane#rowIndex: 5,
+			call GridPane#hgrow: "ALWAYS",
+			call GridPane#columnSpan : 2
+		}
+	]
+}

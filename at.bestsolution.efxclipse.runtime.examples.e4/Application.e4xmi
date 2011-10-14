@@ -1,17 +1,11 @@
 <?xml version="1.0" encoding="ASCII"?>
 <application:Application xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:application="http://www.eclipse.org/ui/2010/UIModel/application" xmlns:basic="http://www.eclipse.org/ui/2010/UIModel/application/ui/basic" xmi:id="_fBMHIOrvEeCt9o_FPfmYHQ" elementId="at.bestsolution.efxclipse.runtime.examples.e4.application">
   <children xsi:type="basic:TrimmedWindow" xmi:id="_Pod3YOr0EeCt9o_FPfmYHQ" label="My e4 FX Application" x="10" y="10" width="800" height="600">
+    <tags>decoration#topdecoration.fxml</tags>
     <children xsi:type="basic:PartSashContainer" xmi:id="_DQApgOuPEeCDVr_5ofScGw" horizontal="true">
-      <children xsi:type="basic:PartSashContainer" xmi:id="_DD_8EOu2EeCDVr_5ofScGw" containerData="25">
-        <children xsi:type="basic:Part" xmi:id="_qyptgOu0EeCDVr_5ofScGw" containerData="75" contributionURI="platform:/plugin/at.bestsolution.efxclipse.runtime.examples.e4/at.bestsolution.efxclipse.runtime.examples.e4.parts.SenderPart" label="Part 1"/>
-        <children xsi:type="basic:Part" xmi:id="_IIkpMOu2EeCDVr_5ofScGw" containerData="25" contributionURI="platform:/plugin/at.bestsolution.efxclipse.runtime.examples.e4/at.bestsolution.efxclipse.runtime.examples.e4.parts.ReceiverPart" label="Part 2"/>
-      </children>
-      <children xsi:type="basic:PartSashContainer" xmi:id="_r-PhcOu1EeCDVr_5ofScGw" containerData="75">
-        <children xsi:type="basic:PartSashContainer" xmi:id="_SXhJcOu2EeCDVr_5ofScGw" containerData="75" horizontal="true">
-          <children xsi:type="basic:Part" xmi:id="_rrQwgOu0EeCDVr_5ofScGw" containerData="75" contributionURI="platform:/plugin/at.bestsolution.efxclipse.runtime.examples.e4/at.bestsolution.efxclipse.runtime.examples.e4.parts.ReceiverPart" label="Part 3"/>
-          <children xsi:type="basic:Part" xmi:id="_X5s_oOu2EeCDVr_5ofScGw" containerData="25" contributionURI="platform:/plugin/at.bestsolution.efxclipse.runtime.examples.e4/at.bestsolution.efxclipse.runtime.examples.e4.parts.ReceiverPart" label="Part 4"/>
-        </children>
-        <children xsi:type="basic:Part" xmi:id="_ukOsQOu1EeCDVr_5ofScGw" containerData="25" contributionURI="platform:/plugin/at.bestsolution.efxclipse.runtime.examples.e4/at.bestsolution.efxclipse.runtime.examples.e4.parts.ReceiverPart" label="Part 5"/>
+      <children xsi:type="basic:Part" xmi:id="_dXzjYPRDEeCCOIYCLNYQTA" containerData="25" contributionURI="platform:/plugin/at.bestsolution.efxclipse.runtime.examples.e4/at.bestsolution.efxclipse.runtime.examples.e4.parts.PersonListPart" label="Person List"/>
+      <children xsi:type="basic:PartStack" xmi:id="_awnesPRDEeCCOIYCLNYQTA" elementId="detailstack" containerData="75">
+        <children xsi:type="basic:Part" xmi:id="_0P_cEPRDEeCCOIYCLNYQTA" elementId="persondetail" contributionURI="platform:/plugin/at.bestsolution.efxclipse.runtime.examples.e4/at.bestsolution.efxclipse.runtime.examples.e4.parts.PersonDetailPart" label="Person Detail"/>
       </children>
     </children>
   </children>

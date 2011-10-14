@@ -22,5 +22,12 @@
          </property>
       </product>
    </extension>
+   <extension
+         point="at.bestsolution.efxclipse.runtime.theme">
+      <theme
+            basestylesheet="css/default.css"
+            id="at.bestsolution.efxclipse.runtime.examples.e4.default">
+      </theme>
+   </extension>
 
 </plugin>
