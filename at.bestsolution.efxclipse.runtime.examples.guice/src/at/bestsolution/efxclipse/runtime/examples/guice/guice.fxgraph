@@ -1,0 +1,36 @@
+import javafx.scene.layout.*
+import javafx.scene.control.*
+import at.bestsolution.efxclipse.runtime.examples.guice.controller.*
+
+AnchorPane controlledby LoginController {
+	children : [
+		Label {
+			text : "Username",
+			layoutX : 10,
+			layoutY : 10
+		},
+		TextField id username {
+			layoutX : 80,
+			layoutY : 10
+		},
+		Label {
+			text : "Password",
+			layoutX : 10,
+			layoutY : 40
+		},
+		PasswordField id password {
+			layoutX : 80,
+			layoutY : 40
+		},
+		Button {
+			text : "Login",
+			layoutX : 80,
+			layoutY : 70,
+			onAction : controllermethod login
+		},
+		Label id message {
+			layoutX : 80,
+			layoutY : 100
+		}
+	]
+}
