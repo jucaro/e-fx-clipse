@@ -40,7 +40,7 @@
             class="at.bestsolution.efxclipse.tooling.jdt.ui.internal.editors.JFXBuildConfigurationEditor"
             default="false"
             extensions="fxbuild"
-            icon="icons/application_lightning.png"
+            icon="icons/page_white_compressed.png"
             id="at.bestsolution.efxclipse.tooling.jdt.ui.fxbuild"
             name="FX Build Configuration">
       </editor>

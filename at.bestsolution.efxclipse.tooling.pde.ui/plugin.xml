@@ -31,7 +31,7 @@
       <wizard
             category="at.bestsolution.efxclipse.tooling"
             class="at.bestsolution.efxclipse.tooling.pde.ui.NewJavaFXProductFileWizard"
-            icon="icons/application_lightning.png"
+            icon="icons/page_gear.png"
             id="at.bestsolution.efxclipse.tooling.pde.ui.jfxproduct"
             name="JavaFX Product Configuration">
       </wizard>
