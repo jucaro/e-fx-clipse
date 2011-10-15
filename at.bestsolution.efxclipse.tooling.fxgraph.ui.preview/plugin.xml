@@ -4,9 +4,10 @@
    <extension
          point="org.eclipse.ui.views">
       <view
+            category="at.bestsolution.efxclipse.tooling"
             class="at.bestsolution.efxclipse.tooling.fxgraph.ui.preview.bundle.LivePreviewViewExecutableExtensionRegistry:at.bestsolution.efxclipse.tooling.fxgraph.ui.preview.LivePreviewPart"
             id="at.bestsolution.efxclipse.tooling.fxgraph.ui.preview"
-            name="Preview"
+            name="FXGraph Preview"
             restorable="true">
       </view>
    </extension>

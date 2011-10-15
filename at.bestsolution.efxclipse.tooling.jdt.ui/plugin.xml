@@ -119,4 +119,11 @@
             name="FX Build Command">
       </command>
    </extension>
+   <extension
+         point="org.eclipse.ui.views">
+      <category
+            id="at.bestsolution.efxclipse.tooling"
+            name="JavaFX">
+      </category>
+   </extension>
 </plugin>
