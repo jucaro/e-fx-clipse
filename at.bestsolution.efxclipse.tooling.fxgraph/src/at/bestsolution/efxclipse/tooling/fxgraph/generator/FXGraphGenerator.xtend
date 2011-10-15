@@ -138,19 +138,20 @@ class FXGraphGenerator implements IGenerator {
 			</fx:define>
 			«ENDIF»
 			«IF ! forPreview»
-				«FOR script : definition.scripts»«languageManager.addLanguage(script.language)»
-					«IF script.sourcecode != null»
-						<fx:script>«script.sourcecode.substring(2,script.sourcecode.length-2)»
-						</fx:script>
-					«ELSE»
-						<fx:script source="«script.source»"/>
-					«ENDIF»
-				«ENDFOR»
+			«FOR script : definition.scripts»«languageManager.addLanguage(script.language)»
+				«IF script.sourcecode != null»
+					<fx:script>«script.sourcecode.substring(2,script.sourcecode.length-2)»
+					</fx:script>
+				«ELSE»
+					<fx:script source="«script.source»"/>
+				«ENDIF»
+			«ENDFOR»
 			«ENDIF»
 			«IF hasNestedProperties(element)»
 				«propContents(element.properties,importManager,forPreview)»
 				«statPropContent(element.staticProperties,importManager,forPreview)»
 			«ENDIF»
+		
 		</«element.type.shortName(importManager)»>
 	'''
 	
