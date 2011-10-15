@@ -20,7 +20,7 @@
    <extension
          point="org.eclipse.ui.newWizards">
       <wizard
-            category="org.eclipse.jdt.ui.java"
+            category="at.bestsolution.efxclipse.tooling"
             class="at.bestsolution.efxclipse.tooling.jdt.ui.internal.wizard.JavaFXProjectWizard"
             finalPerspective="org.eclipse.jdt.ui.JavaPerspective"
             icon="icons/application_lightning.png"
@@ -29,6 +29,10 @@
             preferredPerspectives="org.eclipse.jdt.ui.JavaPerspective,org.eclipse.jdt.ui.JavaBrowsingPerspective,org.eclipse.jdt.ui.JavaHierarchyPerspective"
             project="true">
       </wizard>
+      <category
+            id="at.bestsolution.efxclipse.tooling"
+            name="JavaFX">
+      </category>
    </extension>
    <extension
          point="org.eclipse.ui.editors">

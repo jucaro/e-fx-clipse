@@ -29,7 +29,7 @@
    <extension
          point="org.eclipse.ui.newWizards">
       <wizard
-            category="org.eclipse.pde.PDE"
+            category="at.bestsolution.efxclipse.tooling"
             class="at.bestsolution.efxclipse.tooling.pde.ui.NewJavaFXProductFileWizard"
             icon="icons/application_lightning.png"
             id="at.bestsolution.efxclipse.tooling.pde.ui.jfxproduct"
