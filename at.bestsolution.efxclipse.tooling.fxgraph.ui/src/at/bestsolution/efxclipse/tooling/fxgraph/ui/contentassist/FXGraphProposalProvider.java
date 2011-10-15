@@ -14,26 +14,36 @@ import java.util.TreeSet;
 
 import org.eclipse.core.resources.IProject;
 import org.eclipse.core.resources.ResourcesPlugin;
+import org.eclipse.core.runtime.NullProgressMonitor;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.jdt.core.Flags;
+import org.eclipse.jdt.core.IAnnotation;
 import org.eclipse.jdt.core.IJavaProject;
 import org.eclipse.jdt.core.IMethod;
 import org.eclipse.jdt.core.IType;
 import org.eclipse.jdt.core.JavaCore;
 import org.eclipse.jdt.core.JavaModelException;
 import org.eclipse.jdt.core.Signature;
+import org.eclipse.jdt.internal.corext.util.JavaModelUtil;
+import org.eclipse.jface.resource.ImageDescriptor;
 import org.eclipse.jface.resource.JFaceResources;
 import org.eclipse.jface.viewers.StyledString;
 import org.eclipse.swt.graphics.Image;
 import org.eclipse.xtext.Assignment;
 import org.eclipse.xtext.RuleCall;
 import org.eclipse.xtext.common.types.JvmParameterizedTypeReference;
+import org.eclipse.xtext.common.types.JvmType;
+import org.eclipse.xtext.common.types.util.jdt.IJavaElementFinder;
 import org.eclipse.xtext.ui.editor.contentassist.ContentAssistContext;
 import org.eclipse.xtext.ui.editor.contentassist.ICompletionProposalAcceptor;
 
+import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.ComponentDefinition;
 import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.Element;
+import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.Model;
 import at.bestsolution.efxclipse.tooling.fxgraph.ui.internal.FXGraphActivator;
+
+import com.google.inject.Inject;
 
 /**
  * see
@@ -48,11 +58,25 @@ public class FXGraphProposalProvider extends AbstractFXGraphProposalProvider {
 	private static final String LIST_KEY = FXGraphProposalProvider.class.getName() + ".LIST";
 	private static final String MAP_KEY = FXGraphProposalProvider.class.getName() + ".MAP";
 	
+	private static final String METHOD_PRIVATE_KEY = FXGraphProposalProvider.class.getName() + ".METHOD_PRIVATE";
+	private static final String METHOD_DEFAULT_KEY = FXGraphProposalProvider.class.getName() + ".METHOD_DEFAULT";
+	private static final String METHOD_PROTECTED_KEY = FXGraphProposalProvider.class.getName() + ".METHOD_PROTECTED";
+	private static final String METHOD_PUBLIC_KEY = FXGraphProposalProvider.class.getName() + ".METHOD_PUBLIC";
+	
+	@Inject
+	private IJavaElementFinder javaElementFinder;
+	
 	static {
 		JFaceResources.getImageRegistry().put(FIELD_KEY, FXGraphActivator.imageDescriptorFromPlugin("at.bestsolution.efxclipse.tooling.fxgraph.ui", "/icons/field_public_obj.gif"));
 		JFaceResources.getImageRegistry().put(EVENT_KEY, FXGraphActivator.imageDescriptorFromPlugin("at.bestsolution.efxclipse.tooling.fxgraph.ui", "/icons/correction_change.gif"));
 		JFaceResources.getImageRegistry().put(LIST_KEY, FXGraphActivator.imageDescriptorFromPlugin("at.bestsolution.efxclipse.tooling.fxgraph.ui", "/icons/class_hi.gif"));
 		JFaceResources.getImageRegistry().put(MAP_KEY, FXGraphActivator.imageDescriptorFromPlugin("at.bestsolution.efxclipse.tooling.fxgraph.ui", "/icons/types.gif"));
+		
+		JFaceResources.getImageRegistry().put(METHOD_PRIVATE_KEY, FXGraphActivator.imageDescriptorFromPlugin("at.bestsolution.efxclipse.tooling.fxgraph.ui", "/icons/methpri_obj.gif"));
+		JFaceResources.getImageRegistry().put(METHOD_DEFAULT_KEY, FXGraphActivator.imageDescriptorFromPlugin("at.bestsolution.efxclipse.tooling.fxgraph.ui", "/icons/methdef_obj.gif"));
+		JFaceResources.getImageRegistry().put(METHOD_PROTECTED_KEY, FXGraphActivator.imageDescriptorFromPlugin("at.bestsolution.efxclipse.tooling.fxgraph.ui", "/icons/methpro_obj.gif"));
+		JFaceResources.getImageRegistry().put(METHOD_PUBLIC_KEY, FXGraphActivator.imageDescriptorFromPlugin("at.bestsolution.efxclipse.tooling.fxgraph.ui", "/icons/methpub_obj.gif"));
+		
 	}
 
 	static class TypeData {
@@ -352,6 +376,102 @@ public class FXGraphProposalProvider extends AbstractFXGraphProposalProvider {
 	}
 	
 	@Override
+	public void completeControllerHandledValueProperty_Methodname(EObject model, Assignment assignment, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
+		Model m = (Model) model.eResource().getContents().get(0);
+		if( m != null ) {
+			ComponentDefinition def = m.getComponentDef();
+			if( def != null ) {
+				if( def.getController() != null ) {
+					if( model.eContainer() instanceof at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.Property ) {
+						at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.Property p = (at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.Property) model.eContainer();
+						if( p.eContainer() instanceof Element ) {
+							Element element = (Element) p.eContainer();
+							IJavaProject jproject = getJavaProject(model);
+							TypeData data = getTypeData(jproject, element.getType());
+							for( Property prop : data.properties ) {
+								if( p.getName().equals(prop.name) ) {
+									List<IMethod> methods = findControllerJavaMethods(jproject,def.getController().getType(),prop.method);
+									for( IMethod me : methods ) {
+										Image img = null;
+										try {
+											if( Flags.isPublic(me.getFlags()) ) {
+												img = JFaceResources.getImage(METHOD_PUBLIC_KEY);
+											} else if( Flags.isProtected(me.getFlags()) ) {
+												img = JFaceResources.getImage(METHOD_PROTECTED_KEY);
+											} else if( Flags.isPackageDefault(me.getFlags()) ) {
+												img = JFaceResources.getImage(METHOD_DEFAULT_KEY);
+											} else {
+												img = JFaceResources.getImage(METHOD_PRIVATE_KEY);
+											}
+										} catch (JavaModelException e) {
+											// TODO Auto-generated catch block
+											e.printStackTrace();
+										}
+										acceptor.accept(createCompletionProposal(me.getElementName(), me.getElementName() + "("+ Signature.getSimpleName(Signature.toString(me.getParameterTypes()[0])) +")", img, context)); // TODO Show icon visibility	
+									}
+									
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+		super.completeControllerHandledValueProperty_Methodname(model, assignment, context, acceptor);
+	}
+	
+	private List<IMethod> findControllerJavaMethods(IJavaProject jproject, JvmType type, IMethod bindMethod) {
+		IType jdtType = (IType) javaElementFinder.findElementFor(type);
+		
+		List<IMethod> allMethods = new ArrayList<IMethod>();
+		try {
+			allMethods.addAll(Arrays.asList(jdtType.getMethods()));
+			
+			for( IType t : JavaModelUtil.getAllSuperTypes(jdtType, new NullProgressMonitor())) {
+				allMethods.addAll(Arrays.asList(t.getMethods()));
+			}
+
+			String returnSignature = Signature.toString(bindMethod.getReturnType());
+			String eventType = null;
+			
+			if( returnSignature.startsWith("javafx.event.EventHandler<? super ") || returnSignature.startsWith("javafx.event.EventHandler<") ) {
+				if( returnSignature.startsWith("javafx.event.EventHandler<? super ") ) {
+					eventType = returnSignature.substring("javafx.event.EventHandler<? super ".length(),returnSignature.length()-1);
+				} else {
+					eventType = returnSignature.substring("javafx.event.EventHandler<".length(),returnSignature.length()-1);
+				}
+			}
+			
+			List<IMethod> rv = new ArrayList<IMethod>();
+			for( IMethod m : allMethods ) {
+				boolean found = false;
+				for( IAnnotation a : m.getAnnotations() ) {
+					if( a.getElementName().endsWith("FXML") ) {
+						found = true;
+					}
+				}
+				if( found ) {
+					String[] types = m.getParameterTypes();
+					if( types.length == 1 ) {
+						String[][] paramType = ((IType)m.getParent()).resolveType(Signature.toString(types[0]));
+						String v = Signature.toQualifiedName(paramType[0]);
+						if(v.equals(eventType)) {
+							rv.add(m);
+						}
+					}
+				}
+			}
+			
+			return rv;
+		} catch (JavaModelException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		return Collections.emptyList();
+	}
+	
+	@Override
 	public void complete_Property(EObject model, RuleCall ruleCall,
 			ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
 		if (context.getCurrentModel() instanceof Element) {
@@ -393,7 +513,7 @@ public class FXGraphProposalProvider extends AbstractFXGraphProposalProvider {
 		}
 		super.completeProperty_Value(model, assignment, context, acceptor);
 	}
-
+	
 	private TypeData createData(List<IMethod> allMethods, IJavaProject jproject)
 			throws JavaModelException {
 		TypeData d = new TypeData();
