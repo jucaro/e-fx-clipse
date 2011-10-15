@@ -156,14 +156,14 @@ ruleComponentDefinition returns [EObject current=null]
 	    }
 
 )
-)	otherlv_2='controlledby' 
+)(	otherlv_2='controlledby' 
     {
-    	newLeafNode(otherlv_2, grammarAccess.getComponentDefinitionAccess().getControlledbyKeyword_2());
+    	newLeafNode(otherlv_2, grammarAccess.getComponentDefinitionAccess().getControlledbyKeyword_2_0());
     }
 (
 (
 		{ 
-	        newCompositeNode(grammarAccess.getComponentDefinitionAccess().getControllerJvmTypeReferenceParserRuleCall_3_0()); 
+	        newCompositeNode(grammarAccess.getComponentDefinitionAccess().getControllerJvmTypeReferenceParserRuleCall_2_1_0()); 
 	    }
 		lv_controller_3_0=ruleJvmTypeReference		{
 	        if ($current==null) {
@@ -178,19 +178,19 @@ ruleComponentDefinition returns [EObject current=null]
 	    }
 
 )
-)(	otherlv_4='previewCss' 
+))?(	otherlv_4='previewCss' 
     {
-    	newLeafNode(otherlv_4, grammarAccess.getComponentDefinitionAccess().getPreviewCssKeyword_4_0());
+    	newLeafNode(otherlv_4, grammarAccess.getComponentDefinitionAccess().getPreviewCssKeyword_3_0());
     }
 	otherlv_5='[' 
     {
-    	newLeafNode(otherlv_5, grammarAccess.getComponentDefinitionAccess().getLeftSquareBracketKeyword_4_1());
+    	newLeafNode(otherlv_5, grammarAccess.getComponentDefinitionAccess().getLeftSquareBracketKeyword_3_1());
     }
 (
 (
 		lv_cssFiles_6_0=RULE_STRING
 		{
-			newLeafNode(lv_cssFiles_6_0, grammarAccess.getComponentDefinitionAccess().getCssFilesSTRINGTerminalRuleCall_4_2_0()); 
+			newLeafNode(lv_cssFiles_6_0, grammarAccess.getComponentDefinitionAccess().getCssFilesSTRINGTerminalRuleCall_3_2_0()); 
 		}
 		{
 	        if ($current==null) {
@@ -206,13 +206,13 @@ ruleComponentDefinition returns [EObject current=null]
 )
 )(	otherlv_7=',' 
     {
-    	newLeafNode(otherlv_7, grammarAccess.getComponentDefinitionAccess().getCommaKeyword_4_3_0());
+    	newLeafNode(otherlv_7, grammarAccess.getComponentDefinitionAccess().getCommaKeyword_3_3_0());
     }
 (
 (
 		lv_cssFiles_8_0=RULE_STRING
 		{
-			newLeafNode(lv_cssFiles_8_0, grammarAccess.getComponentDefinitionAccess().getCssFilesSTRINGTerminalRuleCall_4_3_1_0()); 
+			newLeafNode(lv_cssFiles_8_0, grammarAccess.getComponentDefinitionAccess().getCssFilesSTRINGTerminalRuleCall_3_3_1_0()); 
 		}
 		{
 	        if ($current==null) {
@@ -228,21 +228,21 @@ ruleComponentDefinition returns [EObject current=null]
 )
 ))	otherlv_9=']' 
     {
-    	newLeafNode(otherlv_9, grammarAccess.getComponentDefinitionAccess().getRightSquareBracketKeyword_4_4());
+    	newLeafNode(otherlv_9, grammarAccess.getComponentDefinitionAccess().getRightSquareBracketKeyword_3_4());
     }
 )?(	otherlv_10='previewResourceBundle' 
     {
-    	newLeafNode(otherlv_10, grammarAccess.getComponentDefinitionAccess().getPreviewResourceBundleKeyword_5_0());
+    	newLeafNode(otherlv_10, grammarAccess.getComponentDefinitionAccess().getPreviewResourceBundleKeyword_4_0());
     }
 	otherlv_11='[' 
     {
-    	newLeafNode(otherlv_11, grammarAccess.getComponentDefinitionAccess().getLeftSquareBracketKeyword_5_1());
+    	newLeafNode(otherlv_11, grammarAccess.getComponentDefinitionAccess().getLeftSquareBracketKeyword_4_1());
     }
 (
 (
 		lv_previewResourceBundle_12_0=RULE_STRING
 		{
-			newLeafNode(lv_previewResourceBundle_12_0, grammarAccess.getComponentDefinitionAccess().getPreviewResourceBundleSTRINGTerminalRuleCall_5_2_0()); 
+			newLeafNode(lv_previewResourceBundle_12_0, grammarAccess.getComponentDefinitionAccess().getPreviewResourceBundleSTRINGTerminalRuleCall_4_2_0()); 
 		}
 		{
 	        if ($current==null) {
@@ -258,16 +258,16 @@ ruleComponentDefinition returns [EObject current=null]
 )
 )	otherlv_13=']' 
     {
-    	newLeafNode(otherlv_13, grammarAccess.getComponentDefinitionAccess().getRightSquareBracketKeyword_5_3());
+    	newLeafNode(otherlv_13, grammarAccess.getComponentDefinitionAccess().getRightSquareBracketKeyword_4_3());
     }
 )?	otherlv_14='{' 
     {
-    	newLeafNode(otherlv_14, grammarAccess.getComponentDefinitionAccess().getLeftCurlyBracketKeyword_6());
+    	newLeafNode(otherlv_14, grammarAccess.getComponentDefinitionAccess().getLeftCurlyBracketKeyword_5());
     }
 (
 (
 		{ 
-	        newCompositeNode(grammarAccess.getComponentDefinitionAccess().getScriptsScriptParserRuleCall_7_0()); 
+	        newCompositeNode(grammarAccess.getComponentDefinitionAccess().getScriptsScriptParserRuleCall_6_0()); 
 	    }
 		lv_scripts_15_0=ruleScript		{
 	        if ($current==null) {
@@ -285,7 +285,7 @@ ruleComponentDefinition returns [EObject current=null]
 )?((
 (
 		{ 
-	        newCompositeNode(grammarAccess.getComponentDefinitionAccess().getDefinesDefineParserRuleCall_8_0_0()); 
+	        newCompositeNode(grammarAccess.getComponentDefinitionAccess().getDefinesDefineParserRuleCall_7_0_0()); 
 	    }
 		lv_defines_16_0=ruleDefine		{
 	        if ($current==null) {
@@ -302,12 +302,12 @@ ruleComponentDefinition returns [EObject current=null]
 )
 )(	otherlv_17=',' 
     {
-    	newLeafNode(otherlv_17, grammarAccess.getComponentDefinitionAccess().getCommaKeyword_8_1_0());
+    	newLeafNode(otherlv_17, grammarAccess.getComponentDefinitionAccess().getCommaKeyword_7_1_0());
     }
 (
 (
 		{ 
-	        newCompositeNode(grammarAccess.getComponentDefinitionAccess().getDefinesDefineParserRuleCall_8_1_1_0()); 
+	        newCompositeNode(grammarAccess.getComponentDefinitionAccess().getDefinesDefineParserRuleCall_7_1_1_0()); 
 	    }
 		lv_defines_18_0=ruleDefine		{
 	        if ($current==null) {
@@ -325,7 +325,7 @@ ruleComponentDefinition returns [EObject current=null]
 ))*)?(
 (
 		{ 
-	        newCompositeNode(grammarAccess.getComponentDefinitionAccess().getRootNodeElementParserRuleCall_9_0()); 
+	        newCompositeNode(grammarAccess.getComponentDefinitionAccess().getRootNodeElementParserRuleCall_8_0()); 
 	    }
 		lv_rootNode_19_0=ruleElement		{
 	        if ($current==null) {
@@ -342,7 +342,7 @@ ruleComponentDefinition returns [EObject current=null]
 )
 )	otherlv_20='}' 
     {
-    	newLeafNode(otherlv_20, grammarAccess.getComponentDefinitionAccess().getRightCurlyBracketKeyword_10());
+    	newLeafNode(otherlv_20, grammarAccess.getComponentDefinitionAccess().getRightCurlyBracketKeyword_9());
     }
 )
 ;
