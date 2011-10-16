@@ -17,6 +17,8 @@ import javafx.scene.Scene;
 
 import javax.swing.JRootPane;
 
+import org.eclipse.core.databinding.observable.Diffs;
+import org.eclipse.core.databinding.observable.list.ListDiff;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.awt.SWT_AWT;
 import org.eclipse.swt.widgets.Composite;
@@ -90,7 +92,7 @@ public class LivePreviewPart extends ViewPart {
 
 	}
 
-	public void refreshContent(final String fxml) {
+	private void refreshContent(final ContentData contentData) {
 		Platform.runLater(new Runnable() {
 
 			@Override
@@ -98,9 +100,16 @@ public class LivePreviewPart extends ViewPart {
 				FXMLLoader loader = new FXMLLoader();
 				loader.setBuilderFactory(new JavaFXBuilderFactory());
 				try {
-					ByteArrayInputStream out = new ByteArrayInputStream(fxml.getBytes());
+					Scene scene = rootPane.getScene();
+					ListDiff d = Diffs.computeListDiff(scene.getStylesheets(), contentData.cssFiles);
+					if( ! d.isEmpty() ) {
+						d.applyTo(scene.getStylesheets());
+					}
+					
+					ByteArrayInputStream out = new ByteArrayInputStream(contentData.contents.getBytes());
 					Node root = (Node) loader.load(out);
 					out.close();
+					
 					rootPane.getChildren().clear();
 					rootPane.getChildren().add(root);
 				} catch (IOException e) {
@@ -113,7 +122,7 @@ public class LivePreviewPart extends ViewPart {
 
 	public void setContents(final ContentData contentData) {
 		if (contentData != null && contentData.contents != null) {
-			refreshContent(contentData.contents);
+			refreshContent(contentData);
 		}
 	}
 

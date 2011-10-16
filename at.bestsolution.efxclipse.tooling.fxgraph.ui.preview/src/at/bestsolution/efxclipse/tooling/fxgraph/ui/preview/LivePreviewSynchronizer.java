@@ -1,10 +1,16 @@
 package at.bestsolution.efxclipse.tooling.fxgraph.ui.preview;
 
 
+import java.net.MalformedURLException;
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
+import org.eclipse.core.resources.IFile;
+import org.eclipse.core.resources.IProject;
+import org.eclipse.core.resources.ResourcesPlugin;
 import org.eclipse.emf.common.util.EList;
+import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.ui.IPartListener;
 import org.eclipse.ui.IWorkbenchPart;
@@ -32,12 +38,10 @@ public class LivePreviewSynchronizer implements IPartListener, IXtextModelListen
 	}
 
 	private void updateView(IWorkbenchPart part) {
-		System.err.println("Part changed to: " + part);
 		if (part instanceof XtextEditor) {
 			XtextEditor xtextEditor = (XtextEditor) part;
 			IXtextDocument xtextDocument = xtextEditor.getDocument();
 			if (xtextDocument != lastActiveDocument) {
-//				selectionLinker.setXtextEditor(xtextEditor);
 				final ContentData contents = xtextDocument.readOnly(new IUnitOfWork<ContentData, XtextResource>() {
 					public ContentData exec(XtextResource resource) throws Exception {
 						return createContents(resource);
@@ -63,8 +67,25 @@ public class LivePreviewSynchronizer implements IPartListener, IXtextModelListen
 				FXGraphGenerator generator = new FXGraphGenerator();
 				ComponentDefinition def = ((Model) rootObject).getComponentDef();
 				List<String> l;
+				
+				URI uri = resource.getURI();
+				IProject p = ResourcesPlugin.getWorkspace().getRoot().getProject(uri.segment(1));
+				
 				if( def != null ) {
-					l = def.getCssFiles();
+					l = new ArrayList<String>(def.getPreviewCssFiles().size());
+					for( String cssFile : def.getPreviewCssFiles() ) {
+						if( cssFile.trim().length() > 0 ) {
+							IFile f = p.getFile(cssFile);
+							if( f.exists() ) {
+								try {
+									l.add(f.getLocation().toFile().getAbsoluteFile().toURI().toURL().toExternalForm());
+								} catch (MalformedURLException e) {
+									// TODO Auto-generated catch block
+									e.printStackTrace();
+								}
+							}	
+						}
+					}
 				} else {
 					l = Collections.emptyList();
 				}
