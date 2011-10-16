@@ -7,7 +7,7 @@ import org.eclipse.e4.core.di.annotations.Execute;
 public class DeletePersonAction {
 	@Execute
 	public void execute() {
-		//TODO Your code goes here
+		System.err.println("Delete person");
 	}
 		
 }

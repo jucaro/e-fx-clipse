@@ -8,7 +8,7 @@ public class NewPersonAction {
 	
 	@Execute
 	public void execute() {
-		//TODO Your code goes here
+		System.err.println("Create new person");
 	}
 		
 }
