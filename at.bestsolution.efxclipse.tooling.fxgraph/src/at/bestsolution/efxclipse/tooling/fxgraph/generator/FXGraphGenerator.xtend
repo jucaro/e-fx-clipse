@@ -147,6 +147,7 @@ class FXGraphGenerator implements IGenerator {
 				«ENDIF»
 			«ENDFOR»
 			«ENDIF»
+		
 			«IF hasNestedProperties(element)»
 				«propContents(element.properties,importManager,forPreview)»
 				«statPropContent(element.staticProperties,importManager,forPreview)»
