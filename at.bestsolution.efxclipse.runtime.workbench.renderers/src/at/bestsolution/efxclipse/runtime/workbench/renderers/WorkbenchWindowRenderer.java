@@ -176,7 +176,7 @@ public class WorkbenchWindowRenderer extends JFXRenderer {
 			Bundle b = org.eclipse.core.runtime.Platform.getBundle(uri.segment(1));
 			if( b != null ) {
 				try {
-					return InjectingFXMLLoader.loadFXML(context, b, fxml);
+					return (Node)InjectingFXMLLoader.create(context, b, fxml).load();
 				} catch (IOException e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
