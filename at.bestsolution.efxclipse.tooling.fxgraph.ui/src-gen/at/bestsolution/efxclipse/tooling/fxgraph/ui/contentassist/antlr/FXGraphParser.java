@@ -228,8 +228,8 @@ public class FXGraphParser extends AbstractContentAssistParser {
 					put(grammarAccess.getModelAccess().getComponentDefAssignment_1(), "rule__Model__ComponentDefAssignment_1");
 					put(grammarAccess.getComponentDefinitionAccess().getNameAssignment_1(), "rule__ComponentDefinition__NameAssignment_1");
 					put(grammarAccess.getComponentDefinitionAccess().getControllerAssignment_2_1(), "rule__ComponentDefinition__ControllerAssignment_2_1");
-					put(grammarAccess.getComponentDefinitionAccess().getCssFilesAssignment_3_2(), "rule__ComponentDefinition__CssFilesAssignment_3_2");
-					put(grammarAccess.getComponentDefinitionAccess().getCssFilesAssignment_3_3_1(), "rule__ComponentDefinition__CssFilesAssignment_3_3_1");
+					put(grammarAccess.getComponentDefinitionAccess().getPreviewCssFilesAssignment_3_2(), "rule__ComponentDefinition__PreviewCssFilesAssignment_3_2");
+					put(grammarAccess.getComponentDefinitionAccess().getPreviewCssFilesAssignment_3_3_1(), "rule__ComponentDefinition__PreviewCssFilesAssignment_3_3_1");
 					put(grammarAccess.getComponentDefinitionAccess().getPreviewResourceBundleAssignment_4_2(), "rule__ComponentDefinition__PreviewResourceBundleAssignment_4_2");
 					put(grammarAccess.getComponentDefinitionAccess().getScriptsAssignment_6(), "rule__ComponentDefinition__ScriptsAssignment_6");
 					put(grammarAccess.getComponentDefinitionAccess().getDefinesAssignment_7_0(), "rule__ComponentDefinition__DefinesAssignment_7_0");

@@ -3844,11 +3844,11 @@ rule__ComponentDefinition__Group_3__0__Impl
     }
 :
 (
-{ before(grammarAccess.getComponentDefinitionAccess().getPreviewCssKeyword_3_0()); }
+{ before(grammarAccess.getComponentDefinitionAccess().getPreviewCssFilesKeyword_3_0()); }
 
-	'previewCss' 
+	'previewCssFiles' 
 
-{ after(grammarAccess.getComponentDefinitionAccess().getPreviewCssKeyword_3_0()); }
+{ after(grammarAccess.getComponentDefinitionAccess().getPreviewCssFilesKeyword_3_0()); }
 )
 
 ;
@@ -3906,9 +3906,9 @@ rule__ComponentDefinition__Group_3__2__Impl
     }
 :
 (
-{ before(grammarAccess.getComponentDefinitionAccess().getCssFilesAssignment_3_2()); }
-(rule__ComponentDefinition__CssFilesAssignment_3_2)
-{ after(grammarAccess.getComponentDefinitionAccess().getCssFilesAssignment_3_2()); }
+{ before(grammarAccess.getComponentDefinitionAccess().getPreviewCssFilesAssignment_3_2()); }
+(rule__ComponentDefinition__PreviewCssFilesAssignment_3_2)
+{ after(grammarAccess.getComponentDefinitionAccess().getPreviewCssFilesAssignment_3_2()); }
 )
 
 ;
@@ -3936,7 +3936,7 @@ rule__ComponentDefinition__Group_3__3__Impl
 :
 (
 { before(grammarAccess.getComponentDefinitionAccess().getGroup_3_3()); }
-(rule__ComponentDefinition__Group_3_3__0)
+(rule__ComponentDefinition__Group_3_3__0)*
 { after(grammarAccess.getComponentDefinitionAccess().getGroup_3_3()); }
 )
 
@@ -4034,9 +4034,9 @@ rule__ComponentDefinition__Group_3_3__1__Impl
     }
 :
 (
-{ before(grammarAccess.getComponentDefinitionAccess().getCssFilesAssignment_3_3_1()); }
-(rule__ComponentDefinition__CssFilesAssignment_3_3_1)
-{ after(grammarAccess.getComponentDefinitionAccess().getCssFilesAssignment_3_3_1()); }
+{ before(grammarAccess.getComponentDefinitionAccess().getPreviewCssFilesAssignment_3_3_1()); }
+(rule__ComponentDefinition__PreviewCssFilesAssignment_3_3_1)
+{ after(grammarAccess.getComponentDefinitionAccess().getPreviewCssFilesAssignment_3_3_1()); }
 )
 
 ;
@@ -4067,11 +4067,11 @@ rule__ComponentDefinition__Group_4__0__Impl
     }
 :
 (
-{ before(grammarAccess.getComponentDefinitionAccess().getPreviewResourceBundleKeyword_4_0()); }
+{ before(grammarAccess.getComponentDefinitionAccess().getPreviewResourceFileKeyword_4_0()); }
 
-	'previewResourceBundle' 
+	'previewResourceFile' 
 
-{ after(grammarAccess.getComponentDefinitionAccess().getPreviewResourceBundleKeyword_4_0()); }
+{ after(grammarAccess.getComponentDefinitionAccess().getPreviewResourceFileKeyword_4_0()); }
 )
 
 ;
@@ -15621,14 +15621,14 @@ finally {
 	restoreStackSize(stackSize);
 }
 
-rule__ComponentDefinition__CssFilesAssignment_3_2
+rule__ComponentDefinition__PreviewCssFilesAssignment_3_2
     @init {
 		int stackSize = keepStackSize();
     }
 :
 (
-{ before(grammarAccess.getComponentDefinitionAccess().getCssFilesSTRINGTerminalRuleCall_3_2_0()); }
-	RULE_STRING{ after(grammarAccess.getComponentDefinitionAccess().getCssFilesSTRINGTerminalRuleCall_3_2_0()); }
+{ before(grammarAccess.getComponentDefinitionAccess().getPreviewCssFilesSTRINGTerminalRuleCall_3_2_0()); }
+	RULE_STRING{ after(grammarAccess.getComponentDefinitionAccess().getPreviewCssFilesSTRINGTerminalRuleCall_3_2_0()); }
 )
 
 ;
@@ -15636,14 +15636,14 @@ finally {
 	restoreStackSize(stackSize);
 }
 
-rule__ComponentDefinition__CssFilesAssignment_3_3_1
+rule__ComponentDefinition__PreviewCssFilesAssignment_3_3_1
     @init {
 		int stackSize = keepStackSize();
     }
 :
 (
-{ before(grammarAccess.getComponentDefinitionAccess().getCssFilesSTRINGTerminalRuleCall_3_3_1_0()); }
-	RULE_STRING{ after(grammarAccess.getComponentDefinitionAccess().getCssFilesSTRINGTerminalRuleCall_3_3_1_0()); }
+{ before(grammarAccess.getComponentDefinitionAccess().getPreviewCssFilesSTRINGTerminalRuleCall_3_3_1_0()); }
+	RULE_STRING{ after(grammarAccess.getComponentDefinitionAccess().getPreviewCssFilesSTRINGTerminalRuleCall_3_3_1_0()); }
 )
 
 ;

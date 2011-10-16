@@ -240,14 +240,14 @@ protected class Model_ComponentDefAssignment_1 extends AssignmentToken  {
 /************ begin Rule ComponentDefinition ****************
  *
  * ComponentDefinition:
- * 	"component" name=ValidID ("controlledby" controller=JvmTypeReference)? ("previewCss" "[" cssFiles+=STRING (","
- * 	cssFiles+=STRING) "]")? ("previewResourceBundle" "[" previewResourceBundle=STRING "]")? "{" scripts+=Script?
- * 	(defines+=Define ("," defines+=Define)*)? rootNode=Element "}";
+ * 	"component" name=ValidID ("controlledby" controller=JvmTypeReference)? ("previewCssFiles" "[" previewCssFiles+=STRING
+ * 	("," previewCssFiles+=STRING)* "]")? ("previewResourceFile" "[" previewResourceBundle=STRING "]")? "{"
+ * 	scripts+=Script? (defines+=Define ("," defines+=Define)*)? rootNode=Element "}";
  *
  **/
 
-// "component" name=ValidID ("controlledby" controller=JvmTypeReference)? ("previewCss" "[" cssFiles+=STRING (","
-// cssFiles+=STRING) "]")? ("previewResourceBundle" "[" previewResourceBundle=STRING "]")? "{" scripts+=Script?
+// "component" name=ValidID ("controlledby" controller=JvmTypeReference)? ("previewCssFiles" "[" previewCssFiles+=STRING
+// ("," previewCssFiles+=STRING)* "]")? ("previewResourceFile" "[" previewResourceBundle=STRING "]")? "{" scripts+=Script?
 // (defines+=Define ("," defines+=Define)*)? rootNode=Element "}"
 protected class ComponentDefinition_Group extends GroupToken {
 	
@@ -423,7 +423,7 @@ protected class ComponentDefinition_ControllerAssignment_2_1 extends AssignmentT
 }
 
 
-// ("previewCss" "[" cssFiles+=STRING ("," cssFiles+=STRING) "]")?
+// ("previewCssFiles" "[" previewCssFiles+=STRING ("," previewCssFiles+=STRING)* "]")?
 protected class ComponentDefinition_Group_3 extends GroupToken {
 	
 	public ComponentDefinition_Group_3(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -445,16 +445,16 @@ protected class ComponentDefinition_Group_3 extends GroupToken {
 
 }
 
-// "previewCss"
-protected class ComponentDefinition_PreviewCssKeyword_3_0 extends KeywordToken  {
+// "previewCssFiles"
+protected class ComponentDefinition_PreviewCssFilesKeyword_3_0 extends KeywordToken  {
 	
-	public ComponentDefinition_PreviewCssKeyword_3_0(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+	public ComponentDefinition_PreviewCssFilesKeyword_3_0(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
 		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
 	}
 	
 	@Override
 	public Keyword getGrammarElement() {
-		return grammarAccess.getComponentDefinitionAccess().getPreviewCssKeyword_3_0();
+		return grammarAccess.getComponentDefinitionAccess().getPreviewCssFilesKeyword_3_0();
 	}
 
     @Override
@@ -483,23 +483,23 @@ protected class ComponentDefinition_LeftSquareBracketKeyword_3_1 extends Keyword
     @Override
 	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
 		switch(index) {
-			case 0: return new ComponentDefinition_PreviewCssKeyword_3_0(lastRuleCallOrigin, this, 0, inst);
+			case 0: return new ComponentDefinition_PreviewCssFilesKeyword_3_0(lastRuleCallOrigin, this, 0, inst);
 			default: return null;
 		}	
 	}
 
 }
 
-// cssFiles+=STRING
-protected class ComponentDefinition_CssFilesAssignment_3_2 extends AssignmentToken  {
+// previewCssFiles+=STRING
+protected class ComponentDefinition_PreviewCssFilesAssignment_3_2 extends AssignmentToken  {
 	
-	public ComponentDefinition_CssFilesAssignment_3_2(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+	public ComponentDefinition_PreviewCssFilesAssignment_3_2(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
 		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
 	}
 	
 	@Override
 	public Assignment getGrammarElement() {
-		return grammarAccess.getComponentDefinitionAccess().getCssFilesAssignment_3_2();
+		return grammarAccess.getComponentDefinitionAccess().getPreviewCssFilesAssignment_3_2();
 	}
 
     @Override
@@ -512,11 +512,11 @@ protected class ComponentDefinition_CssFilesAssignment_3_2 extends AssignmentTok
 
     @Override	
 	public IEObjectConsumer tryConsume() {
-		if((value = eObjectConsumer.getConsumable("cssFiles",true)) == null) return null;
-		IEObjectConsumer obj = eObjectConsumer.cloneAndConsume("cssFiles");
-		if(valueSerializer.isValid(obj.getEObject(), grammarAccess.getComponentDefinitionAccess().getCssFilesSTRINGTerminalRuleCall_3_2_0(), value, null)) {
+		if((value = eObjectConsumer.getConsumable("previewCssFiles",true)) == null) return null;
+		IEObjectConsumer obj = eObjectConsumer.cloneAndConsume("previewCssFiles");
+		if(valueSerializer.isValid(obj.getEObject(), grammarAccess.getComponentDefinitionAccess().getPreviewCssFilesSTRINGTerminalRuleCall_3_2_0(), value, null)) {
 			type = AssignmentType.TERMINAL_RULE_CALL;
-			element = grammarAccess.getComponentDefinitionAccess().getCssFilesSTRINGTerminalRuleCall_3_2_0();
+			element = grammarAccess.getComponentDefinitionAccess().getPreviewCssFilesSTRINGTerminalRuleCall_3_2_0();
 			return obj;
 		}
 		return null;
@@ -524,7 +524,7 @@ protected class ComponentDefinition_CssFilesAssignment_3_2 extends AssignmentTok
 
 }
 
-// "," cssFiles+=STRING
+// ("," previewCssFiles+=STRING)*
 protected class ComponentDefinition_Group_3_3 extends GroupToken {
 	
 	public ComponentDefinition_Group_3_3(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -539,7 +539,7 @@ protected class ComponentDefinition_Group_3_3 extends GroupToken {
     @Override
 	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
 		switch(index) {
-			case 0: return new ComponentDefinition_CssFilesAssignment_3_3_1(lastRuleCallOrigin, this, 0, inst);
+			case 0: return new ComponentDefinition_PreviewCssFilesAssignment_3_3_1(lastRuleCallOrigin, this, 0, inst);
 			default: return null;
 		}	
 	}
@@ -561,23 +561,24 @@ protected class ComponentDefinition_CommaKeyword_3_3_0 extends KeywordToken  {
     @Override
 	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
 		switch(index) {
-			case 0: return new ComponentDefinition_CssFilesAssignment_3_2(lastRuleCallOrigin, this, 0, inst);
+			case 0: return new ComponentDefinition_Group_3_3(lastRuleCallOrigin, this, 0, inst);
+			case 1: return new ComponentDefinition_PreviewCssFilesAssignment_3_2(lastRuleCallOrigin, this, 1, inst);
 			default: return null;
 		}	
 	}
 
 }
 
-// cssFiles+=STRING
-protected class ComponentDefinition_CssFilesAssignment_3_3_1 extends AssignmentToken  {
+// previewCssFiles+=STRING
+protected class ComponentDefinition_PreviewCssFilesAssignment_3_3_1 extends AssignmentToken  {
 	
-	public ComponentDefinition_CssFilesAssignment_3_3_1(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+	public ComponentDefinition_PreviewCssFilesAssignment_3_3_1(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
 		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
 	}
 	
 	@Override
 	public Assignment getGrammarElement() {
-		return grammarAccess.getComponentDefinitionAccess().getCssFilesAssignment_3_3_1();
+		return grammarAccess.getComponentDefinitionAccess().getPreviewCssFilesAssignment_3_3_1();
 	}
 
     @Override
@@ -590,11 +591,11 @@ protected class ComponentDefinition_CssFilesAssignment_3_3_1 extends AssignmentT
 
     @Override	
 	public IEObjectConsumer tryConsume() {
-		if((value = eObjectConsumer.getConsumable("cssFiles",true)) == null) return null;
-		IEObjectConsumer obj = eObjectConsumer.cloneAndConsume("cssFiles");
-		if(valueSerializer.isValid(obj.getEObject(), grammarAccess.getComponentDefinitionAccess().getCssFilesSTRINGTerminalRuleCall_3_3_1_0(), value, null)) {
+		if((value = eObjectConsumer.getConsumable("previewCssFiles",false)) == null) return null;
+		IEObjectConsumer obj = eObjectConsumer.cloneAndConsume("previewCssFiles");
+		if(valueSerializer.isValid(obj.getEObject(), grammarAccess.getComponentDefinitionAccess().getPreviewCssFilesSTRINGTerminalRuleCall_3_3_1_0(), value, null)) {
 			type = AssignmentType.TERMINAL_RULE_CALL;
-			element = grammarAccess.getComponentDefinitionAccess().getCssFilesSTRINGTerminalRuleCall_3_3_1_0();
+			element = grammarAccess.getComponentDefinitionAccess().getPreviewCssFilesSTRINGTerminalRuleCall_3_3_1_0();
 			return obj;
 		}
 		return null;
@@ -619,6 +620,7 @@ protected class ComponentDefinition_RightSquareBracketKeyword_3_4 extends Keywor
 	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
 		switch(index) {
 			case 0: return new ComponentDefinition_Group_3_3(lastRuleCallOrigin, this, 0, inst);
+			case 1: return new ComponentDefinition_PreviewCssFilesAssignment_3_2(lastRuleCallOrigin, this, 1, inst);
 			default: return null;
 		}	
 	}
@@ -626,7 +628,7 @@ protected class ComponentDefinition_RightSquareBracketKeyword_3_4 extends Keywor
 }
 
 
-// ("previewResourceBundle" "[" previewResourceBundle=STRING "]")?
+// ("previewResourceFile" "[" previewResourceBundle=STRING "]")?
 protected class ComponentDefinition_Group_4 extends GroupToken {
 	
 	public ComponentDefinition_Group_4(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -648,16 +650,16 @@ protected class ComponentDefinition_Group_4 extends GroupToken {
 
 }
 
-// "previewResourceBundle"
-protected class ComponentDefinition_PreviewResourceBundleKeyword_4_0 extends KeywordToken  {
+// "previewResourceFile"
+protected class ComponentDefinition_PreviewResourceFileKeyword_4_0 extends KeywordToken  {
 	
-	public ComponentDefinition_PreviewResourceBundleKeyword_4_0(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+	public ComponentDefinition_PreviewResourceFileKeyword_4_0(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
 		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
 	}
 	
 	@Override
 	public Keyword getGrammarElement() {
-		return grammarAccess.getComponentDefinitionAccess().getPreviewResourceBundleKeyword_4_0();
+		return grammarAccess.getComponentDefinitionAccess().getPreviewResourceFileKeyword_4_0();
 	}
 
     @Override
@@ -687,7 +689,7 @@ protected class ComponentDefinition_LeftSquareBracketKeyword_4_1 extends Keyword
     @Override
 	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
 		switch(index) {
-			case 0: return new ComponentDefinition_PreviewResourceBundleKeyword_4_0(lastRuleCallOrigin, this, 0, inst);
+			case 0: return new ComponentDefinition_PreviewResourceFileKeyword_4_0(lastRuleCallOrigin, this, 0, inst);
 			default: return null;
 		}	
 	}

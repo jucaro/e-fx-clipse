@@ -694,10 +694,10 @@ public class InternalFXGraphLexer extends Lexer {
         try {
             int _type = T__41;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.fxgraph.ui/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/ui/contentassist/antlr/internal/InternalFXGraph.g:39:7: ( 'previewCss' )
-            // ../at.bestsolution.efxclipse.tooling.fxgraph.ui/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/ui/contentassist/antlr/internal/InternalFXGraph.g:39:9: 'previewCss'
+            // ../at.bestsolution.efxclipse.tooling.fxgraph.ui/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/ui/contentassist/antlr/internal/InternalFXGraph.g:39:7: ( 'previewCssFiles' )
+            // ../at.bestsolution.efxclipse.tooling.fxgraph.ui/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/ui/contentassist/antlr/internal/InternalFXGraph.g:39:9: 'previewCssFiles'
             {
-            match("previewCss"); 
+            match("previewCssFiles"); 
 
 
             }
@@ -775,10 +775,10 @@ public class InternalFXGraphLexer extends Lexer {
         try {
             int _type = T__45;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.fxgraph.ui/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/ui/contentassist/antlr/internal/InternalFXGraph.g:43:7: ( 'previewResourceBundle' )
-            // ../at.bestsolution.efxclipse.tooling.fxgraph.ui/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/ui/contentassist/antlr/internal/InternalFXGraph.g:43:9: 'previewResourceBundle'
+            // ../at.bestsolution.efxclipse.tooling.fxgraph.ui/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/ui/contentassist/antlr/internal/InternalFXGraph.g:43:7: ( 'previewResourceFile' )
+            // ../at.bestsolution.efxclipse.tooling.fxgraph.ui/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/ui/contentassist/antlr/internal/InternalFXGraph.g:43:9: 'previewResourceFile'
             {
-            match("previewResourceBundle"); 
+            match("previewResourceFile"); 
 
 
             }
@@ -2971,12 +2971,12 @@ public class InternalFXGraphLexer extends Lexer {
 
     protected DFA15 dfa15 = new DFA15(this);
     static final String DFA15_eotS =
-        "\1\uffff\1\56\1\60\1\62\1\64\2\70\1\75\1\77\1\101\1\103\1\106\1"+
+        "\1\uffff\1\56\1\60\1\62\1\64\2\70\1\75\1\77\1\101\1\103\1\105\1"+
         "\111\1\114\1\uffff\3\70\2\uffff\1\70\3\uffff\1\70\2\uffff\1\70\1"+
-        "\144\1\146\3\70\1\uffff\2\70\1\160\1\162\1\53\1\uffff\2\53\13\uffff"+
+        "\144\1\146\3\70\1\uffff\2\70\1\160\1\161\1\53\1\uffff\2\53\13\uffff"+
         "\3\70\1\uffff\3\70\22\uffff\7\70\2\uffff\1\70\3\uffff\1\70\1\u008b"+
         "\1\70\1\u008e\2\uffff\1\70\1\u0090\4\uffff\1\u0091\3\70\1\uffff"+
-        "\3\70\2\uffff\1\162\3\uffff\1\70\1\u0099\3\70\1\u009d\1\70\1\u009f"+
+        "\3\70\3\uffff\1\161\2\uffff\1\70\1\u0099\3\70\1\u009d\1\70\1\u009f"+
         "\1\u00a0\15\70\1\uffff\2\70\1\uffff\1\70\2\uffff\3\70\1\u00b5\2"+
         "\70\1\u00b8\1\uffff\3\70\1\uffff\1\70\2\uffff\5\70\1\u00c2\1\70"+
         "\1\u00c4\1\u00c5\10\70\1\u00ce\2\70\1\uffff\1\u00d1\1\70\1\uffff"+
@@ -2986,11 +2986,11 @@ public class InternalFXGraphLexer extends Lexer {
         "\2\70\1\u00f5\2\70\1\uffff\1\u00f8\1\uffff\1\u00f9\2\70\2\uffff"+
         "\4\70\1\uffff\1\u0101\1\70\1\uffff\1\u0103\1\u0104\2\uffff\7\70"+
         "\1\uffff\1\70\2\uffff\2\70\1\u010f\1\70\1\u0112\5\70\1\uffff\2\70"+
-        "\1\uffff\1\u011a\1\70\1\u011c\4\70\1\uffff\1\70\1\uffff\1\u0122"+
-        "\1\70\1\u0124\2\70\1\uffff\1\70\1\uffff\10\70\1\u0130\1\u0131\1"+
-        "\70\2\uffff\4\70\1\u0137\1\uffff";
+        "\1\uffff\2\70\1\u011c\6\70\1\uffff\1\u0123\1\70\1\u0125\3\70\1\uffff"+
+        "\1\70\1\uffff\11\70\1\u0133\1\70\1\u0135\1\u0136\1\uffff\1\70\2"+
+        "\uffff\2\70\1\u013a\1\uffff";
     static final String DFA15_eofS =
-        "\u0138\uffff";
+        "\u013b\uffff";
     static final String DFA15_minS =
         "\1\0\2\75\1\174\1\46\1\150\1\141\3\75\1\76\1\56\2\52\1\uffff\1"+
         "\141\1\143\1\141\2\uffff\1\162\3\uffff\1\144\2\uffff\1\145\1\173"+
@@ -2998,7 +2998,7 @@ public class InternalFXGraphLexer extends Lexer {
         "\1\165\1\160\1\162\1\uffff\1\154\1\162\1\156\22\uffff\1\154\1\160"+
         "\1\162\1\151\1\155\1\145\1\154\2\uffff\1\145\3\uffff\1\160\1\44"+
         "\1\143\1\44\2\uffff\1\146\1\44\4\uffff\1\44\1\163\1\164\1\151\1"+
-        "\uffff\1\167\1\154\1\164\2\uffff\1\56\3\uffff\1\145\1\44\1\145\1"+
+        "\uffff\1\167\1\154\1\164\3\uffff\1\56\2\uffff\1\145\1\44\1\145\1"+
         "\157\1\163\1\44\1\141\2\44\1\145\1\151\1\164\1\160\1\164\1\171\1"+
         "\141\1\154\1\145\1\143\1\166\1\157\1\145\1\uffff\1\154\1\164\1\uffff"+
         "\1\141\2\uffff\2\145\1\154\1\44\1\154\1\165\1\44\1\uffff\1\157\1"+
@@ -3012,10 +3012,11 @@ public class InternalFXGraphLexer extends Lexer {
         "\44\1\145\1\170\2\uffff\1\156\1\154\1\142\1\103\1\uffff\1\44\1\145"+
         "\1\uffff\2\44\2\uffff\1\164\1\160\1\164\1\145\1\171\1\163\1\145"+
         "\1\uffff\1\157\2\uffff\1\150\1\162\1\44\1\144\1\44\2\163\1\146\1"+
-        "\157\1\145\1\uffff\1\142\1\155\1\uffff\1\44\1\157\1\44\1\144\1\163"+
-        "\1\171\1\145\1\uffff\1\165\1\uffff\1\44\1\163\1\44\1\164\1\162\1"+
-        "\uffff\1\151\1\uffff\1\150\1\143\2\157\1\145\1\156\1\144\1\102\2"+
-        "\44\1\165\2\uffff\1\156\1\144\1\154\1\145\1\44\1\uffff";
+        "\157\1\145\1\uffff\1\142\1\155\1\uffff\1\106\1\157\1\44\1\144\1"+
+        "\163\1\171\1\145\1\151\1\165\1\uffff\1\44\1\163\1\44\1\164\1\154"+
+        "\1\162\1\uffff\1\151\1\uffff\1\150\1\145\1\143\2\157\1\163\1\145"+
+        "\1\156\1\144\1\44\1\106\2\44\1\uffff\1\151\2\uffff\1\154\1\145\1"+
+        "\44\1\uffff";
     static final String DFA15_maxS =
         "\1\uffff\1\76\1\75\1\174\1\46\1\171\1\157\3\75\1\76\1\71\1\56\1"+
         "\57\1\uffff\1\141\1\167\1\162\2\uffff\1\162\3\uffff\1\156\2\uffff"+
@@ -3023,8 +3024,8 @@ public class InternalFXGraphLexer extends Lexer {
         "\1\172\1\uffff\2\uffff\13\uffff\1\171\1\160\1\162\1\uffff\1\154"+
         "\1\162\1\156\22\uffff\1\162\1\160\1\162\1\151\1\160\1\145\1\164"+
         "\2\uffff\1\145\3\uffff\1\160\1\172\1\163\1\172\2\uffff\1\146\1\172"+
-        "\4\uffff\1\172\1\163\1\164\1\151\1\uffff\1\167\1\154\1\164\2\uffff"+
-        "\1\71\3\uffff\1\145\1\172\1\145\1\157\1\163\1\172\1\141\2\172\1"+
+        "\4\uffff\1\172\1\163\1\164\1\151\1\uffff\1\167\1\154\1\164\3\uffff"+
+        "\1\71\2\uffff\1\145\1\172\1\145\1\157\1\163\1\172\1\141\2\172\1"+
         "\145\1\151\1\164\1\160\1\164\1\171\1\141\1\154\1\145\1\143\1\166"+
         "\1\157\1\145\1\uffff\1\154\1\164\1\uffff\1\151\2\uffff\2\145\1\154"+
         "\1\172\1\154\1\165\1\172\1\uffff\1\157\1\167\1\145\1\uffff\1\154"+
@@ -3038,27 +3039,27 @@ public class InternalFXGraphLexer extends Lexer {
         "\2\uffff\1\156\1\154\1\142\1\122\1\uffff\1\172\1\145\1\uffff\2\172"+
         "\2\uffff\1\164\1\160\1\164\1\145\1\171\1\163\1\145\1\uffff\1\157"+
         "\2\uffff\1\150\1\162\1\172\1\162\1\172\2\163\1\146\1\157\1\145\1"+
-        "\uffff\1\142\1\155\1\uffff\1\172\1\157\1\172\1\144\1\163\1\171\1"+
-        "\145\1\uffff\1\165\1\uffff\1\172\1\163\1\172\1\164\1\162\1\uffff"+
-        "\1\151\1\uffff\1\150\1\143\2\157\1\145\1\156\1\144\1\102\2\172\1"+
-        "\165\2\uffff\1\156\1\144\1\154\1\145\1\172\1\uffff";
+        "\uffff\1\142\1\155\1\uffff\1\106\1\157\1\172\1\144\1\163\1\171\1"+
+        "\145\1\151\1\165\1\uffff\1\172\1\163\1\172\1\164\1\154\1\162\1\uffff"+
+        "\1\151\1\uffff\1\150\1\145\1\143\2\157\1\163\1\145\1\156\1\144\1"+
+        "\172\1\106\2\172\1\uffff\1\151\2\uffff\1\154\1\145\1\172\1\uffff";
     static final String DFA15_acceptS =
         "\16\uffff\1\24\3\uffff\1\32\1\33\1\uffff\1\36\1\37\1\40\1\uffff"+
         "\1\43\1\44\6\uffff\1\75\5\uffff\1\120\2\uffff\1\125\1\126\1\7\1"+
         "\107\1\1\1\2\1\17\1\3\1\64\1\4\1\112\3\uffff\1\120\3\uffff\1\10"+
-        "\1\25\1\11\1\13\1\12\1\14\1\15\1\20\1\16\1\116\1\26\1\22\1\114\1"+
+        "\1\25\1\11\1\13\1\12\1\14\1\15\1\20\1\16\1\26\1\116\1\22\1\114\1"+
         "\21\1\123\1\124\1\23\1\24\7\uffff\1\32\1\33\1\uffff\1\36\1\37\1"+
         "\40\4\uffff\1\43\1\44\2\uffff\1\117\1\52\1\76\1\53\4\uffff\1\75"+
-        "\3\uffff\1\113\1\110\1\uffff\1\121\1\122\1\125\26\uffff\1\46\2\uffff"+
+        "\3\uffff\1\113\1\110\1\121\1\uffff\1\122\1\125\26\uffff\1\46\2\uffff"+
         "\1\65\1\uffff\1\74\1\63\7\uffff\1\104\3\uffff\1\72\1\uffff\1\27"+
         "\1\115\24\uffff\1\77\2\uffff\1\5\11\uffff\1\56\1\uffff\1\51\1\71"+
         "\10\uffff\1\66\2\uffff\1\100\2\uffff\1\102\1\6\1\uffff\1\30\5\uffff"+
         "\1\106\2\uffff\1\54\5\uffff\1\73\1\uffff\1\101\3\uffff\1\50\1\67"+
         "\4\uffff\1\42\2\uffff\1\47\2\uffff\1\103\1\105\7\uffff\1\55\1\uffff"+
-        "\1\70\1\111\12\uffff\1\31\2\uffff\1\45\7\uffff\1\35\1\uffff\1\62"+
-        "\5\uffff\1\60\1\uffff\1\34\13\uffff\1\61\1\57\5\uffff\1\41";
+        "\1\70\1\111\12\uffff\1\31\2\uffff\1\45\11\uffff\1\62\6\uffff\1\60"+
+        "\1\uffff\1\34\15\uffff\1\35\1\uffff\1\61\1\57\3\uffff\1\41";
     static final String DFA15_specialS =
-        "\1\1\47\uffff\1\2\1\0\u010e\uffff}>";
+        "\1\1\47\uffff\1\2\1\0\u0111\uffff}>";
     static final String[] DFA15_transitionS = {
             "\11\53\2\52\2\53\1\52\22\53\1\52\1\7\1\50\1\34\1\47\1\16\1"+
             "\4\1\51\1\31\1\32\1\14\1\2\1\27\1\12\1\13\1\15\12\45\1\35\1"+
@@ -3076,7 +3077,7 @@ public class InternalFXGraphLexer extends Lexer {
             "\1\76",
             "\1\100",
             "\1\102",
-            "\1\104\1\uffff\12\105",
+            "\1\104\1\uffff\12\106",
             "\1\107\3\uffff\1\110",
             "\1\112\4\uffff\1\113",
             "",
@@ -3102,7 +3103,7 @@ public class InternalFXGraphLexer extends Lexer {
             "\1\154\17\uffff\1\155",
             "\1\156",
             "\1\157",
-            "\1\105\1\uffff\12\161",
+            "\1\106\1\uffff\12\162",
             "\1\70\34\uffff\32\70\4\uffff\1\70\1\uffff\32\70",
             "",
             "\0\163",
@@ -3182,8 +3183,8 @@ public class InternalFXGraphLexer extends Lexer {
             "\1\u0097",
             "",
             "",
-            "\1\105\1\uffff\12\161",
             "",
+            "\1\106\1\uffff\12\162",
             "",
             "",
             "\1\u0098",
@@ -3373,8 +3374,7 @@ public class InternalFXGraphLexer extends Lexer {
             "\1\u0118",
             "\1\u0119",
             "",
-            "\1\70\13\uffff\12\70\7\uffff\32\70\4\uffff\1\70\1\uffff\32"+
-            "\70",
+            "\1\u011a",
             "\1\u011b",
             "\1\70\13\uffff\12\70\7\uffff\32\70\4\uffff\1\70\1\uffff\32"+
             "\70",
@@ -3382,38 +3382,42 @@ public class InternalFXGraphLexer extends Lexer {
             "\1\u011e",
             "\1\u011f",
             "\1\u0120",
-            "",
             "\1\u0121",
+            "\1\u0122",
             "",
             "\1\70\13\uffff\12\70\7\uffff\32\70\4\uffff\1\70\1\uffff\32"+
             "\70",
-            "\1\u0123",
+            "\1\u0124",
             "\1\70\13\uffff\12\70\7\uffff\32\70\4\uffff\1\70\1\uffff\32"+
             "\70",
-            "\1\u0125",
             "\1\u0126",
-            "",
             "\1\u0127",
-            "",
             "\1\u0128",
+            "",
             "\1\u0129",
+            "",
             "\1\u012a",
             "\1\u012b",
             "\1\u012c",
             "\1\u012d",
             "\1\u012e",
             "\1\u012f",
-            "\1\70\13\uffff\12\70\7\uffff\32\70\4\uffff\1\70\1\uffff\32"+
-            "\70",
-            "\1\70\13\uffff\12\70\7\uffff\32\70\4\uffff\1\70\1\uffff\32"+
-            "\70",
+            "\1\u0130",
+            "\1\u0131",
             "\1\u0132",
-            "",
-            "",
-            "\1\u0133",
+            "\1\70\13\uffff\12\70\7\uffff\32\70\4\uffff\1\70\1\uffff\32"+
+            "\70",
             "\1\u0134",
-            "\1\u0135",
-            "\1\u0136",
+            "\1\70\13\uffff\12\70\7\uffff\32\70\4\uffff\1\70\1\uffff\32"+
+            "\70",
+            "\1\70\13\uffff\12\70\7\uffff\32\70\4\uffff\1\70\1\uffff\32"+
+            "\70",
+            "",
+            "\1\u0137",
+            "",
+            "",
+            "\1\u0138",
+            "\1\u0139",
             "\1\70\13\uffff\12\70\7\uffff\32\70\4\uffff\1\70\1\uffff\32"+
             "\70",
             ""

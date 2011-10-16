@@ -40,7 +40,7 @@ import org.eclipse.xtext.common.types.JvmParameterizedTypeReference;
  * <ul>
  *   <li>{@link at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.impl.ComponentDefinitionImpl#getName <em>Name</em>}</li>
  *   <li>{@link at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.impl.ComponentDefinitionImpl#getController <em>Controller</em>}</li>
- *   <li>{@link at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.impl.ComponentDefinitionImpl#getCssFiles <em>Css Files</em>}</li>
+ *   <li>{@link at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.impl.ComponentDefinitionImpl#getPreviewCssFiles <em>Preview Css Files</em>}</li>
  *   <li>{@link at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.impl.ComponentDefinitionImpl#getPreviewResourceBundle <em>Preview Resource Bundle</em>}</li>
  *   <li>{@link at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.impl.ComponentDefinitionImpl#getScripts <em>Scripts</em>}</li>
  *   <li>{@link at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.impl.ComponentDefinitionImpl#getDefines <em>Defines</em>}</li>
@@ -83,14 +83,14 @@ public class ComponentDefinitionImpl extends MinimalEObjectImpl.Container implem
   protected JvmParameterizedTypeReference controller;
 
   /**
-   * The cached value of the '{@link #getCssFiles() <em>Css Files</em>}' attribute list.
+   * The cached value of the '{@link #getPreviewCssFiles() <em>Preview Css Files</em>}' attribute list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getCssFiles()
+   * @see #getPreviewCssFiles()
    * @generated
    * @ordered
    */
-  protected EList<String> cssFiles;
+  protected EList<String> previewCssFiles;
 
   /**
    * The default value of the '{@link #getPreviewResourceBundle() <em>Preview Resource Bundle</em>}' attribute.
@@ -239,13 +239,13 @@ public class ComponentDefinitionImpl extends MinimalEObjectImpl.Container implem
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<String> getCssFiles()
+  public EList<String> getPreviewCssFiles()
   {
-    if (cssFiles == null)
+    if (previewCssFiles == null)
     {
-      cssFiles = new EDataTypeEList<String>(String.class, this, FXGraphPackage.COMPONENT_DEFINITION__CSS_FILES);
+      previewCssFiles = new EDataTypeEList<String>(String.class, this, FXGraphPackage.COMPONENT_DEFINITION__PREVIEW_CSS_FILES);
     }
-    return cssFiles;
+    return previewCssFiles;
   }
 
   /**
@@ -383,8 +383,8 @@ public class ComponentDefinitionImpl extends MinimalEObjectImpl.Container implem
         return getName();
       case FXGraphPackage.COMPONENT_DEFINITION__CONTROLLER:
         return getController();
-      case FXGraphPackage.COMPONENT_DEFINITION__CSS_FILES:
-        return getCssFiles();
+      case FXGraphPackage.COMPONENT_DEFINITION__PREVIEW_CSS_FILES:
+        return getPreviewCssFiles();
       case FXGraphPackage.COMPONENT_DEFINITION__PREVIEW_RESOURCE_BUNDLE:
         return getPreviewResourceBundle();
       case FXGraphPackage.COMPONENT_DEFINITION__SCRIPTS:
@@ -414,9 +414,9 @@ public class ComponentDefinitionImpl extends MinimalEObjectImpl.Container implem
       case FXGraphPackage.COMPONENT_DEFINITION__CONTROLLER:
         setController((JvmParameterizedTypeReference)newValue);
         return;
-      case FXGraphPackage.COMPONENT_DEFINITION__CSS_FILES:
-        getCssFiles().clear();
-        getCssFiles().addAll((Collection<? extends String>)newValue);
+      case FXGraphPackage.COMPONENT_DEFINITION__PREVIEW_CSS_FILES:
+        getPreviewCssFiles().clear();
+        getPreviewCssFiles().addAll((Collection<? extends String>)newValue);
         return;
       case FXGraphPackage.COMPONENT_DEFINITION__PREVIEW_RESOURCE_BUNDLE:
         setPreviewResourceBundle((String)newValue);
@@ -452,8 +452,8 @@ public class ComponentDefinitionImpl extends MinimalEObjectImpl.Container implem
       case FXGraphPackage.COMPONENT_DEFINITION__CONTROLLER:
         setController((JvmParameterizedTypeReference)null);
         return;
-      case FXGraphPackage.COMPONENT_DEFINITION__CSS_FILES:
-        getCssFiles().clear();
+      case FXGraphPackage.COMPONENT_DEFINITION__PREVIEW_CSS_FILES:
+        getPreviewCssFiles().clear();
         return;
       case FXGraphPackage.COMPONENT_DEFINITION__PREVIEW_RESOURCE_BUNDLE:
         setPreviewResourceBundle(PREVIEW_RESOURCE_BUNDLE_EDEFAULT);
@@ -485,8 +485,8 @@ public class ComponentDefinitionImpl extends MinimalEObjectImpl.Container implem
         return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
       case FXGraphPackage.COMPONENT_DEFINITION__CONTROLLER:
         return controller != null;
-      case FXGraphPackage.COMPONENT_DEFINITION__CSS_FILES:
-        return cssFiles != null && !cssFiles.isEmpty();
+      case FXGraphPackage.COMPONENT_DEFINITION__PREVIEW_CSS_FILES:
+        return previewCssFiles != null && !previewCssFiles.isEmpty();
       case FXGraphPackage.COMPONENT_DEFINITION__PREVIEW_RESOURCE_BUNDLE:
         return PREVIEW_RESOURCE_BUNDLE_EDEFAULT == null ? previewResourceBundle != null : !PREVIEW_RESOURCE_BUNDLE_EDEFAULT.equals(previewResourceBundle);
       case FXGraphPackage.COMPONENT_DEFINITION__SCRIPTS:
@@ -512,8 +512,8 @@ public class ComponentDefinitionImpl extends MinimalEObjectImpl.Container implem
     StringBuffer result = new StringBuffer(super.toString());
     result.append(" (name: ");
     result.append(name);
-    result.append(", cssFiles: ");
-    result.append(cssFiles);
+    result.append(", previewCssFiles: ");
+    result.append(previewCssFiles);
     result.append(", previewResourceBundle: ");
     result.append(previewResourceBundle);
     result.append(')');

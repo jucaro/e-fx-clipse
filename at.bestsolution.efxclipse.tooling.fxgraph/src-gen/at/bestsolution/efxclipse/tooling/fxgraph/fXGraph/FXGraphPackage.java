@@ -126,13 +126,13 @@ public interface FXGraphPackage extends EPackage
   int COMPONENT_DEFINITION__CONTROLLER = 1;
 
   /**
-   * The feature id for the '<em><b>Css Files</b></em>' attribute list.
+   * The feature id for the '<em><b>Preview Css Files</b></em>' attribute list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int COMPONENT_DEFINITION__CSS_FILES = 2;
+  int COMPONENT_DEFINITION__PREVIEW_CSS_FILES = 2;
 
   /**
    * The feature id for the '<em><b>Preview Resource Bundle</b></em>' attribute.
@@ -867,15 +867,15 @@ public interface FXGraphPackage extends EPackage
   EReference getComponentDefinition_Controller();
 
   /**
-   * Returns the meta object for the attribute list '{@link at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.ComponentDefinition#getCssFiles <em>Css Files</em>}'.
+   * Returns the meta object for the attribute list '{@link at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.ComponentDefinition#getPreviewCssFiles <em>Preview Css Files</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute list '<em>Css Files</em>'.
-   * @see at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.ComponentDefinition#getCssFiles()
+   * @return the meta object for the attribute list '<em>Preview Css Files</em>'.
+   * @see at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.ComponentDefinition#getPreviewCssFiles()
    * @see #getComponentDefinition()
    * @generated
    */
-  EAttribute getComponentDefinition_CssFiles();
+  EAttribute getComponentDefinition_PreviewCssFiles();
 
   /**
    * Returns the meta object for the attribute '{@link at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.ComponentDefinition#getPreviewResourceBundle <em>Preview Resource Bundle</em>}'.
@@ -1506,12 +1506,12 @@ public interface FXGraphPackage extends EPackage
     EReference COMPONENT_DEFINITION__CONTROLLER = eINSTANCE.getComponentDefinition_Controller();
 
     /**
-     * The meta object literal for the '<em><b>Css Files</b></em>' attribute list feature.
+     * The meta object literal for the '<em><b>Preview Css Files</b></em>' attribute list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute COMPONENT_DEFINITION__CSS_FILES = eINSTANCE.getComponentDefinition_CssFiles();
+    EAttribute COMPONENT_DEFINITION__PREVIEW_CSS_FILES = eINSTANCE.getComponentDefinition_PreviewCssFiles();
 
     /**
      * The meta object literal for the '<em><b>Preview Resource Bundle</b></em>' attribute feature.

@@ -22,7 +22,7 @@ import org.eclipse.xtext.common.types.JvmParameterizedTypeReference;
  * <ul>
  *   <li>{@link at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.ComponentDefinition#getName <em>Name</em>}</li>
  *   <li>{@link at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.ComponentDefinition#getController <em>Controller</em>}</li>
- *   <li>{@link at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.ComponentDefinition#getCssFiles <em>Css Files</em>}</li>
+ *   <li>{@link at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.ComponentDefinition#getPreviewCssFiles <em>Preview Css Files</em>}</li>
  *   <li>{@link at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.ComponentDefinition#getPreviewResourceBundle <em>Preview Resource Bundle</em>}</li>
  *   <li>{@link at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.ComponentDefinition#getScripts <em>Scripts</em>}</li>
  *   <li>{@link at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.ComponentDefinition#getDefines <em>Defines</em>}</li>
@@ -89,20 +89,20 @@ public interface ComponentDefinition extends EObject
   void setController(JvmParameterizedTypeReference value);
 
   /**
-   * Returns the value of the '<em><b>Css Files</b></em>' attribute list.
+   * Returns the value of the '<em><b>Preview Css Files</b></em>' attribute list.
    * The list contents are of type {@link java.lang.String}.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Css Files</em>' attribute list isn't clear,
+   * If the meaning of the '<em>Preview Css Files</em>' attribute list isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Css Files</em>' attribute list.
-   * @see at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.FXGraphPackage#getComponentDefinition_CssFiles()
+   * @return the value of the '<em>Preview Css Files</em>' attribute list.
+   * @see at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.FXGraphPackage#getComponentDefinition_PreviewCssFiles()
    * @model unique="false"
    * @generated
    */
-  EList<String> getCssFiles();
+  EList<String> getPreviewCssFiles();
 
   /**
    * Returns the value of the '<em><b>Preview Resource Bundle</b></em>' attribute.

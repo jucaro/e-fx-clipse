@@ -105,6 +105,7 @@ T__77=77
 '+'=27
 '=>'=83
 '.'=34
+'previewResourceFile'=45
 'import'=46
 'true'=17
 'catch'=82
@@ -134,7 +135,6 @@ T__77=77
 '|'=64
 'new'=75
 'val'=35
-'previewResourceBundle'=45
 'call'=53
 'null'=76
 'scriptmethod'=60
@@ -154,10 +154,10 @@ T__77=77
 '<='=22
 '!='=20
 'false'=18
+'previewCssFiles'=41
 '<'=24
 'controlledby'=40
 '*'=29
 '['=42
-'previewCss'=41
 '&'=86
 'component'=37

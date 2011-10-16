@@ -325,7 +325,7 @@ public class FXGraphPackageImpl extends EPackageImpl implements FXGraphPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getComponentDefinition_CssFiles()
+  public EAttribute getComponentDefinition_PreviewCssFiles()
   {
     return (EAttribute)componentDefinitionEClass.getEStructuralFeatures().get(2);
   }
@@ -887,7 +887,7 @@ public class FXGraphPackageImpl extends EPackageImpl implements FXGraphPackage
     componentDefinitionEClass = createEClass(COMPONENT_DEFINITION);
     createEAttribute(componentDefinitionEClass, COMPONENT_DEFINITION__NAME);
     createEReference(componentDefinitionEClass, COMPONENT_DEFINITION__CONTROLLER);
-    createEAttribute(componentDefinitionEClass, COMPONENT_DEFINITION__CSS_FILES);
+    createEAttribute(componentDefinitionEClass, COMPONENT_DEFINITION__PREVIEW_CSS_FILES);
     createEAttribute(componentDefinitionEClass, COMPONENT_DEFINITION__PREVIEW_RESOURCE_BUNDLE);
     createEReference(componentDefinitionEClass, COMPONENT_DEFINITION__SCRIPTS);
     createEReference(componentDefinitionEClass, COMPONENT_DEFINITION__DEFINES);
@@ -1017,7 +1017,7 @@ public class FXGraphPackageImpl extends EPackageImpl implements FXGraphPackage
     initEClass(componentDefinitionEClass, ComponentDefinition.class, "ComponentDefinition", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getComponentDefinition_Name(), ecorePackage.getEString(), "name", null, 0, 1, ComponentDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getComponentDefinition_Controller(), theTypesPackage.getJvmParameterizedTypeReference(), null, "controller", null, 0, 1, ComponentDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getComponentDefinition_CssFiles(), ecorePackage.getEString(), "cssFiles", null, 0, -1, ComponentDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getComponentDefinition_PreviewCssFiles(), ecorePackage.getEString(), "previewCssFiles", null, 0, -1, ComponentDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getComponentDefinition_PreviewResourceBundle(), ecorePackage.getEString(), "previewResourceBundle", null, 0, 1, ComponentDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getComponentDefinition_Scripts(), this.getScript(), null, "scripts", null, 0, -1, ComponentDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getComponentDefinition_Defines(), this.getDefine(), null, "defines", null, 0, -1, ComponentDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
