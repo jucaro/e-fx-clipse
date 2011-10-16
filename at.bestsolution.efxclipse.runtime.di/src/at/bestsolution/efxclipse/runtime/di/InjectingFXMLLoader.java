@@ -2,9 +2,11 @@ package at.bestsolution.efxclipse.runtime.di;
 
 import java.io.IOException;
 import java.net.URL;
+import java.util.ResourceBundle;
 
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.JavaFXBuilderFactory;
+import javafx.util.BuilderFactory;
 
 import org.eclipse.e4.core.contexts.ContextInjectionFactory;
 import org.eclipse.e4.core.contexts.IEclipseContext;
@@ -15,17 +17,51 @@ import at.bestsolution.efxclipse.runtime.osgi.util.OSGiFXMLLoader.FXMLLoaderProc
 
 
 @SuppressWarnings("restriction")
-public class InjectingFXMLLoader {
-	public static <N> N loadFXML(final IEclipseContext context, Class<?> requester, String relativeFxmlPath) throws IOException {
-		return OSGiFXMLLoader.load(requester, relativeFxmlPath, null, new JavaFXBuilderFactory(), new Postprocessor(context));
+public abstract class InjectingFXMLLoader<N> implements FXMLBuilder<N> {
+	ResourceBundle resourceBundle;
+	BuilderFactory builderFactory = new JavaFXBuilderFactory();
+	
+	public static <N> InjectingFXMLLoader<N> create(final IEclipseContext context, final Class<?> requester, final String relativeFxmlPath) {
+		return new InjectingFXMLLoader<N>() {
+
+			@Override
+			public N load() throws IOException {
+				return OSGiFXMLLoader.load(requester, relativeFxmlPath, resourceBundle, builderFactory, new Postprocessor(context));
+			}
+			
+		};
 	}
 	
-	public static <N> N loadFXML(final IEclipseContext context, Bundle bundle, String bundleRelativeFxmlPath) throws IOException {
-		return OSGiFXMLLoader.load(bundle, bundleRelativeFxmlPath, null, new JavaFXBuilderFactory(), new Postprocessor(context));
+	public static <N> InjectingFXMLLoader<N> create(final IEclipseContext context, final Bundle bundle, final String bundleRelativeFxmlPath) {
+		return new InjectingFXMLLoader<N>() {
+
+			@Override
+			public N load() throws IOException {
+				return OSGiFXMLLoader.load(bundle, bundleRelativeFxmlPath, resourceBundle, builderFactory, new Postprocessor(context));
+			}
+			
+		};
 	}
 	
-	public static <N> N loadFXML(IEclipseContext context, ClassLoader classloader, URL url) throws IOException {
-		return OSGiFXMLLoader.load(classloader, url, null, new JavaFXBuilderFactory(), new Postprocessor(context));
+	public static <N> InjectingFXMLLoader<N> create(final IEclipseContext context, final ClassLoader classloader, final URL url) {
+		return new InjectingFXMLLoader<N>() {
+
+			@Override
+			public N load() throws IOException {
+				return OSGiFXMLLoader.load(classloader, url, null, new JavaFXBuilderFactory(), new Postprocessor(context));
+			}
+			
+		};
+	}
+	
+	public InjectingFXMLLoader<N> resourceBundle(ResourceBundle resourceBundle) {
+		this.resourceBundle = resourceBundle;
+		return this;
+	}
+	
+	public InjectingFXMLLoader<N> builderFactory(BuilderFactory builderFactory) {
+		this.builderFactory = builderFactory;
+		return this;
 	}
 	
 	static class Postprocessor implements FXMLLoaderProcessor {
