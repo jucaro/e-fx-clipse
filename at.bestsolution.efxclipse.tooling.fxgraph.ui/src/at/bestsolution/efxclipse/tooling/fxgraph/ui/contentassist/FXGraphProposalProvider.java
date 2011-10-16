@@ -19,12 +19,19 @@ import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.jdt.core.Flags;
 import org.eclipse.jdt.core.IAnnotation;
+import org.eclipse.jdt.core.IJavaElement;
 import org.eclipse.jdt.core.IJavaProject;
+import org.eclipse.jdt.core.ILocalVariable;
 import org.eclipse.jdt.core.IMethod;
 import org.eclipse.jdt.core.IType;
 import org.eclipse.jdt.core.JavaCore;
 import org.eclipse.jdt.core.JavaModelException;
 import org.eclipse.jdt.core.Signature;
+import org.eclipse.jdt.core.dom.AST;
+import org.eclipse.jdt.core.dom.ASTParser;
+import org.eclipse.jdt.core.dom.IBinding;
+import org.eclipse.jdt.core.dom.ITypeBinding;
+import org.eclipse.jdt.internal.corext.dom.TypeRules;
 import org.eclipse.jdt.internal.corext.util.JavaModelUtil;
 import org.eclipse.jface.resource.ImageDescriptor;
 import org.eclipse.jface.resource.JFaceResources;
@@ -41,6 +48,7 @@ import org.eclipse.xtext.ui.editor.contentassist.ICompletionProposalAcceptor;
 import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.ComponentDefinition;
 import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.Element;
 import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.Model;
+import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.StaticValueProperty;
 import at.bestsolution.efxclipse.tooling.fxgraph.ui.internal.FXGraphActivator;
 
 import com.google.inject.Inject;
@@ -62,6 +70,7 @@ public class FXGraphProposalProvider extends AbstractFXGraphProposalProvider {
 	private static final String METHOD_DEFAULT_KEY = FXGraphProposalProvider.class.getName() + ".METHOD_DEFAULT";
 	private static final String METHOD_PROTECTED_KEY = FXGraphProposalProvider.class.getName() + ".METHOD_PROTECTED";
 	private static final String METHOD_PUBLIC_KEY = FXGraphProposalProvider.class.getName() + ".METHOD_PUBLIC";
+	private static final String STAT_METHOD_PUBLIC_KEY = FXGraphProposalProvider.class.getName() + ".STAT_METHOD_PUBLIC_KEY";
 	
 	@Inject
 	private IJavaElementFinder javaElementFinder;
@@ -77,6 +86,7 @@ public class FXGraphProposalProvider extends AbstractFXGraphProposalProvider {
 		JFaceResources.getImageRegistry().put(METHOD_PROTECTED_KEY, FXGraphActivator.imageDescriptorFromPlugin("at.bestsolution.efxclipse.tooling.fxgraph.ui", "/icons/methpro_obj.gif"));
 		JFaceResources.getImageRegistry().put(METHOD_PUBLIC_KEY, FXGraphActivator.imageDescriptorFromPlugin("at.bestsolution.efxclipse.tooling.fxgraph.ui", "/icons/methpub_obj.gif"));
 		
+		JFaceResources.getImageRegistry().put(STAT_METHOD_PUBLIC_KEY, FXGraphActivator.imageDescriptorFromPlugin("at.bestsolution.efxclipse.tooling.fxgraph.ui", "/icons/statmethpub_obj.gif"));
 	}
 
 	static class TypeData {
@@ -407,7 +417,7 @@ public class FXGraphProposalProvider extends AbstractFXGraphProposalProvider {
 											// TODO Auto-generated catch block
 											e.printStackTrace();
 										}
-										acceptor.accept(createCompletionProposal(me.getElementName(), me.getElementName() + "("+ Signature.getSimpleName(Signature.toString(me.getParameterTypes()[0])) +")", img, context)); // TODO Show icon visibility	
+										acceptor.accept(createCompletionProposal(me.getElementName(), me.getElementName() + "("+ Signature.getSimpleName(Signature.toString(me.getParameterTypes()[0])) +")", img, context));	
 									}
 									
 								}
@@ -469,6 +479,74 @@ public class FXGraphProposalProvider extends AbstractFXGraphProposalProvider {
 		}
 		
 		return Collections.emptyList();
+	}
+	
+	@Override
+	public void completeStaticValueProperty_Name(EObject model, Assignment assignment, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
+		StaticValueProperty prop = (StaticValueProperty) model;
+		JvmParameterizedTypeReference typeRef = prop.getType();
+		JvmParameterizedTypeReference parentTypeRef = null;
+		
+		if( model.eContainer() instanceof Element ) {
+			Element e = (Element) model.eContainer();
+			parentTypeRef = e.getType();
+		}
+		
+		if( typeRef != null && parentTypeRef != null ) {
+			IType jdtType = (IType) javaElementFinder.findElementFor(typeRef.getType());
+			IType parentJdtType = (IType) javaElementFinder.findElementFor(parentTypeRef.getType());
+			
+			ASTParser parser = ASTParser.newParser(AST.JLS3);
+			parser.setProject(jdtType.getJavaProject());
+			parser.setIgnoreMethodBodies(true);
+			
+			IBinding[] bindings = parser.createBindings(new IJavaElement[] { parentJdtType }, null);
+			ITypeBinding parentTypeBinding = (ITypeBinding) bindings[0];
+			
+			List<IMethod> allMethods = new ArrayList<IMethod>();
+			try {
+				allMethods.addAll(Arrays.asList(jdtType.getMethods()));
+				
+				for( IType t : JavaModelUtil.getAllSuperTypes(jdtType, new NullProgressMonitor())) {
+					allMethods.addAll(Arrays.asList(t.getMethods()));
+				}
+				
+				IJavaProject jproject = getJavaProject(model);
+				for( IMethod m : allMethods ) {
+					if( Flags.isStatic(m.getFlags()) && Flags.isPublic(m.getFlags()) && m.getParameterTypes().length == 2 ) {
+						IType t = (IType) m.getParent();
+						String signature = Signature.toString(m.getParameterTypes()[0]);
+						if( signature.equals("int") || signature.equals("double") ) {
+							continue;
+						} else {
+							
+						}
+						String p1FQN = Signature.toQualifiedName(t.resolveType(Signature.toString(m.getParameterTypes()[0]))[0]);
+						
+						IType p1Type = jproject.findType(p1FQN);
+						
+						parser = ASTParser.newParser(AST.JLS3);
+						parser.setProject(jdtType.getJavaProject());
+						parser.setIgnoreMethodBodies(true);
+						bindings = parser.createBindings(new IJavaElement[] { p1Type }, null);
+						
+						ITypeBinding p1TypeBinding = (ITypeBinding) bindings[0];
+						
+						if( TypeRules.canAssign(parentTypeBinding, p1TypeBinding) ) {
+							StyledString s = new StyledString(m.getElementName() + " : ");
+							s.append(Signature.toString(m.getParameterTypes()[1]),StyledString.QUALIFIER_STYLER);
+							acceptor.accept(createCompletionProposal(m.getElementName(), s, JFaceResources.getImage(STAT_METHOD_PUBLIC_KEY), context));
+						}
+					}
+				}
+			} catch (JavaModelException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			
+			
+		}
+//		super.completeStaticValueProperty_Name(model, assignment, context, acceptor);
 	}
 	
 	@Override
