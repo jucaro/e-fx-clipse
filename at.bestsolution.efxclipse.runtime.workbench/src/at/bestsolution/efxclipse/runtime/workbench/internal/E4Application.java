@@ -137,7 +137,6 @@ public class E4Application extends AbstractJFXApplication {
 					final AtomicBoolean lock = new AtomicBoolean(false);
 					Runnable r = new Runnable() {
 
-						@Override
 						public void run() {
 							lock.set(true);
 						}

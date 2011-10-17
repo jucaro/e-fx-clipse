@@ -74,7 +74,6 @@ public class PersonDetailPartController {
 		if( fadeOutTransition != null ) {
 			fadeOutTransition.setOnFinished(new EventHandler<ActionEvent>() {
 				
-				@Override
 				public void handle(ActionEvent arg0) {
 					master.setValue(person);
 					fadeOutTransition.setOnFinished(null);

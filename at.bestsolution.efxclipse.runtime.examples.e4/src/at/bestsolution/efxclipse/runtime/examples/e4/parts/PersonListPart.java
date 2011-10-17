@@ -24,7 +24,6 @@ public class PersonListPart {
 		ListView<Person> view = new ListView<Person>();
 		view.setCellFactory(new Callback<ListView<Person>, ListCell<Person>>() {
 			
-			@Override
 			public ListCell<Person> call(ListView<Person> arg0) {
 				return new PersonCell();
 			}
@@ -34,7 +33,6 @@ public class PersonListPart {
 		
 		view.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<Person>() {
 
-			@Override
 			public void changed(ObservableValue<? extends Person> arg0, Person arg1, Person arg2) {
 //				System.err.println("new value: " + arg2);
 //				System.err.println(application.getContext().hashCode());

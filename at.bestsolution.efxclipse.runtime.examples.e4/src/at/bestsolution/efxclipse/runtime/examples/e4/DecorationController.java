@@ -28,14 +28,12 @@ public class DecorationController {
 	@PostConstruct
 	void init() {
 		decorationArea.setOnMousePressed(new EventHandler<MouseEvent>() {
-			@Override
 			public void handle(MouseEvent event) {
 				mouseDragOffsetX = event.getSceneX();
 				mouseDragOffsetY = event.getSceneY();
 			}
 		});
 		decorationArea.setOnMouseDragged(new EventHandler<MouseEvent>() {
-			@Override
 			public void handle(MouseEvent event) {
 				Stage w = getStage();
 				w.setX(event.getScreenX() - mouseDragOffsetX);

@@ -47,6 +47,7 @@ public class PartRenderingEngine implements IPresentationEngine {
 	protected IEventBroker eventBroker;
 
 	@Inject
+	@Optional
 	EModelService modelService;
 
 	private MApplication theApp;
@@ -104,7 +105,6 @@ public class PartRenderingEngine implements IPresentationEngine {
 	}
 
 	@SuppressWarnings("unchecked")
-	@Override
 	public Object createGui(MUIElement element, Object parentWidget, IEclipseContext parentContext) {
 		if (!element.isToBeRendered())
 			return null;
@@ -201,7 +201,6 @@ public class PartRenderingEngine implements IPresentationEngine {
 		return (AbstractPartRenderer) element.getRenderer();
 	}
 
-	@Override
 	public Object createGui(final MUIElement element) {
 		// Obtain the necessary parent widget
 		Object parent = null;
@@ -269,13 +268,11 @@ public class PartRenderingEngine implements IPresentationEngine {
 		return curFactory.getRenderer(uiElement, parent);
 	}
 
-	@Override
 	public void removeGui(MUIElement element) {
 		// TODO Auto-generated method stub
 
 	}
 
-	@Override
 	public Object run(MApplicationElement uiRoot, IEclipseContext appContext) {
 		if (uiRoot instanceof MApplication) {
 			theApp = (MApplication) uiRoot;
@@ -297,7 +294,6 @@ public class PartRenderingEngine implements IPresentationEngine {
 		return null;
 	}
 
-	@Override
 	public void stop() {
 		// TODO Auto-generated method stub
 
