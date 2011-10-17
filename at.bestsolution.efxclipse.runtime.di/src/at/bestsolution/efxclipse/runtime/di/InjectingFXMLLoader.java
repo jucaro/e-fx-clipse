@@ -74,7 +74,9 @@ public abstract class InjectingFXMLLoader<N> implements FXMLBuilder<N> {
 		@Override
 		public void postProcess(FXMLLoader loader) {
 			if( loader.getController() != null ) {
-				ContextInjectionFactory.inject(loader.getController(), context);	
+				context.set(FXMLLoaderFactory.CONTEXT_KEY, loader.getRoot());
+				context.set(loader.getController().getClass().getName(), loader.getController());
+				ContextInjectionFactory.inject(loader.getController(), context);
 			}
 			
 			injectLoaders(loader, context);
@@ -83,8 +85,11 @@ public abstract class InjectingFXMLLoader<N> implements FXMLBuilder<N> {
 		private static void injectLoaders(FXMLLoader parentLoader, IEclipseContext context) {
 			for( FXMLLoader l : parentLoader.getIncludes() ) {
 				if( l.getController() != null ) {
-					ContextInjectionFactory.inject(l.getController(), context);
-					injectLoaders(l, context);
+					IEclipseContext localContext = context.createChild();
+					localContext.set(FXMLLoaderFactory.CONTEXT_KEY, l.getRoot());
+					localContext.set(l.getController().getClass().getName(), l.getController());
+					ContextInjectionFactory.inject(l.getController(), localContext);
+					injectLoaders(l, localContext);
 				}
 			}
 		}
