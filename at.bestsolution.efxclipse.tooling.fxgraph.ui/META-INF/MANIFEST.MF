@@ -2,7 +2,7 @@ Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: at.bestsolution.efxclipse.tooling.fxgraph.ui
 Bundle-Vendor: BestSolution.at
-Bundle-Version: 0.0.6.qualifier
+Bundle-Version: 0.0.7.qualifier
 Bundle-SymbolicName: at.bestsolution.efxclipse.tooling.fxgraph.ui; singleton:=true
 Bundle-ActivationPolicy: lazy
 Require-Bundle: at.bestsolution.efxclipse.tooling.fxgraph;visibility:=reexport,

@@ -71,12 +71,6 @@
             name="Templates">
             <keywordReference id="at.bestsolution.efxclipse.tooling.fxgraph.ui.keyword_FXGraph"/>
         </page>
-        <page
-              category="at.bestsolution.efxclipse.tooling.fxgraph.FXGraph"
-              class="at.bestsolution.efxclipse.tooling.fxgraph.ui.preferences.PreviewPage"
-              id="at.bestsolution.efxclipse.tooling.fxgraph.ui.livepreview"
-              name="Preview">
-        </page>
     </extension>
     <extension
         point="org.eclipse.ui.keywords">

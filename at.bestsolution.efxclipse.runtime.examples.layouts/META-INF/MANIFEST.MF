@@ -6,7 +6,7 @@ Bundle-Version: 1.0.0.qualifier
 Bundle-Activator: at.bestsolution.efxclipse.runtime.examples.layouts.Activator
 Require-Bundle: org.eclipse.core.runtime,
  at.bestsolution.efxclipse.runtime.application,
- at.bestsolution.efxclipse.runtime.panels;bundle-version="0.0.6"
+ at.bestsolution.efxclipse.runtime.panels
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Import-Package: javafx.animation;version="2.0.0",
  javafx.application;version="2.0.0",

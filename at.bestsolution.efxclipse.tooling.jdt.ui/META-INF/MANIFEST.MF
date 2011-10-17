@@ -2,7 +2,7 @@ Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: Ui
 Bundle-SymbolicName: at.bestsolution.efxclipse.tooling.jdt.ui;singleton:=true
-Bundle-Version: 0.0.6.qualifier
+Bundle-Version: 0.0.7.qualifier
 Bundle-Activator: at.bestsolution.efxclipse.tooling.jdt.ui.internal.JavaFXUIPlugin
 Require-Bundle: org.eclipse.ui,
  org.eclipse.core.runtime,

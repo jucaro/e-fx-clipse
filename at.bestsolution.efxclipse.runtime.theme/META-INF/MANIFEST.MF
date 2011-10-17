@@ -2,10 +2,10 @@ Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: Theme
 Bundle-SymbolicName: at.bestsolution.efxclipse.runtime.theme;singleton:=true
-Bundle-Version: 1.0.0.qualifier
+Bundle-Version: 0.0.7.qualifier
 Bundle-Activator: at.bestsolution.efxclipse.runtime.theme.internal.Activator
 Require-Bundle: org.eclipse.core.runtime,
- at.bestsolution.efxclipse.runtime.services;bundle-version="1.0.0"
+ at.bestsolution.efxclipse.runtime.services
 Bundle-ActivationPolicy: lazy
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Service-Component: OSGI-INF/thememanager.xml
