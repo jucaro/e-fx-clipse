@@ -533,9 +533,9 @@ public class FXGraphProposalProvider extends AbstractFXGraphProposalProvider {
 						ITypeBinding p1TypeBinding = (ITypeBinding) bindings[0];
 						
 						if( TypeRules.canAssign(parentTypeBinding, p1TypeBinding) ) {
-							StyledString s = new StyledString(m.getElementName() + " : ");
+							StyledString s = new StyledString(extractAttributename(m.getElementName()) + " : ");
 							s.append(Signature.toString(m.getParameterTypes()[1]),StyledString.QUALIFIER_STYLER);
-							acceptor.accept(createCompletionProposal(m.getElementName(), s, JFaceResources.getImage(STAT_METHOD_PUBLIC_KEY), context));
+							acceptor.accept(createCompletionProposal(extractAttributename(m.getElementName()), s, JFaceResources.getImage(STAT_METHOD_PUBLIC_KEY), context));
 						}
 					}
 				}
