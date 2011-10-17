@@ -6,6 +6,8 @@ import javafx.stage.Stage;
 import org.eclipse.equinox.app.IApplication;
 import org.eclipse.equinox.app.IApplicationContext;
 
+import at.bestsolution.efxclipse.runtime.databinding.JFXRealm;
+
 public abstract class AbstractJFXApplication implements IApplication {
 	private static AbstractJFXApplication SELF;
 	
@@ -17,9 +19,11 @@ public abstract class AbstractJFXApplication implements IApplication {
 		private IApplicationContext applicationContext;
 		
 		@Override
-		public void start(Stage primaryStage) throws Exception {
+		public void start(final Stage primaryStage) throws Exception {
 			this.applicationContext = osgiApp.applicationContext;
-			osgiApp.jfxStart(applicationContext,this,primaryStage);
+			
+			JFXRealm.createDefault();
+			osgiApp.jfxStart(applicationContext,JFXApp.this,primaryStage);
 		}
 		
 		@Override
@@ -34,6 +38,7 @@ public abstract class AbstractJFXApplication implements IApplication {
 		SELF = this;
 		this.applicationContext = context;
 		this.applicationContext.applicationRunning();
+		
 		Application.launch(JFXApp.class, null);
 		
 		try {
