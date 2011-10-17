@@ -1,7 +1,7 @@
 import javafx.scene.layout.*
 import javafx.scene.control.*
 
-GridPane {
+GridPane controlledby at.bestsolution.efxclipse.runtime.examples.e4.parts.controllers.PersonDetailPartController {
 	vgap : 10,
 	hgap : 10,
 	children : [
@@ -17,11 +17,11 @@ GridPane {
 			call GridPane#hgrow : "ALWAYS"
 		},
 		Label {
-			text : "Surname",
+			text : "Lastname",
 			call GridPane#columnIndex : 0,
 			call GridPane#rowIndex : 1
 		},
-		TextField id surname {
+		TextField id lastname {
 			call GridPane#columnIndex : 1,
 			call GridPane#rowIndex : 1,
 			call GridPane#columnSpan : 2,
@@ -32,7 +32,7 @@ GridPane {
 			call GridPane#columnIndex : 0,
 			call GridPane#rowIndex : 2
 		},
-		TextField {
+		TextField id street {
 			call GridPane#columnIndex : 1,
 			call GridPane#rowIndex: 2,
 			call GridPane#columnSpan : 2,
@@ -43,36 +43,14 @@ GridPane {
 			call GridPane#columnIndex : 0,
 			call GridPane#rowIndex: 3
 		},
-		TextField {
+		TextField id zip {
 			call GridPane#columnIndex : 1,
 			call GridPane#rowIndex: 3
 		},
-		TextField {
+		TextField id city {
 			call GridPane#columnIndex : 2,
 			call GridPane#rowIndex: 3,
 			call GridPane#hgrow: "ALWAYS"
-		},
-		Label {
-			text : "Country",
-			call GridPane#columnIndex : 0,
-			call GridPane#rowIndex: 4
-		},
-		ChoiceBox {
-			call GridPane#columnIndex : 1,
-			call GridPane#rowIndex: 4,
-			call GridPane#hgrow: "ALWAYS",
-			call GridPane#columnSpan : 2
-		},
-		Label {
-			text : "Federalstate",
-			call GridPane#columnIndex : 0,
-			call GridPane#rowIndex: 5
-		},
-		ChoiceBox {
-			call GridPane#columnIndex : 1,
-			call GridPane#rowIndex: 5,
-			call GridPane#hgrow: "ALWAYS",
-			call GridPane#columnSpan : 2
 		}
 	]
 }
