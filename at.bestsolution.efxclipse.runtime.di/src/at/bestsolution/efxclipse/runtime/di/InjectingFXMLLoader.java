@@ -24,7 +24,6 @@ public abstract class InjectingFXMLLoader<N> implements FXMLBuilder<N> {
 	public static <N> InjectingFXMLLoader<N> create(final IEclipseContext context, final Class<?> requester, final String relativeFxmlPath) {
 		return new InjectingFXMLLoader<N>() {
 
-			@Override
 			public N load() throws IOException {
 				return OSGiFXMLLoader.load(requester, relativeFxmlPath, resourceBundle, builderFactory, new Postprocessor(context));
 			}
@@ -35,7 +34,6 @@ public abstract class InjectingFXMLLoader<N> implements FXMLBuilder<N> {
 	public static <N> InjectingFXMLLoader<N> create(final IEclipseContext context, final Bundle bundle, final String bundleRelativeFxmlPath) {
 		return new InjectingFXMLLoader<N>() {
 
-			@Override
 			public N load() throws IOException {
 				return OSGiFXMLLoader.load(bundle, bundleRelativeFxmlPath, resourceBundle, builderFactory, new Postprocessor(context));
 			}
@@ -46,7 +44,6 @@ public abstract class InjectingFXMLLoader<N> implements FXMLBuilder<N> {
 	public static <N> InjectingFXMLLoader<N> create(final IEclipseContext context, final ClassLoader classloader, final URL url) {
 		return new InjectingFXMLLoader<N>() {
 
-			@Override
 			public N load() throws IOException {
 				return OSGiFXMLLoader.load(classloader, url, null, new JavaFXBuilderFactory(), new Postprocessor(context));
 			}
@@ -71,7 +68,6 @@ public abstract class InjectingFXMLLoader<N> implements FXMLBuilder<N> {
 			this.context = context;
 		}
 		
-		@Override
 		public void postProcess(FXMLLoader loader) {
 			if( loader.getController() != null ) {
 				context.set(FXMLLoaderFactory.CONTEXT_KEY, loader.getRoot());
