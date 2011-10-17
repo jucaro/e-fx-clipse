@@ -32,6 +32,6 @@ Import-Package: javafx.animation;version="2.0.0",
  javafx.scene.web;version="2.0.0",
  javafx.stage;version="2.0.0",
  javafx.util;version="2.0.0",
- org.osgi.framework;version="1.7.0",
- org.osgi.framework.wiring;version="1.1.0"
+ org.osgi.framework;version="1.6.0",
+ org.osgi.framework.wiring;version="1.0.0"
 Export-Package: at.bestsolution.efxclipse.runtime.osgi.util
