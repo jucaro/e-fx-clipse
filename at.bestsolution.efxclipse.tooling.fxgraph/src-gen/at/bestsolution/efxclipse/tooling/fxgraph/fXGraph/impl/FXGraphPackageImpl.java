@@ -345,9 +345,9 @@ public class FXGraphPackageImpl extends EPackageImpl implements FXGraphPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getComponentDefinition_Scripts()
+  public EAttribute getComponentDefinition_PreviewClasspathEntries()
   {
-    return (EReference)componentDefinitionEClass.getEStructuralFeatures().get(4);
+    return (EAttribute)componentDefinitionEClass.getEStructuralFeatures().get(4);
   }
 
   /**
@@ -355,7 +355,7 @@ public class FXGraphPackageImpl extends EPackageImpl implements FXGraphPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getComponentDefinition_Defines()
+  public EReference getComponentDefinition_Scripts()
   {
     return (EReference)componentDefinitionEClass.getEStructuralFeatures().get(5);
   }
@@ -365,9 +365,19 @@ public class FXGraphPackageImpl extends EPackageImpl implements FXGraphPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getComponentDefinition_RootNode()
+  public EReference getComponentDefinition_Defines()
   {
     return (EReference)componentDefinitionEClass.getEStructuralFeatures().get(6);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getComponentDefinition_RootNode()
+  {
+    return (EReference)componentDefinitionEClass.getEStructuralFeatures().get(7);
   }
 
   /**
@@ -889,6 +899,7 @@ public class FXGraphPackageImpl extends EPackageImpl implements FXGraphPackage
     createEReference(componentDefinitionEClass, COMPONENT_DEFINITION__CONTROLLER);
     createEAttribute(componentDefinitionEClass, COMPONENT_DEFINITION__PREVIEW_CSS_FILES);
     createEAttribute(componentDefinitionEClass, COMPONENT_DEFINITION__PREVIEW_RESOURCE_BUNDLE);
+    createEAttribute(componentDefinitionEClass, COMPONENT_DEFINITION__PREVIEW_CLASSPATH_ENTRIES);
     createEReference(componentDefinitionEClass, COMPONENT_DEFINITION__SCRIPTS);
     createEReference(componentDefinitionEClass, COMPONENT_DEFINITION__DEFINES);
     createEReference(componentDefinitionEClass, COMPONENT_DEFINITION__ROOT_NODE);
@@ -1019,6 +1030,7 @@ public class FXGraphPackageImpl extends EPackageImpl implements FXGraphPackage
     initEReference(getComponentDefinition_Controller(), theTypesPackage.getJvmParameterizedTypeReference(), null, "controller", null, 0, 1, ComponentDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getComponentDefinition_PreviewCssFiles(), ecorePackage.getEString(), "previewCssFiles", null, 0, -1, ComponentDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getComponentDefinition_PreviewResourceBundle(), ecorePackage.getEString(), "previewResourceBundle", null, 0, 1, ComponentDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getComponentDefinition_PreviewClasspathEntries(), ecorePackage.getEString(), "previewClasspathEntries", null, 0, -1, ComponentDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getComponentDefinition_Scripts(), this.getScript(), null, "scripts", null, 0, -1, ComponentDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getComponentDefinition_Defines(), this.getDefine(), null, "defines", null, 0, -1, ComponentDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getComponentDefinition_RootNode(), this.getElement(), null, "rootNode", null, 0, 1, ComponentDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

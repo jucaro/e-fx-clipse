@@ -4,7 +4,10 @@ import java.awt.BorderLayout;
 import java.awt.Frame;
 import java.awt.Panel;
 import java.io.ByteArrayInputStream;
+import java.io.File;
 import java.io.IOException;
+import java.net.URL;
+import java.net.URLClassLoader;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -16,15 +19,24 @@ import javafx.scene.Node;
 import javafx.scene.Scene;
 
 import javax.swing.JRootPane;
+import javax.xml.parsers.DocumentBuilder;
+import javax.xml.parsers.DocumentBuilderFactory;
+import javax.xml.parsers.ParserConfigurationException;
 
-import org.eclipse.core.databinding.observable.Diffs;
-import org.eclipse.core.databinding.observable.list.ListDiff;
+import org.eclipse.core.resources.IFile;
+import org.eclipse.core.resources.IWorkspaceRoot;
+import org.eclipse.core.runtime.Path;
+import org.eclipse.emf.common.util.URI;
+import org.eclipse.jdt.core.IJavaProject;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.awt.SWT_AWT;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.ui.IViewSite;
 import org.eclipse.ui.PartInitException;
 import org.eclipse.ui.part.ViewPart;
+import org.w3c.dom.Document;
+import org.w3c.dom.Element;
+import org.xml.sax.SAXException;
 
 import at.bestsolution.efxclipse.runtime.panels.FillLayoutPane;
 
@@ -97,25 +109,37 @@ public class LivePreviewPart extends ViewPart {
 
 			@Override
 			public void run() {
-				FXMLLoader loader = new FXMLLoader();
-				loader.setBuilderFactory(new JavaFXBuilderFactory());
-				try {
-					Scene scene = rootPane.getScene();
-					ListDiff d = Diffs.computeListDiff(scene.getStylesheets(), contentData.cssFiles);
-					if( ! d.isEmpty() ) {
-						d.applyTo(scene.getStylesheets());
-					}
-					
-					ByteArrayInputStream out = new ByteArrayInputStream(contentData.contents.getBytes());
-					Node root = (Node) loader.load(out);
-					out.close();
-					
-					rootPane.getChildren().clear();
-					rootPane.getChildren().add(root);
-				} catch (IOException e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
+				ClassLoader cl = null;
+				
+				if( contentData.extraJarPath != null && ! contentData.extraJarPath.isEmpty() ) {
+					cl = Thread.currentThread().getContextClassLoader();	
+					Thread.currentThread().setContextClassLoader(new URLClassLoader(contentData.extraJarPath.toArray(new URL[0]),cl));
 				}
+				
+				
+				try {
+					FXMLLoader loader = new FXMLLoader();
+					loader.setBuilderFactory(new JavaFXBuilderFactory());
+					try {
+						Scene scene = rootPane.getScene();
+						scene.getStylesheets().setAll(contentData.cssFiles);
+						
+						ByteArrayInputStream out = new ByteArrayInputStream(contentData.contents.getBytes());
+						Node root = (Node) loader.load(out);
+						out.close();
+						
+						rootPane.getChildren().clear();
+						rootPane.getChildren().add(root);
+					} catch (IOException e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					}	
+				} finally {
+					if( cl != null ) {
+						Thread.currentThread().setContextClassLoader(cl);
+					}
+				}
+				
 			}
 		});
 	}
@@ -130,11 +154,13 @@ public class LivePreviewPart extends ViewPart {
 		public String contents;
 		public List<String> cssFiles;
 		public String resourceBundle;
+		public List<URL> extraJarPath;
 
-		public ContentData(String contents, List<String> cssFiles, String resourceBundle) {
+		public ContentData(String contents, List<String> cssFiles, String resourceBundle, List<URL> extraJarPath) {
 			this.contents = contents;
 			this.cssFiles = new ArrayList<String>(cssFiles);
 			this.resourceBundle = resourceBundle;
+			this.extraJarPath = extraJarPath;
 		}
 	}
 }

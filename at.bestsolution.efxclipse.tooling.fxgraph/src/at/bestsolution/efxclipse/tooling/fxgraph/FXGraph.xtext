@@ -9,7 +9,7 @@ Model:
 ;
 
 ComponentDefinition:
-	'component' name=ValidID ('controlledby' controller=JvmTypeReference)? ('previewCssFiles' '[' previewCssFiles+=STRING (',' previewCssFiles+=STRING)* ']')? ( 'previewResourceFile' '[' previewResourceBundle=STRING ']' )? '{'
+	'component' name=ValidID ('controlledby' controller=JvmTypeReference)? ('previewCssFiles' '[' previewCssFiles+=STRING (',' previewCssFiles+=STRING)* ']')? ( 'previewResourceFile' '[' previewResourceBundle=STRING ']' )? ( 'previewClasspathEntries' '[' previewClasspathEntries+=STRING (',' previewClasspathEntries+=STRING)* ']')? '{'
 		(scripts+=Script)?
 		(defines+=Define (',' defines+=Define)*)?
 		rootNode=Element

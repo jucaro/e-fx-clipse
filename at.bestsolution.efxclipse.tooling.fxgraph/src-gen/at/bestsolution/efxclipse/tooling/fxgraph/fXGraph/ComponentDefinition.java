@@ -24,6 +24,7 @@ import org.eclipse.xtext.common.types.JvmParameterizedTypeReference;
  *   <li>{@link at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.ComponentDefinition#getController <em>Controller</em>}</li>
  *   <li>{@link at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.ComponentDefinition#getPreviewCssFiles <em>Preview Css Files</em>}</li>
  *   <li>{@link at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.ComponentDefinition#getPreviewResourceBundle <em>Preview Resource Bundle</em>}</li>
+ *   <li>{@link at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.ComponentDefinition#getPreviewClasspathEntries <em>Preview Classpath Entries</em>}</li>
  *   <li>{@link at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.ComponentDefinition#getScripts <em>Scripts</em>}</li>
  *   <li>{@link at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.ComponentDefinition#getDefines <em>Defines</em>}</li>
  *   <li>{@link at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.ComponentDefinition#getRootNode <em>Root Node</em>}</li>
@@ -129,6 +130,22 @@ public interface ComponentDefinition extends EObject
    * @generated
    */
   void setPreviewResourceBundle(String value);
+
+  /**
+   * Returns the value of the '<em><b>Preview Classpath Entries</b></em>' attribute list.
+   * The list contents are of type {@link java.lang.String}.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Preview Classpath Entries</em>' attribute list isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Preview Classpath Entries</em>' attribute list.
+   * @see at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.FXGraphPackage#getComponentDefinition_PreviewClasspathEntries()
+   * @model unique="false"
+   * @generated
+   */
+  EList<String> getPreviewClasspathEntries();
 
   /**
    * Returns the value of the '<em><b>Scripts</b></em>' containment reference list.

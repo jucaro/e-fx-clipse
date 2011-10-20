@@ -72,29 +72,41 @@ public class FXGraphGrammarAccess extends AbstractGrammarElementFinder {
 		private final Assignment cPreviewResourceBundleAssignment_4_2 = (Assignment)cGroup_4.eContents().get(2);
 		private final RuleCall cPreviewResourceBundleSTRINGTerminalRuleCall_4_2_0 = (RuleCall)cPreviewResourceBundleAssignment_4_2.eContents().get(0);
 		private final Keyword cRightSquareBracketKeyword_4_3 = (Keyword)cGroup_4.eContents().get(3);
-		private final Keyword cLeftCurlyBracketKeyword_5 = (Keyword)cGroup.eContents().get(5);
-		private final Assignment cScriptsAssignment_6 = (Assignment)cGroup.eContents().get(6);
-		private final RuleCall cScriptsScriptParserRuleCall_6_0 = (RuleCall)cScriptsAssignment_6.eContents().get(0);
-		private final Group cGroup_7 = (Group)cGroup.eContents().get(7);
-		private final Assignment cDefinesAssignment_7_0 = (Assignment)cGroup_7.eContents().get(0);
-		private final RuleCall cDefinesDefineParserRuleCall_7_0_0 = (RuleCall)cDefinesAssignment_7_0.eContents().get(0);
-		private final Group cGroup_7_1 = (Group)cGroup_7.eContents().get(1);
-		private final Keyword cCommaKeyword_7_1_0 = (Keyword)cGroup_7_1.eContents().get(0);
-		private final Assignment cDefinesAssignment_7_1_1 = (Assignment)cGroup_7_1.eContents().get(1);
-		private final RuleCall cDefinesDefineParserRuleCall_7_1_1_0 = (RuleCall)cDefinesAssignment_7_1_1.eContents().get(0);
-		private final Assignment cRootNodeAssignment_8 = (Assignment)cGroup.eContents().get(8);
-		private final RuleCall cRootNodeElementParserRuleCall_8_0 = (RuleCall)cRootNodeAssignment_8.eContents().get(0);
-		private final Keyword cRightCurlyBracketKeyword_9 = (Keyword)cGroup.eContents().get(9);
+		private final Group cGroup_5 = (Group)cGroup.eContents().get(5);
+		private final Keyword cPreviewClasspathEntriesKeyword_5_0 = (Keyword)cGroup_5.eContents().get(0);
+		private final Keyword cLeftSquareBracketKeyword_5_1 = (Keyword)cGroup_5.eContents().get(1);
+		private final Assignment cPreviewClasspathEntriesAssignment_5_2 = (Assignment)cGroup_5.eContents().get(2);
+		private final RuleCall cPreviewClasspathEntriesSTRINGTerminalRuleCall_5_2_0 = (RuleCall)cPreviewClasspathEntriesAssignment_5_2.eContents().get(0);
+		private final Group cGroup_5_3 = (Group)cGroup_5.eContents().get(3);
+		private final Keyword cCommaKeyword_5_3_0 = (Keyword)cGroup_5_3.eContents().get(0);
+		private final Assignment cPreviewClasspathEntriesAssignment_5_3_1 = (Assignment)cGroup_5_3.eContents().get(1);
+		private final RuleCall cPreviewClasspathEntriesSTRINGTerminalRuleCall_5_3_1_0 = (RuleCall)cPreviewClasspathEntriesAssignment_5_3_1.eContents().get(0);
+		private final Keyword cRightSquareBracketKeyword_5_4 = (Keyword)cGroup_5.eContents().get(4);
+		private final Keyword cLeftCurlyBracketKeyword_6 = (Keyword)cGroup.eContents().get(6);
+		private final Assignment cScriptsAssignment_7 = (Assignment)cGroup.eContents().get(7);
+		private final RuleCall cScriptsScriptParserRuleCall_7_0 = (RuleCall)cScriptsAssignment_7.eContents().get(0);
+		private final Group cGroup_8 = (Group)cGroup.eContents().get(8);
+		private final Assignment cDefinesAssignment_8_0 = (Assignment)cGroup_8.eContents().get(0);
+		private final RuleCall cDefinesDefineParserRuleCall_8_0_0 = (RuleCall)cDefinesAssignment_8_0.eContents().get(0);
+		private final Group cGroup_8_1 = (Group)cGroup_8.eContents().get(1);
+		private final Keyword cCommaKeyword_8_1_0 = (Keyword)cGroup_8_1.eContents().get(0);
+		private final Assignment cDefinesAssignment_8_1_1 = (Assignment)cGroup_8_1.eContents().get(1);
+		private final RuleCall cDefinesDefineParserRuleCall_8_1_1_0 = (RuleCall)cDefinesAssignment_8_1_1.eContents().get(0);
+		private final Assignment cRootNodeAssignment_9 = (Assignment)cGroup.eContents().get(9);
+		private final RuleCall cRootNodeElementParserRuleCall_9_0 = (RuleCall)cRootNodeAssignment_9.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_10 = (Keyword)cGroup.eContents().get(10);
 		
 		//ComponentDefinition:
 		//	"component" name=ValidID ("controlledby" controller=JvmTypeReference)? ("previewCssFiles" "[" previewCssFiles+=STRING
-		//	("," previewCssFiles+=STRING)* "]")? ("previewResourceFile" "[" previewResourceBundle=STRING "]")? "{"
+		//	("," previewCssFiles+=STRING)* "]")? ("previewResourceFile" "[" previewResourceBundle=STRING "]")?
+		//	("previewClasspathEntries" "[" previewClasspathEntries+=STRING ("," previewClasspathEntries+=STRING)* "]")? "{"
 		//	scripts+=Script? (defines+=Define ("," defines+=Define)*)? rootNode=Element "}";
 		public ParserRule getRule() { return rule; }
 
 		//"component" name=ValidID ("controlledby" controller=JvmTypeReference)? ("previewCssFiles" "[" previewCssFiles+=STRING
-		//("," previewCssFiles+=STRING)* "]")? ("previewResourceFile" "[" previewResourceBundle=STRING "]")? "{" scripts+=Script?
-		//(defines+=Define ("," defines+=Define)*)? rootNode=Element "}"
+		//("," previewCssFiles+=STRING)* "]")? ("previewResourceFile" "[" previewResourceBundle=STRING "]")?
+		//("previewClasspathEntries" "[" previewClasspathEntries+=STRING ("," previewClasspathEntries+=STRING)* "]")? "{"
+		//scripts+=Script? (defines+=Define ("," defines+=Define)*)? rootNode=Element "}"
 		public Group getGroup() { return cGroup; }
 
 		//"component"
@@ -166,44 +178,74 @@ public class FXGraphGrammarAccess extends AbstractGrammarElementFinder {
 		//"]"
 		public Keyword getRightSquareBracketKeyword_4_3() { return cRightSquareBracketKeyword_4_3; }
 
-		//"{"
-		public Keyword getLeftCurlyBracketKeyword_5() { return cLeftCurlyBracketKeyword_5; }
+		//("previewClasspathEntries" "[" previewClasspathEntries+=STRING ("," previewClasspathEntries+=STRING)* "]")?
+		public Group getGroup_5() { return cGroup_5; }
 
-		//scripts+=Script?
-		public Assignment getScriptsAssignment_6() { return cScriptsAssignment_6; }
+		//"previewClasspathEntries"
+		public Keyword getPreviewClasspathEntriesKeyword_5_0() { return cPreviewClasspathEntriesKeyword_5_0; }
 
-		//Script
-		public RuleCall getScriptsScriptParserRuleCall_6_0() { return cScriptsScriptParserRuleCall_6_0; }
+		//"["
+		public Keyword getLeftSquareBracketKeyword_5_1() { return cLeftSquareBracketKeyword_5_1; }
 
-		//(defines+=Define ("," defines+=Define)*)?
-		public Group getGroup_7() { return cGroup_7; }
+		//previewClasspathEntries+=STRING
+		public Assignment getPreviewClasspathEntriesAssignment_5_2() { return cPreviewClasspathEntriesAssignment_5_2; }
 
-		//defines+=Define
-		public Assignment getDefinesAssignment_7_0() { return cDefinesAssignment_7_0; }
+		//STRING
+		public RuleCall getPreviewClasspathEntriesSTRINGTerminalRuleCall_5_2_0() { return cPreviewClasspathEntriesSTRINGTerminalRuleCall_5_2_0; }
 
-		//Define
-		public RuleCall getDefinesDefineParserRuleCall_7_0_0() { return cDefinesDefineParserRuleCall_7_0_0; }
-
-		//("," defines+=Define)*
-		public Group getGroup_7_1() { return cGroup_7_1; }
+		//("," previewClasspathEntries+=STRING)*
+		public Group getGroup_5_3() { return cGroup_5_3; }
 
 		//","
-		public Keyword getCommaKeyword_7_1_0() { return cCommaKeyword_7_1_0; }
+		public Keyword getCommaKeyword_5_3_0() { return cCommaKeyword_5_3_0; }
+
+		//previewClasspathEntries+=STRING
+		public Assignment getPreviewClasspathEntriesAssignment_5_3_1() { return cPreviewClasspathEntriesAssignment_5_3_1; }
+
+		//STRING
+		public RuleCall getPreviewClasspathEntriesSTRINGTerminalRuleCall_5_3_1_0() { return cPreviewClasspathEntriesSTRINGTerminalRuleCall_5_3_1_0; }
+
+		//"]"
+		public Keyword getRightSquareBracketKeyword_5_4() { return cRightSquareBracketKeyword_5_4; }
+
+		//"{"
+		public Keyword getLeftCurlyBracketKeyword_6() { return cLeftCurlyBracketKeyword_6; }
+
+		//scripts+=Script?
+		public Assignment getScriptsAssignment_7() { return cScriptsAssignment_7; }
+
+		//Script
+		public RuleCall getScriptsScriptParserRuleCall_7_0() { return cScriptsScriptParserRuleCall_7_0; }
+
+		//(defines+=Define ("," defines+=Define)*)?
+		public Group getGroup_8() { return cGroup_8; }
 
 		//defines+=Define
-		public Assignment getDefinesAssignment_7_1_1() { return cDefinesAssignment_7_1_1; }
+		public Assignment getDefinesAssignment_8_0() { return cDefinesAssignment_8_0; }
 
 		//Define
-		public RuleCall getDefinesDefineParserRuleCall_7_1_1_0() { return cDefinesDefineParserRuleCall_7_1_1_0; }
+		public RuleCall getDefinesDefineParserRuleCall_8_0_0() { return cDefinesDefineParserRuleCall_8_0_0; }
+
+		//("," defines+=Define)*
+		public Group getGroup_8_1() { return cGroup_8_1; }
+
+		//","
+		public Keyword getCommaKeyword_8_1_0() { return cCommaKeyword_8_1_0; }
+
+		//defines+=Define
+		public Assignment getDefinesAssignment_8_1_1() { return cDefinesAssignment_8_1_1; }
+
+		//Define
+		public RuleCall getDefinesDefineParserRuleCall_8_1_1_0() { return cDefinesDefineParserRuleCall_8_1_1_0; }
 
 		//rootNode=Element
-		public Assignment getRootNodeAssignment_8() { return cRootNodeAssignment_8; }
+		public Assignment getRootNodeAssignment_9() { return cRootNodeAssignment_9; }
 
 		//Element
-		public RuleCall getRootNodeElementParserRuleCall_8_0() { return cRootNodeElementParserRuleCall_8_0; }
+		public RuleCall getRootNodeElementParserRuleCall_9_0() { return cRootNodeElementParserRuleCall_9_0; }
 
 		//"}"
-		public Keyword getRightCurlyBracketKeyword_9() { return cRightCurlyBracketKeyword_9; }
+		public Keyword getRightCurlyBracketKeyword_10() { return cRightCurlyBracketKeyword_10; }
 	}
 
 	public class ImportElements extends AbstractParserRuleElementFinder {
@@ -1029,7 +1071,8 @@ public class FXGraphGrammarAccess extends AbstractGrammarElementFinder {
 
 	//ComponentDefinition:
 	//	"component" name=ValidID ("controlledby" controller=JvmTypeReference)? ("previewCssFiles" "[" previewCssFiles+=STRING
-	//	("," previewCssFiles+=STRING)* "]")? ("previewResourceFile" "[" previewResourceBundle=STRING "]")? "{"
+	//	("," previewCssFiles+=STRING)* "]")? ("previewResourceFile" "[" previewResourceBundle=STRING "]")?
+	//	("previewClasspathEntries" "[" previewClasspathEntries+=STRING ("," previewClasspathEntries+=STRING)* "]")? "{"
 	//	scripts+=Script? (defines+=Define ("," defines+=Define)*)? rootNode=Element "}";
 	public ComponentDefinitionElements getComponentDefinitionAccess() {
 		return (pComponentDefinition != null) ? pComponentDefinition : (pComponentDefinition = new ComponentDefinitionElements());

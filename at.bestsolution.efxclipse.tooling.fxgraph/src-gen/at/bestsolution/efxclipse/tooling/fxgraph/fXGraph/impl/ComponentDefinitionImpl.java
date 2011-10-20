@@ -42,6 +42,7 @@ import org.eclipse.xtext.common.types.JvmParameterizedTypeReference;
  *   <li>{@link at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.impl.ComponentDefinitionImpl#getController <em>Controller</em>}</li>
  *   <li>{@link at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.impl.ComponentDefinitionImpl#getPreviewCssFiles <em>Preview Css Files</em>}</li>
  *   <li>{@link at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.impl.ComponentDefinitionImpl#getPreviewResourceBundle <em>Preview Resource Bundle</em>}</li>
+ *   <li>{@link at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.impl.ComponentDefinitionImpl#getPreviewClasspathEntries <em>Preview Classpath Entries</em>}</li>
  *   <li>{@link at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.impl.ComponentDefinitionImpl#getScripts <em>Scripts</em>}</li>
  *   <li>{@link at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.impl.ComponentDefinitionImpl#getDefines <em>Defines</em>}</li>
  *   <li>{@link at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.impl.ComponentDefinitionImpl#getRootNode <em>Root Node</em>}</li>
@@ -111,6 +112,16 @@ public class ComponentDefinitionImpl extends MinimalEObjectImpl.Container implem
    * @ordered
    */
   protected String previewResourceBundle = PREVIEW_RESOURCE_BUNDLE_EDEFAULT;
+
+  /**
+   * The cached value of the '{@link #getPreviewClasspathEntries() <em>Preview Classpath Entries</em>}' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getPreviewClasspathEntries()
+   * @generated
+   * @ordered
+   */
+  protected EList<String> previewClasspathEntries;
 
   /**
    * The cached value of the '{@link #getScripts() <em>Scripts</em>}' containment reference list.
@@ -276,6 +287,20 @@ public class ComponentDefinitionImpl extends MinimalEObjectImpl.Container implem
    * <!-- end-user-doc -->
    * @generated
    */
+  public EList<String> getPreviewClasspathEntries()
+  {
+    if (previewClasspathEntries == null)
+    {
+      previewClasspathEntries = new EDataTypeEList<String>(String.class, this, FXGraphPackage.COMPONENT_DEFINITION__PREVIEW_CLASSPATH_ENTRIES);
+    }
+    return previewClasspathEntries;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EList<Script> getScripts()
   {
     if (scripts == null)
@@ -387,6 +412,8 @@ public class ComponentDefinitionImpl extends MinimalEObjectImpl.Container implem
         return getPreviewCssFiles();
       case FXGraphPackage.COMPONENT_DEFINITION__PREVIEW_RESOURCE_BUNDLE:
         return getPreviewResourceBundle();
+      case FXGraphPackage.COMPONENT_DEFINITION__PREVIEW_CLASSPATH_ENTRIES:
+        return getPreviewClasspathEntries();
       case FXGraphPackage.COMPONENT_DEFINITION__SCRIPTS:
         return getScripts();
       case FXGraphPackage.COMPONENT_DEFINITION__DEFINES:
@@ -420,6 +447,10 @@ public class ComponentDefinitionImpl extends MinimalEObjectImpl.Container implem
         return;
       case FXGraphPackage.COMPONENT_DEFINITION__PREVIEW_RESOURCE_BUNDLE:
         setPreviewResourceBundle((String)newValue);
+        return;
+      case FXGraphPackage.COMPONENT_DEFINITION__PREVIEW_CLASSPATH_ENTRIES:
+        getPreviewClasspathEntries().clear();
+        getPreviewClasspathEntries().addAll((Collection<? extends String>)newValue);
         return;
       case FXGraphPackage.COMPONENT_DEFINITION__SCRIPTS:
         getScripts().clear();
@@ -458,6 +489,9 @@ public class ComponentDefinitionImpl extends MinimalEObjectImpl.Container implem
       case FXGraphPackage.COMPONENT_DEFINITION__PREVIEW_RESOURCE_BUNDLE:
         setPreviewResourceBundle(PREVIEW_RESOURCE_BUNDLE_EDEFAULT);
         return;
+      case FXGraphPackage.COMPONENT_DEFINITION__PREVIEW_CLASSPATH_ENTRIES:
+        getPreviewClasspathEntries().clear();
+        return;
       case FXGraphPackage.COMPONENT_DEFINITION__SCRIPTS:
         getScripts().clear();
         return;
@@ -489,6 +523,8 @@ public class ComponentDefinitionImpl extends MinimalEObjectImpl.Container implem
         return previewCssFiles != null && !previewCssFiles.isEmpty();
       case FXGraphPackage.COMPONENT_DEFINITION__PREVIEW_RESOURCE_BUNDLE:
         return PREVIEW_RESOURCE_BUNDLE_EDEFAULT == null ? previewResourceBundle != null : !PREVIEW_RESOURCE_BUNDLE_EDEFAULT.equals(previewResourceBundle);
+      case FXGraphPackage.COMPONENT_DEFINITION__PREVIEW_CLASSPATH_ENTRIES:
+        return previewClasspathEntries != null && !previewClasspathEntries.isEmpty();
       case FXGraphPackage.COMPONENT_DEFINITION__SCRIPTS:
         return scripts != null && !scripts.isEmpty();
       case FXGraphPackage.COMPONENT_DEFINITION__DEFINES:
@@ -516,6 +552,8 @@ public class ComponentDefinitionImpl extends MinimalEObjectImpl.Container implem
     result.append(previewCssFiles);
     result.append(", previewResourceBundle: ");
     result.append(previewResourceBundle);
+    result.append(", previewClasspathEntries: ");
+    result.append(previewClasspathEntries);
     result.append(')');
     return result.toString();
   }

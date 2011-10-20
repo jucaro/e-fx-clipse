@@ -1,17 +1,23 @@
 package at.bestsolution.efxclipse.tooling.fxgraph.ui.preview;
 
 
+import java.io.File;
 import java.net.MalformedURLException;
+import java.net.URL;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
 import org.eclipse.core.resources.IFile;
 import org.eclipse.core.resources.IProject;
+import org.eclipse.core.resources.IWorkspaceRoot;
 import org.eclipse.core.resources.ResourcesPlugin;
+import org.eclipse.core.runtime.Path;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EObject;
+import org.eclipse.jdt.core.IJavaProject;
+import org.eclipse.jdt.core.JavaCore;
 import org.eclipse.ui.IPartListener;
 import org.eclipse.ui.IWorkbenchPart;
 import org.eclipse.xtext.resource.XtextResource;
@@ -67,9 +73,11 @@ public class LivePreviewSynchronizer implements IPartListener, IXtextModelListen
 				FXGraphGenerator generator = new FXGraphGenerator();
 				ComponentDefinition def = ((Model) rootObject).getComponentDef();
 				List<String> l;
+				List<URL> extraPaths = new ArrayList<URL>();
 				
 				URI uri = resource.getURI();
 				IProject p = ResourcesPlugin.getWorkspace().getRoot().getProject(uri.segment(1));
+				IJavaProject jp = JavaCore.create(p);
 				
 				if( def != null ) {
 					l = new ArrayList<String>(def.getPreviewCssFiles().size());
@@ -83,14 +91,51 @@ public class LivePreviewSynchronizer implements IPartListener, IXtextModelListen
 									// TODO Auto-generated catch block
 									e.printStackTrace();
 								}
-							}	
+							} else if( jp != null ) {
+								// Check the build path
+								
+							}
 						}
 					}
+					
+					for( String path : def.getPreviewClasspathEntries() ) {
+						try {
+							URI cpUri = URI.createURI(path);
+							if( cpUri.isPlatformResource() ) {
+								Path cpPath = new Path(cpUri.toPlatformString(true));
+								IWorkspaceRoot root = jp.getProject().getWorkspace().getRoot();
+								IFile jarFile = root.getFile(cpPath);
+								if( jarFile.exists() ) {
+									try {
+										extraPaths.add(jarFile.getLocation().toFile().toURI().toURL());
+									} catch (MalformedURLException e) {
+										// TODO Auto-generated catch block
+										e.printStackTrace();
+									}
+								}
+							} else if( uri.isFile() ) {
+								File ioFile = new File(uri.toFileString());
+								if( ioFile.exists() ) {
+									try {
+										extraPaths.add(ioFile.toURI().toURL());
+									} catch (MalformedURLException e) {
+										// TODO Auto-generated catch block
+										e.printStackTrace();
+									}
+								}
+							}
+						} catch (Exception e) {
+							// TODO: handle exception
+						}
+					}
+					
 				} else {
 					l = Collections.emptyList();
 				}
 				
-				return new ContentData(generator.doGeneratePreview(resource), l, def != null ? def.getPreviewResourceBundle() : null);				
+				
+				
+				return new ContentData(generator.doGeneratePreview(resource), l, def != null ? def.getPreviewResourceBundle() : null,extraPaths);				
 			}
 		}
 		

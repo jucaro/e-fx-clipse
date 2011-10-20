@@ -144,13 +144,22 @@ public interface FXGraphPackage extends EPackage
   int COMPONENT_DEFINITION__PREVIEW_RESOURCE_BUNDLE = 3;
 
   /**
+   * The feature id for the '<em><b>Preview Classpath Entries</b></em>' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int COMPONENT_DEFINITION__PREVIEW_CLASSPATH_ENTRIES = 4;
+
+  /**
    * The feature id for the '<em><b>Scripts</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int COMPONENT_DEFINITION__SCRIPTS = 4;
+  int COMPONENT_DEFINITION__SCRIPTS = 5;
 
   /**
    * The feature id for the '<em><b>Defines</b></em>' containment reference list.
@@ -159,7 +168,7 @@ public interface FXGraphPackage extends EPackage
    * @generated
    * @ordered
    */
-  int COMPONENT_DEFINITION__DEFINES = 5;
+  int COMPONENT_DEFINITION__DEFINES = 6;
 
   /**
    * The feature id for the '<em><b>Root Node</b></em>' containment reference.
@@ -168,7 +177,7 @@ public interface FXGraphPackage extends EPackage
    * @generated
    * @ordered
    */
-  int COMPONENT_DEFINITION__ROOT_NODE = 6;
+  int COMPONENT_DEFINITION__ROOT_NODE = 7;
 
   /**
    * The number of structural features of the '<em>Component Definition</em>' class.
@@ -177,7 +186,7 @@ public interface FXGraphPackage extends EPackage
    * @generated
    * @ordered
    */
-  int COMPONENT_DEFINITION_FEATURE_COUNT = 7;
+  int COMPONENT_DEFINITION_FEATURE_COUNT = 8;
 
   /**
    * The meta object id for the '{@link at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.impl.ImportImpl <em>Import</em>}' class.
@@ -889,6 +898,17 @@ public interface FXGraphPackage extends EPackage
   EAttribute getComponentDefinition_PreviewResourceBundle();
 
   /**
+   * Returns the meta object for the attribute list '{@link at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.ComponentDefinition#getPreviewClasspathEntries <em>Preview Classpath Entries</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute list '<em>Preview Classpath Entries</em>'.
+   * @see at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.ComponentDefinition#getPreviewClasspathEntries()
+   * @see #getComponentDefinition()
+   * @generated
+   */
+  EAttribute getComponentDefinition_PreviewClasspathEntries();
+
+  /**
    * Returns the meta object for the containment reference list '{@link at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.ComponentDefinition#getScripts <em>Scripts</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -1520,6 +1540,14 @@ public interface FXGraphPackage extends EPackage
      * @generated
      */
     EAttribute COMPONENT_DEFINITION__PREVIEW_RESOURCE_BUNDLE = eINSTANCE.getComponentDefinition_PreviewResourceBundle();
+
+    /**
+     * The meta object literal for the '<em><b>Preview Classpath Entries</b></em>' attribute list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute COMPONENT_DEFINITION__PREVIEW_CLASSPATH_ENTRIES = eINSTANCE.getComponentDefinition_PreviewClasspathEntries();
 
     /**
      * The meta object literal for the '<em><b>Scripts</b></em>' containment reference list feature.
