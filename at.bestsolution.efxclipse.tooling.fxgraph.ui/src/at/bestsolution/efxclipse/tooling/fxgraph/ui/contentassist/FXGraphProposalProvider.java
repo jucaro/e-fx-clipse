@@ -640,6 +640,11 @@ public class FXGraphProposalProvider extends AbstractFXGraphProposalProvider {
 							type = jproject.findType(returnSignature.substring(0, returnSignature.indexOf('<')));
 						}
 						
+						if( type == null ) {
+							System.err.println("Could not detect type for '"+propName+"': " + returnSignature);
+							continue;
+						}
+						
 						boolean isLists = false;
 						boolean isMap = false;
 						if( "java.util.List".equals(type.getFullyQualifiedName()) ) {
