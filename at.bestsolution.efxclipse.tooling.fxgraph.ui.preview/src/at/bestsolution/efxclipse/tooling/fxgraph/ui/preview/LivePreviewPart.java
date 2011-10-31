@@ -217,7 +217,7 @@ public class LivePreviewPart extends ViewPart {
 				
 				if( exception != null || redirectedError.size() > 0 || redirectedOut.size() > 0 ) {
 					final String innerException = exception;
-					folder.getDisplay().syncExec(new Runnable() {
+					folder.getDisplay().asyncExec(new Runnable() {
 						
 						@Override
 						public void run() {
@@ -255,7 +255,7 @@ public class LivePreviewPart extends ViewPart {
 					});
 					
 				} else {
-					folder.getDisplay().syncExec(new Runnable() {
+					folder.getDisplay().asyncExec(new Runnable() {
 						
 						@Override
 						public void run() {
@@ -269,6 +269,10 @@ public class LivePreviewPart extends ViewPart {
 	}
 
 	public void setContents(final ContentData contentData) {
+		if( folder.isDisposed() ) {
+			return;
+		}
+		
 		if (contentData != null && contentData.contents != null) {
 			refreshContent(contentData);
 		} else if( rootPane != null ) {
