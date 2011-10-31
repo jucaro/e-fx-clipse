@@ -26,10 +26,13 @@ import org.eclipse.pde.internal.build.IBuildPropertiesConstants;
 import org.eclipse.pde.internal.core.ibundle.IBundlePluginModelBase;
 import org.osgi.framework.BundleContext;
 import org.osgi.framework.FrameworkUtil;
+import org.osgi.framework.InvalidSyntaxException;
+import org.osgi.framework.ServiceReference;
 
 import at.bestsolution.efxclipse.tooling.jdt.core.internal.JavaFXCorePlugin;
 import at.bestsolution.efxclipse.tooling.jdt.core.internal.JavaFXPreferencesConstants;
 import at.bestsolution.efxclipse.tooling.pde.adaptor.IClasspathContributor;
+import at.bestsolution.efxclipse.tooling.pde.adaptor.IClasspathContributor.Contribution;
 
 public class RequiredPluginsClasspathContainer extends PDEClasspathContainer implements IClasspathContainer {
 
@@ -58,7 +61,14 @@ public class RequiredPluginsClasspathContainer extends PDEClasspathContainer imp
 		fBuild = build;
 		
 		BundleContext context = PDECore.getDefault().getBundleContext();
-		
+		try {
+			for( ServiceReference<IClasspathContributor> ref : context.getServiceReferences(IClasspathContributor.class, null) ) {
+				contributors.add(context.getService(ref));
+			}
+		} catch (InvalidSyntaxException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 
 	/*
@@ -264,20 +274,45 @@ public class RequiredPluginsClasspathContainer extends PDEClasspathContainer imp
 		IResource resource = model.getUnderlyingResource();
 		Rule[] rules = useInclusions ? getInclusions(map, model) : null;
 		
-		System.err.println("Adding: " + desc.getName());
+//		System.err.println("Adding: " + desc.getName());
 		
-		if (desc.getName().equals("at.bestsolution.efxclipse.runtime.javafx")) {
-			IEclipsePreferences pref = InstanceScope.INSTANCE.getNode(JavaFXCorePlugin.PLUGIN_ID);
-			String dir = pref.get(JavaFXPreferencesConstants.JAVAFX_DIR,"");
-			
-			if( dir.length() > 0 ) {
-				IPath jarLocationPath = new Path(dir).append("rt").append("lib").append("jfxrt.jar");
-				IPath javadocLocation = new Path(dir).append("docs").append("api");
-				
-				IClasspathAttribute[] attributes = new IClasspathAttribute[] {JavaCore.newClasspathAttribute(IClasspathAttribute.JAVADOC_LOCATION_ATTRIBUTE_NAME, javadocLocation.toFile().toURI().toString())};
-				addLibraryEntry(jarLocationPath, null, rules, attributes, entries);
-			}	
+		for( IClasspathContributor cp : contributors ) {
+			if( cp.isActiveFor(desc) ) {
+				System.err.println("Found contributor for: " + desc.getName());
+				for( Contribution c : cp.getContributions(desc) ) {
+					IClasspathAttribute[] attributes = new IClasspathAttribute[0];
+					
+					if( c.attributes == null ) {
+						if( c.javaDocLocation != null ) {
+							attributes = new IClasspathAttribute[] {JavaCore.newClasspathAttribute(IClasspathAttribute.JAVADOC_LOCATION_ATTRIBUTE_NAME, c.javaDocLocation.toFile().toURI().toString())};
+						}
+					} else {
+						if( c.javaDocLocation != null ) {
+							attributes = new IClasspathAttribute[c.attributes.length+1];
+							attributes[attributes.length-1] = JavaCore.newClasspathAttribute(IClasspathAttribute.JAVADOC_LOCATION_ATTRIBUTE_NAME, c.javaDocLocation.toFile().toURI().toString());
+						} else {
+							attributes = new IClasspathAttribute[c.attributes.length];
+						}
+						System.arraycopy(c.attributes, 0, attributes, 0, c.attributes.length);
+					}
+					
+					addLibraryEntry(c.jarLocation, c.sourceLocation, rules, attributes, entries);
+				}
+			}
 		}
+		
+//		if (desc.getName().equals("at.bestsolution.efxclipse.runtime.javafx")) {
+//			IEclipsePreferences pref = InstanceScope.INSTANCE.getNode(JavaFXCorePlugin.PLUGIN_ID);
+//			String dir = pref.get(JavaFXPreferencesConstants.JAVAFX_DIR,"");
+//			
+//			if( dir.length() > 0 ) {
+//				IPath jarLocationPath = new Path(dir).append("rt").append("lib").append("jfxrt.jar");
+//				IPath javadocLocation = new Path(dir).append("docs").append("api");
+//				
+//				IClasspathAttribute[] attributes = new IClasspathAttribute[] {JavaCore.newClasspathAttribute(IClasspathAttribute.JAVADOC_LOCATION_ATTRIBUTE_NAME, javadocLocation.toFile().toURI().toString())};
+//				addLibraryEntry(jarLocationPath, null, rules, attributes, entries);
+//			}	
+//		}
 		
 		if (resource != null) {
 			addProjectEntry(resource.getProject(), rules, entries);

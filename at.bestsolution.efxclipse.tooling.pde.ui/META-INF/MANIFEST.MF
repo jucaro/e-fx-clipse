@@ -14,7 +14,9 @@ Require-Bundle: org.eclipse.pde.ui;bundle-version="3.6.100",
  org.eclipse.jdt.core;bundle-version="3.7.0",
  at.bestsolution.efxclipse.tooling.jdt.core;bundle-version="0.0.5",
  org.eclipse.ui.ide;bundle-version="3.7.0",
- org.eclipse.debug.core;bundle-version="3.7.0"
+ org.eclipse.debug.core;bundle-version="3.7.0",
+ at.bestsolution.efxclipse.tooling.pde.adaptor;bundle-version="1.0.0"
 Bundle-Activator: at.bestsolution.efxclipse.tooling.pde.ui.Activator
 Bundle-ActivationPolicy: lazy
 Bundle-Vendor: BestSolution.at
+Service-Component: OSGI-INF/classpathextender.xml

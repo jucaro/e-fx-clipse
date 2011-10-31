@@ -1,5 +1,7 @@
 package at.bestsolution.efxclipse.tooling.pde.adaptor;
 
+import java.util.List;
+
 import org.eclipse.core.runtime.IPath;
 import org.eclipse.jdt.core.IClasspathAttribute;
 import org.eclipse.osgi.service.resolver.BundleDescription;
@@ -20,6 +22,6 @@ public interface IClasspathContributor {
 		}
 	}
 	
-	public Contribution getContributions(BundleDescription desc);
+	public List<Contribution> getContributions(BundleDescription desc);
 	public boolean isActiveFor(BundleDescription desc);
 }

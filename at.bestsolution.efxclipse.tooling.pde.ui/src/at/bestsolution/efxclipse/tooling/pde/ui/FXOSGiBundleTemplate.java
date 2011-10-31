@@ -64,10 +64,10 @@ public class FXOSGiBundleTemplate extends FXPDETemplateSection {
 	@Override
 	public void execute(IProject project, IPluginModelBase model,
 			IProgressMonitor monitor) throws CoreException {
-		IJavaProject jProject = JavaCore.create(project);
-		List<IClasspathEntry> entries = new ArrayList<IClasspathEntry>(Arrays.asList(jProject.getRawClasspath()));
-		entries.add(JavaCore.newContainerEntry(JavaFXCore.JAVAFX_CONTAINER_PATH));
-		jProject.setRawClasspath(entries.toArray(new IClasspathEntry[0]), monitor);
+//		IJavaProject jProject = JavaCore.create(project);
+//		List<IClasspathEntry> entries = new ArrayList<IClasspathEntry>(Arrays.asList(jProject.getRawClasspath()));
+//		entries.add(JavaCore.newContainerEntry(JavaFXCore.JAVAFX_CONTAINER_PATH));
+//		jProject.setRawClasspath(entries.toArray(new IClasspathEntry[0]), monitor);
 		
 		if( model.getPluginBase() instanceof BundlePluginBase ) {
 			IBundle bundle = ((BundlePluginBase) model.getPluginBase()).getBundle();

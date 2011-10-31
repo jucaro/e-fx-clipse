@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<scr:component xmlns:scr="http://www.osgi.org/xmlns/scr/v1.1.0" name="at.bestsolution.efxclipse.tooling.pde.ui">
+   <implementation class="at.bestsolution.efxclipse.tooling.pde.ui.classpath.JavaFXClassPathExtender"/>
+   <service>
+      <provide interface="at.bestsolution.efxclipse.tooling.pde.adaptor.IClasspathContributor"/>
+   </service>
+</scr:component>
