@@ -2,7 +2,7 @@
  * This code is coming from http://stackoverflow.com/questions/62289/read-write-to-windows-registry-using-java
  * and there's no author known
  */
-package at.bestsolution.efxclipse.runtime.osgi;
+package at.bestsolution.efxclipse.runtime.osgi.fxloader;
 
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;

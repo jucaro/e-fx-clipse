@@ -1,4 +1,4 @@
-package at.bestsolution.efxclipse.runtime.osgi;
+package at.bestsolution.efxclipse.runtime.osgi.fxloader;
 
 import java.io.File;
 import java.io.IOException;

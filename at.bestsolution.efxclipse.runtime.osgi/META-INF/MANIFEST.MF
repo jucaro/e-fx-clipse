@@ -5,5 +5,4 @@ Bundle-SymbolicName: at.bestsolution.efxclipse.runtime.osgi
 Bundle-Version: 0.0.7.qualifier
 Fragment-Host: org.eclipse.osgi;bundle-version="3.7.0"
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
-Export-Package: at.bestsolution.efxclipse.runtime.osgi
 Bundle-Vendor: BestSolution.at
