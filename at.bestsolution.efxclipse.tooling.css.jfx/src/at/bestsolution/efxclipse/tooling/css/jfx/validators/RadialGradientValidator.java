@@ -90,6 +90,28 @@ public class RadialGradientValidator extends GradientValidator {
 			}
 			
 			if( e.getTermGroups().size() <= groupIdx ) {
+				list.add(new ValidationResult(ValidationStatus.ERROR, "A radial gradient has to have a radius", function, CssDslPackage.Literals.FUNCTION__EXPRESSION, -1));
+				return;
+			}
+			
+			g = e.getTermGroups().get(groupIdx);
+			if( g.getTerms().size() > 0 ) {
+				term t1 = g.getTerms().get(0);
+				if( "radius".equals(t1.getIdentifier()) ) {
+					groupIdx += 1;
+					if( g.getTerms().size() == 2 ) {
+						JFXDialectExtension.validateSize(g.getTerms().get(1), list);
+					}
+				} else {
+					list.add(new ValidationResult(ValidationStatus.ERROR, "A radial gradient has to have a radius", function, CssDslPackage.Literals.FUNCTION__EXPRESSION, -1));
+					return;
+				}
+			} else {
+				list.add(new ValidationResult(ValidationStatus.ERROR, "A radial gradient has to have a radius", function, CssDslPackage.Literals.FUNCTION__EXPRESSION, -1));
+				return;
+			}
+			
+			if( e.getTermGroups().size() <= groupIdx ) {
 				list.add(new ValidationResult(ValidationStatus.ERROR, "A radial gradient has to have at least one color stop", function, CssDslPackage.Literals.FUNCTION__EXPRESSION, -1));
 				return;
 			}
