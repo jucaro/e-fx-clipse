@@ -610,7 +610,8 @@ public interface CssDialectExtension {
 		}
 		
 		public static ValidationResult checkPercentage(term term, String message, int min) {
-			if( term.getNumber().matches("^\\d+(\\.\\d+)?%$") || term.getNumber().matches("^-\\d+(\\.\\d+)?%$") ) {
+			System.err.println("check percentage: " + term.getNumber());
+			if( term.getNumber().matches("^\\d+(\\.\\d+)?%$") || term.getNumber().matches("^-\\d+(\\.\\d+)?%$") || term.getNumber().matches("^\\+\\d+(\\.\\d+)?%$") ) {
 				double v = Double.parseDouble(term.getNumber().substring(0, term.getNumber().length()-1));
 				if( v < min * 1.0 || v > 100.0 ) {
 					return new ValidationResult(ValidationStatus.ERROR, message, term, null, -1);
