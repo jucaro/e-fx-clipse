@@ -156,6 +156,14 @@ public class LivePreviewPart extends ViewPart {
 	}
 
 	private void refreshContent(final ContentData contentData) {
+		folder.getDisplay().syncExec(new Runnable() {
+			
+			@Override
+			public void run() {
+				folder.setVisible(true);
+			}
+		});
+		
 		Platform.runLater(new Runnable() {
 
 			@Override
@@ -264,7 +272,13 @@ public class LivePreviewPart extends ViewPart {
 		if (contentData != null && contentData.contents != null) {
 			refreshContent(contentData);
 		} else if( rootPane != null ) {
-			folder.setVisible(false);
+			folder.getDisplay().syncExec(new Runnable() {
+				
+				@Override
+				public void run() {
+					folder.setVisible(false);
+				}
+			});
 		}
 	}
 
