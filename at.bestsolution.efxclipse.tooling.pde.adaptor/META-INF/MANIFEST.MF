@@ -1,0 +1,11 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Adaptor
+Bundle-SymbolicName: at.bestsolution.efxclipse.tooling.pde.adaptor
+Bundle-Version: 1.0.0.qualifier
+Bundle-Activator: at.bestsolution.efxclipse.tooling.pde.adaptor.internal.Activator
+Require-Bundle: org.eclipse.core.runtime,
+ org.eclipse.jdt.core;bundle-version="3.7.0"
+Bundle-ActivationPolicy: lazy
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Export-Package: at.bestsolution.efxclipse.tooling.pde.adaptor
