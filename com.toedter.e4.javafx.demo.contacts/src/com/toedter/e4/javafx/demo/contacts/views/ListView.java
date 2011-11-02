@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2009, 2010 Siemens AG and others.
+ * Copyright (c) 2009, 2011 Siemens AG and others.
  * 
  * All rights reserved. This program and the accompanying materials 
  * are made available under the terms of the Eclipse Public License v1.0
@@ -14,7 +14,6 @@ package com.toedter.e4.javafx.demo.contacts.views;
 
 import com.toedter.e4.javafx.demo.contacts.model.Contact;
 import com.toedter.e4.javafx.demo.contacts.model.ContactsRepositoryFactory;
-
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
