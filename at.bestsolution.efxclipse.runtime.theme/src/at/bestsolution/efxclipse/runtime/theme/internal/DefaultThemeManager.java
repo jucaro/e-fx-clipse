@@ -133,6 +133,21 @@ public class DefaultThemeManager implements ThemeManager {
 		for (Theme t : themes) {
 			if (t.getId().equals(id)) {
 				currentThemeId = id;
+				if (scene != null) {
+					List<Theme> availableThemes = getAvailableThemes();
+					for (Theme theme : availableThemes) {
+						for (URL url : theme.getStylesheetURL()) {
+							scene.getStylesheets().remove(url.toExternalForm());
+						}
+					}
+					for (Theme theme : availableThemes) {
+						for (URL url : theme.getStylesheetURL()) {
+							if (theme.getId().equals(currentThemeId)) {
+								scene.getStylesheets().add(url.toExternalForm());
+							}
+						}
+					}
+				}
 				return;
 			}
 		}
