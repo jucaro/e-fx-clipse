@@ -24,17 +24,18 @@ public class StackRenderer extends JFXRenderer {
 	@Override
 	public void processContents(MElementContainer<MUIElement> container) {
 		TabPane parentPane = (TabPane) container.getWidget();
-		
-		for( MUIElement e : container.getChildren() ) {
+
+		for (MUIElement e : container.getChildren()) {
 			final MUIElement tmp = e;
 			MUILabel mLabel = (MUILabel) e;
-			final Tab tab = new Tab(mLabel.getLabel());
+			final Tab tab = new Tab(mLabel.getLocalizedLabel());
 			tab.setClosable(false); // TODO We need to read this from tags
 			tab.setOnSelectionChanged(new EventHandler<Event>() {
-				
+
 				@Override
 				public void handle(Event event) {
-					IPresentationEngine renderer = (IPresentationEngine) context.get(IPresentationEngine.class.getName());
+					IPresentationEngine renderer = (IPresentationEngine) context.get(IPresentationEngine.class
+							.getName());
 					Node node = (Node) renderer.createGui(tmp);
 					tab.setContent(node);
 				}
@@ -52,7 +53,7 @@ public class StackRenderer extends JFXRenderer {
 	@Override
 	public void disposeWidget(MUIElement part) {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 	@Override
@@ -62,7 +63,7 @@ public class StackRenderer extends JFXRenderer {
 	@Override
 	public void childRendered(MElementContainer<MUIElement> parentElement, MUIElement element) {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 	@Override
