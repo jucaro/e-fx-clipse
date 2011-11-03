@@ -1,5 +1,6 @@
 package at.bestsolution.efxclipse.runtime.workbench.renderers;
 
+import javafx.geometry.Orientation;
 import javafx.scene.Node;
 import javafx.scene.control.SplitPane;
 
@@ -18,8 +19,15 @@ public class SashRenderer extends JFXRenderer {
 			return null;
 		}
 
-		SplitPane split = new SplitPane();
-		return split;
+		SplitPane splitPane = new SplitPane();
+		Orientation orientation;
+		if (((MPartSashContainer) (MUIElement) element).isHorizontal()) {
+			orientation = Orientation.HORIZONTAL;
+		} else {
+			orientation = Orientation.VERTICAL;
+		}
+		splitPane.setOrientation(orientation);
+		return splitPane;
 	}
 
 	@Override
