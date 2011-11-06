@@ -19,7 +19,6 @@ public class PersonDetailPart {
 			FXMLBuilder<Node> builder = factory.loadRequestorRelative("personform.fxml");
 			parent.setCenter(builder.load());
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}
