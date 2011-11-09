@@ -26,16 +26,19 @@ import org.eclipse.e4.ui.workbench.IPresentationEngine;
 import org.eclipse.e4.ui.workbench.modeling.EModelService;
 import org.eclipse.emf.ecore.EObject;
 
+import at.bestsolution.efxclipse.runtime.services.theme.ThemeManager;
 import at.bestsolution.efxclipse.runtime.workbench.AbstractPartRenderer;
 import at.bestsolution.efxclipse.runtime.workbench.IRendererFactory;
 
 @SuppressWarnings({ "restriction" })
 public class PartRenderingEngine implements IPresentationEngine {
-	public static final String engineURI = "platform:/plugin/at.bestsolution.efxclipse.runtime.workbench/" + "at.bestsolution.efxclipse.runtime.workbench.internal.PartRenderingEngine";
+	public static final String engineURI = "platform:/plugin/at.bestsolution.efxclipse.runtime.workbench/"
+			+ "at.bestsolution.efxclipse.runtime.workbench.internal.PartRenderingEngine";
 
-	private static final String defaultFactoryUrl = "platform:/plugin/at.bestsolution.efxclipse.runtime.workbench.renderers/" + "at.bestsolution.efxclipse.runtime.workbench.renderers.WorkbenchRendererFactory";
+	private static final String defaultFactoryUrl = "platform:/plugin/at.bestsolution.efxclipse.runtime.workbench.renderers/"
+			+ "at.bestsolution.efxclipse.runtime.workbench.renderers.WorkbenchRendererFactory";
 
-	private String factoryUrl;
+	private final String factoryUrl;
 	private IRendererFactory curFactory = null;
 	private IEclipseContext appContext;
 
@@ -51,8 +54,12 @@ public class PartRenderingEngine implements IPresentationEngine {
 	EModelService modelService;
 
 	private MApplication theApp;
-	
+
 	private Group limboContainer;
+
+	@Inject
+	@Optional
+	ThemeManager themeManager;
 
 	@Inject
 	public PartRenderingEngine(@Named(E4Workbench.RENDERER_FACTORY_URI) @Optional String factoryUrl) {
@@ -66,9 +73,10 @@ public class PartRenderingEngine implements IPresentationEngine {
 	void initialize(IEclipseContext context) {
 		this.appContext = context;
 
-		// initialize the correct key-binding display formatter
-		// KeyFormatterFactory.setDefault(SWTKeySupport
-		// .getKeyFormatterForPlatform());
+		String cssTheme = (String) appContext.get(E4Application.THEME_ID);
+		if (themeManager != null && cssTheme != null) {
+			themeManager.setCurrentThemeId(cssTheme);
+		}
 
 		// Add the renderer to the context
 		context.set(IPresentationEngine.class.getName(), this);
@@ -100,24 +108,24 @@ public class PartRenderingEngine implements IPresentationEngine {
 
 	@PreDestroy
 	void contextDisposed() {
-		if (eventBroker == null)
+		if (eventBroker == null) {
 			return;
+		}
 	}
 
 	@SuppressWarnings("unchecked")
 	public Object createGui(MUIElement element, Object parentWidget, IEclipseContext parentContext) {
-		if (!element.isToBeRendered())
+		if (!element.isToBeRendered()) {
 			return null;
-		
+		}
+
 		if (element instanceof MContext) {
 			MContext ctxt = (MContext) element;
 			// Assert.isTrue(ctxt.getContext() == null,
 			// "Before rendering Context should be null");
 			if (ctxt.getContext() == null) {
-				IEclipseContext lclContext = parentContext
-						.createChild(getContextName(element));
-				populateModelInterfaces(ctxt, lclContext, element.getClass()
-						.getInterfaces());
+				IEclipseContext lclContext = parentContext.createChild(getContextName(element));
+				populateModelInterfaces(ctxt, lclContext, element.getClass().getInterfaces());
 				ctxt.setContext(lclContext);
 
 				// System.out.println("New Context: " + lclContext.toString()
@@ -137,9 +145,9 @@ public class PartRenderingEngine implements IPresentationEngine {
 				E4Workbench.processHierarchy(element);
 			}
 		}
-		
+
 		Object newWidget = createWidget(element, parentWidget);
-		
+
 		if (newWidget != null) {
 			AbstractPartRenderer renderer = getRendererFor(element);
 
@@ -157,11 +165,11 @@ public class PartRenderingEngine implements IPresentationEngine {
 
 			// Now that we have a widget let the parent (if any) know
 			if (element.getParent() instanceof MUIElement) {
-				MElementContainer<MUIElement> parentElement = element
-						.getParent();
+				MElementContainer<MUIElement> parentElement = element.getParent();
 				AbstractPartRenderer parentRenderer = getRendererFor(parentElement);
-				if (parentRenderer != null)
+				if (parentRenderer != null) {
 					parentRenderer.childRendered(parentElement, element);
+				}
 			}
 		} else {
 			// failed to create the widget, dispose its context if necessary
@@ -174,16 +182,15 @@ public class PartRenderingEngine implements IPresentationEngine {
 				}
 			}
 		}
-		
+
 		return newWidget;
 	}
-	
-	private static void populateModelInterfaces(MContext contextModel,
-			IEclipseContext context, Class<?>[] interfaces) {
+
+	private static void populateModelInterfaces(MContext contextModel, IEclipseContext context, Class<?>[] interfaces) {
 		for (Class<?> intf : interfaces) {
-//			Activator.trace(Policy.DEBUG_CONTEXTS,
-//					"Adding " + intf.getName() + " for " //$NON-NLS-1$ //$NON-NLS-2$
-//							+ contextModel.getClass().getName(), null);
+			// Activator.trace(Policy.DEBUG_CONTEXTS,
+			//					"Adding " + intf.getName() + " for " //$NON-NLS-1$ //$NON-NLS-2$
+			// + contextModel.getClass().getName(), null);
 			context.set(intf.getName(), contextModel);
 
 			populateModelInterfaces(contextModel, context, intf.getInterfaces());
@@ -205,8 +212,9 @@ public class PartRenderingEngine implements IPresentationEngine {
 		// Obtain the necessary parent widget
 		Object parent = null;
 		MUIElement parentME = element.getParent();
-		if (parentME == null)
+		if (parentME == null) {
 			parentME = (MUIElement) ((EObject) element).eContainer();
+		}
 		if (parentME != null) {
 			AbstractPartRenderer renderer = getRendererFor(parentME);
 			if (renderer != null) {
@@ -233,7 +241,7 @@ public class PartRenderingEngine implements IPresentationEngine {
 	}
 
 	private Object getLimboContainer() {
-		if( limboContainer != null ) {
+		if (limboContainer != null) {
 			limboContainer = new Group();
 		}
 		return limboContainer;
@@ -252,9 +260,9 @@ public class PartRenderingEngine implements IPresentationEngine {
 	protected Object createWidget(MUIElement element, Object parent) {
 		AbstractPartRenderer renderer = getRenderer(element, parent);
 		if (renderer != null) {
-			// Remember which renderer is responsible for this widget 
+			// Remember which renderer is responsible for this widget
 			element.setRenderer(renderer);
-			Object newWidget = renderer.createWidget(element,parent); 
+			Object newWidget = renderer.createWidget(element, parent);
 			if (newWidget != null) {
 				renderer.bindWidget(element, newWidget);
 				return newWidget;
