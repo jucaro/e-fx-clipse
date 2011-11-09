@@ -28,12 +28,15 @@ import at.bestsolution.efxclipse.runtime.di.InjectingFXMLLoader;
 import at.bestsolution.efxclipse.runtime.panels.FillLayoutPane;
 import at.bestsolution.efxclipse.runtime.services.theme.Theme;
 import at.bestsolution.efxclipse.runtime.services.theme.ThemeManager;
+import at.bestsolution.efxclipse.runtime.services.theme.ThemeManager.Registration;
 
 @SuppressWarnings("restriction")
 public class WorkbenchWindowRenderer extends JFXRenderer {
 	@Inject
 	@Optional
 	ThemeManager themeManager;
+	
+	private Registration sceneRegistration;
 
 	@Override
 	public Object createWidget(MUIElement element, Object parent) {
@@ -63,7 +66,7 @@ public class WorkbenchWindowRenderer extends JFXRenderer {
 
 					scene.getStylesheets().addAll(sUrls);
 				}
-				themeManager.setScene(scene);
+				sceneRegistration = themeManager.registerScene(scene);
 			}
 
 			stage.setScene(scene);

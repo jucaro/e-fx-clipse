@@ -11,7 +11,9 @@ public interface ThemeManager {
 
 	public void setCurrentThemeId(String id) throws IllegalArgumentException;
 
-	public void setScene(Scene scene);
-
-	public Scene getScene();
+	public Registration registerScene(Scene scene);
+	
+	public interface Registration {
+		public void dispose();
+	}
 }

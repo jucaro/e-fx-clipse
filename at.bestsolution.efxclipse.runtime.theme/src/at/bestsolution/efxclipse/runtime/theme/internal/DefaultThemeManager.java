@@ -80,7 +80,7 @@ public class DefaultThemeManager implements ThemeManager {
 
 	private final List<Theme> themes = new ArrayList<Theme>();
 	private String currentThemeId;
-	private Scene scene;
+	private List<Scene> managedScenes = new ArrayList<Scene>();
 
 	public DefaultThemeManager() {
 		IExtensionRegistry registry = RegistryFactory.getRegistry();
@@ -133,7 +133,8 @@ public class DefaultThemeManager implements ThemeManager {
 		for (Theme t : themes) {
 			if (t.getId().equals(id)) {
 				currentThemeId = id;
-				if (scene != null) {
+				
+				for( Scene scene : managedScenes ) {
 					List<Theme> availableThemes = getAvailableThemes();
 					for (Theme theme : availableThemes) {
 						for (URL url : theme.getStylesheetURL()) {
@@ -157,14 +158,16 @@ public class DefaultThemeManager implements ThemeManager {
 	private String getCurrentThemeId() {
 		return currentThemeId;
 	}
-
+	
 	@Override
-	public void setScene(Scene scene) {
-		this.scene = scene;
-	}
-
-	@Override
-	public Scene getScene() {
-		return scene;
+	public Registration registerScene(final Scene scene) {
+		managedScenes.add(scene);
+		return new Registration() {
+			
+			@Override
+			public void dispose() {
+				managedScenes.remove(scene);
+			}
+		};
 	}
 }
