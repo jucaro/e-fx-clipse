@@ -1,6 +1,6 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
-Bundle-Name: Di
+Bundle-Name: %Bundle-Name
 Bundle-SymbolicName: at.bestsolution.efxclipse.runtime.di
 Bundle-Version: 0.0.8.qualifier
 Require-Bundle: org.eclipse.core.runtime,
@@ -40,3 +40,4 @@ Import-Package: javafx.animation;version="2.0.0",
 Bundle-ActivationPolicy: lazy
 Export-Package: at.bestsolution.efxclipse.runtime.di
 Service-Component: OSGI-INF/fxmlsupplier.xml
+Bundle-Vendor: %Bundle-Vendor

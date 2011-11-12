@@ -1,6 +1,6 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
-Bundle-Name: Javafx
+Bundle-Name: %Bundle-Name
 Bundle-SymbolicName: at.bestsolution.efxclipse.runtime.javafx
 Bundle-Version: 2.0.0.qualifier
 Require-Bundle: org.eclipse.core.runtime
@@ -35,4 +35,4 @@ Export-Package: javafx.animation;version="2.0.0",
  javafx.stage;version="2.0.0",
  javafx.util;version="2.0.0"
 Bundle-ClassPath: .
-Bundle-Vendor: BestSolution.at
+Bundle-Vendor: %Bundle-Vendor

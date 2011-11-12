@@ -1,10 +1,10 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
-Bundle-Name: Panels
+Bundle-Name: %Bundle-Name
 Bundle-SymbolicName: at.bestsolution.efxclipse.runtime.panels
 Bundle-Version: 0.0.8.qualifier
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
-Bundle-Vendor: BestSolution.at
+Bundle-Vendor: %Bundle-Vendor
 Export-Package: at.bestsolution.efxclipse.runtime.panels
 Import-Package: javafx.animation;version="2.0.0",
  javafx.application;version="2.0.0",

@@ -1,8 +1,9 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
-Bundle-Name: Services
+Bundle-Name: %Bundle-Name
 Bundle-SymbolicName: at.bestsolution.efxclipse.runtime.services
 Bundle-Version: 0.0.8.qualifier
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Export-Package: at.bestsolution.efxclipse.runtime.services.theme,
  at.bestsolution.efxclipse.runtime.services.translation
+Bundle-Vendor: %Bundle-Vendor

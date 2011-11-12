@@ -1,8 +1,8 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
-Bundle-Name: Osgi
+Bundle-Name: %Bundle-Name
 Bundle-SymbolicName: at.bestsolution.efxclipse.runtime.osgi
 Bundle-Version: 0.0.8.qualifier
 Fragment-Host: org.eclipse.osgi;bundle-version="3.7.0"
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
-Bundle-Vendor: BestSolution.at
+Bundle-Vendor: %Bundle-Vendor
