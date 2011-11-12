@@ -12,7 +12,7 @@
             extensions="fxgraph"
             icon="icons/page_white_coldfusion.png"
             id="at.bestsolution.efxclipse.tooling.fxgraph.FXGraph"
-            name="FXGraph Editor">
+            name="%editor.name">
         </editor>
     </extension>
     <extension
@@ -54,21 +54,21 @@
         	category="at.bestsolution.efxclipse.tooling.jdt.ui.javafx"
             class="at.bestsolution.efxclipse.tooling.fxgraph.ui.FXGraphExecutableExtensionFactory:org.eclipse.xtext.ui.editor.preferences.LanguageRootPreferencePage"
             id="at.bestsolution.efxclipse.tooling.fxgraph.FXGraph"
-            name="FXGraph">
+            name="%page.name">
             <keywordReference id="at.bestsolution.efxclipse.tooling.fxgraph.ui.keyword_FXGraph"/>
         </page>
         <page
             category="at.bestsolution.efxclipse.tooling.fxgraph.FXGraph"
             class="at.bestsolution.efxclipse.tooling.fxgraph.ui.FXGraphExecutableExtensionFactory:org.eclipse.xtext.ui.editor.syntaxcoloring.SyntaxColoringPreferencePage"
             id="at.bestsolution.efxclipse.tooling.fxgraph.FXGraph.coloring"
-            name="Syntax Coloring">
+            name="%page.name.0">
             <keywordReference id="at.bestsolution.efxclipse.tooling.fxgraph.ui.keyword_FXGraph"/>
         </page>
         <page
             category="at.bestsolution.efxclipse.tooling.fxgraph.FXGraph"
             class="at.bestsolution.efxclipse.tooling.fxgraph.ui.FXGraphExecutableExtensionFactory:org.eclipse.xtext.ui.editor.templates.XtextTemplatePreferencePage"
             id="at.bestsolution.efxclipse.tooling.fxgraph.FXGraph.templates"
-            name="Templates">
+            name="%page.name.1">
             <keywordReference id="at.bestsolution.efxclipse.tooling.fxgraph.ui.keyword_FXGraph"/>
         </page>
     </extension>
@@ -77,7 +77,7 @@
         <page
             class="at.bestsolution.efxclipse.tooling.fxgraph.ui.FXGraphExecutableExtensionFactory:org.eclipse.xtext.ui.editor.preferences.LanguageRootPreferencePage"
             id="at.bestsolution.efxclipse.tooling.fxgraph.FXGraph"
-            name="FXGraph">
+            name="%page.name.2">
             <keywordReference id="at.bestsolution.efxclipse.tooling.fxgraph.ui.keyword_FXGraph"/>
             <enabledWhen>
 	            <adapt type="org.eclipse.core.resources.IProject"/>
@@ -89,14 +89,14 @@
         point="org.eclipse.ui.keywords">
         <keyword
             id="at.bestsolution.efxclipse.tooling.fxgraph.ui.keyword_FXGraph"
-            label="FXGraph"/>
+            label="%keyword.label"/>
     </extension>
     <extension
          point="org.eclipse.ui.commands">
       <command
-            description="Trigger expensive validation"
+            description="%command.description"
             id="at.bestsolution.efxclipse.tooling.fxgraph.FXGraph.validate"
-            name="Validate">
+            name="%command.name">
       </command>
     </extension>
     <extension point="org.eclipse.ui.menus">
@@ -105,7 +105,7 @@
              <command
                  commandId="at.bestsolution.efxclipse.tooling.fxgraph.FXGraph.validate"
                  style="push"
-                 tooltip="Trigger expensive validation">
+                 tooltip="%command.tooltip">
             <visibleWhen checkEnabled="false">
                 <reference
                     definitionId="at.bestsolution.efxclipse.tooling.fxgraph.FXGraph.Editor.opened">
@@ -166,7 +166,7 @@
             category="at.bestsolution.efxclipse.tooling.fxgraph.FXGraph"
             class="at.bestsolution.efxclipse.tooling.fxgraph.ui.FXGraphExecutableExtensionFactory:org.eclipse.xtext.builder.preferences.BuilderPreferencePage"
             id="at.bestsolution.efxclipse.tooling.fxgraph.FXGraph.compiler.preferencePage"
-            name="Compiler">
+            name="%page.name.3">
             <keywordReference id="at.bestsolution.efxclipse.tooling.fxgraph.ui.keyword_FXGraph"/>
         </page>
     </extension>
@@ -176,7 +176,7 @@
             category="at.bestsolution.efxclipse.tooling.fxgraph.FXGraph"
             class="at.bestsolution.efxclipse.tooling.fxgraph.ui.FXGraphExecutableExtensionFactory:org.eclipse.xtext.builder.preferences.BuilderPreferencePage"
             id="at.bestsolution.efxclipse.tooling.fxgraph.FXGraph.compiler.propertyPage"
-            name="Compiler">
+            name="%page.name.4">
             <keywordReference id="at.bestsolution.efxclipse.tooling.fxgraph.ui.keyword_FXGraph"/>
             <enabledWhen>
 	            <adapt type="org.eclipse.core.resources.IProject"/>
@@ -201,9 +201,9 @@
 	<extension
 		point="org.eclipse.ui.commands">
 		<command
-			description="Open the quick outline."
+			description="%command.description.0"
 			id="org.eclipse.xtext.ui.editor.outline.QuickOutline"
-			name="Quick Outline">
+			name="%command.name.0">
 		</command>
 	</extension>
 	<extension point="org.eclipse.ui.menus">
@@ -211,7 +211,7 @@
 			locationURI="popup:#TextEditorContext?after=group.open">
 			<command commandId="org.eclipse.xtext.ui.editor.outline.QuickOutline"
 				style="push"
-				tooltip="Open Quick Outline">
+				tooltip="%command.tooltip.0">
 				<visibleWhen checkEnabled="false">
 					<reference definitionId="at.bestsolution.efxclipse.tooling.fxgraph.FXGraph.Editor.opened"/>
 				</visibleWhen>
@@ -232,7 +232,7 @@
             class="at.bestsolution.efxclipse.tooling.fxgraph.ui.wizards.NewFXGraphWizard"
             icon="icons/page_white_coldfusion.png"
             id="at.bestsolution.efxclipse.tooling.fxgraph.ui.new"
-            name="New FXGraph">
+            name="%wizard.name">
       </wizard>
    </extension>
 

@@ -1,7 +1,7 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
-Bundle-Name: at.bestsolution.efxclipse.tooling.css.tests
-Bundle-Vendor: BestSolution.at
+Bundle-Name: %Bundle-Name
+Bundle-Vendor: %Bundle-Vendor
 Bundle-Version: 0.0.8.qualifier
 Bundle-SymbolicName: at.bestsolution.efxclipse.tooling.css.tests; singleton:=true
 Bundle-ActivationPolicy: lazy

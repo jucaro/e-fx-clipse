@@ -1,10 +1,10 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
-Bundle-Name: Web
+Bundle-Name: %Bundle-Name
 Bundle-SymbolicName: at.bestsolution.efxclipse.tooling.css.web
 Bundle-Version: 0.0.8.qualifier
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Bundle-ActivationPolicy: lazy
 Require-Bundle: at.bestsolution.efxclipse.tooling.css.ui;bundle-version="0.0.8"
 Service-Component: OSGI-INF/component.xml
-Bundle-Vendor: BestSolution.at
+Bundle-Vendor: %Bundle-Vendor

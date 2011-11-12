@@ -5,7 +5,7 @@
    <extension
          point="org.eclipse.ui.editors">
       <editor
-            name="FXML Editor"
+            name="%editor.name"
             extensions="fxml"
             icon="icons/page_white_code_red.png"
             contributorClass="org.eclipse.ui.texteditor.BasicTextEditorActionContributor"

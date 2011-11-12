@@ -6,7 +6,7 @@
       <classpathContainerPage
             class="at.bestsolution.efxclipse.tooling.jdt.ui.internal.buildpath.JavaFXContainerWizardPage"
             id="at.bestsolution.efxclipse.tooling.jdt.core.JAVAFX_CONTAINER"
-            name="JavaFX SDK">
+            name="%classpathContainerPage.name">
       </classpathContainerPage>
    </extension>
    <extension
@@ -14,7 +14,7 @@
       <page
             class="at.bestsolution.efxclipse.tooling.jdt.ui.internal.buildpath.JavaFXPreferencePage"
             id="at.bestsolution.efxclipse.tooling.jdt.ui.javafx"
-            name="JavaFX">
+            name="%page.name">
       </page>
    </extension>
    <extension
@@ -25,13 +25,13 @@
             finalPerspective="org.eclipse.jdt.ui.JavaPerspective"
             icon="icons/application_lightning.png"
             id="at.bestsolution.efxclipse.tooling.jdt.ui.javafx"
-            name="JavaFX Project"
+            name="%wizard.name"
             preferredPerspectives="org.eclipse.jdt.ui.JavaPerspective,org.eclipse.jdt.ui.JavaBrowsingPerspective,org.eclipse.jdt.ui.JavaHierarchyPerspective"
             project="true">
       </wizard>
       <category
             id="at.bestsolution.efxclipse.tooling"
-            name="JavaFX">
+            name="%category.name">
       </category>
    </extension>
    <extension
@@ -42,7 +42,7 @@
             extensions="fxbuild"
             icon="icons/page_white_compressed.png"
             id="at.bestsolution.efxclipse.tooling.jdt.ui.fxbuild"
-            name="FX Build Configuration">
+            name="%editor.name">
       </editor>
    </extension>
    <extension
@@ -87,7 +87,7 @@
          <command
                commandId="at.bestsolution.efxclipse.tooling.jdt.ui.export"
                icon="icons/application_lightning.png"
-               label="Export FX Application"
+               label="%command.label"
                style="push">
             <visibleWhen
                   checkEnabled="false">
@@ -116,14 +116,14 @@
          point="org.eclipse.ui.commands">
       <command
             id="at.bestsolution.efxclipse.tooling.jdt.ui.export"
-            name="FX Build Command">
+            name="%command.name">
       </command>
    </extension>
    <extension
          point="org.eclipse.ui.views">
       <category
             id="at.bestsolution.efxclipse.tooling"
-            name="JavaFX">
+            name="%category.name.0">
       </category>
    </extension>
 </plugin>

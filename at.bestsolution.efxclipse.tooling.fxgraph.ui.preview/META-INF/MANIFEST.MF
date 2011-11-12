@@ -1,6 +1,6 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
-Bundle-Name: Preview
+Bundle-Name: %Bundle-Name
 Bundle-SymbolicName: at.bestsolution.efxclipse.tooling.fxgraph.ui.preview;singleton:=true
 Bundle-Version: 0.0.8.qualifier
 Bundle-Activator: at.bestsolution.efxclipse.tooling.fxgraph.ui.preview.bundle.Activator

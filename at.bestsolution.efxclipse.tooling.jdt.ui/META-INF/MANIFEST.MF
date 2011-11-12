@@ -1,6 +1,6 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
-Bundle-Name: Ui
+Bundle-Name: %Bundle-Name
 Bundle-SymbolicName: at.bestsolution.efxclipse.tooling.jdt.ui;singleton:=true
 Bundle-Version: 0.0.8.qualifier
 Bundle-Activator: at.bestsolution.efxclipse.tooling.jdt.ui.internal.JavaFXUIPlugin
@@ -31,5 +31,5 @@ Require-Bundle: org.eclipse.ui,
  org.eclipse.core.databinding.property;bundle-version="1.4.0"
 Bundle-ActivationPolicy: lazy
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
-Bundle-Vendor: BestSolution.at
+Bundle-Vendor: %Bundle-Vendor
 Bundle-ClassPath: .

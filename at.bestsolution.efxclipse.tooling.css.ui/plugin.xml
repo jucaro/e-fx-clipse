@@ -12,7 +12,7 @@
               extensions="css"
               icon="icons/page_white_swoosh.png"
               id="at.bestsolution.efxclipse.tooling.css.CssDsl"
-              name="CssDsl Editor">
+              name="%editor.name">
         </editor>
     </extension>
     <extension
@@ -54,21 +54,21 @@
               category="at.bestsolution.efxclipse.tooling.jdt.ui.javafx"
               class="at.bestsolution.efxclipse.tooling.css.ui.CssDslExecutableExtensionFactory:org.eclipse.xtext.ui.editor.preferences.LanguageRootPreferencePage"
               id="at.bestsolution.efxclipse.tooling.css.CssDsl"
-              name="CssDsl">
+              name="%page.name">
             <keywordReference id="at.bestsolution.efxclipse.tooling.css.ui.keyword_CssDsl"/>
         </page>
         <page
             category="at.bestsolution.efxclipse.tooling.css.CssDsl"
             class="at.bestsolution.efxclipse.tooling.css.ui.CssDslExecutableExtensionFactory:org.eclipse.xtext.ui.editor.syntaxcoloring.SyntaxColoringPreferencePage"
             id="at.bestsolution.efxclipse.tooling.css.CssDsl.coloring"
-            name="Syntax Coloring">
+            name="%page.name.0">
             <keywordReference id="at.bestsolution.efxclipse.tooling.css.ui.keyword_CssDsl"/>
         </page>
         <page
             category="at.bestsolution.efxclipse.tooling.css.CssDsl"
             class="at.bestsolution.efxclipse.tooling.css.ui.CssDslExecutableExtensionFactory:org.eclipse.xtext.ui.editor.templates.XtextTemplatePreferencePage"
             id="at.bestsolution.efxclipse.tooling.css.CssDsl.templates"
-            name="Templates">
+            name="%page.name.1">
             <keywordReference id="at.bestsolution.efxclipse.tooling.css.ui.keyword_CssDsl"/>
         </page>
     </extension>
@@ -76,14 +76,14 @@
         point="org.eclipse.ui.keywords">
         <keyword
             id="at.bestsolution.efxclipse.tooling.css.ui.keyword_CssDsl"
-            label="CssDsl"/>
+            label="%keyword.label"/>
     </extension>
     <extension
          point="org.eclipse.ui.commands">
       <command
-            description="Trigger expensive validation"
+            description="%command.description"
             id="at.bestsolution.efxclipse.tooling.css.CssDsl.validate"
-            name="Validate">
+            name="%command.name">
       </command>
     </extension>
     <extension point="org.eclipse.ui.menus">
@@ -92,7 +92,7 @@
              <command
                  commandId="at.bestsolution.efxclipse.tooling.css.CssDsl.validate"
                  style="push"
-                 tooltip="Trigger expensive validation">
+                 tooltip="%command.tooltip">
             <visibleWhen checkEnabled="false">
                 <reference
                     definitionId="at.bestsolution.efxclipse.tooling.css.CssDsl.Editor.opened">
@@ -164,9 +164,9 @@
 	<extension
 		point="org.eclipse.ui.commands">
 		<command
-			description="Open the quick outline."
+			description="%command.description.0"
 			id="org.eclipse.xtext.ui.editor.outline.QuickOutline"
-			name="Quick Outline">
+			name="%command.name.0">
 		</command>
 	</extension>
 	<extension point="org.eclipse.ui.menus">
@@ -174,7 +174,7 @@
 			locationURI="popup:#TextEditorContext?after=group.open">
 			<command commandId="org.eclipse.xtext.ui.editor.outline.QuickOutline"
 				style="push"
-				tooltip="Open Quick Outline">
+				tooltip="%command.tooltip.0">
 				<visibleWhen checkEnabled="false">
 					<reference definitionId="at.bestsolution.efxclipse.tooling.css.CssDsl.Editor.opened"/>
 				</visibleWhen>
@@ -224,7 +224,7 @@
   <extension point="org.eclipse.compare.contentMergeViewers">
     <viewer id="at.bestsolution.efxclipse.tooling.css.CssDsl.compare.contentMergeViewers"
             class="at.bestsolution.efxclipse.tooling.css.ui.CssDslExecutableExtensionFactory:org.eclipse.xtext.ui.compare.InjectableViewerCreator"
-            extensions="css" label="CssDsl Compare">
+            extensions="css" label="%viewer.label">
      </viewer>
   </extension>
   <extension point="org.eclipse.ui.editors.documentProviders">
