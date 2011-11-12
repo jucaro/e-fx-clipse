@@ -37,5 +37,7 @@ Export-Package: at.bestsolution.efxclipse.tooling.fxgraph,
  at.bestsolution.efxclipse.tooling.fxgraph.parser.antlr,
  at.bestsolution.efxclipse.tooling.fxgraph.parser.antlr.internal,
  at.bestsolution.efxclipse.tooling.fxgraph.services,
- at.bestsolution.efxclipse.tooling.fxgraph.validation
+ at.bestsolution.efxclipse.tooling.fxgraph.validation,
+ at.bestsolution.efxclipse.tooling.fxgraph.formatting,
+ at.bestsolution.efxclipse.tooling.fxgraph.jvmmodel
 

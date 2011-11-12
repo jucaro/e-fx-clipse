@@ -10,7 +10,7 @@ import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EObject;
 
-import org.eclipse.xtext.common.types.JvmParameterizedTypeReference;
+import org.eclipse.xtext.common.types.JvmTypeReference;
 
 /**
  * <!-- begin-user-doc -->
@@ -72,12 +72,12 @@ public interface ComponentDefinition extends EObject
    * </p>
    * <!-- end-user-doc -->
    * @return the value of the '<em>Controller</em>' containment reference.
-   * @see #setController(JvmParameterizedTypeReference)
+   * @see #setController(JvmTypeReference)
    * @see at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.FXGraphPackage#getComponentDefinition_Controller()
    * @model containment="true"
    * @generated
    */
-  JvmParameterizedTypeReference getController();
+  JvmTypeReference getController();
 
   /**
    * Sets the value of the '{@link at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.ComponentDefinition#getController <em>Controller</em>}' containment reference.
@@ -87,7 +87,7 @@ public interface ComponentDefinition extends EObject
    * @see #getController()
    * @generated
    */
-  void setController(JvmParameterizedTypeReference value);
+  void setController(JvmTypeReference value);
 
   /**
    * Returns the value of the '<em><b>Preview Css Files</b></em>' attribute list.

@@ -8,7 +8,7 @@ package at.bestsolution.efxclipse.tooling.fxgraph.fXGraph;
 
 import org.eclipse.emf.ecore.EObject;
 
-import org.eclipse.xtext.common.types.JvmParameterizedTypeReference;
+import org.eclipse.xtext.common.types.JvmTypeReference;
 
 /**
  * <!-- begin-user-doc -->
@@ -39,12 +39,12 @@ public interface StaticValueProperty extends EObject
    * </p>
    * <!-- end-user-doc -->
    * @return the value of the '<em>Type</em>' containment reference.
-   * @see #setType(JvmParameterizedTypeReference)
+   * @see #setType(JvmTypeReference)
    * @see at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.FXGraphPackage#getStaticValueProperty_Type()
    * @model containment="true"
    * @generated
    */
-  JvmParameterizedTypeReference getType();
+  JvmTypeReference getType();
 
   /**
    * Sets the value of the '{@link at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.StaticValueProperty#getType <em>Type</em>}' containment reference.
@@ -54,7 +54,7 @@ public interface StaticValueProperty extends EObject
    * @see #getType()
    * @generated
    */
-  void setType(JvmParameterizedTypeReference value);
+  void setType(JvmTypeReference value);
 
   /**
    * Returns the value of the '<em><b>Name</b></em>' attribute.

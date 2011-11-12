@@ -6,6 +6,7 @@ import org.eclipse.xtext.common.types.JvmDeclaredType
 import org.eclipse.emf.ecore.EObject
 import java.util.List
 import com.google.inject.Inject
+import org.eclipse.xtext.util.IAcceptor
 
 /**
  * <p>Infers a JVM model from the source model.</p> 
@@ -21,7 +22,7 @@ class FXGraphJvmModelInferrer implements IJvmModelInferrer {
 	@Inject 
 	IJvmModelAssociator jvmModelAssociator
 
-   	override List<? extends JvmDeclaredType> inferJvmModel(EObject sourceObject) {
-   		return newArrayList();
+   	def dispatch infer(EObject e, IAcceptor<JvmDeclaredType> acceptor, boolean prelinkingPhase) {
+   		
    	}
 }

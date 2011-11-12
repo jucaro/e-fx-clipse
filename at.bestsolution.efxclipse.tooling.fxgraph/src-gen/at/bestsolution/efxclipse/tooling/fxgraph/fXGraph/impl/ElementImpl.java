@@ -27,7 +27,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
-import org.eclipse.xtext.common.types.JvmParameterizedTypeReference;
+import org.eclipse.xtext.common.types.JvmTypeReference;
 
 /**
  * <!-- begin-user-doc -->
@@ -57,7 +57,7 @@ public class ElementImpl extends SingleValuePropertyImpl implements Element
    * @generated
    * @ordered
    */
-  protected JvmParameterizedTypeReference type;
+  protected JvmTypeReference type;
 
   /**
    * The cached value of the '{@link #getValue() <em>Value</em>}' containment reference.
@@ -155,7 +155,7 @@ public class ElementImpl extends SingleValuePropertyImpl implements Element
    * <!-- end-user-doc -->
    * @generated
    */
-  public JvmParameterizedTypeReference getType()
+  public JvmTypeReference getType()
   {
     return type;
   }
@@ -165,9 +165,9 @@ public class ElementImpl extends SingleValuePropertyImpl implements Element
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetType(JvmParameterizedTypeReference newType, NotificationChain msgs)
+  public NotificationChain basicSetType(JvmTypeReference newType, NotificationChain msgs)
   {
-    JvmParameterizedTypeReference oldType = type;
+    JvmTypeReference oldType = type;
     type = newType;
     if (eNotificationRequired())
     {
@@ -182,7 +182,7 @@ public class ElementImpl extends SingleValuePropertyImpl implements Element
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setType(JvmParameterizedTypeReference newType)
+  public void setType(JvmTypeReference newType)
   {
     if (newType != type)
     {
@@ -380,7 +380,7 @@ public class ElementImpl extends SingleValuePropertyImpl implements Element
     switch (featureID)
     {
       case FXGraphPackage.ELEMENT__TYPE:
-        setType((JvmParameterizedTypeReference)newValue);
+        setType((JvmTypeReference)newValue);
         return;
       case FXGraphPackage.ELEMENT__VALUE:
         setValue((SimpleValueProperty)newValue);
@@ -414,7 +414,7 @@ public class ElementImpl extends SingleValuePropertyImpl implements Element
     switch (featureID)
     {
       case FXGraphPackage.ELEMENT__TYPE:
-        setType((JvmParameterizedTypeReference)null);
+        setType((JvmTypeReference)null);
         return;
       case FXGraphPackage.ELEMENT__VALUE:
         setValue((SimpleValueProperty)null);

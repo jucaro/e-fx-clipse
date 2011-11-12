@@ -29,7 +29,7 @@ import org.eclipse.emf.ecore.util.EDataTypeEList;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
-import org.eclipse.xtext.common.types.JvmParameterizedTypeReference;
+import org.eclipse.xtext.common.types.JvmTypeReference;
 
 /**
  * <!-- begin-user-doc -->
@@ -81,7 +81,7 @@ public class ComponentDefinitionImpl extends MinimalEObjectImpl.Container implem
    * @generated
    * @ordered
    */
-  protected JvmParameterizedTypeReference controller;
+  protected JvmTypeReference controller;
 
   /**
    * The cached value of the '{@link #getPreviewCssFiles() <em>Preview Css Files</em>}' attribute list.
@@ -202,7 +202,7 @@ public class ComponentDefinitionImpl extends MinimalEObjectImpl.Container implem
    * <!-- end-user-doc -->
    * @generated
    */
-  public JvmParameterizedTypeReference getController()
+  public JvmTypeReference getController()
   {
     return controller;
   }
@@ -212,9 +212,9 @@ public class ComponentDefinitionImpl extends MinimalEObjectImpl.Container implem
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetController(JvmParameterizedTypeReference newController, NotificationChain msgs)
+  public NotificationChain basicSetController(JvmTypeReference newController, NotificationChain msgs)
   {
-    JvmParameterizedTypeReference oldController = controller;
+    JvmTypeReference oldController = controller;
     controller = newController;
     if (eNotificationRequired())
     {
@@ -229,7 +229,7 @@ public class ComponentDefinitionImpl extends MinimalEObjectImpl.Container implem
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setController(JvmParameterizedTypeReference newController)
+  public void setController(JvmTypeReference newController)
   {
     if (newController != controller)
     {
@@ -439,7 +439,7 @@ public class ComponentDefinitionImpl extends MinimalEObjectImpl.Container implem
         setName((String)newValue);
         return;
       case FXGraphPackage.COMPONENT_DEFINITION__CONTROLLER:
-        setController((JvmParameterizedTypeReference)newValue);
+        setController((JvmTypeReference)newValue);
         return;
       case FXGraphPackage.COMPONENT_DEFINITION__PREVIEW_CSS_FILES:
         getPreviewCssFiles().clear();
@@ -481,7 +481,7 @@ public class ComponentDefinitionImpl extends MinimalEObjectImpl.Container implem
         setName(NAME_EDEFAULT);
         return;
       case FXGraphPackage.COMPONENT_DEFINITION__CONTROLLER:
-        setController((JvmParameterizedTypeReference)null);
+        setController((JvmTypeReference)null);
         return;
       case FXGraphPackage.COMPONENT_DEFINITION__PREVIEW_CSS_FILES:
         getPreviewCssFiles().clear();

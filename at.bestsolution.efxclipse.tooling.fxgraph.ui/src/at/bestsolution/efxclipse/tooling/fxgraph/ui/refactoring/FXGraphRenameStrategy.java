@@ -19,22 +19,6 @@ import com.google.inject.Inject;
  */
 public class FXGraphRenameStrategy extends AbstractJvmModelRenameStrategy {
 
-	public static class Provider extends DefaultRenameStrategy.Provider {
-
-		@Inject
-		private IJvmModelAssociations jvmModelAssociations;
-
-		@Override
-		public IRenameStrategy get(EObject targetElement, IRenameElementContext renameElementContext) {
-			return new FXGraphRenameStrategy(targetElement, getLocationInFileProvider(), jvmModelAssociations);
-		}
-	}
-	
-	protected FXGraphRenameStrategy(EObject targetElement, ILocationInFileProvider locationInFileProvider,
-			IJvmModelAssociations jvmModelAssociations) {
-		super(targetElement, locationInFileProvider, jvmModelAssociations);
-	}
-
 	@Override
 	protected void setInferredJvmElementName(String name, EObject renamedSourceElement) {
 		/*

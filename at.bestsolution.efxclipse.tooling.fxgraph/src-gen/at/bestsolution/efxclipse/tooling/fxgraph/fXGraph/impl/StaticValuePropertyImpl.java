@@ -19,7 +19,7 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
-import org.eclipse.xtext.common.types.JvmParameterizedTypeReference;
+import org.eclipse.xtext.common.types.JvmTypeReference;
 
 /**
  * <!-- begin-user-doc -->
@@ -46,7 +46,7 @@ public class StaticValuePropertyImpl extends MinimalEObjectImpl.Container implem
    * @generated
    * @ordered
    */
-  protected JvmParameterizedTypeReference type;
+  protected JvmTypeReference type;
 
   /**
    * The default value of the '{@link #getName() <em>Name</em>}' attribute.
@@ -104,7 +104,7 @@ public class StaticValuePropertyImpl extends MinimalEObjectImpl.Container implem
    * <!-- end-user-doc -->
    * @generated
    */
-  public JvmParameterizedTypeReference getType()
+  public JvmTypeReference getType()
   {
     return type;
   }
@@ -114,9 +114,9 @@ public class StaticValuePropertyImpl extends MinimalEObjectImpl.Container implem
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetType(JvmParameterizedTypeReference newType, NotificationChain msgs)
+  public NotificationChain basicSetType(JvmTypeReference newType, NotificationChain msgs)
   {
-    JvmParameterizedTypeReference oldType = type;
+    JvmTypeReference oldType = type;
     type = newType;
     if (eNotificationRequired())
     {
@@ -131,7 +131,7 @@ public class StaticValuePropertyImpl extends MinimalEObjectImpl.Container implem
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setType(JvmParameterizedTypeReference newType)
+  public void setType(JvmTypeReference newType)
   {
     if (newType != type)
     {
@@ -267,7 +267,7 @@ public class StaticValuePropertyImpl extends MinimalEObjectImpl.Container implem
     switch (featureID)
     {
       case FXGraphPackage.STATIC_VALUE_PROPERTY__TYPE:
-        setType((JvmParameterizedTypeReference)newValue);
+        setType((JvmTypeReference)newValue);
         return;
       case FXGraphPackage.STATIC_VALUE_PROPERTY__NAME:
         setName((String)newValue);
@@ -290,7 +290,7 @@ public class StaticValuePropertyImpl extends MinimalEObjectImpl.Container implem
     switch (featureID)
     {
       case FXGraphPackage.STATIC_VALUE_PROPERTY__TYPE:
-        setType((JvmParameterizedTypeReference)null);
+        setType((JvmTypeReference)null);
         return;
       case FXGraphPackage.STATIC_VALUE_PROPERTY__NAME:
         setName(NAME_EDEFAULT);

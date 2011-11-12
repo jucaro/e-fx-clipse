@@ -41,6 +41,7 @@ import org.eclipse.xtext.Assignment;
 import org.eclipse.xtext.RuleCall;
 import org.eclipse.xtext.common.types.JvmParameterizedTypeReference;
 import org.eclipse.xtext.common.types.JvmType;
+import org.eclipse.xtext.common.types.JvmTypeReference;
 import org.eclipse.xtext.common.types.util.jdt.IJavaElementFinder;
 import org.eclipse.xtext.ui.editor.contentassist.ContentAssistContext;
 import org.eclipse.xtext.ui.editor.contentassist.ICompletionProposalAcceptor;
@@ -348,7 +349,7 @@ public class FXGraphProposalProvider extends AbstractFXGraphProposalProvider {
 		}
 	}
 	
-	private TypeData getTypeData(IJavaProject jproject, JvmParameterizedTypeReference typeRef) {
+	private TypeData getTypeData(IJavaProject jproject, JvmTypeReference typeRef) {
 		TypeData data = typeCache.get(typeRef.getQualifiedName());
 		if (data == null) {
 			
@@ -484,8 +485,8 @@ public class FXGraphProposalProvider extends AbstractFXGraphProposalProvider {
 	@Override
 	public void completeStaticValueProperty_Name(EObject model, Assignment assignment, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
 		StaticValueProperty prop = (StaticValueProperty) model;
-		JvmParameterizedTypeReference typeRef = prop.getType();
-		JvmParameterizedTypeReference parentTypeRef = null;
+		JvmTypeReference typeRef = prop.getType();
+		JvmTypeReference parentTypeRef = null;
 		
 		if( model.eContainer() instanceof Element ) {
 			Element e = (Element) model.eContainer();

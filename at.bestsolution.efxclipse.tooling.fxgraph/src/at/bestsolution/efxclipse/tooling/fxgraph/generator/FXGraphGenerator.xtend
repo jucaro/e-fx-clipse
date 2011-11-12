@@ -3,47 +3,32 @@
  */
 package at.bestsolution.efxclipse.tooling.fxgraph.generator
 
-import org.eclipse.emf.ecore.resource.Resource
-import org.eclipse.xtext.generator.IGenerator
-import org.eclipse.xtext.generator.IFileSystemAccess
+import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.ComponentDefinition
+import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.ControllerHandledValueProperty
+import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.CopyValueProperty
 import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.Element
-import static extension org.eclipse.xtext.xtend2.lib.ResourceExtensions.*
-import java.util.List
-import org.eclipse.core.internal.resources.Workspace
-import org.eclipse.core.resources.ResourcesPlugin
-import org.eclipse.jdt.internal.core.JavaProject
-import org.eclipse.jdt.core.JavaCore
-import org.eclipse.jdt.core.IClasspathEntry
-import org.eclipse.jdt.internal.core.ClasspathEntry
-import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.Import
-import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.ValueProperty
-import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.Property
-import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.ListProperty
-import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.ReferenceProperty
-import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.IncludeProperty
-import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.SimpleValueProperty
-import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.ReferenceValueProperty
 import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.IncludeValueProperty
 import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.ListValueProperty
 import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.MapValueProperty
-import org.eclipse.xtend.typesystem.StaticProperty
-import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.StaticValueProperty
-import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.CopyValueProperty
-import org.eclipse.xtext.xbase.compiler.ImportManager
-import org.eclipse.xtext.common.types.JvmTypeReference
-import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.ControllerHandledValueProperty
+import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.Property
+import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.ReferenceValueProperty
 import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.ScriptHandlerHandledValueProperty
 import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.ScriptValueExpression
-import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.Language
-import java.io.File
-import java.io.FileOutputStream
-import java.io.BufferedWriter
-import java.io.FileWriter
-import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.ComponentDefinition
+import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.SimpleValueProperty
+import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.StaticValueProperty
+import java.util.List
+import org.eclipse.core.resources.ResourcesPlugin
+import org.eclipse.emf.ecore.resource.Resource
+import org.eclipse.jdt.core.IClasspathEntry
+import org.eclipse.jdt.core.JavaCore
+import org.eclipse.xtext.common.types.JvmTypeReference
+import org.eclipse.xtext.generator.IFileSystemAccess
+import org.eclipse.xtext.generator.IGenerator
+import org.eclipse.xtext.xbase.compiler.ImportManager
 
 class FXGraphGenerator implements IGenerator {
 	
-	def calculateRelativePath(Resource resource) {
+	def calculateRelativePath(Resource resource) { 
 		
 			if( resource.URI.platformResource ) {
 				var uri = resource.URI;
@@ -352,7 +337,7 @@ class FXGraphGenerator implements IGenerator {
 	
 	def shortName(JvmTypeReference r, ImportManager importManager) {
 		val builder = new StringBuilder()
-		importManager.appendTypeRef(r, builder)
+		importManager.appendType(r.type, builder)
 		builder.toString
 	}
 }
