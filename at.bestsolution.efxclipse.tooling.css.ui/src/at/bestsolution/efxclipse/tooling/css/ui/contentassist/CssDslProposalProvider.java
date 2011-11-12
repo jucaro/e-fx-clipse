@@ -38,7 +38,6 @@ public class CssDslProposalProvider extends AbstractCssDslProposalProvider {
 	private CssDialectExtensionComponent extension;
 	
 	public CssDslProposalProvider() {
-		System.err.println("Created proposal instance");
 		BundleContext context = CssDslActivator.getInstance().getBundle().getBundleContext();
 		ServiceReference<CssDialectExtensionComponent> ref = context.getServiceReference(CssDialectExtensionComponent.class);
 		extension = context.getService(ref);

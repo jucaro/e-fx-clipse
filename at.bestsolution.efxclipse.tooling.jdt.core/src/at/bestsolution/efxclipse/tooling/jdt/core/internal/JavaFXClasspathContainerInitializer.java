@@ -41,10 +41,6 @@ public class JavaFXClasspathContainerInitializer extends
 
 	}
 	
-	public JavaFXClasspathContainerInitializer() {
-		System.err.println("Classpath container initializer");
-	}
-
 	@Override
 	public void initialize(IPath containerPath, IJavaProject project)
 			throws CoreException {

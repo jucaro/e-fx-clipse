@@ -278,7 +278,6 @@ public class RequiredPluginsClasspathContainer extends PDEClasspathContainer imp
 		
 		for( IClasspathContributor cp : contributors ) {
 			if( cp.isActiveFor(desc) ) {
-				System.err.println("Found contributor for: " + desc.getName());
 				for( Contribution c : cp.getContributions(desc) ) {
 					IClasspathAttribute[] attributes = new IClasspathAttribute[0];
 					
