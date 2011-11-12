@@ -16,7 +16,7 @@
          point="org.eclipse.core.runtime.products">
       <product
             application="at.bestsolution.efxclipse.runtime.examples.osgi.application"
-            name="OSGIApp">
+            name="%product.name">
          <property
                name="appName"
                value="OSGIApp">

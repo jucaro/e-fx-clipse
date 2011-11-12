@@ -1,6 +1,6 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
-Bundle-Name: Osgi
+Bundle-Name: %Bundle-Name
 Bundle-SymbolicName: at.bestsolution.efxclipse.runtime.examples.osgi; singleton:=true
 Bundle-Version: 1.0.0.qualifier
 Bundle-Activator: at.bestsolution.efxclipse.runtime.examples.osgi.Activator
@@ -36,4 +36,4 @@ Import-Package: javafx.animation;version="2.0.0",
  javafx.scene.web;version="2.0.0",
  javafx.stage;version="2.0.0",
  javafx.util;version="2.0.0"
-Bundle-Vendor: BestSolution.at
+Bundle-Vendor: %Bundle-Vendor

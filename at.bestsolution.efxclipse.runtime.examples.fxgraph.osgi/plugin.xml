@@ -16,7 +16,7 @@
          point="org.eclipse.core.runtime.products">
       <product
             application="at.bestsolution.efxclipse.runtime.examples.fxgraph.osgi.application"
-            name="Hello JavaFXML">
+            name="%product.name">
          <property
                name="windowImages"
                value="icons/alt_window_16.gif,icons/alt_window_32.gif">
