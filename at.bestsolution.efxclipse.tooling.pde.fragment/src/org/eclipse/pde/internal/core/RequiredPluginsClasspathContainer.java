@@ -300,19 +300,6 @@ public class RequiredPluginsClasspathContainer extends PDEClasspathContainer imp
 			}
 		}
 		
-//		if (desc.getName().equals("at.bestsolution.efxclipse.runtime.javafx")) {
-//			IEclipsePreferences pref = InstanceScope.INSTANCE.getNode(JavaFXCorePlugin.PLUGIN_ID);
-//			String dir = pref.get(JavaFXPreferencesConstants.JAVAFX_DIR,"");
-//			
-//			if( dir.length() > 0 ) {
-//				IPath jarLocationPath = new Path(dir).append("rt").append("lib").append("jfxrt.jar");
-//				IPath javadocLocation = new Path(dir).append("docs").append("api");
-//				
-//				IClasspathAttribute[] attributes = new IClasspathAttribute[] {JavaCore.newClasspathAttribute(IClasspathAttribute.JAVADOC_LOCATION_ATTRIBUTE_NAME, javadocLocation.toFile().toURI().toString())};
-//				addLibraryEntry(jarLocationPath, null, rules, attributes, entries);
-//			}	
-//		}
-		
 		if (resource != null) {
 			addProjectEntry(resource.getProject(), rules, entries);
 		} else {
