@@ -76,49 +76,66 @@ public class FXClassLoader implements ClassLoadingHook {
 				BaseData bundledata, String[] classpath) throws Exception {
 			super(parent, delegate, domain, bundledata, classpath);
 			
-			Version minVersion = bundledata.getVersion(); 
+			String osname = System.getProperty("os.name").toLowerCase();
 			
-			List<Version> versions = new ArrayList<Version>();
-			for( String v : WinRegistry.readStringSubKeys(WinRegistry.HKEY_LOCAL_MACHINE, "Software\\Oracle\\JavaFX\\")) {
-				try {
-					versions.add(new Version(v));	
-				} catch (Exception e) {
-					e.printStackTrace();
+			if( osname.indexOf("mac") != 0 ) {
+				String installPath = System.getenv().get("JAVAFX_HOME");
+				if( installPath != null ) {
+					File f = new File(installPath + "/lib/jfxrt.jar");
+					if( f.exists() ) {
+						URL url = f.getCanonicalFile().toURI().toURL();
+						fxClassLoader = new URLClassLoader(new URL[] {url}, parent);
+					} else {
+						throw new IllegalStateException("Could not locate lib/jfxrt.jar in the installation path '"+installPath+"'");
+					}
+				} else {
+					throw new IllegalStateException("Could not find a JavaFX 2.0 Installation. Environment variable JAVAFX_HOME is not set.");
 				}
-			}
-			Collections.sort(versions);
-			Collections.reverse(versions);
-			
-			Version effectiveVersion = minVersion;
-			
-			for( Version v : versions ) {
-				// The major version must match
-				if( v.getMajor() == minVersion.getMajor() ) {
-					if( v.getMinor() > minVersion.getMinor() ) {
-						effectiveVersion = v;
-						break;
-					}  else if( v.getMinor() == minVersion.getMinor() ) {
-						if( v.getMicro() >= minVersion.getMicro() ) {
+			} else {
+				Version minVersion = bundledata.getVersion(); 
+				
+				List<Version> versions = new ArrayList<Version>();
+				for( String v : WinRegistry.readStringSubKeys(WinRegistry.HKEY_LOCAL_MACHINE, "Software\\Oracle\\JavaFX\\")) {
+					try {
+						versions.add(new Version(v));	
+					} catch (Exception e) {
+						e.printStackTrace();
+					}
+				}
+				Collections.sort(versions);
+				Collections.reverse(versions);
+				
+				Version effectiveVersion = minVersion;
+				
+				for( Version v : versions ) {
+					// The major version must match
+					if( v.getMajor() == minVersion.getMajor() ) {
+						if( v.getMinor() > minVersion.getMinor() ) {
 							effectiveVersion = v;
 							break;
+						}  else if( v.getMinor() == minVersion.getMinor() ) {
+							if( v.getMicro() >= minVersion.getMicro() ) {
+								effectiveVersion = v;
+								break;
+							}
 						}
 					}
 				}
-			}
-			
-			String versionString = effectiveVersion.getMajor() + "."+effectiveVersion.getMinor()+"." + effectiveVersion.getMicro();
-			String installPath = WinRegistry.readString(WinRegistry.HKEY_LOCAL_MACHINE,"Software\\Oracle\\JavaFX\\" + versionString, "Path");
-			if( installPath != null ) {
-				File f = new File(installPath + "/lib/jfxrt.jar");
 				
-				if( f.exists() ) {
-					URL url = f.getCanonicalFile().toURI().toURL();
-					fxClassLoader = new URLClassLoader(new URL[] {url}, parent);
+				String versionString = effectiveVersion.getMajor() + "."+effectiveVersion.getMinor()+"." + effectiveVersion.getMicro();
+				String installPath = WinRegistry.readString(WinRegistry.HKEY_LOCAL_MACHINE,"Software\\Oracle\\JavaFX\\" + versionString, "Path");
+				if( installPath != null ) {
+					File f = new File(installPath + "/lib/jfxrt.jar");
+					
+					if( f.exists() ) {
+						URL url = f.getCanonicalFile().toURI().toURL();
+						fxClassLoader = new URLClassLoader(new URL[] {url}, parent);
+					} else {
+						throw new IllegalStateException("Could not locate lib/jfxrt.jar in the installation path '"+installPath+"'");
+					}
 				} else {
-					throw new IllegalStateException("Could not locate lib/jfxrt.jar in the installation path '"+installPath+"'");
+					throw new IllegalStateException("Could not find a JavaFX "+versionString+" Installation");
 				}
-			} else {
-				throw new IllegalStateException("Could not find a JavaFX "+versionString+" Installation");
 			}
 		}
 
