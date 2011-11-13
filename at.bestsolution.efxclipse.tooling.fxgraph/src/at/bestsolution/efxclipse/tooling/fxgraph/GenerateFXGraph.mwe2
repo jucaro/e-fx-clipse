@@ -94,8 +94,6 @@ Workflow {
 			fragment = contentAssist.JavaBasedContentAssistFragment {}
 			fragment = parser.antlr.XtextAntlrUiGeneratorFragment {}
 
-			fragment = builder.BuilderIntegrationFragment {}
-
 			// quickfix API 
 			fragment = quickfix.QuickfixProviderFragment {}
 
@@ -115,8 +113,12 @@ Workflow {
 			
 			// Code generator
 			fragment = generator.GeneratorFragment {
+				generateMwe = true
+				generateJavaMain = true
 			}
 			
+			fragment = builder.BuilderIntegrationFragment {}
+				
 			fragment = templates.CodetemplatesGeneratorFragment {}
 		}
 	}
