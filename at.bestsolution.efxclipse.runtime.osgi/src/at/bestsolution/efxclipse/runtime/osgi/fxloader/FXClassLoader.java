@@ -78,7 +78,7 @@ public class FXClassLoader implements ClassLoadingHook {
 			
 			String osname = System.getProperty("os.name").toLowerCase();
 			
-			if( osname.indexOf("mac") != 0 ) {
+			if( osname.indexOf("mac") != -1 ) {
 				String installPath = System.getenv().get("JAVAFX_HOME");
 				if( installPath != null ) {
 					File f = new File(installPath + "/lib/jfxrt.jar");
