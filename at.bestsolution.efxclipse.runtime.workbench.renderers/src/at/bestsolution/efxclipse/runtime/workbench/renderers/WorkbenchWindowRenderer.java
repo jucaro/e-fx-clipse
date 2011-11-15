@@ -5,6 +5,8 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
 import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.layout.BorderPane;
@@ -35,13 +37,13 @@ public class WorkbenchWindowRenderer extends JFXRenderer {
 	@Inject
 	@Optional
 	ThemeManager themeManager;
-	
+
 	private Registration sceneRegistration;
 
 	@Override
 	public Object createWidget(MUIElement element, Object parent) {
 		if (element instanceof MWindow) {
-			MWindow e = (MWindow) element;
+			final MWindow e = (MWindow) element;
 			Stage stage = new Stage();
 			stage.setX(e.getX());
 			stage.setY(e.getY());
@@ -70,6 +72,12 @@ public class WorkbenchWindowRenderer extends JFXRenderer {
 			}
 
 			stage.setScene(scene);
+
+			ChangeListener<Number> resizeListener = new PosAndSizeListener(stage, e);
+			stage.widthProperty().addListener(resizeListener);
+			stage.heightProperty().addListener(resizeListener);
+			stage.xProperty().addListener(resizeListener);
+			stage.yProperty().addListener(resizeListener);
 
 			return stage;
 		}
@@ -189,5 +197,26 @@ public class WorkbenchWindowRenderer extends JFXRenderer {
 		}
 
 		return null;
+	}
+
+	public static class PosAndSizeListener implements ChangeListener<Number> {
+
+		private final Stage stage;
+		private final MWindow mWindow;
+
+		public PosAndSizeListener(Stage stage, MWindow mWindow) {
+			super();
+			this.stage = stage;
+			this.mWindow = mWindow;
+		}
+
+		@Override
+		public void changed(ObservableValue<? extends Number> observable, Number oldValue, Number newValue) {
+			mWindow.setX(((Double) stage.getX()).intValue());
+			mWindow.setY(((Double) stage.getY()).intValue());
+			mWindow.setWidth(((Double) stage.getWidth()).intValue());
+			mWindow.setHeight(((Double) stage.getHeight()).intValue());
+		}
+
 	}
 }
