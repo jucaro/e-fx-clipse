@@ -47,10 +47,10 @@ public class SashRenderer extends JFXRenderer {
 				splitPane.setDividerPositions(Float.parseFloat(dividerPos));
 			}
 
-			splitPane.getDividers().get(0).positionProperty().addListener(new ChangeListener() {
+			splitPane.getDividers().get(0).positionProperty().addListener(new ChangeListener<Number>() {
 				@Override
-				public void changed(ObservableValue o, Object oldVal, Object newVal) {
-					container.setContainerData(newVal.toString());
+				public void changed(ObservableValue<? extends Number> observable, Number oldValue, Number newValue) {
+					container.setContainerData(newValue.toString());
 				}
 			});
 
