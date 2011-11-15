@@ -32,7 +32,6 @@ public class SashRenderer extends JFXRenderer {
 
 	@Override
 	public void processContents(final MElementContainer<MUIElement> container) {
-		System.out.println("SashRenderer.processContents()");
 		if (container.getChildren().size() == 2) {
 			super.processContents(container);
 			SplitPane splitPane = (SplitPane) container.getWidget();
@@ -42,7 +41,6 @@ public class SashRenderer extends JFXRenderer {
 			// TODO This is not a good position to hook the controller logic
 			// but hookControllerLogic() is invoked before processContents()...
 			String dividerPos = container.getContainerData();
-			System.out.println("divider pos: " + dividerPos);
 			if (dividerPos != null) {
 				splitPane.setDividerPositions(Float.parseFloat(dividerPos));
 			}
