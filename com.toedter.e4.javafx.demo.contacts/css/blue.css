@@ -20,7 +20,7 @@
 
 .tool-bar:horizontal .separator {
     -fx-orientation: vertical;
-    -fx-padding: 2 0 2 0 
+    -fx-padding: 2 0 2 0;
 }
 
 .table-view {
