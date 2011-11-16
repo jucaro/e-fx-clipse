@@ -43,6 +43,7 @@ import at.bestsolution.efxclipse.runtime.panels.FillLayoutPane;
 import at.bestsolution.efxclipse.tooling.fxgraph.ui.preview.bundle.Activator;
 
 import com.google.inject.Inject;
+import com.sun.javafx.css.StyleManager;
 
 public class LivePreviewPart extends ViewPart {
 	
@@ -90,6 +91,11 @@ public class LivePreviewPart extends ViewPart {
 			
 			Frame frame = SWT_AWT.new_Frame(composite);
 			Panel panel = new Panel(new BorderLayout()) {
+				/**
+				 * 
+				 */
+				private static final long serialVersionUID = 1L;
+
 				public void update(java.awt.Graphics g) {
 					/* Do not erase the background */
 					paint(g);
@@ -199,6 +205,9 @@ public class LivePreviewPart extends ViewPart {
 						rootPane.getChildren().clear();
 						scene.getStylesheets().clear();
 						scene.getStylesheets().addAll(contentData.cssFiles);
+						
+						//TODO Change this to public API once (RT-17294)
+						StyleManager.getInstance().reloadStylesheets(scene);
 						
 						rootPane.getChildren().add(root);
 					} catch (Exception e) {

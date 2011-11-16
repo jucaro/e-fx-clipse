@@ -163,7 +163,7 @@ public class LivePreviewSynchronizer implements IPartListener, IXtextModelListen
 								// Trick to make CSS-Reloaded
 								File absParent = absFile.getParentFile();
 								absParent = new File(absParent,System.currentTimeMillis()+"");
-								absFile = new File(absParent,"../" + absFile.getName());
+//								absFile = new File(absParent,"../" + absFile.getName());
 								l.add(absFile.toURI().toURL().toExternalForm());
 							} catch (Throwable e) {
 								// TODO Auto-generated catch block
