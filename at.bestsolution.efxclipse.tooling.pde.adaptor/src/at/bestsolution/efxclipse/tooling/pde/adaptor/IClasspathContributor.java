@@ -24,4 +24,5 @@ public interface IClasspathContributor {
 	
 	public List<Contribution> getContributions(BundleDescription desc);
 	public boolean isActiveFor(BundleDescription desc);
+	public List<String> exportEnvironmentLibraryAdditions(String environmentId);
 }

@@ -34,4 +34,15 @@ public class JavaFXClassPathExtender implements IClasspathContributor {
 		return "at.bestsolution.efxclipse.runtime.javafx".equals(desc.getName());
 	}
 
+	@Override
+	public List<String> exportEnvironmentLibraryAdditions(String environmentId) {
+		IEclipsePreferences pref = InstanceScope.INSTANCE.getNode(JavaFXCorePlugin.PLUGIN_ID);
+		String dir = pref.get(JavaFXPreferencesConstants.JAVAFX_DIR,"");
+		if( dir.length() > 0 ) {
+			IPath jarLocationPath = new Path(dir).append("rt").append("lib").append("jfxrt.jar");
+			return Collections.singletonList(jarLocationPath.toOSString());
+		}
+		return Collections.emptyList();
+	}
+
 }
