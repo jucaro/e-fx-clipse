@@ -33,6 +33,31 @@
             id="at.bestsolution.efxclipse.tooling"
             name="%category.name">
       </category>
+      <wizard
+            category="at.bestsolution.efxclipse.tooling/at.bestsolution.efxclipse.tooling.clazz"
+            class="at.bestsolution.efxclipse.tooling.jdt.ui.internal.wizard.clazz.NewApplicationClassWizard"
+            finalPerspective="org.eclipse.jdt.ui.JavaPerspective"
+            icon="icons/toggle_breadcrumb.gif"
+            id="at.bestsolution.efxclipse.tooling.jdt.ui.newappclass"
+            name="JavaFX Main Class"
+            preferredPerspectives="org.eclipse.jdt.ui.JavaPerspective,org.eclipse.jdt.ui.JavaBrowsingPerspective,org.eclipse.jdt.ui.JavaHierarchyPerspective"
+            project="false">
+      </wizard>
+      <wizard
+            category="at.bestsolution.efxclipse.tooling/at.bestsolution.efxclipse.tooling.clazz"
+            class="at.bestsolution.efxclipse.tooling.jdt.ui.internal.wizard.clazz.NewPreloaderClassWizard"
+            finalPerspective="org.eclipse.jdt.ui.JavaPerspective"
+            icon="icons/history_working_set_obj.gif"
+            id="at.bestsolution.efxclipse.tooling.jdt.ui.newpreloader"
+            name="JavaFX Preloader Class"
+            preferredPerspectives="org.eclipse.jdt.ui.JavaPerspective,org.eclipse.jdt.ui.JavaBrowsingPerspective,org.eclipse.jdt.ui.JavaHierarchyPerspective"
+            project="false">
+      </wizard>
+      <category
+            id="at.bestsolution.efxclipse.tooling.clazz"
+            name="Classes"
+            parentCategory="at.bestsolution.efxclipse.tooling">
+      </category>
    </extension>
    <extension
          point="org.eclipse.ui.editors">
