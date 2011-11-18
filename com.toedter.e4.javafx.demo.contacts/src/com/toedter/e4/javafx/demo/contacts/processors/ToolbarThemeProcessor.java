@@ -44,7 +44,6 @@ public class ToolbarThemeProcessor extends AbstractThemeProcessor {
 
 	@Override
 	protected void processTheme(String name, MCommand switchCommand, MParameter themeId, String iconURI) {
-		System.out.println("processTheme: " + name);
 		MHandledToolItem toolItem = MMenuFactory.INSTANCE.createHandledToolItem();
 		toolItem.setTooltip(name);
 		toolItem.setCommand(switchCommand);

@@ -14,7 +14,6 @@ package com.toedter.e4.javafx.demo.contacts.handlers;
 
 import com.toedter.e4.javafx.demo.contacts.model.Contact;
 import com.toedter.e4.javafx.demo.contacts.model.ContactsRepositoryFactory;
-
 import org.eclipse.e4.core.di.annotations.CanExecute;
 import org.eclipse.e4.core.di.annotations.Execute;
 import org.eclipse.e4.core.di.annotations.Optional;
