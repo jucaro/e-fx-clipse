@@ -206,9 +206,9 @@ public class LivePreviewSynchronizer implements IPartListener, IXtextModelListen
 										}
 									}
 								}
-							} else if( uri.isFile() ) {
-								if( uri.toFileString().endsWith("*") ) {
-									File ioFile = new File(uri.toFileString()).getParentFile();
+							} else if( cpUri.isFile() ) {
+								if( cpUri.toFileString().endsWith("*") ) {
+									File ioFile = new File(cpUri.toFileString()).getParentFile();
 									if( ioFile.exists() ) {
 										try {
 											for( File jarFile : ioFile.listFiles() ) {
@@ -222,7 +222,7 @@ public class LivePreviewSynchronizer implements IPartListener, IXtextModelListen
 										}
 									}	
 								} else {
-									File ioFile = new File(uri.toFileString());
+									File ioFile = new File(cpUri.toFileString());
 									if( ioFile.exists() ) {
 										try {
 											extraPaths.add(ioFile.toURI().toURL());
