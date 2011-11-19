@@ -13,6 +13,8 @@ public class Activator extends AbstractUIPlugin {
 	
 	private static Activator plugin;
 	
+	public static final String PLUGIN_ID = "at.bestsolution.efxclipse.tooling.fxgraph.ui.preview";
+	
 	/*
 	 * (non-Javadoc)
 	 * @see org.osgi.framework.BundleActivator#start(org.osgi.framework.BundleContext)

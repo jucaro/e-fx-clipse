@@ -15,6 +15,8 @@ import org.eclipse.core.resources.IResource;
 import org.eclipse.core.resources.IWorkspaceRoot;
 import org.eclipse.core.resources.ResourcesPlugin;
 import org.eclipse.core.runtime.Path;
+import org.eclipse.core.runtime.preferences.IEclipsePreferences;
+import org.eclipse.core.runtime.preferences.InstanceScope;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EObject;
@@ -38,6 +40,7 @@ import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.ComponentDefinition;
 import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.Model;
 import at.bestsolution.efxclipse.tooling.fxgraph.generator.FXGraphGenerator;
 import at.bestsolution.efxclipse.tooling.fxgraph.ui.preview.LivePreviewPart.ContentData;
+import at.bestsolution.efxclipse.tooling.fxgraph.ui.preview.bundle.Activator;
 import at.bestsolution.efxclipse.tooling.fxgraph.ui.util.RelativeFileLocator;
 
 import com.google.inject.Inject;
@@ -48,6 +51,10 @@ public class LivePreviewSynchronizer implements IPartListener, IXtextModelListen
 	
 	private IXtextDocument lastFXMLActiveDocument;
 	private XtextEditor lastCssEditor;
+	private XtextEditor lastFXMLEditor;
+	private IEclipsePreferences preference = InstanceScope.INSTANCE.getNode(Activator.PLUGIN_ID);
+	
+	public static final String PREF_REFRESH_WHILE_TYPE = "PREF_REFRESH_WHILE_TYPE";
 	
 	static enum Type {
 		UNKNOWN,
@@ -56,7 +63,7 @@ public class LivePreviewSynchronizer implements IPartListener, IXtextModelListen
 	}
 	
 	public void partActivated(IWorkbenchPart part) {
-		updateView(part);
+		updateView(part);	
 	}
 
 	private void updateView(IWorkbenchPart part) {
@@ -94,6 +101,15 @@ public class LivePreviewSynchronizer implements IPartListener, IXtextModelListen
 					}
 					lastFXMLActiveDocument = xtextDocument;
 					lastFXMLActiveDocument.addModelListener(this);
+					
+					if( lastFXMLEditor != part ) {
+						if( lastFXMLEditor != null ) {
+							lastFXMLEditor.removePropertyListener(this);
+						}
+						
+						lastFXMLEditor = xtextEditor;
+						lastFXMLEditor.addPropertyListener(this);
+					}
 				} else {
 					view.setContents(null);
 				}
@@ -261,7 +277,9 @@ public class LivePreviewSynchronizer implements IPartListener, IXtextModelListen
 
 	@Override
 	public void modelChanged(XtextResource resource) {
-		view.setContents(createContents(resource));
+//		if( preference.getBoolean(PREF_REFRESH_WHILE_TYPE, false) ) {
+//			view.setContents(createContents(resource));
+//		}
 	}
 
 	@Override
@@ -289,6 +307,14 @@ public class LivePreviewSynchronizer implements IPartListener, IXtextModelListen
 						return createContents(resource);
 					}
 				}));
+			} else if( lastFXMLEditor != null && ! lastFXMLEditor.isDirty() && lastFXMLActiveDocument != null ) {
+//				if( ! preference.getBoolean(PREF_REFRESH_WHILE_TYPE, false) ) {
+					view.setContents(lastFXMLActiveDocument.readOnly(new IUnitOfWork<ContentData, XtextResource>() {
+						public ContentData exec(XtextResource resource) throws Exception {
+							return createContents(resource);
+						}
+					}));	
+//				}
 			}
 		}
 	}
