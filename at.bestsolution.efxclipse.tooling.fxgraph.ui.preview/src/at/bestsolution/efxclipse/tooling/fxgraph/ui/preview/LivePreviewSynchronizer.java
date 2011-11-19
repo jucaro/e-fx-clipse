@@ -11,6 +11,7 @@ import java.util.List;
 import org.eclipse.core.resources.IFile;
 import org.eclipse.core.resources.IFolder;
 import org.eclipse.core.resources.IProject;
+import org.eclipse.core.resources.IResource;
 import org.eclipse.core.resources.IWorkspaceRoot;
 import org.eclipse.core.resources.ResourcesPlugin;
 import org.eclipse.core.runtime.Path;
@@ -177,30 +178,64 @@ public class LivePreviewSynchronizer implements IPartListener, IXtextModelListen
 						try {
 							URI cpUri = URI.createURI(path);
 							if( cpUri.isPlatformResource() ) {
-								Path cpPath = new Path(cpUri.toPlatformString(true));
-								IWorkspaceRoot root = jp.getProject().getWorkspace().getRoot();
-								IFile jarFile = root.getFile(cpPath);
-								if( jarFile.exists() ) {
-									try {
-										extraPaths.add(jarFile.getLocation().toFile().toURI().toURL());
-									} catch (MalformedURLException e) {
-										// TODO Auto-generated catch block
-										e.printStackTrace();
+								if( cpUri.lastSegment().equals("*") ) {
+									cpUri = cpUri.trimSegments(1);
+									Path cpPath = new Path(cpUri.toPlatformString(true));
+									IWorkspaceRoot root = jp.getProject().getWorkspace().getRoot();
+									IFolder f = root.getFolder(cpPath);
+									if( f.exists() ) {
+										for( IResource r : f.members() ) {
+											IFile jarFile = (IFile)r;
+											if( r instanceof IFile ) {
+												if( "jar".equals(jarFile.getFileExtension()) ) {
+													extraPaths.add(jarFile.getLocation().toFile().toURI().toURL());
+												}
+											}
+										}
+									}
+								} else {
+									Path cpPath = new Path(cpUri.toPlatformString(true));
+									IWorkspaceRoot root = jp.getProject().getWorkspace().getRoot();
+									IFile jarFile = root.getFile(cpPath);
+									if( jarFile.exists() ) {
+										try {
+											extraPaths.add(jarFile.getLocation().toFile().toURI().toURL());
+										} catch (MalformedURLException e) {
+											// TODO Auto-generated catch block
+											e.printStackTrace();
+										}
 									}
 								}
 							} else if( uri.isFile() ) {
-								File ioFile = new File(uri.toFileString());
-								if( ioFile.exists() ) {
-									try {
-										extraPaths.add(ioFile.toURI().toURL());
-									} catch (MalformedURLException e) {
-										// TODO Auto-generated catch block
-										e.printStackTrace();
+								if( uri.toFileString().endsWith("*") ) {
+									File ioFile = new File(uri.toFileString()).getParentFile();
+									if( ioFile.exists() ) {
+										try {
+											for( File jarFile : ioFile.listFiles() ) {
+												if( jarFile.getName().endsWith(".jar") ) {
+													extraPaths.add(jarFile.toURI().toURL());
+												}
+											}
+										} catch (MalformedURLException e) {
+											// TODO Auto-generated catch block
+											e.printStackTrace();
+										}
+									}	
+								} else {
+									File ioFile = new File(uri.toFileString());
+									if( ioFile.exists() ) {
+										try {
+											extraPaths.add(ioFile.toURI().toURL());
+										} catch (MalformedURLException e) {
+											// TODO Auto-generated catch block
+											e.printStackTrace();
+										}
 									}
 								}
 							}
 						} catch (Exception e) {
 							// TODO: handle exception
+							e.printStackTrace();
 						}
 					}
 					
