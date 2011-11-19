@@ -30,6 +30,8 @@ import javafx.scene.Scene;
 import javax.swing.JRootPane;
 
 import org.eclipse.jface.resource.JFaceResources;
+import org.eclipse.jface.viewers.DecorationOverlayIcon;
+import org.eclipse.jface.viewers.IDecoration;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.awt.SWT_AWT;
 import org.eclipse.swt.custom.CTabFolder;
@@ -67,6 +69,8 @@ public class LivePreviewPart extends ViewPart {
 	private static final String IMAGE_WARNING = LivePreviewPart.class.getName() + ".IMAGE_WARNING";
 	private static final String IMAGE_ERROR = LivePreviewPart.class.getName() + ".IMAGE_ERROR";
 	private static final String IMAGE_PREVIEW = LivePreviewPart.class.getName() + ".IMAGE_PREVIEW";
+	private static final String IMAGE_TAB_ERROR = LivePreviewPart.class.getName() + ".IMAGE_TAB_ERROR";
+	private static final String IMAGE_TAB_NORMAL = LivePreviewPart.class.getName() + ".IMAGE_TAB_NORMAL";
 
 	private CTabItem logItem;
 	
@@ -75,6 +79,9 @@ public class LivePreviewPart extends ViewPart {
 		JFaceResources.getImageRegistry().put(IMAGE_WARNING, Activator.imageDescriptorFromPlugin("at.bestsolution.efxclipse.tooling.fxgraph.ui.preview", "/icons/16_16/security-medium.png"));
 		JFaceResources.getImageRegistry().put(IMAGE_ERROR, Activator.imageDescriptorFromPlugin("at.bestsolution.efxclipse.tooling.fxgraph.ui.preview", "/icons/16_16/security-low.png"));
 		JFaceResources.getImageRegistry().put(IMAGE_PREVIEW, Activator.imageDescriptorFromPlugin("at.bestsolution.efxclipse.tooling.fxgraph.ui.preview", "/icons/16_16/view-ldap-resource.png"));
+
+		JFaceResources.getImageRegistry().put(IMAGE_TAB_NORMAL, Activator.imageDescriptorFromPlugin("at.bestsolution.efxclipse.tooling.fxgraph.ui.preview", "/icons/16_16/view-presentation.png"));
+		JFaceResources.getImageRegistry().put(IMAGE_TAB_ERROR, new DecorationOverlayIcon(JFaceResources.getImage(IMAGE_TAB_NORMAL),Activator.imageDescriptorFromPlugin("at.bestsolution.efxclipse.tooling.fxgraph.ui.preview", "/icons/ovr/error_co.gif"),IDecoration.BOTTOM_LEFT));
 	}
 
 	@Override
@@ -280,6 +287,8 @@ public class LivePreviewPart extends ViewPart {
 								logItem.setImage(JFaceResources.getImage(IMAGE_WARNING));
 							}
 							
+							setTitleImage(JFaceResources.getImage(IMAGE_TAB_ERROR));
+							
 							logStatement.append("================================================================="+logStatement.getLineDelimiter());
 							logStatement.append("Preview loading @ " + new Date() + logStatement.getLineDelimiter());
 							logStatement.append("================================================================="+logStatement.getLineDelimiter());
@@ -314,6 +323,7 @@ public class LivePreviewPart extends ViewPart {
 						public void run() {
 							folder.setSelection(0);
 							logItem.setImage(JFaceResources.getImage(IMAGE_OK));
+							setTitleImage(JFaceResources.getImage(IMAGE_TAB_NORMAL));
 						}
 					});
 				}
