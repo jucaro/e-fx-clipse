@@ -107,6 +107,9 @@ public class FXGraphParser extends AbstractContentAssistParser {
 					put(grammarAccess.getControllerHandledValuePropertyAccess().getGroup(), "rule__ControllerHandledValueProperty__Group__0");
 					put(grammarAccess.getScriptHandlerHandledValuePropertyAccess().getGroup(), "rule__ScriptHandlerHandledValueProperty__Group__0");
 					put(grammarAccess.getScriptValueExpressionAccess().getGroup(), "rule__ScriptValueExpression__Group__0");
+					put(grammarAccess.getLocationValuePropertyAccess().getGroup(), "rule__LocationValueProperty__Group__0");
+					put(grammarAccess.getResourceValuePropertyAccess().getGroup(), "rule__ResourceValueProperty__Group__0");
+					put(grammarAccess.getBindValuePropertyAccess().getGroup(), "rule__BindValueProperty__Group__0");
 					put(grammarAccess.getQualifiedNameWithWildCardAccess().getGroup(), "rule__QualifiedNameWithWildCard__Group__0");
 					put(grammarAccess.getQualifiedNameWithWildCardAccess().getGroup_1(), "rule__QualifiedNameWithWildCard__Group_1__0");
 					put(grammarAccess.getXAssignmentAccess().getGroup_0(), "rule__XAssignment__Group_0__0");
@@ -281,6 +284,10 @@ public class FXGraphParser extends AbstractContentAssistParser {
 					put(grammarAccess.getControllerHandledValuePropertyAccess().getMethodnameAssignment_1(), "rule__ControllerHandledValueProperty__MethodnameAssignment_1");
 					put(grammarAccess.getScriptHandlerHandledValuePropertyAccess().getFunctionnameAssignment_1(), "rule__ScriptHandlerHandledValueProperty__FunctionnameAssignment_1");
 					put(grammarAccess.getScriptValueExpressionAccess().getSourcecodeAssignment_1(), "rule__ScriptValueExpression__SourcecodeAssignment_1");
+					put(grammarAccess.getLocationValuePropertyAccess().getValueAssignment_1(), "rule__LocationValueProperty__ValueAssignment_1");
+					put(grammarAccess.getResourceValuePropertyAccess().getValueAssignment_1(), "rule__ResourceValueProperty__ValueAssignment_1");
+					put(grammarAccess.getBindValuePropertyAccess().getReferenceAssignment_1(), "rule__BindValueProperty__ReferenceAssignment_1");
+					put(grammarAccess.getBindValuePropertyAccess().getAttributeAssignment_3(), "rule__BindValueProperty__AttributeAssignment_3");
 					put(grammarAccess.getXAssignmentAccess().getFeatureAssignment_0_1(), "rule__XAssignment__FeatureAssignment_0_1");
 					put(grammarAccess.getXAssignmentAccess().getValueAssignment_0_3(), "rule__XAssignment__ValueAssignment_0_3");
 					put(grammarAccess.getXAssignmentAccess().getFeatureAssignment_1_1_0_0_1(), "rule__XAssignment__FeatureAssignment_1_1_0_0_1");

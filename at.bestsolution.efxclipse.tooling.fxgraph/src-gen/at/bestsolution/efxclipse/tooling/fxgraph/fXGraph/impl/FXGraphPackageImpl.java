@@ -6,6 +6,7 @@
  */
 package at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.impl;
 
+import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.BindValueProperty;
 import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.ComponentDefinition;
 import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.ControllerHandledValueProperty;
 import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.CopyValueProperty;
@@ -17,11 +18,13 @@ import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.Import;
 import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.IncludeValueProperty;
 import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.ListValueElement;
 import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.ListValueProperty;
+import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.LocationValueProperty;
 import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.MapValueProperty;
 import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.Model;
 import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.MultiValueProperty;
 import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.Property;
 import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.ReferenceValueProperty;
+import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.ResourceValueProperty;
 import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.Script;
 import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.ScriptHandlerHandledValueProperty;
 import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.ScriptValueExpression;
@@ -193,6 +196,27 @@ public class FXGraphPackageImpl extends EPackageImpl implements FXGraphPackage
    * @generated
    */
   private EClass scriptValueExpressionEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass locationValuePropertyEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass resourceValuePropertyEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass bindValuePropertyEClass = null;
 
   /**
    * Creates an instance of the model <b>Package</b>, registered with
@@ -865,6 +889,76 @@ public class FXGraphPackageImpl extends EPackageImpl implements FXGraphPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  public EClass getLocationValueProperty()
+  {
+    return locationValuePropertyEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getLocationValueProperty_Value()
+  {
+    return (EAttribute)locationValuePropertyEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getResourceValueProperty()
+  {
+    return resourceValuePropertyEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getResourceValueProperty_Value()
+  {
+    return (EAttribute)resourceValuePropertyEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getBindValueProperty()
+  {
+    return bindValuePropertyEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getBindValueProperty_Reference()
+  {
+    return (EReference)bindValuePropertyEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getBindValueProperty_Attribute()
+  {
+    return (EAttribute)bindValuePropertyEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public FXGraphFactory getFXGraphFactory()
   {
     return (FXGraphFactory)getEFactoryInstance();
@@ -970,6 +1064,16 @@ public class FXGraphPackageImpl extends EPackageImpl implements FXGraphPackage
 
     scriptValueExpressionEClass = createEClass(SCRIPT_VALUE_EXPRESSION);
     createEAttribute(scriptValueExpressionEClass, SCRIPT_VALUE_EXPRESSION__SOURCECODE);
+
+    locationValuePropertyEClass = createEClass(LOCATION_VALUE_PROPERTY);
+    createEAttribute(locationValuePropertyEClass, LOCATION_VALUE_PROPERTY__VALUE);
+
+    resourceValuePropertyEClass = createEClass(RESOURCE_VALUE_PROPERTY);
+    createEAttribute(resourceValuePropertyEClass, RESOURCE_VALUE_PROPERTY__VALUE);
+
+    bindValuePropertyEClass = createEClass(BIND_VALUE_PROPERTY);
+    createEReference(bindValuePropertyEClass, BIND_VALUE_PROPERTY__REFERENCE);
+    createEAttribute(bindValuePropertyEClass, BIND_VALUE_PROPERTY__ATTRIBUTE);
   }
 
   /**
@@ -1019,6 +1123,9 @@ public class FXGraphPackageImpl extends EPackageImpl implements FXGraphPackage
     controllerHandledValuePropertyEClass.getESuperTypes().add(this.getSingleValueProperty());
     scriptHandlerHandledValuePropertyEClass.getESuperTypes().add(this.getSingleValueProperty());
     scriptValueExpressionEClass.getESuperTypes().add(this.getSingleValueProperty());
+    locationValuePropertyEClass.getESuperTypes().add(this.getSingleValueProperty());
+    resourceValuePropertyEClass.getESuperTypes().add(this.getSingleValueProperty());
+    bindValuePropertyEClass.getESuperTypes().add(this.getSingleValueProperty());
 
     // Initialize classes and features; add operations and parameters
     initEClass(modelEClass, Model.class, "Model", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -1101,6 +1208,16 @@ public class FXGraphPackageImpl extends EPackageImpl implements FXGraphPackage
 
     initEClass(scriptValueExpressionEClass, ScriptValueExpression.class, "ScriptValueExpression", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getScriptValueExpression_Sourcecode(), ecorePackage.getEString(), "sourcecode", null, 0, 1, ScriptValueExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(locationValuePropertyEClass, LocationValueProperty.class, "LocationValueProperty", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getLocationValueProperty_Value(), ecorePackage.getEString(), "value", null, 0, 1, LocationValueProperty.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(resourceValuePropertyEClass, ResourceValueProperty.class, "ResourceValueProperty", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getResourceValueProperty_Value(), ecorePackage.getEString(), "value", null, 0, 1, ResourceValueProperty.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(bindValuePropertyEClass, BindValueProperty.class, "BindValueProperty", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getBindValueProperty_Reference(), this.getElement(), null, "reference", null, 0, 1, BindValueProperty.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getBindValueProperty_Attribute(), ecorePackage.getEString(), "attribute", null, 0, 1, BindValueProperty.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     // Create resource
     createResource(eNS_URI);

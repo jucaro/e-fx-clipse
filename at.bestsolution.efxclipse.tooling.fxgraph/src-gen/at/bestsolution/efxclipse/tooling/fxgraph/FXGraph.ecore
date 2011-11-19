@@ -98,4 +98,14 @@
   <eClassifiers xsi:type="ecore:EClass" name="ScriptValueExpression" eSuperTypes="#//SingleValueProperty">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="sourcecode" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="LocationValueProperty" eSuperTypes="#//SingleValueProperty">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ResourceValueProperty" eSuperTypes="#//SingleValueProperty">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="BindValueProperty" eSuperTypes="#//SingleValueProperty">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="reference" eType="#//Element"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="attribute" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
 </ecore:EPackage>

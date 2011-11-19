@@ -38,6 +38,7 @@ import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.ComponentDefinition;
 import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.Model;
 import at.bestsolution.efxclipse.tooling.fxgraph.generator.FXGraphGenerator;
 import at.bestsolution.efxclipse.tooling.fxgraph.ui.preview.LivePreviewPart.ContentData;
+import at.bestsolution.efxclipse.tooling.fxgraph.ui.util.RelativeFileLocator;
 
 import com.google.inject.Inject;
 
@@ -243,9 +244,15 @@ public class LivePreviewSynchronizer implements IPartListener, IXtextModelListen
 					l = Collections.emptyList();
 				}
 				
+				String resourcePropertiesFile = null;
+				if( def != null && def.getPreviewResourceBundle() != null ) {
+					File f = RelativeFileLocator.locateFile(uri, def.getPreviewResourceBundle());
+					if( f.exists() ) {
+						resourcePropertiesFile = f.getAbsolutePath();
+					}
+				}
 				
-				
-				return new ContentData(generator.doGeneratePreview(resource), l, def != null ? def.getPreviewResourceBundle() : null,extraPaths);				
+				return new ContentData(generator.doGeneratePreview(resource), l, resourcePropertiesFile,extraPaths);				
 			}
 		}
 		

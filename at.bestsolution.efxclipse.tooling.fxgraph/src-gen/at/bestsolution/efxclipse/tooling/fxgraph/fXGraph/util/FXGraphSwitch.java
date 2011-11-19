@@ -248,6 +248,33 @@ public class FXGraphSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case FXGraphPackage.LOCATION_VALUE_PROPERTY:
+      {
+        LocationValueProperty locationValueProperty = (LocationValueProperty)theEObject;
+        T result = caseLocationValueProperty(locationValueProperty);
+        if (result == null) result = caseSingleValueProperty(locationValueProperty);
+        if (result == null) result = caseValueProperty(locationValueProperty);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case FXGraphPackage.RESOURCE_VALUE_PROPERTY:
+      {
+        ResourceValueProperty resourceValueProperty = (ResourceValueProperty)theEObject;
+        T result = caseResourceValueProperty(resourceValueProperty);
+        if (result == null) result = caseSingleValueProperty(resourceValueProperty);
+        if (result == null) result = caseValueProperty(resourceValueProperty);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case FXGraphPackage.BIND_VALUE_PROPERTY:
+      {
+        BindValueProperty bindValueProperty = (BindValueProperty)theEObject;
+        T result = caseBindValueProperty(bindValueProperty);
+        if (result == null) result = caseSingleValueProperty(bindValueProperty);
+        if (result == null) result = caseValueProperty(bindValueProperty);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       default: return defaultCase(theEObject);
     }
   }
@@ -584,6 +611,54 @@ public class FXGraphSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseScriptValueExpression(ScriptValueExpression object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Location Value Property</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Location Value Property</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseLocationValueProperty(LocationValueProperty object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Resource Value Property</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Resource Value Property</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseResourceValueProperty(ResourceValueProperty object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Bind Value Property</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Bind Value Property</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseBindValueProperty(BindValueProperty object)
   {
     return null;
   }

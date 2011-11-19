@@ -184,6 +184,21 @@ public class FXGraphAdapterFactory extends AdapterFactoryImpl
         return createScriptValueExpressionAdapter();
       }
       @Override
+      public Adapter caseLocationValueProperty(LocationValueProperty object)
+      {
+        return createLocationValuePropertyAdapter();
+      }
+      @Override
+      public Adapter caseResourceValueProperty(ResourceValueProperty object)
+      {
+        return createResourceValuePropertyAdapter();
+      }
+      @Override
+      public Adapter caseBindValueProperty(BindValueProperty object)
+      {
+        return createBindValuePropertyAdapter();
+      }
+      @Override
       public Adapter defaultCase(EObject object)
       {
         return createEObjectAdapter();
@@ -516,6 +531,51 @@ public class FXGraphAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createScriptValueExpressionAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.LocationValueProperty <em>Location Value Property</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.LocationValueProperty
+   * @generated
+   */
+  public Adapter createLocationValuePropertyAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.ResourceValueProperty <em>Resource Value Property</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.ResourceValueProperty
+   * @generated
+   */
+  public Adapter createResourceValuePropertyAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.BindValueProperty <em>Bind Value Property</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.BindValueProperty
+   * @generated
+   */
+  public Adapter createBindValuePropertyAdapter()
   {
     return null;
   }

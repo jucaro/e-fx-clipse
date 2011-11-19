@@ -25,6 +25,9 @@ import org.eclipse.xtext.common.types.JvmTypeReference
 import org.eclipse.xtext.generator.IFileSystemAccess
 import org.eclipse.xtext.generator.IGenerator
 import org.eclipse.xtext.xbase.compiler.ImportManager
+import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.LocationValueProperty
+import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.ResourceValueProperty
+import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.BindValueProperty
 
 class FXGraphGenerator implements IGenerator {
 	
@@ -272,6 +275,12 @@ class FXGraphGenerator implements IGenerator {
 				if( ! forPreview ) {
 					builder.append(" " + p.name + "=\""+(p.value as ScriptValueExpression).sourcecode.substring(2,(p.value as ScriptValueExpression).sourcecode.length-2).trim() +";\"");	
 				}
+			} else if( p.value instanceof LocationValueProperty ) {
+				builder.append(" " + p.name + "=\"@"+(p.value as LocationValueProperty).value+"\"");
+			} else if( p.value instanceof ResourceValueProperty ) {
+				builder.append(" " + p.name + "=\"%"+(p.value as ResourceValueProperty).value+"\"");
+			} else if( p.value instanceof BindValueProperty ) {
+				builder.append(" " + p.name + "=\"${"+(p.value as BindValueProperty).reference.name+"."+(p.value as BindValueProperty).attribute+"}\"");
 			}
 		}
 		
@@ -294,6 +303,12 @@ class FXGraphGenerator implements IGenerator {
 		} else if( property.value instanceof ScriptHandlerHandledValueProperty ) {
 			return true;
 		} else if( property.value instanceof ScriptValueExpression ) {
+			return true;
+		} else if( property.value instanceof LocationValueProperty ) {
+			return true;
+		} else if( property.value instanceof ResourceValueProperty ) {
+			return true;
+		} else if( property.value instanceof BindValueProperty ) {
 			return true;
 		}
 		return false;

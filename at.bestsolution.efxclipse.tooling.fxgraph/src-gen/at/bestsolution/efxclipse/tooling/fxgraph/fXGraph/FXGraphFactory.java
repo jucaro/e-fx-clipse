@@ -216,6 +216,33 @@ public interface FXGraphFactory extends EFactory
   ScriptValueExpression createScriptValueExpression();
 
   /**
+   * Returns a new object of class '<em>Location Value Property</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Location Value Property</em>'.
+   * @generated
+   */
+  LocationValueProperty createLocationValueProperty();
+
+  /**
+   * Returns a new object of class '<em>Resource Value Property</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Resource Value Property</em>'.
+   * @generated
+   */
+  ResourceValueProperty createResourceValueProperty();
+
+  /**
+   * Returns a new object of class '<em>Bind Value Property</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Bind Value Property</em>'.
+   * @generated
+   */
+  BindValueProperty createBindValueProperty();
+
+  /**
    * Returns the package supported by this factory.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->

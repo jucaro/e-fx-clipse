@@ -810,6 +810,99 @@ public interface FXGraphPackage extends EPackage
    */
   int SCRIPT_VALUE_EXPRESSION_FEATURE_COUNT = SINGLE_VALUE_PROPERTY_FEATURE_COUNT + 1;
 
+  /**
+   * The meta object id for the '{@link at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.impl.LocationValuePropertyImpl <em>Location Value Property</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.impl.LocationValuePropertyImpl
+   * @see at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.impl.FXGraphPackageImpl#getLocationValueProperty()
+   * @generated
+   */
+  int LOCATION_VALUE_PROPERTY = 21;
+
+  /**
+   * The feature id for the '<em><b>Value</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int LOCATION_VALUE_PROPERTY__VALUE = SINGLE_VALUE_PROPERTY_FEATURE_COUNT + 0;
+
+  /**
+   * The number of structural features of the '<em>Location Value Property</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int LOCATION_VALUE_PROPERTY_FEATURE_COUNT = SINGLE_VALUE_PROPERTY_FEATURE_COUNT + 1;
+
+  /**
+   * The meta object id for the '{@link at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.impl.ResourceValuePropertyImpl <em>Resource Value Property</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.impl.ResourceValuePropertyImpl
+   * @see at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.impl.FXGraphPackageImpl#getResourceValueProperty()
+   * @generated
+   */
+  int RESOURCE_VALUE_PROPERTY = 22;
+
+  /**
+   * The feature id for the '<em><b>Value</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int RESOURCE_VALUE_PROPERTY__VALUE = SINGLE_VALUE_PROPERTY_FEATURE_COUNT + 0;
+
+  /**
+   * The number of structural features of the '<em>Resource Value Property</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int RESOURCE_VALUE_PROPERTY_FEATURE_COUNT = SINGLE_VALUE_PROPERTY_FEATURE_COUNT + 1;
+
+  /**
+   * The meta object id for the '{@link at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.impl.BindValuePropertyImpl <em>Bind Value Property</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.impl.BindValuePropertyImpl
+   * @see at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.impl.FXGraphPackageImpl#getBindValueProperty()
+   * @generated
+   */
+  int BIND_VALUE_PROPERTY = 23;
+
+  /**
+   * The feature id for the '<em><b>Reference</b></em>' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int BIND_VALUE_PROPERTY__REFERENCE = SINGLE_VALUE_PROPERTY_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Attribute</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int BIND_VALUE_PROPERTY__ATTRIBUTE = SINGLE_VALUE_PROPERTY_FEATURE_COUNT + 1;
+
+  /**
+   * The number of structural features of the '<em>Bind Value Property</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int BIND_VALUE_PROPERTY_FEATURE_COUNT = SINGLE_VALUE_PROPERTY_FEATURE_COUNT + 2;
+
 
   /**
    * Returns the meta object for class '{@link at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.Model <em>Model</em>}'.
@@ -1451,6 +1544,80 @@ public interface FXGraphPackage extends EPackage
   EAttribute getScriptValueExpression_Sourcecode();
 
   /**
+   * Returns the meta object for class '{@link at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.LocationValueProperty <em>Location Value Property</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Location Value Property</em>'.
+   * @see at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.LocationValueProperty
+   * @generated
+   */
+  EClass getLocationValueProperty();
+
+  /**
+   * Returns the meta object for the attribute '{@link at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.LocationValueProperty#getValue <em>Value</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Value</em>'.
+   * @see at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.LocationValueProperty#getValue()
+   * @see #getLocationValueProperty()
+   * @generated
+   */
+  EAttribute getLocationValueProperty_Value();
+
+  /**
+   * Returns the meta object for class '{@link at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.ResourceValueProperty <em>Resource Value Property</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Resource Value Property</em>'.
+   * @see at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.ResourceValueProperty
+   * @generated
+   */
+  EClass getResourceValueProperty();
+
+  /**
+   * Returns the meta object for the attribute '{@link at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.ResourceValueProperty#getValue <em>Value</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Value</em>'.
+   * @see at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.ResourceValueProperty#getValue()
+   * @see #getResourceValueProperty()
+   * @generated
+   */
+  EAttribute getResourceValueProperty_Value();
+
+  /**
+   * Returns the meta object for class '{@link at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.BindValueProperty <em>Bind Value Property</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Bind Value Property</em>'.
+   * @see at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.BindValueProperty
+   * @generated
+   */
+  EClass getBindValueProperty();
+
+  /**
+   * Returns the meta object for the reference '{@link at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.BindValueProperty#getReference <em>Reference</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the reference '<em>Reference</em>'.
+   * @see at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.BindValueProperty#getReference()
+   * @see #getBindValueProperty()
+   * @generated
+   */
+  EReference getBindValueProperty_Reference();
+
+  /**
+   * Returns the meta object for the attribute '{@link at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.BindValueProperty#getAttribute <em>Attribute</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Attribute</em>'.
+   * @see at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.BindValueProperty#getAttribute()
+   * @see #getBindValueProperty()
+   * @generated
+   */
+  EAttribute getBindValueProperty_Attribute();
+
+  /**
    * Returns the factory that creates the instances of the model.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -1994,6 +2161,68 @@ public interface FXGraphPackage extends EPackage
      * @generated
      */
     EAttribute SCRIPT_VALUE_EXPRESSION__SOURCECODE = eINSTANCE.getScriptValueExpression_Sourcecode();
+
+    /**
+     * The meta object literal for the '{@link at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.impl.LocationValuePropertyImpl <em>Location Value Property</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.impl.LocationValuePropertyImpl
+     * @see at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.impl.FXGraphPackageImpl#getLocationValueProperty()
+     * @generated
+     */
+    EClass LOCATION_VALUE_PROPERTY = eINSTANCE.getLocationValueProperty();
+
+    /**
+     * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute LOCATION_VALUE_PROPERTY__VALUE = eINSTANCE.getLocationValueProperty_Value();
+
+    /**
+     * The meta object literal for the '{@link at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.impl.ResourceValuePropertyImpl <em>Resource Value Property</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.impl.ResourceValuePropertyImpl
+     * @see at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.impl.FXGraphPackageImpl#getResourceValueProperty()
+     * @generated
+     */
+    EClass RESOURCE_VALUE_PROPERTY = eINSTANCE.getResourceValueProperty();
+
+    /**
+     * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute RESOURCE_VALUE_PROPERTY__VALUE = eINSTANCE.getResourceValueProperty_Value();
+
+    /**
+     * The meta object literal for the '{@link at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.impl.BindValuePropertyImpl <em>Bind Value Property</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.impl.BindValuePropertyImpl
+     * @see at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.impl.FXGraphPackageImpl#getBindValueProperty()
+     * @generated
+     */
+    EClass BIND_VALUE_PROPERTY = eINSTANCE.getBindValueProperty();
+
+    /**
+     * The meta object literal for the '<em><b>Reference</b></em>' reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference BIND_VALUE_PROPERTY__REFERENCE = eINSTANCE.getBindValueProperty_Reference();
+
+    /**
+     * The meta object literal for the '<em><b>Attribute</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute BIND_VALUE_PROPERTY__ATTRIBUTE = eINSTANCE.getBindValueProperty_Attribute();
 
   }
 

@@ -5,6 +5,9 @@ import java.awt.Frame;
 import java.awt.Panel;
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.IOException;
 import java.io.PrintStream;
 import java.io.PrintWriter;
 import java.io.StringWriter;
@@ -13,6 +16,9 @@ import java.net.URLClassLoader;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import java.util.ListResourceBundle;
+import java.util.Map.Entry;
+import java.util.Properties;
 
 import javafx.application.Platform;
 import javafx.embed.swing.JFXPanel;
@@ -41,6 +47,7 @@ import org.eclipse.ui.part.ViewPart;
 
 import at.bestsolution.efxclipse.runtime.panels.FillLayoutPane;
 import at.bestsolution.efxclipse.tooling.fxgraph.ui.preview.bundle.Activator;
+import at.bestsolution.efxclipse.tooling.fxgraph.ui.util.RelativeFileLocator;
 
 import com.google.inject.Inject;
 import com.sun.javafx.css.StyleManager;
@@ -193,6 +200,43 @@ public class LivePreviewPart extends ViewPart {
 					System.setErr(new PrintStream(redirectedOut));
 					
 					FXMLLoader loader = new FXMLLoader();
+					
+					if( contentData.resourceBundle != null ) {
+						FileInputStream in = null;
+						try {
+							in = new FileInputStream(new File(contentData.resourceBundle));
+							Properties p = new Properties();
+							p.load(in);
+							
+							final Object[][] entries = new Object[p.entrySet().size()][];
+							int i = 0;
+							for( Entry<Object,Object> e : p.entrySet() ) {
+								entries[i++] = new Object[]{e.getKey(),e.getValue()};
+							}
+							
+							ListResourceBundle b = new ListResourceBundle() {
+								
+								@Override
+								protected Object[][] getContents() {
+									return entries;
+								}
+							};	
+							loader.setResources(b);
+						} catch(Exception e) {
+							e.printStackTrace();
+						} finally {
+							if( in != null ) {
+								try {
+									in.close();
+								} catch (IOException e) {
+									// TODO Auto-generated catch block
+									e.printStackTrace();
+								}
+							}
+						}
+						
+					}
+					
 					loader.setBuilderFactory(new JavaFXBuilderFactory());
 					try {
 						

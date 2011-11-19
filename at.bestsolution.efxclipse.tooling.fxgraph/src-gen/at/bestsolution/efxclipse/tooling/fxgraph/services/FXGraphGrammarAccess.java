@@ -597,14 +597,19 @@ public class FXGraphGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cControllerHandledValuePropertyParserRuleCall_5 = (RuleCall)cAlternatives.eContents().get(5);
 		private final RuleCall cScriptValueExpressionParserRuleCall_6 = (RuleCall)cAlternatives.eContents().get(6);
 		private final RuleCall cScriptHandlerHandledValuePropertyParserRuleCall_7 = (RuleCall)cAlternatives.eContents().get(7);
+		private final RuleCall cLocationValuePropertyParserRuleCall_8 = (RuleCall)cAlternatives.eContents().get(8);
+		private final RuleCall cResourceValuePropertyParserRuleCall_9 = (RuleCall)cAlternatives.eContents().get(9);
+		private final RuleCall cBindValuePropertyParserRuleCall_10 = (RuleCall)cAlternatives.eContents().get(10);
 		
 		//SingleValueProperty:
 		//	SimpleValueProperty | Element | ReferenceValueProperty | IncludeValueProperty | CopyValueProperty |
-		//	ControllerHandledValueProperty | ScriptValueExpression | ScriptHandlerHandledValueProperty;
+		//	ControllerHandledValueProperty | ScriptValueExpression | ScriptHandlerHandledValueProperty | LocationValueProperty |
+		//	ResourceValueProperty | BindValueProperty;
 		public ParserRule getRule() { return rule; }
 
 		//SimpleValueProperty | Element | ReferenceValueProperty | IncludeValueProperty | CopyValueProperty |
-		//ControllerHandledValueProperty | ScriptValueExpression | ScriptHandlerHandledValueProperty
+		//ControllerHandledValueProperty | ScriptValueExpression | ScriptHandlerHandledValueProperty | LocationValueProperty |
+		//ResourceValueProperty | BindValueProperty
 		public Alternatives getAlternatives() { return cAlternatives; }
 
 		//SimpleValueProperty
@@ -630,6 +635,15 @@ public class FXGraphGrammarAccess extends AbstractGrammarElementFinder {
 
 		//ScriptHandlerHandledValueProperty
 		public RuleCall getScriptHandlerHandledValuePropertyParserRuleCall_7() { return cScriptHandlerHandledValuePropertyParserRuleCall_7; }
+
+		//LocationValueProperty
+		public RuleCall getLocationValuePropertyParserRuleCall_8() { return cLocationValuePropertyParserRuleCall_8; }
+
+		//ResourceValueProperty
+		public RuleCall getResourceValuePropertyParserRuleCall_9() { return cResourceValuePropertyParserRuleCall_9; }
+
+		//BindValueProperty
+		public RuleCall getBindValuePropertyParserRuleCall_10() { return cBindValuePropertyParserRuleCall_10; }
 	}
 
 	public class MultiValuePropertyElements extends AbstractParserRuleElementFinder {
@@ -984,6 +998,94 @@ public class FXGraphGrammarAccess extends AbstractGrammarElementFinder {
 		public RuleCall getSourcecodeSCRIPTLITERALTerminalRuleCall_1_0() { return cSourcecodeSCRIPTLITERALTerminalRuleCall_1_0; }
 	}
 
+	public class LocationValuePropertyElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "LocationValueProperty");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cLocationKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Assignment cValueAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cValueSTRINGTerminalRuleCall_1_0 = (RuleCall)cValueAssignment_1.eContents().get(0);
+		
+		//LocationValueProperty:
+		//	"location" value=STRING;
+		public ParserRule getRule() { return rule; }
+
+		//"location" value=STRING
+		public Group getGroup() { return cGroup; }
+
+		//"location"
+		public Keyword getLocationKeyword_0() { return cLocationKeyword_0; }
+
+		//value=STRING
+		public Assignment getValueAssignment_1() { return cValueAssignment_1; }
+
+		//STRING
+		public RuleCall getValueSTRINGTerminalRuleCall_1_0() { return cValueSTRINGTerminalRuleCall_1_0; }
+	}
+
+	public class ResourceValuePropertyElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "ResourceValueProperty");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cExtstringKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Assignment cValueAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cValueSTRINGTerminalRuleCall_1_0 = (RuleCall)cValueAssignment_1.eContents().get(0);
+		
+		//ResourceValueProperty:
+		//	"extstring" value=STRING;
+		public ParserRule getRule() { return rule; }
+
+		//"extstring" value=STRING
+		public Group getGroup() { return cGroup; }
+
+		//"extstring"
+		public Keyword getExtstringKeyword_0() { return cExtstringKeyword_0; }
+
+		//value=STRING
+		public Assignment getValueAssignment_1() { return cValueAssignment_1; }
+
+		//STRING
+		public RuleCall getValueSTRINGTerminalRuleCall_1_0() { return cValueSTRINGTerminalRuleCall_1_0; }
+	}
+
+	public class BindValuePropertyElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "BindValueProperty");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cBindKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Assignment cReferenceAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final CrossReference cReferenceElementCrossReference_1_0 = (CrossReference)cReferenceAssignment_1.eContents().get(0);
+		private final RuleCall cReferenceElementValidIDParserRuleCall_1_0_1 = (RuleCall)cReferenceElementCrossReference_1_0.eContents().get(1);
+		private final Keyword cNumberSignKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		private final Assignment cAttributeAssignment_3 = (Assignment)cGroup.eContents().get(3);
+		private final RuleCall cAttributeQualifiedNameParserRuleCall_3_0 = (RuleCall)cAttributeAssignment_3.eContents().get(0);
+		
+		//BindValueProperty:
+		//	"bind" reference=[Element|ValidID] "#" attribute=QualifiedName;
+		public ParserRule getRule() { return rule; }
+
+		//"bind" reference=[Element|ValidID] "#" attribute=QualifiedName
+		public Group getGroup() { return cGroup; }
+
+		//"bind"
+		public Keyword getBindKeyword_0() { return cBindKeyword_0; }
+
+		//reference=[Element|ValidID]
+		public Assignment getReferenceAssignment_1() { return cReferenceAssignment_1; }
+
+		//[Element|ValidID]
+		public CrossReference getReferenceElementCrossReference_1_0() { return cReferenceElementCrossReference_1_0; }
+
+		//ValidID
+		public RuleCall getReferenceElementValidIDParserRuleCall_1_0_1() { return cReferenceElementValidIDParserRuleCall_1_0_1; }
+
+		//"#"
+		public Keyword getNumberSignKeyword_2() { return cNumberSignKeyword_2; }
+
+		//attribute=QualifiedName
+		public Assignment getAttributeAssignment_3() { return cAttributeAssignment_3; }
+
+		//QualifiedName
+		public RuleCall getAttributeQualifiedNameParserRuleCall_3_0() { return cAttributeQualifiedNameParserRuleCall_3_0; }
+	}
+
 	public class QualifiedNameWithWildCardElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "QualifiedNameWithWildCard");
 		private final Group cGroup = (Group)rule.eContents().get(1);
@@ -1034,6 +1136,9 @@ public class FXGraphGrammarAccess extends AbstractGrammarElementFinder {
 	private ControllerHandledValuePropertyElements pControllerHandledValueProperty;
 	private ScriptHandlerHandledValuePropertyElements pScriptHandlerHandledValueProperty;
 	private ScriptValueExpressionElements pScriptValueExpression;
+	private LocationValuePropertyElements pLocationValueProperty;
+	private ResourceValuePropertyElements pResourceValueProperty;
+	private BindValuePropertyElements pBindValueProperty;
 	private QualifiedNameWithWildCardElements pQualifiedNameWithWildCard;
 	private TerminalRule tREAL;
 	private TerminalRule tSCRIPTLITERAL;
@@ -1156,7 +1261,8 @@ public class FXGraphGrammarAccess extends AbstractGrammarElementFinder {
 
 	//SingleValueProperty:
 	//	SimpleValueProperty | Element | ReferenceValueProperty | IncludeValueProperty | CopyValueProperty |
-	//	ControllerHandledValueProperty | ScriptValueExpression | ScriptHandlerHandledValueProperty;
+	//	ControllerHandledValueProperty | ScriptValueExpression | ScriptHandlerHandledValueProperty | LocationValueProperty |
+	//	ResourceValueProperty | BindValueProperty;
 	public SingleValuePropertyElements getSingleValuePropertyAccess() {
 		return (pSingleValueProperty != null) ? pSingleValueProperty : (pSingleValueProperty = new SingleValuePropertyElements());
 	}
@@ -1273,6 +1379,36 @@ public class FXGraphGrammarAccess extends AbstractGrammarElementFinder {
 	
 	public ParserRule getScriptValueExpressionRule() {
 		return getScriptValueExpressionAccess().getRule();
+	}
+
+	//LocationValueProperty:
+	//	"location" value=STRING;
+	public LocationValuePropertyElements getLocationValuePropertyAccess() {
+		return (pLocationValueProperty != null) ? pLocationValueProperty : (pLocationValueProperty = new LocationValuePropertyElements());
+	}
+	
+	public ParserRule getLocationValuePropertyRule() {
+		return getLocationValuePropertyAccess().getRule();
+	}
+
+	//ResourceValueProperty:
+	//	"extstring" value=STRING;
+	public ResourceValuePropertyElements getResourceValuePropertyAccess() {
+		return (pResourceValueProperty != null) ? pResourceValueProperty : (pResourceValueProperty = new ResourceValuePropertyElements());
+	}
+	
+	public ParserRule getResourceValuePropertyRule() {
+		return getResourceValuePropertyAccess().getRule();
+	}
+
+	//BindValueProperty:
+	//	"bind" reference=[Element|ValidID] "#" attribute=QualifiedName;
+	public BindValuePropertyElements getBindValuePropertyAccess() {
+		return (pBindValueProperty != null) ? pBindValueProperty : (pBindValueProperty = new BindValuePropertyElements());
+	}
+	
+	public ParserRule getBindValuePropertyRule() {
+		return getBindValuePropertyAccess().getRule();
 	}
 
 	//QualifiedNameWithWildCard:

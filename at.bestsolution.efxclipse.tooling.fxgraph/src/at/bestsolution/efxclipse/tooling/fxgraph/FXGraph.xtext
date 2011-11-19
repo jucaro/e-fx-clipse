@@ -46,7 +46,7 @@ ValueProperty:
 ;
 
 SingleValueProperty:
-	SimpleValueProperty | Element | ReferenceValueProperty | IncludeValueProperty | CopyValueProperty | ControllerHandledValueProperty | ScriptValueExpression | ScriptHandlerHandledValueProperty
+	SimpleValueProperty | Element | ReferenceValueProperty | IncludeValueProperty | CopyValueProperty | ControllerHandledValueProperty | ScriptValueExpression | ScriptHandlerHandledValueProperty | LocationValueProperty | ResourceValueProperty | BindValueProperty
 ;
 
 MultiValueProperty:
@@ -91,6 +91,18 @@ ScriptHandlerHandledValueProperty:
 
 ScriptValueExpression:
 	'scriptexpression' sourcecode=SCRIPTLITERAL
+;
+
+LocationValueProperty:
+	'location' value=STRING
+;
+
+ResourceValueProperty:
+	'extstring' value=STRING
+;
+
+BindValueProperty:
+	'bind' reference=[Element|ValidID] '#' attribute=QualifiedName
 ;
 
 QualifiedNameWithWildCard :

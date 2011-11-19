@@ -1046,6 +1046,36 @@ ruleSingleValueProperty returns [EObject current=null]
         $current = $this_ScriptHandlerHandledValueProperty_7.current; 
         afterParserOrEnumRuleCall();
     }
+
+    |
+    { 
+        newCompositeNode(grammarAccess.getSingleValuePropertyAccess().getLocationValuePropertyParserRuleCall_8()); 
+    }
+    this_LocationValueProperty_8=ruleLocationValueProperty
+    { 
+        $current = $this_LocationValueProperty_8.current; 
+        afterParserOrEnumRuleCall();
+    }
+
+    |
+    { 
+        newCompositeNode(grammarAccess.getSingleValuePropertyAccess().getResourceValuePropertyParserRuleCall_9()); 
+    }
+    this_ResourceValueProperty_9=ruleResourceValueProperty
+    { 
+        $current = $this_ResourceValueProperty_9.current; 
+        afterParserOrEnumRuleCall();
+    }
+
+    |
+    { 
+        newCompositeNode(grammarAccess.getSingleValuePropertyAccess().getBindValuePropertyParserRuleCall_10()); 
+    }
+    this_BindValueProperty_10=ruleBindValueProperty
+    { 
+        $current = $this_BindValueProperty_10.current; 
+        afterParserOrEnumRuleCall();
+    }
 )
 ;
 
@@ -1646,6 +1676,154 @@ ruleScriptValueExpression returns [EObject current=null]
        			"sourcecode",
         		lv_sourcecode_1_0, 
         		"SCRIPTLITERAL");
+	    }
+
+)
+))
+;
+
+
+
+
+
+// Entry rule entryRuleLocationValueProperty
+entryRuleLocationValueProperty returns [EObject current=null] 
+	:
+	{ newCompositeNode(grammarAccess.getLocationValuePropertyRule()); }
+	 iv_ruleLocationValueProperty=ruleLocationValueProperty 
+	 { $current=$iv_ruleLocationValueProperty.current; } 
+	 EOF 
+;
+
+// Rule LocationValueProperty
+ruleLocationValueProperty returns [EObject current=null] 
+    @init { enterRule(); 
+    }
+    @after { leaveRule(); }:
+(	otherlv_0='location' 
+    {
+    	newLeafNode(otherlv_0, grammarAccess.getLocationValuePropertyAccess().getLocationKeyword_0());
+    }
+(
+(
+		lv_value_1_0=RULE_STRING
+		{
+			newLeafNode(lv_value_1_0, grammarAccess.getLocationValuePropertyAccess().getValueSTRINGTerminalRuleCall_1_0()); 
+		}
+		{
+	        if ($current==null) {
+	            $current = createModelElement(grammarAccess.getLocationValuePropertyRule());
+	        }
+       		setWithLastConsumed(
+       			$current, 
+       			"value",
+        		lv_value_1_0, 
+        		"STRING");
+	    }
+
+)
+))
+;
+
+
+
+
+
+// Entry rule entryRuleResourceValueProperty
+entryRuleResourceValueProperty returns [EObject current=null] 
+	:
+	{ newCompositeNode(grammarAccess.getResourceValuePropertyRule()); }
+	 iv_ruleResourceValueProperty=ruleResourceValueProperty 
+	 { $current=$iv_ruleResourceValueProperty.current; } 
+	 EOF 
+;
+
+// Rule ResourceValueProperty
+ruleResourceValueProperty returns [EObject current=null] 
+    @init { enterRule(); 
+    }
+    @after { leaveRule(); }:
+(	otherlv_0='extstring' 
+    {
+    	newLeafNode(otherlv_0, grammarAccess.getResourceValuePropertyAccess().getExtstringKeyword_0());
+    }
+(
+(
+		lv_value_1_0=RULE_STRING
+		{
+			newLeafNode(lv_value_1_0, grammarAccess.getResourceValuePropertyAccess().getValueSTRINGTerminalRuleCall_1_0()); 
+		}
+		{
+	        if ($current==null) {
+	            $current = createModelElement(grammarAccess.getResourceValuePropertyRule());
+	        }
+       		setWithLastConsumed(
+       			$current, 
+       			"value",
+        		lv_value_1_0, 
+        		"STRING");
+	    }
+
+)
+))
+;
+
+
+
+
+
+// Entry rule entryRuleBindValueProperty
+entryRuleBindValueProperty returns [EObject current=null] 
+	:
+	{ newCompositeNode(grammarAccess.getBindValuePropertyRule()); }
+	 iv_ruleBindValueProperty=ruleBindValueProperty 
+	 { $current=$iv_ruleBindValueProperty.current; } 
+	 EOF 
+;
+
+// Rule BindValueProperty
+ruleBindValueProperty returns [EObject current=null] 
+    @init { enterRule(); 
+    }
+    @after { leaveRule(); }:
+(	otherlv_0='bind' 
+    {
+    	newLeafNode(otherlv_0, grammarAccess.getBindValuePropertyAccess().getBindKeyword_0());
+    }
+(
+(
+		{
+			if ($current==null) {
+	            $current = createModelElement(grammarAccess.getBindValuePropertyRule());
+	        }
+        }
+		{ 
+	        newCompositeNode(grammarAccess.getBindValuePropertyAccess().getReferenceElementCrossReference_1_0()); 
+	    }
+		ruleValidID		{ 
+	        afterParserOrEnumRuleCall();
+	    }
+
+)
+)	otherlv_2='#' 
+    {
+    	newLeafNode(otherlv_2, grammarAccess.getBindValuePropertyAccess().getNumberSignKeyword_2());
+    }
+(
+(
+		{ 
+	        newCompositeNode(grammarAccess.getBindValuePropertyAccess().getAttributeQualifiedNameParserRuleCall_3_0()); 
+	    }
+		lv_attribute_3_0=ruleQualifiedName		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getBindValuePropertyRule());
+	        }
+       		set(
+       			$current, 
+       			"attribute",
+        		lv_attribute_3_0, 
+        		"QualifiedName");
+	        afterParserOrEnumRuleCall();
 	    }
 
 )

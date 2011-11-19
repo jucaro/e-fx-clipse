@@ -3,12 +3,18 @@
  */
 package at.bestsolution.efxclipse.tooling.fxgraph.ui.contentassist;
 
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Map.Entry;
+import java.util.Properties;
 import java.util.SortedSet;
 import java.util.TreeSet;
 
@@ -21,7 +27,6 @@ import org.eclipse.jdt.core.Flags;
 import org.eclipse.jdt.core.IAnnotation;
 import org.eclipse.jdt.core.IJavaElement;
 import org.eclipse.jdt.core.IJavaProject;
-import org.eclipse.jdt.core.ILocalVariable;
 import org.eclipse.jdt.core.IMethod;
 import org.eclipse.jdt.core.IType;
 import org.eclipse.jdt.core.JavaCore;
@@ -33,13 +38,11 @@ import org.eclipse.jdt.core.dom.IBinding;
 import org.eclipse.jdt.core.dom.ITypeBinding;
 import org.eclipse.jdt.internal.corext.dom.TypeRules;
 import org.eclipse.jdt.internal.corext.util.JavaModelUtil;
-import org.eclipse.jface.resource.ImageDescriptor;
 import org.eclipse.jface.resource.JFaceResources;
 import org.eclipse.jface.viewers.StyledString;
 import org.eclipse.swt.graphics.Image;
 import org.eclipse.xtext.Assignment;
 import org.eclipse.xtext.RuleCall;
-import org.eclipse.xtext.common.types.JvmParameterizedTypeReference;
 import org.eclipse.xtext.common.types.JvmType;
 import org.eclipse.xtext.common.types.JvmTypeReference;
 import org.eclipse.xtext.common.types.util.jdt.IJavaElementFinder;
@@ -49,8 +52,10 @@ import org.eclipse.xtext.ui.editor.contentassist.ICompletionProposalAcceptor;
 import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.ComponentDefinition;
 import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.Element;
 import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.Model;
+import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.ResourceValueProperty;
 import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.StaticValueProperty;
 import at.bestsolution.efxclipse.tooling.fxgraph.ui.internal.FXGraphActivator;
+import at.bestsolution.efxclipse.tooling.fxgraph.ui.util.RelativeFileLocator;
 
 import com.google.inject.Inject;
 
@@ -73,6 +78,8 @@ public class FXGraphProposalProvider extends AbstractFXGraphProposalProvider {
 	private static final String METHOD_PUBLIC_KEY = FXGraphProposalProvider.class.getName() + ".METHOD_PUBLIC";
 	private static final String STAT_METHOD_PUBLIC_KEY = FXGraphProposalProvider.class.getName() + ".STAT_METHOD_PUBLIC_KEY";
 	
+	private static final String EXTERNALIZED_STRING_KEY = FXGraphProposalProvider.class.getName() + ".EXTERNALIZED_STRING_KEY";
+	
 	@Inject
 	private IJavaElementFinder javaElementFinder;
 	
@@ -88,6 +95,8 @@ public class FXGraphProposalProvider extends AbstractFXGraphProposalProvider {
 		JFaceResources.getImageRegistry().put(METHOD_PUBLIC_KEY, FXGraphActivator.imageDescriptorFromPlugin("at.bestsolution.efxclipse.tooling.fxgraph.ui", "/icons/methpub_obj.gif"));
 		
 		JFaceResources.getImageRegistry().put(STAT_METHOD_PUBLIC_KEY, FXGraphActivator.imageDescriptorFromPlugin("at.bestsolution.efxclipse.tooling.fxgraph.ui", "/icons/statmethpub_obj.gif"));
+		
+		JFaceResources.getImageRegistry().put(EXTERNALIZED_STRING_KEY, FXGraphActivator.imageDescriptorFromPlugin("at.bestsolution.efxclipse.tooling.fxgraph.ui", "/icons/internalize.gif"));
 	}
 
 	static class TypeData {
@@ -384,6 +393,83 @@ public class FXGraphProposalProvider extends AbstractFXGraphProposalProvider {
 		IProject project = ResourcesPlugin.getWorkspace().getRoot()
 				.getProject(uri.segment(1));
 		return JavaCore.create(project);
+	}
+	
+	@Override
+	public void complete_LocationValueProperty(EObject model,
+			RuleCall ruleCall, ContentAssistContext context,
+			ICompletionProposalAcceptor acceptor) {
+		// TODO Auto-generated method stub
+		super.complete_LocationValueProperty(model, ruleCall, context, acceptor);
+	}
+	
+	@Override
+	public void complete_ID(EObject model, RuleCall ruleCall,
+			ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
+		System.err.println("Completeing id");
+		super.complete_ID(model, ruleCall, context, acceptor);
+	}
+	
+	@Override
+	public void complete_QualifiedName(EObject model, RuleCall ruleCall,
+			ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
+		System.err.println("Completeing qualified name");
+		super.complete_QualifiedName(model, ruleCall, context, acceptor);
+	}
+	
+	@Override
+	public void complete_STRING(EObject model, RuleCall ruleCall,
+			ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
+		System.err.println("Complete string " + model);
+		if( model instanceof ResourceValueProperty ) {
+			Model m = (Model) model.eResource().getContents().get(0);
+			String resourceBundle = m.getComponentDef().getPreviewResourceBundle();
+			Properties p = null;
+			
+			if( resourceBundle != null ) {
+				File f = RelativeFileLocator.locateFile(model.eResource().getURI(), resourceBundle);
+				System.err.println(f);
+				if( f != null ) {
+					FileInputStream fi = null;
+					try {
+						fi = new FileInputStream(f);
+						p = new Properties();
+						p.load(fi);
+						//TODO Should we build the variants and load them?
+					} catch (FileNotFoundException e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					} catch (IOException e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					} finally {
+						if( fi != null ) {
+							try {
+								fi.close();
+							} catch (IOException e) {
+								// TODO Auto-generated catch block
+								e.printStackTrace();
+							}
+						}
+					}
+				}
+			}
+			
+			if(p != null) {
+				for( String k : p.stringPropertyNames() ) {
+					StyledString s = new StyledString(k);
+					s.append(" - " + p.getProperty(k), StyledString.DECORATIONS_STYLER);
+					acceptor.accept(createCompletionProposal("\""+k+"\"", s, JFaceResources.getImage(EXTERNALIZED_STRING_KEY), context));
+				}
+			}
+		}
+	}
+	
+	@Override
+	public void complete_BindValueProperty(EObject model, RuleCall ruleCall,
+			ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
+		// TODO Auto-generated method stub
+		super.complete_BindValueProperty(model, ruleCall, context, acceptor);
 	}
 	
 	@Override
