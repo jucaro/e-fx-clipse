@@ -1025,19 +1025,19 @@ public class FXGraphGrammarAccess extends AbstractGrammarElementFinder {
 	public class ResourceValuePropertyElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "ResourceValueProperty");
 		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Keyword cExtstringKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Keyword cRstringKeyword_0 = (Keyword)cGroup.eContents().get(0);
 		private final Assignment cValueAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final RuleCall cValueSTRINGTerminalRuleCall_1_0 = (RuleCall)cValueAssignment_1.eContents().get(0);
 		
 		//ResourceValueProperty:
-		//	"extstring" value=STRING;
+		//	"rstring" value=STRING;
 		public ParserRule getRule() { return rule; }
 
-		//"extstring" value=STRING
+		//"rstring" value=STRING
 		public Group getGroup() { return cGroup; }
 
-		//"extstring"
-		public Keyword getExtstringKeyword_0() { return cExtstringKeyword_0; }
+		//"rstring"
+		public Keyword getRstringKeyword_0() { return cRstringKeyword_0; }
 
 		//value=STRING
 		public Assignment getValueAssignment_1() { return cValueAssignment_1; }
@@ -1392,7 +1392,7 @@ public class FXGraphGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//ResourceValueProperty:
-	//	"extstring" value=STRING;
+	//	"rstring" value=STRING;
 	public ResourceValuePropertyElements getResourceValuePropertyAccess() {
 		return (pResourceValueProperty != null) ? pResourceValueProperty : (pResourceValueProperty = new ResourceValuePropertyElements());
 	}

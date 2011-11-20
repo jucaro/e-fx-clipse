@@ -112,6 +112,7 @@ RULE_WS=11
 '.'=45
 'previewResourceFile'=19
 'import'=23
+'rstring'=43
 'true'=33
 'catch'=89
 'else'=71
@@ -143,7 +144,6 @@ RULE_WS=11
 'val'=79
 'call'=30
 'null'=83
-'extstring'=43
 'scriptmethod'=40
 'typeof'=84
 '='=47

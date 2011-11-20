@@ -23,7 +23,7 @@ import java.util.HashMap;
 @SuppressWarnings("all")
 public class InternalFXGraphParser extends AbstractInternalContentAssistParser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_ID", "RULE_STRING", "RULE_SCRIPTLITERAL", "RULE_INT", "RULE_REAL", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'='", "'+='", "'||'", "'&&'", "'true'", "'false'", "'=='", "'!='", "'>='", "'<='", "'>'", "'<'", "'->'", "'..'", "'+'", "'-'", "'*'", "'**'", "'/'", "'%'", "'!'", "'.'", "'val'", "'super'", "'component'", "'{'", "'}'", "'controlledby'", "'previewCssFiles'", "'['", "']'", "','", "'previewResourceFile'", "'previewClasspathEntries'", "'import'", "'('", "')'", "'createdby'", "'id'", "'define'", "'script'", "'call'", "'#'", "':'", "'idref'", "'include'", "'copy'", "'controllermethod'", "'scriptmethod'", "'scriptexpression'", "'location'", "'extstring'", "'bind'", "'instanceof'", "'as'", "';'", "'if'", "'else'", "'switch'", "'default'", "'case'", "'for'", "'while'", "'do'", "'::'", "'new'", "'null'", "'typeof'", "'throw'", "'return'", "'try'", "'finally'", "'catch'", "'=>'", "'?'", "'extends'", "'&'", "'?.'", "'*.'", "'|'", "'var'"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_ID", "RULE_STRING", "RULE_SCRIPTLITERAL", "RULE_INT", "RULE_REAL", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'='", "'+='", "'||'", "'&&'", "'true'", "'false'", "'=='", "'!='", "'>='", "'<='", "'>'", "'<'", "'->'", "'..'", "'+'", "'-'", "'*'", "'**'", "'/'", "'%'", "'!'", "'.'", "'val'", "'super'", "'component'", "'{'", "'}'", "'controlledby'", "'previewCssFiles'", "'['", "']'", "','", "'previewResourceFile'", "'previewClasspathEntries'", "'import'", "'('", "')'", "'createdby'", "'id'", "'define'", "'script'", "'call'", "'#'", "':'", "'idref'", "'include'", "'copy'", "'controllermethod'", "'scriptmethod'", "'scriptexpression'", "'location'", "'rstring'", "'bind'", "'instanceof'", "'as'", "';'", "'if'", "'else'", "'switch'", "'default'", "'case'", "'for'", "'while'", "'do'", "'::'", "'new'", "'null'", "'typeof'", "'throw'", "'return'", "'try'", "'finally'", "'catch'", "'=>'", "'?'", "'extends'", "'&'", "'?.'", "'*.'", "'|'", "'var'"
     };
     public static final int RULE_ID=4;
     public static final int T__29=29;
@@ -20312,24 +20312,24 @@ public class InternalFXGraphParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ResourceValueProperty__Group__0__Impl"
-    // ../at.bestsolution.efxclipse.tooling.fxgraph.ui/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/ui/contentassist/antlr/internal/InternalFXGraph.g:6680:1: rule__ResourceValueProperty__Group__0__Impl : ( 'extstring' ) ;
+    // ../at.bestsolution.efxclipse.tooling.fxgraph.ui/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/ui/contentassist/antlr/internal/InternalFXGraph.g:6680:1: rule__ResourceValueProperty__Group__0__Impl : ( 'rstring' ) ;
     public final void rule__ResourceValueProperty__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../at.bestsolution.efxclipse.tooling.fxgraph.ui/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/ui/contentassist/antlr/internal/InternalFXGraph.g:6684:1: ( ( 'extstring' ) )
-            // ../at.bestsolution.efxclipse.tooling.fxgraph.ui/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/ui/contentassist/antlr/internal/InternalFXGraph.g:6685:1: ( 'extstring' )
+            // ../at.bestsolution.efxclipse.tooling.fxgraph.ui/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/ui/contentassist/antlr/internal/InternalFXGraph.g:6684:1: ( ( 'rstring' ) )
+            // ../at.bestsolution.efxclipse.tooling.fxgraph.ui/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/ui/contentassist/antlr/internal/InternalFXGraph.g:6685:1: ( 'rstring' )
             {
-            // ../at.bestsolution.efxclipse.tooling.fxgraph.ui/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/ui/contentassist/antlr/internal/InternalFXGraph.g:6685:1: ( 'extstring' )
-            // ../at.bestsolution.efxclipse.tooling.fxgraph.ui/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/ui/contentassist/antlr/internal/InternalFXGraph.g:6686:1: 'extstring'
+            // ../at.bestsolution.efxclipse.tooling.fxgraph.ui/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/ui/contentassist/antlr/internal/InternalFXGraph.g:6685:1: ( 'rstring' )
+            // ../at.bestsolution.efxclipse.tooling.fxgraph.ui/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/ui/contentassist/antlr/internal/InternalFXGraph.g:6686:1: 'rstring'
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getResourceValuePropertyAccess().getExtstringKeyword_0()); 
+               before(grammarAccess.getResourceValuePropertyAccess().getRstringKeyword_0()); 
             }
             match(input,64,FOLLOW_64_in_rule__ResourceValueProperty__Group__0__Impl13905); if (state.failed) return ;
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getResourceValuePropertyAccess().getExtstringKeyword_0()); 
+               after(grammarAccess.getResourceValuePropertyAccess().getRstringKeyword_0()); 
             }
 
             }

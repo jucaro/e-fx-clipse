@@ -22,7 +22,7 @@ import java.util.HashMap;
 @SuppressWarnings("all")
 public class InternalFXGraphParser extends AbstractInternalAntlrParser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_STRING", "RULE_ID", "RULE_SCRIPTLITERAL", "RULE_INT", "RULE_REAL", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'component'", "'controlledby'", "'previewCssFiles'", "'['", "','", "']'", "'previewResourceFile'", "'previewClasspathEntries'", "'{'", "'}'", "'import'", "'('", "'createdby'", "')'", "'id'", "'define'", "'script'", "'call'", "'#'", "':'", "'true'", "'false'", "'-'", "'idref'", "'include'", "'copy'", "'controllermethod'", "'scriptmethod'", "'scriptexpression'", "'location'", "'extstring'", "'bind'", "'.'", "'*'", "'='", "'+='", "'||'", "'&&'", "'=='", "'!='", "'instanceof'", "'>='", "'<='", "'>'", "'<'", "'->'", "'..'", "'+'", "'**'", "'/'", "'%'", "'!'", "'as'", "'?.'", "'*.'", "'|'", "';'", "'if'", "'else'", "'switch'", "'default'", "'case'", "'for'", "'while'", "'do'", "'var'", "'val'", "'super'", "'::'", "'new'", "'null'", "'typeof'", "'throw'", "'return'", "'try'", "'finally'", "'catch'", "'=>'", "'?'", "'extends'", "'&'"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_STRING", "RULE_ID", "RULE_SCRIPTLITERAL", "RULE_INT", "RULE_REAL", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'component'", "'controlledby'", "'previewCssFiles'", "'['", "','", "']'", "'previewResourceFile'", "'previewClasspathEntries'", "'{'", "'}'", "'import'", "'('", "'createdby'", "')'", "'id'", "'define'", "'script'", "'call'", "'#'", "':'", "'true'", "'false'", "'-'", "'idref'", "'include'", "'copy'", "'controllermethod'", "'scriptmethod'", "'scriptexpression'", "'location'", "'rstring'", "'bind'", "'.'", "'*'", "'='", "'+='", "'||'", "'&&'", "'=='", "'!='", "'instanceof'", "'>='", "'<='", "'>'", "'<'", "'->'", "'..'", "'+'", "'**'", "'/'", "'%'", "'!'", "'as'", "'?.'", "'*.'", "'|'", "';'", "'if'", "'else'", "'switch'", "'default'", "'case'", "'for'", "'while'", "'do'", "'var'", "'val'", "'super'", "'::'", "'new'", "'null'", "'typeof'", "'throw'", "'return'", "'try'", "'finally'", "'catch'", "'=>'", "'?'", "'extends'", "'&'"
     };
     public static final int RULE_ID=5;
     public static final int T__29=29;
@@ -4959,7 +4959,7 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleResourceValueProperty"
-    // ../at.bestsolution.efxclipse.tooling.fxgraph/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/parser/antlr/internal/InternalFXGraph.g:1742:1: ruleResourceValueProperty returns [EObject current=null] : (otherlv_0= 'extstring' ( (lv_value_1_0= RULE_STRING ) ) ) ;
+    // ../at.bestsolution.efxclipse.tooling.fxgraph/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/parser/antlr/internal/InternalFXGraph.g:1742:1: ruleResourceValueProperty returns [EObject current=null] : (otherlv_0= 'rstring' ( (lv_value_1_0= RULE_STRING ) ) ) ;
     public final EObject ruleResourceValueProperty() throws RecognitionException {
         EObject current = null;
 
@@ -4969,16 +4969,16 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../at.bestsolution.efxclipse.tooling.fxgraph/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/parser/antlr/internal/InternalFXGraph.g:1745:28: ( (otherlv_0= 'extstring' ( (lv_value_1_0= RULE_STRING ) ) ) )
-            // ../at.bestsolution.efxclipse.tooling.fxgraph/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/parser/antlr/internal/InternalFXGraph.g:1746:1: (otherlv_0= 'extstring' ( (lv_value_1_0= RULE_STRING ) ) )
+            // ../at.bestsolution.efxclipse.tooling.fxgraph/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/parser/antlr/internal/InternalFXGraph.g:1745:28: ( (otherlv_0= 'rstring' ( (lv_value_1_0= RULE_STRING ) ) ) )
+            // ../at.bestsolution.efxclipse.tooling.fxgraph/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/parser/antlr/internal/InternalFXGraph.g:1746:1: (otherlv_0= 'rstring' ( (lv_value_1_0= RULE_STRING ) ) )
             {
-            // ../at.bestsolution.efxclipse.tooling.fxgraph/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/parser/antlr/internal/InternalFXGraph.g:1746:1: (otherlv_0= 'extstring' ( (lv_value_1_0= RULE_STRING ) ) )
-            // ../at.bestsolution.efxclipse.tooling.fxgraph/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/parser/antlr/internal/InternalFXGraph.g:1746:3: otherlv_0= 'extstring' ( (lv_value_1_0= RULE_STRING ) )
+            // ../at.bestsolution.efxclipse.tooling.fxgraph/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/parser/antlr/internal/InternalFXGraph.g:1746:1: (otherlv_0= 'rstring' ( (lv_value_1_0= RULE_STRING ) ) )
+            // ../at.bestsolution.efxclipse.tooling.fxgraph/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/parser/antlr/internal/InternalFXGraph.g:1746:3: otherlv_0= 'rstring' ( (lv_value_1_0= RULE_STRING ) )
             {
             otherlv_0=(Token)match(input,43,FOLLOW_43_in_ruleResourceValueProperty3830); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
-                  	newLeafNode(otherlv_0, grammarAccess.getResourceValuePropertyAccess().getExtstringKeyword_0());
+                  	newLeafNode(otherlv_0, grammarAccess.getResourceValuePropertyAccess().getRstringKeyword_0());
                   
             }
             // ../at.bestsolution.efxclipse.tooling.fxgraph/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/parser/antlr/internal/InternalFXGraph.g:1750:1: ( (lv_value_1_0= RULE_STRING ) )

@@ -6683,11 +6683,11 @@ rule__ResourceValueProperty__Group__0__Impl
     }
 :
 (
-{ before(grammarAccess.getResourceValuePropertyAccess().getExtstringKeyword_0()); }
+{ before(grammarAccess.getResourceValuePropertyAccess().getRstringKeyword_0()); }
 
-	'extstring' 
+	'rstring' 
 
-{ after(grammarAccess.getResourceValuePropertyAccess().getExtstringKeyword_0()); }
+{ after(grammarAccess.getResourceValuePropertyAccess().getRstringKeyword_0()); }
 )
 
 ;

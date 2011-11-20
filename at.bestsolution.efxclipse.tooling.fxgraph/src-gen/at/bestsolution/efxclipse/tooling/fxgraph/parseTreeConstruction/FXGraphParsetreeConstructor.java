@@ -5039,11 +5039,11 @@ protected class LocationValueProperty_ValueAssignment_1 extends AssignmentToken 
 /************ begin Rule ResourceValueProperty ****************
  *
  * ResourceValueProperty:
- * 	"extstring" value=STRING;
+ * 	"rstring" value=STRING;
  *
  **/
 
-// "extstring" value=STRING
+// "rstring" value=STRING
 protected class ResourceValueProperty_Group extends GroupToken {
 	
 	public ResourceValueProperty_Group(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -5072,16 +5072,16 @@ protected class ResourceValueProperty_Group extends GroupToken {
 
 }
 
-// "extstring"
-protected class ResourceValueProperty_ExtstringKeyword_0 extends KeywordToken  {
+// "rstring"
+protected class ResourceValueProperty_RstringKeyword_0 extends KeywordToken  {
 	
-	public ResourceValueProperty_ExtstringKeyword_0(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+	public ResourceValueProperty_RstringKeyword_0(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
 		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
 	}
 	
 	@Override
 	public Keyword getGrammarElement() {
-		return grammarAccess.getResourceValuePropertyAccess().getExtstringKeyword_0();
+		return grammarAccess.getResourceValuePropertyAccess().getRstringKeyword_0();
 	}
 
     @Override
@@ -5108,7 +5108,7 @@ protected class ResourceValueProperty_ValueAssignment_1 extends AssignmentToken 
     @Override
 	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
 		switch(index) {
-			case 0: return new ResourceValueProperty_ExtstringKeyword_0(lastRuleCallOrigin, this, 0, inst);
+			case 0: return new ResourceValueProperty_RstringKeyword_0(lastRuleCallOrigin, this, 0, inst);
 			default: return null;
 		}	
 	}

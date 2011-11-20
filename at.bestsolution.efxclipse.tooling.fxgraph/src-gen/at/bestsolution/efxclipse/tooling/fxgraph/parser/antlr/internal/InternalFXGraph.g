@@ -1743,9 +1743,9 @@ ruleResourceValueProperty returns [EObject current=null]
     @init { enterRule(); 
     }
     @after { leaveRule(); }:
-(	otherlv_0='extstring' 
+(	otherlv_0='rstring' 
     {
-    	newLeafNode(otherlv_0, grammarAccess.getResourceValuePropertyAccess().getExtstringKeyword_0());
+    	newLeafNode(otherlv_0, grammarAccess.getResourceValuePropertyAccess().getRstringKeyword_0());
     }
 (
 (

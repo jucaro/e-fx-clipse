@@ -425,7 +425,7 @@
         <classifier xsi:type="ecore:EClass" href="http://www.bestsolution.at/efxclipse/tooling/fxgraph/FXGraph#//ResourceValueProperty"/>
       </type>
       <alternatives xsi:type="xtext:Group">
-        <elements xsi:type="xtext:Keyword" value="extstring"/>
+        <elements xsi:type="xtext:Keyword" value="rstring"/>
         <elements xsi:type="xtext:Assignment" feature="value" operator="=">
           <terminal xsi:type="xtext:RuleCall" rule="/3/@rules.2"/>
         </elements>

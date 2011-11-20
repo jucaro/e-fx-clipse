@@ -98,7 +98,7 @@ LocationValueProperty:
 ;
 
 ResourceValueProperty:
-	'extstring' value=STRING
+	'rstring' value=STRING
 ;
 
 BindValueProperty:
