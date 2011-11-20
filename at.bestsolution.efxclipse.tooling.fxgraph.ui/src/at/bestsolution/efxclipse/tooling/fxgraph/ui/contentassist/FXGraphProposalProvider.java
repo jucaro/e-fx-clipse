@@ -420,7 +420,6 @@ public class FXGraphProposalProvider extends AbstractFXGraphProposalProvider {
 	@Override
 	public void complete_STRING(EObject model, RuleCall ruleCall,
 			ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
-		System.err.println("Complete string " + model);
 		if( model instanceof ResourceValueProperty ) {
 			Model m = (Model) model.eResource().getContents().get(0);
 			String resourceBundle = m.getComponentDef().getPreviewResourceBundle();
@@ -428,7 +427,6 @@ public class FXGraphProposalProvider extends AbstractFXGraphProposalProvider {
 			
 			if( resourceBundle != null ) {
 				File f = RelativeFileLocator.locateFile(model.eResource().getURI(), resourceBundle);
-				System.err.println(f);
 				if( f != null ) {
 					FileInputStream fi = null;
 					try {
