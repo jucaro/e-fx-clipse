@@ -1,0 +1,77 @@
+<html>
+<head>
+<link rel="stylesheet" href="http://twitter.github.com/bootstrap/1.4.0/bootstrap.min.css">
+<link rel="stylesheet" href="http://twitter.github.com/bootstrap/assets/css/docs.css">
+<link href="http://twitter.github.com/bootstrap/assets/js/google-code-prettify/prettify.css" rel="stylesheet">
+<title>e(fx)clipse - JavaFX 2.0 Tooling and Runtime for Eclipse</title>
+</head>
+<body>
+<div class="topbar" data-scrollspy="scrollspy" >
+ <div class="topbar-inner">
+  <div class="container">
+   <a class="brand" href="index.html">e(fx)clipse</a>
+   <ul class="nav">
+    <li class="active"><a href="index.html">Home</a></li>
+    <li><a href="install.html">Installation</a></li>
+    <!--li><a href="tooling.html">Tooling</a></li>
+    <li><a href="runtime.html">Runtime</a></li-->
+   </ul>
+  </div>
+ </div>
+</div>
+
+<header class="jumbotron masthead" id="overview">
+ <div class="inner">
+  <div class="container">
+   <h1>e(fx)clipse, from BestSolution.at</h1>
+   <p class="lead">
+     JavaFX 2.0 Tooling and Runtime for Eclipse and OSGi
+   </p>
+   </div>
+ </div>
+</header>
+
+<div class="container">
+ <section id="about-efxclipse">
+  <div class="page-header">
+   <h1>What it is <small>a ahort intro</small></h1>
+  </div>
+  <div class="row">
+   <div class="span-16">
+    <p>
+     fxgraph is a simple DSL to define an (JavaFX 2.0) object graph but instead of generating java or
+     java byte code it generates <a href="http://download.oracle.com/javafx/2.0/api/javafx/fxml/doc-files/introduction_to_fxml.html">FXML</a> a special xml-format supported by the JavaFX 2.0 library.
+    </p>
+    <p>
+     The language supports the following concepts:
+     <ul>
+      <li>JSON like object graph notation</li>
+      <li>Static "properties" access (used by mainly to set layout properties)</li>
+      <li>Binding expressions</li>
+      <li>(Java-)Controller binding (used for event-listeners)</li>
+      <li>Translation support</li>
+      <li>Support for CSS-Referencing</li>
+      <li>Live Preview of UI</li>
+     </ul>
+    </p>
+   </div>
+  </div>
+ </section>
+ <section id="about-efxclipse">
+  <div class="page-header">
+   <h1>A first example <small>Hello World</small></h1>
+  </div>
+  <div class="row">
+   <div class="span16">
+   <p>
+    Like with any other language let's start with an Hello World application to explain the main
+    building blocks
+   </p>
+   <pre class="prettyprint linenums"><ol class="linenums"><li><span class="kwd">import</span> <span class="pln">java.lang.*</span></li><li><span class="kwd">import</span> <span class="pln">javafx.scene.control.*</span></li><li><span class="kwd">import</span> <span class="pln">javafx.scene.layout.*</span></li><li><span class="kwd">import</span> <span class="pln">javafx.scene.paint.*</span></li><li></li><li><span class="kwd">component</span> <span class="pln">HelloWorld {</span></li><li>&nbsp;&nbsp;<span class="typ">BorderPane</span> <span class="pln">{</span></li><li>&nbsp;&nbsp;&nbsp;&nbsp;<span class="pln">center :</span> <span class="typ">Label</span> <span class="pln">{</span></li><li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="pln">text : </span><span class="str">"Hello World"</span></li><li>&nbsp;&nbsp;&nbsp;&nbsp;<span class="pln">}</span></li><li>&nbsp;&nbsp;<span class="pln">}</span></li><li><span class="pln">}</span></li></ol></pre>
+   </div>
+  </div>
+ </section>
+</div>
+
+</body>
+</html>
