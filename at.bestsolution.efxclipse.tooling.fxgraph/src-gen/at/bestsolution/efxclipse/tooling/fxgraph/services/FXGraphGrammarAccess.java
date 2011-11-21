@@ -1050,40 +1050,40 @@ public class FXGraphGrammarAccess extends AbstractGrammarElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "BindValueProperty");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Keyword cBindKeyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final Assignment cReferenceAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final CrossReference cReferenceElementCrossReference_1_0 = (CrossReference)cReferenceAssignment_1.eContents().get(0);
-		private final RuleCall cReferenceElementValidIDParserRuleCall_1_0_1 = (RuleCall)cReferenceElementCrossReference_1_0.eContents().get(1);
+		private final Assignment cElementReferenceAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final CrossReference cElementReferenceElementCrossReference_1_0 = (CrossReference)cElementReferenceAssignment_1.eContents().get(0);
+		private final RuleCall cElementReferenceElementValidIDParserRuleCall_1_0_1 = (RuleCall)cElementReferenceElementCrossReference_1_0.eContents().get(1);
 		private final Keyword cNumberSignKeyword_2 = (Keyword)cGroup.eContents().get(2);
 		private final Assignment cAttributeAssignment_3 = (Assignment)cGroup.eContents().get(3);
-		private final RuleCall cAttributeQualifiedNameParserRuleCall_3_0 = (RuleCall)cAttributeAssignment_3.eContents().get(0);
+		private final RuleCall cAttributeIDTerminalRuleCall_3_0 = (RuleCall)cAttributeAssignment_3.eContents().get(0);
 		
 		//BindValueProperty:
-		//	"bind" reference=[Element|ValidID] "#" attribute=QualifiedName;
+		//	"bind" elementReference=[Element|ValidID] "#" attribute=ID;
 		public ParserRule getRule() { return rule; }
 
-		//"bind" reference=[Element|ValidID] "#" attribute=QualifiedName
+		//"bind" elementReference=[Element|ValidID] "#" attribute=ID
 		public Group getGroup() { return cGroup; }
 
 		//"bind"
 		public Keyword getBindKeyword_0() { return cBindKeyword_0; }
 
-		//reference=[Element|ValidID]
-		public Assignment getReferenceAssignment_1() { return cReferenceAssignment_1; }
+		//elementReference=[Element|ValidID]
+		public Assignment getElementReferenceAssignment_1() { return cElementReferenceAssignment_1; }
 
 		//[Element|ValidID]
-		public CrossReference getReferenceElementCrossReference_1_0() { return cReferenceElementCrossReference_1_0; }
+		public CrossReference getElementReferenceElementCrossReference_1_0() { return cElementReferenceElementCrossReference_1_0; }
 
 		//ValidID
-		public RuleCall getReferenceElementValidIDParserRuleCall_1_0_1() { return cReferenceElementValidIDParserRuleCall_1_0_1; }
+		public RuleCall getElementReferenceElementValidIDParserRuleCall_1_0_1() { return cElementReferenceElementValidIDParserRuleCall_1_0_1; }
 
 		//"#"
 		public Keyword getNumberSignKeyword_2() { return cNumberSignKeyword_2; }
 
-		//attribute=QualifiedName
+		//attribute=ID
 		public Assignment getAttributeAssignment_3() { return cAttributeAssignment_3; }
 
-		//QualifiedName
-		public RuleCall getAttributeQualifiedNameParserRuleCall_3_0() { return cAttributeQualifiedNameParserRuleCall_3_0; }
+		//ID
+		public RuleCall getAttributeIDTerminalRuleCall_3_0() { return cAttributeIDTerminalRuleCall_3_0; }
 	}
 
 	public class QualifiedNameWithWildCardElements extends AbstractParserRuleElementFinder {
@@ -1402,7 +1402,7 @@ public class FXGraphGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//BindValueProperty:
-	//	"bind" reference=[Element|ValidID] "#" attribute=QualifiedName;
+	//	"bind" elementReference=[Element|ValidID] "#" attribute=ID;
 	public BindValuePropertyElements getBindValuePropertyAccess() {
 		return (pBindValueProperty != null) ? pBindValueProperty : (pBindValueProperty = new BindValuePropertyElements());
 	}

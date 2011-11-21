@@ -24,7 +24,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.impl.BindValuePropertyImpl#getReference <em>Reference</em>}</li>
+ *   <li>{@link at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.impl.BindValuePropertyImpl#getElementReference <em>Element Reference</em>}</li>
  *   <li>{@link at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.impl.BindValuePropertyImpl#getAttribute <em>Attribute</em>}</li>
  * </ul>
  * </p>
@@ -34,14 +34,14 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 public class BindValuePropertyImpl extends SingleValuePropertyImpl implements BindValueProperty
 {
   /**
-   * The cached value of the '{@link #getReference() <em>Reference</em>}' reference.
+   * The cached value of the '{@link #getElementReference() <em>Element Reference</em>}' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getReference()
+   * @see #getElementReference()
    * @generated
    * @ordered
    */
-  protected Element reference;
+  protected Element elementReference;
 
   /**
    * The default value of the '{@link #getAttribute() <em>Attribute</em>}' attribute.
@@ -89,19 +89,19 @@ public class BindValuePropertyImpl extends SingleValuePropertyImpl implements Bi
    * <!-- end-user-doc -->
    * @generated
    */
-  public Element getReference()
+  public Element getElementReference()
   {
-    if (reference != null && reference.eIsProxy())
+    if (elementReference != null && elementReference.eIsProxy())
     {
-      InternalEObject oldReference = (InternalEObject)reference;
-      reference = (Element)eResolveProxy(oldReference);
-      if (reference != oldReference)
+      InternalEObject oldElementReference = (InternalEObject)elementReference;
+      elementReference = (Element)eResolveProxy(oldElementReference);
+      if (elementReference != oldElementReference)
       {
         if (eNotificationRequired())
-          eNotify(new ENotificationImpl(this, Notification.RESOLVE, FXGraphPackage.BIND_VALUE_PROPERTY__REFERENCE, oldReference, reference));
+          eNotify(new ENotificationImpl(this, Notification.RESOLVE, FXGraphPackage.BIND_VALUE_PROPERTY__ELEMENT_REFERENCE, oldElementReference, elementReference));
       }
     }
-    return reference;
+    return elementReference;
   }
 
   /**
@@ -109,9 +109,9 @@ public class BindValuePropertyImpl extends SingleValuePropertyImpl implements Bi
    * <!-- end-user-doc -->
    * @generated
    */
-  public Element basicGetReference()
+  public Element basicGetElementReference()
   {
-    return reference;
+    return elementReference;
   }
 
   /**
@@ -119,12 +119,12 @@ public class BindValuePropertyImpl extends SingleValuePropertyImpl implements Bi
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setReference(Element newReference)
+  public void setElementReference(Element newElementReference)
   {
-    Element oldReference = reference;
-    reference = newReference;
+    Element oldElementReference = elementReference;
+    elementReference = newElementReference;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, FXGraphPackage.BIND_VALUE_PROPERTY__REFERENCE, oldReference, reference));
+      eNotify(new ENotificationImpl(this, Notification.SET, FXGraphPackage.BIND_VALUE_PROPERTY__ELEMENT_REFERENCE, oldElementReference, elementReference));
   }
 
   /**
@@ -160,9 +160,9 @@ public class BindValuePropertyImpl extends SingleValuePropertyImpl implements Bi
   {
     switch (featureID)
     {
-      case FXGraphPackage.BIND_VALUE_PROPERTY__REFERENCE:
-        if (resolve) return getReference();
-        return basicGetReference();
+      case FXGraphPackage.BIND_VALUE_PROPERTY__ELEMENT_REFERENCE:
+        if (resolve) return getElementReference();
+        return basicGetElementReference();
       case FXGraphPackage.BIND_VALUE_PROPERTY__ATTRIBUTE:
         return getAttribute();
     }
@@ -179,8 +179,8 @@ public class BindValuePropertyImpl extends SingleValuePropertyImpl implements Bi
   {
     switch (featureID)
     {
-      case FXGraphPackage.BIND_VALUE_PROPERTY__REFERENCE:
-        setReference((Element)newValue);
+      case FXGraphPackage.BIND_VALUE_PROPERTY__ELEMENT_REFERENCE:
+        setElementReference((Element)newValue);
         return;
       case FXGraphPackage.BIND_VALUE_PROPERTY__ATTRIBUTE:
         setAttribute((String)newValue);
@@ -199,8 +199,8 @@ public class BindValuePropertyImpl extends SingleValuePropertyImpl implements Bi
   {
     switch (featureID)
     {
-      case FXGraphPackage.BIND_VALUE_PROPERTY__REFERENCE:
-        setReference((Element)null);
+      case FXGraphPackage.BIND_VALUE_PROPERTY__ELEMENT_REFERENCE:
+        setElementReference((Element)null);
         return;
       case FXGraphPackage.BIND_VALUE_PROPERTY__ATTRIBUTE:
         setAttribute(ATTRIBUTE_EDEFAULT);
@@ -219,8 +219,8 @@ public class BindValuePropertyImpl extends SingleValuePropertyImpl implements Bi
   {
     switch (featureID)
     {
-      case FXGraphPackage.BIND_VALUE_PROPERTY__REFERENCE:
-        return reference != null;
+      case FXGraphPackage.BIND_VALUE_PROPERTY__ELEMENT_REFERENCE:
+        return elementReference != null;
       case FXGraphPackage.BIND_VALUE_PROPERTY__ATTRIBUTE:
         return ATTRIBUTE_EDEFAULT == null ? attribute != null : !ATTRIBUTE_EDEFAULT.equals(attribute);
     }

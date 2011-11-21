@@ -1798,7 +1798,7 @@ ruleBindValueProperty returns [EObject current=null]
 	        }
         }
 		{ 
-	        newCompositeNode(grammarAccess.getBindValuePropertyAccess().getReferenceElementCrossReference_1_0()); 
+	        newCompositeNode(grammarAccess.getBindValuePropertyAccess().getElementReferenceElementCrossReference_1_0()); 
 	    }
 		ruleValidID		{ 
 	        afterParserOrEnumRuleCall();
@@ -1811,19 +1811,19 @@ ruleBindValueProperty returns [EObject current=null]
     }
 (
 (
-		{ 
-	        newCompositeNode(grammarAccess.getBindValuePropertyAccess().getAttributeQualifiedNameParserRuleCall_3_0()); 
-	    }
-		lv_attribute_3_0=ruleQualifiedName		{
+		lv_attribute_3_0=RULE_ID
+		{
+			newLeafNode(lv_attribute_3_0, grammarAccess.getBindValuePropertyAccess().getAttributeIDTerminalRuleCall_3_0()); 
+		}
+		{
 	        if ($current==null) {
-	            $current = createModelElementForParent(grammarAccess.getBindValuePropertyRule());
+	            $current = createModelElement(grammarAccess.getBindValuePropertyRule());
 	        }
-       		set(
+       		setWithLastConsumed(
        			$current, 
        			"attribute",
         		lv_attribute_3_0, 
-        		"QualifiedName");
-	        afterParserOrEnumRuleCall();
+        		"ID");
 	    }
 
 )

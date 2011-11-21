@@ -15,7 +15,7 @@ package at.bestsolution.efxclipse.tooling.fxgraph.fXGraph;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.BindValueProperty#getReference <em>Reference</em>}</li>
+ *   <li>{@link at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.BindValueProperty#getElementReference <em>Element Reference</em>}</li>
  *   <li>{@link at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.BindValueProperty#getAttribute <em>Attribute</em>}</li>
  * </ul>
  * </p>
@@ -27,30 +27,30 @@ package at.bestsolution.efxclipse.tooling.fxgraph.fXGraph;
 public interface BindValueProperty extends SingleValueProperty
 {
   /**
-   * Returns the value of the '<em><b>Reference</b></em>' reference.
+   * Returns the value of the '<em><b>Element Reference</b></em>' reference.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Reference</em>' reference isn't clear,
+   * If the meaning of the '<em>Element Reference</em>' reference isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Reference</em>' reference.
-   * @see #setReference(Element)
-   * @see at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.FXGraphPackage#getBindValueProperty_Reference()
+   * @return the value of the '<em>Element Reference</em>' reference.
+   * @see #setElementReference(Element)
+   * @see at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.FXGraphPackage#getBindValueProperty_ElementReference()
    * @model
    * @generated
    */
-  Element getReference();
+  Element getElementReference();
 
   /**
-   * Sets the value of the '{@link at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.BindValueProperty#getReference <em>Reference</em>}' reference.
+   * Sets the value of the '{@link at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.BindValueProperty#getElementReference <em>Element Reference</em>}' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Reference</em>' reference.
-   * @see #getReference()
+   * @param value the new value of the '<em>Element Reference</em>' reference.
+   * @see #getElementReference()
    * @generated
    */
-  void setReference(Element value);
+  void setElementReference(Element value);
 
   /**
    * Returns the value of the '<em><b>Attribute</b></em>' attribute.

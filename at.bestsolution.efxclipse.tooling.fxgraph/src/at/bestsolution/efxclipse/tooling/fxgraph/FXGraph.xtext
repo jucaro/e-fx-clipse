@@ -102,7 +102,7 @@ ResourceValueProperty:
 ;
 
 BindValueProperty:
-	'bind' reference=[Element|ValidID] '#' attribute=QualifiedName
+	'bind' elementReference=[Element|ValidID] '#' attribute=ID
 ;
 
 QualifiedNameWithWildCard :

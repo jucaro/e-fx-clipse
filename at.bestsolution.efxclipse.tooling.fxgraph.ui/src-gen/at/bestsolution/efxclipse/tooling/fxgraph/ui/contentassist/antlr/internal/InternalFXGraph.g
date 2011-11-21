@@ -6777,9 +6777,9 @@ rule__BindValueProperty__Group__1__Impl
     }
 :
 (
-{ before(grammarAccess.getBindValuePropertyAccess().getReferenceAssignment_1()); }
-(rule__BindValueProperty__ReferenceAssignment_1)
-{ after(grammarAccess.getBindValuePropertyAccess().getReferenceAssignment_1()); }
+{ before(grammarAccess.getBindValuePropertyAccess().getElementReferenceAssignment_1()); }
+(rule__BindValueProperty__ElementReferenceAssignment_1)
+{ after(grammarAccess.getBindValuePropertyAccess().getElementReferenceAssignment_1()); }
 )
 
 ;
@@ -17517,18 +17517,18 @@ finally {
 	restoreStackSize(stackSize);
 }
 
-rule__BindValueProperty__ReferenceAssignment_1
+rule__BindValueProperty__ElementReferenceAssignment_1
     @init {
 		int stackSize = keepStackSize();
     }
 :
 (
-{ before(grammarAccess.getBindValuePropertyAccess().getReferenceElementCrossReference_1_0()); }
+{ before(grammarAccess.getBindValuePropertyAccess().getElementReferenceElementCrossReference_1_0()); }
 (
-{ before(grammarAccess.getBindValuePropertyAccess().getReferenceElementValidIDParserRuleCall_1_0_1()); }
-	ruleValidID{ after(grammarAccess.getBindValuePropertyAccess().getReferenceElementValidIDParserRuleCall_1_0_1()); }
+{ before(grammarAccess.getBindValuePropertyAccess().getElementReferenceElementValidIDParserRuleCall_1_0_1()); }
+	ruleValidID{ after(grammarAccess.getBindValuePropertyAccess().getElementReferenceElementValidIDParserRuleCall_1_0_1()); }
 )
-{ after(grammarAccess.getBindValuePropertyAccess().getReferenceElementCrossReference_1_0()); }
+{ after(grammarAccess.getBindValuePropertyAccess().getElementReferenceElementCrossReference_1_0()); }
 )
 
 ;
@@ -17542,8 +17542,8 @@ rule__BindValueProperty__AttributeAssignment_3
     }
 :
 (
-{ before(grammarAccess.getBindValuePropertyAccess().getAttributeQualifiedNameParserRuleCall_3_0()); }
-	ruleQualifiedName{ after(grammarAccess.getBindValuePropertyAccess().getAttributeQualifiedNameParserRuleCall_3_0()); }
+{ before(grammarAccess.getBindValuePropertyAccess().getAttributeIDTerminalRuleCall_3_0()); }
+	RULE_ID{ after(grammarAccess.getBindValuePropertyAccess().getAttributeIDTerminalRuleCall_3_0()); }
 )
 
 ;

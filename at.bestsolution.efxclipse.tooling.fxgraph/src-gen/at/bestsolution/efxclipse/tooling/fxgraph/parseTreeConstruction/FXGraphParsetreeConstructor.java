@@ -5134,11 +5134,11 @@ protected class ResourceValueProperty_ValueAssignment_1 extends AssignmentToken 
 /************ begin Rule BindValueProperty ****************
  *
  * BindValueProperty:
- * 	"bind" reference=[Element|ValidID] "#" attribute=QualifiedName;
+ * 	"bind" elementReference=[Element|ValidID] "#" attribute=ID;
  *
  **/
 
-// "bind" reference=[Element|ValidID] "#" attribute=QualifiedName
+// "bind" elementReference=[Element|ValidID] "#" attribute=ID
 protected class BindValueProperty_Group extends GroupToken {
 	
 	public BindValueProperty_Group(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -5188,16 +5188,16 @@ protected class BindValueProperty_BindKeyword_0 extends KeywordToken  {
 
 }
 
-// reference=[Element|ValidID]
-protected class BindValueProperty_ReferenceAssignment_1 extends AssignmentToken  {
+// elementReference=[Element|ValidID]
+protected class BindValueProperty_ElementReferenceAssignment_1 extends AssignmentToken  {
 	
-	public BindValueProperty_ReferenceAssignment_1(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+	public BindValueProperty_ElementReferenceAssignment_1(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
 		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
 	}
 	
 	@Override
 	public Assignment getGrammarElement() {
-		return grammarAccess.getBindValuePropertyAccess().getReferenceAssignment_1();
+		return grammarAccess.getBindValuePropertyAccess().getElementReferenceAssignment_1();
 	}
 
     @Override
@@ -5210,13 +5210,13 @@ protected class BindValueProperty_ReferenceAssignment_1 extends AssignmentToken 
 
     @Override	
 	public IEObjectConsumer tryConsume() {
-		if((value = eObjectConsumer.getConsumable("reference",true)) == null) return null;
-		IEObjectConsumer obj = eObjectConsumer.cloneAndConsume("reference");
+		if((value = eObjectConsumer.getConsumable("elementReference",true)) == null) return null;
+		IEObjectConsumer obj = eObjectConsumer.cloneAndConsume("elementReference");
 		if(value instanceof EObject) { // org::eclipse::xtext::impl::CrossReferenceImpl
 			IEObjectConsumer param = createEObjectConsumer((EObject)value);
-			if(param.isInstanceOf(grammarAccess.getBindValuePropertyAccess().getReferenceElementCrossReference_1_0().getType().getClassifier())) {
+			if(param.isInstanceOf(grammarAccess.getBindValuePropertyAccess().getElementReferenceElementCrossReference_1_0().getType().getClassifier())) {
 				type = AssignmentType.CROSS_REFERENCE;
-				element = grammarAccess.getBindValuePropertyAccess().getReferenceElementCrossReference_1_0(); 
+				element = grammarAccess.getBindValuePropertyAccess().getElementReferenceElementCrossReference_1_0(); 
 				return obj;
 			}
 		}
@@ -5240,14 +5240,14 @@ protected class BindValueProperty_NumberSignKeyword_2 extends KeywordToken  {
     @Override
 	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
 		switch(index) {
-			case 0: return new BindValueProperty_ReferenceAssignment_1(lastRuleCallOrigin, this, 0, inst);
+			case 0: return new BindValueProperty_ElementReferenceAssignment_1(lastRuleCallOrigin, this, 0, inst);
 			default: return null;
 		}	
 	}
 
 }
 
-// attribute=QualifiedName
+// attribute=ID
 protected class BindValueProperty_AttributeAssignment_3 extends AssignmentToken  {
 	
 	public BindValueProperty_AttributeAssignment_3(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -5271,9 +5271,9 @@ protected class BindValueProperty_AttributeAssignment_3 extends AssignmentToken 
 	public IEObjectConsumer tryConsume() {
 		if((value = eObjectConsumer.getConsumable("attribute",true)) == null) return null;
 		IEObjectConsumer obj = eObjectConsumer.cloneAndConsume("attribute");
-		if(valueSerializer.isValid(obj.getEObject(), grammarAccess.getBindValuePropertyAccess().getAttributeQualifiedNameParserRuleCall_3_0(), value, null)) {
-			type = AssignmentType.DATATYPE_RULE_CALL;
-			element = grammarAccess.getBindValuePropertyAccess().getAttributeQualifiedNameParserRuleCall_3_0();
+		if(valueSerializer.isValid(obj.getEObject(), grammarAccess.getBindValuePropertyAccess().getAttributeIDTerminalRuleCall_3_0(), value, null)) {
+			type = AssignmentType.TERMINAL_RULE_CALL;
+			element = grammarAccess.getBindValuePropertyAccess().getAttributeIDTerminalRuleCall_3_0();
 			return obj;
 		}
 		return null;

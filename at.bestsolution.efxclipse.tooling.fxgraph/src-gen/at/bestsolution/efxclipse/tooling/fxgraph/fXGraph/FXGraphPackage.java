@@ -877,13 +877,13 @@ public interface FXGraphPackage extends EPackage
   int BIND_VALUE_PROPERTY = 23;
 
   /**
-   * The feature id for the '<em><b>Reference</b></em>' reference.
+   * The feature id for the '<em><b>Element Reference</b></em>' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int BIND_VALUE_PROPERTY__REFERENCE = SINGLE_VALUE_PROPERTY_FEATURE_COUNT + 0;
+  int BIND_VALUE_PROPERTY__ELEMENT_REFERENCE = SINGLE_VALUE_PROPERTY_FEATURE_COUNT + 0;
 
   /**
    * The feature id for the '<em><b>Attribute</b></em>' attribute.
@@ -1596,15 +1596,15 @@ public interface FXGraphPackage extends EPackage
   EClass getBindValueProperty();
 
   /**
-   * Returns the meta object for the reference '{@link at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.BindValueProperty#getReference <em>Reference</em>}'.
+   * Returns the meta object for the reference '{@link at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.BindValueProperty#getElementReference <em>Element Reference</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the reference '<em>Reference</em>'.
-   * @see at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.BindValueProperty#getReference()
+   * @return the meta object for the reference '<em>Element Reference</em>'.
+   * @see at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.BindValueProperty#getElementReference()
    * @see #getBindValueProperty()
    * @generated
    */
-  EReference getBindValueProperty_Reference();
+  EReference getBindValueProperty_ElementReference();
 
   /**
    * Returns the meta object for the attribute '{@link at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.BindValueProperty#getAttribute <em>Attribute</em>}'.
@@ -2209,12 +2209,12 @@ public interface FXGraphPackage extends EPackage
     EClass BIND_VALUE_PROPERTY = eINSTANCE.getBindValueProperty();
 
     /**
-     * The meta object literal for the '<em><b>Reference</b></em>' reference feature.
+     * The meta object literal for the '<em><b>Element Reference</b></em>' reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference BIND_VALUE_PROPERTY__REFERENCE = eINSTANCE.getBindValueProperty_Reference();
+    EReference BIND_VALUE_PROPERTY__ELEMENT_REFERENCE = eINSTANCE.getBindValueProperty_ElementReference();
 
     /**
      * The meta object literal for the '<em><b>Attribute</b></em>' attribute feature.

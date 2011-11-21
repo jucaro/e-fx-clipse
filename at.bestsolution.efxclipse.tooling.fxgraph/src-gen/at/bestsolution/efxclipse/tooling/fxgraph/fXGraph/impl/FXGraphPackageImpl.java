@@ -939,7 +939,7 @@ public class FXGraphPackageImpl extends EPackageImpl implements FXGraphPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getBindValueProperty_Reference()
+  public EReference getBindValueProperty_ElementReference()
   {
     return (EReference)bindValuePropertyEClass.getEStructuralFeatures().get(0);
   }
@@ -1072,7 +1072,7 @@ public class FXGraphPackageImpl extends EPackageImpl implements FXGraphPackage
     createEAttribute(resourceValuePropertyEClass, RESOURCE_VALUE_PROPERTY__VALUE);
 
     bindValuePropertyEClass = createEClass(BIND_VALUE_PROPERTY);
-    createEReference(bindValuePropertyEClass, BIND_VALUE_PROPERTY__REFERENCE);
+    createEReference(bindValuePropertyEClass, BIND_VALUE_PROPERTY__ELEMENT_REFERENCE);
     createEAttribute(bindValuePropertyEClass, BIND_VALUE_PROPERTY__ATTRIBUTE);
   }
 
@@ -1216,7 +1216,7 @@ public class FXGraphPackageImpl extends EPackageImpl implements FXGraphPackage
     initEAttribute(getResourceValueProperty_Value(), ecorePackage.getEString(), "value", null, 0, 1, ResourceValueProperty.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(bindValuePropertyEClass, BindValueProperty.class, "BindValueProperty", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getBindValueProperty_Reference(), this.getElement(), null, "reference", null, 0, 1, BindValueProperty.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getBindValueProperty_ElementReference(), this.getElement(), null, "elementReference", null, 0, 1, BindValueProperty.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getBindValueProperty_Attribute(), ecorePackage.getEString(), "attribute", null, 0, 1, BindValueProperty.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     // Create resource

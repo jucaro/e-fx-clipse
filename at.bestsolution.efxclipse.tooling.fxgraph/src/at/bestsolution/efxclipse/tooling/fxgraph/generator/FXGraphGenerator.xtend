@@ -280,7 +280,7 @@ class FXGraphGenerator implements IGenerator {
 			} else if( p.value instanceof ResourceValueProperty ) {
 				builder.append(" " + p.name + "=\"%"+(p.value as ResourceValueProperty).value+"\"");
 			} else if( p.value instanceof BindValueProperty ) {
-				builder.append(" " + p.name + "=\"${"+(p.value as BindValueProperty).reference.name+"."+(p.value as BindValueProperty).attribute+"}\"");
+				builder.append(" " + p.name + "=\"${"+(p.value as BindValueProperty).elementReference.name+"."+(p.value as BindValueProperty).attribute+"}\"");
 			}
 		}
 		
