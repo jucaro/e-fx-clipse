@@ -279,7 +279,7 @@ public class LivePreviewPart extends ViewPart {
 						
 					}
 					
-					loader.setBuilderFactory(new JavaFXBuilderFactory());
+					loader.setBuilderFactory(new JavaFXBuilderFactory(false));
 					try {
 						
 						ByteArrayInputStream out = new ByteArrayInputStream(contentData.contents.getBytes());
