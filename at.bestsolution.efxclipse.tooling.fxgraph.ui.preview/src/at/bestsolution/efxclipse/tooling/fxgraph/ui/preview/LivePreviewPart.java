@@ -13,6 +13,7 @@ import java.io.PrintWriter;
 import java.io.StringWriter;
 import java.net.URL;
 import java.net.URLClassLoader;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -39,7 +40,10 @@ import org.eclipse.swt.custom.CTabItem;
 import org.eclipse.swt.events.SelectionAdapter;
 import org.eclipse.swt.events.SelectionEvent;
 import org.eclipse.swt.layout.FillLayout;
+import org.eclipse.swt.layout.GridData;
+import org.eclipse.swt.layout.GridLayout;
 import org.eclipse.swt.widgets.Composite;
+import org.eclipse.swt.widgets.Label;
 import org.eclipse.swt.widgets.Menu;
 import org.eclipse.swt.widgets.MenuItem;
 import org.eclipse.swt.widgets.Text;
@@ -69,10 +73,23 @@ public class LivePreviewPart extends ViewPart {
 	private static final String IMAGE_WARNING = LivePreviewPart.class.getName() + ".IMAGE_WARNING";
 	private static final String IMAGE_ERROR = LivePreviewPart.class.getName() + ".IMAGE_ERROR";
 	private static final String IMAGE_PREVIEW = LivePreviewPart.class.getName() + ".IMAGE_PREVIEW";
+	
 	private static final String IMAGE_TAB_ERROR = LivePreviewPart.class.getName() + ".IMAGE_TAB_ERROR";
+	private static final String IMAGE_TAB_WARNING = LivePreviewPart.class.getName() + ".IMAGE_TAB_WARNING";
 	private static final String IMAGE_TAB_NORMAL = LivePreviewPart.class.getName() + ".IMAGE_TAB_NORMAL";
+	
+	private static final String IMAGE_STATUS_ERROR = LivePreviewPart.class.getName() + ".IMAGE_STATUS_ERROR";
+	private static final String IMAGE_STATUS_WARNING = LivePreviewPart.class.getName() + ".IMAGE_STATUS_WARNING";
+	private static final String IMAGE_STATUS_OK = LivePreviewPart.class.getName() + ".IMAGE_STATUS_OK";
+	private static final String IMAGE_STATUS_NOPREVIEW = LivePreviewPart.class.getName() + ".IMAGE_STATUS_NOPREVIEW";
+	
+	private static final String NO_PREVIEW_TEXT = "No preview available";
 
 	private CTabItem logItem;
+
+	private Label statusLabelIcon;
+
+	private Label statusLabelText;
 	
 	static {
 		JFaceResources.getImageRegistry().put(IMAGE_OK, Activator.imageDescriptorFromPlugin("at.bestsolution.efxclipse.tooling.fxgraph.ui.preview", "/icons/16_16/security-high.png"));
@@ -82,6 +99,12 @@ public class LivePreviewPart extends ViewPart {
 
 		JFaceResources.getImageRegistry().put(IMAGE_TAB_NORMAL, Activator.imageDescriptorFromPlugin("at.bestsolution.efxclipse.tooling.fxgraph.ui.preview", "/icons/16_16/view-presentation.png"));
 		JFaceResources.getImageRegistry().put(IMAGE_TAB_ERROR, new DecorationOverlayIcon(JFaceResources.getImage(IMAGE_TAB_NORMAL),Activator.imageDescriptorFromPlugin("at.bestsolution.efxclipse.tooling.fxgraph.ui.preview", "/icons/ovr/error_co.gif"),IDecoration.BOTTOM_LEFT));
+		JFaceResources.getImageRegistry().put(IMAGE_TAB_WARNING, new DecorationOverlayIcon(JFaceResources.getImage(IMAGE_TAB_NORMAL),Activator.imageDescriptorFromPlugin("at.bestsolution.efxclipse.tooling.fxgraph.ui.preview", "/icons/ovr/warning_co.gif"),IDecoration.BOTTOM_LEFT));
+		
+		JFaceResources.getImageRegistry().put(IMAGE_STATUS_ERROR, Activator.imageDescriptorFromPlugin("at.bestsolution.efxclipse.tooling.fxgraph.ui.preview", "/icons/16_16/task-reject.png"));
+		JFaceResources.getImageRegistry().put(IMAGE_STATUS_WARNING, Activator.imageDescriptorFromPlugin("at.bestsolution.efxclipse.tooling.fxgraph.ui.preview", "/icons/16_16/task-attempt.png"));
+		JFaceResources.getImageRegistry().put(IMAGE_STATUS_OK, Activator.imageDescriptorFromPlugin("at.bestsolution.efxclipse.tooling.fxgraph.ui.preview", "/icons/16_16/task-complete.png"));
+		JFaceResources.getImageRegistry().put(IMAGE_STATUS_NOPREVIEW, Activator.imageDescriptorFromPlugin("at.bestsolution.efxclipse.tooling.fxgraph.ui.preview", "/icons/16_16/dialog-information.png"));
 	}
 
 	@Override
@@ -92,7 +115,12 @@ public class LivePreviewPart extends ViewPart {
 
 	@Override
 	public void createPartControl(Composite parent) {
-		folder = new CTabFolder(parent, SWT.BOTTOM|SWT.BORDER);
+		Composite container = new Composite(parent, SWT.NONE);
+		container.setLayout(new GridLayout(2,false));
+		
+		
+		folder = new CTabFolder(container, SWT.BOTTOM|SWT.BORDER);
+		folder.setLayoutData(new GridData(GridData.FILL,GridData.FILL,true,true,2,1));
 		
 		{
 			CTabItem item = new CTabItem(folder, SWT.NONE);
@@ -155,6 +183,13 @@ public class LivePreviewPart extends ViewPart {
 			});
 		}
 		folder.setSelection(0);
+		
+		statusLabelIcon = new Label(container, SWT.NONE);
+		statusLabelIcon.setImage(JFaceResources.getImage(IMAGE_STATUS_NOPREVIEW));
+		
+		statusLabelText = new Label(container, SWT.NONE);
+		statusLabelText.setText(NO_PREVIEW_TEXT);
+		statusLabelText.setLayoutData(new GridData(GridData.FILL_HORIZONTAL));
 	}
 	
 	@Override
@@ -283,11 +318,15 @@ public class LivePreviewPart extends ViewPart {
 						public void run() {
 							if( innerException != null ) {
 								logItem.setImage(JFaceResources.getImage(IMAGE_ERROR));
+								statusLabelIcon.setImage(JFaceResources.getImage(IMAGE_STATUS_ERROR));
+								statusLabelText.setText( SimpleDateFormat.getTimeInstance().format(new Date()) + ": Error while updateing preview");
+								setTitleImage(JFaceResources.getImage(IMAGE_TAB_ERROR));
 							} else {
 								logItem.setImage(JFaceResources.getImage(IMAGE_WARNING));
+								statusLabelIcon.setImage(JFaceResources.getImage(IMAGE_STATUS_WARNING));
+								statusLabelText.setText( SimpleDateFormat.getTimeInstance().format(new Date()) + ": Warning while updateing preview");
+								setTitleImage(JFaceResources.getImage(IMAGE_TAB_WARNING));
 							}
-							
-							setTitleImage(JFaceResources.getImage(IMAGE_TAB_ERROR));
 							
 							logStatement.append("================================================================="+logStatement.getLineDelimiter());
 							logStatement.append("Preview loading @ " + new Date() + logStatement.getLineDelimiter());
@@ -323,6 +362,8 @@ public class LivePreviewPart extends ViewPart {
 						public void run() {
 							folder.setSelection(0);
 							logItem.setImage(JFaceResources.getImage(IMAGE_OK));
+							statusLabelIcon.setImage(JFaceResources.getImage(IMAGE_STATUS_OK));
+							statusLabelText.setText( SimpleDateFormat.getTimeInstance().format(new Date()) + ": Preview updated");
 							setTitleImage(JFaceResources.getImage(IMAGE_TAB_NORMAL));
 						}
 					});
@@ -343,6 +384,8 @@ public class LivePreviewPart extends ViewPart {
 				
 				@Override
 				public void run() {
+					statusLabelIcon.setImage(JFaceResources.getImage(IMAGE_STATUS_NOPREVIEW));
+					statusLabelText.setText(NO_PREVIEW_TEXT);
 					folder.setVisible(false);
 				}
 			});
