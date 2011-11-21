@@ -1,0 +1,524 @@
+<html>
+<head>
+<link rel="stylesheet" href="http://twitter.github.com/bootstrap/1.4.0/bootstrap.min.css">
+<link rel="stylesheet" href="http://twitter.github.com/bootstrap/assets/css/docs.css">
+<title>e(fx)clipse - JavaFX 2.0 Tooling and Runtime for Eclipse</title>
+</head>
+<body>
+<div class="topbar" data-scrollspy="scrollspy" >
+ <div class="topbar-inner">
+  <div class="container">
+   <a class="brand" href="index.html">e(fx)clipse</a>
+   <ul class="nav">
+    <li><a href="index.html">Home</a></li>
+    <li class="active"><a href="install.html">Installation</a></li>
+    <!--li><a href="tooling.html">Tooling</a></li>
+    <li><a href="runtime.html">Runtime</a></li-->
+   </ul>
+  </div>
+ </div>
+</div>
+
+<header class="jumbotron masthead" id="overview">
+ <div class="inner">
+  <div class="container">
+   <h1>e(fx)clipse, from BestSolution.at</h1>
+   <p class="lead">
+     JavaFX 2.0 Tooling and Runtime for Eclipse and OSGi
+   </p>
+   </div>
+ </div>
+</header>
+
+<div class="container">
+ <section id="about-efxclipse">
+  <div class="page-header">
+   <h1>Download &amp; Install <small>we get you started</small></h1>
+  </div>
+  <div class="row">
+   <div class="span-one-third">
+    <h3>For the lazy</h3>
+    <p>
+     For the lazy ones who preferr an all in one download we provide preconfigured packages so that you don't have to worry
+     about all the different bits and pieces needed
+    </p>
+   </div>
+   <div class="span-one-third">
+    <h3>For the adventurous</h3>
+    <p>
+     For those who'd like to follow the current development stream of the Eclipse IDE and other used libraries like Xtext we
+     provide you an installation guide like to run on Eclipse 4.2 M-builds
+    </p>
+   </div>
+   <div class="span-one-third">
+    <h3>For the cowards</h3>
+    <p>
+     There's nothing wrong with being a coward when you need a tool to be productiv. So we provide you the possibility to install 
+     the e(fx)clipse libraries in your 3.7.1 Eclipse IDE which provides you the most stability you can get.
+    </p>
+   </div>
+  </div>
+  <div class="row">
+   <div class="span-one-third">
+    <p>
+     <a class="btn" href="#the-lazy-ones">View details</a>
+    </p>
+   </div>
+   <div class="span-one-third">
+    <p>
+     <a class="btn" href="#for-the-adventurous">View details</a>
+    </p>
+   </div>
+   <div class="span-one-third">
+    <p>
+     <a class="btn" href="#for-the-cowards">View details</a>
+    </p>
+   </div>
+  </div>
+ </section>
+ <section id="for-the-lazy">
+  <div class="page-header">
+   <h1>Prefconfigured distro <small>for the lazy</small></h1>
+  </div>
+  <div class="row">
+   <div class="span8">
+    <h2>Eclipse 3.7.1</h2>
+    <p>
+     <ul>
+      <li>Eclipse 3.7.1 SDK</li>
+      <li>e(fx)clipse 0.0.8</li>
+      <li>Xtext 2.1.1</li>
+      <li>EGit 1.1.0</li>
+      <li>Subclipse 1.6.18</li>
+     </ul>
+    </p>
+    <p>
+     <a class="btn" href="/downloads/0.0.8/eclipse-SDK-3.7.1-efxclipse-0.0.8-win32.zip">Win 32bit (Beta)</a>
+     <a class="btn" href="/downloads/0.0.8/eclipse-SDK-3.7.1-efxclipse-0.0.8-win32-x86_64.zip">Win 64bit (Beta)</a>
+     <a class="btn" href="/downloads/0.0.8/eclipse-SDK-3.7.1-efxclipse-0.0.8-macosx-cocoa-x86_64.tar.gz">OS-X 64bit (EA)</a>
+    </p>
+    <p>
+     All you need to do is to open <b>Preferences &gt; JavaFX</b> and configure the location of
+     your JavaFX-SDK.
+    </p>
+   </div>
+   <div class="span8">
+    <h2>Eclipse 4.2M3 SDK</h2>
+    <p>
+     <ul>
+      <li>Eclipse 4.2M3 SDK</li>
+      <li>e(fx)clipse 0.0.8</li>
+      <li>Xtext 2.1.1</li>
+      <li>EGit 1.1.0</li>
+      <li>Subclipse 1.6.18</li>
+     </ul>
+    </p>
+    <p>
+     <a class="btn" href="/downloads/0.0.8/eclipse-SDK-4.2M3-efxclipse-0.0.8-win32.zip">Win 32bit (Beta)</a>
+     <a class="btn" href="/downloads/0.0.8/eclipse-SDK-4.2M3-efxclipse-0.0.8-win32-x86_64.zip">Win 64bit (Beta)</a>
+     <a class="btn" href="/downloads/0.0.8/eclipse-SDK-4.2M3-efxclipse-0.0.8-macosx-cocoa-x86_64.tar.gz">OS-X 64bit (EA)</a>
+    </p>
+    <p>
+     All you need to do is to open <b>Preferences &gt; JavaFX</b> and configure the location of
+     your JavaFX-SDK.
+    </p>
+   </div>
+  </div>
+ </section>
+ <section id="for-the-adventurous">
+  <div class="page-header">
+   <h1>In Eclipse 4.2 <small>for the adventurous</small></h1>
+  </div>
+  <div class="row">
+   <div class="span1">
+    <h2>1.</h2>
+   </div>
+   <div class="span7">
+    <ul class="media-grid">
+     <li>
+      <a>
+       <img class="thumbnail" src="e4_install_step1.png" />
+      </a>
+     </li>
+    </ul>
+   </div>
+   <div class="span8">
+    <p>
+     Download the latest M-Build of the <a href="http://download.eclipse.org/eclipse/downloads/" target="_blank">Eclipse 4.2 SDK</a> from <a href="http://download.eclipse.org" target="_blank">download.eclipse.org</a>
+    </p>
+   </div>
+  </div>
+  <div class="row">
+   <div class="span1">
+    <h2>2.</h2>
+   </div>
+   <div class="span7">
+    <ul class="media-grid">
+     <li>
+      <a>
+       <img class="thumbnail" src="e4_install_step2.png" />
+      </a>
+     </li>
+    </ul>
+   </div>
+   <div class="span8">
+    <p>
+     Fireup your Eclipse IDE if you have not done so already
+    </p>
+   </div>
+  </div>
+  <div class="row">
+   <div class="span1">
+    <h2>3.</h2>
+   </div>
+   <div class="span7">
+    <ul class="media-grid">
+     <li>
+      <a>
+       <img class="thumbnail" src="e4_install_step3.png" />
+      </a>
+     </li>
+    </ul>
+   </div>
+   <div class="span8">
+    <p>
+     e(fx)clipse is an extension for your Eclipse IDE which is delivered as a so called p2 repository. Extensions like this
+     can be installed using the "Install New Software"-Wizard
+    </p>
+   </div>
+  </div>
+  <div class="row">
+   <div class="span1">
+    <h2>4.</h2>
+   </div>
+   <div class="span7">
+    <ul class="media-grid">
+     <li>
+      <a>
+       <img class="thumbnail" src="e4_install_step4.png" />
+      </a>
+     </li>
+    </ul>
+   </div>
+   <div class="span8">
+    <p>
+     The Eclipse SDK does not know about the location of the e(fx)clipse p2 repository so you need teach it where to find the
+     current repo which is located at <a href="http://www.efxclipse.org/p2-repos/releases/latest">http://www.efxclipse.org/p2-repos/releases/latest/</a>
+    </p>
+   </div>
+  </div>
+  <div class="row">
+   <div class="span1">
+    <h2>5.</h2>
+   </div>
+   <div class="span7">
+    <ul class="media-grid">
+     <li>
+      <a>
+       <img class="thumbnail" src="e4_install_step5.png" />
+      </a>
+     </li>
+    </ul>
+   </div>
+   <div class="span8">
+    <p>
+     Check the e(fx)clipse entry in the tree (make sure the "Contact all update sites during install to find required software" is checked!) 
+    </p>
+   </div>
+  </div>
+  <div class="row">
+   <div class="span1">
+    <h2>6.</h2>
+   </div>
+   <div class="span7">
+    <ul class="media-grid">
+     <li>
+      <a>
+       <img class="thumbnail" src="e4_install_step6.png" />
+      </a>
+     </li>
+    </ul>
+   </div>
+   <div class="span8">
+    <p>
+     Go through the wizard and let p2 do its job
+    </p>
+   </div>
+  </div>
+  <div class="row">
+   <div class="span1">
+    <h2>7.</h2>
+   </div>
+   <div class="span7">
+    <ul class="media-grid">
+     <li>
+      <a>
+       <img class="thumbnail" src="e4_install_step7.png" />
+      </a>
+     </li>
+    </ul>
+   </div>
+   <div class="span8">
+    <p>
+     When requested: Restart Eclipse
+    </p>
+   </div>
+  </div>
+  <div class="row">
+   <div class="span1">
+    <h2>8.</h2>
+   </div>
+   <div class="span7">
+    <ul class="media-grid">
+     <li>
+      <a>
+       <img class="thumbnail" src="e4_install_step8.png" />
+      </a>
+     </li>
+    </ul>
+   </div>
+   <div class="span8">
+    <p>
+     Open the preferences
+    </p>
+   </div>
+  </div>
+  <div class="row">
+   <div class="span1">
+    <h2>9.</h2>
+   </div>
+   <div class="span7">
+    <ul class="media-grid">
+     <li>
+      <a>
+       <img class="thumbnail" src="e4_install_step9.png" />
+      </a>
+     </li>
+    </ul>
+   </div>
+   <div class="span8">
+    <p>
+     Search the JavaFX entry in the left tree and enter the location to your JavaFX SDK
+    </p>
+   </div>
+  </div>
+ </section>
+ <section id="for-the-cowards">
+  <div class="page-header">
+   <h1>In Eclipse 3.7 <small>for the cowards ;-)</small></h1>
+  </div>
+  <div class="row">
+   <div class="span1">
+    <h2>1.</h2>
+   </div>
+   <div class="span7">
+    <ul class="media-grid">
+     <li>
+      <a>
+       <img class="thumbnail" src="e3_install_step1.png" />
+      </a>
+     </li>
+    </ul>
+   </div>
+   <div class="span8">
+    <p>
+     Download <a href="http://download.eclipse.org/eclipse/downloads/eclipse3x.php">Eclipse 3.7.x</a> SDK from <a href="http://download.eclipse.org" target="_blank">download.eclipse.org</a>
+    </p>
+   </div>
+  </div>
+  <div class="row">
+   <div class="span1">
+    <h2>2.</h2>
+   </div>
+   <div class="span7">
+    <ul class="media-grid">
+     <li>
+      <a>
+       <img class="thumbnail" src="e3_install_step2.png" />
+      </a>
+     </li>
+    </ul>
+   </div>
+   <div class="span8">
+    <p>
+     Fireup your Eclipse IDE if you have not done so already
+    </p>
+   </div>
+  </div>
+  <div class="row">
+   <div class="span1">
+    <h2>3.</h2>
+   </div>
+   <div class="span7">
+    <ul class="media-grid">
+     <li>
+      <a>
+       <img class="thumbnail" src="e3_install_step3.png" />
+      </a>
+     </li>
+    </ul>
+   </div>
+   <div class="span8">
+    <p>
+     e(fx)clipse is an extension for your Eclipse IDE which is delivered as a so called p2 repository. Extensions like this
+     can be installed using the "Install New Software"-Wizard
+    </p>
+   </div>
+  </div>
+  <div class="row">
+   <div class="span1">
+    <h2>4.</h2>
+   </div>
+   <div class="span7">
+    <ul class="media-grid">
+     <li>
+      <a>
+       <img class="thumbnail" src="e3_install_step4.png" />
+      </a>
+     </li>
+    </ul>
+   </div>
+   <div class="span8">
+    <p>
+     The Eclipse SDK does not know about the location of the e(fx)clipse p2 repository so you need teach it where to find the
+     current repo which is located at <a href="http://www.efxclipse.org/p2-repos/releases/latest">http://www.efxclipse.org/p2-repos/releases/latest/</a>
+    </p>
+   </div>
+  </div>
+  <div class="row">
+   <div class="span1">
+    <h2>5.</h2>
+   </div>
+   <div class="span7">
+    <ul class="media-grid">
+     <li>
+      <a>
+       <img class="thumbnail" src="e3_install_step5.png" />
+      </a>
+     </li>
+    </ul>
+   </div>
+   <div class="span8">
+    <p>
+     e(fx)clipse has 2 other dependencies (Xtext 2.1, e4 0.12) the default Eclipse SDK doesn't know about. So you need to add their p2 repository
+     as well.
+    </p>
+    <p>
+     The Xtext one is found at <a href="http://download.eclipse.org/modeling/tmf/xtext/updates/composite/releases/">http://download.eclipse.org/modeling/tmf/xtext/updates/composite/releases/</a>.
+    </p>
+    <p>
+     There's currently no stable URL provided for the e4 repo but you can find the one from latest 0.12 M-build at <a href="http://download.eclipse.org/e4/downloads/">http://download.eclipse.org/e4/downloads/</a>.
+    </p>
+   </div>
+  </div>
+  <div class="row">
+   <div class="span1">
+    <h2>6.</h2>
+   </div>
+   <div class="span7">
+    <ul class="media-grid">
+     <li>
+      <a>
+       <img class="thumbnail" src="e3_install_step6.png" />
+      </a>
+     </li>
+    </ul>
+   </div>
+   <div class="span8">
+    <p>
+     Check the e(fx)clipse entry in the tree (make sure the "Contact all update sites during install to find required software" is checked!) 
+    </p>
+   </div>
+  </div>
+  <div class="row">
+   <div class="span1">
+    <h2>7.</h2>
+   </div>
+   <div class="span7">
+    <ul class="media-grid">
+     <li>
+      <a>
+       <img class="thumbnail" src="e3_install_step7.png" />
+      </a>
+     </li>
+    </ul>
+   </div>
+   <div class="span8">
+    <p>
+     Go through the wizard and let p2 do its job
+    </p>
+   </div>
+  </div>
+  <div class="row">
+   <div class="span1">
+    <h2>8.</h2>
+   </div>
+   <div class="span7">
+    <ul class="media-grid">
+     <li>
+      <a>
+       <img class="thumbnail" src="e3_install_step8.png" />
+      </a>
+     </li>
+    </ul>
+   </div>
+   <div class="span8">
+    <p>
+     When requested: Restart Eclipse
+    </p>
+   </div>
+  </div>
+  <div class="row">
+   <div class="span1">
+    <h2>9.</h2>
+   </div>
+   <div class="span7">
+    <ul class="media-grid">
+     <li>
+      <a>
+       <img class="thumbnail" src="e3_install_step9.png" />
+      </a>
+     </li>
+    </ul>
+   </div>
+   <div class="span8">
+    <p>
+     Open the preferences (Window &gt; Preferences)
+    </p>
+   </div>
+  </div>
+  <div class="row">
+   <div class="span1">
+    <h2>10.</h2>
+   </div>
+   <div class="span7">
+    <ul class="media-grid">
+     <li>
+      <a>
+       <img class="thumbnail" src="e3_install_step10.png" />
+      </a>
+     </li>
+    </ul>
+   </div>
+   <div class="span8">
+    <p>
+     Search the JavaFX entry in the left tree and enter the location to your JavaFX SDK
+    </p>
+   </div>
+  </div>
+ </section>
+</div>
+
+<footer class="footer">
+ <div class="container">
+  <p class="pull-right">
+   <a href="#">Back to top</a>
+  </p>
+  <p>
+   Created by <a target="_blank" href="http://www.bestsolution.at">BestSolution.at</a> with use of <a target="_blank" href="http://twitter.github.com/bootstrap/">Bootstrap</a> from twitter.
+  </p>
+ </div>
+</footer>
+
+</body>
+</html>
