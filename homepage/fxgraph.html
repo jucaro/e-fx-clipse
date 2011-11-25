@@ -67,7 +67,24 @@
     Like with any other language let's start with an Hello World application to explain the main
     building blocks
    </p>
-   <pre class="prettyprint linenums"><ol class="linenums"><li><span class="kwd">import</span> <span class="pln">java.lang.*</span></li><li><span class="kwd">import</span> <span class="pln">javafx.scene.control.*</span></li><li><span class="kwd">import</span> <span class="pln">javafx.scene.layout.*</span></li><li><span class="kwd">import</span> <span class="pln">javafx.scene.paint.*</span></li><li></li><li><span class="kwd">component</span> <span class="pln">HelloWorld {</span></li><li>&nbsp;&nbsp;<span class="typ">BorderPane</span> <span class="pln">{</span></li><li>&nbsp;&nbsp;&nbsp;&nbsp;<span class="pln">center :</span> <span class="typ">Label</span> <span class="pln">{</span></li><li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="pln">text : </span><span class="str">"Hello World"</span></li><li>&nbsp;&nbsp;&nbsp;&nbsp;<span class="pln">}</span></li><li>&nbsp;&nbsp;<span class="pln">}</span></li><li><span class="pln">}</span></li></ol></pre>
+   <pre class="prettyprint linenums"><ol class="linenums"><li><span class="kwd">import</span> <span class="pln">java.lang.*</span></li><li><span class="kwd">import</span> <span class="pln">javafx.scene.control.*</span></li><li><span class="kwd">import</span> <span class="pln">javafx.scene.layout.*</span></li><li></li><li><span class="kwd">component</span> <span class="pln">HelloWorld {</span></li><li>&nbsp;&nbsp;<span class="pln">BorderPane</span> <span class="pln">{</span></li><li>&nbsp;&nbsp;&nbsp;&nbsp;<span class="atn">center </span><span class="pun">:</span> <span class="pln">Label</span> <span class="pln">{</span></li><li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="atn">text</span> <span class="pun">:</span> <span class="str">"Hello World"</span></li><li>&nbsp;&nbsp;&nbsp;&nbsp;<span class="pln">}</span></li><li>&nbsp;&nbsp;<span class="pln">}</span></li><li><span class="pln">}</span></li></ol></pre>
+   <p>
+    As you'll directly notice the language looks quite similar to JSON to define an object graph but because Java unlike JavaScript has the concept of
+    a package on can import classes from a package so that you don't have to specify the fully qualified name.
+   </p>
+   <p>
+    Another difference to JSON is that the definition starts with a <b>component</b> keyword which typically matches the filename so
+    you the above definition is stored in a file called <b>HelloWorld.fxgraph</b>
+   </p>
+   <p>
+    The attribute and its value are seperated by the ":" (colon) and the following simple values are supported directly:
+    <ul>
+     <li>String</li>
+     <li>Number (integer and decimal numbers)</li>
+     <li>Object-Definition</li>
+    </ul>
+    More complex values (method references, object references, ...) are described later in the document because they require a special syntax
+   </p>
    </div>
   </div>
  </section>
