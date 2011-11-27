@@ -1,0 +1,10 @@
+import javafx.scene.layout.*
+import javafx.scene.control.*
+
+component CssTest previewCssFiles ["test.css"] previewResourceFile "/translations/messages.properties" {
+	BorderPane { 
+		center : Button { 
+			text : rstring "buttonlabel" 
+		} 
+	}
+}
