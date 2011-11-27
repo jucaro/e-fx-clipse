@@ -244,7 +244,7 @@ public class FXGraphParser extends AbstractContentAssistParser {
 					put(grammarAccess.getComponentDefinitionAccess().getControllerAssignment_2_1(), "rule__ComponentDefinition__ControllerAssignment_2_1");
 					put(grammarAccess.getComponentDefinitionAccess().getPreviewCssFilesAssignment_3_2(), "rule__ComponentDefinition__PreviewCssFilesAssignment_3_2");
 					put(grammarAccess.getComponentDefinitionAccess().getPreviewCssFilesAssignment_3_3_1(), "rule__ComponentDefinition__PreviewCssFilesAssignment_3_3_1");
-					put(grammarAccess.getComponentDefinitionAccess().getPreviewResourceBundleAssignment_4_2(), "rule__ComponentDefinition__PreviewResourceBundleAssignment_4_2");
+					put(grammarAccess.getComponentDefinitionAccess().getPreviewResourceBundleAssignment_4_1(), "rule__ComponentDefinition__PreviewResourceBundleAssignment_4_1");
 					put(grammarAccess.getComponentDefinitionAccess().getPreviewClasspathEntriesAssignment_5_2(), "rule__ComponentDefinition__PreviewClasspathEntriesAssignment_5_2");
 					put(grammarAccess.getComponentDefinitionAccess().getPreviewClasspathEntriesAssignment_5_3_1(), "rule__ComponentDefinition__PreviewClasspathEntriesAssignment_5_3_1");
 					put(grammarAccess.getComponentDefinitionAccess().getScriptsAssignment_7(), "rule__ComponentDefinition__ScriptsAssignment_7");

@@ -68,10 +68,8 @@ public class FXGraphGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cRightSquareBracketKeyword_3_4 = (Keyword)cGroup_3.eContents().get(4);
 		private final Group cGroup_4 = (Group)cGroup.eContents().get(4);
 		private final Keyword cPreviewResourceFileKeyword_4_0 = (Keyword)cGroup_4.eContents().get(0);
-		private final Keyword cLeftSquareBracketKeyword_4_1 = (Keyword)cGroup_4.eContents().get(1);
-		private final Assignment cPreviewResourceBundleAssignment_4_2 = (Assignment)cGroup_4.eContents().get(2);
-		private final RuleCall cPreviewResourceBundleSTRINGTerminalRuleCall_4_2_0 = (RuleCall)cPreviewResourceBundleAssignment_4_2.eContents().get(0);
-		private final Keyword cRightSquareBracketKeyword_4_3 = (Keyword)cGroup_4.eContents().get(3);
+		private final Assignment cPreviewResourceBundleAssignment_4_1 = (Assignment)cGroup_4.eContents().get(1);
+		private final RuleCall cPreviewResourceBundleSTRINGTerminalRuleCall_4_1_0 = (RuleCall)cPreviewResourceBundleAssignment_4_1.eContents().get(0);
 		private final Group cGroup_5 = (Group)cGroup.eContents().get(5);
 		private final Keyword cPreviewClasspathEntriesKeyword_5_0 = (Keyword)cGroup_5.eContents().get(0);
 		private final Keyword cLeftSquareBracketKeyword_5_1 = (Keyword)cGroup_5.eContents().get(1);
@@ -98,15 +96,15 @@ public class FXGraphGrammarAccess extends AbstractGrammarElementFinder {
 		
 		//ComponentDefinition:
 		//	"component" name=ValidID ("controlledby" controller=JvmTypeReference)? ("previewCssFiles" "[" previewCssFiles+=STRING
-		//	("," previewCssFiles+=STRING)* "]")? ("previewResourceFile" "[" previewResourceBundle=STRING "]")?
-		//	("previewClasspathEntries" "[" previewClasspathEntries+=STRING ("," previewClasspathEntries+=STRING)* "]")? "{"
-		//	scripts+=Script? (defines+=Define ("," defines+=Define)*)? rootNode=Element "}";
+		//	("," previewCssFiles+=STRING)* "]")? ("previewResourceFile" previewResourceBundle=STRING)? ("previewClasspathEntries"
+		//	"[" previewClasspathEntries+=STRING ("," previewClasspathEntries+=STRING)* "]")? "{" scripts+=Script? (defines+=Define
+		//	("," defines+=Define)*)? rootNode=Element "}";
 		public ParserRule getRule() { return rule; }
 
 		//"component" name=ValidID ("controlledby" controller=JvmTypeReference)? ("previewCssFiles" "[" previewCssFiles+=STRING
-		//("," previewCssFiles+=STRING)* "]")? ("previewResourceFile" "[" previewResourceBundle=STRING "]")?
-		//("previewClasspathEntries" "[" previewClasspathEntries+=STRING ("," previewClasspathEntries+=STRING)* "]")? "{"
-		//scripts+=Script? (defines+=Define ("," defines+=Define)*)? rootNode=Element "}"
+		//("," previewCssFiles+=STRING)* "]")? ("previewResourceFile" previewResourceBundle=STRING)? ("previewClasspathEntries"
+		//"[" previewClasspathEntries+=STRING ("," previewClasspathEntries+=STRING)* "]")? "{" scripts+=Script? (defines+=Define
+		//("," defines+=Define)*)? rootNode=Element "}"
 		public Group getGroup() { return cGroup; }
 
 		//"component"
@@ -160,23 +158,17 @@ public class FXGraphGrammarAccess extends AbstractGrammarElementFinder {
 		//"]"
 		public Keyword getRightSquareBracketKeyword_3_4() { return cRightSquareBracketKeyword_3_4; }
 
-		//("previewResourceFile" "[" previewResourceBundle=STRING "]")?
+		//("previewResourceFile" previewResourceBundle=STRING)?
 		public Group getGroup_4() { return cGroup_4; }
 
 		//"previewResourceFile"
 		public Keyword getPreviewResourceFileKeyword_4_0() { return cPreviewResourceFileKeyword_4_0; }
 
-		//"["
-		public Keyword getLeftSquareBracketKeyword_4_1() { return cLeftSquareBracketKeyword_4_1; }
-
 		//previewResourceBundle=STRING
-		public Assignment getPreviewResourceBundleAssignment_4_2() { return cPreviewResourceBundleAssignment_4_2; }
+		public Assignment getPreviewResourceBundleAssignment_4_1() { return cPreviewResourceBundleAssignment_4_1; }
 
 		//STRING
-		public RuleCall getPreviewResourceBundleSTRINGTerminalRuleCall_4_2_0() { return cPreviewResourceBundleSTRINGTerminalRuleCall_4_2_0; }
-
-		//"]"
-		public Keyword getRightSquareBracketKeyword_4_3() { return cRightSquareBracketKeyword_4_3; }
+		public RuleCall getPreviewResourceBundleSTRINGTerminalRuleCall_4_1_0() { return cPreviewResourceBundleSTRINGTerminalRuleCall_4_1_0; }
 
 		//("previewClasspathEntries" "[" previewClasspathEntries+=STRING ("," previewClasspathEntries+=STRING)* "]")?
 		public Group getGroup_5() { return cGroup_5; }
@@ -1176,9 +1168,9 @@ public class FXGraphGrammarAccess extends AbstractGrammarElementFinder {
 
 	//ComponentDefinition:
 	//	"component" name=ValidID ("controlledby" controller=JvmTypeReference)? ("previewCssFiles" "[" previewCssFiles+=STRING
-	//	("," previewCssFiles+=STRING)* "]")? ("previewResourceFile" "[" previewResourceBundle=STRING "]")?
-	//	("previewClasspathEntries" "[" previewClasspathEntries+=STRING ("," previewClasspathEntries+=STRING)* "]")? "{"
-	//	scripts+=Script? (defines+=Define ("," defines+=Define)*)? rootNode=Element "}";
+	//	("," previewCssFiles+=STRING)* "]")? ("previewResourceFile" previewResourceBundle=STRING)? ("previewClasspathEntries"
+	//	"[" previewClasspathEntries+=STRING ("," previewClasspathEntries+=STRING)* "]")? "{" scripts+=Script? (defines+=Define
+	//	("," defines+=Define)*)? rootNode=Element "}";
 	public ComponentDefinitionElements getComponentDefinitionAccess() {
 		return (pComponentDefinition != null) ? pComponentDefinition : (pComponentDefinition = new ComponentDefinitionElements());
 	}

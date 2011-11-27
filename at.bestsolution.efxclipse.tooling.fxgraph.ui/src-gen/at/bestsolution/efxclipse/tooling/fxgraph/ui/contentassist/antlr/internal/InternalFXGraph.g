@@ -4274,7 +4274,6 @@ rule__ComponentDefinition__Group_4__1
     }
 :
 	rule__ComponentDefinition__Group_4__1__Impl
-	rule__ComponentDefinition__Group_4__2
 ;
 finally {
 	restoreStackSize(stackSize);
@@ -4286,80 +4285,15 @@ rule__ComponentDefinition__Group_4__1__Impl
     }
 :
 (
-{ before(grammarAccess.getComponentDefinitionAccess().getLeftSquareBracketKeyword_4_1()); }
-
-	'[' 
-
-{ after(grammarAccess.getComponentDefinitionAccess().getLeftSquareBracketKeyword_4_1()); }
+{ before(grammarAccess.getComponentDefinitionAccess().getPreviewResourceBundleAssignment_4_1()); }
+(rule__ComponentDefinition__PreviewResourceBundleAssignment_4_1)
+{ after(grammarAccess.getComponentDefinitionAccess().getPreviewResourceBundleAssignment_4_1()); }
 )
 
 ;
 finally {
 	restoreStackSize(stackSize);
 }
-
-
-rule__ComponentDefinition__Group_4__2
-    @init {
-		int stackSize = keepStackSize();
-    }
-:
-	rule__ComponentDefinition__Group_4__2__Impl
-	rule__ComponentDefinition__Group_4__3
-;
-finally {
-	restoreStackSize(stackSize);
-}
-
-rule__ComponentDefinition__Group_4__2__Impl
-    @init {
-		int stackSize = keepStackSize();
-    }
-:
-(
-{ before(grammarAccess.getComponentDefinitionAccess().getPreviewResourceBundleAssignment_4_2()); }
-(rule__ComponentDefinition__PreviewResourceBundleAssignment_4_2)
-{ after(grammarAccess.getComponentDefinitionAccess().getPreviewResourceBundleAssignment_4_2()); }
-)
-
-;
-finally {
-	restoreStackSize(stackSize);
-}
-
-
-rule__ComponentDefinition__Group_4__3
-    @init {
-		int stackSize = keepStackSize();
-    }
-:
-	rule__ComponentDefinition__Group_4__3__Impl
-;
-finally {
-	restoreStackSize(stackSize);
-}
-
-rule__ComponentDefinition__Group_4__3__Impl
-    @init {
-		int stackSize = keepStackSize();
-    }
-:
-(
-{ before(grammarAccess.getComponentDefinitionAccess().getRightSquareBracketKeyword_4_3()); }
-
-	']' 
-
-{ after(grammarAccess.getComponentDefinitionAccess().getRightSquareBracketKeyword_4_3()); }
-)
-
-;
-finally {
-	restoreStackSize(stackSize);
-}
-
-
-
-
 
 
 
@@ -16870,14 +16804,14 @@ finally {
 	restoreStackSize(stackSize);
 }
 
-rule__ComponentDefinition__PreviewResourceBundleAssignment_4_2
+rule__ComponentDefinition__PreviewResourceBundleAssignment_4_1
     @init {
 		int stackSize = keepStackSize();
     }
 :
 (
-{ before(grammarAccess.getComponentDefinitionAccess().getPreviewResourceBundleSTRINGTerminalRuleCall_4_2_0()); }
-	RULE_STRING{ after(grammarAccess.getComponentDefinitionAccess().getPreviewResourceBundleSTRINGTerminalRuleCall_4_2_0()); }
+{ before(grammarAccess.getComponentDefinitionAccess().getPreviewResourceBundleSTRINGTerminalRuleCall_4_1_0()); }
+	RULE_STRING{ after(grammarAccess.getComponentDefinitionAccess().getPreviewResourceBundleSTRINGTerminalRuleCall_4_1_0()); }
 )
 
 ;

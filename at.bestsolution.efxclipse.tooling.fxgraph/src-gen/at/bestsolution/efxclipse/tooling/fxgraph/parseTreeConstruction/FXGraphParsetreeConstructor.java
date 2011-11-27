@@ -246,16 +246,16 @@ protected class Model_ComponentDefAssignment_1 extends AssignmentToken  {
  *
  * ComponentDefinition:
  * 	"component" name=ValidID ("controlledby" controller=JvmTypeReference)? ("previewCssFiles" "[" previewCssFiles+=STRING
- * 	("," previewCssFiles+=STRING)* "]")? ("previewResourceFile" "[" previewResourceBundle=STRING "]")?
- * 	("previewClasspathEntries" "[" previewClasspathEntries+=STRING ("," previewClasspathEntries+=STRING)* "]")? "{"
- * 	scripts+=Script? (defines+=Define ("," defines+=Define)*)? rootNode=Element "}";
+ * 	("," previewCssFiles+=STRING)* "]")? ("previewResourceFile" previewResourceBundle=STRING)? ("previewClasspathEntries"
+ * 	"[" previewClasspathEntries+=STRING ("," previewClasspathEntries+=STRING)* "]")? "{" scripts+=Script? (defines+=Define
+ * 	("," defines+=Define)*)? rootNode=Element "}";
  *
  **/
 
 // "component" name=ValidID ("controlledby" controller=JvmTypeReference)? ("previewCssFiles" "[" previewCssFiles+=STRING
-// ("," previewCssFiles+=STRING)* "]")? ("previewResourceFile" "[" previewResourceBundle=STRING "]")?
-// ("previewClasspathEntries" "[" previewClasspathEntries+=STRING ("," previewClasspathEntries+=STRING)* "]")? "{"
-// scripts+=Script? (defines+=Define ("," defines+=Define)*)? rootNode=Element "}"
+// ("," previewCssFiles+=STRING)* "]")? ("previewResourceFile" previewResourceBundle=STRING)? ("previewClasspathEntries"
+// "[" previewClasspathEntries+=STRING ("," previewClasspathEntries+=STRING)* "]")? "{" scripts+=Script? (defines+=Define
+// ("," defines+=Define)*)? rootNode=Element "}"
 protected class ComponentDefinition_Group extends GroupToken {
 	
 	public ComponentDefinition_Group(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -635,7 +635,7 @@ protected class ComponentDefinition_RightSquareBracketKeyword_3_4 extends Keywor
 }
 
 
-// ("previewResourceFile" "[" previewResourceBundle=STRING "]")?
+// ("previewResourceFile" previewResourceBundle=STRING)?
 protected class ComponentDefinition_Group_4 extends GroupToken {
 	
 	public ComponentDefinition_Group_4(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -650,7 +650,7 @@ protected class ComponentDefinition_Group_4 extends GroupToken {
     @Override
 	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
 		switch(index) {
-			case 0: return new ComponentDefinition_RightSquareBracketKeyword_4_3(lastRuleCallOrigin, this, 0, inst);
+			case 0: return new ComponentDefinition_PreviewResourceBundleAssignment_4_1(lastRuleCallOrigin, this, 0, inst);
 			default: return null;
 		}	
 	}
@@ -681,16 +681,16 @@ protected class ComponentDefinition_PreviewResourceFileKeyword_4_0 extends Keywo
 
 }
 
-// "["
-protected class ComponentDefinition_LeftSquareBracketKeyword_4_1 extends KeywordToken  {
+// previewResourceBundle=STRING
+protected class ComponentDefinition_PreviewResourceBundleAssignment_4_1 extends AssignmentToken  {
 	
-	public ComponentDefinition_LeftSquareBracketKeyword_4_1(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+	public ComponentDefinition_PreviewResourceBundleAssignment_4_1(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
 		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
 	}
 	
 	@Override
-	public Keyword getGrammarElement() {
-		return grammarAccess.getComponentDefinitionAccess().getLeftSquareBracketKeyword_4_1();
+	public Assignment getGrammarElement() {
+		return grammarAccess.getComponentDefinitionAccess().getPreviewResourceBundleAssignment_4_1();
 	}
 
     @Override
@@ -701,60 +701,16 @@ protected class ComponentDefinition_LeftSquareBracketKeyword_4_1 extends Keyword
 		}	
 	}
 
-}
-
-// previewResourceBundle=STRING
-protected class ComponentDefinition_PreviewResourceBundleAssignment_4_2 extends AssignmentToken  {
-	
-	public ComponentDefinition_PreviewResourceBundleAssignment_4_2(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
-		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
-	}
-	
-	@Override
-	public Assignment getGrammarElement() {
-		return grammarAccess.getComponentDefinitionAccess().getPreviewResourceBundleAssignment_4_2();
-	}
-
-    @Override
-	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
-		switch(index) {
-			case 0: return new ComponentDefinition_LeftSquareBracketKeyword_4_1(lastRuleCallOrigin, this, 0, inst);
-			default: return null;
-		}	
-	}
-
     @Override	
 	public IEObjectConsumer tryConsume() {
 		if((value = eObjectConsumer.getConsumable("previewResourceBundle",false)) == null) return null;
 		IEObjectConsumer obj = eObjectConsumer.cloneAndConsume("previewResourceBundle");
-		if(valueSerializer.isValid(obj.getEObject(), grammarAccess.getComponentDefinitionAccess().getPreviewResourceBundleSTRINGTerminalRuleCall_4_2_0(), value, null)) {
+		if(valueSerializer.isValid(obj.getEObject(), grammarAccess.getComponentDefinitionAccess().getPreviewResourceBundleSTRINGTerminalRuleCall_4_1_0(), value, null)) {
 			type = AssignmentType.TERMINAL_RULE_CALL;
-			element = grammarAccess.getComponentDefinitionAccess().getPreviewResourceBundleSTRINGTerminalRuleCall_4_2_0();
+			element = grammarAccess.getComponentDefinitionAccess().getPreviewResourceBundleSTRINGTerminalRuleCall_4_1_0();
 			return obj;
 		}
 		return null;
-	}
-
-}
-
-// "]"
-protected class ComponentDefinition_RightSquareBracketKeyword_4_3 extends KeywordToken  {
-	
-	public ComponentDefinition_RightSquareBracketKeyword_4_3(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
-		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
-	}
-	
-	@Override
-	public Keyword getGrammarElement() {
-		return grammarAccess.getComponentDefinitionAccess().getRightSquareBracketKeyword_4_3();
-	}
-
-    @Override
-	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
-		switch(index) {
-			case 0: return new ComponentDefinition_PreviewResourceBundleAssignment_4_2(lastRuleCallOrigin, this, 0, inst);
-			default: return null;
-		}	
 	}
 
 }
