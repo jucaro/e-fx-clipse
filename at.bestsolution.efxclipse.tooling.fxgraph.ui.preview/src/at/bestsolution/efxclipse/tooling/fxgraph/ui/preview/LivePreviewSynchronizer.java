@@ -233,7 +233,7 @@ public class LivePreviewSynchronizer implements IPartListener, IXtextModelListen
 				String resourcePropertiesFile = null;
 				if( def != null && def.getPreviewResourceBundle() != null ) {
 					File f = RelativeFileLocator.locateFile(uri, def.getPreviewResourceBundle());
-					if( f.exists() ) {
+					if( f != null && f.exists() ) {
 						resourcePropertiesFile = f.getAbsolutePath();
 					}
 				}
