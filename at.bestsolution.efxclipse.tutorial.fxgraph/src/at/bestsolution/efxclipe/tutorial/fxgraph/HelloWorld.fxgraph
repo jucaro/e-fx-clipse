@@ -1,0 +1,10 @@
+import javafx.scene.layout.*
+import javafx.scene.control.*
+
+component HelloWorld previewCssFiles["hello.css"] {
+	BorderPane {
+		center : Label {
+			text : "Hello World!"
+		}
+	}
+}
