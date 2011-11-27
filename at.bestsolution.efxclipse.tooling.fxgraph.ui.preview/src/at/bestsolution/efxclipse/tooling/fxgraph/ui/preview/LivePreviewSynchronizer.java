@@ -21,9 +21,7 @@ import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.jdt.core.IJavaProject;
-import org.eclipse.jdt.core.IPackageFragmentRoot;
 import org.eclipse.jdt.core.JavaCore;
-import org.eclipse.jdt.core.JavaModelException;
 import org.eclipse.ui.IPartListener;
 import org.eclipse.ui.IPropertyListener;
 import org.eclipse.ui.IWorkbenchPart;
@@ -147,41 +145,13 @@ public class LivePreviewSynchronizer implements IPartListener, IXtextModelListen
 				if( def != null ) {
 					l = new ArrayList<String>(def.getPreviewCssFiles().size());
 					for( String cssFile : def.getPreviewCssFiles() ) {
-						File absFile = null;
-						
-						if( cssFile.trim().length() > 0 ) {
-							IFile f = p.getFile(cssFile);
-							if( f.exists() ) {
-								absFile = f.getLocation().toFile().getAbsoluteFile();
-							} else if( jp != null ) {
-								try {
-									for( IPackageFragmentRoot r : jp.getPackageFragmentRoots() ) {
-										if( r.isArchive() ) {
-											//TODO We should allow to load styles from the referenced jars
-										} else if( r.getResource() instanceof IFolder ) {
-											IFolder folder = (IFolder) r.getResource();
-											if( folder.exists() ) {
-												f = folder.getFile(cssFile);
-												if( f.exists() ) {
-													absFile = f.getLocation().toFile().getAbsoluteFile();
-//													break;
-												}
-											}	
-										}
-									}
-								} catch (JavaModelException e) {
-									// TODO Auto-generated catch block
-									e.printStackTrace();
-								}
-							}
-						}
+						File absFile = RelativeFileLocator.locateFile(uri, cssFile);
 						
 						if( absFile != null ) {
 							try {
 								// Trick to make CSS-Reloaded
 								File absParent = absFile.getParentFile();
 								absParent = new File(absParent,System.currentTimeMillis()+"");
-//								absFile = new File(absParent,"../" + absFile.getName());
 								l.add(absFile.toURI().toURL().toExternalForm());
 							} catch (Throwable e) {
 								// TODO Auto-generated catch block
