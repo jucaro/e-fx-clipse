@@ -458,13 +458,22 @@ public interface FXGraphPackage extends EPackage
   int PROPERTY = 7;
 
   /**
+   * The feature id for the '<em><b>Preview</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PROPERTY__PREVIEW = 0;
+
+  /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int PROPERTY__NAME = 0;
+  int PROPERTY__NAME = 1;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' containment reference.
@@ -473,7 +482,7 @@ public interface FXGraphPackage extends EPackage
    * @generated
    * @ordered
    */
-  int PROPERTY__VALUE = 1;
+  int PROPERTY__VALUE = 2;
 
   /**
    * The number of structural features of the '<em>Property</em>' class.
@@ -482,7 +491,7 @@ public interface FXGraphPackage extends EPackage
    * @generated
    * @ordered
    */
-  int PROPERTY_FEATURE_COUNT = 2;
+  int PROPERTY_FEATURE_COUNT = 3;
 
   /**
    * The meta object id for the '{@link at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.impl.MultiValuePropertyImpl <em>Multi Value Property</em>}' class.
@@ -1249,6 +1258,17 @@ public interface FXGraphPackage extends EPackage
   EClass getProperty();
 
   /**
+   * Returns the meta object for the attribute '{@link at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.Property#isPreview <em>Preview</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Preview</em>'.
+   * @see at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.Property#isPreview()
+   * @see #getProperty()
+   * @generated
+   */
+  EAttribute getProperty_Preview();
+
+  /**
    * Returns the meta object for the attribute '{@link at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.Property#getName <em>Name</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -1911,6 +1931,14 @@ public interface FXGraphPackage extends EPackage
      * @generated
      */
     EClass PROPERTY = eINSTANCE.getProperty();
+
+    /**
+     * The meta object literal for the '<em><b>Preview</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute PROPERTY__PREVIEW = eINSTANCE.getProperty_Preview();
 
     /**
      * The meta object literal for the '<em><b>Name</b></em>' attribute feature.

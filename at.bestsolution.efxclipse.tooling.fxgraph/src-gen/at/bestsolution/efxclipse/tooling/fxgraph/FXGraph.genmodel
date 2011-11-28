@@ -47,6 +47,7 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference FXGraph.ecore#//StaticValueProperty/value"/>
     </genClasses>
     <genClasses ecoreClass="FXGraph.ecore#//Property">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute FXGraph.ecore#//Property/preview"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute FXGraph.ecore#//Property/name"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference FXGraph.ecore#//Property/value"/>
     </genClasses>

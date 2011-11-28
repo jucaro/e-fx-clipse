@@ -12,29 +12,4 @@
             restorable="true">
       </view>
    </extension>
-   <!--extension
-         point="org.eclipse.ui.menus">
-      <menuContribution
-            allPopups="false"
-            locationURI="toolbar:at.bestsolution.efxclipse.tooling.fxgraph.ui.preview">
-         <command
-               commandId="at.bestsolution.efxclipse.tooling.fxgraph.ui.preview.updatewhiletyping"
-               icon="icons/16_16/format-text-direction-ltr.png"
-               style="toggle">
-         </command>
-      </menuContribution>
-   </extension>
-   <extension
-         point="org.eclipse.ui.commands">
-      <command
-            defaultHandler="at.bestsolution.efxclipse.tooling.fxgraph.ui.preview.SwitchUpdatePreferenceHandler"
-            id="at.bestsolution.efxclipse.tooling.fxgraph.ui.preview.updatewhiletyping"
-            name="Update while typing">
-         <state
-               class="org.eclipse.ui.handlers.RegistryToggleState:false"
-               id="org.eclipse.ui.commands.toggleState">
-         </state>
-      </command>
-   </extension-->
-
 </plugin>

@@ -26,6 +26,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * <p>
  * The following features are implemented:
  * <ul>
+ *   <li>{@link at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.impl.PropertyImpl#isPreview <em>Preview</em>}</li>
  *   <li>{@link at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.impl.PropertyImpl#getName <em>Name</em>}</li>
  *   <li>{@link at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.impl.PropertyImpl#getValue <em>Value</em>}</li>
  * </ul>
@@ -35,6 +36,26 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  */
 public class PropertyImpl extends MinimalEObjectImpl.Container implements Property
 {
+  /**
+   * The default value of the '{@link #isPreview() <em>Preview</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isPreview()
+   * @generated
+   * @ordered
+   */
+  protected static final boolean PREVIEW_EDEFAULT = false;
+
+  /**
+   * The cached value of the '{@link #isPreview() <em>Preview</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isPreview()
+   * @generated
+   * @ordered
+   */
+  protected boolean preview = PREVIEW_EDEFAULT;
+
   /**
    * The default value of the '{@link #getName() <em>Name</em>}' attribute.
    * <!-- begin-user-doc -->
@@ -84,6 +105,29 @@ public class PropertyImpl extends MinimalEObjectImpl.Container implements Proper
   protected EClass eStaticClass()
   {
     return FXGraphPackage.Literals.PROPERTY;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public boolean isPreview()
+  {
+    return preview;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setPreview(boolean newPreview)
+  {
+    boolean oldPreview = preview;
+    preview = newPreview;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, FXGraphPackage.PROPERTY__PREVIEW, oldPreview, preview));
   }
 
   /**
@@ -183,6 +227,8 @@ public class PropertyImpl extends MinimalEObjectImpl.Container implements Proper
   {
     switch (featureID)
     {
+      case FXGraphPackage.PROPERTY__PREVIEW:
+        return isPreview();
       case FXGraphPackage.PROPERTY__NAME:
         return getName();
       case FXGraphPackage.PROPERTY__VALUE:
@@ -201,6 +247,9 @@ public class PropertyImpl extends MinimalEObjectImpl.Container implements Proper
   {
     switch (featureID)
     {
+      case FXGraphPackage.PROPERTY__PREVIEW:
+        setPreview((Boolean)newValue);
+        return;
       case FXGraphPackage.PROPERTY__NAME:
         setName((String)newValue);
         return;
@@ -221,6 +270,9 @@ public class PropertyImpl extends MinimalEObjectImpl.Container implements Proper
   {
     switch (featureID)
     {
+      case FXGraphPackage.PROPERTY__PREVIEW:
+        setPreview(PREVIEW_EDEFAULT);
+        return;
       case FXGraphPackage.PROPERTY__NAME:
         setName(NAME_EDEFAULT);
         return;
@@ -241,6 +293,8 @@ public class PropertyImpl extends MinimalEObjectImpl.Container implements Proper
   {
     switch (featureID)
     {
+      case FXGraphPackage.PROPERTY__PREVIEW:
+        return preview != PREVIEW_EDEFAULT;
       case FXGraphPackage.PROPERTY__NAME:
         return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
       case FXGraphPackage.PROPERTY__VALUE:
@@ -260,7 +314,9 @@ public class PropertyImpl extends MinimalEObjectImpl.Container implements Proper
     if (eIsProxy()) return super.toString();
 
     StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (name: ");
+    result.append(" (preview: ");
+    result.append(preview);
+    result.append(", name: ");
     result.append(name);
     result.append(')');
     return result.toString();

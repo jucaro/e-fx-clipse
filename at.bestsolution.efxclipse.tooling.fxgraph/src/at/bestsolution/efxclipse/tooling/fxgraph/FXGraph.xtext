@@ -9,7 +9,7 @@ Model:
 ;
 
 ComponentDefinition:
-	'component' name=ValidID ('controlledby' controller=JvmTypeReference)? ('previewCssFiles' '[' previewCssFiles+=STRING (',' previewCssFiles+=STRING)* ']')? ( 'previewResourceFile' previewResourceBundle=STRING )? ( 'previewClasspathEntries' '[' previewClasspathEntries+=STRING (',' previewClasspathEntries+=STRING)* ']')? '{'
+	'component' name=ValidID ('controlledby' controller=JvmTypeReference)? ('styledwith' '[' previewCssFiles+=STRING (',' previewCssFiles+=STRING)* ']')? ( 'resourcefile' previewResourceBundle=STRING )? ( 'extraClasspath' '[' previewClasspathEntries+=STRING (',' previewClasspathEntries+=STRING)* ']')? '{'
 		(scripts+=Script)?
 		(defines+=Define (',' defines+=Define)*)?
 		rootNode=Element
@@ -38,7 +38,7 @@ StaticValueProperty:
 ;
 
 Property:
-	name=ID ':' value=ValueProperty 
+	preview?='preview'? name=ID ':' value=ValueProperty 
 ;
 
 ValueProperty:

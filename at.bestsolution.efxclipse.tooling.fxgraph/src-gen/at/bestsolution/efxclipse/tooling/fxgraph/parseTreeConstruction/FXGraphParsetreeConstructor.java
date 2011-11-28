@@ -245,17 +245,17 @@ protected class Model_ComponentDefAssignment_1 extends AssignmentToken  {
 /************ begin Rule ComponentDefinition ****************
  *
  * ComponentDefinition:
- * 	"component" name=ValidID ("controlledby" controller=JvmTypeReference)? ("previewCssFiles" "[" previewCssFiles+=STRING
- * 	("," previewCssFiles+=STRING)* "]")? ("previewResourceFile" previewResourceBundle=STRING)? ("previewClasspathEntries"
- * 	"[" previewClasspathEntries+=STRING ("," previewClasspathEntries+=STRING)* "]")? "{" scripts+=Script? (defines+=Define
+ * 	"component" name=ValidID ("controlledby" controller=JvmTypeReference)? ("styledwith" "[" previewCssFiles+=STRING (","
+ * 	previewCssFiles+=STRING)* "]")? ("resourcefile" previewResourceBundle=STRING)? ("extraClasspath" "["
+ * 	previewClasspathEntries+=STRING ("," previewClasspathEntries+=STRING)* "]")? "{" scripts+=Script? (defines+=Define
  * 	("," defines+=Define)*)? rootNode=Element "}";
  *
  **/
 
-// "component" name=ValidID ("controlledby" controller=JvmTypeReference)? ("previewCssFiles" "[" previewCssFiles+=STRING
-// ("," previewCssFiles+=STRING)* "]")? ("previewResourceFile" previewResourceBundle=STRING)? ("previewClasspathEntries"
-// "[" previewClasspathEntries+=STRING ("," previewClasspathEntries+=STRING)* "]")? "{" scripts+=Script? (defines+=Define
-// ("," defines+=Define)*)? rootNode=Element "}"
+// "component" name=ValidID ("controlledby" controller=JvmTypeReference)? ("styledwith" "[" previewCssFiles+=STRING (","
+// previewCssFiles+=STRING)* "]")? ("resourcefile" previewResourceBundle=STRING)? ("extraClasspath" "["
+// previewClasspathEntries+=STRING ("," previewClasspathEntries+=STRING)* "]")? "{" scripts+=Script? (defines+=Define (","
+// defines+=Define)*)? rootNode=Element "}"
 protected class ComponentDefinition_Group extends GroupToken {
 	
 	public ComponentDefinition_Group(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -430,7 +430,7 @@ protected class ComponentDefinition_ControllerAssignment_2_1 extends AssignmentT
 }
 
 
-// ("previewCssFiles" "[" previewCssFiles+=STRING ("," previewCssFiles+=STRING)* "]")?
+// ("styledwith" "[" previewCssFiles+=STRING ("," previewCssFiles+=STRING)* "]")?
 protected class ComponentDefinition_Group_3 extends GroupToken {
 	
 	public ComponentDefinition_Group_3(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -452,16 +452,16 @@ protected class ComponentDefinition_Group_3 extends GroupToken {
 
 }
 
-// "previewCssFiles"
-protected class ComponentDefinition_PreviewCssFilesKeyword_3_0 extends KeywordToken  {
+// "styledwith"
+protected class ComponentDefinition_StyledwithKeyword_3_0 extends KeywordToken  {
 	
-	public ComponentDefinition_PreviewCssFilesKeyword_3_0(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+	public ComponentDefinition_StyledwithKeyword_3_0(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
 		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
 	}
 	
 	@Override
 	public Keyword getGrammarElement() {
-		return grammarAccess.getComponentDefinitionAccess().getPreviewCssFilesKeyword_3_0();
+		return grammarAccess.getComponentDefinitionAccess().getStyledwithKeyword_3_0();
 	}
 
     @Override
@@ -490,7 +490,7 @@ protected class ComponentDefinition_LeftSquareBracketKeyword_3_1 extends Keyword
     @Override
 	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
 		switch(index) {
-			case 0: return new ComponentDefinition_PreviewCssFilesKeyword_3_0(lastRuleCallOrigin, this, 0, inst);
+			case 0: return new ComponentDefinition_StyledwithKeyword_3_0(lastRuleCallOrigin, this, 0, inst);
 			default: return null;
 		}	
 	}
@@ -635,7 +635,7 @@ protected class ComponentDefinition_RightSquareBracketKeyword_3_4 extends Keywor
 }
 
 
-// ("previewResourceFile" previewResourceBundle=STRING)?
+// ("resourcefile" previewResourceBundle=STRING)?
 protected class ComponentDefinition_Group_4 extends GroupToken {
 	
 	public ComponentDefinition_Group_4(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -657,16 +657,16 @@ protected class ComponentDefinition_Group_4 extends GroupToken {
 
 }
 
-// "previewResourceFile"
-protected class ComponentDefinition_PreviewResourceFileKeyword_4_0 extends KeywordToken  {
+// "resourcefile"
+protected class ComponentDefinition_ResourcefileKeyword_4_0 extends KeywordToken  {
 	
-	public ComponentDefinition_PreviewResourceFileKeyword_4_0(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+	public ComponentDefinition_ResourcefileKeyword_4_0(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
 		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
 	}
 	
 	@Override
 	public Keyword getGrammarElement() {
-		return grammarAccess.getComponentDefinitionAccess().getPreviewResourceFileKeyword_4_0();
+		return grammarAccess.getComponentDefinitionAccess().getResourcefileKeyword_4_0();
 	}
 
     @Override
@@ -696,7 +696,7 @@ protected class ComponentDefinition_PreviewResourceBundleAssignment_4_1 extends 
     @Override
 	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
 		switch(index) {
-			case 0: return new ComponentDefinition_PreviewResourceFileKeyword_4_0(lastRuleCallOrigin, this, 0, inst);
+			case 0: return new ComponentDefinition_ResourcefileKeyword_4_0(lastRuleCallOrigin, this, 0, inst);
 			default: return null;
 		}	
 	}
@@ -716,7 +716,7 @@ protected class ComponentDefinition_PreviewResourceBundleAssignment_4_1 extends 
 }
 
 
-// ("previewClasspathEntries" "[" previewClasspathEntries+=STRING ("," previewClasspathEntries+=STRING)* "]")?
+// ("extraClasspath" "[" previewClasspathEntries+=STRING ("," previewClasspathEntries+=STRING)* "]")?
 protected class ComponentDefinition_Group_5 extends GroupToken {
 	
 	public ComponentDefinition_Group_5(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -738,16 +738,16 @@ protected class ComponentDefinition_Group_5 extends GroupToken {
 
 }
 
-// "previewClasspathEntries"
-protected class ComponentDefinition_PreviewClasspathEntriesKeyword_5_0 extends KeywordToken  {
+// "extraClasspath"
+protected class ComponentDefinition_ExtraClasspathKeyword_5_0 extends KeywordToken  {
 	
-	public ComponentDefinition_PreviewClasspathEntriesKeyword_5_0(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+	public ComponentDefinition_ExtraClasspathKeyword_5_0(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
 		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
 	}
 	
 	@Override
 	public Keyword getGrammarElement() {
-		return grammarAccess.getComponentDefinitionAccess().getPreviewClasspathEntriesKeyword_5_0();
+		return grammarAccess.getComponentDefinitionAccess().getExtraClasspathKeyword_5_0();
 	}
 
     @Override
@@ -778,7 +778,7 @@ protected class ComponentDefinition_LeftSquareBracketKeyword_5_1 extends Keyword
     @Override
 	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
 		switch(index) {
-			case 0: return new ComponentDefinition_PreviewClasspathEntriesKeyword_5_0(lastRuleCallOrigin, this, 0, inst);
+			case 0: return new ComponentDefinition_ExtraClasspathKeyword_5_0(lastRuleCallOrigin, this, 0, inst);
 			default: return null;
 		}	
 	}
@@ -2616,11 +2616,11 @@ protected class StaticValueProperty_ValueAssignment_5 extends AssignmentToken  {
 /************ begin Rule Property ****************
  *
  * Property:
- * 	name=ID ":" value=ValueProperty;
+ * 	preview?="preview"? name=ID ":" value=ValueProperty;
  *
  **/
 
-// name=ID ":" value=ValueProperty
+// preview?="preview"? name=ID ":" value=ValueProperty
 protected class Property_Group extends GroupToken {
 	
 	public Property_Group(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -2635,7 +2635,7 @@ protected class Property_Group extends GroupToken {
     @Override
 	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
 		switch(index) {
-			case 0: return new Property_ValueAssignment_2(lastRuleCallOrigin, this, 0, inst);
+			case 0: return new Property_ValueAssignment_3(lastRuleCallOrigin, this, 0, inst);
 			default: return null;
 		}	
 	}
@@ -2649,16 +2649,16 @@ protected class Property_Group extends GroupToken {
 
 }
 
-// name=ID
-protected class Property_NameAssignment_0 extends AssignmentToken  {
+// preview?="preview"?
+protected class Property_PreviewAssignment_0 extends AssignmentToken  {
 	
-	public Property_NameAssignment_0(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+	public Property_PreviewAssignment_0(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
 		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
 	}
 	
 	@Override
 	public Assignment getGrammarElement() {
-		return grammarAccess.getPropertyAccess().getNameAssignment_0();
+		return grammarAccess.getPropertyAccess().getPreviewAssignment_0();
 	}
 
     @Override
@@ -2670,11 +2670,45 @@ protected class Property_NameAssignment_0 extends AssignmentToken  {
 
     @Override	
 	public IEObjectConsumer tryConsume() {
+		if((value = eObjectConsumer.getConsumable("preview",false)) == null) return null;
+		IEObjectConsumer obj = eObjectConsumer.cloneAndConsume("preview");
+		if(Boolean.TRUE.equals(value)) { // org::eclipse::xtext::impl::KeywordImpl
+			type = AssignmentType.KEYWORD;
+			element = grammarAccess.getPropertyAccess().getPreviewPreviewKeyword_0_0();
+			return obj;
+		}
+		return null;
+	}
+
+}
+
+// name=ID
+protected class Property_NameAssignment_1 extends AssignmentToken  {
+	
+	public Property_NameAssignment_1(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
+	}
+	
+	@Override
+	public Assignment getGrammarElement() {
+		return grammarAccess.getPropertyAccess().getNameAssignment_1();
+	}
+
+    @Override
+	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
+		switch(index) {
+			case 0: return new Property_PreviewAssignment_0(lastRuleCallOrigin, this, 0, inst);
+			default: return lastRuleCallOrigin.createFollowerAfterReturn(this, index, index - 1, inst);
+		}	
+	}
+
+    @Override	
+	public IEObjectConsumer tryConsume() {
 		if((value = eObjectConsumer.getConsumable("name",true)) == null) return null;
 		IEObjectConsumer obj = eObjectConsumer.cloneAndConsume("name");
-		if(valueSerializer.isValid(obj.getEObject(), grammarAccess.getPropertyAccess().getNameIDTerminalRuleCall_0_0(), value, null)) {
+		if(valueSerializer.isValid(obj.getEObject(), grammarAccess.getPropertyAccess().getNameIDTerminalRuleCall_1_0(), value, null)) {
 			type = AssignmentType.TERMINAL_RULE_CALL;
-			element = grammarAccess.getPropertyAccess().getNameIDTerminalRuleCall_0_0();
+			element = grammarAccess.getPropertyAccess().getNameIDTerminalRuleCall_1_0();
 			return obj;
 		}
 		return null;
@@ -2683,21 +2717,21 @@ protected class Property_NameAssignment_0 extends AssignmentToken  {
 }
 
 // ":"
-protected class Property_ColonKeyword_1 extends KeywordToken  {
+protected class Property_ColonKeyword_2 extends KeywordToken  {
 	
-	public Property_ColonKeyword_1(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+	public Property_ColonKeyword_2(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
 		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
 	}
 	
 	@Override
 	public Keyword getGrammarElement() {
-		return grammarAccess.getPropertyAccess().getColonKeyword_1();
+		return grammarAccess.getPropertyAccess().getColonKeyword_2();
 	}
 
     @Override
 	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
 		switch(index) {
-			case 0: return new Property_NameAssignment_0(lastRuleCallOrigin, this, 0, inst);
+			case 0: return new Property_NameAssignment_1(lastRuleCallOrigin, this, 0, inst);
 			default: return null;
 		}	
 	}
@@ -2705,15 +2739,15 @@ protected class Property_ColonKeyword_1 extends KeywordToken  {
 }
 
 // value=ValueProperty
-protected class Property_ValueAssignment_2 extends AssignmentToken  {
+protected class Property_ValueAssignment_3 extends AssignmentToken  {
 	
-	public Property_ValueAssignment_2(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+	public Property_ValueAssignment_3(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
 		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
 	}
 	
 	@Override
 	public Assignment getGrammarElement() {
-		return grammarAccess.getPropertyAccess().getValueAssignment_2();
+		return grammarAccess.getPropertyAccess().getValueAssignment_3();
 	}
 
     @Override
@@ -2732,7 +2766,7 @@ protected class Property_ValueAssignment_2 extends AssignmentToken  {
 			IEObjectConsumer param = createEObjectConsumer((EObject)value);
 			if(param.isInstanceOf(grammarAccess.getValuePropertyRule().getType().getClassifier())) {
 				type = AssignmentType.PARSER_RULE_CALL;
-				element = grammarAccess.getPropertyAccess().getValueValuePropertyParserRuleCall_2_0(); 
+				element = grammarAccess.getPropertyAccess().getValueValuePropertyParserRuleCall_3_0(); 
 				consumed = obj;
 				return param;
 			}
@@ -2744,7 +2778,7 @@ protected class Property_ValueAssignment_2 extends AssignmentToken  {
 	public AbstractToken createFollowerAfterReturn(AbstractToken next,	int actIndex, int index, IEObjectConsumer inst) {
 		if(value == inst.getEObject() && !inst.isConsumed()) return null;
 		switch(index) {
-			case 0: return new Property_ColonKeyword_1(lastRuleCallOrigin, next, actIndex, consumed);
+			case 0: return new Property_ColonKeyword_2(lastRuleCallOrigin, next, actIndex, consumed);
 			default: return null;
 		}	
 	}	

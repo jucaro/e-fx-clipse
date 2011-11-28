@@ -267,8 +267,9 @@ public class FXGraphParser extends AbstractContentAssistParser {
 					put(grammarAccess.getStaticValuePropertyAccess().getTypeAssignment_1(), "rule__StaticValueProperty__TypeAssignment_1");
 					put(grammarAccess.getStaticValuePropertyAccess().getNameAssignment_3(), "rule__StaticValueProperty__NameAssignment_3");
 					put(grammarAccess.getStaticValuePropertyAccess().getValueAssignment_5(), "rule__StaticValueProperty__ValueAssignment_5");
-					put(grammarAccess.getPropertyAccess().getNameAssignment_0(), "rule__Property__NameAssignment_0");
-					put(grammarAccess.getPropertyAccess().getValueAssignment_2(), "rule__Property__ValueAssignment_2");
+					put(grammarAccess.getPropertyAccess().getPreviewAssignment_0(), "rule__Property__PreviewAssignment_0");
+					put(grammarAccess.getPropertyAccess().getNameAssignment_1(), "rule__Property__NameAssignment_1");
+					put(grammarAccess.getPropertyAccess().getValueAssignment_3(), "rule__Property__ValueAssignment_3");
 					put(grammarAccess.getListValuePropertyAccess().getValueAssignment_1(), "rule__ListValueProperty__ValueAssignment_1");
 					put(grammarAccess.getListValuePropertyAccess().getValueAssignment_2_1(), "rule__ListValueProperty__ValueAssignment_2_1");
 					put(grammarAccess.getMapValuePropertyAccess().getPropertiesAssignment_1(), "rule__MapValueProperty__PropertiesAssignment_1");

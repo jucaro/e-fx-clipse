@@ -178,9 +178,9 @@ ruleComponentDefinition returns [EObject current=null]
 	    }
 
 )
-))?(	otherlv_4='previewCssFiles' 
+))?(	otherlv_4='styledwith' 
     {
-    	newLeafNode(otherlv_4, grammarAccess.getComponentDefinitionAccess().getPreviewCssFilesKeyword_3_0());
+    	newLeafNode(otherlv_4, grammarAccess.getComponentDefinitionAccess().getStyledwithKeyword_3_0());
     }
 	otherlv_5='[' 
     {
@@ -230,9 +230,9 @@ ruleComponentDefinition returns [EObject current=null]
     {
     	newLeafNode(otherlv_9, grammarAccess.getComponentDefinitionAccess().getRightSquareBracketKeyword_3_4());
     }
-)?(	otherlv_10='previewResourceFile' 
+)?(	otherlv_10='resourcefile' 
     {
-    	newLeafNode(otherlv_10, grammarAccess.getComponentDefinitionAccess().getPreviewResourceFileKeyword_4_0());
+    	newLeafNode(otherlv_10, grammarAccess.getComponentDefinitionAccess().getResourcefileKeyword_4_0());
     }
 (
 (
@@ -252,9 +252,9 @@ ruleComponentDefinition returns [EObject current=null]
 	    }
 
 )
-))?(	otherlv_12='previewClasspathEntries' 
+))?(	otherlv_12='extraClasspath' 
     {
-    	newLeafNode(otherlv_12, grammarAccess.getComponentDefinitionAccess().getPreviewClasspathEntriesKeyword_5_0());
+    	newLeafNode(otherlv_12, grammarAccess.getComponentDefinitionAccess().getExtraClasspathKeyword_5_0());
     }
 	otherlv_13='[' 
     {
@@ -860,9 +860,24 @@ ruleProperty returns [EObject current=null]
     @after { leaveRule(); }:
 ((
 (
-		lv_name_0_0=RULE_ID
+		lv_preview_0_0=	'preview' 
+    {
+        newLeafNode(lv_preview_0_0, grammarAccess.getPropertyAccess().getPreviewPreviewKeyword_0_0());
+    }
+ 
+	    {
+	        if ($current==null) {
+	            $current = createModelElement(grammarAccess.getPropertyRule());
+	        }
+       		setWithLastConsumed($current, "preview", true, "preview");
+	    }
+
+)
+)?(
+(
+		lv_name_1_0=RULE_ID
 		{
-			newLeafNode(lv_name_0_0, grammarAccess.getPropertyAccess().getNameIDTerminalRuleCall_0_0()); 
+			newLeafNode(lv_name_1_0, grammarAccess.getPropertyAccess().getNameIDTerminalRuleCall_1_0()); 
 		}
 		{
 	        if ($current==null) {
@@ -871,28 +886,28 @@ ruleProperty returns [EObject current=null]
        		setWithLastConsumed(
        			$current, 
        			"name",
-        		lv_name_0_0, 
+        		lv_name_1_0, 
         		"ID");
 	    }
 
 )
-)	otherlv_1=':' 
+)	otherlv_2=':' 
     {
-    	newLeafNode(otherlv_1, grammarAccess.getPropertyAccess().getColonKeyword_1());
+    	newLeafNode(otherlv_2, grammarAccess.getPropertyAccess().getColonKeyword_2());
     }
 (
 (
 		{ 
-	        newCompositeNode(grammarAccess.getPropertyAccess().getValueValuePropertyParserRuleCall_2_0()); 
+	        newCompositeNode(grammarAccess.getPropertyAccess().getValueValuePropertyParserRuleCall_3_0()); 
 	    }
-		lv_value_2_0=ruleValueProperty		{
+		lv_value_3_0=ruleValueProperty		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getPropertyRule());
 	        }
        		set(
        			$current, 
        			"value",
-        		lv_value_2_0, 
+        		lv_value_3_0, 
         		"ValueProperty");
 	        afterParserOrEnumRuleCall();
 	    }

@@ -65,11 +65,11 @@ class FXGraphGenerator implements IGenerator {
 		
 	}
 	
-	def doGeneratePreview(Resource resource) {
+	def doGeneratePreview(Resource resource, boolean skipController) {
 		try {
 			val projectRelativePath = calculateRelativePath(resource);
 			if( projectRelativePath != null ) {
-				return createContent(resource, projectRelativePath,true).toString;
+				return createContent(resource, projectRelativePath,skipController).toString;
 			}	
 		} catch(Exception e) {
 			

@@ -30,6 +30,10 @@ import javafx.scene.Scene;
 
 import javax.swing.JRootPane;
 
+import org.eclipse.core.runtime.preferences.IEclipsePreferences;
+import org.eclipse.core.runtime.preferences.InstanceScope;
+import org.eclipse.jface.action.Action;
+import org.eclipse.jface.action.IAction;
 import org.eclipse.jface.resource.JFaceResources;
 import org.eclipse.jface.viewers.DecorationOverlayIcon;
 import org.eclipse.jface.viewers.IDecoration;
@@ -50,6 +54,7 @@ import org.eclipse.swt.widgets.Text;
 import org.eclipse.ui.IViewSite;
 import org.eclipse.ui.PartInitException;
 import org.eclipse.ui.part.ViewPart;
+import org.osgi.service.prefs.BackingStoreException;
 
 import at.bestsolution.efxclipse.runtime.panels.FillLayoutPane;
 import at.bestsolution.efxclipse.tooling.fxgraph.ui.preview.bundle.Activator;
@@ -83,8 +88,13 @@ public class LivePreviewPart extends ViewPart {
 	private static final String IMAGE_STATUS_OK = LivePreviewPart.class.getName() + ".IMAGE_STATUS_OK";
 	private static final String IMAGE_STATUS_NOPREVIEW = LivePreviewPart.class.getName() + ".IMAGE_STATUS_NOPREVIEW";
 	
+	private static final String IMAGE_LOAD_CONTROLLER = LivePreviewPart.class.getName() + ".IMAGE_LOAD_CONTROLLER";
+	private static final String IMAGE_REFRESH = LivePreviewPart.class.getName() + ".IMAGE_REFRESH";
+	
 	private static final String NO_PREVIEW_TEXT = "No preview available";
 
+	private IEclipsePreferences preference = InstanceScope.INSTANCE.getNode(Activator.PLUGIN_ID);
+	
 	private CTabItem logItem;
 
 	private Label statusLabelIcon;
@@ -105,6 +115,10 @@ public class LivePreviewPart extends ViewPart {
 		JFaceResources.getImageRegistry().put(IMAGE_STATUS_WARNING, Activator.imageDescriptorFromPlugin("at.bestsolution.efxclipse.tooling.fxgraph.ui.preview", "/icons/16_16/task-attempt.png"));
 		JFaceResources.getImageRegistry().put(IMAGE_STATUS_OK, Activator.imageDescriptorFromPlugin("at.bestsolution.efxclipse.tooling.fxgraph.ui.preview", "/icons/16_16/task-complete.png"));
 		JFaceResources.getImageRegistry().put(IMAGE_STATUS_NOPREVIEW, Activator.imageDescriptorFromPlugin("at.bestsolution.efxclipse.tooling.fxgraph.ui.preview", "/icons/16_16/dialog-information.png"));
+	
+		JFaceResources.getImageRegistry().put(IMAGE_LOAD_CONTROLLER, Activator.imageDescriptorFromPlugin("at.bestsolution.efxclipse.tooling.fxgraph.ui.preview", "/icons/16_16/debug-step-into.png"));
+		JFaceResources.getImageRegistry().put(IMAGE_REFRESH, Activator.imageDescriptorFromPlugin("at.bestsolution.efxclipse.tooling.fxgraph.ui.preview", "/icons/16_16/run-build-clean.png"));
+		
 	}
 
 	@Override
@@ -190,6 +204,34 @@ public class LivePreviewPart extends ViewPart {
 		statusLabelText = new Label(container, SWT.NONE);
 		statusLabelText.setText(NO_PREVIEW_TEXT);
 		statusLabelText.setLayoutData(new GridData(GridData.FILL_HORIZONTAL));
+		
+		Action loadController = new Action("",IAction.AS_CHECK_BOX) {
+			@Override
+			public void run() {
+				preference.putBoolean(LivePreviewSynchronizer.PREF_LOAD_CONTROLLER, ! preference.getBoolean(LivePreviewSynchronizer.PREF_LOAD_CONTROLLER, false));
+				try {
+					preference.flush();
+					synchronizer.refreshPreview();
+				} catch (BackingStoreException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+			}
+		};
+		loadController.setChecked(preference.getBoolean(LivePreviewSynchronizer.PREF_LOAD_CONTROLLER, false));
+		loadController.setImageDescriptor(JFaceResources.getImageRegistry().getDescriptor(IMAGE_LOAD_CONTROLLER));
+		loadController.setToolTipText("Load the controller");
+		
+		Action refresh = new Action("",JFaceResources.getImageRegistry().getDescriptor(IMAGE_REFRESH)) {
+			@Override
+			public void run() {
+				synchronizer.refreshPreview();
+			}
+		};
+		refresh.setToolTipText("Force a refresh");
+		
+		getViewSite().getActionBars().getToolBarManager().add(refresh);
+		getViewSite().getActionBars().getToolBarManager().add(loadController);
 	}
 	
 	@Override
@@ -230,16 +272,17 @@ public class LivePreviewPart extends ViewPart {
 					Thread.currentThread().setContextClassLoader(new URLClassLoader(contentData.extraJarPath.toArray(new URL[0]),cl));
 				}
 				
-				PrintStream syserr = System.err;
-				PrintStream sysout = System.out;
 				
-				final ByteArrayOutputStream redirectedError = new ByteArrayOutputStream();
-				final ByteArrayOutputStream redirectedOut = new ByteArrayOutputStream();
+//				PrintStream syserr = System.err;
+//				PrintStream sysout = System.out;
+//				
+//				final ByteArrayOutputStream redirectedError = new ByteArrayOutputStream();
+//				final ByteArrayOutputStream redirectedOut = new ByteArrayOutputStream();
 				String exception = null;
 				
 				try {
-					System.setErr(new PrintStream(redirectedError));
-					System.setErr(new PrintStream(redirectedOut));
+//					System.setErr(new PrintStream(redirectedError));
+//					System.setErr(new PrintStream(redirectedOut));
 					
 					FXMLLoader loader = new FXMLLoader();
 					
@@ -302,15 +345,15 @@ public class LivePreviewPart extends ViewPart {
 						exception = sw.toString();
 					}
 				} finally {
-					System.setErr(syserr);
-					System.setOut(sysout);
-					
+//					System.setErr(syserr);
+//					System.setOut(sysout);
+//					
 					if( cl != null ) {
 						Thread.currentThread().setContextClassLoader(cl);
 					}
 				}
 				
-				if( exception != null || redirectedError.size() > 0 || redirectedOut.size() > 0 ) {
+				if( exception != null /*|| redirectedError.size() > 0 || redirectedOut.size() > 0*/ ) {
 					final String innerException = exception;
 					folder.getDisplay().asyncExec(new Runnable() {
 						
@@ -321,11 +364,11 @@ public class LivePreviewPart extends ViewPart {
 								statusLabelIcon.setImage(JFaceResources.getImage(IMAGE_STATUS_ERROR));
 								statusLabelText.setText( SimpleDateFormat.getTimeInstance().format(new Date()) + ": Error while updateing preview");
 								setTitleImage(JFaceResources.getImage(IMAGE_TAB_ERROR));
-							} else {
-								logItem.setImage(JFaceResources.getImage(IMAGE_WARNING));
-								statusLabelIcon.setImage(JFaceResources.getImage(IMAGE_STATUS_WARNING));
-								statusLabelText.setText( SimpleDateFormat.getTimeInstance().format(new Date()) + ": Warning while updateing preview");
-								setTitleImage(JFaceResources.getImage(IMAGE_TAB_WARNING));
+//							} else {
+//								logItem.setImage(JFaceResources.getImage(IMAGE_WARNING));
+//								statusLabelIcon.setImage(JFaceResources.getImage(IMAGE_STATUS_WARNING));
+//								statusLabelText.setText( SimpleDateFormat.getTimeInstance().format(new Date()) + ": Warning while updateing preview");
+//								setTitleImage(JFaceResources.getImage(IMAGE_TAB_WARNING));
 							}
 							
 							logStatement.append("================================================================="+logStatement.getLineDelimiter());
@@ -339,19 +382,19 @@ public class LivePreviewPart extends ViewPart {
 								logStatement.append(logStatement.getLineDelimiter()+logStatement.getLineDelimiter());
 							}
 							
-							if( redirectedError.size() > 0 ) {
-								logStatement.append("STDERR:" + logStatement.getLineDelimiter());
-								logStatement.append("-------" + logStatement.getLineDelimiter());
-								logStatement.append(new String(redirectedError.toByteArray())+logStatement.getLineDelimiter());
-								logStatement.append(logStatement.getLineDelimiter()+logStatement.getLineDelimiter());
-							}
-							
-							if( redirectedOut.size() > 0 ) {
-								logStatement.append("STDOUT:" + logStatement.getLineDelimiter());
-								logStatement.append("-------"+logStatement.getLineDelimiter());
-								logStatement.append(new String(redirectedOut.toByteArray())+logStatement.getLineDelimiter());
-								logStatement.append(logStatement.getLineDelimiter()+logStatement.getLineDelimiter());
-							}
+//							if( redirectedError.size() > 0 ) {
+//								logStatement.append("STDERR:" + logStatement.getLineDelimiter());
+//								logStatement.append("-------" + logStatement.getLineDelimiter());
+//								logStatement.append(new String(redirectedError.toByteArray())+logStatement.getLineDelimiter());
+//								logStatement.append(logStatement.getLineDelimiter()+logStatement.getLineDelimiter());
+//							}
+//							
+//							if( redirectedOut.size() > 0 ) {
+//								logStatement.append("STDOUT:" + logStatement.getLineDelimiter());
+//								logStatement.append("-------"+logStatement.getLineDelimiter());
+//								logStatement.append(new String(redirectedOut.toByteArray())+logStatement.getLineDelimiter());
+//								logStatement.append(logStatement.getLineDelimiter()+logStatement.getLineDelimiter());
+//							}
 						}
 					});
 					

@@ -36,7 +36,7 @@
           </elements>
         </elements>
         <elements xsi:type="xtext:Group" cardinality="?">
-          <elements xsi:type="xtext:Keyword" value="previewCssFiles"/>
+          <elements xsi:type="xtext:Keyword" value="styledwith"/>
           <elements xsi:type="xtext:Keyword" value="["/>
           <elements xsi:type="xtext:Assignment" feature="previewCssFiles" operator="+=">
             <terminal xsi:type="xtext:RuleCall" rule="/3/@rules.2"/>
@@ -50,13 +50,13 @@
           <elements xsi:type="xtext:Keyword" value="]"/>
         </elements>
         <elements xsi:type="xtext:Group" cardinality="?">
-          <elements xsi:type="xtext:Keyword" value="previewResourceFile"/>
+          <elements xsi:type="xtext:Keyword" value="resourcefile"/>
           <elements xsi:type="xtext:Assignment" feature="previewResourceBundle" operator="=">
             <terminal xsi:type="xtext:RuleCall" rule="/3/@rules.2"/>
           </elements>
         </elements>
         <elements xsi:type="xtext:Group" cardinality="?">
-          <elements xsi:type="xtext:Keyword" value="previewClasspathEntries"/>
+          <elements xsi:type="xtext:Keyword" value="extraClasspath"/>
           <elements xsi:type="xtext:Keyword" value="["/>
           <elements xsi:type="xtext:Assignment" feature="previewClasspathEntries" operator="+=">
             <terminal xsi:type="xtext:RuleCall" rule="/3/@rules.2"/>
@@ -211,6 +211,9 @@
         <classifier xsi:type="ecore:EClass" href="http://www.bestsolution.at/efxclipse/tooling/fxgraph/FXGraph#//Property"/>
       </type>
       <alternatives xsi:type="xtext:Group">
+        <elements xsi:type="xtext:Assignment" cardinality="?" feature="preview" operator="?=">
+          <terminal xsi:type="xtext:Keyword" value="preview"/>
+        </elements>
         <elements xsi:type="xtext:Assignment" feature="name" operator="=">
           <terminal xsi:type="xtext:RuleCall" rule="/2/@rules.11"/>
         </elements>

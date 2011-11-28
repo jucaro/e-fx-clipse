@@ -790,6 +790,31 @@ public class FXGraphProposalProvider extends AbstractFXGraphProposalProvider {
 		}
 		super.complete_Property(model, ruleCall, context, acceptor);
 	}
+	
+	@Override
+	public void completeProperty_Name(EObject model, Assignment assignment,
+			ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
+		if (context.getCurrentModel() instanceof at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.Property) {
+			Element element = (Element) ((at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.Property) context.getCurrentModel()).eContainer();
+			TypeData data = getTypeData(getJavaProject(model),
+					element.getType());
+			if (data != null) {
+				for (Property p : data.properties) {
+					acceptor.accept(createCompletionProposal(p.name + " : ",
+							p.getDescription(), p.getIcon(), context));
+				}
+			}
+		}
+		super.completeProperty_Name(model, assignment, context, acceptor);
+	}
+	
+	@Override
+	public void completeProperty_Preview(EObject model, Assignment assignment,
+			ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
+//		System.err.println("Property preview completetion");
+		// TODO Auto-generated method stub
+		super.completeProperty_Preview(model, assignment, context, acceptor);
+	}
 
 	@Override
 	public void completeProperty_Value(EObject model, Assignment assignment,
