@@ -1207,8 +1207,9 @@
 }
 
 .slider .axis .tick-mark {
-    -fx-font-size: 0.833333em
+    -fx-font-size: 0.833333em;
 }
+
 .slider:disabled {
     -fx-opacity: -fx-disabled-opacity;
 }

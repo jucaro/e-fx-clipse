@@ -8,7 +8,7 @@ import javafx.scene.paint.*
 import javafx.scene.text.*
 import at.bestsolution.efxclipse.runtime.examples.fxgraph.*
 
-component LoginComponent controlledby LoginController {
+component LoginComponent controlledby LoginController styledwith ["at/bestsolution/efxclipse/runtime/examples/demo.css"] {
 	AnchorPane id Login  {
 		prefHeight : 280.0,
 		prefWidth : 480.0,
@@ -28,7 +28,7 @@ component LoginComponent controlledby LoginController {
 			Label {
 				layoutX : 229.0,
 				layoutY : 61.0,
-				text : "Password"
+				text : "Test"
 			},
 			Label {
 				layoutX : 16.0,
