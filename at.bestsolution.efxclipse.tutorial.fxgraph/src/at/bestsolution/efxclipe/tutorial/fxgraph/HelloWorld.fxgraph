@@ -1,10 +1,10 @@
 import javafx.scene.layout.*
 import javafx.scene.control.*
 
-component HelloWorld previewCssFiles["hello.css"] {
+component HelloWorld resourcefile "messages.properties" {
 	BorderPane {
-		center : Label {
-			text : "Hello World!"
+		center : Button {
+			text : rstring "mybutton.label"
 		}
 	}
 }
