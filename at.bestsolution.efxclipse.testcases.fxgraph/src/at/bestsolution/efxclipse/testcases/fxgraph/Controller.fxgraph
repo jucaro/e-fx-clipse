@@ -1,0 +1,7 @@
+component Controller controlledby at.bestsolution.efxclipse.testcases.fxgraph.MyController {
+	javafx.scene.layout.BorderPane {
+		center : javafx.scene.control.Button {
+			text : "Hello World"
+		}
+	}
+}

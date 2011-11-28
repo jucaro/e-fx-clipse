@@ -1,0 +1,17 @@
+import javafx.scene.layout.*
+import javafx.scene.control.*
+import at.bestsolution.efxclipse.testcases.fxgraph.*
+import at.bestsolution.efxclipse.testcases.fxgraph.lib.*
+import org.tbee.javafx.scene.layout.fxml.*
+
+component CssTest styledwith ["test.css"] { 
+	MigPane {
+        children : [  
+            MyButton {
+            },
+            MyLibButton {
+            	
+            }
+        ]
+    }
+}
