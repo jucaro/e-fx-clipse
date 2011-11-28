@@ -1,7 +1,7 @@
 import javafx.scene.layout.*
 import javafx.scene.control.*
 
-component CssTest previewCssFiles ["platform:/resource/at.bestsolution.efxclipse.testcases.fxgraph/css/test.css"] {
+component CssTest styledwith ["platform:/resource/at.bestsolution.efxclipse.testcases.fxgraph/css/test.css"] {
 	BorderPane { 
 		center : Button {
 			text : "Hello World"

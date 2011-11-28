@@ -2,7 +2,7 @@ import javafx.scene.layout.*
 import javafx.scene.control.*
 import org.tbee.javafx.scene.layout.fxml.*
 
-component ExternalJars previewClasspathEntries ["platform:/resource/at.bestsolution.efxclipse.testcases.fxgraph/libs/MigLayoutFX2-1.0-SNAPSHOT.jar", "platform:/resource/at.bestsolution.efxclipse.testcases.fxgraph/libs/miglayout-3.7.4.jar"] {
+component ExternalJars {
     MigPane {
         children : [
             Label {

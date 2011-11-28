@@ -1,7 +1,7 @@
 import javafx.scene.layout.*
 import javafx.scene.control.*
 
-component CssTest previewCssFiles ["/css/test.css"] {
+component CssTest styledwith ["/css/test.css"] {
 	BorderPane { 
 		center : Button {
 			text : "Hello World"

@@ -1,7 +1,7 @@
 import javafx.scene.layout.*
 import javafx.scene.control.*
 
-component CssTest previewCssFiles ["test.css"] previewResourceFile "platform:/resource/at.bestsolution.efxclipse.testcases.fxgraph/translations/messages.properties" {
+component CssTest styledwith ["test.css"] resourcefile "platform:/resource/at.bestsolution.efxclipse.testcases.fxgraph/translations/messages.properties" {
 	BorderPane { 
 		center : Button {
 			text : rstring "buttonlabel" 
