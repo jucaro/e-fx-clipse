@@ -109,7 +109,6 @@ public class SashRenderer extends JFXRenderer {
 				String dividerPos = element.getContainerData();
 				SplitPane splitPane = ((SplitPane) element.getWidget());
 				if (dividerPos != null && dividerPos != ((Double) splitPane.getDividerPositions()[0]).toString()) {
-					System.out.println("setting new splitpane divider pos in JavaFX: " + dividerPos);
 					splitPane.setDividerPositions(Float.parseFloat(dividerPos));
 				}
 			}
