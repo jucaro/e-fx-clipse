@@ -343,7 +343,7 @@ public class LivePreviewSynchronizer implements IPartListener,
 				}
 
 				return new ContentData(generator.doGeneratePreview(resource,
-						!preference.getBoolean(PREF_LOAD_CONTROLLER, false)),
+						(!preference.getBoolean(PREF_LOAD_CONTROLLER, false)) && (!pluginProject)),
 						l, resourcePropertiesFile, extraPaths);
 			}
 		}
