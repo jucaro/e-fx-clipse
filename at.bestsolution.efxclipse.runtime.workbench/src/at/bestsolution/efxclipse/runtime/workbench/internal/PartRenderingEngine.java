@@ -220,8 +220,8 @@ public class PartRenderingEngine implements IPresentationEngine {
 
 	private final EventHandler childrenHandler = new EventHandler() {
 		public void handleEvent(Event event) {
-			System.out.println("childrenHandler: " + event);
 			Object changedObj = event.getProperty(UIEvents.EventTags.ELEMENT);
+			System.out.println("childrenHandler: " + event + " : " + changedObj);
 
 			if (!(changedObj instanceof MElementContainer<?>)) {
 				return;

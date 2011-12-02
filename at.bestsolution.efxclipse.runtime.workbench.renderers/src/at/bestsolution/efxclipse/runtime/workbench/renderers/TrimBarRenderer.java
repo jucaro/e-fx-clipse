@@ -1,6 +1,7 @@
 package at.bestsolution.efxclipse.runtime.workbench.renderers;
 
 import javafx.geometry.Orientation;
+import javafx.scene.Group;
 import javafx.scene.Node;
 import javafx.scene.control.Separator;
 import javafx.scene.control.ToolBar;
@@ -87,6 +88,8 @@ public class TrimBarRenderer extends JFXRenderer {
 	@Override
 	public void disposeWidget(MUIElement part) {
 		System.out.println("TrimBarRenderer.disposeWidget()");
+		Group limbo = (Group) getContext(part).get("limbo");
+		limbo.getChildren().add((Node) part.getWidget());
 		borderPane.setLeft(null);
 	}
 

@@ -273,6 +273,7 @@ public class TrimStack {
 		eventBroker.unsubscribe(closeHandler);
 	}
 
+	@PostConstruct
 	void createWidget(MToolControl parent, MToolControl me) {
 		System.out.println("TrimStack.createWidget(): p: " + parent);
 		if (minimizedElement == null) {
