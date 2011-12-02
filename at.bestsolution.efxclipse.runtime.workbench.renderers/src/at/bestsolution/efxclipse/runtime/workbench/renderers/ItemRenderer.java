@@ -64,7 +64,6 @@ public abstract class ItemRenderer extends JFXRenderer {
 
 			@Override
 			public void handle(ActionEvent event) {
-				System.out.println("ItemRenderer.createEventHandler(...).new EventHandler() {...}.handle()");
 				final IEclipseContext eclipseContext = getContext(item);
 				eclipseContext.set(MItem.class, item);
 				if (item instanceof MDirectToolItem) {

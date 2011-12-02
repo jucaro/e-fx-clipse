@@ -21,8 +21,7 @@ public abstract class AbstractPartRenderer {
 	@PostConstruct
 	public void init(IEclipseContext context) {
 		this.context = context;
-		modelService = (EModelService) context.get(EModelService.class
-				.getName());
+		modelService = (EModelService) context.get(EModelService.class.getName());
 	}
 
 	public abstract Object createWidget(MUIElement element, Object parent);
@@ -40,11 +39,9 @@ public abstract class AbstractPartRenderer {
 
 	public abstract void hookControllerLogic(final MUIElement me);
 
-	public abstract void childRendered(
-			MElementContainer<MUIElement> parentElement, MUIElement element);
+	public abstract void childRendered(MElementContainer<MUIElement> parentElement, MUIElement element);
 
-	public void hideChild(MElementContainer<MUIElement> parentElement,
-			MUIElement child) {
+	public void hideChild(MElementContainer<MUIElement> parentElement, MUIElement child) {
 	}
 
 	protected abstract Object getImage(MUILabel element);
@@ -77,7 +74,7 @@ public abstract class AbstractPartRenderer {
 	 *            the part to start searching from
 	 * @return the closest context, or global context if none in the hierarchy
 	 */
-	protected IEclipseContext getContext(MUIElement part) {
+	public IEclipseContext getContext(MUIElement part) {
 		if (part instanceof MContext) {
 			return ((MContext) part).getContext();
 		}
@@ -93,10 +90,10 @@ public abstract class AbstractPartRenderer {
 	public void activate(MPart element) {
 		IEclipseContext curContext = getContext(element);
 		if (curContext != null) {
-			EPartService ps = (EPartService) curContext.get(EPartService.class
-					.getName());
-			if (ps != null)
+			EPartService ps = (EPartService) curContext.get(EPartService.class.getName());
+			if (ps != null) {
 				ps.activate(element, requiresFocus(element));
+			}
 		}
 	}
 
@@ -112,8 +109,9 @@ public abstract class AbstractPartRenderer {
 	}
 
 	public Object getUIContainer(MUIElement element) {
-		if (element.getParent() != null)
+		if (element.getParent() != null) {
 			return element.getParent().getWidget();
+		}
 
 		return null;
 	}

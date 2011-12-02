@@ -46,38 +46,64 @@ public abstract class JFXRenderer extends AbstractPartRenderer {
 		}
 	}
 
+	protected int calcIndex(MUIElement element) {
+		MElementContainer<MUIElement> parent = element.getParent();
+		return parent.getChildren().indexOf(element);
+	}
+
+	/**
+	 * Calculates the index of the element in terms of the other <b>rendered</b>
+	 * elements. This is useful when 'inserting' elements in the middle of
+	 * existing, rendered parents.
+	 * 
+	 * @param element
+	 *            The element to get the index for
+	 * @return The visible index or -1 if the element is not a child of the
+	 *         parent
+	 */
+	protected int calcVisibleIndex(MUIElement element) {
+		MElementContainer<MUIElement> parent = element.getParent();
+
+		int curIndex = 0;
+		for (MUIElement child : parent.getChildren()) {
+			if (child == element) {
+				return curIndex;
+			}
+
+			if (child.getWidget() != null) {
+				curIndex++;
+			}
+		}
+		return -1;
+	}
+
 	@Override
 	protected Object getParentWidget(MUIElement element) {
-		// TODO Auto-generated method stub
+		if (element.getParent() != null) {
+			return element.getParent().getWidget();
+		}
 		return null;
 	}
 
 	@Override
 	public void disposeWidget(MUIElement part) {
-		// TODO Auto-generated method stub
-
 	}
 
 	@Override
 	public void hookControllerLogic(MUIElement me) {
-		// TODO Auto-generated method stub
-
 	}
 
 	@Override
 	public void childRendered(MElementContainer<MUIElement> parentElement, MUIElement element) {
-		// TODO Auto-generated method stub
 	}
 
 	@Override
 	protected Object getImage(MUILabel element) {
-		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
 	protected boolean requiresFocus(MPart element) {
-		// TODO Auto-generated method stub
 		return false;
 	}
 

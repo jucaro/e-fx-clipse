@@ -12,7 +12,10 @@ import org.eclipse.e4.ui.model.application.ui.basic.MTrimBar;
 import org.eclipse.e4.ui.model.application.ui.basic.MWindow;
 import org.eclipse.e4.ui.model.application.ui.menu.MMenu;
 import org.eclipse.e4.ui.model.application.ui.menu.MMenuItem;
+import org.eclipse.e4.ui.model.application.ui.menu.MMenuSeparator;
 import org.eclipse.e4.ui.model.application.ui.menu.MToolBar;
+import org.eclipse.e4.ui.model.application.ui.menu.MToolBarSeparator;
+import org.eclipse.e4.ui.model.application.ui.menu.MToolControl;
 import org.eclipse.e4.ui.model.application.ui.menu.MToolItem;
 
 import at.bestsolution.efxclipse.runtime.workbench.AbstractPartRenderer;
@@ -26,6 +29,8 @@ public class WorkbenchRendererFactory implements IRendererFactory {
 	private StackRenderer stackRenderer;
 	private ToolItemRenderer toolItemRenderer;
 	private ToolBarRenderer toolBarRenderer;
+	private ToolControlRenderer toolControlRenderer;
+	private SeparatorRenderer separatorRenderer;
 	private MenuBarRenderer menuBarRenderer;
 	private MenuItemRenderer menuItemRenderer;
 	private TrimBarRenderer trimRenderer;
@@ -59,6 +64,11 @@ public class WorkbenchRendererFactory implements IRendererFactory {
 				stackRenderer = ContextInjectionFactory.make(StackRenderer.class, context);
 			}
 			return stackRenderer;
+		} else if (uiElement instanceof MToolControl) {
+			if (toolControlRenderer == null) {
+				toolControlRenderer = ContextInjectionFactory.make(ToolControlRenderer.class, context);
+			}
+			return toolControlRenderer;
 		} else if (uiElement instanceof MToolBar) {
 			if (toolBarRenderer == null) {
 				toolBarRenderer = ContextInjectionFactory.make(ToolBarRenderer.class, context);
@@ -79,6 +89,11 @@ public class WorkbenchRendererFactory implements IRendererFactory {
 				menuItemRenderer = ContextInjectionFactory.make(MenuItemRenderer.class, context);
 			}
 			return menuItemRenderer;
+		} else if (uiElement instanceof MMenuSeparator || uiElement instanceof MToolBarSeparator) {
+			if (separatorRenderer == null) {
+				separatorRenderer = ContextInjectionFactory.make(SeparatorRenderer.class, context);
+			}
+			return separatorRenderer;
 		} else if (uiElement instanceof MTrimBar) {
 			if (trimRenderer == null) {
 				trimRenderer = ContextInjectionFactory.make(TrimBarRenderer.class, context);

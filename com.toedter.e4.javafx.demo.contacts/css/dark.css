@@ -17,10 +17,20 @@
          linear-gradient(to bottom, derive(-fx-base,+50%), derive(-fx-base,-40%), derive(-fx-base,-20%));
 }
 
+.tool-bar:vertical {
+    -fx-background-color:  linear-gradient(to bottom, derive(-fx-base,-50%), derive(-fx-base,-40%), derive(-fx-base,-20%));
+}
+
 .tool-bar .separator:vertical .line {
     -fx-border-style: solid;
     -fx-background-color: null;
     -fx-border-color:  transparent transparent derive(-fx-base,-35%) derive(-fx-base,+15%);
+}
+
+.tool-bar .separator:horizontal .line {
+    -fx-border-style: solid;
+    -fx-background-color: null;
+    -fx-border-color:  transparent transparent derive(-fx-base,+15%) transparent;
 }
 
 .tooltip {

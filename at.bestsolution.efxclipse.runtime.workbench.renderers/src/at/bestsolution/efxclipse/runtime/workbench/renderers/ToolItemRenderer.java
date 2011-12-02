@@ -24,19 +24,22 @@ public class ToolItemRenderer extends ItemRenderer {
 
 	@Override
 	public Object createWidget(MUIElement element, Object parent) {
-		Button button = new Button();
+		if (element instanceof MHandledToolItem || element instanceof MDirectToolItem) {
+			Button button = new Button();
 
-		MToolItem item = (MToolItem) element;
-		if (item.getIconURI() != null) {
-			URL url = Util.convertToOSGiURL(URI.createURI(item.getIconURI()));
-			Image img = new Image(url.toExternalForm());
-			button.setGraphic(new ImageView(img));
-		}
-		if (item.getTooltip() != null) {
-			button.setTooltip(new Tooltip(item.getLocalizedTooltip()));
-		}
+			MToolItem item = (MToolItem) element;
+			if (item.getIconURI() != null) {
+				URL url = Util.convertToOSGiURL(URI.createURI(item.getIconURI()));
+				Image img = new Image(url.toExternalForm());
+				button.setGraphic(new ImageView(img));
+			}
+			if (item.getTooltip() != null) {
+				button.setTooltip(new Tooltip(item.getLocalizedTooltip()));
+			}
 
-		return button;
+			return button;
+		}
+		return null;
 	}
 
 	@Override

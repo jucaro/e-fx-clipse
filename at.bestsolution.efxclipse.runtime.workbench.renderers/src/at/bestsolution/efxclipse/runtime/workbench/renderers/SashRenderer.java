@@ -27,8 +27,31 @@ public class SashRenderer extends JFXRenderer {
 		if (!(element instanceof MPartSashContainer)) {
 			return null;
 		}
-		MPartSashContainer partSashContainer = (MPartSashContainer) element;
+		final MPartSashContainer partSashContainer = (MPartSashContainer) element;
 		SplitPane splitPane = new SplitPane();
+
+		// SplitPane splitPane = new SplitPane() {
+		// @Override
+		// protected void layoutChildren() {
+		// System.out.println("SashRenderer.createWidget(...).new SplitPane() {...}.layoutChildren()");
+		// for (MPartSashContainerElement element :
+		// partSashContainer.getChildren()) {
+		// if (!element.isVisible()) {
+		// System.out.println("remove: " + element.getWidget());
+		// getItems().remove(element.getWidget());
+		// System.out.println(getItems().size());
+		// } else {
+		// if (!getItems().contains(element.getWidget())) {
+		// System.out.println("add: " + element.getWidget());
+		// getItems().add((Node) element.getWidget());
+		// System.out.println(getItems().size());
+		// }
+		// }
+		// }
+		// super.layoutChildren();
+		//
+		// }
+		// };
 		Orientation orientation;
 		if (partSashContainer.isHorizontal()) {
 			orientation = Orientation.HORIZONTAL;
@@ -45,22 +68,28 @@ public class SashRenderer extends JFXRenderer {
 		if (container.getChildren().size() == 2) {
 			super.processContents(container);
 			SplitPane splitPane = (SplitPane) container.getWidget();
-			splitPane.getItems().add((Node) container.getChildren().get(0).getWidget());
-			splitPane.getItems().add((Node) container.getChildren().get(1).getWidget());
+			int visibleChildrenCount = 0;
+			if (container.getChildren().get(0).isVisible()) {
+				splitPane.getItems().add((Node) container.getChildren().get(0).getWidget());
+				visibleChildrenCount++;
+			}
+			if (container.getChildren().get(1).isVisible()) {
+				splitPane.getItems().add((Node) container.getChildren().get(1).getWidget());
+				visibleChildrenCount++;
+			}
 
 			// TODO This is not a good position to hook the controller logic
 			// but hookControllerLogic() is invoked before processContents()...
 			String dividerPos = container.getContainerData();
-			if (dividerPos != null) {
+			if (dividerPos != null && visibleChildrenCount == 2) {
 				splitPane.setDividerPositions(Float.parseFloat(dividerPos));
+				splitPane.getDividers().get(0).positionProperty().addListener(new ChangeListener<Number>() {
+					@Override
+					public void changed(ObservableValue<? extends Number> observable, Number oldValue, Number newValue) {
+						container.setContainerData(newValue.toString());
+					}
+				});
 			}
-
-			splitPane.getDividers().get(0).positionProperty().addListener(new ChangeListener<Number>() {
-				@Override
-				public void changed(ObservableValue<? extends Number> observable, Number oldValue, Number newValue) {
-					container.setContainerData(newValue.toString());
-				}
-			});
 
 		} else {
 			System.err.println("A sash has to have 2 children");

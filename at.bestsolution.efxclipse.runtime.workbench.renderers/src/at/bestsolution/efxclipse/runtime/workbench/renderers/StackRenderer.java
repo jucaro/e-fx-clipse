@@ -16,12 +16,14 @@ import org.eclipse.e4.ui.model.application.ui.MUILabel;
 import org.eclipse.e4.ui.workbench.IPresentationEngine;
 import org.eclipse.emf.common.util.URI;
 
+import com.toedter.e4.javafx.control.CTabPane;
+
 @SuppressWarnings("restriction")
 public class StackRenderer extends JFXRenderer {
 
 	@Override
 	public Object createWidget(MUIElement element, Object parent) {
-		TabPane tabPane = new TabPane();
+		CTabPane tabPane = new CTabPane();
 		return tabPane;
 	}
 

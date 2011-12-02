@@ -14,17 +14,25 @@ import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 
+import javax.annotation.PostConstruct;
 import javax.inject.Inject;
 
 import org.eclipse.e4.core.di.annotations.Optional;
+import org.eclipse.e4.core.services.events.IEventBroker;
+import org.eclipse.e4.ui.internal.workbench.Activator;
+import org.eclipse.e4.ui.internal.workbench.Policy;
 import org.eclipse.e4.ui.model.application.ui.MElementContainer;
 import org.eclipse.e4.ui.model.application.ui.MUIElement;
+import org.eclipse.e4.ui.model.application.ui.basic.MPartStack;
 import org.eclipse.e4.ui.model.application.ui.basic.MTrimBar;
 import org.eclipse.e4.ui.model.application.ui.basic.MTrimmedWindow;
 import org.eclipse.e4.ui.model.application.ui.basic.MWindow;
 import org.eclipse.e4.ui.workbench.IPresentationEngine;
+import org.eclipse.e4.ui.workbench.UIEvents;
 import org.eclipse.emf.common.util.URI;
 import org.osgi.framework.Bundle;
+import org.osgi.service.event.Event;
+import org.osgi.service.event.EventHandler;
 
 import at.bestsolution.efxclipse.runtime.di.InjectingFXMLLoader;
 import at.bestsolution.efxclipse.runtime.panels.FillLayoutPane;
@@ -37,6 +45,11 @@ public class WorkbenchWindowRenderer extends JFXRenderer {
 	@Inject
 	@Optional
 	ThemeManager themeManager;
+
+	@Inject
+	private IEventBroker eventBroker;
+
+	private EventHandler childHandler;
 
 	private Registration sceneRegistration;
 
@@ -85,6 +98,35 @@ public class WorkbenchWindowRenderer extends JFXRenderer {
 		return null;
 	}
 
+	@PostConstruct
+	public void init() {
+		childHandler = new EventHandler() {
+			@Override
+			public void handleEvent(Event event) {
+				System.out.println("WBW child handler: " + event);
+				// Track additions/removals of the active part and keep its
+				// stack styled correctly
+				Object changedObj = event.getProperty(UIEvents.EventTags.ELEMENT);
+				if (!(changedObj instanceof MPartStack)) {
+					return;
+				}
+				MPartStack stack = (MPartStack) changedObj;
+
+				String eventType = (String) event.getProperty(UIEvents.EventTags.TYPE);
+				if (UIEvents.EventTypes.ADD.equals(eventType)) {
+					MUIElement added = (MUIElement) event.getProperty(UIEvents.EventTags.NEW_VALUE);
+				} else if (UIEvents.EventTypes.REMOVE.equals(eventType)) {
+					Activator.trace(Policy.DEBUG_RENDERER, "Child Removed", null); //$NON-NLS-1$
+					MUIElement removed = (MUIElement) event.getProperty(UIEvents.EventTags.OLD_VALUE);
+				}
+			}
+		};
+
+		eventBroker.subscribe(UIEvents.buildTopic(UIEvents.ElementContainer.TOPIC, UIEvents.ElementContainer.CHILDREN),
+				childHandler);
+
+	}
+
 	@Override
 	public void postProcess(MUIElement childElement) {
 		super.postProcess(childElement);
@@ -103,6 +145,7 @@ public class WorkbenchWindowRenderer extends JFXRenderer {
 
 	@Override
 	public void processContents(MElementContainer<MUIElement> container) {
+		System.out.println("WorkbenchWindowRenderer.processContents()");
 		if ((MUIElement) container instanceof MWindow) {
 			Stage stage = (Stage) container.getWidget();
 			BorderPane rootPane = (BorderPane) stage.getScene().getRoot();
