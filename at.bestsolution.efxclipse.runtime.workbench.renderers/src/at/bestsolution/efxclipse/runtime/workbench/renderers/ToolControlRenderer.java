@@ -38,7 +38,6 @@ public class ToolControlRenderer extends JFXRenderer {
 		MToolControl toolControl = (MToolControl) element;
 		IEclipseContext parentContext = getContextForParent(element);
 
-		Separator sep = null;
 		final VBox newComposite = new VBox();
 		if (parent instanceof ToolBar) {
 			((ToolBar) parent).getItems().add(newComposite);
