@@ -12,7 +12,6 @@ package at.bestsolution.efxclipse.runtime.workbench.renderers;
 
 import java.awt.Composite;
 
-import javafx.scene.control.Separator;
 import javafx.scene.control.ToolBar;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
@@ -58,7 +57,6 @@ public class ToolControlRenderer extends JFXRenderer {
 		Object tcImpl = contributionFactory.create(toolControl.getContributionURI(), parentContext, localContext);
 		toolControl.setObject(tcImpl);
 
-		System.out.println("ToolControlRenderer.createWidget():  " + newComposite);
 		return newComposite;
 	}
 
