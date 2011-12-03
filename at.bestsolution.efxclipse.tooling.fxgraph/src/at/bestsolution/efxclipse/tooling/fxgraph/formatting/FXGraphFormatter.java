@@ -3,8 +3,14 @@
  */
 package at.bestsolution.efxclipse.tooling.fxgraph.formatting;
 
+import java.util.List;
+
+import org.eclipse.xtext.Keyword;
 import org.eclipse.xtext.formatting.impl.AbstractDeclarativeFormatter;
 import org.eclipse.xtext.formatting.impl.FormattingConfig;
+import org.eclipse.xtext.util.Pair;
+
+import at.bestsolution.efxclipse.tooling.fxgraph.services.FXGraphGrammarAccess;
 
 /**
  * This class contains custom formatting description.
@@ -18,10 +24,34 @@ public class FXGraphFormatter extends AbstractDeclarativeFormatter {
 	
 	@Override
 	protected void configureFormatting(FormattingConfig c) {
-// It's usually a good idea to activate the following three statements.
-// They will add and preserve newlines around comments
-//		c.setLinewrap(0, 1, 2).before(getGrammarAccess().getSL_COMMENTRule());
-//		c.setLinewrap(0, 1, 2).before(getGrammarAccess().getML_COMMENTRule());
-//		c.setLinewrap(0, 1, 1).after(getGrammarAccess().getML_COMMENTRule());
+		FXGraphGrammarAccess f = (FXGraphGrammarAccess) getGrammarAccess();
+
+		c.setAutoLinewrap(120);
+		
+		c.setLinewrap(1, 2, 3).around(f.getImportRule());
+		c.setLinewrap(1, 2, 3).before(f.getElementRule());
+		c.setLinewrap(1, 2, 3).before(f.getPropertyRule());
+		c.setLinewrap(1, 2, 3).before(f.getElementAccess().getRightCurlyBracketKeyword_3_2());
+		c.setLinewrap(1, 2, 3).before(f.getListValuePropertyAccess().getRightSquareBracketKeyword_3());
+		c.setLinewrap(1, 2, 3).before(f.getComponentDefinitionAccess().getRightCurlyBracketKeyword_10());
+		c.setLinewrap(1, 2, 3).before(f.getMapValuePropertyAccess().getRightCurlyBracketKeyword_3());
+		
+		{
+			List<Pair<Keyword,Keyword>> pairs = f.findKeywordPairs("{", "}");
+			for (Pair<Keyword, Keyword> pair : pairs) {
+				c.setIndentation(pair.getFirst(), pair.getSecond());
+			}	
+		}
+		
+		{
+			List<Pair<Keyword,Keyword>> pairs = f.findKeywordPairs("[", "]");
+			for (Pair<Keyword, Keyword> pair : pairs) {
+				c.setIndentation(pair.getFirst(), pair.getSecond());
+			}	
+		}
+		
+		c.setLinewrap(0, 1, 2).before(f.getSL_COMMENTRule());
+		c.setLinewrap(0, 1, 2).before(f.getML_COMMENTRule());
+		c.setLinewrap(0, 1, 1).after(f.getML_COMMENTRule());
 	}
 }
