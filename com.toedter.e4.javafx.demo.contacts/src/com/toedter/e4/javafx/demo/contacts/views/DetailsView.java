@@ -12,12 +12,12 @@
 
 package com.toedter.e4.javafx.demo.contacts.views;
 
-import com.toedter.e4.javafx.demo.contacts.databinding.AggregateNameObservableValue;
-import com.toedter.e4.javafx.demo.contacts.model.Contact;
-
 import at.bestsolution.efxclipse.runtime.databinding.IJFXBeanValueProperty;
 import at.bestsolution.efxclipse.runtime.databinding.JFXBeanProperties;
-import javafx.animation.FadeTransition;
+import com.toedter.e4.javafx.demo.contacts.databinding.AggregateNameObservableValue;
+import com.toedter.e4.javafx.demo.contacts.model.Contact;
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
 import javafx.geometry.HPos;
 import javafx.geometry.Insets;
 import javafx.geometry.VPos;
@@ -29,7 +29,6 @@ import javafx.scene.image.ImageView;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.Priority;
-import javafx.util.Duration;
 import javax.inject.Inject;
 import org.eclipse.core.databinding.DataBindingContext;
 import org.eclipse.core.databinding.beans.BeanProperties;
@@ -37,6 +36,7 @@ import org.eclipse.core.databinding.observable.value.WritableValue;
 import org.eclipse.e4.core.di.annotations.Optional;
 import org.eclipse.e4.ui.model.application.MApplication;
 
+@SuppressWarnings("restriction")
 public class DetailsView {
 	private final WritableValue writableValue = new WritableValue();
 
@@ -49,9 +49,7 @@ public class DetailsView {
 
 	private ImageView imageView;
 
-	private FadeTransition fadeOutTransition;
-
-	private FadeTransition fadeInTransition;
+	private TextField titleText;
 
 	@Inject
 	public DetailsView(BorderPane parent, final MApplication application) {
@@ -74,20 +72,36 @@ public class DetailsView {
 		detailsPanelRow = 0;
 		addSeparator("General");
 
-		addProperty("Title", "title");
+		titleText = addProperty("Title", "title");
 		addProperty("Name", "name");
 		addProperty("Company", "company");
 		addProperty("Job Title", "jobTitle");
 		addProperty("Note", "note", 2);
 
-		Image portrait = new Image(getClass().getResourceAsStream("dummy.png"));
-		imageView = new ImageView(portrait);
+		Image image = new Image(getClass().getResourceAsStream("dummy.png"));
+		imageView = new ImageView(image);
 		grid.add(imageView, 3, 0, 1, 5);
 		GridPane.setValignment(imageView, VPos.BOTTOM);
 		GridPane.setHalignment(imageView, HPos.LEFT);
+		double scaleFactor = 102 / image.getHeight();
+		imageView.setFitHeight(scaleFactor * image.getHeight());
+		imageView.setFitWidth(scaleFactor * image.getWidth());
+
+		titleText.heightProperty().addListener(new ChangeListener<Number>() {
+
+			@Override
+			public void changed(ObservableValue<? extends Number> observable,
+					Number oldValue, Number newValue) {
+				Image image = imageView.getImage();
+				double scaleFactor = ((Double) newValue + 3.5) * 4
+						/ image.getHeight();
+				imageView.setFitHeight(scaleFactor * image.getHeight());
+				imageView.setFitWidth(scaleFactor * image.getWidth());
+			}
+		});
 
 		addSeparator("Business Address");
-		TextField street = addProperty("Street", "street", 2);
+		addProperty("Street", "street", 2);
 		addProperty("City", "city", 2);
 		addProperty("Zip", "zip", 2);
 		addProperty("Country", "country", 2);
@@ -99,16 +113,6 @@ public class DetailsView {
 		addSeparator("Business Internet");
 		addProperty("E-Mail", "email", 2);
 		addProperty("Web Site", "webPage", 2);
-
-		fadeOutTransition = new FadeTransition(Duration.millis(1000), street);
-		fadeOutTransition.setFromValue(1.0f);
-		fadeOutTransition.setToValue(0.0f);
-		// fadeOutTransition.setAutoReverse(true);
-
-		fadeInTransition = new FadeTransition(Duration.millis(1000), street);
-		fadeInTransition.setFromValue(0.0f);
-		fadeInTransition.setToValue(1.0f);
-		// fadeInTransition.setAutoReverse(true);
 
 		return grid;
 	}
@@ -124,16 +128,19 @@ public class DetailsView {
 		grid.add(label, 1, detailsPanelRow);
 
 		TextField textField = new TextField();
+
 		grid.add(textField, 2, detailsPanelRow);
 
-		grid.setConstraints(textField, 2, detailsPanelRow, span, 1, HPos.LEFT, VPos.BASELINE, Priority.ALWAYS,
-				Priority.NEVER);
+		GridPane.setConstraints(textField, 2, detailsPanelRow, span, 1,
+				HPos.LEFT, VPos.BASELINE, Priority.ALWAYS, Priority.NEVER);
 
 		detailsPanelRow++;
 		if ("Name".equals(labelText)) {
-			ctx.bindValue(uiProp.observe(textField), new AggregateNameObservableValue(writableValue));
+			ctx.bindValue(uiProp.observe(textField),
+					new AggregateNameObservableValue(writableValue));
 		} else {
-			ctx.bindValue(uiProp.observe(textField), BeanProperties.value(property).observeDetail(writableValue));
+			ctx.bindValue(uiProp.observe(textField),
+					BeanProperties.value(property).observeDetail(writableValue));
 		}
 
 		return textField;
@@ -146,20 +153,8 @@ public class DetailsView {
 	@Inject
 	public void setSelection(@Optional final Contact contact) {
 		if (contact != null) {
-			// if (fadeOutTransition != null) {
-			// fadeOutTransition.setOnFinished(new EventHandler<ActionEvent>() {
-			// public void handle(ActionEvent arg0) {
 			writableValue.setValue(contact);
-			Image image = contact.getImage();
 			imageView.setImage(contact.getImage());
-			// imageView.setScaleX(100.0 / image.getHeight());
-			// imageView.setScaleY(100.0 / image.getHeight());
-			// fadeOutTransition.setOnFinished(null);
-			// fadeInTransition.playFromStart();
-			// }
-			// });
-			// fadeOutTransition.playFromStart();
-			// }
 		}
 	}
 }
