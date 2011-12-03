@@ -7,22 +7,26 @@ import javafx.scene.control.MenuItem;
 import org.eclipse.e4.ui.model.application.ui.MElementContainer;
 import org.eclipse.e4.ui.model.application.ui.MUIElement;
 import org.eclipse.e4.ui.model.application.ui.MUILabel;
+import org.eclipse.e4.ui.model.application.ui.menu.MMenu;
 
 @SuppressWarnings("restriction")
 public class MenuBarRenderer extends JFXRenderer {
 
 	@Override
 	public Object createWidget(MUIElement element, Object parent) {
-		if (parent != null) {
-			if (parent instanceof MenuBar) {
-				String label = ((MUILabel) element).getLocalizedLabel();
-				label = label.replaceAll("&", "_");
-				Menu menu = new Menu(label);
-				menu.setMnemonicParsing(true);
-				return menu;
-			}
+		if (!(element instanceof MMenu)) {
+			return null;
 		}
 
+		if (parent != null) {
+			String label = ((MUILabel) element).getLocalizedLabel();
+			label = label.replaceAll("&", "_"); // JavaFX Mnemonics
+			Menu menu = new Menu(label);
+			menu.setMnemonicParsing(true);
+			return menu;
+		}
+
+		// No parent means the main menu bar
 		MenuBar menuBar = new MenuBar();
 		return menuBar;
 	}
