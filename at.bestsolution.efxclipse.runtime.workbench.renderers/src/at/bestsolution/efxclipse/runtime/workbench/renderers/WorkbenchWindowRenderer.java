@@ -145,7 +145,6 @@ public class WorkbenchWindowRenderer extends JFXRenderer {
 
 	@Override
 	public void processContents(MElementContainer<MUIElement> container) {
-		System.out.println("WorkbenchWindowRenderer.processContents()");
 		if ((MUIElement) container instanceof MWindow) {
 			Stage stage = (Stage) container.getWidget();
 			BorderPane rootPane = (BorderPane) stage.getScene().getRoot();

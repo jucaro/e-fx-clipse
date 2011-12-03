@@ -43,7 +43,8 @@ public class TrimBarRenderer extends JFXRenderer {
 		}
 
 		// needed by MinMax addon
-		if (parent != null && parent instanceof BorderPane || parent instanceof Stage) {
+		if (parent != null && parent instanceof BorderPane
+				|| parent instanceof Stage) {
 			if (parent instanceof BorderPane) {
 				borderPane = (BorderPane) parent;
 			} else {
@@ -69,7 +70,8 @@ public class TrimBarRenderer extends JFXRenderer {
 
 	@Override
 	public void processContents(MElementContainer<MUIElement> container) {
-		IPresentationEngine renderer = (IPresentationEngine) context.get(IPresentationEngine.class.getName());
+		IPresentationEngine renderer = (IPresentationEngine) context
+				.get(IPresentationEngine.class.getName());
 		ToolBar pane = (ToolBar) container.getWidget();
 
 		boolean isFirst = true;
@@ -87,10 +89,21 @@ public class TrimBarRenderer extends JFXRenderer {
 
 	@Override
 	public void disposeWidget(MUIElement part) {
-		System.out.println("TrimBarRenderer.disposeWidget()");
+		// TODO check if this is the right idea
 		Group limbo = (Group) getContext(part).get("limbo");
 		limbo.getChildren().add((Node) part.getWidget());
 		borderPane.setLeft(null);
+	}
+
+	@Override
+	public void childRendered(MElementContainer<MUIElement> parentElement,
+			MUIElement element) {
+		// TODO check if this is the right idea
+		if (borderPane != null) {
+			Group limbo = (Group) getContext(element).get("limbo");
+			limbo.getChildren().remove(element.getWidget());
+			borderPane.setLeft((Node) element.getWidget());
+		}
 	}
 
 }

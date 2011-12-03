@@ -70,25 +70,32 @@ public class SashRenderer extends JFXRenderer {
 			SplitPane splitPane = (SplitPane) container.getWidget();
 			int visibleChildrenCount = 0;
 			if (container.getChildren().get(0).isVisible()) {
-				splitPane.getItems().add((Node) container.getChildren().get(0).getWidget());
+				splitPane.getItems().add(
+						(Node) container.getChildren().get(0).getWidget());
 				visibleChildrenCount++;
 			}
 			if (container.getChildren().get(1).isVisible()) {
-				splitPane.getItems().add((Node) container.getChildren().get(1).getWidget());
+				splitPane.getItems().add(
+						(Node) container.getChildren().get(1).getWidget());
 				visibleChildrenCount++;
 			}
 
 			// TODO This is not a good position to hook the controller logic
 			// but hookControllerLogic() is invoked before processContents()...
 			String dividerPos = container.getContainerData();
-			if (dividerPos != null && visibleChildrenCount == 2) {
-				splitPane.setDividerPositions(Float.parseFloat(dividerPos));
-				splitPane.getDividers().get(0).positionProperty().addListener(new ChangeListener<Number>() {
-					@Override
-					public void changed(ObservableValue<? extends Number> observable, Number oldValue, Number newValue) {
-						container.setContainerData(newValue.toString());
-					}
-				});
+			if (visibleChildrenCount == 2) {
+				if (dividerPos != null) {
+					splitPane.setDividerPositions(Float.parseFloat(dividerPos));
+				}
+				splitPane.getDividers().get(0).positionProperty()
+						.addListener(new ChangeListener<Number>() {
+							@Override
+							public void changed(
+									ObservableValue<? extends Number> observable,
+									Number oldValue, Number newValue) {
+								container.setContainerData(newValue.toString());
+							}
+						});
 			}
 
 		} else {
@@ -109,12 +116,13 @@ public class SashRenderer extends JFXRenderer {
 			@Override
 			public void handleEvent(Event event) {
 				// Ensure that this event is for a MPartSashContainer
-				MUIElement element = (MUIElement) event.getProperty(UIEvents.EventTags.ELEMENT);
+				MUIElement element = (MUIElement) event
+						.getProperty(UIEvents.EventTags.ELEMENT);
 				if (element.getRenderer() != SashRenderer.this) {
 					return;
 				}
 				Orientation orientation;
-				if (((MPartSashContainer) (MUIElement) element).isHorizontal()) {
+				if (((MPartSashContainer) element).isHorizontal()) {
 					orientation = Orientation.HORIZONTAL;
 				} else {
 					orientation = Orientation.VERTICAL;
@@ -123,27 +131,30 @@ public class SashRenderer extends JFXRenderer {
 			}
 		};
 
-		eventBroker.subscribe(UIEvents.buildTopic(UIEvents.GenericTile.TOPIC, UIEvents.GenericTile.HORIZONTAL),
-				sashOrientationHandler);
+		eventBroker.subscribe(UIEvents.buildTopic(UIEvents.GenericTile.TOPIC,
+				UIEvents.GenericTile.HORIZONTAL), sashOrientationHandler);
 
 		sashWeightHandler = new EventHandler() {
 			@Override
 			public void handleEvent(Event event) {
 				// Ensure that this event is for a MPartSashContainer
-				MUIElement element = (MUIElement) event.getProperty(UIEvents.EventTags.ELEMENT);
+				MUIElement element = (MUIElement) event
+						.getProperty(UIEvents.EventTags.ELEMENT);
 				if (element.getRenderer() != SashRenderer.this) {
 					return;
 				}
 
 				String dividerPos = element.getContainerData();
 				SplitPane splitPane = ((SplitPane) element.getWidget());
-				if (dividerPos != null && dividerPos != ((Double) splitPane.getDividerPositions()[0]).toString()) {
+				if (dividerPos != null
+						&& dividerPos != ((Double) splitPane
+								.getDividerPositions()[0]).toString()) {
 					splitPane.setDividerPositions(Float.parseFloat(dividerPos));
 				}
 			}
 		};
 
-		eventBroker.subscribe(UIEvents.buildTopic(UIEvents.UIElement.TOPIC, UIEvents.UIElement.CONTAINERDATA),
-				sashWeightHandler);
+		eventBroker.subscribe(UIEvents.buildTopic(UIEvents.UIElement.TOPIC,
+				UIEvents.UIElement.CONTAINERDATA), sashWeightHandler);
 	}
 }
