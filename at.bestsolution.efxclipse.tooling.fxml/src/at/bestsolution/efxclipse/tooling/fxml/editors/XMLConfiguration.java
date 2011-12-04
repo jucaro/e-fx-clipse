@@ -3,21 +3,30 @@ package at.bestsolution.efxclipse.tooling.fxml.editors;
 import org.eclipse.jface.text.IDocument;
 import org.eclipse.jface.text.ITextDoubleClickStrategy;
 import org.eclipse.jface.text.TextAttribute;
+import org.eclipse.jface.text.contentassist.ContentAssistant;
+import org.eclipse.jface.text.contentassist.IContentAssistProcessor;
+import org.eclipse.jface.text.contentassist.IContentAssistant;
 import org.eclipse.jface.text.presentation.IPresentationReconciler;
 import org.eclipse.jface.text.presentation.PresentationReconciler;
 import org.eclipse.jface.text.rules.DefaultDamagerRepairer;
 import org.eclipse.jface.text.rules.Token;
 import org.eclipse.jface.text.source.ISourceViewer;
 import org.eclipse.jface.text.source.SourceViewerConfiguration;
+import org.eclipse.ui.IEditorInput;
+
+import at.bestsolution.efxclipse.tooling.fxml.editors.completion.AttributeCompletionProcessor;
+import at.bestsolution.efxclipse.tooling.fxml.editors.completion.ElementCompletionProcessor;
 
 public class XMLConfiguration extends SourceViewerConfiguration {
 	private XMLDoubleClickStrategy doubleClickStrategy;
 	private XMLTagScanner tagScanner;
 	private XMLScanner scanner;
 	private ColorManager colorManager;
+	private final FXMLEditor editor;
 
-	public XMLConfiguration(ColorManager colorManager) {
+	public XMLConfiguration(ColorManager colorManager, FXMLEditor editor) {
 		this.colorManager = colorManager;
+		this.editor = editor;
 	}
 	public String[] getConfiguredContentTypes(ISourceViewer sourceViewer) {
 		return new String[] {
@@ -76,4 +85,13 @@ public class XMLConfiguration extends SourceViewerConfiguration {
 		return reconciler;
 	}
 
+//	@Override
+//	public IContentAssistant getContentAssistant(ISourceViewer sourceViewer) {
+//		ContentAssistant ca = new ContentAssistant();
+//		ca.enableColoredLabels(true);
+//        ca.setContentAssistProcessor(new ElementCompletionProcessor(), IDocument.DEFAULT_CONTENT_TYPE);
+//        ca.setContentAssistProcessor(new AttributeCompletionProcessor(editor), XMLPartitionScanner.XML_TAG);
+//        ca.setInformationControlCreator(getInformationControlCreator(sourceViewer));
+//		return ca;
+//	}
 }

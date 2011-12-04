@@ -9,7 +9,8 @@ public class FXMLEditor extends TextEditor {
 	public FXMLEditor() {
 		super();
 		colorManager = new ColorManager();
-		setSourceViewerConfiguration(new XMLConfiguration(colorManager));
+		
+		setSourceViewerConfiguration(new XMLConfiguration(colorManager,this));
 		setDocumentProvider(new XMLDocumentProvider());
 	}
 	
