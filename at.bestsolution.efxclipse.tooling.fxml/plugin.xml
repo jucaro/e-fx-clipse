@@ -5,12 +5,13 @@
    <extension
          point="org.eclipse.ui.editors">
       <editor
-            name="%editor.name"
+            class="at.bestsolution.efxclipse.tooling.fxml.editors.FXMLEditor"
+            contributorClass="org.eclipse.ui.texteditor.BasicTextEditorActionContributor"
+            default="false"
             extensions="fxml"
             icon="icons/page_white_code_red.png"
-            contributorClass="org.eclipse.ui.texteditor.BasicTextEditorActionContributor"
-            class="at.bestsolution.efxclipse.tooling.fxml.editors.FXMLEditor"
-            id="at.bestsolution.efxclipse.tooling.fxml.editors.FXMLEditor">
+            id="at.bestsolution.efxclipse.tooling.fxml.editors.FXMLEditor"
+            name="%editor.name">
       </editor>
    </extension>
 
