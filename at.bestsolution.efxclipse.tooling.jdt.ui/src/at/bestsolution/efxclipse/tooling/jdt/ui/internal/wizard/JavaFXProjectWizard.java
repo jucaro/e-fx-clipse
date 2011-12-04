@@ -10,12 +10,16 @@
  *******************************************************************************/
 package at.bestsolution.efxclipse.tooling.jdt.ui.internal.wizard;
 
+import java.io.ByteArrayInputStream;
 import java.lang.reflect.InvocationTargetException;
 
+import org.eclipse.core.resources.IFile;
 import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.IConfigurationElement;
 import org.eclipse.core.runtime.IExecutableExtension;
 import org.eclipse.core.runtime.IProgressMonitor;
+import org.eclipse.core.runtime.NullProgressMonitor;
+import org.eclipse.core.runtime.Path;
 import org.eclipse.jdt.core.IJavaElement;
 import org.eclipse.jdt.internal.ui.JavaPlugin;
 import org.eclipse.jdt.internal.ui.JavaPluginImages;
@@ -93,6 +97,20 @@ public class JavaFXProjectWizard extends NewElementWizard implements IExecutable
 				PlatformUI.getWorkbench().getWorkingSetManager().addToWorkingSets(newElement, workingSets);
 			}
 
+			IFile buildFile = fSecondPage.getJavaProject().getProject().getFile(new Path("build.fxbuild"));
+			try {
+				StringBuilder b = new StringBuilder();
+				b.append("jfx.build.stagingdir = ${workspace}/"+fFirstPage.getProjectName()+"/build");
+				b.append(System.getProperty("line.separator")); 
+				b.append("jfx.build.apptitle = " + fFirstPage.getProjectName());
+				ByteArrayInputStream stream = new ByteArrayInputStream(b.toString().getBytes());
+				buildFile.create(stream, true, new NullProgressMonitor());
+				stream.close();
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			
 			BasicNewProjectResourceWizard.updatePerspective(fConfigElement);
 			selectAndReveal(fSecondPage.getJavaProject().getProject());
 
