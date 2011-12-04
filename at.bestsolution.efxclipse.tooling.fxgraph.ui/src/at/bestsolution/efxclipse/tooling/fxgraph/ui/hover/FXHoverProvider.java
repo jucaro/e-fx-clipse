@@ -20,6 +20,7 @@ import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.Element;
 import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.Model;
 import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.Property;
 import at.bestsolution.efxclipse.tooling.fxgraph.ui.contentassist.FXGraphProposalProvider;
+import at.bestsolution.efxclipse.tooling.fxgraph.ui.util.JDTHelper;
 
 import com.google.inject.Inject;
 
@@ -166,7 +167,7 @@ public class FXHoverProvider extends XbaseHoverProvider {
 			
 			// First check if there's a setter
 			for( IMethod m : jdtType.getMethods() ) {
-				if( m.getElementName().startsWith("set") && property.getName().equals(FXGraphProposalProvider.extractAttributename(m.getElementName())) ) {
+				if( m.getElementName().startsWith("set") && property.getName().equals(JDTHelper.extractAttributename(m.getElementName())) ) {
 					return createHover(m, object, viewer, region);
 				}
 			}
@@ -177,7 +178,7 @@ public class FXHoverProvider extends XbaseHoverProvider {
 						.findType(jdtType.getSuperclassName());
 				if (jdtType != null) {
 					for( IMethod m : jdtType.getMethods() ) {
-						if( m.getElementName().startsWith("set") && property.getName().equals(FXGraphProposalProvider.extractAttributename(m.getElementName())) ) {
+						if( m.getElementName().startsWith("set") && property.getName().equals(JDTHelper.extractAttributename(m.getElementName())) ) {
 							return createHover(m, object, viewer, region);
 						}
 					}
@@ -188,7 +189,7 @@ public class FXHoverProvider extends XbaseHoverProvider {
 			
 			// Check if there's a getter
 			for( IMethod m : jdtType.getMethods() ) {
-				if( (m.getElementName().startsWith("get") || m.getElementName().startsWith("is")) && property.getName().equals(FXGraphProposalProvider.extractAttributename(m.getElementName())) ) {
+				if( (m.getElementName().startsWith("get") || m.getElementName().startsWith("is")) && property.getName().equals(JDTHelper.extractAttributename(m.getElementName())) ) {
 					return createHover(m, object, viewer, region);
 				}
 			}
@@ -199,7 +200,7 @@ public class FXHoverProvider extends XbaseHoverProvider {
 						.findType(jdtType.getSuperclassName());
 				if (jdtType != null) {
 					for( IMethod m : jdtType.getMethods() ) {
-						if( (m.getElementName().startsWith("get") || m.getElementName().startsWith("is")) && property.getName().equals(FXGraphProposalProvider.extractAttributename(m.getElementName())) ) {
+						if( (m.getElementName().startsWith("get") || m.getElementName().startsWith("is")) && property.getName().equals(JDTHelper.extractAttributename(m.getElementName())) ) {
 							return createHover(m, object, viewer, region);
 						}
 					}
