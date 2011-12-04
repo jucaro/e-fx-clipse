@@ -21,14 +21,18 @@ public class CTabPaneSkin extends TabPaneSkin {
 
 		Image maxImage = new Image(getClass().getResourceAsStream("max.png"));
 		maxButton = new Button("", new ImageView(maxImage));
-		maxButton.setStyle("-fx-background-color: transparent; -fx-padding: 4;");
+		maxButton.setVisible(false); // will be enabled by MinMax addon
+		maxButton
+				.setStyle("-fx-background-color: transparent; -fx-padding: 4;");
 
 		maxButton.translateXProperty().bind(widthProperty().subtract(24.0));
 		maxButton.setLayoutY(6.0);
 
 		Image minImage = new Image(getClass().getResourceAsStream("min.png"));
 		minButton = new Button("", new ImageView(minImage));
-		minButton.setStyle("-fx-background-color: transparent; -fx-padding: 4;");
+		minButton.setVisible(false); // will be enabled by MinMax addon
+		minButton
+				.setStyle("-fx-background-color: transparent; -fx-padding: 4;");
 
 		minButton.translateXProperty().bind(widthProperty().subtract(44.0));
 		minButton.setLayoutY(6.0);
@@ -57,5 +61,21 @@ public class CTabPaneSkin extends TabPaneSkin {
 				handler.run();
 			}
 		});
+	}
+
+	public void setMinimizeVisible(boolean isMinimizeVisible) {
+		minButton.setVisible(isMinimizeVisible);
+	}
+
+	public void setMaximizeVisible(boolean isMaximizeVisible) {
+		maxButton.setVisible(isMaximizeVisible);
+	}
+
+	public boolean isMinimizeVisible() {
+		return minButton.isVisible();
+	}
+
+	public boolean isMaximizeVisible() {
+		return maxButton.isVisible();
 	}
 }

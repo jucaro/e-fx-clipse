@@ -18,11 +18,11 @@ public class CTabPane extends TabPane {
 	}
 
 	public void setMinimizeVisible(boolean isMinimizeVisible) {
-		this.isMinimizeVisible = isMinimizeVisible;
+		skin.setMinimizeVisible(isMinimizeVisible);
 	}
 
 	public void setMaximizeVisible(boolean isMaximizeVisible) {
-		this.isMaximizeVisible = isMaximizeVisible;
+		skin.setMaximizeVisible(isMaximizeVisible);
 	}
 
 	public void setMaximized(boolean isMaximized) {

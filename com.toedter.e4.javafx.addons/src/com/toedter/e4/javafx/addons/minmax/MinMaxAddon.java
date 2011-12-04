@@ -71,9 +71,12 @@ public class MinMaxAddon {
 			}
 
 			Object changedObj = event.getProperty(EventTags.ELEMENT);
-			String eventType = (String) event.getProperty(UIEvents.EventTags.TYPE);
-			String tag = (String) event.getProperty(UIEvents.EventTags.NEW_VALUE);
-			String oldVal = (String) event.getProperty(UIEvents.EventTags.OLD_VALUE);
+			String eventType = (String) event
+					.getProperty(UIEvents.EventTags.TYPE);
+			String tag = (String) event
+					.getProperty(UIEvents.EventTags.NEW_VALUE);
+			String oldVal = (String) event
+					.getProperty(UIEvents.EventTags.OLD_VALUE);
 
 			if (!(changedObj instanceof MUIElement)) {
 				return;
@@ -100,8 +103,10 @@ public class MinMaxAddon {
 	private final EventHandler widgetListener = new EventHandler() {
 		@Override
 		public void handleEvent(Event event) {
-			final MUIElement changedElement = (MUIElement) event.getProperty(EventTags.ELEMENT);
-			if (!(changedElement instanceof MPartStack) && !(changedElement instanceof MArea)) {
+			final MUIElement changedElement = (MUIElement) event
+					.getProperty(EventTags.ELEMENT);
+			if (!(changedElement instanceof MPartStack)
+					&& !(changedElement instanceof MArea)) {
 				return;
 			}
 
@@ -156,7 +161,8 @@ public class MinMaxAddon {
 	 *            The element to test
 	 */
 	private void adjustCTabPaneButtons(MUIElement element) {
-		if (!(element instanceof MPartStack) && !(element instanceof MPlaceholder)) {
+		if (!(element instanceof MPartStack)
+				&& !(element instanceof MPlaceholder)) {
 			return;
 		}
 
@@ -180,7 +186,8 @@ public class MinMaxAddon {
 			if (element.getWidget() instanceof CTabPane) {
 				return (CTabPane) element.getWidget();
 			}
-			List<MPartStack> stacks = modelService.findElements(element, null, MPartStack.class, null);
+			List<MPartStack> stacks = modelService.findElements(element, null,
+					MPartStack.class, null);
 			for (MPartStack stack : stacks) {
 				if (stack.getWidget() instanceof CTabPane) {
 					return (CTabPane) stack.getWidget();
@@ -208,7 +215,8 @@ public class MinMaxAddon {
 		return null;
 	}
 
-	private void setCTabPaneButtons(CTabPane cTabPane, MUIElement stateElement, boolean hideButtons) {
+	private void setCTabPaneButtons(CTabPane cTabPane, MUIElement stateElement,
+			boolean hideButtons) {
 		if (hideButtons) {
 			cTabPane.setMinimizeVisible(false);
 			cTabPane.setMaximizeVisible(false);
@@ -233,9 +241,11 @@ public class MinMaxAddon {
 
 	@PostConstruct
 	void hookListeners() {
-		String topic = UIEvents.buildTopic(UIEvents.UIElement.TOPIC, UIEvents.UIElement.WIDGET);
+		String topic = UIEvents.buildTopic(UIEvents.UIElement.TOPIC,
+				UIEvents.UIElement.WIDGET);
 		eventBroker.subscribe(topic, widgetListener);
-		topic = UIEvents.buildTopic(UIEvents.ApplicationElement.TOPIC, UIEvents.ApplicationElement.TAGS);
+		topic = UIEvents.buildTopic(UIEvents.ApplicationElement.TOPIC,
+				UIEvents.ApplicationElement.TAGS);
 		eventBroker.subscribe(topic, tagChangeListener);
 	}
 
@@ -256,8 +266,10 @@ public class MinMaxAddon {
 		Stage stage = (Stage) window.getWidget();
 
 		// Is there already a TrimControl there ?
-		String trimId = element.getElementId() + getMinimizedElementSuffix(element);
-		MToolControl trimStack = (MToolControl) modelService.find(trimId, window);
+		String trimId = element.getElementId()
+				+ getMinimizedElementSuffix(element);
+		MToolControl trimStack = (MToolControl) modelService.find(trimId,
+				window);
 
 		if (trimStack == null) {
 			trimStack = MenuFactoryImpl.eINSTANCE.createToolControl();
@@ -266,9 +278,11 @@ public class MinMaxAddon {
 
 			double stageCenterX = stage.getWidth() / 2;
 			CTabPane stackPane = (CTabPane) element.getWidget();
-			double stackCenterX = stackPane.getLayoutX() + stackPane.getWidth() / 2;
+			double stackCenterX = stackPane.getLayoutX() + stackPane.getWidth()
+					/ 2;
 
-			SideValue side = stackCenterX < stageCenterX ? SideValue.LEFT : SideValue.RIGHT;
+			SideValue side = stackCenterX < stageCenterX ? SideValue.LEFT
+					: SideValue.RIGHT;
 			MTrimBar bar = modelService.getTrim(window, side);
 
 			bar.getChildren().add(trimStack);
@@ -280,7 +294,8 @@ public class MinMaxAddon {
 				bar.setToBeRendered(true);
 
 				// create the widget
-				context.get(IPresentationEngine.class).createGui(bar, stage.getScene().getRoot(), window.getContext());
+				context.get(IPresentationEngine.class).createGui(bar,
+						stage.getScene().getRoot(), window.getContext());
 			}
 		} else {
 			// get the parent trim bar, see bug 320756
@@ -290,8 +305,8 @@ public class MinMaxAddon {
 				// ask it to be rendered
 				parent.setToBeRendered(true);
 				// create the widget
-				context.get(IPresentationEngine.class).createGui(parent, stage.getScene().getRoot(),
-						window.getContext());
+				context.get(IPresentationEngine.class).createGui(parent,
+						stage.getScene().getRoot(), window.getContext());
 			}
 			trimStack.setToBeRendered(true);
 		}
@@ -303,8 +318,8 @@ public class MinMaxAddon {
 
 		List<String> maxTag = new ArrayList<String>();
 		maxTag.add(MAXIMIZED);
-		List<MUIElement> curMax = modelService
-				.findElements(persp == null ? win : persp, null, MUIElement.class, maxTag);
+		List<MUIElement> curMax = modelService.findElements(persp == null ? win
+				: persp, null, MUIElement.class, maxTag);
 		if (curMax.size() > 0) {
 			for (MUIElement maxElement : curMax) {
 				if (maxElement == element) {
@@ -319,7 +334,8 @@ public class MinMaxAddon {
 			}
 		}
 
-		List<MPartStack> stacks = modelService.findElements(persp == null ? win : persp, null, MPartStack.class, null,
+		List<MPartStack> stacks = modelService.findElements(persp == null ? win
+				: persp, null, MPartStack.class, null,
 				EModelService.PRESENTATION);
 		for (MPartStack theStack : stacks) {
 			if (theStack == element) {
@@ -332,7 +348,8 @@ public class MinMaxAddon {
 			}
 
 			int loc = modelService.getElementLocation(theStack);
-			if (loc != EModelService.IN_SHARED_AREA && theStack.getWidget() != null
+			if (loc != EModelService.IN_SHARED_AREA
+					&& theStack.getWidget() != null
 					&& !theStack.getTags().contains(MINIMIZED)) {
 				theStack.getTags().add(MINIMIZED_BY_ZOOM);
 				theStack.getTags().add(MINIMIZED);
@@ -341,7 +358,8 @@ public class MinMaxAddon {
 
 		// Find the editor 'area'
 		if (persp != null) {
-			MPlaceholder eaPlaceholder = (MPlaceholder) modelService.find(ID_EDITOR_AREA, persp);
+			MPlaceholder eaPlaceholder = (MPlaceholder) modelService.find(
+					ID_EDITOR_AREA, persp);
 			if (element != eaPlaceholder && eaPlaceholder != null) {
 				eaPlaceholder.getTags().add(MINIMIZED_BY_ZOOM);
 				eaPlaceholder.getTags().add(MINIMIZED);
@@ -354,8 +372,10 @@ public class MinMaxAddon {
 	void restore(MUIElement element) {
 		System.out.println("MinMaxAddon.restore()");
 		MWindow window = modelService.getTopLevelWindowFor(element);
-		String trimId = element.getElementId() + getMinimizedElementSuffix(element);
-		MToolControl trimStack = (MToolControl) modelService.find(trimId, window);
+		String trimId = element.getElementId()
+				+ getMinimizedElementSuffix(element);
+		MToolControl trimStack = (MToolControl) modelService.find(trimId,
+				window);
 		TrimStack ts = (TrimStack) trimStack.getObject();
 		ts.restoreStack();
 
@@ -367,17 +387,19 @@ public class MinMaxAddon {
 		MWindow win = modelService.getTopLevelWindowFor(element);
 		MPerspective persp = modelService.getActivePerspective(win);
 
-		List<MPartStack> stacks = modelService.findElements(win, null, MPartStack.class, null,
-				EModelService.PRESENTATION);
+		List<MPartStack> stacks = modelService.findElements(win, null,
+				MPartStack.class, null, EModelService.PRESENTATION);
 		for (MPartStack theStack : stacks) {
-			if (theStack.getWidget() != null && theStack.getTags().contains(MINIMIZED)
+			if (theStack.getWidget() != null
+					&& theStack.getTags().contains(MINIMIZED)
 					&& theStack.getTags().contains(MINIMIZED_BY_ZOOM)) {
 				theStack.getTags().remove(MINIMIZED);
 			}
 		}
 
 		// Find the editor 'area'
-		MPlaceholder eaPlaceholder = (MPlaceholder) modelService.find(ID_EDITOR_AREA, persp == null ? win : persp);
+		MPlaceholder eaPlaceholder = (MPlaceholder) modelService.find(
+				ID_EDITOR_AREA, persp == null ? win : persp);
 		if (element != eaPlaceholder && eaPlaceholder != null) {
 			eaPlaceholder.getTags().remove(MINIMIZED);
 		}
@@ -418,7 +440,9 @@ public class MinMaxAddon {
 	 *            The element to test
 	 */
 	private void adjustMinMaxButtons(MUIElement element) {
-		if (!(element instanceof MPartStack) && !(element instanceof MPlaceholder)) {
+		System.out.println("MinMaxAddon.adjustMinMaxButtons()");
+		if (!(element instanceof MPartStack)
+				&& !(element instanceof MPlaceholder)) {
 			return;
 		}
 
