@@ -1,0 +1,49 @@
+grammar at.bestsolution.efxclipse.tooling.fxml2.FXML with org.eclipse.xtext.common.Terminals
+
+generate fXML "http://www.bestsolution.at/efxclipse/tooling/fxml2/FXML"
+
+Model:
+	xmlDec=XMLDec
+	comments+=ML_COMMENT*
+	imports+=ProcessingInstruction+
+	comments+=ML_COMMENT*
+	root=ClassDefinition
+;
+
+XMLDec:
+	'<?xml' 'version=' STRING 'encoding=' STRING '?>'
+;
+
+ProcessingInstruction:
+	'<?' type=ID value=QualifiedNameWithWildCard '?>';
+
+ClassDefinition:
+	('<' name=ID attributes+=PropertyAttributeDefinition* '>'
+		children+=PropertyDefinition+
+	'</' endname=ID '>') | ('<' name=ID attributes+=PropertyAttributeDefinition* '/>')
+;
+
+PropertyAttributeDefinition:
+	(namespace=ID ':')? name=ID '=' value = STRING
+;
+
+PropertyDefinition:
+	'<' name=QualifiedName '>'
+		(children+=ClassDefinition+ | simpleValue=Content)
+	'</' endname=QualifiedName '>'
+;
+
+Content:
+	(ID|STRING|ANY_OTHER|WS)*
+;
+
+QualifiedName:
+  ID (=>'.' ID)*
+;
+
+
+QualifiedNameWithWildCard :
+	QualifiedName  ('.' '*')?
+;
+
+terminal ML_COMMENT	: '<!--' -> '-->';
