@@ -98,6 +98,10 @@
             id="at.bestsolution.efxclipse.tooling.fxgraph.FXGraph.validate"
             name="%command.name">
       </command>
+      <command
+            id="at.bestsolution.efxclipse.tooling.fxgraph.ui.fxgraphconvert"
+            name="Convert to FXGraph">
+      </command>
     </extension>
     <extension point="org.eclipse.ui.menus">
         <menuContribution
@@ -113,6 +117,15 @@
             </visibleWhen>
          </command>  
          </menuContribution>
+        <!--menuContribution
+              allPopups="false"
+              locationURI="popup:org.eclipse.jdt.ui.PackageExplorer?after=additions">
+           <command
+                 commandId="at.bestsolution.efxclipse.tooling.fxgraph.ui.fxgraphconvert"
+                 label="Convert to FXGraph"
+                 style="push">
+           </command>
+        </menuContribution-->
     </extension>
     <extension point="org.eclipse.ui.menus">
 		<menuContribution locationURI="popup:#TextEditorContext?endof=group.find">
@@ -134,6 +147,10 @@
                 </reference>
             </activeWhen>
         </handler>
+     <handler
+           class="at.bestsolution.efxclipse.tooling.fxgraph.ui.handler.FXMLToFXGraphConverterHandler"
+           commandId="at.bestsolution.efxclipse.tooling.fxgraph.ui.fxgraphconvert">
+     </handler>
     </extension>   
 
 <!-- adding resource factories -->
