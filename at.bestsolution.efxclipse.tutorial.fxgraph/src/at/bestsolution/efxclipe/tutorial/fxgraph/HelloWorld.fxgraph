@@ -1,9 +1,12 @@
+package at.bestsolution.efxclipse.tutorial.fxgraph
+
 import javafx.scene.layout.*
 import javafx.scene.control.*
 
 component HelloWorld resourcefile "messages.properties" {
 	BorderPane {
-		center : Button {
+		center :
+		Button {
 			text : rstring "mybutton.label"
 		}
 	}

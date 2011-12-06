@@ -1,3 +1,5 @@
+package at.bestsolution.efxclipse.runtime.examples.e4.parts
+
 import javafx.scene.layout.*
 import javafx.scene.control.*
 

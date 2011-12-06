@@ -1,0 +1,9 @@
+package at.bestsolution.efxclipse.testcases.fxgraph.inc
+
+import javafx.scene.layout.*
+
+component TestInc {
+	VBox {
+
+	}
+}

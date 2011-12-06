@@ -1,3 +1,5 @@
+package at.bestsolution.efxclipse.runtime.examples.guice
+
 import javafx.scene.layout.*
 import javafx.scene.control.*
 import at.bestsolution.efxclipse.runtime.examples.guice.controller.*

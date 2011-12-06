@@ -1,10 +1,14 @@
+package at.bestsolution.efxclipse.testcases.fxgraph
+
 import javafx.scene.layout.*
 import javafx.scene.control.*
 
-component CssTest styledwith ["test.css"] resourcefile "platform:/resource/at.bestsolution.efxclipse.testcases.fxgraph/translations/messages.properties" {
-	BorderPane { 
-		center : Button {
-			text : rstring "buttonlabel" 
-		} 
+component CssTest styledwith [ "test.css" ] resourcefile
+"platform:/resource/at.bestsolution.efxclipse.testcases.fxgraph/translations/messages.properties" {
+	BorderPane {
+		center :
+		Button {
+			text : rstring "buttonlabel"
+		}
 	}
 }

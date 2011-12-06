@@ -1,3 +1,5 @@
+package at.bestsolution.efxclipse.runtime.examples.fxgraph.osgi
+
 import java.lang.*
 import java.util.*
 import javafx.collections.*
