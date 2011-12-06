@@ -26,29 +26,29 @@ package at.bestsolution.efxclipse.tooling.fxgraph.fXGraph;
 public interface IncludeValueProperty extends SingleValueProperty, ListValueElement
 {
   /**
-   * Returns the value of the '<em><b>Source</b></em>' attribute.
+   * Returns the value of the '<em><b>Source</b></em>' reference.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Source</em>' attribute isn't clear,
+   * If the meaning of the '<em>Source</em>' reference isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Source</em>' attribute.
-   * @see #setSource(String)
+   * @return the value of the '<em>Source</em>' reference.
+   * @see #setSource(ComponentDefinition)
    * @see at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.FXGraphPackage#getIncludeValueProperty_Source()
    * @model
    * @generated
    */
-  String getSource();
+  ComponentDefinition getSource();
 
   /**
-   * Sets the value of the '{@link at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.IncludeValueProperty#getSource <em>Source</em>}' attribute.
+   * Sets the value of the '{@link at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.IncludeValueProperty#getSource <em>Source</em>}' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Source</em>' attribute.
+   * @param value the new value of the '<em>Source</em>' reference.
    * @see #getSource()
    * @generated
    */
-  void setSource(String value);
+  void setSource(ComponentDefinition value);
 
 } // IncludeValueProperty

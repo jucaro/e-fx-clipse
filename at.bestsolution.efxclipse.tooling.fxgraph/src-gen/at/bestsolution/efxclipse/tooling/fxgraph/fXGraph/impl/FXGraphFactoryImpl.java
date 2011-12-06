@@ -69,6 +69,7 @@ public class FXGraphFactoryImpl extends EFactoryImpl implements FXGraphFactory
     switch (eClass.getClassifierID())
     {
       case FXGraphPackage.MODEL: return createModel();
+      case FXGraphPackage.PACKAGE_DECLARATION: return createPackageDeclaration();
       case FXGraphPackage.COMPONENT_DEFINITION: return createComponentDefinition();
       case FXGraphPackage.IMPORT: return createImport();
       case FXGraphPackage.ELEMENT: return createElement();
@@ -106,6 +107,17 @@ public class FXGraphFactoryImpl extends EFactoryImpl implements FXGraphFactory
   {
     ModelImpl model = new ModelImpl();
     return model;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public PackageDeclaration createPackageDeclaration()
+  {
+    PackageDeclarationImpl packageDeclaration = new PackageDeclarationImpl();
+    return packageDeclaration;
   }
 
   /**

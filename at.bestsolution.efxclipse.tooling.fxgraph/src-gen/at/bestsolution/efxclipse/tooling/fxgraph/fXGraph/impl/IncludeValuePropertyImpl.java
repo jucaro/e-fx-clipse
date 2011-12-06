@@ -6,12 +6,14 @@
  */
 package at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.impl;
 
+import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.ComponentDefinition;
 import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.FXGraphPackage;
 import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.IncludeValueProperty;
 
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
@@ -31,24 +33,14 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 public class IncludeValuePropertyImpl extends SingleValuePropertyImpl implements IncludeValueProperty
 {
   /**
-   * The default value of the '{@link #getSource() <em>Source</em>}' attribute.
+   * The cached value of the '{@link #getSource() <em>Source</em>}' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @see #getSource()
    * @generated
    * @ordered
    */
-  protected static final String SOURCE_EDEFAULT = null;
-
-  /**
-   * The cached value of the '{@link #getSource() <em>Source</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getSource()
-   * @generated
-   * @ordered
-   */
-  protected String source = SOURCE_EDEFAULT;
+  protected ComponentDefinition source;
 
   /**
    * <!-- begin-user-doc -->
@@ -76,7 +68,27 @@ public class IncludeValuePropertyImpl extends SingleValuePropertyImpl implements
    * <!-- end-user-doc -->
    * @generated
    */
-  public String getSource()
+  public ComponentDefinition getSource()
+  {
+    if (source != null && source.eIsProxy())
+    {
+      InternalEObject oldSource = (InternalEObject)source;
+      source = (ComponentDefinition)eResolveProxy(oldSource);
+      if (source != oldSource)
+      {
+        if (eNotificationRequired())
+          eNotify(new ENotificationImpl(this, Notification.RESOLVE, FXGraphPackage.INCLUDE_VALUE_PROPERTY__SOURCE, oldSource, source));
+      }
+    }
+    return source;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public ComponentDefinition basicGetSource()
   {
     return source;
   }
@@ -86,9 +98,9 @@ public class IncludeValuePropertyImpl extends SingleValuePropertyImpl implements
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setSource(String newSource)
+  public void setSource(ComponentDefinition newSource)
   {
-    String oldSource = source;
+    ComponentDefinition oldSource = source;
     source = newSource;
     if (eNotificationRequired())
       eNotify(new ENotificationImpl(this, Notification.SET, FXGraphPackage.INCLUDE_VALUE_PROPERTY__SOURCE, oldSource, source));
@@ -105,7 +117,8 @@ public class IncludeValuePropertyImpl extends SingleValuePropertyImpl implements
     switch (featureID)
     {
       case FXGraphPackage.INCLUDE_VALUE_PROPERTY__SOURCE:
-        return getSource();
+        if (resolve) return getSource();
+        return basicGetSource();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -121,7 +134,7 @@ public class IncludeValuePropertyImpl extends SingleValuePropertyImpl implements
     switch (featureID)
     {
       case FXGraphPackage.INCLUDE_VALUE_PROPERTY__SOURCE:
-        setSource((String)newValue);
+        setSource((ComponentDefinition)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -138,7 +151,7 @@ public class IncludeValuePropertyImpl extends SingleValuePropertyImpl implements
     switch (featureID)
     {
       case FXGraphPackage.INCLUDE_VALUE_PROPERTY__SOURCE:
-        setSource(SOURCE_EDEFAULT);
+        setSource((ComponentDefinition)null);
         return;
     }
     super.eUnset(featureID);
@@ -155,26 +168,9 @@ public class IncludeValuePropertyImpl extends SingleValuePropertyImpl implements
     switch (featureID)
     {
       case FXGraphPackage.INCLUDE_VALUE_PROPERTY__SOURCE:
-        return SOURCE_EDEFAULT == null ? source != null : !SOURCE_EDEFAULT.equals(source);
+        return source != null;
     }
     return super.eIsSet(featureID);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public String toString()
-  {
-    if (eIsProxy()) return super.toString();
-
-    StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (source: ");
-    result.append(source);
-    result.append(')');
-    return result.toString();
   }
 
 } //IncludeValuePropertyImpl

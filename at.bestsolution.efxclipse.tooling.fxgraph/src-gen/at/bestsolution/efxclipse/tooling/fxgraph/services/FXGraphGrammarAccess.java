@@ -21,29 +21,61 @@ public class FXGraphGrammarAccess extends AbstractGrammarElementFinder {
 	public class ModelElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Model");
 		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Assignment cImportsAssignment_0 = (Assignment)cGroup.eContents().get(0);
-		private final RuleCall cImportsImportParserRuleCall_0_0 = (RuleCall)cImportsAssignment_0.eContents().get(0);
-		private final Assignment cComponentDefAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final RuleCall cComponentDefComponentDefinitionParserRuleCall_1_0 = (RuleCall)cComponentDefAssignment_1.eContents().get(0);
+		private final Assignment cPackageAssignment_0 = (Assignment)cGroup.eContents().get(0);
+		private final RuleCall cPackagePackageDeclarationParserRuleCall_0_0 = (RuleCall)cPackageAssignment_0.eContents().get(0);
+		private final Assignment cImportsAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cImportsImportParserRuleCall_1_0 = (RuleCall)cImportsAssignment_1.eContents().get(0);
+		private final Assignment cComponentDefAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cComponentDefComponentDefinitionParserRuleCall_2_0 = (RuleCall)cComponentDefAssignment_2.eContents().get(0);
 		
 		//Model:
-		//	imports+=Import* componentDef=ComponentDefinition;
+		//	package=PackageDeclaration? imports+=Import* componentDef=ComponentDefinition;
 		public ParserRule getRule() { return rule; }
 
-		//imports+=Import* componentDef=ComponentDefinition
+		//package=PackageDeclaration? imports+=Import* componentDef=ComponentDefinition
 		public Group getGroup() { return cGroup; }
 
+		//package=PackageDeclaration?
+		public Assignment getPackageAssignment_0() { return cPackageAssignment_0; }
+
+		//PackageDeclaration
+		public RuleCall getPackagePackageDeclarationParserRuleCall_0_0() { return cPackagePackageDeclarationParserRuleCall_0_0; }
+
 		//imports+=Import*
-		public Assignment getImportsAssignment_0() { return cImportsAssignment_0; }
+		public Assignment getImportsAssignment_1() { return cImportsAssignment_1; }
 
 		//Import
-		public RuleCall getImportsImportParserRuleCall_0_0() { return cImportsImportParserRuleCall_0_0; }
+		public RuleCall getImportsImportParserRuleCall_1_0() { return cImportsImportParserRuleCall_1_0; }
 
 		//componentDef=ComponentDefinition
-		public Assignment getComponentDefAssignment_1() { return cComponentDefAssignment_1; }
+		public Assignment getComponentDefAssignment_2() { return cComponentDefAssignment_2; }
 
 		//ComponentDefinition
-		public RuleCall getComponentDefComponentDefinitionParserRuleCall_1_0() { return cComponentDefComponentDefinitionParserRuleCall_1_0; }
+		public RuleCall getComponentDefComponentDefinitionParserRuleCall_2_0() { return cComponentDefComponentDefinitionParserRuleCall_2_0; }
+	}
+
+	public class PackageDeclarationElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "PackageDeclaration");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cPackageKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cNameQualifiedNameParserRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
+		
+		//PackageDeclaration:
+		//	"package" name=QualifiedName;
+		public ParserRule getRule() { return rule; }
+
+		//"package" name=QualifiedName
+		public Group getGroup() { return cGroup; }
+
+		//"package"
+		public Keyword getPackageKeyword_0() { return cPackageKeyword_0; }
+
+		//name=QualifiedName
+		public Assignment getNameAssignment_1() { return cNameAssignment_1; }
+
+		//QualifiedName
+		public RuleCall getNameQualifiedNameParserRuleCall_1_0() { return cNameQualifiedNameParserRuleCall_1_0; }
 	}
 
 	public class ComponentDefinitionElements extends AbstractParserRuleElementFinder {
@@ -879,23 +911,27 @@ public class FXGraphGrammarAccess extends AbstractGrammarElementFinder {
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Keyword cIncludeKeyword_0 = (Keyword)cGroup.eContents().get(0);
 		private final Assignment cSourceAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final RuleCall cSourceSTRINGTerminalRuleCall_1_0 = (RuleCall)cSourceAssignment_1.eContents().get(0);
+		private final CrossReference cSourceComponentDefinitionCrossReference_1_0 = (CrossReference)cSourceAssignment_1.eContents().get(0);
+		private final RuleCall cSourceComponentDefinitionQualifiedNameParserRuleCall_1_0_1 = (RuleCall)cSourceComponentDefinitionCrossReference_1_0.eContents().get(1);
 		
 		//IncludeValueProperty:
-		//	"include" source=STRING;
+		//	"include" source=[ComponentDefinition|QualifiedName];
 		public ParserRule getRule() { return rule; }
 
-		//"include" source=STRING
+		//"include" source=[ComponentDefinition|QualifiedName]
 		public Group getGroup() { return cGroup; }
 
 		//"include"
 		public Keyword getIncludeKeyword_0() { return cIncludeKeyword_0; }
 
-		//source=STRING
+		//source=[ComponentDefinition|QualifiedName]
 		public Assignment getSourceAssignment_1() { return cSourceAssignment_1; }
 
-		//STRING
-		public RuleCall getSourceSTRINGTerminalRuleCall_1_0() { return cSourceSTRINGTerminalRuleCall_1_0; }
+		//[ComponentDefinition|QualifiedName]
+		public CrossReference getSourceComponentDefinitionCrossReference_1_0() { return cSourceComponentDefinitionCrossReference_1_0; }
+
+		//QualifiedName
+		public RuleCall getSourceComponentDefinitionQualifiedNameParserRuleCall_1_0_1() { return cSourceComponentDefinitionQualifiedNameParserRuleCall_1_0_1; }
 	}
 
 	public class CopyValuePropertyElements extends AbstractParserRuleElementFinder {
@@ -1116,6 +1152,7 @@ public class FXGraphGrammarAccess extends AbstractGrammarElementFinder {
 	
 	
 	private ModelElements pModel;
+	private PackageDeclarationElements pPackageDeclaration;
 	private ComponentDefinitionElements pComponentDefinition;
 	private ImportElements pImport;
 	private ElementElements pElement;
@@ -1165,13 +1202,23 @@ public class FXGraphGrammarAccess extends AbstractGrammarElementFinder {
 
 	
 	//Model:
-	//	imports+=Import* componentDef=ComponentDefinition;
+	//	package=PackageDeclaration? imports+=Import* componentDef=ComponentDefinition;
 	public ModelElements getModelAccess() {
 		return (pModel != null) ? pModel : (pModel = new ModelElements());
 	}
 	
 	public ParserRule getModelRule() {
 		return getModelAccess().getRule();
+	}
+
+	//PackageDeclaration:
+	//	"package" name=QualifiedName;
+	public PackageDeclarationElements getPackageDeclarationAccess() {
+		return (pPackageDeclaration != null) ? pPackageDeclaration : (pPackageDeclaration = new PackageDeclarationElements());
+	}
+	
+	public ParserRule getPackageDeclarationRule() {
+		return getPackageDeclarationAccess().getRule();
 	}
 
 	//ComponentDefinition:
@@ -1332,7 +1379,7 @@ public class FXGraphGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//IncludeValueProperty:
-	//	"include" source=STRING;
+	//	"include" source=[ComponentDefinition|QualifiedName];
 	public IncludeValuePropertyElements getIncludeValuePropertyAccess() {
 		return (pIncludeValueProperty != null) ? pIncludeValueProperty : (pIncludeValueProperty = new IncludeValuePropertyElements());
 	}

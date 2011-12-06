@@ -10,6 +10,7 @@ import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.ComponentDefinition;
 import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.FXGraphPackage;
 import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.Import;
 import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.Model;
+import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.PackageDeclaration;
 
 import java.util.Collection;
 
@@ -34,6 +35,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <p>
  * The following features are implemented:
  * <ul>
+ *   <li>{@link at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.impl.ModelImpl#getPackage <em>Package</em>}</li>
  *   <li>{@link at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.impl.ModelImpl#getImports <em>Imports</em>}</li>
  *   <li>{@link at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.impl.ModelImpl#getComponentDef <em>Component Def</em>}</li>
  * </ul>
@@ -43,6 +45,16 @@ import org.eclipse.emf.ecore.util.InternalEList;
  */
 public class ModelImpl extends MinimalEObjectImpl.Container implements Model
 {
+  /**
+   * The cached value of the '{@link #getPackage() <em>Package</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getPackage()
+   * @generated
+   * @ordered
+   */
+  protected PackageDeclaration package_;
+
   /**
    * The cached value of the '{@link #getImports() <em>Imports</em>}' containment reference list.
    * <!-- begin-user-doc -->
@@ -82,6 +94,54 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
   protected EClass eStaticClass()
   {
     return FXGraphPackage.Literals.MODEL;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public PackageDeclaration getPackage()
+  {
+    return package_;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NotificationChain basicSetPackage(PackageDeclaration newPackage, NotificationChain msgs)
+  {
+    PackageDeclaration oldPackage = package_;
+    package_ = newPackage;
+    if (eNotificationRequired())
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, FXGraphPackage.MODEL__PACKAGE, oldPackage, newPackage);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setPackage(PackageDeclaration newPackage)
+  {
+    if (newPackage != package_)
+    {
+      NotificationChain msgs = null;
+      if (package_ != null)
+        msgs = ((InternalEObject)package_).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - FXGraphPackage.MODEL__PACKAGE, null, msgs);
+      if (newPackage != null)
+        msgs = ((InternalEObject)newPackage).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - FXGraphPackage.MODEL__PACKAGE, null, msgs);
+      msgs = basicSetPackage(newPackage, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, FXGraphPackage.MODEL__PACKAGE, newPackage, newPackage));
   }
 
   /**
@@ -156,6 +216,8 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
   {
     switch (featureID)
     {
+      case FXGraphPackage.MODEL__PACKAGE:
+        return basicSetPackage(null, msgs);
       case FXGraphPackage.MODEL__IMPORTS:
         return ((InternalEList<?>)getImports()).basicRemove(otherEnd, msgs);
       case FXGraphPackage.MODEL__COMPONENT_DEF:
@@ -174,6 +236,8 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
   {
     switch (featureID)
     {
+      case FXGraphPackage.MODEL__PACKAGE:
+        return getPackage();
       case FXGraphPackage.MODEL__IMPORTS:
         return getImports();
       case FXGraphPackage.MODEL__COMPONENT_DEF:
@@ -193,6 +257,9 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
   {
     switch (featureID)
     {
+      case FXGraphPackage.MODEL__PACKAGE:
+        setPackage((PackageDeclaration)newValue);
+        return;
       case FXGraphPackage.MODEL__IMPORTS:
         getImports().clear();
         getImports().addAll((Collection<? extends Import>)newValue);
@@ -214,6 +281,9 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
   {
     switch (featureID)
     {
+      case FXGraphPackage.MODEL__PACKAGE:
+        setPackage((PackageDeclaration)null);
+        return;
       case FXGraphPackage.MODEL__IMPORTS:
         getImports().clear();
         return;
@@ -234,6 +304,8 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
   {
     switch (featureID)
     {
+      case FXGraphPackage.MODEL__PACKAGE:
+        return package_ != null;
       case FXGraphPackage.MODEL__IMPORTS:
         return imports != null && !imports.isEmpty();
       case FXGraphPackage.MODEL__COMPONENT_DEF:

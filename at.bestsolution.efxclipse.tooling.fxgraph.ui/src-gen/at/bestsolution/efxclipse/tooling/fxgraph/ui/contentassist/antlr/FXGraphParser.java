@@ -75,6 +75,7 @@ public class FXGraphParser extends AbstractContentAssistParser {
 					put(grammarAccess.getJvmWildcardTypeReferenceAccess().getAlternatives_2(), "rule__JvmWildcardTypeReference__Alternatives_2");
 					put(grammarAccess.getJvmTypeParameterAccess().getAlternatives_1(), "rule__JvmTypeParameter__Alternatives_1");
 					put(grammarAccess.getModelAccess().getGroup(), "rule__Model__Group__0");
+					put(grammarAccess.getPackageDeclarationAccess().getGroup(), "rule__PackageDeclaration__Group__0");
 					put(grammarAccess.getComponentDefinitionAccess().getGroup(), "rule__ComponentDefinition__Group__0");
 					put(grammarAccess.getComponentDefinitionAccess().getGroup_2(), "rule__ComponentDefinition__Group_2__0");
 					put(grammarAccess.getComponentDefinitionAccess().getGroup_3(), "rule__ComponentDefinition__Group_3__0");
@@ -238,8 +239,10 @@ public class FXGraphParser extends AbstractContentAssistParser {
 					put(grammarAccess.getJvmLowerBoundAccess().getGroup(), "rule__JvmLowerBound__Group__0");
 					put(grammarAccess.getJvmTypeParameterAccess().getGroup(), "rule__JvmTypeParameter__Group__0");
 					put(grammarAccess.getJvmTypeParameterAccess().getGroup_1_0(), "rule__JvmTypeParameter__Group_1_0__0");
-					put(grammarAccess.getModelAccess().getImportsAssignment_0(), "rule__Model__ImportsAssignment_0");
-					put(grammarAccess.getModelAccess().getComponentDefAssignment_1(), "rule__Model__ComponentDefAssignment_1");
+					put(grammarAccess.getModelAccess().getPackageAssignment_0(), "rule__Model__PackageAssignment_0");
+					put(grammarAccess.getModelAccess().getImportsAssignment_1(), "rule__Model__ImportsAssignment_1");
+					put(grammarAccess.getModelAccess().getComponentDefAssignment_2(), "rule__Model__ComponentDefAssignment_2");
+					put(grammarAccess.getPackageDeclarationAccess().getNameAssignment_1(), "rule__PackageDeclaration__NameAssignment_1");
 					put(grammarAccess.getComponentDefinitionAccess().getNameAssignment_1(), "rule__ComponentDefinition__NameAssignment_1");
 					put(grammarAccess.getComponentDefinitionAccess().getControllerAssignment_2_1(), "rule__ComponentDefinition__ControllerAssignment_2_1");
 					put(grammarAccess.getComponentDefinitionAccess().getPreviewCssFilesAssignment_3_2(), "rule__ComponentDefinition__PreviewCssFilesAssignment_3_2");

@@ -9,8 +9,12 @@
   <genPackages prefix="FXGraph" basePackage="at.bestsolution.efxclipse.tooling.fxgraph"
       disposableProviderFactory="true" ecorePackage="FXGraph.ecore#/">
     <genClasses ecoreClass="FXGraph.ecore#//Model">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference FXGraph.ecore#//Model/package"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference FXGraph.ecore#//Model/imports"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference FXGraph.ecore#//Model/componentDef"/>
+    </genClasses>
+    <genClasses ecoreClass="FXGraph.ecore#//PackageDeclaration">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute FXGraph.ecore#//PackageDeclaration/name"/>
     </genClasses>
     <genClasses ecoreClass="FXGraph.ecore#//ComponentDefinition">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute FXGraph.ecore#//ComponentDefinition/name"/>
@@ -72,7 +76,7 @@
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference FXGraph.ecore#//ReferenceValueProperty/reference"/>
     </genClasses>
     <genClasses ecoreClass="FXGraph.ecore#//IncludeValueProperty">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute FXGraph.ecore#//IncludeValueProperty/source"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference FXGraph.ecore#//IncludeValueProperty/source"/>
     </genClasses>
     <genClasses ecoreClass="FXGraph.ecore#//CopyValueProperty">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference FXGraph.ecore#//CopyValueProperty/reference"/>
