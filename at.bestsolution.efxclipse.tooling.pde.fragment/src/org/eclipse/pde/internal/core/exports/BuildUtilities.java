@@ -1,0 +1,89 @@
+/*******************************************************************************
+ *  Copyright (c) 2006, 2008 IBM Corporation and others.
+ *  All rights reserved. This program and the accompanying materials
+ *  are made available under the terms of the Eclipse Public License v1.0
+ *  which accompanies this distribution, and is available at
+ *  http://www.eclipse.org/legal/epl-v10.html
+ * 
+ *  Contributors:
+ *     IBM Corporation - initial API and implementation
+ *******************************************************************************/
+package org.eclipse.pde.internal.core.exports;
+
+import org.eclipse.jdt.launching.IVMInstall;
+import org.eclipse.jdt.launching.JavaRuntime;
+import org.eclipse.jdt.launching.LibraryLocation;
+import org.eclipse.jdt.launching.environments.IExecutionEnvironment;
+import org.eclipse.jdt.launching.environments.IExecutionEnvironmentsManager;
+import org.eclipse.pde.internal.core.PDECore;
+import org.osgi.framework.BundleContext;
+import org.osgi.framework.InvalidSyntaxException;
+import org.osgi.framework.ServiceReference;
+
+import at.bestsolution.efxclipse.tooling.pde.adaptor.IClasspathContributor;
+
+public class BuildUtilities {
+
+	public static String getBootClasspath() {
+		return getBootClasspath(JavaRuntime.getDefaultVMInstall());
+	}
+
+	public static String getBootClasspath(String environmentID) {
+		IExecutionEnvironmentsManager manager = JavaRuntime.getExecutionEnvironmentsManager();
+		IExecutionEnvironment environment = manager.getEnvironment(environmentID);
+		IVMInstall vm = null;
+		if (environment != null) {
+			vm = environment.getDefaultVM();
+			if (vm == null) {
+				IVMInstall[] installs = environment.getCompatibleVMs();
+				// take the first strictly compatible vm if there is no default
+				for (int i = 0; i < installs.length; i++) {
+					IVMInstall install = installs[i];
+					if (environment.isStrictlyCompatible(install)) {
+						vm = install;
+						break;
+					}
+				}
+				// use the first vm failing that
+				if (vm == null && installs.length > 0) {
+					vm = installs[0];
+				}
+			}
+		}
+		if (vm == null)
+			vm = JavaRuntime.getDefaultVMInstall();
+		String rv = getBootClasspath(vm);
+		
+		BundleContext context = PDECore.getDefault().getBundleContext();
+		try {
+			for( ServiceReference<IClasspathContributor> ref : context.getServiceReferences(IClasspathContributor.class, null) ) {
+				IClasspathContributor contributor = context.getService(ref);
+				StringBuffer b = new StringBuffer(rv);
+				for( String s : contributor.exportEnvironmentLibraryAdditions(environmentID) ) {
+					if( b.length() > 0 ) {
+						b.append(";");
+					}
+					b.append(s);
+				}
+				rv = b.toString();
+			}
+		} catch (InvalidSyntaxException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		return rv;
+	}
+
+	public static String getBootClasspath(IVMInstall install) {
+		StringBuffer buffer = new StringBuffer();
+		LibraryLocation[] locations = JavaRuntime.getLibraryLocations(install);
+		for (int i = 0; i < locations.length; i++) {
+			buffer.append(locations[i].getSystemLibraryPath().toOSString());
+			if (i < locations.length - 1)
+				buffer.append(";"); //$NON-NLS-1$
+		}
+		return buffer.toString();
+	}
+
+}
