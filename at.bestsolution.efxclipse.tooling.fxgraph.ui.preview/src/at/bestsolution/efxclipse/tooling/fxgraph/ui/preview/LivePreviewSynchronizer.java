@@ -343,7 +343,7 @@ public class LivePreviewSynchronizer implements IPartListener,
 				}
 
 				return new ContentData(generator.doGeneratePreview(resource,
-						(!preference.getBoolean(PREF_LOAD_CONTROLLER, false)) && (!pluginProject)),
+						(!preference.getBoolean(PREF_LOAD_CONTROLLER, false)) && (!pluginProject),true), // TODO Can we make includes work??
 						l, resourcePropertiesFile, extraPaths);
 			}
 		}

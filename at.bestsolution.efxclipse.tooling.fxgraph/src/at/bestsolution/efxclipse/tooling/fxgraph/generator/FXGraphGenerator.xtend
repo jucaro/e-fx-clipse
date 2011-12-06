@@ -28,6 +28,7 @@ import org.eclipse.xtext.xbase.compiler.ImportManager
 import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.LocationValueProperty
 import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.ResourceValueProperty
 import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.BindValueProperty
+import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.Model
 
 class FXGraphGenerator implements IGenerator {
 	
@@ -65,11 +66,11 @@ class FXGraphGenerator implements IGenerator {
 		
 	}
 	
-	def doGeneratePreview(Resource resource, boolean skipController) {
+	def doGeneratePreview(Resource resource, boolean skipController, boolean skipIncludes) {
 		try {
 			val projectRelativePath = calculateRelativePath(resource);
 			if( projectRelativePath != null ) {
-				return createContent(resource, projectRelativePath,skipController).toString;
+				return createContent(resource, projectRelativePath,skipController,skipIncludes).toString;
 			}	
 		} catch(Exception e) {
 			
@@ -84,7 +85,7 @@ class FXGraphGenerator implements IGenerator {
 		
 			if( projectRelativePath != null ) {
 				val relativeOutPath = projectRelativePath.replaceFirst(".fxgraph$",".fxml");
-				fsa.generateFile(relativeOutPath, createContent(resource, projectRelativePath,false));
+				fsa.generateFile(relativeOutPath, createContent(resource, projectRelativePath,false,false));
 			}	
 		} catch(Exception e) {
 			
@@ -93,7 +94,7 @@ class FXGraphGenerator implements IGenerator {
 	}
 	
 	
-	def createContent(Resource resource, String projectRelativePath, boolean forPreview) '''
+	def createContent(Resource resource, String projectRelativePath, boolean skipController, boolean skipIncludes) '''
 		«val importManager = new ImportManager(true)»
 		«val languageManager = new LanguageManager()»
 		<?xml version="1.0" encoding="UTF-8"?>
@@ -102,7 +103,7 @@ class FXGraphGenerator implements IGenerator {
 		-->
 		
 		«FOR rootElement : resource.contents.get(0).eContents.filter(typeof(ComponentDefinition))»
-		«val body = componentDefinition(rootElement, importManager, languageManager, forPreview)»
+		«val body = componentDefinition(rootElement, importManager, languageManager, skipController, skipIncludes)»
 		<?import java.lang.*?>
 		«FOR i:importManager.imports»
 			<?import «i»?>
@@ -115,17 +116,17 @@ class FXGraphGenerator implements IGenerator {
 		«ENDFOR»
 	'''
 	
-	def componentDefinition(ComponentDefinition definition, ImportManager importManager, LanguageManager languageManager, boolean forPreview) '''
+	def componentDefinition(ComponentDefinition definition, ImportManager importManager, LanguageManager languageManager, boolean skipController, boolean skipIncludes) '''
 		«val element = definition.rootNode»
-		<«element.type.shortName(importManager)» xmlns:fx="http://javafx.com/fxml"«fxElementAttributes(element,importManager,forPreview)»«IF definition.controller != null && ! forPreview » fx:controller="«definition.controller.qualifiedName»"«ENDIF»«IF hasAttributeProperties(element)»«elementAttributes(element.properties,forPreview)»«ENDIF»>
+		<«element.type.shortName(importManager)» xmlns:fx="http://javafx.com/fxml"«fxElementAttributes(element,importManager,skipController)»«IF definition.controller != null && ! skipController » fx:controller="«definition.controller.qualifiedName»"«ENDIF»«IF hasAttributeProperties(element)»«elementAttributes(element.properties,skipController)»«ENDIF»>
 			«IF definition.defines.size > 0»
 			<fx:define>
 				«FOR define : definition.defines»
-				«elementContent(define.element,importManager,forPreview)»
+				«elementContent(define.element,importManager,skipController,skipIncludes)»
 				«ENDFOR»
 			</fx:define>
 			«ENDIF»
-			«IF ! forPreview»
+			«IF ! skipController»
 			«FOR script : definition.scripts»«languageManager.addLanguage(script.language)»
 				«IF script.sourcecode != null»
 					<fx:script>«script.sourcecode.substring(2,script.sourcecode.length-2)»
@@ -137,49 +138,51 @@ class FXGraphGenerator implements IGenerator {
 			«ENDIF»
 		
 			«IF hasNestedProperties(element)»
-				«propContents(element.properties,importManager,forPreview)»
-				«statPropContent(element.staticProperties,importManager,forPreview)»
+				«propContents(element.properties,importManager,skipController,skipIncludes)»
+				«statPropContent(element.staticProperties,importManager,skipController,skipIncludes)»
 			«ENDIF»
 		
 		</«element.type.shortName(importManager)»>
 	'''
 	
-	def elementContent(Element element, ImportManager importManager, boolean forPreview) '''
-		<«element.type.shortName(importManager)»«fxElementAttributes(element,importManager,forPreview)»«IF hasAttributeProperties(element)»«elementAttributes(element.properties,forPreview)»«ENDIF»«IF ! hasNestedProperties(element)»/«ENDIF»> 
+	def elementContent(Element element, ImportManager importManager, boolean skipController, boolean skipIncludes) '''
+		<«element.type.shortName(importManager)»«fxElementAttributes(element,importManager,skipController)»«IF hasAttributeProperties(element)»«elementAttributes(element.properties,skipController)»«ENDIF»«IF ! hasNestedProperties(element)»/«ENDIF»> 
 		«IF hasNestedProperties(element)»
-			«propContents(element.properties,importManager,forPreview)»
-			«statPropContent(element.staticProperties,importManager,forPreview)»
+			«propContents(element.properties,importManager,skipController,skipIncludes)»
+			«statPropContent(element.staticProperties,importManager,skipController,skipIncludes)»
 		</«element.type.shortName(importManager)»>
 		«ENDIF»
 	'''
 	
-	def propContents(List<Property> properties, ImportManager importManager, boolean forPreview) '''
+	def propContents(List<Property> properties, ImportManager importManager, boolean skipController, boolean skipIncludes) '''
 		«FOR prop : properties.filter([Property p|subelementFilter(p)])»
-		«propContent(prop,importManager,forPreview)»
+		«propContent(prop,importManager,skipController,skipIncludes)»
 		«ENDFOR»
 	'''
 	
-	def propContent(Property prop, ImportManager importManager, boolean forPreview) '''
+	def propContent(Property prop, ImportManager importManager, boolean skipController, boolean skipIncludes) '''
 		«IF prop.value instanceof SimpleValueProperty»
 			«IF (prop.value as SimpleValueProperty).stringValue != null»
 				<«prop.name»>«(prop.value as SimpleValueProperty).stringValue»</«prop.name»>
 			«ENDIF»
 		«ELSEIF prop.value instanceof ListValueProperty»
 			<«prop.name»>
-				«propListContent(prop.value as ListValueProperty,importManager, forPreview)»
+				«propListContent(prop.value as ListValueProperty,importManager, skipController, skipIncludes)»
 			</«prop.name»>
 		«ELSEIF prop.value instanceof MapValueProperty»
 			<«prop.name»>
-				«propContents((prop.value as MapValueProperty).properties,importManager,forPreview)»
+				«propContents((prop.value as MapValueProperty).properties,importManager,skipController,skipIncludes)»
 			</«prop.name»>
 		«ELSEIF prop.value instanceof Element»
 			<«prop.name»>
-				«elementContent(prop.value as Element,importManager,forPreview)»
+				«elementContent(prop.value as Element,importManager,skipController,skipIncludes)»
 			</«prop.name»>
 		«ELSEIF prop.value instanceof ReferenceValueProperty»
-			<«prop.name»>
-				<fx:reference source="«(prop.value as ReferenceValueProperty).reference.name»" />
-			</«prop.name»>
+			«IF !skipIncludes»
+				<«prop.name»>
+					<fx:reference source="«(prop.value as ReferenceValueProperty).reference.name»" />
+				</«prop.name»>
+			«ENDIF»
 		«ELSEIF prop.value instanceof IncludeValueProperty»
 			<«prop.name»>
 				<fx:include source="«(prop.value as IncludeValueProperty).source»" />
@@ -191,7 +194,7 @@ class FXGraphGenerator implements IGenerator {
 		«ENDIF»
 	'''
 	
-	def statPropContent(List<StaticValueProperty> properties, ImportManager importManager, boolean forPreview) '''
+	def statPropContent(List<StaticValueProperty> properties, ImportManager importManager, boolean skipController, boolean skipIncludes) '''
 		«FOR prop : properties»
 		«IF prop.value instanceof SimpleValueProperty»
 			«IF (prop.value as SimpleValueProperty).stringValue != null»
@@ -201,24 +204,26 @@ class FXGraphGenerator implements IGenerator {
 			«ENDIF»
 		«ELSEIF prop.value instanceof ListValueProperty»
 			<«prop.type.shortName(importManager)».«prop.name»>
-				«propListContent(prop.value as ListValueProperty,importManager, forPreview)»
+				«propListContent(prop.value as ListValueProperty,importManager, skipController, skipIncludes)»
 			</«prop.type.shortName(importManager)».«prop.name»>
 		«ELSEIF prop.value instanceof MapValueProperty»
 			<«prop.type.shortName(importManager)».«prop.name»>
-				«propContents((prop.value as MapValueProperty).properties,importManager, forPreview)»
+				«propContents((prop.value as MapValueProperty).properties,importManager, skipController, skipIncludes)»
 			</«prop.type.shortName(importManager)».«prop.name»>
 		«ELSEIF prop.value instanceof Element»
 			<«prop.type.shortName(importManager)».«prop.name»>
-				«elementContent(prop.value as Element,importManager, forPreview)»
+				«elementContent(prop.value as Element,importManager, skipController, skipIncludes)»
 			</«prop.type.shortName(importManager)».«prop.name»>
 		«ELSEIF prop.value instanceof ReferenceValueProperty»
 			<«prop.type.shortName(importManager)».«prop.name»>
 				<fx:reference source="«(prop.value as ReferenceValueProperty).reference.name»" />
 			</«prop.type.shortName(importManager)».«prop.name»>
 		«ELSEIF prop.value instanceof IncludeValueProperty»
-			<«prop.type.shortName(importManager)».«prop.name»>
-				<fx:include source="«(prop.value as IncludeValueProperty).source»" />
-			</«prop.type.shortName(importManager)».«prop.name»>
+			«IF ! skipIncludes»
+				<«prop.type.shortName(importManager)».«prop.name»>
+					<fx:include source="«(prop.value as IncludeValueProperty).source»" />
+				</«prop.type.shortName(importManager)».«prop.name»>
+			«ENDIF»
 		«ELSEIF prop.value instanceof CopyValueProperty»
 			<«prop.type.shortName(importManager)».«prop.name»>
 				<fx:copy source="«(prop.value as CopyValueProperty).reference.name»" />
@@ -227,19 +232,31 @@ class FXGraphGenerator implements IGenerator {
 		«ENDFOR»
 	'''
 	
-	def propListContent(ListValueProperty listProp, ImportManager importManager, boolean forPreview) '''
+	def propListContent(ListValueProperty listProp, ImportManager importManager, boolean skipController, boolean skipIncludes) '''
 		«FOR e : listProp.value»
 			«IF e instanceof Element»
-				«elementContent(e as Element,importManager,forPreview)»
+				«elementContent(e as Element,importManager,skipController, skipIncludes)»
 			«ELSEIF e instanceof ReferenceValueProperty»
 				<fx:reference source="«(e as ReferenceValueProperty).reference.name»" />
 			«ELSEIF e instanceof IncludeValueProperty»
-				<fx:include source="«(e as IncludeValueProperty).source»" />
+				«IF !skipIncludes»
+					<fx:include source="/«(e as IncludeValueProperty).source.fullyQualifiedName.replaceAll("\\.","/")».fxml" />
+				«ENDIF»
 			«ENDIF»
 		«ENDFOR»
 	'''
 
-	def fxElementAttributes(Element element, ImportManager importManager, boolean forPreview) {
+    def fullyQualifiedName(ComponentDefinition cp) {
+    	val m = cp.eResource.contents.get(0) as Model;
+    	
+    	if( m.getPackage != null) {
+    		return m.getPackage.name + "." + cp.name;
+    	} else {
+    		return cp.name;
+    	}
+    }
+
+	def fxElementAttributes(Element element, ImportManager importManager, boolean skipController) {
 		var builder = new StringBuilder();
 		
 		if(element.name != null) {
@@ -248,14 +265,14 @@ class FXGraphGenerator implements IGenerator {
 		
 		if( element.value != null ) {
 			builder.append(" fx:value=\""+ simpleAttributeValue(element.value) + "\"");
-		} else if( element.factory != null && ! forPreview ) {
+		} else if( element.factory != null && ! skipController ) {
 			builder.append(" fx:factory=\""+ element.factory + "\"");
 		}
 		
 		return builder.toString;
 	}
 	
-	def elementAttributes(List<Property> properties, boolean forPreview) {
+	def elementAttributes(List<Property> properties, boolean skipController) {
 		var builder = new StringBuilder();
 		
 		for( p : properties.filter([Property p|elementAttributeFilter(p)]) ) {
@@ -264,15 +281,15 @@ class FXGraphGenerator implements IGenerator {
 			} else if( p.value instanceof ReferenceValueProperty ) {
 				builder.append(" " + p.name + "=\"$"+(p.value as ReferenceValueProperty).reference.name+"\"");
 			} else if( p.value instanceof ControllerHandledValueProperty ) {
-				if( ! forPreview ) {
+				if( ! skipController ) {
 					builder.append(" " + p.name + "=\"#"+(p.value as ControllerHandledValueProperty).methodname +"\"");
 				}
 			} else if( p.value instanceof ScriptHandlerHandledValueProperty ) {
-				if( ! forPreview ) {
+				if( ! skipController ) {
 					builder.append(" " + p.name + "=\""+(p.value as ScriptHandlerHandledValueProperty).functionname +"\"");
 				}
 			} else if( p.value instanceof ScriptValueExpression ) {
-				if( ! forPreview ) {
+				if( ! skipController ) {
 					builder.append(" " + p.name + "=\""+(p.value as ScriptValueExpression).sourcecode.substring(2,(p.value as ScriptValueExpression).sourcecode.length-2).trim() +";\"");	
 				}
 			} else if( p.value instanceof LocationValueProperty ) {
