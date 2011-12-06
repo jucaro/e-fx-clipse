@@ -147,10 +147,6 @@
                 </reference>
             </activeWhen>
         </handler>
-     <handler
-           class="at.bestsolution.efxclipse.tooling.fxgraph.ui.handler.FXMLToFXGraphConverterHandler"
-           commandId="at.bestsolution.efxclipse.tooling.fxgraph.ui.fxgraphconvert">
-     </handler>
     </extension>   
 
 <!-- adding resource factories -->
