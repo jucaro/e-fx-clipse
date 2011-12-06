@@ -1,13 +1,7 @@
 package at.bestsolution.efxclipse.tooling.fxml.editors.completion;
 
-import java.io.ByteArrayInputStream;
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-
-import javax.xml.parsers.ParserConfigurationException;
-import javax.xml.parsers.SAXParser;
-import javax.xml.parsers.SAXParserFactory;
 
 import org.eclipse.core.resources.IProject;
 import org.eclipse.core.resources.ResourcesPlugin;
@@ -29,20 +23,12 @@ import org.eclipse.jface.text.contentassist.IContextInformationValidator;
 import org.eclipse.jface.viewers.StyledString;
 import org.eclipse.swt.graphics.Image;
 import org.eclipse.swt.graphics.Point;
-import org.xml.sax.Attributes;
-import org.xml.sax.InputSource;
-import org.xml.sax.Locator;
-import org.xml.sax.SAXException;
-import org.xml.sax.helpers.DefaultHandler;
 
 import at.bestsolution.efxclipse.tooling.fxgraph.ui.util.JDTHelper;
-import at.bestsolution.efxclipse.tooling.fxgraph.ui.util.JDTHelper.MultiValueProperty;
 import at.bestsolution.efxclipse.tooling.fxgraph.ui.util.JDTHelper.PrimitivValueProperty;
 import at.bestsolution.efxclipse.tooling.fxgraph.ui.util.JDTHelper.Property;
 import at.bestsolution.efxclipse.tooling.fxgraph.ui.util.JDTHelper.TypeData;
 import at.bestsolution.efxclipse.tooling.fxml.editors.FXMLEditor;
-import at.bestsolution.efxclipse.tooling.fxml.editors.model.FXMLDocument;
-import at.bestsolution.efxclipse.tooling.fxml.editors.model.ImportElement;
 
 public class AttributeCompletionProcessor implements IContentAssistProcessor {
 	private final FXMLEditor editor;
@@ -112,21 +98,6 @@ public class AttributeCompletionProcessor implements IContentAssistProcessor {
 		IJavaProject jProject = getProject();
 
 		if (jProject != null) {
-			SAXParserFactory factory = SAXParserFactory.newInstance();
-			try {
-				SAXParser parser = factory.newSAXParser();
-				parser.parse(new InputSource(new ByteArrayInputStream(document.get().getBytes())), new SaxHandlerImpl(document));
-			} catch (ParserConfigurationException e1) {
-				// TODO Auto-generated catch block
-				e1.printStackTrace();
-			} catch (SAXException e1) {
-				// TODO Auto-generated catch block
-				e1.printStackTrace();
-			} catch (IOException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-			
 			String elementName = extractElementname(document, offset);
 			List<ICompletionProposal> rv = new ArrayList<ICompletionProposal>();
 			
@@ -346,60 +317,5 @@ public class AttributeCompletionProcessor implements IContentAssistProcessor {
 	public IContextInformationValidator getContextInformationValidator() {
 		// TODO Auto-generated method stub
 		return null;
-	}
-
-	static class SaxHandlerImpl extends DefaultHandler {
-		private FXMLDocument fxmlModel;
-		private Locator locator;
-		private final IDocument document;
-		
-		public SaxHandlerImpl(IDocument document) {
-			this.document = document;
-		}
-		
-		@Override
-		public void startDocument() throws SAXException {
-			fxmlModel = new FXMLDocument(0, 0);
-		}
-		
-		@Override
-		public void startElement(String uri, String localName, String qName,
-				Attributes attributes) throws SAXException {
-			int lineNumber = locator.getLineNumber();
-			int elementEnd = locator.getColumnNumber();
-			
-			System.err.println("Starting element '"+qName+"' at line: " + lineNumber + " end-column: "+elementEnd+" " );
-			
-			// TODO Auto-generated method stub
-			super.startElement(uri, localName, qName, attributes);
-		}
-		
-		@Override
-		public void processingInstruction(String target, String data)
-				throws SAXException {
-			if( "import".equals(target) ) {
-				try {
-					int offset = document.getLineOffset(locator.getLineNumber());
-					int length = locator.getColumnNumber();
-					ImportElement e = new ImportElement(offset, length);
-				} catch (BadLocationException e1) {
-					// TODO Auto-generated catch block
-					e1.printStackTrace();
-				}
-				
-			}
-			System.err.println("processing instruction: " + target + "; " + data);
-		}
-		
-		@Override
-		public void characters(char[] ch, int start, int length)
-				throws SAXException {
-			System.err.println("Parsing content data");
-		}
-		
-		@Override
-		public void setDocumentLocator(Locator locator) {
-			this.locator = locator;
-		}
 	}
 }
