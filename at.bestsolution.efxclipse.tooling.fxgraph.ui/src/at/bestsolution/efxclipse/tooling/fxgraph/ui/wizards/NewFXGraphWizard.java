@@ -115,7 +115,9 @@ public class NewFXGraphWizard extends Wizard implements INewWizard {
 	}
 	
 	private String getContents() {
-		return "import javafx.scene.layout.*"+System.getProperty("line.separator")+System.getProperty("line.separator")+"component " + page.name + " {"+System.getProperty("line.separator")+"\t"+page.rootElement+" {"+System.getProperty("line.separator")+System.getProperty("line.separator")+"\t}"+System.getProperty("line.separator")+"}";
+		String rv = page.pack != null && page.pack.getElementName() != null && !page.pack.getElementName().equals("default") ? "package " + page.pack.getElementName() + System.getProperty("line.separator") + System.getProperty("line.separator") : ""; 
+		rv += "import javafx.scene.layout.*"+System.getProperty("line.separator")+System.getProperty("line.separator")+"component " + page.name + " {"+System.getProperty("line.separator")+"\t"+page.rootElement+" {"+System.getProperty("line.separator")+System.getProperty("line.separator")+"\t}"+System.getProperty("line.separator")+"}";
+		return rv;
 	}
 
 	@Override

@@ -138,7 +138,7 @@ class FXGraphGenerator implements IGenerator {
 			«ENDIF»
 		
 			«IF hasNestedProperties(element)»
-				«propContents(element.properties,importManager,skipController,skipIncludes)»
+				«propContents(element.properties,importManager,false,skipController,skipIncludes)»
 				«statPropContent(element.staticProperties,importManager,skipController,skipIncludes)»
 			«ENDIF»
 		
@@ -148,22 +148,30 @@ class FXGraphGenerator implements IGenerator {
 	def elementContent(Element element, ImportManager importManager, boolean skipController, boolean skipIncludes) '''
 		<«element.type.shortName(importManager)»«fxElementAttributes(element,importManager,skipController)»«IF hasAttributeProperties(element)»«elementAttributes(element.properties,skipController)»«ENDIF»«IF ! hasNestedProperties(element)»/«ENDIF»> 
 		«IF hasNestedProperties(element)»
-			«propContents(element.properties,importManager,skipController,skipIncludes)»
+			«propContents(element.properties,importManager,false,skipController,skipIncludes)»
 			«statPropContent(element.staticProperties,importManager,skipController,skipIncludes)»
 		</«element.type.shortName(importManager)»>
 		«ENDIF»
 	'''
 	
-	def propContents(List<Property> properties, ImportManager importManager, boolean skipController, boolean skipIncludes) '''
-		«FOR prop : properties.filter([Property p|subelementFilter(p)])»
-		«propContent(prop,importManager,skipController,skipIncludes)»
-		«ENDFOR»
+	def propContents(List<Property> properties, ImportManager importManager, boolean simpleAsElement, boolean skipController, boolean skipIncludes) '''
+		«IF simpleAsElement»
+			«FOR prop : properties»
+				«propContent(prop,importManager,simpleAsElement,skipController,skipIncludes)»
+			«ENDFOR»
+		«ELSE»
+			«FOR prop : properties.filter([Property p|subelementFilter(p)])»
+				«propContent(prop,importManager,simpleAsElement,skipController,skipIncludes)»
+			«ENDFOR»
+		«ENDIF»
 	'''
 	
-	def propContent(Property prop, ImportManager importManager, boolean skipController, boolean skipIncludes) '''
+	def propContent(Property prop, ImportManager importManager, boolean simpleAsElement, boolean skipController, boolean skipIncludes) '''
 		«IF prop.value instanceof SimpleValueProperty»
 			«IF (prop.value as SimpleValueProperty).stringValue != null»
 				<«prop.name»>«(prop.value as SimpleValueProperty).stringValue»</«prop.name»>
+			«ELSEIF simpleAsElement»
+				<«prop.name»>«(prop.value as SimpleValueProperty).simpleAttributeValue»</«prop.name»>
 			«ENDIF»
 		«ELSEIF prop.value instanceof ListValueProperty»
 			<«prop.name»>
@@ -171,7 +179,7 @@ class FXGraphGenerator implements IGenerator {
 			</«prop.name»>
 		«ELSEIF prop.value instanceof MapValueProperty»
 			<«prop.name»>
-				«propContents((prop.value as MapValueProperty).properties,importManager,skipController,skipIncludes)»
+				«propContents((prop.value as MapValueProperty).properties,importManager,true,skipController,skipIncludes)»
 			</«prop.name»>
 		«ELSEIF prop.value instanceof Element»
 			<«prop.name»>
@@ -208,7 +216,7 @@ class FXGraphGenerator implements IGenerator {
 			</«prop.type.shortName(importManager)».«prop.name»>
 		«ELSEIF prop.value instanceof MapValueProperty»
 			<«prop.type.shortName(importManager)».«prop.name»>
-				«propContents((prop.value as MapValueProperty).properties,importManager, skipController, skipIncludes)»
+				«propContents((prop.value as MapValueProperty).properties,importManager,true, skipController, skipIncludes)»
 			</«prop.type.shortName(importManager)».«prop.name»>
 		«ELSEIF prop.value instanceof Element»
 			<«prop.type.shortName(importManager)».«prop.name»>
