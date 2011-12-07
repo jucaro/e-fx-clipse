@@ -185,7 +185,7 @@ class FXGraphGenerator implements IGenerator {
 			«ENDIF»
 		«ELSEIF prop.value instanceof IncludeValueProperty»
 			<«prop.name»>
-				<fx:include source="«(prop.value as IncludeValueProperty).source»" />
+				<fx:include source="/«(prop.value as IncludeValueProperty).source.fullyQualifiedName.replaceAll("\\.","/")».fxml" />
 			</«prop.name»>
 		«ELSEIF prop.value instanceof CopyValueProperty»
 			<«prop.name»>
@@ -221,7 +221,7 @@ class FXGraphGenerator implements IGenerator {
 		«ELSEIF prop.value instanceof IncludeValueProperty»
 			«IF ! skipIncludes»
 				<«prop.type.shortName(importManager)».«prop.name»>
-					<fx:include source="«(prop.value as IncludeValueProperty).source»" />
+					<fx:include source="/«(prop.value as IncludeValueProperty).source.fullyQualifiedName.replaceAll("\\.","/")».fxml" />
 				</«prop.type.shortName(importManager)».«prop.name»>
 			«ENDIF»
 		«ELSEIF prop.value instanceof CopyValueProperty»
