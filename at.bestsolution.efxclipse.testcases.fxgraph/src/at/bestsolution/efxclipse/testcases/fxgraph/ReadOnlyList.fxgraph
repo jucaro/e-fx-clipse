@@ -1,0 +1,19 @@
+package at.bestsolution.efxclipse.testcases.fxgraph
+
+import javafx.scene.*
+import javafx.scene.shape.*
+import javafx.scene.layout.*
+
+component ReadOnlyList {
+	Group {
+		children : [ 
+			Rectangle id rectangle {
+				x : 10,
+				y : 10,
+				width : 320,
+				height : 240,
+				fill : "#ff0000"
+			}
+		]
+	}
+}

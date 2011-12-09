@@ -1,0 +1,18 @@
+package at.bestsolution.efxclipse.testcases.fxgraph
+
+import javafx.scene.layout.*
+import javafx.scene.control.*
+import javafx.scene.paint.*
+
+component ReadOnlyMap {
+	Button {  
+		properties : {
+			foo : Color {
+				red : 10,
+				green : 10,
+				blue : 10
+			},
+			bar : 456 
+		}
+	}
+}

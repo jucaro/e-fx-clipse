@@ -4,7 +4,7 @@ import javafx.scene.layout.*
 import at.bestsolution.efxclipse.testcases.fxgraph.*
 import at.bestsolution.efxclipse.testcases.fxgraph.inc.*
 
-component IncludeTest {
+component IncludeTest { 
 	VBox {
 		children : [
 			include Controller,

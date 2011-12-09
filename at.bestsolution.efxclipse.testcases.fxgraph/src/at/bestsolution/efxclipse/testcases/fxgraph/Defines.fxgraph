@@ -1,0 +1,24 @@
+package at.bestsolution.efxclipse.testcases.fxgraph
+
+import javafx.scene.layout.*
+import javafx.scene.control.*
+
+component TestDefines {
+	define ToggleGroup id myToggleGroup
+	VBox {
+		children : [
+			RadioButton {
+				text : "A",
+				toggleGroup : idref myToggleGroup
+			},
+			RadioButton {
+				text : "B",
+				toggleGroup : idref myToggleGroup
+			},
+			RadioButton {
+				text : "C",
+				toggleGroup : idref myToggleGroup
+			}
+		]
+	}
+}
