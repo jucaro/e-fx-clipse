@@ -29,6 +29,16 @@
             preferredPerspectives="org.eclipse.jdt.ui.JavaPerspective,org.eclipse.jdt.ui.JavaBrowsingPerspective,org.eclipse.jdt.ui.JavaHierarchyPerspective"
             project="true">
       </wizard>
+      <wizard
+            category="at.bestsolution.efxclipse.tooling"
+            class="at.bestsolution.efxclipse.tooling.jdt.ui.internal.wizard.JavaFXLibraryProjectWizard"
+            finalPerspective="org.eclipse.jdt.ui.JavaPerspective"
+            icon="icons/application_lightning.png"
+            id="at.bestsolution.efxclipse.tooling.jdt.ui.javafx"
+            name="%wizard.libname"
+            preferredPerspectives="org.eclipse.jdt.ui.JavaPerspective,org.eclipse.jdt.ui.JavaBrowsingPerspective,org.eclipse.jdt.ui.JavaHierarchyPerspective"
+            project="true">
+      </wizard>
       <category
             id="at.bestsolution.efxclipse.tooling"
             name="%category.name">
