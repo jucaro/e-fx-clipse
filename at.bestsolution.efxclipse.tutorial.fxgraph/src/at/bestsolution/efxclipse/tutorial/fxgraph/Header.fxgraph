@@ -1,0 +1,14 @@
+package at.bestsolution.efxclipse.tutorial.fxgraph
+
+import javafx.scene.layout.*
+import javafx.scene.control.*
+
+component Header {
+	BorderPane {
+		center : [
+			Label {
+				text : "Hello World Example"
+			}
+		]
+	}
+}

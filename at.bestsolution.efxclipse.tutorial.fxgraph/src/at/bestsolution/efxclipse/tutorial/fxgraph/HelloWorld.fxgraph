@@ -1,0 +1,15 @@
+package at.bestsolution.efxclipse.tutorial.fxgraph
+
+import javafx.scene.layout.*
+import javafx.scene.control.*
+import at.bestsolution.efxclipse.tutorial.fxgraph.*
+
+component HelloWorld controlledby HelloWorldController resourcefile "messages.properties" {
+	BorderPane {
+		top : include Header,
+		center : Button {
+			text : rstring "mybutton.label" ,
+			onAction : controllermethod clicked
+		}
+	}
+}
