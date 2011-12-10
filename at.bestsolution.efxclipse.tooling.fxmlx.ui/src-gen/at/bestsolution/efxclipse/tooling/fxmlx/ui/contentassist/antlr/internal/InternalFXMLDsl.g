@@ -427,6 +427,14 @@ rule__Content__Alternatives
 { after(grammarAccess.getContentAccess().getFullStopKeyword_4()); }
 )
 
+    |(
+{ before(grammarAccess.getContentAccess().getColonKeyword_5()); }
+
+	':' 
+
+{ after(grammarAccess.getContentAccess().getColonKeyword_5()); }
+)
+
 ;
 finally {
 	restoreStackSize(stackSize);

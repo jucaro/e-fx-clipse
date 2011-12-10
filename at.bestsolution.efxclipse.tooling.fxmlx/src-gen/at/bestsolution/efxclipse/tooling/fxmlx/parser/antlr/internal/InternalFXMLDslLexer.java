@@ -273,10 +273,10 @@ public class InternalFXMLDslLexer extends Lexer {
         try {
             int _type = RULE_ID;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.fxmlx/src-gen/at/bestsolution/efxclipse/tooling/fxmlx/parser/antlr/internal/InternalFXMLDsl.g:905:9: ( ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )* )
-            // ../at.bestsolution.efxclipse.tooling.fxmlx/src-gen/at/bestsolution/efxclipse/tooling/fxmlx/parser/antlr/internal/InternalFXMLDsl.g:905:11: ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
+            // ../at.bestsolution.efxclipse.tooling.fxmlx/src-gen/at/bestsolution/efxclipse/tooling/fxmlx/parser/antlr/internal/InternalFXMLDsl.g:912:9: ( ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )* )
+            // ../at.bestsolution.efxclipse.tooling.fxmlx/src-gen/at/bestsolution/efxclipse/tooling/fxmlx/parser/antlr/internal/InternalFXMLDsl.g:912:11: ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
             {
-            // ../at.bestsolution.efxclipse.tooling.fxmlx/src-gen/at/bestsolution/efxclipse/tooling/fxmlx/parser/antlr/internal/InternalFXMLDsl.g:905:11: ( '^' )?
+            // ../at.bestsolution.efxclipse.tooling.fxmlx/src-gen/at/bestsolution/efxclipse/tooling/fxmlx/parser/antlr/internal/InternalFXMLDsl.g:912:11: ( '^' )?
             int alt1=2;
             int LA1_0 = input.LA(1);
 
@@ -285,7 +285,7 @@ public class InternalFXMLDslLexer extends Lexer {
             }
             switch (alt1) {
                 case 1 :
-                    // ../at.bestsolution.efxclipse.tooling.fxmlx/src-gen/at/bestsolution/efxclipse/tooling/fxmlx/parser/antlr/internal/InternalFXMLDsl.g:905:11: '^'
+                    // ../at.bestsolution.efxclipse.tooling.fxmlx/src-gen/at/bestsolution/efxclipse/tooling/fxmlx/parser/antlr/internal/InternalFXMLDsl.g:912:11: '^'
                     {
                     match('^'); 
 
@@ -303,7 +303,7 @@ public class InternalFXMLDslLexer extends Lexer {
                 recover(mse);
                 throw mse;}
 
-            // ../at.bestsolution.efxclipse.tooling.fxmlx/src-gen/at/bestsolution/efxclipse/tooling/fxmlx/parser/antlr/internal/InternalFXMLDsl.g:905:40: ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
+            // ../at.bestsolution.efxclipse.tooling.fxmlx/src-gen/at/bestsolution/efxclipse/tooling/fxmlx/parser/antlr/internal/InternalFXMLDsl.g:912:40: ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
             loop2:
             do {
                 int alt2=2;
@@ -352,10 +352,10 @@ public class InternalFXMLDslLexer extends Lexer {
         try {
             int _type = RULE_STRING;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.fxmlx/src-gen/at/bestsolution/efxclipse/tooling/fxmlx/parser/antlr/internal/InternalFXMLDsl.g:907:13: ( ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' ) )
-            // ../at.bestsolution.efxclipse.tooling.fxmlx/src-gen/at/bestsolution/efxclipse/tooling/fxmlx/parser/antlr/internal/InternalFXMLDsl.g:907:15: ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
+            // ../at.bestsolution.efxclipse.tooling.fxmlx/src-gen/at/bestsolution/efxclipse/tooling/fxmlx/parser/antlr/internal/InternalFXMLDsl.g:914:13: ( ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' ) )
+            // ../at.bestsolution.efxclipse.tooling.fxmlx/src-gen/at/bestsolution/efxclipse/tooling/fxmlx/parser/antlr/internal/InternalFXMLDsl.g:914:15: ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
             {
-            // ../at.bestsolution.efxclipse.tooling.fxmlx/src-gen/at/bestsolution/efxclipse/tooling/fxmlx/parser/antlr/internal/InternalFXMLDsl.g:907:15: ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
+            // ../at.bestsolution.efxclipse.tooling.fxmlx/src-gen/at/bestsolution/efxclipse/tooling/fxmlx/parser/antlr/internal/InternalFXMLDsl.g:914:15: ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
             int alt5=2;
             int LA5_0 = input.LA(1);
 
@@ -373,10 +373,10 @@ public class InternalFXMLDslLexer extends Lexer {
             }
             switch (alt5) {
                 case 1 :
-                    // ../at.bestsolution.efxclipse.tooling.fxmlx/src-gen/at/bestsolution/efxclipse/tooling/fxmlx/parser/antlr/internal/InternalFXMLDsl.g:907:16: '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"'
+                    // ../at.bestsolution.efxclipse.tooling.fxmlx/src-gen/at/bestsolution/efxclipse/tooling/fxmlx/parser/antlr/internal/InternalFXMLDsl.g:914:16: '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"'
                     {
                     match('\"'); 
-                    // ../at.bestsolution.efxclipse.tooling.fxmlx/src-gen/at/bestsolution/efxclipse/tooling/fxmlx/parser/antlr/internal/InternalFXMLDsl.g:907:20: ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )*
+                    // ../at.bestsolution.efxclipse.tooling.fxmlx/src-gen/at/bestsolution/efxclipse/tooling/fxmlx/parser/antlr/internal/InternalFXMLDsl.g:914:20: ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )*
                     loop3:
                     do {
                         int alt3=3;
@@ -392,7 +392,7 @@ public class InternalFXMLDslLexer extends Lexer {
 
                         switch (alt3) {
                     	case 1 :
-                    	    // ../at.bestsolution.efxclipse.tooling.fxmlx/src-gen/at/bestsolution/efxclipse/tooling/fxmlx/parser/antlr/internal/InternalFXMLDsl.g:907:21: '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' )
+                    	    // ../at.bestsolution.efxclipse.tooling.fxmlx/src-gen/at/bestsolution/efxclipse/tooling/fxmlx/parser/antlr/internal/InternalFXMLDsl.g:914:21: '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' )
                     	    {
                     	    match('\\'); 
                     	    if ( input.LA(1)=='\"'||input.LA(1)=='\''||input.LA(1)=='\\'||input.LA(1)=='b'||input.LA(1)=='f'||input.LA(1)=='n'||input.LA(1)=='r'||(input.LA(1)>='t' && input.LA(1)<='u') ) {
@@ -408,7 +408,7 @@ public class InternalFXMLDslLexer extends Lexer {
                     	    }
                     	    break;
                     	case 2 :
-                    	    // ../at.bestsolution.efxclipse.tooling.fxmlx/src-gen/at/bestsolution/efxclipse/tooling/fxmlx/parser/antlr/internal/InternalFXMLDsl.g:907:66: ~ ( ( '\\\\' | '\"' ) )
+                    	    // ../at.bestsolution.efxclipse.tooling.fxmlx/src-gen/at/bestsolution/efxclipse/tooling/fxmlx/parser/antlr/internal/InternalFXMLDsl.g:914:66: ~ ( ( '\\\\' | '\"' ) )
                     	    {
                     	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='!')||(input.LA(1)>='#' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFF') ) {
                     	        input.consume();
@@ -433,10 +433,10 @@ public class InternalFXMLDslLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // ../at.bestsolution.efxclipse.tooling.fxmlx/src-gen/at/bestsolution/efxclipse/tooling/fxmlx/parser/antlr/internal/InternalFXMLDsl.g:907:86: '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\''
+                    // ../at.bestsolution.efxclipse.tooling.fxmlx/src-gen/at/bestsolution/efxclipse/tooling/fxmlx/parser/antlr/internal/InternalFXMLDsl.g:914:86: '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\''
                     {
                     match('\''); 
-                    // ../at.bestsolution.efxclipse.tooling.fxmlx/src-gen/at/bestsolution/efxclipse/tooling/fxmlx/parser/antlr/internal/InternalFXMLDsl.g:907:91: ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )*
+                    // ../at.bestsolution.efxclipse.tooling.fxmlx/src-gen/at/bestsolution/efxclipse/tooling/fxmlx/parser/antlr/internal/InternalFXMLDsl.g:914:91: ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )*
                     loop4:
                     do {
                         int alt4=3;
@@ -452,7 +452,7 @@ public class InternalFXMLDslLexer extends Lexer {
 
                         switch (alt4) {
                     	case 1 :
-                    	    // ../at.bestsolution.efxclipse.tooling.fxmlx/src-gen/at/bestsolution/efxclipse/tooling/fxmlx/parser/antlr/internal/InternalFXMLDsl.g:907:92: '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' )
+                    	    // ../at.bestsolution.efxclipse.tooling.fxmlx/src-gen/at/bestsolution/efxclipse/tooling/fxmlx/parser/antlr/internal/InternalFXMLDsl.g:914:92: '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' )
                     	    {
                     	    match('\\'); 
                     	    if ( input.LA(1)=='\"'||input.LA(1)=='\''||input.LA(1)=='\\'||input.LA(1)=='b'||input.LA(1)=='f'||input.LA(1)=='n'||input.LA(1)=='r'||(input.LA(1)>='t' && input.LA(1)<='u') ) {
@@ -468,7 +468,7 @@ public class InternalFXMLDslLexer extends Lexer {
                     	    }
                     	    break;
                     	case 2 :
-                    	    // ../at.bestsolution.efxclipse.tooling.fxmlx/src-gen/at/bestsolution/efxclipse/tooling/fxmlx/parser/antlr/internal/InternalFXMLDsl.g:907:137: ~ ( ( '\\\\' | '\\'' ) )
+                    	    // ../at.bestsolution.efxclipse.tooling.fxmlx/src-gen/at/bestsolution/efxclipse/tooling/fxmlx/parser/antlr/internal/InternalFXMLDsl.g:914:137: ~ ( ( '\\\\' | '\\'' ) )
                     	    {
                     	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='&')||(input.LA(1)>='(' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFF') ) {
                     	        input.consume();
@@ -511,10 +511,10 @@ public class InternalFXMLDslLexer extends Lexer {
         try {
             int _type = RULE_WS;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.fxmlx/src-gen/at/bestsolution/efxclipse/tooling/fxmlx/parser/antlr/internal/InternalFXMLDsl.g:909:9: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
-            // ../at.bestsolution.efxclipse.tooling.fxmlx/src-gen/at/bestsolution/efxclipse/tooling/fxmlx/parser/antlr/internal/InternalFXMLDsl.g:909:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
+            // ../at.bestsolution.efxclipse.tooling.fxmlx/src-gen/at/bestsolution/efxclipse/tooling/fxmlx/parser/antlr/internal/InternalFXMLDsl.g:916:9: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
+            // ../at.bestsolution.efxclipse.tooling.fxmlx/src-gen/at/bestsolution/efxclipse/tooling/fxmlx/parser/antlr/internal/InternalFXMLDsl.g:916:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
             {
-            // ../at.bestsolution.efxclipse.tooling.fxmlx/src-gen/at/bestsolution/efxclipse/tooling/fxmlx/parser/antlr/internal/InternalFXMLDsl.g:909:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
+            // ../at.bestsolution.efxclipse.tooling.fxmlx/src-gen/at/bestsolution/efxclipse/tooling/fxmlx/parser/antlr/internal/InternalFXMLDsl.g:916:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
             int cnt6=0;
             loop6:
             do {
@@ -568,8 +568,8 @@ public class InternalFXMLDslLexer extends Lexer {
         try {
             int _type = RULE_ANY_OTHER;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.fxmlx/src-gen/at/bestsolution/efxclipse/tooling/fxmlx/parser/antlr/internal/InternalFXMLDsl.g:911:16: ( . )
-            // ../at.bestsolution.efxclipse.tooling.fxmlx/src-gen/at/bestsolution/efxclipse/tooling/fxmlx/parser/antlr/internal/InternalFXMLDsl.g:911:18: .
+            // ../at.bestsolution.efxclipse.tooling.fxmlx/src-gen/at/bestsolution/efxclipse/tooling/fxmlx/parser/antlr/internal/InternalFXMLDsl.g:918:16: ( . )
+            // ../at.bestsolution.efxclipse.tooling.fxmlx/src-gen/at/bestsolution/efxclipse/tooling/fxmlx/parser/antlr/internal/InternalFXMLDsl.g:918:18: .
             {
             matchAny(); 
 
@@ -588,12 +588,12 @@ public class InternalFXMLDslLexer extends Lexer {
         try {
             int _type = RULE_ML_COMMENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.fxmlx/src-gen/at/bestsolution/efxclipse/tooling/fxmlx/parser/antlr/internal/InternalFXMLDsl.g:913:17: ( '<!--' ( options {greedy=false; } : . )* '-->' )
-            // ../at.bestsolution.efxclipse.tooling.fxmlx/src-gen/at/bestsolution/efxclipse/tooling/fxmlx/parser/antlr/internal/InternalFXMLDsl.g:913:19: '<!--' ( options {greedy=false; } : . )* '-->'
+            // ../at.bestsolution.efxclipse.tooling.fxmlx/src-gen/at/bestsolution/efxclipse/tooling/fxmlx/parser/antlr/internal/InternalFXMLDsl.g:920:17: ( '<!--' ( options {greedy=false; } : . )* '-->' )
+            // ../at.bestsolution.efxclipse.tooling.fxmlx/src-gen/at/bestsolution/efxclipse/tooling/fxmlx/parser/antlr/internal/InternalFXMLDsl.g:920:19: '<!--' ( options {greedy=false; } : . )* '-->'
             {
             match("<!--"); 
 
-            // ../at.bestsolution.efxclipse.tooling.fxmlx/src-gen/at/bestsolution/efxclipse/tooling/fxmlx/parser/antlr/internal/InternalFXMLDsl.g:913:26: ( options {greedy=false; } : . )*
+            // ../at.bestsolution.efxclipse.tooling.fxmlx/src-gen/at/bestsolution/efxclipse/tooling/fxmlx/parser/antlr/internal/InternalFXMLDsl.g:920:26: ( options {greedy=false; } : . )*
             loop7:
             do {
                 int alt7=2;
@@ -627,7 +627,7 @@ public class InternalFXMLDslLexer extends Lexer {
 
                 switch (alt7) {
             	case 1 :
-            	    // ../at.bestsolution.efxclipse.tooling.fxmlx/src-gen/at/bestsolution/efxclipse/tooling/fxmlx/parser/antlr/internal/InternalFXMLDsl.g:913:54: .
+            	    // ../at.bestsolution.efxclipse.tooling.fxmlx/src-gen/at/bestsolution/efxclipse/tooling/fxmlx/parser/antlr/internal/InternalFXMLDsl.g:920:54: .
             	    {
             	    matchAny(); 
 

@@ -805,6 +805,13 @@ ruleContent returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()
         $current.merge(kw);
         newLeafNode(kw, grammarAccess.getContentAccess().getFullStopKeyword_4()); 
     }
+
+    |
+	kw=':' 
+    {
+        $current.merge(kw);
+        newLeafNode(kw, grammarAccess.getContentAccess().getColonKeyword_5()); 
+    }
 )*
     ;
 finally {

@@ -430,12 +430,13 @@ public class FXMLDslGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cANY_OTHERTerminalRuleCall_2 = (RuleCall)cAlternatives.eContents().get(2);
 		private final RuleCall cWSTerminalRuleCall_3 = (RuleCall)cAlternatives.eContents().get(3);
 		private final Keyword cFullStopKeyword_4 = (Keyword)cAlternatives.eContents().get(4);
+		private final Keyword cColonKeyword_5 = (Keyword)cAlternatives.eContents().get(5);
 		
 		//Content hidden(ML_COMMENT):
-		//	(ID | STRING | ANY_OTHER | WS | ".")*;
+		//	(ID | STRING | ANY_OTHER | WS | "." | ":")*;
 		public ParserRule getRule() { return rule; }
 
-		//(ID | STRING | ANY_OTHER | WS | ".")*
+		//(ID | STRING | ANY_OTHER | WS | "." | ":")*
 		public Alternatives getAlternatives() { return cAlternatives; }
 
 		//ID
@@ -452,6 +453,9 @@ public class FXMLDslGrammarAccess extends AbstractGrammarElementFinder {
 
 		//"."
 		public Keyword getFullStopKeyword_4() { return cFullStopKeyword_4; }
+
+		//":"
+		public Keyword getColonKeyword_5() { return cColonKeyword_5; }
 	}
 
 	public class QualifiedNameElements extends AbstractParserRuleElementFinder {
@@ -613,7 +617,7 @@ public class FXMLDslGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//Content hidden(ML_COMMENT):
-	//	(ID | STRING | ANY_OTHER | WS | ".")*;
+	//	(ID | STRING | ANY_OTHER | WS | "." | ":")*;
 	public ContentElements getContentAccess() {
 		return (pContent != null) ? pContent : (pContent = new ContentElements());
 	}
