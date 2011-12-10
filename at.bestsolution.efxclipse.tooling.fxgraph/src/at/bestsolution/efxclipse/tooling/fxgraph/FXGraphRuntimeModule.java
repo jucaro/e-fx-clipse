@@ -3,6 +3,9 @@
  */
 package at.bestsolution.efxclipse.tooling.fxgraph;
 
+import org.eclipse.xtext.generator.OutputConfigurationProvider;
+
+import at.bestsolution.efxclipse.tooling.fxgraph.compiler.FXGraphOutputConfigurationProvider;
 import at.bestsolution.efxclipse.tooling.fxgraph.scoping.FXGraphQualifiedNameProvider;
 
 /**
@@ -16,5 +19,9 @@ public class FXGraphRuntimeModule extends at.bestsolution.efxclipse.tooling.fxgr
 	
 	public Class<? extends org.eclipse.xtext.naming.IQualifiedNameProvider> bindIQualifiedNameProvider() {
 		return FXGraphQualifiedNameProvider.class;
+	}
+	
+	public Class<? extends OutputConfigurationProvider> bindOutputConfigurationProvider() {
+		return FXGraphOutputConfigurationProvider.class;
 	}
 }
