@@ -7,6 +7,8 @@ import org.eclipse.jdt.core.IType;
 
 public class ElementDefinition {
 	private String name;
+	private String id;
+	
 	private IType jdtType;
 	private List<ValuePropertyDefinition> attributePropertyDefinitions = new ArrayList<ValuePropertyDefinition>();
 	private List<PropertyDefinition> elementPropertyDefinitions = new ArrayList<PropertyDefinition>();
@@ -14,6 +16,14 @@ public class ElementDefinition {
 	
 	public ElementDefinition(String name) {
 		this.name = name;
+	}
+	
+	public void setId(String id) {
+		this.id = id;
+	}
+	
+	public String getId() {
+		return id;
 	}
 	
 	public void addAttributePropertyDefinitions(ValuePropertyDefinition definition) {

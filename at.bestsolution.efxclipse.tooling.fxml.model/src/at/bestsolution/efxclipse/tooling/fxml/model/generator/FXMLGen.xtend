@@ -6,6 +6,7 @@ import at.bestsolution.efxclipse.tooling.fxml.model.PropertyDefinition
 import at.bestsolution.efxclipse.tooling.fxml.model.ValuePropertyDefinition
 import at.bestsolution.efxclipse.tooling.fxml.model.ListPropertyDefinition
 import at.bestsolution.efxclipse.tooling.fxml.model.MapPropertyDefinition
+import at.bestsolution.efxclipse.tooling.fxml.model.RootElementDefinition
 
 class FXMLGen {
 	def generate(FXMLDocumentDefinition definition) '''
@@ -15,11 +16,11 @@ class FXMLGen {
 		<?import «i.namespace»?>
 		«ENDFOR»
 		
-		«elementDef(definition.rootElement)»
+		«elementDef(definition.rootElement,true)»
 	'''
 	
-	def elementDef(ElementDefinition eDef) '''
-		<«eDef.name»>
+	def elementDef(ElementDefinition eDef, boolean root) '''
+		<«eDef.name»«IF root» xmlns:fx="http://javafx.com/fxml"«IF eDef instanceof RootElementDefinition && (eDef as RootElementDefinition).controller != null» fx:controller="«(eDef as RootElementDefinition).controller»"«ENDIF»«ENDIF»«IF eDef.id != null» fx:id="«eDef.id»"«ENDIF»«FOR a: eDef.attributePropertyDefinitions» «a.name»="«a.value»"«ENDFOR»>
 			«FOR p : eDef.staticPropertyDefinitions»
 			<«p.name»>
 				«propertyDef(p)»
@@ -37,7 +38,7 @@ class FXMLGen {
 		if( d instanceof ValuePropertyDefinition ) {
 			val v = d as ValuePropertyDefinition;
 			if( v.value instanceof ElementDefinition ) {
-				return elementDef(v.value as ElementDefinition);
+				return elementDef(v.value as ElementDefinition,false);
 			} else {
 				return v.value;	
 			}
@@ -61,7 +62,7 @@ class FXMLGen {
 	def listProp(ListPropertyDefinition lp) '''
 		«FOR o : lp.values»
 			«IF o instanceof ElementDefinition»
-				«elementDef(o as ElementDefinition)»
+				«elementDef(o as ElementDefinition,false)»
 			«ELSE»
 				«o»
 			«ENDIF»
