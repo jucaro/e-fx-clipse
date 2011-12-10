@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/at.bestsolution.efxclipse.tooling.fxmlx/src-gen"
+    editDirectory="/at.bestsolution.efxclipse.tooling.fxmlx.edit/src" editorDirectory="/at.bestsolution.efxclipse.tooling.fxmlx.editor/src"
+    modelPluginID="at.bestsolution.efxclipse.tooling.fxmlx" forceOverwrite="true"
+    modelName="FXMLDsl" updateClasspath="false" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    complianceLevel="5.0" copyrightFields="false" editPluginID="at.bestsolution.efxclipse.tooling.fxmlx.edit"
+    editorPluginID="at.bestsolution.efxclipse.tooling.fxmlx.editor">
+  <genPackages prefix="FXMLDsl" basePackage="at.bestsolution.efxclipse.tooling.fxmlx"
+      disposableProviderFactory="true" ecorePackage="FXMLDsl.ecore#/">
+    <genClasses ecoreClass="FXMLDsl.ecore#//FXML">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference FXMLDsl.ecore#//FXML/xmlDec"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference FXMLDsl.ecore#//FXML/processingInstructions"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference FXMLDsl.ecore#//FXML/rootElement"/>
+    </genClasses>
+    <genClasses ecoreClass="FXMLDsl.ecore#//XMLDec">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference FXMLDsl.ecore#//XMLDec/props"/>
+    </genClasses>
+    <genClasses ecoreClass="FXMLDsl.ecore#//ProcessingInstruction">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute FXMLDsl.ecore#//ProcessingInstruction/type"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute FXMLDsl.ecore#//ProcessingInstruction/importedNamespace"/>
+    </genClasses>
+    <genClasses ecoreClass="FXMLDsl.ecore#//ElementDefinition">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute FXMLDsl.ecore#//ElementDefinition/namespace"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute FXMLDsl.ecore#//ElementDefinition/name"/>
+    </genClasses>
+    <genClasses ecoreClass="FXMLDsl.ecore#//ContainerElementDefinition">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference FXMLDsl.ecore#//ContainerElementDefinition/properties"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference FXMLDsl.ecore#//ContainerElementDefinition/children"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute FXMLDsl.ecore#//ContainerElementDefinition/endnamespace"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute FXMLDsl.ecore#//ContainerElementDefinition/endname"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute FXMLDsl.ecore#//ContainerElementDefinition/content"/>
+    </genClasses>
+    <genClasses ecoreClass="FXMLDsl.ecore#//EmptyElementDefinition">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference FXMLDsl.ecore#//EmptyElementDefinition/props"/>
+    </genClasses>
+    <genClasses ecoreClass="FXMLDsl.ecore#//AttributePropertyDefinition">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute FXMLDsl.ecore#//AttributePropertyDefinition/namespace"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute FXMLDsl.ecore#//AttributePropertyDefinition/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute FXMLDsl.ecore#//AttributePropertyDefinition/value"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>
