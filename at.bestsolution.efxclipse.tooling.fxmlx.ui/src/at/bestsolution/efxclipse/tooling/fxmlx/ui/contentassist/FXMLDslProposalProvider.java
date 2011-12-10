@@ -3,10 +3,135 @@
 */
 package at.bestsolution.efxclipse.tooling.fxmlx.ui.contentassist;
 
-import at.bestsolution.efxclipse.tooling.fxmlx.ui.contentassist.AbstractFXMLDslProposalProvider;
+import java.util.ArrayList;
+import java.util.List;
+
+import org.eclipse.core.resources.IProject;
+import org.eclipse.core.resources.ResourcesPlugin;
+import org.eclipse.emf.common.util.URI;
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.jdt.core.IJavaProject;
+import org.eclipse.jdt.core.IType;
+import org.eclipse.jdt.core.JavaCore;
+import org.eclipse.jdt.core.JavaModelException;
+import org.eclipse.xtext.Assignment;
+import org.eclipse.xtext.ui.editor.contentassist.ContentAssistContext;
+import org.eclipse.xtext.ui.editor.contentassist.ICompletionProposalAcceptor;
+
+import at.bestsolution.efxclipse.tooling.fxgraph.ui.util.JDTHelper;
+import at.bestsolution.efxclipse.tooling.fxgraph.ui.util.JDTHelper.PrimitivValueProperty;
+import at.bestsolution.efxclipse.tooling.fxgraph.ui.util.JDTHelper.Property;
+import at.bestsolution.efxclipse.tooling.fxgraph.ui.util.JDTHelper.TypeData;
+import at.bestsolution.efxclipse.tooling.fxmlx.fXMLDsl.ContainerElementDefinition;
+import at.bestsolution.efxclipse.tooling.fxmlx.fXMLDsl.EmptyElementDefinition;
+import at.bestsolution.efxclipse.tooling.fxmlx.fXMLDsl.FXML;
+import at.bestsolution.efxclipse.tooling.fxmlx.fXMLDsl.ProcessingInstruction;
 /**
  * see http://www.eclipse.org/Xtext/documentation/latest/xtext.html#contentAssist on how to customize content assistant
  */
 public class FXMLDslProposalProvider extends AbstractFXMLDslProposalProvider {
+	
+	private JDTHelper helper;
 
+	public FXMLDslProposalProvider() {
+		this.helper = new JDTHelper();
+	}
+	
+	private IJavaProject getJavaProject(EObject model) {
+		// TODO Should we cache that?
+		URI uri = model.eResource().getURI();
+		IProject project = ResourcesPlugin.getWorkspace().getRoot()
+				.getProject(uri.segment(1));
+		return JavaCore.create(project);
+	}
+	
+	@Override
+	public void completeAttributePropertyDefinition_Name(EObject model,
+			Assignment assignment, ContentAssistContext context,
+			ICompletionProposalAcceptor acceptor) {
+		
+		String namespace = null;
+		String name = null;
+		
+		if( model instanceof ContainerElementDefinition ) {
+			ContainerElementDefinition e = (ContainerElementDefinition) model;
+			name = e.getName();
+			namespace = e.getNamespace();
+		} else if( model instanceof EmptyElementDefinition ) {
+			EmptyElementDefinition e = (EmptyElementDefinition) model;
+			name = e.getName();
+			namespace = e.getNamespace();
+		}
+		
+		if( namespace == null && name != null && Character.isUpperCase(name.charAt(0)) ) {
+			IJavaProject jProject = getJavaProject(model);
+			IType type = toJavaClass(name, (FXML) model.eResource().getContents().get(0), jProject);
+			
+			if (type != null) {
+				TypeData typeData = helper.getTypeData(jProject, type);
+				if( typeData != null ) {
+					for( Property p : typeData.properties ) {
+						if( p instanceof PrimitivValueProperty ) {
+							acceptor.accept(createCompletionProposal(p.name+"=\"\"", p.getDescription(), p.getIcon(), context));
+						}
+					}
+				}
+			}
+		}
+	}
+	
+	@Override
+	public void completeContainerElementDefinition_Children(EObject model,
+			Assignment assignment, ContentAssistContext context,
+			ICompletionProposalAcceptor acceptor) {
+		// TODO Auto-generated method stub
+		super.completeContainerElementDefinition_Children(model, assignment, context,
+				acceptor);
+	}
+	
+	private IType toJavaClass(String name, FXML fxml,
+			IJavaProject jProject) {
+		IType type = null;
+
+		for (String imp : getImports(fxml)) {
+			if (imp.endsWith("*")) {
+				try {
+					IType t = jProject.findType(imp.substring(0,
+							imp.length() - 1) + name);
+					if (t != null) {
+						return t;
+					}
+				} catch (JavaModelException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+			} else {
+				if (imp.endsWith(name)) {
+					try {
+						IType t = jProject.findType(imp);
+						if (t != null) {
+							return t;
+						}
+					} catch (JavaModelException e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					}
+				}
+			}
+		}
+
+		return type;
+	}
+
+	private List<String> getImports(FXML fxml) {
+		List<String> imports = new ArrayList<String>();
+
+		for( ProcessingInstruction p : fxml.getProcessingInstructions() ) {
+			if( p.getType().equals("import") ) {
+				imports.add(p.getImportedNamespace());
+			}
+		}
+		
+		return imports;
+	}
 }
