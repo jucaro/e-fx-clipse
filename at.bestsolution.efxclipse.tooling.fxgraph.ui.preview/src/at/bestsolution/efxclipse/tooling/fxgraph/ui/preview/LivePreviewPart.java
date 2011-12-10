@@ -285,6 +285,8 @@ public class LivePreviewPart extends ViewPart {
 //					System.setErr(new PrintStream(redirectedOut));
 					
 					FXMLLoader loader = new FXMLLoader();
+//					System.err.println(contentData.relativePath);
+					loader.setLocation(contentData.relativePath);
 					
 					if( contentData.resourceBundle != null ) {
 						FileInputStream in = null;
@@ -340,6 +342,7 @@ public class LivePreviewPart extends ViewPart {
 						
 						rootPane.getChildren().add(root);
 					} catch (Exception e) {
+						System.err.println(contentData.contents);
 						StringWriter sw = new StringWriter();
 						e.printStackTrace(new PrintWriter(sw));
 						exception = sw.toString();
@@ -440,12 +443,14 @@ public class LivePreviewPart extends ViewPart {
 		public List<String> cssFiles;
 		public String resourceBundle;
 		public List<URL> extraJarPath;
-
-		public ContentData(String contents, List<String> cssFiles, String resourceBundle, List<URL> extraJarPath) {
+		public URL relativePath;
+		
+		public ContentData(String contents, List<String> cssFiles, String resourceBundle, List<URL> extraJarPath, URL relativePath) {
 			this.contents = contents;
 			this.cssFiles = new ArrayList<String>(cssFiles);
 			this.resourceBundle = resourceBundle;
 			this.extraJarPath = extraJarPath;
+			this.relativePath = relativePath;
 		}
 	}
 }

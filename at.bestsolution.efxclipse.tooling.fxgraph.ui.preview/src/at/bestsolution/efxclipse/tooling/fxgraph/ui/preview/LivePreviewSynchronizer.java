@@ -341,10 +341,23 @@ public class LivePreviewSynchronizer implements IPartListener,
 						resourcePropertiesFile = f.getAbsolutePath();
 					}
 				}
+				
+				URL url = null;
+				Path path = new Path(uri.toPlatformString(true));
+				IWorkspaceRoot root = jp.getProject().getWorkspace().getRoot();
+				IFolder file = root.getFolder(path.removeLastSegments(1));
+				if( file.exists() ) {
+					try {
+						url = file.getLocation().toFile().getAbsoluteFile().toURI().toURL();
+					} catch (MalformedURLException e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					}
+				}
 
 				return new ContentData(generator.doGeneratePreview(resource,
 						(!preference.getBoolean(PREF_LOAD_CONTROLLER, false)) && (!pluginProject),true), // TODO Can we make includes work??
-						l, resourcePropertiesFile, extraPaths);
+						l, resourcePropertiesFile, extraPaths,url);
 			}
 		}
 
