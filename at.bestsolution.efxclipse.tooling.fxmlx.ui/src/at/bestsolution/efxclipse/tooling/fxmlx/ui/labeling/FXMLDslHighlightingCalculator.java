@@ -18,7 +18,6 @@ import at.bestsolution.efxclipse.tooling.fxmlx.fXMLDsl.ProcessingInstruction;
 
 public class FXMLDslHighlightingCalculator implements ISemanticHighlightingCalculator {
 	
-	@Override
 	public void provideHighlightingFor(XtextResource resource,
 			IHighlightedPositionAcceptor acceptor) {
 		if( resource == null ) {
