@@ -25,5 +25,6 @@ Import-Package: org.apache.log4j,
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Export-Package: at.bestsolution.efxclipse.tooling.fxgraph.ui.contentassist.antlr,
  at.bestsolution.efxclipse.tooling.fxgraph.ui.internal,
- at.bestsolution.efxclipse.tooling.fxgraph.ui.util
+ at.bestsolution.efxclipse.tooling.fxgraph.ui.util,
+ at.bestsolution.efxclipse.tooling.fxgraph.ui.contentassist
 Bundle-Activator: at.bestsolution.efxclipse.tooling.fxgraph.ui.internal.FXGraphActivator
