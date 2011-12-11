@@ -20,7 +20,7 @@ public class FXGraphOutputConfigurationProvider extends
 		defaultOutput.setOverrideExistingResources(true);
 		defaultOutput.setCreateOutputDirectory(true);
 		defaultOutput.setCanClearOutputDirectory(false);
-		defaultOutput.setCleanUpDerivedResources(true);
+		defaultOutput.setCleanUpDerivedResources(false);
 		defaultOutput.setSetDerivedProperty(false);
 		return newHashSet(defaultOutput);
 	}
