@@ -16,8 +16,8 @@ Require-Bundle: at.bestsolution.efxclipse.tooling.fxmlx;visibility:=reexport,
  org.eclipse.xtext.common.types.ui,
  org.eclipse.xtext.ui.codetemplates.ui,
  org.eclipse.compare,
- org.eclipse.jdt.core;bundle-version="3.8.0",
- at.bestsolution.efxclipse.tooling.fxgraph.ui;bundle-version="0.0.9"
+ org.eclipse.jdt.core;bundle-version="3.7.0",
+ at.bestsolution.efxclipse.tooling.fxgraph.ui
 Import-Package: org.apache.log4j,
  org.apache.commons.logging
 Bundle-RequiredExecutionEnvironment: J2SE-1.5
