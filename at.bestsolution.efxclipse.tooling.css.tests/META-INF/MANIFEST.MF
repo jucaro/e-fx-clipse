@@ -2,11 +2,11 @@ Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: %Bundle-Name
 Bundle-Vendor: %Bundle-Vendor
-Bundle-Version: 0.0.8.qualifier
+Bundle-Version: 0.0.9.qualifier
 Bundle-SymbolicName: at.bestsolution.efxclipse.tooling.css.tests; singleton:=true
 Bundle-ActivationPolicy: lazy
-Require-Bundle: at.bestsolution.efxclipse.tooling.css;bundle-version="0.0.8",
- at.bestsolution.efxclipse.tooling.css.ui;bundle-version="0.0.8",
+Require-Bundle: at.bestsolution.efxclipse.tooling.css;bundle-version="0.0.9",
+ at.bestsolution.efxclipse.tooling.css.ui;bundle-version="0.0.9",
  org.eclipse.core.runtime,
  org.eclipse.xtext,
  org.eclipse.xtext.junit4,

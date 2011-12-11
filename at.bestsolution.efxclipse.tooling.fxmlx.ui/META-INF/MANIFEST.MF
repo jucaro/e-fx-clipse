@@ -1,8 +1,8 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
-Bundle-Name: at.bestsolution.efxclipse.tooling.fxmlx.ui
-Bundle-Vendor: My Company
-Bundle-Version: 1.0.0
+Bundle-Name: %Bundle-Name
+Bundle-Vendor: %Bundle-Vendor
+Bundle-Version: 0.0.9.qualifier
 Bundle-SymbolicName: at.bestsolution.efxclipse.tooling.fxmlx.ui; singleton:=true
 Bundle-ActivationPolicy: lazy
 Require-Bundle: at.bestsolution.efxclipse.tooling.fxmlx;visibility:=reexport,
@@ -17,7 +17,7 @@ Require-Bundle: at.bestsolution.efxclipse.tooling.fxmlx;visibility:=reexport,
  org.eclipse.xtext.ui.codetemplates.ui,
  org.eclipse.compare,
  org.eclipse.jdt.core;bundle-version="3.8.0",
- at.bestsolution.efxclipse.tooling.fxgraph.ui;bundle-version="0.0.8"
+ at.bestsolution.efxclipse.tooling.fxgraph.ui;bundle-version="0.0.9"
 Import-Package: org.apache.log4j,
  org.apache.commons.logging
 Bundle-RequiredExecutionEnvironment: J2SE-1.5
