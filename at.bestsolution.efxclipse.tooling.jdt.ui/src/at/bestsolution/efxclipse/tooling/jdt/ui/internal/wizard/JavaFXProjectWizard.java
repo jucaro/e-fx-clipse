@@ -20,6 +20,8 @@ import org.eclipse.core.runtime.IExecutableExtension;
 import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.core.runtime.NullProgressMonitor;
 import org.eclipse.core.runtime.Path;
+import org.eclipse.core.runtime.preferences.IEclipsePreferences;
+import org.eclipse.core.runtime.preferences.InstanceScope;
 import org.eclipse.jdt.core.IJavaElement;
 import org.eclipse.jdt.internal.ui.JavaPlugin;
 import org.eclipse.jdt.internal.ui.JavaPluginImages;
@@ -29,7 +31,9 @@ import org.eclipse.jdt.internal.ui.wizards.NewElementWizard;
 import org.eclipse.jdt.internal.ui.wizards.NewWizardMessages;
 import org.eclipse.jdt.ui.IPackagesViewPart;
 import org.eclipse.jdt.ui.wizards.NewJavaProjectWizardPageOne;
+import org.eclipse.swt.SWT;
 import org.eclipse.swt.widgets.Display;
+import org.eclipse.swt.widgets.MessageBox;
 import org.eclipse.swt.widgets.Shell;
 import org.eclipse.ui.IWorkbenchPage;
 import org.eclipse.ui.IWorkbenchPart;
@@ -37,6 +41,9 @@ import org.eclipse.ui.IWorkbenchWindow;
 import org.eclipse.ui.IWorkingSet;
 import org.eclipse.ui.PlatformUI;
 import org.eclipse.ui.wizards.newresource.BasicNewProjectResourceWizard;
+
+import at.bestsolution.efxclipse.tooling.jdt.core.internal.JavaFXCorePlugin;
+import at.bestsolution.efxclipse.tooling.jdt.core.internal.JavaFXPreferencesConstants;
 
 @SuppressWarnings("restriction")
 public class JavaFXProjectWizard extends NewElementWizard implements IExecutableExtension {
@@ -57,6 +64,16 @@ public class JavaFXProjectWizard extends NewElementWizard implements IExecutable
 
 		fFirstPage= pageOne;
 		fSecondPage= pageTwo;
+		
+		IEclipsePreferences pref = InstanceScope.INSTANCE.getNode(JavaFXCorePlugin.PLUGIN_ID);
+		String dir = pref.get(JavaFXPreferencesConstants.JAVAFX_DIR,"");
+		
+		if( dir.isEmpty() ) {
+			MessageBox box = new MessageBox(PlatformUI.getWorkbench().getActiveWorkbenchWindow().getShell(),SWT.ICON_ERROR);
+			box.setText("JavaFX not configured");
+			box.setMessage("It looks like JavaFX is not configured appropriately. Please configure the SDK location in the Preferences before proceeding.");
+			box.open();
+		}
 	}
 
 	/* (non-Javadoc)
