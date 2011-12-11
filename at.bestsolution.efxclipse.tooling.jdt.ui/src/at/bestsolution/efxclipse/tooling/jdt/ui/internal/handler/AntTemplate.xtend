@@ -1,10 +1,8 @@
 package at.bestsolution.efxclipse.tooling.jdt.ui.internal.handler
 
-import java.util.Properties
-import java.util.Set
-import java.util.Map
-import java.util.Collection
 import java.io.File
+import java.util.Collection
+import java.util.Map
 
 class AntTemplate {
 	def generateAnt(Map<String,Object> properties) {
