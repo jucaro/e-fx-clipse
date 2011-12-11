@@ -66,7 +66,7 @@ public class JavaFXLibraryProjectWizard extends NewElementWizard implements IExe
 		
 		if( dir.isEmpty() ) {
 			MessageBox box = new MessageBox(PlatformUI.getWorkbench().getActiveWorkbenchWindow().getShell(),SWT.ICON_ERROR);
-			box.setText("JavaFX not configured");
+			box.setText("JavaFX SDK not configured");
 			box.setMessage("It looks like JavaFX is not configured appropriately. Please configure the SDK location in the Preferences before proceeding.");
 			box.open();
 		}
