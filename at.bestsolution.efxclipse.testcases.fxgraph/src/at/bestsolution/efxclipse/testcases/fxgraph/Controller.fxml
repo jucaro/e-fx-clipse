@@ -10,7 +10,7 @@
 <BorderPane xmlns:fx="http://javafx.com/fxml" fx:controller="at.bestsolution.efxclipse.testcases.fxgraph.MyController">
 	
 	<center>
-		<Button> 
+		<Button onAction="#clicked"> 
 			<text>Hello World</text>
 		</Button>
 	</center>
