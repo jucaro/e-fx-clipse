@@ -2,7 +2,7 @@
 <feature
       id="at.bestsolution.efxclipse.tooling.feature"
       label="FX Tooling"
-      version="0.0.8.qualifier"
+      version="0.0.9.qualifier"
       provider-name="BestSolution.at">
 
    <description url="https://github.com/tomsontom/e-fx-clipse/wiki">
@@ -109,7 +109,7 @@ This Agreement is governed by the laws of the State of New York and the intellec
    </license>
 
    <requires>
-      <import feature="org.eclipse.xtext.sdk" version="2.1.0" match="greaterOrEqual"/>
+      <import feature="org.eclipse.xtext.sdk" version="2.2.0" match="greaterOrEqual"/>
    </requires>
 
    <plugin
@@ -176,13 +176,6 @@ This Agreement is governed by the laws of the State of New York and the intellec
          unpack="false"/>
 
    <plugin
-         id="at.bestsolution.efxclipse.tooling.fxml"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
-
-   <plugin
          id="at.bestsolution.efxclipse.tooling.fxgraph.ui.preview"
          download-size="0"
          install-size="0"
@@ -202,6 +195,20 @@ This Agreement is governed by the laws of the State of New York and the intellec
          install-size="0"
          version="0.0.0"
          fragment="true"
+         unpack="false"/>
+
+   <plugin
+         id="at.bestsolution.efxclipse.tooling.fxmlx"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="at.bestsolution.efxclipse.tooling.fxmlx.ui"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
          unpack="false"/>
 
 </feature>
