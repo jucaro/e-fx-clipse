@@ -21,19 +21,13 @@ import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.jdt.core.Flags;
 import org.eclipse.jdt.core.IAnnotation;
-import org.eclipse.jdt.core.IJavaElement;
 import org.eclipse.jdt.core.IJavaProject;
 import org.eclipse.jdt.core.IMethod;
 import org.eclipse.jdt.core.IType;
 import org.eclipse.jdt.core.JavaCore;
 import org.eclipse.jdt.core.JavaModelException;
 import org.eclipse.jdt.core.Signature;
-import org.eclipse.jdt.core.dom.AST;
-import org.eclipse.jdt.core.dom.ASTParser;
-import org.eclipse.jdt.core.dom.IBinding;
-import org.eclipse.jdt.core.dom.ITypeBinding;
 import org.eclipse.jdt.core.search.IJavaSearchConstants;
-import org.eclipse.jdt.internal.corext.dom.TypeRules;
 import org.eclipse.jdt.internal.corext.util.JavaModelUtil;
 import org.eclipse.jface.resource.JFaceResources;
 import org.eclipse.jface.viewers.StyledString;
@@ -43,6 +37,7 @@ import org.eclipse.xtext.RuleCall;
 import org.eclipse.xtext.common.types.JvmType;
 import org.eclipse.xtext.common.types.JvmTypeReference;
 import org.eclipse.xtext.common.types.TypesPackage;
+import org.eclipse.xtext.common.types.access.IJvmTypeProvider;
 import org.eclipse.xtext.common.types.util.jdt.IJavaElementFinder;
 import org.eclipse.xtext.common.types.xtext.ui.ITypesProposalProvider;
 import org.eclipse.xtext.ui.editor.contentassist.ContentAssistContext;
@@ -51,6 +46,7 @@ import org.eclipse.xtext.ui.editor.contentassist.ICompletionProposalAcceptor;
 import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.BindValueProperty;
 import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.ComponentDefinition;
 import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.Element;
+import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.ListValueProperty;
 import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.Model;
 import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.ResourceValueProperty;
 import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.StaticValueProperty;
@@ -68,6 +64,7 @@ import com.google.inject.Inject;
  * http://www.eclipse.org/Xtext/documentation/latest/xtext.html#contentAssist on
  * how to customize content assistant
  */
+@SuppressWarnings("restriction")
 public class FXGraphProposalProvider extends AbstractFXGraphProposalProvider {
 
 	private static final String METHOD_PRIVATE_KEY = FXGraphProposalProvider.class.getName() + ".METHOD_PRIVATE";
@@ -82,7 +79,13 @@ public class FXGraphProposalProvider extends AbstractFXGraphProposalProvider {
 
 	@Inject
 	private IJavaElementFinder javaElementFinder;
+	
+	@Inject
+	private ITypesProposalProvider typeProposalProviders;
 
+	@Inject 
+	private IJvmTypeProvider.Factory jdtTypeProvider;
+	
 	static {
 		JFaceResources.getImageRegistry().put(METHOD_PRIVATE_KEY, FXGraphActivator.imageDescriptorFromPlugin("at.bestsolution.efxclipse.tooling.fxgraph.ui", "/icons/methpri_obj.gif"));
 		JFaceResources.getImageRegistry().put(METHOD_DEFAULT_KEY, FXGraphActivator.imageDescriptorFromPlugin("at.bestsolution.efxclipse.tooling.fxgraph.ui", "/icons/methdef_obj.gif"));
@@ -435,15 +438,51 @@ public class FXGraphProposalProvider extends AbstractFXGraphProposalProvider {
 				for (Property jdtProp : typeData.properties) {
 					if (jdtProp.name.equals(p.getName())) {
 						type = jp.findType(Signature.toString(jdtProp.method.getReturnType()));
+						break;
 					}
 				}
 
-				completeJavaTypes(context, TypesPackage.Literals.JVM_PARAMETERIZED_TYPE_REFERENCE__TYPE, new AssignableFilter(jp, type), acceptor);
-
+				if( type != null ) {
+					JvmType superType = jdtTypeProvider.createTypeProvider(model.eResource().getResourceSet()).findTypeByName(type.getFullyQualifiedName());
+					
+					if( superType != null) {
+						typeProposalProviders.createSubTypeProposals(superType, this, context, TypesPackage.Literals.JVM_PARAMETERIZED_TYPE_REFERENCE__TYPE, acceptor);	
+					}
+				}
 			} catch (JavaModelException e1) {
 				// TODO Auto-generated catch block
 				e1.printStackTrace();
 			}
+		} else if( model instanceof Element && model.eContainer() instanceof ListValueProperty && model.eContainer().eContainer() instanceof at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.Property && model.eContainer().eContainer().eContainer() instanceof Element ) {
+			final IJavaProject jp = getJavaProject(model);
+			at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.Property p = (at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.Property) model.eContainer().eContainer();
+			Element e = (Element) model.eContainer().eContainer().eContainer();
+			
+			try {
+				TypeData typeData = helper.getTypeData(jp, jp.findType(e.getType().getQualifiedName()));
+				IType type = null;
+
+				for (Property jdtProp : typeData.properties) {
+					if (jdtProp.name.equals(p.getName())) {
+						String[] t = Signature.getTypeArguments(jdtProp.method.getReturnType());
+						if( t.length > 0 ) {
+							type = jp.findType(Signature.toString(t[0]));
+						}
+						break;
+					}
+				}
+
+				if( type != null ) {
+					JvmType superType = jdtTypeProvider.createTypeProvider(model.eResource().getResourceSet()).findTypeByName(type.getFullyQualifiedName());
+					if( type != null ) {
+						typeProposalProviders.createSubTypeProposals(superType, this, context, TypesPackage.Literals.JVM_PARAMETERIZED_TYPE_REFERENCE__TYPE, acceptor);		
+					}
+				}
+			} catch (JavaModelException e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			}
+			
 		} else {
 			super.completeJvmParameterizedTypeReference_Type(model, assignment, context, acceptor);
 		}
