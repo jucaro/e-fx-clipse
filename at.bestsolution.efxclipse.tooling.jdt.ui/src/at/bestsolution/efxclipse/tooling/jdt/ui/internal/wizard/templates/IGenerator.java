@@ -20,5 +20,5 @@ import at.bestsolution.efxclipse.tooling.jdt.ui.internal.wizard.templates.model.
  *
  */
 public interface IGenerator<O extends JavaClass> {
-	public StringConcatenation generateContent(O clazzDef);
+	public CharSequence generateContent(O clazzDef);
 }
