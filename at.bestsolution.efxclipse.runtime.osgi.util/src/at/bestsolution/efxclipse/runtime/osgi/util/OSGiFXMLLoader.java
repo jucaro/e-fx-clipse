@@ -59,7 +59,7 @@ public class OSGiFXMLLoader {
 			
 			FXMLLoader loader = new FXMLLoader();
 			loader.setLocation(url);
-			loader.setBuilderFactory(new JavaFXBuilderFactory());
+			loader.setBuilderFactory(new JavaFXBuilderFactory(false));
 			in = url.openStream();
 			O value = (O) loader.load(in);
 			in.close();

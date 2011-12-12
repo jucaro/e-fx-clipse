@@ -14,7 +14,7 @@ public class InjectingFXMLLoader {
 	public static <N> N loadFXML(Injector injector, URL url) throws IOException {
 		FXMLLoader loader = new FXMLLoader();
 		loader.setLocation(url);
-		loader.setBuilderFactory(new JavaFXBuilderFactory());
+		loader.setBuilderFactory(new JavaFXBuilderFactory(false));
 		InputStream in = url.openStream();
 		N value = (N) loader.load(in);
 		in.close();
