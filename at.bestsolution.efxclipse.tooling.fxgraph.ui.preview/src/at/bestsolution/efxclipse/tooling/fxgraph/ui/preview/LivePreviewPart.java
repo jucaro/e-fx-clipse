@@ -4,11 +4,9 @@ import java.awt.BorderLayout;
 import java.awt.Frame;
 import java.awt.Panel;
 import java.io.ByteArrayInputStream;
-import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
-import java.io.PrintStream;
 import java.io.PrintWriter;
 import java.io.StringWriter;
 import java.net.URL;
@@ -58,7 +56,6 @@ import org.osgi.service.prefs.BackingStoreException;
 
 import at.bestsolution.efxclipse.runtime.panels.FillLayoutPane;
 import at.bestsolution.efxclipse.tooling.fxgraph.ui.preview.bundle.Activator;
-import at.bestsolution.efxclipse.tooling.fxgraph.ui.util.RelativeFileLocator;
 
 import com.google.inject.Inject;
 import com.sun.javafx.css.StyleManager;
