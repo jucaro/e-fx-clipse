@@ -31,7 +31,8 @@ public class FXGraphFormatter extends AbstractDeclarativeFormatter {
 		c.setLinewrap(1, 2, 3).around(f.getImportRule());
 		c.setLinewrap(1, 2, 3).before(f.getElementRule());
 		c.setLinewrap(1, 2, 3).before(f.getPropertyRule());
-		c.setLinewrap(1, 2, 3).before(f.getElementAccess().getRightCurlyBracketKeyword_3_2());
+		c.setLinewrap(1, 2, 3).before(f.getElementAccess().getRightCurlyBracketKeyword_1_1_3());
+		c.setLinewrap(1, 2, 3).before(f.getElementAccess().getRightCurlyBracketKeyword_1_2_6());
 		c.setLinewrap(1, 2, 3).before(f.getListValuePropertyAccess().getRightSquareBracketKeyword_3());
 		c.setLinewrap(1, 2, 3).before(f.getComponentDefinitionAccess().getRightCurlyBracketKeyword_10());
 		c.setLinewrap(1, 2, 3).before(f.getMapValuePropertyAccess().getRightCurlyBracketKeyword_3());

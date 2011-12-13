@@ -38,10 +38,11 @@ import org.eclipse.xtext.common.types.JvmTypeReference;
  * <ul>
  *   <li>{@link at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.impl.ElementImpl#getType <em>Type</em>}</li>
  *   <li>{@link at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.impl.ElementImpl#getValue <em>Value</em>}</li>
- *   <li>{@link at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.impl.ElementImpl#getFactory <em>Factory</em>}</li>
  *   <li>{@link at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.impl.ElementImpl#getName <em>Name</em>}</li>
  *   <li>{@link at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.impl.ElementImpl#getProperties <em>Properties</em>}</li>
  *   <li>{@link at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.impl.ElementImpl#getStaticProperties <em>Static Properties</em>}</li>
+ *   <li>{@link at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.impl.ElementImpl#getFactory <em>Factory</em>}</li>
+ *   <li>{@link at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.impl.ElementImpl#getValues <em>Values</em>}</li>
  * </ul>
  * </p>
  *
@@ -68,26 +69,6 @@ public class ElementImpl extends SingleValuePropertyImpl implements Element
    * @ordered
    */
   protected SimpleValueProperty value;
-
-  /**
-   * The default value of the '{@link #getFactory() <em>Factory</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getFactory()
-   * @generated
-   * @ordered
-   */
-  protected static final String FACTORY_EDEFAULT = null;
-
-  /**
-   * The cached value of the '{@link #getFactory() <em>Factory</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getFactory()
-   * @generated
-   * @ordered
-   */
-  protected String factory = FACTORY_EDEFAULT;
 
   /**
    * The default value of the '{@link #getName() <em>Name</em>}' attribute.
@@ -128,6 +109,36 @@ public class ElementImpl extends SingleValuePropertyImpl implements Element
    * @ordered
    */
   protected EList<StaticValueProperty> staticProperties;
+
+  /**
+   * The default value of the '{@link #getFactory() <em>Factory</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getFactory()
+   * @generated
+   * @ordered
+   */
+  protected static final String FACTORY_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getFactory() <em>Factory</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getFactory()
+   * @generated
+   * @ordered
+   */
+  protected String factory = FACTORY_EDEFAULT;
+
+  /**
+   * The cached value of the '{@link #getValues() <em>Values</em>}' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getValues()
+   * @generated
+   * @ordered
+   */
+  protected EList<Element> values;
 
   /**
    * <!-- begin-user-doc -->
@@ -251,29 +262,6 @@ public class ElementImpl extends SingleValuePropertyImpl implements Element
    * <!-- end-user-doc -->
    * @generated
    */
-  public String getFactory()
-  {
-    return factory;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setFactory(String newFactory)
-  {
-    String oldFactory = factory;
-    factory = newFactory;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, FXGraphPackage.ELEMENT__FACTORY, oldFactory, factory));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   public String getName()
   {
     return name;
@@ -325,6 +313,43 @@ public class ElementImpl extends SingleValuePropertyImpl implements Element
    * <!-- end-user-doc -->
    * @generated
    */
+  public String getFactory()
+  {
+    return factory;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setFactory(String newFactory)
+  {
+    String oldFactory = factory;
+    factory = newFactory;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, FXGraphPackage.ELEMENT__FACTORY, oldFactory, factory));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EList<Element> getValues()
+  {
+    if (values == null)
+    {
+      values = new EObjectContainmentEList<Element>(Element.class, this, FXGraphPackage.ELEMENT__VALUES);
+    }
+    return values;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   @Override
   public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
   {
@@ -338,6 +363,8 @@ public class ElementImpl extends SingleValuePropertyImpl implements Element
         return ((InternalEList<?>)getProperties()).basicRemove(otherEnd, msgs);
       case FXGraphPackage.ELEMENT__STATIC_PROPERTIES:
         return ((InternalEList<?>)getStaticProperties()).basicRemove(otherEnd, msgs);
+      case FXGraphPackage.ELEMENT__VALUES:
+        return ((InternalEList<?>)getValues()).basicRemove(otherEnd, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -356,14 +383,16 @@ public class ElementImpl extends SingleValuePropertyImpl implements Element
         return getType();
       case FXGraphPackage.ELEMENT__VALUE:
         return getValue();
-      case FXGraphPackage.ELEMENT__FACTORY:
-        return getFactory();
       case FXGraphPackage.ELEMENT__NAME:
         return getName();
       case FXGraphPackage.ELEMENT__PROPERTIES:
         return getProperties();
       case FXGraphPackage.ELEMENT__STATIC_PROPERTIES:
         return getStaticProperties();
+      case FXGraphPackage.ELEMENT__FACTORY:
+        return getFactory();
+      case FXGraphPackage.ELEMENT__VALUES:
+        return getValues();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -385,9 +414,6 @@ public class ElementImpl extends SingleValuePropertyImpl implements Element
       case FXGraphPackage.ELEMENT__VALUE:
         setValue((SimpleValueProperty)newValue);
         return;
-      case FXGraphPackage.ELEMENT__FACTORY:
-        setFactory((String)newValue);
-        return;
       case FXGraphPackage.ELEMENT__NAME:
         setName((String)newValue);
         return;
@@ -398,6 +424,13 @@ public class ElementImpl extends SingleValuePropertyImpl implements Element
       case FXGraphPackage.ELEMENT__STATIC_PROPERTIES:
         getStaticProperties().clear();
         getStaticProperties().addAll((Collection<? extends StaticValueProperty>)newValue);
+        return;
+      case FXGraphPackage.ELEMENT__FACTORY:
+        setFactory((String)newValue);
+        return;
+      case FXGraphPackage.ELEMENT__VALUES:
+        getValues().clear();
+        getValues().addAll((Collection<? extends Element>)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -419,9 +452,6 @@ public class ElementImpl extends SingleValuePropertyImpl implements Element
       case FXGraphPackage.ELEMENT__VALUE:
         setValue((SimpleValueProperty)null);
         return;
-      case FXGraphPackage.ELEMENT__FACTORY:
-        setFactory(FACTORY_EDEFAULT);
-        return;
       case FXGraphPackage.ELEMENT__NAME:
         setName(NAME_EDEFAULT);
         return;
@@ -430,6 +460,12 @@ public class ElementImpl extends SingleValuePropertyImpl implements Element
         return;
       case FXGraphPackage.ELEMENT__STATIC_PROPERTIES:
         getStaticProperties().clear();
+        return;
+      case FXGraphPackage.ELEMENT__FACTORY:
+        setFactory(FACTORY_EDEFAULT);
+        return;
+      case FXGraphPackage.ELEMENT__VALUES:
+        getValues().clear();
         return;
     }
     super.eUnset(featureID);
@@ -449,14 +485,16 @@ public class ElementImpl extends SingleValuePropertyImpl implements Element
         return type != null;
       case FXGraphPackage.ELEMENT__VALUE:
         return value != null;
-      case FXGraphPackage.ELEMENT__FACTORY:
-        return FACTORY_EDEFAULT == null ? factory != null : !FACTORY_EDEFAULT.equals(factory);
       case FXGraphPackage.ELEMENT__NAME:
         return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
       case FXGraphPackage.ELEMENT__PROPERTIES:
         return properties != null && !properties.isEmpty();
       case FXGraphPackage.ELEMENT__STATIC_PROPERTIES:
         return staticProperties != null && !staticProperties.isEmpty();
+      case FXGraphPackage.ELEMENT__FACTORY:
+        return FACTORY_EDEFAULT == null ? factory != null : !FACTORY_EDEFAULT.equals(factory);
+      case FXGraphPackage.ELEMENT__VALUES:
+        return values != null && !values.isEmpty();
     }
     return super.eIsSet(featureID);
   }
@@ -472,10 +510,10 @@ public class ElementImpl extends SingleValuePropertyImpl implements Element
     if (eIsProxy()) return super.toString();
 
     StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (factory: ");
-    result.append(factory);
-    result.append(", name: ");
+    result.append(" (name: ");
     result.append(name);
+    result.append(", factory: ");
+    result.append(factory);
     result.append(')');
     return result.toString();
   }

@@ -301,46 +301,70 @@ public class FXGraphGrammarAccess extends AbstractGrammarElementFinder {
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Assignment cTypeAssignment_0 = (Assignment)cGroup.eContents().get(0);
 		private final RuleCall cTypeJvmTypeReferenceParserRuleCall_0_0 = (RuleCall)cTypeAssignment_0.eContents().get(0);
-		private final Group cGroup_1 = (Group)cGroup.eContents().get(1);
-		private final Keyword cLeftParenthesisKeyword_1_0 = (Keyword)cGroup_1.eContents().get(0);
-		private final Alternatives cAlternatives_1_1 = (Alternatives)cGroup_1.eContents().get(1);
-		private final Assignment cValueAssignment_1_1_0 = (Assignment)cAlternatives_1_1.eContents().get(0);
-		private final RuleCall cValueSimpleValuePropertyParserRuleCall_1_1_0_0 = (RuleCall)cValueAssignment_1_1_0.eContents().get(0);
-		private final Group cGroup_1_1_1 = (Group)cAlternatives_1_1.eContents().get(1);
-		private final Keyword cCreatedbyKeyword_1_1_1_0 = (Keyword)cGroup_1_1_1.eContents().get(0);
-		private final Assignment cFactoryAssignment_1_1_1_1 = (Assignment)cGroup_1_1_1.eContents().get(1);
-		private final RuleCall cFactorySTRINGTerminalRuleCall_1_1_1_1_0 = (RuleCall)cFactoryAssignment_1_1_1_1.eContents().get(0);
-		private final Keyword cRightParenthesisKeyword_1_2 = (Keyword)cGroup_1.eContents().get(2);
-		private final Group cGroup_2 = (Group)cGroup.eContents().get(2);
-		private final Keyword cIdKeyword_2_0 = (Keyword)cGroup_2.eContents().get(0);
-		private final Assignment cNameAssignment_2_1 = (Assignment)cGroup_2.eContents().get(1);
-		private final RuleCall cNameValidIDParserRuleCall_2_1_0 = (RuleCall)cNameAssignment_2_1.eContents().get(0);
-		private final Group cGroup_3 = (Group)cGroup.eContents().get(3);
-		private final Keyword cLeftCurlyBracketKeyword_3_0 = (Keyword)cGroup_3.eContents().get(0);
-		private final Group cGroup_3_1 = (Group)cGroup_3.eContents().get(1);
-		private final Alternatives cAlternatives_3_1_0 = (Alternatives)cGroup_3_1.eContents().get(0);
-		private final Assignment cPropertiesAssignment_3_1_0_0 = (Assignment)cAlternatives_3_1_0.eContents().get(0);
-		private final RuleCall cPropertiesPropertyParserRuleCall_3_1_0_0_0 = (RuleCall)cPropertiesAssignment_3_1_0_0.eContents().get(0);
-		private final Assignment cStaticPropertiesAssignment_3_1_0_1 = (Assignment)cAlternatives_3_1_0.eContents().get(1);
-		private final RuleCall cStaticPropertiesStaticValuePropertyParserRuleCall_3_1_0_1_0 = (RuleCall)cStaticPropertiesAssignment_3_1_0_1.eContents().get(0);
-		private final Group cGroup_3_1_1 = (Group)cGroup_3_1.eContents().get(1);
-		private final Keyword cCommaKeyword_3_1_1_0 = (Keyword)cGroup_3_1_1.eContents().get(0);
-		private final Alternatives cAlternatives_3_1_1_1 = (Alternatives)cGroup_3_1_1.eContents().get(1);
-		private final Assignment cPropertiesAssignment_3_1_1_1_0 = (Assignment)cAlternatives_3_1_1_1.eContents().get(0);
-		private final RuleCall cPropertiesPropertyParserRuleCall_3_1_1_1_0_0 = (RuleCall)cPropertiesAssignment_3_1_1_1_0.eContents().get(0);
-		private final Assignment cStaticPropertiesAssignment_3_1_1_1_1 = (Assignment)cAlternatives_3_1_1_1.eContents().get(1);
-		private final RuleCall cStaticPropertiesStaticValuePropertyParserRuleCall_3_1_1_1_1_0 = (RuleCall)cStaticPropertiesAssignment_3_1_1_1_1.eContents().get(0);
-		private final Keyword cRightCurlyBracketKeyword_3_2 = (Keyword)cGroup_3.eContents().get(2);
+		private final Alternatives cAlternatives_1 = (Alternatives)cGroup.eContents().get(1);
+		private final Group cGroup_1_0 = (Group)cAlternatives_1.eContents().get(0);
+		private final Group cGroup_1_0_0 = (Group)cGroup_1_0.eContents().get(0);
+		private final Keyword cLeftParenthesisKeyword_1_0_0_0 = (Keyword)cGroup_1_0_0.eContents().get(0);
+		private final Assignment cValueAssignment_1_0_0_1 = (Assignment)cGroup_1_0_0.eContents().get(1);
+		private final RuleCall cValueSimpleValuePropertyParserRuleCall_1_0_0_1_0 = (RuleCall)cValueAssignment_1_0_0_1.eContents().get(0);
+		private final Keyword cRightParenthesisKeyword_1_0_0_2 = (Keyword)cGroup_1_0_0.eContents().get(2);
+		private final Group cGroup_1_0_1 = (Group)cGroup_1_0.eContents().get(1);
+		private final Keyword cIdKeyword_1_0_1_0 = (Keyword)cGroup_1_0_1.eContents().get(0);
+		private final Assignment cNameAssignment_1_0_1_1 = (Assignment)cGroup_1_0_1.eContents().get(1);
+		private final RuleCall cNameValidIDParserRuleCall_1_0_1_1_0 = (RuleCall)cNameAssignment_1_0_1_1.eContents().get(0);
+		private final Group cGroup_1_1 = (Group)cAlternatives_1.eContents().get(1);
+		private final Group cGroup_1_1_0 = (Group)cGroup_1_1.eContents().get(0);
+		private final Keyword cIdKeyword_1_1_0_0 = (Keyword)cGroup_1_1_0.eContents().get(0);
+		private final Assignment cNameAssignment_1_1_0_1 = (Assignment)cGroup_1_1_0.eContents().get(1);
+		private final RuleCall cNameValidIDParserRuleCall_1_1_0_1_0 = (RuleCall)cNameAssignment_1_1_0_1.eContents().get(0);
+		private final Keyword cLeftCurlyBracketKeyword_1_1_1 = (Keyword)cGroup_1_1.eContents().get(1);
+		private final Group cGroup_1_1_2 = (Group)cGroup_1_1.eContents().get(2);
+		private final Alternatives cAlternatives_1_1_2_0 = (Alternatives)cGroup_1_1_2.eContents().get(0);
+		private final Assignment cPropertiesAssignment_1_1_2_0_0 = (Assignment)cAlternatives_1_1_2_0.eContents().get(0);
+		private final RuleCall cPropertiesPropertyParserRuleCall_1_1_2_0_0_0 = (RuleCall)cPropertiesAssignment_1_1_2_0_0.eContents().get(0);
+		private final Assignment cStaticPropertiesAssignment_1_1_2_0_1 = (Assignment)cAlternatives_1_1_2_0.eContents().get(1);
+		private final RuleCall cStaticPropertiesStaticValuePropertyParserRuleCall_1_1_2_0_1_0 = (RuleCall)cStaticPropertiesAssignment_1_1_2_0_1.eContents().get(0);
+		private final Group cGroup_1_1_2_1 = (Group)cGroup_1_1_2.eContents().get(1);
+		private final Keyword cCommaKeyword_1_1_2_1_0 = (Keyword)cGroup_1_1_2_1.eContents().get(0);
+		private final Alternatives cAlternatives_1_1_2_1_1 = (Alternatives)cGroup_1_1_2_1.eContents().get(1);
+		private final Assignment cPropertiesAssignment_1_1_2_1_1_0 = (Assignment)cAlternatives_1_1_2_1_1.eContents().get(0);
+		private final RuleCall cPropertiesPropertyParserRuleCall_1_1_2_1_1_0_0 = (RuleCall)cPropertiesAssignment_1_1_2_1_1_0.eContents().get(0);
+		private final Assignment cStaticPropertiesAssignment_1_1_2_1_1_1 = (Assignment)cAlternatives_1_1_2_1_1.eContents().get(1);
+		private final RuleCall cStaticPropertiesStaticValuePropertyParserRuleCall_1_1_2_1_1_1_0 = (RuleCall)cStaticPropertiesAssignment_1_1_2_1_1_1.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_1_1_3 = (Keyword)cGroup_1_1.eContents().get(3);
+		private final Group cGroup_1_2 = (Group)cAlternatives_1.eContents().get(2);
+		private final Group cGroup_1_2_0 = (Group)cGroup_1_2.eContents().get(0);
+		private final Keyword cIdKeyword_1_2_0_0 = (Keyword)cGroup_1_2_0.eContents().get(0);
+		private final Assignment cNameAssignment_1_2_0_1 = (Assignment)cGroup_1_2_0.eContents().get(1);
+		private final RuleCall cNameValidIDParserRuleCall_1_2_0_1_0 = (RuleCall)cNameAssignment_1_2_0_1.eContents().get(0);
+		private final Keyword cCreatedbyKeyword_1_2_1 = (Keyword)cGroup_1_2.eContents().get(1);
+		private final Assignment cFactoryAssignment_1_2_2 = (Assignment)cGroup_1_2.eContents().get(2);
+		private final RuleCall cFactorySTRINGTerminalRuleCall_1_2_2_0 = (RuleCall)cFactoryAssignment_1_2_2.eContents().get(0);
+		private final Keyword cLeftCurlyBracketKeyword_1_2_3 = (Keyword)cGroup_1_2.eContents().get(3);
+		private final Assignment cValuesAssignment_1_2_4 = (Assignment)cGroup_1_2.eContents().get(4);
+		private final RuleCall cValuesElementParserRuleCall_1_2_4_0 = (RuleCall)cValuesAssignment_1_2_4.eContents().get(0);
+		private final Group cGroup_1_2_5 = (Group)cGroup_1_2.eContents().get(5);
+		private final Keyword cCommaKeyword_1_2_5_0 = (Keyword)cGroup_1_2_5.eContents().get(0);
+		private final Assignment cValuesAssignment_1_2_5_1 = (Assignment)cGroup_1_2_5.eContents().get(1);
+		private final RuleCall cValuesElementParserRuleCall_1_2_5_1_0 = (RuleCall)cValuesAssignment_1_2_5_1.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_1_2_6 = (Keyword)cGroup_1_2.eContents().get(6);
 		
+		////Element:
+		////	type=JvmTypeReference ('(' (value = SimpleValueProperty | 'createdby' factory=STRING) ')')? ('id' name=ValidID)? ('{'
+		////		((properties+=Property | staticProperties+=StaticValueProperty) (',' (properties+=Property | staticProperties+=StaticValueProperty))*)?
+		////	'}')?
+		////;
 		//Element:
-		//	type=JvmTypeReference ("(" (value=SimpleValueProperty | "createdby" factory=STRING) ")")? ("id" name=ValidID)? ("{"
+		//	type=JvmTypeReference (("(" value=SimpleValueProperty ")")? ("id" name=ValidID)? | ("id" name=ValidID)? "{"
 		//	((properties+=Property | staticProperties+=StaticValueProperty) ("," (properties+=Property |
-		//	staticProperties+=StaticValueProperty))*)? "}")?;
+		//	staticProperties+=StaticValueProperty))*)? "}" | ("id" name=ValidID)? "createdby" factory=STRING "{" values+=Element
+		//	("," values+=Element)* "}");
 		public ParserRule getRule() { return rule; }
 
-		//type=JvmTypeReference ("(" (value=SimpleValueProperty | "createdby" factory=STRING) ")")? ("id" name=ValidID)? ("{"
+		//type=JvmTypeReference (("(" value=SimpleValueProperty ")")? ("id" name=ValidID)? | ("id" name=ValidID)? "{"
 		//((properties+=Property | staticProperties+=StaticValueProperty) ("," (properties+=Property |
-		//staticProperties+=StaticValueProperty))*)? "}")?
+		//staticProperties+=StaticValueProperty))*)? "}" | ("id" name=ValidID)? "createdby" factory=STRING "{" values+=Element
+		//("," values+=Element)* "}")
 		public Group getGroup() { return cGroup; }
 
 		//type=JvmTypeReference
@@ -349,97 +373,150 @@ public class FXGraphGrammarAccess extends AbstractGrammarElementFinder {
 		//JvmTypeReference
 		public RuleCall getTypeJvmTypeReferenceParserRuleCall_0_0() { return cTypeJvmTypeReferenceParserRuleCall_0_0; }
 
-		//("(" (value=SimpleValueProperty | "createdby" factory=STRING) ")")?
-		public Group getGroup_1() { return cGroup_1; }
+		//("(" value=SimpleValueProperty ")")? ("id" name=ValidID)? | ("id" name=ValidID)? "{" ((properties+=Property |
+		//staticProperties+=StaticValueProperty) ("," (properties+=Property | staticProperties+=StaticValueProperty))*)? "}" |
+		//("id" name=ValidID)? "createdby" factory=STRING "{" values+=Element ("," values+=Element)* "}"
+		public Alternatives getAlternatives_1() { return cAlternatives_1; }
+
+		//("(" value=SimpleValueProperty ")")? ("id" name=ValidID)?
+		public Group getGroup_1_0() { return cGroup_1_0; }
+
+		//("(" value=SimpleValueProperty ")")?
+		public Group getGroup_1_0_0() { return cGroup_1_0_0; }
 
 		//"("
-		public Keyword getLeftParenthesisKeyword_1_0() { return cLeftParenthesisKeyword_1_0; }
-
-		//value=SimpleValueProperty | "createdby" factory=STRING
-		public Alternatives getAlternatives_1_1() { return cAlternatives_1_1; }
+		public Keyword getLeftParenthesisKeyword_1_0_0_0() { return cLeftParenthesisKeyword_1_0_0_0; }
 
 		//value=SimpleValueProperty
-		public Assignment getValueAssignment_1_1_0() { return cValueAssignment_1_1_0; }
+		public Assignment getValueAssignment_1_0_0_1() { return cValueAssignment_1_0_0_1; }
 
 		//SimpleValueProperty
-		public RuleCall getValueSimpleValuePropertyParserRuleCall_1_1_0_0() { return cValueSimpleValuePropertyParserRuleCall_1_1_0_0; }
-
-		//"createdby" factory=STRING
-		public Group getGroup_1_1_1() { return cGroup_1_1_1; }
-
-		//"createdby"
-		public Keyword getCreatedbyKeyword_1_1_1_0() { return cCreatedbyKeyword_1_1_1_0; }
-
-		//factory=STRING
-		public Assignment getFactoryAssignment_1_1_1_1() { return cFactoryAssignment_1_1_1_1; }
-
-		//STRING
-		public RuleCall getFactorySTRINGTerminalRuleCall_1_1_1_1_0() { return cFactorySTRINGTerminalRuleCall_1_1_1_1_0; }
+		public RuleCall getValueSimpleValuePropertyParserRuleCall_1_0_0_1_0() { return cValueSimpleValuePropertyParserRuleCall_1_0_0_1_0; }
 
 		//")"
-		public Keyword getRightParenthesisKeyword_1_2() { return cRightParenthesisKeyword_1_2; }
+		public Keyword getRightParenthesisKeyword_1_0_0_2() { return cRightParenthesisKeyword_1_0_0_2; }
 
 		//("id" name=ValidID)?
-		public Group getGroup_2() { return cGroup_2; }
+		public Group getGroup_1_0_1() { return cGroup_1_0_1; }
 
 		//"id"
-		public Keyword getIdKeyword_2_0() { return cIdKeyword_2_0; }
+		public Keyword getIdKeyword_1_0_1_0() { return cIdKeyword_1_0_1_0; }
 
 		//name=ValidID
-		public Assignment getNameAssignment_2_1() { return cNameAssignment_2_1; }
+		public Assignment getNameAssignment_1_0_1_1() { return cNameAssignment_1_0_1_1; }
 
 		//ValidID
-		public RuleCall getNameValidIDParserRuleCall_2_1_0() { return cNameValidIDParserRuleCall_2_1_0; }
+		public RuleCall getNameValidIDParserRuleCall_1_0_1_1_0() { return cNameValidIDParserRuleCall_1_0_1_1_0; }
 
-		//("{" ((properties+=Property | staticProperties+=StaticValueProperty) ("," (properties+=Property |
-		//staticProperties+=StaticValueProperty))*)? "}")?
-		public Group getGroup_3() { return cGroup_3; }
+		//("id" name=ValidID)? "{" ((properties+=Property | staticProperties+=StaticValueProperty) ("," (properties+=Property |
+		//staticProperties+=StaticValueProperty))*)? "}"
+		public Group getGroup_1_1() { return cGroup_1_1; }
+
+		//("id" name=ValidID)?
+		public Group getGroup_1_1_0() { return cGroup_1_1_0; }
+
+		//"id"
+		public Keyword getIdKeyword_1_1_0_0() { return cIdKeyword_1_1_0_0; }
+
+		//name=ValidID
+		public Assignment getNameAssignment_1_1_0_1() { return cNameAssignment_1_1_0_1; }
+
+		//ValidID
+		public RuleCall getNameValidIDParserRuleCall_1_1_0_1_0() { return cNameValidIDParserRuleCall_1_1_0_1_0; }
 
 		//"{"
-		public Keyword getLeftCurlyBracketKeyword_3_0() { return cLeftCurlyBracketKeyword_3_0; }
+		public Keyword getLeftCurlyBracketKeyword_1_1_1() { return cLeftCurlyBracketKeyword_1_1_1; }
 
 		//((properties+=Property | staticProperties+=StaticValueProperty) ("," (properties+=Property |
 		//staticProperties+=StaticValueProperty))*)?
-		public Group getGroup_3_1() { return cGroup_3_1; }
+		public Group getGroup_1_1_2() { return cGroup_1_1_2; }
 
 		//properties+=Property | staticProperties+=StaticValueProperty
-		public Alternatives getAlternatives_3_1_0() { return cAlternatives_3_1_0; }
+		public Alternatives getAlternatives_1_1_2_0() { return cAlternatives_1_1_2_0; }
 
 		//properties+=Property
-		public Assignment getPropertiesAssignment_3_1_0_0() { return cPropertiesAssignment_3_1_0_0; }
+		public Assignment getPropertiesAssignment_1_1_2_0_0() { return cPropertiesAssignment_1_1_2_0_0; }
 
 		//Property
-		public RuleCall getPropertiesPropertyParserRuleCall_3_1_0_0_0() { return cPropertiesPropertyParserRuleCall_3_1_0_0_0; }
+		public RuleCall getPropertiesPropertyParserRuleCall_1_1_2_0_0_0() { return cPropertiesPropertyParserRuleCall_1_1_2_0_0_0; }
 
 		//staticProperties+=StaticValueProperty
-		public Assignment getStaticPropertiesAssignment_3_1_0_1() { return cStaticPropertiesAssignment_3_1_0_1; }
+		public Assignment getStaticPropertiesAssignment_1_1_2_0_1() { return cStaticPropertiesAssignment_1_1_2_0_1; }
 
 		//StaticValueProperty
-		public RuleCall getStaticPropertiesStaticValuePropertyParserRuleCall_3_1_0_1_0() { return cStaticPropertiesStaticValuePropertyParserRuleCall_3_1_0_1_0; }
+		public RuleCall getStaticPropertiesStaticValuePropertyParserRuleCall_1_1_2_0_1_0() { return cStaticPropertiesStaticValuePropertyParserRuleCall_1_1_2_0_1_0; }
 
 		//("," (properties+=Property | staticProperties+=StaticValueProperty))*
-		public Group getGroup_3_1_1() { return cGroup_3_1_1; }
+		public Group getGroup_1_1_2_1() { return cGroup_1_1_2_1; }
 
 		//","
-		public Keyword getCommaKeyword_3_1_1_0() { return cCommaKeyword_3_1_1_0; }
+		public Keyword getCommaKeyword_1_1_2_1_0() { return cCommaKeyword_1_1_2_1_0; }
 
 		//properties+=Property | staticProperties+=StaticValueProperty
-		public Alternatives getAlternatives_3_1_1_1() { return cAlternatives_3_1_1_1; }
+		public Alternatives getAlternatives_1_1_2_1_1() { return cAlternatives_1_1_2_1_1; }
 
 		//properties+=Property
-		public Assignment getPropertiesAssignment_3_1_1_1_0() { return cPropertiesAssignment_3_1_1_1_0; }
+		public Assignment getPropertiesAssignment_1_1_2_1_1_0() { return cPropertiesAssignment_1_1_2_1_1_0; }
 
 		//Property
-		public RuleCall getPropertiesPropertyParserRuleCall_3_1_1_1_0_0() { return cPropertiesPropertyParserRuleCall_3_1_1_1_0_0; }
+		public RuleCall getPropertiesPropertyParserRuleCall_1_1_2_1_1_0_0() { return cPropertiesPropertyParserRuleCall_1_1_2_1_1_0_0; }
 
 		//staticProperties+=StaticValueProperty
-		public Assignment getStaticPropertiesAssignment_3_1_1_1_1() { return cStaticPropertiesAssignment_3_1_1_1_1; }
+		public Assignment getStaticPropertiesAssignment_1_1_2_1_1_1() { return cStaticPropertiesAssignment_1_1_2_1_1_1; }
 
 		//StaticValueProperty
-		public RuleCall getStaticPropertiesStaticValuePropertyParserRuleCall_3_1_1_1_1_0() { return cStaticPropertiesStaticValuePropertyParserRuleCall_3_1_1_1_1_0; }
+		public RuleCall getStaticPropertiesStaticValuePropertyParserRuleCall_1_1_2_1_1_1_0() { return cStaticPropertiesStaticValuePropertyParserRuleCall_1_1_2_1_1_1_0; }
 
 		//"}"
-		public Keyword getRightCurlyBracketKeyword_3_2() { return cRightCurlyBracketKeyword_3_2; }
+		public Keyword getRightCurlyBracketKeyword_1_1_3() { return cRightCurlyBracketKeyword_1_1_3; }
+
+		//("id" name=ValidID)? "createdby" factory=STRING "{" values+=Element ("," values+=Element)* "}"
+		public Group getGroup_1_2() { return cGroup_1_2; }
+
+		//("id" name=ValidID)?
+		public Group getGroup_1_2_0() { return cGroup_1_2_0; }
+
+		//"id"
+		public Keyword getIdKeyword_1_2_0_0() { return cIdKeyword_1_2_0_0; }
+
+		//name=ValidID
+		public Assignment getNameAssignment_1_2_0_1() { return cNameAssignment_1_2_0_1; }
+
+		//ValidID
+		public RuleCall getNameValidIDParserRuleCall_1_2_0_1_0() { return cNameValidIDParserRuleCall_1_2_0_1_0; }
+
+		//"createdby"
+		public Keyword getCreatedbyKeyword_1_2_1() { return cCreatedbyKeyword_1_2_1; }
+
+		//factory=STRING
+		public Assignment getFactoryAssignment_1_2_2() { return cFactoryAssignment_1_2_2; }
+
+		//STRING
+		public RuleCall getFactorySTRINGTerminalRuleCall_1_2_2_0() { return cFactorySTRINGTerminalRuleCall_1_2_2_0; }
+
+		//"{"
+		public Keyword getLeftCurlyBracketKeyword_1_2_3() { return cLeftCurlyBracketKeyword_1_2_3; }
+
+		//values+=Element
+		public Assignment getValuesAssignment_1_2_4() { return cValuesAssignment_1_2_4; }
+
+		//Element
+		public RuleCall getValuesElementParserRuleCall_1_2_4_0() { return cValuesElementParserRuleCall_1_2_4_0; }
+
+		//("," values+=Element)*
+		public Group getGroup_1_2_5() { return cGroup_1_2_5; }
+
+		//","
+		public Keyword getCommaKeyword_1_2_5_0() { return cCommaKeyword_1_2_5_0; }
+
+		//values+=Element
+		public Assignment getValuesAssignment_1_2_5_1() { return cValuesAssignment_1_2_5_1; }
+
+		//Element
+		public RuleCall getValuesElementParserRuleCall_1_2_5_1_0() { return cValuesElementParserRuleCall_1_2_5_1_0; }
+
+		//"}"
+		public Keyword getRightCurlyBracketKeyword_1_2_6() { return cRightCurlyBracketKeyword_1_2_6; }
 	}
 
 	public class DefineElements extends AbstractParserRuleElementFinder {
@@ -1244,10 +1321,16 @@ public class FXGraphGrammarAccess extends AbstractGrammarElementFinder {
 		return getImportAccess().getRule();
 	}
 
+	////Element:
+	////	type=JvmTypeReference ('(' (value = SimpleValueProperty | 'createdby' factory=STRING) ')')? ('id' name=ValidID)? ('{'
+	////		((properties+=Property | staticProperties+=StaticValueProperty) (',' (properties+=Property | staticProperties+=StaticValueProperty))*)?
+	////	'}')?
+	////;
 	//Element:
-	//	type=JvmTypeReference ("(" (value=SimpleValueProperty | "createdby" factory=STRING) ")")? ("id" name=ValidID)? ("{"
+	//	type=JvmTypeReference (("(" value=SimpleValueProperty ")")? ("id" name=ValidID)? | ("id" name=ValidID)? "{"
 	//	((properties+=Property | staticProperties+=StaticValueProperty) ("," (properties+=Property |
-	//	staticProperties+=StaticValueProperty))*)? "}")?;
+	//	staticProperties+=StaticValueProperty))*)? "}" | ("id" name=ValidID)? "createdby" factory=STRING "{" values+=Element
+	//	("," values+=Element)* "}");
 	public ElementElements getElementAccess() {
 		return (pElement != null) ? pElement : (pElement = new ElementElements());
 	}

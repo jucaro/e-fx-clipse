@@ -32,10 +32,11 @@
     <genClasses ecoreClass="FXGraph.ecore#//Element">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference FXGraph.ecore#//Element/type"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference FXGraph.ecore#//Element/value"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute FXGraph.ecore#//Element/factory"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute FXGraph.ecore#//Element/name"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference FXGraph.ecore#//Element/properties"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference FXGraph.ecore#//Element/staticProperties"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute FXGraph.ecore#//Element/factory"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference FXGraph.ecore#//Element/values"/>
     </genClasses>
     <genClasses ecoreClass="FXGraph.ecore#//Define">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference FXGraph.ecore#//Define/element"/>

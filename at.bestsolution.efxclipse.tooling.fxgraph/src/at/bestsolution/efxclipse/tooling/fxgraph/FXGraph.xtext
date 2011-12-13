@@ -24,10 +24,16 @@ ComponentDefinition:
 Import:
 	'import' importedNamespace=QualifiedNameWithWildCard;
 
+//Element:
+//	type=JvmTypeReference ('(' (value = SimpleValueProperty | 'createdby' factory=STRING) ')')? ('id' name=ValidID)? ('{'
+//		((properties+=Property | staticProperties+=StaticValueProperty) (',' (properties+=Property | staticProperties+=StaticValueProperty))*)?
+//	'}')?
+//;
+
 Element:
-	type=JvmTypeReference ('(' (value = SimpleValueProperty | 'createdby' factory=STRING) ')')? ('id' name=ValidID)? ('{'
+	type=JvmTypeReference ((('(' value = SimpleValueProperty ')')? ('id' name=ValidID)?) | (('id' name=ValidID)? '{'
 		((properties+=Property | staticProperties+=StaticValueProperty) (',' (properties+=Property | staticProperties+=StaticValueProperty))*)?
-	'}')?
+	'}') | ( ('id' name=ValidID)? 'createdby' factory=STRING '{' values+=Element (',' values+=Element)* '}' ) )
 ;
 
 Define:

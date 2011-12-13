@@ -320,22 +320,13 @@ public interface FXGraphPackage extends EPackage
   int ELEMENT__VALUE = SINGLE_VALUE_PROPERTY_FEATURE_COUNT + 1;
 
   /**
-   * The feature id for the '<em><b>Factory</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int ELEMENT__FACTORY = SINGLE_VALUE_PROPERTY_FEATURE_COUNT + 2;
-
-  /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int ELEMENT__NAME = SINGLE_VALUE_PROPERTY_FEATURE_COUNT + 3;
+  int ELEMENT__NAME = SINGLE_VALUE_PROPERTY_FEATURE_COUNT + 2;
 
   /**
    * The feature id for the '<em><b>Properties</b></em>' containment reference list.
@@ -344,7 +335,7 @@ public interface FXGraphPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ELEMENT__PROPERTIES = SINGLE_VALUE_PROPERTY_FEATURE_COUNT + 4;
+  int ELEMENT__PROPERTIES = SINGLE_VALUE_PROPERTY_FEATURE_COUNT + 3;
 
   /**
    * The feature id for the '<em><b>Static Properties</b></em>' containment reference list.
@@ -353,7 +344,25 @@ public interface FXGraphPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ELEMENT__STATIC_PROPERTIES = SINGLE_VALUE_PROPERTY_FEATURE_COUNT + 5;
+  int ELEMENT__STATIC_PROPERTIES = SINGLE_VALUE_PROPERTY_FEATURE_COUNT + 4;
+
+  /**
+   * The feature id for the '<em><b>Factory</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ELEMENT__FACTORY = SINGLE_VALUE_PROPERTY_FEATURE_COUNT + 5;
+
+  /**
+   * The feature id for the '<em><b>Values</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ELEMENT__VALUES = SINGLE_VALUE_PROPERTY_FEATURE_COUNT + 6;
 
   /**
    * The number of structural features of the '<em>Element</em>' class.
@@ -362,7 +371,7 @@ public interface FXGraphPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ELEMENT_FEATURE_COUNT = SINGLE_VALUE_PROPERTY_FEATURE_COUNT + 6;
+  int ELEMENT_FEATURE_COUNT = SINGLE_VALUE_PROPERTY_FEATURE_COUNT + 7;
 
   /**
    * The meta object id for the '{@link at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.impl.DefineImpl <em>Define</em>}' class.
@@ -1166,17 +1175,6 @@ public interface FXGraphPackage extends EPackage
   EReference getElement_Value();
 
   /**
-   * Returns the meta object for the attribute '{@link at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.Element#getFactory <em>Factory</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Factory</em>'.
-   * @see at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.Element#getFactory()
-   * @see #getElement()
-   * @generated
-   */
-  EAttribute getElement_Factory();
-
-  /**
    * Returns the meta object for the attribute '{@link at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.Element#getName <em>Name</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -1208,6 +1206,28 @@ public interface FXGraphPackage extends EPackage
    * @generated
    */
   EReference getElement_StaticProperties();
+
+  /**
+   * Returns the meta object for the attribute '{@link at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.Element#getFactory <em>Factory</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Factory</em>'.
+   * @see at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.Element#getFactory()
+   * @see #getElement()
+   * @generated
+   */
+  EAttribute getElement_Factory();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.Element#getValues <em>Values</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Values</em>'.
+   * @see at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.Element#getValues()
+   * @see #getElement()
+   * @generated
+   */
+  EReference getElement_Values();
 
   /**
    * Returns the meta object for class '{@link at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.Define <em>Define</em>}'.
@@ -1900,14 +1920,6 @@ public interface FXGraphPackage extends EPackage
     EReference ELEMENT__VALUE = eINSTANCE.getElement_Value();
 
     /**
-     * The meta object literal for the '<em><b>Factory</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute ELEMENT__FACTORY = eINSTANCE.getElement_Factory();
-
-    /**
      * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -1930,6 +1942,22 @@ public interface FXGraphPackage extends EPackage
      * @generated
      */
     EReference ELEMENT__STATIC_PROPERTIES = eINSTANCE.getElement_StaticProperties();
+
+    /**
+     * The meta object literal for the '<em><b>Factory</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute ELEMENT__FACTORY = eINSTANCE.getElement_Factory();
+
+    /**
+     * The meta object literal for the '<em><b>Values</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference ELEMENT__VALUES = eINSTANCE.getElement_Values();
 
     /**
      * The meta object literal for the '{@link at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.impl.DefineImpl <em>Define</em>}' class.

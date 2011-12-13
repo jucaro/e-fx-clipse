@@ -150,6 +150,9 @@ class FXGraphGenerator implements IGenerator {
 		«IF hasNestedProperties(element)»
 			«propContents(element.properties,importManager,false,skipController,skipIncludes)»
 			«statPropContent(element.staticProperties,importManager,skipController,skipIncludes)»
+			«FOR e : element.values»
+			«elementContent(e,importManager,skipController,skipIncludes)»
+			«ENDFOR»
 		</«element.type.shortName(importManager)»>
 		«ENDIF»
 	'''
@@ -275,7 +278,7 @@ class FXGraphGenerator implements IGenerator {
 		
 		if( element.value != null ) {
 			builder.append(" fx:value=\""+ simpleAttributeValue(element.value) + "\"");
-		} else if( element.factory != null && ! skipController ) {
+		} else if( element.factory != null ) {
 			builder.append(" fx:factory=\""+ element.factory + "\"");
 		}
 		
@@ -366,6 +369,10 @@ class FXGraphGenerator implements IGenerator {
 	}
 	
 	def hasNestedProperties(Element element) {
+		if( element.values.size > 0 ) {
+			return true;
+		}
+		
 		if( element.staticProperties.size > 0) {
 			return true;
 		}
