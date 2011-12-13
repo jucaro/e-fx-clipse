@@ -1,8 +1,12 @@
 package at.bestsolution.efxclipse.testcases.fxgraph 
 
-component Controller controlledby at.bestsolution.efxclipse.testcases.fxgraph.MyController {
-	javafx.scene.layout.BorderPane {
-		center : javafx.scene.control.Button {
+import at.bestsolution.efxclipse.testcases.fxgraph.MyController
+import javafx.scene.layout.BorderPane
+import javafx.scene.control.Button
+
+component Controller controlledby MyController {
+	BorderPane {
+		center : Button {
 			text : "Hello World",
 			onAction : controllermethod clicked
 		}
