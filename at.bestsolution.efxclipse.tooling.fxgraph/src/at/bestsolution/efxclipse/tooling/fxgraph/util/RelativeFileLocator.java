@@ -1,4 +1,4 @@
-package at.bestsolution.efxclipse.tooling.fxgraph.ui.util;
+package at.bestsolution.efxclipse.tooling.fxgraph.util;
 
 import java.io.File;
 

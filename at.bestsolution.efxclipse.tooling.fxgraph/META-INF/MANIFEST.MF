@@ -30,15 +30,18 @@ Import-Package: org.apache.log4j,
  org.eclipse.xtext.xtend2.lib
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Export-Package: at.bestsolution.efxclipse.tooling.fxgraph,
+ at.bestsolution.efxclipse.tooling.fxgraph.compiler,
  at.bestsolution.efxclipse.tooling.fxgraph.fXGraph,
  at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.impl,
  at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.util,
+ at.bestsolution.efxclipse.tooling.fxgraph.formatting,
  at.bestsolution.efxclipse.tooling.fxgraph.generator,
+ at.bestsolution.efxclipse.tooling.fxgraph.jvmmodel,
  at.bestsolution.efxclipse.tooling.fxgraph.parseTreeConstruction,
  at.bestsolution.efxclipse.tooling.fxgraph.parser.antlr,
  at.bestsolution.efxclipse.tooling.fxgraph.parser.antlr.internal,
+ at.bestsolution.efxclipse.tooling.fxgraph.scoping,
  at.bestsolution.efxclipse.tooling.fxgraph.services,
- at.bestsolution.efxclipse.tooling.fxgraph.validation,
- at.bestsolution.efxclipse.tooling.fxgraph.formatting,
- at.bestsolution.efxclipse.tooling.fxgraph.jvmmodel
+ at.bestsolution.efxclipse.tooling.fxgraph.util,
+ at.bestsolution.efxclipse.tooling.fxgraph.validation
 

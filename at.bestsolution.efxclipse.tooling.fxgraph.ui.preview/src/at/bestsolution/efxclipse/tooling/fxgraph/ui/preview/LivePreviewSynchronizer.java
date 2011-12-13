@@ -44,7 +44,7 @@ import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.Model;
 import at.bestsolution.efxclipse.tooling.fxgraph.generator.FXGraphGenerator;
 import at.bestsolution.efxclipse.tooling.fxgraph.ui.preview.LivePreviewPart.ContentData;
 import at.bestsolution.efxclipse.tooling.fxgraph.ui.preview.bundle.Activator;
-import at.bestsolution.efxclipse.tooling.fxgraph.ui.util.RelativeFileLocator;
+import at.bestsolution.efxclipse.tooling.fxgraph.util.RelativeFileLocator;
 
 import com.google.inject.Inject;
 
