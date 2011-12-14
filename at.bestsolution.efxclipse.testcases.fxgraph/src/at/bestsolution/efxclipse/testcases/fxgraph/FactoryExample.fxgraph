@@ -1,0 +1,19 @@
+package at.bestsolution.efxclipse.testcases.fxgraph
+
+import javafx.scene.layout.*
+import javafx.scene.control.ChoiceBox
+import javafx.collections.*
+
+component StringExample {
+	HBox {
+		children : [
+			ChoiceBox {
+				items : FXCollections createdby "observableArrayList" {
+					String("A"),
+					String("B"),
+					String("D")
+				}
+			}
+		]
+	}
+}
