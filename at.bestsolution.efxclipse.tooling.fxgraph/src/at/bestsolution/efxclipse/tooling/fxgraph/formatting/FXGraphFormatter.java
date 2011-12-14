@@ -26,15 +26,38 @@ public class FXGraphFormatter extends AbstractDeclarativeFormatter {
 	protected void configureFormatting(FormattingConfig c) {
 		FXGraphGrammarAccess f = (FXGraphGrammarAccess) getGrammarAccess();
 
+		for (Keyword comma : f.findKeywords("(")) {
+			c.setNoSpace().around(comma);
+		}
+		
+		for (Keyword comma : f.findKeywords(")")) {
+			c.setNoSpace().before(comma);
+		}
+		
+		for (Keyword comma : f.findKeywords(",")) {
+			c.setNoSpace().before(comma);
+		}
+		
 		c.setAutoLinewrap(120);
 		
 		c.setLinewrap(1, 2, 3).around(f.getImportRule());
-		c.setLinewrap(1, 2, 3).before(f.getElementRule());
 		c.setLinewrap(1, 2, 3).before(f.getPropertyRule());
+		
+		c.setLinewrap(1, 2, 3).after(f.getElementAccess().getLeftCurlyBracketKeyword_1_1_1());
+		c.setLinewrap(1, 2, 3).after(f.getElementAccess().getLeftCurlyBracketKeyword_1_2_3());
 		c.setLinewrap(1, 2, 3).before(f.getElementAccess().getRightCurlyBracketKeyword_1_1_3());
 		c.setLinewrap(1, 2, 3).before(f.getElementAccess().getRightCurlyBracketKeyword_1_2_6());
+		c.setLinewrap(1, 2, 3).after(f.getElementAccess().getCommaKeyword_1_2_5_0());
+		
+		c.setLinewrap(1, 2, 3).after(f.getListValuePropertyAccess().getLeftSquareBracketKeyword_0());
+		c.setLinewrap(1, 2, 3).after(f.getListValuePropertyAccess().getCommaKeyword_2_0());
 		c.setLinewrap(1, 2, 3).before(f.getListValuePropertyAccess().getRightSquareBracketKeyword_3());
+		
+		c.setLinewrap(1, 2, 3).after(f.getComponentDefinitionAccess().getLeftCurlyBracketKeyword_6());
 		c.setLinewrap(1, 2, 3).before(f.getComponentDefinitionAccess().getRightCurlyBracketKeyword_10());
+		
+		
+		c.setLinewrap(1, 2, 3).after(f.getMapValuePropertyAccess().getLeftCurlyBracketKeyword_0());
 		c.setLinewrap(1, 2, 3).before(f.getMapValuePropertyAccess().getRightCurlyBracketKeyword_3());
 		
 		{
