@@ -3,6 +3,8 @@ package at.bestsolution.efxclipse.testcases.fxgraph
 import javafx.scene.layout.*
 import javafx.scene.control.ChoiceBox
 import javafx.collections.*
+import javafx.scene.control.Label
+import javafx.scene.control.TextField
 
 component StringExample {
 	HBox {
