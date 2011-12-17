@@ -4,24 +4,38 @@ import java.io.File;
 import java.io.IOException;
 import java.net.URL;
 import java.net.URLClassLoader;
+import java.net.URLConnection;
 import java.security.ProtectionDomain;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Enumeration;
 import java.util.List;
+import java.util.Properties;
 
+import org.eclipse.osgi.baseadaptor.BaseAdaptor;
 import org.eclipse.osgi.baseadaptor.BaseData;
 import org.eclipse.osgi.baseadaptor.bundlefile.BundleEntry;
+import org.eclipse.osgi.baseadaptor.hooks.AdaptorHook;
 import org.eclipse.osgi.baseadaptor.hooks.ClassLoadingHook;
 import org.eclipse.osgi.baseadaptor.loader.BaseClassLoader;
 import org.eclipse.osgi.baseadaptor.loader.ClasspathEntry;
 import org.eclipse.osgi.baseadaptor.loader.ClasspathManager;
 import org.eclipse.osgi.framework.adaptor.BundleProtectionDomain;
 import org.eclipse.osgi.framework.adaptor.ClassLoaderDelegate;
+import org.eclipse.osgi.framework.log.FrameworkLog;
 import org.eclipse.osgi.internal.baseadaptor.DefaultClassLoader;
+import org.osgi.framework.Bundle;
+import org.osgi.framework.BundleContext;
+import org.osgi.framework.BundleException;
 import org.osgi.framework.Version;
+import org.osgi.framework.wiring.BundleWiring;
+import org.osgi.service.packageadmin.PackageAdmin;
+import org.osgi.util.tracker.ServiceTracker;
 
-public class FXClassLoader implements ClassLoadingHook {
+@SuppressWarnings("deprecation")
+public class FXClassLoader implements ClassLoadingHook, AdaptorHook {
+
+	private ServiceTracker<PackageAdmin,PackageAdmin> paTracker;
 
 	@Override
 	public byte[] processClass(String name, byte[] classbytes,
@@ -54,7 +68,7 @@ public class FXClassLoader implements ClassLoadingHook {
 		if( data.getBundle().getSymbolicName().equals("at.bestsolution.efxclipse.runtime.javafx") ) {
 			try {
 				
-				return new MyBundleClassLoader(parent, delegate, domain, data, bundleclasspath);
+				return new MyBundleClassLoader(getPackageAdmin(), parent, delegate, domain, data, bundleclasspath);
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
@@ -65,17 +79,40 @@ public class FXClassLoader implements ClassLoadingHook {
 	@Override
 	public void initializedClassLoader(BaseClassLoader baseClassLoader,
 			BaseData data) {
-		
+		System.err.println();
 	}
 
 	static class MyBundleClassLoader extends DefaultClassLoader {
 		private URLClassLoader fxClassLoader;
 		
-		public MyBundleClassLoader(ClassLoader parent,
+		public MyBundleClassLoader(PackageAdmin admin, ClassLoader parent,
 				ClassLoaderDelegate delegate, ProtectionDomain domain,
 				BaseData bundledata, String[] classpath) throws Exception {
 			super(parent, delegate, domain, bundledata, classpath);
+
+			// Trying to locate swt bundle so that if the swt integration is used
+			// we can load those
+			Bundle[] bundles = admin.getBundles("org.eclipse.swt", null);
 			
+			if (bundles != null) {
+				for (int i = 0; i < bundles.length; i++) {
+					if ((bundles[i].getState() & Bundle.INSTALLED ) == 0) {
+						// Ensure the bundle is started else we are unable to extract the
+						// classloader
+						if( (bundles[i].getState() & Bundle.ACTIVE) != 0 ) {
+							bundles[i].start();
+						}
+						parent = bundles[i].adapt(BundleWiring.class).getClassLoader();
+						break;
+					}
+				}
+			}
+			
+			fxClassLoader = createClassloader(parent, bundledata);
+		}
+		
+		
+		private static URLClassLoader createClassloader(ClassLoader parent, BaseData bundledata) throws Exception {
 			String osname = System.getProperty("os.name").toLowerCase();
 			
 			if( osname.indexOf("mac") != -1 ) {
@@ -84,7 +121,7 @@ public class FXClassLoader implements ClassLoadingHook {
 					File f = new File(installPath + "/lib/jfxrt.jar");
 					if( f.exists() ) {
 						URL url = f.getCanonicalFile().toURI().toURL();
-						fxClassLoader = new URLClassLoader(new URL[] {url}, parent);
+						return new URLClassLoader(new URL[] {url}, parent);
 					} else {
 						throw new IllegalStateException("Could not locate lib/jfxrt.jar in the installation path '"+installPath+"'");
 					}
@@ -129,7 +166,7 @@ public class FXClassLoader implements ClassLoadingHook {
 					
 					if( f.exists() ) {
 						URL url = f.getCanonicalFile().toURI().toURL();
-						fxClassLoader = new URLClassLoader(new URL[] {url}, parent);
+						return new URLClassLoader(new URL[] {url}, parent);
 					} else {
 						throw new IllegalStateException("Could not locate lib/jfxrt.jar in the installation path '"+installPath+"'");
 					}
@@ -145,7 +182,9 @@ public class FXClassLoader implements ClassLoadingHook {
 			try {
 				return fxClassLoader.loadClass(classname);
 			} catch (ClassNotFoundException e) {
-				return super.findLoadedClass(classname);
+				return super.findLocalClass(classname);
+			} catch (NoClassDefFoundError e) {
+				return super.findLocalClass(classname);
 			}
 		}
 		
@@ -183,5 +222,55 @@ public class FXClassLoader implements ClassLoadingHook {
 				return super.findResources(name);
 			}
 		}
+	}
+
+	@Override
+	public void initialize(BaseAdaptor adaptor) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void frameworkStart(BundleContext context) throws BundleException {
+		paTracker = new ServiceTracker<PackageAdmin,PackageAdmin>(context, PackageAdmin.class.getName(), null);
+		paTracker.open();
+	}
+
+	@Override
+	public void frameworkStop(BundleContext context) throws BundleException {
+		paTracker.close();
+		paTracker = null;
+	}
+	
+	private PackageAdmin getPackageAdmin() {
+		ServiceTracker<PackageAdmin,PackageAdmin> tracker = paTracker;
+		if (tracker == null)
+			return null;
+		return tracker.getService();
+	}
+
+	@Override
+	public void frameworkStopping(BundleContext context) {
+		
+	}
+
+	@Override
+	public void addProperties(Properties properties) {
+		
+	}
+
+	@Override
+	public URLConnection mapLocationToURLConnection(String location) throws IOException {
+		return null;
+	}
+
+	@Override
+	public void handleRuntimeError(Throwable error) {
+		
+	}
+
+	@Override
+	public FrameworkLog createFrameworkLog() {
+		return null;
 	}
 }
