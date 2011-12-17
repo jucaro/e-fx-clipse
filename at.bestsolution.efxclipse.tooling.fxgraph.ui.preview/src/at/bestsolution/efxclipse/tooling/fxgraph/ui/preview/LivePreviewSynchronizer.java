@@ -48,16 +48,14 @@ import at.bestsolution.efxclipse.tooling.fxgraph.util.RelativeFileLocator;
 
 import com.google.inject.Inject;
 
-public class LivePreviewSynchronizer implements IPartListener,
-		IXtextModelListener, IPropertyListener {
+public class LivePreviewSynchronizer implements IPartListener, IXtextModelListener, IPropertyListener {
 	@Inject
 	private LivePreviewPart view;
 
 	private IXtextDocument lastFXMLActiveDocument;
 	private XtextEditor lastCssEditor;
 	private XtextEditor lastFXMLEditor;
-	private IEclipsePreferences preference = InstanceScope.INSTANCE
-			.getNode(Activator.PLUGIN_ID);
+	private IEclipsePreferences preference = InstanceScope.INSTANCE.getNode(Activator.PLUGIN_ID);
 
 	public static final String PREF_LOAD_CONTROLLER = "PREF_LOAD_CONTROLLER";
 
@@ -74,32 +72,29 @@ public class LivePreviewSynchronizer implements IPartListener,
 			XtextEditor xtextEditor = (XtextEditor) part;
 			IXtextDocument xtextDocument = xtextEditor.getDocument();
 
-			Type type = xtextDocument
-					.readOnly(new IUnitOfWork<Type, XtextResource>() {
+			Type type = xtextDocument.readOnly(new IUnitOfWork<Type, XtextResource>() {
 
-						@Override
-						public Type exec(XtextResource state) throws Exception {
-							EList<EObject> contents = state.getContents();
-							if (!contents.isEmpty()) {
-								EObject rootObject = contents.get(0);
-								if (rootObject instanceof Model) {
-									return Type.FXGRAPH;
-								} else if (rootObject instanceof stylesheet) {
-									return Type.CSS;
-								}
-							}
-							return Type.UNKNOWN;
+				@Override
+				public Type exec(XtextResource state) throws Exception {
+					EList<EObject> contents = state.getContents();
+					if (!contents.isEmpty()) {
+						EObject rootObject = contents.get(0);
+						if (rootObject instanceof Model) {
+							return Type.FXGRAPH;
+						} else if (rootObject instanceof stylesheet) {
+							return Type.CSS;
 						}
-					});
+					}
+					return Type.UNKNOWN;
+				}
+			});
 
 			if (type == Type.FXGRAPH) {
-				final ContentData contents = xtextDocument
-						.readOnly(new IUnitOfWork<ContentData, XtextResource>() {
-							public ContentData exec(XtextResource resource)
-									throws Exception {
-								return createContents(resource);
-							}
-						});
+				final ContentData contents = xtextDocument.readOnly(new IUnitOfWork<ContentData, XtextResource>() {
+					public ContentData exec(XtextResource resource) throws Exception {
+						return createContents(resource);
+					}
+				});
 				if (contents != null) {
 					view.setContents(contents);
 					if (lastFXMLActiveDocument != null) {
@@ -136,18 +131,15 @@ public class LivePreviewSynchronizer implements IPartListener,
 		}
 	}
 
-	private void resolveDataProject(IJavaProject project,
-			Set<IPath> outputPath, Set<IPath> listRefLibraries) {
+	private void resolveDataProject(IJavaProject project, Set<IPath> outputPath, Set<IPath> listRefLibraries) {
 		try {
 			IClasspathEntry[] entries = project.getRawClasspath();
 			outputPath.add(project.getOutputLocation());
 			for (IClasspathEntry e : entries) {
 				if (e.getEntryKind() == IClasspathEntry.CPE_PROJECT) {
-					IProject p = ResourcesPlugin.getWorkspace().getRoot()
-							.getProject(e.getPath().lastSegment());
+					IProject p = ResourcesPlugin.getWorkspace().getRoot().getProject(e.getPath().lastSegment());
 					if (p.exists()) {
-						resolveDataProject(JavaCore.create(p), outputPath,
-								listRefLibraries);
+						resolveDataProject(JavaCore.create(p), outputPath, listRefLibraries);
 					}
 				} else if (e.getEntryKind() == IClasspathEntry.CPE_LIBRARY) {
 					listRefLibraries.add(e.getPath());
@@ -200,13 +192,11 @@ public class LivePreviewSynchronizer implements IPartListener,
 			EObject rootObject = contents.get(0);
 			if (rootObject instanceof Model) {
 				FXGraphGenerator generator = new FXGraphGenerator();
-				ComponentDefinition def = ((Model) rootObject)
-						.getComponentDef();
+				ComponentDefinition def = ((Model) rootObject).getComponentDef();
 				List<String> l;
 
 				URI uri = resource.getURI();
-				IProject p = ResourcesPlugin.getWorkspace().getRoot()
-						.getProject(uri.segment(1));
+				IProject p = ResourcesPlugin.getWorkspace().getRoot().getProject(uri.segment(1));
 				IJavaProject jp = JavaCore.create(p);
 
 				List<URL> extraPaths = new ArrayList<URL>();
@@ -225,15 +215,13 @@ public class LivePreviewSynchronizer implements IPartListener,
 				if (def != null) {
 					l = new ArrayList<String>(def.getPreviewCssFiles().size());
 					for (String cssFile : def.getPreviewCssFiles()) {
-						File absFile = RelativeFileLocator.locateFile(uri,
-								cssFile);
+						File absFile = RelativeFileLocator.locateFile(uri, cssFile);
 
 						if (absFile != null) {
 							try {
 								// Trick to make CSS-Reloaded
 								File absParent = absFile.getParentFile();
-								absParent = new File(absParent,
-										System.currentTimeMillis() + "");
+								absParent = new File(absParent, System.currentTimeMillis() + "");
 								l.add(absFile.toURI().toURL().toExternalForm());
 							} catch (Throwable e) {
 								// TODO Auto-generated catch block
@@ -250,36 +238,26 @@ public class LivePreviewSynchronizer implements IPartListener,
 							if (cpUri.isPlatformResource()) {
 								if (cpUri.lastSegment().equals("*")) {
 									cpUri = cpUri.trimSegments(1);
-									Path cpPath = new Path(
-											cpUri.toPlatformString(true));
-									IWorkspaceRoot root = jp.getProject()
-											.getWorkspace().getRoot();
+									Path cpPath = new Path(cpUri.toPlatformString(true));
+									IWorkspaceRoot root = jp.getProject().getWorkspace().getRoot();
 									IFolder f = root.getFolder(cpPath);
 									if (f.exists()) {
 										for (IResource r : f.members()) {
 											IFile jarFile = (IFile) r;
 											if (r instanceof IFile) {
-												if ("jar".equals(jarFile
-														.getFileExtension())) {
-													extraPaths.add(jarFile
-															.getLocation()
-															.toFile().toURI()
-															.toURL());
+												if ("jar".equals(jarFile.getFileExtension())) {
+													extraPaths.add(jarFile.getLocation().toFile().toURI().toURL());
 												}
 											}
 										}
 									}
 								} else {
-									Path cpPath = new Path(
-											cpUri.toPlatformString(true));
-									IWorkspaceRoot root = jp.getProject()
-											.getWorkspace().getRoot();
+									Path cpPath = new Path(cpUri.toPlatformString(true));
+									IWorkspaceRoot root = jp.getProject().getWorkspace().getRoot();
 									IFile jarFile = root.getFile(cpPath);
 									if (jarFile.exists()) {
 										try {
-											extraPaths.add(jarFile
-													.getLocation().toFile()
-													.toURI().toURL());
+											extraPaths.add(jarFile.getLocation().toFile().toURI().toURL());
 										} catch (MalformedURLException e) {
 											// TODO Auto-generated catch block
 											e.printStackTrace();
@@ -288,16 +266,12 @@ public class LivePreviewSynchronizer implements IPartListener,
 								}
 							} else if (cpUri.isFile()) {
 								if (cpUri.toFileString().endsWith("*")) {
-									File ioFile = new File(cpUri.toFileString())
-											.getParentFile();
+									File ioFile = new File(cpUri.toFileString()).getParentFile();
 									if (ioFile.exists()) {
 										try {
-											for (File jarFile : ioFile
-													.listFiles()) {
-												if (jarFile.getName().endsWith(
-														".jar")) {
-													extraPaths.add(jarFile
-															.toURI().toURL());
+											for (File jarFile : ioFile.listFiles()) {
+												if (jarFile.getName().endsWith(".jar")) {
+													extraPaths.add(jarFile.toURI().toURL());
 												}
 											}
 										} catch (MalformedURLException e) {
@@ -309,8 +283,7 @@ public class LivePreviewSynchronizer implements IPartListener,
 									File ioFile = new File(cpUri.toFileString());
 									if (ioFile.exists()) {
 										try {
-											extraPaths.add(ioFile.toURI()
-													.toURL());
+											extraPaths.add(ioFile.toURI().toURL());
 										} catch (MalformedURLException e) {
 											// TODO Auto-generated catch block
 											e.printStackTrace();
@@ -335,18 +308,17 @@ public class LivePreviewSynchronizer implements IPartListener,
 
 				String resourcePropertiesFile = null;
 				if (def != null && def.getPreviewResourceBundle() != null) {
-					File f = RelativeFileLocator.locateFile(uri,
-							def.getPreviewResourceBundle());
+					File f = RelativeFileLocator.locateFile(uri, def.getPreviewResourceBundle());
 					if (f != null && f.exists()) {
 						resourcePropertiesFile = f.getAbsolutePath();
 					}
 				}
-				
+
 				URL url = null;
 				Path path = new Path(uri.toPlatformString(true));
 				IWorkspaceRoot root = jp.getProject().getWorkspace().getRoot();
 				IFolder file = root.getFolder(path.removeLastSegments(1));
-				if( file.exists() ) {
+				if (file.exists()) {
 					try {
 						url = file.getLocation().toFile().getAbsoluteFile().toURI().toURL();
 					} catch (MalformedURLException e) {
@@ -355,9 +327,8 @@ public class LivePreviewSynchronizer implements IPartListener,
 					}
 				}
 
-				return new ContentData(generator.doGeneratePreview(resource,
-						(!preference.getBoolean(PREF_LOAD_CONTROLLER, false)) && (!pluginProject),true), // TODO Can we make includes work??
-						l, resourcePropertiesFile, extraPaths,url);
+				return new ContentData(generator.doGeneratePreview(resource, (!preference.getBoolean(PREF_LOAD_CONTROLLER, false)) && (!pluginProject), true),
+						l, resourcePropertiesFile, extraPaths, url);
 			}
 		}
 
@@ -390,38 +361,29 @@ public class LivePreviewSynchronizer implements IPartListener,
 	@Override
 	public void propertyChanged(Object source, int propId) {
 		if (propId == IWorkbenchPartConstants.PROP_DIRTY) {
-			if (lastCssEditor != null && !lastCssEditor.isDirty()
-					&& lastFXMLActiveDocument != null) {
-				view.setContents(lastFXMLActiveDocument
-						.readOnly(new IUnitOfWork<ContentData, XtextResource>() {
-							public ContentData exec(XtextResource resource)
-									throws Exception {
-								return createContents(resource);
-							}
-						}));
-			} else if (lastFXMLEditor != null && !lastFXMLEditor.isDirty()
-					&& lastFXMLActiveDocument != null) {
-				view.setContents(lastFXMLActiveDocument
-						.readOnly(new IUnitOfWork<ContentData, XtextResource>() {
-							public ContentData exec(XtextResource resource)
-									throws Exception {
-								return createContents(resource);
-							}
-						}));
+			if (lastCssEditor != null && !lastCssEditor.isDirty() && lastFXMLActiveDocument != null) {
+				view.setContents(lastFXMLActiveDocument.readOnly(new IUnitOfWork<ContentData, XtextResource>() {
+					public ContentData exec(XtextResource resource) throws Exception {
+						return createContents(resource);
+					}
+				}));
+			} else if (lastFXMLEditor != null && !lastFXMLEditor.isDirty() && lastFXMLActiveDocument != null) {
+				view.setContents(lastFXMLActiveDocument.readOnly(new IUnitOfWork<ContentData, XtextResource>() {
+					public ContentData exec(XtextResource resource) throws Exception {
+						return createContents(resource);
+					}
+				}));
 			}
 		}
 	}
 
 	public void refreshPreview() {
-		if (lastFXMLEditor != null && !lastFXMLEditor.isDirty()
-				&& lastFXMLActiveDocument != null) {
-			view.setContents(lastFXMLActiveDocument
-					.readOnly(new IUnitOfWork<ContentData, XtextResource>() {
-						public ContentData exec(XtextResource resource)
-								throws Exception {
-							return createContents(resource);
-						}
-					}));
+		if (lastFXMLEditor != null && !lastFXMLEditor.isDirty() && lastFXMLActiveDocument != null) {
+			view.setContents(lastFXMLActiveDocument.readOnly(new IUnitOfWork<ContentData, XtextResource>() {
+				public ContentData exec(XtextResource resource) throws Exception {
+					return createContents(resource);
+				}
+			}));
 		}
 	}
 }

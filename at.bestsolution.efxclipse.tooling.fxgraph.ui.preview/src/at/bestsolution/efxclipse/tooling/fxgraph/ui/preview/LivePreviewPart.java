@@ -1,8 +1,5 @@
 package at.bestsolution.efxclipse.tooling.fxgraph.ui.preview;
 
-import java.awt.BorderLayout;
-import java.awt.Frame;
-import java.awt.Panel;
 import java.io.ByteArrayInputStream;
 import java.io.File;
 import java.io.FileInputStream;
@@ -20,17 +17,11 @@ import java.util.Map.Entry;
 import java.util.Properties;
 
 import javafx.application.Platform;
-import javafx.embed.swing.JFXPanel;
 import javafx.embed.swt.FXCanvas;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.JavaFXBuilderFactory;
 import javafx.scene.Node;
-import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.TextField;
-import javafx.scene.layout.BorderPane;
-
-import javax.swing.JRootPane;
 
 import org.eclipse.core.runtime.preferences.IEclipsePreferences;
 import org.eclipse.core.runtime.preferences.InstanceScope;
@@ -40,12 +31,10 @@ import org.eclipse.jface.resource.JFaceResources;
 import org.eclipse.jface.viewers.DecorationOverlayIcon;
 import org.eclipse.jface.viewers.IDecoration;
 import org.eclipse.swt.SWT;
-import org.eclipse.swt.awt.SWT_AWT;
 import org.eclipse.swt.custom.CTabFolder;
 import org.eclipse.swt.custom.CTabItem;
 import org.eclipse.swt.events.SelectionAdapter;
 import org.eclipse.swt.events.SelectionEvent;
-import org.eclipse.swt.layout.FillLayout;
 import org.eclipse.swt.layout.GridData;
 import org.eclipse.swt.layout.GridLayout;
 import org.eclipse.swt.widgets.Composite;
@@ -106,6 +95,8 @@ public class LivePreviewPart extends ViewPart {
 
 	private FXCanvas swtFXContainer;
 	
+	private IPartListener listener;
+	
 	static {
 		JFaceResources.getImageRegistry().put(IMAGE_OK, Activator.imageDescriptorFromPlugin("at.bestsolution.efxclipse.tooling.fxgraph.ui.preview", "/icons/16_16/security-high.png"));
 		JFaceResources.getImageRegistry().put(IMAGE_WARNING, Activator.imageDescriptorFromPlugin("at.bestsolution.efxclipse.tooling.fxgraph.ui.preview", "/icons/16_16/security-medium.png"));
@@ -129,14 +120,8 @@ public class LivePreviewPart extends ViewPart {
 	@Override
 	public void init(IViewSite site) throws PartInitException {
 		super.init(site);
-		site.getWorkbenchWindow().getPartService().addPartListener(synchronizer);
-	}
-
-	@Override
-	public void createPartControl(Composite parent) {
-		Composite container = new Composite(parent, SWT.NONE);
-		container.setLayout(new GridLayout(2,false));
-		getSite().getPage().addPartListener(new IPartListener() {
+		
+listener = new IPartListener() {
 			
 			@Override
 			public void partOpened(IWorkbenchPart part) {
@@ -169,7 +154,16 @@ public class LivePreviewPart extends ViewPart {
 					swtFXContainer.setEnabled(true);	
 				}
 			}
-		});
+		};
+		
+		site.getWorkbenchWindow().getPartService().addPartListener(synchronizer);
+		site.getWorkbenchWindow().getPartService().addPartListener(listener);
+	}
+
+	@Override
+	public void createPartControl(Composite parent) {
+		Composite container = new Composite(parent, SWT.NONE);
+		container.setLayout(new GridLayout(2,false));
 		
 		
 		folder = new CTabFolder(container, SWT.BOTTOM|SWT.BORDER);
@@ -183,36 +177,9 @@ public class LivePreviewPart extends ViewPart {
 			
 			swtFXContainer = new FXCanvas(folder, SWT.NONE);
 			swtFXContainer.setEnabled(false);
-			
-//			Composite composite = new Composite(folder, SWT.NO_BACKGROUND | SWT.EMBEDDED);
-//			composite.setLayout(new FillLayout());
-//			
+
 			item.setControl(swtFXContainer);
 			
-			
-//			Frame frame = SWT_AWT.new_Frame(composite);
-//			Panel panel = new Panel(new BorderLayout()) {
-//				/**
-//				 * 
-//				 */
-//				private static final long serialVersionUID = 1L;
-//
-//				public void update(java.awt.Graphics g) {
-//					/* Do not erase the background */
-//					paint(g);
-//				}
-//			};
-//			frame.add(panel);
-//
-//			JRootPane root = new JRootPane();
-//			panel.add(root);
-//			java.awt.Container contentPane = root.getContentPane();
-//
-//			final JFXPanel jfxPanel = new JFXPanel();
-//
-//			contentPane.setLayout(new BorderLayout());
-//			contentPane.add(jfxPanel);
-
 			Platform.runLater(new Runnable() {
 				@Override
 				public void run() {
@@ -282,6 +249,8 @@ public class LivePreviewPart extends ViewPart {
 	@Override
 	public void dispose() {
 		getSite().getWorkbenchWindow().getPartService().removePartListener(synchronizer);
+		getSite().getWorkbenchWindow().getPartService().addPartListener(listener);
+		
 		super.dispose();
 	}
 
@@ -295,8 +264,6 @@ public class LivePreviewPart extends ViewPart {
 
 	@Override
 	public void setFocus() {
-		System.err.println("Set focus is called");
-//		swtFXContainer.setEnabled(true);
 		folder.setFocus();
 	}
 
@@ -309,8 +276,6 @@ public class LivePreviewPart extends ViewPart {
 			}
 		});
 		
-//		swtFXContainer.setEnabled(false);
-		
 		Platform.runLater(new Runnable() {
 
 			@Override
@@ -318,8 +283,9 @@ public class LivePreviewPart extends ViewPart {
 				ClassLoader cl = null;
 				
 				if( contentData.extraJarPath != null && ! contentData.extraJarPath.isEmpty() ) {
-					cl = Thread.currentThread().getContextClassLoader();	
-					Thread.currentThread().setContextClassLoader(new URLClassLoader(contentData.extraJarPath.toArray(new URL[0]),cl));
+					cl = Thread.currentThread().getContextClassLoader();
+					URLClassLoader previewClassLoader = new PreviewURLClassloader(contentData.extraJarPath.toArray(new URL[0]),swtFXContainer.getClass().getClassLoader());
+					Thread.currentThread().setContextClassLoader(previewClassLoader);
 				}
 				
 				
@@ -502,6 +468,36 @@ public class LivePreviewPart extends ViewPart {
 			this.resourceBundle = resourceBundle;
 			this.extraJarPath = extraJarPath;
 			this.relativePath = relativePath;
+		}
+	}
+	
+	static class PreviewURLClassloader extends URLClassLoader {
+
+		public PreviewURLClassloader(URL[] urls, ClassLoader parent) {
+			super(urls, parent);
+		}
+		
+		public URL getResource(String name) {
+			URL url = super.getResource(name);
+			System.err.println("Get resource is called: " + name + " => " + url);
+			// If the value is not found retry with removed leading '/'
+			if( url == null && name.startsWith("/") ) {
+				url = super.getResource(name.substring(1));
+			}
+			
+			return url;
+		}
+		
+		public URL findResource(String name) {
+			URL url = super.findResource(name);
+			
+			System.err.println("Find resource is called: " + name + " => " + url);
+			// If the value is not found retry with removed leading '/'
+			if( url == null && name.startsWith("/") ) {
+				url = super.findResource(name.substring(1));
+			}
+			
+			return url;
 		}
 	}
 }
