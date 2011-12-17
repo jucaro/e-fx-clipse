@@ -21,10 +21,14 @@ import java.util.Properties;
 
 import javafx.application.Platform;
 import javafx.embed.swing.JFXPanel;
+import javafx.embed.swt.FXCanvas;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.JavaFXBuilderFactory;
 import javafx.scene.Node;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.TextField;
+import javafx.scene.layout.BorderPane;
 
 import javax.swing.JRootPane;
 
@@ -49,7 +53,9 @@ import org.eclipse.swt.widgets.Label;
 import org.eclipse.swt.widgets.Menu;
 import org.eclipse.swt.widgets.MenuItem;
 import org.eclipse.swt.widgets.Text;
+import org.eclipse.ui.IPartListener;
 import org.eclipse.ui.IViewSite;
+import org.eclipse.ui.IWorkbenchPart;
 import org.eclipse.ui.PartInitException;
 import org.eclipse.ui.part.ViewPart;
 import org.osgi.service.prefs.BackingStoreException;
@@ -97,6 +103,8 @@ public class LivePreviewPart extends ViewPart {
 	private Label statusLabelIcon;
 
 	private Label statusLabelText;
+
+	private FXCanvas swtFXContainer;
 	
 	static {
 		JFaceResources.getImageRegistry().put(IMAGE_OK, Activator.imageDescriptorFromPlugin("at.bestsolution.efxclipse.tooling.fxgraph.ui.preview", "/icons/16_16/security-high.png"));
@@ -128,6 +136,40 @@ public class LivePreviewPart extends ViewPart {
 	public void createPartControl(Composite parent) {
 		Composite container = new Composite(parent, SWT.NONE);
 		container.setLayout(new GridLayout(2,false));
+		getSite().getPage().addPartListener(new IPartListener() {
+			
+			@Override
+			public void partOpened(IWorkbenchPart part) {
+				// TODO Auto-generated method stub
+				
+			}
+			
+			@Override
+			public void partDeactivated(IWorkbenchPart part) {
+				if( part == LivePreviewPart.this ) {
+					swtFXContainer.setEnabled(false);
+				}
+			}
+			
+			@Override
+			public void partClosed(IWorkbenchPart part) {
+				// TODO Auto-generated method stub
+				
+			}
+			
+			@Override
+			public void partBroughtToTop(IWorkbenchPart part) {
+				// TODO Auto-generated method stub
+				
+			}
+			
+			@Override
+			public void partActivated(IWorkbenchPart part) {
+				if( part == LivePreviewPart.this ) {
+					swtFXContainer.setEnabled(true);	
+				}
+			}
+		});
 		
 		
 		folder = new CTabFolder(container, SWT.BOTTOM|SWT.BORDER);
@@ -136,39 +178,45 @@ public class LivePreviewPart extends ViewPart {
 		{
 			CTabItem item = new CTabItem(folder, SWT.NONE);
 			
-			Composite composite = new Composite(folder, SWT.NO_BACKGROUND | SWT.EMBEDDED);
-			composite.setLayout(new FillLayout());
-			item.setControl(composite);
 			item.setText("Preview");
 			item.setImage(JFaceResources.getImage(IMAGE_PREVIEW));
 			
-			Frame frame = SWT_AWT.new_Frame(composite);
-			Panel panel = new Panel(new BorderLayout()) {
-				/**
-				 * 
-				 */
-				private static final long serialVersionUID = 1L;
-
-				public void update(java.awt.Graphics g) {
-					/* Do not erase the background */
-					paint(g);
-				}
-			};
-			frame.add(panel);
-
-			JRootPane root = new JRootPane();
-			panel.add(root);
-			java.awt.Container contentPane = root.getContentPane();
-
-			final JFXPanel jfxPanel = new JFXPanel();
-
-			contentPane.setLayout(new BorderLayout());
-			contentPane.add(jfxPanel);
+			swtFXContainer = new FXCanvas(folder, SWT.NONE);
+			swtFXContainer.setEnabled(false);
+			
+//			Composite composite = new Composite(folder, SWT.NO_BACKGROUND | SWT.EMBEDDED);
+//			composite.setLayout(new FillLayout());
+//			
+			item.setControl(swtFXContainer);
+			
+			
+//			Frame frame = SWT_AWT.new_Frame(composite);
+//			Panel panel = new Panel(new BorderLayout()) {
+//				/**
+//				 * 
+//				 */
+//				private static final long serialVersionUID = 1L;
+//
+//				public void update(java.awt.Graphics g) {
+//					/* Do not erase the background */
+//					paint(g);
+//				}
+//			};
+//			frame.add(panel);
+//
+//			JRootPane root = new JRootPane();
+//			panel.add(root);
+//			java.awt.Container contentPane = root.getContentPane();
+//
+//			final JFXPanel jfxPanel = new JFXPanel();
+//
+//			contentPane.setLayout(new BorderLayout());
+//			contentPane.add(jfxPanel);
 
 			Platform.runLater(new Runnable() {
 				@Override
 				public void run() {
-					initFX(jfxPanel);
+					initFX(swtFXContainer);
 				}
 			});
 		}
@@ -237,15 +285,18 @@ public class LivePreviewPart extends ViewPart {
 		super.dispose();
 	}
 
-	private void initFX(JFXPanel fxPanel) {
+	private void initFX(FXCanvas fxPanel) {
 		// This method is invoked on the JavaFX thread
 		rootPane = new FillLayoutPane();
+		rootPane.getChildren().add(new FillLayoutPane());
 		Scene scene = new Scene(rootPane,1000,1000);
 		fxPanel.setScene(scene);
 	}
 
 	@Override
 	public void setFocus() {
+		System.err.println("Set focus is called");
+//		swtFXContainer.setEnabled(true);
 		folder.setFocus();
 	}
 
@@ -257,6 +308,8 @@ public class LivePreviewPart extends ViewPart {
 				folder.setVisible(true);
 			}
 		});
+		
+//		swtFXContainer.setEnabled(false);
 		
 		Platform.runLater(new Runnable() {
 
@@ -338,6 +391,7 @@ public class LivePreviewPart extends ViewPart {
 						StyleManager.getInstance().reloadStylesheets(scene);
 						
 						rootPane.getChildren().add(root);
+						
 					} catch (Exception e) {
 						System.err.println(contentData.contents);
 						StringWriter sw = new StringWriter();
