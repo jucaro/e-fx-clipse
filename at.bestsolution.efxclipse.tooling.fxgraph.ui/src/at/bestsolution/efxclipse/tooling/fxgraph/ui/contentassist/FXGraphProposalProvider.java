@@ -27,7 +27,6 @@ import org.eclipse.jdt.core.IType;
 import org.eclipse.jdt.core.JavaCore;
 import org.eclipse.jdt.core.JavaModelException;
 import org.eclipse.jdt.core.Signature;
-import org.eclipse.jdt.core.search.IJavaSearchConstants;
 import org.eclipse.jdt.internal.corext.util.JavaModelUtil;
 import org.eclipse.jface.resource.JFaceResources;
 import org.eclipse.jface.viewers.StyledString;
@@ -243,7 +242,6 @@ public class FXGraphProposalProvider extends AbstractFXGraphProposalProvider {
 		super.completeControllerHandledValueProperty_Methodname(model, assignment, context, acceptor);
 	}
 
-	@SuppressWarnings("restriction")
 	private List<IMethod> findControllerJavaMethods(IJavaProject jproject, JvmType type, IMethod bindMethod) {
 		IType jdtType = (IType) javaElementFinder.findElementFor(type);
 
@@ -295,7 +293,6 @@ public class FXGraphProposalProvider extends AbstractFXGraphProposalProvider {
 		return Collections.emptyList();
 	}
 
-	@SuppressWarnings("restriction")
 	@Override
 	public void completeStaticValueProperty_Name(EObject model, Assignment assignment, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
 		StaticValueProperty prop = (StaticValueProperty) model;
@@ -422,7 +419,6 @@ public class FXGraphProposalProvider extends AbstractFXGraphProposalProvider {
 		super.completeProperty_Value(model, assignment, context, acceptor);
 	}
 
-	@SuppressWarnings("restriction")
 	@Override
 	public void completeJvmParameterizedTypeReference_Type(EObject model, Assignment assignment, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
 		// We are in single property
@@ -474,7 +470,7 @@ public class FXGraphProposalProvider extends AbstractFXGraphProposalProvider {
 
 				if( type != null ) {
 					JvmType superType = jdtTypeProvider.createTypeProvider(model.eResource().getResourceSet()).findTypeByName(type.getFullyQualifiedName());
-					if( type != null ) {
+					if( superType != null ) {
 						typeProposalProviders.createSubTypeProposals(superType, this, context, TypesPackage.Literals.JVM_PARAMETERIZED_TYPE_REFERENCE__TYPE, acceptor);		
 					}
 				}
@@ -486,49 +482,5 @@ public class FXGraphProposalProvider extends AbstractFXGraphProposalProvider {
 		} else {
 			super.completeJvmParameterizedTypeReference_Type(model, assignment, context, acceptor);
 		}
-	}
-
-	static class AssignableFilter implements ITypesProposalProvider.Filter {
-		private final IJavaProject jp;
-		private final IType targetType;
-
-		public AssignableFilter(IJavaProject jp, IType targetType) {
-			this.jp = jp;
-			this.targetType = targetType;
-		}
-
-		@SuppressWarnings("restriction")
-		@Override
-		public boolean accept(int modifiers, char[] packageName, char[] simpleTypeName, char[][] enclosingTypeNames, String path) {
-			try {
-				IType t;
-				if (packageName.length == 0) {
-					t = jp.findType(new String(simpleTypeName));
-				} else {
-					t = jp.findType(new String(packageName) + "." + new String(simpleTypeName));
-				}
-
-				if (t.equals(targetType)) {
-					return true;
-				}
-
-				for (IType parentType : JavaModelUtil.getAllSuperTypes(t, new NullProgressMonitor())) {
-					if (parentType.equals(targetType)) {
-						return true;
-					}
-				}
-
-				return false;
-			} catch (Exception e) {
-				// // TODO Auto-generated catch block
-				return false;
-			}
-		}
-
-		@Override
-		public int getSearchFor() {
-			return IJavaSearchConstants.TYPE;
-		}
-
 	}
 }
