@@ -246,13 +246,22 @@ public interface FXMLDslPackage extends EPackage
   int CONTAINER_ELEMENT_DEFINITION__PROPERTIES = ELEMENT_DEFINITION_FEATURE_COUNT + 0;
 
   /**
+   * The feature id for the '<em><b>Content</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CONTAINER_ELEMENT_DEFINITION__CONTENT = ELEMENT_DEFINITION_FEATURE_COUNT + 1;
+
+  /**
    * The feature id for the '<em><b>Children</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int CONTAINER_ELEMENT_DEFINITION__CHILDREN = ELEMENT_DEFINITION_FEATURE_COUNT + 1;
+  int CONTAINER_ELEMENT_DEFINITION__CHILDREN = ELEMENT_DEFINITION_FEATURE_COUNT + 2;
 
   /**
    * The feature id for the '<em><b>Endnamespace</b></em>' attribute.
@@ -261,7 +270,7 @@ public interface FXMLDslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CONTAINER_ELEMENT_DEFINITION__ENDNAMESPACE = ELEMENT_DEFINITION_FEATURE_COUNT + 2;
+  int CONTAINER_ELEMENT_DEFINITION__ENDNAMESPACE = ELEMENT_DEFINITION_FEATURE_COUNT + 3;
 
   /**
    * The feature id for the '<em><b>Endname</b></em>' attribute.
@@ -270,16 +279,7 @@ public interface FXMLDslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CONTAINER_ELEMENT_DEFINITION__ENDNAME = ELEMENT_DEFINITION_FEATURE_COUNT + 3;
-
-  /**
-   * The feature id for the '<em><b>Content</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int CONTAINER_ELEMENT_DEFINITION__CONTENT = ELEMENT_DEFINITION_FEATURE_COUNT + 4;
+  int CONTAINER_ELEMENT_DEFINITION__ENDNAME = ELEMENT_DEFINITION_FEATURE_COUNT + 4;
 
   /**
    * The number of structural features of the '<em>Container Element Definition</em>' class.
@@ -337,6 +337,34 @@ public interface FXMLDslPackage extends EPackage
   int EMPTY_ELEMENT_DEFINITION_FEATURE_COUNT = ELEMENT_DEFINITION_FEATURE_COUNT + 1;
 
   /**
+   * The meta object id for the '{@link at.bestsolution.efxclipse.tooling.fxmlx.fXMLDsl.impl.PCDataImpl <em>PC Data</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see at.bestsolution.efxclipse.tooling.fxmlx.fXMLDsl.impl.PCDataImpl
+   * @see at.bestsolution.efxclipse.tooling.fxmlx.fXMLDsl.impl.FXMLDslPackageImpl#getPCData()
+   * @generated
+   */
+  int PC_DATA = 6;
+
+  /**
+   * The feature id for the '<em><b>Content</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PC_DATA__CONTENT = 0;
+
+  /**
+   * The number of structural features of the '<em>PC Data</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PC_DATA_FEATURE_COUNT = 1;
+
+  /**
    * The meta object id for the '{@link at.bestsolution.efxclipse.tooling.fxmlx.fXMLDsl.impl.AttributePropertyDefinitionImpl <em>Attribute Property Definition</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -344,7 +372,7 @@ public interface FXMLDslPackage extends EPackage
    * @see at.bestsolution.efxclipse.tooling.fxmlx.fXMLDsl.impl.FXMLDslPackageImpl#getAttributePropertyDefinition()
    * @generated
    */
-  int ATTRIBUTE_PROPERTY_DEFINITION = 6;
+  int ATTRIBUTE_PROPERTY_DEFINITION = 7;
 
   /**
    * The feature id for the '<em><b>Namespace</b></em>' attribute.
@@ -533,6 +561,17 @@ public interface FXMLDslPackage extends EPackage
   EReference getContainerElementDefinition_Properties();
 
   /**
+   * Returns the meta object for the containment reference '{@link at.bestsolution.efxclipse.tooling.fxmlx.fXMLDsl.ContainerElementDefinition#getContent <em>Content</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Content</em>'.
+   * @see at.bestsolution.efxclipse.tooling.fxmlx.fXMLDsl.ContainerElementDefinition#getContent()
+   * @see #getContainerElementDefinition()
+   * @generated
+   */
+  EReference getContainerElementDefinition_Content();
+
+  /**
    * Returns the meta object for the containment reference list '{@link at.bestsolution.efxclipse.tooling.fxmlx.fXMLDsl.ContainerElementDefinition#getChildren <em>Children</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -566,17 +605,6 @@ public interface FXMLDslPackage extends EPackage
   EAttribute getContainerElementDefinition_Endname();
 
   /**
-   * Returns the meta object for the attribute '{@link at.bestsolution.efxclipse.tooling.fxmlx.fXMLDsl.ContainerElementDefinition#getContent <em>Content</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Content</em>'.
-   * @see at.bestsolution.efxclipse.tooling.fxmlx.fXMLDsl.ContainerElementDefinition#getContent()
-   * @see #getContainerElementDefinition()
-   * @generated
-   */
-  EAttribute getContainerElementDefinition_Content();
-
-  /**
    * Returns the meta object for class '{@link at.bestsolution.efxclipse.tooling.fxmlx.fXMLDsl.EmptyElementDefinition <em>Empty Element Definition</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -596,6 +624,27 @@ public interface FXMLDslPackage extends EPackage
    * @generated
    */
   EReference getEmptyElementDefinition_Props();
+
+  /**
+   * Returns the meta object for class '{@link at.bestsolution.efxclipse.tooling.fxmlx.fXMLDsl.PCData <em>PC Data</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>PC Data</em>'.
+   * @see at.bestsolution.efxclipse.tooling.fxmlx.fXMLDsl.PCData
+   * @generated
+   */
+  EClass getPCData();
+
+  /**
+   * Returns the meta object for the attribute '{@link at.bestsolution.efxclipse.tooling.fxmlx.fXMLDsl.PCData#getContent <em>Content</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Content</em>'.
+   * @see at.bestsolution.efxclipse.tooling.fxmlx.fXMLDsl.PCData#getContent()
+   * @see #getPCData()
+   * @generated
+   */
+  EAttribute getPCData_Content();
 
   /**
    * Returns the meta object for class '{@link at.bestsolution.efxclipse.tooling.fxmlx.fXMLDsl.AttributePropertyDefinition <em>Attribute Property Definition</em>}'.
@@ -786,6 +835,14 @@ public interface FXMLDslPackage extends EPackage
     EReference CONTAINER_ELEMENT_DEFINITION__PROPERTIES = eINSTANCE.getContainerElementDefinition_Properties();
 
     /**
+     * The meta object literal for the '<em><b>Content</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference CONTAINER_ELEMENT_DEFINITION__CONTENT = eINSTANCE.getContainerElementDefinition_Content();
+
+    /**
      * The meta object literal for the '<em><b>Children</b></em>' containment reference list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -810,14 +867,6 @@ public interface FXMLDslPackage extends EPackage
     EAttribute CONTAINER_ELEMENT_DEFINITION__ENDNAME = eINSTANCE.getContainerElementDefinition_Endname();
 
     /**
-     * The meta object literal for the '<em><b>Content</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute CONTAINER_ELEMENT_DEFINITION__CONTENT = eINSTANCE.getContainerElementDefinition_Content();
-
-    /**
      * The meta object literal for the '{@link at.bestsolution.efxclipse.tooling.fxmlx.fXMLDsl.impl.EmptyElementDefinitionImpl <em>Empty Element Definition</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -834,6 +883,24 @@ public interface FXMLDslPackage extends EPackage
      * @generated
      */
     EReference EMPTY_ELEMENT_DEFINITION__PROPS = eINSTANCE.getEmptyElementDefinition_Props();
+
+    /**
+     * The meta object literal for the '{@link at.bestsolution.efxclipse.tooling.fxmlx.fXMLDsl.impl.PCDataImpl <em>PC Data</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see at.bestsolution.efxclipse.tooling.fxmlx.fXMLDsl.impl.PCDataImpl
+     * @see at.bestsolution.efxclipse.tooling.fxmlx.fXMLDsl.impl.FXMLDslPackageImpl#getPCData()
+     * @generated
+     */
+    EClass PC_DATA = eINSTANCE.getPCData();
+
+    /**
+     * The meta object literal for the '<em><b>Content</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute PC_DATA__CONTENT = eINSTANCE.getPCData_Content();
 
     /**
      * The meta object literal for the '{@link at.bestsolution.efxclipse.tooling.fxmlx.fXMLDsl.impl.AttributePropertyDefinitionImpl <em>Attribute Property Definition</em>}' class.

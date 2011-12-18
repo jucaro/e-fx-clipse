@@ -26,13 +26,16 @@
     </genClasses>
     <genClasses ecoreClass="FXMLDsl.ecore#//ContainerElementDefinition">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference FXMLDsl.ecore#//ContainerElementDefinition/properties"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference FXMLDsl.ecore#//ContainerElementDefinition/content"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference FXMLDsl.ecore#//ContainerElementDefinition/children"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute FXMLDsl.ecore#//ContainerElementDefinition/endnamespace"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute FXMLDsl.ecore#//ContainerElementDefinition/endname"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute FXMLDsl.ecore#//ContainerElementDefinition/content"/>
     </genClasses>
     <genClasses ecoreClass="FXMLDsl.ecore#//EmptyElementDefinition">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference FXMLDsl.ecore#//EmptyElementDefinition/props"/>
+    </genClasses>
+    <genClasses ecoreClass="FXMLDsl.ecore#//PCData">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute FXMLDsl.ecore#//PCData/content"/>
     </genClasses>
     <genClasses ecoreClass="FXMLDsl.ecore#//AttributePropertyDefinition">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute FXMLDsl.ecore#//AttributePropertyDefinition/namespace"/>

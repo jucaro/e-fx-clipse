@@ -81,6 +81,15 @@ public interface FXMLDslFactory extends EFactory
   EmptyElementDefinition createEmptyElementDefinition();
 
   /**
+   * Returns a new object of class '<em>PC Data</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>PC Data</em>'.
+   * @generated
+   */
+  PCData createPCData();
+
+  /**
    * Returns a new object of class '<em>Attribute Property Definition</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->

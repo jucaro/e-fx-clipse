@@ -109,6 +109,11 @@ public class FXMLDslAdapterFactory extends AdapterFactoryImpl
         return createEmptyElementDefinitionAdapter();
       }
       @Override
+      public Adapter casePCData(PCData object)
+      {
+        return createPCDataAdapter();
+      }
+      @Override
       public Adapter caseAttributePropertyDefinition(AttributePropertyDefinition object)
       {
         return createAttributePropertyDefinitionAdapter();
@@ -221,6 +226,21 @@ public class FXMLDslAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createEmptyElementDefinitionAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link at.bestsolution.efxclipse.tooling.fxmlx.fXMLDsl.PCData <em>PC Data</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see at.bestsolution.efxclipse.tooling.fxmlx.fXMLDsl.PCData
+   * @generated
+   */
+  public Adapter createPCDataAdapter()
   {
     return null;
   }

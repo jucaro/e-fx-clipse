@@ -74,6 +74,7 @@ public class FXMLDslFactoryImpl extends EFactoryImpl implements FXMLDslFactory
       case FXMLDslPackage.ELEMENT_DEFINITION: return createElementDefinition();
       case FXMLDslPackage.CONTAINER_ELEMENT_DEFINITION: return createContainerElementDefinition();
       case FXMLDslPackage.EMPTY_ELEMENT_DEFINITION: return createEmptyElementDefinition();
+      case FXMLDslPackage.PC_DATA: return createPCData();
       case FXMLDslPackage.ATTRIBUTE_PROPERTY_DEFINITION: return createAttributePropertyDefinition();
       default:
         throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
@@ -144,6 +145,17 @@ public class FXMLDslFactoryImpl extends EFactoryImpl implements FXMLDslFactory
   {
     EmptyElementDefinitionImpl emptyElementDefinition = new EmptyElementDefinitionImpl();
     return emptyElementDefinition;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public PCData createPCData()
+  {
+    PCDataImpl pcData = new PCDataImpl();
+    return pcData;
   }
 
   /**

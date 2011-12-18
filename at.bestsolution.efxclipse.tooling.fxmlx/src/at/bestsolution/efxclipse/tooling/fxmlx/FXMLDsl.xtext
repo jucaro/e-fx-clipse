@@ -23,29 +23,33 @@ ElementDefinition:
 
 ContainerElementDefinition:
 	('<' (namespace=ID ':')? name=QualifiedName properties+=AttributePropertyDefinition*'>'
-		children+=ElementDefinition+
+		content=PCData? children+=ElementDefinition*
 	 '</' (endnamespace=ID ':')? endname=QualifiedName '>'
 	)
-	| 
-	('<' (namespace=ID ':')? name=QualifiedName properties+=AttributePropertyDefinition*'>'
-		content=Content
-	 '</' (endnamespace=ID ':')? endname=QualifiedName '>'
-	)
+//	| 
+//	('<' (namespace=ID ':')? name=QualifiedName properties+=AttributePropertyDefinition*'>'
+//		content=Content
+//	 '</' (endnamespace=ID ':')? endname=QualifiedName '>'
+//	)
 ;
 
 EmptyElementDefinition:
 	('<' (namespace=ID ':')? name=QualifiedName props+=AttributePropertyDefinition* '/>') 
 ;
 
+PCData:
+	content=Content
+;
 
 
 AttributePropertyDefinition:
-	(namespace=ID ':')? name=ID '=' value=STRING
+	(namespace=ID ':')? name=QualifiedName '=' value=STRING
 ;
 
 
 Content hidden(ML_COMMENT):
-	(ID|STRING|ANY_OTHER|WS|'.'|':')*
+	(ID|STRING|ANY_OTHER|'.'|':') (ID|STRING|ANY_OTHER|WS|'.'|':')*
+	//PC_DATA
 ;
 
 QualifiedName:
@@ -56,6 +60,10 @@ QualifiedName:
 QualifiedNameWithWildCard :
 	QualifiedName ('.' '*')?
 ;
+
+//terminal PC_DATA:
+//	(!('<'|'>'|' '|'\t'|'\r'|'\n')) (!('<'|'>'))* 
+//;
 
 terminal ID  		: '^'?('a'..'z'|'A'..'Z'|'_') ('a'..'z'|'A'..'Z'|'_'|'0'..'9')*;
 terminal STRING	: 

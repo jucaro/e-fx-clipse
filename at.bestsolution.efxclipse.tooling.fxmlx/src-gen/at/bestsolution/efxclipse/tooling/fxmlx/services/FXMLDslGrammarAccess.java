@@ -138,188 +138,109 @@ public class FXMLDslGrammarAccess extends AbstractGrammarElementFinder {
 
 	public class ContainerElementDefinitionElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "ContainerElementDefinition");
-		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
-		private final Group cGroup_0 = (Group)cAlternatives.eContents().get(0);
-		private final Keyword cLessThanSignKeyword_0_0 = (Keyword)cGroup_0.eContents().get(0);
-		private final Group cGroup_0_1 = (Group)cGroup_0.eContents().get(1);
-		private final Assignment cNamespaceAssignment_0_1_0 = (Assignment)cGroup_0_1.eContents().get(0);
-		private final RuleCall cNamespaceIDTerminalRuleCall_0_1_0_0 = (RuleCall)cNamespaceAssignment_0_1_0.eContents().get(0);
-		private final Keyword cColonKeyword_0_1_1 = (Keyword)cGroup_0_1.eContents().get(1);
-		private final Assignment cNameAssignment_0_2 = (Assignment)cGroup_0.eContents().get(2);
-		private final RuleCall cNameQualifiedNameParserRuleCall_0_2_0 = (RuleCall)cNameAssignment_0_2.eContents().get(0);
-		private final Assignment cPropertiesAssignment_0_3 = (Assignment)cGroup_0.eContents().get(3);
-		private final RuleCall cPropertiesAttributePropertyDefinitionParserRuleCall_0_3_0 = (RuleCall)cPropertiesAssignment_0_3.eContents().get(0);
-		private final Keyword cGreaterThanSignKeyword_0_4 = (Keyword)cGroup_0.eContents().get(4);
-		private final Assignment cChildrenAssignment_0_5 = (Assignment)cGroup_0.eContents().get(5);
-		private final RuleCall cChildrenElementDefinitionParserRuleCall_0_5_0 = (RuleCall)cChildrenAssignment_0_5.eContents().get(0);
-		private final Keyword cLessThanSignSolidusKeyword_0_6 = (Keyword)cGroup_0.eContents().get(6);
-		private final Group cGroup_0_7 = (Group)cGroup_0.eContents().get(7);
-		private final Assignment cEndnamespaceAssignment_0_7_0 = (Assignment)cGroup_0_7.eContents().get(0);
-		private final RuleCall cEndnamespaceIDTerminalRuleCall_0_7_0_0 = (RuleCall)cEndnamespaceAssignment_0_7_0.eContents().get(0);
-		private final Keyword cColonKeyword_0_7_1 = (Keyword)cGroup_0_7.eContents().get(1);
-		private final Assignment cEndnameAssignment_0_8 = (Assignment)cGroup_0.eContents().get(8);
-		private final RuleCall cEndnameQualifiedNameParserRuleCall_0_8_0 = (RuleCall)cEndnameAssignment_0_8.eContents().get(0);
-		private final Keyword cGreaterThanSignKeyword_0_9 = (Keyword)cGroup_0.eContents().get(9);
-		private final Group cGroup_1 = (Group)cAlternatives.eContents().get(1);
-		private final Keyword cLessThanSignKeyword_1_0 = (Keyword)cGroup_1.eContents().get(0);
-		private final Group cGroup_1_1 = (Group)cGroup_1.eContents().get(1);
-		private final Assignment cNamespaceAssignment_1_1_0 = (Assignment)cGroup_1_1.eContents().get(0);
-		private final RuleCall cNamespaceIDTerminalRuleCall_1_1_0_0 = (RuleCall)cNamespaceAssignment_1_1_0.eContents().get(0);
-		private final Keyword cColonKeyword_1_1_1 = (Keyword)cGroup_1_1.eContents().get(1);
-		private final Assignment cNameAssignment_1_2 = (Assignment)cGroup_1.eContents().get(2);
-		private final RuleCall cNameQualifiedNameParserRuleCall_1_2_0 = (RuleCall)cNameAssignment_1_2.eContents().get(0);
-		private final Assignment cPropertiesAssignment_1_3 = (Assignment)cGroup_1.eContents().get(3);
-		private final RuleCall cPropertiesAttributePropertyDefinitionParserRuleCall_1_3_0 = (RuleCall)cPropertiesAssignment_1_3.eContents().get(0);
-		private final Keyword cGreaterThanSignKeyword_1_4 = (Keyword)cGroup_1.eContents().get(4);
-		private final Assignment cContentAssignment_1_5 = (Assignment)cGroup_1.eContents().get(5);
-		private final RuleCall cContentContentParserRuleCall_1_5_0 = (RuleCall)cContentAssignment_1_5.eContents().get(0);
-		private final Keyword cLessThanSignSolidusKeyword_1_6 = (Keyword)cGroup_1.eContents().get(6);
-		private final Group cGroup_1_7 = (Group)cGroup_1.eContents().get(7);
-		private final Assignment cEndnamespaceAssignment_1_7_0 = (Assignment)cGroup_1_7.eContents().get(0);
-		private final RuleCall cEndnamespaceIDTerminalRuleCall_1_7_0_0 = (RuleCall)cEndnamespaceAssignment_1_7_0.eContents().get(0);
-		private final Keyword cColonKeyword_1_7_1 = (Keyword)cGroup_1_7.eContents().get(1);
-		private final Assignment cEndnameAssignment_1_8 = (Assignment)cGroup_1.eContents().get(8);
-		private final RuleCall cEndnameQualifiedNameParserRuleCall_1_8_0 = (RuleCall)cEndnameAssignment_1_8.eContents().get(0);
-		private final Keyword cGreaterThanSignKeyword_1_9 = (Keyword)cGroup_1.eContents().get(9);
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cLessThanSignKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Group cGroup_1 = (Group)cGroup.eContents().get(1);
+		private final Assignment cNamespaceAssignment_1_0 = (Assignment)cGroup_1.eContents().get(0);
+		private final RuleCall cNamespaceIDTerminalRuleCall_1_0_0 = (RuleCall)cNamespaceAssignment_1_0.eContents().get(0);
+		private final Keyword cColonKeyword_1_1 = (Keyword)cGroup_1.eContents().get(1);
+		private final Assignment cNameAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cNameQualifiedNameParserRuleCall_2_0 = (RuleCall)cNameAssignment_2.eContents().get(0);
+		private final Assignment cPropertiesAssignment_3 = (Assignment)cGroup.eContents().get(3);
+		private final RuleCall cPropertiesAttributePropertyDefinitionParserRuleCall_3_0 = (RuleCall)cPropertiesAssignment_3.eContents().get(0);
+		private final Keyword cGreaterThanSignKeyword_4 = (Keyword)cGroup.eContents().get(4);
+		private final Assignment cContentAssignment_5 = (Assignment)cGroup.eContents().get(5);
+		private final RuleCall cContentPCDataParserRuleCall_5_0 = (RuleCall)cContentAssignment_5.eContents().get(0);
+		private final Assignment cChildrenAssignment_6 = (Assignment)cGroup.eContents().get(6);
+		private final RuleCall cChildrenElementDefinitionParserRuleCall_6_0 = (RuleCall)cChildrenAssignment_6.eContents().get(0);
+		private final Keyword cLessThanSignSolidusKeyword_7 = (Keyword)cGroup.eContents().get(7);
+		private final Group cGroup_8 = (Group)cGroup.eContents().get(8);
+		private final Assignment cEndnamespaceAssignment_8_0 = (Assignment)cGroup_8.eContents().get(0);
+		private final RuleCall cEndnamespaceIDTerminalRuleCall_8_0_0 = (RuleCall)cEndnamespaceAssignment_8_0.eContents().get(0);
+		private final Keyword cColonKeyword_8_1 = (Keyword)cGroup_8.eContents().get(1);
+		private final Assignment cEndnameAssignment_9 = (Assignment)cGroup.eContents().get(9);
+		private final RuleCall cEndnameQualifiedNameParserRuleCall_9_0 = (RuleCall)cEndnameAssignment_9.eContents().get(0);
+		private final Keyword cGreaterThanSignKeyword_10 = (Keyword)cGroup.eContents().get(10);
 		
+		////	| 
+		////	('<' (namespace=ID ':')? name=QualifiedName properties+=AttributePropertyDefinition*'>'
+		////		content=Content
+		////	 '</' (endnamespace=ID ':')? endname=QualifiedName '>'
+		////	)
 		//ContainerElementDefinition:
-		//	"<" (namespace=ID ":")? name=QualifiedName properties+=AttributePropertyDefinition* ">" children+=ElementDefinition+
-		//	"</" (endnamespace=ID ":")? endname=QualifiedName ">" | "<" (namespace=ID ":")? name=QualifiedName
-		//	properties+=AttributePropertyDefinition* ">" content=Content "</" (endnamespace=ID ":")? endname=QualifiedName ">";
+		//	"<" (namespace=ID ":")? name=QualifiedName properties+=AttributePropertyDefinition* ">" content=PCData?
+		//	children+=ElementDefinition* "</" (endnamespace=ID ":")? endname=QualifiedName ">";
 		public ParserRule getRule() { return rule; }
 
-		//"<" (namespace=ID ":")? name=QualifiedName properties+=AttributePropertyDefinition* ">" children+=ElementDefinition+
-		//"</" (endnamespace=ID ":")? endname=QualifiedName ">" | "<" (namespace=ID ":")? name=QualifiedName
-		//properties+=AttributePropertyDefinition* ">" content=Content "</" (endnamespace=ID ":")? endname=QualifiedName ">"
-		public Alternatives getAlternatives() { return cAlternatives; }
-
-		//"<" (namespace=ID ":")? name=QualifiedName properties+=AttributePropertyDefinition* ">" children+=ElementDefinition+
-		//"</" (endnamespace=ID ":")? endname=QualifiedName ">"
-		public Group getGroup_0() { return cGroup_0; }
+		//"<" (namespace=ID ":")? name=QualifiedName properties+=AttributePropertyDefinition* ">" content=PCData?
+		//children+=ElementDefinition* "</" (endnamespace=ID ":")? endname=QualifiedName ">"
+		public Group getGroup() { return cGroup; }
 
 		//"<"
-		public Keyword getLessThanSignKeyword_0_0() { return cLessThanSignKeyword_0_0; }
+		public Keyword getLessThanSignKeyword_0() { return cLessThanSignKeyword_0; }
 
 		//(namespace=ID ":")?
-		public Group getGroup_0_1() { return cGroup_0_1; }
-
-		//namespace=ID
-		public Assignment getNamespaceAssignment_0_1_0() { return cNamespaceAssignment_0_1_0; }
-
-		//ID
-		public RuleCall getNamespaceIDTerminalRuleCall_0_1_0_0() { return cNamespaceIDTerminalRuleCall_0_1_0_0; }
-
-		//":"
-		public Keyword getColonKeyword_0_1_1() { return cColonKeyword_0_1_1; }
-
-		//name=QualifiedName
-		public Assignment getNameAssignment_0_2() { return cNameAssignment_0_2; }
-
-		//QualifiedName
-		public RuleCall getNameQualifiedNameParserRuleCall_0_2_0() { return cNameQualifiedNameParserRuleCall_0_2_0; }
-
-		//properties+=AttributePropertyDefinition*
-		public Assignment getPropertiesAssignment_0_3() { return cPropertiesAssignment_0_3; }
-
-		//AttributePropertyDefinition
-		public RuleCall getPropertiesAttributePropertyDefinitionParserRuleCall_0_3_0() { return cPropertiesAttributePropertyDefinitionParserRuleCall_0_3_0; }
-
-		//">"
-		public Keyword getGreaterThanSignKeyword_0_4() { return cGreaterThanSignKeyword_0_4; }
-
-		//children+=ElementDefinition+
-		public Assignment getChildrenAssignment_0_5() { return cChildrenAssignment_0_5; }
-
-		//ElementDefinition
-		public RuleCall getChildrenElementDefinitionParserRuleCall_0_5_0() { return cChildrenElementDefinitionParserRuleCall_0_5_0; }
-
-		//"</"
-		public Keyword getLessThanSignSolidusKeyword_0_6() { return cLessThanSignSolidusKeyword_0_6; }
-
-		//(endnamespace=ID ":")?
-		public Group getGroup_0_7() { return cGroup_0_7; }
-
-		//endnamespace=ID
-		public Assignment getEndnamespaceAssignment_0_7_0() { return cEndnamespaceAssignment_0_7_0; }
-
-		//ID
-		public RuleCall getEndnamespaceIDTerminalRuleCall_0_7_0_0() { return cEndnamespaceIDTerminalRuleCall_0_7_0_0; }
-
-		//":"
-		public Keyword getColonKeyword_0_7_1() { return cColonKeyword_0_7_1; }
-
-		//endname=QualifiedName
-		public Assignment getEndnameAssignment_0_8() { return cEndnameAssignment_0_8; }
-
-		//QualifiedName
-		public RuleCall getEndnameQualifiedNameParserRuleCall_0_8_0() { return cEndnameQualifiedNameParserRuleCall_0_8_0; }
-
-		//">"
-		public Keyword getGreaterThanSignKeyword_0_9() { return cGreaterThanSignKeyword_0_9; }
-
-		//"<" (namespace=ID ":")? name=QualifiedName properties+=AttributePropertyDefinition* ">" content=Content "</"
-		//(endnamespace=ID ":")? endname=QualifiedName ">"
 		public Group getGroup_1() { return cGroup_1; }
 
-		//"<"
-		public Keyword getLessThanSignKeyword_1_0() { return cLessThanSignKeyword_1_0; }
-
-		//(namespace=ID ":")?
-		public Group getGroup_1_1() { return cGroup_1_1; }
-
 		//namespace=ID
-		public Assignment getNamespaceAssignment_1_1_0() { return cNamespaceAssignment_1_1_0; }
+		public Assignment getNamespaceAssignment_1_0() { return cNamespaceAssignment_1_0; }
 
 		//ID
-		public RuleCall getNamespaceIDTerminalRuleCall_1_1_0_0() { return cNamespaceIDTerminalRuleCall_1_1_0_0; }
+		public RuleCall getNamespaceIDTerminalRuleCall_1_0_0() { return cNamespaceIDTerminalRuleCall_1_0_0; }
 
 		//":"
-		public Keyword getColonKeyword_1_1_1() { return cColonKeyword_1_1_1; }
+		public Keyword getColonKeyword_1_1() { return cColonKeyword_1_1; }
 
 		//name=QualifiedName
-		public Assignment getNameAssignment_1_2() { return cNameAssignment_1_2; }
+		public Assignment getNameAssignment_2() { return cNameAssignment_2; }
 
 		//QualifiedName
-		public RuleCall getNameQualifiedNameParserRuleCall_1_2_0() { return cNameQualifiedNameParserRuleCall_1_2_0; }
+		public RuleCall getNameQualifiedNameParserRuleCall_2_0() { return cNameQualifiedNameParserRuleCall_2_0; }
 
 		//properties+=AttributePropertyDefinition*
-		public Assignment getPropertiesAssignment_1_3() { return cPropertiesAssignment_1_3; }
+		public Assignment getPropertiesAssignment_3() { return cPropertiesAssignment_3; }
 
 		//AttributePropertyDefinition
-		public RuleCall getPropertiesAttributePropertyDefinitionParserRuleCall_1_3_0() { return cPropertiesAttributePropertyDefinitionParserRuleCall_1_3_0; }
+		public RuleCall getPropertiesAttributePropertyDefinitionParserRuleCall_3_0() { return cPropertiesAttributePropertyDefinitionParserRuleCall_3_0; }
 
 		//">"
-		public Keyword getGreaterThanSignKeyword_1_4() { return cGreaterThanSignKeyword_1_4; }
+		public Keyword getGreaterThanSignKeyword_4() { return cGreaterThanSignKeyword_4; }
 
-		//content=Content
-		public Assignment getContentAssignment_1_5() { return cContentAssignment_1_5; }
+		//content=PCData?
+		public Assignment getContentAssignment_5() { return cContentAssignment_5; }
 
-		//Content
-		public RuleCall getContentContentParserRuleCall_1_5_0() { return cContentContentParserRuleCall_1_5_0; }
+		//PCData
+		public RuleCall getContentPCDataParserRuleCall_5_0() { return cContentPCDataParserRuleCall_5_0; }
+
+		//children+=ElementDefinition*
+		public Assignment getChildrenAssignment_6() { return cChildrenAssignment_6; }
+
+		//ElementDefinition
+		public RuleCall getChildrenElementDefinitionParserRuleCall_6_0() { return cChildrenElementDefinitionParserRuleCall_6_0; }
 
 		//"</"
-		public Keyword getLessThanSignSolidusKeyword_1_6() { return cLessThanSignSolidusKeyword_1_6; }
+		public Keyword getLessThanSignSolidusKeyword_7() { return cLessThanSignSolidusKeyword_7; }
 
 		//(endnamespace=ID ":")?
-		public Group getGroup_1_7() { return cGroup_1_7; }
+		public Group getGroup_8() { return cGroup_8; }
 
 		//endnamespace=ID
-		public Assignment getEndnamespaceAssignment_1_7_0() { return cEndnamespaceAssignment_1_7_0; }
+		public Assignment getEndnamespaceAssignment_8_0() { return cEndnamespaceAssignment_8_0; }
 
 		//ID
-		public RuleCall getEndnamespaceIDTerminalRuleCall_1_7_0_0() { return cEndnamespaceIDTerminalRuleCall_1_7_0_0; }
+		public RuleCall getEndnamespaceIDTerminalRuleCall_8_0_0() { return cEndnamespaceIDTerminalRuleCall_8_0_0; }
 
 		//":"
-		public Keyword getColonKeyword_1_7_1() { return cColonKeyword_1_7_1; }
+		public Keyword getColonKeyword_8_1() { return cColonKeyword_8_1; }
 
 		//endname=QualifiedName
-		public Assignment getEndnameAssignment_1_8() { return cEndnameAssignment_1_8; }
+		public Assignment getEndnameAssignment_9() { return cEndnameAssignment_9; }
 
 		//QualifiedName
-		public RuleCall getEndnameQualifiedNameParserRuleCall_1_8_0() { return cEndnameQualifiedNameParserRuleCall_1_8_0; }
+		public RuleCall getEndnameQualifiedNameParserRuleCall_9_0() { return cEndnameQualifiedNameParserRuleCall_9_0; }
 
 		//">"
-		public Keyword getGreaterThanSignKeyword_1_9() { return cGreaterThanSignKeyword_1_9; }
+		public Keyword getGreaterThanSignKeyword_10() { return cGreaterThanSignKeyword_10; }
 	}
 
 	public class EmptyElementDefinitionElements extends AbstractParserRuleElementFinder {
@@ -374,6 +295,22 @@ public class FXMLDslGrammarAccess extends AbstractGrammarElementFinder {
 		public Keyword getSolidusGreaterThanSignKeyword_4() { return cSolidusGreaterThanSignKeyword_4; }
 	}
 
+	public class PCDataElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "PCData");
+		private final Assignment cContentAssignment = (Assignment)rule.eContents().get(1);
+		private final RuleCall cContentContentParserRuleCall_0 = (RuleCall)cContentAssignment.eContents().get(0);
+		
+		//PCData:
+		//	content=Content;
+		public ParserRule getRule() { return rule; }
+
+		//content=Content
+		public Assignment getContentAssignment() { return cContentAssignment; }
+
+		//Content
+		public RuleCall getContentContentParserRuleCall_0() { return cContentContentParserRuleCall_0; }
+	}
+
 	public class AttributePropertyDefinitionElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "AttributePropertyDefinition");
 		private final Group cGroup = (Group)rule.eContents().get(1);
@@ -382,16 +319,16 @@ public class FXMLDslGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cNamespaceIDTerminalRuleCall_0_0_0 = (RuleCall)cNamespaceAssignment_0_0.eContents().get(0);
 		private final Keyword cColonKeyword_0_1 = (Keyword)cGroup_0.eContents().get(1);
 		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final RuleCall cNameIDTerminalRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
+		private final RuleCall cNameQualifiedNameParserRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
 		private final Keyword cEqualsSignKeyword_2 = (Keyword)cGroup.eContents().get(2);
 		private final Assignment cValueAssignment_3 = (Assignment)cGroup.eContents().get(3);
 		private final RuleCall cValueSTRINGTerminalRuleCall_3_0 = (RuleCall)cValueAssignment_3.eContents().get(0);
 		
 		//AttributePropertyDefinition:
-		//	(namespace=ID ":")? name=ID "=" value=STRING;
+		//	(namespace=ID ":")? name=QualifiedName "=" value=STRING;
 		public ParserRule getRule() { return rule; }
 
-		//(namespace=ID ":")? name=ID "=" value=STRING
+		//(namespace=ID ":")? name=QualifiedName "=" value=STRING
 		public Group getGroup() { return cGroup; }
 
 		//(namespace=ID ":")?
@@ -406,11 +343,11 @@ public class FXMLDslGrammarAccess extends AbstractGrammarElementFinder {
 		//":"
 		public Keyword getColonKeyword_0_1() { return cColonKeyword_0_1; }
 
-		//name=ID
+		//name=QualifiedName
 		public Assignment getNameAssignment_1() { return cNameAssignment_1; }
 
-		//ID
-		public RuleCall getNameIDTerminalRuleCall_1_0() { return cNameIDTerminalRuleCall_1_0; }
+		//QualifiedName
+		public RuleCall getNameQualifiedNameParserRuleCall_1_0() { return cNameQualifiedNameParserRuleCall_1_0; }
 
 		//"="
 		public Keyword getEqualsSignKeyword_2() { return cEqualsSignKeyword_2; }
@@ -424,38 +361,67 @@ public class FXMLDslGrammarAccess extends AbstractGrammarElementFinder {
 
 	public class ContentElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Content");
-		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
-		private final RuleCall cIDTerminalRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
-		private final RuleCall cSTRINGTerminalRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
-		private final RuleCall cANY_OTHERTerminalRuleCall_2 = (RuleCall)cAlternatives.eContents().get(2);
-		private final RuleCall cWSTerminalRuleCall_3 = (RuleCall)cAlternatives.eContents().get(3);
-		private final Keyword cFullStopKeyword_4 = (Keyword)cAlternatives.eContents().get(4);
-		private final Keyword cColonKeyword_5 = (Keyword)cAlternatives.eContents().get(5);
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Alternatives cAlternatives_0 = (Alternatives)cGroup.eContents().get(0);
+		private final RuleCall cIDTerminalRuleCall_0_0 = (RuleCall)cAlternatives_0.eContents().get(0);
+		private final RuleCall cSTRINGTerminalRuleCall_0_1 = (RuleCall)cAlternatives_0.eContents().get(1);
+		private final RuleCall cANY_OTHERTerminalRuleCall_0_2 = (RuleCall)cAlternatives_0.eContents().get(2);
+		private final Keyword cFullStopKeyword_0_3 = (Keyword)cAlternatives_0.eContents().get(3);
+		private final Keyword cColonKeyword_0_4 = (Keyword)cAlternatives_0.eContents().get(4);
+		private final Alternatives cAlternatives_1 = (Alternatives)cGroup.eContents().get(1);
+		private final RuleCall cIDTerminalRuleCall_1_0 = (RuleCall)cAlternatives_1.eContents().get(0);
+		private final RuleCall cSTRINGTerminalRuleCall_1_1 = (RuleCall)cAlternatives_1.eContents().get(1);
+		private final RuleCall cANY_OTHERTerminalRuleCall_1_2 = (RuleCall)cAlternatives_1.eContents().get(2);
+		private final RuleCall cWSTerminalRuleCall_1_3 = (RuleCall)cAlternatives_1.eContents().get(3);
+		private final Keyword cFullStopKeyword_1_4 = (Keyword)cAlternatives_1.eContents().get(4);
+		private final Keyword cColonKeyword_1_5 = (Keyword)cAlternatives_1.eContents().get(5);
 		
+		////PC_DATA
 		//Content hidden(ML_COMMENT):
-		//	(ID | STRING | ANY_OTHER | WS | "." | ":")*;
+		//	(ID | STRING | ANY_OTHER | "." | ":") (ID | STRING | ANY_OTHER | WS | "." | ":")*;
 		public ParserRule getRule() { return rule; }
 
-		//(ID | STRING | ANY_OTHER | WS | "." | ":")*
-		public Alternatives getAlternatives() { return cAlternatives; }
+		//(ID | STRING | ANY_OTHER | "." | ":") (ID | STRING | ANY_OTHER | WS | "." | ":")*
+		public Group getGroup() { return cGroup; }
+
+		//ID | STRING | ANY_OTHER | "." | ":"
+		public Alternatives getAlternatives_0() { return cAlternatives_0; }
 
 		//ID
-		public RuleCall getIDTerminalRuleCall_0() { return cIDTerminalRuleCall_0; }
+		public RuleCall getIDTerminalRuleCall_0_0() { return cIDTerminalRuleCall_0_0; }
 
 		//STRING
-		public RuleCall getSTRINGTerminalRuleCall_1() { return cSTRINGTerminalRuleCall_1; }
+		public RuleCall getSTRINGTerminalRuleCall_0_1() { return cSTRINGTerminalRuleCall_0_1; }
 
 		//ANY_OTHER
-		public RuleCall getANY_OTHERTerminalRuleCall_2() { return cANY_OTHERTerminalRuleCall_2; }
-
-		//WS
-		public RuleCall getWSTerminalRuleCall_3() { return cWSTerminalRuleCall_3; }
+		public RuleCall getANY_OTHERTerminalRuleCall_0_2() { return cANY_OTHERTerminalRuleCall_0_2; }
 
 		//"."
-		public Keyword getFullStopKeyword_4() { return cFullStopKeyword_4; }
+		public Keyword getFullStopKeyword_0_3() { return cFullStopKeyword_0_3; }
 
 		//":"
-		public Keyword getColonKeyword_5() { return cColonKeyword_5; }
+		public Keyword getColonKeyword_0_4() { return cColonKeyword_0_4; }
+
+		//(ID | STRING | ANY_OTHER | WS | "." | ":")*
+		public Alternatives getAlternatives_1() { return cAlternatives_1; }
+
+		//ID
+		public RuleCall getIDTerminalRuleCall_1_0() { return cIDTerminalRuleCall_1_0; }
+
+		//STRING
+		public RuleCall getSTRINGTerminalRuleCall_1_1() { return cSTRINGTerminalRuleCall_1_1; }
+
+		//ANY_OTHER
+		public RuleCall getANY_OTHERTerminalRuleCall_1_2() { return cANY_OTHERTerminalRuleCall_1_2; }
+
+		//WS
+		public RuleCall getWSTerminalRuleCall_1_3() { return cWSTerminalRuleCall_1_3; }
+
+		//"."
+		public Keyword getFullStopKeyword_1_4() { return cFullStopKeyword_1_4; }
+
+		//":"
+		public Keyword getColonKeyword_1_5() { return cColonKeyword_1_5; }
 	}
 
 	public class QualifiedNameElements extends AbstractParserRuleElementFinder {
@@ -521,6 +487,7 @@ public class FXMLDslGrammarAccess extends AbstractGrammarElementFinder {
 	private ElementDefinitionElements pElementDefinition;
 	private ContainerElementDefinitionElements pContainerElementDefinition;
 	private EmptyElementDefinitionElements pEmptyElementDefinition;
+	private PCDataElements pPCData;
 	private AttributePropertyDefinitionElements pAttributePropertyDefinition;
 	private ContentElements pContent;
 	private QualifiedNameElements pQualifiedName;
@@ -584,10 +551,14 @@ public class FXMLDslGrammarAccess extends AbstractGrammarElementFinder {
 		return getElementDefinitionAccess().getRule();
 	}
 
+	////	| 
+	////	('<' (namespace=ID ':')? name=QualifiedName properties+=AttributePropertyDefinition*'>'
+	////		content=Content
+	////	 '</' (endnamespace=ID ':')? endname=QualifiedName '>'
+	////	)
 	//ContainerElementDefinition:
-	//	"<" (namespace=ID ":")? name=QualifiedName properties+=AttributePropertyDefinition* ">" children+=ElementDefinition+
-	//	"</" (endnamespace=ID ":")? endname=QualifiedName ">" | "<" (namespace=ID ":")? name=QualifiedName
-	//	properties+=AttributePropertyDefinition* ">" content=Content "</" (endnamespace=ID ":")? endname=QualifiedName ">";
+	//	"<" (namespace=ID ":")? name=QualifiedName properties+=AttributePropertyDefinition* ">" content=PCData?
+	//	children+=ElementDefinition* "</" (endnamespace=ID ":")? endname=QualifiedName ">";
 	public ContainerElementDefinitionElements getContainerElementDefinitionAccess() {
 		return (pContainerElementDefinition != null) ? pContainerElementDefinition : (pContainerElementDefinition = new ContainerElementDefinitionElements());
 	}
@@ -606,8 +577,18 @@ public class FXMLDslGrammarAccess extends AbstractGrammarElementFinder {
 		return getEmptyElementDefinitionAccess().getRule();
 	}
 
+	//PCData:
+	//	content=Content;
+	public PCDataElements getPCDataAccess() {
+		return (pPCData != null) ? pPCData : (pPCData = new PCDataElements());
+	}
+	
+	public ParserRule getPCDataRule() {
+		return getPCDataAccess().getRule();
+	}
+
 	//AttributePropertyDefinition:
-	//	(namespace=ID ":")? name=ID "=" value=STRING;
+	//	(namespace=ID ":")? name=QualifiedName "=" value=STRING;
 	public AttributePropertyDefinitionElements getAttributePropertyDefinitionAccess() {
 		return (pAttributePropertyDefinition != null) ? pAttributePropertyDefinition : (pAttributePropertyDefinition = new AttributePropertyDefinitionElements());
 	}
@@ -616,8 +597,9 @@ public class FXMLDslGrammarAccess extends AbstractGrammarElementFinder {
 		return getAttributePropertyDefinitionAccess().getRule();
 	}
 
+	////PC_DATA
 	//Content hidden(ML_COMMENT):
-	//	(ID | STRING | ANY_OTHER | WS | "." | ":")*;
+	//	(ID | STRING | ANY_OTHER | "." | ":") (ID | STRING | ANY_OTHER | WS | "." | ":")*;
 	public ContentElements getContentAccess() {
 		return (pContent != null) ? pContent : (pContent = new ContentElements());
 	}
@@ -646,6 +628,9 @@ public class FXMLDslGrammarAccess extends AbstractGrammarElementFinder {
 		return getQualifiedNameWithWildCardAccess().getRule();
 	}
 
+	////terminal PC_DATA:
+	////	(!('<'|'>'|' '|'\t'|'\r'|'\n')) (!('<'|'>'))* 
+	////;
 	//terminal ID:
 	//	"^"? ("a".."z" | "A".."Z" | "_") ("a".."z" | "A".."Z" | "_" | "0".."9")*;
 	public TerminalRule getIDRule() {

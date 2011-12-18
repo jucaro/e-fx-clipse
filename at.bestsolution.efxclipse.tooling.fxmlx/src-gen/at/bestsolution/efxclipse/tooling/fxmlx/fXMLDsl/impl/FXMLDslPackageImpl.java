@@ -12,6 +12,7 @@ import at.bestsolution.efxclipse.tooling.fxmlx.fXMLDsl.ElementDefinition;
 import at.bestsolution.efxclipse.tooling.fxmlx.fXMLDsl.EmptyElementDefinition;
 import at.bestsolution.efxclipse.tooling.fxmlx.fXMLDsl.FXMLDslFactory;
 import at.bestsolution.efxclipse.tooling.fxmlx.fXMLDsl.FXMLDslPackage;
+import at.bestsolution.efxclipse.tooling.fxmlx.fXMLDsl.PCData;
 import at.bestsolution.efxclipse.tooling.fxmlx.fXMLDsl.ProcessingInstruction;
 import at.bestsolution.efxclipse.tooling.fxmlx.fXMLDsl.XMLDec;
 
@@ -71,6 +72,13 @@ public class FXMLDslPackageImpl extends EPackageImpl implements FXMLDslPackage
    * @generated
    */
   private EClass emptyElementDefinitionEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass pcDataEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -287,7 +295,7 @@ public class FXMLDslPackageImpl extends EPackageImpl implements FXMLDslPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getContainerElementDefinition_Children()
+  public EReference getContainerElementDefinition_Content()
   {
     return (EReference)containerElementDefinitionEClass.getEStructuralFeatures().get(1);
   }
@@ -297,9 +305,9 @@ public class FXMLDslPackageImpl extends EPackageImpl implements FXMLDslPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getContainerElementDefinition_Endnamespace()
+  public EReference getContainerElementDefinition_Children()
   {
-    return (EAttribute)containerElementDefinitionEClass.getEStructuralFeatures().get(2);
+    return (EReference)containerElementDefinitionEClass.getEStructuralFeatures().get(2);
   }
 
   /**
@@ -307,7 +315,7 @@ public class FXMLDslPackageImpl extends EPackageImpl implements FXMLDslPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getContainerElementDefinition_Endname()
+  public EAttribute getContainerElementDefinition_Endnamespace()
   {
     return (EAttribute)containerElementDefinitionEClass.getEStructuralFeatures().get(3);
   }
@@ -317,7 +325,7 @@ public class FXMLDslPackageImpl extends EPackageImpl implements FXMLDslPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getContainerElementDefinition_Content()
+  public EAttribute getContainerElementDefinition_Endname()
   {
     return (EAttribute)containerElementDefinitionEClass.getEStructuralFeatures().get(4);
   }
@@ -340,6 +348,26 @@ public class FXMLDslPackageImpl extends EPackageImpl implements FXMLDslPackage
   public EReference getEmptyElementDefinition_Props()
   {
     return (EReference)emptyElementDefinitionEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getPCData()
+  {
+    return pcDataEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getPCData_Content()
+  {
+    return (EAttribute)pcDataEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -430,13 +458,16 @@ public class FXMLDslPackageImpl extends EPackageImpl implements FXMLDslPackage
 
     containerElementDefinitionEClass = createEClass(CONTAINER_ELEMENT_DEFINITION);
     createEReference(containerElementDefinitionEClass, CONTAINER_ELEMENT_DEFINITION__PROPERTIES);
+    createEReference(containerElementDefinitionEClass, CONTAINER_ELEMENT_DEFINITION__CONTENT);
     createEReference(containerElementDefinitionEClass, CONTAINER_ELEMENT_DEFINITION__CHILDREN);
     createEAttribute(containerElementDefinitionEClass, CONTAINER_ELEMENT_DEFINITION__ENDNAMESPACE);
     createEAttribute(containerElementDefinitionEClass, CONTAINER_ELEMENT_DEFINITION__ENDNAME);
-    createEAttribute(containerElementDefinitionEClass, CONTAINER_ELEMENT_DEFINITION__CONTENT);
 
     emptyElementDefinitionEClass = createEClass(EMPTY_ELEMENT_DEFINITION);
     createEReference(emptyElementDefinitionEClass, EMPTY_ELEMENT_DEFINITION__PROPS);
+
+    pcDataEClass = createEClass(PC_DATA);
+    createEAttribute(pcDataEClass, PC_DATA__CONTENT);
 
     attributePropertyDefinitionEClass = createEClass(ATTRIBUTE_PROPERTY_DEFINITION);
     createEAttribute(attributePropertyDefinitionEClass, ATTRIBUTE_PROPERTY_DEFINITION__NAMESPACE);
@@ -495,13 +526,16 @@ public class FXMLDslPackageImpl extends EPackageImpl implements FXMLDslPackage
 
     initEClass(containerElementDefinitionEClass, ContainerElementDefinition.class, "ContainerElementDefinition", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getContainerElementDefinition_Properties(), this.getAttributePropertyDefinition(), null, "properties", null, 0, -1, ContainerElementDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getContainerElementDefinition_Content(), this.getPCData(), null, "content", null, 0, 1, ContainerElementDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getContainerElementDefinition_Children(), this.getElementDefinition(), null, "children", null, 0, -1, ContainerElementDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getContainerElementDefinition_Endnamespace(), ecorePackage.getEString(), "endnamespace", null, 0, 1, ContainerElementDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getContainerElementDefinition_Endname(), ecorePackage.getEString(), "endname", null, 0, 1, ContainerElementDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getContainerElementDefinition_Content(), ecorePackage.getEString(), "content", null, 0, 1, ContainerElementDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(emptyElementDefinitionEClass, EmptyElementDefinition.class, "EmptyElementDefinition", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getEmptyElementDefinition_Props(), this.getAttributePropertyDefinition(), null, "props", null, 0, -1, EmptyElementDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(pcDataEClass, PCData.class, "PCData", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getPCData_Content(), ecorePackage.getEString(), "content", null, 0, 1, PCData.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(attributePropertyDefinitionEClass, AttributePropertyDefinition.class, "AttributePropertyDefinition", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getAttributePropertyDefinition_Namespace(), ecorePackage.getEString(), "namespace", null, 0, 1, AttributePropertyDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

@@ -17,10 +17,10 @@ import org.eclipse.emf.common.util.EList;
  * The following features are supported:
  * <ul>
  *   <li>{@link at.bestsolution.efxclipse.tooling.fxmlx.fXMLDsl.ContainerElementDefinition#getProperties <em>Properties</em>}</li>
+ *   <li>{@link at.bestsolution.efxclipse.tooling.fxmlx.fXMLDsl.ContainerElementDefinition#getContent <em>Content</em>}</li>
  *   <li>{@link at.bestsolution.efxclipse.tooling.fxmlx.fXMLDsl.ContainerElementDefinition#getChildren <em>Children</em>}</li>
  *   <li>{@link at.bestsolution.efxclipse.tooling.fxmlx.fXMLDsl.ContainerElementDefinition#getEndnamespace <em>Endnamespace</em>}</li>
  *   <li>{@link at.bestsolution.efxclipse.tooling.fxmlx.fXMLDsl.ContainerElementDefinition#getEndname <em>Endname</em>}</li>
- *   <li>{@link at.bestsolution.efxclipse.tooling.fxmlx.fXMLDsl.ContainerElementDefinition#getContent <em>Content</em>}</li>
  * </ul>
  * </p>
  *
@@ -45,6 +45,32 @@ public interface ContainerElementDefinition extends ElementDefinition
    * @generated
    */
   EList<AttributePropertyDefinition> getProperties();
+
+  /**
+   * Returns the value of the '<em><b>Content</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Content</em>' containment reference isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Content</em>' containment reference.
+   * @see #setContent(PCData)
+   * @see at.bestsolution.efxclipse.tooling.fxmlx.fXMLDsl.FXMLDslPackage#getContainerElementDefinition_Content()
+   * @model containment="true"
+   * @generated
+   */
+  PCData getContent();
+
+  /**
+   * Sets the value of the '{@link at.bestsolution.efxclipse.tooling.fxmlx.fXMLDsl.ContainerElementDefinition#getContent <em>Content</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Content</em>' containment reference.
+   * @see #getContent()
+   * @generated
+   */
+  void setContent(PCData value);
 
   /**
    * Returns the value of the '<em><b>Children</b></em>' containment reference list.
@@ -113,31 +139,5 @@ public interface ContainerElementDefinition extends ElementDefinition
    * @generated
    */
   void setEndname(String value);
-
-  /**
-   * Returns the value of the '<em><b>Content</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <p>
-   * If the meaning of the '<em>Content</em>' attribute isn't clear,
-   * there really should be more of a description here...
-   * </p>
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Content</em>' attribute.
-   * @see #setContent(String)
-   * @see at.bestsolution.efxclipse.tooling.fxmlx.fXMLDsl.FXMLDslPackage#getContainerElementDefinition_Content()
-   * @model
-   * @generated
-   */
-  String getContent();
-
-  /**
-   * Sets the value of the '{@link at.bestsolution.efxclipse.tooling.fxmlx.fXMLDsl.ContainerElementDefinition#getContent <em>Content</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Content</em>' attribute.
-   * @see #getContent()
-   * @generated
-   */
-  void setContent(String value);
 
 } // ContainerElementDefinition

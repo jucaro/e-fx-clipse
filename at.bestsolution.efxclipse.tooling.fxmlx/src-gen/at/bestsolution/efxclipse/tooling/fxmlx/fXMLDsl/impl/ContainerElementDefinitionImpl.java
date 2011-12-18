@@ -10,6 +10,7 @@ import at.bestsolution.efxclipse.tooling.fxmlx.fXMLDsl.AttributePropertyDefiniti
 import at.bestsolution.efxclipse.tooling.fxmlx.fXMLDsl.ContainerElementDefinition;
 import at.bestsolution.efxclipse.tooling.fxmlx.fXMLDsl.ElementDefinition;
 import at.bestsolution.efxclipse.tooling.fxmlx.fXMLDsl.FXMLDslPackage;
+import at.bestsolution.efxclipse.tooling.fxmlx.fXMLDsl.PCData;
 
 import java.util.Collection;
 
@@ -34,10 +35,10 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * The following features are implemented:
  * <ul>
  *   <li>{@link at.bestsolution.efxclipse.tooling.fxmlx.fXMLDsl.impl.ContainerElementDefinitionImpl#getProperties <em>Properties</em>}</li>
+ *   <li>{@link at.bestsolution.efxclipse.tooling.fxmlx.fXMLDsl.impl.ContainerElementDefinitionImpl#getContent <em>Content</em>}</li>
  *   <li>{@link at.bestsolution.efxclipse.tooling.fxmlx.fXMLDsl.impl.ContainerElementDefinitionImpl#getChildren <em>Children</em>}</li>
  *   <li>{@link at.bestsolution.efxclipse.tooling.fxmlx.fXMLDsl.impl.ContainerElementDefinitionImpl#getEndnamespace <em>Endnamespace</em>}</li>
  *   <li>{@link at.bestsolution.efxclipse.tooling.fxmlx.fXMLDsl.impl.ContainerElementDefinitionImpl#getEndname <em>Endname</em>}</li>
- *   <li>{@link at.bestsolution.efxclipse.tooling.fxmlx.fXMLDsl.impl.ContainerElementDefinitionImpl#getContent <em>Content</em>}</li>
  * </ul>
  * </p>
  *
@@ -54,6 +55,16 @@ public class ContainerElementDefinitionImpl extends ElementDefinitionImpl implem
    * @ordered
    */
   protected EList<AttributePropertyDefinition> properties;
+
+  /**
+   * The cached value of the '{@link #getContent() <em>Content</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getContent()
+   * @generated
+   * @ordered
+   */
+  protected PCData content;
 
   /**
    * The cached value of the '{@link #getChildren() <em>Children</em>}' containment reference list.
@@ -106,26 +117,6 @@ public class ContainerElementDefinitionImpl extends ElementDefinitionImpl implem
   protected String endname = ENDNAME_EDEFAULT;
 
   /**
-   * The default value of the '{@link #getContent() <em>Content</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getContent()
-   * @generated
-   * @ordered
-   */
-  protected static final String CONTENT_EDEFAULT = null;
-
-  /**
-   * The cached value of the '{@link #getContent() <em>Content</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getContent()
-   * @generated
-   * @ordered
-   */
-  protected String content = CONTENT_EDEFAULT;
-
-  /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -158,6 +149,54 @@ public class ContainerElementDefinitionImpl extends ElementDefinitionImpl implem
       properties = new EObjectContainmentEList<AttributePropertyDefinition>(AttributePropertyDefinition.class, this, FXMLDslPackage.CONTAINER_ELEMENT_DEFINITION__PROPERTIES);
     }
     return properties;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public PCData getContent()
+  {
+    return content;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NotificationChain basicSetContent(PCData newContent, NotificationChain msgs)
+  {
+    PCData oldContent = content;
+    content = newContent;
+    if (eNotificationRequired())
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, FXMLDslPackage.CONTAINER_ELEMENT_DEFINITION__CONTENT, oldContent, newContent);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setContent(PCData newContent)
+  {
+    if (newContent != content)
+    {
+      NotificationChain msgs = null;
+      if (content != null)
+        msgs = ((InternalEObject)content).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - FXMLDslPackage.CONTAINER_ELEMENT_DEFINITION__CONTENT, null, msgs);
+      if (newContent != null)
+        msgs = ((InternalEObject)newContent).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - FXMLDslPackage.CONTAINER_ELEMENT_DEFINITION__CONTENT, null, msgs);
+      msgs = basicSetContent(newContent, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, FXMLDslPackage.CONTAINER_ELEMENT_DEFINITION__CONTENT, newContent, newContent));
   }
 
   /**
@@ -225,29 +264,6 @@ public class ContainerElementDefinitionImpl extends ElementDefinitionImpl implem
    * <!-- end-user-doc -->
    * @generated
    */
-  public String getContent()
-  {
-    return content;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setContent(String newContent)
-  {
-    String oldContent = content;
-    content = newContent;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, FXMLDslPackage.CONTAINER_ELEMENT_DEFINITION__CONTENT, oldContent, content));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   @Override
   public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
   {
@@ -255,6 +271,8 @@ public class ContainerElementDefinitionImpl extends ElementDefinitionImpl implem
     {
       case FXMLDslPackage.CONTAINER_ELEMENT_DEFINITION__PROPERTIES:
         return ((InternalEList<?>)getProperties()).basicRemove(otherEnd, msgs);
+      case FXMLDslPackage.CONTAINER_ELEMENT_DEFINITION__CONTENT:
+        return basicSetContent(null, msgs);
       case FXMLDslPackage.CONTAINER_ELEMENT_DEFINITION__CHILDREN:
         return ((InternalEList<?>)getChildren()).basicRemove(otherEnd, msgs);
     }
@@ -273,14 +291,14 @@ public class ContainerElementDefinitionImpl extends ElementDefinitionImpl implem
     {
       case FXMLDslPackage.CONTAINER_ELEMENT_DEFINITION__PROPERTIES:
         return getProperties();
+      case FXMLDslPackage.CONTAINER_ELEMENT_DEFINITION__CONTENT:
+        return getContent();
       case FXMLDslPackage.CONTAINER_ELEMENT_DEFINITION__CHILDREN:
         return getChildren();
       case FXMLDslPackage.CONTAINER_ELEMENT_DEFINITION__ENDNAMESPACE:
         return getEndnamespace();
       case FXMLDslPackage.CONTAINER_ELEMENT_DEFINITION__ENDNAME:
         return getEndname();
-      case FXMLDslPackage.CONTAINER_ELEMENT_DEFINITION__CONTENT:
-        return getContent();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -300,6 +318,9 @@ public class ContainerElementDefinitionImpl extends ElementDefinitionImpl implem
         getProperties().clear();
         getProperties().addAll((Collection<? extends AttributePropertyDefinition>)newValue);
         return;
+      case FXMLDslPackage.CONTAINER_ELEMENT_DEFINITION__CONTENT:
+        setContent((PCData)newValue);
+        return;
       case FXMLDslPackage.CONTAINER_ELEMENT_DEFINITION__CHILDREN:
         getChildren().clear();
         getChildren().addAll((Collection<? extends ElementDefinition>)newValue);
@@ -309,9 +330,6 @@ public class ContainerElementDefinitionImpl extends ElementDefinitionImpl implem
         return;
       case FXMLDslPackage.CONTAINER_ELEMENT_DEFINITION__ENDNAME:
         setEndname((String)newValue);
-        return;
-      case FXMLDslPackage.CONTAINER_ELEMENT_DEFINITION__CONTENT:
-        setContent((String)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -330,6 +348,9 @@ public class ContainerElementDefinitionImpl extends ElementDefinitionImpl implem
       case FXMLDslPackage.CONTAINER_ELEMENT_DEFINITION__PROPERTIES:
         getProperties().clear();
         return;
+      case FXMLDslPackage.CONTAINER_ELEMENT_DEFINITION__CONTENT:
+        setContent((PCData)null);
+        return;
       case FXMLDslPackage.CONTAINER_ELEMENT_DEFINITION__CHILDREN:
         getChildren().clear();
         return;
@@ -338,9 +359,6 @@ public class ContainerElementDefinitionImpl extends ElementDefinitionImpl implem
         return;
       case FXMLDslPackage.CONTAINER_ELEMENT_DEFINITION__ENDNAME:
         setEndname(ENDNAME_EDEFAULT);
-        return;
-      case FXMLDslPackage.CONTAINER_ELEMENT_DEFINITION__CONTENT:
-        setContent(CONTENT_EDEFAULT);
         return;
     }
     super.eUnset(featureID);
@@ -358,14 +376,14 @@ public class ContainerElementDefinitionImpl extends ElementDefinitionImpl implem
     {
       case FXMLDslPackage.CONTAINER_ELEMENT_DEFINITION__PROPERTIES:
         return properties != null && !properties.isEmpty();
+      case FXMLDslPackage.CONTAINER_ELEMENT_DEFINITION__CONTENT:
+        return content != null;
       case FXMLDslPackage.CONTAINER_ELEMENT_DEFINITION__CHILDREN:
         return children != null && !children.isEmpty();
       case FXMLDslPackage.CONTAINER_ELEMENT_DEFINITION__ENDNAMESPACE:
         return ENDNAMESPACE_EDEFAULT == null ? endnamespace != null : !ENDNAMESPACE_EDEFAULT.equals(endnamespace);
       case FXMLDslPackage.CONTAINER_ELEMENT_DEFINITION__ENDNAME:
         return ENDNAME_EDEFAULT == null ? endname != null : !ENDNAME_EDEFAULT.equals(endname);
-      case FXMLDslPackage.CONTAINER_ELEMENT_DEFINITION__CONTENT:
-        return CONTENT_EDEFAULT == null ? content != null : !CONTENT_EDEFAULT.equals(content);
     }
     return super.eIsSet(featureID);
   }
@@ -385,8 +403,6 @@ public class ContainerElementDefinitionImpl extends ElementDefinitionImpl implem
     result.append(endnamespace);
     result.append(", endname: ");
     result.append(endname);
-    result.append(", content: ");
-    result.append(content);
     result.append(')');
     return result.toString();
   }

@@ -5,6 +5,7 @@ import at.bestsolution.efxclipse.tooling.fxmlx.fXMLDsl.ContainerElementDefinitio
 import at.bestsolution.efxclipse.tooling.fxmlx.fXMLDsl.EmptyElementDefinition;
 import at.bestsolution.efxclipse.tooling.fxmlx.fXMLDsl.FXML;
 import at.bestsolution.efxclipse.tooling.fxmlx.fXMLDsl.FXMLDslPackage;
+import at.bestsolution.efxclipse.tooling.fxmlx.fXMLDsl.PCData;
 import at.bestsolution.efxclipse.tooling.fxmlx.fXMLDsl.ProcessingInstruction;
 import at.bestsolution.efxclipse.tooling.fxmlx.fXMLDsl.XMLDec;
 import at.bestsolution.efxclipse.tooling.fxmlx.services.FXMLDslGrammarAccess;
@@ -76,6 +77,12 @@ public class AbstractFXMLDslSemanticSequencer extends AbstractSemanticSequencer 
 					return; 
 				}
 				else break;
+			case FXMLDslPackage.PC_DATA:
+				if(context == grammarAccess.getPCDataRule()) {
+					sequence_PCData(context, (PCData) semanticObject); 
+					return; 
+				}
+				else break;
 			case FXMLDslPackage.PROCESSING_INSTRUCTION:
 				if(context == grammarAccess.getProcessingInstructionRule()) {
 					sequence_ProcessingInstruction(context, (ProcessingInstruction) semanticObject); 
@@ -94,7 +101,7 @@ public class AbstractFXMLDslSemanticSequencer extends AbstractSemanticSequencer 
 	
 	/**
 	 * Constraint:
-	 *     (namespace=ID? name=ID value=STRING)
+	 *     (namespace=ID? name=QualifiedName value=STRING)
 	 */
 	protected void sequence_AttributePropertyDefinition(EObject context, AttributePropertyDefinition semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -104,22 +111,13 @@ public class AbstractFXMLDslSemanticSequencer extends AbstractSemanticSequencer 
 	/**
 	 * Constraint:
 	 *     (
-	 *         (
-	 *             namespace=ID? 
-	 *             name=QualifiedName 
-	 *             properties+=AttributePropertyDefinition* 
-	 *             children+=ElementDefinition+ 
-	 *             endnamespace=ID? 
-	 *             endname=QualifiedName
-	 *         ) | 
-	 *         (
-	 *             namespace=ID? 
-	 *             name=QualifiedName 
-	 *             properties+=AttributePropertyDefinition* 
-	 *             content=Content 
-	 *             endnamespace=ID? 
-	 *             endname=QualifiedName
-	 *         )
+	 *         namespace=ID? 
+	 *         name=QualifiedName 
+	 *         properties+=AttributePropertyDefinition* 
+	 *         content=PCData? 
+	 *         children+=ElementDefinition* 
+	 *         endnamespace=ID? 
+	 *         endname=QualifiedName
 	 *     )
 	 */
 	protected void sequence_ContainerElementDefinition(EObject context, ContainerElementDefinition semanticObject) {
@@ -142,6 +140,22 @@ public class AbstractFXMLDslSemanticSequencer extends AbstractSemanticSequencer 
 	 */
 	protected void sequence_FXML(EObject context, FXML semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     content=Content
+	 */
+	protected void sequence_PCData(EObject context, PCData semanticObject) {
+		if(errorAcceptor != null) {
+			if(transientValues.isValueTransient(semanticObject, FXMLDslPackage.Literals.PC_DATA__CONTENT) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, FXMLDslPackage.Literals.PC_DATA__CONTENT));
+		}
+		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
+		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
+		feeder.accept(grammarAccess.getPCDataAccess().getContentContentParserRuleCall_0(), semanticObject.getContent());
+		feeder.finish();
 	}
 	
 	

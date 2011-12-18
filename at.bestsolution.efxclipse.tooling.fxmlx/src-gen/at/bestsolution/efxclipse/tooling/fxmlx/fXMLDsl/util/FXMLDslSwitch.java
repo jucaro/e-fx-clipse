@@ -120,6 +120,13 @@ public class FXMLDslSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case FXMLDslPackage.PC_DATA:
+      {
+        PCData pcData = (PCData)theEObject;
+        T result = casePCData(pcData);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       case FXMLDslPackage.ATTRIBUTE_PROPERTY_DEFINITION:
       {
         AttributePropertyDefinition attributePropertyDefinition = (AttributePropertyDefinition)theEObject;
@@ -223,6 +230,22 @@ public class FXMLDslSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseEmptyElementDefinition(EmptyElementDefinition object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>PC Data</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>PC Data</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T casePCData(PCData object)
   {
     return null;
   }

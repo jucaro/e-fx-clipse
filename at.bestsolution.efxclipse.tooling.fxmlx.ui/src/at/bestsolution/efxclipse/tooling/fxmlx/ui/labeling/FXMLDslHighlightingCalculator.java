@@ -43,7 +43,7 @@ public class FXMLDslHighlightingCalculator implements ISemanticHighlightingCalcu
 					ICompositeNode n = NodeModelUtils.getNode(o);
 					
 					if( def.getName() != null ) {
-						acceptor.addPosition(n.getOffset(),(def.getNamespace() != null ? def.getNamespace().length() + 1 : 0 ) + def.getName().length()+1,FXMLDslHighlightingConfiguration.ELEMENT);	
+						acceptor.addPosition(n.getOffset(),(def.getNamespace() != null ? def.getNamespace().length() + 1 : 0 ) + def.getName().length()+2,FXMLDslHighlightingConfiguration.ELEMENT);	
 					}
 					
 					if( def.getEndname() != null ) {

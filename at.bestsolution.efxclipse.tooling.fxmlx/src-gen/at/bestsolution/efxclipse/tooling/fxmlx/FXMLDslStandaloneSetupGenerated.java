@@ -47,6 +47,5 @@ public class FXMLDslStandaloneSetupGenerated implements ISetup {
 
 
 
-
 	}
 }

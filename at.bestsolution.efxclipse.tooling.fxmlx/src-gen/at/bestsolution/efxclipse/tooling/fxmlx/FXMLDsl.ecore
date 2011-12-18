@@ -25,15 +25,19 @@
   <eClassifiers xsi:type="ecore:EClass" name="ContainerElementDefinition" eSuperTypes="#//ElementDefinition">
     <eStructuralFeatures xsi:type="ecore:EReference" name="properties" upperBound="-1"
         eType="#//AttributePropertyDefinition" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="content" eType="#//PCData"
+        containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="children" upperBound="-1"
         eType="#//ElementDefinition" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="endnamespace" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="endname" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="content" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="EmptyElementDefinition" eSuperTypes="#//ElementDefinition">
     <eStructuralFeatures xsi:type="ecore:EReference" name="props" upperBound="-1"
         eType="#//AttributePropertyDefinition" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="PCData">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="content" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="AttributePropertyDefinition">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="namespace" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
