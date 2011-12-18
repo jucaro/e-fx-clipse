@@ -8,16 +8,12 @@ import org.eclipse.core.resources.IResource;
 import org.eclipse.core.resources.ResourcesPlugin;
 import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.IAdaptable;
-import org.eclipse.core.runtime.IPath;
-import org.eclipse.core.runtime.NullProgressMonitor;
-import org.eclipse.jdt.core.IClasspathEntry;
 import org.eclipse.jdt.core.IJavaElement;
 import org.eclipse.jdt.core.IJavaProject;
 import org.eclipse.jdt.core.IPackageFragment;
 import org.eclipse.jdt.core.IPackageFragmentRoot;
 import org.eclipse.jdt.core.JavaCore;
 import org.eclipse.jdt.core.JavaModelException;
-import org.eclipse.jdt.internal.ui.util.CoreUtility;
 import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.jface.wizard.Wizard;
 import org.eclipse.ui.INewWizard;
@@ -25,7 +21,6 @@ import org.eclipse.ui.IWorkbench;
 import org.eclipse.ui.PlatformUI;
 import org.eclipse.ui.ide.IDE;
 
-@SuppressWarnings("restriction")
 public class NewFXGraphWizard extends Wizard implements INewWizard {
 	private FXGraphWizardPage page;
 	protected IPackageFragmentRoot root;
@@ -135,7 +130,7 @@ public class NewFXGraphWizard extends Wizard implements INewWizard {
 			IFile file = (IFile) resource;
 			
 			try {
-				adjustProject(file);
+//				adjustProject(file);
 				if (!file.exists()) {
 					file.create(new ByteArrayInputStream(getContents().getBytes()),
 							true, null);
@@ -153,7 +148,7 @@ public class NewFXGraphWizard extends Wizard implements INewWizard {
 			IFile file = p.getFile(fxgraph);
 			
 			try {
-				adjustProject(file);
+//				adjustProject(file);
 				if (!file.exists()) {
 					file.create(new ByteArrayInputStream(getContents().getBytes()),
 							true, null);
@@ -170,34 +165,34 @@ public class NewFXGraphWizard extends Wizard implements INewWizard {
 		return true;
 	}
 	
-	private void adjustProject(IFile f) throws CoreException {
-		IJavaProject jproject = JavaCore.create(f.getProject());
-		IPackageFragmentRoot[] roots = jproject
-				.getPackageFragmentRoots();
-		for (int i = 0; i < roots.length; i++) {
-			if (roots[i].getKind() == IPackageFragmentRoot.K_SOURCE) {
-				if( "src-gen".equals(roots[i].getElementName()) ) {
-					return;
-				}
-			}
-		}
-		
-		String relPath= "src-gen";
-
-		IFolder folder= jproject.getProject().getFolder(relPath);
-		IClasspathEntry newEntry= JavaCore.newSourceEntry(folder.getFullPath());
-		
-		if (!folder.exists()) {
-			CoreUtility.createFolder(folder, true, true, new NullProgressMonitor());
-		}
-		
-		IPath fOutputLocation= jproject.getOutputLocation();
-		IClasspathEntry[] fEntries= jproject.getRawClasspath();
-		IClasspathEntry[] fEntries_new = new IClasspathEntry[fEntries.length+1];
-		System.arraycopy(fEntries, 0, fEntries_new, 0, fEntries.length);
-		fEntries_new[fEntries_new.length-1] = newEntry;
-		
-		jproject.setRawClasspath(fEntries_new, fOutputLocation, new NullProgressMonitor());
-		
-	}
+//	private void adjustProject(IFile f) throws CoreException {
+//		IJavaProject jproject = JavaCore.create(f.getProject());
+//		IPackageFragmentRoot[] roots = jproject
+//				.getPackageFragmentRoots();
+//		for (int i = 0; i < roots.length; i++) {
+//			if (roots[i].getKind() == IPackageFragmentRoot.K_SOURCE) {
+//				if( "src-gen".equals(roots[i].getElementName()) ) {
+//					return;
+//				}
+//			}
+//		}
+//		
+//		String relPath= "src-gen";
+//
+//		IFolder folder= jproject.getProject().getFolder(relPath);
+//		IClasspathEntry newEntry= JavaCore.newSourceEntry(folder.getFullPath());
+//		
+//		if (!folder.exists()) {
+//			CoreUtility.createFolder(folder, true, true, new NullProgressMonitor());
+//		}
+//		
+//		IPath fOutputLocation= jproject.getOutputLocation();
+//		IClasspathEntry[] fEntries= jproject.getRawClasspath();
+//		IClasspathEntry[] fEntries_new = new IClasspathEntry[fEntries.length+1];
+//		System.arraycopy(fEntries, 0, fEntries_new, 0, fEntries.length);
+//		fEntries_new[fEntries_new.length-1] = newEntry;
+//		
+//		jproject.setRawClasspath(fEntries_new, fOutputLocation, new NullProgressMonitor());
+//		
+//	}
 }
