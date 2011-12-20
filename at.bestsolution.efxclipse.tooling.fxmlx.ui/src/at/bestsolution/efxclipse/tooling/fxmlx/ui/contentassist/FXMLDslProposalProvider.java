@@ -109,24 +109,29 @@ public class FXMLDslProposalProvider extends AbstractFXMLDslProposalProvider {
 	public void completeContainerElementDefinition_Children(EObject model,
 			Assignment assignment, ContentAssistContext context,
 			ICompletionProposalAcceptor acceptor) {
-//		System.err.println("Children proposal Model:" + model);
+		if( !"<".equals(context.getPrefix()) ) {
+			return;
+		}
+		
 		if( isClassDefinition(model) ) {
-			if( !"<".equals(context.getPrefix()) ) {
-				return;
-			}
-			IJavaProject jProject = getJavaProject(model);
-			IType type = resolveType(model, jProject);
-			
-			if (type != null) {
-				TypeData typeData = helper.getTypeData(jProject, type);
-				if( typeData != null ) {
-					for( Property p : typeData.properties ) {
-						acceptor.accept(createCompletionProposal("<" + p.name + "></"+p.name+">", p.getDescription(), p.getIcon(), getPriorityHelper().getDefaultPriority()+1, context.getPrefix(), context));
-					}
+			createAttributeNamesProposal(model, context, acceptor);
+		}
+	}
+	
+	private void createAttributeNamesProposal(EObject model, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
+		IJavaProject jProject = getJavaProject(model);
+		IType type = resolveType(model, jProject);
+		
+		if (type != null) {
+			TypeData typeData = helper.getTypeData(jProject, type);
+			if( typeData != null ) {
+				for( Property p : typeData.properties ) {
+					acceptor.accept(createCompletionProposal((context.getPrefix().startsWith("<") ? '<' + p.name : p.name) + "></"+p.name+">", p.getDescription(), p.getIcon(), getPriorityHelper().getDefaultPriority()+1, context.getPrefix(), context));
 				}
 			}
 		}
 	}
+	
 	
 	@Override
 	public void completeEmptyElementDefinition_Name(EObject model, Assignment assignment, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
@@ -134,14 +139,18 @@ public class FXMLDslProposalProvider extends AbstractFXMLDslProposalProvider {
 	
 	@Override
 	public void completeContainerElementDefinition_Name(EObject model, Assignment assignment, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
-//		System.err.println("Container name:" + model);
-		if(isAttributeDefinition(model)) {
-//			if( model instanceof ContainerElementDefinition ) {
-//				if( ((ContainerElementDefinition) model).getEndname() != null ) {
-//					return;
-//				}
-//			}
-//			
+		if( context.getPrefix().isEmpty() ) {
+			return;
+		}
+		
+		if( isClassDefinition(model) && Character.isLowerCase(context.getPrefix().charAt(0)) ) {
+			createAttributeNamesProposal(model, context, acceptor);
+		}
+		
+		if(isAttributeDefinition(model) /*&& Character.isUpperCase(context.getPrefix().charAt(0))*/ ) {
+			if( model instanceof ContainerElementDefinition ) {
+			}
+			
 			if( isClassDefinition(model.eContainer()) ) {
 				IJavaProject jProject = getJavaProject(model.eContainer());
 				IType type = resolveType(model.eContainer(), jProject);
@@ -261,6 +270,7 @@ public class FXMLDslProposalProvider extends AbstractFXMLDslProposalProvider {
 		}
 		
 		if( name != null ) {
+//			System.err.println("Name: " + name);
 			return toJavaClass(name, (FXML) model.eResource().getContents().get(0), jProject);
 		}
 		
@@ -319,8 +329,10 @@ public class FXMLDslProposalProvider extends AbstractFXMLDslProposalProvider {
 				}
 			} else {
 				if (imp.endsWith(name)) {
+//					System.err.println("Matched: " + imp);
 					try {
 						IType t = jProject.findType(imp);
+//						System.err.println("Type: " + t);
 						if (t != null) {
 							return t;
 						}
