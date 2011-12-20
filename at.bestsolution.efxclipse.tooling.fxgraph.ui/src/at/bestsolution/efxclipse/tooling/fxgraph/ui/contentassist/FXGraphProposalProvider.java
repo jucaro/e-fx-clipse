@@ -21,6 +21,7 @@ import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.jdt.core.Flags;
 import org.eclipse.jdt.core.IAnnotation;
+import org.eclipse.jdt.core.IJavaElement;
 import org.eclipse.jdt.core.IJavaProject;
 import org.eclipse.jdt.core.IMethod;
 import org.eclipse.jdt.core.IType;
@@ -28,7 +29,13 @@ import org.eclipse.jdt.core.JavaCore;
 import org.eclipse.jdt.core.JavaModelException;
 import org.eclipse.jdt.core.Signature;
 import org.eclipse.jdt.internal.corext.util.JavaModelUtil;
+import org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover;
 import org.eclipse.jface.resource.JFaceResources;
+import org.eclipse.jface.text.IInformationControlCreator;
+import org.eclipse.jface.text.IRegion;
+import org.eclipse.jface.text.ITextHoverExtension;
+import org.eclipse.jface.text.ITextViewer;
+import org.eclipse.jface.text.contentassist.ICompletionProposal;
 import org.eclipse.jface.viewers.StyledString;
 import org.eclipse.swt.graphics.Image;
 import org.eclipse.xtext.Assignment;
@@ -39,8 +46,10 @@ import org.eclipse.xtext.common.types.TypesPackage;
 import org.eclipse.xtext.common.types.access.IJvmTypeProvider;
 import org.eclipse.xtext.common.types.util.jdt.IJavaElementFinder;
 import org.eclipse.xtext.common.types.xtext.ui.ITypesProposalProvider;
+import org.eclipse.xtext.ui.editor.contentassist.ConfigurableCompletionProposal;
 import org.eclipse.xtext.ui.editor.contentassist.ContentAssistContext;
 import org.eclipse.xtext.ui.editor.contentassist.ICompletionProposalAcceptor;
+import org.eclipse.xtext.ui.editor.hover.IEObjectHover;
 
 import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.BindValueProperty;
 import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.ComponentDefinition;
@@ -370,7 +379,13 @@ public class FXGraphProposalProvider extends AbstractFXGraphProposalProvider {
 			TypeData data = getTypeData(getJavaProject(model), element.getType());
 			if (data != null) {
 				for (Property p : data.properties) {
-					acceptor.accept(createCompletionProposal(p.name + " : ", p.getDescription(), p.getIcon(), context));
+					ICompletionProposal proposal = createCompletionProposal(p.name + " : ", p.getDescription(), p.getIcon(), context);
+					if( proposal instanceof ConfigurableCompletionProposal ) {
+						ConfigurableCompletionProposal cProposal = (ConfigurableCompletionProposal) proposal;
+						cProposal.setAdditionalProposalInfo(element);
+						cProposal.setHover(new HoverImpl(p.method));
+					}
+					acceptor.accept(proposal);
 				}
 			}
 		}
@@ -384,7 +399,14 @@ public class FXGraphProposalProvider extends AbstractFXGraphProposalProvider {
 			TypeData data = getTypeData(getJavaProject(model), element.getType());
 			if (data != null) {
 				for (Property p : data.properties) {
-					acceptor.accept(createCompletionProposal(p.name + " : ", p.getDescription(), p.getIcon(), context));
+					ICompletionProposal proposal = createCompletionProposal(p.name + " : ", p.getDescription(), p.getIcon(), context);
+					if( proposal instanceof ConfigurableCompletionProposal ) {
+						System.err.println("Setting hover");
+						ConfigurableCompletionProposal cProposal = (ConfigurableCompletionProposal) proposal;
+						cProposal.setAdditionalProposalInfo(element);
+						cProposal.setHover(new HoverImpl(p.method));
+					}
+					acceptor.accept(proposal);
 				}
 			}
 		}
@@ -482,5 +504,43 @@ public class FXGraphProposalProvider extends AbstractFXGraphProposalProvider {
 		} else {
 			super.completeJvmParameterizedTypeReference_Type(model, assignment, context, acceptor);
 		}
+	}
+	
+	static class HoverImpl implements IEObjectHover, ITextHoverExtension {
+		private JavadocHoverWrapper javadocHover = new JavadocHoverWrapper ();
+		private IMethod method;
+		
+		public HoverImpl(IMethod method) {
+			this.method = method;
+		}
+
+		@Override
+		public Object getHoverInfo(EObject eObject, ITextViewer textViewer, IRegion hoverRegion) {
+			javadocHover.setJavaElement(method);
+			return javadocHover.getHoverInfo2(textViewer, hoverRegion);
+		}
+
+		@Override
+		public IInformationControlCreator getHoverControlCreator() {
+			return javadocHover.getHoverControlCreator();
+		}
+		
+	}
+	
+	static class JavadocHoverWrapper extends JavadocHover  {
+
+		IJavaElement currentElement;
+		
+		void setJavaElement (IJavaElement element) {
+			currentElement = element;
+		}
+		
+		@Override
+		protected IJavaElement[] getJavaElementsAt(ITextViewer textViewer, IRegion hoverRegion) {
+			// hack: return previously registered element
+			// required as JavadocHover.getHoverInfo(IJavaElement[] elements,...) is private
+			return new IJavaElement[] { currentElement };
+		}	
+		
 	}
 }
