@@ -342,7 +342,16 @@ public class FXGraphProposalProvider extends AbstractFXGraphProposalProvider {
 						if (canAssign(parameterType, parentJdtType)) {
 							StyledString s = new StyledString(JDTHelper.extractAttributename(m.getElementName()) + " : ");
 							s.append(Signature.toString(m.getParameterTypes()[1]), StyledString.QUALIFIER_STYLER);
-							acceptor.accept(createCompletionProposal(JDTHelper.extractAttributename(m.getElementName()), s, JFaceResources.getImage(STAT_METHOD_PUBLIC_KEY), context));
+							
+							ICompletionProposal cp = createCompletionProposal(JDTHelper.extractAttributename(m.getElementName()), s, JFaceResources.getImage(STAT_METHOD_PUBLIC_KEY), context);
+							
+							if( cp instanceof ConfigurableCompletionProposal ) {
+								ConfigurableCompletionProposal cProposal = (ConfigurableCompletionProposal) cp;
+								cProposal.setAdditionalProposalInfo(model);
+								cProposal.setHover(new HoverImpl(m));
+							}
+							
+							acceptor.accept(cp);
 						}
 					}
 				}

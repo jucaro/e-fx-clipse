@@ -11,6 +11,7 @@ import org.eclipse.jface.text.IInformationControlCreator;
 import org.eclipse.jface.text.IRegion;
 import org.eclipse.jface.text.ITextViewer;
 import org.eclipse.xtext.common.types.JvmType;
+import org.eclipse.xtext.common.types.JvmTypeReference;
 import org.eclipse.xtext.common.types.util.jdt.IJavaElementFinder;
 import org.eclipse.xtext.xbase.ui.hover.XbaseHoverProvider;
 
@@ -19,7 +20,7 @@ import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.ControllerHandledValueP
 import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.Element;
 import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.Model;
 import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.Property;
-import at.bestsolution.efxclipse.tooling.fxgraph.ui.contentassist.FXGraphProposalProvider;
+import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.StaticValueProperty;
 import at.bestsolution.efxclipse.tooling.fxgraph.ui.util.JDTHelper;
 
 import com.google.inject.Inject;
@@ -90,6 +91,14 @@ public class FXHoverProvider extends XbaseHoverProvider {
 							return rv; 
 						}
 					}
+				}
+			}
+		} else if( object instanceof StaticValueProperty ) {
+			StaticValueProperty p = (StaticValueProperty) object;
+			if( p.getName() != null ) {
+				JvmTypeReference typeRef = p.getType();
+				if( typeRef != null ) {
+					return findMethodJavaDoc(typeRef.getType(), "set" + Character.toUpperCase(p.getName().charAt(0))+p.getName().substring(1), object, viewer, region);
 				}
 			}
 		}
