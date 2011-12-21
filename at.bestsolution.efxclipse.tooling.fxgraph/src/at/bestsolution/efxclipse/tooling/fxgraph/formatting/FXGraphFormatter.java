@@ -38,10 +38,15 @@ public class FXGraphFormatter extends AbstractDeclarativeFormatter {
 			c.setNoSpace().before(comma);
 		}
 		
+		for( Keyword hash : f.findKeywords("#") ) {
+			c.setNoSpace().around(hash);
+		}
+		
 		c.setAutoLinewrap(120);
 		
 		c.setLinewrap(1, 2, 3).around(f.getImportRule());
 		c.setLinewrap(1, 2, 3).before(f.getPropertyRule());
+		c.setLinewrap(1, 2, 3).before(f.getStaticValuePropertyRule());
 		
 		c.setLinewrap(1, 2, 3).after(f.getElementAccess().getLeftCurlyBracketKeyword_1_1_1());
 		c.setLinewrap(1, 2, 3).after(f.getElementAccess().getLeftCurlyBracketKeyword_1_2_3());
