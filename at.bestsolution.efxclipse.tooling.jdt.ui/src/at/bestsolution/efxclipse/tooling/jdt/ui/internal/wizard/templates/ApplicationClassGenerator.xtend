@@ -5,7 +5,7 @@ import at.bestsolution.efxclipse.tooling.jdt.ui.internal.wizard.templates.model.
 
 class ApplicationClassGenerator implements IGenerator<JavaClass> {
 	override generateContent(JavaClass clazzDef) '''
-		«IF(clazzDef.packageFragment != null && ! clazzDef.packageFragment.elementName.empty)»package «clazzDef.packageFragment.elementName»«ENDIF»;
+		«IF(clazzDef.packageFragment != null && ! clazzDef.packageFragment.elementName.empty)»package «clazzDef.packageFragment.elementName»;«ENDIF»
 		
 		import javafx.application.Application;
 		import javafx.stage.Stage;
