@@ -26,11 +26,6 @@ ContainerElementDefinition:
 		content=PCData? children+=ElementDefinition*
 	 '</' (endnamespace=ID ':')? endname=QualifiedName '>'
 	)
-//	| 
-//	('<' (namespace=ID ':')? name=QualifiedName properties+=AttributePropertyDefinition*'>'
-//		content=Content
-//	 '</' (endnamespace=ID ':')? endname=QualifiedName '>'
-//	)
 ;
 
 EmptyElementDefinition:
@@ -49,7 +44,6 @@ AttributePropertyDefinition:
 
 Content hidden(ML_COMMENT):
 	(ID|STRING|ANY_OTHER|'.'|':') (ID|STRING|ANY_OTHER|WS|'.'|':')*
-	//PC_DATA
 ;
 
 QualifiedName:
@@ -60,10 +54,6 @@ QualifiedName:
 QualifiedNameWithWildCard :
 	QualifiedName ('.' '*')?
 ;
-
-//terminal PC_DATA:
-//	(!('<'|'>'|' '|'\t'|'\r'|'\n')) (!('<'|'>'))* 
-//;
 
 terminal ID  		: '^'?('a'..'z'|'A'..'Z'|'_') ('a'..'z'|'A'..'Z'|'_'|'0'..'9')*;
 terminal STRING	: 
