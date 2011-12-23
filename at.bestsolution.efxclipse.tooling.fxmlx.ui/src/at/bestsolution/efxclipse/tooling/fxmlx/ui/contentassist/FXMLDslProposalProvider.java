@@ -10,12 +10,15 @@ import org.eclipse.core.resources.IProject;
 import org.eclipse.core.resources.ResourcesPlugin;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EObject;
+import org.eclipse.jdt.core.Flags;
 import org.eclipse.jdt.core.IJavaProject;
+import org.eclipse.jdt.core.IMethod;
 import org.eclipse.jdt.core.IType;
 import org.eclipse.jdt.core.JavaCore;
 import org.eclipse.jdt.core.JavaModelException;
 import org.eclipse.jdt.core.Signature;
 import org.eclipse.jface.text.contentassist.ICompletionProposal;
+import org.eclipse.jface.viewers.StyledString;
 import org.eclipse.xtext.Assignment;
 import org.eclipse.xtext.common.types.JvmType;
 import org.eclipse.xtext.common.types.TypesPackage;
@@ -115,6 +118,13 @@ public class FXMLDslProposalProvider extends AbstractFXMLDslProposalProvider {
 		
 		if( isClassDefinition(model) ) {
 			createAttributeNamesProposal(model, context, acceptor);
+			EObject parent = model.eContainer();
+			if( parent != null && parent.eContainer() != null ) {
+				EObject container = parent.eContainer();
+				if( isClassDefinition(container) ) {
+					createStatusAttributeNamesProposal(container, context, acceptor);
+				}
+			}
 		}
 	}
 	
@@ -132,6 +142,26 @@ public class FXMLDslProposalProvider extends AbstractFXMLDslProposalProvider {
 		}
 	}
 	
+	private void createStatusAttributeNamesProposal(EObject container, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
+		IType type = resolveType(container, projectProvider.getJavaProject(container.eResource().getResourceSet()));
+		if( type != null ) {
+			try {
+				for( IMethod m : type.getMethods() ) {
+					if( Flags.isStatic(m.getFlags()) && Flags.isPublic(m.getFlags()) && m.getParameterNames().length == 2 ) {
+						//TODO We should check assignable from the element itself
+						String typeName = getName(container);
+						String methodName = m.getElementName();
+						StyledString s = new StyledString(typeName+"."+methodName);
+						acceptor.accept(createCompletionProposal((context.getPrefix().startsWith("<") ? '<' : "") + typeName+"."+methodName + "></"+ typeName+"."+methodName + ">", s, null, context));
+					}
+				}
+			} catch (JavaModelException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+	}
+	
 	
 	@Override
 	public void completeEmptyElementDefinition_Name(EObject model, Assignment assignment, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
@@ -143,14 +173,21 @@ public class FXMLDslProposalProvider extends AbstractFXMLDslProposalProvider {
 			return;
 		}
 		
-		if( isClassDefinition(model) && Character.isLowerCase(context.getPrefix().charAt(0)) ) {
-			createAttributeNamesProposal(model, context, acceptor);
+		if( isClassDefinition(model) ) {
+			if( Character.isLowerCase(context.getPrefix().charAt(0)) ) {
+				createAttributeNamesProposal(model, context, acceptor);	
+			} else {
+				EObject parent = model.eContainer();
+				if( parent != null && parent.eContainer() != null ) {
+					EObject container = parent.eContainer();
+					if( isClassDefinition(container) ) {
+						createStatusAttributeNamesProposal(container, context, acceptor);
+					}
+				}
+			}
 		}
 		
-		if(isAttributeDefinition(model) /*&& Character.isUpperCase(context.getPrefix().charAt(0))*/ ) {
-			if( model instanceof ContainerElementDefinition ) {
-			}
-			
+		if(isAttributeDefinition(model) ) {
 			if( isClassDefinition(model.eContainer()) ) {
 				IJavaProject jProject = getJavaProject(model.eContainer());
 				IType type = resolveType(model.eContainer(), jProject);
