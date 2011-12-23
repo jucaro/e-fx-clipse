@@ -301,6 +301,7 @@ listener = new IPartListener() {
 //					System.setErr(new PrintStream(redirectedOut));
 					
 					FXMLLoader loader = new FXMLLoader();
+					loader.setStaticLoad(!preference.getBoolean(LivePreviewSynchronizer.PREF_LOAD_CONTROLLER, false));
 //					System.err.println(contentData.relativePath);
 					loader.setLocation(contentData.relativePath);
 					

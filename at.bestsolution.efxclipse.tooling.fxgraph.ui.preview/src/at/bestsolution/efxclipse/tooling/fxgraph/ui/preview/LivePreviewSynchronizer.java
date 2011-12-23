@@ -1,6 +1,8 @@
 package at.bestsolution.efxclipse.tooling.fxgraph.ui.preview;
 
 import java.io.File;
+import java.io.IOException;
+import java.io.InputStream;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.ArrayList;
@@ -34,17 +36,16 @@ import org.eclipse.ui.IWorkbenchPartConstants;
 import org.eclipse.ui.part.EditorPart;
 import org.eclipse.xtext.resource.XtextResource;
 import org.eclipse.xtext.ui.editor.XtextEditor;
-import org.eclipse.xtext.ui.editor.model.IXtextDocument;
 import org.eclipse.xtext.ui.editor.model.IXtextModelListener;
 import org.eclipse.xtext.util.concurrent.IUnitOfWork;
 
-import at.bestsolution.efxclipse.tooling.css.cssDsl.stylesheet;
 import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.ComponentDefinition;
 import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.Model;
 import at.bestsolution.efxclipse.tooling.fxgraph.generator.FXGraphGenerator;
 import at.bestsolution.efxclipse.tooling.fxgraph.ui.preview.LivePreviewPart.ContentData;
 import at.bestsolution.efxclipse.tooling.fxgraph.ui.preview.bundle.Activator;
 import at.bestsolution.efxclipse.tooling.fxgraph.util.RelativeFileLocator;
+import at.bestsolution.efxclipse.tooling.fxmlx.fXMLDsl.FXML;
 
 import com.google.inject.Inject;
 
@@ -52,15 +53,17 @@ public class LivePreviewSynchronizer implements IPartListener, IXtextModelListen
 	@Inject
 	private LivePreviewPart view;
 
-	private IXtextDocument lastFXMLActiveDocument;
-	private XtextEditor lastCssEditor;
-	private XtextEditor lastFXMLEditor;
+	private Type currentEditorType = Type.UNKNOWN;
+	private XtextEditor currentEditor;
+	private XtextEditor lastStructureEditor;
+	
+	
 	private IEclipsePreferences preference = InstanceScope.INSTANCE.getNode(Activator.PLUGIN_ID);
 
 	public static final String PREF_LOAD_CONTROLLER = "PREF_LOAD_CONTROLLER";
 
 	static enum Type {
-		UNKNOWN, CSS, FXGRAPH
+		UNKNOWN, CSS, FXGRAPH, FXML
 	}
 
 	public void partActivated(IWorkbenchPart part) {
@@ -70,63 +73,57 @@ public class LivePreviewSynchronizer implements IPartListener, IXtextModelListen
 	private void updateView(IWorkbenchPart part) {
 		if (part instanceof XtextEditor) {
 			XtextEditor xtextEditor = (XtextEditor) part;
-			IXtextDocument xtextDocument = xtextEditor.getDocument();
+			
+			if( "at.bestsolution.efxclipse.tooling.fxmlx.FXMLDsl".equals(xtextEditor.getLanguageName()) ) {
+				currentEditorType = Type.FXGRAPH;
+			} else if( "at.bestsolution.efxclipse.tooling.fxgraph.FXGraph".equals(xtextEditor.getLanguageName()) ) {
+				currentEditorType = Type.FXML;
+			} else if( "at.bestsolution.efxclipse.tooling.css.CssDsl".equals(xtextEditor.getLanguageName()) ) {
+				currentEditorType = Type.CSS;
+			} else {
+				currentEditorType = Type.UNKNOWN;
+			}
+			
+			if (currentEditorType == Type.FXGRAPH || currentEditorType == Type.FXML) {
+				if (currentEditor != part) {
+					if (currentEditor != null) {
+						currentEditor.removePropertyListener(this);
+					}
 
-			Type type = xtextDocument.readOnly(new IUnitOfWork<Type, XtextResource>() {
-
-				@Override
-				public Type exec(XtextResource state) throws Exception {
-					EList<EObject> contents = state.getContents();
-					if (!contents.isEmpty()) {
-						EObject rootObject = contents.get(0);
-						if (rootObject instanceof Model) {
-							return Type.FXGRAPH;
-						} else if (rootObject instanceof stylesheet) {
-							return Type.CSS;
+					currentEditor = xtextEditor;
+					currentEditor.addPropertyListener(this);
+				
+					lastStructureEditor = xtextEditor;
+					view.setContents(currentEditor.getDocument().readOnly(new IUnitOfWork<ContentData, XtextResource>() {
+						public ContentData exec(XtextResource resource) throws Exception {
+							System.err.println("Updating UI");
+							return createContents(resource);
 						}
-					}
-					return Type.UNKNOWN;
+					}));
 				}
-			});
-
-			if (type == Type.FXGRAPH) {
-				final ContentData contents = xtextDocument.readOnly(new IUnitOfWork<ContentData, XtextResource>() {
-					public ContentData exec(XtextResource resource) throws Exception {
-						return createContents(resource);
-					}
-				});
-				if (contents != null) {
-					view.setContents(contents);
-					if (lastFXMLActiveDocument != null) {
-						lastFXMLActiveDocument.removeModelListener(this);
-					}
-					lastFXMLActiveDocument = xtextDocument;
-					lastFXMLActiveDocument.addModelListener(this);
-
-					if (lastFXMLEditor != part) {
-						if (lastFXMLEditor != null) {
-							lastFXMLEditor.removePropertyListener(this);
-						}
-
-						lastFXMLEditor = xtextEditor;
-						lastFXMLEditor.addPropertyListener(this);
-					}
-				} else {
-					view.setContents(null);
-				}
-			} else if (type == Type.CSS) {
-				if (lastCssEditor != part) {
-					if (lastCssEditor != null) {
-						lastCssEditor.removePropertyListener(this);
+				currentEditor = xtextEditor;
+				lastStructureEditor = xtextEditor;				
+			} else if (currentEditorType == Type.CSS) {
+				if (currentEditor != part) {
+					if (currentEditor != null) {
+						currentEditor.removePropertyListener(this);
 					}
 
-					lastCssEditor = xtextEditor;
-					lastCssEditor.addPropertyListener(this);
+					currentEditor = xtextEditor;
+					currentEditor.addPropertyListener(this);
 				}
 			} else {
 				view.setContents(null);
 			}
 		} else if (part instanceof EditorPart) {
+			if (currentEditor != part) {
+				if (currentEditor != null) {
+					currentEditor.removePropertyListener(this);
+				}
+
+				currentEditor = null;
+			}
+			
 			view.setContents(null);
 		}
 	}
@@ -189,28 +186,44 @@ public class LivePreviewSynchronizer implements IPartListener, IXtextModelListen
 	private ContentData createContents(XtextResource resource) {
 		EList<EObject> contents = resource.getContents();
 		if (!contents.isEmpty()) {
+
+			URI uri = resource.getURI();
+			IProject p = ResourcesPlugin.getWorkspace().getRoot().getProject(uri.segment(1));
+			IJavaProject jp = JavaCore.create(p);
+
+			boolean pluginProject = false;
+
+			try {
+				if (p.hasNature("org.eclipse.pde.PluginNature")) {
+					pluginProject = true;
+				}
+			} catch (CoreException e2) {
+				// TODO Auto-generated catch block
+				e2.printStackTrace();
+			}
+			
+			URL relativeUrl = null;
+			Path structureFilePath = new Path(uri.toPlatformString(true));
+			IWorkspaceRoot workspaceRoot = jp.getProject().getWorkspace().getRoot();
+			IFile structureFile = workspaceRoot.getFile(structureFilePath); 
+			IFolder file = (IFolder) structureFile.getParent();//workspaceRoot.getFolder(structureFilePath.removeLastSegments(1));
+			if (file.exists()) {
+				try {
+					relativeUrl = file.getLocation().toFile().getAbsoluteFile().toURI().toURL();
+				} catch (MalformedURLException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+			}
+			
 			EObject rootObject = contents.get(0);
 			if (rootObject instanceof Model) {
 				FXGraphGenerator generator = new FXGraphGenerator();
 				ComponentDefinition def = ((Model) rootObject).getComponentDef();
 				List<String> l;
 
-				URI uri = resource.getURI();
-				IProject p = ResourcesPlugin.getWorkspace().getRoot().getProject(uri.segment(1));
-				IJavaProject jp = JavaCore.create(p);
 
 				List<URL> extraPaths = new ArrayList<URL>();
-
-				boolean pluginProject = false;
-
-				try {
-					if (p.hasNature("org.eclipse.pde.PluginNature")) {
-						pluginProject = true;
-					}
-				} catch (CoreException e2) {
-					// TODO Auto-generated catch block
-					e2.printStackTrace();
-				}
 
 				if (def != null) {
 					l = new ArrayList<String>(def.getPreviewCssFiles().size());
@@ -300,7 +313,7 @@ public class LivePreviewSynchronizer implements IPartListener, IXtextModelListen
 					// If it is not a plugin project prepend the customized
 					// entries
 					if (!pluginProject) {
-						extraPaths = calculateProjectClasspath(jp);
+						extraPaths.addAll(0, calculateProjectClasspath(jp));
 					}
 				} else {
 					l = Collections.emptyList();
@@ -313,22 +326,45 @@ public class LivePreviewSynchronizer implements IPartListener, IXtextModelListen
 						resourcePropertiesFile = f.getAbsolutePath();
 					}
 				}
-
-				URL url = null;
-				Path path = new Path(uri.toPlatformString(true));
-				IWorkspaceRoot root = jp.getProject().getWorkspace().getRoot();
-				IFolder file = root.getFolder(path.removeLastSegments(1));
-				if (file.exists()) {
+				
+				return new ContentData(generator.doGeneratePreview(resource, (!preference.getBoolean(PREF_LOAD_CONTROLLER, false)) && (!pluginProject), true),
+						l, resourcePropertiesFile, extraPaths, relativeUrl);
+			} else if( rootObject instanceof FXML ) {
+				List<URL> extraPaths = new ArrayList<URL>();
+				// If it is not a plugin project prepend the customized
+				// entries
+				if (!pluginProject) {
+					extraPaths.addAll(0, calculateProjectClasspath(jp));
+				}
+				
+//				System.err.println("Path: " + structureFilePath);
+				String fxmlFile;
+				InputStream in = null;
+				try {
+					StringBuilder b = new StringBuilder();
+					in = structureFile.getContents(true);
+					byte[] buf = new byte[1024];
+					int len;
+					while( (len = in.read(buf) ) != -1 ) {
+						b.append(new String(buf,0,len));
+					}
+					fxmlFile = b.toString();
+				} catch (Throwable e) {
+					
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+					
+					fxmlFile = lastStructureEditor.getDocument().get();
+				} finally {
 					try {
-						url = file.getLocation().toFile().getAbsoluteFile().toURI().toURL();
-					} catch (MalformedURLException e) {
+						in.close();
+					} catch (IOException e) {
 						// TODO Auto-generated catch block
 						e.printStackTrace();
 					}
 				}
-
-				return new ContentData(generator.doGeneratePreview(resource, (!preference.getBoolean(PREF_LOAD_CONTROLLER, false)) && (!pluginProject), true),
-						l, resourcePropertiesFile, extraPaths, url);
+				
+				return new ContentData(fxmlFile, new ArrayList<String>(), null, extraPaths, relativeUrl);
 			}
 		}
 
@@ -361,14 +397,15 @@ public class LivePreviewSynchronizer implements IPartListener, IXtextModelListen
 	@Override
 	public void propertyChanged(Object source, int propId) {
 		if (propId == IWorkbenchPartConstants.PROP_DIRTY) {
-			if (lastCssEditor != null && !lastCssEditor.isDirty() && lastFXMLActiveDocument != null) {
-				view.setContents(lastFXMLActiveDocument.readOnly(new IUnitOfWork<ContentData, XtextResource>() {
+			System.err.println("Current type: " + currentEditorType);
+			if( currentEditorType == Type.CSS && ! currentEditor.isDirty() && lastStructureEditor != null ) {
+				view.setContents(lastStructureEditor.getDocument().readOnly(new IUnitOfWork<ContentData, XtextResource>() {
 					public ContentData exec(XtextResource resource) throws Exception {
 						return createContents(resource);
 					}
 				}));
-			} else if (lastFXMLEditor != null && !lastFXMLEditor.isDirty() && lastFXMLActiveDocument != null) {
-				view.setContents(lastFXMLActiveDocument.readOnly(new IUnitOfWork<ContentData, XtextResource>() {
+			} else if( (currentEditorType == Type.FXGRAPH || currentEditorType == Type.FXML) && ! currentEditor.isDirty() && lastStructureEditor != null ) {
+				view.setContents(lastStructureEditor.getDocument().readOnly(new IUnitOfWork<ContentData, XtextResource>() {
 					public ContentData exec(XtextResource resource) throws Exception {
 						return createContents(resource);
 					}
@@ -378,8 +415,8 @@ public class LivePreviewSynchronizer implements IPartListener, IXtextModelListen
 	}
 
 	public void refreshPreview() {
-		if (lastFXMLEditor != null && !lastFXMLEditor.isDirty() && lastFXMLActiveDocument != null) {
-			view.setContents(lastFXMLActiveDocument.readOnly(new IUnitOfWork<ContentData, XtextResource>() {
+		if ( currentEditorType != Type.UNKNOWN && lastStructureEditor != null && !lastStructureEditor.isDirty() ) {
+			view.setContents(lastStructureEditor.getDocument().readOnly(new IUnitOfWork<ContentData, XtextResource>() {
 				public ContentData exec(XtextResource resource) throws Exception {
 					return createContents(resource);
 				}
