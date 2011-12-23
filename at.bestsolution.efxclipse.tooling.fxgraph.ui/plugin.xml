@@ -10,7 +10,7 @@
             contributorClass="org.eclipse.ui.editors.text.TextEditorActionContributor"
             default="true"
             extensions="fxgraph"
-            icon="icons/page_white_coldfusion.png"
+            icon="icons/text-rdf.png"
             id="at.bestsolution.efxclipse.tooling.fxgraph.FXGraph"
             name="%editor.name">
         </editor>
@@ -243,7 +243,7 @@
       <wizard
             category="at.bestsolution.efxclipse.tooling"
             class="at.bestsolution.efxclipse.tooling.fxgraph.ui.wizards.NewFXGraphWizard"
-            icon="icons/page_white_coldfusion.png"
+            icon="icons/text-rdf.png"
             id="at.bestsolution.efxclipse.tooling.fxgraph.ui.new"
             name="%wizard.name">
       </wizard>

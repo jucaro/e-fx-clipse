@@ -45,15 +45,13 @@ import org.eclipse.jface.viewers.ViewerFilter;
 import org.eclipse.jface.window.Window;
 import org.eclipse.jface.wizard.WizardPage;
 import org.eclipse.swt.SWT;
-import org.eclipse.swt.events.DisposeEvent;
-import org.eclipse.swt.events.DisposeListener;
 import org.eclipse.swt.events.SelectionAdapter;
 import org.eclipse.swt.events.SelectionEvent;
-import org.eclipse.swt.graphics.Image;
 import org.eclipse.swt.layout.GridData;
 import org.eclipse.swt.layout.GridLayout;
 import org.eclipse.swt.widgets.Button;
 import org.eclipse.swt.widgets.Composite;
+import org.eclipse.swt.widgets.Display;
 import org.eclipse.swt.widgets.Label;
 import org.eclipse.swt.widgets.Text;
 import org.eclipse.ui.dialogs.ElementListSelectionDialog;
@@ -77,20 +75,11 @@ public abstract class AbstractJDTElementPage<O extends JDTElement> extends Wizar
 		
 		setTitle(title);
 		setDescription(description);
+		setImageDescriptor(getTitleAreaImage(Display.getCurrent()));
 	}
 	
 	public void createControl(Composite parent) {
-		final Image img = new Image(parent.getDisplay(), getClass().getClassLoader().getResourceAsStream("/icons/wizban/newclass_wiz.png"));
-		setImageDescriptor(ImageDescriptor.createFromImage(img));
 		
-		parent.addDisposeListener(new DisposeListener() {
-			
-			public void widgetDisposed(DisposeEvent e) {
-				img.dispose();
-				setImageDescriptor(null);
-			}
-		});
-
 		parent = new Composite(parent, SWT.NULL);		
 		parent.setLayoutData(new GridData(GridData.FILL_BOTH));
 		parent.setLayout(new GridLayout(3, false));
@@ -281,6 +270,8 @@ public abstract class AbstractJDTElementPage<O extends JDTElement> extends Wizar
 	protected abstract void createFields(Composite parent, DataBindingContext dbc);
 
 	protected abstract O createInstance();
+	
+	protected abstract ImageDescriptor getTitleAreaImage(Display display);
 
 	public O getClazz() {
 		return clazz;

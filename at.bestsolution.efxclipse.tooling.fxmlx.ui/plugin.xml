@@ -10,7 +10,7 @@
               contributorClass="org.eclipse.ui.editors.text.TextEditorActionContributor"
               default="true"
               extensions="fxml"
-              icon="icons/page_white_code_red.png"
+              icon="icons/application-xhtml+xml.png"
               id="at.bestsolution.efxclipse.tooling.fxmlx.FXMLDsl"
               name="%editor.name">
         </editor>

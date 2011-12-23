@@ -14,8 +14,11 @@ import org.eclipse.core.databinding.DataBindingContext;
 import org.eclipse.core.resources.IWorkspaceRoot;
 import org.eclipse.jdt.core.IPackageFragment;
 import org.eclipse.jdt.core.IPackageFragmentRoot;
+import org.eclipse.jface.resource.ImageDescriptor;
 import org.eclipse.swt.widgets.Composite;
+import org.eclipse.swt.widgets.Display;
 
+import at.bestsolution.efxclipse.tooling.jdt.ui.internal.JavaFXUIPlugin;
 import at.bestsolution.efxclipse.tooling.ui.wizards.AbstractJDTElementPage;
 import at.bestsolution.efxclipse.tooling.ui.wizards.template.JDTElement;
 
@@ -25,17 +28,16 @@ import at.bestsolution.efxclipse.tooling.ui.wizards.template.JDTElement;
  */
 public class NewPreloaderClassPage extends AbstractJDTElementPage<JDTElement> {
 	
-	/**
-	 * @param pageName
-	 * @param title
-	 * @param description
-	 * @param froot
-	 * @param fWorkspaceRoot
-	 */
 	protected NewPreloaderClassPage(IPackageFragmentRoot froot, IPackageFragment fragment,
 			IWorkspaceRoot fWorkspaceRoot) {
 		super("newApplicationId", "JavaFX Preloader Class", "Create a new JavaFX Preloader Class", froot, fragment, fWorkspaceRoot);
 	}
+	
+	@Override
+	protected ImageDescriptor getTitleAreaImage(Display display) {
+		return JavaFXUIPlugin.imageDescriptorFromPlugin(JavaFXUIPlugin.PLUGIN_ID, "/icons/wizban/newclass_wiz.png");
+	}
+
 
 	@Override
 	protected void createFields(Composite parent, DataBindingContext dbc) {
