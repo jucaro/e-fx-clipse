@@ -8,7 +8,7 @@
  * Contributors:
  *     Tom Schindl <tom.schindl@bestsolution.at> - initial API and implementation
  ******************************************************************************/
-package at.bestsolution.efxclipse.tooling.jdt.ui.internal.wizard.clazz;
+package at.bestsolution.efxclipse.tooling.ui.wizards;
 
 
 import org.eclipse.core.databinding.Binding;
@@ -59,16 +59,20 @@ import org.eclipse.swt.widgets.Text;
 import org.eclipse.ui.dialogs.ElementListSelectionDialog;
 import org.eclipse.ui.dialogs.ElementTreeSelectionDialog;
 
-import at.bestsolution.efxclipse.tooling.jdt.ui.internal.wizard.templates.model.JavaClass;
+import at.bestsolution.efxclipse.tooling.ui.wizards.template.JDTElement;
 
-public abstract class AbstractNewClassPage<O extends JavaClass> extends WizardPage {
+
+@SuppressWarnings("restriction")
+public abstract class AbstractJDTElementPage<O extends JDTElement> extends WizardPage {
 	private O clazz;
 	private IPackageFragmentRoot froot;
+	private IPackageFragment fragment;
 	private IWorkspaceRoot fWorkspaceRoot;
 	
-	protected AbstractNewClassPage(String pageName, String title, String description, IPackageFragmentRoot froot, IWorkspaceRoot fWorkspaceRoot) {
+	protected AbstractJDTElementPage(String pageName, String title, String description, IPackageFragmentRoot froot, IPackageFragment fragment, IWorkspaceRoot fWorkspaceRoot) {
 		super(pageName);
 		this.froot = froot;
+		this.fragment = fragment;
 		this.fWorkspaceRoot = fWorkspaceRoot;
 		
 		setTitle(title);
@@ -92,7 +96,9 @@ public abstract class AbstractNewClassPage<O extends JavaClass> extends WizardPa
 		parent.setLayout(new GridLayout(3, false));
 		
 		clazz = createInstance();
-
+		clazz.setFragmentRoot(froot);
+		clazz.setPackageFragment(fragment);
+		
 		DataBindingContext dbc = new DataBindingContext();
 		WizardPageSupport.create(this, dbc);
 		
@@ -177,7 +183,7 @@ public abstract class AbstractNewClassPage<O extends JavaClass> extends WizardPa
 	
 	private IPackageFragmentRoot choosePackageRoot() {
 		IJavaElement initElement= clazz.getFragmentRoot();
-		Class[] acceptedClasses= new Class[] { IPackageFragmentRoot.class, IJavaProject.class };
+		Class<?>[] acceptedClasses= new Class<?>[] { IPackageFragmentRoot.class, IJavaProject.class };
 		TypedElementSelectionValidator validator= new TypedElementSelectionValidator(acceptedClasses, false) {
 			public boolean isSelectedValid(Object element) {
 				try {

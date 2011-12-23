@@ -1,14 +1,4 @@
-/*******************************************************************************
- * Copyright (c) 2011 BestSolution.at and others.
- * All rights reserved. This program and the accompanying materials
- * are made available under the terms of the Eclipse Public License v1.0
- * which accompanies this distribution, and is available at
- * http://www.eclipse.org/legal/epl-v10.html
- *
- * Contributors:
- *     Tom Schindl<tom.schindl@bestsolution.at> - initial API and implementation
- *******************************************************************************/
-package at.bestsolution.efxclipse.tooling.jdt.ui.internal.wizard.templates.model;
+package at.bestsolution.efxclipse.tooling.ui.wizards.template;
 
 import java.beans.PropertyChangeListener;
 import java.beans.PropertyChangeSupport;
@@ -16,16 +6,16 @@ import java.beans.PropertyChangeSupport;
 import org.eclipse.jdt.core.IPackageFragment;
 import org.eclipse.jdt.core.IPackageFragmentRoot;
 
-public class JavaClass {
+public class JDTElement {
 	protected PropertyChangeSupport support = new PropertyChangeSupport(this);
 
 	private IPackageFragmentRoot fragmentRoot;
 	private IPackageFragment packageFragment;
 	private String name;
 
-	public JavaClass(IPackageFragmentRoot fragmentRoot) {
-		this.fragmentRoot = fragmentRoot;
-	}
+//	public JDTElement(IPackageFragmentRoot fragmentRoot) {
+//		this.fragmentRoot = fragmentRoot;
+//	}
 
 	public IPackageFragmentRoot getFragmentRoot() {
 		return fragmentRoot;

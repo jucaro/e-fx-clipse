@@ -12,16 +12,19 @@ package at.bestsolution.efxclipse.tooling.jdt.ui.internal.wizard.clazz;
 
 import org.eclipse.core.databinding.DataBindingContext;
 import org.eclipse.core.resources.IWorkspaceRoot;
+import org.eclipse.jdt.core.IPackageFragment;
 import org.eclipse.jdt.core.IPackageFragmentRoot;
 import org.eclipse.swt.widgets.Composite;
 
-import at.bestsolution.efxclipse.tooling.jdt.ui.internal.wizard.templates.model.JavaClass;
+import at.bestsolution.efxclipse.tooling.ui.wizards.AbstractJDTElementPage;
+import at.bestsolution.efxclipse.tooling.ui.wizards.template.JDTElement;
+
 
 /**
  * @author Tom Schindl
  *
  */
-public class NewApplicationClassPage extends AbstractNewClassPage<JavaClass> {
+public class NewApplicationClassPage extends AbstractJDTElementPage<JDTElement> {
 	
 	/**
 	 * @param pageName
@@ -30,9 +33,9 @@ public class NewApplicationClassPage extends AbstractNewClassPage<JavaClass> {
 	 * @param froot
 	 * @param fWorkspaceRoot
 	 */
-	protected NewApplicationClassPage(IPackageFragmentRoot froot,
+	protected NewApplicationClassPage(IPackageFragmentRoot froot, IPackageFragment fragment,
 			IWorkspaceRoot fWorkspaceRoot) {
-		super("newApplicationId", "JavaFX Main Class", "Create a new JavaFX Main Class", froot, fWorkspaceRoot);
+		super("newApplicationId", "JavaFX Main Class", "Create a new JavaFX Main Class", froot, fragment, fWorkspaceRoot);
 	}
 
 	@Override
@@ -41,8 +44,8 @@ public class NewApplicationClassPage extends AbstractNewClassPage<JavaClass> {
 	}
 
 	@Override
-	protected JavaClass createInstance() {
-		return new JavaClass(getFragmentRoot());
+	protected JDTElement createInstance() {
+		return new JDTElement();
 	}
 
 }

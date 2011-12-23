@@ -13,24 +13,23 @@ package at.bestsolution.efxclipse.tooling.jdt.ui.internal.wizard.clazz;
 import org.eclipse.core.resources.ResourcesPlugin;
 
 import at.bestsolution.efxclipse.tooling.jdt.ui.internal.wizard.templates.ApplicationClassGenerator;
-import at.bestsolution.efxclipse.tooling.jdt.ui.internal.wizard.templates.IGenerator;
-import at.bestsolution.efxclipse.tooling.jdt.ui.internal.wizard.templates.model.JavaClass;
+import at.bestsolution.efxclipse.tooling.ui.wizards.template.IGenerator;
+import at.bestsolution.efxclipse.tooling.ui.wizards.template.JDTElement;
 
 /**
  * @author Tom Schindl
  *
  */
-public class NewApplicationClassWizard extends AbstractNewClassWizard<JavaClass> {
+public class NewApplicationClassWizard extends AbstractNewClassWizard<JDTElement> {
 
 	@Override
 	public void addPages() {
-		addPage(new NewApplicationClassPage(root,ResourcesPlugin.getWorkspace().getRoot()));
+		addPage(new NewApplicationClassPage(root,fragment,ResourcesPlugin.getWorkspace().getRoot()));
 	}
 	
 	
 	@Override
-	protected IGenerator<JavaClass> getGenerator() {
+	protected IGenerator<JDTElement> getGenerator() {
 		return new ApplicationClassGenerator();
 	}
-
 }

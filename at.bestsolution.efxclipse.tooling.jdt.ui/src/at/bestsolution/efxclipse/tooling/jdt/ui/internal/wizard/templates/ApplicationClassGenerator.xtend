@@ -1,10 +1,12 @@
 package at.bestsolution.efxclipse.tooling.jdt.ui.internal.wizard.templates
 
 
-import at.bestsolution.efxclipse.tooling.jdt.ui.internal.wizard.templates.model.JavaClass
 
-class ApplicationClassGenerator implements IGenerator<JavaClass> {
-	override generateContent(JavaClass clazzDef) '''
+import at.bestsolution.efxclipse.tooling.ui.wizards.template.JDTElement
+import at.bestsolution.efxclipse.tooling.ui.wizards.template.IGenerator
+
+class ApplicationClassGenerator implements IGenerator<JDTElement> {
+	override generateContent(JDTElement clazzDef) '''
 		«IF(clazzDef.packageFragment != null && ! clazzDef.packageFragment.elementName.empty)»package «clazzDef.packageFragment.elementName»;«ENDIF»
 		
 		import javafx.application.Application;

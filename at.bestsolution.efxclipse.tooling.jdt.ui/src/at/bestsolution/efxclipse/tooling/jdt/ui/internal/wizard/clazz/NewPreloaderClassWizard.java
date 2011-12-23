@@ -12,24 +12,24 @@ package at.bestsolution.efxclipse.tooling.jdt.ui.internal.wizard.clazz;
 
 import org.eclipse.core.resources.ResourcesPlugin;
 
-import at.bestsolution.efxclipse.tooling.jdt.ui.internal.wizard.templates.IGenerator;
 import at.bestsolution.efxclipse.tooling.jdt.ui.internal.wizard.templates.PreloaderClassGenerator;
-import at.bestsolution.efxclipse.tooling.jdt.ui.internal.wizard.templates.model.JavaClass;
+import at.bestsolution.efxclipse.tooling.ui.wizards.template.IGenerator;
+import at.bestsolution.efxclipse.tooling.ui.wizards.template.JDTElement;
 
 /**
  * @author Tom Schindl
  *
  */
-public class NewPreloaderClassWizard extends AbstractNewClassWizard<JavaClass> {
+public class NewPreloaderClassWizard extends AbstractNewClassWizard<JDTElement> {
 
 	@Override
 	public void addPages() {
-		addPage(new NewPreloaderClassPage(root,ResourcesPlugin.getWorkspace().getRoot()));
+		addPage(new NewPreloaderClassPage(root,fragment,ResourcesPlugin.getWorkspace().getRoot()));
 	}
 	
 	
 	@Override
-	protected IGenerator<JavaClass> getGenerator() {
+	protected IGenerator<JDTElement> getGenerator() {
 		return new PreloaderClassGenerator();
 	}
 

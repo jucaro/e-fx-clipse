@@ -8,17 +8,10 @@
  * Contributors:
  *     Tom Schindl<tom.schindl@bestsolution.at> - initial API and implementation
  *******************************************************************************/
-package at.bestsolution.efxclipse.tooling.jdt.ui.internal.wizard.templates;
-
-import org.eclipse.xtext.xtend2.lib.StringConcatenation;
-
-import at.bestsolution.efxclipse.tooling.jdt.ui.internal.wizard.templates.model.JavaClass;
+package at.bestsolution.efxclipse.tooling.ui.wizards.template;
 
 
-/**
- * @author Tom Schindl
- *
- */
-public interface IGenerator<O extends JavaClass> {
+
+public interface IGenerator<O extends JDTElement> {
 	public CharSequence generateContent(O clazzDef);
 }
