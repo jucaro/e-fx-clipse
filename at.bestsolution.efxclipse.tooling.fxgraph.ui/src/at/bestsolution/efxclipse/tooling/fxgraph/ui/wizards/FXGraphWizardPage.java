@@ -18,6 +18,7 @@ import org.eclipse.jdt.core.search.SearchEngine;
 import org.eclipse.jdt.ui.IJavaElementSearchConstants;
 import org.eclipse.jdt.ui.JavaUI;
 import org.eclipse.jface.databinding.viewers.ViewerProperties;
+import org.eclipse.jface.dialogs.IMessageProvider;
 import org.eclipse.jface.resource.ImageDescriptor;
 import org.eclipse.jface.viewers.ArrayContentProvider;
 import org.eclipse.jface.viewers.ComboViewer;
@@ -126,6 +127,19 @@ public class FXGraphWizardPage extends AbstractJDTElementPage<FXGraphElement> {
 		}
 		
 		return null;
+	}
+	
+	protected void revalidate() {
+		if( getClazz().getName() == null || getClazz().getName().trim().length() == 0 ) {
+			setPageComplete(false);
+			setMessage("Enter a name", IMessageProvider.ERROR);
+		} else if(Character.isLowerCase(getClazz().getName().charAt(0))) {
+			setPageComplete(true);
+			setMessage("An FXGraph file should start with an uppercase", IMessageProvider.WARNING);
+		} else {
+			setPageComplete(true);
+			setMessage(null);
+		}
 	}
 	
 	private List<IType> getTypes() {
