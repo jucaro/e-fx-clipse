@@ -19,11 +19,6 @@ import org.eclipse.core.databinding.DataBindingContext;
 import org.eclipse.core.databinding.UpdateValueStrategy;
 import org.eclipse.core.databinding.beans.BeanProperties;
 import org.eclipse.core.databinding.conversion.Converter;
-import org.eclipse.core.databinding.observable.ChangeEvent;
-import org.eclipse.core.databinding.observable.IChangeListener;
-import org.eclipse.core.databinding.observable.list.IListChangeListener;
-import org.eclipse.core.databinding.observable.list.ListChangeEvent;
-import org.eclipse.core.databinding.observable.list.ListDiffVisitor;
 import org.eclipse.core.databinding.validation.IValidator;
 import org.eclipse.core.resources.IWorkspaceRoot;
 import org.eclipse.core.runtime.IPath;
@@ -45,7 +40,6 @@ import org.eclipse.jdt.ui.JavaElementLabelProvider;
 import org.eclipse.jdt.ui.StandardJavaElementContentProvider;
 import org.eclipse.jface.databinding.swt.IWidgetValueProperty;
 import org.eclipse.jface.databinding.swt.WidgetProperties;
-import org.eclipse.jface.databinding.wizard.WizardPageSupport;
 import org.eclipse.jface.dialogs.IMessageProvider;
 import org.eclipse.jface.resource.ImageDescriptor;
 import org.eclipse.jface.viewers.ILabelProvider;
@@ -75,6 +69,7 @@ public abstract class AbstractJDTElementPage<O extends JDTElement> extends Wizar
 	private IPackageFragmentRoot froot;
 	private IPackageFragment fragment;
 	private IWorkspaceRoot fWorkspaceRoot;
+	private Text nameField;
 	
 	protected AbstractJDTElementPage(String pageName, String title, String description, IPackageFragmentRoot froot, IPackageFragment fragment, IWorkspaceRoot fWorkspaceRoot) {
 		super(pageName);
@@ -96,16 +91,9 @@ public abstract class AbstractJDTElementPage<O extends JDTElement> extends Wizar
 		clazz = createInstance();
 		clazz.setFragmentRoot(froot);
 		clazz.setPackageFragment(fragment);
-		clazz.addPropertyChangeListener(new PropertyChangeListener() {
-			
-			@Override
-			public void propertyChange(PropertyChangeEvent evt) {
-				revalidate();
-			}
-		});
+		
 		
 		DataBindingContext dbc = new DataBindingContext();
-		WizardPageSupport.create(this, dbc);
 		
 		{
 			Label l = new Label(parent, SWT.NONE);
@@ -170,9 +158,9 @@ public abstract class AbstractJDTElementPage<O extends JDTElement> extends Wizar
 			Label l = new Label(parent, SWT.NONE);
 			l.setText("Name");
 
-			Text t = new Text(parent, SWT.BORDER);
-			t.setLayoutData(new GridData(GridData.FILL_HORIZONTAL));
-			dbc.bindValue(textProp.observe(t), BeanProperties.value("name", String.class).observe(clazz));
+			nameField = new Text(parent, SWT.BORDER);
+			nameField.setLayoutData(new GridData(GridData.FILL_HORIZONTAL));
+			dbc.bindValue(textProp.observe(nameField), BeanProperties.value("name", String.class).observe(clazz));
 
 			new Label(parent, SWT.NONE);
 		}
@@ -184,12 +172,30 @@ public abstract class AbstractJDTElementPage<O extends JDTElement> extends Wizar
 		
 		createFields(parent, dbc);
 		setControl(parent);
+		
+		clazz.addPropertyChangeListener(new PropertyChangeListener() {
+			
+			@Override
+			public void propertyChange(PropertyChangeEvent evt) {
+				revalidate();
+			}
+		});
+		setPageComplete(false);
+	}
+	
+	@Override
+	public void setVisible(boolean visible) {
+		super.setVisible(visible);
+		
+		if( visible ) {
+			nameField.setFocus();	
+		}
 	}
 	
 	protected void revalidate() {
 		if( getClazz().getName() == null || getClazz().getName().trim().length() == 0 ) {
 			setPageComplete(false);
-			setMessage("Enter an element name", IMessageProvider.ERROR);
+			setMessage("Enter a name", IMessageProvider.ERROR);
 		} else {
 			setPageComplete(true);
 			setMessage(null);
