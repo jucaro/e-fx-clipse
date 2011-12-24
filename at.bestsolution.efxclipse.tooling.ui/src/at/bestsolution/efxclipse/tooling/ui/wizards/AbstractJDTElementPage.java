@@ -11,11 +11,19 @@
 package at.bestsolution.efxclipse.tooling.ui.wizards;
 
 
+import java.beans.PropertyChangeEvent;
+import java.beans.PropertyChangeListener;
+
 import org.eclipse.core.databinding.Binding;
 import org.eclipse.core.databinding.DataBindingContext;
 import org.eclipse.core.databinding.UpdateValueStrategy;
 import org.eclipse.core.databinding.beans.BeanProperties;
 import org.eclipse.core.databinding.conversion.Converter;
+import org.eclipse.core.databinding.observable.ChangeEvent;
+import org.eclipse.core.databinding.observable.IChangeListener;
+import org.eclipse.core.databinding.observable.list.IListChangeListener;
+import org.eclipse.core.databinding.observable.list.ListChangeEvent;
+import org.eclipse.core.databinding.observable.list.ListDiffVisitor;
 import org.eclipse.core.databinding.validation.IValidator;
 import org.eclipse.core.resources.IWorkspaceRoot;
 import org.eclipse.core.runtime.IPath;
@@ -38,6 +46,7 @@ import org.eclipse.jdt.ui.StandardJavaElementContentProvider;
 import org.eclipse.jface.databinding.swt.IWidgetValueProperty;
 import org.eclipse.jface.databinding.swt.WidgetProperties;
 import org.eclipse.jface.databinding.wizard.WizardPageSupport;
+import org.eclipse.jface.dialogs.IMessageProvider;
 import org.eclipse.jface.resource.ImageDescriptor;
 import org.eclipse.jface.viewers.ILabelProvider;
 import org.eclipse.jface.viewers.Viewer;
@@ -87,6 +96,13 @@ public abstract class AbstractJDTElementPage<O extends JDTElement> extends Wizar
 		clazz = createInstance();
 		clazz.setFragmentRoot(froot);
 		clazz.setPackageFragment(fragment);
+		clazz.addPropertyChangeListener(new PropertyChangeListener() {
+			
+			@Override
+			public void propertyChange(PropertyChangeEvent evt) {
+				revalidate();
+			}
+		});
 		
 		DataBindingContext dbc = new DataBindingContext();
 		WizardPageSupport.create(this, dbc);
@@ -168,6 +184,16 @@ public abstract class AbstractJDTElementPage<O extends JDTElement> extends Wizar
 		
 		createFields(parent, dbc);
 		setControl(parent);
+	}
+	
+	protected void revalidate() {
+		if( getClazz().getName() == null || getClazz().getName().trim().length() == 0 ) {
+			setPageComplete(false);
+			setMessage("Enter an element name", IMessageProvider.ERROR);
+		} else {
+			setPageComplete(true);
+			setMessage(null);
+		}
 	}
 	
 	private IPackageFragmentRoot choosePackageRoot() {

@@ -369,7 +369,7 @@ public class JFXBuildConfigurationEditor extends MultiPageEditorPart implements
 			}
 			
 			{
-				toolkit.createLabel(sectionClient, "Preloader class*:");
+				toolkit.createLabel(sectionClient, "Preloader class:");
 				final Text t = toolkit.createText(sectionClient, "");
 				t.setLayoutData(new GridData(GridData.FILL,GridData.CENTER,true,false,2,1));
 				Button b = toolkit.createButton(sectionClient, "Browse ...", SWT.PUSH);
