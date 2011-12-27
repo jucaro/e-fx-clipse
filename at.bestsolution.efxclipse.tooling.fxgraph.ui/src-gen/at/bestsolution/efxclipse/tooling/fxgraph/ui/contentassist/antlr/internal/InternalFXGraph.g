@@ -785,6 +785,34 @@ finally {
 
 
 
+// Entry rule entryRuleStringValue
+entryRuleStringValue 
+:
+{ before(grammarAccess.getStringValueRule()); }
+	 ruleStringValue
+{ after(grammarAccess.getStringValueRule()); } 
+	 EOF 
+;
+
+// Rule StringValue
+ruleStringValue
+    @init {
+		int stackSize = keepStackSize();
+    }
+	:
+(
+{ before(grammarAccess.getStringValueAccess().getValueAssignment()); }
+(rule__StringValue__ValueAssignment)
+{ after(grammarAccess.getStringValueAccess().getValueAssignment()); }
+)
+
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+
+
 // Entry rule entryRuleXExpression
 entryRuleXExpression 
 :
@@ -18126,8 +18154,8 @@ rule__ResourceValueProperty__ValueAssignment_1
     }
 :
 (
-{ before(grammarAccess.getResourceValuePropertyAccess().getValueSTRINGTerminalRuleCall_1_0()); }
-	RULE_STRING{ after(grammarAccess.getResourceValuePropertyAccess().getValueSTRINGTerminalRuleCall_1_0()); }
+{ before(grammarAccess.getResourceValuePropertyAccess().getValueStringValueParserRuleCall_1_0()); }
+	ruleStringValue{ after(grammarAccess.getResourceValuePropertyAccess().getValueStringValueParserRuleCall_1_0()); }
 )
 
 ;
@@ -18162,6 +18190,21 @@ rule__BindValueProperty__AttributeAssignment_3
 (
 { before(grammarAccess.getBindValuePropertyAccess().getAttributeIDTerminalRuleCall_3_0()); }
 	RULE_ID{ after(grammarAccess.getBindValuePropertyAccess().getAttributeIDTerminalRuleCall_3_0()); }
+)
+
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__StringValue__ValueAssignment
+    @init {
+		int stackSize = keepStackSize();
+    }
+:
+(
+{ before(grammarAccess.getStringValueAccess().getValueSTRINGTerminalRuleCall_0()); }
+	RULE_STRING{ after(grammarAccess.getStringValueAccess().getValueSTRINGTerminalRuleCall_0()); }
 )
 
 ;

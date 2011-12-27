@@ -93,6 +93,7 @@ public class FXGraphFactoryImpl extends EFactoryImpl implements FXGraphFactory
       case FXGraphPackage.LOCATION_VALUE_PROPERTY: return createLocationValueProperty();
       case FXGraphPackage.RESOURCE_VALUE_PROPERTY: return createResourceValueProperty();
       case FXGraphPackage.BIND_VALUE_PROPERTY: return createBindValueProperty();
+      case FXGraphPackage.STRING_VALUE: return createStringValue();
       default:
         throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
     }
@@ -371,6 +372,17 @@ public class FXGraphFactoryImpl extends EFactoryImpl implements FXGraphFactory
   {
     BindValuePropertyImpl bindValueProperty = new BindValuePropertyImpl();
     return bindValueProperty;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public StringValue createStringValue()
+  {
+    StringValueImpl stringValue = new StringValueImpl();
+    return stringValue;
   }
 
   /**

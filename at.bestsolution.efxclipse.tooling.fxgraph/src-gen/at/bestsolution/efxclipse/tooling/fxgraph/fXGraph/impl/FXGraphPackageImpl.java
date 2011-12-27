@@ -32,6 +32,7 @@ import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.ScriptValueExpression;
 import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.SimpleValueProperty;
 import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.SingleValueProperty;
 import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.StaticValueProperty;
+import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.StringValue;
 import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.ValueProperty;
 
 import org.eclipse.emf.ecore.EAttribute;
@@ -225,6 +226,13 @@ public class FXGraphPackageImpl extends EPackageImpl implements FXGraphPackage
    * @generated
    */
   private EClass bindValuePropertyEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass stringValueEClass = null;
 
   /**
    * Creates an instance of the model <b>Package</b>, registered with
@@ -977,9 +985,9 @@ public class FXGraphPackageImpl extends EPackageImpl implements FXGraphPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getResourceValueProperty_Value()
+  public EReference getResourceValueProperty_Value()
   {
-    return (EAttribute)resourceValuePropertyEClass.getEStructuralFeatures().get(0);
+    return (EReference)resourceValuePropertyEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -1010,6 +1018,26 @@ public class FXGraphPackageImpl extends EPackageImpl implements FXGraphPackage
   public EAttribute getBindValueProperty_Attribute()
   {
     return (EAttribute)bindValuePropertyEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getStringValue()
+  {
+    return stringValueEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getStringValue_Value()
+  {
+    return (EAttribute)stringValueEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -1133,11 +1161,14 @@ public class FXGraphPackageImpl extends EPackageImpl implements FXGraphPackage
     createEAttribute(locationValuePropertyEClass, LOCATION_VALUE_PROPERTY__VALUE);
 
     resourceValuePropertyEClass = createEClass(RESOURCE_VALUE_PROPERTY);
-    createEAttribute(resourceValuePropertyEClass, RESOURCE_VALUE_PROPERTY__VALUE);
+    createEReference(resourceValuePropertyEClass, RESOURCE_VALUE_PROPERTY__VALUE);
 
     bindValuePropertyEClass = createEClass(BIND_VALUE_PROPERTY);
     createEReference(bindValuePropertyEClass, BIND_VALUE_PROPERTY__ELEMENT_REFERENCE);
     createEAttribute(bindValuePropertyEClass, BIND_VALUE_PROPERTY__ATTRIBUTE);
+
+    stringValueEClass = createEClass(STRING_VALUE);
+    createEAttribute(stringValueEClass, STRING_VALUE__VALUE);
   }
 
   /**
@@ -1283,11 +1314,14 @@ public class FXGraphPackageImpl extends EPackageImpl implements FXGraphPackage
     initEAttribute(getLocationValueProperty_Value(), ecorePackage.getEString(), "value", null, 0, 1, LocationValueProperty.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(resourceValuePropertyEClass, ResourceValueProperty.class, "ResourceValueProperty", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getResourceValueProperty_Value(), ecorePackage.getEString(), "value", null, 0, 1, ResourceValueProperty.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getResourceValueProperty_Value(), this.getStringValue(), null, "value", null, 0, 1, ResourceValueProperty.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(bindValuePropertyEClass, BindValueProperty.class, "BindValueProperty", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getBindValueProperty_ElementReference(), this.getElement(), null, "elementReference", null, 0, 1, BindValueProperty.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getBindValueProperty_Attribute(), ecorePackage.getEString(), "attribute", null, 0, 1, BindValueProperty.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(stringValueEClass, StringValue.class, "StringValue", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getStringValue_Value(), ecorePackage.getEString(), "value", null, 0, 1, StringValue.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     // Create resource
     createResource(eNS_URI);

@@ -109,7 +109,7 @@ LocationValueProperty:
 ;
 
 ResourceValueProperty:
-	'rstring' value=STRING
+	'rstring' value=StringValue
 ;
 
 BindValueProperty:
@@ -118,6 +118,10 @@ BindValueProperty:
 
 QualifiedNameWithWildCard :
 	QualifiedName  ('.' '*')?;
+
+StringValue:
+	value=STRING
+;
 
 terminal REAL returns ecore::EDouble: (('0'..'9')*"."('0'..'9')+);
 terminal SCRIPTLITERAL	:  '#{' -> '}#';

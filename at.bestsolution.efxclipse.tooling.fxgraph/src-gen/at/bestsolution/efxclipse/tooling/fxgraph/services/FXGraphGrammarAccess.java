@@ -1140,23 +1140,23 @@ public class FXGraphGrammarAccess extends AbstractGrammarElementFinder {
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Keyword cRstringKeyword_0 = (Keyword)cGroup.eContents().get(0);
 		private final Assignment cValueAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final RuleCall cValueSTRINGTerminalRuleCall_1_0 = (RuleCall)cValueAssignment_1.eContents().get(0);
+		private final RuleCall cValueStringValueParserRuleCall_1_0 = (RuleCall)cValueAssignment_1.eContents().get(0);
 		
 		//ResourceValueProperty:
-		//	"rstring" value=STRING;
+		//	"rstring" value=StringValue;
 		public ParserRule getRule() { return rule; }
 
-		//"rstring" value=STRING
+		//"rstring" value=StringValue
 		public Group getGroup() { return cGroup; }
 
 		//"rstring"
 		public Keyword getRstringKeyword_0() { return cRstringKeyword_0; }
 
-		//value=STRING
+		//value=StringValue
 		public Assignment getValueAssignment_1() { return cValueAssignment_1; }
 
-		//STRING
-		public RuleCall getValueSTRINGTerminalRuleCall_1_0() { return cValueSTRINGTerminalRuleCall_1_0; }
+		//StringValue
+		public RuleCall getValueStringValueParserRuleCall_1_0() { return cValueStringValueParserRuleCall_1_0; }
 	}
 
 	public class BindValuePropertyElements extends AbstractParserRuleElementFinder {
@@ -1226,6 +1226,22 @@ public class FXGraphGrammarAccess extends AbstractGrammarElementFinder {
 		//"*"
 		public Keyword getAsteriskKeyword_1_1() { return cAsteriskKeyword_1_1; }
 	}
+
+	public class StringValueElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "StringValue");
+		private final Assignment cValueAssignment = (Assignment)rule.eContents().get(1);
+		private final RuleCall cValueSTRINGTerminalRuleCall_0 = (RuleCall)cValueAssignment.eContents().get(0);
+		
+		//StringValue:
+		//	value=STRING;
+		public ParserRule getRule() { return rule; }
+
+		//value=STRING
+		public Assignment getValueAssignment() { return cValueAssignment; }
+
+		//STRING
+		public RuleCall getValueSTRINGTerminalRuleCall_0() { return cValueSTRINGTerminalRuleCall_0; }
+	}
 	
 	
 	private ModelElements pModel;
@@ -1254,6 +1270,7 @@ public class FXGraphGrammarAccess extends AbstractGrammarElementFinder {
 	private ResourceValuePropertyElements pResourceValueProperty;
 	private BindValuePropertyElements pBindValueProperty;
 	private QualifiedNameWithWildCardElements pQualifiedNameWithWildCard;
+	private StringValueElements pStringValue;
 	private TerminalRule tREAL;
 	private TerminalRule tSCRIPTLITERAL;
 	
@@ -1522,7 +1539,7 @@ public class FXGraphGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//ResourceValueProperty:
-	//	"rstring" value=STRING;
+	//	"rstring" value=StringValue;
 	public ResourceValuePropertyElements getResourceValuePropertyAccess() {
 		return (pResourceValueProperty != null) ? pResourceValueProperty : (pResourceValueProperty = new ResourceValuePropertyElements());
 	}
@@ -1549,6 +1566,16 @@ public class FXGraphGrammarAccess extends AbstractGrammarElementFinder {
 	
 	public ParserRule getQualifiedNameWithWildCardRule() {
 		return getQualifiedNameWithWildCardAccess().getRule();
+	}
+
+	//StringValue:
+	//	value=STRING;
+	public StringValueElements getStringValueAccess() {
+		return (pStringValue != null) ? pStringValue : (pStringValue = new StringValueElements());
+	}
+	
+	public ParserRule getStringValueRule() {
+		return getStringValueAccess().getRule();
 	}
 
 	//terminal REAL returns ecore::EDouble:

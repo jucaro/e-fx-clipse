@@ -1907,19 +1907,19 @@ ruleResourceValueProperty returns [EObject current=null]
     }
 (
 (
-		lv_value_1_0=RULE_STRING
-		{
-			newLeafNode(lv_value_1_0, grammarAccess.getResourceValuePropertyAccess().getValueSTRINGTerminalRuleCall_1_0()); 
-		}
-		{
+		{ 
+	        newCompositeNode(grammarAccess.getResourceValuePropertyAccess().getValueStringValueParserRuleCall_1_0()); 
+	    }
+		lv_value_1_0=ruleStringValue		{
 	        if ($current==null) {
-	            $current = createModelElement(grammarAccess.getResourceValuePropertyRule());
+	            $current = createModelElementForParent(grammarAccess.getResourceValuePropertyRule());
 	        }
-       		setWithLastConsumed(
+       		set(
        			$current, 
        			"value",
         		lv_value_1_0, 
-        		"STRING");
+        		"StringValue");
+	        afterParserOrEnumRuleCall();
 	    }
 
 )
@@ -2031,6 +2031,45 @@ ruleQualifiedNameWithWildCard returns [AntlrDatatypeRuleToken current=new AntlrD
     }
 )?)
     ;
+
+
+
+
+
+// Entry rule entryRuleStringValue
+entryRuleStringValue returns [EObject current=null] 
+	:
+	{ newCompositeNode(grammarAccess.getStringValueRule()); }
+	 iv_ruleStringValue=ruleStringValue 
+	 { $current=$iv_ruleStringValue.current; } 
+	 EOF 
+;
+
+// Rule StringValue
+ruleStringValue returns [EObject current=null] 
+    @init { enterRule(); 
+    }
+    @after { leaveRule(); }:
+(
+(
+		lv_value_0_0=RULE_STRING
+		{
+			newLeafNode(lv_value_0_0, grammarAccess.getStringValueAccess().getValueSTRINGTerminalRuleCall_0()); 
+		}
+		{
+	        if ($current==null) {
+	            $current = createModelElement(grammarAccess.getStringValueRule());
+	        }
+       		setWithLastConsumed(
+       			$current, 
+       			"value",
+        		lv_value_0_0, 
+        		"STRING");
+	    }
+
+)
+)
+;
 
 
 

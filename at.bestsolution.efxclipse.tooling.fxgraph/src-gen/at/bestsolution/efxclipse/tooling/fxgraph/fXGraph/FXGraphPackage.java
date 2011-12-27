@@ -904,7 +904,7 @@ public interface FXGraphPackage extends EPackage
   int RESOURCE_VALUE_PROPERTY = 23;
 
   /**
-   * The feature id for the '<em><b>Value</b></em>' attribute.
+   * The feature id for the '<em><b>Value</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -957,6 +957,34 @@ public interface FXGraphPackage extends EPackage
    * @ordered
    */
   int BIND_VALUE_PROPERTY_FEATURE_COUNT = SINGLE_VALUE_PROPERTY_FEATURE_COUNT + 2;
+
+  /**
+   * The meta object id for the '{@link at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.impl.StringValueImpl <em>String Value</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.impl.StringValueImpl
+   * @see at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.impl.FXGraphPackageImpl#getStringValue()
+   * @generated
+   */
+  int STRING_VALUE = 25;
+
+  /**
+   * The feature id for the '<em><b>Value</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int STRING_VALUE__VALUE = 0;
+
+  /**
+   * The number of structural features of the '<em>String Value</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int STRING_VALUE_FEATURE_COUNT = 1;
 
 
   /**
@@ -1684,15 +1712,15 @@ public interface FXGraphPackage extends EPackage
   EClass getResourceValueProperty();
 
   /**
-   * Returns the meta object for the attribute '{@link at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.ResourceValueProperty#getValue <em>Value</em>}'.
+   * Returns the meta object for the containment reference '{@link at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.ResourceValueProperty#getValue <em>Value</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Value</em>'.
+   * @return the meta object for the containment reference '<em>Value</em>'.
    * @see at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.ResourceValueProperty#getValue()
    * @see #getResourceValueProperty()
    * @generated
    */
-  EAttribute getResourceValueProperty_Value();
+  EReference getResourceValueProperty_Value();
 
   /**
    * Returns the meta object for class '{@link at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.BindValueProperty <em>Bind Value Property</em>}'.
@@ -1725,6 +1753,27 @@ public interface FXGraphPackage extends EPackage
    * @generated
    */
   EAttribute getBindValueProperty_Attribute();
+
+  /**
+   * Returns the meta object for class '{@link at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.StringValue <em>String Value</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>String Value</em>'.
+   * @see at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.StringValue
+   * @generated
+   */
+  EClass getStringValue();
+
+  /**
+   * Returns the meta object for the attribute '{@link at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.StringValue#getValue <em>Value</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Value</em>'.
+   * @see at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.StringValue#getValue()
+   * @see #getStringValue()
+   * @generated
+   */
+  EAttribute getStringValue_Value();
 
   /**
    * Returns the factory that creates the instances of the model.
@@ -2342,12 +2391,12 @@ public interface FXGraphPackage extends EPackage
     EClass RESOURCE_VALUE_PROPERTY = eINSTANCE.getResourceValueProperty();
 
     /**
-     * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>Value</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute RESOURCE_VALUE_PROPERTY__VALUE = eINSTANCE.getResourceValueProperty_Value();
+    EReference RESOURCE_VALUE_PROPERTY__VALUE = eINSTANCE.getResourceValueProperty_Value();
 
     /**
      * The meta object literal for the '{@link at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.impl.BindValuePropertyImpl <em>Bind Value Property</em>}' class.
@@ -2374,6 +2423,24 @@ public interface FXGraphPackage extends EPackage
      * @generated
      */
     EAttribute BIND_VALUE_PROPERTY__ATTRIBUTE = eINSTANCE.getBindValueProperty_Attribute();
+
+    /**
+     * The meta object literal for the '{@link at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.impl.StringValueImpl <em>String Value</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.impl.StringValueImpl
+     * @see at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.impl.FXGraphPackageImpl#getStringValue()
+     * @generated
+     */
+    EClass STRING_VALUE = eINSTANCE.getStringValue();
+
+    /**
+     * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute STRING_VALUE__VALUE = eINSTANCE.getStringValue_Value();
 
   }
 

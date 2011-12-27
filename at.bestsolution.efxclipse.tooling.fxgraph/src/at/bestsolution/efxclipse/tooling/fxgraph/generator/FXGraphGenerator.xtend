@@ -39,6 +39,13 @@ class FXGraphGenerator implements IGenerator {
 				var root = ResourcesPlugin::workspace.root;
 				var project = root.getProject(uri.segment(1));
 				var projectRelativePath = "";
+				
+//				var i = 2;
+//				while( i < uri.segmentCount ) {
+//					projectRelativePath = projectRelativePath + "/" + uri.segment(i);
+//					i = i + 1;
+//				}
+//				
 				var i = 0;
 			
 				for( seg : uri.segments ) {
@@ -58,6 +65,8 @@ class FXGraphGenerator implements IGenerator {
 						}
 					}
 				}
+				
+//				System::err.println("The path: " + projectRelativePath);
 				
 				return projectRelativePath;		
 			} else {
@@ -308,7 +317,7 @@ class FXGraphGenerator implements IGenerator {
 			} else if( p.value instanceof LocationValueProperty ) {
 				builder.append(" " + p.name + "=\"@"+(p.value as LocationValueProperty).value+"\"");
 			} else if( p.value instanceof ResourceValueProperty ) {
-				builder.append(" " + p.name + "=\"%"+(p.value as ResourceValueProperty).value+"\"");
+				builder.append(" " + p.name + "=\"%"+(p.value as ResourceValueProperty).value.value+"\"");
 			} else if( p.value instanceof BindValueProperty ) {
 				builder.append(" " + p.name + "=\"${"+(p.value as BindValueProperty).elementReference.name+"."+(p.value as BindValueProperty).attribute+"}\"");
 			}

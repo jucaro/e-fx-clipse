@@ -252,6 +252,15 @@ public interface FXGraphFactory extends EFactory
   BindValueProperty createBindValueProperty();
 
   /**
+   * Returns a new object of class '<em>String Value</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>String Value</em>'.
+   * @generated
+   */
+  StringValue createStringValue();
+
+  /**
    * Returns the package supported by this factory.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
