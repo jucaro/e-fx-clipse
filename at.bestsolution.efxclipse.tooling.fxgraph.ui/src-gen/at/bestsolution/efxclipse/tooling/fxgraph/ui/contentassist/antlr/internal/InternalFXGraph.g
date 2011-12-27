@@ -17662,8 +17662,8 @@ rule__Element__FactoryAssignment_1_2_2
     }
 :
 (
-{ before(grammarAccess.getElementAccess().getFactorySTRINGTerminalRuleCall_1_2_2_0()); }
-	RULE_STRING{ after(grammarAccess.getElementAccess().getFactorySTRINGTerminalRuleCall_1_2_2_0()); }
+{ before(grammarAccess.getElementAccess().getFactoryIDTerminalRuleCall_1_2_2_0()); }
+	RULE_ID{ after(grammarAccess.getElementAccess().getFactoryIDTerminalRuleCall_1_2_2_0()); }
 )
 
 ;

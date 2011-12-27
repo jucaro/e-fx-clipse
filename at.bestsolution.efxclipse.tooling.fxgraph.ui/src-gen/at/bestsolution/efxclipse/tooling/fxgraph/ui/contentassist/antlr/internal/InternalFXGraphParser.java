@@ -50674,24 +50674,24 @@ public class InternalFXGraphParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Element__FactoryAssignment_1_2_2"
-    // ../at.bestsolution.efxclipse.tooling.fxgraph.ui/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/ui/contentassist/antlr/internal/InternalFXGraph.g:17659:1: rule__Element__FactoryAssignment_1_2_2 : ( RULE_STRING ) ;
+    // ../at.bestsolution.efxclipse.tooling.fxgraph.ui/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/ui/contentassist/antlr/internal/InternalFXGraph.g:17659:1: rule__Element__FactoryAssignment_1_2_2 : ( RULE_ID ) ;
     public final void rule__Element__FactoryAssignment_1_2_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../at.bestsolution.efxclipse.tooling.fxgraph.ui/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/ui/contentassist/antlr/internal/InternalFXGraph.g:17663:1: ( ( RULE_STRING ) )
-            // ../at.bestsolution.efxclipse.tooling.fxgraph.ui/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/ui/contentassist/antlr/internal/InternalFXGraph.g:17664:1: ( RULE_STRING )
+            // ../at.bestsolution.efxclipse.tooling.fxgraph.ui/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/ui/contentassist/antlr/internal/InternalFXGraph.g:17663:1: ( ( RULE_ID ) )
+            // ../at.bestsolution.efxclipse.tooling.fxgraph.ui/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/ui/contentassist/antlr/internal/InternalFXGraph.g:17664:1: ( RULE_ID )
             {
-            // ../at.bestsolution.efxclipse.tooling.fxgraph.ui/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/ui/contentassist/antlr/internal/InternalFXGraph.g:17664:1: ( RULE_STRING )
-            // ../at.bestsolution.efxclipse.tooling.fxgraph.ui/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/ui/contentassist/antlr/internal/InternalFXGraph.g:17665:1: RULE_STRING
+            // ../at.bestsolution.efxclipse.tooling.fxgraph.ui/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/ui/contentassist/antlr/internal/InternalFXGraph.g:17664:1: ( RULE_ID )
+            // ../at.bestsolution.efxclipse.tooling.fxgraph.ui/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/ui/contentassist/antlr/internal/InternalFXGraph.g:17665:1: RULE_ID
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getElementAccess().getFactorySTRINGTerminalRuleCall_1_2_2_0()); 
+               before(grammarAccess.getElementAccess().getFactoryIDTerminalRuleCall_1_2_2_0()); 
             }
-            match(input,RULE_STRING,FOLLOW_RULE_STRING_in_rule__Element__FactoryAssignment_1_2_235531); if (state.failed) return ;
+            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__Element__FactoryAssignment_1_2_235531); if (state.failed) return ;
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getElementAccess().getFactorySTRINGTerminalRuleCall_1_2_2_0()); 
+               after(grammarAccess.getElementAccess().getFactoryIDTerminalRuleCall_1_2_2_0()); 
             }
 
             }
@@ -60474,7 +60474,7 @@ public class InternalFXGraphParser extends AbstractInternalContentAssistParser {
     public static final BitSet FOLLOW_rule__Element__Group_1_2__0__Impl_in_rule__Element__Group_1_2__011472 = new BitSet(new long[]{0x001A008000000000L});
     public static final BitSet FOLLOW_rule__Element__Group_1_2__1_in_rule__Element__Group_1_2__011475 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__Element__Group_1_2_0__0_in_rule__Element__Group_1_2__0__Impl11502 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Element__Group_1_2__1__Impl_in_rule__Element__Group_1_2__111533 = new BitSet(new long[]{0x0000000000000020L});
+    public static final BitSet FOLLOW_rule__Element__Group_1_2__1__Impl_in_rule__Element__Group_1_2__111533 = new BitSet(new long[]{0x0000000000000010L});
     public static final BitSet FOLLOW_rule__Element__Group_1_2__2_in_rule__Element__Group_1_2__111536 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_52_in_rule__Element__Group_1_2__1__Impl11564 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__Element__Group_1_2__2__Impl_in_rule__Element__Group_1_2__211595 = new BitSet(new long[]{0x0000008000000000L});
@@ -61445,7 +61445,7 @@ public class InternalFXGraphParser extends AbstractInternalContentAssistParser {
     public static final BitSet FOLLOW_ruleProperty_in_rule__Element__PropertiesAssignment_1_1_2_1_1_035438 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleStaticValueProperty_in_rule__Element__StaticPropertiesAssignment_1_1_2_1_1_135469 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleValidID_in_rule__Element__NameAssignment_1_2_0_135500 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_STRING_in_rule__Element__FactoryAssignment_1_2_235531 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_ID_in_rule__Element__FactoryAssignment_1_2_235531 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleElement_in_rule__Element__ValuesAssignment_1_2_435562 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleElement_in_rule__Element__ValuesAssignment_1_2_5_135593 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleElement_in_rule__Define__ElementAssignment_135624 = new BitSet(new long[]{0x0000000000000002L});

@@ -33,7 +33,7 @@ Import:
 Element:
 	type=JvmTypeReference ((('(' value = SimpleValueProperty ')')? ('id' name=ValidID)?) | (('id' name=ValidID)? '{'
 		((properties+=Property | staticProperties+=StaticValueProperty) (',' (properties+=Property | staticProperties+=StaticValueProperty))*)?
-	'}') | ( ('id' name=ValidID)? 'createdby' factory=STRING '{' values+=Element (',' values+=Element)* '}' ) )
+	'}') | ( ('id' name=ValidID)? 'createdby' factory=ID '{' values+=Element (',' values+=Element)* '}' ) )
 ;
 
 Define:

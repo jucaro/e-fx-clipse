@@ -339,7 +339,7 @@ public class FXGraphGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cNameValidIDParserRuleCall_1_2_0_1_0 = (RuleCall)cNameAssignment_1_2_0_1.eContents().get(0);
 		private final Keyword cCreatedbyKeyword_1_2_1 = (Keyword)cGroup_1_2.eContents().get(1);
 		private final Assignment cFactoryAssignment_1_2_2 = (Assignment)cGroup_1_2.eContents().get(2);
-		private final RuleCall cFactorySTRINGTerminalRuleCall_1_2_2_0 = (RuleCall)cFactoryAssignment_1_2_2.eContents().get(0);
+		private final RuleCall cFactoryIDTerminalRuleCall_1_2_2_0 = (RuleCall)cFactoryAssignment_1_2_2.eContents().get(0);
 		private final Keyword cLeftCurlyBracketKeyword_1_2_3 = (Keyword)cGroup_1_2.eContents().get(3);
 		private final Assignment cValuesAssignment_1_2_4 = (Assignment)cGroup_1_2.eContents().get(4);
 		private final RuleCall cValuesElementParserRuleCall_1_2_4_0 = (RuleCall)cValuesAssignment_1_2_4.eContents().get(0);
@@ -357,14 +357,14 @@ public class FXGraphGrammarAccess extends AbstractGrammarElementFinder {
 		//Element:
 		//	type=JvmTypeReference (("(" value=SimpleValueProperty ")")? ("id" name=ValidID)? | ("id" name=ValidID)? "{"
 		//	((properties+=Property | staticProperties+=StaticValueProperty) ("," (properties+=Property |
-		//	staticProperties+=StaticValueProperty))*)? "}" | ("id" name=ValidID)? "createdby" factory=STRING "{" values+=Element
-		//	("," values+=Element)* "}");
+		//	staticProperties+=StaticValueProperty))*)? "}" | ("id" name=ValidID)? "createdby" factory=ID "{" values+=Element (","
+		//	values+=Element)* "}");
 		public ParserRule getRule() { return rule; }
 
 		//type=JvmTypeReference (("(" value=SimpleValueProperty ")")? ("id" name=ValidID)? | ("id" name=ValidID)? "{"
 		//((properties+=Property | staticProperties+=StaticValueProperty) ("," (properties+=Property |
-		//staticProperties+=StaticValueProperty))*)? "}" | ("id" name=ValidID)? "createdby" factory=STRING "{" values+=Element
-		//("," values+=Element)* "}")
+		//staticProperties+=StaticValueProperty))*)? "}" | ("id" name=ValidID)? "createdby" factory=ID "{" values+=Element (","
+		//values+=Element)* "}")
 		public Group getGroup() { return cGroup; }
 
 		//type=JvmTypeReference
@@ -375,7 +375,7 @@ public class FXGraphGrammarAccess extends AbstractGrammarElementFinder {
 
 		//("(" value=SimpleValueProperty ")")? ("id" name=ValidID)? | ("id" name=ValidID)? "{" ((properties+=Property |
 		//staticProperties+=StaticValueProperty) ("," (properties+=Property | staticProperties+=StaticValueProperty))*)? "}" |
-		//("id" name=ValidID)? "createdby" factory=STRING "{" values+=Element ("," values+=Element)* "}"
+		//("id" name=ValidID)? "createdby" factory=ID "{" values+=Element ("," values+=Element)* "}"
 		public Alternatives getAlternatives_1() { return cAlternatives_1; }
 
 		//("(" value=SimpleValueProperty ")")? ("id" name=ValidID)?
@@ -470,7 +470,7 @@ public class FXGraphGrammarAccess extends AbstractGrammarElementFinder {
 		//"}"
 		public Keyword getRightCurlyBracketKeyword_1_1_3() { return cRightCurlyBracketKeyword_1_1_3; }
 
-		//("id" name=ValidID)? "createdby" factory=STRING "{" values+=Element ("," values+=Element)* "}"
+		//("id" name=ValidID)? "createdby" factory=ID "{" values+=Element ("," values+=Element)* "}"
 		public Group getGroup_1_2() { return cGroup_1_2; }
 
 		//("id" name=ValidID)?
@@ -488,11 +488,11 @@ public class FXGraphGrammarAccess extends AbstractGrammarElementFinder {
 		//"createdby"
 		public Keyword getCreatedbyKeyword_1_2_1() { return cCreatedbyKeyword_1_2_1; }
 
-		//factory=STRING
+		//factory=ID
 		public Assignment getFactoryAssignment_1_2_2() { return cFactoryAssignment_1_2_2; }
 
-		//STRING
-		public RuleCall getFactorySTRINGTerminalRuleCall_1_2_2_0() { return cFactorySTRINGTerminalRuleCall_1_2_2_0; }
+		//ID
+		public RuleCall getFactoryIDTerminalRuleCall_1_2_2_0() { return cFactoryIDTerminalRuleCall_1_2_2_0; }
 
 		//"{"
 		public Keyword getLeftCurlyBracketKeyword_1_2_3() { return cLeftCurlyBracketKeyword_1_2_3; }
@@ -1329,8 +1329,8 @@ public class FXGraphGrammarAccess extends AbstractGrammarElementFinder {
 	//Element:
 	//	type=JvmTypeReference (("(" value=SimpleValueProperty ")")? ("id" name=ValidID)? | ("id" name=ValidID)? "{"
 	//	((properties+=Property | staticProperties+=StaticValueProperty) ("," (properties+=Property |
-	//	staticProperties+=StaticValueProperty))*)? "}" | ("id" name=ValidID)? "createdby" factory=STRING "{" values+=Element
-	//	("," values+=Element)* "}");
+	//	staticProperties+=StaticValueProperty))*)? "}" | ("id" name=ValidID)? "createdby" factory=ID "{" values+=Element (","
+	//	values+=Element)* "}");
 	public ElementElements getElementAccess() {
 		return (pElement != null) ? pElement : (pElement = new ElementElements());
 	}

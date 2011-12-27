@@ -717,9 +717,9 @@ ruleElement returns [EObject current=null]
     }
 (
 (
-		lv_factory_18_0=RULE_STRING
+		lv_factory_18_0=RULE_ID
 		{
-			newLeafNode(lv_factory_18_0, grammarAccess.getElementAccess().getFactorySTRINGTerminalRuleCall_1_2_2_0()); 
+			newLeafNode(lv_factory_18_0, grammarAccess.getElementAccess().getFactoryIDTerminalRuleCall_1_2_2_0()); 
 		}
 		{
 	        if ($current==null) {
@@ -729,7 +729,7 @@ ruleElement returns [EObject current=null]
        			$current, 
        			"factory",
         		lv_factory_18_0, 
-        		"STRING");
+        		"ID");
 	    }
 
 )

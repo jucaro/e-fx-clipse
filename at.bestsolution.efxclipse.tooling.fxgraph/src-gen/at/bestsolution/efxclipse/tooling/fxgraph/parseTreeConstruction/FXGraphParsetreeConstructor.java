@@ -1480,15 +1480,15 @@ protected class Import_ImportedNamespaceAssignment_1 extends AssignmentToken  {
  * Element:
  * 	type=JvmTypeReference (("(" value=SimpleValueProperty ")")? ("id" name=ValidID)? | ("id" name=ValidID)? "{"
  * 	((properties+=Property | staticProperties+=StaticValueProperty) ("," (properties+=Property |
- * 	staticProperties+=StaticValueProperty))*)? "}" | ("id" name=ValidID)? "createdby" factory=STRING "{" values+=Element
- * 	("," values+=Element)* "}");
+ * 	staticProperties+=StaticValueProperty))*)? "}" | ("id" name=ValidID)? "createdby" factory=ID "{" values+=Element (","
+ * 	values+=Element)* "}");
  *
  **/
 
 // type=JvmTypeReference (("(" value=SimpleValueProperty ")")? ("id" name=ValidID)? | ("id" name=ValidID)? "{"
 // ((properties+=Property | staticProperties+=StaticValueProperty) ("," (properties+=Property |
-// staticProperties+=StaticValueProperty))*)? "}" | ("id" name=ValidID)? "createdby" factory=STRING "{" values+=Element
-// ("," values+=Element)* "}")
+// staticProperties+=StaticValueProperty))*)? "}" | ("id" name=ValidID)? "createdby" factory=ID "{" values+=Element (","
+// values+=Element)* "}")
 protected class Element_Group extends GroupToken {
 	
 	public Element_Group(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -1564,7 +1564,7 @@ protected class Element_TypeAssignment_0 extends AssignmentToken  {
 
 // ("(" value=SimpleValueProperty ")")? ("id" name=ValidID)? | ("id" name=ValidID)? "{" ((properties+=Property |
 // staticProperties+=StaticValueProperty) ("," (properties+=Property | staticProperties+=StaticValueProperty))*)? "}" |
-// ("id" name=ValidID)? "createdby" factory=STRING "{" values+=Element ("," values+=Element)* "}"
+// ("id" name=ValidID)? "createdby" factory=ID "{" values+=Element ("," values+=Element)* "}"
 protected class Element_Alternatives_1 extends AlternativesToken {
 
 	public Element_Alternatives_1(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -2258,7 +2258,7 @@ protected class Element_RightCurlyBracketKeyword_1_1_3 extends KeywordToken  {
 }
 
 
-// ("id" name=ValidID)? "createdby" factory=STRING "{" values+=Element ("," values+=Element)* "}"
+// ("id" name=ValidID)? "createdby" factory=ID "{" values+=Element ("," values+=Element)* "}"
 protected class Element_Group_1_2 extends GroupToken {
 	
 	public Element_Group_1_2(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -2382,7 +2382,7 @@ protected class Element_CreatedbyKeyword_1_2_1 extends KeywordToken  {
 
 }
 
-// factory=STRING
+// factory=ID
 protected class Element_FactoryAssignment_1_2_2 extends AssignmentToken  {
 	
 	public Element_FactoryAssignment_1_2_2(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -2406,9 +2406,9 @@ protected class Element_FactoryAssignment_1_2_2 extends AssignmentToken  {
 	public IEObjectConsumer tryConsume() {
 		if((value = eObjectConsumer.getConsumable("factory",true)) == null) return null;
 		IEObjectConsumer obj = eObjectConsumer.cloneAndConsume("factory");
-		if(valueSerializer.isValid(obj.getEObject(), grammarAccess.getElementAccess().getFactorySTRINGTerminalRuleCall_1_2_2_0(), value, null)) {
+		if(valueSerializer.isValid(obj.getEObject(), grammarAccess.getElementAccess().getFactoryIDTerminalRuleCall_1_2_2_0(), value, null)) {
 			type = AssignmentType.TERMINAL_RULE_CALL;
-			element = grammarAccess.getElementAccess().getFactorySTRINGTerminalRuleCall_1_2_2_0();
+			element = grammarAccess.getElementAccess().getFactoryIDTerminalRuleCall_1_2_2_0();
 			return obj;
 		}
 		return null;
