@@ -15,13 +15,11 @@ import org.eclipse.jface.text.IRegion;
 import org.eclipse.jface.text.ITextViewer;
 import org.eclipse.xtext.common.types.JvmType;
 import org.eclipse.xtext.common.types.access.IJvmTypeProvider;
-import org.eclipse.xtext.common.types.access.jdt.IJavaProjectProvider;
 import org.eclipse.xtext.common.types.util.jdt.IJavaElementFinder;
 import org.eclipse.xtext.ui.editor.hover.html.DefaultEObjectHoverProvider;
 
-import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.Element;
-import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.Property;
 import at.bestsolution.efxclipse.tooling.fxgraph.ui.util.JDTHelper;
+import at.bestsolution.efxclipse.tooling.fxmlx.fXMLDsl.AttributePropertyDefinition;
 import at.bestsolution.efxclipse.tooling.fxmlx.fXMLDsl.ContainerElementDefinition;
 import at.bestsolution.efxclipse.tooling.fxmlx.fXMLDsl.EmptyElementDefinition;
 import at.bestsolution.efxclipse.tooling.fxmlx.fXMLDsl.FXML;
@@ -37,28 +35,7 @@ public class FXHoverProvider extends DefaultEObjectHoverProvider {/*extends Xbas
 	private IJvmTypeProvider.Factory jvmTypeProviderFactory;
 
 	@Inject
-	private IJavaProjectProvider projectProvider;
-	
-	@Inject
 	private IJavaElementFinder elementProvider;
-
-	// @Override
-	// protected String getFirstLine(EObject o) {
-	// if( o instanceof Property ) {
-	// return "FIRSTLINE DOCU " + o;
-	// }
-	// // TODO Auto-generated method stub
-	// return super.getFirstLine(o);
-	// }
-	//
-	// @Override
-	// protected String getDocumentation(EObject o) {
-	// if( o instanceof Property ) {
-	// return "DOKU: " + o;
-	// }
-	// // System.err.println("Getting documentation: " + o);
-	// return super.getDocumentation(o);
-	// }
 
 	@Inject
 	private IJavaElementFinder javaElementFinder;
@@ -67,32 +44,44 @@ public class FXHoverProvider extends DefaultEObjectHoverProvider {/*extends Xbas
 
 	@Override
 	public IInformationControlCreatorProvider getHoverInfo(EObject object, ITextViewer viewer, IRegion region) {
-		System.err.println("hover: " + object); 
-		if (object instanceof ContainerElementDefinition) {
-			ContainerElementDefinition def = (ContainerElementDefinition) object;
-			String name = def.getName();
-			if (name != null && Character.isUpperCase(name.charAt(0))) {
-				JvmType t = toJvmType(name, (FXML) def.eResource().getContents().get(0));
-				if( t != null ) {
-					return createHover(elementProvider.findElementFor(t), object, viewer, region);
-				}
+		if (object instanceof ContainerElementDefinition || object instanceof EmptyElementDefinition ) {
+			String name = null;
+			
+			if( object instanceof ContainerElementDefinition ) {
+				ContainerElementDefinition def = (ContainerElementDefinition) object;
+				name = def.getName();	
+			} else {
+				EmptyElementDefinition def = (EmptyElementDefinition) object;
+				name = def.getName();
 			}
-		} else if( object instanceof EmptyElementDefinition ) {
-			EmptyElementDefinition def = (EmptyElementDefinition) object;
-			String name = def.getName();
-			if (name != null && Character.isUpperCase(name.charAt(0))) {
-				JvmType t = toJvmType(name, (FXML) def.eResource().getContents().get(0));
-				if( t != null ) {
-					return createHover(elementProvider.findElementFor(t), object, viewer, region);
-				}
-			}
-		} else if( object instanceof ProcessingInstruction ) {
-			ProcessingInstruction def = (ProcessingInstruction) object;
-			if( "import".equals(def.getType()) ) {
-				if( def.getImportedNamespace() != null && ! def.getImportedNamespace().getValue().endsWith("*") ) {
-					JvmType t = jvmTypeProviderFactory.createTypeProvider(def.eResource().getResourceSet()).findTypeByName(def.getImportedNamespace().getValue());
-					if( t != null ) {
-						return createHover(elementProvider.findElementFor(t), object, viewer, region);
+			
+			if (name != null ) {
+				if( Character.isUpperCase(name.charAt(0)) ) {
+					if( name.contains(".") ) {
+						//TODO This is a static definition
+					} else {
+						JvmType t = toJvmType(name, (FXML) object.eResource().getContents().get(0));
+						if( t != null ) {
+							return createHover(elementProvider.findElementFor(t), object, viewer, region);
+						}
+					}
+				} else {
+					EObject parent = object.eContainer();
+					String typeName = null;
+					
+					if( parent instanceof ContainerElementDefinition ) {
+						ContainerElementDefinition def = (ContainerElementDefinition) parent;
+						typeName = def.getName();	
+					} else if( parent instanceof EmptyElementDefinition ) {
+						EmptyElementDefinition def = (EmptyElementDefinition) parent;
+						typeName = def.getName();
+					}
+					
+					if( typeName != null ) {
+						JvmType type = toJvmType(typeName, (FXML) object.eResource().getContents().get(0));
+						if( type != null ) {
+							return handleElementProperty(type, name, object, viewer, region);
+						}
 					}
 				}
 			}
@@ -110,65 +99,25 @@ public class FXHoverProvider extends DefaultEObjectHoverProvider {/*extends Xbas
 					}
 				}	
 			}
+		} else if( object instanceof AttributePropertyDefinition ) {
+			AttributePropertyDefinition def = (AttributePropertyDefinition) object;
+			
+			if( !def.getName().contains(":") && def.getNamespace() == null ) {
+				String name = null;
+				if( def.eContainer() instanceof ContainerElementDefinition ) {
+					name = ((ContainerElementDefinition)def.eContainer()).getName();
+				} else if( def.eContainer() instanceof EmptyElementDefinition ) {
+					name = ((EmptyElementDefinition)def.eContainer()).getName();
+				}
+				
+				if( name != null ) {
+					JvmType type = toJvmType(name, (FXML) def.eResource().getContents().get(0));
+					if( type != null ) {
+						return handleElementProperty(type, def.getName(), object, viewer, region);
+					}
+				}
+			}
 		}
-
-		// if( object instanceof Property ) {
-		// if( object.eContainer() instanceof Element ) {
-		// Property property = (Property) object;
-		// Element element = (Element) object.eContainer();
-		//
-		// IInformationControlCreatorProvider rv =
-		// handleElementProperty(element, property, object, viewer, region);
-		// if( rv != null ) {
-		// return rv;
-		// }
-		// }
-		// } else if( object instanceof ControllerHandledValueProperty ) {
-		// ControllerHandledValueProperty prop =
-		// (ControllerHandledValueProperty) object;
-		// Model m = (Model) object.eResource().getContents().get(0);
-		//
-		// if( m != null ) {
-		// ComponentDefinition def = m.getComponentDef();
-		// if( def != null ) {
-		// if( def.getController() != null ) {
-		// IInformationControlCreatorProvider rv =
-		// findMethodJavaDoc(def.getController().getType(),
-		// prop.getMethodname(), object, viewer, region);
-		// if( rv != null ) {
-		// return rv;
-		// }
-		// }
-		// }
-		// }
-		// } else if( object instanceof Element ) {
-		// Element element = (Element) object;
-		// if( element.getName() != null ) {
-		// Model m = (Model) object.eResource().getContents().get(0);
-		//
-		// if( m != null ) {
-		// ComponentDefinition def = m.getComponentDef();
-		// if( def.getController() != null ) {
-		// IInformationControlCreatorProvider rv =
-		// findFieldJavaDoc(def.getController().getType(),
-		// element.getName(),object,viewer,region);
-		// if( rv != null ) {
-		// return rv;
-		// }
-		// }
-		// }
-		// }
-		// } else if( object instanceof StaticValueProperty ) {
-		// StaticValueProperty p = (StaticValueProperty) object;
-		// if( p.getName() != null ) {
-		// JvmTypeReference typeRef = p.getType();
-		// if( typeRef != null ) {
-		// return findMethodJavaDoc(typeRef.getType(), "set" +
-		// Character.toUpperCase(p.getName().charAt(0))+p.getName().substring(1),
-		// object, viewer, region);
-		// }
-		// }
-		// }
 
 		return super.getHoverInfo(object, viewer, region);
 	}
@@ -229,16 +178,15 @@ public class FXHoverProvider extends DefaultEObjectHoverProvider {/*extends Xbas
 		return null;
 	}
 
-	private IInformationControlCreatorProvider handleElementProperty(Element element, Property property, EObject object, ITextViewer viewer, IRegion region) {
-		JvmType t = element.getType().getType();
-		IType originalType = (IType) javaElementFinder.findElementFor(t);
+	private IInformationControlCreatorProvider handleElementProperty(JvmType type, String propertyName, EObject object, ITextViewer viewer, IRegion region) {
+		IType originalType = (IType) javaElementFinder.findElementFor(type);
 		IType jdtType = originalType;
 
 		try {
 
 			// First check if there's a setter
 			for (IMethod m : jdtType.getMethods()) {
-				if (m.getElementName().startsWith("set") && property.getName().equals(JDTHelper.extractAttributename(m.getElementName()))) {
+				if (m.getElementName().startsWith("set") && propertyName.equals(JDTHelper.extractAttributename(m.getElementName()))) {
 					return createHover(m, object, viewer, region);
 				}
 			}
@@ -247,7 +195,7 @@ public class FXHoverProvider extends DefaultEObjectHoverProvider {/*extends Xbas
 				jdtType = jdtType.getJavaProject().findType(jdtType.getSuperclassName());
 				if (jdtType != null) {
 					for (IMethod m : jdtType.getMethods()) {
-						if (m.getElementName().startsWith("set") && property.getName().equals(JDTHelper.extractAttributename(m.getElementName()))) {
+						if (m.getElementName().startsWith("set") && propertyName.equals(JDTHelper.extractAttributename(m.getElementName()))) {
 							return createHover(m, object, viewer, region);
 						}
 					}
@@ -258,7 +206,7 @@ public class FXHoverProvider extends DefaultEObjectHoverProvider {/*extends Xbas
 
 			// Check if there's a getter
 			for (IMethod m : jdtType.getMethods()) {
-				if ((m.getElementName().startsWith("get") || m.getElementName().startsWith("is")) && property.getName().equals(JDTHelper.extractAttributename(m.getElementName()))) {
+				if ((m.getElementName().startsWith("get") || m.getElementName().startsWith("is")) && propertyName.equals(JDTHelper.extractAttributename(m.getElementName()))) {
 					return createHover(m, object, viewer, region);
 				}
 			}
@@ -267,7 +215,7 @@ public class FXHoverProvider extends DefaultEObjectHoverProvider {/*extends Xbas
 				jdtType = jdtType.getJavaProject().findType(jdtType.getSuperclassName());
 				if (jdtType != null) {
 					for (IMethod m : jdtType.getMethods()) {
-						if ((m.getElementName().startsWith("get") || m.getElementName().startsWith("is")) && property.getName().equals(JDTHelper.extractAttributename(m.getElementName()))) {
+						if ((m.getElementName().startsWith("get") || m.getElementName().startsWith("is")) && propertyName.equals(JDTHelper.extractAttributename(m.getElementName()))) {
 							return createHover(m, object, viewer, region);
 						}
 					}
