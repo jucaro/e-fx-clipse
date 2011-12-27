@@ -5381,28 +5381,34 @@ public class InternalFXMLDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__QualifiedNameWithWildCard__Group__0__Impl"
-    // ../at.bestsolution.efxclipse.tooling.fxmlx.ui/src-gen/at/bestsolution/efxclipse/tooling/fxmlx/ui/contentassist/antlr/internal/InternalFXMLDsl.g:1897:1: rule__QualifiedNameWithWildCard__Group__0__Impl : ( ruleQualifiedName ) ;
+    // ../at.bestsolution.efxclipse.tooling.fxmlx.ui/src-gen/at/bestsolution/efxclipse/tooling/fxmlx/ui/contentassist/antlr/internal/InternalFXMLDsl.g:1897:1: rule__QualifiedNameWithWildCard__Group__0__Impl : ( ( rule__QualifiedNameWithWildCard__ValueAssignment_0 ) ) ;
     public final void rule__QualifiedNameWithWildCard__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../at.bestsolution.efxclipse.tooling.fxmlx.ui/src-gen/at/bestsolution/efxclipse/tooling/fxmlx/ui/contentassist/antlr/internal/InternalFXMLDsl.g:1901:1: ( ( ruleQualifiedName ) )
-            // ../at.bestsolution.efxclipse.tooling.fxmlx.ui/src-gen/at/bestsolution/efxclipse/tooling/fxmlx/ui/contentassist/antlr/internal/InternalFXMLDsl.g:1902:1: ( ruleQualifiedName )
+            // ../at.bestsolution.efxclipse.tooling.fxmlx.ui/src-gen/at/bestsolution/efxclipse/tooling/fxmlx/ui/contentassist/antlr/internal/InternalFXMLDsl.g:1901:1: ( ( ( rule__QualifiedNameWithWildCard__ValueAssignment_0 ) ) )
+            // ../at.bestsolution.efxclipse.tooling.fxmlx.ui/src-gen/at/bestsolution/efxclipse/tooling/fxmlx/ui/contentassist/antlr/internal/InternalFXMLDsl.g:1902:1: ( ( rule__QualifiedNameWithWildCard__ValueAssignment_0 ) )
             {
-            // ../at.bestsolution.efxclipse.tooling.fxmlx.ui/src-gen/at/bestsolution/efxclipse/tooling/fxmlx/ui/contentassist/antlr/internal/InternalFXMLDsl.g:1902:1: ( ruleQualifiedName )
-            // ../at.bestsolution.efxclipse.tooling.fxmlx.ui/src-gen/at/bestsolution/efxclipse/tooling/fxmlx/ui/contentassist/antlr/internal/InternalFXMLDsl.g:1903:1: ruleQualifiedName
+            // ../at.bestsolution.efxclipse.tooling.fxmlx.ui/src-gen/at/bestsolution/efxclipse/tooling/fxmlx/ui/contentassist/antlr/internal/InternalFXMLDsl.g:1902:1: ( ( rule__QualifiedNameWithWildCard__ValueAssignment_0 ) )
+            // ../at.bestsolution.efxclipse.tooling.fxmlx.ui/src-gen/at/bestsolution/efxclipse/tooling/fxmlx/ui/contentassist/antlr/internal/InternalFXMLDsl.g:1903:1: ( rule__QualifiedNameWithWildCard__ValueAssignment_0 )
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getQualifiedNameWithWildCardAccess().getQualifiedNameParserRuleCall_0()); 
+               before(grammarAccess.getQualifiedNameWithWildCardAccess().getValueAssignment_0()); 
             }
-            pushFollow(FOLLOW_ruleQualifiedName_in_rule__QualifiedNameWithWildCard__Group__0__Impl3800);
-            ruleQualifiedName();
+            // ../at.bestsolution.efxclipse.tooling.fxmlx.ui/src-gen/at/bestsolution/efxclipse/tooling/fxmlx/ui/contentassist/antlr/internal/InternalFXMLDsl.g:1904:1: ( rule__QualifiedNameWithWildCard__ValueAssignment_0 )
+            // ../at.bestsolution.efxclipse.tooling.fxmlx.ui/src-gen/at/bestsolution/efxclipse/tooling/fxmlx/ui/contentassist/antlr/internal/InternalFXMLDsl.g:1904:2: rule__QualifiedNameWithWildCard__ValueAssignment_0
+            {
+            pushFollow(FOLLOW_rule__QualifiedNameWithWildCard__ValueAssignment_0_in_rule__QualifiedNameWithWildCard__Group__0__Impl3800);
+            rule__QualifiedNameWithWildCard__ValueAssignment_0();
 
             state._fsp--;
             if (state.failed) return ;
+
+            }
+
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getQualifiedNameWithWildCardAccess().getQualifiedNameParserRuleCall_0()); 
+               after(grammarAccess.getQualifiedNameWithWildCardAccess().getValueAssignment_0()); 
             }
 
             }
@@ -5435,7 +5441,7 @@ public class InternalFXMLDslParser extends AbstractInternalContentAssistParser {
             // ../at.bestsolution.efxclipse.tooling.fxmlx.ui/src-gen/at/bestsolution/efxclipse/tooling/fxmlx/ui/contentassist/antlr/internal/InternalFXMLDsl.g:1918:1: ( rule__QualifiedNameWithWildCard__Group__1__Impl )
             // ../at.bestsolution.efxclipse.tooling.fxmlx.ui/src-gen/at/bestsolution/efxclipse/tooling/fxmlx/ui/contentassist/antlr/internal/InternalFXMLDsl.g:1919:2: rule__QualifiedNameWithWildCard__Group__1__Impl
             {
-            pushFollow(FOLLOW_rule__QualifiedNameWithWildCard__Group__1__Impl_in_rule__QualifiedNameWithWildCard__Group__13829);
+            pushFollow(FOLLOW_rule__QualifiedNameWithWildCard__Group__1__Impl_in_rule__QualifiedNameWithWildCard__Group__13830);
             rule__QualifiedNameWithWildCard__Group__1__Impl();
 
             state._fsp--;
@@ -5485,7 +5491,7 @@ public class InternalFXMLDslParser extends AbstractInternalContentAssistParser {
                 case 1 :
                     // ../at.bestsolution.efxclipse.tooling.fxmlx.ui/src-gen/at/bestsolution/efxclipse/tooling/fxmlx/ui/contentassist/antlr/internal/InternalFXMLDsl.g:1932:2: rule__QualifiedNameWithWildCard__Group_1__0
                     {
-                    pushFollow(FOLLOW_rule__QualifiedNameWithWildCard__Group_1__0_in_rule__QualifiedNameWithWildCard__Group__1__Impl3856);
+                    pushFollow(FOLLOW_rule__QualifiedNameWithWildCard__Group_1__0_in_rule__QualifiedNameWithWildCard__Group__1__Impl3857);
                     rule__QualifiedNameWithWildCard__Group_1__0();
 
                     state._fsp--;
@@ -5530,12 +5536,12 @@ public class InternalFXMLDslParser extends AbstractInternalContentAssistParser {
             // ../at.bestsolution.efxclipse.tooling.fxmlx.ui/src-gen/at/bestsolution/efxclipse/tooling/fxmlx/ui/contentassist/antlr/internal/InternalFXMLDsl.g:1950:1: ( rule__QualifiedNameWithWildCard__Group_1__0__Impl rule__QualifiedNameWithWildCard__Group_1__1 )
             // ../at.bestsolution.efxclipse.tooling.fxmlx.ui/src-gen/at/bestsolution/efxclipse/tooling/fxmlx/ui/contentassist/antlr/internal/InternalFXMLDsl.g:1951:2: rule__QualifiedNameWithWildCard__Group_1__0__Impl rule__QualifiedNameWithWildCard__Group_1__1
             {
-            pushFollow(FOLLOW_rule__QualifiedNameWithWildCard__Group_1__0__Impl_in_rule__QualifiedNameWithWildCard__Group_1__03891);
+            pushFollow(FOLLOW_rule__QualifiedNameWithWildCard__Group_1__0__Impl_in_rule__QualifiedNameWithWildCard__Group_1__03892);
             rule__QualifiedNameWithWildCard__Group_1__0__Impl();
 
             state._fsp--;
             if (state.failed) return ;
-            pushFollow(FOLLOW_rule__QualifiedNameWithWildCard__Group_1__1_in_rule__QualifiedNameWithWildCard__Group_1__03894);
+            pushFollow(FOLLOW_rule__QualifiedNameWithWildCard__Group_1__1_in_rule__QualifiedNameWithWildCard__Group_1__03895);
             rule__QualifiedNameWithWildCard__Group_1__1();
 
             state._fsp--;
@@ -5574,7 +5580,7 @@ public class InternalFXMLDslParser extends AbstractInternalContentAssistParser {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getQualifiedNameWithWildCardAccess().getFullStopKeyword_1_0()); 
             }
-            match(input,9,FOLLOW_9_in_rule__QualifiedNameWithWildCard__Group_1__0__Impl3922); if (state.failed) return ;
+            match(input,9,FOLLOW_9_in_rule__QualifiedNameWithWildCard__Group_1__0__Impl3923); if (state.failed) return ;
             if ( state.backtracking==0 ) {
                after(grammarAccess.getQualifiedNameWithWildCardAccess().getFullStopKeyword_1_0()); 
             }
@@ -5609,7 +5615,7 @@ public class InternalFXMLDslParser extends AbstractInternalContentAssistParser {
             // ../at.bestsolution.efxclipse.tooling.fxmlx.ui/src-gen/at/bestsolution/efxclipse/tooling/fxmlx/ui/contentassist/antlr/internal/InternalFXMLDsl.g:1981:1: ( rule__QualifiedNameWithWildCard__Group_1__1__Impl )
             // ../at.bestsolution.efxclipse.tooling.fxmlx.ui/src-gen/at/bestsolution/efxclipse/tooling/fxmlx/ui/contentassist/antlr/internal/InternalFXMLDsl.g:1982:2: rule__QualifiedNameWithWildCard__Group_1__1__Impl
             {
-            pushFollow(FOLLOW_rule__QualifiedNameWithWildCard__Group_1__1__Impl_in_rule__QualifiedNameWithWildCard__Group_1__13953);
+            pushFollow(FOLLOW_rule__QualifiedNameWithWildCard__Group_1__1__Impl_in_rule__QualifiedNameWithWildCard__Group_1__13954);
             rule__QualifiedNameWithWildCard__Group_1__1__Impl();
 
             state._fsp--;
@@ -5648,7 +5654,7 @@ public class InternalFXMLDslParser extends AbstractInternalContentAssistParser {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getQualifiedNameWithWildCardAccess().getAsteriskKeyword_1_1()); 
             }
-            match(input,19,FOLLOW_19_in_rule__QualifiedNameWithWildCard__Group_1__1__Impl3981); if (state.failed) return ;
+            match(input,19,FOLLOW_19_in_rule__QualifiedNameWithWildCard__Group_1__1__Impl3982); if (state.failed) return ;
             if ( state.backtracking==0 ) {
                after(grammarAccess.getQualifiedNameWithWildCardAccess().getAsteriskKeyword_1_1()); 
             }
@@ -5689,7 +5695,7 @@ public class InternalFXMLDslParser extends AbstractInternalContentAssistParser {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getFXMLAccess().getXmlDecXMLDecParserRuleCall_0_0()); 
             }
-            pushFollow(FOLLOW_ruleXMLDec_in_rule__FXML__XmlDecAssignment_04021);
+            pushFollow(FOLLOW_ruleXMLDec_in_rule__FXML__XmlDecAssignment_04022);
             ruleXMLDec();
 
             state._fsp--;
@@ -5734,7 +5740,7 @@ public class InternalFXMLDslParser extends AbstractInternalContentAssistParser {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getFXMLAccess().getProcessingInstructionsProcessingInstructionParserRuleCall_1_0()); 
             }
-            pushFollow(FOLLOW_ruleProcessingInstruction_in_rule__FXML__ProcessingInstructionsAssignment_14052);
+            pushFollow(FOLLOW_ruleProcessingInstruction_in_rule__FXML__ProcessingInstructionsAssignment_14053);
             ruleProcessingInstruction();
 
             state._fsp--;
@@ -5779,7 +5785,7 @@ public class InternalFXMLDslParser extends AbstractInternalContentAssistParser {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getFXMLAccess().getRootElementElementDefinitionParserRuleCall_2_0()); 
             }
-            pushFollow(FOLLOW_ruleElementDefinition_in_rule__FXML__RootElementAssignment_24083);
+            pushFollow(FOLLOW_ruleElementDefinition_in_rule__FXML__RootElementAssignment_24084);
             ruleElementDefinition();
 
             state._fsp--;
@@ -5824,7 +5830,7 @@ public class InternalFXMLDslParser extends AbstractInternalContentAssistParser {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getXMLDecAccess().getPropsAttributePropertyDefinitionParserRuleCall_1_0()); 
             }
-            pushFollow(FOLLOW_ruleAttributePropertyDefinition_in_rule__XMLDec__PropsAssignment_14114);
+            pushFollow(FOLLOW_ruleAttributePropertyDefinition_in_rule__XMLDec__PropsAssignment_14115);
             ruleAttributePropertyDefinition();
 
             state._fsp--;
@@ -5869,7 +5875,7 @@ public class InternalFXMLDslParser extends AbstractInternalContentAssistParser {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getProcessingInstructionAccess().getTypeIDTerminalRuleCall_1_0()); 
             }
-            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__ProcessingInstruction__TypeAssignment_14145); if (state.failed) return ;
+            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__ProcessingInstruction__TypeAssignment_14146); if (state.failed) return ;
             if ( state.backtracking==0 ) {
                after(grammarAccess.getProcessingInstructionAccess().getTypeIDTerminalRuleCall_1_0()); 
             }
@@ -5910,7 +5916,7 @@ public class InternalFXMLDslParser extends AbstractInternalContentAssistParser {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getProcessingInstructionAccess().getImportedNamespaceQualifiedNameWithWildCardParserRuleCall_2_0()); 
             }
-            pushFollow(FOLLOW_ruleQualifiedNameWithWildCard_in_rule__ProcessingInstruction__ImportedNamespaceAssignment_24176);
+            pushFollow(FOLLOW_ruleQualifiedNameWithWildCard_in_rule__ProcessingInstruction__ImportedNamespaceAssignment_24177);
             ruleQualifiedNameWithWildCard();
 
             state._fsp--;
@@ -5955,7 +5961,7 @@ public class InternalFXMLDslParser extends AbstractInternalContentAssistParser {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getContainerElementDefinitionAccess().getNamespaceIDTerminalRuleCall_1_0_0()); 
             }
-            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__ContainerElementDefinition__NamespaceAssignment_1_04207); if (state.failed) return ;
+            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__ContainerElementDefinition__NamespaceAssignment_1_04208); if (state.failed) return ;
             if ( state.backtracking==0 ) {
                after(grammarAccess.getContainerElementDefinitionAccess().getNamespaceIDTerminalRuleCall_1_0_0()); 
             }
@@ -5996,7 +6002,7 @@ public class InternalFXMLDslParser extends AbstractInternalContentAssistParser {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getContainerElementDefinitionAccess().getNameQualifiedNameParserRuleCall_2_0()); 
             }
-            pushFollow(FOLLOW_ruleQualifiedName_in_rule__ContainerElementDefinition__NameAssignment_24238);
+            pushFollow(FOLLOW_ruleQualifiedName_in_rule__ContainerElementDefinition__NameAssignment_24239);
             ruleQualifiedName();
 
             state._fsp--;
@@ -6041,7 +6047,7 @@ public class InternalFXMLDslParser extends AbstractInternalContentAssistParser {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getContainerElementDefinitionAccess().getPropertiesAttributePropertyDefinitionParserRuleCall_3_0()); 
             }
-            pushFollow(FOLLOW_ruleAttributePropertyDefinition_in_rule__ContainerElementDefinition__PropertiesAssignment_34269);
+            pushFollow(FOLLOW_ruleAttributePropertyDefinition_in_rule__ContainerElementDefinition__PropertiesAssignment_34270);
             ruleAttributePropertyDefinition();
 
             state._fsp--;
@@ -6086,7 +6092,7 @@ public class InternalFXMLDslParser extends AbstractInternalContentAssistParser {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getContainerElementDefinitionAccess().getContentPCDataParserRuleCall_5_0()); 
             }
-            pushFollow(FOLLOW_rulePCData_in_rule__ContainerElementDefinition__ContentAssignment_54300);
+            pushFollow(FOLLOW_rulePCData_in_rule__ContainerElementDefinition__ContentAssignment_54301);
             rulePCData();
 
             state._fsp--;
@@ -6131,7 +6137,7 @@ public class InternalFXMLDslParser extends AbstractInternalContentAssistParser {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getContainerElementDefinitionAccess().getChildrenElementDefinitionParserRuleCall_6_0()); 
             }
-            pushFollow(FOLLOW_ruleElementDefinition_in_rule__ContainerElementDefinition__ChildrenAssignment_64331);
+            pushFollow(FOLLOW_ruleElementDefinition_in_rule__ContainerElementDefinition__ChildrenAssignment_64332);
             ruleElementDefinition();
 
             state._fsp--;
@@ -6176,7 +6182,7 @@ public class InternalFXMLDslParser extends AbstractInternalContentAssistParser {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getContainerElementDefinitionAccess().getEndnamespaceIDTerminalRuleCall_8_0_0()); 
             }
-            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__ContainerElementDefinition__EndnamespaceAssignment_8_04362); if (state.failed) return ;
+            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__ContainerElementDefinition__EndnamespaceAssignment_8_04363); if (state.failed) return ;
             if ( state.backtracking==0 ) {
                after(grammarAccess.getContainerElementDefinitionAccess().getEndnamespaceIDTerminalRuleCall_8_0_0()); 
             }
@@ -6217,7 +6223,7 @@ public class InternalFXMLDslParser extends AbstractInternalContentAssistParser {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getContainerElementDefinitionAccess().getEndnameQualifiedNameParserRuleCall_9_0()); 
             }
-            pushFollow(FOLLOW_ruleQualifiedName_in_rule__ContainerElementDefinition__EndnameAssignment_94393);
+            pushFollow(FOLLOW_ruleQualifiedName_in_rule__ContainerElementDefinition__EndnameAssignment_94394);
             ruleQualifiedName();
 
             state._fsp--;
@@ -6262,7 +6268,7 @@ public class InternalFXMLDslParser extends AbstractInternalContentAssistParser {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getEmptyElementDefinitionAccess().getNamespaceIDTerminalRuleCall_1_0_0()); 
             }
-            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__EmptyElementDefinition__NamespaceAssignment_1_04424); if (state.failed) return ;
+            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__EmptyElementDefinition__NamespaceAssignment_1_04425); if (state.failed) return ;
             if ( state.backtracking==0 ) {
                after(grammarAccess.getEmptyElementDefinitionAccess().getNamespaceIDTerminalRuleCall_1_0_0()); 
             }
@@ -6303,7 +6309,7 @@ public class InternalFXMLDslParser extends AbstractInternalContentAssistParser {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getEmptyElementDefinitionAccess().getNameQualifiedNameParserRuleCall_2_0()); 
             }
-            pushFollow(FOLLOW_ruleQualifiedName_in_rule__EmptyElementDefinition__NameAssignment_24455);
+            pushFollow(FOLLOW_ruleQualifiedName_in_rule__EmptyElementDefinition__NameAssignment_24456);
             ruleQualifiedName();
 
             state._fsp--;
@@ -6348,7 +6354,7 @@ public class InternalFXMLDslParser extends AbstractInternalContentAssistParser {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getEmptyElementDefinitionAccess().getPropsAttributePropertyDefinitionParserRuleCall_3_0()); 
             }
-            pushFollow(FOLLOW_ruleAttributePropertyDefinition_in_rule__EmptyElementDefinition__PropsAssignment_34486);
+            pushFollow(FOLLOW_ruleAttributePropertyDefinition_in_rule__EmptyElementDefinition__PropsAssignment_34487);
             ruleAttributePropertyDefinition();
 
             state._fsp--;
@@ -6393,7 +6399,7 @@ public class InternalFXMLDslParser extends AbstractInternalContentAssistParser {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getPCDataAccess().getContentContentParserRuleCall_0()); 
             }
-            pushFollow(FOLLOW_ruleContent_in_rule__PCData__ContentAssignment4517);
+            pushFollow(FOLLOW_ruleContent_in_rule__PCData__ContentAssignment4518);
             ruleContent();
 
             state._fsp--;
@@ -6438,7 +6444,7 @@ public class InternalFXMLDslParser extends AbstractInternalContentAssistParser {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getAttributePropertyDefinitionAccess().getNamespaceIDTerminalRuleCall_0_0_0()); 
             }
-            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__AttributePropertyDefinition__NamespaceAssignment_0_04548); if (state.failed) return ;
+            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__AttributePropertyDefinition__NamespaceAssignment_0_04549); if (state.failed) return ;
             if ( state.backtracking==0 ) {
                after(grammarAccess.getAttributePropertyDefinitionAccess().getNamespaceIDTerminalRuleCall_0_0_0()); 
             }
@@ -6479,7 +6485,7 @@ public class InternalFXMLDslParser extends AbstractInternalContentAssistParser {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getAttributePropertyDefinitionAccess().getNameQualifiedNameParserRuleCall_1_0()); 
             }
-            pushFollow(FOLLOW_ruleQualifiedName_in_rule__AttributePropertyDefinition__NameAssignment_14579);
+            pushFollow(FOLLOW_ruleQualifiedName_in_rule__AttributePropertyDefinition__NameAssignment_14580);
             ruleQualifiedName();
 
             state._fsp--;
@@ -6524,7 +6530,7 @@ public class InternalFXMLDslParser extends AbstractInternalContentAssistParser {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getAttributePropertyDefinitionAccess().getValueSTRINGTerminalRuleCall_3_0()); 
             }
-            match(input,RULE_STRING,FOLLOW_RULE_STRING_in_rule__AttributePropertyDefinition__ValueAssignment_34610); if (state.failed) return ;
+            match(input,RULE_STRING,FOLLOW_RULE_STRING_in_rule__AttributePropertyDefinition__ValueAssignment_34611); if (state.failed) return ;
             if ( state.backtracking==0 ) {
                after(grammarAccess.getAttributePropertyDefinitionAccess().getValueSTRINGTerminalRuleCall_3_0()); 
             }
@@ -6548,6 +6554,51 @@ public class InternalFXMLDslParser extends AbstractInternalContentAssistParser {
     }
     // $ANTLR end "rule__AttributePropertyDefinition__ValueAssignment_3"
 
+
+    // $ANTLR start "rule__QualifiedNameWithWildCard__ValueAssignment_0"
+    // ../at.bestsolution.efxclipse.tooling.fxmlx.ui/src-gen/at/bestsolution/efxclipse/tooling/fxmlx/ui/contentassist/antlr/internal/InternalFXMLDsl.g:2312:1: rule__QualifiedNameWithWildCard__ValueAssignment_0 : ( ruleQualifiedName ) ;
+    public final void rule__QualifiedNameWithWildCard__ValueAssignment_0() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+            
+        try {
+            // ../at.bestsolution.efxclipse.tooling.fxmlx.ui/src-gen/at/bestsolution/efxclipse/tooling/fxmlx/ui/contentassist/antlr/internal/InternalFXMLDsl.g:2316:1: ( ( ruleQualifiedName ) )
+            // ../at.bestsolution.efxclipse.tooling.fxmlx.ui/src-gen/at/bestsolution/efxclipse/tooling/fxmlx/ui/contentassist/antlr/internal/InternalFXMLDsl.g:2317:1: ( ruleQualifiedName )
+            {
+            // ../at.bestsolution.efxclipse.tooling.fxmlx.ui/src-gen/at/bestsolution/efxclipse/tooling/fxmlx/ui/contentassist/antlr/internal/InternalFXMLDsl.g:2317:1: ( ruleQualifiedName )
+            // ../at.bestsolution.efxclipse.tooling.fxmlx.ui/src-gen/at/bestsolution/efxclipse/tooling/fxmlx/ui/contentassist/antlr/internal/InternalFXMLDsl.g:2318:1: ruleQualifiedName
+            {
+            if ( state.backtracking==0 ) {
+               before(grammarAccess.getQualifiedNameWithWildCardAccess().getValueQualifiedNameParserRuleCall_0_0()); 
+            }
+            pushFollow(FOLLOW_ruleQualifiedName_in_rule__QualifiedNameWithWildCard__ValueAssignment_04642);
+            ruleQualifiedName();
+
+            state._fsp--;
+            if (state.failed) return ;
+            if ( state.backtracking==0 ) {
+               after(grammarAccess.getQualifiedNameWithWildCardAccess().getValueQualifiedNameParserRuleCall_0_0()); 
+            }
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__QualifiedNameWithWildCard__ValueAssignment_0"
+
     // Delegated rules
 
 
@@ -6557,30 +6608,31 @@ public class InternalFXMLDslParser extends AbstractInternalContentAssistParser {
     static final String DFA1_eofS =
         "\20\uffff";
     static final String DFA1_minS =
-        "\1\16\3\4\1\11\2\uffff\4\4\1\5\1\4\2\11\1\4";
+        "\1\16\3\4\1\11\1\uffff\1\4\1\uffff\2\4\1\5\2\4\1\11\1\4\1\11";
     static final String DFA1_maxS =
-        "\1\16\1\4\1\21\1\4\1\22\2\uffff\1\4\1\21\2\4\1\5\1\21\2\22\1\21";
+        "\1\16\1\4\1\21\1\4\1\22\1\uffff\1\4\1\uffff\1\21\1\4\1\5\1\4\1"+
+        "\21\1\22\1\21\1\22";
     static final String DFA1_acceptS =
-        "\5\uffff\1\2\1\1\11\uffff";
+        "\5\uffff\1\2\1\uffff\1\1\10\uffff";
     static final String DFA1_specialS =
         "\20\uffff}>";
     static final String[] DFA1_transitionS = {
             "\1\1",
             "\1\2",
-            "\1\4\4\uffff\1\3\1\7\4\uffff\1\6\1\uffff\1\5",
+            "\1\4\4\uffff\1\3\1\6\4\uffff\1\7\1\uffff\1\5",
             "\1\10",
-            "\1\12\1\11\7\uffff\1\13",
-            "",
+            "\1\11\1\13\7\uffff\1\12",
             "",
             "\1\14",
-            "\1\4\4\uffff\1\3\5\uffff\1\6\1\uffff\1\5",
+            "",
+            "\1\4\4\uffff\1\3\5\uffff\1\7\1\uffff\1\5",
             "\1\15",
             "\1\16",
             "\1\17",
-            "\1\4\4\uffff\1\3\5\uffff\1\6\1\uffff\1\5",
-            "\1\12\10\uffff\1\13",
-            "\1\12\10\uffff\1\13",
-            "\1\4\12\uffff\1\6\1\uffff\1\5"
+            "\1\4\4\uffff\1\3\5\uffff\1\7\1\uffff\1\5",
+            "\1\11\10\uffff\1\12",
+            "\1\4\12\uffff\1\7\1\uffff\1\5",
+            "\1\11\10\uffff\1\12"
     };
 
     static final short[] DFA1_eot = DFA.unpackEncodedString(DFA1_eotS);
@@ -6786,33 +6838,34 @@ public class InternalFXMLDslParser extends AbstractInternalContentAssistParser {
     public static final BitSet FOLLOW_RULE_ID_in_rule__QualifiedName__Group_1__1__Impl3737 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__QualifiedNameWithWildCard__Group__0__Impl_in_rule__QualifiedNameWithWildCard__Group__03770 = new BitSet(new long[]{0x0000000000000200L});
     public static final BitSet FOLLOW_rule__QualifiedNameWithWildCard__Group__1_in_rule__QualifiedNameWithWildCard__Group__03773 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleQualifiedName_in_rule__QualifiedNameWithWildCard__Group__0__Impl3800 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__QualifiedNameWithWildCard__Group__1__Impl_in_rule__QualifiedNameWithWildCard__Group__13829 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__QualifiedNameWithWildCard__Group_1__0_in_rule__QualifiedNameWithWildCard__Group__1__Impl3856 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__QualifiedNameWithWildCard__Group_1__0__Impl_in_rule__QualifiedNameWithWildCard__Group_1__03891 = new BitSet(new long[]{0x0000000000080000L});
-    public static final BitSet FOLLOW_rule__QualifiedNameWithWildCard__Group_1__1_in_rule__QualifiedNameWithWildCard__Group_1__03894 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_9_in_rule__QualifiedNameWithWildCard__Group_1__0__Impl3922 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__QualifiedNameWithWildCard__Group_1__1__Impl_in_rule__QualifiedNameWithWildCard__Group_1__13953 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_19_in_rule__QualifiedNameWithWildCard__Group_1__1__Impl3981 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleXMLDec_in_rule__FXML__XmlDecAssignment_04021 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleProcessingInstruction_in_rule__FXML__ProcessingInstructionsAssignment_14052 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleElementDefinition_in_rule__FXML__RootElementAssignment_24083 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleAttributePropertyDefinition_in_rule__XMLDec__PropsAssignment_14114 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_ID_in_rule__ProcessingInstruction__TypeAssignment_14145 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleQualifiedNameWithWildCard_in_rule__ProcessingInstruction__ImportedNamespaceAssignment_24176 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_ID_in_rule__ContainerElementDefinition__NamespaceAssignment_1_04207 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleQualifiedName_in_rule__ContainerElementDefinition__NameAssignment_24238 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleAttributePropertyDefinition_in_rule__ContainerElementDefinition__PropertiesAssignment_34269 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rulePCData_in_rule__ContainerElementDefinition__ContentAssignment_54300 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleElementDefinition_in_rule__ContainerElementDefinition__ChildrenAssignment_64331 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_ID_in_rule__ContainerElementDefinition__EndnamespaceAssignment_8_04362 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleQualifiedName_in_rule__ContainerElementDefinition__EndnameAssignment_94393 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_ID_in_rule__EmptyElementDefinition__NamespaceAssignment_1_04424 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleQualifiedName_in_rule__EmptyElementDefinition__NameAssignment_24455 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleAttributePropertyDefinition_in_rule__EmptyElementDefinition__PropsAssignment_34486 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleContent_in_rule__PCData__ContentAssignment4517 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_ID_in_rule__AttributePropertyDefinition__NamespaceAssignment_0_04548 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleQualifiedName_in_rule__AttributePropertyDefinition__NameAssignment_14579 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_STRING_in_rule__AttributePropertyDefinition__ValueAssignment_34610 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__QualifiedNameWithWildCard__ValueAssignment_0_in_rule__QualifiedNameWithWildCard__Group__0__Impl3800 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__QualifiedNameWithWildCard__Group__1__Impl_in_rule__QualifiedNameWithWildCard__Group__13830 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__QualifiedNameWithWildCard__Group_1__0_in_rule__QualifiedNameWithWildCard__Group__1__Impl3857 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__QualifiedNameWithWildCard__Group_1__0__Impl_in_rule__QualifiedNameWithWildCard__Group_1__03892 = new BitSet(new long[]{0x0000000000080000L});
+    public static final BitSet FOLLOW_rule__QualifiedNameWithWildCard__Group_1__1_in_rule__QualifiedNameWithWildCard__Group_1__03895 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_9_in_rule__QualifiedNameWithWildCard__Group_1__0__Impl3923 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__QualifiedNameWithWildCard__Group_1__1__Impl_in_rule__QualifiedNameWithWildCard__Group_1__13954 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_19_in_rule__QualifiedNameWithWildCard__Group_1__1__Impl3982 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleXMLDec_in_rule__FXML__XmlDecAssignment_04022 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleProcessingInstruction_in_rule__FXML__ProcessingInstructionsAssignment_14053 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleElementDefinition_in_rule__FXML__RootElementAssignment_24084 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleAttributePropertyDefinition_in_rule__XMLDec__PropsAssignment_14115 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_ID_in_rule__ProcessingInstruction__TypeAssignment_14146 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleQualifiedNameWithWildCard_in_rule__ProcessingInstruction__ImportedNamespaceAssignment_24177 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_ID_in_rule__ContainerElementDefinition__NamespaceAssignment_1_04208 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleQualifiedName_in_rule__ContainerElementDefinition__NameAssignment_24239 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleAttributePropertyDefinition_in_rule__ContainerElementDefinition__PropertiesAssignment_34270 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rulePCData_in_rule__ContainerElementDefinition__ContentAssignment_54301 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleElementDefinition_in_rule__ContainerElementDefinition__ChildrenAssignment_64332 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_ID_in_rule__ContainerElementDefinition__EndnamespaceAssignment_8_04363 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleQualifiedName_in_rule__ContainerElementDefinition__EndnameAssignment_94394 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_ID_in_rule__EmptyElementDefinition__NamespaceAssignment_1_04425 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleQualifiedName_in_rule__EmptyElementDefinition__NameAssignment_24456 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleAttributePropertyDefinition_in_rule__EmptyElementDefinition__PropsAssignment_34487 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleContent_in_rule__PCData__ContentAssignment4518 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_ID_in_rule__AttributePropertyDefinition__NamespaceAssignment_0_04549 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleQualifiedName_in_rule__AttributePropertyDefinition__NameAssignment_14580 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_STRING_in_rule__AttributePropertyDefinition__ValueAssignment_34611 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleQualifiedName_in_rule__QualifiedNameWithWildCard__ValueAssignment_04642 = new BitSet(new long[]{0x0000000000000002L});
 
 }

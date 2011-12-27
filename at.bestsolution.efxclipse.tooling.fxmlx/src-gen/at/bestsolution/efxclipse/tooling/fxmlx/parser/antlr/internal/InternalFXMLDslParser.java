@@ -486,7 +486,7 @@ public class InternalFXMLDslParser extends AbstractInternalAntlrParser {
         Token otherlv_0=null;
         Token lv_type_1_0=null;
         Token otherlv_3=null;
-        AntlrDatatypeRuleToken lv_importedNamespace_2_0 = null;
+        EObject lv_importedNamespace_2_0 = null;
 
 
          enterRule(); 
@@ -2236,11 +2236,11 @@ public class InternalFXMLDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleQualifiedNameWithWildCard"
-    // ../at.bestsolution.efxclipse.tooling.fxmlx/src-gen/at/bestsolution/efxclipse/tooling/fxmlx/parser/antlr/internal/InternalFXMLDsl.g:830:1: entryRuleQualifiedNameWithWildCard returns [String current=null] : iv_ruleQualifiedNameWithWildCard= ruleQualifiedNameWithWildCard EOF ;
-    public final String entryRuleQualifiedNameWithWildCard() throws RecognitionException {
-        String current = null;
+    // ../at.bestsolution.efxclipse.tooling.fxmlx/src-gen/at/bestsolution/efxclipse/tooling/fxmlx/parser/antlr/internal/InternalFXMLDsl.g:830:1: entryRuleQualifiedNameWithWildCard returns [EObject current=null] : iv_ruleQualifiedNameWithWildCard= ruleQualifiedNameWithWildCard EOF ;
+    public final EObject entryRuleQualifiedNameWithWildCard() throws RecognitionException {
+        EObject current = null;
 
-        AntlrDatatypeRuleToken iv_ruleQualifiedNameWithWildCard = null;
+        EObject iv_ruleQualifiedNameWithWildCard = null;
 
 
         try {
@@ -2250,15 +2250,15 @@ public class InternalFXMLDslParser extends AbstractInternalAntlrParser {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getQualifiedNameWithWildCardRule()); 
             }
-            pushFollow(FOLLOW_ruleQualifiedNameWithWildCard_in_entryRuleQualifiedNameWithWildCard1799);
+            pushFollow(FOLLOW_ruleQualifiedNameWithWildCard_in_entryRuleQualifiedNameWithWildCard1798);
             iv_ruleQualifiedNameWithWildCard=ruleQualifiedNameWithWildCard();
 
             state._fsp--;
             if (state.failed) return current;
             if ( state.backtracking==0 ) {
-               current =iv_ruleQualifiedNameWithWildCard.getText(); 
+               current =iv_ruleQualifiedNameWithWildCard; 
             }
-            match(input,EOF,FOLLOW_EOF_in_entryRuleQualifiedNameWithWildCard1810); if (state.failed) return current;
+            match(input,EOF,FOLLOW_EOF_in_entryRuleQualifiedNameWithWildCard1808); if (state.failed) return current;
 
             }
 
@@ -2276,44 +2276,60 @@ public class InternalFXMLDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleQualifiedNameWithWildCard"
-    // ../at.bestsolution.efxclipse.tooling.fxmlx/src-gen/at/bestsolution/efxclipse/tooling/fxmlx/parser/antlr/internal/InternalFXMLDsl.g:839:1: ruleQualifiedNameWithWildCard returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (this_QualifiedName_0= ruleQualifiedName (kw= '.' kw= '*' )? ) ;
-    public final AntlrDatatypeRuleToken ruleQualifiedNameWithWildCard() throws RecognitionException {
-        AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
+    // ../at.bestsolution.efxclipse.tooling.fxmlx/src-gen/at/bestsolution/efxclipse/tooling/fxmlx/parser/antlr/internal/InternalFXMLDsl.g:839:1: ruleQualifiedNameWithWildCard returns [EObject current=null] : ( ( (lv_value_0_0= ruleQualifiedName ) ) (otherlv_1= '.' otherlv_2= '*' )? ) ;
+    public final EObject ruleQualifiedNameWithWildCard() throws RecognitionException {
+        EObject current = null;
 
-        Token kw=null;
-        AntlrDatatypeRuleToken this_QualifiedName_0 = null;
+        Token otherlv_1=null;
+        Token otherlv_2=null;
+        AntlrDatatypeRuleToken lv_value_0_0 = null;
 
 
          enterRule(); 
             
         try {
-            // ../at.bestsolution.efxclipse.tooling.fxmlx/src-gen/at/bestsolution/efxclipse/tooling/fxmlx/parser/antlr/internal/InternalFXMLDsl.g:842:28: ( (this_QualifiedName_0= ruleQualifiedName (kw= '.' kw= '*' )? ) )
-            // ../at.bestsolution.efxclipse.tooling.fxmlx/src-gen/at/bestsolution/efxclipse/tooling/fxmlx/parser/antlr/internal/InternalFXMLDsl.g:843:1: (this_QualifiedName_0= ruleQualifiedName (kw= '.' kw= '*' )? )
+            // ../at.bestsolution.efxclipse.tooling.fxmlx/src-gen/at/bestsolution/efxclipse/tooling/fxmlx/parser/antlr/internal/InternalFXMLDsl.g:842:28: ( ( ( (lv_value_0_0= ruleQualifiedName ) ) (otherlv_1= '.' otherlv_2= '*' )? ) )
+            // ../at.bestsolution.efxclipse.tooling.fxmlx/src-gen/at/bestsolution/efxclipse/tooling/fxmlx/parser/antlr/internal/InternalFXMLDsl.g:843:1: ( ( (lv_value_0_0= ruleQualifiedName ) ) (otherlv_1= '.' otherlv_2= '*' )? )
             {
-            // ../at.bestsolution.efxclipse.tooling.fxmlx/src-gen/at/bestsolution/efxclipse/tooling/fxmlx/parser/antlr/internal/InternalFXMLDsl.g:843:1: (this_QualifiedName_0= ruleQualifiedName (kw= '.' kw= '*' )? )
-            // ../at.bestsolution.efxclipse.tooling.fxmlx/src-gen/at/bestsolution/efxclipse/tooling/fxmlx/parser/antlr/internal/InternalFXMLDsl.g:844:5: this_QualifiedName_0= ruleQualifiedName (kw= '.' kw= '*' )?
+            // ../at.bestsolution.efxclipse.tooling.fxmlx/src-gen/at/bestsolution/efxclipse/tooling/fxmlx/parser/antlr/internal/InternalFXMLDsl.g:843:1: ( ( (lv_value_0_0= ruleQualifiedName ) ) (otherlv_1= '.' otherlv_2= '*' )? )
+            // ../at.bestsolution.efxclipse.tooling.fxmlx/src-gen/at/bestsolution/efxclipse/tooling/fxmlx/parser/antlr/internal/InternalFXMLDsl.g:843:2: ( (lv_value_0_0= ruleQualifiedName ) ) (otherlv_1= '.' otherlv_2= '*' )?
+            {
+            // ../at.bestsolution.efxclipse.tooling.fxmlx/src-gen/at/bestsolution/efxclipse/tooling/fxmlx/parser/antlr/internal/InternalFXMLDsl.g:843:2: ( (lv_value_0_0= ruleQualifiedName ) )
+            // ../at.bestsolution.efxclipse.tooling.fxmlx/src-gen/at/bestsolution/efxclipse/tooling/fxmlx/parser/antlr/internal/InternalFXMLDsl.g:844:1: (lv_value_0_0= ruleQualifiedName )
+            {
+            // ../at.bestsolution.efxclipse.tooling.fxmlx/src-gen/at/bestsolution/efxclipse/tooling/fxmlx/parser/antlr/internal/InternalFXMLDsl.g:844:1: (lv_value_0_0= ruleQualifiedName )
+            // ../at.bestsolution.efxclipse.tooling.fxmlx/src-gen/at/bestsolution/efxclipse/tooling/fxmlx/parser/antlr/internal/InternalFXMLDsl.g:845:3: lv_value_0_0= ruleQualifiedName
             {
             if ( state.backtracking==0 ) {
                
-                      newCompositeNode(grammarAccess.getQualifiedNameWithWildCardAccess().getQualifiedNameParserRuleCall_0()); 
-                  
+              	        newCompositeNode(grammarAccess.getQualifiedNameWithWildCardAccess().getValueQualifiedNameParserRuleCall_0_0()); 
+              	    
             }
-            pushFollow(FOLLOW_ruleQualifiedName_in_ruleQualifiedNameWithWildCard1857);
-            this_QualifiedName_0=ruleQualifiedName();
+            pushFollow(FOLLOW_ruleQualifiedName_in_ruleQualifiedNameWithWildCard1854);
+            lv_value_0_0=ruleQualifiedName();
 
             state._fsp--;
             if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
-              		current.merge(this_QualifiedName_0);
-                  
+              	        if (current==null) {
+              	            current = createModelElementForParent(grammarAccess.getQualifiedNameWithWildCardRule());
+              	        }
+                     		set(
+                     			current, 
+                     			"value",
+                      		lv_value_0_0, 
+                      		"QualifiedName");
+              	        afterParserOrEnumRuleCall();
+              	    
             }
-            if ( state.backtracking==0 ) {
-               
-                      afterParserOrEnumRuleCall();
-                  
+
             }
-            // ../at.bestsolution.efxclipse.tooling.fxmlx/src-gen/at/bestsolution/efxclipse/tooling/fxmlx/parser/antlr/internal/InternalFXMLDsl.g:854:1: (kw= '.' kw= '*' )?
+
+
+            }
+
+            // ../at.bestsolution.efxclipse.tooling.fxmlx/src-gen/at/bestsolution/efxclipse/tooling/fxmlx/parser/antlr/internal/InternalFXMLDsl.g:861:2: (otherlv_1= '.' otherlv_2= '*' )?
             int alt15=2;
             int LA15_0 = input.LA(1);
 
@@ -2322,20 +2338,18 @@ public class InternalFXMLDslParser extends AbstractInternalAntlrParser {
             }
             switch (alt15) {
                 case 1 :
-                    // ../at.bestsolution.efxclipse.tooling.fxmlx/src-gen/at/bestsolution/efxclipse/tooling/fxmlx/parser/antlr/internal/InternalFXMLDsl.g:855:2: kw= '.' kw= '*'
+                    // ../at.bestsolution.efxclipse.tooling.fxmlx/src-gen/at/bestsolution/efxclipse/tooling/fxmlx/parser/antlr/internal/InternalFXMLDsl.g:861:4: otherlv_1= '.' otherlv_2= '*'
                     {
-                    kw=(Token)match(input,18,FOLLOW_18_in_ruleQualifiedNameWithWildCard1876); if (state.failed) return current;
+                    otherlv_1=(Token)match(input,18,FOLLOW_18_in_ruleQualifiedNameWithWildCard1867); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
-                              current.merge(kw);
-                              newLeafNode(kw, grammarAccess.getQualifiedNameWithWildCardAccess().getFullStopKeyword_1_0()); 
+                          	newLeafNode(otherlv_1, grammarAccess.getQualifiedNameWithWildCardAccess().getFullStopKeyword_1_0());
                           
                     }
-                    kw=(Token)match(input,19,FOLLOW_19_in_ruleQualifiedNameWithWildCard1889); if (state.failed) return current;
+                    otherlv_2=(Token)match(input,19,FOLLOW_19_in_ruleQualifiedNameWithWildCard1879); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
-                              current.merge(kw);
-                              newLeafNode(kw, grammarAccess.getQualifiedNameWithWildCardAccess().getAsteriskKeyword_1_1()); 
+                          	newLeafNode(otherlv_2, grammarAccess.getQualifiedNameWithWildCardAccess().getAsteriskKeyword_1_1());
                           
                     }
 
@@ -2532,11 +2546,11 @@ public class InternalFXMLDslParser extends AbstractInternalAntlrParser {
     public static final BitSet FOLLOW_RULE_ID_in_ruleQualifiedName1707 = new BitSet(new long[]{0x0000000000040002L});
     public static final BitSet FOLLOW_18_in_ruleQualifiedName1735 = new BitSet(new long[]{0x0000000000000010L});
     public static final BitSet FOLLOW_RULE_ID_in_ruleQualifiedName1751 = new BitSet(new long[]{0x0000000000040002L});
-    public static final BitSet FOLLOW_ruleQualifiedNameWithWildCard_in_entryRuleQualifiedNameWithWildCard1799 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleQualifiedNameWithWildCard1810 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleQualifiedName_in_ruleQualifiedNameWithWildCard1857 = new BitSet(new long[]{0x0000000000040002L});
-    public static final BitSet FOLLOW_18_in_ruleQualifiedNameWithWildCard1876 = new BitSet(new long[]{0x0000000000080000L});
-    public static final BitSet FOLLOW_19_in_ruleQualifiedNameWithWildCard1889 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleQualifiedNameWithWildCard_in_entryRuleQualifiedNameWithWildCard1798 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleQualifiedNameWithWildCard1808 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleQualifiedName_in_ruleQualifiedNameWithWildCard1854 = new BitSet(new long[]{0x0000000000040002L});
+    public static final BitSet FOLLOW_18_in_ruleQualifiedNameWithWildCard1867 = new BitSet(new long[]{0x0000000000080000L});
+    public static final BitSet FOLLOW_19_in_ruleQualifiedNameWithWildCard1879 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_18_in_synpred1_InternalFXMLDsl1726 = new BitSet(new long[]{0x0000000000000002L});
 
 }

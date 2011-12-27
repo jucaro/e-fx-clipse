@@ -7,6 +7,7 @@ import at.bestsolution.efxclipse.tooling.fxmlx.fXMLDsl.FXML;
 import at.bestsolution.efxclipse.tooling.fxmlx.fXMLDsl.FXMLDslPackage;
 import at.bestsolution.efxclipse.tooling.fxmlx.fXMLDsl.PCData;
 import at.bestsolution.efxclipse.tooling.fxmlx.fXMLDsl.ProcessingInstruction;
+import at.bestsolution.efxclipse.tooling.fxmlx.fXMLDsl.QualifiedNameWithWildCard;
 import at.bestsolution.efxclipse.tooling.fxmlx.fXMLDsl.XMLDec;
 import at.bestsolution.efxclipse.tooling.fxmlx.services.FXMLDslGrammarAccess;
 import com.google.inject.Inject;
@@ -86,6 +87,12 @@ public class AbstractFXMLDslSemanticSequencer extends AbstractSemanticSequencer 
 			case FXMLDslPackage.PROCESSING_INSTRUCTION:
 				if(context == grammarAccess.getProcessingInstructionRule()) {
 					sequence_ProcessingInstruction(context, (ProcessingInstruction) semanticObject); 
+					return; 
+				}
+				else break;
+			case FXMLDslPackage.QUALIFIED_NAME_WITH_WILD_CARD:
+				if(context == grammarAccess.getQualifiedNameWithWildCardRule()) {
+					sequence_QualifiedNameWithWildCard(context, (QualifiedNameWithWildCard) semanticObject); 
 					return; 
 				}
 				else break;
@@ -174,6 +181,22 @@ public class AbstractFXMLDslSemanticSequencer extends AbstractSemanticSequencer 
 		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
 		feeder.accept(grammarAccess.getProcessingInstructionAccess().getTypeIDTerminalRuleCall_1_0(), semanticObject.getType());
 		feeder.accept(grammarAccess.getProcessingInstructionAccess().getImportedNamespaceQualifiedNameWithWildCardParserRuleCall_2_0(), semanticObject.getImportedNamespace());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     value=QualifiedName
+	 */
+	protected void sequence_QualifiedNameWithWildCard(EObject context, QualifiedNameWithWildCard semanticObject) {
+		if(errorAcceptor != null) {
+			if(transientValues.isValueTransient(semanticObject, FXMLDslPackage.Literals.QUALIFIED_NAME_WITH_WILD_CARD__VALUE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, FXMLDslPackage.Literals.QUALIFIED_NAME_WITH_WILD_CARD__VALUE));
+		}
+		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
+		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
+		feeder.accept(grammarAccess.getQualifiedNameWithWildCardAccess().getValueQualifiedNameParserRuleCall_0_0(), semanticObject.getValue());
 		feeder.finish();
 	}
 	

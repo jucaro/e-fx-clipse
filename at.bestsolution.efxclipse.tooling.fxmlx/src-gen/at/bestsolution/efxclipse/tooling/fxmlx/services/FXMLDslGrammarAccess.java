@@ -162,11 +162,6 @@ public class FXMLDslGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cEndnameQualifiedNameParserRuleCall_9_0 = (RuleCall)cEndnameAssignment_9.eContents().get(0);
 		private final Keyword cGreaterThanSignKeyword_10 = (Keyword)cGroup.eContents().get(10);
 		
-		////	| 
-		////	('<' (namespace=ID ':')? name=QualifiedName properties+=AttributePropertyDefinition*'>'
-		////		content=Content
-		////	 '</' (endnamespace=ID ':')? endname=QualifiedName '>'
-		////	)
 		//ContainerElementDefinition:
 		//	"<" (namespace=ID ":")? name=QualifiedName properties+=AttributePropertyDefinition* ">" content=PCData?
 		//	children+=ElementDefinition* "</" (endnamespace=ID ":")? endname=QualifiedName ">";
@@ -376,7 +371,6 @@ public class FXMLDslGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cFullStopKeyword_1_4 = (Keyword)cAlternatives_1.eContents().get(4);
 		private final Keyword cColonKeyword_1_5 = (Keyword)cAlternatives_1.eContents().get(5);
 		
-		////PC_DATA
 		//Content hidden(ML_COMMENT):
 		//	(ID | STRING | ANY_OTHER | "." | ":") (ID | STRING | ANY_OTHER | WS | "." | ":")*;
 		public ParserRule getRule() { return rule; }
@@ -455,20 +449,24 @@ public class FXMLDslGrammarAccess extends AbstractGrammarElementFinder {
 	public class QualifiedNameWithWildCardElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "QualifiedNameWithWildCard");
 		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final RuleCall cQualifiedNameParserRuleCall_0 = (RuleCall)cGroup.eContents().get(0);
+		private final Assignment cValueAssignment_0 = (Assignment)cGroup.eContents().get(0);
+		private final RuleCall cValueQualifiedNameParserRuleCall_0_0 = (RuleCall)cValueAssignment_0.eContents().get(0);
 		private final Group cGroup_1 = (Group)cGroup.eContents().get(1);
 		private final Keyword cFullStopKeyword_1_0 = (Keyword)cGroup_1.eContents().get(0);
 		private final Keyword cAsteriskKeyword_1_1 = (Keyword)cGroup_1.eContents().get(1);
 		
 		//QualifiedNameWithWildCard:
-		//	QualifiedName ("." "*")?;
+		//	value=QualifiedName ("." "*")?;
 		public ParserRule getRule() { return rule; }
 
-		//QualifiedName ("." "*")?
+		//value=QualifiedName ("." "*")?
 		public Group getGroup() { return cGroup; }
 
+		//value=QualifiedName
+		public Assignment getValueAssignment_0() { return cValueAssignment_0; }
+
 		//QualifiedName
-		public RuleCall getQualifiedNameParserRuleCall_0() { return cQualifiedNameParserRuleCall_0; }
+		public RuleCall getValueQualifiedNameParserRuleCall_0_0() { return cValueQualifiedNameParserRuleCall_0_0; }
 
 		//("." "*")?
 		public Group getGroup_1() { return cGroup_1; }
@@ -551,11 +549,6 @@ public class FXMLDslGrammarAccess extends AbstractGrammarElementFinder {
 		return getElementDefinitionAccess().getRule();
 	}
 
-	////	| 
-	////	('<' (namespace=ID ':')? name=QualifiedName properties+=AttributePropertyDefinition*'>'
-	////		content=Content
-	////	 '</' (endnamespace=ID ':')? endname=QualifiedName '>'
-	////	)
 	//ContainerElementDefinition:
 	//	"<" (namespace=ID ":")? name=QualifiedName properties+=AttributePropertyDefinition* ">" content=PCData?
 	//	children+=ElementDefinition* "</" (endnamespace=ID ":")? endname=QualifiedName ">";
@@ -597,7 +590,6 @@ public class FXMLDslGrammarAccess extends AbstractGrammarElementFinder {
 		return getAttributePropertyDefinitionAccess().getRule();
 	}
 
-	////PC_DATA
 	//Content hidden(ML_COMMENT):
 	//	(ID | STRING | ANY_OTHER | "." | ":") (ID | STRING | ANY_OTHER | WS | "." | ":")*;
 	public ContentElements getContentAccess() {
@@ -619,7 +611,7 @@ public class FXMLDslGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//QualifiedNameWithWildCard:
-	//	QualifiedName ("." "*")?;
+	//	value=QualifiedName ("." "*")?;
 	public QualifiedNameWithWildCardElements getQualifiedNameWithWildCardAccess() {
 		return (pQualifiedNameWithWildCard != null) ? pQualifiedNameWithWildCard : (pQualifiedNameWithWildCard = new QualifiedNameWithWildCardElements());
 	}
@@ -628,9 +620,6 @@ public class FXMLDslGrammarAccess extends AbstractGrammarElementFinder {
 		return getQualifiedNameWithWildCardAccess().getRule();
 	}
 
-	////terminal PC_DATA:
-	////	(!('<'|'>'|' '|'\t'|'\r'|'\n')) (!('<'|'>'))* 
-	////;
 	//terminal ID:
 	//	"^"? ("a".."z" | "A".."Z" | "_") ("a".."z" | "A".."Z" | "_" | "0".."9")*;
 	public TerminalRule getIDRule() {

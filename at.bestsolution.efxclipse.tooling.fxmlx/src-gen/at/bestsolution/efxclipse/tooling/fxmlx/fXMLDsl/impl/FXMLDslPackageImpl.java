@@ -14,6 +14,7 @@ import at.bestsolution.efxclipse.tooling.fxmlx.fXMLDsl.FXMLDslFactory;
 import at.bestsolution.efxclipse.tooling.fxmlx.fXMLDsl.FXMLDslPackage;
 import at.bestsolution.efxclipse.tooling.fxmlx.fXMLDsl.PCData;
 import at.bestsolution.efxclipse.tooling.fxmlx.fXMLDsl.ProcessingInstruction;
+import at.bestsolution.efxclipse.tooling.fxmlx.fXMLDsl.QualifiedNameWithWildCard;
 import at.bestsolution.efxclipse.tooling.fxmlx.fXMLDsl.XMLDec;
 
 import org.eclipse.emf.ecore.EAttribute;
@@ -86,6 +87,13 @@ public class FXMLDslPackageImpl extends EPackageImpl implements FXMLDslPackage
    * @generated
    */
   private EClass attributePropertyDefinitionEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass qualifiedNameWithWildCardEClass = null;
 
   /**
    * Creates an instance of the model <b>Package</b>, registered with
@@ -235,9 +243,9 @@ public class FXMLDslPackageImpl extends EPackageImpl implements FXMLDslPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getProcessingInstruction_ImportedNamespace()
+  public EReference getProcessingInstruction_ImportedNamespace()
   {
-    return (EAttribute)processingInstructionEClass.getEStructuralFeatures().get(1);
+    return (EReference)processingInstructionEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -415,6 +423,26 @@ public class FXMLDslPackageImpl extends EPackageImpl implements FXMLDslPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  public EClass getQualifiedNameWithWildCard()
+  {
+    return qualifiedNameWithWildCardEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getQualifiedNameWithWildCard_Value()
+  {
+    return (EAttribute)qualifiedNameWithWildCardEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public FXMLDslFactory getFXMLDslFactory()
   {
     return (FXMLDslFactory)getEFactoryInstance();
@@ -450,7 +478,7 @@ public class FXMLDslPackageImpl extends EPackageImpl implements FXMLDslPackage
 
     processingInstructionEClass = createEClass(PROCESSING_INSTRUCTION);
     createEAttribute(processingInstructionEClass, PROCESSING_INSTRUCTION__TYPE);
-    createEAttribute(processingInstructionEClass, PROCESSING_INSTRUCTION__IMPORTED_NAMESPACE);
+    createEReference(processingInstructionEClass, PROCESSING_INSTRUCTION__IMPORTED_NAMESPACE);
 
     elementDefinitionEClass = createEClass(ELEMENT_DEFINITION);
     createEAttribute(elementDefinitionEClass, ELEMENT_DEFINITION__NAMESPACE);
@@ -473,6 +501,9 @@ public class FXMLDslPackageImpl extends EPackageImpl implements FXMLDslPackage
     createEAttribute(attributePropertyDefinitionEClass, ATTRIBUTE_PROPERTY_DEFINITION__NAMESPACE);
     createEAttribute(attributePropertyDefinitionEClass, ATTRIBUTE_PROPERTY_DEFINITION__NAME);
     createEAttribute(attributePropertyDefinitionEClass, ATTRIBUTE_PROPERTY_DEFINITION__VALUE);
+
+    qualifiedNameWithWildCardEClass = createEClass(QUALIFIED_NAME_WITH_WILD_CARD);
+    createEAttribute(qualifiedNameWithWildCardEClass, QUALIFIED_NAME_WITH_WILD_CARD__VALUE);
   }
 
   /**
@@ -518,7 +549,7 @@ public class FXMLDslPackageImpl extends EPackageImpl implements FXMLDslPackage
 
     initEClass(processingInstructionEClass, ProcessingInstruction.class, "ProcessingInstruction", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getProcessingInstruction_Type(), ecorePackage.getEString(), "type", null, 0, 1, ProcessingInstruction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getProcessingInstruction_ImportedNamespace(), ecorePackage.getEString(), "importedNamespace", null, 0, 1, ProcessingInstruction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getProcessingInstruction_ImportedNamespace(), this.getQualifiedNameWithWildCard(), null, "importedNamespace", null, 0, 1, ProcessingInstruction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(elementDefinitionEClass, ElementDefinition.class, "ElementDefinition", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getElementDefinition_Namespace(), ecorePackage.getEString(), "namespace", null, 0, 1, ElementDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -541,6 +572,9 @@ public class FXMLDslPackageImpl extends EPackageImpl implements FXMLDslPackage
     initEAttribute(getAttributePropertyDefinition_Namespace(), ecorePackage.getEString(), "namespace", null, 0, 1, AttributePropertyDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getAttributePropertyDefinition_Name(), ecorePackage.getEString(), "name", null, 0, 1, AttributePropertyDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getAttributePropertyDefinition_Value(), ecorePackage.getEString(), "value", null, 0, 1, AttributePropertyDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(qualifiedNameWithWildCardEClass, QualifiedNameWithWildCard.class, "QualifiedNameWithWildCard", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getQualifiedNameWithWildCard_Value(), ecorePackage.getEString(), "value", null, 0, 1, QualifiedNameWithWildCard.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     // Create resource
     createResource(eNS_URI);

@@ -18,7 +18,7 @@
     </genClasses>
     <genClasses ecoreClass="FXMLDsl.ecore#//ProcessingInstruction">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute FXMLDsl.ecore#//ProcessingInstruction/type"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute FXMLDsl.ecore#//ProcessingInstruction/importedNamespace"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference FXMLDsl.ecore#//ProcessingInstruction/importedNamespace"/>
     </genClasses>
     <genClasses ecoreClass="FXMLDsl.ecore#//ElementDefinition">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute FXMLDsl.ecore#//ElementDefinition/namespace"/>
@@ -41,6 +41,9 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute FXMLDsl.ecore#//AttributePropertyDefinition/namespace"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute FXMLDsl.ecore#//AttributePropertyDefinition/name"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute FXMLDsl.ecore#//AttributePropertyDefinition/value"/>
+    </genClasses>
+    <genClasses ecoreClass="FXMLDsl.ecore#//QualifiedNameWithWildCard">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute FXMLDsl.ecore#//QualifiedNameWithWildCard/value"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

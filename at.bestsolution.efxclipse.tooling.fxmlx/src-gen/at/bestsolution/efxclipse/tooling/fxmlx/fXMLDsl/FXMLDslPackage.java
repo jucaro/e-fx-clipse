@@ -154,7 +154,7 @@ public interface FXMLDslPackage extends EPackage
   int PROCESSING_INSTRUCTION__TYPE = 0;
 
   /**
-   * The feature id for the '<em><b>Imported Namespace</b></em>' attribute.
+   * The feature id for the '<em><b>Imported Namespace</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -410,6 +410,34 @@ public interface FXMLDslPackage extends EPackage
    */
   int ATTRIBUTE_PROPERTY_DEFINITION_FEATURE_COUNT = 3;
 
+  /**
+   * The meta object id for the '{@link at.bestsolution.efxclipse.tooling.fxmlx.fXMLDsl.impl.QualifiedNameWithWildCardImpl <em>Qualified Name With Wild Card</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see at.bestsolution.efxclipse.tooling.fxmlx.fXMLDsl.impl.QualifiedNameWithWildCardImpl
+   * @see at.bestsolution.efxclipse.tooling.fxmlx.fXMLDsl.impl.FXMLDslPackageImpl#getQualifiedNameWithWildCard()
+   * @generated
+   */
+  int QUALIFIED_NAME_WITH_WILD_CARD = 8;
+
+  /**
+   * The feature id for the '<em><b>Value</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int QUALIFIED_NAME_WITH_WILD_CARD__VALUE = 0;
+
+  /**
+   * The number of structural features of the '<em>Qualified Name With Wild Card</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int QUALIFIED_NAME_WITH_WILD_CARD_FEATURE_COUNT = 1;
+
 
   /**
    * Returns the meta object for class '{@link at.bestsolution.efxclipse.tooling.fxmlx.fXMLDsl.FXML <em>FXML</em>}'.
@@ -497,15 +525,15 @@ public interface FXMLDslPackage extends EPackage
   EAttribute getProcessingInstruction_Type();
 
   /**
-   * Returns the meta object for the attribute '{@link at.bestsolution.efxclipse.tooling.fxmlx.fXMLDsl.ProcessingInstruction#getImportedNamespace <em>Imported Namespace</em>}'.
+   * Returns the meta object for the containment reference '{@link at.bestsolution.efxclipse.tooling.fxmlx.fXMLDsl.ProcessingInstruction#getImportedNamespace <em>Imported Namespace</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Imported Namespace</em>'.
+   * @return the meta object for the containment reference '<em>Imported Namespace</em>'.
    * @see at.bestsolution.efxclipse.tooling.fxmlx.fXMLDsl.ProcessingInstruction#getImportedNamespace()
    * @see #getProcessingInstruction()
    * @generated
    */
-  EAttribute getProcessingInstruction_ImportedNamespace();
+  EReference getProcessingInstruction_ImportedNamespace();
 
   /**
    * Returns the meta object for class '{@link at.bestsolution.efxclipse.tooling.fxmlx.fXMLDsl.ElementDefinition <em>Element Definition</em>}'.
@@ -690,6 +718,27 @@ public interface FXMLDslPackage extends EPackage
   EAttribute getAttributePropertyDefinition_Value();
 
   /**
+   * Returns the meta object for class '{@link at.bestsolution.efxclipse.tooling.fxmlx.fXMLDsl.QualifiedNameWithWildCard <em>Qualified Name With Wild Card</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Qualified Name With Wild Card</em>'.
+   * @see at.bestsolution.efxclipse.tooling.fxmlx.fXMLDsl.QualifiedNameWithWildCard
+   * @generated
+   */
+  EClass getQualifiedNameWithWildCard();
+
+  /**
+   * Returns the meta object for the attribute '{@link at.bestsolution.efxclipse.tooling.fxmlx.fXMLDsl.QualifiedNameWithWildCard#getValue <em>Value</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Value</em>'.
+   * @see at.bestsolution.efxclipse.tooling.fxmlx.fXMLDsl.QualifiedNameWithWildCard#getValue()
+   * @see #getQualifiedNameWithWildCard()
+   * @generated
+   */
+  EAttribute getQualifiedNameWithWildCard_Value();
+
+  /**
    * Returns the factory that creates the instances of the model.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -783,12 +832,12 @@ public interface FXMLDslPackage extends EPackage
     EAttribute PROCESSING_INSTRUCTION__TYPE = eINSTANCE.getProcessingInstruction_Type();
 
     /**
-     * The meta object literal for the '<em><b>Imported Namespace</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>Imported Namespace</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute PROCESSING_INSTRUCTION__IMPORTED_NAMESPACE = eINSTANCE.getProcessingInstruction_ImportedNamespace();
+    EReference PROCESSING_INSTRUCTION__IMPORTED_NAMESPACE = eINSTANCE.getProcessingInstruction_ImportedNamespace();
 
     /**
      * The meta object literal for the '{@link at.bestsolution.efxclipse.tooling.fxmlx.fXMLDsl.impl.ElementDefinitionImpl <em>Element Definition</em>}' class.
@@ -935,6 +984,24 @@ public interface FXMLDslPackage extends EPackage
      * @generated
      */
     EAttribute ATTRIBUTE_PROPERTY_DEFINITION__VALUE = eINSTANCE.getAttributePropertyDefinition_Value();
+
+    /**
+     * The meta object literal for the '{@link at.bestsolution.efxclipse.tooling.fxmlx.fXMLDsl.impl.QualifiedNameWithWildCardImpl <em>Qualified Name With Wild Card</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see at.bestsolution.efxclipse.tooling.fxmlx.fXMLDsl.impl.QualifiedNameWithWildCardImpl
+     * @see at.bestsolution.efxclipse.tooling.fxmlx.fXMLDsl.impl.FXMLDslPackageImpl#getQualifiedNameWithWildCard()
+     * @generated
+     */
+    EClass QUALIFIED_NAME_WITH_WILD_CARD = eINSTANCE.getQualifiedNameWithWildCard();
+
+    /**
+     * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute QUALIFIED_NAME_WITH_WILD_CARD__VALUE = eINSTANCE.getQualifiedNameWithWildCard_Value();
 
   }
 

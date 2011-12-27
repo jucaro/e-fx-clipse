@@ -827,44 +827,47 @@ ruleQualifiedName returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleT
 
 
 // Entry rule entryRuleQualifiedNameWithWildCard
-entryRuleQualifiedNameWithWildCard returns [String current=null] 
+entryRuleQualifiedNameWithWildCard returns [EObject current=null] 
 	:
-	{ newCompositeNode(grammarAccess.getQualifiedNameWithWildCardRule()); } 
+	{ newCompositeNode(grammarAccess.getQualifiedNameWithWildCardRule()); }
 	 iv_ruleQualifiedNameWithWildCard=ruleQualifiedNameWithWildCard 
-	 { $current=$iv_ruleQualifiedNameWithWildCard.current.getText(); }  
+	 { $current=$iv_ruleQualifiedNameWithWildCard.current; } 
 	 EOF 
 ;
 
 // Rule QualifiedNameWithWildCard
-ruleQualifiedNameWithWildCard returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] 
+ruleQualifiedNameWithWildCard returns [EObject current=null] 
     @init { enterRule(); 
     }
     @after { leaveRule(); }:
+((
 (
-    { 
-        newCompositeNode(grammarAccess.getQualifiedNameWithWildCardAccess().getQualifiedNameParserRuleCall_0()); 
-    }
-    this_QualifiedName_0=ruleQualifiedName    {
-		$current.merge(this_QualifiedName_0);
-    }
+		{ 
+	        newCompositeNode(grammarAccess.getQualifiedNameWithWildCardAccess().getValueQualifiedNameParserRuleCall_0_0()); 
+	    }
+		lv_value_0_0=ruleQualifiedName		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getQualifiedNameWithWildCardRule());
+	        }
+       		set(
+       			$current, 
+       			"value",
+        		lv_value_0_0, 
+        		"QualifiedName");
+	        afterParserOrEnumRuleCall();
+	    }
 
-    { 
-        afterParserOrEnumRuleCall();
-    }
-(
-	kw='.' 
+)
+)(	otherlv_1='.' 
     {
-        $current.merge(kw);
-        newLeafNode(kw, grammarAccess.getQualifiedNameWithWildCardAccess().getFullStopKeyword_1_0()); 
+    	newLeafNode(otherlv_1, grammarAccess.getQualifiedNameWithWildCardAccess().getFullStopKeyword_1_0());
     }
-
-	kw='*' 
+	otherlv_2='*' 
     {
-        $current.merge(kw);
-        newLeafNode(kw, grammarAccess.getQualifiedNameWithWildCardAccess().getAsteriskKeyword_1_1()); 
+    	newLeafNode(otherlv_2, grammarAccess.getQualifiedNameWithWildCardAccess().getAsteriskKeyword_1_1());
     }
 )?)
-    ;
+;
 
 
 

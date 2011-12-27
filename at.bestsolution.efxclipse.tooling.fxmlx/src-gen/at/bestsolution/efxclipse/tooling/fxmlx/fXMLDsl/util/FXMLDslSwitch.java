@@ -134,6 +134,13 @@ public class FXMLDslSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case FXMLDslPackage.QUALIFIED_NAME_WITH_WILD_CARD:
+      {
+        QualifiedNameWithWildCard qualifiedNameWithWildCard = (QualifiedNameWithWildCard)theEObject;
+        T result = caseQualifiedNameWithWildCard(qualifiedNameWithWildCard);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       default: return defaultCase(theEObject);
     }
   }
@@ -262,6 +269,22 @@ public class FXMLDslSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseAttributePropertyDefinition(AttributePropertyDefinition object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Qualified Name With Wild Card</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Qualified Name With Wild Card</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseQualifiedNameWithWildCard(QualifiedNameWithWildCard object)
   {
     return null;
   }

@@ -8,10 +8,13 @@ package at.bestsolution.efxclipse.tooling.fxmlx.fXMLDsl.impl;
 
 import at.bestsolution.efxclipse.tooling.fxmlx.fXMLDsl.FXMLDslPackage;
 import at.bestsolution.efxclipse.tooling.fxmlx.fXMLDsl.ProcessingInstruction;
+import at.bestsolution.efxclipse.tooling.fxmlx.fXMLDsl.QualifiedNameWithWildCard;
 
 import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
@@ -53,24 +56,14 @@ public class ProcessingInstructionImpl extends MinimalEObjectImpl.Container impl
   protected String type = TYPE_EDEFAULT;
 
   /**
-   * The default value of the '{@link #getImportedNamespace() <em>Imported Namespace</em>}' attribute.
+   * The cached value of the '{@link #getImportedNamespace() <em>Imported Namespace</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @see #getImportedNamespace()
    * @generated
    * @ordered
    */
-  protected static final String IMPORTED_NAMESPACE_EDEFAULT = null;
-
-  /**
-   * The cached value of the '{@link #getImportedNamespace() <em>Imported Namespace</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getImportedNamespace()
-   * @generated
-   * @ordered
-   */
-  protected String importedNamespace = IMPORTED_NAMESPACE_EDEFAULT;
+  protected QualifiedNameWithWildCard importedNamespace;
 
   /**
    * <!-- begin-user-doc -->
@@ -121,7 +114,7 @@ public class ProcessingInstructionImpl extends MinimalEObjectImpl.Container impl
    * <!-- end-user-doc -->
    * @generated
    */
-  public String getImportedNamespace()
+  public QualifiedNameWithWildCard getImportedNamespace()
   {
     return importedNamespace;
   }
@@ -131,12 +124,53 @@ public class ProcessingInstructionImpl extends MinimalEObjectImpl.Container impl
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setImportedNamespace(String newImportedNamespace)
+  public NotificationChain basicSetImportedNamespace(QualifiedNameWithWildCard newImportedNamespace, NotificationChain msgs)
   {
-    String oldImportedNamespace = importedNamespace;
+    QualifiedNameWithWildCard oldImportedNamespace = importedNamespace;
     importedNamespace = newImportedNamespace;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, FXMLDslPackage.PROCESSING_INSTRUCTION__IMPORTED_NAMESPACE, oldImportedNamespace, importedNamespace));
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, FXMLDslPackage.PROCESSING_INSTRUCTION__IMPORTED_NAMESPACE, oldImportedNamespace, newImportedNamespace);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setImportedNamespace(QualifiedNameWithWildCard newImportedNamespace)
+  {
+    if (newImportedNamespace != importedNamespace)
+    {
+      NotificationChain msgs = null;
+      if (importedNamespace != null)
+        msgs = ((InternalEObject)importedNamespace).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - FXMLDslPackage.PROCESSING_INSTRUCTION__IMPORTED_NAMESPACE, null, msgs);
+      if (newImportedNamespace != null)
+        msgs = ((InternalEObject)newImportedNamespace).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - FXMLDslPackage.PROCESSING_INSTRUCTION__IMPORTED_NAMESPACE, null, msgs);
+      msgs = basicSetImportedNamespace(newImportedNamespace, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, FXMLDslPackage.PROCESSING_INSTRUCTION__IMPORTED_NAMESPACE, newImportedNamespace, newImportedNamespace));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
+  {
+    switch (featureID)
+    {
+      case FXMLDslPackage.PROCESSING_INSTRUCTION__IMPORTED_NAMESPACE:
+        return basicSetImportedNamespace(null, msgs);
+    }
+    return super.eInverseRemove(otherEnd, featureID, msgs);
   }
 
   /**
@@ -171,7 +205,7 @@ public class ProcessingInstructionImpl extends MinimalEObjectImpl.Container impl
         setType((String)newValue);
         return;
       case FXMLDslPackage.PROCESSING_INSTRUCTION__IMPORTED_NAMESPACE:
-        setImportedNamespace((String)newValue);
+        setImportedNamespace((QualifiedNameWithWildCard)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -191,7 +225,7 @@ public class ProcessingInstructionImpl extends MinimalEObjectImpl.Container impl
         setType(TYPE_EDEFAULT);
         return;
       case FXMLDslPackage.PROCESSING_INSTRUCTION__IMPORTED_NAMESPACE:
-        setImportedNamespace(IMPORTED_NAMESPACE_EDEFAULT);
+        setImportedNamespace((QualifiedNameWithWildCard)null);
         return;
     }
     super.eUnset(featureID);
@@ -210,7 +244,7 @@ public class ProcessingInstructionImpl extends MinimalEObjectImpl.Container impl
       case FXMLDslPackage.PROCESSING_INSTRUCTION__TYPE:
         return TYPE_EDEFAULT == null ? type != null : !TYPE_EDEFAULT.equals(type);
       case FXMLDslPackage.PROCESSING_INSTRUCTION__IMPORTED_NAMESPACE:
-        return IMPORTED_NAMESPACE_EDEFAULT == null ? importedNamespace != null : !IMPORTED_NAMESPACE_EDEFAULT.equals(importedNamespace);
+        return importedNamespace != null;
     }
     return super.eIsSet(featureID);
   }
@@ -228,8 +262,6 @@ public class ProcessingInstructionImpl extends MinimalEObjectImpl.Container impl
     StringBuffer result = new StringBuffer(super.toString());
     result.append(" (type: ");
     result.append(type);
-    result.append(", importedNamespace: ");
-    result.append(importedNamespace);
     result.append(')');
     return result.toString();
   }

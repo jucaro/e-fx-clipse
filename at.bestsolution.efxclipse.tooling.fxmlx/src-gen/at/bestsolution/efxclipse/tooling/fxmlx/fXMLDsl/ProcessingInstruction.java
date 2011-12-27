@@ -54,29 +54,29 @@ public interface ProcessingInstruction extends EObject
   void setType(String value);
 
   /**
-   * Returns the value of the '<em><b>Imported Namespace</b></em>' attribute.
+   * Returns the value of the '<em><b>Imported Namespace</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Imported Namespace</em>' attribute isn't clear,
+   * If the meaning of the '<em>Imported Namespace</em>' containment reference isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Imported Namespace</em>' attribute.
-   * @see #setImportedNamespace(String)
+   * @return the value of the '<em>Imported Namespace</em>' containment reference.
+   * @see #setImportedNamespace(QualifiedNameWithWildCard)
    * @see at.bestsolution.efxclipse.tooling.fxmlx.fXMLDsl.FXMLDslPackage#getProcessingInstruction_ImportedNamespace()
-   * @model
+   * @model containment="true"
    * @generated
    */
-  String getImportedNamespace();
+  QualifiedNameWithWildCard getImportedNamespace();
 
   /**
-   * Sets the value of the '{@link at.bestsolution.efxclipse.tooling.fxmlx.fXMLDsl.ProcessingInstruction#getImportedNamespace <em>Imported Namespace</em>}' attribute.
+   * Sets the value of the '{@link at.bestsolution.efxclipse.tooling.fxmlx.fXMLDsl.ProcessingInstruction#getImportedNamespace <em>Imported Namespace</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Imported Namespace</em>' attribute.
+   * @param value the new value of the '<em>Imported Namespace</em>' containment reference.
    * @see #getImportedNamespace()
    * @generated
    */
-  void setImportedNamespace(String value);
+  void setImportedNamespace(QualifiedNameWithWildCard value);
 
 } // ProcessingInstruction

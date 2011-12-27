@@ -119,6 +119,11 @@ public class FXMLDslAdapterFactory extends AdapterFactoryImpl
         return createAttributePropertyDefinitionAdapter();
       }
       @Override
+      public Adapter caseQualifiedNameWithWildCard(QualifiedNameWithWildCard object)
+      {
+        return createQualifiedNameWithWildCardAdapter();
+      }
+      @Override
       public Adapter defaultCase(EObject object)
       {
         return createEObjectAdapter();
@@ -256,6 +261,21 @@ public class FXMLDslAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createAttributePropertyDefinitionAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link at.bestsolution.efxclipse.tooling.fxmlx.fXMLDsl.QualifiedNameWithWildCard <em>Qualified Name With Wild Card</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see at.bestsolution.efxclipse.tooling.fxmlx.fXMLDsl.QualifiedNameWithWildCard
+   * @generated
+   */
+  public Adapter createQualifiedNameWithWildCardAdapter()
   {
     return null;
   }

@@ -397,7 +397,7 @@ public class FXMLDslProposalProvider extends AbstractFXMLDslProposalProvider {
 
 		for( ProcessingInstruction p : fxml.getProcessingInstructions() ) {
 			if( p.getType().equals("import") ) {
-				imports.add(p.getImportedNamespace());
+				imports.add(p.getImportedNamespace().getValue());
 			}
 		}
 		

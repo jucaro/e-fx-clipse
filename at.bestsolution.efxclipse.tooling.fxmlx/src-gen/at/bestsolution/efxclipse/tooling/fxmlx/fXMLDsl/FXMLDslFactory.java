@@ -99,6 +99,15 @@ public interface FXMLDslFactory extends EFactory
   AttributePropertyDefinition createAttributePropertyDefinition();
 
   /**
+   * Returns a new object of class '<em>Qualified Name With Wild Card</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Qualified Name With Wild Card</em>'.
+   * @generated
+   */
+  QualifiedNameWithWildCard createQualifiedNameWithWildCard();
+
+  /**
    * Returns the package supported by this factory.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->

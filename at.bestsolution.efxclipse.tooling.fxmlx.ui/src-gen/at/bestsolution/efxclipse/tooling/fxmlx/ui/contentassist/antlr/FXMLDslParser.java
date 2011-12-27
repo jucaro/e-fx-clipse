@@ -75,6 +75,7 @@ public class FXMLDslParser extends AbstractContentAssistParser {
 					put(grammarAccess.getAttributePropertyDefinitionAccess().getNamespaceAssignment_0_0(), "rule__AttributePropertyDefinition__NamespaceAssignment_0_0");
 					put(grammarAccess.getAttributePropertyDefinitionAccess().getNameAssignment_1(), "rule__AttributePropertyDefinition__NameAssignment_1");
 					put(grammarAccess.getAttributePropertyDefinitionAccess().getValueAssignment_3(), "rule__AttributePropertyDefinition__ValueAssignment_3");
+					put(grammarAccess.getQualifiedNameWithWildCardAccess().getValueAssignment_0(), "rule__QualifiedNameWithWildCard__ValueAssignment_0");
 				}
 			};
 		}
