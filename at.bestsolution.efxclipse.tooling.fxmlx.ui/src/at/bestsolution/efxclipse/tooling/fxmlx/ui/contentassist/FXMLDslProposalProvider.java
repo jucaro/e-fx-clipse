@@ -201,7 +201,15 @@ public class FXMLDslProposalProvider extends AbstractFXMLDslProposalProvider {
 						if( typeData != null ) {
 							for( Property jdtProp : typeData.properties ) {
 								if( jdtProp.name.equals(propname) ) {
-									methodType = jProject.findType(Signature.toString(jdtProp.method.getReturnType()));
+									if( jdtProp.method.getReturnType().contains("<") ) {
+										String[] t = Signature.getTypeArguments(jdtProp.method.getReturnType());
+										if( t.length > 0 ) {
+											methodType = jProject.findType(Signature.toString(t[0]));
+										}
+									} else {
+										methodType = jProject.findType(Signature.toString(jdtProp.method.getReturnType()));
+									}
+									break;
 								}
 							}
 						}

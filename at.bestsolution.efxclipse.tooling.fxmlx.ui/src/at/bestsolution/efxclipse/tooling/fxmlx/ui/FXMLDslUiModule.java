@@ -4,9 +4,11 @@
 package at.bestsolution.efxclipse.tooling.fxmlx.ui;
 
 import org.eclipse.ui.plugin.AbstractUIPlugin;
+import org.eclipse.xtext.common.types.xtext.ui.ITypesProposalProvider;
 import org.eclipse.xtext.ui.editor.syntaxcoloring.IHighlightingConfiguration;
 import org.eclipse.xtext.ui.editor.syntaxcoloring.ISemanticHighlightingCalculator;
 
+import at.bestsolution.efxclipse.tooling.fxmlx.ui.contentassist.ImportingTypesProposalProvider;
 import at.bestsolution.efxclipse.tooling.fxmlx.ui.labeling.FXMLDslHighlightingCalculator;
 import at.bestsolution.efxclipse.tooling.fxmlx.ui.labeling.FXMLDslHighlightingConfiguration;
 
@@ -25,5 +27,10 @@ public class FXMLDslUiModule extends at.bestsolution.efxclipse.tooling.fxmlx.ui.
 		super.configure(binder);
 		binder.bind(ISemanticHighlightingCalculator.class).to(FXMLDslHighlightingCalculator.class);
 		binder.bind(IHighlightingConfiguration.class).to(FXMLDslHighlightingConfiguration.class);
+	}
+	
+	@Override
+	public Class<? extends ITypesProposalProvider> bindITypesProposalProvider() {
+		return ImportingTypesProposalProvider.class;
 	}
 }

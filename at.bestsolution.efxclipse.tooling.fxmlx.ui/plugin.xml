@@ -278,5 +278,15 @@
             extensions="fxml">
     </provider>
   </extension>
+  <extension
+        point="org.eclipse.ui.newWizards">
+     <wizard
+           category="at.bestsolution.efxclipse.tooling"
+           class="at.bestsolution.efxclipse.tooling.fxmlx.ui.wizards.NewFXMLWizard"
+           icon="icons/application-xhtml+xml.png"
+           id="at.bestsolution.efxclipse.tooling.fxmlx.ui.new"
+           name="%wizard.name">
+     </wizard>
+  </extension>
 
 </plugin>
