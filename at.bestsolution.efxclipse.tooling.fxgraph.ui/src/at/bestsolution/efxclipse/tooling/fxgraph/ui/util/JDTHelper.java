@@ -58,15 +58,15 @@ public class JDTHelper {
 	}
 	
 	public static class TypeData {
-		public SortedSet<Property> properties = new TreeSet<Property>();
+		public SortedSet<JDTHelperProperty> properties = new TreeSet<JDTHelperProperty>();
 	}
 	
-	public static abstract class Property implements Comparable<Property> {
+	public static abstract class JDTHelperProperty implements Comparable<JDTHelperProperty> {
 		public final String name;
 		public final String owner;
 		public final IMethod method;
 
-		public Property(IMethod method, String name, String owner) {
+		public JDTHelperProperty(IMethod method, String name, String owner) {
 			this.method = method;
 			this.name = name;
 			this.owner = owner;
@@ -94,7 +94,7 @@ public class JDTHelper {
 				return false;
 			if (getClass() != obj.getClass())
 				return false;
-			Property other = (Property) obj;
+			JDTHelperProperty other = (JDTHelperProperty) obj;
 			if (name == null) {
 				if (other.name != null)
 					return false;
@@ -104,7 +104,7 @@ public class JDTHelper {
 		}
 
 		@Override
-		public int compareTo(Property arg0) {
+		public int compareTo(JDTHelperProperty arg0) {
 			return name.compareTo(arg0.name);
 		}
 	}
@@ -125,10 +125,10 @@ public class JDTHelper {
 		}
 	}
 	
-	public static abstract class SingleValueProperty extends Property {
+	public static abstract class JDTHelperSingleValueProperty extends JDTHelperProperty {
 		private String returnType;
 
-		public SingleValueProperty(IMethod method, String name, String owner,
+		public JDTHelperSingleValueProperty(IMethod method, String name, String owner,
 				String returnType) {
 			super(method, name, owner);
 			this.returnType = returnType;
@@ -146,7 +146,7 @@ public class JDTHelper {
 		}
 	}
 
-	public static abstract class PrimitivValueProperty extends SingleValueProperty {
+	public static abstract class PrimitivValueProperty extends JDTHelperSingleValueProperty {
 
 		public PrimitivValueProperty(IMethod method, String name, String owner,
 				String returnType) {
@@ -228,7 +228,7 @@ public class JDTHelper {
 		}
 	}
 
-	public static class ElementValueProperty extends SingleValueProperty {
+	public static class ElementValueProperty extends JDTHelperSingleValueProperty {
 
 		public ElementValueProperty(IMethod method, String name, String owner,
 				String returnType) {
@@ -241,7 +241,7 @@ public class JDTHelper {
 		}
 	}
 
-	public static class EventValueProperty extends Property {
+	public static class EventValueProperty extends JDTHelperProperty {
 		final String eventType;
 
 		public EventValueProperty(IMethod method, String name, String owner,
@@ -269,7 +269,7 @@ public class JDTHelper {
 		}
 	}
 
-	public static abstract class MultiValueProperty extends Property {
+	public static abstract class MultiValueProperty extends JDTHelperProperty {
 
 		public MultiValueProperty(IMethod method, String name, String owner) {
 			super(method, name, owner);
@@ -278,19 +278,33 @@ public class JDTHelper {
 
 	public static class ListValueProperty extends MultiValueProperty {
 		String elementType;
-
+		boolean isReadonly;
+		
 		public ListValueProperty(IMethod method, String name, String owner,
-				String elementType) {
+				String elementType, boolean isReadonly) {
 			super(method, name, owner);
 			this.elementType = elementType;
+			this.isReadonly = isReadonly;
 		}
 
 		@Override
 		public StyledString getDescription() {
-			StyledString description = new StyledString(name + " : ["
-					+ elementType + "]");
-			description.append(" - " + owner, StyledString.QUALIFIER_STYLER);
-			return description;
+			if( isReadonly ) {
+				StyledString description = new StyledString(name + " : ["
+						+ elementType + "]");
+				description.append(" - " + owner, StyledString.QUALIFIER_STYLER);
+				return description;
+			} else {
+				try {
+					StyledString description = new StyledString(name + " : " + Signature.getSignatureSimpleName(method.getReturnType()));
+					description.append(" - " + owner, StyledString.QUALIFIER_STYLER);
+					return description;
+				} catch (JavaModelException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+					return new StyledString(name + " : <UnknownType>" );
+				}
+			}
 		}
 
 		@Override
@@ -300,7 +314,12 @@ public class JDTHelper {
 
 		@Override
 		public List<Proposal> getProposals() {
-			return Collections.singletonList(new Proposal("[]"));
+			if( isReadonly ) {
+				return Collections.singletonList(new Proposal("[]"));
+			} else {
+				return Collections.emptyList();
+			}
+			
 		}
 	}
 
@@ -465,7 +484,7 @@ public class JDTHelper {
 
 							if (!propName.endsWith("Unmodifiable")) {
 								ListValueProperty p = new ListValueProperty(m,
-										propName, ownerName, listType);
+										propName, ownerName, listType, isReadonly);
 								d.properties.add(p);
 							}
 						} else if (isMap) {

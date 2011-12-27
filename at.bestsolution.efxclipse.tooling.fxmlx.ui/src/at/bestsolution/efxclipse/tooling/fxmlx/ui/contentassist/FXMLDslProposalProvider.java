@@ -34,7 +34,7 @@ import org.eclipse.xtext.ui.editor.contentassist.ContentAssistContext;
 import org.eclipse.xtext.ui.editor.contentassist.ICompletionProposalAcceptor;
 
 import at.bestsolution.efxclipse.tooling.fxgraph.ui.util.JDTHelper;
-import at.bestsolution.efxclipse.tooling.fxgraph.ui.util.JDTHelper.Property;
+import at.bestsolution.efxclipse.tooling.fxgraph.ui.util.JDTHelper.JDTHelperProperty;
 import at.bestsolution.efxclipse.tooling.fxgraph.ui.util.JDTHelper.TypeData;
 import at.bestsolution.efxclipse.tooling.fxmlx.fXMLDsl.ContainerElementDefinition;
 import at.bestsolution.efxclipse.tooling.fxmlx.fXMLDsl.EmptyElementDefinition;
@@ -93,8 +93,8 @@ public class FXMLDslProposalProvider extends AbstractFXMLDslProposalProvider {
 			if (type != null) {
 				TypeData typeData = helper.getTypeData(jProject, type);
 				if( typeData != null ) {
-					for( Property p : typeData.properties ) {
-						if( p instanceof at.bestsolution.efxclipse.tooling.fxgraph.ui.util.JDTHelper.SingleValueProperty ) {
+					for( JDTHelperProperty p : typeData.properties ) {
+						if( p instanceof at.bestsolution.efxclipse.tooling.fxgraph.ui.util.JDTHelper.JDTHelperSingleValueProperty ) {
 							ICompletionProposal cp = createCompletionProposal(p.name+"=\"\"", p.getDescription(), p.getIcon(), context);
 							if(cp instanceof ConfigurableCompletionProposal ) {
 								ConfigurableCompletionProposal ccp = (ConfigurableCompletionProposal) cp;
@@ -135,7 +135,7 @@ public class FXMLDslProposalProvider extends AbstractFXMLDslProposalProvider {
 		if (type != null) {
 			TypeData typeData = helper.getTypeData(jProject, type);
 			if( typeData != null ) {
-				for( Property p : typeData.properties ) {
+				for( JDTHelperProperty p : typeData.properties ) {
 					acceptor.accept(createCompletionProposal((context.getPrefix().startsWith("<") ? '<' + p.name : p.name) + "></"+p.name+">", p.getDescription(), p.getIcon(), getPriorityHelper().getDefaultPriority()+1, context.getPrefix(), context));
 				}
 			}
@@ -199,7 +199,7 @@ public class FXMLDslProposalProvider extends AbstractFXMLDslProposalProvider {
 					try {
 						TypeData typeData = helper.getTypeData(jProject, type);
 						if( typeData != null ) {
-							for( Property jdtProp : typeData.properties ) {
+							for( JDTHelperProperty jdtProp : typeData.properties ) {
 								if( jdtProp.name.equals(propname) ) {
 									if( jdtProp.method.getReturnType().contains("<") ) {
 										String[] t = Signature.getTypeArguments(jdtProp.method.getReturnType());

@@ -60,7 +60,7 @@ import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.ResourceValueProperty;
 import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.StaticValueProperty;
 import at.bestsolution.efxclipse.tooling.fxgraph.ui.internal.FXGraphActivator;
 import at.bestsolution.efxclipse.tooling.fxgraph.ui.util.JDTHelper;
-import at.bestsolution.efxclipse.tooling.fxgraph.ui.util.JDTHelper.Property;
+import at.bestsolution.efxclipse.tooling.fxgraph.ui.util.JDTHelper.JDTHelperProperty;
 import at.bestsolution.efxclipse.tooling.fxgraph.ui.util.JDTHelper.Proposal;
 import at.bestsolution.efxclipse.tooling.fxgraph.ui.util.JDTHelper.TypeData;
 import at.bestsolution.efxclipse.tooling.fxgraph.util.RelativeFileLocator;
@@ -200,7 +200,7 @@ public class FXGraphProposalProvider extends AbstractFXGraphProposalProvider {
 			IJavaProject jproject = getJavaProject(model);
 			TypeData data = getTypeData(jproject, element.getType());
 			// TODO Improve by checking assignable type
-			for (Property prop : data.properties) {
+			for (JDTHelperProperty prop : data.properties) {
 				acceptor.accept(createCompletionProposal(prop.name, prop.getDescription(), prop.getIcon(), context));
 			}
 		}
@@ -219,7 +219,7 @@ public class FXGraphProposalProvider extends AbstractFXGraphProposalProvider {
 							Element element = (Element) p.eContainer();
 							IJavaProject jproject = getJavaProject(model);
 							TypeData data = getTypeData(jproject, element.getType());
-							for (Property prop : data.properties) {
+							for (JDTHelperProperty prop : data.properties) {
 								if (p.getName().equals(prop.name)) {
 									List<IMethod> methods = findControllerJavaMethods(jproject, def.getController().getType(), prop.method);
 									for (IMethod me : methods) {
@@ -387,7 +387,7 @@ public class FXGraphProposalProvider extends AbstractFXGraphProposalProvider {
 			Element element = (Element) context.getCurrentModel();
 			TypeData data = getTypeData(getJavaProject(model), element.getType());
 			if (data != null) {
-				for (Property p : data.properties) {
+				for (JDTHelperProperty p : data.properties) {
 					ICompletionProposal proposal = createCompletionProposal(p.name + " : ", p.getDescription(), p.getIcon(), context);
 					if( proposal instanceof ConfigurableCompletionProposal ) {
 						ConfigurableCompletionProposal cProposal = (ConfigurableCompletionProposal) proposal;
@@ -407,7 +407,7 @@ public class FXGraphProposalProvider extends AbstractFXGraphProposalProvider {
 			Element element = (Element) ((at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.Property) context.getCurrentModel()).eContainer();
 			TypeData data = getTypeData(getJavaProject(model), element.getType());
 			if (data != null) {
-				for (Property p : data.properties) {
+				for (JDTHelperProperty p : data.properties) {
 					ICompletionProposal proposal = createCompletionProposal(p.name + " : ", p.getDescription(), p.getIcon(), context);
 					if( proposal instanceof ConfigurableCompletionProposal ) {
 						System.err.println("Setting hover");
@@ -437,7 +437,7 @@ public class FXGraphProposalProvider extends AbstractFXGraphProposalProvider {
 			TypeData data = getTypeData(getJavaProject(model), element.getType());
 
 			if (data != null) {
-				for (Property p : data.properties) {
+				for (JDTHelperProperty p : data.properties) {
 					if (p.name.equals(propertyElement.getName())) {
 						for (Proposal prop : p.getProposals()) {
 							acceptor.accept(createCompletionProposal(prop.value, prop.description, prop.icon, context));
@@ -462,7 +462,7 @@ public class FXGraphProposalProvider extends AbstractFXGraphProposalProvider {
 				TypeData typeData = helper.getTypeData(jp, jp.findType(e.getType().getQualifiedName()));
 				IType type = null;
 
-				for (Property jdtProp : typeData.properties) {
+				for (JDTHelperProperty jdtProp : typeData.properties) {
 					if (jdtProp.name.equals(p.getName())) {
 						type = jp.findType(Signature.toString(jdtProp.method.getReturnType()));
 						break;
@@ -489,7 +489,7 @@ public class FXGraphProposalProvider extends AbstractFXGraphProposalProvider {
 				TypeData typeData = helper.getTypeData(jp, jp.findType(e.getType().getQualifiedName()));
 				IType type = null;
 
-				for (Property jdtProp : typeData.properties) {
+				for (JDTHelperProperty jdtProp : typeData.properties) {
 					if (jdtProp.name.equals(p.getName())) {
 						String[] t = Signature.getTypeArguments(jdtProp.method.getReturnType());
 						if( t.length > 0 ) {
