@@ -10,9 +10,9 @@ component StringExample {
 	HBox {
 		children : [
 			ChoiceBox {
-				items : FXCollections createdby "observableArrayList" {
+				items : FXCollections createdby observableArrayList {
 					String("A"),
-					String("B"),
+					String("B"), 
 					String("D")
 				}
 			}
