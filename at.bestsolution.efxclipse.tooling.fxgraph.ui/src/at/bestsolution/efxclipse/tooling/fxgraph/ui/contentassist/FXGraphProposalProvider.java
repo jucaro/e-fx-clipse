@@ -56,6 +56,7 @@ import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.ComponentDefinition;
 import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.Element;
 import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.ListValueProperty;
 import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.Model;
+import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.Property;
 import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.ResourceValueProperty;
 import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.StaticValueProperty;
 import at.bestsolution.efxclipse.tooling.fxgraph.ui.internal.FXGraphActivator;
@@ -410,7 +411,6 @@ public class FXGraphProposalProvider extends AbstractFXGraphProposalProvider {
 				for (JDTHelperProperty p : data.properties) {
 					ICompletionProposal proposal = createCompletionProposal(p.name + " : ", p.getDescription(), p.getIcon(), context);
 					if( proposal instanceof ConfigurableCompletionProposal ) {
-						System.err.println("Setting hover");
 						ConfigurableCompletionProposal cProposal = (ConfigurableCompletionProposal) proposal;
 						cProposal.setAdditionalProposalInfo(element);
 						cProposal.setHover(new HoverImpl(p.method));
@@ -513,6 +513,65 @@ public class FXGraphProposalProvider extends AbstractFXGraphProposalProvider {
 		} else {
 			super.completeJvmParameterizedTypeReference_Type(model, assignment, context, acceptor);
 		}
+	}
+	
+	@Override
+	public void completeElement_Factory(EObject model, Assignment assignment, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
+		Element element = (Element) model;
+		
+		if( element.getType() != null ) {
+			Property property = (Property) element.eContainer();
+			Element parentElement = (Element) property.eContainer();
+			
+			IType targetType = null;
+			IJavaProject jProject = getJavaProject(model);
+			
+			for( JDTHelperProperty p : getTypeData(getJavaProject(model), parentElement.getType()).properties ) {
+				if( p.name.equals(property.getName()) ) {
+					try {
+						String rt = p.method.getReturnType();
+						String typeName = Signature.toString(Signature.getTypeErasure(rt));
+						targetType = jProject.findType(typeName);
+						break;
+					} catch (JavaModelException e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					}
+				}
+			}
+			
+			IType type = (IType) javaElementFinder.findElementFor(element.getType().getType());
+			if( type != null ) {
+				try {
+					for( IMethod m : type.getMethods() ) {
+						
+						if( Flags.isPublic(m.getFlags()) && Flags.isStatic(m.getFlags()) && ! m.getReturnType().equals("void") && m.getParameterNames().length == 0 ) {
+							String rt = m.getReturnType();
+							String typeName = Signature.toString(Signature.getTypeErasure(rt));
+							IType returnType = jProject.findType(typeName);
+							
+							if( returnType != null && targetType != null && canAssign(returnType, targetType) ) {
+								StyledString s = new StyledString(m.getElementName() + " : " + Signature.getSignatureSimpleName(m.getReturnType()) );
+								s.append(" - " + type.getElementName(), StyledString.QUALIFIER_STYLER);
+								
+								ICompletionProposal proposal = createCompletionProposal(m.getElementName(), s, JFaceResources.getImage(STAT_METHOD_PUBLIC_KEY), context);
+								if( proposal instanceof ConfigurableCompletionProposal ) {
+									ConfigurableCompletionProposal cProposal = (ConfigurableCompletionProposal) proposal;
+									cProposal.setAdditionalProposalInfo(element);
+									cProposal.setHover(new HoverImpl(m));
+								}
+								acceptor.accept(proposal);
+							}
+						}
+					}
+				} catch (JavaModelException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+			}
+		}
+		
+		super.completeElement_Factory(model, assignment, context, acceptor);
 	}
 	
 	static class HoverImpl implements IEObjectHover, ITextHoverExtension {
