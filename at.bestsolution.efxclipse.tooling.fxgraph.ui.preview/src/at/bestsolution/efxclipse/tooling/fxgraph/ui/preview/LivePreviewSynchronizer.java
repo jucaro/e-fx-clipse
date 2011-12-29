@@ -9,6 +9,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashSet;
 import java.util.List;
+import java.util.Properties;
 import java.util.Set;
 
 import org.eclipse.core.resources.IFile;
@@ -220,22 +221,22 @@ public class LivePreviewSynchronizer implements IPartListener, IXtextModelListen
 			if (rootObject instanceof Model) {
 				FXGraphGenerator generator = new FXGraphGenerator();
 				ComponentDefinition def = ((Model) rootObject).getComponentDef();
-				List<String> l;
-
+				
 
 				List<URL> extraPaths = new ArrayList<URL>();
+				List<String> cssFiles;
 
 				if (def != null) {
-					l = new ArrayList<String>(def.getPreviewCssFiles().size());
+					cssFiles = new ArrayList<String>(def.getPreviewCssFiles().size());
 					for (String cssFile : def.getPreviewCssFiles()) {
 						File absFile = RelativeFileLocator.locateFile(uri, cssFile);
 
 						if (absFile != null) {
 							try {
 								// Trick to make CSS-Reloaded
-								File absParent = absFile.getParentFile();
-								absParent = new File(absParent, System.currentTimeMillis() + "");
-								l.add(absFile.toURI().toURL().toExternalForm());
+//								File absParent = absFile.getParentFile();
+//								absParent = new File(absParent, System.currentTimeMillis() + "");
+								cssFiles.add(absFile.toURI().toURL().toExternalForm());
 							} catch (Throwable e) {
 								// TODO Auto-generated catch block
 								e.printStackTrace();
@@ -316,7 +317,7 @@ public class LivePreviewSynchronizer implements IPartListener, IXtextModelListen
 						extraPaths.addAll(0, calculateProjectClasspath(jp));
 					}
 				} else {
-					l = Collections.emptyList();
+					cssFiles = Collections.emptyList();
 				}
 
 				String resourcePropertiesFile = null;
@@ -328,7 +329,7 @@ public class LivePreviewSynchronizer implements IPartListener, IXtextModelListen
 				}
 				
 				return new ContentData(generator.doGeneratePreview(resource, (!preference.getBoolean(PREF_LOAD_CONTROLLER, false)) && (!pluginProject), true),
-						l, resourcePropertiesFile, extraPaths, relativeUrl);
+						cssFiles, resourcePropertiesFile, extraPaths, relativeUrl);
 			} else if( rootObject instanceof FXML ) {
 				List<URL> extraPaths = new ArrayList<URL>();
 				// If it is not a plugin project prepend the customized
@@ -364,7 +365,68 @@ public class LivePreviewSynchronizer implements IPartListener, IXtextModelListen
 					}
 				}
 				
-				return new ContentData(fxmlFile, new ArrayList<String>(), null, extraPaths, relativeUrl);
+				List<String> cssFiles = new ArrayList<String>();
+				String resourcePropertiesFile = null;
+				
+				IProject project = ResourcesPlugin.getWorkspace().getRoot().getProject(uri.segment(1));
+				IFile previewConfig = project.getFile(new Path("fxml-preview.properties"));
+				
+				if( previewConfig.exists() ) {
+					InputStream stream = null;
+					try {
+						Properties propFile = new Properties();
+						stream = previewConfig.getContents(true); 
+						propFile.load(stream);
+						stream.close();
+						if( propFile.getProperty("fxmlpreview.all.stylesheets") != null ) {
+							for( String f : propFile.getProperty("fxmlpreview.all.stylesheets").split(",") ) {
+								File absFile = RelativeFileLocator.locateFile(uri, f.trim());
+								if (absFile != null) {
+									cssFiles.add(absFile.toURI().toURL().toExternalForm());
+								}	
+							}
+						}
+						
+						String fileConfig = "fxmlpreview.file." + uri.lastSegment().substring(0,uri.lastSegment().length()-5);
+						if( propFile.getProperty(fileConfig+".stylesheets") != null ) {
+							for( String f : propFile.getProperty(fileConfig+".stylesheets").split(",") ) {
+								File absFile = RelativeFileLocator.locateFile(uri, f.trim());
+								if (absFile != null) {
+									cssFiles.add(absFile.toURI().toURL().toExternalForm());
+								}	
+							}
+						}
+						
+						
+						if( propFile.getProperty("fxmlpreview.all.messagefile") != null ) {
+							File f = RelativeFileLocator.locateFile(uri, propFile.getProperty("fxmlpreview.all.messagefile"));
+							if (f != null && f.exists()) {
+								resourcePropertiesFile = f.getAbsolutePath();
+							}
+						}
+						
+						System.err.println("KEY: " + fileConfig);
+						if( propFile.getProperty(fileConfig + ".messagefile") != null ) {
+							File f = RelativeFileLocator.locateFile(uri, propFile.getProperty(fileConfig+".messagefile").trim());
+							if (f != null && f.exists()) {
+								resourcePropertiesFile = f.getAbsolutePath();
+							}
+						}
+						
+					} catch(Throwable t) {
+						//TODO Log exception appropriately
+						t.printStackTrace();
+					} finally {
+						if( stream != null ) {
+							try {
+								stream.close();
+							} catch (IOException e) {
+							}
+						}
+					}
+				}
+				
+				return new ContentData(fxmlFile, cssFiles, resourcePropertiesFile, extraPaths, relativeUrl);
 			}
 		}
 
