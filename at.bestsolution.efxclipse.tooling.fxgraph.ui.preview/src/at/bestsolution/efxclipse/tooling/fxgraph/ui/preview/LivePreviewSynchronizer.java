@@ -405,7 +405,6 @@ public class LivePreviewSynchronizer implements IPartListener, IXtextModelListen
 							}
 						}
 						
-						System.err.println("KEY: " + fileConfig);
 						if( propFile.getProperty(fileConfig + ".messagefile") != null ) {
 							File f = RelativeFileLocator.locateFile(uri, propFile.getProperty(fileConfig+".messagefile").trim());
 							if (f != null && f.exists()) {

@@ -478,27 +478,27 @@ listener = new IPartListener() {
 			super(urls, parent);
 		}
 		
-		public URL getResource(String name) {
-			URL url = super.getResource(name);
-			System.err.println("Get resource is called: " + name + " => " + url);
-			// If the value is not found retry with removed leading '/'
-			if( url == null && name.startsWith("/") ) {
-				url = super.getResource(name.substring(1));
-			}
-			
-			return url;
-		}
-		
-		public URL findResource(String name) {
-			URL url = super.findResource(name);
-			
-			System.err.println("Find resource is called: " + name + " => " + url);
-			// If the value is not found retry with removed leading '/'
-			if( url == null && name.startsWith("/") ) {
-				url = super.findResource(name.substring(1));
-			}
-			
-			return url;
-		}
+//		public URL getResource(String name) {
+//			URL url = super.getResource(name);
+//			System.err.println("Get resource is called: " + name + " => " + url);
+//			// If the value is not found retry with removed leading '/'
+//			if( url == null && name.startsWith("/") ) {
+//				url = super.getResource(name.substring(1));
+//			}
+//			
+//			return url;
+//		}
+//		
+//		public URL findResource(String name) {
+//			URL url = super.findResource(name);
+//			
+//			System.err.println("Find resource is called: " + name + " => " + url);
+//			// If the value is not found retry with removed leading '/'
+//			if( url == null && name.startsWith("/") ) {
+//				url = super.findResource(name.substring(1));
+//			}
+//			
+//			return url;
+//		}
 	}
 }
