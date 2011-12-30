@@ -7,6 +7,7 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
@@ -21,6 +22,7 @@ import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.jdt.core.Flags;
 import org.eclipse.jdt.core.IAnnotation;
+import org.eclipse.jdt.core.IField;
 import org.eclipse.jdt.core.IJavaElement;
 import org.eclipse.jdt.core.IJavaProject;
 import org.eclipse.jdt.core.IMethod;
@@ -423,7 +425,50 @@ public class FXGraphProposalProvider extends AbstractFXGraphProposalProvider {
 				}
 			}
 		}
+		
 		super.completeProperty_Value(model, assignment, context, acceptor);
+	}
+	
+	@Override
+	public void completeStaticValueProperty_Value(EObject model, Assignment assignment, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
+		if( model instanceof StaticValueProperty ) {
+			StaticValueProperty p = (StaticValueProperty) model;
+			if( p.getType() != null && p.getName() != null ) {
+				IType t = (IType) javaElementFinder.findElementFor(p.getType().getType());
+				try {
+					String methodName = "set" + Character.toUpperCase(p.getName().charAt(0)) + p.getName().substring(1);
+					for( IMethod m : t.getMethods() ) {
+						if( Flags.isPublic(m.getFlags()) && Flags.isStatic(m.getFlags()) && m.getElementName().endsWith(methodName) && m.getParameterTypes().length == 2 ) {
+							String valueType = m.getParameterTypes()[1];
+							String fqType = Signature.toString(valueType);
+							IJavaProject jp = getJavaProject(model);
+							
+							IType type = jp.findType(fqType);
+							
+							if( type != null ) {
+								if( type.isEnum() ) {
+									for( IField c : type.getFields() ) {
+										if( Flags.isEnum(c.getFlags()) ) {
+											StyledString s = new StyledString(c.getElementName());
+											s.append(" : " + type.getElementName(),StyledString.QUALIFIER_STYLER);
+											acceptor.accept(createCompletionProposal("\""+c.getElementName()+"\"", s, JFaceResources.getImage(JDTHelper.ENUM_KEY), context));
+										}
+									}
+								}
+							}
+							
+							break;
+						}
+					}
+				} catch (JavaModelException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+			}
+			
+		}
+		
+		super.completeStaticValueProperty_Value(model, assignment, context, acceptor);
 	}
 
 	@Override

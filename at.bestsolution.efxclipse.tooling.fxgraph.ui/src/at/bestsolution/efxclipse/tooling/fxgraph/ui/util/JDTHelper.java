@@ -27,6 +27,7 @@ public class JDTHelper {
 	public static final String EVENT_KEY = FXGraphProposalProvider.class.getName() + ".EVENT";
 	public static final String LIST_KEY = FXGraphProposalProvider.class.getName() + ".LIST";
 	public static final String MAP_KEY = FXGraphProposalProvider.class.getName() + ".MAP";
+	public static final String ENUM_KEY = FXGraphProposalProvider.class.getName() + ".ENUM_KEY";
 
 	public static final String METHOD_PRIVATE_KEY = FXGraphProposalProvider.class.getName() + ".METHOD_PRIVATE";
 	public static final String METHOD_DEFAULT_KEY = FXGraphProposalProvider.class.getName() + ".METHOD_DEFAULT";
@@ -79,6 +80,9 @@ public class JDTHelper {
 		JFaceResources.getImageRegistry().put(LOCATION_KEY, FXGraphActivator.imageDescriptorFromPlugin("at.bestsolution.efxclipse.tooling.fxgraph.ui", "/icons/jar_desc_obj.gif"));
 		JFaceResources.getImageRegistry().put(DEFINES_KEY, FXGraphActivator.imageDescriptorFromPlugin("at.bestsolution.efxclipse.tooling.fxgraph.ui", "/icons/correction_cast.gif"));
 		JFaceResources.getImageRegistry().put(SCRIPTS_KEY, FXGraphActivator.imageDescriptorFromPlugin("at.bestsolution.efxclipse.tooling.fxgraph.ui", "/icons/classf_generate.gif"));
+		JFaceResources.getImageRegistry().put(ENUM_KEY, FXGraphActivator.imageDescriptorFromPlugin("at.bestsolution.efxclipse.tooling.fxgraph.ui", "/icons/enum_obj.gif"));
+		
+		
 	}
 
 	public static class TypeData {
