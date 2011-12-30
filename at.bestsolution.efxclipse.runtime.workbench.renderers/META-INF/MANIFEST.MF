@@ -2,7 +2,7 @@ Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: %Bundle-Name
 Bundle-SymbolicName: at.bestsolution.efxclipse.runtime.workbench.renderers
-Bundle-Version: 0.0.9.qualifier
+Bundle-Version: 0.0.10.qualifier
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Bundle-Vendor: %Bundle-Vendor
 Require-Bundle: at.bestsolution.efxclipse.runtime.workbench,

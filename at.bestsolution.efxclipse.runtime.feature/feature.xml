@@ -2,7 +2,7 @@
 <feature
       id="at.bestsolution.efxclipse.runtime.feature"
       label="FX Runtime"
-      version="0.0.9.qualifier"
+      version="0.0.10.qualifier"
       provider-name="BestSolution.at">
 
    <description url="https://github.com/tomsontom/e-fx-clipse/wiki">
