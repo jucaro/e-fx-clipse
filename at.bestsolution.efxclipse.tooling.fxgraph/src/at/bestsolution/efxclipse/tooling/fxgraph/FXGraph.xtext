@@ -14,7 +14,7 @@ PackageDeclaration:
 ;
 
 ComponentDefinition:
-	'component' name=ValidID ('controlledby' controller=JvmTypeReference)? ('styledwith' '[' previewCssFiles+=STRING (',' previewCssFiles+=STRING)* ']')? ( 'resourcefile' previewResourceBundle=STRING )? ( 'extraClasspath' '[' previewClasspathEntries+=STRING (',' previewClasspathEntries+=STRING)* ']')? '{'
+	'component' name=ValidID ('controlledby' controller=JvmTypeReference)? ('styledwith' (previewCssFiles+=STRING | ('[' previewCssFiles+=STRING (',' previewCssFiles+=STRING)* ']')))? ( 'resourcefile' previewResourceBundle=STRING )? ( 'extraClasspath' '[' previewClasspathEntries+=STRING (',' previewClasspathEntries+=STRING)* ']')? '{'
 		(scripts+=Script)?
 		(defines+=Define (',' defines+=Define)*)?
 		rootNode=Element

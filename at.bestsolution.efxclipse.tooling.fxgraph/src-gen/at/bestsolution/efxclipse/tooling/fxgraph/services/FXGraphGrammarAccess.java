@@ -90,14 +90,18 @@ public class FXGraphGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cControllerJvmTypeReferenceParserRuleCall_2_1_0 = (RuleCall)cControllerAssignment_2_1.eContents().get(0);
 		private final Group cGroup_3 = (Group)cGroup.eContents().get(3);
 		private final Keyword cStyledwithKeyword_3_0 = (Keyword)cGroup_3.eContents().get(0);
-		private final Keyword cLeftSquareBracketKeyword_3_1 = (Keyword)cGroup_3.eContents().get(1);
-		private final Assignment cPreviewCssFilesAssignment_3_2 = (Assignment)cGroup_3.eContents().get(2);
-		private final RuleCall cPreviewCssFilesSTRINGTerminalRuleCall_3_2_0 = (RuleCall)cPreviewCssFilesAssignment_3_2.eContents().get(0);
-		private final Group cGroup_3_3 = (Group)cGroup_3.eContents().get(3);
-		private final Keyword cCommaKeyword_3_3_0 = (Keyword)cGroup_3_3.eContents().get(0);
-		private final Assignment cPreviewCssFilesAssignment_3_3_1 = (Assignment)cGroup_3_3.eContents().get(1);
-		private final RuleCall cPreviewCssFilesSTRINGTerminalRuleCall_3_3_1_0 = (RuleCall)cPreviewCssFilesAssignment_3_3_1.eContents().get(0);
-		private final Keyword cRightSquareBracketKeyword_3_4 = (Keyword)cGroup_3.eContents().get(4);
+		private final Alternatives cAlternatives_3_1 = (Alternatives)cGroup_3.eContents().get(1);
+		private final Assignment cPreviewCssFilesAssignment_3_1_0 = (Assignment)cAlternatives_3_1.eContents().get(0);
+		private final RuleCall cPreviewCssFilesSTRINGTerminalRuleCall_3_1_0_0 = (RuleCall)cPreviewCssFilesAssignment_3_1_0.eContents().get(0);
+		private final Group cGroup_3_1_1 = (Group)cAlternatives_3_1.eContents().get(1);
+		private final Keyword cLeftSquareBracketKeyword_3_1_1_0 = (Keyword)cGroup_3_1_1.eContents().get(0);
+		private final Assignment cPreviewCssFilesAssignment_3_1_1_1 = (Assignment)cGroup_3_1_1.eContents().get(1);
+		private final RuleCall cPreviewCssFilesSTRINGTerminalRuleCall_3_1_1_1_0 = (RuleCall)cPreviewCssFilesAssignment_3_1_1_1.eContents().get(0);
+		private final Group cGroup_3_1_1_2 = (Group)cGroup_3_1_1.eContents().get(2);
+		private final Keyword cCommaKeyword_3_1_1_2_0 = (Keyword)cGroup_3_1_1_2.eContents().get(0);
+		private final Assignment cPreviewCssFilesAssignment_3_1_1_2_1 = (Assignment)cGroup_3_1_1_2.eContents().get(1);
+		private final RuleCall cPreviewCssFilesSTRINGTerminalRuleCall_3_1_1_2_1_0 = (RuleCall)cPreviewCssFilesAssignment_3_1_1_2_1.eContents().get(0);
+		private final Keyword cRightSquareBracketKeyword_3_1_1_3 = (Keyword)cGroup_3_1_1.eContents().get(3);
 		private final Group cGroup_4 = (Group)cGroup.eContents().get(4);
 		private final Keyword cResourcefileKeyword_4_0 = (Keyword)cGroup_4.eContents().get(0);
 		private final Assignment cPreviewResourceBundleAssignment_4_1 = (Assignment)cGroup_4.eContents().get(1);
@@ -127,16 +131,16 @@ public class FXGraphGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cRightCurlyBracketKeyword_10 = (Keyword)cGroup.eContents().get(10);
 		
 		//ComponentDefinition:
-		//	"component" name=ValidID ("controlledby" controller=JvmTypeReference)? ("styledwith" "[" previewCssFiles+=STRING (","
-		//	previewCssFiles+=STRING)* "]")? ("resourcefile" previewResourceBundle=STRING)? ("extraClasspath" "["
-		//	previewClasspathEntries+=STRING ("," previewClasspathEntries+=STRING)* "]")? "{" scripts+=Script? (defines+=Define
-		//	("," defines+=Define)*)? rootNode=Element "}";
+		//	"component" name=ValidID ("controlledby" controller=JvmTypeReference)? ("styledwith" (previewCssFiles+=STRING | "["
+		//	previewCssFiles+=STRING ("," previewCssFiles+=STRING)* "]"))? ("resourcefile" previewResourceBundle=STRING)?
+		//	("extraClasspath" "[" previewClasspathEntries+=STRING ("," previewClasspathEntries+=STRING)* "]")? "{"
+		//	scripts+=Script? (defines+=Define ("," defines+=Define)*)? rootNode=Element "}";
 		public ParserRule getRule() { return rule; }
 
-		//"component" name=ValidID ("controlledby" controller=JvmTypeReference)? ("styledwith" "[" previewCssFiles+=STRING (","
-		//previewCssFiles+=STRING)* "]")? ("resourcefile" previewResourceBundle=STRING)? ("extraClasspath" "["
-		//previewClasspathEntries+=STRING ("," previewClasspathEntries+=STRING)* "]")? "{" scripts+=Script? (defines+=Define (","
-		//defines+=Define)*)? rootNode=Element "}"
+		//"component" name=ValidID ("controlledby" controller=JvmTypeReference)? ("styledwith" (previewCssFiles+=STRING | "["
+		//previewCssFiles+=STRING ("," previewCssFiles+=STRING)* "]"))? ("resourcefile" previewResourceBundle=STRING)?
+		//("extraClasspath" "[" previewClasspathEntries+=STRING ("," previewClasspathEntries+=STRING)* "]")? "{" scripts+=Script?
+		//(defines+=Define ("," defines+=Define)*)? rootNode=Element "}"
 		public Group getGroup() { return cGroup; }
 
 		//"component"
@@ -160,35 +164,47 @@ public class FXGraphGrammarAccess extends AbstractGrammarElementFinder {
 		//JvmTypeReference
 		public RuleCall getControllerJvmTypeReferenceParserRuleCall_2_1_0() { return cControllerJvmTypeReferenceParserRuleCall_2_1_0; }
 
-		//("styledwith" "[" previewCssFiles+=STRING ("," previewCssFiles+=STRING)* "]")?
+		//("styledwith" (previewCssFiles+=STRING | "[" previewCssFiles+=STRING ("," previewCssFiles+=STRING)* "]"))?
 		public Group getGroup_3() { return cGroup_3; }
 
 		//"styledwith"
 		public Keyword getStyledwithKeyword_3_0() { return cStyledwithKeyword_3_0; }
 
-		//"["
-		public Keyword getLeftSquareBracketKeyword_3_1() { return cLeftSquareBracketKeyword_3_1; }
+		//previewCssFiles+=STRING | "[" previewCssFiles+=STRING ("," previewCssFiles+=STRING)* "]"
+		public Alternatives getAlternatives_3_1() { return cAlternatives_3_1; }
 
 		//previewCssFiles+=STRING
-		public Assignment getPreviewCssFilesAssignment_3_2() { return cPreviewCssFilesAssignment_3_2; }
+		public Assignment getPreviewCssFilesAssignment_3_1_0() { return cPreviewCssFilesAssignment_3_1_0; }
 
 		//STRING
-		public RuleCall getPreviewCssFilesSTRINGTerminalRuleCall_3_2_0() { return cPreviewCssFilesSTRINGTerminalRuleCall_3_2_0; }
+		public RuleCall getPreviewCssFilesSTRINGTerminalRuleCall_3_1_0_0() { return cPreviewCssFilesSTRINGTerminalRuleCall_3_1_0_0; }
+
+		//"[" previewCssFiles+=STRING ("," previewCssFiles+=STRING)* "]"
+		public Group getGroup_3_1_1() { return cGroup_3_1_1; }
+
+		//"["
+		public Keyword getLeftSquareBracketKeyword_3_1_1_0() { return cLeftSquareBracketKeyword_3_1_1_0; }
+
+		//previewCssFiles+=STRING
+		public Assignment getPreviewCssFilesAssignment_3_1_1_1() { return cPreviewCssFilesAssignment_3_1_1_1; }
+
+		//STRING
+		public RuleCall getPreviewCssFilesSTRINGTerminalRuleCall_3_1_1_1_0() { return cPreviewCssFilesSTRINGTerminalRuleCall_3_1_1_1_0; }
 
 		//("," previewCssFiles+=STRING)*
-		public Group getGroup_3_3() { return cGroup_3_3; }
+		public Group getGroup_3_1_1_2() { return cGroup_3_1_1_2; }
 
 		//","
-		public Keyword getCommaKeyword_3_3_0() { return cCommaKeyword_3_3_0; }
+		public Keyword getCommaKeyword_3_1_1_2_0() { return cCommaKeyword_3_1_1_2_0; }
 
 		//previewCssFiles+=STRING
-		public Assignment getPreviewCssFilesAssignment_3_3_1() { return cPreviewCssFilesAssignment_3_3_1; }
+		public Assignment getPreviewCssFilesAssignment_3_1_1_2_1() { return cPreviewCssFilesAssignment_3_1_1_2_1; }
 
 		//STRING
-		public RuleCall getPreviewCssFilesSTRINGTerminalRuleCall_3_3_1_0() { return cPreviewCssFilesSTRINGTerminalRuleCall_3_3_1_0; }
+		public RuleCall getPreviewCssFilesSTRINGTerminalRuleCall_3_1_1_2_1_0() { return cPreviewCssFilesSTRINGTerminalRuleCall_3_1_1_2_1_0; }
 
 		//"]"
-		public Keyword getRightSquareBracketKeyword_3_4() { return cRightSquareBracketKeyword_3_4; }
+		public Keyword getRightSquareBracketKeyword_3_1_1_3() { return cRightSquareBracketKeyword_3_1_1_3; }
 
 		//("resourcefile" previewResourceBundle=STRING)?
 		public Group getGroup_4() { return cGroup_4; }
@@ -1316,10 +1332,10 @@ public class FXGraphGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//ComponentDefinition:
-	//	"component" name=ValidID ("controlledby" controller=JvmTypeReference)? ("styledwith" "[" previewCssFiles+=STRING (","
-	//	previewCssFiles+=STRING)* "]")? ("resourcefile" previewResourceBundle=STRING)? ("extraClasspath" "["
-	//	previewClasspathEntries+=STRING ("," previewClasspathEntries+=STRING)* "]")? "{" scripts+=Script? (defines+=Define
-	//	("," defines+=Define)*)? rootNode=Element "}";
+	//	"component" name=ValidID ("controlledby" controller=JvmTypeReference)? ("styledwith" (previewCssFiles+=STRING | "["
+	//	previewCssFiles+=STRING ("," previewCssFiles+=STRING)* "]"))? ("resourcefile" previewResourceBundle=STRING)?
+	//	("extraClasspath" "[" previewClasspathEntries+=STRING ("," previewClasspathEntries+=STRING)* "]")? "{"
+	//	scripts+=Script? (defines+=Define ("," defines+=Define)*)? rootNode=Element "}";
 	public ComponentDefinitionElements getComponentDefinitionAccess() {
 		return (pComponentDefinition != null) ? pComponentDefinition : (pComponentDefinition = new ComponentDefinitionElements());
 	}
