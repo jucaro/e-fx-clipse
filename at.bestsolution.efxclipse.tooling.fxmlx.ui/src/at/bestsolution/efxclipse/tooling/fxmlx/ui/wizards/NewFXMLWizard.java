@@ -1,14 +1,17 @@
 package at.bestsolution.efxclipse.tooling.fxmlx.ui.wizards;
 
 import java.io.IOException;
+import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
 import org.eclipse.core.resources.IFile;
 import org.eclipse.core.resources.IFolder;
+import org.eclipse.core.resources.IProject;
 import org.eclipse.core.resources.IResource;
 import org.eclipse.core.resources.ResourcesPlugin;
+import org.eclipse.core.runtime.CoreException;
 import org.eclipse.jface.dialogs.DialogSettings;
 import org.eclipse.jface.dialogs.IDialogSettings;
 
@@ -51,6 +54,25 @@ public class NewFXMLWizard extends AbstractNewJDTElementWizard<FXMLElement> {
 		boolean finish = super.performFinish();
 		
 		if( finish && getDialogSettings() != null ) {
+			IFile propFile = getPropertiesFile();
+			if( ! propFile.exists() ) {
+				InputStream in = getClass().getClassLoader().getResourceAsStream("tpl_fxml-preview.properties");
+				if( in != null ) {
+					try {
+						propFile.create(in, true, null);
+					} catch (CoreException e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					}
+					try {
+						in.close();
+					} catch (IOException e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					}
+				}
+			}
+			
 			IDialogSettings settings = getDialogSettings();
 			String typeName = getDomainClass().getRootElement().getFullyQualifiedName();
 			
@@ -96,5 +118,10 @@ public class NewFXMLWizard extends AbstractNewJDTElementWizard<FXMLElement> {
 			IFolder p = (IFolder) getDomainClass().getFragmentRoot().getResource();
 			return p.getFile(fxgraph);
 		}
+	}
+	
+	private IFile getPropertiesFile() {
+		IProject p = (IProject) getDomainClass().getFragmentRoot().getJavaProject().getResource();
+		return p.getFile("fxml-preview.properties");
 	}
 }
