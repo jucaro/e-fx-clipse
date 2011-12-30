@@ -2,6 +2,8 @@ package at.bestsolution.efxclipse.runtime.osgi.fxloader;
 
 import java.io.File;
 import java.io.IOException;
+import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.Method;
 import java.net.URL;
 import java.net.URLClassLoader;
 import java.net.URLConnection;
@@ -24,9 +26,12 @@ import org.eclipse.osgi.framework.adaptor.BundleProtectionDomain;
 import org.eclipse.osgi.framework.adaptor.ClassLoaderDelegate;
 import org.eclipse.osgi.framework.log.FrameworkLog;
 import org.eclipse.osgi.internal.baseadaptor.DefaultClassLoader;
+import org.eclipse.osgi.service.datalocation.Location;
 import org.osgi.framework.Bundle;
 import org.osgi.framework.BundleContext;
 import org.osgi.framework.BundleException;
+import org.osgi.framework.Filter;
+import org.osgi.framework.InvalidSyntaxException;
 import org.osgi.framework.Version;
 import org.osgi.framework.wiring.BundleWiring;
 import org.osgi.service.packageadmin.PackageAdmin;
@@ -36,6 +41,10 @@ import org.osgi.util.tracker.ServiceTracker;
 public class FXClassLoader implements ClassLoadingHook, AdaptorHook {
 
 	private ServiceTracker<PackageAdmin,PackageAdmin> paTracker;
+	
+	private ServiceTracker instanceLocationTracker = null;
+	
+	private ServiceTracker preferenceServiceTracker = null;
 
 	@Override
 	public byte[] processClass(String name, byte[] classbytes,
@@ -67,8 +76,7 @@ public class FXClassLoader implements ClassLoadingHook, AdaptorHook {
 			BaseData data, String[] bundleclasspath) {
 		if( data.getBundle().getSymbolicName().equals("at.bestsolution.efxclipse.runtime.javafx") ) {
 			try {
-				
-				return new MyBundleClassLoader(getPackageAdmin(), parent, delegate, domain, data, bundleclasspath);
+				return new MyBundleClassLoader(getPackageAdmin(), getPreferencesService(), parent, delegate, domain, data, bundleclasspath);
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
@@ -79,13 +87,73 @@ public class FXClassLoader implements ClassLoadingHook, AdaptorHook {
 	@Override
 	public void initializedClassLoader(BaseClassLoader baseClassLoader,
 			BaseData data) {
-		System.err.println();
+	}
+	
+	static class ReflectivePreferenceService {
+		private ServiceTracker<?, ?> tracker;
+		
+		private static final String SCOPE = "instance";
+		
+		public ReflectivePreferenceService(ServiceTracker<?, ?> tracker) {
+			this.tracker = tracker;
+		}
+		
+		public String getInstanceValue(String qualifier, String key, String defaultValue) {
+//			IEclipsePreferences pref = IPreferencesService.getDefault().getRootNode().node(getName()).node(qualifier)
+//			pref.get(key,defaultValue)
+			
+			
+			try {
+				Object preferenceService = tracker.getService();
+				if( preferenceService != null ) {
+					Method m = preferenceService.getClass().getMethod("getRootNode");
+					Object rootNode = m.invoke(preferenceService);
+					if( rootNode == null ) {
+						return null;
+					}
+					m = rootNode.getClass().getMethod("node", String.class);
+					Object instanceNode = m.invoke(rootNode, SCOPE);
+					
+					if( instanceNode == null ) {
+						return null;
+					}
+					m = instanceNode.getClass().getMethod("node", String.class);
+					Object pref = m.invoke(instanceNode, qualifier);
+					
+					if( pref == null ) {
+						return null;
+					}
+					m = pref.getClass().getMethod("get", String.class, String.class);
+					return (String) m.invoke(pref, key, defaultValue);
+				}
+			} catch (SecurityException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			} catch (NoSuchMethodException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			} catch (IllegalArgumentException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			} catch (IllegalAccessException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			} catch (InvocationTargetException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			} catch (Throwable e) {
+				// TODO: handle exception
+				e.printStackTrace();
+			}
+			
+			return null;
+		}
 	}
 
 	static class MyBundleClassLoader extends DefaultClassLoader {
 		private URLClassLoader fxClassLoader;
 		
-		public MyBundleClassLoader(PackageAdmin admin, ClassLoader parent,
+		public MyBundleClassLoader(PackageAdmin admin, ReflectivePreferenceService prefService, ClassLoader parent,
 				ClassLoaderDelegate delegate, ProtectionDomain domain,
 				BaseData bundledata, String[] classpath) throws Exception {
 			super(parent, delegate, domain, bundledata, classpath);
@@ -108,12 +176,43 @@ public class FXClassLoader implements ClassLoadingHook, AdaptorHook {
 				}
 			}
 			
-			fxClassLoader = createClassloader(parent, bundledata);
+			fxClassLoader = createClassloader(parent, prefService, bundledata);
 		}
 		
 		
-		private static URLClassLoader createClassloader(ClassLoader parent, BaseData bundledata) throws Exception {
+		private static URLClassLoader createClassloader(ClassLoader parent, ReflectivePreferenceService prefService, BaseData bundledata) throws Exception {
 			String osname = System.getProperty("os.name").toLowerCase();
+			
+			{
+				String pluginId = "at.bestsolution.efxclipse.tooling.jdt.core";
+				String key = pluginId + ".javafx.dirlocation";
+				
+				String installPath = prefService.getInstanceValue(pluginId, key, null);
+				if( installPath != null ) {
+					File f = new File(new File(new File(installPath,"rt"),"lib"),"jfxrt.jar");
+					if( f.exists() ) {
+						URL url = f.getCanonicalFile().toURI().toURL();
+						return new URLClassLoader(new URL[] {url}, parent);
+					} else {
+						throw new IllegalStateException("Could not locate rt/lib/jfxrt.jar in the installation path '"+installPath+"'");
+					}
+				}
+			}
+			
+			if( System.getProperty("javafx.home") != null ) {
+				String installPath = System.getProperty("javafx.home");
+				if( installPath != null ) {
+					File f = new File(installPath + "/lib/jfxrt.jar");
+					if( f.exists() ) {
+						URL url = f.getCanonicalFile().toURI().toURL();
+						return new URLClassLoader(new URL[] {url}, parent);
+					} else {
+						throw new IllegalStateException("Could not locate lib/jfxrt.jar in the installation path '"+installPath+"'");
+					}
+				} else {
+					throw new IllegalStateException("Could not find a JavaFX 2.0 Installation. Environment variable JAVAFX_HOME is not set.");
+				}
+			}
 			
 			if( osname.indexOf("mac") != -1 ) {
 				String installPath = System.getenv().get("JAVAFX_HOME");
@@ -234,12 +333,55 @@ public class FXClassLoader implements ClassLoadingHook, AdaptorHook {
 	public void frameworkStart(BundleContext context) throws BundleException {
 		paTracker = new ServiceTracker<PackageAdmin,PackageAdmin>(context, PackageAdmin.class.getName(), null);
 		paTracker.open();
+		
+		try {
+			Filter filter = context.createFilter(Location.INSTANCE_FILTER);
+			instanceLocationTracker = new ServiceTracker(context, filter, null);
+			instanceLocationTracker.open();
+		} catch (InvalidSyntaxException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		preferenceServiceTracker = new ServiceTracker(context, "org.eclipse.core.runtime.preferences.IPreferencesService", null);
+		preferenceServiceTracker.open();
 	}
 
 	@Override
 	public void frameworkStop(BundleContext context) throws BundleException {
 		paTracker.close();
 		paTracker = null;
+		
+		instanceLocationTracker.close();
+		instanceLocationTracker = null;
+		
+		preferenceServiceTracker.close();
+		preferenceServiceTracker = null;
+	}
+	
+	public Bundle ensureStarted(String symbolicName) {
+		Bundle[] bundles = getPackageAdmin().getBundles(symbolicName, null);
+		
+		if (bundles != null) {
+			for (int i = 0; i < bundles.length; i++) {
+				if ((bundles[i].getState() & Bundle.INSTALLED ) == 0) {
+					// Ensure the bundle is started else we are unable to extract the
+					// classloader
+					if( (bundles[i].getState() & Bundle.ACTIVE) != 0 ) {
+						try {
+							bundles[i].start();
+						} catch (BundleException e) {
+							// TODO Auto-generated catch block
+							e.printStackTrace();
+							return null;
+						}
+					}
+					return bundles[i];
+				}
+			}
+		}
+		
+		return null;
 	}
 	
 	private PackageAdmin getPackageAdmin() {
@@ -247,6 +389,20 @@ public class FXClassLoader implements ClassLoadingHook, AdaptorHook {
 		if (tracker == null)
 			return null;
 		return tracker.getService();
+	}
+	
+	public Location getInstanceLocation() {
+		if (instanceLocationTracker != null)
+			return (Location) instanceLocationTracker.getService();
+		return null;
+	}
+	
+	public ReflectivePreferenceService getPreferencesService() {
+		if( preferenceServiceTracker != null ) {
+			ensureStarted("org.eclipse.equinox.preferences");
+			return new ReflectivePreferenceService(preferenceServiceTracker);
+		}
+		return null;
 	}
 
 	@Override
