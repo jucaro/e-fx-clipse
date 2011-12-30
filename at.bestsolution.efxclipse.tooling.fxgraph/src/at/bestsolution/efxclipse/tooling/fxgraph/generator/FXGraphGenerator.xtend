@@ -79,7 +79,7 @@ class FXGraphGenerator implements IGenerator {
 		try {
 			val projectRelativePath = calculateRelativePath(resource);
 			if( projectRelativePath != null ) {
-				return createContent(resource, projectRelativePath,skipController,skipIncludes).toString;
+				return createContent(resource, projectRelativePath,true,skipController,skipIncludes).toString;
 			}	
 		} catch(Exception e) {
 			
@@ -94,7 +94,7 @@ class FXGraphGenerator implements IGenerator {
 		
 			if( projectRelativePath != null ) {
 				val relativeOutPath = projectRelativePath.replaceFirst(".fxgraph$",".fxml");
-				fsa.generateFile(relativeOutPath, createContent(resource, projectRelativePath,false,false));
+				fsa.generateFile(relativeOutPath, createContent(resource, projectRelativePath,false, false,false));
 			}	
 		} catch(Exception e) {
 			
@@ -103,7 +103,7 @@ class FXGraphGenerator implements IGenerator {
 	}
 	
 	
-	def createContent(Resource resource, String projectRelativePath, boolean skipController, boolean skipIncludes) '''
+	def createContent(Resource resource, String projectRelativePath, boolean preview, boolean skipController, boolean skipIncludes) '''
 		«val importManager = new ImportManager(true)»
 		«val languageManager = new LanguageManager()»
 		<?xml version="1.0" encoding="UTF-8"?>
@@ -112,7 +112,7 @@ class FXGraphGenerator implements IGenerator {
 		-->
 		
 		«FOR rootElement : resource.contents.get(0).eContents.filter(typeof(ComponentDefinition))»
-		«val body = componentDefinition(rootElement, importManager, languageManager, skipController, skipIncludes)»
+		«val body = componentDefinition(rootElement, importManager, languageManager, preview, skipController, skipIncludes)»
 		<?import java.lang.*?>
 		«FOR i:importManager.imports»
 			<?import «i»?>
@@ -125,13 +125,13 @@ class FXGraphGenerator implements IGenerator {
 		«ENDFOR»
 	'''
 	
-	def componentDefinition(ComponentDefinition definition, ImportManager importManager, LanguageManager languageManager, boolean skipController, boolean skipIncludes) '''
+	def componentDefinition(ComponentDefinition definition, ImportManager importManager, LanguageManager languageManager, boolean preview, boolean skipController, boolean skipIncludes) '''
 		«val element = definition.rootNode»
-		<«element.type.shortName(importManager)» xmlns:fx="http://javafx.com/fxml"«fxElementAttributes(element,importManager,skipController)»«IF definition.controller != null && ! skipController » fx:controller="«definition.controller.qualifiedName»"«ENDIF»«IF hasAttributeProperties(element)»«elementAttributes(element.properties,skipController)»«ENDIF»>
+		<«element.type.shortName(importManager)» xmlns:fx="http://javafx.com/fxml"«fxElementAttributes(element,importManager,skipController)»«IF definition.controller != null && ! skipController » fx:controller="«definition.controller.qualifiedName»"«ENDIF»«IF hasAttributeProperties(element,preview)»«elementAttributes(element.properties,preview,skipController)»«ENDIF»>
 			«IF definition.defines.size > 0»
 			<fx:define>
 				«FOR define : definition.defines»
-				«elementContent(define.element,importManager,skipController,skipIncludes)»
+				«elementContent(define.element,importManager,preview,skipController,skipIncludes)»
 				«ENDFOR»
 			</fx:define>
 			«ENDIF»
@@ -146,39 +146,39 @@ class FXGraphGenerator implements IGenerator {
 			«ENDFOR»
 			«ENDIF»
 		
-			«IF hasNestedProperties(element)»
-				«propContents(element.properties,importManager,false,skipController,skipIncludes)»
-				«statPropContent(element.staticProperties,importManager,skipController,skipIncludes)»
+			«IF hasNestedProperties(element,preview)»
+				«propContents(element.properties,importManager,preview,false,skipController,skipIncludes)»
+				«statPropContent(element.staticProperties,importManager,preview,skipController,skipIncludes)»
 			«ENDIF»
 		
 		</«element.type.shortName(importManager)»>
 	'''
 	
-	def elementContent(Element element, ImportManager importManager, boolean skipController, boolean skipIncludes) '''
-		<«element.type.shortName(importManager)»«fxElementAttributes(element,importManager,skipController)»«IF hasAttributeProperties(element)»«elementAttributes(element.properties,skipController)»«ENDIF»«IF ! hasNestedProperties(element)»/«ENDIF»> 
-		«IF hasNestedProperties(element)»
-			«propContents(element.properties,importManager,false,skipController,skipIncludes)»
-			«statPropContent(element.staticProperties,importManager,skipController,skipIncludes)»
+	def elementContent(Element element, ImportManager importManager, boolean preview, boolean skipController, boolean skipIncludes) '''
+		<«element.type.shortName(importManager)»«fxElementAttributes(element,importManager,skipController)»«IF hasAttributeProperties(element,preview)»«elementAttributes(element.properties,preview,skipController)»«ENDIF»«IF ! hasNestedProperties(element,preview)»/«ENDIF»> 
+		«IF hasNestedProperties(element,preview)»
+			«propContents(element.properties,importManager,preview,false,skipController,skipIncludes)»
+			«statPropContent(element.staticProperties,importManager,preview,skipController,skipIncludes)»
 			«FOR e : element.values»
-			«elementContent(e,importManager,skipController,skipIncludes)»
+			«elementContent(e,importManager,preview,skipController,skipIncludes)»
 			«ENDFOR»
 		</«element.type.shortName(importManager)»>
 		«ENDIF»
 	'''
 	
-	def propContents(List<Property> properties, ImportManager importManager, boolean simpleAsElement, boolean skipController, boolean skipIncludes) '''
+	def propContents(List<Property> properties, ImportManager importManager, boolean preview, boolean simpleAsElement, boolean skipController, boolean skipIncludes) '''
 		«IF simpleAsElement»
 			«FOR prop : properties»
-				«propContent(prop,importManager,simpleAsElement,skipController,skipIncludes)»
+				«propContent(prop,importManager,preview,simpleAsElement,skipController,skipIncludes)»
 			«ENDFOR»
 		«ELSE»
-			«FOR prop : properties.filter([Property p|subelementFilter(p)])»
-				«propContent(prop,importManager,simpleAsElement,skipController,skipIncludes)»
+			«FOR prop : properties.filter([Property p|previewFilter(p,preview)]).filter([Property p|subelementFilter(p)])»
+				«propContent(prop,importManager,preview,simpleAsElement,skipController,skipIncludes)»
 			«ENDFOR»
 		«ENDIF»
 	'''
 	
-	def propContent(Property prop, ImportManager importManager, boolean simpleAsElement, boolean skipController, boolean skipIncludes) '''
+	def propContent(Property prop, ImportManager importManager, boolean preview, boolean simpleAsElement, boolean skipController, boolean skipIncludes) '''
 		«IF prop.value instanceof SimpleValueProperty»
 			«IF (prop.value as SimpleValueProperty).stringValue != null»
 				<«prop.name»>«(prop.value as SimpleValueProperty).stringValue»</«prop.name»>
@@ -187,15 +187,15 @@ class FXGraphGenerator implements IGenerator {
 			«ENDIF»
 		«ELSEIF prop.value instanceof ListValueProperty»
 			<«prop.name»>
-				«propListContent(prop.value as ListValueProperty,importManager, skipController, skipIncludes)»
+				«propListContent(prop.value as ListValueProperty,importManager, preview, skipController, skipIncludes)»
 			</«prop.name»>
 		«ELSEIF prop.value instanceof MapValueProperty»
 			<«prop.name»>
-				«propContents((prop.value as MapValueProperty).properties,importManager,true,skipController,skipIncludes)»
+				«propContents((prop.value as MapValueProperty).properties,importManager,preview,true,skipController,skipIncludes)»
 			</«prop.name»>
 		«ELSEIF prop.value instanceof Element»
 			<«prop.name»>
-				«elementContent(prop.value as Element,importManager,skipController,skipIncludes)»
+				«elementContent(prop.value as Element,importManager,preview, skipController,skipIncludes)»
 			</«prop.name»>
 		«ELSEIF prop.value instanceof ReferenceValueProperty»
 			«IF !skipIncludes»
@@ -216,7 +216,7 @@ class FXGraphGenerator implements IGenerator {
 		«ENDIF»
 	'''
 	
-	def statPropContent(List<StaticValueProperty> properties, ImportManager importManager, boolean skipController, boolean skipIncludes) '''
+	def statPropContent(List<StaticValueProperty> properties, ImportManager importManager, boolean preview, boolean skipController, boolean skipIncludes) '''
 		«FOR prop : properties»
 		«IF prop.value instanceof SimpleValueProperty»
 			«IF (prop.value as SimpleValueProperty).stringValue != null»
@@ -226,15 +226,15 @@ class FXGraphGenerator implements IGenerator {
 			«ENDIF»
 		«ELSEIF prop.value instanceof ListValueProperty»
 			<«prop.type.shortName(importManager)».«prop.name»>
-				«propListContent(prop.value as ListValueProperty,importManager, skipController, skipIncludes)»
+				«propListContent(prop.value as ListValueProperty,importManager, preview, skipController, skipIncludes)»
 			</«prop.type.shortName(importManager)».«prop.name»>
 		«ELSEIF prop.value instanceof MapValueProperty»
 			<«prop.type.shortName(importManager)».«prop.name»>
-				«propContents((prop.value as MapValueProperty).properties,importManager,true, skipController, skipIncludes)»
+				«propContents((prop.value as MapValueProperty).properties,importManager,preview,true, skipController, skipIncludes)»
 			</«prop.type.shortName(importManager)».«prop.name»>
 		«ELSEIF prop.value instanceof Element»
 			<«prop.type.shortName(importManager)».«prop.name»>
-				«elementContent(prop.value as Element,importManager, skipController, skipIncludes)»
+				«elementContent(prop.value as Element,importManager, preview, skipController, skipIncludes)»
 			</«prop.type.shortName(importManager)».«prop.name»>
 		«ELSEIF prop.value instanceof ReferenceValueProperty»
 			<«prop.type.shortName(importManager)».«prop.name»>
@@ -254,10 +254,10 @@ class FXGraphGenerator implements IGenerator {
 		«ENDFOR»
 	'''
 	
-	def propListContent(ListValueProperty listProp, ImportManager importManager, boolean skipController, boolean skipIncludes) '''
+	def propListContent(ListValueProperty listProp, ImportManager importManager, boolean preview, boolean skipController, boolean skipIncludes) '''
 		«FOR e : listProp.value»
 			«IF e instanceof Element»
-				«elementContent(e as Element,importManager,skipController, skipIncludes)»
+				«elementContent(e as Element,importManager,preview, skipController, skipIncludes)»
 			«ELSEIF e instanceof ReferenceValueProperty»
 				<fx:reference source="«(e as ReferenceValueProperty).reference.name»" />
 			«ELSEIF e instanceof IncludeValueProperty»
@@ -294,10 +294,10 @@ class FXGraphGenerator implements IGenerator {
 		return builder.toString;
 	}
 	
-	def elementAttributes(List<Property> properties, boolean skipController) {
+	def elementAttributes(List<Property> properties, boolean preview, boolean skipController) {
 		var builder = new StringBuilder();
 		
-		for( p : properties.filter([Property p|elementAttributeFilter(p)]) ) {
+		for( p : properties.filter([Property p|previewFilter(p,preview)]).filter([Property p|elementAttributeFilter(p)]) ) {
 			if( p.value instanceof SimpleValueProperty ) {
 				builder.append(" " + p.name + "=\""+simpleAttributeValue(p.value as SimpleValueProperty)+"\"");
 			} else if( p.value instanceof ReferenceValueProperty ) {
@@ -373,11 +373,20 @@ class FXGraphGenerator implements IGenerator {
 		}
 	}
 	
-	def hasAttributeProperties(Element element) {
-		return element.properties.size > 0 && ! element.properties.filter([Property p|elementAttributeFilter(p)]).nullOrEmpty;
+	def previewFilter(Property property, boolean preview) {
+		if( ! preview ) {
+			if( property.preview ) {
+				return false;
+			}
+		}
+		return true;
 	}
 	
-	def hasNestedProperties(Element element) {
+	def hasAttributeProperties(Element element, boolean preview) {
+		return element.properties.size > 0 && ! element.properties.filter([Property p|previewFilter(p,preview)]).filter([Property p|elementAttributeFilter(p)]).nullOrEmpty;
+	}
+	
+	def hasNestedProperties(Element element, boolean preview) {
 		if( element.values.size > 0 ) {
 			return true;
 		}
@@ -387,7 +396,7 @@ class FXGraphGenerator implements IGenerator {
 		}
 		
 		if( element.properties.size > 0 ) {
-			return ! element.properties.filter([Property p|subelementFilter(p)]).nullOrEmpty;
+			return ! element.properties.filter([Property p|previewFilter(p,preview)]).filter([Property p|subelementFilter(p)]).nullOrEmpty;
 		}
 		
 		return false;
