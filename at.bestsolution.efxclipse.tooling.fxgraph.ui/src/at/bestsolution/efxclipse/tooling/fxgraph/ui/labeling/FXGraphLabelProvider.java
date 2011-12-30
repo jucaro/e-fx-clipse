@@ -4,7 +4,31 @@
 package at.bestsolution.efxclipse.tooling.fxgraph.ui.labeling;
 
 import org.eclipse.emf.edit.ui.provider.AdapterFactoryLabelProvider;
+import org.eclipse.jface.resource.JFaceResources;
+import org.eclipse.swt.graphics.Image;
 import org.eclipse.xtext.ui.label.DefaultEObjectLabelProvider;
+
+import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.BindValueProperty;
+import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.ComponentDefinition;
+import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.ControllerHandledValueProperty;
+import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.CopyValueProperty;
+import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.Define;
+import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.Element;
+import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.Import;
+import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.IncludeValueProperty;
+import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.ListValueElement;
+import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.ListValueProperty;
+import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.LocationValueProperty;
+import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.MapValueProperty;
+import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.PackageDeclaration;
+import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.Property;
+import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.ReferenceValueProperty;
+import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.ResourceValueProperty;
+import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.Script;
+import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.ScriptHandlerHandledValueProperty;
+import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.SimpleValueProperty;
+import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.StaticValueProperty;
+import at.bestsolution.efxclipse.tooling.fxgraph.ui.util.JDTHelper;
 
 import com.google.inject.Inject;
 
@@ -20,6 +44,90 @@ public class FXGraphLabelProvider extends DefaultEObjectLabelProvider {
 		super(delegate);
 	}
 
+	String text(IncludeValueProperty element) {
+		return element.getSource().getName();
+	}
+	
+	Image image(IncludeValueProperty element) {
+		return JFaceResources.getImage(JDTHelper.INCLUDE_KEY);
+	}
+	
+	Image image(StaticValueProperty element) {
+		return JFaceResources.getImage(JDTHelper.STAT_METHOD_PUBLIC_KEY);
+	}
+	
+	String text(PackageDeclaration element) {
+		return element.getName();
+	}
+	
+	Image image(PackageDeclaration element) {
+		return JFaceResources.getImage(JDTHelper.PACKAGE_KEY);
+	}
+
+	String text(Import element) {
+		return element.getImportedNamespace();
+	}
+	
+	Image image(Import element) {
+		return JFaceResources.getImage(JDTHelper.IMPORT_KEY);
+	}
+
+	String text(ComponentDefinition def) {
+		return def.getName() + def.getController() == null ? "" : " (" + def.getController().getSimpleName() + ")";
+	}
+	
+	Image image(ComponentDefinition def) {
+		return JFaceResources.getImage(JDTHelper.COMPONENT_KEY);
+	}
+	
+	String text(Element element) {
+		return element.getType() != null ? element.getType().getSimpleName() : "<unknown>";
+	}
+	
+	Image image(Element element) {
+		return JFaceResources.getImage(JDTHelper.CLASS_KEY);
+	}
+	
+	Image image(Define element) {
+		return JFaceResources.getImage(JDTHelper.DEFINES_KEY);
+	}
+	
+	Image image(Script script) {
+		return JFaceResources.getImage(JDTHelper.SCRIPTS_KEY);
+	}
+	
+	Image image(Property element) {
+		if( element.getValue() instanceof Element ) {
+			return JFaceResources.getImage(JDTHelper.FIELD_KEY);
+		} else if( element.getValue() instanceof IncludeValueProperty ) {
+			return JFaceResources.getImage(JDTHelper.INCLUDE_KEY);
+		} else if( element.getValue() instanceof ReferenceValueProperty ) {
+			return JFaceResources.getImage(JDTHelper.REFERENCE_KEY);
+		} else if( element.getValue() instanceof ListValueProperty ) {
+			return JFaceResources.getImage(JDTHelper.LIST_KEY);
+		} else if( element.getValue() instanceof MapValueProperty ) {
+			return JFaceResources.getImage(JDTHelper.MAP_KEY);
+		} else if( element.getValue() instanceof BindValueProperty ) {
+			return JFaceResources.getImage(JDTHelper.BINDING_KEY);
+		} else if( element.getValue() instanceof ControllerHandledValueProperty ) {
+			return JFaceResources.getImage(JDTHelper.EVENT_KEY);
+		} else if( element.getValue() instanceof CopyValueProperty ) {
+			return JFaceResources.getImage(JDTHelper.COPY_KEY);
+		} else  if( element.getValue() instanceof LocationValueProperty ) {
+			return JFaceResources.getImage(JDTHelper.LOCATION_KEY);
+		} else if( element.getValue() instanceof ResourceValueProperty ) {
+			return JFaceResources.getImage(JDTHelper.EXTERNALIZED_STRING_KEY);
+		} else if( element.getValue() instanceof ScriptHandlerHandledValueProperty ) {
+			return JFaceResources.getImage(JDTHelper.EVENT_KEY);
+		} else if( element.getValue() instanceof SimpleValueProperty ) {
+			return JFaceResources.getImage(JDTHelper.FIELD_KEY);
+		}
+		
+		System.err.println("Unknown for: " + element.getValue());
+		
+		return null;
+	}
+	
 /*
 	//Labels and icons can be computed like this:
 	

@@ -59,7 +59,6 @@ import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.Model;
 import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.Property;
 import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.ResourceValueProperty;
 import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.StaticValueProperty;
-import at.bestsolution.efxclipse.tooling.fxgraph.ui.internal.FXGraphActivator;
 import at.bestsolution.efxclipse.tooling.fxgraph.ui.util.JDTHelper;
 import at.bestsolution.efxclipse.tooling.fxgraph.ui.util.JDTHelper.JDTHelperProperty;
 import at.bestsolution.efxclipse.tooling.fxgraph.ui.util.JDTHelper.Proposal;
@@ -76,15 +75,6 @@ import com.google.inject.Inject;
 @SuppressWarnings("restriction")
 public class FXGraphProposalProvider extends AbstractFXGraphProposalProvider {
 
-	private static final String METHOD_PRIVATE_KEY = FXGraphProposalProvider.class.getName() + ".METHOD_PRIVATE";
-	private static final String METHOD_DEFAULT_KEY = FXGraphProposalProvider.class.getName() + ".METHOD_DEFAULT";
-	private static final String METHOD_PROTECTED_KEY = FXGraphProposalProvider.class.getName() + ".METHOD_PROTECTED";
-	private static final String METHOD_PUBLIC_KEY = FXGraphProposalProvider.class.getName() + ".METHOD_PUBLIC";
-	private static final String STAT_METHOD_PUBLIC_KEY = FXGraphProposalProvider.class.getName() + ".STAT_METHOD_PUBLIC_KEY";
-
-	private static final String EXTERNALIZED_STRING_KEY = FXGraphProposalProvider.class.getName() + ".EXTERNALIZED_STRING_KEY";
-
-	private static final String CLASS_KEY = FXGraphProposalProvider.class.getName() + ".CLASS_KEY";
 
 	@Inject
 	private IJavaElementFinder javaElementFinder;
@@ -95,20 +85,6 @@ public class FXGraphProposalProvider extends AbstractFXGraphProposalProvider {
 	@Inject 
 	private IJvmTypeProvider.Factory jdtTypeProvider;
 	
-	static {
-		JFaceResources.getImageRegistry().put(METHOD_PRIVATE_KEY, FXGraphActivator.imageDescriptorFromPlugin("at.bestsolution.efxclipse.tooling.fxgraph.ui", "/icons/methpri_obj.gif"));
-		JFaceResources.getImageRegistry().put(METHOD_DEFAULT_KEY, FXGraphActivator.imageDescriptorFromPlugin("at.bestsolution.efxclipse.tooling.fxgraph.ui", "/icons/methdef_obj.gif"));
-		JFaceResources.getImageRegistry().put(METHOD_PROTECTED_KEY, FXGraphActivator.imageDescriptorFromPlugin("at.bestsolution.efxclipse.tooling.fxgraph.ui", "/icons/methpro_obj.gif"));
-		JFaceResources.getImageRegistry().put(METHOD_PUBLIC_KEY, FXGraphActivator.imageDescriptorFromPlugin("at.bestsolution.efxclipse.tooling.fxgraph.ui", "/icons/methpub_obj.gif"));
-
-		JFaceResources.getImageRegistry().put(STAT_METHOD_PUBLIC_KEY, FXGraphActivator.imageDescriptorFromPlugin("at.bestsolution.efxclipse.tooling.fxgraph.ui", "/icons/statmethpub_obj.gif"));
-
-		JFaceResources.getImageRegistry().put(EXTERNALIZED_STRING_KEY, FXGraphActivator.imageDescriptorFromPlugin("at.bestsolution.efxclipse.tooling.fxgraph.ui", "/icons/internalize.gif"));
-
-		JFaceResources.getImageRegistry().put(CLASS_KEY, FXGraphActivator.imageDescriptorFromPlugin("at.bestsolution.efxclipse.tooling.fxgraph.ui", "/icons/class_obj.gif"));
-
-	}
-
 	private JDTHelper helper;
 
 	public FXGraphProposalProvider() {
@@ -171,7 +147,7 @@ public class FXGraphProposalProvider extends AbstractFXGraphProposalProvider {
 				for (String k : p.stringPropertyNames()) {
 					StyledString s = new StyledString(k);
 					s.append(" - " + p.getProperty(k), StyledString.DECORATIONS_STYLER);
-					acceptor.accept(createCompletionProposal("\"" + k + "\"", s, JFaceResources.getImage(EXTERNALIZED_STRING_KEY), context));
+					acceptor.accept(createCompletionProposal("\"" + k + "\"", s, JFaceResources.getImage(JDTHelper.EXTERNALIZED_STRING_KEY), context));
 				}
 			}
 		}
@@ -187,7 +163,7 @@ public class FXGraphProposalProvider extends AbstractFXGraphProposalProvider {
 				if (e.getName() != null && e.getName().trim().length() > 0) {
 					StyledString s = new StyledString(e.getName());
 					s.append(" - " + e.getType().getQualifiedName(), StyledString.DECORATIONS_STYLER);
-					acceptor.accept(createCompletionProposal(e.getName(), s, JFaceResources.getImage(CLASS_KEY), context));
+					acceptor.accept(createCompletionProposal(e.getName(), s, JFaceResources.getImage(JDTHelper.CLASS_KEY), context));
 				}
 			}
 		}
@@ -227,13 +203,13 @@ public class FXGraphProposalProvider extends AbstractFXGraphProposalProvider {
 										Image img = null;
 										try {
 											if (Flags.isPublic(me.getFlags())) {
-												img = JFaceResources.getImage(METHOD_PUBLIC_KEY);
+												img = JFaceResources.getImage(JDTHelper.METHOD_PUBLIC_KEY);
 											} else if (Flags.isProtected(me.getFlags())) {
-												img = JFaceResources.getImage(METHOD_PROTECTED_KEY);
+												img = JFaceResources.getImage(JDTHelper.METHOD_PROTECTED_KEY);
 											} else if (Flags.isPackageDefault(me.getFlags())) {
-												img = JFaceResources.getImage(METHOD_DEFAULT_KEY);
+												img = JFaceResources.getImage(JDTHelper.METHOD_DEFAULT_KEY);
 											} else {
-												img = JFaceResources.getImage(METHOD_PRIVATE_KEY);
+												img = JFaceResources.getImage(JDTHelper.METHOD_PRIVATE_KEY);
 											}
 										} catch (JavaModelException e) {
 											// TODO Auto-generated catch block
@@ -344,7 +320,7 @@ public class FXGraphProposalProvider extends AbstractFXGraphProposalProvider {
 							StyledString s = new StyledString(JDTHelper.extractAttributename(m.getElementName()) + " : ");
 							s.append(Signature.toString(m.getParameterTypes()[1]), StyledString.QUALIFIER_STYLER);
 							
-							ICompletionProposal cp = createCompletionProposal(JDTHelper.extractAttributename(m.getElementName()), s, JFaceResources.getImage(STAT_METHOD_PUBLIC_KEY), context);
+							ICompletionProposal cp = createCompletionProposal(JDTHelper.extractAttributename(m.getElementName()), s, JFaceResources.getImage(JDTHelper.STAT_METHOD_PUBLIC_KEY), context);
 							
 							if( cp instanceof ConfigurableCompletionProposal ) {
 								ConfigurableCompletionProposal cProposal = (ConfigurableCompletionProposal) cp;
@@ -554,7 +530,7 @@ public class FXGraphProposalProvider extends AbstractFXGraphProposalProvider {
 								StyledString s = new StyledString(m.getElementName() + " : " + Signature.getSignatureSimpleName(m.getReturnType()) );
 								s.append(" - " + type.getElementName(), StyledString.QUALIFIER_STYLER);
 								
-								ICompletionProposal proposal = createCompletionProposal(m.getElementName(), s, JFaceResources.getImage(STAT_METHOD_PUBLIC_KEY), context);
+								ICompletionProposal proposal = createCompletionProposal(m.getElementName(), s, JFaceResources.getImage(JDTHelper.STAT_METHOD_PUBLIC_KEY), context);
 								if( proposal instanceof ConfigurableCompletionProposal ) {
 									ConfigurableCompletionProposal cProposal = (ConfigurableCompletionProposal) proposal;
 									cProposal.setAdditionalProposalInfo(element);
