@@ -2,6 +2,7 @@ package at.bestsolution.efxclipse.runtime.osgi.util;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.lang.reflect.Constructor;
 import java.net.URL;
 import java.util.ResourceBundle;
 
@@ -59,7 +60,19 @@ public class OSGiFXMLLoader {
 			
 			FXMLLoader loader = new FXMLLoader();
 			loader.setLocation(url);
-			loader.setBuilderFactory(new JavaFXBuilderFactory(false));
+			loader.setBuilderFactory(new JavaFXBuilderFactory());
+			
+			// If we are on 2.0.x we need to use another constructor
+			if( System.getProperty("javafx.version") != null && System.getProperty("javafx.version").startsWith("2.0") ) {
+				try {
+					Constructor<JavaFXBuilderFactory> c = JavaFXBuilderFactory.class.getConstructor(boolean.class);
+					loader.setBuilderFactory(c.newInstance(false));
+				} catch (Throwable e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+			}
+			
 			in = url.openStream();
 			O value = (O) loader.load(in);
 			in.close();
