@@ -6,12 +6,12 @@ import at.bestsolution.efxclipse.tooling.ui.wizards.template.IGenerator
 
 class PreloaderClassGenerator implements IGenerator<JDTElement> {
 	override generateContent(JDTElement clazzDef) '''
-		«IF(clazzDef.packageFragment != null && ! clazzDef.packageFragment.elementName.empty)»package «clazzDef.packageFragment.elementName»;«ENDIF»
+		Â«IF(clazzDef.packageFragment != null && ! clazzDef.packageFragment.elementName.empty)Â»package Â«clazzDef.packageFragment.elementNameÂ»;Â«ENDIFÂ»
 		
 		import javafx.application.Preloader;
 		import javafx.stage.Stage;
 		
-		public class «clazzDef.name» extends Preloader {
+		public class Â«clazzDef.nameÂ» extends Preloader {
 			
 			public void start(Stage primaryStage) throws Exception {
 				

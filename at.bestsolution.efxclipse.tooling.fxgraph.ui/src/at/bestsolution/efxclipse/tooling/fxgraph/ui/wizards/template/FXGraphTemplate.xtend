@@ -4,12 +4,12 @@ import at.bestsolution.efxclipse.tooling.ui.wizards.template.IGenerator
 
 class FXGraphTemplate implements IGenerator<FXGraphElement> {
 	override generateContent(FXGraphElement element) '''
-		«IF(element.packageFragment != null && ! element.packageFragment.elementName.empty)»package «element.packageFragment.elementName»«ENDIF»
+		Â«IF(element.packageFragment != null && ! element.packageFragment.elementName.empty)Â»package Â«element.packageFragment.elementNameÂ»Â«ENDIFÂ»
 		
-		import «element.rootElement.fullyQualifiedName»
+		import Â«element.rootElement.fullyQualifiedNameÂ»
 		
-		component «element.name» {
-			«element.rootElement.elementName» {
+		component Â«element.nameÂ» {
+			Â«element.rootElement.elementNameÂ» {
 				//TODO Add Nodes
 			}
 		}

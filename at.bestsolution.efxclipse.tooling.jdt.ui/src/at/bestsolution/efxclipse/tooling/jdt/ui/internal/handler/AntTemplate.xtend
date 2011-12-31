@@ -10,11 +10,11 @@ class AntTemplate {
 		
 		'''
 		<?xml version="1.0" encoding="UTF-8"?>
-			<project name="«projectName»" default="do-deploy" basedir="."  xmlns:fx="javafx:com.sun.javafx.tools.ant">
-			«createInitTaskTarget(properties)»
-			«createLocalSetup(properties)»
-			«compileTarget(properties)»
-			«createDoDeployTarget(properties)»
+			<project name="Â«projectNameÂ»" default="do-deploy" basedir="."  xmlns:fx="javafx:com.sun.javafx.tools.ant">
+			Â«createInitTaskTarget(properties)Â»
+			Â«createLocalSetup(properties)Â»
+			Â«compileTarget(properties)Â»
+			Â«createDoDeployTarget(properties)Â»
 		</project>
 		'''.toString
 	}
@@ -31,27 +31,27 @@ class AntTemplate {
 			
 			<mkdir dir="externalLibs" />
 			
-			«FOR File l : externalLibs»
-			<copyfile dest="externalLibs/«l.name»" src="«l.absolutePath»"/>
-			«ENDFOR»
+			Â«FOR File l : externalLibsÂ»
+			<copyfile dest="externalLibs/Â«l.nameÂ»" src="Â«l.absolutePathÂ»"/>
+			Â«ENDFORÂ»
 			
 			<mkdir dir="project" />
-			«FOR SetupDirectory d : projectSrcDirs»
+			Â«FOR SetupDirectory d : projectSrcDirsÂ»
 			<copy todir="project">
-				<fileset dir="«d.originalPath.absolutePath»">
-					<include name="«d.relativePath.name»/**" />
+				<fileset dir="Â«d.originalPath.absolutePathÂ»">
+					<include name="Â«d.relativePath.nameÂ»/**" />
 				</fileset>
 			</copy>
-			«ENDFOR»
+			Â«ENDFORÂ»
 			
 			<mkdir dir="projectRefs" />
-			«FOR SetupDirectory d : projectRefs»
+			Â«FOR SetupDirectory d : projectRefsÂ»
 			<copy todir="projectRefs">
-				<fileset dir="«d.originalPath.absolutePath»">
-					<include name="«d.relativePath.path»/**" />
+				<fileset dir="Â«d.originalPath.absolutePathÂ»">
+					<include name="Â«d.relativePath.pathÂ»/**" />
 				</fileset>
 			</copy>
-			«ENDFOR»
+			Â«ENDFORÂ»
 		</target>
 		'''
 	}
@@ -60,7 +60,7 @@ class AntTemplate {
 		val sdkPath = properties.get("jfxSdk") as String;
 		'''
 		<target name="init-fx-tasks">
-			<property name="javafx.tools.ant.jar" value="«sdkPath»/tools/ant-javafx.jar"/>
+			<property name="javafx.tools.ant.jar" value="Â«sdkPathÂ»/tools/ant-javafx.jar"/>
 			
 			<taskdef resource="com/sun/javafx/tools/ant/antlib.xml"      
 				uri="javafx:com.sun.javafx.tools.ant"
@@ -85,29 +85,29 @@ class AntTemplate {
 			<!-- Copy project-libs references -->
 			<copy todir="build/libs">
 				<fileset dir="externalLibs">
-					«FOR String s : externalLibs»
-					<include name="«s»"/>
-					«ENDFOR»
+					Â«FOR String s : externalLibsÂ»
+					<include name="Â«sÂ»"/>
+					Â«ENDFORÂ»
 				</fileset>
 			</copy>
 		
 			<!-- Copy project references -->
-			«FOR String s : projectRefs»
+			Â«FOR String s : projectRefsÂ»
 			<copy todir="build/src">
-				<fileset dir="projectRefs/«s»">
+				<fileset dir="projectRefs/Â«sÂ»">
 					<include name="**/*"/>
 				</fileset>
 			</copy>
-			«ENDFOR»
+			Â«ENDFORÂ»
 		
 			<!-- Copy project sources itself -->
-			«FOR String s : projectSourceDirs»
+			Â«FOR String s : projectSourceDirsÂ»
 			<copy todir="build/src">
-				<fileset dir="project/«s»">
+				<fileset dir="project/Â«sÂ»">
 					<include name="**/*"/>
 				</fileset>
 			</copy>
-			«ENDFOR»
+			Â«ENDFORÂ»
 		
 			<javac srcdir="build/src" destdir="build/classes">
 				<classpath>
@@ -115,30 +115,28 @@ class AntTemplate {
 						<include name="*"/>
 					</fileset>
 					<filelist>
-						<file name="«sdkPath»\rt\lib\jfxrt.jar"/>
+						<file name="Â«sdkPathÂ»\rt\lib\jfxrt.jar"/>
 					</filelist>
 				</classpath>
 			</javac>
 			
 			<copy todir="build/classes">
-			«FOR String s : projectSourceDirs»
-				<fileset dir="project/«s»">
+			Â«FOR String s : projectSourceDirsÂ»
+				<fileset dir="project/Â«sÂ»">
 					<exclude name="**/*.java"/>
 				</fileset>
-			«ENDFOR»
+			Â«ENDFORÂ»
 			</copy>
 
-		</target>		
+		</target>
 		'''	
 	}
 	
 	def createDoDeployTarget(Map<String,Object> properties) {
 		val projectName = properties.get("projectName") as String;
-		val sdkPath = properties.get("jfxSdk") as String;
 		val mainClass = properties.get("applicationClass") as String;
 		val appletWidth = properties.get("appletWith") as String;
 		val appletHeight = properties.get("appletHeight") as String;
-		val externalLibs = properties.get("externalLibs") as Collection<String>;
 		val appVendor = properties.get("appVendor") as String;
 		val appTitle = properties.get("appTitle") as String;
 		val appVersion = properties.get("appVersion") as String;
@@ -169,67 +167,67 @@ class AntTemplate {
 				</fileset>
 			</copy>
 			
-			«IF preloaderClass != null»
-			<jar destfile="dist/libs/«projectName»-preloader.jar">
+			Â«IF preloaderClass != nullÂ»
+			<jar destfile="dist/libs/Â«projectNameÂ»-preloader.jar">
 				<fileset dir="build/classes">
-					<include name="«preloaderPath».class"/>
+					<include name="Â«preloaderPathÂ».class"/>
 				</fileset>
 			</jar>
-			«ENDIF»
+			Â«ENDIFÂ»
 			
 			<fx:resources id="appRes">
-				«IF preloaderClass != null»
+				Â«IF preloaderClass != nullÂ»
 				<fx:fileset dir="dist" requiredFor="preloader"
-					includes="«projectName»-preloader.jar"/>
-				«ENDIF»
-				<fx:fileset dir="dist" includes="«projectName».jar"/>
+					includes="Â«projectNameÂ»-preloader.jar"/>
+				Â«ENDIFÂ»
+				<fx:fileset dir="dist" includes="Â«projectNameÂ».jar"/>
 				<fx:fileset dir="dist" includes="libs/*"/>
 			</fx:resources> 
 			
 			<fx:application id="fxApplication"
-				name="«projectName»"
-				mainClass="«mainClass»"
-				«IF preloaderClass != null»
-				preloaderClass="«preloaderClass»"
-				«ENDIF»
-				«IF fallBackClass != null»
-				fallbackClass="«fallBackClass»"
-				«ENDIF»
+				name="Â«projectNameÂ»"
+				mainClass="Â«mainClassÂ»"
+				Â«IF preloaderClass != nullÂ»
+				preloaderClass="Â«preloaderClassÂ»"
+				Â«ENDIFÂ»
+				Â«IF fallBackClass != nullÂ»
+				fallbackClass="Â«fallBackClassÂ»"
+				Â«ENDIFÂ»
 				/>
 			
-			<fx:jar destfile="dist/«projectName».jar">
+			<fx:jar destfile="dist/Â«projectNameÂ».jar">
 				<fx:application refid="fxApplication"/>
 				<fileset dir="build/classes">
-				«IF preloaderClass != null»
-					<exclude name="«preloaderPath».class" />
-				«ENDIF»
+				Â«IF preloaderClass != nullÂ»
+					<exclude name="Â«preloaderPathÂ».class" />
+				Â«ENDIFÂ»
 				</fileset>
 				<fx:resources refid="appRes"/>
 				
 				<manifest>
-					<attribute name="Implementation-Vendor" value="«appVendor»"/>
-					<attribute name="Implementation-Title" value="«appTitle»"/>
-					<attribute name="Implementation-Version" value="«appVersion»"/>
+					<attribute name="Implementation-Vendor" value="Â«appVendorÂ»"/>
+					<attribute name="Implementation-Title" value="Â«appTitleÂ»"/>
+					<attribute name="Implementation-Version" value="Â«appVersionÂ»"/>
 				</manifest>
 			</fx:jar>
 			
-			«IF keyStore != null»
-			<fx:signjar keystore="«keyStore»" alias="«keyStoreAlias»" «IF keyStorePass != null»storepass="«keyStorePass»" «ENDIF»destDir="dist">
+			Â«IF keyStore != nullÂ»
+			<fx:signjar keystore="Â«keyStoreÂ»" alias="Â«keyStoreAliasÂ»" Â«IF keyStorePass != nullÂ»storepass="Â«keyStorePassÂ»" Â«ENDIFÂ»destDir="dist">
 				<fileset dir='dist/*.jar'/>
 				<fileset dir='dist/**/*.jar'/>
 			</fx:signjar>
-			«ENDIF»
+			Â«ENDIFÂ»
 		
-			«IF appletWidth != null && appletHeight != null»
+			Â«IF appletWidth != null && appletHeight != nullÂ»
 			<mkdir dir="deploy" />
 			<!-- Need to use ${basedir} because somehow the ant task is calculating the directory differently -->
-			<fx:deploy width="«appletWidth»" height="«appletHeight»" outdir="${basedir}/deploy" embedJNLP="true" outfile="«projectName»">
-				<fx:info title="«projectName»" vendor="«appVendor»"/>
+			<fx:deploy width="Â«appletWidthÂ»" height="Â«appletHeightÂ»" outdir="${basedir}/deploy" embedJNLP="true" outfile="Â«projectNameÂ»">
+				<fx:info title="Â«projectNameÂ»" vendor="Â«appVendorÂ»"/>
 				<fx:application refId="fxApplication"/>
 				<fx:resources refid="appRes"/>
 				<fx:permissions elevated="true"/>
 			</fx:deploy>
-			«ENDIF»
+			Â«ENDIFÂ»
 		</target>
 		'''
 	}

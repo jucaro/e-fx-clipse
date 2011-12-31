@@ -6,11 +6,11 @@ class FXMLTemplate implements IGenerator<at.bestsolution.efxclipse.tooling.fxmlx
 	override generateContent(at.bestsolution.efxclipse.tooling.fxmlx.ui.wizards.template.FXMLElement element) '''
 		<?xml version="1.0" encoding="UTF-8"?>
 		
-		<?import «element.getRootElement.fullyQualifiedName»?>
+		<?import Â«element.getRootElement.fullyQualifiedNameÂ»?>
 		
-		<«element.getRootElement.elementName»>
+		<Â«element.getRootElement.elementNameÂ»>
 			<!-- TODO Add Nodes -->
-		</«element.getRootElement.elementName»>
+		</Â«element.getRootElement.elementNameÂ»>
 		
 	'''
 }
