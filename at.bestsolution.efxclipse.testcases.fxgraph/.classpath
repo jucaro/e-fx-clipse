@@ -6,6 +6,5 @@
 	<classpathentry kind="lib" path="libs/miglayout-3.7.4.jar"/>
 	<classpathentry kind="lib" path="libs/MigLayoutFX2-1.0-SNAPSHOT.jar"/>
 	<classpathentry combineaccessrules="false" kind="src" path="/at.bestsolution.efxclipse.testcases.fxgraph.lib"/>
-	<classpathentry kind="src" path="src-gen"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
