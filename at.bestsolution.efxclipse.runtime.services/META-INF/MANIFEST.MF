@@ -7,3 +7,4 @@ Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Export-Package: at.bestsolution.efxclipse.runtime.services.theme,
  at.bestsolution.efxclipse.runtime.services.translation
 Bundle-Vendor: %Bundle-Vendor
+Import-Package: javafx.scene;version="2.0.0"
