@@ -3,12 +3,26 @@ package at.bestsolution.efxclipse.tutorial.fxgraph
 import javafx.scene.layout.*
 import javafx.scene.control.*
 import at.bestsolution.efxclipse.tutorial.fxgraph.*
+import javafx.geometry.Insets
 
-component HelloWorld controlledby HelloWorldController resourcefile "messages.properties" {
+component HelloWorld controlledby HelloWorldController styledwith "hello.css" resourcefile "messages.properties" {
+	define ToggleGroup id myRadioGroup
+		
 	BorderPane {
-		top : include Header,
-		center : Button {
-			text : rstring "mybutton.label" ,
+		top: HBox {
+			children : [
+				RadioButton {
+					text : "Option 1",
+					toggleGroup : idref myRadioGroup
+				},
+				RadioButton {
+					text : "Option 2",
+					toggleGroup : idref myRadioGroup
+				}
+			]
+		},
+		center : Button id myButton {
+			text : rstring "mybutton.label",
 			onAction : controllermethod clicked
 		}
 	}

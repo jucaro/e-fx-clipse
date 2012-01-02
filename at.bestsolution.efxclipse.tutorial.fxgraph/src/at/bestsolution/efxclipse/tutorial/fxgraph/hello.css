@@ -1,3 +1,8 @@
 BorderPane {
 	-fx-background-color: green;
 }
+
+HBox {
+	-fx-background-color: white;
+	-fx-padding: 10px;
+}

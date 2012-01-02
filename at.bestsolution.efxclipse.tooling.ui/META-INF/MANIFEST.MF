@@ -2,7 +2,7 @@ Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: Ui
 Bundle-SymbolicName: at.bestsolution.efxclipse.tooling.ui
-Bundle-Version: 0.0.10.qualifier
+Bundle-Version: 0.0.11.qualifier
 Bundle-Activator: at.bestsolution.efxclipse.tooling.ui.Activator
 Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.core.databinding;bundle-version="1.4.1",

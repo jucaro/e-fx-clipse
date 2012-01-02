@@ -2,7 +2,7 @@ Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: %Bundle-Name
 Bundle-SymbolicName: at.bestsolution.efxclipse.runtime.guice
-Bundle-Version: 0.0.10.qualifier
+Bundle-Version: 0.0.11.qualifier
 Bundle-Activator: at.bestsolution.efxclipse.runtime.guice.Activator
 Require-Bundle: org.eclipse.core.runtime,
  com.google.inject;bundle-version="2.0.0"
