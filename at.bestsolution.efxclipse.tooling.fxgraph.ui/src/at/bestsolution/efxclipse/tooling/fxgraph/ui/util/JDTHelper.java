@@ -401,7 +401,7 @@ public class JDTHelper {
 				continue;
 			}
 
-			if (m.getElementName().startsWith("get")) {
+			if (m.getElementName().startsWith("get") && m.getParameterNames().length == 0) {
 				String returnSignature = Signature.toString(m.getReturnType());
 				if (returnSignature.startsWith("javafx.event.EventHandler<? super ") || returnSignature.startsWith("javafx.event.EventHandler<")) {
 					String eventType;
