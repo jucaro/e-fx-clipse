@@ -3,7 +3,7 @@ package at.bestsolution.efxclipse.testcases.fxgraph
 import javafx.scene.layout.*
 import javafx.scene.control.*
 
-component CssTest styledwith ["platform:/resource/at.bestsolution.efxclipse.testcases.fxgraph/css/test.css"] {
+component CssTest3 styledwith ["platform:/resource/at.bestsolution.efxclipse.testcases.fxgraph/css/test.css"] {
 	BorderPane { 
 		center : Button {
 			text : "Hello World"

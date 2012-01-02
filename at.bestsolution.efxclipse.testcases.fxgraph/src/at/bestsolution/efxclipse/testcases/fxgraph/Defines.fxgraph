@@ -3,7 +3,7 @@ package at.bestsolution.efxclipse.testcases.fxgraph
 import javafx.scene.layout.*
 import javafx.scene.control.*
 
-component TestDefines {
+component Defines {
 	define ToggleGroup id myToggleGroup
 	VBox {
 		children : [

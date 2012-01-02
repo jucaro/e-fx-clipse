@@ -3,7 +3,7 @@ package at.bestsolution.efxclipse.testcases.fxgraph
 import javafx.scene.layout.*
 import javafx.scene.control.*
 
-component CssTest styledwith ["test.css"] resourcefile "/translations/messages.properties" {
+component MessageTest styledwith ["test.css"] resourcefile "/translations/messages.properties" {
 	BorderPane { 
 		center : Button { 
 			text : rstring "buttonlabel" 
