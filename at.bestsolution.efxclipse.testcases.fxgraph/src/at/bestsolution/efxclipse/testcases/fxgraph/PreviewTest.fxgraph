@@ -3,15 +3,18 @@ package at.bestsolution.efxclipse.testcases.fxgraph
 import javafx.scene.layout.HBox
 import javafx.scene.control.Label
 import javafx.scene.control.TextField
+import javafx.scene.control.ChoiceBox
+import javafx.collections.FXCollections
 
 component PreviewTest {
 	HBox {
 		children : [
-			Label {
-				text : "Name"
-			},
-			TextField {
-				preview text : "This is only shown in the preview"
+			ChoiceBox {
+				preview items : FXCollections createdby observableArrayList {
+					String("Hello World"),
+					String("Hello World extra long"), 
+					String("Hello World extra extra long")
+				}
 			}
 		]
 	}

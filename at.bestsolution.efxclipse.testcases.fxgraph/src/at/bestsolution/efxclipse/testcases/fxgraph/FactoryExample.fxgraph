@@ -6,14 +6,14 @@ import javafx.collections.*
 import javafx.scene.control.Label
 import javafx.scene.control.TextField
 
-component StringExample {
+component FactoryExample {
 	HBox {
 		children : [
 			ChoiceBox {
-				items : FXCollections createdby observableArrayList {
-					String("A"),
-					String("B"), 
-					String("D")
+				preview items : FXCollections createdby observableArrayList {
+					String("Hello World"),
+					String("Hello World extra long"), 
+					String("Hello World extra extra long")
 				}
 			}
 		]
