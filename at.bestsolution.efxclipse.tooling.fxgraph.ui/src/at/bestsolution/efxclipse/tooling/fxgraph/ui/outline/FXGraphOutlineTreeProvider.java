@@ -86,7 +86,9 @@ public class FXGraphOutlineTreeProvider extends DefaultOutlineTreeProvider {
 			} else if( p.getValue() instanceof ListValueProperty ) {
 				ListValueProperty lp = (ListValueProperty) p.getValue();
 				for( ListValueElement e : lp.getValue() ) {
-					createNode(parentNode, e);
+					if( lp.getValue() != null ) {
+						createNode(parentNode, e);
+					}
 				}
 				return;	
 			} else if( p.getValue() instanceof ResourceValueProperty ) {
@@ -103,7 +105,9 @@ public class FXGraphOutlineTreeProvider extends DefaultOutlineTreeProvider {
 			if( p.getValue() instanceof SimpleValueProperty ) {
 				return;
 			} else {
-				createNode(parentNode, p.getValue());
+				if( p.getValue() != null ) {
+					createNode(parentNode, p.getValue());	
+				}
 				return;
 			}
 		}
