@@ -495,8 +495,13 @@ public class JDTHelper {
 					}
 				}
 			} else if (m.getElementName().startsWith("is") && m.getParameterNames().length == 0 && "Z".equals(m.getReturnType())) {
-				BooleanValueProperty p = new BooleanValueProperty(m, extractAttributename(m.getElementName()), m.getParent().getElementName(), "boolean");
-				d.properties.add(p);
+				String propName = extractAttributename(m.getElementName());
+				boolean isReadonly = isReadonlySetter(propName, allMethods);
+				
+				if( ! isReadonly ) {
+					BooleanValueProperty p = new BooleanValueProperty(m, propName, m.getParent().getElementName(), "boolean");
+					d.properties.add(p);	
+				}
 			}
 		}
 		return d;
