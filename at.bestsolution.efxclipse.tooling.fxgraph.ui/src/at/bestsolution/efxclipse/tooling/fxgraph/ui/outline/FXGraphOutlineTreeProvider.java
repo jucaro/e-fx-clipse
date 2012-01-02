@@ -15,7 +15,6 @@ import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.ControllerHandledValueP
 import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.Define;
 import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.Element;
 import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.FXGraphPackage;
-import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.IncludeValueProperty;
 import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.ListValueElement;
 import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.ListValueProperty;
 import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.MapValueProperty;
@@ -150,7 +149,11 @@ public class FXGraphOutlineTreeProvider extends DefaultOutlineTreeProvider {
 		} else if( property.getValue() instanceof ReferenceValueProperty ) {
 			StyledString s = new StyledString(property.getName());
 			ReferenceValueProperty p = (ReferenceValueProperty) property.getValue();
-			s.append(" : " + p.getReference().getName(),StyledString.QUALIFIER_STYLER);
+			
+			if( p.getReference() != null ) {
+				s.append(" : " + p.getReference().getName(),StyledString.QUALIFIER_STYLER);	
+			}
+			
 			return s;
 		} else if( property.getValue() instanceof ResourceValueProperty ) {
 			StyledString s = new StyledString(property.getName());
