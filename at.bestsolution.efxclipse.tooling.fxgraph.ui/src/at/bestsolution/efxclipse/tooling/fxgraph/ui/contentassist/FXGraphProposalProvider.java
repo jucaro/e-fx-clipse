@@ -7,7 +7,6 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
-import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
@@ -30,6 +29,7 @@ import org.eclipse.jdt.core.IType;
 import org.eclipse.jdt.core.JavaCore;
 import org.eclipse.jdt.core.JavaModelException;
 import org.eclipse.jdt.core.Signature;
+import org.eclipse.jdt.core.search.IJavaSearchConstants;
 import org.eclipse.jdt.internal.corext.util.JavaModelUtil;
 import org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover;
 import org.eclipse.jface.resource.JFaceResources;
@@ -48,6 +48,7 @@ import org.eclipse.xtext.common.types.TypesPackage;
 import org.eclipse.xtext.common.types.access.IJvmTypeProvider;
 import org.eclipse.xtext.common.types.util.jdt.IJavaElementFinder;
 import org.eclipse.xtext.common.types.xtext.ui.ITypesProposalProvider;
+import org.eclipse.xtext.common.types.xtext.ui.ITypesProposalProvider.Filter;
 import org.eclipse.xtext.ui.editor.contentassist.ConfigurableCompletionProposal;
 import org.eclipse.xtext.ui.editor.contentassist.ContentAssistContext;
 import org.eclipse.xtext.ui.editor.contentassist.ICompletionProposalAcceptor;
@@ -494,7 +495,20 @@ public class FXGraphProposalProvider extends AbstractFXGraphProposalProvider {
 					JvmType superType = jdtTypeProvider.createTypeProvider(model.eResource().getResourceSet()).findTypeByName(type.getFullyQualifiedName());
 					
 					if( superType != null) {
-						typeProposalProviders.createSubTypeProposals(superType, this, context, TypesPackage.Literals.JVM_PARAMETERIZED_TYPE_REFERENCE__TYPE, acceptor);	
+						Filter filter = new Filter() {
+							
+							@Override
+							public int getSearchFor() {
+								return IJavaSearchConstants.TYPE;
+							}
+							
+							@Override
+							public boolean accept(int modifiers, char[] packageName, char[] simpleTypeName, char[][] enclosingTypeNames, String path) {
+								return ! Flags.isAbstract(modifiers) && ! new String(packageName).startsWith("com.sun.javafx");
+							}
+						};
+						
+						typeProposalProviders.createSubTypeProposals(superType, this, context, TypesPackage.Literals.JVM_PARAMETERIZED_TYPE_REFERENCE__TYPE, filter, acceptor);	
 					}
 				}
 			} catch (JavaModelException e1) {
