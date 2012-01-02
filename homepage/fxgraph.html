@@ -143,11 +143,44 @@
   <div class="page-header">
    <h1>Accessing objects from the controller <small>IDs are your friend</small></h1>
   </div>
+  <div class="row">
+   <div class="span16">
+    <p>
+     FXML propagates a clean seperation between UI defined in the FXML-File and business logic implemented in
+     a programming language like Java, JavaScript, ... .
+    </p>
+    <p>
+     A controller could look like this:
+    </p>
+    <pre class="prettyprint linenums"><ol class="linenums"><li><span class="kwd">package</span> <span class="pln">at.bestsolution.efxclipse.tutorial.fxgraph;</span></li><li></li><li><span class="kwd">import</span> <span class="pln">javafx.event.ActionEvent;</span></li><li><span class="kwd">import</span> <span class="pln">javafx.fxml.FXML;</span></li><li></li><li><span class="kwd">public class</span> <span class="pln">HelloWorldController {</span></li><li>  @FXML</li><li>  <span class="kwd">public</span> <span class="pln">Button myButton;</span></li><li></li><li>  @FXML</li><li>  <span class="kwd">public void</span> <span class="pln">clicked(ActionEvent event) {</span></li><li><span class="pln">    System.out.println(<span class="str">"Button clicked"</span>);</span></li><li><span class="pln">  }</span></li><li><span class="pln">}</span></li></ol></pre>
+    <p>
+     You can make the FXMLLoader set the myButton-Field by using the "id"-keyword
+    </p>
+    <pre class="prettyprint linenums"><ol class="linenums"><li><span class="kwd">package</span> <span class="pln">at.bestsolution.efxclipse.tutorial.fxgraph</span></li><li></li><li><span class="kwd">import</span> <span class="pln">javafx.scene.control.*</span></li><li><span class="kwd">import</span> <span class="pln">javafx.scene.layout.*</span></li><li><span class="kwd">import</span> <span class="pln">at.bestsolution.efxclipse.tutorial.fxgraph.*</span></li><li></li><li><span class="kwd">component</span> <span class="pln">HelloWorld <span class="kwd">controlledby</span> <span class="pln">HelloWorldController</span> <span class="kwd">resourcefile</span> <span class="str">"messages.properties"</span> {</span></li><li>&nbsp;&nbsp;<span class="pln">BorderPane</span> <span class="pln">{</span></li><li>&nbsp;&nbsp;&nbsp;&nbsp;<span class="atn">center </span><span class="pun">:</span> <span class="pln">Button</span> <span class="kwd">id</span> <span class="pln">myButton</span> <span class="pln">{</span></li><li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="atn">text</span> <span class="pun">:</span> <span class="kwd">rstring</span> <span class="str">"button.label"</span></li><li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="atn">onAction</span> <span class="pun">:</span> <span class="kwd">controllermethod</span> <span class="pln">clicked</span></li><li>&nbsp;&nbsp;&nbsp;&nbsp;<span class="pln">}</span></li><li>&nbsp;&nbsp;<span class="pln">}</span></li><li><span class="pln">}</span></li></ol></pre>
+   </div>
+  </div>
  </section>
- 
+  
  <section>
   <div class="page-header">
-   <h1>Referencing other fxgraph-files <small>Reuseability is the key</small></h1>
+   <h1>Theme it <small>CSS to get a real WYSIWYG</small></h1>
+  </div>
+  <div class="row">
+   <div class="span16">
+    <p>
+     FXGraph files can be previewed while rendering but because most UI-Themeing informations in JavaFX
+     applications are configured through CSS the preview needs to know which css-File it should apply.
+    </p>
+    <pre class="prettyprint linenums"><ol class="linenums"><li><span class="kwd">package</span> <span class="pln">at.bestsolution.efxclipse.tutorial.fxgraph</span></li><li></li><li><span class="kwd">import</span> <span class="pln">javafx.scene.control.*</span></li><li><span class="kwd">import</span> <span class="pln">javafx.scene.layout.*</span></li><li><span class="kwd">import</span> <span class="pln">at.bestsolution.efxclipse.tutorial.fxgraph.*</span></li><li></li><li><span class="kwd">component</span> <span class="pln">HelloWorld <span class="kwd">controlledby</span> <span class="pln">HelloWorldController</span> <span class="kwd">styledwith</span> <span class="pln">[</span><span class="str">"hello.css"</span><span class="pln">]</span> <span class="kwd">resourcefile</span> <span class="str">"messages.properties"</span> {</span></li><li>&nbsp;&nbsp;<span class="pln">BorderPane</span> <span class="pln">{</span></li><li>&nbsp;&nbsp;&nbsp;&nbsp;<span class="atn">center </span><span class="pun">:</span> <span class="pln">Button</span> <span class="kwd">id</span> <span class="pln">myButton</span> <span class="pln">{</span></li><li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="atn">text</span> <span class="pun">:</span> <span class="kwd">rstring</span> <span class="str">"button.label"</span></li><li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="atn">onAction</span> <span class="pun">:</span> <span class="kwd">controllermethod</span> <span class="pln">clicked</span></li><li>&nbsp;&nbsp;&nbsp;&nbsp;<span class="pln">}</span></li><li>&nbsp;&nbsp;<span class="pln">}</span></li><li><span class="pln">}</span></li></ol></pre>
+    <p>
+     Inside the square bracket you can provide multiple css-files. The path you are allowed to use are:
+     <ul>
+      <li>Relative to the fxgraph-File <br />e.g. <code>hello.css</code></li>
+      <li>Absolute to the project by starting the path using "/" <br />e.g. <code>/css/test.css</code></li>
+      <li>Absolute to the workspace by using "platform:/resource/${projectname}/..." <br />e.g. <code>platform:/resource/at.bestsolution.efxclipse.testcases.fxgraph/css/test.css</code></li>
+     </ul>
+    </p>
+   </div>
   </div>
  </section>
  
@@ -159,10 +192,22 @@
  
  <section>
   <div class="page-header">
-   <h1>Theme it <small>CSS to get a real WYSIWYG</small></h1>
+   <h1>Referencing other fxgraph-files <small>Reuseability is the key</small></h1>
   </div>
  </section>
+
 </div>
+
+<footer class="footer">
+ <div class="container">
+  <p class="pull-right">
+   <a href="#">Back to top</a>
+  </p>
+  <p>
+   Created by <a target="_blank" href="http://www.bestsolution.at">BestSolution.at</a> with use of <a target="_blank" href="http://twitter.github.com/bootstrap/">Bootstrap</a> from twitter.
+  </p>
+ </div>
+</footer>
 
 </body>
 </html>
