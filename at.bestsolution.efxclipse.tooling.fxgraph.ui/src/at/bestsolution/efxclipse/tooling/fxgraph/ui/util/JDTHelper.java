@@ -397,7 +397,7 @@ public class JDTHelper {
 				continue;
 			}
 
-			if (m.getElementName().startsWith("impl_")) {
+			if (m.getElementName().startsWith("impl_") || m.getElementName().startsWith("getImpl_")) {
 				continue;
 			}
 
