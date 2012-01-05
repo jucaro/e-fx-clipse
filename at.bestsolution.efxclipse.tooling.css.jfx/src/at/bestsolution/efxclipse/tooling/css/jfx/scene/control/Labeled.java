@@ -33,7 +33,7 @@ public class Labeled {
 		properties.addAll(createEnumProperties(Arrays.asList("left","center","right","leading","trailing"), "-fx-hpos")); 
 		properties.addAll(createReflective(StringProperty.class, "-fx-text"));
 		properties.addAll(createEnumProperties(Arrays.asList("left","center","right","justify"), "-fx-text-alignment")); 
-		properties.addAll(createEnumProperties(Arrays.asList("center-ellipses","center-word-ellipses","clip","ellipses","leading-ellipses","leading-word-ellipses","word-ellipses"), "-fx-text-overrun")); 
+		properties.addAll(createEnumProperties(Arrays.asList("center-ellipsis","center-word-ellipsis","clip","ellipsis","leading-ellipsis","leading-word-ellipsis","word-ellipsis"), "-fx-text-overrun")); 
 		properties.addAll(createReflective(BooleanProperty.class, "-fx-text-wrap"));
 		properties.addAll(createEnumProperties(Arrays.asList("top","center","baseline","bottom","page-end","page-start"), "-fx-vpos")); 
 		
