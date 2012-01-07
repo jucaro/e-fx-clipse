@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+ <copyright>
+ </copyright>
+
+ $Id$
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <package
+            uri="http://ns.adobe.com/fxg/2008"
+            class="at.bestsolution.efxclipse.formats.fxg.fxg.FxgPackage"
+            genModel="model/fxg.genmodel"/>
+   </extension>
+
+</plugin>

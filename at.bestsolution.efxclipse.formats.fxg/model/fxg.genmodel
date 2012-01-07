@@ -1,0 +1,413 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/at.bestsolution.efxclipse.formats.fxg/src" modelPluginID="at.bestsolution.efxclipse.formats.fxg"
+    modelName="Fxg" importerID="org.eclipse.emf.importer.ecore" complianceLevel="6.0"
+    copyrightFields="false">
+  <foreignModel>fxg.ecore</foreignModel>
+  <genPackages prefix="Fxg" basePackage="at.bestsolution.efxclipse.formats.fxg" disposableProviderFactory="true"
+      ecorePackage="fxg.ecore#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="fxg.ecore#//BlendMode">
+      <genEnumLiterals ecoreEnumLiteral="fxg.ecore#//BlendMode/ADD"/>
+      <genEnumLiterals ecoreEnumLiteral="fxg.ecore#//BlendMode/ALPHA"/>
+      <genEnumLiterals ecoreEnumLiteral="fxg.ecore#//BlendMode/DARKEN"/>
+      <genEnumLiterals ecoreEnumLiteral="fxg.ecore#//BlendMode/DIFFERENCE"/>
+      <genEnumLiterals ecoreEnumLiteral="fxg.ecore#//BlendMode/ERASE"/>
+      <genEnumLiterals ecoreEnumLiteral="fxg.ecore#//BlendMode/HARDLIGHT"/>
+      <genEnumLiterals ecoreEnumLiteral="fxg.ecore#//BlendMode/INVERT"/>
+      <genEnumLiterals ecoreEnumLiteral="fxg.ecore#//BlendMode/LAYER"/>
+      <genEnumLiterals ecoreEnumLiteral="fxg.ecore#//BlendMode/LIGHTEN"/>
+      <genEnumLiterals ecoreEnumLiteral="fxg.ecore#//BlendMode/MULTIPLY"/>
+      <genEnumLiterals ecoreEnumLiteral="fxg.ecore#//BlendMode/NORMAL"/>
+      <genEnumLiterals ecoreEnumLiteral="fxg.ecore#//BlendMode/OVERLAY"/>
+      <genEnumLiterals ecoreEnumLiteral="fxg.ecore#//BlendMode/SCREEN"/>
+      <genEnumLiterals ecoreEnumLiteral="fxg.ecore#//BlendMode/SHADER"/>
+      <genEnumLiterals ecoreEnumLiteral="fxg.ecore#//BlendMode/SUBTRACT"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="fxg.ecore#//Winding">
+      <genEnumLiterals ecoreEnumLiteral="fxg.ecore#//Winding/EVEN_ODD"/>
+      <genEnumLiterals ecoreEnumLiteral="fxg.ecore#//Winding/NON_ZERO"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="fxg.ecore#//MaskType">
+      <genEnumLiterals ecoreEnumLiteral="fxg.ecore#//MaskType/CLIP"/>
+      <genEnumLiterals ecoreEnumLiteral="fxg.ecore#//MaskType/ALPHA"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="fxg.ecore#//FontStyle">
+      <genEnumLiterals ecoreEnumLiteral="fxg.ecore#//FontStyle/NORMAL"/>
+      <genEnumLiterals ecoreEnumLiteral="fxg.ecore#//FontStyle/ITALIC"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="fxg.ecore#//FontWeight">
+      <genEnumLiterals ecoreEnumLiteral="fxg.ecore#//FontWeight/NORMAL"/>
+      <genEnumLiterals ecoreEnumLiteral="fxg.ecore#//FontWeight/BOLD"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="fxg.ecore#//TextDecoration">
+      <genEnumLiterals ecoreEnumLiteral="fxg.ecore#//TextDecoration/NONE"/>
+      <genEnumLiterals ecoreEnumLiteral="fxg.ecore#//TextDecoration/UNDERLINE"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="fxg.ecore#//WhitespaceCollapse">
+      <genEnumLiterals ecoreEnumLiteral="fxg.ecore#//WhitespaceCollapse/PRESERVE"/>
+      <genEnumLiterals ecoreEnumLiteral="fxg.ecore#//WhitespaceCollapse/COLLAPSE"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="fxg.ecore#//LineBreak">
+      <genEnumLiterals ecoreEnumLiteral="fxg.ecore#//LineBreak/TO_FIT"/>
+      <genEnumLiterals ecoreEnumLiteral="fxg.ecore#//LineBreak/EXPLICIT"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="fxg.ecore#//Kerning">
+      <genEnumLiterals ecoreEnumLiteral="fxg.ecore#//Kerning/ON"/>
+      <genEnumLiterals ecoreEnumLiteral="fxg.ecore#//Kerning/OFF"/>
+      <genEnumLiterals ecoreEnumLiteral="fxg.ecore#//Kerning/AUTO"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="fxg.ecore#//SpreadMethod">
+      <genEnumLiterals ecoreEnumLiteral="fxg.ecore#//SpreadMethod/PAD"/>
+      <genEnumLiterals ecoreEnumLiteral="fxg.ecore#//SpreadMethod/REFLECT"/>
+      <genEnumLiterals ecoreEnumLiteral="fxg.ecore#//SpreadMethod/REPEAT"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="fxg.ecore#//InterpolationMethod">
+      <genEnumLiterals ecoreEnumLiteral="fxg.ecore#//InterpolationMethod/RGB"/>
+      <genEnumLiterals ecoreEnumLiteral="fxg.ecore#//InterpolationMethod/LINEAR_RGB"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="fxg.ecore#//Cap">
+      <genEnumLiterals ecoreEnumLiteral="fxg.ecore#//Cap/ROUND"/>
+      <genEnumLiterals ecoreEnumLiteral="fxg.ecore#//Cap/SQUARE"/>
+      <genEnumLiterals ecoreEnumLiteral="fxg.ecore#//Cap/NONE"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="fxg.ecore#//Joint">
+      <genEnumLiterals ecoreEnumLiteral="fxg.ecore#//Joint/ROUND"/>
+      <genEnumLiterals ecoreEnumLiteral="fxg.ecore#//Joint/MITER"/>
+      <genEnumLiterals ecoreEnumLiteral="fxg.ecore#//Joint/BEVEL"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="fxg.ecore#//ScaleMode">
+      <genEnumLiterals ecoreEnumLiteral="fxg.ecore#//ScaleMode/NORMAL"/>
+      <genEnumLiterals ecoreEnumLiteral="fxg.ecore#//ScaleMode/NONE"/>
+      <genEnumLiterals ecoreEnumLiteral="fxg.ecore#//ScaleMode/HORIZONTAL"/>
+      <genEnumLiterals ecoreEnumLiteral="fxg.ecore#//ScaleMode/VERTICAL"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="fxg.ecore#//BevelFilterType">
+      <genEnumLiterals ecoreEnumLiteral="fxg.ecore#//BevelFilterType/INNER"/>
+      <genEnumLiterals ecoreEnumLiteral="fxg.ecore#//BevelFilterType/OUTER"/>
+      <genEnumLiterals ecoreEnumLiteral="fxg.ecore#//BevelFilterType/FULL"/>
+    </genEnums>
+    <genDataTypes ecoreDataType="fxg.ecore#//PathData"/>
+    <genDataTypes ecoreDataType="fxg.ecore#//Angle"/>
+    <genDataTypes ecoreDataType="fxg.ecore#//Length"/>
+    <genDataTypes ecoreDataType="fxg.ecore#//Percent"/>
+    <genDataTypes ecoreDataType="fxg.ecore#//Color"/>
+    <genDataTypes ecoreDataType="fxg.ecore#//Alpha"/>
+    <genClasses ecoreClass="fxg.ecore#//Graphic">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute fxg.ecore#//Graphic/scaleGridLeft"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute fxg.ecore#//Graphic/scaleGridRight"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute fxg.ecore#//Graphic/scaleGridTop"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute fxg.ecore#//Graphic/scaleGridBottom"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute fxg.ecore#//Graphic/viewWidth"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute fxg.ecore#//Graphic/viewHeight"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute fxg.ecore#//Graphic/version"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute fxg.ecore#//Graphic/mask"/>
+    </genClasses>
+    <genClasses ecoreClass="fxg.ecore#//Library"/>
+    <genClasses ecoreClass="fxg.ecore#//Definition">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute fxg.ecore#//Definition/name"/>
+    </genClasses>
+    <genClasses ecoreClass="fxg.ecore#//Group">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute fxg.ecore#//Group/rotation"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute fxg.ecore#//Group/scaleX"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute fxg.ecore#//Group/scaleY"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute fxg.ecore#//Group/x"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute fxg.ecore#//Group/y"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute fxg.ecore#//Group/blendMode"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute fxg.ecore#//Group/alpha"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute fxg.ecore#//Group/id"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute fxg.ecore#//Group/transformX"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute fxg.ecore#//Group/transformY"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute fxg.ecore#//Group/maskType"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute fxg.ecore#//Group/visible"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute fxg.ecore#//Group/scaleGridLeft"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute fxg.ecore#//Group/scaleGridRight"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute fxg.ecore#//Group/scaleGridTop"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute fxg.ecore#//Group/scaleGridBottom"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference fxg.ecore#//Group/transform"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference fxg.ecore#//Group/filters"/>
+    </genClasses>
+    <genClasses ecoreClass="fxg.ecore#//Transform">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference fxg.ecore#//Transform/matrix"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference fxg.ecore#//Transform/colorTransform"/>
+    </genClasses>
+    <genClasses ecoreClass="fxg.ecore#//PlaceObject">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute fxg.ecore#//PlaceObject/id"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference fxg.ecore#//PlaceObject/transform"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference fxg.ecore#//PlaceObject/filters"/>
+    </genClasses>
+    <genClasses ecoreClass="fxg.ecore#//Matrix">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute fxg.ecore#//Matrix/a"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute fxg.ecore#//Matrix/b"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute fxg.ecore#//Matrix/c"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute fxg.ecore#//Matrix/d"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute fxg.ecore#//Matrix/tx"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute fxg.ecore#//Matrix/ty"/>
+    </genClasses>
+    <genClasses ecoreClass="fxg.ecore#//Path">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute fxg.ecore#//Path/data"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute fxg.ecore#//Path/x"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute fxg.ecore#//Path/y"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute fxg.ecore#//Path/transformX"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute fxg.ecore#//Path/transformY"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute fxg.ecore#//Path/rotation"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute fxg.ecore#//Path/scaleX"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute fxg.ecore#//Path/scaleY"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute fxg.ecore#//Path/blendMode"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute fxg.ecore#//Path/visible"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference fxg.ecore#//Path/fill"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference fxg.ecore#//Path/stroke"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference fxg.ecore#//Path/filters"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference fxg.ecore#//Path/transform"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="fxg.ecore#//Shape"/>
+    <genClasses ecoreClass="fxg.ecore#//Rect">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute fxg.ecore#//Rect/width"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute fxg.ecore#//Rect/height"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute fxg.ecore#//Rect/radiusX"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute fxg.ecore#//Rect/radiusY"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute fxg.ecore#//Rect/x"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute fxg.ecore#//Rect/y"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute fxg.ecore#//Rect/transformX"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute fxg.ecore#//Rect/transformY"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute fxg.ecore#//Rect/rotation"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute fxg.ecore#//Rect/scaleX"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute fxg.ecore#//Rect/scaleY"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute fxg.ecore#//Rect/blendMode"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute fxg.ecore#//Rect/visible"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference fxg.ecore#//Rect/transform"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference fxg.ecore#//Rect/filters"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference fxg.ecore#//Rect/fill"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference fxg.ecore#//Rect/stroke"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference fxg.ecore#//Rect/mask"/>
+    </genClasses>
+    <genClasses ecoreClass="fxg.ecore#//Ellipse">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute fxg.ecore#//Ellipse/width"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute fxg.ecore#//Ellipse/height"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute fxg.ecore#//Ellipse/x"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute fxg.ecore#//Ellipse/y"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute fxg.ecore#//Ellipse/transformX"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute fxg.ecore#//Ellipse/transformY"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute fxg.ecore#//Ellipse/rotation"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute fxg.ecore#//Ellipse/scaleX"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute fxg.ecore#//Ellipse/scaleY"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute fxg.ecore#//Ellipse/blendMode"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute fxg.ecore#//Ellipse/visible"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference fxg.ecore#//Ellipse/transform"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference fxg.ecore#//Ellipse/filters"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference fxg.ecore#//Ellipse/fill"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference fxg.ecore#//Ellipse/stroke"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference fxg.ecore#//Ellipse/mask"/>
+    </genClasses>
+    <genClasses ecoreClass="fxg.ecore#//Line">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute fxg.ecore#//Line/xFrom"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute fxg.ecore#//Line/yFrom"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute fxg.ecore#//Line/xTo"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute fxg.ecore#//Line/yTo"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute fxg.ecore#//Line/x"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute fxg.ecore#//Line/y"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute fxg.ecore#//Line/transformX"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute fxg.ecore#//Line/transformY"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute fxg.ecore#//Line/rotation"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute fxg.ecore#//Line/scaleX"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute fxg.ecore#//Line/scaleY"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute fxg.ecore#//Line/blendMode"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute fxg.ecore#//Line/alpha"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute fxg.ecore#//Line/id"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute fxg.ecore#//Line/maskType"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute fxg.ecore#//Line/visible"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference fxg.ecore#//Line/transform"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference fxg.ecore#//Line/filters"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference fxg.ecore#//Line/fill"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference fxg.ecore#//Line/stroke"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference fxg.ecore#//Line/mask"/>
+    </genClasses>
+    <genClasses ecoreClass="fxg.ecore#//TextGraphic">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute fxg.ecore#//TextGraphic/rotation"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute fxg.ecore#//TextGraphic/scaleX"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute fxg.ecore#//TextGraphic/scaleY"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute fxg.ecore#//TextGraphic/x"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute fxg.ecore#//TextGraphic/y"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute fxg.ecore#//TextGraphic/blendMode"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute fxg.ecore#//TextGraphic/alpha"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute fxg.ecore#//TextGraphic/id"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute fxg.ecore#//TextGraphic/transformX"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute fxg.ecore#//TextGraphic/transformY"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute fxg.ecore#//TextGraphic/maskType"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute fxg.ecore#//TextGraphic/fontFamily"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute fxg.ecore#//TextGraphic/fontSize"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute fxg.ecore#//TextGraphic/fontStyle"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute fxg.ecore#//TextGraphic/lineHeight"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute fxg.ecore#//TextGraphic/tracking"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute fxg.ecore#//TextGraphic/textDecoration"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute fxg.ecore#//TextGraphic/lineThrough"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute fxg.ecore#//TextGraphic/color"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute fxg.ecore#//TextGraphic/textAlpha"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute fxg.ecore#//TextGraphic/whiteSpaceCollapse"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute fxg.ecore#//TextGraphic/lineBreak"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute fxg.ecore#//TextGraphic/kerning"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute fxg.ecore#//TextGraphic/visible"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference fxg.ecore#//TextGraphic/transform"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute fxg.ecore#//TextGraphic/content"/>
+    </genClasses>
+    <genClasses ecoreClass="fxg.ecore#//BitmapGraphic">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute fxg.ecore#//BitmapGraphic/x"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute fxg.ecore#//BitmapGraphic/y"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute fxg.ecore#//BitmapGraphic/width"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute fxg.ecore#//BitmapGraphic/height"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute fxg.ecore#//BitmapGraphic/repeat"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute fxg.ecore#//BitmapGraphic/source"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute fxg.ecore#//BitmapGraphic/visible"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="fxg.ecore#//Fill"/>
+    <genClasses ecoreClass="fxg.ecore#//SolidColor">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute fxg.ecore#//SolidColor/alpha"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute fxg.ecore#//SolidColor/color"/>
+    </genClasses>
+    <genClasses ecoreClass="fxg.ecore#//LinearGradient">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute fxg.ecore#//LinearGradient/x"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute fxg.ecore#//LinearGradient/y"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute fxg.ecore#//LinearGradient/scaleX"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute fxg.ecore#//LinearGradient/rotation"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute fxg.ecore#//LinearGradient/spreadMethod"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute fxg.ecore#//LinearGradient/interpolationMethod"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference fxg.ecore#//LinearGradient/matrix"/>
+    </genClasses>
+    <genClasses ecoreClass="fxg.ecore#//RadialGradient">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute fxg.ecore#//RadialGradient/x"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute fxg.ecore#//RadialGradient/y"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute fxg.ecore#//RadialGradient/scaleX"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute fxg.ecore#//RadialGradient/scaleY"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute fxg.ecore#//RadialGradient/rotation"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute fxg.ecore#//RadialGradient/spreadMethod"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute fxg.ecore#//RadialGradient/interpolationMethod"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute fxg.ecore#//RadialGradient/focalPointRatio"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference fxg.ecore#//RadialGradient/matrix"/>
+    </genClasses>
+    <genClasses ecoreClass="fxg.ecore#//BitmapFill">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute fxg.ecore#//BitmapFill/x"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute fxg.ecore#//BitmapFill/y"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute fxg.ecore#//BitmapFill/scaleX"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute fxg.ecore#//BitmapFill/scaleY"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute fxg.ecore#//BitmapFill/transformX"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute fxg.ecore#//BitmapFill/transformY"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute fxg.ecore#//BitmapFill/source"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute fxg.ecore#//BitmapFill/repeat"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference fxg.ecore#//BitmapFill/matrix"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="fxg.ecore#//Stroke"/>
+    <genClasses ecoreClass="fxg.ecore#//SolidColorStroke">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute fxg.ecore#//SolidColorStroke/alpha"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute fxg.ecore#//SolidColorStroke/caps"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute fxg.ecore#//SolidColorStroke/color"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute fxg.ecore#//SolidColorStroke/joints"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute fxg.ecore#//SolidColorStroke/miterLimit"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute fxg.ecore#//SolidColorStroke/pixelHinting"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute fxg.ecore#//SolidColorStroke/scaleMode"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute fxg.ecore#//SolidColorStroke/weight"/>
+    </genClasses>
+    <genClasses ecoreClass="fxg.ecore#//LinearGradientStroke">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute fxg.ecore#//LinearGradientStroke/x"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute fxg.ecore#//LinearGradientStroke/y"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute fxg.ecore#//LinearGradientStroke/scaleX"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute fxg.ecore#//LinearGradientStroke/rotation"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute fxg.ecore#//LinearGradientStroke/spreadMethod"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute fxg.ecore#//LinearGradientStroke/interpolationMethod"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute fxg.ecore#//LinearGradientStroke/scaleMode"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute fxg.ecore#//LinearGradientStroke/caps"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute fxg.ecore#//LinearGradientStroke/joints"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute fxg.ecore#//LinearGradientStroke/miterLimit"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference fxg.ecore#//LinearGradientStroke/matrix"/>
+    </genClasses>
+    <genClasses ecoreClass="fxg.ecore#//RadialGradientStroke">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute fxg.ecore#//RadialGradientStroke/x"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute fxg.ecore#//RadialGradientStroke/y"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute fxg.ecore#//RadialGradientStroke/scaleX"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute fxg.ecore#//RadialGradientStroke/scaleY"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute fxg.ecore#//RadialGradientStroke/rotation"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute fxg.ecore#//RadialGradientStroke/spreadMethod"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute fxg.ecore#//RadialGradientStroke/interpolationMethod"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute fxg.ecore#//RadialGradientStroke/focalPointRatio"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute fxg.ecore#//RadialGradientStroke/scaleMode"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute fxg.ecore#//RadialGradientStroke/caps"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute fxg.ecore#//RadialGradientStroke/joints"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute fxg.ecore#//RadialGradientStroke/miterLimit"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference fxg.ecore#//RadialGradientStroke/matrix"/>
+    </genClasses>
+    <genClasses ecoreClass="fxg.ecore#//GradientEntry">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute fxg.ecore#//GradientEntry/color"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute fxg.ecore#//GradientEntry/alpha"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute fxg.ecore#//GradientEntry/ratio"/>
+    </genClasses>
+    <genClasses ecoreClass="fxg.ecore#//ColorTransform">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute fxg.ecore#//ColorTransform/alphaMultiplier"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute fxg.ecore#//ColorTransform/alphaOffset"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute fxg.ecore#//ColorTransform/blueMultiplier"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute fxg.ecore#//ColorTransform/blueOffset"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute fxg.ecore#//ColorTransform/greenMultiplier"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute fxg.ecore#//ColorTransform/greenOffset"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute fxg.ecore#//ColorTransform/redMultiplier"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute fxg.ecore#//ColorTransform/redOffset"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="fxg.ecore#//Filter"/>
+    <genClasses ecoreClass="fxg.ecore#//BlurFilter">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute fxg.ecore#//BlurFilter/blurX"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute fxg.ecore#//BlurFilter/blurY"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute fxg.ecore#//BlurFilter/quality"/>
+    </genClasses>
+    <genClasses ecoreClass="fxg.ecore#//DropShadowFilter">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute fxg.ecore#//DropShadowFilter/alpha"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute fxg.ecore#//DropShadowFilter/angle"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute fxg.ecore#//DropShadowFilter/blurX"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute fxg.ecore#//DropShadowFilter/blurY"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute fxg.ecore#//DropShadowFilter/color"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute fxg.ecore#//DropShadowFilter/distance"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute fxg.ecore#//DropShadowFilter/inner"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute fxg.ecore#//DropShadowFilter/hideObject"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute fxg.ecore#//DropShadowFilter/knockout"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute fxg.ecore#//DropShadowFilter/quality"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute fxg.ecore#//DropShadowFilter/strength"/>
+    </genClasses>
+    <genClasses ecoreClass="fxg.ecore#//BevelFilter">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute fxg.ecore#//BevelFilter/angle"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute fxg.ecore#//BevelFilter/blurX"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute fxg.ecore#//BevelFilter/blurY"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute fxg.ecore#//BevelFilter/highlightAlpha"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute fxg.ecore#//BevelFilter/highlightColor"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute fxg.ecore#//BevelFilter/distance"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute fxg.ecore#//BevelFilter/knockout"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute fxg.ecore#//BevelFilter/quality"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute fxg.ecore#//BevelFilter/shadowAlpha"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute fxg.ecore#//BevelFilter/shadowColor"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute fxg.ecore#//BevelFilter/strength"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute fxg.ecore#//BevelFilter/type"/>
+    </genClasses>
+    <genClasses ecoreClass="fxg.ecore#//GradientGlowFilter">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute fxg.ecore#//GradientGlowFilter/angle"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute fxg.ecore#//GradientGlowFilter/blurX"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute fxg.ecore#//GradientGlowFilter/blurY"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute fxg.ecore#//GradientGlowFilter/distance"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute fxg.ecore#//GradientGlowFilter/inner"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute fxg.ecore#//GradientGlowFilter/knockout"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute fxg.ecore#//GradientGlowFilter/quality"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute fxg.ecore#//GradientGlowFilter/strength"/>
+    </genClasses>
+    <genClasses ecoreClass="fxg.ecore#//GradientBevelFilter">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute fxg.ecore#//GradientBevelFilter/angle"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute fxg.ecore#//GradientBevelFilter/blurX"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute fxg.ecore#//GradientBevelFilter/blurY"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute fxg.ecore#//GradientBevelFilter/distance"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute fxg.ecore#//GradientBevelFilter/knockout"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute fxg.ecore#//GradientBevelFilter/quality"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute fxg.ecore#//GradientBevelFilter/strength"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute fxg.ecore#//GradientBevelFilter/type"/>
+    </genClasses>
+    <genClasses ecoreClass="fxg.ecore#//ColorMatrixFilter">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute fxg.ecore#//ColorMatrixFilter/matrix"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="fxg.ecore#//FXGElement"/>
+    <genClasses ecoreClass="fxg.ecore#//ContainerElement">
+      <genTypeParameters ecoreTypeParameter="fxg.ecore#//ContainerElement/T"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference fxg.ecore#//ContainerElement/_children"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>
