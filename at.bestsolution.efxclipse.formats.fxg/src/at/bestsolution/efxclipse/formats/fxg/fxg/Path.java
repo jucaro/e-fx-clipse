@@ -279,6 +279,7 @@ public interface Path extends FXGElement {
 
 	/**
 	 * Returns the value of the '<em><b>Winding</b></em>' attribute.
+	 * The default value is <code>"Winding.NOT_SET"</code>.
 	 * The literals are from the enumeration {@link at.bestsolution.efxclipse.formats.fxg.fxg.Winding}.
 	 * <!-- begin-user-doc -->
 	 * <p>
@@ -290,7 +291,7 @@ public interface Path extends FXGElement {
 	 * @see at.bestsolution.efxclipse.formats.fxg.fxg.Winding
 	 * @see #setWinding(Winding)
 	 * @see at.bestsolution.efxclipse.formats.fxg.fxg.FxgPackage#getPath_Winding()
-	 * @model
+	 * @model default="Winding.NOT_SET"
 	 * @generated
 	 */
 	Winding getWinding();

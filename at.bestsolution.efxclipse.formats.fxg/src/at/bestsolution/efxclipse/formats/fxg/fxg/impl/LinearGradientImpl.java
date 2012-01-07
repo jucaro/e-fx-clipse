@@ -150,7 +150,7 @@ public class LinearGradientImpl extends EObjectImpl implements LinearGradient {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final SpreadMethod SPREAD_METHOD_EDEFAULT = SpreadMethod.PAD;
+	protected static final SpreadMethod SPREAD_METHOD_EDEFAULT = SpreadMethod.NOT_SET;
 
 	/**
 	 * The cached value of the '{@link #getSpreadMethod() <em>Spread Method</em>}' attribute.
@@ -170,7 +170,7 @@ public class LinearGradientImpl extends EObjectImpl implements LinearGradient {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final InterpolationMethod INTERPOLATION_METHOD_EDEFAULT = InterpolationMethod.RGB;
+	protected static final InterpolationMethod INTERPOLATION_METHOD_EDEFAULT = InterpolationMethod.NOT_SET;
 
 	/**
 	 * The cached value of the '{@link #getInterpolationMethod() <em>Interpolation Method</em>}' attribute.

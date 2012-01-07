@@ -417,7 +417,7 @@ public class RectImpl extends EObjectImpl implements Rect {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final BlendMode BLEND_MODE_EDEFAULT = BlendMode.ADD;
+	protected static final BlendMode BLEND_MODE_EDEFAULT = BlendMode.NOT_SET;
 
 	/**
 	 * The cached value of the '{@link #getBlendMode() <em>Blend Mode</em>}' attribute.
@@ -457,7 +457,7 @@ public class RectImpl extends EObjectImpl implements Rect {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final Double ALPHA_EDEFAULT = new Double(1.0);
+	protected static final Double ALPHA_EDEFAULT = null;
 
 	/**
 	 * The cached value of the '{@link #getAlpha() <em>Alpha</em>}' attribute.

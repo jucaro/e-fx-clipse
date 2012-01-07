@@ -23,37 +23,60 @@ import org.eclipse.emf.common.util.Enumerator;
  */
 public enum SpreadMethod implements Enumerator {
 	/**
-	 * The '<em><b>PAD</b></em>' literal object.
+	 * The '<em><b>NOT SET</b></em>' literal object.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #NOT_SET_VALUE
+	 * @generated
+	 * @ordered
+	 */
+	NOT_SET(0, "NOT_SET", "NOT_SET"), /**
+	 * The '<em><b>Pad</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #PAD_VALUE
 	 * @generated
 	 * @ordered
 	 */
-	PAD(0, "PAD", "pad"),
+	PAD(1, "pad", "pad"),
 
 	/**
-	 * The '<em><b>REFLECT</b></em>' literal object.
+	 * The '<em><b>Reflect</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #REFLECT_VALUE
 	 * @generated
 	 * @ordered
 	 */
-	REFLECT(1, "REFLECT", "reflect"),
+	REFLECT(2, "reflect", "reflect"),
 
 	/**
-	 * The '<em><b>REPEAT</b></em>' literal object.
+	 * The '<em><b>Repeat</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #REPEAT_VALUE
 	 * @generated
 	 * @ordered
 	 */
-	REPEAT(2, "REPEAT", "repeat");
+	REPEAT(3, "repeat", "repeat");
 
 	/**
-	 * The '<em><b>PAD</b></em>' literal value.
+	 * The '<em><b>NOT SET</b></em>' literal value.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of '<em><b>NOT SET</b></em>' literal object isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @see #NOT_SET
+	 * @model
+	 * @generated
+	 * @ordered
+	 */
+	public static final int NOT_SET_VALUE = 0;
+
+	/**
+	 * The '<em><b>Pad</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of '<em><b>PAD</b></em>' literal object isn't clear,
@@ -61,14 +84,14 @@ public enum SpreadMethod implements Enumerator {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @see #PAD
-	 * @model literal="pad"
+	 * @model name="pad"
 	 * @generated
 	 * @ordered
 	 */
-	public static final int PAD_VALUE = 0;
+	public static final int PAD_VALUE = 1;
 
 	/**
-	 * The '<em><b>REFLECT</b></em>' literal value.
+	 * The '<em><b>Reflect</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of '<em><b>REFLECT</b></em>' literal object isn't clear,
@@ -76,14 +99,14 @@ public enum SpreadMethod implements Enumerator {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @see #REFLECT
-	 * @model literal="reflect"
+	 * @model name="reflect"
 	 * @generated
 	 * @ordered
 	 */
-	public static final int REFLECT_VALUE = 1;
+	public static final int REFLECT_VALUE = 2;
 
 	/**
-	 * The '<em><b>REPEAT</b></em>' literal value.
+	 * The '<em><b>Repeat</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of '<em><b>REPEAT</b></em>' literal object isn't clear,
@@ -91,11 +114,11 @@ public enum SpreadMethod implements Enumerator {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @see #REPEAT
-	 * @model literal="repeat"
+	 * @model name="repeat"
 	 * @generated
 	 * @ordered
 	 */
-	public static final int REPEAT_VALUE = 2;
+	public static final int REPEAT_VALUE = 3;
 
 	/**
 	 * An array of all the '<em><b>Spread Method</b></em>' enumerators.
@@ -105,6 +128,7 @@ public enum SpreadMethod implements Enumerator {
 	 */
 	private static final SpreadMethod[] VALUES_ARRAY =
 		new SpreadMethod[] {
+			NOT_SET,
 			PAD,
 			REFLECT,
 			REPEAT,
@@ -158,6 +182,7 @@ public enum SpreadMethod implements Enumerator {
 	 */
 	public static SpreadMethod get(int value) {
 		switch (value) {
+			case NOT_SET_VALUE: return NOT_SET;
 			case PAD_VALUE: return PAD;
 			case REFLECT_VALUE: return REFLECT;
 			case REPEAT_VALUE: return REPEAT;

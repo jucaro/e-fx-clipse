@@ -38,6 +38,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <p>
  * The following features are implemented:
  * <ul>
+ *   <li>{@link at.bestsolution.efxclipse.formats.fxg.fxg.impl.EllipseImpl#getAlpha <em>Alpha</em>}</li>
  *   <li>{@link at.bestsolution.efxclipse.formats.fxg.fxg.impl.EllipseImpl#getWidth <em>Width</em>}</li>
  *   <li>{@link at.bestsolution.efxclipse.formats.fxg.fxg.impl.EllipseImpl#getHeight <em>Height</em>}</li>
  *   <li>{@link at.bestsolution.efxclipse.formats.fxg.fxg.impl.EllipseImpl#getX <em>X</em>}</li>
@@ -59,6 +60,26 @@ import org.eclipse.emf.ecore.util.InternalEList;
  */
 public class EllipseImpl extends EObjectImpl implements Ellipse {
 	/**
+	 * The default value of the '{@link #getAlpha() <em>Alpha</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getAlpha()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final Double ALPHA_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getAlpha() <em>Alpha</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getAlpha()
+	 * @generated
+	 * @ordered
+	 */
+	protected Double alpha = ALPHA_EDEFAULT;
+
+	/**
 	 * The default value of the '{@link #getWidth() <em>Width</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -66,7 +87,7 @@ public class EllipseImpl extends EObjectImpl implements Ellipse {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String WIDTH_EDEFAULT = null;
+	protected static final String WIDTH_EDEFAULT = "\"0\"";
 
 	/**
 	 * The cached value of the '{@link #getWidth() <em>Width</em>}' attribute.
@@ -86,7 +107,7 @@ public class EllipseImpl extends EObjectImpl implements Ellipse {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String HEIGHT_EDEFAULT = null;
+	protected static final String HEIGHT_EDEFAULT = "\"0\"";
 
 	/**
 	 * The cached value of the '{@link #getHeight() <em>Height</em>}' attribute.
@@ -106,7 +127,7 @@ public class EllipseImpl extends EObjectImpl implements Ellipse {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final Double X_EDEFAULT = null;
+	protected static final Double X_EDEFAULT = new Double(0.0);
 
 	/**
 	 * The cached value of the '{@link #getX() <em>X</em>}' attribute.
@@ -126,7 +147,7 @@ public class EllipseImpl extends EObjectImpl implements Ellipse {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final Double Y_EDEFAULT = null;
+	protected static final Double Y_EDEFAULT = new Double(0.0);
 
 	/**
 	 * The cached value of the '{@link #getY() <em>Y</em>}' attribute.
@@ -206,7 +227,7 @@ public class EllipseImpl extends EObjectImpl implements Ellipse {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final BlendMode BLEND_MODE_EDEFAULT = BlendMode.ADD;
+	protected static final BlendMode BLEND_MODE_EDEFAULT = BlendMode.NOT_SET;
 
 	/**
 	 * The cached value of the '{@link #getBlendMode() <em>Blend Mode</em>}' attribute.
@@ -305,6 +326,27 @@ public class EllipseImpl extends EObjectImpl implements Ellipse {
 	@Override
 	protected EClass eStaticClass() {
 		return FxgPackage.Literals.ELLIPSE;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Double getAlpha() {
+		return alpha;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setAlpha(Double newAlpha) {
+		Double oldAlpha = alpha;
+		alpha = newAlpha;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, FxgPackage.ELLIPSE__ALPHA, oldAlpha, alpha));
 	}
 
 	/**
@@ -710,6 +752,8 @@ public class EllipseImpl extends EObjectImpl implements Ellipse {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
+			case FxgPackage.ELLIPSE__ALPHA:
+				return getAlpha();
 			case FxgPackage.ELLIPSE__WIDTH:
 				return getWidth();
 			case FxgPackage.ELLIPSE__HEIGHT:
@@ -751,6 +795,9 @@ public class EllipseImpl extends EObjectImpl implements Ellipse {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
+			case FxgPackage.ELLIPSE__ALPHA:
+				setAlpha((Double)newValue);
+				return;
 			case FxgPackage.ELLIPSE__WIDTH:
 				setWidth((String)newValue);
 				return;
@@ -806,6 +853,9 @@ public class EllipseImpl extends EObjectImpl implements Ellipse {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
+			case FxgPackage.ELLIPSE__ALPHA:
+				setAlpha(ALPHA_EDEFAULT);
+				return;
 			case FxgPackage.ELLIPSE__WIDTH:
 				setWidth(WIDTH_EDEFAULT);
 				return;
@@ -860,6 +910,8 @@ public class EllipseImpl extends EObjectImpl implements Ellipse {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
+			case FxgPackage.ELLIPSE__ALPHA:
+				return ALPHA_EDEFAULT == null ? alpha != null : !ALPHA_EDEFAULT.equals(alpha);
 			case FxgPackage.ELLIPSE__WIDTH:
 				return WIDTH_EDEFAULT == null ? width != null : !WIDTH_EDEFAULT.equals(width);
 			case FxgPackage.ELLIPSE__HEIGHT:
@@ -902,7 +954,9 @@ public class EllipseImpl extends EObjectImpl implements Ellipse {
 		if (eIsProxy()) return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (width: ");
+		result.append(" (alpha: ");
+		result.append(alpha);
+		result.append(", width: ");
 		result.append(width);
 		result.append(", height: ");
 		result.append(height);

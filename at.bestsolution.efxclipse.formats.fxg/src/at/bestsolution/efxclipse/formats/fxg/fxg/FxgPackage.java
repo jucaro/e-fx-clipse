@@ -1075,13 +1075,22 @@ public interface FxgPackage extends EPackage {
 	int ELLIPSE = 11;
 
 	/**
+	 * The feature id for the '<em><b>Alpha</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ELLIPSE__ALPHA = SHAPE_FEATURE_COUNT + 0;
+
+	/**
 	 * The feature id for the '<em><b>Width</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ELLIPSE__WIDTH = SHAPE_FEATURE_COUNT + 0;
+	int ELLIPSE__WIDTH = SHAPE_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Height</b></em>' attribute.
@@ -1090,7 +1099,7 @@ public interface FxgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ELLIPSE__HEIGHT = SHAPE_FEATURE_COUNT + 1;
+	int ELLIPSE__HEIGHT = SHAPE_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>X</b></em>' attribute.
@@ -1099,7 +1108,7 @@ public interface FxgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ELLIPSE__X = SHAPE_FEATURE_COUNT + 2;
+	int ELLIPSE__X = SHAPE_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Y</b></em>' attribute.
@@ -1108,7 +1117,7 @@ public interface FxgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ELLIPSE__Y = SHAPE_FEATURE_COUNT + 3;
+	int ELLIPSE__Y = SHAPE_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Rotation</b></em>' attribute.
@@ -1117,7 +1126,7 @@ public interface FxgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ELLIPSE__ROTATION = SHAPE_FEATURE_COUNT + 4;
+	int ELLIPSE__ROTATION = SHAPE_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>Scale X</b></em>' attribute.
@@ -1126,7 +1135,7 @@ public interface FxgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ELLIPSE__SCALE_X = SHAPE_FEATURE_COUNT + 5;
+	int ELLIPSE__SCALE_X = SHAPE_FEATURE_COUNT + 6;
 
 	/**
 	 * The feature id for the '<em><b>Scale Y</b></em>' attribute.
@@ -1135,7 +1144,7 @@ public interface FxgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ELLIPSE__SCALE_Y = SHAPE_FEATURE_COUNT + 6;
+	int ELLIPSE__SCALE_Y = SHAPE_FEATURE_COUNT + 7;
 
 	/**
 	 * The feature id for the '<em><b>Blend Mode</b></em>' attribute.
@@ -1144,7 +1153,7 @@ public interface FxgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ELLIPSE__BLEND_MODE = SHAPE_FEATURE_COUNT + 7;
+	int ELLIPSE__BLEND_MODE = SHAPE_FEATURE_COUNT + 8;
 
 	/**
 	 * The feature id for the '<em><b>Visible</b></em>' attribute.
@@ -1153,7 +1162,7 @@ public interface FxgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ELLIPSE__VISIBLE = SHAPE_FEATURE_COUNT + 8;
+	int ELLIPSE__VISIBLE = SHAPE_FEATURE_COUNT + 9;
 
 	/**
 	 * The feature id for the '<em><b>Transform</b></em>' containment reference.
@@ -1162,7 +1171,7 @@ public interface FxgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ELLIPSE__TRANSFORM = SHAPE_FEATURE_COUNT + 9;
+	int ELLIPSE__TRANSFORM = SHAPE_FEATURE_COUNT + 10;
 
 	/**
 	 * The feature id for the '<em><b>Filters</b></em>' containment reference list.
@@ -1171,7 +1180,7 @@ public interface FxgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ELLIPSE__FILTERS = SHAPE_FEATURE_COUNT + 10;
+	int ELLIPSE__FILTERS = SHAPE_FEATURE_COUNT + 11;
 
 	/**
 	 * The feature id for the '<em><b>Fill</b></em>' containment reference.
@@ -1180,7 +1189,7 @@ public interface FxgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ELLIPSE__FILL = SHAPE_FEATURE_COUNT + 11;
+	int ELLIPSE__FILL = SHAPE_FEATURE_COUNT + 12;
 
 	/**
 	 * The feature id for the '<em><b>Stroke</b></em>' containment reference.
@@ -1189,7 +1198,7 @@ public interface FxgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ELLIPSE__STROKE = SHAPE_FEATURE_COUNT + 12;
+	int ELLIPSE__STROKE = SHAPE_FEATURE_COUNT + 13;
 
 	/**
 	 * The feature id for the '<em><b>Mask</b></em>' containment reference.
@@ -1198,7 +1207,7 @@ public interface FxgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ELLIPSE__MASK = SHAPE_FEATURE_COUNT + 13;
+	int ELLIPSE__MASK = SHAPE_FEATURE_COUNT + 14;
 
 	/**
 	 * The number of structural features of the '<em>Ellipse</em>' class.
@@ -1207,7 +1216,7 @@ public interface FxgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ELLIPSE_FEATURE_COUNT = SHAPE_FEATURE_COUNT + 14;
+	int ELLIPSE_FEATURE_COUNT = SHAPE_FEATURE_COUNT + 15;
 
 	/**
 	 * The meta object id for the '{@link at.bestsolution.efxclipse.formats.fxg.fxg.impl.LineImpl <em>Line</em>}' class.
@@ -5830,6 +5839,17 @@ public interface FxgPackage extends EPackage {
 	EClass getEllipse();
 
 	/**
+	 * Returns the meta object for the attribute '{@link at.bestsolution.efxclipse.formats.fxg.fxg.Ellipse#getAlpha <em>Alpha</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Alpha</em>'.
+	 * @see at.bestsolution.efxclipse.formats.fxg.fxg.Ellipse#getAlpha()
+	 * @see #getEllipse()
+	 * @generated
+	 */
+	EAttribute getEllipse_Alpha();
+
+	/**
 	 * Returns the meta object for the attribute '{@link at.bestsolution.efxclipse.formats.fxg.fxg.Ellipse#getWidth <em>Width</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -9864,6 +9884,14 @@ public interface FxgPackage extends EPackage {
 		 * @generated
 		 */
 		EClass ELLIPSE = eINSTANCE.getEllipse();
+
+		/**
+		 * The meta object literal for the '<em><b>Alpha</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute ELLIPSE__ALPHA = eINSTANCE.getEllipse_Alpha();
 
 		/**
 		 * The meta object literal for the '<em><b>Width</b></em>' attribute feature.

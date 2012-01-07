@@ -16,6 +16,7 @@ import org.eclipse.emf.common.util.EList;
  * <p>
  * The following features are supported:
  * <ul>
+ *   <li>{@link at.bestsolution.efxclipse.formats.fxg.fxg.Ellipse#getAlpha <em>Alpha</em>}</li>
  *   <li>{@link at.bestsolution.efxclipse.formats.fxg.fxg.Ellipse#getWidth <em>Width</em>}</li>
  *   <li>{@link at.bestsolution.efxclipse.formats.fxg.fxg.Ellipse#getHeight <em>Height</em>}</li>
  *   <li>{@link at.bestsolution.efxclipse.formats.fxg.fxg.Ellipse#getX <em>X</em>}</li>
@@ -39,7 +40,34 @@ import org.eclipse.emf.common.util.EList;
  */
 public interface Ellipse extends Shape {
 	/**
+	 * Returns the value of the '<em><b>Alpha</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Alpha</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Alpha</em>' attribute.
+	 * @see #setAlpha(Double)
+	 * @see at.bestsolution.efxclipse.formats.fxg.fxg.FxgPackage#getEllipse_Alpha()
+	 * @model dataType="at.bestsolution.efxclipse.formats.fxg.fxg.Alpha"
+	 * @generated
+	 */
+	Double getAlpha();
+
+	/**
+	 * Sets the value of the '{@link at.bestsolution.efxclipse.formats.fxg.fxg.Ellipse#getAlpha <em>Alpha</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Alpha</em>' attribute.
+	 * @see #getAlpha()
+	 * @generated
+	 */
+	void setAlpha(Double value);
+
+	/**
 	 * Returns the value of the '<em><b>Width</b></em>' attribute.
+	 * The default value is <code>"\"0\""</code>.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Width</em>' attribute isn't clear,
@@ -49,7 +77,7 @@ public interface Ellipse extends Shape {
 	 * @return the value of the '<em>Width</em>' attribute.
 	 * @see #setWidth(String)
 	 * @see at.bestsolution.efxclipse.formats.fxg.fxg.FxgPackage#getEllipse_Width()
-	 * @model dataType="at.bestsolution.efxclipse.formats.fxg.fxg.Length"
+	 * @model default="\"0\"" dataType="at.bestsolution.efxclipse.formats.fxg.fxg.Length"
 	 * @generated
 	 */
 	String getWidth();
@@ -66,6 +94,7 @@ public interface Ellipse extends Shape {
 
 	/**
 	 * Returns the value of the '<em><b>Height</b></em>' attribute.
+	 * The default value is <code>"\"0\""</code>.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Height</em>' attribute isn't clear,
@@ -75,7 +104,7 @@ public interface Ellipse extends Shape {
 	 * @return the value of the '<em>Height</em>' attribute.
 	 * @see #setHeight(String)
 	 * @see at.bestsolution.efxclipse.formats.fxg.fxg.FxgPackage#getEllipse_Height()
-	 * @model dataType="at.bestsolution.efxclipse.formats.fxg.fxg.Length"
+	 * @model default="\"0\"" dataType="at.bestsolution.efxclipse.formats.fxg.fxg.Length"
 	 * @generated
 	 */
 	String getHeight();
@@ -92,6 +121,7 @@ public interface Ellipse extends Shape {
 
 	/**
 	 * Returns the value of the '<em><b>X</b></em>' attribute.
+	 * The default value is <code>"0"</code>.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>X</em>' attribute isn't clear,
@@ -101,7 +131,7 @@ public interface Ellipse extends Shape {
 	 * @return the value of the '<em>X</em>' attribute.
 	 * @see #setX(Double)
 	 * @see at.bestsolution.efxclipse.formats.fxg.fxg.FxgPackage#getEllipse_X()
-	 * @model
+	 * @model default="0"
 	 * @generated
 	 */
 	Double getX();
@@ -118,6 +148,7 @@ public interface Ellipse extends Shape {
 
 	/**
 	 * Returns the value of the '<em><b>Y</b></em>' attribute.
+	 * The default value is <code>"0"</code>.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Y</em>' attribute isn't clear,
@@ -127,7 +158,7 @@ public interface Ellipse extends Shape {
 	 * @return the value of the '<em>Y</em>' attribute.
 	 * @see #setY(Double)
 	 * @see at.bestsolution.efxclipse.formats.fxg.fxg.FxgPackage#getEllipse_Y()
-	 * @model
+	 * @model default="0"
 	 * @generated
 	 */
 	Double getY();

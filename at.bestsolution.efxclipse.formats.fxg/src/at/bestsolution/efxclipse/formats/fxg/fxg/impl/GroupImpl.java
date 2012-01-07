@@ -167,7 +167,7 @@ public class GroupImpl extends ContainerElementImpl<FXGElement> implements Group
 	 * @generated
 	 * @ordered
 	 */
-	protected static final BlendMode BLEND_MODE_EDEFAULT = BlendMode.ADD;
+	protected static final BlendMode BLEND_MODE_EDEFAULT = BlendMode.NOT_SET;
 
 	/**
 	 * The cached value of the '{@link #getBlendMode() <em>Blend Mode</em>}' attribute.

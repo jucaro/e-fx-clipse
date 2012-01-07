@@ -271,7 +271,7 @@ public class BitmapImageImpl extends EObjectImpl implements BitmapImage {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final BlendMode BLEND_MODE_EDEFAULT = BlendMode.ADD;
+	protected static final BlendMode BLEND_MODE_EDEFAULT = BlendMode.NOT_SET;
 
 	/**
 	 * The cached value of the '{@link #getBlendMode() <em>Blend Mode</em>}' attribute.

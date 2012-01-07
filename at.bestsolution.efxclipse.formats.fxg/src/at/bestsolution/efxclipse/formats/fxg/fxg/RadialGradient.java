@@ -164,6 +164,7 @@ public interface RadialGradient extends Fill, ContainerElement<GradientEntry> {
 
 	/**
 	 * Returns the value of the '<em><b>Spread Method</b></em>' attribute.
+	 * The default value is <code>"SpreadMethod.NOT_SET"</code>.
 	 * The literals are from the enumeration {@link at.bestsolution.efxclipse.formats.fxg.fxg.SpreadMethod}.
 	 * <!-- begin-user-doc -->
 	 * <p>
@@ -175,7 +176,7 @@ public interface RadialGradient extends Fill, ContainerElement<GradientEntry> {
 	 * @see at.bestsolution.efxclipse.formats.fxg.fxg.SpreadMethod
 	 * @see #setSpreadMethod(SpreadMethod)
 	 * @see at.bestsolution.efxclipse.formats.fxg.fxg.FxgPackage#getRadialGradient_SpreadMethod()
-	 * @model
+	 * @model default="SpreadMethod.NOT_SET"
 	 * @generated
 	 */
 	SpreadMethod getSpreadMethod();
@@ -193,6 +194,7 @@ public interface RadialGradient extends Fill, ContainerElement<GradientEntry> {
 
 	/**
 	 * Returns the value of the '<em><b>Interpolation Method</b></em>' attribute.
+	 * The default value is <code>"InterpolationMethod.NOT_SET"</code>.
 	 * The literals are from the enumeration {@link at.bestsolution.efxclipse.formats.fxg.fxg.InterpolationMethod}.
 	 * <!-- begin-user-doc -->
 	 * <p>
@@ -204,7 +206,7 @@ public interface RadialGradient extends Fill, ContainerElement<GradientEntry> {
 	 * @see at.bestsolution.efxclipse.formats.fxg.fxg.InterpolationMethod
 	 * @see #setInterpolationMethod(InterpolationMethod)
 	 * @see at.bestsolution.efxclipse.formats.fxg.fxg.FxgPackage#getRadialGradient_InterpolationMethod()
-	 * @model
+	 * @model default="InterpolationMethod.NOT_SET"
 	 * @generated
 	 */
 	InterpolationMethod getInterpolationMethod();

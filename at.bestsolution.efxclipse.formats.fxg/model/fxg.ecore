@@ -33,7 +33,8 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="scaleY" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="x" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="y" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="blendMode" eType="#//BlendMode"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="blendMode" eType="#//BlendMode"
+        defaultValueLiteral="BlendMode.NOT_SET"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="alpha" eType="#//Alpha"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="transformX" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
@@ -85,7 +86,8 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="visible" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBooleanObject"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="alpha" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDoubleObject"
         defaultValueLiteral="1"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="winding" eType="#//Winding"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="winding" eType="#//Winding"
+        defaultValueLiteral="Winding.NOT_SET"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="fill" eType="#//Fill" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="stroke" eType="#//Stroke"
         containment="true"/>
@@ -118,8 +120,7 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="scaleY" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDoubleObject"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="blendMode" eType="#//BlendMode"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="visible" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBooleanObject"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="alpha" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDoubleObject"
-        defaultValueLiteral="1"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="alpha" eType="#//Alpha"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="transform" eType="#//Transform"
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="filters" upperBound="-1"
@@ -131,10 +132,15 @@
         containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Ellipse" eSuperTypes="#//Shape">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="width" eType="#//Length"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="height" eType="#//Length"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="x" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDoubleObject"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="y" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDoubleObject"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="alpha" eType="#//Alpha"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="width" eType="#//Length"
+        defaultValueLiteral="&quot;0&quot;"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="height" eType="#//Length"
+        defaultValueLiteral="&quot;0&quot;"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="x" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDoubleObject"
+        defaultValueLiteral="0"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="y" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDoubleObject"
+        defaultValueLiteral="0"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="rotation" eType="#//Angle"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="scaleX" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDoubleObject"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="scaleY" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDoubleObject"/>
@@ -324,8 +330,10 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="scaleX" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDoubleObject"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="scaleY" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDoubleObject"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="rotation" eType="#//Angle"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="spreadMethod" eType="#//SpreadMethod"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="interpolationMethod" eType="#//InterpolationMethod"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="spreadMethod" eType="#//SpreadMethod"
+        defaultValueLiteral="SpreadMethod.NOT_SET"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="interpolationMethod" eType="#//InterpolationMethod"
+        defaultValueLiteral="InterpolationMethod.NOT_SET"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="focalPointRatio" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDoubleObject"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="matrix" eType="#//Matrix"
         containment="true"/>
@@ -486,25 +494,27 @@
   <eClassifiers xsi:type="ecore:EDataType" name="Color" instanceClassName="java.lang.String"/>
   <eClassifiers xsi:type="ecore:EDataType" name="Alpha" instanceClassName="java.lang.Double"/>
   <eClassifiers xsi:type="ecore:EEnum" name="BlendMode">
-    <eLiterals name="ADD" literal="add"/>
-    <eLiterals name="ALPHA" value="1" literal="alpha"/>
-    <eLiterals name="DARKEN" value="2" literal="darken"/>
-    <eLiterals name="DIFFERENCE" value="3" literal="difference"/>
-    <eLiterals name="ERASE" value="4" literal="erase"/>
-    <eLiterals name="HARDLIGHT" value="5" literal="hardlight"/>
-    <eLiterals name="INVERT" value="6" literal="invert"/>
-    <eLiterals name="LAYER" value="7" literal="layer"/>
-    <eLiterals name="LIGHTEN" value="8" literal="lighten"/>
-    <eLiterals name="MULTIPLY" value="9" literal="multiply"/>
-    <eLiterals name="NORMAL" value="10" literal="normal"/>
-    <eLiterals name="OVERLAY" value="11" literal="overlay"/>
-    <eLiterals name="SCREEN" value="12" literal="screen"/>
-    <eLiterals name="SHADER" value="13" literal="shader"/>
-    <eLiterals name="SUBTRACT" value="14" literal="subtract"/>
+    <eLiterals name="NOT_SET"/>
+    <eLiterals name="add" value="1"/>
+    <eLiterals name="alpha" value="2"/>
+    <eLiterals name="darken" value="3"/>
+    <eLiterals name="difference" value="4"/>
+    <eLiterals name="erase" value="5"/>
+    <eLiterals name="hardlight" value="6"/>
+    <eLiterals name="invert" value="7"/>
+    <eLiterals name="layer" value="8"/>
+    <eLiterals name="lighten" value="9"/>
+    <eLiterals name="multiply" value="10"/>
+    <eLiterals name="normal" value="11"/>
+    <eLiterals name="overlay" value="12"/>
+    <eLiterals name="screen" value="13"/>
+    <eLiterals name="shader" value="14"/>
+    <eLiterals name="subtract" value="15"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="Winding">
-    <eLiterals name="EVEN_ODD" literal="evenOdd"/>
-    <eLiterals name="NON_ZERO" value="1" literal="nonZero"/>
+    <eLiterals name="NOT_SET"/>
+    <eLiterals name="evenOdd" value="1"/>
+    <eLiterals name="nonZero" value="2"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="MaskType">
     <eLiterals name="CLIP" literal="clip"/>
@@ -532,13 +542,15 @@
     <eLiterals name="AUTO" value="2" literal="auto"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="SpreadMethod">
-    <eLiterals name="PAD" literal="pad"/>
-    <eLiterals name="REFLECT" value="1" literal="reflect"/>
-    <eLiterals name="REPEAT" value="2" literal="repeat"/>
+    <eLiterals name="NOT_SET"/>
+    <eLiterals name="pad" value="1"/>
+    <eLiterals name="reflect" value="2"/>
+    <eLiterals name="repeat" value="3"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="InterpolationMethod">
-    <eLiterals name="RGB" literal="rgb"/>
-    <eLiterals name="LINEAR_RGB" value="1" literal="linearRGB"/>
+    <eLiterals name="NOT_SET"/>
+    <eLiterals name="rgb" value="1"/>
+    <eLiterals name="linearRGB" value="2"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="Cap">
     <eLiterals name="ROUND" literal="round"/>

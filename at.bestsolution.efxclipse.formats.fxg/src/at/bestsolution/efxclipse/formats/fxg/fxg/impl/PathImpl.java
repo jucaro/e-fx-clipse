@@ -188,7 +188,7 @@ public class PathImpl extends EObjectImpl implements Path {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final BlendMode BLEND_MODE_EDEFAULT = BlendMode.ADD;
+	protected static final BlendMode BLEND_MODE_EDEFAULT = BlendMode.NOT_SET;
 
 	/**
 	 * The cached value of the '{@link #getBlendMode() <em>Blend Mode</em>}' attribute.
@@ -248,7 +248,7 @@ public class PathImpl extends EObjectImpl implements Path {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final Winding WINDING_EDEFAULT = Winding.EVEN_ODD;
+	protected static final Winding WINDING_EDEFAULT = Winding.NOT_SET;
 
 	/**
 	 * The cached value of the '{@link #getWinding() <em>Winding</em>}' attribute.

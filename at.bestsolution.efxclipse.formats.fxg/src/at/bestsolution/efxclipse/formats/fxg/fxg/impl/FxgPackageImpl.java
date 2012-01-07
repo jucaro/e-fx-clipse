@@ -1618,7 +1618,7 @@ public class FxgPackageImpl extends EPackageImpl implements FxgPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getEllipse_Width() {
+	public EAttribute getEllipse_Alpha() {
 		return (EAttribute)ellipseEClass.getEStructuralFeatures().get(0);
 	}
 
@@ -1627,7 +1627,7 @@ public class FxgPackageImpl extends EPackageImpl implements FxgPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getEllipse_Height() {
+	public EAttribute getEllipse_Width() {
 		return (EAttribute)ellipseEClass.getEStructuralFeatures().get(1);
 	}
 
@@ -1636,7 +1636,7 @@ public class FxgPackageImpl extends EPackageImpl implements FxgPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getEllipse_X() {
+	public EAttribute getEllipse_Height() {
 		return (EAttribute)ellipseEClass.getEStructuralFeatures().get(2);
 	}
 
@@ -1645,7 +1645,7 @@ public class FxgPackageImpl extends EPackageImpl implements FxgPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getEllipse_Y() {
+	public EAttribute getEllipse_X() {
 		return (EAttribute)ellipseEClass.getEStructuralFeatures().get(3);
 	}
 
@@ -1654,7 +1654,7 @@ public class FxgPackageImpl extends EPackageImpl implements FxgPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getEllipse_Rotation() {
+	public EAttribute getEllipse_Y() {
 		return (EAttribute)ellipseEClass.getEStructuralFeatures().get(4);
 	}
 
@@ -1663,7 +1663,7 @@ public class FxgPackageImpl extends EPackageImpl implements FxgPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getEllipse_ScaleX() {
+	public EAttribute getEllipse_Rotation() {
 		return (EAttribute)ellipseEClass.getEStructuralFeatures().get(5);
 	}
 
@@ -1672,7 +1672,7 @@ public class FxgPackageImpl extends EPackageImpl implements FxgPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getEllipse_ScaleY() {
+	public EAttribute getEllipse_ScaleX() {
 		return (EAttribute)ellipseEClass.getEStructuralFeatures().get(6);
 	}
 
@@ -1681,7 +1681,7 @@ public class FxgPackageImpl extends EPackageImpl implements FxgPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getEllipse_BlendMode() {
+	public EAttribute getEllipse_ScaleY() {
 		return (EAttribute)ellipseEClass.getEStructuralFeatures().get(7);
 	}
 
@@ -1690,7 +1690,7 @@ public class FxgPackageImpl extends EPackageImpl implements FxgPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getEllipse_Visible() {
+	public EAttribute getEllipse_BlendMode() {
 		return (EAttribute)ellipseEClass.getEStructuralFeatures().get(8);
 	}
 
@@ -1699,8 +1699,8 @@ public class FxgPackageImpl extends EPackageImpl implements FxgPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getEllipse_Transform() {
-		return (EReference)ellipseEClass.getEStructuralFeatures().get(9);
+	public EAttribute getEllipse_Visible() {
+		return (EAttribute)ellipseEClass.getEStructuralFeatures().get(9);
 	}
 
 	/**
@@ -1708,7 +1708,7 @@ public class FxgPackageImpl extends EPackageImpl implements FxgPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getEllipse_Filters() {
+	public EReference getEllipse_Transform() {
 		return (EReference)ellipseEClass.getEStructuralFeatures().get(10);
 	}
 
@@ -1717,7 +1717,7 @@ public class FxgPackageImpl extends EPackageImpl implements FxgPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getEllipse_Fill() {
+	public EReference getEllipse_Filters() {
 		return (EReference)ellipseEClass.getEStructuralFeatures().get(11);
 	}
 
@@ -1726,7 +1726,7 @@ public class FxgPackageImpl extends EPackageImpl implements FxgPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getEllipse_Stroke() {
+	public EReference getEllipse_Fill() {
 		return (EReference)ellipseEClass.getEStructuralFeatures().get(12);
 	}
 
@@ -1735,8 +1735,17 @@ public class FxgPackageImpl extends EPackageImpl implements FxgPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getEllipse_Mask() {
+	public EReference getEllipse_Stroke() {
 		return (EReference)ellipseEClass.getEStructuralFeatures().get(13);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getEllipse_Mask() {
+		return (EReference)ellipseEClass.getEStructuralFeatures().get(14);
 	}
 
 	/**
@@ -4470,6 +4479,7 @@ public class FxgPackageImpl extends EPackageImpl implements FxgPackage {
 		createEReference(rectEClass, RECT__MASK);
 
 		ellipseEClass = createEClass(ELLIPSE);
+		createEAttribute(ellipseEClass, ELLIPSE__ALPHA);
 		createEAttribute(ellipseEClass, ELLIPSE__WIDTH);
 		createEAttribute(ellipseEClass, ELLIPSE__HEIGHT);
 		createEAttribute(ellipseEClass, ELLIPSE__X);
@@ -4972,7 +4982,7 @@ public class FxgPackageImpl extends EPackageImpl implements FxgPackage {
 		initEAttribute(getGroup_ScaleY(), ecorePackage.getEString(), "scaleY", null, 0, 1, Group.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getGroup_X(), ecorePackage.getEString(), "x", null, 0, 1, Group.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getGroup_Y(), ecorePackage.getEString(), "y", null, 0, 1, Group.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getGroup_BlendMode(), this.getBlendMode(), "blendMode", null, 0, 1, Group.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getGroup_BlendMode(), this.getBlendMode(), "blendMode", "BlendMode.NOT_SET", 0, 1, Group.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getGroup_Alpha(), this.getAlpha(), "alpha", null, 0, 1, Group.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getGroup_Id(), ecorePackage.getEString(), "id", null, 0, 1, Group.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getGroup_TransformX(), ecorePackage.getEString(), "transformX", null, 0, 1, Group.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -5014,7 +5024,7 @@ public class FxgPackageImpl extends EPackageImpl implements FxgPackage {
 		initEAttribute(getPath_BlendMode(), this.getBlendMode(), "blendMode", null, 0, 1, Path.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getPath_Visible(), ecorePackage.getEBooleanObject(), "visible", null, 0, 1, Path.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getPath_Alpha(), ecorePackage.getEDoubleObject(), "alpha", "1", 0, 1, Path.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getPath_Winding(), this.getWinding(), "winding", null, 0, 1, Path.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getPath_Winding(), this.getWinding(), "winding", "Winding.NOT_SET", 0, 1, Path.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getPath_Fill(), this.getFill(), null, "fill", null, 0, 1, Path.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getPath_Stroke(), this.getStroke(), null, "stroke", null, 0, 1, Path.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getPath_Filters(), this.getFilter(), null, "filters", null, 0, -1, Path.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -5043,7 +5053,7 @@ public class FxgPackageImpl extends EPackageImpl implements FxgPackage {
 		initEAttribute(getRect_ScaleY(), ecorePackage.getEDoubleObject(), "scaleY", null, 0, 1, Rect.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getRect_BlendMode(), this.getBlendMode(), "blendMode", null, 0, 1, Rect.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getRect_Visible(), ecorePackage.getEBooleanObject(), "visible", null, 0, 1, Rect.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getRect_Alpha(), ecorePackage.getEDoubleObject(), "alpha", "1", 0, 1, Rect.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getRect_Alpha(), this.getAlpha(), "alpha", null, 0, 1, Rect.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getRect_Transform(), this.getTransform(), null, "transform", null, 0, 1, Rect.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getRect_Filters(), this.getFilter(), null, "filters", null, 0, -1, Rect.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getRect_Fill(), this.getFill(), null, "fill", null, 0, 1, Rect.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -5051,10 +5061,11 @@ public class FxgPackageImpl extends EPackageImpl implements FxgPackage {
 		initEReference(getRect_Mask(), this.getGroup(), null, "mask", null, 0, 1, Rect.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(ellipseEClass, Ellipse.class, "Ellipse", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getEllipse_Width(), this.getLength(), "width", null, 0, 1, Ellipse.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getEllipse_Height(), this.getLength(), "height", null, 0, 1, Ellipse.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getEllipse_X(), ecorePackage.getEDoubleObject(), "x", null, 0, 1, Ellipse.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getEllipse_Y(), ecorePackage.getEDoubleObject(), "y", null, 0, 1, Ellipse.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getEllipse_Alpha(), this.getAlpha(), "alpha", null, 0, 1, Ellipse.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getEllipse_Width(), this.getLength(), "width", "\"0\"", 0, 1, Ellipse.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getEllipse_Height(), this.getLength(), "height", "\"0\"", 0, 1, Ellipse.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getEllipse_X(), ecorePackage.getEDoubleObject(), "x", "0", 0, 1, Ellipse.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getEllipse_Y(), ecorePackage.getEDoubleObject(), "y", "0", 0, 1, Ellipse.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getEllipse_Rotation(), this.getAngle(), "rotation", null, 0, 1, Ellipse.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getEllipse_ScaleX(), ecorePackage.getEDoubleObject(), "scaleX", null, 0, 1, Ellipse.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getEllipse_ScaleY(), ecorePackage.getEDoubleObject(), "scaleY", null, 0, 1, Ellipse.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -5222,8 +5233,8 @@ public class FxgPackageImpl extends EPackageImpl implements FxgPackage {
 		initEAttribute(getRadialGradient_ScaleX(), ecorePackage.getEDoubleObject(), "scaleX", null, 0, 1, RadialGradient.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getRadialGradient_ScaleY(), ecorePackage.getEDoubleObject(), "scaleY", null, 0, 1, RadialGradient.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getRadialGradient_Rotation(), this.getAngle(), "rotation", null, 0, 1, RadialGradient.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getRadialGradient_SpreadMethod(), this.getSpreadMethod(), "spreadMethod", null, 0, 1, RadialGradient.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getRadialGradient_InterpolationMethod(), this.getInterpolationMethod(), "interpolationMethod", null, 0, 1, RadialGradient.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getRadialGradient_SpreadMethod(), this.getSpreadMethod(), "spreadMethod", "SpreadMethod.NOT_SET", 0, 1, RadialGradient.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getRadialGradient_InterpolationMethod(), this.getInterpolationMethod(), "interpolationMethod", "InterpolationMethod.NOT_SET", 0, 1, RadialGradient.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getRadialGradient_FocalPointRatio(), ecorePackage.getEDoubleObject(), "focalPointRatio", null, 0, 1, RadialGradient.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getRadialGradient_Matrix(), this.getMatrix(), null, "matrix", null, 0, 1, RadialGradient.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
@@ -5361,6 +5372,7 @@ public class FxgPackageImpl extends EPackageImpl implements FxgPackage {
 
 		// Initialize enums and add enum literals
 		initEEnum(blendModeEEnum, BlendMode.class, "BlendMode");
+		addEEnumLiteral(blendModeEEnum, BlendMode.NOT_SET);
 		addEEnumLiteral(blendModeEEnum, BlendMode.ADD);
 		addEEnumLiteral(blendModeEEnum, BlendMode.ALPHA);
 		addEEnumLiteral(blendModeEEnum, BlendMode.DARKEN);
@@ -5378,6 +5390,7 @@ public class FxgPackageImpl extends EPackageImpl implements FxgPackage {
 		addEEnumLiteral(blendModeEEnum, BlendMode.SUBTRACT);
 
 		initEEnum(windingEEnum, Winding.class, "Winding");
+		addEEnumLiteral(windingEEnum, Winding.NOT_SET);
 		addEEnumLiteral(windingEEnum, Winding.EVEN_ODD);
 		addEEnumLiteral(windingEEnum, Winding.NON_ZERO);
 
@@ -5407,11 +5420,13 @@ public class FxgPackageImpl extends EPackageImpl implements FxgPackage {
 		addEEnumLiteral(kerningEEnum, Kerning.AUTO);
 
 		initEEnum(spreadMethodEEnum, SpreadMethod.class, "SpreadMethod");
+		addEEnumLiteral(spreadMethodEEnum, SpreadMethod.NOT_SET);
 		addEEnumLiteral(spreadMethodEEnum, SpreadMethod.PAD);
 		addEEnumLiteral(spreadMethodEEnum, SpreadMethod.REFLECT);
 		addEEnumLiteral(spreadMethodEEnum, SpreadMethod.REPEAT);
 
 		initEEnum(interpolationMethodEEnum, InterpolationMethod.class, "InterpolationMethod");
+		addEEnumLiteral(interpolationMethodEEnum, InterpolationMethod.NOT_SET);
 		addEEnumLiteral(interpolationMethodEEnum, InterpolationMethod.RGB);
 		addEEnumLiteral(interpolationMethodEEnum, InterpolationMethod.LINEAR_RGB);
 

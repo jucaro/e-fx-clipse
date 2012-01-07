@@ -23,27 +23,50 @@ import org.eclipse.emf.common.util.Enumerator;
  */
 public enum InterpolationMethod implements Enumerator {
 	/**
-	 * The '<em><b>RGB</b></em>' literal object.
+	 * The '<em><b>NOT SET</b></em>' literal object.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #NOT_SET_VALUE
+	 * @generated
+	 * @ordered
+	 */
+	NOT_SET(0, "NOT_SET", "NOT_SET"), /**
+	 * The '<em><b>Rgb</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #RGB_VALUE
 	 * @generated
 	 * @ordered
 	 */
-	RGB(0, "RGB", "rgb"),
+	RGB(1, "rgb", "rgb"),
 
 	/**
-	 * The '<em><b>LINEAR RGB</b></em>' literal object.
+	 * The '<em><b>Linear RGB</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #LINEAR_RGB_VALUE
 	 * @generated
 	 * @ordered
 	 */
-	LINEAR_RGB(1, "LINEAR_RGB", "linearRGB");
+	LINEAR_RGB(2, "linearRGB", "linearRGB");
 
 	/**
-	 * The '<em><b>RGB</b></em>' literal value.
+	 * The '<em><b>NOT SET</b></em>' literal value.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of '<em><b>NOT SET</b></em>' literal object isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @see #NOT_SET
+	 * @model
+	 * @generated
+	 * @ordered
+	 */
+	public static final int NOT_SET_VALUE = 0;
+
+	/**
+	 * The '<em><b>Rgb</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of '<em><b>RGB</b></em>' literal object isn't clear,
@@ -51,14 +74,14 @@ public enum InterpolationMethod implements Enumerator {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @see #RGB
-	 * @model literal="rgb"
+	 * @model name="rgb"
 	 * @generated
 	 * @ordered
 	 */
-	public static final int RGB_VALUE = 0;
+	public static final int RGB_VALUE = 1;
 
 	/**
-	 * The '<em><b>LINEAR RGB</b></em>' literal value.
+	 * The '<em><b>Linear RGB</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of '<em><b>LINEAR RGB</b></em>' literal object isn't clear,
@@ -66,11 +89,11 @@ public enum InterpolationMethod implements Enumerator {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @see #LINEAR_RGB
-	 * @model literal="linearRGB"
+	 * @model name="linearRGB"
 	 * @generated
 	 * @ordered
 	 */
-	public static final int LINEAR_RGB_VALUE = 1;
+	public static final int LINEAR_RGB_VALUE = 2;
 
 	/**
 	 * An array of all the '<em><b>Interpolation Method</b></em>' enumerators.
@@ -80,6 +103,7 @@ public enum InterpolationMethod implements Enumerator {
 	 */
 	private static final InterpolationMethod[] VALUES_ARRAY =
 		new InterpolationMethod[] {
+			NOT_SET,
 			RGB,
 			LINEAR_RGB,
 		};
@@ -132,6 +156,7 @@ public enum InterpolationMethod implements Enumerator {
 	 */
 	public static InterpolationMethod get(int value) {
 		switch (value) {
+			case NOT_SET_VALUE: return NOT_SET;
 			case RGB_VALUE: return RGB;
 			case LINEAR_RGB_VALUE: return LINEAR_RGB;
 		}

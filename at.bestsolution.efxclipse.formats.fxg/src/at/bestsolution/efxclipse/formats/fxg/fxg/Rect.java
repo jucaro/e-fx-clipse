@@ -548,7 +548,6 @@ public interface Rect extends Shape {
 
 	/**
 	 * Returns the value of the '<em><b>Alpha</b></em>' attribute.
-	 * The default value is <code>"1"</code>.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Alpha</em>' attribute isn't clear,
@@ -558,7 +557,7 @@ public interface Rect extends Shape {
 	 * @return the value of the '<em>Alpha</em>' attribute.
 	 * @see #setAlpha(Double)
 	 * @see at.bestsolution.efxclipse.formats.fxg.fxg.FxgPackage#getRect_Alpha()
-	 * @model default="1"
+	 * @model dataType="at.bestsolution.efxclipse.formats.fxg.fxg.Alpha"
 	 * @generated
 	 */
 	Double getAlpha();

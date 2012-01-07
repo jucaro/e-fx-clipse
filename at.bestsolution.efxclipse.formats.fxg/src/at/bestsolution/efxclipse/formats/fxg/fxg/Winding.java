@@ -23,27 +23,50 @@ import org.eclipse.emf.common.util.Enumerator;
  */
 public enum Winding implements Enumerator {
 	/**
-	 * The '<em><b>EVEN ODD</b></em>' literal object.
+	 * The '<em><b>NOT SET</b></em>' literal object.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #NOT_SET_VALUE
+	 * @generated
+	 * @ordered
+	 */
+	NOT_SET(0, "NOT_SET", "NOT_SET"), /**
+	 * The '<em><b>Even Odd</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #EVEN_ODD_VALUE
 	 * @generated
 	 * @ordered
 	 */
-	EVEN_ODD(0, "EVEN_ODD", "evenOdd"),
+	EVEN_ODD(1, "evenOdd", "evenOdd"),
 
 	/**
-	 * The '<em><b>NON ZERO</b></em>' literal object.
+	 * The '<em><b>Non Zero</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #NON_ZERO_VALUE
 	 * @generated
 	 * @ordered
 	 */
-	NON_ZERO(1, "NON_ZERO", "nonZero");
+	NON_ZERO(2, "nonZero", "nonZero");
 
 	/**
-	 * The '<em><b>EVEN ODD</b></em>' literal value.
+	 * The '<em><b>NOT SET</b></em>' literal value.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of '<em><b>NOT SET</b></em>' literal object isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @see #NOT_SET
+	 * @model
+	 * @generated
+	 * @ordered
+	 */
+	public static final int NOT_SET_VALUE = 0;
+
+	/**
+	 * The '<em><b>Even Odd</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of '<em><b>EVEN ODD</b></em>' literal object isn't clear,
@@ -51,14 +74,14 @@ public enum Winding implements Enumerator {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @see #EVEN_ODD
-	 * @model literal="evenOdd"
+	 * @model name="evenOdd"
 	 * @generated
 	 * @ordered
 	 */
-	public static final int EVEN_ODD_VALUE = 0;
+	public static final int EVEN_ODD_VALUE = 1;
 
 	/**
-	 * The '<em><b>NON ZERO</b></em>' literal value.
+	 * The '<em><b>Non Zero</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of '<em><b>NON ZERO</b></em>' literal object isn't clear,
@@ -66,11 +89,11 @@ public enum Winding implements Enumerator {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @see #NON_ZERO
-	 * @model literal="nonZero"
+	 * @model name="nonZero"
 	 * @generated
 	 * @ordered
 	 */
-	public static final int NON_ZERO_VALUE = 1;
+	public static final int NON_ZERO_VALUE = 2;
 
 	/**
 	 * An array of all the '<em><b>Winding</b></em>' enumerators.
@@ -80,6 +103,7 @@ public enum Winding implements Enumerator {
 	 */
 	private static final Winding[] VALUES_ARRAY =
 		new Winding[] {
+			NOT_SET,
 			EVEN_ODD,
 			NON_ZERO,
 		};
@@ -132,6 +156,7 @@ public enum Winding implements Enumerator {
 	 */
 	public static Winding get(int value) {
 		switch (value) {
+			case NOT_SET_VALUE: return NOT_SET;
 			case EVEN_ODD_VALUE: return EVEN_ODD;
 			case NON_ZERO_VALUE: return NON_ZERO;
 		}

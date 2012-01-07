@@ -23,157 +23,180 @@ import org.eclipse.emf.common.util.Enumerator;
  */
 public enum BlendMode implements Enumerator {
 	/**
-	 * The '<em><b>ADD</b></em>' literal object.
+	 * The '<em><b>NOT SET</b></em>' literal object.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #NOT_SET_VALUE
+	 * @generated
+	 * @ordered
+	 */
+	NOT_SET(0, "NOT_SET", "NOT_SET"), /**
+	 * The '<em><b>Add</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #ADD_VALUE
 	 * @generated
 	 * @ordered
 	 */
-	ADD(0, "ADD", "add"),
+	ADD(1, "add", "add"),
 
 	/**
-	 * The '<em><b>ALPHA</b></em>' literal object.
+	 * The '<em><b>Alpha</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #ALPHA_VALUE
 	 * @generated
 	 * @ordered
 	 */
-	ALPHA(1, "ALPHA", "alpha"),
+	ALPHA(2, "alpha", "alpha"),
 
 	/**
-	 * The '<em><b>DARKEN</b></em>' literal object.
+	 * The '<em><b>Darken</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #DARKEN_VALUE
 	 * @generated
 	 * @ordered
 	 */
-	DARKEN(2, "DARKEN", "darken"),
+	DARKEN(3, "darken", "darken"),
 
 	/**
-	 * The '<em><b>DIFFERENCE</b></em>' literal object.
+	 * The '<em><b>Difference</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #DIFFERENCE_VALUE
 	 * @generated
 	 * @ordered
 	 */
-	DIFFERENCE(3, "DIFFERENCE", "difference"),
+	DIFFERENCE(4, "difference", "difference"),
 
 	/**
-	 * The '<em><b>ERASE</b></em>' literal object.
+	 * The '<em><b>Erase</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #ERASE_VALUE
 	 * @generated
 	 * @ordered
 	 */
-	ERASE(4, "ERASE", "erase"),
+	ERASE(5, "erase", "erase"),
 
 	/**
-	 * The '<em><b>HARDLIGHT</b></em>' literal object.
+	 * The '<em><b>Hardlight</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #HARDLIGHT_VALUE
 	 * @generated
 	 * @ordered
 	 */
-	HARDLIGHT(5, "HARDLIGHT", "hardlight"),
+	HARDLIGHT(6, "hardlight", "hardlight"),
 
 	/**
-	 * The '<em><b>INVERT</b></em>' literal object.
+	 * The '<em><b>Invert</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #INVERT_VALUE
 	 * @generated
 	 * @ordered
 	 */
-	INVERT(6, "INVERT", "invert"),
+	INVERT(7, "invert", "invert"),
 
 	/**
-	 * The '<em><b>LAYER</b></em>' literal object.
+	 * The '<em><b>Layer</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #LAYER_VALUE
 	 * @generated
 	 * @ordered
 	 */
-	LAYER(7, "LAYER", "layer"),
+	LAYER(8, "layer", "layer"),
 
 	/**
-	 * The '<em><b>LIGHTEN</b></em>' literal object.
+	 * The '<em><b>Lighten</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #LIGHTEN_VALUE
 	 * @generated
 	 * @ordered
 	 */
-	LIGHTEN(8, "LIGHTEN", "lighten"),
+	LIGHTEN(9, "lighten", "lighten"),
 
 	/**
-	 * The '<em><b>MULTIPLY</b></em>' literal object.
+	 * The '<em><b>Multiply</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #MULTIPLY_VALUE
 	 * @generated
 	 * @ordered
 	 */
-	MULTIPLY(9, "MULTIPLY", "multiply"),
+	MULTIPLY(10, "multiply", "multiply"),
 
 	/**
-	 * The '<em><b>NORMAL</b></em>' literal object.
+	 * The '<em><b>Normal</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #NORMAL_VALUE
 	 * @generated
 	 * @ordered
 	 */
-	NORMAL(10, "NORMAL", "normal"),
+	NORMAL(11, "normal", "normal"),
 
 	/**
-	 * The '<em><b>OVERLAY</b></em>' literal object.
+	 * The '<em><b>Overlay</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #OVERLAY_VALUE
 	 * @generated
 	 * @ordered
 	 */
-	OVERLAY(11, "OVERLAY", "overlay"),
+	OVERLAY(12, "overlay", "overlay"),
 
 	/**
-	 * The '<em><b>SCREEN</b></em>' literal object.
+	 * The '<em><b>Screen</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #SCREEN_VALUE
 	 * @generated
 	 * @ordered
 	 */
-	SCREEN(12, "SCREEN", "screen"),
+	SCREEN(13, "screen", "screen"),
 
 	/**
-	 * The '<em><b>SHADER</b></em>' literal object.
+	 * The '<em><b>Shader</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #SHADER_VALUE
 	 * @generated
 	 * @ordered
 	 */
-	SHADER(13, "SHADER", "shader"),
+	SHADER(14, "shader", "shader"),
 
 	/**
-	 * The '<em><b>SUBTRACT</b></em>' literal object.
+	 * The '<em><b>Subtract</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #SUBTRACT_VALUE
 	 * @generated
 	 * @ordered
 	 */
-	SUBTRACT(14, "SUBTRACT", "subtract");
+	SUBTRACT(15, "subtract", "subtract");
 
 	/**
-	 * The '<em><b>ADD</b></em>' literal value.
+	 * The '<em><b>NOT SET</b></em>' literal value.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of '<em><b>NOT SET</b></em>' literal object isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @see #NOT_SET
+	 * @model
+	 * @generated
+	 * @ordered
+	 */
+	public static final int NOT_SET_VALUE = 0;
+
+	/**
+	 * The '<em><b>Add</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of '<em><b>ADD</b></em>' literal object isn't clear,
@@ -181,14 +204,14 @@ public enum BlendMode implements Enumerator {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @see #ADD
-	 * @model literal="add"
+	 * @model name="add"
 	 * @generated
 	 * @ordered
 	 */
-	public static final int ADD_VALUE = 0;
+	public static final int ADD_VALUE = 1;
 
 	/**
-	 * The '<em><b>ALPHA</b></em>' literal value.
+	 * The '<em><b>Alpha</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of '<em><b>ALPHA</b></em>' literal object isn't clear,
@@ -196,14 +219,14 @@ public enum BlendMode implements Enumerator {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @see #ALPHA
-	 * @model literal="alpha"
+	 * @model name="alpha"
 	 * @generated
 	 * @ordered
 	 */
-	public static final int ALPHA_VALUE = 1;
+	public static final int ALPHA_VALUE = 2;
 
 	/**
-	 * The '<em><b>DARKEN</b></em>' literal value.
+	 * The '<em><b>Darken</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of '<em><b>DARKEN</b></em>' literal object isn't clear,
@@ -211,14 +234,14 @@ public enum BlendMode implements Enumerator {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @see #DARKEN
-	 * @model literal="darken"
+	 * @model name="darken"
 	 * @generated
 	 * @ordered
 	 */
-	public static final int DARKEN_VALUE = 2;
+	public static final int DARKEN_VALUE = 3;
 
 	/**
-	 * The '<em><b>DIFFERENCE</b></em>' literal value.
+	 * The '<em><b>Difference</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of '<em><b>DIFFERENCE</b></em>' literal object isn't clear,
@@ -226,14 +249,14 @@ public enum BlendMode implements Enumerator {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @see #DIFFERENCE
-	 * @model literal="difference"
+	 * @model name="difference"
 	 * @generated
 	 * @ordered
 	 */
-	public static final int DIFFERENCE_VALUE = 3;
+	public static final int DIFFERENCE_VALUE = 4;
 
 	/**
-	 * The '<em><b>ERASE</b></em>' literal value.
+	 * The '<em><b>Erase</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of '<em><b>ERASE</b></em>' literal object isn't clear,
@@ -241,14 +264,14 @@ public enum BlendMode implements Enumerator {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @see #ERASE
-	 * @model literal="erase"
+	 * @model name="erase"
 	 * @generated
 	 * @ordered
 	 */
-	public static final int ERASE_VALUE = 4;
+	public static final int ERASE_VALUE = 5;
 
 	/**
-	 * The '<em><b>HARDLIGHT</b></em>' literal value.
+	 * The '<em><b>Hardlight</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of '<em><b>HARDLIGHT</b></em>' literal object isn't clear,
@@ -256,14 +279,14 @@ public enum BlendMode implements Enumerator {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @see #HARDLIGHT
-	 * @model literal="hardlight"
+	 * @model name="hardlight"
 	 * @generated
 	 * @ordered
 	 */
-	public static final int HARDLIGHT_VALUE = 5;
+	public static final int HARDLIGHT_VALUE = 6;
 
 	/**
-	 * The '<em><b>INVERT</b></em>' literal value.
+	 * The '<em><b>Invert</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of '<em><b>INVERT</b></em>' literal object isn't clear,
@@ -271,14 +294,14 @@ public enum BlendMode implements Enumerator {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @see #INVERT
-	 * @model literal="invert"
+	 * @model name="invert"
 	 * @generated
 	 * @ordered
 	 */
-	public static final int INVERT_VALUE = 6;
+	public static final int INVERT_VALUE = 7;
 
 	/**
-	 * The '<em><b>LAYER</b></em>' literal value.
+	 * The '<em><b>Layer</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of '<em><b>LAYER</b></em>' literal object isn't clear,
@@ -286,14 +309,14 @@ public enum BlendMode implements Enumerator {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @see #LAYER
-	 * @model literal="layer"
+	 * @model name="layer"
 	 * @generated
 	 * @ordered
 	 */
-	public static final int LAYER_VALUE = 7;
+	public static final int LAYER_VALUE = 8;
 
 	/**
-	 * The '<em><b>LIGHTEN</b></em>' literal value.
+	 * The '<em><b>Lighten</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of '<em><b>LIGHTEN</b></em>' literal object isn't clear,
@@ -301,14 +324,14 @@ public enum BlendMode implements Enumerator {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @see #LIGHTEN
-	 * @model literal="lighten"
+	 * @model name="lighten"
 	 * @generated
 	 * @ordered
 	 */
-	public static final int LIGHTEN_VALUE = 8;
+	public static final int LIGHTEN_VALUE = 9;
 
 	/**
-	 * The '<em><b>MULTIPLY</b></em>' literal value.
+	 * The '<em><b>Multiply</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of '<em><b>MULTIPLY</b></em>' literal object isn't clear,
@@ -316,14 +339,14 @@ public enum BlendMode implements Enumerator {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @see #MULTIPLY
-	 * @model literal="multiply"
+	 * @model name="multiply"
 	 * @generated
 	 * @ordered
 	 */
-	public static final int MULTIPLY_VALUE = 9;
+	public static final int MULTIPLY_VALUE = 10;
 
 	/**
-	 * The '<em><b>NORMAL</b></em>' literal value.
+	 * The '<em><b>Normal</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of '<em><b>NORMAL</b></em>' literal object isn't clear,
@@ -331,14 +354,14 @@ public enum BlendMode implements Enumerator {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @see #NORMAL
-	 * @model literal="normal"
+	 * @model name="normal"
 	 * @generated
 	 * @ordered
 	 */
-	public static final int NORMAL_VALUE = 10;
+	public static final int NORMAL_VALUE = 11;
 
 	/**
-	 * The '<em><b>OVERLAY</b></em>' literal value.
+	 * The '<em><b>Overlay</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of '<em><b>OVERLAY</b></em>' literal object isn't clear,
@@ -346,14 +369,14 @@ public enum BlendMode implements Enumerator {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @see #OVERLAY
-	 * @model literal="overlay"
+	 * @model name="overlay"
 	 * @generated
 	 * @ordered
 	 */
-	public static final int OVERLAY_VALUE = 11;
+	public static final int OVERLAY_VALUE = 12;
 
 	/**
-	 * The '<em><b>SCREEN</b></em>' literal value.
+	 * The '<em><b>Screen</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of '<em><b>SCREEN</b></em>' literal object isn't clear,
@@ -361,14 +384,14 @@ public enum BlendMode implements Enumerator {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @see #SCREEN
-	 * @model literal="screen"
+	 * @model name="screen"
 	 * @generated
 	 * @ordered
 	 */
-	public static final int SCREEN_VALUE = 12;
+	public static final int SCREEN_VALUE = 13;
 
 	/**
-	 * The '<em><b>SHADER</b></em>' literal value.
+	 * The '<em><b>Shader</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of '<em><b>SHADER</b></em>' literal object isn't clear,
@@ -376,14 +399,14 @@ public enum BlendMode implements Enumerator {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @see #SHADER
-	 * @model literal="shader"
+	 * @model name="shader"
 	 * @generated
 	 * @ordered
 	 */
-	public static final int SHADER_VALUE = 13;
+	public static final int SHADER_VALUE = 14;
 
 	/**
-	 * The '<em><b>SUBTRACT</b></em>' literal value.
+	 * The '<em><b>Subtract</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of '<em><b>SUBTRACT</b></em>' literal object isn't clear,
@@ -391,11 +414,11 @@ public enum BlendMode implements Enumerator {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @see #SUBTRACT
-	 * @model literal="subtract"
+	 * @model name="subtract"
 	 * @generated
 	 * @ordered
 	 */
-	public static final int SUBTRACT_VALUE = 14;
+	public static final int SUBTRACT_VALUE = 15;
 
 	/**
 	 * An array of all the '<em><b>Blend Mode</b></em>' enumerators.
@@ -405,6 +428,7 @@ public enum BlendMode implements Enumerator {
 	 */
 	private static final BlendMode[] VALUES_ARRAY =
 		new BlendMode[] {
+			NOT_SET,
 			ADD,
 			ALPHA,
 			DARKEN,
@@ -470,6 +494,7 @@ public enum BlendMode implements Enumerator {
 	 */
 	public static BlendMode get(int value) {
 		switch (value) {
+			case NOT_SET_VALUE: return NOT_SET;
 			case ADD_VALUE: return ADD;
 			case ALPHA_VALUE: return ALPHA;
 			case DARKEN_VALUE: return DARKEN;

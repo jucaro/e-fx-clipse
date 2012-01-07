@@ -174,6 +174,7 @@ public interface Group extends ContainerElement<FXGElement> {
 
 	/**
 	 * Returns the value of the '<em><b>Blend Mode</b></em>' attribute.
+	 * The default value is <code>"BlendMode.NOT_SET"</code>.
 	 * The literals are from the enumeration {@link at.bestsolution.efxclipse.formats.fxg.fxg.BlendMode}.
 	 * <!-- begin-user-doc -->
 	 * <p>
@@ -185,7 +186,7 @@ public interface Group extends ContainerElement<FXGElement> {
 	 * @see at.bestsolution.efxclipse.formats.fxg.fxg.BlendMode
 	 * @see #setBlendMode(BlendMode)
 	 * @see at.bestsolution.efxclipse.formats.fxg.fxg.FxgPackage#getGroup_BlendMode()
-	 * @model
+	 * @model default="BlendMode.NOT_SET"
 	 * @generated
 	 */
 	BlendMode getBlendMode();
