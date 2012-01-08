@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/at.bestsolution.efxclipse.tooling.svgpath/src-gen"
+    editDirectory="/at.bestsolution.efxclipse.tooling.svgpath.edit/src" editorDirectory="/at.bestsolution.efxclipse.tooling.svgpath.editor/src"
+    modelPluginID="at.bestsolution.efxclipse.tooling.svgpath" forceOverwrite="true"
+    modelName="SvgPath" updateClasspath="false" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    complianceLevel="5.0" copyrightFields="false" editPluginID="at.bestsolution.efxclipse.tooling.svgpath.edit"
+    editorPluginID="at.bestsolution.efxclipse.tooling.svgpath.editor">
+  <genPackages prefix="SvgPath" basePackage="at.bestsolution.efxclipse.tooling.svgpath"
+      disposableProviderFactory="true" ecorePackage="SvgPath.ecore#/">
+    <genClasses ecoreClass="SvgPath.ecore#//svg_path">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SvgPath.ecore#//svg_path/moveto_drawto_command_groups"/>
+    </genClasses>
+    <genClasses ecoreClass="SvgPath.ecore#//moveto_drawto_command_groups">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SvgPath.ecore#//moveto_drawto_command_groups/commands"/>
+    </genClasses>
+    <genClasses ecoreClass="SvgPath.ecore#//moveto_drawto_command_group">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SvgPath.ecore#//moveto_drawto_command_group/moveto"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SvgPath.ecore#//moveto_drawto_command_group/drawto_commands"/>
+    </genClasses>
+    <genClasses ecoreClass="SvgPath.ecore#//moveto">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SvgPath.ecore#//moveto/point"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SvgPath.ecore#//moveto/lineto_argument_sequence"/>
+    </genClasses>
+    <genClasses ecoreClass="SvgPath.ecore#//lineto_argument_sequence">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SvgPath.ecore#//lineto_argument_sequence/pairs"/>
+    </genClasses>
+    <genClasses ecoreClass="SvgPath.ecore#//drawto_commands">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SvgPath.ecore#//drawto_commands/drawto_commands"/>
+    </genClasses>
+    <genClasses ecoreClass="SvgPath.ecore#//drawto_command"/>
+    <genClasses ecoreClass="SvgPath.ecore#//closepath"/>
+    <genClasses ecoreClass="SvgPath.ecore#//lineto">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SvgPath.ecore#//lineto/lineto_argument_sequence"/>
+    </genClasses>
+    <genClasses ecoreClass="SvgPath.ecore#//horizontal_lineto">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SvgPath.ecore#//horizontal_lineto/horizontal_lineto_argument_sequence"/>
+    </genClasses>
+    <genClasses ecoreClass="SvgPath.ecore#//horizontal_lineto_argument_sequence">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SvgPath.ecore#//horizontal_lineto_argument_sequence/coordinates"/>
+    </genClasses>
+    <genClasses ecoreClass="SvgPath.ecore#//vertical_lineto">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SvgPath.ecore#//vertical_lineto/vertical_lineto_argument_sequence"/>
+    </genClasses>
+    <genClasses ecoreClass="SvgPath.ecore#//vertical_lineto_argument_sequence">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SvgPath.ecore#//vertical_lineto_argument_sequence/coordinates"/>
+    </genClasses>
+    <genClasses ecoreClass="SvgPath.ecore#//curveto">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SvgPath.ecore#//curveto/curveto_argument_sequence"/>
+    </genClasses>
+    <genClasses ecoreClass="SvgPath.ecore#//curveto_argument_sequence">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SvgPath.ecore#//curveto_argument_sequence/curveto_arguments"/>
+    </genClasses>
+    <genClasses ecoreClass="SvgPath.ecore#//curveto_argument">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SvgPath.ecore#//curveto_argument/c1"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SvgPath.ecore#//curveto_argument/c2"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SvgPath.ecore#//curveto_argument/c3"/>
+    </genClasses>
+    <genClasses ecoreClass="SvgPath.ecore#//smooth_curveto">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SvgPath.ecore#//smooth_curveto/smooth_curveto_argument_sequence"/>
+    </genClasses>
+    <genClasses ecoreClass="SvgPath.ecore#//smooth_curveto_argument_sequence">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SvgPath.ecore#//smooth_curveto_argument_sequence/smooth_curveto_arguments"/>
+    </genClasses>
+    <genClasses ecoreClass="SvgPath.ecore#//smooth_curveto_argument">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SvgPath.ecore#//smooth_curveto_argument/c1"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SvgPath.ecore#//smooth_curveto_argument/c2"/>
+    </genClasses>
+    <genClasses ecoreClass="SvgPath.ecore#//quadratic_bezier_curveto"/>
+    <genClasses ecoreClass="SvgPath.ecore#//quadratic_bezier_curveto_argument_sequence">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SvgPath.ecore#//quadratic_bezier_curveto_argument_sequence/quadratic_bezier_curveto_arguments"/>
+    </genClasses>
+    <genClasses ecoreClass="SvgPath.ecore#//quadratic_bezier_curveto_argument">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SvgPath.ecore#//quadratic_bezier_curveto_argument/c1"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SvgPath.ecore#//quadratic_bezier_curveto_argument/c2"/>
+    </genClasses>
+    <genClasses ecoreClass="SvgPath.ecore#//smooth_quadratic_bezier_curveto">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SvgPath.ecore#//smooth_quadratic_bezier_curveto/smooth_quadratic_bezier_curveto_argument_sequence"/>
+    </genClasses>
+    <genClasses ecoreClass="SvgPath.ecore#//smooth_quadratic_bezier_curveto_argument_sequence">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SvgPath.ecore#//smooth_quadratic_bezier_curveto_argument_sequence/coordinate_pairs"/>
+    </genClasses>
+    <genClasses ecoreClass="SvgPath.ecore#//elliptical_arc">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SvgPath.ecore#//elliptical_arc/elliptical_arc_argument_sequence"/>
+    </genClasses>
+    <genClasses ecoreClass="SvgPath.ecore#//elliptical_arc_argument_sequence">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SvgPath.ecore#//elliptical_arc_argument_sequence/elliptical_arc_arguments"/>
+    </genClasses>
+    <genClasses ecoreClass="SvgPath.ecore#//elliptical_arc_argument">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SvgPath.ecore#//elliptical_arc_argument/rx"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SvgPath.ecore#//elliptical_arc_argument/ry"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SvgPath.ecore#//elliptical_arc_argument/rotation"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SvgPath.ecore#//elliptical_arc_argument/largearcflag"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SvgPath.ecore#//elliptical_arc_argument/sweepflag"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SvgPath.ecore#//elliptical_arc_argument/coordinate_pair"/>
+    </genClasses>
+    <genClasses ecoreClass="SvgPath.ecore#//coordinate_pair">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SvgPath.ecore#//coordinate_pair/c1"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SvgPath.ecore#//coordinate_pair/c2"/>
+    </genClasses>
+    <genClasses ecoreClass="SvgPath.ecore#//coordinate"/>
+    <genClasses ecoreClass="SvgPath.ecore#//number">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SvgPath.ecore#//number/sign"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SvgPath.ecore#//number/nonnegative_number"/>
+    </genClasses>
+    <genClasses ecoreClass="SvgPath.ecore#//nonnegative_number">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SvgPath.ecore#//nonnegative_number/intseq"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SvgPath.ecore#//nonnegative_number/floatseq"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SvgPath.ecore#//nonnegative_number/exponent"/>
+    </genClasses>
+    <genClasses ecoreClass="SvgPath.ecore#//exponent">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SvgPath.ecore#//exponent/sign"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SvgPath.ecore#//exponent/digit_sequence"/>
+    </genClasses>
+    <genClasses ecoreClass="SvgPath.ecore#//digit_sequence">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SvgPath.ecore#//digit_sequence/digits"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

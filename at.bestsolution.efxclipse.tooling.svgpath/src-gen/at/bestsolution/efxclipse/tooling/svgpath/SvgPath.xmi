@@ -1,0 +1,539 @@
+<?xml version="1.0" encoding="ASCII"?>
+<xtext:Grammar xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:xtext="http://www.eclipse.org/2008/Xtext" name="at.bestsolution.efxclipse.tooling.svgpath.SvgPath" definesHiddenTokens="true" hiddenTokens="//@rules.37">
+  <metamodelDeclarations xsi:type="xtext:ReferencedMetamodel" alias="ecore">
+    <ePackage href="http://www.eclipse.org/emf/2002/Ecore#/"/>
+  </metamodelDeclarations>
+  <metamodelDeclarations xsi:type="xtext:GeneratedMetamodel" name="svgPath">
+    <ePackage href="http://www.bestsolution.at/efxclipse/tooling/svgpath/SvgPath#/"/>
+  </metamodelDeclarations>
+  <rules xsi:type="xtext:ParserRule" name="svg_path">
+    <type metamodel="//@metamodelDeclarations.1">
+      <classifier xsi:type="ecore:EClass" href="http://www.bestsolution.at/efxclipse/tooling/svgpath/SvgPath#//svg_path"/>
+    </type>
+    <alternatives xsi:type="xtext:Assignment" cardinality="?" feature="moveto_drawto_command_groups" operator="=">
+      <terminal xsi:type="xtext:RuleCall" rule="//@rules.1"/>
+    </alternatives>
+  </rules>
+  <rules xsi:type="xtext:ParserRule" name="moveto_drawto_command_groups">
+    <type metamodel="//@metamodelDeclarations.1">
+      <classifier xsi:type="ecore:EClass" href="http://www.bestsolution.at/efxclipse/tooling/svgpath/SvgPath#//moveto_drawto_command_groups"/>
+    </type>
+    <alternatives xsi:type="xtext:Assignment" feature="commands" operator="+=">
+      <terminal xsi:type="xtext:RuleCall" rule="//@rules.2"/>
+    </alternatives>
+  </rules>
+  <rules xsi:type="xtext:ParserRule" name="moveto_drawto_command_group">
+    <type metamodel="//@metamodelDeclarations.1">
+      <classifier xsi:type="ecore:EClass" href="http://www.bestsolution.at/efxclipse/tooling/svgpath/SvgPath#//moveto_drawto_command_group"/>
+    </type>
+    <alternatives xsi:type="xtext:Group">
+      <elements xsi:type="xtext:Assignment" feature="moveto" operator="=">
+        <terminal xsi:type="xtext:RuleCall" rule="//@rules.3"/>
+      </elements>
+      <elements xsi:type="xtext:Assignment" cardinality="?" feature="drawto_commands" operator="=">
+        <terminal xsi:type="xtext:RuleCall" rule="//@rules.5"/>
+      </elements>
+    </alternatives>
+  </rules>
+  <rules xsi:type="xtext:ParserRule" name="moveto">
+    <type metamodel="//@metamodelDeclarations.1">
+      <classifier xsi:type="ecore:EClass" href="http://www.bestsolution.at/efxclipse/tooling/svgpath/SvgPath#//moveto"/>
+    </type>
+    <alternatives xsi:type="xtext:Group">
+      <elements xsi:type="xtext:Alternatives">
+        <elements xsi:type="xtext:Keyword" value="M"/>
+        <elements xsi:type="xtext:Keyword" value="m"/>
+      </elements>
+      <elements xsi:type="xtext:Assignment" feature="point" operator="=">
+        <terminal xsi:type="xtext:RuleCall" rule="//@rules.27"/>
+      </elements>
+      <elements xsi:type="xtext:RuleCall" cardinality="?" rule="//@rules.28"/>
+      <elements xsi:type="xtext:Assignment" feature="lineto_argument_sequence" operator="=">
+        <terminal xsi:type="xtext:RuleCall" rule="//@rules.4"/>
+      </elements>
+    </alternatives>
+  </rules>
+  <rules xsi:type="xtext:ParserRule" name="lineto_argument_sequence">
+    <type metamodel="//@metamodelDeclarations.1">
+      <classifier xsi:type="ecore:EClass" href="http://www.bestsolution.at/efxclipse/tooling/svgpath/SvgPath#//lineto_argument_sequence"/>
+    </type>
+    <alternatives xsi:type="xtext:Group">
+      <elements xsi:type="xtext:Assignment" feature="pairs" operator="+=">
+        <terminal xsi:type="xtext:RuleCall" rule="//@rules.27"/>
+      </elements>
+      <elements xsi:type="xtext:Group" cardinality="*">
+        <elements xsi:type="xtext:RuleCall" cardinality="?" rule="//@rules.28"/>
+        <elements xsi:type="xtext:Assignment" feature="pairs" operator="+=">
+          <terminal xsi:type="xtext:RuleCall" rule="//@rules.27"/>
+        </elements>
+      </elements>
+    </alternatives>
+  </rules>
+  <rules xsi:type="xtext:ParserRule" name="drawto_commands">
+    <type metamodel="//@metamodelDeclarations.1">
+      <classifier xsi:type="ecore:EClass" href="http://www.bestsolution.at/efxclipse/tooling/svgpath/SvgPath#//drawto_commands"/>
+    </type>
+    <alternatives xsi:type="xtext:Assignment" cardinality="+" feature="drawto_commands" operator="+=">
+      <terminal xsi:type="xtext:RuleCall" rule="//@rules.6"/>
+    </alternatives>
+  </rules>
+  <rules xsi:type="xtext:ParserRule" name="drawto_command">
+    <type metamodel="//@metamodelDeclarations.1">
+      <classifier xsi:type="ecore:EClass" href="http://www.bestsolution.at/efxclipse/tooling/svgpath/SvgPath#//drawto_command"/>
+    </type>
+    <alternatives xsi:type="xtext:Alternatives">
+      <elements xsi:type="xtext:RuleCall" rule="//@rules.7"/>
+      <elements xsi:type="xtext:RuleCall" rule="//@rules.8"/>
+      <elements xsi:type="xtext:RuleCall" rule="//@rules.9"/>
+      <elements xsi:type="xtext:RuleCall" rule="//@rules.11"/>
+      <elements xsi:type="xtext:RuleCall" rule="//@rules.13"/>
+      <elements xsi:type="xtext:RuleCall" rule="//@rules.16"/>
+      <elements xsi:type="xtext:RuleCall" rule="//@rules.19"/>
+      <elements xsi:type="xtext:RuleCall" rule="//@rules.22"/>
+      <elements xsi:type="xtext:RuleCall" rule="//@rules.24"/>
+    </alternatives>
+  </rules>
+  <rules xsi:type="xtext:ParserRule" name="closepath">
+    <type metamodel="//@metamodelDeclarations.1">
+      <classifier xsi:type="ecore:EClass" href="http://www.bestsolution.at/efxclipse/tooling/svgpath/SvgPath#//closepath"/>
+    </type>
+    <alternatives xsi:type="xtext:Group">
+      <elements xsi:type="xtext:Action">
+        <type metamodel="//@metamodelDeclarations.1">
+          <classifier xsi:type="ecore:EClass" href="http://www.bestsolution.at/efxclipse/tooling/svgpath/SvgPath#//closepath"/>
+        </type>
+      </elements>
+      <elements xsi:type="xtext:Alternatives">
+        <elements xsi:type="xtext:Keyword" value="Z"/>
+        <elements xsi:type="xtext:Keyword" value="z"/>
+      </elements>
+    </alternatives>
+  </rules>
+  <rules xsi:type="xtext:ParserRule" name="lineto">
+    <type metamodel="//@metamodelDeclarations.1">
+      <classifier xsi:type="ecore:EClass" href="http://www.bestsolution.at/efxclipse/tooling/svgpath/SvgPath#//lineto"/>
+    </type>
+    <alternatives xsi:type="xtext:Group">
+      <elements xsi:type="xtext:Alternatives">
+        <elements xsi:type="xtext:Keyword" value="L"/>
+        <elements xsi:type="xtext:Keyword" value="l"/>
+      </elements>
+      <elements xsi:type="xtext:Assignment" feature="lineto_argument_sequence" operator="=">
+        <terminal xsi:type="xtext:RuleCall" rule="//@rules.4"/>
+      </elements>
+    </alternatives>
+  </rules>
+  <rules xsi:type="xtext:ParserRule" name="horizontal_lineto">
+    <type metamodel="//@metamodelDeclarations.1">
+      <classifier xsi:type="ecore:EClass" href="http://www.bestsolution.at/efxclipse/tooling/svgpath/SvgPath#//horizontal_lineto"/>
+    </type>
+    <alternatives xsi:type="xtext:Group">
+      <elements xsi:type="xtext:Alternatives">
+        <elements xsi:type="xtext:Keyword" value="H"/>
+        <elements xsi:type="xtext:Keyword" value="h"/>
+      </elements>
+      <elements xsi:type="xtext:Assignment" feature="horizontal_lineto_argument_sequence" operator="=">
+        <terminal xsi:type="xtext:RuleCall" rule="//@rules.10"/>
+      </elements>
+    </alternatives>
+  </rules>
+  <rules xsi:type="xtext:ParserRule" name="horizontal_lineto_argument_sequence">
+    <type metamodel="//@metamodelDeclarations.1">
+      <classifier xsi:type="ecore:EClass" href="http://www.bestsolution.at/efxclipse/tooling/svgpath/SvgPath#//horizontal_lineto_argument_sequence"/>
+    </type>
+    <alternatives xsi:type="xtext:Group">
+      <elements xsi:type="xtext:Assignment" feature="coordinates" operator="+=">
+        <terminal xsi:type="xtext:RuleCall" rule="//@rules.29"/>
+      </elements>
+      <elements xsi:type="xtext:Group" cardinality="*">
+        <elements xsi:type="xtext:RuleCall" cardinality="?" rule="//@rules.28"/>
+        <elements xsi:type="xtext:Assignment" feature="coordinates" operator="+=">
+          <terminal xsi:type="xtext:RuleCall" rule="//@rules.29"/>
+        </elements>
+      </elements>
+    </alternatives>
+  </rules>
+  <rules xsi:type="xtext:ParserRule" name="vertical_lineto">
+    <type metamodel="//@metamodelDeclarations.1">
+      <classifier xsi:type="ecore:EClass" href="http://www.bestsolution.at/efxclipse/tooling/svgpath/SvgPath#//vertical_lineto"/>
+    </type>
+    <alternatives xsi:type="xtext:Group">
+      <elements xsi:type="xtext:Alternatives">
+        <elements xsi:type="xtext:Keyword" value="V"/>
+        <elements xsi:type="xtext:Keyword" value="v"/>
+      </elements>
+      <elements xsi:type="xtext:Assignment" feature="vertical_lineto_argument_sequence" operator="=">
+        <terminal xsi:type="xtext:RuleCall" rule="//@rules.12"/>
+      </elements>
+    </alternatives>
+  </rules>
+  <rules xsi:type="xtext:ParserRule" name="vertical_lineto_argument_sequence">
+    <type metamodel="//@metamodelDeclarations.1">
+      <classifier xsi:type="ecore:EClass" href="http://www.bestsolution.at/efxclipse/tooling/svgpath/SvgPath#//vertical_lineto_argument_sequence"/>
+    </type>
+    <alternatives xsi:type="xtext:Group">
+      <elements xsi:type="xtext:Assignment" feature="coordinates" operator="+=">
+        <terminal xsi:type="xtext:RuleCall" rule="//@rules.29"/>
+      </elements>
+      <elements xsi:type="xtext:Group" cardinality="*">
+        <elements xsi:type="xtext:RuleCall" cardinality="?" rule="//@rules.28"/>
+        <elements xsi:type="xtext:Assignment" feature="coordinates" operator="+=">
+          <terminal xsi:type="xtext:RuleCall" rule="//@rules.29"/>
+        </elements>
+      </elements>
+    </alternatives>
+  </rules>
+  <rules xsi:type="xtext:ParserRule" name="curveto">
+    <type metamodel="//@metamodelDeclarations.1">
+      <classifier xsi:type="ecore:EClass" href="http://www.bestsolution.at/efxclipse/tooling/svgpath/SvgPath#//curveto"/>
+    </type>
+    <alternatives xsi:type="xtext:Group">
+      <elements xsi:type="xtext:Alternatives">
+        <elements xsi:type="xtext:Keyword" value="C"/>
+        <elements xsi:type="xtext:Keyword" value="c"/>
+      </elements>
+      <elements xsi:type="xtext:Assignment" feature="curveto_argument_sequence" operator="=">
+        <terminal xsi:type="xtext:RuleCall" rule="//@rules.14"/>
+      </elements>
+    </alternatives>
+  </rules>
+  <rules xsi:type="xtext:ParserRule" name="curveto_argument_sequence">
+    <type metamodel="//@metamodelDeclarations.1">
+      <classifier xsi:type="ecore:EClass" href="http://www.bestsolution.at/efxclipse/tooling/svgpath/SvgPath#//curveto_argument_sequence"/>
+    </type>
+    <alternatives xsi:type="xtext:Group">
+      <elements xsi:type="xtext:Assignment" feature="curveto_arguments" operator="+=">
+        <terminal xsi:type="xtext:RuleCall" rule="//@rules.15"/>
+      </elements>
+      <elements xsi:type="xtext:Group" cardinality="*">
+        <elements xsi:type="xtext:RuleCall" cardinality="?" rule="//@rules.28"/>
+        <elements xsi:type="xtext:Assignment" feature="curveto_arguments" operator="+=">
+          <terminal xsi:type="xtext:RuleCall" rule="//@rules.15"/>
+        </elements>
+      </elements>
+    </alternatives>
+  </rules>
+  <rules xsi:type="xtext:ParserRule" name="curveto_argument">
+    <type metamodel="//@metamodelDeclarations.1">
+      <classifier xsi:type="ecore:EClass" href="http://www.bestsolution.at/efxclipse/tooling/svgpath/SvgPath#//curveto_argument"/>
+    </type>
+    <alternatives xsi:type="xtext:Group">
+      <elements xsi:type="xtext:Assignment" feature="c1" operator="=">
+        <terminal xsi:type="xtext:RuleCall" rule="//@rules.27"/>
+      </elements>
+      <elements xsi:type="xtext:RuleCall" cardinality="?" rule="//@rules.28"/>
+      <elements xsi:type="xtext:Assignment" feature="c2" operator="=">
+        <terminal xsi:type="xtext:RuleCall" rule="//@rules.27"/>
+      </elements>
+      <elements xsi:type="xtext:RuleCall" cardinality="?" rule="//@rules.28"/>
+      <elements xsi:type="xtext:Assignment" feature="c3" operator="=">
+        <terminal xsi:type="xtext:RuleCall" rule="//@rules.27"/>
+      </elements>
+    </alternatives>
+  </rules>
+  <rules xsi:type="xtext:ParserRule" name="smooth_curveto">
+    <type metamodel="//@metamodelDeclarations.1">
+      <classifier xsi:type="ecore:EClass" href="http://www.bestsolution.at/efxclipse/tooling/svgpath/SvgPath#//smooth_curveto"/>
+    </type>
+    <alternatives xsi:type="xtext:Group">
+      <elements xsi:type="xtext:Alternatives">
+        <elements xsi:type="xtext:Keyword" value="S"/>
+        <elements xsi:type="xtext:Keyword" value="s"/>
+      </elements>
+      <elements xsi:type="xtext:Assignment" feature="smooth_curveto_argument_sequence" operator="=">
+        <terminal xsi:type="xtext:RuleCall" rule="//@rules.17"/>
+      </elements>
+    </alternatives>
+  </rules>
+  <rules xsi:type="xtext:ParserRule" name="smooth_curveto_argument_sequence">
+    <type metamodel="//@metamodelDeclarations.1">
+      <classifier xsi:type="ecore:EClass" href="http://www.bestsolution.at/efxclipse/tooling/svgpath/SvgPath#//smooth_curveto_argument_sequence"/>
+    </type>
+    <alternatives xsi:type="xtext:Group">
+      <elements xsi:type="xtext:Assignment" feature="smooth_curveto_arguments" operator="+=">
+        <terminal xsi:type="xtext:RuleCall" rule="//@rules.18"/>
+      </elements>
+      <elements xsi:type="xtext:Group" cardinality="*">
+        <elements xsi:type="xtext:RuleCall" cardinality="?" rule="//@rules.28"/>
+        <elements xsi:type="xtext:Assignment" feature="smooth_curveto_arguments" operator="+=">
+          <terminal xsi:type="xtext:RuleCall" rule="//@rules.18"/>
+        </elements>
+      </elements>
+    </alternatives>
+  </rules>
+  <rules xsi:type="xtext:ParserRule" name="smooth_curveto_argument">
+    <type metamodel="//@metamodelDeclarations.1">
+      <classifier xsi:type="ecore:EClass" href="http://www.bestsolution.at/efxclipse/tooling/svgpath/SvgPath#//smooth_curveto_argument"/>
+    </type>
+    <alternatives xsi:type="xtext:Group">
+      <elements xsi:type="xtext:Assignment" feature="c1" operator="=">
+        <terminal xsi:type="xtext:RuleCall" rule="//@rules.27"/>
+      </elements>
+      <elements xsi:type="xtext:RuleCall" cardinality="?" rule="//@rules.28"/>
+      <elements xsi:type="xtext:Assignment" feature="c2" operator="=">
+        <terminal xsi:type="xtext:RuleCall" rule="//@rules.27"/>
+      </elements>
+    </alternatives>
+  </rules>
+  <rules xsi:type="xtext:ParserRule" name="quadratic_bezier_curveto">
+    <type metamodel="//@metamodelDeclarations.1">
+      <classifier xsi:type="ecore:EClass" href="http://www.bestsolution.at/efxclipse/tooling/svgpath/SvgPath#//quadratic_bezier_curveto"/>
+    </type>
+    <alternatives xsi:type="xtext:Group">
+      <elements xsi:type="xtext:Alternatives">
+        <elements xsi:type="xtext:Keyword" value="Q"/>
+        <elements xsi:type="xtext:Keyword" value="q"/>
+      </elements>
+      <elements xsi:type="xtext:RuleCall" rule="//@rules.20"/>
+    </alternatives>
+  </rules>
+  <rules xsi:type="xtext:ParserRule" name="quadratic_bezier_curveto_argument_sequence">
+    <type metamodel="//@metamodelDeclarations.1">
+      <classifier xsi:type="ecore:EClass" href="http://www.bestsolution.at/efxclipse/tooling/svgpath/SvgPath#//quadratic_bezier_curveto_argument_sequence"/>
+    </type>
+    <alternatives xsi:type="xtext:Group">
+      <elements xsi:type="xtext:Assignment" feature="quadratic_bezier_curveto_arguments" operator="+=">
+        <terminal xsi:type="xtext:RuleCall" rule="//@rules.21"/>
+      </elements>
+      <elements xsi:type="xtext:Group" cardinality="*">
+        <elements xsi:type="xtext:RuleCall" cardinality="?" rule="//@rules.28"/>
+        <elements xsi:type="xtext:Assignment" feature="quadratic_bezier_curveto_arguments" operator="+=">
+          <terminal xsi:type="xtext:RuleCall" rule="//@rules.21"/>
+        </elements>
+      </elements>
+    </alternatives>
+  </rules>
+  <rules xsi:type="xtext:ParserRule" name="quadratic_bezier_curveto_argument">
+    <type metamodel="//@metamodelDeclarations.1">
+      <classifier xsi:type="ecore:EClass" href="http://www.bestsolution.at/efxclipse/tooling/svgpath/SvgPath#//quadratic_bezier_curveto_argument"/>
+    </type>
+    <alternatives xsi:type="xtext:Group">
+      <elements xsi:type="xtext:Assignment" feature="c1" operator="=">
+        <terminal xsi:type="xtext:RuleCall" rule="//@rules.27"/>
+      </elements>
+      <elements xsi:type="xtext:RuleCall" cardinality="?" rule="//@rules.28"/>
+      <elements xsi:type="xtext:Assignment" feature="c2" operator="=">
+        <terminal xsi:type="xtext:RuleCall" rule="//@rules.27"/>
+      </elements>
+    </alternatives>
+  </rules>
+  <rules xsi:type="xtext:ParserRule" name="smooth_quadratic_bezier_curveto">
+    <type metamodel="//@metamodelDeclarations.1">
+      <classifier xsi:type="ecore:EClass" href="http://www.bestsolution.at/efxclipse/tooling/svgpath/SvgPath#//smooth_quadratic_bezier_curveto"/>
+    </type>
+    <alternatives xsi:type="xtext:Group">
+      <elements xsi:type="xtext:Alternatives">
+        <elements xsi:type="xtext:Keyword" value="T"/>
+        <elements xsi:type="xtext:Keyword" value="t"/>
+      </elements>
+      <elements xsi:type="xtext:Assignment" feature="smooth_quadratic_bezier_curveto_argument_sequence" operator="=">
+        <terminal xsi:type="xtext:RuleCall" rule="//@rules.23"/>
+      </elements>
+    </alternatives>
+  </rules>
+  <rules xsi:type="xtext:ParserRule" name="smooth_quadratic_bezier_curveto_argument_sequence">
+    <type metamodel="//@metamodelDeclarations.1">
+      <classifier xsi:type="ecore:EClass" href="http://www.bestsolution.at/efxclipse/tooling/svgpath/SvgPath#//smooth_quadratic_bezier_curveto_argument_sequence"/>
+    </type>
+    <alternatives xsi:type="xtext:Group">
+      <elements xsi:type="xtext:Assignment" feature="coordinate_pairs" operator="+=">
+        <terminal xsi:type="xtext:RuleCall" rule="//@rules.27"/>
+      </elements>
+      <elements xsi:type="xtext:Group" cardinality="*">
+        <elements xsi:type="xtext:RuleCall" cardinality="?" rule="//@rules.28"/>
+        <elements xsi:type="xtext:Assignment" feature="coordinate_pairs" operator="+=">
+          <terminal xsi:type="xtext:RuleCall" rule="//@rules.27"/>
+        </elements>
+      </elements>
+    </alternatives>
+  </rules>
+  <rules xsi:type="xtext:ParserRule" name="elliptical_arc">
+    <type metamodel="//@metamodelDeclarations.1">
+      <classifier xsi:type="ecore:EClass" href="http://www.bestsolution.at/efxclipse/tooling/svgpath/SvgPath#//elliptical_arc"/>
+    </type>
+    <alternatives xsi:type="xtext:Group">
+      <elements xsi:type="xtext:Alternatives">
+        <elements xsi:type="xtext:Keyword" value="A"/>
+        <elements xsi:type="xtext:Keyword" value="a"/>
+      </elements>
+      <elements xsi:type="xtext:Assignment" feature="elliptical_arc_argument_sequence" operator="=">
+        <terminal xsi:type="xtext:RuleCall" rule="//@rules.25"/>
+      </elements>
+    </alternatives>
+  </rules>
+  <rules xsi:type="xtext:ParserRule" name="elliptical_arc_argument_sequence">
+    <type metamodel="//@metamodelDeclarations.1">
+      <classifier xsi:type="ecore:EClass" href="http://www.bestsolution.at/efxclipse/tooling/svgpath/SvgPath#//elliptical_arc_argument_sequence"/>
+    </type>
+    <alternatives xsi:type="xtext:Group">
+      <elements xsi:type="xtext:Assignment" feature="elliptical_arc_arguments" operator="+=">
+        <terminal xsi:type="xtext:RuleCall" rule="//@rules.26"/>
+      </elements>
+      <elements xsi:type="xtext:Group" cardinality="*">
+        <elements xsi:type="xtext:RuleCall" cardinality="?" rule="//@rules.28"/>
+        <elements xsi:type="xtext:Assignment" feature="elliptical_arc_arguments" operator="+=">
+          <terminal xsi:type="xtext:RuleCall" rule="//@rules.26"/>
+        </elements>
+      </elements>
+    </alternatives>
+  </rules>
+  <rules xsi:type="xtext:ParserRule" name="elliptical_arc_argument">
+    <type metamodel="//@metamodelDeclarations.1">
+      <classifier xsi:type="ecore:EClass" href="http://www.bestsolution.at/efxclipse/tooling/svgpath/SvgPath#//elliptical_arc_argument"/>
+    </type>
+    <alternatives xsi:type="xtext:Group">
+      <elements xsi:type="xtext:Assignment" feature="rx" operator="=">
+        <terminal xsi:type="xtext:RuleCall" rule="//@rules.31"/>
+      </elements>
+      <elements xsi:type="xtext:RuleCall" cardinality="?" rule="//@rules.28"/>
+      <elements xsi:type="xtext:Assignment" feature="ry" operator="=">
+        <terminal xsi:type="xtext:RuleCall" rule="//@rules.31"/>
+      </elements>
+      <elements xsi:type="xtext:RuleCall" cardinality="?" rule="//@rules.28"/>
+      <elements xsi:type="xtext:Assignment" feature="rotation" operator="=">
+        <terminal xsi:type="xtext:RuleCall" rule="//@rules.30"/>
+      </elements>
+      <elements xsi:type="xtext:RuleCall" rule="//@rules.28"/>
+      <elements xsi:type="xtext:Assignment" feature="largearcflag" operator="=">
+        <terminal xsi:type="xtext:RuleCall" rule="//@rules.36"/>
+      </elements>
+      <elements xsi:type="xtext:RuleCall" cardinality="?" rule="//@rules.28"/>
+      <elements xsi:type="xtext:Assignment" feature="sweepflag" operator="=">
+        <terminal xsi:type="xtext:RuleCall" rule="//@rules.36"/>
+      </elements>
+      <elements xsi:type="xtext:RuleCall" cardinality="?" rule="//@rules.28"/>
+      <elements xsi:type="xtext:Assignment" feature="coordinate_pair" operator="=">
+        <terminal xsi:type="xtext:RuleCall" rule="//@rules.27"/>
+      </elements>
+    </alternatives>
+  </rules>
+  <rules xsi:type="xtext:ParserRule" name="coordinate_pair">
+    <type metamodel="//@metamodelDeclarations.1">
+      <classifier xsi:type="ecore:EClass" href="http://www.bestsolution.at/efxclipse/tooling/svgpath/SvgPath#//coordinate_pair"/>
+    </type>
+    <alternatives xsi:type="xtext:Group">
+      <elements xsi:type="xtext:Assignment" feature="c1" operator="=">
+        <terminal xsi:type="xtext:RuleCall" rule="//@rules.29"/>
+      </elements>
+      <elements xsi:type="xtext:RuleCall" cardinality="?" rule="//@rules.28"/>
+      <elements xsi:type="xtext:Assignment" feature="c2" operator="=">
+        <terminal xsi:type="xtext:RuleCall" rule="//@rules.29"/>
+      </elements>
+    </alternatives>
+  </rules>
+  <rules xsi:type="xtext:ParserRule" name="comma">
+    <type metamodel="//@metamodelDeclarations.0">
+      <classifier xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </type>
+    <alternatives xsi:type="xtext:Keyword" value=","/>
+  </rules>
+  <rules xsi:type="xtext:ParserRule" name="coordinate">
+    <type metamodel="//@metamodelDeclarations.1">
+      <classifier xsi:type="ecore:EClass" href="http://www.bestsolution.at/efxclipse/tooling/svgpath/SvgPath#//coordinate"/>
+    </type>
+    <alternatives xsi:type="xtext:RuleCall" rule="//@rules.30"/>
+  </rules>
+  <rules xsi:type="xtext:ParserRule" name="number">
+    <type metamodel="//@metamodelDeclarations.1">
+      <classifier xsi:type="ecore:EClass" href="http://www.bestsolution.at/efxclipse/tooling/svgpath/SvgPath#//number"/>
+    </type>
+    <alternatives xsi:type="xtext:Group">
+      <elements xsi:type="xtext:Assignment" cardinality="?" feature="sign" operator="=">
+        <terminal xsi:type="xtext:RuleCall" rule="//@rules.35"/>
+      </elements>
+      <elements xsi:type="xtext:Assignment" feature="nonnegative_number" operator="=">
+        <terminal xsi:type="xtext:RuleCall" rule="//@rules.31"/>
+      </elements>
+    </alternatives>
+  </rules>
+  <rules xsi:type="xtext:ParserRule" name="nonnegative_number">
+    <type metamodel="//@metamodelDeclarations.1">
+      <classifier xsi:type="ecore:EClass" href="http://www.bestsolution.at/efxclipse/tooling/svgpath/SvgPath#//nonnegative_number"/>
+    </type>
+    <alternatives xsi:type="xtext:Group">
+      <elements xsi:type="xtext:Assignment" feature="intseq" operator="=">
+        <terminal xsi:type="xtext:RuleCall" rule="//@rules.33"/>
+      </elements>
+      <elements xsi:type="xtext:Group" cardinality="?">
+        <elements xsi:type="xtext:Keyword" value="."/>
+        <elements xsi:type="xtext:Assignment" feature="floatseq" operator="=">
+          <terminal xsi:type="xtext:RuleCall" rule="//@rules.33"/>
+        </elements>
+      </elements>
+      <elements xsi:type="xtext:Assignment" cardinality="?" feature="exponent" operator="=">
+        <terminal xsi:type="xtext:RuleCall" rule="//@rules.32"/>
+      </elements>
+    </alternatives>
+  </rules>
+  <rules xsi:type="xtext:ParserRule" name="exponent">
+    <type metamodel="//@metamodelDeclarations.1">
+      <classifier xsi:type="ecore:EClass" href="http://www.bestsolution.at/efxclipse/tooling/svgpath/SvgPath#//exponent"/>
+    </type>
+    <alternatives xsi:type="xtext:Group">
+      <elements xsi:type="xtext:Alternatives">
+        <elements xsi:type="xtext:Keyword" value="e"/>
+        <elements xsi:type="xtext:Keyword" value="E"/>
+      </elements>
+      <elements xsi:type="xtext:Assignment" cardinality="?" feature="sign" operator="=">
+        <terminal xsi:type="xtext:RuleCall" rule="//@rules.35"/>
+      </elements>
+      <elements xsi:type="xtext:Assignment" feature="digit_sequence" operator="=">
+        <terminal xsi:type="xtext:RuleCall" rule="//@rules.33"/>
+      </elements>
+    </alternatives>
+  </rules>
+  <rules xsi:type="xtext:ParserRule" name="digit_sequence">
+    <type metamodel="//@metamodelDeclarations.1">
+      <classifier xsi:type="ecore:EClass" href="http://www.bestsolution.at/efxclipse/tooling/svgpath/SvgPath#//digit_sequence"/>
+    </type>
+    <alternatives xsi:type="xtext:Assignment" feature="digits" operator="+=">
+      <terminal xsi:type="xtext:RuleCall" rule="//@rules.34"/>
+    </alternatives>
+  </rules>
+  <rules xsi:type="xtext:ParserRule" name="digit">
+    <type metamodel="//@metamodelDeclarations.0">
+      <classifier xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </type>
+    <alternatives xsi:type="xtext:Alternatives">
+      <elements xsi:type="xtext:Keyword" value="0"/>
+      <elements xsi:type="xtext:Keyword" value="1"/>
+      <elements xsi:type="xtext:Keyword" value="2"/>
+      <elements xsi:type="xtext:Keyword" value="3"/>
+      <elements xsi:type="xtext:Keyword" value="4"/>
+      <elements xsi:type="xtext:Keyword" value="5"/>
+      <elements xsi:type="xtext:Keyword" value="6"/>
+      <elements xsi:type="xtext:Keyword" value="7"/>
+      <elements xsi:type="xtext:Keyword" value="8"/>
+      <elements xsi:type="xtext:Keyword" value="9"/>
+    </alternatives>
+  </rules>
+  <rules xsi:type="xtext:ParserRule" name="sign">
+    <type metamodel="//@metamodelDeclarations.0">
+      <classifier xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </type>
+    <alternatives xsi:type="xtext:Alternatives">
+      <elements xsi:type="xtext:Keyword" value="+"/>
+      <elements xsi:type="xtext:Keyword" value="-"/>
+    </alternatives>
+  </rules>
+  <rules xsi:type="xtext:ParserRule" name="flag">
+    <type metamodel="//@metamodelDeclarations.0">
+      <classifier xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </type>
+    <alternatives xsi:type="xtext:Alternatives">
+      <elements xsi:type="xtext:Keyword" value="0"/>
+      <elements xsi:type="xtext:Keyword" value="1"/>
+    </alternatives>
+  </rules>
+  <rules xsi:type="xtext:TerminalRule" name="wsp">
+    <type metamodel="//@metamodelDeclarations.0">
+      <classifier xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </type>
+    <alternatives xsi:type="xtext:Alternatives">
+      <elements xsi:type="xtext:Keyword" value=" "/>
+      <elements xsi:type="xtext:Keyword" value="&#x9;"/>
+      <elements xsi:type="xtext:Keyword" value="&#xD;"/>
+      <elements xsi:type="xtext:Keyword" value="&#xA;"/>
+    </alternatives>
+  </rules>
+</xtext:Grammar>

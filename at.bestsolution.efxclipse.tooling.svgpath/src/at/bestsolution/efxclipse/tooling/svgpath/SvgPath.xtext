@@ -1,0 +1,168 @@
+grammar at.bestsolution.efxclipse.tooling.svgpath.SvgPath hidden(wsp) // with org.eclipse.xtext.common.Terminals
+
+import "http://www.eclipse.org/emf/2002/Ecore" as ecore
+
+generate svgPath "http://www.bestsolution.at/efxclipse/tooling/svgpath/SvgPath"
+
+svg_path:
+	moveto_drawto_command_groups=moveto_drawto_command_groups?
+;
+
+moveto_drawto_command_groups:
+	commands+=moveto_drawto_command_group
+;
+
+moveto_drawto_command_group:
+	moveto=moveto drawto_commands=drawto_commands?
+;
+
+moveto:
+	( "M" | "m" ) point=coordinate_pair comma? lineto_argument_sequence=lineto_argument_sequence
+;
+
+lineto_argument_sequence:
+	pairs+=coordinate_pair (comma? pairs+=coordinate_pair)*
+;
+
+drawto_commands:
+	drawto_commands+=drawto_command+
+;
+
+drawto_command:
+	closepath
+    | lineto
+    | horizontal_lineto
+    | vertical_lineto
+    | curveto
+    | smooth_curveto
+    | quadratic_bezier_curveto
+    | smooth_quadratic_bezier_curveto
+    | elliptical_arc
+;
+
+closepath: {closepath}
+	("Z" | "z")
+;
+
+lineto:
+	( "L" | "l" ) lineto_argument_sequence=lineto_argument_sequence
+;
+
+horizontal_lineto:
+	( "H" | "h" ) horizontal_lineto_argument_sequence=horizontal_lineto_argument_sequence
+;
+
+horizontal_lineto_argument_sequence:
+	coordinates+=coordinate (comma? coordinates+=coordinate)*
+;
+
+vertical_lineto:
+	( "V" | "v" ) vertical_lineto_argument_sequence=vertical_lineto_argument_sequence
+;
+
+vertical_lineto_argument_sequence:
+	coordinates+=coordinate (comma? coordinates+=coordinate)*
+;
+
+curveto:
+	( "C" | "c" ) curveto_argument_sequence=curveto_argument_sequence
+;
+
+curveto_argument_sequence:
+	curveto_arguments+=curveto_argument (comma? curveto_arguments+=curveto_argument)*
+;
+
+curveto_argument:
+	c1=coordinate_pair comma? c2=coordinate_pair comma? c3=coordinate_pair
+;
+
+smooth_curveto:
+	( "S" | "s" ) smooth_curveto_argument_sequence=smooth_curveto_argument_sequence
+;
+
+smooth_curveto_argument_sequence:
+	smooth_curveto_arguments+=smooth_curveto_argument (comma? smooth_curveto_arguments+=smooth_curveto_argument)*
+;
+
+smooth_curveto_argument:
+	c1=coordinate_pair comma? c2=coordinate_pair
+;
+
+quadratic_bezier_curveto:
+	( "Q" | "q" ) quadratic_bezier_curveto_argument_sequence
+;
+
+quadratic_bezier_curveto_argument_sequence:
+	quadratic_bezier_curveto_arguments+=quadratic_bezier_curveto_argument (comma? quadratic_bezier_curveto_arguments+=quadratic_bezier_curveto_argument)*
+;
+
+quadratic_bezier_curveto_argument:
+	c1=coordinate_pair comma? c2=coordinate_pair
+;
+
+smooth_quadratic_bezier_curveto:
+	( "T" | "t" ) smooth_quadratic_bezier_curveto_argument_sequence=smooth_quadratic_bezier_curveto_argument_sequence
+;
+
+smooth_quadratic_bezier_curveto_argument_sequence:
+	coordinate_pairs+=coordinate_pair ( comma? coordinate_pairs+=coordinate_pair )*
+;
+
+
+elliptical_arc:
+	( "A" | "a" ) elliptical_arc_argument_sequence=elliptical_arc_argument_sequence
+;
+
+elliptical_arc_argument_sequence:
+	elliptical_arc_arguments+=elliptical_arc_argument (comma? elliptical_arc_arguments+=elliptical_arc_argument)*
+;
+
+elliptical_arc_argument:
+	rx=nonnegative_number comma? ry=nonnegative_number comma? 
+        rotation=number comma largearcflag=flag comma? sweepflag=flag comma? coordinate_pair=coordinate_pair
+;
+
+
+coordinate_pair:
+	c1=coordinate comma? c2=coordinate
+;
+
+comma:
+    ","
+;
+
+coordinate:
+	number
+;
+
+number:
+    sign=sign? nonnegative_number=nonnegative_number
+;
+
+nonnegative_number:
+	intseq=digit_sequence ("." floatseq=digit_sequence)? exponent=exponent?
+;
+
+exponent:
+	( "e" | "E" ) sign=sign? digit_sequence=digit_sequence
+;
+
+digit_sequence:
+	digits+=digit
+;
+
+digit:
+    "0" | "1" | "2" | "3" | "4" | "5" | "6" | "7" | "8" | "9"
+;
+
+sign:
+	"+" | "-"
+;
+
+flag:
+    "0" | "1"
+;
+
+terminal wsp:
+	' '|'\t'|'\r'|'\n'
+;
