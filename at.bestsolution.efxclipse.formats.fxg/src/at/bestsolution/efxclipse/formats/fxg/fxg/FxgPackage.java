@@ -474,13 +474,22 @@ public interface FxgPackage extends EPackage {
 	int GROUP__FILTERS = CONTAINER_ELEMENT_FEATURE_COUNT + 17;
 
 	/**
+	 * The feature id for the '<em><b>Mask</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GROUP__MASK = CONTAINER_ELEMENT_FEATURE_COUNT + 18;
+
+	/**
 	 * The number of structural features of the '<em>Group</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int GROUP_FEATURE_COUNT = CONTAINER_ELEMENT_FEATURE_COUNT + 18;
+	int GROUP_FEATURE_COUNT = CONTAINER_ELEMENT_FEATURE_COUNT + 19;
 
 	/**
 	 * The meta object id for the '{@link at.bestsolution.efxclipse.formats.fxg.fxg.impl.TransformImpl <em>Transform</em>}' class.
@@ -5197,6 +5206,17 @@ public interface FxgPackage extends EPackage {
 	EReference getGroup_Filters();
 
 	/**
+	 * Returns the meta object for the containment reference '{@link at.bestsolution.efxclipse.formats.fxg.fxg.Group#getMask <em>Mask</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Mask</em>'.
+	 * @see at.bestsolution.efxclipse.formats.fxg.fxg.Group#getMask()
+	 * @see #getGroup()
+	 * @generated
+	 */
+	EReference getGroup_Mask();
+
+	/**
 	 * Returns the meta object for class '{@link at.bestsolution.efxclipse.formats.fxg.fxg.Transform <em>Transform</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -9398,6 +9418,14 @@ public interface FxgPackage extends EPackage {
 		 * @generated
 		 */
 		EReference GROUP__FILTERS = eINSTANCE.getGroup_Filters();
+
+		/**
+		 * The meta object literal for the '<em><b>Mask</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference GROUP__MASK = eINSTANCE.getGroup_Mask();
 
 		/**
 		 * The meta object literal for the '{@link at.bestsolution.efxclipse.formats.fxg.fxg.impl.TransformImpl <em>Transform</em>}' class.

@@ -53,6 +53,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link at.bestsolution.efxclipse.formats.fxg.fxg.impl.GroupImpl#getScaleGridBottom <em>Scale Grid Bottom</em>}</li>
  *   <li>{@link at.bestsolution.efxclipse.formats.fxg.fxg.impl.GroupImpl#getTransform <em>Transform</em>}</li>
  *   <li>{@link at.bestsolution.efxclipse.formats.fxg.fxg.impl.GroupImpl#getFilters <em>Filters</em>}</li>
+ *   <li>{@link at.bestsolution.efxclipse.formats.fxg.fxg.impl.GroupImpl#getMask <em>Mask</em>}</li>
  * </ul>
  * </p>
  *
@@ -398,6 +399,16 @@ public class GroupImpl extends ContainerElementImpl<FXGElement> implements Group
 	 * @ordered
 	 */
 	protected EList<Filter> filters;
+
+	/**
+	 * The cached value of the '{@link #getMask() <em>Mask</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getMask()
+	 * @generated
+	 * @ordered
+	 */
+	protected Group mask;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -814,6 +825,49 @@ public class GroupImpl extends ContainerElementImpl<FXGElement> implements Group
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public Group getMask() {
+		return mask;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetMask(Group newMask, NotificationChain msgs) {
+		Group oldMask = mask;
+		mask = newMask;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, FxgPackage.GROUP__MASK, oldMask, newMask);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setMask(Group newMask) {
+		if (newMask != mask) {
+			NotificationChain msgs = null;
+			if (mask != null)
+				msgs = ((InternalEObject)mask).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - FxgPackage.GROUP__MASK, null, msgs);
+			if (newMask != null)
+				msgs = ((InternalEObject)newMask).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - FxgPackage.GROUP__MASK, null, msgs);
+			msgs = basicSetMask(newMask, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, FxgPackage.GROUP__MASK, newMask, newMask));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
@@ -821,6 +875,8 @@ public class GroupImpl extends ContainerElementImpl<FXGElement> implements Group
 				return basicSetTransform(null, msgs);
 			case FxgPackage.GROUP__FILTERS:
 				return ((InternalEList<?>)getFilters()).basicRemove(otherEnd, msgs);
+			case FxgPackage.GROUP__MASK:
+				return basicSetMask(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -869,6 +925,8 @@ public class GroupImpl extends ContainerElementImpl<FXGElement> implements Group
 				return getTransform();
 			case FxgPackage.GROUP__FILTERS:
 				return getFilters();
+			case FxgPackage.GROUP__MASK:
+				return getMask();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -937,6 +995,9 @@ public class GroupImpl extends ContainerElementImpl<FXGElement> implements Group
 				getFilters().clear();
 				getFilters().addAll((Collection<? extends Filter>)newValue);
 				return;
+			case FxgPackage.GROUP__MASK:
+				setMask((Group)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -1003,6 +1064,9 @@ public class GroupImpl extends ContainerElementImpl<FXGElement> implements Group
 			case FxgPackage.GROUP__FILTERS:
 				getFilters().clear();
 				return;
+			case FxgPackage.GROUP__MASK:
+				setMask((Group)null);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -1051,6 +1115,8 @@ public class GroupImpl extends ContainerElementImpl<FXGElement> implements Group
 				return transform != null;
 			case FxgPackage.GROUP__FILTERS:
 				return filters != null && !filters.isEmpty();
+			case FxgPackage.GROUP__MASK:
+				return mask != null;
 		}
 		return super.eIsSet(featureID);
 	}

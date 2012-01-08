@@ -34,6 +34,7 @@ import org.eclipse.emf.common.util.EList;
  *   <li>{@link at.bestsolution.efxclipse.formats.fxg.fxg.Group#getScaleGridBottom <em>Scale Grid Bottom</em>}</li>
  *   <li>{@link at.bestsolution.efxclipse.formats.fxg.fxg.Group#getTransform <em>Transform</em>}</li>
  *   <li>{@link at.bestsolution.efxclipse.formats.fxg.fxg.Group#getFilters <em>Filters</em>}</li>
+ *   <li>{@link at.bestsolution.efxclipse.formats.fxg.fxg.Group#getMask <em>Mask</em>}</li>
  * </ul>
  * </p>
  *
@@ -503,5 +504,31 @@ public interface Group extends ContainerElement<FXGElement> {
 	 * @generated
 	 */
 	EList<Filter> getFilters();
+
+	/**
+	 * Returns the value of the '<em><b>Mask</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Mask</em>' containment reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Mask</em>' containment reference.
+	 * @see #setMask(Group)
+	 * @see at.bestsolution.efxclipse.formats.fxg.fxg.FxgPackage#getGroup_Mask()
+	 * @model containment="true"
+	 * @generated
+	 */
+	Group getMask();
+
+	/**
+	 * Sets the value of the '{@link at.bestsolution.efxclipse.formats.fxg.fxg.Group#getMask <em>Mask</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Mask</em>' containment reference.
+	 * @see #getMask()
+	 * @generated
+	 */
+	void setMask(Group value);
 
 } // Group

@@ -49,6 +49,8 @@
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="filters" upperBound="-1"
         eType="#//Filter" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="mask" eType="#//Group"
+        containment="true"/>
     <eGenericSuperTypes eClassifier="#//ContainerElement">
       <eTypeArguments eClassifier="#//FXGElement"/>
     </eGenericSuperTypes>

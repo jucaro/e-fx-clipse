@@ -1,24 +1,24 @@
 package at.bestsolution.efxclipse.formats.fxg.converter
 
+import at.bestsolution.efxclipse.formats.fxg.fxg.BlendMode
+import at.bestsolution.efxclipse.formats.fxg.fxg.Ellipse
+import at.bestsolution.efxclipse.formats.fxg.fxg.GradientEntry
 import at.bestsolution.efxclipse.formats.fxg.fxg.Graphic
 import at.bestsolution.efxclipse.formats.fxg.fxg.Group
-import at.bestsolution.efxclipse.formats.fxg.fxg.Transform
-import at.bestsolution.efxclipse.formats.fxg.fxg.Library
-import at.bestsolution.efxclipse.formats.fxg.fxg.Private
-import org.eclipse.emf.ecore.EObject
-import at.bestsolution.efxclipse.formats.fxg.fxg.BlendMode
-import at.bestsolution.efxclipse.formats.fxg.fxg.Rect
-import at.bestsolution.efxclipse.formats.fxg.fxg.Path
-import at.bestsolution.efxclipse.formats.fxg.fxg.Ellipse
-import at.bestsolution.efxclipse.formats.fxg.fxg.Winding
-import javafx.scene.shape.FillRule
-import at.bestsolution.efxclipse.formats.fxg.fxg.SolidColor
-import at.bestsolution.efxclipse.formats.fxg.fxg.RadialGradient
 import at.bestsolution.efxclipse.formats.fxg.fxg.InterpolationMethod
-import at.bestsolution.efxclipse.formats.fxg.fxg.SpreadMethod
-import javafx.scene.paint.CycleMethod
+import at.bestsolution.efxclipse.formats.fxg.fxg.Library
 import at.bestsolution.efxclipse.formats.fxg.fxg.LinearGradient
-import at.bestsolution.efxclipse.formats.fxg.fxg.GradientEntry
+import at.bestsolution.efxclipse.formats.fxg.fxg.Path
+import at.bestsolution.efxclipse.formats.fxg.fxg.Private
+import at.bestsolution.efxclipse.formats.fxg.fxg.RadialGradient
+import at.bestsolution.efxclipse.formats.fxg.fxg.Rect
+import at.bestsolution.efxclipse.formats.fxg.fxg.SolidColor
+import at.bestsolution.efxclipse.formats.fxg.fxg.SpreadMethod
+import at.bestsolution.efxclipse.formats.fxg.fxg.Transform
+import at.bestsolution.efxclipse.formats.fxg.fxg.Winding
+import javafx.scene.paint.CycleMethod
+import javafx.scene.shape.FillRule
+import org.eclipse.emf.ecore.EObject
 
 class FXMLConverter {
 	def generate(Graphic graphic) '''
@@ -51,27 +51,33 @@ class FXMLConverter {
 	def dispatch handle(Group group) '''
 	<Group
 		«IF group.alpha != null»opacity="«group.alpha»"«ENDIF»
-		«IF group.blendMode != BlendMode::NOT_SET»fx:todo="blendMode"«ENDIF»
+		«IF group.blendMode != BlendMode::NOT_SET»blendMode="«group.blendMode.toFX»"«ENDIF»
 		«IF group.id != null»fx:id="«group.id»"«ENDIF»
-		«IF group.maskType != null»fx:todo="maskType"«ENDIF»
-		«IF group.rotation != null»fx:todo="rotation"«ENDIF»
+		«IF group.rotation != null»rotate="«group.rotation»"«ENDIF»
 		«IF group.scaleGridBottom != null»fx:todo="scaleGridBottom"«ENDIF»
 		«IF group.scaleGridLeft != null»fx:todo="scaleGridLeft"«ENDIF»
 		«IF group.scaleGridRight != null»fx:todo="scaleGridRight"«ENDIF»
 		«IF group.scaleGridTop != null»fx:todo="scaleGridTop"«ENDIF»
 		«IF group.scaleX != null»scaleX="«group.scaleX»"«ENDIF»
 		«IF group.scaleY != null»scaleY="«group.scaleY»"«ENDIF»
-		«IF group.transformX != null»fx:todo="transformX"«ENDIF»
-		«IF group.transformY != null»fx:todo="transformY"«ENDIF»
 		«IF group.visible != null»visible="«group.visible»"«ENDIF»
 		«IF group.x != null»translateX="«group.x»"«ENDIF»
 		«IF group.y != null»translateY="«group.y»"«ENDIF»>
 		«IF ! group.get_children.nullOrEmpty »
-		<children>
-			«FOR o : group.get_children»
-				«handle(o)»
-			«ENDFOR»
-		</children>
+			<children>
+				«FOR o : group.get_children»
+					«handle(o)»
+				«ENDFOR»
+			</children>
+		«ENDIF»
+		«IF group.mask != null»
+			«IF group.maskType == null || group.maskType.equals("clip")»
+				<clip>
+					«handle(group.mask)»
+				</clip>
+			«ELSE»
+				<!-- TODO Handle masktype: «group.maskType» -->
+			«ENDIF»
 		«ENDIF»
 	</Group>
 	'''
@@ -82,7 +88,7 @@ class FXMLConverter {
 	def dispatch handle(Rect rect) '''
 	<Rectangle
 		«IF rect.alpha != null»opacity="«rect.alpha»"«ENDIF»
-		«IF rect.blendMode != BlendMode::NOT_SET»fx:todo="blendMode"«ENDIF»
+		«IF rect.blendMode != BlendMode::NOT_SET»blendMode="«rect.blendMode.toFX»"«ENDIF»
 		«IF rect.bottomLeftRadiusX != null»fx:todo="bottomLeftRadiusX"«ENDIF»
 		«IF rect.bottomLeftRadiusY != null»fx:todo="bottomLeftRadiusY"«ENDIF»
 		«IF rect.bottomRightRadiusX != null»fx:todo="bottomRightRadiusX"«ENDIF»
@@ -90,7 +96,7 @@ class FXMLConverter {
 		«IF rect.height != null»height="«rect.height»"«ENDIF»
 		«IF rect.radiusX != null»fx:todo="radiusX"«ENDIF»
 		«IF rect.radiusY != null»fx:todo="radiusY"«ENDIF»
-		«IF rect.rotation != null»fx:todo="rotation"«ENDIF»
+		«IF rect.rotation != null»rotate="«rect.rotation»"«ENDIF»
 		«IF rect.scaleX != null»scaleX="«rect.scaleX»"«ENDIF»
 		«IF rect.scaleY != null»scaleY="«rect.scaleY»"«ENDIF»
 		«IF rect.topLeftRadiusX != null»fx:todo="topLeftRadiusX"«ENDIF»
@@ -102,9 +108,14 @@ class FXMLConverter {
 		«IF rect.x != null»x="«rect.x»"«ENDIF»
 		«IF rect.y != null»y="«rect.y»"«ENDIF»>
 		«IF rect.fill != null»
-		<fill>
-			«handle(rect.fill)»
-		</fill>
+			<fill>
+				«handle(rect.fill)»
+			</fill>
+		«ENDIF»
+		«IF rect.mask != null»
+			<clip>
+				«handle(rect.mask)»
+			</clip>
 		«ENDIF»
 	</Rectangle>
 	'''
@@ -188,9 +199,9 @@ class FXMLConverter {
 	def dispatch handle(Path path) '''
 	<SVGPath
 		«IF path.alpha != null»opacity="«path.alpha»"«ENDIF»
-		«IF path.blendMode != BlendMode::NOT_SET»fx:todo="blendMode"«ENDIF»
+		«IF path.blendMode != BlendMode::NOT_SET»blendMode="«path.blendMode.toFX»"«ENDIF»
 		«IF path.data != null»content="«path.data»"«ENDIF»
-		«IF path.rotation != null»fx:todo="rotation"«ENDIF»
+		«IF path.rotation != null»rotate="«path.rotation»"«ENDIF»
 		«IF path.scaleX != null»scaleX="«path.scaleX»"«ENDIF»
 		«IF path.scaleY != null»scaleY="«path.scaleY»"«ENDIF»
 		«IF path.visible != null»visible="«path.visible»"«ENDIF»
@@ -202,15 +213,20 @@ class FXMLConverter {
 			«handle(path.fill)»
 		</fill>
 		«ENDIF»
+		«IF path.mask != null»
+			<clip>
+				«handle(path.mask)»
+			</clip>
+		«ENDIF»
 	</SVGPath>
 	'''
 	
 	def dispatch handle(Ellipse ellipse) '''
 	<Ellipse
 		«IF ellipse.alpha != null»opacity="«ellipse.alpha»"«ENDIF»
-		«IF ellipse.blendMode != BlendMode::NOT_SET»fx:todo="blendMode"«ENDIF»
+		«IF ellipse.blendMode != BlendMode::NOT_SET»blendMode="«ellipse.blendMode.toFX»"«ENDIF»
 		«IF ellipse.height != null»radiusX="«ellipse.width.parseLength * Double::valueOf('0.5')»"«ENDIF»
-		«IF ellipse.rotation != null»«ENDIF»
+		«IF ellipse.rotation != null»rotate="«ellipse.rotation»"«ENDIF»
 		«IF ellipse.scaleX != null»scaleX="«ellipse.scaleX»"«ENDIF»
 		«IF ellipse.scaleY != null»scaleY="«ellipse.scaleY»"«ENDIF»
 		«IF ellipse.visible != null»visible="«ellipse.visible»"«ENDIF»
@@ -218,14 +234,57 @@ class FXMLConverter {
 		«IF ellipse.x != null»centerX="«if( ellipse.width == null ) { ellipse.x } else { ellipse.x + (ellipse.width.parseLength * Double::valueOf('0.5'))}»"«ENDIF»
 		«IF ellipse.y != null»centerY="«if( ellipse.height == null ) { ellipse.y } else { ellipse.y + (ellipse.height.parseLength * Double::valueOf('0.5'))}»"«ENDIF»>
 		«IF ellipse.fill != null»
-		<fill>
-			«handle(ellipse.fill)»
-		</fill>
+			<fill>
+				«handle(ellipse.fill)»
+			</fill>
+		«ENDIF»
+		«IF ellipse.mask != null»
+			<clip>
+				«handle(ellipse.mask)»
+			</clip>
 		«ENDIF»
 	</Ellipse>
 	'''
 	
 	def parseLength(String length) {
 		return Double::parseDouble(length);
+	}
+	
+	def toFX(BlendMode fxgMode) {
+		switch(fxgMode) {
+			case BlendMode::ADD:
+				return javafx::scene::effect::BlendMode::ADD.toString
+			case BlendMode::ALPHA:
+				return "null"
+			case BlendMode::DARKEN:
+				return javafx::scene::effect::BlendMode::DARKEN.toString
+			case BlendMode::DIFFERENCE:
+				return javafx::scene::effect::BlendMode::DIFFERENCE.toString
+			case BlendMode::ERASE:
+				return "null"
+			case BlendMode::HARDLIGHT:
+				return "null"
+			case BlendMode::INVERT:
+				return "null"
+			case BlendMode::LAYER:
+				return "null"
+			case BlendMode::LIGHTEN:
+				return javafx::scene::effect::BlendMode::LIGHTEN.toString
+			case BlendMode::MULTIPLY:
+				return javafx::scene::effect::BlendMode::MULTIPLY.toString
+			case BlendMode::NORMAL:
+				return "null"
+			case BlendMode::OVERLAY:
+				return javafx::scene::effect::BlendMode::OVERLAY.toString
+			case BlendMode::SCREEN:
+				return javafx::scene::effect::BlendMode::SCREEN.toString
+			case BlendMode::SHADER:
+				return "null"
+			case BlendMode::SUBTRACT:
+				return "null"
+			case BlendMode::NOT_SET:
+				return "null"
+		}
+		return "null";
 	}
 }

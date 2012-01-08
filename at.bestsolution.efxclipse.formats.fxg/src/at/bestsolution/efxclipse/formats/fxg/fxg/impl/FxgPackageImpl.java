@@ -1087,6 +1087,15 @@ public class FxgPackageImpl extends EPackageImpl implements FxgPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EReference getGroup_Mask() {
+		return (EReference)groupEClass.getEStructuralFeatures().get(18);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getTransform() {
 		return transformEClass;
 	}
@@ -4413,6 +4422,7 @@ public class FxgPackageImpl extends EPackageImpl implements FxgPackage {
 		createEAttribute(groupEClass, GROUP__SCALE_GRID_BOTTOM);
 		createEReference(groupEClass, GROUP__TRANSFORM);
 		createEReference(groupEClass, GROUP__FILTERS);
+		createEReference(groupEClass, GROUP__MASK);
 
 		transformEClass = createEClass(TRANSFORM);
 		createEReference(transformEClass, TRANSFORM__MATRIX);
@@ -4995,6 +5005,7 @@ public class FxgPackageImpl extends EPackageImpl implements FxgPackage {
 		initEAttribute(getGroup_ScaleGridBottom(), ecorePackage.getEString(), "scaleGridBottom", null, 0, 1, Group.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getGroup_Transform(), this.getTransform(), null, "transform", null, 0, 1, Group.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getGroup_Filters(), this.getFilter(), null, "filters", null, 0, -1, Group.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getGroup_Mask(), this.getGroup(), null, "mask", null, 0, 1, Group.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(transformEClass, Transform.class, "Transform", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getTransform_Matrix(), this.getMatrix(), null, "matrix", null, 0, 1, Transform.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
