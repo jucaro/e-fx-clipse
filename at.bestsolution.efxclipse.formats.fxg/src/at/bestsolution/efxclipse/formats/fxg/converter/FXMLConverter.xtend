@@ -22,7 +22,7 @@ import org.eclipse.emf.ecore.EObject
 
 class FXMLConverter {
 	def generate(Graphic graphic) '''
-	«val content = handle(graphic)»
+	Â«val content = handle(graphic)Â»
 	<?xml version="1.0" encoding="UTF-8"?>
 	
 	<?import java.lang.*?>
@@ -31,54 +31,54 @@ class FXMLConverter {
 	<?import javafx.scene.paint.*?>
 	<?import javafx.scene.image.*?>
 	
-	«content»
+	Â«contentÂ»
 	'''
 	
 	def handle(Graphic graphic) '''
 	<Group fx:id='_root' xmlns:fx="http://javafx.com/fxml">
 		<children>
-			«FOR o : graphic.get_children.filter(o|!(o instanceof Library || o instanceof Private))»
-				«handle(o)»
-			«ENDFOR»
+			Â«FOR o : graphic.get_children.filter(o|!(o instanceof Library || o instanceof Private))Â»
+				Â«handle(o)Â»
+			Â«ENDFORÂ»
 		</children>
 	</Group>
 	'''
 	
 	def dispatch handle(EObject o) '''
-		<!-- Unhandled type '«o.eClass.name»' -->
+		<!-- Unhandled type 'Â«o.eClass.nameÂ»' -->
 	'''
 	
 	def dispatch handle(Group group) '''
 	<Group
-		«IF group.alpha != null»opacity="«group.alpha»"«ENDIF»
-		«IF group.blendMode != BlendMode::NOT_SET»blendMode="«group.blendMode.toFX»"«ENDIF»
-		«IF group.id != null»fx:id="«group.id»"«ENDIF»
-		«IF group.rotation != null»rotate="«group.rotation»"«ENDIF»
-		«IF group.scaleGridBottom != null»fx:todo="scaleGridBottom"«ENDIF»
-		«IF group.scaleGridLeft != null»fx:todo="scaleGridLeft"«ENDIF»
-		«IF group.scaleGridRight != null»fx:todo="scaleGridRight"«ENDIF»
-		«IF group.scaleGridTop != null»fx:todo="scaleGridTop"«ENDIF»
-		«IF group.scaleX != null»scaleX="«group.scaleX»"«ENDIF»
-		«IF group.scaleY != null»scaleY="«group.scaleY»"«ENDIF»
-		«IF group.visible != null»visible="«group.visible»"«ENDIF»
-		«IF group.x != null»translateX="«group.x»"«ENDIF»
-		«IF group.y != null»translateY="«group.y»"«ENDIF»>
-		«IF ! group.get_children.nullOrEmpty »
+		Â«IF group.alpha != nullÂ»opacity="Â«group.alphaÂ»"Â«ENDIFÂ»
+		Â«IF group.blendMode != BlendMode::NOT_SETÂ»blendMode="Â«group.blendMode.toFXÂ»"Â«ENDIFÂ»
+		Â«IF group.id != nullÂ»fx:id="Â«group.idÂ»"Â«ENDIFÂ»
+		Â«IF group.rotation != nullÂ»rotate="Â«group.rotationÂ»"Â«ENDIFÂ»
+		Â«IF group.scaleGridBottom != nullÂ»fx:todo="scaleGridBottom"Â«ENDIFÂ»
+		Â«IF group.scaleGridLeft != nullÂ»fx:todo="scaleGridLeft"Â«ENDIFÂ»
+		Â«IF group.scaleGridRight != nullÂ»fx:todo="scaleGridRight"Â«ENDIFÂ»
+		Â«IF group.scaleGridTop != nullÂ»fx:todo="scaleGridTop"Â«ENDIFÂ»
+		Â«IF group.scaleX != nullÂ»scaleX="Â«group.scaleXÂ»"Â«ENDIFÂ»
+		Â«IF group.scaleY != nullÂ»scaleY="Â«group.scaleYÂ»"Â«ENDIFÂ»
+		Â«IF group.visible != nullÂ»visible="Â«group.visibleÂ»"Â«ENDIFÂ»
+		Â«IF group.x != nullÂ»translateX="Â«group.xÂ»"Â«ENDIFÂ»
+		Â«IF group.y != nullÂ»translateY="Â«group.yÂ»"Â«ENDIFÂ»>
+		Â«IF ! group.get_children.nullOrEmpty Â»
 			<children>
-				«FOR o : group.get_children»
-					«handle(o)»
-				«ENDFOR»
+				Â«FOR o : group.get_childrenÂ»
+					Â«handle(o)Â»
+				Â«ENDFORÂ»
 			</children>
-		«ENDIF»
-		«IF group.mask != null»
-			«IF group.maskType == null || group.maskType.equals("clip")»
+		Â«ENDIFÂ»
+		Â«IF group.mask != nullÂ»
+			Â«IF group.maskType == null || group.maskType.equals("clip")Â»
 				<clip>
-					«handle(group.mask)»
+					Â«handle(group.mask)Â»
 				</clip>
-			«ELSE»
-				<!-- TODO Handle masktype: «group.maskType» -->
-			«ENDIF»
-		«ENDIF»
+			Â«ELSEÂ»
+				<!-- TODO Handle masktype: Â«group.maskTypeÂ» -->
+			Â«ENDIFÂ»
+		Â«ENDIFÂ»
 	</Group>
 	'''
 	
@@ -87,100 +87,100 @@ class FXMLConverter {
 	
 	def dispatch handle(Rect rect) '''
 	<Rectangle
-		«IF rect.alpha != null»opacity="«rect.alpha»"«ENDIF»
-		«IF rect.blendMode != BlendMode::NOT_SET»blendMode="«rect.blendMode.toFX»"«ENDIF»
-		«IF rect.bottomLeftRadiusX != null»fx:todo="bottomLeftRadiusX"«ENDIF»
-		«IF rect.bottomLeftRadiusY != null»fx:todo="bottomLeftRadiusY"«ENDIF»
-		«IF rect.bottomRightRadiusX != null»fx:todo="bottomRightRadiusX"«ENDIF»
-		«IF rect.bottomRightRadiusY != null»fx:todo="bottomRightRadiusY"«ENDIF»
-		«IF rect.height != null»height="«rect.height»"«ENDIF»
-		«IF rect.radiusX != null»fx:todo="radiusX"«ENDIF»
-		«IF rect.radiusY != null»fx:todo="radiusY"«ENDIF»
-		«IF rect.rotation != null»rotate="«rect.rotation»"«ENDIF»
-		«IF rect.scaleX != null»scaleX="«rect.scaleX»"«ENDIF»
-		«IF rect.scaleY != null»scaleY="«rect.scaleY»"«ENDIF»
-		«IF rect.topLeftRadiusX != null»fx:todo="topLeftRadiusX"«ENDIF»
-		«IF rect.topLeftRadiusY != null»fx:todo="topLeftRadiusY"«ENDIF»
-		«IF rect.topRightRadiusX != null»fx:todo="topRightRadiusX"«ENDIF»
-		«IF rect.topRightRadiusY != null»fx:todo="topRightRadiusY"«ENDIF»
-		«IF rect.visible != null»visible="«rect.visible»"«ENDIF»
-		«IF rect.width != null»width="«rect.width»"«ENDIF»
-		«IF rect.x != null»x="«rect.x»"«ENDIF»
-		«IF rect.y != null»y="«rect.y»"«ENDIF»>
-		«IF rect.fill != null»
+		Â«IF rect.alpha != nullÂ»opacity="Â«rect.alphaÂ»"Â«ENDIFÂ»
+		Â«IF rect.blendMode != BlendMode::NOT_SETÂ»blendMode="Â«rect.blendMode.toFXÂ»"Â«ENDIFÂ»
+		Â«IF rect.bottomLeftRadiusX != nullÂ»fx:todo="bottomLeftRadiusX"Â«ENDIFÂ»
+		Â«IF rect.bottomLeftRadiusY != nullÂ»fx:todo="bottomLeftRadiusY"Â«ENDIFÂ»
+		Â«IF rect.bottomRightRadiusX != nullÂ»fx:todo="bottomRightRadiusX"Â«ENDIFÂ»
+		Â«IF rect.bottomRightRadiusY != nullÂ»fx:todo="bottomRightRadiusY"Â«ENDIFÂ»
+		Â«IF rect.height != nullÂ»height="Â«rect.heightÂ»"Â«ENDIFÂ»
+		Â«IF rect.radiusX != nullÂ»fx:todo="radiusX"Â«ENDIFÂ»
+		Â«IF rect.radiusY != nullÂ»fx:todo="radiusY"Â«ENDIFÂ»
+		Â«IF rect.rotation != nullÂ»rotate="Â«rect.rotationÂ»"Â«ENDIFÂ»
+		Â«IF rect.scaleX != nullÂ»scaleX="Â«rect.scaleXÂ»"Â«ENDIFÂ»
+		Â«IF rect.scaleY != nullÂ»scaleY="Â«rect.scaleYÂ»"Â«ENDIFÂ»
+		Â«IF rect.topLeftRadiusX != nullÂ»fx:todo="topLeftRadiusX"Â«ENDIFÂ»
+		Â«IF rect.topLeftRadiusY != nullÂ»fx:todo="topLeftRadiusY"Â«ENDIFÂ»
+		Â«IF rect.topRightRadiusX != nullÂ»fx:todo="topRightRadiusX"Â«ENDIFÂ»
+		Â«IF rect.topRightRadiusY != nullÂ»fx:todo="topRightRadiusY"Â«ENDIFÂ»
+		Â«IF rect.visible != nullÂ»visible="Â«rect.visibleÂ»"Â«ENDIFÂ»
+		Â«IF rect.width != nullÂ»width="Â«rect.widthÂ»"Â«ENDIFÂ»
+		Â«IF rect.x != nullÂ»x="Â«rect.xÂ»"Â«ENDIFÂ»
+		Â«IF rect.y != nullÂ»y="Â«rect.yÂ»"Â«ENDIFÂ»>
+		Â«IF rect.fill != nullÂ»
 			<fill>
-				«handle(rect.fill)»
+				Â«handle(rect.fill)Â»
 			</fill>
-		«ENDIF»
-		«IF rect.mask != null»
+		Â«ENDIFÂ»
+		Â«IF rect.mask != nullÂ»
 			<clip>
-				«handle(rect.mask)»
+				Â«handle(rect.mask)Â»
 			</clip>
-		«ENDIF»
+		Â«ENDIFÂ»
 	</Rectangle>
 	'''
 	
 	def dispatch handle(SolidColor color) '''
 	<Color>
-		«IF(color.color != null)»<red>«color.color.red»</red>«ENDIF»
-		«IF(color.color != null)»<green>«color.color.green»</green>«ENDIF»
-		«IF(color.color != null)»<blue>«color.color.blue»</blue>«ENDIF»
-		«IF(color.alpha != null)»<opacity>«color.alpha»</opacity>«ENDIF»
+		Â«IF(color.color != null)Â»<red>Â«color.color.redÂ»</red>Â«ENDIFÂ»
+		Â«IF(color.color != null)Â»<green>Â«color.color.greenÂ»</green>Â«ENDIFÂ»
+		Â«IF(color.color != null)Â»<blue>Â«color.color.blueÂ»</blue>Â«ENDIFÂ»
+		Â«IF(color.alpha != null)Â»<opacity>Â«color.alphaÂ»</opacity>Â«ENDIFÂ»
 	</Color>
 	'''
 	
 	def dispatch handle(RadialGradient gradient) '''
 	<RadialGradient
-		«IF gradient.focalPointRatio != null»fx:todo="focalPointRatio"«ENDIF»
-		«IF gradient.interpolationMethod != InterpolationMethod::NOT_SET»fx:todo="interpolationMethod"«ENDIF»
-		«IF gradient.rotation != null»fx:todo="rotation"«ENDIF»
-		«IF gradient.scaleX != null»radius="«gradient.scaleX»"«ENDIF»
-		«IF gradient.scaleY != null»fx:todo="scaleY"«ENDIF»
-		«IF gradient.spreadMethod != SpreadMethod::NOT_SET»cycleMethod="«IF(gradient.spreadMethod==SpreadMethod::REFLECT)»«CycleMethod::REFLECT.name»«ELSE»«CycleMethod::REPEAT.name»«ENDIF»"«ENDIF»
-		«IF gradient.x != null»centerX="«gradient.x»"«ENDIF»
-		«IF gradient.y != null»centerY="«gradient.y»"«ENDIF»
+		Â«IF gradient.focalPointRatio != nullÂ»fx:todo="focalPointRatio"Â«ENDIFÂ»
+		Â«IF gradient.interpolationMethod != InterpolationMethod::NOT_SETÂ»fx:todo="interpolationMethod"Â«ENDIFÂ»
+		Â«IF gradient.rotation != nullÂ»fx:todo="rotation"Â«ENDIFÂ»
+		Â«IF gradient.scaleX != nullÂ»radius="Â«gradient.scaleXÂ»"Â«ENDIFÂ»
+		Â«IF gradient.scaleY != nullÂ»fx:todo="scaleY"Â«ENDIFÂ»
+		Â«IF gradient.spreadMethod != SpreadMethod::NOT_SETÂ»cycleMethod="Â«IF(gradient.spreadMethod==SpreadMethod::REFLECT)Â»Â«CycleMethod::REFLECT.nameÂ»Â«ELSEÂ»Â«CycleMethod::REPEAT.nameÂ»Â«ENDIFÂ»"Â«ENDIFÂ»
+		Â«IF gradient.x != nullÂ»centerX="Â«gradient.xÂ»"Â«ENDIFÂ»
+		Â«IF gradient.y != nullÂ»centerY="Â«gradient.yÂ»"Â«ENDIFÂ»
 		proporional="false">
-		«IF ! gradient.get_children.nullOrEmpty»
+		Â«IF ! gradient.get_children.nullOrEmptyÂ»
 			<stops>
-				«FOR o : gradient.get_children»
-					«handle(o)»
-				«ENDFOR»
+				Â«FOR o : gradient.get_childrenÂ»
+					Â«handle(o)Â»
+				Â«ENDFORÂ»
 			</stops>
-		«ENDIF»
+		Â«ENDIFÂ»
 	</RadialGradient>
 	'''
 	
 	def dispatch handle(LinearGradient gradient) '''
 	<LinearGradient
-		«IF gradient.interpolationMethod != InterpolationMethod::NOT_SET»fx:todo="interpolationMethod"«ENDIF»
-		«IF gradient.rotation != null»fx:todo="rotation"«ENDIF»
-		«IF gradient.scaleX != null»endX="«gradient.scaleX»"«ENDIF»
-		«IF gradient.scaleX != null»endY="«gradient.scaleX»"«ENDIF»
-		«IF gradient.spreadMethod != SpreadMethod::NOT_SET»cycleMethod="«IF(gradient.spreadMethod==SpreadMethod::REFLECT)»«CycleMethod::REFLECT.name»«ELSE»«CycleMethod::REPEAT.name»«ENDIF»"«ENDIF»
-		«IF gradient.x != null»startX="«gradient.x»"«ENDIF»
-		«IF gradient.y != null»startY="«gradient.y»"«ENDIF»
+		Â«IF gradient.interpolationMethod != InterpolationMethod::NOT_SETÂ»fx:todo="interpolationMethod"Â«ENDIFÂ»
+		Â«IF gradient.rotation != nullÂ»fx:todo="rotation"Â«ENDIFÂ»
+		Â«IF gradient.scaleX != nullÂ»endX="Â«gradient.scaleXÂ»"Â«ENDIFÂ»
+		Â«IF gradient.scaleX != nullÂ»endY="Â«gradient.scaleXÂ»"Â«ENDIFÂ»
+		Â«IF gradient.spreadMethod != SpreadMethod::NOT_SETÂ»cycleMethod="Â«IF(gradient.spreadMethod==SpreadMethod::REFLECT)Â»Â«CycleMethod::REFLECT.nameÂ»Â«ELSEÂ»Â«CycleMethod::REPEAT.nameÂ»Â«ENDIFÂ»"Â«ENDIFÂ»
+		Â«IF gradient.x != nullÂ»startX="Â«gradient.xÂ»"Â«ENDIFÂ»
+		Â«IF gradient.y != nullÂ»startY="Â«gradient.yÂ»"Â«ENDIFÂ»
 		proporional="false">
-		«IF ! gradient.get_children.nullOrEmpty»
+		Â«IF ! gradient.get_children.nullOrEmptyÂ»
 			<stops>
-				«FOR o : gradient.get_children»
-					«handle(o)»
-				«ENDFOR»
+				Â«FOR o : gradient.get_childrenÂ»
+					Â«handle(o)Â»
+				Â«ENDFORÂ»
 			</stops>
-		«ENDIF»
+		Â«ENDIFÂ»
 	</LinearGradient>
 	'''
 	
 	def dispatch handle(GradientEntry entry) '''
 	<Stop
-		«IF entry.ratio != null»offset="«entry.ratio»"«ENDIF»>
-		«IF entry.color != null»
+		Â«IF entry.ratio != nullÂ»offset="Â«entry.ratioÂ»"Â«ENDIFÂ»>
+		Â«IF entry.color != nullÂ»
 		<color>
-			<red>«entry.color.red»</red>
-			<green>«entry.color.green»</green>
-			<blue>«entry.color.blue»</blue>
-			«IF(entry.alpha != null)»<opacity>«entry.alpha»</opacity>«ENDIF»
+			<red>Â«entry.color.redÂ»</red>
+			<green>Â«entry.color.greenÂ»</green>
+			<blue>Â«entry.color.blueÂ»</blue>
+			Â«IF(entry.alpha != null)Â»<opacity>Â«entry.alphaÂ»</opacity>Â«ENDIFÂ»
 		</color>
-		«ENDIF»
+		Â«ENDIFÂ»
 	</Stop>
 	'''
 	
@@ -198,51 +198,51 @@ class FXMLConverter {
 	
 	def dispatch handle(Path path) '''
 	<SVGPath
-		«IF path.alpha != null»opacity="«path.alpha»"«ENDIF»
-		«IF path.blendMode != BlendMode::NOT_SET»blendMode="«path.blendMode.toFX»"«ENDIF»
-		«IF path.data != null»content="«path.data»"«ENDIF»
-		«IF path.rotation != null»rotate="«path.rotation»"«ENDIF»
-		«IF path.scaleX != null»scaleX="«path.scaleX»"«ENDIF»
-		«IF path.scaleY != null»scaleY="«path.scaleY»"«ENDIF»
-		«IF path.visible != null»visible="«path.visible»"«ENDIF»
-		«IF path.winding != Winding::NOT_SET»fillRule="«if(path.winding == Winding::EVEN_ODD) FillRule::EVEN_ODD.name else FillRule::NON_ZERO.name»"«ENDIF»
-		«IF path.x != null»fx:todo="x"«ENDIF»
-		«IF path.y != null»fx:todo="y"«ENDIF»>
-		«IF path.fill != null»
+		Â«IF path.alpha != nullÂ»opacity="Â«path.alphaÂ»"Â«ENDIFÂ»
+		Â«IF path.blendMode != BlendMode::NOT_SETÂ»blendMode="Â«path.blendMode.toFXÂ»"Â«ENDIFÂ»
+		Â«IF path.data != nullÂ»content="Â«path.dataÂ»"Â«ENDIFÂ»
+		Â«IF path.rotation != nullÂ»rotate="Â«path.rotationÂ»"Â«ENDIFÂ»
+		Â«IF path.scaleX != nullÂ»scaleX="Â«path.scaleXÂ»"Â«ENDIFÂ»
+		Â«IF path.scaleY != nullÂ»scaleY="Â«path.scaleYÂ»"Â«ENDIFÂ»
+		Â«IF path.visible != nullÂ»visible="Â«path.visibleÂ»"Â«ENDIFÂ»
+		Â«IF path.winding != Winding::NOT_SETÂ»fillRule="Â«if(path.winding == Winding::EVEN_ODD) FillRule::EVEN_ODD.name else FillRule::NON_ZERO.nameÂ»"Â«ENDIFÂ»
+		Â«IF path.x != nullÂ»fx:todo="x"Â«ENDIFÂ»
+		Â«IF path.y != nullÂ»fx:todo="y"Â«ENDIFÂ»>
+		Â«IF path.fill != nullÂ»
 		<fill>
-			«handle(path.fill)»
+			Â«handle(path.fill)Â»
 		</fill>
-		«ENDIF»
-		«IF path.mask != null»
+		Â«ENDIFÂ»
+		Â«IF path.mask != nullÂ»
 			<clip>
-				«handle(path.mask)»
+				Â«handle(path.mask)Â»
 			</clip>
-		«ENDIF»
+		Â«ENDIFÂ»
 	</SVGPath>
 	'''
 	
 	def dispatch handle(Ellipse ellipse) '''
 	<Ellipse
-		«IF ellipse.alpha != null»opacity="«ellipse.alpha»"«ENDIF»
-		«IF ellipse.blendMode != BlendMode::NOT_SET»blendMode="«ellipse.blendMode.toFX»"«ENDIF»
-		«IF ellipse.height != null»radiusX="«ellipse.width.parseLength * Double::valueOf('0.5')»"«ENDIF»
-		«IF ellipse.rotation != null»rotate="«ellipse.rotation»"«ENDIF»
-		«IF ellipse.scaleX != null»scaleX="«ellipse.scaleX»"«ENDIF»
-		«IF ellipse.scaleY != null»scaleY="«ellipse.scaleY»"«ENDIF»
-		«IF ellipse.visible != null»visible="«ellipse.visible»"«ENDIF»
-		«IF ellipse.width != null»radiusY="«ellipse.height.parseLength * Double::valueOf('0.5')»"«ENDIF»
-		«IF ellipse.x != null»centerX="«if( ellipse.width == null ) { ellipse.x } else { ellipse.x + (ellipse.width.parseLength * Double::valueOf('0.5'))}»"«ENDIF»
-		«IF ellipse.y != null»centerY="«if( ellipse.height == null ) { ellipse.y } else { ellipse.y + (ellipse.height.parseLength * Double::valueOf('0.5'))}»"«ENDIF»>
-		«IF ellipse.fill != null»
+		Â«IF ellipse.alpha != nullÂ»opacity="Â«ellipse.alphaÂ»"Â«ENDIFÂ»
+		Â«IF ellipse.blendMode != BlendMode::NOT_SETÂ»blendMode="Â«ellipse.blendMode.toFXÂ»"Â«ENDIFÂ»
+		Â«IF ellipse.height != nullÂ»radiusX="Â«ellipse.width.parseLength * Double::valueOf('0.5')Â»"Â«ENDIFÂ»
+		Â«IF ellipse.rotation != nullÂ»rotate="Â«ellipse.rotationÂ»"Â«ENDIFÂ»
+		Â«IF ellipse.scaleX != nullÂ»scaleX="Â«ellipse.scaleXÂ»"Â«ENDIFÂ»
+		Â«IF ellipse.scaleY != nullÂ»scaleY="Â«ellipse.scaleYÂ»"Â«ENDIFÂ»
+		Â«IF ellipse.visible != nullÂ»visible="Â«ellipse.visibleÂ»"Â«ENDIFÂ»
+		Â«IF ellipse.width != nullÂ»radiusY="Â«ellipse.height.parseLength * Double::valueOf('0.5')Â»"Â«ENDIFÂ»
+		Â«IF ellipse.x != nullÂ»centerX="Â«if( ellipse.width == null ) { ellipse.x } else { ellipse.x + (ellipse.width.parseLength * Double::valueOf('0.5'))}Â»"Â«ENDIFÂ»
+		Â«IF ellipse.y != nullÂ»centerY="Â«if( ellipse.height == null ) { ellipse.y } else { ellipse.y + (ellipse.height.parseLength * Double::valueOf('0.5'))}Â»"Â«ENDIFÂ»>
+		Â«IF ellipse.fill != nullÂ»
 			<fill>
-				«handle(ellipse.fill)»
+				Â«handle(ellipse.fill)Â»
 			</fill>
-		«ENDIF»
-		«IF ellipse.mask != null»
+		Â«ENDIFÂ»
+		Â«IF ellipse.mask != nullÂ»
 			<clip>
-				«handle(ellipse.mask)»
+				Â«handle(ellipse.mask)Â»
 			</clip>
-		«ENDIF»
+		Â«ENDIFÂ»
 	</Ellipse>
 	'''
 	
