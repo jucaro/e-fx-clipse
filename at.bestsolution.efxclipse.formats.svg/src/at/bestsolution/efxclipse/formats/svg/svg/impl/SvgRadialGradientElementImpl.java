@@ -11,6 +11,7 @@ import at.bestsolution.efxclipse.formats.svg.svg.Clip_rule;
 import at.bestsolution.efxclipse.formats.svg.svg.Color_interpolation;
 import at.bestsolution.efxclipse.formats.svg.svg.Color_interpolation_filters;
 import at.bestsolution.efxclipse.formats.svg.svg.Color_rendering;
+import at.bestsolution.efxclipse.formats.svg.svg.ContentElement;
 import at.bestsolution.efxclipse.formats.svg.svg.CoreAttributes;
 import at.bestsolution.efxclipse.formats.svg.svg.Direction;
 import at.bestsolution.efxclipse.formats.svg.svg.Display;
@@ -29,6 +30,7 @@ import at.bestsolution.efxclipse.formats.svg.svg.Shape_rendering;
 import at.bestsolution.efxclipse.formats.svg.svg.SpreadMethod;
 import at.bestsolution.efxclipse.formats.svg.svg.Stroke_linecap;
 import at.bestsolution.efxclipse.formats.svg.svg.Stroke_linejoin;
+import at.bestsolution.efxclipse.formats.svg.svg.SvgElement;
 import at.bestsolution.efxclipse.formats.svg.svg.SvgPackage;
 import at.bestsolution.efxclipse.formats.svg.svg.SvgRadialGradientElement;
 import at.bestsolution.efxclipse.formats.svg.svg.Text_anchor;
@@ -38,12 +40,18 @@ import at.bestsolution.efxclipse.formats.svg.svg.Visibility;
 import at.bestsolution.efxclipse.formats.svg.svg.Writing_mode;
 import at.bestsolution.efxclipse.formats.svg.svg.XLinkAttributes;
 
+import java.util.Collection;
 import org.eclipse.emf.common.notify.Notification;
 
+import org.eclipse.emf.common.notify.NotificationChain;
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.EObjectImpl;
+import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -122,6 +130,7 @@ import org.eclipse.emf.ecore.impl.EObjectImpl;
  *   <li>{@link at.bestsolution.efxclipse.formats.svg.svg.impl.SvgRadialGradientElementImpl#getXlink__role <em>Xlink role</em>}</li>
  *   <li>{@link at.bestsolution.efxclipse.formats.svg.svg.impl.SvgRadialGradientElementImpl#getXlink__arcrole <em>Xlink arcrole</em>}</li>
  *   <li>{@link at.bestsolution.efxclipse.formats.svg.svg.impl.SvgRadialGradientElementImpl#getXlink__title <em>Xlink title</em>}</li>
+ *   <li>{@link at.bestsolution.efxclipse.formats.svg.svg.impl.SvgRadialGradientElementImpl#getChildren <em>Children</em>}</li>
  *   <li>{@link at.bestsolution.efxclipse.formats.svg.svg.impl.SvgRadialGradientElementImpl#getClass_ <em>Class</em>}</li>
  *   <li>{@link at.bestsolution.efxclipse.formats.svg.svg.impl.SvgRadialGradientElementImpl#getStyle <em>Style</em>}</li>
  *   <li>{@link at.bestsolution.efxclipse.formats.svg.svg.impl.SvgRadialGradientElementImpl#getExternalResourcesRequired <em>External Resources Required</em>}</li>
@@ -1536,6 +1545,16 @@ public class SvgRadialGradientElementImpl extends EObjectImpl implements SvgRadi
 	 * @ordered
 	 */
 	protected String xlink__title = XLINK_TITLE_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getChildren() <em>Children</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getChildren()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<SvgElement> children;
 
 	/**
 	 * The default value of the '{@link #getClass_() <em>Class</em>}' attribute.
@@ -3211,6 +3230,18 @@ public class SvgRadialGradientElementImpl extends EObjectImpl implements SvgRadi
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EList<SvgElement> getChildren() {
+		if (children == null) {
+			children = new EObjectContainmentEList<SvgElement>(SvgElement.class, this, SvgPackage.SVG_RADIAL_GRADIENT_ELEMENT__CHILDREN);
+		}
+		return children;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public String getClass_() {
 		return class_;
 	}
@@ -3401,6 +3432,20 @@ public class SvgRadialGradientElementImpl extends EObjectImpl implements SvgRadi
 	 * @generated
 	 */
 	@Override
+	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+			case SvgPackage.SVG_RADIAL_GRADIENT_ELEMENT__CHILDREN:
+				return ((InternalEList<?>)getChildren()).basicRemove(otherEnd, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case SvgPackage.SVG_RADIAL_GRADIENT_ELEMENT__ID:
@@ -3543,6 +3588,8 @@ public class SvgRadialGradientElementImpl extends EObjectImpl implements SvgRadi
 				return getXlink__arcrole();
 			case SvgPackage.SVG_RADIAL_GRADIENT_ELEMENT__XLINK_TITLE:
 				return getXlink__title();
+			case SvgPackage.SVG_RADIAL_GRADIENT_ELEMENT__CHILDREN:
+				return getChildren();
 			case SvgPackage.SVG_RADIAL_GRADIENT_ELEMENT__CLASS:
 				return getClass_();
 			case SvgPackage.SVG_RADIAL_GRADIENT_ELEMENT__STYLE:
@@ -3570,6 +3617,7 @@ public class SvgRadialGradientElementImpl extends EObjectImpl implements SvgRadi
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
@@ -3782,6 +3830,10 @@ public class SvgRadialGradientElementImpl extends EObjectImpl implements SvgRadi
 				return;
 			case SvgPackage.SVG_RADIAL_GRADIENT_ELEMENT__XLINK_TITLE:
 				setXlink__title((String)newValue);
+				return;
+			case SvgPackage.SVG_RADIAL_GRADIENT_ELEMENT__CHILDREN:
+				getChildren().clear();
+				getChildren().addAll((Collection<? extends SvgElement>)newValue);
 				return;
 			case SvgPackage.SVG_RADIAL_GRADIENT_ELEMENT__CLASS:
 				setClass((String)newValue);
@@ -4032,6 +4084,9 @@ public class SvgRadialGradientElementImpl extends EObjectImpl implements SvgRadi
 			case SvgPackage.SVG_RADIAL_GRADIENT_ELEMENT__XLINK_TITLE:
 				setXlink__title(XLINK_TITLE_EDEFAULT);
 				return;
+			case SvgPackage.SVG_RADIAL_GRADIENT_ELEMENT__CHILDREN:
+				getChildren().clear();
+				return;
 			case SvgPackage.SVG_RADIAL_GRADIENT_ELEMENT__CLASS:
 				setClass(CLASS_EDEFAULT);
 				return;
@@ -4211,6 +4266,8 @@ public class SvgRadialGradientElementImpl extends EObjectImpl implements SvgRadi
 				return XLINK_ARCROLE_EDEFAULT == null ? xlink__arcrole != null : !XLINK_ARCROLE_EDEFAULT.equals(xlink__arcrole);
 			case SvgPackage.SVG_RADIAL_GRADIENT_ELEMENT__XLINK_TITLE:
 				return XLINK_TITLE_EDEFAULT == null ? xlink__title != null : !XLINK_TITLE_EDEFAULT.equals(xlink__title);
+			case SvgPackage.SVG_RADIAL_GRADIENT_ELEMENT__CHILDREN:
+				return children != null && !children.isEmpty();
 			case SvgPackage.SVG_RADIAL_GRADIENT_ELEMENT__CLASS:
 				return CLASS_EDEFAULT == null ? class_ != null : !CLASS_EDEFAULT.equals(class_);
 			case SvgPackage.SVG_RADIAL_GRADIENT_ELEMENT__STYLE:
@@ -4330,6 +4387,12 @@ public class SvgRadialGradientElementImpl extends EObjectImpl implements SvgRadi
 				default: return -1;
 			}
 		}
+		if (baseClass == ContentElement.class) {
+			switch (derivedFeatureID) {
+				case SvgPackage.SVG_RADIAL_GRADIENT_ELEMENT__CHILDREN: return SvgPackage.CONTENT_ELEMENT__CHILDREN;
+				default: return -1;
+			}
+		}
 		return super.eBaseStructuralFeatureID(derivedFeatureID, baseClass);
 	}
 
@@ -4427,6 +4490,12 @@ public class SvgRadialGradientElementImpl extends EObjectImpl implements SvgRadi
 				case SvgPackage.XLINK_ATTRIBUTES__XLINK_ROLE: return SvgPackage.SVG_RADIAL_GRADIENT_ELEMENT__XLINK_ROLE;
 				case SvgPackage.XLINK_ATTRIBUTES__XLINK_ARCROLE: return SvgPackage.SVG_RADIAL_GRADIENT_ELEMENT__XLINK_ARCROLE;
 				case SvgPackage.XLINK_ATTRIBUTES__XLINK_TITLE: return SvgPackage.SVG_RADIAL_GRADIENT_ELEMENT__XLINK_TITLE;
+				default: return -1;
+			}
+		}
+		if (baseClass == ContentElement.class) {
+			switch (baseFeatureID) {
+				case SvgPackage.CONTENT_ELEMENT__CHILDREN: return SvgPackage.SVG_RADIAL_GRADIENT_ELEMENT__CHILDREN;
 				default: return -1;
 			}
 		}

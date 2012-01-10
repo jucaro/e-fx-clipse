@@ -31,7 +31,7 @@ package at.bestsolution.efxclipse.formats.svg.svg;
  * @model
  * @generated
  */
-public interface SvgMaskElement extends SvgElement, ConditionalProcessingAttributes, CoreAttributes, PresentationAttributes {
+public interface SvgMaskElement extends SvgElement, ConditionalProcessingAttributes, CoreAttributes, PresentationAttributes, ContentElement<SvgElement> {
 	/**
 	 * Returns the value of the '<em><b>Class</b></em>' attribute.
 	 * <!-- begin-user-doc -->

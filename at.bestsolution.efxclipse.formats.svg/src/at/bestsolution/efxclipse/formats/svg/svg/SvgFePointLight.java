@@ -25,7 +25,7 @@ package at.bestsolution.efxclipse.formats.svg.svg;
  * @model
  * @generated
  */
-public interface SvgFePointLight extends SvgElement, CoreAttributes, LightSourceElement {
+public interface SvgFePointLight extends SvgElement, CoreAttributes, LightSourceElement, ContentElement<SvgElement> {
 	/**
 	 * Returns the value of the '<em><b>X</b></em>' attribute.
 	 * <!-- begin-user-doc -->

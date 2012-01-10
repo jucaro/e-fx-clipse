@@ -24,7 +24,7 @@ package at.bestsolution.efxclipse.formats.svg.svg;
  * @model
  * @generated
  */
-public interface SvgDescElement extends SvgElement, DescriptiveElement, CoreAttributes {
+public interface SvgDescElement extends SvgElement, DescriptiveElement, CoreAttributes, ContentElement<SvgElement> {
 	/**
 	 * Returns the value of the '<em><b>Class</b></em>' attribute.
 	 * <!-- begin-user-doc -->

@@ -6,16 +6,24 @@
  */
 package at.bestsolution.efxclipse.formats.svg.svg.impl;
 
+import at.bestsolution.efxclipse.formats.svg.svg.ContentElement;
 import at.bestsolution.efxclipse.formats.svg.svg.CoreAttributes;
+import at.bestsolution.efxclipse.formats.svg.svg.SvgElement;
 import at.bestsolution.efxclipse.formats.svg.svg.SvgFeMergeNode;
 import at.bestsolution.efxclipse.formats.svg.svg.SvgPackage;
 
+import java.util.Collection;
 import org.eclipse.emf.common.notify.Notification;
 
+import org.eclipse.emf.common.notify.NotificationChain;
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.EObjectImpl;
+import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -28,6 +36,7 @@ import org.eclipse.emf.ecore.impl.EObjectImpl;
  *   <li>{@link at.bestsolution.efxclipse.formats.svg.svg.impl.SvgFeMergeNodeImpl#getXml__base <em>Xml base</em>}</li>
  *   <li>{@link at.bestsolution.efxclipse.formats.svg.svg.impl.SvgFeMergeNodeImpl#getXml__lang <em>Xml lang</em>}</li>
  *   <li>{@link at.bestsolution.efxclipse.formats.svg.svg.impl.SvgFeMergeNodeImpl#getXml__space <em>Xml space</em>}</li>
+ *   <li>{@link at.bestsolution.efxclipse.formats.svg.svg.impl.SvgFeMergeNodeImpl#getChildren <em>Children</em>}</li>
  * </ul>
  * </p>
  *
@@ -113,6 +122,16 @@ public class SvgFeMergeNodeImpl extends EObjectImpl implements SvgFeMergeNode {
 	 * @ordered
 	 */
 	protected String xml__space = XML_SPACE_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getChildren() <em>Children</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getChildren()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<SvgElement> children;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -222,6 +241,32 @@ public class SvgFeMergeNodeImpl extends EObjectImpl implements SvgFeMergeNode {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EList<SvgElement> getChildren() {
+		if (children == null) {
+			children = new EObjectContainmentEList<SvgElement>(SvgElement.class, this, SvgPackage.SVG_FE_MERGE_NODE__CHILDREN);
+		}
+		return children;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+			case SvgPackage.SVG_FE_MERGE_NODE__CHILDREN:
+				return ((InternalEList<?>)getChildren()).basicRemove(otherEnd, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
@@ -233,6 +278,8 @@ public class SvgFeMergeNodeImpl extends EObjectImpl implements SvgFeMergeNode {
 				return getXml__lang();
 			case SvgPackage.SVG_FE_MERGE_NODE__XML_SPACE:
 				return getXml__space();
+			case SvgPackage.SVG_FE_MERGE_NODE__CHILDREN:
+				return getChildren();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -242,6 +289,7 @@ public class SvgFeMergeNodeImpl extends EObjectImpl implements SvgFeMergeNode {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
@@ -256,6 +304,10 @@ public class SvgFeMergeNodeImpl extends EObjectImpl implements SvgFeMergeNode {
 				return;
 			case SvgPackage.SVG_FE_MERGE_NODE__XML_SPACE:
 				setXml__space((String)newValue);
+				return;
+			case SvgPackage.SVG_FE_MERGE_NODE__CHILDREN:
+				getChildren().clear();
+				getChildren().addAll((Collection<? extends SvgElement>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -281,6 +333,9 @@ public class SvgFeMergeNodeImpl extends EObjectImpl implements SvgFeMergeNode {
 			case SvgPackage.SVG_FE_MERGE_NODE__XML_SPACE:
 				setXml__space(XML_SPACE_EDEFAULT);
 				return;
+			case SvgPackage.SVG_FE_MERGE_NODE__CHILDREN:
+				getChildren().clear();
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -301,6 +356,8 @@ public class SvgFeMergeNodeImpl extends EObjectImpl implements SvgFeMergeNode {
 				return XML_LANG_EDEFAULT == null ? xml__lang != null : !XML_LANG_EDEFAULT.equals(xml__lang);
 			case SvgPackage.SVG_FE_MERGE_NODE__XML_SPACE:
 				return XML_SPACE_EDEFAULT == null ? xml__space != null : !XML_SPACE_EDEFAULT.equals(xml__space);
+			case SvgPackage.SVG_FE_MERGE_NODE__CHILDREN:
+				return children != null && !children.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}
@@ -321,6 +378,12 @@ public class SvgFeMergeNodeImpl extends EObjectImpl implements SvgFeMergeNode {
 				default: return -1;
 			}
 		}
+		if (baseClass == ContentElement.class) {
+			switch (derivedFeatureID) {
+				case SvgPackage.SVG_FE_MERGE_NODE__CHILDREN: return SvgPackage.CONTENT_ELEMENT__CHILDREN;
+				default: return -1;
+			}
+		}
 		return super.eBaseStructuralFeatureID(derivedFeatureID, baseClass);
 	}
 
@@ -337,6 +400,12 @@ public class SvgFeMergeNodeImpl extends EObjectImpl implements SvgFeMergeNode {
 				case SvgPackage.CORE_ATTRIBUTES__XML_BASE: return SvgPackage.SVG_FE_MERGE_NODE__XML_BASE;
 				case SvgPackage.CORE_ATTRIBUTES__XML_LANG: return SvgPackage.SVG_FE_MERGE_NODE__XML_LANG;
 				case SvgPackage.CORE_ATTRIBUTES__XML_SPACE: return SvgPackage.SVG_FE_MERGE_NODE__XML_SPACE;
+				default: return -1;
+			}
+		}
+		if (baseClass == ContentElement.class) {
+			switch (baseFeatureID) {
+				case SvgPackage.CONTENT_ELEMENT__CHILDREN: return SvgPackage.SVG_FE_MERGE_NODE__CHILDREN;
 				default: return -1;
 			}
 		}

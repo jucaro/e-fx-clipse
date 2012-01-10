@@ -11,6 +11,7 @@ import at.bestsolution.efxclipse.formats.svg.svg.Clip_rule;
 import at.bestsolution.efxclipse.formats.svg.svg.Color_interpolation;
 import at.bestsolution.efxclipse.formats.svg.svg.Color_interpolation_filters;
 import at.bestsolution.efxclipse.formats.svg.svg.Color_rendering;
+import at.bestsolution.efxclipse.formats.svg.svg.ContentElement;
 import at.bestsolution.efxclipse.formats.svg.svg.CoreAttributes;
 import at.bestsolution.efxclipse.formats.svg.svg.Direction;
 import at.bestsolution.efxclipse.formats.svg.svg.Display;
@@ -28,6 +29,7 @@ import at.bestsolution.efxclipse.formats.svg.svg.PresentationAttributes;
 import at.bestsolution.efxclipse.formats.svg.svg.Shape_rendering;
 import at.bestsolution.efxclipse.formats.svg.svg.Stroke_linecap;
 import at.bestsolution.efxclipse.formats.svg.svg.Stroke_linejoin;
+import at.bestsolution.efxclipse.formats.svg.svg.SvgElement;
 import at.bestsolution.efxclipse.formats.svg.svg.SvgFeSpecularLighting;
 import at.bestsolution.efxclipse.formats.svg.svg.SvgPackage;
 import at.bestsolution.efxclipse.formats.svg.svg.Text_anchor;
@@ -36,12 +38,18 @@ import at.bestsolution.efxclipse.formats.svg.svg.Unicode_bidi;
 import at.bestsolution.efxclipse.formats.svg.svg.Visibility;
 import at.bestsolution.efxclipse.formats.svg.svg.Writing_mode;
 
+import java.util.Collection;
 import org.eclipse.emf.common.notify.Notification;
 
+import org.eclipse.emf.common.notify.NotificationChain;
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.EObjectImpl;
+import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -119,6 +127,7 @@ import org.eclipse.emf.ecore.impl.EObjectImpl;
  *   <li>{@link at.bestsolution.efxclipse.formats.svg.svg.impl.SvgFeSpecularLightingImpl#getHeight <em>Height</em>}</li>
  *   <li>{@link at.bestsolution.efxclipse.formats.svg.svg.impl.SvgFeSpecularLightingImpl#getResult <em>Result</em>}</li>
  *   <li>{@link at.bestsolution.efxclipse.formats.svg.svg.impl.SvgFeSpecularLightingImpl#getIn <em>In</em>}</li>
+ *   <li>{@link at.bestsolution.efxclipse.formats.svg.svg.impl.SvgFeSpecularLightingImpl#getChildren <em>Children</em>}</li>
  *   <li>{@link at.bestsolution.efxclipse.formats.svg.svg.impl.SvgFeSpecularLightingImpl#getClass_ <em>Class</em>}</li>
  *   <li>{@link at.bestsolution.efxclipse.formats.svg.svg.impl.SvgFeSpecularLightingImpl#getStyle <em>Style</em>}</li>
  *   <li>{@link at.bestsolution.efxclipse.formats.svg.svg.impl.SvgFeSpecularLightingImpl#getSurfaceScale <em>Surface Scale</em>}</li>
@@ -1510,6 +1519,16 @@ public class SvgFeSpecularLightingImpl extends EObjectImpl implements SvgFeSpecu
 	 * @ordered
 	 */
 	protected String in = IN_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getChildren() <em>Children</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getChildren()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<SvgElement> children;
 
 	/**
 	 * The default value of the '{@link #getClass_() <em>Class</em>}' attribute.
@@ -3104,6 +3123,18 @@ public class SvgFeSpecularLightingImpl extends EObjectImpl implements SvgFeSpecu
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EList<SvgElement> getChildren() {
+		if (children == null) {
+			children = new EObjectContainmentEList<SvgElement>(SvgElement.class, this, SvgPackage.SVG_FE_SPECULAR_LIGHTING__CHILDREN);
+		}
+		return children;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public String getClass_() {
 		return class_;
 	}
@@ -3223,6 +3254,20 @@ public class SvgFeSpecularLightingImpl extends EObjectImpl implements SvgFeSpecu
 		kernelUnitLength = newKernelUnitLength;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, SvgPackage.SVG_FE_SPECULAR_LIGHTING__KERNEL_UNIT_LENGTH, oldKernelUnitLength, kernelUnitLength));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+			case SvgPackage.SVG_FE_SPECULAR_LIGHTING__CHILDREN:
+				return ((InternalEList<?>)getChildren()).basicRemove(otherEnd, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
 
 	/**
@@ -3371,6 +3416,8 @@ public class SvgFeSpecularLightingImpl extends EObjectImpl implements SvgFeSpecu
 				return getResult();
 			case SvgPackage.SVG_FE_SPECULAR_LIGHTING__IN:
 				return getIn();
+			case SvgPackage.SVG_FE_SPECULAR_LIGHTING__CHILDREN:
+				return getChildren();
 			case SvgPackage.SVG_FE_SPECULAR_LIGHTING__CLASS:
 				return getClass_();
 			case SvgPackage.SVG_FE_SPECULAR_LIGHTING__STYLE:
@@ -3392,6 +3439,7 @@ public class SvgFeSpecularLightingImpl extends EObjectImpl implements SvgFeSpecu
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
@@ -3601,6 +3649,10 @@ public class SvgFeSpecularLightingImpl extends EObjectImpl implements SvgFeSpecu
 				return;
 			case SvgPackage.SVG_FE_SPECULAR_LIGHTING__IN:
 				setIn((String)newValue);
+				return;
+			case SvgPackage.SVG_FE_SPECULAR_LIGHTING__CHILDREN:
+				getChildren().clear();
+				getChildren().addAll((Collection<? extends SvgElement>)newValue);
 				return;
 			case SvgPackage.SVG_FE_SPECULAR_LIGHTING__CLASS:
 				setClass((String)newValue);
@@ -3839,6 +3891,9 @@ public class SvgFeSpecularLightingImpl extends EObjectImpl implements SvgFeSpecu
 			case SvgPackage.SVG_FE_SPECULAR_LIGHTING__IN:
 				setIn(IN_EDEFAULT);
 				return;
+			case SvgPackage.SVG_FE_SPECULAR_LIGHTING__CHILDREN:
+				getChildren().clear();
+				return;
 			case SvgPackage.SVG_FE_SPECULAR_LIGHTING__CLASS:
 				setClass(CLASS_EDEFAULT);
 				return;
@@ -4007,6 +4062,8 @@ public class SvgFeSpecularLightingImpl extends EObjectImpl implements SvgFeSpecu
 				return RESULT_EDEFAULT == null ? result != null : !RESULT_EDEFAULT.equals(result);
 			case SvgPackage.SVG_FE_SPECULAR_LIGHTING__IN:
 				return IN_EDEFAULT == null ? in != null : !IN_EDEFAULT.equals(in);
+			case SvgPackage.SVG_FE_SPECULAR_LIGHTING__CHILDREN:
+				return children != null && !children.isEmpty();
 			case SvgPackage.SVG_FE_SPECULAR_LIGHTING__CLASS:
 				return CLASS_EDEFAULT == null ? class_ != null : !CLASS_EDEFAULT.equals(class_);
 			case SvgPackage.SVG_FE_SPECULAR_LIGHTING__STYLE:
@@ -4114,6 +4171,12 @@ public class SvgFeSpecularLightingImpl extends EObjectImpl implements SvgFeSpecu
 				default: return -1;
 			}
 		}
+		if (baseClass == ContentElement.class) {
+			switch (derivedFeatureID) {
+				case SvgPackage.SVG_FE_SPECULAR_LIGHTING__CHILDREN: return SvgPackage.CONTENT_ELEMENT__CHILDREN;
+				default: return -1;
+			}
+		}
 		return super.eBaseStructuralFeatureID(derivedFeatureID, baseClass);
 	}
 
@@ -4205,6 +4268,12 @@ public class SvgFeSpecularLightingImpl extends EObjectImpl implements SvgFeSpecu
 				case SvgPackage.FILTER_PRIMITIVE_ATTRIBUTES__HEIGHT: return SvgPackage.SVG_FE_SPECULAR_LIGHTING__HEIGHT;
 				case SvgPackage.FILTER_PRIMITIVE_ATTRIBUTES__RESULT: return SvgPackage.SVG_FE_SPECULAR_LIGHTING__RESULT;
 				case SvgPackage.FILTER_PRIMITIVE_ATTRIBUTES__IN: return SvgPackage.SVG_FE_SPECULAR_LIGHTING__IN;
+				default: return -1;
+			}
+		}
+		if (baseClass == ContentElement.class) {
+			switch (baseFeatureID) {
+				case SvgPackage.CONTENT_ELEMENT__CHILDREN: return SvgPackage.SVG_FE_SPECULAR_LIGHTING__CHILDREN;
 				default: return -1;
 			}
 		}

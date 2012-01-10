@@ -13,6 +13,7 @@ import at.bestsolution.efxclipse.formats.svg.svg.Color_interpolation;
 import at.bestsolution.efxclipse.formats.svg.svg.Color_interpolation_filters;
 import at.bestsolution.efxclipse.formats.svg.svg.Color_rendering;
 import at.bestsolution.efxclipse.formats.svg.svg.ConditionalProcessingAttributes;
+import at.bestsolution.efxclipse.formats.svg.svg.ContentElement;
 import at.bestsolution.efxclipse.formats.svg.svg.CoreAttributes;
 import at.bestsolution.efxclipse.formats.svg.svg.Direction;
 import at.bestsolution.efxclipse.formats.svg.svg.Display;
@@ -33,6 +34,7 @@ import at.bestsolution.efxclipse.formats.svg.svg.Shape_rendering;
 import at.bestsolution.efxclipse.formats.svg.svg.Stroke_linecap;
 import at.bestsolution.efxclipse.formats.svg.svg.Stroke_linejoin;
 import at.bestsolution.efxclipse.formats.svg.svg.SvgCircleElement;
+import at.bestsolution.efxclipse.formats.svg.svg.SvgElement;
 import at.bestsolution.efxclipse.formats.svg.svg.SvgPackage;
 import at.bestsolution.efxclipse.formats.svg.svg.Text_anchor;
 import at.bestsolution.efxclipse.formats.svg.svg.Text_rendering;
@@ -40,12 +42,18 @@ import at.bestsolution.efxclipse.formats.svg.svg.Unicode_bidi;
 import at.bestsolution.efxclipse.formats.svg.svg.Visibility;
 import at.bestsolution.efxclipse.formats.svg.svg.Writing_mode;
 
+import java.util.Collection;
 import org.eclipse.emf.common.notify.Notification;
 
+import org.eclipse.emf.common.notify.NotificationChain;
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.EObjectImpl;
+import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -130,6 +138,7 @@ import org.eclipse.emf.ecore.impl.EObjectImpl;
  *   <li>{@link at.bestsolution.efxclipse.formats.svg.svg.impl.SvgCircleElementImpl#getVisibility <em>Visibility</em>}</li>
  *   <li>{@link at.bestsolution.efxclipse.formats.svg.svg.impl.SvgCircleElementImpl#getWord_spacing <em>Word spacing</em>}</li>
  *   <li>{@link at.bestsolution.efxclipse.formats.svg.svg.impl.SvgCircleElementImpl#getWriting_mode <em>Writing mode</em>}</li>
+ *   <li>{@link at.bestsolution.efxclipse.formats.svg.svg.impl.SvgCircleElementImpl#getChildren <em>Children</em>}</li>
  *   <li>{@link at.bestsolution.efxclipse.formats.svg.svg.impl.SvgCircleElementImpl#getClass_ <em>Class</em>}</li>
  *   <li>{@link at.bestsolution.efxclipse.formats.svg.svg.impl.SvgCircleElementImpl#getStyle <em>Style</em>}</li>
  *   <li>{@link at.bestsolution.efxclipse.formats.svg.svg.impl.SvgCircleElementImpl#getExternalResourcesRequired <em>External Resources Required</em>}</li>
@@ -1662,6 +1671,16 @@ public class SvgCircleElementImpl extends EObjectImpl implements SvgCircleElemen
 	 * @ordered
 	 */
 	protected Writing_mode writing_mode = WRITING_MODE_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getChildren() <em>Children</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getChildren()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<SvgElement> children;
 
 	/**
 	 * The default value of the '{@link #getClass_() <em>Class</em>}' attribute.
@@ -3423,6 +3442,18 @@ public class SvgCircleElementImpl extends EObjectImpl implements SvgCircleElemen
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EList<SvgElement> getChildren() {
+		if (children == null) {
+			children = new EObjectContainmentEList<SvgElement>(SvgElement.class, this, SvgPackage.SVG_CIRCLE_ELEMENT__CHILDREN);
+		}
+		return children;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public String getClass_() {
 		return class_;
 	}
@@ -3563,6 +3594,20 @@ public class SvgCircleElementImpl extends EObjectImpl implements SvgCircleElemen
 		r = newR;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, SvgPackage.SVG_CIRCLE_ELEMENT__R, oldR, r));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+			case SvgPackage.SVG_CIRCLE_ELEMENT__CHILDREN:
+				return ((InternalEList<?>)getChildren()).basicRemove(otherEnd, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
 
 	/**
@@ -3725,6 +3770,8 @@ public class SvgCircleElementImpl extends EObjectImpl implements SvgCircleElemen
 				return getWord_spacing();
 			case SvgPackage.SVG_CIRCLE_ELEMENT__WRITING_MODE:
 				return getWriting_mode();
+			case SvgPackage.SVG_CIRCLE_ELEMENT__CHILDREN:
+				return getChildren();
 			case SvgPackage.SVG_CIRCLE_ELEMENT__CLASS:
 				return getClass_();
 			case SvgPackage.SVG_CIRCLE_ELEMENT__STYLE:
@@ -3748,6 +3795,7 @@ public class SvgCircleElementImpl extends EObjectImpl implements SvgCircleElemen
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
@@ -3978,6 +4026,10 @@ public class SvgCircleElementImpl extends EObjectImpl implements SvgCircleElemen
 				return;
 			case SvgPackage.SVG_CIRCLE_ELEMENT__WRITING_MODE:
 				setWriting_mode((Writing_mode)newValue);
+				return;
+			case SvgPackage.SVG_CIRCLE_ELEMENT__CHILDREN:
+				getChildren().clear();
+				getChildren().addAll((Collection<? extends SvgElement>)newValue);
 				return;
 			case SvgPackage.SVG_CIRCLE_ELEMENT__CLASS:
 				setClass((String)newValue);
@@ -4240,6 +4292,9 @@ public class SvgCircleElementImpl extends EObjectImpl implements SvgCircleElemen
 			case SvgPackage.SVG_CIRCLE_ELEMENT__WRITING_MODE:
 				setWriting_mode(WRITING_MODE_EDEFAULT);
 				return;
+			case SvgPackage.SVG_CIRCLE_ELEMENT__CHILDREN:
+				getChildren().clear();
+				return;
 			case SvgPackage.SVG_CIRCLE_ELEMENT__CLASS:
 				setClass(CLASS_EDEFAULT);
 				return;
@@ -4425,6 +4480,8 @@ public class SvgCircleElementImpl extends EObjectImpl implements SvgCircleElemen
 				return WORD_SPACING_EDEFAULT == null ? word_spacing != null : !WORD_SPACING_EDEFAULT.equals(word_spacing);
 			case SvgPackage.SVG_CIRCLE_ELEMENT__WRITING_MODE:
 				return writing_mode != WRITING_MODE_EDEFAULT;
+			case SvgPackage.SVG_CIRCLE_ELEMENT__CHILDREN:
+				return children != null && !children.isEmpty();
 			case SvgPackage.SVG_CIRCLE_ELEMENT__CLASS:
 				return CLASS_EDEFAULT == null ? class_ != null : !CLASS_EDEFAULT.equals(class_);
 			case SvgPackage.SVG_CIRCLE_ELEMENT__STYLE:
@@ -4561,6 +4618,12 @@ public class SvgCircleElementImpl extends EObjectImpl implements SvgCircleElemen
 				default: return -1;
 			}
 		}
+		if (baseClass == ContentElement.class) {
+			switch (derivedFeatureID) {
+				case SvgPackage.SVG_CIRCLE_ELEMENT__CHILDREN: return SvgPackage.CONTENT_ELEMENT__CHILDREN;
+				default: return -1;
+			}
+		}
 		return super.eBaseStructuralFeatureID(derivedFeatureID, baseClass);
 	}
 
@@ -4679,6 +4742,12 @@ public class SvgCircleElementImpl extends EObjectImpl implements SvgCircleElemen
 				case SvgPackage.PRESENTATION_ATTRIBUTES__VISIBILITY: return SvgPackage.SVG_CIRCLE_ELEMENT__VISIBILITY;
 				case SvgPackage.PRESENTATION_ATTRIBUTES__WORD_SPACING: return SvgPackage.SVG_CIRCLE_ELEMENT__WORD_SPACING;
 				case SvgPackage.PRESENTATION_ATTRIBUTES__WRITING_MODE: return SvgPackage.SVG_CIRCLE_ELEMENT__WRITING_MODE;
+				default: return -1;
+			}
+		}
+		if (baseClass == ContentElement.class) {
+			switch (baseFeatureID) {
+				case SvgPackage.CONTENT_ELEMENT__CHILDREN: return SvgPackage.SVG_CIRCLE_ELEMENT__CHILDREN;
 				default: return -1;
 			}
 		}

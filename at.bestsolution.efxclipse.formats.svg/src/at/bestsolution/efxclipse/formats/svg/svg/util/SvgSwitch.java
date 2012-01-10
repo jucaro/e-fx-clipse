@@ -70,9 +70,16 @@ public class SvgSwitch<T1> extends Switch<T1> {
 	@Override
 	protected T1 doSwitch(int classifierID, EObject theEObject) {
 		switch (classifierID) {
+			case SvgPackage.CONTENT_ELEMENT: {
+				ContentElement<?> contentElement = (ContentElement<?>)theEObject;
+				T1 result = caseContentElement(contentElement);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
 			case SvgPackage.CONTAINER_ELEMENT: {
 				ContainerElement<?> containerElement = (ContainerElement<?>)theEObject;
 				T1 result = caseContainerElement(containerElement);
+				if (result == null) result = caseContentElement(containerElement);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -225,6 +232,7 @@ public class SvgSwitch<T1> extends Switch<T1> {
 				if (result == null) result = caseDocumentEventAttributes(svgSvgElement);
 				if (result == null) result = caseGraphicalEventAttributes(svgSvgElement);
 				if (result == null) result = casePresentationAttributes(svgSvgElement);
+				if (result == null) result = caseContentElement(svgSvgElement);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -238,6 +246,7 @@ public class SvgSwitch<T1> extends Switch<T1> {
 				if (result == null) result = caseCoreAttributes(svgGElement);
 				if (result == null) result = caseGraphicalEventAttributes(svgGElement);
 				if (result == null) result = casePresentationAttributes(svgGElement);
+				if (result == null) result = caseContentElement(svgGElement);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -251,6 +260,7 @@ public class SvgSwitch<T1> extends Switch<T1> {
 				if (result == null) result = caseCoreAttributes(svgDefsElement);
 				if (result == null) result = caseGraphicalEventAttributes(svgDefsElement);
 				if (result == null) result = casePresentationAttributes(svgDefsElement);
+				if (result == null) result = caseContentElement(svgDefsElement);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -260,6 +270,7 @@ public class SvgSwitch<T1> extends Switch<T1> {
 				if (result == null) result = caseSvgElement(svgDescElement);
 				if (result == null) result = caseDescriptiveElement(svgDescElement);
 				if (result == null) result = caseCoreAttributes(svgDescElement);
+				if (result == null) result = caseContentElement(svgDescElement);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -269,6 +280,7 @@ public class SvgSwitch<T1> extends Switch<T1> {
 				if (result == null) result = caseSvgElement(svgTitleElement);
 				if (result == null) result = caseDescriptiveElement(svgTitleElement);
 				if (result == null) result = caseCoreAttributes(svgTitleElement);
+				if (result == null) result = caseContentElement(svgTitleElement);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -281,6 +293,7 @@ public class SvgSwitch<T1> extends Switch<T1> {
 				if (result == null) result = caseCoreAttributes(svgSymbolElement);
 				if (result == null) result = caseGraphicalEventAttributes(svgSymbolElement);
 				if (result == null) result = casePresentationAttributes(svgSymbolElement);
+				if (result == null) result = caseContentElement(svgSymbolElement);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -296,6 +309,7 @@ public class SvgSwitch<T1> extends Switch<T1> {
 				if (result == null) result = caseGraphicalEventAttributes(svgUseElement);
 				if (result == null) result = casePresentationAttributes(svgUseElement);
 				if (result == null) result = caseXLinkAttributes(svgUseElement);
+				if (result == null) result = caseContentElement(svgUseElement);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -310,6 +324,7 @@ public class SvgSwitch<T1> extends Switch<T1> {
 				if (result == null) result = caseGraphicalEventAttributes(svgImageElement);
 				if (result == null) result = casePresentationAttributes(svgImageElement);
 				if (result == null) result = caseXLinkAttributes(svgImageElement);
+				if (result == null) result = caseContentElement(svgImageElement);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -322,6 +337,7 @@ public class SvgSwitch<T1> extends Switch<T1> {
 				if (result == null) result = caseCoreAttributes(svgSwitchElement);
 				if (result == null) result = caseGraphicalEventAttributes(svgSwitchElement);
 				if (result == null) result = casePresentationAttributes(svgSwitchElement);
+				if (result == null) result = caseContentElement(svgSwitchElement);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -335,6 +351,7 @@ public class SvgSwitch<T1> extends Switch<T1> {
 				if (result == null) result = caseCoreAttributes(svgPathElement);
 				if (result == null) result = caseGraphicalEventAttributes(svgPathElement);
 				if (result == null) result = casePresentationAttributes(svgPathElement);
+				if (result == null) result = caseContentElement(svgPathElement);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -349,6 +366,7 @@ public class SvgSwitch<T1> extends Switch<T1> {
 				if (result == null) result = caseCoreAttributes(svgRectElement);
 				if (result == null) result = caseGraphicalEventAttributes(svgRectElement);
 				if (result == null) result = casePresentationAttributes(svgRectElement);
+				if (result == null) result = caseContentElement(svgRectElement);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -363,6 +381,7 @@ public class SvgSwitch<T1> extends Switch<T1> {
 				if (result == null) result = caseCoreAttributes(svgCircleElement);
 				if (result == null) result = caseGraphicalEventAttributes(svgCircleElement);
 				if (result == null) result = casePresentationAttributes(svgCircleElement);
+				if (result == null) result = caseContentElement(svgCircleElement);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -377,6 +396,7 @@ public class SvgSwitch<T1> extends Switch<T1> {
 				if (result == null) result = caseCoreAttributes(svgEllipseElement);
 				if (result == null) result = caseGraphicalEventAttributes(svgEllipseElement);
 				if (result == null) result = casePresentationAttributes(svgEllipseElement);
+				if (result == null) result = caseContentElement(svgEllipseElement);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -391,6 +411,7 @@ public class SvgSwitch<T1> extends Switch<T1> {
 				if (result == null) result = caseCoreAttributes(svgLineElement);
 				if (result == null) result = caseGraphicalEventAttributes(svgLineElement);
 				if (result == null) result = casePresentationAttributes(svgLineElement);
+				if (result == null) result = caseContentElement(svgLineElement);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -405,6 +426,7 @@ public class SvgSwitch<T1> extends Switch<T1> {
 				if (result == null) result = caseCoreAttributes(svgPolylineElement);
 				if (result == null) result = caseGraphicalEventAttributes(svgPolylineElement);
 				if (result == null) result = casePresentationAttributes(svgPolylineElement);
+				if (result == null) result = caseContentElement(svgPolylineElement);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -419,6 +441,7 @@ public class SvgSwitch<T1> extends Switch<T1> {
 				if (result == null) result = caseCoreAttributes(svgPolygonElement);
 				if (result == null) result = caseGraphicalEventAttributes(svgPolygonElement);
 				if (result == null) result = casePresentationAttributes(svgPolygonElement);
+				if (result == null) result = caseContentElement(svgPolygonElement);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -432,6 +455,7 @@ public class SvgSwitch<T1> extends Switch<T1> {
 				if (result == null) result = caseCoreAttributes(svgTextElement);
 				if (result == null) result = caseGraphicalEventAttributes(svgTextElement);
 				if (result == null) result = casePresentationAttributes(svgTextElement);
+				if (result == null) result = caseContentElement(svgTextElement);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -445,6 +469,7 @@ public class SvgSwitch<T1> extends Switch<T1> {
 				if (result == null) result = caseCoreAttributes(svgTspanElement);
 				if (result == null) result = caseGraphicalEventAttributes(svgTspanElement);
 				if (result == null) result = casePresentationAttributes(svgTspanElement);
+				if (result == null) result = caseContentElement(svgTspanElement);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -459,6 +484,7 @@ public class SvgSwitch<T1> extends Switch<T1> {
 				if (result == null) result = caseGraphicalEventAttributes(svgTrefElement);
 				if (result == null) result = casePresentationAttributes(svgTrefElement);
 				if (result == null) result = caseXLinkAttributes(svgTrefElement);
+				if (result == null) result = caseContentElement(svgTrefElement);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -473,6 +499,7 @@ public class SvgSwitch<T1> extends Switch<T1> {
 				if (result == null) result = caseGraphicalEventAttributes(svgTextPathElement);
 				if (result == null) result = casePresentationAttributes(svgTextPathElement);
 				if (result == null) result = caseXLinkAttributes(svgTextPathElement);
+				if (result == null) result = caseContentElement(svgTextPathElement);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -487,6 +514,7 @@ public class SvgSwitch<T1> extends Switch<T1> {
 				if (result == null) result = caseGraphicalEventAttributes(svgAltGlyphElement);
 				if (result == null) result = casePresentationAttributes(svgAltGlyphElement);
 				if (result == null) result = caseXLinkAttributes(svgAltGlyphElement);
+				if (result == null) result = caseContentElement(svgAltGlyphElement);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -495,6 +523,7 @@ public class SvgSwitch<T1> extends Switch<T1> {
 				T1 result = caseSvgAltGlyphDefElement(svgAltGlyphDefElement);
 				if (result == null) result = caseSvgElement(svgAltGlyphDefElement);
 				if (result == null) result = caseCoreAttributes(svgAltGlyphDefElement);
+				if (result == null) result = caseContentElement(svgAltGlyphDefElement);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -503,6 +532,7 @@ public class SvgSwitch<T1> extends Switch<T1> {
 				T1 result = caseSvgAltGlyphItemElement(svgAltGlyphItemElement);
 				if (result == null) result = caseSvgElement(svgAltGlyphItemElement);
 				if (result == null) result = caseCoreAttributes(svgAltGlyphItemElement);
+				if (result == null) result = caseContentElement(svgAltGlyphItemElement);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -513,6 +543,7 @@ public class SvgSwitch<T1> extends Switch<T1> {
 				if (result == null) result = caseCoreAttributes(svgAltGlyphRefElement);
 				if (result == null) result = casePresentationAttributes(svgAltGlyphRefElement);
 				if (result == null) result = caseXLinkAttributes(svgAltGlyphRefElement);
+				if (result == null) result = caseContentElement(svgAltGlyphRefElement);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -522,6 +553,7 @@ public class SvgSwitch<T1> extends Switch<T1> {
 				if (result == null) result = caseSvgElement(svgMarkerElement);
 				if (result == null) result = caseCoreAttributes(svgMarkerElement);
 				if (result == null) result = casePresentationAttributes(svgMarkerElement);
+				if (result == null) result = caseContentElement(svgMarkerElement);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -532,6 +564,7 @@ public class SvgSwitch<T1> extends Switch<T1> {
 				if (result == null) result = caseCoreAttributes(svgColorProfileElement);
 				if (result == null) result = casePresentationAttributes(svgColorProfileElement);
 				if (result == null) result = caseXLinkAttributes(svgColorProfileElement);
+				if (result == null) result = caseContentElement(svgColorProfileElement);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -543,6 +576,7 @@ public class SvgSwitch<T1> extends Switch<T1> {
 				if (result == null) result = caseCoreAttributes(svgLinearGradientElement);
 				if (result == null) result = casePresentationAttributes(svgLinearGradientElement);
 				if (result == null) result = caseXLinkAttributes(svgLinearGradientElement);
+				if (result == null) result = caseContentElement(svgLinearGradientElement);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -554,6 +588,7 @@ public class SvgSwitch<T1> extends Switch<T1> {
 				if (result == null) result = caseCoreAttributes(svgRadialGradientElement);
 				if (result == null) result = casePresentationAttributes(svgRadialGradientElement);
 				if (result == null) result = caseXLinkAttributes(svgRadialGradientElement);
+				if (result == null) result = caseContentElement(svgRadialGradientElement);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -563,6 +598,7 @@ public class SvgSwitch<T1> extends Switch<T1> {
 				if (result == null) result = caseSvgElement(svgGradientStopElement);
 				if (result == null) result = caseCoreAttributes(svgGradientStopElement);
 				if (result == null) result = casePresentationAttributes(svgGradientStopElement);
+				if (result == null) result = caseContentElement(svgGradientStopElement);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -575,6 +611,7 @@ public class SvgSwitch<T1> extends Switch<T1> {
 				if (result == null) result = caseCoreAttributes(svgPatternElement);
 				if (result == null) result = casePresentationAttributes(svgPatternElement);
 				if (result == null) result = caseXLinkAttributes(svgPatternElement);
+				if (result == null) result = caseContentElement(svgPatternElement);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -585,6 +622,7 @@ public class SvgSwitch<T1> extends Switch<T1> {
 				if (result == null) result = caseConditionalProcessingAttributes(svgClipPathElement);
 				if (result == null) result = caseCoreAttributes(svgClipPathElement);
 				if (result == null) result = casePresentationAttributes(svgClipPathElement);
+				if (result == null) result = caseContentElement(svgClipPathElement);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -595,6 +633,7 @@ public class SvgSwitch<T1> extends Switch<T1> {
 				if (result == null) result = caseConditionalProcessingAttributes(svgMaskElement);
 				if (result == null) result = caseCoreAttributes(svgMaskElement);
 				if (result == null) result = casePresentationAttributes(svgMaskElement);
+				if (result == null) result = caseContentElement(svgMaskElement);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -605,6 +644,7 @@ public class SvgSwitch<T1> extends Switch<T1> {
 				if (result == null) result = caseCoreAttributes(svgFilterElement);
 				if (result == null) result = casePresentationAttributes(svgFilterElement);
 				if (result == null) result = caseXLinkAttributes(svgFilterElement);
+				if (result == null) result = caseContentElement(svgFilterElement);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -613,6 +653,7 @@ public class SvgSwitch<T1> extends Switch<T1> {
 				T1 result = caseSvgFeDistantLight(svgFeDistantLight);
 				if (result == null) result = caseSvgElement(svgFeDistantLight);
 				if (result == null) result = caseCoreAttributes(svgFeDistantLight);
+				if (result == null) result = caseContentElement(svgFeDistantLight);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -622,6 +663,7 @@ public class SvgSwitch<T1> extends Switch<T1> {
 				if (result == null) result = caseSvgElement(svgFePointLight);
 				if (result == null) result = caseCoreAttributes(svgFePointLight);
 				if (result == null) result = caseLightSourceElement(svgFePointLight);
+				if (result == null) result = caseContentElement(svgFePointLight);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -631,6 +673,7 @@ public class SvgSwitch<T1> extends Switch<T1> {
 				if (result == null) result = caseSvgElement(svgFeSpotLight);
 				if (result == null) result = caseCoreAttributes(svgFeSpotLight);
 				if (result == null) result = caseLightSourceElement(svgFeSpotLight);
+				if (result == null) result = caseContentElement(svgFeSpotLight);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -641,6 +684,7 @@ public class SvgSwitch<T1> extends Switch<T1> {
 				if (result == null) result = caseCoreAttributes(svgFeBlend);
 				if (result == null) result = casePresentationAttributes(svgFeBlend);
 				if (result == null) result = caseFilterPrimitiveAttributes(svgFeBlend);
+				if (result == null) result = caseContentElement(svgFeBlend);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -651,6 +695,7 @@ public class SvgSwitch<T1> extends Switch<T1> {
 				if (result == null) result = caseCoreAttributes(svgFeColorMatrix);
 				if (result == null) result = casePresentationAttributes(svgFeColorMatrix);
 				if (result == null) result = caseFilterPrimitiveAttributes(svgFeColorMatrix);
+				if (result == null) result = caseContentElement(svgFeColorMatrix);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -661,6 +706,7 @@ public class SvgSwitch<T1> extends Switch<T1> {
 				if (result == null) result = caseCoreAttributes(svgFeComponentTransfer);
 				if (result == null) result = casePresentationAttributes(svgFeComponentTransfer);
 				if (result == null) result = caseFilterPrimitiveAttributes(svgFeComponentTransfer);
+				if (result == null) result = caseContentElement(svgFeComponentTransfer);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -670,6 +716,7 @@ public class SvgSwitch<T1> extends Switch<T1> {
 				if (result == null) result = caseSvgElement(svgFeFuncR);
 				if (result == null) result = caseCoreAttributes(svgFeFuncR);
 				if (result == null) result = casePresentationAttributes(svgFeFuncR);
+				if (result == null) result = caseContentElement(svgFeFuncR);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -679,6 +726,7 @@ public class SvgSwitch<T1> extends Switch<T1> {
 				if (result == null) result = caseSvgElement(svgFeFuncG);
 				if (result == null) result = caseCoreAttributes(svgFeFuncG);
 				if (result == null) result = casePresentationAttributes(svgFeFuncG);
+				if (result == null) result = caseContentElement(svgFeFuncG);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -688,6 +736,7 @@ public class SvgSwitch<T1> extends Switch<T1> {
 				if (result == null) result = caseSvgElement(svgFeFuncB);
 				if (result == null) result = caseCoreAttributes(svgFeFuncB);
 				if (result == null) result = casePresentationAttributes(svgFeFuncB);
+				if (result == null) result = caseContentElement(svgFeFuncB);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -697,6 +746,7 @@ public class SvgSwitch<T1> extends Switch<T1> {
 				if (result == null) result = caseSvgElement(svgFeFuncA);
 				if (result == null) result = caseCoreAttributes(svgFeFuncA);
 				if (result == null) result = casePresentationAttributes(svgFeFuncA);
+				if (result == null) result = caseContentElement(svgFeFuncA);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -707,6 +757,7 @@ public class SvgSwitch<T1> extends Switch<T1> {
 				if (result == null) result = caseCoreAttributes(svgFeComposite);
 				if (result == null) result = casePresentationAttributes(svgFeComposite);
 				if (result == null) result = caseFilterPrimitiveAttributes(svgFeComposite);
+				if (result == null) result = caseContentElement(svgFeComposite);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -717,6 +768,7 @@ public class SvgSwitch<T1> extends Switch<T1> {
 				if (result == null) result = caseCoreAttributes(svgFeConvolveMatrix);
 				if (result == null) result = casePresentationAttributes(svgFeConvolveMatrix);
 				if (result == null) result = caseFilterPrimitiveAttributes(svgFeConvolveMatrix);
+				if (result == null) result = caseContentElement(svgFeConvolveMatrix);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -727,6 +779,7 @@ public class SvgSwitch<T1> extends Switch<T1> {
 				if (result == null) result = caseCoreAttributes(svgFeDiffuseLighting);
 				if (result == null) result = casePresentationAttributes(svgFeDiffuseLighting);
 				if (result == null) result = caseFilterPrimitiveAttributes(svgFeDiffuseLighting);
+				if (result == null) result = caseContentElement(svgFeDiffuseLighting);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -737,6 +790,7 @@ public class SvgSwitch<T1> extends Switch<T1> {
 				if (result == null) result = caseCoreAttributes(svgFeDisplacementMap);
 				if (result == null) result = casePresentationAttributes(svgFeDisplacementMap);
 				if (result == null) result = caseFilterPrimitiveAttributes(svgFeDisplacementMap);
+				if (result == null) result = caseContentElement(svgFeDisplacementMap);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -747,6 +801,7 @@ public class SvgSwitch<T1> extends Switch<T1> {
 				if (result == null) result = caseCoreAttributes(svgFeFlood);
 				if (result == null) result = casePresentationAttributes(svgFeFlood);
 				if (result == null) result = caseFilterPrimitiveAttributes(svgFeFlood);
+				if (result == null) result = caseContentElement(svgFeFlood);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -757,6 +812,7 @@ public class SvgSwitch<T1> extends Switch<T1> {
 				if (result == null) result = caseCoreAttributes(svgFeGaussianBlur);
 				if (result == null) result = casePresentationAttributes(svgFeGaussianBlur);
 				if (result == null) result = caseFilterPrimitiveAttributes(svgFeGaussianBlur);
+				if (result == null) result = caseContentElement(svgFeGaussianBlur);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -768,6 +824,7 @@ public class SvgSwitch<T1> extends Switch<T1> {
 				if (result == null) result = casePresentationAttributes(svgFeImage);
 				if (result == null) result = caseFilterPrimitiveAttributes(svgFeImage);
 				if (result == null) result = caseXLinkAttributes(svgFeImage);
+				if (result == null) result = caseContentElement(svgFeImage);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -778,6 +835,7 @@ public class SvgSwitch<T1> extends Switch<T1> {
 				if (result == null) result = caseCoreAttributes(svgFeMerge);
 				if (result == null) result = casePresentationAttributes(svgFeMerge);
 				if (result == null) result = caseFilterPrimitiveAttributes(svgFeMerge);
+				if (result == null) result = caseContentElement(svgFeMerge);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -786,6 +844,7 @@ public class SvgSwitch<T1> extends Switch<T1> {
 				T1 result = caseSvgFeMergeNode(svgFeMergeNode);
 				if (result == null) result = caseSvgElement(svgFeMergeNode);
 				if (result == null) result = caseCoreAttributes(svgFeMergeNode);
+				if (result == null) result = caseContentElement(svgFeMergeNode);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -796,6 +855,7 @@ public class SvgSwitch<T1> extends Switch<T1> {
 				if (result == null) result = caseCoreAttributes(svgFeMorphology);
 				if (result == null) result = casePresentationAttributes(svgFeMorphology);
 				if (result == null) result = caseFilterPrimitiveAttributes(svgFeMorphology);
+				if (result == null) result = caseContentElement(svgFeMorphology);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -806,6 +866,7 @@ public class SvgSwitch<T1> extends Switch<T1> {
 				if (result == null) result = caseCoreAttributes(svgFeOffset);
 				if (result == null) result = casePresentationAttributes(svgFeOffset);
 				if (result == null) result = caseFilterPrimitiveAttributes(svgFeOffset);
+				if (result == null) result = caseContentElement(svgFeOffset);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -816,6 +877,7 @@ public class SvgSwitch<T1> extends Switch<T1> {
 				if (result == null) result = caseCoreAttributes(svgFeSpecularLighting);
 				if (result == null) result = casePresentationAttributes(svgFeSpecularLighting);
 				if (result == null) result = caseFilterPrimitiveAttributes(svgFeSpecularLighting);
+				if (result == null) result = caseContentElement(svgFeSpecularLighting);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -826,6 +888,7 @@ public class SvgSwitch<T1> extends Switch<T1> {
 				if (result == null) result = caseCoreAttributes(svgFeTile);
 				if (result == null) result = casePresentationAttributes(svgFeTile);
 				if (result == null) result = caseFilterPrimitiveAttributes(svgFeTile);
+				if (result == null) result = caseContentElement(svgFeTile);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -836,11 +899,27 @@ public class SvgSwitch<T1> extends Switch<T1> {
 				if (result == null) result = caseCoreAttributes(svgFeTurbulence);
 				if (result == null) result = casePresentationAttributes(svgFeTurbulence);
 				if (result == null) result = caseFilterPrimitiveAttributes(svgFeTurbulence);
+				if (result == null) result = caseContentElement(svgFeTurbulence);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			default: return defaultCase(theEObject);
 		}
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Content Element</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Content Element</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public <T extends SvgElement> T1 caseContentElement(ContentElement<T> object) {
+		return null;
 	}
 
 	/**

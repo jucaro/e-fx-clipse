@@ -17,5 +17,5 @@ package at.bestsolution.efxclipse.formats.svg.svg;
  * @model
  * @generated
  */
-public interface SvgAltGlyphDefElement extends SvgElement, CoreAttributes {
+public interface SvgAltGlyphDefElement extends SvgElement, CoreAttributes, ContentElement<SvgElement> {
 } // SvgAltGlyphDefElement

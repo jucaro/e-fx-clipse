@@ -6,16 +6,24 @@
  */
 package at.bestsolution.efxclipse.formats.svg.svg.impl;
 
+import at.bestsolution.efxclipse.formats.svg.svg.ContentElement;
 import at.bestsolution.efxclipse.formats.svg.svg.CoreAttributes;
+import at.bestsolution.efxclipse.formats.svg.svg.SvgElement;
 import at.bestsolution.efxclipse.formats.svg.svg.SvgFeDistantLight;
 import at.bestsolution.efxclipse.formats.svg.svg.SvgPackage;
 
+import java.util.Collection;
 import org.eclipse.emf.common.notify.Notification;
 
+import org.eclipse.emf.common.notify.NotificationChain;
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.EObjectImpl;
+import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -28,6 +36,7 @@ import org.eclipse.emf.ecore.impl.EObjectImpl;
  *   <li>{@link at.bestsolution.efxclipse.formats.svg.svg.impl.SvgFeDistantLightImpl#getXml__base <em>Xml base</em>}</li>
  *   <li>{@link at.bestsolution.efxclipse.formats.svg.svg.impl.SvgFeDistantLightImpl#getXml__lang <em>Xml lang</em>}</li>
  *   <li>{@link at.bestsolution.efxclipse.formats.svg.svg.impl.SvgFeDistantLightImpl#getXml__space <em>Xml space</em>}</li>
+ *   <li>{@link at.bestsolution.efxclipse.formats.svg.svg.impl.SvgFeDistantLightImpl#getChildren <em>Children</em>}</li>
  *   <li>{@link at.bestsolution.efxclipse.formats.svg.svg.impl.SvgFeDistantLightImpl#getAzimuth <em>Azimuth</em>}</li>
  *   <li>{@link at.bestsolution.efxclipse.formats.svg.svg.impl.SvgFeDistantLightImpl#getElevation <em>Elevation</em>}</li>
  * </ul>
@@ -115,6 +124,16 @@ public class SvgFeDistantLightImpl extends EObjectImpl implements SvgFeDistantLi
 	 * @ordered
 	 */
 	protected String xml__space = XML_SPACE_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getChildren() <em>Children</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getChildren()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<SvgElement> children;
 
 	/**
 	 * The default value of the '{@link #getAzimuth() <em>Azimuth</em>}' attribute.
@@ -264,6 +283,18 @@ public class SvgFeDistantLightImpl extends EObjectImpl implements SvgFeDistantLi
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EList<SvgElement> getChildren() {
+		if (children == null) {
+			children = new EObjectContainmentEList<SvgElement>(SvgElement.class, this, SvgPackage.SVG_FE_DISTANT_LIGHT__CHILDREN);
+		}
+		return children;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public Double getAzimuth() {
 		return azimuth;
 	}
@@ -307,6 +338,20 @@ public class SvgFeDistantLightImpl extends EObjectImpl implements SvgFeDistantLi
 	 * @generated
 	 */
 	@Override
+	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+			case SvgPackage.SVG_FE_DISTANT_LIGHT__CHILDREN:
+				return ((InternalEList<?>)getChildren()).basicRemove(otherEnd, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case SvgPackage.SVG_FE_DISTANT_LIGHT__ID:
@@ -317,6 +362,8 @@ public class SvgFeDistantLightImpl extends EObjectImpl implements SvgFeDistantLi
 				return getXml__lang();
 			case SvgPackage.SVG_FE_DISTANT_LIGHT__XML_SPACE:
 				return getXml__space();
+			case SvgPackage.SVG_FE_DISTANT_LIGHT__CHILDREN:
+				return getChildren();
 			case SvgPackage.SVG_FE_DISTANT_LIGHT__AZIMUTH:
 				return getAzimuth();
 			case SvgPackage.SVG_FE_DISTANT_LIGHT__ELEVATION:
@@ -330,6 +377,7 @@ public class SvgFeDistantLightImpl extends EObjectImpl implements SvgFeDistantLi
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
@@ -344,6 +392,10 @@ public class SvgFeDistantLightImpl extends EObjectImpl implements SvgFeDistantLi
 				return;
 			case SvgPackage.SVG_FE_DISTANT_LIGHT__XML_SPACE:
 				setXml__space((String)newValue);
+				return;
+			case SvgPackage.SVG_FE_DISTANT_LIGHT__CHILDREN:
+				getChildren().clear();
+				getChildren().addAll((Collection<? extends SvgElement>)newValue);
 				return;
 			case SvgPackage.SVG_FE_DISTANT_LIGHT__AZIMUTH:
 				setAzimuth((Double)newValue);
@@ -375,6 +427,9 @@ public class SvgFeDistantLightImpl extends EObjectImpl implements SvgFeDistantLi
 			case SvgPackage.SVG_FE_DISTANT_LIGHT__XML_SPACE:
 				setXml__space(XML_SPACE_EDEFAULT);
 				return;
+			case SvgPackage.SVG_FE_DISTANT_LIGHT__CHILDREN:
+				getChildren().clear();
+				return;
 			case SvgPackage.SVG_FE_DISTANT_LIGHT__AZIMUTH:
 				setAzimuth(AZIMUTH_EDEFAULT);
 				return;
@@ -401,6 +456,8 @@ public class SvgFeDistantLightImpl extends EObjectImpl implements SvgFeDistantLi
 				return XML_LANG_EDEFAULT == null ? xml__lang != null : !XML_LANG_EDEFAULT.equals(xml__lang);
 			case SvgPackage.SVG_FE_DISTANT_LIGHT__XML_SPACE:
 				return XML_SPACE_EDEFAULT == null ? xml__space != null : !XML_SPACE_EDEFAULT.equals(xml__space);
+			case SvgPackage.SVG_FE_DISTANT_LIGHT__CHILDREN:
+				return children != null && !children.isEmpty();
 			case SvgPackage.SVG_FE_DISTANT_LIGHT__AZIMUTH:
 				return AZIMUTH_EDEFAULT == null ? azimuth != null : !AZIMUTH_EDEFAULT.equals(azimuth);
 			case SvgPackage.SVG_FE_DISTANT_LIGHT__ELEVATION:
@@ -425,6 +482,12 @@ public class SvgFeDistantLightImpl extends EObjectImpl implements SvgFeDistantLi
 				default: return -1;
 			}
 		}
+		if (baseClass == ContentElement.class) {
+			switch (derivedFeatureID) {
+				case SvgPackage.SVG_FE_DISTANT_LIGHT__CHILDREN: return SvgPackage.CONTENT_ELEMENT__CHILDREN;
+				default: return -1;
+			}
+		}
 		return super.eBaseStructuralFeatureID(derivedFeatureID, baseClass);
 	}
 
@@ -441,6 +504,12 @@ public class SvgFeDistantLightImpl extends EObjectImpl implements SvgFeDistantLi
 				case SvgPackage.CORE_ATTRIBUTES__XML_BASE: return SvgPackage.SVG_FE_DISTANT_LIGHT__XML_BASE;
 				case SvgPackage.CORE_ATTRIBUTES__XML_LANG: return SvgPackage.SVG_FE_DISTANT_LIGHT__XML_LANG;
 				case SvgPackage.CORE_ATTRIBUTES__XML_SPACE: return SvgPackage.SVG_FE_DISTANT_LIGHT__XML_SPACE;
+				default: return -1;
+			}
+		}
+		if (baseClass == ContentElement.class) {
+			switch (baseFeatureID) {
+				case SvgPackage.CONTENT_ELEMENT__CHILDREN: return SvgPackage.SVG_FE_DISTANT_LIGHT__CHILDREN;
 				default: return -1;
 			}
 		}
