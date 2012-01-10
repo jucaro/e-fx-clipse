@@ -24,7 +24,7 @@ package at.bestsolution.efxclipse.formats.svg.svg;
  * @model
  * @generated
  */
-public interface SvgFeComponentTransfer extends SvgElement, CoreAttributes, PresentationAttributes, FilterPrimitiveAttributes {
+public interface SvgFeComponentTransfer extends SvgElement, CoreAttributes, PresentationAttributes, FilterPrimitiveAttributes, ContentElement<SvgElement> {
 	/**
 	 * Returns the value of the '<em><b>Class</b></em>' attribute.
 	 * <!-- begin-user-doc -->

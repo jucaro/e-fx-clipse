@@ -11,6 +11,7 @@ import at.bestsolution.efxclipse.formats.svg.svg.Clip_rule;
 import at.bestsolution.efxclipse.formats.svg.svg.Color_interpolation;
 import at.bestsolution.efxclipse.formats.svg.svg.Color_interpolation_filters;
 import at.bestsolution.efxclipse.formats.svg.svg.Color_rendering;
+import at.bestsolution.efxclipse.formats.svg.svg.ContentElement;
 import at.bestsolution.efxclipse.formats.svg.svg.CoreAttributes;
 import at.bestsolution.efxclipse.formats.svg.svg.Direction;
 import at.bestsolution.efxclipse.formats.svg.svg.Display;
@@ -29,6 +30,7 @@ import at.bestsolution.efxclipse.formats.svg.svg.Shape_rendering;
 import at.bestsolution.efxclipse.formats.svg.svg.StitchTiles;
 import at.bestsolution.efxclipse.formats.svg.svg.Stroke_linecap;
 import at.bestsolution.efxclipse.formats.svg.svg.Stroke_linejoin;
+import at.bestsolution.efxclipse.formats.svg.svg.SvgElement;
 import at.bestsolution.efxclipse.formats.svg.svg.SvgFeTurbulence;
 import at.bestsolution.efxclipse.formats.svg.svg.SvgPackage;
 import at.bestsolution.efxclipse.formats.svg.svg.Text_anchor;
@@ -38,12 +40,18 @@ import at.bestsolution.efxclipse.formats.svg.svg.Unicode_bidi;
 import at.bestsolution.efxclipse.formats.svg.svg.Visibility;
 import at.bestsolution.efxclipse.formats.svg.svg.Writing_mode;
 
+import java.util.Collection;
 import org.eclipse.emf.common.notify.Notification;
 
+import org.eclipse.emf.common.notify.NotificationChain;
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.EObjectImpl;
+import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -121,6 +129,7 @@ import org.eclipse.emf.ecore.impl.EObjectImpl;
  *   <li>{@link at.bestsolution.efxclipse.formats.svg.svg.impl.SvgFeTurbulenceImpl#getHeight <em>Height</em>}</li>
  *   <li>{@link at.bestsolution.efxclipse.formats.svg.svg.impl.SvgFeTurbulenceImpl#getResult <em>Result</em>}</li>
  *   <li>{@link at.bestsolution.efxclipse.formats.svg.svg.impl.SvgFeTurbulenceImpl#getIn <em>In</em>}</li>
+ *   <li>{@link at.bestsolution.efxclipse.formats.svg.svg.impl.SvgFeTurbulenceImpl#getChildren <em>Children</em>}</li>
  *   <li>{@link at.bestsolution.efxclipse.formats.svg.svg.impl.SvgFeTurbulenceImpl#getClass_ <em>Class</em>}</li>
  *   <li>{@link at.bestsolution.efxclipse.formats.svg.svg.impl.SvgFeTurbulenceImpl#getStyle <em>Style</em>}</li>
  *   <li>{@link at.bestsolution.efxclipse.formats.svg.svg.impl.SvgFeTurbulenceImpl#getBaseFrequency <em>Base Frequency</em>}</li>
@@ -1513,6 +1522,16 @@ public class SvgFeTurbulenceImpl extends EObjectImpl implements SvgFeTurbulence 
 	 * @ordered
 	 */
 	protected String in = IN_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getChildren() <em>Children</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getChildren()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<SvgElement> children;
 
 	/**
 	 * The default value of the '{@link #getClass_() <em>Class</em>}' attribute.
@@ -3127,6 +3146,18 @@ public class SvgFeTurbulenceImpl extends EObjectImpl implements SvgFeTurbulence 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EList<SvgElement> getChildren() {
+		if (children == null) {
+			children = new EObjectContainmentEList<SvgElement>(SvgElement.class, this, SvgPackage.SVG_FE_TURBULENCE__CHILDREN);
+		}
+		return children;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public String getClass_() {
 		return class_;
 	}
@@ -3275,6 +3306,20 @@ public class SvgFeTurbulenceImpl extends EObjectImpl implements SvgFeTurbulence 
 	 * @generated
 	 */
 	@Override
+	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+			case SvgPackage.SVG_FE_TURBULENCE__CHILDREN:
+				return ((InternalEList<?>)getChildren()).basicRemove(otherEnd, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case SvgPackage.SVG_FE_TURBULENCE__ID:
@@ -3415,6 +3460,8 @@ public class SvgFeTurbulenceImpl extends EObjectImpl implements SvgFeTurbulence 
 				return getResult();
 			case SvgPackage.SVG_FE_TURBULENCE__IN:
 				return getIn();
+			case SvgPackage.SVG_FE_TURBULENCE__CHILDREN:
+				return getChildren();
 			case SvgPackage.SVG_FE_TURBULENCE__CLASS:
 				return getClass_();
 			case SvgPackage.SVG_FE_TURBULENCE__STYLE:
@@ -3438,6 +3485,7 @@ public class SvgFeTurbulenceImpl extends EObjectImpl implements SvgFeTurbulence 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
@@ -3647,6 +3695,10 @@ public class SvgFeTurbulenceImpl extends EObjectImpl implements SvgFeTurbulence 
 				return;
 			case SvgPackage.SVG_FE_TURBULENCE__IN:
 				setIn((String)newValue);
+				return;
+			case SvgPackage.SVG_FE_TURBULENCE__CHILDREN:
+				getChildren().clear();
+				getChildren().addAll((Collection<? extends SvgElement>)newValue);
 				return;
 			case SvgPackage.SVG_FE_TURBULENCE__CLASS:
 				setClass((String)newValue);
@@ -3888,6 +3940,9 @@ public class SvgFeTurbulenceImpl extends EObjectImpl implements SvgFeTurbulence 
 			case SvgPackage.SVG_FE_TURBULENCE__IN:
 				setIn(IN_EDEFAULT);
 				return;
+			case SvgPackage.SVG_FE_TURBULENCE__CHILDREN:
+				getChildren().clear();
+				return;
 			case SvgPackage.SVG_FE_TURBULENCE__CLASS:
 				setClass(CLASS_EDEFAULT);
 				return;
@@ -4059,6 +4114,8 @@ public class SvgFeTurbulenceImpl extends EObjectImpl implements SvgFeTurbulence 
 				return RESULT_EDEFAULT == null ? result != null : !RESULT_EDEFAULT.equals(result);
 			case SvgPackage.SVG_FE_TURBULENCE__IN:
 				return IN_EDEFAULT == null ? in != null : !IN_EDEFAULT.equals(in);
+			case SvgPackage.SVG_FE_TURBULENCE__CHILDREN:
+				return children != null && !children.isEmpty();
 			case SvgPackage.SVG_FE_TURBULENCE__CLASS:
 				return CLASS_EDEFAULT == null ? class_ != null : !CLASS_EDEFAULT.equals(class_);
 			case SvgPackage.SVG_FE_TURBULENCE__STYLE:
@@ -4168,6 +4225,12 @@ public class SvgFeTurbulenceImpl extends EObjectImpl implements SvgFeTurbulence 
 				default: return -1;
 			}
 		}
+		if (baseClass == ContentElement.class) {
+			switch (derivedFeatureID) {
+				case SvgPackage.SVG_FE_TURBULENCE__CHILDREN: return SvgPackage.CONTENT_ELEMENT__CHILDREN;
+				default: return -1;
+			}
+		}
 		return super.eBaseStructuralFeatureID(derivedFeatureID, baseClass);
 	}
 
@@ -4259,6 +4322,12 @@ public class SvgFeTurbulenceImpl extends EObjectImpl implements SvgFeTurbulence 
 				case SvgPackage.FILTER_PRIMITIVE_ATTRIBUTES__HEIGHT: return SvgPackage.SVG_FE_TURBULENCE__HEIGHT;
 				case SvgPackage.FILTER_PRIMITIVE_ATTRIBUTES__RESULT: return SvgPackage.SVG_FE_TURBULENCE__RESULT;
 				case SvgPackage.FILTER_PRIMITIVE_ATTRIBUTES__IN: return SvgPackage.SVG_FE_TURBULENCE__IN;
+				default: return -1;
+			}
+		}
+		if (baseClass == ContentElement.class) {
+			switch (baseFeatureID) {
+				case SvgPackage.CONTENT_ELEMENT__CHILDREN: return SvgPackage.SVG_FE_TURBULENCE__CHILDREN;
 				default: return -1;
 			}
 		}

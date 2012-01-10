@@ -26,7 +26,7 @@ package at.bestsolution.efxclipse.formats.svg.svg;
  * @model
  * @generated
  */
-public interface SvgFeImage extends SvgElement, CoreAttributes, PresentationAttributes, FilterPrimitiveAttributes, XLinkAttributes {
+public interface SvgFeImage extends SvgElement, CoreAttributes, PresentationAttributes, FilterPrimitiveAttributes, XLinkAttributes, ContentElement<SvgElement> {
 	/**
 	 * Returns the value of the '<em><b>Class</b></em>' attribute.
 	 * <!-- begin-user-doc -->

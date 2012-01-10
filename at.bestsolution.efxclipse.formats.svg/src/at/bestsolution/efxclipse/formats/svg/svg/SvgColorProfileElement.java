@@ -25,7 +25,7 @@ package at.bestsolution.efxclipse.formats.svg.svg;
  * @model
  * @generated
  */
-public interface SvgColorProfileElement extends SvgElement, CoreAttributes, PresentationAttributes, XLinkAttributes {
+public interface SvgColorProfileElement extends SvgElement, CoreAttributes, PresentationAttributes, XLinkAttributes, ContentElement<SvgElement> {
 	/**
 	 * Returns the value of the '<em><b>Local</b></em>' attribute.
 	 * <!-- begin-user-doc -->

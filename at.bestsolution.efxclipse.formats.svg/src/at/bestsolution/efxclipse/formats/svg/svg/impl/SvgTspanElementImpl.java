@@ -12,6 +12,7 @@ import at.bestsolution.efxclipse.formats.svg.svg.Color_interpolation;
 import at.bestsolution.efxclipse.formats.svg.svg.Color_interpolation_filters;
 import at.bestsolution.efxclipse.formats.svg.svg.Color_rendering;
 import at.bestsolution.efxclipse.formats.svg.svg.ConditionalProcessingAttributes;
+import at.bestsolution.efxclipse.formats.svg.svg.ContentElement;
 import at.bestsolution.efxclipse.formats.svg.svg.CoreAttributes;
 import at.bestsolution.efxclipse.formats.svg.svg.Direction;
 import at.bestsolution.efxclipse.formats.svg.svg.Display;
@@ -30,6 +31,7 @@ import at.bestsolution.efxclipse.formats.svg.svg.PresentationAttributes;
 import at.bestsolution.efxclipse.formats.svg.svg.Shape_rendering;
 import at.bestsolution.efxclipse.formats.svg.svg.Stroke_linecap;
 import at.bestsolution.efxclipse.formats.svg.svg.Stroke_linejoin;
+import at.bestsolution.efxclipse.formats.svg.svg.SvgElement;
 import at.bestsolution.efxclipse.formats.svg.svg.SvgPackage;
 import at.bestsolution.efxclipse.formats.svg.svg.SvgTspanElement;
 import at.bestsolution.efxclipse.formats.svg.svg.TextContentChildElement;
@@ -40,12 +42,18 @@ import at.bestsolution.efxclipse.formats.svg.svg.Unicode_bidi;
 import at.bestsolution.efxclipse.formats.svg.svg.Visibility;
 import at.bestsolution.efxclipse.formats.svg.svg.Writing_mode;
 
+import java.util.Collection;
 import org.eclipse.emf.common.notify.Notification;
 
+import org.eclipse.emf.common.notify.NotificationChain;
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.EObjectImpl;
+import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -130,6 +138,7 @@ import org.eclipse.emf.ecore.impl.EObjectImpl;
  *   <li>{@link at.bestsolution.efxclipse.formats.svg.svg.impl.SvgTspanElementImpl#getVisibility <em>Visibility</em>}</li>
  *   <li>{@link at.bestsolution.efxclipse.formats.svg.svg.impl.SvgTspanElementImpl#getWord_spacing <em>Word spacing</em>}</li>
  *   <li>{@link at.bestsolution.efxclipse.formats.svg.svg.impl.SvgTspanElementImpl#getWriting_mode <em>Writing mode</em>}</li>
+ *   <li>{@link at.bestsolution.efxclipse.formats.svg.svg.impl.SvgTspanElementImpl#getChildren <em>Children</em>}</li>
  *   <li>{@link at.bestsolution.efxclipse.formats.svg.svg.impl.SvgTspanElementImpl#getClass_ <em>Class</em>}</li>
  *   <li>{@link at.bestsolution.efxclipse.formats.svg.svg.impl.SvgTspanElementImpl#getStyle <em>Style</em>}</li>
  *   <li>{@link at.bestsolution.efxclipse.formats.svg.svg.impl.SvgTspanElementImpl#getExternalResourcesRequired <em>External Resources Required</em>}</li>
@@ -1665,6 +1674,16 @@ public class SvgTspanElementImpl extends EObjectImpl implements SvgTspanElement 
 	 * @ordered
 	 */
 	protected Writing_mode writing_mode = WRITING_MODE_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getChildren() <em>Children</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getChildren()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<SvgElement> children;
 
 	/**
 	 * The default value of the '{@link #getClass_() <em>Class</em>}' attribute.
@@ -3486,6 +3505,18 @@ public class SvgTspanElementImpl extends EObjectImpl implements SvgTspanElement 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EList<SvgElement> getChildren() {
+		if (children == null) {
+			children = new EObjectContainmentEList<SvgElement>(SvgElement.class, this, SvgPackage.SVG_TSPAN_ELEMENT__CHILDREN);
+		}
+		return children;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public String getClass_() {
 		return class_;
 	}
@@ -3697,6 +3728,20 @@ public class SvgTspanElementImpl extends EObjectImpl implements SvgTspanElement 
 	 * @generated
 	 */
 	@Override
+	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+			case SvgPackage.SVG_TSPAN_ELEMENT__CHILDREN:
+				return ((InternalEList<?>)getChildren()).basicRemove(otherEnd, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case SvgPackage.SVG_TSPAN_ELEMENT__REQUIRED_FEATURES:
@@ -3851,6 +3896,8 @@ public class SvgTspanElementImpl extends EObjectImpl implements SvgTspanElement 
 				return getWord_spacing();
 			case SvgPackage.SVG_TSPAN_ELEMENT__WRITING_MODE:
 				return getWriting_mode();
+			case SvgPackage.SVG_TSPAN_ELEMENT__CHILDREN:
+				return getChildren();
 			case SvgPackage.SVG_TSPAN_ELEMENT__CLASS:
 				return getClass_();
 			case SvgPackage.SVG_TSPAN_ELEMENT__STYLE:
@@ -3880,6 +3927,7 @@ public class SvgTspanElementImpl extends EObjectImpl implements SvgTspanElement 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
@@ -4110,6 +4158,10 @@ public class SvgTspanElementImpl extends EObjectImpl implements SvgTspanElement 
 				return;
 			case SvgPackage.SVG_TSPAN_ELEMENT__WRITING_MODE:
 				setWriting_mode((Writing_mode)newValue);
+				return;
+			case SvgPackage.SVG_TSPAN_ELEMENT__CHILDREN:
+				getChildren().clear();
+				getChildren().addAll((Collection<? extends SvgElement>)newValue);
 				return;
 			case SvgPackage.SVG_TSPAN_ELEMENT__CLASS:
 				setClass((String)newValue);
@@ -4381,6 +4433,9 @@ public class SvgTspanElementImpl extends EObjectImpl implements SvgTspanElement 
 			case SvgPackage.SVG_TSPAN_ELEMENT__WRITING_MODE:
 				setWriting_mode(WRITING_MODE_EDEFAULT);
 				return;
+			case SvgPackage.SVG_TSPAN_ELEMENT__CHILDREN:
+				getChildren().clear();
+				return;
 			case SvgPackage.SVG_TSPAN_ELEMENT__CLASS:
 				setClass(CLASS_EDEFAULT);
 				return;
@@ -4575,6 +4630,8 @@ public class SvgTspanElementImpl extends EObjectImpl implements SvgTspanElement 
 				return WORD_SPACING_EDEFAULT == null ? word_spacing != null : !WORD_SPACING_EDEFAULT.equals(word_spacing);
 			case SvgPackage.SVG_TSPAN_ELEMENT__WRITING_MODE:
 				return writing_mode != WRITING_MODE_EDEFAULT;
+			case SvgPackage.SVG_TSPAN_ELEMENT__CHILDREN:
+				return children != null && !children.isEmpty();
 			case SvgPackage.SVG_TSPAN_ELEMENT__CLASS:
 				return CLASS_EDEFAULT == null ? class_ != null : !CLASS_EDEFAULT.equals(class_);
 			case SvgPackage.SVG_TSPAN_ELEMENT__STYLE:
@@ -4712,6 +4769,12 @@ public class SvgTspanElementImpl extends EObjectImpl implements SvgTspanElement 
 				default: return -1;
 			}
 		}
+		if (baseClass == ContentElement.class) {
+			switch (derivedFeatureID) {
+				case SvgPackage.SVG_TSPAN_ELEMENT__CHILDREN: return SvgPackage.CONTENT_ELEMENT__CHILDREN;
+				default: return -1;
+			}
+		}
 		return super.eBaseStructuralFeatureID(derivedFeatureID, baseClass);
 	}
 
@@ -4825,6 +4888,12 @@ public class SvgTspanElementImpl extends EObjectImpl implements SvgTspanElement 
 				case SvgPackage.PRESENTATION_ATTRIBUTES__VISIBILITY: return SvgPackage.SVG_TSPAN_ELEMENT__VISIBILITY;
 				case SvgPackage.PRESENTATION_ATTRIBUTES__WORD_SPACING: return SvgPackage.SVG_TSPAN_ELEMENT__WORD_SPACING;
 				case SvgPackage.PRESENTATION_ATTRIBUTES__WRITING_MODE: return SvgPackage.SVG_TSPAN_ELEMENT__WRITING_MODE;
+				default: return -1;
+			}
+		}
+		if (baseClass == ContentElement.class) {
+			switch (baseFeatureID) {
+				case SvgPackage.CONTENT_ELEMENT__CHILDREN: return SvgPackage.SVG_TSPAN_ELEMENT__CHILDREN;
 				default: return -1;
 			}
 		}

@@ -72,6 +72,10 @@ public class SvgAdapterFactory extends AdapterFactoryImpl {
 	protected SvgSwitch<Adapter> modelSwitch =
 		new SvgSwitch<Adapter>() {
 			@Override
+			public <T extends SvgElement> Adapter caseContentElement(ContentElement<T> object) {
+				return createContentElementAdapter();
+			}
+			@Override
 			public <T extends SvgElement> Adapter caseContainerElement(ContainerElement<T> object) {
 				return createContainerElementAdapter();
 			}
@@ -414,6 +418,20 @@ public class SvgAdapterFactory extends AdapterFactoryImpl {
 		return modelSwitch.doSwitch((EObject)target);
 	}
 
+
+	/**
+	 * Creates a new adapter for an object of class '{@link at.bestsolution.efxclipse.formats.svg.svg.ContentElement <em>Content Element</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see at.bestsolution.efxclipse.formats.svg.svg.ContentElement
+	 * @generated
+	 */
+	public Adapter createContentElementAdapter() {
+		return null;
+	}
 
 	/**
 	 * Creates a new adapter for an object of class '{@link at.bestsolution.efxclipse.formats.svg.svg.ContainerElement <em>Container Element</em>}'.

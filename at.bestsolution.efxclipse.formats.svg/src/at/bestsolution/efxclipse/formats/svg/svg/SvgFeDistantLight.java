@@ -24,7 +24,7 @@ package at.bestsolution.efxclipse.formats.svg.svg;
  * @model
  * @generated
  */
-public interface SvgFeDistantLight extends SvgElement, CoreAttributes {
+public interface SvgFeDistantLight extends SvgElement, CoreAttributes, ContentElement<SvgElement> {
 	/**
 	 * Returns the value of the '<em><b>Azimuth</b></em>' attribute.
 	 * <!-- begin-user-doc -->

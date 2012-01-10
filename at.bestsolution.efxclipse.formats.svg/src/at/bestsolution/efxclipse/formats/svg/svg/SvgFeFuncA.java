@@ -17,5 +17,5 @@ package at.bestsolution.efxclipse.formats.svg.svg;
  * @model
  * @generated
  */
-public interface SvgFeFuncA extends SvgElement, CoreAttributes, PresentationAttributes {
+public interface SvgFeFuncA extends SvgElement, CoreAttributes, PresentationAttributes, ContentElement<SvgElement> {
 } // SvgFeFuncA

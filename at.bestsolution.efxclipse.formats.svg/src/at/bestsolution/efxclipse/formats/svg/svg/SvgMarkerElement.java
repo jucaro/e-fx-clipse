@@ -33,7 +33,7 @@ package at.bestsolution.efxclipse.formats.svg.svg;
  * @model
  * @generated
  */
-public interface SvgMarkerElement extends SvgElement, CoreAttributes, PresentationAttributes {
+public interface SvgMarkerElement extends SvgElement, CoreAttributes, PresentationAttributes, ContentElement<SvgElement> {
 	/**
 	 * Returns the value of the '<em><b>Class</b></em>' attribute.
 	 * <!-- begin-user-doc -->

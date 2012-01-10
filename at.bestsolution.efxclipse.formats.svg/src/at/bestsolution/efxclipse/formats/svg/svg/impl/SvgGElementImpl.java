@@ -13,6 +13,7 @@ import at.bestsolution.efxclipse.formats.svg.svg.Color_interpolation_filters;
 import at.bestsolution.efxclipse.formats.svg.svg.Color_rendering;
 import at.bestsolution.efxclipse.formats.svg.svg.ConditionalProcessingAttributes;
 import at.bestsolution.efxclipse.formats.svg.svg.ContainerElement;
+import at.bestsolution.efxclipse.formats.svg.svg.ContentElement;
 import at.bestsolution.efxclipse.formats.svg.svg.CoreAttributes;
 import at.bestsolution.efxclipse.formats.svg.svg.Direction;
 import at.bestsolution.efxclipse.formats.svg.svg.Display;
@@ -4456,9 +4457,14 @@ public class SvgGElementImpl extends EObjectImpl implements SvgGElement {
 	 */
 	@Override
 	public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass) {
+		if (baseClass == ContentElement.class) {
+			switch (derivedFeatureID) {
+				case SvgPackage.SVG_GELEMENT__CHILDREN: return SvgPackage.CONTENT_ELEMENT__CHILDREN;
+				default: return -1;
+			}
+		}
 		if (baseClass == ContainerElement.class) {
 			switch (derivedFeatureID) {
-				case SvgPackage.SVG_GELEMENT__CHILDREN: return SvgPackage.CONTAINER_ELEMENT__CHILDREN;
 				default: return -1;
 			}
 		}
@@ -4573,9 +4579,14 @@ public class SvgGElementImpl extends EObjectImpl implements SvgGElement {
 	 */
 	@Override
 	public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass) {
+		if (baseClass == ContentElement.class) {
+			switch (baseFeatureID) {
+				case SvgPackage.CONTENT_ELEMENT__CHILDREN: return SvgPackage.SVG_GELEMENT__CHILDREN;
+				default: return -1;
+			}
+		}
 		if (baseClass == ContainerElement.class) {
 			switch (baseFeatureID) {
-				case SvgPackage.CONTAINER_ELEMENT__CHILDREN: return SvgPackage.SVG_GELEMENT__CHILDREN;
 				default: return -1;
 			}
 		}
