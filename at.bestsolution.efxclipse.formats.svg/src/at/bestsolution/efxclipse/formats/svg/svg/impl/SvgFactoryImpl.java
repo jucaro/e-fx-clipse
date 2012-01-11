@@ -61,6 +61,7 @@ public class SvgFactoryImpl extends EFactoryImpl implements SvgFactory {
 	@Override
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
+			case SvgPackage.ANIMATION_ELEMENT: return createAnimationElement();
 			case SvgPackage._ENUMS_: return create____ENUMS____();
 			case SvgPackage._DATATYPES_: return create____DATATYPES____();
 			case SvgPackage._ATTRIBUTES_: return create____ATTRIBUTES____();
@@ -93,35 +94,37 @@ public class SvgFactoryImpl extends EFactoryImpl implements SvgFactory {
 			case SvgPackage.SVG_COLOR_PROFILE_ELEMENT: return createSvgColorProfileElement();
 			case SvgPackage.SVG_LINEAR_GRADIENT_ELEMENT: return createSvgLinearGradientElement();
 			case SvgPackage.SVG_RADIAL_GRADIENT_ELEMENT: return createSvgRadialGradientElement();
-			case SvgPackage.SVG_GRADIENT_STOP_ELEMENT: return createSvgGradientStopElement();
+			case SvgPackage.SVG_STOP_ELEMENT: return createSvgStopElement();
 			case SvgPackage.SVG_PATTERN_ELEMENT: return createSvgPatternElement();
 			case SvgPackage.SVG_CLIP_PATH_ELEMENT: return createSvgClipPathElement();
 			case SvgPackage.SVG_MASK_ELEMENT: return createSvgMaskElement();
 			case SvgPackage.SVG_FILTER_ELEMENT: return createSvgFilterElement();
-			case SvgPackage.SVG_FE_DISTANT_LIGHT: return createSvgFeDistantLight();
-			case SvgPackage.SVG_FE_POINT_LIGHT: return createSvgFePointLight();
-			case SvgPackage.SVG_FE_SPOT_LIGHT: return createSvgFeSpotLight();
-			case SvgPackage.SVG_FE_BLEND: return createSvgFeBlend();
-			case SvgPackage.SVG_FE_COLOR_MATRIX: return createSvgFeColorMatrix();
-			case SvgPackage.SVG_FE_COMPONENT_TRANSFER: return createSvgFeComponentTransfer();
-			case SvgPackage.SVG_FE_FUNC_R: return createSvgFeFuncR();
-			case SvgPackage.SVG_FE_FUNC_G: return createSvgFeFuncG();
-			case SvgPackage.SVG_FE_FUNC_B: return createSvgFeFuncB();
-			case SvgPackage.SVG_FE_FUNC_A: return createSvgFeFuncA();
-			case SvgPackage.SVG_FE_COMPOSITE: return createSvgFeComposite();
-			case SvgPackage.SVG_FE_CONVOLVE_MATRIX: return createSvgFeConvolveMatrix();
-			case SvgPackage.SVG_FE_DIFFUSE_LIGHTING: return createSvgFeDiffuseLighting();
-			case SvgPackage.SVG_FE_DISPLACEMENT_MAP: return createSvgFeDisplacementMap();
-			case SvgPackage.SVG_FE_FLOOD: return createSvgFeFlood();
-			case SvgPackage.SVG_FE_GAUSSIAN_BLUR: return createSvgFeGaussianBlur();
-			case SvgPackage.SVG_FE_IMAGE: return createSvgFeImage();
-			case SvgPackage.SVG_FE_MERGE: return createSvgFeMerge();
-			case SvgPackage.SVG_FE_MERGE_NODE: return createSvgFeMergeNode();
-			case SvgPackage.SVG_FE_MORPHOLOGY: return createSvgFeMorphology();
-			case SvgPackage.SVG_FE_OFFSET: return createSvgFeOffset();
-			case SvgPackage.SVG_FE_SPECULAR_LIGHTING: return createSvgFeSpecularLighting();
-			case SvgPackage.SVG_FE_TILE: return createSvgFeTile();
-			case SvgPackage.SVG_FE_TURBULENCE: return createSvgFeTurbulence();
+			case SvgPackage.SVG_FE_DISTANT_LIGHT_ELEMENT: return createSvgFeDistantLightElement();
+			case SvgPackage.SVG_FE_POINT_LIGHT_ELEMENT: return createSvgFePointLightElement();
+			case SvgPackage.SVG_FE_SPOT_LIGHT_ELEMENT: return createSvgFeSpotLightElement();
+			case SvgPackage.SVG_FE_BLEND_ELEMENT: return createSvgFeBlendElement();
+			case SvgPackage.SVG_FE_COLOR_MATRIX_ELEMENT: return createSvgFeColorMatrixElement();
+			case SvgPackage.SVG_FE_COMPONENT_TRANSFER_ELEMENT: return createSvgFeComponentTransferElement();
+			case SvgPackage.SVG_FE_FUNC_RELEMENT: return createSvgFeFuncRElement();
+			case SvgPackage.SVG_FE_FUNC_GELEMENT: return createSvgFeFuncGElement();
+			case SvgPackage.SVG_FE_FUNC_BELEMENT: return createSvgFeFuncBElement();
+			case SvgPackage.SVG_FE_FUNC_AELEMENT: return createSvgFeFuncAElement();
+			case SvgPackage.SVG_FE_COMPOSITE_ELEMENT: return createSvgFeCompositeElement();
+			case SvgPackage.SVG_FE_CONVOLVE_MATRIX_ELEMENT: return createSvgFeConvolveMatrixElement();
+			case SvgPackage.SVG_FE_DIFFUSE_LIGHTING_ELEMENT: return createSvgFeDiffuseLightingElement();
+			case SvgPackage.SVG_FE_DISPLACEMENT_MAP_ELEMENT: return createSvgFeDisplacementMapElement();
+			case SvgPackage.SVG_FE_FLOOD_ELEMENT: return createSvgFeFloodElement();
+			case SvgPackage.SVG_FE_GAUSSIAN_BLUR_ELEMENT: return createSvgFeGaussianBlurElement();
+			case SvgPackage.SVG_FE_IMAGE_ELEMENT: return createSvgFeImageElement();
+			case SvgPackage.SVG_FE_MERGE_ELEMENT: return createSvgFeMergeElement();
+			case SvgPackage.SVG_FE_MERGE_NODE_ELEMENT: return createSvgFeMergeNodeElement();
+			case SvgPackage.SVG_FE_MORPHOLOGY_ELEMENT: return createSvgFeMorphologyElement();
+			case SvgPackage.SVG_FE_OFFSET_ELEMENT: return createSvgFeOffsetElement();
+			case SvgPackage.SVG_FE_SPECULAR_LIGHTING_ELEMENT: return createSvgFeSpecularLightingElement();
+			case SvgPackage.SVG_FE_TILE_ELEMENT: return createSvgFeTileElement();
+			case SvgPackage.SVG_FE_TURBULENCE_ELEMENT: return createSvgFeTurbulenceElement();
+			case SvgPackage.SVG_ANIMATE_ELEMENT: return createSvgAnimateElement();
+			case SvgPackage.SVG_METADATA_ELEMENT: return createSvgMetadataElement();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -550,6 +553,16 @@ public class SvgFactoryImpl extends EFactoryImpl implements SvgFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public AnimationElement createAnimationElement() {
+		AnimationElementImpl animationElement = new AnimationElementImpl();
+		return animationElement;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public ____ENUMS____ create____ENUMS____() {
 		____ENUMS____Impl ____ENUMS____ = new ____ENUMS____Impl();
 		return ____ENUMS____;
@@ -870,9 +883,9 @@ public class SvgFactoryImpl extends EFactoryImpl implements SvgFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public SvgGradientStopElement createSvgGradientStopElement() {
-		SvgGradientStopElementImpl svgGradientStopElement = new SvgGradientStopElementImpl();
-		return svgGradientStopElement;
+	public SvgStopElement createSvgStopElement() {
+		SvgStopElementImpl svgStopElement = new SvgStopElementImpl();
+		return svgStopElement;
 	}
 
 	/**
@@ -920,9 +933,9 @@ public class SvgFactoryImpl extends EFactoryImpl implements SvgFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public SvgFeDistantLight createSvgFeDistantLight() {
-		SvgFeDistantLightImpl svgFeDistantLight = new SvgFeDistantLightImpl();
-		return svgFeDistantLight;
+	public SvgFeDistantLightElement createSvgFeDistantLightElement() {
+		SvgFeDistantLightElementImpl svgFeDistantLightElement = new SvgFeDistantLightElementImpl();
+		return svgFeDistantLightElement;
 	}
 
 	/**
@@ -930,9 +943,9 @@ public class SvgFactoryImpl extends EFactoryImpl implements SvgFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public SvgFePointLight createSvgFePointLight() {
-		SvgFePointLightImpl svgFePointLight = new SvgFePointLightImpl();
-		return svgFePointLight;
+	public SvgFePointLightElement createSvgFePointLightElement() {
+		SvgFePointLightElementImpl svgFePointLightElement = new SvgFePointLightElementImpl();
+		return svgFePointLightElement;
 	}
 
 	/**
@@ -940,9 +953,9 @@ public class SvgFactoryImpl extends EFactoryImpl implements SvgFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public SvgFeSpotLight createSvgFeSpotLight() {
-		SvgFeSpotLightImpl svgFeSpotLight = new SvgFeSpotLightImpl();
-		return svgFeSpotLight;
+	public SvgFeSpotLightElement createSvgFeSpotLightElement() {
+		SvgFeSpotLightElementImpl svgFeSpotLightElement = new SvgFeSpotLightElementImpl();
+		return svgFeSpotLightElement;
 	}
 
 	/**
@@ -950,9 +963,9 @@ public class SvgFactoryImpl extends EFactoryImpl implements SvgFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public SvgFeBlend createSvgFeBlend() {
-		SvgFeBlendImpl svgFeBlend = new SvgFeBlendImpl();
-		return svgFeBlend;
+	public SvgFeBlendElement createSvgFeBlendElement() {
+		SvgFeBlendElementImpl svgFeBlendElement = new SvgFeBlendElementImpl();
+		return svgFeBlendElement;
 	}
 
 	/**
@@ -960,9 +973,9 @@ public class SvgFactoryImpl extends EFactoryImpl implements SvgFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public SvgFeColorMatrix createSvgFeColorMatrix() {
-		SvgFeColorMatrixImpl svgFeColorMatrix = new SvgFeColorMatrixImpl();
-		return svgFeColorMatrix;
+	public SvgFeColorMatrixElement createSvgFeColorMatrixElement() {
+		SvgFeColorMatrixElementImpl svgFeColorMatrixElement = new SvgFeColorMatrixElementImpl();
+		return svgFeColorMatrixElement;
 	}
 
 	/**
@@ -970,9 +983,9 @@ public class SvgFactoryImpl extends EFactoryImpl implements SvgFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public SvgFeComponentTransfer createSvgFeComponentTransfer() {
-		SvgFeComponentTransferImpl svgFeComponentTransfer = new SvgFeComponentTransferImpl();
-		return svgFeComponentTransfer;
+	public SvgFeComponentTransferElement createSvgFeComponentTransferElement() {
+		SvgFeComponentTransferElementImpl svgFeComponentTransferElement = new SvgFeComponentTransferElementImpl();
+		return svgFeComponentTransferElement;
 	}
 
 	/**
@@ -980,9 +993,9 @@ public class SvgFactoryImpl extends EFactoryImpl implements SvgFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public SvgFeFuncR createSvgFeFuncR() {
-		SvgFeFuncRImpl svgFeFuncR = new SvgFeFuncRImpl();
-		return svgFeFuncR;
+	public SvgFeFuncRElement createSvgFeFuncRElement() {
+		SvgFeFuncRElementImpl svgFeFuncRElement = new SvgFeFuncRElementImpl();
+		return svgFeFuncRElement;
 	}
 
 	/**
@@ -990,9 +1003,9 @@ public class SvgFactoryImpl extends EFactoryImpl implements SvgFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public SvgFeFuncG createSvgFeFuncG() {
-		SvgFeFuncGImpl svgFeFuncG = new SvgFeFuncGImpl();
-		return svgFeFuncG;
+	public SvgFeFuncGElement createSvgFeFuncGElement() {
+		SvgFeFuncGElementImpl svgFeFuncGElement = new SvgFeFuncGElementImpl();
+		return svgFeFuncGElement;
 	}
 
 	/**
@@ -1000,9 +1013,9 @@ public class SvgFactoryImpl extends EFactoryImpl implements SvgFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public SvgFeFuncB createSvgFeFuncB() {
-		SvgFeFuncBImpl svgFeFuncB = new SvgFeFuncBImpl();
-		return svgFeFuncB;
+	public SvgFeFuncBElement createSvgFeFuncBElement() {
+		SvgFeFuncBElementImpl svgFeFuncBElement = new SvgFeFuncBElementImpl();
+		return svgFeFuncBElement;
 	}
 
 	/**
@@ -1010,9 +1023,9 @@ public class SvgFactoryImpl extends EFactoryImpl implements SvgFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public SvgFeFuncA createSvgFeFuncA() {
-		SvgFeFuncAImpl svgFeFuncA = new SvgFeFuncAImpl();
-		return svgFeFuncA;
+	public SvgFeFuncAElement createSvgFeFuncAElement() {
+		SvgFeFuncAElementImpl svgFeFuncAElement = new SvgFeFuncAElementImpl();
+		return svgFeFuncAElement;
 	}
 
 	/**
@@ -1020,9 +1033,9 @@ public class SvgFactoryImpl extends EFactoryImpl implements SvgFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public SvgFeComposite createSvgFeComposite() {
-		SvgFeCompositeImpl svgFeComposite = new SvgFeCompositeImpl();
-		return svgFeComposite;
+	public SvgFeCompositeElement createSvgFeCompositeElement() {
+		SvgFeCompositeElementImpl svgFeCompositeElement = new SvgFeCompositeElementImpl();
+		return svgFeCompositeElement;
 	}
 
 	/**
@@ -1030,9 +1043,9 @@ public class SvgFactoryImpl extends EFactoryImpl implements SvgFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public SvgFeConvolveMatrix createSvgFeConvolveMatrix() {
-		SvgFeConvolveMatrixImpl svgFeConvolveMatrix = new SvgFeConvolveMatrixImpl();
-		return svgFeConvolveMatrix;
+	public SvgFeConvolveMatrixElement createSvgFeConvolveMatrixElement() {
+		SvgFeConvolveMatrixElementImpl svgFeConvolveMatrixElement = new SvgFeConvolveMatrixElementImpl();
+		return svgFeConvolveMatrixElement;
 	}
 
 	/**
@@ -1040,9 +1053,9 @@ public class SvgFactoryImpl extends EFactoryImpl implements SvgFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public SvgFeDiffuseLighting createSvgFeDiffuseLighting() {
-		SvgFeDiffuseLightingImpl svgFeDiffuseLighting = new SvgFeDiffuseLightingImpl();
-		return svgFeDiffuseLighting;
+	public SvgFeDiffuseLightingElement createSvgFeDiffuseLightingElement() {
+		SvgFeDiffuseLightingElementImpl svgFeDiffuseLightingElement = new SvgFeDiffuseLightingElementImpl();
+		return svgFeDiffuseLightingElement;
 	}
 
 	/**
@@ -1050,9 +1063,9 @@ public class SvgFactoryImpl extends EFactoryImpl implements SvgFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public SvgFeDisplacementMap createSvgFeDisplacementMap() {
-		SvgFeDisplacementMapImpl svgFeDisplacementMap = new SvgFeDisplacementMapImpl();
-		return svgFeDisplacementMap;
+	public SvgFeDisplacementMapElement createSvgFeDisplacementMapElement() {
+		SvgFeDisplacementMapElementImpl svgFeDisplacementMapElement = new SvgFeDisplacementMapElementImpl();
+		return svgFeDisplacementMapElement;
 	}
 
 	/**
@@ -1060,9 +1073,9 @@ public class SvgFactoryImpl extends EFactoryImpl implements SvgFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public SvgFeFlood createSvgFeFlood() {
-		SvgFeFloodImpl svgFeFlood = new SvgFeFloodImpl();
-		return svgFeFlood;
+	public SvgFeFloodElement createSvgFeFloodElement() {
+		SvgFeFloodElementImpl svgFeFloodElement = new SvgFeFloodElementImpl();
+		return svgFeFloodElement;
 	}
 
 	/**
@@ -1070,9 +1083,9 @@ public class SvgFactoryImpl extends EFactoryImpl implements SvgFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public SvgFeGaussianBlur createSvgFeGaussianBlur() {
-		SvgFeGaussianBlurImpl svgFeGaussianBlur = new SvgFeGaussianBlurImpl();
-		return svgFeGaussianBlur;
+	public SvgFeGaussianBlurElement createSvgFeGaussianBlurElement() {
+		SvgFeGaussianBlurElementImpl svgFeGaussianBlurElement = new SvgFeGaussianBlurElementImpl();
+		return svgFeGaussianBlurElement;
 	}
 
 	/**
@@ -1080,9 +1093,9 @@ public class SvgFactoryImpl extends EFactoryImpl implements SvgFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public SvgFeImage createSvgFeImage() {
-		SvgFeImageImpl svgFeImage = new SvgFeImageImpl();
-		return svgFeImage;
+	public SvgFeImageElement createSvgFeImageElement() {
+		SvgFeImageElementImpl svgFeImageElement = new SvgFeImageElementImpl();
+		return svgFeImageElement;
 	}
 
 	/**
@@ -1090,9 +1103,9 @@ public class SvgFactoryImpl extends EFactoryImpl implements SvgFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public SvgFeMerge createSvgFeMerge() {
-		SvgFeMergeImpl svgFeMerge = new SvgFeMergeImpl();
-		return svgFeMerge;
+	public SvgFeMergeElement createSvgFeMergeElement() {
+		SvgFeMergeElementImpl svgFeMergeElement = new SvgFeMergeElementImpl();
+		return svgFeMergeElement;
 	}
 
 	/**
@@ -1100,9 +1113,9 @@ public class SvgFactoryImpl extends EFactoryImpl implements SvgFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public SvgFeMergeNode createSvgFeMergeNode() {
-		SvgFeMergeNodeImpl svgFeMergeNode = new SvgFeMergeNodeImpl();
-		return svgFeMergeNode;
+	public SvgFeMergeNodeElement createSvgFeMergeNodeElement() {
+		SvgFeMergeNodeElementImpl svgFeMergeNodeElement = new SvgFeMergeNodeElementImpl();
+		return svgFeMergeNodeElement;
 	}
 
 	/**
@@ -1110,9 +1123,9 @@ public class SvgFactoryImpl extends EFactoryImpl implements SvgFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public SvgFeMorphology createSvgFeMorphology() {
-		SvgFeMorphologyImpl svgFeMorphology = new SvgFeMorphologyImpl();
-		return svgFeMorphology;
+	public SvgFeMorphologyElement createSvgFeMorphologyElement() {
+		SvgFeMorphologyElementImpl svgFeMorphologyElement = new SvgFeMorphologyElementImpl();
+		return svgFeMorphologyElement;
 	}
 
 	/**
@@ -1120,9 +1133,9 @@ public class SvgFactoryImpl extends EFactoryImpl implements SvgFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public SvgFeOffset createSvgFeOffset() {
-		SvgFeOffsetImpl svgFeOffset = new SvgFeOffsetImpl();
-		return svgFeOffset;
+	public SvgFeOffsetElement createSvgFeOffsetElement() {
+		SvgFeOffsetElementImpl svgFeOffsetElement = new SvgFeOffsetElementImpl();
+		return svgFeOffsetElement;
 	}
 
 	/**
@@ -1130,9 +1143,9 @@ public class SvgFactoryImpl extends EFactoryImpl implements SvgFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public SvgFeSpecularLighting createSvgFeSpecularLighting() {
-		SvgFeSpecularLightingImpl svgFeSpecularLighting = new SvgFeSpecularLightingImpl();
-		return svgFeSpecularLighting;
+	public SvgFeSpecularLightingElement createSvgFeSpecularLightingElement() {
+		SvgFeSpecularLightingElementImpl svgFeSpecularLightingElement = new SvgFeSpecularLightingElementImpl();
+		return svgFeSpecularLightingElement;
 	}
 
 	/**
@@ -1140,9 +1153,9 @@ public class SvgFactoryImpl extends EFactoryImpl implements SvgFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public SvgFeTile createSvgFeTile() {
-		SvgFeTileImpl svgFeTile = new SvgFeTileImpl();
-		return svgFeTile;
+	public SvgFeTileElement createSvgFeTileElement() {
+		SvgFeTileElementImpl svgFeTileElement = new SvgFeTileElementImpl();
+		return svgFeTileElement;
 	}
 
 	/**
@@ -1150,9 +1163,29 @@ public class SvgFactoryImpl extends EFactoryImpl implements SvgFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public SvgFeTurbulence createSvgFeTurbulence() {
-		SvgFeTurbulenceImpl svgFeTurbulence = new SvgFeTurbulenceImpl();
-		return svgFeTurbulence;
+	public SvgFeTurbulenceElement createSvgFeTurbulenceElement() {
+		SvgFeTurbulenceElementImpl svgFeTurbulenceElement = new SvgFeTurbulenceElementImpl();
+		return svgFeTurbulenceElement;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public SvgAnimateElement createSvgAnimateElement() {
+		SvgAnimateElementImpl svgAnimateElement = new SvgAnimateElementImpl();
+		return svgAnimateElement;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public SvgMetadataElement createSvgMetadataElement() {
+		SvgMetadataElementImpl svgMetadataElement = new SvgMetadataElementImpl();
+		return svgMetadataElement;
 	}
 
 	/**

@@ -1268,7 +1268,7 @@ public interface PresentationAttributes extends EObject {
 
 	/**
 	 * Returns the value of the '<em><b>Stop color</b></em>' attribute.
-	 * The default value is <code>"\"black\""</code>.
+	 * The default value is <code>"black"</code>.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Stop color</em>' attribute isn't clear,
@@ -1278,7 +1278,7 @@ public interface PresentationAttributes extends EObject {
 	 * @return the value of the '<em>Stop color</em>' attribute.
 	 * @see #setStop_color(String)
 	 * @see at.bestsolution.efxclipse.formats.svg.svg.SvgPackage#getPresentationAttributes_Stop_color()
-	 * @model default="\"black\"" dataType="at.bestsolution.efxclipse.formats.svg.svg.Stop_color"
+	 * @model default="black" dataType="at.bestsolution.efxclipse.formats.svg.svg.Stop_color"
 	 * @generated
 	 */
 	String getStop_color();
@@ -1295,7 +1295,7 @@ public interface PresentationAttributes extends EObject {
 
 	/**
 	 * Returns the value of the '<em><b>Stop opacity</b></em>' attribute.
-	 * The default value is <code>"\"1\""</code>.
+	 * The default value is <code>"1"</code>.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Stop opacity</em>' attribute isn't clear,
@@ -1305,7 +1305,7 @@ public interface PresentationAttributes extends EObject {
 	 * @return the value of the '<em>Stop opacity</em>' attribute.
 	 * @see #setStop_opacity(String)
 	 * @see at.bestsolution.efxclipse.formats.svg.svg.SvgPackage#getPresentationAttributes_Stop_opacity()
-	 * @model default="\"1\"" dataType="at.bestsolution.efxclipse.formats.svg.svg.Stop_opacity"
+	 * @model default="1" dataType="at.bestsolution.efxclipse.formats.svg.svg.Stop_opacity"
 	 * @generated
 	 */
 	String getStop_opacity();

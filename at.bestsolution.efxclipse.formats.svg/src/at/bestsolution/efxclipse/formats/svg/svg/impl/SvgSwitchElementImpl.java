@@ -1348,7 +1348,7 @@ public class SvgSwitchElementImpl extends EObjectImpl implements SvgSwitchElemen
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String STOP_COLOR_EDEFAULT = "\"black\"";
+	protected static final String STOP_COLOR_EDEFAULT = "black";
 
 	/**
 	 * The cached value of the '{@link #getStop_color() <em>Stop color</em>}' attribute.
@@ -1368,7 +1368,7 @@ public class SvgSwitchElementImpl extends EObjectImpl implements SvgSwitchElemen
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String STOP_OPACITY_EDEFAULT = "\"1\"";
+	protected static final String STOP_OPACITY_EDEFAULT = "1";
 
 	/**
 	 * The cached value of the '{@link #getStop_opacity() <em>Stop opacity</em>}' attribute.

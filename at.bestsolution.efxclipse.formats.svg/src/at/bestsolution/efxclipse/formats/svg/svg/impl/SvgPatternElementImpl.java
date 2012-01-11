@@ -138,6 +138,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link at.bestsolution.efxclipse.formats.svg.svg.impl.SvgPatternElementImpl#getXlink__role <em>Xlink role</em>}</li>
  *   <li>{@link at.bestsolution.efxclipse.formats.svg.svg.impl.SvgPatternElementImpl#getXlink__arcrole <em>Xlink arcrole</em>}</li>
  *   <li>{@link at.bestsolution.efxclipse.formats.svg.svg.impl.SvgPatternElementImpl#getXlink__title <em>Xlink title</em>}</li>
+ *   <li>{@link at.bestsolution.efxclipse.formats.svg.svg.impl.SvgPatternElementImpl#getResolvedInstance <em>Resolved Instance</em>}</li>
  *   <li>{@link at.bestsolution.efxclipse.formats.svg.svg.impl.SvgPatternElementImpl#getClass_ <em>Class</em>}</li>
  *   <li>{@link at.bestsolution.efxclipse.formats.svg.svg.impl.SvgPatternElementImpl#getStyle <em>Style</em>}</li>
  *   <li>{@link at.bestsolution.efxclipse.formats.svg.svg.impl.SvgPatternElementImpl#getExternalResourcesRequired <em>External Resources Required</em>}</li>
@@ -1154,7 +1155,7 @@ public class SvgPatternElementImpl extends EObjectImpl implements SvgPatternElem
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String STOP_COLOR_EDEFAULT = "\"black\"";
+	protected static final String STOP_COLOR_EDEFAULT = "black";
 
 	/**
 	 * The cached value of the '{@link #getStop_color() <em>Stop color</em>}' attribute.
@@ -1174,7 +1175,7 @@ public class SvgPatternElementImpl extends EObjectImpl implements SvgPatternElem
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String STOP_OPACITY_EDEFAULT = "\"1\"";
+	protected static final String STOP_OPACITY_EDEFAULT = "1";
 
 	/**
 	 * The cached value of the '{@link #getStop_opacity() <em>Stop opacity</em>}' attribute.
@@ -1625,6 +1626,16 @@ public class SvgPatternElementImpl extends EObjectImpl implements SvgPatternElem
 	 * @ordered
 	 */
 	protected String xlink__title = XLINK_TITLE_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getResolvedInstance() <em>Resolved Instance</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getResolvedInstance()
+	 * @generated
+	 * @ordered
+	 */
+	protected SvgElement resolvedInstance;
 
 	/**
 	 * The default value of the '{@link #getClass_() <em>Class</em>}' attribute.
@@ -3435,6 +3446,44 @@ public class SvgPatternElementImpl extends EObjectImpl implements SvgPatternElem
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public SvgElement getResolvedInstance() {
+		if (resolvedInstance != null && resolvedInstance.eIsProxy()) {
+			InternalEObject oldResolvedInstance = (InternalEObject)resolvedInstance;
+			resolvedInstance = (SvgElement)eResolveProxy(oldResolvedInstance);
+			if (resolvedInstance != oldResolvedInstance) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, SvgPackage.SVG_PATTERN_ELEMENT__RESOLVED_INSTANCE, oldResolvedInstance, resolvedInstance));
+			}
+		}
+		return resolvedInstance;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public SvgElement basicGetResolvedInstance() {
+		return resolvedInstance;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setResolvedInstance(SvgElement newResolvedInstance) {
+		SvgElement oldResolvedInstance = resolvedInstance;
+		resolvedInstance = newResolvedInstance;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, SvgPackage.SVG_PATTERN_ELEMENT__RESOLVED_INSTANCE, oldResolvedInstance, resolvedInstance));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public String getClass_() {
 		return class_;
 	}
@@ -3852,6 +3901,9 @@ public class SvgPatternElementImpl extends EObjectImpl implements SvgPatternElem
 				return getXlink__arcrole();
 			case SvgPackage.SVG_PATTERN_ELEMENT__XLINK_TITLE:
 				return getXlink__title();
+			case SvgPackage.SVG_PATTERN_ELEMENT__RESOLVED_INSTANCE:
+				if (resolve) return getResolvedInstance();
+				return basicGetResolvedInstance();
 			case SvgPackage.SVG_PATTERN_ELEMENT__CLASS:
 				return getClass_();
 			case SvgPackage.SVG_PATTERN_ELEMENT__STYLE:
@@ -4111,6 +4163,9 @@ public class SvgPatternElementImpl extends EObjectImpl implements SvgPatternElem
 				return;
 			case SvgPackage.SVG_PATTERN_ELEMENT__XLINK_TITLE:
 				setXlink__title((String)newValue);
+				return;
+			case SvgPackage.SVG_PATTERN_ELEMENT__RESOLVED_INSTANCE:
+				setResolvedInstance((SvgElement)newValue);
 				return;
 			case SvgPackage.SVG_PATTERN_ELEMENT__CLASS:
 				setClass((String)newValue);
@@ -4382,6 +4437,9 @@ public class SvgPatternElementImpl extends EObjectImpl implements SvgPatternElem
 			case SvgPackage.SVG_PATTERN_ELEMENT__XLINK_TITLE:
 				setXlink__title(XLINK_TITLE_EDEFAULT);
 				return;
+			case SvgPackage.SVG_PATTERN_ELEMENT__RESOLVED_INSTANCE:
+				setResolvedInstance((SvgElement)null);
+				return;
 			case SvgPackage.SVG_PATTERN_ELEMENT__CLASS:
 				setClass(CLASS_EDEFAULT);
 				return;
@@ -4578,6 +4636,8 @@ public class SvgPatternElementImpl extends EObjectImpl implements SvgPatternElem
 				return XLINK_ARCROLE_EDEFAULT == null ? xlink__arcrole != null : !XLINK_ARCROLE_EDEFAULT.equals(xlink__arcrole);
 			case SvgPackage.SVG_PATTERN_ELEMENT__XLINK_TITLE:
 				return XLINK_TITLE_EDEFAULT == null ? xlink__title != null : !XLINK_TITLE_EDEFAULT.equals(xlink__title);
+			case SvgPackage.SVG_PATTERN_ELEMENT__RESOLVED_INSTANCE:
+				return resolvedInstance != null;
 			case SvgPackage.SVG_PATTERN_ELEMENT__CLASS:
 				return CLASS_EDEFAULT == null ? class_ != null : !CLASS_EDEFAULT.equals(class_);
 			case SvgPackage.SVG_PATTERN_ELEMENT__STYLE:
@@ -4714,6 +4774,7 @@ public class SvgPatternElementImpl extends EObjectImpl implements SvgPatternElem
 				case SvgPackage.SVG_PATTERN_ELEMENT__XLINK_ROLE: return SvgPackage.XLINK_ATTRIBUTES__XLINK_ROLE;
 				case SvgPackage.SVG_PATTERN_ELEMENT__XLINK_ARCROLE: return SvgPackage.XLINK_ATTRIBUTES__XLINK_ARCROLE;
 				case SvgPackage.SVG_PATTERN_ELEMENT__XLINK_TITLE: return SvgPackage.XLINK_ATTRIBUTES__XLINK_TITLE;
+				case SvgPackage.SVG_PATTERN_ELEMENT__RESOLVED_INSTANCE: return SvgPackage.XLINK_ATTRIBUTES__RESOLVED_INSTANCE;
 				default: return -1;
 			}
 		}
@@ -4828,6 +4889,7 @@ public class SvgPatternElementImpl extends EObjectImpl implements SvgPatternElem
 				case SvgPackage.XLINK_ATTRIBUTES__XLINK_ROLE: return SvgPackage.SVG_PATTERN_ELEMENT__XLINK_ROLE;
 				case SvgPackage.XLINK_ATTRIBUTES__XLINK_ARCROLE: return SvgPackage.SVG_PATTERN_ELEMENT__XLINK_ARCROLE;
 				case SvgPackage.XLINK_ATTRIBUTES__XLINK_TITLE: return SvgPackage.SVG_PATTERN_ELEMENT__XLINK_TITLE;
+				case SvgPackage.XLINK_ATTRIBUTES__RESOLVED_INSTANCE: return SvgPackage.SVG_PATTERN_ELEMENT__RESOLVED_INSTANCE;
 				default: return -1;
 			}
 		}

@@ -36,6 +36,7 @@
       interface="true"/>
   <eClassifiers xsi:type="ecore:EClass" name="FilterPrimitiveElement" abstract="true"
       interface="true"/>
+  <eClassifiers xsi:type="ecore:EClass" name="AnimationElement"/>
   <eClassifiers xsi:type="ecore:EClass" name="____ENUMS____"/>
   <eClassifiers xsi:type="ecore:EEnum" name="Alignment_baseline">
     <eLiterals name="auto"/>
@@ -508,9 +509,9 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="shape_rendering" eType="#//Shape_rendering"
         defaultValueLiteral="shape_rendering.auto"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="stop_color" eType="#//Stop_color"
-        defaultValueLiteral="&quot;black&quot;"/>
+        defaultValueLiteral="black"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="stop_opacity" eType="#//Stop_opacity"
-        defaultValueLiteral="&quot;1&quot;"/>
+        defaultValueLiteral="1"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="stroke" eType="#//Stroke"
         defaultValueLiteral="&quot;none&quot;"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="stroke_dasharray" eType="#//Stroke_dasharray"
@@ -550,6 +551,8 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="xlink__role" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="xlink__arcrole" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="xlink__title" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="resolvedInstance" eType="#//SvgElement"
+        transient="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="FilterPrimitiveAttributes" abstract="true"
       interface="true">
@@ -1099,7 +1102,7 @@
       <eTypeArguments eClassifier="#//SvgElement"/>
     </eGenericSuperTypes>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="SvgGradientStopElement">
+  <eClassifiers xsi:type="ecore:EClass" name="SvgStopElement">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="class" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="style" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="offset" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
@@ -1197,7 +1200,7 @@
       <eTypeArguments eClassifier="#//SvgElement"/>
     </eGenericSuperTypes>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="SvgFeDistantLight">
+  <eClassifiers xsi:type="ecore:EClass" name="SvgFeDistantLightElement">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="azimuth" eType="#//Number"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="elevation" eType="#//Number"/>
     <eGenericSuperTypes eClassifier="#//SvgElement"/>
@@ -1206,7 +1209,7 @@
       <eTypeArguments eClassifier="#//SvgElement"/>
     </eGenericSuperTypes>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="SvgFePointLight">
+  <eClassifiers xsi:type="ecore:EClass" name="SvgFePointLightElement">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="x" eType="#//Number"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="y" eType="#//Number"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="z" eType="#//Number"/>
@@ -1217,7 +1220,7 @@
       <eTypeArguments eClassifier="#//SvgElement"/>
     </eGenericSuperTypes>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="SvgFeSpotLight">
+  <eClassifiers xsi:type="ecore:EClass" name="SvgFeSpotLightElement">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="x" eType="#//Number"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="y" eType="#//Number"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="z" eType="#//Number"/>
@@ -1233,7 +1236,7 @@
       <eTypeArguments eClassifier="#//SvgElement"/>
     </eGenericSuperTypes>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="SvgFeBlend">
+  <eClassifiers xsi:type="ecore:EClass" name="SvgFeBlendElement">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="class" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="style" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="in2" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
@@ -1247,7 +1250,7 @@
       <eTypeArguments eClassifier="#//SvgElement"/>
     </eGenericSuperTypes>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="SvgFeColorMatrix">
+  <eClassifiers xsi:type="ecore:EClass" name="SvgFeColorMatrixElement">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="class" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="style" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="#//ColorMatrixType"
@@ -1261,7 +1264,7 @@
       <eTypeArguments eClassifier="#//SvgElement"/>
     </eGenericSuperTypes>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="SvgFeComponentTransfer">
+  <eClassifiers xsi:type="ecore:EClass" name="SvgFeComponentTransferElement">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="class" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="style" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eGenericSuperTypes eClassifier="#//SvgElement"/>
@@ -1272,7 +1275,7 @@
       <eTypeArguments eClassifier="#//SvgElement"/>
     </eGenericSuperTypes>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="SvgFeFuncR">
+  <eClassifiers xsi:type="ecore:EClass" name="SvgFeFuncRElement">
     <eGenericSuperTypes eClassifier="#//SvgElement"/>
     <eGenericSuperTypes eClassifier="#//CoreAttributes"/>
     <eGenericSuperTypes eClassifier="#//PresentationAttributes"/>
@@ -1280,7 +1283,7 @@
       <eTypeArguments eClassifier="#//SvgElement"/>
     </eGenericSuperTypes>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="SvgFeFuncG">
+  <eClassifiers xsi:type="ecore:EClass" name="SvgFeFuncGElement">
     <eGenericSuperTypes eClassifier="#//SvgElement"/>
     <eGenericSuperTypes eClassifier="#//CoreAttributes"/>
     <eGenericSuperTypes eClassifier="#//PresentationAttributes"/>
@@ -1288,7 +1291,7 @@
       <eTypeArguments eClassifier="#//SvgElement"/>
     </eGenericSuperTypes>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="SvgFeFuncB">
+  <eClassifiers xsi:type="ecore:EClass" name="SvgFeFuncBElement">
     <eGenericSuperTypes eClassifier="#//SvgElement"/>
     <eGenericSuperTypes eClassifier="#//CoreAttributes"/>
     <eGenericSuperTypes eClassifier="#//PresentationAttributes"/>
@@ -1296,7 +1299,7 @@
       <eTypeArguments eClassifier="#//SvgElement"/>
     </eGenericSuperTypes>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="SvgFeFuncA">
+  <eClassifiers xsi:type="ecore:EClass" name="SvgFeFuncAElement">
     <eGenericSuperTypes eClassifier="#//SvgElement"/>
     <eGenericSuperTypes eClassifier="#//CoreAttributes"/>
     <eGenericSuperTypes eClassifier="#//PresentationAttributes"/>
@@ -1304,7 +1307,7 @@
       <eTypeArguments eClassifier="#//SvgElement"/>
     </eGenericSuperTypes>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="SvgFeComposite">
+  <eClassifiers xsi:type="ecore:EClass" name="SvgFeCompositeElement">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="class" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="style" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="in2" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
@@ -1322,7 +1325,7 @@
       <eTypeArguments eClassifier="#//SvgElement"/>
     </eGenericSuperTypes>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="SvgFeConvolveMatrix">
+  <eClassifiers xsi:type="ecore:EClass" name="SvgFeConvolveMatrixElement">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="class" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="style" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="order" eType="#//NumberOptionalNumber"/>
@@ -1343,7 +1346,7 @@
       <eTypeArguments eClassifier="#//SvgElement"/>
     </eGenericSuperTypes>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="SvgFeDiffuseLighting">
+  <eClassifiers xsi:type="ecore:EClass" name="SvgFeDiffuseLightingElement">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="class" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="style" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="surfaceScale" eType="#//Number"/>
@@ -1357,7 +1360,7 @@
       <eTypeArguments eClassifier="#//SvgElement"/>
     </eGenericSuperTypes>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="SvgFeDisplacementMap">
+  <eClassifiers xsi:type="ecore:EClass" name="SvgFeDisplacementMapElement">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="class" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="style" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="in2" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
@@ -1372,7 +1375,7 @@
       <eTypeArguments eClassifier="#//SvgElement"/>
     </eGenericSuperTypes>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="SvgFeFlood">
+  <eClassifiers xsi:type="ecore:EClass" name="SvgFeFloodElement">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="class" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="style" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eGenericSuperTypes eClassifier="#//SvgElement"/>
@@ -1383,7 +1386,7 @@
       <eTypeArguments eClassifier="#//SvgElement"/>
     </eGenericSuperTypes>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="SvgFeGaussianBlur">
+  <eClassifiers xsi:type="ecore:EClass" name="SvgFeGaussianBlurElement">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="class" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="style" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="stdDeviation" eType="#//NumberOptionalNumber"/>
@@ -1395,7 +1398,7 @@
       <eTypeArguments eClassifier="#//SvgElement"/>
     </eGenericSuperTypes>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="SvgFeImage">
+  <eClassifiers xsi:type="ecore:EClass" name="SvgFeImageElement">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="class" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="style" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="externalResourcesRequired"
@@ -1410,7 +1413,7 @@
       <eTypeArguments eClassifier="#//SvgElement"/>
     </eGenericSuperTypes>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="SvgFeMerge">
+  <eClassifiers xsi:type="ecore:EClass" name="SvgFeMergeElement">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="class" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="style" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eGenericSuperTypes eClassifier="#//SvgElement"/>
@@ -1421,14 +1424,14 @@
       <eTypeArguments eClassifier="#//SvgElement"/>
     </eGenericSuperTypes>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="SvgFeMergeNode">
+  <eClassifiers xsi:type="ecore:EClass" name="SvgFeMergeNodeElement">
     <eGenericSuperTypes eClassifier="#//SvgElement"/>
     <eGenericSuperTypes eClassifier="#//CoreAttributes"/>
     <eGenericSuperTypes eClassifier="#//ContentElement">
       <eTypeArguments eClassifier="#//SvgElement"/>
     </eGenericSuperTypes>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="SvgFeMorphology">
+  <eClassifiers xsi:type="ecore:EClass" name="SvgFeMorphologyElement">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="class" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="style" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="operator" eType="#//MorphologyOperator"
@@ -1442,7 +1445,7 @@
       <eTypeArguments eClassifier="#//SvgElement"/>
     </eGenericSuperTypes>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="SvgFeOffset">
+  <eClassifiers xsi:type="ecore:EClass" name="SvgFeOffsetElement">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="class" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="style" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="dx" eType="#//Number"/>
@@ -1455,7 +1458,7 @@
       <eTypeArguments eClassifier="#//SvgElement"/>
     </eGenericSuperTypes>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="SvgFeSpecularLighting">
+  <eClassifiers xsi:type="ecore:EClass" name="SvgFeSpecularLightingElement">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="class" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="style" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="surfaceScale" eType="#//Number"/>
@@ -1470,7 +1473,7 @@
       <eTypeArguments eClassifier="#//SvgElement"/>
     </eGenericSuperTypes>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="SvgFeTile">
+  <eClassifiers xsi:type="ecore:EClass" name="SvgFeTileElement">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="class" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="style" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eGenericSuperTypes eClassifier="#//SvgElement"/>
@@ -1481,7 +1484,7 @@
       <eTypeArguments eClassifier="#//SvgElement"/>
     </eGenericSuperTypes>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="SvgFeTurbulence">
+  <eClassifiers xsi:type="ecore:EClass" name="SvgFeTurbulenceElement">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="class" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="style" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="baseFrequency" eType="#//NumberOptionalNumber"/>
@@ -1501,4 +1504,6 @@
       <eTypeArguments eClassifier="#//SvgElement"/>
     </eGenericSuperTypes>
   </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SvgAnimateElement" eSuperTypes="#//SvgElement"/>
+  <eClassifiers xsi:type="ecore:EClass" name="SvgMetadataElement" eSuperTypes="#//SvgElement #//CoreAttributes"/>
 </ecore:EPackage>

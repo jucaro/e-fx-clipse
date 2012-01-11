@@ -23,6 +23,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link at.bestsolution.efxclipse.formats.svg.svg.XLinkAttributes#getXlink__role <em>Xlink role</em>}</li>
  *   <li>{@link at.bestsolution.efxclipse.formats.svg.svg.XLinkAttributes#getXlink__arcrole <em>Xlink arcrole</em>}</li>
  *   <li>{@link at.bestsolution.efxclipse.formats.svg.svg.XLinkAttributes#getXlink__title <em>Xlink title</em>}</li>
+ *   <li>{@link at.bestsolution.efxclipse.formats.svg.svg.XLinkAttributes#getResolvedInstance <em>Resolved Instance</em>}</li>
  * </ul>
  * </p>
  *
@@ -212,5 +213,31 @@ public interface XLinkAttributes extends EObject {
 	 * @generated
 	 */
 	void setXlink__title(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Resolved Instance</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Resolved Instance</em>' reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Resolved Instance</em>' reference.
+	 * @see #setResolvedInstance(SvgElement)
+	 * @see at.bestsolution.efxclipse.formats.svg.svg.SvgPackage#getXLinkAttributes_ResolvedInstance()
+	 * @model transient="true"
+	 * @generated
+	 */
+	SvgElement getResolvedInstance();
+
+	/**
+	 * Sets the value of the '{@link at.bestsolution.efxclipse.formats.svg.svg.XLinkAttributes#getResolvedInstance <em>Resolved Instance</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Resolved Instance</em>' reference.
+	 * @see #getResolvedInstance()
+	 * @generated
+	 */
+	void setResolvedInstance(SvgElement value);
 
 } // XLinkAttributes

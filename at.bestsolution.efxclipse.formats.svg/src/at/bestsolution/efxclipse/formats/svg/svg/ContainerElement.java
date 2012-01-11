@@ -6,9 +6,6 @@
  */
 package at.bestsolution.efxclipse.formats.svg.svg;
 
-import org.eclipse.emf.common.util.EList;
-
-import org.eclipse.emf.ecore.EObject;
 
 /**
  * <!-- begin-user-doc -->
@@ -21,5 +18,4 @@ import org.eclipse.emf.ecore.EObject;
  * @generated
  */
 public interface ContainerElement<T extends SvgElement> extends ContentElement<T> {
-
 } // ContainerElement

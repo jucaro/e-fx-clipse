@@ -43,15 +43,18 @@ import at.bestsolution.efxclipse.formats.svg.svg.Visibility;
 import at.bestsolution.efxclipse.formats.svg.svg.Writing_mode;
 
 import java.util.Collection;
+
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.common.notify.NotificationChain;
-import org.eclipse.emf.common.util.EList;
-import org.eclipse.emf.ecore.EClass;
 
+import org.eclipse.emf.common.util.EList;
+
+import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
+
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.EObjectImpl;
+
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
@@ -1343,7 +1346,7 @@ public class SvgRectElementImpl extends EObjectImpl implements SvgRectElement {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String STOP_COLOR_EDEFAULT = "\"black\"";
+	protected static final String STOP_COLOR_EDEFAULT = "black";
 
 	/**
 	 * The cached value of the '{@link #getStop_color() <em>Stop color</em>}' attribute.
@@ -1363,7 +1366,7 @@ public class SvgRectElementImpl extends EObjectImpl implements SvgRectElement {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String STOP_OPACITY_EDEFAULT = "\"1\"";
+	protected static final String STOP_OPACITY_EDEFAULT = "1";
 
 	/**
 	 * The cached value of the '{@link #getStop_opacity() <em>Stop opacity</em>}' attribute.

@@ -7,6 +7,7 @@
 package at.bestsolution.efxclipse.formats.svg.svg.impl;
 
 import at.bestsolution.efxclipse.formats.svg.svg.Alignment_baseline;
+import at.bestsolution.efxclipse.formats.svg.svg.AnimationElement;
 import at.bestsolution.efxclipse.formats.svg.svg.BasicShapeElement;
 import at.bestsolution.efxclipse.formats.svg.svg.BlendMode;
 import at.bestsolution.efxclipse.formats.svg.svg.ChannelSelector;
@@ -64,6 +65,7 @@ import at.bestsolution.efxclipse.formats.svg.svg.SvgAltGlyphDefElement;
 import at.bestsolution.efxclipse.formats.svg.svg.SvgAltGlyphElement;
 import at.bestsolution.efxclipse.formats.svg.svg.SvgAltGlyphItemElement;
 import at.bestsolution.efxclipse.formats.svg.svg.SvgAltGlyphRefElement;
+import at.bestsolution.efxclipse.formats.svg.svg.SvgAnimateElement;
 import at.bestsolution.efxclipse.formats.svg.svg.SvgCircleElement;
 import at.bestsolution.efxclipse.formats.svg.svg.SvgClipPathElement;
 import at.bestsolution.efxclipse.formats.svg.svg.SvgColorProfileElement;
@@ -72,38 +74,38 @@ import at.bestsolution.efxclipse.formats.svg.svg.SvgDescElement;
 import at.bestsolution.efxclipse.formats.svg.svg.SvgElement;
 import at.bestsolution.efxclipse.formats.svg.svg.SvgEllipseElement;
 import at.bestsolution.efxclipse.formats.svg.svg.SvgFactory;
-import at.bestsolution.efxclipse.formats.svg.svg.SvgFeBlend;
-import at.bestsolution.efxclipse.formats.svg.svg.SvgFeColorMatrix;
-import at.bestsolution.efxclipse.formats.svg.svg.SvgFeComponentTransfer;
-import at.bestsolution.efxclipse.formats.svg.svg.SvgFeComposite;
-import at.bestsolution.efxclipse.formats.svg.svg.SvgFeConvolveMatrix;
-import at.bestsolution.efxclipse.formats.svg.svg.SvgFeDiffuseLighting;
-import at.bestsolution.efxclipse.formats.svg.svg.SvgFeDisplacementMap;
-import at.bestsolution.efxclipse.formats.svg.svg.SvgFeDistantLight;
-import at.bestsolution.efxclipse.formats.svg.svg.SvgFeFlood;
-import at.bestsolution.efxclipse.formats.svg.svg.SvgFeFuncA;
-import at.bestsolution.efxclipse.formats.svg.svg.SvgFeFuncB;
-import at.bestsolution.efxclipse.formats.svg.svg.SvgFeFuncG;
-import at.bestsolution.efxclipse.formats.svg.svg.SvgFeFuncR;
-import at.bestsolution.efxclipse.formats.svg.svg.SvgFeGaussianBlur;
-import at.bestsolution.efxclipse.formats.svg.svg.SvgFeImage;
-import at.bestsolution.efxclipse.formats.svg.svg.SvgFeMerge;
-import at.bestsolution.efxclipse.formats.svg.svg.SvgFeMergeNode;
-import at.bestsolution.efxclipse.formats.svg.svg.SvgFeMorphology;
-import at.bestsolution.efxclipse.formats.svg.svg.SvgFeOffset;
-import at.bestsolution.efxclipse.formats.svg.svg.SvgFePointLight;
-import at.bestsolution.efxclipse.formats.svg.svg.SvgFeSpecularLighting;
-import at.bestsolution.efxclipse.formats.svg.svg.SvgFeSpotLight;
-import at.bestsolution.efxclipse.formats.svg.svg.SvgFeTile;
-import at.bestsolution.efxclipse.formats.svg.svg.SvgFeTurbulence;
+import at.bestsolution.efxclipse.formats.svg.svg.SvgFeBlendElement;
+import at.bestsolution.efxclipse.formats.svg.svg.SvgFeColorMatrixElement;
+import at.bestsolution.efxclipse.formats.svg.svg.SvgFeComponentTransferElement;
+import at.bestsolution.efxclipse.formats.svg.svg.SvgFeCompositeElement;
+import at.bestsolution.efxclipse.formats.svg.svg.SvgFeConvolveMatrixElement;
+import at.bestsolution.efxclipse.formats.svg.svg.SvgFeDiffuseLightingElement;
+import at.bestsolution.efxclipse.formats.svg.svg.SvgFeDisplacementMapElement;
+import at.bestsolution.efxclipse.formats.svg.svg.SvgFeDistantLightElement;
+import at.bestsolution.efxclipse.formats.svg.svg.SvgFeFloodElement;
+import at.bestsolution.efxclipse.formats.svg.svg.SvgFeFuncAElement;
+import at.bestsolution.efxclipse.formats.svg.svg.SvgFeFuncBElement;
+import at.bestsolution.efxclipse.formats.svg.svg.SvgFeFuncGElement;
+import at.bestsolution.efxclipse.formats.svg.svg.SvgFeFuncRElement;
+import at.bestsolution.efxclipse.formats.svg.svg.SvgFeGaussianBlurElement;
+import at.bestsolution.efxclipse.formats.svg.svg.SvgFeImageElement;
+import at.bestsolution.efxclipse.formats.svg.svg.SvgFeMergeElement;
+import at.bestsolution.efxclipse.formats.svg.svg.SvgFeMergeNodeElement;
+import at.bestsolution.efxclipse.formats.svg.svg.SvgFeMorphologyElement;
+import at.bestsolution.efxclipse.formats.svg.svg.SvgFeOffsetElement;
+import at.bestsolution.efxclipse.formats.svg.svg.SvgFePointLightElement;
+import at.bestsolution.efxclipse.formats.svg.svg.SvgFeSpecularLightingElement;
+import at.bestsolution.efxclipse.formats.svg.svg.SvgFeSpotLightElement;
+import at.bestsolution.efxclipse.formats.svg.svg.SvgFeTileElement;
+import at.bestsolution.efxclipse.formats.svg.svg.SvgFeTurbulenceElement;
 import at.bestsolution.efxclipse.formats.svg.svg.SvgFilterElement;
 import at.bestsolution.efxclipse.formats.svg.svg.SvgGElement;
-import at.bestsolution.efxclipse.formats.svg.svg.SvgGradientStopElement;
 import at.bestsolution.efxclipse.formats.svg.svg.SvgImageElement;
 import at.bestsolution.efxclipse.formats.svg.svg.SvgLineElement;
 import at.bestsolution.efxclipse.formats.svg.svg.SvgLinearGradientElement;
 import at.bestsolution.efxclipse.formats.svg.svg.SvgMarkerElement;
 import at.bestsolution.efxclipse.formats.svg.svg.SvgMaskElement;
+import at.bestsolution.efxclipse.formats.svg.svg.SvgMetadataElement;
 import at.bestsolution.efxclipse.formats.svg.svg.SvgPackage;
 import at.bestsolution.efxclipse.formats.svg.svg.SvgPathElement;
 import at.bestsolution.efxclipse.formats.svg.svg.SvgPatternElement;
@@ -111,6 +113,7 @@ import at.bestsolution.efxclipse.formats.svg.svg.SvgPolygonElement;
 import at.bestsolution.efxclipse.formats.svg.svg.SvgPolylineElement;
 import at.bestsolution.efxclipse.formats.svg.svg.SvgRadialGradientElement;
 import at.bestsolution.efxclipse.formats.svg.svg.SvgRectElement;
+import at.bestsolution.efxclipse.formats.svg.svg.SvgStopElement;
 import at.bestsolution.efxclipse.formats.svg.svg.SvgSvgElement;
 import at.bestsolution.efxclipse.formats.svg.svg.SvgSwitchElement;
 import at.bestsolution.efxclipse.formats.svg.svg.SvgSymbolElement;
@@ -134,7 +137,6 @@ import at.bestsolution.efxclipse.formats.svg.svg.____ATTRIBUTES____;
 import at.bestsolution.efxclipse.formats.svg.svg.____DATATYPES____;
 import at.bestsolution.efxclipse.formats.svg.svg.____ELEMENTES____;
 import at.bestsolution.efxclipse.formats.svg.svg.____ENUMS____;
-
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EDataType;
@@ -143,8 +145,9 @@ import org.eclipse.emf.ecore.EGenericType;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.ETypeParameter;
-
 import org.eclipse.emf.ecore.impl.EPackageImpl;
+
+import at.bestsolution.efxclipse.formats.svg.svg.*;
 
 /**
  * <!-- begin-user-doc -->
@@ -250,6 +253,13 @@ public class SvgPackageImpl extends EPackageImpl implements SvgPackage {
 	 * @generated
 	 */
 	private EClass filterPrimitiveElementEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass animationElementEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -529,7 +539,7 @@ public class SvgPackageImpl extends EPackageImpl implements SvgPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass svgGradientStopElementEClass = null;
+	private EClass svgStopElementEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -564,168 +574,182 @@ public class SvgPackageImpl extends EPackageImpl implements SvgPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass svgFeDistantLightEClass = null;
+	private EClass svgFeDistantLightElementEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass svgFePointLightEClass = null;
+	private EClass svgFePointLightElementEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass svgFeSpotLightEClass = null;
+	private EClass svgFeSpotLightElementEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass svgFeBlendEClass = null;
+	private EClass svgFeBlendElementEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass svgFeColorMatrixEClass = null;
+	private EClass svgFeColorMatrixElementEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass svgFeComponentTransferEClass = null;
+	private EClass svgFeComponentTransferElementEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass svgFeFuncREClass = null;
+	private EClass svgFeFuncRElementEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass svgFeFuncGEClass = null;
+	private EClass svgFeFuncGElementEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass svgFeFuncBEClass = null;
+	private EClass svgFeFuncBElementEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass svgFeFuncAEClass = null;
+	private EClass svgFeFuncAElementEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass svgFeCompositeEClass = null;
+	private EClass svgFeCompositeElementEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass svgFeConvolveMatrixEClass = null;
+	private EClass svgFeConvolveMatrixElementEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass svgFeDiffuseLightingEClass = null;
+	private EClass svgFeDiffuseLightingElementEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass svgFeDisplacementMapEClass = null;
+	private EClass svgFeDisplacementMapElementEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass svgFeFloodEClass = null;
+	private EClass svgFeFloodElementEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass svgFeGaussianBlurEClass = null;
+	private EClass svgFeGaussianBlurElementEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass svgFeImageEClass = null;
+	private EClass svgFeImageElementEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass svgFeMergeEClass = null;
+	private EClass svgFeMergeElementEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass svgFeMergeNodeEClass = null;
+	private EClass svgFeMergeNodeElementEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass svgFeMorphologyEClass = null;
+	private EClass svgFeMorphologyElementEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass svgFeOffsetEClass = null;
+	private EClass svgFeOffsetElementEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass svgFeSpecularLightingEClass = null;
+	private EClass svgFeSpecularLightingElementEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass svgFeTileEClass = null;
+	private EClass svgFeTileElementEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass svgFeTurbulenceEClass = null;
+	private EClass svgFeTurbulenceElementEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass svgAnimateElementEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass svgMetadataElementEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -1614,6 +1638,15 @@ public class SvgPackageImpl extends EPackageImpl implements SvgPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EClass getAnimationElement() {
+		return animationElementEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass get____ENUMS____() {
 		return ____ENUMS____EClass;
 	}
@@ -2489,6 +2522,15 @@ public class SvgPackageImpl extends EPackageImpl implements SvgPackage {
 	 */
 	public EAttribute getXLinkAttributes_Xlink__title() {
 		return (EAttribute)xLinkAttributesEClass.getEStructuralFeatures().get(6);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getXLinkAttributes_ResolvedInstance() {
+		return (EReference)xLinkAttributesEClass.getEStructuralFeatures().get(7);
 	}
 
 	/**
@@ -4449,8 +4491,8 @@ public class SvgPackageImpl extends EPackageImpl implements SvgPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getSvgGradientStopElement() {
-		return svgGradientStopElementEClass;
+	public EClass getSvgStopElement() {
+		return svgStopElementEClass;
 	}
 
 	/**
@@ -4458,8 +4500,8 @@ public class SvgPackageImpl extends EPackageImpl implements SvgPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getSvgGradientStopElement_Class() {
-		return (EAttribute)svgGradientStopElementEClass.getEStructuralFeatures().get(0);
+	public EAttribute getSvgStopElement_Class() {
+		return (EAttribute)svgStopElementEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -4467,8 +4509,8 @@ public class SvgPackageImpl extends EPackageImpl implements SvgPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getSvgGradientStopElement_Style() {
-		return (EAttribute)svgGradientStopElementEClass.getEStructuralFeatures().get(1);
+	public EAttribute getSvgStopElement_Style() {
+		return (EAttribute)svgStopElementEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -4476,8 +4518,8 @@ public class SvgPackageImpl extends EPackageImpl implements SvgPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getSvgGradientStopElement_Offset() {
-		return (EAttribute)svgGradientStopElementEClass.getEStructuralFeatures().get(2);
+	public EAttribute getSvgStopElement_Offset() {
+		return (EAttribute)svgStopElementEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -4845,8 +4887,8 @@ public class SvgPackageImpl extends EPackageImpl implements SvgPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getSvgFeDistantLight() {
-		return svgFeDistantLightEClass;
+	public EClass getSvgFeDistantLightElement() {
+		return svgFeDistantLightElementEClass;
 	}
 
 	/**
@@ -4854,8 +4896,8 @@ public class SvgPackageImpl extends EPackageImpl implements SvgPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getSvgFeDistantLight_Azimuth() {
-		return (EAttribute)svgFeDistantLightEClass.getEStructuralFeatures().get(0);
+	public EAttribute getSvgFeDistantLightElement_Azimuth() {
+		return (EAttribute)svgFeDistantLightElementEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -4863,8 +4905,8 @@ public class SvgPackageImpl extends EPackageImpl implements SvgPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getSvgFeDistantLight_Elevation() {
-		return (EAttribute)svgFeDistantLightEClass.getEStructuralFeatures().get(1);
+	public EAttribute getSvgFeDistantLightElement_Elevation() {
+		return (EAttribute)svgFeDistantLightElementEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -4872,8 +4914,8 @@ public class SvgPackageImpl extends EPackageImpl implements SvgPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getSvgFePointLight() {
-		return svgFePointLightEClass;
+	public EClass getSvgFePointLightElement() {
+		return svgFePointLightElementEClass;
 	}
 
 	/**
@@ -4881,8 +4923,8 @@ public class SvgPackageImpl extends EPackageImpl implements SvgPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getSvgFePointLight_X() {
-		return (EAttribute)svgFePointLightEClass.getEStructuralFeatures().get(0);
+	public EAttribute getSvgFePointLightElement_X() {
+		return (EAttribute)svgFePointLightElementEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -4890,8 +4932,8 @@ public class SvgPackageImpl extends EPackageImpl implements SvgPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getSvgFePointLight_Y() {
-		return (EAttribute)svgFePointLightEClass.getEStructuralFeatures().get(1);
+	public EAttribute getSvgFePointLightElement_Y() {
+		return (EAttribute)svgFePointLightElementEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -4899,8 +4941,8 @@ public class SvgPackageImpl extends EPackageImpl implements SvgPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getSvgFePointLight_Z() {
-		return (EAttribute)svgFePointLightEClass.getEStructuralFeatures().get(2);
+	public EAttribute getSvgFePointLightElement_Z() {
+		return (EAttribute)svgFePointLightElementEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -4908,8 +4950,8 @@ public class SvgPackageImpl extends EPackageImpl implements SvgPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getSvgFeSpotLight() {
-		return svgFeSpotLightEClass;
+	public EClass getSvgFeSpotLightElement() {
+		return svgFeSpotLightElementEClass;
 	}
 
 	/**
@@ -4917,8 +4959,8 @@ public class SvgPackageImpl extends EPackageImpl implements SvgPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getSvgFeSpotLight_X() {
-		return (EAttribute)svgFeSpotLightEClass.getEStructuralFeatures().get(0);
+	public EAttribute getSvgFeSpotLightElement_X() {
+		return (EAttribute)svgFeSpotLightElementEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -4926,8 +4968,8 @@ public class SvgPackageImpl extends EPackageImpl implements SvgPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getSvgFeSpotLight_Y() {
-		return (EAttribute)svgFeSpotLightEClass.getEStructuralFeatures().get(1);
+	public EAttribute getSvgFeSpotLightElement_Y() {
+		return (EAttribute)svgFeSpotLightElementEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -4935,8 +4977,8 @@ public class SvgPackageImpl extends EPackageImpl implements SvgPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getSvgFeSpotLight_Z() {
-		return (EAttribute)svgFeSpotLightEClass.getEStructuralFeatures().get(2);
+	public EAttribute getSvgFeSpotLightElement_Z() {
+		return (EAttribute)svgFeSpotLightElementEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -4944,8 +4986,8 @@ public class SvgPackageImpl extends EPackageImpl implements SvgPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getSvgFeSpotLight_PointsAtX() {
-		return (EAttribute)svgFeSpotLightEClass.getEStructuralFeatures().get(3);
+	public EAttribute getSvgFeSpotLightElement_PointsAtX() {
+		return (EAttribute)svgFeSpotLightElementEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -4953,8 +4995,8 @@ public class SvgPackageImpl extends EPackageImpl implements SvgPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getSvgFeSpotLight_PointsAtY() {
-		return (EAttribute)svgFeSpotLightEClass.getEStructuralFeatures().get(4);
+	public EAttribute getSvgFeSpotLightElement_PointsAtY() {
+		return (EAttribute)svgFeSpotLightElementEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
@@ -4962,8 +5004,8 @@ public class SvgPackageImpl extends EPackageImpl implements SvgPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getSvgFeSpotLight_PointsAtZ() {
-		return (EAttribute)svgFeSpotLightEClass.getEStructuralFeatures().get(5);
+	public EAttribute getSvgFeSpotLightElement_PointsAtZ() {
+		return (EAttribute)svgFeSpotLightElementEClass.getEStructuralFeatures().get(5);
 	}
 
 	/**
@@ -4971,8 +5013,8 @@ public class SvgPackageImpl extends EPackageImpl implements SvgPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getSvgFeSpotLight_SpecularExponent() {
-		return (EAttribute)svgFeSpotLightEClass.getEStructuralFeatures().get(6);
+	public EAttribute getSvgFeSpotLightElement_SpecularExponent() {
+		return (EAttribute)svgFeSpotLightElementEClass.getEStructuralFeatures().get(6);
 	}
 
 	/**
@@ -4980,8 +5022,8 @@ public class SvgPackageImpl extends EPackageImpl implements SvgPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getSvgFeSpotLight_LimitingConeAngle() {
-		return (EAttribute)svgFeSpotLightEClass.getEStructuralFeatures().get(7);
+	public EAttribute getSvgFeSpotLightElement_LimitingConeAngle() {
+		return (EAttribute)svgFeSpotLightElementEClass.getEStructuralFeatures().get(7);
 	}
 
 	/**
@@ -4989,8 +5031,8 @@ public class SvgPackageImpl extends EPackageImpl implements SvgPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getSvgFeBlend() {
-		return svgFeBlendEClass;
+	public EClass getSvgFeBlendElement() {
+		return svgFeBlendElementEClass;
 	}
 
 	/**
@@ -4998,8 +5040,8 @@ public class SvgPackageImpl extends EPackageImpl implements SvgPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getSvgFeBlend_Class() {
-		return (EAttribute)svgFeBlendEClass.getEStructuralFeatures().get(0);
+	public EAttribute getSvgFeBlendElement_Class() {
+		return (EAttribute)svgFeBlendElementEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -5007,8 +5049,8 @@ public class SvgPackageImpl extends EPackageImpl implements SvgPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getSvgFeBlend_Style() {
-		return (EAttribute)svgFeBlendEClass.getEStructuralFeatures().get(1);
+	public EAttribute getSvgFeBlendElement_Style() {
+		return (EAttribute)svgFeBlendElementEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -5016,8 +5058,8 @@ public class SvgPackageImpl extends EPackageImpl implements SvgPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getSvgFeBlend_In2() {
-		return (EAttribute)svgFeBlendEClass.getEStructuralFeatures().get(2);
+	public EAttribute getSvgFeBlendElement_In2() {
+		return (EAttribute)svgFeBlendElementEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -5025,8 +5067,8 @@ public class SvgPackageImpl extends EPackageImpl implements SvgPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getSvgFeBlend_Mode() {
-		return (EAttribute)svgFeBlendEClass.getEStructuralFeatures().get(3);
+	public EAttribute getSvgFeBlendElement_Mode() {
+		return (EAttribute)svgFeBlendElementEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -5034,8 +5076,8 @@ public class SvgPackageImpl extends EPackageImpl implements SvgPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getSvgFeColorMatrix() {
-		return svgFeColorMatrixEClass;
+	public EClass getSvgFeColorMatrixElement() {
+		return svgFeColorMatrixElementEClass;
 	}
 
 	/**
@@ -5043,8 +5085,8 @@ public class SvgPackageImpl extends EPackageImpl implements SvgPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getSvgFeColorMatrix_Class() {
-		return (EAttribute)svgFeColorMatrixEClass.getEStructuralFeatures().get(0);
+	public EAttribute getSvgFeColorMatrixElement_Class() {
+		return (EAttribute)svgFeColorMatrixElementEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -5052,8 +5094,8 @@ public class SvgPackageImpl extends EPackageImpl implements SvgPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getSvgFeColorMatrix_Style() {
-		return (EAttribute)svgFeColorMatrixEClass.getEStructuralFeatures().get(1);
+	public EAttribute getSvgFeColorMatrixElement_Style() {
+		return (EAttribute)svgFeColorMatrixElementEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -5061,8 +5103,8 @@ public class SvgPackageImpl extends EPackageImpl implements SvgPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getSvgFeColorMatrix_Type() {
-		return (EAttribute)svgFeColorMatrixEClass.getEStructuralFeatures().get(2);
+	public EAttribute getSvgFeColorMatrixElement_Type() {
+		return (EAttribute)svgFeColorMatrixElementEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -5070,8 +5112,8 @@ public class SvgPackageImpl extends EPackageImpl implements SvgPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getSvgFeColorMatrix_Values() {
-		return (EAttribute)svgFeColorMatrixEClass.getEStructuralFeatures().get(3);
+	public EAttribute getSvgFeColorMatrixElement_Values() {
+		return (EAttribute)svgFeColorMatrixElementEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -5079,8 +5121,8 @@ public class SvgPackageImpl extends EPackageImpl implements SvgPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getSvgFeComponentTransfer() {
-		return svgFeComponentTransferEClass;
+	public EClass getSvgFeComponentTransferElement() {
+		return svgFeComponentTransferElementEClass;
 	}
 
 	/**
@@ -5088,8 +5130,8 @@ public class SvgPackageImpl extends EPackageImpl implements SvgPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getSvgFeComponentTransfer_Class() {
-		return (EAttribute)svgFeComponentTransferEClass.getEStructuralFeatures().get(0);
+	public EAttribute getSvgFeComponentTransferElement_Class() {
+		return (EAttribute)svgFeComponentTransferElementEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -5097,8 +5139,8 @@ public class SvgPackageImpl extends EPackageImpl implements SvgPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getSvgFeComponentTransfer_Style() {
-		return (EAttribute)svgFeComponentTransferEClass.getEStructuralFeatures().get(1);
+	public EAttribute getSvgFeComponentTransferElement_Style() {
+		return (EAttribute)svgFeComponentTransferElementEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -5106,8 +5148,8 @@ public class SvgPackageImpl extends EPackageImpl implements SvgPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getSvgFeFuncR() {
-		return svgFeFuncREClass;
+	public EClass getSvgFeFuncRElement() {
+		return svgFeFuncRElementEClass;
 	}
 
 	/**
@@ -5115,8 +5157,8 @@ public class SvgPackageImpl extends EPackageImpl implements SvgPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getSvgFeFuncG() {
-		return svgFeFuncGEClass;
+	public EClass getSvgFeFuncGElement() {
+		return svgFeFuncGElementEClass;
 	}
 
 	/**
@@ -5124,8 +5166,8 @@ public class SvgPackageImpl extends EPackageImpl implements SvgPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getSvgFeFuncB() {
-		return svgFeFuncBEClass;
+	public EClass getSvgFeFuncBElement() {
+		return svgFeFuncBElementEClass;
 	}
 
 	/**
@@ -5133,8 +5175,8 @@ public class SvgPackageImpl extends EPackageImpl implements SvgPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getSvgFeFuncA() {
-		return svgFeFuncAEClass;
+	public EClass getSvgFeFuncAElement() {
+		return svgFeFuncAElementEClass;
 	}
 
 	/**
@@ -5142,8 +5184,8 @@ public class SvgPackageImpl extends EPackageImpl implements SvgPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getSvgFeComposite() {
-		return svgFeCompositeEClass;
+	public EClass getSvgFeCompositeElement() {
+		return svgFeCompositeElementEClass;
 	}
 
 	/**
@@ -5151,8 +5193,8 @@ public class SvgPackageImpl extends EPackageImpl implements SvgPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getSvgFeComposite_Class() {
-		return (EAttribute)svgFeCompositeEClass.getEStructuralFeatures().get(0);
+	public EAttribute getSvgFeCompositeElement_Class() {
+		return (EAttribute)svgFeCompositeElementEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -5160,8 +5202,8 @@ public class SvgPackageImpl extends EPackageImpl implements SvgPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getSvgFeComposite_Style() {
-		return (EAttribute)svgFeCompositeEClass.getEStructuralFeatures().get(1);
+	public EAttribute getSvgFeCompositeElement_Style() {
+		return (EAttribute)svgFeCompositeElementEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -5169,8 +5211,8 @@ public class SvgPackageImpl extends EPackageImpl implements SvgPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getSvgFeComposite_In2() {
-		return (EAttribute)svgFeCompositeEClass.getEStructuralFeatures().get(2);
+	public EAttribute getSvgFeCompositeElement_In2() {
+		return (EAttribute)svgFeCompositeElementEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -5178,8 +5220,8 @@ public class SvgPackageImpl extends EPackageImpl implements SvgPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getSvgFeComposite_Operator() {
-		return (EAttribute)svgFeCompositeEClass.getEStructuralFeatures().get(3);
+	public EAttribute getSvgFeCompositeElement_Operator() {
+		return (EAttribute)svgFeCompositeElementEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -5187,8 +5229,8 @@ public class SvgPackageImpl extends EPackageImpl implements SvgPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getSvgFeComposite_K1() {
-		return (EAttribute)svgFeCompositeEClass.getEStructuralFeatures().get(4);
+	public EAttribute getSvgFeCompositeElement_K1() {
+		return (EAttribute)svgFeCompositeElementEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
@@ -5196,8 +5238,8 @@ public class SvgPackageImpl extends EPackageImpl implements SvgPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getSvgFeComposite_K2() {
-		return (EAttribute)svgFeCompositeEClass.getEStructuralFeatures().get(5);
+	public EAttribute getSvgFeCompositeElement_K2() {
+		return (EAttribute)svgFeCompositeElementEClass.getEStructuralFeatures().get(5);
 	}
 
 	/**
@@ -5205,8 +5247,8 @@ public class SvgPackageImpl extends EPackageImpl implements SvgPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getSvgFeComposite_K3() {
-		return (EAttribute)svgFeCompositeEClass.getEStructuralFeatures().get(6);
+	public EAttribute getSvgFeCompositeElement_K3() {
+		return (EAttribute)svgFeCompositeElementEClass.getEStructuralFeatures().get(6);
 	}
 
 	/**
@@ -5214,8 +5256,8 @@ public class SvgPackageImpl extends EPackageImpl implements SvgPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getSvgFeComposite_K4() {
-		return (EAttribute)svgFeCompositeEClass.getEStructuralFeatures().get(7);
+	public EAttribute getSvgFeCompositeElement_K4() {
+		return (EAttribute)svgFeCompositeElementEClass.getEStructuralFeatures().get(7);
 	}
 
 	/**
@@ -5223,8 +5265,8 @@ public class SvgPackageImpl extends EPackageImpl implements SvgPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getSvgFeConvolveMatrix() {
-		return svgFeConvolveMatrixEClass;
+	public EClass getSvgFeConvolveMatrixElement() {
+		return svgFeConvolveMatrixElementEClass;
 	}
 
 	/**
@@ -5232,8 +5274,8 @@ public class SvgPackageImpl extends EPackageImpl implements SvgPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getSvgFeConvolveMatrix_Class() {
-		return (EAttribute)svgFeConvolveMatrixEClass.getEStructuralFeatures().get(0);
+	public EAttribute getSvgFeConvolveMatrixElement_Class() {
+		return (EAttribute)svgFeConvolveMatrixElementEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -5241,8 +5283,8 @@ public class SvgPackageImpl extends EPackageImpl implements SvgPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getSvgFeConvolveMatrix_Style() {
-		return (EAttribute)svgFeConvolveMatrixEClass.getEStructuralFeatures().get(1);
+	public EAttribute getSvgFeConvolveMatrixElement_Style() {
+		return (EAttribute)svgFeConvolveMatrixElementEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -5250,8 +5292,8 @@ public class SvgPackageImpl extends EPackageImpl implements SvgPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getSvgFeConvolveMatrix_Order() {
-		return (EAttribute)svgFeConvolveMatrixEClass.getEStructuralFeatures().get(2);
+	public EAttribute getSvgFeConvolveMatrixElement_Order() {
+		return (EAttribute)svgFeConvolveMatrixElementEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -5259,8 +5301,8 @@ public class SvgPackageImpl extends EPackageImpl implements SvgPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getSvgFeConvolveMatrix_KernelMatrix() {
-		return (EAttribute)svgFeConvolveMatrixEClass.getEStructuralFeatures().get(3);
+	public EAttribute getSvgFeConvolveMatrixElement_KernelMatrix() {
+		return (EAttribute)svgFeConvolveMatrixElementEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -5268,8 +5310,8 @@ public class SvgPackageImpl extends EPackageImpl implements SvgPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getSvgFeConvolveMatrix_Divisor() {
-		return (EAttribute)svgFeConvolveMatrixEClass.getEStructuralFeatures().get(4);
+	public EAttribute getSvgFeConvolveMatrixElement_Divisor() {
+		return (EAttribute)svgFeConvolveMatrixElementEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
@@ -5277,8 +5319,8 @@ public class SvgPackageImpl extends EPackageImpl implements SvgPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getSvgFeConvolveMatrix_Bias() {
-		return (EAttribute)svgFeConvolveMatrixEClass.getEStructuralFeatures().get(5);
+	public EAttribute getSvgFeConvolveMatrixElement_Bias() {
+		return (EAttribute)svgFeConvolveMatrixElementEClass.getEStructuralFeatures().get(5);
 	}
 
 	/**
@@ -5286,8 +5328,8 @@ public class SvgPackageImpl extends EPackageImpl implements SvgPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getSvgFeConvolveMatrix_TargetX() {
-		return (EAttribute)svgFeConvolveMatrixEClass.getEStructuralFeatures().get(6);
+	public EAttribute getSvgFeConvolveMatrixElement_TargetX() {
+		return (EAttribute)svgFeConvolveMatrixElementEClass.getEStructuralFeatures().get(6);
 	}
 
 	/**
@@ -5295,8 +5337,8 @@ public class SvgPackageImpl extends EPackageImpl implements SvgPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getSvgFeConvolveMatrix_TargetY() {
-		return (EAttribute)svgFeConvolveMatrixEClass.getEStructuralFeatures().get(7);
+	public EAttribute getSvgFeConvolveMatrixElement_TargetY() {
+		return (EAttribute)svgFeConvolveMatrixElementEClass.getEStructuralFeatures().get(7);
 	}
 
 	/**
@@ -5304,8 +5346,8 @@ public class SvgPackageImpl extends EPackageImpl implements SvgPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getSvgFeConvolveMatrix_EdgeMode() {
-		return (EAttribute)svgFeConvolveMatrixEClass.getEStructuralFeatures().get(8);
+	public EAttribute getSvgFeConvolveMatrixElement_EdgeMode() {
+		return (EAttribute)svgFeConvolveMatrixElementEClass.getEStructuralFeatures().get(8);
 	}
 
 	/**
@@ -5313,8 +5355,8 @@ public class SvgPackageImpl extends EPackageImpl implements SvgPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getSvgFeConvolveMatrix_KernelUnitLength() {
-		return (EAttribute)svgFeConvolveMatrixEClass.getEStructuralFeatures().get(9);
+	public EAttribute getSvgFeConvolveMatrixElement_KernelUnitLength() {
+		return (EAttribute)svgFeConvolveMatrixElementEClass.getEStructuralFeatures().get(9);
 	}
 
 	/**
@@ -5322,8 +5364,8 @@ public class SvgPackageImpl extends EPackageImpl implements SvgPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getSvgFeConvolveMatrix_PreserveAlpha() {
-		return (EAttribute)svgFeConvolveMatrixEClass.getEStructuralFeatures().get(10);
+	public EAttribute getSvgFeConvolveMatrixElement_PreserveAlpha() {
+		return (EAttribute)svgFeConvolveMatrixElementEClass.getEStructuralFeatures().get(10);
 	}
 
 	/**
@@ -5331,8 +5373,8 @@ public class SvgPackageImpl extends EPackageImpl implements SvgPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getSvgFeDiffuseLighting() {
-		return svgFeDiffuseLightingEClass;
+	public EClass getSvgFeDiffuseLightingElement() {
+		return svgFeDiffuseLightingElementEClass;
 	}
 
 	/**
@@ -5340,8 +5382,8 @@ public class SvgPackageImpl extends EPackageImpl implements SvgPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getSvgFeDiffuseLighting_Class() {
-		return (EAttribute)svgFeDiffuseLightingEClass.getEStructuralFeatures().get(0);
+	public EAttribute getSvgFeDiffuseLightingElement_Class() {
+		return (EAttribute)svgFeDiffuseLightingElementEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -5349,8 +5391,8 @@ public class SvgPackageImpl extends EPackageImpl implements SvgPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getSvgFeDiffuseLighting_Style() {
-		return (EAttribute)svgFeDiffuseLightingEClass.getEStructuralFeatures().get(1);
+	public EAttribute getSvgFeDiffuseLightingElement_Style() {
+		return (EAttribute)svgFeDiffuseLightingElementEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -5358,8 +5400,8 @@ public class SvgPackageImpl extends EPackageImpl implements SvgPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getSvgFeDiffuseLighting_SurfaceScale() {
-		return (EAttribute)svgFeDiffuseLightingEClass.getEStructuralFeatures().get(2);
+	public EAttribute getSvgFeDiffuseLightingElement_SurfaceScale() {
+		return (EAttribute)svgFeDiffuseLightingElementEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -5367,8 +5409,8 @@ public class SvgPackageImpl extends EPackageImpl implements SvgPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getSvgFeDiffuseLighting_DiffuseConstant() {
-		return (EAttribute)svgFeDiffuseLightingEClass.getEStructuralFeatures().get(3);
+	public EAttribute getSvgFeDiffuseLightingElement_DiffuseConstant() {
+		return (EAttribute)svgFeDiffuseLightingElementEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -5376,8 +5418,8 @@ public class SvgPackageImpl extends EPackageImpl implements SvgPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getSvgFeDiffuseLighting_KernelUnitLength() {
-		return (EAttribute)svgFeDiffuseLightingEClass.getEStructuralFeatures().get(4);
+	public EAttribute getSvgFeDiffuseLightingElement_KernelUnitLength() {
+		return (EAttribute)svgFeDiffuseLightingElementEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
@@ -5385,8 +5427,8 @@ public class SvgPackageImpl extends EPackageImpl implements SvgPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getSvgFeDisplacementMap() {
-		return svgFeDisplacementMapEClass;
+	public EClass getSvgFeDisplacementMapElement() {
+		return svgFeDisplacementMapElementEClass;
 	}
 
 	/**
@@ -5394,8 +5436,8 @@ public class SvgPackageImpl extends EPackageImpl implements SvgPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getSvgFeDisplacementMap_Class() {
-		return (EAttribute)svgFeDisplacementMapEClass.getEStructuralFeatures().get(0);
+	public EAttribute getSvgFeDisplacementMapElement_Class() {
+		return (EAttribute)svgFeDisplacementMapElementEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -5403,8 +5445,8 @@ public class SvgPackageImpl extends EPackageImpl implements SvgPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getSvgFeDisplacementMap_Style() {
-		return (EAttribute)svgFeDisplacementMapEClass.getEStructuralFeatures().get(1);
+	public EAttribute getSvgFeDisplacementMapElement_Style() {
+		return (EAttribute)svgFeDisplacementMapElementEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -5412,8 +5454,8 @@ public class SvgPackageImpl extends EPackageImpl implements SvgPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getSvgFeDisplacementMap_In2() {
-		return (EAttribute)svgFeDisplacementMapEClass.getEStructuralFeatures().get(2);
+	public EAttribute getSvgFeDisplacementMapElement_In2() {
+		return (EAttribute)svgFeDisplacementMapElementEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -5421,8 +5463,8 @@ public class SvgPackageImpl extends EPackageImpl implements SvgPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getSvgFeDisplacementMap_Scale() {
-		return (EAttribute)svgFeDisplacementMapEClass.getEStructuralFeatures().get(3);
+	public EAttribute getSvgFeDisplacementMapElement_Scale() {
+		return (EAttribute)svgFeDisplacementMapElementEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -5430,8 +5472,8 @@ public class SvgPackageImpl extends EPackageImpl implements SvgPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getSvgFeDisplacementMap_XChannelSelector() {
-		return (EAttribute)svgFeDisplacementMapEClass.getEStructuralFeatures().get(4);
+	public EAttribute getSvgFeDisplacementMapElement_XChannelSelector() {
+		return (EAttribute)svgFeDisplacementMapElementEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
@@ -5439,8 +5481,8 @@ public class SvgPackageImpl extends EPackageImpl implements SvgPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getSvgFeDisplacementMap_YChannelSelector() {
-		return (EAttribute)svgFeDisplacementMapEClass.getEStructuralFeatures().get(5);
+	public EAttribute getSvgFeDisplacementMapElement_YChannelSelector() {
+		return (EAttribute)svgFeDisplacementMapElementEClass.getEStructuralFeatures().get(5);
 	}
 
 	/**
@@ -5448,8 +5490,8 @@ public class SvgPackageImpl extends EPackageImpl implements SvgPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getSvgFeFlood() {
-		return svgFeFloodEClass;
+	public EClass getSvgFeFloodElement() {
+		return svgFeFloodElementEClass;
 	}
 
 	/**
@@ -5457,8 +5499,8 @@ public class SvgPackageImpl extends EPackageImpl implements SvgPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getSvgFeFlood_Class() {
-		return (EAttribute)svgFeFloodEClass.getEStructuralFeatures().get(0);
+	public EAttribute getSvgFeFloodElement_Class() {
+		return (EAttribute)svgFeFloodElementEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -5466,8 +5508,8 @@ public class SvgPackageImpl extends EPackageImpl implements SvgPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getSvgFeFlood_Style() {
-		return (EAttribute)svgFeFloodEClass.getEStructuralFeatures().get(1);
+	public EAttribute getSvgFeFloodElement_Style() {
+		return (EAttribute)svgFeFloodElementEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -5475,8 +5517,8 @@ public class SvgPackageImpl extends EPackageImpl implements SvgPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getSvgFeGaussianBlur() {
-		return svgFeGaussianBlurEClass;
+	public EClass getSvgFeGaussianBlurElement() {
+		return svgFeGaussianBlurElementEClass;
 	}
 
 	/**
@@ -5484,8 +5526,8 @@ public class SvgPackageImpl extends EPackageImpl implements SvgPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getSvgFeGaussianBlur_Class() {
-		return (EAttribute)svgFeGaussianBlurEClass.getEStructuralFeatures().get(0);
+	public EAttribute getSvgFeGaussianBlurElement_Class() {
+		return (EAttribute)svgFeGaussianBlurElementEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -5493,8 +5535,8 @@ public class SvgPackageImpl extends EPackageImpl implements SvgPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getSvgFeGaussianBlur_Style() {
-		return (EAttribute)svgFeGaussianBlurEClass.getEStructuralFeatures().get(1);
+	public EAttribute getSvgFeGaussianBlurElement_Style() {
+		return (EAttribute)svgFeGaussianBlurElementEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -5502,8 +5544,8 @@ public class SvgPackageImpl extends EPackageImpl implements SvgPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getSvgFeGaussianBlur_StdDeviation() {
-		return (EAttribute)svgFeGaussianBlurEClass.getEStructuralFeatures().get(2);
+	public EAttribute getSvgFeGaussianBlurElement_StdDeviation() {
+		return (EAttribute)svgFeGaussianBlurElementEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -5511,8 +5553,8 @@ public class SvgPackageImpl extends EPackageImpl implements SvgPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getSvgFeImage() {
-		return svgFeImageEClass;
+	public EClass getSvgFeImageElement() {
+		return svgFeImageElementEClass;
 	}
 
 	/**
@@ -5520,8 +5562,8 @@ public class SvgPackageImpl extends EPackageImpl implements SvgPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getSvgFeImage_Class() {
-		return (EAttribute)svgFeImageEClass.getEStructuralFeatures().get(0);
+	public EAttribute getSvgFeImageElement_Class() {
+		return (EAttribute)svgFeImageElementEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -5529,8 +5571,8 @@ public class SvgPackageImpl extends EPackageImpl implements SvgPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getSvgFeImage_Style() {
-		return (EAttribute)svgFeImageEClass.getEStructuralFeatures().get(1);
+	public EAttribute getSvgFeImageElement_Style() {
+		return (EAttribute)svgFeImageElementEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -5538,8 +5580,8 @@ public class SvgPackageImpl extends EPackageImpl implements SvgPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getSvgFeImage_ExternalResourcesRequired() {
-		return (EAttribute)svgFeImageEClass.getEStructuralFeatures().get(2);
+	public EAttribute getSvgFeImageElement_ExternalResourcesRequired() {
+		return (EAttribute)svgFeImageElementEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -5547,8 +5589,8 @@ public class SvgPackageImpl extends EPackageImpl implements SvgPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getSvgFeImage_PreserveAspectRatio() {
-		return (EAttribute)svgFeImageEClass.getEStructuralFeatures().get(3);
+	public EAttribute getSvgFeImageElement_PreserveAspectRatio() {
+		return (EAttribute)svgFeImageElementEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -5556,8 +5598,8 @@ public class SvgPackageImpl extends EPackageImpl implements SvgPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getSvgFeMerge() {
-		return svgFeMergeEClass;
+	public EClass getSvgFeMergeElement() {
+		return svgFeMergeElementEClass;
 	}
 
 	/**
@@ -5565,8 +5607,8 @@ public class SvgPackageImpl extends EPackageImpl implements SvgPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getSvgFeMerge_Class() {
-		return (EAttribute)svgFeMergeEClass.getEStructuralFeatures().get(0);
+	public EAttribute getSvgFeMergeElement_Class() {
+		return (EAttribute)svgFeMergeElementEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -5574,8 +5616,8 @@ public class SvgPackageImpl extends EPackageImpl implements SvgPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getSvgFeMerge_Style() {
-		return (EAttribute)svgFeMergeEClass.getEStructuralFeatures().get(1);
+	public EAttribute getSvgFeMergeElement_Style() {
+		return (EAttribute)svgFeMergeElementEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -5583,8 +5625,8 @@ public class SvgPackageImpl extends EPackageImpl implements SvgPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getSvgFeMergeNode() {
-		return svgFeMergeNodeEClass;
+	public EClass getSvgFeMergeNodeElement() {
+		return svgFeMergeNodeElementEClass;
 	}
 
 	/**
@@ -5592,8 +5634,8 @@ public class SvgPackageImpl extends EPackageImpl implements SvgPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getSvgFeMorphology() {
-		return svgFeMorphologyEClass;
+	public EClass getSvgFeMorphologyElement() {
+		return svgFeMorphologyElementEClass;
 	}
 
 	/**
@@ -5601,8 +5643,8 @@ public class SvgPackageImpl extends EPackageImpl implements SvgPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getSvgFeMorphology_Class() {
-		return (EAttribute)svgFeMorphologyEClass.getEStructuralFeatures().get(0);
+	public EAttribute getSvgFeMorphologyElement_Class() {
+		return (EAttribute)svgFeMorphologyElementEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -5610,8 +5652,8 @@ public class SvgPackageImpl extends EPackageImpl implements SvgPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getSvgFeMorphology_Style() {
-		return (EAttribute)svgFeMorphologyEClass.getEStructuralFeatures().get(1);
+	public EAttribute getSvgFeMorphologyElement_Style() {
+		return (EAttribute)svgFeMorphologyElementEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -5619,8 +5661,8 @@ public class SvgPackageImpl extends EPackageImpl implements SvgPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getSvgFeMorphology_Operator() {
-		return (EAttribute)svgFeMorphologyEClass.getEStructuralFeatures().get(2);
+	public EAttribute getSvgFeMorphologyElement_Operator() {
+		return (EAttribute)svgFeMorphologyElementEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -5628,8 +5670,8 @@ public class SvgPackageImpl extends EPackageImpl implements SvgPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getSvgFeMorphology_Radius() {
-		return (EAttribute)svgFeMorphologyEClass.getEStructuralFeatures().get(3);
+	public EAttribute getSvgFeMorphologyElement_Radius() {
+		return (EAttribute)svgFeMorphologyElementEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -5637,8 +5679,8 @@ public class SvgPackageImpl extends EPackageImpl implements SvgPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getSvgFeOffset() {
-		return svgFeOffsetEClass;
+	public EClass getSvgFeOffsetElement() {
+		return svgFeOffsetElementEClass;
 	}
 
 	/**
@@ -5646,8 +5688,8 @@ public class SvgPackageImpl extends EPackageImpl implements SvgPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getSvgFeOffset_Class() {
-		return (EAttribute)svgFeOffsetEClass.getEStructuralFeatures().get(0);
+	public EAttribute getSvgFeOffsetElement_Class() {
+		return (EAttribute)svgFeOffsetElementEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -5655,8 +5697,8 @@ public class SvgPackageImpl extends EPackageImpl implements SvgPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getSvgFeOffset_Style() {
-		return (EAttribute)svgFeOffsetEClass.getEStructuralFeatures().get(1);
+	public EAttribute getSvgFeOffsetElement_Style() {
+		return (EAttribute)svgFeOffsetElementEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -5664,8 +5706,8 @@ public class SvgPackageImpl extends EPackageImpl implements SvgPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getSvgFeOffset_Dx() {
-		return (EAttribute)svgFeOffsetEClass.getEStructuralFeatures().get(2);
+	public EAttribute getSvgFeOffsetElement_Dx() {
+		return (EAttribute)svgFeOffsetElementEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -5673,8 +5715,8 @@ public class SvgPackageImpl extends EPackageImpl implements SvgPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getSvgFeOffset_Dy() {
-		return (EAttribute)svgFeOffsetEClass.getEStructuralFeatures().get(3);
+	public EAttribute getSvgFeOffsetElement_Dy() {
+		return (EAttribute)svgFeOffsetElementEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -5682,8 +5724,8 @@ public class SvgPackageImpl extends EPackageImpl implements SvgPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getSvgFeSpecularLighting() {
-		return svgFeSpecularLightingEClass;
+	public EClass getSvgFeSpecularLightingElement() {
+		return svgFeSpecularLightingElementEClass;
 	}
 
 	/**
@@ -5691,8 +5733,8 @@ public class SvgPackageImpl extends EPackageImpl implements SvgPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getSvgFeSpecularLighting_Class() {
-		return (EAttribute)svgFeSpecularLightingEClass.getEStructuralFeatures().get(0);
+	public EAttribute getSvgFeSpecularLightingElement_Class() {
+		return (EAttribute)svgFeSpecularLightingElementEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -5700,8 +5742,8 @@ public class SvgPackageImpl extends EPackageImpl implements SvgPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getSvgFeSpecularLighting_Style() {
-		return (EAttribute)svgFeSpecularLightingEClass.getEStructuralFeatures().get(1);
+	public EAttribute getSvgFeSpecularLightingElement_Style() {
+		return (EAttribute)svgFeSpecularLightingElementEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -5709,8 +5751,8 @@ public class SvgPackageImpl extends EPackageImpl implements SvgPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getSvgFeSpecularLighting_SurfaceScale() {
-		return (EAttribute)svgFeSpecularLightingEClass.getEStructuralFeatures().get(2);
+	public EAttribute getSvgFeSpecularLightingElement_SurfaceScale() {
+		return (EAttribute)svgFeSpecularLightingElementEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -5718,8 +5760,8 @@ public class SvgPackageImpl extends EPackageImpl implements SvgPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getSvgFeSpecularLighting_SpecularConstant() {
-		return (EAttribute)svgFeSpecularLightingEClass.getEStructuralFeatures().get(3);
+	public EAttribute getSvgFeSpecularLightingElement_SpecularConstant() {
+		return (EAttribute)svgFeSpecularLightingElementEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -5727,8 +5769,8 @@ public class SvgPackageImpl extends EPackageImpl implements SvgPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getSvgFeSpecularLighting_SpecularExponent() {
-		return (EAttribute)svgFeSpecularLightingEClass.getEStructuralFeatures().get(4);
+	public EAttribute getSvgFeSpecularLightingElement_SpecularExponent() {
+		return (EAttribute)svgFeSpecularLightingElementEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
@@ -5736,8 +5778,8 @@ public class SvgPackageImpl extends EPackageImpl implements SvgPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getSvgFeSpecularLighting_KernelUnitLength() {
-		return (EAttribute)svgFeSpecularLightingEClass.getEStructuralFeatures().get(5);
+	public EAttribute getSvgFeSpecularLightingElement_KernelUnitLength() {
+		return (EAttribute)svgFeSpecularLightingElementEClass.getEStructuralFeatures().get(5);
 	}
 
 	/**
@@ -5745,8 +5787,8 @@ public class SvgPackageImpl extends EPackageImpl implements SvgPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getSvgFeTile() {
-		return svgFeTileEClass;
+	public EClass getSvgFeTileElement() {
+		return svgFeTileElementEClass;
 	}
 
 	/**
@@ -5754,8 +5796,8 @@ public class SvgPackageImpl extends EPackageImpl implements SvgPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getSvgFeTile_Class() {
-		return (EAttribute)svgFeTileEClass.getEStructuralFeatures().get(0);
+	public EAttribute getSvgFeTileElement_Class() {
+		return (EAttribute)svgFeTileElementEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -5763,8 +5805,8 @@ public class SvgPackageImpl extends EPackageImpl implements SvgPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getSvgFeTile_Style() {
-		return (EAttribute)svgFeTileEClass.getEStructuralFeatures().get(1);
+	public EAttribute getSvgFeTileElement_Style() {
+		return (EAttribute)svgFeTileElementEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -5772,8 +5814,8 @@ public class SvgPackageImpl extends EPackageImpl implements SvgPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getSvgFeTurbulence() {
-		return svgFeTurbulenceEClass;
+	public EClass getSvgFeTurbulenceElement() {
+		return svgFeTurbulenceElementEClass;
 	}
 
 	/**
@@ -5781,8 +5823,8 @@ public class SvgPackageImpl extends EPackageImpl implements SvgPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getSvgFeTurbulence_Class() {
-		return (EAttribute)svgFeTurbulenceEClass.getEStructuralFeatures().get(0);
+	public EAttribute getSvgFeTurbulenceElement_Class() {
+		return (EAttribute)svgFeTurbulenceElementEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -5790,8 +5832,8 @@ public class SvgPackageImpl extends EPackageImpl implements SvgPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getSvgFeTurbulence_Style() {
-		return (EAttribute)svgFeTurbulenceEClass.getEStructuralFeatures().get(1);
+	public EAttribute getSvgFeTurbulenceElement_Style() {
+		return (EAttribute)svgFeTurbulenceElementEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -5799,8 +5841,8 @@ public class SvgPackageImpl extends EPackageImpl implements SvgPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getSvgFeTurbulence_BaseFrequency() {
-		return (EAttribute)svgFeTurbulenceEClass.getEStructuralFeatures().get(2);
+	public EAttribute getSvgFeTurbulenceElement_BaseFrequency() {
+		return (EAttribute)svgFeTurbulenceElementEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -5808,8 +5850,8 @@ public class SvgPackageImpl extends EPackageImpl implements SvgPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getSvgFeTurbulence_NumOctaves() {
-		return (EAttribute)svgFeTurbulenceEClass.getEStructuralFeatures().get(3);
+	public EAttribute getSvgFeTurbulenceElement_NumOctaves() {
+		return (EAttribute)svgFeTurbulenceElementEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -5817,8 +5859,8 @@ public class SvgPackageImpl extends EPackageImpl implements SvgPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getSvgFeTurbulence_Seed() {
-		return (EAttribute)svgFeTurbulenceEClass.getEStructuralFeatures().get(4);
+	public EAttribute getSvgFeTurbulenceElement_Seed() {
+		return (EAttribute)svgFeTurbulenceElementEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
@@ -5826,8 +5868,8 @@ public class SvgPackageImpl extends EPackageImpl implements SvgPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getSvgFeTurbulence_StitchTiles() {
-		return (EAttribute)svgFeTurbulenceEClass.getEStructuralFeatures().get(5);
+	public EAttribute getSvgFeTurbulenceElement_StitchTiles() {
+		return (EAttribute)svgFeTurbulenceElementEClass.getEStructuralFeatures().get(5);
 	}
 
 	/**
@@ -5835,8 +5877,26 @@ public class SvgPackageImpl extends EPackageImpl implements SvgPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getSvgFeTurbulence_Type() {
-		return (EAttribute)svgFeTurbulenceEClass.getEStructuralFeatures().get(6);
+	public EAttribute getSvgFeTurbulenceElement_Type() {
+		return (EAttribute)svgFeTurbulenceElementEClass.getEStructuralFeatures().get(6);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getSvgAnimateElement() {
+		return svgAnimateElementEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getSvgMetadataElement() {
+		return svgMetadataElementEClass;
 	}
 
 	/**
@@ -6778,6 +6838,8 @@ public class SvgPackageImpl extends EPackageImpl implements SvgPackage {
 
 		filterPrimitiveElementEClass = createEClass(FILTER_PRIMITIVE_ELEMENT);
 
+		animationElementEClass = createEClass(ANIMATION_ELEMENT);
+
 		____ENUMS____EClass = createEClass(_ENUMS_);
 
 		____DATATYPES____EClass = createEClass(_DATATYPES_);
@@ -6884,6 +6946,7 @@ public class SvgPackageImpl extends EPackageImpl implements SvgPackage {
 		createEAttribute(xLinkAttributesEClass, XLINK_ATTRIBUTES__XLINK_ROLE);
 		createEAttribute(xLinkAttributesEClass, XLINK_ATTRIBUTES__XLINK_ARCROLE);
 		createEAttribute(xLinkAttributesEClass, XLINK_ATTRIBUTES__XLINK_TITLE);
+		createEReference(xLinkAttributesEClass, XLINK_ATTRIBUTES__RESOLVED_INSTANCE);
 
 		filterPrimitiveAttributesEClass = createEClass(FILTER_PRIMITIVE_ATTRIBUTES);
 		createEAttribute(filterPrimitiveAttributesEClass, FILTER_PRIMITIVE_ATTRIBUTES__X);
@@ -7132,10 +7195,10 @@ public class SvgPackageImpl extends EPackageImpl implements SvgPackage {
 		createEAttribute(svgRadialGradientElementEClass, SVG_RADIAL_GRADIENT_ELEMENT__FY);
 		createEAttribute(svgRadialGradientElementEClass, SVG_RADIAL_GRADIENT_ELEMENT__SPREAD_METHOD);
 
-		svgGradientStopElementEClass = createEClass(SVG_GRADIENT_STOP_ELEMENT);
-		createEAttribute(svgGradientStopElementEClass, SVG_GRADIENT_STOP_ELEMENT__CLASS);
-		createEAttribute(svgGradientStopElementEClass, SVG_GRADIENT_STOP_ELEMENT__STYLE);
-		createEAttribute(svgGradientStopElementEClass, SVG_GRADIENT_STOP_ELEMENT__OFFSET);
+		svgStopElementEClass = createEClass(SVG_STOP_ELEMENT);
+		createEAttribute(svgStopElementEClass, SVG_STOP_ELEMENT__CLASS);
+		createEAttribute(svgStopElementEClass, SVG_STOP_ELEMENT__STYLE);
+		createEAttribute(svgStopElementEClass, SVG_STOP_ELEMENT__OFFSET);
 
 		svgPatternElementEClass = createEClass(SVG_PATTERN_ELEMENT);
 		createEAttribute(svgPatternElementEClass, SVG_PATTERN_ELEMENT__CLASS);
@@ -7181,140 +7244,144 @@ public class SvgPackageImpl extends EPackageImpl implements SvgPackage {
 		createEAttribute(svgFilterElementEClass, SVG_FILTER_ELEMENT__FILTER_UNITS);
 		createEAttribute(svgFilterElementEClass, SVG_FILTER_ELEMENT__PRIMITIVE_UNITS);
 
-		svgFeDistantLightEClass = createEClass(SVG_FE_DISTANT_LIGHT);
-		createEAttribute(svgFeDistantLightEClass, SVG_FE_DISTANT_LIGHT__AZIMUTH);
-		createEAttribute(svgFeDistantLightEClass, SVG_FE_DISTANT_LIGHT__ELEVATION);
+		svgFeDistantLightElementEClass = createEClass(SVG_FE_DISTANT_LIGHT_ELEMENT);
+		createEAttribute(svgFeDistantLightElementEClass, SVG_FE_DISTANT_LIGHT_ELEMENT__AZIMUTH);
+		createEAttribute(svgFeDistantLightElementEClass, SVG_FE_DISTANT_LIGHT_ELEMENT__ELEVATION);
 
-		svgFePointLightEClass = createEClass(SVG_FE_POINT_LIGHT);
-		createEAttribute(svgFePointLightEClass, SVG_FE_POINT_LIGHT__X);
-		createEAttribute(svgFePointLightEClass, SVG_FE_POINT_LIGHT__Y);
-		createEAttribute(svgFePointLightEClass, SVG_FE_POINT_LIGHT__Z);
+		svgFePointLightElementEClass = createEClass(SVG_FE_POINT_LIGHT_ELEMENT);
+		createEAttribute(svgFePointLightElementEClass, SVG_FE_POINT_LIGHT_ELEMENT__X);
+		createEAttribute(svgFePointLightElementEClass, SVG_FE_POINT_LIGHT_ELEMENT__Y);
+		createEAttribute(svgFePointLightElementEClass, SVG_FE_POINT_LIGHT_ELEMENT__Z);
 
-		svgFeSpotLightEClass = createEClass(SVG_FE_SPOT_LIGHT);
-		createEAttribute(svgFeSpotLightEClass, SVG_FE_SPOT_LIGHT__X);
-		createEAttribute(svgFeSpotLightEClass, SVG_FE_SPOT_LIGHT__Y);
-		createEAttribute(svgFeSpotLightEClass, SVG_FE_SPOT_LIGHT__Z);
-		createEAttribute(svgFeSpotLightEClass, SVG_FE_SPOT_LIGHT__POINTS_AT_X);
-		createEAttribute(svgFeSpotLightEClass, SVG_FE_SPOT_LIGHT__POINTS_AT_Y);
-		createEAttribute(svgFeSpotLightEClass, SVG_FE_SPOT_LIGHT__POINTS_AT_Z);
-		createEAttribute(svgFeSpotLightEClass, SVG_FE_SPOT_LIGHT__SPECULAR_EXPONENT);
-		createEAttribute(svgFeSpotLightEClass, SVG_FE_SPOT_LIGHT__LIMITING_CONE_ANGLE);
+		svgFeSpotLightElementEClass = createEClass(SVG_FE_SPOT_LIGHT_ELEMENT);
+		createEAttribute(svgFeSpotLightElementEClass, SVG_FE_SPOT_LIGHT_ELEMENT__X);
+		createEAttribute(svgFeSpotLightElementEClass, SVG_FE_SPOT_LIGHT_ELEMENT__Y);
+		createEAttribute(svgFeSpotLightElementEClass, SVG_FE_SPOT_LIGHT_ELEMENT__Z);
+		createEAttribute(svgFeSpotLightElementEClass, SVG_FE_SPOT_LIGHT_ELEMENT__POINTS_AT_X);
+		createEAttribute(svgFeSpotLightElementEClass, SVG_FE_SPOT_LIGHT_ELEMENT__POINTS_AT_Y);
+		createEAttribute(svgFeSpotLightElementEClass, SVG_FE_SPOT_LIGHT_ELEMENT__POINTS_AT_Z);
+		createEAttribute(svgFeSpotLightElementEClass, SVG_FE_SPOT_LIGHT_ELEMENT__SPECULAR_EXPONENT);
+		createEAttribute(svgFeSpotLightElementEClass, SVG_FE_SPOT_LIGHT_ELEMENT__LIMITING_CONE_ANGLE);
 
-		svgFeBlendEClass = createEClass(SVG_FE_BLEND);
-		createEAttribute(svgFeBlendEClass, SVG_FE_BLEND__CLASS);
-		createEAttribute(svgFeBlendEClass, SVG_FE_BLEND__STYLE);
-		createEAttribute(svgFeBlendEClass, SVG_FE_BLEND__IN2);
-		createEAttribute(svgFeBlendEClass, SVG_FE_BLEND__MODE);
+		svgFeBlendElementEClass = createEClass(SVG_FE_BLEND_ELEMENT);
+		createEAttribute(svgFeBlendElementEClass, SVG_FE_BLEND_ELEMENT__CLASS);
+		createEAttribute(svgFeBlendElementEClass, SVG_FE_BLEND_ELEMENT__STYLE);
+		createEAttribute(svgFeBlendElementEClass, SVG_FE_BLEND_ELEMENT__IN2);
+		createEAttribute(svgFeBlendElementEClass, SVG_FE_BLEND_ELEMENT__MODE);
 
-		svgFeColorMatrixEClass = createEClass(SVG_FE_COLOR_MATRIX);
-		createEAttribute(svgFeColorMatrixEClass, SVG_FE_COLOR_MATRIX__CLASS);
-		createEAttribute(svgFeColorMatrixEClass, SVG_FE_COLOR_MATRIX__STYLE);
-		createEAttribute(svgFeColorMatrixEClass, SVG_FE_COLOR_MATRIX__TYPE);
-		createEAttribute(svgFeColorMatrixEClass, SVG_FE_COLOR_MATRIX__VALUES);
+		svgFeColorMatrixElementEClass = createEClass(SVG_FE_COLOR_MATRIX_ELEMENT);
+		createEAttribute(svgFeColorMatrixElementEClass, SVG_FE_COLOR_MATRIX_ELEMENT__CLASS);
+		createEAttribute(svgFeColorMatrixElementEClass, SVG_FE_COLOR_MATRIX_ELEMENT__STYLE);
+		createEAttribute(svgFeColorMatrixElementEClass, SVG_FE_COLOR_MATRIX_ELEMENT__TYPE);
+		createEAttribute(svgFeColorMatrixElementEClass, SVG_FE_COLOR_MATRIX_ELEMENT__VALUES);
 
-		svgFeComponentTransferEClass = createEClass(SVG_FE_COMPONENT_TRANSFER);
-		createEAttribute(svgFeComponentTransferEClass, SVG_FE_COMPONENT_TRANSFER__CLASS);
-		createEAttribute(svgFeComponentTransferEClass, SVG_FE_COMPONENT_TRANSFER__STYLE);
+		svgFeComponentTransferElementEClass = createEClass(SVG_FE_COMPONENT_TRANSFER_ELEMENT);
+		createEAttribute(svgFeComponentTransferElementEClass, SVG_FE_COMPONENT_TRANSFER_ELEMENT__CLASS);
+		createEAttribute(svgFeComponentTransferElementEClass, SVG_FE_COMPONENT_TRANSFER_ELEMENT__STYLE);
 
-		svgFeFuncREClass = createEClass(SVG_FE_FUNC_R);
+		svgFeFuncRElementEClass = createEClass(SVG_FE_FUNC_RELEMENT);
 
-		svgFeFuncGEClass = createEClass(SVG_FE_FUNC_G);
+		svgFeFuncGElementEClass = createEClass(SVG_FE_FUNC_GELEMENT);
 
-		svgFeFuncBEClass = createEClass(SVG_FE_FUNC_B);
+		svgFeFuncBElementEClass = createEClass(SVG_FE_FUNC_BELEMENT);
 
-		svgFeFuncAEClass = createEClass(SVG_FE_FUNC_A);
+		svgFeFuncAElementEClass = createEClass(SVG_FE_FUNC_AELEMENT);
 
-		svgFeCompositeEClass = createEClass(SVG_FE_COMPOSITE);
-		createEAttribute(svgFeCompositeEClass, SVG_FE_COMPOSITE__CLASS);
-		createEAttribute(svgFeCompositeEClass, SVG_FE_COMPOSITE__STYLE);
-		createEAttribute(svgFeCompositeEClass, SVG_FE_COMPOSITE__IN2);
-		createEAttribute(svgFeCompositeEClass, SVG_FE_COMPOSITE__OPERATOR);
-		createEAttribute(svgFeCompositeEClass, SVG_FE_COMPOSITE__K1);
-		createEAttribute(svgFeCompositeEClass, SVG_FE_COMPOSITE__K2);
-		createEAttribute(svgFeCompositeEClass, SVG_FE_COMPOSITE__K3);
-		createEAttribute(svgFeCompositeEClass, SVG_FE_COMPOSITE__K4);
+		svgFeCompositeElementEClass = createEClass(SVG_FE_COMPOSITE_ELEMENT);
+		createEAttribute(svgFeCompositeElementEClass, SVG_FE_COMPOSITE_ELEMENT__CLASS);
+		createEAttribute(svgFeCompositeElementEClass, SVG_FE_COMPOSITE_ELEMENT__STYLE);
+		createEAttribute(svgFeCompositeElementEClass, SVG_FE_COMPOSITE_ELEMENT__IN2);
+		createEAttribute(svgFeCompositeElementEClass, SVG_FE_COMPOSITE_ELEMENT__OPERATOR);
+		createEAttribute(svgFeCompositeElementEClass, SVG_FE_COMPOSITE_ELEMENT__K1);
+		createEAttribute(svgFeCompositeElementEClass, SVG_FE_COMPOSITE_ELEMENT__K2);
+		createEAttribute(svgFeCompositeElementEClass, SVG_FE_COMPOSITE_ELEMENT__K3);
+		createEAttribute(svgFeCompositeElementEClass, SVG_FE_COMPOSITE_ELEMENT__K4);
 
-		svgFeConvolveMatrixEClass = createEClass(SVG_FE_CONVOLVE_MATRIX);
-		createEAttribute(svgFeConvolveMatrixEClass, SVG_FE_CONVOLVE_MATRIX__CLASS);
-		createEAttribute(svgFeConvolveMatrixEClass, SVG_FE_CONVOLVE_MATRIX__STYLE);
-		createEAttribute(svgFeConvolveMatrixEClass, SVG_FE_CONVOLVE_MATRIX__ORDER);
-		createEAttribute(svgFeConvolveMatrixEClass, SVG_FE_CONVOLVE_MATRIX__KERNEL_MATRIX);
-		createEAttribute(svgFeConvolveMatrixEClass, SVG_FE_CONVOLVE_MATRIX__DIVISOR);
-		createEAttribute(svgFeConvolveMatrixEClass, SVG_FE_CONVOLVE_MATRIX__BIAS);
-		createEAttribute(svgFeConvolveMatrixEClass, SVG_FE_CONVOLVE_MATRIX__TARGET_X);
-		createEAttribute(svgFeConvolveMatrixEClass, SVG_FE_CONVOLVE_MATRIX__TARGET_Y);
-		createEAttribute(svgFeConvolveMatrixEClass, SVG_FE_CONVOLVE_MATRIX__EDGE_MODE);
-		createEAttribute(svgFeConvolveMatrixEClass, SVG_FE_CONVOLVE_MATRIX__KERNEL_UNIT_LENGTH);
-		createEAttribute(svgFeConvolveMatrixEClass, SVG_FE_CONVOLVE_MATRIX__PRESERVE_ALPHA);
+		svgFeConvolveMatrixElementEClass = createEClass(SVG_FE_CONVOLVE_MATRIX_ELEMENT);
+		createEAttribute(svgFeConvolveMatrixElementEClass, SVG_FE_CONVOLVE_MATRIX_ELEMENT__CLASS);
+		createEAttribute(svgFeConvolveMatrixElementEClass, SVG_FE_CONVOLVE_MATRIX_ELEMENT__STYLE);
+		createEAttribute(svgFeConvolveMatrixElementEClass, SVG_FE_CONVOLVE_MATRIX_ELEMENT__ORDER);
+		createEAttribute(svgFeConvolveMatrixElementEClass, SVG_FE_CONVOLVE_MATRIX_ELEMENT__KERNEL_MATRIX);
+		createEAttribute(svgFeConvolveMatrixElementEClass, SVG_FE_CONVOLVE_MATRIX_ELEMENT__DIVISOR);
+		createEAttribute(svgFeConvolveMatrixElementEClass, SVG_FE_CONVOLVE_MATRIX_ELEMENT__BIAS);
+		createEAttribute(svgFeConvolveMatrixElementEClass, SVG_FE_CONVOLVE_MATRIX_ELEMENT__TARGET_X);
+		createEAttribute(svgFeConvolveMatrixElementEClass, SVG_FE_CONVOLVE_MATRIX_ELEMENT__TARGET_Y);
+		createEAttribute(svgFeConvolveMatrixElementEClass, SVG_FE_CONVOLVE_MATRIX_ELEMENT__EDGE_MODE);
+		createEAttribute(svgFeConvolveMatrixElementEClass, SVG_FE_CONVOLVE_MATRIX_ELEMENT__KERNEL_UNIT_LENGTH);
+		createEAttribute(svgFeConvolveMatrixElementEClass, SVG_FE_CONVOLVE_MATRIX_ELEMENT__PRESERVE_ALPHA);
 
-		svgFeDiffuseLightingEClass = createEClass(SVG_FE_DIFFUSE_LIGHTING);
-		createEAttribute(svgFeDiffuseLightingEClass, SVG_FE_DIFFUSE_LIGHTING__CLASS);
-		createEAttribute(svgFeDiffuseLightingEClass, SVG_FE_DIFFUSE_LIGHTING__STYLE);
-		createEAttribute(svgFeDiffuseLightingEClass, SVG_FE_DIFFUSE_LIGHTING__SURFACE_SCALE);
-		createEAttribute(svgFeDiffuseLightingEClass, SVG_FE_DIFFUSE_LIGHTING__DIFFUSE_CONSTANT);
-		createEAttribute(svgFeDiffuseLightingEClass, SVG_FE_DIFFUSE_LIGHTING__KERNEL_UNIT_LENGTH);
+		svgFeDiffuseLightingElementEClass = createEClass(SVG_FE_DIFFUSE_LIGHTING_ELEMENT);
+		createEAttribute(svgFeDiffuseLightingElementEClass, SVG_FE_DIFFUSE_LIGHTING_ELEMENT__CLASS);
+		createEAttribute(svgFeDiffuseLightingElementEClass, SVG_FE_DIFFUSE_LIGHTING_ELEMENT__STYLE);
+		createEAttribute(svgFeDiffuseLightingElementEClass, SVG_FE_DIFFUSE_LIGHTING_ELEMENT__SURFACE_SCALE);
+		createEAttribute(svgFeDiffuseLightingElementEClass, SVG_FE_DIFFUSE_LIGHTING_ELEMENT__DIFFUSE_CONSTANT);
+		createEAttribute(svgFeDiffuseLightingElementEClass, SVG_FE_DIFFUSE_LIGHTING_ELEMENT__KERNEL_UNIT_LENGTH);
 
-		svgFeDisplacementMapEClass = createEClass(SVG_FE_DISPLACEMENT_MAP);
-		createEAttribute(svgFeDisplacementMapEClass, SVG_FE_DISPLACEMENT_MAP__CLASS);
-		createEAttribute(svgFeDisplacementMapEClass, SVG_FE_DISPLACEMENT_MAP__STYLE);
-		createEAttribute(svgFeDisplacementMapEClass, SVG_FE_DISPLACEMENT_MAP__IN2);
-		createEAttribute(svgFeDisplacementMapEClass, SVG_FE_DISPLACEMENT_MAP__SCALE);
-		createEAttribute(svgFeDisplacementMapEClass, SVG_FE_DISPLACEMENT_MAP__XCHANNEL_SELECTOR);
-		createEAttribute(svgFeDisplacementMapEClass, SVG_FE_DISPLACEMENT_MAP__YCHANNEL_SELECTOR);
+		svgFeDisplacementMapElementEClass = createEClass(SVG_FE_DISPLACEMENT_MAP_ELEMENT);
+		createEAttribute(svgFeDisplacementMapElementEClass, SVG_FE_DISPLACEMENT_MAP_ELEMENT__CLASS);
+		createEAttribute(svgFeDisplacementMapElementEClass, SVG_FE_DISPLACEMENT_MAP_ELEMENT__STYLE);
+		createEAttribute(svgFeDisplacementMapElementEClass, SVG_FE_DISPLACEMENT_MAP_ELEMENT__IN2);
+		createEAttribute(svgFeDisplacementMapElementEClass, SVG_FE_DISPLACEMENT_MAP_ELEMENT__SCALE);
+		createEAttribute(svgFeDisplacementMapElementEClass, SVG_FE_DISPLACEMENT_MAP_ELEMENT__XCHANNEL_SELECTOR);
+		createEAttribute(svgFeDisplacementMapElementEClass, SVG_FE_DISPLACEMENT_MAP_ELEMENT__YCHANNEL_SELECTOR);
 
-		svgFeFloodEClass = createEClass(SVG_FE_FLOOD);
-		createEAttribute(svgFeFloodEClass, SVG_FE_FLOOD__CLASS);
-		createEAttribute(svgFeFloodEClass, SVG_FE_FLOOD__STYLE);
+		svgFeFloodElementEClass = createEClass(SVG_FE_FLOOD_ELEMENT);
+		createEAttribute(svgFeFloodElementEClass, SVG_FE_FLOOD_ELEMENT__CLASS);
+		createEAttribute(svgFeFloodElementEClass, SVG_FE_FLOOD_ELEMENT__STYLE);
 
-		svgFeGaussianBlurEClass = createEClass(SVG_FE_GAUSSIAN_BLUR);
-		createEAttribute(svgFeGaussianBlurEClass, SVG_FE_GAUSSIAN_BLUR__CLASS);
-		createEAttribute(svgFeGaussianBlurEClass, SVG_FE_GAUSSIAN_BLUR__STYLE);
-		createEAttribute(svgFeGaussianBlurEClass, SVG_FE_GAUSSIAN_BLUR__STD_DEVIATION);
+		svgFeGaussianBlurElementEClass = createEClass(SVG_FE_GAUSSIAN_BLUR_ELEMENT);
+		createEAttribute(svgFeGaussianBlurElementEClass, SVG_FE_GAUSSIAN_BLUR_ELEMENT__CLASS);
+		createEAttribute(svgFeGaussianBlurElementEClass, SVG_FE_GAUSSIAN_BLUR_ELEMENT__STYLE);
+		createEAttribute(svgFeGaussianBlurElementEClass, SVG_FE_GAUSSIAN_BLUR_ELEMENT__STD_DEVIATION);
 
-		svgFeImageEClass = createEClass(SVG_FE_IMAGE);
-		createEAttribute(svgFeImageEClass, SVG_FE_IMAGE__CLASS);
-		createEAttribute(svgFeImageEClass, SVG_FE_IMAGE__STYLE);
-		createEAttribute(svgFeImageEClass, SVG_FE_IMAGE__EXTERNAL_RESOURCES_REQUIRED);
-		createEAttribute(svgFeImageEClass, SVG_FE_IMAGE__PRESERVE_ASPECT_RATIO);
+		svgFeImageElementEClass = createEClass(SVG_FE_IMAGE_ELEMENT);
+		createEAttribute(svgFeImageElementEClass, SVG_FE_IMAGE_ELEMENT__CLASS);
+		createEAttribute(svgFeImageElementEClass, SVG_FE_IMAGE_ELEMENT__STYLE);
+		createEAttribute(svgFeImageElementEClass, SVG_FE_IMAGE_ELEMENT__EXTERNAL_RESOURCES_REQUIRED);
+		createEAttribute(svgFeImageElementEClass, SVG_FE_IMAGE_ELEMENT__PRESERVE_ASPECT_RATIO);
 
-		svgFeMergeEClass = createEClass(SVG_FE_MERGE);
-		createEAttribute(svgFeMergeEClass, SVG_FE_MERGE__CLASS);
-		createEAttribute(svgFeMergeEClass, SVG_FE_MERGE__STYLE);
+		svgFeMergeElementEClass = createEClass(SVG_FE_MERGE_ELEMENT);
+		createEAttribute(svgFeMergeElementEClass, SVG_FE_MERGE_ELEMENT__CLASS);
+		createEAttribute(svgFeMergeElementEClass, SVG_FE_MERGE_ELEMENT__STYLE);
 
-		svgFeMergeNodeEClass = createEClass(SVG_FE_MERGE_NODE);
+		svgFeMergeNodeElementEClass = createEClass(SVG_FE_MERGE_NODE_ELEMENT);
 
-		svgFeMorphologyEClass = createEClass(SVG_FE_MORPHOLOGY);
-		createEAttribute(svgFeMorphologyEClass, SVG_FE_MORPHOLOGY__CLASS);
-		createEAttribute(svgFeMorphologyEClass, SVG_FE_MORPHOLOGY__STYLE);
-		createEAttribute(svgFeMorphologyEClass, SVG_FE_MORPHOLOGY__OPERATOR);
-		createEAttribute(svgFeMorphologyEClass, SVG_FE_MORPHOLOGY__RADIUS);
+		svgFeMorphologyElementEClass = createEClass(SVG_FE_MORPHOLOGY_ELEMENT);
+		createEAttribute(svgFeMorphologyElementEClass, SVG_FE_MORPHOLOGY_ELEMENT__CLASS);
+		createEAttribute(svgFeMorphologyElementEClass, SVG_FE_MORPHOLOGY_ELEMENT__STYLE);
+		createEAttribute(svgFeMorphologyElementEClass, SVG_FE_MORPHOLOGY_ELEMENT__OPERATOR);
+		createEAttribute(svgFeMorphologyElementEClass, SVG_FE_MORPHOLOGY_ELEMENT__RADIUS);
 
-		svgFeOffsetEClass = createEClass(SVG_FE_OFFSET);
-		createEAttribute(svgFeOffsetEClass, SVG_FE_OFFSET__CLASS);
-		createEAttribute(svgFeOffsetEClass, SVG_FE_OFFSET__STYLE);
-		createEAttribute(svgFeOffsetEClass, SVG_FE_OFFSET__DX);
-		createEAttribute(svgFeOffsetEClass, SVG_FE_OFFSET__DY);
+		svgFeOffsetElementEClass = createEClass(SVG_FE_OFFSET_ELEMENT);
+		createEAttribute(svgFeOffsetElementEClass, SVG_FE_OFFSET_ELEMENT__CLASS);
+		createEAttribute(svgFeOffsetElementEClass, SVG_FE_OFFSET_ELEMENT__STYLE);
+		createEAttribute(svgFeOffsetElementEClass, SVG_FE_OFFSET_ELEMENT__DX);
+		createEAttribute(svgFeOffsetElementEClass, SVG_FE_OFFSET_ELEMENT__DY);
 
-		svgFeSpecularLightingEClass = createEClass(SVG_FE_SPECULAR_LIGHTING);
-		createEAttribute(svgFeSpecularLightingEClass, SVG_FE_SPECULAR_LIGHTING__CLASS);
-		createEAttribute(svgFeSpecularLightingEClass, SVG_FE_SPECULAR_LIGHTING__STYLE);
-		createEAttribute(svgFeSpecularLightingEClass, SVG_FE_SPECULAR_LIGHTING__SURFACE_SCALE);
-		createEAttribute(svgFeSpecularLightingEClass, SVG_FE_SPECULAR_LIGHTING__SPECULAR_CONSTANT);
-		createEAttribute(svgFeSpecularLightingEClass, SVG_FE_SPECULAR_LIGHTING__SPECULAR_EXPONENT);
-		createEAttribute(svgFeSpecularLightingEClass, SVG_FE_SPECULAR_LIGHTING__KERNEL_UNIT_LENGTH);
+		svgFeSpecularLightingElementEClass = createEClass(SVG_FE_SPECULAR_LIGHTING_ELEMENT);
+		createEAttribute(svgFeSpecularLightingElementEClass, SVG_FE_SPECULAR_LIGHTING_ELEMENT__CLASS);
+		createEAttribute(svgFeSpecularLightingElementEClass, SVG_FE_SPECULAR_LIGHTING_ELEMENT__STYLE);
+		createEAttribute(svgFeSpecularLightingElementEClass, SVG_FE_SPECULAR_LIGHTING_ELEMENT__SURFACE_SCALE);
+		createEAttribute(svgFeSpecularLightingElementEClass, SVG_FE_SPECULAR_LIGHTING_ELEMENT__SPECULAR_CONSTANT);
+		createEAttribute(svgFeSpecularLightingElementEClass, SVG_FE_SPECULAR_LIGHTING_ELEMENT__SPECULAR_EXPONENT);
+		createEAttribute(svgFeSpecularLightingElementEClass, SVG_FE_SPECULAR_LIGHTING_ELEMENT__KERNEL_UNIT_LENGTH);
 
-		svgFeTileEClass = createEClass(SVG_FE_TILE);
-		createEAttribute(svgFeTileEClass, SVG_FE_TILE__CLASS);
-		createEAttribute(svgFeTileEClass, SVG_FE_TILE__STYLE);
+		svgFeTileElementEClass = createEClass(SVG_FE_TILE_ELEMENT);
+		createEAttribute(svgFeTileElementEClass, SVG_FE_TILE_ELEMENT__CLASS);
+		createEAttribute(svgFeTileElementEClass, SVG_FE_TILE_ELEMENT__STYLE);
 
-		svgFeTurbulenceEClass = createEClass(SVG_FE_TURBULENCE);
-		createEAttribute(svgFeTurbulenceEClass, SVG_FE_TURBULENCE__CLASS);
-		createEAttribute(svgFeTurbulenceEClass, SVG_FE_TURBULENCE__STYLE);
-		createEAttribute(svgFeTurbulenceEClass, SVG_FE_TURBULENCE__BASE_FREQUENCY);
-		createEAttribute(svgFeTurbulenceEClass, SVG_FE_TURBULENCE__NUM_OCTAVES);
-		createEAttribute(svgFeTurbulenceEClass, SVG_FE_TURBULENCE__SEED);
-		createEAttribute(svgFeTurbulenceEClass, SVG_FE_TURBULENCE__STITCH_TILES);
-		createEAttribute(svgFeTurbulenceEClass, SVG_FE_TURBULENCE__TYPE);
+		svgFeTurbulenceElementEClass = createEClass(SVG_FE_TURBULENCE_ELEMENT);
+		createEAttribute(svgFeTurbulenceElementEClass, SVG_FE_TURBULENCE_ELEMENT__CLASS);
+		createEAttribute(svgFeTurbulenceElementEClass, SVG_FE_TURBULENCE_ELEMENT__STYLE);
+		createEAttribute(svgFeTurbulenceElementEClass, SVG_FE_TURBULENCE_ELEMENT__BASE_FREQUENCY);
+		createEAttribute(svgFeTurbulenceElementEClass, SVG_FE_TURBULENCE_ELEMENT__NUM_OCTAVES);
+		createEAttribute(svgFeTurbulenceElementEClass, SVG_FE_TURBULENCE_ELEMENT__SEED);
+		createEAttribute(svgFeTurbulenceElementEClass, SVG_FE_TURBULENCE_ELEMENT__STITCH_TILES);
+		createEAttribute(svgFeTurbulenceElementEClass, SVG_FE_TURBULENCE_ELEMENT__TYPE);
+
+		svgAnimateElementEClass = createEClass(SVG_ANIMATE_ELEMENT);
+
+		svgMetadataElementEClass = createEClass(SVG_METADATA_ELEMENT);
 
 		// Create enums
 		alignment_baselineEEnum = createEEnum(ALIGNMENT_BASELINE);
@@ -7930,15 +7997,15 @@ public class SvgPackageImpl extends EPackageImpl implements SvgPackage {
 		g1.getETypeArguments().add(g2);
 		svgRadialGradientElementEClass.getEGenericSuperTypes().add(g1);
 		g1 = createEGenericType(this.getSvgElement());
-		svgGradientStopElementEClass.getEGenericSuperTypes().add(g1);
+		svgStopElementEClass.getEGenericSuperTypes().add(g1);
 		g1 = createEGenericType(this.getCoreAttributes());
-		svgGradientStopElementEClass.getEGenericSuperTypes().add(g1);
+		svgStopElementEClass.getEGenericSuperTypes().add(g1);
 		g1 = createEGenericType(this.getPresentationAttributes());
-		svgGradientStopElementEClass.getEGenericSuperTypes().add(g1);
+		svgStopElementEClass.getEGenericSuperTypes().add(g1);
 		g1 = createEGenericType(this.getContentElement());
 		g2 = createEGenericType(this.getSvgElement());
 		g1.getETypeArguments().add(g2);
-		svgGradientStopElementEClass.getEGenericSuperTypes().add(g1);
+		svgStopElementEClass.getEGenericSuperTypes().add(g1);
 		g1 = createEGenericType(this.getSvgElement());
 		svgPatternElementEClass.getEGenericSuperTypes().add(g1);
 		g1 = createEGenericType(this.getContainerElement());
@@ -7994,275 +8061,278 @@ public class SvgPackageImpl extends EPackageImpl implements SvgPackage {
 		g1.getETypeArguments().add(g2);
 		svgFilterElementEClass.getEGenericSuperTypes().add(g1);
 		g1 = createEGenericType(this.getSvgElement());
-		svgFeDistantLightEClass.getEGenericSuperTypes().add(g1);
+		svgFeDistantLightElementEClass.getEGenericSuperTypes().add(g1);
 		g1 = createEGenericType(this.getCoreAttributes());
-		svgFeDistantLightEClass.getEGenericSuperTypes().add(g1);
+		svgFeDistantLightElementEClass.getEGenericSuperTypes().add(g1);
 		g1 = createEGenericType(this.getContentElement());
 		g2 = createEGenericType(this.getSvgElement());
 		g1.getETypeArguments().add(g2);
-		svgFeDistantLightEClass.getEGenericSuperTypes().add(g1);
+		svgFeDistantLightElementEClass.getEGenericSuperTypes().add(g1);
 		g1 = createEGenericType(this.getSvgElement());
-		svgFePointLightEClass.getEGenericSuperTypes().add(g1);
+		svgFePointLightElementEClass.getEGenericSuperTypes().add(g1);
 		g1 = createEGenericType(this.getCoreAttributes());
-		svgFePointLightEClass.getEGenericSuperTypes().add(g1);
+		svgFePointLightElementEClass.getEGenericSuperTypes().add(g1);
 		g1 = createEGenericType(this.getLightSourceElement());
-		svgFePointLightEClass.getEGenericSuperTypes().add(g1);
+		svgFePointLightElementEClass.getEGenericSuperTypes().add(g1);
 		g1 = createEGenericType(this.getContentElement());
 		g2 = createEGenericType(this.getSvgElement());
 		g1.getETypeArguments().add(g2);
-		svgFePointLightEClass.getEGenericSuperTypes().add(g1);
+		svgFePointLightElementEClass.getEGenericSuperTypes().add(g1);
 		g1 = createEGenericType(this.getSvgElement());
-		svgFeSpotLightEClass.getEGenericSuperTypes().add(g1);
+		svgFeSpotLightElementEClass.getEGenericSuperTypes().add(g1);
 		g1 = createEGenericType(this.getCoreAttributes());
-		svgFeSpotLightEClass.getEGenericSuperTypes().add(g1);
+		svgFeSpotLightElementEClass.getEGenericSuperTypes().add(g1);
 		g1 = createEGenericType(this.getLightSourceElement());
-		svgFeSpotLightEClass.getEGenericSuperTypes().add(g1);
+		svgFeSpotLightElementEClass.getEGenericSuperTypes().add(g1);
 		g1 = createEGenericType(this.getContentElement());
 		g2 = createEGenericType(this.getSvgElement());
 		g1.getETypeArguments().add(g2);
-		svgFeSpotLightEClass.getEGenericSuperTypes().add(g1);
+		svgFeSpotLightElementEClass.getEGenericSuperTypes().add(g1);
 		g1 = createEGenericType(this.getSvgElement());
-		svgFeBlendEClass.getEGenericSuperTypes().add(g1);
+		svgFeBlendElementEClass.getEGenericSuperTypes().add(g1);
 		g1 = createEGenericType(this.getCoreAttributes());
-		svgFeBlendEClass.getEGenericSuperTypes().add(g1);
+		svgFeBlendElementEClass.getEGenericSuperTypes().add(g1);
 		g1 = createEGenericType(this.getPresentationAttributes());
-		svgFeBlendEClass.getEGenericSuperTypes().add(g1);
+		svgFeBlendElementEClass.getEGenericSuperTypes().add(g1);
 		g1 = createEGenericType(this.getFilterPrimitiveAttributes());
-		svgFeBlendEClass.getEGenericSuperTypes().add(g1);
+		svgFeBlendElementEClass.getEGenericSuperTypes().add(g1);
 		g1 = createEGenericType(this.getContentElement());
 		g2 = createEGenericType(this.getSvgElement());
 		g1.getETypeArguments().add(g2);
-		svgFeBlendEClass.getEGenericSuperTypes().add(g1);
+		svgFeBlendElementEClass.getEGenericSuperTypes().add(g1);
 		g1 = createEGenericType(this.getSvgElement());
-		svgFeColorMatrixEClass.getEGenericSuperTypes().add(g1);
+		svgFeColorMatrixElementEClass.getEGenericSuperTypes().add(g1);
 		g1 = createEGenericType(this.getCoreAttributes());
-		svgFeColorMatrixEClass.getEGenericSuperTypes().add(g1);
+		svgFeColorMatrixElementEClass.getEGenericSuperTypes().add(g1);
 		g1 = createEGenericType(this.getPresentationAttributes());
-		svgFeColorMatrixEClass.getEGenericSuperTypes().add(g1);
+		svgFeColorMatrixElementEClass.getEGenericSuperTypes().add(g1);
 		g1 = createEGenericType(this.getFilterPrimitiveAttributes());
-		svgFeColorMatrixEClass.getEGenericSuperTypes().add(g1);
+		svgFeColorMatrixElementEClass.getEGenericSuperTypes().add(g1);
 		g1 = createEGenericType(this.getContentElement());
 		g2 = createEGenericType(this.getSvgElement());
 		g1.getETypeArguments().add(g2);
-		svgFeColorMatrixEClass.getEGenericSuperTypes().add(g1);
+		svgFeColorMatrixElementEClass.getEGenericSuperTypes().add(g1);
 		g1 = createEGenericType(this.getSvgElement());
-		svgFeComponentTransferEClass.getEGenericSuperTypes().add(g1);
+		svgFeComponentTransferElementEClass.getEGenericSuperTypes().add(g1);
 		g1 = createEGenericType(this.getCoreAttributes());
-		svgFeComponentTransferEClass.getEGenericSuperTypes().add(g1);
+		svgFeComponentTransferElementEClass.getEGenericSuperTypes().add(g1);
 		g1 = createEGenericType(this.getPresentationAttributes());
-		svgFeComponentTransferEClass.getEGenericSuperTypes().add(g1);
+		svgFeComponentTransferElementEClass.getEGenericSuperTypes().add(g1);
 		g1 = createEGenericType(this.getFilterPrimitiveAttributes());
-		svgFeComponentTransferEClass.getEGenericSuperTypes().add(g1);
+		svgFeComponentTransferElementEClass.getEGenericSuperTypes().add(g1);
 		g1 = createEGenericType(this.getContentElement());
 		g2 = createEGenericType(this.getSvgElement());
 		g1.getETypeArguments().add(g2);
-		svgFeComponentTransferEClass.getEGenericSuperTypes().add(g1);
+		svgFeComponentTransferElementEClass.getEGenericSuperTypes().add(g1);
 		g1 = createEGenericType(this.getSvgElement());
-		svgFeFuncREClass.getEGenericSuperTypes().add(g1);
+		svgFeFuncRElementEClass.getEGenericSuperTypes().add(g1);
 		g1 = createEGenericType(this.getCoreAttributes());
-		svgFeFuncREClass.getEGenericSuperTypes().add(g1);
+		svgFeFuncRElementEClass.getEGenericSuperTypes().add(g1);
 		g1 = createEGenericType(this.getPresentationAttributes());
-		svgFeFuncREClass.getEGenericSuperTypes().add(g1);
+		svgFeFuncRElementEClass.getEGenericSuperTypes().add(g1);
 		g1 = createEGenericType(this.getContentElement());
 		g2 = createEGenericType(this.getSvgElement());
 		g1.getETypeArguments().add(g2);
-		svgFeFuncREClass.getEGenericSuperTypes().add(g1);
+		svgFeFuncRElementEClass.getEGenericSuperTypes().add(g1);
 		g1 = createEGenericType(this.getSvgElement());
-		svgFeFuncGEClass.getEGenericSuperTypes().add(g1);
+		svgFeFuncGElementEClass.getEGenericSuperTypes().add(g1);
 		g1 = createEGenericType(this.getCoreAttributes());
-		svgFeFuncGEClass.getEGenericSuperTypes().add(g1);
+		svgFeFuncGElementEClass.getEGenericSuperTypes().add(g1);
 		g1 = createEGenericType(this.getPresentationAttributes());
-		svgFeFuncGEClass.getEGenericSuperTypes().add(g1);
+		svgFeFuncGElementEClass.getEGenericSuperTypes().add(g1);
 		g1 = createEGenericType(this.getContentElement());
 		g2 = createEGenericType(this.getSvgElement());
 		g1.getETypeArguments().add(g2);
-		svgFeFuncGEClass.getEGenericSuperTypes().add(g1);
+		svgFeFuncGElementEClass.getEGenericSuperTypes().add(g1);
 		g1 = createEGenericType(this.getSvgElement());
-		svgFeFuncBEClass.getEGenericSuperTypes().add(g1);
+		svgFeFuncBElementEClass.getEGenericSuperTypes().add(g1);
 		g1 = createEGenericType(this.getCoreAttributes());
-		svgFeFuncBEClass.getEGenericSuperTypes().add(g1);
+		svgFeFuncBElementEClass.getEGenericSuperTypes().add(g1);
 		g1 = createEGenericType(this.getPresentationAttributes());
-		svgFeFuncBEClass.getEGenericSuperTypes().add(g1);
+		svgFeFuncBElementEClass.getEGenericSuperTypes().add(g1);
 		g1 = createEGenericType(this.getContentElement());
 		g2 = createEGenericType(this.getSvgElement());
 		g1.getETypeArguments().add(g2);
-		svgFeFuncBEClass.getEGenericSuperTypes().add(g1);
+		svgFeFuncBElementEClass.getEGenericSuperTypes().add(g1);
 		g1 = createEGenericType(this.getSvgElement());
-		svgFeFuncAEClass.getEGenericSuperTypes().add(g1);
+		svgFeFuncAElementEClass.getEGenericSuperTypes().add(g1);
 		g1 = createEGenericType(this.getCoreAttributes());
-		svgFeFuncAEClass.getEGenericSuperTypes().add(g1);
+		svgFeFuncAElementEClass.getEGenericSuperTypes().add(g1);
 		g1 = createEGenericType(this.getPresentationAttributes());
-		svgFeFuncAEClass.getEGenericSuperTypes().add(g1);
+		svgFeFuncAElementEClass.getEGenericSuperTypes().add(g1);
 		g1 = createEGenericType(this.getContentElement());
 		g2 = createEGenericType(this.getSvgElement());
 		g1.getETypeArguments().add(g2);
-		svgFeFuncAEClass.getEGenericSuperTypes().add(g1);
+		svgFeFuncAElementEClass.getEGenericSuperTypes().add(g1);
 		g1 = createEGenericType(this.getSvgElement());
-		svgFeCompositeEClass.getEGenericSuperTypes().add(g1);
+		svgFeCompositeElementEClass.getEGenericSuperTypes().add(g1);
 		g1 = createEGenericType(this.getCoreAttributes());
-		svgFeCompositeEClass.getEGenericSuperTypes().add(g1);
+		svgFeCompositeElementEClass.getEGenericSuperTypes().add(g1);
 		g1 = createEGenericType(this.getPresentationAttributes());
-		svgFeCompositeEClass.getEGenericSuperTypes().add(g1);
+		svgFeCompositeElementEClass.getEGenericSuperTypes().add(g1);
 		g1 = createEGenericType(this.getFilterPrimitiveAttributes());
-		svgFeCompositeEClass.getEGenericSuperTypes().add(g1);
+		svgFeCompositeElementEClass.getEGenericSuperTypes().add(g1);
 		g1 = createEGenericType(this.getContentElement());
 		g2 = createEGenericType(this.getSvgElement());
 		g1.getETypeArguments().add(g2);
-		svgFeCompositeEClass.getEGenericSuperTypes().add(g1);
+		svgFeCompositeElementEClass.getEGenericSuperTypes().add(g1);
 		g1 = createEGenericType(this.getSvgElement());
-		svgFeConvolveMatrixEClass.getEGenericSuperTypes().add(g1);
+		svgFeConvolveMatrixElementEClass.getEGenericSuperTypes().add(g1);
 		g1 = createEGenericType(this.getCoreAttributes());
-		svgFeConvolveMatrixEClass.getEGenericSuperTypes().add(g1);
+		svgFeConvolveMatrixElementEClass.getEGenericSuperTypes().add(g1);
 		g1 = createEGenericType(this.getPresentationAttributes());
-		svgFeConvolveMatrixEClass.getEGenericSuperTypes().add(g1);
+		svgFeConvolveMatrixElementEClass.getEGenericSuperTypes().add(g1);
 		g1 = createEGenericType(this.getFilterPrimitiveAttributes());
-		svgFeConvolveMatrixEClass.getEGenericSuperTypes().add(g1);
+		svgFeConvolveMatrixElementEClass.getEGenericSuperTypes().add(g1);
 		g1 = createEGenericType(this.getContentElement());
 		g2 = createEGenericType(this.getSvgElement());
 		g1.getETypeArguments().add(g2);
-		svgFeConvolveMatrixEClass.getEGenericSuperTypes().add(g1);
+		svgFeConvolveMatrixElementEClass.getEGenericSuperTypes().add(g1);
 		g1 = createEGenericType(this.getSvgElement());
-		svgFeDiffuseLightingEClass.getEGenericSuperTypes().add(g1);
+		svgFeDiffuseLightingElementEClass.getEGenericSuperTypes().add(g1);
 		g1 = createEGenericType(this.getCoreAttributes());
-		svgFeDiffuseLightingEClass.getEGenericSuperTypes().add(g1);
+		svgFeDiffuseLightingElementEClass.getEGenericSuperTypes().add(g1);
 		g1 = createEGenericType(this.getPresentationAttributes());
-		svgFeDiffuseLightingEClass.getEGenericSuperTypes().add(g1);
+		svgFeDiffuseLightingElementEClass.getEGenericSuperTypes().add(g1);
 		g1 = createEGenericType(this.getFilterPrimitiveAttributes());
-		svgFeDiffuseLightingEClass.getEGenericSuperTypes().add(g1);
+		svgFeDiffuseLightingElementEClass.getEGenericSuperTypes().add(g1);
 		g1 = createEGenericType(this.getContentElement());
 		g2 = createEGenericType(this.getSvgElement());
 		g1.getETypeArguments().add(g2);
-		svgFeDiffuseLightingEClass.getEGenericSuperTypes().add(g1);
+		svgFeDiffuseLightingElementEClass.getEGenericSuperTypes().add(g1);
 		g1 = createEGenericType(this.getSvgElement());
-		svgFeDisplacementMapEClass.getEGenericSuperTypes().add(g1);
+		svgFeDisplacementMapElementEClass.getEGenericSuperTypes().add(g1);
 		g1 = createEGenericType(this.getCoreAttributes());
-		svgFeDisplacementMapEClass.getEGenericSuperTypes().add(g1);
+		svgFeDisplacementMapElementEClass.getEGenericSuperTypes().add(g1);
 		g1 = createEGenericType(this.getPresentationAttributes());
-		svgFeDisplacementMapEClass.getEGenericSuperTypes().add(g1);
+		svgFeDisplacementMapElementEClass.getEGenericSuperTypes().add(g1);
 		g1 = createEGenericType(this.getFilterPrimitiveAttributes());
-		svgFeDisplacementMapEClass.getEGenericSuperTypes().add(g1);
+		svgFeDisplacementMapElementEClass.getEGenericSuperTypes().add(g1);
 		g1 = createEGenericType(this.getContentElement());
 		g2 = createEGenericType(this.getSvgElement());
 		g1.getETypeArguments().add(g2);
-		svgFeDisplacementMapEClass.getEGenericSuperTypes().add(g1);
+		svgFeDisplacementMapElementEClass.getEGenericSuperTypes().add(g1);
 		g1 = createEGenericType(this.getSvgElement());
-		svgFeFloodEClass.getEGenericSuperTypes().add(g1);
+		svgFeFloodElementEClass.getEGenericSuperTypes().add(g1);
 		g1 = createEGenericType(this.getCoreAttributes());
-		svgFeFloodEClass.getEGenericSuperTypes().add(g1);
+		svgFeFloodElementEClass.getEGenericSuperTypes().add(g1);
 		g1 = createEGenericType(this.getPresentationAttributes());
-		svgFeFloodEClass.getEGenericSuperTypes().add(g1);
+		svgFeFloodElementEClass.getEGenericSuperTypes().add(g1);
 		g1 = createEGenericType(this.getFilterPrimitiveAttributes());
-		svgFeFloodEClass.getEGenericSuperTypes().add(g1);
+		svgFeFloodElementEClass.getEGenericSuperTypes().add(g1);
 		g1 = createEGenericType(this.getContentElement());
 		g2 = createEGenericType(this.getSvgElement());
 		g1.getETypeArguments().add(g2);
-		svgFeFloodEClass.getEGenericSuperTypes().add(g1);
+		svgFeFloodElementEClass.getEGenericSuperTypes().add(g1);
 		g1 = createEGenericType(this.getSvgElement());
-		svgFeGaussianBlurEClass.getEGenericSuperTypes().add(g1);
+		svgFeGaussianBlurElementEClass.getEGenericSuperTypes().add(g1);
 		g1 = createEGenericType(this.getCoreAttributes());
-		svgFeGaussianBlurEClass.getEGenericSuperTypes().add(g1);
+		svgFeGaussianBlurElementEClass.getEGenericSuperTypes().add(g1);
 		g1 = createEGenericType(this.getPresentationAttributes());
-		svgFeGaussianBlurEClass.getEGenericSuperTypes().add(g1);
+		svgFeGaussianBlurElementEClass.getEGenericSuperTypes().add(g1);
 		g1 = createEGenericType(this.getFilterPrimitiveAttributes());
-		svgFeGaussianBlurEClass.getEGenericSuperTypes().add(g1);
+		svgFeGaussianBlurElementEClass.getEGenericSuperTypes().add(g1);
 		g1 = createEGenericType(this.getContentElement());
 		g2 = createEGenericType(this.getSvgElement());
 		g1.getETypeArguments().add(g2);
-		svgFeGaussianBlurEClass.getEGenericSuperTypes().add(g1);
+		svgFeGaussianBlurElementEClass.getEGenericSuperTypes().add(g1);
 		g1 = createEGenericType(this.getSvgElement());
-		svgFeImageEClass.getEGenericSuperTypes().add(g1);
+		svgFeImageElementEClass.getEGenericSuperTypes().add(g1);
 		g1 = createEGenericType(this.getCoreAttributes());
-		svgFeImageEClass.getEGenericSuperTypes().add(g1);
+		svgFeImageElementEClass.getEGenericSuperTypes().add(g1);
 		g1 = createEGenericType(this.getPresentationAttributes());
-		svgFeImageEClass.getEGenericSuperTypes().add(g1);
+		svgFeImageElementEClass.getEGenericSuperTypes().add(g1);
 		g1 = createEGenericType(this.getFilterPrimitiveAttributes());
-		svgFeImageEClass.getEGenericSuperTypes().add(g1);
+		svgFeImageElementEClass.getEGenericSuperTypes().add(g1);
 		g1 = createEGenericType(this.getXLinkAttributes());
-		svgFeImageEClass.getEGenericSuperTypes().add(g1);
+		svgFeImageElementEClass.getEGenericSuperTypes().add(g1);
 		g1 = createEGenericType(this.getContentElement());
 		g2 = createEGenericType(this.getSvgElement());
 		g1.getETypeArguments().add(g2);
-		svgFeImageEClass.getEGenericSuperTypes().add(g1);
+		svgFeImageElementEClass.getEGenericSuperTypes().add(g1);
 		g1 = createEGenericType(this.getSvgElement());
-		svgFeMergeEClass.getEGenericSuperTypes().add(g1);
+		svgFeMergeElementEClass.getEGenericSuperTypes().add(g1);
 		g1 = createEGenericType(this.getCoreAttributes());
-		svgFeMergeEClass.getEGenericSuperTypes().add(g1);
+		svgFeMergeElementEClass.getEGenericSuperTypes().add(g1);
 		g1 = createEGenericType(this.getPresentationAttributes());
-		svgFeMergeEClass.getEGenericSuperTypes().add(g1);
+		svgFeMergeElementEClass.getEGenericSuperTypes().add(g1);
 		g1 = createEGenericType(this.getFilterPrimitiveAttributes());
-		svgFeMergeEClass.getEGenericSuperTypes().add(g1);
+		svgFeMergeElementEClass.getEGenericSuperTypes().add(g1);
 		g1 = createEGenericType(this.getContentElement());
 		g2 = createEGenericType(this.getSvgElement());
 		g1.getETypeArguments().add(g2);
-		svgFeMergeEClass.getEGenericSuperTypes().add(g1);
+		svgFeMergeElementEClass.getEGenericSuperTypes().add(g1);
 		g1 = createEGenericType(this.getSvgElement());
-		svgFeMergeNodeEClass.getEGenericSuperTypes().add(g1);
+		svgFeMergeNodeElementEClass.getEGenericSuperTypes().add(g1);
 		g1 = createEGenericType(this.getCoreAttributes());
-		svgFeMergeNodeEClass.getEGenericSuperTypes().add(g1);
+		svgFeMergeNodeElementEClass.getEGenericSuperTypes().add(g1);
 		g1 = createEGenericType(this.getContentElement());
 		g2 = createEGenericType(this.getSvgElement());
 		g1.getETypeArguments().add(g2);
-		svgFeMergeNodeEClass.getEGenericSuperTypes().add(g1);
+		svgFeMergeNodeElementEClass.getEGenericSuperTypes().add(g1);
 		g1 = createEGenericType(this.getSvgElement());
-		svgFeMorphologyEClass.getEGenericSuperTypes().add(g1);
+		svgFeMorphologyElementEClass.getEGenericSuperTypes().add(g1);
 		g1 = createEGenericType(this.getCoreAttributes());
-		svgFeMorphologyEClass.getEGenericSuperTypes().add(g1);
+		svgFeMorphologyElementEClass.getEGenericSuperTypes().add(g1);
 		g1 = createEGenericType(this.getPresentationAttributes());
-		svgFeMorphologyEClass.getEGenericSuperTypes().add(g1);
+		svgFeMorphologyElementEClass.getEGenericSuperTypes().add(g1);
 		g1 = createEGenericType(this.getFilterPrimitiveAttributes());
-		svgFeMorphologyEClass.getEGenericSuperTypes().add(g1);
+		svgFeMorphologyElementEClass.getEGenericSuperTypes().add(g1);
 		g1 = createEGenericType(this.getContentElement());
 		g2 = createEGenericType(this.getSvgElement());
 		g1.getETypeArguments().add(g2);
-		svgFeMorphologyEClass.getEGenericSuperTypes().add(g1);
+		svgFeMorphologyElementEClass.getEGenericSuperTypes().add(g1);
 		g1 = createEGenericType(this.getSvgElement());
-		svgFeOffsetEClass.getEGenericSuperTypes().add(g1);
+		svgFeOffsetElementEClass.getEGenericSuperTypes().add(g1);
 		g1 = createEGenericType(this.getCoreAttributes());
-		svgFeOffsetEClass.getEGenericSuperTypes().add(g1);
+		svgFeOffsetElementEClass.getEGenericSuperTypes().add(g1);
 		g1 = createEGenericType(this.getPresentationAttributes());
-		svgFeOffsetEClass.getEGenericSuperTypes().add(g1);
+		svgFeOffsetElementEClass.getEGenericSuperTypes().add(g1);
 		g1 = createEGenericType(this.getFilterPrimitiveAttributes());
-		svgFeOffsetEClass.getEGenericSuperTypes().add(g1);
+		svgFeOffsetElementEClass.getEGenericSuperTypes().add(g1);
 		g1 = createEGenericType(this.getContentElement());
 		g2 = createEGenericType(this.getSvgElement());
 		g1.getETypeArguments().add(g2);
-		svgFeOffsetEClass.getEGenericSuperTypes().add(g1);
+		svgFeOffsetElementEClass.getEGenericSuperTypes().add(g1);
 		g1 = createEGenericType(this.getSvgElement());
-		svgFeSpecularLightingEClass.getEGenericSuperTypes().add(g1);
+		svgFeSpecularLightingElementEClass.getEGenericSuperTypes().add(g1);
 		g1 = createEGenericType(this.getCoreAttributes());
-		svgFeSpecularLightingEClass.getEGenericSuperTypes().add(g1);
+		svgFeSpecularLightingElementEClass.getEGenericSuperTypes().add(g1);
 		g1 = createEGenericType(this.getPresentationAttributes());
-		svgFeSpecularLightingEClass.getEGenericSuperTypes().add(g1);
+		svgFeSpecularLightingElementEClass.getEGenericSuperTypes().add(g1);
 		g1 = createEGenericType(this.getFilterPrimitiveAttributes());
-		svgFeSpecularLightingEClass.getEGenericSuperTypes().add(g1);
+		svgFeSpecularLightingElementEClass.getEGenericSuperTypes().add(g1);
 		g1 = createEGenericType(this.getContentElement());
 		g2 = createEGenericType(this.getSvgElement());
 		g1.getETypeArguments().add(g2);
-		svgFeSpecularLightingEClass.getEGenericSuperTypes().add(g1);
+		svgFeSpecularLightingElementEClass.getEGenericSuperTypes().add(g1);
 		g1 = createEGenericType(this.getSvgElement());
-		svgFeTileEClass.getEGenericSuperTypes().add(g1);
+		svgFeTileElementEClass.getEGenericSuperTypes().add(g1);
 		g1 = createEGenericType(this.getCoreAttributes());
-		svgFeTileEClass.getEGenericSuperTypes().add(g1);
+		svgFeTileElementEClass.getEGenericSuperTypes().add(g1);
 		g1 = createEGenericType(this.getPresentationAttributes());
-		svgFeTileEClass.getEGenericSuperTypes().add(g1);
+		svgFeTileElementEClass.getEGenericSuperTypes().add(g1);
 		g1 = createEGenericType(this.getFilterPrimitiveAttributes());
-		svgFeTileEClass.getEGenericSuperTypes().add(g1);
+		svgFeTileElementEClass.getEGenericSuperTypes().add(g1);
 		g1 = createEGenericType(this.getContentElement());
 		g2 = createEGenericType(this.getSvgElement());
 		g1.getETypeArguments().add(g2);
-		svgFeTileEClass.getEGenericSuperTypes().add(g1);
+		svgFeTileElementEClass.getEGenericSuperTypes().add(g1);
 		g1 = createEGenericType(this.getSvgElement());
-		svgFeTurbulenceEClass.getEGenericSuperTypes().add(g1);
+		svgFeTurbulenceElementEClass.getEGenericSuperTypes().add(g1);
 		g1 = createEGenericType(this.getCoreAttributes());
-		svgFeTurbulenceEClass.getEGenericSuperTypes().add(g1);
+		svgFeTurbulenceElementEClass.getEGenericSuperTypes().add(g1);
 		g1 = createEGenericType(this.getPresentationAttributes());
-		svgFeTurbulenceEClass.getEGenericSuperTypes().add(g1);
+		svgFeTurbulenceElementEClass.getEGenericSuperTypes().add(g1);
 		g1 = createEGenericType(this.getFilterPrimitiveAttributes());
-		svgFeTurbulenceEClass.getEGenericSuperTypes().add(g1);
+		svgFeTurbulenceElementEClass.getEGenericSuperTypes().add(g1);
 		g1 = createEGenericType(this.getContentElement());
 		g2 = createEGenericType(this.getSvgElement());
 		g1.getETypeArguments().add(g2);
-		svgFeTurbulenceEClass.getEGenericSuperTypes().add(g1);
+		svgFeTurbulenceElementEClass.getEGenericSuperTypes().add(g1);
+		svgAnimateElementEClass.getESuperTypes().add(this.getSvgElement());
+		svgMetadataElementEClass.getESuperTypes().add(this.getSvgElement());
+		svgMetadataElementEClass.getESuperTypes().add(this.getCoreAttributes());
 
 		// Initialize classes and features; add operations and parameters
 		initEClass(contentElementEClass, ContentElement.class, "ContentElement", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -8294,6 +8364,8 @@ public class SvgPackageImpl extends EPackageImpl implements SvgPackage {
 		initEClass(lightSourceElementEClass, LightSourceElement.class, "LightSourceElement", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(filterPrimitiveElementEClass, FilterPrimitiveElement.class, "FilterPrimitiveElement", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(animationElementEClass, AnimationElement.class, "AnimationElement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(____ENUMS____EClass, ____ENUMS____.class, "____ENUMS____", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
@@ -8375,8 +8447,8 @@ public class SvgPackageImpl extends EPackageImpl implements SvgPackage {
 		initEAttribute(getPresentationAttributes_Overflow(), this.getOverflow(), "overflow", "null", 0, 1, PresentationAttributes.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getPresentationAttributes_Pointer_events(), this.getPointer_events(), "pointer_events", "pointer_events.visiblePainted", 0, 1, PresentationAttributes.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getPresentationAttributes_Shape_rendering(), this.getShape_rendering(), "shape_rendering", "shape_rendering.auto", 0, 1, PresentationAttributes.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getPresentationAttributes_Stop_color(), this.getStop_color(), "stop_color", "\"black\"", 0, 1, PresentationAttributes.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getPresentationAttributes_Stop_opacity(), this.getStop_opacity(), "stop_opacity", "\"1\"", 0, 1, PresentationAttributes.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getPresentationAttributes_Stop_color(), this.getStop_color(), "stop_color", "black", 0, 1, PresentationAttributes.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getPresentationAttributes_Stop_opacity(), this.getStop_opacity(), "stop_opacity", "1", 0, 1, PresentationAttributes.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getPresentationAttributes_Stroke(), this.getStroke(), "stroke", "\"none\"", 0, 1, PresentationAttributes.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getPresentationAttributes_Stroke_dasharray(), this.getStroke_dasharray(), "stroke_dasharray", "\"none\"", 0, 1, PresentationAttributes.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getPresentationAttributes_Stroke_dashoffset(), this.getStroke_dashoffset(), "stroke_dashoffset", "\"0\"", 0, 1, PresentationAttributes.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -8401,6 +8473,7 @@ public class SvgPackageImpl extends EPackageImpl implements SvgPackage {
 		initEAttribute(getXLinkAttributes_Xlink__role(), ecorePackage.getEString(), "xlink__role", null, 0, 1, XLinkAttributes.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getXLinkAttributes_Xlink__arcrole(), ecorePackage.getEString(), "xlink__arcrole", null, 0, 1, XLinkAttributes.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getXLinkAttributes_Xlink__title(), ecorePackage.getEString(), "xlink__title", null, 0, 1, XLinkAttributes.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getXLinkAttributes_ResolvedInstance(), this.getSvgElement(), null, "resolvedInstance", null, 0, 1, XLinkAttributes.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(filterPrimitiveAttributesEClass, FilterPrimitiveAttributes.class, "FilterPrimitiveAttributes", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getFilterPrimitiveAttributes_X(), this.getCoordinate(), "x", null, 0, 1, FilterPrimitiveAttributes.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -8649,10 +8722,10 @@ public class SvgPackageImpl extends EPackageImpl implements SvgPackage {
 		initEAttribute(getSvgRadialGradientElement_Fy(), this.getCoordinate(), "fy", null, 0, 1, SvgRadialGradientElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getSvgRadialGradientElement_SpreadMethod(), this.getSpreadMethod(), "spreadMethod", "SpreadMethod.pad", 0, 1, SvgRadialGradientElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(svgGradientStopElementEClass, SvgGradientStopElement.class, "SvgGradientStopElement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getSvgGradientStopElement_Class(), ecorePackage.getEString(), "class", null, 0, 1, SvgGradientStopElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getSvgGradientStopElement_Style(), ecorePackage.getEString(), "style", null, 0, 1, SvgGradientStopElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getSvgGradientStopElement_Offset(), ecorePackage.getEString(), "offset", null, 0, 1, SvgGradientStopElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(svgStopElementEClass, SvgStopElement.class, "SvgStopElement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getSvgStopElement_Class(), ecorePackage.getEString(), "class", null, 0, 1, SvgStopElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getSvgStopElement_Style(), ecorePackage.getEString(), "style", null, 0, 1, SvgStopElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getSvgStopElement_Offset(), ecorePackage.getEString(), "offset", null, 0, 1, SvgStopElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(svgPatternElementEClass, SvgPatternElement.class, "SvgPatternElement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getSvgPatternElement_Class(), ecorePackage.getEString(), "class", null, 0, 1, SvgPatternElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -8698,140 +8771,144 @@ public class SvgPackageImpl extends EPackageImpl implements SvgPackage {
 		initEAttribute(getSvgFilterElement_FilterUnits(), this.getFilterUnits(), "filterUnits", "FilterUnits.userSpaceOnUse", 0, 1, SvgFilterElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getSvgFilterElement_PrimitiveUnits(), this.getFilterUnits(), "primitiveUnits", "FilterUnits.userSpaceOnUse", 0, 1, SvgFilterElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(svgFeDistantLightEClass, SvgFeDistantLight.class, "SvgFeDistantLight", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getSvgFeDistantLight_Azimuth(), this.getNumber(), "azimuth", null, 0, 1, SvgFeDistantLight.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getSvgFeDistantLight_Elevation(), this.getNumber(), "elevation", null, 0, 1, SvgFeDistantLight.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(svgFeDistantLightElementEClass, SvgFeDistantLightElement.class, "SvgFeDistantLightElement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getSvgFeDistantLightElement_Azimuth(), this.getNumber(), "azimuth", null, 0, 1, SvgFeDistantLightElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getSvgFeDistantLightElement_Elevation(), this.getNumber(), "elevation", null, 0, 1, SvgFeDistantLightElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(svgFePointLightEClass, SvgFePointLight.class, "SvgFePointLight", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getSvgFePointLight_X(), this.getNumber(), "x", null, 0, 1, SvgFePointLight.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getSvgFePointLight_Y(), this.getNumber(), "y", null, 0, 1, SvgFePointLight.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getSvgFePointLight_Z(), this.getNumber(), "z", null, 0, 1, SvgFePointLight.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(svgFePointLightElementEClass, SvgFePointLightElement.class, "SvgFePointLightElement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getSvgFePointLightElement_X(), this.getNumber(), "x", null, 0, 1, SvgFePointLightElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getSvgFePointLightElement_Y(), this.getNumber(), "y", null, 0, 1, SvgFePointLightElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getSvgFePointLightElement_Z(), this.getNumber(), "z", null, 0, 1, SvgFePointLightElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(svgFeSpotLightEClass, SvgFeSpotLight.class, "SvgFeSpotLight", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getSvgFeSpotLight_X(), this.getNumber(), "x", null, 0, 1, SvgFeSpotLight.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getSvgFeSpotLight_Y(), this.getNumber(), "y", null, 0, 1, SvgFeSpotLight.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getSvgFeSpotLight_Z(), this.getNumber(), "z", null, 0, 1, SvgFeSpotLight.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getSvgFeSpotLight_PointsAtX(), this.getNumber(), "pointsAtX", null, 0, 1, SvgFeSpotLight.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getSvgFeSpotLight_PointsAtY(), this.getNumber(), "pointsAtY", null, 0, 1, SvgFeSpotLight.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getSvgFeSpotLight_PointsAtZ(), this.getNumber(), "pointsAtZ", null, 0, 1, SvgFeSpotLight.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getSvgFeSpotLight_SpecularExponent(), this.getNumber(), "specularExponent", null, 0, 1, SvgFeSpotLight.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getSvgFeSpotLight_LimitingConeAngle(), this.getNumber(), "limitingConeAngle", null, 0, 1, SvgFeSpotLight.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(svgFeSpotLightElementEClass, SvgFeSpotLightElement.class, "SvgFeSpotLightElement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getSvgFeSpotLightElement_X(), this.getNumber(), "x", null, 0, 1, SvgFeSpotLightElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getSvgFeSpotLightElement_Y(), this.getNumber(), "y", null, 0, 1, SvgFeSpotLightElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getSvgFeSpotLightElement_Z(), this.getNumber(), "z", null, 0, 1, SvgFeSpotLightElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getSvgFeSpotLightElement_PointsAtX(), this.getNumber(), "pointsAtX", null, 0, 1, SvgFeSpotLightElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getSvgFeSpotLightElement_PointsAtY(), this.getNumber(), "pointsAtY", null, 0, 1, SvgFeSpotLightElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getSvgFeSpotLightElement_PointsAtZ(), this.getNumber(), "pointsAtZ", null, 0, 1, SvgFeSpotLightElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getSvgFeSpotLightElement_SpecularExponent(), this.getNumber(), "specularExponent", null, 0, 1, SvgFeSpotLightElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getSvgFeSpotLightElement_LimitingConeAngle(), this.getNumber(), "limitingConeAngle", null, 0, 1, SvgFeSpotLightElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(svgFeBlendEClass, SvgFeBlend.class, "SvgFeBlend", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getSvgFeBlend_Class(), ecorePackage.getEString(), "class", null, 0, 1, SvgFeBlend.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getSvgFeBlend_Style(), ecorePackage.getEString(), "style", null, 0, 1, SvgFeBlend.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getSvgFeBlend_In2(), ecorePackage.getEString(), "in2", null, 0, 1, SvgFeBlend.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getSvgFeBlend_Mode(), this.getBlendMode(), "mode", "Mode.normal", 0, 1, SvgFeBlend.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(svgFeBlendElementEClass, SvgFeBlendElement.class, "SvgFeBlendElement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getSvgFeBlendElement_Class(), ecorePackage.getEString(), "class", null, 0, 1, SvgFeBlendElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getSvgFeBlendElement_Style(), ecorePackage.getEString(), "style", null, 0, 1, SvgFeBlendElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getSvgFeBlendElement_In2(), ecorePackage.getEString(), "in2", null, 0, 1, SvgFeBlendElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getSvgFeBlendElement_Mode(), this.getBlendMode(), "mode", "Mode.normal", 0, 1, SvgFeBlendElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(svgFeColorMatrixEClass, SvgFeColorMatrix.class, "SvgFeColorMatrix", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getSvgFeColorMatrix_Class(), ecorePackage.getEString(), "class", null, 0, 1, SvgFeColorMatrix.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getSvgFeColorMatrix_Style(), ecorePackage.getEString(), "style", null, 0, 1, SvgFeColorMatrix.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getSvgFeColorMatrix_Type(), this.getColorMatrixType(), "type", "ColorMatrixType.matrix", 0, 1, SvgFeColorMatrix.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getSvgFeColorMatrix_Values(), this.getListOfNumbers(), "values", null, 0, 1, SvgFeColorMatrix.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(svgFeColorMatrixElementEClass, SvgFeColorMatrixElement.class, "SvgFeColorMatrixElement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getSvgFeColorMatrixElement_Class(), ecorePackage.getEString(), "class", null, 0, 1, SvgFeColorMatrixElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getSvgFeColorMatrixElement_Style(), ecorePackage.getEString(), "style", null, 0, 1, SvgFeColorMatrixElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getSvgFeColorMatrixElement_Type(), this.getColorMatrixType(), "type", "ColorMatrixType.matrix", 0, 1, SvgFeColorMatrixElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getSvgFeColorMatrixElement_Values(), this.getListOfNumbers(), "values", null, 0, 1, SvgFeColorMatrixElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(svgFeComponentTransferEClass, SvgFeComponentTransfer.class, "SvgFeComponentTransfer", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getSvgFeComponentTransfer_Class(), ecorePackage.getEString(), "class", null, 0, 1, SvgFeComponentTransfer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getSvgFeComponentTransfer_Style(), ecorePackage.getEString(), "style", null, 0, 1, SvgFeComponentTransfer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(svgFeComponentTransferElementEClass, SvgFeComponentTransferElement.class, "SvgFeComponentTransferElement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getSvgFeComponentTransferElement_Class(), ecorePackage.getEString(), "class", null, 0, 1, SvgFeComponentTransferElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getSvgFeComponentTransferElement_Style(), ecorePackage.getEString(), "style", null, 0, 1, SvgFeComponentTransferElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(svgFeFuncREClass, SvgFeFuncR.class, "SvgFeFuncR", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEClass(svgFeFuncRElementEClass, SvgFeFuncRElement.class, "SvgFeFuncRElement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
-		initEClass(svgFeFuncGEClass, SvgFeFuncG.class, "SvgFeFuncG", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEClass(svgFeFuncGElementEClass, SvgFeFuncGElement.class, "SvgFeFuncGElement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
-		initEClass(svgFeFuncBEClass, SvgFeFuncB.class, "SvgFeFuncB", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEClass(svgFeFuncBElementEClass, SvgFeFuncBElement.class, "SvgFeFuncBElement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
-		initEClass(svgFeFuncAEClass, SvgFeFuncA.class, "SvgFeFuncA", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEClass(svgFeFuncAElementEClass, SvgFeFuncAElement.class, "SvgFeFuncAElement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
-		initEClass(svgFeCompositeEClass, SvgFeComposite.class, "SvgFeComposite", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getSvgFeComposite_Class(), ecorePackage.getEString(), "class", null, 0, 1, SvgFeComposite.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getSvgFeComposite_Style(), ecorePackage.getEString(), "style", null, 0, 1, SvgFeComposite.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getSvgFeComposite_In2(), ecorePackage.getEString(), "in2", null, 0, 1, SvgFeComposite.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getSvgFeComposite_Operator(), this.getCompositeOperator(), "operator", "CompositeOperator.over", 0, 1, SvgFeComposite.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getSvgFeComposite_K1(), this.getNumber(), "k1", null, 0, 1, SvgFeComposite.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getSvgFeComposite_K2(), this.getNumber(), "k2", null, 0, 1, SvgFeComposite.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getSvgFeComposite_K3(), this.getNumber(), "k3", null, 0, 1, SvgFeComposite.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getSvgFeComposite_K4(), this.getNumber(), "k4", null, 0, 1, SvgFeComposite.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(svgFeCompositeElementEClass, SvgFeCompositeElement.class, "SvgFeCompositeElement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getSvgFeCompositeElement_Class(), ecorePackage.getEString(), "class", null, 0, 1, SvgFeCompositeElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getSvgFeCompositeElement_Style(), ecorePackage.getEString(), "style", null, 0, 1, SvgFeCompositeElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getSvgFeCompositeElement_In2(), ecorePackage.getEString(), "in2", null, 0, 1, SvgFeCompositeElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getSvgFeCompositeElement_Operator(), this.getCompositeOperator(), "operator", "CompositeOperator.over", 0, 1, SvgFeCompositeElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getSvgFeCompositeElement_K1(), this.getNumber(), "k1", null, 0, 1, SvgFeCompositeElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getSvgFeCompositeElement_K2(), this.getNumber(), "k2", null, 0, 1, SvgFeCompositeElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getSvgFeCompositeElement_K3(), this.getNumber(), "k3", null, 0, 1, SvgFeCompositeElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getSvgFeCompositeElement_K4(), this.getNumber(), "k4", null, 0, 1, SvgFeCompositeElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(svgFeConvolveMatrixEClass, SvgFeConvolveMatrix.class, "SvgFeConvolveMatrix", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getSvgFeConvolveMatrix_Class(), ecorePackage.getEString(), "class", null, 0, 1, SvgFeConvolveMatrix.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getSvgFeConvolveMatrix_Style(), ecorePackage.getEString(), "style", null, 0, 1, SvgFeConvolveMatrix.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getSvgFeConvolveMatrix_Order(), this.getNumberOptionalNumber(), "order", null, 0, 1, SvgFeConvolveMatrix.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getSvgFeConvolveMatrix_KernelMatrix(), this.getListOfNumbers(), "kernelMatrix", null, 0, 1, SvgFeConvolveMatrix.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getSvgFeConvolveMatrix_Divisor(), this.getNumber(), "divisor", null, 0, 1, SvgFeConvolveMatrix.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getSvgFeConvolveMatrix_Bias(), this.getNumber(), "bias", null, 0, 1, SvgFeConvolveMatrix.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getSvgFeConvolveMatrix_TargetX(), ecorePackage.getEIntegerObject(), "targetX", null, 0, 1, SvgFeConvolveMatrix.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getSvgFeConvolveMatrix_TargetY(), ecorePackage.getEIntegerObject(), "targetY", null, 0, 1, SvgFeConvolveMatrix.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getSvgFeConvolveMatrix_EdgeMode(), this.getConvolveMatrixEdgeMode(), "edgeMode", "ConvolveMatrixEdgeMode.duplicate", 0, 1, SvgFeConvolveMatrix.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getSvgFeConvolveMatrix_KernelUnitLength(), this.getNumberOptionalNumber(), "kernelUnitLength", null, 0, 1, SvgFeConvolveMatrix.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getSvgFeConvolveMatrix_PreserveAlpha(), ecorePackage.getEBoolean(), "preserveAlpha", null, 0, 1, SvgFeConvolveMatrix.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(svgFeConvolveMatrixElementEClass, SvgFeConvolveMatrixElement.class, "SvgFeConvolveMatrixElement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getSvgFeConvolveMatrixElement_Class(), ecorePackage.getEString(), "class", null, 0, 1, SvgFeConvolveMatrixElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getSvgFeConvolveMatrixElement_Style(), ecorePackage.getEString(), "style", null, 0, 1, SvgFeConvolveMatrixElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getSvgFeConvolveMatrixElement_Order(), this.getNumberOptionalNumber(), "order", null, 0, 1, SvgFeConvolveMatrixElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getSvgFeConvolveMatrixElement_KernelMatrix(), this.getListOfNumbers(), "kernelMatrix", null, 0, 1, SvgFeConvolveMatrixElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getSvgFeConvolveMatrixElement_Divisor(), this.getNumber(), "divisor", null, 0, 1, SvgFeConvolveMatrixElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getSvgFeConvolveMatrixElement_Bias(), this.getNumber(), "bias", null, 0, 1, SvgFeConvolveMatrixElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getSvgFeConvolveMatrixElement_TargetX(), ecorePackage.getEIntegerObject(), "targetX", null, 0, 1, SvgFeConvolveMatrixElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getSvgFeConvolveMatrixElement_TargetY(), ecorePackage.getEIntegerObject(), "targetY", null, 0, 1, SvgFeConvolveMatrixElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getSvgFeConvolveMatrixElement_EdgeMode(), this.getConvolveMatrixEdgeMode(), "edgeMode", "ConvolveMatrixEdgeMode.duplicate", 0, 1, SvgFeConvolveMatrixElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getSvgFeConvolveMatrixElement_KernelUnitLength(), this.getNumberOptionalNumber(), "kernelUnitLength", null, 0, 1, SvgFeConvolveMatrixElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getSvgFeConvolveMatrixElement_PreserveAlpha(), ecorePackage.getEBoolean(), "preserveAlpha", null, 0, 1, SvgFeConvolveMatrixElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(svgFeDiffuseLightingEClass, SvgFeDiffuseLighting.class, "SvgFeDiffuseLighting", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getSvgFeDiffuseLighting_Class(), ecorePackage.getEString(), "class", null, 0, 1, SvgFeDiffuseLighting.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getSvgFeDiffuseLighting_Style(), ecorePackage.getEString(), "style", null, 0, 1, SvgFeDiffuseLighting.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getSvgFeDiffuseLighting_SurfaceScale(), this.getNumber(), "surfaceScale", null, 0, 1, SvgFeDiffuseLighting.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getSvgFeDiffuseLighting_DiffuseConstant(), this.getNumber(), "diffuseConstant", null, 0, 1, SvgFeDiffuseLighting.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getSvgFeDiffuseLighting_KernelUnitLength(), this.getNumberOptionalNumber(), "kernelUnitLength", null, 0, 1, SvgFeDiffuseLighting.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(svgFeDiffuseLightingElementEClass, SvgFeDiffuseLightingElement.class, "SvgFeDiffuseLightingElement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getSvgFeDiffuseLightingElement_Class(), ecorePackage.getEString(), "class", null, 0, 1, SvgFeDiffuseLightingElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getSvgFeDiffuseLightingElement_Style(), ecorePackage.getEString(), "style", null, 0, 1, SvgFeDiffuseLightingElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getSvgFeDiffuseLightingElement_SurfaceScale(), this.getNumber(), "surfaceScale", null, 0, 1, SvgFeDiffuseLightingElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getSvgFeDiffuseLightingElement_DiffuseConstant(), this.getNumber(), "diffuseConstant", null, 0, 1, SvgFeDiffuseLightingElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getSvgFeDiffuseLightingElement_KernelUnitLength(), this.getNumberOptionalNumber(), "kernelUnitLength", null, 0, 1, SvgFeDiffuseLightingElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(svgFeDisplacementMapEClass, SvgFeDisplacementMap.class, "SvgFeDisplacementMap", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getSvgFeDisplacementMap_Class(), ecorePackage.getEString(), "class", null, 0, 1, SvgFeDisplacementMap.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getSvgFeDisplacementMap_Style(), ecorePackage.getEString(), "style", null, 0, 1, SvgFeDisplacementMap.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getSvgFeDisplacementMap_In2(), ecorePackage.getEString(), "in2", null, 0, 1, SvgFeDisplacementMap.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getSvgFeDisplacementMap_Scale(), this.getNumber(), "scale", null, 0, 1, SvgFeDisplacementMap.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getSvgFeDisplacementMap_XChannelSelector(), this.getChannelSelector(), "xChannelSelector", null, 0, 1, SvgFeDisplacementMap.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getSvgFeDisplacementMap_YChannelSelector(), this.getChannelSelector(), "yChannelSelector", null, 0, 1, SvgFeDisplacementMap.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(svgFeDisplacementMapElementEClass, SvgFeDisplacementMapElement.class, "SvgFeDisplacementMapElement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getSvgFeDisplacementMapElement_Class(), ecorePackage.getEString(), "class", null, 0, 1, SvgFeDisplacementMapElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getSvgFeDisplacementMapElement_Style(), ecorePackage.getEString(), "style", null, 0, 1, SvgFeDisplacementMapElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getSvgFeDisplacementMapElement_In2(), ecorePackage.getEString(), "in2", null, 0, 1, SvgFeDisplacementMapElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getSvgFeDisplacementMapElement_Scale(), this.getNumber(), "scale", null, 0, 1, SvgFeDisplacementMapElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getSvgFeDisplacementMapElement_XChannelSelector(), this.getChannelSelector(), "xChannelSelector", null, 0, 1, SvgFeDisplacementMapElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getSvgFeDisplacementMapElement_YChannelSelector(), this.getChannelSelector(), "yChannelSelector", null, 0, 1, SvgFeDisplacementMapElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(svgFeFloodEClass, SvgFeFlood.class, "SvgFeFlood", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getSvgFeFlood_Class(), ecorePackage.getEString(), "class", null, 0, 1, SvgFeFlood.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getSvgFeFlood_Style(), ecorePackage.getEString(), "style", null, 0, 1, SvgFeFlood.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(svgFeFloodElementEClass, SvgFeFloodElement.class, "SvgFeFloodElement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getSvgFeFloodElement_Class(), ecorePackage.getEString(), "class", null, 0, 1, SvgFeFloodElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getSvgFeFloodElement_Style(), ecorePackage.getEString(), "style", null, 0, 1, SvgFeFloodElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(svgFeGaussianBlurEClass, SvgFeGaussianBlur.class, "SvgFeGaussianBlur", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getSvgFeGaussianBlur_Class(), ecorePackage.getEString(), "class", null, 0, 1, SvgFeGaussianBlur.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getSvgFeGaussianBlur_Style(), ecorePackage.getEString(), "style", null, 0, 1, SvgFeGaussianBlur.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getSvgFeGaussianBlur_StdDeviation(), this.getNumberOptionalNumber(), "stdDeviation", null, 0, 1, SvgFeGaussianBlur.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(svgFeGaussianBlurElementEClass, SvgFeGaussianBlurElement.class, "SvgFeGaussianBlurElement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getSvgFeGaussianBlurElement_Class(), ecorePackage.getEString(), "class", null, 0, 1, SvgFeGaussianBlurElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getSvgFeGaussianBlurElement_Style(), ecorePackage.getEString(), "style", null, 0, 1, SvgFeGaussianBlurElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getSvgFeGaussianBlurElement_StdDeviation(), this.getNumberOptionalNumber(), "stdDeviation", null, 0, 1, SvgFeGaussianBlurElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(svgFeImageEClass, SvgFeImage.class, "SvgFeImage", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getSvgFeImage_Class(), ecorePackage.getEString(), "class", null, 0, 1, SvgFeImage.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getSvgFeImage_Style(), ecorePackage.getEString(), "style", null, 0, 1, SvgFeImage.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getSvgFeImage_ExternalResourcesRequired(), ecorePackage.getEString(), "externalResourcesRequired", null, 0, 1, SvgFeImage.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getSvgFeImage_PreserveAspectRatio(), this.getPreserveAspectRatio(), "preserveAspectRatio", null, 0, 1, SvgFeImage.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(svgFeImageElementEClass, SvgFeImageElement.class, "SvgFeImageElement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getSvgFeImageElement_Class(), ecorePackage.getEString(), "class", null, 0, 1, SvgFeImageElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getSvgFeImageElement_Style(), ecorePackage.getEString(), "style", null, 0, 1, SvgFeImageElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getSvgFeImageElement_ExternalResourcesRequired(), ecorePackage.getEString(), "externalResourcesRequired", null, 0, 1, SvgFeImageElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getSvgFeImageElement_PreserveAspectRatio(), this.getPreserveAspectRatio(), "preserveAspectRatio", null, 0, 1, SvgFeImageElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(svgFeMergeEClass, SvgFeMerge.class, "SvgFeMerge", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getSvgFeMerge_Class(), ecorePackage.getEString(), "class", null, 0, 1, SvgFeMerge.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getSvgFeMerge_Style(), ecorePackage.getEString(), "style", null, 0, 1, SvgFeMerge.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(svgFeMergeElementEClass, SvgFeMergeElement.class, "SvgFeMergeElement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getSvgFeMergeElement_Class(), ecorePackage.getEString(), "class", null, 0, 1, SvgFeMergeElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getSvgFeMergeElement_Style(), ecorePackage.getEString(), "style", null, 0, 1, SvgFeMergeElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(svgFeMergeNodeEClass, SvgFeMergeNode.class, "SvgFeMergeNode", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEClass(svgFeMergeNodeElementEClass, SvgFeMergeNodeElement.class, "SvgFeMergeNodeElement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
-		initEClass(svgFeMorphologyEClass, SvgFeMorphology.class, "SvgFeMorphology", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getSvgFeMorphology_Class(), ecorePackage.getEString(), "class", null, 0, 1, SvgFeMorphology.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getSvgFeMorphology_Style(), ecorePackage.getEString(), "style", null, 0, 1, SvgFeMorphology.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getSvgFeMorphology_Operator(), this.getMorphologyOperator(), "operator", "MorphologyOperator.erode", 0, 1, SvgFeMorphology.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getSvgFeMorphology_Radius(), this.getNumberOptionalNumber(), "radius", null, 0, 1, SvgFeMorphology.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(svgFeMorphologyElementEClass, SvgFeMorphologyElement.class, "SvgFeMorphologyElement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getSvgFeMorphologyElement_Class(), ecorePackage.getEString(), "class", null, 0, 1, SvgFeMorphologyElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getSvgFeMorphologyElement_Style(), ecorePackage.getEString(), "style", null, 0, 1, SvgFeMorphologyElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getSvgFeMorphologyElement_Operator(), this.getMorphologyOperator(), "operator", "MorphologyOperator.erode", 0, 1, SvgFeMorphologyElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getSvgFeMorphologyElement_Radius(), this.getNumberOptionalNumber(), "radius", null, 0, 1, SvgFeMorphologyElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(svgFeOffsetEClass, SvgFeOffset.class, "SvgFeOffset", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getSvgFeOffset_Class(), ecorePackage.getEString(), "class", null, 0, 1, SvgFeOffset.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getSvgFeOffset_Style(), ecorePackage.getEString(), "style", null, 0, 1, SvgFeOffset.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getSvgFeOffset_Dx(), this.getNumber(), "dx", null, 0, 1, SvgFeOffset.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getSvgFeOffset_Dy(), this.getNumber(), "dy", null, 0, 1, SvgFeOffset.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(svgFeOffsetElementEClass, SvgFeOffsetElement.class, "SvgFeOffsetElement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getSvgFeOffsetElement_Class(), ecorePackage.getEString(), "class", null, 0, 1, SvgFeOffsetElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getSvgFeOffsetElement_Style(), ecorePackage.getEString(), "style", null, 0, 1, SvgFeOffsetElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getSvgFeOffsetElement_Dx(), this.getNumber(), "dx", null, 0, 1, SvgFeOffsetElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getSvgFeOffsetElement_Dy(), this.getNumber(), "dy", null, 0, 1, SvgFeOffsetElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(svgFeSpecularLightingEClass, SvgFeSpecularLighting.class, "SvgFeSpecularLighting", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getSvgFeSpecularLighting_Class(), ecorePackage.getEString(), "class", null, 0, 1, SvgFeSpecularLighting.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getSvgFeSpecularLighting_Style(), ecorePackage.getEString(), "style", null, 0, 1, SvgFeSpecularLighting.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getSvgFeSpecularLighting_SurfaceScale(), this.getNumber(), "surfaceScale", null, 0, 1, SvgFeSpecularLighting.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getSvgFeSpecularLighting_SpecularConstant(), this.getNumber(), "specularConstant", null, 0, 1, SvgFeSpecularLighting.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getSvgFeSpecularLighting_SpecularExponent(), this.getNumber(), "specularExponent", null, 0, 1, SvgFeSpecularLighting.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getSvgFeSpecularLighting_KernelUnitLength(), this.getNumberOptionalNumber(), "kernelUnitLength", null, 0, 1, SvgFeSpecularLighting.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(svgFeSpecularLightingElementEClass, SvgFeSpecularLightingElement.class, "SvgFeSpecularLightingElement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getSvgFeSpecularLightingElement_Class(), ecorePackage.getEString(), "class", null, 0, 1, SvgFeSpecularLightingElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getSvgFeSpecularLightingElement_Style(), ecorePackage.getEString(), "style", null, 0, 1, SvgFeSpecularLightingElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getSvgFeSpecularLightingElement_SurfaceScale(), this.getNumber(), "surfaceScale", null, 0, 1, SvgFeSpecularLightingElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getSvgFeSpecularLightingElement_SpecularConstant(), this.getNumber(), "specularConstant", null, 0, 1, SvgFeSpecularLightingElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getSvgFeSpecularLightingElement_SpecularExponent(), this.getNumber(), "specularExponent", null, 0, 1, SvgFeSpecularLightingElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getSvgFeSpecularLightingElement_KernelUnitLength(), this.getNumberOptionalNumber(), "kernelUnitLength", null, 0, 1, SvgFeSpecularLightingElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(svgFeTileEClass, SvgFeTile.class, "SvgFeTile", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getSvgFeTile_Class(), ecorePackage.getEString(), "class", null, 0, 1, SvgFeTile.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getSvgFeTile_Style(), ecorePackage.getEString(), "style", null, 0, 1, SvgFeTile.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(svgFeTileElementEClass, SvgFeTileElement.class, "SvgFeTileElement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getSvgFeTileElement_Class(), ecorePackage.getEString(), "class", null, 0, 1, SvgFeTileElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getSvgFeTileElement_Style(), ecorePackage.getEString(), "style", null, 0, 1, SvgFeTileElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(svgFeTurbulenceEClass, SvgFeTurbulence.class, "SvgFeTurbulence", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getSvgFeTurbulence_Class(), ecorePackage.getEString(), "class", null, 0, 1, SvgFeTurbulence.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getSvgFeTurbulence_Style(), ecorePackage.getEString(), "style", null, 0, 1, SvgFeTurbulence.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getSvgFeTurbulence_BaseFrequency(), this.getNumberOptionalNumber(), "baseFrequency", null, 0, 1, SvgFeTurbulence.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getSvgFeTurbulence_NumOctaves(), ecorePackage.getEInt(), "numOctaves", "1", 0, 1, SvgFeTurbulence.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getSvgFeTurbulence_Seed(), this.getNumber(), "seed", "0", 0, 1, SvgFeTurbulence.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getSvgFeTurbulence_StitchTiles(), this.getStitchTiles(), "stitchTiles", "StitchTiles.noStitch", 0, 1, SvgFeTurbulence.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getSvgFeTurbulence_Type(), this.getTurbulenceType(), "type", "TurbulenceType.turbulence", 0, 1, SvgFeTurbulence.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(svgFeTurbulenceElementEClass, SvgFeTurbulenceElement.class, "SvgFeTurbulenceElement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getSvgFeTurbulenceElement_Class(), ecorePackage.getEString(), "class", null, 0, 1, SvgFeTurbulenceElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getSvgFeTurbulenceElement_Style(), ecorePackage.getEString(), "style", null, 0, 1, SvgFeTurbulenceElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getSvgFeTurbulenceElement_BaseFrequency(), this.getNumberOptionalNumber(), "baseFrequency", null, 0, 1, SvgFeTurbulenceElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getSvgFeTurbulenceElement_NumOctaves(), ecorePackage.getEInt(), "numOctaves", "1", 0, 1, SvgFeTurbulenceElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getSvgFeTurbulenceElement_Seed(), this.getNumber(), "seed", "0", 0, 1, SvgFeTurbulenceElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getSvgFeTurbulenceElement_StitchTiles(), this.getStitchTiles(), "stitchTiles", "StitchTiles.noStitch", 0, 1, SvgFeTurbulenceElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getSvgFeTurbulenceElement_Type(), this.getTurbulenceType(), "type", "TurbulenceType.turbulence", 0, 1, SvgFeTurbulenceElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(svgAnimateElementEClass, SvgAnimateElement.class, "SvgAnimateElement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(svgMetadataElementEClass, SvgMetadataElement.class, "SvgMetadataElement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		// Initialize enums and add enum literals
 		initEEnum(alignment_baselineEEnum, Alignment_baseline.class, "Alignment_baseline");
