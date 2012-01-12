@@ -29,6 +29,7 @@ import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.ResourceValueProperty;
 import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.Script;
 import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.ScriptHandlerHandledValueProperty;
 import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.ScriptValueExpression;
+import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.ScriptValueReference;
 import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.SimpleValueProperty;
 import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.SingleValueProperty;
 import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.StaticValueProperty;
@@ -205,6 +206,13 @@ public class FXGraphPackageImpl extends EPackageImpl implements FXGraphPackage
    * @generated
    */
   private EClass scriptValueExpressionEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass scriptValueReferenceEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -955,6 +963,26 @@ public class FXGraphPackageImpl extends EPackageImpl implements FXGraphPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  public EClass getScriptValueReference()
+  {
+    return scriptValueReferenceEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getScriptValueReference_Reference()
+  {
+    return (EAttribute)scriptValueReferenceEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EClass getLocationValueProperty()
   {
     return locationValuePropertyEClass;
@@ -1157,6 +1185,9 @@ public class FXGraphPackageImpl extends EPackageImpl implements FXGraphPackage
     scriptValueExpressionEClass = createEClass(SCRIPT_VALUE_EXPRESSION);
     createEAttribute(scriptValueExpressionEClass, SCRIPT_VALUE_EXPRESSION__SOURCECODE);
 
+    scriptValueReferenceEClass = createEClass(SCRIPT_VALUE_REFERENCE);
+    createEAttribute(scriptValueReferenceEClass, SCRIPT_VALUE_REFERENCE__REFERENCE);
+
     locationValuePropertyEClass = createEClass(LOCATION_VALUE_PROPERTY);
     createEAttribute(locationValuePropertyEClass, LOCATION_VALUE_PROPERTY__VALUE);
 
@@ -1218,6 +1249,7 @@ public class FXGraphPackageImpl extends EPackageImpl implements FXGraphPackage
     controllerHandledValuePropertyEClass.getESuperTypes().add(this.getSingleValueProperty());
     scriptHandlerHandledValuePropertyEClass.getESuperTypes().add(this.getSingleValueProperty());
     scriptValueExpressionEClass.getESuperTypes().add(this.getSingleValueProperty());
+    scriptValueReferenceEClass.getESuperTypes().add(this.getSingleValueProperty());
     locationValuePropertyEClass.getESuperTypes().add(this.getSingleValueProperty());
     resourceValuePropertyEClass.getESuperTypes().add(this.getSingleValueProperty());
     bindValuePropertyEClass.getESuperTypes().add(this.getSingleValueProperty());
@@ -1309,6 +1341,9 @@ public class FXGraphPackageImpl extends EPackageImpl implements FXGraphPackage
 
     initEClass(scriptValueExpressionEClass, ScriptValueExpression.class, "ScriptValueExpression", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getScriptValueExpression_Sourcecode(), ecorePackage.getEString(), "sourcecode", null, 0, 1, ScriptValueExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(scriptValueReferenceEClass, ScriptValueReference.class, "ScriptValueReference", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getScriptValueReference_Reference(), ecorePackage.getEString(), "reference", null, 0, 1, ScriptValueReference.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(locationValuePropertyEClass, LocationValueProperty.class, "LocationValueProperty", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getLocationValueProperty_Value(), ecorePackage.getEString(), "value", null, 0, 1, LocationValueProperty.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

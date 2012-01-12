@@ -57,7 +57,7 @@ ValueProperty:
 ;
 
 SingleValueProperty:
-	SimpleValueProperty | Element | ReferenceValueProperty | IncludeValueProperty | CopyValueProperty | ControllerHandledValueProperty | ScriptValueExpression | ScriptHandlerHandledValueProperty | LocationValueProperty | ResourceValueProperty | BindValueProperty
+	SimpleValueProperty | Element | ReferenceValueProperty | IncludeValueProperty | CopyValueProperty | ControllerHandledValueProperty | ScriptValueExpression | ScriptHandlerHandledValueProperty | ScriptValueReference | LocationValueProperty | ResourceValueProperty | BindValueProperty
 ;
 
 MultiValueProperty:
@@ -102,6 +102,10 @@ ScriptHandlerHandledValueProperty:
 
 ScriptValueExpression:
 	'scriptexpression' sourcecode=SCRIPTLITERAL
+;
+
+ScriptValueReference:
+	'scriptvalue' reference=ID
 ;
 
 LocationValueProperty:

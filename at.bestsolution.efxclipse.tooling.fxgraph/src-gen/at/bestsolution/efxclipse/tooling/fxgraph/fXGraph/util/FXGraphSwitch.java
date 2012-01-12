@@ -255,6 +255,15 @@ public class FXGraphSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case FXGraphPackage.SCRIPT_VALUE_REFERENCE:
+      {
+        ScriptValueReference scriptValueReference = (ScriptValueReference)theEObject;
+        T result = caseScriptValueReference(scriptValueReference);
+        if (result == null) result = caseSingleValueProperty(scriptValueReference);
+        if (result == null) result = caseValueProperty(scriptValueReference);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       case FXGraphPackage.LOCATION_VALUE_PROPERTY:
       {
         LocationValueProperty locationValueProperty = (LocationValueProperty)theEObject;
@@ -641,6 +650,22 @@ public class FXGraphSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseScriptValueExpression(ScriptValueExpression object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Script Value Reference</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Script Value Reference</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseScriptValueReference(ScriptValueReference object)
   {
     return null;
   }

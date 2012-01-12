@@ -189,6 +189,11 @@ public class FXGraphAdapterFactory extends AdapterFactoryImpl
         return createScriptValueExpressionAdapter();
       }
       @Override
+      public Adapter caseScriptValueReference(ScriptValueReference object)
+      {
+        return createScriptValueReferenceAdapter();
+      }
+      @Override
       public Adapter caseLocationValueProperty(LocationValueProperty object)
       {
         return createLocationValuePropertyAdapter();
@@ -556,6 +561,21 @@ public class FXGraphAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createScriptValueExpressionAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.ScriptValueReference <em>Script Value Reference</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.ScriptValueReference
+   * @generated
+   */
+  public Adapter createScriptValueReferenceAdapter()
   {
     return null;
   }

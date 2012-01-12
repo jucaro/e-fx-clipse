@@ -118,7 +118,7 @@
       <alternatives xsi:type="xtext:Group">
         <elements xsi:type="xtext:Keyword" value="import"/>
         <elements xsi:type="xtext:Assignment" feature="importedNamespace" operator="=">
-          <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.25"/>
+          <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.26"/>
         </elements>
       </alternatives>
     </rules>
@@ -228,7 +228,7 @@
             <terminal xsi:type="xtext:RuleCall" rule="/3/@rules.2"/>
           </elements>
           <elements xsi:type="xtext:Assignment" feature="sourcecode" operator="=">
-            <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.28"/>
+            <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.29"/>
           </elements>
         </elements>
       </alternatives>
@@ -294,6 +294,7 @@
         <elements xsi:type="xtext:RuleCall" rule="/0/@rules.22"/>
         <elements xsi:type="xtext:RuleCall" rule="/0/@rules.23"/>
         <elements xsi:type="xtext:RuleCall" rule="/0/@rules.24"/>
+        <elements xsi:type="xtext:RuleCall" rule="/0/@rules.25"/>
       </alternatives>
     </rules>
     <rules xsi:type="xtext:ParserRule" name="MultiValueProperty">
@@ -374,7 +375,7 @@
               <terminal xsi:type="xtext:RuleCall" rule="/3/@rules.1"/>
             </elements>
             <elements xsi:type="xtext:Assignment" feature="realValue" operator="=">
-              <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.27"/>
+              <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.28"/>
             </elements>
           </elements>
         </elements>
@@ -457,7 +458,18 @@
       <alternatives xsi:type="xtext:Group">
         <elements xsi:type="xtext:Keyword" value="scriptexpression"/>
         <elements xsi:type="xtext:Assignment" feature="sourcecode" operator="=">
-          <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.28"/>
+          <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.29"/>
+        </elements>
+      </alternatives>
+    </rules>
+    <rules xsi:type="xtext:ParserRule" name="ScriptValueReference">
+      <type metamodel="/0/@metamodelDeclarations.1">
+        <classifier xsi:type="ecore:EClass" href="http://www.bestsolution.at/efxclipse/tooling/fxgraph/FXGraph#//ScriptValueReference"/>
+      </type>
+      <alternatives xsi:type="xtext:Group">
+        <elements xsi:type="xtext:Keyword" value="scriptvalue"/>
+        <elements xsi:type="xtext:Assignment" feature="reference" operator="=">
+          <terminal xsi:type="xtext:RuleCall" rule="/2/@rules.11"/>
         </elements>
       </alternatives>
     </rules>
@@ -479,7 +491,7 @@
       <alternatives xsi:type="xtext:Group">
         <elements xsi:type="xtext:Keyword" value="rstring"/>
         <elements xsi:type="xtext:Assignment" feature="value" operator="=">
-          <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.26"/>
+          <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.27"/>
         </elements>
       </alternatives>
     </rules>

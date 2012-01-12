@@ -722,19 +722,20 @@ public class FXGraphGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cControllerHandledValuePropertyParserRuleCall_5 = (RuleCall)cAlternatives.eContents().get(5);
 		private final RuleCall cScriptValueExpressionParserRuleCall_6 = (RuleCall)cAlternatives.eContents().get(6);
 		private final RuleCall cScriptHandlerHandledValuePropertyParserRuleCall_7 = (RuleCall)cAlternatives.eContents().get(7);
-		private final RuleCall cLocationValuePropertyParserRuleCall_8 = (RuleCall)cAlternatives.eContents().get(8);
-		private final RuleCall cResourceValuePropertyParserRuleCall_9 = (RuleCall)cAlternatives.eContents().get(9);
-		private final RuleCall cBindValuePropertyParserRuleCall_10 = (RuleCall)cAlternatives.eContents().get(10);
+		private final RuleCall cScriptValueReferenceParserRuleCall_8 = (RuleCall)cAlternatives.eContents().get(8);
+		private final RuleCall cLocationValuePropertyParserRuleCall_9 = (RuleCall)cAlternatives.eContents().get(9);
+		private final RuleCall cResourceValuePropertyParserRuleCall_10 = (RuleCall)cAlternatives.eContents().get(10);
+		private final RuleCall cBindValuePropertyParserRuleCall_11 = (RuleCall)cAlternatives.eContents().get(11);
 		
 		//SingleValueProperty:
 		//	SimpleValueProperty | Element | ReferenceValueProperty | IncludeValueProperty | CopyValueProperty |
-		//	ControllerHandledValueProperty | ScriptValueExpression | ScriptHandlerHandledValueProperty | LocationValueProperty |
-		//	ResourceValueProperty | BindValueProperty;
+		//	ControllerHandledValueProperty | ScriptValueExpression | ScriptHandlerHandledValueProperty | ScriptValueReference |
+		//	LocationValueProperty | ResourceValueProperty | BindValueProperty;
 		public ParserRule getRule() { return rule; }
 
 		//SimpleValueProperty | Element | ReferenceValueProperty | IncludeValueProperty | CopyValueProperty |
-		//ControllerHandledValueProperty | ScriptValueExpression | ScriptHandlerHandledValueProperty | LocationValueProperty |
-		//ResourceValueProperty | BindValueProperty
+		//ControllerHandledValueProperty | ScriptValueExpression | ScriptHandlerHandledValueProperty | ScriptValueReference |
+		//LocationValueProperty | ResourceValueProperty | BindValueProperty
 		public Alternatives getAlternatives() { return cAlternatives; }
 
 		//SimpleValueProperty
@@ -761,14 +762,17 @@ public class FXGraphGrammarAccess extends AbstractGrammarElementFinder {
 		//ScriptHandlerHandledValueProperty
 		public RuleCall getScriptHandlerHandledValuePropertyParserRuleCall_7() { return cScriptHandlerHandledValuePropertyParserRuleCall_7; }
 
+		//ScriptValueReference
+		public RuleCall getScriptValueReferenceParserRuleCall_8() { return cScriptValueReferenceParserRuleCall_8; }
+
 		//LocationValueProperty
-		public RuleCall getLocationValuePropertyParserRuleCall_8() { return cLocationValuePropertyParserRuleCall_8; }
+		public RuleCall getLocationValuePropertyParserRuleCall_9() { return cLocationValuePropertyParserRuleCall_9; }
 
 		//ResourceValueProperty
-		public RuleCall getResourceValuePropertyParserRuleCall_9() { return cResourceValuePropertyParserRuleCall_9; }
+		public RuleCall getResourceValuePropertyParserRuleCall_10() { return cResourceValuePropertyParserRuleCall_10; }
 
 		//BindValueProperty
-		public RuleCall getBindValuePropertyParserRuleCall_10() { return cBindValuePropertyParserRuleCall_10; }
+		public RuleCall getBindValuePropertyParserRuleCall_11() { return cBindValuePropertyParserRuleCall_11; }
 	}
 
 	public class MultiValuePropertyElements extends AbstractParserRuleElementFinder {
@@ -1127,6 +1131,30 @@ public class FXGraphGrammarAccess extends AbstractGrammarElementFinder {
 		public RuleCall getSourcecodeSCRIPTLITERALTerminalRuleCall_1_0() { return cSourcecodeSCRIPTLITERALTerminalRuleCall_1_0; }
 	}
 
+	public class ScriptValueReferenceElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "ScriptValueReference");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cScriptvalueKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Assignment cReferenceAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cReferenceIDTerminalRuleCall_1_0 = (RuleCall)cReferenceAssignment_1.eContents().get(0);
+		
+		//ScriptValueReference:
+		//	"scriptvalue" reference=ID;
+		public ParserRule getRule() { return rule; }
+
+		//"scriptvalue" reference=ID
+		public Group getGroup() { return cGroup; }
+
+		//"scriptvalue"
+		public Keyword getScriptvalueKeyword_0() { return cScriptvalueKeyword_0; }
+
+		//reference=ID
+		public Assignment getReferenceAssignment_1() { return cReferenceAssignment_1; }
+
+		//ID
+		public RuleCall getReferenceIDTerminalRuleCall_1_0() { return cReferenceIDTerminalRuleCall_1_0; }
+	}
+
 	public class LocationValuePropertyElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "LocationValueProperty");
 		private final Group cGroup = (Group)rule.eContents().get(1);
@@ -1282,6 +1310,7 @@ public class FXGraphGrammarAccess extends AbstractGrammarElementFinder {
 	private ControllerHandledValuePropertyElements pControllerHandledValueProperty;
 	private ScriptHandlerHandledValuePropertyElements pScriptHandlerHandledValueProperty;
 	private ScriptValueExpressionElements pScriptValueExpression;
+	private ScriptValueReferenceElements pScriptValueReference;
 	private LocationValuePropertyElements pLocationValueProperty;
 	private ResourceValuePropertyElements pResourceValueProperty;
 	private BindValuePropertyElements pBindValueProperty;
@@ -1424,8 +1453,8 @@ public class FXGraphGrammarAccess extends AbstractGrammarElementFinder {
 
 	//SingleValueProperty:
 	//	SimpleValueProperty | Element | ReferenceValueProperty | IncludeValueProperty | CopyValueProperty |
-	//	ControllerHandledValueProperty | ScriptValueExpression | ScriptHandlerHandledValueProperty | LocationValueProperty |
-	//	ResourceValueProperty | BindValueProperty;
+	//	ControllerHandledValueProperty | ScriptValueExpression | ScriptHandlerHandledValueProperty | ScriptValueReference |
+	//	LocationValueProperty | ResourceValueProperty | BindValueProperty;
 	public SingleValuePropertyElements getSingleValuePropertyAccess() {
 		return (pSingleValueProperty != null) ? pSingleValueProperty : (pSingleValueProperty = new SingleValuePropertyElements());
 	}
@@ -1542,6 +1571,16 @@ public class FXGraphGrammarAccess extends AbstractGrammarElementFinder {
 	
 	public ParserRule getScriptValueExpressionRule() {
 		return getScriptValueExpressionAccess().getRule();
+	}
+
+	//ScriptValueReference:
+	//	"scriptvalue" reference=ID;
+	public ScriptValueReferenceElements getScriptValueReferenceAccess() {
+		return (pScriptValueReference != null) ? pScriptValueReference : (pScriptValueReference = new ScriptValueReferenceElements());
+	}
+	
+	public ParserRule getScriptValueReferenceRule() {
+		return getScriptValueReferenceAccess().getRule();
 	}
 
 	//LocationValueProperty:
