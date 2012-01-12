@@ -363,6 +363,7 @@ public class FXMLDslGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cANY_OTHERTerminalRuleCall_0_2 = (RuleCall)cAlternatives_0.eContents().get(2);
 		private final Keyword cFullStopKeyword_0_3 = (Keyword)cAlternatives_0.eContents().get(3);
 		private final Keyword cColonKeyword_0_4 = (Keyword)cAlternatives_0.eContents().get(4);
+		private final Keyword cEqualsSignKeyword_0_5 = (Keyword)cAlternatives_0.eContents().get(5);
 		private final Alternatives cAlternatives_1 = (Alternatives)cGroup.eContents().get(1);
 		private final RuleCall cIDTerminalRuleCall_1_0 = (RuleCall)cAlternatives_1.eContents().get(0);
 		private final RuleCall cSTRINGTerminalRuleCall_1_1 = (RuleCall)cAlternatives_1.eContents().get(1);
@@ -370,15 +371,16 @@ public class FXMLDslGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cWSTerminalRuleCall_1_3 = (RuleCall)cAlternatives_1.eContents().get(3);
 		private final Keyword cFullStopKeyword_1_4 = (Keyword)cAlternatives_1.eContents().get(4);
 		private final Keyword cColonKeyword_1_5 = (Keyword)cAlternatives_1.eContents().get(5);
+		private final Keyword cEqualsSignKeyword_1_6 = (Keyword)cAlternatives_1.eContents().get(6);
 		
 		//Content hidden(ML_COMMENT):
-		//	(ID | STRING | ANY_OTHER | "." | ":") (ID | STRING | ANY_OTHER | WS | "." | ":")*;
+		//	(ID | STRING | ANY_OTHER | "." | ":" | "=") (ID | STRING | ANY_OTHER | WS | "." | ":" | "=")*;
 		public ParserRule getRule() { return rule; }
 
-		//(ID | STRING | ANY_OTHER | "." | ":") (ID | STRING | ANY_OTHER | WS | "." | ":")*
+		//(ID | STRING | ANY_OTHER | "." | ":" | "=") (ID | STRING | ANY_OTHER | WS | "." | ":" | "=")*
 		public Group getGroup() { return cGroup; }
 
-		//ID | STRING | ANY_OTHER | "." | ":"
+		//ID | STRING | ANY_OTHER | "." | ":" | "="
 		public Alternatives getAlternatives_0() { return cAlternatives_0; }
 
 		//ID
@@ -396,7 +398,10 @@ public class FXMLDslGrammarAccess extends AbstractGrammarElementFinder {
 		//":"
 		public Keyword getColonKeyword_0_4() { return cColonKeyword_0_4; }
 
-		//(ID | STRING | ANY_OTHER | WS | "." | ":")*
+		//"="
+		public Keyword getEqualsSignKeyword_0_5() { return cEqualsSignKeyword_0_5; }
+
+		//(ID | STRING | ANY_OTHER | WS | "." | ":" | "=")*
 		public Alternatives getAlternatives_1() { return cAlternatives_1; }
 
 		//ID
@@ -416,6 +421,9 @@ public class FXMLDslGrammarAccess extends AbstractGrammarElementFinder {
 
 		//":"
 		public Keyword getColonKeyword_1_5() { return cColonKeyword_1_5; }
+
+		//"="
+		public Keyword getEqualsSignKeyword_1_6() { return cEqualsSignKeyword_1_6; }
 	}
 
 	public class QualifiedNameElements extends AbstractParserRuleElementFinder {
@@ -591,7 +599,7 @@ public class FXMLDslGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//Content hidden(ML_COMMENT):
-	//	(ID | STRING | ANY_OTHER | "." | ":") (ID | STRING | ANY_OTHER | WS | "." | ":")*;
+	//	(ID | STRING | ANY_OTHER | "." | ":" | "=") (ID | STRING | ANY_OTHER | WS | "." | ":" | "=")*;
 	public ContentElements getContentAccess() {
 		return (pContent != null) ? pContent : (pContent = new ContentElements());
 	}

@@ -957,7 +957,7 @@ public class InternalFXMLDslParser extends AbstractInternalAntlrParser {
             int alt6=2;
             int LA6_0 = input.LA(1);
 
-            if ( ((LA6_0>=RULE_ID && LA6_0<=RULE_ANY_OTHER)||LA6_0==13||LA6_0==18) ) {
+            if ( ((LA6_0>=RULE_ID && LA6_0<=RULE_ANY_OTHER)||LA6_0==13||(LA6_0>=17 && LA6_0<=18)) ) {
                 alt6=1;
             }
             switch (alt6) {
@@ -1786,7 +1786,7 @@ public class InternalFXMLDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleContent"
-    // ../at.bestsolution.efxclipse.tooling.fxmlx/src-gen/at/bestsolution/efxclipse/tooling/fxmlx/parser/antlr/internal/InternalFXMLDsl.g:689:1: ruleContent returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : ( (this_ID_0= RULE_ID | this_STRING_1= RULE_STRING | this_ANY_OTHER_2= RULE_ANY_OTHER | kw= '.' | kw= ':' ) (this_ID_5= RULE_ID | this_STRING_6= RULE_STRING | this_ANY_OTHER_7= RULE_ANY_OTHER | this_WS_8= RULE_WS | kw= '.' | kw= ':' )* ) ;
+    // ../at.bestsolution.efxclipse.tooling.fxmlx/src-gen/at/bestsolution/efxclipse/tooling/fxmlx/parser/antlr/internal/InternalFXMLDsl.g:689:1: ruleContent returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : ( (this_ID_0= RULE_ID | this_STRING_1= RULE_STRING | this_ANY_OTHER_2= RULE_ANY_OTHER | kw= '.' | kw= ':' | kw= '=' ) (this_ID_6= RULE_ID | this_STRING_7= RULE_STRING | this_ANY_OTHER_8= RULE_ANY_OTHER | this_WS_9= RULE_WS | kw= '.' | kw= ':' | kw= '=' )* ) ;
     public final AntlrDatatypeRuleToken ruleContent() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
@@ -1794,23 +1794,23 @@ public class InternalFXMLDslParser extends AbstractInternalAntlrParser {
         Token this_STRING_1=null;
         Token this_ANY_OTHER_2=null;
         Token kw=null;
-        Token this_ID_5=null;
-        Token this_STRING_6=null;
-        Token this_ANY_OTHER_7=null;
-        Token this_WS_8=null;
+        Token this_ID_6=null;
+        Token this_STRING_7=null;
+        Token this_ANY_OTHER_8=null;
+        Token this_WS_9=null;
 
          enterRule(); 
         		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_ML_COMMENT");
             
         try {
-            // ../at.bestsolution.efxclipse.tooling.fxmlx/src-gen/at/bestsolution/efxclipse/tooling/fxmlx/parser/antlr/internal/InternalFXMLDsl.g:693:28: ( ( (this_ID_0= RULE_ID | this_STRING_1= RULE_STRING | this_ANY_OTHER_2= RULE_ANY_OTHER | kw= '.' | kw= ':' ) (this_ID_5= RULE_ID | this_STRING_6= RULE_STRING | this_ANY_OTHER_7= RULE_ANY_OTHER | this_WS_8= RULE_WS | kw= '.' | kw= ':' )* ) )
-            // ../at.bestsolution.efxclipse.tooling.fxmlx/src-gen/at/bestsolution/efxclipse/tooling/fxmlx/parser/antlr/internal/InternalFXMLDsl.g:694:1: ( (this_ID_0= RULE_ID | this_STRING_1= RULE_STRING | this_ANY_OTHER_2= RULE_ANY_OTHER | kw= '.' | kw= ':' ) (this_ID_5= RULE_ID | this_STRING_6= RULE_STRING | this_ANY_OTHER_7= RULE_ANY_OTHER | this_WS_8= RULE_WS | kw= '.' | kw= ':' )* )
+            // ../at.bestsolution.efxclipse.tooling.fxmlx/src-gen/at/bestsolution/efxclipse/tooling/fxmlx/parser/antlr/internal/InternalFXMLDsl.g:693:28: ( ( (this_ID_0= RULE_ID | this_STRING_1= RULE_STRING | this_ANY_OTHER_2= RULE_ANY_OTHER | kw= '.' | kw= ':' | kw= '=' ) (this_ID_6= RULE_ID | this_STRING_7= RULE_STRING | this_ANY_OTHER_8= RULE_ANY_OTHER | this_WS_9= RULE_WS | kw= '.' | kw= ':' | kw= '=' )* ) )
+            // ../at.bestsolution.efxclipse.tooling.fxmlx/src-gen/at/bestsolution/efxclipse/tooling/fxmlx/parser/antlr/internal/InternalFXMLDsl.g:694:1: ( (this_ID_0= RULE_ID | this_STRING_1= RULE_STRING | this_ANY_OTHER_2= RULE_ANY_OTHER | kw= '.' | kw= ':' | kw= '=' ) (this_ID_6= RULE_ID | this_STRING_7= RULE_STRING | this_ANY_OTHER_8= RULE_ANY_OTHER | this_WS_9= RULE_WS | kw= '.' | kw= ':' | kw= '=' )* )
             {
-            // ../at.bestsolution.efxclipse.tooling.fxmlx/src-gen/at/bestsolution/efxclipse/tooling/fxmlx/parser/antlr/internal/InternalFXMLDsl.g:694:1: ( (this_ID_0= RULE_ID | this_STRING_1= RULE_STRING | this_ANY_OTHER_2= RULE_ANY_OTHER | kw= '.' | kw= ':' ) (this_ID_5= RULE_ID | this_STRING_6= RULE_STRING | this_ANY_OTHER_7= RULE_ANY_OTHER | this_WS_8= RULE_WS | kw= '.' | kw= ':' )* )
-            // ../at.bestsolution.efxclipse.tooling.fxmlx/src-gen/at/bestsolution/efxclipse/tooling/fxmlx/parser/antlr/internal/InternalFXMLDsl.g:694:2: (this_ID_0= RULE_ID | this_STRING_1= RULE_STRING | this_ANY_OTHER_2= RULE_ANY_OTHER | kw= '.' | kw= ':' ) (this_ID_5= RULE_ID | this_STRING_6= RULE_STRING | this_ANY_OTHER_7= RULE_ANY_OTHER | this_WS_8= RULE_WS | kw= '.' | kw= ':' )*
+            // ../at.bestsolution.efxclipse.tooling.fxmlx/src-gen/at/bestsolution/efxclipse/tooling/fxmlx/parser/antlr/internal/InternalFXMLDsl.g:694:1: ( (this_ID_0= RULE_ID | this_STRING_1= RULE_STRING | this_ANY_OTHER_2= RULE_ANY_OTHER | kw= '.' | kw= ':' | kw= '=' ) (this_ID_6= RULE_ID | this_STRING_7= RULE_STRING | this_ANY_OTHER_8= RULE_ANY_OTHER | this_WS_9= RULE_WS | kw= '.' | kw= ':' | kw= '=' )* )
+            // ../at.bestsolution.efxclipse.tooling.fxmlx/src-gen/at/bestsolution/efxclipse/tooling/fxmlx/parser/antlr/internal/InternalFXMLDsl.g:694:2: (this_ID_0= RULE_ID | this_STRING_1= RULE_STRING | this_ANY_OTHER_2= RULE_ANY_OTHER | kw= '.' | kw= ':' | kw= '=' ) (this_ID_6= RULE_ID | this_STRING_7= RULE_STRING | this_ANY_OTHER_8= RULE_ANY_OTHER | this_WS_9= RULE_WS | kw= '.' | kw= ':' | kw= '=' )*
             {
-            // ../at.bestsolution.efxclipse.tooling.fxmlx/src-gen/at/bestsolution/efxclipse/tooling/fxmlx/parser/antlr/internal/InternalFXMLDsl.g:694:2: (this_ID_0= RULE_ID | this_STRING_1= RULE_STRING | this_ANY_OTHER_2= RULE_ANY_OTHER | kw= '.' | kw= ':' )
-            int alt12=5;
+            // ../at.bestsolution.efxclipse.tooling.fxmlx/src-gen/at/bestsolution/efxclipse/tooling/fxmlx/parser/antlr/internal/InternalFXMLDsl.g:694:2: (this_ID_0= RULE_ID | this_STRING_1= RULE_STRING | this_ANY_OTHER_2= RULE_ANY_OTHER | kw= '.' | kw= ':' | kw= '=' )
+            int alt12=6;
             switch ( input.LA(1) ) {
             case RULE_ID:
                 {
@@ -1835,6 +1835,11 @@ public class InternalFXMLDslParser extends AbstractInternalAntlrParser {
             case 13:
                 {
                 alt12=5;
+                }
+                break;
+            case 17:
+                {
+                alt12=6;
                 }
                 break;
             default:
@@ -1923,13 +1928,26 @@ public class InternalFXMLDslParser extends AbstractInternalAntlrParser {
 
                     }
                     break;
+                case 6 :
+                    // ../at.bestsolution.efxclipse.tooling.fxmlx/src-gen/at/bestsolution/efxclipse/tooling/fxmlx/parser/antlr/internal/InternalFXMLDsl.g:733:2: kw= '='
+                    {
+                    kw=(Token)match(input,17,FOLLOW_17_in_ruleContent1490); if (state.failed) return current;
+                    if ( state.backtracking==0 ) {
+
+                              current.merge(kw);
+                              newLeafNode(kw, grammarAccess.getContentAccess().getEqualsSignKeyword_0_5()); 
+                          
+                    }
+
+                    }
+                    break;
 
             }
 
-            // ../at.bestsolution.efxclipse.tooling.fxmlx/src-gen/at/bestsolution/efxclipse/tooling/fxmlx/parser/antlr/internal/InternalFXMLDsl.g:731:2: (this_ID_5= RULE_ID | this_STRING_6= RULE_STRING | this_ANY_OTHER_7= RULE_ANY_OTHER | this_WS_8= RULE_WS | kw= '.' | kw= ':' )*
+            // ../at.bestsolution.efxclipse.tooling.fxmlx/src-gen/at/bestsolution/efxclipse/tooling/fxmlx/parser/antlr/internal/InternalFXMLDsl.g:738:2: (this_ID_6= RULE_ID | this_STRING_7= RULE_STRING | this_ANY_OTHER_8= RULE_ANY_OTHER | this_WS_9= RULE_WS | kw= '.' | kw= ':' | kw= '=' )*
             loop13:
             do {
-                int alt13=7;
+                int alt13=8;
                 switch ( input.LA(1) ) {
                 case RULE_ID:
                     {
@@ -1961,82 +1979,87 @@ public class InternalFXMLDslParser extends AbstractInternalAntlrParser {
                     alt13=6;
                     }
                     break;
+                case 17:
+                    {
+                    alt13=7;
+                    }
+                    break;
 
                 }
 
                 switch (alt13) {
             	case 1 :
-            	    // ../at.bestsolution.efxclipse.tooling.fxmlx/src-gen/at/bestsolution/efxclipse/tooling/fxmlx/parser/antlr/internal/InternalFXMLDsl.g:731:7: this_ID_5= RULE_ID
+            	    // ../at.bestsolution.efxclipse.tooling.fxmlx/src-gen/at/bestsolution/efxclipse/tooling/fxmlx/parser/antlr/internal/InternalFXMLDsl.g:738:7: this_ID_6= RULE_ID
             	    {
-            	    this_ID_5=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleContent1488); if (state.failed) return current;
+            	    this_ID_6=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleContent1507); if (state.failed) return current;
             	    if ( state.backtracking==0 ) {
 
-            	      		current.merge(this_ID_5);
+            	      		current.merge(this_ID_6);
             	          
             	    }
             	    if ( state.backtracking==0 ) {
             	       
-            	          newLeafNode(this_ID_5, grammarAccess.getContentAccess().getIDTerminalRuleCall_1_0()); 
+            	          newLeafNode(this_ID_6, grammarAccess.getContentAccess().getIDTerminalRuleCall_1_0()); 
             	          
             	    }
 
             	    }
             	    break;
             	case 2 :
-            	    // ../at.bestsolution.efxclipse.tooling.fxmlx/src-gen/at/bestsolution/efxclipse/tooling/fxmlx/parser/antlr/internal/InternalFXMLDsl.g:739:10: this_STRING_6= RULE_STRING
+            	    // ../at.bestsolution.efxclipse.tooling.fxmlx/src-gen/at/bestsolution/efxclipse/tooling/fxmlx/parser/antlr/internal/InternalFXMLDsl.g:746:10: this_STRING_7= RULE_STRING
             	    {
-            	    this_STRING_6=(Token)match(input,RULE_STRING,FOLLOW_RULE_STRING_in_ruleContent1514); if (state.failed) return current;
+            	    this_STRING_7=(Token)match(input,RULE_STRING,FOLLOW_RULE_STRING_in_ruleContent1533); if (state.failed) return current;
             	    if ( state.backtracking==0 ) {
 
-            	      		current.merge(this_STRING_6);
+            	      		current.merge(this_STRING_7);
             	          
             	    }
             	    if ( state.backtracking==0 ) {
             	       
-            	          newLeafNode(this_STRING_6, grammarAccess.getContentAccess().getSTRINGTerminalRuleCall_1_1()); 
+            	          newLeafNode(this_STRING_7, grammarAccess.getContentAccess().getSTRINGTerminalRuleCall_1_1()); 
             	          
             	    }
 
             	    }
             	    break;
             	case 3 :
-            	    // ../at.bestsolution.efxclipse.tooling.fxmlx/src-gen/at/bestsolution/efxclipse/tooling/fxmlx/parser/antlr/internal/InternalFXMLDsl.g:747:10: this_ANY_OTHER_7= RULE_ANY_OTHER
+            	    // ../at.bestsolution.efxclipse.tooling.fxmlx/src-gen/at/bestsolution/efxclipse/tooling/fxmlx/parser/antlr/internal/InternalFXMLDsl.g:754:10: this_ANY_OTHER_8= RULE_ANY_OTHER
             	    {
-            	    this_ANY_OTHER_7=(Token)match(input,RULE_ANY_OTHER,FOLLOW_RULE_ANY_OTHER_in_ruleContent1540); if (state.failed) return current;
+            	    this_ANY_OTHER_8=(Token)match(input,RULE_ANY_OTHER,FOLLOW_RULE_ANY_OTHER_in_ruleContent1559); if (state.failed) return current;
             	    if ( state.backtracking==0 ) {
 
-            	      		current.merge(this_ANY_OTHER_7);
+            	      		current.merge(this_ANY_OTHER_8);
             	          
             	    }
             	    if ( state.backtracking==0 ) {
             	       
-            	          newLeafNode(this_ANY_OTHER_7, grammarAccess.getContentAccess().getANY_OTHERTerminalRuleCall_1_2()); 
+            	          newLeafNode(this_ANY_OTHER_8, grammarAccess.getContentAccess().getANY_OTHERTerminalRuleCall_1_2()); 
             	          
             	    }
 
             	    }
             	    break;
             	case 4 :
-            	    // ../at.bestsolution.efxclipse.tooling.fxmlx/src-gen/at/bestsolution/efxclipse/tooling/fxmlx/parser/antlr/internal/InternalFXMLDsl.g:755:10: this_WS_8= RULE_WS
+            	    // ../at.bestsolution.efxclipse.tooling.fxmlx/src-gen/at/bestsolution/efxclipse/tooling/fxmlx/parser/antlr/internal/InternalFXMLDsl.g:762:10: this_WS_9= RULE_WS
             	    {
-            	    this_WS_8=(Token)match(input,RULE_WS,FOLLOW_RULE_WS_in_ruleContent1566); if (state.failed) return current;
+            	    this_WS_9=(Token)match(input,RULE_WS,FOLLOW_RULE_WS_in_ruleContent1585); if (state.failed) return current;
             	    if ( state.backtracking==0 ) {
 
-            	      		current.merge(this_WS_8);
+            	      		current.merge(this_WS_9);
             	          
             	    }
             	    if ( state.backtracking==0 ) {
             	       
-            	          newLeafNode(this_WS_8, grammarAccess.getContentAccess().getWSTerminalRuleCall_1_3()); 
+            	          newLeafNode(this_WS_9, grammarAccess.getContentAccess().getWSTerminalRuleCall_1_3()); 
             	          
             	    }
 
             	    }
             	    break;
             	case 5 :
-            	    // ../at.bestsolution.efxclipse.tooling.fxmlx/src-gen/at/bestsolution/efxclipse/tooling/fxmlx/parser/antlr/internal/InternalFXMLDsl.g:764:2: kw= '.'
+            	    // ../at.bestsolution.efxclipse.tooling.fxmlx/src-gen/at/bestsolution/efxclipse/tooling/fxmlx/parser/antlr/internal/InternalFXMLDsl.g:771:2: kw= '.'
             	    {
-            	    kw=(Token)match(input,18,FOLLOW_18_in_ruleContent1590); if (state.failed) return current;
+            	    kw=(Token)match(input,18,FOLLOW_18_in_ruleContent1609); if (state.failed) return current;
             	    if ( state.backtracking==0 ) {
 
             	              current.merge(kw);
@@ -2047,13 +2070,26 @@ public class InternalFXMLDslParser extends AbstractInternalAntlrParser {
             	    }
             	    break;
             	case 6 :
-            	    // ../at.bestsolution.efxclipse.tooling.fxmlx/src-gen/at/bestsolution/efxclipse/tooling/fxmlx/parser/antlr/internal/InternalFXMLDsl.g:771:2: kw= ':'
+            	    // ../at.bestsolution.efxclipse.tooling.fxmlx/src-gen/at/bestsolution/efxclipse/tooling/fxmlx/parser/antlr/internal/InternalFXMLDsl.g:778:2: kw= ':'
             	    {
-            	    kw=(Token)match(input,13,FOLLOW_13_in_ruleContent1609); if (state.failed) return current;
+            	    kw=(Token)match(input,13,FOLLOW_13_in_ruleContent1628); if (state.failed) return current;
             	    if ( state.backtracking==0 ) {
 
             	              current.merge(kw);
             	              newLeafNode(kw, grammarAccess.getContentAccess().getColonKeyword_1_5()); 
+            	          
+            	    }
+
+            	    }
+            	    break;
+            	case 7 :
+            	    // ../at.bestsolution.efxclipse.tooling.fxmlx/src-gen/at/bestsolution/efxclipse/tooling/fxmlx/parser/antlr/internal/InternalFXMLDsl.g:785:2: kw= '='
+            	    {
+            	    kw=(Token)match(input,17,FOLLOW_17_in_ruleContent1647); if (state.failed) return current;
+            	    if ( state.backtracking==0 ) {
+
+            	              current.merge(kw);
+            	              newLeafNode(kw, grammarAccess.getContentAccess().getEqualsSignKeyword_1_6()); 
             	          
             	    }
 
@@ -2091,7 +2127,7 @@ public class InternalFXMLDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleQualifiedName"
-    // ../at.bestsolution.efxclipse.tooling.fxmlx/src-gen/at/bestsolution/efxclipse/tooling/fxmlx/parser/antlr/internal/InternalFXMLDsl.g:787:1: entryRuleQualifiedName returns [String current=null] : iv_ruleQualifiedName= ruleQualifiedName EOF ;
+    // ../at.bestsolution.efxclipse.tooling.fxmlx/src-gen/at/bestsolution/efxclipse/tooling/fxmlx/parser/antlr/internal/InternalFXMLDsl.g:801:1: entryRuleQualifiedName returns [String current=null] : iv_ruleQualifiedName= ruleQualifiedName EOF ;
     public final String entryRuleQualifiedName() throws RecognitionException {
         String current = null;
 
@@ -2099,13 +2135,13 @@ public class InternalFXMLDslParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../at.bestsolution.efxclipse.tooling.fxmlx/src-gen/at/bestsolution/efxclipse/tooling/fxmlx/parser/antlr/internal/InternalFXMLDsl.g:788:2: (iv_ruleQualifiedName= ruleQualifiedName EOF )
-            // ../at.bestsolution.efxclipse.tooling.fxmlx/src-gen/at/bestsolution/efxclipse/tooling/fxmlx/parser/antlr/internal/InternalFXMLDsl.g:789:2: iv_ruleQualifiedName= ruleQualifiedName EOF
+            // ../at.bestsolution.efxclipse.tooling.fxmlx/src-gen/at/bestsolution/efxclipse/tooling/fxmlx/parser/antlr/internal/InternalFXMLDsl.g:802:2: (iv_ruleQualifiedName= ruleQualifiedName EOF )
+            // ../at.bestsolution.efxclipse.tooling.fxmlx/src-gen/at/bestsolution/efxclipse/tooling/fxmlx/parser/antlr/internal/InternalFXMLDsl.g:803:2: iv_ruleQualifiedName= ruleQualifiedName EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getQualifiedNameRule()); 
             }
-            pushFollow(FOLLOW_ruleQualifiedName_in_entryRuleQualifiedName1656);
+            pushFollow(FOLLOW_ruleQualifiedName_in_entryRuleQualifiedName1694);
             iv_ruleQualifiedName=ruleQualifiedName();
 
             state._fsp--;
@@ -2113,7 +2149,7 @@ public class InternalFXMLDslParser extends AbstractInternalAntlrParser {
             if ( state.backtracking==0 ) {
                current =iv_ruleQualifiedName.getText(); 
             }
-            match(input,EOF,FOLLOW_EOF_in_entryRuleQualifiedName1667); if (state.failed) return current;
+            match(input,EOF,FOLLOW_EOF_in_entryRuleQualifiedName1705); if (state.failed) return current;
 
             }
 
@@ -2131,7 +2167,7 @@ public class InternalFXMLDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleQualifiedName"
-    // ../at.bestsolution.efxclipse.tooling.fxmlx/src-gen/at/bestsolution/efxclipse/tooling/fxmlx/parser/antlr/internal/InternalFXMLDsl.g:796:1: ruleQualifiedName returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (this_ID_0= RULE_ID ( ( ( '.' )=>kw= '.' ) this_ID_2= RULE_ID )* ) ;
+    // ../at.bestsolution.efxclipse.tooling.fxmlx/src-gen/at/bestsolution/efxclipse/tooling/fxmlx/parser/antlr/internal/InternalFXMLDsl.g:810:1: ruleQualifiedName returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (this_ID_0= RULE_ID ( ( ( '.' )=>kw= '.' ) this_ID_2= RULE_ID )* ) ;
     public final AntlrDatatypeRuleToken ruleQualifiedName() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
@@ -2142,13 +2178,13 @@ public class InternalFXMLDslParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../at.bestsolution.efxclipse.tooling.fxmlx/src-gen/at/bestsolution/efxclipse/tooling/fxmlx/parser/antlr/internal/InternalFXMLDsl.g:799:28: ( (this_ID_0= RULE_ID ( ( ( '.' )=>kw= '.' ) this_ID_2= RULE_ID )* ) )
-            // ../at.bestsolution.efxclipse.tooling.fxmlx/src-gen/at/bestsolution/efxclipse/tooling/fxmlx/parser/antlr/internal/InternalFXMLDsl.g:800:1: (this_ID_0= RULE_ID ( ( ( '.' )=>kw= '.' ) this_ID_2= RULE_ID )* )
+            // ../at.bestsolution.efxclipse.tooling.fxmlx/src-gen/at/bestsolution/efxclipse/tooling/fxmlx/parser/antlr/internal/InternalFXMLDsl.g:813:28: ( (this_ID_0= RULE_ID ( ( ( '.' )=>kw= '.' ) this_ID_2= RULE_ID )* ) )
+            // ../at.bestsolution.efxclipse.tooling.fxmlx/src-gen/at/bestsolution/efxclipse/tooling/fxmlx/parser/antlr/internal/InternalFXMLDsl.g:814:1: (this_ID_0= RULE_ID ( ( ( '.' )=>kw= '.' ) this_ID_2= RULE_ID )* )
             {
-            // ../at.bestsolution.efxclipse.tooling.fxmlx/src-gen/at/bestsolution/efxclipse/tooling/fxmlx/parser/antlr/internal/InternalFXMLDsl.g:800:1: (this_ID_0= RULE_ID ( ( ( '.' )=>kw= '.' ) this_ID_2= RULE_ID )* )
-            // ../at.bestsolution.efxclipse.tooling.fxmlx/src-gen/at/bestsolution/efxclipse/tooling/fxmlx/parser/antlr/internal/InternalFXMLDsl.g:800:6: this_ID_0= RULE_ID ( ( ( '.' )=>kw= '.' ) this_ID_2= RULE_ID )*
+            // ../at.bestsolution.efxclipse.tooling.fxmlx/src-gen/at/bestsolution/efxclipse/tooling/fxmlx/parser/antlr/internal/InternalFXMLDsl.g:814:1: (this_ID_0= RULE_ID ( ( ( '.' )=>kw= '.' ) this_ID_2= RULE_ID )* )
+            // ../at.bestsolution.efxclipse.tooling.fxmlx/src-gen/at/bestsolution/efxclipse/tooling/fxmlx/parser/antlr/internal/InternalFXMLDsl.g:814:6: this_ID_0= RULE_ID ( ( ( '.' )=>kw= '.' ) this_ID_2= RULE_ID )*
             {
-            this_ID_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleQualifiedName1707); if (state.failed) return current;
+            this_ID_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleQualifiedName1745); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
               		current.merge(this_ID_0);
@@ -2159,7 +2195,7 @@ public class InternalFXMLDslParser extends AbstractInternalAntlrParser {
                   newLeafNode(this_ID_0, grammarAccess.getQualifiedNameAccess().getIDTerminalRuleCall_0()); 
                   
             }
-            // ../at.bestsolution.efxclipse.tooling.fxmlx/src-gen/at/bestsolution/efxclipse/tooling/fxmlx/parser/antlr/internal/InternalFXMLDsl.g:807:1: ( ( ( '.' )=>kw= '.' ) this_ID_2= RULE_ID )*
+            // ../at.bestsolution.efxclipse.tooling.fxmlx/src-gen/at/bestsolution/efxclipse/tooling/fxmlx/parser/antlr/internal/InternalFXMLDsl.g:821:1: ( ( ( '.' )=>kw= '.' ) this_ID_2= RULE_ID )*
             loop14:
             do {
                 int alt14=2;
@@ -2178,12 +2214,12 @@ public class InternalFXMLDslParser extends AbstractInternalAntlrParser {
 
                 switch (alt14) {
             	case 1 :
-            	    // ../at.bestsolution.efxclipse.tooling.fxmlx/src-gen/at/bestsolution/efxclipse/tooling/fxmlx/parser/antlr/internal/InternalFXMLDsl.g:807:2: ( ( '.' )=>kw= '.' ) this_ID_2= RULE_ID
+            	    // ../at.bestsolution.efxclipse.tooling.fxmlx/src-gen/at/bestsolution/efxclipse/tooling/fxmlx/parser/antlr/internal/InternalFXMLDsl.g:821:2: ( ( '.' )=>kw= '.' ) this_ID_2= RULE_ID
             	    {
-            	    // ../at.bestsolution.efxclipse.tooling.fxmlx/src-gen/at/bestsolution/efxclipse/tooling/fxmlx/parser/antlr/internal/InternalFXMLDsl.g:807:2: ( ( '.' )=>kw= '.' )
-            	    // ../at.bestsolution.efxclipse.tooling.fxmlx/src-gen/at/bestsolution/efxclipse/tooling/fxmlx/parser/antlr/internal/InternalFXMLDsl.g:807:3: ( '.' )=>kw= '.'
+            	    // ../at.bestsolution.efxclipse.tooling.fxmlx/src-gen/at/bestsolution/efxclipse/tooling/fxmlx/parser/antlr/internal/InternalFXMLDsl.g:821:2: ( ( '.' )=>kw= '.' )
+            	    // ../at.bestsolution.efxclipse.tooling.fxmlx/src-gen/at/bestsolution/efxclipse/tooling/fxmlx/parser/antlr/internal/InternalFXMLDsl.g:821:3: ( '.' )=>kw= '.'
             	    {
-            	    kw=(Token)match(input,18,FOLLOW_18_in_ruleQualifiedName1735); if (state.failed) return current;
+            	    kw=(Token)match(input,18,FOLLOW_18_in_ruleQualifiedName1773); if (state.failed) return current;
             	    if ( state.backtracking==0 ) {
 
             	              current.merge(kw);
@@ -2193,7 +2229,7 @@ public class InternalFXMLDslParser extends AbstractInternalAntlrParser {
 
             	    }
 
-            	    this_ID_2=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleQualifiedName1751); if (state.failed) return current;
+            	    this_ID_2=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleQualifiedName1789); if (state.failed) return current;
             	    if ( state.backtracking==0 ) {
 
             	      		current.merge(this_ID_2);
@@ -2236,7 +2272,7 @@ public class InternalFXMLDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleQualifiedNameWithWildCard"
-    // ../at.bestsolution.efxclipse.tooling.fxmlx/src-gen/at/bestsolution/efxclipse/tooling/fxmlx/parser/antlr/internal/InternalFXMLDsl.g:830:1: entryRuleQualifiedNameWithWildCard returns [EObject current=null] : iv_ruleQualifiedNameWithWildCard= ruleQualifiedNameWithWildCard EOF ;
+    // ../at.bestsolution.efxclipse.tooling.fxmlx/src-gen/at/bestsolution/efxclipse/tooling/fxmlx/parser/antlr/internal/InternalFXMLDsl.g:844:1: entryRuleQualifiedNameWithWildCard returns [EObject current=null] : iv_ruleQualifiedNameWithWildCard= ruleQualifiedNameWithWildCard EOF ;
     public final EObject entryRuleQualifiedNameWithWildCard() throws RecognitionException {
         EObject current = null;
 
@@ -2244,13 +2280,13 @@ public class InternalFXMLDslParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../at.bestsolution.efxclipse.tooling.fxmlx/src-gen/at/bestsolution/efxclipse/tooling/fxmlx/parser/antlr/internal/InternalFXMLDsl.g:831:2: (iv_ruleQualifiedNameWithWildCard= ruleQualifiedNameWithWildCard EOF )
-            // ../at.bestsolution.efxclipse.tooling.fxmlx/src-gen/at/bestsolution/efxclipse/tooling/fxmlx/parser/antlr/internal/InternalFXMLDsl.g:832:2: iv_ruleQualifiedNameWithWildCard= ruleQualifiedNameWithWildCard EOF
+            // ../at.bestsolution.efxclipse.tooling.fxmlx/src-gen/at/bestsolution/efxclipse/tooling/fxmlx/parser/antlr/internal/InternalFXMLDsl.g:845:2: (iv_ruleQualifiedNameWithWildCard= ruleQualifiedNameWithWildCard EOF )
+            // ../at.bestsolution.efxclipse.tooling.fxmlx/src-gen/at/bestsolution/efxclipse/tooling/fxmlx/parser/antlr/internal/InternalFXMLDsl.g:846:2: iv_ruleQualifiedNameWithWildCard= ruleQualifiedNameWithWildCard EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getQualifiedNameWithWildCardRule()); 
             }
-            pushFollow(FOLLOW_ruleQualifiedNameWithWildCard_in_entryRuleQualifiedNameWithWildCard1798);
+            pushFollow(FOLLOW_ruleQualifiedNameWithWildCard_in_entryRuleQualifiedNameWithWildCard1836);
             iv_ruleQualifiedNameWithWildCard=ruleQualifiedNameWithWildCard();
 
             state._fsp--;
@@ -2258,7 +2294,7 @@ public class InternalFXMLDslParser extends AbstractInternalAntlrParser {
             if ( state.backtracking==0 ) {
                current =iv_ruleQualifiedNameWithWildCard; 
             }
-            match(input,EOF,FOLLOW_EOF_in_entryRuleQualifiedNameWithWildCard1808); if (state.failed) return current;
+            match(input,EOF,FOLLOW_EOF_in_entryRuleQualifiedNameWithWildCard1846); if (state.failed) return current;
 
             }
 
@@ -2276,7 +2312,7 @@ public class InternalFXMLDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleQualifiedNameWithWildCard"
-    // ../at.bestsolution.efxclipse.tooling.fxmlx/src-gen/at/bestsolution/efxclipse/tooling/fxmlx/parser/antlr/internal/InternalFXMLDsl.g:839:1: ruleQualifiedNameWithWildCard returns [EObject current=null] : ( ( (lv_value_0_0= ruleQualifiedName ) ) (otherlv_1= '.' otherlv_2= '*' )? ) ;
+    // ../at.bestsolution.efxclipse.tooling.fxmlx/src-gen/at/bestsolution/efxclipse/tooling/fxmlx/parser/antlr/internal/InternalFXMLDsl.g:853:1: ruleQualifiedNameWithWildCard returns [EObject current=null] : ( ( (lv_value_0_0= ruleQualifiedName ) ) (otherlv_1= '.' otherlv_2= '*' )? ) ;
     public final EObject ruleQualifiedNameWithWildCard() throws RecognitionException {
         EObject current = null;
 
@@ -2288,24 +2324,24 @@ public class InternalFXMLDslParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../at.bestsolution.efxclipse.tooling.fxmlx/src-gen/at/bestsolution/efxclipse/tooling/fxmlx/parser/antlr/internal/InternalFXMLDsl.g:842:28: ( ( ( (lv_value_0_0= ruleQualifiedName ) ) (otherlv_1= '.' otherlv_2= '*' )? ) )
-            // ../at.bestsolution.efxclipse.tooling.fxmlx/src-gen/at/bestsolution/efxclipse/tooling/fxmlx/parser/antlr/internal/InternalFXMLDsl.g:843:1: ( ( (lv_value_0_0= ruleQualifiedName ) ) (otherlv_1= '.' otherlv_2= '*' )? )
+            // ../at.bestsolution.efxclipse.tooling.fxmlx/src-gen/at/bestsolution/efxclipse/tooling/fxmlx/parser/antlr/internal/InternalFXMLDsl.g:856:28: ( ( ( (lv_value_0_0= ruleQualifiedName ) ) (otherlv_1= '.' otherlv_2= '*' )? ) )
+            // ../at.bestsolution.efxclipse.tooling.fxmlx/src-gen/at/bestsolution/efxclipse/tooling/fxmlx/parser/antlr/internal/InternalFXMLDsl.g:857:1: ( ( (lv_value_0_0= ruleQualifiedName ) ) (otherlv_1= '.' otherlv_2= '*' )? )
             {
-            // ../at.bestsolution.efxclipse.tooling.fxmlx/src-gen/at/bestsolution/efxclipse/tooling/fxmlx/parser/antlr/internal/InternalFXMLDsl.g:843:1: ( ( (lv_value_0_0= ruleQualifiedName ) ) (otherlv_1= '.' otherlv_2= '*' )? )
-            // ../at.bestsolution.efxclipse.tooling.fxmlx/src-gen/at/bestsolution/efxclipse/tooling/fxmlx/parser/antlr/internal/InternalFXMLDsl.g:843:2: ( (lv_value_0_0= ruleQualifiedName ) ) (otherlv_1= '.' otherlv_2= '*' )?
+            // ../at.bestsolution.efxclipse.tooling.fxmlx/src-gen/at/bestsolution/efxclipse/tooling/fxmlx/parser/antlr/internal/InternalFXMLDsl.g:857:1: ( ( (lv_value_0_0= ruleQualifiedName ) ) (otherlv_1= '.' otherlv_2= '*' )? )
+            // ../at.bestsolution.efxclipse.tooling.fxmlx/src-gen/at/bestsolution/efxclipse/tooling/fxmlx/parser/antlr/internal/InternalFXMLDsl.g:857:2: ( (lv_value_0_0= ruleQualifiedName ) ) (otherlv_1= '.' otherlv_2= '*' )?
             {
-            // ../at.bestsolution.efxclipse.tooling.fxmlx/src-gen/at/bestsolution/efxclipse/tooling/fxmlx/parser/antlr/internal/InternalFXMLDsl.g:843:2: ( (lv_value_0_0= ruleQualifiedName ) )
-            // ../at.bestsolution.efxclipse.tooling.fxmlx/src-gen/at/bestsolution/efxclipse/tooling/fxmlx/parser/antlr/internal/InternalFXMLDsl.g:844:1: (lv_value_0_0= ruleQualifiedName )
+            // ../at.bestsolution.efxclipse.tooling.fxmlx/src-gen/at/bestsolution/efxclipse/tooling/fxmlx/parser/antlr/internal/InternalFXMLDsl.g:857:2: ( (lv_value_0_0= ruleQualifiedName ) )
+            // ../at.bestsolution.efxclipse.tooling.fxmlx/src-gen/at/bestsolution/efxclipse/tooling/fxmlx/parser/antlr/internal/InternalFXMLDsl.g:858:1: (lv_value_0_0= ruleQualifiedName )
             {
-            // ../at.bestsolution.efxclipse.tooling.fxmlx/src-gen/at/bestsolution/efxclipse/tooling/fxmlx/parser/antlr/internal/InternalFXMLDsl.g:844:1: (lv_value_0_0= ruleQualifiedName )
-            // ../at.bestsolution.efxclipse.tooling.fxmlx/src-gen/at/bestsolution/efxclipse/tooling/fxmlx/parser/antlr/internal/InternalFXMLDsl.g:845:3: lv_value_0_0= ruleQualifiedName
+            // ../at.bestsolution.efxclipse.tooling.fxmlx/src-gen/at/bestsolution/efxclipse/tooling/fxmlx/parser/antlr/internal/InternalFXMLDsl.g:858:1: (lv_value_0_0= ruleQualifiedName )
+            // ../at.bestsolution.efxclipse.tooling.fxmlx/src-gen/at/bestsolution/efxclipse/tooling/fxmlx/parser/antlr/internal/InternalFXMLDsl.g:859:3: lv_value_0_0= ruleQualifiedName
             {
             if ( state.backtracking==0 ) {
                
               	        newCompositeNode(grammarAccess.getQualifiedNameWithWildCardAccess().getValueQualifiedNameParserRuleCall_0_0()); 
               	    
             }
-            pushFollow(FOLLOW_ruleQualifiedName_in_ruleQualifiedNameWithWildCard1854);
+            pushFollow(FOLLOW_ruleQualifiedName_in_ruleQualifiedNameWithWildCard1892);
             lv_value_0_0=ruleQualifiedName();
 
             state._fsp--;
@@ -2329,7 +2365,7 @@ public class InternalFXMLDslParser extends AbstractInternalAntlrParser {
 
             }
 
-            // ../at.bestsolution.efxclipse.tooling.fxmlx/src-gen/at/bestsolution/efxclipse/tooling/fxmlx/parser/antlr/internal/InternalFXMLDsl.g:861:2: (otherlv_1= '.' otherlv_2= '*' )?
+            // ../at.bestsolution.efxclipse.tooling.fxmlx/src-gen/at/bestsolution/efxclipse/tooling/fxmlx/parser/antlr/internal/InternalFXMLDsl.g:875:2: (otherlv_1= '.' otherlv_2= '*' )?
             int alt15=2;
             int LA15_0 = input.LA(1);
 
@@ -2338,15 +2374,15 @@ public class InternalFXMLDslParser extends AbstractInternalAntlrParser {
             }
             switch (alt15) {
                 case 1 :
-                    // ../at.bestsolution.efxclipse.tooling.fxmlx/src-gen/at/bestsolution/efxclipse/tooling/fxmlx/parser/antlr/internal/InternalFXMLDsl.g:861:4: otherlv_1= '.' otherlv_2= '*'
+                    // ../at.bestsolution.efxclipse.tooling.fxmlx/src-gen/at/bestsolution/efxclipse/tooling/fxmlx/parser/antlr/internal/InternalFXMLDsl.g:875:4: otherlv_1= '.' otherlv_2= '*'
                     {
-                    otherlv_1=(Token)match(input,18,FOLLOW_18_in_ruleQualifiedNameWithWildCard1867); if (state.failed) return current;
+                    otherlv_1=(Token)match(input,18,FOLLOW_18_in_ruleQualifiedNameWithWildCard1905); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                           	newLeafNode(otherlv_1, grammarAccess.getQualifiedNameWithWildCardAccess().getFullStopKeyword_1_0());
                           
                     }
-                    otherlv_2=(Token)match(input,19,FOLLOW_19_in_ruleQualifiedNameWithWildCard1879); if (state.failed) return current;
+                    otherlv_2=(Token)match(input,19,FOLLOW_19_in_ruleQualifiedNameWithWildCard1917); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                           	newLeafNode(otherlv_2, grammarAccess.getQualifiedNameWithWildCardAccess().getAsteriskKeyword_1_1());
@@ -2381,10 +2417,10 @@ public class InternalFXMLDslParser extends AbstractInternalAntlrParser {
 
     // $ANTLR start synpred1_InternalFXMLDsl
     public final void synpred1_InternalFXMLDsl_fragment() throws RecognitionException {   
-        // ../at.bestsolution.efxclipse.tooling.fxmlx/src-gen/at/bestsolution/efxclipse/tooling/fxmlx/parser/antlr/internal/InternalFXMLDsl.g:807:3: ( '.' )
-        // ../at.bestsolution.efxclipse.tooling.fxmlx/src-gen/at/bestsolution/efxclipse/tooling/fxmlx/parser/antlr/internal/InternalFXMLDsl.g:808:2: '.'
+        // ../at.bestsolution.efxclipse.tooling.fxmlx/src-gen/at/bestsolution/efxclipse/tooling/fxmlx/parser/antlr/internal/InternalFXMLDsl.g:821:3: ( '.' )
+        // ../at.bestsolution.efxclipse.tooling.fxmlx/src-gen/at/bestsolution/efxclipse/tooling/fxmlx/parser/antlr/internal/InternalFXMLDsl.g:822:2: '.'
         {
-        match(input,18,FOLLOW_18_in_synpred1_InternalFXMLDsl1726); if (state.failed) return ;
+        match(input,18,FOLLOW_18_in_synpred1_InternalFXMLDsl1764); if (state.failed) return ;
 
         }
     }
@@ -2414,30 +2450,31 @@ public class InternalFXMLDslParser extends AbstractInternalAntlrParser {
     static final String DFA3_eofS =
         "\20\uffff";
     static final String DFA3_minS =
-        "\1\14\4\4\1\15\2\uffff\4\4\1\5\2\21\1\4";
+        "\1\14\3\4\1\15\1\uffff\1\4\1\uffff\3\4\1\5\1\4\2\21\1\4";
     static final String DFA3_maxS =
-        "\1\14\1\4\1\22\2\4\1\22\2\uffff\2\22\2\4\1\5\2\22\1\20";
+        "\1\14\1\4\1\22\1\4\1\22\1\uffff\1\4\1\uffff\1\22\2\4\1\5\3\22\1"+
+        "\20";
     static final String DFA3_acceptS =
-        "\6\uffff\1\2\1\1\10\uffff";
+        "\5\uffff\1\1\1\uffff\1\2\10\uffff";
     static final String DFA3_specialS =
         "\20\uffff}>";
     static final String[] DFA3_transitionS = {
             "\1\1",
             "\1\2",
-            "\1\5\10\uffff\1\3\1\7\1\uffff\1\6\1\uffff\1\4",
+            "\1\4\10\uffff\1\6\1\5\1\uffff\1\7\1\uffff\1\3",
             "\1\10",
-            "\1\11",
-            "\1\12\3\uffff\1\14\1\13",
+            "\1\11\3\uffff\1\13\1\12",
             "",
+            "\1\14",
             "",
-            "\1\5\11\uffff\1\7\1\uffff\1\6\1\uffff\1\4",
-            "\1\5\11\uffff\1\7\1\uffff\1\6\1\uffff\1\4",
+            "\1\4\11\uffff\1\5\1\uffff\1\7\1\uffff\1\3",
             "\1\15",
             "\1\16",
             "\1\17",
-            "\1\14\1\13",
-            "\1\14\1\13",
-            "\1\5\11\uffff\1\7\1\uffff\1\6"
+            "\1\4\11\uffff\1\5\1\uffff\1\7\1\uffff\1\3",
+            "\1\13\1\12",
+            "\1\13\1\12",
+            "\1\4\11\uffff\1\5\1\uffff\1\7"
     };
 
     static final short[] DFA3_eot = DFA.unpackEncodedString(DFA3_eotS);
@@ -2502,7 +2539,7 @@ public class InternalFXMLDslParser extends AbstractInternalAntlrParser {
     public static final BitSet FOLLOW_13_in_ruleContainerElementDefinition666 = new BitSet(new long[]{0x0000000000000010L});
     public static final BitSet FOLLOW_ruleQualifiedName_in_ruleContainerElementDefinition689 = new BitSet(new long[]{0x0000000000004010L});
     public static final BitSet FOLLOW_ruleAttributePropertyDefinition_in_ruleContainerElementDefinition710 = new BitSet(new long[]{0x0000000000004010L});
-    public static final BitSet FOLLOW_14_in_ruleContainerElementDefinition723 = new BitSet(new long[]{0x000000000004B870L});
+    public static final BitSet FOLLOW_14_in_ruleContainerElementDefinition723 = new BitSet(new long[]{0x000000000006B870L});
     public static final BitSet FOLLOW_rulePCData_in_ruleContainerElementDefinition744 = new BitSet(new long[]{0x0000000000009800L});
     public static final BitSet FOLLOW_ruleElementDefinition_in_ruleContainerElementDefinition766 = new BitSet(new long[]{0x0000000000009800L});
     public static final BitSet FOLLOW_15_in_ruleContainerElementDefinition779 = new BitSet(new long[]{0x0000000000000010L});
@@ -2530,27 +2567,29 @@ public class InternalFXMLDslParser extends AbstractInternalAntlrParser {
     public static final BitSet FOLLOW_RULE_STRING_in_ruleAttributePropertyDefinition1272 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleContent_in_entryRuleContent1320 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleContent1331 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_ID_in_ruleContent1376 = new BitSet(new long[]{0x00000000000420F2L});
-    public static final BitSet FOLLOW_RULE_STRING_in_ruleContent1402 = new BitSet(new long[]{0x00000000000420F2L});
-    public static final BitSet FOLLOW_RULE_ANY_OTHER_in_ruleContent1428 = new BitSet(new long[]{0x00000000000420F2L});
-    public static final BitSet FOLLOW_18_in_ruleContent1452 = new BitSet(new long[]{0x00000000000420F2L});
-    public static final BitSet FOLLOW_13_in_ruleContent1471 = new BitSet(new long[]{0x00000000000420F2L});
-    public static final BitSet FOLLOW_RULE_ID_in_ruleContent1488 = new BitSet(new long[]{0x00000000000420F2L});
-    public static final BitSet FOLLOW_RULE_STRING_in_ruleContent1514 = new BitSet(new long[]{0x00000000000420F2L});
-    public static final BitSet FOLLOW_RULE_ANY_OTHER_in_ruleContent1540 = new BitSet(new long[]{0x00000000000420F2L});
-    public static final BitSet FOLLOW_RULE_WS_in_ruleContent1566 = new BitSet(new long[]{0x00000000000420F2L});
-    public static final BitSet FOLLOW_18_in_ruleContent1590 = new BitSet(new long[]{0x00000000000420F2L});
-    public static final BitSet FOLLOW_13_in_ruleContent1609 = new BitSet(new long[]{0x00000000000420F2L});
-    public static final BitSet FOLLOW_ruleQualifiedName_in_entryRuleQualifiedName1656 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleQualifiedName1667 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_ID_in_ruleQualifiedName1707 = new BitSet(new long[]{0x0000000000040002L});
-    public static final BitSet FOLLOW_18_in_ruleQualifiedName1735 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_RULE_ID_in_ruleQualifiedName1751 = new BitSet(new long[]{0x0000000000040002L});
-    public static final BitSet FOLLOW_ruleQualifiedNameWithWildCard_in_entryRuleQualifiedNameWithWildCard1798 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleQualifiedNameWithWildCard1808 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleQualifiedName_in_ruleQualifiedNameWithWildCard1854 = new BitSet(new long[]{0x0000000000040002L});
-    public static final BitSet FOLLOW_18_in_ruleQualifiedNameWithWildCard1867 = new BitSet(new long[]{0x0000000000080000L});
-    public static final BitSet FOLLOW_19_in_ruleQualifiedNameWithWildCard1879 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_18_in_synpred1_InternalFXMLDsl1726 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_ID_in_ruleContent1376 = new BitSet(new long[]{0x00000000000620F2L});
+    public static final BitSet FOLLOW_RULE_STRING_in_ruleContent1402 = new BitSet(new long[]{0x00000000000620F2L});
+    public static final BitSet FOLLOW_RULE_ANY_OTHER_in_ruleContent1428 = new BitSet(new long[]{0x00000000000620F2L});
+    public static final BitSet FOLLOW_18_in_ruleContent1452 = new BitSet(new long[]{0x00000000000620F2L});
+    public static final BitSet FOLLOW_13_in_ruleContent1471 = new BitSet(new long[]{0x00000000000620F2L});
+    public static final BitSet FOLLOW_17_in_ruleContent1490 = new BitSet(new long[]{0x00000000000620F2L});
+    public static final BitSet FOLLOW_RULE_ID_in_ruleContent1507 = new BitSet(new long[]{0x00000000000620F2L});
+    public static final BitSet FOLLOW_RULE_STRING_in_ruleContent1533 = new BitSet(new long[]{0x00000000000620F2L});
+    public static final BitSet FOLLOW_RULE_ANY_OTHER_in_ruleContent1559 = new BitSet(new long[]{0x00000000000620F2L});
+    public static final BitSet FOLLOW_RULE_WS_in_ruleContent1585 = new BitSet(new long[]{0x00000000000620F2L});
+    public static final BitSet FOLLOW_18_in_ruleContent1609 = new BitSet(new long[]{0x00000000000620F2L});
+    public static final BitSet FOLLOW_13_in_ruleContent1628 = new BitSet(new long[]{0x00000000000620F2L});
+    public static final BitSet FOLLOW_17_in_ruleContent1647 = new BitSet(new long[]{0x00000000000620F2L});
+    public static final BitSet FOLLOW_ruleQualifiedName_in_entryRuleQualifiedName1694 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleQualifiedName1705 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_ID_in_ruleQualifiedName1745 = new BitSet(new long[]{0x0000000000040002L});
+    public static final BitSet FOLLOW_18_in_ruleQualifiedName1773 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_RULE_ID_in_ruleQualifiedName1789 = new BitSet(new long[]{0x0000000000040002L});
+    public static final BitSet FOLLOW_ruleQualifiedNameWithWildCard_in_entryRuleQualifiedNameWithWildCard1836 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleQualifiedNameWithWildCard1846 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleQualifiedName_in_ruleQualifiedNameWithWildCard1892 = new BitSet(new long[]{0x0000000000040002L});
+    public static final BitSet FOLLOW_18_in_ruleQualifiedNameWithWildCard1905 = new BitSet(new long[]{0x0000000000080000L});
+    public static final BitSet FOLLOW_19_in_ruleQualifiedNameWithWildCard1917 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_18_in_synpred1_InternalFXMLDsl1764 = new BitSet(new long[]{0x0000000000000002L});
 
 }

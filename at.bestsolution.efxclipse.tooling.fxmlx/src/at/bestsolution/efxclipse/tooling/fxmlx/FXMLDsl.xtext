@@ -43,7 +43,7 @@ AttributePropertyDefinition:
 
 
 Content hidden(ML_COMMENT):
-	(ID|STRING|ANY_OTHER|'.'|':') (ID|STRING|ANY_OTHER|WS|'.'|':')*
+	(ID|STRING|ANY_OTHER|'.'|':'|'=') (ID|STRING|ANY_OTHER|WS|'.'|':'|'=')*
 ;
 
 QualifiedName:
