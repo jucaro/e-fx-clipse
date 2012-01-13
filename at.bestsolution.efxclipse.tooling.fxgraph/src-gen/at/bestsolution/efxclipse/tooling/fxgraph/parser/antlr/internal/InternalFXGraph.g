@@ -1229,31 +1229,41 @@ ruleSingleValueProperty returns [EObject current=null]
 
     |
     { 
-        newCompositeNode(grammarAccess.getSingleValuePropertyAccess().getLocationValuePropertyParserRuleCall_8()); 
+        newCompositeNode(grammarAccess.getSingleValuePropertyAccess().getScriptValueReferenceParserRuleCall_8()); 
     }
-    this_LocationValueProperty_8=ruleLocationValueProperty
+    this_ScriptValueReference_8=ruleScriptValueReference
     { 
-        $current = $this_LocationValueProperty_8.current; 
+        $current = $this_ScriptValueReference_8.current; 
         afterParserOrEnumRuleCall();
     }
 
     |
     { 
-        newCompositeNode(grammarAccess.getSingleValuePropertyAccess().getResourceValuePropertyParserRuleCall_9()); 
+        newCompositeNode(grammarAccess.getSingleValuePropertyAccess().getLocationValuePropertyParserRuleCall_9()); 
     }
-    this_ResourceValueProperty_9=ruleResourceValueProperty
+    this_LocationValueProperty_9=ruleLocationValueProperty
     { 
-        $current = $this_ResourceValueProperty_9.current; 
+        $current = $this_LocationValueProperty_9.current; 
         afterParserOrEnumRuleCall();
     }
 
     |
     { 
-        newCompositeNode(grammarAccess.getSingleValuePropertyAccess().getBindValuePropertyParserRuleCall_10()); 
+        newCompositeNode(grammarAccess.getSingleValuePropertyAccess().getResourceValuePropertyParserRuleCall_10()); 
     }
-    this_BindValueProperty_10=ruleBindValueProperty
+    this_ResourceValueProperty_10=ruleResourceValueProperty
     { 
-        $current = $this_BindValueProperty_10.current; 
+        $current = $this_ResourceValueProperty_10.current; 
+        afterParserOrEnumRuleCall();
+    }
+
+    |
+    { 
+        newCompositeNode(grammarAccess.getSingleValuePropertyAccess().getBindValuePropertyParserRuleCall_11()); 
+    }
+    this_BindValueProperty_11=ruleBindValueProperty
+    { 
+        $current = $this_BindValueProperty_11.current; 
         afterParserOrEnumRuleCall();
     }
 )
@@ -1853,6 +1863,49 @@ ruleScriptValueExpression returns [EObject current=null]
        			"sourcecode",
         		lv_sourcecode_1_0, 
         		"SCRIPTLITERAL");
+	    }
+
+)
+))
+;
+
+
+
+
+
+// Entry rule entryRuleScriptValueReference
+entryRuleScriptValueReference returns [EObject current=null] 
+	:
+	{ newCompositeNode(grammarAccess.getScriptValueReferenceRule()); }
+	 iv_ruleScriptValueReference=ruleScriptValueReference 
+	 { $current=$iv_ruleScriptValueReference.current; } 
+	 EOF 
+;
+
+// Rule ScriptValueReference
+ruleScriptValueReference returns [EObject current=null] 
+    @init { enterRule(); 
+    }
+    @after { leaveRule(); }:
+(	otherlv_0='scriptvalue' 
+    {
+    	newLeafNode(otherlv_0, grammarAccess.getScriptValueReferenceAccess().getScriptvalueKeyword_0());
+    }
+(
+(
+		lv_reference_1_0=RULE_ID
+		{
+			newLeafNode(lv_reference_1_0, grammarAccess.getScriptValueReferenceAccess().getReferenceIDTerminalRuleCall_1_0()); 
+		}
+		{
+	        if ($current==null) {
+	            $current = createModelElement(grammarAccess.getScriptValueReferenceRule());
+	        }
+       		setWithLastConsumed(
+       			$current, 
+       			"reference",
+        		lv_reference_1_0, 
+        		"ID");
 	    }
 
 )

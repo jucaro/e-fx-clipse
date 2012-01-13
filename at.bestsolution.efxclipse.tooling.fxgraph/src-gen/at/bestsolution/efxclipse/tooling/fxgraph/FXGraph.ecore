@@ -106,6 +106,9 @@
   <eClassifiers xsi:type="ecore:EClass" name="ScriptValueExpression" eSuperTypes="#//SingleValueProperty">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="sourcecode" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ScriptValueReference" eSuperTypes="#//SingleValueProperty">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="reference" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="LocationValueProperty" eSuperTypes="#//SingleValueProperty">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>

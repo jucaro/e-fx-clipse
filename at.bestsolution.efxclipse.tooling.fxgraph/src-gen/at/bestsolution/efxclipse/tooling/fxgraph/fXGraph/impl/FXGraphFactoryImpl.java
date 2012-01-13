@@ -90,6 +90,7 @@ public class FXGraphFactoryImpl extends EFactoryImpl implements FXGraphFactory
       case FXGraphPackage.CONTROLLER_HANDLED_VALUE_PROPERTY: return createControllerHandledValueProperty();
       case FXGraphPackage.SCRIPT_HANDLER_HANDLED_VALUE_PROPERTY: return createScriptHandlerHandledValueProperty();
       case FXGraphPackage.SCRIPT_VALUE_EXPRESSION: return createScriptValueExpression();
+      case FXGraphPackage.SCRIPT_VALUE_REFERENCE: return createScriptValueReference();
       case FXGraphPackage.LOCATION_VALUE_PROPERTY: return createLocationValueProperty();
       case FXGraphPackage.RESOURCE_VALUE_PROPERTY: return createResourceValueProperty();
       case FXGraphPackage.BIND_VALUE_PROPERTY: return createBindValueProperty();
@@ -339,6 +340,17 @@ public class FXGraphFactoryImpl extends EFactoryImpl implements FXGraphFactory
   {
     ScriptValueExpressionImpl scriptValueExpression = new ScriptValueExpressionImpl();
     return scriptValueExpression;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public ScriptValueReference createScriptValueReference()
+  {
+    ScriptValueReferenceImpl scriptValueReference = new ScriptValueReferenceImpl();
+    return scriptValueReference;
   }
 
   /**

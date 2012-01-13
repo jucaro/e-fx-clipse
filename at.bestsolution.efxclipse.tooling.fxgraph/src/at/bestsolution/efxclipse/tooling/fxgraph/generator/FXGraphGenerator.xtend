@@ -29,6 +29,7 @@ import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.LocationValueProperty
 import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.ResourceValueProperty
 import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.BindValueProperty
 import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.Model
+import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.ScriptValueReference
 
 class FXGraphGenerator implements IGenerator {
 	
@@ -312,6 +313,10 @@ class FXGraphGenerator implements IGenerator {
 				if( ! skipController ) {
 					builder.append(" " + p.name + "=\""+(p.value as ScriptValueExpression).sourcecode.substring(2,(p.value as ScriptValueExpression).sourcecode.length-2).trim() +";\"");	
 				}
+			} else if( p.value instanceof ScriptValueReference ) {
+				if( ! skipController ) {
+					builder.append(" " + p.name + "=\"$"+(p.value as ScriptValueReference).reference + "\"");	
+				}
 			} else if( p.value instanceof LocationValueProperty ) {
 				builder.append(" " + p.name + "=\"@"+(p.value as LocationValueProperty).value+"\"");
 			} else if( p.value instanceof ResourceValueProperty ) {
@@ -338,6 +343,8 @@ class FXGraphGenerator implements IGenerator {
 		} else if( property.value instanceof ControllerHandledValueProperty ) {
 			return true;
 		} else if( property.value instanceof ScriptHandlerHandledValueProperty ) {
+			return true;
+		} else if( property.value instanceof ScriptValueReference ) {
 			return true;
 		} else if( property.value instanceof ScriptValueExpression ) {
 			return true;

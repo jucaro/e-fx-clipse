@@ -193,7 +193,7 @@ public class FXGraphOutlineTreeProvider extends DefaultOutlineTreeProvider {
 			return s;
 		}
 		
-		return element.getType().getSimpleName();
+		return element.getType() != null ? element.getType().getSimpleName() : "";
 	}
 	
 	public Object _text(StaticValueProperty element) {

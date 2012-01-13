@@ -225,6 +225,15 @@ public interface FXGraphFactory extends EFactory
   ScriptValueExpression createScriptValueExpression();
 
   /**
+   * Returns a new object of class '<em>Script Value Reference</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Script Value Reference</em>'.
+   * @generated
+   */
+  ScriptValueReference createScriptValueReference();
+
+  /**
    * Returns a new object of class '<em>Location Value Property</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->

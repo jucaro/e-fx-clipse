@@ -728,36 +728,43 @@ ruleContent returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()
         $current.merge(kw);
         newLeafNode(kw, grammarAccess.getContentAccess().getColonKeyword_0_4()); 
     }
-)(    this_ID_5=RULE_ID    {
-		$current.merge(this_ID_5);
+
+    |
+	kw='=' 
+    {
+        $current.merge(kw);
+        newLeafNode(kw, grammarAccess.getContentAccess().getEqualsSignKeyword_0_5()); 
+    }
+)(    this_ID_6=RULE_ID    {
+		$current.merge(this_ID_6);
     }
 
     { 
-    newLeafNode(this_ID_5, grammarAccess.getContentAccess().getIDTerminalRuleCall_1_0()); 
+    newLeafNode(this_ID_6, grammarAccess.getContentAccess().getIDTerminalRuleCall_1_0()); 
     }
 
-    |    this_STRING_6=RULE_STRING    {
-		$current.merge(this_STRING_6);
-    }
-
-    { 
-    newLeafNode(this_STRING_6, grammarAccess.getContentAccess().getSTRINGTerminalRuleCall_1_1()); 
-    }
-
-    |    this_ANY_OTHER_7=RULE_ANY_OTHER    {
-		$current.merge(this_ANY_OTHER_7);
+    |    this_STRING_7=RULE_STRING    {
+		$current.merge(this_STRING_7);
     }
 
     { 
-    newLeafNode(this_ANY_OTHER_7, grammarAccess.getContentAccess().getANY_OTHERTerminalRuleCall_1_2()); 
+    newLeafNode(this_STRING_7, grammarAccess.getContentAccess().getSTRINGTerminalRuleCall_1_1()); 
     }
 
-    |    this_WS_8=RULE_WS    {
-		$current.merge(this_WS_8);
+    |    this_ANY_OTHER_8=RULE_ANY_OTHER    {
+		$current.merge(this_ANY_OTHER_8);
     }
 
     { 
-    newLeafNode(this_WS_8, grammarAccess.getContentAccess().getWSTerminalRuleCall_1_3()); 
+    newLeafNode(this_ANY_OTHER_8, grammarAccess.getContentAccess().getANY_OTHERTerminalRuleCall_1_2()); 
+    }
+
+    |    this_WS_9=RULE_WS    {
+		$current.merge(this_WS_9);
+    }
+
+    { 
+    newLeafNode(this_WS_9, grammarAccess.getContentAccess().getWSTerminalRuleCall_1_3()); 
     }
 
     |
@@ -772,6 +779,13 @@ ruleContent returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()
     {
         $current.merge(kw);
         newLeafNode(kw, grammarAccess.getContentAccess().getColonKeyword_1_5()); 
+    }
+
+    |
+	kw='=' 
+    {
+        $current.merge(kw);
+        newLeafNode(kw, grammarAccess.getContentAccess().getEqualsSignKeyword_1_6()); 
     }
 )*)
     ;

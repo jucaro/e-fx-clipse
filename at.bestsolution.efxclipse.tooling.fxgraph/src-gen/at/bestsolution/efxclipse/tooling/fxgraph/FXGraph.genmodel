@@ -91,6 +91,9 @@
     <genClasses ecoreClass="FXGraph.ecore#//ScriptValueExpression">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute FXGraph.ecore#//ScriptValueExpression/sourcecode"/>
     </genClasses>
+    <genClasses ecoreClass="FXGraph.ecore#//ScriptValueReference">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute FXGraph.ecore#//ScriptValueReference/reference"/>
+    </genClasses>
     <genClasses ecoreClass="FXGraph.ecore#//LocationValueProperty">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute FXGraph.ecore#//LocationValueProperty/value"/>
     </genClasses>

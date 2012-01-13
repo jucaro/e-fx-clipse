@@ -866,6 +866,34 @@ public interface FXGraphPackage extends EPackage
   int SCRIPT_VALUE_EXPRESSION_FEATURE_COUNT = SINGLE_VALUE_PROPERTY_FEATURE_COUNT + 1;
 
   /**
+   * The meta object id for the '{@link at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.impl.ScriptValueReferenceImpl <em>Script Value Reference</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.impl.ScriptValueReferenceImpl
+   * @see at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.impl.FXGraphPackageImpl#getScriptValueReference()
+   * @generated
+   */
+  int SCRIPT_VALUE_REFERENCE = 22;
+
+  /**
+   * The feature id for the '<em><b>Reference</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SCRIPT_VALUE_REFERENCE__REFERENCE = SINGLE_VALUE_PROPERTY_FEATURE_COUNT + 0;
+
+  /**
+   * The number of structural features of the '<em>Script Value Reference</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SCRIPT_VALUE_REFERENCE_FEATURE_COUNT = SINGLE_VALUE_PROPERTY_FEATURE_COUNT + 1;
+
+  /**
    * The meta object id for the '{@link at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.impl.LocationValuePropertyImpl <em>Location Value Property</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -873,7 +901,7 @@ public interface FXGraphPackage extends EPackage
    * @see at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.impl.FXGraphPackageImpl#getLocationValueProperty()
    * @generated
    */
-  int LOCATION_VALUE_PROPERTY = 22;
+  int LOCATION_VALUE_PROPERTY = 23;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -901,7 +929,7 @@ public interface FXGraphPackage extends EPackage
    * @see at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.impl.FXGraphPackageImpl#getResourceValueProperty()
    * @generated
    */
-  int RESOURCE_VALUE_PROPERTY = 23;
+  int RESOURCE_VALUE_PROPERTY = 24;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' containment reference.
@@ -929,7 +957,7 @@ public interface FXGraphPackage extends EPackage
    * @see at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.impl.FXGraphPackageImpl#getBindValueProperty()
    * @generated
    */
-  int BIND_VALUE_PROPERTY = 24;
+  int BIND_VALUE_PROPERTY = 25;
 
   /**
    * The feature id for the '<em><b>Element Reference</b></em>' reference.
@@ -966,7 +994,7 @@ public interface FXGraphPackage extends EPackage
    * @see at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.impl.FXGraphPackageImpl#getStringValue()
    * @generated
    */
-  int STRING_VALUE = 25;
+  int STRING_VALUE = 26;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -1681,6 +1709,27 @@ public interface FXGraphPackage extends EPackage
   EAttribute getScriptValueExpression_Sourcecode();
 
   /**
+   * Returns the meta object for class '{@link at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.ScriptValueReference <em>Script Value Reference</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Script Value Reference</em>'.
+   * @see at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.ScriptValueReference
+   * @generated
+   */
+  EClass getScriptValueReference();
+
+  /**
+   * Returns the meta object for the attribute '{@link at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.ScriptValueReference#getReference <em>Reference</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Reference</em>'.
+   * @see at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.ScriptValueReference#getReference()
+   * @see #getScriptValueReference()
+   * @generated
+   */
+  EAttribute getScriptValueReference_Reference();
+
+  /**
    * Returns the meta object for class '{@link at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.LocationValueProperty <em>Location Value Property</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -2361,6 +2410,24 @@ public interface FXGraphPackage extends EPackage
      * @generated
      */
     EAttribute SCRIPT_VALUE_EXPRESSION__SOURCECODE = eINSTANCE.getScriptValueExpression_Sourcecode();
+
+    /**
+     * The meta object literal for the '{@link at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.impl.ScriptValueReferenceImpl <em>Script Value Reference</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.impl.ScriptValueReferenceImpl
+     * @see at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.impl.FXGraphPackageImpl#getScriptValueReference()
+     * @generated
+     */
+    EClass SCRIPT_VALUE_REFERENCE = eINSTANCE.getScriptValueReference();
+
+    /**
+     * The meta object literal for the '<em><b>Reference</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute SCRIPT_VALUE_REFERENCE__REFERENCE = eINSTANCE.getScriptValueReference_Reference();
 
     /**
      * The meta object literal for the '{@link at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.impl.LocationValuePropertyImpl <em>Location Value Property</em>}' class.

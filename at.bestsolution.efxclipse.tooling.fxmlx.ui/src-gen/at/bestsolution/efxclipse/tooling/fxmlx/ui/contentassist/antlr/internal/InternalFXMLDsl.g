@@ -435,6 +435,14 @@ rule__Content__Alternatives_0
 { after(grammarAccess.getContentAccess().getColonKeyword_0_4()); }
 )
 
+    |(
+{ before(grammarAccess.getContentAccess().getEqualsSignKeyword_0_5()); }
+
+	'=' 
+
+{ after(grammarAccess.getContentAccess().getEqualsSignKeyword_0_5()); }
+)
+
 ;
 finally {
 	restoreStackSize(stackSize);
@@ -483,6 +491,14 @@ rule__Content__Alternatives_1
 	':' 
 
 { after(grammarAccess.getContentAccess().getColonKeyword_1_5()); }
+)
+
+    |(
+{ before(grammarAccess.getContentAccess().getEqualsSignKeyword_1_6()); }
+
+	'=' 
+
+{ after(grammarAccess.getContentAccess().getEqualsSignKeyword_1_6()); }
 )
 
 ;
