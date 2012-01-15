@@ -1,21 +1,28 @@
 package at.bestsolution.efxclipse.formats.svg.converter
 
-import at.bestsolution.efxclipse.formats.svg.svg.SvgSvgElement
-import org.eclipse.emf.ecore.EObject
-import at.bestsolution.efxclipse.formats.svg.svg.SvgRectElement
-import at.bestsolution.efxclipse.formats.svg.svg.SvgDefsElement
-import at.bestsolution.efxclipse.formats.svg.svg.SvgLinearGradientElement
-import at.bestsolution.efxclipse.formats.svg.svg.SvgRadialGradientElement
-import at.bestsolution.efxclipse.formats.svg.svg.SpreadMethod
-import javafx.scene.paint.CycleMethod
-import at.bestsolution.efxclipse.formats.svg.svg.SvgStopElement
-import at.bestsolution.efxclipse.formats.svg.svg.SvgGElement
-import at.bestsolution.efxclipse.formats.svg.svg.SvgPathElement
-import java.util.List
-import java.util.ArrayList
-import at.bestsolution.efxclipse.formats.svg.svg.SvgFilterElement
-import at.bestsolution.efxclipse.formats.svg.svg.SvgFeGaussianBlurElement
 import at.bestsolution.efxclipse.formats.svg.svg.ContentElement
+import at.bestsolution.efxclipse.formats.svg.svg.SpreadMethod
+import at.bestsolution.efxclipse.formats.svg.svg.Stroke_linecap
+import at.bestsolution.efxclipse.formats.svg.svg.Stroke_linejoin
+import at.bestsolution.efxclipse.formats.svg.svg.SvgDefsElement
+import at.bestsolution.efxclipse.formats.svg.svg.SvgElement
+import at.bestsolution.efxclipse.formats.svg.svg.SvgFeGaussianBlurElement
+import at.bestsolution.efxclipse.formats.svg.svg.SvgFilterElement
+import at.bestsolution.efxclipse.formats.svg.svg.SvgGElement
+import at.bestsolution.efxclipse.formats.svg.svg.SvgLinearGradientElement
+import at.bestsolution.efxclipse.formats.svg.svg.SvgPathElement
+import at.bestsolution.efxclipse.formats.svg.svg.SvgRadialGradientElement
+import at.bestsolution.efxclipse.formats.svg.svg.SvgRectElement
+import at.bestsolution.efxclipse.formats.svg.svg.SvgStopElement
+import at.bestsolution.efxclipse.formats.svg.svg.SvgSvgElement
+import at.bestsolution.efxclipse.formats.svg.svg.XLinkAttributes
+import javafx.scene.paint.CycleMethod
+import javafx.scene.shape.StrokeLineCap
+import javafx.scene.shape.StrokeLineJoin
+import org.eclipse.emf.ecore.EObject
+import at.bestsolution.efxclipse.formats.svg.svg.FilterPrimitiveElement
+import at.bestsolution.efxclipse.formats.svg.svg.SvgEllipseElement
+import at.bestsolution.efxclipse.formats.svg.svg.SvgCircleElement
 
 class FXMLConverter { 
 	def generate(SvgSvgElement rootElement) ''' 
@@ -64,9 +71,10 @@ class FXMLConverter {
 		«IF element.spreadMethod != SpreadMethod::PAD»cycleMethod="«element.spreadMethod.toFx»"«ENDIF»
 		«IF element.id != null»fx:id="«element.id»"«ENDIF»
 		>
-		«IF ! element.children.filter(typeof(SvgStopElement)).empty»
+		«val owner = resolveGradientStopElement(element)» 
+		«IF owner != null»
 			<stops>
-			«FOR o : element.children.filter(typeof(SvgStopElement))»
+			«FOR o : (owner as ContentElement).children.filter(typeof(SvgStopElement))»
 				«handle(o)»
 			«ENDFOR»
 			</stops>
@@ -83,23 +91,36 @@ class FXMLConverter {
 		«/*IF element.fx != null || element.fy != null»fxsvg:todo="Need to handle focus stuff"«ENDIF*/»
 		«IF element.id != null»fx:id="«element.id»"«ENDIF»
 		>
-		«IF ! element.children.filter(typeof(SvgStopElement)).empty || element.resolvedInstance != null»
+		«val owner = resolveGradientStopElement(element)» 
+		«IF owner != null»
 			<stops>
-			«FOR o : element.children.filter(typeof(SvgStopElement))»
+			«FOR o : (owner as ContentElement).children.filter(typeof(SvgStopElement))»
 				«handle(o)»
 			«ENDFOR»
-			«IF element.xlink__href != null»
-			«val link = element.resolvedInstance»
-			«IF link != null && link instanceof ContentElement»
-			«FOR o : (link as ContentElement).children.filter(typeof(SvgStopElement))»
-				«handle(o)»
-			«ENDFOR»
-			«ENDIF»
-			«ENDIF»
 			</stops>
 		«ENDIF»
 	</RadialGradient>
 	'''
+	
+	def resolveGradientStopElement(SvgElement element) {
+		if( element instanceof ContentElement ) {
+			val rv = (element as ContentElement); 
+			if( rv.children.filter(typeof(SvgStopElement)).empty ) {
+				if( element instanceof XLinkAttributes ) {
+					val v = element as XLinkAttributes;
+					if( v.resolvedInstance != null ) {
+						System::err.println("Resolving from link");
+						return resolveGradientStopElement(v.resolvedInstance);	
+					}
+				}
+			} else {
+				System::err.println("Found stops: " + rv.children);
+				return rv;
+			}
+		}
+		System::err.println("Returning null");
+		return null;
+	}
 	
 	def dispatch handle(SvgStopElement element) '''
 	<Stop
@@ -129,18 +150,38 @@ class FXMLConverter {
 		«IF element.height != null»height="«element.height.parseLength»"«ENDIF»
 		«IF element.stroke_width != null»strokeWidth="«element.stroke_width.parseLength»"«ENDIF»
 		>
-		«IF element.fill != null && ! element.fill.equals("none")»
+		«IF (element.fill != null && ! element.fill.equals("none")) || ( element.fill_opacity != null && ! element.fill_opacity.equals("1") ) »
 		<fill>
-			«element.fill.fillPaint»
+			«IF element.fill != null && ! element.fill.equals("none") »
+				«IF element.fill_opacity != null && ! element.fill_opacity.equals("1")»
+					«element.fill.fillPaint(Double::parseDouble(element.fill_opacity))»
+				«ELSE»
+					«element.fill.fillPaint»
+				«ENDIF»
+			«ELSE»
+				<Color>
+					<opacity>«element.stroke_opacity»</opacity>
+				</Color>
+			«ENDIF»
 		</fill>
 		«ELSE»
 		<fill>
 			TRANSPARENT
 		</fill>
 		«ENDIF»
-		«IF element.stroke != null && ! element.stroke.equals("none")»
+		«IF (element.stroke != null && ! element.stroke.equals("none")) || ( element.stroke_opacity != null && ! element.stroke_opacity.equals("1") )»
 		<stroke>
-			«element.stroke.fillPaint»
+			«IF element.stroke != null && ! element.stroke.equals("none")»
+				«IF element.stroke_opacity != null && ! element.stroke_opacity.equals("1") »
+					«element.stroke.fillPaint(Double::parseDouble(element.stroke_opacity))»
+				«ELSE»
+					«element.stroke.fillPaint»
+				«ENDIF»
+			«ELSE»
+				<Color>
+					<opacity>«element.stroke_opacity»</opacity>
+				</Color>
+			«ENDIF»
 		</stroke>
 		«ENDIF»
 		«IF element.transform != null»
@@ -172,19 +213,46 @@ class FXMLConverter {
 	def dispatch handle(SvgPathElement element) '''
 	<SVGPath
 		«IF element.d != null»content="«element.d»"«ENDIF»
+«««		«IF element.stroke_dasharray != null»«ENDIF»
+		«IF element.stroke_dashoffset != null»strokeDashOffset="«element.stroke_dashoffset.parseLength»"«ENDIF»
+		«IF element.stroke_linecap != null»strokeLineCap="«element.stroke_linecap.toFx»"«ENDIF»
+		«IF element.stroke_linejoin != null»strokeLineJoin="«element.stroke_linejoin.toFx»"«ENDIF»
+		«IF element.stroke_miterlimit != null»strokeMiterLimit="«element.stroke_miterlimit.parseLength»"«ENDIF»
+		«IF element.stroke_width != null»strokeWidth="«element.stroke_width.parseLength»"«ENDIF»
+«««		«IF element.stroke_opacity != null»«ENDIF»
 		>
-		«IF element.fill != null && ! element.fill.equals("none")»
+		«IF (element.fill != null && ! element.fill.equals("none")) || ( element.fill_opacity != null && ! element.fill_opacity.equals("1") ) »
 		<fill>
-			«element.fill.fillPaint»
+			«IF element.fill != null && ! element.fill.equals("none") »
+				«IF element.fill_opacity != null && ! element.fill_opacity.equals("1")»
+					«element.fill.fillPaint(Double::parseDouble(element.fill_opacity))»
+				«ELSE»
+					«element.fill.fillPaint»
+				«ENDIF»
+			«ELSE»
+				<Color>
+					<opacity>«element.stroke_opacity»</opacity>
+				</Color>
+			«ENDIF»
 		</fill>
 		«ELSE»
 		<fill>
 			TRANSPARENT
 		</fill>
 		«ENDIF»
-		«IF element.stroke != null && ! element.stroke.equals("none")»
+		«IF (element.stroke != null && ! element.stroke.equals("none")) || ( element.stroke_opacity != null && ! element.stroke_opacity.equals("1") )»
 		<stroke>
-			«element.stroke.fillPaint»
+			«IF element.stroke != null && ! element.stroke.equals("none")»
+				«IF element.stroke_opacity != null && ! element.stroke_opacity.equals("1") »
+					«element.stroke.fillPaint(Double::parseDouble(element.stroke_opacity))»
+				«ELSE»
+					«element.stroke.fillPaint»
+				«ENDIF»
+			«ELSE»
+				<Color>
+					<opacity>«element.stroke_opacity»</opacity>
+				</Color>
+			«ENDIF»
 		</stroke>
 		«ENDIF»
 		«IF element.transform != null»
@@ -192,24 +260,123 @@ class FXMLConverter {
 				«element.transform.handleTransform»
 			</transforms>
 		«ENDIF»
+		«IF element.filter != null»
+			
+		«ENDIF»
 	</SVGPath>
 	'''
 	
-	def dispatch handle(SvgFilterElement element) '''
-	«IF element.children.size == 1»
-		«val f = element.children.get(0)»
-		«IF f instanceof SvgFeGaussianBlurElement»
-		«val g = f as SvgFeGaussianBlurElement»
-		<GaussianBlur 
-			«IF g.stdDeviation != null»radius="«g.stdDeviation»"«ENDIF»
+	def dispatch handle(SvgEllipseElement element) '''
+	<Ellipse
+		«IF element.rx != null»radiusX="«element.rx.parseLength»"«ENDIF»
+		«IF element.ry != null»radiusY="«element.ry.parseLength»"«ENDIF»
+		«IF element.cx != null»centerX="«element.cx.parseCoordinate»"«ENDIF»
+		«IF element.cy != null»centerY="«element.cy.parseCoordinate»"«ENDIF»
+«««		«IF element.stroke_dasharray != null»«ENDIF»
+		«IF element.stroke_dashoffset != null»strokeDashOffset="«element.stroke_dashoffset.parseLength»"«ENDIF»
+		«IF element.stroke_linecap != null»strokeLineCap="«element.stroke_linecap.toFx»"«ENDIF»
+		«IF element.stroke_linejoin != null»strokeLineJoin="«element.stroke_linejoin.toFx»"«ENDIF»
+		«IF element.stroke_miterlimit != null»strokeMiterLimit="«element.stroke_miterlimit.parseLength»"«ENDIF»
+		«IF element.stroke_width != null»strokeWidth="«element.stroke_width.parseLength»"«ENDIF»
+«««		«IF element.stroke_opacity != null»«ENDIF»
 		>
-		</GaussianBlur>
+		«IF (element.fill != null && ! element.fill.equals("none")) || ( element.fill_opacity != null && ! element.fill_opacity.equals("1") ) »
+		<fill>
+			«IF element.fill != null && ! element.fill.equals("none") »
+				«IF element.fill_opacity != null && ! element.fill_opacity.equals("1")»
+					«element.fill.fillPaint(Double::parseDouble(element.fill_opacity))»
+				«ELSE»
+					«element.fill.fillPaint»
+				«ENDIF»
+			«ELSE»
+				<Color>
+					<opacity>«element.stroke_opacity»</opacity>
+				</Color>
+			«ENDIF»
+		</fill>
 		«ELSE»
-		<!-- Unknown filter type «f» -->
+		<fill>
+			TRANSPARENT
+		</fill>
 		«ENDIF»
-	«ENDIF»
+		«IF (element.stroke != null && ! element.stroke.equals("none")) || ( element.stroke_opacity != null && ! element.stroke_opacity.equals("1") )»
+		<stroke>
+			«IF element.stroke != null && ! element.stroke.equals("none")»
+				«IF element.stroke_opacity != null && ! element.stroke_opacity.equals("1") »
+					«element.stroke.fillPaint(Double::parseDouble(element.stroke_opacity))»
+				«ELSE»
+					«element.stroke.fillPaint»
+				«ENDIF»
+			«ELSE»
+				<Color>
+					<opacity>«element.stroke_opacity»</opacity>
+				</Color>
+			«ENDIF»
+		</stroke>
+		«ENDIF»
+		«IF element.transform != null»
+			<transforms>
+				«element.transform.handleTransform»
+			</transforms>
+		«ENDIF»
+	</Ellipse>
 	'''
-	
+
+	def dispatch handle(SvgCircleElement element) '''
+	<Circle
+		«IF element.r != null»radius="«element.r.parseLength»"«ENDIF»
+		«IF element.cx != null»centerX="«element.cx.parseCoordinate»"«ENDIF»
+		«IF element.cy != null»centerY="«element.cy.parseCoordinate»"«ENDIF»
+«««		«IF element.stroke_dasharray != null»«ENDIF»
+		«IF element.stroke_dashoffset != null»strokeDashOffset="«element.stroke_dashoffset.parseLength»"«ENDIF»
+		«IF element.stroke_linecap != null»strokeLineCap="«element.stroke_linecap.toFx»"«ENDIF»
+		«IF element.stroke_linejoin != null»strokeLineJoin="«element.stroke_linejoin.toFx»"«ENDIF»
+		«IF element.stroke_miterlimit != null»strokeMiterLimit="«element.stroke_miterlimit.parseLength»"«ENDIF»
+		«IF element.stroke_width != null»strokeWidth="«element.stroke_width.parseLength»"«ENDIF»
+«««		«IF element.stroke_opacity != null»«ENDIF»
+		>
+		«IF (element.fill != null && ! element.fill.equals("none")) || ( element.fill_opacity != null && ! element.fill_opacity.equals("1") ) »
+		<fill>
+			«IF element.fill != null && ! element.fill.equals("none") »
+				«IF element.fill_opacity != null && ! element.fill_opacity.equals("1")»
+					«element.fill.fillPaint(Double::parseDouble(element.fill_opacity))»
+				«ELSE»
+					«element.fill.fillPaint»
+				«ENDIF»
+			«ELSE»
+				<Color>
+					<opacity>«element.stroke_opacity»</opacity>
+				</Color>
+			«ENDIF»
+		</fill>
+		«ELSE»
+		<fill>
+			TRANSPARENT
+		</fill>
+		«ENDIF»
+		«IF (element.stroke != null && ! element.stroke.equals("none")) || ( element.stroke_opacity != null && ! element.stroke_opacity.equals("1") )»
+		<stroke>
+			«IF element.stroke != null && ! element.stroke.equals("none")»
+				«IF element.stroke_opacity != null && ! element.stroke_opacity.equals("1") »
+					«element.stroke.fillPaint(Double::parseDouble(element.stroke_opacity))»
+				«ELSE»
+					«element.stroke.fillPaint»
+				«ENDIF»
+			«ELSE»
+				<Color>
+					<opacity>«element.stroke_opacity»</opacity>
+				</Color>
+			«ENDIF»
+		</stroke>
+		«ENDIF»
+		«IF element.transform != null»
+			<transforms>
+				«element.transform.handleTransform»
+			</transforms>
+		«ENDIF»
+	</Circle>
+	'''
+
 	def fillPaint(String fill) {
 		if( fill.startsWith("#") ) {
 			return fill.hexColor
@@ -231,7 +398,13 @@ class FXMLConverter {
 			
 		} else if( fill.startsWith("argb") ) {
 			
+		} else if( fill.startsWith("url") ) {
+			return '''<fx:reference source="«fill.substring(5,fill.length-1)»" />'''
 		} else {
+			val c = Colors::findColorByName(fill);
+			if (c != null) {
+				return c.hexvalue.hexColor(opacity);
+			}
 			return fill.toUpperCase
 		}
 	}
@@ -310,8 +483,8 @@ class FXMLConverter {
 	«val parts = params.split(",")»
 	<Affine
 		mxx="«parts.get(0)»"
-		mxy="«parts.get(1)»"
-		myx="«parts.get(2)»"
+		mxy="«parts.get(2)»"
+		myx="«parts.get(1)»"
 		myy="«parts.get(3)»"
 		tx="«parts.get(4)»"
 		ty="«parts.get(5)»"
@@ -320,6 +493,20 @@ class FXMLConverter {
 	«ENDIF»
 	'''
 	
+	def dispatch handle(SvgFilterElement filter) '''
+		«FOR f : filter.children.filter(typeof(FilterPrimitiveElement))»
+			«handle(f)»
+		«ENDFOR»
+	'''
+	
+	def dispatch handle(SvgFeGaussianBlurElement f) '''
+		<GaussianBlur
+			«IF f.id != null»fx:id="«f.id»"«ENDIF»
+«««			«f.stdDeviation»
+		>
+		</GaussianBlur>
+	'''
+
 	def CycleMethod toFx(SpreadMethod m) {
 		switch(m) {
 			case SpreadMethod::PAD:
@@ -333,8 +520,36 @@ class FXMLConverter {
 		return CycleMethod::NO_CYCLE;
 	}
 	
+	def StrokeLineCap toFx(Stroke_linecap m) {
+		switch(m) {
+			case Stroke_linecap::BUTT:
+				return StrokeLineCap::BUTT
+			case Stroke_linecap::ROUND:
+				return StrokeLineCap::ROUND
+			case Stroke_linecap::SQUARE:
+				return StrokeLineCap::SQUARE
+		}
+		return StrokeLineCap::BUTT;
+	}
+	
+	def StrokeLineJoin toFx(Stroke_linejoin m) {
+		switch(m) {
+			case Stroke_linejoin::BEVEL:
+				return StrokeLineJoin::BEVEL
+			case Stroke_linejoin::MITER:
+				return StrokeLineJoin::MITER
+			case Stroke_linejoin::ROUND:
+				return StrokeLineJoin::ROUND
+		}
+		return StrokeLineJoin::BEVEL;
+	}
+	
 	def parseLength(String length) {
-		return Double::parseDouble(length);
+		if( length.endsWith("px") ) {
+			return Double::parseDouble(length.substring(0,length.length - 2)); 
+		} else {
+			return Double::parseDouble(length);	
+		}
 	}
 	
 	def parseCoordinate(String coordinate) {

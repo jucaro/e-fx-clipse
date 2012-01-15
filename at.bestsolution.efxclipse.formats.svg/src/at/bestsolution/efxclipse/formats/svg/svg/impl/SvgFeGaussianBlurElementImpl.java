@@ -18,6 +18,7 @@ import at.bestsolution.efxclipse.formats.svg.svg.Display;
 import at.bestsolution.efxclipse.formats.svg.svg.Dominant_baseline;
 import at.bestsolution.efxclipse.formats.svg.svg.Fill_rule;
 import at.bestsolution.efxclipse.formats.svg.svg.FilterPrimitiveAttributes;
+import at.bestsolution.efxclipse.formats.svg.svg.FilterPrimitiveElement;
 import at.bestsolution.efxclipse.formats.svg.svg.Font_stretch;
 import at.bestsolution.efxclipse.formats.svg.svg.Font_style;
 import at.bestsolution.efxclipse.formats.svg.svg.Font_variant;
@@ -528,7 +529,7 @@ public class SvgFeGaussianBlurElementImpl extends EObjectImpl implements SvgFeGa
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String FILL_EDEFAULT = "\"black\"";
+	protected static final String FILL_EDEFAULT = "black";
 
 	/**
 	 * The cached value of the '{@link #getFill() <em>Fill</em>}' attribute.
@@ -548,7 +549,7 @@ public class SvgFeGaussianBlurElementImpl extends EObjectImpl implements SvgFeGa
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String FILL_OPACITY_EDEFAULT = "\"1\"";
+	protected static final String FILL_OPACITY_EDEFAULT = "1";
 
 	/**
 	 * The cached value of the '{@link #getFill_opacity() <em>Fill opacity</em>}' attribute.
@@ -1108,7 +1109,7 @@ public class SvgFeGaussianBlurElementImpl extends EObjectImpl implements SvgFeGa
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String STROKE_EDEFAULT = "\"none\"";
+	protected static final String STROKE_EDEFAULT = "none";
 
 	/**
 	 * The cached value of the '{@link #getStroke() <em>Stroke</em>}' attribute.
@@ -1128,7 +1129,7 @@ public class SvgFeGaussianBlurElementImpl extends EObjectImpl implements SvgFeGa
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String STROKE_DASHARRAY_EDEFAULT = "\"none\"";
+	protected static final String STROKE_DASHARRAY_EDEFAULT = "none";
 
 	/**
 	 * The cached value of the '{@link #getStroke_dasharray() <em>Stroke dasharray</em>}' attribute.
@@ -1148,7 +1149,7 @@ public class SvgFeGaussianBlurElementImpl extends EObjectImpl implements SvgFeGa
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String STROKE_DASHOFFSET_EDEFAULT = "\"0\"";
+	protected static final String STROKE_DASHOFFSET_EDEFAULT = "0";
 
 	/**
 	 * The cached value of the '{@link #getStroke_dashoffset() <em>Stroke dashoffset</em>}' attribute.
@@ -1228,7 +1229,7 @@ public class SvgFeGaussianBlurElementImpl extends EObjectImpl implements SvgFeGa
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String STROKE_OPACITY_EDEFAULT = "\"1\"";
+	protected static final String STROKE_OPACITY_EDEFAULT = "1";
 
 	/**
 	 * The cached value of the '{@link #getStroke_opacity() <em>Stroke opacity</em>}' attribute.
@@ -1248,7 +1249,7 @@ public class SvgFeGaussianBlurElementImpl extends EObjectImpl implements SvgFeGa
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String STROKE_WIDTH_EDEFAULT = "\"1\"";
+	protected static final String STROKE_WIDTH_EDEFAULT = "1";
 
 	/**
 	 * The cached value of the '{@link #getStroke_width() <em>Stroke width</em>}' attribute.
@@ -4024,6 +4025,11 @@ public class SvgFeGaussianBlurElementImpl extends EObjectImpl implements SvgFeGa
 				default: return -1;
 			}
 		}
+		if (baseClass == FilterPrimitiveElement.class) {
+			switch (derivedFeatureID) {
+				default: return -1;
+			}
+		}
 		return super.eBaseStructuralFeatureID(derivedFeatureID, baseClass);
 	}
 
@@ -4121,6 +4127,11 @@ public class SvgFeGaussianBlurElementImpl extends EObjectImpl implements SvgFeGa
 		if (baseClass == ContentElement.class) {
 			switch (baseFeatureID) {
 				case SvgPackage.CONTENT_ELEMENT__CHILDREN: return SvgPackage.SVG_FE_GAUSSIAN_BLUR_ELEMENT__CHILDREN;
+				default: return -1;
+			}
+		}
+		if (baseClass == FilterPrimitiveElement.class) {
+			switch (baseFeatureID) {
 				default: return -1;
 			}
 		}

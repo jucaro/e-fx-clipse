@@ -8,6 +8,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Map.Entry;
 import java.util.Stack;
+import java.util.zip.GZIPInputStream;
 
 import javax.xml.parsers.ParserConfigurationException;
 import javax.xml.parsers.SAXParser;
@@ -33,14 +34,24 @@ public class XMLLoader {
 	public static void main(String[] args) {
 		XMLLoader l = new XMLLoader();
 		try {
-			SvgSvgElement g = l.loadDocument(new File("/Users/tomschindl/git/e-fx-clipse/at.bestsolution.efxclipse.formats.svg/samples/oxygen/application-exit.svg").toURL().openStream());
+			File f = new File("/Users/tomschindl/git/e-fx-clipse/at.bestsolution.efxclipse.formats.svg/samples/oxygen/color-picker-white.svg");
+			InputStream in;
+			
+			if( f.getName().endsWith("svgz") ) {
+				in = new GZIPInputStream(f.toURL().openStream());
+			} else {
+				in = f.toURL().openStream();
+			}
+			
+			
+			SvgSvgElement g = l.loadDocument(in);
 //			SvgSvgElement g = l.loadDocument(new File("/Users/tomschindl/git/e-fx-clipse/at.bestsolution.efxclipse.formats.svg/samples/w3/images/shapes/rect01.svg").toURL().openStream());
 //			SvgSvgElement g = l.loadDocument(new File("/Users/tomschindl/git/e-fx-clipse/at.bestsolution.efxclipse.formats.svg/samples/w3/images/filters/filters01.svg").toURL().openStream());
 			FXMLConverter c = new FXMLConverter();
 			String fxmlData = c.generate(g).toString();
 			System.err.println("data: " + fxmlData);
-			File f = new File("/Users/tomschindl/git/e-fx-clipse/at.bestsolution.efxclipse.formats.svg/samples/test.fxml");
-			FileOutputStream out = new FileOutputStream(f);
+			File outFile = new File("/Users/tomschindl/git/e-fx-clipse/at.bestsolution.efxclipse.formats.svg/samples/test.fxml");
+			FileOutputStream out = new FileOutputStream(outFile);
 			out.write(fxmlData.getBytes());
 			out.close();
 			
@@ -94,8 +105,8 @@ public class XMLLoader {
 			}
 			
 			f = o.eClass().getEStructuralFeature("xlink__href");
-			EStructuralFeature instanceFeature = o.eClass().getEStructuralFeature("resolvedInstance");
 			if( f != null ) {
+				EStructuralFeature instanceFeature = o.eClass().getEStructuralFeature("resolvedInstance");
 				String link = (String) o.eGet(f);
 				if( link != null && link.trim().length() > 0 ) {
 					link = link.substring(1);
@@ -105,7 +116,6 @@ public class XMLLoader {
 						EStructuralFeature idFeature = internalO.eClass().getEStructuralFeature("id");
 						if( idFeature != null ) {
 							if( link.equals(internalO.eGet(idFeature))) {
-								System.err.println("Found");
 								o.eSet(instanceFeature, internalO);
 								break;
 							}
@@ -113,7 +123,7 @@ public class XMLLoader {
 					}
 				}
 			}
-		}
+		}		
 	}
 	
 	private Map<String, String> valueMap(String styleString) {

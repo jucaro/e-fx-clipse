@@ -592,7 +592,7 @@ public class SvgMaskElementImpl extends EObjectImpl implements SvgMaskElement {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String FILL_EDEFAULT = "\"black\"";
+	protected static final String FILL_EDEFAULT = "black";
 
 	/**
 	 * The cached value of the '{@link #getFill() <em>Fill</em>}' attribute.
@@ -612,7 +612,7 @@ public class SvgMaskElementImpl extends EObjectImpl implements SvgMaskElement {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String FILL_OPACITY_EDEFAULT = "\"1\"";
+	protected static final String FILL_OPACITY_EDEFAULT = "1";
 
 	/**
 	 * The cached value of the '{@link #getFill_opacity() <em>Fill opacity</em>}' attribute.
@@ -1172,7 +1172,7 @@ public class SvgMaskElementImpl extends EObjectImpl implements SvgMaskElement {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String STROKE_EDEFAULT = "\"none\"";
+	protected static final String STROKE_EDEFAULT = "none";
 
 	/**
 	 * The cached value of the '{@link #getStroke() <em>Stroke</em>}' attribute.
@@ -1192,7 +1192,7 @@ public class SvgMaskElementImpl extends EObjectImpl implements SvgMaskElement {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String STROKE_DASHARRAY_EDEFAULT = "\"none\"";
+	protected static final String STROKE_DASHARRAY_EDEFAULT = "none";
 
 	/**
 	 * The cached value of the '{@link #getStroke_dasharray() <em>Stroke dasharray</em>}' attribute.
@@ -1212,7 +1212,7 @@ public class SvgMaskElementImpl extends EObjectImpl implements SvgMaskElement {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String STROKE_DASHOFFSET_EDEFAULT = "\"0\"";
+	protected static final String STROKE_DASHOFFSET_EDEFAULT = "0";
 
 	/**
 	 * The cached value of the '{@link #getStroke_dashoffset() <em>Stroke dashoffset</em>}' attribute.
@@ -1292,7 +1292,7 @@ public class SvgMaskElementImpl extends EObjectImpl implements SvgMaskElement {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String STROKE_OPACITY_EDEFAULT = "\"1\"";
+	protected static final String STROKE_OPACITY_EDEFAULT = "1";
 
 	/**
 	 * The cached value of the '{@link #getStroke_opacity() <em>Stroke opacity</em>}' attribute.
@@ -1312,7 +1312,7 @@ public class SvgMaskElementImpl extends EObjectImpl implements SvgMaskElement {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String STROKE_WIDTH_EDEFAULT = "\"1\"";
+	protected static final String STROKE_WIDTH_EDEFAULT = "1";
 
 	/**
 	 * The cached value of the '{@link #getStroke_width() <em>Stroke width</em>}' attribute.

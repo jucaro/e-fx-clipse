@@ -456,9 +456,9 @@
         defaultValueLiteral="dominant_baseline.auto"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="enable_background" eType="#//Enable_background"
         defaultValueLiteral="&quot;inherit&quot;"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="fill" eType="#//Fill" defaultValueLiteral="&quot;black&quot;"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="fill" eType="#//Fill" defaultValueLiteral="black"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="fill_opacity" eType="#//Fill_opacity"
-        defaultValueLiteral="&quot;1&quot;"/>
+        defaultValueLiteral="1"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="fill_rule" eType="#//Fill_rule"
         defaultValueLiteral="fill_rule.nonzero"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="filter" eType="#//Filter"
@@ -513,21 +513,21 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="stop_opacity" eType="#//Stop_opacity"
         defaultValueLiteral="1"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="stroke" eType="#//Stroke"
-        defaultValueLiteral="&quot;none&quot;"/>
+        defaultValueLiteral="none"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="stroke_dasharray" eType="#//Stroke_dasharray"
-        defaultValueLiteral="&quot;none&quot;"/>
+        defaultValueLiteral="none"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="stroke_dashoffset" eType="#//Stroke_dashoffset"
-        defaultValueLiteral="&quot;0&quot;"/>
+        defaultValueLiteral="0"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="stroke_linecap" eType="#//Stroke_linecap"
-        defaultValueLiteral="&quot;butt&quot;"/>
+        defaultValueLiteral="Stroke_linecap.butt"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="stroke_linejoin" eType="#//Stroke_linejoin"
         defaultValueLiteral="stroke_linejoin.miter"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="stroke_miterlimit" eType="#//Stroke_miterlimit"
         defaultValueLiteral="4"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="stroke_opacity" eType="#//Stroke_opacity"
-        defaultValueLiteral="&quot;1&quot;"/>
+        defaultValueLiteral="1"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="stroke_width" eType="#//Stroke_width"
-        defaultValueLiteral="&quot;1&quot;"/>
+        defaultValueLiteral="1"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="text_anchor" eType="#//Text_anchor"
         defaultValueLiteral="text_anchor.start"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="text_decoration" eType="#//Text_decoration"
@@ -1397,6 +1397,7 @@
     <eGenericSuperTypes eClassifier="#//ContentElement">
       <eTypeArguments eClassifier="#//SvgElement"/>
     </eGenericSuperTypes>
+    <eGenericSuperTypes eClassifier="#//FilterPrimitiveElement"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="SvgFeImageElement">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="class" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>

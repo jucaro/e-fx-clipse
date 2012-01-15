@@ -513,7 +513,7 @@ public interface PresentationAttributes extends EObject {
 
 	/**
 	 * Returns the value of the '<em><b>Fill</b></em>' attribute.
-	 * The default value is <code>"\"black\""</code>.
+	 * The default value is <code>"black"</code>.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Fill</em>' attribute isn't clear,
@@ -523,7 +523,7 @@ public interface PresentationAttributes extends EObject {
 	 * @return the value of the '<em>Fill</em>' attribute.
 	 * @see #setFill(String)
 	 * @see at.bestsolution.efxclipse.formats.svg.svg.SvgPackage#getPresentationAttributes_Fill()
-	 * @model default="\"black\"" dataType="at.bestsolution.efxclipse.formats.svg.svg.Fill"
+	 * @model default="black" dataType="at.bestsolution.efxclipse.formats.svg.svg.Fill"
 	 * @generated
 	 */
 	String getFill();
@@ -540,7 +540,7 @@ public interface PresentationAttributes extends EObject {
 
 	/**
 	 * Returns the value of the '<em><b>Fill opacity</b></em>' attribute.
-	 * The default value is <code>"\"1\""</code>.
+	 * The default value is <code>"1"</code>.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Fill opacity</em>' attribute isn't clear,
@@ -550,7 +550,7 @@ public interface PresentationAttributes extends EObject {
 	 * @return the value of the '<em>Fill opacity</em>' attribute.
 	 * @see #setFill_opacity(String)
 	 * @see at.bestsolution.efxclipse.formats.svg.svg.SvgPackage#getPresentationAttributes_Fill_opacity()
-	 * @model default="\"1\"" dataType="at.bestsolution.efxclipse.formats.svg.svg.Fill_opacity"
+	 * @model default="1" dataType="at.bestsolution.efxclipse.formats.svg.svg.Fill_opacity"
 	 * @generated
 	 */
 	String getFill_opacity();
@@ -1322,7 +1322,7 @@ public interface PresentationAttributes extends EObject {
 
 	/**
 	 * Returns the value of the '<em><b>Stroke</b></em>' attribute.
-	 * The default value is <code>"\"none\""</code>.
+	 * The default value is <code>"none"</code>.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Stroke</em>' attribute isn't clear,
@@ -1332,7 +1332,7 @@ public interface PresentationAttributes extends EObject {
 	 * @return the value of the '<em>Stroke</em>' attribute.
 	 * @see #setStroke(String)
 	 * @see at.bestsolution.efxclipse.formats.svg.svg.SvgPackage#getPresentationAttributes_Stroke()
-	 * @model default="\"none\"" dataType="at.bestsolution.efxclipse.formats.svg.svg.Stroke"
+	 * @model default="none" dataType="at.bestsolution.efxclipse.formats.svg.svg.Stroke"
 	 * @generated
 	 */
 	String getStroke();
@@ -1349,7 +1349,7 @@ public interface PresentationAttributes extends EObject {
 
 	/**
 	 * Returns the value of the '<em><b>Stroke dasharray</b></em>' attribute.
-	 * The default value is <code>"\"none\""</code>.
+	 * The default value is <code>"none"</code>.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Stroke dasharray</em>' attribute isn't clear,
@@ -1359,7 +1359,7 @@ public interface PresentationAttributes extends EObject {
 	 * @return the value of the '<em>Stroke dasharray</em>' attribute.
 	 * @see #setStroke_dasharray(String)
 	 * @see at.bestsolution.efxclipse.formats.svg.svg.SvgPackage#getPresentationAttributes_Stroke_dasharray()
-	 * @model default="\"none\"" dataType="at.bestsolution.efxclipse.formats.svg.svg.Stroke_dasharray"
+	 * @model default="none" dataType="at.bestsolution.efxclipse.formats.svg.svg.Stroke_dasharray"
 	 * @generated
 	 */
 	String getStroke_dasharray();
@@ -1376,7 +1376,7 @@ public interface PresentationAttributes extends EObject {
 
 	/**
 	 * Returns the value of the '<em><b>Stroke dashoffset</b></em>' attribute.
-	 * The default value is <code>"\"0\""</code>.
+	 * The default value is <code>"0"</code>.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Stroke dashoffset</em>' attribute isn't clear,
@@ -1386,7 +1386,7 @@ public interface PresentationAttributes extends EObject {
 	 * @return the value of the '<em>Stroke dashoffset</em>' attribute.
 	 * @see #setStroke_dashoffset(String)
 	 * @see at.bestsolution.efxclipse.formats.svg.svg.SvgPackage#getPresentationAttributes_Stroke_dashoffset()
-	 * @model default="\"0\"" dataType="at.bestsolution.efxclipse.formats.svg.svg.Stroke_dashoffset"
+	 * @model default="0" dataType="at.bestsolution.efxclipse.formats.svg.svg.Stroke_dashoffset"
 	 * @generated
 	 */
 	String getStroke_dashoffset();
@@ -1403,7 +1403,7 @@ public interface PresentationAttributes extends EObject {
 
 	/**
 	 * Returns the value of the '<em><b>Stroke linecap</b></em>' attribute.
-	 * The default value is <code>"\"butt\""</code>.
+	 * The default value is <code>"Stroke_linecap.butt"</code>.
 	 * The literals are from the enumeration {@link at.bestsolution.efxclipse.formats.svg.svg.Stroke_linecap}.
 	 * <!-- begin-user-doc -->
 	 * <p>
@@ -1415,7 +1415,7 @@ public interface PresentationAttributes extends EObject {
 	 * @see at.bestsolution.efxclipse.formats.svg.svg.Stroke_linecap
 	 * @see #setStroke_linecap(Stroke_linecap)
 	 * @see at.bestsolution.efxclipse.formats.svg.svg.SvgPackage#getPresentationAttributes_Stroke_linecap()
-	 * @model default="\"butt\""
+	 * @model default="Stroke_linecap.butt"
 	 * @generated
 	 */
 	Stroke_linecap getStroke_linecap();
@@ -1490,7 +1490,7 @@ public interface PresentationAttributes extends EObject {
 
 	/**
 	 * Returns the value of the '<em><b>Stroke opacity</b></em>' attribute.
-	 * The default value is <code>"\"1\""</code>.
+	 * The default value is <code>"1"</code>.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Stroke opacity</em>' attribute isn't clear,
@@ -1500,7 +1500,7 @@ public interface PresentationAttributes extends EObject {
 	 * @return the value of the '<em>Stroke opacity</em>' attribute.
 	 * @see #setStroke_opacity(String)
 	 * @see at.bestsolution.efxclipse.formats.svg.svg.SvgPackage#getPresentationAttributes_Stroke_opacity()
-	 * @model default="\"1\"" dataType="at.bestsolution.efxclipse.formats.svg.svg.Stroke_opacity"
+	 * @model default="1" dataType="at.bestsolution.efxclipse.formats.svg.svg.Stroke_opacity"
 	 * @generated
 	 */
 	String getStroke_opacity();
@@ -1517,7 +1517,7 @@ public interface PresentationAttributes extends EObject {
 
 	/**
 	 * Returns the value of the '<em><b>Stroke width</b></em>' attribute.
-	 * The default value is <code>"\"1\""</code>.
+	 * The default value is <code>"1"</code>.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Stroke width</em>' attribute isn't clear,
@@ -1527,7 +1527,7 @@ public interface PresentationAttributes extends EObject {
 	 * @return the value of the '<em>Stroke width</em>' attribute.
 	 * @see #setStroke_width(String)
 	 * @see at.bestsolution.efxclipse.formats.svg.svg.SvgPackage#getPresentationAttributes_Stroke_width()
-	 * @model default="\"1\"" dataType="at.bestsolution.efxclipse.formats.svg.svg.Stroke_width"
+	 * @model default="1" dataType="at.bestsolution.efxclipse.formats.svg.svg.Stroke_width"
 	 * @generated
 	 */
 	String getStroke_width();

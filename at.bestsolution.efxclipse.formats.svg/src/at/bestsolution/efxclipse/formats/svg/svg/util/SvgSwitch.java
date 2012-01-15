@@ -819,6 +819,7 @@ public class SvgSwitch<T1> extends Switch<T1> {
 				if (result == null) result = casePresentationAttributes(svgFeGaussianBlurElement);
 				if (result == null) result = caseFilterPrimitiveAttributes(svgFeGaussianBlurElement);
 				if (result == null) result = caseContentElement(svgFeGaussianBlurElement);
+				if (result == null) result = caseFilterPrimitiveElement(svgFeGaussianBlurElement);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
