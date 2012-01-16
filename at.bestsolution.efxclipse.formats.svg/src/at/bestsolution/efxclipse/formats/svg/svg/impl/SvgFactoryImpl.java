@@ -334,6 +334,8 @@ public class SvgFactoryImpl extends EFactoryImpl implements SvgFactory {
 				return createNameFromString(eDataType, initialValue);
 			case SvgPackage.NUMBER_OPTIONAL_NUMBER:
 				return createNumberOptionalNumberFromString(eDataType, initialValue);
+			case SvgPackage.TRANSFORM_LIST:
+				return createTransformListFromString(eDataType, initialValue);
 			default:
 				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
@@ -543,6 +545,8 @@ public class SvgFactoryImpl extends EFactoryImpl implements SvgFactory {
 				return convertNameToString(eDataType, instanceValue);
 			case SvgPackage.NUMBER_OPTIONAL_NUMBER:
 				return convertNumberOptionalNumberToString(eDataType, instanceValue);
+			case SvgPackage.TRANSFORM_LIST:
+				return convertTransformListToString(eDataType, instanceValue);
 			default:
 				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
@@ -3037,6 +3041,24 @@ public class SvgFactoryImpl extends EFactoryImpl implements SvgFactory {
 	 * @generated
 	 */
 	public String convertNumberOptionalNumberToString(EDataType eDataType, Object instanceValue) {
+		return super.convertToString(eDataType, instanceValue);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String createTransformListFromString(EDataType eDataType, String initialValue) {
+		return (String)super.createFromString(eDataType, initialValue);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String convertTransformListToString(EDataType eDataType, Object instanceValue) {
 		return super.convertToString(eDataType, instanceValue);
 	}
 

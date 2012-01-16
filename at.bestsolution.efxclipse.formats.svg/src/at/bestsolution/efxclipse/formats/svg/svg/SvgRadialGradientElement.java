@@ -24,6 +24,8 @@ package at.bestsolution.efxclipse.formats.svg.svg;
  *   <li>{@link at.bestsolution.efxclipse.formats.svg.svg.SvgRadialGradientElement#getFx <em>Fx</em>}</li>
  *   <li>{@link at.bestsolution.efxclipse.formats.svg.svg.SvgRadialGradientElement#getFy <em>Fy</em>}</li>
  *   <li>{@link at.bestsolution.efxclipse.formats.svg.svg.SvgRadialGradientElement#getSpreadMethod <em>Spread Method</em>}</li>
+ *   <li>{@link at.bestsolution.efxclipse.formats.svg.svg.SvgRadialGradientElement#getGradientUnits <em>Gradient Units</em>}</li>
+ *   <li>{@link at.bestsolution.efxclipse.formats.svg.svg.SvgRadialGradientElement#getGradientTransform <em>Gradient Transform</em>}</li>
  * </ul>
  * </p>
  *
@@ -269,5 +271,61 @@ public interface SvgRadialGradientElement extends SvgElement, GradientElement, C
 	 * @generated
 	 */
 	void setSpreadMethod(SpreadMethod value);
+
+	/**
+	 * Returns the value of the '<em><b>Gradient Units</b></em>' attribute.
+	 * The default value is <code>"GradientUnits.objectBoundingBox"</code>.
+	 * The literals are from the enumeration {@link at.bestsolution.efxclipse.formats.svg.svg.GradientUnits}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Gradient Units</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Gradient Units</em>' attribute.
+	 * @see at.bestsolution.efxclipse.formats.svg.svg.GradientUnits
+	 * @see #setGradientUnits(GradientUnits)
+	 * @see at.bestsolution.efxclipse.formats.svg.svg.SvgPackage#getSvgRadialGradientElement_GradientUnits()
+	 * @model default="GradientUnits.objectBoundingBox"
+	 * @generated
+	 */
+	GradientUnits getGradientUnits();
+
+	/**
+	 * Sets the value of the '{@link at.bestsolution.efxclipse.formats.svg.svg.SvgRadialGradientElement#getGradientUnits <em>Gradient Units</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Gradient Units</em>' attribute.
+	 * @see at.bestsolution.efxclipse.formats.svg.svg.GradientUnits
+	 * @see #getGradientUnits()
+	 * @generated
+	 */
+	void setGradientUnits(GradientUnits value);
+
+	/**
+	 * Returns the value of the '<em><b>Gradient Transform</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Gradient Transform</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Gradient Transform</em>' attribute.
+	 * @see #setGradientTransform(String)
+	 * @see at.bestsolution.efxclipse.formats.svg.svg.SvgPackage#getSvgRadialGradientElement_GradientTransform()
+	 * @model dataType="at.bestsolution.efxclipse.formats.svg.svg.TransformList"
+	 * @generated
+	 */
+	String getGradientTransform();
+
+	/**
+	 * Sets the value of the '{@link at.bestsolution.efxclipse.formats.svg.svg.SvgRadialGradientElement#getGradientTransform <em>Gradient Transform</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Gradient Transform</em>' attribute.
+	 * @see #getGradientTransform()
+	 * @generated
+	 */
+	void setGradientTransform(String value);
 
 } // SvgRadialGradientElement

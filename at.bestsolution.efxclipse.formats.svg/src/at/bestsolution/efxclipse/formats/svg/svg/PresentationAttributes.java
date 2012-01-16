@@ -142,7 +142,7 @@ public interface PresentationAttributes extends EObject {
 
 	/**
 	 * Returns the value of the '<em><b>Clip</b></em>' attribute.
-	 * The default value is <code>"\"auto\""</code>.
+	 * The default value is <code>"auto"</code>.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Clip</em>' attribute isn't clear,
@@ -152,7 +152,7 @@ public interface PresentationAttributes extends EObject {
 	 * @return the value of the '<em>Clip</em>' attribute.
 	 * @see #setClip(String)
 	 * @see at.bestsolution.efxclipse.formats.svg.svg.SvgPackage#getPresentationAttributes_Clip()
-	 * @model default="\"auto\"" dataType="at.bestsolution.efxclipse.formats.svg.svg.Clip"
+	 * @model default="auto" dataType="at.bestsolution.efxclipse.formats.svg.svg.Clip"
 	 * @generated
 	 */
 	String getClip();
@@ -169,7 +169,7 @@ public interface PresentationAttributes extends EObject {
 
 	/**
 	 * Returns the value of the '<em><b>Clip path</b></em>' attribute.
-	 * The default value is <code>"\"none\""</code>.
+	 * The default value is <code>"none"</code>.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Clip path</em>' attribute isn't clear,
@@ -179,7 +179,7 @@ public interface PresentationAttributes extends EObject {
 	 * @return the value of the '<em>Clip path</em>' attribute.
 	 * @see #setClip_path(String)
 	 * @see at.bestsolution.efxclipse.formats.svg.svg.SvgPackage#getPresentationAttributes_Clip_path()
-	 * @model default="\"none\"" dataType="at.bestsolution.efxclipse.formats.svg.svg.Clip_path"
+	 * @model default="none" dataType="at.bestsolution.efxclipse.formats.svg.svg.Clip_path"
 	 * @generated
 	 */
 	String getClip_path();
@@ -1151,7 +1151,7 @@ public interface PresentationAttributes extends EObject {
 
 	/**
 	 * Returns the value of the '<em><b>Opacity</b></em>' attribute.
-	 * The default value is <code>"\"1\""</code>.
+	 * The default value is <code>"1"</code>.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Opacity</em>' attribute isn't clear,
@@ -1161,7 +1161,7 @@ public interface PresentationAttributes extends EObject {
 	 * @return the value of the '<em>Opacity</em>' attribute.
 	 * @see #setOpacity(String)
 	 * @see at.bestsolution.efxclipse.formats.svg.svg.SvgPackage#getPresentationAttributes_Opacity()
-	 * @model default="\"1\"" dataType="at.bestsolution.efxclipse.formats.svg.svg.Opacity"
+	 * @model default="1" dataType="at.bestsolution.efxclipse.formats.svg.svg.Opacity"
 	 * @generated
 	 */
 	String getOpacity();

@@ -19744,13 +19744,22 @@ public interface SvgPackage extends EPackage {
 	int SVG_LINEAR_GRADIENT_ELEMENT__SPREAD_METHOD = SVG_ELEMENT_FEATURE_COUNT + 80;
 
 	/**
+	 * The feature id for the '<em><b>Gradient Transform</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SVG_LINEAR_GRADIENT_ELEMENT__GRADIENT_TRANSFORM = SVG_ELEMENT_FEATURE_COUNT + 81;
+
+	/**
 	 * The number of structural features of the '<em>Linear Gradient Element</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_LINEAR_GRADIENT_ELEMENT_FEATURE_COUNT = SVG_ELEMENT_FEATURE_COUNT + 81;
+	int SVG_LINEAR_GRADIENT_ELEMENT_FEATURE_COUNT = SVG_ELEMENT_FEATURE_COUNT + 82;
 
 	/**
 	 * The meta object id for the '{@link at.bestsolution.efxclipse.formats.svg.svg.impl.SvgRadialGradientElementImpl <em>Radial Gradient Element</em>}' class.
@@ -20492,13 +20501,31 @@ public interface SvgPackage extends EPackage {
 	int SVG_RADIAL_GRADIENT_ELEMENT__SPREAD_METHOD = SVG_ELEMENT_FEATURE_COUNT + 80;
 
 	/**
+	 * The feature id for the '<em><b>Gradient Units</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SVG_RADIAL_GRADIENT_ELEMENT__GRADIENT_UNITS = SVG_ELEMENT_FEATURE_COUNT + 81;
+
+	/**
+	 * The feature id for the '<em><b>Gradient Transform</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SVG_RADIAL_GRADIENT_ELEMENT__GRADIENT_TRANSFORM = SVG_ELEMENT_FEATURE_COUNT + 82;
+
+	/**
 	 * The number of structural features of the '<em>Radial Gradient Element</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_RADIAL_GRADIENT_ELEMENT_FEATURE_COUNT = SVG_ELEMENT_FEATURE_COUNT + 81;
+	int SVG_RADIAL_GRADIENT_ELEMENT_FEATURE_COUNT = SVG_ELEMENT_FEATURE_COUNT + 83;
 
 	/**
 	 * The meta object id for the '{@link at.bestsolution.efxclipse.formats.svg.svg.impl.SvgStopElementImpl <em>Stop Element</em>}' class.
@@ -38982,6 +39009,17 @@ public interface SvgPackage extends EPackage {
 
 
 	/**
+	 * The meta object id for the '<em>Transform List</em>' data type.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see java.lang.String
+	 * @see at.bestsolution.efxclipse.formats.svg.svg.impl.SvgPackageImpl#getTransformList()
+	 * @generated
+	 */
+	int TRANSFORM_LIST = 183;
+
+
+	/**
 	 * Returns the meta object for class '{@link at.bestsolution.efxclipse.formats.svg.svg.ContentElement <em>Content Element</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -42471,6 +42509,17 @@ public interface SvgPackage extends EPackage {
 	EAttribute getSvgLinearGradientElement_SpreadMethod();
 
 	/**
+	 * Returns the meta object for the attribute '{@link at.bestsolution.efxclipse.formats.svg.svg.SvgLinearGradientElement#getGradientTransform <em>Gradient Transform</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Gradient Transform</em>'.
+	 * @see at.bestsolution.efxclipse.formats.svg.svg.SvgLinearGradientElement#getGradientTransform()
+	 * @see #getSvgLinearGradientElement()
+	 * @generated
+	 */
+	EAttribute getSvgLinearGradientElement_GradientTransform();
+
+	/**
 	 * Returns the meta object for class '{@link at.bestsolution.efxclipse.formats.svg.svg.SvgRadialGradientElement <em>Radial Gradient Element</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -42578,6 +42627,28 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getSvgRadialGradientElement_SpreadMethod();
+
+	/**
+	 * Returns the meta object for the attribute '{@link at.bestsolution.efxclipse.formats.svg.svg.SvgRadialGradientElement#getGradientUnits <em>Gradient Units</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Gradient Units</em>'.
+	 * @see at.bestsolution.efxclipse.formats.svg.svg.SvgRadialGradientElement#getGradientUnits()
+	 * @see #getSvgRadialGradientElement()
+	 * @generated
+	 */
+	EAttribute getSvgRadialGradientElement_GradientUnits();
+
+	/**
+	 * Returns the meta object for the attribute '{@link at.bestsolution.efxclipse.formats.svg.svg.SvgRadialGradientElement#getGradientTransform <em>Gradient Transform</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Gradient Transform</em>'.
+	 * @see at.bestsolution.efxclipse.formats.svg.svg.SvgRadialGradientElement#getGradientTransform()
+	 * @see #getSvgRadialGradientElement()
+	 * @generated
+	 */
+	EAttribute getSvgRadialGradientElement_GradientTransform();
 
 	/**
 	 * Returns the meta object for class '{@link at.bestsolution.efxclipse.formats.svg.svg.SvgStopElement <em>Stop Element</em>}'.
@@ -45310,6 +45381,17 @@ public interface SvgPackage extends EPackage {
 	EDataType getNumberOptionalNumber();
 
 	/**
+	 * Returns the meta object for data type '{@link java.lang.String <em>Transform List</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for data type '<em>Transform List</em>'.
+	 * @see java.lang.String
+	 * @model instanceClass="java.lang.String"
+	 * @generated
+	 */
+	EDataType getTransformList();
+
+	/**
 	 * Returns the factory that creates the instances of the model.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -48014,6 +48096,14 @@ public interface SvgPackage extends EPackage {
 		EAttribute SVG_LINEAR_GRADIENT_ELEMENT__SPREAD_METHOD = eINSTANCE.getSvgLinearGradientElement_SpreadMethod();
 
 		/**
+		 * The meta object literal for the '<em><b>Gradient Transform</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute SVG_LINEAR_GRADIENT_ELEMENT__GRADIENT_TRANSFORM = eINSTANCE.getSvgLinearGradientElement_GradientTransform();
+
+		/**
 		 * The meta object literal for the '{@link at.bestsolution.efxclipse.formats.svg.svg.impl.SvgRadialGradientElementImpl <em>Radial Gradient Element</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -48094,6 +48184,22 @@ public interface SvgPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute SVG_RADIAL_GRADIENT_ELEMENT__SPREAD_METHOD = eINSTANCE.getSvgRadialGradientElement_SpreadMethod();
+
+		/**
+		 * The meta object literal for the '<em><b>Gradient Units</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute SVG_RADIAL_GRADIENT_ELEMENT__GRADIENT_UNITS = eINSTANCE.getSvgRadialGradientElement_GradientUnits();
+
+		/**
+		 * The meta object literal for the '<em><b>Gradient Transform</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute SVG_RADIAL_GRADIENT_ELEMENT__GRADIENT_TRANSFORM = eINSTANCE.getSvgRadialGradientElement_GradientTransform();
 
 		/**
 		 * The meta object literal for the '{@link at.bestsolution.efxclipse.formats.svg.svg.impl.SvgStopElementImpl <em>Stop Element</em>}' class.
@@ -50392,6 +50498,16 @@ public interface SvgPackage extends EPackage {
 		 * @generated
 		 */
 		EDataType NUMBER_OPTIONAL_NUMBER = eINSTANCE.getNumberOptionalNumber();
+
+		/**
+		 * The meta object literal for the '<em>Transform List</em>' data type.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see java.lang.String
+		 * @see at.bestsolution.efxclipse.formats.svg.svg.impl.SvgPackageImpl#getTransformList()
+		 * @generated
+		 */
+		EDataType TRANSFORM_LIST = eINSTANCE.getTransformList();
 
 	}
 

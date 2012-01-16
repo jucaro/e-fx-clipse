@@ -22,6 +22,7 @@ import at.bestsolution.efxclipse.formats.svg.svg.Font_style;
 import at.bestsolution.efxclipse.formats.svg.svg.Font_variant;
 import at.bestsolution.efxclipse.formats.svg.svg.Font_weight;
 import at.bestsolution.efxclipse.formats.svg.svg.GradientElement;
+import at.bestsolution.efxclipse.formats.svg.svg.GradientUnits;
 import at.bestsolution.efxclipse.formats.svg.svg.Image_rendering;
 import at.bestsolution.efxclipse.formats.svg.svg.Overflow;
 import at.bestsolution.efxclipse.formats.svg.svg.Pointer_events;
@@ -144,6 +145,8 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link at.bestsolution.efxclipse.formats.svg.svg.impl.SvgRadialGradientElementImpl#getFx <em>Fx</em>}</li>
  *   <li>{@link at.bestsolution.efxclipse.formats.svg.svg.impl.SvgRadialGradientElementImpl#getFy <em>Fy</em>}</li>
  *   <li>{@link at.bestsolution.efxclipse.formats.svg.svg.impl.SvgRadialGradientElementImpl#getSpreadMethod <em>Spread Method</em>}</li>
+ *   <li>{@link at.bestsolution.efxclipse.formats.svg.svg.impl.SvgRadialGradientElementImpl#getGradientUnits <em>Gradient Units</em>}</li>
+ *   <li>{@link at.bestsolution.efxclipse.formats.svg.svg.impl.SvgRadialGradientElementImpl#getGradientTransform <em>Gradient Transform</em>}</li>
  * </ul>
  * </p>
  *
@@ -278,7 +281,7 @@ public class SvgRadialGradientElementImpl extends EObjectImpl implements SvgRadi
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String CLIP_EDEFAULT = "\"auto\"";
+	protected static final String CLIP_EDEFAULT = "auto";
 
 	/**
 	 * The cached value of the '{@link #getClip() <em>Clip</em>}' attribute.
@@ -298,7 +301,7 @@ public class SvgRadialGradientElementImpl extends EObjectImpl implements SvgRadi
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String CLIP_PATH_EDEFAULT = "\"none\"";
+	protected static final String CLIP_PATH_EDEFAULT = "none";
 
 	/**
 	 * The cached value of the '{@link #getClip_path() <em>Clip path</em>}' attribute.
@@ -998,7 +1001,7 @@ public class SvgRadialGradientElementImpl extends EObjectImpl implements SvgRadi
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String OPACITY_EDEFAULT = "\"1\"";
+	protected static final String OPACITY_EDEFAULT = "1";
 
 	/**
 	 * The cached value of the '{@link #getOpacity() <em>Opacity</em>}' attribute.
@@ -1749,6 +1752,46 @@ public class SvgRadialGradientElementImpl extends EObjectImpl implements SvgRadi
 	 * @ordered
 	 */
 	protected SpreadMethod spreadMethod = SPREAD_METHOD_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getGradientUnits() <em>Gradient Units</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getGradientUnits()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final GradientUnits GRADIENT_UNITS_EDEFAULT = GradientUnits.USER_SPACE_ON_USE;
+
+	/**
+	 * The cached value of the '{@link #getGradientUnits() <em>Gradient Units</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getGradientUnits()
+	 * @generated
+	 * @ordered
+	 */
+	protected GradientUnits gradientUnits = GRADIENT_UNITS_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getGradientTransform() <em>Gradient Transform</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getGradientTransform()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String GRADIENT_TRANSFORM_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getGradientTransform() <em>Gradient Transform</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getGradientTransform()
+	 * @generated
+	 * @ordered
+	 */
+	protected String gradientTransform = GRADIENT_TRANSFORM_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -3483,6 +3526,48 @@ public class SvgRadialGradientElementImpl extends EObjectImpl implements SvgRadi
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public GradientUnits getGradientUnits() {
+		return gradientUnits;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setGradientUnits(GradientUnits newGradientUnits) {
+		GradientUnits oldGradientUnits = gradientUnits;
+		gradientUnits = newGradientUnits == null ? GRADIENT_UNITS_EDEFAULT : newGradientUnits;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, SvgPackage.SVG_RADIAL_GRADIENT_ELEMENT__GRADIENT_UNITS, oldGradientUnits, gradientUnits));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String getGradientTransform() {
+		return gradientTransform;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setGradientTransform(String newGradientTransform) {
+		String oldGradientTransform = gradientTransform;
+		gradientTransform = newGradientTransform;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, SvgPackage.SVG_RADIAL_GRADIENT_ELEMENT__GRADIENT_TRANSFORM, oldGradientTransform, gradientTransform));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
@@ -3663,6 +3748,10 @@ public class SvgRadialGradientElementImpl extends EObjectImpl implements SvgRadi
 				return getFy();
 			case SvgPackage.SVG_RADIAL_GRADIENT_ELEMENT__SPREAD_METHOD:
 				return getSpreadMethod();
+			case SvgPackage.SVG_RADIAL_GRADIENT_ELEMENT__GRADIENT_UNITS:
+				return getGradientUnits();
+			case SvgPackage.SVG_RADIAL_GRADIENT_ELEMENT__GRADIENT_TRANSFORM:
+				return getGradientTransform();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -3920,6 +4009,12 @@ public class SvgRadialGradientElementImpl extends EObjectImpl implements SvgRadi
 			case SvgPackage.SVG_RADIAL_GRADIENT_ELEMENT__SPREAD_METHOD:
 				setSpreadMethod((SpreadMethod)newValue);
 				return;
+			case SvgPackage.SVG_RADIAL_GRADIENT_ELEMENT__GRADIENT_UNITS:
+				setGradientUnits((GradientUnits)newValue);
+				return;
+			case SvgPackage.SVG_RADIAL_GRADIENT_ELEMENT__GRADIENT_TRANSFORM:
+				setGradientTransform((String)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -4175,6 +4270,12 @@ public class SvgRadialGradientElementImpl extends EObjectImpl implements SvgRadi
 			case SvgPackage.SVG_RADIAL_GRADIENT_ELEMENT__SPREAD_METHOD:
 				setSpreadMethod(SPREAD_METHOD_EDEFAULT);
 				return;
+			case SvgPackage.SVG_RADIAL_GRADIENT_ELEMENT__GRADIENT_UNITS:
+				setGradientUnits(GRADIENT_UNITS_EDEFAULT);
+				return;
+			case SvgPackage.SVG_RADIAL_GRADIENT_ELEMENT__GRADIENT_TRANSFORM:
+				setGradientTransform(GRADIENT_TRANSFORM_EDEFAULT);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -4349,6 +4450,10 @@ public class SvgRadialGradientElementImpl extends EObjectImpl implements SvgRadi
 				return FY_EDEFAULT == null ? fy != null : !FY_EDEFAULT.equals(fy);
 			case SvgPackage.SVG_RADIAL_GRADIENT_ELEMENT__SPREAD_METHOD:
 				return spreadMethod != SPREAD_METHOD_EDEFAULT;
+			case SvgPackage.SVG_RADIAL_GRADIENT_ELEMENT__GRADIENT_UNITS:
+				return gradientUnits != GRADIENT_UNITS_EDEFAULT;
+			case SvgPackage.SVG_RADIAL_GRADIENT_ELEMENT__GRADIENT_TRANSFORM:
+				return GRADIENT_TRANSFORM_EDEFAULT == null ? gradientTransform != null : !GRADIENT_TRANSFORM_EDEFAULT.equals(gradientTransform);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -4735,6 +4840,10 @@ public class SvgRadialGradientElementImpl extends EObjectImpl implements SvgRadi
 		result.append(fy);
 		result.append(", spreadMethod: ");
 		result.append(spreadMethod);
+		result.append(", gradientUnits: ");
+		result.append(gradientUnits);
+		result.append(", gradientTransform: ");
+		result.append(gradientTransform);
 		result.append(')');
 		return result.toString();
 	}

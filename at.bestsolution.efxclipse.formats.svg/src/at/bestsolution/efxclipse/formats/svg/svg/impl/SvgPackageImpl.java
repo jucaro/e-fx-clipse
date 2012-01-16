@@ -1438,6 +1438,13 @@ public class SvgPackageImpl extends EPackageImpl implements SvgPackage {
 	private EDataType numberOptionalNumberEDataType = null;
 
 	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EDataType transformListEDataType = null;
+
+	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
 	 * {@link org.eclipse.emf.ecore.EPackage.Registry EPackage.Registry} by the package
 	 * package URI value.
@@ -4401,6 +4408,15 @@ public class SvgPackageImpl extends EPackageImpl implements SvgPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EAttribute getSvgLinearGradientElement_GradientTransform() {
+		return (EAttribute)svgLinearGradientElementEClass.getEStructuralFeatures().get(9);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getSvgRadialGradientElement() {
 		return svgRadialGradientElementEClass;
 	}
@@ -4484,6 +4500,24 @@ public class SvgPackageImpl extends EPackageImpl implements SvgPackage {
 	 */
 	public EAttribute getSvgRadialGradientElement_SpreadMethod() {
 		return (EAttribute)svgRadialGradientElementEClass.getEStructuralFeatures().get(8);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getSvgRadialGradientElement_GradientUnits() {
+		return (EAttribute)svgRadialGradientElementEClass.getEStructuralFeatures().get(9);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getSvgRadialGradientElement_GradientTransform() {
+		return (EAttribute)svgRadialGradientElementEClass.getEStructuralFeatures().get(10);
 	}
 
 	/**
@@ -6786,6 +6820,15 @@ public class SvgPackageImpl extends EPackageImpl implements SvgPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EDataType getTransformList() {
+		return transformListEDataType;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public SvgFactory getSvgFactory() {
 		return (SvgFactory)getEFactoryInstance();
 	}
@@ -7183,6 +7226,7 @@ public class SvgPackageImpl extends EPackageImpl implements SvgPackage {
 		createEAttribute(svgLinearGradientElementEClass, SVG_LINEAR_GRADIENT_ELEMENT__Y2);
 		createEAttribute(svgLinearGradientElementEClass, SVG_LINEAR_GRADIENT_ELEMENT__GRADIENT_UNITS);
 		createEAttribute(svgLinearGradientElementEClass, SVG_LINEAR_GRADIENT_ELEMENT__SPREAD_METHOD);
+		createEAttribute(svgLinearGradientElementEClass, SVG_LINEAR_GRADIENT_ELEMENT__GRADIENT_TRANSFORM);
 
 		svgRadialGradientElementEClass = createEClass(SVG_RADIAL_GRADIENT_ELEMENT);
 		createEAttribute(svgRadialGradientElementEClass, SVG_RADIAL_GRADIENT_ELEMENT__CLASS);
@@ -7194,6 +7238,8 @@ public class SvgPackageImpl extends EPackageImpl implements SvgPackage {
 		createEAttribute(svgRadialGradientElementEClass, SVG_RADIAL_GRADIENT_ELEMENT__FX);
 		createEAttribute(svgRadialGradientElementEClass, SVG_RADIAL_GRADIENT_ELEMENT__FY);
 		createEAttribute(svgRadialGradientElementEClass, SVG_RADIAL_GRADIENT_ELEMENT__SPREAD_METHOD);
+		createEAttribute(svgRadialGradientElementEClass, SVG_RADIAL_GRADIENT_ELEMENT__GRADIENT_UNITS);
+		createEAttribute(svgRadialGradientElementEClass, SVG_RADIAL_GRADIENT_ELEMENT__GRADIENT_TRANSFORM);
 
 		svgStopElementEClass = createEClass(SVG_STOP_ELEMENT);
 		createEAttribute(svgStopElementEClass, SVG_STOP_ELEMENT__CLASS);
@@ -7484,6 +7530,7 @@ public class SvgPackageImpl extends EPackageImpl implements SvgPackage {
 		listOfCoordinatesEDataType = createEDataType(LIST_OF_COORDINATES);
 		nameEDataType = createEDataType(NAME);
 		numberOptionalNumberEDataType = createEDataType(NUMBER_OPTIONAL_NUMBER);
+		transformListEDataType = createEDataType(TRANSFORM_LIST);
 	}
 
 	/**
@@ -8409,8 +8456,8 @@ public class SvgPackageImpl extends EPackageImpl implements SvgPackage {
 		initEClass(presentationAttributesEClass, PresentationAttributes.class, "PresentationAttributes", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getPresentationAttributes_Alignment_baseline(), this.getAlignment_baseline(), "alignment_baseline", "alignment_baseline.auto", 0, 1, PresentationAttributes.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getPresentationAttributes_Baseline_shift(), this.getBaseline_shift(), "baseline_shift", "\"baseline\"", 0, 1, PresentationAttributes.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getPresentationAttributes_Clip(), this.getClip(), "clip", "\"auto\"", 0, 1, PresentationAttributes.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getPresentationAttributes_Clip_path(), this.getClip_path(), "clip_path", "\"none\"", 0, 1, PresentationAttributes.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getPresentationAttributes_Clip(), this.getClip(), "clip", "auto", 0, 1, PresentationAttributes.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getPresentationAttributes_Clip_path(), this.getClip_path(), "clip_path", "none", 0, 1, PresentationAttributes.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getPresentationAttributes_Clip_rule(), this.getClip_rule(), "clip_rule", "clip_rule.nonzero", 0, 1, PresentationAttributes.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getPresentationAttributes_Color(), this.getColor(), "color", null, 0, 1, PresentationAttributes.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getPresentationAttributes_Color_interpolation(), this.getColor_interpolation(), "color_interpolation", "color_interpolation.sRGB", 0, 1, PresentationAttributes.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -8445,7 +8492,7 @@ public class SvgPackageImpl extends EPackageImpl implements SvgPackage {
 		initEAttribute(getPresentationAttributes_Marker_mid(), this.getMarker_mid(), "marker_mid", "\"none\"", 0, 1, PresentationAttributes.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getPresentationAttributes_Marker_start(), this.getMarker_start(), "marker_start", "\"none\"", 0, 1, PresentationAttributes.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getPresentationAttributes_Masks(), this.getMasks(), "masks", "\"none\"", 0, 1, PresentationAttributes.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getPresentationAttributes_Opacity(), this.getOpacity(), "opacity", "\"1\"", 0, 1, PresentationAttributes.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getPresentationAttributes_Opacity(), this.getOpacity(), "opacity", "1", 0, 1, PresentationAttributes.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getPresentationAttributes_Overflow(), this.getOverflow(), "overflow", "null", 0, 1, PresentationAttributes.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getPresentationAttributes_Pointer_events(), this.getPointer_events(), "pointer_events", "pointer_events.visiblePainted", 0, 1, PresentationAttributes.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getPresentationAttributes_Shape_rendering(), this.getShape_rendering(), "shape_rendering", "shape_rendering.auto", 0, 1, PresentationAttributes.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -8712,6 +8759,7 @@ public class SvgPackageImpl extends EPackageImpl implements SvgPackage {
 		initEAttribute(getSvgLinearGradientElement_Y2(), this.getCoordinate(), "y2", null, 0, 1, SvgLinearGradientElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getSvgLinearGradientElement_GradientUnits(), this.getGradientUnits(), "gradientUnits", "GradientUnits.objectBoundingBox", 0, 1, SvgLinearGradientElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getSvgLinearGradientElement_SpreadMethod(), this.getSpreadMethod(), "spreadMethod", "SpreadMethod.pad", 0, 1, SvgLinearGradientElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getSvgLinearGradientElement_GradientTransform(), this.getTransformList(), "gradientTransform", null, 0, 1, SvgLinearGradientElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(svgRadialGradientElementEClass, SvgRadialGradientElement.class, "SvgRadialGradientElement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getSvgRadialGradientElement_Class(), ecorePackage.getEString(), "class", null, 0, 1, SvgRadialGradientElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -8723,6 +8771,8 @@ public class SvgPackageImpl extends EPackageImpl implements SvgPackage {
 		initEAttribute(getSvgRadialGradientElement_Fx(), this.getCoordinate(), "fx", null, 0, 1, SvgRadialGradientElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getSvgRadialGradientElement_Fy(), this.getCoordinate(), "fy", null, 0, 1, SvgRadialGradientElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getSvgRadialGradientElement_SpreadMethod(), this.getSpreadMethod(), "spreadMethod", "SpreadMethod.pad", 0, 1, SvgRadialGradientElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getSvgRadialGradientElement_GradientUnits(), this.getGradientUnits(), "gradientUnits", "GradientUnits.objectBoundingBox", 0, 1, SvgRadialGradientElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getSvgRadialGradientElement_GradientTransform(), this.getTransformList(), "gradientTransform", null, 0, 1, SvgRadialGradientElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(svgStopElementEClass, SvgStopElement.class, "SvgStopElement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getSvgStopElement_Class(), ecorePackage.getEString(), "class", null, 0, 1, SvgStopElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -9266,6 +9316,7 @@ public class SvgPackageImpl extends EPackageImpl implements SvgPackage {
 		initEDataType(listOfCoordinatesEDataType, String.class, "ListOfCoordinates", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
 		initEDataType(nameEDataType, String.class, "Name", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
 		initEDataType(numberOptionalNumberEDataType, String.class, "NumberOptionalNumber", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
+		initEDataType(transformListEDataType, String.class, "TransformList", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
 
 		// Create resource
 		createResource(eNS_URI);

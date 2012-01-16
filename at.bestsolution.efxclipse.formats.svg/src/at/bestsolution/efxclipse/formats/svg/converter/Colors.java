@@ -17,14 +17,23 @@ public enum Colors {
 	}
 	
 	public static double hexRed(String color) {
+		if( color.length() == 4 ) {
+			return Integer.valueOf(color.substring(1,2) + color.substring(1,2),16) / 255.0;
+		}
 		return Integer.valueOf(color.substring(1,3),16) / 255.0;
 	}
 	
 	public static double hexGreen(String color) {
+		if( color.length() == 4 ) {
+			return Integer.valueOf(color.substring(2,3) + color.substring(2,3),16) / 255.0;
+		}
 		return Integer.valueOf(color.substring(3,5),16) / 255.0;
 	}
 	
 	public static double hexBlue(String color) {
+		if( color.length() == 4 ) {
+			return Integer.valueOf(color.substring(3,4) + color.substring(3,4),16) / 255.0;
+		}
 		return Integer.valueOf(color.substring(5,7),16) / 255.0;
 	}
 	

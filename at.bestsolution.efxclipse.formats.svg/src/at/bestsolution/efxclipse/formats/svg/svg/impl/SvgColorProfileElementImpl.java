@@ -271,7 +271,7 @@ public class SvgColorProfileElementImpl extends EObjectImpl implements SvgColorP
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String CLIP_EDEFAULT = "\"auto\"";
+	protected static final String CLIP_EDEFAULT = "auto";
 
 	/**
 	 * The cached value of the '{@link #getClip() <em>Clip</em>}' attribute.
@@ -291,7 +291,7 @@ public class SvgColorProfileElementImpl extends EObjectImpl implements SvgColorP
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String CLIP_PATH_EDEFAULT = "\"none\"";
+	protected static final String CLIP_PATH_EDEFAULT = "none";
 
 	/**
 	 * The cached value of the '{@link #getClip_path() <em>Clip path</em>}' attribute.
@@ -991,7 +991,7 @@ public class SvgColorProfileElementImpl extends EObjectImpl implements SvgColorP
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String OPACITY_EDEFAULT = "\"1\"";
+	protected static final String OPACITY_EDEFAULT = "1";
 
 	/**
 	 * The cached value of the '{@link #getOpacity() <em>Opacity</em>}' attribute.

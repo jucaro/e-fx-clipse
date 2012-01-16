@@ -34,7 +34,7 @@ public class XMLLoader {
 	public static void main(String[] args) {
 		XMLLoader l = new XMLLoader();
 		try {
-			File f = new File("/Users/tomschindl/git/e-fx-clipse/at.bestsolution.efxclipse.formats.svg/samples/oxygen/color-picker-white.svg");
+			File f = new File("/Users/tomschindl/git/e-fx-clipse/at.bestsolution.efxclipse.formats.svg/samples/oxygen/application-exit.svg");
 			InputStream in;
 			
 			if( f.getName().endsWith("svgz") ) {
@@ -47,8 +47,8 @@ public class XMLLoader {
 			SvgSvgElement g = l.loadDocument(in);
 //			SvgSvgElement g = l.loadDocument(new File("/Users/tomschindl/git/e-fx-clipse/at.bestsolution.efxclipse.formats.svg/samples/w3/images/shapes/rect01.svg").toURL().openStream());
 //			SvgSvgElement g = l.loadDocument(new File("/Users/tomschindl/git/e-fx-clipse/at.bestsolution.efxclipse.formats.svg/samples/w3/images/filters/filters01.svg").toURL().openStream());
-			FXMLConverter c = new FXMLConverter();
-			String fxmlData = c.generate(g).toString();
+			FXMLConverter c = new FXMLConverter(g);
+			String fxmlData = c.generate().toString();
 			System.err.println("data: " + fxmlData);
 			File outFile = new File("/Users/tomschindl/git/e-fx-clipse/at.bestsolution.efxclipse.formats.svg/samples/test.fxml");
 			FileOutputStream out = new FileOutputStream(outFile);

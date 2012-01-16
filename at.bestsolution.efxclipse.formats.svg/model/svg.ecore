@@ -391,6 +391,7 @@
   <eClassifiers xsi:type="ecore:EDataType" name="ListOfCoordinates" instanceClassName="java.lang.String"/>
   <eClassifiers xsi:type="ecore:EDataType" name="Name" instanceClassName="java.lang.String"/>
   <eClassifiers xsi:type="ecore:EDataType" name="NumberOptionalNumber" instanceClassName="java.lang.String"/>
+  <eClassifiers xsi:type="ecore:EDataType" name="TransformList" instanceClassName="java.lang.String"/>
   <eClassifiers xsi:type="ecore:EClass" name="____ATTRIBUTES____"/>
   <eClassifiers xsi:type="ecore:EClass" name="ConditionalProcessingAttributes" abstract="true"
       interface="true">
@@ -432,9 +433,9 @@
         defaultValueLiteral="alignment_baseline.auto"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="baseline_shift" eType="#//Baseline_shift"
         defaultValueLiteral="&quot;baseline&quot;"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="clip" eType="#//Clip" defaultValueLiteral="&quot;auto&quot;"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="clip" eType="#//Clip" defaultValueLiteral="auto"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="clip_path" eType="#//Clip_path"
-        defaultValueLiteral="&quot;none&quot;"/>
+        defaultValueLiteral="none"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="clip_rule" eType="#//Clip_rule"
         defaultValueLiteral="clip_rule.nonzero"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="color" eType="#//Color"/>
@@ -501,7 +502,7 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="masks" eType="#//Masks"
         defaultValueLiteral="&quot;none&quot;"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="opacity" eType="#//Opacity"
-        defaultValueLiteral="&quot;1&quot;"/>
+        defaultValueLiteral="1"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="overflow" eType="#//Overflow"
         defaultValueLiteral="null"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="pointer_events" eType="#//Pointer_events"
@@ -1072,6 +1073,7 @@
         defaultValueLiteral="GradientUnits.objectBoundingBox"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="spreadMethod" eType="#//SpreadMethod"
         defaultValueLiteral="SpreadMethod.pad"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="gradientTransform" eType="#//TransformList"/>
     <eGenericSuperTypes eClassifier="#//SvgElement"/>
     <eGenericSuperTypes eClassifier="#//GradientElement"/>
     <eGenericSuperTypes eClassifier="#//CoreAttributes"/>
@@ -1093,6 +1095,9 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="fy" eType="#//Coordinate"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="spreadMethod" eType="#//SpreadMethod"
         defaultValueLiteral="SpreadMethod.pad"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="gradientUnits" eType="#//GradientUnits"
+        defaultValueLiteral="GradientUnits.objectBoundingBox"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="gradientTransform" eType="#//TransformList"/>
     <eGenericSuperTypes eClassifier="#//SvgElement"/>
     <eGenericSuperTypes eClassifier="#//GradientElement"/>
     <eGenericSuperTypes eClassifier="#//CoreAttributes"/>

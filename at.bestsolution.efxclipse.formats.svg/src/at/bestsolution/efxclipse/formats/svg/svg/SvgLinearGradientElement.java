@@ -24,6 +24,7 @@ package at.bestsolution.efxclipse.formats.svg.svg;
  *   <li>{@link at.bestsolution.efxclipse.formats.svg.svg.SvgLinearGradientElement#getY2 <em>Y2</em>}</li>
  *   <li>{@link at.bestsolution.efxclipse.formats.svg.svg.SvgLinearGradientElement#getGradientUnits <em>Gradient Units</em>}</li>
  *   <li>{@link at.bestsolution.efxclipse.formats.svg.svg.SvgLinearGradientElement#getSpreadMethod <em>Spread Method</em>}</li>
+ *   <li>{@link at.bestsolution.efxclipse.formats.svg.svg.SvgLinearGradientElement#getGradientTransform <em>Gradient Transform</em>}</li>
  * </ul>
  * </p>
  *
@@ -273,5 +274,31 @@ public interface SvgLinearGradientElement extends SvgElement, GradientElement, C
 	 * @generated
 	 */
 	void setSpreadMethod(SpreadMethod value);
+
+	/**
+	 * Returns the value of the '<em><b>Gradient Transform</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Gradient Transform</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Gradient Transform</em>' attribute.
+	 * @see #setGradientTransform(String)
+	 * @see at.bestsolution.efxclipse.formats.svg.svg.SvgPackage#getSvgLinearGradientElement_GradientTransform()
+	 * @model dataType="at.bestsolution.efxclipse.formats.svg.svg.TransformList"
+	 * @generated
+	 */
+	String getGradientTransform();
+
+	/**
+	 * Sets the value of the '{@link at.bestsolution.efxclipse.formats.svg.svg.SvgLinearGradientElement#getGradientTransform <em>Gradient Transform</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Gradient Transform</em>' attribute.
+	 * @see #getGradientTransform()
+	 * @generated
+	 */
+	void setGradientTransform(String value);
 
 } // SvgLinearGradientElement
