@@ -29,6 +29,7 @@ import at.bestsolution.efxclipse.formats.svg.svg.GradientUnits
 import at.bestsolution.efxclipse.formats.svg.svg.CoreAttributes
 import java.awt.geom.AffineTransform
 import java.awt.geom.Point2D
+import at.bestsolution.efxclipse.formats.svg.svg.Fill_rule
 
 class FXMLConverter {
 	private SvgSvgElement rootElement
@@ -269,13 +270,46 @@ class FXMLConverter {
 		«IF element.width != null»width="«element.width.parseLength»"«ENDIF»
 		«IF element.height != null»height="«element.height.parseLength»"«ENDIF»
 		«IF element.stroke_width != null»strokeWidth="«element.stroke_width.parseLength»"«ENDIF»
+		«IF element.opacity != null»opacity="«element.opacity»"«ENDIF»
+		«IF element.rx != null»arcWidth="«element.rx.parseLength * Double::valueOf("2.0")»"«ENDIF»
+		«IF element.ry != null»arcHeight="«element.ry.parseLength * Double::valueOf("2.0")»"«ENDIF»
 		>
-		«handlePaint("fill",element.fill,element.opacity,element.fill_opacity)»
-		«handlePaint("stroke",element.stroke,element.opacity,element.stroke_opacity)»
+		«handlePaint("fill",element.fill,element.fill_opacity)»
+		«handlePaint("stroke",element.stroke,element.stroke_opacity)»
 		«IF element.transform != null»
 			<transforms>
 				«element.transform.handleTransform»
 			</transforms>
+		«ENDIF»
+		«IF element.filter != null»
+			«val e = resolveElement(element.filter.substring(5,element.filter.length-1).trim) as SvgFilterElement»
+			«IF e != null»
+				«IF e.children.filter(typeof(FilterPrimitiveElement)).size == 1»
+				«val fiElement = e.children.filter(typeof(FilterPrimitiveElement)).head as SvgElement»
+				<filter>
+					«handleFilter(fiElement)»
+				</filter>
+				«ELSE»
+				<!-- Multi filter needs different handling -->
+				«ENDIF»
+			«ENDIF»
+		«ENDIF»
+		«IF element.clip_path != null && element.clip_path.trim.length > 0 && ! element.clip_path.trim.equals("none")»
+			<clip>
+				«val clipElement = resolveElement(element.clip_path.substring(5,element.clip_path.length-1)) as SvgClipPathElement»
+				<Group>
+					<children>
+						«FOR e : clipElement.children»
+							«handle(e)»
+						«ENDFOR»
+					</children>
+					«IF clipElement.transform != null && clipElement.transform.trim.length > 0 && ! element.clip_path.equals("none")»
+					<transforms>
+						«handleTransform(clipElement.transform)»
+					</transforms>
+					«ENDIF»
+				</Group>
+			</clip>
 		«ENDIF»
 	</Rectangle>
 	'''
@@ -284,6 +318,7 @@ class FXMLConverter {
 	<Group
 		«IF element.x != null»translateX="«element.x.parseCoordinate»"«ENDIF»
 		«IF element.y != null»translateY="«element.y.parseCoordinate»"«ENDIF»
+		«IF element.opacity != null»opacity="«element.opacity.parseDouble * element.fill_opacity.parseDouble»"«ENDIF»
 		>
 		<children>
 			«FOR o : element.children»
@@ -294,6 +329,36 @@ class FXMLConverter {
 			<transforms>
 				«element.transform.handleTransform»
 			</transforms>
+		«ENDIF»
+		«IF element.filter != null»
+			«val e = resolveElement(element.filter.substring(5,element.filter.length-1).trim) as SvgFilterElement»
+			«IF e != null»
+				«IF e.children.filter(typeof(FilterPrimitiveElement)).size == 1»
+				«val fiElement = e.children.filter(typeof(FilterPrimitiveElement)).head as SvgElement»
+				<filter>
+					«handleFilter(fiElement)»
+				</filter>
+				«ELSE»
+				<!-- Multi filter needs different handling -->
+				«ENDIF»
+			«ENDIF»
+		«ENDIF»
+		«IF element.clip_path != null && element.clip_path.trim.length > 0 && ! element.clip_path.trim.equals("none")»
+			<clip>
+				«val clipElement = resolveElement(element.clip_path.substring(5,element.clip_path.length-1)) as SvgClipPathElement»
+				<Group>
+					<children>
+						«FOR e : clipElement.children»
+							«handle(e)»
+						«ENDFOR»
+					</children>
+					«IF clipElement.transform != null && clipElement.transform.trim.length > 0 && ! element.clip_path.equals("none")»
+					<transforms>
+						«handleTransform(clipElement.transform)»
+					</transforms>
+					«ENDIF»
+				</Group>
+			</clip>
 		«ENDIF»
 	</Group>
 	'''
@@ -307,9 +372,11 @@ class FXMLConverter {
 		«IF element.stroke_linejoin != null»strokeLineJoin="«element.stroke_linejoin.toFx»"«ENDIF»
 		«IF element.stroke_miterlimit != null»strokeMiterLimit="«element.stroke_miterlimit.parseLength»"«ENDIF»
 		«IF element.stroke_width != null»strokeWidth="«element.stroke_width.parseLength»"«ENDIF»
+		«IF element.opacity != null»opacity="«element.opacity»"«ENDIF»
+		«IF element.fill_rule != Fill_rule::NONZERO»fillRule="EVEN_ODD"«ENDIF»
 		>
-		«handlePaint("fill",element.fill,element.opacity,element.fill_opacity)»
-		«handlePaint("stroke",element.stroke,element.opacity,element.stroke_opacity)»
+		«handlePaint("fill",element.fill,element.fill_opacity)»
+		«handlePaint("stroke",element.stroke,element.stroke_opacity)»
 		«IF element.transform != null»
 			<transforms>
 				«element.transform.handleTransform»
@@ -357,14 +424,12 @@ class FXMLConverter {
 		</GaussianBlur>
 	'''
 	
-	def handlePaint(String type, String fillDefinition, String elementOpacity, String typeOpacity) '''
+	def handlePaint(String type, String fillDefinition, String typeOpacity) '''
 	<«type»>
 		«IF fillDefinition == null || fillDefinition.equals("none")»
 			TRANSPARENT
-		«ELSEIF typeOpacity != null && Double::parseDouble(typeOpacity) != Double::valueOf("1.0") »
+		«ELSEIF typeOpacity != null && Double::parseDouble(typeOpacity) != Double::valueOf("1.0")»
 			«fillDefinition.fillPaint(Double::parseDouble(typeOpacity))»
-		«ELSEIF elementOpacity != null && Double::parseDouble(elementOpacity) != Double::valueOf("1.0")»
-			«fillDefinition.fillPaint(Double::parseDouble(elementOpacity))»
 		«ELSE»
 			«fillDefinition.fillPaint»
 		«ENDIF»
@@ -386,13 +451,44 @@ class FXMLConverter {
 		«IF element.stroke_linejoin != null»strokeLineJoin="«element.stroke_linejoin.toFx»"«ENDIF»
 		«IF element.stroke_miterlimit != null»strokeMiterLimit="«element.stroke_miterlimit.parseLength»"«ENDIF»
 		«IF element.stroke_width != null»strokeWidth="«element.stroke_width.parseLength»"«ENDIF»
+		«IF element.opacity != null»opacity="«element.opacity»"«ENDIF»
 		>
-		«handlePaint("fill",element.fill,element.opacity,element.fill_opacity)»
-		«handlePaint("stroke",element.stroke,element.opacity,element.stroke_opacity)»
+		«handlePaint("fill",element.fill,element.fill_opacity)»
+		«handlePaint("stroke",element.stroke,element.stroke_opacity)»
 		«IF element.transform != null»
 			<transforms>
 				«element.transform.handleTransform»
 			</transforms>
+		«ENDIF»
+		«IF element.filter != null»
+			«val e = resolveElement(element.filter.substring(5,element.filter.length-1).trim) as SvgFilterElement»
+			«IF e != null»
+				«IF e.children.filter(typeof(FilterPrimitiveElement)).size == 1»
+				«val fiElement = e.children.filter(typeof(FilterPrimitiveElement)).head as SvgElement»
+				<filter>
+					«handleFilter(fiElement)»
+				</filter>
+				«ELSE»
+				<!-- Multi filter needs different handling -->
+				«ENDIF»
+			«ENDIF»
+		«ENDIF»
+		«IF element.clip_path != null && element.clip_path.trim.length > 0 && ! element.clip_path.trim.equals("none")»
+			<clip>
+				«val clipElement = resolveElement(element.clip_path.substring(5,element.clip_path.length-1)) as SvgClipPathElement»
+				<Group>
+					<children>
+						«FOR e : clipElement.children»
+							«handle(e)»
+						«ENDFOR»
+					</children>
+					«IF clipElement.transform != null && clipElement.transform.trim.length > 0 && ! element.clip_path.equals("none")»
+					<transforms>
+						«handleTransform(clipElement.transform)»
+					</transforms>
+					«ENDIF»
+				</Group>
+			</clip>
 		«ENDIF»
 	</Ellipse>
 	'''
@@ -408,13 +504,44 @@ class FXMLConverter {
 		«IF element.stroke_linejoin != null»strokeLineJoin="«element.stroke_linejoin.toFx»"«ENDIF»
 		«IF element.stroke_miterlimit != null»strokeMiterLimit="«element.stroke_miterlimit.parseLength»"«ENDIF»
 		«IF element.stroke_width != null»strokeWidth="«element.stroke_width.parseLength»"«ENDIF»
+		«IF element.opacity != null»opacity="«element.opacity»"«ENDIF»
 		>
-		«handlePaint("fill",element.fill,element.opacity,element.fill_opacity)»
-		«handlePaint("stroke",element.stroke,element.opacity,element.stroke_opacity)»
+		«handlePaint("fill",element.fill,element.fill_opacity)»
+		«handlePaint("stroke",element.stroke,element.stroke_opacity)»
 		«IF element.transform != null»
 			<transforms>
 				«element.transform.handleTransform»
 			</transforms>
+		«ENDIF»
+		«IF element.filter != null»
+			«val e = resolveElement(element.filter.substring(5,element.filter.length-1).trim) as SvgFilterElement»
+			«IF e != null»
+				«IF e.children.filter(typeof(FilterPrimitiveElement)).size == 1»
+				«val fiElement = e.children.filter(typeof(FilterPrimitiveElement)).head as SvgElement»
+				<filter>
+					«handleFilter(fiElement)»
+				</filter>
+				«ELSE»
+				<!-- Multi filter needs different handling -->
+				«ENDIF»
+			«ENDIF»
+		«ENDIF»
+		«IF element.clip_path != null && element.clip_path.trim.length > 0 && ! element.clip_path.trim.equals("none")»
+			<clip>
+				«val clipElement = resolveElement(element.clip_path.substring(5,element.clip_path.length-1)) as SvgClipPathElement»
+				<Group>
+					<children>
+						«FOR e : clipElement.children»
+							«handle(e)»
+						«ENDFOR»
+					</children>
+					«IF clipElement.transform != null && clipElement.transform.trim.length > 0 && ! element.clip_path.equals("none")»
+					<transforms>
+						«handleTransform(clipElement.transform)»
+					</transforms>
+					«ENDIF»
+				</Group>
+			</clip>
 		«ENDIF»
 	</Circle>
 	'''
@@ -604,5 +731,9 @@ class FXMLConverter {
 	
 	def parsePercentage(String perecentage) {
 		return Double::parseDouble(perecentage);
+	}
+	
+	def parseDouble(String value) {
+		return Double::parseDouble(value)
 	}
 }
