@@ -26,6 +26,7 @@ import org.xml.sax.helpers.DefaultHandler;
 
 import at.bestsolution.efxclipse.formats.svg.converter.FXMLConverter;
 import at.bestsolution.efxclipse.formats.svg.svg.ContentElement;
+import at.bestsolution.efxclipse.formats.svg.svg.CoreAttributes;
 import at.bestsolution.efxclipse.formats.svg.svg.SvgElement;
 import at.bestsolution.efxclipse.formats.svg.svg.SvgPackage;
 import at.bestsolution.efxclipse.formats.svg.svg.SvgSvgElement;
@@ -113,9 +114,8 @@ public class XMLLoader {
 					TreeIterator<EObject> internalIt = EcoreUtil.getAllContents(root, true);
 					while( internalIt.hasNext() ) {
 						EObject internalO = internalIt.next();
-						EStructuralFeature idFeature = internalO.eClass().getEStructuralFeature("id");
-						if( idFeature != null ) {
-							if( link.equals(internalO.eGet(idFeature))) {
+						if( internalO instanceof CoreAttributes ) {
+							if( link.equals(internalO.eGet(SvgPackage.Literals.CORE_ATTRIBUTES__ID))) {
 								o.eSet(instanceFeature, internalO);
 								break;
 							}
