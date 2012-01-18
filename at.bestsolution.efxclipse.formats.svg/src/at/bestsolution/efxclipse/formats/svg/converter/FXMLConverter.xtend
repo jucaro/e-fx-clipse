@@ -320,9 +320,8 @@ class FXMLConverter {
 			«IF e != null»
 				«IF e.children.filter(typeof(FilterPrimitiveElement)).size == 1»
 				«val fiElement = e.children.filter(typeof(FilterPrimitiveElement)).head as SvgElement»
-				«val feature = fiElement.eClass.getEStructuralFeature("id")»
 				<filter>
-					<fx:reference source="«fiElement.eGet(feature)»" />
+					«handleFilter(fiElement)»
 				</filter>
 				«ELSE»
 				<!-- Multi filter needs different handling -->
@@ -331,10 +330,31 @@ class FXMLConverter {
 		«ENDIF»
 		«IF element.clip_path != null && element.clip_path.trim.length > 0 && ! element.clip_path.trim.equals("none")»
 			<clip>
-				<fx:reference source="«element.clip_path.substring(5,element.clip_path.length-1)»"/>
+				«val clipElement = resolveElement(element.clip_path.substring(5,element.clip_path.length-1)) as SvgClipPathElement»
+				<Group>
+					<children>
+						«FOR e : clipElement.children»
+							«handle(e)»
+						«ENDFOR»
+					</children>
+					«IF clipElement.transform != null && clipElement.transform.trim.length > 0 && ! element.clip_path.equals("none")»
+					<transforms>
+						«handleTransform(clipElement.transform)»
+					</transforms>
+					«ENDIF»
+				</Group>
 			</clip>
 		«ENDIF»
 	</SVGPath>
+	'''
+	
+	def dispatch handleFilter(EObject o) '''
+	<!-- Unsupported filter type -->
+	'''
+	
+	def dispatch handleFilter(SvgFeGaussianBlurElement blur) '''
+		<GaussianBlur>
+		</GaussianBlur>
 	'''
 	
 	def handlePaint(String type, String fillDefinition, String elementOpacity, String typeOpacity) '''
@@ -351,16 +371,8 @@ class FXMLConverter {
 	</«type»>
 	'''
 	
-	def dispatch handle(SvgClipPathElement element) '''
-	<Group
-		«IF element.id != null»fx:id="«element.id»"«ENDIF»>
-		<children>
-			«FOR e : element.children»
-				«handle(e)»
-			«ENDFOR»
-		</children>
-	</Group>
-	'''
+	def dispatch handle(SvgClipPathElement element) {
+	}
 	
 	def dispatch handle(SvgEllipseElement element) '''
 	<Ellipse
@@ -533,19 +545,13 @@ class FXMLConverter {
 	«ENDIF»
 	'''
 	
-	def dispatch handle(SvgFilterElement filter) '''
-		«FOR f : filter.children.filter(typeof(FilterPrimitiveElement))»
-			«handle(f)»
-		«ENDFOR»
-	'''
+	def dispatch handle(SvgFilterElement filter) {
+		
+	}
 	
-	def dispatch handle(SvgFeGaussianBlurElement f) '''
-		<GaussianBlur
-			«IF f.id != null»fx:id="«f.id»"«ENDIF»
-«««			«f.stdDeviation»
-		>
-		</GaussianBlur>
-	'''
+	def dispatch handle(SvgFeGaussianBlurElement f) {
+		
+	}
 
 	def CycleMethod toFx(SpreadMethod m) {
 		switch(m) {
