@@ -51,9 +51,10 @@
     <extension
             point="org.eclipse.ui.preferencePages">
         <page
-            class="at.bestsolution.efxclipse.tooling.fxmlx.ui.FXMLDslExecutableExtensionFactory:org.eclipse.xtext.ui.editor.preferences.LanguageRootPreferencePage"
-            id="at.bestsolution.efxclipse.tooling.fxmlx.FXMLDsl"
-            name="%page.name">
+              category="at.bestsolution.efxclipse.tooling.jdt.ui.javafx"
+              class="at.bestsolution.efxclipse.tooling.fxmlx.ui.FXMLDslExecutableExtensionFactory:org.eclipse.xtext.ui.editor.preferences.LanguageRootPreferencePage"
+              id="at.bestsolution.efxclipse.tooling.fxmlx.FXMLDsl"
+              name="%page.name">
             <keywordReference id="at.bestsolution.efxclipse.tooling.fxmlx.ui.keyword_FXMLDsl"/>
         </page>
         <page
