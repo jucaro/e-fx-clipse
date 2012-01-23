@@ -59,19 +59,31 @@ selector hidden():
 ;
 
 simple_selector:
-	(element = element_name subSelectors+=sub_selector*)
+	((element = element_name | universal=css_universal) subSelectors+=sub_selector*)
 	|
 	subSelectors+=sub_selector+
 ;
 
 element_name:
-	(IDENT | ReservedWords | '*')
+	(IDENT | ReservedWords)
 ;
 
 sub_selector:
-	id=css_id | class=css_class | attrib=css_attrib | pseudoclass=css_pseudo
+	id=css_id | class=css_class | attrib=css_attrib | pseudoclass=css_pseudo | negotation=css_negation
 ;
 
+css_type_selector:
+	( css_namespace_prefix )? element_name
+;
+
+css_namespace_prefix
+  : ( IDENT | '*' )? '|'
+  ;
+
+css_universal: 
+	( css_namespace_prefix )? '*'
+;
+  
 css_class
   : '.' ( IDENT | ReservedWords )
   ;
@@ -81,7 +93,7 @@ css_id:
 ;
 
 css_attrib:
-	'[' (IDENT | ReservedWords) ( ( '=' | INCLUDES | DASHMATCH ) (( IDENT | ReservedWords ) | STRING ) )? ']'
+	'[' (IDENT | ReservedWords) ( ( '^=' | '$=' | '*=' | '=' | INCLUDES | DASHMATCH ) (( IDENT | ReservedWords ) | STRING ) )? ']'
 ;
 
 css_declaration:
@@ -101,13 +113,37 @@ css_property:
 ;
 
 css_pseudo
-  : ':' IDENT
-  ;
+  : ':' ':'? (IDENT | functional_pseudo)
+;
+
+css_negation:
+	':not' '(' css_negation_arg ')'
+;
+
+css_negation_arg
+  : css_type_selector | css_universal | HASH | css_class | css_attrib | css_pseudo
+;
+
+functional_pseudo:
+	IDENT '(' function_expr ')'	
+;
+
+function_expr:
+	( ( '+' | '-' | DIMENSION | NUMBER | STRING | IDENT ) )+	
+;
+
+DIMENSION:
+ 	PERCENTAGE | LENGTH | EMS | EXS | ANGLE | TIME | FREQ
+;
 
 combinator
-  : ('+'
-  | '>') WS*
-  ;
+  : 
+  (
+  	  '+'
+  	| '>'
+  	| '~'
+  ) WS*
+;
   
 operator
   : '/' | COMMA

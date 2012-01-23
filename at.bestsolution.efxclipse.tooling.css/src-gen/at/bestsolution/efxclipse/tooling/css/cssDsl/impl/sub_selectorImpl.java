@@ -27,6 +27,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  *   <li>{@link at.bestsolution.efxclipse.tooling.css.cssDsl.impl.sub_selectorImpl#getClass_ <em>Class</em>}</li>
  *   <li>{@link at.bestsolution.efxclipse.tooling.css.cssDsl.impl.sub_selectorImpl#getAttrib <em>Attrib</em>}</li>
  *   <li>{@link at.bestsolution.efxclipse.tooling.css.cssDsl.impl.sub_selectorImpl#getPseudoclass <em>Pseudoclass</em>}</li>
+ *   <li>{@link at.bestsolution.efxclipse.tooling.css.cssDsl.impl.sub_selectorImpl#getNegotation <em>Negotation</em>}</li>
  * </ul>
  * </p>
  *
@@ -113,6 +114,26 @@ public class sub_selectorImpl extends MinimalEObjectImpl.Container implements su
    * @ordered
    */
   protected String pseudoclass = PSEUDOCLASS_EDEFAULT;
+
+  /**
+   * The default value of the '{@link #getNegotation() <em>Negotation</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getNegotation()
+   * @generated
+   * @ordered
+   */
+  protected static final String NEGOTATION_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getNegotation() <em>Negotation</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getNegotation()
+   * @generated
+   * @ordered
+   */
+  protected String negotation = NEGOTATION_EDEFAULT;
 
   /**
    * <!-- begin-user-doc -->
@@ -232,6 +253,29 @@ public class sub_selectorImpl extends MinimalEObjectImpl.Container implements su
    * <!-- end-user-doc -->
    * @generated
    */
+  public String getNegotation()
+  {
+    return negotation;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setNegotation(String newNegotation)
+  {
+    String oldNegotation = negotation;
+    negotation = newNegotation;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, CssDslPackage.SUB_SELECTOR__NEGOTATION, oldNegotation, negotation));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   @Override
   public Object eGet(int featureID, boolean resolve, boolean coreType)
   {
@@ -245,6 +289,8 @@ public class sub_selectorImpl extends MinimalEObjectImpl.Container implements su
         return getAttrib();
       case CssDslPackage.SUB_SELECTOR__PSEUDOCLASS:
         return getPseudoclass();
+      case CssDslPackage.SUB_SELECTOR__NEGOTATION:
+        return getNegotation();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -270,6 +316,9 @@ public class sub_selectorImpl extends MinimalEObjectImpl.Container implements su
         return;
       case CssDslPackage.SUB_SELECTOR__PSEUDOCLASS:
         setPseudoclass((String)newValue);
+        return;
+      case CssDslPackage.SUB_SELECTOR__NEGOTATION:
+        setNegotation((String)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -297,6 +346,9 @@ public class sub_selectorImpl extends MinimalEObjectImpl.Container implements su
       case CssDslPackage.SUB_SELECTOR__PSEUDOCLASS:
         setPseudoclass(PSEUDOCLASS_EDEFAULT);
         return;
+      case CssDslPackage.SUB_SELECTOR__NEGOTATION:
+        setNegotation(NEGOTATION_EDEFAULT);
+        return;
     }
     super.eUnset(featureID);
   }
@@ -319,6 +371,8 @@ public class sub_selectorImpl extends MinimalEObjectImpl.Container implements su
         return ATTRIB_EDEFAULT == null ? attrib != null : !ATTRIB_EDEFAULT.equals(attrib);
       case CssDslPackage.SUB_SELECTOR__PSEUDOCLASS:
         return PSEUDOCLASS_EDEFAULT == null ? pseudoclass != null : !PSEUDOCLASS_EDEFAULT.equals(pseudoclass);
+      case CssDslPackage.SUB_SELECTOR__NEGOTATION:
+        return NEGOTATION_EDEFAULT == null ? negotation != null : !NEGOTATION_EDEFAULT.equals(negotation);
     }
     return super.eIsSet(featureID);
   }
@@ -342,6 +396,8 @@ public class sub_selectorImpl extends MinimalEObjectImpl.Container implements su
     result.append(attrib);
     result.append(", pseudoclass: ");
     result.append(pseudoclass);
+    result.append(", negotation: ");
+    result.append(negotation);
     result.append(')');
     return result.toString();
   }

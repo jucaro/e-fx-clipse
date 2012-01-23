@@ -283,7 +283,7 @@ public class AbstractCssDslSemanticSequencer extends AbstractSemanticSequencer {
 	
 	/**
 	 * Constraint:
-	 *     ((element=element_name subSelectors+=sub_selector*) | subSelectors+=sub_selector+)
+	 *     (((element=element_name | universal=css_universal) subSelectors+=sub_selector*) | subSelectors+=sub_selector+)
 	 */
 	protected void sequence_simple_selector(EObject context, simple_selector semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -301,7 +301,7 @@ public class AbstractCssDslSemanticSequencer extends AbstractSemanticSequencer {
 	
 	/**
 	 * Constraint:
-	 *     (id=css_id | class=css_class | attrib=css_attrib | pseudoclass=css_pseudo)
+	 *     (id=css_id | class=css_class | attrib=css_attrib | pseudoclass=css_pseudo | negotation=css_negation)
 	 */
 	protected void sequence_sub_selector(EObject context, sub_selector semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);

@@ -40,6 +40,7 @@
     </genClasses>
     <genClasses ecoreClass="CssDsl.ecore#//simple_selector">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CssDsl.ecore#//simple_selector/element"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CssDsl.ecore#//simple_selector/universal"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CssDsl.ecore#//simple_selector/subSelectors"/>
     </genClasses>
     <genClasses ecoreClass="CssDsl.ecore#//sub_selector">
@@ -47,6 +48,7 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CssDsl.ecore#//sub_selector/class"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CssDsl.ecore#//sub_selector/attrib"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CssDsl.ecore#//sub_selector/pseudoclass"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CssDsl.ecore#//sub_selector/negotation"/>
     </genClasses>
     <genClasses ecoreClass="CssDsl.ecore#//css_declaration"/>
     <genClasses ecoreClass="CssDsl.ecore#//css_generic_declaration">

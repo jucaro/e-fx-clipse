@@ -357,13 +357,22 @@ public interface CssDslPackage extends EPackage
   int SIMPLE_SELECTOR__ELEMENT = 0;
 
   /**
+   * The feature id for the '<em><b>Universal</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SIMPLE_SELECTOR__UNIVERSAL = 1;
+
+  /**
    * The feature id for the '<em><b>Sub Selectors</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int SIMPLE_SELECTOR__SUB_SELECTORS = 1;
+  int SIMPLE_SELECTOR__SUB_SELECTORS = 2;
 
   /**
    * The number of structural features of the '<em>simple selector</em>' class.
@@ -372,7 +381,7 @@ public interface CssDslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int SIMPLE_SELECTOR_FEATURE_COUNT = 2;
+  int SIMPLE_SELECTOR_FEATURE_COUNT = 3;
 
   /**
    * The meta object id for the '{@link at.bestsolution.efxclipse.tooling.css.cssDsl.impl.sub_selectorImpl <em>sub selector</em>}' class.
@@ -421,13 +430,22 @@ public interface CssDslPackage extends EPackage
   int SUB_SELECTOR__PSEUDOCLASS = 3;
 
   /**
+   * The feature id for the '<em><b>Negotation</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SUB_SELECTOR__NEGOTATION = 4;
+
+  /**
    * The number of structural features of the '<em>sub selector</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int SUB_SELECTOR_FEATURE_COUNT = 4;
+  int SUB_SELECTOR_FEATURE_COUNT = 5;
 
   /**
    * The meta object id for the '{@link at.bestsolution.efxclipse.tooling.css.cssDsl.impl.css_declarationImpl <em>css declaration</em>}' class.
@@ -975,6 +993,17 @@ public interface CssDslPackage extends EPackage
   EAttribute getsimple_selector_Element();
 
   /**
+   * Returns the meta object for the attribute '{@link at.bestsolution.efxclipse.tooling.css.cssDsl.simple_selector#getUniversal <em>Universal</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Universal</em>'.
+   * @see at.bestsolution.efxclipse.tooling.css.cssDsl.simple_selector#getUniversal()
+   * @see #getsimple_selector()
+   * @generated
+   */
+  EAttribute getsimple_selector_Universal();
+
+  /**
    * Returns the meta object for the containment reference list '{@link at.bestsolution.efxclipse.tooling.css.cssDsl.simple_selector#getSubSelectors <em>Sub Selectors</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -1038,6 +1067,17 @@ public interface CssDslPackage extends EPackage
    * @generated
    */
   EAttribute getsub_selector_Pseudoclass();
+
+  /**
+   * Returns the meta object for the attribute '{@link at.bestsolution.efxclipse.tooling.css.cssDsl.sub_selector#getNegotation <em>Negotation</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Negotation</em>'.
+   * @see at.bestsolution.efxclipse.tooling.css.cssDsl.sub_selector#getNegotation()
+   * @see #getsub_selector()
+   * @generated
+   */
+  EAttribute getsub_selector_Negotation();
 
   /**
    * Returns the meta object for class '{@link at.bestsolution.efxclipse.tooling.css.cssDsl.css_declaration <em>css declaration</em>}'.
@@ -1514,6 +1554,14 @@ public interface CssDslPackage extends EPackage
     EAttribute SIMPLE_SELECTOR__ELEMENT = eINSTANCE.getsimple_selector_Element();
 
     /**
+     * The meta object literal for the '<em><b>Universal</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute SIMPLE_SELECTOR__UNIVERSAL = eINSTANCE.getsimple_selector_Universal();
+
+    /**
      * The meta object literal for the '<em><b>Sub Selectors</b></em>' containment reference list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -1562,6 +1610,14 @@ public interface CssDslPackage extends EPackage
      * @generated
      */
     EAttribute SUB_SELECTOR__PSEUDOCLASS = eINSTANCE.getsub_selector_Pseudoclass();
+
+    /**
+     * The meta object literal for the '<em><b>Negotation</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute SUB_SELECTOR__NEGOTATION = eINSTANCE.getsub_selector_Negotation();
 
     /**
      * The meta object literal for the '{@link at.bestsolution.efxclipse.tooling.css.cssDsl.impl.css_declarationImpl <em>css declaration</em>}' class.

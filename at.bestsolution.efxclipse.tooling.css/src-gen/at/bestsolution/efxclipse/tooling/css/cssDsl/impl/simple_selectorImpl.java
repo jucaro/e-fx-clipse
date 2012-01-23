@@ -34,6 +34,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * The following features are implemented:
  * <ul>
  *   <li>{@link at.bestsolution.efxclipse.tooling.css.cssDsl.impl.simple_selectorImpl#getElement <em>Element</em>}</li>
+ *   <li>{@link at.bestsolution.efxclipse.tooling.css.cssDsl.impl.simple_selectorImpl#getUniversal <em>Universal</em>}</li>
  *   <li>{@link at.bestsolution.efxclipse.tooling.css.cssDsl.impl.simple_selectorImpl#getSubSelectors <em>Sub Selectors</em>}</li>
  * </ul>
  * </p>
@@ -61,6 +62,26 @@ public class simple_selectorImpl extends MinimalEObjectImpl.Container implements
    * @ordered
    */
   protected String element = ELEMENT_EDEFAULT;
+
+  /**
+   * The default value of the '{@link #getUniversal() <em>Universal</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getUniversal()
+   * @generated
+   * @ordered
+   */
+  protected static final String UNIVERSAL_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getUniversal() <em>Universal</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getUniversal()
+   * @generated
+   * @ordered
+   */
+  protected String universal = UNIVERSAL_EDEFAULT;
 
   /**
    * The cached value of the '{@link #getSubSelectors() <em>Sub Selectors</em>}' containment reference list.
@@ -121,6 +142,29 @@ public class simple_selectorImpl extends MinimalEObjectImpl.Container implements
    * <!-- end-user-doc -->
    * @generated
    */
+  public String getUniversal()
+  {
+    return universal;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setUniversal(String newUniversal)
+  {
+    String oldUniversal = universal;
+    universal = newUniversal;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, CssDslPackage.SIMPLE_SELECTOR__UNIVERSAL, oldUniversal, universal));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EList<sub_selector> getSubSelectors()
   {
     if (subSelectors == null)
@@ -158,6 +202,8 @@ public class simple_selectorImpl extends MinimalEObjectImpl.Container implements
     {
       case CssDslPackage.SIMPLE_SELECTOR__ELEMENT:
         return getElement();
+      case CssDslPackage.SIMPLE_SELECTOR__UNIVERSAL:
+        return getUniversal();
       case CssDslPackage.SIMPLE_SELECTOR__SUB_SELECTORS:
         return getSubSelectors();
     }
@@ -177,6 +223,9 @@ public class simple_selectorImpl extends MinimalEObjectImpl.Container implements
     {
       case CssDslPackage.SIMPLE_SELECTOR__ELEMENT:
         setElement((String)newValue);
+        return;
+      case CssDslPackage.SIMPLE_SELECTOR__UNIVERSAL:
+        setUniversal((String)newValue);
         return;
       case CssDslPackage.SIMPLE_SELECTOR__SUB_SELECTORS:
         getSubSelectors().clear();
@@ -199,6 +248,9 @@ public class simple_selectorImpl extends MinimalEObjectImpl.Container implements
       case CssDslPackage.SIMPLE_SELECTOR__ELEMENT:
         setElement(ELEMENT_EDEFAULT);
         return;
+      case CssDslPackage.SIMPLE_SELECTOR__UNIVERSAL:
+        setUniversal(UNIVERSAL_EDEFAULT);
+        return;
       case CssDslPackage.SIMPLE_SELECTOR__SUB_SELECTORS:
         getSubSelectors().clear();
         return;
@@ -218,6 +270,8 @@ public class simple_selectorImpl extends MinimalEObjectImpl.Container implements
     {
       case CssDslPackage.SIMPLE_SELECTOR__ELEMENT:
         return ELEMENT_EDEFAULT == null ? element != null : !ELEMENT_EDEFAULT.equals(element);
+      case CssDslPackage.SIMPLE_SELECTOR__UNIVERSAL:
+        return UNIVERSAL_EDEFAULT == null ? universal != null : !UNIVERSAL_EDEFAULT.equals(universal);
       case CssDslPackage.SIMPLE_SELECTOR__SUB_SELECTORS:
         return subSelectors != null && !subSelectors.isEmpty();
     }
@@ -237,6 +291,8 @@ public class simple_selectorImpl extends MinimalEObjectImpl.Container implements
     StringBuffer result = new StringBuffer(super.toString());
     result.append(" (element: ");
     result.append(element);
+    result.append(", universal: ");
+    result.append(universal);
     result.append(')');
     return result.toString();
   }
