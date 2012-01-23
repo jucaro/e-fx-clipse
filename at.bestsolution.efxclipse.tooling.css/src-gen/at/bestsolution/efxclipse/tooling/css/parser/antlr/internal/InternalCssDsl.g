@@ -912,10 +912,22 @@ ruleelement_name returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleTo
     }
 
     |
+    { 
+        newCompositeNode(grammarAccess.getElement_nameAccess().getReservedWordsParserRuleCall_1()); 
+    }
+    this_ReservedWords_1=ruleReservedWords    {
+		$current.merge(this_ReservedWords_1);
+    }
+
+    { 
+        afterParserOrEnumRuleCall();
+    }
+
+    |
 	kw='*' 
     {
         $current.merge(kw);
-        newLeafNode(kw, grammarAccess.getElement_nameAccess().getAsteriskKeyword_1()); 
+        newLeafNode(kw, grammarAccess.getElement_nameAccess().getAsteriskKeyword_2()); 
     }
 )
     ;
@@ -1040,14 +1052,26 @@ rulecss_class returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken
         $current.merge(kw);
         newLeafNode(kw, grammarAccess.getCss_classAccess().getFullStopKeyword_0()); 
     }
-    this_IDENT_1=RULE_IDENT    {
+(    this_IDENT_1=RULE_IDENT    {
 		$current.merge(this_IDENT_1);
     }
 
     { 
-    newLeafNode(this_IDENT_1, grammarAccess.getCss_classAccess().getIDENTTerminalRuleCall_1()); 
+    newLeafNode(this_IDENT_1, grammarAccess.getCss_classAccess().getIDENTTerminalRuleCall_1_0()); 
     }
-)
+
+    |
+    { 
+        newCompositeNode(grammarAccess.getCss_classAccess().getReservedWordsParserRuleCall_1_1()); 
+    }
+    this_ReservedWords_2=ruleReservedWords    {
+		$current.merge(this_ReservedWords_2);
+    }
+
+    { 
+        afterParserOrEnumRuleCall();
+    }
+))
     ;
 
 
@@ -1102,49 +1126,73 @@ rulecss_attrib returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToke
         $current.merge(kw);
         newLeafNode(kw, grammarAccess.getCss_attribAccess().getLeftSquareBracketKeyword_0()); 
     }
-    this_IDENT_1=RULE_IDENT    {
+(    this_IDENT_1=RULE_IDENT    {
 		$current.merge(this_IDENT_1);
     }
 
     { 
-    newLeafNode(this_IDENT_1, grammarAccess.getCss_attribAccess().getIDENTTerminalRuleCall_1()); 
+    newLeafNode(this_IDENT_1, grammarAccess.getCss_attribAccess().getIDENTTerminalRuleCall_1_0()); 
     }
-((
+
+    |
+    { 
+        newCompositeNode(grammarAccess.getCss_attribAccess().getReservedWordsParserRuleCall_1_1()); 
+    }
+    this_ReservedWords_2=ruleReservedWords    {
+		$current.merge(this_ReservedWords_2);
+    }
+
+    { 
+        afterParserOrEnumRuleCall();
+    }
+)((
 	kw='=' 
     {
         $current.merge(kw);
         newLeafNode(kw, grammarAccess.getCss_attribAccess().getEqualsSignKeyword_2_0_0()); 
     }
 
-    |    this_INCLUDES_3=RULE_INCLUDES    {
-		$current.merge(this_INCLUDES_3);
+    |    this_INCLUDES_4=RULE_INCLUDES    {
+		$current.merge(this_INCLUDES_4);
     }
 
     { 
-    newLeafNode(this_INCLUDES_3, grammarAccess.getCss_attribAccess().getINCLUDESTerminalRuleCall_2_0_1()); 
+    newLeafNode(this_INCLUDES_4, grammarAccess.getCss_attribAccess().getINCLUDESTerminalRuleCall_2_0_1()); 
     }
 
-    |    this_DASHMATCH_4=RULE_DASHMATCH    {
-		$current.merge(this_DASHMATCH_4);
-    }
-
-    { 
-    newLeafNode(this_DASHMATCH_4, grammarAccess.getCss_attribAccess().getDASHMATCHTerminalRuleCall_2_0_2()); 
-    }
-)(    this_IDENT_5=RULE_IDENT    {
-		$current.merge(this_IDENT_5);
+    |    this_DASHMATCH_5=RULE_DASHMATCH    {
+		$current.merge(this_DASHMATCH_5);
     }
 
     { 
-    newLeafNode(this_IDENT_5, grammarAccess.getCss_attribAccess().getIDENTTerminalRuleCall_2_1_0()); 
+    newLeafNode(this_DASHMATCH_5, grammarAccess.getCss_attribAccess().getDASHMATCHTerminalRuleCall_2_0_2()); 
     }
-
-    |    this_STRING_6=RULE_STRING    {
-		$current.merge(this_STRING_6);
+)((    this_IDENT_6=RULE_IDENT    {
+		$current.merge(this_IDENT_6);
     }
 
     { 
-    newLeafNode(this_STRING_6, grammarAccess.getCss_attribAccess().getSTRINGTerminalRuleCall_2_1_1()); 
+    newLeafNode(this_IDENT_6, grammarAccess.getCss_attribAccess().getIDENTTerminalRuleCall_2_1_0_0()); 
+    }
+
+    |
+    { 
+        newCompositeNode(grammarAccess.getCss_attribAccess().getReservedWordsParserRuleCall_2_1_0_1()); 
+    }
+    this_ReservedWords_7=ruleReservedWords    {
+		$current.merge(this_ReservedWords_7);
+    }
+
+    { 
+        afterParserOrEnumRuleCall();
+    }
+)
+    |    this_STRING_8=RULE_STRING    {
+		$current.merge(this_STRING_8);
+    }
+
+    { 
+    newLeafNode(this_STRING_8, grammarAccess.getCss_attribAccess().getSTRINGTerminalRuleCall_2_1_1()); 
     }
 ))?
 	kw=']' 
@@ -2400,6 +2448,131 @@ ruleFREQ returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()]
         newLeafNode(kw, grammarAccess.getFREQAccess().getKhzKeyword_1_1()); 
     }
 ))
+    ;
+
+
+
+
+
+// Entry rule entryRuleReservedWords
+entryRuleReservedWords returns [String current=null] 
+	:
+	{ newCompositeNode(grammarAccess.getReservedWordsRule()); } 
+	 iv_ruleReservedWords=ruleReservedWords 
+	 { $current=$iv_ruleReservedWords.current.getText(); }  
+	 EOF 
+;
+
+// Rule ReservedWords
+ruleReservedWords returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] 
+    @init { enterRule(); 
+    }
+    @after { leaveRule(); }:
+(
+	kw='em' 
+    {
+        $current.merge(kw);
+        newLeafNode(kw, grammarAccess.getReservedWordsAccess().getEmKeyword_0()); 
+    }
+
+    |
+	kw='ex' 
+    {
+        $current.merge(kw);
+        newLeafNode(kw, grammarAccess.getReservedWordsAccess().getExKeyword_1()); 
+    }
+
+    |
+	kw='px' 
+    {
+        $current.merge(kw);
+        newLeafNode(kw, grammarAccess.getReservedWordsAccess().getPxKeyword_2()); 
+    }
+
+    |
+	kw='cm' 
+    {
+        $current.merge(kw);
+        newLeafNode(kw, grammarAccess.getReservedWordsAccess().getCmKeyword_3()); 
+    }
+
+    |
+	kw='mm' 
+    {
+        $current.merge(kw);
+        newLeafNode(kw, grammarAccess.getReservedWordsAccess().getMmKeyword_4()); 
+    }
+
+    |
+	kw='in' 
+    {
+        $current.merge(kw);
+        newLeafNode(kw, grammarAccess.getReservedWordsAccess().getInKeyword_5()); 
+    }
+
+    |
+	kw='pt' 
+    {
+        $current.merge(kw);
+        newLeafNode(kw, grammarAccess.getReservedWordsAccess().getPtKeyword_6()); 
+    }
+
+    |
+	kw='pc' 
+    {
+        $current.merge(kw);
+        newLeafNode(kw, grammarAccess.getReservedWordsAccess().getPcKeyword_7()); 
+    }
+
+    |
+	kw='deg' 
+    {
+        $current.merge(kw);
+        newLeafNode(kw, grammarAccess.getReservedWordsAccess().getDegKeyword_8()); 
+    }
+
+    |
+	kw='rad' 
+    {
+        $current.merge(kw);
+        newLeafNode(kw, grammarAccess.getReservedWordsAccess().getRadKeyword_9()); 
+    }
+
+    |
+	kw='grad' 
+    {
+        $current.merge(kw);
+        newLeafNode(kw, grammarAccess.getReservedWordsAccess().getGradKeyword_10()); 
+    }
+
+    |
+	kw='ms' 
+    {
+        $current.merge(kw);
+        newLeafNode(kw, grammarAccess.getReservedWordsAccess().getMsKeyword_11()); 
+    }
+
+    |
+	kw='s' 
+    {
+        $current.merge(kw);
+        newLeafNode(kw, grammarAccess.getReservedWordsAccess().getSKeyword_12()); 
+    }
+
+    |
+	kw='hz' 
+    {
+        $current.merge(kw);
+        newLeafNode(kw, grammarAccess.getReservedWordsAccess().getHzKeyword_13()); 
+    }
+
+    |
+	kw='khz' 
+    {
+        $current.merge(kw);
+        newLeafNode(kw, grammarAccess.getReservedWordsAccess().getKhzKeyword_14()); 
+    }
+)
     ;
 
 

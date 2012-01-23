@@ -47,6 +47,5 @@ public class CssDslStandaloneSetupGenerated implements ISetup {
 
 
 
-
 	}
 }

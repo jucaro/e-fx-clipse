@@ -65,7 +65,7 @@ simple_selector:
 ;
 
 element_name:
-	(IDENT | '*')
+	(IDENT | ReservedWords | '*')
 ;
 
 sub_selector:
@@ -73,7 +73,7 @@ sub_selector:
 ;
 
 css_class
-  : '.' (IDENT)
+  : '.' ( IDENT | ReservedWords )
   ;
 
 css_id:
@@ -81,7 +81,7 @@ css_id:
 ;
 
 css_attrib:
-	'[' (IDENT) ( ( '=' | INCLUDES | DASHMATCH ) ((IDENT) | STRING ) )? ']'
+	'[' (IDENT | ReservedWords) ( ( '=' | INCLUDES | DASHMATCH ) (( IDENT | ReservedWords ) | STRING ) )? ']'
 ;
 
 css_declaration:
@@ -186,6 +186,15 @@ LENGTH hidden(): num ('px' | 'cm' | 'mm' | 'in' | 'pt' | 'pc' ) ;
 ANGLE: num ('deg' | 'rad' | 'grad' );
 TIME: num ('ms'| 's' );
 FREQ: num ('hz' | 'khz');
+
+ReservedWords:
+	  'em' 
+	| 'ex'
+	| 'px' | 'cm' | 'mm' | 'in' | 'pt' | 'pc'
+	| 'deg' | 'rad' | 'grad'
+	| 'ms'| 's'
+	| 'hz' | 'khz'
+;
 
 terminal integer:('0'..'9')+;
 terminal real: (('0'..'9')*"."('0'..'9')+);
