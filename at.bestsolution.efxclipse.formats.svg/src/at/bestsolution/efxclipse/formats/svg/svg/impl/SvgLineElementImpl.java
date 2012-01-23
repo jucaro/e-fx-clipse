@@ -43,15 +43,18 @@ import at.bestsolution.efxclipse.formats.svg.svg.Visibility;
 import at.bestsolution.efxclipse.formats.svg.svg.Writing_mode;
 
 import java.util.Collection;
+
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.common.notify.NotificationChain;
-import org.eclipse.emf.common.util.EList;
-import org.eclipse.emf.ecore.EClass;
 
+import org.eclipse.emf.common.util.EList;
+
+import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
+
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.EObjectImpl;
+
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
@@ -541,7 +544,7 @@ public class SvgLineElementImpl extends EObjectImpl implements SvgLineElement {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String CLIP_EDEFAULT = "\"auto\"";
+	protected static final String CLIP_EDEFAULT = "auto";
 
 	/**
 	 * The cached value of the '{@link #getClip() <em>Clip</em>}' attribute.
@@ -561,7 +564,7 @@ public class SvgLineElementImpl extends EObjectImpl implements SvgLineElement {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String CLIP_PATH_EDEFAULT = "\"none\"";
+	protected static final String CLIP_PATH_EDEFAULT = "none";
 
 	/**
 	 * The cached value of the '{@link #getClip_path() <em>Clip path</em>}' attribute.
@@ -801,7 +804,7 @@ public class SvgLineElementImpl extends EObjectImpl implements SvgLineElement {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String FILL_EDEFAULT = "\"black\"";
+	protected static final String FILL_EDEFAULT = "black";
 
 	/**
 	 * The cached value of the '{@link #getFill() <em>Fill</em>}' attribute.
@@ -821,7 +824,7 @@ public class SvgLineElementImpl extends EObjectImpl implements SvgLineElement {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String FILL_OPACITY_EDEFAULT = "\"1\"";
+	protected static final String FILL_OPACITY_EDEFAULT = "1";
 
 	/**
 	 * The cached value of the '{@link #getFill_opacity() <em>Fill opacity</em>}' attribute.
@@ -1261,7 +1264,7 @@ public class SvgLineElementImpl extends EObjectImpl implements SvgLineElement {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String OPACITY_EDEFAULT = "\"1\"";
+	protected static final String OPACITY_EDEFAULT = "1";
 
 	/**
 	 * The cached value of the '{@link #getOpacity() <em>Opacity</em>}' attribute.
@@ -1341,7 +1344,7 @@ public class SvgLineElementImpl extends EObjectImpl implements SvgLineElement {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String STOP_COLOR_EDEFAULT = "\"black\"";
+	protected static final String STOP_COLOR_EDEFAULT = "black";
 
 	/**
 	 * The cached value of the '{@link #getStop_color() <em>Stop color</em>}' attribute.
@@ -1361,7 +1364,7 @@ public class SvgLineElementImpl extends EObjectImpl implements SvgLineElement {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String STOP_OPACITY_EDEFAULT = "\"1\"";
+	protected static final String STOP_OPACITY_EDEFAULT = "1";
 
 	/**
 	 * The cached value of the '{@link #getStop_opacity() <em>Stop opacity</em>}' attribute.
@@ -1381,7 +1384,7 @@ public class SvgLineElementImpl extends EObjectImpl implements SvgLineElement {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String STROKE_EDEFAULT = "\"none\"";
+	protected static final String STROKE_EDEFAULT = "none";
 
 	/**
 	 * The cached value of the '{@link #getStroke() <em>Stroke</em>}' attribute.
@@ -1401,7 +1404,7 @@ public class SvgLineElementImpl extends EObjectImpl implements SvgLineElement {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String STROKE_DASHARRAY_EDEFAULT = "\"none\"";
+	protected static final String STROKE_DASHARRAY_EDEFAULT = "none";
 
 	/**
 	 * The cached value of the '{@link #getStroke_dasharray() <em>Stroke dasharray</em>}' attribute.
@@ -1421,7 +1424,7 @@ public class SvgLineElementImpl extends EObjectImpl implements SvgLineElement {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String STROKE_DASHOFFSET_EDEFAULT = "\"0\"";
+	protected static final String STROKE_DASHOFFSET_EDEFAULT = "0";
 
 	/**
 	 * The cached value of the '{@link #getStroke_dashoffset() <em>Stroke dashoffset</em>}' attribute.
@@ -1501,7 +1504,7 @@ public class SvgLineElementImpl extends EObjectImpl implements SvgLineElement {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String STROKE_OPACITY_EDEFAULT = "\"1\"";
+	protected static final String STROKE_OPACITY_EDEFAULT = "1";
 
 	/**
 	 * The cached value of the '{@link #getStroke_opacity() <em>Stroke opacity</em>}' attribute.
@@ -1521,7 +1524,7 @@ public class SvgLineElementImpl extends EObjectImpl implements SvgLineElement {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String STROKE_WIDTH_EDEFAULT = "\"1\"";
+	protected static final String STROKE_WIDTH_EDEFAULT = "1";
 
 	/**
 	 * The cached value of the '{@link #getStroke_width() <em>Stroke width</em>}' attribute.

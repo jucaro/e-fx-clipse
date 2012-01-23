@@ -269,8 +269,8 @@ public class FXHoverProvider extends DefaultEObjectHoverProvider {/*extends Xbas
 		IJvmTypeProvider jvmTypeProvider = jvmTypeProviderFactory.createTypeProvider(fxml.eResource().getResourceSet());
 		
 		for (String imp : getImports(fxml)) {
-			if (imp.endsWith("*")) {
-				JvmType t = jvmTypeProvider.findTypeByName(imp.substring(0, imp.length() - 1) + name);
+			if (imp.lastIndexOf(".") > 0 && Character.isLowerCase(imp.charAt(imp.lastIndexOf(".")+1))) {
+				JvmType t = jvmTypeProvider.findTypeByName(imp + "." + name);
 				if (t != null) {
 					return t;
 				}

@@ -346,6 +346,25 @@ public interface SvgPackage extends EPackage {
 	int FILTER_PRIMITIVE_ELEMENT_FEATURE_COUNT = 0;
 
 	/**
+	 * The meta object id for the '{@link at.bestsolution.efxclipse.formats.svg.svg.impl.AnimationElementImpl <em>Animation Element</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see at.bestsolution.efxclipse.formats.svg.svg.impl.AnimationElementImpl
+	 * @see at.bestsolution.efxclipse.formats.svg.svg.impl.SvgPackageImpl#getAnimationElement()
+	 * @generated
+	 */
+	int ANIMATION_ELEMENT = 14;
+
+	/**
+	 * The number of structural features of the '<em>Animation Element</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ANIMATION_ELEMENT_FEATURE_COUNT = 0;
+
+	/**
 	 * The meta object id for the '{@link at.bestsolution.efxclipse.formats.svg.svg.impl.____ENUMS____Impl <em>ENUMS </em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -353,7 +372,7 @@ public interface SvgPackage extends EPackage {
 	 * @see at.bestsolution.efxclipse.formats.svg.svg.impl.SvgPackageImpl#get____ENUMS____()
 	 * @generated
 	 */
-	int _ENUMS_ = 14;
+	int _ENUMS_ = 15;
 
 	/**
 	 * The number of structural features of the '<em>ENUMS </em>' class.
@@ -372,7 +391,7 @@ public interface SvgPackage extends EPackage {
 	 * @see at.bestsolution.efxclipse.formats.svg.svg.impl.SvgPackageImpl#get____DATATYPES____()
 	 * @generated
 	 */
-	int _DATATYPES_ = 15;
+	int _DATATYPES_ = 16;
 
 	/**
 	 * The number of structural features of the '<em>DATATYPES </em>' class.
@@ -391,7 +410,7 @@ public interface SvgPackage extends EPackage {
 	 * @see at.bestsolution.efxclipse.formats.svg.svg.impl.SvgPackageImpl#get____ATTRIBUTES____()
 	 * @generated
 	 */
-	int _ATTRIBUTES_ = 16;
+	int _ATTRIBUTES_ = 17;
 
 	/**
 	 * The number of structural features of the '<em>ATTRIBUTES </em>' class.
@@ -410,7 +429,7 @@ public interface SvgPackage extends EPackage {
 	 * @see at.bestsolution.efxclipse.formats.svg.svg.impl.SvgPackageImpl#getConditionalProcessingAttributes()
 	 * @generated
 	 */
-	int CONDITIONAL_PROCESSING_ATTRIBUTES = 17;
+	int CONDITIONAL_PROCESSING_ATTRIBUTES = 18;
 
 	/**
 	 * The feature id for the '<em><b>Required Features</b></em>' attribute.
@@ -456,7 +475,7 @@ public interface SvgPackage extends EPackage {
 	 * @see at.bestsolution.efxclipse.formats.svg.svg.impl.SvgPackageImpl#getCoreAttributes()
 	 * @generated
 	 */
-	int CORE_ATTRIBUTES = 18;
+	int CORE_ATTRIBUTES = 19;
 
 	/**
 	 * The feature id for the '<em><b>Id</b></em>' attribute.
@@ -511,7 +530,7 @@ public interface SvgPackage extends EPackage {
 	 * @see at.bestsolution.efxclipse.formats.svg.svg.impl.SvgPackageImpl#getDocumentEventAttributes()
 	 * @generated
 	 */
-	int DOCUMENT_EVENT_ATTRIBUTES = 19;
+	int DOCUMENT_EVENT_ATTRIBUTES = 20;
 
 	/**
 	 * The feature id for the '<em><b>Onunload</b></em>' attribute.
@@ -584,7 +603,7 @@ public interface SvgPackage extends EPackage {
 	 * @see at.bestsolution.efxclipse.formats.svg.svg.impl.SvgPackageImpl#getGraphicalEventAttributes()
 	 * @generated
 	 */
-	int GRAPHICAL_EVENT_ATTRIBUTES = 20;
+	int GRAPHICAL_EVENT_ATTRIBUTES = 21;
 
 	/**
 	 * The feature id for the '<em><b>Onfocusin</b></em>' attribute.
@@ -693,7 +712,7 @@ public interface SvgPackage extends EPackage {
 	 * @see at.bestsolution.efxclipse.formats.svg.svg.impl.SvgPackageImpl#getPresentationAttributes()
 	 * @generated
 	 */
-	int PRESENTATION_ATTRIBUTES = 21;
+	int PRESENTATION_ATTRIBUTES = 22;
 
 	/**
 	 * The feature id for the '<em><b>Alignment baseline</b></em>' attribute.
@@ -1243,7 +1262,7 @@ public interface SvgPackage extends EPackage {
 	 * @see at.bestsolution.efxclipse.formats.svg.svg.impl.SvgPackageImpl#getXLinkAttributes()
 	 * @generated
 	 */
-	int XLINK_ATTRIBUTES = 22;
+	int XLINK_ATTRIBUTES = 23;
 
 	/**
 	 * The feature id for the '<em><b>Xlink href</b></em>' attribute.
@@ -1309,13 +1328,22 @@ public interface SvgPackage extends EPackage {
 	int XLINK_ATTRIBUTES__XLINK_TITLE = 6;
 
 	/**
+	 * The feature id for the '<em><b>Resolved Instance</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int XLINK_ATTRIBUTES__RESOLVED_INSTANCE = 7;
+
+	/**
 	 * The number of structural features of the '<em>XLink Attributes</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int XLINK_ATTRIBUTES_FEATURE_COUNT = 7;
+	int XLINK_ATTRIBUTES_FEATURE_COUNT = 8;
 
 	/**
 	 * The meta object id for the '{@link at.bestsolution.efxclipse.formats.svg.svg.FilterPrimitiveAttributes <em>Filter Primitive Attributes</em>}' class.
@@ -1325,7 +1353,7 @@ public interface SvgPackage extends EPackage {
 	 * @see at.bestsolution.efxclipse.formats.svg.svg.impl.SvgPackageImpl#getFilterPrimitiveAttributes()
 	 * @generated
 	 */
-	int FILTER_PRIMITIVE_ATTRIBUTES = 23;
+	int FILTER_PRIMITIVE_ATTRIBUTES = 24;
 
 	/**
 	 * The feature id for the '<em><b>X</b></em>' attribute.
@@ -1398,7 +1426,7 @@ public interface SvgPackage extends EPackage {
 	 * @see at.bestsolution.efxclipse.formats.svg.svg.impl.SvgPackageImpl#get____ELEMENTES____()
 	 * @generated
 	 */
-	int _ELEMENTES_ = 24;
+	int _ELEMENTES_ = 25;
 
 	/**
 	 * The number of structural features of the '<em>ELEMENTES </em>' class.
@@ -1417,7 +1445,7 @@ public interface SvgPackage extends EPackage {
 	 * @see at.bestsolution.efxclipse.formats.svg.svg.impl.SvgPackageImpl#getSvgSvgElement()
 	 * @generated
 	 */
-	int SVG_SVG_ELEMENT = 25;
+	int SVG_SVG_ELEMENT = 26;
 
 	/**
 	 * The feature id for the '<em><b>Children</b></em>' containment reference list.
@@ -2309,7 +2337,7 @@ public interface SvgPackage extends EPackage {
 	 * @see at.bestsolution.efxclipse.formats.svg.svg.impl.SvgPackageImpl#getSvgGElement()
 	 * @generated
 	 */
-	int SVG_GELEMENT = 26;
+	int SVG_GELEMENT = 27;
 
 	/**
 	 * The feature id for the '<em><b>Children</b></em>' containment reference list.
@@ -3075,7 +3103,7 @@ public interface SvgPackage extends EPackage {
 	 * @see at.bestsolution.efxclipse.formats.svg.svg.impl.SvgPackageImpl#getSvgDefsElement()
 	 * @generated
 	 */
-	int SVG_DEFS_ELEMENT = 27;
+	int SVG_DEFS_ELEMENT = 28;
 
 	/**
 	 * The feature id for the '<em><b>Children</b></em>' containment reference list.
@@ -3823,7 +3851,7 @@ public interface SvgPackage extends EPackage {
 	 * @see at.bestsolution.efxclipse.formats.svg.svg.impl.SvgPackageImpl#getSvgDescElement()
 	 * @generated
 	 */
-	int SVG_DESC_ELEMENT = 28;
+	int SVG_DESC_ELEMENT = 29;
 
 	/**
 	 * The feature id for the '<em><b>Id</b></em>' attribute.
@@ -3905,7 +3933,7 @@ public interface SvgPackage extends EPackage {
 	 * @see at.bestsolution.efxclipse.formats.svg.svg.impl.SvgPackageImpl#getSvgTitleElement()
 	 * @generated
 	 */
-	int SVG_TITLE_ELEMENT = 29;
+	int SVG_TITLE_ELEMENT = 30;
 
 	/**
 	 * The feature id for the '<em><b>Id</b></em>' attribute.
@@ -3987,7 +4015,7 @@ public interface SvgPackage extends EPackage {
 	 * @see at.bestsolution.efxclipse.formats.svg.svg.impl.SvgPackageImpl#getSvgSymbolElement()
 	 * @generated
 	 */
-	int SVG_SYMBOL_ELEMENT = 30;
+	int SVG_SYMBOL_ELEMENT = 31;
 
 	/**
 	 * The feature id for the '<em><b>Children</b></em>' containment reference list.
@@ -4717,7 +4745,7 @@ public interface SvgPackage extends EPackage {
 	 * @see at.bestsolution.efxclipse.formats.svg.svg.impl.SvgPackageImpl#getSvgUseElement()
 	 * @generated
 	 */
-	int SVG_USE_ELEMENT = 31;
+	int SVG_USE_ELEMENT = 32;
 
 	/**
 	 * The feature id for the '<em><b>Required Features</b></em>' attribute.
@@ -5467,13 +5495,22 @@ public interface SvgPackage extends EPackage {
 	int SVG_USE_ELEMENT__XLINK_TITLE = SVG_ELEMENT_FEATURE_COUNT + 82;
 
 	/**
+	 * The feature id for the '<em><b>Resolved Instance</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SVG_USE_ELEMENT__RESOLVED_INSTANCE = SVG_ELEMENT_FEATURE_COUNT + 83;
+
+	/**
 	 * The feature id for the '<em><b>Children</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_USE_ELEMENT__CHILDREN = SVG_ELEMENT_FEATURE_COUNT + 83;
+	int SVG_USE_ELEMENT__CHILDREN = SVG_ELEMENT_FEATURE_COUNT + 84;
 
 	/**
 	 * The feature id for the '<em><b>Class</b></em>' attribute.
@@ -5482,7 +5519,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_USE_ELEMENT__CLASS = SVG_ELEMENT_FEATURE_COUNT + 84;
+	int SVG_USE_ELEMENT__CLASS = SVG_ELEMENT_FEATURE_COUNT + 85;
 
 	/**
 	 * The feature id for the '<em><b>Style</b></em>' attribute.
@@ -5491,7 +5528,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_USE_ELEMENT__STYLE = SVG_ELEMENT_FEATURE_COUNT + 85;
+	int SVG_USE_ELEMENT__STYLE = SVG_ELEMENT_FEATURE_COUNT + 86;
 
 	/**
 	 * The feature id for the '<em><b>External Resources Required</b></em>' attribute.
@@ -5500,7 +5537,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_USE_ELEMENT__EXTERNAL_RESOURCES_REQUIRED = SVG_ELEMENT_FEATURE_COUNT + 86;
+	int SVG_USE_ELEMENT__EXTERNAL_RESOURCES_REQUIRED = SVG_ELEMENT_FEATURE_COUNT + 87;
 
 	/**
 	 * The feature id for the '<em><b>Transform</b></em>' attribute.
@@ -5509,7 +5546,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_USE_ELEMENT__TRANSFORM = SVG_ELEMENT_FEATURE_COUNT + 87;
+	int SVG_USE_ELEMENT__TRANSFORM = SVG_ELEMENT_FEATURE_COUNT + 88;
 
 	/**
 	 * The feature id for the '<em><b>Width</b></em>' attribute.
@@ -5518,7 +5555,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_USE_ELEMENT__WIDTH = SVG_ELEMENT_FEATURE_COUNT + 88;
+	int SVG_USE_ELEMENT__WIDTH = SVG_ELEMENT_FEATURE_COUNT + 89;
 
 	/**
 	 * The feature id for the '<em><b>Height</b></em>' attribute.
@@ -5527,7 +5564,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_USE_ELEMENT__HEIGHT = SVG_ELEMENT_FEATURE_COUNT + 89;
+	int SVG_USE_ELEMENT__HEIGHT = SVG_ELEMENT_FEATURE_COUNT + 90;
 
 	/**
 	 * The number of structural features of the '<em>Use Element</em>' class.
@@ -5536,7 +5573,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_USE_ELEMENT_FEATURE_COUNT = SVG_ELEMENT_FEATURE_COUNT + 90;
+	int SVG_USE_ELEMENT_FEATURE_COUNT = SVG_ELEMENT_FEATURE_COUNT + 91;
 
 	/**
 	 * The meta object id for the '{@link at.bestsolution.efxclipse.formats.svg.svg.impl.SvgImageElementImpl <em>Image Element</em>}' class.
@@ -5546,7 +5583,7 @@ public interface SvgPackage extends EPackage {
 	 * @see at.bestsolution.efxclipse.formats.svg.svg.impl.SvgPackageImpl#getSvgImageElement()
 	 * @generated
 	 */
-	int SVG_IMAGE_ELEMENT = 32;
+	int SVG_IMAGE_ELEMENT = 33;
 
 	/**
 	 * The feature id for the '<em><b>Required Features</b></em>' attribute.
@@ -6296,13 +6333,22 @@ public interface SvgPackage extends EPackage {
 	int SVG_IMAGE_ELEMENT__XLINK_TITLE = SVG_ELEMENT_FEATURE_COUNT + 82;
 
 	/**
+	 * The feature id for the '<em><b>Resolved Instance</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SVG_IMAGE_ELEMENT__RESOLVED_INSTANCE = SVG_ELEMENT_FEATURE_COUNT + 83;
+
+	/**
 	 * The feature id for the '<em><b>Children</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_IMAGE_ELEMENT__CHILDREN = SVG_ELEMENT_FEATURE_COUNT + 83;
+	int SVG_IMAGE_ELEMENT__CHILDREN = SVG_ELEMENT_FEATURE_COUNT + 84;
 
 	/**
 	 * The feature id for the '<em><b>Class</b></em>' attribute.
@@ -6311,7 +6357,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_IMAGE_ELEMENT__CLASS = SVG_ELEMENT_FEATURE_COUNT + 84;
+	int SVG_IMAGE_ELEMENT__CLASS = SVG_ELEMENT_FEATURE_COUNT + 85;
 
 	/**
 	 * The feature id for the '<em><b>Style</b></em>' attribute.
@@ -6320,7 +6366,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_IMAGE_ELEMENT__STYLE = SVG_ELEMENT_FEATURE_COUNT + 85;
+	int SVG_IMAGE_ELEMENT__STYLE = SVG_ELEMENT_FEATURE_COUNT + 86;
 
 	/**
 	 * The feature id for the '<em><b>External Resources Required</b></em>' attribute.
@@ -6329,7 +6375,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_IMAGE_ELEMENT__EXTERNAL_RESOURCES_REQUIRED = SVG_ELEMENT_FEATURE_COUNT + 86;
+	int SVG_IMAGE_ELEMENT__EXTERNAL_RESOURCES_REQUIRED = SVG_ELEMENT_FEATURE_COUNT + 87;
 
 	/**
 	 * The feature id for the '<em><b>Preserve Aspect Ratio</b></em>' attribute.
@@ -6338,7 +6384,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_IMAGE_ELEMENT__PRESERVE_ASPECT_RATIO = SVG_ELEMENT_FEATURE_COUNT + 87;
+	int SVG_IMAGE_ELEMENT__PRESERVE_ASPECT_RATIO = SVG_ELEMENT_FEATURE_COUNT + 88;
 
 	/**
 	 * The feature id for the '<em><b>Transform</b></em>' attribute.
@@ -6347,7 +6393,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_IMAGE_ELEMENT__TRANSFORM = SVG_ELEMENT_FEATURE_COUNT + 88;
+	int SVG_IMAGE_ELEMENT__TRANSFORM = SVG_ELEMENT_FEATURE_COUNT + 89;
 
 	/**
 	 * The feature id for the '<em><b>X</b></em>' attribute.
@@ -6356,7 +6402,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_IMAGE_ELEMENT__X = SVG_ELEMENT_FEATURE_COUNT + 89;
+	int SVG_IMAGE_ELEMENT__X = SVG_ELEMENT_FEATURE_COUNT + 90;
 
 	/**
 	 * The feature id for the '<em><b>Y</b></em>' attribute.
@@ -6365,7 +6411,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_IMAGE_ELEMENT__Y = SVG_ELEMENT_FEATURE_COUNT + 90;
+	int SVG_IMAGE_ELEMENT__Y = SVG_ELEMENT_FEATURE_COUNT + 91;
 
 	/**
 	 * The feature id for the '<em><b>Width</b></em>' attribute.
@@ -6374,7 +6420,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_IMAGE_ELEMENT__WIDTH = SVG_ELEMENT_FEATURE_COUNT + 91;
+	int SVG_IMAGE_ELEMENT__WIDTH = SVG_ELEMENT_FEATURE_COUNT + 92;
 
 	/**
 	 * The feature id for the '<em><b>Height</b></em>' attribute.
@@ -6383,7 +6429,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_IMAGE_ELEMENT__HEIGHT = SVG_ELEMENT_FEATURE_COUNT + 92;
+	int SVG_IMAGE_ELEMENT__HEIGHT = SVG_ELEMENT_FEATURE_COUNT + 93;
 
 	/**
 	 * The number of structural features of the '<em>Image Element</em>' class.
@@ -6392,7 +6438,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_IMAGE_ELEMENT_FEATURE_COUNT = SVG_ELEMENT_FEATURE_COUNT + 93;
+	int SVG_IMAGE_ELEMENT_FEATURE_COUNT = SVG_ELEMENT_FEATURE_COUNT + 94;
 
 	/**
 	 * The meta object id for the '{@link at.bestsolution.efxclipse.formats.svg.svg.impl.SvgSwitchElementImpl <em>Switch Element</em>}' class.
@@ -6402,7 +6448,7 @@ public interface SvgPackage extends EPackage {
 	 * @see at.bestsolution.efxclipse.formats.svg.svg.impl.SvgPackageImpl#getSvgSwitchElement()
 	 * @generated
 	 */
-	int SVG_SWITCH_ELEMENT = 33;
+	int SVG_SWITCH_ELEMENT = 34;
 
 	/**
 	 * The feature id for the '<em><b>Children</b></em>' containment reference list.
@@ -7150,7 +7196,7 @@ public interface SvgPackage extends EPackage {
 	 * @see at.bestsolution.efxclipse.formats.svg.svg.impl.SvgPackageImpl#getSvgPathElement()
 	 * @generated
 	 */
-	int SVG_PATH_ELEMENT = 34;
+	int SVG_PATH_ELEMENT = 35;
 
 	/**
 	 * The feature id for the '<em><b>Required Features</b></em>' attribute.
@@ -7916,7 +7962,7 @@ public interface SvgPackage extends EPackage {
 	 * @see at.bestsolution.efxclipse.formats.svg.svg.impl.SvgPackageImpl#getSvgRectElement()
 	 * @generated
 	 */
-	int SVG_RECT_ELEMENT = 35;
+	int SVG_RECT_ELEMENT = 36;
 
 	/**
 	 * The feature id for the '<em><b>Required Features</b></em>' attribute.
@@ -8718,7 +8764,7 @@ public interface SvgPackage extends EPackage {
 	 * @see at.bestsolution.efxclipse.formats.svg.svg.impl.SvgPackageImpl#getSvgCircleElement()
 	 * @generated
 	 */
-	int SVG_CIRCLE_ELEMENT = 36;
+	int SVG_CIRCLE_ELEMENT = 37;
 
 	/**
 	 * The feature id for the '<em><b>Required Features</b></em>' attribute.
@@ -9493,7 +9539,7 @@ public interface SvgPackage extends EPackage {
 	 * @see at.bestsolution.efxclipse.formats.svg.svg.impl.SvgPackageImpl#getSvgEllipseElement()
 	 * @generated
 	 */
-	int SVG_ELLIPSE_ELEMENT = 37;
+	int SVG_ELLIPSE_ELEMENT = 38;
 
 	/**
 	 * The feature id for the '<em><b>Required Features</b></em>' attribute.
@@ -10277,7 +10323,7 @@ public interface SvgPackage extends EPackage {
 	 * @see at.bestsolution.efxclipse.formats.svg.svg.impl.SvgPackageImpl#getSvgLineElement()
 	 * @generated
 	 */
-	int SVG_LINE_ELEMENT = 38;
+	int SVG_LINE_ELEMENT = 39;
 
 	/**
 	 * The feature id for the '<em><b>Required Features</b></em>' attribute.
@@ -11061,7 +11107,7 @@ public interface SvgPackage extends EPackage {
 	 * @see at.bestsolution.efxclipse.formats.svg.svg.impl.SvgPackageImpl#getSvgPolylineElement()
 	 * @generated
 	 */
-	int SVG_POLYLINE_ELEMENT = 39;
+	int SVG_POLYLINE_ELEMENT = 40;
 
 	/**
 	 * The feature id for the '<em><b>Required Features</b></em>' attribute.
@@ -11818,7 +11864,7 @@ public interface SvgPackage extends EPackage {
 	 * @see at.bestsolution.efxclipse.formats.svg.svg.impl.SvgPackageImpl#getSvgPolygonElement()
 	 * @generated
 	 */
-	int SVG_POLYGON_ELEMENT = 40;
+	int SVG_POLYGON_ELEMENT = 41;
 
 	/**
 	 * The feature id for the '<em><b>Required Features</b></em>' attribute.
@@ -12575,7 +12621,7 @@ public interface SvgPackage extends EPackage {
 	 * @see at.bestsolution.efxclipse.formats.svg.svg.impl.SvgPackageImpl#getSvgTextElement()
 	 * @generated
 	 */
-	int SVG_TEXT_ELEMENT = 41;
+	int SVG_TEXT_ELEMENT = 42;
 
 	/**
 	 * The feature id for the '<em><b>Required Features</b></em>' attribute.
@@ -13386,7 +13432,7 @@ public interface SvgPackage extends EPackage {
 	 * @see at.bestsolution.efxclipse.formats.svg.svg.impl.SvgPackageImpl#getSvgTspanElement()
 	 * @generated
 	 */
-	int SVG_TSPAN_ELEMENT = 42;
+	int SVG_TSPAN_ELEMENT = 43;
 
 	/**
 	 * The feature id for the '<em><b>Required Features</b></em>' attribute.
@@ -14188,7 +14234,7 @@ public interface SvgPackage extends EPackage {
 	 * @see at.bestsolution.efxclipse.formats.svg.svg.impl.SvgPackageImpl#getSvgTrefElement()
 	 * @generated
 	 */
-	int SVG_TREF_ELEMENT = 43;
+	int SVG_TREF_ELEMENT = 44;
 
 	/**
 	 * The feature id for the '<em><b>Required Features</b></em>' attribute.
@@ -14938,13 +14984,22 @@ public interface SvgPackage extends EPackage {
 	int SVG_TREF_ELEMENT__XLINK_TITLE = SVG_ELEMENT_FEATURE_COUNT + 82;
 
 	/**
+	 * The feature id for the '<em><b>Resolved Instance</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SVG_TREF_ELEMENT__RESOLVED_INSTANCE = SVG_ELEMENT_FEATURE_COUNT + 83;
+
+	/**
 	 * The feature id for the '<em><b>Children</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_TREF_ELEMENT__CHILDREN = SVG_ELEMENT_FEATURE_COUNT + 83;
+	int SVG_TREF_ELEMENT__CHILDREN = SVG_ELEMENT_FEATURE_COUNT + 84;
 
 	/**
 	 * The feature id for the '<em><b>Class</b></em>' attribute.
@@ -14953,7 +15008,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_TREF_ELEMENT__CLASS = SVG_ELEMENT_FEATURE_COUNT + 84;
+	int SVG_TREF_ELEMENT__CLASS = SVG_ELEMENT_FEATURE_COUNT + 85;
 
 	/**
 	 * The feature id for the '<em><b>Style</b></em>' attribute.
@@ -14962,7 +15017,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_TREF_ELEMENT__STYLE = SVG_ELEMENT_FEATURE_COUNT + 85;
+	int SVG_TREF_ELEMENT__STYLE = SVG_ELEMENT_FEATURE_COUNT + 86;
 
 	/**
 	 * The feature id for the '<em><b>External Resources Required</b></em>' attribute.
@@ -14971,7 +15026,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_TREF_ELEMENT__EXTERNAL_RESOURCES_REQUIRED = SVG_ELEMENT_FEATURE_COUNT + 86;
+	int SVG_TREF_ELEMENT__EXTERNAL_RESOURCES_REQUIRED = SVG_ELEMENT_FEATURE_COUNT + 87;
 
 	/**
 	 * The number of structural features of the '<em>Tref Element</em>' class.
@@ -14980,7 +15035,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_TREF_ELEMENT_FEATURE_COUNT = SVG_ELEMENT_FEATURE_COUNT + 87;
+	int SVG_TREF_ELEMENT_FEATURE_COUNT = SVG_ELEMENT_FEATURE_COUNT + 88;
 
 	/**
 	 * The meta object id for the '{@link at.bestsolution.efxclipse.formats.svg.svg.impl.SvgTextPathElementImpl <em>Text Path Element</em>}' class.
@@ -14990,7 +15045,7 @@ public interface SvgPackage extends EPackage {
 	 * @see at.bestsolution.efxclipse.formats.svg.svg.impl.SvgPackageImpl#getSvgTextPathElement()
 	 * @generated
 	 */
-	int SVG_TEXT_PATH_ELEMENT = 44;
+	int SVG_TEXT_PATH_ELEMENT = 45;
 
 	/**
 	 * The feature id for the '<em><b>Required Features</b></em>' attribute.
@@ -15740,13 +15795,22 @@ public interface SvgPackage extends EPackage {
 	int SVG_TEXT_PATH_ELEMENT__XLINK_TITLE = SVG_ELEMENT_FEATURE_COUNT + 82;
 
 	/**
+	 * The feature id for the '<em><b>Resolved Instance</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SVG_TEXT_PATH_ELEMENT__RESOLVED_INSTANCE = SVG_ELEMENT_FEATURE_COUNT + 83;
+
+	/**
 	 * The feature id for the '<em><b>Children</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_TEXT_PATH_ELEMENT__CHILDREN = SVG_ELEMENT_FEATURE_COUNT + 83;
+	int SVG_TEXT_PATH_ELEMENT__CHILDREN = SVG_ELEMENT_FEATURE_COUNT + 84;
 
 	/**
 	 * The feature id for the '<em><b>Class</b></em>' attribute.
@@ -15755,7 +15819,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_TEXT_PATH_ELEMENT__CLASS = SVG_ELEMENT_FEATURE_COUNT + 84;
+	int SVG_TEXT_PATH_ELEMENT__CLASS = SVG_ELEMENT_FEATURE_COUNT + 85;
 
 	/**
 	 * The feature id for the '<em><b>Style</b></em>' attribute.
@@ -15764,7 +15828,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_TEXT_PATH_ELEMENT__STYLE = SVG_ELEMENT_FEATURE_COUNT + 85;
+	int SVG_TEXT_PATH_ELEMENT__STYLE = SVG_ELEMENT_FEATURE_COUNT + 86;
 
 	/**
 	 * The feature id for the '<em><b>External Resources Required</b></em>' attribute.
@@ -15773,7 +15837,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_TEXT_PATH_ELEMENT__EXTERNAL_RESOURCES_REQUIRED = SVG_ELEMENT_FEATURE_COUNT + 86;
+	int SVG_TEXT_PATH_ELEMENT__EXTERNAL_RESOURCES_REQUIRED = SVG_ELEMENT_FEATURE_COUNT + 87;
 
 	/**
 	 * The feature id for the '<em><b>Start Offset</b></em>' attribute.
@@ -15782,7 +15846,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_TEXT_PATH_ELEMENT__START_OFFSET = SVG_ELEMENT_FEATURE_COUNT + 87;
+	int SVG_TEXT_PATH_ELEMENT__START_OFFSET = SVG_ELEMENT_FEATURE_COUNT + 88;
 
 	/**
 	 * The feature id for the '<em><b>Method</b></em>' attribute.
@@ -15791,7 +15855,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_TEXT_PATH_ELEMENT__METHOD = SVG_ELEMENT_FEATURE_COUNT + 88;
+	int SVG_TEXT_PATH_ELEMENT__METHOD = SVG_ELEMENT_FEATURE_COUNT + 89;
 
 	/**
 	 * The feature id for the '<em><b>Spacing</b></em>' attribute.
@@ -15800,7 +15864,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_TEXT_PATH_ELEMENT__SPACING = SVG_ELEMENT_FEATURE_COUNT + 89;
+	int SVG_TEXT_PATH_ELEMENT__SPACING = SVG_ELEMENT_FEATURE_COUNT + 90;
 
 	/**
 	 * The number of structural features of the '<em>Text Path Element</em>' class.
@@ -15809,7 +15873,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_TEXT_PATH_ELEMENT_FEATURE_COUNT = SVG_ELEMENT_FEATURE_COUNT + 90;
+	int SVG_TEXT_PATH_ELEMENT_FEATURE_COUNT = SVG_ELEMENT_FEATURE_COUNT + 91;
 
 	/**
 	 * The meta object id for the '{@link at.bestsolution.efxclipse.formats.svg.svg.impl.SvgAltGlyphElementImpl <em>Alt Glyph Element</em>}' class.
@@ -15819,7 +15883,7 @@ public interface SvgPackage extends EPackage {
 	 * @see at.bestsolution.efxclipse.formats.svg.svg.impl.SvgPackageImpl#getSvgAltGlyphElement()
 	 * @generated
 	 */
-	int SVG_ALT_GLYPH_ELEMENT = 45;
+	int SVG_ALT_GLYPH_ELEMENT = 46;
 
 	/**
 	 * The feature id for the '<em><b>Required Features</b></em>' attribute.
@@ -16569,13 +16633,22 @@ public interface SvgPackage extends EPackage {
 	int SVG_ALT_GLYPH_ELEMENT__XLINK_TITLE = SVG_ELEMENT_FEATURE_COUNT + 82;
 
 	/**
+	 * The feature id for the '<em><b>Resolved Instance</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SVG_ALT_GLYPH_ELEMENT__RESOLVED_INSTANCE = SVG_ELEMENT_FEATURE_COUNT + 83;
+
+	/**
 	 * The feature id for the '<em><b>Children</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_ALT_GLYPH_ELEMENT__CHILDREN = SVG_ELEMENT_FEATURE_COUNT + 83;
+	int SVG_ALT_GLYPH_ELEMENT__CHILDREN = SVG_ELEMENT_FEATURE_COUNT + 84;
 
 	/**
 	 * The feature id for the '<em><b>Class</b></em>' attribute.
@@ -16584,7 +16657,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_ALT_GLYPH_ELEMENT__CLASS = SVG_ELEMENT_FEATURE_COUNT + 84;
+	int SVG_ALT_GLYPH_ELEMENT__CLASS = SVG_ELEMENT_FEATURE_COUNT + 85;
 
 	/**
 	 * The feature id for the '<em><b>Style</b></em>' attribute.
@@ -16593,7 +16666,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_ALT_GLYPH_ELEMENT__STYLE = SVG_ELEMENT_FEATURE_COUNT + 85;
+	int SVG_ALT_GLYPH_ELEMENT__STYLE = SVG_ELEMENT_FEATURE_COUNT + 86;
 
 	/**
 	 * The feature id for the '<em><b>External Resources Required</b></em>' attribute.
@@ -16602,7 +16675,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_ALT_GLYPH_ELEMENT__EXTERNAL_RESOURCES_REQUIRED = SVG_ELEMENT_FEATURE_COUNT + 86;
+	int SVG_ALT_GLYPH_ELEMENT__EXTERNAL_RESOURCES_REQUIRED = SVG_ELEMENT_FEATURE_COUNT + 87;
 
 	/**
 	 * The feature id for the '<em><b>X</b></em>' attribute.
@@ -16611,7 +16684,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_ALT_GLYPH_ELEMENT__X = SVG_ELEMENT_FEATURE_COUNT + 87;
+	int SVG_ALT_GLYPH_ELEMENT__X = SVG_ELEMENT_FEATURE_COUNT + 88;
 
 	/**
 	 * The feature id for the '<em><b>Y</b></em>' attribute.
@@ -16620,7 +16693,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_ALT_GLYPH_ELEMENT__Y = SVG_ELEMENT_FEATURE_COUNT + 88;
+	int SVG_ALT_GLYPH_ELEMENT__Y = SVG_ELEMENT_FEATURE_COUNT + 89;
 
 	/**
 	 * The feature id for the '<em><b>Dx</b></em>' attribute.
@@ -16629,7 +16702,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_ALT_GLYPH_ELEMENT__DX = SVG_ELEMENT_FEATURE_COUNT + 89;
+	int SVG_ALT_GLYPH_ELEMENT__DX = SVG_ELEMENT_FEATURE_COUNT + 90;
 
 	/**
 	 * The feature id for the '<em><b>Dy</b></em>' attribute.
@@ -16638,7 +16711,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_ALT_GLYPH_ELEMENT__DY = SVG_ELEMENT_FEATURE_COUNT + 90;
+	int SVG_ALT_GLYPH_ELEMENT__DY = SVG_ELEMENT_FEATURE_COUNT + 91;
 
 	/**
 	 * The feature id for the '<em><b>Glyph Ref</b></em>' attribute.
@@ -16647,7 +16720,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_ALT_GLYPH_ELEMENT__GLYPH_REF = SVG_ELEMENT_FEATURE_COUNT + 91;
+	int SVG_ALT_GLYPH_ELEMENT__GLYPH_REF = SVG_ELEMENT_FEATURE_COUNT + 92;
 
 	/**
 	 * The feature id for the '<em><b>Format</b></em>' attribute.
@@ -16656,7 +16729,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_ALT_GLYPH_ELEMENT__FORMAT = SVG_ELEMENT_FEATURE_COUNT + 92;
+	int SVG_ALT_GLYPH_ELEMENT__FORMAT = SVG_ELEMENT_FEATURE_COUNT + 93;
 
 	/**
 	 * The feature id for the '<em><b>Rotate</b></em>' attribute.
@@ -16665,7 +16738,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_ALT_GLYPH_ELEMENT__ROTATE = SVG_ELEMENT_FEATURE_COUNT + 93;
+	int SVG_ALT_GLYPH_ELEMENT__ROTATE = SVG_ELEMENT_FEATURE_COUNT + 94;
 
 	/**
 	 * The number of structural features of the '<em>Alt Glyph Element</em>' class.
@@ -16674,7 +16747,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_ALT_GLYPH_ELEMENT_FEATURE_COUNT = SVG_ELEMENT_FEATURE_COUNT + 94;
+	int SVG_ALT_GLYPH_ELEMENT_FEATURE_COUNT = SVG_ELEMENT_FEATURE_COUNT + 95;
 
 	/**
 	 * The meta object id for the '{@link at.bestsolution.efxclipse.formats.svg.svg.impl.SvgAltGlyphDefElementImpl <em>Alt Glyph Def Element</em>}' class.
@@ -16684,7 +16757,7 @@ public interface SvgPackage extends EPackage {
 	 * @see at.bestsolution.efxclipse.formats.svg.svg.impl.SvgPackageImpl#getSvgAltGlyphDefElement()
 	 * @generated
 	 */
-	int SVG_ALT_GLYPH_DEF_ELEMENT = 46;
+	int SVG_ALT_GLYPH_DEF_ELEMENT = 47;
 
 	/**
 	 * The feature id for the '<em><b>Id</b></em>' attribute.
@@ -16748,7 +16821,7 @@ public interface SvgPackage extends EPackage {
 	 * @see at.bestsolution.efxclipse.formats.svg.svg.impl.SvgPackageImpl#getSvgAltGlyphItemElement()
 	 * @generated
 	 */
-	int SVG_ALT_GLYPH_ITEM_ELEMENT = 47;
+	int SVG_ALT_GLYPH_ITEM_ELEMENT = 48;
 
 	/**
 	 * The feature id for the '<em><b>Id</b></em>' attribute.
@@ -16812,7 +16885,7 @@ public interface SvgPackage extends EPackage {
 	 * @see at.bestsolution.efxclipse.formats.svg.svg.impl.SvgPackageImpl#getSvgAltGlyphRefElement()
 	 * @generated
 	 */
-	int SVG_ALT_GLYPH_REF_ELEMENT = 48;
+	int SVG_ALT_GLYPH_REF_ELEMENT = 49;
 
 	/**
 	 * The feature id for the '<em><b>Id</b></em>' attribute.
@@ -17445,13 +17518,22 @@ public interface SvgPackage extends EPackage {
 	int SVG_ALT_GLYPH_REF_ELEMENT__XLINK_TITLE = SVG_ELEMENT_FEATURE_COUNT + 69;
 
 	/**
+	 * The feature id for the '<em><b>Resolved Instance</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SVG_ALT_GLYPH_REF_ELEMENT__RESOLVED_INSTANCE = SVG_ELEMENT_FEATURE_COUNT + 70;
+
+	/**
 	 * The feature id for the '<em><b>Children</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_ALT_GLYPH_REF_ELEMENT__CHILDREN = SVG_ELEMENT_FEATURE_COUNT + 70;
+	int SVG_ALT_GLYPH_REF_ELEMENT__CHILDREN = SVG_ELEMENT_FEATURE_COUNT + 71;
 
 	/**
 	 * The feature id for the '<em><b>Class</b></em>' attribute.
@@ -17460,7 +17542,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_ALT_GLYPH_REF_ELEMENT__CLASS = SVG_ELEMENT_FEATURE_COUNT + 71;
+	int SVG_ALT_GLYPH_REF_ELEMENT__CLASS = SVG_ELEMENT_FEATURE_COUNT + 72;
 
 	/**
 	 * The feature id for the '<em><b>Style</b></em>' attribute.
@@ -17469,7 +17551,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_ALT_GLYPH_REF_ELEMENT__STYLE = SVG_ELEMENT_FEATURE_COUNT + 72;
+	int SVG_ALT_GLYPH_REF_ELEMENT__STYLE = SVG_ELEMENT_FEATURE_COUNT + 73;
 
 	/**
 	 * The feature id for the '<em><b>X</b></em>' attribute.
@@ -17478,7 +17560,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_ALT_GLYPH_REF_ELEMENT__X = SVG_ELEMENT_FEATURE_COUNT + 73;
+	int SVG_ALT_GLYPH_REF_ELEMENT__X = SVG_ELEMENT_FEATURE_COUNT + 74;
 
 	/**
 	 * The feature id for the '<em><b>Y</b></em>' attribute.
@@ -17487,7 +17569,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_ALT_GLYPH_REF_ELEMENT__Y = SVG_ELEMENT_FEATURE_COUNT + 74;
+	int SVG_ALT_GLYPH_REF_ELEMENT__Y = SVG_ELEMENT_FEATURE_COUNT + 75;
 
 	/**
 	 * The feature id for the '<em><b>Dx</b></em>' attribute.
@@ -17496,7 +17578,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_ALT_GLYPH_REF_ELEMENT__DX = SVG_ELEMENT_FEATURE_COUNT + 75;
+	int SVG_ALT_GLYPH_REF_ELEMENT__DX = SVG_ELEMENT_FEATURE_COUNT + 76;
 
 	/**
 	 * The feature id for the '<em><b>Dy</b></em>' attribute.
@@ -17505,7 +17587,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_ALT_GLYPH_REF_ELEMENT__DY = SVG_ELEMENT_FEATURE_COUNT + 76;
+	int SVG_ALT_GLYPH_REF_ELEMENT__DY = SVG_ELEMENT_FEATURE_COUNT + 77;
 
 	/**
 	 * The feature id for the '<em><b>Glyph Ref</b></em>' attribute.
@@ -17514,7 +17596,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_ALT_GLYPH_REF_ELEMENT__GLYPH_REF = SVG_ELEMENT_FEATURE_COUNT + 77;
+	int SVG_ALT_GLYPH_REF_ELEMENT__GLYPH_REF = SVG_ELEMENT_FEATURE_COUNT + 78;
 
 	/**
 	 * The feature id for the '<em><b>Format</b></em>' attribute.
@@ -17523,7 +17605,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_ALT_GLYPH_REF_ELEMENT__FORMAT = SVG_ELEMENT_FEATURE_COUNT + 78;
+	int SVG_ALT_GLYPH_REF_ELEMENT__FORMAT = SVG_ELEMENT_FEATURE_COUNT + 79;
 
 	/**
 	 * The number of structural features of the '<em>Alt Glyph Ref Element</em>' class.
@@ -17532,7 +17614,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_ALT_GLYPH_REF_ELEMENT_FEATURE_COUNT = SVG_ELEMENT_FEATURE_COUNT + 79;
+	int SVG_ALT_GLYPH_REF_ELEMENT_FEATURE_COUNT = SVG_ELEMENT_FEATURE_COUNT + 80;
 
 	/**
 	 * The meta object id for the '{@link at.bestsolution.efxclipse.formats.svg.svg.impl.SvgMarkerElementImpl <em>Marker Element</em>}' class.
@@ -17542,7 +17624,7 @@ public interface SvgPackage extends EPackage {
 	 * @see at.bestsolution.efxclipse.formats.svg.svg.impl.SvgPackageImpl#getSvgMarkerElement()
 	 * @generated
 	 */
-	int SVG_MARKER_ELEMENT = 49;
+	int SVG_MARKER_ELEMENT = 50;
 
 	/**
 	 * The feature id for the '<em><b>Id</b></em>' attribute.
@@ -18236,7 +18318,7 @@ public interface SvgPackage extends EPackage {
 	 * @see at.bestsolution.efxclipse.formats.svg.svg.impl.SvgPackageImpl#getSvgColorProfileElement()
 	 * @generated
 	 */
-	int SVG_COLOR_PROFILE_ELEMENT = 50;
+	int SVG_COLOR_PROFILE_ELEMENT = 51;
 
 	/**
 	 * The feature id for the '<em><b>Id</b></em>' attribute.
@@ -18869,13 +18951,22 @@ public interface SvgPackage extends EPackage {
 	int SVG_COLOR_PROFILE_ELEMENT__XLINK_TITLE = SVG_ELEMENT_FEATURE_COUNT + 69;
 
 	/**
+	 * The feature id for the '<em><b>Resolved Instance</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SVG_COLOR_PROFILE_ELEMENT__RESOLVED_INSTANCE = SVG_ELEMENT_FEATURE_COUNT + 70;
+
+	/**
 	 * The feature id for the '<em><b>Children</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_COLOR_PROFILE_ELEMENT__CHILDREN = SVG_ELEMENT_FEATURE_COUNT + 70;
+	int SVG_COLOR_PROFILE_ELEMENT__CHILDREN = SVG_ELEMENT_FEATURE_COUNT + 71;
 
 	/**
 	 * The feature id for the '<em><b>Local</b></em>' attribute.
@@ -18884,7 +18975,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_COLOR_PROFILE_ELEMENT__LOCAL = SVG_ELEMENT_FEATURE_COUNT + 71;
+	int SVG_COLOR_PROFILE_ELEMENT__LOCAL = SVG_ELEMENT_FEATURE_COUNT + 72;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -18893,7 +18984,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_COLOR_PROFILE_ELEMENT__NAME = SVG_ELEMENT_FEATURE_COUNT + 72;
+	int SVG_COLOR_PROFILE_ELEMENT__NAME = SVG_ELEMENT_FEATURE_COUNT + 73;
 
 	/**
 	 * The feature id for the '<em><b>Rendering intent</b></em>' attribute.
@@ -18902,7 +18993,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_COLOR_PROFILE_ELEMENT__RENDERING_INTENT = SVG_ELEMENT_FEATURE_COUNT + 73;
+	int SVG_COLOR_PROFILE_ELEMENT__RENDERING_INTENT = SVG_ELEMENT_FEATURE_COUNT + 74;
 
 	/**
 	 * The number of structural features of the '<em>Color Profile Element</em>' class.
@@ -18911,7 +19002,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_COLOR_PROFILE_ELEMENT_FEATURE_COUNT = SVG_ELEMENT_FEATURE_COUNT + 74;
+	int SVG_COLOR_PROFILE_ELEMENT_FEATURE_COUNT = SVG_ELEMENT_FEATURE_COUNT + 75;
 
 	/**
 	 * The meta object id for the '{@link at.bestsolution.efxclipse.formats.svg.svg.impl.SvgLinearGradientElementImpl <em>Linear Gradient Element</em>}' class.
@@ -18921,7 +19012,7 @@ public interface SvgPackage extends EPackage {
 	 * @see at.bestsolution.efxclipse.formats.svg.svg.impl.SvgPackageImpl#getSvgLinearGradientElement()
 	 * @generated
 	 */
-	int SVG_LINEAR_GRADIENT_ELEMENT = 51;
+	int SVG_LINEAR_GRADIENT_ELEMENT = 52;
 
 	/**
 	 * The feature id for the '<em><b>Id</b></em>' attribute.
@@ -19554,13 +19645,22 @@ public interface SvgPackage extends EPackage {
 	int SVG_LINEAR_GRADIENT_ELEMENT__XLINK_TITLE = SVG_ELEMENT_FEATURE_COUNT + 69;
 
 	/**
+	 * The feature id for the '<em><b>Resolved Instance</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SVG_LINEAR_GRADIENT_ELEMENT__RESOLVED_INSTANCE = SVG_ELEMENT_FEATURE_COUNT + 70;
+
+	/**
 	 * The feature id for the '<em><b>Children</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_LINEAR_GRADIENT_ELEMENT__CHILDREN = SVG_ELEMENT_FEATURE_COUNT + 70;
+	int SVG_LINEAR_GRADIENT_ELEMENT__CHILDREN = SVG_ELEMENT_FEATURE_COUNT + 71;
 
 	/**
 	 * The feature id for the '<em><b>Class</b></em>' attribute.
@@ -19569,7 +19669,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_LINEAR_GRADIENT_ELEMENT__CLASS = SVG_ELEMENT_FEATURE_COUNT + 71;
+	int SVG_LINEAR_GRADIENT_ELEMENT__CLASS = SVG_ELEMENT_FEATURE_COUNT + 72;
 
 	/**
 	 * The feature id for the '<em><b>Style</b></em>' attribute.
@@ -19578,7 +19678,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_LINEAR_GRADIENT_ELEMENT__STYLE = SVG_ELEMENT_FEATURE_COUNT + 72;
+	int SVG_LINEAR_GRADIENT_ELEMENT__STYLE = SVG_ELEMENT_FEATURE_COUNT + 73;
 
 	/**
 	 * The feature id for the '<em><b>External Resources Required</b></em>' attribute.
@@ -19587,7 +19687,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_LINEAR_GRADIENT_ELEMENT__EXTERNAL_RESOURCES_REQUIRED = SVG_ELEMENT_FEATURE_COUNT + 73;
+	int SVG_LINEAR_GRADIENT_ELEMENT__EXTERNAL_RESOURCES_REQUIRED = SVG_ELEMENT_FEATURE_COUNT + 74;
 
 	/**
 	 * The feature id for the '<em><b>X1</b></em>' attribute.
@@ -19596,7 +19696,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_LINEAR_GRADIENT_ELEMENT__X1 = SVG_ELEMENT_FEATURE_COUNT + 74;
+	int SVG_LINEAR_GRADIENT_ELEMENT__X1 = SVG_ELEMENT_FEATURE_COUNT + 75;
 
 	/**
 	 * The feature id for the '<em><b>Y1</b></em>' attribute.
@@ -19605,7 +19705,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_LINEAR_GRADIENT_ELEMENT__Y1 = SVG_ELEMENT_FEATURE_COUNT + 75;
+	int SVG_LINEAR_GRADIENT_ELEMENT__Y1 = SVG_ELEMENT_FEATURE_COUNT + 76;
 
 	/**
 	 * The feature id for the '<em><b>X2</b></em>' attribute.
@@ -19614,7 +19714,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_LINEAR_GRADIENT_ELEMENT__X2 = SVG_ELEMENT_FEATURE_COUNT + 76;
+	int SVG_LINEAR_GRADIENT_ELEMENT__X2 = SVG_ELEMENT_FEATURE_COUNT + 77;
 
 	/**
 	 * The feature id for the '<em><b>Y2</b></em>' attribute.
@@ -19623,7 +19723,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_LINEAR_GRADIENT_ELEMENT__Y2 = SVG_ELEMENT_FEATURE_COUNT + 77;
+	int SVG_LINEAR_GRADIENT_ELEMENT__Y2 = SVG_ELEMENT_FEATURE_COUNT + 78;
 
 	/**
 	 * The feature id for the '<em><b>Gradient Units</b></em>' attribute.
@@ -19632,7 +19732,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_LINEAR_GRADIENT_ELEMENT__GRADIENT_UNITS = SVG_ELEMENT_FEATURE_COUNT + 78;
+	int SVG_LINEAR_GRADIENT_ELEMENT__GRADIENT_UNITS = SVG_ELEMENT_FEATURE_COUNT + 79;
 
 	/**
 	 * The feature id for the '<em><b>Spread Method</b></em>' attribute.
@@ -19641,7 +19741,16 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_LINEAR_GRADIENT_ELEMENT__SPREAD_METHOD = SVG_ELEMENT_FEATURE_COUNT + 79;
+	int SVG_LINEAR_GRADIENT_ELEMENT__SPREAD_METHOD = SVG_ELEMENT_FEATURE_COUNT + 80;
+
+	/**
+	 * The feature id for the '<em><b>Gradient Transform</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SVG_LINEAR_GRADIENT_ELEMENT__GRADIENT_TRANSFORM = SVG_ELEMENT_FEATURE_COUNT + 81;
 
 	/**
 	 * The number of structural features of the '<em>Linear Gradient Element</em>' class.
@@ -19650,7 +19759,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_LINEAR_GRADIENT_ELEMENT_FEATURE_COUNT = SVG_ELEMENT_FEATURE_COUNT + 80;
+	int SVG_LINEAR_GRADIENT_ELEMENT_FEATURE_COUNT = SVG_ELEMENT_FEATURE_COUNT + 82;
 
 	/**
 	 * The meta object id for the '{@link at.bestsolution.efxclipse.formats.svg.svg.impl.SvgRadialGradientElementImpl <em>Radial Gradient Element</em>}' class.
@@ -19660,7 +19769,7 @@ public interface SvgPackage extends EPackage {
 	 * @see at.bestsolution.efxclipse.formats.svg.svg.impl.SvgPackageImpl#getSvgRadialGradientElement()
 	 * @generated
 	 */
-	int SVG_RADIAL_GRADIENT_ELEMENT = 52;
+	int SVG_RADIAL_GRADIENT_ELEMENT = 53;
 
 	/**
 	 * The feature id for the '<em><b>Id</b></em>' attribute.
@@ -20293,13 +20402,22 @@ public interface SvgPackage extends EPackage {
 	int SVG_RADIAL_GRADIENT_ELEMENT__XLINK_TITLE = SVG_ELEMENT_FEATURE_COUNT + 69;
 
 	/**
+	 * The feature id for the '<em><b>Resolved Instance</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SVG_RADIAL_GRADIENT_ELEMENT__RESOLVED_INSTANCE = SVG_ELEMENT_FEATURE_COUNT + 70;
+
+	/**
 	 * The feature id for the '<em><b>Children</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_RADIAL_GRADIENT_ELEMENT__CHILDREN = SVG_ELEMENT_FEATURE_COUNT + 70;
+	int SVG_RADIAL_GRADIENT_ELEMENT__CHILDREN = SVG_ELEMENT_FEATURE_COUNT + 71;
 
 	/**
 	 * The feature id for the '<em><b>Class</b></em>' attribute.
@@ -20308,7 +20426,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_RADIAL_GRADIENT_ELEMENT__CLASS = SVG_ELEMENT_FEATURE_COUNT + 71;
+	int SVG_RADIAL_GRADIENT_ELEMENT__CLASS = SVG_ELEMENT_FEATURE_COUNT + 72;
 
 	/**
 	 * The feature id for the '<em><b>Style</b></em>' attribute.
@@ -20317,7 +20435,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_RADIAL_GRADIENT_ELEMENT__STYLE = SVG_ELEMENT_FEATURE_COUNT + 72;
+	int SVG_RADIAL_GRADIENT_ELEMENT__STYLE = SVG_ELEMENT_FEATURE_COUNT + 73;
 
 	/**
 	 * The feature id for the '<em><b>External Resources Required</b></em>' attribute.
@@ -20326,7 +20444,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_RADIAL_GRADIENT_ELEMENT__EXTERNAL_RESOURCES_REQUIRED = SVG_ELEMENT_FEATURE_COUNT + 73;
+	int SVG_RADIAL_GRADIENT_ELEMENT__EXTERNAL_RESOURCES_REQUIRED = SVG_ELEMENT_FEATURE_COUNT + 74;
 
 	/**
 	 * The feature id for the '<em><b>Cx</b></em>' attribute.
@@ -20335,7 +20453,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_RADIAL_GRADIENT_ELEMENT__CX = SVG_ELEMENT_FEATURE_COUNT + 74;
+	int SVG_RADIAL_GRADIENT_ELEMENT__CX = SVG_ELEMENT_FEATURE_COUNT + 75;
 
 	/**
 	 * The feature id for the '<em><b>Cy</b></em>' attribute.
@@ -20344,7 +20462,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_RADIAL_GRADIENT_ELEMENT__CY = SVG_ELEMENT_FEATURE_COUNT + 75;
+	int SVG_RADIAL_GRADIENT_ELEMENT__CY = SVG_ELEMENT_FEATURE_COUNT + 76;
 
 	/**
 	 * The feature id for the '<em><b>R</b></em>' attribute.
@@ -20353,7 +20471,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_RADIAL_GRADIENT_ELEMENT__R = SVG_ELEMENT_FEATURE_COUNT + 76;
+	int SVG_RADIAL_GRADIENT_ELEMENT__R = SVG_ELEMENT_FEATURE_COUNT + 77;
 
 	/**
 	 * The feature id for the '<em><b>Fx</b></em>' attribute.
@@ -20362,7 +20480,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_RADIAL_GRADIENT_ELEMENT__FX = SVG_ELEMENT_FEATURE_COUNT + 77;
+	int SVG_RADIAL_GRADIENT_ELEMENT__FX = SVG_ELEMENT_FEATURE_COUNT + 78;
 
 	/**
 	 * The feature id for the '<em><b>Fy</b></em>' attribute.
@@ -20371,7 +20489,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_RADIAL_GRADIENT_ELEMENT__FY = SVG_ELEMENT_FEATURE_COUNT + 78;
+	int SVG_RADIAL_GRADIENT_ELEMENT__FY = SVG_ELEMENT_FEATURE_COUNT + 79;
 
 	/**
 	 * The feature id for the '<em><b>Spread Method</b></em>' attribute.
@@ -20380,7 +20498,25 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_RADIAL_GRADIENT_ELEMENT__SPREAD_METHOD = SVG_ELEMENT_FEATURE_COUNT + 79;
+	int SVG_RADIAL_GRADIENT_ELEMENT__SPREAD_METHOD = SVG_ELEMENT_FEATURE_COUNT + 80;
+
+	/**
+	 * The feature id for the '<em><b>Gradient Units</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SVG_RADIAL_GRADIENT_ELEMENT__GRADIENT_UNITS = SVG_ELEMENT_FEATURE_COUNT + 81;
+
+	/**
+	 * The feature id for the '<em><b>Gradient Transform</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SVG_RADIAL_GRADIENT_ELEMENT__GRADIENT_TRANSFORM = SVG_ELEMENT_FEATURE_COUNT + 82;
 
 	/**
 	 * The number of structural features of the '<em>Radial Gradient Element</em>' class.
@@ -20389,17 +20525,17 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_RADIAL_GRADIENT_ELEMENT_FEATURE_COUNT = SVG_ELEMENT_FEATURE_COUNT + 80;
+	int SVG_RADIAL_GRADIENT_ELEMENT_FEATURE_COUNT = SVG_ELEMENT_FEATURE_COUNT + 83;
 
 	/**
-	 * The meta object id for the '{@link at.bestsolution.efxclipse.formats.svg.svg.impl.SvgGradientStopElementImpl <em>Gradient Stop Element</em>}' class.
+	 * The meta object id for the '{@link at.bestsolution.efxclipse.formats.svg.svg.impl.SvgStopElementImpl <em>Stop Element</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see at.bestsolution.efxclipse.formats.svg.svg.impl.SvgGradientStopElementImpl
-	 * @see at.bestsolution.efxclipse.formats.svg.svg.impl.SvgPackageImpl#getSvgGradientStopElement()
+	 * @see at.bestsolution.efxclipse.formats.svg.svg.impl.SvgStopElementImpl
+	 * @see at.bestsolution.efxclipse.formats.svg.svg.impl.SvgPackageImpl#getSvgStopElement()
 	 * @generated
 	 */
-	int SVG_GRADIENT_STOP_ELEMENT = 53;
+	int SVG_STOP_ELEMENT = 54;
 
 	/**
 	 * The feature id for the '<em><b>Id</b></em>' attribute.
@@ -20408,7 +20544,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_GRADIENT_STOP_ELEMENT__ID = SVG_ELEMENT_FEATURE_COUNT + 0;
+	int SVG_STOP_ELEMENT__ID = SVG_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Xml base</b></em>' attribute.
@@ -20417,7 +20553,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_GRADIENT_STOP_ELEMENT__XML_BASE = SVG_ELEMENT_FEATURE_COUNT + 1;
+	int SVG_STOP_ELEMENT__XML_BASE = SVG_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Xml lang</b></em>' attribute.
@@ -20426,7 +20562,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_GRADIENT_STOP_ELEMENT__XML_LANG = SVG_ELEMENT_FEATURE_COUNT + 2;
+	int SVG_STOP_ELEMENT__XML_LANG = SVG_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Xml space</b></em>' attribute.
@@ -20435,7 +20571,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_GRADIENT_STOP_ELEMENT__XML_SPACE = SVG_ELEMENT_FEATURE_COUNT + 3;
+	int SVG_STOP_ELEMENT__XML_SPACE = SVG_ELEMENT_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Alignment baseline</b></em>' attribute.
@@ -20444,7 +20580,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_GRADIENT_STOP_ELEMENT__ALIGNMENT_BASELINE = SVG_ELEMENT_FEATURE_COUNT + 4;
+	int SVG_STOP_ELEMENT__ALIGNMENT_BASELINE = SVG_ELEMENT_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Baseline shift</b></em>' attribute.
@@ -20453,7 +20589,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_GRADIENT_STOP_ELEMENT__BASELINE_SHIFT = SVG_ELEMENT_FEATURE_COUNT + 5;
+	int SVG_STOP_ELEMENT__BASELINE_SHIFT = SVG_ELEMENT_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>Clip</b></em>' attribute.
@@ -20462,7 +20598,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_GRADIENT_STOP_ELEMENT__CLIP = SVG_ELEMENT_FEATURE_COUNT + 6;
+	int SVG_STOP_ELEMENT__CLIP = SVG_ELEMENT_FEATURE_COUNT + 6;
 
 	/**
 	 * The feature id for the '<em><b>Clip path</b></em>' attribute.
@@ -20471,7 +20607,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_GRADIENT_STOP_ELEMENT__CLIP_PATH = SVG_ELEMENT_FEATURE_COUNT + 7;
+	int SVG_STOP_ELEMENT__CLIP_PATH = SVG_ELEMENT_FEATURE_COUNT + 7;
 
 	/**
 	 * The feature id for the '<em><b>Clip rule</b></em>' attribute.
@@ -20480,7 +20616,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_GRADIENT_STOP_ELEMENT__CLIP_RULE = SVG_ELEMENT_FEATURE_COUNT + 8;
+	int SVG_STOP_ELEMENT__CLIP_RULE = SVG_ELEMENT_FEATURE_COUNT + 8;
 
 	/**
 	 * The feature id for the '<em><b>Color</b></em>' attribute.
@@ -20489,7 +20625,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_GRADIENT_STOP_ELEMENT__COLOR = SVG_ELEMENT_FEATURE_COUNT + 9;
+	int SVG_STOP_ELEMENT__COLOR = SVG_ELEMENT_FEATURE_COUNT + 9;
 
 	/**
 	 * The feature id for the '<em><b>Color interpolation</b></em>' attribute.
@@ -20498,7 +20634,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_GRADIENT_STOP_ELEMENT__COLOR_INTERPOLATION = SVG_ELEMENT_FEATURE_COUNT + 10;
+	int SVG_STOP_ELEMENT__COLOR_INTERPOLATION = SVG_ELEMENT_FEATURE_COUNT + 10;
 
 	/**
 	 * The feature id for the '<em><b>Color interpolation filters</b></em>' attribute.
@@ -20507,7 +20643,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_GRADIENT_STOP_ELEMENT__COLOR_INTERPOLATION_FILTERS = SVG_ELEMENT_FEATURE_COUNT + 11;
+	int SVG_STOP_ELEMENT__COLOR_INTERPOLATION_FILTERS = SVG_ELEMENT_FEATURE_COUNT + 11;
 
 	/**
 	 * The feature id for the '<em><b>Color profile</b></em>' attribute.
@@ -20516,7 +20652,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_GRADIENT_STOP_ELEMENT__COLOR_PROFILE = SVG_ELEMENT_FEATURE_COUNT + 12;
+	int SVG_STOP_ELEMENT__COLOR_PROFILE = SVG_ELEMENT_FEATURE_COUNT + 12;
 
 	/**
 	 * The feature id for the '<em><b>Color rendering</b></em>' attribute.
@@ -20525,7 +20661,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_GRADIENT_STOP_ELEMENT__COLOR_RENDERING = SVG_ELEMENT_FEATURE_COUNT + 13;
+	int SVG_STOP_ELEMENT__COLOR_RENDERING = SVG_ELEMENT_FEATURE_COUNT + 13;
 
 	/**
 	 * The feature id for the '<em><b>Cursor</b></em>' attribute.
@@ -20534,7 +20670,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_GRADIENT_STOP_ELEMENT__CURSOR = SVG_ELEMENT_FEATURE_COUNT + 14;
+	int SVG_STOP_ELEMENT__CURSOR = SVG_ELEMENT_FEATURE_COUNT + 14;
 
 	/**
 	 * The feature id for the '<em><b>Direction</b></em>' attribute.
@@ -20543,7 +20679,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_GRADIENT_STOP_ELEMENT__DIRECTION = SVG_ELEMENT_FEATURE_COUNT + 15;
+	int SVG_STOP_ELEMENT__DIRECTION = SVG_ELEMENT_FEATURE_COUNT + 15;
 
 	/**
 	 * The feature id for the '<em><b>Display</b></em>' attribute.
@@ -20552,7 +20688,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_GRADIENT_STOP_ELEMENT__DISPLAY = SVG_ELEMENT_FEATURE_COUNT + 16;
+	int SVG_STOP_ELEMENT__DISPLAY = SVG_ELEMENT_FEATURE_COUNT + 16;
 
 	/**
 	 * The feature id for the '<em><b>Dominant baseline</b></em>' attribute.
@@ -20561,7 +20697,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_GRADIENT_STOP_ELEMENT__DOMINANT_BASELINE = SVG_ELEMENT_FEATURE_COUNT + 17;
+	int SVG_STOP_ELEMENT__DOMINANT_BASELINE = SVG_ELEMENT_FEATURE_COUNT + 17;
 
 	/**
 	 * The feature id for the '<em><b>Enable background</b></em>' attribute.
@@ -20570,7 +20706,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_GRADIENT_STOP_ELEMENT__ENABLE_BACKGROUND = SVG_ELEMENT_FEATURE_COUNT + 18;
+	int SVG_STOP_ELEMENT__ENABLE_BACKGROUND = SVG_ELEMENT_FEATURE_COUNT + 18;
 
 	/**
 	 * The feature id for the '<em><b>Fill</b></em>' attribute.
@@ -20579,7 +20715,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_GRADIENT_STOP_ELEMENT__FILL = SVG_ELEMENT_FEATURE_COUNT + 19;
+	int SVG_STOP_ELEMENT__FILL = SVG_ELEMENT_FEATURE_COUNT + 19;
 
 	/**
 	 * The feature id for the '<em><b>Fill opacity</b></em>' attribute.
@@ -20588,7 +20724,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_GRADIENT_STOP_ELEMENT__FILL_OPACITY = SVG_ELEMENT_FEATURE_COUNT + 20;
+	int SVG_STOP_ELEMENT__FILL_OPACITY = SVG_ELEMENT_FEATURE_COUNT + 20;
 
 	/**
 	 * The feature id for the '<em><b>Fill rule</b></em>' attribute.
@@ -20597,7 +20733,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_GRADIENT_STOP_ELEMENT__FILL_RULE = SVG_ELEMENT_FEATURE_COUNT + 21;
+	int SVG_STOP_ELEMENT__FILL_RULE = SVG_ELEMENT_FEATURE_COUNT + 21;
 
 	/**
 	 * The feature id for the '<em><b>Filter</b></em>' attribute.
@@ -20606,7 +20742,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_GRADIENT_STOP_ELEMENT__FILTER = SVG_ELEMENT_FEATURE_COUNT + 22;
+	int SVG_STOP_ELEMENT__FILTER = SVG_ELEMENT_FEATURE_COUNT + 22;
 
 	/**
 	 * The feature id for the '<em><b>Flood color</b></em>' attribute.
@@ -20615,7 +20751,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_GRADIENT_STOP_ELEMENT__FLOOD_COLOR = SVG_ELEMENT_FEATURE_COUNT + 23;
+	int SVG_STOP_ELEMENT__FLOOD_COLOR = SVG_ELEMENT_FEATURE_COUNT + 23;
 
 	/**
 	 * The feature id for the '<em><b>Flood opacity</b></em>' attribute.
@@ -20624,7 +20760,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_GRADIENT_STOP_ELEMENT__FLOOD_OPACITY = SVG_ELEMENT_FEATURE_COUNT + 24;
+	int SVG_STOP_ELEMENT__FLOOD_OPACITY = SVG_ELEMENT_FEATURE_COUNT + 24;
 
 	/**
 	 * The feature id for the '<em><b>Font family</b></em>' attribute.
@@ -20633,7 +20769,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_GRADIENT_STOP_ELEMENT__FONT_FAMILY = SVG_ELEMENT_FEATURE_COUNT + 25;
+	int SVG_STOP_ELEMENT__FONT_FAMILY = SVG_ELEMENT_FEATURE_COUNT + 25;
 
 	/**
 	 * The feature id for the '<em><b>Font size</b></em>' attribute.
@@ -20642,7 +20778,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_GRADIENT_STOP_ELEMENT__FONT_SIZE = SVG_ELEMENT_FEATURE_COUNT + 26;
+	int SVG_STOP_ELEMENT__FONT_SIZE = SVG_ELEMENT_FEATURE_COUNT + 26;
 
 	/**
 	 * The feature id for the '<em><b>Font size adjust</b></em>' attribute.
@@ -20651,7 +20787,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_GRADIENT_STOP_ELEMENT__FONT_SIZE_ADJUST = SVG_ELEMENT_FEATURE_COUNT + 27;
+	int SVG_STOP_ELEMENT__FONT_SIZE_ADJUST = SVG_ELEMENT_FEATURE_COUNT + 27;
 
 	/**
 	 * The feature id for the '<em><b>Font stretch</b></em>' attribute.
@@ -20660,7 +20796,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_GRADIENT_STOP_ELEMENT__FONT_STRETCH = SVG_ELEMENT_FEATURE_COUNT + 28;
+	int SVG_STOP_ELEMENT__FONT_STRETCH = SVG_ELEMENT_FEATURE_COUNT + 28;
 
 	/**
 	 * The feature id for the '<em><b>Font style</b></em>' attribute.
@@ -20669,7 +20805,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_GRADIENT_STOP_ELEMENT__FONT_STYLE = SVG_ELEMENT_FEATURE_COUNT + 29;
+	int SVG_STOP_ELEMENT__FONT_STYLE = SVG_ELEMENT_FEATURE_COUNT + 29;
 
 	/**
 	 * The feature id for the '<em><b>Font variant</b></em>' attribute.
@@ -20678,7 +20814,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_GRADIENT_STOP_ELEMENT__FONT_VARIANT = SVG_ELEMENT_FEATURE_COUNT + 30;
+	int SVG_STOP_ELEMENT__FONT_VARIANT = SVG_ELEMENT_FEATURE_COUNT + 30;
 
 	/**
 	 * The feature id for the '<em><b>Font weight</b></em>' attribute.
@@ -20687,7 +20823,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_GRADIENT_STOP_ELEMENT__FONT_WEIGHT = SVG_ELEMENT_FEATURE_COUNT + 31;
+	int SVG_STOP_ELEMENT__FONT_WEIGHT = SVG_ELEMENT_FEATURE_COUNT + 31;
 
 	/**
 	 * The feature id for the '<em><b>Glyph orientation horizontal</b></em>' attribute.
@@ -20696,7 +20832,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_GRADIENT_STOP_ELEMENT__GLYPH_ORIENTATION_HORIZONTAL = SVG_ELEMENT_FEATURE_COUNT + 32;
+	int SVG_STOP_ELEMENT__GLYPH_ORIENTATION_HORIZONTAL = SVG_ELEMENT_FEATURE_COUNT + 32;
 
 	/**
 	 * The feature id for the '<em><b>Glyph orientation vertical</b></em>' attribute.
@@ -20705,7 +20841,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_GRADIENT_STOP_ELEMENT__GLYPH_ORIENTATION_VERTICAL = SVG_ELEMENT_FEATURE_COUNT + 33;
+	int SVG_STOP_ELEMENT__GLYPH_ORIENTATION_VERTICAL = SVG_ELEMENT_FEATURE_COUNT + 33;
 
 	/**
 	 * The feature id for the '<em><b>Image rendering</b></em>' attribute.
@@ -20714,7 +20850,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_GRADIENT_STOP_ELEMENT__IMAGE_RENDERING = SVG_ELEMENT_FEATURE_COUNT + 34;
+	int SVG_STOP_ELEMENT__IMAGE_RENDERING = SVG_ELEMENT_FEATURE_COUNT + 34;
 
 	/**
 	 * The feature id for the '<em><b>Kerning</b></em>' attribute.
@@ -20723,7 +20859,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_GRADIENT_STOP_ELEMENT__KERNING = SVG_ELEMENT_FEATURE_COUNT + 35;
+	int SVG_STOP_ELEMENT__KERNING = SVG_ELEMENT_FEATURE_COUNT + 35;
 
 	/**
 	 * The feature id for the '<em><b>Letter spacing</b></em>' attribute.
@@ -20732,7 +20868,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_GRADIENT_STOP_ELEMENT__LETTER_SPACING = SVG_ELEMENT_FEATURE_COUNT + 36;
+	int SVG_STOP_ELEMENT__LETTER_SPACING = SVG_ELEMENT_FEATURE_COUNT + 36;
 
 	/**
 	 * The feature id for the '<em><b>Lighting color</b></em>' attribute.
@@ -20741,7 +20877,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_GRADIENT_STOP_ELEMENT__LIGHTING_COLOR = SVG_ELEMENT_FEATURE_COUNT + 37;
+	int SVG_STOP_ELEMENT__LIGHTING_COLOR = SVG_ELEMENT_FEATURE_COUNT + 37;
 
 	/**
 	 * The feature id for the '<em><b>Marker end</b></em>' attribute.
@@ -20750,7 +20886,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_GRADIENT_STOP_ELEMENT__MARKER_END = SVG_ELEMENT_FEATURE_COUNT + 38;
+	int SVG_STOP_ELEMENT__MARKER_END = SVG_ELEMENT_FEATURE_COUNT + 38;
 
 	/**
 	 * The feature id for the '<em><b>Marker mid</b></em>' attribute.
@@ -20759,7 +20895,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_GRADIENT_STOP_ELEMENT__MARKER_MID = SVG_ELEMENT_FEATURE_COUNT + 39;
+	int SVG_STOP_ELEMENT__MARKER_MID = SVG_ELEMENT_FEATURE_COUNT + 39;
 
 	/**
 	 * The feature id for the '<em><b>Marker start</b></em>' attribute.
@@ -20768,7 +20904,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_GRADIENT_STOP_ELEMENT__MARKER_START = SVG_ELEMENT_FEATURE_COUNT + 40;
+	int SVG_STOP_ELEMENT__MARKER_START = SVG_ELEMENT_FEATURE_COUNT + 40;
 
 	/**
 	 * The feature id for the '<em><b>Masks</b></em>' attribute.
@@ -20777,7 +20913,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_GRADIENT_STOP_ELEMENT__MASKS = SVG_ELEMENT_FEATURE_COUNT + 41;
+	int SVG_STOP_ELEMENT__MASKS = SVG_ELEMENT_FEATURE_COUNT + 41;
 
 	/**
 	 * The feature id for the '<em><b>Opacity</b></em>' attribute.
@@ -20786,7 +20922,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_GRADIENT_STOP_ELEMENT__OPACITY = SVG_ELEMENT_FEATURE_COUNT + 42;
+	int SVG_STOP_ELEMENT__OPACITY = SVG_ELEMENT_FEATURE_COUNT + 42;
 
 	/**
 	 * The feature id for the '<em><b>Overflow</b></em>' attribute.
@@ -20795,7 +20931,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_GRADIENT_STOP_ELEMENT__OVERFLOW = SVG_ELEMENT_FEATURE_COUNT + 43;
+	int SVG_STOP_ELEMENT__OVERFLOW = SVG_ELEMENT_FEATURE_COUNT + 43;
 
 	/**
 	 * The feature id for the '<em><b>Pointer events</b></em>' attribute.
@@ -20804,7 +20940,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_GRADIENT_STOP_ELEMENT__POINTER_EVENTS = SVG_ELEMENT_FEATURE_COUNT + 44;
+	int SVG_STOP_ELEMENT__POINTER_EVENTS = SVG_ELEMENT_FEATURE_COUNT + 44;
 
 	/**
 	 * The feature id for the '<em><b>Shape rendering</b></em>' attribute.
@@ -20813,7 +20949,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_GRADIENT_STOP_ELEMENT__SHAPE_RENDERING = SVG_ELEMENT_FEATURE_COUNT + 45;
+	int SVG_STOP_ELEMENT__SHAPE_RENDERING = SVG_ELEMENT_FEATURE_COUNT + 45;
 
 	/**
 	 * The feature id for the '<em><b>Stop color</b></em>' attribute.
@@ -20822,7 +20958,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_GRADIENT_STOP_ELEMENT__STOP_COLOR = SVG_ELEMENT_FEATURE_COUNT + 46;
+	int SVG_STOP_ELEMENT__STOP_COLOR = SVG_ELEMENT_FEATURE_COUNT + 46;
 
 	/**
 	 * The feature id for the '<em><b>Stop opacity</b></em>' attribute.
@@ -20831,7 +20967,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_GRADIENT_STOP_ELEMENT__STOP_OPACITY = SVG_ELEMENT_FEATURE_COUNT + 47;
+	int SVG_STOP_ELEMENT__STOP_OPACITY = SVG_ELEMENT_FEATURE_COUNT + 47;
 
 	/**
 	 * The feature id for the '<em><b>Stroke</b></em>' attribute.
@@ -20840,7 +20976,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_GRADIENT_STOP_ELEMENT__STROKE = SVG_ELEMENT_FEATURE_COUNT + 48;
+	int SVG_STOP_ELEMENT__STROKE = SVG_ELEMENT_FEATURE_COUNT + 48;
 
 	/**
 	 * The feature id for the '<em><b>Stroke dasharray</b></em>' attribute.
@@ -20849,7 +20985,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_GRADIENT_STOP_ELEMENT__STROKE_DASHARRAY = SVG_ELEMENT_FEATURE_COUNT + 49;
+	int SVG_STOP_ELEMENT__STROKE_DASHARRAY = SVG_ELEMENT_FEATURE_COUNT + 49;
 
 	/**
 	 * The feature id for the '<em><b>Stroke dashoffset</b></em>' attribute.
@@ -20858,7 +20994,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_GRADIENT_STOP_ELEMENT__STROKE_DASHOFFSET = SVG_ELEMENT_FEATURE_COUNT + 50;
+	int SVG_STOP_ELEMENT__STROKE_DASHOFFSET = SVG_ELEMENT_FEATURE_COUNT + 50;
 
 	/**
 	 * The feature id for the '<em><b>Stroke linecap</b></em>' attribute.
@@ -20867,7 +21003,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_GRADIENT_STOP_ELEMENT__STROKE_LINECAP = SVG_ELEMENT_FEATURE_COUNT + 51;
+	int SVG_STOP_ELEMENT__STROKE_LINECAP = SVG_ELEMENT_FEATURE_COUNT + 51;
 
 	/**
 	 * The feature id for the '<em><b>Stroke linejoin</b></em>' attribute.
@@ -20876,7 +21012,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_GRADIENT_STOP_ELEMENT__STROKE_LINEJOIN = SVG_ELEMENT_FEATURE_COUNT + 52;
+	int SVG_STOP_ELEMENT__STROKE_LINEJOIN = SVG_ELEMENT_FEATURE_COUNT + 52;
 
 	/**
 	 * The feature id for the '<em><b>Stroke miterlimit</b></em>' attribute.
@@ -20885,7 +21021,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_GRADIENT_STOP_ELEMENT__STROKE_MITERLIMIT = SVG_ELEMENT_FEATURE_COUNT + 53;
+	int SVG_STOP_ELEMENT__STROKE_MITERLIMIT = SVG_ELEMENT_FEATURE_COUNT + 53;
 
 	/**
 	 * The feature id for the '<em><b>Stroke opacity</b></em>' attribute.
@@ -20894,7 +21030,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_GRADIENT_STOP_ELEMENT__STROKE_OPACITY = SVG_ELEMENT_FEATURE_COUNT + 54;
+	int SVG_STOP_ELEMENT__STROKE_OPACITY = SVG_ELEMENT_FEATURE_COUNT + 54;
 
 	/**
 	 * The feature id for the '<em><b>Stroke width</b></em>' attribute.
@@ -20903,7 +21039,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_GRADIENT_STOP_ELEMENT__STROKE_WIDTH = SVG_ELEMENT_FEATURE_COUNT + 55;
+	int SVG_STOP_ELEMENT__STROKE_WIDTH = SVG_ELEMENT_FEATURE_COUNT + 55;
 
 	/**
 	 * The feature id for the '<em><b>Text anchor</b></em>' attribute.
@@ -20912,7 +21048,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_GRADIENT_STOP_ELEMENT__TEXT_ANCHOR = SVG_ELEMENT_FEATURE_COUNT + 56;
+	int SVG_STOP_ELEMENT__TEXT_ANCHOR = SVG_ELEMENT_FEATURE_COUNT + 56;
 
 	/**
 	 * The feature id for the '<em><b>Text decoration</b></em>' attribute.
@@ -20921,7 +21057,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_GRADIENT_STOP_ELEMENT__TEXT_DECORATION = SVG_ELEMENT_FEATURE_COUNT + 57;
+	int SVG_STOP_ELEMENT__TEXT_DECORATION = SVG_ELEMENT_FEATURE_COUNT + 57;
 
 	/**
 	 * The feature id for the '<em><b>Text rendering</b></em>' attribute.
@@ -20930,7 +21066,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_GRADIENT_STOP_ELEMENT__TEXT_RENDERING = SVG_ELEMENT_FEATURE_COUNT + 58;
+	int SVG_STOP_ELEMENT__TEXT_RENDERING = SVG_ELEMENT_FEATURE_COUNT + 58;
 
 	/**
 	 * The feature id for the '<em><b>Unicode bidi</b></em>' attribute.
@@ -20939,7 +21075,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_GRADIENT_STOP_ELEMENT__UNICODE_BIDI = SVG_ELEMENT_FEATURE_COUNT + 59;
+	int SVG_STOP_ELEMENT__UNICODE_BIDI = SVG_ELEMENT_FEATURE_COUNT + 59;
 
 	/**
 	 * The feature id for the '<em><b>Visibility</b></em>' attribute.
@@ -20948,7 +21084,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_GRADIENT_STOP_ELEMENT__VISIBILITY = SVG_ELEMENT_FEATURE_COUNT + 60;
+	int SVG_STOP_ELEMENT__VISIBILITY = SVG_ELEMENT_FEATURE_COUNT + 60;
 
 	/**
 	 * The feature id for the '<em><b>Word spacing</b></em>' attribute.
@@ -20957,7 +21093,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_GRADIENT_STOP_ELEMENT__WORD_SPACING = SVG_ELEMENT_FEATURE_COUNT + 61;
+	int SVG_STOP_ELEMENT__WORD_SPACING = SVG_ELEMENT_FEATURE_COUNT + 61;
 
 	/**
 	 * The feature id for the '<em><b>Writing mode</b></em>' attribute.
@@ -20966,7 +21102,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_GRADIENT_STOP_ELEMENT__WRITING_MODE = SVG_ELEMENT_FEATURE_COUNT + 62;
+	int SVG_STOP_ELEMENT__WRITING_MODE = SVG_ELEMENT_FEATURE_COUNT + 62;
 
 	/**
 	 * The feature id for the '<em><b>Children</b></em>' containment reference list.
@@ -20975,7 +21111,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_GRADIENT_STOP_ELEMENT__CHILDREN = SVG_ELEMENT_FEATURE_COUNT + 63;
+	int SVG_STOP_ELEMENT__CHILDREN = SVG_ELEMENT_FEATURE_COUNT + 63;
 
 	/**
 	 * The feature id for the '<em><b>Class</b></em>' attribute.
@@ -20984,7 +21120,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_GRADIENT_STOP_ELEMENT__CLASS = SVG_ELEMENT_FEATURE_COUNT + 64;
+	int SVG_STOP_ELEMENT__CLASS = SVG_ELEMENT_FEATURE_COUNT + 64;
 
 	/**
 	 * The feature id for the '<em><b>Style</b></em>' attribute.
@@ -20993,7 +21129,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_GRADIENT_STOP_ELEMENT__STYLE = SVG_ELEMENT_FEATURE_COUNT + 65;
+	int SVG_STOP_ELEMENT__STYLE = SVG_ELEMENT_FEATURE_COUNT + 65;
 
 	/**
 	 * The feature id for the '<em><b>Offset</b></em>' attribute.
@@ -21002,16 +21138,16 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_GRADIENT_STOP_ELEMENT__OFFSET = SVG_ELEMENT_FEATURE_COUNT + 66;
+	int SVG_STOP_ELEMENT__OFFSET = SVG_ELEMENT_FEATURE_COUNT + 66;
 
 	/**
-	 * The number of structural features of the '<em>Gradient Stop Element</em>' class.
+	 * The number of structural features of the '<em>Stop Element</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_GRADIENT_STOP_ELEMENT_FEATURE_COUNT = SVG_ELEMENT_FEATURE_COUNT + 67;
+	int SVG_STOP_ELEMENT_FEATURE_COUNT = SVG_ELEMENT_FEATURE_COUNT + 67;
 
 	/**
 	 * The meta object id for the '{@link at.bestsolution.efxclipse.formats.svg.svg.impl.SvgPatternElementImpl <em>Pattern Element</em>}' class.
@@ -21021,7 +21157,7 @@ public interface SvgPackage extends EPackage {
 	 * @see at.bestsolution.efxclipse.formats.svg.svg.impl.SvgPackageImpl#getSvgPatternElement()
 	 * @generated
 	 */
-	int SVG_PATTERN_ELEMENT = 54;
+	int SVG_PATTERN_ELEMENT = 55;
 
 	/**
 	 * The feature id for the '<em><b>Children</b></em>' containment reference list.
@@ -21690,13 +21826,22 @@ public interface SvgPackage extends EPackage {
 	int SVG_PATTERN_ELEMENT__XLINK_TITLE = SVG_ELEMENT_FEATURE_COUNT + 73;
 
 	/**
+	 * The feature id for the '<em><b>Resolved Instance</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SVG_PATTERN_ELEMENT__RESOLVED_INSTANCE = SVG_ELEMENT_FEATURE_COUNT + 74;
+
+	/**
 	 * The feature id for the '<em><b>Class</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_PATTERN_ELEMENT__CLASS = SVG_ELEMENT_FEATURE_COUNT + 74;
+	int SVG_PATTERN_ELEMENT__CLASS = SVG_ELEMENT_FEATURE_COUNT + 75;
 
 	/**
 	 * The feature id for the '<em><b>Style</b></em>' attribute.
@@ -21705,7 +21850,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_PATTERN_ELEMENT__STYLE = SVG_ELEMENT_FEATURE_COUNT + 75;
+	int SVG_PATTERN_ELEMENT__STYLE = SVG_ELEMENT_FEATURE_COUNT + 76;
 
 	/**
 	 * The feature id for the '<em><b>External Resources Required</b></em>' attribute.
@@ -21714,7 +21859,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_PATTERN_ELEMENT__EXTERNAL_RESOURCES_REQUIRED = SVG_ELEMENT_FEATURE_COUNT + 76;
+	int SVG_PATTERN_ELEMENT__EXTERNAL_RESOURCES_REQUIRED = SVG_ELEMENT_FEATURE_COUNT + 77;
 
 	/**
 	 * The feature id for the '<em><b>View Box</b></em>' attribute.
@@ -21723,7 +21868,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_PATTERN_ELEMENT__VIEW_BOX = SVG_ELEMENT_FEATURE_COUNT + 77;
+	int SVG_PATTERN_ELEMENT__VIEW_BOX = SVG_ELEMENT_FEATURE_COUNT + 78;
 
 	/**
 	 * The feature id for the '<em><b>Preserve Aspect Ratio</b></em>' attribute.
@@ -21732,7 +21877,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_PATTERN_ELEMENT__PRESERVE_ASPECT_RATIO = SVG_ELEMENT_FEATURE_COUNT + 78;
+	int SVG_PATTERN_ELEMENT__PRESERVE_ASPECT_RATIO = SVG_ELEMENT_FEATURE_COUNT + 79;
 
 	/**
 	 * The feature id for the '<em><b>X</b></em>' attribute.
@@ -21741,7 +21886,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_PATTERN_ELEMENT__X = SVG_ELEMENT_FEATURE_COUNT + 79;
+	int SVG_PATTERN_ELEMENT__X = SVG_ELEMENT_FEATURE_COUNT + 80;
 
 	/**
 	 * The feature id for the '<em><b>Y</b></em>' attribute.
@@ -21750,7 +21895,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_PATTERN_ELEMENT__Y = SVG_ELEMENT_FEATURE_COUNT + 80;
+	int SVG_PATTERN_ELEMENT__Y = SVG_ELEMENT_FEATURE_COUNT + 81;
 
 	/**
 	 * The feature id for the '<em><b>Width</b></em>' attribute.
@@ -21759,7 +21904,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_PATTERN_ELEMENT__WIDTH = SVG_ELEMENT_FEATURE_COUNT + 81;
+	int SVG_PATTERN_ELEMENT__WIDTH = SVG_ELEMENT_FEATURE_COUNT + 82;
 
 	/**
 	 * The feature id for the '<em><b>Height</b></em>' attribute.
@@ -21768,7 +21913,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_PATTERN_ELEMENT__HEIGHT = SVG_ELEMENT_FEATURE_COUNT + 82;
+	int SVG_PATTERN_ELEMENT__HEIGHT = SVG_ELEMENT_FEATURE_COUNT + 83;
 
 	/**
 	 * The feature id for the '<em><b>Pattern Units</b></em>' attribute.
@@ -21777,7 +21922,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_PATTERN_ELEMENT__PATTERN_UNITS = SVG_ELEMENT_FEATURE_COUNT + 83;
+	int SVG_PATTERN_ELEMENT__PATTERN_UNITS = SVG_ELEMENT_FEATURE_COUNT + 84;
 
 	/**
 	 * The feature id for the '<em><b>Pattern Content Units</b></em>' attribute.
@@ -21786,7 +21931,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_PATTERN_ELEMENT__PATTERN_CONTENT_UNITS = SVG_ELEMENT_FEATURE_COUNT + 84;
+	int SVG_PATTERN_ELEMENT__PATTERN_CONTENT_UNITS = SVG_ELEMENT_FEATURE_COUNT + 85;
 
 	/**
 	 * The feature id for the '<em><b>Pattern Transform</b></em>' attribute.
@@ -21795,7 +21940,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_PATTERN_ELEMENT__PATTERN_TRANSFORM = SVG_ELEMENT_FEATURE_COUNT + 85;
+	int SVG_PATTERN_ELEMENT__PATTERN_TRANSFORM = SVG_ELEMENT_FEATURE_COUNT + 86;
 
 	/**
 	 * The number of structural features of the '<em>Pattern Element</em>' class.
@@ -21804,7 +21949,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_PATTERN_ELEMENT_FEATURE_COUNT = SVG_ELEMENT_FEATURE_COUNT + 86;
+	int SVG_PATTERN_ELEMENT_FEATURE_COUNT = SVG_ELEMENT_FEATURE_COUNT + 87;
 
 	/**
 	 * The meta object id for the '{@link at.bestsolution.efxclipse.formats.svg.svg.impl.SvgClipPathElementImpl <em>Clip Path Element</em>}' class.
@@ -21814,7 +21959,7 @@ public interface SvgPackage extends EPackage {
 	 * @see at.bestsolution.efxclipse.formats.svg.svg.impl.SvgPackageImpl#getSvgClipPathElement()
 	 * @generated
 	 */
-	int SVG_CLIP_PATH_ELEMENT = 55;
+	int SVG_CLIP_PATH_ELEMENT = 56;
 
 	/**
 	 * The feature id for the '<em><b>Required Features</b></em>' attribute.
@@ -22481,7 +22626,7 @@ public interface SvgPackage extends EPackage {
 	 * @see at.bestsolution.efxclipse.formats.svg.svg.impl.SvgPackageImpl#getSvgMaskElement()
 	 * @generated
 	 */
-	int SVG_MASK_ELEMENT = 56;
+	int SVG_MASK_ELEMENT = 57;
 
 	/**
 	 * The feature id for the '<em><b>Required Features</b></em>' attribute.
@@ -23184,7 +23329,7 @@ public interface SvgPackage extends EPackage {
 	 * @see at.bestsolution.efxclipse.formats.svg.svg.impl.SvgPackageImpl#getSvgFilterElement()
 	 * @generated
 	 */
-	int SVG_FILTER_ELEMENT = 57;
+	int SVG_FILTER_ELEMENT = 58;
 
 	/**
 	 * The feature id for the '<em><b>Id</b></em>' attribute.
@@ -23817,13 +23962,22 @@ public interface SvgPackage extends EPackage {
 	int SVG_FILTER_ELEMENT__XLINK_TITLE = SVG_ELEMENT_FEATURE_COUNT + 69;
 
 	/**
+	 * The feature id for the '<em><b>Resolved Instance</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SVG_FILTER_ELEMENT__RESOLVED_INSTANCE = SVG_ELEMENT_FEATURE_COUNT + 70;
+
+	/**
 	 * The feature id for the '<em><b>Children</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FILTER_ELEMENT__CHILDREN = SVG_ELEMENT_FEATURE_COUNT + 70;
+	int SVG_FILTER_ELEMENT__CHILDREN = SVG_ELEMENT_FEATURE_COUNT + 71;
 
 	/**
 	 * The feature id for the '<em><b>Class</b></em>' attribute.
@@ -23832,7 +23986,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FILTER_ELEMENT__CLASS = SVG_ELEMENT_FEATURE_COUNT + 71;
+	int SVG_FILTER_ELEMENT__CLASS = SVG_ELEMENT_FEATURE_COUNT + 72;
 
 	/**
 	 * The feature id for the '<em><b>Style</b></em>' attribute.
@@ -23841,7 +23995,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FILTER_ELEMENT__STYLE = SVG_ELEMENT_FEATURE_COUNT + 72;
+	int SVG_FILTER_ELEMENT__STYLE = SVG_ELEMENT_FEATURE_COUNT + 73;
 
 	/**
 	 * The feature id for the '<em><b>External Resources Required</b></em>' attribute.
@@ -23850,7 +24004,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FILTER_ELEMENT__EXTERNAL_RESOURCES_REQUIRED = SVG_ELEMENT_FEATURE_COUNT + 73;
+	int SVG_FILTER_ELEMENT__EXTERNAL_RESOURCES_REQUIRED = SVG_ELEMENT_FEATURE_COUNT + 74;
 
 	/**
 	 * The feature id for the '<em><b>X</b></em>' attribute.
@@ -23859,7 +24013,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FILTER_ELEMENT__X = SVG_ELEMENT_FEATURE_COUNT + 74;
+	int SVG_FILTER_ELEMENT__X = SVG_ELEMENT_FEATURE_COUNT + 75;
 
 	/**
 	 * The feature id for the '<em><b>Y</b></em>' attribute.
@@ -23868,7 +24022,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FILTER_ELEMENT__Y = SVG_ELEMENT_FEATURE_COUNT + 75;
+	int SVG_FILTER_ELEMENT__Y = SVG_ELEMENT_FEATURE_COUNT + 76;
 
 	/**
 	 * The feature id for the '<em><b>Width</b></em>' attribute.
@@ -23877,7 +24031,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FILTER_ELEMENT__WIDTH = SVG_ELEMENT_FEATURE_COUNT + 76;
+	int SVG_FILTER_ELEMENT__WIDTH = SVG_ELEMENT_FEATURE_COUNT + 77;
 
 	/**
 	 * The feature id for the '<em><b>Height</b></em>' attribute.
@@ -23886,7 +24040,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FILTER_ELEMENT__HEIGHT = SVG_ELEMENT_FEATURE_COUNT + 77;
+	int SVG_FILTER_ELEMENT__HEIGHT = SVG_ELEMENT_FEATURE_COUNT + 78;
 
 	/**
 	 * The feature id for the '<em><b>Filter Res</b></em>' attribute.
@@ -23895,7 +24049,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FILTER_ELEMENT__FILTER_RES = SVG_ELEMENT_FEATURE_COUNT + 78;
+	int SVG_FILTER_ELEMENT__FILTER_RES = SVG_ELEMENT_FEATURE_COUNT + 79;
 
 	/**
 	 * The feature id for the '<em><b>Filter Units</b></em>' attribute.
@@ -23904,7 +24058,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FILTER_ELEMENT__FILTER_UNITS = SVG_ELEMENT_FEATURE_COUNT + 79;
+	int SVG_FILTER_ELEMENT__FILTER_UNITS = SVG_ELEMENT_FEATURE_COUNT + 80;
 
 	/**
 	 * The feature id for the '<em><b>Primitive Units</b></em>' attribute.
@@ -23913,7 +24067,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FILTER_ELEMENT__PRIMITIVE_UNITS = SVG_ELEMENT_FEATURE_COUNT + 80;
+	int SVG_FILTER_ELEMENT__PRIMITIVE_UNITS = SVG_ELEMENT_FEATURE_COUNT + 81;
 
 	/**
 	 * The number of structural features of the '<em>Filter Element</em>' class.
@@ -23922,17 +24076,17 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FILTER_ELEMENT_FEATURE_COUNT = SVG_ELEMENT_FEATURE_COUNT + 81;
+	int SVG_FILTER_ELEMENT_FEATURE_COUNT = SVG_ELEMENT_FEATURE_COUNT + 82;
 
 	/**
-	 * The meta object id for the '{@link at.bestsolution.efxclipse.formats.svg.svg.impl.SvgFeDistantLightImpl <em>Fe Distant Light</em>}' class.
+	 * The meta object id for the '{@link at.bestsolution.efxclipse.formats.svg.svg.impl.SvgFeDistantLightElementImpl <em>Fe Distant Light Element</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see at.bestsolution.efxclipse.formats.svg.svg.impl.SvgFeDistantLightImpl
-	 * @see at.bestsolution.efxclipse.formats.svg.svg.impl.SvgPackageImpl#getSvgFeDistantLight()
+	 * @see at.bestsolution.efxclipse.formats.svg.svg.impl.SvgFeDistantLightElementImpl
+	 * @see at.bestsolution.efxclipse.formats.svg.svg.impl.SvgPackageImpl#getSvgFeDistantLightElement()
 	 * @generated
 	 */
-	int SVG_FE_DISTANT_LIGHT = 58;
+	int SVG_FE_DISTANT_LIGHT_ELEMENT = 59;
 
 	/**
 	 * The feature id for the '<em><b>Id</b></em>' attribute.
@@ -23941,7 +24095,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_DISTANT_LIGHT__ID = SVG_ELEMENT_FEATURE_COUNT + 0;
+	int SVG_FE_DISTANT_LIGHT_ELEMENT__ID = SVG_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Xml base</b></em>' attribute.
@@ -23950,7 +24104,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_DISTANT_LIGHT__XML_BASE = SVG_ELEMENT_FEATURE_COUNT + 1;
+	int SVG_FE_DISTANT_LIGHT_ELEMENT__XML_BASE = SVG_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Xml lang</b></em>' attribute.
@@ -23959,7 +24113,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_DISTANT_LIGHT__XML_LANG = SVG_ELEMENT_FEATURE_COUNT + 2;
+	int SVG_FE_DISTANT_LIGHT_ELEMENT__XML_LANG = SVG_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Xml space</b></em>' attribute.
@@ -23968,7 +24122,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_DISTANT_LIGHT__XML_SPACE = SVG_ELEMENT_FEATURE_COUNT + 3;
+	int SVG_FE_DISTANT_LIGHT_ELEMENT__XML_SPACE = SVG_ELEMENT_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Children</b></em>' containment reference list.
@@ -23977,7 +24131,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_DISTANT_LIGHT__CHILDREN = SVG_ELEMENT_FEATURE_COUNT + 4;
+	int SVG_FE_DISTANT_LIGHT_ELEMENT__CHILDREN = SVG_ELEMENT_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Azimuth</b></em>' attribute.
@@ -23986,7 +24140,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_DISTANT_LIGHT__AZIMUTH = SVG_ELEMENT_FEATURE_COUNT + 5;
+	int SVG_FE_DISTANT_LIGHT_ELEMENT__AZIMUTH = SVG_ELEMENT_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>Elevation</b></em>' attribute.
@@ -23995,26 +24149,26 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_DISTANT_LIGHT__ELEVATION = SVG_ELEMENT_FEATURE_COUNT + 6;
+	int SVG_FE_DISTANT_LIGHT_ELEMENT__ELEVATION = SVG_ELEMENT_FEATURE_COUNT + 6;
 
 	/**
-	 * The number of structural features of the '<em>Fe Distant Light</em>' class.
+	 * The number of structural features of the '<em>Fe Distant Light Element</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_DISTANT_LIGHT_FEATURE_COUNT = SVG_ELEMENT_FEATURE_COUNT + 7;
+	int SVG_FE_DISTANT_LIGHT_ELEMENT_FEATURE_COUNT = SVG_ELEMENT_FEATURE_COUNT + 7;
 
 	/**
-	 * The meta object id for the '{@link at.bestsolution.efxclipse.formats.svg.svg.impl.SvgFePointLightImpl <em>Fe Point Light</em>}' class.
+	 * The meta object id for the '{@link at.bestsolution.efxclipse.formats.svg.svg.impl.SvgFePointLightElementImpl <em>Fe Point Light Element</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see at.bestsolution.efxclipse.formats.svg.svg.impl.SvgFePointLightImpl
-	 * @see at.bestsolution.efxclipse.formats.svg.svg.impl.SvgPackageImpl#getSvgFePointLight()
+	 * @see at.bestsolution.efxclipse.formats.svg.svg.impl.SvgFePointLightElementImpl
+	 * @see at.bestsolution.efxclipse.formats.svg.svg.impl.SvgPackageImpl#getSvgFePointLightElement()
 	 * @generated
 	 */
-	int SVG_FE_POINT_LIGHT = 59;
+	int SVG_FE_POINT_LIGHT_ELEMENT = 60;
 
 	/**
 	 * The feature id for the '<em><b>Id</b></em>' attribute.
@@ -24023,7 +24177,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_POINT_LIGHT__ID = SVG_ELEMENT_FEATURE_COUNT + 0;
+	int SVG_FE_POINT_LIGHT_ELEMENT__ID = SVG_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Xml base</b></em>' attribute.
@@ -24032,7 +24186,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_POINT_LIGHT__XML_BASE = SVG_ELEMENT_FEATURE_COUNT + 1;
+	int SVG_FE_POINT_LIGHT_ELEMENT__XML_BASE = SVG_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Xml lang</b></em>' attribute.
@@ -24041,7 +24195,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_POINT_LIGHT__XML_LANG = SVG_ELEMENT_FEATURE_COUNT + 2;
+	int SVG_FE_POINT_LIGHT_ELEMENT__XML_LANG = SVG_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Xml space</b></em>' attribute.
@@ -24050,7 +24204,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_POINT_LIGHT__XML_SPACE = SVG_ELEMENT_FEATURE_COUNT + 3;
+	int SVG_FE_POINT_LIGHT_ELEMENT__XML_SPACE = SVG_ELEMENT_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Children</b></em>' containment reference list.
@@ -24059,7 +24213,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_POINT_LIGHT__CHILDREN = SVG_ELEMENT_FEATURE_COUNT + 4;
+	int SVG_FE_POINT_LIGHT_ELEMENT__CHILDREN = SVG_ELEMENT_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>X</b></em>' attribute.
@@ -24068,7 +24222,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_POINT_LIGHT__X = SVG_ELEMENT_FEATURE_COUNT + 5;
+	int SVG_FE_POINT_LIGHT_ELEMENT__X = SVG_ELEMENT_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>Y</b></em>' attribute.
@@ -24077,7 +24231,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_POINT_LIGHT__Y = SVG_ELEMENT_FEATURE_COUNT + 6;
+	int SVG_FE_POINT_LIGHT_ELEMENT__Y = SVG_ELEMENT_FEATURE_COUNT + 6;
 
 	/**
 	 * The feature id for the '<em><b>Z</b></em>' attribute.
@@ -24086,26 +24240,26 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_POINT_LIGHT__Z = SVG_ELEMENT_FEATURE_COUNT + 7;
+	int SVG_FE_POINT_LIGHT_ELEMENT__Z = SVG_ELEMENT_FEATURE_COUNT + 7;
 
 	/**
-	 * The number of structural features of the '<em>Fe Point Light</em>' class.
+	 * The number of structural features of the '<em>Fe Point Light Element</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_POINT_LIGHT_FEATURE_COUNT = SVG_ELEMENT_FEATURE_COUNT + 8;
+	int SVG_FE_POINT_LIGHT_ELEMENT_FEATURE_COUNT = SVG_ELEMENT_FEATURE_COUNT + 8;
 
 	/**
-	 * The meta object id for the '{@link at.bestsolution.efxclipse.formats.svg.svg.impl.SvgFeSpotLightImpl <em>Fe Spot Light</em>}' class.
+	 * The meta object id for the '{@link at.bestsolution.efxclipse.formats.svg.svg.impl.SvgFeSpotLightElementImpl <em>Fe Spot Light Element</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see at.bestsolution.efxclipse.formats.svg.svg.impl.SvgFeSpotLightImpl
-	 * @see at.bestsolution.efxclipse.formats.svg.svg.impl.SvgPackageImpl#getSvgFeSpotLight()
+	 * @see at.bestsolution.efxclipse.formats.svg.svg.impl.SvgFeSpotLightElementImpl
+	 * @see at.bestsolution.efxclipse.formats.svg.svg.impl.SvgPackageImpl#getSvgFeSpotLightElement()
 	 * @generated
 	 */
-	int SVG_FE_SPOT_LIGHT = 60;
+	int SVG_FE_SPOT_LIGHT_ELEMENT = 61;
 
 	/**
 	 * The feature id for the '<em><b>Id</b></em>' attribute.
@@ -24114,7 +24268,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_SPOT_LIGHT__ID = SVG_ELEMENT_FEATURE_COUNT + 0;
+	int SVG_FE_SPOT_LIGHT_ELEMENT__ID = SVG_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Xml base</b></em>' attribute.
@@ -24123,7 +24277,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_SPOT_LIGHT__XML_BASE = SVG_ELEMENT_FEATURE_COUNT + 1;
+	int SVG_FE_SPOT_LIGHT_ELEMENT__XML_BASE = SVG_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Xml lang</b></em>' attribute.
@@ -24132,7 +24286,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_SPOT_LIGHT__XML_LANG = SVG_ELEMENT_FEATURE_COUNT + 2;
+	int SVG_FE_SPOT_LIGHT_ELEMENT__XML_LANG = SVG_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Xml space</b></em>' attribute.
@@ -24141,7 +24295,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_SPOT_LIGHT__XML_SPACE = SVG_ELEMENT_FEATURE_COUNT + 3;
+	int SVG_FE_SPOT_LIGHT_ELEMENT__XML_SPACE = SVG_ELEMENT_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Children</b></em>' containment reference list.
@@ -24150,7 +24304,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_SPOT_LIGHT__CHILDREN = SVG_ELEMENT_FEATURE_COUNT + 4;
+	int SVG_FE_SPOT_LIGHT_ELEMENT__CHILDREN = SVG_ELEMENT_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>X</b></em>' attribute.
@@ -24159,7 +24313,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_SPOT_LIGHT__X = SVG_ELEMENT_FEATURE_COUNT + 5;
+	int SVG_FE_SPOT_LIGHT_ELEMENT__X = SVG_ELEMENT_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>Y</b></em>' attribute.
@@ -24168,7 +24322,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_SPOT_LIGHT__Y = SVG_ELEMENT_FEATURE_COUNT + 6;
+	int SVG_FE_SPOT_LIGHT_ELEMENT__Y = SVG_ELEMENT_FEATURE_COUNT + 6;
 
 	/**
 	 * The feature id for the '<em><b>Z</b></em>' attribute.
@@ -24177,7 +24331,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_SPOT_LIGHT__Z = SVG_ELEMENT_FEATURE_COUNT + 7;
+	int SVG_FE_SPOT_LIGHT_ELEMENT__Z = SVG_ELEMENT_FEATURE_COUNT + 7;
 
 	/**
 	 * The feature id for the '<em><b>Points At X</b></em>' attribute.
@@ -24186,7 +24340,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_SPOT_LIGHT__POINTS_AT_X = SVG_ELEMENT_FEATURE_COUNT + 8;
+	int SVG_FE_SPOT_LIGHT_ELEMENT__POINTS_AT_X = SVG_ELEMENT_FEATURE_COUNT + 8;
 
 	/**
 	 * The feature id for the '<em><b>Points At Y</b></em>' attribute.
@@ -24195,7 +24349,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_SPOT_LIGHT__POINTS_AT_Y = SVG_ELEMENT_FEATURE_COUNT + 9;
+	int SVG_FE_SPOT_LIGHT_ELEMENT__POINTS_AT_Y = SVG_ELEMENT_FEATURE_COUNT + 9;
 
 	/**
 	 * The feature id for the '<em><b>Points At Z</b></em>' attribute.
@@ -24204,7 +24358,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_SPOT_LIGHT__POINTS_AT_Z = SVG_ELEMENT_FEATURE_COUNT + 10;
+	int SVG_FE_SPOT_LIGHT_ELEMENT__POINTS_AT_Z = SVG_ELEMENT_FEATURE_COUNT + 10;
 
 	/**
 	 * The feature id for the '<em><b>Specular Exponent</b></em>' attribute.
@@ -24213,7 +24367,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_SPOT_LIGHT__SPECULAR_EXPONENT = SVG_ELEMENT_FEATURE_COUNT + 11;
+	int SVG_FE_SPOT_LIGHT_ELEMENT__SPECULAR_EXPONENT = SVG_ELEMENT_FEATURE_COUNT + 11;
 
 	/**
 	 * The feature id for the '<em><b>Limiting Cone Angle</b></em>' attribute.
@@ -24222,26 +24376,26 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_SPOT_LIGHT__LIMITING_CONE_ANGLE = SVG_ELEMENT_FEATURE_COUNT + 12;
+	int SVG_FE_SPOT_LIGHT_ELEMENT__LIMITING_CONE_ANGLE = SVG_ELEMENT_FEATURE_COUNT + 12;
 
 	/**
-	 * The number of structural features of the '<em>Fe Spot Light</em>' class.
+	 * The number of structural features of the '<em>Fe Spot Light Element</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_SPOT_LIGHT_FEATURE_COUNT = SVG_ELEMENT_FEATURE_COUNT + 13;
+	int SVG_FE_SPOT_LIGHT_ELEMENT_FEATURE_COUNT = SVG_ELEMENT_FEATURE_COUNT + 13;
 
 	/**
-	 * The meta object id for the '{@link at.bestsolution.efxclipse.formats.svg.svg.impl.SvgFeBlendImpl <em>Fe Blend</em>}' class.
+	 * The meta object id for the '{@link at.bestsolution.efxclipse.formats.svg.svg.impl.SvgFeBlendElementImpl <em>Fe Blend Element</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see at.bestsolution.efxclipse.formats.svg.svg.impl.SvgFeBlendImpl
-	 * @see at.bestsolution.efxclipse.formats.svg.svg.impl.SvgPackageImpl#getSvgFeBlend()
+	 * @see at.bestsolution.efxclipse.formats.svg.svg.impl.SvgFeBlendElementImpl
+	 * @see at.bestsolution.efxclipse.formats.svg.svg.impl.SvgPackageImpl#getSvgFeBlendElement()
 	 * @generated
 	 */
-	int SVG_FE_BLEND = 61;
+	int SVG_FE_BLEND_ELEMENT = 62;
 
 	/**
 	 * The feature id for the '<em><b>Id</b></em>' attribute.
@@ -24250,7 +24404,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_BLEND__ID = SVG_ELEMENT_FEATURE_COUNT + 0;
+	int SVG_FE_BLEND_ELEMENT__ID = SVG_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Xml base</b></em>' attribute.
@@ -24259,7 +24413,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_BLEND__XML_BASE = SVG_ELEMENT_FEATURE_COUNT + 1;
+	int SVG_FE_BLEND_ELEMENT__XML_BASE = SVG_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Xml lang</b></em>' attribute.
@@ -24268,7 +24422,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_BLEND__XML_LANG = SVG_ELEMENT_FEATURE_COUNT + 2;
+	int SVG_FE_BLEND_ELEMENT__XML_LANG = SVG_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Xml space</b></em>' attribute.
@@ -24277,7 +24431,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_BLEND__XML_SPACE = SVG_ELEMENT_FEATURE_COUNT + 3;
+	int SVG_FE_BLEND_ELEMENT__XML_SPACE = SVG_ELEMENT_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Alignment baseline</b></em>' attribute.
@@ -24286,7 +24440,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_BLEND__ALIGNMENT_BASELINE = SVG_ELEMENT_FEATURE_COUNT + 4;
+	int SVG_FE_BLEND_ELEMENT__ALIGNMENT_BASELINE = SVG_ELEMENT_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Baseline shift</b></em>' attribute.
@@ -24295,7 +24449,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_BLEND__BASELINE_SHIFT = SVG_ELEMENT_FEATURE_COUNT + 5;
+	int SVG_FE_BLEND_ELEMENT__BASELINE_SHIFT = SVG_ELEMENT_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>Clip</b></em>' attribute.
@@ -24304,7 +24458,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_BLEND__CLIP = SVG_ELEMENT_FEATURE_COUNT + 6;
+	int SVG_FE_BLEND_ELEMENT__CLIP = SVG_ELEMENT_FEATURE_COUNT + 6;
 
 	/**
 	 * The feature id for the '<em><b>Clip path</b></em>' attribute.
@@ -24313,7 +24467,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_BLEND__CLIP_PATH = SVG_ELEMENT_FEATURE_COUNT + 7;
+	int SVG_FE_BLEND_ELEMENT__CLIP_PATH = SVG_ELEMENT_FEATURE_COUNT + 7;
 
 	/**
 	 * The feature id for the '<em><b>Clip rule</b></em>' attribute.
@@ -24322,7 +24476,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_BLEND__CLIP_RULE = SVG_ELEMENT_FEATURE_COUNT + 8;
+	int SVG_FE_BLEND_ELEMENT__CLIP_RULE = SVG_ELEMENT_FEATURE_COUNT + 8;
 
 	/**
 	 * The feature id for the '<em><b>Color</b></em>' attribute.
@@ -24331,7 +24485,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_BLEND__COLOR = SVG_ELEMENT_FEATURE_COUNT + 9;
+	int SVG_FE_BLEND_ELEMENT__COLOR = SVG_ELEMENT_FEATURE_COUNT + 9;
 
 	/**
 	 * The feature id for the '<em><b>Color interpolation</b></em>' attribute.
@@ -24340,7 +24494,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_BLEND__COLOR_INTERPOLATION = SVG_ELEMENT_FEATURE_COUNT + 10;
+	int SVG_FE_BLEND_ELEMENT__COLOR_INTERPOLATION = SVG_ELEMENT_FEATURE_COUNT + 10;
 
 	/**
 	 * The feature id for the '<em><b>Color interpolation filters</b></em>' attribute.
@@ -24349,7 +24503,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_BLEND__COLOR_INTERPOLATION_FILTERS = SVG_ELEMENT_FEATURE_COUNT + 11;
+	int SVG_FE_BLEND_ELEMENT__COLOR_INTERPOLATION_FILTERS = SVG_ELEMENT_FEATURE_COUNT + 11;
 
 	/**
 	 * The feature id for the '<em><b>Color profile</b></em>' attribute.
@@ -24358,7 +24512,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_BLEND__COLOR_PROFILE = SVG_ELEMENT_FEATURE_COUNT + 12;
+	int SVG_FE_BLEND_ELEMENT__COLOR_PROFILE = SVG_ELEMENT_FEATURE_COUNT + 12;
 
 	/**
 	 * The feature id for the '<em><b>Color rendering</b></em>' attribute.
@@ -24367,7 +24521,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_BLEND__COLOR_RENDERING = SVG_ELEMENT_FEATURE_COUNT + 13;
+	int SVG_FE_BLEND_ELEMENT__COLOR_RENDERING = SVG_ELEMENT_FEATURE_COUNT + 13;
 
 	/**
 	 * The feature id for the '<em><b>Cursor</b></em>' attribute.
@@ -24376,7 +24530,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_BLEND__CURSOR = SVG_ELEMENT_FEATURE_COUNT + 14;
+	int SVG_FE_BLEND_ELEMENT__CURSOR = SVG_ELEMENT_FEATURE_COUNT + 14;
 
 	/**
 	 * The feature id for the '<em><b>Direction</b></em>' attribute.
@@ -24385,7 +24539,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_BLEND__DIRECTION = SVG_ELEMENT_FEATURE_COUNT + 15;
+	int SVG_FE_BLEND_ELEMENT__DIRECTION = SVG_ELEMENT_FEATURE_COUNT + 15;
 
 	/**
 	 * The feature id for the '<em><b>Display</b></em>' attribute.
@@ -24394,7 +24548,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_BLEND__DISPLAY = SVG_ELEMENT_FEATURE_COUNT + 16;
+	int SVG_FE_BLEND_ELEMENT__DISPLAY = SVG_ELEMENT_FEATURE_COUNT + 16;
 
 	/**
 	 * The feature id for the '<em><b>Dominant baseline</b></em>' attribute.
@@ -24403,7 +24557,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_BLEND__DOMINANT_BASELINE = SVG_ELEMENT_FEATURE_COUNT + 17;
+	int SVG_FE_BLEND_ELEMENT__DOMINANT_BASELINE = SVG_ELEMENT_FEATURE_COUNT + 17;
 
 	/**
 	 * The feature id for the '<em><b>Enable background</b></em>' attribute.
@@ -24412,7 +24566,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_BLEND__ENABLE_BACKGROUND = SVG_ELEMENT_FEATURE_COUNT + 18;
+	int SVG_FE_BLEND_ELEMENT__ENABLE_BACKGROUND = SVG_ELEMENT_FEATURE_COUNT + 18;
 
 	/**
 	 * The feature id for the '<em><b>Fill</b></em>' attribute.
@@ -24421,7 +24575,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_BLEND__FILL = SVG_ELEMENT_FEATURE_COUNT + 19;
+	int SVG_FE_BLEND_ELEMENT__FILL = SVG_ELEMENT_FEATURE_COUNT + 19;
 
 	/**
 	 * The feature id for the '<em><b>Fill opacity</b></em>' attribute.
@@ -24430,7 +24584,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_BLEND__FILL_OPACITY = SVG_ELEMENT_FEATURE_COUNT + 20;
+	int SVG_FE_BLEND_ELEMENT__FILL_OPACITY = SVG_ELEMENT_FEATURE_COUNT + 20;
 
 	/**
 	 * The feature id for the '<em><b>Fill rule</b></em>' attribute.
@@ -24439,7 +24593,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_BLEND__FILL_RULE = SVG_ELEMENT_FEATURE_COUNT + 21;
+	int SVG_FE_BLEND_ELEMENT__FILL_RULE = SVG_ELEMENT_FEATURE_COUNT + 21;
 
 	/**
 	 * The feature id for the '<em><b>Filter</b></em>' attribute.
@@ -24448,7 +24602,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_BLEND__FILTER = SVG_ELEMENT_FEATURE_COUNT + 22;
+	int SVG_FE_BLEND_ELEMENT__FILTER = SVG_ELEMENT_FEATURE_COUNT + 22;
 
 	/**
 	 * The feature id for the '<em><b>Flood color</b></em>' attribute.
@@ -24457,7 +24611,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_BLEND__FLOOD_COLOR = SVG_ELEMENT_FEATURE_COUNT + 23;
+	int SVG_FE_BLEND_ELEMENT__FLOOD_COLOR = SVG_ELEMENT_FEATURE_COUNT + 23;
 
 	/**
 	 * The feature id for the '<em><b>Flood opacity</b></em>' attribute.
@@ -24466,7 +24620,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_BLEND__FLOOD_OPACITY = SVG_ELEMENT_FEATURE_COUNT + 24;
+	int SVG_FE_BLEND_ELEMENT__FLOOD_OPACITY = SVG_ELEMENT_FEATURE_COUNT + 24;
 
 	/**
 	 * The feature id for the '<em><b>Font family</b></em>' attribute.
@@ -24475,7 +24629,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_BLEND__FONT_FAMILY = SVG_ELEMENT_FEATURE_COUNT + 25;
+	int SVG_FE_BLEND_ELEMENT__FONT_FAMILY = SVG_ELEMENT_FEATURE_COUNT + 25;
 
 	/**
 	 * The feature id for the '<em><b>Font size</b></em>' attribute.
@@ -24484,7 +24638,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_BLEND__FONT_SIZE = SVG_ELEMENT_FEATURE_COUNT + 26;
+	int SVG_FE_BLEND_ELEMENT__FONT_SIZE = SVG_ELEMENT_FEATURE_COUNT + 26;
 
 	/**
 	 * The feature id for the '<em><b>Font size adjust</b></em>' attribute.
@@ -24493,7 +24647,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_BLEND__FONT_SIZE_ADJUST = SVG_ELEMENT_FEATURE_COUNT + 27;
+	int SVG_FE_BLEND_ELEMENT__FONT_SIZE_ADJUST = SVG_ELEMENT_FEATURE_COUNT + 27;
 
 	/**
 	 * The feature id for the '<em><b>Font stretch</b></em>' attribute.
@@ -24502,7 +24656,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_BLEND__FONT_STRETCH = SVG_ELEMENT_FEATURE_COUNT + 28;
+	int SVG_FE_BLEND_ELEMENT__FONT_STRETCH = SVG_ELEMENT_FEATURE_COUNT + 28;
 
 	/**
 	 * The feature id for the '<em><b>Font style</b></em>' attribute.
@@ -24511,7 +24665,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_BLEND__FONT_STYLE = SVG_ELEMENT_FEATURE_COUNT + 29;
+	int SVG_FE_BLEND_ELEMENT__FONT_STYLE = SVG_ELEMENT_FEATURE_COUNT + 29;
 
 	/**
 	 * The feature id for the '<em><b>Font variant</b></em>' attribute.
@@ -24520,7 +24674,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_BLEND__FONT_VARIANT = SVG_ELEMENT_FEATURE_COUNT + 30;
+	int SVG_FE_BLEND_ELEMENT__FONT_VARIANT = SVG_ELEMENT_FEATURE_COUNT + 30;
 
 	/**
 	 * The feature id for the '<em><b>Font weight</b></em>' attribute.
@@ -24529,7 +24683,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_BLEND__FONT_WEIGHT = SVG_ELEMENT_FEATURE_COUNT + 31;
+	int SVG_FE_BLEND_ELEMENT__FONT_WEIGHT = SVG_ELEMENT_FEATURE_COUNT + 31;
 
 	/**
 	 * The feature id for the '<em><b>Glyph orientation horizontal</b></em>' attribute.
@@ -24538,7 +24692,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_BLEND__GLYPH_ORIENTATION_HORIZONTAL = SVG_ELEMENT_FEATURE_COUNT + 32;
+	int SVG_FE_BLEND_ELEMENT__GLYPH_ORIENTATION_HORIZONTAL = SVG_ELEMENT_FEATURE_COUNT + 32;
 
 	/**
 	 * The feature id for the '<em><b>Glyph orientation vertical</b></em>' attribute.
@@ -24547,7 +24701,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_BLEND__GLYPH_ORIENTATION_VERTICAL = SVG_ELEMENT_FEATURE_COUNT + 33;
+	int SVG_FE_BLEND_ELEMENT__GLYPH_ORIENTATION_VERTICAL = SVG_ELEMENT_FEATURE_COUNT + 33;
 
 	/**
 	 * The feature id for the '<em><b>Image rendering</b></em>' attribute.
@@ -24556,7 +24710,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_BLEND__IMAGE_RENDERING = SVG_ELEMENT_FEATURE_COUNT + 34;
+	int SVG_FE_BLEND_ELEMENT__IMAGE_RENDERING = SVG_ELEMENT_FEATURE_COUNT + 34;
 
 	/**
 	 * The feature id for the '<em><b>Kerning</b></em>' attribute.
@@ -24565,7 +24719,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_BLEND__KERNING = SVG_ELEMENT_FEATURE_COUNT + 35;
+	int SVG_FE_BLEND_ELEMENT__KERNING = SVG_ELEMENT_FEATURE_COUNT + 35;
 
 	/**
 	 * The feature id for the '<em><b>Letter spacing</b></em>' attribute.
@@ -24574,7 +24728,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_BLEND__LETTER_SPACING = SVG_ELEMENT_FEATURE_COUNT + 36;
+	int SVG_FE_BLEND_ELEMENT__LETTER_SPACING = SVG_ELEMENT_FEATURE_COUNT + 36;
 
 	/**
 	 * The feature id for the '<em><b>Lighting color</b></em>' attribute.
@@ -24583,7 +24737,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_BLEND__LIGHTING_COLOR = SVG_ELEMENT_FEATURE_COUNT + 37;
+	int SVG_FE_BLEND_ELEMENT__LIGHTING_COLOR = SVG_ELEMENT_FEATURE_COUNT + 37;
 
 	/**
 	 * The feature id for the '<em><b>Marker end</b></em>' attribute.
@@ -24592,7 +24746,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_BLEND__MARKER_END = SVG_ELEMENT_FEATURE_COUNT + 38;
+	int SVG_FE_BLEND_ELEMENT__MARKER_END = SVG_ELEMENT_FEATURE_COUNT + 38;
 
 	/**
 	 * The feature id for the '<em><b>Marker mid</b></em>' attribute.
@@ -24601,7 +24755,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_BLEND__MARKER_MID = SVG_ELEMENT_FEATURE_COUNT + 39;
+	int SVG_FE_BLEND_ELEMENT__MARKER_MID = SVG_ELEMENT_FEATURE_COUNT + 39;
 
 	/**
 	 * The feature id for the '<em><b>Marker start</b></em>' attribute.
@@ -24610,7 +24764,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_BLEND__MARKER_START = SVG_ELEMENT_FEATURE_COUNT + 40;
+	int SVG_FE_BLEND_ELEMENT__MARKER_START = SVG_ELEMENT_FEATURE_COUNT + 40;
 
 	/**
 	 * The feature id for the '<em><b>Masks</b></em>' attribute.
@@ -24619,7 +24773,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_BLEND__MASKS = SVG_ELEMENT_FEATURE_COUNT + 41;
+	int SVG_FE_BLEND_ELEMENT__MASKS = SVG_ELEMENT_FEATURE_COUNT + 41;
 
 	/**
 	 * The feature id for the '<em><b>Opacity</b></em>' attribute.
@@ -24628,7 +24782,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_BLEND__OPACITY = SVG_ELEMENT_FEATURE_COUNT + 42;
+	int SVG_FE_BLEND_ELEMENT__OPACITY = SVG_ELEMENT_FEATURE_COUNT + 42;
 
 	/**
 	 * The feature id for the '<em><b>Overflow</b></em>' attribute.
@@ -24637,7 +24791,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_BLEND__OVERFLOW = SVG_ELEMENT_FEATURE_COUNT + 43;
+	int SVG_FE_BLEND_ELEMENT__OVERFLOW = SVG_ELEMENT_FEATURE_COUNT + 43;
 
 	/**
 	 * The feature id for the '<em><b>Pointer events</b></em>' attribute.
@@ -24646,7 +24800,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_BLEND__POINTER_EVENTS = SVG_ELEMENT_FEATURE_COUNT + 44;
+	int SVG_FE_BLEND_ELEMENT__POINTER_EVENTS = SVG_ELEMENT_FEATURE_COUNT + 44;
 
 	/**
 	 * The feature id for the '<em><b>Shape rendering</b></em>' attribute.
@@ -24655,7 +24809,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_BLEND__SHAPE_RENDERING = SVG_ELEMENT_FEATURE_COUNT + 45;
+	int SVG_FE_BLEND_ELEMENT__SHAPE_RENDERING = SVG_ELEMENT_FEATURE_COUNT + 45;
 
 	/**
 	 * The feature id for the '<em><b>Stop color</b></em>' attribute.
@@ -24664,7 +24818,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_BLEND__STOP_COLOR = SVG_ELEMENT_FEATURE_COUNT + 46;
+	int SVG_FE_BLEND_ELEMENT__STOP_COLOR = SVG_ELEMENT_FEATURE_COUNT + 46;
 
 	/**
 	 * The feature id for the '<em><b>Stop opacity</b></em>' attribute.
@@ -24673,7 +24827,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_BLEND__STOP_OPACITY = SVG_ELEMENT_FEATURE_COUNT + 47;
+	int SVG_FE_BLEND_ELEMENT__STOP_OPACITY = SVG_ELEMENT_FEATURE_COUNT + 47;
 
 	/**
 	 * The feature id for the '<em><b>Stroke</b></em>' attribute.
@@ -24682,7 +24836,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_BLEND__STROKE = SVG_ELEMENT_FEATURE_COUNT + 48;
+	int SVG_FE_BLEND_ELEMENT__STROKE = SVG_ELEMENT_FEATURE_COUNT + 48;
 
 	/**
 	 * The feature id for the '<em><b>Stroke dasharray</b></em>' attribute.
@@ -24691,7 +24845,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_BLEND__STROKE_DASHARRAY = SVG_ELEMENT_FEATURE_COUNT + 49;
+	int SVG_FE_BLEND_ELEMENT__STROKE_DASHARRAY = SVG_ELEMENT_FEATURE_COUNT + 49;
 
 	/**
 	 * The feature id for the '<em><b>Stroke dashoffset</b></em>' attribute.
@@ -24700,7 +24854,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_BLEND__STROKE_DASHOFFSET = SVG_ELEMENT_FEATURE_COUNT + 50;
+	int SVG_FE_BLEND_ELEMENT__STROKE_DASHOFFSET = SVG_ELEMENT_FEATURE_COUNT + 50;
 
 	/**
 	 * The feature id for the '<em><b>Stroke linecap</b></em>' attribute.
@@ -24709,7 +24863,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_BLEND__STROKE_LINECAP = SVG_ELEMENT_FEATURE_COUNT + 51;
+	int SVG_FE_BLEND_ELEMENT__STROKE_LINECAP = SVG_ELEMENT_FEATURE_COUNT + 51;
 
 	/**
 	 * The feature id for the '<em><b>Stroke linejoin</b></em>' attribute.
@@ -24718,7 +24872,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_BLEND__STROKE_LINEJOIN = SVG_ELEMENT_FEATURE_COUNT + 52;
+	int SVG_FE_BLEND_ELEMENT__STROKE_LINEJOIN = SVG_ELEMENT_FEATURE_COUNT + 52;
 
 	/**
 	 * The feature id for the '<em><b>Stroke miterlimit</b></em>' attribute.
@@ -24727,7 +24881,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_BLEND__STROKE_MITERLIMIT = SVG_ELEMENT_FEATURE_COUNT + 53;
+	int SVG_FE_BLEND_ELEMENT__STROKE_MITERLIMIT = SVG_ELEMENT_FEATURE_COUNT + 53;
 
 	/**
 	 * The feature id for the '<em><b>Stroke opacity</b></em>' attribute.
@@ -24736,7 +24890,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_BLEND__STROKE_OPACITY = SVG_ELEMENT_FEATURE_COUNT + 54;
+	int SVG_FE_BLEND_ELEMENT__STROKE_OPACITY = SVG_ELEMENT_FEATURE_COUNT + 54;
 
 	/**
 	 * The feature id for the '<em><b>Stroke width</b></em>' attribute.
@@ -24745,7 +24899,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_BLEND__STROKE_WIDTH = SVG_ELEMENT_FEATURE_COUNT + 55;
+	int SVG_FE_BLEND_ELEMENT__STROKE_WIDTH = SVG_ELEMENT_FEATURE_COUNT + 55;
 
 	/**
 	 * The feature id for the '<em><b>Text anchor</b></em>' attribute.
@@ -24754,7 +24908,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_BLEND__TEXT_ANCHOR = SVG_ELEMENT_FEATURE_COUNT + 56;
+	int SVG_FE_BLEND_ELEMENT__TEXT_ANCHOR = SVG_ELEMENT_FEATURE_COUNT + 56;
 
 	/**
 	 * The feature id for the '<em><b>Text decoration</b></em>' attribute.
@@ -24763,7 +24917,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_BLEND__TEXT_DECORATION = SVG_ELEMENT_FEATURE_COUNT + 57;
+	int SVG_FE_BLEND_ELEMENT__TEXT_DECORATION = SVG_ELEMENT_FEATURE_COUNT + 57;
 
 	/**
 	 * The feature id for the '<em><b>Text rendering</b></em>' attribute.
@@ -24772,7 +24926,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_BLEND__TEXT_RENDERING = SVG_ELEMENT_FEATURE_COUNT + 58;
+	int SVG_FE_BLEND_ELEMENT__TEXT_RENDERING = SVG_ELEMENT_FEATURE_COUNT + 58;
 
 	/**
 	 * The feature id for the '<em><b>Unicode bidi</b></em>' attribute.
@@ -24781,7 +24935,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_BLEND__UNICODE_BIDI = SVG_ELEMENT_FEATURE_COUNT + 59;
+	int SVG_FE_BLEND_ELEMENT__UNICODE_BIDI = SVG_ELEMENT_FEATURE_COUNT + 59;
 
 	/**
 	 * The feature id for the '<em><b>Visibility</b></em>' attribute.
@@ -24790,7 +24944,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_BLEND__VISIBILITY = SVG_ELEMENT_FEATURE_COUNT + 60;
+	int SVG_FE_BLEND_ELEMENT__VISIBILITY = SVG_ELEMENT_FEATURE_COUNT + 60;
 
 	/**
 	 * The feature id for the '<em><b>Word spacing</b></em>' attribute.
@@ -24799,7 +24953,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_BLEND__WORD_SPACING = SVG_ELEMENT_FEATURE_COUNT + 61;
+	int SVG_FE_BLEND_ELEMENT__WORD_SPACING = SVG_ELEMENT_FEATURE_COUNT + 61;
 
 	/**
 	 * The feature id for the '<em><b>Writing mode</b></em>' attribute.
@@ -24808,7 +24962,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_BLEND__WRITING_MODE = SVG_ELEMENT_FEATURE_COUNT + 62;
+	int SVG_FE_BLEND_ELEMENT__WRITING_MODE = SVG_ELEMENT_FEATURE_COUNT + 62;
 
 	/**
 	 * The feature id for the '<em><b>X</b></em>' attribute.
@@ -24817,7 +24971,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_BLEND__X = SVG_ELEMENT_FEATURE_COUNT + 63;
+	int SVG_FE_BLEND_ELEMENT__X = SVG_ELEMENT_FEATURE_COUNT + 63;
 
 	/**
 	 * The feature id for the '<em><b>Y</b></em>' attribute.
@@ -24826,7 +24980,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_BLEND__Y = SVG_ELEMENT_FEATURE_COUNT + 64;
+	int SVG_FE_BLEND_ELEMENT__Y = SVG_ELEMENT_FEATURE_COUNT + 64;
 
 	/**
 	 * The feature id for the '<em><b>Width</b></em>' attribute.
@@ -24835,7 +24989,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_BLEND__WIDTH = SVG_ELEMENT_FEATURE_COUNT + 65;
+	int SVG_FE_BLEND_ELEMENT__WIDTH = SVG_ELEMENT_FEATURE_COUNT + 65;
 
 	/**
 	 * The feature id for the '<em><b>Height</b></em>' attribute.
@@ -24844,7 +24998,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_BLEND__HEIGHT = SVG_ELEMENT_FEATURE_COUNT + 66;
+	int SVG_FE_BLEND_ELEMENT__HEIGHT = SVG_ELEMENT_FEATURE_COUNT + 66;
 
 	/**
 	 * The feature id for the '<em><b>Result</b></em>' attribute.
@@ -24853,7 +25007,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_BLEND__RESULT = SVG_ELEMENT_FEATURE_COUNT + 67;
+	int SVG_FE_BLEND_ELEMENT__RESULT = SVG_ELEMENT_FEATURE_COUNT + 67;
 
 	/**
 	 * The feature id for the '<em><b>In</b></em>' attribute.
@@ -24862,7 +25016,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_BLEND__IN = SVG_ELEMENT_FEATURE_COUNT + 68;
+	int SVG_FE_BLEND_ELEMENT__IN = SVG_ELEMENT_FEATURE_COUNT + 68;
 
 	/**
 	 * The feature id for the '<em><b>Children</b></em>' containment reference list.
@@ -24871,7 +25025,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_BLEND__CHILDREN = SVG_ELEMENT_FEATURE_COUNT + 69;
+	int SVG_FE_BLEND_ELEMENT__CHILDREN = SVG_ELEMENT_FEATURE_COUNT + 69;
 
 	/**
 	 * The feature id for the '<em><b>Class</b></em>' attribute.
@@ -24880,7 +25034,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_BLEND__CLASS = SVG_ELEMENT_FEATURE_COUNT + 70;
+	int SVG_FE_BLEND_ELEMENT__CLASS = SVG_ELEMENT_FEATURE_COUNT + 70;
 
 	/**
 	 * The feature id for the '<em><b>Style</b></em>' attribute.
@@ -24889,7 +25043,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_BLEND__STYLE = SVG_ELEMENT_FEATURE_COUNT + 71;
+	int SVG_FE_BLEND_ELEMENT__STYLE = SVG_ELEMENT_FEATURE_COUNT + 71;
 
 	/**
 	 * The feature id for the '<em><b>In2</b></em>' attribute.
@@ -24898,7 +25052,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_BLEND__IN2 = SVG_ELEMENT_FEATURE_COUNT + 72;
+	int SVG_FE_BLEND_ELEMENT__IN2 = SVG_ELEMENT_FEATURE_COUNT + 72;
 
 	/**
 	 * The feature id for the '<em><b>Mode</b></em>' attribute.
@@ -24907,26 +25061,26 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_BLEND__MODE = SVG_ELEMENT_FEATURE_COUNT + 73;
+	int SVG_FE_BLEND_ELEMENT__MODE = SVG_ELEMENT_FEATURE_COUNT + 73;
 
 	/**
-	 * The number of structural features of the '<em>Fe Blend</em>' class.
+	 * The number of structural features of the '<em>Fe Blend Element</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_BLEND_FEATURE_COUNT = SVG_ELEMENT_FEATURE_COUNT + 74;
+	int SVG_FE_BLEND_ELEMENT_FEATURE_COUNT = SVG_ELEMENT_FEATURE_COUNT + 74;
 
 	/**
-	 * The meta object id for the '{@link at.bestsolution.efxclipse.formats.svg.svg.impl.SvgFeColorMatrixImpl <em>Fe Color Matrix</em>}' class.
+	 * The meta object id for the '{@link at.bestsolution.efxclipse.formats.svg.svg.impl.SvgFeColorMatrixElementImpl <em>Fe Color Matrix Element</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see at.bestsolution.efxclipse.formats.svg.svg.impl.SvgFeColorMatrixImpl
-	 * @see at.bestsolution.efxclipse.formats.svg.svg.impl.SvgPackageImpl#getSvgFeColorMatrix()
+	 * @see at.bestsolution.efxclipse.formats.svg.svg.impl.SvgFeColorMatrixElementImpl
+	 * @see at.bestsolution.efxclipse.formats.svg.svg.impl.SvgPackageImpl#getSvgFeColorMatrixElement()
 	 * @generated
 	 */
-	int SVG_FE_COLOR_MATRIX = 62;
+	int SVG_FE_COLOR_MATRIX_ELEMENT = 63;
 
 	/**
 	 * The feature id for the '<em><b>Id</b></em>' attribute.
@@ -24935,7 +25089,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_COLOR_MATRIX__ID = SVG_ELEMENT_FEATURE_COUNT + 0;
+	int SVG_FE_COLOR_MATRIX_ELEMENT__ID = SVG_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Xml base</b></em>' attribute.
@@ -24944,7 +25098,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_COLOR_MATRIX__XML_BASE = SVG_ELEMENT_FEATURE_COUNT + 1;
+	int SVG_FE_COLOR_MATRIX_ELEMENT__XML_BASE = SVG_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Xml lang</b></em>' attribute.
@@ -24953,7 +25107,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_COLOR_MATRIX__XML_LANG = SVG_ELEMENT_FEATURE_COUNT + 2;
+	int SVG_FE_COLOR_MATRIX_ELEMENT__XML_LANG = SVG_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Xml space</b></em>' attribute.
@@ -24962,7 +25116,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_COLOR_MATRIX__XML_SPACE = SVG_ELEMENT_FEATURE_COUNT + 3;
+	int SVG_FE_COLOR_MATRIX_ELEMENT__XML_SPACE = SVG_ELEMENT_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Alignment baseline</b></em>' attribute.
@@ -24971,7 +25125,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_COLOR_MATRIX__ALIGNMENT_BASELINE = SVG_ELEMENT_FEATURE_COUNT + 4;
+	int SVG_FE_COLOR_MATRIX_ELEMENT__ALIGNMENT_BASELINE = SVG_ELEMENT_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Baseline shift</b></em>' attribute.
@@ -24980,7 +25134,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_COLOR_MATRIX__BASELINE_SHIFT = SVG_ELEMENT_FEATURE_COUNT + 5;
+	int SVG_FE_COLOR_MATRIX_ELEMENT__BASELINE_SHIFT = SVG_ELEMENT_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>Clip</b></em>' attribute.
@@ -24989,7 +25143,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_COLOR_MATRIX__CLIP = SVG_ELEMENT_FEATURE_COUNT + 6;
+	int SVG_FE_COLOR_MATRIX_ELEMENT__CLIP = SVG_ELEMENT_FEATURE_COUNT + 6;
 
 	/**
 	 * The feature id for the '<em><b>Clip path</b></em>' attribute.
@@ -24998,7 +25152,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_COLOR_MATRIX__CLIP_PATH = SVG_ELEMENT_FEATURE_COUNT + 7;
+	int SVG_FE_COLOR_MATRIX_ELEMENT__CLIP_PATH = SVG_ELEMENT_FEATURE_COUNT + 7;
 
 	/**
 	 * The feature id for the '<em><b>Clip rule</b></em>' attribute.
@@ -25007,7 +25161,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_COLOR_MATRIX__CLIP_RULE = SVG_ELEMENT_FEATURE_COUNT + 8;
+	int SVG_FE_COLOR_MATRIX_ELEMENT__CLIP_RULE = SVG_ELEMENT_FEATURE_COUNT + 8;
 
 	/**
 	 * The feature id for the '<em><b>Color</b></em>' attribute.
@@ -25016,7 +25170,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_COLOR_MATRIX__COLOR = SVG_ELEMENT_FEATURE_COUNT + 9;
+	int SVG_FE_COLOR_MATRIX_ELEMENT__COLOR = SVG_ELEMENT_FEATURE_COUNT + 9;
 
 	/**
 	 * The feature id for the '<em><b>Color interpolation</b></em>' attribute.
@@ -25025,7 +25179,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_COLOR_MATRIX__COLOR_INTERPOLATION = SVG_ELEMENT_FEATURE_COUNT + 10;
+	int SVG_FE_COLOR_MATRIX_ELEMENT__COLOR_INTERPOLATION = SVG_ELEMENT_FEATURE_COUNT + 10;
 
 	/**
 	 * The feature id for the '<em><b>Color interpolation filters</b></em>' attribute.
@@ -25034,7 +25188,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_COLOR_MATRIX__COLOR_INTERPOLATION_FILTERS = SVG_ELEMENT_FEATURE_COUNT + 11;
+	int SVG_FE_COLOR_MATRIX_ELEMENT__COLOR_INTERPOLATION_FILTERS = SVG_ELEMENT_FEATURE_COUNT + 11;
 
 	/**
 	 * The feature id for the '<em><b>Color profile</b></em>' attribute.
@@ -25043,7 +25197,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_COLOR_MATRIX__COLOR_PROFILE = SVG_ELEMENT_FEATURE_COUNT + 12;
+	int SVG_FE_COLOR_MATRIX_ELEMENT__COLOR_PROFILE = SVG_ELEMENT_FEATURE_COUNT + 12;
 
 	/**
 	 * The feature id for the '<em><b>Color rendering</b></em>' attribute.
@@ -25052,7 +25206,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_COLOR_MATRIX__COLOR_RENDERING = SVG_ELEMENT_FEATURE_COUNT + 13;
+	int SVG_FE_COLOR_MATRIX_ELEMENT__COLOR_RENDERING = SVG_ELEMENT_FEATURE_COUNT + 13;
 
 	/**
 	 * The feature id for the '<em><b>Cursor</b></em>' attribute.
@@ -25061,7 +25215,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_COLOR_MATRIX__CURSOR = SVG_ELEMENT_FEATURE_COUNT + 14;
+	int SVG_FE_COLOR_MATRIX_ELEMENT__CURSOR = SVG_ELEMENT_FEATURE_COUNT + 14;
 
 	/**
 	 * The feature id for the '<em><b>Direction</b></em>' attribute.
@@ -25070,7 +25224,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_COLOR_MATRIX__DIRECTION = SVG_ELEMENT_FEATURE_COUNT + 15;
+	int SVG_FE_COLOR_MATRIX_ELEMENT__DIRECTION = SVG_ELEMENT_FEATURE_COUNT + 15;
 
 	/**
 	 * The feature id for the '<em><b>Display</b></em>' attribute.
@@ -25079,7 +25233,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_COLOR_MATRIX__DISPLAY = SVG_ELEMENT_FEATURE_COUNT + 16;
+	int SVG_FE_COLOR_MATRIX_ELEMENT__DISPLAY = SVG_ELEMENT_FEATURE_COUNT + 16;
 
 	/**
 	 * The feature id for the '<em><b>Dominant baseline</b></em>' attribute.
@@ -25088,7 +25242,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_COLOR_MATRIX__DOMINANT_BASELINE = SVG_ELEMENT_FEATURE_COUNT + 17;
+	int SVG_FE_COLOR_MATRIX_ELEMENT__DOMINANT_BASELINE = SVG_ELEMENT_FEATURE_COUNT + 17;
 
 	/**
 	 * The feature id for the '<em><b>Enable background</b></em>' attribute.
@@ -25097,7 +25251,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_COLOR_MATRIX__ENABLE_BACKGROUND = SVG_ELEMENT_FEATURE_COUNT + 18;
+	int SVG_FE_COLOR_MATRIX_ELEMENT__ENABLE_BACKGROUND = SVG_ELEMENT_FEATURE_COUNT + 18;
 
 	/**
 	 * The feature id for the '<em><b>Fill</b></em>' attribute.
@@ -25106,7 +25260,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_COLOR_MATRIX__FILL = SVG_ELEMENT_FEATURE_COUNT + 19;
+	int SVG_FE_COLOR_MATRIX_ELEMENT__FILL = SVG_ELEMENT_FEATURE_COUNT + 19;
 
 	/**
 	 * The feature id for the '<em><b>Fill opacity</b></em>' attribute.
@@ -25115,7 +25269,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_COLOR_MATRIX__FILL_OPACITY = SVG_ELEMENT_FEATURE_COUNT + 20;
+	int SVG_FE_COLOR_MATRIX_ELEMENT__FILL_OPACITY = SVG_ELEMENT_FEATURE_COUNT + 20;
 
 	/**
 	 * The feature id for the '<em><b>Fill rule</b></em>' attribute.
@@ -25124,7 +25278,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_COLOR_MATRIX__FILL_RULE = SVG_ELEMENT_FEATURE_COUNT + 21;
+	int SVG_FE_COLOR_MATRIX_ELEMENT__FILL_RULE = SVG_ELEMENT_FEATURE_COUNT + 21;
 
 	/**
 	 * The feature id for the '<em><b>Filter</b></em>' attribute.
@@ -25133,7 +25287,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_COLOR_MATRIX__FILTER = SVG_ELEMENT_FEATURE_COUNT + 22;
+	int SVG_FE_COLOR_MATRIX_ELEMENT__FILTER = SVG_ELEMENT_FEATURE_COUNT + 22;
 
 	/**
 	 * The feature id for the '<em><b>Flood color</b></em>' attribute.
@@ -25142,7 +25296,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_COLOR_MATRIX__FLOOD_COLOR = SVG_ELEMENT_FEATURE_COUNT + 23;
+	int SVG_FE_COLOR_MATRIX_ELEMENT__FLOOD_COLOR = SVG_ELEMENT_FEATURE_COUNT + 23;
 
 	/**
 	 * The feature id for the '<em><b>Flood opacity</b></em>' attribute.
@@ -25151,7 +25305,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_COLOR_MATRIX__FLOOD_OPACITY = SVG_ELEMENT_FEATURE_COUNT + 24;
+	int SVG_FE_COLOR_MATRIX_ELEMENT__FLOOD_OPACITY = SVG_ELEMENT_FEATURE_COUNT + 24;
 
 	/**
 	 * The feature id for the '<em><b>Font family</b></em>' attribute.
@@ -25160,7 +25314,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_COLOR_MATRIX__FONT_FAMILY = SVG_ELEMENT_FEATURE_COUNT + 25;
+	int SVG_FE_COLOR_MATRIX_ELEMENT__FONT_FAMILY = SVG_ELEMENT_FEATURE_COUNT + 25;
 
 	/**
 	 * The feature id for the '<em><b>Font size</b></em>' attribute.
@@ -25169,7 +25323,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_COLOR_MATRIX__FONT_SIZE = SVG_ELEMENT_FEATURE_COUNT + 26;
+	int SVG_FE_COLOR_MATRIX_ELEMENT__FONT_SIZE = SVG_ELEMENT_FEATURE_COUNT + 26;
 
 	/**
 	 * The feature id for the '<em><b>Font size adjust</b></em>' attribute.
@@ -25178,7 +25332,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_COLOR_MATRIX__FONT_SIZE_ADJUST = SVG_ELEMENT_FEATURE_COUNT + 27;
+	int SVG_FE_COLOR_MATRIX_ELEMENT__FONT_SIZE_ADJUST = SVG_ELEMENT_FEATURE_COUNT + 27;
 
 	/**
 	 * The feature id for the '<em><b>Font stretch</b></em>' attribute.
@@ -25187,7 +25341,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_COLOR_MATRIX__FONT_STRETCH = SVG_ELEMENT_FEATURE_COUNT + 28;
+	int SVG_FE_COLOR_MATRIX_ELEMENT__FONT_STRETCH = SVG_ELEMENT_FEATURE_COUNT + 28;
 
 	/**
 	 * The feature id for the '<em><b>Font style</b></em>' attribute.
@@ -25196,7 +25350,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_COLOR_MATRIX__FONT_STYLE = SVG_ELEMENT_FEATURE_COUNT + 29;
+	int SVG_FE_COLOR_MATRIX_ELEMENT__FONT_STYLE = SVG_ELEMENT_FEATURE_COUNT + 29;
 
 	/**
 	 * The feature id for the '<em><b>Font variant</b></em>' attribute.
@@ -25205,7 +25359,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_COLOR_MATRIX__FONT_VARIANT = SVG_ELEMENT_FEATURE_COUNT + 30;
+	int SVG_FE_COLOR_MATRIX_ELEMENT__FONT_VARIANT = SVG_ELEMENT_FEATURE_COUNT + 30;
 
 	/**
 	 * The feature id for the '<em><b>Font weight</b></em>' attribute.
@@ -25214,7 +25368,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_COLOR_MATRIX__FONT_WEIGHT = SVG_ELEMENT_FEATURE_COUNT + 31;
+	int SVG_FE_COLOR_MATRIX_ELEMENT__FONT_WEIGHT = SVG_ELEMENT_FEATURE_COUNT + 31;
 
 	/**
 	 * The feature id for the '<em><b>Glyph orientation horizontal</b></em>' attribute.
@@ -25223,7 +25377,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_COLOR_MATRIX__GLYPH_ORIENTATION_HORIZONTAL = SVG_ELEMENT_FEATURE_COUNT + 32;
+	int SVG_FE_COLOR_MATRIX_ELEMENT__GLYPH_ORIENTATION_HORIZONTAL = SVG_ELEMENT_FEATURE_COUNT + 32;
 
 	/**
 	 * The feature id for the '<em><b>Glyph orientation vertical</b></em>' attribute.
@@ -25232,7 +25386,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_COLOR_MATRIX__GLYPH_ORIENTATION_VERTICAL = SVG_ELEMENT_FEATURE_COUNT + 33;
+	int SVG_FE_COLOR_MATRIX_ELEMENT__GLYPH_ORIENTATION_VERTICAL = SVG_ELEMENT_FEATURE_COUNT + 33;
 
 	/**
 	 * The feature id for the '<em><b>Image rendering</b></em>' attribute.
@@ -25241,7 +25395,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_COLOR_MATRIX__IMAGE_RENDERING = SVG_ELEMENT_FEATURE_COUNT + 34;
+	int SVG_FE_COLOR_MATRIX_ELEMENT__IMAGE_RENDERING = SVG_ELEMENT_FEATURE_COUNT + 34;
 
 	/**
 	 * The feature id for the '<em><b>Kerning</b></em>' attribute.
@@ -25250,7 +25404,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_COLOR_MATRIX__KERNING = SVG_ELEMENT_FEATURE_COUNT + 35;
+	int SVG_FE_COLOR_MATRIX_ELEMENT__KERNING = SVG_ELEMENT_FEATURE_COUNT + 35;
 
 	/**
 	 * The feature id for the '<em><b>Letter spacing</b></em>' attribute.
@@ -25259,7 +25413,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_COLOR_MATRIX__LETTER_SPACING = SVG_ELEMENT_FEATURE_COUNT + 36;
+	int SVG_FE_COLOR_MATRIX_ELEMENT__LETTER_SPACING = SVG_ELEMENT_FEATURE_COUNT + 36;
 
 	/**
 	 * The feature id for the '<em><b>Lighting color</b></em>' attribute.
@@ -25268,7 +25422,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_COLOR_MATRIX__LIGHTING_COLOR = SVG_ELEMENT_FEATURE_COUNT + 37;
+	int SVG_FE_COLOR_MATRIX_ELEMENT__LIGHTING_COLOR = SVG_ELEMENT_FEATURE_COUNT + 37;
 
 	/**
 	 * The feature id for the '<em><b>Marker end</b></em>' attribute.
@@ -25277,7 +25431,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_COLOR_MATRIX__MARKER_END = SVG_ELEMENT_FEATURE_COUNT + 38;
+	int SVG_FE_COLOR_MATRIX_ELEMENT__MARKER_END = SVG_ELEMENT_FEATURE_COUNT + 38;
 
 	/**
 	 * The feature id for the '<em><b>Marker mid</b></em>' attribute.
@@ -25286,7 +25440,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_COLOR_MATRIX__MARKER_MID = SVG_ELEMENT_FEATURE_COUNT + 39;
+	int SVG_FE_COLOR_MATRIX_ELEMENT__MARKER_MID = SVG_ELEMENT_FEATURE_COUNT + 39;
 
 	/**
 	 * The feature id for the '<em><b>Marker start</b></em>' attribute.
@@ -25295,7 +25449,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_COLOR_MATRIX__MARKER_START = SVG_ELEMENT_FEATURE_COUNT + 40;
+	int SVG_FE_COLOR_MATRIX_ELEMENT__MARKER_START = SVG_ELEMENT_FEATURE_COUNT + 40;
 
 	/**
 	 * The feature id for the '<em><b>Masks</b></em>' attribute.
@@ -25304,7 +25458,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_COLOR_MATRIX__MASKS = SVG_ELEMENT_FEATURE_COUNT + 41;
+	int SVG_FE_COLOR_MATRIX_ELEMENT__MASKS = SVG_ELEMENT_FEATURE_COUNT + 41;
 
 	/**
 	 * The feature id for the '<em><b>Opacity</b></em>' attribute.
@@ -25313,7 +25467,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_COLOR_MATRIX__OPACITY = SVG_ELEMENT_FEATURE_COUNT + 42;
+	int SVG_FE_COLOR_MATRIX_ELEMENT__OPACITY = SVG_ELEMENT_FEATURE_COUNT + 42;
 
 	/**
 	 * The feature id for the '<em><b>Overflow</b></em>' attribute.
@@ -25322,7 +25476,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_COLOR_MATRIX__OVERFLOW = SVG_ELEMENT_FEATURE_COUNT + 43;
+	int SVG_FE_COLOR_MATRIX_ELEMENT__OVERFLOW = SVG_ELEMENT_FEATURE_COUNT + 43;
 
 	/**
 	 * The feature id for the '<em><b>Pointer events</b></em>' attribute.
@@ -25331,7 +25485,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_COLOR_MATRIX__POINTER_EVENTS = SVG_ELEMENT_FEATURE_COUNT + 44;
+	int SVG_FE_COLOR_MATRIX_ELEMENT__POINTER_EVENTS = SVG_ELEMENT_FEATURE_COUNT + 44;
 
 	/**
 	 * The feature id for the '<em><b>Shape rendering</b></em>' attribute.
@@ -25340,7 +25494,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_COLOR_MATRIX__SHAPE_RENDERING = SVG_ELEMENT_FEATURE_COUNT + 45;
+	int SVG_FE_COLOR_MATRIX_ELEMENT__SHAPE_RENDERING = SVG_ELEMENT_FEATURE_COUNT + 45;
 
 	/**
 	 * The feature id for the '<em><b>Stop color</b></em>' attribute.
@@ -25349,7 +25503,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_COLOR_MATRIX__STOP_COLOR = SVG_ELEMENT_FEATURE_COUNT + 46;
+	int SVG_FE_COLOR_MATRIX_ELEMENT__STOP_COLOR = SVG_ELEMENT_FEATURE_COUNT + 46;
 
 	/**
 	 * The feature id for the '<em><b>Stop opacity</b></em>' attribute.
@@ -25358,7 +25512,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_COLOR_MATRIX__STOP_OPACITY = SVG_ELEMENT_FEATURE_COUNT + 47;
+	int SVG_FE_COLOR_MATRIX_ELEMENT__STOP_OPACITY = SVG_ELEMENT_FEATURE_COUNT + 47;
 
 	/**
 	 * The feature id for the '<em><b>Stroke</b></em>' attribute.
@@ -25367,7 +25521,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_COLOR_MATRIX__STROKE = SVG_ELEMENT_FEATURE_COUNT + 48;
+	int SVG_FE_COLOR_MATRIX_ELEMENT__STROKE = SVG_ELEMENT_FEATURE_COUNT + 48;
 
 	/**
 	 * The feature id for the '<em><b>Stroke dasharray</b></em>' attribute.
@@ -25376,7 +25530,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_COLOR_MATRIX__STROKE_DASHARRAY = SVG_ELEMENT_FEATURE_COUNT + 49;
+	int SVG_FE_COLOR_MATRIX_ELEMENT__STROKE_DASHARRAY = SVG_ELEMENT_FEATURE_COUNT + 49;
 
 	/**
 	 * The feature id for the '<em><b>Stroke dashoffset</b></em>' attribute.
@@ -25385,7 +25539,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_COLOR_MATRIX__STROKE_DASHOFFSET = SVG_ELEMENT_FEATURE_COUNT + 50;
+	int SVG_FE_COLOR_MATRIX_ELEMENT__STROKE_DASHOFFSET = SVG_ELEMENT_FEATURE_COUNT + 50;
 
 	/**
 	 * The feature id for the '<em><b>Stroke linecap</b></em>' attribute.
@@ -25394,7 +25548,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_COLOR_MATRIX__STROKE_LINECAP = SVG_ELEMENT_FEATURE_COUNT + 51;
+	int SVG_FE_COLOR_MATRIX_ELEMENT__STROKE_LINECAP = SVG_ELEMENT_FEATURE_COUNT + 51;
 
 	/**
 	 * The feature id for the '<em><b>Stroke linejoin</b></em>' attribute.
@@ -25403,7 +25557,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_COLOR_MATRIX__STROKE_LINEJOIN = SVG_ELEMENT_FEATURE_COUNT + 52;
+	int SVG_FE_COLOR_MATRIX_ELEMENT__STROKE_LINEJOIN = SVG_ELEMENT_FEATURE_COUNT + 52;
 
 	/**
 	 * The feature id for the '<em><b>Stroke miterlimit</b></em>' attribute.
@@ -25412,7 +25566,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_COLOR_MATRIX__STROKE_MITERLIMIT = SVG_ELEMENT_FEATURE_COUNT + 53;
+	int SVG_FE_COLOR_MATRIX_ELEMENT__STROKE_MITERLIMIT = SVG_ELEMENT_FEATURE_COUNT + 53;
 
 	/**
 	 * The feature id for the '<em><b>Stroke opacity</b></em>' attribute.
@@ -25421,7 +25575,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_COLOR_MATRIX__STROKE_OPACITY = SVG_ELEMENT_FEATURE_COUNT + 54;
+	int SVG_FE_COLOR_MATRIX_ELEMENT__STROKE_OPACITY = SVG_ELEMENT_FEATURE_COUNT + 54;
 
 	/**
 	 * The feature id for the '<em><b>Stroke width</b></em>' attribute.
@@ -25430,7 +25584,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_COLOR_MATRIX__STROKE_WIDTH = SVG_ELEMENT_FEATURE_COUNT + 55;
+	int SVG_FE_COLOR_MATRIX_ELEMENT__STROKE_WIDTH = SVG_ELEMENT_FEATURE_COUNT + 55;
 
 	/**
 	 * The feature id for the '<em><b>Text anchor</b></em>' attribute.
@@ -25439,7 +25593,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_COLOR_MATRIX__TEXT_ANCHOR = SVG_ELEMENT_FEATURE_COUNT + 56;
+	int SVG_FE_COLOR_MATRIX_ELEMENT__TEXT_ANCHOR = SVG_ELEMENT_FEATURE_COUNT + 56;
 
 	/**
 	 * The feature id for the '<em><b>Text decoration</b></em>' attribute.
@@ -25448,7 +25602,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_COLOR_MATRIX__TEXT_DECORATION = SVG_ELEMENT_FEATURE_COUNT + 57;
+	int SVG_FE_COLOR_MATRIX_ELEMENT__TEXT_DECORATION = SVG_ELEMENT_FEATURE_COUNT + 57;
 
 	/**
 	 * The feature id for the '<em><b>Text rendering</b></em>' attribute.
@@ -25457,7 +25611,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_COLOR_MATRIX__TEXT_RENDERING = SVG_ELEMENT_FEATURE_COUNT + 58;
+	int SVG_FE_COLOR_MATRIX_ELEMENT__TEXT_RENDERING = SVG_ELEMENT_FEATURE_COUNT + 58;
 
 	/**
 	 * The feature id for the '<em><b>Unicode bidi</b></em>' attribute.
@@ -25466,7 +25620,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_COLOR_MATRIX__UNICODE_BIDI = SVG_ELEMENT_FEATURE_COUNT + 59;
+	int SVG_FE_COLOR_MATRIX_ELEMENT__UNICODE_BIDI = SVG_ELEMENT_FEATURE_COUNT + 59;
 
 	/**
 	 * The feature id for the '<em><b>Visibility</b></em>' attribute.
@@ -25475,7 +25629,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_COLOR_MATRIX__VISIBILITY = SVG_ELEMENT_FEATURE_COUNT + 60;
+	int SVG_FE_COLOR_MATRIX_ELEMENT__VISIBILITY = SVG_ELEMENT_FEATURE_COUNT + 60;
 
 	/**
 	 * The feature id for the '<em><b>Word spacing</b></em>' attribute.
@@ -25484,7 +25638,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_COLOR_MATRIX__WORD_SPACING = SVG_ELEMENT_FEATURE_COUNT + 61;
+	int SVG_FE_COLOR_MATRIX_ELEMENT__WORD_SPACING = SVG_ELEMENT_FEATURE_COUNT + 61;
 
 	/**
 	 * The feature id for the '<em><b>Writing mode</b></em>' attribute.
@@ -25493,7 +25647,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_COLOR_MATRIX__WRITING_MODE = SVG_ELEMENT_FEATURE_COUNT + 62;
+	int SVG_FE_COLOR_MATRIX_ELEMENT__WRITING_MODE = SVG_ELEMENT_FEATURE_COUNT + 62;
 
 	/**
 	 * The feature id for the '<em><b>X</b></em>' attribute.
@@ -25502,7 +25656,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_COLOR_MATRIX__X = SVG_ELEMENT_FEATURE_COUNT + 63;
+	int SVG_FE_COLOR_MATRIX_ELEMENT__X = SVG_ELEMENT_FEATURE_COUNT + 63;
 
 	/**
 	 * The feature id for the '<em><b>Y</b></em>' attribute.
@@ -25511,7 +25665,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_COLOR_MATRIX__Y = SVG_ELEMENT_FEATURE_COUNT + 64;
+	int SVG_FE_COLOR_MATRIX_ELEMENT__Y = SVG_ELEMENT_FEATURE_COUNT + 64;
 
 	/**
 	 * The feature id for the '<em><b>Width</b></em>' attribute.
@@ -25520,7 +25674,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_COLOR_MATRIX__WIDTH = SVG_ELEMENT_FEATURE_COUNT + 65;
+	int SVG_FE_COLOR_MATRIX_ELEMENT__WIDTH = SVG_ELEMENT_FEATURE_COUNT + 65;
 
 	/**
 	 * The feature id for the '<em><b>Height</b></em>' attribute.
@@ -25529,7 +25683,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_COLOR_MATRIX__HEIGHT = SVG_ELEMENT_FEATURE_COUNT + 66;
+	int SVG_FE_COLOR_MATRIX_ELEMENT__HEIGHT = SVG_ELEMENT_FEATURE_COUNT + 66;
 
 	/**
 	 * The feature id for the '<em><b>Result</b></em>' attribute.
@@ -25538,7 +25692,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_COLOR_MATRIX__RESULT = SVG_ELEMENT_FEATURE_COUNT + 67;
+	int SVG_FE_COLOR_MATRIX_ELEMENT__RESULT = SVG_ELEMENT_FEATURE_COUNT + 67;
 
 	/**
 	 * The feature id for the '<em><b>In</b></em>' attribute.
@@ -25547,7 +25701,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_COLOR_MATRIX__IN = SVG_ELEMENT_FEATURE_COUNT + 68;
+	int SVG_FE_COLOR_MATRIX_ELEMENT__IN = SVG_ELEMENT_FEATURE_COUNT + 68;
 
 	/**
 	 * The feature id for the '<em><b>Children</b></em>' containment reference list.
@@ -25556,7 +25710,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_COLOR_MATRIX__CHILDREN = SVG_ELEMENT_FEATURE_COUNT + 69;
+	int SVG_FE_COLOR_MATRIX_ELEMENT__CHILDREN = SVG_ELEMENT_FEATURE_COUNT + 69;
 
 	/**
 	 * The feature id for the '<em><b>Class</b></em>' attribute.
@@ -25565,7 +25719,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_COLOR_MATRIX__CLASS = SVG_ELEMENT_FEATURE_COUNT + 70;
+	int SVG_FE_COLOR_MATRIX_ELEMENT__CLASS = SVG_ELEMENT_FEATURE_COUNT + 70;
 
 	/**
 	 * The feature id for the '<em><b>Style</b></em>' attribute.
@@ -25574,7 +25728,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_COLOR_MATRIX__STYLE = SVG_ELEMENT_FEATURE_COUNT + 71;
+	int SVG_FE_COLOR_MATRIX_ELEMENT__STYLE = SVG_ELEMENT_FEATURE_COUNT + 71;
 
 	/**
 	 * The feature id for the '<em><b>Type</b></em>' attribute.
@@ -25583,7 +25737,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_COLOR_MATRIX__TYPE = SVG_ELEMENT_FEATURE_COUNT + 72;
+	int SVG_FE_COLOR_MATRIX_ELEMENT__TYPE = SVG_ELEMENT_FEATURE_COUNT + 72;
 
 	/**
 	 * The feature id for the '<em><b>Values</b></em>' attribute.
@@ -25592,26 +25746,26 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_COLOR_MATRIX__VALUES = SVG_ELEMENT_FEATURE_COUNT + 73;
+	int SVG_FE_COLOR_MATRIX_ELEMENT__VALUES = SVG_ELEMENT_FEATURE_COUNT + 73;
 
 	/**
-	 * The number of structural features of the '<em>Fe Color Matrix</em>' class.
+	 * The number of structural features of the '<em>Fe Color Matrix Element</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_COLOR_MATRIX_FEATURE_COUNT = SVG_ELEMENT_FEATURE_COUNT + 74;
+	int SVG_FE_COLOR_MATRIX_ELEMENT_FEATURE_COUNT = SVG_ELEMENT_FEATURE_COUNT + 74;
 
 	/**
-	 * The meta object id for the '{@link at.bestsolution.efxclipse.formats.svg.svg.impl.SvgFeComponentTransferImpl <em>Fe Component Transfer</em>}' class.
+	 * The meta object id for the '{@link at.bestsolution.efxclipse.formats.svg.svg.impl.SvgFeComponentTransferElementImpl <em>Fe Component Transfer Element</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see at.bestsolution.efxclipse.formats.svg.svg.impl.SvgFeComponentTransferImpl
-	 * @see at.bestsolution.efxclipse.formats.svg.svg.impl.SvgPackageImpl#getSvgFeComponentTransfer()
+	 * @see at.bestsolution.efxclipse.formats.svg.svg.impl.SvgFeComponentTransferElementImpl
+	 * @see at.bestsolution.efxclipse.formats.svg.svg.impl.SvgPackageImpl#getSvgFeComponentTransferElement()
 	 * @generated
 	 */
-	int SVG_FE_COMPONENT_TRANSFER = 63;
+	int SVG_FE_COMPONENT_TRANSFER_ELEMENT = 64;
 
 	/**
 	 * The feature id for the '<em><b>Id</b></em>' attribute.
@@ -25620,7 +25774,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_COMPONENT_TRANSFER__ID = SVG_ELEMENT_FEATURE_COUNT + 0;
+	int SVG_FE_COMPONENT_TRANSFER_ELEMENT__ID = SVG_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Xml base</b></em>' attribute.
@@ -25629,7 +25783,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_COMPONENT_TRANSFER__XML_BASE = SVG_ELEMENT_FEATURE_COUNT + 1;
+	int SVG_FE_COMPONENT_TRANSFER_ELEMENT__XML_BASE = SVG_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Xml lang</b></em>' attribute.
@@ -25638,7 +25792,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_COMPONENT_TRANSFER__XML_LANG = SVG_ELEMENT_FEATURE_COUNT + 2;
+	int SVG_FE_COMPONENT_TRANSFER_ELEMENT__XML_LANG = SVG_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Xml space</b></em>' attribute.
@@ -25647,7 +25801,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_COMPONENT_TRANSFER__XML_SPACE = SVG_ELEMENT_FEATURE_COUNT + 3;
+	int SVG_FE_COMPONENT_TRANSFER_ELEMENT__XML_SPACE = SVG_ELEMENT_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Alignment baseline</b></em>' attribute.
@@ -25656,7 +25810,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_COMPONENT_TRANSFER__ALIGNMENT_BASELINE = SVG_ELEMENT_FEATURE_COUNT + 4;
+	int SVG_FE_COMPONENT_TRANSFER_ELEMENT__ALIGNMENT_BASELINE = SVG_ELEMENT_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Baseline shift</b></em>' attribute.
@@ -25665,7 +25819,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_COMPONENT_TRANSFER__BASELINE_SHIFT = SVG_ELEMENT_FEATURE_COUNT + 5;
+	int SVG_FE_COMPONENT_TRANSFER_ELEMENT__BASELINE_SHIFT = SVG_ELEMENT_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>Clip</b></em>' attribute.
@@ -25674,7 +25828,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_COMPONENT_TRANSFER__CLIP = SVG_ELEMENT_FEATURE_COUNT + 6;
+	int SVG_FE_COMPONENT_TRANSFER_ELEMENT__CLIP = SVG_ELEMENT_FEATURE_COUNT + 6;
 
 	/**
 	 * The feature id for the '<em><b>Clip path</b></em>' attribute.
@@ -25683,7 +25837,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_COMPONENT_TRANSFER__CLIP_PATH = SVG_ELEMENT_FEATURE_COUNT + 7;
+	int SVG_FE_COMPONENT_TRANSFER_ELEMENT__CLIP_PATH = SVG_ELEMENT_FEATURE_COUNT + 7;
 
 	/**
 	 * The feature id for the '<em><b>Clip rule</b></em>' attribute.
@@ -25692,7 +25846,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_COMPONENT_TRANSFER__CLIP_RULE = SVG_ELEMENT_FEATURE_COUNT + 8;
+	int SVG_FE_COMPONENT_TRANSFER_ELEMENT__CLIP_RULE = SVG_ELEMENT_FEATURE_COUNT + 8;
 
 	/**
 	 * The feature id for the '<em><b>Color</b></em>' attribute.
@@ -25701,7 +25855,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_COMPONENT_TRANSFER__COLOR = SVG_ELEMENT_FEATURE_COUNT + 9;
+	int SVG_FE_COMPONENT_TRANSFER_ELEMENT__COLOR = SVG_ELEMENT_FEATURE_COUNT + 9;
 
 	/**
 	 * The feature id for the '<em><b>Color interpolation</b></em>' attribute.
@@ -25710,7 +25864,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_COMPONENT_TRANSFER__COLOR_INTERPOLATION = SVG_ELEMENT_FEATURE_COUNT + 10;
+	int SVG_FE_COMPONENT_TRANSFER_ELEMENT__COLOR_INTERPOLATION = SVG_ELEMENT_FEATURE_COUNT + 10;
 
 	/**
 	 * The feature id for the '<em><b>Color interpolation filters</b></em>' attribute.
@@ -25719,7 +25873,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_COMPONENT_TRANSFER__COLOR_INTERPOLATION_FILTERS = SVG_ELEMENT_FEATURE_COUNT + 11;
+	int SVG_FE_COMPONENT_TRANSFER_ELEMENT__COLOR_INTERPOLATION_FILTERS = SVG_ELEMENT_FEATURE_COUNT + 11;
 
 	/**
 	 * The feature id for the '<em><b>Color profile</b></em>' attribute.
@@ -25728,7 +25882,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_COMPONENT_TRANSFER__COLOR_PROFILE = SVG_ELEMENT_FEATURE_COUNT + 12;
+	int SVG_FE_COMPONENT_TRANSFER_ELEMENT__COLOR_PROFILE = SVG_ELEMENT_FEATURE_COUNT + 12;
 
 	/**
 	 * The feature id for the '<em><b>Color rendering</b></em>' attribute.
@@ -25737,7 +25891,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_COMPONENT_TRANSFER__COLOR_RENDERING = SVG_ELEMENT_FEATURE_COUNT + 13;
+	int SVG_FE_COMPONENT_TRANSFER_ELEMENT__COLOR_RENDERING = SVG_ELEMENT_FEATURE_COUNT + 13;
 
 	/**
 	 * The feature id for the '<em><b>Cursor</b></em>' attribute.
@@ -25746,7 +25900,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_COMPONENT_TRANSFER__CURSOR = SVG_ELEMENT_FEATURE_COUNT + 14;
+	int SVG_FE_COMPONENT_TRANSFER_ELEMENT__CURSOR = SVG_ELEMENT_FEATURE_COUNT + 14;
 
 	/**
 	 * The feature id for the '<em><b>Direction</b></em>' attribute.
@@ -25755,7 +25909,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_COMPONENT_TRANSFER__DIRECTION = SVG_ELEMENT_FEATURE_COUNT + 15;
+	int SVG_FE_COMPONENT_TRANSFER_ELEMENT__DIRECTION = SVG_ELEMENT_FEATURE_COUNT + 15;
 
 	/**
 	 * The feature id for the '<em><b>Display</b></em>' attribute.
@@ -25764,7 +25918,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_COMPONENT_TRANSFER__DISPLAY = SVG_ELEMENT_FEATURE_COUNT + 16;
+	int SVG_FE_COMPONENT_TRANSFER_ELEMENT__DISPLAY = SVG_ELEMENT_FEATURE_COUNT + 16;
 
 	/**
 	 * The feature id for the '<em><b>Dominant baseline</b></em>' attribute.
@@ -25773,7 +25927,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_COMPONENT_TRANSFER__DOMINANT_BASELINE = SVG_ELEMENT_FEATURE_COUNT + 17;
+	int SVG_FE_COMPONENT_TRANSFER_ELEMENT__DOMINANT_BASELINE = SVG_ELEMENT_FEATURE_COUNT + 17;
 
 	/**
 	 * The feature id for the '<em><b>Enable background</b></em>' attribute.
@@ -25782,7 +25936,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_COMPONENT_TRANSFER__ENABLE_BACKGROUND = SVG_ELEMENT_FEATURE_COUNT + 18;
+	int SVG_FE_COMPONENT_TRANSFER_ELEMENT__ENABLE_BACKGROUND = SVG_ELEMENT_FEATURE_COUNT + 18;
 
 	/**
 	 * The feature id for the '<em><b>Fill</b></em>' attribute.
@@ -25791,7 +25945,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_COMPONENT_TRANSFER__FILL = SVG_ELEMENT_FEATURE_COUNT + 19;
+	int SVG_FE_COMPONENT_TRANSFER_ELEMENT__FILL = SVG_ELEMENT_FEATURE_COUNT + 19;
 
 	/**
 	 * The feature id for the '<em><b>Fill opacity</b></em>' attribute.
@@ -25800,7 +25954,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_COMPONENT_TRANSFER__FILL_OPACITY = SVG_ELEMENT_FEATURE_COUNT + 20;
+	int SVG_FE_COMPONENT_TRANSFER_ELEMENT__FILL_OPACITY = SVG_ELEMENT_FEATURE_COUNT + 20;
 
 	/**
 	 * The feature id for the '<em><b>Fill rule</b></em>' attribute.
@@ -25809,7 +25963,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_COMPONENT_TRANSFER__FILL_RULE = SVG_ELEMENT_FEATURE_COUNT + 21;
+	int SVG_FE_COMPONENT_TRANSFER_ELEMENT__FILL_RULE = SVG_ELEMENT_FEATURE_COUNT + 21;
 
 	/**
 	 * The feature id for the '<em><b>Filter</b></em>' attribute.
@@ -25818,7 +25972,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_COMPONENT_TRANSFER__FILTER = SVG_ELEMENT_FEATURE_COUNT + 22;
+	int SVG_FE_COMPONENT_TRANSFER_ELEMENT__FILTER = SVG_ELEMENT_FEATURE_COUNT + 22;
 
 	/**
 	 * The feature id for the '<em><b>Flood color</b></em>' attribute.
@@ -25827,7 +25981,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_COMPONENT_TRANSFER__FLOOD_COLOR = SVG_ELEMENT_FEATURE_COUNT + 23;
+	int SVG_FE_COMPONENT_TRANSFER_ELEMENT__FLOOD_COLOR = SVG_ELEMENT_FEATURE_COUNT + 23;
 
 	/**
 	 * The feature id for the '<em><b>Flood opacity</b></em>' attribute.
@@ -25836,7 +25990,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_COMPONENT_TRANSFER__FLOOD_OPACITY = SVG_ELEMENT_FEATURE_COUNT + 24;
+	int SVG_FE_COMPONENT_TRANSFER_ELEMENT__FLOOD_OPACITY = SVG_ELEMENT_FEATURE_COUNT + 24;
 
 	/**
 	 * The feature id for the '<em><b>Font family</b></em>' attribute.
@@ -25845,7 +25999,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_COMPONENT_TRANSFER__FONT_FAMILY = SVG_ELEMENT_FEATURE_COUNT + 25;
+	int SVG_FE_COMPONENT_TRANSFER_ELEMENT__FONT_FAMILY = SVG_ELEMENT_FEATURE_COUNT + 25;
 
 	/**
 	 * The feature id for the '<em><b>Font size</b></em>' attribute.
@@ -25854,7 +26008,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_COMPONENT_TRANSFER__FONT_SIZE = SVG_ELEMENT_FEATURE_COUNT + 26;
+	int SVG_FE_COMPONENT_TRANSFER_ELEMENT__FONT_SIZE = SVG_ELEMENT_FEATURE_COUNT + 26;
 
 	/**
 	 * The feature id for the '<em><b>Font size adjust</b></em>' attribute.
@@ -25863,7 +26017,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_COMPONENT_TRANSFER__FONT_SIZE_ADJUST = SVG_ELEMENT_FEATURE_COUNT + 27;
+	int SVG_FE_COMPONENT_TRANSFER_ELEMENT__FONT_SIZE_ADJUST = SVG_ELEMENT_FEATURE_COUNT + 27;
 
 	/**
 	 * The feature id for the '<em><b>Font stretch</b></em>' attribute.
@@ -25872,7 +26026,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_COMPONENT_TRANSFER__FONT_STRETCH = SVG_ELEMENT_FEATURE_COUNT + 28;
+	int SVG_FE_COMPONENT_TRANSFER_ELEMENT__FONT_STRETCH = SVG_ELEMENT_FEATURE_COUNT + 28;
 
 	/**
 	 * The feature id for the '<em><b>Font style</b></em>' attribute.
@@ -25881,7 +26035,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_COMPONENT_TRANSFER__FONT_STYLE = SVG_ELEMENT_FEATURE_COUNT + 29;
+	int SVG_FE_COMPONENT_TRANSFER_ELEMENT__FONT_STYLE = SVG_ELEMENT_FEATURE_COUNT + 29;
 
 	/**
 	 * The feature id for the '<em><b>Font variant</b></em>' attribute.
@@ -25890,7 +26044,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_COMPONENT_TRANSFER__FONT_VARIANT = SVG_ELEMENT_FEATURE_COUNT + 30;
+	int SVG_FE_COMPONENT_TRANSFER_ELEMENT__FONT_VARIANT = SVG_ELEMENT_FEATURE_COUNT + 30;
 
 	/**
 	 * The feature id for the '<em><b>Font weight</b></em>' attribute.
@@ -25899,7 +26053,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_COMPONENT_TRANSFER__FONT_WEIGHT = SVG_ELEMENT_FEATURE_COUNT + 31;
+	int SVG_FE_COMPONENT_TRANSFER_ELEMENT__FONT_WEIGHT = SVG_ELEMENT_FEATURE_COUNT + 31;
 
 	/**
 	 * The feature id for the '<em><b>Glyph orientation horizontal</b></em>' attribute.
@@ -25908,7 +26062,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_COMPONENT_TRANSFER__GLYPH_ORIENTATION_HORIZONTAL = SVG_ELEMENT_FEATURE_COUNT + 32;
+	int SVG_FE_COMPONENT_TRANSFER_ELEMENT__GLYPH_ORIENTATION_HORIZONTAL = SVG_ELEMENT_FEATURE_COUNT + 32;
 
 	/**
 	 * The feature id for the '<em><b>Glyph orientation vertical</b></em>' attribute.
@@ -25917,7 +26071,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_COMPONENT_TRANSFER__GLYPH_ORIENTATION_VERTICAL = SVG_ELEMENT_FEATURE_COUNT + 33;
+	int SVG_FE_COMPONENT_TRANSFER_ELEMENT__GLYPH_ORIENTATION_VERTICAL = SVG_ELEMENT_FEATURE_COUNT + 33;
 
 	/**
 	 * The feature id for the '<em><b>Image rendering</b></em>' attribute.
@@ -25926,7 +26080,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_COMPONENT_TRANSFER__IMAGE_RENDERING = SVG_ELEMENT_FEATURE_COUNT + 34;
+	int SVG_FE_COMPONENT_TRANSFER_ELEMENT__IMAGE_RENDERING = SVG_ELEMENT_FEATURE_COUNT + 34;
 
 	/**
 	 * The feature id for the '<em><b>Kerning</b></em>' attribute.
@@ -25935,7 +26089,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_COMPONENT_TRANSFER__KERNING = SVG_ELEMENT_FEATURE_COUNT + 35;
+	int SVG_FE_COMPONENT_TRANSFER_ELEMENT__KERNING = SVG_ELEMENT_FEATURE_COUNT + 35;
 
 	/**
 	 * The feature id for the '<em><b>Letter spacing</b></em>' attribute.
@@ -25944,7 +26098,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_COMPONENT_TRANSFER__LETTER_SPACING = SVG_ELEMENT_FEATURE_COUNT + 36;
+	int SVG_FE_COMPONENT_TRANSFER_ELEMENT__LETTER_SPACING = SVG_ELEMENT_FEATURE_COUNT + 36;
 
 	/**
 	 * The feature id for the '<em><b>Lighting color</b></em>' attribute.
@@ -25953,7 +26107,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_COMPONENT_TRANSFER__LIGHTING_COLOR = SVG_ELEMENT_FEATURE_COUNT + 37;
+	int SVG_FE_COMPONENT_TRANSFER_ELEMENT__LIGHTING_COLOR = SVG_ELEMENT_FEATURE_COUNT + 37;
 
 	/**
 	 * The feature id for the '<em><b>Marker end</b></em>' attribute.
@@ -25962,7 +26116,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_COMPONENT_TRANSFER__MARKER_END = SVG_ELEMENT_FEATURE_COUNT + 38;
+	int SVG_FE_COMPONENT_TRANSFER_ELEMENT__MARKER_END = SVG_ELEMENT_FEATURE_COUNT + 38;
 
 	/**
 	 * The feature id for the '<em><b>Marker mid</b></em>' attribute.
@@ -25971,7 +26125,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_COMPONENT_TRANSFER__MARKER_MID = SVG_ELEMENT_FEATURE_COUNT + 39;
+	int SVG_FE_COMPONENT_TRANSFER_ELEMENT__MARKER_MID = SVG_ELEMENT_FEATURE_COUNT + 39;
 
 	/**
 	 * The feature id for the '<em><b>Marker start</b></em>' attribute.
@@ -25980,7 +26134,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_COMPONENT_TRANSFER__MARKER_START = SVG_ELEMENT_FEATURE_COUNT + 40;
+	int SVG_FE_COMPONENT_TRANSFER_ELEMENT__MARKER_START = SVG_ELEMENT_FEATURE_COUNT + 40;
 
 	/**
 	 * The feature id for the '<em><b>Masks</b></em>' attribute.
@@ -25989,7 +26143,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_COMPONENT_TRANSFER__MASKS = SVG_ELEMENT_FEATURE_COUNT + 41;
+	int SVG_FE_COMPONENT_TRANSFER_ELEMENT__MASKS = SVG_ELEMENT_FEATURE_COUNT + 41;
 
 	/**
 	 * The feature id for the '<em><b>Opacity</b></em>' attribute.
@@ -25998,7 +26152,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_COMPONENT_TRANSFER__OPACITY = SVG_ELEMENT_FEATURE_COUNT + 42;
+	int SVG_FE_COMPONENT_TRANSFER_ELEMENT__OPACITY = SVG_ELEMENT_FEATURE_COUNT + 42;
 
 	/**
 	 * The feature id for the '<em><b>Overflow</b></em>' attribute.
@@ -26007,7 +26161,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_COMPONENT_TRANSFER__OVERFLOW = SVG_ELEMENT_FEATURE_COUNT + 43;
+	int SVG_FE_COMPONENT_TRANSFER_ELEMENT__OVERFLOW = SVG_ELEMENT_FEATURE_COUNT + 43;
 
 	/**
 	 * The feature id for the '<em><b>Pointer events</b></em>' attribute.
@@ -26016,7 +26170,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_COMPONENT_TRANSFER__POINTER_EVENTS = SVG_ELEMENT_FEATURE_COUNT + 44;
+	int SVG_FE_COMPONENT_TRANSFER_ELEMENT__POINTER_EVENTS = SVG_ELEMENT_FEATURE_COUNT + 44;
 
 	/**
 	 * The feature id for the '<em><b>Shape rendering</b></em>' attribute.
@@ -26025,7 +26179,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_COMPONENT_TRANSFER__SHAPE_RENDERING = SVG_ELEMENT_FEATURE_COUNT + 45;
+	int SVG_FE_COMPONENT_TRANSFER_ELEMENT__SHAPE_RENDERING = SVG_ELEMENT_FEATURE_COUNT + 45;
 
 	/**
 	 * The feature id for the '<em><b>Stop color</b></em>' attribute.
@@ -26034,7 +26188,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_COMPONENT_TRANSFER__STOP_COLOR = SVG_ELEMENT_FEATURE_COUNT + 46;
+	int SVG_FE_COMPONENT_TRANSFER_ELEMENT__STOP_COLOR = SVG_ELEMENT_FEATURE_COUNT + 46;
 
 	/**
 	 * The feature id for the '<em><b>Stop opacity</b></em>' attribute.
@@ -26043,7 +26197,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_COMPONENT_TRANSFER__STOP_OPACITY = SVG_ELEMENT_FEATURE_COUNT + 47;
+	int SVG_FE_COMPONENT_TRANSFER_ELEMENT__STOP_OPACITY = SVG_ELEMENT_FEATURE_COUNT + 47;
 
 	/**
 	 * The feature id for the '<em><b>Stroke</b></em>' attribute.
@@ -26052,7 +26206,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_COMPONENT_TRANSFER__STROKE = SVG_ELEMENT_FEATURE_COUNT + 48;
+	int SVG_FE_COMPONENT_TRANSFER_ELEMENT__STROKE = SVG_ELEMENT_FEATURE_COUNT + 48;
 
 	/**
 	 * The feature id for the '<em><b>Stroke dasharray</b></em>' attribute.
@@ -26061,7 +26215,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_COMPONENT_TRANSFER__STROKE_DASHARRAY = SVG_ELEMENT_FEATURE_COUNT + 49;
+	int SVG_FE_COMPONENT_TRANSFER_ELEMENT__STROKE_DASHARRAY = SVG_ELEMENT_FEATURE_COUNT + 49;
 
 	/**
 	 * The feature id for the '<em><b>Stroke dashoffset</b></em>' attribute.
@@ -26070,7 +26224,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_COMPONENT_TRANSFER__STROKE_DASHOFFSET = SVG_ELEMENT_FEATURE_COUNT + 50;
+	int SVG_FE_COMPONENT_TRANSFER_ELEMENT__STROKE_DASHOFFSET = SVG_ELEMENT_FEATURE_COUNT + 50;
 
 	/**
 	 * The feature id for the '<em><b>Stroke linecap</b></em>' attribute.
@@ -26079,7 +26233,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_COMPONENT_TRANSFER__STROKE_LINECAP = SVG_ELEMENT_FEATURE_COUNT + 51;
+	int SVG_FE_COMPONENT_TRANSFER_ELEMENT__STROKE_LINECAP = SVG_ELEMENT_FEATURE_COUNT + 51;
 
 	/**
 	 * The feature id for the '<em><b>Stroke linejoin</b></em>' attribute.
@@ -26088,7 +26242,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_COMPONENT_TRANSFER__STROKE_LINEJOIN = SVG_ELEMENT_FEATURE_COUNT + 52;
+	int SVG_FE_COMPONENT_TRANSFER_ELEMENT__STROKE_LINEJOIN = SVG_ELEMENT_FEATURE_COUNT + 52;
 
 	/**
 	 * The feature id for the '<em><b>Stroke miterlimit</b></em>' attribute.
@@ -26097,7 +26251,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_COMPONENT_TRANSFER__STROKE_MITERLIMIT = SVG_ELEMENT_FEATURE_COUNT + 53;
+	int SVG_FE_COMPONENT_TRANSFER_ELEMENT__STROKE_MITERLIMIT = SVG_ELEMENT_FEATURE_COUNT + 53;
 
 	/**
 	 * The feature id for the '<em><b>Stroke opacity</b></em>' attribute.
@@ -26106,7 +26260,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_COMPONENT_TRANSFER__STROKE_OPACITY = SVG_ELEMENT_FEATURE_COUNT + 54;
+	int SVG_FE_COMPONENT_TRANSFER_ELEMENT__STROKE_OPACITY = SVG_ELEMENT_FEATURE_COUNT + 54;
 
 	/**
 	 * The feature id for the '<em><b>Stroke width</b></em>' attribute.
@@ -26115,7 +26269,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_COMPONENT_TRANSFER__STROKE_WIDTH = SVG_ELEMENT_FEATURE_COUNT + 55;
+	int SVG_FE_COMPONENT_TRANSFER_ELEMENT__STROKE_WIDTH = SVG_ELEMENT_FEATURE_COUNT + 55;
 
 	/**
 	 * The feature id for the '<em><b>Text anchor</b></em>' attribute.
@@ -26124,7 +26278,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_COMPONENT_TRANSFER__TEXT_ANCHOR = SVG_ELEMENT_FEATURE_COUNT + 56;
+	int SVG_FE_COMPONENT_TRANSFER_ELEMENT__TEXT_ANCHOR = SVG_ELEMENT_FEATURE_COUNT + 56;
 
 	/**
 	 * The feature id for the '<em><b>Text decoration</b></em>' attribute.
@@ -26133,7 +26287,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_COMPONENT_TRANSFER__TEXT_DECORATION = SVG_ELEMENT_FEATURE_COUNT + 57;
+	int SVG_FE_COMPONENT_TRANSFER_ELEMENT__TEXT_DECORATION = SVG_ELEMENT_FEATURE_COUNT + 57;
 
 	/**
 	 * The feature id for the '<em><b>Text rendering</b></em>' attribute.
@@ -26142,7 +26296,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_COMPONENT_TRANSFER__TEXT_RENDERING = SVG_ELEMENT_FEATURE_COUNT + 58;
+	int SVG_FE_COMPONENT_TRANSFER_ELEMENT__TEXT_RENDERING = SVG_ELEMENT_FEATURE_COUNT + 58;
 
 	/**
 	 * The feature id for the '<em><b>Unicode bidi</b></em>' attribute.
@@ -26151,7 +26305,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_COMPONENT_TRANSFER__UNICODE_BIDI = SVG_ELEMENT_FEATURE_COUNT + 59;
+	int SVG_FE_COMPONENT_TRANSFER_ELEMENT__UNICODE_BIDI = SVG_ELEMENT_FEATURE_COUNT + 59;
 
 	/**
 	 * The feature id for the '<em><b>Visibility</b></em>' attribute.
@@ -26160,7 +26314,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_COMPONENT_TRANSFER__VISIBILITY = SVG_ELEMENT_FEATURE_COUNT + 60;
+	int SVG_FE_COMPONENT_TRANSFER_ELEMENT__VISIBILITY = SVG_ELEMENT_FEATURE_COUNT + 60;
 
 	/**
 	 * The feature id for the '<em><b>Word spacing</b></em>' attribute.
@@ -26169,7 +26323,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_COMPONENT_TRANSFER__WORD_SPACING = SVG_ELEMENT_FEATURE_COUNT + 61;
+	int SVG_FE_COMPONENT_TRANSFER_ELEMENT__WORD_SPACING = SVG_ELEMENT_FEATURE_COUNT + 61;
 
 	/**
 	 * The feature id for the '<em><b>Writing mode</b></em>' attribute.
@@ -26178,7 +26332,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_COMPONENT_TRANSFER__WRITING_MODE = SVG_ELEMENT_FEATURE_COUNT + 62;
+	int SVG_FE_COMPONENT_TRANSFER_ELEMENT__WRITING_MODE = SVG_ELEMENT_FEATURE_COUNT + 62;
 
 	/**
 	 * The feature id for the '<em><b>X</b></em>' attribute.
@@ -26187,7 +26341,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_COMPONENT_TRANSFER__X = SVG_ELEMENT_FEATURE_COUNT + 63;
+	int SVG_FE_COMPONENT_TRANSFER_ELEMENT__X = SVG_ELEMENT_FEATURE_COUNT + 63;
 
 	/**
 	 * The feature id for the '<em><b>Y</b></em>' attribute.
@@ -26196,7 +26350,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_COMPONENT_TRANSFER__Y = SVG_ELEMENT_FEATURE_COUNT + 64;
+	int SVG_FE_COMPONENT_TRANSFER_ELEMENT__Y = SVG_ELEMENT_FEATURE_COUNT + 64;
 
 	/**
 	 * The feature id for the '<em><b>Width</b></em>' attribute.
@@ -26205,7 +26359,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_COMPONENT_TRANSFER__WIDTH = SVG_ELEMENT_FEATURE_COUNT + 65;
+	int SVG_FE_COMPONENT_TRANSFER_ELEMENT__WIDTH = SVG_ELEMENT_FEATURE_COUNT + 65;
 
 	/**
 	 * The feature id for the '<em><b>Height</b></em>' attribute.
@@ -26214,7 +26368,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_COMPONENT_TRANSFER__HEIGHT = SVG_ELEMENT_FEATURE_COUNT + 66;
+	int SVG_FE_COMPONENT_TRANSFER_ELEMENT__HEIGHT = SVG_ELEMENT_FEATURE_COUNT + 66;
 
 	/**
 	 * The feature id for the '<em><b>Result</b></em>' attribute.
@@ -26223,7 +26377,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_COMPONENT_TRANSFER__RESULT = SVG_ELEMENT_FEATURE_COUNT + 67;
+	int SVG_FE_COMPONENT_TRANSFER_ELEMENT__RESULT = SVG_ELEMENT_FEATURE_COUNT + 67;
 
 	/**
 	 * The feature id for the '<em><b>In</b></em>' attribute.
@@ -26232,7 +26386,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_COMPONENT_TRANSFER__IN = SVG_ELEMENT_FEATURE_COUNT + 68;
+	int SVG_FE_COMPONENT_TRANSFER_ELEMENT__IN = SVG_ELEMENT_FEATURE_COUNT + 68;
 
 	/**
 	 * The feature id for the '<em><b>Children</b></em>' containment reference list.
@@ -26241,7 +26395,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_COMPONENT_TRANSFER__CHILDREN = SVG_ELEMENT_FEATURE_COUNT + 69;
+	int SVG_FE_COMPONENT_TRANSFER_ELEMENT__CHILDREN = SVG_ELEMENT_FEATURE_COUNT + 69;
 
 	/**
 	 * The feature id for the '<em><b>Class</b></em>' attribute.
@@ -26250,7 +26404,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_COMPONENT_TRANSFER__CLASS = SVG_ELEMENT_FEATURE_COUNT + 70;
+	int SVG_FE_COMPONENT_TRANSFER_ELEMENT__CLASS = SVG_ELEMENT_FEATURE_COUNT + 70;
 
 	/**
 	 * The feature id for the '<em><b>Style</b></em>' attribute.
@@ -26259,26 +26413,26 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_COMPONENT_TRANSFER__STYLE = SVG_ELEMENT_FEATURE_COUNT + 71;
+	int SVG_FE_COMPONENT_TRANSFER_ELEMENT__STYLE = SVG_ELEMENT_FEATURE_COUNT + 71;
 
 	/**
-	 * The number of structural features of the '<em>Fe Component Transfer</em>' class.
+	 * The number of structural features of the '<em>Fe Component Transfer Element</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_COMPONENT_TRANSFER_FEATURE_COUNT = SVG_ELEMENT_FEATURE_COUNT + 72;
+	int SVG_FE_COMPONENT_TRANSFER_ELEMENT_FEATURE_COUNT = SVG_ELEMENT_FEATURE_COUNT + 72;
 
 	/**
-	 * The meta object id for the '{@link at.bestsolution.efxclipse.formats.svg.svg.impl.SvgFeFuncRImpl <em>Fe Func R</em>}' class.
+	 * The meta object id for the '{@link at.bestsolution.efxclipse.formats.svg.svg.impl.SvgFeFuncRElementImpl <em>Fe Func RElement</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see at.bestsolution.efxclipse.formats.svg.svg.impl.SvgFeFuncRImpl
-	 * @see at.bestsolution.efxclipse.formats.svg.svg.impl.SvgPackageImpl#getSvgFeFuncR()
+	 * @see at.bestsolution.efxclipse.formats.svg.svg.impl.SvgFeFuncRElementImpl
+	 * @see at.bestsolution.efxclipse.formats.svg.svg.impl.SvgPackageImpl#getSvgFeFuncRElement()
 	 * @generated
 	 */
-	int SVG_FE_FUNC_R = 64;
+	int SVG_FE_FUNC_RELEMENT = 65;
 
 	/**
 	 * The feature id for the '<em><b>Id</b></em>' attribute.
@@ -26287,7 +26441,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_FUNC_R__ID = SVG_ELEMENT_FEATURE_COUNT + 0;
+	int SVG_FE_FUNC_RELEMENT__ID = SVG_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Xml base</b></em>' attribute.
@@ -26296,7 +26450,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_FUNC_R__XML_BASE = SVG_ELEMENT_FEATURE_COUNT + 1;
+	int SVG_FE_FUNC_RELEMENT__XML_BASE = SVG_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Xml lang</b></em>' attribute.
@@ -26305,7 +26459,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_FUNC_R__XML_LANG = SVG_ELEMENT_FEATURE_COUNT + 2;
+	int SVG_FE_FUNC_RELEMENT__XML_LANG = SVG_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Xml space</b></em>' attribute.
@@ -26314,7 +26468,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_FUNC_R__XML_SPACE = SVG_ELEMENT_FEATURE_COUNT + 3;
+	int SVG_FE_FUNC_RELEMENT__XML_SPACE = SVG_ELEMENT_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Alignment baseline</b></em>' attribute.
@@ -26323,7 +26477,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_FUNC_R__ALIGNMENT_BASELINE = SVG_ELEMENT_FEATURE_COUNT + 4;
+	int SVG_FE_FUNC_RELEMENT__ALIGNMENT_BASELINE = SVG_ELEMENT_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Baseline shift</b></em>' attribute.
@@ -26332,7 +26486,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_FUNC_R__BASELINE_SHIFT = SVG_ELEMENT_FEATURE_COUNT + 5;
+	int SVG_FE_FUNC_RELEMENT__BASELINE_SHIFT = SVG_ELEMENT_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>Clip</b></em>' attribute.
@@ -26341,7 +26495,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_FUNC_R__CLIP = SVG_ELEMENT_FEATURE_COUNT + 6;
+	int SVG_FE_FUNC_RELEMENT__CLIP = SVG_ELEMENT_FEATURE_COUNT + 6;
 
 	/**
 	 * The feature id for the '<em><b>Clip path</b></em>' attribute.
@@ -26350,7 +26504,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_FUNC_R__CLIP_PATH = SVG_ELEMENT_FEATURE_COUNT + 7;
+	int SVG_FE_FUNC_RELEMENT__CLIP_PATH = SVG_ELEMENT_FEATURE_COUNT + 7;
 
 	/**
 	 * The feature id for the '<em><b>Clip rule</b></em>' attribute.
@@ -26359,7 +26513,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_FUNC_R__CLIP_RULE = SVG_ELEMENT_FEATURE_COUNT + 8;
+	int SVG_FE_FUNC_RELEMENT__CLIP_RULE = SVG_ELEMENT_FEATURE_COUNT + 8;
 
 	/**
 	 * The feature id for the '<em><b>Color</b></em>' attribute.
@@ -26368,7 +26522,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_FUNC_R__COLOR = SVG_ELEMENT_FEATURE_COUNT + 9;
+	int SVG_FE_FUNC_RELEMENT__COLOR = SVG_ELEMENT_FEATURE_COUNT + 9;
 
 	/**
 	 * The feature id for the '<em><b>Color interpolation</b></em>' attribute.
@@ -26377,7 +26531,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_FUNC_R__COLOR_INTERPOLATION = SVG_ELEMENT_FEATURE_COUNT + 10;
+	int SVG_FE_FUNC_RELEMENT__COLOR_INTERPOLATION = SVG_ELEMENT_FEATURE_COUNT + 10;
 
 	/**
 	 * The feature id for the '<em><b>Color interpolation filters</b></em>' attribute.
@@ -26386,7 +26540,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_FUNC_R__COLOR_INTERPOLATION_FILTERS = SVG_ELEMENT_FEATURE_COUNT + 11;
+	int SVG_FE_FUNC_RELEMENT__COLOR_INTERPOLATION_FILTERS = SVG_ELEMENT_FEATURE_COUNT + 11;
 
 	/**
 	 * The feature id for the '<em><b>Color profile</b></em>' attribute.
@@ -26395,7 +26549,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_FUNC_R__COLOR_PROFILE = SVG_ELEMENT_FEATURE_COUNT + 12;
+	int SVG_FE_FUNC_RELEMENT__COLOR_PROFILE = SVG_ELEMENT_FEATURE_COUNT + 12;
 
 	/**
 	 * The feature id for the '<em><b>Color rendering</b></em>' attribute.
@@ -26404,7 +26558,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_FUNC_R__COLOR_RENDERING = SVG_ELEMENT_FEATURE_COUNT + 13;
+	int SVG_FE_FUNC_RELEMENT__COLOR_RENDERING = SVG_ELEMENT_FEATURE_COUNT + 13;
 
 	/**
 	 * The feature id for the '<em><b>Cursor</b></em>' attribute.
@@ -26413,7 +26567,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_FUNC_R__CURSOR = SVG_ELEMENT_FEATURE_COUNT + 14;
+	int SVG_FE_FUNC_RELEMENT__CURSOR = SVG_ELEMENT_FEATURE_COUNT + 14;
 
 	/**
 	 * The feature id for the '<em><b>Direction</b></em>' attribute.
@@ -26422,7 +26576,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_FUNC_R__DIRECTION = SVG_ELEMENT_FEATURE_COUNT + 15;
+	int SVG_FE_FUNC_RELEMENT__DIRECTION = SVG_ELEMENT_FEATURE_COUNT + 15;
 
 	/**
 	 * The feature id for the '<em><b>Display</b></em>' attribute.
@@ -26431,7 +26585,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_FUNC_R__DISPLAY = SVG_ELEMENT_FEATURE_COUNT + 16;
+	int SVG_FE_FUNC_RELEMENT__DISPLAY = SVG_ELEMENT_FEATURE_COUNT + 16;
 
 	/**
 	 * The feature id for the '<em><b>Dominant baseline</b></em>' attribute.
@@ -26440,7 +26594,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_FUNC_R__DOMINANT_BASELINE = SVG_ELEMENT_FEATURE_COUNT + 17;
+	int SVG_FE_FUNC_RELEMENT__DOMINANT_BASELINE = SVG_ELEMENT_FEATURE_COUNT + 17;
 
 	/**
 	 * The feature id for the '<em><b>Enable background</b></em>' attribute.
@@ -26449,7 +26603,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_FUNC_R__ENABLE_BACKGROUND = SVG_ELEMENT_FEATURE_COUNT + 18;
+	int SVG_FE_FUNC_RELEMENT__ENABLE_BACKGROUND = SVG_ELEMENT_FEATURE_COUNT + 18;
 
 	/**
 	 * The feature id for the '<em><b>Fill</b></em>' attribute.
@@ -26458,7 +26612,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_FUNC_R__FILL = SVG_ELEMENT_FEATURE_COUNT + 19;
+	int SVG_FE_FUNC_RELEMENT__FILL = SVG_ELEMENT_FEATURE_COUNT + 19;
 
 	/**
 	 * The feature id for the '<em><b>Fill opacity</b></em>' attribute.
@@ -26467,7 +26621,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_FUNC_R__FILL_OPACITY = SVG_ELEMENT_FEATURE_COUNT + 20;
+	int SVG_FE_FUNC_RELEMENT__FILL_OPACITY = SVG_ELEMENT_FEATURE_COUNT + 20;
 
 	/**
 	 * The feature id for the '<em><b>Fill rule</b></em>' attribute.
@@ -26476,7 +26630,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_FUNC_R__FILL_RULE = SVG_ELEMENT_FEATURE_COUNT + 21;
+	int SVG_FE_FUNC_RELEMENT__FILL_RULE = SVG_ELEMENT_FEATURE_COUNT + 21;
 
 	/**
 	 * The feature id for the '<em><b>Filter</b></em>' attribute.
@@ -26485,7 +26639,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_FUNC_R__FILTER = SVG_ELEMENT_FEATURE_COUNT + 22;
+	int SVG_FE_FUNC_RELEMENT__FILTER = SVG_ELEMENT_FEATURE_COUNT + 22;
 
 	/**
 	 * The feature id for the '<em><b>Flood color</b></em>' attribute.
@@ -26494,7 +26648,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_FUNC_R__FLOOD_COLOR = SVG_ELEMENT_FEATURE_COUNT + 23;
+	int SVG_FE_FUNC_RELEMENT__FLOOD_COLOR = SVG_ELEMENT_FEATURE_COUNT + 23;
 
 	/**
 	 * The feature id for the '<em><b>Flood opacity</b></em>' attribute.
@@ -26503,7 +26657,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_FUNC_R__FLOOD_OPACITY = SVG_ELEMENT_FEATURE_COUNT + 24;
+	int SVG_FE_FUNC_RELEMENT__FLOOD_OPACITY = SVG_ELEMENT_FEATURE_COUNT + 24;
 
 	/**
 	 * The feature id for the '<em><b>Font family</b></em>' attribute.
@@ -26512,7 +26666,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_FUNC_R__FONT_FAMILY = SVG_ELEMENT_FEATURE_COUNT + 25;
+	int SVG_FE_FUNC_RELEMENT__FONT_FAMILY = SVG_ELEMENT_FEATURE_COUNT + 25;
 
 	/**
 	 * The feature id for the '<em><b>Font size</b></em>' attribute.
@@ -26521,7 +26675,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_FUNC_R__FONT_SIZE = SVG_ELEMENT_FEATURE_COUNT + 26;
+	int SVG_FE_FUNC_RELEMENT__FONT_SIZE = SVG_ELEMENT_FEATURE_COUNT + 26;
 
 	/**
 	 * The feature id for the '<em><b>Font size adjust</b></em>' attribute.
@@ -26530,7 +26684,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_FUNC_R__FONT_SIZE_ADJUST = SVG_ELEMENT_FEATURE_COUNT + 27;
+	int SVG_FE_FUNC_RELEMENT__FONT_SIZE_ADJUST = SVG_ELEMENT_FEATURE_COUNT + 27;
 
 	/**
 	 * The feature id for the '<em><b>Font stretch</b></em>' attribute.
@@ -26539,7 +26693,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_FUNC_R__FONT_STRETCH = SVG_ELEMENT_FEATURE_COUNT + 28;
+	int SVG_FE_FUNC_RELEMENT__FONT_STRETCH = SVG_ELEMENT_FEATURE_COUNT + 28;
 
 	/**
 	 * The feature id for the '<em><b>Font style</b></em>' attribute.
@@ -26548,7 +26702,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_FUNC_R__FONT_STYLE = SVG_ELEMENT_FEATURE_COUNT + 29;
+	int SVG_FE_FUNC_RELEMENT__FONT_STYLE = SVG_ELEMENT_FEATURE_COUNT + 29;
 
 	/**
 	 * The feature id for the '<em><b>Font variant</b></em>' attribute.
@@ -26557,7 +26711,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_FUNC_R__FONT_VARIANT = SVG_ELEMENT_FEATURE_COUNT + 30;
+	int SVG_FE_FUNC_RELEMENT__FONT_VARIANT = SVG_ELEMENT_FEATURE_COUNT + 30;
 
 	/**
 	 * The feature id for the '<em><b>Font weight</b></em>' attribute.
@@ -26566,7 +26720,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_FUNC_R__FONT_WEIGHT = SVG_ELEMENT_FEATURE_COUNT + 31;
+	int SVG_FE_FUNC_RELEMENT__FONT_WEIGHT = SVG_ELEMENT_FEATURE_COUNT + 31;
 
 	/**
 	 * The feature id for the '<em><b>Glyph orientation horizontal</b></em>' attribute.
@@ -26575,7 +26729,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_FUNC_R__GLYPH_ORIENTATION_HORIZONTAL = SVG_ELEMENT_FEATURE_COUNT + 32;
+	int SVG_FE_FUNC_RELEMENT__GLYPH_ORIENTATION_HORIZONTAL = SVG_ELEMENT_FEATURE_COUNT + 32;
 
 	/**
 	 * The feature id for the '<em><b>Glyph orientation vertical</b></em>' attribute.
@@ -26584,7 +26738,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_FUNC_R__GLYPH_ORIENTATION_VERTICAL = SVG_ELEMENT_FEATURE_COUNT + 33;
+	int SVG_FE_FUNC_RELEMENT__GLYPH_ORIENTATION_VERTICAL = SVG_ELEMENT_FEATURE_COUNT + 33;
 
 	/**
 	 * The feature id for the '<em><b>Image rendering</b></em>' attribute.
@@ -26593,7 +26747,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_FUNC_R__IMAGE_RENDERING = SVG_ELEMENT_FEATURE_COUNT + 34;
+	int SVG_FE_FUNC_RELEMENT__IMAGE_RENDERING = SVG_ELEMENT_FEATURE_COUNT + 34;
 
 	/**
 	 * The feature id for the '<em><b>Kerning</b></em>' attribute.
@@ -26602,7 +26756,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_FUNC_R__KERNING = SVG_ELEMENT_FEATURE_COUNT + 35;
+	int SVG_FE_FUNC_RELEMENT__KERNING = SVG_ELEMENT_FEATURE_COUNT + 35;
 
 	/**
 	 * The feature id for the '<em><b>Letter spacing</b></em>' attribute.
@@ -26611,7 +26765,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_FUNC_R__LETTER_SPACING = SVG_ELEMENT_FEATURE_COUNT + 36;
+	int SVG_FE_FUNC_RELEMENT__LETTER_SPACING = SVG_ELEMENT_FEATURE_COUNT + 36;
 
 	/**
 	 * The feature id for the '<em><b>Lighting color</b></em>' attribute.
@@ -26620,7 +26774,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_FUNC_R__LIGHTING_COLOR = SVG_ELEMENT_FEATURE_COUNT + 37;
+	int SVG_FE_FUNC_RELEMENT__LIGHTING_COLOR = SVG_ELEMENT_FEATURE_COUNT + 37;
 
 	/**
 	 * The feature id for the '<em><b>Marker end</b></em>' attribute.
@@ -26629,7 +26783,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_FUNC_R__MARKER_END = SVG_ELEMENT_FEATURE_COUNT + 38;
+	int SVG_FE_FUNC_RELEMENT__MARKER_END = SVG_ELEMENT_FEATURE_COUNT + 38;
 
 	/**
 	 * The feature id for the '<em><b>Marker mid</b></em>' attribute.
@@ -26638,7 +26792,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_FUNC_R__MARKER_MID = SVG_ELEMENT_FEATURE_COUNT + 39;
+	int SVG_FE_FUNC_RELEMENT__MARKER_MID = SVG_ELEMENT_FEATURE_COUNT + 39;
 
 	/**
 	 * The feature id for the '<em><b>Marker start</b></em>' attribute.
@@ -26647,7 +26801,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_FUNC_R__MARKER_START = SVG_ELEMENT_FEATURE_COUNT + 40;
+	int SVG_FE_FUNC_RELEMENT__MARKER_START = SVG_ELEMENT_FEATURE_COUNT + 40;
 
 	/**
 	 * The feature id for the '<em><b>Masks</b></em>' attribute.
@@ -26656,7 +26810,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_FUNC_R__MASKS = SVG_ELEMENT_FEATURE_COUNT + 41;
+	int SVG_FE_FUNC_RELEMENT__MASKS = SVG_ELEMENT_FEATURE_COUNT + 41;
 
 	/**
 	 * The feature id for the '<em><b>Opacity</b></em>' attribute.
@@ -26665,7 +26819,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_FUNC_R__OPACITY = SVG_ELEMENT_FEATURE_COUNT + 42;
+	int SVG_FE_FUNC_RELEMENT__OPACITY = SVG_ELEMENT_FEATURE_COUNT + 42;
 
 	/**
 	 * The feature id for the '<em><b>Overflow</b></em>' attribute.
@@ -26674,7 +26828,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_FUNC_R__OVERFLOW = SVG_ELEMENT_FEATURE_COUNT + 43;
+	int SVG_FE_FUNC_RELEMENT__OVERFLOW = SVG_ELEMENT_FEATURE_COUNT + 43;
 
 	/**
 	 * The feature id for the '<em><b>Pointer events</b></em>' attribute.
@@ -26683,7 +26837,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_FUNC_R__POINTER_EVENTS = SVG_ELEMENT_FEATURE_COUNT + 44;
+	int SVG_FE_FUNC_RELEMENT__POINTER_EVENTS = SVG_ELEMENT_FEATURE_COUNT + 44;
 
 	/**
 	 * The feature id for the '<em><b>Shape rendering</b></em>' attribute.
@@ -26692,7 +26846,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_FUNC_R__SHAPE_RENDERING = SVG_ELEMENT_FEATURE_COUNT + 45;
+	int SVG_FE_FUNC_RELEMENT__SHAPE_RENDERING = SVG_ELEMENT_FEATURE_COUNT + 45;
 
 	/**
 	 * The feature id for the '<em><b>Stop color</b></em>' attribute.
@@ -26701,7 +26855,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_FUNC_R__STOP_COLOR = SVG_ELEMENT_FEATURE_COUNT + 46;
+	int SVG_FE_FUNC_RELEMENT__STOP_COLOR = SVG_ELEMENT_FEATURE_COUNT + 46;
 
 	/**
 	 * The feature id for the '<em><b>Stop opacity</b></em>' attribute.
@@ -26710,7 +26864,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_FUNC_R__STOP_OPACITY = SVG_ELEMENT_FEATURE_COUNT + 47;
+	int SVG_FE_FUNC_RELEMENT__STOP_OPACITY = SVG_ELEMENT_FEATURE_COUNT + 47;
 
 	/**
 	 * The feature id for the '<em><b>Stroke</b></em>' attribute.
@@ -26719,7 +26873,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_FUNC_R__STROKE = SVG_ELEMENT_FEATURE_COUNT + 48;
+	int SVG_FE_FUNC_RELEMENT__STROKE = SVG_ELEMENT_FEATURE_COUNT + 48;
 
 	/**
 	 * The feature id for the '<em><b>Stroke dasharray</b></em>' attribute.
@@ -26728,7 +26882,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_FUNC_R__STROKE_DASHARRAY = SVG_ELEMENT_FEATURE_COUNT + 49;
+	int SVG_FE_FUNC_RELEMENT__STROKE_DASHARRAY = SVG_ELEMENT_FEATURE_COUNT + 49;
 
 	/**
 	 * The feature id for the '<em><b>Stroke dashoffset</b></em>' attribute.
@@ -26737,7 +26891,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_FUNC_R__STROKE_DASHOFFSET = SVG_ELEMENT_FEATURE_COUNT + 50;
+	int SVG_FE_FUNC_RELEMENT__STROKE_DASHOFFSET = SVG_ELEMENT_FEATURE_COUNT + 50;
 
 	/**
 	 * The feature id for the '<em><b>Stroke linecap</b></em>' attribute.
@@ -26746,7 +26900,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_FUNC_R__STROKE_LINECAP = SVG_ELEMENT_FEATURE_COUNT + 51;
+	int SVG_FE_FUNC_RELEMENT__STROKE_LINECAP = SVG_ELEMENT_FEATURE_COUNT + 51;
 
 	/**
 	 * The feature id for the '<em><b>Stroke linejoin</b></em>' attribute.
@@ -26755,7 +26909,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_FUNC_R__STROKE_LINEJOIN = SVG_ELEMENT_FEATURE_COUNT + 52;
+	int SVG_FE_FUNC_RELEMENT__STROKE_LINEJOIN = SVG_ELEMENT_FEATURE_COUNT + 52;
 
 	/**
 	 * The feature id for the '<em><b>Stroke miterlimit</b></em>' attribute.
@@ -26764,7 +26918,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_FUNC_R__STROKE_MITERLIMIT = SVG_ELEMENT_FEATURE_COUNT + 53;
+	int SVG_FE_FUNC_RELEMENT__STROKE_MITERLIMIT = SVG_ELEMENT_FEATURE_COUNT + 53;
 
 	/**
 	 * The feature id for the '<em><b>Stroke opacity</b></em>' attribute.
@@ -26773,7 +26927,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_FUNC_R__STROKE_OPACITY = SVG_ELEMENT_FEATURE_COUNT + 54;
+	int SVG_FE_FUNC_RELEMENT__STROKE_OPACITY = SVG_ELEMENT_FEATURE_COUNT + 54;
 
 	/**
 	 * The feature id for the '<em><b>Stroke width</b></em>' attribute.
@@ -26782,7 +26936,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_FUNC_R__STROKE_WIDTH = SVG_ELEMENT_FEATURE_COUNT + 55;
+	int SVG_FE_FUNC_RELEMENT__STROKE_WIDTH = SVG_ELEMENT_FEATURE_COUNT + 55;
 
 	/**
 	 * The feature id for the '<em><b>Text anchor</b></em>' attribute.
@@ -26791,7 +26945,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_FUNC_R__TEXT_ANCHOR = SVG_ELEMENT_FEATURE_COUNT + 56;
+	int SVG_FE_FUNC_RELEMENT__TEXT_ANCHOR = SVG_ELEMENT_FEATURE_COUNT + 56;
 
 	/**
 	 * The feature id for the '<em><b>Text decoration</b></em>' attribute.
@@ -26800,7 +26954,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_FUNC_R__TEXT_DECORATION = SVG_ELEMENT_FEATURE_COUNT + 57;
+	int SVG_FE_FUNC_RELEMENT__TEXT_DECORATION = SVG_ELEMENT_FEATURE_COUNT + 57;
 
 	/**
 	 * The feature id for the '<em><b>Text rendering</b></em>' attribute.
@@ -26809,7 +26963,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_FUNC_R__TEXT_RENDERING = SVG_ELEMENT_FEATURE_COUNT + 58;
+	int SVG_FE_FUNC_RELEMENT__TEXT_RENDERING = SVG_ELEMENT_FEATURE_COUNT + 58;
 
 	/**
 	 * The feature id for the '<em><b>Unicode bidi</b></em>' attribute.
@@ -26818,7 +26972,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_FUNC_R__UNICODE_BIDI = SVG_ELEMENT_FEATURE_COUNT + 59;
+	int SVG_FE_FUNC_RELEMENT__UNICODE_BIDI = SVG_ELEMENT_FEATURE_COUNT + 59;
 
 	/**
 	 * The feature id for the '<em><b>Visibility</b></em>' attribute.
@@ -26827,7 +26981,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_FUNC_R__VISIBILITY = SVG_ELEMENT_FEATURE_COUNT + 60;
+	int SVG_FE_FUNC_RELEMENT__VISIBILITY = SVG_ELEMENT_FEATURE_COUNT + 60;
 
 	/**
 	 * The feature id for the '<em><b>Word spacing</b></em>' attribute.
@@ -26836,7 +26990,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_FUNC_R__WORD_SPACING = SVG_ELEMENT_FEATURE_COUNT + 61;
+	int SVG_FE_FUNC_RELEMENT__WORD_SPACING = SVG_ELEMENT_FEATURE_COUNT + 61;
 
 	/**
 	 * The feature id for the '<em><b>Writing mode</b></em>' attribute.
@@ -26845,7 +26999,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_FUNC_R__WRITING_MODE = SVG_ELEMENT_FEATURE_COUNT + 62;
+	int SVG_FE_FUNC_RELEMENT__WRITING_MODE = SVG_ELEMENT_FEATURE_COUNT + 62;
 
 	/**
 	 * The feature id for the '<em><b>Children</b></em>' containment reference list.
@@ -26854,26 +27008,26 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_FUNC_R__CHILDREN = SVG_ELEMENT_FEATURE_COUNT + 63;
+	int SVG_FE_FUNC_RELEMENT__CHILDREN = SVG_ELEMENT_FEATURE_COUNT + 63;
 
 	/**
-	 * The number of structural features of the '<em>Fe Func R</em>' class.
+	 * The number of structural features of the '<em>Fe Func RElement</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_FUNC_R_FEATURE_COUNT = SVG_ELEMENT_FEATURE_COUNT + 64;
+	int SVG_FE_FUNC_RELEMENT_FEATURE_COUNT = SVG_ELEMENT_FEATURE_COUNT + 64;
 
 	/**
-	 * The meta object id for the '{@link at.bestsolution.efxclipse.formats.svg.svg.impl.SvgFeFuncGImpl <em>Fe Func G</em>}' class.
+	 * The meta object id for the '{@link at.bestsolution.efxclipse.formats.svg.svg.impl.SvgFeFuncGElementImpl <em>Fe Func GElement</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see at.bestsolution.efxclipse.formats.svg.svg.impl.SvgFeFuncGImpl
-	 * @see at.bestsolution.efxclipse.formats.svg.svg.impl.SvgPackageImpl#getSvgFeFuncG()
+	 * @see at.bestsolution.efxclipse.formats.svg.svg.impl.SvgFeFuncGElementImpl
+	 * @see at.bestsolution.efxclipse.formats.svg.svg.impl.SvgPackageImpl#getSvgFeFuncGElement()
 	 * @generated
 	 */
-	int SVG_FE_FUNC_G = 65;
+	int SVG_FE_FUNC_GELEMENT = 66;
 
 	/**
 	 * The feature id for the '<em><b>Id</b></em>' attribute.
@@ -26882,7 +27036,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_FUNC_G__ID = SVG_ELEMENT_FEATURE_COUNT + 0;
+	int SVG_FE_FUNC_GELEMENT__ID = SVG_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Xml base</b></em>' attribute.
@@ -26891,7 +27045,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_FUNC_G__XML_BASE = SVG_ELEMENT_FEATURE_COUNT + 1;
+	int SVG_FE_FUNC_GELEMENT__XML_BASE = SVG_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Xml lang</b></em>' attribute.
@@ -26900,7 +27054,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_FUNC_G__XML_LANG = SVG_ELEMENT_FEATURE_COUNT + 2;
+	int SVG_FE_FUNC_GELEMENT__XML_LANG = SVG_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Xml space</b></em>' attribute.
@@ -26909,7 +27063,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_FUNC_G__XML_SPACE = SVG_ELEMENT_FEATURE_COUNT + 3;
+	int SVG_FE_FUNC_GELEMENT__XML_SPACE = SVG_ELEMENT_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Alignment baseline</b></em>' attribute.
@@ -26918,7 +27072,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_FUNC_G__ALIGNMENT_BASELINE = SVG_ELEMENT_FEATURE_COUNT + 4;
+	int SVG_FE_FUNC_GELEMENT__ALIGNMENT_BASELINE = SVG_ELEMENT_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Baseline shift</b></em>' attribute.
@@ -26927,7 +27081,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_FUNC_G__BASELINE_SHIFT = SVG_ELEMENT_FEATURE_COUNT + 5;
+	int SVG_FE_FUNC_GELEMENT__BASELINE_SHIFT = SVG_ELEMENT_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>Clip</b></em>' attribute.
@@ -26936,7 +27090,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_FUNC_G__CLIP = SVG_ELEMENT_FEATURE_COUNT + 6;
+	int SVG_FE_FUNC_GELEMENT__CLIP = SVG_ELEMENT_FEATURE_COUNT + 6;
 
 	/**
 	 * The feature id for the '<em><b>Clip path</b></em>' attribute.
@@ -26945,7 +27099,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_FUNC_G__CLIP_PATH = SVG_ELEMENT_FEATURE_COUNT + 7;
+	int SVG_FE_FUNC_GELEMENT__CLIP_PATH = SVG_ELEMENT_FEATURE_COUNT + 7;
 
 	/**
 	 * The feature id for the '<em><b>Clip rule</b></em>' attribute.
@@ -26954,7 +27108,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_FUNC_G__CLIP_RULE = SVG_ELEMENT_FEATURE_COUNT + 8;
+	int SVG_FE_FUNC_GELEMENT__CLIP_RULE = SVG_ELEMENT_FEATURE_COUNT + 8;
 
 	/**
 	 * The feature id for the '<em><b>Color</b></em>' attribute.
@@ -26963,7 +27117,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_FUNC_G__COLOR = SVG_ELEMENT_FEATURE_COUNT + 9;
+	int SVG_FE_FUNC_GELEMENT__COLOR = SVG_ELEMENT_FEATURE_COUNT + 9;
 
 	/**
 	 * The feature id for the '<em><b>Color interpolation</b></em>' attribute.
@@ -26972,7 +27126,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_FUNC_G__COLOR_INTERPOLATION = SVG_ELEMENT_FEATURE_COUNT + 10;
+	int SVG_FE_FUNC_GELEMENT__COLOR_INTERPOLATION = SVG_ELEMENT_FEATURE_COUNT + 10;
 
 	/**
 	 * The feature id for the '<em><b>Color interpolation filters</b></em>' attribute.
@@ -26981,7 +27135,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_FUNC_G__COLOR_INTERPOLATION_FILTERS = SVG_ELEMENT_FEATURE_COUNT + 11;
+	int SVG_FE_FUNC_GELEMENT__COLOR_INTERPOLATION_FILTERS = SVG_ELEMENT_FEATURE_COUNT + 11;
 
 	/**
 	 * The feature id for the '<em><b>Color profile</b></em>' attribute.
@@ -26990,7 +27144,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_FUNC_G__COLOR_PROFILE = SVG_ELEMENT_FEATURE_COUNT + 12;
+	int SVG_FE_FUNC_GELEMENT__COLOR_PROFILE = SVG_ELEMENT_FEATURE_COUNT + 12;
 
 	/**
 	 * The feature id for the '<em><b>Color rendering</b></em>' attribute.
@@ -26999,7 +27153,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_FUNC_G__COLOR_RENDERING = SVG_ELEMENT_FEATURE_COUNT + 13;
+	int SVG_FE_FUNC_GELEMENT__COLOR_RENDERING = SVG_ELEMENT_FEATURE_COUNT + 13;
 
 	/**
 	 * The feature id for the '<em><b>Cursor</b></em>' attribute.
@@ -27008,7 +27162,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_FUNC_G__CURSOR = SVG_ELEMENT_FEATURE_COUNT + 14;
+	int SVG_FE_FUNC_GELEMENT__CURSOR = SVG_ELEMENT_FEATURE_COUNT + 14;
 
 	/**
 	 * The feature id for the '<em><b>Direction</b></em>' attribute.
@@ -27017,7 +27171,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_FUNC_G__DIRECTION = SVG_ELEMENT_FEATURE_COUNT + 15;
+	int SVG_FE_FUNC_GELEMENT__DIRECTION = SVG_ELEMENT_FEATURE_COUNT + 15;
 
 	/**
 	 * The feature id for the '<em><b>Display</b></em>' attribute.
@@ -27026,7 +27180,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_FUNC_G__DISPLAY = SVG_ELEMENT_FEATURE_COUNT + 16;
+	int SVG_FE_FUNC_GELEMENT__DISPLAY = SVG_ELEMENT_FEATURE_COUNT + 16;
 
 	/**
 	 * The feature id for the '<em><b>Dominant baseline</b></em>' attribute.
@@ -27035,7 +27189,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_FUNC_G__DOMINANT_BASELINE = SVG_ELEMENT_FEATURE_COUNT + 17;
+	int SVG_FE_FUNC_GELEMENT__DOMINANT_BASELINE = SVG_ELEMENT_FEATURE_COUNT + 17;
 
 	/**
 	 * The feature id for the '<em><b>Enable background</b></em>' attribute.
@@ -27044,7 +27198,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_FUNC_G__ENABLE_BACKGROUND = SVG_ELEMENT_FEATURE_COUNT + 18;
+	int SVG_FE_FUNC_GELEMENT__ENABLE_BACKGROUND = SVG_ELEMENT_FEATURE_COUNT + 18;
 
 	/**
 	 * The feature id for the '<em><b>Fill</b></em>' attribute.
@@ -27053,7 +27207,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_FUNC_G__FILL = SVG_ELEMENT_FEATURE_COUNT + 19;
+	int SVG_FE_FUNC_GELEMENT__FILL = SVG_ELEMENT_FEATURE_COUNT + 19;
 
 	/**
 	 * The feature id for the '<em><b>Fill opacity</b></em>' attribute.
@@ -27062,7 +27216,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_FUNC_G__FILL_OPACITY = SVG_ELEMENT_FEATURE_COUNT + 20;
+	int SVG_FE_FUNC_GELEMENT__FILL_OPACITY = SVG_ELEMENT_FEATURE_COUNT + 20;
 
 	/**
 	 * The feature id for the '<em><b>Fill rule</b></em>' attribute.
@@ -27071,7 +27225,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_FUNC_G__FILL_RULE = SVG_ELEMENT_FEATURE_COUNT + 21;
+	int SVG_FE_FUNC_GELEMENT__FILL_RULE = SVG_ELEMENT_FEATURE_COUNT + 21;
 
 	/**
 	 * The feature id for the '<em><b>Filter</b></em>' attribute.
@@ -27080,7 +27234,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_FUNC_G__FILTER = SVG_ELEMENT_FEATURE_COUNT + 22;
+	int SVG_FE_FUNC_GELEMENT__FILTER = SVG_ELEMENT_FEATURE_COUNT + 22;
 
 	/**
 	 * The feature id for the '<em><b>Flood color</b></em>' attribute.
@@ -27089,7 +27243,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_FUNC_G__FLOOD_COLOR = SVG_ELEMENT_FEATURE_COUNT + 23;
+	int SVG_FE_FUNC_GELEMENT__FLOOD_COLOR = SVG_ELEMENT_FEATURE_COUNT + 23;
 
 	/**
 	 * The feature id for the '<em><b>Flood opacity</b></em>' attribute.
@@ -27098,7 +27252,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_FUNC_G__FLOOD_OPACITY = SVG_ELEMENT_FEATURE_COUNT + 24;
+	int SVG_FE_FUNC_GELEMENT__FLOOD_OPACITY = SVG_ELEMENT_FEATURE_COUNT + 24;
 
 	/**
 	 * The feature id for the '<em><b>Font family</b></em>' attribute.
@@ -27107,7 +27261,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_FUNC_G__FONT_FAMILY = SVG_ELEMENT_FEATURE_COUNT + 25;
+	int SVG_FE_FUNC_GELEMENT__FONT_FAMILY = SVG_ELEMENT_FEATURE_COUNT + 25;
 
 	/**
 	 * The feature id for the '<em><b>Font size</b></em>' attribute.
@@ -27116,7 +27270,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_FUNC_G__FONT_SIZE = SVG_ELEMENT_FEATURE_COUNT + 26;
+	int SVG_FE_FUNC_GELEMENT__FONT_SIZE = SVG_ELEMENT_FEATURE_COUNT + 26;
 
 	/**
 	 * The feature id for the '<em><b>Font size adjust</b></em>' attribute.
@@ -27125,7 +27279,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_FUNC_G__FONT_SIZE_ADJUST = SVG_ELEMENT_FEATURE_COUNT + 27;
+	int SVG_FE_FUNC_GELEMENT__FONT_SIZE_ADJUST = SVG_ELEMENT_FEATURE_COUNT + 27;
 
 	/**
 	 * The feature id for the '<em><b>Font stretch</b></em>' attribute.
@@ -27134,7 +27288,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_FUNC_G__FONT_STRETCH = SVG_ELEMENT_FEATURE_COUNT + 28;
+	int SVG_FE_FUNC_GELEMENT__FONT_STRETCH = SVG_ELEMENT_FEATURE_COUNT + 28;
 
 	/**
 	 * The feature id for the '<em><b>Font style</b></em>' attribute.
@@ -27143,7 +27297,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_FUNC_G__FONT_STYLE = SVG_ELEMENT_FEATURE_COUNT + 29;
+	int SVG_FE_FUNC_GELEMENT__FONT_STYLE = SVG_ELEMENT_FEATURE_COUNT + 29;
 
 	/**
 	 * The feature id for the '<em><b>Font variant</b></em>' attribute.
@@ -27152,7 +27306,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_FUNC_G__FONT_VARIANT = SVG_ELEMENT_FEATURE_COUNT + 30;
+	int SVG_FE_FUNC_GELEMENT__FONT_VARIANT = SVG_ELEMENT_FEATURE_COUNT + 30;
 
 	/**
 	 * The feature id for the '<em><b>Font weight</b></em>' attribute.
@@ -27161,7 +27315,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_FUNC_G__FONT_WEIGHT = SVG_ELEMENT_FEATURE_COUNT + 31;
+	int SVG_FE_FUNC_GELEMENT__FONT_WEIGHT = SVG_ELEMENT_FEATURE_COUNT + 31;
 
 	/**
 	 * The feature id for the '<em><b>Glyph orientation horizontal</b></em>' attribute.
@@ -27170,7 +27324,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_FUNC_G__GLYPH_ORIENTATION_HORIZONTAL = SVG_ELEMENT_FEATURE_COUNT + 32;
+	int SVG_FE_FUNC_GELEMENT__GLYPH_ORIENTATION_HORIZONTAL = SVG_ELEMENT_FEATURE_COUNT + 32;
 
 	/**
 	 * The feature id for the '<em><b>Glyph orientation vertical</b></em>' attribute.
@@ -27179,7 +27333,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_FUNC_G__GLYPH_ORIENTATION_VERTICAL = SVG_ELEMENT_FEATURE_COUNT + 33;
+	int SVG_FE_FUNC_GELEMENT__GLYPH_ORIENTATION_VERTICAL = SVG_ELEMENT_FEATURE_COUNT + 33;
 
 	/**
 	 * The feature id for the '<em><b>Image rendering</b></em>' attribute.
@@ -27188,7 +27342,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_FUNC_G__IMAGE_RENDERING = SVG_ELEMENT_FEATURE_COUNT + 34;
+	int SVG_FE_FUNC_GELEMENT__IMAGE_RENDERING = SVG_ELEMENT_FEATURE_COUNT + 34;
 
 	/**
 	 * The feature id for the '<em><b>Kerning</b></em>' attribute.
@@ -27197,7 +27351,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_FUNC_G__KERNING = SVG_ELEMENT_FEATURE_COUNT + 35;
+	int SVG_FE_FUNC_GELEMENT__KERNING = SVG_ELEMENT_FEATURE_COUNT + 35;
 
 	/**
 	 * The feature id for the '<em><b>Letter spacing</b></em>' attribute.
@@ -27206,7 +27360,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_FUNC_G__LETTER_SPACING = SVG_ELEMENT_FEATURE_COUNT + 36;
+	int SVG_FE_FUNC_GELEMENT__LETTER_SPACING = SVG_ELEMENT_FEATURE_COUNT + 36;
 
 	/**
 	 * The feature id for the '<em><b>Lighting color</b></em>' attribute.
@@ -27215,7 +27369,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_FUNC_G__LIGHTING_COLOR = SVG_ELEMENT_FEATURE_COUNT + 37;
+	int SVG_FE_FUNC_GELEMENT__LIGHTING_COLOR = SVG_ELEMENT_FEATURE_COUNT + 37;
 
 	/**
 	 * The feature id for the '<em><b>Marker end</b></em>' attribute.
@@ -27224,7 +27378,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_FUNC_G__MARKER_END = SVG_ELEMENT_FEATURE_COUNT + 38;
+	int SVG_FE_FUNC_GELEMENT__MARKER_END = SVG_ELEMENT_FEATURE_COUNT + 38;
 
 	/**
 	 * The feature id for the '<em><b>Marker mid</b></em>' attribute.
@@ -27233,7 +27387,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_FUNC_G__MARKER_MID = SVG_ELEMENT_FEATURE_COUNT + 39;
+	int SVG_FE_FUNC_GELEMENT__MARKER_MID = SVG_ELEMENT_FEATURE_COUNT + 39;
 
 	/**
 	 * The feature id for the '<em><b>Marker start</b></em>' attribute.
@@ -27242,7 +27396,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_FUNC_G__MARKER_START = SVG_ELEMENT_FEATURE_COUNT + 40;
+	int SVG_FE_FUNC_GELEMENT__MARKER_START = SVG_ELEMENT_FEATURE_COUNT + 40;
 
 	/**
 	 * The feature id for the '<em><b>Masks</b></em>' attribute.
@@ -27251,7 +27405,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_FUNC_G__MASKS = SVG_ELEMENT_FEATURE_COUNT + 41;
+	int SVG_FE_FUNC_GELEMENT__MASKS = SVG_ELEMENT_FEATURE_COUNT + 41;
 
 	/**
 	 * The feature id for the '<em><b>Opacity</b></em>' attribute.
@@ -27260,7 +27414,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_FUNC_G__OPACITY = SVG_ELEMENT_FEATURE_COUNT + 42;
+	int SVG_FE_FUNC_GELEMENT__OPACITY = SVG_ELEMENT_FEATURE_COUNT + 42;
 
 	/**
 	 * The feature id for the '<em><b>Overflow</b></em>' attribute.
@@ -27269,7 +27423,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_FUNC_G__OVERFLOW = SVG_ELEMENT_FEATURE_COUNT + 43;
+	int SVG_FE_FUNC_GELEMENT__OVERFLOW = SVG_ELEMENT_FEATURE_COUNT + 43;
 
 	/**
 	 * The feature id for the '<em><b>Pointer events</b></em>' attribute.
@@ -27278,7 +27432,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_FUNC_G__POINTER_EVENTS = SVG_ELEMENT_FEATURE_COUNT + 44;
+	int SVG_FE_FUNC_GELEMENT__POINTER_EVENTS = SVG_ELEMENT_FEATURE_COUNT + 44;
 
 	/**
 	 * The feature id for the '<em><b>Shape rendering</b></em>' attribute.
@@ -27287,7 +27441,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_FUNC_G__SHAPE_RENDERING = SVG_ELEMENT_FEATURE_COUNT + 45;
+	int SVG_FE_FUNC_GELEMENT__SHAPE_RENDERING = SVG_ELEMENT_FEATURE_COUNT + 45;
 
 	/**
 	 * The feature id for the '<em><b>Stop color</b></em>' attribute.
@@ -27296,7 +27450,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_FUNC_G__STOP_COLOR = SVG_ELEMENT_FEATURE_COUNT + 46;
+	int SVG_FE_FUNC_GELEMENT__STOP_COLOR = SVG_ELEMENT_FEATURE_COUNT + 46;
 
 	/**
 	 * The feature id for the '<em><b>Stop opacity</b></em>' attribute.
@@ -27305,7 +27459,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_FUNC_G__STOP_OPACITY = SVG_ELEMENT_FEATURE_COUNT + 47;
+	int SVG_FE_FUNC_GELEMENT__STOP_OPACITY = SVG_ELEMENT_FEATURE_COUNT + 47;
 
 	/**
 	 * The feature id for the '<em><b>Stroke</b></em>' attribute.
@@ -27314,7 +27468,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_FUNC_G__STROKE = SVG_ELEMENT_FEATURE_COUNT + 48;
+	int SVG_FE_FUNC_GELEMENT__STROKE = SVG_ELEMENT_FEATURE_COUNT + 48;
 
 	/**
 	 * The feature id for the '<em><b>Stroke dasharray</b></em>' attribute.
@@ -27323,7 +27477,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_FUNC_G__STROKE_DASHARRAY = SVG_ELEMENT_FEATURE_COUNT + 49;
+	int SVG_FE_FUNC_GELEMENT__STROKE_DASHARRAY = SVG_ELEMENT_FEATURE_COUNT + 49;
 
 	/**
 	 * The feature id for the '<em><b>Stroke dashoffset</b></em>' attribute.
@@ -27332,7 +27486,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_FUNC_G__STROKE_DASHOFFSET = SVG_ELEMENT_FEATURE_COUNT + 50;
+	int SVG_FE_FUNC_GELEMENT__STROKE_DASHOFFSET = SVG_ELEMENT_FEATURE_COUNT + 50;
 
 	/**
 	 * The feature id for the '<em><b>Stroke linecap</b></em>' attribute.
@@ -27341,7 +27495,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_FUNC_G__STROKE_LINECAP = SVG_ELEMENT_FEATURE_COUNT + 51;
+	int SVG_FE_FUNC_GELEMENT__STROKE_LINECAP = SVG_ELEMENT_FEATURE_COUNT + 51;
 
 	/**
 	 * The feature id for the '<em><b>Stroke linejoin</b></em>' attribute.
@@ -27350,7 +27504,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_FUNC_G__STROKE_LINEJOIN = SVG_ELEMENT_FEATURE_COUNT + 52;
+	int SVG_FE_FUNC_GELEMENT__STROKE_LINEJOIN = SVG_ELEMENT_FEATURE_COUNT + 52;
 
 	/**
 	 * The feature id for the '<em><b>Stroke miterlimit</b></em>' attribute.
@@ -27359,7 +27513,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_FUNC_G__STROKE_MITERLIMIT = SVG_ELEMENT_FEATURE_COUNT + 53;
+	int SVG_FE_FUNC_GELEMENT__STROKE_MITERLIMIT = SVG_ELEMENT_FEATURE_COUNT + 53;
 
 	/**
 	 * The feature id for the '<em><b>Stroke opacity</b></em>' attribute.
@@ -27368,7 +27522,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_FUNC_G__STROKE_OPACITY = SVG_ELEMENT_FEATURE_COUNT + 54;
+	int SVG_FE_FUNC_GELEMENT__STROKE_OPACITY = SVG_ELEMENT_FEATURE_COUNT + 54;
 
 	/**
 	 * The feature id for the '<em><b>Stroke width</b></em>' attribute.
@@ -27377,7 +27531,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_FUNC_G__STROKE_WIDTH = SVG_ELEMENT_FEATURE_COUNT + 55;
+	int SVG_FE_FUNC_GELEMENT__STROKE_WIDTH = SVG_ELEMENT_FEATURE_COUNT + 55;
 
 	/**
 	 * The feature id for the '<em><b>Text anchor</b></em>' attribute.
@@ -27386,7 +27540,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_FUNC_G__TEXT_ANCHOR = SVG_ELEMENT_FEATURE_COUNT + 56;
+	int SVG_FE_FUNC_GELEMENT__TEXT_ANCHOR = SVG_ELEMENT_FEATURE_COUNT + 56;
 
 	/**
 	 * The feature id for the '<em><b>Text decoration</b></em>' attribute.
@@ -27395,7 +27549,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_FUNC_G__TEXT_DECORATION = SVG_ELEMENT_FEATURE_COUNT + 57;
+	int SVG_FE_FUNC_GELEMENT__TEXT_DECORATION = SVG_ELEMENT_FEATURE_COUNT + 57;
 
 	/**
 	 * The feature id for the '<em><b>Text rendering</b></em>' attribute.
@@ -27404,7 +27558,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_FUNC_G__TEXT_RENDERING = SVG_ELEMENT_FEATURE_COUNT + 58;
+	int SVG_FE_FUNC_GELEMENT__TEXT_RENDERING = SVG_ELEMENT_FEATURE_COUNT + 58;
 
 	/**
 	 * The feature id for the '<em><b>Unicode bidi</b></em>' attribute.
@@ -27413,7 +27567,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_FUNC_G__UNICODE_BIDI = SVG_ELEMENT_FEATURE_COUNT + 59;
+	int SVG_FE_FUNC_GELEMENT__UNICODE_BIDI = SVG_ELEMENT_FEATURE_COUNT + 59;
 
 	/**
 	 * The feature id for the '<em><b>Visibility</b></em>' attribute.
@@ -27422,7 +27576,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_FUNC_G__VISIBILITY = SVG_ELEMENT_FEATURE_COUNT + 60;
+	int SVG_FE_FUNC_GELEMENT__VISIBILITY = SVG_ELEMENT_FEATURE_COUNT + 60;
 
 	/**
 	 * The feature id for the '<em><b>Word spacing</b></em>' attribute.
@@ -27431,7 +27585,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_FUNC_G__WORD_SPACING = SVG_ELEMENT_FEATURE_COUNT + 61;
+	int SVG_FE_FUNC_GELEMENT__WORD_SPACING = SVG_ELEMENT_FEATURE_COUNT + 61;
 
 	/**
 	 * The feature id for the '<em><b>Writing mode</b></em>' attribute.
@@ -27440,7 +27594,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_FUNC_G__WRITING_MODE = SVG_ELEMENT_FEATURE_COUNT + 62;
+	int SVG_FE_FUNC_GELEMENT__WRITING_MODE = SVG_ELEMENT_FEATURE_COUNT + 62;
 
 	/**
 	 * The feature id for the '<em><b>Children</b></em>' containment reference list.
@@ -27449,26 +27603,26 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_FUNC_G__CHILDREN = SVG_ELEMENT_FEATURE_COUNT + 63;
+	int SVG_FE_FUNC_GELEMENT__CHILDREN = SVG_ELEMENT_FEATURE_COUNT + 63;
 
 	/**
-	 * The number of structural features of the '<em>Fe Func G</em>' class.
+	 * The number of structural features of the '<em>Fe Func GElement</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_FUNC_G_FEATURE_COUNT = SVG_ELEMENT_FEATURE_COUNT + 64;
+	int SVG_FE_FUNC_GELEMENT_FEATURE_COUNT = SVG_ELEMENT_FEATURE_COUNT + 64;
 
 	/**
-	 * The meta object id for the '{@link at.bestsolution.efxclipse.formats.svg.svg.impl.SvgFeFuncBImpl <em>Fe Func B</em>}' class.
+	 * The meta object id for the '{@link at.bestsolution.efxclipse.formats.svg.svg.impl.SvgFeFuncBElementImpl <em>Fe Func BElement</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see at.bestsolution.efxclipse.formats.svg.svg.impl.SvgFeFuncBImpl
-	 * @see at.bestsolution.efxclipse.formats.svg.svg.impl.SvgPackageImpl#getSvgFeFuncB()
+	 * @see at.bestsolution.efxclipse.formats.svg.svg.impl.SvgFeFuncBElementImpl
+	 * @see at.bestsolution.efxclipse.formats.svg.svg.impl.SvgPackageImpl#getSvgFeFuncBElement()
 	 * @generated
 	 */
-	int SVG_FE_FUNC_B = 66;
+	int SVG_FE_FUNC_BELEMENT = 67;
 
 	/**
 	 * The feature id for the '<em><b>Id</b></em>' attribute.
@@ -27477,7 +27631,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_FUNC_B__ID = SVG_ELEMENT_FEATURE_COUNT + 0;
+	int SVG_FE_FUNC_BELEMENT__ID = SVG_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Xml base</b></em>' attribute.
@@ -27486,7 +27640,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_FUNC_B__XML_BASE = SVG_ELEMENT_FEATURE_COUNT + 1;
+	int SVG_FE_FUNC_BELEMENT__XML_BASE = SVG_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Xml lang</b></em>' attribute.
@@ -27495,7 +27649,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_FUNC_B__XML_LANG = SVG_ELEMENT_FEATURE_COUNT + 2;
+	int SVG_FE_FUNC_BELEMENT__XML_LANG = SVG_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Xml space</b></em>' attribute.
@@ -27504,7 +27658,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_FUNC_B__XML_SPACE = SVG_ELEMENT_FEATURE_COUNT + 3;
+	int SVG_FE_FUNC_BELEMENT__XML_SPACE = SVG_ELEMENT_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Alignment baseline</b></em>' attribute.
@@ -27513,7 +27667,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_FUNC_B__ALIGNMENT_BASELINE = SVG_ELEMENT_FEATURE_COUNT + 4;
+	int SVG_FE_FUNC_BELEMENT__ALIGNMENT_BASELINE = SVG_ELEMENT_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Baseline shift</b></em>' attribute.
@@ -27522,7 +27676,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_FUNC_B__BASELINE_SHIFT = SVG_ELEMENT_FEATURE_COUNT + 5;
+	int SVG_FE_FUNC_BELEMENT__BASELINE_SHIFT = SVG_ELEMENT_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>Clip</b></em>' attribute.
@@ -27531,7 +27685,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_FUNC_B__CLIP = SVG_ELEMENT_FEATURE_COUNT + 6;
+	int SVG_FE_FUNC_BELEMENT__CLIP = SVG_ELEMENT_FEATURE_COUNT + 6;
 
 	/**
 	 * The feature id for the '<em><b>Clip path</b></em>' attribute.
@@ -27540,7 +27694,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_FUNC_B__CLIP_PATH = SVG_ELEMENT_FEATURE_COUNT + 7;
+	int SVG_FE_FUNC_BELEMENT__CLIP_PATH = SVG_ELEMENT_FEATURE_COUNT + 7;
 
 	/**
 	 * The feature id for the '<em><b>Clip rule</b></em>' attribute.
@@ -27549,7 +27703,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_FUNC_B__CLIP_RULE = SVG_ELEMENT_FEATURE_COUNT + 8;
+	int SVG_FE_FUNC_BELEMENT__CLIP_RULE = SVG_ELEMENT_FEATURE_COUNT + 8;
 
 	/**
 	 * The feature id for the '<em><b>Color</b></em>' attribute.
@@ -27558,7 +27712,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_FUNC_B__COLOR = SVG_ELEMENT_FEATURE_COUNT + 9;
+	int SVG_FE_FUNC_BELEMENT__COLOR = SVG_ELEMENT_FEATURE_COUNT + 9;
 
 	/**
 	 * The feature id for the '<em><b>Color interpolation</b></em>' attribute.
@@ -27567,7 +27721,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_FUNC_B__COLOR_INTERPOLATION = SVG_ELEMENT_FEATURE_COUNT + 10;
+	int SVG_FE_FUNC_BELEMENT__COLOR_INTERPOLATION = SVG_ELEMENT_FEATURE_COUNT + 10;
 
 	/**
 	 * The feature id for the '<em><b>Color interpolation filters</b></em>' attribute.
@@ -27576,7 +27730,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_FUNC_B__COLOR_INTERPOLATION_FILTERS = SVG_ELEMENT_FEATURE_COUNT + 11;
+	int SVG_FE_FUNC_BELEMENT__COLOR_INTERPOLATION_FILTERS = SVG_ELEMENT_FEATURE_COUNT + 11;
 
 	/**
 	 * The feature id for the '<em><b>Color profile</b></em>' attribute.
@@ -27585,7 +27739,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_FUNC_B__COLOR_PROFILE = SVG_ELEMENT_FEATURE_COUNT + 12;
+	int SVG_FE_FUNC_BELEMENT__COLOR_PROFILE = SVG_ELEMENT_FEATURE_COUNT + 12;
 
 	/**
 	 * The feature id for the '<em><b>Color rendering</b></em>' attribute.
@@ -27594,7 +27748,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_FUNC_B__COLOR_RENDERING = SVG_ELEMENT_FEATURE_COUNT + 13;
+	int SVG_FE_FUNC_BELEMENT__COLOR_RENDERING = SVG_ELEMENT_FEATURE_COUNT + 13;
 
 	/**
 	 * The feature id for the '<em><b>Cursor</b></em>' attribute.
@@ -27603,7 +27757,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_FUNC_B__CURSOR = SVG_ELEMENT_FEATURE_COUNT + 14;
+	int SVG_FE_FUNC_BELEMENT__CURSOR = SVG_ELEMENT_FEATURE_COUNT + 14;
 
 	/**
 	 * The feature id for the '<em><b>Direction</b></em>' attribute.
@@ -27612,7 +27766,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_FUNC_B__DIRECTION = SVG_ELEMENT_FEATURE_COUNT + 15;
+	int SVG_FE_FUNC_BELEMENT__DIRECTION = SVG_ELEMENT_FEATURE_COUNT + 15;
 
 	/**
 	 * The feature id for the '<em><b>Display</b></em>' attribute.
@@ -27621,7 +27775,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_FUNC_B__DISPLAY = SVG_ELEMENT_FEATURE_COUNT + 16;
+	int SVG_FE_FUNC_BELEMENT__DISPLAY = SVG_ELEMENT_FEATURE_COUNT + 16;
 
 	/**
 	 * The feature id for the '<em><b>Dominant baseline</b></em>' attribute.
@@ -27630,7 +27784,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_FUNC_B__DOMINANT_BASELINE = SVG_ELEMENT_FEATURE_COUNT + 17;
+	int SVG_FE_FUNC_BELEMENT__DOMINANT_BASELINE = SVG_ELEMENT_FEATURE_COUNT + 17;
 
 	/**
 	 * The feature id for the '<em><b>Enable background</b></em>' attribute.
@@ -27639,7 +27793,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_FUNC_B__ENABLE_BACKGROUND = SVG_ELEMENT_FEATURE_COUNT + 18;
+	int SVG_FE_FUNC_BELEMENT__ENABLE_BACKGROUND = SVG_ELEMENT_FEATURE_COUNT + 18;
 
 	/**
 	 * The feature id for the '<em><b>Fill</b></em>' attribute.
@@ -27648,7 +27802,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_FUNC_B__FILL = SVG_ELEMENT_FEATURE_COUNT + 19;
+	int SVG_FE_FUNC_BELEMENT__FILL = SVG_ELEMENT_FEATURE_COUNT + 19;
 
 	/**
 	 * The feature id for the '<em><b>Fill opacity</b></em>' attribute.
@@ -27657,7 +27811,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_FUNC_B__FILL_OPACITY = SVG_ELEMENT_FEATURE_COUNT + 20;
+	int SVG_FE_FUNC_BELEMENT__FILL_OPACITY = SVG_ELEMENT_FEATURE_COUNT + 20;
 
 	/**
 	 * The feature id for the '<em><b>Fill rule</b></em>' attribute.
@@ -27666,7 +27820,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_FUNC_B__FILL_RULE = SVG_ELEMENT_FEATURE_COUNT + 21;
+	int SVG_FE_FUNC_BELEMENT__FILL_RULE = SVG_ELEMENT_FEATURE_COUNT + 21;
 
 	/**
 	 * The feature id for the '<em><b>Filter</b></em>' attribute.
@@ -27675,7 +27829,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_FUNC_B__FILTER = SVG_ELEMENT_FEATURE_COUNT + 22;
+	int SVG_FE_FUNC_BELEMENT__FILTER = SVG_ELEMENT_FEATURE_COUNT + 22;
 
 	/**
 	 * The feature id for the '<em><b>Flood color</b></em>' attribute.
@@ -27684,7 +27838,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_FUNC_B__FLOOD_COLOR = SVG_ELEMENT_FEATURE_COUNT + 23;
+	int SVG_FE_FUNC_BELEMENT__FLOOD_COLOR = SVG_ELEMENT_FEATURE_COUNT + 23;
 
 	/**
 	 * The feature id for the '<em><b>Flood opacity</b></em>' attribute.
@@ -27693,7 +27847,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_FUNC_B__FLOOD_OPACITY = SVG_ELEMENT_FEATURE_COUNT + 24;
+	int SVG_FE_FUNC_BELEMENT__FLOOD_OPACITY = SVG_ELEMENT_FEATURE_COUNT + 24;
 
 	/**
 	 * The feature id for the '<em><b>Font family</b></em>' attribute.
@@ -27702,7 +27856,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_FUNC_B__FONT_FAMILY = SVG_ELEMENT_FEATURE_COUNT + 25;
+	int SVG_FE_FUNC_BELEMENT__FONT_FAMILY = SVG_ELEMENT_FEATURE_COUNT + 25;
 
 	/**
 	 * The feature id for the '<em><b>Font size</b></em>' attribute.
@@ -27711,7 +27865,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_FUNC_B__FONT_SIZE = SVG_ELEMENT_FEATURE_COUNT + 26;
+	int SVG_FE_FUNC_BELEMENT__FONT_SIZE = SVG_ELEMENT_FEATURE_COUNT + 26;
 
 	/**
 	 * The feature id for the '<em><b>Font size adjust</b></em>' attribute.
@@ -27720,7 +27874,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_FUNC_B__FONT_SIZE_ADJUST = SVG_ELEMENT_FEATURE_COUNT + 27;
+	int SVG_FE_FUNC_BELEMENT__FONT_SIZE_ADJUST = SVG_ELEMENT_FEATURE_COUNT + 27;
 
 	/**
 	 * The feature id for the '<em><b>Font stretch</b></em>' attribute.
@@ -27729,7 +27883,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_FUNC_B__FONT_STRETCH = SVG_ELEMENT_FEATURE_COUNT + 28;
+	int SVG_FE_FUNC_BELEMENT__FONT_STRETCH = SVG_ELEMENT_FEATURE_COUNT + 28;
 
 	/**
 	 * The feature id for the '<em><b>Font style</b></em>' attribute.
@@ -27738,7 +27892,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_FUNC_B__FONT_STYLE = SVG_ELEMENT_FEATURE_COUNT + 29;
+	int SVG_FE_FUNC_BELEMENT__FONT_STYLE = SVG_ELEMENT_FEATURE_COUNT + 29;
 
 	/**
 	 * The feature id for the '<em><b>Font variant</b></em>' attribute.
@@ -27747,7 +27901,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_FUNC_B__FONT_VARIANT = SVG_ELEMENT_FEATURE_COUNT + 30;
+	int SVG_FE_FUNC_BELEMENT__FONT_VARIANT = SVG_ELEMENT_FEATURE_COUNT + 30;
 
 	/**
 	 * The feature id for the '<em><b>Font weight</b></em>' attribute.
@@ -27756,7 +27910,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_FUNC_B__FONT_WEIGHT = SVG_ELEMENT_FEATURE_COUNT + 31;
+	int SVG_FE_FUNC_BELEMENT__FONT_WEIGHT = SVG_ELEMENT_FEATURE_COUNT + 31;
 
 	/**
 	 * The feature id for the '<em><b>Glyph orientation horizontal</b></em>' attribute.
@@ -27765,7 +27919,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_FUNC_B__GLYPH_ORIENTATION_HORIZONTAL = SVG_ELEMENT_FEATURE_COUNT + 32;
+	int SVG_FE_FUNC_BELEMENT__GLYPH_ORIENTATION_HORIZONTAL = SVG_ELEMENT_FEATURE_COUNT + 32;
 
 	/**
 	 * The feature id for the '<em><b>Glyph orientation vertical</b></em>' attribute.
@@ -27774,7 +27928,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_FUNC_B__GLYPH_ORIENTATION_VERTICAL = SVG_ELEMENT_FEATURE_COUNT + 33;
+	int SVG_FE_FUNC_BELEMENT__GLYPH_ORIENTATION_VERTICAL = SVG_ELEMENT_FEATURE_COUNT + 33;
 
 	/**
 	 * The feature id for the '<em><b>Image rendering</b></em>' attribute.
@@ -27783,7 +27937,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_FUNC_B__IMAGE_RENDERING = SVG_ELEMENT_FEATURE_COUNT + 34;
+	int SVG_FE_FUNC_BELEMENT__IMAGE_RENDERING = SVG_ELEMENT_FEATURE_COUNT + 34;
 
 	/**
 	 * The feature id for the '<em><b>Kerning</b></em>' attribute.
@@ -27792,7 +27946,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_FUNC_B__KERNING = SVG_ELEMENT_FEATURE_COUNT + 35;
+	int SVG_FE_FUNC_BELEMENT__KERNING = SVG_ELEMENT_FEATURE_COUNT + 35;
 
 	/**
 	 * The feature id for the '<em><b>Letter spacing</b></em>' attribute.
@@ -27801,7 +27955,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_FUNC_B__LETTER_SPACING = SVG_ELEMENT_FEATURE_COUNT + 36;
+	int SVG_FE_FUNC_BELEMENT__LETTER_SPACING = SVG_ELEMENT_FEATURE_COUNT + 36;
 
 	/**
 	 * The feature id for the '<em><b>Lighting color</b></em>' attribute.
@@ -27810,7 +27964,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_FUNC_B__LIGHTING_COLOR = SVG_ELEMENT_FEATURE_COUNT + 37;
+	int SVG_FE_FUNC_BELEMENT__LIGHTING_COLOR = SVG_ELEMENT_FEATURE_COUNT + 37;
 
 	/**
 	 * The feature id for the '<em><b>Marker end</b></em>' attribute.
@@ -27819,7 +27973,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_FUNC_B__MARKER_END = SVG_ELEMENT_FEATURE_COUNT + 38;
+	int SVG_FE_FUNC_BELEMENT__MARKER_END = SVG_ELEMENT_FEATURE_COUNT + 38;
 
 	/**
 	 * The feature id for the '<em><b>Marker mid</b></em>' attribute.
@@ -27828,7 +27982,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_FUNC_B__MARKER_MID = SVG_ELEMENT_FEATURE_COUNT + 39;
+	int SVG_FE_FUNC_BELEMENT__MARKER_MID = SVG_ELEMENT_FEATURE_COUNT + 39;
 
 	/**
 	 * The feature id for the '<em><b>Marker start</b></em>' attribute.
@@ -27837,7 +27991,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_FUNC_B__MARKER_START = SVG_ELEMENT_FEATURE_COUNT + 40;
+	int SVG_FE_FUNC_BELEMENT__MARKER_START = SVG_ELEMENT_FEATURE_COUNT + 40;
 
 	/**
 	 * The feature id for the '<em><b>Masks</b></em>' attribute.
@@ -27846,7 +28000,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_FUNC_B__MASKS = SVG_ELEMENT_FEATURE_COUNT + 41;
+	int SVG_FE_FUNC_BELEMENT__MASKS = SVG_ELEMENT_FEATURE_COUNT + 41;
 
 	/**
 	 * The feature id for the '<em><b>Opacity</b></em>' attribute.
@@ -27855,7 +28009,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_FUNC_B__OPACITY = SVG_ELEMENT_FEATURE_COUNT + 42;
+	int SVG_FE_FUNC_BELEMENT__OPACITY = SVG_ELEMENT_FEATURE_COUNT + 42;
 
 	/**
 	 * The feature id for the '<em><b>Overflow</b></em>' attribute.
@@ -27864,7 +28018,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_FUNC_B__OVERFLOW = SVG_ELEMENT_FEATURE_COUNT + 43;
+	int SVG_FE_FUNC_BELEMENT__OVERFLOW = SVG_ELEMENT_FEATURE_COUNT + 43;
 
 	/**
 	 * The feature id for the '<em><b>Pointer events</b></em>' attribute.
@@ -27873,7 +28027,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_FUNC_B__POINTER_EVENTS = SVG_ELEMENT_FEATURE_COUNT + 44;
+	int SVG_FE_FUNC_BELEMENT__POINTER_EVENTS = SVG_ELEMENT_FEATURE_COUNT + 44;
 
 	/**
 	 * The feature id for the '<em><b>Shape rendering</b></em>' attribute.
@@ -27882,7 +28036,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_FUNC_B__SHAPE_RENDERING = SVG_ELEMENT_FEATURE_COUNT + 45;
+	int SVG_FE_FUNC_BELEMENT__SHAPE_RENDERING = SVG_ELEMENT_FEATURE_COUNT + 45;
 
 	/**
 	 * The feature id for the '<em><b>Stop color</b></em>' attribute.
@@ -27891,7 +28045,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_FUNC_B__STOP_COLOR = SVG_ELEMENT_FEATURE_COUNT + 46;
+	int SVG_FE_FUNC_BELEMENT__STOP_COLOR = SVG_ELEMENT_FEATURE_COUNT + 46;
 
 	/**
 	 * The feature id for the '<em><b>Stop opacity</b></em>' attribute.
@@ -27900,7 +28054,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_FUNC_B__STOP_OPACITY = SVG_ELEMENT_FEATURE_COUNT + 47;
+	int SVG_FE_FUNC_BELEMENT__STOP_OPACITY = SVG_ELEMENT_FEATURE_COUNT + 47;
 
 	/**
 	 * The feature id for the '<em><b>Stroke</b></em>' attribute.
@@ -27909,7 +28063,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_FUNC_B__STROKE = SVG_ELEMENT_FEATURE_COUNT + 48;
+	int SVG_FE_FUNC_BELEMENT__STROKE = SVG_ELEMENT_FEATURE_COUNT + 48;
 
 	/**
 	 * The feature id for the '<em><b>Stroke dasharray</b></em>' attribute.
@@ -27918,7 +28072,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_FUNC_B__STROKE_DASHARRAY = SVG_ELEMENT_FEATURE_COUNT + 49;
+	int SVG_FE_FUNC_BELEMENT__STROKE_DASHARRAY = SVG_ELEMENT_FEATURE_COUNT + 49;
 
 	/**
 	 * The feature id for the '<em><b>Stroke dashoffset</b></em>' attribute.
@@ -27927,7 +28081,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_FUNC_B__STROKE_DASHOFFSET = SVG_ELEMENT_FEATURE_COUNT + 50;
+	int SVG_FE_FUNC_BELEMENT__STROKE_DASHOFFSET = SVG_ELEMENT_FEATURE_COUNT + 50;
 
 	/**
 	 * The feature id for the '<em><b>Stroke linecap</b></em>' attribute.
@@ -27936,7 +28090,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_FUNC_B__STROKE_LINECAP = SVG_ELEMENT_FEATURE_COUNT + 51;
+	int SVG_FE_FUNC_BELEMENT__STROKE_LINECAP = SVG_ELEMENT_FEATURE_COUNT + 51;
 
 	/**
 	 * The feature id for the '<em><b>Stroke linejoin</b></em>' attribute.
@@ -27945,7 +28099,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_FUNC_B__STROKE_LINEJOIN = SVG_ELEMENT_FEATURE_COUNT + 52;
+	int SVG_FE_FUNC_BELEMENT__STROKE_LINEJOIN = SVG_ELEMENT_FEATURE_COUNT + 52;
 
 	/**
 	 * The feature id for the '<em><b>Stroke miterlimit</b></em>' attribute.
@@ -27954,7 +28108,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_FUNC_B__STROKE_MITERLIMIT = SVG_ELEMENT_FEATURE_COUNT + 53;
+	int SVG_FE_FUNC_BELEMENT__STROKE_MITERLIMIT = SVG_ELEMENT_FEATURE_COUNT + 53;
 
 	/**
 	 * The feature id for the '<em><b>Stroke opacity</b></em>' attribute.
@@ -27963,7 +28117,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_FUNC_B__STROKE_OPACITY = SVG_ELEMENT_FEATURE_COUNT + 54;
+	int SVG_FE_FUNC_BELEMENT__STROKE_OPACITY = SVG_ELEMENT_FEATURE_COUNT + 54;
 
 	/**
 	 * The feature id for the '<em><b>Stroke width</b></em>' attribute.
@@ -27972,7 +28126,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_FUNC_B__STROKE_WIDTH = SVG_ELEMENT_FEATURE_COUNT + 55;
+	int SVG_FE_FUNC_BELEMENT__STROKE_WIDTH = SVG_ELEMENT_FEATURE_COUNT + 55;
 
 	/**
 	 * The feature id for the '<em><b>Text anchor</b></em>' attribute.
@@ -27981,7 +28135,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_FUNC_B__TEXT_ANCHOR = SVG_ELEMENT_FEATURE_COUNT + 56;
+	int SVG_FE_FUNC_BELEMENT__TEXT_ANCHOR = SVG_ELEMENT_FEATURE_COUNT + 56;
 
 	/**
 	 * The feature id for the '<em><b>Text decoration</b></em>' attribute.
@@ -27990,7 +28144,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_FUNC_B__TEXT_DECORATION = SVG_ELEMENT_FEATURE_COUNT + 57;
+	int SVG_FE_FUNC_BELEMENT__TEXT_DECORATION = SVG_ELEMENT_FEATURE_COUNT + 57;
 
 	/**
 	 * The feature id for the '<em><b>Text rendering</b></em>' attribute.
@@ -27999,7 +28153,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_FUNC_B__TEXT_RENDERING = SVG_ELEMENT_FEATURE_COUNT + 58;
+	int SVG_FE_FUNC_BELEMENT__TEXT_RENDERING = SVG_ELEMENT_FEATURE_COUNT + 58;
 
 	/**
 	 * The feature id for the '<em><b>Unicode bidi</b></em>' attribute.
@@ -28008,7 +28162,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_FUNC_B__UNICODE_BIDI = SVG_ELEMENT_FEATURE_COUNT + 59;
+	int SVG_FE_FUNC_BELEMENT__UNICODE_BIDI = SVG_ELEMENT_FEATURE_COUNT + 59;
 
 	/**
 	 * The feature id for the '<em><b>Visibility</b></em>' attribute.
@@ -28017,7 +28171,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_FUNC_B__VISIBILITY = SVG_ELEMENT_FEATURE_COUNT + 60;
+	int SVG_FE_FUNC_BELEMENT__VISIBILITY = SVG_ELEMENT_FEATURE_COUNT + 60;
 
 	/**
 	 * The feature id for the '<em><b>Word spacing</b></em>' attribute.
@@ -28026,7 +28180,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_FUNC_B__WORD_SPACING = SVG_ELEMENT_FEATURE_COUNT + 61;
+	int SVG_FE_FUNC_BELEMENT__WORD_SPACING = SVG_ELEMENT_FEATURE_COUNT + 61;
 
 	/**
 	 * The feature id for the '<em><b>Writing mode</b></em>' attribute.
@@ -28035,7 +28189,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_FUNC_B__WRITING_MODE = SVG_ELEMENT_FEATURE_COUNT + 62;
+	int SVG_FE_FUNC_BELEMENT__WRITING_MODE = SVG_ELEMENT_FEATURE_COUNT + 62;
 
 	/**
 	 * The feature id for the '<em><b>Children</b></em>' containment reference list.
@@ -28044,26 +28198,26 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_FUNC_B__CHILDREN = SVG_ELEMENT_FEATURE_COUNT + 63;
+	int SVG_FE_FUNC_BELEMENT__CHILDREN = SVG_ELEMENT_FEATURE_COUNT + 63;
 
 	/**
-	 * The number of structural features of the '<em>Fe Func B</em>' class.
+	 * The number of structural features of the '<em>Fe Func BElement</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_FUNC_B_FEATURE_COUNT = SVG_ELEMENT_FEATURE_COUNT + 64;
+	int SVG_FE_FUNC_BELEMENT_FEATURE_COUNT = SVG_ELEMENT_FEATURE_COUNT + 64;
 
 	/**
-	 * The meta object id for the '{@link at.bestsolution.efxclipse.formats.svg.svg.impl.SvgFeFuncAImpl <em>Fe Func A</em>}' class.
+	 * The meta object id for the '{@link at.bestsolution.efxclipse.formats.svg.svg.impl.SvgFeFuncAElementImpl <em>Fe Func AElement</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see at.bestsolution.efxclipse.formats.svg.svg.impl.SvgFeFuncAImpl
-	 * @see at.bestsolution.efxclipse.formats.svg.svg.impl.SvgPackageImpl#getSvgFeFuncA()
+	 * @see at.bestsolution.efxclipse.formats.svg.svg.impl.SvgFeFuncAElementImpl
+	 * @see at.bestsolution.efxclipse.formats.svg.svg.impl.SvgPackageImpl#getSvgFeFuncAElement()
 	 * @generated
 	 */
-	int SVG_FE_FUNC_A = 67;
+	int SVG_FE_FUNC_AELEMENT = 68;
 
 	/**
 	 * The feature id for the '<em><b>Id</b></em>' attribute.
@@ -28072,7 +28226,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_FUNC_A__ID = SVG_ELEMENT_FEATURE_COUNT + 0;
+	int SVG_FE_FUNC_AELEMENT__ID = SVG_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Xml base</b></em>' attribute.
@@ -28081,7 +28235,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_FUNC_A__XML_BASE = SVG_ELEMENT_FEATURE_COUNT + 1;
+	int SVG_FE_FUNC_AELEMENT__XML_BASE = SVG_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Xml lang</b></em>' attribute.
@@ -28090,7 +28244,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_FUNC_A__XML_LANG = SVG_ELEMENT_FEATURE_COUNT + 2;
+	int SVG_FE_FUNC_AELEMENT__XML_LANG = SVG_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Xml space</b></em>' attribute.
@@ -28099,7 +28253,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_FUNC_A__XML_SPACE = SVG_ELEMENT_FEATURE_COUNT + 3;
+	int SVG_FE_FUNC_AELEMENT__XML_SPACE = SVG_ELEMENT_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Alignment baseline</b></em>' attribute.
@@ -28108,7 +28262,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_FUNC_A__ALIGNMENT_BASELINE = SVG_ELEMENT_FEATURE_COUNT + 4;
+	int SVG_FE_FUNC_AELEMENT__ALIGNMENT_BASELINE = SVG_ELEMENT_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Baseline shift</b></em>' attribute.
@@ -28117,7 +28271,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_FUNC_A__BASELINE_SHIFT = SVG_ELEMENT_FEATURE_COUNT + 5;
+	int SVG_FE_FUNC_AELEMENT__BASELINE_SHIFT = SVG_ELEMENT_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>Clip</b></em>' attribute.
@@ -28126,7 +28280,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_FUNC_A__CLIP = SVG_ELEMENT_FEATURE_COUNT + 6;
+	int SVG_FE_FUNC_AELEMENT__CLIP = SVG_ELEMENT_FEATURE_COUNT + 6;
 
 	/**
 	 * The feature id for the '<em><b>Clip path</b></em>' attribute.
@@ -28135,7 +28289,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_FUNC_A__CLIP_PATH = SVG_ELEMENT_FEATURE_COUNT + 7;
+	int SVG_FE_FUNC_AELEMENT__CLIP_PATH = SVG_ELEMENT_FEATURE_COUNT + 7;
 
 	/**
 	 * The feature id for the '<em><b>Clip rule</b></em>' attribute.
@@ -28144,7 +28298,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_FUNC_A__CLIP_RULE = SVG_ELEMENT_FEATURE_COUNT + 8;
+	int SVG_FE_FUNC_AELEMENT__CLIP_RULE = SVG_ELEMENT_FEATURE_COUNT + 8;
 
 	/**
 	 * The feature id for the '<em><b>Color</b></em>' attribute.
@@ -28153,7 +28307,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_FUNC_A__COLOR = SVG_ELEMENT_FEATURE_COUNT + 9;
+	int SVG_FE_FUNC_AELEMENT__COLOR = SVG_ELEMENT_FEATURE_COUNT + 9;
 
 	/**
 	 * The feature id for the '<em><b>Color interpolation</b></em>' attribute.
@@ -28162,7 +28316,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_FUNC_A__COLOR_INTERPOLATION = SVG_ELEMENT_FEATURE_COUNT + 10;
+	int SVG_FE_FUNC_AELEMENT__COLOR_INTERPOLATION = SVG_ELEMENT_FEATURE_COUNT + 10;
 
 	/**
 	 * The feature id for the '<em><b>Color interpolation filters</b></em>' attribute.
@@ -28171,7 +28325,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_FUNC_A__COLOR_INTERPOLATION_FILTERS = SVG_ELEMENT_FEATURE_COUNT + 11;
+	int SVG_FE_FUNC_AELEMENT__COLOR_INTERPOLATION_FILTERS = SVG_ELEMENT_FEATURE_COUNT + 11;
 
 	/**
 	 * The feature id for the '<em><b>Color profile</b></em>' attribute.
@@ -28180,7 +28334,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_FUNC_A__COLOR_PROFILE = SVG_ELEMENT_FEATURE_COUNT + 12;
+	int SVG_FE_FUNC_AELEMENT__COLOR_PROFILE = SVG_ELEMENT_FEATURE_COUNT + 12;
 
 	/**
 	 * The feature id for the '<em><b>Color rendering</b></em>' attribute.
@@ -28189,7 +28343,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_FUNC_A__COLOR_RENDERING = SVG_ELEMENT_FEATURE_COUNT + 13;
+	int SVG_FE_FUNC_AELEMENT__COLOR_RENDERING = SVG_ELEMENT_FEATURE_COUNT + 13;
 
 	/**
 	 * The feature id for the '<em><b>Cursor</b></em>' attribute.
@@ -28198,7 +28352,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_FUNC_A__CURSOR = SVG_ELEMENT_FEATURE_COUNT + 14;
+	int SVG_FE_FUNC_AELEMENT__CURSOR = SVG_ELEMENT_FEATURE_COUNT + 14;
 
 	/**
 	 * The feature id for the '<em><b>Direction</b></em>' attribute.
@@ -28207,7 +28361,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_FUNC_A__DIRECTION = SVG_ELEMENT_FEATURE_COUNT + 15;
+	int SVG_FE_FUNC_AELEMENT__DIRECTION = SVG_ELEMENT_FEATURE_COUNT + 15;
 
 	/**
 	 * The feature id for the '<em><b>Display</b></em>' attribute.
@@ -28216,7 +28370,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_FUNC_A__DISPLAY = SVG_ELEMENT_FEATURE_COUNT + 16;
+	int SVG_FE_FUNC_AELEMENT__DISPLAY = SVG_ELEMENT_FEATURE_COUNT + 16;
 
 	/**
 	 * The feature id for the '<em><b>Dominant baseline</b></em>' attribute.
@@ -28225,7 +28379,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_FUNC_A__DOMINANT_BASELINE = SVG_ELEMENT_FEATURE_COUNT + 17;
+	int SVG_FE_FUNC_AELEMENT__DOMINANT_BASELINE = SVG_ELEMENT_FEATURE_COUNT + 17;
 
 	/**
 	 * The feature id for the '<em><b>Enable background</b></em>' attribute.
@@ -28234,7 +28388,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_FUNC_A__ENABLE_BACKGROUND = SVG_ELEMENT_FEATURE_COUNT + 18;
+	int SVG_FE_FUNC_AELEMENT__ENABLE_BACKGROUND = SVG_ELEMENT_FEATURE_COUNT + 18;
 
 	/**
 	 * The feature id for the '<em><b>Fill</b></em>' attribute.
@@ -28243,7 +28397,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_FUNC_A__FILL = SVG_ELEMENT_FEATURE_COUNT + 19;
+	int SVG_FE_FUNC_AELEMENT__FILL = SVG_ELEMENT_FEATURE_COUNT + 19;
 
 	/**
 	 * The feature id for the '<em><b>Fill opacity</b></em>' attribute.
@@ -28252,7 +28406,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_FUNC_A__FILL_OPACITY = SVG_ELEMENT_FEATURE_COUNT + 20;
+	int SVG_FE_FUNC_AELEMENT__FILL_OPACITY = SVG_ELEMENT_FEATURE_COUNT + 20;
 
 	/**
 	 * The feature id for the '<em><b>Fill rule</b></em>' attribute.
@@ -28261,7 +28415,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_FUNC_A__FILL_RULE = SVG_ELEMENT_FEATURE_COUNT + 21;
+	int SVG_FE_FUNC_AELEMENT__FILL_RULE = SVG_ELEMENT_FEATURE_COUNT + 21;
 
 	/**
 	 * The feature id for the '<em><b>Filter</b></em>' attribute.
@@ -28270,7 +28424,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_FUNC_A__FILTER = SVG_ELEMENT_FEATURE_COUNT + 22;
+	int SVG_FE_FUNC_AELEMENT__FILTER = SVG_ELEMENT_FEATURE_COUNT + 22;
 
 	/**
 	 * The feature id for the '<em><b>Flood color</b></em>' attribute.
@@ -28279,7 +28433,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_FUNC_A__FLOOD_COLOR = SVG_ELEMENT_FEATURE_COUNT + 23;
+	int SVG_FE_FUNC_AELEMENT__FLOOD_COLOR = SVG_ELEMENT_FEATURE_COUNT + 23;
 
 	/**
 	 * The feature id for the '<em><b>Flood opacity</b></em>' attribute.
@@ -28288,7 +28442,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_FUNC_A__FLOOD_OPACITY = SVG_ELEMENT_FEATURE_COUNT + 24;
+	int SVG_FE_FUNC_AELEMENT__FLOOD_OPACITY = SVG_ELEMENT_FEATURE_COUNT + 24;
 
 	/**
 	 * The feature id for the '<em><b>Font family</b></em>' attribute.
@@ -28297,7 +28451,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_FUNC_A__FONT_FAMILY = SVG_ELEMENT_FEATURE_COUNT + 25;
+	int SVG_FE_FUNC_AELEMENT__FONT_FAMILY = SVG_ELEMENT_FEATURE_COUNT + 25;
 
 	/**
 	 * The feature id for the '<em><b>Font size</b></em>' attribute.
@@ -28306,7 +28460,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_FUNC_A__FONT_SIZE = SVG_ELEMENT_FEATURE_COUNT + 26;
+	int SVG_FE_FUNC_AELEMENT__FONT_SIZE = SVG_ELEMENT_FEATURE_COUNT + 26;
 
 	/**
 	 * The feature id for the '<em><b>Font size adjust</b></em>' attribute.
@@ -28315,7 +28469,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_FUNC_A__FONT_SIZE_ADJUST = SVG_ELEMENT_FEATURE_COUNT + 27;
+	int SVG_FE_FUNC_AELEMENT__FONT_SIZE_ADJUST = SVG_ELEMENT_FEATURE_COUNT + 27;
 
 	/**
 	 * The feature id for the '<em><b>Font stretch</b></em>' attribute.
@@ -28324,7 +28478,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_FUNC_A__FONT_STRETCH = SVG_ELEMENT_FEATURE_COUNT + 28;
+	int SVG_FE_FUNC_AELEMENT__FONT_STRETCH = SVG_ELEMENT_FEATURE_COUNT + 28;
 
 	/**
 	 * The feature id for the '<em><b>Font style</b></em>' attribute.
@@ -28333,7 +28487,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_FUNC_A__FONT_STYLE = SVG_ELEMENT_FEATURE_COUNT + 29;
+	int SVG_FE_FUNC_AELEMENT__FONT_STYLE = SVG_ELEMENT_FEATURE_COUNT + 29;
 
 	/**
 	 * The feature id for the '<em><b>Font variant</b></em>' attribute.
@@ -28342,7 +28496,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_FUNC_A__FONT_VARIANT = SVG_ELEMENT_FEATURE_COUNT + 30;
+	int SVG_FE_FUNC_AELEMENT__FONT_VARIANT = SVG_ELEMENT_FEATURE_COUNT + 30;
 
 	/**
 	 * The feature id for the '<em><b>Font weight</b></em>' attribute.
@@ -28351,7 +28505,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_FUNC_A__FONT_WEIGHT = SVG_ELEMENT_FEATURE_COUNT + 31;
+	int SVG_FE_FUNC_AELEMENT__FONT_WEIGHT = SVG_ELEMENT_FEATURE_COUNT + 31;
 
 	/**
 	 * The feature id for the '<em><b>Glyph orientation horizontal</b></em>' attribute.
@@ -28360,7 +28514,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_FUNC_A__GLYPH_ORIENTATION_HORIZONTAL = SVG_ELEMENT_FEATURE_COUNT + 32;
+	int SVG_FE_FUNC_AELEMENT__GLYPH_ORIENTATION_HORIZONTAL = SVG_ELEMENT_FEATURE_COUNT + 32;
 
 	/**
 	 * The feature id for the '<em><b>Glyph orientation vertical</b></em>' attribute.
@@ -28369,7 +28523,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_FUNC_A__GLYPH_ORIENTATION_VERTICAL = SVG_ELEMENT_FEATURE_COUNT + 33;
+	int SVG_FE_FUNC_AELEMENT__GLYPH_ORIENTATION_VERTICAL = SVG_ELEMENT_FEATURE_COUNT + 33;
 
 	/**
 	 * The feature id for the '<em><b>Image rendering</b></em>' attribute.
@@ -28378,7 +28532,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_FUNC_A__IMAGE_RENDERING = SVG_ELEMENT_FEATURE_COUNT + 34;
+	int SVG_FE_FUNC_AELEMENT__IMAGE_RENDERING = SVG_ELEMENT_FEATURE_COUNT + 34;
 
 	/**
 	 * The feature id for the '<em><b>Kerning</b></em>' attribute.
@@ -28387,7 +28541,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_FUNC_A__KERNING = SVG_ELEMENT_FEATURE_COUNT + 35;
+	int SVG_FE_FUNC_AELEMENT__KERNING = SVG_ELEMENT_FEATURE_COUNT + 35;
 
 	/**
 	 * The feature id for the '<em><b>Letter spacing</b></em>' attribute.
@@ -28396,7 +28550,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_FUNC_A__LETTER_SPACING = SVG_ELEMENT_FEATURE_COUNT + 36;
+	int SVG_FE_FUNC_AELEMENT__LETTER_SPACING = SVG_ELEMENT_FEATURE_COUNT + 36;
 
 	/**
 	 * The feature id for the '<em><b>Lighting color</b></em>' attribute.
@@ -28405,7 +28559,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_FUNC_A__LIGHTING_COLOR = SVG_ELEMENT_FEATURE_COUNT + 37;
+	int SVG_FE_FUNC_AELEMENT__LIGHTING_COLOR = SVG_ELEMENT_FEATURE_COUNT + 37;
 
 	/**
 	 * The feature id for the '<em><b>Marker end</b></em>' attribute.
@@ -28414,7 +28568,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_FUNC_A__MARKER_END = SVG_ELEMENT_FEATURE_COUNT + 38;
+	int SVG_FE_FUNC_AELEMENT__MARKER_END = SVG_ELEMENT_FEATURE_COUNT + 38;
 
 	/**
 	 * The feature id for the '<em><b>Marker mid</b></em>' attribute.
@@ -28423,7 +28577,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_FUNC_A__MARKER_MID = SVG_ELEMENT_FEATURE_COUNT + 39;
+	int SVG_FE_FUNC_AELEMENT__MARKER_MID = SVG_ELEMENT_FEATURE_COUNT + 39;
 
 	/**
 	 * The feature id for the '<em><b>Marker start</b></em>' attribute.
@@ -28432,7 +28586,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_FUNC_A__MARKER_START = SVG_ELEMENT_FEATURE_COUNT + 40;
+	int SVG_FE_FUNC_AELEMENT__MARKER_START = SVG_ELEMENT_FEATURE_COUNT + 40;
 
 	/**
 	 * The feature id for the '<em><b>Masks</b></em>' attribute.
@@ -28441,7 +28595,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_FUNC_A__MASKS = SVG_ELEMENT_FEATURE_COUNT + 41;
+	int SVG_FE_FUNC_AELEMENT__MASKS = SVG_ELEMENT_FEATURE_COUNT + 41;
 
 	/**
 	 * The feature id for the '<em><b>Opacity</b></em>' attribute.
@@ -28450,7 +28604,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_FUNC_A__OPACITY = SVG_ELEMENT_FEATURE_COUNT + 42;
+	int SVG_FE_FUNC_AELEMENT__OPACITY = SVG_ELEMENT_FEATURE_COUNT + 42;
 
 	/**
 	 * The feature id for the '<em><b>Overflow</b></em>' attribute.
@@ -28459,7 +28613,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_FUNC_A__OVERFLOW = SVG_ELEMENT_FEATURE_COUNT + 43;
+	int SVG_FE_FUNC_AELEMENT__OVERFLOW = SVG_ELEMENT_FEATURE_COUNT + 43;
 
 	/**
 	 * The feature id for the '<em><b>Pointer events</b></em>' attribute.
@@ -28468,7 +28622,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_FUNC_A__POINTER_EVENTS = SVG_ELEMENT_FEATURE_COUNT + 44;
+	int SVG_FE_FUNC_AELEMENT__POINTER_EVENTS = SVG_ELEMENT_FEATURE_COUNT + 44;
 
 	/**
 	 * The feature id for the '<em><b>Shape rendering</b></em>' attribute.
@@ -28477,7 +28631,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_FUNC_A__SHAPE_RENDERING = SVG_ELEMENT_FEATURE_COUNT + 45;
+	int SVG_FE_FUNC_AELEMENT__SHAPE_RENDERING = SVG_ELEMENT_FEATURE_COUNT + 45;
 
 	/**
 	 * The feature id for the '<em><b>Stop color</b></em>' attribute.
@@ -28486,7 +28640,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_FUNC_A__STOP_COLOR = SVG_ELEMENT_FEATURE_COUNT + 46;
+	int SVG_FE_FUNC_AELEMENT__STOP_COLOR = SVG_ELEMENT_FEATURE_COUNT + 46;
 
 	/**
 	 * The feature id for the '<em><b>Stop opacity</b></em>' attribute.
@@ -28495,7 +28649,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_FUNC_A__STOP_OPACITY = SVG_ELEMENT_FEATURE_COUNT + 47;
+	int SVG_FE_FUNC_AELEMENT__STOP_OPACITY = SVG_ELEMENT_FEATURE_COUNT + 47;
 
 	/**
 	 * The feature id for the '<em><b>Stroke</b></em>' attribute.
@@ -28504,7 +28658,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_FUNC_A__STROKE = SVG_ELEMENT_FEATURE_COUNT + 48;
+	int SVG_FE_FUNC_AELEMENT__STROKE = SVG_ELEMENT_FEATURE_COUNT + 48;
 
 	/**
 	 * The feature id for the '<em><b>Stroke dasharray</b></em>' attribute.
@@ -28513,7 +28667,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_FUNC_A__STROKE_DASHARRAY = SVG_ELEMENT_FEATURE_COUNT + 49;
+	int SVG_FE_FUNC_AELEMENT__STROKE_DASHARRAY = SVG_ELEMENT_FEATURE_COUNT + 49;
 
 	/**
 	 * The feature id for the '<em><b>Stroke dashoffset</b></em>' attribute.
@@ -28522,7 +28676,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_FUNC_A__STROKE_DASHOFFSET = SVG_ELEMENT_FEATURE_COUNT + 50;
+	int SVG_FE_FUNC_AELEMENT__STROKE_DASHOFFSET = SVG_ELEMENT_FEATURE_COUNT + 50;
 
 	/**
 	 * The feature id for the '<em><b>Stroke linecap</b></em>' attribute.
@@ -28531,7 +28685,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_FUNC_A__STROKE_LINECAP = SVG_ELEMENT_FEATURE_COUNT + 51;
+	int SVG_FE_FUNC_AELEMENT__STROKE_LINECAP = SVG_ELEMENT_FEATURE_COUNT + 51;
 
 	/**
 	 * The feature id for the '<em><b>Stroke linejoin</b></em>' attribute.
@@ -28540,7 +28694,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_FUNC_A__STROKE_LINEJOIN = SVG_ELEMENT_FEATURE_COUNT + 52;
+	int SVG_FE_FUNC_AELEMENT__STROKE_LINEJOIN = SVG_ELEMENT_FEATURE_COUNT + 52;
 
 	/**
 	 * The feature id for the '<em><b>Stroke miterlimit</b></em>' attribute.
@@ -28549,7 +28703,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_FUNC_A__STROKE_MITERLIMIT = SVG_ELEMENT_FEATURE_COUNT + 53;
+	int SVG_FE_FUNC_AELEMENT__STROKE_MITERLIMIT = SVG_ELEMENT_FEATURE_COUNT + 53;
 
 	/**
 	 * The feature id for the '<em><b>Stroke opacity</b></em>' attribute.
@@ -28558,7 +28712,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_FUNC_A__STROKE_OPACITY = SVG_ELEMENT_FEATURE_COUNT + 54;
+	int SVG_FE_FUNC_AELEMENT__STROKE_OPACITY = SVG_ELEMENT_FEATURE_COUNT + 54;
 
 	/**
 	 * The feature id for the '<em><b>Stroke width</b></em>' attribute.
@@ -28567,7 +28721,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_FUNC_A__STROKE_WIDTH = SVG_ELEMENT_FEATURE_COUNT + 55;
+	int SVG_FE_FUNC_AELEMENT__STROKE_WIDTH = SVG_ELEMENT_FEATURE_COUNT + 55;
 
 	/**
 	 * The feature id for the '<em><b>Text anchor</b></em>' attribute.
@@ -28576,7 +28730,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_FUNC_A__TEXT_ANCHOR = SVG_ELEMENT_FEATURE_COUNT + 56;
+	int SVG_FE_FUNC_AELEMENT__TEXT_ANCHOR = SVG_ELEMENT_FEATURE_COUNT + 56;
 
 	/**
 	 * The feature id for the '<em><b>Text decoration</b></em>' attribute.
@@ -28585,7 +28739,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_FUNC_A__TEXT_DECORATION = SVG_ELEMENT_FEATURE_COUNT + 57;
+	int SVG_FE_FUNC_AELEMENT__TEXT_DECORATION = SVG_ELEMENT_FEATURE_COUNT + 57;
 
 	/**
 	 * The feature id for the '<em><b>Text rendering</b></em>' attribute.
@@ -28594,7 +28748,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_FUNC_A__TEXT_RENDERING = SVG_ELEMENT_FEATURE_COUNT + 58;
+	int SVG_FE_FUNC_AELEMENT__TEXT_RENDERING = SVG_ELEMENT_FEATURE_COUNT + 58;
 
 	/**
 	 * The feature id for the '<em><b>Unicode bidi</b></em>' attribute.
@@ -28603,7 +28757,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_FUNC_A__UNICODE_BIDI = SVG_ELEMENT_FEATURE_COUNT + 59;
+	int SVG_FE_FUNC_AELEMENT__UNICODE_BIDI = SVG_ELEMENT_FEATURE_COUNT + 59;
 
 	/**
 	 * The feature id for the '<em><b>Visibility</b></em>' attribute.
@@ -28612,7 +28766,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_FUNC_A__VISIBILITY = SVG_ELEMENT_FEATURE_COUNT + 60;
+	int SVG_FE_FUNC_AELEMENT__VISIBILITY = SVG_ELEMENT_FEATURE_COUNT + 60;
 
 	/**
 	 * The feature id for the '<em><b>Word spacing</b></em>' attribute.
@@ -28621,7 +28775,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_FUNC_A__WORD_SPACING = SVG_ELEMENT_FEATURE_COUNT + 61;
+	int SVG_FE_FUNC_AELEMENT__WORD_SPACING = SVG_ELEMENT_FEATURE_COUNT + 61;
 
 	/**
 	 * The feature id for the '<em><b>Writing mode</b></em>' attribute.
@@ -28630,7 +28784,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_FUNC_A__WRITING_MODE = SVG_ELEMENT_FEATURE_COUNT + 62;
+	int SVG_FE_FUNC_AELEMENT__WRITING_MODE = SVG_ELEMENT_FEATURE_COUNT + 62;
 
 	/**
 	 * The feature id for the '<em><b>Children</b></em>' containment reference list.
@@ -28639,26 +28793,26 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_FUNC_A__CHILDREN = SVG_ELEMENT_FEATURE_COUNT + 63;
+	int SVG_FE_FUNC_AELEMENT__CHILDREN = SVG_ELEMENT_FEATURE_COUNT + 63;
 
 	/**
-	 * The number of structural features of the '<em>Fe Func A</em>' class.
+	 * The number of structural features of the '<em>Fe Func AElement</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_FUNC_A_FEATURE_COUNT = SVG_ELEMENT_FEATURE_COUNT + 64;
+	int SVG_FE_FUNC_AELEMENT_FEATURE_COUNT = SVG_ELEMENT_FEATURE_COUNT + 64;
 
 	/**
-	 * The meta object id for the '{@link at.bestsolution.efxclipse.formats.svg.svg.impl.SvgFeCompositeImpl <em>Fe Composite</em>}' class.
+	 * The meta object id for the '{@link at.bestsolution.efxclipse.formats.svg.svg.impl.SvgFeCompositeElementImpl <em>Fe Composite Element</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see at.bestsolution.efxclipse.formats.svg.svg.impl.SvgFeCompositeImpl
-	 * @see at.bestsolution.efxclipse.formats.svg.svg.impl.SvgPackageImpl#getSvgFeComposite()
+	 * @see at.bestsolution.efxclipse.formats.svg.svg.impl.SvgFeCompositeElementImpl
+	 * @see at.bestsolution.efxclipse.formats.svg.svg.impl.SvgPackageImpl#getSvgFeCompositeElement()
 	 * @generated
 	 */
-	int SVG_FE_COMPOSITE = 68;
+	int SVG_FE_COMPOSITE_ELEMENT = 69;
 
 	/**
 	 * The feature id for the '<em><b>Id</b></em>' attribute.
@@ -28667,7 +28821,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_COMPOSITE__ID = SVG_ELEMENT_FEATURE_COUNT + 0;
+	int SVG_FE_COMPOSITE_ELEMENT__ID = SVG_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Xml base</b></em>' attribute.
@@ -28676,7 +28830,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_COMPOSITE__XML_BASE = SVG_ELEMENT_FEATURE_COUNT + 1;
+	int SVG_FE_COMPOSITE_ELEMENT__XML_BASE = SVG_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Xml lang</b></em>' attribute.
@@ -28685,7 +28839,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_COMPOSITE__XML_LANG = SVG_ELEMENT_FEATURE_COUNT + 2;
+	int SVG_FE_COMPOSITE_ELEMENT__XML_LANG = SVG_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Xml space</b></em>' attribute.
@@ -28694,7 +28848,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_COMPOSITE__XML_SPACE = SVG_ELEMENT_FEATURE_COUNT + 3;
+	int SVG_FE_COMPOSITE_ELEMENT__XML_SPACE = SVG_ELEMENT_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Alignment baseline</b></em>' attribute.
@@ -28703,7 +28857,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_COMPOSITE__ALIGNMENT_BASELINE = SVG_ELEMENT_FEATURE_COUNT + 4;
+	int SVG_FE_COMPOSITE_ELEMENT__ALIGNMENT_BASELINE = SVG_ELEMENT_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Baseline shift</b></em>' attribute.
@@ -28712,7 +28866,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_COMPOSITE__BASELINE_SHIFT = SVG_ELEMENT_FEATURE_COUNT + 5;
+	int SVG_FE_COMPOSITE_ELEMENT__BASELINE_SHIFT = SVG_ELEMENT_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>Clip</b></em>' attribute.
@@ -28721,7 +28875,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_COMPOSITE__CLIP = SVG_ELEMENT_FEATURE_COUNT + 6;
+	int SVG_FE_COMPOSITE_ELEMENT__CLIP = SVG_ELEMENT_FEATURE_COUNT + 6;
 
 	/**
 	 * The feature id for the '<em><b>Clip path</b></em>' attribute.
@@ -28730,7 +28884,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_COMPOSITE__CLIP_PATH = SVG_ELEMENT_FEATURE_COUNT + 7;
+	int SVG_FE_COMPOSITE_ELEMENT__CLIP_PATH = SVG_ELEMENT_FEATURE_COUNT + 7;
 
 	/**
 	 * The feature id for the '<em><b>Clip rule</b></em>' attribute.
@@ -28739,7 +28893,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_COMPOSITE__CLIP_RULE = SVG_ELEMENT_FEATURE_COUNT + 8;
+	int SVG_FE_COMPOSITE_ELEMENT__CLIP_RULE = SVG_ELEMENT_FEATURE_COUNT + 8;
 
 	/**
 	 * The feature id for the '<em><b>Color</b></em>' attribute.
@@ -28748,7 +28902,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_COMPOSITE__COLOR = SVG_ELEMENT_FEATURE_COUNT + 9;
+	int SVG_FE_COMPOSITE_ELEMENT__COLOR = SVG_ELEMENT_FEATURE_COUNT + 9;
 
 	/**
 	 * The feature id for the '<em><b>Color interpolation</b></em>' attribute.
@@ -28757,7 +28911,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_COMPOSITE__COLOR_INTERPOLATION = SVG_ELEMENT_FEATURE_COUNT + 10;
+	int SVG_FE_COMPOSITE_ELEMENT__COLOR_INTERPOLATION = SVG_ELEMENT_FEATURE_COUNT + 10;
 
 	/**
 	 * The feature id for the '<em><b>Color interpolation filters</b></em>' attribute.
@@ -28766,7 +28920,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_COMPOSITE__COLOR_INTERPOLATION_FILTERS = SVG_ELEMENT_FEATURE_COUNT + 11;
+	int SVG_FE_COMPOSITE_ELEMENT__COLOR_INTERPOLATION_FILTERS = SVG_ELEMENT_FEATURE_COUNT + 11;
 
 	/**
 	 * The feature id for the '<em><b>Color profile</b></em>' attribute.
@@ -28775,7 +28929,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_COMPOSITE__COLOR_PROFILE = SVG_ELEMENT_FEATURE_COUNT + 12;
+	int SVG_FE_COMPOSITE_ELEMENT__COLOR_PROFILE = SVG_ELEMENT_FEATURE_COUNT + 12;
 
 	/**
 	 * The feature id for the '<em><b>Color rendering</b></em>' attribute.
@@ -28784,7 +28938,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_COMPOSITE__COLOR_RENDERING = SVG_ELEMENT_FEATURE_COUNT + 13;
+	int SVG_FE_COMPOSITE_ELEMENT__COLOR_RENDERING = SVG_ELEMENT_FEATURE_COUNT + 13;
 
 	/**
 	 * The feature id for the '<em><b>Cursor</b></em>' attribute.
@@ -28793,7 +28947,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_COMPOSITE__CURSOR = SVG_ELEMENT_FEATURE_COUNT + 14;
+	int SVG_FE_COMPOSITE_ELEMENT__CURSOR = SVG_ELEMENT_FEATURE_COUNT + 14;
 
 	/**
 	 * The feature id for the '<em><b>Direction</b></em>' attribute.
@@ -28802,7 +28956,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_COMPOSITE__DIRECTION = SVG_ELEMENT_FEATURE_COUNT + 15;
+	int SVG_FE_COMPOSITE_ELEMENT__DIRECTION = SVG_ELEMENT_FEATURE_COUNT + 15;
 
 	/**
 	 * The feature id for the '<em><b>Display</b></em>' attribute.
@@ -28811,7 +28965,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_COMPOSITE__DISPLAY = SVG_ELEMENT_FEATURE_COUNT + 16;
+	int SVG_FE_COMPOSITE_ELEMENT__DISPLAY = SVG_ELEMENT_FEATURE_COUNT + 16;
 
 	/**
 	 * The feature id for the '<em><b>Dominant baseline</b></em>' attribute.
@@ -28820,7 +28974,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_COMPOSITE__DOMINANT_BASELINE = SVG_ELEMENT_FEATURE_COUNT + 17;
+	int SVG_FE_COMPOSITE_ELEMENT__DOMINANT_BASELINE = SVG_ELEMENT_FEATURE_COUNT + 17;
 
 	/**
 	 * The feature id for the '<em><b>Enable background</b></em>' attribute.
@@ -28829,7 +28983,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_COMPOSITE__ENABLE_BACKGROUND = SVG_ELEMENT_FEATURE_COUNT + 18;
+	int SVG_FE_COMPOSITE_ELEMENT__ENABLE_BACKGROUND = SVG_ELEMENT_FEATURE_COUNT + 18;
 
 	/**
 	 * The feature id for the '<em><b>Fill</b></em>' attribute.
@@ -28838,7 +28992,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_COMPOSITE__FILL = SVG_ELEMENT_FEATURE_COUNT + 19;
+	int SVG_FE_COMPOSITE_ELEMENT__FILL = SVG_ELEMENT_FEATURE_COUNT + 19;
 
 	/**
 	 * The feature id for the '<em><b>Fill opacity</b></em>' attribute.
@@ -28847,7 +29001,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_COMPOSITE__FILL_OPACITY = SVG_ELEMENT_FEATURE_COUNT + 20;
+	int SVG_FE_COMPOSITE_ELEMENT__FILL_OPACITY = SVG_ELEMENT_FEATURE_COUNT + 20;
 
 	/**
 	 * The feature id for the '<em><b>Fill rule</b></em>' attribute.
@@ -28856,7 +29010,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_COMPOSITE__FILL_RULE = SVG_ELEMENT_FEATURE_COUNT + 21;
+	int SVG_FE_COMPOSITE_ELEMENT__FILL_RULE = SVG_ELEMENT_FEATURE_COUNT + 21;
 
 	/**
 	 * The feature id for the '<em><b>Filter</b></em>' attribute.
@@ -28865,7 +29019,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_COMPOSITE__FILTER = SVG_ELEMENT_FEATURE_COUNT + 22;
+	int SVG_FE_COMPOSITE_ELEMENT__FILTER = SVG_ELEMENT_FEATURE_COUNT + 22;
 
 	/**
 	 * The feature id for the '<em><b>Flood color</b></em>' attribute.
@@ -28874,7 +29028,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_COMPOSITE__FLOOD_COLOR = SVG_ELEMENT_FEATURE_COUNT + 23;
+	int SVG_FE_COMPOSITE_ELEMENT__FLOOD_COLOR = SVG_ELEMENT_FEATURE_COUNT + 23;
 
 	/**
 	 * The feature id for the '<em><b>Flood opacity</b></em>' attribute.
@@ -28883,7 +29037,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_COMPOSITE__FLOOD_OPACITY = SVG_ELEMENT_FEATURE_COUNT + 24;
+	int SVG_FE_COMPOSITE_ELEMENT__FLOOD_OPACITY = SVG_ELEMENT_FEATURE_COUNT + 24;
 
 	/**
 	 * The feature id for the '<em><b>Font family</b></em>' attribute.
@@ -28892,7 +29046,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_COMPOSITE__FONT_FAMILY = SVG_ELEMENT_FEATURE_COUNT + 25;
+	int SVG_FE_COMPOSITE_ELEMENT__FONT_FAMILY = SVG_ELEMENT_FEATURE_COUNT + 25;
 
 	/**
 	 * The feature id for the '<em><b>Font size</b></em>' attribute.
@@ -28901,7 +29055,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_COMPOSITE__FONT_SIZE = SVG_ELEMENT_FEATURE_COUNT + 26;
+	int SVG_FE_COMPOSITE_ELEMENT__FONT_SIZE = SVG_ELEMENT_FEATURE_COUNT + 26;
 
 	/**
 	 * The feature id for the '<em><b>Font size adjust</b></em>' attribute.
@@ -28910,7 +29064,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_COMPOSITE__FONT_SIZE_ADJUST = SVG_ELEMENT_FEATURE_COUNT + 27;
+	int SVG_FE_COMPOSITE_ELEMENT__FONT_SIZE_ADJUST = SVG_ELEMENT_FEATURE_COUNT + 27;
 
 	/**
 	 * The feature id for the '<em><b>Font stretch</b></em>' attribute.
@@ -28919,7 +29073,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_COMPOSITE__FONT_STRETCH = SVG_ELEMENT_FEATURE_COUNT + 28;
+	int SVG_FE_COMPOSITE_ELEMENT__FONT_STRETCH = SVG_ELEMENT_FEATURE_COUNT + 28;
 
 	/**
 	 * The feature id for the '<em><b>Font style</b></em>' attribute.
@@ -28928,7 +29082,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_COMPOSITE__FONT_STYLE = SVG_ELEMENT_FEATURE_COUNT + 29;
+	int SVG_FE_COMPOSITE_ELEMENT__FONT_STYLE = SVG_ELEMENT_FEATURE_COUNT + 29;
 
 	/**
 	 * The feature id for the '<em><b>Font variant</b></em>' attribute.
@@ -28937,7 +29091,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_COMPOSITE__FONT_VARIANT = SVG_ELEMENT_FEATURE_COUNT + 30;
+	int SVG_FE_COMPOSITE_ELEMENT__FONT_VARIANT = SVG_ELEMENT_FEATURE_COUNT + 30;
 
 	/**
 	 * The feature id for the '<em><b>Font weight</b></em>' attribute.
@@ -28946,7 +29100,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_COMPOSITE__FONT_WEIGHT = SVG_ELEMENT_FEATURE_COUNT + 31;
+	int SVG_FE_COMPOSITE_ELEMENT__FONT_WEIGHT = SVG_ELEMENT_FEATURE_COUNT + 31;
 
 	/**
 	 * The feature id for the '<em><b>Glyph orientation horizontal</b></em>' attribute.
@@ -28955,7 +29109,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_COMPOSITE__GLYPH_ORIENTATION_HORIZONTAL = SVG_ELEMENT_FEATURE_COUNT + 32;
+	int SVG_FE_COMPOSITE_ELEMENT__GLYPH_ORIENTATION_HORIZONTAL = SVG_ELEMENT_FEATURE_COUNT + 32;
 
 	/**
 	 * The feature id for the '<em><b>Glyph orientation vertical</b></em>' attribute.
@@ -28964,7 +29118,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_COMPOSITE__GLYPH_ORIENTATION_VERTICAL = SVG_ELEMENT_FEATURE_COUNT + 33;
+	int SVG_FE_COMPOSITE_ELEMENT__GLYPH_ORIENTATION_VERTICAL = SVG_ELEMENT_FEATURE_COUNT + 33;
 
 	/**
 	 * The feature id for the '<em><b>Image rendering</b></em>' attribute.
@@ -28973,7 +29127,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_COMPOSITE__IMAGE_RENDERING = SVG_ELEMENT_FEATURE_COUNT + 34;
+	int SVG_FE_COMPOSITE_ELEMENT__IMAGE_RENDERING = SVG_ELEMENT_FEATURE_COUNT + 34;
 
 	/**
 	 * The feature id for the '<em><b>Kerning</b></em>' attribute.
@@ -28982,7 +29136,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_COMPOSITE__KERNING = SVG_ELEMENT_FEATURE_COUNT + 35;
+	int SVG_FE_COMPOSITE_ELEMENT__KERNING = SVG_ELEMENT_FEATURE_COUNT + 35;
 
 	/**
 	 * The feature id for the '<em><b>Letter spacing</b></em>' attribute.
@@ -28991,7 +29145,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_COMPOSITE__LETTER_SPACING = SVG_ELEMENT_FEATURE_COUNT + 36;
+	int SVG_FE_COMPOSITE_ELEMENT__LETTER_SPACING = SVG_ELEMENT_FEATURE_COUNT + 36;
 
 	/**
 	 * The feature id for the '<em><b>Lighting color</b></em>' attribute.
@@ -29000,7 +29154,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_COMPOSITE__LIGHTING_COLOR = SVG_ELEMENT_FEATURE_COUNT + 37;
+	int SVG_FE_COMPOSITE_ELEMENT__LIGHTING_COLOR = SVG_ELEMENT_FEATURE_COUNT + 37;
 
 	/**
 	 * The feature id for the '<em><b>Marker end</b></em>' attribute.
@@ -29009,7 +29163,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_COMPOSITE__MARKER_END = SVG_ELEMENT_FEATURE_COUNT + 38;
+	int SVG_FE_COMPOSITE_ELEMENT__MARKER_END = SVG_ELEMENT_FEATURE_COUNT + 38;
 
 	/**
 	 * The feature id for the '<em><b>Marker mid</b></em>' attribute.
@@ -29018,7 +29172,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_COMPOSITE__MARKER_MID = SVG_ELEMENT_FEATURE_COUNT + 39;
+	int SVG_FE_COMPOSITE_ELEMENT__MARKER_MID = SVG_ELEMENT_FEATURE_COUNT + 39;
 
 	/**
 	 * The feature id for the '<em><b>Marker start</b></em>' attribute.
@@ -29027,7 +29181,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_COMPOSITE__MARKER_START = SVG_ELEMENT_FEATURE_COUNT + 40;
+	int SVG_FE_COMPOSITE_ELEMENT__MARKER_START = SVG_ELEMENT_FEATURE_COUNT + 40;
 
 	/**
 	 * The feature id for the '<em><b>Masks</b></em>' attribute.
@@ -29036,7 +29190,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_COMPOSITE__MASKS = SVG_ELEMENT_FEATURE_COUNT + 41;
+	int SVG_FE_COMPOSITE_ELEMENT__MASKS = SVG_ELEMENT_FEATURE_COUNT + 41;
 
 	/**
 	 * The feature id for the '<em><b>Opacity</b></em>' attribute.
@@ -29045,7 +29199,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_COMPOSITE__OPACITY = SVG_ELEMENT_FEATURE_COUNT + 42;
+	int SVG_FE_COMPOSITE_ELEMENT__OPACITY = SVG_ELEMENT_FEATURE_COUNT + 42;
 
 	/**
 	 * The feature id for the '<em><b>Overflow</b></em>' attribute.
@@ -29054,7 +29208,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_COMPOSITE__OVERFLOW = SVG_ELEMENT_FEATURE_COUNT + 43;
+	int SVG_FE_COMPOSITE_ELEMENT__OVERFLOW = SVG_ELEMENT_FEATURE_COUNT + 43;
 
 	/**
 	 * The feature id for the '<em><b>Pointer events</b></em>' attribute.
@@ -29063,7 +29217,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_COMPOSITE__POINTER_EVENTS = SVG_ELEMENT_FEATURE_COUNT + 44;
+	int SVG_FE_COMPOSITE_ELEMENT__POINTER_EVENTS = SVG_ELEMENT_FEATURE_COUNT + 44;
 
 	/**
 	 * The feature id for the '<em><b>Shape rendering</b></em>' attribute.
@@ -29072,7 +29226,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_COMPOSITE__SHAPE_RENDERING = SVG_ELEMENT_FEATURE_COUNT + 45;
+	int SVG_FE_COMPOSITE_ELEMENT__SHAPE_RENDERING = SVG_ELEMENT_FEATURE_COUNT + 45;
 
 	/**
 	 * The feature id for the '<em><b>Stop color</b></em>' attribute.
@@ -29081,7 +29235,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_COMPOSITE__STOP_COLOR = SVG_ELEMENT_FEATURE_COUNT + 46;
+	int SVG_FE_COMPOSITE_ELEMENT__STOP_COLOR = SVG_ELEMENT_FEATURE_COUNT + 46;
 
 	/**
 	 * The feature id for the '<em><b>Stop opacity</b></em>' attribute.
@@ -29090,7 +29244,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_COMPOSITE__STOP_OPACITY = SVG_ELEMENT_FEATURE_COUNT + 47;
+	int SVG_FE_COMPOSITE_ELEMENT__STOP_OPACITY = SVG_ELEMENT_FEATURE_COUNT + 47;
 
 	/**
 	 * The feature id for the '<em><b>Stroke</b></em>' attribute.
@@ -29099,7 +29253,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_COMPOSITE__STROKE = SVG_ELEMENT_FEATURE_COUNT + 48;
+	int SVG_FE_COMPOSITE_ELEMENT__STROKE = SVG_ELEMENT_FEATURE_COUNT + 48;
 
 	/**
 	 * The feature id for the '<em><b>Stroke dasharray</b></em>' attribute.
@@ -29108,7 +29262,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_COMPOSITE__STROKE_DASHARRAY = SVG_ELEMENT_FEATURE_COUNT + 49;
+	int SVG_FE_COMPOSITE_ELEMENT__STROKE_DASHARRAY = SVG_ELEMENT_FEATURE_COUNT + 49;
 
 	/**
 	 * The feature id for the '<em><b>Stroke dashoffset</b></em>' attribute.
@@ -29117,7 +29271,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_COMPOSITE__STROKE_DASHOFFSET = SVG_ELEMENT_FEATURE_COUNT + 50;
+	int SVG_FE_COMPOSITE_ELEMENT__STROKE_DASHOFFSET = SVG_ELEMENT_FEATURE_COUNT + 50;
 
 	/**
 	 * The feature id for the '<em><b>Stroke linecap</b></em>' attribute.
@@ -29126,7 +29280,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_COMPOSITE__STROKE_LINECAP = SVG_ELEMENT_FEATURE_COUNT + 51;
+	int SVG_FE_COMPOSITE_ELEMENT__STROKE_LINECAP = SVG_ELEMENT_FEATURE_COUNT + 51;
 
 	/**
 	 * The feature id for the '<em><b>Stroke linejoin</b></em>' attribute.
@@ -29135,7 +29289,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_COMPOSITE__STROKE_LINEJOIN = SVG_ELEMENT_FEATURE_COUNT + 52;
+	int SVG_FE_COMPOSITE_ELEMENT__STROKE_LINEJOIN = SVG_ELEMENT_FEATURE_COUNT + 52;
 
 	/**
 	 * The feature id for the '<em><b>Stroke miterlimit</b></em>' attribute.
@@ -29144,7 +29298,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_COMPOSITE__STROKE_MITERLIMIT = SVG_ELEMENT_FEATURE_COUNT + 53;
+	int SVG_FE_COMPOSITE_ELEMENT__STROKE_MITERLIMIT = SVG_ELEMENT_FEATURE_COUNT + 53;
 
 	/**
 	 * The feature id for the '<em><b>Stroke opacity</b></em>' attribute.
@@ -29153,7 +29307,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_COMPOSITE__STROKE_OPACITY = SVG_ELEMENT_FEATURE_COUNT + 54;
+	int SVG_FE_COMPOSITE_ELEMENT__STROKE_OPACITY = SVG_ELEMENT_FEATURE_COUNT + 54;
 
 	/**
 	 * The feature id for the '<em><b>Stroke width</b></em>' attribute.
@@ -29162,7 +29316,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_COMPOSITE__STROKE_WIDTH = SVG_ELEMENT_FEATURE_COUNT + 55;
+	int SVG_FE_COMPOSITE_ELEMENT__STROKE_WIDTH = SVG_ELEMENT_FEATURE_COUNT + 55;
 
 	/**
 	 * The feature id for the '<em><b>Text anchor</b></em>' attribute.
@@ -29171,7 +29325,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_COMPOSITE__TEXT_ANCHOR = SVG_ELEMENT_FEATURE_COUNT + 56;
+	int SVG_FE_COMPOSITE_ELEMENT__TEXT_ANCHOR = SVG_ELEMENT_FEATURE_COUNT + 56;
 
 	/**
 	 * The feature id for the '<em><b>Text decoration</b></em>' attribute.
@@ -29180,7 +29334,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_COMPOSITE__TEXT_DECORATION = SVG_ELEMENT_FEATURE_COUNT + 57;
+	int SVG_FE_COMPOSITE_ELEMENT__TEXT_DECORATION = SVG_ELEMENT_FEATURE_COUNT + 57;
 
 	/**
 	 * The feature id for the '<em><b>Text rendering</b></em>' attribute.
@@ -29189,7 +29343,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_COMPOSITE__TEXT_RENDERING = SVG_ELEMENT_FEATURE_COUNT + 58;
+	int SVG_FE_COMPOSITE_ELEMENT__TEXT_RENDERING = SVG_ELEMENT_FEATURE_COUNT + 58;
 
 	/**
 	 * The feature id for the '<em><b>Unicode bidi</b></em>' attribute.
@@ -29198,7 +29352,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_COMPOSITE__UNICODE_BIDI = SVG_ELEMENT_FEATURE_COUNT + 59;
+	int SVG_FE_COMPOSITE_ELEMENT__UNICODE_BIDI = SVG_ELEMENT_FEATURE_COUNT + 59;
 
 	/**
 	 * The feature id for the '<em><b>Visibility</b></em>' attribute.
@@ -29207,7 +29361,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_COMPOSITE__VISIBILITY = SVG_ELEMENT_FEATURE_COUNT + 60;
+	int SVG_FE_COMPOSITE_ELEMENT__VISIBILITY = SVG_ELEMENT_FEATURE_COUNT + 60;
 
 	/**
 	 * The feature id for the '<em><b>Word spacing</b></em>' attribute.
@@ -29216,7 +29370,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_COMPOSITE__WORD_SPACING = SVG_ELEMENT_FEATURE_COUNT + 61;
+	int SVG_FE_COMPOSITE_ELEMENT__WORD_SPACING = SVG_ELEMENT_FEATURE_COUNT + 61;
 
 	/**
 	 * The feature id for the '<em><b>Writing mode</b></em>' attribute.
@@ -29225,7 +29379,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_COMPOSITE__WRITING_MODE = SVG_ELEMENT_FEATURE_COUNT + 62;
+	int SVG_FE_COMPOSITE_ELEMENT__WRITING_MODE = SVG_ELEMENT_FEATURE_COUNT + 62;
 
 	/**
 	 * The feature id for the '<em><b>X</b></em>' attribute.
@@ -29234,7 +29388,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_COMPOSITE__X = SVG_ELEMENT_FEATURE_COUNT + 63;
+	int SVG_FE_COMPOSITE_ELEMENT__X = SVG_ELEMENT_FEATURE_COUNT + 63;
 
 	/**
 	 * The feature id for the '<em><b>Y</b></em>' attribute.
@@ -29243,7 +29397,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_COMPOSITE__Y = SVG_ELEMENT_FEATURE_COUNT + 64;
+	int SVG_FE_COMPOSITE_ELEMENT__Y = SVG_ELEMENT_FEATURE_COUNT + 64;
 
 	/**
 	 * The feature id for the '<em><b>Width</b></em>' attribute.
@@ -29252,7 +29406,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_COMPOSITE__WIDTH = SVG_ELEMENT_FEATURE_COUNT + 65;
+	int SVG_FE_COMPOSITE_ELEMENT__WIDTH = SVG_ELEMENT_FEATURE_COUNT + 65;
 
 	/**
 	 * The feature id for the '<em><b>Height</b></em>' attribute.
@@ -29261,7 +29415,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_COMPOSITE__HEIGHT = SVG_ELEMENT_FEATURE_COUNT + 66;
+	int SVG_FE_COMPOSITE_ELEMENT__HEIGHT = SVG_ELEMENT_FEATURE_COUNT + 66;
 
 	/**
 	 * The feature id for the '<em><b>Result</b></em>' attribute.
@@ -29270,7 +29424,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_COMPOSITE__RESULT = SVG_ELEMENT_FEATURE_COUNT + 67;
+	int SVG_FE_COMPOSITE_ELEMENT__RESULT = SVG_ELEMENT_FEATURE_COUNT + 67;
 
 	/**
 	 * The feature id for the '<em><b>In</b></em>' attribute.
@@ -29279,7 +29433,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_COMPOSITE__IN = SVG_ELEMENT_FEATURE_COUNT + 68;
+	int SVG_FE_COMPOSITE_ELEMENT__IN = SVG_ELEMENT_FEATURE_COUNT + 68;
 
 	/**
 	 * The feature id for the '<em><b>Children</b></em>' containment reference list.
@@ -29288,7 +29442,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_COMPOSITE__CHILDREN = SVG_ELEMENT_FEATURE_COUNT + 69;
+	int SVG_FE_COMPOSITE_ELEMENT__CHILDREN = SVG_ELEMENT_FEATURE_COUNT + 69;
 
 	/**
 	 * The feature id for the '<em><b>Class</b></em>' attribute.
@@ -29297,7 +29451,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_COMPOSITE__CLASS = SVG_ELEMENT_FEATURE_COUNT + 70;
+	int SVG_FE_COMPOSITE_ELEMENT__CLASS = SVG_ELEMENT_FEATURE_COUNT + 70;
 
 	/**
 	 * The feature id for the '<em><b>Style</b></em>' attribute.
@@ -29306,7 +29460,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_COMPOSITE__STYLE = SVG_ELEMENT_FEATURE_COUNT + 71;
+	int SVG_FE_COMPOSITE_ELEMENT__STYLE = SVG_ELEMENT_FEATURE_COUNT + 71;
 
 	/**
 	 * The feature id for the '<em><b>In2</b></em>' attribute.
@@ -29315,7 +29469,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_COMPOSITE__IN2 = SVG_ELEMENT_FEATURE_COUNT + 72;
+	int SVG_FE_COMPOSITE_ELEMENT__IN2 = SVG_ELEMENT_FEATURE_COUNT + 72;
 
 	/**
 	 * The feature id for the '<em><b>Operator</b></em>' attribute.
@@ -29324,7 +29478,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_COMPOSITE__OPERATOR = SVG_ELEMENT_FEATURE_COUNT + 73;
+	int SVG_FE_COMPOSITE_ELEMENT__OPERATOR = SVG_ELEMENT_FEATURE_COUNT + 73;
 
 	/**
 	 * The feature id for the '<em><b>K1</b></em>' attribute.
@@ -29333,7 +29487,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_COMPOSITE__K1 = SVG_ELEMENT_FEATURE_COUNT + 74;
+	int SVG_FE_COMPOSITE_ELEMENT__K1 = SVG_ELEMENT_FEATURE_COUNT + 74;
 
 	/**
 	 * The feature id for the '<em><b>K2</b></em>' attribute.
@@ -29342,7 +29496,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_COMPOSITE__K2 = SVG_ELEMENT_FEATURE_COUNT + 75;
+	int SVG_FE_COMPOSITE_ELEMENT__K2 = SVG_ELEMENT_FEATURE_COUNT + 75;
 
 	/**
 	 * The feature id for the '<em><b>K3</b></em>' attribute.
@@ -29351,7 +29505,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_COMPOSITE__K3 = SVG_ELEMENT_FEATURE_COUNT + 76;
+	int SVG_FE_COMPOSITE_ELEMENT__K3 = SVG_ELEMENT_FEATURE_COUNT + 76;
 
 	/**
 	 * The feature id for the '<em><b>K4</b></em>' attribute.
@@ -29360,26 +29514,26 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_COMPOSITE__K4 = SVG_ELEMENT_FEATURE_COUNT + 77;
+	int SVG_FE_COMPOSITE_ELEMENT__K4 = SVG_ELEMENT_FEATURE_COUNT + 77;
 
 	/**
-	 * The number of structural features of the '<em>Fe Composite</em>' class.
+	 * The number of structural features of the '<em>Fe Composite Element</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_COMPOSITE_FEATURE_COUNT = SVG_ELEMENT_FEATURE_COUNT + 78;
+	int SVG_FE_COMPOSITE_ELEMENT_FEATURE_COUNT = SVG_ELEMENT_FEATURE_COUNT + 78;
 
 	/**
-	 * The meta object id for the '{@link at.bestsolution.efxclipse.formats.svg.svg.impl.SvgFeConvolveMatrixImpl <em>Fe Convolve Matrix</em>}' class.
+	 * The meta object id for the '{@link at.bestsolution.efxclipse.formats.svg.svg.impl.SvgFeConvolveMatrixElementImpl <em>Fe Convolve Matrix Element</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see at.bestsolution.efxclipse.formats.svg.svg.impl.SvgFeConvolveMatrixImpl
-	 * @see at.bestsolution.efxclipse.formats.svg.svg.impl.SvgPackageImpl#getSvgFeConvolveMatrix()
+	 * @see at.bestsolution.efxclipse.formats.svg.svg.impl.SvgFeConvolveMatrixElementImpl
+	 * @see at.bestsolution.efxclipse.formats.svg.svg.impl.SvgPackageImpl#getSvgFeConvolveMatrixElement()
 	 * @generated
 	 */
-	int SVG_FE_CONVOLVE_MATRIX = 69;
+	int SVG_FE_CONVOLVE_MATRIX_ELEMENT = 70;
 
 	/**
 	 * The feature id for the '<em><b>Id</b></em>' attribute.
@@ -29388,7 +29542,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_CONVOLVE_MATRIX__ID = SVG_ELEMENT_FEATURE_COUNT + 0;
+	int SVG_FE_CONVOLVE_MATRIX_ELEMENT__ID = SVG_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Xml base</b></em>' attribute.
@@ -29397,7 +29551,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_CONVOLVE_MATRIX__XML_BASE = SVG_ELEMENT_FEATURE_COUNT + 1;
+	int SVG_FE_CONVOLVE_MATRIX_ELEMENT__XML_BASE = SVG_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Xml lang</b></em>' attribute.
@@ -29406,7 +29560,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_CONVOLVE_MATRIX__XML_LANG = SVG_ELEMENT_FEATURE_COUNT + 2;
+	int SVG_FE_CONVOLVE_MATRIX_ELEMENT__XML_LANG = SVG_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Xml space</b></em>' attribute.
@@ -29415,7 +29569,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_CONVOLVE_MATRIX__XML_SPACE = SVG_ELEMENT_FEATURE_COUNT + 3;
+	int SVG_FE_CONVOLVE_MATRIX_ELEMENT__XML_SPACE = SVG_ELEMENT_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Alignment baseline</b></em>' attribute.
@@ -29424,7 +29578,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_CONVOLVE_MATRIX__ALIGNMENT_BASELINE = SVG_ELEMENT_FEATURE_COUNT + 4;
+	int SVG_FE_CONVOLVE_MATRIX_ELEMENT__ALIGNMENT_BASELINE = SVG_ELEMENT_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Baseline shift</b></em>' attribute.
@@ -29433,7 +29587,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_CONVOLVE_MATRIX__BASELINE_SHIFT = SVG_ELEMENT_FEATURE_COUNT + 5;
+	int SVG_FE_CONVOLVE_MATRIX_ELEMENT__BASELINE_SHIFT = SVG_ELEMENT_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>Clip</b></em>' attribute.
@@ -29442,7 +29596,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_CONVOLVE_MATRIX__CLIP = SVG_ELEMENT_FEATURE_COUNT + 6;
+	int SVG_FE_CONVOLVE_MATRIX_ELEMENT__CLIP = SVG_ELEMENT_FEATURE_COUNT + 6;
 
 	/**
 	 * The feature id for the '<em><b>Clip path</b></em>' attribute.
@@ -29451,7 +29605,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_CONVOLVE_MATRIX__CLIP_PATH = SVG_ELEMENT_FEATURE_COUNT + 7;
+	int SVG_FE_CONVOLVE_MATRIX_ELEMENT__CLIP_PATH = SVG_ELEMENT_FEATURE_COUNT + 7;
 
 	/**
 	 * The feature id for the '<em><b>Clip rule</b></em>' attribute.
@@ -29460,7 +29614,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_CONVOLVE_MATRIX__CLIP_RULE = SVG_ELEMENT_FEATURE_COUNT + 8;
+	int SVG_FE_CONVOLVE_MATRIX_ELEMENT__CLIP_RULE = SVG_ELEMENT_FEATURE_COUNT + 8;
 
 	/**
 	 * The feature id for the '<em><b>Color</b></em>' attribute.
@@ -29469,7 +29623,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_CONVOLVE_MATRIX__COLOR = SVG_ELEMENT_FEATURE_COUNT + 9;
+	int SVG_FE_CONVOLVE_MATRIX_ELEMENT__COLOR = SVG_ELEMENT_FEATURE_COUNT + 9;
 
 	/**
 	 * The feature id for the '<em><b>Color interpolation</b></em>' attribute.
@@ -29478,7 +29632,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_CONVOLVE_MATRIX__COLOR_INTERPOLATION = SVG_ELEMENT_FEATURE_COUNT + 10;
+	int SVG_FE_CONVOLVE_MATRIX_ELEMENT__COLOR_INTERPOLATION = SVG_ELEMENT_FEATURE_COUNT + 10;
 
 	/**
 	 * The feature id for the '<em><b>Color interpolation filters</b></em>' attribute.
@@ -29487,7 +29641,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_CONVOLVE_MATRIX__COLOR_INTERPOLATION_FILTERS = SVG_ELEMENT_FEATURE_COUNT + 11;
+	int SVG_FE_CONVOLVE_MATRIX_ELEMENT__COLOR_INTERPOLATION_FILTERS = SVG_ELEMENT_FEATURE_COUNT + 11;
 
 	/**
 	 * The feature id for the '<em><b>Color profile</b></em>' attribute.
@@ -29496,7 +29650,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_CONVOLVE_MATRIX__COLOR_PROFILE = SVG_ELEMENT_FEATURE_COUNT + 12;
+	int SVG_FE_CONVOLVE_MATRIX_ELEMENT__COLOR_PROFILE = SVG_ELEMENT_FEATURE_COUNT + 12;
 
 	/**
 	 * The feature id for the '<em><b>Color rendering</b></em>' attribute.
@@ -29505,7 +29659,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_CONVOLVE_MATRIX__COLOR_RENDERING = SVG_ELEMENT_FEATURE_COUNT + 13;
+	int SVG_FE_CONVOLVE_MATRIX_ELEMENT__COLOR_RENDERING = SVG_ELEMENT_FEATURE_COUNT + 13;
 
 	/**
 	 * The feature id for the '<em><b>Cursor</b></em>' attribute.
@@ -29514,7 +29668,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_CONVOLVE_MATRIX__CURSOR = SVG_ELEMENT_FEATURE_COUNT + 14;
+	int SVG_FE_CONVOLVE_MATRIX_ELEMENT__CURSOR = SVG_ELEMENT_FEATURE_COUNT + 14;
 
 	/**
 	 * The feature id for the '<em><b>Direction</b></em>' attribute.
@@ -29523,7 +29677,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_CONVOLVE_MATRIX__DIRECTION = SVG_ELEMENT_FEATURE_COUNT + 15;
+	int SVG_FE_CONVOLVE_MATRIX_ELEMENT__DIRECTION = SVG_ELEMENT_FEATURE_COUNT + 15;
 
 	/**
 	 * The feature id for the '<em><b>Display</b></em>' attribute.
@@ -29532,7 +29686,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_CONVOLVE_MATRIX__DISPLAY = SVG_ELEMENT_FEATURE_COUNT + 16;
+	int SVG_FE_CONVOLVE_MATRIX_ELEMENT__DISPLAY = SVG_ELEMENT_FEATURE_COUNT + 16;
 
 	/**
 	 * The feature id for the '<em><b>Dominant baseline</b></em>' attribute.
@@ -29541,7 +29695,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_CONVOLVE_MATRIX__DOMINANT_BASELINE = SVG_ELEMENT_FEATURE_COUNT + 17;
+	int SVG_FE_CONVOLVE_MATRIX_ELEMENT__DOMINANT_BASELINE = SVG_ELEMENT_FEATURE_COUNT + 17;
 
 	/**
 	 * The feature id for the '<em><b>Enable background</b></em>' attribute.
@@ -29550,7 +29704,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_CONVOLVE_MATRIX__ENABLE_BACKGROUND = SVG_ELEMENT_FEATURE_COUNT + 18;
+	int SVG_FE_CONVOLVE_MATRIX_ELEMENT__ENABLE_BACKGROUND = SVG_ELEMENT_FEATURE_COUNT + 18;
 
 	/**
 	 * The feature id for the '<em><b>Fill</b></em>' attribute.
@@ -29559,7 +29713,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_CONVOLVE_MATRIX__FILL = SVG_ELEMENT_FEATURE_COUNT + 19;
+	int SVG_FE_CONVOLVE_MATRIX_ELEMENT__FILL = SVG_ELEMENT_FEATURE_COUNT + 19;
 
 	/**
 	 * The feature id for the '<em><b>Fill opacity</b></em>' attribute.
@@ -29568,7 +29722,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_CONVOLVE_MATRIX__FILL_OPACITY = SVG_ELEMENT_FEATURE_COUNT + 20;
+	int SVG_FE_CONVOLVE_MATRIX_ELEMENT__FILL_OPACITY = SVG_ELEMENT_FEATURE_COUNT + 20;
 
 	/**
 	 * The feature id for the '<em><b>Fill rule</b></em>' attribute.
@@ -29577,7 +29731,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_CONVOLVE_MATRIX__FILL_RULE = SVG_ELEMENT_FEATURE_COUNT + 21;
+	int SVG_FE_CONVOLVE_MATRIX_ELEMENT__FILL_RULE = SVG_ELEMENT_FEATURE_COUNT + 21;
 
 	/**
 	 * The feature id for the '<em><b>Filter</b></em>' attribute.
@@ -29586,7 +29740,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_CONVOLVE_MATRIX__FILTER = SVG_ELEMENT_FEATURE_COUNT + 22;
+	int SVG_FE_CONVOLVE_MATRIX_ELEMENT__FILTER = SVG_ELEMENT_FEATURE_COUNT + 22;
 
 	/**
 	 * The feature id for the '<em><b>Flood color</b></em>' attribute.
@@ -29595,7 +29749,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_CONVOLVE_MATRIX__FLOOD_COLOR = SVG_ELEMENT_FEATURE_COUNT + 23;
+	int SVG_FE_CONVOLVE_MATRIX_ELEMENT__FLOOD_COLOR = SVG_ELEMENT_FEATURE_COUNT + 23;
 
 	/**
 	 * The feature id for the '<em><b>Flood opacity</b></em>' attribute.
@@ -29604,7 +29758,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_CONVOLVE_MATRIX__FLOOD_OPACITY = SVG_ELEMENT_FEATURE_COUNT + 24;
+	int SVG_FE_CONVOLVE_MATRIX_ELEMENT__FLOOD_OPACITY = SVG_ELEMENT_FEATURE_COUNT + 24;
 
 	/**
 	 * The feature id for the '<em><b>Font family</b></em>' attribute.
@@ -29613,7 +29767,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_CONVOLVE_MATRIX__FONT_FAMILY = SVG_ELEMENT_FEATURE_COUNT + 25;
+	int SVG_FE_CONVOLVE_MATRIX_ELEMENT__FONT_FAMILY = SVG_ELEMENT_FEATURE_COUNT + 25;
 
 	/**
 	 * The feature id for the '<em><b>Font size</b></em>' attribute.
@@ -29622,7 +29776,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_CONVOLVE_MATRIX__FONT_SIZE = SVG_ELEMENT_FEATURE_COUNT + 26;
+	int SVG_FE_CONVOLVE_MATRIX_ELEMENT__FONT_SIZE = SVG_ELEMENT_FEATURE_COUNT + 26;
 
 	/**
 	 * The feature id for the '<em><b>Font size adjust</b></em>' attribute.
@@ -29631,7 +29785,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_CONVOLVE_MATRIX__FONT_SIZE_ADJUST = SVG_ELEMENT_FEATURE_COUNT + 27;
+	int SVG_FE_CONVOLVE_MATRIX_ELEMENT__FONT_SIZE_ADJUST = SVG_ELEMENT_FEATURE_COUNT + 27;
 
 	/**
 	 * The feature id for the '<em><b>Font stretch</b></em>' attribute.
@@ -29640,7 +29794,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_CONVOLVE_MATRIX__FONT_STRETCH = SVG_ELEMENT_FEATURE_COUNT + 28;
+	int SVG_FE_CONVOLVE_MATRIX_ELEMENT__FONT_STRETCH = SVG_ELEMENT_FEATURE_COUNT + 28;
 
 	/**
 	 * The feature id for the '<em><b>Font style</b></em>' attribute.
@@ -29649,7 +29803,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_CONVOLVE_MATRIX__FONT_STYLE = SVG_ELEMENT_FEATURE_COUNT + 29;
+	int SVG_FE_CONVOLVE_MATRIX_ELEMENT__FONT_STYLE = SVG_ELEMENT_FEATURE_COUNT + 29;
 
 	/**
 	 * The feature id for the '<em><b>Font variant</b></em>' attribute.
@@ -29658,7 +29812,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_CONVOLVE_MATRIX__FONT_VARIANT = SVG_ELEMENT_FEATURE_COUNT + 30;
+	int SVG_FE_CONVOLVE_MATRIX_ELEMENT__FONT_VARIANT = SVG_ELEMENT_FEATURE_COUNT + 30;
 
 	/**
 	 * The feature id for the '<em><b>Font weight</b></em>' attribute.
@@ -29667,7 +29821,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_CONVOLVE_MATRIX__FONT_WEIGHT = SVG_ELEMENT_FEATURE_COUNT + 31;
+	int SVG_FE_CONVOLVE_MATRIX_ELEMENT__FONT_WEIGHT = SVG_ELEMENT_FEATURE_COUNT + 31;
 
 	/**
 	 * The feature id for the '<em><b>Glyph orientation horizontal</b></em>' attribute.
@@ -29676,7 +29830,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_CONVOLVE_MATRIX__GLYPH_ORIENTATION_HORIZONTAL = SVG_ELEMENT_FEATURE_COUNT + 32;
+	int SVG_FE_CONVOLVE_MATRIX_ELEMENT__GLYPH_ORIENTATION_HORIZONTAL = SVG_ELEMENT_FEATURE_COUNT + 32;
 
 	/**
 	 * The feature id for the '<em><b>Glyph orientation vertical</b></em>' attribute.
@@ -29685,7 +29839,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_CONVOLVE_MATRIX__GLYPH_ORIENTATION_VERTICAL = SVG_ELEMENT_FEATURE_COUNT + 33;
+	int SVG_FE_CONVOLVE_MATRIX_ELEMENT__GLYPH_ORIENTATION_VERTICAL = SVG_ELEMENT_FEATURE_COUNT + 33;
 
 	/**
 	 * The feature id for the '<em><b>Image rendering</b></em>' attribute.
@@ -29694,7 +29848,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_CONVOLVE_MATRIX__IMAGE_RENDERING = SVG_ELEMENT_FEATURE_COUNT + 34;
+	int SVG_FE_CONVOLVE_MATRIX_ELEMENT__IMAGE_RENDERING = SVG_ELEMENT_FEATURE_COUNT + 34;
 
 	/**
 	 * The feature id for the '<em><b>Kerning</b></em>' attribute.
@@ -29703,7 +29857,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_CONVOLVE_MATRIX__KERNING = SVG_ELEMENT_FEATURE_COUNT + 35;
+	int SVG_FE_CONVOLVE_MATRIX_ELEMENT__KERNING = SVG_ELEMENT_FEATURE_COUNT + 35;
 
 	/**
 	 * The feature id for the '<em><b>Letter spacing</b></em>' attribute.
@@ -29712,7 +29866,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_CONVOLVE_MATRIX__LETTER_SPACING = SVG_ELEMENT_FEATURE_COUNT + 36;
+	int SVG_FE_CONVOLVE_MATRIX_ELEMENT__LETTER_SPACING = SVG_ELEMENT_FEATURE_COUNT + 36;
 
 	/**
 	 * The feature id for the '<em><b>Lighting color</b></em>' attribute.
@@ -29721,7 +29875,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_CONVOLVE_MATRIX__LIGHTING_COLOR = SVG_ELEMENT_FEATURE_COUNT + 37;
+	int SVG_FE_CONVOLVE_MATRIX_ELEMENT__LIGHTING_COLOR = SVG_ELEMENT_FEATURE_COUNT + 37;
 
 	/**
 	 * The feature id for the '<em><b>Marker end</b></em>' attribute.
@@ -29730,7 +29884,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_CONVOLVE_MATRIX__MARKER_END = SVG_ELEMENT_FEATURE_COUNT + 38;
+	int SVG_FE_CONVOLVE_MATRIX_ELEMENT__MARKER_END = SVG_ELEMENT_FEATURE_COUNT + 38;
 
 	/**
 	 * The feature id for the '<em><b>Marker mid</b></em>' attribute.
@@ -29739,7 +29893,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_CONVOLVE_MATRIX__MARKER_MID = SVG_ELEMENT_FEATURE_COUNT + 39;
+	int SVG_FE_CONVOLVE_MATRIX_ELEMENT__MARKER_MID = SVG_ELEMENT_FEATURE_COUNT + 39;
 
 	/**
 	 * The feature id for the '<em><b>Marker start</b></em>' attribute.
@@ -29748,7 +29902,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_CONVOLVE_MATRIX__MARKER_START = SVG_ELEMENT_FEATURE_COUNT + 40;
+	int SVG_FE_CONVOLVE_MATRIX_ELEMENT__MARKER_START = SVG_ELEMENT_FEATURE_COUNT + 40;
 
 	/**
 	 * The feature id for the '<em><b>Masks</b></em>' attribute.
@@ -29757,7 +29911,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_CONVOLVE_MATRIX__MASKS = SVG_ELEMENT_FEATURE_COUNT + 41;
+	int SVG_FE_CONVOLVE_MATRIX_ELEMENT__MASKS = SVG_ELEMENT_FEATURE_COUNT + 41;
 
 	/**
 	 * The feature id for the '<em><b>Opacity</b></em>' attribute.
@@ -29766,7 +29920,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_CONVOLVE_MATRIX__OPACITY = SVG_ELEMENT_FEATURE_COUNT + 42;
+	int SVG_FE_CONVOLVE_MATRIX_ELEMENT__OPACITY = SVG_ELEMENT_FEATURE_COUNT + 42;
 
 	/**
 	 * The feature id for the '<em><b>Overflow</b></em>' attribute.
@@ -29775,7 +29929,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_CONVOLVE_MATRIX__OVERFLOW = SVG_ELEMENT_FEATURE_COUNT + 43;
+	int SVG_FE_CONVOLVE_MATRIX_ELEMENT__OVERFLOW = SVG_ELEMENT_FEATURE_COUNT + 43;
 
 	/**
 	 * The feature id for the '<em><b>Pointer events</b></em>' attribute.
@@ -29784,7 +29938,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_CONVOLVE_MATRIX__POINTER_EVENTS = SVG_ELEMENT_FEATURE_COUNT + 44;
+	int SVG_FE_CONVOLVE_MATRIX_ELEMENT__POINTER_EVENTS = SVG_ELEMENT_FEATURE_COUNT + 44;
 
 	/**
 	 * The feature id for the '<em><b>Shape rendering</b></em>' attribute.
@@ -29793,7 +29947,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_CONVOLVE_MATRIX__SHAPE_RENDERING = SVG_ELEMENT_FEATURE_COUNT + 45;
+	int SVG_FE_CONVOLVE_MATRIX_ELEMENT__SHAPE_RENDERING = SVG_ELEMENT_FEATURE_COUNT + 45;
 
 	/**
 	 * The feature id for the '<em><b>Stop color</b></em>' attribute.
@@ -29802,7 +29956,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_CONVOLVE_MATRIX__STOP_COLOR = SVG_ELEMENT_FEATURE_COUNT + 46;
+	int SVG_FE_CONVOLVE_MATRIX_ELEMENT__STOP_COLOR = SVG_ELEMENT_FEATURE_COUNT + 46;
 
 	/**
 	 * The feature id for the '<em><b>Stop opacity</b></em>' attribute.
@@ -29811,7 +29965,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_CONVOLVE_MATRIX__STOP_OPACITY = SVG_ELEMENT_FEATURE_COUNT + 47;
+	int SVG_FE_CONVOLVE_MATRIX_ELEMENT__STOP_OPACITY = SVG_ELEMENT_FEATURE_COUNT + 47;
 
 	/**
 	 * The feature id for the '<em><b>Stroke</b></em>' attribute.
@@ -29820,7 +29974,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_CONVOLVE_MATRIX__STROKE = SVG_ELEMENT_FEATURE_COUNT + 48;
+	int SVG_FE_CONVOLVE_MATRIX_ELEMENT__STROKE = SVG_ELEMENT_FEATURE_COUNT + 48;
 
 	/**
 	 * The feature id for the '<em><b>Stroke dasharray</b></em>' attribute.
@@ -29829,7 +29983,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_CONVOLVE_MATRIX__STROKE_DASHARRAY = SVG_ELEMENT_FEATURE_COUNT + 49;
+	int SVG_FE_CONVOLVE_MATRIX_ELEMENT__STROKE_DASHARRAY = SVG_ELEMENT_FEATURE_COUNT + 49;
 
 	/**
 	 * The feature id for the '<em><b>Stroke dashoffset</b></em>' attribute.
@@ -29838,7 +29992,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_CONVOLVE_MATRIX__STROKE_DASHOFFSET = SVG_ELEMENT_FEATURE_COUNT + 50;
+	int SVG_FE_CONVOLVE_MATRIX_ELEMENT__STROKE_DASHOFFSET = SVG_ELEMENT_FEATURE_COUNT + 50;
 
 	/**
 	 * The feature id for the '<em><b>Stroke linecap</b></em>' attribute.
@@ -29847,7 +30001,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_CONVOLVE_MATRIX__STROKE_LINECAP = SVG_ELEMENT_FEATURE_COUNT + 51;
+	int SVG_FE_CONVOLVE_MATRIX_ELEMENT__STROKE_LINECAP = SVG_ELEMENT_FEATURE_COUNT + 51;
 
 	/**
 	 * The feature id for the '<em><b>Stroke linejoin</b></em>' attribute.
@@ -29856,7 +30010,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_CONVOLVE_MATRIX__STROKE_LINEJOIN = SVG_ELEMENT_FEATURE_COUNT + 52;
+	int SVG_FE_CONVOLVE_MATRIX_ELEMENT__STROKE_LINEJOIN = SVG_ELEMENT_FEATURE_COUNT + 52;
 
 	/**
 	 * The feature id for the '<em><b>Stroke miterlimit</b></em>' attribute.
@@ -29865,7 +30019,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_CONVOLVE_MATRIX__STROKE_MITERLIMIT = SVG_ELEMENT_FEATURE_COUNT + 53;
+	int SVG_FE_CONVOLVE_MATRIX_ELEMENT__STROKE_MITERLIMIT = SVG_ELEMENT_FEATURE_COUNT + 53;
 
 	/**
 	 * The feature id for the '<em><b>Stroke opacity</b></em>' attribute.
@@ -29874,7 +30028,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_CONVOLVE_MATRIX__STROKE_OPACITY = SVG_ELEMENT_FEATURE_COUNT + 54;
+	int SVG_FE_CONVOLVE_MATRIX_ELEMENT__STROKE_OPACITY = SVG_ELEMENT_FEATURE_COUNT + 54;
 
 	/**
 	 * The feature id for the '<em><b>Stroke width</b></em>' attribute.
@@ -29883,7 +30037,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_CONVOLVE_MATRIX__STROKE_WIDTH = SVG_ELEMENT_FEATURE_COUNT + 55;
+	int SVG_FE_CONVOLVE_MATRIX_ELEMENT__STROKE_WIDTH = SVG_ELEMENT_FEATURE_COUNT + 55;
 
 	/**
 	 * The feature id for the '<em><b>Text anchor</b></em>' attribute.
@@ -29892,7 +30046,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_CONVOLVE_MATRIX__TEXT_ANCHOR = SVG_ELEMENT_FEATURE_COUNT + 56;
+	int SVG_FE_CONVOLVE_MATRIX_ELEMENT__TEXT_ANCHOR = SVG_ELEMENT_FEATURE_COUNT + 56;
 
 	/**
 	 * The feature id for the '<em><b>Text decoration</b></em>' attribute.
@@ -29901,7 +30055,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_CONVOLVE_MATRIX__TEXT_DECORATION = SVG_ELEMENT_FEATURE_COUNT + 57;
+	int SVG_FE_CONVOLVE_MATRIX_ELEMENT__TEXT_DECORATION = SVG_ELEMENT_FEATURE_COUNT + 57;
 
 	/**
 	 * The feature id for the '<em><b>Text rendering</b></em>' attribute.
@@ -29910,7 +30064,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_CONVOLVE_MATRIX__TEXT_RENDERING = SVG_ELEMENT_FEATURE_COUNT + 58;
+	int SVG_FE_CONVOLVE_MATRIX_ELEMENT__TEXT_RENDERING = SVG_ELEMENT_FEATURE_COUNT + 58;
 
 	/**
 	 * The feature id for the '<em><b>Unicode bidi</b></em>' attribute.
@@ -29919,7 +30073,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_CONVOLVE_MATRIX__UNICODE_BIDI = SVG_ELEMENT_FEATURE_COUNT + 59;
+	int SVG_FE_CONVOLVE_MATRIX_ELEMENT__UNICODE_BIDI = SVG_ELEMENT_FEATURE_COUNT + 59;
 
 	/**
 	 * The feature id for the '<em><b>Visibility</b></em>' attribute.
@@ -29928,7 +30082,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_CONVOLVE_MATRIX__VISIBILITY = SVG_ELEMENT_FEATURE_COUNT + 60;
+	int SVG_FE_CONVOLVE_MATRIX_ELEMENT__VISIBILITY = SVG_ELEMENT_FEATURE_COUNT + 60;
 
 	/**
 	 * The feature id for the '<em><b>Word spacing</b></em>' attribute.
@@ -29937,7 +30091,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_CONVOLVE_MATRIX__WORD_SPACING = SVG_ELEMENT_FEATURE_COUNT + 61;
+	int SVG_FE_CONVOLVE_MATRIX_ELEMENT__WORD_SPACING = SVG_ELEMENT_FEATURE_COUNT + 61;
 
 	/**
 	 * The feature id for the '<em><b>Writing mode</b></em>' attribute.
@@ -29946,7 +30100,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_CONVOLVE_MATRIX__WRITING_MODE = SVG_ELEMENT_FEATURE_COUNT + 62;
+	int SVG_FE_CONVOLVE_MATRIX_ELEMENT__WRITING_MODE = SVG_ELEMENT_FEATURE_COUNT + 62;
 
 	/**
 	 * The feature id for the '<em><b>X</b></em>' attribute.
@@ -29955,7 +30109,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_CONVOLVE_MATRIX__X = SVG_ELEMENT_FEATURE_COUNT + 63;
+	int SVG_FE_CONVOLVE_MATRIX_ELEMENT__X = SVG_ELEMENT_FEATURE_COUNT + 63;
 
 	/**
 	 * The feature id for the '<em><b>Y</b></em>' attribute.
@@ -29964,7 +30118,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_CONVOLVE_MATRIX__Y = SVG_ELEMENT_FEATURE_COUNT + 64;
+	int SVG_FE_CONVOLVE_MATRIX_ELEMENT__Y = SVG_ELEMENT_FEATURE_COUNT + 64;
 
 	/**
 	 * The feature id for the '<em><b>Width</b></em>' attribute.
@@ -29973,7 +30127,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_CONVOLVE_MATRIX__WIDTH = SVG_ELEMENT_FEATURE_COUNT + 65;
+	int SVG_FE_CONVOLVE_MATRIX_ELEMENT__WIDTH = SVG_ELEMENT_FEATURE_COUNT + 65;
 
 	/**
 	 * The feature id for the '<em><b>Height</b></em>' attribute.
@@ -29982,7 +30136,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_CONVOLVE_MATRIX__HEIGHT = SVG_ELEMENT_FEATURE_COUNT + 66;
+	int SVG_FE_CONVOLVE_MATRIX_ELEMENT__HEIGHT = SVG_ELEMENT_FEATURE_COUNT + 66;
 
 	/**
 	 * The feature id for the '<em><b>Result</b></em>' attribute.
@@ -29991,7 +30145,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_CONVOLVE_MATRIX__RESULT = SVG_ELEMENT_FEATURE_COUNT + 67;
+	int SVG_FE_CONVOLVE_MATRIX_ELEMENT__RESULT = SVG_ELEMENT_FEATURE_COUNT + 67;
 
 	/**
 	 * The feature id for the '<em><b>In</b></em>' attribute.
@@ -30000,7 +30154,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_CONVOLVE_MATRIX__IN = SVG_ELEMENT_FEATURE_COUNT + 68;
+	int SVG_FE_CONVOLVE_MATRIX_ELEMENT__IN = SVG_ELEMENT_FEATURE_COUNT + 68;
 
 	/**
 	 * The feature id for the '<em><b>Children</b></em>' containment reference list.
@@ -30009,7 +30163,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_CONVOLVE_MATRIX__CHILDREN = SVG_ELEMENT_FEATURE_COUNT + 69;
+	int SVG_FE_CONVOLVE_MATRIX_ELEMENT__CHILDREN = SVG_ELEMENT_FEATURE_COUNT + 69;
 
 	/**
 	 * The feature id for the '<em><b>Class</b></em>' attribute.
@@ -30018,7 +30172,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_CONVOLVE_MATRIX__CLASS = SVG_ELEMENT_FEATURE_COUNT + 70;
+	int SVG_FE_CONVOLVE_MATRIX_ELEMENT__CLASS = SVG_ELEMENT_FEATURE_COUNT + 70;
 
 	/**
 	 * The feature id for the '<em><b>Style</b></em>' attribute.
@@ -30027,7 +30181,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_CONVOLVE_MATRIX__STYLE = SVG_ELEMENT_FEATURE_COUNT + 71;
+	int SVG_FE_CONVOLVE_MATRIX_ELEMENT__STYLE = SVG_ELEMENT_FEATURE_COUNT + 71;
 
 	/**
 	 * The feature id for the '<em><b>Order</b></em>' attribute.
@@ -30036,7 +30190,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_CONVOLVE_MATRIX__ORDER = SVG_ELEMENT_FEATURE_COUNT + 72;
+	int SVG_FE_CONVOLVE_MATRIX_ELEMENT__ORDER = SVG_ELEMENT_FEATURE_COUNT + 72;
 
 	/**
 	 * The feature id for the '<em><b>Kernel Matrix</b></em>' attribute.
@@ -30045,7 +30199,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_CONVOLVE_MATRIX__KERNEL_MATRIX = SVG_ELEMENT_FEATURE_COUNT + 73;
+	int SVG_FE_CONVOLVE_MATRIX_ELEMENT__KERNEL_MATRIX = SVG_ELEMENT_FEATURE_COUNT + 73;
 
 	/**
 	 * The feature id for the '<em><b>Divisor</b></em>' attribute.
@@ -30054,7 +30208,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_CONVOLVE_MATRIX__DIVISOR = SVG_ELEMENT_FEATURE_COUNT + 74;
+	int SVG_FE_CONVOLVE_MATRIX_ELEMENT__DIVISOR = SVG_ELEMENT_FEATURE_COUNT + 74;
 
 	/**
 	 * The feature id for the '<em><b>Bias</b></em>' attribute.
@@ -30063,7 +30217,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_CONVOLVE_MATRIX__BIAS = SVG_ELEMENT_FEATURE_COUNT + 75;
+	int SVG_FE_CONVOLVE_MATRIX_ELEMENT__BIAS = SVG_ELEMENT_FEATURE_COUNT + 75;
 
 	/**
 	 * The feature id for the '<em><b>Target X</b></em>' attribute.
@@ -30072,7 +30226,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_CONVOLVE_MATRIX__TARGET_X = SVG_ELEMENT_FEATURE_COUNT + 76;
+	int SVG_FE_CONVOLVE_MATRIX_ELEMENT__TARGET_X = SVG_ELEMENT_FEATURE_COUNT + 76;
 
 	/**
 	 * The feature id for the '<em><b>Target Y</b></em>' attribute.
@@ -30081,7 +30235,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_CONVOLVE_MATRIX__TARGET_Y = SVG_ELEMENT_FEATURE_COUNT + 77;
+	int SVG_FE_CONVOLVE_MATRIX_ELEMENT__TARGET_Y = SVG_ELEMENT_FEATURE_COUNT + 77;
 
 	/**
 	 * The feature id for the '<em><b>Edge Mode</b></em>' attribute.
@@ -30090,7 +30244,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_CONVOLVE_MATRIX__EDGE_MODE = SVG_ELEMENT_FEATURE_COUNT + 78;
+	int SVG_FE_CONVOLVE_MATRIX_ELEMENT__EDGE_MODE = SVG_ELEMENT_FEATURE_COUNT + 78;
 
 	/**
 	 * The feature id for the '<em><b>Kernel Unit Length</b></em>' attribute.
@@ -30099,7 +30253,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_CONVOLVE_MATRIX__KERNEL_UNIT_LENGTH = SVG_ELEMENT_FEATURE_COUNT + 79;
+	int SVG_FE_CONVOLVE_MATRIX_ELEMENT__KERNEL_UNIT_LENGTH = SVG_ELEMENT_FEATURE_COUNT + 79;
 
 	/**
 	 * The feature id for the '<em><b>Preserve Alpha</b></em>' attribute.
@@ -30108,26 +30262,26 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_CONVOLVE_MATRIX__PRESERVE_ALPHA = SVG_ELEMENT_FEATURE_COUNT + 80;
+	int SVG_FE_CONVOLVE_MATRIX_ELEMENT__PRESERVE_ALPHA = SVG_ELEMENT_FEATURE_COUNT + 80;
 
 	/**
-	 * The number of structural features of the '<em>Fe Convolve Matrix</em>' class.
+	 * The number of structural features of the '<em>Fe Convolve Matrix Element</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_CONVOLVE_MATRIX_FEATURE_COUNT = SVG_ELEMENT_FEATURE_COUNT + 81;
+	int SVG_FE_CONVOLVE_MATRIX_ELEMENT_FEATURE_COUNT = SVG_ELEMENT_FEATURE_COUNT + 81;
 
 	/**
-	 * The meta object id for the '{@link at.bestsolution.efxclipse.formats.svg.svg.impl.SvgFeDiffuseLightingImpl <em>Fe Diffuse Lighting</em>}' class.
+	 * The meta object id for the '{@link at.bestsolution.efxclipse.formats.svg.svg.impl.SvgFeDiffuseLightingElementImpl <em>Fe Diffuse Lighting Element</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see at.bestsolution.efxclipse.formats.svg.svg.impl.SvgFeDiffuseLightingImpl
-	 * @see at.bestsolution.efxclipse.formats.svg.svg.impl.SvgPackageImpl#getSvgFeDiffuseLighting()
+	 * @see at.bestsolution.efxclipse.formats.svg.svg.impl.SvgFeDiffuseLightingElementImpl
+	 * @see at.bestsolution.efxclipse.formats.svg.svg.impl.SvgPackageImpl#getSvgFeDiffuseLightingElement()
 	 * @generated
 	 */
-	int SVG_FE_DIFFUSE_LIGHTING = 70;
+	int SVG_FE_DIFFUSE_LIGHTING_ELEMENT = 71;
 
 	/**
 	 * The feature id for the '<em><b>Id</b></em>' attribute.
@@ -30136,7 +30290,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_DIFFUSE_LIGHTING__ID = SVG_ELEMENT_FEATURE_COUNT + 0;
+	int SVG_FE_DIFFUSE_LIGHTING_ELEMENT__ID = SVG_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Xml base</b></em>' attribute.
@@ -30145,7 +30299,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_DIFFUSE_LIGHTING__XML_BASE = SVG_ELEMENT_FEATURE_COUNT + 1;
+	int SVG_FE_DIFFUSE_LIGHTING_ELEMENT__XML_BASE = SVG_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Xml lang</b></em>' attribute.
@@ -30154,7 +30308,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_DIFFUSE_LIGHTING__XML_LANG = SVG_ELEMENT_FEATURE_COUNT + 2;
+	int SVG_FE_DIFFUSE_LIGHTING_ELEMENT__XML_LANG = SVG_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Xml space</b></em>' attribute.
@@ -30163,7 +30317,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_DIFFUSE_LIGHTING__XML_SPACE = SVG_ELEMENT_FEATURE_COUNT + 3;
+	int SVG_FE_DIFFUSE_LIGHTING_ELEMENT__XML_SPACE = SVG_ELEMENT_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Alignment baseline</b></em>' attribute.
@@ -30172,7 +30326,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_DIFFUSE_LIGHTING__ALIGNMENT_BASELINE = SVG_ELEMENT_FEATURE_COUNT + 4;
+	int SVG_FE_DIFFUSE_LIGHTING_ELEMENT__ALIGNMENT_BASELINE = SVG_ELEMENT_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Baseline shift</b></em>' attribute.
@@ -30181,7 +30335,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_DIFFUSE_LIGHTING__BASELINE_SHIFT = SVG_ELEMENT_FEATURE_COUNT + 5;
+	int SVG_FE_DIFFUSE_LIGHTING_ELEMENT__BASELINE_SHIFT = SVG_ELEMENT_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>Clip</b></em>' attribute.
@@ -30190,7 +30344,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_DIFFUSE_LIGHTING__CLIP = SVG_ELEMENT_FEATURE_COUNT + 6;
+	int SVG_FE_DIFFUSE_LIGHTING_ELEMENT__CLIP = SVG_ELEMENT_FEATURE_COUNT + 6;
 
 	/**
 	 * The feature id for the '<em><b>Clip path</b></em>' attribute.
@@ -30199,7 +30353,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_DIFFUSE_LIGHTING__CLIP_PATH = SVG_ELEMENT_FEATURE_COUNT + 7;
+	int SVG_FE_DIFFUSE_LIGHTING_ELEMENT__CLIP_PATH = SVG_ELEMENT_FEATURE_COUNT + 7;
 
 	/**
 	 * The feature id for the '<em><b>Clip rule</b></em>' attribute.
@@ -30208,7 +30362,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_DIFFUSE_LIGHTING__CLIP_RULE = SVG_ELEMENT_FEATURE_COUNT + 8;
+	int SVG_FE_DIFFUSE_LIGHTING_ELEMENT__CLIP_RULE = SVG_ELEMENT_FEATURE_COUNT + 8;
 
 	/**
 	 * The feature id for the '<em><b>Color</b></em>' attribute.
@@ -30217,7 +30371,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_DIFFUSE_LIGHTING__COLOR = SVG_ELEMENT_FEATURE_COUNT + 9;
+	int SVG_FE_DIFFUSE_LIGHTING_ELEMENT__COLOR = SVG_ELEMENT_FEATURE_COUNT + 9;
 
 	/**
 	 * The feature id for the '<em><b>Color interpolation</b></em>' attribute.
@@ -30226,7 +30380,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_DIFFUSE_LIGHTING__COLOR_INTERPOLATION = SVG_ELEMENT_FEATURE_COUNT + 10;
+	int SVG_FE_DIFFUSE_LIGHTING_ELEMENT__COLOR_INTERPOLATION = SVG_ELEMENT_FEATURE_COUNT + 10;
 
 	/**
 	 * The feature id for the '<em><b>Color interpolation filters</b></em>' attribute.
@@ -30235,7 +30389,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_DIFFUSE_LIGHTING__COLOR_INTERPOLATION_FILTERS = SVG_ELEMENT_FEATURE_COUNT + 11;
+	int SVG_FE_DIFFUSE_LIGHTING_ELEMENT__COLOR_INTERPOLATION_FILTERS = SVG_ELEMENT_FEATURE_COUNT + 11;
 
 	/**
 	 * The feature id for the '<em><b>Color profile</b></em>' attribute.
@@ -30244,7 +30398,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_DIFFUSE_LIGHTING__COLOR_PROFILE = SVG_ELEMENT_FEATURE_COUNT + 12;
+	int SVG_FE_DIFFUSE_LIGHTING_ELEMENT__COLOR_PROFILE = SVG_ELEMENT_FEATURE_COUNT + 12;
 
 	/**
 	 * The feature id for the '<em><b>Color rendering</b></em>' attribute.
@@ -30253,7 +30407,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_DIFFUSE_LIGHTING__COLOR_RENDERING = SVG_ELEMENT_FEATURE_COUNT + 13;
+	int SVG_FE_DIFFUSE_LIGHTING_ELEMENT__COLOR_RENDERING = SVG_ELEMENT_FEATURE_COUNT + 13;
 
 	/**
 	 * The feature id for the '<em><b>Cursor</b></em>' attribute.
@@ -30262,7 +30416,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_DIFFUSE_LIGHTING__CURSOR = SVG_ELEMENT_FEATURE_COUNT + 14;
+	int SVG_FE_DIFFUSE_LIGHTING_ELEMENT__CURSOR = SVG_ELEMENT_FEATURE_COUNT + 14;
 
 	/**
 	 * The feature id for the '<em><b>Direction</b></em>' attribute.
@@ -30271,7 +30425,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_DIFFUSE_LIGHTING__DIRECTION = SVG_ELEMENT_FEATURE_COUNT + 15;
+	int SVG_FE_DIFFUSE_LIGHTING_ELEMENT__DIRECTION = SVG_ELEMENT_FEATURE_COUNT + 15;
 
 	/**
 	 * The feature id for the '<em><b>Display</b></em>' attribute.
@@ -30280,7 +30434,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_DIFFUSE_LIGHTING__DISPLAY = SVG_ELEMENT_FEATURE_COUNT + 16;
+	int SVG_FE_DIFFUSE_LIGHTING_ELEMENT__DISPLAY = SVG_ELEMENT_FEATURE_COUNT + 16;
 
 	/**
 	 * The feature id for the '<em><b>Dominant baseline</b></em>' attribute.
@@ -30289,7 +30443,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_DIFFUSE_LIGHTING__DOMINANT_BASELINE = SVG_ELEMENT_FEATURE_COUNT + 17;
+	int SVG_FE_DIFFUSE_LIGHTING_ELEMENT__DOMINANT_BASELINE = SVG_ELEMENT_FEATURE_COUNT + 17;
 
 	/**
 	 * The feature id for the '<em><b>Enable background</b></em>' attribute.
@@ -30298,7 +30452,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_DIFFUSE_LIGHTING__ENABLE_BACKGROUND = SVG_ELEMENT_FEATURE_COUNT + 18;
+	int SVG_FE_DIFFUSE_LIGHTING_ELEMENT__ENABLE_BACKGROUND = SVG_ELEMENT_FEATURE_COUNT + 18;
 
 	/**
 	 * The feature id for the '<em><b>Fill</b></em>' attribute.
@@ -30307,7 +30461,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_DIFFUSE_LIGHTING__FILL = SVG_ELEMENT_FEATURE_COUNT + 19;
+	int SVG_FE_DIFFUSE_LIGHTING_ELEMENT__FILL = SVG_ELEMENT_FEATURE_COUNT + 19;
 
 	/**
 	 * The feature id for the '<em><b>Fill opacity</b></em>' attribute.
@@ -30316,7 +30470,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_DIFFUSE_LIGHTING__FILL_OPACITY = SVG_ELEMENT_FEATURE_COUNT + 20;
+	int SVG_FE_DIFFUSE_LIGHTING_ELEMENT__FILL_OPACITY = SVG_ELEMENT_FEATURE_COUNT + 20;
 
 	/**
 	 * The feature id for the '<em><b>Fill rule</b></em>' attribute.
@@ -30325,7 +30479,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_DIFFUSE_LIGHTING__FILL_RULE = SVG_ELEMENT_FEATURE_COUNT + 21;
+	int SVG_FE_DIFFUSE_LIGHTING_ELEMENT__FILL_RULE = SVG_ELEMENT_FEATURE_COUNT + 21;
 
 	/**
 	 * The feature id for the '<em><b>Filter</b></em>' attribute.
@@ -30334,7 +30488,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_DIFFUSE_LIGHTING__FILTER = SVG_ELEMENT_FEATURE_COUNT + 22;
+	int SVG_FE_DIFFUSE_LIGHTING_ELEMENT__FILTER = SVG_ELEMENT_FEATURE_COUNT + 22;
 
 	/**
 	 * The feature id for the '<em><b>Flood color</b></em>' attribute.
@@ -30343,7 +30497,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_DIFFUSE_LIGHTING__FLOOD_COLOR = SVG_ELEMENT_FEATURE_COUNT + 23;
+	int SVG_FE_DIFFUSE_LIGHTING_ELEMENT__FLOOD_COLOR = SVG_ELEMENT_FEATURE_COUNT + 23;
 
 	/**
 	 * The feature id for the '<em><b>Flood opacity</b></em>' attribute.
@@ -30352,7 +30506,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_DIFFUSE_LIGHTING__FLOOD_OPACITY = SVG_ELEMENT_FEATURE_COUNT + 24;
+	int SVG_FE_DIFFUSE_LIGHTING_ELEMENT__FLOOD_OPACITY = SVG_ELEMENT_FEATURE_COUNT + 24;
 
 	/**
 	 * The feature id for the '<em><b>Font family</b></em>' attribute.
@@ -30361,7 +30515,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_DIFFUSE_LIGHTING__FONT_FAMILY = SVG_ELEMENT_FEATURE_COUNT + 25;
+	int SVG_FE_DIFFUSE_LIGHTING_ELEMENT__FONT_FAMILY = SVG_ELEMENT_FEATURE_COUNT + 25;
 
 	/**
 	 * The feature id for the '<em><b>Font size</b></em>' attribute.
@@ -30370,7 +30524,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_DIFFUSE_LIGHTING__FONT_SIZE = SVG_ELEMENT_FEATURE_COUNT + 26;
+	int SVG_FE_DIFFUSE_LIGHTING_ELEMENT__FONT_SIZE = SVG_ELEMENT_FEATURE_COUNT + 26;
 
 	/**
 	 * The feature id for the '<em><b>Font size adjust</b></em>' attribute.
@@ -30379,7 +30533,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_DIFFUSE_LIGHTING__FONT_SIZE_ADJUST = SVG_ELEMENT_FEATURE_COUNT + 27;
+	int SVG_FE_DIFFUSE_LIGHTING_ELEMENT__FONT_SIZE_ADJUST = SVG_ELEMENT_FEATURE_COUNT + 27;
 
 	/**
 	 * The feature id for the '<em><b>Font stretch</b></em>' attribute.
@@ -30388,7 +30542,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_DIFFUSE_LIGHTING__FONT_STRETCH = SVG_ELEMENT_FEATURE_COUNT + 28;
+	int SVG_FE_DIFFUSE_LIGHTING_ELEMENT__FONT_STRETCH = SVG_ELEMENT_FEATURE_COUNT + 28;
 
 	/**
 	 * The feature id for the '<em><b>Font style</b></em>' attribute.
@@ -30397,7 +30551,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_DIFFUSE_LIGHTING__FONT_STYLE = SVG_ELEMENT_FEATURE_COUNT + 29;
+	int SVG_FE_DIFFUSE_LIGHTING_ELEMENT__FONT_STYLE = SVG_ELEMENT_FEATURE_COUNT + 29;
 
 	/**
 	 * The feature id for the '<em><b>Font variant</b></em>' attribute.
@@ -30406,7 +30560,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_DIFFUSE_LIGHTING__FONT_VARIANT = SVG_ELEMENT_FEATURE_COUNT + 30;
+	int SVG_FE_DIFFUSE_LIGHTING_ELEMENT__FONT_VARIANT = SVG_ELEMENT_FEATURE_COUNT + 30;
 
 	/**
 	 * The feature id for the '<em><b>Font weight</b></em>' attribute.
@@ -30415,7 +30569,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_DIFFUSE_LIGHTING__FONT_WEIGHT = SVG_ELEMENT_FEATURE_COUNT + 31;
+	int SVG_FE_DIFFUSE_LIGHTING_ELEMENT__FONT_WEIGHT = SVG_ELEMENT_FEATURE_COUNT + 31;
 
 	/**
 	 * The feature id for the '<em><b>Glyph orientation horizontal</b></em>' attribute.
@@ -30424,7 +30578,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_DIFFUSE_LIGHTING__GLYPH_ORIENTATION_HORIZONTAL = SVG_ELEMENT_FEATURE_COUNT + 32;
+	int SVG_FE_DIFFUSE_LIGHTING_ELEMENT__GLYPH_ORIENTATION_HORIZONTAL = SVG_ELEMENT_FEATURE_COUNT + 32;
 
 	/**
 	 * The feature id for the '<em><b>Glyph orientation vertical</b></em>' attribute.
@@ -30433,7 +30587,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_DIFFUSE_LIGHTING__GLYPH_ORIENTATION_VERTICAL = SVG_ELEMENT_FEATURE_COUNT + 33;
+	int SVG_FE_DIFFUSE_LIGHTING_ELEMENT__GLYPH_ORIENTATION_VERTICAL = SVG_ELEMENT_FEATURE_COUNT + 33;
 
 	/**
 	 * The feature id for the '<em><b>Image rendering</b></em>' attribute.
@@ -30442,7 +30596,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_DIFFUSE_LIGHTING__IMAGE_RENDERING = SVG_ELEMENT_FEATURE_COUNT + 34;
+	int SVG_FE_DIFFUSE_LIGHTING_ELEMENT__IMAGE_RENDERING = SVG_ELEMENT_FEATURE_COUNT + 34;
 
 	/**
 	 * The feature id for the '<em><b>Kerning</b></em>' attribute.
@@ -30451,7 +30605,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_DIFFUSE_LIGHTING__KERNING = SVG_ELEMENT_FEATURE_COUNT + 35;
+	int SVG_FE_DIFFUSE_LIGHTING_ELEMENT__KERNING = SVG_ELEMENT_FEATURE_COUNT + 35;
 
 	/**
 	 * The feature id for the '<em><b>Letter spacing</b></em>' attribute.
@@ -30460,7 +30614,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_DIFFUSE_LIGHTING__LETTER_SPACING = SVG_ELEMENT_FEATURE_COUNT + 36;
+	int SVG_FE_DIFFUSE_LIGHTING_ELEMENT__LETTER_SPACING = SVG_ELEMENT_FEATURE_COUNT + 36;
 
 	/**
 	 * The feature id for the '<em><b>Lighting color</b></em>' attribute.
@@ -30469,7 +30623,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_DIFFUSE_LIGHTING__LIGHTING_COLOR = SVG_ELEMENT_FEATURE_COUNT + 37;
+	int SVG_FE_DIFFUSE_LIGHTING_ELEMENT__LIGHTING_COLOR = SVG_ELEMENT_FEATURE_COUNT + 37;
 
 	/**
 	 * The feature id for the '<em><b>Marker end</b></em>' attribute.
@@ -30478,7 +30632,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_DIFFUSE_LIGHTING__MARKER_END = SVG_ELEMENT_FEATURE_COUNT + 38;
+	int SVG_FE_DIFFUSE_LIGHTING_ELEMENT__MARKER_END = SVG_ELEMENT_FEATURE_COUNT + 38;
 
 	/**
 	 * The feature id for the '<em><b>Marker mid</b></em>' attribute.
@@ -30487,7 +30641,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_DIFFUSE_LIGHTING__MARKER_MID = SVG_ELEMENT_FEATURE_COUNT + 39;
+	int SVG_FE_DIFFUSE_LIGHTING_ELEMENT__MARKER_MID = SVG_ELEMENT_FEATURE_COUNT + 39;
 
 	/**
 	 * The feature id for the '<em><b>Marker start</b></em>' attribute.
@@ -30496,7 +30650,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_DIFFUSE_LIGHTING__MARKER_START = SVG_ELEMENT_FEATURE_COUNT + 40;
+	int SVG_FE_DIFFUSE_LIGHTING_ELEMENT__MARKER_START = SVG_ELEMENT_FEATURE_COUNT + 40;
 
 	/**
 	 * The feature id for the '<em><b>Masks</b></em>' attribute.
@@ -30505,7 +30659,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_DIFFUSE_LIGHTING__MASKS = SVG_ELEMENT_FEATURE_COUNT + 41;
+	int SVG_FE_DIFFUSE_LIGHTING_ELEMENT__MASKS = SVG_ELEMENT_FEATURE_COUNT + 41;
 
 	/**
 	 * The feature id for the '<em><b>Opacity</b></em>' attribute.
@@ -30514,7 +30668,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_DIFFUSE_LIGHTING__OPACITY = SVG_ELEMENT_FEATURE_COUNT + 42;
+	int SVG_FE_DIFFUSE_LIGHTING_ELEMENT__OPACITY = SVG_ELEMENT_FEATURE_COUNT + 42;
 
 	/**
 	 * The feature id for the '<em><b>Overflow</b></em>' attribute.
@@ -30523,7 +30677,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_DIFFUSE_LIGHTING__OVERFLOW = SVG_ELEMENT_FEATURE_COUNT + 43;
+	int SVG_FE_DIFFUSE_LIGHTING_ELEMENT__OVERFLOW = SVG_ELEMENT_FEATURE_COUNT + 43;
 
 	/**
 	 * The feature id for the '<em><b>Pointer events</b></em>' attribute.
@@ -30532,7 +30686,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_DIFFUSE_LIGHTING__POINTER_EVENTS = SVG_ELEMENT_FEATURE_COUNT + 44;
+	int SVG_FE_DIFFUSE_LIGHTING_ELEMENT__POINTER_EVENTS = SVG_ELEMENT_FEATURE_COUNT + 44;
 
 	/**
 	 * The feature id for the '<em><b>Shape rendering</b></em>' attribute.
@@ -30541,7 +30695,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_DIFFUSE_LIGHTING__SHAPE_RENDERING = SVG_ELEMENT_FEATURE_COUNT + 45;
+	int SVG_FE_DIFFUSE_LIGHTING_ELEMENT__SHAPE_RENDERING = SVG_ELEMENT_FEATURE_COUNT + 45;
 
 	/**
 	 * The feature id for the '<em><b>Stop color</b></em>' attribute.
@@ -30550,7 +30704,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_DIFFUSE_LIGHTING__STOP_COLOR = SVG_ELEMENT_FEATURE_COUNT + 46;
+	int SVG_FE_DIFFUSE_LIGHTING_ELEMENT__STOP_COLOR = SVG_ELEMENT_FEATURE_COUNT + 46;
 
 	/**
 	 * The feature id for the '<em><b>Stop opacity</b></em>' attribute.
@@ -30559,7 +30713,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_DIFFUSE_LIGHTING__STOP_OPACITY = SVG_ELEMENT_FEATURE_COUNT + 47;
+	int SVG_FE_DIFFUSE_LIGHTING_ELEMENT__STOP_OPACITY = SVG_ELEMENT_FEATURE_COUNT + 47;
 
 	/**
 	 * The feature id for the '<em><b>Stroke</b></em>' attribute.
@@ -30568,7 +30722,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_DIFFUSE_LIGHTING__STROKE = SVG_ELEMENT_FEATURE_COUNT + 48;
+	int SVG_FE_DIFFUSE_LIGHTING_ELEMENT__STROKE = SVG_ELEMENT_FEATURE_COUNT + 48;
 
 	/**
 	 * The feature id for the '<em><b>Stroke dasharray</b></em>' attribute.
@@ -30577,7 +30731,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_DIFFUSE_LIGHTING__STROKE_DASHARRAY = SVG_ELEMENT_FEATURE_COUNT + 49;
+	int SVG_FE_DIFFUSE_LIGHTING_ELEMENT__STROKE_DASHARRAY = SVG_ELEMENT_FEATURE_COUNT + 49;
 
 	/**
 	 * The feature id for the '<em><b>Stroke dashoffset</b></em>' attribute.
@@ -30586,7 +30740,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_DIFFUSE_LIGHTING__STROKE_DASHOFFSET = SVG_ELEMENT_FEATURE_COUNT + 50;
+	int SVG_FE_DIFFUSE_LIGHTING_ELEMENT__STROKE_DASHOFFSET = SVG_ELEMENT_FEATURE_COUNT + 50;
 
 	/**
 	 * The feature id for the '<em><b>Stroke linecap</b></em>' attribute.
@@ -30595,7 +30749,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_DIFFUSE_LIGHTING__STROKE_LINECAP = SVG_ELEMENT_FEATURE_COUNT + 51;
+	int SVG_FE_DIFFUSE_LIGHTING_ELEMENT__STROKE_LINECAP = SVG_ELEMENT_FEATURE_COUNT + 51;
 
 	/**
 	 * The feature id for the '<em><b>Stroke linejoin</b></em>' attribute.
@@ -30604,7 +30758,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_DIFFUSE_LIGHTING__STROKE_LINEJOIN = SVG_ELEMENT_FEATURE_COUNT + 52;
+	int SVG_FE_DIFFUSE_LIGHTING_ELEMENT__STROKE_LINEJOIN = SVG_ELEMENT_FEATURE_COUNT + 52;
 
 	/**
 	 * The feature id for the '<em><b>Stroke miterlimit</b></em>' attribute.
@@ -30613,7 +30767,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_DIFFUSE_LIGHTING__STROKE_MITERLIMIT = SVG_ELEMENT_FEATURE_COUNT + 53;
+	int SVG_FE_DIFFUSE_LIGHTING_ELEMENT__STROKE_MITERLIMIT = SVG_ELEMENT_FEATURE_COUNT + 53;
 
 	/**
 	 * The feature id for the '<em><b>Stroke opacity</b></em>' attribute.
@@ -30622,7 +30776,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_DIFFUSE_LIGHTING__STROKE_OPACITY = SVG_ELEMENT_FEATURE_COUNT + 54;
+	int SVG_FE_DIFFUSE_LIGHTING_ELEMENT__STROKE_OPACITY = SVG_ELEMENT_FEATURE_COUNT + 54;
 
 	/**
 	 * The feature id for the '<em><b>Stroke width</b></em>' attribute.
@@ -30631,7 +30785,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_DIFFUSE_LIGHTING__STROKE_WIDTH = SVG_ELEMENT_FEATURE_COUNT + 55;
+	int SVG_FE_DIFFUSE_LIGHTING_ELEMENT__STROKE_WIDTH = SVG_ELEMENT_FEATURE_COUNT + 55;
 
 	/**
 	 * The feature id for the '<em><b>Text anchor</b></em>' attribute.
@@ -30640,7 +30794,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_DIFFUSE_LIGHTING__TEXT_ANCHOR = SVG_ELEMENT_FEATURE_COUNT + 56;
+	int SVG_FE_DIFFUSE_LIGHTING_ELEMENT__TEXT_ANCHOR = SVG_ELEMENT_FEATURE_COUNT + 56;
 
 	/**
 	 * The feature id for the '<em><b>Text decoration</b></em>' attribute.
@@ -30649,7 +30803,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_DIFFUSE_LIGHTING__TEXT_DECORATION = SVG_ELEMENT_FEATURE_COUNT + 57;
+	int SVG_FE_DIFFUSE_LIGHTING_ELEMENT__TEXT_DECORATION = SVG_ELEMENT_FEATURE_COUNT + 57;
 
 	/**
 	 * The feature id for the '<em><b>Text rendering</b></em>' attribute.
@@ -30658,7 +30812,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_DIFFUSE_LIGHTING__TEXT_RENDERING = SVG_ELEMENT_FEATURE_COUNT + 58;
+	int SVG_FE_DIFFUSE_LIGHTING_ELEMENT__TEXT_RENDERING = SVG_ELEMENT_FEATURE_COUNT + 58;
 
 	/**
 	 * The feature id for the '<em><b>Unicode bidi</b></em>' attribute.
@@ -30667,7 +30821,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_DIFFUSE_LIGHTING__UNICODE_BIDI = SVG_ELEMENT_FEATURE_COUNT + 59;
+	int SVG_FE_DIFFUSE_LIGHTING_ELEMENT__UNICODE_BIDI = SVG_ELEMENT_FEATURE_COUNT + 59;
 
 	/**
 	 * The feature id for the '<em><b>Visibility</b></em>' attribute.
@@ -30676,7 +30830,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_DIFFUSE_LIGHTING__VISIBILITY = SVG_ELEMENT_FEATURE_COUNT + 60;
+	int SVG_FE_DIFFUSE_LIGHTING_ELEMENT__VISIBILITY = SVG_ELEMENT_FEATURE_COUNT + 60;
 
 	/**
 	 * The feature id for the '<em><b>Word spacing</b></em>' attribute.
@@ -30685,7 +30839,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_DIFFUSE_LIGHTING__WORD_SPACING = SVG_ELEMENT_FEATURE_COUNT + 61;
+	int SVG_FE_DIFFUSE_LIGHTING_ELEMENT__WORD_SPACING = SVG_ELEMENT_FEATURE_COUNT + 61;
 
 	/**
 	 * The feature id for the '<em><b>Writing mode</b></em>' attribute.
@@ -30694,7 +30848,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_DIFFUSE_LIGHTING__WRITING_MODE = SVG_ELEMENT_FEATURE_COUNT + 62;
+	int SVG_FE_DIFFUSE_LIGHTING_ELEMENT__WRITING_MODE = SVG_ELEMENT_FEATURE_COUNT + 62;
 
 	/**
 	 * The feature id for the '<em><b>X</b></em>' attribute.
@@ -30703,7 +30857,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_DIFFUSE_LIGHTING__X = SVG_ELEMENT_FEATURE_COUNT + 63;
+	int SVG_FE_DIFFUSE_LIGHTING_ELEMENT__X = SVG_ELEMENT_FEATURE_COUNT + 63;
 
 	/**
 	 * The feature id for the '<em><b>Y</b></em>' attribute.
@@ -30712,7 +30866,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_DIFFUSE_LIGHTING__Y = SVG_ELEMENT_FEATURE_COUNT + 64;
+	int SVG_FE_DIFFUSE_LIGHTING_ELEMENT__Y = SVG_ELEMENT_FEATURE_COUNT + 64;
 
 	/**
 	 * The feature id for the '<em><b>Width</b></em>' attribute.
@@ -30721,7 +30875,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_DIFFUSE_LIGHTING__WIDTH = SVG_ELEMENT_FEATURE_COUNT + 65;
+	int SVG_FE_DIFFUSE_LIGHTING_ELEMENT__WIDTH = SVG_ELEMENT_FEATURE_COUNT + 65;
 
 	/**
 	 * The feature id for the '<em><b>Height</b></em>' attribute.
@@ -30730,7 +30884,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_DIFFUSE_LIGHTING__HEIGHT = SVG_ELEMENT_FEATURE_COUNT + 66;
+	int SVG_FE_DIFFUSE_LIGHTING_ELEMENT__HEIGHT = SVG_ELEMENT_FEATURE_COUNT + 66;
 
 	/**
 	 * The feature id for the '<em><b>Result</b></em>' attribute.
@@ -30739,7 +30893,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_DIFFUSE_LIGHTING__RESULT = SVG_ELEMENT_FEATURE_COUNT + 67;
+	int SVG_FE_DIFFUSE_LIGHTING_ELEMENT__RESULT = SVG_ELEMENT_FEATURE_COUNT + 67;
 
 	/**
 	 * The feature id for the '<em><b>In</b></em>' attribute.
@@ -30748,7 +30902,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_DIFFUSE_LIGHTING__IN = SVG_ELEMENT_FEATURE_COUNT + 68;
+	int SVG_FE_DIFFUSE_LIGHTING_ELEMENT__IN = SVG_ELEMENT_FEATURE_COUNT + 68;
 
 	/**
 	 * The feature id for the '<em><b>Children</b></em>' containment reference list.
@@ -30757,7 +30911,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_DIFFUSE_LIGHTING__CHILDREN = SVG_ELEMENT_FEATURE_COUNT + 69;
+	int SVG_FE_DIFFUSE_LIGHTING_ELEMENT__CHILDREN = SVG_ELEMENT_FEATURE_COUNT + 69;
 
 	/**
 	 * The feature id for the '<em><b>Class</b></em>' attribute.
@@ -30766,7 +30920,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_DIFFUSE_LIGHTING__CLASS = SVG_ELEMENT_FEATURE_COUNT + 70;
+	int SVG_FE_DIFFUSE_LIGHTING_ELEMENT__CLASS = SVG_ELEMENT_FEATURE_COUNT + 70;
 
 	/**
 	 * The feature id for the '<em><b>Style</b></em>' attribute.
@@ -30775,7 +30929,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_DIFFUSE_LIGHTING__STYLE = SVG_ELEMENT_FEATURE_COUNT + 71;
+	int SVG_FE_DIFFUSE_LIGHTING_ELEMENT__STYLE = SVG_ELEMENT_FEATURE_COUNT + 71;
 
 	/**
 	 * The feature id for the '<em><b>Surface Scale</b></em>' attribute.
@@ -30784,7 +30938,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_DIFFUSE_LIGHTING__SURFACE_SCALE = SVG_ELEMENT_FEATURE_COUNT + 72;
+	int SVG_FE_DIFFUSE_LIGHTING_ELEMENT__SURFACE_SCALE = SVG_ELEMENT_FEATURE_COUNT + 72;
 
 	/**
 	 * The feature id for the '<em><b>Diffuse Constant</b></em>' attribute.
@@ -30793,7 +30947,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_DIFFUSE_LIGHTING__DIFFUSE_CONSTANT = SVG_ELEMENT_FEATURE_COUNT + 73;
+	int SVG_FE_DIFFUSE_LIGHTING_ELEMENT__DIFFUSE_CONSTANT = SVG_ELEMENT_FEATURE_COUNT + 73;
 
 	/**
 	 * The feature id for the '<em><b>Kernel Unit Length</b></em>' attribute.
@@ -30802,26 +30956,26 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_DIFFUSE_LIGHTING__KERNEL_UNIT_LENGTH = SVG_ELEMENT_FEATURE_COUNT + 74;
+	int SVG_FE_DIFFUSE_LIGHTING_ELEMENT__KERNEL_UNIT_LENGTH = SVG_ELEMENT_FEATURE_COUNT + 74;
 
 	/**
-	 * The number of structural features of the '<em>Fe Diffuse Lighting</em>' class.
+	 * The number of structural features of the '<em>Fe Diffuse Lighting Element</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_DIFFUSE_LIGHTING_FEATURE_COUNT = SVG_ELEMENT_FEATURE_COUNT + 75;
+	int SVG_FE_DIFFUSE_LIGHTING_ELEMENT_FEATURE_COUNT = SVG_ELEMENT_FEATURE_COUNT + 75;
 
 	/**
-	 * The meta object id for the '{@link at.bestsolution.efxclipse.formats.svg.svg.impl.SvgFeDisplacementMapImpl <em>Fe Displacement Map</em>}' class.
+	 * The meta object id for the '{@link at.bestsolution.efxclipse.formats.svg.svg.impl.SvgFeDisplacementMapElementImpl <em>Fe Displacement Map Element</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see at.bestsolution.efxclipse.formats.svg.svg.impl.SvgFeDisplacementMapImpl
-	 * @see at.bestsolution.efxclipse.formats.svg.svg.impl.SvgPackageImpl#getSvgFeDisplacementMap()
+	 * @see at.bestsolution.efxclipse.formats.svg.svg.impl.SvgFeDisplacementMapElementImpl
+	 * @see at.bestsolution.efxclipse.formats.svg.svg.impl.SvgPackageImpl#getSvgFeDisplacementMapElement()
 	 * @generated
 	 */
-	int SVG_FE_DISPLACEMENT_MAP = 71;
+	int SVG_FE_DISPLACEMENT_MAP_ELEMENT = 72;
 
 	/**
 	 * The feature id for the '<em><b>Id</b></em>' attribute.
@@ -30830,7 +30984,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_DISPLACEMENT_MAP__ID = SVG_ELEMENT_FEATURE_COUNT + 0;
+	int SVG_FE_DISPLACEMENT_MAP_ELEMENT__ID = SVG_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Xml base</b></em>' attribute.
@@ -30839,7 +30993,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_DISPLACEMENT_MAP__XML_BASE = SVG_ELEMENT_FEATURE_COUNT + 1;
+	int SVG_FE_DISPLACEMENT_MAP_ELEMENT__XML_BASE = SVG_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Xml lang</b></em>' attribute.
@@ -30848,7 +31002,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_DISPLACEMENT_MAP__XML_LANG = SVG_ELEMENT_FEATURE_COUNT + 2;
+	int SVG_FE_DISPLACEMENT_MAP_ELEMENT__XML_LANG = SVG_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Xml space</b></em>' attribute.
@@ -30857,7 +31011,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_DISPLACEMENT_MAP__XML_SPACE = SVG_ELEMENT_FEATURE_COUNT + 3;
+	int SVG_FE_DISPLACEMENT_MAP_ELEMENT__XML_SPACE = SVG_ELEMENT_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Alignment baseline</b></em>' attribute.
@@ -30866,7 +31020,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_DISPLACEMENT_MAP__ALIGNMENT_BASELINE = SVG_ELEMENT_FEATURE_COUNT + 4;
+	int SVG_FE_DISPLACEMENT_MAP_ELEMENT__ALIGNMENT_BASELINE = SVG_ELEMENT_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Baseline shift</b></em>' attribute.
@@ -30875,7 +31029,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_DISPLACEMENT_MAP__BASELINE_SHIFT = SVG_ELEMENT_FEATURE_COUNT + 5;
+	int SVG_FE_DISPLACEMENT_MAP_ELEMENT__BASELINE_SHIFT = SVG_ELEMENT_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>Clip</b></em>' attribute.
@@ -30884,7 +31038,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_DISPLACEMENT_MAP__CLIP = SVG_ELEMENT_FEATURE_COUNT + 6;
+	int SVG_FE_DISPLACEMENT_MAP_ELEMENT__CLIP = SVG_ELEMENT_FEATURE_COUNT + 6;
 
 	/**
 	 * The feature id for the '<em><b>Clip path</b></em>' attribute.
@@ -30893,7 +31047,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_DISPLACEMENT_MAP__CLIP_PATH = SVG_ELEMENT_FEATURE_COUNT + 7;
+	int SVG_FE_DISPLACEMENT_MAP_ELEMENT__CLIP_PATH = SVG_ELEMENT_FEATURE_COUNT + 7;
 
 	/**
 	 * The feature id for the '<em><b>Clip rule</b></em>' attribute.
@@ -30902,7 +31056,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_DISPLACEMENT_MAP__CLIP_RULE = SVG_ELEMENT_FEATURE_COUNT + 8;
+	int SVG_FE_DISPLACEMENT_MAP_ELEMENT__CLIP_RULE = SVG_ELEMENT_FEATURE_COUNT + 8;
 
 	/**
 	 * The feature id for the '<em><b>Color</b></em>' attribute.
@@ -30911,7 +31065,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_DISPLACEMENT_MAP__COLOR = SVG_ELEMENT_FEATURE_COUNT + 9;
+	int SVG_FE_DISPLACEMENT_MAP_ELEMENT__COLOR = SVG_ELEMENT_FEATURE_COUNT + 9;
 
 	/**
 	 * The feature id for the '<em><b>Color interpolation</b></em>' attribute.
@@ -30920,7 +31074,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_DISPLACEMENT_MAP__COLOR_INTERPOLATION = SVG_ELEMENT_FEATURE_COUNT + 10;
+	int SVG_FE_DISPLACEMENT_MAP_ELEMENT__COLOR_INTERPOLATION = SVG_ELEMENT_FEATURE_COUNT + 10;
 
 	/**
 	 * The feature id for the '<em><b>Color interpolation filters</b></em>' attribute.
@@ -30929,7 +31083,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_DISPLACEMENT_MAP__COLOR_INTERPOLATION_FILTERS = SVG_ELEMENT_FEATURE_COUNT + 11;
+	int SVG_FE_DISPLACEMENT_MAP_ELEMENT__COLOR_INTERPOLATION_FILTERS = SVG_ELEMENT_FEATURE_COUNT + 11;
 
 	/**
 	 * The feature id for the '<em><b>Color profile</b></em>' attribute.
@@ -30938,7 +31092,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_DISPLACEMENT_MAP__COLOR_PROFILE = SVG_ELEMENT_FEATURE_COUNT + 12;
+	int SVG_FE_DISPLACEMENT_MAP_ELEMENT__COLOR_PROFILE = SVG_ELEMENT_FEATURE_COUNT + 12;
 
 	/**
 	 * The feature id for the '<em><b>Color rendering</b></em>' attribute.
@@ -30947,7 +31101,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_DISPLACEMENT_MAP__COLOR_RENDERING = SVG_ELEMENT_FEATURE_COUNT + 13;
+	int SVG_FE_DISPLACEMENT_MAP_ELEMENT__COLOR_RENDERING = SVG_ELEMENT_FEATURE_COUNT + 13;
 
 	/**
 	 * The feature id for the '<em><b>Cursor</b></em>' attribute.
@@ -30956,7 +31110,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_DISPLACEMENT_MAP__CURSOR = SVG_ELEMENT_FEATURE_COUNT + 14;
+	int SVG_FE_DISPLACEMENT_MAP_ELEMENT__CURSOR = SVG_ELEMENT_FEATURE_COUNT + 14;
 
 	/**
 	 * The feature id for the '<em><b>Direction</b></em>' attribute.
@@ -30965,7 +31119,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_DISPLACEMENT_MAP__DIRECTION = SVG_ELEMENT_FEATURE_COUNT + 15;
+	int SVG_FE_DISPLACEMENT_MAP_ELEMENT__DIRECTION = SVG_ELEMENT_FEATURE_COUNT + 15;
 
 	/**
 	 * The feature id for the '<em><b>Display</b></em>' attribute.
@@ -30974,7 +31128,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_DISPLACEMENT_MAP__DISPLAY = SVG_ELEMENT_FEATURE_COUNT + 16;
+	int SVG_FE_DISPLACEMENT_MAP_ELEMENT__DISPLAY = SVG_ELEMENT_FEATURE_COUNT + 16;
 
 	/**
 	 * The feature id for the '<em><b>Dominant baseline</b></em>' attribute.
@@ -30983,7 +31137,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_DISPLACEMENT_MAP__DOMINANT_BASELINE = SVG_ELEMENT_FEATURE_COUNT + 17;
+	int SVG_FE_DISPLACEMENT_MAP_ELEMENT__DOMINANT_BASELINE = SVG_ELEMENT_FEATURE_COUNT + 17;
 
 	/**
 	 * The feature id for the '<em><b>Enable background</b></em>' attribute.
@@ -30992,7 +31146,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_DISPLACEMENT_MAP__ENABLE_BACKGROUND = SVG_ELEMENT_FEATURE_COUNT + 18;
+	int SVG_FE_DISPLACEMENT_MAP_ELEMENT__ENABLE_BACKGROUND = SVG_ELEMENT_FEATURE_COUNT + 18;
 
 	/**
 	 * The feature id for the '<em><b>Fill</b></em>' attribute.
@@ -31001,7 +31155,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_DISPLACEMENT_MAP__FILL = SVG_ELEMENT_FEATURE_COUNT + 19;
+	int SVG_FE_DISPLACEMENT_MAP_ELEMENT__FILL = SVG_ELEMENT_FEATURE_COUNT + 19;
 
 	/**
 	 * The feature id for the '<em><b>Fill opacity</b></em>' attribute.
@@ -31010,7 +31164,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_DISPLACEMENT_MAP__FILL_OPACITY = SVG_ELEMENT_FEATURE_COUNT + 20;
+	int SVG_FE_DISPLACEMENT_MAP_ELEMENT__FILL_OPACITY = SVG_ELEMENT_FEATURE_COUNT + 20;
 
 	/**
 	 * The feature id for the '<em><b>Fill rule</b></em>' attribute.
@@ -31019,7 +31173,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_DISPLACEMENT_MAP__FILL_RULE = SVG_ELEMENT_FEATURE_COUNT + 21;
+	int SVG_FE_DISPLACEMENT_MAP_ELEMENT__FILL_RULE = SVG_ELEMENT_FEATURE_COUNT + 21;
 
 	/**
 	 * The feature id for the '<em><b>Filter</b></em>' attribute.
@@ -31028,7 +31182,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_DISPLACEMENT_MAP__FILTER = SVG_ELEMENT_FEATURE_COUNT + 22;
+	int SVG_FE_DISPLACEMENT_MAP_ELEMENT__FILTER = SVG_ELEMENT_FEATURE_COUNT + 22;
 
 	/**
 	 * The feature id for the '<em><b>Flood color</b></em>' attribute.
@@ -31037,7 +31191,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_DISPLACEMENT_MAP__FLOOD_COLOR = SVG_ELEMENT_FEATURE_COUNT + 23;
+	int SVG_FE_DISPLACEMENT_MAP_ELEMENT__FLOOD_COLOR = SVG_ELEMENT_FEATURE_COUNT + 23;
 
 	/**
 	 * The feature id for the '<em><b>Flood opacity</b></em>' attribute.
@@ -31046,7 +31200,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_DISPLACEMENT_MAP__FLOOD_OPACITY = SVG_ELEMENT_FEATURE_COUNT + 24;
+	int SVG_FE_DISPLACEMENT_MAP_ELEMENT__FLOOD_OPACITY = SVG_ELEMENT_FEATURE_COUNT + 24;
 
 	/**
 	 * The feature id for the '<em><b>Font family</b></em>' attribute.
@@ -31055,7 +31209,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_DISPLACEMENT_MAP__FONT_FAMILY = SVG_ELEMENT_FEATURE_COUNT + 25;
+	int SVG_FE_DISPLACEMENT_MAP_ELEMENT__FONT_FAMILY = SVG_ELEMENT_FEATURE_COUNT + 25;
 
 	/**
 	 * The feature id for the '<em><b>Font size</b></em>' attribute.
@@ -31064,7 +31218,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_DISPLACEMENT_MAP__FONT_SIZE = SVG_ELEMENT_FEATURE_COUNT + 26;
+	int SVG_FE_DISPLACEMENT_MAP_ELEMENT__FONT_SIZE = SVG_ELEMENT_FEATURE_COUNT + 26;
 
 	/**
 	 * The feature id for the '<em><b>Font size adjust</b></em>' attribute.
@@ -31073,7 +31227,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_DISPLACEMENT_MAP__FONT_SIZE_ADJUST = SVG_ELEMENT_FEATURE_COUNT + 27;
+	int SVG_FE_DISPLACEMENT_MAP_ELEMENT__FONT_SIZE_ADJUST = SVG_ELEMENT_FEATURE_COUNT + 27;
 
 	/**
 	 * The feature id for the '<em><b>Font stretch</b></em>' attribute.
@@ -31082,7 +31236,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_DISPLACEMENT_MAP__FONT_STRETCH = SVG_ELEMENT_FEATURE_COUNT + 28;
+	int SVG_FE_DISPLACEMENT_MAP_ELEMENT__FONT_STRETCH = SVG_ELEMENT_FEATURE_COUNT + 28;
 
 	/**
 	 * The feature id for the '<em><b>Font style</b></em>' attribute.
@@ -31091,7 +31245,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_DISPLACEMENT_MAP__FONT_STYLE = SVG_ELEMENT_FEATURE_COUNT + 29;
+	int SVG_FE_DISPLACEMENT_MAP_ELEMENT__FONT_STYLE = SVG_ELEMENT_FEATURE_COUNT + 29;
 
 	/**
 	 * The feature id for the '<em><b>Font variant</b></em>' attribute.
@@ -31100,7 +31254,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_DISPLACEMENT_MAP__FONT_VARIANT = SVG_ELEMENT_FEATURE_COUNT + 30;
+	int SVG_FE_DISPLACEMENT_MAP_ELEMENT__FONT_VARIANT = SVG_ELEMENT_FEATURE_COUNT + 30;
 
 	/**
 	 * The feature id for the '<em><b>Font weight</b></em>' attribute.
@@ -31109,7 +31263,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_DISPLACEMENT_MAP__FONT_WEIGHT = SVG_ELEMENT_FEATURE_COUNT + 31;
+	int SVG_FE_DISPLACEMENT_MAP_ELEMENT__FONT_WEIGHT = SVG_ELEMENT_FEATURE_COUNT + 31;
 
 	/**
 	 * The feature id for the '<em><b>Glyph orientation horizontal</b></em>' attribute.
@@ -31118,7 +31272,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_DISPLACEMENT_MAP__GLYPH_ORIENTATION_HORIZONTAL = SVG_ELEMENT_FEATURE_COUNT + 32;
+	int SVG_FE_DISPLACEMENT_MAP_ELEMENT__GLYPH_ORIENTATION_HORIZONTAL = SVG_ELEMENT_FEATURE_COUNT + 32;
 
 	/**
 	 * The feature id for the '<em><b>Glyph orientation vertical</b></em>' attribute.
@@ -31127,7 +31281,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_DISPLACEMENT_MAP__GLYPH_ORIENTATION_VERTICAL = SVG_ELEMENT_FEATURE_COUNT + 33;
+	int SVG_FE_DISPLACEMENT_MAP_ELEMENT__GLYPH_ORIENTATION_VERTICAL = SVG_ELEMENT_FEATURE_COUNT + 33;
 
 	/**
 	 * The feature id for the '<em><b>Image rendering</b></em>' attribute.
@@ -31136,7 +31290,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_DISPLACEMENT_MAP__IMAGE_RENDERING = SVG_ELEMENT_FEATURE_COUNT + 34;
+	int SVG_FE_DISPLACEMENT_MAP_ELEMENT__IMAGE_RENDERING = SVG_ELEMENT_FEATURE_COUNT + 34;
 
 	/**
 	 * The feature id for the '<em><b>Kerning</b></em>' attribute.
@@ -31145,7 +31299,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_DISPLACEMENT_MAP__KERNING = SVG_ELEMENT_FEATURE_COUNT + 35;
+	int SVG_FE_DISPLACEMENT_MAP_ELEMENT__KERNING = SVG_ELEMENT_FEATURE_COUNT + 35;
 
 	/**
 	 * The feature id for the '<em><b>Letter spacing</b></em>' attribute.
@@ -31154,7 +31308,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_DISPLACEMENT_MAP__LETTER_SPACING = SVG_ELEMENT_FEATURE_COUNT + 36;
+	int SVG_FE_DISPLACEMENT_MAP_ELEMENT__LETTER_SPACING = SVG_ELEMENT_FEATURE_COUNT + 36;
 
 	/**
 	 * The feature id for the '<em><b>Lighting color</b></em>' attribute.
@@ -31163,7 +31317,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_DISPLACEMENT_MAP__LIGHTING_COLOR = SVG_ELEMENT_FEATURE_COUNT + 37;
+	int SVG_FE_DISPLACEMENT_MAP_ELEMENT__LIGHTING_COLOR = SVG_ELEMENT_FEATURE_COUNT + 37;
 
 	/**
 	 * The feature id for the '<em><b>Marker end</b></em>' attribute.
@@ -31172,7 +31326,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_DISPLACEMENT_MAP__MARKER_END = SVG_ELEMENT_FEATURE_COUNT + 38;
+	int SVG_FE_DISPLACEMENT_MAP_ELEMENT__MARKER_END = SVG_ELEMENT_FEATURE_COUNT + 38;
 
 	/**
 	 * The feature id for the '<em><b>Marker mid</b></em>' attribute.
@@ -31181,7 +31335,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_DISPLACEMENT_MAP__MARKER_MID = SVG_ELEMENT_FEATURE_COUNT + 39;
+	int SVG_FE_DISPLACEMENT_MAP_ELEMENT__MARKER_MID = SVG_ELEMENT_FEATURE_COUNT + 39;
 
 	/**
 	 * The feature id for the '<em><b>Marker start</b></em>' attribute.
@@ -31190,7 +31344,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_DISPLACEMENT_MAP__MARKER_START = SVG_ELEMENT_FEATURE_COUNT + 40;
+	int SVG_FE_DISPLACEMENT_MAP_ELEMENT__MARKER_START = SVG_ELEMENT_FEATURE_COUNT + 40;
 
 	/**
 	 * The feature id for the '<em><b>Masks</b></em>' attribute.
@@ -31199,7 +31353,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_DISPLACEMENT_MAP__MASKS = SVG_ELEMENT_FEATURE_COUNT + 41;
+	int SVG_FE_DISPLACEMENT_MAP_ELEMENT__MASKS = SVG_ELEMENT_FEATURE_COUNT + 41;
 
 	/**
 	 * The feature id for the '<em><b>Opacity</b></em>' attribute.
@@ -31208,7 +31362,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_DISPLACEMENT_MAP__OPACITY = SVG_ELEMENT_FEATURE_COUNT + 42;
+	int SVG_FE_DISPLACEMENT_MAP_ELEMENT__OPACITY = SVG_ELEMENT_FEATURE_COUNT + 42;
 
 	/**
 	 * The feature id for the '<em><b>Overflow</b></em>' attribute.
@@ -31217,7 +31371,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_DISPLACEMENT_MAP__OVERFLOW = SVG_ELEMENT_FEATURE_COUNT + 43;
+	int SVG_FE_DISPLACEMENT_MAP_ELEMENT__OVERFLOW = SVG_ELEMENT_FEATURE_COUNT + 43;
 
 	/**
 	 * The feature id for the '<em><b>Pointer events</b></em>' attribute.
@@ -31226,7 +31380,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_DISPLACEMENT_MAP__POINTER_EVENTS = SVG_ELEMENT_FEATURE_COUNT + 44;
+	int SVG_FE_DISPLACEMENT_MAP_ELEMENT__POINTER_EVENTS = SVG_ELEMENT_FEATURE_COUNT + 44;
 
 	/**
 	 * The feature id for the '<em><b>Shape rendering</b></em>' attribute.
@@ -31235,7 +31389,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_DISPLACEMENT_MAP__SHAPE_RENDERING = SVG_ELEMENT_FEATURE_COUNT + 45;
+	int SVG_FE_DISPLACEMENT_MAP_ELEMENT__SHAPE_RENDERING = SVG_ELEMENT_FEATURE_COUNT + 45;
 
 	/**
 	 * The feature id for the '<em><b>Stop color</b></em>' attribute.
@@ -31244,7 +31398,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_DISPLACEMENT_MAP__STOP_COLOR = SVG_ELEMENT_FEATURE_COUNT + 46;
+	int SVG_FE_DISPLACEMENT_MAP_ELEMENT__STOP_COLOR = SVG_ELEMENT_FEATURE_COUNT + 46;
 
 	/**
 	 * The feature id for the '<em><b>Stop opacity</b></em>' attribute.
@@ -31253,7 +31407,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_DISPLACEMENT_MAP__STOP_OPACITY = SVG_ELEMENT_FEATURE_COUNT + 47;
+	int SVG_FE_DISPLACEMENT_MAP_ELEMENT__STOP_OPACITY = SVG_ELEMENT_FEATURE_COUNT + 47;
 
 	/**
 	 * The feature id for the '<em><b>Stroke</b></em>' attribute.
@@ -31262,7 +31416,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_DISPLACEMENT_MAP__STROKE = SVG_ELEMENT_FEATURE_COUNT + 48;
+	int SVG_FE_DISPLACEMENT_MAP_ELEMENT__STROKE = SVG_ELEMENT_FEATURE_COUNT + 48;
 
 	/**
 	 * The feature id for the '<em><b>Stroke dasharray</b></em>' attribute.
@@ -31271,7 +31425,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_DISPLACEMENT_MAP__STROKE_DASHARRAY = SVG_ELEMENT_FEATURE_COUNT + 49;
+	int SVG_FE_DISPLACEMENT_MAP_ELEMENT__STROKE_DASHARRAY = SVG_ELEMENT_FEATURE_COUNT + 49;
 
 	/**
 	 * The feature id for the '<em><b>Stroke dashoffset</b></em>' attribute.
@@ -31280,7 +31434,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_DISPLACEMENT_MAP__STROKE_DASHOFFSET = SVG_ELEMENT_FEATURE_COUNT + 50;
+	int SVG_FE_DISPLACEMENT_MAP_ELEMENT__STROKE_DASHOFFSET = SVG_ELEMENT_FEATURE_COUNT + 50;
 
 	/**
 	 * The feature id for the '<em><b>Stroke linecap</b></em>' attribute.
@@ -31289,7 +31443,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_DISPLACEMENT_MAP__STROKE_LINECAP = SVG_ELEMENT_FEATURE_COUNT + 51;
+	int SVG_FE_DISPLACEMENT_MAP_ELEMENT__STROKE_LINECAP = SVG_ELEMENT_FEATURE_COUNT + 51;
 
 	/**
 	 * The feature id for the '<em><b>Stroke linejoin</b></em>' attribute.
@@ -31298,7 +31452,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_DISPLACEMENT_MAP__STROKE_LINEJOIN = SVG_ELEMENT_FEATURE_COUNT + 52;
+	int SVG_FE_DISPLACEMENT_MAP_ELEMENT__STROKE_LINEJOIN = SVG_ELEMENT_FEATURE_COUNT + 52;
 
 	/**
 	 * The feature id for the '<em><b>Stroke miterlimit</b></em>' attribute.
@@ -31307,7 +31461,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_DISPLACEMENT_MAP__STROKE_MITERLIMIT = SVG_ELEMENT_FEATURE_COUNT + 53;
+	int SVG_FE_DISPLACEMENT_MAP_ELEMENT__STROKE_MITERLIMIT = SVG_ELEMENT_FEATURE_COUNT + 53;
 
 	/**
 	 * The feature id for the '<em><b>Stroke opacity</b></em>' attribute.
@@ -31316,7 +31470,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_DISPLACEMENT_MAP__STROKE_OPACITY = SVG_ELEMENT_FEATURE_COUNT + 54;
+	int SVG_FE_DISPLACEMENT_MAP_ELEMENT__STROKE_OPACITY = SVG_ELEMENT_FEATURE_COUNT + 54;
 
 	/**
 	 * The feature id for the '<em><b>Stroke width</b></em>' attribute.
@@ -31325,7 +31479,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_DISPLACEMENT_MAP__STROKE_WIDTH = SVG_ELEMENT_FEATURE_COUNT + 55;
+	int SVG_FE_DISPLACEMENT_MAP_ELEMENT__STROKE_WIDTH = SVG_ELEMENT_FEATURE_COUNT + 55;
 
 	/**
 	 * The feature id for the '<em><b>Text anchor</b></em>' attribute.
@@ -31334,7 +31488,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_DISPLACEMENT_MAP__TEXT_ANCHOR = SVG_ELEMENT_FEATURE_COUNT + 56;
+	int SVG_FE_DISPLACEMENT_MAP_ELEMENT__TEXT_ANCHOR = SVG_ELEMENT_FEATURE_COUNT + 56;
 
 	/**
 	 * The feature id for the '<em><b>Text decoration</b></em>' attribute.
@@ -31343,7 +31497,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_DISPLACEMENT_MAP__TEXT_DECORATION = SVG_ELEMENT_FEATURE_COUNT + 57;
+	int SVG_FE_DISPLACEMENT_MAP_ELEMENT__TEXT_DECORATION = SVG_ELEMENT_FEATURE_COUNT + 57;
 
 	/**
 	 * The feature id for the '<em><b>Text rendering</b></em>' attribute.
@@ -31352,7 +31506,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_DISPLACEMENT_MAP__TEXT_RENDERING = SVG_ELEMENT_FEATURE_COUNT + 58;
+	int SVG_FE_DISPLACEMENT_MAP_ELEMENT__TEXT_RENDERING = SVG_ELEMENT_FEATURE_COUNT + 58;
 
 	/**
 	 * The feature id for the '<em><b>Unicode bidi</b></em>' attribute.
@@ -31361,7 +31515,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_DISPLACEMENT_MAP__UNICODE_BIDI = SVG_ELEMENT_FEATURE_COUNT + 59;
+	int SVG_FE_DISPLACEMENT_MAP_ELEMENT__UNICODE_BIDI = SVG_ELEMENT_FEATURE_COUNT + 59;
 
 	/**
 	 * The feature id for the '<em><b>Visibility</b></em>' attribute.
@@ -31370,7 +31524,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_DISPLACEMENT_MAP__VISIBILITY = SVG_ELEMENT_FEATURE_COUNT + 60;
+	int SVG_FE_DISPLACEMENT_MAP_ELEMENT__VISIBILITY = SVG_ELEMENT_FEATURE_COUNT + 60;
 
 	/**
 	 * The feature id for the '<em><b>Word spacing</b></em>' attribute.
@@ -31379,7 +31533,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_DISPLACEMENT_MAP__WORD_SPACING = SVG_ELEMENT_FEATURE_COUNT + 61;
+	int SVG_FE_DISPLACEMENT_MAP_ELEMENT__WORD_SPACING = SVG_ELEMENT_FEATURE_COUNT + 61;
 
 	/**
 	 * The feature id for the '<em><b>Writing mode</b></em>' attribute.
@@ -31388,7 +31542,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_DISPLACEMENT_MAP__WRITING_MODE = SVG_ELEMENT_FEATURE_COUNT + 62;
+	int SVG_FE_DISPLACEMENT_MAP_ELEMENT__WRITING_MODE = SVG_ELEMENT_FEATURE_COUNT + 62;
 
 	/**
 	 * The feature id for the '<em><b>X</b></em>' attribute.
@@ -31397,7 +31551,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_DISPLACEMENT_MAP__X = SVG_ELEMENT_FEATURE_COUNT + 63;
+	int SVG_FE_DISPLACEMENT_MAP_ELEMENT__X = SVG_ELEMENT_FEATURE_COUNT + 63;
 
 	/**
 	 * The feature id for the '<em><b>Y</b></em>' attribute.
@@ -31406,7 +31560,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_DISPLACEMENT_MAP__Y = SVG_ELEMENT_FEATURE_COUNT + 64;
+	int SVG_FE_DISPLACEMENT_MAP_ELEMENT__Y = SVG_ELEMENT_FEATURE_COUNT + 64;
 
 	/**
 	 * The feature id for the '<em><b>Width</b></em>' attribute.
@@ -31415,7 +31569,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_DISPLACEMENT_MAP__WIDTH = SVG_ELEMENT_FEATURE_COUNT + 65;
+	int SVG_FE_DISPLACEMENT_MAP_ELEMENT__WIDTH = SVG_ELEMENT_FEATURE_COUNT + 65;
 
 	/**
 	 * The feature id for the '<em><b>Height</b></em>' attribute.
@@ -31424,7 +31578,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_DISPLACEMENT_MAP__HEIGHT = SVG_ELEMENT_FEATURE_COUNT + 66;
+	int SVG_FE_DISPLACEMENT_MAP_ELEMENT__HEIGHT = SVG_ELEMENT_FEATURE_COUNT + 66;
 
 	/**
 	 * The feature id for the '<em><b>Result</b></em>' attribute.
@@ -31433,7 +31587,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_DISPLACEMENT_MAP__RESULT = SVG_ELEMENT_FEATURE_COUNT + 67;
+	int SVG_FE_DISPLACEMENT_MAP_ELEMENT__RESULT = SVG_ELEMENT_FEATURE_COUNT + 67;
 
 	/**
 	 * The feature id for the '<em><b>In</b></em>' attribute.
@@ -31442,7 +31596,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_DISPLACEMENT_MAP__IN = SVG_ELEMENT_FEATURE_COUNT + 68;
+	int SVG_FE_DISPLACEMENT_MAP_ELEMENT__IN = SVG_ELEMENT_FEATURE_COUNT + 68;
 
 	/**
 	 * The feature id for the '<em><b>Children</b></em>' containment reference list.
@@ -31451,7 +31605,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_DISPLACEMENT_MAP__CHILDREN = SVG_ELEMENT_FEATURE_COUNT + 69;
+	int SVG_FE_DISPLACEMENT_MAP_ELEMENT__CHILDREN = SVG_ELEMENT_FEATURE_COUNT + 69;
 
 	/**
 	 * The feature id for the '<em><b>Class</b></em>' attribute.
@@ -31460,7 +31614,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_DISPLACEMENT_MAP__CLASS = SVG_ELEMENT_FEATURE_COUNT + 70;
+	int SVG_FE_DISPLACEMENT_MAP_ELEMENT__CLASS = SVG_ELEMENT_FEATURE_COUNT + 70;
 
 	/**
 	 * The feature id for the '<em><b>Style</b></em>' attribute.
@@ -31469,7 +31623,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_DISPLACEMENT_MAP__STYLE = SVG_ELEMENT_FEATURE_COUNT + 71;
+	int SVG_FE_DISPLACEMENT_MAP_ELEMENT__STYLE = SVG_ELEMENT_FEATURE_COUNT + 71;
 
 	/**
 	 * The feature id for the '<em><b>In2</b></em>' attribute.
@@ -31478,7 +31632,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_DISPLACEMENT_MAP__IN2 = SVG_ELEMENT_FEATURE_COUNT + 72;
+	int SVG_FE_DISPLACEMENT_MAP_ELEMENT__IN2 = SVG_ELEMENT_FEATURE_COUNT + 72;
 
 	/**
 	 * The feature id for the '<em><b>Scale</b></em>' attribute.
@@ -31487,7 +31641,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_DISPLACEMENT_MAP__SCALE = SVG_ELEMENT_FEATURE_COUNT + 73;
+	int SVG_FE_DISPLACEMENT_MAP_ELEMENT__SCALE = SVG_ELEMENT_FEATURE_COUNT + 73;
 
 	/**
 	 * The feature id for the '<em><b>XChannel Selector</b></em>' attribute.
@@ -31496,7 +31650,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_DISPLACEMENT_MAP__XCHANNEL_SELECTOR = SVG_ELEMENT_FEATURE_COUNT + 74;
+	int SVG_FE_DISPLACEMENT_MAP_ELEMENT__XCHANNEL_SELECTOR = SVG_ELEMENT_FEATURE_COUNT + 74;
 
 	/**
 	 * The feature id for the '<em><b>YChannel Selector</b></em>' attribute.
@@ -31505,26 +31659,26 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_DISPLACEMENT_MAP__YCHANNEL_SELECTOR = SVG_ELEMENT_FEATURE_COUNT + 75;
+	int SVG_FE_DISPLACEMENT_MAP_ELEMENT__YCHANNEL_SELECTOR = SVG_ELEMENT_FEATURE_COUNT + 75;
 
 	/**
-	 * The number of structural features of the '<em>Fe Displacement Map</em>' class.
+	 * The number of structural features of the '<em>Fe Displacement Map Element</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_DISPLACEMENT_MAP_FEATURE_COUNT = SVG_ELEMENT_FEATURE_COUNT + 76;
+	int SVG_FE_DISPLACEMENT_MAP_ELEMENT_FEATURE_COUNT = SVG_ELEMENT_FEATURE_COUNT + 76;
 
 	/**
-	 * The meta object id for the '{@link at.bestsolution.efxclipse.formats.svg.svg.impl.SvgFeFloodImpl <em>Fe Flood</em>}' class.
+	 * The meta object id for the '{@link at.bestsolution.efxclipse.formats.svg.svg.impl.SvgFeFloodElementImpl <em>Fe Flood Element</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see at.bestsolution.efxclipse.formats.svg.svg.impl.SvgFeFloodImpl
-	 * @see at.bestsolution.efxclipse.formats.svg.svg.impl.SvgPackageImpl#getSvgFeFlood()
+	 * @see at.bestsolution.efxclipse.formats.svg.svg.impl.SvgFeFloodElementImpl
+	 * @see at.bestsolution.efxclipse.formats.svg.svg.impl.SvgPackageImpl#getSvgFeFloodElement()
 	 * @generated
 	 */
-	int SVG_FE_FLOOD = 72;
+	int SVG_FE_FLOOD_ELEMENT = 73;
 
 	/**
 	 * The feature id for the '<em><b>Id</b></em>' attribute.
@@ -31533,7 +31687,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_FLOOD__ID = SVG_ELEMENT_FEATURE_COUNT + 0;
+	int SVG_FE_FLOOD_ELEMENT__ID = SVG_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Xml base</b></em>' attribute.
@@ -31542,7 +31696,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_FLOOD__XML_BASE = SVG_ELEMENT_FEATURE_COUNT + 1;
+	int SVG_FE_FLOOD_ELEMENT__XML_BASE = SVG_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Xml lang</b></em>' attribute.
@@ -31551,7 +31705,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_FLOOD__XML_LANG = SVG_ELEMENT_FEATURE_COUNT + 2;
+	int SVG_FE_FLOOD_ELEMENT__XML_LANG = SVG_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Xml space</b></em>' attribute.
@@ -31560,7 +31714,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_FLOOD__XML_SPACE = SVG_ELEMENT_FEATURE_COUNT + 3;
+	int SVG_FE_FLOOD_ELEMENT__XML_SPACE = SVG_ELEMENT_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Alignment baseline</b></em>' attribute.
@@ -31569,7 +31723,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_FLOOD__ALIGNMENT_BASELINE = SVG_ELEMENT_FEATURE_COUNT + 4;
+	int SVG_FE_FLOOD_ELEMENT__ALIGNMENT_BASELINE = SVG_ELEMENT_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Baseline shift</b></em>' attribute.
@@ -31578,7 +31732,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_FLOOD__BASELINE_SHIFT = SVG_ELEMENT_FEATURE_COUNT + 5;
+	int SVG_FE_FLOOD_ELEMENT__BASELINE_SHIFT = SVG_ELEMENT_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>Clip</b></em>' attribute.
@@ -31587,7 +31741,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_FLOOD__CLIP = SVG_ELEMENT_FEATURE_COUNT + 6;
+	int SVG_FE_FLOOD_ELEMENT__CLIP = SVG_ELEMENT_FEATURE_COUNT + 6;
 
 	/**
 	 * The feature id for the '<em><b>Clip path</b></em>' attribute.
@@ -31596,7 +31750,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_FLOOD__CLIP_PATH = SVG_ELEMENT_FEATURE_COUNT + 7;
+	int SVG_FE_FLOOD_ELEMENT__CLIP_PATH = SVG_ELEMENT_FEATURE_COUNT + 7;
 
 	/**
 	 * The feature id for the '<em><b>Clip rule</b></em>' attribute.
@@ -31605,7 +31759,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_FLOOD__CLIP_RULE = SVG_ELEMENT_FEATURE_COUNT + 8;
+	int SVG_FE_FLOOD_ELEMENT__CLIP_RULE = SVG_ELEMENT_FEATURE_COUNT + 8;
 
 	/**
 	 * The feature id for the '<em><b>Color</b></em>' attribute.
@@ -31614,7 +31768,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_FLOOD__COLOR = SVG_ELEMENT_FEATURE_COUNT + 9;
+	int SVG_FE_FLOOD_ELEMENT__COLOR = SVG_ELEMENT_FEATURE_COUNT + 9;
 
 	/**
 	 * The feature id for the '<em><b>Color interpolation</b></em>' attribute.
@@ -31623,7 +31777,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_FLOOD__COLOR_INTERPOLATION = SVG_ELEMENT_FEATURE_COUNT + 10;
+	int SVG_FE_FLOOD_ELEMENT__COLOR_INTERPOLATION = SVG_ELEMENT_FEATURE_COUNT + 10;
 
 	/**
 	 * The feature id for the '<em><b>Color interpolation filters</b></em>' attribute.
@@ -31632,7 +31786,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_FLOOD__COLOR_INTERPOLATION_FILTERS = SVG_ELEMENT_FEATURE_COUNT + 11;
+	int SVG_FE_FLOOD_ELEMENT__COLOR_INTERPOLATION_FILTERS = SVG_ELEMENT_FEATURE_COUNT + 11;
 
 	/**
 	 * The feature id for the '<em><b>Color profile</b></em>' attribute.
@@ -31641,7 +31795,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_FLOOD__COLOR_PROFILE = SVG_ELEMENT_FEATURE_COUNT + 12;
+	int SVG_FE_FLOOD_ELEMENT__COLOR_PROFILE = SVG_ELEMENT_FEATURE_COUNT + 12;
 
 	/**
 	 * The feature id for the '<em><b>Color rendering</b></em>' attribute.
@@ -31650,7 +31804,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_FLOOD__COLOR_RENDERING = SVG_ELEMENT_FEATURE_COUNT + 13;
+	int SVG_FE_FLOOD_ELEMENT__COLOR_RENDERING = SVG_ELEMENT_FEATURE_COUNT + 13;
 
 	/**
 	 * The feature id for the '<em><b>Cursor</b></em>' attribute.
@@ -31659,7 +31813,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_FLOOD__CURSOR = SVG_ELEMENT_FEATURE_COUNT + 14;
+	int SVG_FE_FLOOD_ELEMENT__CURSOR = SVG_ELEMENT_FEATURE_COUNT + 14;
 
 	/**
 	 * The feature id for the '<em><b>Direction</b></em>' attribute.
@@ -31668,7 +31822,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_FLOOD__DIRECTION = SVG_ELEMENT_FEATURE_COUNT + 15;
+	int SVG_FE_FLOOD_ELEMENT__DIRECTION = SVG_ELEMENT_FEATURE_COUNT + 15;
 
 	/**
 	 * The feature id for the '<em><b>Display</b></em>' attribute.
@@ -31677,7 +31831,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_FLOOD__DISPLAY = SVG_ELEMENT_FEATURE_COUNT + 16;
+	int SVG_FE_FLOOD_ELEMENT__DISPLAY = SVG_ELEMENT_FEATURE_COUNT + 16;
 
 	/**
 	 * The feature id for the '<em><b>Dominant baseline</b></em>' attribute.
@@ -31686,7 +31840,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_FLOOD__DOMINANT_BASELINE = SVG_ELEMENT_FEATURE_COUNT + 17;
+	int SVG_FE_FLOOD_ELEMENT__DOMINANT_BASELINE = SVG_ELEMENT_FEATURE_COUNT + 17;
 
 	/**
 	 * The feature id for the '<em><b>Enable background</b></em>' attribute.
@@ -31695,7 +31849,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_FLOOD__ENABLE_BACKGROUND = SVG_ELEMENT_FEATURE_COUNT + 18;
+	int SVG_FE_FLOOD_ELEMENT__ENABLE_BACKGROUND = SVG_ELEMENT_FEATURE_COUNT + 18;
 
 	/**
 	 * The feature id for the '<em><b>Fill</b></em>' attribute.
@@ -31704,7 +31858,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_FLOOD__FILL = SVG_ELEMENT_FEATURE_COUNT + 19;
+	int SVG_FE_FLOOD_ELEMENT__FILL = SVG_ELEMENT_FEATURE_COUNT + 19;
 
 	/**
 	 * The feature id for the '<em><b>Fill opacity</b></em>' attribute.
@@ -31713,7 +31867,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_FLOOD__FILL_OPACITY = SVG_ELEMENT_FEATURE_COUNT + 20;
+	int SVG_FE_FLOOD_ELEMENT__FILL_OPACITY = SVG_ELEMENT_FEATURE_COUNT + 20;
 
 	/**
 	 * The feature id for the '<em><b>Fill rule</b></em>' attribute.
@@ -31722,7 +31876,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_FLOOD__FILL_RULE = SVG_ELEMENT_FEATURE_COUNT + 21;
+	int SVG_FE_FLOOD_ELEMENT__FILL_RULE = SVG_ELEMENT_FEATURE_COUNT + 21;
 
 	/**
 	 * The feature id for the '<em><b>Filter</b></em>' attribute.
@@ -31731,7 +31885,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_FLOOD__FILTER = SVG_ELEMENT_FEATURE_COUNT + 22;
+	int SVG_FE_FLOOD_ELEMENT__FILTER = SVG_ELEMENT_FEATURE_COUNT + 22;
 
 	/**
 	 * The feature id for the '<em><b>Flood color</b></em>' attribute.
@@ -31740,7 +31894,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_FLOOD__FLOOD_COLOR = SVG_ELEMENT_FEATURE_COUNT + 23;
+	int SVG_FE_FLOOD_ELEMENT__FLOOD_COLOR = SVG_ELEMENT_FEATURE_COUNT + 23;
 
 	/**
 	 * The feature id for the '<em><b>Flood opacity</b></em>' attribute.
@@ -31749,7 +31903,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_FLOOD__FLOOD_OPACITY = SVG_ELEMENT_FEATURE_COUNT + 24;
+	int SVG_FE_FLOOD_ELEMENT__FLOOD_OPACITY = SVG_ELEMENT_FEATURE_COUNT + 24;
 
 	/**
 	 * The feature id for the '<em><b>Font family</b></em>' attribute.
@@ -31758,7 +31912,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_FLOOD__FONT_FAMILY = SVG_ELEMENT_FEATURE_COUNT + 25;
+	int SVG_FE_FLOOD_ELEMENT__FONT_FAMILY = SVG_ELEMENT_FEATURE_COUNT + 25;
 
 	/**
 	 * The feature id for the '<em><b>Font size</b></em>' attribute.
@@ -31767,7 +31921,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_FLOOD__FONT_SIZE = SVG_ELEMENT_FEATURE_COUNT + 26;
+	int SVG_FE_FLOOD_ELEMENT__FONT_SIZE = SVG_ELEMENT_FEATURE_COUNT + 26;
 
 	/**
 	 * The feature id for the '<em><b>Font size adjust</b></em>' attribute.
@@ -31776,7 +31930,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_FLOOD__FONT_SIZE_ADJUST = SVG_ELEMENT_FEATURE_COUNT + 27;
+	int SVG_FE_FLOOD_ELEMENT__FONT_SIZE_ADJUST = SVG_ELEMENT_FEATURE_COUNT + 27;
 
 	/**
 	 * The feature id for the '<em><b>Font stretch</b></em>' attribute.
@@ -31785,7 +31939,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_FLOOD__FONT_STRETCH = SVG_ELEMENT_FEATURE_COUNT + 28;
+	int SVG_FE_FLOOD_ELEMENT__FONT_STRETCH = SVG_ELEMENT_FEATURE_COUNT + 28;
 
 	/**
 	 * The feature id for the '<em><b>Font style</b></em>' attribute.
@@ -31794,7 +31948,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_FLOOD__FONT_STYLE = SVG_ELEMENT_FEATURE_COUNT + 29;
+	int SVG_FE_FLOOD_ELEMENT__FONT_STYLE = SVG_ELEMENT_FEATURE_COUNT + 29;
 
 	/**
 	 * The feature id for the '<em><b>Font variant</b></em>' attribute.
@@ -31803,7 +31957,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_FLOOD__FONT_VARIANT = SVG_ELEMENT_FEATURE_COUNT + 30;
+	int SVG_FE_FLOOD_ELEMENT__FONT_VARIANT = SVG_ELEMENT_FEATURE_COUNT + 30;
 
 	/**
 	 * The feature id for the '<em><b>Font weight</b></em>' attribute.
@@ -31812,7 +31966,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_FLOOD__FONT_WEIGHT = SVG_ELEMENT_FEATURE_COUNT + 31;
+	int SVG_FE_FLOOD_ELEMENT__FONT_WEIGHT = SVG_ELEMENT_FEATURE_COUNT + 31;
 
 	/**
 	 * The feature id for the '<em><b>Glyph orientation horizontal</b></em>' attribute.
@@ -31821,7 +31975,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_FLOOD__GLYPH_ORIENTATION_HORIZONTAL = SVG_ELEMENT_FEATURE_COUNT + 32;
+	int SVG_FE_FLOOD_ELEMENT__GLYPH_ORIENTATION_HORIZONTAL = SVG_ELEMENT_FEATURE_COUNT + 32;
 
 	/**
 	 * The feature id for the '<em><b>Glyph orientation vertical</b></em>' attribute.
@@ -31830,7 +31984,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_FLOOD__GLYPH_ORIENTATION_VERTICAL = SVG_ELEMENT_FEATURE_COUNT + 33;
+	int SVG_FE_FLOOD_ELEMENT__GLYPH_ORIENTATION_VERTICAL = SVG_ELEMENT_FEATURE_COUNT + 33;
 
 	/**
 	 * The feature id for the '<em><b>Image rendering</b></em>' attribute.
@@ -31839,7 +31993,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_FLOOD__IMAGE_RENDERING = SVG_ELEMENT_FEATURE_COUNT + 34;
+	int SVG_FE_FLOOD_ELEMENT__IMAGE_RENDERING = SVG_ELEMENT_FEATURE_COUNT + 34;
 
 	/**
 	 * The feature id for the '<em><b>Kerning</b></em>' attribute.
@@ -31848,7 +32002,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_FLOOD__KERNING = SVG_ELEMENT_FEATURE_COUNT + 35;
+	int SVG_FE_FLOOD_ELEMENT__KERNING = SVG_ELEMENT_FEATURE_COUNT + 35;
 
 	/**
 	 * The feature id for the '<em><b>Letter spacing</b></em>' attribute.
@@ -31857,7 +32011,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_FLOOD__LETTER_SPACING = SVG_ELEMENT_FEATURE_COUNT + 36;
+	int SVG_FE_FLOOD_ELEMENT__LETTER_SPACING = SVG_ELEMENT_FEATURE_COUNT + 36;
 
 	/**
 	 * The feature id for the '<em><b>Lighting color</b></em>' attribute.
@@ -31866,7 +32020,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_FLOOD__LIGHTING_COLOR = SVG_ELEMENT_FEATURE_COUNT + 37;
+	int SVG_FE_FLOOD_ELEMENT__LIGHTING_COLOR = SVG_ELEMENT_FEATURE_COUNT + 37;
 
 	/**
 	 * The feature id for the '<em><b>Marker end</b></em>' attribute.
@@ -31875,7 +32029,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_FLOOD__MARKER_END = SVG_ELEMENT_FEATURE_COUNT + 38;
+	int SVG_FE_FLOOD_ELEMENT__MARKER_END = SVG_ELEMENT_FEATURE_COUNT + 38;
 
 	/**
 	 * The feature id for the '<em><b>Marker mid</b></em>' attribute.
@@ -31884,7 +32038,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_FLOOD__MARKER_MID = SVG_ELEMENT_FEATURE_COUNT + 39;
+	int SVG_FE_FLOOD_ELEMENT__MARKER_MID = SVG_ELEMENT_FEATURE_COUNT + 39;
 
 	/**
 	 * The feature id for the '<em><b>Marker start</b></em>' attribute.
@@ -31893,7 +32047,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_FLOOD__MARKER_START = SVG_ELEMENT_FEATURE_COUNT + 40;
+	int SVG_FE_FLOOD_ELEMENT__MARKER_START = SVG_ELEMENT_FEATURE_COUNT + 40;
 
 	/**
 	 * The feature id for the '<em><b>Masks</b></em>' attribute.
@@ -31902,7 +32056,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_FLOOD__MASKS = SVG_ELEMENT_FEATURE_COUNT + 41;
+	int SVG_FE_FLOOD_ELEMENT__MASKS = SVG_ELEMENT_FEATURE_COUNT + 41;
 
 	/**
 	 * The feature id for the '<em><b>Opacity</b></em>' attribute.
@@ -31911,7 +32065,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_FLOOD__OPACITY = SVG_ELEMENT_FEATURE_COUNT + 42;
+	int SVG_FE_FLOOD_ELEMENT__OPACITY = SVG_ELEMENT_FEATURE_COUNT + 42;
 
 	/**
 	 * The feature id for the '<em><b>Overflow</b></em>' attribute.
@@ -31920,7 +32074,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_FLOOD__OVERFLOW = SVG_ELEMENT_FEATURE_COUNT + 43;
+	int SVG_FE_FLOOD_ELEMENT__OVERFLOW = SVG_ELEMENT_FEATURE_COUNT + 43;
 
 	/**
 	 * The feature id for the '<em><b>Pointer events</b></em>' attribute.
@@ -31929,7 +32083,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_FLOOD__POINTER_EVENTS = SVG_ELEMENT_FEATURE_COUNT + 44;
+	int SVG_FE_FLOOD_ELEMENT__POINTER_EVENTS = SVG_ELEMENT_FEATURE_COUNT + 44;
 
 	/**
 	 * The feature id for the '<em><b>Shape rendering</b></em>' attribute.
@@ -31938,7 +32092,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_FLOOD__SHAPE_RENDERING = SVG_ELEMENT_FEATURE_COUNT + 45;
+	int SVG_FE_FLOOD_ELEMENT__SHAPE_RENDERING = SVG_ELEMENT_FEATURE_COUNT + 45;
 
 	/**
 	 * The feature id for the '<em><b>Stop color</b></em>' attribute.
@@ -31947,7 +32101,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_FLOOD__STOP_COLOR = SVG_ELEMENT_FEATURE_COUNT + 46;
+	int SVG_FE_FLOOD_ELEMENT__STOP_COLOR = SVG_ELEMENT_FEATURE_COUNT + 46;
 
 	/**
 	 * The feature id for the '<em><b>Stop opacity</b></em>' attribute.
@@ -31956,7 +32110,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_FLOOD__STOP_OPACITY = SVG_ELEMENT_FEATURE_COUNT + 47;
+	int SVG_FE_FLOOD_ELEMENT__STOP_OPACITY = SVG_ELEMENT_FEATURE_COUNT + 47;
 
 	/**
 	 * The feature id for the '<em><b>Stroke</b></em>' attribute.
@@ -31965,7 +32119,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_FLOOD__STROKE = SVG_ELEMENT_FEATURE_COUNT + 48;
+	int SVG_FE_FLOOD_ELEMENT__STROKE = SVG_ELEMENT_FEATURE_COUNT + 48;
 
 	/**
 	 * The feature id for the '<em><b>Stroke dasharray</b></em>' attribute.
@@ -31974,7 +32128,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_FLOOD__STROKE_DASHARRAY = SVG_ELEMENT_FEATURE_COUNT + 49;
+	int SVG_FE_FLOOD_ELEMENT__STROKE_DASHARRAY = SVG_ELEMENT_FEATURE_COUNT + 49;
 
 	/**
 	 * The feature id for the '<em><b>Stroke dashoffset</b></em>' attribute.
@@ -31983,7 +32137,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_FLOOD__STROKE_DASHOFFSET = SVG_ELEMENT_FEATURE_COUNT + 50;
+	int SVG_FE_FLOOD_ELEMENT__STROKE_DASHOFFSET = SVG_ELEMENT_FEATURE_COUNT + 50;
 
 	/**
 	 * The feature id for the '<em><b>Stroke linecap</b></em>' attribute.
@@ -31992,7 +32146,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_FLOOD__STROKE_LINECAP = SVG_ELEMENT_FEATURE_COUNT + 51;
+	int SVG_FE_FLOOD_ELEMENT__STROKE_LINECAP = SVG_ELEMENT_FEATURE_COUNT + 51;
 
 	/**
 	 * The feature id for the '<em><b>Stroke linejoin</b></em>' attribute.
@@ -32001,7 +32155,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_FLOOD__STROKE_LINEJOIN = SVG_ELEMENT_FEATURE_COUNT + 52;
+	int SVG_FE_FLOOD_ELEMENT__STROKE_LINEJOIN = SVG_ELEMENT_FEATURE_COUNT + 52;
 
 	/**
 	 * The feature id for the '<em><b>Stroke miterlimit</b></em>' attribute.
@@ -32010,7 +32164,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_FLOOD__STROKE_MITERLIMIT = SVG_ELEMENT_FEATURE_COUNT + 53;
+	int SVG_FE_FLOOD_ELEMENT__STROKE_MITERLIMIT = SVG_ELEMENT_FEATURE_COUNT + 53;
 
 	/**
 	 * The feature id for the '<em><b>Stroke opacity</b></em>' attribute.
@@ -32019,7 +32173,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_FLOOD__STROKE_OPACITY = SVG_ELEMENT_FEATURE_COUNT + 54;
+	int SVG_FE_FLOOD_ELEMENT__STROKE_OPACITY = SVG_ELEMENT_FEATURE_COUNT + 54;
 
 	/**
 	 * The feature id for the '<em><b>Stroke width</b></em>' attribute.
@@ -32028,7 +32182,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_FLOOD__STROKE_WIDTH = SVG_ELEMENT_FEATURE_COUNT + 55;
+	int SVG_FE_FLOOD_ELEMENT__STROKE_WIDTH = SVG_ELEMENT_FEATURE_COUNT + 55;
 
 	/**
 	 * The feature id for the '<em><b>Text anchor</b></em>' attribute.
@@ -32037,7 +32191,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_FLOOD__TEXT_ANCHOR = SVG_ELEMENT_FEATURE_COUNT + 56;
+	int SVG_FE_FLOOD_ELEMENT__TEXT_ANCHOR = SVG_ELEMENT_FEATURE_COUNT + 56;
 
 	/**
 	 * The feature id for the '<em><b>Text decoration</b></em>' attribute.
@@ -32046,7 +32200,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_FLOOD__TEXT_DECORATION = SVG_ELEMENT_FEATURE_COUNT + 57;
+	int SVG_FE_FLOOD_ELEMENT__TEXT_DECORATION = SVG_ELEMENT_FEATURE_COUNT + 57;
 
 	/**
 	 * The feature id for the '<em><b>Text rendering</b></em>' attribute.
@@ -32055,7 +32209,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_FLOOD__TEXT_RENDERING = SVG_ELEMENT_FEATURE_COUNT + 58;
+	int SVG_FE_FLOOD_ELEMENT__TEXT_RENDERING = SVG_ELEMENT_FEATURE_COUNT + 58;
 
 	/**
 	 * The feature id for the '<em><b>Unicode bidi</b></em>' attribute.
@@ -32064,7 +32218,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_FLOOD__UNICODE_BIDI = SVG_ELEMENT_FEATURE_COUNT + 59;
+	int SVG_FE_FLOOD_ELEMENT__UNICODE_BIDI = SVG_ELEMENT_FEATURE_COUNT + 59;
 
 	/**
 	 * The feature id for the '<em><b>Visibility</b></em>' attribute.
@@ -32073,7 +32227,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_FLOOD__VISIBILITY = SVG_ELEMENT_FEATURE_COUNT + 60;
+	int SVG_FE_FLOOD_ELEMENT__VISIBILITY = SVG_ELEMENT_FEATURE_COUNT + 60;
 
 	/**
 	 * The feature id for the '<em><b>Word spacing</b></em>' attribute.
@@ -32082,7 +32236,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_FLOOD__WORD_SPACING = SVG_ELEMENT_FEATURE_COUNT + 61;
+	int SVG_FE_FLOOD_ELEMENT__WORD_SPACING = SVG_ELEMENT_FEATURE_COUNT + 61;
 
 	/**
 	 * The feature id for the '<em><b>Writing mode</b></em>' attribute.
@@ -32091,7 +32245,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_FLOOD__WRITING_MODE = SVG_ELEMENT_FEATURE_COUNT + 62;
+	int SVG_FE_FLOOD_ELEMENT__WRITING_MODE = SVG_ELEMENT_FEATURE_COUNT + 62;
 
 	/**
 	 * The feature id for the '<em><b>X</b></em>' attribute.
@@ -32100,7 +32254,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_FLOOD__X = SVG_ELEMENT_FEATURE_COUNT + 63;
+	int SVG_FE_FLOOD_ELEMENT__X = SVG_ELEMENT_FEATURE_COUNT + 63;
 
 	/**
 	 * The feature id for the '<em><b>Y</b></em>' attribute.
@@ -32109,7 +32263,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_FLOOD__Y = SVG_ELEMENT_FEATURE_COUNT + 64;
+	int SVG_FE_FLOOD_ELEMENT__Y = SVG_ELEMENT_FEATURE_COUNT + 64;
 
 	/**
 	 * The feature id for the '<em><b>Width</b></em>' attribute.
@@ -32118,7 +32272,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_FLOOD__WIDTH = SVG_ELEMENT_FEATURE_COUNT + 65;
+	int SVG_FE_FLOOD_ELEMENT__WIDTH = SVG_ELEMENT_FEATURE_COUNT + 65;
 
 	/**
 	 * The feature id for the '<em><b>Height</b></em>' attribute.
@@ -32127,7 +32281,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_FLOOD__HEIGHT = SVG_ELEMENT_FEATURE_COUNT + 66;
+	int SVG_FE_FLOOD_ELEMENT__HEIGHT = SVG_ELEMENT_FEATURE_COUNT + 66;
 
 	/**
 	 * The feature id for the '<em><b>Result</b></em>' attribute.
@@ -32136,7 +32290,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_FLOOD__RESULT = SVG_ELEMENT_FEATURE_COUNT + 67;
+	int SVG_FE_FLOOD_ELEMENT__RESULT = SVG_ELEMENT_FEATURE_COUNT + 67;
 
 	/**
 	 * The feature id for the '<em><b>In</b></em>' attribute.
@@ -32145,7 +32299,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_FLOOD__IN = SVG_ELEMENT_FEATURE_COUNT + 68;
+	int SVG_FE_FLOOD_ELEMENT__IN = SVG_ELEMENT_FEATURE_COUNT + 68;
 
 	/**
 	 * The feature id for the '<em><b>Children</b></em>' containment reference list.
@@ -32154,7 +32308,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_FLOOD__CHILDREN = SVG_ELEMENT_FEATURE_COUNT + 69;
+	int SVG_FE_FLOOD_ELEMENT__CHILDREN = SVG_ELEMENT_FEATURE_COUNT + 69;
 
 	/**
 	 * The feature id for the '<em><b>Class</b></em>' attribute.
@@ -32163,7 +32317,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_FLOOD__CLASS = SVG_ELEMENT_FEATURE_COUNT + 70;
+	int SVG_FE_FLOOD_ELEMENT__CLASS = SVG_ELEMENT_FEATURE_COUNT + 70;
 
 	/**
 	 * The feature id for the '<em><b>Style</b></em>' attribute.
@@ -32172,26 +32326,26 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_FLOOD__STYLE = SVG_ELEMENT_FEATURE_COUNT + 71;
+	int SVG_FE_FLOOD_ELEMENT__STYLE = SVG_ELEMENT_FEATURE_COUNT + 71;
 
 	/**
-	 * The number of structural features of the '<em>Fe Flood</em>' class.
+	 * The number of structural features of the '<em>Fe Flood Element</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_FLOOD_FEATURE_COUNT = SVG_ELEMENT_FEATURE_COUNT + 72;
+	int SVG_FE_FLOOD_ELEMENT_FEATURE_COUNT = SVG_ELEMENT_FEATURE_COUNT + 72;
 
 	/**
-	 * The meta object id for the '{@link at.bestsolution.efxclipse.formats.svg.svg.impl.SvgFeGaussianBlurImpl <em>Fe Gaussian Blur</em>}' class.
+	 * The meta object id for the '{@link at.bestsolution.efxclipse.formats.svg.svg.impl.SvgFeGaussianBlurElementImpl <em>Fe Gaussian Blur Element</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see at.bestsolution.efxclipse.formats.svg.svg.impl.SvgFeGaussianBlurImpl
-	 * @see at.bestsolution.efxclipse.formats.svg.svg.impl.SvgPackageImpl#getSvgFeGaussianBlur()
+	 * @see at.bestsolution.efxclipse.formats.svg.svg.impl.SvgFeGaussianBlurElementImpl
+	 * @see at.bestsolution.efxclipse.formats.svg.svg.impl.SvgPackageImpl#getSvgFeGaussianBlurElement()
 	 * @generated
 	 */
-	int SVG_FE_GAUSSIAN_BLUR = 73;
+	int SVG_FE_GAUSSIAN_BLUR_ELEMENT = 74;
 
 	/**
 	 * The feature id for the '<em><b>Id</b></em>' attribute.
@@ -32200,7 +32354,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_GAUSSIAN_BLUR__ID = SVG_ELEMENT_FEATURE_COUNT + 0;
+	int SVG_FE_GAUSSIAN_BLUR_ELEMENT__ID = SVG_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Xml base</b></em>' attribute.
@@ -32209,7 +32363,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_GAUSSIAN_BLUR__XML_BASE = SVG_ELEMENT_FEATURE_COUNT + 1;
+	int SVG_FE_GAUSSIAN_BLUR_ELEMENT__XML_BASE = SVG_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Xml lang</b></em>' attribute.
@@ -32218,7 +32372,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_GAUSSIAN_BLUR__XML_LANG = SVG_ELEMENT_FEATURE_COUNT + 2;
+	int SVG_FE_GAUSSIAN_BLUR_ELEMENT__XML_LANG = SVG_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Xml space</b></em>' attribute.
@@ -32227,7 +32381,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_GAUSSIAN_BLUR__XML_SPACE = SVG_ELEMENT_FEATURE_COUNT + 3;
+	int SVG_FE_GAUSSIAN_BLUR_ELEMENT__XML_SPACE = SVG_ELEMENT_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Alignment baseline</b></em>' attribute.
@@ -32236,7 +32390,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_GAUSSIAN_BLUR__ALIGNMENT_BASELINE = SVG_ELEMENT_FEATURE_COUNT + 4;
+	int SVG_FE_GAUSSIAN_BLUR_ELEMENT__ALIGNMENT_BASELINE = SVG_ELEMENT_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Baseline shift</b></em>' attribute.
@@ -32245,7 +32399,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_GAUSSIAN_BLUR__BASELINE_SHIFT = SVG_ELEMENT_FEATURE_COUNT + 5;
+	int SVG_FE_GAUSSIAN_BLUR_ELEMENT__BASELINE_SHIFT = SVG_ELEMENT_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>Clip</b></em>' attribute.
@@ -32254,7 +32408,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_GAUSSIAN_BLUR__CLIP = SVG_ELEMENT_FEATURE_COUNT + 6;
+	int SVG_FE_GAUSSIAN_BLUR_ELEMENT__CLIP = SVG_ELEMENT_FEATURE_COUNT + 6;
 
 	/**
 	 * The feature id for the '<em><b>Clip path</b></em>' attribute.
@@ -32263,7 +32417,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_GAUSSIAN_BLUR__CLIP_PATH = SVG_ELEMENT_FEATURE_COUNT + 7;
+	int SVG_FE_GAUSSIAN_BLUR_ELEMENT__CLIP_PATH = SVG_ELEMENT_FEATURE_COUNT + 7;
 
 	/**
 	 * The feature id for the '<em><b>Clip rule</b></em>' attribute.
@@ -32272,7 +32426,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_GAUSSIAN_BLUR__CLIP_RULE = SVG_ELEMENT_FEATURE_COUNT + 8;
+	int SVG_FE_GAUSSIAN_BLUR_ELEMENT__CLIP_RULE = SVG_ELEMENT_FEATURE_COUNT + 8;
 
 	/**
 	 * The feature id for the '<em><b>Color</b></em>' attribute.
@@ -32281,7 +32435,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_GAUSSIAN_BLUR__COLOR = SVG_ELEMENT_FEATURE_COUNT + 9;
+	int SVG_FE_GAUSSIAN_BLUR_ELEMENT__COLOR = SVG_ELEMENT_FEATURE_COUNT + 9;
 
 	/**
 	 * The feature id for the '<em><b>Color interpolation</b></em>' attribute.
@@ -32290,7 +32444,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_GAUSSIAN_BLUR__COLOR_INTERPOLATION = SVG_ELEMENT_FEATURE_COUNT + 10;
+	int SVG_FE_GAUSSIAN_BLUR_ELEMENT__COLOR_INTERPOLATION = SVG_ELEMENT_FEATURE_COUNT + 10;
 
 	/**
 	 * The feature id for the '<em><b>Color interpolation filters</b></em>' attribute.
@@ -32299,7 +32453,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_GAUSSIAN_BLUR__COLOR_INTERPOLATION_FILTERS = SVG_ELEMENT_FEATURE_COUNT + 11;
+	int SVG_FE_GAUSSIAN_BLUR_ELEMENT__COLOR_INTERPOLATION_FILTERS = SVG_ELEMENT_FEATURE_COUNT + 11;
 
 	/**
 	 * The feature id for the '<em><b>Color profile</b></em>' attribute.
@@ -32308,7 +32462,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_GAUSSIAN_BLUR__COLOR_PROFILE = SVG_ELEMENT_FEATURE_COUNT + 12;
+	int SVG_FE_GAUSSIAN_BLUR_ELEMENT__COLOR_PROFILE = SVG_ELEMENT_FEATURE_COUNT + 12;
 
 	/**
 	 * The feature id for the '<em><b>Color rendering</b></em>' attribute.
@@ -32317,7 +32471,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_GAUSSIAN_BLUR__COLOR_RENDERING = SVG_ELEMENT_FEATURE_COUNT + 13;
+	int SVG_FE_GAUSSIAN_BLUR_ELEMENT__COLOR_RENDERING = SVG_ELEMENT_FEATURE_COUNT + 13;
 
 	/**
 	 * The feature id for the '<em><b>Cursor</b></em>' attribute.
@@ -32326,7 +32480,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_GAUSSIAN_BLUR__CURSOR = SVG_ELEMENT_FEATURE_COUNT + 14;
+	int SVG_FE_GAUSSIAN_BLUR_ELEMENT__CURSOR = SVG_ELEMENT_FEATURE_COUNT + 14;
 
 	/**
 	 * The feature id for the '<em><b>Direction</b></em>' attribute.
@@ -32335,7 +32489,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_GAUSSIAN_BLUR__DIRECTION = SVG_ELEMENT_FEATURE_COUNT + 15;
+	int SVG_FE_GAUSSIAN_BLUR_ELEMENT__DIRECTION = SVG_ELEMENT_FEATURE_COUNT + 15;
 
 	/**
 	 * The feature id for the '<em><b>Display</b></em>' attribute.
@@ -32344,7 +32498,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_GAUSSIAN_BLUR__DISPLAY = SVG_ELEMENT_FEATURE_COUNT + 16;
+	int SVG_FE_GAUSSIAN_BLUR_ELEMENT__DISPLAY = SVG_ELEMENT_FEATURE_COUNT + 16;
 
 	/**
 	 * The feature id for the '<em><b>Dominant baseline</b></em>' attribute.
@@ -32353,7 +32507,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_GAUSSIAN_BLUR__DOMINANT_BASELINE = SVG_ELEMENT_FEATURE_COUNT + 17;
+	int SVG_FE_GAUSSIAN_BLUR_ELEMENT__DOMINANT_BASELINE = SVG_ELEMENT_FEATURE_COUNT + 17;
 
 	/**
 	 * The feature id for the '<em><b>Enable background</b></em>' attribute.
@@ -32362,7 +32516,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_GAUSSIAN_BLUR__ENABLE_BACKGROUND = SVG_ELEMENT_FEATURE_COUNT + 18;
+	int SVG_FE_GAUSSIAN_BLUR_ELEMENT__ENABLE_BACKGROUND = SVG_ELEMENT_FEATURE_COUNT + 18;
 
 	/**
 	 * The feature id for the '<em><b>Fill</b></em>' attribute.
@@ -32371,7 +32525,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_GAUSSIAN_BLUR__FILL = SVG_ELEMENT_FEATURE_COUNT + 19;
+	int SVG_FE_GAUSSIAN_BLUR_ELEMENT__FILL = SVG_ELEMENT_FEATURE_COUNT + 19;
 
 	/**
 	 * The feature id for the '<em><b>Fill opacity</b></em>' attribute.
@@ -32380,7 +32534,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_GAUSSIAN_BLUR__FILL_OPACITY = SVG_ELEMENT_FEATURE_COUNT + 20;
+	int SVG_FE_GAUSSIAN_BLUR_ELEMENT__FILL_OPACITY = SVG_ELEMENT_FEATURE_COUNT + 20;
 
 	/**
 	 * The feature id for the '<em><b>Fill rule</b></em>' attribute.
@@ -32389,7 +32543,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_GAUSSIAN_BLUR__FILL_RULE = SVG_ELEMENT_FEATURE_COUNT + 21;
+	int SVG_FE_GAUSSIAN_BLUR_ELEMENT__FILL_RULE = SVG_ELEMENT_FEATURE_COUNT + 21;
 
 	/**
 	 * The feature id for the '<em><b>Filter</b></em>' attribute.
@@ -32398,7 +32552,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_GAUSSIAN_BLUR__FILTER = SVG_ELEMENT_FEATURE_COUNT + 22;
+	int SVG_FE_GAUSSIAN_BLUR_ELEMENT__FILTER = SVG_ELEMENT_FEATURE_COUNT + 22;
 
 	/**
 	 * The feature id for the '<em><b>Flood color</b></em>' attribute.
@@ -32407,7 +32561,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_GAUSSIAN_BLUR__FLOOD_COLOR = SVG_ELEMENT_FEATURE_COUNT + 23;
+	int SVG_FE_GAUSSIAN_BLUR_ELEMENT__FLOOD_COLOR = SVG_ELEMENT_FEATURE_COUNT + 23;
 
 	/**
 	 * The feature id for the '<em><b>Flood opacity</b></em>' attribute.
@@ -32416,7 +32570,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_GAUSSIAN_BLUR__FLOOD_OPACITY = SVG_ELEMENT_FEATURE_COUNT + 24;
+	int SVG_FE_GAUSSIAN_BLUR_ELEMENT__FLOOD_OPACITY = SVG_ELEMENT_FEATURE_COUNT + 24;
 
 	/**
 	 * The feature id for the '<em><b>Font family</b></em>' attribute.
@@ -32425,7 +32579,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_GAUSSIAN_BLUR__FONT_FAMILY = SVG_ELEMENT_FEATURE_COUNT + 25;
+	int SVG_FE_GAUSSIAN_BLUR_ELEMENT__FONT_FAMILY = SVG_ELEMENT_FEATURE_COUNT + 25;
 
 	/**
 	 * The feature id for the '<em><b>Font size</b></em>' attribute.
@@ -32434,7 +32588,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_GAUSSIAN_BLUR__FONT_SIZE = SVG_ELEMENT_FEATURE_COUNT + 26;
+	int SVG_FE_GAUSSIAN_BLUR_ELEMENT__FONT_SIZE = SVG_ELEMENT_FEATURE_COUNT + 26;
 
 	/**
 	 * The feature id for the '<em><b>Font size adjust</b></em>' attribute.
@@ -32443,7 +32597,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_GAUSSIAN_BLUR__FONT_SIZE_ADJUST = SVG_ELEMENT_FEATURE_COUNT + 27;
+	int SVG_FE_GAUSSIAN_BLUR_ELEMENT__FONT_SIZE_ADJUST = SVG_ELEMENT_FEATURE_COUNT + 27;
 
 	/**
 	 * The feature id for the '<em><b>Font stretch</b></em>' attribute.
@@ -32452,7 +32606,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_GAUSSIAN_BLUR__FONT_STRETCH = SVG_ELEMENT_FEATURE_COUNT + 28;
+	int SVG_FE_GAUSSIAN_BLUR_ELEMENT__FONT_STRETCH = SVG_ELEMENT_FEATURE_COUNT + 28;
 
 	/**
 	 * The feature id for the '<em><b>Font style</b></em>' attribute.
@@ -32461,7 +32615,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_GAUSSIAN_BLUR__FONT_STYLE = SVG_ELEMENT_FEATURE_COUNT + 29;
+	int SVG_FE_GAUSSIAN_BLUR_ELEMENT__FONT_STYLE = SVG_ELEMENT_FEATURE_COUNT + 29;
 
 	/**
 	 * The feature id for the '<em><b>Font variant</b></em>' attribute.
@@ -32470,7 +32624,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_GAUSSIAN_BLUR__FONT_VARIANT = SVG_ELEMENT_FEATURE_COUNT + 30;
+	int SVG_FE_GAUSSIAN_BLUR_ELEMENT__FONT_VARIANT = SVG_ELEMENT_FEATURE_COUNT + 30;
 
 	/**
 	 * The feature id for the '<em><b>Font weight</b></em>' attribute.
@@ -32479,7 +32633,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_GAUSSIAN_BLUR__FONT_WEIGHT = SVG_ELEMENT_FEATURE_COUNT + 31;
+	int SVG_FE_GAUSSIAN_BLUR_ELEMENT__FONT_WEIGHT = SVG_ELEMENT_FEATURE_COUNT + 31;
 
 	/**
 	 * The feature id for the '<em><b>Glyph orientation horizontal</b></em>' attribute.
@@ -32488,7 +32642,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_GAUSSIAN_BLUR__GLYPH_ORIENTATION_HORIZONTAL = SVG_ELEMENT_FEATURE_COUNT + 32;
+	int SVG_FE_GAUSSIAN_BLUR_ELEMENT__GLYPH_ORIENTATION_HORIZONTAL = SVG_ELEMENT_FEATURE_COUNT + 32;
 
 	/**
 	 * The feature id for the '<em><b>Glyph orientation vertical</b></em>' attribute.
@@ -32497,7 +32651,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_GAUSSIAN_BLUR__GLYPH_ORIENTATION_VERTICAL = SVG_ELEMENT_FEATURE_COUNT + 33;
+	int SVG_FE_GAUSSIAN_BLUR_ELEMENT__GLYPH_ORIENTATION_VERTICAL = SVG_ELEMENT_FEATURE_COUNT + 33;
 
 	/**
 	 * The feature id for the '<em><b>Image rendering</b></em>' attribute.
@@ -32506,7 +32660,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_GAUSSIAN_BLUR__IMAGE_RENDERING = SVG_ELEMENT_FEATURE_COUNT + 34;
+	int SVG_FE_GAUSSIAN_BLUR_ELEMENT__IMAGE_RENDERING = SVG_ELEMENT_FEATURE_COUNT + 34;
 
 	/**
 	 * The feature id for the '<em><b>Kerning</b></em>' attribute.
@@ -32515,7 +32669,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_GAUSSIAN_BLUR__KERNING = SVG_ELEMENT_FEATURE_COUNT + 35;
+	int SVG_FE_GAUSSIAN_BLUR_ELEMENT__KERNING = SVG_ELEMENT_FEATURE_COUNT + 35;
 
 	/**
 	 * The feature id for the '<em><b>Letter spacing</b></em>' attribute.
@@ -32524,7 +32678,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_GAUSSIAN_BLUR__LETTER_SPACING = SVG_ELEMENT_FEATURE_COUNT + 36;
+	int SVG_FE_GAUSSIAN_BLUR_ELEMENT__LETTER_SPACING = SVG_ELEMENT_FEATURE_COUNT + 36;
 
 	/**
 	 * The feature id for the '<em><b>Lighting color</b></em>' attribute.
@@ -32533,7 +32687,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_GAUSSIAN_BLUR__LIGHTING_COLOR = SVG_ELEMENT_FEATURE_COUNT + 37;
+	int SVG_FE_GAUSSIAN_BLUR_ELEMENT__LIGHTING_COLOR = SVG_ELEMENT_FEATURE_COUNT + 37;
 
 	/**
 	 * The feature id for the '<em><b>Marker end</b></em>' attribute.
@@ -32542,7 +32696,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_GAUSSIAN_BLUR__MARKER_END = SVG_ELEMENT_FEATURE_COUNT + 38;
+	int SVG_FE_GAUSSIAN_BLUR_ELEMENT__MARKER_END = SVG_ELEMENT_FEATURE_COUNT + 38;
 
 	/**
 	 * The feature id for the '<em><b>Marker mid</b></em>' attribute.
@@ -32551,7 +32705,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_GAUSSIAN_BLUR__MARKER_MID = SVG_ELEMENT_FEATURE_COUNT + 39;
+	int SVG_FE_GAUSSIAN_BLUR_ELEMENT__MARKER_MID = SVG_ELEMENT_FEATURE_COUNT + 39;
 
 	/**
 	 * The feature id for the '<em><b>Marker start</b></em>' attribute.
@@ -32560,7 +32714,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_GAUSSIAN_BLUR__MARKER_START = SVG_ELEMENT_FEATURE_COUNT + 40;
+	int SVG_FE_GAUSSIAN_BLUR_ELEMENT__MARKER_START = SVG_ELEMENT_FEATURE_COUNT + 40;
 
 	/**
 	 * The feature id for the '<em><b>Masks</b></em>' attribute.
@@ -32569,7 +32723,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_GAUSSIAN_BLUR__MASKS = SVG_ELEMENT_FEATURE_COUNT + 41;
+	int SVG_FE_GAUSSIAN_BLUR_ELEMENT__MASKS = SVG_ELEMENT_FEATURE_COUNT + 41;
 
 	/**
 	 * The feature id for the '<em><b>Opacity</b></em>' attribute.
@@ -32578,7 +32732,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_GAUSSIAN_BLUR__OPACITY = SVG_ELEMENT_FEATURE_COUNT + 42;
+	int SVG_FE_GAUSSIAN_BLUR_ELEMENT__OPACITY = SVG_ELEMENT_FEATURE_COUNT + 42;
 
 	/**
 	 * The feature id for the '<em><b>Overflow</b></em>' attribute.
@@ -32587,7 +32741,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_GAUSSIAN_BLUR__OVERFLOW = SVG_ELEMENT_FEATURE_COUNT + 43;
+	int SVG_FE_GAUSSIAN_BLUR_ELEMENT__OVERFLOW = SVG_ELEMENT_FEATURE_COUNT + 43;
 
 	/**
 	 * The feature id for the '<em><b>Pointer events</b></em>' attribute.
@@ -32596,7 +32750,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_GAUSSIAN_BLUR__POINTER_EVENTS = SVG_ELEMENT_FEATURE_COUNT + 44;
+	int SVG_FE_GAUSSIAN_BLUR_ELEMENT__POINTER_EVENTS = SVG_ELEMENT_FEATURE_COUNT + 44;
 
 	/**
 	 * The feature id for the '<em><b>Shape rendering</b></em>' attribute.
@@ -32605,7 +32759,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_GAUSSIAN_BLUR__SHAPE_RENDERING = SVG_ELEMENT_FEATURE_COUNT + 45;
+	int SVG_FE_GAUSSIAN_BLUR_ELEMENT__SHAPE_RENDERING = SVG_ELEMENT_FEATURE_COUNT + 45;
 
 	/**
 	 * The feature id for the '<em><b>Stop color</b></em>' attribute.
@@ -32614,7 +32768,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_GAUSSIAN_BLUR__STOP_COLOR = SVG_ELEMENT_FEATURE_COUNT + 46;
+	int SVG_FE_GAUSSIAN_BLUR_ELEMENT__STOP_COLOR = SVG_ELEMENT_FEATURE_COUNT + 46;
 
 	/**
 	 * The feature id for the '<em><b>Stop opacity</b></em>' attribute.
@@ -32623,7 +32777,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_GAUSSIAN_BLUR__STOP_OPACITY = SVG_ELEMENT_FEATURE_COUNT + 47;
+	int SVG_FE_GAUSSIAN_BLUR_ELEMENT__STOP_OPACITY = SVG_ELEMENT_FEATURE_COUNT + 47;
 
 	/**
 	 * The feature id for the '<em><b>Stroke</b></em>' attribute.
@@ -32632,7 +32786,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_GAUSSIAN_BLUR__STROKE = SVG_ELEMENT_FEATURE_COUNT + 48;
+	int SVG_FE_GAUSSIAN_BLUR_ELEMENT__STROKE = SVG_ELEMENT_FEATURE_COUNT + 48;
 
 	/**
 	 * The feature id for the '<em><b>Stroke dasharray</b></em>' attribute.
@@ -32641,7 +32795,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_GAUSSIAN_BLUR__STROKE_DASHARRAY = SVG_ELEMENT_FEATURE_COUNT + 49;
+	int SVG_FE_GAUSSIAN_BLUR_ELEMENT__STROKE_DASHARRAY = SVG_ELEMENT_FEATURE_COUNT + 49;
 
 	/**
 	 * The feature id for the '<em><b>Stroke dashoffset</b></em>' attribute.
@@ -32650,7 +32804,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_GAUSSIAN_BLUR__STROKE_DASHOFFSET = SVG_ELEMENT_FEATURE_COUNT + 50;
+	int SVG_FE_GAUSSIAN_BLUR_ELEMENT__STROKE_DASHOFFSET = SVG_ELEMENT_FEATURE_COUNT + 50;
 
 	/**
 	 * The feature id for the '<em><b>Stroke linecap</b></em>' attribute.
@@ -32659,7 +32813,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_GAUSSIAN_BLUR__STROKE_LINECAP = SVG_ELEMENT_FEATURE_COUNT + 51;
+	int SVG_FE_GAUSSIAN_BLUR_ELEMENT__STROKE_LINECAP = SVG_ELEMENT_FEATURE_COUNT + 51;
 
 	/**
 	 * The feature id for the '<em><b>Stroke linejoin</b></em>' attribute.
@@ -32668,7 +32822,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_GAUSSIAN_BLUR__STROKE_LINEJOIN = SVG_ELEMENT_FEATURE_COUNT + 52;
+	int SVG_FE_GAUSSIAN_BLUR_ELEMENT__STROKE_LINEJOIN = SVG_ELEMENT_FEATURE_COUNT + 52;
 
 	/**
 	 * The feature id for the '<em><b>Stroke miterlimit</b></em>' attribute.
@@ -32677,7 +32831,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_GAUSSIAN_BLUR__STROKE_MITERLIMIT = SVG_ELEMENT_FEATURE_COUNT + 53;
+	int SVG_FE_GAUSSIAN_BLUR_ELEMENT__STROKE_MITERLIMIT = SVG_ELEMENT_FEATURE_COUNT + 53;
 
 	/**
 	 * The feature id for the '<em><b>Stroke opacity</b></em>' attribute.
@@ -32686,7 +32840,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_GAUSSIAN_BLUR__STROKE_OPACITY = SVG_ELEMENT_FEATURE_COUNT + 54;
+	int SVG_FE_GAUSSIAN_BLUR_ELEMENT__STROKE_OPACITY = SVG_ELEMENT_FEATURE_COUNT + 54;
 
 	/**
 	 * The feature id for the '<em><b>Stroke width</b></em>' attribute.
@@ -32695,7 +32849,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_GAUSSIAN_BLUR__STROKE_WIDTH = SVG_ELEMENT_FEATURE_COUNT + 55;
+	int SVG_FE_GAUSSIAN_BLUR_ELEMENT__STROKE_WIDTH = SVG_ELEMENT_FEATURE_COUNT + 55;
 
 	/**
 	 * The feature id for the '<em><b>Text anchor</b></em>' attribute.
@@ -32704,7 +32858,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_GAUSSIAN_BLUR__TEXT_ANCHOR = SVG_ELEMENT_FEATURE_COUNT + 56;
+	int SVG_FE_GAUSSIAN_BLUR_ELEMENT__TEXT_ANCHOR = SVG_ELEMENT_FEATURE_COUNT + 56;
 
 	/**
 	 * The feature id for the '<em><b>Text decoration</b></em>' attribute.
@@ -32713,7 +32867,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_GAUSSIAN_BLUR__TEXT_DECORATION = SVG_ELEMENT_FEATURE_COUNT + 57;
+	int SVG_FE_GAUSSIAN_BLUR_ELEMENT__TEXT_DECORATION = SVG_ELEMENT_FEATURE_COUNT + 57;
 
 	/**
 	 * The feature id for the '<em><b>Text rendering</b></em>' attribute.
@@ -32722,7 +32876,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_GAUSSIAN_BLUR__TEXT_RENDERING = SVG_ELEMENT_FEATURE_COUNT + 58;
+	int SVG_FE_GAUSSIAN_BLUR_ELEMENT__TEXT_RENDERING = SVG_ELEMENT_FEATURE_COUNT + 58;
 
 	/**
 	 * The feature id for the '<em><b>Unicode bidi</b></em>' attribute.
@@ -32731,7 +32885,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_GAUSSIAN_BLUR__UNICODE_BIDI = SVG_ELEMENT_FEATURE_COUNT + 59;
+	int SVG_FE_GAUSSIAN_BLUR_ELEMENT__UNICODE_BIDI = SVG_ELEMENT_FEATURE_COUNT + 59;
 
 	/**
 	 * The feature id for the '<em><b>Visibility</b></em>' attribute.
@@ -32740,7 +32894,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_GAUSSIAN_BLUR__VISIBILITY = SVG_ELEMENT_FEATURE_COUNT + 60;
+	int SVG_FE_GAUSSIAN_BLUR_ELEMENT__VISIBILITY = SVG_ELEMENT_FEATURE_COUNT + 60;
 
 	/**
 	 * The feature id for the '<em><b>Word spacing</b></em>' attribute.
@@ -32749,7 +32903,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_GAUSSIAN_BLUR__WORD_SPACING = SVG_ELEMENT_FEATURE_COUNT + 61;
+	int SVG_FE_GAUSSIAN_BLUR_ELEMENT__WORD_SPACING = SVG_ELEMENT_FEATURE_COUNT + 61;
 
 	/**
 	 * The feature id for the '<em><b>Writing mode</b></em>' attribute.
@@ -32758,7 +32912,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_GAUSSIAN_BLUR__WRITING_MODE = SVG_ELEMENT_FEATURE_COUNT + 62;
+	int SVG_FE_GAUSSIAN_BLUR_ELEMENT__WRITING_MODE = SVG_ELEMENT_FEATURE_COUNT + 62;
 
 	/**
 	 * The feature id for the '<em><b>X</b></em>' attribute.
@@ -32767,7 +32921,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_GAUSSIAN_BLUR__X = SVG_ELEMENT_FEATURE_COUNT + 63;
+	int SVG_FE_GAUSSIAN_BLUR_ELEMENT__X = SVG_ELEMENT_FEATURE_COUNT + 63;
 
 	/**
 	 * The feature id for the '<em><b>Y</b></em>' attribute.
@@ -32776,7 +32930,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_GAUSSIAN_BLUR__Y = SVG_ELEMENT_FEATURE_COUNT + 64;
+	int SVG_FE_GAUSSIAN_BLUR_ELEMENT__Y = SVG_ELEMENT_FEATURE_COUNT + 64;
 
 	/**
 	 * The feature id for the '<em><b>Width</b></em>' attribute.
@@ -32785,7 +32939,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_GAUSSIAN_BLUR__WIDTH = SVG_ELEMENT_FEATURE_COUNT + 65;
+	int SVG_FE_GAUSSIAN_BLUR_ELEMENT__WIDTH = SVG_ELEMENT_FEATURE_COUNT + 65;
 
 	/**
 	 * The feature id for the '<em><b>Height</b></em>' attribute.
@@ -32794,7 +32948,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_GAUSSIAN_BLUR__HEIGHT = SVG_ELEMENT_FEATURE_COUNT + 66;
+	int SVG_FE_GAUSSIAN_BLUR_ELEMENT__HEIGHT = SVG_ELEMENT_FEATURE_COUNT + 66;
 
 	/**
 	 * The feature id for the '<em><b>Result</b></em>' attribute.
@@ -32803,7 +32957,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_GAUSSIAN_BLUR__RESULT = SVG_ELEMENT_FEATURE_COUNT + 67;
+	int SVG_FE_GAUSSIAN_BLUR_ELEMENT__RESULT = SVG_ELEMENT_FEATURE_COUNT + 67;
 
 	/**
 	 * The feature id for the '<em><b>In</b></em>' attribute.
@@ -32812,7 +32966,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_GAUSSIAN_BLUR__IN = SVG_ELEMENT_FEATURE_COUNT + 68;
+	int SVG_FE_GAUSSIAN_BLUR_ELEMENT__IN = SVG_ELEMENT_FEATURE_COUNT + 68;
 
 	/**
 	 * The feature id for the '<em><b>Children</b></em>' containment reference list.
@@ -32821,7 +32975,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_GAUSSIAN_BLUR__CHILDREN = SVG_ELEMENT_FEATURE_COUNT + 69;
+	int SVG_FE_GAUSSIAN_BLUR_ELEMENT__CHILDREN = SVG_ELEMENT_FEATURE_COUNT + 69;
 
 	/**
 	 * The feature id for the '<em><b>Class</b></em>' attribute.
@@ -32830,7 +32984,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_GAUSSIAN_BLUR__CLASS = SVG_ELEMENT_FEATURE_COUNT + 70;
+	int SVG_FE_GAUSSIAN_BLUR_ELEMENT__CLASS = SVG_ELEMENT_FEATURE_COUNT + 70;
 
 	/**
 	 * The feature id for the '<em><b>Style</b></em>' attribute.
@@ -32839,7 +32993,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_GAUSSIAN_BLUR__STYLE = SVG_ELEMENT_FEATURE_COUNT + 71;
+	int SVG_FE_GAUSSIAN_BLUR_ELEMENT__STYLE = SVG_ELEMENT_FEATURE_COUNT + 71;
 
 	/**
 	 * The feature id for the '<em><b>Std Deviation</b></em>' attribute.
@@ -32848,26 +33002,26 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_GAUSSIAN_BLUR__STD_DEVIATION = SVG_ELEMENT_FEATURE_COUNT + 72;
+	int SVG_FE_GAUSSIAN_BLUR_ELEMENT__STD_DEVIATION = SVG_ELEMENT_FEATURE_COUNT + 72;
 
 	/**
-	 * The number of structural features of the '<em>Fe Gaussian Blur</em>' class.
+	 * The number of structural features of the '<em>Fe Gaussian Blur Element</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_GAUSSIAN_BLUR_FEATURE_COUNT = SVG_ELEMENT_FEATURE_COUNT + 73;
+	int SVG_FE_GAUSSIAN_BLUR_ELEMENT_FEATURE_COUNT = SVG_ELEMENT_FEATURE_COUNT + 73;
 
 	/**
-	 * The meta object id for the '{@link at.bestsolution.efxclipse.formats.svg.svg.impl.SvgFeImageImpl <em>Fe Image</em>}' class.
+	 * The meta object id for the '{@link at.bestsolution.efxclipse.formats.svg.svg.impl.SvgFeImageElementImpl <em>Fe Image Element</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see at.bestsolution.efxclipse.formats.svg.svg.impl.SvgFeImageImpl
-	 * @see at.bestsolution.efxclipse.formats.svg.svg.impl.SvgPackageImpl#getSvgFeImage()
+	 * @see at.bestsolution.efxclipse.formats.svg.svg.impl.SvgFeImageElementImpl
+	 * @see at.bestsolution.efxclipse.formats.svg.svg.impl.SvgPackageImpl#getSvgFeImageElement()
 	 * @generated
 	 */
-	int SVG_FE_IMAGE = 74;
+	int SVG_FE_IMAGE_ELEMENT = 75;
 
 	/**
 	 * The feature id for the '<em><b>Id</b></em>' attribute.
@@ -32876,7 +33030,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_IMAGE__ID = SVG_ELEMENT_FEATURE_COUNT + 0;
+	int SVG_FE_IMAGE_ELEMENT__ID = SVG_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Xml base</b></em>' attribute.
@@ -32885,7 +33039,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_IMAGE__XML_BASE = SVG_ELEMENT_FEATURE_COUNT + 1;
+	int SVG_FE_IMAGE_ELEMENT__XML_BASE = SVG_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Xml lang</b></em>' attribute.
@@ -32894,7 +33048,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_IMAGE__XML_LANG = SVG_ELEMENT_FEATURE_COUNT + 2;
+	int SVG_FE_IMAGE_ELEMENT__XML_LANG = SVG_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Xml space</b></em>' attribute.
@@ -32903,7 +33057,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_IMAGE__XML_SPACE = SVG_ELEMENT_FEATURE_COUNT + 3;
+	int SVG_FE_IMAGE_ELEMENT__XML_SPACE = SVG_ELEMENT_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Alignment baseline</b></em>' attribute.
@@ -32912,7 +33066,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_IMAGE__ALIGNMENT_BASELINE = SVG_ELEMENT_FEATURE_COUNT + 4;
+	int SVG_FE_IMAGE_ELEMENT__ALIGNMENT_BASELINE = SVG_ELEMENT_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Baseline shift</b></em>' attribute.
@@ -32921,7 +33075,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_IMAGE__BASELINE_SHIFT = SVG_ELEMENT_FEATURE_COUNT + 5;
+	int SVG_FE_IMAGE_ELEMENT__BASELINE_SHIFT = SVG_ELEMENT_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>Clip</b></em>' attribute.
@@ -32930,7 +33084,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_IMAGE__CLIP = SVG_ELEMENT_FEATURE_COUNT + 6;
+	int SVG_FE_IMAGE_ELEMENT__CLIP = SVG_ELEMENT_FEATURE_COUNT + 6;
 
 	/**
 	 * The feature id for the '<em><b>Clip path</b></em>' attribute.
@@ -32939,7 +33093,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_IMAGE__CLIP_PATH = SVG_ELEMENT_FEATURE_COUNT + 7;
+	int SVG_FE_IMAGE_ELEMENT__CLIP_PATH = SVG_ELEMENT_FEATURE_COUNT + 7;
 
 	/**
 	 * The feature id for the '<em><b>Clip rule</b></em>' attribute.
@@ -32948,7 +33102,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_IMAGE__CLIP_RULE = SVG_ELEMENT_FEATURE_COUNT + 8;
+	int SVG_FE_IMAGE_ELEMENT__CLIP_RULE = SVG_ELEMENT_FEATURE_COUNT + 8;
 
 	/**
 	 * The feature id for the '<em><b>Color</b></em>' attribute.
@@ -32957,7 +33111,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_IMAGE__COLOR = SVG_ELEMENT_FEATURE_COUNT + 9;
+	int SVG_FE_IMAGE_ELEMENT__COLOR = SVG_ELEMENT_FEATURE_COUNT + 9;
 
 	/**
 	 * The feature id for the '<em><b>Color interpolation</b></em>' attribute.
@@ -32966,7 +33120,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_IMAGE__COLOR_INTERPOLATION = SVG_ELEMENT_FEATURE_COUNT + 10;
+	int SVG_FE_IMAGE_ELEMENT__COLOR_INTERPOLATION = SVG_ELEMENT_FEATURE_COUNT + 10;
 
 	/**
 	 * The feature id for the '<em><b>Color interpolation filters</b></em>' attribute.
@@ -32975,7 +33129,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_IMAGE__COLOR_INTERPOLATION_FILTERS = SVG_ELEMENT_FEATURE_COUNT + 11;
+	int SVG_FE_IMAGE_ELEMENT__COLOR_INTERPOLATION_FILTERS = SVG_ELEMENT_FEATURE_COUNT + 11;
 
 	/**
 	 * The feature id for the '<em><b>Color profile</b></em>' attribute.
@@ -32984,7 +33138,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_IMAGE__COLOR_PROFILE = SVG_ELEMENT_FEATURE_COUNT + 12;
+	int SVG_FE_IMAGE_ELEMENT__COLOR_PROFILE = SVG_ELEMENT_FEATURE_COUNT + 12;
 
 	/**
 	 * The feature id for the '<em><b>Color rendering</b></em>' attribute.
@@ -32993,7 +33147,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_IMAGE__COLOR_RENDERING = SVG_ELEMENT_FEATURE_COUNT + 13;
+	int SVG_FE_IMAGE_ELEMENT__COLOR_RENDERING = SVG_ELEMENT_FEATURE_COUNT + 13;
 
 	/**
 	 * The feature id for the '<em><b>Cursor</b></em>' attribute.
@@ -33002,7 +33156,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_IMAGE__CURSOR = SVG_ELEMENT_FEATURE_COUNT + 14;
+	int SVG_FE_IMAGE_ELEMENT__CURSOR = SVG_ELEMENT_FEATURE_COUNT + 14;
 
 	/**
 	 * The feature id for the '<em><b>Direction</b></em>' attribute.
@@ -33011,7 +33165,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_IMAGE__DIRECTION = SVG_ELEMENT_FEATURE_COUNT + 15;
+	int SVG_FE_IMAGE_ELEMENT__DIRECTION = SVG_ELEMENT_FEATURE_COUNT + 15;
 
 	/**
 	 * The feature id for the '<em><b>Display</b></em>' attribute.
@@ -33020,7 +33174,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_IMAGE__DISPLAY = SVG_ELEMENT_FEATURE_COUNT + 16;
+	int SVG_FE_IMAGE_ELEMENT__DISPLAY = SVG_ELEMENT_FEATURE_COUNT + 16;
 
 	/**
 	 * The feature id for the '<em><b>Dominant baseline</b></em>' attribute.
@@ -33029,7 +33183,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_IMAGE__DOMINANT_BASELINE = SVG_ELEMENT_FEATURE_COUNT + 17;
+	int SVG_FE_IMAGE_ELEMENT__DOMINANT_BASELINE = SVG_ELEMENT_FEATURE_COUNT + 17;
 
 	/**
 	 * The feature id for the '<em><b>Enable background</b></em>' attribute.
@@ -33038,7 +33192,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_IMAGE__ENABLE_BACKGROUND = SVG_ELEMENT_FEATURE_COUNT + 18;
+	int SVG_FE_IMAGE_ELEMENT__ENABLE_BACKGROUND = SVG_ELEMENT_FEATURE_COUNT + 18;
 
 	/**
 	 * The feature id for the '<em><b>Fill</b></em>' attribute.
@@ -33047,7 +33201,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_IMAGE__FILL = SVG_ELEMENT_FEATURE_COUNT + 19;
+	int SVG_FE_IMAGE_ELEMENT__FILL = SVG_ELEMENT_FEATURE_COUNT + 19;
 
 	/**
 	 * The feature id for the '<em><b>Fill opacity</b></em>' attribute.
@@ -33056,7 +33210,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_IMAGE__FILL_OPACITY = SVG_ELEMENT_FEATURE_COUNT + 20;
+	int SVG_FE_IMAGE_ELEMENT__FILL_OPACITY = SVG_ELEMENT_FEATURE_COUNT + 20;
 
 	/**
 	 * The feature id for the '<em><b>Fill rule</b></em>' attribute.
@@ -33065,7 +33219,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_IMAGE__FILL_RULE = SVG_ELEMENT_FEATURE_COUNT + 21;
+	int SVG_FE_IMAGE_ELEMENT__FILL_RULE = SVG_ELEMENT_FEATURE_COUNT + 21;
 
 	/**
 	 * The feature id for the '<em><b>Filter</b></em>' attribute.
@@ -33074,7 +33228,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_IMAGE__FILTER = SVG_ELEMENT_FEATURE_COUNT + 22;
+	int SVG_FE_IMAGE_ELEMENT__FILTER = SVG_ELEMENT_FEATURE_COUNT + 22;
 
 	/**
 	 * The feature id for the '<em><b>Flood color</b></em>' attribute.
@@ -33083,7 +33237,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_IMAGE__FLOOD_COLOR = SVG_ELEMENT_FEATURE_COUNT + 23;
+	int SVG_FE_IMAGE_ELEMENT__FLOOD_COLOR = SVG_ELEMENT_FEATURE_COUNT + 23;
 
 	/**
 	 * The feature id for the '<em><b>Flood opacity</b></em>' attribute.
@@ -33092,7 +33246,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_IMAGE__FLOOD_OPACITY = SVG_ELEMENT_FEATURE_COUNT + 24;
+	int SVG_FE_IMAGE_ELEMENT__FLOOD_OPACITY = SVG_ELEMENT_FEATURE_COUNT + 24;
 
 	/**
 	 * The feature id for the '<em><b>Font family</b></em>' attribute.
@@ -33101,7 +33255,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_IMAGE__FONT_FAMILY = SVG_ELEMENT_FEATURE_COUNT + 25;
+	int SVG_FE_IMAGE_ELEMENT__FONT_FAMILY = SVG_ELEMENT_FEATURE_COUNT + 25;
 
 	/**
 	 * The feature id for the '<em><b>Font size</b></em>' attribute.
@@ -33110,7 +33264,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_IMAGE__FONT_SIZE = SVG_ELEMENT_FEATURE_COUNT + 26;
+	int SVG_FE_IMAGE_ELEMENT__FONT_SIZE = SVG_ELEMENT_FEATURE_COUNT + 26;
 
 	/**
 	 * The feature id for the '<em><b>Font size adjust</b></em>' attribute.
@@ -33119,7 +33273,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_IMAGE__FONT_SIZE_ADJUST = SVG_ELEMENT_FEATURE_COUNT + 27;
+	int SVG_FE_IMAGE_ELEMENT__FONT_SIZE_ADJUST = SVG_ELEMENT_FEATURE_COUNT + 27;
 
 	/**
 	 * The feature id for the '<em><b>Font stretch</b></em>' attribute.
@@ -33128,7 +33282,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_IMAGE__FONT_STRETCH = SVG_ELEMENT_FEATURE_COUNT + 28;
+	int SVG_FE_IMAGE_ELEMENT__FONT_STRETCH = SVG_ELEMENT_FEATURE_COUNT + 28;
 
 	/**
 	 * The feature id for the '<em><b>Font style</b></em>' attribute.
@@ -33137,7 +33291,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_IMAGE__FONT_STYLE = SVG_ELEMENT_FEATURE_COUNT + 29;
+	int SVG_FE_IMAGE_ELEMENT__FONT_STYLE = SVG_ELEMENT_FEATURE_COUNT + 29;
 
 	/**
 	 * The feature id for the '<em><b>Font variant</b></em>' attribute.
@@ -33146,7 +33300,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_IMAGE__FONT_VARIANT = SVG_ELEMENT_FEATURE_COUNT + 30;
+	int SVG_FE_IMAGE_ELEMENT__FONT_VARIANT = SVG_ELEMENT_FEATURE_COUNT + 30;
 
 	/**
 	 * The feature id for the '<em><b>Font weight</b></em>' attribute.
@@ -33155,7 +33309,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_IMAGE__FONT_WEIGHT = SVG_ELEMENT_FEATURE_COUNT + 31;
+	int SVG_FE_IMAGE_ELEMENT__FONT_WEIGHT = SVG_ELEMENT_FEATURE_COUNT + 31;
 
 	/**
 	 * The feature id for the '<em><b>Glyph orientation horizontal</b></em>' attribute.
@@ -33164,7 +33318,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_IMAGE__GLYPH_ORIENTATION_HORIZONTAL = SVG_ELEMENT_FEATURE_COUNT + 32;
+	int SVG_FE_IMAGE_ELEMENT__GLYPH_ORIENTATION_HORIZONTAL = SVG_ELEMENT_FEATURE_COUNT + 32;
 
 	/**
 	 * The feature id for the '<em><b>Glyph orientation vertical</b></em>' attribute.
@@ -33173,7 +33327,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_IMAGE__GLYPH_ORIENTATION_VERTICAL = SVG_ELEMENT_FEATURE_COUNT + 33;
+	int SVG_FE_IMAGE_ELEMENT__GLYPH_ORIENTATION_VERTICAL = SVG_ELEMENT_FEATURE_COUNT + 33;
 
 	/**
 	 * The feature id for the '<em><b>Image rendering</b></em>' attribute.
@@ -33182,7 +33336,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_IMAGE__IMAGE_RENDERING = SVG_ELEMENT_FEATURE_COUNT + 34;
+	int SVG_FE_IMAGE_ELEMENT__IMAGE_RENDERING = SVG_ELEMENT_FEATURE_COUNT + 34;
 
 	/**
 	 * The feature id for the '<em><b>Kerning</b></em>' attribute.
@@ -33191,7 +33345,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_IMAGE__KERNING = SVG_ELEMENT_FEATURE_COUNT + 35;
+	int SVG_FE_IMAGE_ELEMENT__KERNING = SVG_ELEMENT_FEATURE_COUNT + 35;
 
 	/**
 	 * The feature id for the '<em><b>Letter spacing</b></em>' attribute.
@@ -33200,7 +33354,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_IMAGE__LETTER_SPACING = SVG_ELEMENT_FEATURE_COUNT + 36;
+	int SVG_FE_IMAGE_ELEMENT__LETTER_SPACING = SVG_ELEMENT_FEATURE_COUNT + 36;
 
 	/**
 	 * The feature id for the '<em><b>Lighting color</b></em>' attribute.
@@ -33209,7 +33363,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_IMAGE__LIGHTING_COLOR = SVG_ELEMENT_FEATURE_COUNT + 37;
+	int SVG_FE_IMAGE_ELEMENT__LIGHTING_COLOR = SVG_ELEMENT_FEATURE_COUNT + 37;
 
 	/**
 	 * The feature id for the '<em><b>Marker end</b></em>' attribute.
@@ -33218,7 +33372,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_IMAGE__MARKER_END = SVG_ELEMENT_FEATURE_COUNT + 38;
+	int SVG_FE_IMAGE_ELEMENT__MARKER_END = SVG_ELEMENT_FEATURE_COUNT + 38;
 
 	/**
 	 * The feature id for the '<em><b>Marker mid</b></em>' attribute.
@@ -33227,7 +33381,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_IMAGE__MARKER_MID = SVG_ELEMENT_FEATURE_COUNT + 39;
+	int SVG_FE_IMAGE_ELEMENT__MARKER_MID = SVG_ELEMENT_FEATURE_COUNT + 39;
 
 	/**
 	 * The feature id for the '<em><b>Marker start</b></em>' attribute.
@@ -33236,7 +33390,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_IMAGE__MARKER_START = SVG_ELEMENT_FEATURE_COUNT + 40;
+	int SVG_FE_IMAGE_ELEMENT__MARKER_START = SVG_ELEMENT_FEATURE_COUNT + 40;
 
 	/**
 	 * The feature id for the '<em><b>Masks</b></em>' attribute.
@@ -33245,7 +33399,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_IMAGE__MASKS = SVG_ELEMENT_FEATURE_COUNT + 41;
+	int SVG_FE_IMAGE_ELEMENT__MASKS = SVG_ELEMENT_FEATURE_COUNT + 41;
 
 	/**
 	 * The feature id for the '<em><b>Opacity</b></em>' attribute.
@@ -33254,7 +33408,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_IMAGE__OPACITY = SVG_ELEMENT_FEATURE_COUNT + 42;
+	int SVG_FE_IMAGE_ELEMENT__OPACITY = SVG_ELEMENT_FEATURE_COUNT + 42;
 
 	/**
 	 * The feature id for the '<em><b>Overflow</b></em>' attribute.
@@ -33263,7 +33417,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_IMAGE__OVERFLOW = SVG_ELEMENT_FEATURE_COUNT + 43;
+	int SVG_FE_IMAGE_ELEMENT__OVERFLOW = SVG_ELEMENT_FEATURE_COUNT + 43;
 
 	/**
 	 * The feature id for the '<em><b>Pointer events</b></em>' attribute.
@@ -33272,7 +33426,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_IMAGE__POINTER_EVENTS = SVG_ELEMENT_FEATURE_COUNT + 44;
+	int SVG_FE_IMAGE_ELEMENT__POINTER_EVENTS = SVG_ELEMENT_FEATURE_COUNT + 44;
 
 	/**
 	 * The feature id for the '<em><b>Shape rendering</b></em>' attribute.
@@ -33281,7 +33435,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_IMAGE__SHAPE_RENDERING = SVG_ELEMENT_FEATURE_COUNT + 45;
+	int SVG_FE_IMAGE_ELEMENT__SHAPE_RENDERING = SVG_ELEMENT_FEATURE_COUNT + 45;
 
 	/**
 	 * The feature id for the '<em><b>Stop color</b></em>' attribute.
@@ -33290,7 +33444,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_IMAGE__STOP_COLOR = SVG_ELEMENT_FEATURE_COUNT + 46;
+	int SVG_FE_IMAGE_ELEMENT__STOP_COLOR = SVG_ELEMENT_FEATURE_COUNT + 46;
 
 	/**
 	 * The feature id for the '<em><b>Stop opacity</b></em>' attribute.
@@ -33299,7 +33453,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_IMAGE__STOP_OPACITY = SVG_ELEMENT_FEATURE_COUNT + 47;
+	int SVG_FE_IMAGE_ELEMENT__STOP_OPACITY = SVG_ELEMENT_FEATURE_COUNT + 47;
 
 	/**
 	 * The feature id for the '<em><b>Stroke</b></em>' attribute.
@@ -33308,7 +33462,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_IMAGE__STROKE = SVG_ELEMENT_FEATURE_COUNT + 48;
+	int SVG_FE_IMAGE_ELEMENT__STROKE = SVG_ELEMENT_FEATURE_COUNT + 48;
 
 	/**
 	 * The feature id for the '<em><b>Stroke dasharray</b></em>' attribute.
@@ -33317,7 +33471,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_IMAGE__STROKE_DASHARRAY = SVG_ELEMENT_FEATURE_COUNT + 49;
+	int SVG_FE_IMAGE_ELEMENT__STROKE_DASHARRAY = SVG_ELEMENT_FEATURE_COUNT + 49;
 
 	/**
 	 * The feature id for the '<em><b>Stroke dashoffset</b></em>' attribute.
@@ -33326,7 +33480,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_IMAGE__STROKE_DASHOFFSET = SVG_ELEMENT_FEATURE_COUNT + 50;
+	int SVG_FE_IMAGE_ELEMENT__STROKE_DASHOFFSET = SVG_ELEMENT_FEATURE_COUNT + 50;
 
 	/**
 	 * The feature id for the '<em><b>Stroke linecap</b></em>' attribute.
@@ -33335,7 +33489,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_IMAGE__STROKE_LINECAP = SVG_ELEMENT_FEATURE_COUNT + 51;
+	int SVG_FE_IMAGE_ELEMENT__STROKE_LINECAP = SVG_ELEMENT_FEATURE_COUNT + 51;
 
 	/**
 	 * The feature id for the '<em><b>Stroke linejoin</b></em>' attribute.
@@ -33344,7 +33498,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_IMAGE__STROKE_LINEJOIN = SVG_ELEMENT_FEATURE_COUNT + 52;
+	int SVG_FE_IMAGE_ELEMENT__STROKE_LINEJOIN = SVG_ELEMENT_FEATURE_COUNT + 52;
 
 	/**
 	 * The feature id for the '<em><b>Stroke miterlimit</b></em>' attribute.
@@ -33353,7 +33507,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_IMAGE__STROKE_MITERLIMIT = SVG_ELEMENT_FEATURE_COUNT + 53;
+	int SVG_FE_IMAGE_ELEMENT__STROKE_MITERLIMIT = SVG_ELEMENT_FEATURE_COUNT + 53;
 
 	/**
 	 * The feature id for the '<em><b>Stroke opacity</b></em>' attribute.
@@ -33362,7 +33516,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_IMAGE__STROKE_OPACITY = SVG_ELEMENT_FEATURE_COUNT + 54;
+	int SVG_FE_IMAGE_ELEMENT__STROKE_OPACITY = SVG_ELEMENT_FEATURE_COUNT + 54;
 
 	/**
 	 * The feature id for the '<em><b>Stroke width</b></em>' attribute.
@@ -33371,7 +33525,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_IMAGE__STROKE_WIDTH = SVG_ELEMENT_FEATURE_COUNT + 55;
+	int SVG_FE_IMAGE_ELEMENT__STROKE_WIDTH = SVG_ELEMENT_FEATURE_COUNT + 55;
 
 	/**
 	 * The feature id for the '<em><b>Text anchor</b></em>' attribute.
@@ -33380,7 +33534,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_IMAGE__TEXT_ANCHOR = SVG_ELEMENT_FEATURE_COUNT + 56;
+	int SVG_FE_IMAGE_ELEMENT__TEXT_ANCHOR = SVG_ELEMENT_FEATURE_COUNT + 56;
 
 	/**
 	 * The feature id for the '<em><b>Text decoration</b></em>' attribute.
@@ -33389,7 +33543,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_IMAGE__TEXT_DECORATION = SVG_ELEMENT_FEATURE_COUNT + 57;
+	int SVG_FE_IMAGE_ELEMENT__TEXT_DECORATION = SVG_ELEMENT_FEATURE_COUNT + 57;
 
 	/**
 	 * The feature id for the '<em><b>Text rendering</b></em>' attribute.
@@ -33398,7 +33552,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_IMAGE__TEXT_RENDERING = SVG_ELEMENT_FEATURE_COUNT + 58;
+	int SVG_FE_IMAGE_ELEMENT__TEXT_RENDERING = SVG_ELEMENT_FEATURE_COUNT + 58;
 
 	/**
 	 * The feature id for the '<em><b>Unicode bidi</b></em>' attribute.
@@ -33407,7 +33561,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_IMAGE__UNICODE_BIDI = SVG_ELEMENT_FEATURE_COUNT + 59;
+	int SVG_FE_IMAGE_ELEMENT__UNICODE_BIDI = SVG_ELEMENT_FEATURE_COUNT + 59;
 
 	/**
 	 * The feature id for the '<em><b>Visibility</b></em>' attribute.
@@ -33416,7 +33570,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_IMAGE__VISIBILITY = SVG_ELEMENT_FEATURE_COUNT + 60;
+	int SVG_FE_IMAGE_ELEMENT__VISIBILITY = SVG_ELEMENT_FEATURE_COUNT + 60;
 
 	/**
 	 * The feature id for the '<em><b>Word spacing</b></em>' attribute.
@@ -33425,7 +33579,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_IMAGE__WORD_SPACING = SVG_ELEMENT_FEATURE_COUNT + 61;
+	int SVG_FE_IMAGE_ELEMENT__WORD_SPACING = SVG_ELEMENT_FEATURE_COUNT + 61;
 
 	/**
 	 * The feature id for the '<em><b>Writing mode</b></em>' attribute.
@@ -33434,7 +33588,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_IMAGE__WRITING_MODE = SVG_ELEMENT_FEATURE_COUNT + 62;
+	int SVG_FE_IMAGE_ELEMENT__WRITING_MODE = SVG_ELEMENT_FEATURE_COUNT + 62;
 
 	/**
 	 * The feature id for the '<em><b>X</b></em>' attribute.
@@ -33443,7 +33597,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_IMAGE__X = SVG_ELEMENT_FEATURE_COUNT + 63;
+	int SVG_FE_IMAGE_ELEMENT__X = SVG_ELEMENT_FEATURE_COUNT + 63;
 
 	/**
 	 * The feature id for the '<em><b>Y</b></em>' attribute.
@@ -33452,7 +33606,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_IMAGE__Y = SVG_ELEMENT_FEATURE_COUNT + 64;
+	int SVG_FE_IMAGE_ELEMENT__Y = SVG_ELEMENT_FEATURE_COUNT + 64;
 
 	/**
 	 * The feature id for the '<em><b>Width</b></em>' attribute.
@@ -33461,7 +33615,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_IMAGE__WIDTH = SVG_ELEMENT_FEATURE_COUNT + 65;
+	int SVG_FE_IMAGE_ELEMENT__WIDTH = SVG_ELEMENT_FEATURE_COUNT + 65;
 
 	/**
 	 * The feature id for the '<em><b>Height</b></em>' attribute.
@@ -33470,7 +33624,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_IMAGE__HEIGHT = SVG_ELEMENT_FEATURE_COUNT + 66;
+	int SVG_FE_IMAGE_ELEMENT__HEIGHT = SVG_ELEMENT_FEATURE_COUNT + 66;
 
 	/**
 	 * The feature id for the '<em><b>Result</b></em>' attribute.
@@ -33479,7 +33633,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_IMAGE__RESULT = SVG_ELEMENT_FEATURE_COUNT + 67;
+	int SVG_FE_IMAGE_ELEMENT__RESULT = SVG_ELEMENT_FEATURE_COUNT + 67;
 
 	/**
 	 * The feature id for the '<em><b>In</b></em>' attribute.
@@ -33488,7 +33642,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_IMAGE__IN = SVG_ELEMENT_FEATURE_COUNT + 68;
+	int SVG_FE_IMAGE_ELEMENT__IN = SVG_ELEMENT_FEATURE_COUNT + 68;
 
 	/**
 	 * The feature id for the '<em><b>Xlink href</b></em>' attribute.
@@ -33497,7 +33651,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_IMAGE__XLINK_HREF = SVG_ELEMENT_FEATURE_COUNT + 69;
+	int SVG_FE_IMAGE_ELEMENT__XLINK_HREF = SVG_ELEMENT_FEATURE_COUNT + 69;
 
 	/**
 	 * The feature id for the '<em><b>Xlink show</b></em>' attribute.
@@ -33506,7 +33660,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_IMAGE__XLINK_SHOW = SVG_ELEMENT_FEATURE_COUNT + 70;
+	int SVG_FE_IMAGE_ELEMENT__XLINK_SHOW = SVG_ELEMENT_FEATURE_COUNT + 70;
 
 	/**
 	 * The feature id for the '<em><b>Xlink actuate</b></em>' attribute.
@@ -33515,7 +33669,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_IMAGE__XLINK_ACTUATE = SVG_ELEMENT_FEATURE_COUNT + 71;
+	int SVG_FE_IMAGE_ELEMENT__XLINK_ACTUATE = SVG_ELEMENT_FEATURE_COUNT + 71;
 
 	/**
 	 * The feature id for the '<em><b>Xlink type</b></em>' attribute.
@@ -33524,7 +33678,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_IMAGE__XLINK_TYPE = SVG_ELEMENT_FEATURE_COUNT + 72;
+	int SVG_FE_IMAGE_ELEMENT__XLINK_TYPE = SVG_ELEMENT_FEATURE_COUNT + 72;
 
 	/**
 	 * The feature id for the '<em><b>Xlink role</b></em>' attribute.
@@ -33533,7 +33687,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_IMAGE__XLINK_ROLE = SVG_ELEMENT_FEATURE_COUNT + 73;
+	int SVG_FE_IMAGE_ELEMENT__XLINK_ROLE = SVG_ELEMENT_FEATURE_COUNT + 73;
 
 	/**
 	 * The feature id for the '<em><b>Xlink arcrole</b></em>' attribute.
@@ -33542,7 +33696,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_IMAGE__XLINK_ARCROLE = SVG_ELEMENT_FEATURE_COUNT + 74;
+	int SVG_FE_IMAGE_ELEMENT__XLINK_ARCROLE = SVG_ELEMENT_FEATURE_COUNT + 74;
 
 	/**
 	 * The feature id for the '<em><b>Xlink title</b></em>' attribute.
@@ -33551,7 +33705,16 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_IMAGE__XLINK_TITLE = SVG_ELEMENT_FEATURE_COUNT + 75;
+	int SVG_FE_IMAGE_ELEMENT__XLINK_TITLE = SVG_ELEMENT_FEATURE_COUNT + 75;
+
+	/**
+	 * The feature id for the '<em><b>Resolved Instance</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SVG_FE_IMAGE_ELEMENT__RESOLVED_INSTANCE = SVG_ELEMENT_FEATURE_COUNT + 76;
 
 	/**
 	 * The feature id for the '<em><b>Children</b></em>' containment reference list.
@@ -33560,7 +33723,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_IMAGE__CHILDREN = SVG_ELEMENT_FEATURE_COUNT + 76;
+	int SVG_FE_IMAGE_ELEMENT__CHILDREN = SVG_ELEMENT_FEATURE_COUNT + 77;
 
 	/**
 	 * The feature id for the '<em><b>Class</b></em>' attribute.
@@ -33569,7 +33732,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_IMAGE__CLASS = SVG_ELEMENT_FEATURE_COUNT + 77;
+	int SVG_FE_IMAGE_ELEMENT__CLASS = SVG_ELEMENT_FEATURE_COUNT + 78;
 
 	/**
 	 * The feature id for the '<em><b>Style</b></em>' attribute.
@@ -33578,7 +33741,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_IMAGE__STYLE = SVG_ELEMENT_FEATURE_COUNT + 78;
+	int SVG_FE_IMAGE_ELEMENT__STYLE = SVG_ELEMENT_FEATURE_COUNT + 79;
 
 	/**
 	 * The feature id for the '<em><b>External Resources Required</b></em>' attribute.
@@ -33587,7 +33750,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_IMAGE__EXTERNAL_RESOURCES_REQUIRED = SVG_ELEMENT_FEATURE_COUNT + 79;
+	int SVG_FE_IMAGE_ELEMENT__EXTERNAL_RESOURCES_REQUIRED = SVG_ELEMENT_FEATURE_COUNT + 80;
 
 	/**
 	 * The feature id for the '<em><b>Preserve Aspect Ratio</b></em>' attribute.
@@ -33596,26 +33759,26 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_IMAGE__PRESERVE_ASPECT_RATIO = SVG_ELEMENT_FEATURE_COUNT + 80;
+	int SVG_FE_IMAGE_ELEMENT__PRESERVE_ASPECT_RATIO = SVG_ELEMENT_FEATURE_COUNT + 81;
 
 	/**
-	 * The number of structural features of the '<em>Fe Image</em>' class.
+	 * The number of structural features of the '<em>Fe Image Element</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_IMAGE_FEATURE_COUNT = SVG_ELEMENT_FEATURE_COUNT + 81;
+	int SVG_FE_IMAGE_ELEMENT_FEATURE_COUNT = SVG_ELEMENT_FEATURE_COUNT + 82;
 
 	/**
-	 * The meta object id for the '{@link at.bestsolution.efxclipse.formats.svg.svg.impl.SvgFeMergeImpl <em>Fe Merge</em>}' class.
+	 * The meta object id for the '{@link at.bestsolution.efxclipse.formats.svg.svg.impl.SvgFeMergeElementImpl <em>Fe Merge Element</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see at.bestsolution.efxclipse.formats.svg.svg.impl.SvgFeMergeImpl
-	 * @see at.bestsolution.efxclipse.formats.svg.svg.impl.SvgPackageImpl#getSvgFeMerge()
+	 * @see at.bestsolution.efxclipse.formats.svg.svg.impl.SvgFeMergeElementImpl
+	 * @see at.bestsolution.efxclipse.formats.svg.svg.impl.SvgPackageImpl#getSvgFeMergeElement()
 	 * @generated
 	 */
-	int SVG_FE_MERGE = 75;
+	int SVG_FE_MERGE_ELEMENT = 76;
 
 	/**
 	 * The feature id for the '<em><b>Id</b></em>' attribute.
@@ -33624,7 +33787,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_MERGE__ID = SVG_ELEMENT_FEATURE_COUNT + 0;
+	int SVG_FE_MERGE_ELEMENT__ID = SVG_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Xml base</b></em>' attribute.
@@ -33633,7 +33796,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_MERGE__XML_BASE = SVG_ELEMENT_FEATURE_COUNT + 1;
+	int SVG_FE_MERGE_ELEMENT__XML_BASE = SVG_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Xml lang</b></em>' attribute.
@@ -33642,7 +33805,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_MERGE__XML_LANG = SVG_ELEMENT_FEATURE_COUNT + 2;
+	int SVG_FE_MERGE_ELEMENT__XML_LANG = SVG_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Xml space</b></em>' attribute.
@@ -33651,7 +33814,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_MERGE__XML_SPACE = SVG_ELEMENT_FEATURE_COUNT + 3;
+	int SVG_FE_MERGE_ELEMENT__XML_SPACE = SVG_ELEMENT_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Alignment baseline</b></em>' attribute.
@@ -33660,7 +33823,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_MERGE__ALIGNMENT_BASELINE = SVG_ELEMENT_FEATURE_COUNT + 4;
+	int SVG_FE_MERGE_ELEMENT__ALIGNMENT_BASELINE = SVG_ELEMENT_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Baseline shift</b></em>' attribute.
@@ -33669,7 +33832,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_MERGE__BASELINE_SHIFT = SVG_ELEMENT_FEATURE_COUNT + 5;
+	int SVG_FE_MERGE_ELEMENT__BASELINE_SHIFT = SVG_ELEMENT_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>Clip</b></em>' attribute.
@@ -33678,7 +33841,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_MERGE__CLIP = SVG_ELEMENT_FEATURE_COUNT + 6;
+	int SVG_FE_MERGE_ELEMENT__CLIP = SVG_ELEMENT_FEATURE_COUNT + 6;
 
 	/**
 	 * The feature id for the '<em><b>Clip path</b></em>' attribute.
@@ -33687,7 +33850,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_MERGE__CLIP_PATH = SVG_ELEMENT_FEATURE_COUNT + 7;
+	int SVG_FE_MERGE_ELEMENT__CLIP_PATH = SVG_ELEMENT_FEATURE_COUNT + 7;
 
 	/**
 	 * The feature id for the '<em><b>Clip rule</b></em>' attribute.
@@ -33696,7 +33859,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_MERGE__CLIP_RULE = SVG_ELEMENT_FEATURE_COUNT + 8;
+	int SVG_FE_MERGE_ELEMENT__CLIP_RULE = SVG_ELEMENT_FEATURE_COUNT + 8;
 
 	/**
 	 * The feature id for the '<em><b>Color</b></em>' attribute.
@@ -33705,7 +33868,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_MERGE__COLOR = SVG_ELEMENT_FEATURE_COUNT + 9;
+	int SVG_FE_MERGE_ELEMENT__COLOR = SVG_ELEMENT_FEATURE_COUNT + 9;
 
 	/**
 	 * The feature id for the '<em><b>Color interpolation</b></em>' attribute.
@@ -33714,7 +33877,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_MERGE__COLOR_INTERPOLATION = SVG_ELEMENT_FEATURE_COUNT + 10;
+	int SVG_FE_MERGE_ELEMENT__COLOR_INTERPOLATION = SVG_ELEMENT_FEATURE_COUNT + 10;
 
 	/**
 	 * The feature id for the '<em><b>Color interpolation filters</b></em>' attribute.
@@ -33723,7 +33886,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_MERGE__COLOR_INTERPOLATION_FILTERS = SVG_ELEMENT_FEATURE_COUNT + 11;
+	int SVG_FE_MERGE_ELEMENT__COLOR_INTERPOLATION_FILTERS = SVG_ELEMENT_FEATURE_COUNT + 11;
 
 	/**
 	 * The feature id for the '<em><b>Color profile</b></em>' attribute.
@@ -33732,7 +33895,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_MERGE__COLOR_PROFILE = SVG_ELEMENT_FEATURE_COUNT + 12;
+	int SVG_FE_MERGE_ELEMENT__COLOR_PROFILE = SVG_ELEMENT_FEATURE_COUNT + 12;
 
 	/**
 	 * The feature id for the '<em><b>Color rendering</b></em>' attribute.
@@ -33741,7 +33904,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_MERGE__COLOR_RENDERING = SVG_ELEMENT_FEATURE_COUNT + 13;
+	int SVG_FE_MERGE_ELEMENT__COLOR_RENDERING = SVG_ELEMENT_FEATURE_COUNT + 13;
 
 	/**
 	 * The feature id for the '<em><b>Cursor</b></em>' attribute.
@@ -33750,7 +33913,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_MERGE__CURSOR = SVG_ELEMENT_FEATURE_COUNT + 14;
+	int SVG_FE_MERGE_ELEMENT__CURSOR = SVG_ELEMENT_FEATURE_COUNT + 14;
 
 	/**
 	 * The feature id for the '<em><b>Direction</b></em>' attribute.
@@ -33759,7 +33922,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_MERGE__DIRECTION = SVG_ELEMENT_FEATURE_COUNT + 15;
+	int SVG_FE_MERGE_ELEMENT__DIRECTION = SVG_ELEMENT_FEATURE_COUNT + 15;
 
 	/**
 	 * The feature id for the '<em><b>Display</b></em>' attribute.
@@ -33768,7 +33931,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_MERGE__DISPLAY = SVG_ELEMENT_FEATURE_COUNT + 16;
+	int SVG_FE_MERGE_ELEMENT__DISPLAY = SVG_ELEMENT_FEATURE_COUNT + 16;
 
 	/**
 	 * The feature id for the '<em><b>Dominant baseline</b></em>' attribute.
@@ -33777,7 +33940,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_MERGE__DOMINANT_BASELINE = SVG_ELEMENT_FEATURE_COUNT + 17;
+	int SVG_FE_MERGE_ELEMENT__DOMINANT_BASELINE = SVG_ELEMENT_FEATURE_COUNT + 17;
 
 	/**
 	 * The feature id for the '<em><b>Enable background</b></em>' attribute.
@@ -33786,7 +33949,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_MERGE__ENABLE_BACKGROUND = SVG_ELEMENT_FEATURE_COUNT + 18;
+	int SVG_FE_MERGE_ELEMENT__ENABLE_BACKGROUND = SVG_ELEMENT_FEATURE_COUNT + 18;
 
 	/**
 	 * The feature id for the '<em><b>Fill</b></em>' attribute.
@@ -33795,7 +33958,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_MERGE__FILL = SVG_ELEMENT_FEATURE_COUNT + 19;
+	int SVG_FE_MERGE_ELEMENT__FILL = SVG_ELEMENT_FEATURE_COUNT + 19;
 
 	/**
 	 * The feature id for the '<em><b>Fill opacity</b></em>' attribute.
@@ -33804,7 +33967,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_MERGE__FILL_OPACITY = SVG_ELEMENT_FEATURE_COUNT + 20;
+	int SVG_FE_MERGE_ELEMENT__FILL_OPACITY = SVG_ELEMENT_FEATURE_COUNT + 20;
 
 	/**
 	 * The feature id for the '<em><b>Fill rule</b></em>' attribute.
@@ -33813,7 +33976,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_MERGE__FILL_RULE = SVG_ELEMENT_FEATURE_COUNT + 21;
+	int SVG_FE_MERGE_ELEMENT__FILL_RULE = SVG_ELEMENT_FEATURE_COUNT + 21;
 
 	/**
 	 * The feature id for the '<em><b>Filter</b></em>' attribute.
@@ -33822,7 +33985,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_MERGE__FILTER = SVG_ELEMENT_FEATURE_COUNT + 22;
+	int SVG_FE_MERGE_ELEMENT__FILTER = SVG_ELEMENT_FEATURE_COUNT + 22;
 
 	/**
 	 * The feature id for the '<em><b>Flood color</b></em>' attribute.
@@ -33831,7 +33994,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_MERGE__FLOOD_COLOR = SVG_ELEMENT_FEATURE_COUNT + 23;
+	int SVG_FE_MERGE_ELEMENT__FLOOD_COLOR = SVG_ELEMENT_FEATURE_COUNT + 23;
 
 	/**
 	 * The feature id for the '<em><b>Flood opacity</b></em>' attribute.
@@ -33840,7 +34003,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_MERGE__FLOOD_OPACITY = SVG_ELEMENT_FEATURE_COUNT + 24;
+	int SVG_FE_MERGE_ELEMENT__FLOOD_OPACITY = SVG_ELEMENT_FEATURE_COUNT + 24;
 
 	/**
 	 * The feature id for the '<em><b>Font family</b></em>' attribute.
@@ -33849,7 +34012,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_MERGE__FONT_FAMILY = SVG_ELEMENT_FEATURE_COUNT + 25;
+	int SVG_FE_MERGE_ELEMENT__FONT_FAMILY = SVG_ELEMENT_FEATURE_COUNT + 25;
 
 	/**
 	 * The feature id for the '<em><b>Font size</b></em>' attribute.
@@ -33858,7 +34021,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_MERGE__FONT_SIZE = SVG_ELEMENT_FEATURE_COUNT + 26;
+	int SVG_FE_MERGE_ELEMENT__FONT_SIZE = SVG_ELEMENT_FEATURE_COUNT + 26;
 
 	/**
 	 * The feature id for the '<em><b>Font size adjust</b></em>' attribute.
@@ -33867,7 +34030,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_MERGE__FONT_SIZE_ADJUST = SVG_ELEMENT_FEATURE_COUNT + 27;
+	int SVG_FE_MERGE_ELEMENT__FONT_SIZE_ADJUST = SVG_ELEMENT_FEATURE_COUNT + 27;
 
 	/**
 	 * The feature id for the '<em><b>Font stretch</b></em>' attribute.
@@ -33876,7 +34039,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_MERGE__FONT_STRETCH = SVG_ELEMENT_FEATURE_COUNT + 28;
+	int SVG_FE_MERGE_ELEMENT__FONT_STRETCH = SVG_ELEMENT_FEATURE_COUNT + 28;
 
 	/**
 	 * The feature id for the '<em><b>Font style</b></em>' attribute.
@@ -33885,7 +34048,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_MERGE__FONT_STYLE = SVG_ELEMENT_FEATURE_COUNT + 29;
+	int SVG_FE_MERGE_ELEMENT__FONT_STYLE = SVG_ELEMENT_FEATURE_COUNT + 29;
 
 	/**
 	 * The feature id for the '<em><b>Font variant</b></em>' attribute.
@@ -33894,7 +34057,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_MERGE__FONT_VARIANT = SVG_ELEMENT_FEATURE_COUNT + 30;
+	int SVG_FE_MERGE_ELEMENT__FONT_VARIANT = SVG_ELEMENT_FEATURE_COUNT + 30;
 
 	/**
 	 * The feature id for the '<em><b>Font weight</b></em>' attribute.
@@ -33903,7 +34066,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_MERGE__FONT_WEIGHT = SVG_ELEMENT_FEATURE_COUNT + 31;
+	int SVG_FE_MERGE_ELEMENT__FONT_WEIGHT = SVG_ELEMENT_FEATURE_COUNT + 31;
 
 	/**
 	 * The feature id for the '<em><b>Glyph orientation horizontal</b></em>' attribute.
@@ -33912,7 +34075,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_MERGE__GLYPH_ORIENTATION_HORIZONTAL = SVG_ELEMENT_FEATURE_COUNT + 32;
+	int SVG_FE_MERGE_ELEMENT__GLYPH_ORIENTATION_HORIZONTAL = SVG_ELEMENT_FEATURE_COUNT + 32;
 
 	/**
 	 * The feature id for the '<em><b>Glyph orientation vertical</b></em>' attribute.
@@ -33921,7 +34084,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_MERGE__GLYPH_ORIENTATION_VERTICAL = SVG_ELEMENT_FEATURE_COUNT + 33;
+	int SVG_FE_MERGE_ELEMENT__GLYPH_ORIENTATION_VERTICAL = SVG_ELEMENT_FEATURE_COUNT + 33;
 
 	/**
 	 * The feature id for the '<em><b>Image rendering</b></em>' attribute.
@@ -33930,7 +34093,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_MERGE__IMAGE_RENDERING = SVG_ELEMENT_FEATURE_COUNT + 34;
+	int SVG_FE_MERGE_ELEMENT__IMAGE_RENDERING = SVG_ELEMENT_FEATURE_COUNT + 34;
 
 	/**
 	 * The feature id for the '<em><b>Kerning</b></em>' attribute.
@@ -33939,7 +34102,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_MERGE__KERNING = SVG_ELEMENT_FEATURE_COUNT + 35;
+	int SVG_FE_MERGE_ELEMENT__KERNING = SVG_ELEMENT_FEATURE_COUNT + 35;
 
 	/**
 	 * The feature id for the '<em><b>Letter spacing</b></em>' attribute.
@@ -33948,7 +34111,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_MERGE__LETTER_SPACING = SVG_ELEMENT_FEATURE_COUNT + 36;
+	int SVG_FE_MERGE_ELEMENT__LETTER_SPACING = SVG_ELEMENT_FEATURE_COUNT + 36;
 
 	/**
 	 * The feature id for the '<em><b>Lighting color</b></em>' attribute.
@@ -33957,7 +34120,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_MERGE__LIGHTING_COLOR = SVG_ELEMENT_FEATURE_COUNT + 37;
+	int SVG_FE_MERGE_ELEMENT__LIGHTING_COLOR = SVG_ELEMENT_FEATURE_COUNT + 37;
 
 	/**
 	 * The feature id for the '<em><b>Marker end</b></em>' attribute.
@@ -33966,7 +34129,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_MERGE__MARKER_END = SVG_ELEMENT_FEATURE_COUNT + 38;
+	int SVG_FE_MERGE_ELEMENT__MARKER_END = SVG_ELEMENT_FEATURE_COUNT + 38;
 
 	/**
 	 * The feature id for the '<em><b>Marker mid</b></em>' attribute.
@@ -33975,7 +34138,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_MERGE__MARKER_MID = SVG_ELEMENT_FEATURE_COUNT + 39;
+	int SVG_FE_MERGE_ELEMENT__MARKER_MID = SVG_ELEMENT_FEATURE_COUNT + 39;
 
 	/**
 	 * The feature id for the '<em><b>Marker start</b></em>' attribute.
@@ -33984,7 +34147,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_MERGE__MARKER_START = SVG_ELEMENT_FEATURE_COUNT + 40;
+	int SVG_FE_MERGE_ELEMENT__MARKER_START = SVG_ELEMENT_FEATURE_COUNT + 40;
 
 	/**
 	 * The feature id for the '<em><b>Masks</b></em>' attribute.
@@ -33993,7 +34156,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_MERGE__MASKS = SVG_ELEMENT_FEATURE_COUNT + 41;
+	int SVG_FE_MERGE_ELEMENT__MASKS = SVG_ELEMENT_FEATURE_COUNT + 41;
 
 	/**
 	 * The feature id for the '<em><b>Opacity</b></em>' attribute.
@@ -34002,7 +34165,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_MERGE__OPACITY = SVG_ELEMENT_FEATURE_COUNT + 42;
+	int SVG_FE_MERGE_ELEMENT__OPACITY = SVG_ELEMENT_FEATURE_COUNT + 42;
 
 	/**
 	 * The feature id for the '<em><b>Overflow</b></em>' attribute.
@@ -34011,7 +34174,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_MERGE__OVERFLOW = SVG_ELEMENT_FEATURE_COUNT + 43;
+	int SVG_FE_MERGE_ELEMENT__OVERFLOW = SVG_ELEMENT_FEATURE_COUNT + 43;
 
 	/**
 	 * The feature id for the '<em><b>Pointer events</b></em>' attribute.
@@ -34020,7 +34183,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_MERGE__POINTER_EVENTS = SVG_ELEMENT_FEATURE_COUNT + 44;
+	int SVG_FE_MERGE_ELEMENT__POINTER_EVENTS = SVG_ELEMENT_FEATURE_COUNT + 44;
 
 	/**
 	 * The feature id for the '<em><b>Shape rendering</b></em>' attribute.
@@ -34029,7 +34192,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_MERGE__SHAPE_RENDERING = SVG_ELEMENT_FEATURE_COUNT + 45;
+	int SVG_FE_MERGE_ELEMENT__SHAPE_RENDERING = SVG_ELEMENT_FEATURE_COUNT + 45;
 
 	/**
 	 * The feature id for the '<em><b>Stop color</b></em>' attribute.
@@ -34038,7 +34201,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_MERGE__STOP_COLOR = SVG_ELEMENT_FEATURE_COUNT + 46;
+	int SVG_FE_MERGE_ELEMENT__STOP_COLOR = SVG_ELEMENT_FEATURE_COUNT + 46;
 
 	/**
 	 * The feature id for the '<em><b>Stop opacity</b></em>' attribute.
@@ -34047,7 +34210,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_MERGE__STOP_OPACITY = SVG_ELEMENT_FEATURE_COUNT + 47;
+	int SVG_FE_MERGE_ELEMENT__STOP_OPACITY = SVG_ELEMENT_FEATURE_COUNT + 47;
 
 	/**
 	 * The feature id for the '<em><b>Stroke</b></em>' attribute.
@@ -34056,7 +34219,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_MERGE__STROKE = SVG_ELEMENT_FEATURE_COUNT + 48;
+	int SVG_FE_MERGE_ELEMENT__STROKE = SVG_ELEMENT_FEATURE_COUNT + 48;
 
 	/**
 	 * The feature id for the '<em><b>Stroke dasharray</b></em>' attribute.
@@ -34065,7 +34228,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_MERGE__STROKE_DASHARRAY = SVG_ELEMENT_FEATURE_COUNT + 49;
+	int SVG_FE_MERGE_ELEMENT__STROKE_DASHARRAY = SVG_ELEMENT_FEATURE_COUNT + 49;
 
 	/**
 	 * The feature id for the '<em><b>Stroke dashoffset</b></em>' attribute.
@@ -34074,7 +34237,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_MERGE__STROKE_DASHOFFSET = SVG_ELEMENT_FEATURE_COUNT + 50;
+	int SVG_FE_MERGE_ELEMENT__STROKE_DASHOFFSET = SVG_ELEMENT_FEATURE_COUNT + 50;
 
 	/**
 	 * The feature id for the '<em><b>Stroke linecap</b></em>' attribute.
@@ -34083,7 +34246,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_MERGE__STROKE_LINECAP = SVG_ELEMENT_FEATURE_COUNT + 51;
+	int SVG_FE_MERGE_ELEMENT__STROKE_LINECAP = SVG_ELEMENT_FEATURE_COUNT + 51;
 
 	/**
 	 * The feature id for the '<em><b>Stroke linejoin</b></em>' attribute.
@@ -34092,7 +34255,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_MERGE__STROKE_LINEJOIN = SVG_ELEMENT_FEATURE_COUNT + 52;
+	int SVG_FE_MERGE_ELEMENT__STROKE_LINEJOIN = SVG_ELEMENT_FEATURE_COUNT + 52;
 
 	/**
 	 * The feature id for the '<em><b>Stroke miterlimit</b></em>' attribute.
@@ -34101,7 +34264,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_MERGE__STROKE_MITERLIMIT = SVG_ELEMENT_FEATURE_COUNT + 53;
+	int SVG_FE_MERGE_ELEMENT__STROKE_MITERLIMIT = SVG_ELEMENT_FEATURE_COUNT + 53;
 
 	/**
 	 * The feature id for the '<em><b>Stroke opacity</b></em>' attribute.
@@ -34110,7 +34273,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_MERGE__STROKE_OPACITY = SVG_ELEMENT_FEATURE_COUNT + 54;
+	int SVG_FE_MERGE_ELEMENT__STROKE_OPACITY = SVG_ELEMENT_FEATURE_COUNT + 54;
 
 	/**
 	 * The feature id for the '<em><b>Stroke width</b></em>' attribute.
@@ -34119,7 +34282,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_MERGE__STROKE_WIDTH = SVG_ELEMENT_FEATURE_COUNT + 55;
+	int SVG_FE_MERGE_ELEMENT__STROKE_WIDTH = SVG_ELEMENT_FEATURE_COUNT + 55;
 
 	/**
 	 * The feature id for the '<em><b>Text anchor</b></em>' attribute.
@@ -34128,7 +34291,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_MERGE__TEXT_ANCHOR = SVG_ELEMENT_FEATURE_COUNT + 56;
+	int SVG_FE_MERGE_ELEMENT__TEXT_ANCHOR = SVG_ELEMENT_FEATURE_COUNT + 56;
 
 	/**
 	 * The feature id for the '<em><b>Text decoration</b></em>' attribute.
@@ -34137,7 +34300,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_MERGE__TEXT_DECORATION = SVG_ELEMENT_FEATURE_COUNT + 57;
+	int SVG_FE_MERGE_ELEMENT__TEXT_DECORATION = SVG_ELEMENT_FEATURE_COUNT + 57;
 
 	/**
 	 * The feature id for the '<em><b>Text rendering</b></em>' attribute.
@@ -34146,7 +34309,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_MERGE__TEXT_RENDERING = SVG_ELEMENT_FEATURE_COUNT + 58;
+	int SVG_FE_MERGE_ELEMENT__TEXT_RENDERING = SVG_ELEMENT_FEATURE_COUNT + 58;
 
 	/**
 	 * The feature id for the '<em><b>Unicode bidi</b></em>' attribute.
@@ -34155,7 +34318,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_MERGE__UNICODE_BIDI = SVG_ELEMENT_FEATURE_COUNT + 59;
+	int SVG_FE_MERGE_ELEMENT__UNICODE_BIDI = SVG_ELEMENT_FEATURE_COUNT + 59;
 
 	/**
 	 * The feature id for the '<em><b>Visibility</b></em>' attribute.
@@ -34164,7 +34327,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_MERGE__VISIBILITY = SVG_ELEMENT_FEATURE_COUNT + 60;
+	int SVG_FE_MERGE_ELEMENT__VISIBILITY = SVG_ELEMENT_FEATURE_COUNT + 60;
 
 	/**
 	 * The feature id for the '<em><b>Word spacing</b></em>' attribute.
@@ -34173,7 +34336,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_MERGE__WORD_SPACING = SVG_ELEMENT_FEATURE_COUNT + 61;
+	int SVG_FE_MERGE_ELEMENT__WORD_SPACING = SVG_ELEMENT_FEATURE_COUNT + 61;
 
 	/**
 	 * The feature id for the '<em><b>Writing mode</b></em>' attribute.
@@ -34182,7 +34345,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_MERGE__WRITING_MODE = SVG_ELEMENT_FEATURE_COUNT + 62;
+	int SVG_FE_MERGE_ELEMENT__WRITING_MODE = SVG_ELEMENT_FEATURE_COUNT + 62;
 
 	/**
 	 * The feature id for the '<em><b>X</b></em>' attribute.
@@ -34191,7 +34354,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_MERGE__X = SVG_ELEMENT_FEATURE_COUNT + 63;
+	int SVG_FE_MERGE_ELEMENT__X = SVG_ELEMENT_FEATURE_COUNT + 63;
 
 	/**
 	 * The feature id for the '<em><b>Y</b></em>' attribute.
@@ -34200,7 +34363,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_MERGE__Y = SVG_ELEMENT_FEATURE_COUNT + 64;
+	int SVG_FE_MERGE_ELEMENT__Y = SVG_ELEMENT_FEATURE_COUNT + 64;
 
 	/**
 	 * The feature id for the '<em><b>Width</b></em>' attribute.
@@ -34209,7 +34372,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_MERGE__WIDTH = SVG_ELEMENT_FEATURE_COUNT + 65;
+	int SVG_FE_MERGE_ELEMENT__WIDTH = SVG_ELEMENT_FEATURE_COUNT + 65;
 
 	/**
 	 * The feature id for the '<em><b>Height</b></em>' attribute.
@@ -34218,7 +34381,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_MERGE__HEIGHT = SVG_ELEMENT_FEATURE_COUNT + 66;
+	int SVG_FE_MERGE_ELEMENT__HEIGHT = SVG_ELEMENT_FEATURE_COUNT + 66;
 
 	/**
 	 * The feature id for the '<em><b>Result</b></em>' attribute.
@@ -34227,7 +34390,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_MERGE__RESULT = SVG_ELEMENT_FEATURE_COUNT + 67;
+	int SVG_FE_MERGE_ELEMENT__RESULT = SVG_ELEMENT_FEATURE_COUNT + 67;
 
 	/**
 	 * The feature id for the '<em><b>In</b></em>' attribute.
@@ -34236,7 +34399,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_MERGE__IN = SVG_ELEMENT_FEATURE_COUNT + 68;
+	int SVG_FE_MERGE_ELEMENT__IN = SVG_ELEMENT_FEATURE_COUNT + 68;
 
 	/**
 	 * The feature id for the '<em><b>Children</b></em>' containment reference list.
@@ -34245,7 +34408,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_MERGE__CHILDREN = SVG_ELEMENT_FEATURE_COUNT + 69;
+	int SVG_FE_MERGE_ELEMENT__CHILDREN = SVG_ELEMENT_FEATURE_COUNT + 69;
 
 	/**
 	 * The feature id for the '<em><b>Class</b></em>' attribute.
@@ -34254,7 +34417,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_MERGE__CLASS = SVG_ELEMENT_FEATURE_COUNT + 70;
+	int SVG_FE_MERGE_ELEMENT__CLASS = SVG_ELEMENT_FEATURE_COUNT + 70;
 
 	/**
 	 * The feature id for the '<em><b>Style</b></em>' attribute.
@@ -34263,26 +34426,26 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_MERGE__STYLE = SVG_ELEMENT_FEATURE_COUNT + 71;
+	int SVG_FE_MERGE_ELEMENT__STYLE = SVG_ELEMENT_FEATURE_COUNT + 71;
 
 	/**
-	 * The number of structural features of the '<em>Fe Merge</em>' class.
+	 * The number of structural features of the '<em>Fe Merge Element</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_MERGE_FEATURE_COUNT = SVG_ELEMENT_FEATURE_COUNT + 72;
+	int SVG_FE_MERGE_ELEMENT_FEATURE_COUNT = SVG_ELEMENT_FEATURE_COUNT + 72;
 
 	/**
-	 * The meta object id for the '{@link at.bestsolution.efxclipse.formats.svg.svg.impl.SvgFeMergeNodeImpl <em>Fe Merge Node</em>}' class.
+	 * The meta object id for the '{@link at.bestsolution.efxclipse.formats.svg.svg.impl.SvgFeMergeNodeElementImpl <em>Fe Merge Node Element</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see at.bestsolution.efxclipse.formats.svg.svg.impl.SvgFeMergeNodeImpl
-	 * @see at.bestsolution.efxclipse.formats.svg.svg.impl.SvgPackageImpl#getSvgFeMergeNode()
+	 * @see at.bestsolution.efxclipse.formats.svg.svg.impl.SvgFeMergeNodeElementImpl
+	 * @see at.bestsolution.efxclipse.formats.svg.svg.impl.SvgPackageImpl#getSvgFeMergeNodeElement()
 	 * @generated
 	 */
-	int SVG_FE_MERGE_NODE = 76;
+	int SVG_FE_MERGE_NODE_ELEMENT = 77;
 
 	/**
 	 * The feature id for the '<em><b>Id</b></em>' attribute.
@@ -34291,7 +34454,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_MERGE_NODE__ID = SVG_ELEMENT_FEATURE_COUNT + 0;
+	int SVG_FE_MERGE_NODE_ELEMENT__ID = SVG_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Xml base</b></em>' attribute.
@@ -34300,7 +34463,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_MERGE_NODE__XML_BASE = SVG_ELEMENT_FEATURE_COUNT + 1;
+	int SVG_FE_MERGE_NODE_ELEMENT__XML_BASE = SVG_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Xml lang</b></em>' attribute.
@@ -34309,7 +34472,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_MERGE_NODE__XML_LANG = SVG_ELEMENT_FEATURE_COUNT + 2;
+	int SVG_FE_MERGE_NODE_ELEMENT__XML_LANG = SVG_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Xml space</b></em>' attribute.
@@ -34318,7 +34481,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_MERGE_NODE__XML_SPACE = SVG_ELEMENT_FEATURE_COUNT + 3;
+	int SVG_FE_MERGE_NODE_ELEMENT__XML_SPACE = SVG_ELEMENT_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Children</b></em>' containment reference list.
@@ -34327,26 +34490,26 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_MERGE_NODE__CHILDREN = SVG_ELEMENT_FEATURE_COUNT + 4;
+	int SVG_FE_MERGE_NODE_ELEMENT__CHILDREN = SVG_ELEMENT_FEATURE_COUNT + 4;
 
 	/**
-	 * The number of structural features of the '<em>Fe Merge Node</em>' class.
+	 * The number of structural features of the '<em>Fe Merge Node Element</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_MERGE_NODE_FEATURE_COUNT = SVG_ELEMENT_FEATURE_COUNT + 5;
+	int SVG_FE_MERGE_NODE_ELEMENT_FEATURE_COUNT = SVG_ELEMENT_FEATURE_COUNT + 5;
 
 	/**
-	 * The meta object id for the '{@link at.bestsolution.efxclipse.formats.svg.svg.impl.SvgFeMorphologyImpl <em>Fe Morphology</em>}' class.
+	 * The meta object id for the '{@link at.bestsolution.efxclipse.formats.svg.svg.impl.SvgFeMorphologyElementImpl <em>Fe Morphology Element</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see at.bestsolution.efxclipse.formats.svg.svg.impl.SvgFeMorphologyImpl
-	 * @see at.bestsolution.efxclipse.formats.svg.svg.impl.SvgPackageImpl#getSvgFeMorphology()
+	 * @see at.bestsolution.efxclipse.formats.svg.svg.impl.SvgFeMorphologyElementImpl
+	 * @see at.bestsolution.efxclipse.formats.svg.svg.impl.SvgPackageImpl#getSvgFeMorphologyElement()
 	 * @generated
 	 */
-	int SVG_FE_MORPHOLOGY = 77;
+	int SVG_FE_MORPHOLOGY_ELEMENT = 78;
 
 	/**
 	 * The feature id for the '<em><b>Id</b></em>' attribute.
@@ -34355,7 +34518,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_MORPHOLOGY__ID = SVG_ELEMENT_FEATURE_COUNT + 0;
+	int SVG_FE_MORPHOLOGY_ELEMENT__ID = SVG_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Xml base</b></em>' attribute.
@@ -34364,7 +34527,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_MORPHOLOGY__XML_BASE = SVG_ELEMENT_FEATURE_COUNT + 1;
+	int SVG_FE_MORPHOLOGY_ELEMENT__XML_BASE = SVG_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Xml lang</b></em>' attribute.
@@ -34373,7 +34536,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_MORPHOLOGY__XML_LANG = SVG_ELEMENT_FEATURE_COUNT + 2;
+	int SVG_FE_MORPHOLOGY_ELEMENT__XML_LANG = SVG_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Xml space</b></em>' attribute.
@@ -34382,7 +34545,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_MORPHOLOGY__XML_SPACE = SVG_ELEMENT_FEATURE_COUNT + 3;
+	int SVG_FE_MORPHOLOGY_ELEMENT__XML_SPACE = SVG_ELEMENT_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Alignment baseline</b></em>' attribute.
@@ -34391,7 +34554,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_MORPHOLOGY__ALIGNMENT_BASELINE = SVG_ELEMENT_FEATURE_COUNT + 4;
+	int SVG_FE_MORPHOLOGY_ELEMENT__ALIGNMENT_BASELINE = SVG_ELEMENT_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Baseline shift</b></em>' attribute.
@@ -34400,7 +34563,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_MORPHOLOGY__BASELINE_SHIFT = SVG_ELEMENT_FEATURE_COUNT + 5;
+	int SVG_FE_MORPHOLOGY_ELEMENT__BASELINE_SHIFT = SVG_ELEMENT_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>Clip</b></em>' attribute.
@@ -34409,7 +34572,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_MORPHOLOGY__CLIP = SVG_ELEMENT_FEATURE_COUNT + 6;
+	int SVG_FE_MORPHOLOGY_ELEMENT__CLIP = SVG_ELEMENT_FEATURE_COUNT + 6;
 
 	/**
 	 * The feature id for the '<em><b>Clip path</b></em>' attribute.
@@ -34418,7 +34581,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_MORPHOLOGY__CLIP_PATH = SVG_ELEMENT_FEATURE_COUNT + 7;
+	int SVG_FE_MORPHOLOGY_ELEMENT__CLIP_PATH = SVG_ELEMENT_FEATURE_COUNT + 7;
 
 	/**
 	 * The feature id for the '<em><b>Clip rule</b></em>' attribute.
@@ -34427,7 +34590,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_MORPHOLOGY__CLIP_RULE = SVG_ELEMENT_FEATURE_COUNT + 8;
+	int SVG_FE_MORPHOLOGY_ELEMENT__CLIP_RULE = SVG_ELEMENT_FEATURE_COUNT + 8;
 
 	/**
 	 * The feature id for the '<em><b>Color</b></em>' attribute.
@@ -34436,7 +34599,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_MORPHOLOGY__COLOR = SVG_ELEMENT_FEATURE_COUNT + 9;
+	int SVG_FE_MORPHOLOGY_ELEMENT__COLOR = SVG_ELEMENT_FEATURE_COUNT + 9;
 
 	/**
 	 * The feature id for the '<em><b>Color interpolation</b></em>' attribute.
@@ -34445,7 +34608,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_MORPHOLOGY__COLOR_INTERPOLATION = SVG_ELEMENT_FEATURE_COUNT + 10;
+	int SVG_FE_MORPHOLOGY_ELEMENT__COLOR_INTERPOLATION = SVG_ELEMENT_FEATURE_COUNT + 10;
 
 	/**
 	 * The feature id for the '<em><b>Color interpolation filters</b></em>' attribute.
@@ -34454,7 +34617,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_MORPHOLOGY__COLOR_INTERPOLATION_FILTERS = SVG_ELEMENT_FEATURE_COUNT + 11;
+	int SVG_FE_MORPHOLOGY_ELEMENT__COLOR_INTERPOLATION_FILTERS = SVG_ELEMENT_FEATURE_COUNT + 11;
 
 	/**
 	 * The feature id for the '<em><b>Color profile</b></em>' attribute.
@@ -34463,7 +34626,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_MORPHOLOGY__COLOR_PROFILE = SVG_ELEMENT_FEATURE_COUNT + 12;
+	int SVG_FE_MORPHOLOGY_ELEMENT__COLOR_PROFILE = SVG_ELEMENT_FEATURE_COUNT + 12;
 
 	/**
 	 * The feature id for the '<em><b>Color rendering</b></em>' attribute.
@@ -34472,7 +34635,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_MORPHOLOGY__COLOR_RENDERING = SVG_ELEMENT_FEATURE_COUNT + 13;
+	int SVG_FE_MORPHOLOGY_ELEMENT__COLOR_RENDERING = SVG_ELEMENT_FEATURE_COUNT + 13;
 
 	/**
 	 * The feature id for the '<em><b>Cursor</b></em>' attribute.
@@ -34481,7 +34644,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_MORPHOLOGY__CURSOR = SVG_ELEMENT_FEATURE_COUNT + 14;
+	int SVG_FE_MORPHOLOGY_ELEMENT__CURSOR = SVG_ELEMENT_FEATURE_COUNT + 14;
 
 	/**
 	 * The feature id for the '<em><b>Direction</b></em>' attribute.
@@ -34490,7 +34653,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_MORPHOLOGY__DIRECTION = SVG_ELEMENT_FEATURE_COUNT + 15;
+	int SVG_FE_MORPHOLOGY_ELEMENT__DIRECTION = SVG_ELEMENT_FEATURE_COUNT + 15;
 
 	/**
 	 * The feature id for the '<em><b>Display</b></em>' attribute.
@@ -34499,7 +34662,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_MORPHOLOGY__DISPLAY = SVG_ELEMENT_FEATURE_COUNT + 16;
+	int SVG_FE_MORPHOLOGY_ELEMENT__DISPLAY = SVG_ELEMENT_FEATURE_COUNT + 16;
 
 	/**
 	 * The feature id for the '<em><b>Dominant baseline</b></em>' attribute.
@@ -34508,7 +34671,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_MORPHOLOGY__DOMINANT_BASELINE = SVG_ELEMENT_FEATURE_COUNT + 17;
+	int SVG_FE_MORPHOLOGY_ELEMENT__DOMINANT_BASELINE = SVG_ELEMENT_FEATURE_COUNT + 17;
 
 	/**
 	 * The feature id for the '<em><b>Enable background</b></em>' attribute.
@@ -34517,7 +34680,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_MORPHOLOGY__ENABLE_BACKGROUND = SVG_ELEMENT_FEATURE_COUNT + 18;
+	int SVG_FE_MORPHOLOGY_ELEMENT__ENABLE_BACKGROUND = SVG_ELEMENT_FEATURE_COUNT + 18;
 
 	/**
 	 * The feature id for the '<em><b>Fill</b></em>' attribute.
@@ -34526,7 +34689,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_MORPHOLOGY__FILL = SVG_ELEMENT_FEATURE_COUNT + 19;
+	int SVG_FE_MORPHOLOGY_ELEMENT__FILL = SVG_ELEMENT_FEATURE_COUNT + 19;
 
 	/**
 	 * The feature id for the '<em><b>Fill opacity</b></em>' attribute.
@@ -34535,7 +34698,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_MORPHOLOGY__FILL_OPACITY = SVG_ELEMENT_FEATURE_COUNT + 20;
+	int SVG_FE_MORPHOLOGY_ELEMENT__FILL_OPACITY = SVG_ELEMENT_FEATURE_COUNT + 20;
 
 	/**
 	 * The feature id for the '<em><b>Fill rule</b></em>' attribute.
@@ -34544,7 +34707,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_MORPHOLOGY__FILL_RULE = SVG_ELEMENT_FEATURE_COUNT + 21;
+	int SVG_FE_MORPHOLOGY_ELEMENT__FILL_RULE = SVG_ELEMENT_FEATURE_COUNT + 21;
 
 	/**
 	 * The feature id for the '<em><b>Filter</b></em>' attribute.
@@ -34553,7 +34716,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_MORPHOLOGY__FILTER = SVG_ELEMENT_FEATURE_COUNT + 22;
+	int SVG_FE_MORPHOLOGY_ELEMENT__FILTER = SVG_ELEMENT_FEATURE_COUNT + 22;
 
 	/**
 	 * The feature id for the '<em><b>Flood color</b></em>' attribute.
@@ -34562,7 +34725,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_MORPHOLOGY__FLOOD_COLOR = SVG_ELEMENT_FEATURE_COUNT + 23;
+	int SVG_FE_MORPHOLOGY_ELEMENT__FLOOD_COLOR = SVG_ELEMENT_FEATURE_COUNT + 23;
 
 	/**
 	 * The feature id for the '<em><b>Flood opacity</b></em>' attribute.
@@ -34571,7 +34734,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_MORPHOLOGY__FLOOD_OPACITY = SVG_ELEMENT_FEATURE_COUNT + 24;
+	int SVG_FE_MORPHOLOGY_ELEMENT__FLOOD_OPACITY = SVG_ELEMENT_FEATURE_COUNT + 24;
 
 	/**
 	 * The feature id for the '<em><b>Font family</b></em>' attribute.
@@ -34580,7 +34743,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_MORPHOLOGY__FONT_FAMILY = SVG_ELEMENT_FEATURE_COUNT + 25;
+	int SVG_FE_MORPHOLOGY_ELEMENT__FONT_FAMILY = SVG_ELEMENT_FEATURE_COUNT + 25;
 
 	/**
 	 * The feature id for the '<em><b>Font size</b></em>' attribute.
@@ -34589,7 +34752,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_MORPHOLOGY__FONT_SIZE = SVG_ELEMENT_FEATURE_COUNT + 26;
+	int SVG_FE_MORPHOLOGY_ELEMENT__FONT_SIZE = SVG_ELEMENT_FEATURE_COUNT + 26;
 
 	/**
 	 * The feature id for the '<em><b>Font size adjust</b></em>' attribute.
@@ -34598,7 +34761,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_MORPHOLOGY__FONT_SIZE_ADJUST = SVG_ELEMENT_FEATURE_COUNT + 27;
+	int SVG_FE_MORPHOLOGY_ELEMENT__FONT_SIZE_ADJUST = SVG_ELEMENT_FEATURE_COUNT + 27;
 
 	/**
 	 * The feature id for the '<em><b>Font stretch</b></em>' attribute.
@@ -34607,7 +34770,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_MORPHOLOGY__FONT_STRETCH = SVG_ELEMENT_FEATURE_COUNT + 28;
+	int SVG_FE_MORPHOLOGY_ELEMENT__FONT_STRETCH = SVG_ELEMENT_FEATURE_COUNT + 28;
 
 	/**
 	 * The feature id for the '<em><b>Font style</b></em>' attribute.
@@ -34616,7 +34779,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_MORPHOLOGY__FONT_STYLE = SVG_ELEMENT_FEATURE_COUNT + 29;
+	int SVG_FE_MORPHOLOGY_ELEMENT__FONT_STYLE = SVG_ELEMENT_FEATURE_COUNT + 29;
 
 	/**
 	 * The feature id for the '<em><b>Font variant</b></em>' attribute.
@@ -34625,7 +34788,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_MORPHOLOGY__FONT_VARIANT = SVG_ELEMENT_FEATURE_COUNT + 30;
+	int SVG_FE_MORPHOLOGY_ELEMENT__FONT_VARIANT = SVG_ELEMENT_FEATURE_COUNT + 30;
 
 	/**
 	 * The feature id for the '<em><b>Font weight</b></em>' attribute.
@@ -34634,7 +34797,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_MORPHOLOGY__FONT_WEIGHT = SVG_ELEMENT_FEATURE_COUNT + 31;
+	int SVG_FE_MORPHOLOGY_ELEMENT__FONT_WEIGHT = SVG_ELEMENT_FEATURE_COUNT + 31;
 
 	/**
 	 * The feature id for the '<em><b>Glyph orientation horizontal</b></em>' attribute.
@@ -34643,7 +34806,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_MORPHOLOGY__GLYPH_ORIENTATION_HORIZONTAL = SVG_ELEMENT_FEATURE_COUNT + 32;
+	int SVG_FE_MORPHOLOGY_ELEMENT__GLYPH_ORIENTATION_HORIZONTAL = SVG_ELEMENT_FEATURE_COUNT + 32;
 
 	/**
 	 * The feature id for the '<em><b>Glyph orientation vertical</b></em>' attribute.
@@ -34652,7 +34815,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_MORPHOLOGY__GLYPH_ORIENTATION_VERTICAL = SVG_ELEMENT_FEATURE_COUNT + 33;
+	int SVG_FE_MORPHOLOGY_ELEMENT__GLYPH_ORIENTATION_VERTICAL = SVG_ELEMENT_FEATURE_COUNT + 33;
 
 	/**
 	 * The feature id for the '<em><b>Image rendering</b></em>' attribute.
@@ -34661,7 +34824,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_MORPHOLOGY__IMAGE_RENDERING = SVG_ELEMENT_FEATURE_COUNT + 34;
+	int SVG_FE_MORPHOLOGY_ELEMENT__IMAGE_RENDERING = SVG_ELEMENT_FEATURE_COUNT + 34;
 
 	/**
 	 * The feature id for the '<em><b>Kerning</b></em>' attribute.
@@ -34670,7 +34833,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_MORPHOLOGY__KERNING = SVG_ELEMENT_FEATURE_COUNT + 35;
+	int SVG_FE_MORPHOLOGY_ELEMENT__KERNING = SVG_ELEMENT_FEATURE_COUNT + 35;
 
 	/**
 	 * The feature id for the '<em><b>Letter spacing</b></em>' attribute.
@@ -34679,7 +34842,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_MORPHOLOGY__LETTER_SPACING = SVG_ELEMENT_FEATURE_COUNT + 36;
+	int SVG_FE_MORPHOLOGY_ELEMENT__LETTER_SPACING = SVG_ELEMENT_FEATURE_COUNT + 36;
 
 	/**
 	 * The feature id for the '<em><b>Lighting color</b></em>' attribute.
@@ -34688,7 +34851,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_MORPHOLOGY__LIGHTING_COLOR = SVG_ELEMENT_FEATURE_COUNT + 37;
+	int SVG_FE_MORPHOLOGY_ELEMENT__LIGHTING_COLOR = SVG_ELEMENT_FEATURE_COUNT + 37;
 
 	/**
 	 * The feature id for the '<em><b>Marker end</b></em>' attribute.
@@ -34697,7 +34860,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_MORPHOLOGY__MARKER_END = SVG_ELEMENT_FEATURE_COUNT + 38;
+	int SVG_FE_MORPHOLOGY_ELEMENT__MARKER_END = SVG_ELEMENT_FEATURE_COUNT + 38;
 
 	/**
 	 * The feature id for the '<em><b>Marker mid</b></em>' attribute.
@@ -34706,7 +34869,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_MORPHOLOGY__MARKER_MID = SVG_ELEMENT_FEATURE_COUNT + 39;
+	int SVG_FE_MORPHOLOGY_ELEMENT__MARKER_MID = SVG_ELEMENT_FEATURE_COUNT + 39;
 
 	/**
 	 * The feature id for the '<em><b>Marker start</b></em>' attribute.
@@ -34715,7 +34878,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_MORPHOLOGY__MARKER_START = SVG_ELEMENT_FEATURE_COUNT + 40;
+	int SVG_FE_MORPHOLOGY_ELEMENT__MARKER_START = SVG_ELEMENT_FEATURE_COUNT + 40;
 
 	/**
 	 * The feature id for the '<em><b>Masks</b></em>' attribute.
@@ -34724,7 +34887,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_MORPHOLOGY__MASKS = SVG_ELEMENT_FEATURE_COUNT + 41;
+	int SVG_FE_MORPHOLOGY_ELEMENT__MASKS = SVG_ELEMENT_FEATURE_COUNT + 41;
 
 	/**
 	 * The feature id for the '<em><b>Opacity</b></em>' attribute.
@@ -34733,7 +34896,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_MORPHOLOGY__OPACITY = SVG_ELEMENT_FEATURE_COUNT + 42;
+	int SVG_FE_MORPHOLOGY_ELEMENT__OPACITY = SVG_ELEMENT_FEATURE_COUNT + 42;
 
 	/**
 	 * The feature id for the '<em><b>Overflow</b></em>' attribute.
@@ -34742,7 +34905,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_MORPHOLOGY__OVERFLOW = SVG_ELEMENT_FEATURE_COUNT + 43;
+	int SVG_FE_MORPHOLOGY_ELEMENT__OVERFLOW = SVG_ELEMENT_FEATURE_COUNT + 43;
 
 	/**
 	 * The feature id for the '<em><b>Pointer events</b></em>' attribute.
@@ -34751,7 +34914,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_MORPHOLOGY__POINTER_EVENTS = SVG_ELEMENT_FEATURE_COUNT + 44;
+	int SVG_FE_MORPHOLOGY_ELEMENT__POINTER_EVENTS = SVG_ELEMENT_FEATURE_COUNT + 44;
 
 	/**
 	 * The feature id for the '<em><b>Shape rendering</b></em>' attribute.
@@ -34760,7 +34923,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_MORPHOLOGY__SHAPE_RENDERING = SVG_ELEMENT_FEATURE_COUNT + 45;
+	int SVG_FE_MORPHOLOGY_ELEMENT__SHAPE_RENDERING = SVG_ELEMENT_FEATURE_COUNT + 45;
 
 	/**
 	 * The feature id for the '<em><b>Stop color</b></em>' attribute.
@@ -34769,7 +34932,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_MORPHOLOGY__STOP_COLOR = SVG_ELEMENT_FEATURE_COUNT + 46;
+	int SVG_FE_MORPHOLOGY_ELEMENT__STOP_COLOR = SVG_ELEMENT_FEATURE_COUNT + 46;
 
 	/**
 	 * The feature id for the '<em><b>Stop opacity</b></em>' attribute.
@@ -34778,7 +34941,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_MORPHOLOGY__STOP_OPACITY = SVG_ELEMENT_FEATURE_COUNT + 47;
+	int SVG_FE_MORPHOLOGY_ELEMENT__STOP_OPACITY = SVG_ELEMENT_FEATURE_COUNT + 47;
 
 	/**
 	 * The feature id for the '<em><b>Stroke</b></em>' attribute.
@@ -34787,7 +34950,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_MORPHOLOGY__STROKE = SVG_ELEMENT_FEATURE_COUNT + 48;
+	int SVG_FE_MORPHOLOGY_ELEMENT__STROKE = SVG_ELEMENT_FEATURE_COUNT + 48;
 
 	/**
 	 * The feature id for the '<em><b>Stroke dasharray</b></em>' attribute.
@@ -34796,7 +34959,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_MORPHOLOGY__STROKE_DASHARRAY = SVG_ELEMENT_FEATURE_COUNT + 49;
+	int SVG_FE_MORPHOLOGY_ELEMENT__STROKE_DASHARRAY = SVG_ELEMENT_FEATURE_COUNT + 49;
 
 	/**
 	 * The feature id for the '<em><b>Stroke dashoffset</b></em>' attribute.
@@ -34805,7 +34968,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_MORPHOLOGY__STROKE_DASHOFFSET = SVG_ELEMENT_FEATURE_COUNT + 50;
+	int SVG_FE_MORPHOLOGY_ELEMENT__STROKE_DASHOFFSET = SVG_ELEMENT_FEATURE_COUNT + 50;
 
 	/**
 	 * The feature id for the '<em><b>Stroke linecap</b></em>' attribute.
@@ -34814,7 +34977,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_MORPHOLOGY__STROKE_LINECAP = SVG_ELEMENT_FEATURE_COUNT + 51;
+	int SVG_FE_MORPHOLOGY_ELEMENT__STROKE_LINECAP = SVG_ELEMENT_FEATURE_COUNT + 51;
 
 	/**
 	 * The feature id for the '<em><b>Stroke linejoin</b></em>' attribute.
@@ -34823,7 +34986,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_MORPHOLOGY__STROKE_LINEJOIN = SVG_ELEMENT_FEATURE_COUNT + 52;
+	int SVG_FE_MORPHOLOGY_ELEMENT__STROKE_LINEJOIN = SVG_ELEMENT_FEATURE_COUNT + 52;
 
 	/**
 	 * The feature id for the '<em><b>Stroke miterlimit</b></em>' attribute.
@@ -34832,7 +34995,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_MORPHOLOGY__STROKE_MITERLIMIT = SVG_ELEMENT_FEATURE_COUNT + 53;
+	int SVG_FE_MORPHOLOGY_ELEMENT__STROKE_MITERLIMIT = SVG_ELEMENT_FEATURE_COUNT + 53;
 
 	/**
 	 * The feature id for the '<em><b>Stroke opacity</b></em>' attribute.
@@ -34841,7 +35004,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_MORPHOLOGY__STROKE_OPACITY = SVG_ELEMENT_FEATURE_COUNT + 54;
+	int SVG_FE_MORPHOLOGY_ELEMENT__STROKE_OPACITY = SVG_ELEMENT_FEATURE_COUNT + 54;
 
 	/**
 	 * The feature id for the '<em><b>Stroke width</b></em>' attribute.
@@ -34850,7 +35013,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_MORPHOLOGY__STROKE_WIDTH = SVG_ELEMENT_FEATURE_COUNT + 55;
+	int SVG_FE_MORPHOLOGY_ELEMENT__STROKE_WIDTH = SVG_ELEMENT_FEATURE_COUNT + 55;
 
 	/**
 	 * The feature id for the '<em><b>Text anchor</b></em>' attribute.
@@ -34859,7 +35022,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_MORPHOLOGY__TEXT_ANCHOR = SVG_ELEMENT_FEATURE_COUNT + 56;
+	int SVG_FE_MORPHOLOGY_ELEMENT__TEXT_ANCHOR = SVG_ELEMENT_FEATURE_COUNT + 56;
 
 	/**
 	 * The feature id for the '<em><b>Text decoration</b></em>' attribute.
@@ -34868,7 +35031,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_MORPHOLOGY__TEXT_DECORATION = SVG_ELEMENT_FEATURE_COUNT + 57;
+	int SVG_FE_MORPHOLOGY_ELEMENT__TEXT_DECORATION = SVG_ELEMENT_FEATURE_COUNT + 57;
 
 	/**
 	 * The feature id for the '<em><b>Text rendering</b></em>' attribute.
@@ -34877,7 +35040,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_MORPHOLOGY__TEXT_RENDERING = SVG_ELEMENT_FEATURE_COUNT + 58;
+	int SVG_FE_MORPHOLOGY_ELEMENT__TEXT_RENDERING = SVG_ELEMENT_FEATURE_COUNT + 58;
 
 	/**
 	 * The feature id for the '<em><b>Unicode bidi</b></em>' attribute.
@@ -34886,7 +35049,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_MORPHOLOGY__UNICODE_BIDI = SVG_ELEMENT_FEATURE_COUNT + 59;
+	int SVG_FE_MORPHOLOGY_ELEMENT__UNICODE_BIDI = SVG_ELEMENT_FEATURE_COUNT + 59;
 
 	/**
 	 * The feature id for the '<em><b>Visibility</b></em>' attribute.
@@ -34895,7 +35058,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_MORPHOLOGY__VISIBILITY = SVG_ELEMENT_FEATURE_COUNT + 60;
+	int SVG_FE_MORPHOLOGY_ELEMENT__VISIBILITY = SVG_ELEMENT_FEATURE_COUNT + 60;
 
 	/**
 	 * The feature id for the '<em><b>Word spacing</b></em>' attribute.
@@ -34904,7 +35067,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_MORPHOLOGY__WORD_SPACING = SVG_ELEMENT_FEATURE_COUNT + 61;
+	int SVG_FE_MORPHOLOGY_ELEMENT__WORD_SPACING = SVG_ELEMENT_FEATURE_COUNT + 61;
 
 	/**
 	 * The feature id for the '<em><b>Writing mode</b></em>' attribute.
@@ -34913,7 +35076,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_MORPHOLOGY__WRITING_MODE = SVG_ELEMENT_FEATURE_COUNT + 62;
+	int SVG_FE_MORPHOLOGY_ELEMENT__WRITING_MODE = SVG_ELEMENT_FEATURE_COUNT + 62;
 
 	/**
 	 * The feature id for the '<em><b>X</b></em>' attribute.
@@ -34922,7 +35085,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_MORPHOLOGY__X = SVG_ELEMENT_FEATURE_COUNT + 63;
+	int SVG_FE_MORPHOLOGY_ELEMENT__X = SVG_ELEMENT_FEATURE_COUNT + 63;
 
 	/**
 	 * The feature id for the '<em><b>Y</b></em>' attribute.
@@ -34931,7 +35094,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_MORPHOLOGY__Y = SVG_ELEMENT_FEATURE_COUNT + 64;
+	int SVG_FE_MORPHOLOGY_ELEMENT__Y = SVG_ELEMENT_FEATURE_COUNT + 64;
 
 	/**
 	 * The feature id for the '<em><b>Width</b></em>' attribute.
@@ -34940,7 +35103,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_MORPHOLOGY__WIDTH = SVG_ELEMENT_FEATURE_COUNT + 65;
+	int SVG_FE_MORPHOLOGY_ELEMENT__WIDTH = SVG_ELEMENT_FEATURE_COUNT + 65;
 
 	/**
 	 * The feature id for the '<em><b>Height</b></em>' attribute.
@@ -34949,7 +35112,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_MORPHOLOGY__HEIGHT = SVG_ELEMENT_FEATURE_COUNT + 66;
+	int SVG_FE_MORPHOLOGY_ELEMENT__HEIGHT = SVG_ELEMENT_FEATURE_COUNT + 66;
 
 	/**
 	 * The feature id for the '<em><b>Result</b></em>' attribute.
@@ -34958,7 +35121,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_MORPHOLOGY__RESULT = SVG_ELEMENT_FEATURE_COUNT + 67;
+	int SVG_FE_MORPHOLOGY_ELEMENT__RESULT = SVG_ELEMENT_FEATURE_COUNT + 67;
 
 	/**
 	 * The feature id for the '<em><b>In</b></em>' attribute.
@@ -34967,7 +35130,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_MORPHOLOGY__IN = SVG_ELEMENT_FEATURE_COUNT + 68;
+	int SVG_FE_MORPHOLOGY_ELEMENT__IN = SVG_ELEMENT_FEATURE_COUNT + 68;
 
 	/**
 	 * The feature id for the '<em><b>Children</b></em>' containment reference list.
@@ -34976,7 +35139,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_MORPHOLOGY__CHILDREN = SVG_ELEMENT_FEATURE_COUNT + 69;
+	int SVG_FE_MORPHOLOGY_ELEMENT__CHILDREN = SVG_ELEMENT_FEATURE_COUNT + 69;
 
 	/**
 	 * The feature id for the '<em><b>Class</b></em>' attribute.
@@ -34985,7 +35148,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_MORPHOLOGY__CLASS = SVG_ELEMENT_FEATURE_COUNT + 70;
+	int SVG_FE_MORPHOLOGY_ELEMENT__CLASS = SVG_ELEMENT_FEATURE_COUNT + 70;
 
 	/**
 	 * The feature id for the '<em><b>Style</b></em>' attribute.
@@ -34994,7 +35157,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_MORPHOLOGY__STYLE = SVG_ELEMENT_FEATURE_COUNT + 71;
+	int SVG_FE_MORPHOLOGY_ELEMENT__STYLE = SVG_ELEMENT_FEATURE_COUNT + 71;
 
 	/**
 	 * The feature id for the '<em><b>Operator</b></em>' attribute.
@@ -35003,7 +35166,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_MORPHOLOGY__OPERATOR = SVG_ELEMENT_FEATURE_COUNT + 72;
+	int SVG_FE_MORPHOLOGY_ELEMENT__OPERATOR = SVG_ELEMENT_FEATURE_COUNT + 72;
 
 	/**
 	 * The feature id for the '<em><b>Radius</b></em>' attribute.
@@ -35012,26 +35175,26 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_MORPHOLOGY__RADIUS = SVG_ELEMENT_FEATURE_COUNT + 73;
+	int SVG_FE_MORPHOLOGY_ELEMENT__RADIUS = SVG_ELEMENT_FEATURE_COUNT + 73;
 
 	/**
-	 * The number of structural features of the '<em>Fe Morphology</em>' class.
+	 * The number of structural features of the '<em>Fe Morphology Element</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_MORPHOLOGY_FEATURE_COUNT = SVG_ELEMENT_FEATURE_COUNT + 74;
+	int SVG_FE_MORPHOLOGY_ELEMENT_FEATURE_COUNT = SVG_ELEMENT_FEATURE_COUNT + 74;
 
 	/**
-	 * The meta object id for the '{@link at.bestsolution.efxclipse.formats.svg.svg.impl.SvgFeOffsetImpl <em>Fe Offset</em>}' class.
+	 * The meta object id for the '{@link at.bestsolution.efxclipse.formats.svg.svg.impl.SvgFeOffsetElementImpl <em>Fe Offset Element</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see at.bestsolution.efxclipse.formats.svg.svg.impl.SvgFeOffsetImpl
-	 * @see at.bestsolution.efxclipse.formats.svg.svg.impl.SvgPackageImpl#getSvgFeOffset()
+	 * @see at.bestsolution.efxclipse.formats.svg.svg.impl.SvgFeOffsetElementImpl
+	 * @see at.bestsolution.efxclipse.formats.svg.svg.impl.SvgPackageImpl#getSvgFeOffsetElement()
 	 * @generated
 	 */
-	int SVG_FE_OFFSET = 78;
+	int SVG_FE_OFFSET_ELEMENT = 79;
 
 	/**
 	 * The feature id for the '<em><b>Id</b></em>' attribute.
@@ -35040,7 +35203,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_OFFSET__ID = SVG_ELEMENT_FEATURE_COUNT + 0;
+	int SVG_FE_OFFSET_ELEMENT__ID = SVG_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Xml base</b></em>' attribute.
@@ -35049,7 +35212,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_OFFSET__XML_BASE = SVG_ELEMENT_FEATURE_COUNT + 1;
+	int SVG_FE_OFFSET_ELEMENT__XML_BASE = SVG_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Xml lang</b></em>' attribute.
@@ -35058,7 +35221,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_OFFSET__XML_LANG = SVG_ELEMENT_FEATURE_COUNT + 2;
+	int SVG_FE_OFFSET_ELEMENT__XML_LANG = SVG_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Xml space</b></em>' attribute.
@@ -35067,7 +35230,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_OFFSET__XML_SPACE = SVG_ELEMENT_FEATURE_COUNT + 3;
+	int SVG_FE_OFFSET_ELEMENT__XML_SPACE = SVG_ELEMENT_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Alignment baseline</b></em>' attribute.
@@ -35076,7 +35239,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_OFFSET__ALIGNMENT_BASELINE = SVG_ELEMENT_FEATURE_COUNT + 4;
+	int SVG_FE_OFFSET_ELEMENT__ALIGNMENT_BASELINE = SVG_ELEMENT_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Baseline shift</b></em>' attribute.
@@ -35085,7 +35248,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_OFFSET__BASELINE_SHIFT = SVG_ELEMENT_FEATURE_COUNT + 5;
+	int SVG_FE_OFFSET_ELEMENT__BASELINE_SHIFT = SVG_ELEMENT_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>Clip</b></em>' attribute.
@@ -35094,7 +35257,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_OFFSET__CLIP = SVG_ELEMENT_FEATURE_COUNT + 6;
+	int SVG_FE_OFFSET_ELEMENT__CLIP = SVG_ELEMENT_FEATURE_COUNT + 6;
 
 	/**
 	 * The feature id for the '<em><b>Clip path</b></em>' attribute.
@@ -35103,7 +35266,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_OFFSET__CLIP_PATH = SVG_ELEMENT_FEATURE_COUNT + 7;
+	int SVG_FE_OFFSET_ELEMENT__CLIP_PATH = SVG_ELEMENT_FEATURE_COUNT + 7;
 
 	/**
 	 * The feature id for the '<em><b>Clip rule</b></em>' attribute.
@@ -35112,7 +35275,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_OFFSET__CLIP_RULE = SVG_ELEMENT_FEATURE_COUNT + 8;
+	int SVG_FE_OFFSET_ELEMENT__CLIP_RULE = SVG_ELEMENT_FEATURE_COUNT + 8;
 
 	/**
 	 * The feature id for the '<em><b>Color</b></em>' attribute.
@@ -35121,7 +35284,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_OFFSET__COLOR = SVG_ELEMENT_FEATURE_COUNT + 9;
+	int SVG_FE_OFFSET_ELEMENT__COLOR = SVG_ELEMENT_FEATURE_COUNT + 9;
 
 	/**
 	 * The feature id for the '<em><b>Color interpolation</b></em>' attribute.
@@ -35130,7 +35293,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_OFFSET__COLOR_INTERPOLATION = SVG_ELEMENT_FEATURE_COUNT + 10;
+	int SVG_FE_OFFSET_ELEMENT__COLOR_INTERPOLATION = SVG_ELEMENT_FEATURE_COUNT + 10;
 
 	/**
 	 * The feature id for the '<em><b>Color interpolation filters</b></em>' attribute.
@@ -35139,7 +35302,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_OFFSET__COLOR_INTERPOLATION_FILTERS = SVG_ELEMENT_FEATURE_COUNT + 11;
+	int SVG_FE_OFFSET_ELEMENT__COLOR_INTERPOLATION_FILTERS = SVG_ELEMENT_FEATURE_COUNT + 11;
 
 	/**
 	 * The feature id for the '<em><b>Color profile</b></em>' attribute.
@@ -35148,7 +35311,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_OFFSET__COLOR_PROFILE = SVG_ELEMENT_FEATURE_COUNT + 12;
+	int SVG_FE_OFFSET_ELEMENT__COLOR_PROFILE = SVG_ELEMENT_FEATURE_COUNT + 12;
 
 	/**
 	 * The feature id for the '<em><b>Color rendering</b></em>' attribute.
@@ -35157,7 +35320,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_OFFSET__COLOR_RENDERING = SVG_ELEMENT_FEATURE_COUNT + 13;
+	int SVG_FE_OFFSET_ELEMENT__COLOR_RENDERING = SVG_ELEMENT_FEATURE_COUNT + 13;
 
 	/**
 	 * The feature id for the '<em><b>Cursor</b></em>' attribute.
@@ -35166,7 +35329,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_OFFSET__CURSOR = SVG_ELEMENT_FEATURE_COUNT + 14;
+	int SVG_FE_OFFSET_ELEMENT__CURSOR = SVG_ELEMENT_FEATURE_COUNT + 14;
 
 	/**
 	 * The feature id for the '<em><b>Direction</b></em>' attribute.
@@ -35175,7 +35338,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_OFFSET__DIRECTION = SVG_ELEMENT_FEATURE_COUNT + 15;
+	int SVG_FE_OFFSET_ELEMENT__DIRECTION = SVG_ELEMENT_FEATURE_COUNT + 15;
 
 	/**
 	 * The feature id for the '<em><b>Display</b></em>' attribute.
@@ -35184,7 +35347,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_OFFSET__DISPLAY = SVG_ELEMENT_FEATURE_COUNT + 16;
+	int SVG_FE_OFFSET_ELEMENT__DISPLAY = SVG_ELEMENT_FEATURE_COUNT + 16;
 
 	/**
 	 * The feature id for the '<em><b>Dominant baseline</b></em>' attribute.
@@ -35193,7 +35356,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_OFFSET__DOMINANT_BASELINE = SVG_ELEMENT_FEATURE_COUNT + 17;
+	int SVG_FE_OFFSET_ELEMENT__DOMINANT_BASELINE = SVG_ELEMENT_FEATURE_COUNT + 17;
 
 	/**
 	 * The feature id for the '<em><b>Enable background</b></em>' attribute.
@@ -35202,7 +35365,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_OFFSET__ENABLE_BACKGROUND = SVG_ELEMENT_FEATURE_COUNT + 18;
+	int SVG_FE_OFFSET_ELEMENT__ENABLE_BACKGROUND = SVG_ELEMENT_FEATURE_COUNT + 18;
 
 	/**
 	 * The feature id for the '<em><b>Fill</b></em>' attribute.
@@ -35211,7 +35374,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_OFFSET__FILL = SVG_ELEMENT_FEATURE_COUNT + 19;
+	int SVG_FE_OFFSET_ELEMENT__FILL = SVG_ELEMENT_FEATURE_COUNT + 19;
 
 	/**
 	 * The feature id for the '<em><b>Fill opacity</b></em>' attribute.
@@ -35220,7 +35383,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_OFFSET__FILL_OPACITY = SVG_ELEMENT_FEATURE_COUNT + 20;
+	int SVG_FE_OFFSET_ELEMENT__FILL_OPACITY = SVG_ELEMENT_FEATURE_COUNT + 20;
 
 	/**
 	 * The feature id for the '<em><b>Fill rule</b></em>' attribute.
@@ -35229,7 +35392,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_OFFSET__FILL_RULE = SVG_ELEMENT_FEATURE_COUNT + 21;
+	int SVG_FE_OFFSET_ELEMENT__FILL_RULE = SVG_ELEMENT_FEATURE_COUNT + 21;
 
 	/**
 	 * The feature id for the '<em><b>Filter</b></em>' attribute.
@@ -35238,7 +35401,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_OFFSET__FILTER = SVG_ELEMENT_FEATURE_COUNT + 22;
+	int SVG_FE_OFFSET_ELEMENT__FILTER = SVG_ELEMENT_FEATURE_COUNT + 22;
 
 	/**
 	 * The feature id for the '<em><b>Flood color</b></em>' attribute.
@@ -35247,7 +35410,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_OFFSET__FLOOD_COLOR = SVG_ELEMENT_FEATURE_COUNT + 23;
+	int SVG_FE_OFFSET_ELEMENT__FLOOD_COLOR = SVG_ELEMENT_FEATURE_COUNT + 23;
 
 	/**
 	 * The feature id for the '<em><b>Flood opacity</b></em>' attribute.
@@ -35256,7 +35419,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_OFFSET__FLOOD_OPACITY = SVG_ELEMENT_FEATURE_COUNT + 24;
+	int SVG_FE_OFFSET_ELEMENT__FLOOD_OPACITY = SVG_ELEMENT_FEATURE_COUNT + 24;
 
 	/**
 	 * The feature id for the '<em><b>Font family</b></em>' attribute.
@@ -35265,7 +35428,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_OFFSET__FONT_FAMILY = SVG_ELEMENT_FEATURE_COUNT + 25;
+	int SVG_FE_OFFSET_ELEMENT__FONT_FAMILY = SVG_ELEMENT_FEATURE_COUNT + 25;
 
 	/**
 	 * The feature id for the '<em><b>Font size</b></em>' attribute.
@@ -35274,7 +35437,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_OFFSET__FONT_SIZE = SVG_ELEMENT_FEATURE_COUNT + 26;
+	int SVG_FE_OFFSET_ELEMENT__FONT_SIZE = SVG_ELEMENT_FEATURE_COUNT + 26;
 
 	/**
 	 * The feature id for the '<em><b>Font size adjust</b></em>' attribute.
@@ -35283,7 +35446,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_OFFSET__FONT_SIZE_ADJUST = SVG_ELEMENT_FEATURE_COUNT + 27;
+	int SVG_FE_OFFSET_ELEMENT__FONT_SIZE_ADJUST = SVG_ELEMENT_FEATURE_COUNT + 27;
 
 	/**
 	 * The feature id for the '<em><b>Font stretch</b></em>' attribute.
@@ -35292,7 +35455,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_OFFSET__FONT_STRETCH = SVG_ELEMENT_FEATURE_COUNT + 28;
+	int SVG_FE_OFFSET_ELEMENT__FONT_STRETCH = SVG_ELEMENT_FEATURE_COUNT + 28;
 
 	/**
 	 * The feature id for the '<em><b>Font style</b></em>' attribute.
@@ -35301,7 +35464,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_OFFSET__FONT_STYLE = SVG_ELEMENT_FEATURE_COUNT + 29;
+	int SVG_FE_OFFSET_ELEMENT__FONT_STYLE = SVG_ELEMENT_FEATURE_COUNT + 29;
 
 	/**
 	 * The feature id for the '<em><b>Font variant</b></em>' attribute.
@@ -35310,7 +35473,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_OFFSET__FONT_VARIANT = SVG_ELEMENT_FEATURE_COUNT + 30;
+	int SVG_FE_OFFSET_ELEMENT__FONT_VARIANT = SVG_ELEMENT_FEATURE_COUNT + 30;
 
 	/**
 	 * The feature id for the '<em><b>Font weight</b></em>' attribute.
@@ -35319,7 +35482,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_OFFSET__FONT_WEIGHT = SVG_ELEMENT_FEATURE_COUNT + 31;
+	int SVG_FE_OFFSET_ELEMENT__FONT_WEIGHT = SVG_ELEMENT_FEATURE_COUNT + 31;
 
 	/**
 	 * The feature id for the '<em><b>Glyph orientation horizontal</b></em>' attribute.
@@ -35328,7 +35491,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_OFFSET__GLYPH_ORIENTATION_HORIZONTAL = SVG_ELEMENT_FEATURE_COUNT + 32;
+	int SVG_FE_OFFSET_ELEMENT__GLYPH_ORIENTATION_HORIZONTAL = SVG_ELEMENT_FEATURE_COUNT + 32;
 
 	/**
 	 * The feature id for the '<em><b>Glyph orientation vertical</b></em>' attribute.
@@ -35337,7 +35500,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_OFFSET__GLYPH_ORIENTATION_VERTICAL = SVG_ELEMENT_FEATURE_COUNT + 33;
+	int SVG_FE_OFFSET_ELEMENT__GLYPH_ORIENTATION_VERTICAL = SVG_ELEMENT_FEATURE_COUNT + 33;
 
 	/**
 	 * The feature id for the '<em><b>Image rendering</b></em>' attribute.
@@ -35346,7 +35509,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_OFFSET__IMAGE_RENDERING = SVG_ELEMENT_FEATURE_COUNT + 34;
+	int SVG_FE_OFFSET_ELEMENT__IMAGE_RENDERING = SVG_ELEMENT_FEATURE_COUNT + 34;
 
 	/**
 	 * The feature id for the '<em><b>Kerning</b></em>' attribute.
@@ -35355,7 +35518,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_OFFSET__KERNING = SVG_ELEMENT_FEATURE_COUNT + 35;
+	int SVG_FE_OFFSET_ELEMENT__KERNING = SVG_ELEMENT_FEATURE_COUNT + 35;
 
 	/**
 	 * The feature id for the '<em><b>Letter spacing</b></em>' attribute.
@@ -35364,7 +35527,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_OFFSET__LETTER_SPACING = SVG_ELEMENT_FEATURE_COUNT + 36;
+	int SVG_FE_OFFSET_ELEMENT__LETTER_SPACING = SVG_ELEMENT_FEATURE_COUNT + 36;
 
 	/**
 	 * The feature id for the '<em><b>Lighting color</b></em>' attribute.
@@ -35373,7 +35536,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_OFFSET__LIGHTING_COLOR = SVG_ELEMENT_FEATURE_COUNT + 37;
+	int SVG_FE_OFFSET_ELEMENT__LIGHTING_COLOR = SVG_ELEMENT_FEATURE_COUNT + 37;
 
 	/**
 	 * The feature id for the '<em><b>Marker end</b></em>' attribute.
@@ -35382,7 +35545,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_OFFSET__MARKER_END = SVG_ELEMENT_FEATURE_COUNT + 38;
+	int SVG_FE_OFFSET_ELEMENT__MARKER_END = SVG_ELEMENT_FEATURE_COUNT + 38;
 
 	/**
 	 * The feature id for the '<em><b>Marker mid</b></em>' attribute.
@@ -35391,7 +35554,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_OFFSET__MARKER_MID = SVG_ELEMENT_FEATURE_COUNT + 39;
+	int SVG_FE_OFFSET_ELEMENT__MARKER_MID = SVG_ELEMENT_FEATURE_COUNT + 39;
 
 	/**
 	 * The feature id for the '<em><b>Marker start</b></em>' attribute.
@@ -35400,7 +35563,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_OFFSET__MARKER_START = SVG_ELEMENT_FEATURE_COUNT + 40;
+	int SVG_FE_OFFSET_ELEMENT__MARKER_START = SVG_ELEMENT_FEATURE_COUNT + 40;
 
 	/**
 	 * The feature id for the '<em><b>Masks</b></em>' attribute.
@@ -35409,7 +35572,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_OFFSET__MASKS = SVG_ELEMENT_FEATURE_COUNT + 41;
+	int SVG_FE_OFFSET_ELEMENT__MASKS = SVG_ELEMENT_FEATURE_COUNT + 41;
 
 	/**
 	 * The feature id for the '<em><b>Opacity</b></em>' attribute.
@@ -35418,7 +35581,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_OFFSET__OPACITY = SVG_ELEMENT_FEATURE_COUNT + 42;
+	int SVG_FE_OFFSET_ELEMENT__OPACITY = SVG_ELEMENT_FEATURE_COUNT + 42;
 
 	/**
 	 * The feature id for the '<em><b>Overflow</b></em>' attribute.
@@ -35427,7 +35590,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_OFFSET__OVERFLOW = SVG_ELEMENT_FEATURE_COUNT + 43;
+	int SVG_FE_OFFSET_ELEMENT__OVERFLOW = SVG_ELEMENT_FEATURE_COUNT + 43;
 
 	/**
 	 * The feature id for the '<em><b>Pointer events</b></em>' attribute.
@@ -35436,7 +35599,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_OFFSET__POINTER_EVENTS = SVG_ELEMENT_FEATURE_COUNT + 44;
+	int SVG_FE_OFFSET_ELEMENT__POINTER_EVENTS = SVG_ELEMENT_FEATURE_COUNT + 44;
 
 	/**
 	 * The feature id for the '<em><b>Shape rendering</b></em>' attribute.
@@ -35445,7 +35608,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_OFFSET__SHAPE_RENDERING = SVG_ELEMENT_FEATURE_COUNT + 45;
+	int SVG_FE_OFFSET_ELEMENT__SHAPE_RENDERING = SVG_ELEMENT_FEATURE_COUNT + 45;
 
 	/**
 	 * The feature id for the '<em><b>Stop color</b></em>' attribute.
@@ -35454,7 +35617,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_OFFSET__STOP_COLOR = SVG_ELEMENT_FEATURE_COUNT + 46;
+	int SVG_FE_OFFSET_ELEMENT__STOP_COLOR = SVG_ELEMENT_FEATURE_COUNT + 46;
 
 	/**
 	 * The feature id for the '<em><b>Stop opacity</b></em>' attribute.
@@ -35463,7 +35626,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_OFFSET__STOP_OPACITY = SVG_ELEMENT_FEATURE_COUNT + 47;
+	int SVG_FE_OFFSET_ELEMENT__STOP_OPACITY = SVG_ELEMENT_FEATURE_COUNT + 47;
 
 	/**
 	 * The feature id for the '<em><b>Stroke</b></em>' attribute.
@@ -35472,7 +35635,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_OFFSET__STROKE = SVG_ELEMENT_FEATURE_COUNT + 48;
+	int SVG_FE_OFFSET_ELEMENT__STROKE = SVG_ELEMENT_FEATURE_COUNT + 48;
 
 	/**
 	 * The feature id for the '<em><b>Stroke dasharray</b></em>' attribute.
@@ -35481,7 +35644,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_OFFSET__STROKE_DASHARRAY = SVG_ELEMENT_FEATURE_COUNT + 49;
+	int SVG_FE_OFFSET_ELEMENT__STROKE_DASHARRAY = SVG_ELEMENT_FEATURE_COUNT + 49;
 
 	/**
 	 * The feature id for the '<em><b>Stroke dashoffset</b></em>' attribute.
@@ -35490,7 +35653,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_OFFSET__STROKE_DASHOFFSET = SVG_ELEMENT_FEATURE_COUNT + 50;
+	int SVG_FE_OFFSET_ELEMENT__STROKE_DASHOFFSET = SVG_ELEMENT_FEATURE_COUNT + 50;
 
 	/**
 	 * The feature id for the '<em><b>Stroke linecap</b></em>' attribute.
@@ -35499,7 +35662,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_OFFSET__STROKE_LINECAP = SVG_ELEMENT_FEATURE_COUNT + 51;
+	int SVG_FE_OFFSET_ELEMENT__STROKE_LINECAP = SVG_ELEMENT_FEATURE_COUNT + 51;
 
 	/**
 	 * The feature id for the '<em><b>Stroke linejoin</b></em>' attribute.
@@ -35508,7 +35671,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_OFFSET__STROKE_LINEJOIN = SVG_ELEMENT_FEATURE_COUNT + 52;
+	int SVG_FE_OFFSET_ELEMENT__STROKE_LINEJOIN = SVG_ELEMENT_FEATURE_COUNT + 52;
 
 	/**
 	 * The feature id for the '<em><b>Stroke miterlimit</b></em>' attribute.
@@ -35517,7 +35680,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_OFFSET__STROKE_MITERLIMIT = SVG_ELEMENT_FEATURE_COUNT + 53;
+	int SVG_FE_OFFSET_ELEMENT__STROKE_MITERLIMIT = SVG_ELEMENT_FEATURE_COUNT + 53;
 
 	/**
 	 * The feature id for the '<em><b>Stroke opacity</b></em>' attribute.
@@ -35526,7 +35689,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_OFFSET__STROKE_OPACITY = SVG_ELEMENT_FEATURE_COUNT + 54;
+	int SVG_FE_OFFSET_ELEMENT__STROKE_OPACITY = SVG_ELEMENT_FEATURE_COUNT + 54;
 
 	/**
 	 * The feature id for the '<em><b>Stroke width</b></em>' attribute.
@@ -35535,7 +35698,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_OFFSET__STROKE_WIDTH = SVG_ELEMENT_FEATURE_COUNT + 55;
+	int SVG_FE_OFFSET_ELEMENT__STROKE_WIDTH = SVG_ELEMENT_FEATURE_COUNT + 55;
 
 	/**
 	 * The feature id for the '<em><b>Text anchor</b></em>' attribute.
@@ -35544,7 +35707,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_OFFSET__TEXT_ANCHOR = SVG_ELEMENT_FEATURE_COUNT + 56;
+	int SVG_FE_OFFSET_ELEMENT__TEXT_ANCHOR = SVG_ELEMENT_FEATURE_COUNT + 56;
 
 	/**
 	 * The feature id for the '<em><b>Text decoration</b></em>' attribute.
@@ -35553,7 +35716,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_OFFSET__TEXT_DECORATION = SVG_ELEMENT_FEATURE_COUNT + 57;
+	int SVG_FE_OFFSET_ELEMENT__TEXT_DECORATION = SVG_ELEMENT_FEATURE_COUNT + 57;
 
 	/**
 	 * The feature id for the '<em><b>Text rendering</b></em>' attribute.
@@ -35562,7 +35725,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_OFFSET__TEXT_RENDERING = SVG_ELEMENT_FEATURE_COUNT + 58;
+	int SVG_FE_OFFSET_ELEMENT__TEXT_RENDERING = SVG_ELEMENT_FEATURE_COUNT + 58;
 
 	/**
 	 * The feature id for the '<em><b>Unicode bidi</b></em>' attribute.
@@ -35571,7 +35734,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_OFFSET__UNICODE_BIDI = SVG_ELEMENT_FEATURE_COUNT + 59;
+	int SVG_FE_OFFSET_ELEMENT__UNICODE_BIDI = SVG_ELEMENT_FEATURE_COUNT + 59;
 
 	/**
 	 * The feature id for the '<em><b>Visibility</b></em>' attribute.
@@ -35580,7 +35743,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_OFFSET__VISIBILITY = SVG_ELEMENT_FEATURE_COUNT + 60;
+	int SVG_FE_OFFSET_ELEMENT__VISIBILITY = SVG_ELEMENT_FEATURE_COUNT + 60;
 
 	/**
 	 * The feature id for the '<em><b>Word spacing</b></em>' attribute.
@@ -35589,7 +35752,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_OFFSET__WORD_SPACING = SVG_ELEMENT_FEATURE_COUNT + 61;
+	int SVG_FE_OFFSET_ELEMENT__WORD_SPACING = SVG_ELEMENT_FEATURE_COUNT + 61;
 
 	/**
 	 * The feature id for the '<em><b>Writing mode</b></em>' attribute.
@@ -35598,7 +35761,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_OFFSET__WRITING_MODE = SVG_ELEMENT_FEATURE_COUNT + 62;
+	int SVG_FE_OFFSET_ELEMENT__WRITING_MODE = SVG_ELEMENT_FEATURE_COUNT + 62;
 
 	/**
 	 * The feature id for the '<em><b>X</b></em>' attribute.
@@ -35607,7 +35770,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_OFFSET__X = SVG_ELEMENT_FEATURE_COUNT + 63;
+	int SVG_FE_OFFSET_ELEMENT__X = SVG_ELEMENT_FEATURE_COUNT + 63;
 
 	/**
 	 * The feature id for the '<em><b>Y</b></em>' attribute.
@@ -35616,7 +35779,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_OFFSET__Y = SVG_ELEMENT_FEATURE_COUNT + 64;
+	int SVG_FE_OFFSET_ELEMENT__Y = SVG_ELEMENT_FEATURE_COUNT + 64;
 
 	/**
 	 * The feature id for the '<em><b>Width</b></em>' attribute.
@@ -35625,7 +35788,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_OFFSET__WIDTH = SVG_ELEMENT_FEATURE_COUNT + 65;
+	int SVG_FE_OFFSET_ELEMENT__WIDTH = SVG_ELEMENT_FEATURE_COUNT + 65;
 
 	/**
 	 * The feature id for the '<em><b>Height</b></em>' attribute.
@@ -35634,7 +35797,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_OFFSET__HEIGHT = SVG_ELEMENT_FEATURE_COUNT + 66;
+	int SVG_FE_OFFSET_ELEMENT__HEIGHT = SVG_ELEMENT_FEATURE_COUNT + 66;
 
 	/**
 	 * The feature id for the '<em><b>Result</b></em>' attribute.
@@ -35643,7 +35806,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_OFFSET__RESULT = SVG_ELEMENT_FEATURE_COUNT + 67;
+	int SVG_FE_OFFSET_ELEMENT__RESULT = SVG_ELEMENT_FEATURE_COUNT + 67;
 
 	/**
 	 * The feature id for the '<em><b>In</b></em>' attribute.
@@ -35652,7 +35815,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_OFFSET__IN = SVG_ELEMENT_FEATURE_COUNT + 68;
+	int SVG_FE_OFFSET_ELEMENT__IN = SVG_ELEMENT_FEATURE_COUNT + 68;
 
 	/**
 	 * The feature id for the '<em><b>Children</b></em>' containment reference list.
@@ -35661,7 +35824,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_OFFSET__CHILDREN = SVG_ELEMENT_FEATURE_COUNT + 69;
+	int SVG_FE_OFFSET_ELEMENT__CHILDREN = SVG_ELEMENT_FEATURE_COUNT + 69;
 
 	/**
 	 * The feature id for the '<em><b>Class</b></em>' attribute.
@@ -35670,7 +35833,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_OFFSET__CLASS = SVG_ELEMENT_FEATURE_COUNT + 70;
+	int SVG_FE_OFFSET_ELEMENT__CLASS = SVG_ELEMENT_FEATURE_COUNT + 70;
 
 	/**
 	 * The feature id for the '<em><b>Style</b></em>' attribute.
@@ -35679,7 +35842,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_OFFSET__STYLE = SVG_ELEMENT_FEATURE_COUNT + 71;
+	int SVG_FE_OFFSET_ELEMENT__STYLE = SVG_ELEMENT_FEATURE_COUNT + 71;
 
 	/**
 	 * The feature id for the '<em><b>Dx</b></em>' attribute.
@@ -35688,7 +35851,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_OFFSET__DX = SVG_ELEMENT_FEATURE_COUNT + 72;
+	int SVG_FE_OFFSET_ELEMENT__DX = SVG_ELEMENT_FEATURE_COUNT + 72;
 
 	/**
 	 * The feature id for the '<em><b>Dy</b></em>' attribute.
@@ -35697,26 +35860,26 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_OFFSET__DY = SVG_ELEMENT_FEATURE_COUNT + 73;
+	int SVG_FE_OFFSET_ELEMENT__DY = SVG_ELEMENT_FEATURE_COUNT + 73;
 
 	/**
-	 * The number of structural features of the '<em>Fe Offset</em>' class.
+	 * The number of structural features of the '<em>Fe Offset Element</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_OFFSET_FEATURE_COUNT = SVG_ELEMENT_FEATURE_COUNT + 74;
+	int SVG_FE_OFFSET_ELEMENT_FEATURE_COUNT = SVG_ELEMENT_FEATURE_COUNT + 74;
 
 	/**
-	 * The meta object id for the '{@link at.bestsolution.efxclipse.formats.svg.svg.impl.SvgFeSpecularLightingImpl <em>Fe Specular Lighting</em>}' class.
+	 * The meta object id for the '{@link at.bestsolution.efxclipse.formats.svg.svg.impl.SvgFeSpecularLightingElementImpl <em>Fe Specular Lighting Element</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see at.bestsolution.efxclipse.formats.svg.svg.impl.SvgFeSpecularLightingImpl
-	 * @see at.bestsolution.efxclipse.formats.svg.svg.impl.SvgPackageImpl#getSvgFeSpecularLighting()
+	 * @see at.bestsolution.efxclipse.formats.svg.svg.impl.SvgFeSpecularLightingElementImpl
+	 * @see at.bestsolution.efxclipse.formats.svg.svg.impl.SvgPackageImpl#getSvgFeSpecularLightingElement()
 	 * @generated
 	 */
-	int SVG_FE_SPECULAR_LIGHTING = 79;
+	int SVG_FE_SPECULAR_LIGHTING_ELEMENT = 80;
 
 	/**
 	 * The feature id for the '<em><b>Id</b></em>' attribute.
@@ -35725,7 +35888,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_SPECULAR_LIGHTING__ID = SVG_ELEMENT_FEATURE_COUNT + 0;
+	int SVG_FE_SPECULAR_LIGHTING_ELEMENT__ID = SVG_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Xml base</b></em>' attribute.
@@ -35734,7 +35897,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_SPECULAR_LIGHTING__XML_BASE = SVG_ELEMENT_FEATURE_COUNT + 1;
+	int SVG_FE_SPECULAR_LIGHTING_ELEMENT__XML_BASE = SVG_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Xml lang</b></em>' attribute.
@@ -35743,7 +35906,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_SPECULAR_LIGHTING__XML_LANG = SVG_ELEMENT_FEATURE_COUNT + 2;
+	int SVG_FE_SPECULAR_LIGHTING_ELEMENT__XML_LANG = SVG_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Xml space</b></em>' attribute.
@@ -35752,7 +35915,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_SPECULAR_LIGHTING__XML_SPACE = SVG_ELEMENT_FEATURE_COUNT + 3;
+	int SVG_FE_SPECULAR_LIGHTING_ELEMENT__XML_SPACE = SVG_ELEMENT_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Alignment baseline</b></em>' attribute.
@@ -35761,7 +35924,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_SPECULAR_LIGHTING__ALIGNMENT_BASELINE = SVG_ELEMENT_FEATURE_COUNT + 4;
+	int SVG_FE_SPECULAR_LIGHTING_ELEMENT__ALIGNMENT_BASELINE = SVG_ELEMENT_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Baseline shift</b></em>' attribute.
@@ -35770,7 +35933,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_SPECULAR_LIGHTING__BASELINE_SHIFT = SVG_ELEMENT_FEATURE_COUNT + 5;
+	int SVG_FE_SPECULAR_LIGHTING_ELEMENT__BASELINE_SHIFT = SVG_ELEMENT_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>Clip</b></em>' attribute.
@@ -35779,7 +35942,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_SPECULAR_LIGHTING__CLIP = SVG_ELEMENT_FEATURE_COUNT + 6;
+	int SVG_FE_SPECULAR_LIGHTING_ELEMENT__CLIP = SVG_ELEMENT_FEATURE_COUNT + 6;
 
 	/**
 	 * The feature id for the '<em><b>Clip path</b></em>' attribute.
@@ -35788,7 +35951,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_SPECULAR_LIGHTING__CLIP_PATH = SVG_ELEMENT_FEATURE_COUNT + 7;
+	int SVG_FE_SPECULAR_LIGHTING_ELEMENT__CLIP_PATH = SVG_ELEMENT_FEATURE_COUNT + 7;
 
 	/**
 	 * The feature id for the '<em><b>Clip rule</b></em>' attribute.
@@ -35797,7 +35960,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_SPECULAR_LIGHTING__CLIP_RULE = SVG_ELEMENT_FEATURE_COUNT + 8;
+	int SVG_FE_SPECULAR_LIGHTING_ELEMENT__CLIP_RULE = SVG_ELEMENT_FEATURE_COUNT + 8;
 
 	/**
 	 * The feature id for the '<em><b>Color</b></em>' attribute.
@@ -35806,7 +35969,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_SPECULAR_LIGHTING__COLOR = SVG_ELEMENT_FEATURE_COUNT + 9;
+	int SVG_FE_SPECULAR_LIGHTING_ELEMENT__COLOR = SVG_ELEMENT_FEATURE_COUNT + 9;
 
 	/**
 	 * The feature id for the '<em><b>Color interpolation</b></em>' attribute.
@@ -35815,7 +35978,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_SPECULAR_LIGHTING__COLOR_INTERPOLATION = SVG_ELEMENT_FEATURE_COUNT + 10;
+	int SVG_FE_SPECULAR_LIGHTING_ELEMENT__COLOR_INTERPOLATION = SVG_ELEMENT_FEATURE_COUNT + 10;
 
 	/**
 	 * The feature id for the '<em><b>Color interpolation filters</b></em>' attribute.
@@ -35824,7 +35987,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_SPECULAR_LIGHTING__COLOR_INTERPOLATION_FILTERS = SVG_ELEMENT_FEATURE_COUNT + 11;
+	int SVG_FE_SPECULAR_LIGHTING_ELEMENT__COLOR_INTERPOLATION_FILTERS = SVG_ELEMENT_FEATURE_COUNT + 11;
 
 	/**
 	 * The feature id for the '<em><b>Color profile</b></em>' attribute.
@@ -35833,7 +35996,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_SPECULAR_LIGHTING__COLOR_PROFILE = SVG_ELEMENT_FEATURE_COUNT + 12;
+	int SVG_FE_SPECULAR_LIGHTING_ELEMENT__COLOR_PROFILE = SVG_ELEMENT_FEATURE_COUNT + 12;
 
 	/**
 	 * The feature id for the '<em><b>Color rendering</b></em>' attribute.
@@ -35842,7 +36005,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_SPECULAR_LIGHTING__COLOR_RENDERING = SVG_ELEMENT_FEATURE_COUNT + 13;
+	int SVG_FE_SPECULAR_LIGHTING_ELEMENT__COLOR_RENDERING = SVG_ELEMENT_FEATURE_COUNT + 13;
 
 	/**
 	 * The feature id for the '<em><b>Cursor</b></em>' attribute.
@@ -35851,7 +36014,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_SPECULAR_LIGHTING__CURSOR = SVG_ELEMENT_FEATURE_COUNT + 14;
+	int SVG_FE_SPECULAR_LIGHTING_ELEMENT__CURSOR = SVG_ELEMENT_FEATURE_COUNT + 14;
 
 	/**
 	 * The feature id for the '<em><b>Direction</b></em>' attribute.
@@ -35860,7 +36023,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_SPECULAR_LIGHTING__DIRECTION = SVG_ELEMENT_FEATURE_COUNT + 15;
+	int SVG_FE_SPECULAR_LIGHTING_ELEMENT__DIRECTION = SVG_ELEMENT_FEATURE_COUNT + 15;
 
 	/**
 	 * The feature id for the '<em><b>Display</b></em>' attribute.
@@ -35869,7 +36032,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_SPECULAR_LIGHTING__DISPLAY = SVG_ELEMENT_FEATURE_COUNT + 16;
+	int SVG_FE_SPECULAR_LIGHTING_ELEMENT__DISPLAY = SVG_ELEMENT_FEATURE_COUNT + 16;
 
 	/**
 	 * The feature id for the '<em><b>Dominant baseline</b></em>' attribute.
@@ -35878,7 +36041,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_SPECULAR_LIGHTING__DOMINANT_BASELINE = SVG_ELEMENT_FEATURE_COUNT + 17;
+	int SVG_FE_SPECULAR_LIGHTING_ELEMENT__DOMINANT_BASELINE = SVG_ELEMENT_FEATURE_COUNT + 17;
 
 	/**
 	 * The feature id for the '<em><b>Enable background</b></em>' attribute.
@@ -35887,7 +36050,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_SPECULAR_LIGHTING__ENABLE_BACKGROUND = SVG_ELEMENT_FEATURE_COUNT + 18;
+	int SVG_FE_SPECULAR_LIGHTING_ELEMENT__ENABLE_BACKGROUND = SVG_ELEMENT_FEATURE_COUNT + 18;
 
 	/**
 	 * The feature id for the '<em><b>Fill</b></em>' attribute.
@@ -35896,7 +36059,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_SPECULAR_LIGHTING__FILL = SVG_ELEMENT_FEATURE_COUNT + 19;
+	int SVG_FE_SPECULAR_LIGHTING_ELEMENT__FILL = SVG_ELEMENT_FEATURE_COUNT + 19;
 
 	/**
 	 * The feature id for the '<em><b>Fill opacity</b></em>' attribute.
@@ -35905,7 +36068,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_SPECULAR_LIGHTING__FILL_OPACITY = SVG_ELEMENT_FEATURE_COUNT + 20;
+	int SVG_FE_SPECULAR_LIGHTING_ELEMENT__FILL_OPACITY = SVG_ELEMENT_FEATURE_COUNT + 20;
 
 	/**
 	 * The feature id for the '<em><b>Fill rule</b></em>' attribute.
@@ -35914,7 +36077,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_SPECULAR_LIGHTING__FILL_RULE = SVG_ELEMENT_FEATURE_COUNT + 21;
+	int SVG_FE_SPECULAR_LIGHTING_ELEMENT__FILL_RULE = SVG_ELEMENT_FEATURE_COUNT + 21;
 
 	/**
 	 * The feature id for the '<em><b>Filter</b></em>' attribute.
@@ -35923,7 +36086,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_SPECULAR_LIGHTING__FILTER = SVG_ELEMENT_FEATURE_COUNT + 22;
+	int SVG_FE_SPECULAR_LIGHTING_ELEMENT__FILTER = SVG_ELEMENT_FEATURE_COUNT + 22;
 
 	/**
 	 * The feature id for the '<em><b>Flood color</b></em>' attribute.
@@ -35932,7 +36095,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_SPECULAR_LIGHTING__FLOOD_COLOR = SVG_ELEMENT_FEATURE_COUNT + 23;
+	int SVG_FE_SPECULAR_LIGHTING_ELEMENT__FLOOD_COLOR = SVG_ELEMENT_FEATURE_COUNT + 23;
 
 	/**
 	 * The feature id for the '<em><b>Flood opacity</b></em>' attribute.
@@ -35941,7 +36104,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_SPECULAR_LIGHTING__FLOOD_OPACITY = SVG_ELEMENT_FEATURE_COUNT + 24;
+	int SVG_FE_SPECULAR_LIGHTING_ELEMENT__FLOOD_OPACITY = SVG_ELEMENT_FEATURE_COUNT + 24;
 
 	/**
 	 * The feature id for the '<em><b>Font family</b></em>' attribute.
@@ -35950,7 +36113,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_SPECULAR_LIGHTING__FONT_FAMILY = SVG_ELEMENT_FEATURE_COUNT + 25;
+	int SVG_FE_SPECULAR_LIGHTING_ELEMENT__FONT_FAMILY = SVG_ELEMENT_FEATURE_COUNT + 25;
 
 	/**
 	 * The feature id for the '<em><b>Font size</b></em>' attribute.
@@ -35959,7 +36122,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_SPECULAR_LIGHTING__FONT_SIZE = SVG_ELEMENT_FEATURE_COUNT + 26;
+	int SVG_FE_SPECULAR_LIGHTING_ELEMENT__FONT_SIZE = SVG_ELEMENT_FEATURE_COUNT + 26;
 
 	/**
 	 * The feature id for the '<em><b>Font size adjust</b></em>' attribute.
@@ -35968,7 +36131,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_SPECULAR_LIGHTING__FONT_SIZE_ADJUST = SVG_ELEMENT_FEATURE_COUNT + 27;
+	int SVG_FE_SPECULAR_LIGHTING_ELEMENT__FONT_SIZE_ADJUST = SVG_ELEMENT_FEATURE_COUNT + 27;
 
 	/**
 	 * The feature id for the '<em><b>Font stretch</b></em>' attribute.
@@ -35977,7 +36140,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_SPECULAR_LIGHTING__FONT_STRETCH = SVG_ELEMENT_FEATURE_COUNT + 28;
+	int SVG_FE_SPECULAR_LIGHTING_ELEMENT__FONT_STRETCH = SVG_ELEMENT_FEATURE_COUNT + 28;
 
 	/**
 	 * The feature id for the '<em><b>Font style</b></em>' attribute.
@@ -35986,7 +36149,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_SPECULAR_LIGHTING__FONT_STYLE = SVG_ELEMENT_FEATURE_COUNT + 29;
+	int SVG_FE_SPECULAR_LIGHTING_ELEMENT__FONT_STYLE = SVG_ELEMENT_FEATURE_COUNT + 29;
 
 	/**
 	 * The feature id for the '<em><b>Font variant</b></em>' attribute.
@@ -35995,7 +36158,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_SPECULAR_LIGHTING__FONT_VARIANT = SVG_ELEMENT_FEATURE_COUNT + 30;
+	int SVG_FE_SPECULAR_LIGHTING_ELEMENT__FONT_VARIANT = SVG_ELEMENT_FEATURE_COUNT + 30;
 
 	/**
 	 * The feature id for the '<em><b>Font weight</b></em>' attribute.
@@ -36004,7 +36167,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_SPECULAR_LIGHTING__FONT_WEIGHT = SVG_ELEMENT_FEATURE_COUNT + 31;
+	int SVG_FE_SPECULAR_LIGHTING_ELEMENT__FONT_WEIGHT = SVG_ELEMENT_FEATURE_COUNT + 31;
 
 	/**
 	 * The feature id for the '<em><b>Glyph orientation horizontal</b></em>' attribute.
@@ -36013,7 +36176,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_SPECULAR_LIGHTING__GLYPH_ORIENTATION_HORIZONTAL = SVG_ELEMENT_FEATURE_COUNT + 32;
+	int SVG_FE_SPECULAR_LIGHTING_ELEMENT__GLYPH_ORIENTATION_HORIZONTAL = SVG_ELEMENT_FEATURE_COUNT + 32;
 
 	/**
 	 * The feature id for the '<em><b>Glyph orientation vertical</b></em>' attribute.
@@ -36022,7 +36185,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_SPECULAR_LIGHTING__GLYPH_ORIENTATION_VERTICAL = SVG_ELEMENT_FEATURE_COUNT + 33;
+	int SVG_FE_SPECULAR_LIGHTING_ELEMENT__GLYPH_ORIENTATION_VERTICAL = SVG_ELEMENT_FEATURE_COUNT + 33;
 
 	/**
 	 * The feature id for the '<em><b>Image rendering</b></em>' attribute.
@@ -36031,7 +36194,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_SPECULAR_LIGHTING__IMAGE_RENDERING = SVG_ELEMENT_FEATURE_COUNT + 34;
+	int SVG_FE_SPECULAR_LIGHTING_ELEMENT__IMAGE_RENDERING = SVG_ELEMENT_FEATURE_COUNT + 34;
 
 	/**
 	 * The feature id for the '<em><b>Kerning</b></em>' attribute.
@@ -36040,7 +36203,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_SPECULAR_LIGHTING__KERNING = SVG_ELEMENT_FEATURE_COUNT + 35;
+	int SVG_FE_SPECULAR_LIGHTING_ELEMENT__KERNING = SVG_ELEMENT_FEATURE_COUNT + 35;
 
 	/**
 	 * The feature id for the '<em><b>Letter spacing</b></em>' attribute.
@@ -36049,7 +36212,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_SPECULAR_LIGHTING__LETTER_SPACING = SVG_ELEMENT_FEATURE_COUNT + 36;
+	int SVG_FE_SPECULAR_LIGHTING_ELEMENT__LETTER_SPACING = SVG_ELEMENT_FEATURE_COUNT + 36;
 
 	/**
 	 * The feature id for the '<em><b>Lighting color</b></em>' attribute.
@@ -36058,7 +36221,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_SPECULAR_LIGHTING__LIGHTING_COLOR = SVG_ELEMENT_FEATURE_COUNT + 37;
+	int SVG_FE_SPECULAR_LIGHTING_ELEMENT__LIGHTING_COLOR = SVG_ELEMENT_FEATURE_COUNT + 37;
 
 	/**
 	 * The feature id for the '<em><b>Marker end</b></em>' attribute.
@@ -36067,7 +36230,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_SPECULAR_LIGHTING__MARKER_END = SVG_ELEMENT_FEATURE_COUNT + 38;
+	int SVG_FE_SPECULAR_LIGHTING_ELEMENT__MARKER_END = SVG_ELEMENT_FEATURE_COUNT + 38;
 
 	/**
 	 * The feature id for the '<em><b>Marker mid</b></em>' attribute.
@@ -36076,7 +36239,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_SPECULAR_LIGHTING__MARKER_MID = SVG_ELEMENT_FEATURE_COUNT + 39;
+	int SVG_FE_SPECULAR_LIGHTING_ELEMENT__MARKER_MID = SVG_ELEMENT_FEATURE_COUNT + 39;
 
 	/**
 	 * The feature id for the '<em><b>Marker start</b></em>' attribute.
@@ -36085,7 +36248,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_SPECULAR_LIGHTING__MARKER_START = SVG_ELEMENT_FEATURE_COUNT + 40;
+	int SVG_FE_SPECULAR_LIGHTING_ELEMENT__MARKER_START = SVG_ELEMENT_FEATURE_COUNT + 40;
 
 	/**
 	 * The feature id for the '<em><b>Masks</b></em>' attribute.
@@ -36094,7 +36257,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_SPECULAR_LIGHTING__MASKS = SVG_ELEMENT_FEATURE_COUNT + 41;
+	int SVG_FE_SPECULAR_LIGHTING_ELEMENT__MASKS = SVG_ELEMENT_FEATURE_COUNT + 41;
 
 	/**
 	 * The feature id for the '<em><b>Opacity</b></em>' attribute.
@@ -36103,7 +36266,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_SPECULAR_LIGHTING__OPACITY = SVG_ELEMENT_FEATURE_COUNT + 42;
+	int SVG_FE_SPECULAR_LIGHTING_ELEMENT__OPACITY = SVG_ELEMENT_FEATURE_COUNT + 42;
 
 	/**
 	 * The feature id for the '<em><b>Overflow</b></em>' attribute.
@@ -36112,7 +36275,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_SPECULAR_LIGHTING__OVERFLOW = SVG_ELEMENT_FEATURE_COUNT + 43;
+	int SVG_FE_SPECULAR_LIGHTING_ELEMENT__OVERFLOW = SVG_ELEMENT_FEATURE_COUNT + 43;
 
 	/**
 	 * The feature id for the '<em><b>Pointer events</b></em>' attribute.
@@ -36121,7 +36284,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_SPECULAR_LIGHTING__POINTER_EVENTS = SVG_ELEMENT_FEATURE_COUNT + 44;
+	int SVG_FE_SPECULAR_LIGHTING_ELEMENT__POINTER_EVENTS = SVG_ELEMENT_FEATURE_COUNT + 44;
 
 	/**
 	 * The feature id for the '<em><b>Shape rendering</b></em>' attribute.
@@ -36130,7 +36293,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_SPECULAR_LIGHTING__SHAPE_RENDERING = SVG_ELEMENT_FEATURE_COUNT + 45;
+	int SVG_FE_SPECULAR_LIGHTING_ELEMENT__SHAPE_RENDERING = SVG_ELEMENT_FEATURE_COUNT + 45;
 
 	/**
 	 * The feature id for the '<em><b>Stop color</b></em>' attribute.
@@ -36139,7 +36302,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_SPECULAR_LIGHTING__STOP_COLOR = SVG_ELEMENT_FEATURE_COUNT + 46;
+	int SVG_FE_SPECULAR_LIGHTING_ELEMENT__STOP_COLOR = SVG_ELEMENT_FEATURE_COUNT + 46;
 
 	/**
 	 * The feature id for the '<em><b>Stop opacity</b></em>' attribute.
@@ -36148,7 +36311,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_SPECULAR_LIGHTING__STOP_OPACITY = SVG_ELEMENT_FEATURE_COUNT + 47;
+	int SVG_FE_SPECULAR_LIGHTING_ELEMENT__STOP_OPACITY = SVG_ELEMENT_FEATURE_COUNT + 47;
 
 	/**
 	 * The feature id for the '<em><b>Stroke</b></em>' attribute.
@@ -36157,7 +36320,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_SPECULAR_LIGHTING__STROKE = SVG_ELEMENT_FEATURE_COUNT + 48;
+	int SVG_FE_SPECULAR_LIGHTING_ELEMENT__STROKE = SVG_ELEMENT_FEATURE_COUNT + 48;
 
 	/**
 	 * The feature id for the '<em><b>Stroke dasharray</b></em>' attribute.
@@ -36166,7 +36329,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_SPECULAR_LIGHTING__STROKE_DASHARRAY = SVG_ELEMENT_FEATURE_COUNT + 49;
+	int SVG_FE_SPECULAR_LIGHTING_ELEMENT__STROKE_DASHARRAY = SVG_ELEMENT_FEATURE_COUNT + 49;
 
 	/**
 	 * The feature id for the '<em><b>Stroke dashoffset</b></em>' attribute.
@@ -36175,7 +36338,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_SPECULAR_LIGHTING__STROKE_DASHOFFSET = SVG_ELEMENT_FEATURE_COUNT + 50;
+	int SVG_FE_SPECULAR_LIGHTING_ELEMENT__STROKE_DASHOFFSET = SVG_ELEMENT_FEATURE_COUNT + 50;
 
 	/**
 	 * The feature id for the '<em><b>Stroke linecap</b></em>' attribute.
@@ -36184,7 +36347,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_SPECULAR_LIGHTING__STROKE_LINECAP = SVG_ELEMENT_FEATURE_COUNT + 51;
+	int SVG_FE_SPECULAR_LIGHTING_ELEMENT__STROKE_LINECAP = SVG_ELEMENT_FEATURE_COUNT + 51;
 
 	/**
 	 * The feature id for the '<em><b>Stroke linejoin</b></em>' attribute.
@@ -36193,7 +36356,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_SPECULAR_LIGHTING__STROKE_LINEJOIN = SVG_ELEMENT_FEATURE_COUNT + 52;
+	int SVG_FE_SPECULAR_LIGHTING_ELEMENT__STROKE_LINEJOIN = SVG_ELEMENT_FEATURE_COUNT + 52;
 
 	/**
 	 * The feature id for the '<em><b>Stroke miterlimit</b></em>' attribute.
@@ -36202,7 +36365,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_SPECULAR_LIGHTING__STROKE_MITERLIMIT = SVG_ELEMENT_FEATURE_COUNT + 53;
+	int SVG_FE_SPECULAR_LIGHTING_ELEMENT__STROKE_MITERLIMIT = SVG_ELEMENT_FEATURE_COUNT + 53;
 
 	/**
 	 * The feature id for the '<em><b>Stroke opacity</b></em>' attribute.
@@ -36211,7 +36374,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_SPECULAR_LIGHTING__STROKE_OPACITY = SVG_ELEMENT_FEATURE_COUNT + 54;
+	int SVG_FE_SPECULAR_LIGHTING_ELEMENT__STROKE_OPACITY = SVG_ELEMENT_FEATURE_COUNT + 54;
 
 	/**
 	 * The feature id for the '<em><b>Stroke width</b></em>' attribute.
@@ -36220,7 +36383,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_SPECULAR_LIGHTING__STROKE_WIDTH = SVG_ELEMENT_FEATURE_COUNT + 55;
+	int SVG_FE_SPECULAR_LIGHTING_ELEMENT__STROKE_WIDTH = SVG_ELEMENT_FEATURE_COUNT + 55;
 
 	/**
 	 * The feature id for the '<em><b>Text anchor</b></em>' attribute.
@@ -36229,7 +36392,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_SPECULAR_LIGHTING__TEXT_ANCHOR = SVG_ELEMENT_FEATURE_COUNT + 56;
+	int SVG_FE_SPECULAR_LIGHTING_ELEMENT__TEXT_ANCHOR = SVG_ELEMENT_FEATURE_COUNT + 56;
 
 	/**
 	 * The feature id for the '<em><b>Text decoration</b></em>' attribute.
@@ -36238,7 +36401,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_SPECULAR_LIGHTING__TEXT_DECORATION = SVG_ELEMENT_FEATURE_COUNT + 57;
+	int SVG_FE_SPECULAR_LIGHTING_ELEMENT__TEXT_DECORATION = SVG_ELEMENT_FEATURE_COUNT + 57;
 
 	/**
 	 * The feature id for the '<em><b>Text rendering</b></em>' attribute.
@@ -36247,7 +36410,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_SPECULAR_LIGHTING__TEXT_RENDERING = SVG_ELEMENT_FEATURE_COUNT + 58;
+	int SVG_FE_SPECULAR_LIGHTING_ELEMENT__TEXT_RENDERING = SVG_ELEMENT_FEATURE_COUNT + 58;
 
 	/**
 	 * The feature id for the '<em><b>Unicode bidi</b></em>' attribute.
@@ -36256,7 +36419,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_SPECULAR_LIGHTING__UNICODE_BIDI = SVG_ELEMENT_FEATURE_COUNT + 59;
+	int SVG_FE_SPECULAR_LIGHTING_ELEMENT__UNICODE_BIDI = SVG_ELEMENT_FEATURE_COUNT + 59;
 
 	/**
 	 * The feature id for the '<em><b>Visibility</b></em>' attribute.
@@ -36265,7 +36428,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_SPECULAR_LIGHTING__VISIBILITY = SVG_ELEMENT_FEATURE_COUNT + 60;
+	int SVG_FE_SPECULAR_LIGHTING_ELEMENT__VISIBILITY = SVG_ELEMENT_FEATURE_COUNT + 60;
 
 	/**
 	 * The feature id for the '<em><b>Word spacing</b></em>' attribute.
@@ -36274,7 +36437,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_SPECULAR_LIGHTING__WORD_SPACING = SVG_ELEMENT_FEATURE_COUNT + 61;
+	int SVG_FE_SPECULAR_LIGHTING_ELEMENT__WORD_SPACING = SVG_ELEMENT_FEATURE_COUNT + 61;
 
 	/**
 	 * The feature id for the '<em><b>Writing mode</b></em>' attribute.
@@ -36283,7 +36446,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_SPECULAR_LIGHTING__WRITING_MODE = SVG_ELEMENT_FEATURE_COUNT + 62;
+	int SVG_FE_SPECULAR_LIGHTING_ELEMENT__WRITING_MODE = SVG_ELEMENT_FEATURE_COUNT + 62;
 
 	/**
 	 * The feature id for the '<em><b>X</b></em>' attribute.
@@ -36292,7 +36455,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_SPECULAR_LIGHTING__X = SVG_ELEMENT_FEATURE_COUNT + 63;
+	int SVG_FE_SPECULAR_LIGHTING_ELEMENT__X = SVG_ELEMENT_FEATURE_COUNT + 63;
 
 	/**
 	 * The feature id for the '<em><b>Y</b></em>' attribute.
@@ -36301,7 +36464,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_SPECULAR_LIGHTING__Y = SVG_ELEMENT_FEATURE_COUNT + 64;
+	int SVG_FE_SPECULAR_LIGHTING_ELEMENT__Y = SVG_ELEMENT_FEATURE_COUNT + 64;
 
 	/**
 	 * The feature id for the '<em><b>Width</b></em>' attribute.
@@ -36310,7 +36473,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_SPECULAR_LIGHTING__WIDTH = SVG_ELEMENT_FEATURE_COUNT + 65;
+	int SVG_FE_SPECULAR_LIGHTING_ELEMENT__WIDTH = SVG_ELEMENT_FEATURE_COUNT + 65;
 
 	/**
 	 * The feature id for the '<em><b>Height</b></em>' attribute.
@@ -36319,7 +36482,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_SPECULAR_LIGHTING__HEIGHT = SVG_ELEMENT_FEATURE_COUNT + 66;
+	int SVG_FE_SPECULAR_LIGHTING_ELEMENT__HEIGHT = SVG_ELEMENT_FEATURE_COUNT + 66;
 
 	/**
 	 * The feature id for the '<em><b>Result</b></em>' attribute.
@@ -36328,7 +36491,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_SPECULAR_LIGHTING__RESULT = SVG_ELEMENT_FEATURE_COUNT + 67;
+	int SVG_FE_SPECULAR_LIGHTING_ELEMENT__RESULT = SVG_ELEMENT_FEATURE_COUNT + 67;
 
 	/**
 	 * The feature id for the '<em><b>In</b></em>' attribute.
@@ -36337,7 +36500,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_SPECULAR_LIGHTING__IN = SVG_ELEMENT_FEATURE_COUNT + 68;
+	int SVG_FE_SPECULAR_LIGHTING_ELEMENT__IN = SVG_ELEMENT_FEATURE_COUNT + 68;
 
 	/**
 	 * The feature id for the '<em><b>Children</b></em>' containment reference list.
@@ -36346,7 +36509,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_SPECULAR_LIGHTING__CHILDREN = SVG_ELEMENT_FEATURE_COUNT + 69;
+	int SVG_FE_SPECULAR_LIGHTING_ELEMENT__CHILDREN = SVG_ELEMENT_FEATURE_COUNT + 69;
 
 	/**
 	 * The feature id for the '<em><b>Class</b></em>' attribute.
@@ -36355,7 +36518,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_SPECULAR_LIGHTING__CLASS = SVG_ELEMENT_FEATURE_COUNT + 70;
+	int SVG_FE_SPECULAR_LIGHTING_ELEMENT__CLASS = SVG_ELEMENT_FEATURE_COUNT + 70;
 
 	/**
 	 * The feature id for the '<em><b>Style</b></em>' attribute.
@@ -36364,7 +36527,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_SPECULAR_LIGHTING__STYLE = SVG_ELEMENT_FEATURE_COUNT + 71;
+	int SVG_FE_SPECULAR_LIGHTING_ELEMENT__STYLE = SVG_ELEMENT_FEATURE_COUNT + 71;
 
 	/**
 	 * The feature id for the '<em><b>Surface Scale</b></em>' attribute.
@@ -36373,7 +36536,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_SPECULAR_LIGHTING__SURFACE_SCALE = SVG_ELEMENT_FEATURE_COUNT + 72;
+	int SVG_FE_SPECULAR_LIGHTING_ELEMENT__SURFACE_SCALE = SVG_ELEMENT_FEATURE_COUNT + 72;
 
 	/**
 	 * The feature id for the '<em><b>Specular Constant</b></em>' attribute.
@@ -36382,7 +36545,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_SPECULAR_LIGHTING__SPECULAR_CONSTANT = SVG_ELEMENT_FEATURE_COUNT + 73;
+	int SVG_FE_SPECULAR_LIGHTING_ELEMENT__SPECULAR_CONSTANT = SVG_ELEMENT_FEATURE_COUNT + 73;
 
 	/**
 	 * The feature id for the '<em><b>Specular Exponent</b></em>' attribute.
@@ -36391,7 +36554,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_SPECULAR_LIGHTING__SPECULAR_EXPONENT = SVG_ELEMENT_FEATURE_COUNT + 74;
+	int SVG_FE_SPECULAR_LIGHTING_ELEMENT__SPECULAR_EXPONENT = SVG_ELEMENT_FEATURE_COUNT + 74;
 
 	/**
 	 * The feature id for the '<em><b>Kernel Unit Length</b></em>' attribute.
@@ -36400,26 +36563,26 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_SPECULAR_LIGHTING__KERNEL_UNIT_LENGTH = SVG_ELEMENT_FEATURE_COUNT + 75;
+	int SVG_FE_SPECULAR_LIGHTING_ELEMENT__KERNEL_UNIT_LENGTH = SVG_ELEMENT_FEATURE_COUNT + 75;
 
 	/**
-	 * The number of structural features of the '<em>Fe Specular Lighting</em>' class.
+	 * The number of structural features of the '<em>Fe Specular Lighting Element</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_SPECULAR_LIGHTING_FEATURE_COUNT = SVG_ELEMENT_FEATURE_COUNT + 76;
+	int SVG_FE_SPECULAR_LIGHTING_ELEMENT_FEATURE_COUNT = SVG_ELEMENT_FEATURE_COUNT + 76;
 
 	/**
-	 * The meta object id for the '{@link at.bestsolution.efxclipse.formats.svg.svg.impl.SvgFeTileImpl <em>Fe Tile</em>}' class.
+	 * The meta object id for the '{@link at.bestsolution.efxclipse.formats.svg.svg.impl.SvgFeTileElementImpl <em>Fe Tile Element</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see at.bestsolution.efxclipse.formats.svg.svg.impl.SvgFeTileImpl
-	 * @see at.bestsolution.efxclipse.formats.svg.svg.impl.SvgPackageImpl#getSvgFeTile()
+	 * @see at.bestsolution.efxclipse.formats.svg.svg.impl.SvgFeTileElementImpl
+	 * @see at.bestsolution.efxclipse.formats.svg.svg.impl.SvgPackageImpl#getSvgFeTileElement()
 	 * @generated
 	 */
-	int SVG_FE_TILE = 80;
+	int SVG_FE_TILE_ELEMENT = 81;
 
 	/**
 	 * The feature id for the '<em><b>Id</b></em>' attribute.
@@ -36428,7 +36591,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_TILE__ID = SVG_ELEMENT_FEATURE_COUNT + 0;
+	int SVG_FE_TILE_ELEMENT__ID = SVG_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Xml base</b></em>' attribute.
@@ -36437,7 +36600,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_TILE__XML_BASE = SVG_ELEMENT_FEATURE_COUNT + 1;
+	int SVG_FE_TILE_ELEMENT__XML_BASE = SVG_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Xml lang</b></em>' attribute.
@@ -36446,7 +36609,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_TILE__XML_LANG = SVG_ELEMENT_FEATURE_COUNT + 2;
+	int SVG_FE_TILE_ELEMENT__XML_LANG = SVG_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Xml space</b></em>' attribute.
@@ -36455,7 +36618,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_TILE__XML_SPACE = SVG_ELEMENT_FEATURE_COUNT + 3;
+	int SVG_FE_TILE_ELEMENT__XML_SPACE = SVG_ELEMENT_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Alignment baseline</b></em>' attribute.
@@ -36464,7 +36627,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_TILE__ALIGNMENT_BASELINE = SVG_ELEMENT_FEATURE_COUNT + 4;
+	int SVG_FE_TILE_ELEMENT__ALIGNMENT_BASELINE = SVG_ELEMENT_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Baseline shift</b></em>' attribute.
@@ -36473,7 +36636,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_TILE__BASELINE_SHIFT = SVG_ELEMENT_FEATURE_COUNT + 5;
+	int SVG_FE_TILE_ELEMENT__BASELINE_SHIFT = SVG_ELEMENT_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>Clip</b></em>' attribute.
@@ -36482,7 +36645,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_TILE__CLIP = SVG_ELEMENT_FEATURE_COUNT + 6;
+	int SVG_FE_TILE_ELEMENT__CLIP = SVG_ELEMENT_FEATURE_COUNT + 6;
 
 	/**
 	 * The feature id for the '<em><b>Clip path</b></em>' attribute.
@@ -36491,7 +36654,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_TILE__CLIP_PATH = SVG_ELEMENT_FEATURE_COUNT + 7;
+	int SVG_FE_TILE_ELEMENT__CLIP_PATH = SVG_ELEMENT_FEATURE_COUNT + 7;
 
 	/**
 	 * The feature id for the '<em><b>Clip rule</b></em>' attribute.
@@ -36500,7 +36663,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_TILE__CLIP_RULE = SVG_ELEMENT_FEATURE_COUNT + 8;
+	int SVG_FE_TILE_ELEMENT__CLIP_RULE = SVG_ELEMENT_FEATURE_COUNT + 8;
 
 	/**
 	 * The feature id for the '<em><b>Color</b></em>' attribute.
@@ -36509,7 +36672,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_TILE__COLOR = SVG_ELEMENT_FEATURE_COUNT + 9;
+	int SVG_FE_TILE_ELEMENT__COLOR = SVG_ELEMENT_FEATURE_COUNT + 9;
 
 	/**
 	 * The feature id for the '<em><b>Color interpolation</b></em>' attribute.
@@ -36518,7 +36681,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_TILE__COLOR_INTERPOLATION = SVG_ELEMENT_FEATURE_COUNT + 10;
+	int SVG_FE_TILE_ELEMENT__COLOR_INTERPOLATION = SVG_ELEMENT_FEATURE_COUNT + 10;
 
 	/**
 	 * The feature id for the '<em><b>Color interpolation filters</b></em>' attribute.
@@ -36527,7 +36690,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_TILE__COLOR_INTERPOLATION_FILTERS = SVG_ELEMENT_FEATURE_COUNT + 11;
+	int SVG_FE_TILE_ELEMENT__COLOR_INTERPOLATION_FILTERS = SVG_ELEMENT_FEATURE_COUNT + 11;
 
 	/**
 	 * The feature id for the '<em><b>Color profile</b></em>' attribute.
@@ -36536,7 +36699,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_TILE__COLOR_PROFILE = SVG_ELEMENT_FEATURE_COUNT + 12;
+	int SVG_FE_TILE_ELEMENT__COLOR_PROFILE = SVG_ELEMENT_FEATURE_COUNT + 12;
 
 	/**
 	 * The feature id for the '<em><b>Color rendering</b></em>' attribute.
@@ -36545,7 +36708,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_TILE__COLOR_RENDERING = SVG_ELEMENT_FEATURE_COUNT + 13;
+	int SVG_FE_TILE_ELEMENT__COLOR_RENDERING = SVG_ELEMENT_FEATURE_COUNT + 13;
 
 	/**
 	 * The feature id for the '<em><b>Cursor</b></em>' attribute.
@@ -36554,7 +36717,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_TILE__CURSOR = SVG_ELEMENT_FEATURE_COUNT + 14;
+	int SVG_FE_TILE_ELEMENT__CURSOR = SVG_ELEMENT_FEATURE_COUNT + 14;
 
 	/**
 	 * The feature id for the '<em><b>Direction</b></em>' attribute.
@@ -36563,7 +36726,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_TILE__DIRECTION = SVG_ELEMENT_FEATURE_COUNT + 15;
+	int SVG_FE_TILE_ELEMENT__DIRECTION = SVG_ELEMENT_FEATURE_COUNT + 15;
 
 	/**
 	 * The feature id for the '<em><b>Display</b></em>' attribute.
@@ -36572,7 +36735,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_TILE__DISPLAY = SVG_ELEMENT_FEATURE_COUNT + 16;
+	int SVG_FE_TILE_ELEMENT__DISPLAY = SVG_ELEMENT_FEATURE_COUNT + 16;
 
 	/**
 	 * The feature id for the '<em><b>Dominant baseline</b></em>' attribute.
@@ -36581,7 +36744,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_TILE__DOMINANT_BASELINE = SVG_ELEMENT_FEATURE_COUNT + 17;
+	int SVG_FE_TILE_ELEMENT__DOMINANT_BASELINE = SVG_ELEMENT_FEATURE_COUNT + 17;
 
 	/**
 	 * The feature id for the '<em><b>Enable background</b></em>' attribute.
@@ -36590,7 +36753,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_TILE__ENABLE_BACKGROUND = SVG_ELEMENT_FEATURE_COUNT + 18;
+	int SVG_FE_TILE_ELEMENT__ENABLE_BACKGROUND = SVG_ELEMENT_FEATURE_COUNT + 18;
 
 	/**
 	 * The feature id for the '<em><b>Fill</b></em>' attribute.
@@ -36599,7 +36762,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_TILE__FILL = SVG_ELEMENT_FEATURE_COUNT + 19;
+	int SVG_FE_TILE_ELEMENT__FILL = SVG_ELEMENT_FEATURE_COUNT + 19;
 
 	/**
 	 * The feature id for the '<em><b>Fill opacity</b></em>' attribute.
@@ -36608,7 +36771,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_TILE__FILL_OPACITY = SVG_ELEMENT_FEATURE_COUNT + 20;
+	int SVG_FE_TILE_ELEMENT__FILL_OPACITY = SVG_ELEMENT_FEATURE_COUNT + 20;
 
 	/**
 	 * The feature id for the '<em><b>Fill rule</b></em>' attribute.
@@ -36617,7 +36780,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_TILE__FILL_RULE = SVG_ELEMENT_FEATURE_COUNT + 21;
+	int SVG_FE_TILE_ELEMENT__FILL_RULE = SVG_ELEMENT_FEATURE_COUNT + 21;
 
 	/**
 	 * The feature id for the '<em><b>Filter</b></em>' attribute.
@@ -36626,7 +36789,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_TILE__FILTER = SVG_ELEMENT_FEATURE_COUNT + 22;
+	int SVG_FE_TILE_ELEMENT__FILTER = SVG_ELEMENT_FEATURE_COUNT + 22;
 
 	/**
 	 * The feature id for the '<em><b>Flood color</b></em>' attribute.
@@ -36635,7 +36798,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_TILE__FLOOD_COLOR = SVG_ELEMENT_FEATURE_COUNT + 23;
+	int SVG_FE_TILE_ELEMENT__FLOOD_COLOR = SVG_ELEMENT_FEATURE_COUNT + 23;
 
 	/**
 	 * The feature id for the '<em><b>Flood opacity</b></em>' attribute.
@@ -36644,7 +36807,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_TILE__FLOOD_OPACITY = SVG_ELEMENT_FEATURE_COUNT + 24;
+	int SVG_FE_TILE_ELEMENT__FLOOD_OPACITY = SVG_ELEMENT_FEATURE_COUNT + 24;
 
 	/**
 	 * The feature id for the '<em><b>Font family</b></em>' attribute.
@@ -36653,7 +36816,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_TILE__FONT_FAMILY = SVG_ELEMENT_FEATURE_COUNT + 25;
+	int SVG_FE_TILE_ELEMENT__FONT_FAMILY = SVG_ELEMENT_FEATURE_COUNT + 25;
 
 	/**
 	 * The feature id for the '<em><b>Font size</b></em>' attribute.
@@ -36662,7 +36825,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_TILE__FONT_SIZE = SVG_ELEMENT_FEATURE_COUNT + 26;
+	int SVG_FE_TILE_ELEMENT__FONT_SIZE = SVG_ELEMENT_FEATURE_COUNT + 26;
 
 	/**
 	 * The feature id for the '<em><b>Font size adjust</b></em>' attribute.
@@ -36671,7 +36834,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_TILE__FONT_SIZE_ADJUST = SVG_ELEMENT_FEATURE_COUNT + 27;
+	int SVG_FE_TILE_ELEMENT__FONT_SIZE_ADJUST = SVG_ELEMENT_FEATURE_COUNT + 27;
 
 	/**
 	 * The feature id for the '<em><b>Font stretch</b></em>' attribute.
@@ -36680,7 +36843,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_TILE__FONT_STRETCH = SVG_ELEMENT_FEATURE_COUNT + 28;
+	int SVG_FE_TILE_ELEMENT__FONT_STRETCH = SVG_ELEMENT_FEATURE_COUNT + 28;
 
 	/**
 	 * The feature id for the '<em><b>Font style</b></em>' attribute.
@@ -36689,7 +36852,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_TILE__FONT_STYLE = SVG_ELEMENT_FEATURE_COUNT + 29;
+	int SVG_FE_TILE_ELEMENT__FONT_STYLE = SVG_ELEMENT_FEATURE_COUNT + 29;
 
 	/**
 	 * The feature id for the '<em><b>Font variant</b></em>' attribute.
@@ -36698,7 +36861,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_TILE__FONT_VARIANT = SVG_ELEMENT_FEATURE_COUNT + 30;
+	int SVG_FE_TILE_ELEMENT__FONT_VARIANT = SVG_ELEMENT_FEATURE_COUNT + 30;
 
 	/**
 	 * The feature id for the '<em><b>Font weight</b></em>' attribute.
@@ -36707,7 +36870,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_TILE__FONT_WEIGHT = SVG_ELEMENT_FEATURE_COUNT + 31;
+	int SVG_FE_TILE_ELEMENT__FONT_WEIGHT = SVG_ELEMENT_FEATURE_COUNT + 31;
 
 	/**
 	 * The feature id for the '<em><b>Glyph orientation horizontal</b></em>' attribute.
@@ -36716,7 +36879,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_TILE__GLYPH_ORIENTATION_HORIZONTAL = SVG_ELEMENT_FEATURE_COUNT + 32;
+	int SVG_FE_TILE_ELEMENT__GLYPH_ORIENTATION_HORIZONTAL = SVG_ELEMENT_FEATURE_COUNT + 32;
 
 	/**
 	 * The feature id for the '<em><b>Glyph orientation vertical</b></em>' attribute.
@@ -36725,7 +36888,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_TILE__GLYPH_ORIENTATION_VERTICAL = SVG_ELEMENT_FEATURE_COUNT + 33;
+	int SVG_FE_TILE_ELEMENT__GLYPH_ORIENTATION_VERTICAL = SVG_ELEMENT_FEATURE_COUNT + 33;
 
 	/**
 	 * The feature id for the '<em><b>Image rendering</b></em>' attribute.
@@ -36734,7 +36897,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_TILE__IMAGE_RENDERING = SVG_ELEMENT_FEATURE_COUNT + 34;
+	int SVG_FE_TILE_ELEMENT__IMAGE_RENDERING = SVG_ELEMENT_FEATURE_COUNT + 34;
 
 	/**
 	 * The feature id for the '<em><b>Kerning</b></em>' attribute.
@@ -36743,7 +36906,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_TILE__KERNING = SVG_ELEMENT_FEATURE_COUNT + 35;
+	int SVG_FE_TILE_ELEMENT__KERNING = SVG_ELEMENT_FEATURE_COUNT + 35;
 
 	/**
 	 * The feature id for the '<em><b>Letter spacing</b></em>' attribute.
@@ -36752,7 +36915,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_TILE__LETTER_SPACING = SVG_ELEMENT_FEATURE_COUNT + 36;
+	int SVG_FE_TILE_ELEMENT__LETTER_SPACING = SVG_ELEMENT_FEATURE_COUNT + 36;
 
 	/**
 	 * The feature id for the '<em><b>Lighting color</b></em>' attribute.
@@ -36761,7 +36924,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_TILE__LIGHTING_COLOR = SVG_ELEMENT_FEATURE_COUNT + 37;
+	int SVG_FE_TILE_ELEMENT__LIGHTING_COLOR = SVG_ELEMENT_FEATURE_COUNT + 37;
 
 	/**
 	 * The feature id for the '<em><b>Marker end</b></em>' attribute.
@@ -36770,7 +36933,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_TILE__MARKER_END = SVG_ELEMENT_FEATURE_COUNT + 38;
+	int SVG_FE_TILE_ELEMENT__MARKER_END = SVG_ELEMENT_FEATURE_COUNT + 38;
 
 	/**
 	 * The feature id for the '<em><b>Marker mid</b></em>' attribute.
@@ -36779,7 +36942,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_TILE__MARKER_MID = SVG_ELEMENT_FEATURE_COUNT + 39;
+	int SVG_FE_TILE_ELEMENT__MARKER_MID = SVG_ELEMENT_FEATURE_COUNT + 39;
 
 	/**
 	 * The feature id for the '<em><b>Marker start</b></em>' attribute.
@@ -36788,7 +36951,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_TILE__MARKER_START = SVG_ELEMENT_FEATURE_COUNT + 40;
+	int SVG_FE_TILE_ELEMENT__MARKER_START = SVG_ELEMENT_FEATURE_COUNT + 40;
 
 	/**
 	 * The feature id for the '<em><b>Masks</b></em>' attribute.
@@ -36797,7 +36960,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_TILE__MASKS = SVG_ELEMENT_FEATURE_COUNT + 41;
+	int SVG_FE_TILE_ELEMENT__MASKS = SVG_ELEMENT_FEATURE_COUNT + 41;
 
 	/**
 	 * The feature id for the '<em><b>Opacity</b></em>' attribute.
@@ -36806,7 +36969,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_TILE__OPACITY = SVG_ELEMENT_FEATURE_COUNT + 42;
+	int SVG_FE_TILE_ELEMENT__OPACITY = SVG_ELEMENT_FEATURE_COUNT + 42;
 
 	/**
 	 * The feature id for the '<em><b>Overflow</b></em>' attribute.
@@ -36815,7 +36978,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_TILE__OVERFLOW = SVG_ELEMENT_FEATURE_COUNT + 43;
+	int SVG_FE_TILE_ELEMENT__OVERFLOW = SVG_ELEMENT_FEATURE_COUNT + 43;
 
 	/**
 	 * The feature id for the '<em><b>Pointer events</b></em>' attribute.
@@ -36824,7 +36987,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_TILE__POINTER_EVENTS = SVG_ELEMENT_FEATURE_COUNT + 44;
+	int SVG_FE_TILE_ELEMENT__POINTER_EVENTS = SVG_ELEMENT_FEATURE_COUNT + 44;
 
 	/**
 	 * The feature id for the '<em><b>Shape rendering</b></em>' attribute.
@@ -36833,7 +36996,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_TILE__SHAPE_RENDERING = SVG_ELEMENT_FEATURE_COUNT + 45;
+	int SVG_FE_TILE_ELEMENT__SHAPE_RENDERING = SVG_ELEMENT_FEATURE_COUNT + 45;
 
 	/**
 	 * The feature id for the '<em><b>Stop color</b></em>' attribute.
@@ -36842,7 +37005,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_TILE__STOP_COLOR = SVG_ELEMENT_FEATURE_COUNT + 46;
+	int SVG_FE_TILE_ELEMENT__STOP_COLOR = SVG_ELEMENT_FEATURE_COUNT + 46;
 
 	/**
 	 * The feature id for the '<em><b>Stop opacity</b></em>' attribute.
@@ -36851,7 +37014,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_TILE__STOP_OPACITY = SVG_ELEMENT_FEATURE_COUNT + 47;
+	int SVG_FE_TILE_ELEMENT__STOP_OPACITY = SVG_ELEMENT_FEATURE_COUNT + 47;
 
 	/**
 	 * The feature id for the '<em><b>Stroke</b></em>' attribute.
@@ -36860,7 +37023,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_TILE__STROKE = SVG_ELEMENT_FEATURE_COUNT + 48;
+	int SVG_FE_TILE_ELEMENT__STROKE = SVG_ELEMENT_FEATURE_COUNT + 48;
 
 	/**
 	 * The feature id for the '<em><b>Stroke dasharray</b></em>' attribute.
@@ -36869,7 +37032,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_TILE__STROKE_DASHARRAY = SVG_ELEMENT_FEATURE_COUNT + 49;
+	int SVG_FE_TILE_ELEMENT__STROKE_DASHARRAY = SVG_ELEMENT_FEATURE_COUNT + 49;
 
 	/**
 	 * The feature id for the '<em><b>Stroke dashoffset</b></em>' attribute.
@@ -36878,7 +37041,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_TILE__STROKE_DASHOFFSET = SVG_ELEMENT_FEATURE_COUNT + 50;
+	int SVG_FE_TILE_ELEMENT__STROKE_DASHOFFSET = SVG_ELEMENT_FEATURE_COUNT + 50;
 
 	/**
 	 * The feature id for the '<em><b>Stroke linecap</b></em>' attribute.
@@ -36887,7 +37050,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_TILE__STROKE_LINECAP = SVG_ELEMENT_FEATURE_COUNT + 51;
+	int SVG_FE_TILE_ELEMENT__STROKE_LINECAP = SVG_ELEMENT_FEATURE_COUNT + 51;
 
 	/**
 	 * The feature id for the '<em><b>Stroke linejoin</b></em>' attribute.
@@ -36896,7 +37059,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_TILE__STROKE_LINEJOIN = SVG_ELEMENT_FEATURE_COUNT + 52;
+	int SVG_FE_TILE_ELEMENT__STROKE_LINEJOIN = SVG_ELEMENT_FEATURE_COUNT + 52;
 
 	/**
 	 * The feature id for the '<em><b>Stroke miterlimit</b></em>' attribute.
@@ -36905,7 +37068,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_TILE__STROKE_MITERLIMIT = SVG_ELEMENT_FEATURE_COUNT + 53;
+	int SVG_FE_TILE_ELEMENT__STROKE_MITERLIMIT = SVG_ELEMENT_FEATURE_COUNT + 53;
 
 	/**
 	 * The feature id for the '<em><b>Stroke opacity</b></em>' attribute.
@@ -36914,7 +37077,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_TILE__STROKE_OPACITY = SVG_ELEMENT_FEATURE_COUNT + 54;
+	int SVG_FE_TILE_ELEMENT__STROKE_OPACITY = SVG_ELEMENT_FEATURE_COUNT + 54;
 
 	/**
 	 * The feature id for the '<em><b>Stroke width</b></em>' attribute.
@@ -36923,7 +37086,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_TILE__STROKE_WIDTH = SVG_ELEMENT_FEATURE_COUNT + 55;
+	int SVG_FE_TILE_ELEMENT__STROKE_WIDTH = SVG_ELEMENT_FEATURE_COUNT + 55;
 
 	/**
 	 * The feature id for the '<em><b>Text anchor</b></em>' attribute.
@@ -36932,7 +37095,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_TILE__TEXT_ANCHOR = SVG_ELEMENT_FEATURE_COUNT + 56;
+	int SVG_FE_TILE_ELEMENT__TEXT_ANCHOR = SVG_ELEMENT_FEATURE_COUNT + 56;
 
 	/**
 	 * The feature id for the '<em><b>Text decoration</b></em>' attribute.
@@ -36941,7 +37104,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_TILE__TEXT_DECORATION = SVG_ELEMENT_FEATURE_COUNT + 57;
+	int SVG_FE_TILE_ELEMENT__TEXT_DECORATION = SVG_ELEMENT_FEATURE_COUNT + 57;
 
 	/**
 	 * The feature id for the '<em><b>Text rendering</b></em>' attribute.
@@ -36950,7 +37113,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_TILE__TEXT_RENDERING = SVG_ELEMENT_FEATURE_COUNT + 58;
+	int SVG_FE_TILE_ELEMENT__TEXT_RENDERING = SVG_ELEMENT_FEATURE_COUNT + 58;
 
 	/**
 	 * The feature id for the '<em><b>Unicode bidi</b></em>' attribute.
@@ -36959,7 +37122,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_TILE__UNICODE_BIDI = SVG_ELEMENT_FEATURE_COUNT + 59;
+	int SVG_FE_TILE_ELEMENT__UNICODE_BIDI = SVG_ELEMENT_FEATURE_COUNT + 59;
 
 	/**
 	 * The feature id for the '<em><b>Visibility</b></em>' attribute.
@@ -36968,7 +37131,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_TILE__VISIBILITY = SVG_ELEMENT_FEATURE_COUNT + 60;
+	int SVG_FE_TILE_ELEMENT__VISIBILITY = SVG_ELEMENT_FEATURE_COUNT + 60;
 
 	/**
 	 * The feature id for the '<em><b>Word spacing</b></em>' attribute.
@@ -36977,7 +37140,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_TILE__WORD_SPACING = SVG_ELEMENT_FEATURE_COUNT + 61;
+	int SVG_FE_TILE_ELEMENT__WORD_SPACING = SVG_ELEMENT_FEATURE_COUNT + 61;
 
 	/**
 	 * The feature id for the '<em><b>Writing mode</b></em>' attribute.
@@ -36986,7 +37149,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_TILE__WRITING_MODE = SVG_ELEMENT_FEATURE_COUNT + 62;
+	int SVG_FE_TILE_ELEMENT__WRITING_MODE = SVG_ELEMENT_FEATURE_COUNT + 62;
 
 	/**
 	 * The feature id for the '<em><b>X</b></em>' attribute.
@@ -36995,7 +37158,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_TILE__X = SVG_ELEMENT_FEATURE_COUNT + 63;
+	int SVG_FE_TILE_ELEMENT__X = SVG_ELEMENT_FEATURE_COUNT + 63;
 
 	/**
 	 * The feature id for the '<em><b>Y</b></em>' attribute.
@@ -37004,7 +37167,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_TILE__Y = SVG_ELEMENT_FEATURE_COUNT + 64;
+	int SVG_FE_TILE_ELEMENT__Y = SVG_ELEMENT_FEATURE_COUNT + 64;
 
 	/**
 	 * The feature id for the '<em><b>Width</b></em>' attribute.
@@ -37013,7 +37176,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_TILE__WIDTH = SVG_ELEMENT_FEATURE_COUNT + 65;
+	int SVG_FE_TILE_ELEMENT__WIDTH = SVG_ELEMENT_FEATURE_COUNT + 65;
 
 	/**
 	 * The feature id for the '<em><b>Height</b></em>' attribute.
@@ -37022,7 +37185,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_TILE__HEIGHT = SVG_ELEMENT_FEATURE_COUNT + 66;
+	int SVG_FE_TILE_ELEMENT__HEIGHT = SVG_ELEMENT_FEATURE_COUNT + 66;
 
 	/**
 	 * The feature id for the '<em><b>Result</b></em>' attribute.
@@ -37031,7 +37194,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_TILE__RESULT = SVG_ELEMENT_FEATURE_COUNT + 67;
+	int SVG_FE_TILE_ELEMENT__RESULT = SVG_ELEMENT_FEATURE_COUNT + 67;
 
 	/**
 	 * The feature id for the '<em><b>In</b></em>' attribute.
@@ -37040,7 +37203,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_TILE__IN = SVG_ELEMENT_FEATURE_COUNT + 68;
+	int SVG_FE_TILE_ELEMENT__IN = SVG_ELEMENT_FEATURE_COUNT + 68;
 
 	/**
 	 * The feature id for the '<em><b>Children</b></em>' containment reference list.
@@ -37049,7 +37212,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_TILE__CHILDREN = SVG_ELEMENT_FEATURE_COUNT + 69;
+	int SVG_FE_TILE_ELEMENT__CHILDREN = SVG_ELEMENT_FEATURE_COUNT + 69;
 
 	/**
 	 * The feature id for the '<em><b>Class</b></em>' attribute.
@@ -37058,7 +37221,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_TILE__CLASS = SVG_ELEMENT_FEATURE_COUNT + 70;
+	int SVG_FE_TILE_ELEMENT__CLASS = SVG_ELEMENT_FEATURE_COUNT + 70;
 
 	/**
 	 * The feature id for the '<em><b>Style</b></em>' attribute.
@@ -37067,26 +37230,26 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_TILE__STYLE = SVG_ELEMENT_FEATURE_COUNT + 71;
+	int SVG_FE_TILE_ELEMENT__STYLE = SVG_ELEMENT_FEATURE_COUNT + 71;
 
 	/**
-	 * The number of structural features of the '<em>Fe Tile</em>' class.
+	 * The number of structural features of the '<em>Fe Tile Element</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_TILE_FEATURE_COUNT = SVG_ELEMENT_FEATURE_COUNT + 72;
+	int SVG_FE_TILE_ELEMENT_FEATURE_COUNT = SVG_ELEMENT_FEATURE_COUNT + 72;
 
 	/**
-	 * The meta object id for the '{@link at.bestsolution.efxclipse.formats.svg.svg.impl.SvgFeTurbulenceImpl <em>Fe Turbulence</em>}' class.
+	 * The meta object id for the '{@link at.bestsolution.efxclipse.formats.svg.svg.impl.SvgFeTurbulenceElementImpl <em>Fe Turbulence Element</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see at.bestsolution.efxclipse.formats.svg.svg.impl.SvgFeTurbulenceImpl
-	 * @see at.bestsolution.efxclipse.formats.svg.svg.impl.SvgPackageImpl#getSvgFeTurbulence()
+	 * @see at.bestsolution.efxclipse.formats.svg.svg.impl.SvgFeTurbulenceElementImpl
+	 * @see at.bestsolution.efxclipse.formats.svg.svg.impl.SvgPackageImpl#getSvgFeTurbulenceElement()
 	 * @generated
 	 */
-	int SVG_FE_TURBULENCE = 81;
+	int SVG_FE_TURBULENCE_ELEMENT = 82;
 
 	/**
 	 * The feature id for the '<em><b>Id</b></em>' attribute.
@@ -37095,7 +37258,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_TURBULENCE__ID = SVG_ELEMENT_FEATURE_COUNT + 0;
+	int SVG_FE_TURBULENCE_ELEMENT__ID = SVG_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Xml base</b></em>' attribute.
@@ -37104,7 +37267,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_TURBULENCE__XML_BASE = SVG_ELEMENT_FEATURE_COUNT + 1;
+	int SVG_FE_TURBULENCE_ELEMENT__XML_BASE = SVG_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Xml lang</b></em>' attribute.
@@ -37113,7 +37276,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_TURBULENCE__XML_LANG = SVG_ELEMENT_FEATURE_COUNT + 2;
+	int SVG_FE_TURBULENCE_ELEMENT__XML_LANG = SVG_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Xml space</b></em>' attribute.
@@ -37122,7 +37285,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_TURBULENCE__XML_SPACE = SVG_ELEMENT_FEATURE_COUNT + 3;
+	int SVG_FE_TURBULENCE_ELEMENT__XML_SPACE = SVG_ELEMENT_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Alignment baseline</b></em>' attribute.
@@ -37131,7 +37294,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_TURBULENCE__ALIGNMENT_BASELINE = SVG_ELEMENT_FEATURE_COUNT + 4;
+	int SVG_FE_TURBULENCE_ELEMENT__ALIGNMENT_BASELINE = SVG_ELEMENT_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Baseline shift</b></em>' attribute.
@@ -37140,7 +37303,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_TURBULENCE__BASELINE_SHIFT = SVG_ELEMENT_FEATURE_COUNT + 5;
+	int SVG_FE_TURBULENCE_ELEMENT__BASELINE_SHIFT = SVG_ELEMENT_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>Clip</b></em>' attribute.
@@ -37149,7 +37312,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_TURBULENCE__CLIP = SVG_ELEMENT_FEATURE_COUNT + 6;
+	int SVG_FE_TURBULENCE_ELEMENT__CLIP = SVG_ELEMENT_FEATURE_COUNT + 6;
 
 	/**
 	 * The feature id for the '<em><b>Clip path</b></em>' attribute.
@@ -37158,7 +37321,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_TURBULENCE__CLIP_PATH = SVG_ELEMENT_FEATURE_COUNT + 7;
+	int SVG_FE_TURBULENCE_ELEMENT__CLIP_PATH = SVG_ELEMENT_FEATURE_COUNT + 7;
 
 	/**
 	 * The feature id for the '<em><b>Clip rule</b></em>' attribute.
@@ -37167,7 +37330,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_TURBULENCE__CLIP_RULE = SVG_ELEMENT_FEATURE_COUNT + 8;
+	int SVG_FE_TURBULENCE_ELEMENT__CLIP_RULE = SVG_ELEMENT_FEATURE_COUNT + 8;
 
 	/**
 	 * The feature id for the '<em><b>Color</b></em>' attribute.
@@ -37176,7 +37339,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_TURBULENCE__COLOR = SVG_ELEMENT_FEATURE_COUNT + 9;
+	int SVG_FE_TURBULENCE_ELEMENT__COLOR = SVG_ELEMENT_FEATURE_COUNT + 9;
 
 	/**
 	 * The feature id for the '<em><b>Color interpolation</b></em>' attribute.
@@ -37185,7 +37348,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_TURBULENCE__COLOR_INTERPOLATION = SVG_ELEMENT_FEATURE_COUNT + 10;
+	int SVG_FE_TURBULENCE_ELEMENT__COLOR_INTERPOLATION = SVG_ELEMENT_FEATURE_COUNT + 10;
 
 	/**
 	 * The feature id for the '<em><b>Color interpolation filters</b></em>' attribute.
@@ -37194,7 +37357,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_TURBULENCE__COLOR_INTERPOLATION_FILTERS = SVG_ELEMENT_FEATURE_COUNT + 11;
+	int SVG_FE_TURBULENCE_ELEMENT__COLOR_INTERPOLATION_FILTERS = SVG_ELEMENT_FEATURE_COUNT + 11;
 
 	/**
 	 * The feature id for the '<em><b>Color profile</b></em>' attribute.
@@ -37203,7 +37366,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_TURBULENCE__COLOR_PROFILE = SVG_ELEMENT_FEATURE_COUNT + 12;
+	int SVG_FE_TURBULENCE_ELEMENT__COLOR_PROFILE = SVG_ELEMENT_FEATURE_COUNT + 12;
 
 	/**
 	 * The feature id for the '<em><b>Color rendering</b></em>' attribute.
@@ -37212,7 +37375,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_TURBULENCE__COLOR_RENDERING = SVG_ELEMENT_FEATURE_COUNT + 13;
+	int SVG_FE_TURBULENCE_ELEMENT__COLOR_RENDERING = SVG_ELEMENT_FEATURE_COUNT + 13;
 
 	/**
 	 * The feature id for the '<em><b>Cursor</b></em>' attribute.
@@ -37221,7 +37384,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_TURBULENCE__CURSOR = SVG_ELEMENT_FEATURE_COUNT + 14;
+	int SVG_FE_TURBULENCE_ELEMENT__CURSOR = SVG_ELEMENT_FEATURE_COUNT + 14;
 
 	/**
 	 * The feature id for the '<em><b>Direction</b></em>' attribute.
@@ -37230,7 +37393,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_TURBULENCE__DIRECTION = SVG_ELEMENT_FEATURE_COUNT + 15;
+	int SVG_FE_TURBULENCE_ELEMENT__DIRECTION = SVG_ELEMENT_FEATURE_COUNT + 15;
 
 	/**
 	 * The feature id for the '<em><b>Display</b></em>' attribute.
@@ -37239,7 +37402,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_TURBULENCE__DISPLAY = SVG_ELEMENT_FEATURE_COUNT + 16;
+	int SVG_FE_TURBULENCE_ELEMENT__DISPLAY = SVG_ELEMENT_FEATURE_COUNT + 16;
 
 	/**
 	 * The feature id for the '<em><b>Dominant baseline</b></em>' attribute.
@@ -37248,7 +37411,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_TURBULENCE__DOMINANT_BASELINE = SVG_ELEMENT_FEATURE_COUNT + 17;
+	int SVG_FE_TURBULENCE_ELEMENT__DOMINANT_BASELINE = SVG_ELEMENT_FEATURE_COUNT + 17;
 
 	/**
 	 * The feature id for the '<em><b>Enable background</b></em>' attribute.
@@ -37257,7 +37420,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_TURBULENCE__ENABLE_BACKGROUND = SVG_ELEMENT_FEATURE_COUNT + 18;
+	int SVG_FE_TURBULENCE_ELEMENT__ENABLE_BACKGROUND = SVG_ELEMENT_FEATURE_COUNT + 18;
 
 	/**
 	 * The feature id for the '<em><b>Fill</b></em>' attribute.
@@ -37266,7 +37429,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_TURBULENCE__FILL = SVG_ELEMENT_FEATURE_COUNT + 19;
+	int SVG_FE_TURBULENCE_ELEMENT__FILL = SVG_ELEMENT_FEATURE_COUNT + 19;
 
 	/**
 	 * The feature id for the '<em><b>Fill opacity</b></em>' attribute.
@@ -37275,7 +37438,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_TURBULENCE__FILL_OPACITY = SVG_ELEMENT_FEATURE_COUNT + 20;
+	int SVG_FE_TURBULENCE_ELEMENT__FILL_OPACITY = SVG_ELEMENT_FEATURE_COUNT + 20;
 
 	/**
 	 * The feature id for the '<em><b>Fill rule</b></em>' attribute.
@@ -37284,7 +37447,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_TURBULENCE__FILL_RULE = SVG_ELEMENT_FEATURE_COUNT + 21;
+	int SVG_FE_TURBULENCE_ELEMENT__FILL_RULE = SVG_ELEMENT_FEATURE_COUNT + 21;
 
 	/**
 	 * The feature id for the '<em><b>Filter</b></em>' attribute.
@@ -37293,7 +37456,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_TURBULENCE__FILTER = SVG_ELEMENT_FEATURE_COUNT + 22;
+	int SVG_FE_TURBULENCE_ELEMENT__FILTER = SVG_ELEMENT_FEATURE_COUNT + 22;
 
 	/**
 	 * The feature id for the '<em><b>Flood color</b></em>' attribute.
@@ -37302,7 +37465,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_TURBULENCE__FLOOD_COLOR = SVG_ELEMENT_FEATURE_COUNT + 23;
+	int SVG_FE_TURBULENCE_ELEMENT__FLOOD_COLOR = SVG_ELEMENT_FEATURE_COUNT + 23;
 
 	/**
 	 * The feature id for the '<em><b>Flood opacity</b></em>' attribute.
@@ -37311,7 +37474,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_TURBULENCE__FLOOD_OPACITY = SVG_ELEMENT_FEATURE_COUNT + 24;
+	int SVG_FE_TURBULENCE_ELEMENT__FLOOD_OPACITY = SVG_ELEMENT_FEATURE_COUNT + 24;
 
 	/**
 	 * The feature id for the '<em><b>Font family</b></em>' attribute.
@@ -37320,7 +37483,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_TURBULENCE__FONT_FAMILY = SVG_ELEMENT_FEATURE_COUNT + 25;
+	int SVG_FE_TURBULENCE_ELEMENT__FONT_FAMILY = SVG_ELEMENT_FEATURE_COUNT + 25;
 
 	/**
 	 * The feature id for the '<em><b>Font size</b></em>' attribute.
@@ -37329,7 +37492,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_TURBULENCE__FONT_SIZE = SVG_ELEMENT_FEATURE_COUNT + 26;
+	int SVG_FE_TURBULENCE_ELEMENT__FONT_SIZE = SVG_ELEMENT_FEATURE_COUNT + 26;
 
 	/**
 	 * The feature id for the '<em><b>Font size adjust</b></em>' attribute.
@@ -37338,7 +37501,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_TURBULENCE__FONT_SIZE_ADJUST = SVG_ELEMENT_FEATURE_COUNT + 27;
+	int SVG_FE_TURBULENCE_ELEMENT__FONT_SIZE_ADJUST = SVG_ELEMENT_FEATURE_COUNT + 27;
 
 	/**
 	 * The feature id for the '<em><b>Font stretch</b></em>' attribute.
@@ -37347,7 +37510,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_TURBULENCE__FONT_STRETCH = SVG_ELEMENT_FEATURE_COUNT + 28;
+	int SVG_FE_TURBULENCE_ELEMENT__FONT_STRETCH = SVG_ELEMENT_FEATURE_COUNT + 28;
 
 	/**
 	 * The feature id for the '<em><b>Font style</b></em>' attribute.
@@ -37356,7 +37519,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_TURBULENCE__FONT_STYLE = SVG_ELEMENT_FEATURE_COUNT + 29;
+	int SVG_FE_TURBULENCE_ELEMENT__FONT_STYLE = SVG_ELEMENT_FEATURE_COUNT + 29;
 
 	/**
 	 * The feature id for the '<em><b>Font variant</b></em>' attribute.
@@ -37365,7 +37528,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_TURBULENCE__FONT_VARIANT = SVG_ELEMENT_FEATURE_COUNT + 30;
+	int SVG_FE_TURBULENCE_ELEMENT__FONT_VARIANT = SVG_ELEMENT_FEATURE_COUNT + 30;
 
 	/**
 	 * The feature id for the '<em><b>Font weight</b></em>' attribute.
@@ -37374,7 +37537,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_TURBULENCE__FONT_WEIGHT = SVG_ELEMENT_FEATURE_COUNT + 31;
+	int SVG_FE_TURBULENCE_ELEMENT__FONT_WEIGHT = SVG_ELEMENT_FEATURE_COUNT + 31;
 
 	/**
 	 * The feature id for the '<em><b>Glyph orientation horizontal</b></em>' attribute.
@@ -37383,7 +37546,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_TURBULENCE__GLYPH_ORIENTATION_HORIZONTAL = SVG_ELEMENT_FEATURE_COUNT + 32;
+	int SVG_FE_TURBULENCE_ELEMENT__GLYPH_ORIENTATION_HORIZONTAL = SVG_ELEMENT_FEATURE_COUNT + 32;
 
 	/**
 	 * The feature id for the '<em><b>Glyph orientation vertical</b></em>' attribute.
@@ -37392,7 +37555,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_TURBULENCE__GLYPH_ORIENTATION_VERTICAL = SVG_ELEMENT_FEATURE_COUNT + 33;
+	int SVG_FE_TURBULENCE_ELEMENT__GLYPH_ORIENTATION_VERTICAL = SVG_ELEMENT_FEATURE_COUNT + 33;
 
 	/**
 	 * The feature id for the '<em><b>Image rendering</b></em>' attribute.
@@ -37401,7 +37564,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_TURBULENCE__IMAGE_RENDERING = SVG_ELEMENT_FEATURE_COUNT + 34;
+	int SVG_FE_TURBULENCE_ELEMENT__IMAGE_RENDERING = SVG_ELEMENT_FEATURE_COUNT + 34;
 
 	/**
 	 * The feature id for the '<em><b>Kerning</b></em>' attribute.
@@ -37410,7 +37573,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_TURBULENCE__KERNING = SVG_ELEMENT_FEATURE_COUNT + 35;
+	int SVG_FE_TURBULENCE_ELEMENT__KERNING = SVG_ELEMENT_FEATURE_COUNT + 35;
 
 	/**
 	 * The feature id for the '<em><b>Letter spacing</b></em>' attribute.
@@ -37419,7 +37582,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_TURBULENCE__LETTER_SPACING = SVG_ELEMENT_FEATURE_COUNT + 36;
+	int SVG_FE_TURBULENCE_ELEMENT__LETTER_SPACING = SVG_ELEMENT_FEATURE_COUNT + 36;
 
 	/**
 	 * The feature id for the '<em><b>Lighting color</b></em>' attribute.
@@ -37428,7 +37591,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_TURBULENCE__LIGHTING_COLOR = SVG_ELEMENT_FEATURE_COUNT + 37;
+	int SVG_FE_TURBULENCE_ELEMENT__LIGHTING_COLOR = SVG_ELEMENT_FEATURE_COUNT + 37;
 
 	/**
 	 * The feature id for the '<em><b>Marker end</b></em>' attribute.
@@ -37437,7 +37600,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_TURBULENCE__MARKER_END = SVG_ELEMENT_FEATURE_COUNT + 38;
+	int SVG_FE_TURBULENCE_ELEMENT__MARKER_END = SVG_ELEMENT_FEATURE_COUNT + 38;
 
 	/**
 	 * The feature id for the '<em><b>Marker mid</b></em>' attribute.
@@ -37446,7 +37609,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_TURBULENCE__MARKER_MID = SVG_ELEMENT_FEATURE_COUNT + 39;
+	int SVG_FE_TURBULENCE_ELEMENT__MARKER_MID = SVG_ELEMENT_FEATURE_COUNT + 39;
 
 	/**
 	 * The feature id for the '<em><b>Marker start</b></em>' attribute.
@@ -37455,7 +37618,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_TURBULENCE__MARKER_START = SVG_ELEMENT_FEATURE_COUNT + 40;
+	int SVG_FE_TURBULENCE_ELEMENT__MARKER_START = SVG_ELEMENT_FEATURE_COUNT + 40;
 
 	/**
 	 * The feature id for the '<em><b>Masks</b></em>' attribute.
@@ -37464,7 +37627,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_TURBULENCE__MASKS = SVG_ELEMENT_FEATURE_COUNT + 41;
+	int SVG_FE_TURBULENCE_ELEMENT__MASKS = SVG_ELEMENT_FEATURE_COUNT + 41;
 
 	/**
 	 * The feature id for the '<em><b>Opacity</b></em>' attribute.
@@ -37473,7 +37636,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_TURBULENCE__OPACITY = SVG_ELEMENT_FEATURE_COUNT + 42;
+	int SVG_FE_TURBULENCE_ELEMENT__OPACITY = SVG_ELEMENT_FEATURE_COUNT + 42;
 
 	/**
 	 * The feature id for the '<em><b>Overflow</b></em>' attribute.
@@ -37482,7 +37645,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_TURBULENCE__OVERFLOW = SVG_ELEMENT_FEATURE_COUNT + 43;
+	int SVG_FE_TURBULENCE_ELEMENT__OVERFLOW = SVG_ELEMENT_FEATURE_COUNT + 43;
 
 	/**
 	 * The feature id for the '<em><b>Pointer events</b></em>' attribute.
@@ -37491,7 +37654,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_TURBULENCE__POINTER_EVENTS = SVG_ELEMENT_FEATURE_COUNT + 44;
+	int SVG_FE_TURBULENCE_ELEMENT__POINTER_EVENTS = SVG_ELEMENT_FEATURE_COUNT + 44;
 
 	/**
 	 * The feature id for the '<em><b>Shape rendering</b></em>' attribute.
@@ -37500,7 +37663,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_TURBULENCE__SHAPE_RENDERING = SVG_ELEMENT_FEATURE_COUNT + 45;
+	int SVG_FE_TURBULENCE_ELEMENT__SHAPE_RENDERING = SVG_ELEMENT_FEATURE_COUNT + 45;
 
 	/**
 	 * The feature id for the '<em><b>Stop color</b></em>' attribute.
@@ -37509,7 +37672,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_TURBULENCE__STOP_COLOR = SVG_ELEMENT_FEATURE_COUNT + 46;
+	int SVG_FE_TURBULENCE_ELEMENT__STOP_COLOR = SVG_ELEMENT_FEATURE_COUNT + 46;
 
 	/**
 	 * The feature id for the '<em><b>Stop opacity</b></em>' attribute.
@@ -37518,7 +37681,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_TURBULENCE__STOP_OPACITY = SVG_ELEMENT_FEATURE_COUNT + 47;
+	int SVG_FE_TURBULENCE_ELEMENT__STOP_OPACITY = SVG_ELEMENT_FEATURE_COUNT + 47;
 
 	/**
 	 * The feature id for the '<em><b>Stroke</b></em>' attribute.
@@ -37527,7 +37690,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_TURBULENCE__STROKE = SVG_ELEMENT_FEATURE_COUNT + 48;
+	int SVG_FE_TURBULENCE_ELEMENT__STROKE = SVG_ELEMENT_FEATURE_COUNT + 48;
 
 	/**
 	 * The feature id for the '<em><b>Stroke dasharray</b></em>' attribute.
@@ -37536,7 +37699,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_TURBULENCE__STROKE_DASHARRAY = SVG_ELEMENT_FEATURE_COUNT + 49;
+	int SVG_FE_TURBULENCE_ELEMENT__STROKE_DASHARRAY = SVG_ELEMENT_FEATURE_COUNT + 49;
 
 	/**
 	 * The feature id for the '<em><b>Stroke dashoffset</b></em>' attribute.
@@ -37545,7 +37708,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_TURBULENCE__STROKE_DASHOFFSET = SVG_ELEMENT_FEATURE_COUNT + 50;
+	int SVG_FE_TURBULENCE_ELEMENT__STROKE_DASHOFFSET = SVG_ELEMENT_FEATURE_COUNT + 50;
 
 	/**
 	 * The feature id for the '<em><b>Stroke linecap</b></em>' attribute.
@@ -37554,7 +37717,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_TURBULENCE__STROKE_LINECAP = SVG_ELEMENT_FEATURE_COUNT + 51;
+	int SVG_FE_TURBULENCE_ELEMENT__STROKE_LINECAP = SVG_ELEMENT_FEATURE_COUNT + 51;
 
 	/**
 	 * The feature id for the '<em><b>Stroke linejoin</b></em>' attribute.
@@ -37563,7 +37726,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_TURBULENCE__STROKE_LINEJOIN = SVG_ELEMENT_FEATURE_COUNT + 52;
+	int SVG_FE_TURBULENCE_ELEMENT__STROKE_LINEJOIN = SVG_ELEMENT_FEATURE_COUNT + 52;
 
 	/**
 	 * The feature id for the '<em><b>Stroke miterlimit</b></em>' attribute.
@@ -37572,7 +37735,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_TURBULENCE__STROKE_MITERLIMIT = SVG_ELEMENT_FEATURE_COUNT + 53;
+	int SVG_FE_TURBULENCE_ELEMENT__STROKE_MITERLIMIT = SVG_ELEMENT_FEATURE_COUNT + 53;
 
 	/**
 	 * The feature id for the '<em><b>Stroke opacity</b></em>' attribute.
@@ -37581,7 +37744,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_TURBULENCE__STROKE_OPACITY = SVG_ELEMENT_FEATURE_COUNT + 54;
+	int SVG_FE_TURBULENCE_ELEMENT__STROKE_OPACITY = SVG_ELEMENT_FEATURE_COUNT + 54;
 
 	/**
 	 * The feature id for the '<em><b>Stroke width</b></em>' attribute.
@@ -37590,7 +37753,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_TURBULENCE__STROKE_WIDTH = SVG_ELEMENT_FEATURE_COUNT + 55;
+	int SVG_FE_TURBULENCE_ELEMENT__STROKE_WIDTH = SVG_ELEMENT_FEATURE_COUNT + 55;
 
 	/**
 	 * The feature id for the '<em><b>Text anchor</b></em>' attribute.
@@ -37599,7 +37762,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_TURBULENCE__TEXT_ANCHOR = SVG_ELEMENT_FEATURE_COUNT + 56;
+	int SVG_FE_TURBULENCE_ELEMENT__TEXT_ANCHOR = SVG_ELEMENT_FEATURE_COUNT + 56;
 
 	/**
 	 * The feature id for the '<em><b>Text decoration</b></em>' attribute.
@@ -37608,7 +37771,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_TURBULENCE__TEXT_DECORATION = SVG_ELEMENT_FEATURE_COUNT + 57;
+	int SVG_FE_TURBULENCE_ELEMENT__TEXT_DECORATION = SVG_ELEMENT_FEATURE_COUNT + 57;
 
 	/**
 	 * The feature id for the '<em><b>Text rendering</b></em>' attribute.
@@ -37617,7 +37780,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_TURBULENCE__TEXT_RENDERING = SVG_ELEMENT_FEATURE_COUNT + 58;
+	int SVG_FE_TURBULENCE_ELEMENT__TEXT_RENDERING = SVG_ELEMENT_FEATURE_COUNT + 58;
 
 	/**
 	 * The feature id for the '<em><b>Unicode bidi</b></em>' attribute.
@@ -37626,7 +37789,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_TURBULENCE__UNICODE_BIDI = SVG_ELEMENT_FEATURE_COUNT + 59;
+	int SVG_FE_TURBULENCE_ELEMENT__UNICODE_BIDI = SVG_ELEMENT_FEATURE_COUNT + 59;
 
 	/**
 	 * The feature id for the '<em><b>Visibility</b></em>' attribute.
@@ -37635,7 +37798,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_TURBULENCE__VISIBILITY = SVG_ELEMENT_FEATURE_COUNT + 60;
+	int SVG_FE_TURBULENCE_ELEMENT__VISIBILITY = SVG_ELEMENT_FEATURE_COUNT + 60;
 
 	/**
 	 * The feature id for the '<em><b>Word spacing</b></em>' attribute.
@@ -37644,7 +37807,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_TURBULENCE__WORD_SPACING = SVG_ELEMENT_FEATURE_COUNT + 61;
+	int SVG_FE_TURBULENCE_ELEMENT__WORD_SPACING = SVG_ELEMENT_FEATURE_COUNT + 61;
 
 	/**
 	 * The feature id for the '<em><b>Writing mode</b></em>' attribute.
@@ -37653,7 +37816,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_TURBULENCE__WRITING_MODE = SVG_ELEMENT_FEATURE_COUNT + 62;
+	int SVG_FE_TURBULENCE_ELEMENT__WRITING_MODE = SVG_ELEMENT_FEATURE_COUNT + 62;
 
 	/**
 	 * The feature id for the '<em><b>X</b></em>' attribute.
@@ -37662,7 +37825,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_TURBULENCE__X = SVG_ELEMENT_FEATURE_COUNT + 63;
+	int SVG_FE_TURBULENCE_ELEMENT__X = SVG_ELEMENT_FEATURE_COUNT + 63;
 
 	/**
 	 * The feature id for the '<em><b>Y</b></em>' attribute.
@@ -37671,7 +37834,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_TURBULENCE__Y = SVG_ELEMENT_FEATURE_COUNT + 64;
+	int SVG_FE_TURBULENCE_ELEMENT__Y = SVG_ELEMENT_FEATURE_COUNT + 64;
 
 	/**
 	 * The feature id for the '<em><b>Width</b></em>' attribute.
@@ -37680,7 +37843,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_TURBULENCE__WIDTH = SVG_ELEMENT_FEATURE_COUNT + 65;
+	int SVG_FE_TURBULENCE_ELEMENT__WIDTH = SVG_ELEMENT_FEATURE_COUNT + 65;
 
 	/**
 	 * The feature id for the '<em><b>Height</b></em>' attribute.
@@ -37689,7 +37852,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_TURBULENCE__HEIGHT = SVG_ELEMENT_FEATURE_COUNT + 66;
+	int SVG_FE_TURBULENCE_ELEMENT__HEIGHT = SVG_ELEMENT_FEATURE_COUNT + 66;
 
 	/**
 	 * The feature id for the '<em><b>Result</b></em>' attribute.
@@ -37698,7 +37861,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_TURBULENCE__RESULT = SVG_ELEMENT_FEATURE_COUNT + 67;
+	int SVG_FE_TURBULENCE_ELEMENT__RESULT = SVG_ELEMENT_FEATURE_COUNT + 67;
 
 	/**
 	 * The feature id for the '<em><b>In</b></em>' attribute.
@@ -37707,7 +37870,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_TURBULENCE__IN = SVG_ELEMENT_FEATURE_COUNT + 68;
+	int SVG_FE_TURBULENCE_ELEMENT__IN = SVG_ELEMENT_FEATURE_COUNT + 68;
 
 	/**
 	 * The feature id for the '<em><b>Children</b></em>' containment reference list.
@@ -37716,7 +37879,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_TURBULENCE__CHILDREN = SVG_ELEMENT_FEATURE_COUNT + 69;
+	int SVG_FE_TURBULENCE_ELEMENT__CHILDREN = SVG_ELEMENT_FEATURE_COUNT + 69;
 
 	/**
 	 * The feature id for the '<em><b>Class</b></em>' attribute.
@@ -37725,7 +37888,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_TURBULENCE__CLASS = SVG_ELEMENT_FEATURE_COUNT + 70;
+	int SVG_FE_TURBULENCE_ELEMENT__CLASS = SVG_ELEMENT_FEATURE_COUNT + 70;
 
 	/**
 	 * The feature id for the '<em><b>Style</b></em>' attribute.
@@ -37734,7 +37897,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_TURBULENCE__STYLE = SVG_ELEMENT_FEATURE_COUNT + 71;
+	int SVG_FE_TURBULENCE_ELEMENT__STYLE = SVG_ELEMENT_FEATURE_COUNT + 71;
 
 	/**
 	 * The feature id for the '<em><b>Base Frequency</b></em>' attribute.
@@ -37743,7 +37906,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_TURBULENCE__BASE_FREQUENCY = SVG_ELEMENT_FEATURE_COUNT + 72;
+	int SVG_FE_TURBULENCE_ELEMENT__BASE_FREQUENCY = SVG_ELEMENT_FEATURE_COUNT + 72;
 
 	/**
 	 * The feature id for the '<em><b>Num Octaves</b></em>' attribute.
@@ -37752,7 +37915,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_TURBULENCE__NUM_OCTAVES = SVG_ELEMENT_FEATURE_COUNT + 73;
+	int SVG_FE_TURBULENCE_ELEMENT__NUM_OCTAVES = SVG_ELEMENT_FEATURE_COUNT + 73;
 
 	/**
 	 * The feature id for the '<em><b>Seed</b></em>' attribute.
@@ -37761,7 +37924,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_TURBULENCE__SEED = SVG_ELEMENT_FEATURE_COUNT + 74;
+	int SVG_FE_TURBULENCE_ELEMENT__SEED = SVG_ELEMENT_FEATURE_COUNT + 74;
 
 	/**
 	 * The feature id for the '<em><b>Stitch Tiles</b></em>' attribute.
@@ -37770,7 +37933,7 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_TURBULENCE__STITCH_TILES = SVG_ELEMENT_FEATURE_COUNT + 75;
+	int SVG_FE_TURBULENCE_ELEMENT__STITCH_TILES = SVG_ELEMENT_FEATURE_COUNT + 75;
 
 	/**
 	 * The feature id for the '<em><b>Type</b></em>' attribute.
@@ -37779,16 +37942,90 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_TURBULENCE__TYPE = SVG_ELEMENT_FEATURE_COUNT + 76;
+	int SVG_FE_TURBULENCE_ELEMENT__TYPE = SVG_ELEMENT_FEATURE_COUNT + 76;
 
 	/**
-	 * The number of structural features of the '<em>Fe Turbulence</em>' class.
+	 * The number of structural features of the '<em>Fe Turbulence Element</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_FE_TURBULENCE_FEATURE_COUNT = SVG_ELEMENT_FEATURE_COUNT + 77;
+	int SVG_FE_TURBULENCE_ELEMENT_FEATURE_COUNT = SVG_ELEMENT_FEATURE_COUNT + 77;
+
+	/**
+	 * The meta object id for the '{@link at.bestsolution.efxclipse.formats.svg.svg.impl.SvgAnimateElementImpl <em>Animate Element</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see at.bestsolution.efxclipse.formats.svg.svg.impl.SvgAnimateElementImpl
+	 * @see at.bestsolution.efxclipse.formats.svg.svg.impl.SvgPackageImpl#getSvgAnimateElement()
+	 * @generated
+	 */
+	int SVG_ANIMATE_ELEMENT = 83;
+
+	/**
+	 * The number of structural features of the '<em>Animate Element</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SVG_ANIMATE_ELEMENT_FEATURE_COUNT = SVG_ELEMENT_FEATURE_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link at.bestsolution.efxclipse.formats.svg.svg.impl.SvgMetadataElementImpl <em>Metadata Element</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see at.bestsolution.efxclipse.formats.svg.svg.impl.SvgMetadataElementImpl
+	 * @see at.bestsolution.efxclipse.formats.svg.svg.impl.SvgPackageImpl#getSvgMetadataElement()
+	 * @generated
+	 */
+	int SVG_METADATA_ELEMENT = 84;
+
+	/**
+	 * The feature id for the '<em><b>Id</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SVG_METADATA_ELEMENT__ID = SVG_ELEMENT_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Xml base</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SVG_METADATA_ELEMENT__XML_BASE = SVG_ELEMENT_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Xml lang</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SVG_METADATA_ELEMENT__XML_LANG = SVG_ELEMENT_FEATURE_COUNT + 2;
+
+	/**
+	 * The feature id for the '<em><b>Xml space</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SVG_METADATA_ELEMENT__XML_SPACE = SVG_ELEMENT_FEATURE_COUNT + 3;
+
+	/**
+	 * The number of structural features of the '<em>Metadata Element</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SVG_METADATA_ELEMENT_FEATURE_COUNT = SVG_ELEMENT_FEATURE_COUNT + 4;
 
 	/**
 	 * The meta object id for the '{@link at.bestsolution.efxclipse.formats.svg.svg.Alignment_baseline <em>Alignment baseline</em>}' enum.
@@ -37798,7 +38035,7 @@ public interface SvgPackage extends EPackage {
 	 * @see at.bestsolution.efxclipse.formats.svg.svg.impl.SvgPackageImpl#getAlignment_baseline()
 	 * @generated
 	 */
-	int ALIGNMENT_BASELINE = 82;
+	int ALIGNMENT_BASELINE = 85;
 
 	/**
 	 * The meta object id for the '{@link at.bestsolution.efxclipse.formats.svg.svg.Clip_rule <em>Clip rule</em>}' enum.
@@ -37808,7 +38045,7 @@ public interface SvgPackage extends EPackage {
 	 * @see at.bestsolution.efxclipse.formats.svg.svg.impl.SvgPackageImpl#getClip_rule()
 	 * @generated
 	 */
-	int CLIP_RULE = 83;
+	int CLIP_RULE = 86;
 
 	/**
 	 * The meta object id for the '{@link at.bestsolution.efxclipse.formats.svg.svg.Color_interpolation <em>Color interpolation</em>}' enum.
@@ -37818,7 +38055,7 @@ public interface SvgPackage extends EPackage {
 	 * @see at.bestsolution.efxclipse.formats.svg.svg.impl.SvgPackageImpl#getColor_interpolation()
 	 * @generated
 	 */
-	int COLOR_INTERPOLATION = 84;
+	int COLOR_INTERPOLATION = 87;
 
 	/**
 	 * The meta object id for the '{@link at.bestsolution.efxclipse.formats.svg.svg.Color_interpolation_filters <em>Color interpolation filters</em>}' enum.
@@ -37828,7 +38065,7 @@ public interface SvgPackage extends EPackage {
 	 * @see at.bestsolution.efxclipse.formats.svg.svg.impl.SvgPackageImpl#getColor_interpolation_filters()
 	 * @generated
 	 */
-	int COLOR_INTERPOLATION_FILTERS = 85;
+	int COLOR_INTERPOLATION_FILTERS = 88;
 
 	/**
 	 * The meta object id for the '{@link at.bestsolution.efxclipse.formats.svg.svg.Color_rendering <em>Color rendering</em>}' enum.
@@ -37838,7 +38075,7 @@ public interface SvgPackage extends EPackage {
 	 * @see at.bestsolution.efxclipse.formats.svg.svg.impl.SvgPackageImpl#getColor_rendering()
 	 * @generated
 	 */
-	int COLOR_RENDERING = 86;
+	int COLOR_RENDERING = 89;
 
 	/**
 	 * The meta object id for the '{@link at.bestsolution.efxclipse.formats.svg.svg.Direction <em>Direction</em>}' enum.
@@ -37848,7 +38085,7 @@ public interface SvgPackage extends EPackage {
 	 * @see at.bestsolution.efxclipse.formats.svg.svg.impl.SvgPackageImpl#getDirection()
 	 * @generated
 	 */
-	int DIRECTION = 87;
+	int DIRECTION = 90;
 
 	/**
 	 * The meta object id for the '{@link at.bestsolution.efxclipse.formats.svg.svg.Display <em>Display</em>}' enum.
@@ -37858,7 +38095,7 @@ public interface SvgPackage extends EPackage {
 	 * @see at.bestsolution.efxclipse.formats.svg.svg.impl.SvgPackageImpl#getDisplay()
 	 * @generated
 	 */
-	int DISPLAY = 88;
+	int DISPLAY = 91;
 
 	/**
 	 * The meta object id for the '{@link at.bestsolution.efxclipse.formats.svg.svg.Dominant_baseline <em>Dominant baseline</em>}' enum.
@@ -37868,7 +38105,7 @@ public interface SvgPackage extends EPackage {
 	 * @see at.bestsolution.efxclipse.formats.svg.svg.impl.SvgPackageImpl#getDominant_baseline()
 	 * @generated
 	 */
-	int DOMINANT_BASELINE = 89;
+	int DOMINANT_BASELINE = 92;
 
 	/**
 	 * The meta object id for the '{@link at.bestsolution.efxclipse.formats.svg.svg.Fill_rule <em>Fill rule</em>}' enum.
@@ -37878,7 +38115,7 @@ public interface SvgPackage extends EPackage {
 	 * @see at.bestsolution.efxclipse.formats.svg.svg.impl.SvgPackageImpl#getFill_rule()
 	 * @generated
 	 */
-	int FILL_RULE = 90;
+	int FILL_RULE = 93;
 
 	/**
 	 * The meta object id for the '{@link at.bestsolution.efxclipse.formats.svg.svg.Font_stretch <em>Font stretch</em>}' enum.
@@ -37888,7 +38125,7 @@ public interface SvgPackage extends EPackage {
 	 * @see at.bestsolution.efxclipse.formats.svg.svg.impl.SvgPackageImpl#getFont_stretch()
 	 * @generated
 	 */
-	int FONT_STRETCH = 91;
+	int FONT_STRETCH = 94;
 
 	/**
 	 * The meta object id for the '{@link at.bestsolution.efxclipse.formats.svg.svg.Font_style <em>Font style</em>}' enum.
@@ -37898,7 +38135,7 @@ public interface SvgPackage extends EPackage {
 	 * @see at.bestsolution.efxclipse.formats.svg.svg.impl.SvgPackageImpl#getFont_style()
 	 * @generated
 	 */
-	int FONT_STYLE = 92;
+	int FONT_STYLE = 95;
 
 	/**
 	 * The meta object id for the '{@link at.bestsolution.efxclipse.formats.svg.svg.Font_variant <em>Font variant</em>}' enum.
@@ -37908,7 +38145,7 @@ public interface SvgPackage extends EPackage {
 	 * @see at.bestsolution.efxclipse.formats.svg.svg.impl.SvgPackageImpl#getFont_variant()
 	 * @generated
 	 */
-	int FONT_VARIANT = 93;
+	int FONT_VARIANT = 96;
 
 	/**
 	 * The meta object id for the '{@link at.bestsolution.efxclipse.formats.svg.svg.Font_weight <em>Font weight</em>}' enum.
@@ -37918,7 +38155,7 @@ public interface SvgPackage extends EPackage {
 	 * @see at.bestsolution.efxclipse.formats.svg.svg.impl.SvgPackageImpl#getFont_weight()
 	 * @generated
 	 */
-	int FONT_WEIGHT = 94;
+	int FONT_WEIGHT = 97;
 
 	/**
 	 * The meta object id for the '{@link at.bestsolution.efxclipse.formats.svg.svg.Image_rendering <em>Image rendering</em>}' enum.
@@ -37928,7 +38165,7 @@ public interface SvgPackage extends EPackage {
 	 * @see at.bestsolution.efxclipse.formats.svg.svg.impl.SvgPackageImpl#getImage_rendering()
 	 * @generated
 	 */
-	int IMAGE_RENDERING = 95;
+	int IMAGE_RENDERING = 98;
 
 	/**
 	 * The meta object id for the '{@link at.bestsolution.efxclipse.formats.svg.svg.Overflow <em>Overflow</em>}' enum.
@@ -37938,7 +38175,7 @@ public interface SvgPackage extends EPackage {
 	 * @see at.bestsolution.efxclipse.formats.svg.svg.impl.SvgPackageImpl#getOverflow()
 	 * @generated
 	 */
-	int OVERFLOW = 96;
+	int OVERFLOW = 99;
 
 	/**
 	 * The meta object id for the '{@link at.bestsolution.efxclipse.formats.svg.svg.Pointer_events <em>Pointer events</em>}' enum.
@@ -37948,7 +38185,7 @@ public interface SvgPackage extends EPackage {
 	 * @see at.bestsolution.efxclipse.formats.svg.svg.impl.SvgPackageImpl#getPointer_events()
 	 * @generated
 	 */
-	int POINTER_EVENTS = 97;
+	int POINTER_EVENTS = 100;
 
 	/**
 	 * The meta object id for the '{@link at.bestsolution.efxclipse.formats.svg.svg.Shape_rendering <em>Shape rendering</em>}' enum.
@@ -37958,7 +38195,7 @@ public interface SvgPackage extends EPackage {
 	 * @see at.bestsolution.efxclipse.formats.svg.svg.impl.SvgPackageImpl#getShape_rendering()
 	 * @generated
 	 */
-	int SHAPE_RENDERING = 98;
+	int SHAPE_RENDERING = 101;
 
 	/**
 	 * The meta object id for the '{@link at.bestsolution.efxclipse.formats.svg.svg.Stroke_linecap <em>Stroke linecap</em>}' enum.
@@ -37968,7 +38205,7 @@ public interface SvgPackage extends EPackage {
 	 * @see at.bestsolution.efxclipse.formats.svg.svg.impl.SvgPackageImpl#getStroke_linecap()
 	 * @generated
 	 */
-	int STROKE_LINECAP = 99;
+	int STROKE_LINECAP = 102;
 
 	/**
 	 * The meta object id for the '{@link at.bestsolution.efxclipse.formats.svg.svg.Stroke_linejoin <em>Stroke linejoin</em>}' enum.
@@ -37978,7 +38215,7 @@ public interface SvgPackage extends EPackage {
 	 * @see at.bestsolution.efxclipse.formats.svg.svg.impl.SvgPackageImpl#getStroke_linejoin()
 	 * @generated
 	 */
-	int STROKE_LINEJOIN = 100;
+	int STROKE_LINEJOIN = 103;
 
 	/**
 	 * The meta object id for the '{@link at.bestsolution.efxclipse.formats.svg.svg.Text_anchor <em>Text anchor</em>}' enum.
@@ -37988,7 +38225,7 @@ public interface SvgPackage extends EPackage {
 	 * @see at.bestsolution.efxclipse.formats.svg.svg.impl.SvgPackageImpl#getText_anchor()
 	 * @generated
 	 */
-	int TEXT_ANCHOR = 101;
+	int TEXT_ANCHOR = 104;
 
 	/**
 	 * The meta object id for the '{@link at.bestsolution.efxclipse.formats.svg.svg.Text_rendering <em>Text rendering</em>}' enum.
@@ -37998,7 +38235,7 @@ public interface SvgPackage extends EPackage {
 	 * @see at.bestsolution.efxclipse.formats.svg.svg.impl.SvgPackageImpl#getText_rendering()
 	 * @generated
 	 */
-	int TEXT_RENDERING = 102;
+	int TEXT_RENDERING = 105;
 
 	/**
 	 * The meta object id for the '{@link at.bestsolution.efxclipse.formats.svg.svg.Unicode_bidi <em>Unicode bidi</em>}' enum.
@@ -38008,7 +38245,7 @@ public interface SvgPackage extends EPackage {
 	 * @see at.bestsolution.efxclipse.formats.svg.svg.impl.SvgPackageImpl#getUnicode_bidi()
 	 * @generated
 	 */
-	int UNICODE_BIDI = 103;
+	int UNICODE_BIDI = 106;
 
 	/**
 	 * The meta object id for the '{@link at.bestsolution.efxclipse.formats.svg.svg.Visibility <em>Visibility</em>}' enum.
@@ -38018,7 +38255,7 @@ public interface SvgPackage extends EPackage {
 	 * @see at.bestsolution.efxclipse.formats.svg.svg.impl.SvgPackageImpl#getVisibility()
 	 * @generated
 	 */
-	int VISIBILITY = 104;
+	int VISIBILITY = 107;
 
 	/**
 	 * The meta object id for the '{@link at.bestsolution.efxclipse.formats.svg.svg.Writing_mode <em>Writing mode</em>}' enum.
@@ -38028,7 +38265,7 @@ public interface SvgPackage extends EPackage {
 	 * @see at.bestsolution.efxclipse.formats.svg.svg.impl.SvgPackageImpl#getWriting_mode()
 	 * @generated
 	 */
-	int WRITING_MODE = 105;
+	int WRITING_MODE = 108;
 
 	/**
 	 * The meta object id for the '{@link at.bestsolution.efxclipse.formats.svg.svg.ZoomAndPan <em>Zoom And Pan</em>}' enum.
@@ -38038,7 +38275,7 @@ public interface SvgPackage extends EPackage {
 	 * @see at.bestsolution.efxclipse.formats.svg.svg.impl.SvgPackageImpl#getZoomAndPan()
 	 * @generated
 	 */
-	int ZOOM_AND_PAN = 106;
+	int ZOOM_AND_PAN = 109;
 
 	/**
 	 * The meta object id for the '{@link at.bestsolution.efxclipse.formats.svg.svg.LengthAdjust <em>Length Adjust</em>}' enum.
@@ -38048,7 +38285,7 @@ public interface SvgPackage extends EPackage {
 	 * @see at.bestsolution.efxclipse.formats.svg.svg.impl.SvgPackageImpl#getLengthAdjust()
 	 * @generated
 	 */
-	int LENGTH_ADJUST = 107;
+	int LENGTH_ADJUST = 110;
 
 	/**
 	 * The meta object id for the '{@link at.bestsolution.efxclipse.formats.svg.svg.Method <em>Method</em>}' enum.
@@ -38058,7 +38295,7 @@ public interface SvgPackage extends EPackage {
 	 * @see at.bestsolution.efxclipse.formats.svg.svg.impl.SvgPackageImpl#getMethod()
 	 * @generated
 	 */
-	int METHOD = 108;
+	int METHOD = 111;
 
 	/**
 	 * The meta object id for the '{@link at.bestsolution.efxclipse.formats.svg.svg.Spacing <em>Spacing</em>}' enum.
@@ -38068,7 +38305,7 @@ public interface SvgPackage extends EPackage {
 	 * @see at.bestsolution.efxclipse.formats.svg.svg.impl.SvgPackageImpl#getSpacing()
 	 * @generated
 	 */
-	int SPACING = 109;
+	int SPACING = 112;
 
 	/**
 	 * The meta object id for the '{@link at.bestsolution.efxclipse.formats.svg.svg.MarkerUnits <em>Marker Units</em>}' enum.
@@ -38078,7 +38315,7 @@ public interface SvgPackage extends EPackage {
 	 * @see at.bestsolution.efxclipse.formats.svg.svg.impl.SvgPackageImpl#getMarkerUnits()
 	 * @generated
 	 */
-	int MARKER_UNITS = 110;
+	int MARKER_UNITS = 113;
 
 	/**
 	 * The meta object id for the '{@link at.bestsolution.efxclipse.formats.svg.svg.Rendering_intent <em>Rendering intent</em>}' enum.
@@ -38088,7 +38325,7 @@ public interface SvgPackage extends EPackage {
 	 * @see at.bestsolution.efxclipse.formats.svg.svg.impl.SvgPackageImpl#getRendering_intent()
 	 * @generated
 	 */
-	int RENDERING_INTENT = 111;
+	int RENDERING_INTENT = 114;
 
 	/**
 	 * The meta object id for the '{@link at.bestsolution.efxclipse.formats.svg.svg.GradientUnits <em>Gradient Units</em>}' enum.
@@ -38098,7 +38335,7 @@ public interface SvgPackage extends EPackage {
 	 * @see at.bestsolution.efxclipse.formats.svg.svg.impl.SvgPackageImpl#getGradientUnits()
 	 * @generated
 	 */
-	int GRADIENT_UNITS = 112;
+	int GRADIENT_UNITS = 115;
 
 	/**
 	 * The meta object id for the '{@link at.bestsolution.efxclipse.formats.svg.svg.SpreadMethod <em>Spread Method</em>}' enum.
@@ -38108,7 +38345,7 @@ public interface SvgPackage extends EPackage {
 	 * @see at.bestsolution.efxclipse.formats.svg.svg.impl.SvgPackageImpl#getSpreadMethod()
 	 * @generated
 	 */
-	int SPREAD_METHOD = 113;
+	int SPREAD_METHOD = 116;
 
 	/**
 	 * The meta object id for the '{@link at.bestsolution.efxclipse.formats.svg.svg.PatternUnits <em>Pattern Units</em>}' enum.
@@ -38118,7 +38355,7 @@ public interface SvgPackage extends EPackage {
 	 * @see at.bestsolution.efxclipse.formats.svg.svg.impl.SvgPackageImpl#getPatternUnits()
 	 * @generated
 	 */
-	int PATTERN_UNITS = 114;
+	int PATTERN_UNITS = 117;
 
 	/**
 	 * The meta object id for the '{@link at.bestsolution.efxclipse.formats.svg.svg.ClipPathUnits <em>Clip Path Units</em>}' enum.
@@ -38128,7 +38365,7 @@ public interface SvgPackage extends EPackage {
 	 * @see at.bestsolution.efxclipse.formats.svg.svg.impl.SvgPackageImpl#getClipPathUnits()
 	 * @generated
 	 */
-	int CLIP_PATH_UNITS = 115;
+	int CLIP_PATH_UNITS = 118;
 
 	/**
 	 * The meta object id for the '{@link at.bestsolution.efxclipse.formats.svg.svg.MaskUnits <em>Mask Units</em>}' enum.
@@ -38138,7 +38375,7 @@ public interface SvgPackage extends EPackage {
 	 * @see at.bestsolution.efxclipse.formats.svg.svg.impl.SvgPackageImpl#getMaskUnits()
 	 * @generated
 	 */
-	int MASK_UNITS = 116;
+	int MASK_UNITS = 119;
 
 	/**
 	 * The meta object id for the '{@link at.bestsolution.efxclipse.formats.svg.svg.FilterUnits <em>Filter Units</em>}' enum.
@@ -38148,7 +38385,7 @@ public interface SvgPackage extends EPackage {
 	 * @see at.bestsolution.efxclipse.formats.svg.svg.impl.SvgPackageImpl#getFilterUnits()
 	 * @generated
 	 */
-	int FILTER_UNITS = 117;
+	int FILTER_UNITS = 120;
 
 	/**
 	 * The meta object id for the '{@link at.bestsolution.efxclipse.formats.svg.svg.BlendMode <em>Blend Mode</em>}' enum.
@@ -38158,7 +38395,7 @@ public interface SvgPackage extends EPackage {
 	 * @see at.bestsolution.efxclipse.formats.svg.svg.impl.SvgPackageImpl#getBlendMode()
 	 * @generated
 	 */
-	int BLEND_MODE = 118;
+	int BLEND_MODE = 121;
 
 	/**
 	 * The meta object id for the '{@link at.bestsolution.efxclipse.formats.svg.svg.ColorMatrixType <em>Color Matrix Type</em>}' enum.
@@ -38168,7 +38405,7 @@ public interface SvgPackage extends EPackage {
 	 * @see at.bestsolution.efxclipse.formats.svg.svg.impl.SvgPackageImpl#getColorMatrixType()
 	 * @generated
 	 */
-	int COLOR_MATRIX_TYPE = 119;
+	int COLOR_MATRIX_TYPE = 122;
 
 	/**
 	 * The meta object id for the '{@link at.bestsolution.efxclipse.formats.svg.svg.CompositeOperator <em>Composite Operator</em>}' enum.
@@ -38178,7 +38415,7 @@ public interface SvgPackage extends EPackage {
 	 * @see at.bestsolution.efxclipse.formats.svg.svg.impl.SvgPackageImpl#getCompositeOperator()
 	 * @generated
 	 */
-	int COMPOSITE_OPERATOR = 120;
+	int COMPOSITE_OPERATOR = 123;
 
 	/**
 	 * The meta object id for the '{@link at.bestsolution.efxclipse.formats.svg.svg.ConvolveMatrixEdgeMode <em>Convolve Matrix Edge Mode</em>}' enum.
@@ -38188,7 +38425,7 @@ public interface SvgPackage extends EPackage {
 	 * @see at.bestsolution.efxclipse.formats.svg.svg.impl.SvgPackageImpl#getConvolveMatrixEdgeMode()
 	 * @generated
 	 */
-	int CONVOLVE_MATRIX_EDGE_MODE = 121;
+	int CONVOLVE_MATRIX_EDGE_MODE = 124;
 
 	/**
 	 * The meta object id for the '{@link at.bestsolution.efxclipse.formats.svg.svg.ChannelSelector <em>Channel Selector</em>}' enum.
@@ -38198,7 +38435,7 @@ public interface SvgPackage extends EPackage {
 	 * @see at.bestsolution.efxclipse.formats.svg.svg.impl.SvgPackageImpl#getChannelSelector()
 	 * @generated
 	 */
-	int CHANNEL_SELECTOR = 122;
+	int CHANNEL_SELECTOR = 125;
 
 	/**
 	 * The meta object id for the '{@link at.bestsolution.efxclipse.formats.svg.svg.MorphologyOperator <em>Morphology Operator</em>}' enum.
@@ -38208,7 +38445,7 @@ public interface SvgPackage extends EPackage {
 	 * @see at.bestsolution.efxclipse.formats.svg.svg.impl.SvgPackageImpl#getMorphologyOperator()
 	 * @generated
 	 */
-	int MORPHOLOGY_OPERATOR = 123;
+	int MORPHOLOGY_OPERATOR = 126;
 
 	/**
 	 * The meta object id for the '{@link at.bestsolution.efxclipse.formats.svg.svg.StitchTiles <em>Stitch Tiles</em>}' enum.
@@ -38218,7 +38455,7 @@ public interface SvgPackage extends EPackage {
 	 * @see at.bestsolution.efxclipse.formats.svg.svg.impl.SvgPackageImpl#getStitchTiles()
 	 * @generated
 	 */
-	int STITCH_TILES = 124;
+	int STITCH_TILES = 127;
 
 	/**
 	 * The meta object id for the '{@link at.bestsolution.efxclipse.formats.svg.svg.TurbulenceType <em>Turbulence Type</em>}' enum.
@@ -38228,7 +38465,7 @@ public interface SvgPackage extends EPackage {
 	 * @see at.bestsolution.efxclipse.formats.svg.svg.impl.SvgPackageImpl#getTurbulenceType()
 	 * @generated
 	 */
-	int TURBULENCE_TYPE = 125;
+	int TURBULENCE_TYPE = 128;
 
 	/**
 	 * The meta object id for the '<em>Length</em>' data type.
@@ -38238,7 +38475,7 @@ public interface SvgPackage extends EPackage {
 	 * @see at.bestsolution.efxclipse.formats.svg.svg.impl.SvgPackageImpl#getLength()
 	 * @generated
 	 */
-	int LENGTH = 126;
+	int LENGTH = 129;
 
 	/**
 	 * The meta object id for the '<em>Angle</em>' data type.
@@ -38248,7 +38485,7 @@ public interface SvgPackage extends EPackage {
 	 * @see at.bestsolution.efxclipse.formats.svg.svg.impl.SvgPackageImpl#getAngle()
 	 * @generated
 	 */
-	int ANGLE = 127;
+	int ANGLE = 130;
 
 	/**
 	 * The meta object id for the '<em>Percentage</em>' data type.
@@ -38258,7 +38495,7 @@ public interface SvgPackage extends EPackage {
 	 * @see at.bestsolution.efxclipse.formats.svg.svg.impl.SvgPackageImpl#getPercentage()
 	 * @generated
 	 */
-	int PERCENTAGE = 128;
+	int PERCENTAGE = 131;
 
 	/**
 	 * The meta object id for the '<em>Shape</em>' data type.
@@ -38268,7 +38505,7 @@ public interface SvgPackage extends EPackage {
 	 * @see at.bestsolution.efxclipse.formats.svg.svg.impl.SvgPackageImpl#getShape()
 	 * @generated
 	 */
-	int SHAPE = 129;
+	int SHAPE = 132;
 
 	/**
 	 * The meta object id for the '<em>Funciri</em>' data type.
@@ -38278,7 +38515,7 @@ public interface SvgPackage extends EPackage {
 	 * @see at.bestsolution.efxclipse.formats.svg.svg.impl.SvgPackageImpl#getFunciri()
 	 * @generated
 	 */
-	int FUNCIRI = 130;
+	int FUNCIRI = 133;
 
 	/**
 	 * The meta object id for the '<em>Color</em>' data type.
@@ -38288,7 +38525,7 @@ public interface SvgPackage extends EPackage {
 	 * @see at.bestsolution.efxclipse.formats.svg.svg.impl.SvgPackageImpl#getColor()
 	 * @generated
 	 */
-	int COLOR = 131;
+	int COLOR = 134;
 
 	/**
 	 * The meta object id for the '<em>Paint</em>' data type.
@@ -38298,7 +38535,7 @@ public interface SvgPackage extends EPackage {
 	 * @see at.bestsolution.efxclipse.formats.svg.svg.impl.SvgPackageImpl#getPaint()
 	 * @generated
 	 */
-	int PAINT = 132;
+	int PAINT = 135;
 
 	/**
 	 * The meta object id for the '<em>Opacity value</em>' data type.
@@ -38308,7 +38545,7 @@ public interface SvgPackage extends EPackage {
 	 * @see at.bestsolution.efxclipse.formats.svg.svg.impl.SvgPackageImpl#getOpacity_value()
 	 * @generated
 	 */
-	int OPACITY_VALUE = 133;
+	int OPACITY_VALUE = 136;
 
 	/**
 	 * The meta object id for the '<em>Baseline shift</em>' data type.
@@ -38318,7 +38555,7 @@ public interface SvgPackage extends EPackage {
 	 * @see at.bestsolution.efxclipse.formats.svg.svg.impl.SvgPackageImpl#getBaseline_shift()
 	 * @generated
 	 */
-	int BASELINE_SHIFT = 134;
+	int BASELINE_SHIFT = 137;
 
 	/**
 	 * The meta object id for the '<em>Clip</em>' data type.
@@ -38328,7 +38565,7 @@ public interface SvgPackage extends EPackage {
 	 * @see at.bestsolution.efxclipse.formats.svg.svg.impl.SvgPackageImpl#getClip()
 	 * @generated
 	 */
-	int CLIP = 135;
+	int CLIP = 138;
 
 	/**
 	 * The meta object id for the '<em>Clip path</em>' data type.
@@ -38338,7 +38575,7 @@ public interface SvgPackage extends EPackage {
 	 * @see at.bestsolution.efxclipse.formats.svg.svg.impl.SvgPackageImpl#getClip_path()
 	 * @generated
 	 */
-	int CLIP_PATH = 136;
+	int CLIP_PATH = 139;
 
 	/**
 	 * The meta object id for the '<em>Color profile</em>' data type.
@@ -38348,7 +38585,7 @@ public interface SvgPackage extends EPackage {
 	 * @see at.bestsolution.efxclipse.formats.svg.svg.impl.SvgPackageImpl#getColor_profile()
 	 * @generated
 	 */
-	int COLOR_PROFILE = 137;
+	int COLOR_PROFILE = 140;
 
 	/**
 	 * The meta object id for the '<em>Cursor</em>' data type.
@@ -38358,7 +38595,7 @@ public interface SvgPackage extends EPackage {
 	 * @see at.bestsolution.efxclipse.formats.svg.svg.impl.SvgPackageImpl#getCursor()
 	 * @generated
 	 */
-	int CURSOR = 138;
+	int CURSOR = 141;
 
 	/**
 	 * The meta object id for the '<em>Enable background</em>' data type.
@@ -38368,7 +38605,7 @@ public interface SvgPackage extends EPackage {
 	 * @see at.bestsolution.efxclipse.formats.svg.svg.impl.SvgPackageImpl#getEnable_background()
 	 * @generated
 	 */
-	int ENABLE_BACKGROUND = 139;
+	int ENABLE_BACKGROUND = 142;
 
 	/**
 	 * The meta object id for the '<em>Fill</em>' data type.
@@ -38378,7 +38615,7 @@ public interface SvgPackage extends EPackage {
 	 * @see at.bestsolution.efxclipse.formats.svg.svg.impl.SvgPackageImpl#getFill()
 	 * @generated
 	 */
-	int FILL = 140;
+	int FILL = 143;
 
 	/**
 	 * The meta object id for the '<em>Fill opacity</em>' data type.
@@ -38388,7 +38625,7 @@ public interface SvgPackage extends EPackage {
 	 * @see at.bestsolution.efxclipse.formats.svg.svg.impl.SvgPackageImpl#getFill_opacity()
 	 * @generated
 	 */
-	int FILL_OPACITY = 141;
+	int FILL_OPACITY = 144;
 
 	/**
 	 * The meta object id for the '<em>Filter</em>' data type.
@@ -38398,7 +38635,7 @@ public interface SvgPackage extends EPackage {
 	 * @see at.bestsolution.efxclipse.formats.svg.svg.impl.SvgPackageImpl#getFilter()
 	 * @generated
 	 */
-	int FILTER = 142;
+	int FILTER = 145;
 
 	/**
 	 * The meta object id for the '<em>Flood color</em>' data type.
@@ -38408,7 +38645,7 @@ public interface SvgPackage extends EPackage {
 	 * @see at.bestsolution.efxclipse.formats.svg.svg.impl.SvgPackageImpl#getFlood_color()
 	 * @generated
 	 */
-	int FLOOD_COLOR = 143;
+	int FLOOD_COLOR = 146;
 
 	/**
 	 * The meta object id for the '<em>Flood opacity</em>' data type.
@@ -38418,7 +38655,7 @@ public interface SvgPackage extends EPackage {
 	 * @see at.bestsolution.efxclipse.formats.svg.svg.impl.SvgPackageImpl#getFlood_opacity()
 	 * @generated
 	 */
-	int FLOOD_OPACITY = 144;
+	int FLOOD_OPACITY = 147;
 
 	/**
 	 * The meta object id for the '<em>Font family</em>' data type.
@@ -38428,7 +38665,7 @@ public interface SvgPackage extends EPackage {
 	 * @see at.bestsolution.efxclipse.formats.svg.svg.impl.SvgPackageImpl#getFont_family()
 	 * @generated
 	 */
-	int FONT_FAMILY = 145;
+	int FONT_FAMILY = 148;
 
 	/**
 	 * The meta object id for the '<em>Font size</em>' data type.
@@ -38438,7 +38675,7 @@ public interface SvgPackage extends EPackage {
 	 * @see at.bestsolution.efxclipse.formats.svg.svg.impl.SvgPackageImpl#getFont_size()
 	 * @generated
 	 */
-	int FONT_SIZE = 146;
+	int FONT_SIZE = 149;
 
 	/**
 	 * The meta object id for the '<em>Font size adjust</em>' data type.
@@ -38448,7 +38685,7 @@ public interface SvgPackage extends EPackage {
 	 * @see at.bestsolution.efxclipse.formats.svg.svg.impl.SvgPackageImpl#getFont_size_adjust()
 	 * @generated
 	 */
-	int FONT_SIZE_ADJUST = 147;
+	int FONT_SIZE_ADJUST = 150;
 
 	/**
 	 * The meta object id for the '<em>Glyph orientation horizontal</em>' data type.
@@ -38458,7 +38695,7 @@ public interface SvgPackage extends EPackage {
 	 * @see at.bestsolution.efxclipse.formats.svg.svg.impl.SvgPackageImpl#getGlyph_orientation_horizontal()
 	 * @generated
 	 */
-	int GLYPH_ORIENTATION_HORIZONTAL = 148;
+	int GLYPH_ORIENTATION_HORIZONTAL = 151;
 
 	/**
 	 * The meta object id for the '<em>Glyph orientation vertical</em>' data type.
@@ -38468,7 +38705,7 @@ public interface SvgPackage extends EPackage {
 	 * @see at.bestsolution.efxclipse.formats.svg.svg.impl.SvgPackageImpl#getGlyph_orientation_vertical()
 	 * @generated
 	 */
-	int GLYPH_ORIENTATION_VERTICAL = 149;
+	int GLYPH_ORIENTATION_VERTICAL = 152;
 
 	/**
 	 * The meta object id for the '<em>Kerning</em>' data type.
@@ -38478,7 +38715,7 @@ public interface SvgPackage extends EPackage {
 	 * @see at.bestsolution.efxclipse.formats.svg.svg.impl.SvgPackageImpl#getKerning()
 	 * @generated
 	 */
-	int KERNING = 150;
+	int KERNING = 153;
 
 	/**
 	 * The meta object id for the '<em>Letter spacing</em>' data type.
@@ -38488,7 +38725,7 @@ public interface SvgPackage extends EPackage {
 	 * @see at.bestsolution.efxclipse.formats.svg.svg.impl.SvgPackageImpl#getLetter_spacing()
 	 * @generated
 	 */
-	int LETTER_SPACING = 151;
+	int LETTER_SPACING = 154;
 
 	/**
 	 * The meta object id for the '<em>Lighting color</em>' data type.
@@ -38498,7 +38735,7 @@ public interface SvgPackage extends EPackage {
 	 * @see at.bestsolution.efxclipse.formats.svg.svg.impl.SvgPackageImpl#getLighting_color()
 	 * @generated
 	 */
-	int LIGHTING_COLOR = 152;
+	int LIGHTING_COLOR = 155;
 
 	/**
 	 * The meta object id for the '<em>Marker end</em>' data type.
@@ -38508,7 +38745,7 @@ public interface SvgPackage extends EPackage {
 	 * @see at.bestsolution.efxclipse.formats.svg.svg.impl.SvgPackageImpl#getMarker_end()
 	 * @generated
 	 */
-	int MARKER_END = 153;
+	int MARKER_END = 156;
 
 	/**
 	 * The meta object id for the '<em>Marker mid</em>' data type.
@@ -38518,7 +38755,7 @@ public interface SvgPackage extends EPackage {
 	 * @see at.bestsolution.efxclipse.formats.svg.svg.impl.SvgPackageImpl#getMarker_mid()
 	 * @generated
 	 */
-	int MARKER_MID = 154;
+	int MARKER_MID = 157;
 
 	/**
 	 * The meta object id for the '<em>Marker start</em>' data type.
@@ -38528,7 +38765,7 @@ public interface SvgPackage extends EPackage {
 	 * @see at.bestsolution.efxclipse.formats.svg.svg.impl.SvgPackageImpl#getMarker_start()
 	 * @generated
 	 */
-	int MARKER_START = 155;
+	int MARKER_START = 158;
 
 	/**
 	 * The meta object id for the '<em>Masks</em>' data type.
@@ -38538,7 +38775,7 @@ public interface SvgPackage extends EPackage {
 	 * @see at.bestsolution.efxclipse.formats.svg.svg.impl.SvgPackageImpl#getMasks()
 	 * @generated
 	 */
-	int MASKS = 156;
+	int MASKS = 159;
 
 	/**
 	 * The meta object id for the '<em>Opacity</em>' data type.
@@ -38548,7 +38785,7 @@ public interface SvgPackage extends EPackage {
 	 * @see at.bestsolution.efxclipse.formats.svg.svg.impl.SvgPackageImpl#getOpacity()
 	 * @generated
 	 */
-	int OPACITY = 157;
+	int OPACITY = 160;
 
 	/**
 	 * The meta object id for the '<em>Stop color</em>' data type.
@@ -38558,7 +38795,7 @@ public interface SvgPackage extends EPackage {
 	 * @see at.bestsolution.efxclipse.formats.svg.svg.impl.SvgPackageImpl#getStop_color()
 	 * @generated
 	 */
-	int STOP_COLOR = 158;
+	int STOP_COLOR = 161;
 
 	/**
 	 * The meta object id for the '<em>Stop opacity</em>' data type.
@@ -38568,7 +38805,7 @@ public interface SvgPackage extends EPackage {
 	 * @see at.bestsolution.efxclipse.formats.svg.svg.impl.SvgPackageImpl#getStop_opacity()
 	 * @generated
 	 */
-	int STOP_OPACITY = 159;
+	int STOP_OPACITY = 162;
 
 	/**
 	 * The meta object id for the '<em>Stroke</em>' data type.
@@ -38578,7 +38815,7 @@ public interface SvgPackage extends EPackage {
 	 * @see at.bestsolution.efxclipse.formats.svg.svg.impl.SvgPackageImpl#getStroke()
 	 * @generated
 	 */
-	int STROKE = 160;
+	int STROKE = 163;
 
 	/**
 	 * The meta object id for the '<em>Stroke dasharray</em>' data type.
@@ -38588,7 +38825,7 @@ public interface SvgPackage extends EPackage {
 	 * @see at.bestsolution.efxclipse.formats.svg.svg.impl.SvgPackageImpl#getStroke_dasharray()
 	 * @generated
 	 */
-	int STROKE_DASHARRAY = 161;
+	int STROKE_DASHARRAY = 164;
 
 	/**
 	 * The meta object id for the '<em>Stroke dashoffset</em>' data type.
@@ -38598,7 +38835,7 @@ public interface SvgPackage extends EPackage {
 	 * @see at.bestsolution.efxclipse.formats.svg.svg.impl.SvgPackageImpl#getStroke_dashoffset()
 	 * @generated
 	 */
-	int STROKE_DASHOFFSET = 162;
+	int STROKE_DASHOFFSET = 165;
 
 	/**
 	 * The meta object id for the '<em>Stroke miterlimit</em>' data type.
@@ -38608,7 +38845,7 @@ public interface SvgPackage extends EPackage {
 	 * @see at.bestsolution.efxclipse.formats.svg.svg.impl.SvgPackageImpl#getStroke_miterlimit()
 	 * @generated
 	 */
-	int STROKE_MITERLIMIT = 163;
+	int STROKE_MITERLIMIT = 166;
 
 	/**
 	 * The meta object id for the '<em>Stroke opacity</em>' data type.
@@ -38618,7 +38855,7 @@ public interface SvgPackage extends EPackage {
 	 * @see at.bestsolution.efxclipse.formats.svg.svg.impl.SvgPackageImpl#getStroke_opacity()
 	 * @generated
 	 */
-	int STROKE_OPACITY = 164;
+	int STROKE_OPACITY = 167;
 
 	/**
 	 * The meta object id for the '<em>Stroke width</em>' data type.
@@ -38628,7 +38865,7 @@ public interface SvgPackage extends EPackage {
 	 * @see at.bestsolution.efxclipse.formats.svg.svg.impl.SvgPackageImpl#getStroke_width()
 	 * @generated
 	 */
-	int STROKE_WIDTH = 165;
+	int STROKE_WIDTH = 168;
 
 	/**
 	 * The meta object id for the '<em>Text decoration</em>' data type.
@@ -38638,7 +38875,7 @@ public interface SvgPackage extends EPackage {
 	 * @see at.bestsolution.efxclipse.formats.svg.svg.impl.SvgPackageImpl#getText_decoration()
 	 * @generated
 	 */
-	int TEXT_DECORATION = 166;
+	int TEXT_DECORATION = 169;
 
 	/**
 	 * The meta object id for the '<em>Word spacing</em>' data type.
@@ -38648,7 +38885,7 @@ public interface SvgPackage extends EPackage {
 	 * @see at.bestsolution.efxclipse.formats.svg.svg.impl.SvgPackageImpl#getWord_spacing()
 	 * @generated
 	 */
-	int WORD_SPACING = 167;
+	int WORD_SPACING = 170;
 
 	/**
 	 * The meta object id for the '<em>Coordinate</em>' data type.
@@ -38658,7 +38895,7 @@ public interface SvgPackage extends EPackage {
 	 * @see at.bestsolution.efxclipse.formats.svg.svg.impl.SvgPackageImpl#getCoordinate()
 	 * @generated
 	 */
-	int COORDINATE = 168;
+	int COORDINATE = 171;
 
 	/**
 	 * The meta object id for the '<em>View Box</em>' data type.
@@ -38668,7 +38905,7 @@ public interface SvgPackage extends EPackage {
 	 * @see at.bestsolution.efxclipse.formats.svg.svg.impl.SvgPackageImpl#getViewBox()
 	 * @generated
 	 */
-	int VIEW_BOX = 169;
+	int VIEW_BOX = 172;
 
 	/**
 	 * The meta object id for the '<em>Preserve Aspect Ratio</em>' data type.
@@ -38678,7 +38915,7 @@ public interface SvgPackage extends EPackage {
 	 * @see at.bestsolution.efxclipse.formats.svg.svg.impl.SvgPackageImpl#getPreserveAspectRatio()
 	 * @generated
 	 */
-	int PRESERVE_ASPECT_RATIO = 170;
+	int PRESERVE_ASPECT_RATIO = 173;
 
 	/**
 	 * The meta object id for the '<em>Number</em>' data type.
@@ -38688,7 +38925,7 @@ public interface SvgPackage extends EPackage {
 	 * @see at.bestsolution.efxclipse.formats.svg.svg.impl.SvgPackageImpl#getNumber()
 	 * @generated
 	 */
-	int NUMBER = 171;
+	int NUMBER = 174;
 
 	/**
 	 * The meta object id for the '<em>Transform</em>' data type.
@@ -38698,7 +38935,7 @@ public interface SvgPackage extends EPackage {
 	 * @see at.bestsolution.efxclipse.formats.svg.svg.impl.SvgPackageImpl#getTransform()
 	 * @generated
 	 */
-	int TRANSFORM = 172;
+	int TRANSFORM = 175;
 
 	/**
 	 * The meta object id for the '<em>Path Data</em>' data type.
@@ -38708,7 +38945,7 @@ public interface SvgPackage extends EPackage {
 	 * @see at.bestsolution.efxclipse.formats.svg.svg.impl.SvgPackageImpl#getPathData()
 	 * @generated
 	 */
-	int PATH_DATA = 173;
+	int PATH_DATA = 176;
 
 	/**
 	 * The meta object id for the '<em>List Of Points</em>' data type.
@@ -38718,7 +38955,7 @@ public interface SvgPackage extends EPackage {
 	 * @see at.bestsolution.efxclipse.formats.svg.svg.impl.SvgPackageImpl#getListOfPoints()
 	 * @generated
 	 */
-	int LIST_OF_POINTS = 174;
+	int LIST_OF_POINTS = 177;
 
 	/**
 	 * The meta object id for the '<em>List Of Lengths</em>' data type.
@@ -38728,7 +38965,7 @@ public interface SvgPackage extends EPackage {
 	 * @see at.bestsolution.efxclipse.formats.svg.svg.impl.SvgPackageImpl#getListOfLengths()
 	 * @generated
 	 */
-	int LIST_OF_LENGTHS = 175;
+	int LIST_OF_LENGTHS = 178;
 
 	/**
 	 * The meta object id for the '<em>List Of Numbers</em>' data type.
@@ -38738,7 +38975,7 @@ public interface SvgPackage extends EPackage {
 	 * @see at.bestsolution.efxclipse.formats.svg.svg.impl.SvgPackageImpl#getListOfNumbers()
 	 * @generated
 	 */
-	int LIST_OF_NUMBERS = 176;
+	int LIST_OF_NUMBERS = 179;
 
 	/**
 	 * The meta object id for the '<em>List Of Coordinates</em>' data type.
@@ -38748,7 +38985,7 @@ public interface SvgPackage extends EPackage {
 	 * @see at.bestsolution.efxclipse.formats.svg.svg.impl.SvgPackageImpl#getListOfCoordinates()
 	 * @generated
 	 */
-	int LIST_OF_COORDINATES = 177;
+	int LIST_OF_COORDINATES = 180;
 
 	/**
 	 * The meta object id for the '<em>Name</em>' data type.
@@ -38758,7 +38995,7 @@ public interface SvgPackage extends EPackage {
 	 * @see at.bestsolution.efxclipse.formats.svg.svg.impl.SvgPackageImpl#getName_()
 	 * @generated
 	 */
-	int NAME = 178;
+	int NAME = 181;
 
 	/**
 	 * The meta object id for the '<em>Number Optional Number</em>' data type.
@@ -38768,7 +39005,18 @@ public interface SvgPackage extends EPackage {
 	 * @see at.bestsolution.efxclipse.formats.svg.svg.impl.SvgPackageImpl#getNumberOptionalNumber()
 	 * @generated
 	 */
-	int NUMBER_OPTIONAL_NUMBER = 179;
+	int NUMBER_OPTIONAL_NUMBER = 182;
+
+
+	/**
+	 * The meta object id for the '<em>Transform List</em>' data type.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see java.lang.String
+	 * @see at.bestsolution.efxclipse.formats.svg.svg.impl.SvgPackageImpl#getTransformList()
+	 * @generated
+	 */
+	int TRANSFORM_LIST = 183;
 
 
 	/**
@@ -38921,6 +39169,16 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getFilterPrimitiveElement();
+
+	/**
+	 * Returns the meta object for class '{@link at.bestsolution.efxclipse.formats.svg.svg.AnimationElement <em>Animation Element</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Animation Element</em>'.
+	 * @see at.bestsolution.efxclipse.formats.svg.svg.AnimationElement
+	 * @generated
+	 */
+	EClass getAnimationElement();
 
 	/**
 	 * Returns the meta object for class '{@link at.bestsolution.efxclipse.formats.svg.svg.____ENUMS____ <em>ENUMS </em>}'.
@@ -39990,6 +40248,17 @@ public interface SvgPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getXLinkAttributes_Xlink__title();
+
+	/**
+	 * Returns the meta object for the reference '{@link at.bestsolution.efxclipse.formats.svg.svg.XLinkAttributes#getResolvedInstance <em>Resolved Instance</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Resolved Instance</em>'.
+	 * @see at.bestsolution.efxclipse.formats.svg.svg.XLinkAttributes#getResolvedInstance()
+	 * @see #getXLinkAttributes()
+	 * @generated
+	 */
+	EReference getXLinkAttributes_ResolvedInstance();
 
 	/**
 	 * Returns the meta object for class '{@link at.bestsolution.efxclipse.formats.svg.svg.FilterPrimitiveAttributes <em>Filter Primitive Attributes</em>}'.
@@ -42240,6 +42509,17 @@ public interface SvgPackage extends EPackage {
 	EAttribute getSvgLinearGradientElement_SpreadMethod();
 
 	/**
+	 * Returns the meta object for the attribute '{@link at.bestsolution.efxclipse.formats.svg.svg.SvgLinearGradientElement#getGradientTransform <em>Gradient Transform</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Gradient Transform</em>'.
+	 * @see at.bestsolution.efxclipse.formats.svg.svg.SvgLinearGradientElement#getGradientTransform()
+	 * @see #getSvgLinearGradientElement()
+	 * @generated
+	 */
+	EAttribute getSvgLinearGradientElement_GradientTransform();
+
+	/**
 	 * Returns the meta object for class '{@link at.bestsolution.efxclipse.formats.svg.svg.SvgRadialGradientElement <em>Radial Gradient Element</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -42349,47 +42629,69 @@ public interface SvgPackage extends EPackage {
 	EAttribute getSvgRadialGradientElement_SpreadMethod();
 
 	/**
-	 * Returns the meta object for class '{@link at.bestsolution.efxclipse.formats.svg.svg.SvgGradientStopElement <em>Gradient Stop Element</em>}'.
+	 * Returns the meta object for the attribute '{@link at.bestsolution.efxclipse.formats.svg.svg.SvgRadialGradientElement#getGradientUnits <em>Gradient Units</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Gradient Stop Element</em>'.
-	 * @see at.bestsolution.efxclipse.formats.svg.svg.SvgGradientStopElement
+	 * @return the meta object for the attribute '<em>Gradient Units</em>'.
+	 * @see at.bestsolution.efxclipse.formats.svg.svg.SvgRadialGradientElement#getGradientUnits()
+	 * @see #getSvgRadialGradientElement()
 	 * @generated
 	 */
-	EClass getSvgGradientStopElement();
+	EAttribute getSvgRadialGradientElement_GradientUnits();
 
 	/**
-	 * Returns the meta object for the attribute '{@link at.bestsolution.efxclipse.formats.svg.svg.SvgGradientStopElement#getClass_ <em>Class</em>}'.
+	 * Returns the meta object for the attribute '{@link at.bestsolution.efxclipse.formats.svg.svg.SvgRadialGradientElement#getGradientTransform <em>Gradient Transform</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Gradient Transform</em>'.
+	 * @see at.bestsolution.efxclipse.formats.svg.svg.SvgRadialGradientElement#getGradientTransform()
+	 * @see #getSvgRadialGradientElement()
+	 * @generated
+	 */
+	EAttribute getSvgRadialGradientElement_GradientTransform();
+
+	/**
+	 * Returns the meta object for class '{@link at.bestsolution.efxclipse.formats.svg.svg.SvgStopElement <em>Stop Element</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Stop Element</em>'.
+	 * @see at.bestsolution.efxclipse.formats.svg.svg.SvgStopElement
+	 * @generated
+	 */
+	EClass getSvgStopElement();
+
+	/**
+	 * Returns the meta object for the attribute '{@link at.bestsolution.efxclipse.formats.svg.svg.SvgStopElement#getClass_ <em>Class</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Class</em>'.
-	 * @see at.bestsolution.efxclipse.formats.svg.svg.SvgGradientStopElement#getClass_()
-	 * @see #getSvgGradientStopElement()
+	 * @see at.bestsolution.efxclipse.formats.svg.svg.SvgStopElement#getClass_()
+	 * @see #getSvgStopElement()
 	 * @generated
 	 */
-	EAttribute getSvgGradientStopElement_Class();
+	EAttribute getSvgStopElement_Class();
 
 	/**
-	 * Returns the meta object for the attribute '{@link at.bestsolution.efxclipse.formats.svg.svg.SvgGradientStopElement#getStyle <em>Style</em>}'.
+	 * Returns the meta object for the attribute '{@link at.bestsolution.efxclipse.formats.svg.svg.SvgStopElement#getStyle <em>Style</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Style</em>'.
-	 * @see at.bestsolution.efxclipse.formats.svg.svg.SvgGradientStopElement#getStyle()
-	 * @see #getSvgGradientStopElement()
+	 * @see at.bestsolution.efxclipse.formats.svg.svg.SvgStopElement#getStyle()
+	 * @see #getSvgStopElement()
 	 * @generated
 	 */
-	EAttribute getSvgGradientStopElement_Style();
+	EAttribute getSvgStopElement_Style();
 
 	/**
-	 * Returns the meta object for the attribute '{@link at.bestsolution.efxclipse.formats.svg.svg.SvgGradientStopElement#getOffset <em>Offset</em>}'.
+	 * Returns the meta object for the attribute '{@link at.bestsolution.efxclipse.formats.svg.svg.SvgStopElement#getOffset <em>Offset</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Offset</em>'.
-	 * @see at.bestsolution.efxclipse.formats.svg.svg.SvgGradientStopElement#getOffset()
-	 * @see #getSvgGradientStopElement()
+	 * @see at.bestsolution.efxclipse.formats.svg.svg.SvgStopElement#getOffset()
+	 * @see #getSvgStopElement()
 	 * @generated
 	 */
-	EAttribute getSvgGradientStopElement_Offset();
+	EAttribute getSvgStopElement_Offset();
 
 	/**
 	 * Returns the meta object for class '{@link at.bestsolution.efxclipse.formats.svg.svg.SvgPatternElement <em>Pattern Element</em>}'.
@@ -42828,1201 +43130,1221 @@ public interface SvgPackage extends EPackage {
 	EAttribute getSvgFilterElement_PrimitiveUnits();
 
 	/**
-	 * Returns the meta object for class '{@link at.bestsolution.efxclipse.formats.svg.svg.SvgFeDistantLight <em>Fe Distant Light</em>}'.
+	 * Returns the meta object for class '{@link at.bestsolution.efxclipse.formats.svg.svg.SvgFeDistantLightElement <em>Fe Distant Light Element</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Fe Distant Light</em>'.
-	 * @see at.bestsolution.efxclipse.formats.svg.svg.SvgFeDistantLight
+	 * @return the meta object for class '<em>Fe Distant Light Element</em>'.
+	 * @see at.bestsolution.efxclipse.formats.svg.svg.SvgFeDistantLightElement
 	 * @generated
 	 */
-	EClass getSvgFeDistantLight();
+	EClass getSvgFeDistantLightElement();
 
 	/**
-	 * Returns the meta object for the attribute '{@link at.bestsolution.efxclipse.formats.svg.svg.SvgFeDistantLight#getAzimuth <em>Azimuth</em>}'.
+	 * Returns the meta object for the attribute '{@link at.bestsolution.efxclipse.formats.svg.svg.SvgFeDistantLightElement#getAzimuth <em>Azimuth</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Azimuth</em>'.
-	 * @see at.bestsolution.efxclipse.formats.svg.svg.SvgFeDistantLight#getAzimuth()
-	 * @see #getSvgFeDistantLight()
+	 * @see at.bestsolution.efxclipse.formats.svg.svg.SvgFeDistantLightElement#getAzimuth()
+	 * @see #getSvgFeDistantLightElement()
 	 * @generated
 	 */
-	EAttribute getSvgFeDistantLight_Azimuth();
+	EAttribute getSvgFeDistantLightElement_Azimuth();
 
 	/**
-	 * Returns the meta object for the attribute '{@link at.bestsolution.efxclipse.formats.svg.svg.SvgFeDistantLight#getElevation <em>Elevation</em>}'.
+	 * Returns the meta object for the attribute '{@link at.bestsolution.efxclipse.formats.svg.svg.SvgFeDistantLightElement#getElevation <em>Elevation</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Elevation</em>'.
-	 * @see at.bestsolution.efxclipse.formats.svg.svg.SvgFeDistantLight#getElevation()
-	 * @see #getSvgFeDistantLight()
+	 * @see at.bestsolution.efxclipse.formats.svg.svg.SvgFeDistantLightElement#getElevation()
+	 * @see #getSvgFeDistantLightElement()
 	 * @generated
 	 */
-	EAttribute getSvgFeDistantLight_Elevation();
+	EAttribute getSvgFeDistantLightElement_Elevation();
 
 	/**
-	 * Returns the meta object for class '{@link at.bestsolution.efxclipse.formats.svg.svg.SvgFePointLight <em>Fe Point Light</em>}'.
+	 * Returns the meta object for class '{@link at.bestsolution.efxclipse.formats.svg.svg.SvgFePointLightElement <em>Fe Point Light Element</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Fe Point Light</em>'.
-	 * @see at.bestsolution.efxclipse.formats.svg.svg.SvgFePointLight
+	 * @return the meta object for class '<em>Fe Point Light Element</em>'.
+	 * @see at.bestsolution.efxclipse.formats.svg.svg.SvgFePointLightElement
 	 * @generated
 	 */
-	EClass getSvgFePointLight();
+	EClass getSvgFePointLightElement();
 
 	/**
-	 * Returns the meta object for the attribute '{@link at.bestsolution.efxclipse.formats.svg.svg.SvgFePointLight#getX <em>X</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>X</em>'.
-	 * @see at.bestsolution.efxclipse.formats.svg.svg.SvgFePointLight#getX()
-	 * @see #getSvgFePointLight()
-	 * @generated
-	 */
-	EAttribute getSvgFePointLight_X();
-
-	/**
-	 * Returns the meta object for the attribute '{@link at.bestsolution.efxclipse.formats.svg.svg.SvgFePointLight#getY <em>Y</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Y</em>'.
-	 * @see at.bestsolution.efxclipse.formats.svg.svg.SvgFePointLight#getY()
-	 * @see #getSvgFePointLight()
-	 * @generated
-	 */
-	EAttribute getSvgFePointLight_Y();
-
-	/**
-	 * Returns the meta object for the attribute '{@link at.bestsolution.efxclipse.formats.svg.svg.SvgFePointLight#getZ <em>Z</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Z</em>'.
-	 * @see at.bestsolution.efxclipse.formats.svg.svg.SvgFePointLight#getZ()
-	 * @see #getSvgFePointLight()
-	 * @generated
-	 */
-	EAttribute getSvgFePointLight_Z();
-
-	/**
-	 * Returns the meta object for class '{@link at.bestsolution.efxclipse.formats.svg.svg.SvgFeSpotLight <em>Fe Spot Light</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Fe Spot Light</em>'.
-	 * @see at.bestsolution.efxclipse.formats.svg.svg.SvgFeSpotLight
-	 * @generated
-	 */
-	EClass getSvgFeSpotLight();
-
-	/**
-	 * Returns the meta object for the attribute '{@link at.bestsolution.efxclipse.formats.svg.svg.SvgFeSpotLight#getX <em>X</em>}'.
+	 * Returns the meta object for the attribute '{@link at.bestsolution.efxclipse.formats.svg.svg.SvgFePointLightElement#getX <em>X</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>X</em>'.
-	 * @see at.bestsolution.efxclipse.formats.svg.svg.SvgFeSpotLight#getX()
-	 * @see #getSvgFeSpotLight()
+	 * @see at.bestsolution.efxclipse.formats.svg.svg.SvgFePointLightElement#getX()
+	 * @see #getSvgFePointLightElement()
 	 * @generated
 	 */
-	EAttribute getSvgFeSpotLight_X();
+	EAttribute getSvgFePointLightElement_X();
 
 	/**
-	 * Returns the meta object for the attribute '{@link at.bestsolution.efxclipse.formats.svg.svg.SvgFeSpotLight#getY <em>Y</em>}'.
+	 * Returns the meta object for the attribute '{@link at.bestsolution.efxclipse.formats.svg.svg.SvgFePointLightElement#getY <em>Y</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Y</em>'.
-	 * @see at.bestsolution.efxclipse.formats.svg.svg.SvgFeSpotLight#getY()
-	 * @see #getSvgFeSpotLight()
+	 * @see at.bestsolution.efxclipse.formats.svg.svg.SvgFePointLightElement#getY()
+	 * @see #getSvgFePointLightElement()
 	 * @generated
 	 */
-	EAttribute getSvgFeSpotLight_Y();
+	EAttribute getSvgFePointLightElement_Y();
 
 	/**
-	 * Returns the meta object for the attribute '{@link at.bestsolution.efxclipse.formats.svg.svg.SvgFeSpotLight#getZ <em>Z</em>}'.
+	 * Returns the meta object for the attribute '{@link at.bestsolution.efxclipse.formats.svg.svg.SvgFePointLightElement#getZ <em>Z</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Z</em>'.
-	 * @see at.bestsolution.efxclipse.formats.svg.svg.SvgFeSpotLight#getZ()
-	 * @see #getSvgFeSpotLight()
+	 * @see at.bestsolution.efxclipse.formats.svg.svg.SvgFePointLightElement#getZ()
+	 * @see #getSvgFePointLightElement()
 	 * @generated
 	 */
-	EAttribute getSvgFeSpotLight_Z();
+	EAttribute getSvgFePointLightElement_Z();
 
 	/**
-	 * Returns the meta object for the attribute '{@link at.bestsolution.efxclipse.formats.svg.svg.SvgFeSpotLight#getPointsAtX <em>Points At X</em>}'.
+	 * Returns the meta object for class '{@link at.bestsolution.efxclipse.formats.svg.svg.SvgFeSpotLightElement <em>Fe Spot Light Element</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Fe Spot Light Element</em>'.
+	 * @see at.bestsolution.efxclipse.formats.svg.svg.SvgFeSpotLightElement
+	 * @generated
+	 */
+	EClass getSvgFeSpotLightElement();
+
+	/**
+	 * Returns the meta object for the attribute '{@link at.bestsolution.efxclipse.formats.svg.svg.SvgFeSpotLightElement#getX <em>X</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>X</em>'.
+	 * @see at.bestsolution.efxclipse.formats.svg.svg.SvgFeSpotLightElement#getX()
+	 * @see #getSvgFeSpotLightElement()
+	 * @generated
+	 */
+	EAttribute getSvgFeSpotLightElement_X();
+
+	/**
+	 * Returns the meta object for the attribute '{@link at.bestsolution.efxclipse.formats.svg.svg.SvgFeSpotLightElement#getY <em>Y</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Y</em>'.
+	 * @see at.bestsolution.efxclipse.formats.svg.svg.SvgFeSpotLightElement#getY()
+	 * @see #getSvgFeSpotLightElement()
+	 * @generated
+	 */
+	EAttribute getSvgFeSpotLightElement_Y();
+
+	/**
+	 * Returns the meta object for the attribute '{@link at.bestsolution.efxclipse.formats.svg.svg.SvgFeSpotLightElement#getZ <em>Z</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Z</em>'.
+	 * @see at.bestsolution.efxclipse.formats.svg.svg.SvgFeSpotLightElement#getZ()
+	 * @see #getSvgFeSpotLightElement()
+	 * @generated
+	 */
+	EAttribute getSvgFeSpotLightElement_Z();
+
+	/**
+	 * Returns the meta object for the attribute '{@link at.bestsolution.efxclipse.formats.svg.svg.SvgFeSpotLightElement#getPointsAtX <em>Points At X</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Points At X</em>'.
-	 * @see at.bestsolution.efxclipse.formats.svg.svg.SvgFeSpotLight#getPointsAtX()
-	 * @see #getSvgFeSpotLight()
+	 * @see at.bestsolution.efxclipse.formats.svg.svg.SvgFeSpotLightElement#getPointsAtX()
+	 * @see #getSvgFeSpotLightElement()
 	 * @generated
 	 */
-	EAttribute getSvgFeSpotLight_PointsAtX();
+	EAttribute getSvgFeSpotLightElement_PointsAtX();
 
 	/**
-	 * Returns the meta object for the attribute '{@link at.bestsolution.efxclipse.formats.svg.svg.SvgFeSpotLight#getPointsAtY <em>Points At Y</em>}'.
+	 * Returns the meta object for the attribute '{@link at.bestsolution.efxclipse.formats.svg.svg.SvgFeSpotLightElement#getPointsAtY <em>Points At Y</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Points At Y</em>'.
-	 * @see at.bestsolution.efxclipse.formats.svg.svg.SvgFeSpotLight#getPointsAtY()
-	 * @see #getSvgFeSpotLight()
+	 * @see at.bestsolution.efxclipse.formats.svg.svg.SvgFeSpotLightElement#getPointsAtY()
+	 * @see #getSvgFeSpotLightElement()
 	 * @generated
 	 */
-	EAttribute getSvgFeSpotLight_PointsAtY();
+	EAttribute getSvgFeSpotLightElement_PointsAtY();
 
 	/**
-	 * Returns the meta object for the attribute '{@link at.bestsolution.efxclipse.formats.svg.svg.SvgFeSpotLight#getPointsAtZ <em>Points At Z</em>}'.
+	 * Returns the meta object for the attribute '{@link at.bestsolution.efxclipse.formats.svg.svg.SvgFeSpotLightElement#getPointsAtZ <em>Points At Z</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Points At Z</em>'.
-	 * @see at.bestsolution.efxclipse.formats.svg.svg.SvgFeSpotLight#getPointsAtZ()
-	 * @see #getSvgFeSpotLight()
+	 * @see at.bestsolution.efxclipse.formats.svg.svg.SvgFeSpotLightElement#getPointsAtZ()
+	 * @see #getSvgFeSpotLightElement()
 	 * @generated
 	 */
-	EAttribute getSvgFeSpotLight_PointsAtZ();
+	EAttribute getSvgFeSpotLightElement_PointsAtZ();
 
 	/**
-	 * Returns the meta object for the attribute '{@link at.bestsolution.efxclipse.formats.svg.svg.SvgFeSpotLight#getSpecularExponent <em>Specular Exponent</em>}'.
+	 * Returns the meta object for the attribute '{@link at.bestsolution.efxclipse.formats.svg.svg.SvgFeSpotLightElement#getSpecularExponent <em>Specular Exponent</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Specular Exponent</em>'.
-	 * @see at.bestsolution.efxclipse.formats.svg.svg.SvgFeSpotLight#getSpecularExponent()
-	 * @see #getSvgFeSpotLight()
+	 * @see at.bestsolution.efxclipse.formats.svg.svg.SvgFeSpotLightElement#getSpecularExponent()
+	 * @see #getSvgFeSpotLightElement()
 	 * @generated
 	 */
-	EAttribute getSvgFeSpotLight_SpecularExponent();
+	EAttribute getSvgFeSpotLightElement_SpecularExponent();
 
 	/**
-	 * Returns the meta object for the attribute '{@link at.bestsolution.efxclipse.formats.svg.svg.SvgFeSpotLight#getLimitingConeAngle <em>Limiting Cone Angle</em>}'.
+	 * Returns the meta object for the attribute '{@link at.bestsolution.efxclipse.formats.svg.svg.SvgFeSpotLightElement#getLimitingConeAngle <em>Limiting Cone Angle</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Limiting Cone Angle</em>'.
-	 * @see at.bestsolution.efxclipse.formats.svg.svg.SvgFeSpotLight#getLimitingConeAngle()
-	 * @see #getSvgFeSpotLight()
+	 * @see at.bestsolution.efxclipse.formats.svg.svg.SvgFeSpotLightElement#getLimitingConeAngle()
+	 * @see #getSvgFeSpotLightElement()
 	 * @generated
 	 */
-	EAttribute getSvgFeSpotLight_LimitingConeAngle();
+	EAttribute getSvgFeSpotLightElement_LimitingConeAngle();
 
 	/**
-	 * Returns the meta object for class '{@link at.bestsolution.efxclipse.formats.svg.svg.SvgFeBlend <em>Fe Blend</em>}'.
+	 * Returns the meta object for class '{@link at.bestsolution.efxclipse.formats.svg.svg.SvgFeBlendElement <em>Fe Blend Element</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Fe Blend</em>'.
-	 * @see at.bestsolution.efxclipse.formats.svg.svg.SvgFeBlend
+	 * @return the meta object for class '<em>Fe Blend Element</em>'.
+	 * @see at.bestsolution.efxclipse.formats.svg.svg.SvgFeBlendElement
 	 * @generated
 	 */
-	EClass getSvgFeBlend();
+	EClass getSvgFeBlendElement();
 
 	/**
-	 * Returns the meta object for the attribute '{@link at.bestsolution.efxclipse.formats.svg.svg.SvgFeBlend#getClass_ <em>Class</em>}'.
+	 * Returns the meta object for the attribute '{@link at.bestsolution.efxclipse.formats.svg.svg.SvgFeBlendElement#getClass_ <em>Class</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Class</em>'.
-	 * @see at.bestsolution.efxclipse.formats.svg.svg.SvgFeBlend#getClass_()
-	 * @see #getSvgFeBlend()
+	 * @see at.bestsolution.efxclipse.formats.svg.svg.SvgFeBlendElement#getClass_()
+	 * @see #getSvgFeBlendElement()
 	 * @generated
 	 */
-	EAttribute getSvgFeBlend_Class();
+	EAttribute getSvgFeBlendElement_Class();
 
 	/**
-	 * Returns the meta object for the attribute '{@link at.bestsolution.efxclipse.formats.svg.svg.SvgFeBlend#getStyle <em>Style</em>}'.
+	 * Returns the meta object for the attribute '{@link at.bestsolution.efxclipse.formats.svg.svg.SvgFeBlendElement#getStyle <em>Style</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Style</em>'.
-	 * @see at.bestsolution.efxclipse.formats.svg.svg.SvgFeBlend#getStyle()
-	 * @see #getSvgFeBlend()
+	 * @see at.bestsolution.efxclipse.formats.svg.svg.SvgFeBlendElement#getStyle()
+	 * @see #getSvgFeBlendElement()
 	 * @generated
 	 */
-	EAttribute getSvgFeBlend_Style();
+	EAttribute getSvgFeBlendElement_Style();
 
 	/**
-	 * Returns the meta object for the attribute '{@link at.bestsolution.efxclipse.formats.svg.svg.SvgFeBlend#getIn2 <em>In2</em>}'.
+	 * Returns the meta object for the attribute '{@link at.bestsolution.efxclipse.formats.svg.svg.SvgFeBlendElement#getIn2 <em>In2</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>In2</em>'.
-	 * @see at.bestsolution.efxclipse.formats.svg.svg.SvgFeBlend#getIn2()
-	 * @see #getSvgFeBlend()
+	 * @see at.bestsolution.efxclipse.formats.svg.svg.SvgFeBlendElement#getIn2()
+	 * @see #getSvgFeBlendElement()
 	 * @generated
 	 */
-	EAttribute getSvgFeBlend_In2();
+	EAttribute getSvgFeBlendElement_In2();
 
 	/**
-	 * Returns the meta object for the attribute '{@link at.bestsolution.efxclipse.formats.svg.svg.SvgFeBlend#getMode <em>Mode</em>}'.
+	 * Returns the meta object for the attribute '{@link at.bestsolution.efxclipse.formats.svg.svg.SvgFeBlendElement#getMode <em>Mode</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Mode</em>'.
-	 * @see at.bestsolution.efxclipse.formats.svg.svg.SvgFeBlend#getMode()
-	 * @see #getSvgFeBlend()
+	 * @see at.bestsolution.efxclipse.formats.svg.svg.SvgFeBlendElement#getMode()
+	 * @see #getSvgFeBlendElement()
 	 * @generated
 	 */
-	EAttribute getSvgFeBlend_Mode();
+	EAttribute getSvgFeBlendElement_Mode();
 
 	/**
-	 * Returns the meta object for class '{@link at.bestsolution.efxclipse.formats.svg.svg.SvgFeColorMatrix <em>Fe Color Matrix</em>}'.
+	 * Returns the meta object for class '{@link at.bestsolution.efxclipse.formats.svg.svg.SvgFeColorMatrixElement <em>Fe Color Matrix Element</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Fe Color Matrix</em>'.
-	 * @see at.bestsolution.efxclipse.formats.svg.svg.SvgFeColorMatrix
+	 * @return the meta object for class '<em>Fe Color Matrix Element</em>'.
+	 * @see at.bestsolution.efxclipse.formats.svg.svg.SvgFeColorMatrixElement
 	 * @generated
 	 */
-	EClass getSvgFeColorMatrix();
+	EClass getSvgFeColorMatrixElement();
 
 	/**
-	 * Returns the meta object for the attribute '{@link at.bestsolution.efxclipse.formats.svg.svg.SvgFeColorMatrix#getClass_ <em>Class</em>}'.
+	 * Returns the meta object for the attribute '{@link at.bestsolution.efxclipse.formats.svg.svg.SvgFeColorMatrixElement#getClass_ <em>Class</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Class</em>'.
-	 * @see at.bestsolution.efxclipse.formats.svg.svg.SvgFeColorMatrix#getClass_()
-	 * @see #getSvgFeColorMatrix()
+	 * @see at.bestsolution.efxclipse.formats.svg.svg.SvgFeColorMatrixElement#getClass_()
+	 * @see #getSvgFeColorMatrixElement()
 	 * @generated
 	 */
-	EAttribute getSvgFeColorMatrix_Class();
+	EAttribute getSvgFeColorMatrixElement_Class();
 
 	/**
-	 * Returns the meta object for the attribute '{@link at.bestsolution.efxclipse.formats.svg.svg.SvgFeColorMatrix#getStyle <em>Style</em>}'.
+	 * Returns the meta object for the attribute '{@link at.bestsolution.efxclipse.formats.svg.svg.SvgFeColorMatrixElement#getStyle <em>Style</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Style</em>'.
-	 * @see at.bestsolution.efxclipse.formats.svg.svg.SvgFeColorMatrix#getStyle()
-	 * @see #getSvgFeColorMatrix()
+	 * @see at.bestsolution.efxclipse.formats.svg.svg.SvgFeColorMatrixElement#getStyle()
+	 * @see #getSvgFeColorMatrixElement()
 	 * @generated
 	 */
-	EAttribute getSvgFeColorMatrix_Style();
+	EAttribute getSvgFeColorMatrixElement_Style();
 
 	/**
-	 * Returns the meta object for the attribute '{@link at.bestsolution.efxclipse.formats.svg.svg.SvgFeColorMatrix#getType <em>Type</em>}'.
+	 * Returns the meta object for the attribute '{@link at.bestsolution.efxclipse.formats.svg.svg.SvgFeColorMatrixElement#getType <em>Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Type</em>'.
-	 * @see at.bestsolution.efxclipse.formats.svg.svg.SvgFeColorMatrix#getType()
-	 * @see #getSvgFeColorMatrix()
+	 * @see at.bestsolution.efxclipse.formats.svg.svg.SvgFeColorMatrixElement#getType()
+	 * @see #getSvgFeColorMatrixElement()
 	 * @generated
 	 */
-	EAttribute getSvgFeColorMatrix_Type();
+	EAttribute getSvgFeColorMatrixElement_Type();
 
 	/**
-	 * Returns the meta object for the attribute '{@link at.bestsolution.efxclipse.formats.svg.svg.SvgFeColorMatrix#getValues <em>Values</em>}'.
+	 * Returns the meta object for the attribute '{@link at.bestsolution.efxclipse.formats.svg.svg.SvgFeColorMatrixElement#getValues <em>Values</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Values</em>'.
-	 * @see at.bestsolution.efxclipse.formats.svg.svg.SvgFeColorMatrix#getValues()
-	 * @see #getSvgFeColorMatrix()
+	 * @see at.bestsolution.efxclipse.formats.svg.svg.SvgFeColorMatrixElement#getValues()
+	 * @see #getSvgFeColorMatrixElement()
 	 * @generated
 	 */
-	EAttribute getSvgFeColorMatrix_Values();
+	EAttribute getSvgFeColorMatrixElement_Values();
 
 	/**
-	 * Returns the meta object for class '{@link at.bestsolution.efxclipse.formats.svg.svg.SvgFeComponentTransfer <em>Fe Component Transfer</em>}'.
+	 * Returns the meta object for class '{@link at.bestsolution.efxclipse.formats.svg.svg.SvgFeComponentTransferElement <em>Fe Component Transfer Element</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Fe Component Transfer</em>'.
-	 * @see at.bestsolution.efxclipse.formats.svg.svg.SvgFeComponentTransfer
+	 * @return the meta object for class '<em>Fe Component Transfer Element</em>'.
+	 * @see at.bestsolution.efxclipse.formats.svg.svg.SvgFeComponentTransferElement
 	 * @generated
 	 */
-	EClass getSvgFeComponentTransfer();
+	EClass getSvgFeComponentTransferElement();
 
 	/**
-	 * Returns the meta object for the attribute '{@link at.bestsolution.efxclipse.formats.svg.svg.SvgFeComponentTransfer#getClass_ <em>Class</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Class</em>'.
-	 * @see at.bestsolution.efxclipse.formats.svg.svg.SvgFeComponentTransfer#getClass_()
-	 * @see #getSvgFeComponentTransfer()
-	 * @generated
-	 */
-	EAttribute getSvgFeComponentTransfer_Class();
-
-	/**
-	 * Returns the meta object for the attribute '{@link at.bestsolution.efxclipse.formats.svg.svg.SvgFeComponentTransfer#getStyle <em>Style</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Style</em>'.
-	 * @see at.bestsolution.efxclipse.formats.svg.svg.SvgFeComponentTransfer#getStyle()
-	 * @see #getSvgFeComponentTransfer()
-	 * @generated
-	 */
-	EAttribute getSvgFeComponentTransfer_Style();
-
-	/**
-	 * Returns the meta object for class '{@link at.bestsolution.efxclipse.formats.svg.svg.SvgFeFuncR <em>Fe Func R</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Fe Func R</em>'.
-	 * @see at.bestsolution.efxclipse.formats.svg.svg.SvgFeFuncR
-	 * @generated
-	 */
-	EClass getSvgFeFuncR();
-
-	/**
-	 * Returns the meta object for class '{@link at.bestsolution.efxclipse.formats.svg.svg.SvgFeFuncG <em>Fe Func G</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Fe Func G</em>'.
-	 * @see at.bestsolution.efxclipse.formats.svg.svg.SvgFeFuncG
-	 * @generated
-	 */
-	EClass getSvgFeFuncG();
-
-	/**
-	 * Returns the meta object for class '{@link at.bestsolution.efxclipse.formats.svg.svg.SvgFeFuncB <em>Fe Func B</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Fe Func B</em>'.
-	 * @see at.bestsolution.efxclipse.formats.svg.svg.SvgFeFuncB
-	 * @generated
-	 */
-	EClass getSvgFeFuncB();
-
-	/**
-	 * Returns the meta object for class '{@link at.bestsolution.efxclipse.formats.svg.svg.SvgFeFuncA <em>Fe Func A</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Fe Func A</em>'.
-	 * @see at.bestsolution.efxclipse.formats.svg.svg.SvgFeFuncA
-	 * @generated
-	 */
-	EClass getSvgFeFuncA();
-
-	/**
-	 * Returns the meta object for class '{@link at.bestsolution.efxclipse.formats.svg.svg.SvgFeComposite <em>Fe Composite</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Fe Composite</em>'.
-	 * @see at.bestsolution.efxclipse.formats.svg.svg.SvgFeComposite
-	 * @generated
-	 */
-	EClass getSvgFeComposite();
-
-	/**
-	 * Returns the meta object for the attribute '{@link at.bestsolution.efxclipse.formats.svg.svg.SvgFeComposite#getClass_ <em>Class</em>}'.
+	 * Returns the meta object for the attribute '{@link at.bestsolution.efxclipse.formats.svg.svg.SvgFeComponentTransferElement#getClass_ <em>Class</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Class</em>'.
-	 * @see at.bestsolution.efxclipse.formats.svg.svg.SvgFeComposite#getClass_()
-	 * @see #getSvgFeComposite()
+	 * @see at.bestsolution.efxclipse.formats.svg.svg.SvgFeComponentTransferElement#getClass_()
+	 * @see #getSvgFeComponentTransferElement()
 	 * @generated
 	 */
-	EAttribute getSvgFeComposite_Class();
+	EAttribute getSvgFeComponentTransferElement_Class();
 
 	/**
-	 * Returns the meta object for the attribute '{@link at.bestsolution.efxclipse.formats.svg.svg.SvgFeComposite#getStyle <em>Style</em>}'.
+	 * Returns the meta object for the attribute '{@link at.bestsolution.efxclipse.formats.svg.svg.SvgFeComponentTransferElement#getStyle <em>Style</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Style</em>'.
-	 * @see at.bestsolution.efxclipse.formats.svg.svg.SvgFeComposite#getStyle()
-	 * @see #getSvgFeComposite()
+	 * @see at.bestsolution.efxclipse.formats.svg.svg.SvgFeComponentTransferElement#getStyle()
+	 * @see #getSvgFeComponentTransferElement()
 	 * @generated
 	 */
-	EAttribute getSvgFeComposite_Style();
+	EAttribute getSvgFeComponentTransferElement_Style();
 
 	/**
-	 * Returns the meta object for the attribute '{@link at.bestsolution.efxclipse.formats.svg.svg.SvgFeComposite#getIn2 <em>In2</em>}'.
+	 * Returns the meta object for class '{@link at.bestsolution.efxclipse.formats.svg.svg.SvgFeFuncRElement <em>Fe Func RElement</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Fe Func RElement</em>'.
+	 * @see at.bestsolution.efxclipse.formats.svg.svg.SvgFeFuncRElement
+	 * @generated
+	 */
+	EClass getSvgFeFuncRElement();
+
+	/**
+	 * Returns the meta object for class '{@link at.bestsolution.efxclipse.formats.svg.svg.SvgFeFuncGElement <em>Fe Func GElement</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Fe Func GElement</em>'.
+	 * @see at.bestsolution.efxclipse.formats.svg.svg.SvgFeFuncGElement
+	 * @generated
+	 */
+	EClass getSvgFeFuncGElement();
+
+	/**
+	 * Returns the meta object for class '{@link at.bestsolution.efxclipse.formats.svg.svg.SvgFeFuncBElement <em>Fe Func BElement</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Fe Func BElement</em>'.
+	 * @see at.bestsolution.efxclipse.formats.svg.svg.SvgFeFuncBElement
+	 * @generated
+	 */
+	EClass getSvgFeFuncBElement();
+
+	/**
+	 * Returns the meta object for class '{@link at.bestsolution.efxclipse.formats.svg.svg.SvgFeFuncAElement <em>Fe Func AElement</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Fe Func AElement</em>'.
+	 * @see at.bestsolution.efxclipse.formats.svg.svg.SvgFeFuncAElement
+	 * @generated
+	 */
+	EClass getSvgFeFuncAElement();
+
+	/**
+	 * Returns the meta object for class '{@link at.bestsolution.efxclipse.formats.svg.svg.SvgFeCompositeElement <em>Fe Composite Element</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Fe Composite Element</em>'.
+	 * @see at.bestsolution.efxclipse.formats.svg.svg.SvgFeCompositeElement
+	 * @generated
+	 */
+	EClass getSvgFeCompositeElement();
+
+	/**
+	 * Returns the meta object for the attribute '{@link at.bestsolution.efxclipse.formats.svg.svg.SvgFeCompositeElement#getClass_ <em>Class</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Class</em>'.
+	 * @see at.bestsolution.efxclipse.formats.svg.svg.SvgFeCompositeElement#getClass_()
+	 * @see #getSvgFeCompositeElement()
+	 * @generated
+	 */
+	EAttribute getSvgFeCompositeElement_Class();
+
+	/**
+	 * Returns the meta object for the attribute '{@link at.bestsolution.efxclipse.formats.svg.svg.SvgFeCompositeElement#getStyle <em>Style</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Style</em>'.
+	 * @see at.bestsolution.efxclipse.formats.svg.svg.SvgFeCompositeElement#getStyle()
+	 * @see #getSvgFeCompositeElement()
+	 * @generated
+	 */
+	EAttribute getSvgFeCompositeElement_Style();
+
+	/**
+	 * Returns the meta object for the attribute '{@link at.bestsolution.efxclipse.formats.svg.svg.SvgFeCompositeElement#getIn2 <em>In2</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>In2</em>'.
-	 * @see at.bestsolution.efxclipse.formats.svg.svg.SvgFeComposite#getIn2()
-	 * @see #getSvgFeComposite()
+	 * @see at.bestsolution.efxclipse.formats.svg.svg.SvgFeCompositeElement#getIn2()
+	 * @see #getSvgFeCompositeElement()
 	 * @generated
 	 */
-	EAttribute getSvgFeComposite_In2();
+	EAttribute getSvgFeCompositeElement_In2();
 
 	/**
-	 * Returns the meta object for the attribute '{@link at.bestsolution.efxclipse.formats.svg.svg.SvgFeComposite#getOperator <em>Operator</em>}'.
+	 * Returns the meta object for the attribute '{@link at.bestsolution.efxclipse.formats.svg.svg.SvgFeCompositeElement#getOperator <em>Operator</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Operator</em>'.
-	 * @see at.bestsolution.efxclipse.formats.svg.svg.SvgFeComposite#getOperator()
-	 * @see #getSvgFeComposite()
+	 * @see at.bestsolution.efxclipse.formats.svg.svg.SvgFeCompositeElement#getOperator()
+	 * @see #getSvgFeCompositeElement()
 	 * @generated
 	 */
-	EAttribute getSvgFeComposite_Operator();
+	EAttribute getSvgFeCompositeElement_Operator();
 
 	/**
-	 * Returns the meta object for the attribute '{@link at.bestsolution.efxclipse.formats.svg.svg.SvgFeComposite#getK1 <em>K1</em>}'.
+	 * Returns the meta object for the attribute '{@link at.bestsolution.efxclipse.formats.svg.svg.SvgFeCompositeElement#getK1 <em>K1</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>K1</em>'.
-	 * @see at.bestsolution.efxclipse.formats.svg.svg.SvgFeComposite#getK1()
-	 * @see #getSvgFeComposite()
+	 * @see at.bestsolution.efxclipse.formats.svg.svg.SvgFeCompositeElement#getK1()
+	 * @see #getSvgFeCompositeElement()
 	 * @generated
 	 */
-	EAttribute getSvgFeComposite_K1();
+	EAttribute getSvgFeCompositeElement_K1();
 
 	/**
-	 * Returns the meta object for the attribute '{@link at.bestsolution.efxclipse.formats.svg.svg.SvgFeComposite#getK2 <em>K2</em>}'.
+	 * Returns the meta object for the attribute '{@link at.bestsolution.efxclipse.formats.svg.svg.SvgFeCompositeElement#getK2 <em>K2</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>K2</em>'.
-	 * @see at.bestsolution.efxclipse.formats.svg.svg.SvgFeComposite#getK2()
-	 * @see #getSvgFeComposite()
+	 * @see at.bestsolution.efxclipse.formats.svg.svg.SvgFeCompositeElement#getK2()
+	 * @see #getSvgFeCompositeElement()
 	 * @generated
 	 */
-	EAttribute getSvgFeComposite_K2();
+	EAttribute getSvgFeCompositeElement_K2();
 
 	/**
-	 * Returns the meta object for the attribute '{@link at.bestsolution.efxclipse.formats.svg.svg.SvgFeComposite#getK3 <em>K3</em>}'.
+	 * Returns the meta object for the attribute '{@link at.bestsolution.efxclipse.formats.svg.svg.SvgFeCompositeElement#getK3 <em>K3</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>K3</em>'.
-	 * @see at.bestsolution.efxclipse.formats.svg.svg.SvgFeComposite#getK3()
-	 * @see #getSvgFeComposite()
+	 * @see at.bestsolution.efxclipse.formats.svg.svg.SvgFeCompositeElement#getK3()
+	 * @see #getSvgFeCompositeElement()
 	 * @generated
 	 */
-	EAttribute getSvgFeComposite_K3();
+	EAttribute getSvgFeCompositeElement_K3();
 
 	/**
-	 * Returns the meta object for the attribute '{@link at.bestsolution.efxclipse.formats.svg.svg.SvgFeComposite#getK4 <em>K4</em>}'.
+	 * Returns the meta object for the attribute '{@link at.bestsolution.efxclipse.formats.svg.svg.SvgFeCompositeElement#getK4 <em>K4</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>K4</em>'.
-	 * @see at.bestsolution.efxclipse.formats.svg.svg.SvgFeComposite#getK4()
-	 * @see #getSvgFeComposite()
+	 * @see at.bestsolution.efxclipse.formats.svg.svg.SvgFeCompositeElement#getK4()
+	 * @see #getSvgFeCompositeElement()
 	 * @generated
 	 */
-	EAttribute getSvgFeComposite_K4();
+	EAttribute getSvgFeCompositeElement_K4();
 
 	/**
-	 * Returns the meta object for class '{@link at.bestsolution.efxclipse.formats.svg.svg.SvgFeConvolveMatrix <em>Fe Convolve Matrix</em>}'.
+	 * Returns the meta object for class '{@link at.bestsolution.efxclipse.formats.svg.svg.SvgFeConvolveMatrixElement <em>Fe Convolve Matrix Element</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Fe Convolve Matrix</em>'.
-	 * @see at.bestsolution.efxclipse.formats.svg.svg.SvgFeConvolveMatrix
+	 * @return the meta object for class '<em>Fe Convolve Matrix Element</em>'.
+	 * @see at.bestsolution.efxclipse.formats.svg.svg.SvgFeConvolveMatrixElement
 	 * @generated
 	 */
-	EClass getSvgFeConvolveMatrix();
+	EClass getSvgFeConvolveMatrixElement();
 
 	/**
-	 * Returns the meta object for the attribute '{@link at.bestsolution.efxclipse.formats.svg.svg.SvgFeConvolveMatrix#getClass_ <em>Class</em>}'.
+	 * Returns the meta object for the attribute '{@link at.bestsolution.efxclipse.formats.svg.svg.SvgFeConvolveMatrixElement#getClass_ <em>Class</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Class</em>'.
-	 * @see at.bestsolution.efxclipse.formats.svg.svg.SvgFeConvolveMatrix#getClass_()
-	 * @see #getSvgFeConvolveMatrix()
+	 * @see at.bestsolution.efxclipse.formats.svg.svg.SvgFeConvolveMatrixElement#getClass_()
+	 * @see #getSvgFeConvolveMatrixElement()
 	 * @generated
 	 */
-	EAttribute getSvgFeConvolveMatrix_Class();
+	EAttribute getSvgFeConvolveMatrixElement_Class();
 
 	/**
-	 * Returns the meta object for the attribute '{@link at.bestsolution.efxclipse.formats.svg.svg.SvgFeConvolveMatrix#getStyle <em>Style</em>}'.
+	 * Returns the meta object for the attribute '{@link at.bestsolution.efxclipse.formats.svg.svg.SvgFeConvolveMatrixElement#getStyle <em>Style</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Style</em>'.
-	 * @see at.bestsolution.efxclipse.formats.svg.svg.SvgFeConvolveMatrix#getStyle()
-	 * @see #getSvgFeConvolveMatrix()
+	 * @see at.bestsolution.efxclipse.formats.svg.svg.SvgFeConvolveMatrixElement#getStyle()
+	 * @see #getSvgFeConvolveMatrixElement()
 	 * @generated
 	 */
-	EAttribute getSvgFeConvolveMatrix_Style();
+	EAttribute getSvgFeConvolveMatrixElement_Style();
 
 	/**
-	 * Returns the meta object for the attribute '{@link at.bestsolution.efxclipse.formats.svg.svg.SvgFeConvolveMatrix#getOrder <em>Order</em>}'.
+	 * Returns the meta object for the attribute '{@link at.bestsolution.efxclipse.formats.svg.svg.SvgFeConvolveMatrixElement#getOrder <em>Order</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Order</em>'.
-	 * @see at.bestsolution.efxclipse.formats.svg.svg.SvgFeConvolveMatrix#getOrder()
-	 * @see #getSvgFeConvolveMatrix()
+	 * @see at.bestsolution.efxclipse.formats.svg.svg.SvgFeConvolveMatrixElement#getOrder()
+	 * @see #getSvgFeConvolveMatrixElement()
 	 * @generated
 	 */
-	EAttribute getSvgFeConvolveMatrix_Order();
+	EAttribute getSvgFeConvolveMatrixElement_Order();
 
 	/**
-	 * Returns the meta object for the attribute '{@link at.bestsolution.efxclipse.formats.svg.svg.SvgFeConvolveMatrix#getKernelMatrix <em>Kernel Matrix</em>}'.
+	 * Returns the meta object for the attribute '{@link at.bestsolution.efxclipse.formats.svg.svg.SvgFeConvolveMatrixElement#getKernelMatrix <em>Kernel Matrix</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Kernel Matrix</em>'.
-	 * @see at.bestsolution.efxclipse.formats.svg.svg.SvgFeConvolveMatrix#getKernelMatrix()
-	 * @see #getSvgFeConvolveMatrix()
+	 * @see at.bestsolution.efxclipse.formats.svg.svg.SvgFeConvolveMatrixElement#getKernelMatrix()
+	 * @see #getSvgFeConvolveMatrixElement()
 	 * @generated
 	 */
-	EAttribute getSvgFeConvolveMatrix_KernelMatrix();
+	EAttribute getSvgFeConvolveMatrixElement_KernelMatrix();
 
 	/**
-	 * Returns the meta object for the attribute '{@link at.bestsolution.efxclipse.formats.svg.svg.SvgFeConvolveMatrix#getDivisor <em>Divisor</em>}'.
+	 * Returns the meta object for the attribute '{@link at.bestsolution.efxclipse.formats.svg.svg.SvgFeConvolveMatrixElement#getDivisor <em>Divisor</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Divisor</em>'.
-	 * @see at.bestsolution.efxclipse.formats.svg.svg.SvgFeConvolveMatrix#getDivisor()
-	 * @see #getSvgFeConvolveMatrix()
+	 * @see at.bestsolution.efxclipse.formats.svg.svg.SvgFeConvolveMatrixElement#getDivisor()
+	 * @see #getSvgFeConvolveMatrixElement()
 	 * @generated
 	 */
-	EAttribute getSvgFeConvolveMatrix_Divisor();
+	EAttribute getSvgFeConvolveMatrixElement_Divisor();
 
 	/**
-	 * Returns the meta object for the attribute '{@link at.bestsolution.efxclipse.formats.svg.svg.SvgFeConvolveMatrix#getBias <em>Bias</em>}'.
+	 * Returns the meta object for the attribute '{@link at.bestsolution.efxclipse.formats.svg.svg.SvgFeConvolveMatrixElement#getBias <em>Bias</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Bias</em>'.
-	 * @see at.bestsolution.efxclipse.formats.svg.svg.SvgFeConvolveMatrix#getBias()
-	 * @see #getSvgFeConvolveMatrix()
+	 * @see at.bestsolution.efxclipse.formats.svg.svg.SvgFeConvolveMatrixElement#getBias()
+	 * @see #getSvgFeConvolveMatrixElement()
 	 * @generated
 	 */
-	EAttribute getSvgFeConvolveMatrix_Bias();
+	EAttribute getSvgFeConvolveMatrixElement_Bias();
 
 	/**
-	 * Returns the meta object for the attribute '{@link at.bestsolution.efxclipse.formats.svg.svg.SvgFeConvolveMatrix#getTargetX <em>Target X</em>}'.
+	 * Returns the meta object for the attribute '{@link at.bestsolution.efxclipse.formats.svg.svg.SvgFeConvolveMatrixElement#getTargetX <em>Target X</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Target X</em>'.
-	 * @see at.bestsolution.efxclipse.formats.svg.svg.SvgFeConvolveMatrix#getTargetX()
-	 * @see #getSvgFeConvolveMatrix()
+	 * @see at.bestsolution.efxclipse.formats.svg.svg.SvgFeConvolveMatrixElement#getTargetX()
+	 * @see #getSvgFeConvolveMatrixElement()
 	 * @generated
 	 */
-	EAttribute getSvgFeConvolveMatrix_TargetX();
+	EAttribute getSvgFeConvolveMatrixElement_TargetX();
 
 	/**
-	 * Returns the meta object for the attribute '{@link at.bestsolution.efxclipse.formats.svg.svg.SvgFeConvolveMatrix#getTargetY <em>Target Y</em>}'.
+	 * Returns the meta object for the attribute '{@link at.bestsolution.efxclipse.formats.svg.svg.SvgFeConvolveMatrixElement#getTargetY <em>Target Y</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Target Y</em>'.
-	 * @see at.bestsolution.efxclipse.formats.svg.svg.SvgFeConvolveMatrix#getTargetY()
-	 * @see #getSvgFeConvolveMatrix()
+	 * @see at.bestsolution.efxclipse.formats.svg.svg.SvgFeConvolveMatrixElement#getTargetY()
+	 * @see #getSvgFeConvolveMatrixElement()
 	 * @generated
 	 */
-	EAttribute getSvgFeConvolveMatrix_TargetY();
+	EAttribute getSvgFeConvolveMatrixElement_TargetY();
 
 	/**
-	 * Returns the meta object for the attribute '{@link at.bestsolution.efxclipse.formats.svg.svg.SvgFeConvolveMatrix#getEdgeMode <em>Edge Mode</em>}'.
+	 * Returns the meta object for the attribute '{@link at.bestsolution.efxclipse.formats.svg.svg.SvgFeConvolveMatrixElement#getEdgeMode <em>Edge Mode</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Edge Mode</em>'.
-	 * @see at.bestsolution.efxclipse.formats.svg.svg.SvgFeConvolveMatrix#getEdgeMode()
-	 * @see #getSvgFeConvolveMatrix()
+	 * @see at.bestsolution.efxclipse.formats.svg.svg.SvgFeConvolveMatrixElement#getEdgeMode()
+	 * @see #getSvgFeConvolveMatrixElement()
 	 * @generated
 	 */
-	EAttribute getSvgFeConvolveMatrix_EdgeMode();
+	EAttribute getSvgFeConvolveMatrixElement_EdgeMode();
 
 	/**
-	 * Returns the meta object for the attribute '{@link at.bestsolution.efxclipse.formats.svg.svg.SvgFeConvolveMatrix#getKernelUnitLength <em>Kernel Unit Length</em>}'.
+	 * Returns the meta object for the attribute '{@link at.bestsolution.efxclipse.formats.svg.svg.SvgFeConvolveMatrixElement#getKernelUnitLength <em>Kernel Unit Length</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Kernel Unit Length</em>'.
-	 * @see at.bestsolution.efxclipse.formats.svg.svg.SvgFeConvolveMatrix#getKernelUnitLength()
-	 * @see #getSvgFeConvolveMatrix()
+	 * @see at.bestsolution.efxclipse.formats.svg.svg.SvgFeConvolveMatrixElement#getKernelUnitLength()
+	 * @see #getSvgFeConvolveMatrixElement()
 	 * @generated
 	 */
-	EAttribute getSvgFeConvolveMatrix_KernelUnitLength();
+	EAttribute getSvgFeConvolveMatrixElement_KernelUnitLength();
 
 	/**
-	 * Returns the meta object for the attribute '{@link at.bestsolution.efxclipse.formats.svg.svg.SvgFeConvolveMatrix#isPreserveAlpha <em>Preserve Alpha</em>}'.
+	 * Returns the meta object for the attribute '{@link at.bestsolution.efxclipse.formats.svg.svg.SvgFeConvolveMatrixElement#isPreserveAlpha <em>Preserve Alpha</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Preserve Alpha</em>'.
-	 * @see at.bestsolution.efxclipse.formats.svg.svg.SvgFeConvolveMatrix#isPreserveAlpha()
-	 * @see #getSvgFeConvolveMatrix()
+	 * @see at.bestsolution.efxclipse.formats.svg.svg.SvgFeConvolveMatrixElement#isPreserveAlpha()
+	 * @see #getSvgFeConvolveMatrixElement()
 	 * @generated
 	 */
-	EAttribute getSvgFeConvolveMatrix_PreserveAlpha();
+	EAttribute getSvgFeConvolveMatrixElement_PreserveAlpha();
 
 	/**
-	 * Returns the meta object for class '{@link at.bestsolution.efxclipse.formats.svg.svg.SvgFeDiffuseLighting <em>Fe Diffuse Lighting</em>}'.
+	 * Returns the meta object for class '{@link at.bestsolution.efxclipse.formats.svg.svg.SvgFeDiffuseLightingElement <em>Fe Diffuse Lighting Element</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Fe Diffuse Lighting</em>'.
-	 * @see at.bestsolution.efxclipse.formats.svg.svg.SvgFeDiffuseLighting
+	 * @return the meta object for class '<em>Fe Diffuse Lighting Element</em>'.
+	 * @see at.bestsolution.efxclipse.formats.svg.svg.SvgFeDiffuseLightingElement
 	 * @generated
 	 */
-	EClass getSvgFeDiffuseLighting();
+	EClass getSvgFeDiffuseLightingElement();
 
 	/**
-	 * Returns the meta object for the attribute '{@link at.bestsolution.efxclipse.formats.svg.svg.SvgFeDiffuseLighting#getClass_ <em>Class</em>}'.
+	 * Returns the meta object for the attribute '{@link at.bestsolution.efxclipse.formats.svg.svg.SvgFeDiffuseLightingElement#getClass_ <em>Class</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Class</em>'.
-	 * @see at.bestsolution.efxclipse.formats.svg.svg.SvgFeDiffuseLighting#getClass_()
-	 * @see #getSvgFeDiffuseLighting()
+	 * @see at.bestsolution.efxclipse.formats.svg.svg.SvgFeDiffuseLightingElement#getClass_()
+	 * @see #getSvgFeDiffuseLightingElement()
 	 * @generated
 	 */
-	EAttribute getSvgFeDiffuseLighting_Class();
+	EAttribute getSvgFeDiffuseLightingElement_Class();
 
 	/**
-	 * Returns the meta object for the attribute '{@link at.bestsolution.efxclipse.formats.svg.svg.SvgFeDiffuseLighting#getStyle <em>Style</em>}'.
+	 * Returns the meta object for the attribute '{@link at.bestsolution.efxclipse.formats.svg.svg.SvgFeDiffuseLightingElement#getStyle <em>Style</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Style</em>'.
-	 * @see at.bestsolution.efxclipse.formats.svg.svg.SvgFeDiffuseLighting#getStyle()
-	 * @see #getSvgFeDiffuseLighting()
+	 * @see at.bestsolution.efxclipse.formats.svg.svg.SvgFeDiffuseLightingElement#getStyle()
+	 * @see #getSvgFeDiffuseLightingElement()
 	 * @generated
 	 */
-	EAttribute getSvgFeDiffuseLighting_Style();
+	EAttribute getSvgFeDiffuseLightingElement_Style();
 
 	/**
-	 * Returns the meta object for the attribute '{@link at.bestsolution.efxclipse.formats.svg.svg.SvgFeDiffuseLighting#getSurfaceScale <em>Surface Scale</em>}'.
+	 * Returns the meta object for the attribute '{@link at.bestsolution.efxclipse.formats.svg.svg.SvgFeDiffuseLightingElement#getSurfaceScale <em>Surface Scale</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Surface Scale</em>'.
-	 * @see at.bestsolution.efxclipse.formats.svg.svg.SvgFeDiffuseLighting#getSurfaceScale()
-	 * @see #getSvgFeDiffuseLighting()
+	 * @see at.bestsolution.efxclipse.formats.svg.svg.SvgFeDiffuseLightingElement#getSurfaceScale()
+	 * @see #getSvgFeDiffuseLightingElement()
 	 * @generated
 	 */
-	EAttribute getSvgFeDiffuseLighting_SurfaceScale();
+	EAttribute getSvgFeDiffuseLightingElement_SurfaceScale();
 
 	/**
-	 * Returns the meta object for the attribute '{@link at.bestsolution.efxclipse.formats.svg.svg.SvgFeDiffuseLighting#getDiffuseConstant <em>Diffuse Constant</em>}'.
+	 * Returns the meta object for the attribute '{@link at.bestsolution.efxclipse.formats.svg.svg.SvgFeDiffuseLightingElement#getDiffuseConstant <em>Diffuse Constant</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Diffuse Constant</em>'.
-	 * @see at.bestsolution.efxclipse.formats.svg.svg.SvgFeDiffuseLighting#getDiffuseConstant()
-	 * @see #getSvgFeDiffuseLighting()
+	 * @see at.bestsolution.efxclipse.formats.svg.svg.SvgFeDiffuseLightingElement#getDiffuseConstant()
+	 * @see #getSvgFeDiffuseLightingElement()
 	 * @generated
 	 */
-	EAttribute getSvgFeDiffuseLighting_DiffuseConstant();
+	EAttribute getSvgFeDiffuseLightingElement_DiffuseConstant();
 
 	/**
-	 * Returns the meta object for the attribute '{@link at.bestsolution.efxclipse.formats.svg.svg.SvgFeDiffuseLighting#getKernelUnitLength <em>Kernel Unit Length</em>}'.
+	 * Returns the meta object for the attribute '{@link at.bestsolution.efxclipse.formats.svg.svg.SvgFeDiffuseLightingElement#getKernelUnitLength <em>Kernel Unit Length</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Kernel Unit Length</em>'.
-	 * @see at.bestsolution.efxclipse.formats.svg.svg.SvgFeDiffuseLighting#getKernelUnitLength()
-	 * @see #getSvgFeDiffuseLighting()
+	 * @see at.bestsolution.efxclipse.formats.svg.svg.SvgFeDiffuseLightingElement#getKernelUnitLength()
+	 * @see #getSvgFeDiffuseLightingElement()
 	 * @generated
 	 */
-	EAttribute getSvgFeDiffuseLighting_KernelUnitLength();
+	EAttribute getSvgFeDiffuseLightingElement_KernelUnitLength();
 
 	/**
-	 * Returns the meta object for class '{@link at.bestsolution.efxclipse.formats.svg.svg.SvgFeDisplacementMap <em>Fe Displacement Map</em>}'.
+	 * Returns the meta object for class '{@link at.bestsolution.efxclipse.formats.svg.svg.SvgFeDisplacementMapElement <em>Fe Displacement Map Element</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Fe Displacement Map</em>'.
-	 * @see at.bestsolution.efxclipse.formats.svg.svg.SvgFeDisplacementMap
+	 * @return the meta object for class '<em>Fe Displacement Map Element</em>'.
+	 * @see at.bestsolution.efxclipse.formats.svg.svg.SvgFeDisplacementMapElement
 	 * @generated
 	 */
-	EClass getSvgFeDisplacementMap();
+	EClass getSvgFeDisplacementMapElement();
 
 	/**
-	 * Returns the meta object for the attribute '{@link at.bestsolution.efxclipse.formats.svg.svg.SvgFeDisplacementMap#getClass_ <em>Class</em>}'.
+	 * Returns the meta object for the attribute '{@link at.bestsolution.efxclipse.formats.svg.svg.SvgFeDisplacementMapElement#getClass_ <em>Class</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Class</em>'.
-	 * @see at.bestsolution.efxclipse.formats.svg.svg.SvgFeDisplacementMap#getClass_()
-	 * @see #getSvgFeDisplacementMap()
+	 * @see at.bestsolution.efxclipse.formats.svg.svg.SvgFeDisplacementMapElement#getClass_()
+	 * @see #getSvgFeDisplacementMapElement()
 	 * @generated
 	 */
-	EAttribute getSvgFeDisplacementMap_Class();
+	EAttribute getSvgFeDisplacementMapElement_Class();
 
 	/**
-	 * Returns the meta object for the attribute '{@link at.bestsolution.efxclipse.formats.svg.svg.SvgFeDisplacementMap#getStyle <em>Style</em>}'.
+	 * Returns the meta object for the attribute '{@link at.bestsolution.efxclipse.formats.svg.svg.SvgFeDisplacementMapElement#getStyle <em>Style</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Style</em>'.
-	 * @see at.bestsolution.efxclipse.formats.svg.svg.SvgFeDisplacementMap#getStyle()
-	 * @see #getSvgFeDisplacementMap()
+	 * @see at.bestsolution.efxclipse.formats.svg.svg.SvgFeDisplacementMapElement#getStyle()
+	 * @see #getSvgFeDisplacementMapElement()
 	 * @generated
 	 */
-	EAttribute getSvgFeDisplacementMap_Style();
+	EAttribute getSvgFeDisplacementMapElement_Style();
 
 	/**
-	 * Returns the meta object for the attribute '{@link at.bestsolution.efxclipse.formats.svg.svg.SvgFeDisplacementMap#getIn2 <em>In2</em>}'.
+	 * Returns the meta object for the attribute '{@link at.bestsolution.efxclipse.formats.svg.svg.SvgFeDisplacementMapElement#getIn2 <em>In2</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>In2</em>'.
-	 * @see at.bestsolution.efxclipse.formats.svg.svg.SvgFeDisplacementMap#getIn2()
-	 * @see #getSvgFeDisplacementMap()
+	 * @see at.bestsolution.efxclipse.formats.svg.svg.SvgFeDisplacementMapElement#getIn2()
+	 * @see #getSvgFeDisplacementMapElement()
 	 * @generated
 	 */
-	EAttribute getSvgFeDisplacementMap_In2();
+	EAttribute getSvgFeDisplacementMapElement_In2();
 
 	/**
-	 * Returns the meta object for the attribute '{@link at.bestsolution.efxclipse.formats.svg.svg.SvgFeDisplacementMap#getScale <em>Scale</em>}'.
+	 * Returns the meta object for the attribute '{@link at.bestsolution.efxclipse.formats.svg.svg.SvgFeDisplacementMapElement#getScale <em>Scale</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Scale</em>'.
-	 * @see at.bestsolution.efxclipse.formats.svg.svg.SvgFeDisplacementMap#getScale()
-	 * @see #getSvgFeDisplacementMap()
+	 * @see at.bestsolution.efxclipse.formats.svg.svg.SvgFeDisplacementMapElement#getScale()
+	 * @see #getSvgFeDisplacementMapElement()
 	 * @generated
 	 */
-	EAttribute getSvgFeDisplacementMap_Scale();
+	EAttribute getSvgFeDisplacementMapElement_Scale();
 
 	/**
-	 * Returns the meta object for the attribute '{@link at.bestsolution.efxclipse.formats.svg.svg.SvgFeDisplacementMap#getXChannelSelector <em>XChannel Selector</em>}'.
+	 * Returns the meta object for the attribute '{@link at.bestsolution.efxclipse.formats.svg.svg.SvgFeDisplacementMapElement#getXChannelSelector <em>XChannel Selector</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>XChannel Selector</em>'.
-	 * @see at.bestsolution.efxclipse.formats.svg.svg.SvgFeDisplacementMap#getXChannelSelector()
-	 * @see #getSvgFeDisplacementMap()
+	 * @see at.bestsolution.efxclipse.formats.svg.svg.SvgFeDisplacementMapElement#getXChannelSelector()
+	 * @see #getSvgFeDisplacementMapElement()
 	 * @generated
 	 */
-	EAttribute getSvgFeDisplacementMap_XChannelSelector();
+	EAttribute getSvgFeDisplacementMapElement_XChannelSelector();
 
 	/**
-	 * Returns the meta object for the attribute '{@link at.bestsolution.efxclipse.formats.svg.svg.SvgFeDisplacementMap#getYChannelSelector <em>YChannel Selector</em>}'.
+	 * Returns the meta object for the attribute '{@link at.bestsolution.efxclipse.formats.svg.svg.SvgFeDisplacementMapElement#getYChannelSelector <em>YChannel Selector</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>YChannel Selector</em>'.
-	 * @see at.bestsolution.efxclipse.formats.svg.svg.SvgFeDisplacementMap#getYChannelSelector()
-	 * @see #getSvgFeDisplacementMap()
+	 * @see at.bestsolution.efxclipse.formats.svg.svg.SvgFeDisplacementMapElement#getYChannelSelector()
+	 * @see #getSvgFeDisplacementMapElement()
 	 * @generated
 	 */
-	EAttribute getSvgFeDisplacementMap_YChannelSelector();
+	EAttribute getSvgFeDisplacementMapElement_YChannelSelector();
 
 	/**
-	 * Returns the meta object for class '{@link at.bestsolution.efxclipse.formats.svg.svg.SvgFeFlood <em>Fe Flood</em>}'.
+	 * Returns the meta object for class '{@link at.bestsolution.efxclipse.formats.svg.svg.SvgFeFloodElement <em>Fe Flood Element</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Fe Flood</em>'.
-	 * @see at.bestsolution.efxclipse.formats.svg.svg.SvgFeFlood
+	 * @return the meta object for class '<em>Fe Flood Element</em>'.
+	 * @see at.bestsolution.efxclipse.formats.svg.svg.SvgFeFloodElement
 	 * @generated
 	 */
-	EClass getSvgFeFlood();
+	EClass getSvgFeFloodElement();
 
 	/**
-	 * Returns the meta object for the attribute '{@link at.bestsolution.efxclipse.formats.svg.svg.SvgFeFlood#getClass_ <em>Class</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Class</em>'.
-	 * @see at.bestsolution.efxclipse.formats.svg.svg.SvgFeFlood#getClass_()
-	 * @see #getSvgFeFlood()
-	 * @generated
-	 */
-	EAttribute getSvgFeFlood_Class();
-
-	/**
-	 * Returns the meta object for the attribute '{@link at.bestsolution.efxclipse.formats.svg.svg.SvgFeFlood#getStyle <em>Style</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Style</em>'.
-	 * @see at.bestsolution.efxclipse.formats.svg.svg.SvgFeFlood#getStyle()
-	 * @see #getSvgFeFlood()
-	 * @generated
-	 */
-	EAttribute getSvgFeFlood_Style();
-
-	/**
-	 * Returns the meta object for class '{@link at.bestsolution.efxclipse.formats.svg.svg.SvgFeGaussianBlur <em>Fe Gaussian Blur</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Fe Gaussian Blur</em>'.
-	 * @see at.bestsolution.efxclipse.formats.svg.svg.SvgFeGaussianBlur
-	 * @generated
-	 */
-	EClass getSvgFeGaussianBlur();
-
-	/**
-	 * Returns the meta object for the attribute '{@link at.bestsolution.efxclipse.formats.svg.svg.SvgFeGaussianBlur#getClass_ <em>Class</em>}'.
+	 * Returns the meta object for the attribute '{@link at.bestsolution.efxclipse.formats.svg.svg.SvgFeFloodElement#getClass_ <em>Class</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Class</em>'.
-	 * @see at.bestsolution.efxclipse.formats.svg.svg.SvgFeGaussianBlur#getClass_()
-	 * @see #getSvgFeGaussianBlur()
+	 * @see at.bestsolution.efxclipse.formats.svg.svg.SvgFeFloodElement#getClass_()
+	 * @see #getSvgFeFloodElement()
 	 * @generated
 	 */
-	EAttribute getSvgFeGaussianBlur_Class();
+	EAttribute getSvgFeFloodElement_Class();
 
 	/**
-	 * Returns the meta object for the attribute '{@link at.bestsolution.efxclipse.formats.svg.svg.SvgFeGaussianBlur#getStyle <em>Style</em>}'.
+	 * Returns the meta object for the attribute '{@link at.bestsolution.efxclipse.formats.svg.svg.SvgFeFloodElement#getStyle <em>Style</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Style</em>'.
-	 * @see at.bestsolution.efxclipse.formats.svg.svg.SvgFeGaussianBlur#getStyle()
-	 * @see #getSvgFeGaussianBlur()
+	 * @see at.bestsolution.efxclipse.formats.svg.svg.SvgFeFloodElement#getStyle()
+	 * @see #getSvgFeFloodElement()
 	 * @generated
 	 */
-	EAttribute getSvgFeGaussianBlur_Style();
+	EAttribute getSvgFeFloodElement_Style();
 
 	/**
-	 * Returns the meta object for the attribute '{@link at.bestsolution.efxclipse.formats.svg.svg.SvgFeGaussianBlur#getStdDeviation <em>Std Deviation</em>}'.
+	 * Returns the meta object for class '{@link at.bestsolution.efxclipse.formats.svg.svg.SvgFeGaussianBlurElement <em>Fe Gaussian Blur Element</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Fe Gaussian Blur Element</em>'.
+	 * @see at.bestsolution.efxclipse.formats.svg.svg.SvgFeGaussianBlurElement
+	 * @generated
+	 */
+	EClass getSvgFeGaussianBlurElement();
+
+	/**
+	 * Returns the meta object for the attribute '{@link at.bestsolution.efxclipse.formats.svg.svg.SvgFeGaussianBlurElement#getClass_ <em>Class</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Class</em>'.
+	 * @see at.bestsolution.efxclipse.formats.svg.svg.SvgFeGaussianBlurElement#getClass_()
+	 * @see #getSvgFeGaussianBlurElement()
+	 * @generated
+	 */
+	EAttribute getSvgFeGaussianBlurElement_Class();
+
+	/**
+	 * Returns the meta object for the attribute '{@link at.bestsolution.efxclipse.formats.svg.svg.SvgFeGaussianBlurElement#getStyle <em>Style</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Style</em>'.
+	 * @see at.bestsolution.efxclipse.formats.svg.svg.SvgFeGaussianBlurElement#getStyle()
+	 * @see #getSvgFeGaussianBlurElement()
+	 * @generated
+	 */
+	EAttribute getSvgFeGaussianBlurElement_Style();
+
+	/**
+	 * Returns the meta object for the attribute '{@link at.bestsolution.efxclipse.formats.svg.svg.SvgFeGaussianBlurElement#getStdDeviation <em>Std Deviation</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Std Deviation</em>'.
-	 * @see at.bestsolution.efxclipse.formats.svg.svg.SvgFeGaussianBlur#getStdDeviation()
-	 * @see #getSvgFeGaussianBlur()
+	 * @see at.bestsolution.efxclipse.formats.svg.svg.SvgFeGaussianBlurElement#getStdDeviation()
+	 * @see #getSvgFeGaussianBlurElement()
 	 * @generated
 	 */
-	EAttribute getSvgFeGaussianBlur_StdDeviation();
+	EAttribute getSvgFeGaussianBlurElement_StdDeviation();
 
 	/**
-	 * Returns the meta object for class '{@link at.bestsolution.efxclipse.formats.svg.svg.SvgFeImage <em>Fe Image</em>}'.
+	 * Returns the meta object for class '{@link at.bestsolution.efxclipse.formats.svg.svg.SvgFeImageElement <em>Fe Image Element</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Fe Image</em>'.
-	 * @see at.bestsolution.efxclipse.formats.svg.svg.SvgFeImage
+	 * @return the meta object for class '<em>Fe Image Element</em>'.
+	 * @see at.bestsolution.efxclipse.formats.svg.svg.SvgFeImageElement
 	 * @generated
 	 */
-	EClass getSvgFeImage();
+	EClass getSvgFeImageElement();
 
 	/**
-	 * Returns the meta object for the attribute '{@link at.bestsolution.efxclipse.formats.svg.svg.SvgFeImage#getClass_ <em>Class</em>}'.
+	 * Returns the meta object for the attribute '{@link at.bestsolution.efxclipse.formats.svg.svg.SvgFeImageElement#getClass_ <em>Class</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Class</em>'.
-	 * @see at.bestsolution.efxclipse.formats.svg.svg.SvgFeImage#getClass_()
-	 * @see #getSvgFeImage()
+	 * @see at.bestsolution.efxclipse.formats.svg.svg.SvgFeImageElement#getClass_()
+	 * @see #getSvgFeImageElement()
 	 * @generated
 	 */
-	EAttribute getSvgFeImage_Class();
+	EAttribute getSvgFeImageElement_Class();
 
 	/**
-	 * Returns the meta object for the attribute '{@link at.bestsolution.efxclipse.formats.svg.svg.SvgFeImage#getStyle <em>Style</em>}'.
+	 * Returns the meta object for the attribute '{@link at.bestsolution.efxclipse.formats.svg.svg.SvgFeImageElement#getStyle <em>Style</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Style</em>'.
-	 * @see at.bestsolution.efxclipse.formats.svg.svg.SvgFeImage#getStyle()
-	 * @see #getSvgFeImage()
+	 * @see at.bestsolution.efxclipse.formats.svg.svg.SvgFeImageElement#getStyle()
+	 * @see #getSvgFeImageElement()
 	 * @generated
 	 */
-	EAttribute getSvgFeImage_Style();
+	EAttribute getSvgFeImageElement_Style();
 
 	/**
-	 * Returns the meta object for the attribute '{@link at.bestsolution.efxclipse.formats.svg.svg.SvgFeImage#getExternalResourcesRequired <em>External Resources Required</em>}'.
+	 * Returns the meta object for the attribute '{@link at.bestsolution.efxclipse.formats.svg.svg.SvgFeImageElement#getExternalResourcesRequired <em>External Resources Required</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>External Resources Required</em>'.
-	 * @see at.bestsolution.efxclipse.formats.svg.svg.SvgFeImage#getExternalResourcesRequired()
-	 * @see #getSvgFeImage()
+	 * @see at.bestsolution.efxclipse.formats.svg.svg.SvgFeImageElement#getExternalResourcesRequired()
+	 * @see #getSvgFeImageElement()
 	 * @generated
 	 */
-	EAttribute getSvgFeImage_ExternalResourcesRequired();
+	EAttribute getSvgFeImageElement_ExternalResourcesRequired();
 
 	/**
-	 * Returns the meta object for the attribute '{@link at.bestsolution.efxclipse.formats.svg.svg.SvgFeImage#getPreserveAspectRatio <em>Preserve Aspect Ratio</em>}'.
+	 * Returns the meta object for the attribute '{@link at.bestsolution.efxclipse.formats.svg.svg.SvgFeImageElement#getPreserveAspectRatio <em>Preserve Aspect Ratio</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Preserve Aspect Ratio</em>'.
-	 * @see at.bestsolution.efxclipse.formats.svg.svg.SvgFeImage#getPreserveAspectRatio()
-	 * @see #getSvgFeImage()
+	 * @see at.bestsolution.efxclipse.formats.svg.svg.SvgFeImageElement#getPreserveAspectRatio()
+	 * @see #getSvgFeImageElement()
 	 * @generated
 	 */
-	EAttribute getSvgFeImage_PreserveAspectRatio();
+	EAttribute getSvgFeImageElement_PreserveAspectRatio();
 
 	/**
-	 * Returns the meta object for class '{@link at.bestsolution.efxclipse.formats.svg.svg.SvgFeMerge <em>Fe Merge</em>}'.
+	 * Returns the meta object for class '{@link at.bestsolution.efxclipse.formats.svg.svg.SvgFeMergeElement <em>Fe Merge Element</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Fe Merge</em>'.
-	 * @see at.bestsolution.efxclipse.formats.svg.svg.SvgFeMerge
+	 * @return the meta object for class '<em>Fe Merge Element</em>'.
+	 * @see at.bestsolution.efxclipse.formats.svg.svg.SvgFeMergeElement
 	 * @generated
 	 */
-	EClass getSvgFeMerge();
+	EClass getSvgFeMergeElement();
 
 	/**
-	 * Returns the meta object for the attribute '{@link at.bestsolution.efxclipse.formats.svg.svg.SvgFeMerge#getClass_ <em>Class</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Class</em>'.
-	 * @see at.bestsolution.efxclipse.formats.svg.svg.SvgFeMerge#getClass_()
-	 * @see #getSvgFeMerge()
-	 * @generated
-	 */
-	EAttribute getSvgFeMerge_Class();
-
-	/**
-	 * Returns the meta object for the attribute '{@link at.bestsolution.efxclipse.formats.svg.svg.SvgFeMerge#getStyle <em>Style</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Style</em>'.
-	 * @see at.bestsolution.efxclipse.formats.svg.svg.SvgFeMerge#getStyle()
-	 * @see #getSvgFeMerge()
-	 * @generated
-	 */
-	EAttribute getSvgFeMerge_Style();
-
-	/**
-	 * Returns the meta object for class '{@link at.bestsolution.efxclipse.formats.svg.svg.SvgFeMergeNode <em>Fe Merge Node</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Fe Merge Node</em>'.
-	 * @see at.bestsolution.efxclipse.formats.svg.svg.SvgFeMergeNode
-	 * @generated
-	 */
-	EClass getSvgFeMergeNode();
-
-	/**
-	 * Returns the meta object for class '{@link at.bestsolution.efxclipse.formats.svg.svg.SvgFeMorphology <em>Fe Morphology</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Fe Morphology</em>'.
-	 * @see at.bestsolution.efxclipse.formats.svg.svg.SvgFeMorphology
-	 * @generated
-	 */
-	EClass getSvgFeMorphology();
-
-	/**
-	 * Returns the meta object for the attribute '{@link at.bestsolution.efxclipse.formats.svg.svg.SvgFeMorphology#getClass_ <em>Class</em>}'.
+	 * Returns the meta object for the attribute '{@link at.bestsolution.efxclipse.formats.svg.svg.SvgFeMergeElement#getClass_ <em>Class</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Class</em>'.
-	 * @see at.bestsolution.efxclipse.formats.svg.svg.SvgFeMorphology#getClass_()
-	 * @see #getSvgFeMorphology()
+	 * @see at.bestsolution.efxclipse.formats.svg.svg.SvgFeMergeElement#getClass_()
+	 * @see #getSvgFeMergeElement()
 	 * @generated
 	 */
-	EAttribute getSvgFeMorphology_Class();
+	EAttribute getSvgFeMergeElement_Class();
 
 	/**
-	 * Returns the meta object for the attribute '{@link at.bestsolution.efxclipse.formats.svg.svg.SvgFeMorphology#getStyle <em>Style</em>}'.
+	 * Returns the meta object for the attribute '{@link at.bestsolution.efxclipse.formats.svg.svg.SvgFeMergeElement#getStyle <em>Style</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Style</em>'.
-	 * @see at.bestsolution.efxclipse.formats.svg.svg.SvgFeMorphology#getStyle()
-	 * @see #getSvgFeMorphology()
+	 * @see at.bestsolution.efxclipse.formats.svg.svg.SvgFeMergeElement#getStyle()
+	 * @see #getSvgFeMergeElement()
 	 * @generated
 	 */
-	EAttribute getSvgFeMorphology_Style();
+	EAttribute getSvgFeMergeElement_Style();
 
 	/**
-	 * Returns the meta object for the attribute '{@link at.bestsolution.efxclipse.formats.svg.svg.SvgFeMorphology#getOperator <em>Operator</em>}'.
+	 * Returns the meta object for class '{@link at.bestsolution.efxclipse.formats.svg.svg.SvgFeMergeNodeElement <em>Fe Merge Node Element</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Fe Merge Node Element</em>'.
+	 * @see at.bestsolution.efxclipse.formats.svg.svg.SvgFeMergeNodeElement
+	 * @generated
+	 */
+	EClass getSvgFeMergeNodeElement();
+
+	/**
+	 * Returns the meta object for class '{@link at.bestsolution.efxclipse.formats.svg.svg.SvgFeMorphologyElement <em>Fe Morphology Element</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Fe Morphology Element</em>'.
+	 * @see at.bestsolution.efxclipse.formats.svg.svg.SvgFeMorphologyElement
+	 * @generated
+	 */
+	EClass getSvgFeMorphologyElement();
+
+	/**
+	 * Returns the meta object for the attribute '{@link at.bestsolution.efxclipse.formats.svg.svg.SvgFeMorphologyElement#getClass_ <em>Class</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Class</em>'.
+	 * @see at.bestsolution.efxclipse.formats.svg.svg.SvgFeMorphologyElement#getClass_()
+	 * @see #getSvgFeMorphologyElement()
+	 * @generated
+	 */
+	EAttribute getSvgFeMorphologyElement_Class();
+
+	/**
+	 * Returns the meta object for the attribute '{@link at.bestsolution.efxclipse.formats.svg.svg.SvgFeMorphologyElement#getStyle <em>Style</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Style</em>'.
+	 * @see at.bestsolution.efxclipse.formats.svg.svg.SvgFeMorphologyElement#getStyle()
+	 * @see #getSvgFeMorphologyElement()
+	 * @generated
+	 */
+	EAttribute getSvgFeMorphologyElement_Style();
+
+	/**
+	 * Returns the meta object for the attribute '{@link at.bestsolution.efxclipse.formats.svg.svg.SvgFeMorphologyElement#getOperator <em>Operator</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Operator</em>'.
-	 * @see at.bestsolution.efxclipse.formats.svg.svg.SvgFeMorphology#getOperator()
-	 * @see #getSvgFeMorphology()
+	 * @see at.bestsolution.efxclipse.formats.svg.svg.SvgFeMorphologyElement#getOperator()
+	 * @see #getSvgFeMorphologyElement()
 	 * @generated
 	 */
-	EAttribute getSvgFeMorphology_Operator();
+	EAttribute getSvgFeMorphologyElement_Operator();
 
 	/**
-	 * Returns the meta object for the attribute '{@link at.bestsolution.efxclipse.formats.svg.svg.SvgFeMorphology#getRadius <em>Radius</em>}'.
+	 * Returns the meta object for the attribute '{@link at.bestsolution.efxclipse.formats.svg.svg.SvgFeMorphologyElement#getRadius <em>Radius</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Radius</em>'.
-	 * @see at.bestsolution.efxclipse.formats.svg.svg.SvgFeMorphology#getRadius()
-	 * @see #getSvgFeMorphology()
+	 * @see at.bestsolution.efxclipse.formats.svg.svg.SvgFeMorphologyElement#getRadius()
+	 * @see #getSvgFeMorphologyElement()
 	 * @generated
 	 */
-	EAttribute getSvgFeMorphology_Radius();
+	EAttribute getSvgFeMorphologyElement_Radius();
 
 	/**
-	 * Returns the meta object for class '{@link at.bestsolution.efxclipse.formats.svg.svg.SvgFeOffset <em>Fe Offset</em>}'.
+	 * Returns the meta object for class '{@link at.bestsolution.efxclipse.formats.svg.svg.SvgFeOffsetElement <em>Fe Offset Element</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Fe Offset</em>'.
-	 * @see at.bestsolution.efxclipse.formats.svg.svg.SvgFeOffset
+	 * @return the meta object for class '<em>Fe Offset Element</em>'.
+	 * @see at.bestsolution.efxclipse.formats.svg.svg.SvgFeOffsetElement
 	 * @generated
 	 */
-	EClass getSvgFeOffset();
+	EClass getSvgFeOffsetElement();
 
 	/**
-	 * Returns the meta object for the attribute '{@link at.bestsolution.efxclipse.formats.svg.svg.SvgFeOffset#getClass_ <em>Class</em>}'.
+	 * Returns the meta object for the attribute '{@link at.bestsolution.efxclipse.formats.svg.svg.SvgFeOffsetElement#getClass_ <em>Class</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Class</em>'.
-	 * @see at.bestsolution.efxclipse.formats.svg.svg.SvgFeOffset#getClass_()
-	 * @see #getSvgFeOffset()
+	 * @see at.bestsolution.efxclipse.formats.svg.svg.SvgFeOffsetElement#getClass_()
+	 * @see #getSvgFeOffsetElement()
 	 * @generated
 	 */
-	EAttribute getSvgFeOffset_Class();
+	EAttribute getSvgFeOffsetElement_Class();
 
 	/**
-	 * Returns the meta object for the attribute '{@link at.bestsolution.efxclipse.formats.svg.svg.SvgFeOffset#getStyle <em>Style</em>}'.
+	 * Returns the meta object for the attribute '{@link at.bestsolution.efxclipse.formats.svg.svg.SvgFeOffsetElement#getStyle <em>Style</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Style</em>'.
-	 * @see at.bestsolution.efxclipse.formats.svg.svg.SvgFeOffset#getStyle()
-	 * @see #getSvgFeOffset()
+	 * @see at.bestsolution.efxclipse.formats.svg.svg.SvgFeOffsetElement#getStyle()
+	 * @see #getSvgFeOffsetElement()
 	 * @generated
 	 */
-	EAttribute getSvgFeOffset_Style();
+	EAttribute getSvgFeOffsetElement_Style();
 
 	/**
-	 * Returns the meta object for the attribute '{@link at.bestsolution.efxclipse.formats.svg.svg.SvgFeOffset#getDx <em>Dx</em>}'.
+	 * Returns the meta object for the attribute '{@link at.bestsolution.efxclipse.formats.svg.svg.SvgFeOffsetElement#getDx <em>Dx</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Dx</em>'.
-	 * @see at.bestsolution.efxclipse.formats.svg.svg.SvgFeOffset#getDx()
-	 * @see #getSvgFeOffset()
+	 * @see at.bestsolution.efxclipse.formats.svg.svg.SvgFeOffsetElement#getDx()
+	 * @see #getSvgFeOffsetElement()
 	 * @generated
 	 */
-	EAttribute getSvgFeOffset_Dx();
+	EAttribute getSvgFeOffsetElement_Dx();
 
 	/**
-	 * Returns the meta object for the attribute '{@link at.bestsolution.efxclipse.formats.svg.svg.SvgFeOffset#getDy <em>Dy</em>}'.
+	 * Returns the meta object for the attribute '{@link at.bestsolution.efxclipse.formats.svg.svg.SvgFeOffsetElement#getDy <em>Dy</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Dy</em>'.
-	 * @see at.bestsolution.efxclipse.formats.svg.svg.SvgFeOffset#getDy()
-	 * @see #getSvgFeOffset()
+	 * @see at.bestsolution.efxclipse.formats.svg.svg.SvgFeOffsetElement#getDy()
+	 * @see #getSvgFeOffsetElement()
 	 * @generated
 	 */
-	EAttribute getSvgFeOffset_Dy();
+	EAttribute getSvgFeOffsetElement_Dy();
 
 	/**
-	 * Returns the meta object for class '{@link at.bestsolution.efxclipse.formats.svg.svg.SvgFeSpecularLighting <em>Fe Specular Lighting</em>}'.
+	 * Returns the meta object for class '{@link at.bestsolution.efxclipse.formats.svg.svg.SvgFeSpecularLightingElement <em>Fe Specular Lighting Element</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Fe Specular Lighting</em>'.
-	 * @see at.bestsolution.efxclipse.formats.svg.svg.SvgFeSpecularLighting
+	 * @return the meta object for class '<em>Fe Specular Lighting Element</em>'.
+	 * @see at.bestsolution.efxclipse.formats.svg.svg.SvgFeSpecularLightingElement
 	 * @generated
 	 */
-	EClass getSvgFeSpecularLighting();
+	EClass getSvgFeSpecularLightingElement();
 
 	/**
-	 * Returns the meta object for the attribute '{@link at.bestsolution.efxclipse.formats.svg.svg.SvgFeSpecularLighting#getClass_ <em>Class</em>}'.
+	 * Returns the meta object for the attribute '{@link at.bestsolution.efxclipse.formats.svg.svg.SvgFeSpecularLightingElement#getClass_ <em>Class</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Class</em>'.
-	 * @see at.bestsolution.efxclipse.formats.svg.svg.SvgFeSpecularLighting#getClass_()
-	 * @see #getSvgFeSpecularLighting()
+	 * @see at.bestsolution.efxclipse.formats.svg.svg.SvgFeSpecularLightingElement#getClass_()
+	 * @see #getSvgFeSpecularLightingElement()
 	 * @generated
 	 */
-	EAttribute getSvgFeSpecularLighting_Class();
+	EAttribute getSvgFeSpecularLightingElement_Class();
 
 	/**
-	 * Returns the meta object for the attribute '{@link at.bestsolution.efxclipse.formats.svg.svg.SvgFeSpecularLighting#getStyle <em>Style</em>}'.
+	 * Returns the meta object for the attribute '{@link at.bestsolution.efxclipse.formats.svg.svg.SvgFeSpecularLightingElement#getStyle <em>Style</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Style</em>'.
-	 * @see at.bestsolution.efxclipse.formats.svg.svg.SvgFeSpecularLighting#getStyle()
-	 * @see #getSvgFeSpecularLighting()
+	 * @see at.bestsolution.efxclipse.formats.svg.svg.SvgFeSpecularLightingElement#getStyle()
+	 * @see #getSvgFeSpecularLightingElement()
 	 * @generated
 	 */
-	EAttribute getSvgFeSpecularLighting_Style();
+	EAttribute getSvgFeSpecularLightingElement_Style();
 
 	/**
-	 * Returns the meta object for the attribute '{@link at.bestsolution.efxclipse.formats.svg.svg.SvgFeSpecularLighting#getSurfaceScale <em>Surface Scale</em>}'.
+	 * Returns the meta object for the attribute '{@link at.bestsolution.efxclipse.formats.svg.svg.SvgFeSpecularLightingElement#getSurfaceScale <em>Surface Scale</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Surface Scale</em>'.
-	 * @see at.bestsolution.efxclipse.formats.svg.svg.SvgFeSpecularLighting#getSurfaceScale()
-	 * @see #getSvgFeSpecularLighting()
+	 * @see at.bestsolution.efxclipse.formats.svg.svg.SvgFeSpecularLightingElement#getSurfaceScale()
+	 * @see #getSvgFeSpecularLightingElement()
 	 * @generated
 	 */
-	EAttribute getSvgFeSpecularLighting_SurfaceScale();
+	EAttribute getSvgFeSpecularLightingElement_SurfaceScale();
 
 	/**
-	 * Returns the meta object for the attribute '{@link at.bestsolution.efxclipse.formats.svg.svg.SvgFeSpecularLighting#getSpecularConstant <em>Specular Constant</em>}'.
+	 * Returns the meta object for the attribute '{@link at.bestsolution.efxclipse.formats.svg.svg.SvgFeSpecularLightingElement#getSpecularConstant <em>Specular Constant</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Specular Constant</em>'.
-	 * @see at.bestsolution.efxclipse.formats.svg.svg.SvgFeSpecularLighting#getSpecularConstant()
-	 * @see #getSvgFeSpecularLighting()
+	 * @see at.bestsolution.efxclipse.formats.svg.svg.SvgFeSpecularLightingElement#getSpecularConstant()
+	 * @see #getSvgFeSpecularLightingElement()
 	 * @generated
 	 */
-	EAttribute getSvgFeSpecularLighting_SpecularConstant();
+	EAttribute getSvgFeSpecularLightingElement_SpecularConstant();
 
 	/**
-	 * Returns the meta object for the attribute '{@link at.bestsolution.efxclipse.formats.svg.svg.SvgFeSpecularLighting#getSpecularExponent <em>Specular Exponent</em>}'.
+	 * Returns the meta object for the attribute '{@link at.bestsolution.efxclipse.formats.svg.svg.SvgFeSpecularLightingElement#getSpecularExponent <em>Specular Exponent</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Specular Exponent</em>'.
-	 * @see at.bestsolution.efxclipse.formats.svg.svg.SvgFeSpecularLighting#getSpecularExponent()
-	 * @see #getSvgFeSpecularLighting()
+	 * @see at.bestsolution.efxclipse.formats.svg.svg.SvgFeSpecularLightingElement#getSpecularExponent()
+	 * @see #getSvgFeSpecularLightingElement()
 	 * @generated
 	 */
-	EAttribute getSvgFeSpecularLighting_SpecularExponent();
+	EAttribute getSvgFeSpecularLightingElement_SpecularExponent();
 
 	/**
-	 * Returns the meta object for the attribute '{@link at.bestsolution.efxclipse.formats.svg.svg.SvgFeSpecularLighting#getKernelUnitLength <em>Kernel Unit Length</em>}'.
+	 * Returns the meta object for the attribute '{@link at.bestsolution.efxclipse.formats.svg.svg.SvgFeSpecularLightingElement#getKernelUnitLength <em>Kernel Unit Length</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Kernel Unit Length</em>'.
-	 * @see at.bestsolution.efxclipse.formats.svg.svg.SvgFeSpecularLighting#getKernelUnitLength()
-	 * @see #getSvgFeSpecularLighting()
+	 * @see at.bestsolution.efxclipse.formats.svg.svg.SvgFeSpecularLightingElement#getKernelUnitLength()
+	 * @see #getSvgFeSpecularLightingElement()
 	 * @generated
 	 */
-	EAttribute getSvgFeSpecularLighting_KernelUnitLength();
+	EAttribute getSvgFeSpecularLightingElement_KernelUnitLength();
 
 	/**
-	 * Returns the meta object for class '{@link at.bestsolution.efxclipse.formats.svg.svg.SvgFeTile <em>Fe Tile</em>}'.
+	 * Returns the meta object for class '{@link at.bestsolution.efxclipse.formats.svg.svg.SvgFeTileElement <em>Fe Tile Element</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Fe Tile</em>'.
-	 * @see at.bestsolution.efxclipse.formats.svg.svg.SvgFeTile
+	 * @return the meta object for class '<em>Fe Tile Element</em>'.
+	 * @see at.bestsolution.efxclipse.formats.svg.svg.SvgFeTileElement
 	 * @generated
 	 */
-	EClass getSvgFeTile();
+	EClass getSvgFeTileElement();
 
 	/**
-	 * Returns the meta object for the attribute '{@link at.bestsolution.efxclipse.formats.svg.svg.SvgFeTile#getClass_ <em>Class</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Class</em>'.
-	 * @see at.bestsolution.efxclipse.formats.svg.svg.SvgFeTile#getClass_()
-	 * @see #getSvgFeTile()
-	 * @generated
-	 */
-	EAttribute getSvgFeTile_Class();
-
-	/**
-	 * Returns the meta object for the attribute '{@link at.bestsolution.efxclipse.formats.svg.svg.SvgFeTile#getStyle <em>Style</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Style</em>'.
-	 * @see at.bestsolution.efxclipse.formats.svg.svg.SvgFeTile#getStyle()
-	 * @see #getSvgFeTile()
-	 * @generated
-	 */
-	EAttribute getSvgFeTile_Style();
-
-	/**
-	 * Returns the meta object for class '{@link at.bestsolution.efxclipse.formats.svg.svg.SvgFeTurbulence <em>Fe Turbulence</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Fe Turbulence</em>'.
-	 * @see at.bestsolution.efxclipse.formats.svg.svg.SvgFeTurbulence
-	 * @generated
-	 */
-	EClass getSvgFeTurbulence();
-
-	/**
-	 * Returns the meta object for the attribute '{@link at.bestsolution.efxclipse.formats.svg.svg.SvgFeTurbulence#getClass_ <em>Class</em>}'.
+	 * Returns the meta object for the attribute '{@link at.bestsolution.efxclipse.formats.svg.svg.SvgFeTileElement#getClass_ <em>Class</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Class</em>'.
-	 * @see at.bestsolution.efxclipse.formats.svg.svg.SvgFeTurbulence#getClass_()
-	 * @see #getSvgFeTurbulence()
+	 * @see at.bestsolution.efxclipse.formats.svg.svg.SvgFeTileElement#getClass_()
+	 * @see #getSvgFeTileElement()
 	 * @generated
 	 */
-	EAttribute getSvgFeTurbulence_Class();
+	EAttribute getSvgFeTileElement_Class();
 
 	/**
-	 * Returns the meta object for the attribute '{@link at.bestsolution.efxclipse.formats.svg.svg.SvgFeTurbulence#getStyle <em>Style</em>}'.
+	 * Returns the meta object for the attribute '{@link at.bestsolution.efxclipse.formats.svg.svg.SvgFeTileElement#getStyle <em>Style</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Style</em>'.
-	 * @see at.bestsolution.efxclipse.formats.svg.svg.SvgFeTurbulence#getStyle()
-	 * @see #getSvgFeTurbulence()
+	 * @see at.bestsolution.efxclipse.formats.svg.svg.SvgFeTileElement#getStyle()
+	 * @see #getSvgFeTileElement()
 	 * @generated
 	 */
-	EAttribute getSvgFeTurbulence_Style();
+	EAttribute getSvgFeTileElement_Style();
 
 	/**
-	 * Returns the meta object for the attribute '{@link at.bestsolution.efxclipse.formats.svg.svg.SvgFeTurbulence#getBaseFrequency <em>Base Frequency</em>}'.
+	 * Returns the meta object for class '{@link at.bestsolution.efxclipse.formats.svg.svg.SvgFeTurbulenceElement <em>Fe Turbulence Element</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Fe Turbulence Element</em>'.
+	 * @see at.bestsolution.efxclipse.formats.svg.svg.SvgFeTurbulenceElement
+	 * @generated
+	 */
+	EClass getSvgFeTurbulenceElement();
+
+	/**
+	 * Returns the meta object for the attribute '{@link at.bestsolution.efxclipse.formats.svg.svg.SvgFeTurbulenceElement#getClass_ <em>Class</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Class</em>'.
+	 * @see at.bestsolution.efxclipse.formats.svg.svg.SvgFeTurbulenceElement#getClass_()
+	 * @see #getSvgFeTurbulenceElement()
+	 * @generated
+	 */
+	EAttribute getSvgFeTurbulenceElement_Class();
+
+	/**
+	 * Returns the meta object for the attribute '{@link at.bestsolution.efxclipse.formats.svg.svg.SvgFeTurbulenceElement#getStyle <em>Style</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Style</em>'.
+	 * @see at.bestsolution.efxclipse.formats.svg.svg.SvgFeTurbulenceElement#getStyle()
+	 * @see #getSvgFeTurbulenceElement()
+	 * @generated
+	 */
+	EAttribute getSvgFeTurbulenceElement_Style();
+
+	/**
+	 * Returns the meta object for the attribute '{@link at.bestsolution.efxclipse.formats.svg.svg.SvgFeTurbulenceElement#getBaseFrequency <em>Base Frequency</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Base Frequency</em>'.
-	 * @see at.bestsolution.efxclipse.formats.svg.svg.SvgFeTurbulence#getBaseFrequency()
-	 * @see #getSvgFeTurbulence()
+	 * @see at.bestsolution.efxclipse.formats.svg.svg.SvgFeTurbulenceElement#getBaseFrequency()
+	 * @see #getSvgFeTurbulenceElement()
 	 * @generated
 	 */
-	EAttribute getSvgFeTurbulence_BaseFrequency();
+	EAttribute getSvgFeTurbulenceElement_BaseFrequency();
 
 	/**
-	 * Returns the meta object for the attribute '{@link at.bestsolution.efxclipse.formats.svg.svg.SvgFeTurbulence#getNumOctaves <em>Num Octaves</em>}'.
+	 * Returns the meta object for the attribute '{@link at.bestsolution.efxclipse.formats.svg.svg.SvgFeTurbulenceElement#getNumOctaves <em>Num Octaves</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Num Octaves</em>'.
-	 * @see at.bestsolution.efxclipse.formats.svg.svg.SvgFeTurbulence#getNumOctaves()
-	 * @see #getSvgFeTurbulence()
+	 * @see at.bestsolution.efxclipse.formats.svg.svg.SvgFeTurbulenceElement#getNumOctaves()
+	 * @see #getSvgFeTurbulenceElement()
 	 * @generated
 	 */
-	EAttribute getSvgFeTurbulence_NumOctaves();
+	EAttribute getSvgFeTurbulenceElement_NumOctaves();
 
 	/**
-	 * Returns the meta object for the attribute '{@link at.bestsolution.efxclipse.formats.svg.svg.SvgFeTurbulence#getSeed <em>Seed</em>}'.
+	 * Returns the meta object for the attribute '{@link at.bestsolution.efxclipse.formats.svg.svg.SvgFeTurbulenceElement#getSeed <em>Seed</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Seed</em>'.
-	 * @see at.bestsolution.efxclipse.formats.svg.svg.SvgFeTurbulence#getSeed()
-	 * @see #getSvgFeTurbulence()
+	 * @see at.bestsolution.efxclipse.formats.svg.svg.SvgFeTurbulenceElement#getSeed()
+	 * @see #getSvgFeTurbulenceElement()
 	 * @generated
 	 */
-	EAttribute getSvgFeTurbulence_Seed();
+	EAttribute getSvgFeTurbulenceElement_Seed();
 
 	/**
-	 * Returns the meta object for the attribute '{@link at.bestsolution.efxclipse.formats.svg.svg.SvgFeTurbulence#getStitchTiles <em>Stitch Tiles</em>}'.
+	 * Returns the meta object for the attribute '{@link at.bestsolution.efxclipse.formats.svg.svg.SvgFeTurbulenceElement#getStitchTiles <em>Stitch Tiles</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Stitch Tiles</em>'.
-	 * @see at.bestsolution.efxclipse.formats.svg.svg.SvgFeTurbulence#getStitchTiles()
-	 * @see #getSvgFeTurbulence()
+	 * @see at.bestsolution.efxclipse.formats.svg.svg.SvgFeTurbulenceElement#getStitchTiles()
+	 * @see #getSvgFeTurbulenceElement()
 	 * @generated
 	 */
-	EAttribute getSvgFeTurbulence_StitchTiles();
+	EAttribute getSvgFeTurbulenceElement_StitchTiles();
 
 	/**
-	 * Returns the meta object for the attribute '{@link at.bestsolution.efxclipse.formats.svg.svg.SvgFeTurbulence#getType <em>Type</em>}'.
+	 * Returns the meta object for the attribute '{@link at.bestsolution.efxclipse.formats.svg.svg.SvgFeTurbulenceElement#getType <em>Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Type</em>'.
-	 * @see at.bestsolution.efxclipse.formats.svg.svg.SvgFeTurbulence#getType()
-	 * @see #getSvgFeTurbulence()
+	 * @see at.bestsolution.efxclipse.formats.svg.svg.SvgFeTurbulenceElement#getType()
+	 * @see #getSvgFeTurbulenceElement()
 	 * @generated
 	 */
-	EAttribute getSvgFeTurbulence_Type();
+	EAttribute getSvgFeTurbulenceElement_Type();
+
+	/**
+	 * Returns the meta object for class '{@link at.bestsolution.efxclipse.formats.svg.svg.SvgAnimateElement <em>Animate Element</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Animate Element</em>'.
+	 * @see at.bestsolution.efxclipse.formats.svg.svg.SvgAnimateElement
+	 * @generated
+	 */
+	EClass getSvgAnimateElement();
+
+	/**
+	 * Returns the meta object for class '{@link at.bestsolution.efxclipse.formats.svg.svg.SvgMetadataElement <em>Metadata Element</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Metadata Element</em>'.
+	 * @see at.bestsolution.efxclipse.formats.svg.svg.SvgMetadataElement
+	 * @generated
+	 */
+	EClass getSvgMetadataElement();
 
 	/**
 	 * Returns the meta object for enum '{@link at.bestsolution.efxclipse.formats.svg.svg.Alignment_baseline <em>Alignment baseline</em>}'.
@@ -45059,6 +45381,17 @@ public interface SvgPackage extends EPackage {
 	EDataType getNumberOptionalNumber();
 
 	/**
+	 * Returns the meta object for data type '{@link java.lang.String <em>Transform List</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for data type '<em>Transform List</em>'.
+	 * @see java.lang.String
+	 * @model instanceClass="java.lang.String"
+	 * @generated
+	 */
+	EDataType getTransformList();
+
+	/**
 	 * Returns the factory that creates the instances of the model.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -45227,6 +45560,16 @@ public interface SvgPackage extends EPackage {
 		 * @generated
 		 */
 		EClass FILTER_PRIMITIVE_ELEMENT = eINSTANCE.getFilterPrimitiveElement();
+
+		/**
+		 * The meta object literal for the '{@link at.bestsolution.efxclipse.formats.svg.svg.impl.AnimationElementImpl <em>Animation Element</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see at.bestsolution.efxclipse.formats.svg.svg.impl.AnimationElementImpl
+		 * @see at.bestsolution.efxclipse.formats.svg.svg.impl.SvgPackageImpl#getAnimationElement()
+		 * @generated
+		 */
+		EClass ANIMATION_ELEMENT = eINSTANCE.getAnimationElement();
 
 		/**
 		 * The meta object literal for the '{@link at.bestsolution.efxclipse.formats.svg.svg.impl.____ENUMS____Impl <em>ENUMS </em>}' class.
@@ -46029,6 +46372,14 @@ public interface SvgPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute XLINK_ATTRIBUTES__XLINK_TITLE = eINSTANCE.getXLinkAttributes_Xlink__title();
+
+		/**
+		 * The meta object literal for the '<em><b>Resolved Instance</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference XLINK_ATTRIBUTES__RESOLVED_INSTANCE = eINSTANCE.getXLinkAttributes_ResolvedInstance();
 
 		/**
 		 * The meta object literal for the '{@link at.bestsolution.efxclipse.formats.svg.svg.FilterPrimitiveAttributes <em>Filter Primitive Attributes</em>}' class.
@@ -47745,6 +48096,14 @@ public interface SvgPackage extends EPackage {
 		EAttribute SVG_LINEAR_GRADIENT_ELEMENT__SPREAD_METHOD = eINSTANCE.getSvgLinearGradientElement_SpreadMethod();
 
 		/**
+		 * The meta object literal for the '<em><b>Gradient Transform</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute SVG_LINEAR_GRADIENT_ELEMENT__GRADIENT_TRANSFORM = eINSTANCE.getSvgLinearGradientElement_GradientTransform();
+
+		/**
 		 * The meta object literal for the '{@link at.bestsolution.efxclipse.formats.svg.svg.impl.SvgRadialGradientElementImpl <em>Radial Gradient Element</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -47827,14 +48186,30 @@ public interface SvgPackage extends EPackage {
 		EAttribute SVG_RADIAL_GRADIENT_ELEMENT__SPREAD_METHOD = eINSTANCE.getSvgRadialGradientElement_SpreadMethod();
 
 		/**
-		 * The meta object literal for the '{@link at.bestsolution.efxclipse.formats.svg.svg.impl.SvgGradientStopElementImpl <em>Gradient Stop Element</em>}' class.
+		 * The meta object literal for the '<em><b>Gradient Units</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see at.bestsolution.efxclipse.formats.svg.svg.impl.SvgGradientStopElementImpl
-		 * @see at.bestsolution.efxclipse.formats.svg.svg.impl.SvgPackageImpl#getSvgGradientStopElement()
 		 * @generated
 		 */
-		EClass SVG_GRADIENT_STOP_ELEMENT = eINSTANCE.getSvgGradientStopElement();
+		EAttribute SVG_RADIAL_GRADIENT_ELEMENT__GRADIENT_UNITS = eINSTANCE.getSvgRadialGradientElement_GradientUnits();
+
+		/**
+		 * The meta object literal for the '<em><b>Gradient Transform</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute SVG_RADIAL_GRADIENT_ELEMENT__GRADIENT_TRANSFORM = eINSTANCE.getSvgRadialGradientElement_GradientTransform();
+
+		/**
+		 * The meta object literal for the '{@link at.bestsolution.efxclipse.formats.svg.svg.impl.SvgStopElementImpl <em>Stop Element</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see at.bestsolution.efxclipse.formats.svg.svg.impl.SvgStopElementImpl
+		 * @see at.bestsolution.efxclipse.formats.svg.svg.impl.SvgPackageImpl#getSvgStopElement()
+		 * @generated
+		 */
+		EClass SVG_STOP_ELEMENT = eINSTANCE.getSvgStopElement();
 
 		/**
 		 * The meta object literal for the '<em><b>Class</b></em>' attribute feature.
@@ -47842,7 +48217,7 @@ public interface SvgPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute SVG_GRADIENT_STOP_ELEMENT__CLASS = eINSTANCE.getSvgGradientStopElement_Class();
+		EAttribute SVG_STOP_ELEMENT__CLASS = eINSTANCE.getSvgStopElement_Class();
 
 		/**
 		 * The meta object literal for the '<em><b>Style</b></em>' attribute feature.
@@ -47850,7 +48225,7 @@ public interface SvgPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute SVG_GRADIENT_STOP_ELEMENT__STYLE = eINSTANCE.getSvgGradientStopElement_Style();
+		EAttribute SVG_STOP_ELEMENT__STYLE = eINSTANCE.getSvgStopElement_Style();
 
 		/**
 		 * The meta object literal for the '<em><b>Offset</b></em>' attribute feature.
@@ -47858,7 +48233,7 @@ public interface SvgPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute SVG_GRADIENT_STOP_ELEMENT__OFFSET = eINSTANCE.getSvgGradientStopElement_Offset();
+		EAttribute SVG_STOP_ELEMENT__OFFSET = eINSTANCE.getSvgStopElement_Offset();
 
 		/**
 		 * The meta object literal for the '{@link at.bestsolution.efxclipse.formats.svg.svg.impl.SvgPatternElementImpl <em>Pattern Element</em>}' class.
@@ -48189,14 +48564,14 @@ public interface SvgPackage extends EPackage {
 		EAttribute SVG_FILTER_ELEMENT__PRIMITIVE_UNITS = eINSTANCE.getSvgFilterElement_PrimitiveUnits();
 
 		/**
-		 * The meta object literal for the '{@link at.bestsolution.efxclipse.formats.svg.svg.impl.SvgFeDistantLightImpl <em>Fe Distant Light</em>}' class.
+		 * The meta object literal for the '{@link at.bestsolution.efxclipse.formats.svg.svg.impl.SvgFeDistantLightElementImpl <em>Fe Distant Light Element</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see at.bestsolution.efxclipse.formats.svg.svg.impl.SvgFeDistantLightImpl
-		 * @see at.bestsolution.efxclipse.formats.svg.svg.impl.SvgPackageImpl#getSvgFeDistantLight()
+		 * @see at.bestsolution.efxclipse.formats.svg.svg.impl.SvgFeDistantLightElementImpl
+		 * @see at.bestsolution.efxclipse.formats.svg.svg.impl.SvgPackageImpl#getSvgFeDistantLightElement()
 		 * @generated
 		 */
-		EClass SVG_FE_DISTANT_LIGHT = eINSTANCE.getSvgFeDistantLight();
+		EClass SVG_FE_DISTANT_LIGHT_ELEMENT = eINSTANCE.getSvgFeDistantLightElement();
 
 		/**
 		 * The meta object literal for the '<em><b>Azimuth</b></em>' attribute feature.
@@ -48204,7 +48579,7 @@ public interface SvgPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute SVG_FE_DISTANT_LIGHT__AZIMUTH = eINSTANCE.getSvgFeDistantLight_Azimuth();
+		EAttribute SVG_FE_DISTANT_LIGHT_ELEMENT__AZIMUTH = eINSTANCE.getSvgFeDistantLightElement_Azimuth();
 
 		/**
 		 * The meta object literal for the '<em><b>Elevation</b></em>' attribute feature.
@@ -48212,51 +48587,17 @@ public interface SvgPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute SVG_FE_DISTANT_LIGHT__ELEVATION = eINSTANCE.getSvgFeDistantLight_Elevation();
+		EAttribute SVG_FE_DISTANT_LIGHT_ELEMENT__ELEVATION = eINSTANCE.getSvgFeDistantLightElement_Elevation();
 
 		/**
-		 * The meta object literal for the '{@link at.bestsolution.efxclipse.formats.svg.svg.impl.SvgFePointLightImpl <em>Fe Point Light</em>}' class.
+		 * The meta object literal for the '{@link at.bestsolution.efxclipse.formats.svg.svg.impl.SvgFePointLightElementImpl <em>Fe Point Light Element</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see at.bestsolution.efxclipse.formats.svg.svg.impl.SvgFePointLightImpl
-		 * @see at.bestsolution.efxclipse.formats.svg.svg.impl.SvgPackageImpl#getSvgFePointLight()
+		 * @see at.bestsolution.efxclipse.formats.svg.svg.impl.SvgFePointLightElementImpl
+		 * @see at.bestsolution.efxclipse.formats.svg.svg.impl.SvgPackageImpl#getSvgFePointLightElement()
 		 * @generated
 		 */
-		EClass SVG_FE_POINT_LIGHT = eINSTANCE.getSvgFePointLight();
-
-		/**
-		 * The meta object literal for the '<em><b>X</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute SVG_FE_POINT_LIGHT__X = eINSTANCE.getSvgFePointLight_X();
-
-		/**
-		 * The meta object literal for the '<em><b>Y</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute SVG_FE_POINT_LIGHT__Y = eINSTANCE.getSvgFePointLight_Y();
-
-		/**
-		 * The meta object literal for the '<em><b>Z</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute SVG_FE_POINT_LIGHT__Z = eINSTANCE.getSvgFePointLight_Z();
-
-		/**
-		 * The meta object literal for the '{@link at.bestsolution.efxclipse.formats.svg.svg.impl.SvgFeSpotLightImpl <em>Fe Spot Light</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see at.bestsolution.efxclipse.formats.svg.svg.impl.SvgFeSpotLightImpl
-		 * @see at.bestsolution.efxclipse.formats.svg.svg.impl.SvgPackageImpl#getSvgFeSpotLight()
-		 * @generated
-		 */
-		EClass SVG_FE_SPOT_LIGHT = eINSTANCE.getSvgFeSpotLight();
+		EClass SVG_FE_POINT_LIGHT_ELEMENT = eINSTANCE.getSvgFePointLightElement();
 
 		/**
 		 * The meta object literal for the '<em><b>X</b></em>' attribute feature.
@@ -48264,7 +48605,7 @@ public interface SvgPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute SVG_FE_SPOT_LIGHT__X = eINSTANCE.getSvgFeSpotLight_X();
+		EAttribute SVG_FE_POINT_LIGHT_ELEMENT__X = eINSTANCE.getSvgFePointLightElement_X();
 
 		/**
 		 * The meta object literal for the '<em><b>Y</b></em>' attribute feature.
@@ -48272,7 +48613,7 @@ public interface SvgPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute SVG_FE_SPOT_LIGHT__Y = eINSTANCE.getSvgFeSpotLight_Y();
+		EAttribute SVG_FE_POINT_LIGHT_ELEMENT__Y = eINSTANCE.getSvgFePointLightElement_Y();
 
 		/**
 		 * The meta object literal for the '<em><b>Z</b></em>' attribute feature.
@@ -48280,7 +48621,41 @@ public interface SvgPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute SVG_FE_SPOT_LIGHT__Z = eINSTANCE.getSvgFeSpotLight_Z();
+		EAttribute SVG_FE_POINT_LIGHT_ELEMENT__Z = eINSTANCE.getSvgFePointLightElement_Z();
+
+		/**
+		 * The meta object literal for the '{@link at.bestsolution.efxclipse.formats.svg.svg.impl.SvgFeSpotLightElementImpl <em>Fe Spot Light Element</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see at.bestsolution.efxclipse.formats.svg.svg.impl.SvgFeSpotLightElementImpl
+		 * @see at.bestsolution.efxclipse.formats.svg.svg.impl.SvgPackageImpl#getSvgFeSpotLightElement()
+		 * @generated
+		 */
+		EClass SVG_FE_SPOT_LIGHT_ELEMENT = eINSTANCE.getSvgFeSpotLightElement();
+
+		/**
+		 * The meta object literal for the '<em><b>X</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute SVG_FE_SPOT_LIGHT_ELEMENT__X = eINSTANCE.getSvgFeSpotLightElement_X();
+
+		/**
+		 * The meta object literal for the '<em><b>Y</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute SVG_FE_SPOT_LIGHT_ELEMENT__Y = eINSTANCE.getSvgFeSpotLightElement_Y();
+
+		/**
+		 * The meta object literal for the '<em><b>Z</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute SVG_FE_SPOT_LIGHT_ELEMENT__Z = eINSTANCE.getSvgFeSpotLightElement_Z();
 
 		/**
 		 * The meta object literal for the '<em><b>Points At X</b></em>' attribute feature.
@@ -48288,7 +48663,7 @@ public interface SvgPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute SVG_FE_SPOT_LIGHT__POINTS_AT_X = eINSTANCE.getSvgFeSpotLight_PointsAtX();
+		EAttribute SVG_FE_SPOT_LIGHT_ELEMENT__POINTS_AT_X = eINSTANCE.getSvgFeSpotLightElement_PointsAtX();
 
 		/**
 		 * The meta object literal for the '<em><b>Points At Y</b></em>' attribute feature.
@@ -48296,7 +48671,7 @@ public interface SvgPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute SVG_FE_SPOT_LIGHT__POINTS_AT_Y = eINSTANCE.getSvgFeSpotLight_PointsAtY();
+		EAttribute SVG_FE_SPOT_LIGHT_ELEMENT__POINTS_AT_Y = eINSTANCE.getSvgFeSpotLightElement_PointsAtY();
 
 		/**
 		 * The meta object literal for the '<em><b>Points At Z</b></em>' attribute feature.
@@ -48304,7 +48679,7 @@ public interface SvgPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute SVG_FE_SPOT_LIGHT__POINTS_AT_Z = eINSTANCE.getSvgFeSpotLight_PointsAtZ();
+		EAttribute SVG_FE_SPOT_LIGHT_ELEMENT__POINTS_AT_Z = eINSTANCE.getSvgFeSpotLightElement_PointsAtZ();
 
 		/**
 		 * The meta object literal for the '<em><b>Specular Exponent</b></em>' attribute feature.
@@ -48312,7 +48687,7 @@ public interface SvgPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute SVG_FE_SPOT_LIGHT__SPECULAR_EXPONENT = eINSTANCE.getSvgFeSpotLight_SpecularExponent();
+		EAttribute SVG_FE_SPOT_LIGHT_ELEMENT__SPECULAR_EXPONENT = eINSTANCE.getSvgFeSpotLightElement_SpecularExponent();
 
 		/**
 		 * The meta object literal for the '<em><b>Limiting Cone Angle</b></em>' attribute feature.
@@ -48320,17 +48695,17 @@ public interface SvgPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute SVG_FE_SPOT_LIGHT__LIMITING_CONE_ANGLE = eINSTANCE.getSvgFeSpotLight_LimitingConeAngle();
+		EAttribute SVG_FE_SPOT_LIGHT_ELEMENT__LIMITING_CONE_ANGLE = eINSTANCE.getSvgFeSpotLightElement_LimitingConeAngle();
 
 		/**
-		 * The meta object literal for the '{@link at.bestsolution.efxclipse.formats.svg.svg.impl.SvgFeBlendImpl <em>Fe Blend</em>}' class.
+		 * The meta object literal for the '{@link at.bestsolution.efxclipse.formats.svg.svg.impl.SvgFeBlendElementImpl <em>Fe Blend Element</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see at.bestsolution.efxclipse.formats.svg.svg.impl.SvgFeBlendImpl
-		 * @see at.bestsolution.efxclipse.formats.svg.svg.impl.SvgPackageImpl#getSvgFeBlend()
+		 * @see at.bestsolution.efxclipse.formats.svg.svg.impl.SvgFeBlendElementImpl
+		 * @see at.bestsolution.efxclipse.formats.svg.svg.impl.SvgPackageImpl#getSvgFeBlendElement()
 		 * @generated
 		 */
-		EClass SVG_FE_BLEND = eINSTANCE.getSvgFeBlend();
+		EClass SVG_FE_BLEND_ELEMENT = eINSTANCE.getSvgFeBlendElement();
 
 		/**
 		 * The meta object literal for the '<em><b>Class</b></em>' attribute feature.
@@ -48338,7 +48713,7 @@ public interface SvgPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute SVG_FE_BLEND__CLASS = eINSTANCE.getSvgFeBlend_Class();
+		EAttribute SVG_FE_BLEND_ELEMENT__CLASS = eINSTANCE.getSvgFeBlendElement_Class();
 
 		/**
 		 * The meta object literal for the '<em><b>Style</b></em>' attribute feature.
@@ -48346,7 +48721,7 @@ public interface SvgPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute SVG_FE_BLEND__STYLE = eINSTANCE.getSvgFeBlend_Style();
+		EAttribute SVG_FE_BLEND_ELEMENT__STYLE = eINSTANCE.getSvgFeBlendElement_Style();
 
 		/**
 		 * The meta object literal for the '<em><b>In2</b></em>' attribute feature.
@@ -48354,7 +48729,7 @@ public interface SvgPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute SVG_FE_BLEND__IN2 = eINSTANCE.getSvgFeBlend_In2();
+		EAttribute SVG_FE_BLEND_ELEMENT__IN2 = eINSTANCE.getSvgFeBlendElement_In2();
 
 		/**
 		 * The meta object literal for the '<em><b>Mode</b></em>' attribute feature.
@@ -48362,17 +48737,17 @@ public interface SvgPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute SVG_FE_BLEND__MODE = eINSTANCE.getSvgFeBlend_Mode();
+		EAttribute SVG_FE_BLEND_ELEMENT__MODE = eINSTANCE.getSvgFeBlendElement_Mode();
 
 		/**
-		 * The meta object literal for the '{@link at.bestsolution.efxclipse.formats.svg.svg.impl.SvgFeColorMatrixImpl <em>Fe Color Matrix</em>}' class.
+		 * The meta object literal for the '{@link at.bestsolution.efxclipse.formats.svg.svg.impl.SvgFeColorMatrixElementImpl <em>Fe Color Matrix Element</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see at.bestsolution.efxclipse.formats.svg.svg.impl.SvgFeColorMatrixImpl
-		 * @see at.bestsolution.efxclipse.formats.svg.svg.impl.SvgPackageImpl#getSvgFeColorMatrix()
+		 * @see at.bestsolution.efxclipse.formats.svg.svg.impl.SvgFeColorMatrixElementImpl
+		 * @see at.bestsolution.efxclipse.formats.svg.svg.impl.SvgPackageImpl#getSvgFeColorMatrixElement()
 		 * @generated
 		 */
-		EClass SVG_FE_COLOR_MATRIX = eINSTANCE.getSvgFeColorMatrix();
+		EClass SVG_FE_COLOR_MATRIX_ELEMENT = eINSTANCE.getSvgFeColorMatrixElement();
 
 		/**
 		 * The meta object literal for the '<em><b>Class</b></em>' attribute feature.
@@ -48380,7 +48755,7 @@ public interface SvgPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute SVG_FE_COLOR_MATRIX__CLASS = eINSTANCE.getSvgFeColorMatrix_Class();
+		EAttribute SVG_FE_COLOR_MATRIX_ELEMENT__CLASS = eINSTANCE.getSvgFeColorMatrixElement_Class();
 
 		/**
 		 * The meta object literal for the '<em><b>Style</b></em>' attribute feature.
@@ -48388,7 +48763,7 @@ public interface SvgPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute SVG_FE_COLOR_MATRIX__STYLE = eINSTANCE.getSvgFeColorMatrix_Style();
+		EAttribute SVG_FE_COLOR_MATRIX_ELEMENT__STYLE = eINSTANCE.getSvgFeColorMatrixElement_Style();
 
 		/**
 		 * The meta object literal for the '<em><b>Type</b></em>' attribute feature.
@@ -48396,7 +48771,7 @@ public interface SvgPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute SVG_FE_COLOR_MATRIX__TYPE = eINSTANCE.getSvgFeColorMatrix_Type();
+		EAttribute SVG_FE_COLOR_MATRIX_ELEMENT__TYPE = eINSTANCE.getSvgFeColorMatrixElement_Type();
 
 		/**
 		 * The meta object literal for the '<em><b>Values</b></em>' attribute feature.
@@ -48404,83 +48779,17 @@ public interface SvgPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute SVG_FE_COLOR_MATRIX__VALUES = eINSTANCE.getSvgFeColorMatrix_Values();
+		EAttribute SVG_FE_COLOR_MATRIX_ELEMENT__VALUES = eINSTANCE.getSvgFeColorMatrixElement_Values();
 
 		/**
-		 * The meta object literal for the '{@link at.bestsolution.efxclipse.formats.svg.svg.impl.SvgFeComponentTransferImpl <em>Fe Component Transfer</em>}' class.
+		 * The meta object literal for the '{@link at.bestsolution.efxclipse.formats.svg.svg.impl.SvgFeComponentTransferElementImpl <em>Fe Component Transfer Element</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see at.bestsolution.efxclipse.formats.svg.svg.impl.SvgFeComponentTransferImpl
-		 * @see at.bestsolution.efxclipse.formats.svg.svg.impl.SvgPackageImpl#getSvgFeComponentTransfer()
+		 * @see at.bestsolution.efxclipse.formats.svg.svg.impl.SvgFeComponentTransferElementImpl
+		 * @see at.bestsolution.efxclipse.formats.svg.svg.impl.SvgPackageImpl#getSvgFeComponentTransferElement()
 		 * @generated
 		 */
-		EClass SVG_FE_COMPONENT_TRANSFER = eINSTANCE.getSvgFeComponentTransfer();
-
-		/**
-		 * The meta object literal for the '<em><b>Class</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute SVG_FE_COMPONENT_TRANSFER__CLASS = eINSTANCE.getSvgFeComponentTransfer_Class();
-
-		/**
-		 * The meta object literal for the '<em><b>Style</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute SVG_FE_COMPONENT_TRANSFER__STYLE = eINSTANCE.getSvgFeComponentTransfer_Style();
-
-		/**
-		 * The meta object literal for the '{@link at.bestsolution.efxclipse.formats.svg.svg.impl.SvgFeFuncRImpl <em>Fe Func R</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see at.bestsolution.efxclipse.formats.svg.svg.impl.SvgFeFuncRImpl
-		 * @see at.bestsolution.efxclipse.formats.svg.svg.impl.SvgPackageImpl#getSvgFeFuncR()
-		 * @generated
-		 */
-		EClass SVG_FE_FUNC_R = eINSTANCE.getSvgFeFuncR();
-
-		/**
-		 * The meta object literal for the '{@link at.bestsolution.efxclipse.formats.svg.svg.impl.SvgFeFuncGImpl <em>Fe Func G</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see at.bestsolution.efxclipse.formats.svg.svg.impl.SvgFeFuncGImpl
-		 * @see at.bestsolution.efxclipse.formats.svg.svg.impl.SvgPackageImpl#getSvgFeFuncG()
-		 * @generated
-		 */
-		EClass SVG_FE_FUNC_G = eINSTANCE.getSvgFeFuncG();
-
-		/**
-		 * The meta object literal for the '{@link at.bestsolution.efxclipse.formats.svg.svg.impl.SvgFeFuncBImpl <em>Fe Func B</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see at.bestsolution.efxclipse.formats.svg.svg.impl.SvgFeFuncBImpl
-		 * @see at.bestsolution.efxclipse.formats.svg.svg.impl.SvgPackageImpl#getSvgFeFuncB()
-		 * @generated
-		 */
-		EClass SVG_FE_FUNC_B = eINSTANCE.getSvgFeFuncB();
-
-		/**
-		 * The meta object literal for the '{@link at.bestsolution.efxclipse.formats.svg.svg.impl.SvgFeFuncAImpl <em>Fe Func A</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see at.bestsolution.efxclipse.formats.svg.svg.impl.SvgFeFuncAImpl
-		 * @see at.bestsolution.efxclipse.formats.svg.svg.impl.SvgPackageImpl#getSvgFeFuncA()
-		 * @generated
-		 */
-		EClass SVG_FE_FUNC_A = eINSTANCE.getSvgFeFuncA();
-
-		/**
-		 * The meta object literal for the '{@link at.bestsolution.efxclipse.formats.svg.svg.impl.SvgFeCompositeImpl <em>Fe Composite</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see at.bestsolution.efxclipse.formats.svg.svg.impl.SvgFeCompositeImpl
-		 * @see at.bestsolution.efxclipse.formats.svg.svg.impl.SvgPackageImpl#getSvgFeComposite()
-		 * @generated
-		 */
-		EClass SVG_FE_COMPOSITE = eINSTANCE.getSvgFeComposite();
+		EClass SVG_FE_COMPONENT_TRANSFER_ELEMENT = eINSTANCE.getSvgFeComponentTransferElement();
 
 		/**
 		 * The meta object literal for the '<em><b>Class</b></em>' attribute feature.
@@ -48488,7 +48797,7 @@ public interface SvgPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute SVG_FE_COMPOSITE__CLASS = eINSTANCE.getSvgFeComposite_Class();
+		EAttribute SVG_FE_COMPONENT_TRANSFER_ELEMENT__CLASS = eINSTANCE.getSvgFeComponentTransferElement_Class();
 
 		/**
 		 * The meta object literal for the '<em><b>Style</b></em>' attribute feature.
@@ -48496,7 +48805,73 @@ public interface SvgPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute SVG_FE_COMPOSITE__STYLE = eINSTANCE.getSvgFeComposite_Style();
+		EAttribute SVG_FE_COMPONENT_TRANSFER_ELEMENT__STYLE = eINSTANCE.getSvgFeComponentTransferElement_Style();
+
+		/**
+		 * The meta object literal for the '{@link at.bestsolution.efxclipse.formats.svg.svg.impl.SvgFeFuncRElementImpl <em>Fe Func RElement</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see at.bestsolution.efxclipse.formats.svg.svg.impl.SvgFeFuncRElementImpl
+		 * @see at.bestsolution.efxclipse.formats.svg.svg.impl.SvgPackageImpl#getSvgFeFuncRElement()
+		 * @generated
+		 */
+		EClass SVG_FE_FUNC_RELEMENT = eINSTANCE.getSvgFeFuncRElement();
+
+		/**
+		 * The meta object literal for the '{@link at.bestsolution.efxclipse.formats.svg.svg.impl.SvgFeFuncGElementImpl <em>Fe Func GElement</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see at.bestsolution.efxclipse.formats.svg.svg.impl.SvgFeFuncGElementImpl
+		 * @see at.bestsolution.efxclipse.formats.svg.svg.impl.SvgPackageImpl#getSvgFeFuncGElement()
+		 * @generated
+		 */
+		EClass SVG_FE_FUNC_GELEMENT = eINSTANCE.getSvgFeFuncGElement();
+
+		/**
+		 * The meta object literal for the '{@link at.bestsolution.efxclipse.formats.svg.svg.impl.SvgFeFuncBElementImpl <em>Fe Func BElement</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see at.bestsolution.efxclipse.formats.svg.svg.impl.SvgFeFuncBElementImpl
+		 * @see at.bestsolution.efxclipse.formats.svg.svg.impl.SvgPackageImpl#getSvgFeFuncBElement()
+		 * @generated
+		 */
+		EClass SVG_FE_FUNC_BELEMENT = eINSTANCE.getSvgFeFuncBElement();
+
+		/**
+		 * The meta object literal for the '{@link at.bestsolution.efxclipse.formats.svg.svg.impl.SvgFeFuncAElementImpl <em>Fe Func AElement</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see at.bestsolution.efxclipse.formats.svg.svg.impl.SvgFeFuncAElementImpl
+		 * @see at.bestsolution.efxclipse.formats.svg.svg.impl.SvgPackageImpl#getSvgFeFuncAElement()
+		 * @generated
+		 */
+		EClass SVG_FE_FUNC_AELEMENT = eINSTANCE.getSvgFeFuncAElement();
+
+		/**
+		 * The meta object literal for the '{@link at.bestsolution.efxclipse.formats.svg.svg.impl.SvgFeCompositeElementImpl <em>Fe Composite Element</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see at.bestsolution.efxclipse.formats.svg.svg.impl.SvgFeCompositeElementImpl
+		 * @see at.bestsolution.efxclipse.formats.svg.svg.impl.SvgPackageImpl#getSvgFeCompositeElement()
+		 * @generated
+		 */
+		EClass SVG_FE_COMPOSITE_ELEMENT = eINSTANCE.getSvgFeCompositeElement();
+
+		/**
+		 * The meta object literal for the '<em><b>Class</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute SVG_FE_COMPOSITE_ELEMENT__CLASS = eINSTANCE.getSvgFeCompositeElement_Class();
+
+		/**
+		 * The meta object literal for the '<em><b>Style</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute SVG_FE_COMPOSITE_ELEMENT__STYLE = eINSTANCE.getSvgFeCompositeElement_Style();
 
 		/**
 		 * The meta object literal for the '<em><b>In2</b></em>' attribute feature.
@@ -48504,7 +48879,7 @@ public interface SvgPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute SVG_FE_COMPOSITE__IN2 = eINSTANCE.getSvgFeComposite_In2();
+		EAttribute SVG_FE_COMPOSITE_ELEMENT__IN2 = eINSTANCE.getSvgFeCompositeElement_In2();
 
 		/**
 		 * The meta object literal for the '<em><b>Operator</b></em>' attribute feature.
@@ -48512,7 +48887,7 @@ public interface SvgPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute SVG_FE_COMPOSITE__OPERATOR = eINSTANCE.getSvgFeComposite_Operator();
+		EAttribute SVG_FE_COMPOSITE_ELEMENT__OPERATOR = eINSTANCE.getSvgFeCompositeElement_Operator();
 
 		/**
 		 * The meta object literal for the '<em><b>K1</b></em>' attribute feature.
@@ -48520,7 +48895,7 @@ public interface SvgPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute SVG_FE_COMPOSITE__K1 = eINSTANCE.getSvgFeComposite_K1();
+		EAttribute SVG_FE_COMPOSITE_ELEMENT__K1 = eINSTANCE.getSvgFeCompositeElement_K1();
 
 		/**
 		 * The meta object literal for the '<em><b>K2</b></em>' attribute feature.
@@ -48528,7 +48903,7 @@ public interface SvgPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute SVG_FE_COMPOSITE__K2 = eINSTANCE.getSvgFeComposite_K2();
+		EAttribute SVG_FE_COMPOSITE_ELEMENT__K2 = eINSTANCE.getSvgFeCompositeElement_K2();
 
 		/**
 		 * The meta object literal for the '<em><b>K3</b></em>' attribute feature.
@@ -48536,7 +48911,7 @@ public interface SvgPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute SVG_FE_COMPOSITE__K3 = eINSTANCE.getSvgFeComposite_K3();
+		EAttribute SVG_FE_COMPOSITE_ELEMENT__K3 = eINSTANCE.getSvgFeCompositeElement_K3();
 
 		/**
 		 * The meta object literal for the '<em><b>K4</b></em>' attribute feature.
@@ -48544,17 +48919,17 @@ public interface SvgPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute SVG_FE_COMPOSITE__K4 = eINSTANCE.getSvgFeComposite_K4();
+		EAttribute SVG_FE_COMPOSITE_ELEMENT__K4 = eINSTANCE.getSvgFeCompositeElement_K4();
 
 		/**
-		 * The meta object literal for the '{@link at.bestsolution.efxclipse.formats.svg.svg.impl.SvgFeConvolveMatrixImpl <em>Fe Convolve Matrix</em>}' class.
+		 * The meta object literal for the '{@link at.bestsolution.efxclipse.formats.svg.svg.impl.SvgFeConvolveMatrixElementImpl <em>Fe Convolve Matrix Element</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see at.bestsolution.efxclipse.formats.svg.svg.impl.SvgFeConvolveMatrixImpl
-		 * @see at.bestsolution.efxclipse.formats.svg.svg.impl.SvgPackageImpl#getSvgFeConvolveMatrix()
+		 * @see at.bestsolution.efxclipse.formats.svg.svg.impl.SvgFeConvolveMatrixElementImpl
+		 * @see at.bestsolution.efxclipse.formats.svg.svg.impl.SvgPackageImpl#getSvgFeConvolveMatrixElement()
 		 * @generated
 		 */
-		EClass SVG_FE_CONVOLVE_MATRIX = eINSTANCE.getSvgFeConvolveMatrix();
+		EClass SVG_FE_CONVOLVE_MATRIX_ELEMENT = eINSTANCE.getSvgFeConvolveMatrixElement();
 
 		/**
 		 * The meta object literal for the '<em><b>Class</b></em>' attribute feature.
@@ -48562,7 +48937,7 @@ public interface SvgPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute SVG_FE_CONVOLVE_MATRIX__CLASS = eINSTANCE.getSvgFeConvolveMatrix_Class();
+		EAttribute SVG_FE_CONVOLVE_MATRIX_ELEMENT__CLASS = eINSTANCE.getSvgFeConvolveMatrixElement_Class();
 
 		/**
 		 * The meta object literal for the '<em><b>Style</b></em>' attribute feature.
@@ -48570,7 +48945,7 @@ public interface SvgPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute SVG_FE_CONVOLVE_MATRIX__STYLE = eINSTANCE.getSvgFeConvolveMatrix_Style();
+		EAttribute SVG_FE_CONVOLVE_MATRIX_ELEMENT__STYLE = eINSTANCE.getSvgFeConvolveMatrixElement_Style();
 
 		/**
 		 * The meta object literal for the '<em><b>Order</b></em>' attribute feature.
@@ -48578,7 +48953,7 @@ public interface SvgPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute SVG_FE_CONVOLVE_MATRIX__ORDER = eINSTANCE.getSvgFeConvolveMatrix_Order();
+		EAttribute SVG_FE_CONVOLVE_MATRIX_ELEMENT__ORDER = eINSTANCE.getSvgFeConvolveMatrixElement_Order();
 
 		/**
 		 * The meta object literal for the '<em><b>Kernel Matrix</b></em>' attribute feature.
@@ -48586,7 +48961,7 @@ public interface SvgPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute SVG_FE_CONVOLVE_MATRIX__KERNEL_MATRIX = eINSTANCE.getSvgFeConvolveMatrix_KernelMatrix();
+		EAttribute SVG_FE_CONVOLVE_MATRIX_ELEMENT__KERNEL_MATRIX = eINSTANCE.getSvgFeConvolveMatrixElement_KernelMatrix();
 
 		/**
 		 * The meta object literal for the '<em><b>Divisor</b></em>' attribute feature.
@@ -48594,7 +48969,7 @@ public interface SvgPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute SVG_FE_CONVOLVE_MATRIX__DIVISOR = eINSTANCE.getSvgFeConvolveMatrix_Divisor();
+		EAttribute SVG_FE_CONVOLVE_MATRIX_ELEMENT__DIVISOR = eINSTANCE.getSvgFeConvolveMatrixElement_Divisor();
 
 		/**
 		 * The meta object literal for the '<em><b>Bias</b></em>' attribute feature.
@@ -48602,7 +48977,7 @@ public interface SvgPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute SVG_FE_CONVOLVE_MATRIX__BIAS = eINSTANCE.getSvgFeConvolveMatrix_Bias();
+		EAttribute SVG_FE_CONVOLVE_MATRIX_ELEMENT__BIAS = eINSTANCE.getSvgFeConvolveMatrixElement_Bias();
 
 		/**
 		 * The meta object literal for the '<em><b>Target X</b></em>' attribute feature.
@@ -48610,7 +48985,7 @@ public interface SvgPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute SVG_FE_CONVOLVE_MATRIX__TARGET_X = eINSTANCE.getSvgFeConvolveMatrix_TargetX();
+		EAttribute SVG_FE_CONVOLVE_MATRIX_ELEMENT__TARGET_X = eINSTANCE.getSvgFeConvolveMatrixElement_TargetX();
 
 		/**
 		 * The meta object literal for the '<em><b>Target Y</b></em>' attribute feature.
@@ -48618,7 +48993,7 @@ public interface SvgPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute SVG_FE_CONVOLVE_MATRIX__TARGET_Y = eINSTANCE.getSvgFeConvolveMatrix_TargetY();
+		EAttribute SVG_FE_CONVOLVE_MATRIX_ELEMENT__TARGET_Y = eINSTANCE.getSvgFeConvolveMatrixElement_TargetY();
 
 		/**
 		 * The meta object literal for the '<em><b>Edge Mode</b></em>' attribute feature.
@@ -48626,7 +49001,7 @@ public interface SvgPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute SVG_FE_CONVOLVE_MATRIX__EDGE_MODE = eINSTANCE.getSvgFeConvolveMatrix_EdgeMode();
+		EAttribute SVG_FE_CONVOLVE_MATRIX_ELEMENT__EDGE_MODE = eINSTANCE.getSvgFeConvolveMatrixElement_EdgeMode();
 
 		/**
 		 * The meta object literal for the '<em><b>Kernel Unit Length</b></em>' attribute feature.
@@ -48634,7 +49009,7 @@ public interface SvgPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute SVG_FE_CONVOLVE_MATRIX__KERNEL_UNIT_LENGTH = eINSTANCE.getSvgFeConvolveMatrix_KernelUnitLength();
+		EAttribute SVG_FE_CONVOLVE_MATRIX_ELEMENT__KERNEL_UNIT_LENGTH = eINSTANCE.getSvgFeConvolveMatrixElement_KernelUnitLength();
 
 		/**
 		 * The meta object literal for the '<em><b>Preserve Alpha</b></em>' attribute feature.
@@ -48642,17 +49017,17 @@ public interface SvgPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute SVG_FE_CONVOLVE_MATRIX__PRESERVE_ALPHA = eINSTANCE.getSvgFeConvolveMatrix_PreserveAlpha();
+		EAttribute SVG_FE_CONVOLVE_MATRIX_ELEMENT__PRESERVE_ALPHA = eINSTANCE.getSvgFeConvolveMatrixElement_PreserveAlpha();
 
 		/**
-		 * The meta object literal for the '{@link at.bestsolution.efxclipse.formats.svg.svg.impl.SvgFeDiffuseLightingImpl <em>Fe Diffuse Lighting</em>}' class.
+		 * The meta object literal for the '{@link at.bestsolution.efxclipse.formats.svg.svg.impl.SvgFeDiffuseLightingElementImpl <em>Fe Diffuse Lighting Element</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see at.bestsolution.efxclipse.formats.svg.svg.impl.SvgFeDiffuseLightingImpl
-		 * @see at.bestsolution.efxclipse.formats.svg.svg.impl.SvgPackageImpl#getSvgFeDiffuseLighting()
+		 * @see at.bestsolution.efxclipse.formats.svg.svg.impl.SvgFeDiffuseLightingElementImpl
+		 * @see at.bestsolution.efxclipse.formats.svg.svg.impl.SvgPackageImpl#getSvgFeDiffuseLightingElement()
 		 * @generated
 		 */
-		EClass SVG_FE_DIFFUSE_LIGHTING = eINSTANCE.getSvgFeDiffuseLighting();
+		EClass SVG_FE_DIFFUSE_LIGHTING_ELEMENT = eINSTANCE.getSvgFeDiffuseLightingElement();
 
 		/**
 		 * The meta object literal for the '<em><b>Class</b></em>' attribute feature.
@@ -48660,7 +49035,7 @@ public interface SvgPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute SVG_FE_DIFFUSE_LIGHTING__CLASS = eINSTANCE.getSvgFeDiffuseLighting_Class();
+		EAttribute SVG_FE_DIFFUSE_LIGHTING_ELEMENT__CLASS = eINSTANCE.getSvgFeDiffuseLightingElement_Class();
 
 		/**
 		 * The meta object literal for the '<em><b>Style</b></em>' attribute feature.
@@ -48668,7 +49043,7 @@ public interface SvgPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute SVG_FE_DIFFUSE_LIGHTING__STYLE = eINSTANCE.getSvgFeDiffuseLighting_Style();
+		EAttribute SVG_FE_DIFFUSE_LIGHTING_ELEMENT__STYLE = eINSTANCE.getSvgFeDiffuseLightingElement_Style();
 
 		/**
 		 * The meta object literal for the '<em><b>Surface Scale</b></em>' attribute feature.
@@ -48676,7 +49051,7 @@ public interface SvgPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute SVG_FE_DIFFUSE_LIGHTING__SURFACE_SCALE = eINSTANCE.getSvgFeDiffuseLighting_SurfaceScale();
+		EAttribute SVG_FE_DIFFUSE_LIGHTING_ELEMENT__SURFACE_SCALE = eINSTANCE.getSvgFeDiffuseLightingElement_SurfaceScale();
 
 		/**
 		 * The meta object literal for the '<em><b>Diffuse Constant</b></em>' attribute feature.
@@ -48684,7 +49059,7 @@ public interface SvgPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute SVG_FE_DIFFUSE_LIGHTING__DIFFUSE_CONSTANT = eINSTANCE.getSvgFeDiffuseLighting_DiffuseConstant();
+		EAttribute SVG_FE_DIFFUSE_LIGHTING_ELEMENT__DIFFUSE_CONSTANT = eINSTANCE.getSvgFeDiffuseLightingElement_DiffuseConstant();
 
 		/**
 		 * The meta object literal for the '<em><b>Kernel Unit Length</b></em>' attribute feature.
@@ -48692,17 +49067,17 @@ public interface SvgPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute SVG_FE_DIFFUSE_LIGHTING__KERNEL_UNIT_LENGTH = eINSTANCE.getSvgFeDiffuseLighting_KernelUnitLength();
+		EAttribute SVG_FE_DIFFUSE_LIGHTING_ELEMENT__KERNEL_UNIT_LENGTH = eINSTANCE.getSvgFeDiffuseLightingElement_KernelUnitLength();
 
 		/**
-		 * The meta object literal for the '{@link at.bestsolution.efxclipse.formats.svg.svg.impl.SvgFeDisplacementMapImpl <em>Fe Displacement Map</em>}' class.
+		 * The meta object literal for the '{@link at.bestsolution.efxclipse.formats.svg.svg.impl.SvgFeDisplacementMapElementImpl <em>Fe Displacement Map Element</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see at.bestsolution.efxclipse.formats.svg.svg.impl.SvgFeDisplacementMapImpl
-		 * @see at.bestsolution.efxclipse.formats.svg.svg.impl.SvgPackageImpl#getSvgFeDisplacementMap()
+		 * @see at.bestsolution.efxclipse.formats.svg.svg.impl.SvgFeDisplacementMapElementImpl
+		 * @see at.bestsolution.efxclipse.formats.svg.svg.impl.SvgPackageImpl#getSvgFeDisplacementMapElement()
 		 * @generated
 		 */
-		EClass SVG_FE_DISPLACEMENT_MAP = eINSTANCE.getSvgFeDisplacementMap();
+		EClass SVG_FE_DISPLACEMENT_MAP_ELEMENT = eINSTANCE.getSvgFeDisplacementMapElement();
 
 		/**
 		 * The meta object literal for the '<em><b>Class</b></em>' attribute feature.
@@ -48710,7 +49085,7 @@ public interface SvgPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute SVG_FE_DISPLACEMENT_MAP__CLASS = eINSTANCE.getSvgFeDisplacementMap_Class();
+		EAttribute SVG_FE_DISPLACEMENT_MAP_ELEMENT__CLASS = eINSTANCE.getSvgFeDisplacementMapElement_Class();
 
 		/**
 		 * The meta object literal for the '<em><b>Style</b></em>' attribute feature.
@@ -48718,7 +49093,7 @@ public interface SvgPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute SVG_FE_DISPLACEMENT_MAP__STYLE = eINSTANCE.getSvgFeDisplacementMap_Style();
+		EAttribute SVG_FE_DISPLACEMENT_MAP_ELEMENT__STYLE = eINSTANCE.getSvgFeDisplacementMapElement_Style();
 
 		/**
 		 * The meta object literal for the '<em><b>In2</b></em>' attribute feature.
@@ -48726,7 +49101,7 @@ public interface SvgPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute SVG_FE_DISPLACEMENT_MAP__IN2 = eINSTANCE.getSvgFeDisplacementMap_In2();
+		EAttribute SVG_FE_DISPLACEMENT_MAP_ELEMENT__IN2 = eINSTANCE.getSvgFeDisplacementMapElement_In2();
 
 		/**
 		 * The meta object literal for the '<em><b>Scale</b></em>' attribute feature.
@@ -48734,7 +49109,7 @@ public interface SvgPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute SVG_FE_DISPLACEMENT_MAP__SCALE = eINSTANCE.getSvgFeDisplacementMap_Scale();
+		EAttribute SVG_FE_DISPLACEMENT_MAP_ELEMENT__SCALE = eINSTANCE.getSvgFeDisplacementMapElement_Scale();
 
 		/**
 		 * The meta object literal for the '<em><b>XChannel Selector</b></em>' attribute feature.
@@ -48742,7 +49117,7 @@ public interface SvgPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute SVG_FE_DISPLACEMENT_MAP__XCHANNEL_SELECTOR = eINSTANCE.getSvgFeDisplacementMap_XChannelSelector();
+		EAttribute SVG_FE_DISPLACEMENT_MAP_ELEMENT__XCHANNEL_SELECTOR = eINSTANCE.getSvgFeDisplacementMapElement_XChannelSelector();
 
 		/**
 		 * The meta object literal for the '<em><b>YChannel Selector</b></em>' attribute feature.
@@ -48750,43 +49125,17 @@ public interface SvgPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute SVG_FE_DISPLACEMENT_MAP__YCHANNEL_SELECTOR = eINSTANCE.getSvgFeDisplacementMap_YChannelSelector();
+		EAttribute SVG_FE_DISPLACEMENT_MAP_ELEMENT__YCHANNEL_SELECTOR = eINSTANCE.getSvgFeDisplacementMapElement_YChannelSelector();
 
 		/**
-		 * The meta object literal for the '{@link at.bestsolution.efxclipse.formats.svg.svg.impl.SvgFeFloodImpl <em>Fe Flood</em>}' class.
+		 * The meta object literal for the '{@link at.bestsolution.efxclipse.formats.svg.svg.impl.SvgFeFloodElementImpl <em>Fe Flood Element</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see at.bestsolution.efxclipse.formats.svg.svg.impl.SvgFeFloodImpl
-		 * @see at.bestsolution.efxclipse.formats.svg.svg.impl.SvgPackageImpl#getSvgFeFlood()
+		 * @see at.bestsolution.efxclipse.formats.svg.svg.impl.SvgFeFloodElementImpl
+		 * @see at.bestsolution.efxclipse.formats.svg.svg.impl.SvgPackageImpl#getSvgFeFloodElement()
 		 * @generated
 		 */
-		EClass SVG_FE_FLOOD = eINSTANCE.getSvgFeFlood();
-
-		/**
-		 * The meta object literal for the '<em><b>Class</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute SVG_FE_FLOOD__CLASS = eINSTANCE.getSvgFeFlood_Class();
-
-		/**
-		 * The meta object literal for the '<em><b>Style</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute SVG_FE_FLOOD__STYLE = eINSTANCE.getSvgFeFlood_Style();
-
-		/**
-		 * The meta object literal for the '{@link at.bestsolution.efxclipse.formats.svg.svg.impl.SvgFeGaussianBlurImpl <em>Fe Gaussian Blur</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see at.bestsolution.efxclipse.formats.svg.svg.impl.SvgFeGaussianBlurImpl
-		 * @see at.bestsolution.efxclipse.formats.svg.svg.impl.SvgPackageImpl#getSvgFeGaussianBlur()
-		 * @generated
-		 */
-		EClass SVG_FE_GAUSSIAN_BLUR = eINSTANCE.getSvgFeGaussianBlur();
+		EClass SVG_FE_FLOOD_ELEMENT = eINSTANCE.getSvgFeFloodElement();
 
 		/**
 		 * The meta object literal for the '<em><b>Class</b></em>' attribute feature.
@@ -48794,7 +49143,7 @@ public interface SvgPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute SVG_FE_GAUSSIAN_BLUR__CLASS = eINSTANCE.getSvgFeGaussianBlur_Class();
+		EAttribute SVG_FE_FLOOD_ELEMENT__CLASS = eINSTANCE.getSvgFeFloodElement_Class();
 
 		/**
 		 * The meta object literal for the '<em><b>Style</b></em>' attribute feature.
@@ -48802,7 +49151,33 @@ public interface SvgPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute SVG_FE_GAUSSIAN_BLUR__STYLE = eINSTANCE.getSvgFeGaussianBlur_Style();
+		EAttribute SVG_FE_FLOOD_ELEMENT__STYLE = eINSTANCE.getSvgFeFloodElement_Style();
+
+		/**
+		 * The meta object literal for the '{@link at.bestsolution.efxclipse.formats.svg.svg.impl.SvgFeGaussianBlurElementImpl <em>Fe Gaussian Blur Element</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see at.bestsolution.efxclipse.formats.svg.svg.impl.SvgFeGaussianBlurElementImpl
+		 * @see at.bestsolution.efxclipse.formats.svg.svg.impl.SvgPackageImpl#getSvgFeGaussianBlurElement()
+		 * @generated
+		 */
+		EClass SVG_FE_GAUSSIAN_BLUR_ELEMENT = eINSTANCE.getSvgFeGaussianBlurElement();
+
+		/**
+		 * The meta object literal for the '<em><b>Class</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute SVG_FE_GAUSSIAN_BLUR_ELEMENT__CLASS = eINSTANCE.getSvgFeGaussianBlurElement_Class();
+
+		/**
+		 * The meta object literal for the '<em><b>Style</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute SVG_FE_GAUSSIAN_BLUR_ELEMENT__STYLE = eINSTANCE.getSvgFeGaussianBlurElement_Style();
 
 		/**
 		 * The meta object literal for the '<em><b>Std Deviation</b></em>' attribute feature.
@@ -48810,17 +49185,17 @@ public interface SvgPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute SVG_FE_GAUSSIAN_BLUR__STD_DEVIATION = eINSTANCE.getSvgFeGaussianBlur_StdDeviation();
+		EAttribute SVG_FE_GAUSSIAN_BLUR_ELEMENT__STD_DEVIATION = eINSTANCE.getSvgFeGaussianBlurElement_StdDeviation();
 
 		/**
-		 * The meta object literal for the '{@link at.bestsolution.efxclipse.formats.svg.svg.impl.SvgFeImageImpl <em>Fe Image</em>}' class.
+		 * The meta object literal for the '{@link at.bestsolution.efxclipse.formats.svg.svg.impl.SvgFeImageElementImpl <em>Fe Image Element</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see at.bestsolution.efxclipse.formats.svg.svg.impl.SvgFeImageImpl
-		 * @see at.bestsolution.efxclipse.formats.svg.svg.impl.SvgPackageImpl#getSvgFeImage()
+		 * @see at.bestsolution.efxclipse.formats.svg.svg.impl.SvgFeImageElementImpl
+		 * @see at.bestsolution.efxclipse.formats.svg.svg.impl.SvgPackageImpl#getSvgFeImageElement()
 		 * @generated
 		 */
-		EClass SVG_FE_IMAGE = eINSTANCE.getSvgFeImage();
+		EClass SVG_FE_IMAGE_ELEMENT = eINSTANCE.getSvgFeImageElement();
 
 		/**
 		 * The meta object literal for the '<em><b>Class</b></em>' attribute feature.
@@ -48828,7 +49203,7 @@ public interface SvgPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute SVG_FE_IMAGE__CLASS = eINSTANCE.getSvgFeImage_Class();
+		EAttribute SVG_FE_IMAGE_ELEMENT__CLASS = eINSTANCE.getSvgFeImageElement_Class();
 
 		/**
 		 * The meta object literal for the '<em><b>Style</b></em>' attribute feature.
@@ -48836,7 +49211,7 @@ public interface SvgPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute SVG_FE_IMAGE__STYLE = eINSTANCE.getSvgFeImage_Style();
+		EAttribute SVG_FE_IMAGE_ELEMENT__STYLE = eINSTANCE.getSvgFeImageElement_Style();
 
 		/**
 		 * The meta object literal for the '<em><b>External Resources Required</b></em>' attribute feature.
@@ -48844,7 +49219,7 @@ public interface SvgPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute SVG_FE_IMAGE__EXTERNAL_RESOURCES_REQUIRED = eINSTANCE.getSvgFeImage_ExternalResourcesRequired();
+		EAttribute SVG_FE_IMAGE_ELEMENT__EXTERNAL_RESOURCES_REQUIRED = eINSTANCE.getSvgFeImageElement_ExternalResourcesRequired();
 
 		/**
 		 * The meta object literal for the '<em><b>Preserve Aspect Ratio</b></em>' attribute feature.
@@ -48852,53 +49227,17 @@ public interface SvgPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute SVG_FE_IMAGE__PRESERVE_ASPECT_RATIO = eINSTANCE.getSvgFeImage_PreserveAspectRatio();
+		EAttribute SVG_FE_IMAGE_ELEMENT__PRESERVE_ASPECT_RATIO = eINSTANCE.getSvgFeImageElement_PreserveAspectRatio();
 
 		/**
-		 * The meta object literal for the '{@link at.bestsolution.efxclipse.formats.svg.svg.impl.SvgFeMergeImpl <em>Fe Merge</em>}' class.
+		 * The meta object literal for the '{@link at.bestsolution.efxclipse.formats.svg.svg.impl.SvgFeMergeElementImpl <em>Fe Merge Element</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see at.bestsolution.efxclipse.formats.svg.svg.impl.SvgFeMergeImpl
-		 * @see at.bestsolution.efxclipse.formats.svg.svg.impl.SvgPackageImpl#getSvgFeMerge()
+		 * @see at.bestsolution.efxclipse.formats.svg.svg.impl.SvgFeMergeElementImpl
+		 * @see at.bestsolution.efxclipse.formats.svg.svg.impl.SvgPackageImpl#getSvgFeMergeElement()
 		 * @generated
 		 */
-		EClass SVG_FE_MERGE = eINSTANCE.getSvgFeMerge();
-
-		/**
-		 * The meta object literal for the '<em><b>Class</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute SVG_FE_MERGE__CLASS = eINSTANCE.getSvgFeMerge_Class();
-
-		/**
-		 * The meta object literal for the '<em><b>Style</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute SVG_FE_MERGE__STYLE = eINSTANCE.getSvgFeMerge_Style();
-
-		/**
-		 * The meta object literal for the '{@link at.bestsolution.efxclipse.formats.svg.svg.impl.SvgFeMergeNodeImpl <em>Fe Merge Node</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see at.bestsolution.efxclipse.formats.svg.svg.impl.SvgFeMergeNodeImpl
-		 * @see at.bestsolution.efxclipse.formats.svg.svg.impl.SvgPackageImpl#getSvgFeMergeNode()
-		 * @generated
-		 */
-		EClass SVG_FE_MERGE_NODE = eINSTANCE.getSvgFeMergeNode();
-
-		/**
-		 * The meta object literal for the '{@link at.bestsolution.efxclipse.formats.svg.svg.impl.SvgFeMorphologyImpl <em>Fe Morphology</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see at.bestsolution.efxclipse.formats.svg.svg.impl.SvgFeMorphologyImpl
-		 * @see at.bestsolution.efxclipse.formats.svg.svg.impl.SvgPackageImpl#getSvgFeMorphology()
-		 * @generated
-		 */
-		EClass SVG_FE_MORPHOLOGY = eINSTANCE.getSvgFeMorphology();
+		EClass SVG_FE_MERGE_ELEMENT = eINSTANCE.getSvgFeMergeElement();
 
 		/**
 		 * The meta object literal for the '<em><b>Class</b></em>' attribute feature.
@@ -48906,7 +49245,7 @@ public interface SvgPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute SVG_FE_MORPHOLOGY__CLASS = eINSTANCE.getSvgFeMorphology_Class();
+		EAttribute SVG_FE_MERGE_ELEMENT__CLASS = eINSTANCE.getSvgFeMergeElement_Class();
 
 		/**
 		 * The meta object literal for the '<em><b>Style</b></em>' attribute feature.
@@ -48914,7 +49253,43 @@ public interface SvgPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute SVG_FE_MORPHOLOGY__STYLE = eINSTANCE.getSvgFeMorphology_Style();
+		EAttribute SVG_FE_MERGE_ELEMENT__STYLE = eINSTANCE.getSvgFeMergeElement_Style();
+
+		/**
+		 * The meta object literal for the '{@link at.bestsolution.efxclipse.formats.svg.svg.impl.SvgFeMergeNodeElementImpl <em>Fe Merge Node Element</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see at.bestsolution.efxclipse.formats.svg.svg.impl.SvgFeMergeNodeElementImpl
+		 * @see at.bestsolution.efxclipse.formats.svg.svg.impl.SvgPackageImpl#getSvgFeMergeNodeElement()
+		 * @generated
+		 */
+		EClass SVG_FE_MERGE_NODE_ELEMENT = eINSTANCE.getSvgFeMergeNodeElement();
+
+		/**
+		 * The meta object literal for the '{@link at.bestsolution.efxclipse.formats.svg.svg.impl.SvgFeMorphologyElementImpl <em>Fe Morphology Element</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see at.bestsolution.efxclipse.formats.svg.svg.impl.SvgFeMorphologyElementImpl
+		 * @see at.bestsolution.efxclipse.formats.svg.svg.impl.SvgPackageImpl#getSvgFeMorphologyElement()
+		 * @generated
+		 */
+		EClass SVG_FE_MORPHOLOGY_ELEMENT = eINSTANCE.getSvgFeMorphologyElement();
+
+		/**
+		 * The meta object literal for the '<em><b>Class</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute SVG_FE_MORPHOLOGY_ELEMENT__CLASS = eINSTANCE.getSvgFeMorphologyElement_Class();
+
+		/**
+		 * The meta object literal for the '<em><b>Style</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute SVG_FE_MORPHOLOGY_ELEMENT__STYLE = eINSTANCE.getSvgFeMorphologyElement_Style();
 
 		/**
 		 * The meta object literal for the '<em><b>Operator</b></em>' attribute feature.
@@ -48922,7 +49297,7 @@ public interface SvgPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute SVG_FE_MORPHOLOGY__OPERATOR = eINSTANCE.getSvgFeMorphology_Operator();
+		EAttribute SVG_FE_MORPHOLOGY_ELEMENT__OPERATOR = eINSTANCE.getSvgFeMorphologyElement_Operator();
 
 		/**
 		 * The meta object literal for the '<em><b>Radius</b></em>' attribute feature.
@@ -48930,17 +49305,17 @@ public interface SvgPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute SVG_FE_MORPHOLOGY__RADIUS = eINSTANCE.getSvgFeMorphology_Radius();
+		EAttribute SVG_FE_MORPHOLOGY_ELEMENT__RADIUS = eINSTANCE.getSvgFeMorphologyElement_Radius();
 
 		/**
-		 * The meta object literal for the '{@link at.bestsolution.efxclipse.formats.svg.svg.impl.SvgFeOffsetImpl <em>Fe Offset</em>}' class.
+		 * The meta object literal for the '{@link at.bestsolution.efxclipse.formats.svg.svg.impl.SvgFeOffsetElementImpl <em>Fe Offset Element</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see at.bestsolution.efxclipse.formats.svg.svg.impl.SvgFeOffsetImpl
-		 * @see at.bestsolution.efxclipse.formats.svg.svg.impl.SvgPackageImpl#getSvgFeOffset()
+		 * @see at.bestsolution.efxclipse.formats.svg.svg.impl.SvgFeOffsetElementImpl
+		 * @see at.bestsolution.efxclipse.formats.svg.svg.impl.SvgPackageImpl#getSvgFeOffsetElement()
 		 * @generated
 		 */
-		EClass SVG_FE_OFFSET = eINSTANCE.getSvgFeOffset();
+		EClass SVG_FE_OFFSET_ELEMENT = eINSTANCE.getSvgFeOffsetElement();
 
 		/**
 		 * The meta object literal for the '<em><b>Class</b></em>' attribute feature.
@@ -48948,7 +49323,7 @@ public interface SvgPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute SVG_FE_OFFSET__CLASS = eINSTANCE.getSvgFeOffset_Class();
+		EAttribute SVG_FE_OFFSET_ELEMENT__CLASS = eINSTANCE.getSvgFeOffsetElement_Class();
 
 		/**
 		 * The meta object literal for the '<em><b>Style</b></em>' attribute feature.
@@ -48956,7 +49331,7 @@ public interface SvgPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute SVG_FE_OFFSET__STYLE = eINSTANCE.getSvgFeOffset_Style();
+		EAttribute SVG_FE_OFFSET_ELEMENT__STYLE = eINSTANCE.getSvgFeOffsetElement_Style();
 
 		/**
 		 * The meta object literal for the '<em><b>Dx</b></em>' attribute feature.
@@ -48964,7 +49339,7 @@ public interface SvgPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute SVG_FE_OFFSET__DX = eINSTANCE.getSvgFeOffset_Dx();
+		EAttribute SVG_FE_OFFSET_ELEMENT__DX = eINSTANCE.getSvgFeOffsetElement_Dx();
 
 		/**
 		 * The meta object literal for the '<em><b>Dy</b></em>' attribute feature.
@@ -48972,17 +49347,17 @@ public interface SvgPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute SVG_FE_OFFSET__DY = eINSTANCE.getSvgFeOffset_Dy();
+		EAttribute SVG_FE_OFFSET_ELEMENT__DY = eINSTANCE.getSvgFeOffsetElement_Dy();
 
 		/**
-		 * The meta object literal for the '{@link at.bestsolution.efxclipse.formats.svg.svg.impl.SvgFeSpecularLightingImpl <em>Fe Specular Lighting</em>}' class.
+		 * The meta object literal for the '{@link at.bestsolution.efxclipse.formats.svg.svg.impl.SvgFeSpecularLightingElementImpl <em>Fe Specular Lighting Element</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see at.bestsolution.efxclipse.formats.svg.svg.impl.SvgFeSpecularLightingImpl
-		 * @see at.bestsolution.efxclipse.formats.svg.svg.impl.SvgPackageImpl#getSvgFeSpecularLighting()
+		 * @see at.bestsolution.efxclipse.formats.svg.svg.impl.SvgFeSpecularLightingElementImpl
+		 * @see at.bestsolution.efxclipse.formats.svg.svg.impl.SvgPackageImpl#getSvgFeSpecularLightingElement()
 		 * @generated
 		 */
-		EClass SVG_FE_SPECULAR_LIGHTING = eINSTANCE.getSvgFeSpecularLighting();
+		EClass SVG_FE_SPECULAR_LIGHTING_ELEMENT = eINSTANCE.getSvgFeSpecularLightingElement();
 
 		/**
 		 * The meta object literal for the '<em><b>Class</b></em>' attribute feature.
@@ -48990,7 +49365,7 @@ public interface SvgPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute SVG_FE_SPECULAR_LIGHTING__CLASS = eINSTANCE.getSvgFeSpecularLighting_Class();
+		EAttribute SVG_FE_SPECULAR_LIGHTING_ELEMENT__CLASS = eINSTANCE.getSvgFeSpecularLightingElement_Class();
 
 		/**
 		 * The meta object literal for the '<em><b>Style</b></em>' attribute feature.
@@ -48998,7 +49373,7 @@ public interface SvgPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute SVG_FE_SPECULAR_LIGHTING__STYLE = eINSTANCE.getSvgFeSpecularLighting_Style();
+		EAttribute SVG_FE_SPECULAR_LIGHTING_ELEMENT__STYLE = eINSTANCE.getSvgFeSpecularLightingElement_Style();
 
 		/**
 		 * The meta object literal for the '<em><b>Surface Scale</b></em>' attribute feature.
@@ -49006,7 +49381,7 @@ public interface SvgPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute SVG_FE_SPECULAR_LIGHTING__SURFACE_SCALE = eINSTANCE.getSvgFeSpecularLighting_SurfaceScale();
+		EAttribute SVG_FE_SPECULAR_LIGHTING_ELEMENT__SURFACE_SCALE = eINSTANCE.getSvgFeSpecularLightingElement_SurfaceScale();
 
 		/**
 		 * The meta object literal for the '<em><b>Specular Constant</b></em>' attribute feature.
@@ -49014,7 +49389,7 @@ public interface SvgPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute SVG_FE_SPECULAR_LIGHTING__SPECULAR_CONSTANT = eINSTANCE.getSvgFeSpecularLighting_SpecularConstant();
+		EAttribute SVG_FE_SPECULAR_LIGHTING_ELEMENT__SPECULAR_CONSTANT = eINSTANCE.getSvgFeSpecularLightingElement_SpecularConstant();
 
 		/**
 		 * The meta object literal for the '<em><b>Specular Exponent</b></em>' attribute feature.
@@ -49022,7 +49397,7 @@ public interface SvgPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute SVG_FE_SPECULAR_LIGHTING__SPECULAR_EXPONENT = eINSTANCE.getSvgFeSpecularLighting_SpecularExponent();
+		EAttribute SVG_FE_SPECULAR_LIGHTING_ELEMENT__SPECULAR_EXPONENT = eINSTANCE.getSvgFeSpecularLightingElement_SpecularExponent();
 
 		/**
 		 * The meta object literal for the '<em><b>Kernel Unit Length</b></em>' attribute feature.
@@ -49030,43 +49405,17 @@ public interface SvgPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute SVG_FE_SPECULAR_LIGHTING__KERNEL_UNIT_LENGTH = eINSTANCE.getSvgFeSpecularLighting_KernelUnitLength();
+		EAttribute SVG_FE_SPECULAR_LIGHTING_ELEMENT__KERNEL_UNIT_LENGTH = eINSTANCE.getSvgFeSpecularLightingElement_KernelUnitLength();
 
 		/**
-		 * The meta object literal for the '{@link at.bestsolution.efxclipse.formats.svg.svg.impl.SvgFeTileImpl <em>Fe Tile</em>}' class.
+		 * The meta object literal for the '{@link at.bestsolution.efxclipse.formats.svg.svg.impl.SvgFeTileElementImpl <em>Fe Tile Element</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see at.bestsolution.efxclipse.formats.svg.svg.impl.SvgFeTileImpl
-		 * @see at.bestsolution.efxclipse.formats.svg.svg.impl.SvgPackageImpl#getSvgFeTile()
+		 * @see at.bestsolution.efxclipse.formats.svg.svg.impl.SvgFeTileElementImpl
+		 * @see at.bestsolution.efxclipse.formats.svg.svg.impl.SvgPackageImpl#getSvgFeTileElement()
 		 * @generated
 		 */
-		EClass SVG_FE_TILE = eINSTANCE.getSvgFeTile();
-
-		/**
-		 * The meta object literal for the '<em><b>Class</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute SVG_FE_TILE__CLASS = eINSTANCE.getSvgFeTile_Class();
-
-		/**
-		 * The meta object literal for the '<em><b>Style</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute SVG_FE_TILE__STYLE = eINSTANCE.getSvgFeTile_Style();
-
-		/**
-		 * The meta object literal for the '{@link at.bestsolution.efxclipse.formats.svg.svg.impl.SvgFeTurbulenceImpl <em>Fe Turbulence</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see at.bestsolution.efxclipse.formats.svg.svg.impl.SvgFeTurbulenceImpl
-		 * @see at.bestsolution.efxclipse.formats.svg.svg.impl.SvgPackageImpl#getSvgFeTurbulence()
-		 * @generated
-		 */
-		EClass SVG_FE_TURBULENCE = eINSTANCE.getSvgFeTurbulence();
+		EClass SVG_FE_TILE_ELEMENT = eINSTANCE.getSvgFeTileElement();
 
 		/**
 		 * The meta object literal for the '<em><b>Class</b></em>' attribute feature.
@@ -49074,7 +49423,7 @@ public interface SvgPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute SVG_FE_TURBULENCE__CLASS = eINSTANCE.getSvgFeTurbulence_Class();
+		EAttribute SVG_FE_TILE_ELEMENT__CLASS = eINSTANCE.getSvgFeTileElement_Class();
 
 		/**
 		 * The meta object literal for the '<em><b>Style</b></em>' attribute feature.
@@ -49082,7 +49431,33 @@ public interface SvgPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute SVG_FE_TURBULENCE__STYLE = eINSTANCE.getSvgFeTurbulence_Style();
+		EAttribute SVG_FE_TILE_ELEMENT__STYLE = eINSTANCE.getSvgFeTileElement_Style();
+
+		/**
+		 * The meta object literal for the '{@link at.bestsolution.efxclipse.formats.svg.svg.impl.SvgFeTurbulenceElementImpl <em>Fe Turbulence Element</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see at.bestsolution.efxclipse.formats.svg.svg.impl.SvgFeTurbulenceElementImpl
+		 * @see at.bestsolution.efxclipse.formats.svg.svg.impl.SvgPackageImpl#getSvgFeTurbulenceElement()
+		 * @generated
+		 */
+		EClass SVG_FE_TURBULENCE_ELEMENT = eINSTANCE.getSvgFeTurbulenceElement();
+
+		/**
+		 * The meta object literal for the '<em><b>Class</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute SVG_FE_TURBULENCE_ELEMENT__CLASS = eINSTANCE.getSvgFeTurbulenceElement_Class();
+
+		/**
+		 * The meta object literal for the '<em><b>Style</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute SVG_FE_TURBULENCE_ELEMENT__STYLE = eINSTANCE.getSvgFeTurbulenceElement_Style();
 
 		/**
 		 * The meta object literal for the '<em><b>Base Frequency</b></em>' attribute feature.
@@ -49090,7 +49465,7 @@ public interface SvgPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute SVG_FE_TURBULENCE__BASE_FREQUENCY = eINSTANCE.getSvgFeTurbulence_BaseFrequency();
+		EAttribute SVG_FE_TURBULENCE_ELEMENT__BASE_FREQUENCY = eINSTANCE.getSvgFeTurbulenceElement_BaseFrequency();
 
 		/**
 		 * The meta object literal for the '<em><b>Num Octaves</b></em>' attribute feature.
@@ -49098,7 +49473,7 @@ public interface SvgPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute SVG_FE_TURBULENCE__NUM_OCTAVES = eINSTANCE.getSvgFeTurbulence_NumOctaves();
+		EAttribute SVG_FE_TURBULENCE_ELEMENT__NUM_OCTAVES = eINSTANCE.getSvgFeTurbulenceElement_NumOctaves();
 
 		/**
 		 * The meta object literal for the '<em><b>Seed</b></em>' attribute feature.
@@ -49106,7 +49481,7 @@ public interface SvgPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute SVG_FE_TURBULENCE__SEED = eINSTANCE.getSvgFeTurbulence_Seed();
+		EAttribute SVG_FE_TURBULENCE_ELEMENT__SEED = eINSTANCE.getSvgFeTurbulenceElement_Seed();
 
 		/**
 		 * The meta object literal for the '<em><b>Stitch Tiles</b></em>' attribute feature.
@@ -49114,7 +49489,7 @@ public interface SvgPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute SVG_FE_TURBULENCE__STITCH_TILES = eINSTANCE.getSvgFeTurbulence_StitchTiles();
+		EAttribute SVG_FE_TURBULENCE_ELEMENT__STITCH_TILES = eINSTANCE.getSvgFeTurbulenceElement_StitchTiles();
 
 		/**
 		 * The meta object literal for the '<em><b>Type</b></em>' attribute feature.
@@ -49122,7 +49497,27 @@ public interface SvgPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute SVG_FE_TURBULENCE__TYPE = eINSTANCE.getSvgFeTurbulence_Type();
+		EAttribute SVG_FE_TURBULENCE_ELEMENT__TYPE = eINSTANCE.getSvgFeTurbulenceElement_Type();
+
+		/**
+		 * The meta object literal for the '{@link at.bestsolution.efxclipse.formats.svg.svg.impl.SvgAnimateElementImpl <em>Animate Element</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see at.bestsolution.efxclipse.formats.svg.svg.impl.SvgAnimateElementImpl
+		 * @see at.bestsolution.efxclipse.formats.svg.svg.impl.SvgPackageImpl#getSvgAnimateElement()
+		 * @generated
+		 */
+		EClass SVG_ANIMATE_ELEMENT = eINSTANCE.getSvgAnimateElement();
+
+		/**
+		 * The meta object literal for the '{@link at.bestsolution.efxclipse.formats.svg.svg.impl.SvgMetadataElementImpl <em>Metadata Element</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see at.bestsolution.efxclipse.formats.svg.svg.impl.SvgMetadataElementImpl
+		 * @see at.bestsolution.efxclipse.formats.svg.svg.impl.SvgPackageImpl#getSvgMetadataElement()
+		 * @generated
+		 */
+		EClass SVG_METADATA_ELEMENT = eINSTANCE.getSvgMetadataElement();
 
 		/**
 		 * The meta object literal for the '{@link at.bestsolution.efxclipse.formats.svg.svg.Alignment_baseline <em>Alignment baseline</em>}' enum.
@@ -50103,6 +50498,16 @@ public interface SvgPackage extends EPackage {
 		 * @generated
 		 */
 		EDataType NUMBER_OPTIONAL_NUMBER = eINSTANCE.getNumberOptionalNumber();
+
+		/**
+		 * The meta object literal for the '<em>Transform List</em>' data type.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see java.lang.String
+		 * @see at.bestsolution.efxclipse.formats.svg.svg.impl.SvgPackageImpl#getTransformList()
+		 * @generated
+		 */
+		EDataType TRANSFORM_LIST = eINSTANCE.getTransformList();
 
 	}
 

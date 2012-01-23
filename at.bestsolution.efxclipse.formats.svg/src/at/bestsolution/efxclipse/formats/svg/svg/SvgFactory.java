@@ -26,6 +26,15 @@ public interface SvgFactory extends EFactory {
 	SvgFactory eINSTANCE = at.bestsolution.efxclipse.formats.svg.svg.impl.SvgFactoryImpl.init();
 
 	/**
+	 * Returns a new object of class '<em>Animation Element</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Animation Element</em>'.
+	 * @generated
+	 */
+	AnimationElement createAnimationElement();
+
+	/**
 	 * Returns a new object of class '<em>ENUMS </em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -314,13 +323,13 @@ public interface SvgFactory extends EFactory {
 	SvgRadialGradientElement createSvgRadialGradientElement();
 
 	/**
-	 * Returns a new object of class '<em>Gradient Stop Element</em>'.
+	 * Returns a new object of class '<em>Stop Element</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Gradient Stop Element</em>'.
+	 * @return a new object of class '<em>Stop Element</em>'.
 	 * @generated
 	 */
-	SvgGradientStopElement createSvgGradientStopElement();
+	SvgStopElement createSvgStopElement();
 
 	/**
 	 * Returns a new object of class '<em>Pattern Element</em>'.
@@ -359,220 +368,238 @@ public interface SvgFactory extends EFactory {
 	SvgFilterElement createSvgFilterElement();
 
 	/**
-	 * Returns a new object of class '<em>Fe Distant Light</em>'.
+	 * Returns a new object of class '<em>Fe Distant Light Element</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Fe Distant Light</em>'.
+	 * @return a new object of class '<em>Fe Distant Light Element</em>'.
 	 * @generated
 	 */
-	SvgFeDistantLight createSvgFeDistantLight();
+	SvgFeDistantLightElement createSvgFeDistantLightElement();
 
 	/**
-	 * Returns a new object of class '<em>Fe Point Light</em>'.
+	 * Returns a new object of class '<em>Fe Point Light Element</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Fe Point Light</em>'.
+	 * @return a new object of class '<em>Fe Point Light Element</em>'.
 	 * @generated
 	 */
-	SvgFePointLight createSvgFePointLight();
+	SvgFePointLightElement createSvgFePointLightElement();
 
 	/**
-	 * Returns a new object of class '<em>Fe Spot Light</em>'.
+	 * Returns a new object of class '<em>Fe Spot Light Element</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Fe Spot Light</em>'.
+	 * @return a new object of class '<em>Fe Spot Light Element</em>'.
 	 * @generated
 	 */
-	SvgFeSpotLight createSvgFeSpotLight();
+	SvgFeSpotLightElement createSvgFeSpotLightElement();
 
 	/**
-	 * Returns a new object of class '<em>Fe Blend</em>'.
+	 * Returns a new object of class '<em>Fe Blend Element</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Fe Blend</em>'.
+	 * @return a new object of class '<em>Fe Blend Element</em>'.
 	 * @generated
 	 */
-	SvgFeBlend createSvgFeBlend();
+	SvgFeBlendElement createSvgFeBlendElement();
 
 	/**
-	 * Returns a new object of class '<em>Fe Color Matrix</em>'.
+	 * Returns a new object of class '<em>Fe Color Matrix Element</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Fe Color Matrix</em>'.
+	 * @return a new object of class '<em>Fe Color Matrix Element</em>'.
 	 * @generated
 	 */
-	SvgFeColorMatrix createSvgFeColorMatrix();
+	SvgFeColorMatrixElement createSvgFeColorMatrixElement();
 
 	/**
-	 * Returns a new object of class '<em>Fe Component Transfer</em>'.
+	 * Returns a new object of class '<em>Fe Component Transfer Element</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Fe Component Transfer</em>'.
+	 * @return a new object of class '<em>Fe Component Transfer Element</em>'.
 	 * @generated
 	 */
-	SvgFeComponentTransfer createSvgFeComponentTransfer();
+	SvgFeComponentTransferElement createSvgFeComponentTransferElement();
 
 	/**
-	 * Returns a new object of class '<em>Fe Func R</em>'.
+	 * Returns a new object of class '<em>Fe Func RElement</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Fe Func R</em>'.
+	 * @return a new object of class '<em>Fe Func RElement</em>'.
 	 * @generated
 	 */
-	SvgFeFuncR createSvgFeFuncR();
+	SvgFeFuncRElement createSvgFeFuncRElement();
 
 	/**
-	 * Returns a new object of class '<em>Fe Func G</em>'.
+	 * Returns a new object of class '<em>Fe Func GElement</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Fe Func G</em>'.
+	 * @return a new object of class '<em>Fe Func GElement</em>'.
 	 * @generated
 	 */
-	SvgFeFuncG createSvgFeFuncG();
+	SvgFeFuncGElement createSvgFeFuncGElement();
 
 	/**
-	 * Returns a new object of class '<em>Fe Func B</em>'.
+	 * Returns a new object of class '<em>Fe Func BElement</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Fe Func B</em>'.
+	 * @return a new object of class '<em>Fe Func BElement</em>'.
 	 * @generated
 	 */
-	SvgFeFuncB createSvgFeFuncB();
+	SvgFeFuncBElement createSvgFeFuncBElement();
 
 	/**
-	 * Returns a new object of class '<em>Fe Func A</em>'.
+	 * Returns a new object of class '<em>Fe Func AElement</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Fe Func A</em>'.
+	 * @return a new object of class '<em>Fe Func AElement</em>'.
 	 * @generated
 	 */
-	SvgFeFuncA createSvgFeFuncA();
+	SvgFeFuncAElement createSvgFeFuncAElement();
 
 	/**
-	 * Returns a new object of class '<em>Fe Composite</em>'.
+	 * Returns a new object of class '<em>Fe Composite Element</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Fe Composite</em>'.
+	 * @return a new object of class '<em>Fe Composite Element</em>'.
 	 * @generated
 	 */
-	SvgFeComposite createSvgFeComposite();
+	SvgFeCompositeElement createSvgFeCompositeElement();
 
 	/**
-	 * Returns a new object of class '<em>Fe Convolve Matrix</em>'.
+	 * Returns a new object of class '<em>Fe Convolve Matrix Element</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Fe Convolve Matrix</em>'.
+	 * @return a new object of class '<em>Fe Convolve Matrix Element</em>'.
 	 * @generated
 	 */
-	SvgFeConvolveMatrix createSvgFeConvolveMatrix();
+	SvgFeConvolveMatrixElement createSvgFeConvolveMatrixElement();
 
 	/**
-	 * Returns a new object of class '<em>Fe Diffuse Lighting</em>'.
+	 * Returns a new object of class '<em>Fe Diffuse Lighting Element</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Fe Diffuse Lighting</em>'.
+	 * @return a new object of class '<em>Fe Diffuse Lighting Element</em>'.
 	 * @generated
 	 */
-	SvgFeDiffuseLighting createSvgFeDiffuseLighting();
+	SvgFeDiffuseLightingElement createSvgFeDiffuseLightingElement();
 
 	/**
-	 * Returns a new object of class '<em>Fe Displacement Map</em>'.
+	 * Returns a new object of class '<em>Fe Displacement Map Element</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Fe Displacement Map</em>'.
+	 * @return a new object of class '<em>Fe Displacement Map Element</em>'.
 	 * @generated
 	 */
-	SvgFeDisplacementMap createSvgFeDisplacementMap();
+	SvgFeDisplacementMapElement createSvgFeDisplacementMapElement();
 
 	/**
-	 * Returns a new object of class '<em>Fe Flood</em>'.
+	 * Returns a new object of class '<em>Fe Flood Element</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Fe Flood</em>'.
+	 * @return a new object of class '<em>Fe Flood Element</em>'.
 	 * @generated
 	 */
-	SvgFeFlood createSvgFeFlood();
+	SvgFeFloodElement createSvgFeFloodElement();
 
 	/**
-	 * Returns a new object of class '<em>Fe Gaussian Blur</em>'.
+	 * Returns a new object of class '<em>Fe Gaussian Blur Element</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Fe Gaussian Blur</em>'.
+	 * @return a new object of class '<em>Fe Gaussian Blur Element</em>'.
 	 * @generated
 	 */
-	SvgFeGaussianBlur createSvgFeGaussianBlur();
+	SvgFeGaussianBlurElement createSvgFeGaussianBlurElement();
 
 	/**
-	 * Returns a new object of class '<em>Fe Image</em>'.
+	 * Returns a new object of class '<em>Fe Image Element</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Fe Image</em>'.
+	 * @return a new object of class '<em>Fe Image Element</em>'.
 	 * @generated
 	 */
-	SvgFeImage createSvgFeImage();
+	SvgFeImageElement createSvgFeImageElement();
 
 	/**
-	 * Returns a new object of class '<em>Fe Merge</em>'.
+	 * Returns a new object of class '<em>Fe Merge Element</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Fe Merge</em>'.
+	 * @return a new object of class '<em>Fe Merge Element</em>'.
 	 * @generated
 	 */
-	SvgFeMerge createSvgFeMerge();
+	SvgFeMergeElement createSvgFeMergeElement();
 
 	/**
-	 * Returns a new object of class '<em>Fe Merge Node</em>'.
+	 * Returns a new object of class '<em>Fe Merge Node Element</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Fe Merge Node</em>'.
+	 * @return a new object of class '<em>Fe Merge Node Element</em>'.
 	 * @generated
 	 */
-	SvgFeMergeNode createSvgFeMergeNode();
+	SvgFeMergeNodeElement createSvgFeMergeNodeElement();
 
 	/**
-	 * Returns a new object of class '<em>Fe Morphology</em>'.
+	 * Returns a new object of class '<em>Fe Morphology Element</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Fe Morphology</em>'.
+	 * @return a new object of class '<em>Fe Morphology Element</em>'.
 	 * @generated
 	 */
-	SvgFeMorphology createSvgFeMorphology();
+	SvgFeMorphologyElement createSvgFeMorphologyElement();
 
 	/**
-	 * Returns a new object of class '<em>Fe Offset</em>'.
+	 * Returns a new object of class '<em>Fe Offset Element</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Fe Offset</em>'.
+	 * @return a new object of class '<em>Fe Offset Element</em>'.
 	 * @generated
 	 */
-	SvgFeOffset createSvgFeOffset();
+	SvgFeOffsetElement createSvgFeOffsetElement();
 
 	/**
-	 * Returns a new object of class '<em>Fe Specular Lighting</em>'.
+	 * Returns a new object of class '<em>Fe Specular Lighting Element</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Fe Specular Lighting</em>'.
+	 * @return a new object of class '<em>Fe Specular Lighting Element</em>'.
 	 * @generated
 	 */
-	SvgFeSpecularLighting createSvgFeSpecularLighting();
+	SvgFeSpecularLightingElement createSvgFeSpecularLightingElement();
 
 	/**
-	 * Returns a new object of class '<em>Fe Tile</em>'.
+	 * Returns a new object of class '<em>Fe Tile Element</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Fe Tile</em>'.
+	 * @return a new object of class '<em>Fe Tile Element</em>'.
 	 * @generated
 	 */
-	SvgFeTile createSvgFeTile();
+	SvgFeTileElement createSvgFeTileElement();
 
 	/**
-	 * Returns a new object of class '<em>Fe Turbulence</em>'.
+	 * Returns a new object of class '<em>Fe Turbulence Element</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Fe Turbulence</em>'.
+	 * @return a new object of class '<em>Fe Turbulence Element</em>'.
 	 * @generated
 	 */
-	SvgFeTurbulence createSvgFeTurbulence();
+	SvgFeTurbulenceElement createSvgFeTurbulenceElement();
+
+	/**
+	 * Returns a new object of class '<em>Animate Element</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Animate Element</em>'.
+	 * @generated
+	 */
+	SvgAnimateElement createSvgAnimateElement();
+
+	/**
+	 * Returns a new object of class '<em>Metadata Element</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Metadata Element</em>'.
+	 * @generated
+	 */
+	SvgMetadataElement createSvgMetadataElement();
 
 	/**
 	 * Returns the package supported by this factory.

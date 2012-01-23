@@ -155,6 +155,12 @@ public class SvgSwitch<T1> extends Switch<T1> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
+			case SvgPackage.ANIMATION_ELEMENT: {
+				AnimationElement animationElement = (AnimationElement)theEObject;
+				T1 result = caseAnimationElement(animationElement);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
 			case SvgPackage._ENUMS_: {
 				____ENUMS____ ____ENUMS____ = (____ENUMS____)theEObject;
 				T1 result = case____ENUMS____(____ENUMS____);
@@ -592,13 +598,13 @@ public class SvgSwitch<T1> extends Switch<T1> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case SvgPackage.SVG_GRADIENT_STOP_ELEMENT: {
-				SvgGradientStopElement svgGradientStopElement = (SvgGradientStopElement)theEObject;
-				T1 result = caseSvgGradientStopElement(svgGradientStopElement);
-				if (result == null) result = caseSvgElement(svgGradientStopElement);
-				if (result == null) result = caseCoreAttributes(svgGradientStopElement);
-				if (result == null) result = casePresentationAttributes(svgGradientStopElement);
-				if (result == null) result = caseContentElement(svgGradientStopElement);
+			case SvgPackage.SVG_STOP_ELEMENT: {
+				SvgStopElement svgStopElement = (SvgStopElement)theEObject;
+				T1 result = caseSvgStopElement(svgStopElement);
+				if (result == null) result = caseSvgElement(svgStopElement);
+				if (result == null) result = caseCoreAttributes(svgStopElement);
+				if (result == null) result = casePresentationAttributes(svgStopElement);
+				if (result == null) result = caseContentElement(svgStopElement);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -648,258 +654,274 @@ public class SvgSwitch<T1> extends Switch<T1> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case SvgPackage.SVG_FE_DISTANT_LIGHT: {
-				SvgFeDistantLight svgFeDistantLight = (SvgFeDistantLight)theEObject;
-				T1 result = caseSvgFeDistantLight(svgFeDistantLight);
-				if (result == null) result = caseSvgElement(svgFeDistantLight);
-				if (result == null) result = caseCoreAttributes(svgFeDistantLight);
-				if (result == null) result = caseContentElement(svgFeDistantLight);
+			case SvgPackage.SVG_FE_DISTANT_LIGHT_ELEMENT: {
+				SvgFeDistantLightElement svgFeDistantLightElement = (SvgFeDistantLightElement)theEObject;
+				T1 result = caseSvgFeDistantLightElement(svgFeDistantLightElement);
+				if (result == null) result = caseSvgElement(svgFeDistantLightElement);
+				if (result == null) result = caseCoreAttributes(svgFeDistantLightElement);
+				if (result == null) result = caseContentElement(svgFeDistantLightElement);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case SvgPackage.SVG_FE_POINT_LIGHT: {
-				SvgFePointLight svgFePointLight = (SvgFePointLight)theEObject;
-				T1 result = caseSvgFePointLight(svgFePointLight);
-				if (result == null) result = caseSvgElement(svgFePointLight);
-				if (result == null) result = caseCoreAttributes(svgFePointLight);
-				if (result == null) result = caseLightSourceElement(svgFePointLight);
-				if (result == null) result = caseContentElement(svgFePointLight);
+			case SvgPackage.SVG_FE_POINT_LIGHT_ELEMENT: {
+				SvgFePointLightElement svgFePointLightElement = (SvgFePointLightElement)theEObject;
+				T1 result = caseSvgFePointLightElement(svgFePointLightElement);
+				if (result == null) result = caseSvgElement(svgFePointLightElement);
+				if (result == null) result = caseCoreAttributes(svgFePointLightElement);
+				if (result == null) result = caseLightSourceElement(svgFePointLightElement);
+				if (result == null) result = caseContentElement(svgFePointLightElement);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case SvgPackage.SVG_FE_SPOT_LIGHT: {
-				SvgFeSpotLight svgFeSpotLight = (SvgFeSpotLight)theEObject;
-				T1 result = caseSvgFeSpotLight(svgFeSpotLight);
-				if (result == null) result = caseSvgElement(svgFeSpotLight);
-				if (result == null) result = caseCoreAttributes(svgFeSpotLight);
-				if (result == null) result = caseLightSourceElement(svgFeSpotLight);
-				if (result == null) result = caseContentElement(svgFeSpotLight);
+			case SvgPackage.SVG_FE_SPOT_LIGHT_ELEMENT: {
+				SvgFeSpotLightElement svgFeSpotLightElement = (SvgFeSpotLightElement)theEObject;
+				T1 result = caseSvgFeSpotLightElement(svgFeSpotLightElement);
+				if (result == null) result = caseSvgElement(svgFeSpotLightElement);
+				if (result == null) result = caseCoreAttributes(svgFeSpotLightElement);
+				if (result == null) result = caseLightSourceElement(svgFeSpotLightElement);
+				if (result == null) result = caseContentElement(svgFeSpotLightElement);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case SvgPackage.SVG_FE_BLEND: {
-				SvgFeBlend svgFeBlend = (SvgFeBlend)theEObject;
-				T1 result = caseSvgFeBlend(svgFeBlend);
-				if (result == null) result = caseSvgElement(svgFeBlend);
-				if (result == null) result = caseCoreAttributes(svgFeBlend);
-				if (result == null) result = casePresentationAttributes(svgFeBlend);
-				if (result == null) result = caseFilterPrimitiveAttributes(svgFeBlend);
-				if (result == null) result = caseContentElement(svgFeBlend);
+			case SvgPackage.SVG_FE_BLEND_ELEMENT: {
+				SvgFeBlendElement svgFeBlendElement = (SvgFeBlendElement)theEObject;
+				T1 result = caseSvgFeBlendElement(svgFeBlendElement);
+				if (result == null) result = caseSvgElement(svgFeBlendElement);
+				if (result == null) result = caseCoreAttributes(svgFeBlendElement);
+				if (result == null) result = casePresentationAttributes(svgFeBlendElement);
+				if (result == null) result = caseFilterPrimitiveAttributes(svgFeBlendElement);
+				if (result == null) result = caseContentElement(svgFeBlendElement);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case SvgPackage.SVG_FE_COLOR_MATRIX: {
-				SvgFeColorMatrix svgFeColorMatrix = (SvgFeColorMatrix)theEObject;
-				T1 result = caseSvgFeColorMatrix(svgFeColorMatrix);
-				if (result == null) result = caseSvgElement(svgFeColorMatrix);
-				if (result == null) result = caseCoreAttributes(svgFeColorMatrix);
-				if (result == null) result = casePresentationAttributes(svgFeColorMatrix);
-				if (result == null) result = caseFilterPrimitiveAttributes(svgFeColorMatrix);
-				if (result == null) result = caseContentElement(svgFeColorMatrix);
+			case SvgPackage.SVG_FE_COLOR_MATRIX_ELEMENT: {
+				SvgFeColorMatrixElement svgFeColorMatrixElement = (SvgFeColorMatrixElement)theEObject;
+				T1 result = caseSvgFeColorMatrixElement(svgFeColorMatrixElement);
+				if (result == null) result = caseSvgElement(svgFeColorMatrixElement);
+				if (result == null) result = caseCoreAttributes(svgFeColorMatrixElement);
+				if (result == null) result = casePresentationAttributes(svgFeColorMatrixElement);
+				if (result == null) result = caseFilterPrimitiveAttributes(svgFeColorMatrixElement);
+				if (result == null) result = caseContentElement(svgFeColorMatrixElement);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case SvgPackage.SVG_FE_COMPONENT_TRANSFER: {
-				SvgFeComponentTransfer svgFeComponentTransfer = (SvgFeComponentTransfer)theEObject;
-				T1 result = caseSvgFeComponentTransfer(svgFeComponentTransfer);
-				if (result == null) result = caseSvgElement(svgFeComponentTransfer);
-				if (result == null) result = caseCoreAttributes(svgFeComponentTransfer);
-				if (result == null) result = casePresentationAttributes(svgFeComponentTransfer);
-				if (result == null) result = caseFilterPrimitiveAttributes(svgFeComponentTransfer);
-				if (result == null) result = caseContentElement(svgFeComponentTransfer);
+			case SvgPackage.SVG_FE_COMPONENT_TRANSFER_ELEMENT: {
+				SvgFeComponentTransferElement svgFeComponentTransferElement = (SvgFeComponentTransferElement)theEObject;
+				T1 result = caseSvgFeComponentTransferElement(svgFeComponentTransferElement);
+				if (result == null) result = caseSvgElement(svgFeComponentTransferElement);
+				if (result == null) result = caseCoreAttributes(svgFeComponentTransferElement);
+				if (result == null) result = casePresentationAttributes(svgFeComponentTransferElement);
+				if (result == null) result = caseFilterPrimitiveAttributes(svgFeComponentTransferElement);
+				if (result == null) result = caseContentElement(svgFeComponentTransferElement);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case SvgPackage.SVG_FE_FUNC_R: {
-				SvgFeFuncR svgFeFuncR = (SvgFeFuncR)theEObject;
-				T1 result = caseSvgFeFuncR(svgFeFuncR);
-				if (result == null) result = caseSvgElement(svgFeFuncR);
-				if (result == null) result = caseCoreAttributes(svgFeFuncR);
-				if (result == null) result = casePresentationAttributes(svgFeFuncR);
-				if (result == null) result = caseContentElement(svgFeFuncR);
+			case SvgPackage.SVG_FE_FUNC_RELEMENT: {
+				SvgFeFuncRElement svgFeFuncRElement = (SvgFeFuncRElement)theEObject;
+				T1 result = caseSvgFeFuncRElement(svgFeFuncRElement);
+				if (result == null) result = caseSvgElement(svgFeFuncRElement);
+				if (result == null) result = caseCoreAttributes(svgFeFuncRElement);
+				if (result == null) result = casePresentationAttributes(svgFeFuncRElement);
+				if (result == null) result = caseContentElement(svgFeFuncRElement);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case SvgPackage.SVG_FE_FUNC_G: {
-				SvgFeFuncG svgFeFuncG = (SvgFeFuncG)theEObject;
-				T1 result = caseSvgFeFuncG(svgFeFuncG);
-				if (result == null) result = caseSvgElement(svgFeFuncG);
-				if (result == null) result = caseCoreAttributes(svgFeFuncG);
-				if (result == null) result = casePresentationAttributes(svgFeFuncG);
-				if (result == null) result = caseContentElement(svgFeFuncG);
+			case SvgPackage.SVG_FE_FUNC_GELEMENT: {
+				SvgFeFuncGElement svgFeFuncGElement = (SvgFeFuncGElement)theEObject;
+				T1 result = caseSvgFeFuncGElement(svgFeFuncGElement);
+				if (result == null) result = caseSvgElement(svgFeFuncGElement);
+				if (result == null) result = caseCoreAttributes(svgFeFuncGElement);
+				if (result == null) result = casePresentationAttributes(svgFeFuncGElement);
+				if (result == null) result = caseContentElement(svgFeFuncGElement);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case SvgPackage.SVG_FE_FUNC_B: {
-				SvgFeFuncB svgFeFuncB = (SvgFeFuncB)theEObject;
-				T1 result = caseSvgFeFuncB(svgFeFuncB);
-				if (result == null) result = caseSvgElement(svgFeFuncB);
-				if (result == null) result = caseCoreAttributes(svgFeFuncB);
-				if (result == null) result = casePresentationAttributes(svgFeFuncB);
-				if (result == null) result = caseContentElement(svgFeFuncB);
+			case SvgPackage.SVG_FE_FUNC_BELEMENT: {
+				SvgFeFuncBElement svgFeFuncBElement = (SvgFeFuncBElement)theEObject;
+				T1 result = caseSvgFeFuncBElement(svgFeFuncBElement);
+				if (result == null) result = caseSvgElement(svgFeFuncBElement);
+				if (result == null) result = caseCoreAttributes(svgFeFuncBElement);
+				if (result == null) result = casePresentationAttributes(svgFeFuncBElement);
+				if (result == null) result = caseContentElement(svgFeFuncBElement);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case SvgPackage.SVG_FE_FUNC_A: {
-				SvgFeFuncA svgFeFuncA = (SvgFeFuncA)theEObject;
-				T1 result = caseSvgFeFuncA(svgFeFuncA);
-				if (result == null) result = caseSvgElement(svgFeFuncA);
-				if (result == null) result = caseCoreAttributes(svgFeFuncA);
-				if (result == null) result = casePresentationAttributes(svgFeFuncA);
-				if (result == null) result = caseContentElement(svgFeFuncA);
+			case SvgPackage.SVG_FE_FUNC_AELEMENT: {
+				SvgFeFuncAElement svgFeFuncAElement = (SvgFeFuncAElement)theEObject;
+				T1 result = caseSvgFeFuncAElement(svgFeFuncAElement);
+				if (result == null) result = caseSvgElement(svgFeFuncAElement);
+				if (result == null) result = caseCoreAttributes(svgFeFuncAElement);
+				if (result == null) result = casePresentationAttributes(svgFeFuncAElement);
+				if (result == null) result = caseContentElement(svgFeFuncAElement);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case SvgPackage.SVG_FE_COMPOSITE: {
-				SvgFeComposite svgFeComposite = (SvgFeComposite)theEObject;
-				T1 result = caseSvgFeComposite(svgFeComposite);
-				if (result == null) result = caseSvgElement(svgFeComposite);
-				if (result == null) result = caseCoreAttributes(svgFeComposite);
-				if (result == null) result = casePresentationAttributes(svgFeComposite);
-				if (result == null) result = caseFilterPrimitiveAttributes(svgFeComposite);
-				if (result == null) result = caseContentElement(svgFeComposite);
+			case SvgPackage.SVG_FE_COMPOSITE_ELEMENT: {
+				SvgFeCompositeElement svgFeCompositeElement = (SvgFeCompositeElement)theEObject;
+				T1 result = caseSvgFeCompositeElement(svgFeCompositeElement);
+				if (result == null) result = caseSvgElement(svgFeCompositeElement);
+				if (result == null) result = caseCoreAttributes(svgFeCompositeElement);
+				if (result == null) result = casePresentationAttributes(svgFeCompositeElement);
+				if (result == null) result = caseFilterPrimitiveAttributes(svgFeCompositeElement);
+				if (result == null) result = caseContentElement(svgFeCompositeElement);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case SvgPackage.SVG_FE_CONVOLVE_MATRIX: {
-				SvgFeConvolveMatrix svgFeConvolveMatrix = (SvgFeConvolveMatrix)theEObject;
-				T1 result = caseSvgFeConvolveMatrix(svgFeConvolveMatrix);
-				if (result == null) result = caseSvgElement(svgFeConvolveMatrix);
-				if (result == null) result = caseCoreAttributes(svgFeConvolveMatrix);
-				if (result == null) result = casePresentationAttributes(svgFeConvolveMatrix);
-				if (result == null) result = caseFilterPrimitiveAttributes(svgFeConvolveMatrix);
-				if (result == null) result = caseContentElement(svgFeConvolveMatrix);
+			case SvgPackage.SVG_FE_CONVOLVE_MATRIX_ELEMENT: {
+				SvgFeConvolveMatrixElement svgFeConvolveMatrixElement = (SvgFeConvolveMatrixElement)theEObject;
+				T1 result = caseSvgFeConvolveMatrixElement(svgFeConvolveMatrixElement);
+				if (result == null) result = caseSvgElement(svgFeConvolveMatrixElement);
+				if (result == null) result = caseCoreAttributes(svgFeConvolveMatrixElement);
+				if (result == null) result = casePresentationAttributes(svgFeConvolveMatrixElement);
+				if (result == null) result = caseFilterPrimitiveAttributes(svgFeConvolveMatrixElement);
+				if (result == null) result = caseContentElement(svgFeConvolveMatrixElement);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case SvgPackage.SVG_FE_DIFFUSE_LIGHTING: {
-				SvgFeDiffuseLighting svgFeDiffuseLighting = (SvgFeDiffuseLighting)theEObject;
-				T1 result = caseSvgFeDiffuseLighting(svgFeDiffuseLighting);
-				if (result == null) result = caseSvgElement(svgFeDiffuseLighting);
-				if (result == null) result = caseCoreAttributes(svgFeDiffuseLighting);
-				if (result == null) result = casePresentationAttributes(svgFeDiffuseLighting);
-				if (result == null) result = caseFilterPrimitiveAttributes(svgFeDiffuseLighting);
-				if (result == null) result = caseContentElement(svgFeDiffuseLighting);
+			case SvgPackage.SVG_FE_DIFFUSE_LIGHTING_ELEMENT: {
+				SvgFeDiffuseLightingElement svgFeDiffuseLightingElement = (SvgFeDiffuseLightingElement)theEObject;
+				T1 result = caseSvgFeDiffuseLightingElement(svgFeDiffuseLightingElement);
+				if (result == null) result = caseSvgElement(svgFeDiffuseLightingElement);
+				if (result == null) result = caseCoreAttributes(svgFeDiffuseLightingElement);
+				if (result == null) result = casePresentationAttributes(svgFeDiffuseLightingElement);
+				if (result == null) result = caseFilterPrimitiveAttributes(svgFeDiffuseLightingElement);
+				if (result == null) result = caseContentElement(svgFeDiffuseLightingElement);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case SvgPackage.SVG_FE_DISPLACEMENT_MAP: {
-				SvgFeDisplacementMap svgFeDisplacementMap = (SvgFeDisplacementMap)theEObject;
-				T1 result = caseSvgFeDisplacementMap(svgFeDisplacementMap);
-				if (result == null) result = caseSvgElement(svgFeDisplacementMap);
-				if (result == null) result = caseCoreAttributes(svgFeDisplacementMap);
-				if (result == null) result = casePresentationAttributes(svgFeDisplacementMap);
-				if (result == null) result = caseFilterPrimitiveAttributes(svgFeDisplacementMap);
-				if (result == null) result = caseContentElement(svgFeDisplacementMap);
+			case SvgPackage.SVG_FE_DISPLACEMENT_MAP_ELEMENT: {
+				SvgFeDisplacementMapElement svgFeDisplacementMapElement = (SvgFeDisplacementMapElement)theEObject;
+				T1 result = caseSvgFeDisplacementMapElement(svgFeDisplacementMapElement);
+				if (result == null) result = caseSvgElement(svgFeDisplacementMapElement);
+				if (result == null) result = caseCoreAttributes(svgFeDisplacementMapElement);
+				if (result == null) result = casePresentationAttributes(svgFeDisplacementMapElement);
+				if (result == null) result = caseFilterPrimitiveAttributes(svgFeDisplacementMapElement);
+				if (result == null) result = caseContentElement(svgFeDisplacementMapElement);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case SvgPackage.SVG_FE_FLOOD: {
-				SvgFeFlood svgFeFlood = (SvgFeFlood)theEObject;
-				T1 result = caseSvgFeFlood(svgFeFlood);
-				if (result == null) result = caseSvgElement(svgFeFlood);
-				if (result == null) result = caseCoreAttributes(svgFeFlood);
-				if (result == null) result = casePresentationAttributes(svgFeFlood);
-				if (result == null) result = caseFilterPrimitiveAttributes(svgFeFlood);
-				if (result == null) result = caseContentElement(svgFeFlood);
+			case SvgPackage.SVG_FE_FLOOD_ELEMENT: {
+				SvgFeFloodElement svgFeFloodElement = (SvgFeFloodElement)theEObject;
+				T1 result = caseSvgFeFloodElement(svgFeFloodElement);
+				if (result == null) result = caseSvgElement(svgFeFloodElement);
+				if (result == null) result = caseCoreAttributes(svgFeFloodElement);
+				if (result == null) result = casePresentationAttributes(svgFeFloodElement);
+				if (result == null) result = caseFilterPrimitiveAttributes(svgFeFloodElement);
+				if (result == null) result = caseContentElement(svgFeFloodElement);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case SvgPackage.SVG_FE_GAUSSIAN_BLUR: {
-				SvgFeGaussianBlur svgFeGaussianBlur = (SvgFeGaussianBlur)theEObject;
-				T1 result = caseSvgFeGaussianBlur(svgFeGaussianBlur);
-				if (result == null) result = caseSvgElement(svgFeGaussianBlur);
-				if (result == null) result = caseCoreAttributes(svgFeGaussianBlur);
-				if (result == null) result = casePresentationAttributes(svgFeGaussianBlur);
-				if (result == null) result = caseFilterPrimitiveAttributes(svgFeGaussianBlur);
-				if (result == null) result = caseContentElement(svgFeGaussianBlur);
+			case SvgPackage.SVG_FE_GAUSSIAN_BLUR_ELEMENT: {
+				SvgFeGaussianBlurElement svgFeGaussianBlurElement = (SvgFeGaussianBlurElement)theEObject;
+				T1 result = caseSvgFeGaussianBlurElement(svgFeGaussianBlurElement);
+				if (result == null) result = caseSvgElement(svgFeGaussianBlurElement);
+				if (result == null) result = caseCoreAttributes(svgFeGaussianBlurElement);
+				if (result == null) result = casePresentationAttributes(svgFeGaussianBlurElement);
+				if (result == null) result = caseFilterPrimitiveAttributes(svgFeGaussianBlurElement);
+				if (result == null) result = caseContentElement(svgFeGaussianBlurElement);
+				if (result == null) result = caseFilterPrimitiveElement(svgFeGaussianBlurElement);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case SvgPackage.SVG_FE_IMAGE: {
-				SvgFeImage svgFeImage = (SvgFeImage)theEObject;
-				T1 result = caseSvgFeImage(svgFeImage);
-				if (result == null) result = caseSvgElement(svgFeImage);
-				if (result == null) result = caseCoreAttributes(svgFeImage);
-				if (result == null) result = casePresentationAttributes(svgFeImage);
-				if (result == null) result = caseFilterPrimitiveAttributes(svgFeImage);
-				if (result == null) result = caseXLinkAttributes(svgFeImage);
-				if (result == null) result = caseContentElement(svgFeImage);
+			case SvgPackage.SVG_FE_IMAGE_ELEMENT: {
+				SvgFeImageElement svgFeImageElement = (SvgFeImageElement)theEObject;
+				T1 result = caseSvgFeImageElement(svgFeImageElement);
+				if (result == null) result = caseSvgElement(svgFeImageElement);
+				if (result == null) result = caseCoreAttributes(svgFeImageElement);
+				if (result == null) result = casePresentationAttributes(svgFeImageElement);
+				if (result == null) result = caseFilterPrimitiveAttributes(svgFeImageElement);
+				if (result == null) result = caseXLinkAttributes(svgFeImageElement);
+				if (result == null) result = caseContentElement(svgFeImageElement);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case SvgPackage.SVG_FE_MERGE: {
-				SvgFeMerge svgFeMerge = (SvgFeMerge)theEObject;
-				T1 result = caseSvgFeMerge(svgFeMerge);
-				if (result == null) result = caseSvgElement(svgFeMerge);
-				if (result == null) result = caseCoreAttributes(svgFeMerge);
-				if (result == null) result = casePresentationAttributes(svgFeMerge);
-				if (result == null) result = caseFilterPrimitiveAttributes(svgFeMerge);
-				if (result == null) result = caseContentElement(svgFeMerge);
+			case SvgPackage.SVG_FE_MERGE_ELEMENT: {
+				SvgFeMergeElement svgFeMergeElement = (SvgFeMergeElement)theEObject;
+				T1 result = caseSvgFeMergeElement(svgFeMergeElement);
+				if (result == null) result = caseSvgElement(svgFeMergeElement);
+				if (result == null) result = caseCoreAttributes(svgFeMergeElement);
+				if (result == null) result = casePresentationAttributes(svgFeMergeElement);
+				if (result == null) result = caseFilterPrimitiveAttributes(svgFeMergeElement);
+				if (result == null) result = caseContentElement(svgFeMergeElement);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case SvgPackage.SVG_FE_MERGE_NODE: {
-				SvgFeMergeNode svgFeMergeNode = (SvgFeMergeNode)theEObject;
-				T1 result = caseSvgFeMergeNode(svgFeMergeNode);
-				if (result == null) result = caseSvgElement(svgFeMergeNode);
-				if (result == null) result = caseCoreAttributes(svgFeMergeNode);
-				if (result == null) result = caseContentElement(svgFeMergeNode);
+			case SvgPackage.SVG_FE_MERGE_NODE_ELEMENT: {
+				SvgFeMergeNodeElement svgFeMergeNodeElement = (SvgFeMergeNodeElement)theEObject;
+				T1 result = caseSvgFeMergeNodeElement(svgFeMergeNodeElement);
+				if (result == null) result = caseSvgElement(svgFeMergeNodeElement);
+				if (result == null) result = caseCoreAttributes(svgFeMergeNodeElement);
+				if (result == null) result = caseContentElement(svgFeMergeNodeElement);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case SvgPackage.SVG_FE_MORPHOLOGY: {
-				SvgFeMorphology svgFeMorphology = (SvgFeMorphology)theEObject;
-				T1 result = caseSvgFeMorphology(svgFeMorphology);
-				if (result == null) result = caseSvgElement(svgFeMorphology);
-				if (result == null) result = caseCoreAttributes(svgFeMorphology);
-				if (result == null) result = casePresentationAttributes(svgFeMorphology);
-				if (result == null) result = caseFilterPrimitiveAttributes(svgFeMorphology);
-				if (result == null) result = caseContentElement(svgFeMorphology);
+			case SvgPackage.SVG_FE_MORPHOLOGY_ELEMENT: {
+				SvgFeMorphologyElement svgFeMorphologyElement = (SvgFeMorphologyElement)theEObject;
+				T1 result = caseSvgFeMorphologyElement(svgFeMorphologyElement);
+				if (result == null) result = caseSvgElement(svgFeMorphologyElement);
+				if (result == null) result = caseCoreAttributes(svgFeMorphologyElement);
+				if (result == null) result = casePresentationAttributes(svgFeMorphologyElement);
+				if (result == null) result = caseFilterPrimitiveAttributes(svgFeMorphologyElement);
+				if (result == null) result = caseContentElement(svgFeMorphologyElement);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case SvgPackage.SVG_FE_OFFSET: {
-				SvgFeOffset svgFeOffset = (SvgFeOffset)theEObject;
-				T1 result = caseSvgFeOffset(svgFeOffset);
-				if (result == null) result = caseSvgElement(svgFeOffset);
-				if (result == null) result = caseCoreAttributes(svgFeOffset);
-				if (result == null) result = casePresentationAttributes(svgFeOffset);
-				if (result == null) result = caseFilterPrimitiveAttributes(svgFeOffset);
-				if (result == null) result = caseContentElement(svgFeOffset);
+			case SvgPackage.SVG_FE_OFFSET_ELEMENT: {
+				SvgFeOffsetElement svgFeOffsetElement = (SvgFeOffsetElement)theEObject;
+				T1 result = caseSvgFeOffsetElement(svgFeOffsetElement);
+				if (result == null) result = caseSvgElement(svgFeOffsetElement);
+				if (result == null) result = caseCoreAttributes(svgFeOffsetElement);
+				if (result == null) result = casePresentationAttributes(svgFeOffsetElement);
+				if (result == null) result = caseFilterPrimitiveAttributes(svgFeOffsetElement);
+				if (result == null) result = caseContentElement(svgFeOffsetElement);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case SvgPackage.SVG_FE_SPECULAR_LIGHTING: {
-				SvgFeSpecularLighting svgFeSpecularLighting = (SvgFeSpecularLighting)theEObject;
-				T1 result = caseSvgFeSpecularLighting(svgFeSpecularLighting);
-				if (result == null) result = caseSvgElement(svgFeSpecularLighting);
-				if (result == null) result = caseCoreAttributes(svgFeSpecularLighting);
-				if (result == null) result = casePresentationAttributes(svgFeSpecularLighting);
-				if (result == null) result = caseFilterPrimitiveAttributes(svgFeSpecularLighting);
-				if (result == null) result = caseContentElement(svgFeSpecularLighting);
+			case SvgPackage.SVG_FE_SPECULAR_LIGHTING_ELEMENT: {
+				SvgFeSpecularLightingElement svgFeSpecularLightingElement = (SvgFeSpecularLightingElement)theEObject;
+				T1 result = caseSvgFeSpecularLightingElement(svgFeSpecularLightingElement);
+				if (result == null) result = caseSvgElement(svgFeSpecularLightingElement);
+				if (result == null) result = caseCoreAttributes(svgFeSpecularLightingElement);
+				if (result == null) result = casePresentationAttributes(svgFeSpecularLightingElement);
+				if (result == null) result = caseFilterPrimitiveAttributes(svgFeSpecularLightingElement);
+				if (result == null) result = caseContentElement(svgFeSpecularLightingElement);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case SvgPackage.SVG_FE_TILE: {
-				SvgFeTile svgFeTile = (SvgFeTile)theEObject;
-				T1 result = caseSvgFeTile(svgFeTile);
-				if (result == null) result = caseSvgElement(svgFeTile);
-				if (result == null) result = caseCoreAttributes(svgFeTile);
-				if (result == null) result = casePresentationAttributes(svgFeTile);
-				if (result == null) result = caseFilterPrimitiveAttributes(svgFeTile);
-				if (result == null) result = caseContentElement(svgFeTile);
+			case SvgPackage.SVG_FE_TILE_ELEMENT: {
+				SvgFeTileElement svgFeTileElement = (SvgFeTileElement)theEObject;
+				T1 result = caseSvgFeTileElement(svgFeTileElement);
+				if (result == null) result = caseSvgElement(svgFeTileElement);
+				if (result == null) result = caseCoreAttributes(svgFeTileElement);
+				if (result == null) result = casePresentationAttributes(svgFeTileElement);
+				if (result == null) result = caseFilterPrimitiveAttributes(svgFeTileElement);
+				if (result == null) result = caseContentElement(svgFeTileElement);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case SvgPackage.SVG_FE_TURBULENCE: {
-				SvgFeTurbulence svgFeTurbulence = (SvgFeTurbulence)theEObject;
-				T1 result = caseSvgFeTurbulence(svgFeTurbulence);
-				if (result == null) result = caseSvgElement(svgFeTurbulence);
-				if (result == null) result = caseCoreAttributes(svgFeTurbulence);
-				if (result == null) result = casePresentationAttributes(svgFeTurbulence);
-				if (result == null) result = caseFilterPrimitiveAttributes(svgFeTurbulence);
-				if (result == null) result = caseContentElement(svgFeTurbulence);
+			case SvgPackage.SVG_FE_TURBULENCE_ELEMENT: {
+				SvgFeTurbulenceElement svgFeTurbulenceElement = (SvgFeTurbulenceElement)theEObject;
+				T1 result = caseSvgFeTurbulenceElement(svgFeTurbulenceElement);
+				if (result == null) result = caseSvgElement(svgFeTurbulenceElement);
+				if (result == null) result = caseCoreAttributes(svgFeTurbulenceElement);
+				if (result == null) result = casePresentationAttributes(svgFeTurbulenceElement);
+				if (result == null) result = caseFilterPrimitiveAttributes(svgFeTurbulenceElement);
+				if (result == null) result = caseContentElement(svgFeTurbulenceElement);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case SvgPackage.SVG_ANIMATE_ELEMENT: {
+				SvgAnimateElement svgAnimateElement = (SvgAnimateElement)theEObject;
+				T1 result = caseSvgAnimateElement(svgAnimateElement);
+				if (result == null) result = caseSvgElement(svgAnimateElement);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case SvgPackage.SVG_METADATA_ELEMENT: {
+				SvgMetadataElement svgMetadataElement = (SvgMetadataElement)theEObject;
+				T1 result = caseSvgMetadataElement(svgMetadataElement);
+				if (result == null) result = caseSvgElement(svgMetadataElement);
+				if (result == null) result = caseCoreAttributes(svgMetadataElement);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -1114,6 +1136,21 @@ public class SvgSwitch<T1> extends Switch<T1> {
 	 * @generated
 	 */
 	public T1 caseFilterPrimitiveElement(FilterPrimitiveElement object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Animation Element</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Animation Element</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T1 caseAnimationElement(AnimationElement object) {
 		return null;
 	}
 
@@ -1703,17 +1740,17 @@ public class SvgSwitch<T1> extends Switch<T1> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Gradient Stop Element</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Stop Element</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Gradient Stop Element</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Stop Element</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T1 caseSvgGradientStopElement(SvgGradientStopElement object) {
+	public T1 caseSvgStopElement(SvgStopElement object) {
 		return null;
 	}
 
@@ -1778,362 +1815,392 @@ public class SvgSwitch<T1> extends Switch<T1> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Fe Distant Light</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Fe Distant Light Element</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Fe Distant Light</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Fe Distant Light Element</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T1 caseSvgFeDistantLight(SvgFeDistantLight object) {
+	public T1 caseSvgFeDistantLightElement(SvgFeDistantLightElement object) {
 		return null;
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Fe Point Light</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Fe Point Light Element</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Fe Point Light</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Fe Point Light Element</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T1 caseSvgFePointLight(SvgFePointLight object) {
+	public T1 caseSvgFePointLightElement(SvgFePointLightElement object) {
 		return null;
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Fe Spot Light</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Fe Spot Light Element</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Fe Spot Light</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Fe Spot Light Element</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T1 caseSvgFeSpotLight(SvgFeSpotLight object) {
+	public T1 caseSvgFeSpotLightElement(SvgFeSpotLightElement object) {
 		return null;
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Fe Blend</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Fe Blend Element</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Fe Blend</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Fe Blend Element</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T1 caseSvgFeBlend(SvgFeBlend object) {
+	public T1 caseSvgFeBlendElement(SvgFeBlendElement object) {
 		return null;
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Fe Color Matrix</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Fe Color Matrix Element</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Fe Color Matrix</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Fe Color Matrix Element</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T1 caseSvgFeColorMatrix(SvgFeColorMatrix object) {
+	public T1 caseSvgFeColorMatrixElement(SvgFeColorMatrixElement object) {
 		return null;
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Fe Component Transfer</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Fe Component Transfer Element</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Fe Component Transfer</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Fe Component Transfer Element</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T1 caseSvgFeComponentTransfer(SvgFeComponentTransfer object) {
+	public T1 caseSvgFeComponentTransferElement(SvgFeComponentTransferElement object) {
 		return null;
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Fe Func R</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Fe Func RElement</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Fe Func R</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Fe Func RElement</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T1 caseSvgFeFuncR(SvgFeFuncR object) {
+	public T1 caseSvgFeFuncRElement(SvgFeFuncRElement object) {
 		return null;
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Fe Func G</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Fe Func GElement</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Fe Func G</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Fe Func GElement</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T1 caseSvgFeFuncG(SvgFeFuncG object) {
+	public T1 caseSvgFeFuncGElement(SvgFeFuncGElement object) {
 		return null;
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Fe Func B</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Fe Func BElement</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Fe Func B</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Fe Func BElement</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T1 caseSvgFeFuncB(SvgFeFuncB object) {
+	public T1 caseSvgFeFuncBElement(SvgFeFuncBElement object) {
 		return null;
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Fe Func A</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Fe Func AElement</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Fe Func A</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Fe Func AElement</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T1 caseSvgFeFuncA(SvgFeFuncA object) {
+	public T1 caseSvgFeFuncAElement(SvgFeFuncAElement object) {
 		return null;
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Fe Composite</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Fe Composite Element</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Fe Composite</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Fe Composite Element</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T1 caseSvgFeComposite(SvgFeComposite object) {
+	public T1 caseSvgFeCompositeElement(SvgFeCompositeElement object) {
 		return null;
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Fe Convolve Matrix</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Fe Convolve Matrix Element</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Fe Convolve Matrix</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Fe Convolve Matrix Element</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T1 caseSvgFeConvolveMatrix(SvgFeConvolveMatrix object) {
+	public T1 caseSvgFeConvolveMatrixElement(SvgFeConvolveMatrixElement object) {
 		return null;
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Fe Diffuse Lighting</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Fe Diffuse Lighting Element</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Fe Diffuse Lighting</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Fe Diffuse Lighting Element</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T1 caseSvgFeDiffuseLighting(SvgFeDiffuseLighting object) {
+	public T1 caseSvgFeDiffuseLightingElement(SvgFeDiffuseLightingElement object) {
 		return null;
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Fe Displacement Map</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Fe Displacement Map Element</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Fe Displacement Map</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Fe Displacement Map Element</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T1 caseSvgFeDisplacementMap(SvgFeDisplacementMap object) {
+	public T1 caseSvgFeDisplacementMapElement(SvgFeDisplacementMapElement object) {
 		return null;
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Fe Flood</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Fe Flood Element</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Fe Flood</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Fe Flood Element</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T1 caseSvgFeFlood(SvgFeFlood object) {
+	public T1 caseSvgFeFloodElement(SvgFeFloodElement object) {
 		return null;
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Fe Gaussian Blur</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Fe Gaussian Blur Element</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Fe Gaussian Blur</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Fe Gaussian Blur Element</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T1 caseSvgFeGaussianBlur(SvgFeGaussianBlur object) {
+	public T1 caseSvgFeGaussianBlurElement(SvgFeGaussianBlurElement object) {
 		return null;
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Fe Image</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Fe Image Element</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Fe Image</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Fe Image Element</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T1 caseSvgFeImage(SvgFeImage object) {
+	public T1 caseSvgFeImageElement(SvgFeImageElement object) {
 		return null;
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Fe Merge</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Fe Merge Element</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Fe Merge</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Fe Merge Element</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T1 caseSvgFeMerge(SvgFeMerge object) {
+	public T1 caseSvgFeMergeElement(SvgFeMergeElement object) {
 		return null;
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Fe Merge Node</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Fe Merge Node Element</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Fe Merge Node</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Fe Merge Node Element</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T1 caseSvgFeMergeNode(SvgFeMergeNode object) {
+	public T1 caseSvgFeMergeNodeElement(SvgFeMergeNodeElement object) {
 		return null;
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Fe Morphology</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Fe Morphology Element</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Fe Morphology</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Fe Morphology Element</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T1 caseSvgFeMorphology(SvgFeMorphology object) {
+	public T1 caseSvgFeMorphologyElement(SvgFeMorphologyElement object) {
 		return null;
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Fe Offset</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Fe Offset Element</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Fe Offset</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Fe Offset Element</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T1 caseSvgFeOffset(SvgFeOffset object) {
+	public T1 caseSvgFeOffsetElement(SvgFeOffsetElement object) {
 		return null;
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Fe Specular Lighting</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Fe Specular Lighting Element</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Fe Specular Lighting</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Fe Specular Lighting Element</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T1 caseSvgFeSpecularLighting(SvgFeSpecularLighting object) {
+	public T1 caseSvgFeSpecularLightingElement(SvgFeSpecularLightingElement object) {
 		return null;
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Fe Tile</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Fe Tile Element</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Fe Tile</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Fe Tile Element</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T1 caseSvgFeTile(SvgFeTile object) {
+	public T1 caseSvgFeTileElement(SvgFeTileElement object) {
 		return null;
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Fe Turbulence</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Fe Turbulence Element</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Fe Turbulence</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Fe Turbulence Element</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T1 caseSvgFeTurbulence(SvgFeTurbulence object) {
+	public T1 caseSvgFeTurbulenceElement(SvgFeTurbulenceElement object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Animate Element</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Animate Element</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T1 caseSvgAnimateElement(SvgAnimateElement object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Metadata Element</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Metadata Element</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T1 caseSvgMetadataElement(SvgMetadataElement object) {
 		return null;
 	}
 

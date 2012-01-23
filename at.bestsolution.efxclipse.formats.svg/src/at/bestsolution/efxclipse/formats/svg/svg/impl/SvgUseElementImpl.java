@@ -44,15 +44,18 @@ import at.bestsolution.efxclipse.formats.svg.svg.Writing_mode;
 import at.bestsolution.efxclipse.formats.svg.svg.XLinkAttributes;
 
 import java.util.Collection;
+
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.common.notify.NotificationChain;
-import org.eclipse.emf.common.util.EList;
-import org.eclipse.emf.ecore.EClass;
 
+import org.eclipse.emf.common.util.EList;
+
+import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
+
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.EObjectImpl;
+
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
@@ -146,6 +149,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link at.bestsolution.efxclipse.formats.svg.svg.impl.SvgUseElementImpl#getXlink__role <em>Xlink role</em>}</li>
  *   <li>{@link at.bestsolution.efxclipse.formats.svg.svg.impl.SvgUseElementImpl#getXlink__arcrole <em>Xlink arcrole</em>}</li>
  *   <li>{@link at.bestsolution.efxclipse.formats.svg.svg.impl.SvgUseElementImpl#getXlink__title <em>Xlink title</em>}</li>
+ *   <li>{@link at.bestsolution.efxclipse.formats.svg.svg.impl.SvgUseElementImpl#getResolvedInstance <em>Resolved Instance</em>}</li>
  *   <li>{@link at.bestsolution.efxclipse.formats.svg.svg.impl.SvgUseElementImpl#getChildren <em>Children</em>}</li>
  *   <li>{@link at.bestsolution.efxclipse.formats.svg.svg.impl.SvgUseElementImpl#getClass_ <em>Class</em>}</li>
  *   <li>{@link at.bestsolution.efxclipse.formats.svg.svg.impl.SvgUseElementImpl#getStyle <em>Style</em>}</li>
@@ -547,7 +551,7 @@ public class SvgUseElementImpl extends EObjectImpl implements SvgUseElement {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String CLIP_EDEFAULT = "\"auto\"";
+	protected static final String CLIP_EDEFAULT = "auto";
 
 	/**
 	 * The cached value of the '{@link #getClip() <em>Clip</em>}' attribute.
@@ -567,7 +571,7 @@ public class SvgUseElementImpl extends EObjectImpl implements SvgUseElement {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String CLIP_PATH_EDEFAULT = "\"none\"";
+	protected static final String CLIP_PATH_EDEFAULT = "none";
 
 	/**
 	 * The cached value of the '{@link #getClip_path() <em>Clip path</em>}' attribute.
@@ -807,7 +811,7 @@ public class SvgUseElementImpl extends EObjectImpl implements SvgUseElement {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String FILL_EDEFAULT = "\"black\"";
+	protected static final String FILL_EDEFAULT = "black";
 
 	/**
 	 * The cached value of the '{@link #getFill() <em>Fill</em>}' attribute.
@@ -827,7 +831,7 @@ public class SvgUseElementImpl extends EObjectImpl implements SvgUseElement {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String FILL_OPACITY_EDEFAULT = "\"1\"";
+	protected static final String FILL_OPACITY_EDEFAULT = "1";
 
 	/**
 	 * The cached value of the '{@link #getFill_opacity() <em>Fill opacity</em>}' attribute.
@@ -1267,7 +1271,7 @@ public class SvgUseElementImpl extends EObjectImpl implements SvgUseElement {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String OPACITY_EDEFAULT = "\"1\"";
+	protected static final String OPACITY_EDEFAULT = "1";
 
 	/**
 	 * The cached value of the '{@link #getOpacity() <em>Opacity</em>}' attribute.
@@ -1347,7 +1351,7 @@ public class SvgUseElementImpl extends EObjectImpl implements SvgUseElement {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String STOP_COLOR_EDEFAULT = "\"black\"";
+	protected static final String STOP_COLOR_EDEFAULT = "black";
 
 	/**
 	 * The cached value of the '{@link #getStop_color() <em>Stop color</em>}' attribute.
@@ -1367,7 +1371,7 @@ public class SvgUseElementImpl extends EObjectImpl implements SvgUseElement {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String STOP_OPACITY_EDEFAULT = "\"1\"";
+	protected static final String STOP_OPACITY_EDEFAULT = "1";
 
 	/**
 	 * The cached value of the '{@link #getStop_opacity() <em>Stop opacity</em>}' attribute.
@@ -1387,7 +1391,7 @@ public class SvgUseElementImpl extends EObjectImpl implements SvgUseElement {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String STROKE_EDEFAULT = "\"none\"";
+	protected static final String STROKE_EDEFAULT = "none";
 
 	/**
 	 * The cached value of the '{@link #getStroke() <em>Stroke</em>}' attribute.
@@ -1407,7 +1411,7 @@ public class SvgUseElementImpl extends EObjectImpl implements SvgUseElement {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String STROKE_DASHARRAY_EDEFAULT = "\"none\"";
+	protected static final String STROKE_DASHARRAY_EDEFAULT = "none";
 
 	/**
 	 * The cached value of the '{@link #getStroke_dasharray() <em>Stroke dasharray</em>}' attribute.
@@ -1427,7 +1431,7 @@ public class SvgUseElementImpl extends EObjectImpl implements SvgUseElement {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String STROKE_DASHOFFSET_EDEFAULT = "\"0\"";
+	protected static final String STROKE_DASHOFFSET_EDEFAULT = "0";
 
 	/**
 	 * The cached value of the '{@link #getStroke_dashoffset() <em>Stroke dashoffset</em>}' attribute.
@@ -1507,7 +1511,7 @@ public class SvgUseElementImpl extends EObjectImpl implements SvgUseElement {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String STROKE_OPACITY_EDEFAULT = "\"1\"";
+	protected static final String STROKE_OPACITY_EDEFAULT = "1";
 
 	/**
 	 * The cached value of the '{@link #getStroke_opacity() <em>Stroke opacity</em>}' attribute.
@@ -1527,7 +1531,7 @@ public class SvgUseElementImpl extends EObjectImpl implements SvgUseElement {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String STROKE_WIDTH_EDEFAULT = "\"1\"";
+	protected static final String STROKE_WIDTH_EDEFAULT = "1";
 
 	/**
 	 * The cached value of the '{@link #getStroke_width() <em>Stroke width</em>}' attribute.
@@ -1818,6 +1822,16 @@ public class SvgUseElementImpl extends EObjectImpl implements SvgUseElement {
 	 * @ordered
 	 */
 	protected String xlink__title = XLINK_TITLE_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getResolvedInstance() <em>Resolved Instance</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getResolvedInstance()
+	 * @generated
+	 * @ordered
+	 */
+	protected SvgElement resolvedInstance;
 
 	/**
 	 * The cached value of the '{@link #getChildren() <em>Children</em>}' containment reference list.
@@ -3716,6 +3730,44 @@ public class SvgUseElementImpl extends EObjectImpl implements SvgUseElement {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public SvgElement getResolvedInstance() {
+		if (resolvedInstance != null && resolvedInstance.eIsProxy()) {
+			InternalEObject oldResolvedInstance = (InternalEObject)resolvedInstance;
+			resolvedInstance = (SvgElement)eResolveProxy(oldResolvedInstance);
+			if (resolvedInstance != oldResolvedInstance) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, SvgPackage.SVG_USE_ELEMENT__RESOLVED_INSTANCE, oldResolvedInstance, resolvedInstance));
+			}
+		}
+		return resolvedInstance;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public SvgElement basicGetResolvedInstance() {
+		return resolvedInstance;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setResolvedInstance(SvgElement newResolvedInstance) {
+		SvgElement oldResolvedInstance = resolvedInstance;
+		resolvedInstance = newResolvedInstance;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, SvgPackage.SVG_USE_ELEMENT__RESOLVED_INSTANCE, oldResolvedInstance, resolvedInstance));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EList<SvgElement> getChildren() {
 		if (children == null) {
 			children = new EObjectContainmentEList<SvgElement>(SvgElement.class, this, SvgPackage.SVG_USE_ELEMENT__CHILDREN);
@@ -4037,6 +4089,9 @@ public class SvgUseElementImpl extends EObjectImpl implements SvgUseElement {
 				return getXlink__arcrole();
 			case SvgPackage.SVG_USE_ELEMENT__XLINK_TITLE:
 				return getXlink__title();
+			case SvgPackage.SVG_USE_ELEMENT__RESOLVED_INSTANCE:
+				if (resolve) return getResolvedInstance();
+				return basicGetResolvedInstance();
 			case SvgPackage.SVG_USE_ELEMENT__CHILDREN:
 				return getChildren();
 			case SvgPackage.SVG_USE_ELEMENT__CLASS:
@@ -4312,6 +4367,9 @@ public class SvgUseElementImpl extends EObjectImpl implements SvgUseElement {
 				return;
 			case SvgPackage.SVG_USE_ELEMENT__XLINK_TITLE:
 				setXlink__title((String)newValue);
+				return;
+			case SvgPackage.SVG_USE_ELEMENT__RESOLVED_INSTANCE:
+				setResolvedInstance((SvgElement)newValue);
 				return;
 			case SvgPackage.SVG_USE_ELEMENT__CHILDREN:
 				getChildren().clear();
@@ -4596,6 +4654,9 @@ public class SvgUseElementImpl extends EObjectImpl implements SvgUseElement {
 			case SvgPackage.SVG_USE_ELEMENT__XLINK_TITLE:
 				setXlink__title(XLINK_TITLE_EDEFAULT);
 				return;
+			case SvgPackage.SVG_USE_ELEMENT__RESOLVED_INSTANCE:
+				setResolvedInstance((SvgElement)null);
+				return;
 			case SvgPackage.SVG_USE_ELEMENT__CHILDREN:
 				getChildren().clear();
 				return;
@@ -4795,6 +4856,8 @@ public class SvgUseElementImpl extends EObjectImpl implements SvgUseElement {
 				return XLINK_ARCROLE_EDEFAULT == null ? xlink__arcrole != null : !XLINK_ARCROLE_EDEFAULT.equals(xlink__arcrole);
 			case SvgPackage.SVG_USE_ELEMENT__XLINK_TITLE:
 				return XLINK_TITLE_EDEFAULT == null ? xlink__title != null : !XLINK_TITLE_EDEFAULT.equals(xlink__title);
+			case SvgPackage.SVG_USE_ELEMENT__RESOLVED_INSTANCE:
+				return resolvedInstance != null;
 			case SvgPackage.SVG_USE_ELEMENT__CHILDREN:
 				return children != null && !children.isEmpty();
 			case SvgPackage.SVG_USE_ELEMENT__CLASS:
@@ -4940,6 +5003,7 @@ public class SvgUseElementImpl extends EObjectImpl implements SvgUseElement {
 				case SvgPackage.SVG_USE_ELEMENT__XLINK_ROLE: return SvgPackage.XLINK_ATTRIBUTES__XLINK_ROLE;
 				case SvgPackage.SVG_USE_ELEMENT__XLINK_ARCROLE: return SvgPackage.XLINK_ATTRIBUTES__XLINK_ARCROLE;
 				case SvgPackage.SVG_USE_ELEMENT__XLINK_TITLE: return SvgPackage.XLINK_ATTRIBUTES__XLINK_TITLE;
+				case SvgPackage.SVG_USE_ELEMENT__RESOLVED_INSTANCE: return SvgPackage.XLINK_ATTRIBUTES__RESOLVED_INSTANCE;
 				default: return -1;
 			}
 		}
@@ -5079,6 +5143,7 @@ public class SvgUseElementImpl extends EObjectImpl implements SvgUseElement {
 				case SvgPackage.XLINK_ATTRIBUTES__XLINK_ROLE: return SvgPackage.SVG_USE_ELEMENT__XLINK_ROLE;
 				case SvgPackage.XLINK_ATTRIBUTES__XLINK_ARCROLE: return SvgPackage.SVG_USE_ELEMENT__XLINK_ARCROLE;
 				case SvgPackage.XLINK_ATTRIBUTES__XLINK_TITLE: return SvgPackage.SVG_USE_ELEMENT__XLINK_TITLE;
+				case SvgPackage.XLINK_ATTRIBUTES__RESOLVED_INSTANCE: return SvgPackage.SVG_USE_ELEMENT__RESOLVED_INSTANCE;
 				default: return -1;
 			}
 		}

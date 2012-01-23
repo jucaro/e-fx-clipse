@@ -128,6 +128,10 @@ public class SvgAdapterFactory extends AdapterFactoryImpl {
 				return createFilterPrimitiveElementAdapter();
 			}
 			@Override
+			public Adapter caseAnimationElement(AnimationElement object) {
+				return createAnimationElementAdapter();
+			}
+			@Override
 			public Adapter case____ENUMS____(____ENUMS____ object) {
 				return create____ENUMS____Adapter();
 			}
@@ -284,8 +288,8 @@ public class SvgAdapterFactory extends AdapterFactoryImpl {
 				return createSvgRadialGradientElementAdapter();
 			}
 			@Override
-			public Adapter caseSvgGradientStopElement(SvgGradientStopElement object) {
-				return createSvgGradientStopElementAdapter();
+			public Adapter caseSvgStopElement(SvgStopElement object) {
+				return createSvgStopElementAdapter();
 			}
 			@Override
 			public Adapter caseSvgPatternElement(SvgPatternElement object) {
@@ -304,100 +308,108 @@ public class SvgAdapterFactory extends AdapterFactoryImpl {
 				return createSvgFilterElementAdapter();
 			}
 			@Override
-			public Adapter caseSvgFeDistantLight(SvgFeDistantLight object) {
-				return createSvgFeDistantLightAdapter();
+			public Adapter caseSvgFeDistantLightElement(SvgFeDistantLightElement object) {
+				return createSvgFeDistantLightElementAdapter();
 			}
 			@Override
-			public Adapter caseSvgFePointLight(SvgFePointLight object) {
-				return createSvgFePointLightAdapter();
+			public Adapter caseSvgFePointLightElement(SvgFePointLightElement object) {
+				return createSvgFePointLightElementAdapter();
 			}
 			@Override
-			public Adapter caseSvgFeSpotLight(SvgFeSpotLight object) {
-				return createSvgFeSpotLightAdapter();
+			public Adapter caseSvgFeSpotLightElement(SvgFeSpotLightElement object) {
+				return createSvgFeSpotLightElementAdapter();
 			}
 			@Override
-			public Adapter caseSvgFeBlend(SvgFeBlend object) {
-				return createSvgFeBlendAdapter();
+			public Adapter caseSvgFeBlendElement(SvgFeBlendElement object) {
+				return createSvgFeBlendElementAdapter();
 			}
 			@Override
-			public Adapter caseSvgFeColorMatrix(SvgFeColorMatrix object) {
-				return createSvgFeColorMatrixAdapter();
+			public Adapter caseSvgFeColorMatrixElement(SvgFeColorMatrixElement object) {
+				return createSvgFeColorMatrixElementAdapter();
 			}
 			@Override
-			public Adapter caseSvgFeComponentTransfer(SvgFeComponentTransfer object) {
-				return createSvgFeComponentTransferAdapter();
+			public Adapter caseSvgFeComponentTransferElement(SvgFeComponentTransferElement object) {
+				return createSvgFeComponentTransferElementAdapter();
 			}
 			@Override
-			public Adapter caseSvgFeFuncR(SvgFeFuncR object) {
-				return createSvgFeFuncRAdapter();
+			public Adapter caseSvgFeFuncRElement(SvgFeFuncRElement object) {
+				return createSvgFeFuncRElementAdapter();
 			}
 			@Override
-			public Adapter caseSvgFeFuncG(SvgFeFuncG object) {
-				return createSvgFeFuncGAdapter();
+			public Adapter caseSvgFeFuncGElement(SvgFeFuncGElement object) {
+				return createSvgFeFuncGElementAdapter();
 			}
 			@Override
-			public Adapter caseSvgFeFuncB(SvgFeFuncB object) {
-				return createSvgFeFuncBAdapter();
+			public Adapter caseSvgFeFuncBElement(SvgFeFuncBElement object) {
+				return createSvgFeFuncBElementAdapter();
 			}
 			@Override
-			public Adapter caseSvgFeFuncA(SvgFeFuncA object) {
-				return createSvgFeFuncAAdapter();
+			public Adapter caseSvgFeFuncAElement(SvgFeFuncAElement object) {
+				return createSvgFeFuncAElementAdapter();
 			}
 			@Override
-			public Adapter caseSvgFeComposite(SvgFeComposite object) {
-				return createSvgFeCompositeAdapter();
+			public Adapter caseSvgFeCompositeElement(SvgFeCompositeElement object) {
+				return createSvgFeCompositeElementAdapter();
 			}
 			@Override
-			public Adapter caseSvgFeConvolveMatrix(SvgFeConvolveMatrix object) {
-				return createSvgFeConvolveMatrixAdapter();
+			public Adapter caseSvgFeConvolveMatrixElement(SvgFeConvolveMatrixElement object) {
+				return createSvgFeConvolveMatrixElementAdapter();
 			}
 			@Override
-			public Adapter caseSvgFeDiffuseLighting(SvgFeDiffuseLighting object) {
-				return createSvgFeDiffuseLightingAdapter();
+			public Adapter caseSvgFeDiffuseLightingElement(SvgFeDiffuseLightingElement object) {
+				return createSvgFeDiffuseLightingElementAdapter();
 			}
 			@Override
-			public Adapter caseSvgFeDisplacementMap(SvgFeDisplacementMap object) {
-				return createSvgFeDisplacementMapAdapter();
+			public Adapter caseSvgFeDisplacementMapElement(SvgFeDisplacementMapElement object) {
+				return createSvgFeDisplacementMapElementAdapter();
 			}
 			@Override
-			public Adapter caseSvgFeFlood(SvgFeFlood object) {
-				return createSvgFeFloodAdapter();
+			public Adapter caseSvgFeFloodElement(SvgFeFloodElement object) {
+				return createSvgFeFloodElementAdapter();
 			}
 			@Override
-			public Adapter caseSvgFeGaussianBlur(SvgFeGaussianBlur object) {
-				return createSvgFeGaussianBlurAdapter();
+			public Adapter caseSvgFeGaussianBlurElement(SvgFeGaussianBlurElement object) {
+				return createSvgFeGaussianBlurElementAdapter();
 			}
 			@Override
-			public Adapter caseSvgFeImage(SvgFeImage object) {
-				return createSvgFeImageAdapter();
+			public Adapter caseSvgFeImageElement(SvgFeImageElement object) {
+				return createSvgFeImageElementAdapter();
 			}
 			@Override
-			public Adapter caseSvgFeMerge(SvgFeMerge object) {
-				return createSvgFeMergeAdapter();
+			public Adapter caseSvgFeMergeElement(SvgFeMergeElement object) {
+				return createSvgFeMergeElementAdapter();
 			}
 			@Override
-			public Adapter caseSvgFeMergeNode(SvgFeMergeNode object) {
-				return createSvgFeMergeNodeAdapter();
+			public Adapter caseSvgFeMergeNodeElement(SvgFeMergeNodeElement object) {
+				return createSvgFeMergeNodeElementAdapter();
 			}
 			@Override
-			public Adapter caseSvgFeMorphology(SvgFeMorphology object) {
-				return createSvgFeMorphologyAdapter();
+			public Adapter caseSvgFeMorphologyElement(SvgFeMorphologyElement object) {
+				return createSvgFeMorphologyElementAdapter();
 			}
 			@Override
-			public Adapter caseSvgFeOffset(SvgFeOffset object) {
-				return createSvgFeOffsetAdapter();
+			public Adapter caseSvgFeOffsetElement(SvgFeOffsetElement object) {
+				return createSvgFeOffsetElementAdapter();
 			}
 			@Override
-			public Adapter caseSvgFeSpecularLighting(SvgFeSpecularLighting object) {
-				return createSvgFeSpecularLightingAdapter();
+			public Adapter caseSvgFeSpecularLightingElement(SvgFeSpecularLightingElement object) {
+				return createSvgFeSpecularLightingElementAdapter();
 			}
 			@Override
-			public Adapter caseSvgFeTile(SvgFeTile object) {
-				return createSvgFeTileAdapter();
+			public Adapter caseSvgFeTileElement(SvgFeTileElement object) {
+				return createSvgFeTileElementAdapter();
 			}
 			@Override
-			public Adapter caseSvgFeTurbulence(SvgFeTurbulence object) {
-				return createSvgFeTurbulenceAdapter();
+			public Adapter caseSvgFeTurbulenceElement(SvgFeTurbulenceElement object) {
+				return createSvgFeTurbulenceElementAdapter();
+			}
+			@Override
+			public Adapter caseSvgAnimateElement(SvgAnimateElement object) {
+				return createSvgAnimateElementAdapter();
+			}
+			@Override
+			public Adapter caseSvgMetadataElement(SvgMetadataElement object) {
+				return createSvgMetadataElementAdapter();
 			}
 			@Override
 			public Adapter defaultCase(EObject object) {
@@ -612,6 +624,20 @@ public class SvgAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createFilterPrimitiveElementAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link at.bestsolution.efxclipse.formats.svg.svg.AnimationElement <em>Animation Element</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see at.bestsolution.efxclipse.formats.svg.svg.AnimationElement
+	 * @generated
+	 */
+	public Adapter createAnimationElementAdapter() {
 		return null;
 	}
 
@@ -1162,16 +1188,16 @@ public class SvgAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link at.bestsolution.efxclipse.formats.svg.svg.SvgGradientStopElement <em>Gradient Stop Element</em>}'.
+	 * Creates a new adapter for an object of class '{@link at.bestsolution.efxclipse.formats.svg.svg.SvgStopElement <em>Stop Element</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see at.bestsolution.efxclipse.formats.svg.svg.SvgGradientStopElement
+	 * @see at.bestsolution.efxclipse.formats.svg.svg.SvgStopElement
 	 * @generated
 	 */
-	public Adapter createSvgGradientStopElementAdapter() {
+	public Adapter createSvgStopElementAdapter() {
 		return null;
 	}
 
@@ -1232,338 +1258,366 @@ public class SvgAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link at.bestsolution.efxclipse.formats.svg.svg.SvgFeDistantLight <em>Fe Distant Light</em>}'.
+	 * Creates a new adapter for an object of class '{@link at.bestsolution.efxclipse.formats.svg.svg.SvgFeDistantLightElement <em>Fe Distant Light Element</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see at.bestsolution.efxclipse.formats.svg.svg.SvgFeDistantLight
+	 * @see at.bestsolution.efxclipse.formats.svg.svg.SvgFeDistantLightElement
 	 * @generated
 	 */
-	public Adapter createSvgFeDistantLightAdapter() {
+	public Adapter createSvgFeDistantLightElementAdapter() {
 		return null;
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link at.bestsolution.efxclipse.formats.svg.svg.SvgFePointLight <em>Fe Point Light</em>}'.
+	 * Creates a new adapter for an object of class '{@link at.bestsolution.efxclipse.formats.svg.svg.SvgFePointLightElement <em>Fe Point Light Element</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see at.bestsolution.efxclipse.formats.svg.svg.SvgFePointLight
+	 * @see at.bestsolution.efxclipse.formats.svg.svg.SvgFePointLightElement
 	 * @generated
 	 */
-	public Adapter createSvgFePointLightAdapter() {
+	public Adapter createSvgFePointLightElementAdapter() {
 		return null;
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link at.bestsolution.efxclipse.formats.svg.svg.SvgFeSpotLight <em>Fe Spot Light</em>}'.
+	 * Creates a new adapter for an object of class '{@link at.bestsolution.efxclipse.formats.svg.svg.SvgFeSpotLightElement <em>Fe Spot Light Element</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see at.bestsolution.efxclipse.formats.svg.svg.SvgFeSpotLight
+	 * @see at.bestsolution.efxclipse.formats.svg.svg.SvgFeSpotLightElement
 	 * @generated
 	 */
-	public Adapter createSvgFeSpotLightAdapter() {
+	public Adapter createSvgFeSpotLightElementAdapter() {
 		return null;
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link at.bestsolution.efxclipse.formats.svg.svg.SvgFeBlend <em>Fe Blend</em>}'.
+	 * Creates a new adapter for an object of class '{@link at.bestsolution.efxclipse.formats.svg.svg.SvgFeBlendElement <em>Fe Blend Element</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see at.bestsolution.efxclipse.formats.svg.svg.SvgFeBlend
+	 * @see at.bestsolution.efxclipse.formats.svg.svg.SvgFeBlendElement
 	 * @generated
 	 */
-	public Adapter createSvgFeBlendAdapter() {
+	public Adapter createSvgFeBlendElementAdapter() {
 		return null;
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link at.bestsolution.efxclipse.formats.svg.svg.SvgFeColorMatrix <em>Fe Color Matrix</em>}'.
+	 * Creates a new adapter for an object of class '{@link at.bestsolution.efxclipse.formats.svg.svg.SvgFeColorMatrixElement <em>Fe Color Matrix Element</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see at.bestsolution.efxclipse.formats.svg.svg.SvgFeColorMatrix
+	 * @see at.bestsolution.efxclipse.formats.svg.svg.SvgFeColorMatrixElement
 	 * @generated
 	 */
-	public Adapter createSvgFeColorMatrixAdapter() {
+	public Adapter createSvgFeColorMatrixElementAdapter() {
 		return null;
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link at.bestsolution.efxclipse.formats.svg.svg.SvgFeComponentTransfer <em>Fe Component Transfer</em>}'.
+	 * Creates a new adapter for an object of class '{@link at.bestsolution.efxclipse.formats.svg.svg.SvgFeComponentTransferElement <em>Fe Component Transfer Element</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see at.bestsolution.efxclipse.formats.svg.svg.SvgFeComponentTransfer
+	 * @see at.bestsolution.efxclipse.formats.svg.svg.SvgFeComponentTransferElement
 	 * @generated
 	 */
-	public Adapter createSvgFeComponentTransferAdapter() {
+	public Adapter createSvgFeComponentTransferElementAdapter() {
 		return null;
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link at.bestsolution.efxclipse.formats.svg.svg.SvgFeFuncR <em>Fe Func R</em>}'.
+	 * Creates a new adapter for an object of class '{@link at.bestsolution.efxclipse.formats.svg.svg.SvgFeFuncRElement <em>Fe Func RElement</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see at.bestsolution.efxclipse.formats.svg.svg.SvgFeFuncR
+	 * @see at.bestsolution.efxclipse.formats.svg.svg.SvgFeFuncRElement
 	 * @generated
 	 */
-	public Adapter createSvgFeFuncRAdapter() {
+	public Adapter createSvgFeFuncRElementAdapter() {
 		return null;
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link at.bestsolution.efxclipse.formats.svg.svg.SvgFeFuncG <em>Fe Func G</em>}'.
+	 * Creates a new adapter for an object of class '{@link at.bestsolution.efxclipse.formats.svg.svg.SvgFeFuncGElement <em>Fe Func GElement</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see at.bestsolution.efxclipse.formats.svg.svg.SvgFeFuncG
+	 * @see at.bestsolution.efxclipse.formats.svg.svg.SvgFeFuncGElement
 	 * @generated
 	 */
-	public Adapter createSvgFeFuncGAdapter() {
+	public Adapter createSvgFeFuncGElementAdapter() {
 		return null;
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link at.bestsolution.efxclipse.formats.svg.svg.SvgFeFuncB <em>Fe Func B</em>}'.
+	 * Creates a new adapter for an object of class '{@link at.bestsolution.efxclipse.formats.svg.svg.SvgFeFuncBElement <em>Fe Func BElement</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see at.bestsolution.efxclipse.formats.svg.svg.SvgFeFuncB
+	 * @see at.bestsolution.efxclipse.formats.svg.svg.SvgFeFuncBElement
 	 * @generated
 	 */
-	public Adapter createSvgFeFuncBAdapter() {
+	public Adapter createSvgFeFuncBElementAdapter() {
 		return null;
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link at.bestsolution.efxclipse.formats.svg.svg.SvgFeFuncA <em>Fe Func A</em>}'.
+	 * Creates a new adapter for an object of class '{@link at.bestsolution.efxclipse.formats.svg.svg.SvgFeFuncAElement <em>Fe Func AElement</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see at.bestsolution.efxclipse.formats.svg.svg.SvgFeFuncA
+	 * @see at.bestsolution.efxclipse.formats.svg.svg.SvgFeFuncAElement
 	 * @generated
 	 */
-	public Adapter createSvgFeFuncAAdapter() {
+	public Adapter createSvgFeFuncAElementAdapter() {
 		return null;
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link at.bestsolution.efxclipse.formats.svg.svg.SvgFeComposite <em>Fe Composite</em>}'.
+	 * Creates a new adapter for an object of class '{@link at.bestsolution.efxclipse.formats.svg.svg.SvgFeCompositeElement <em>Fe Composite Element</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see at.bestsolution.efxclipse.formats.svg.svg.SvgFeComposite
+	 * @see at.bestsolution.efxclipse.formats.svg.svg.SvgFeCompositeElement
 	 * @generated
 	 */
-	public Adapter createSvgFeCompositeAdapter() {
+	public Adapter createSvgFeCompositeElementAdapter() {
 		return null;
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link at.bestsolution.efxclipse.formats.svg.svg.SvgFeConvolveMatrix <em>Fe Convolve Matrix</em>}'.
+	 * Creates a new adapter for an object of class '{@link at.bestsolution.efxclipse.formats.svg.svg.SvgFeConvolveMatrixElement <em>Fe Convolve Matrix Element</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see at.bestsolution.efxclipse.formats.svg.svg.SvgFeConvolveMatrix
+	 * @see at.bestsolution.efxclipse.formats.svg.svg.SvgFeConvolveMatrixElement
 	 * @generated
 	 */
-	public Adapter createSvgFeConvolveMatrixAdapter() {
+	public Adapter createSvgFeConvolveMatrixElementAdapter() {
 		return null;
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link at.bestsolution.efxclipse.formats.svg.svg.SvgFeDiffuseLighting <em>Fe Diffuse Lighting</em>}'.
+	 * Creates a new adapter for an object of class '{@link at.bestsolution.efxclipse.formats.svg.svg.SvgFeDiffuseLightingElement <em>Fe Diffuse Lighting Element</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see at.bestsolution.efxclipse.formats.svg.svg.SvgFeDiffuseLighting
+	 * @see at.bestsolution.efxclipse.formats.svg.svg.SvgFeDiffuseLightingElement
 	 * @generated
 	 */
-	public Adapter createSvgFeDiffuseLightingAdapter() {
+	public Adapter createSvgFeDiffuseLightingElementAdapter() {
 		return null;
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link at.bestsolution.efxclipse.formats.svg.svg.SvgFeDisplacementMap <em>Fe Displacement Map</em>}'.
+	 * Creates a new adapter for an object of class '{@link at.bestsolution.efxclipse.formats.svg.svg.SvgFeDisplacementMapElement <em>Fe Displacement Map Element</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see at.bestsolution.efxclipse.formats.svg.svg.SvgFeDisplacementMap
+	 * @see at.bestsolution.efxclipse.formats.svg.svg.SvgFeDisplacementMapElement
 	 * @generated
 	 */
-	public Adapter createSvgFeDisplacementMapAdapter() {
+	public Adapter createSvgFeDisplacementMapElementAdapter() {
 		return null;
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link at.bestsolution.efxclipse.formats.svg.svg.SvgFeFlood <em>Fe Flood</em>}'.
+	 * Creates a new adapter for an object of class '{@link at.bestsolution.efxclipse.formats.svg.svg.SvgFeFloodElement <em>Fe Flood Element</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see at.bestsolution.efxclipse.formats.svg.svg.SvgFeFlood
+	 * @see at.bestsolution.efxclipse.formats.svg.svg.SvgFeFloodElement
 	 * @generated
 	 */
-	public Adapter createSvgFeFloodAdapter() {
+	public Adapter createSvgFeFloodElementAdapter() {
 		return null;
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link at.bestsolution.efxclipse.formats.svg.svg.SvgFeGaussianBlur <em>Fe Gaussian Blur</em>}'.
+	 * Creates a new adapter for an object of class '{@link at.bestsolution.efxclipse.formats.svg.svg.SvgFeGaussianBlurElement <em>Fe Gaussian Blur Element</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see at.bestsolution.efxclipse.formats.svg.svg.SvgFeGaussianBlur
+	 * @see at.bestsolution.efxclipse.formats.svg.svg.SvgFeGaussianBlurElement
 	 * @generated
 	 */
-	public Adapter createSvgFeGaussianBlurAdapter() {
+	public Adapter createSvgFeGaussianBlurElementAdapter() {
 		return null;
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link at.bestsolution.efxclipse.formats.svg.svg.SvgFeImage <em>Fe Image</em>}'.
+	 * Creates a new adapter for an object of class '{@link at.bestsolution.efxclipse.formats.svg.svg.SvgFeImageElement <em>Fe Image Element</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see at.bestsolution.efxclipse.formats.svg.svg.SvgFeImage
+	 * @see at.bestsolution.efxclipse.formats.svg.svg.SvgFeImageElement
 	 * @generated
 	 */
-	public Adapter createSvgFeImageAdapter() {
+	public Adapter createSvgFeImageElementAdapter() {
 		return null;
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link at.bestsolution.efxclipse.formats.svg.svg.SvgFeMerge <em>Fe Merge</em>}'.
+	 * Creates a new adapter for an object of class '{@link at.bestsolution.efxclipse.formats.svg.svg.SvgFeMergeElement <em>Fe Merge Element</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see at.bestsolution.efxclipse.formats.svg.svg.SvgFeMerge
+	 * @see at.bestsolution.efxclipse.formats.svg.svg.SvgFeMergeElement
 	 * @generated
 	 */
-	public Adapter createSvgFeMergeAdapter() {
+	public Adapter createSvgFeMergeElementAdapter() {
 		return null;
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link at.bestsolution.efxclipse.formats.svg.svg.SvgFeMergeNode <em>Fe Merge Node</em>}'.
+	 * Creates a new adapter for an object of class '{@link at.bestsolution.efxclipse.formats.svg.svg.SvgFeMergeNodeElement <em>Fe Merge Node Element</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see at.bestsolution.efxclipse.formats.svg.svg.SvgFeMergeNode
+	 * @see at.bestsolution.efxclipse.formats.svg.svg.SvgFeMergeNodeElement
 	 * @generated
 	 */
-	public Adapter createSvgFeMergeNodeAdapter() {
+	public Adapter createSvgFeMergeNodeElementAdapter() {
 		return null;
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link at.bestsolution.efxclipse.formats.svg.svg.SvgFeMorphology <em>Fe Morphology</em>}'.
+	 * Creates a new adapter for an object of class '{@link at.bestsolution.efxclipse.formats.svg.svg.SvgFeMorphologyElement <em>Fe Morphology Element</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see at.bestsolution.efxclipse.formats.svg.svg.SvgFeMorphology
+	 * @see at.bestsolution.efxclipse.formats.svg.svg.SvgFeMorphologyElement
 	 * @generated
 	 */
-	public Adapter createSvgFeMorphologyAdapter() {
+	public Adapter createSvgFeMorphologyElementAdapter() {
 		return null;
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link at.bestsolution.efxclipse.formats.svg.svg.SvgFeOffset <em>Fe Offset</em>}'.
+	 * Creates a new adapter for an object of class '{@link at.bestsolution.efxclipse.formats.svg.svg.SvgFeOffsetElement <em>Fe Offset Element</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see at.bestsolution.efxclipse.formats.svg.svg.SvgFeOffset
+	 * @see at.bestsolution.efxclipse.formats.svg.svg.SvgFeOffsetElement
 	 * @generated
 	 */
-	public Adapter createSvgFeOffsetAdapter() {
+	public Adapter createSvgFeOffsetElementAdapter() {
 		return null;
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link at.bestsolution.efxclipse.formats.svg.svg.SvgFeSpecularLighting <em>Fe Specular Lighting</em>}'.
+	 * Creates a new adapter for an object of class '{@link at.bestsolution.efxclipse.formats.svg.svg.SvgFeSpecularLightingElement <em>Fe Specular Lighting Element</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see at.bestsolution.efxclipse.formats.svg.svg.SvgFeSpecularLighting
+	 * @see at.bestsolution.efxclipse.formats.svg.svg.SvgFeSpecularLightingElement
 	 * @generated
 	 */
-	public Adapter createSvgFeSpecularLightingAdapter() {
+	public Adapter createSvgFeSpecularLightingElementAdapter() {
 		return null;
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link at.bestsolution.efxclipse.formats.svg.svg.SvgFeTile <em>Fe Tile</em>}'.
+	 * Creates a new adapter for an object of class '{@link at.bestsolution.efxclipse.formats.svg.svg.SvgFeTileElement <em>Fe Tile Element</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see at.bestsolution.efxclipse.formats.svg.svg.SvgFeTile
+	 * @see at.bestsolution.efxclipse.formats.svg.svg.SvgFeTileElement
 	 * @generated
 	 */
-	public Adapter createSvgFeTileAdapter() {
+	public Adapter createSvgFeTileElementAdapter() {
 		return null;
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link at.bestsolution.efxclipse.formats.svg.svg.SvgFeTurbulence <em>Fe Turbulence</em>}'.
+	 * Creates a new adapter for an object of class '{@link at.bestsolution.efxclipse.formats.svg.svg.SvgFeTurbulenceElement <em>Fe Turbulence Element</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see at.bestsolution.efxclipse.formats.svg.svg.SvgFeTurbulence
+	 * @see at.bestsolution.efxclipse.formats.svg.svg.SvgFeTurbulenceElement
 	 * @generated
 	 */
-	public Adapter createSvgFeTurbulenceAdapter() {
+	public Adapter createSvgFeTurbulenceElementAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link at.bestsolution.efxclipse.formats.svg.svg.SvgAnimateElement <em>Animate Element</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see at.bestsolution.efxclipse.formats.svg.svg.SvgAnimateElement
+	 * @generated
+	 */
+	public Adapter createSvgAnimateElementAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link at.bestsolution.efxclipse.formats.svg.svg.SvgMetadataElement <em>Metadata Element</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see at.bestsolution.efxclipse.formats.svg.svg.SvgMetadataElement
+	 * @generated
+	 */
+	public Adapter createSvgMetadataElementAdapter() {
 		return null;
 	}
 
