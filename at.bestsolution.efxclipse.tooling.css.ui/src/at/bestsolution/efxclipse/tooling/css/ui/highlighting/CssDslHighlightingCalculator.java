@@ -46,10 +46,8 @@ public class CssDslHighlightingCalculator implements ISemanticHighlightingCalcul
 			} else if( o instanceof simple_selector ) {
 				simple_selector sec = (simple_selector) o;
 				ICompositeNode n = NodeModelUtils.getNode(sec);
-				
-//				System.err.println(n.getOffset() + " => " + n.getText().trim().length());
-				
-				acceptor.addPosition(n.getOffset(), n.getText().trim().length(), CssDslHighlightingConfiguration.SELECTOR);
+								
+				acceptor.addPosition(n.getOffset(), n.getLength(), CssDslHighlightingConfiguration.SELECTOR);
 			}
 		}
 	}

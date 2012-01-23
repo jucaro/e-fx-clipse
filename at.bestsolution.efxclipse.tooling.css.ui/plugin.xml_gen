@@ -71,6 +71,19 @@
         </page>
     </extension>
     <extension
+            point="org.eclipse.ui.propertyPages">
+        <page
+            class="at.bestsolution.efxclipse.tooling.css.ui.CssDslExecutableExtensionFactory:org.eclipse.xtext.ui.editor.preferences.LanguageRootPreferencePage"
+            id="at.bestsolution.efxclipse.tooling.css.CssDsl"
+            name="CssDsl">
+            <keywordReference id="at.bestsolution.efxclipse.tooling.css.ui.keyword_CssDsl"/>
+            <enabledWhen>
+	            <adapt type="org.eclipse.core.resources.IProject"/>
+			</enabledWhen>
+	        <filter name="projectNature" value="org.eclipse.xtext.ui.shared.xtextNature"/>
+        </page>
+    </extension>
+    <extension
         point="org.eclipse.ui.keywords">
         <keyword
             id="at.bestsolution.efxclipse.tooling.css.ui.keyword_CssDsl"
@@ -145,6 +158,30 @@
             class="at.bestsolution.efxclipse.tooling.css.ui.CssDslExecutableExtensionFactory:org.eclipse.xtext.builder.IXtextBuilderParticipant">
       </participant>
    </extension>
+   <extension
+            point="org.eclipse.ui.preferencePages">
+        <page
+            category="at.bestsolution.efxclipse.tooling.css.CssDsl"
+            class="at.bestsolution.efxclipse.tooling.css.ui.CssDslExecutableExtensionFactory:org.eclipse.xtext.builder.preferences.BuilderPreferencePage"
+            id="at.bestsolution.efxclipse.tooling.css.CssDsl.compiler.preferencePage"
+            name="Compiler">
+            <keywordReference id="at.bestsolution.efxclipse.tooling.css.ui.keyword_CssDsl"/>
+        </page>
+    </extension>
+    <extension
+            point="org.eclipse.ui.propertyPages">
+        <page
+            category="at.bestsolution.efxclipse.tooling.css.CssDsl"
+            class="at.bestsolution.efxclipse.tooling.css.ui.CssDslExecutableExtensionFactory:org.eclipse.xtext.builder.preferences.BuilderPreferencePage"
+            id="at.bestsolution.efxclipse.tooling.css.CssDsl.compiler.propertyPage"
+            name="Compiler">
+            <keywordReference id="at.bestsolution.efxclipse.tooling.css.ui.keyword_CssDsl"/>
+            <enabledWhen>
+	            <adapt type="org.eclipse.core.resources.IProject"/>
+			</enabledWhen>
+	        <filter name="projectNature" value="org.eclipse.xtext.ui.shared.xtextNature"/>
+        </page>
+    </extension>
 
 	<!-- Quick Outline -->
 	<extension
@@ -186,11 +223,10 @@
             class="at.bestsolution.efxclipse.tooling.css.ui.CssDslExecutableExtensionFactory:org.eclipse.xtext.ui.editor.quickfix.MarkerResolutionGenerator">
       </markerResolutionGenerator>
    </extension>
-
    	<!-- Rename Refactoring -->
 	<extension point="org.eclipse.ui.handlers">
 		<handler 
-			class="at.bestsolution.efxclipse.tooling.css.ui.CssDslExecutableExtensionFactory:org.eclipse.xtext.ui.refactoring.ui.RenameElementHandler"
+			class="at.bestsolution.efxclipse.tooling.css.ui.CssDslExecutableExtensionFactory:org.eclipse.xtext.ui.refactoring.ui.IRenameElementHandler"
 			commandId="org.eclipse.xtext.ui.refactoring.RenameElement">
 			<activeWhen>
 				<reference
@@ -212,6 +248,15 @@
          </command>
       </menuContribution>
    </extension>
+   <extension point="org.eclipse.ui.preferencePages">
+	    <page
+	        category="at.bestsolution.efxclipse.tooling.css.CssDsl"
+	        class="at.bestsolution.efxclipse.tooling.css.ui.CssDslExecutableExtensionFactory:org.eclipse.xtext.ui.refactoring.ui.RefactoringPreferencePage"
+	        id="at.bestsolution.efxclipse.tooling.css.CssDsl.refactoring"
+	        name="Refactoring">
+	        <keywordReference id="at.bestsolution.efxclipse.tooling.css.ui.keyword_CssDsl"/>
+	    </page>
+	</extension>
 
   <extension point="org.eclipse.compare.contentViewers">
     <viewer id="at.bestsolution.efxclipse.tooling.css.CssDsl.compare.contentViewers"
