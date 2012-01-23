@@ -827,10 +827,10 @@ rulesimple_selector returns [EObject current=null]
     @init { enterRule(); 
     }
     @after { leaveRule(); }:
-(((
+((((
 (
 		{ 
-	        newCompositeNode(grammarAccess.getSimple_selectorAccess().getElementElement_nameParserRuleCall_0_0_0()); 
+	        newCompositeNode(grammarAccess.getSimple_selectorAccess().getElementElement_nameParserRuleCall_0_0_0_0()); 
 	    }
 		lv_element_0_0=ruleelement_name		{
 	        if ($current==null) {
@@ -845,19 +845,38 @@ rulesimple_selector returns [EObject current=null]
 	    }
 
 )
-)(
+)
+    |(
+(
+		{ 
+	        newCompositeNode(grammarAccess.getSimple_selectorAccess().getUniversalCss_universalParserRuleCall_0_0_1_0()); 
+	    }
+		lv_universal_1_0=rulecss_universal		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getSimple_selectorRule());
+	        }
+       		set(
+       			$current, 
+       			"universal",
+        		lv_universal_1_0, 
+        		"css_universal");
+	        afterParserOrEnumRuleCall();
+	    }
+
+)
+))(
 (
 		{ 
 	        newCompositeNode(grammarAccess.getSimple_selectorAccess().getSubSelectorsSub_selectorParserRuleCall_0_1_0()); 
 	    }
-		lv_subSelectors_1_0=rulesub_selector		{
+		lv_subSelectors_2_0=rulesub_selector		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getSimple_selectorRule());
 	        }
        		add(
        			$current, 
        			"subSelectors",
-        		lv_subSelectors_1_0, 
+        		lv_subSelectors_2_0, 
         		"sub_selector");
 	        afterParserOrEnumRuleCall();
 	    }
@@ -869,14 +888,14 @@ rulesimple_selector returns [EObject current=null]
 		{ 
 	        newCompositeNode(grammarAccess.getSimple_selectorAccess().getSubSelectorsSub_selectorParserRuleCall_1_0()); 
 	    }
-		lv_subSelectors_2_0=rulesub_selector		{
+		lv_subSelectors_3_0=rulesub_selector		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getSimple_selectorRule());
 	        }
        		add(
        			$current, 
        			"subSelectors",
-        		lv_subSelectors_2_0, 
+        		lv_subSelectors_3_0, 
         		"sub_selector");
 	        afterParserOrEnumRuleCall();
 	    }
@@ -912,10 +931,15 @@ ruleelement_name returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleTo
     }
 
     |
-	kw='*' 
-    {
-        $current.merge(kw);
-        newLeafNode(kw, grammarAccess.getElement_nameAccess().getAsteriskKeyword_1()); 
+    { 
+        newCompositeNode(grammarAccess.getElement_nameAccess().getReservedWordsParserRuleCall_1()); 
+    }
+    this_ReservedWords_1=ruleReservedWords    {
+		$current.merge(this_ReservedWords_1);
+    }
+
+    { 
+        afterParserOrEnumRuleCall();
     }
 )
     ;
@@ -1013,8 +1037,149 @@ rulesub_selector returns [EObject current=null]
 	    }
 
 )
+)
+    |(
+(
+		{ 
+	        newCompositeNode(grammarAccess.getSub_selectorAccess().getNegotationCss_negationParserRuleCall_4_0()); 
+	    }
+		lv_negotation_4_0=rulecss_negation		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getSub_selectorRule());
+	        }
+       		set(
+       			$current, 
+       			"negotation",
+        		lv_negotation_4_0, 
+        		"css_negation");
+	        afterParserOrEnumRuleCall();
+	    }
+
+)
 ))
 ;
+
+
+
+
+
+// Entry rule entryRulecss_type_selector
+entryRulecss_type_selector returns [String current=null] 
+	:
+	{ newCompositeNode(grammarAccess.getCss_type_selectorRule()); } 
+	 iv_rulecss_type_selector=rulecss_type_selector 
+	 { $current=$iv_rulecss_type_selector.current.getText(); }  
+	 EOF 
+;
+
+// Rule css_type_selector
+rulecss_type_selector returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] 
+    @init { enterRule(); 
+    }
+    @after { leaveRule(); }:
+((
+    { 
+        newCompositeNode(grammarAccess.getCss_type_selectorAccess().getCss_namespace_prefixParserRuleCall_0()); 
+    }
+    this_css_namespace_prefix_0=rulecss_namespace_prefix    {
+		$current.merge(this_css_namespace_prefix_0);
+    }
+
+    { 
+        afterParserOrEnumRuleCall();
+    }
+)?
+    { 
+        newCompositeNode(grammarAccess.getCss_type_selectorAccess().getElement_nameParserRuleCall_1()); 
+    }
+    this_element_name_1=ruleelement_name    {
+		$current.merge(this_element_name_1);
+    }
+
+    { 
+        afterParserOrEnumRuleCall();
+    }
+)
+    ;
+
+
+
+
+
+// Entry rule entryRulecss_namespace_prefix
+entryRulecss_namespace_prefix returns [String current=null] 
+	:
+	{ newCompositeNode(grammarAccess.getCss_namespace_prefixRule()); } 
+	 iv_rulecss_namespace_prefix=rulecss_namespace_prefix 
+	 { $current=$iv_rulecss_namespace_prefix.current.getText(); }  
+	 EOF 
+;
+
+// Rule css_namespace_prefix
+rulecss_namespace_prefix returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] 
+    @init { enterRule(); 
+    }
+    @after { leaveRule(); }:
+((    this_IDENT_0=RULE_IDENT    {
+		$current.merge(this_IDENT_0);
+    }
+
+    { 
+    newLeafNode(this_IDENT_0, grammarAccess.getCss_namespace_prefixAccess().getIDENTTerminalRuleCall_0_0()); 
+    }
+
+    |
+	kw='*' 
+    {
+        $current.merge(kw);
+        newLeafNode(kw, grammarAccess.getCss_namespace_prefixAccess().getAsteriskKeyword_0_1()); 
+    }
+)?
+	kw='|' 
+    {
+        $current.merge(kw);
+        newLeafNode(kw, grammarAccess.getCss_namespace_prefixAccess().getVerticalLineKeyword_1()); 
+    }
+)
+    ;
+
+
+
+
+
+// Entry rule entryRulecss_universal
+entryRulecss_universal returns [String current=null] 
+	:
+	{ newCompositeNode(grammarAccess.getCss_universalRule()); } 
+	 iv_rulecss_universal=rulecss_universal 
+	 { $current=$iv_rulecss_universal.current.getText(); }  
+	 EOF 
+;
+
+// Rule css_universal
+rulecss_universal returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] 
+    @init { enterRule(); 
+    }
+    @after { leaveRule(); }:
+((
+    { 
+        newCompositeNode(grammarAccess.getCss_universalAccess().getCss_namespace_prefixParserRuleCall_0()); 
+    }
+    this_css_namespace_prefix_0=rulecss_namespace_prefix    {
+		$current.merge(this_css_namespace_prefix_0);
+    }
+
+    { 
+        afterParserOrEnumRuleCall();
+    }
+)?
+	kw='*' 
+    {
+        $current.merge(kw);
+        newLeafNode(kw, grammarAccess.getCss_universalAccess().getAsteriskKeyword_1()); 
+    }
+)
+    ;
 
 
 
@@ -1040,14 +1205,26 @@ rulecss_class returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken
         $current.merge(kw);
         newLeafNode(kw, grammarAccess.getCss_classAccess().getFullStopKeyword_0()); 
     }
-    this_IDENT_1=RULE_IDENT    {
+(    this_IDENT_1=RULE_IDENT    {
 		$current.merge(this_IDENT_1);
     }
 
     { 
-    newLeafNode(this_IDENT_1, grammarAccess.getCss_classAccess().getIDENTTerminalRuleCall_1()); 
+    newLeafNode(this_IDENT_1, grammarAccess.getCss_classAccess().getIDENTTerminalRuleCall_1_0()); 
     }
-)
+
+    |
+    { 
+        newCompositeNode(grammarAccess.getCss_classAccess().getReservedWordsParserRuleCall_1_1()); 
+    }
+    this_ReservedWords_2=ruleReservedWords    {
+		$current.merge(this_ReservedWords_2);
+    }
+
+    { 
+        afterParserOrEnumRuleCall();
+    }
+))
     ;
 
 
@@ -1102,49 +1279,94 @@ rulecss_attrib returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToke
         $current.merge(kw);
         newLeafNode(kw, grammarAccess.getCss_attribAccess().getLeftSquareBracketKeyword_0()); 
     }
-    this_IDENT_1=RULE_IDENT    {
+(    this_IDENT_1=RULE_IDENT    {
 		$current.merge(this_IDENT_1);
     }
 
     { 
-    newLeafNode(this_IDENT_1, grammarAccess.getCss_attribAccess().getIDENTTerminalRuleCall_1()); 
+    newLeafNode(this_IDENT_1, grammarAccess.getCss_attribAccess().getIDENTTerminalRuleCall_1_0()); 
     }
-((
+
+    |
+    { 
+        newCompositeNode(grammarAccess.getCss_attribAccess().getReservedWordsParserRuleCall_1_1()); 
+    }
+    this_ReservedWords_2=ruleReservedWords    {
+		$current.merge(this_ReservedWords_2);
+    }
+
+    { 
+        afterParserOrEnumRuleCall();
+    }
+)((
+	kw='^=' 
+    {
+        $current.merge(kw);
+        newLeafNode(kw, grammarAccess.getCss_attribAccess().getCircumflexAccentEqualsSignKeyword_2_0_0()); 
+    }
+
+    |
+	kw='$=' 
+    {
+        $current.merge(kw);
+        newLeafNode(kw, grammarAccess.getCss_attribAccess().getDollarSignEqualsSignKeyword_2_0_1()); 
+    }
+
+    |
+	kw='*=' 
+    {
+        $current.merge(kw);
+        newLeafNode(kw, grammarAccess.getCss_attribAccess().getAsteriskEqualsSignKeyword_2_0_2()); 
+    }
+
+    |
 	kw='=' 
     {
         $current.merge(kw);
-        newLeafNode(kw, grammarAccess.getCss_attribAccess().getEqualsSignKeyword_2_0_0()); 
+        newLeafNode(kw, grammarAccess.getCss_attribAccess().getEqualsSignKeyword_2_0_3()); 
     }
 
-    |    this_INCLUDES_3=RULE_INCLUDES    {
-		$current.merge(this_INCLUDES_3);
-    }
-
-    { 
-    newLeafNode(this_INCLUDES_3, grammarAccess.getCss_attribAccess().getINCLUDESTerminalRuleCall_2_0_1()); 
-    }
-
-    |    this_DASHMATCH_4=RULE_DASHMATCH    {
-		$current.merge(this_DASHMATCH_4);
+    |    this_INCLUDES_7=RULE_INCLUDES    {
+		$current.merge(this_INCLUDES_7);
     }
 
     { 
-    newLeafNode(this_DASHMATCH_4, grammarAccess.getCss_attribAccess().getDASHMATCHTerminalRuleCall_2_0_2()); 
+    newLeafNode(this_INCLUDES_7, grammarAccess.getCss_attribAccess().getINCLUDESTerminalRuleCall_2_0_4()); 
     }
-)(    this_IDENT_5=RULE_IDENT    {
-		$current.merge(this_IDENT_5);
+
+    |    this_DASHMATCH_8=RULE_DASHMATCH    {
+		$current.merge(this_DASHMATCH_8);
     }
 
     { 
-    newLeafNode(this_IDENT_5, grammarAccess.getCss_attribAccess().getIDENTTerminalRuleCall_2_1_0()); 
+    newLeafNode(this_DASHMATCH_8, grammarAccess.getCss_attribAccess().getDASHMATCHTerminalRuleCall_2_0_5()); 
     }
-
-    |    this_STRING_6=RULE_STRING    {
-		$current.merge(this_STRING_6);
+)((    this_IDENT_9=RULE_IDENT    {
+		$current.merge(this_IDENT_9);
     }
 
     { 
-    newLeafNode(this_STRING_6, grammarAccess.getCss_attribAccess().getSTRINGTerminalRuleCall_2_1_1()); 
+    newLeafNode(this_IDENT_9, grammarAccess.getCss_attribAccess().getIDENTTerminalRuleCall_2_1_0_0()); 
+    }
+
+    |
+    { 
+        newCompositeNode(grammarAccess.getCss_attribAccess().getReservedWordsParserRuleCall_2_1_0_1()); 
+    }
+    this_ReservedWords_10=ruleReservedWords    {
+		$current.merge(this_ReservedWords_10);
+    }
+
+    { 
+        afterParserOrEnumRuleCall();
+    }
+)
+    |    this_STRING_11=RULE_STRING    {
+		$current.merge(this_STRING_11);
+    }
+
+    { 
+    newLeafNode(this_STRING_11, grammarAccess.getCss_attribAccess().getSTRINGTerminalRuleCall_2_1_1()); 
     }
 ))?
 	kw=']' 
@@ -1243,8 +1465,58 @@ rulecss_generic_declaration returns [EObject current=null]
 	    }
 
 )
-))
+)(
+(
+		{ 
+	        newCompositeNode(grammarAccess.getCss_generic_declarationAccess().getPrioCss_prioParserRuleCall_3_0()); 
+	    }
+		lv_prio_3_0=rulecss_prio		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getCss_generic_declarationRule());
+	        }
+       		set(
+       			$current, 
+       			"prio",
+        		lv_prio_3_0, 
+        		"css_prio");
+	        afterParserOrEnumRuleCall();
+	    }
+
+)
+)?)
 ;
+
+
+
+
+
+// Entry rule entryRulecss_prio
+entryRulecss_prio returns [String current=null] 
+	:
+	{ newCompositeNode(grammarAccess.getCss_prioRule()); } 
+	 iv_rulecss_prio=rulecss_prio 
+	 { $current=$iv_rulecss_prio.current.getText(); }  
+	 EOF 
+;
+
+// Rule css_prio
+rulecss_prio returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] 
+    @init { enterRule(); 
+    }
+    @after { leaveRule(); }:
+
+    { 
+        newCompositeNode(grammarAccess.getCss_prioAccess().getIMPORTANT_SYMParserRuleCall()); 
+    }
+    this_IMPORTANT_SYM_0=ruleIMPORTANT_SYM    {
+		$current.merge(this_IMPORTANT_SYM_0);
+    }
+
+    { 
+        afterParserOrEnumRuleCall();
+    }
+
+    ;
 
 
 
@@ -1304,12 +1576,397 @@ rulecss_pseudo returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToke
         $current.merge(kw);
         newLeafNode(kw, grammarAccess.getCss_pseudoAccess().getColonKeyword_0()); 
     }
-    this_IDENT_1=RULE_IDENT    {
-		$current.merge(this_IDENT_1);
+(
+	kw=':' 
+    {
+        $current.merge(kw);
+        newLeafNode(kw, grammarAccess.getCss_pseudoAccess().getColonKeyword_1()); 
+    }
+)?(    this_IDENT_2=RULE_IDENT    {
+		$current.merge(this_IDENT_2);
     }
 
     { 
-    newLeafNode(this_IDENT_1, grammarAccess.getCss_pseudoAccess().getIDENTTerminalRuleCall_1()); 
+    newLeafNode(this_IDENT_2, grammarAccess.getCss_pseudoAccess().getIDENTTerminalRuleCall_2_0()); 
+    }
+
+    |
+    { 
+        newCompositeNode(grammarAccess.getCss_pseudoAccess().getFunctional_pseudoParserRuleCall_2_1()); 
+    }
+    this_functional_pseudo_3=rulefunctional_pseudo    {
+		$current.merge(this_functional_pseudo_3);
+    }
+
+    { 
+        afterParserOrEnumRuleCall();
+    }
+))
+    ;
+
+
+
+
+
+// Entry rule entryRulecss_negation
+entryRulecss_negation returns [String current=null] 
+	:
+	{ newCompositeNode(grammarAccess.getCss_negationRule()); } 
+	 iv_rulecss_negation=rulecss_negation 
+	 { $current=$iv_rulecss_negation.current.getText(); }  
+	 EOF 
+;
+
+// Rule css_negation
+rulecss_negation returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] 
+    @init { enterRule(); 
+    }
+    @after { leaveRule(); }:
+(
+	kw=':not' 
+    {
+        $current.merge(kw);
+        newLeafNode(kw, grammarAccess.getCss_negationAccess().getNotKeyword_0()); 
+    }
+
+	kw='(' 
+    {
+        $current.merge(kw);
+        newLeafNode(kw, grammarAccess.getCss_negationAccess().getLeftParenthesisKeyword_1()); 
+    }
+
+    { 
+        newCompositeNode(grammarAccess.getCss_negationAccess().getCss_negation_argParserRuleCall_2()); 
+    }
+    this_css_negation_arg_2=rulecss_negation_arg    {
+		$current.merge(this_css_negation_arg_2);
+    }
+
+    { 
+        afterParserOrEnumRuleCall();
+    }
+
+	kw=')' 
+    {
+        $current.merge(kw);
+        newLeafNode(kw, grammarAccess.getCss_negationAccess().getRightParenthesisKeyword_3()); 
+    }
+)
+    ;
+
+
+
+
+
+// Entry rule entryRulecss_negation_arg
+entryRulecss_negation_arg returns [String current=null] 
+	:
+	{ newCompositeNode(grammarAccess.getCss_negation_argRule()); } 
+	 iv_rulecss_negation_arg=rulecss_negation_arg 
+	 { $current=$iv_rulecss_negation_arg.current.getText(); }  
+	 EOF 
+;
+
+// Rule css_negation_arg
+rulecss_negation_arg returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] 
+    @init { enterRule(); 
+    }
+    @after { leaveRule(); }:
+(
+    { 
+        newCompositeNode(grammarAccess.getCss_negation_argAccess().getCss_type_selectorParserRuleCall_0()); 
+    }
+    this_css_type_selector_0=rulecss_type_selector    {
+		$current.merge(this_css_type_selector_0);
+    }
+
+    { 
+        afterParserOrEnumRuleCall();
+    }
+
+    |
+    { 
+        newCompositeNode(grammarAccess.getCss_negation_argAccess().getCss_universalParserRuleCall_1()); 
+    }
+    this_css_universal_1=rulecss_universal    {
+		$current.merge(this_css_universal_1);
+    }
+
+    { 
+        afterParserOrEnumRuleCall();
+    }
+
+    |    this_HASH_2=RULE_HASH    {
+		$current.merge(this_HASH_2);
+    }
+
+    { 
+    newLeafNode(this_HASH_2, grammarAccess.getCss_negation_argAccess().getHASHTerminalRuleCall_2()); 
+    }
+
+    |
+    { 
+        newCompositeNode(grammarAccess.getCss_negation_argAccess().getCss_classParserRuleCall_3()); 
+    }
+    this_css_class_3=rulecss_class    {
+		$current.merge(this_css_class_3);
+    }
+
+    { 
+        afterParserOrEnumRuleCall();
+    }
+
+    |
+    { 
+        newCompositeNode(grammarAccess.getCss_negation_argAccess().getCss_attribParserRuleCall_4()); 
+    }
+    this_css_attrib_4=rulecss_attrib    {
+		$current.merge(this_css_attrib_4);
+    }
+
+    { 
+        afterParserOrEnumRuleCall();
+    }
+
+    |
+    { 
+        newCompositeNode(grammarAccess.getCss_negation_argAccess().getCss_pseudoParserRuleCall_5()); 
+    }
+    this_css_pseudo_5=rulecss_pseudo    {
+		$current.merge(this_css_pseudo_5);
+    }
+
+    { 
+        afterParserOrEnumRuleCall();
+    }
+)
+    ;
+
+
+
+
+
+// Entry rule entryRulefunctional_pseudo
+entryRulefunctional_pseudo returns [String current=null] 
+	:
+	{ newCompositeNode(grammarAccess.getFunctional_pseudoRule()); } 
+	 iv_rulefunctional_pseudo=rulefunctional_pseudo 
+	 { $current=$iv_rulefunctional_pseudo.current.getText(); }  
+	 EOF 
+;
+
+// Rule functional_pseudo
+rulefunctional_pseudo returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] 
+    @init { enterRule(); 
+    }
+    @after { leaveRule(); }:
+(    this_IDENT_0=RULE_IDENT    {
+		$current.merge(this_IDENT_0);
+    }
+
+    { 
+    newLeafNode(this_IDENT_0, grammarAccess.getFunctional_pseudoAccess().getIDENTTerminalRuleCall_0()); 
+    }
+
+	kw='(' 
+    {
+        $current.merge(kw);
+        newLeafNode(kw, grammarAccess.getFunctional_pseudoAccess().getLeftParenthesisKeyword_1()); 
+    }
+
+    { 
+        newCompositeNode(grammarAccess.getFunctional_pseudoAccess().getFunction_exprParserRuleCall_2()); 
+    }
+    this_function_expr_2=rulefunction_expr    {
+		$current.merge(this_function_expr_2);
+    }
+
+    { 
+        afterParserOrEnumRuleCall();
+    }
+
+	kw=')' 
+    {
+        $current.merge(kw);
+        newLeafNode(kw, grammarAccess.getFunctional_pseudoAccess().getRightParenthesisKeyword_3()); 
+    }
+)
+    ;
+
+
+
+
+
+// Entry rule entryRulefunction_expr
+entryRulefunction_expr returns [String current=null] 
+	:
+	{ newCompositeNode(grammarAccess.getFunction_exprRule()); } 
+	 iv_rulefunction_expr=rulefunction_expr 
+	 { $current=$iv_rulefunction_expr.current.getText(); }  
+	 EOF 
+;
+
+// Rule function_expr
+rulefunction_expr returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] 
+    @init { enterRule(); 
+    }
+    @after { leaveRule(); }:
+(
+	kw='+' 
+    {
+        $current.merge(kw);
+        newLeafNode(kw, grammarAccess.getFunction_exprAccess().getPlusSignKeyword_0()); 
+    }
+
+    |
+	kw='-' 
+    {
+        $current.merge(kw);
+        newLeafNode(kw, grammarAccess.getFunction_exprAccess().getHyphenMinusKeyword_1()); 
+    }
+
+    |
+    { 
+        newCompositeNode(grammarAccess.getFunction_exprAccess().getDIMENSIONParserRuleCall_2()); 
+    }
+    this_DIMENSION_2=ruleDIMENSION    {
+		$current.merge(this_DIMENSION_2);
+    }
+
+    { 
+        afterParserOrEnumRuleCall();
+    }
+
+    |
+    { 
+        newCompositeNode(grammarAccess.getFunction_exprAccess().getNUMBERParserRuleCall_3()); 
+    }
+    this_NUMBER_3=ruleNUMBER    {
+		$current.merge(this_NUMBER_3);
+    }
+
+    { 
+        afterParserOrEnumRuleCall();
+    }
+
+    |    this_STRING_4=RULE_STRING    {
+		$current.merge(this_STRING_4);
+    }
+
+    { 
+    newLeafNode(this_STRING_4, grammarAccess.getFunction_exprAccess().getSTRINGTerminalRuleCall_4()); 
+    }
+
+    |    this_IDENT_5=RULE_IDENT    {
+		$current.merge(this_IDENT_5);
+    }
+
+    { 
+    newLeafNode(this_IDENT_5, grammarAccess.getFunction_exprAccess().getIDENTTerminalRuleCall_5()); 
+    }
+)+
+    ;
+
+
+
+
+
+// Entry rule entryRuleDIMENSION
+entryRuleDIMENSION returns [String current=null] 
+	:
+	{ newCompositeNode(grammarAccess.getDIMENSIONRule()); } 
+	 iv_ruleDIMENSION=ruleDIMENSION 
+	 { $current=$iv_ruleDIMENSION.current.getText(); }  
+	 EOF 
+;
+
+// Rule DIMENSION
+ruleDIMENSION returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] 
+    @init { enterRule(); 
+    }
+    @after { leaveRule(); }:
+(
+    { 
+        newCompositeNode(grammarAccess.getDIMENSIONAccess().getPERCENTAGEParserRuleCall_0()); 
+    }
+    this_PERCENTAGE_0=rulePERCENTAGE    {
+		$current.merge(this_PERCENTAGE_0);
+    }
+
+    { 
+        afterParserOrEnumRuleCall();
+    }
+
+    |
+    { 
+        newCompositeNode(grammarAccess.getDIMENSIONAccess().getLENGTHParserRuleCall_1()); 
+    }
+    this_LENGTH_1=ruleLENGTH    {
+		$current.merge(this_LENGTH_1);
+    }
+
+    { 
+        afterParserOrEnumRuleCall();
+    }
+
+    |
+    { 
+        newCompositeNode(grammarAccess.getDIMENSIONAccess().getEMSParserRuleCall_2()); 
+    }
+    this_EMS_2=ruleEMS    {
+		$current.merge(this_EMS_2);
+    }
+
+    { 
+        afterParserOrEnumRuleCall();
+    }
+
+    |
+    { 
+        newCompositeNode(grammarAccess.getDIMENSIONAccess().getEXSParserRuleCall_3()); 
+    }
+    this_EXS_3=ruleEXS    {
+		$current.merge(this_EXS_3);
+    }
+
+    { 
+        afterParserOrEnumRuleCall();
+    }
+
+    |
+    { 
+        newCompositeNode(grammarAccess.getDIMENSIONAccess().getANGLEParserRuleCall_4()); 
+    }
+    this_ANGLE_4=ruleANGLE    {
+		$current.merge(this_ANGLE_4);
+    }
+
+    { 
+        afterParserOrEnumRuleCall();
+    }
+
+    |
+    { 
+        newCompositeNode(grammarAccess.getDIMENSIONAccess().getTIMEParserRuleCall_5()); 
+    }
+    this_TIME_5=ruleTIME    {
+		$current.merge(this_TIME_5);
+    }
+
+    { 
+        afterParserOrEnumRuleCall();
+    }
+
+    |
+    { 
+        newCompositeNode(grammarAccess.getDIMENSIONAccess().getFREQParserRuleCall_6()); 
+    }
+    this_FREQ_6=ruleFREQ    {
+		$current.merge(this_FREQ_6);
+    }
+
+    { 
+        afterParserOrEnumRuleCall();
     }
 )
     ;
@@ -1345,12 +2002,19 @@ rulecombinator returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToke
         $current.merge(kw);
         newLeafNode(kw, grammarAccess.getCombinatorAccess().getGreaterThanSignKeyword_0_1()); 
     }
-)(    this_WS_2=RULE_WS    {
-		$current.merge(this_WS_2);
+
+    |
+	kw='~' 
+    {
+        $current.merge(kw);
+        newLeafNode(kw, grammarAccess.getCombinatorAccess().getTildeKeyword_0_2()); 
+    }
+)(    this_WS_3=RULE_WS    {
+		$current.merge(this_WS_3);
     }
 
     { 
-    newLeafNode(this_WS_2, grammarAccess.getCombinatorAccess().getWSTerminalRuleCall_1()); 
+    newLeafNode(this_WS_3, grammarAccess.getCombinatorAccess().getWSTerminalRuleCall_1()); 
     }
 )*)
     ;
@@ -2400,6 +3064,158 @@ ruleFREQ returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()]
         newLeafNode(kw, grammarAccess.getFREQAccess().getKhzKeyword_1_1()); 
     }
 ))
+    ;
+
+
+
+
+
+// Entry rule entryRuleIMPORTANT_SYM
+entryRuleIMPORTANT_SYM returns [String current=null] 
+	:
+	{ newCompositeNode(grammarAccess.getIMPORTANT_SYMRule()); } 
+	 iv_ruleIMPORTANT_SYM=ruleIMPORTANT_SYM 
+	 { $current=$iv_ruleIMPORTANT_SYM.current.getText(); }  
+	 EOF 
+;
+
+// Rule IMPORTANT_SYM
+ruleIMPORTANT_SYM returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] 
+    @init { enterRule(); 
+    }
+    @after { leaveRule(); }:
+
+	kw='!important' 
+    {
+        $current.merge(kw);
+        newLeafNode(kw, grammarAccess.getIMPORTANT_SYMAccess().getImportantKeyword()); 
+    }
+
+    ;
+
+
+
+
+
+// Entry rule entryRuleReservedWords
+entryRuleReservedWords returns [String current=null] 
+	:
+	{ newCompositeNode(grammarAccess.getReservedWordsRule()); } 
+	 iv_ruleReservedWords=ruleReservedWords 
+	 { $current=$iv_ruleReservedWords.current.getText(); }  
+	 EOF 
+;
+
+// Rule ReservedWords
+ruleReservedWords returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] 
+    @init { enterRule(); 
+    }
+    @after { leaveRule(); }:
+(
+	kw='em' 
+    {
+        $current.merge(kw);
+        newLeafNode(kw, grammarAccess.getReservedWordsAccess().getEmKeyword_0()); 
+    }
+
+    |
+	kw='ex' 
+    {
+        $current.merge(kw);
+        newLeafNode(kw, grammarAccess.getReservedWordsAccess().getExKeyword_1()); 
+    }
+
+    |
+	kw='px' 
+    {
+        $current.merge(kw);
+        newLeafNode(kw, grammarAccess.getReservedWordsAccess().getPxKeyword_2()); 
+    }
+
+    |
+	kw='cm' 
+    {
+        $current.merge(kw);
+        newLeafNode(kw, grammarAccess.getReservedWordsAccess().getCmKeyword_3()); 
+    }
+
+    |
+	kw='mm' 
+    {
+        $current.merge(kw);
+        newLeafNode(kw, grammarAccess.getReservedWordsAccess().getMmKeyword_4()); 
+    }
+
+    |
+	kw='in' 
+    {
+        $current.merge(kw);
+        newLeafNode(kw, grammarAccess.getReservedWordsAccess().getInKeyword_5()); 
+    }
+
+    |
+	kw='pt' 
+    {
+        $current.merge(kw);
+        newLeafNode(kw, grammarAccess.getReservedWordsAccess().getPtKeyword_6()); 
+    }
+
+    |
+	kw='pc' 
+    {
+        $current.merge(kw);
+        newLeafNode(kw, grammarAccess.getReservedWordsAccess().getPcKeyword_7()); 
+    }
+
+    |
+	kw='deg' 
+    {
+        $current.merge(kw);
+        newLeafNode(kw, grammarAccess.getReservedWordsAccess().getDegKeyword_8()); 
+    }
+
+    |
+	kw='rad' 
+    {
+        $current.merge(kw);
+        newLeafNode(kw, grammarAccess.getReservedWordsAccess().getRadKeyword_9()); 
+    }
+
+    |
+	kw='grad' 
+    {
+        $current.merge(kw);
+        newLeafNode(kw, grammarAccess.getReservedWordsAccess().getGradKeyword_10()); 
+    }
+
+    |
+	kw='ms' 
+    {
+        $current.merge(kw);
+        newLeafNode(kw, grammarAccess.getReservedWordsAccess().getMsKeyword_11()); 
+    }
+
+    |
+	kw='s' 
+    {
+        $current.merge(kw);
+        newLeafNode(kw, grammarAccess.getReservedWordsAccess().getSKeyword_12()); 
+    }
+
+    |
+	kw='hz' 
+    {
+        $current.merge(kw);
+        newLeafNode(kw, grammarAccess.getReservedWordsAccess().getHzKeyword_13()); 
+    }
+
+    |
+	kw='khz' 
+    {
+        $current.merge(kw);
+        newLeafNode(kw, grammarAccess.getReservedWordsAccess().getKhzKeyword_14()); 
+    }
+)
     ;
 
 

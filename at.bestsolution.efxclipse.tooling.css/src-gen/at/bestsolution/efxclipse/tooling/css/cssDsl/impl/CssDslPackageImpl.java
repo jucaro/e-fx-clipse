@@ -470,9 +470,19 @@ public class CssDslPackageImpl extends EPackageImpl implements CssDslPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  public EAttribute getsimple_selector_Universal()
+  {
+    return (EAttribute)simple_selectorEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EReference getsimple_selector_SubSelectors()
   {
-    return (EReference)simple_selectorEClass.getEStructuralFeatures().get(1);
+    return (EReference)simple_selectorEClass.getEStructuralFeatures().get(2);
   }
 
   /**
@@ -530,6 +540,16 @@ public class CssDslPackageImpl extends EPackageImpl implements CssDslPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  public EAttribute getsub_selector_Negotation()
+  {
+    return (EAttribute)sub_selectorEClass.getEStructuralFeatures().get(4);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EClass getcss_declaration()
   {
     return css_declarationEClass;
@@ -563,6 +583,16 @@ public class CssDslPackageImpl extends EPackageImpl implements CssDslPackage
   public EReference getcss_generic_declaration_Expression()
   {
     return (EReference)css_generic_declarationEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getcss_generic_declaration_Prio()
+  {
+    return (EAttribute)css_generic_declarationEClass.getEStructuralFeatures().get(2);
   }
 
   /**
@@ -797,6 +827,7 @@ public class CssDslPackageImpl extends EPackageImpl implements CssDslPackage
 
     simple_selectorEClass = createEClass(SIMPLE_SELECTOR);
     createEAttribute(simple_selectorEClass, SIMPLE_SELECTOR__ELEMENT);
+    createEAttribute(simple_selectorEClass, SIMPLE_SELECTOR__UNIVERSAL);
     createEReference(simple_selectorEClass, SIMPLE_SELECTOR__SUB_SELECTORS);
 
     sub_selectorEClass = createEClass(SUB_SELECTOR);
@@ -804,12 +835,14 @@ public class CssDslPackageImpl extends EPackageImpl implements CssDslPackage
     createEAttribute(sub_selectorEClass, SUB_SELECTOR__CLASS);
     createEAttribute(sub_selectorEClass, SUB_SELECTOR__ATTRIB);
     createEAttribute(sub_selectorEClass, SUB_SELECTOR__PSEUDOCLASS);
+    createEAttribute(sub_selectorEClass, SUB_SELECTOR__NEGOTATION);
 
     css_declarationEClass = createEClass(CSS_DECLARATION);
 
     css_generic_declarationEClass = createEClass(CSS_GENERIC_DECLARATION);
     createEAttribute(css_generic_declarationEClass, CSS_GENERIC_DECLARATION__PROPERTY);
     createEReference(css_generic_declarationEClass, CSS_GENERIC_DECLARATION__EXPRESSION);
+    createEAttribute(css_generic_declarationEClass, CSS_GENERIC_DECLARATION__PRIO);
 
     exprEClass = createEClass(EXPR);
     createEReference(exprEClass, EXPR__TERM_GROUPS);
@@ -899,6 +932,7 @@ public class CssDslPackageImpl extends EPackageImpl implements CssDslPackage
 
     initEClass(simple_selectorEClass, simple_selector.class, "simple_selector", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getsimple_selector_Element(), ecorePackage.getEString(), "element", null, 0, 1, simple_selector.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getsimple_selector_Universal(), ecorePackage.getEString(), "universal", null, 0, 1, simple_selector.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getsimple_selector_SubSelectors(), this.getsub_selector(), null, "subSelectors", null, 0, -1, simple_selector.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(sub_selectorEClass, sub_selector.class, "sub_selector", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -906,12 +940,14 @@ public class CssDslPackageImpl extends EPackageImpl implements CssDslPackage
     initEAttribute(getsub_selector_Class(), ecorePackage.getEString(), "class", null, 0, 1, sub_selector.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getsub_selector_Attrib(), ecorePackage.getEString(), "attrib", null, 0, 1, sub_selector.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getsub_selector_Pseudoclass(), ecorePackage.getEString(), "pseudoclass", null, 0, 1, sub_selector.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getsub_selector_Negotation(), ecorePackage.getEString(), "negotation", null, 0, 1, sub_selector.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(css_declarationEClass, css_declaration.class, "css_declaration", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
     initEClass(css_generic_declarationEClass, css_generic_declaration.class, "css_generic_declaration", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getcss_generic_declaration_Property(), ecorePackage.getEString(), "property", null, 0, 1, css_generic_declaration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getcss_generic_declaration_Expression(), this.getexpr(), null, "expression", null, 0, 1, css_generic_declaration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getcss_generic_declaration_Prio(), ecorePackage.getEString(), "prio", null, 0, 1, css_generic_declaration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(exprEClass, expr.class, "expr", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getexpr_TermGroups(), this.gettermGroup(), null, "termGroups", null, 0, -1, expr.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

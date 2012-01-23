@@ -19,6 +19,7 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * <ul>
  *   <li>{@link at.bestsolution.efxclipse.tooling.css.cssDsl.simple_selector#getElement <em>Element</em>}</li>
+ *   <li>{@link at.bestsolution.efxclipse.tooling.css.cssDsl.simple_selector#getUniversal <em>Universal</em>}</li>
  *   <li>{@link at.bestsolution.efxclipse.tooling.css.cssDsl.simple_selector#getSubSelectors <em>Sub Selectors</em>}</li>
  * </ul>
  * </p>
@@ -54,6 +55,32 @@ public interface simple_selector extends EObject
    * @generated
    */
   void setElement(String value);
+
+  /**
+   * Returns the value of the '<em><b>Universal</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Universal</em>' attribute isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Universal</em>' attribute.
+   * @see #setUniversal(String)
+   * @see at.bestsolution.efxclipse.tooling.css.cssDsl.CssDslPackage#getsimple_selector_Universal()
+   * @model
+   * @generated
+   */
+  String getUniversal();
+
+  /**
+   * Sets the value of the '{@link at.bestsolution.efxclipse.tooling.css.cssDsl.simple_selector#getUniversal <em>Universal</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Universal</em>' attribute.
+   * @see #getUniversal()
+   * @generated
+   */
+  void setUniversal(String value);
 
   /**
    * Returns the value of the '<em><b>Sub Selectors</b></em>' containment reference list.

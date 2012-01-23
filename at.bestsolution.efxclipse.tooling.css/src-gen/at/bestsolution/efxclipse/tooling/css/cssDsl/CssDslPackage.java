@@ -357,13 +357,22 @@ public interface CssDslPackage extends EPackage
   int SIMPLE_SELECTOR__ELEMENT = 0;
 
   /**
+   * The feature id for the '<em><b>Universal</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SIMPLE_SELECTOR__UNIVERSAL = 1;
+
+  /**
    * The feature id for the '<em><b>Sub Selectors</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int SIMPLE_SELECTOR__SUB_SELECTORS = 1;
+  int SIMPLE_SELECTOR__SUB_SELECTORS = 2;
 
   /**
    * The number of structural features of the '<em>simple selector</em>' class.
@@ -372,7 +381,7 @@ public interface CssDslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int SIMPLE_SELECTOR_FEATURE_COUNT = 2;
+  int SIMPLE_SELECTOR_FEATURE_COUNT = 3;
 
   /**
    * The meta object id for the '{@link at.bestsolution.efxclipse.tooling.css.cssDsl.impl.sub_selectorImpl <em>sub selector</em>}' class.
@@ -421,13 +430,22 @@ public interface CssDslPackage extends EPackage
   int SUB_SELECTOR__PSEUDOCLASS = 3;
 
   /**
+   * The feature id for the '<em><b>Negotation</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SUB_SELECTOR__NEGOTATION = 4;
+
+  /**
    * The number of structural features of the '<em>sub selector</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int SUB_SELECTOR_FEATURE_COUNT = 4;
+  int SUB_SELECTOR_FEATURE_COUNT = 5;
 
   /**
    * The meta object id for the '{@link at.bestsolution.efxclipse.tooling.css.cssDsl.impl.css_declarationImpl <em>css declaration</em>}' class.
@@ -477,13 +495,22 @@ public interface CssDslPackage extends EPackage
   int CSS_GENERIC_DECLARATION__EXPRESSION = CSS_DECLARATION_FEATURE_COUNT + 1;
 
   /**
+   * The feature id for the '<em><b>Prio</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CSS_GENERIC_DECLARATION__PRIO = CSS_DECLARATION_FEATURE_COUNT + 2;
+
+  /**
    * The number of structural features of the '<em>css generic declaration</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int CSS_GENERIC_DECLARATION_FEATURE_COUNT = CSS_DECLARATION_FEATURE_COUNT + 2;
+  int CSS_GENERIC_DECLARATION_FEATURE_COUNT = CSS_DECLARATION_FEATURE_COUNT + 3;
 
   /**
    * The meta object id for the '{@link at.bestsolution.efxclipse.tooling.css.cssDsl.impl.exprImpl <em>expr</em>}' class.
@@ -966,6 +993,17 @@ public interface CssDslPackage extends EPackage
   EAttribute getsimple_selector_Element();
 
   /**
+   * Returns the meta object for the attribute '{@link at.bestsolution.efxclipse.tooling.css.cssDsl.simple_selector#getUniversal <em>Universal</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Universal</em>'.
+   * @see at.bestsolution.efxclipse.tooling.css.cssDsl.simple_selector#getUniversal()
+   * @see #getsimple_selector()
+   * @generated
+   */
+  EAttribute getsimple_selector_Universal();
+
+  /**
    * Returns the meta object for the containment reference list '{@link at.bestsolution.efxclipse.tooling.css.cssDsl.simple_selector#getSubSelectors <em>Sub Selectors</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -1031,6 +1069,17 @@ public interface CssDslPackage extends EPackage
   EAttribute getsub_selector_Pseudoclass();
 
   /**
+   * Returns the meta object for the attribute '{@link at.bestsolution.efxclipse.tooling.css.cssDsl.sub_selector#getNegotation <em>Negotation</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Negotation</em>'.
+   * @see at.bestsolution.efxclipse.tooling.css.cssDsl.sub_selector#getNegotation()
+   * @see #getsub_selector()
+   * @generated
+   */
+  EAttribute getsub_selector_Negotation();
+
+  /**
    * Returns the meta object for class '{@link at.bestsolution.efxclipse.tooling.css.cssDsl.css_declaration <em>css declaration</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -1071,6 +1120,17 @@ public interface CssDslPackage extends EPackage
    * @generated
    */
   EReference getcss_generic_declaration_Expression();
+
+  /**
+   * Returns the meta object for the attribute '{@link at.bestsolution.efxclipse.tooling.css.cssDsl.css_generic_declaration#getPrio <em>Prio</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Prio</em>'.
+   * @see at.bestsolution.efxclipse.tooling.css.cssDsl.css_generic_declaration#getPrio()
+   * @see #getcss_generic_declaration()
+   * @generated
+   */
+  EAttribute getcss_generic_declaration_Prio();
 
   /**
    * Returns the meta object for class '{@link at.bestsolution.efxclipse.tooling.css.cssDsl.expr <em>expr</em>}'.
@@ -1494,6 +1554,14 @@ public interface CssDslPackage extends EPackage
     EAttribute SIMPLE_SELECTOR__ELEMENT = eINSTANCE.getsimple_selector_Element();
 
     /**
+     * The meta object literal for the '<em><b>Universal</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute SIMPLE_SELECTOR__UNIVERSAL = eINSTANCE.getsimple_selector_Universal();
+
+    /**
      * The meta object literal for the '<em><b>Sub Selectors</b></em>' containment reference list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -1544,6 +1612,14 @@ public interface CssDslPackage extends EPackage
     EAttribute SUB_SELECTOR__PSEUDOCLASS = eINSTANCE.getsub_selector_Pseudoclass();
 
     /**
+     * The meta object literal for the '<em><b>Negotation</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute SUB_SELECTOR__NEGOTATION = eINSTANCE.getsub_selector_Negotation();
+
+    /**
      * The meta object literal for the '{@link at.bestsolution.efxclipse.tooling.css.cssDsl.impl.css_declarationImpl <em>css declaration</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -1578,6 +1654,14 @@ public interface CssDslPackage extends EPackage
      * @generated
      */
     EReference CSS_GENERIC_DECLARATION__EXPRESSION = eINSTANCE.getcss_generic_declaration_Expression();
+
+    /**
+     * The meta object literal for the '<em><b>Prio</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute CSS_GENERIC_DECLARATION__PRIO = eINSTANCE.getcss_generic_declaration_Prio();
 
     /**
      * The meta object literal for the '{@link at.bestsolution.efxclipse.tooling.css.cssDsl.impl.exprImpl <em>expr</em>}' class.

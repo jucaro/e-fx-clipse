@@ -60,97 +60,97 @@ public class AbstractCssDslSemanticSequencer extends AbstractSemanticSequencer {
 	public void createSequence(EObject context, EObject semanticObject) {
 		if(semanticObject.eClass().getEPackage() == CssDslPackage.eINSTANCE) switch(semanticObject.eClass().getClassifierID()) {
 			case CssDslPackage.URL_TYPE:
-				if(context == grammarAccess.getImportExpressionRule()) {
-					sequence_importExpression_URLType(context, (URLType) semanticObject); 
+				if(context == grammarAccess.getURLTypeRule()) {
+					sequence_URLType(context, (URLType) semanticObject); 
 					return; 
 				}
-				else if(context == grammarAccess.getURLTypeRule()) {
-					sequence_URLType_URLType(context, (URLType) semanticObject); 
+				else if(context == grammarAccess.getImportExpressionRule()) {
+					sequence_importExpression(context, (URLType) semanticObject); 
 					return; 
 				}
 				else break;
 			case CssDslPackage.CHARSET:
 				if(context == grammarAccess.getCharsetRule()) {
-					sequence_charset_charset(context, (charset) semanticObject); 
+					sequence_charset(context, (charset) semanticObject); 
 					return; 
 				}
 				else break;
 			case CssDslPackage.CSS_GENERIC_DECLARATION:
 				if(context == grammarAccess.getCss_declarationRule() ||
 				   context == grammarAccess.getCss_generic_declarationRule()) {
-					sequence_css_generic_declaration_css_generic_declaration(context, (css_generic_declaration) semanticObject); 
+					sequence_css_generic_declaration(context, (css_generic_declaration) semanticObject); 
 					return; 
 				}
 				else break;
 			case CssDslPackage.EXPR:
 				if(context == grammarAccess.getExprRule()) {
-					sequence_expr_expr(context, (expr) semanticObject); 
+					sequence_expr(context, (expr) semanticObject); 
 					return; 
 				}
 				else break;
 			case CssDslPackage.FUNCTION:
 				if(context == grammarAccess.getFunctionRule()) {
-					sequence_function_function(context, (function) semanticObject); 
+					sequence_function(context, (function) semanticObject); 
 					return; 
 				}
 				else break;
 			case CssDslPackage.IMPORT_EXPRESSION:
 				if(context == grammarAccess.getImportExpressionRule()) {
-					sequence_importExpression_importExpression(context, (importExpression) semanticObject); 
+					sequence_importExpression(context, (importExpression) semanticObject); 
 					return; 
 				}
 				else break;
 			case CssDslPackage.MEDIA:
 				if(context == grammarAccess.getMediaRule()) {
-					sequence_media_media(context, (media) semanticObject); 
+					sequence_media(context, (media) semanticObject); 
 					return; 
 				}
 				else break;
 			case CssDslPackage.PAGE:
 				if(context == grammarAccess.getPageRule()) {
-					sequence_page_page(context, (page) semanticObject); 
+					sequence_page(context, (page) semanticObject); 
 					return; 
 				}
 				else break;
 			case CssDslPackage.RULESET:
 				if(context == grammarAccess.getRulesetRule()) {
-					sequence_ruleset_ruleset(context, (ruleset) semanticObject); 
+					sequence_ruleset(context, (ruleset) semanticObject); 
 					return; 
 				}
 				else break;
 			case CssDslPackage.SELECTOR:
 				if(context == grammarAccess.getSelectorRule()) {
-					sequence_selector_selector(context, (selector) semanticObject); 
+					sequence_selector(context, (selector) semanticObject); 
 					return; 
 				}
 				else break;
 			case CssDslPackage.SIMPLE_SELECTOR:
 				if(context == grammarAccess.getSimple_selectorRule()) {
-					sequence_simple_selector_simple_selector(context, (simple_selector) semanticObject); 
+					sequence_simple_selector(context, (simple_selector) semanticObject); 
 					return; 
 				}
 				else break;
 			case CssDslPackage.STYLESHEET:
 				if(context == grammarAccess.getStylesheetRule()) {
-					sequence_stylesheet_stylesheet(context, (stylesheet) semanticObject); 
+					sequence_stylesheet(context, (stylesheet) semanticObject); 
 					return; 
 				}
 				else break;
 			case CssDslPackage.SUB_SELECTOR:
 				if(context == grammarAccess.getSub_selectorRule()) {
-					sequence_sub_selector_sub_selector(context, (sub_selector) semanticObject); 
+					sequence_sub_selector(context, (sub_selector) semanticObject); 
 					return; 
 				}
 				else break;
 			case CssDslPackage.TERM:
 				if(context == grammarAccess.getTermRule()) {
-					sequence_term_term(context, (term) semanticObject); 
+					sequence_term(context, (term) semanticObject); 
 					return; 
 				}
 				else break;
 			case CssDslPackage.TERM_GROUP:
 				if(context == grammarAccess.getTermGroupRule()) {
-					sequence_termGroup_termGroup(context, (termGroup) semanticObject); 
+					sequence_termGroup(context, (termGroup) semanticObject); 
 					return; 
 				}
 				else break;
@@ -161,11 +161,8 @@ public class AbstractCssDslSemanticSequencer extends AbstractSemanticSequencer {
 	/**
 	 * Constraint:
 	 *     url=STRING
-	 *
-	 * Features:
-	 *    url[1, 1]
 	 */
-	protected void sequence_URLType_URLType(EObject context, URLType semanticObject) {
+	protected void sequence_URLType(EObject context, URLType semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
@@ -173,11 +170,8 @@ public class AbstractCssDslSemanticSequencer extends AbstractSemanticSequencer {
 	/**
 	 * Constraint:
 	 *     charset=STRING
-	 *
-	 * Features:
-	 *    charset[1, 1]
 	 */
-	protected void sequence_charset_charset(EObject context, charset semanticObject) {
+	protected void sequence_charset(EObject context, charset semanticObject) {
 		if(errorAcceptor != null) {
 			if(transientValues.isValueTransient(semanticObject, CssDslPackage.Literals.CHARSET__CHARSET) == ValueTransient.YES)
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, CssDslPackage.Literals.CHARSET__CHARSET));
@@ -191,35 +185,18 @@ public class AbstractCssDslSemanticSequencer extends AbstractSemanticSequencer {
 	
 	/**
 	 * Constraint:
-	 *     (property=css_property expression=expr)
-	 *
-	 * Features:
-	 *    property[1, 1]
-	 *    expression[1, 1]
+	 *     (property=css_property expression=expr prio=css_prio?)
 	 */
-	protected void sequence_css_generic_declaration_css_generic_declaration(EObject context, css_generic_declaration semanticObject) {
-		if(errorAcceptor != null) {
-			if(transientValues.isValueTransient(semanticObject, CssDslPackage.Literals.CSS_GENERIC_DECLARATION__PROPERTY) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, CssDslPackage.Literals.CSS_GENERIC_DECLARATION__PROPERTY));
-			if(transientValues.isValueTransient(semanticObject, CssDslPackage.Literals.CSS_GENERIC_DECLARATION__EXPRESSION) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, CssDslPackage.Literals.CSS_GENERIC_DECLARATION__EXPRESSION));
-		}
-		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
-		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
-		feeder.accept(grammarAccess.getCss_generic_declarationAccess().getPropertyCss_propertyParserRuleCall_0_0(), semanticObject.getProperty());
-		feeder.accept(grammarAccess.getCss_generic_declarationAccess().getExpressionExprParserRuleCall_2_0(), semanticObject.getExpression());
-		feeder.finish();
+	protected void sequence_css_generic_declaration(EObject context, css_generic_declaration semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	
 	/**
 	 * Constraint:
 	 *     (termGroups+=termGroup termGroups+=termGroup*)
-	 *
-	 * Features:
-	 *    termGroups[1, *]
 	 */
-	protected void sequence_expr_expr(EObject context, expr semanticObject) {
+	protected void sequence_expr(EObject context, expr semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
@@ -227,12 +204,8 @@ public class AbstractCssDslSemanticSequencer extends AbstractSemanticSequencer {
 	/**
 	 * Constraint:
 	 *     (name=IDENT expression=expr)
-	 *
-	 * Features:
-	 *    name[1, 1]
-	 *    expression[1, 1]
 	 */
-	protected void sequence_function_function(EObject context, function semanticObject) {
+	protected void sequence_function(EObject context, function semanticObject) {
 		if(errorAcceptor != null) {
 			if(transientValues.isValueTransient(semanticObject, CssDslPackage.Literals.FUNCTION__NAME) == ValueTransient.YES)
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, CssDslPackage.Literals.FUNCTION__NAME));
@@ -250,12 +223,8 @@ public class AbstractCssDslSemanticSequencer extends AbstractSemanticSequencer {
 	/**
 	 * Constraint:
 	 *     (url=STRING mediaList=media_list?)
-	 *
-	 * Features:
-	 *    mediaList[0, 1]
-	 *    url[1, 1]
 	 */
-	protected void sequence_importExpression_URLType(EObject context, URLType semanticObject) {
+	protected void sequence_importExpression(EObject context, URLType semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
@@ -263,11 +232,8 @@ public class AbstractCssDslSemanticSequencer extends AbstractSemanticSequencer {
 	/**
 	 * Constraint:
 	 *     value=STRING
-	 *
-	 * Features:
-	 *    value[1, 1]
 	 */
-	protected void sequence_importExpression_importExpression(EObject context, importExpression semanticObject) {
+	protected void sequence_importExpression(EObject context, importExpression semanticObject) {
 		if(errorAcceptor != null) {
 			if(transientValues.isValueTransient(semanticObject, CssDslPackage.Literals.IMPORT_EXPRESSION__VALUE) == ValueTransient.YES)
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, CssDslPackage.Literals.IMPORT_EXPRESSION__VALUE));
@@ -282,12 +248,8 @@ public class AbstractCssDslSemanticSequencer extends AbstractSemanticSequencer {
 	/**
 	 * Constraint:
 	 *     (medialist=media_list rulesets+=ruleset*)
-	 *
-	 * Features:
-	 *    medialist[1, 1]
-	 *    rulesets[0, *]
 	 */
-	protected void sequence_media_media(EObject context, media semanticObject) {
+	protected void sequence_media(EObject context, media semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
@@ -295,12 +257,8 @@ public class AbstractCssDslSemanticSequencer extends AbstractSemanticSequencer {
 	/**
 	 * Constraint:
 	 *     (pseudoPage=pseudo_page? declarations+=css_generic_declaration? declarations+=css_generic_declaration*)
-	 *
-	 * Features:
-	 *    pseudoPage[0, 1]
-	 *    declarations[0, *]
 	 */
-	protected void sequence_page_page(EObject context, page semanticObject) {
+	protected void sequence_page(EObject context, page semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
@@ -308,12 +266,8 @@ public class AbstractCssDslSemanticSequencer extends AbstractSemanticSequencer {
 	/**
 	 * Constraint:
 	 *     (selectors+=selector selectors+=selector* declarations+=css_declaration*)
-	 *
-	 * Features:
-	 *    selectors[1, *]
-	 *    declarations[0, *]
 	 */
-	protected void sequence_ruleset_ruleset(EObject context, ruleset semanticObject) {
+	protected void sequence_ruleset(EObject context, ruleset semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
@@ -321,28 +275,17 @@ public class AbstractCssDslSemanticSequencer extends AbstractSemanticSequencer {
 	/**
 	 * Constraint:
 	 *     (simpleselectors+=simple_selector ((combinator=combinator selector=selector) | (combinator=combinator? selector=selector)?)?)
-	 *
-	 * Features:
-	 *    simpleselectors[1, 1]
-	 *    combinator[1, 2]
-	 *    selector[1, 2]
 	 */
-	protected void sequence_selector_selector(EObject context, selector semanticObject) {
+	protected void sequence_selector(EObject context, selector semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	
 	/**
 	 * Constraint:
-	 *     ((element=element_name subSelectors+=sub_selector*) | subSelectors+=sub_selector+)
-	 *
-	 * Features:
-	 *    element[1, 1]
-	 *         MANDATORY_IF_SET subSelectors
-	 *         EXCLUDE_IF_SET subSelectors
-	 *    subSelectors[0, *]
+	 *     (((element=element_name | universal=css_universal) subSelectors+=sub_selector*) | subSelectors+=sub_selector+)
 	 */
-	protected void sequence_simple_selector_simple_selector(EObject context, simple_selector semanticObject) {
+	protected void sequence_simple_selector(EObject context, simple_selector semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
@@ -350,42 +293,17 @@ public class AbstractCssDslSemanticSequencer extends AbstractSemanticSequencer {
 	/**
 	 * Constraint:
 	 *     (charset=charset? imports+=importExpression* (ruleset+=ruleset | media+=media | page+=page)*)
-	 *
-	 * Features:
-	 *    charset[0, 1]
-	 *    imports[0, *]
-	 *    ruleset[0, *]
-	 *    media[0, *]
-	 *    page[0, *]
 	 */
-	protected void sequence_stylesheet_stylesheet(EObject context, stylesheet semanticObject) {
+	protected void sequence_stylesheet(EObject context, stylesheet semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	
 	/**
 	 * Constraint:
-	 *     (id=css_id | class=css_class | attrib=css_attrib | pseudoclass=css_pseudo)
-	 *
-	 * Features:
-	 *    id[0, 1]
-	 *         EXCLUDE_IF_SET class
-	 *         EXCLUDE_IF_SET attrib
-	 *         EXCLUDE_IF_SET pseudoclass
-	 *    class[0, 1]
-	 *         EXCLUDE_IF_SET id
-	 *         EXCLUDE_IF_SET attrib
-	 *         EXCLUDE_IF_SET pseudoclass
-	 *    attrib[0, 1]
-	 *         EXCLUDE_IF_SET id
-	 *         EXCLUDE_IF_SET class
-	 *         EXCLUDE_IF_SET pseudoclass
-	 *    pseudoclass[0, 1]
-	 *         EXCLUDE_IF_SET id
-	 *         EXCLUDE_IF_SET class
-	 *         EXCLUDE_IF_SET attrib
+	 *     (id=css_id | class=css_class | attrib=css_attrib | pseudoclass=css_pseudo | negotation=css_negation)
 	 */
-	protected void sequence_sub_selector_sub_selector(EObject context, sub_selector semanticObject) {
+	protected void sequence_sub_selector(EObject context, sub_selector semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
@@ -393,11 +311,8 @@ public class AbstractCssDslSemanticSequencer extends AbstractSemanticSequencer {
 	/**
 	 * Constraint:
 	 *     terms+=term+
-	 *
-	 * Features:
-	 *    terms[1, *]
 	 */
-	protected void sequence_termGroup_termGroup(EObject context, termGroup semanticObject) {
+	protected void sequence_termGroup(EObject context, termGroup semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
@@ -412,46 +327,8 @@ public class AbstractCssDslSemanticSequencer extends AbstractSemanticSequencer {
 	 *         function=function | 
 	 *         hexColor=HexColor
 	 *     )
-	 *
-	 * Features:
-	 *    number[0, 1]
-	 *         EXCLUDE_IF_SET stringValue
-	 *         EXCLUDE_IF_SET identifier
-	 *         EXCLUDE_IF_SET url
-	 *         EXCLUDE_IF_SET function
-	 *         EXCLUDE_IF_SET hexColor
-	 *    stringValue[0, 1]
-	 *         EXCLUDE_IF_SET number
-	 *         EXCLUDE_IF_SET identifier
-	 *         EXCLUDE_IF_SET url
-	 *         EXCLUDE_IF_SET function
-	 *         EXCLUDE_IF_SET hexColor
-	 *    identifier[0, 1]
-	 *         EXCLUDE_IF_SET number
-	 *         EXCLUDE_IF_SET stringValue
-	 *         EXCLUDE_IF_SET url
-	 *         EXCLUDE_IF_SET function
-	 *         EXCLUDE_IF_SET hexColor
-	 *    url[0, 1]
-	 *         EXCLUDE_IF_SET number
-	 *         EXCLUDE_IF_SET stringValue
-	 *         EXCLUDE_IF_SET identifier
-	 *         EXCLUDE_IF_SET function
-	 *         EXCLUDE_IF_SET hexColor
-	 *    function[0, 1]
-	 *         EXCLUDE_IF_SET number
-	 *         EXCLUDE_IF_SET stringValue
-	 *         EXCLUDE_IF_SET identifier
-	 *         EXCLUDE_IF_SET url
-	 *         EXCLUDE_IF_SET hexColor
-	 *    hexColor[0, 1]
-	 *         EXCLUDE_IF_SET number
-	 *         EXCLUDE_IF_SET stringValue
-	 *         EXCLUDE_IF_SET identifier
-	 *         EXCLUDE_IF_SET url
-	 *         EXCLUDE_IF_SET function
 	 */
-	protected void sequence_term_term(EObject context, term semanticObject) {
+	protected void sequence_term(EObject context, term semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 }

@@ -1,21 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ecore:EPackage xmi:version="2.0"
-    xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="cssDsl"
-    nsURI="http://www.bestsolution.at/efxclipse/tooling/css/CssDsl" nsPrefix="cssDsl">
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="cssDsl" nsURI="http://www.bestsolution.at/efxclipse/tooling/css/CssDsl"
+    nsPrefix="cssDsl">
   <eClassifiers xsi:type="ecore:EClass" name="stylesheet">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="charset" eType="ecore:EClass platform:/resource/at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/CssDsl.ecore#//charset"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="charset" eType="#//charset"
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="imports" upperBound="-1"
-        eType="ecore:EClass platform:/resource/at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/CssDsl.ecore#//importExpression"
-        containment="true"/>
+        eType="#//importExpression" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="ruleset" upperBound="-1"
-        eType="ecore:EClass platform:/resource/at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/CssDsl.ecore#//ruleset"
-        containment="true"/>
+        eType="#//ruleset" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="media" upperBound="-1"
-        eType="ecore:EClass platform:/resource/at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/CssDsl.ecore#//media"
-        containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="page" upperBound="-1" eType="ecore:EClass platform:/resource/at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/CssDsl.ecore#//page"
+        eType="#//media" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="page" upperBound="-1" eType="#//page"
         containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="charset">
@@ -27,75 +23,70 @@
   <eClassifiers xsi:type="ecore:EClass" name="page">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="pseudoPage" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="declarations" upperBound="-1"
-        eType="ecore:EClass platform:/resource/at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/CssDsl.ecore#//css_generic_declaration"
-        containment="true"/>
+        eType="#//css_generic_declaration" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="media">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="medialist" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="rulesets" upperBound="-1"
-        eType="ecore:EClass platform:/resource/at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/CssDsl.ecore#//ruleset"
-        containment="true"/>
+        eType="#//ruleset" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ruleset">
     <eStructuralFeatures xsi:type="ecore:EReference" name="selectors" upperBound="-1"
-        eType="ecore:EClass platform:/resource/at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/CssDsl.ecore#//selector"
-        containment="true"/>
+        eType="#//selector" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="declarations" upperBound="-1"
-        eType="ecore:EClass platform:/resource/at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/CssDsl.ecore#//css_declaration"
-        containment="true"/>
+        eType="#//css_declaration" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="selector">
     <eStructuralFeatures xsi:type="ecore:EReference" name="simpleselectors" upperBound="-1"
-        eType="ecore:EClass platform:/resource/at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/CssDsl.ecore#//simple_selector"
-        containment="true"/>
+        eType="#//simple_selector" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="combinator" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="selector" eType="ecore:EClass platform:/resource/at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/CssDsl.ecore#//selector"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="selector" eType="#//selector"
         containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="simple_selector">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="element" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="universal" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="subSelectors" upperBound="-1"
-        eType="ecore:EClass platform:/resource/at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/CssDsl.ecore#//sub_selector"
-        containment="true"/>
+        eType="#//sub_selector" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="sub_selector">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="class" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="attrib" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="pseudoclass" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="negotation" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="css_declaration"/>
-  <eClassifiers xsi:type="ecore:EClass" name="css_generic_declaration" eSuperTypes="platform:/resource/at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/CssDsl.ecore#//css_declaration">
+  <eClassifiers xsi:type="ecore:EClass" name="css_generic_declaration" eSuperTypes="#//css_declaration">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="property" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="expression" eType="ecore:EClass platform:/resource/at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/CssDsl.ecore#//expr"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="expression" eType="#//expr"
         containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="prio" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="expr">
     <eStructuralFeatures xsi:type="ecore:EReference" name="termGroups" upperBound="-1"
-        eType="ecore:EClass platform:/resource/at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/CssDsl.ecore#//termGroup"
-        containment="true"/>
+        eType="#//termGroup" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="termGroup">
     <eStructuralFeatures xsi:type="ecore:EReference" name="terms" upperBound="-1"
-        eType="ecore:EClass platform:/resource/at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/CssDsl.ecore#//term"
-        containment="true"/>
+        eType="#//term" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="term">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="number" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="stringValue" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="identifier" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="url" eType="ecore:EClass platform:/resource/at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/CssDsl.ecore#//URLType"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="url" eType="#//URLType"
         containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="function" eType="ecore:EClass platform:/resource/at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/CssDsl.ecore#//function"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="function" eType="#//function"
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="hexColor" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="function">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="expression" eType="ecore:EClass platform:/resource/at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/CssDsl.ecore#//expr"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="expression" eType="#//expr"
         containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="URLType" eSuperTypes="platform:/resource/at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/CssDsl.ecore#//importExpression">
+  <eClassifiers xsi:type="ecore:EClass" name="URLType" eSuperTypes="#//importExpression">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="mediaList" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="url" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>

@@ -59,21 +59,33 @@ selector hidden():
 ;
 
 simple_selector:
-	(element = element_name subSelectors+=sub_selector*)
+	((element = element_name | universal=css_universal) subSelectors+=sub_selector*)
 	|
 	subSelectors+=sub_selector+
 ;
 
 element_name:
-	(IDENT | '*')
+	(IDENT | ReservedWords)
 ;
 
 sub_selector:
-	id=css_id | class=css_class | attrib=css_attrib | pseudoclass=css_pseudo
+	id=css_id | class=css_class | attrib=css_attrib | pseudoclass=css_pseudo | negotation=css_negation
 ;
 
+css_type_selector:
+	( css_namespace_prefix )? element_name
+;
+
+css_namespace_prefix
+  : ( IDENT | '*' )? '|'
+  ;
+
+css_universal: 
+	( css_namespace_prefix )? '*'
+;
+  
 css_class
-  : '.' (IDENT)
+  : '.' ( IDENT | ReservedWords )
   ;
 
 css_id:
@@ -81,7 +93,7 @@ css_id:
 ;
 
 css_attrib:
-	'[' (IDENT) ( ( '=' | INCLUDES | DASHMATCH ) ((IDENT) | STRING ) )? ']'
+	'[' (IDENT | ReservedWords) ( ( '^=' | '$=' | '*=' | '=' | INCLUDES | DASHMATCH ) (( IDENT | ReservedWords ) | STRING ) )? ']'
 ;
 
 css_declaration:
@@ -89,7 +101,11 @@ css_declaration:
 ;
 
 css_generic_declaration:
-	property=css_property ':' expression=expr
+	property=css_property ':' expression=expr prio=css_prio?
+;
+
+css_prio:
+	IMPORTANT_SYM
 ;
 
 css_property:
@@ -97,13 +113,37 @@ css_property:
 ;
 
 css_pseudo
-  : ':' IDENT
-  ;
+  : ':' ':'? (IDENT | functional_pseudo)
+;
+
+css_negation:
+	':not' '(' css_negation_arg ')'
+;
+
+css_negation_arg
+  : css_type_selector | css_universal | HASH | css_class | css_attrib | css_pseudo
+;
+
+functional_pseudo:
+	IDENT '(' function_expr ')'	
+;
+
+function_expr:
+	( ( '+' | '-' | DIMENSION | NUMBER | STRING | IDENT ) )+	
+;
+
+DIMENSION:
+ 	PERCENTAGE | LENGTH | EMS | EXS | ANGLE | TIME | FREQ
+;
 
 combinator
-  : ('+'
-  | '>') WS*
-  ;
+  : 
+  (
+  	  '+'
+  	| '>'
+  	| '~'
+  ) WS*
+;
   
 operator
   : '/' | COMMA
@@ -186,6 +226,19 @@ LENGTH hidden(): num ('px' | 'cm' | 'mm' | 'in' | 'pt' | 'pc' ) ;
 ANGLE: num ('deg' | 'rad' | 'grad' );
 TIME: num ('ms'| 's' );
 FREQ: num ('hz' | 'khz');
+
+IMPORTANT_SYM:
+	'!important'
+;
+
+ReservedWords:
+	  'em' 
+	| 'ex'
+	| 'px' | 'cm' | 'mm' | 'in' | 'pt' | 'pc'
+	| 'deg' | 'rad' | 'grad'
+	| 'ms'| 's'
+	| 'hz' | 'khz'
+;
 
 terminal integer:('0'..'9')+;
 terminal real: (('0'..'9')*"."('0'..'9')+);

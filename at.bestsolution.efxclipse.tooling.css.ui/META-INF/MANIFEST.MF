@@ -21,6 +21,7 @@ Import-Package: org.apache.log4j,
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Export-Package: at.bestsolution.efxclipse.tooling.css.ui,
  at.bestsolution.efxclipse.tooling.css.ui.contentassist.antlr,
- at.bestsolution.efxclipse.tooling.css.ui.internal
+ at.bestsolution.efxclipse.tooling.css.ui.internal,
+ at.bestsolution.efxclipse.tooling.css.ui.contentassist
 Bundle-Activator: at.bestsolution.efxclipse.tooling.css.ui.internal.CssDslActivator
 Service-Component: OSGI-INF/component.xml

@@ -20,6 +20,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link at.bestsolution.efxclipse.tooling.css.cssDsl.sub_selector#getClass_ <em>Class</em>}</li>
  *   <li>{@link at.bestsolution.efxclipse.tooling.css.cssDsl.sub_selector#getAttrib <em>Attrib</em>}</li>
  *   <li>{@link at.bestsolution.efxclipse.tooling.css.cssDsl.sub_selector#getPseudoclass <em>Pseudoclass</em>}</li>
+ *   <li>{@link at.bestsolution.efxclipse.tooling.css.cssDsl.sub_selector#getNegotation <em>Negotation</em>}</li>
  * </ul>
  * </p>
  *
@@ -132,5 +133,31 @@ public interface sub_selector extends EObject
    * @generated
    */
   void setPseudoclass(String value);
+
+  /**
+   * Returns the value of the '<em><b>Negotation</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Negotation</em>' attribute isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Negotation</em>' attribute.
+   * @see #setNegotation(String)
+   * @see at.bestsolution.efxclipse.tooling.css.cssDsl.CssDslPackage#getsub_selector_Negotation()
+   * @model
+   * @generated
+   */
+  String getNegotation();
+
+  /**
+   * Sets the value of the '{@link at.bestsolution.efxclipse.tooling.css.cssDsl.sub_selector#getNegotation <em>Negotation</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Negotation</em>' attribute.
+   * @see #getNegotation()
+   * @generated
+   */
+  void setNegotation(String value);
 
 } // sub_selector
