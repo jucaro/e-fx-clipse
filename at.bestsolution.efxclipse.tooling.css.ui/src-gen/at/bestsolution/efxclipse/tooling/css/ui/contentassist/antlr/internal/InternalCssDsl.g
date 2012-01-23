@@ -568,6 +568,34 @@ finally {
 
 
 
+// Entry rule entryRulecss_prio
+entryRulecss_prio 
+:
+{ before(grammarAccess.getCss_prioRule()); }
+	 rulecss_prio
+{ after(grammarAccess.getCss_prioRule()); } 
+	 EOF 
+;
+
+// Rule css_prio
+rulecss_prio
+    @init {
+		int stackSize = keepStackSize();
+    }
+	:
+(
+{ before(grammarAccess.getCss_prioAccess().getIMPORTANT_SYMParserRuleCall()); }
+	ruleIMPORTANT_SYM
+{ after(grammarAccess.getCss_prioAccess().getIMPORTANT_SYMParserRuleCall()); }
+)
+
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+
+
 // Entry rule entryRulecss_property
 entryRulecss_property 
 :
@@ -1202,6 +1230,36 @@ ruleFREQ
 { before(grammarAccess.getFREQAccess().getGroup()); }
 (rule__FREQ__Group__0)
 { after(grammarAccess.getFREQAccess().getGroup()); }
+)
+
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+
+
+// Entry rule entryRuleIMPORTANT_SYM
+entryRuleIMPORTANT_SYM 
+:
+{ before(grammarAccess.getIMPORTANT_SYMRule()); }
+	 ruleIMPORTANT_SYM
+{ after(grammarAccess.getIMPORTANT_SYMRule()); } 
+	 EOF 
+;
+
+// Rule IMPORTANT_SYM
+ruleIMPORTANT_SYM
+    @init {
+		int stackSize = keepStackSize();
+    }
+	:
+(
+{ before(grammarAccess.getIMPORTANT_SYMAccess().getImportantKeyword()); }
+
+	'!important' 
+
+{ after(grammarAccess.getIMPORTANT_SYMAccess().getImportantKeyword()); }
 )
 
 ;
@@ -3985,6 +4043,7 @@ rule__Css_generic_declaration__Group__2
     }
 :
 	rule__Css_generic_declaration__Group__2__Impl
+	rule__Css_generic_declaration__Group__3
 ;
 finally {
 	restoreStackSize(stackSize);
@@ -4005,6 +4064,36 @@ rule__Css_generic_declaration__Group__2__Impl
 finally {
 	restoreStackSize(stackSize);
 }
+
+
+rule__Css_generic_declaration__Group__3
+    @init {
+		int stackSize = keepStackSize();
+    }
+:
+	rule__Css_generic_declaration__Group__3__Impl
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__Css_generic_declaration__Group__3__Impl
+    @init {
+		int stackSize = keepStackSize();
+    }
+:
+(
+{ before(grammarAccess.getCss_generic_declarationAccess().getPrioAssignment_3()); }
+(rule__Css_generic_declaration__PrioAssignment_3)?
+{ after(grammarAccess.getCss_generic_declarationAccess().getPrioAssignment_3()); }
+)
+
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+
 
 
 
@@ -5611,6 +5700,21 @@ rule__Css_generic_declaration__ExpressionAssignment_2
 (
 { before(grammarAccess.getCss_generic_declarationAccess().getExpressionExprParserRuleCall_2_0()); }
 	ruleexpr{ after(grammarAccess.getCss_generic_declarationAccess().getExpressionExprParserRuleCall_2_0()); }
+)
+
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__Css_generic_declaration__PrioAssignment_3
+    @init {
+		int stackSize = keepStackSize();
+    }
+:
+(
+{ before(grammarAccess.getCss_generic_declarationAccess().getPrioCss_prioParserRuleCall_3_0()); }
+	rulecss_prio{ after(grammarAccess.getCss_generic_declarationAccess().getPrioCss_prioParserRuleCall_3_0()); }
 )
 
 ;

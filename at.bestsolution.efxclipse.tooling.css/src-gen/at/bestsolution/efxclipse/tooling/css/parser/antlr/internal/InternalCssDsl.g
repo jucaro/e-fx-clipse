@@ -1291,8 +1291,58 @@ rulecss_generic_declaration returns [EObject current=null]
 	    }
 
 )
-))
+)(
+(
+		{ 
+	        newCompositeNode(grammarAccess.getCss_generic_declarationAccess().getPrioCss_prioParserRuleCall_3_0()); 
+	    }
+		lv_prio_3_0=rulecss_prio		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getCss_generic_declarationRule());
+	        }
+       		set(
+       			$current, 
+       			"prio",
+        		lv_prio_3_0, 
+        		"css_prio");
+	        afterParserOrEnumRuleCall();
+	    }
+
+)
+)?)
 ;
+
+
+
+
+
+// Entry rule entryRulecss_prio
+entryRulecss_prio returns [String current=null] 
+	:
+	{ newCompositeNode(grammarAccess.getCss_prioRule()); } 
+	 iv_rulecss_prio=rulecss_prio 
+	 { $current=$iv_rulecss_prio.current.getText(); }  
+	 EOF 
+;
+
+// Rule css_prio
+rulecss_prio returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] 
+    @init { enterRule(); 
+    }
+    @after { leaveRule(); }:
+
+    { 
+        newCompositeNode(grammarAccess.getCss_prioAccess().getIMPORTANT_SYMParserRuleCall()); 
+    }
+    this_IMPORTANT_SYM_0=ruleIMPORTANT_SYM    {
+		$current.merge(this_IMPORTANT_SYM_0);
+    }
+
+    { 
+        afterParserOrEnumRuleCall();
+    }
+
+    ;
 
 
 
@@ -2448,6 +2498,33 @@ ruleFREQ returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()]
         newLeafNode(kw, grammarAccess.getFREQAccess().getKhzKeyword_1_1()); 
     }
 ))
+    ;
+
+
+
+
+
+// Entry rule entryRuleIMPORTANT_SYM
+entryRuleIMPORTANT_SYM returns [String current=null] 
+	:
+	{ newCompositeNode(grammarAccess.getIMPORTANT_SYMRule()); } 
+	 iv_ruleIMPORTANT_SYM=ruleIMPORTANT_SYM 
+	 { $current=$iv_ruleIMPORTANT_SYM.current.getText(); }  
+	 EOF 
+;
+
+// Rule IMPORTANT_SYM
+ruleIMPORTANT_SYM returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] 
+    @init { enterRule(); 
+    }
+    @after { leaveRule(); }:
+
+	kw='!important' 
+    {
+        $current.merge(kw);
+        newLeafNode(kw, grammarAccess.getIMPORTANT_SYMAccess().getImportantKeyword()); 
+    }
+
     ;
 
 

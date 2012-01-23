@@ -570,6 +570,16 @@ public class CssDslPackageImpl extends EPackageImpl implements CssDslPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  public EAttribute getcss_generic_declaration_Prio()
+  {
+    return (EAttribute)css_generic_declarationEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EClass getexpr()
   {
     return exprEClass;
@@ -810,6 +820,7 @@ public class CssDslPackageImpl extends EPackageImpl implements CssDslPackage
     css_generic_declarationEClass = createEClass(CSS_GENERIC_DECLARATION);
     createEAttribute(css_generic_declarationEClass, CSS_GENERIC_DECLARATION__PROPERTY);
     createEReference(css_generic_declarationEClass, CSS_GENERIC_DECLARATION__EXPRESSION);
+    createEAttribute(css_generic_declarationEClass, CSS_GENERIC_DECLARATION__PRIO);
 
     exprEClass = createEClass(EXPR);
     createEReference(exprEClass, EXPR__TERM_GROUPS);
@@ -912,6 +923,7 @@ public class CssDslPackageImpl extends EPackageImpl implements CssDslPackage
     initEClass(css_generic_declarationEClass, css_generic_declaration.class, "css_generic_declaration", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getcss_generic_declaration_Property(), ecorePackage.getEString(), "property", null, 0, 1, css_generic_declaration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getcss_generic_declaration_Expression(), this.getexpr(), null, "expression", null, 0, 1, css_generic_declaration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getcss_generic_declaration_Prio(), ecorePackage.getEString(), "prio", null, 0, 1, css_generic_declaration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(exprEClass, expr.class, "expr", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getexpr_TermGroups(), this.gettermGroup(), null, "termGroups", null, 0, -1, expr.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

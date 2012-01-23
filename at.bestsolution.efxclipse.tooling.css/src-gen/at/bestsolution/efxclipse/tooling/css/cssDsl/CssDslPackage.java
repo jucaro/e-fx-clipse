@@ -477,13 +477,22 @@ public interface CssDslPackage extends EPackage
   int CSS_GENERIC_DECLARATION__EXPRESSION = CSS_DECLARATION_FEATURE_COUNT + 1;
 
   /**
+   * The feature id for the '<em><b>Prio</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CSS_GENERIC_DECLARATION__PRIO = CSS_DECLARATION_FEATURE_COUNT + 2;
+
+  /**
    * The number of structural features of the '<em>css generic declaration</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int CSS_GENERIC_DECLARATION_FEATURE_COUNT = CSS_DECLARATION_FEATURE_COUNT + 2;
+  int CSS_GENERIC_DECLARATION_FEATURE_COUNT = CSS_DECLARATION_FEATURE_COUNT + 3;
 
   /**
    * The meta object id for the '{@link at.bestsolution.efxclipse.tooling.css.cssDsl.impl.exprImpl <em>expr</em>}' class.
@@ -1073,6 +1082,17 @@ public interface CssDslPackage extends EPackage
   EReference getcss_generic_declaration_Expression();
 
   /**
+   * Returns the meta object for the attribute '{@link at.bestsolution.efxclipse.tooling.css.cssDsl.css_generic_declaration#getPrio <em>Prio</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Prio</em>'.
+   * @see at.bestsolution.efxclipse.tooling.css.cssDsl.css_generic_declaration#getPrio()
+   * @see #getcss_generic_declaration()
+   * @generated
+   */
+  EAttribute getcss_generic_declaration_Prio();
+
+  /**
    * Returns the meta object for class '{@link at.bestsolution.efxclipse.tooling.css.cssDsl.expr <em>expr</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -1578,6 +1598,14 @@ public interface CssDslPackage extends EPackage
      * @generated
      */
     EReference CSS_GENERIC_DECLARATION__EXPRESSION = eINSTANCE.getcss_generic_declaration_Expression();
+
+    /**
+     * The meta object literal for the '<em><b>Prio</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute CSS_GENERIC_DECLARATION__PRIO = eINSTANCE.getcss_generic_declaration_Prio();
 
     /**
      * The meta object literal for the '{@link at.bestsolution.efxclipse.tooling.css.cssDsl.impl.exprImpl <em>expr</em>}' class.

@@ -89,7 +89,11 @@ css_declaration:
 ;
 
 css_generic_declaration:
-	property=css_property ':' expression=expr
+	property=css_property ':' expression=expr prio=css_prio?
+;
+
+css_prio:
+	IMPORTANT_SYM
 ;
 
 css_property:
@@ -186,6 +190,10 @@ LENGTH hidden(): num ('px' | 'cm' | 'mm' | 'in' | 'pt' | 'pc' ) ;
 ANGLE: num ('deg' | 'rad' | 'grad' );
 TIME: num ('ms'| 's' );
 FREQ: num ('hz' | 'khz');
+
+IMPORTANT_SYM:
+	'!important'
+;
 
 ReservedWords:
 	  'em' 

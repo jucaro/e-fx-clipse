@@ -52,6 +52,7 @@
     <genClasses ecoreClass="CssDsl.ecore#//css_generic_declaration">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CssDsl.ecore#//css_generic_declaration/property"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CssDsl.ecore#//css_generic_declaration/expression"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CssDsl.ecore#//css_generic_declaration/prio"/>
     </genClasses>
     <genClasses ecoreClass="CssDsl.ecore#//expr">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CssDsl.ecore#//expr/termGroups"/>

@@ -107,7 +107,7 @@ public class AbstractCssDslSyntacticSequencer extends AbstractSyntacticSequencer
 
 	/**
 	 * Syntax:
-	 *     '@CHARSET' | '@charset'
+	 *     '@charset' | '@CHARSET'
 	 */
 	protected void emit_charset_CHARSETKeyword_0_1_or_CharsetKeyword_0_0(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
@@ -155,7 +155,7 @@ public class AbstractCssDslSyntacticSequencer extends AbstractSyntacticSequencer
 	
 	/**
 	 * Syntax:
-	 *     '@page' | '@PAGE'
+	 *     '@PAGE' | '@page'
 	 */
 	protected void emit_page_PAGEKeyword_1_1_or_PageKeyword_1_0(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);

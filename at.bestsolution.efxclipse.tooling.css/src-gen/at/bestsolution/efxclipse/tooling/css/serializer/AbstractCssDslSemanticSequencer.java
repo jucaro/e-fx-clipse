@@ -185,20 +185,10 @@ public class AbstractCssDslSemanticSequencer extends AbstractSemanticSequencer {
 	
 	/**
 	 * Constraint:
-	 *     (property=css_property expression=expr)
+	 *     (property=css_property expression=expr prio=css_prio?)
 	 */
 	protected void sequence_css_generic_declaration(EObject context, css_generic_declaration semanticObject) {
-		if(errorAcceptor != null) {
-			if(transientValues.isValueTransient(semanticObject, CssDslPackage.Literals.CSS_GENERIC_DECLARATION__PROPERTY) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, CssDslPackage.Literals.CSS_GENERIC_DECLARATION__PROPERTY));
-			if(transientValues.isValueTransient(semanticObject, CssDslPackage.Literals.CSS_GENERIC_DECLARATION__EXPRESSION) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, CssDslPackage.Literals.CSS_GENERIC_DECLARATION__EXPRESSION));
-		}
-		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
-		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
-		feeder.accept(grammarAccess.getCss_generic_declarationAccess().getPropertyCss_propertyParserRuleCall_0_0(), semanticObject.getProperty());
-		feeder.accept(grammarAccess.getCss_generic_declarationAccess().getExpressionExprParserRuleCall_2_0(), semanticObject.getExpression());
-		feeder.finish();
+		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	

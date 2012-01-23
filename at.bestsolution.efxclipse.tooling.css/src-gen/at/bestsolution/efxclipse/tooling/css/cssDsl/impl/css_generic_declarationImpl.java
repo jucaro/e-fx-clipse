@@ -27,6 +27,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * <ul>
  *   <li>{@link at.bestsolution.efxclipse.tooling.css.cssDsl.impl.css_generic_declarationImpl#getProperty <em>Property</em>}</li>
  *   <li>{@link at.bestsolution.efxclipse.tooling.css.cssDsl.impl.css_generic_declarationImpl#getExpression <em>Expression</em>}</li>
+ *   <li>{@link at.bestsolution.efxclipse.tooling.css.cssDsl.impl.css_generic_declarationImpl#getPrio <em>Prio</em>}</li>
  * </ul>
  * </p>
  *
@@ -63,6 +64,26 @@ public class css_generic_declarationImpl extends css_declarationImpl implements 
    * @ordered
    */
   protected expr expression;
+
+  /**
+   * The default value of the '{@link #getPrio() <em>Prio</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getPrio()
+   * @generated
+   * @ordered
+   */
+  protected static final String PRIO_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getPrio() <em>Prio</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getPrio()
+   * @generated
+   * @ordered
+   */
+  protected String prio = PRIO_EDEFAULT;
 
   /**
    * <!-- begin-user-doc -->
@@ -161,6 +182,29 @@ public class css_generic_declarationImpl extends css_declarationImpl implements 
    * <!-- end-user-doc -->
    * @generated
    */
+  public String getPrio()
+  {
+    return prio;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setPrio(String newPrio)
+  {
+    String oldPrio = prio;
+    prio = newPrio;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, CssDslPackage.CSS_GENERIC_DECLARATION__PRIO, oldPrio, prio));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   @Override
   public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
   {
@@ -186,6 +230,8 @@ public class css_generic_declarationImpl extends css_declarationImpl implements 
         return getProperty();
       case CssDslPackage.CSS_GENERIC_DECLARATION__EXPRESSION:
         return getExpression();
+      case CssDslPackage.CSS_GENERIC_DECLARATION__PRIO:
+        return getPrio();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -205,6 +251,9 @@ public class css_generic_declarationImpl extends css_declarationImpl implements 
         return;
       case CssDslPackage.CSS_GENERIC_DECLARATION__EXPRESSION:
         setExpression((expr)newValue);
+        return;
+      case CssDslPackage.CSS_GENERIC_DECLARATION__PRIO:
+        setPrio((String)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -226,6 +275,9 @@ public class css_generic_declarationImpl extends css_declarationImpl implements 
       case CssDslPackage.CSS_GENERIC_DECLARATION__EXPRESSION:
         setExpression((expr)null);
         return;
+      case CssDslPackage.CSS_GENERIC_DECLARATION__PRIO:
+        setPrio(PRIO_EDEFAULT);
+        return;
     }
     super.eUnset(featureID);
   }
@@ -244,6 +296,8 @@ public class css_generic_declarationImpl extends css_declarationImpl implements 
         return PROPERTY_EDEFAULT == null ? property != null : !PROPERTY_EDEFAULT.equals(property);
       case CssDslPackage.CSS_GENERIC_DECLARATION__EXPRESSION:
         return expression != null;
+      case CssDslPackage.CSS_GENERIC_DECLARATION__PRIO:
+        return PRIO_EDEFAULT == null ? prio != null : !PRIO_EDEFAULT.equals(prio);
     }
     return super.eIsSet(featureID);
   }
@@ -261,6 +315,8 @@ public class css_generic_declarationImpl extends css_declarationImpl implements 
     StringBuffer result = new StringBuffer(super.toString());
     result.append(" (property: ");
     result.append(property);
+    result.append(", prio: ");
+    result.append(prio);
     result.append(')');
     return result.toString();
   }
