@@ -12,6 +12,7 @@ package at.bestsolution.efxclipse.tooling.css;
 
 import static at.bestsolution.efxclipse.tooling.css.CssDialectExtension.Util.fromList;
 
+import java.awt.DisplayMode;
 import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
 import java.net.URISyntaxException;
@@ -506,6 +507,18 @@ public interface CssDialectExtension {
 		public int getPriority() {
 			return priority;
 		}
+	}
+	
+	public static abstract class DialogProposal extends Proposal {
+		public DialogProposal(String label) {
+			super(label);
+		}
+		
+		public DialogProposal(int priority, String label) {
+			super(priority,label);
+		}
+		
+		public abstract String openProposal();
 	}
 	
 	public static class Util {

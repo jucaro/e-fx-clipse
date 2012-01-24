@@ -4,7 +4,9 @@ Bundle-Name: %Bundle-Name
 Bundle-SymbolicName: at.bestsolution.efxclipse.tooling.css.jfx
 Bundle-Version: 0.0.11.qualifier
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
-Require-Bundle: at.bestsolution.efxclipse.tooling.css.ui;bundle-version="0.0.11"
+Require-Bundle: at.bestsolution.efxclipse.tooling.css.ui;bundle-version="0.0.11",
+ org.eclipse.swt;bundle-version="3.7.0",
+ org.eclipse.ui;bundle-version="3.102.0"
 Service-Component: OSGI-INF/component.xml
 Bundle-ActivationPolicy: lazy
 Bundle-Vendor: %Bundle-Vendor

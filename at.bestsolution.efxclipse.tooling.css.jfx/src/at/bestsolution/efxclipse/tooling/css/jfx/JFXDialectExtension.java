@@ -17,6 +17,9 @@ import java.util.List;
 import java.util.regex.Pattern;
 
 import org.eclipse.emf.common.util.URI;
+import org.eclipse.swt.graphics.RGB;
+import org.eclipse.swt.widgets.ColorDialog;
+import org.eclipse.ui.PlatformUI;
 
 import at.bestsolution.efxclipse.tooling.css.CssDialectExtension;
 import at.bestsolution.efxclipse.tooling.css.cssDsl.CssDslPackage;
@@ -122,6 +125,18 @@ public class JFXDialectExtension implements CssDialectExtension {
 	}
 	
 	private static void initColors() {
+		PREDEFINED_COLORS.add(new DialogProposal(0,"Pick color ...") {
+				
+				@Override
+				public String openProposal() {
+					ColorDialog dialog = new ColorDialog(PlatformUI.getWorkbench().getActiveWorkbenchWindow().getShell());
+					RGB rgb = dialog.open();
+					if( rgb != null ) {
+						return "rgb("+rgb.red+","+rgb.green+","+rgb.blue+")";
+					}
+					return null;
+				}
+			});
 		PREDEFINED_COLORS.add(new Proposal("aliceblue"));
 		PREDEFINED_COLORS.add(new Proposal("aqua"));
 		PREDEFINED_COLORS.add(new Proposal("antiquewhite"));

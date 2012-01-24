@@ -15,11 +15,14 @@ import java.util.List;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.jface.viewers.StyledString;
 import org.eclipse.xtext.RuleCall;
+import org.eclipse.xtext.ui.editor.contentassist.ConfigurableCompletionProposal;
 import org.eclipse.xtext.ui.editor.contentassist.ContentAssistContext;
 import org.eclipse.xtext.ui.editor.contentassist.ICompletionProposalAcceptor;
+import org.eclipse.xtext.ui.editor.contentassist.ReplacementTextApplier;
 import org.osgi.framework.BundleContext;
 import org.osgi.framework.ServiceReference;
 
+import at.bestsolution.efxclipse.tooling.css.CssDialectExtension.DialogProposal;
 import at.bestsolution.efxclipse.tooling.css.CssDialectExtension.MultiTermGroupProperty;
 import at.bestsolution.efxclipse.tooling.css.CssDialectExtension.MultiValuesGroupProperty;
 import at.bestsolution.efxclipse.tooling.css.CssDialectExtension.Property;
@@ -202,7 +205,23 @@ public class CssDslProposalProvider extends AbstractCssDslProposalProvider {
 	
 	private void addProposals(List<Proposal> proposals, ICompletionProposalAcceptor acceptor, ContentAssistContext context) {
 		for( Proposal proposal : proposals ) {
-			acceptor.accept(createCompletionProposal(proposal.getLabel(), new StyledString(proposal.getLabel()), null, proposal.getPriority(), context.getPrefix(), context));
+			if( proposal instanceof DialogProposal ) {
+				final DialogProposal dProp = (DialogProposal) proposal;
+				ConfigurableCompletionProposal dialogProposal = (ConfigurableCompletionProposal) createCompletionProposal(proposal.getLabel(),context);
+				if( dialogProposal != null ) {
+					dialogProposal.setTextApplier(new ReplacementTextApplier() {
+						
+						@Override
+						public String getActualReplacementString(
+								ConfigurableCompletionProposal proposal) {
+							return dProp.openProposal();
+						}
+					});
+				}
+				acceptor.accept(dialogProposal); 
+			} else {
+				acceptor.accept(createCompletionProposal(proposal.getLabel(), new StyledString(proposal.getLabel()), null, proposal.getPriority(), context.getPrefix(), context));	
+			}
 		}
 	}
 	
