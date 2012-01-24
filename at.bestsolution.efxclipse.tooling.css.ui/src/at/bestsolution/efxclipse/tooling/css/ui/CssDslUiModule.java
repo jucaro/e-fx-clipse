@@ -11,11 +11,14 @@
 package at.bestsolution.efxclipse.tooling.css.ui;
 
 import org.eclipse.ui.plugin.AbstractUIPlugin;
+import org.eclipse.xtext.ui.editor.hover.IEObjectHover;
+import org.eclipse.xtext.ui.editor.hover.IEObjectHoverProvider;
 import org.eclipse.xtext.ui.editor.syntaxcoloring.IHighlightingConfiguration;
 import org.eclipse.xtext.ui.editor.syntaxcoloring.ISemanticHighlightingCalculator;
 
 import at.bestsolution.efxclipse.tooling.css.ui.highlighting.CssDslHighlightingCalculator;
 import at.bestsolution.efxclipse.tooling.css.ui.highlighting.CssDslHighlightingConfiguration;
+import at.bestsolution.efxclipse.tooling.css.ui.hover.CssHoverProvider;
 
 import com.google.inject.Binder;
 
@@ -32,5 +35,6 @@ public class CssDslUiModule extends at.bestsolution.efxclipse.tooling.css.ui.Abs
 		super.configure(binder);
 		binder.bind(ISemanticHighlightingCalculator.class).to(CssDslHighlightingCalculator.class);
 		binder.bind(IHighlightingConfiguration.class).to(CssDslHighlightingConfiguration.class);
+		binder.bind(IEObjectHoverProvider.class).to(CssHoverProvider.class);
 	}
 }
