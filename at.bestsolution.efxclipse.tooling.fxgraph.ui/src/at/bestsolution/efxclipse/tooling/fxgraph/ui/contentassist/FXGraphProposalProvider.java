@@ -24,6 +24,7 @@ import org.eclipse.jdt.core.IAnnotation;
 import org.eclipse.jdt.core.IField;
 import org.eclipse.jdt.core.IJavaElement;
 import org.eclipse.jdt.core.IJavaProject;
+import org.eclipse.jdt.core.IMemberValuePair;
 import org.eclipse.jdt.core.IMethod;
 import org.eclipse.jdt.core.IType;
 import org.eclipse.jdt.core.JavaCore;
@@ -368,7 +369,7 @@ public class FXGraphProposalProvider extends AbstractFXGraphProposalProvider {
 			TypeData data = getTypeData(getJavaProject(model), element.getType());
 			if (data != null) {
 				for (JDTHelperProperty p : data.properties) {
-					ICompletionProposal proposal = createCompletionProposal(p.name + " : ", p.getDescription(), p.getIcon(), context);
+					ICompletionProposal proposal = createCompletionProposal(p.name + " : ", p.getDescription(), p.getIcon(), 1000, context.getPrefix(), context);
 					if( proposal instanceof ConfigurableCompletionProposal ) {
 						ConfigurableCompletionProposal cProposal = (ConfigurableCompletionProposal) proposal;
 						cProposal.setAdditionalProposalInfo(element);
@@ -475,7 +476,98 @@ public class FXGraphProposalProvider extends AbstractFXGraphProposalProvider {
 	@Override
 	public void completeJvmParameterizedTypeReference_Type(EObject model, Assignment assignment, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
 		// We are in single property
-		if (model.eContainer() instanceof at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.Property) {
+		if( model instanceof Element && ! (model.eContainer() instanceof ListValueProperty) ) {
+			if( ((Element)model).getType() != null && (context.getPrefix() == null || context.getPrefix().length() == 0 || Character.isUpperCase(context.getPrefix().charAt(0) )) ) {
+				System.err.println("Default me");
+				JvmTypeReference t = ((Element)model).getType();
+				IJavaProject jProject = getJavaProject(model);
+				
+				IType jdtType = (IType) javaElementFinder.findElementFor(t.getType());
+				IType annotationType = jdtType;
+				
+				try {
+					do {
+						IAnnotation annotation = annotationType.getAnnotation("javafx.beans.DefaultProperty");
+						if( annotation.exists() ) {
+							try {
+								for( IMemberValuePair pair : annotation.getMemberValuePairs() ) {
+									if( "value".equals(pair.getMemberName()) ) {
+										TypeData d = helper.getTypeData(jProject, jdtType);
+										for( JDTHelperProperty hp : d.properties ) {
+											if( hp.name.equals(pair.getValue()) ) {
+												Filter filter = new Filter() {
+													
+													@Override
+													public int getSearchFor() {
+														return IJavaSearchConstants.TYPE;
+													}
+													
+													@Override
+													public boolean accept(int modifiers, char[] packageName, char[] simpleTypeName, char[][] enclosingTypeNames, String path) {
+														return ! Flags.isAbstract(modifiers) && ! new String(packageName).startsWith("com.sun.javafx");
+													}
+												};
+												
+												if( hp instanceof at.bestsolution.efxclipse.tooling.fxgraph.ui.util.JDTHelper.ListValueProperty ) {
+													String[] sig = Signature.getTypeArguments(hp.method.getReturnType());
+													if( sig.length > 0 ) {
+														JvmType superType = jdtTypeProvider.createTypeProvider(model.eResource().getResourceSet()).findTypeByName(Signature.toString(sig[0]));
+														typeProposalProviders.createSubTypeProposals(superType, this, context, TypesPackage.Literals.JVM_PARAMETERIZED_TYPE_REFERENCE__TYPE, filter, acceptor);
+													}
+												} else {
+													String returnType = hp.method.getReturnType();
+													JvmType superType = jdtTypeProvider.createTypeProvider(model.eResource().getResourceSet()).findTypeByName(returnType);
+													typeProposalProviders.createSubTypeProposals(superType, this, context, TypesPackage.Literals.JVM_PARAMETERIZED_TYPE_REFERENCE__TYPE, filter, acceptor);
+												}
+												
+												return;	
+											}
+										}
+										return;	
+									}
+								}
+							} catch (JavaModelException e) {
+								// TODO Auto-generated catch block
+								e.printStackTrace();
+							}
+						}		
+					} while( annotationType.getSuperclassName() != null && (annotationType = jProject.findType(annotationType.getSuperclassName())) != null );
+				} catch (JavaModelException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+			} else if( model.eContainer() instanceof ListValueProperty && model.eContainer().eContainer() instanceof at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.Property && model.eContainer().eContainer().eContainer() instanceof Element ) {
+				final IJavaProject jp = getJavaProject(model);
+				at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.Property p = (at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.Property) model.eContainer().eContainer();
+				Element e = (Element) model.eContainer().eContainer().eContainer();
+				
+				try {
+					TypeData typeData = helper.getTypeData(jp, jp.findType(e.getType().getQualifiedName()));
+					IType type = null;
+
+					for (JDTHelperProperty jdtProp : typeData.properties) {
+						if (jdtProp.name.equals(p.getName())) {
+							String[] t = Signature.getTypeArguments(jdtProp.method.getReturnType());
+							if( t.length > 0 ) {
+								type = jp.findType(Signature.toString(t[0]));
+							}
+							break;
+						}
+					}
+
+					if( type != null ) {
+						JvmType superType = jdtTypeProvider.createTypeProvider(model.eResource().getResourceSet()).findTypeByName(type.getFullyQualifiedName());
+						if( superType != null ) {
+							typeProposalProviders.createSubTypeProposals(superType, this, context, TypesPackage.Literals.JVM_PARAMETERIZED_TYPE_REFERENCE__TYPE, acceptor);		
+						}
+					}
+				} catch (JavaModelException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
+			}		
+		} else if (model.eContainer() instanceof at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.Property) {
+			System.err.println("HERE I AM");
 			final IJavaProject jp = getJavaProject(model);
 			at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.Property p = (at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.Property) model.eContainer();
 			Element e = (Element) model.eContainer().eContainer();
@@ -515,41 +607,20 @@ public class FXGraphProposalProvider extends AbstractFXGraphProposalProvider {
 				// TODO Auto-generated catch block
 				e1.printStackTrace();
 			}
-		} else if( model instanceof Element && model.eContainer() instanceof ListValueProperty && model.eContainer().eContainer() instanceof at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.Property && model.eContainer().eContainer().eContainer() instanceof Element ) {
-			final IJavaProject jp = getJavaProject(model);
-			at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.Property p = (at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.Property) model.eContainer().eContainer();
-			Element e = (Element) model.eContainer().eContainer().eContainer();
-			
-			try {
-				TypeData typeData = helper.getTypeData(jp, jp.findType(e.getType().getQualifiedName()));
-				IType type = null;
-
-				for (JDTHelperProperty jdtProp : typeData.properties) {
-					if (jdtProp.name.equals(p.getName())) {
-						String[] t = Signature.getTypeArguments(jdtProp.method.getReturnType());
-						if( t.length > 0 ) {
-							type = jp.findType(Signature.toString(t[0]));
-						}
-						break;
-					}
-				}
-
-				if( type != null ) {
-					JvmType superType = jdtTypeProvider.createTypeProvider(model.eResource().getResourceSet()).findTypeByName(type.getFullyQualifiedName());
-					if( superType != null ) {
-						typeProposalProviders.createSubTypeProposals(superType, this, context, TypesPackage.Literals.JVM_PARAMETERIZED_TYPE_REFERENCE__TYPE, acceptor);		
-					}
-				}
-			} catch (JavaModelException e1) {
-				// TODO Auto-generated catch block
-				e1.printStackTrace();
-			}
-			
 		} else {
 			super.completeJvmParameterizedTypeReference_Type(model, assignment, context, acceptor);
 		}
 	}
 	
+	@Override
+	public void completeElement_DefaultChildren(EObject model,
+			Assignment assignment, ContentAssistContext context,
+			ICompletionProposalAcceptor acceptor) {
+//		System.err.println("Completing default children");
+//		// TODO Auto-generated method stub
+//		super.completeElement_DefaultChildren(model, assignment, context, acceptor);
+	}
+
 	@Override
 	public void completeElement_Factory(EObject model, Assignment assignment, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
 		Element element = (Element) model;

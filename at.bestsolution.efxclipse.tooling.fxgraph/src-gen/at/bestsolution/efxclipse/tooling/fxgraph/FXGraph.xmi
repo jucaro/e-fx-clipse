@@ -162,6 +162,9 @@
                 <elements xsi:type="xtext:Assignment" feature="staticProperties" operator="+=">
                   <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.7"/>
                 </elements>
+                <elements xsi:type="xtext:Assignment" feature="defaultChildren" operator="+=">
+                  <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.4"/>
+                </elements>
               </elements>
               <elements xsi:type="xtext:Group" cardinality="*">
                 <elements xsi:type="xtext:Keyword" value=","/>
@@ -171,6 +174,9 @@
                   </elements>
                   <elements xsi:type="xtext:Assignment" feature="staticProperties" operator="+=">
                     <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.7"/>
+                  </elements>
+                  <elements xsi:type="xtext:Assignment" feature="defaultChildren" operator="+=">
+                    <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.4"/>
                   </elements>
                 </elements>
               </elements>

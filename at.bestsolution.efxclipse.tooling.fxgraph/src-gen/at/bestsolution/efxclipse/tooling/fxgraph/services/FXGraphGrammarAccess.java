@@ -340,6 +340,8 @@ public class FXGraphGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cPropertiesPropertyParserRuleCall_1_1_2_0_0_0 = (RuleCall)cPropertiesAssignment_1_1_2_0_0.eContents().get(0);
 		private final Assignment cStaticPropertiesAssignment_1_1_2_0_1 = (Assignment)cAlternatives_1_1_2_0.eContents().get(1);
 		private final RuleCall cStaticPropertiesStaticValuePropertyParserRuleCall_1_1_2_0_1_0 = (RuleCall)cStaticPropertiesAssignment_1_1_2_0_1.eContents().get(0);
+		private final Assignment cDefaultChildrenAssignment_1_1_2_0_2 = (Assignment)cAlternatives_1_1_2_0.eContents().get(2);
+		private final RuleCall cDefaultChildrenElementParserRuleCall_1_1_2_0_2_0 = (RuleCall)cDefaultChildrenAssignment_1_1_2_0_2.eContents().get(0);
 		private final Group cGroup_1_1_2_1 = (Group)cGroup_1_1_2.eContents().get(1);
 		private final Keyword cCommaKeyword_1_1_2_1_0 = (Keyword)cGroup_1_1_2_1.eContents().get(0);
 		private final Alternatives cAlternatives_1_1_2_1_1 = (Alternatives)cGroup_1_1_2_1.eContents().get(1);
@@ -347,6 +349,8 @@ public class FXGraphGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cPropertiesPropertyParserRuleCall_1_1_2_1_1_0_0 = (RuleCall)cPropertiesAssignment_1_1_2_1_1_0.eContents().get(0);
 		private final Assignment cStaticPropertiesAssignment_1_1_2_1_1_1 = (Assignment)cAlternatives_1_1_2_1_1.eContents().get(1);
 		private final RuleCall cStaticPropertiesStaticValuePropertyParserRuleCall_1_1_2_1_1_1_0 = (RuleCall)cStaticPropertiesAssignment_1_1_2_1_1_1.eContents().get(0);
+		private final Assignment cDefaultChildrenAssignment_1_1_2_1_1_2 = (Assignment)cAlternatives_1_1_2_1_1.eContents().get(2);
+		private final RuleCall cDefaultChildrenElementParserRuleCall_1_1_2_1_1_2_0 = (RuleCall)cDefaultChildrenAssignment_1_1_2_1_1_2.eContents().get(0);
 		private final Keyword cRightCurlyBracketKeyword_1_1_3 = (Keyword)cGroup_1_1.eContents().get(3);
 		private final Group cGroup_1_2 = (Group)cAlternatives_1.eContents().get(2);
 		private final Group cGroup_1_2_0 = (Group)cGroup_1_2.eContents().get(0);
@@ -372,15 +376,15 @@ public class FXGraphGrammarAccess extends AbstractGrammarElementFinder {
 		////;
 		//Element:
 		//	type=JvmTypeReference (("(" value=SimpleValueProperty ")")? ("id" name=ValidID)? | ("id" name=ValidID)? "{"
-		//	((properties+=Property | staticProperties+=StaticValueProperty) ("," (properties+=Property |
-		//	staticProperties+=StaticValueProperty))*)? "}" | ("id" name=ValidID)? "createdby" factory=ID "{" values+=Element (","
-		//	values+=Element)* "}");
+		//	((properties+=Property | staticProperties+=StaticValueProperty | defaultChildren+=Element) ("," (properties+=Property
+		//	| staticProperties+=StaticValueProperty | defaultChildren+=Element))*)? "}" | ("id" name=ValidID)? "createdby"
+		//	factory=ID "{" values+=Element ("," values+=Element)* "}");
 		public ParserRule getRule() { return rule; }
 
 		//type=JvmTypeReference (("(" value=SimpleValueProperty ")")? ("id" name=ValidID)? | ("id" name=ValidID)? "{"
-		//((properties+=Property | staticProperties+=StaticValueProperty) ("," (properties+=Property |
-		//staticProperties+=StaticValueProperty))*)? "}" | ("id" name=ValidID)? "createdby" factory=ID "{" values+=Element (","
-		//values+=Element)* "}")
+		//((properties+=Property | staticProperties+=StaticValueProperty | defaultChildren+=Element) ("," (properties+=Property |
+		//staticProperties+=StaticValueProperty | defaultChildren+=Element))*)? "}" | ("id" name=ValidID)? "createdby" factory=ID
+		//"{" values+=Element ("," values+=Element)* "}")
 		public Group getGroup() { return cGroup; }
 
 		//type=JvmTypeReference
@@ -390,8 +394,9 @@ public class FXGraphGrammarAccess extends AbstractGrammarElementFinder {
 		public RuleCall getTypeJvmTypeReferenceParserRuleCall_0_0() { return cTypeJvmTypeReferenceParserRuleCall_0_0; }
 
 		//("(" value=SimpleValueProperty ")")? ("id" name=ValidID)? | ("id" name=ValidID)? "{" ((properties+=Property |
-		//staticProperties+=StaticValueProperty) ("," (properties+=Property | staticProperties+=StaticValueProperty))*)? "}" |
-		//("id" name=ValidID)? "createdby" factory=ID "{" values+=Element ("," values+=Element)* "}"
+		//staticProperties+=StaticValueProperty | defaultChildren+=Element) ("," (properties+=Property |
+		//staticProperties+=StaticValueProperty | defaultChildren+=Element))*)? "}" | ("id" name=ValidID)? "createdby" factory=ID
+		//"{" values+=Element ("," values+=Element)* "}"
 		public Alternatives getAlternatives_1() { return cAlternatives_1; }
 
 		//("(" value=SimpleValueProperty ")")? ("id" name=ValidID)?
@@ -424,8 +429,8 @@ public class FXGraphGrammarAccess extends AbstractGrammarElementFinder {
 		//ValidID
 		public RuleCall getNameValidIDParserRuleCall_1_0_1_1_0() { return cNameValidIDParserRuleCall_1_0_1_1_0; }
 
-		//("id" name=ValidID)? "{" ((properties+=Property | staticProperties+=StaticValueProperty) ("," (properties+=Property |
-		//staticProperties+=StaticValueProperty))*)? "}"
+		//("id" name=ValidID)? "{" ((properties+=Property | staticProperties+=StaticValueProperty | defaultChildren+=Element) (","
+		//(properties+=Property | staticProperties+=StaticValueProperty | defaultChildren+=Element))*)? "}"
 		public Group getGroup_1_1() { return cGroup_1_1; }
 
 		//("id" name=ValidID)?
@@ -443,11 +448,11 @@ public class FXGraphGrammarAccess extends AbstractGrammarElementFinder {
 		//"{"
 		public Keyword getLeftCurlyBracketKeyword_1_1_1() { return cLeftCurlyBracketKeyword_1_1_1; }
 
-		//((properties+=Property | staticProperties+=StaticValueProperty) ("," (properties+=Property |
-		//staticProperties+=StaticValueProperty))*)?
+		//((properties+=Property | staticProperties+=StaticValueProperty | defaultChildren+=Element) ("," (properties+=Property |
+		//staticProperties+=StaticValueProperty | defaultChildren+=Element))*)?
 		public Group getGroup_1_1_2() { return cGroup_1_1_2; }
 
-		//properties+=Property | staticProperties+=StaticValueProperty
+		//properties+=Property | staticProperties+=StaticValueProperty | defaultChildren+=Element
 		public Alternatives getAlternatives_1_1_2_0() { return cAlternatives_1_1_2_0; }
 
 		//properties+=Property
@@ -462,13 +467,19 @@ public class FXGraphGrammarAccess extends AbstractGrammarElementFinder {
 		//StaticValueProperty
 		public RuleCall getStaticPropertiesStaticValuePropertyParserRuleCall_1_1_2_0_1_0() { return cStaticPropertiesStaticValuePropertyParserRuleCall_1_1_2_0_1_0; }
 
-		//("," (properties+=Property | staticProperties+=StaticValueProperty))*
+		//defaultChildren+=Element
+		public Assignment getDefaultChildrenAssignment_1_1_2_0_2() { return cDefaultChildrenAssignment_1_1_2_0_2; }
+
+		//Element
+		public RuleCall getDefaultChildrenElementParserRuleCall_1_1_2_0_2_0() { return cDefaultChildrenElementParserRuleCall_1_1_2_0_2_0; }
+
+		//("," (properties+=Property | staticProperties+=StaticValueProperty | defaultChildren+=Element))*
 		public Group getGroup_1_1_2_1() { return cGroup_1_1_2_1; }
 
 		//","
 		public Keyword getCommaKeyword_1_1_2_1_0() { return cCommaKeyword_1_1_2_1_0; }
 
-		//properties+=Property | staticProperties+=StaticValueProperty
+		//properties+=Property | staticProperties+=StaticValueProperty | defaultChildren+=Element
 		public Alternatives getAlternatives_1_1_2_1_1() { return cAlternatives_1_1_2_1_1; }
 
 		//properties+=Property
@@ -482,6 +493,12 @@ public class FXGraphGrammarAccess extends AbstractGrammarElementFinder {
 
 		//StaticValueProperty
 		public RuleCall getStaticPropertiesStaticValuePropertyParserRuleCall_1_1_2_1_1_1_0() { return cStaticPropertiesStaticValuePropertyParserRuleCall_1_1_2_1_1_1_0; }
+
+		//defaultChildren+=Element
+		public Assignment getDefaultChildrenAssignment_1_1_2_1_1_2() { return cDefaultChildrenAssignment_1_1_2_1_1_2; }
+
+		//Element
+		public RuleCall getDefaultChildrenElementParserRuleCall_1_1_2_1_1_2_0() { return cDefaultChildrenElementParserRuleCall_1_1_2_1_1_2_0; }
 
 		//"}"
 		public Keyword getRightCurlyBracketKeyword_1_1_3() { return cRightCurlyBracketKeyword_1_1_3; }
@@ -1390,9 +1407,9 @@ public class FXGraphGrammarAccess extends AbstractGrammarElementFinder {
 	////;
 	//Element:
 	//	type=JvmTypeReference (("(" value=SimpleValueProperty ")")? ("id" name=ValidID)? | ("id" name=ValidID)? "{"
-	//	((properties+=Property | staticProperties+=StaticValueProperty) ("," (properties+=Property |
-	//	staticProperties+=StaticValueProperty))*)? "}" | ("id" name=ValidID)? "createdby" factory=ID "{" values+=Element (","
-	//	values+=Element)* "}");
+	//	((properties+=Property | staticProperties+=StaticValueProperty | defaultChildren+=Element) ("," (properties+=Property
+	//	| staticProperties+=StaticValueProperty | defaultChildren+=Element))*)? "}" | ("id" name=ValidID)? "createdby"
+	//	factory=ID "{" values+=Element ("," values+=Element)* "}");
 	public ElementElements getElementAccess() {
 		return (pElement != null) ? pElement : (pElement = new ElementElements());
 	}

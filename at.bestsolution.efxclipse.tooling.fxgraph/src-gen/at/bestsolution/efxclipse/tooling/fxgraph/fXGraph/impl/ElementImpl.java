@@ -2,7 +2,6 @@
  * <copyright>
  * </copyright>
  *
-
  */
 package at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.impl;
 
@@ -41,6 +40,7 @@ import org.eclipse.xtext.common.types.JvmTypeReference;
  *   <li>{@link at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.impl.ElementImpl#getName <em>Name</em>}</li>
  *   <li>{@link at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.impl.ElementImpl#getProperties <em>Properties</em>}</li>
  *   <li>{@link at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.impl.ElementImpl#getStaticProperties <em>Static Properties</em>}</li>
+ *   <li>{@link at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.impl.ElementImpl#getDefaultChildren <em>Default Children</em>}</li>
  *   <li>{@link at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.impl.ElementImpl#getFactory <em>Factory</em>}</li>
  *   <li>{@link at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.impl.ElementImpl#getValues <em>Values</em>}</li>
  * </ul>
@@ -109,6 +109,16 @@ public class ElementImpl extends SingleValuePropertyImpl implements Element
    * @ordered
    */
   protected EList<StaticValueProperty> staticProperties;
+
+  /**
+   * The cached value of the '{@link #getDefaultChildren() <em>Default Children</em>}' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getDefaultChildren()
+   * @generated
+   * @ordered
+   */
+  protected EList<Element> defaultChildren;
 
   /**
    * The default value of the '{@link #getFactory() <em>Factory</em>}' attribute.
@@ -313,6 +323,20 @@ public class ElementImpl extends SingleValuePropertyImpl implements Element
    * <!-- end-user-doc -->
    * @generated
    */
+  public EList<Element> getDefaultChildren()
+  {
+    if (defaultChildren == null)
+    {
+      defaultChildren = new EObjectContainmentEList<Element>(Element.class, this, FXGraphPackage.ELEMENT__DEFAULT_CHILDREN);
+    }
+    return defaultChildren;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public String getFactory()
   {
     return factory;
@@ -363,6 +387,8 @@ public class ElementImpl extends SingleValuePropertyImpl implements Element
         return ((InternalEList<?>)getProperties()).basicRemove(otherEnd, msgs);
       case FXGraphPackage.ELEMENT__STATIC_PROPERTIES:
         return ((InternalEList<?>)getStaticProperties()).basicRemove(otherEnd, msgs);
+      case FXGraphPackage.ELEMENT__DEFAULT_CHILDREN:
+        return ((InternalEList<?>)getDefaultChildren()).basicRemove(otherEnd, msgs);
       case FXGraphPackage.ELEMENT__VALUES:
         return ((InternalEList<?>)getValues()).basicRemove(otherEnd, msgs);
     }
@@ -389,6 +415,8 @@ public class ElementImpl extends SingleValuePropertyImpl implements Element
         return getProperties();
       case FXGraphPackage.ELEMENT__STATIC_PROPERTIES:
         return getStaticProperties();
+      case FXGraphPackage.ELEMENT__DEFAULT_CHILDREN:
+        return getDefaultChildren();
       case FXGraphPackage.ELEMENT__FACTORY:
         return getFactory();
       case FXGraphPackage.ELEMENT__VALUES:
@@ -424,6 +452,10 @@ public class ElementImpl extends SingleValuePropertyImpl implements Element
       case FXGraphPackage.ELEMENT__STATIC_PROPERTIES:
         getStaticProperties().clear();
         getStaticProperties().addAll((Collection<? extends StaticValueProperty>)newValue);
+        return;
+      case FXGraphPackage.ELEMENT__DEFAULT_CHILDREN:
+        getDefaultChildren().clear();
+        getDefaultChildren().addAll((Collection<? extends Element>)newValue);
         return;
       case FXGraphPackage.ELEMENT__FACTORY:
         setFactory((String)newValue);
@@ -461,6 +493,9 @@ public class ElementImpl extends SingleValuePropertyImpl implements Element
       case FXGraphPackage.ELEMENT__STATIC_PROPERTIES:
         getStaticProperties().clear();
         return;
+      case FXGraphPackage.ELEMENT__DEFAULT_CHILDREN:
+        getDefaultChildren().clear();
+        return;
       case FXGraphPackage.ELEMENT__FACTORY:
         setFactory(FACTORY_EDEFAULT);
         return;
@@ -491,6 +526,8 @@ public class ElementImpl extends SingleValuePropertyImpl implements Element
         return properties != null && !properties.isEmpty();
       case FXGraphPackage.ELEMENT__STATIC_PROPERTIES:
         return staticProperties != null && !staticProperties.isEmpty();
+      case FXGraphPackage.ELEMENT__DEFAULT_CHILDREN:
+        return defaultChildren != null && !defaultChildren.isEmpty();
       case FXGraphPackage.ELEMENT__FACTORY:
         return FACTORY_EDEFAULT == null ? factory != null : !FACTORY_EDEFAULT.equals(factory);
       case FXGraphPackage.ELEMENT__VALUES:

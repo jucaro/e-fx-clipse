@@ -2,7 +2,6 @@
  * <copyright>
  * </copyright>
  *
-
  */
 package at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.impl;
 
@@ -543,9 +542,19 @@ public class FXGraphPackageImpl extends EPackageImpl implements FXGraphPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  public EReference getElement_DefaultChildren()
+  {
+    return (EReference)elementEClass.getEStructuralFeatures().get(5);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EAttribute getElement_Factory()
   {
-    return (EAttribute)elementEClass.getEStructuralFeatures().get(5);
+    return (EAttribute)elementEClass.getEStructuralFeatures().get(6);
   }
 
   /**
@@ -555,7 +564,7 @@ public class FXGraphPackageImpl extends EPackageImpl implements FXGraphPackage
    */
   public EReference getElement_Values()
   {
-    return (EReference)elementEClass.getEStructuralFeatures().get(6);
+    return (EReference)elementEClass.getEStructuralFeatures().get(7);
   }
 
   /**
@@ -1125,6 +1134,7 @@ public class FXGraphPackageImpl extends EPackageImpl implements FXGraphPackage
     createEAttribute(elementEClass, ELEMENT__NAME);
     createEReference(elementEClass, ELEMENT__PROPERTIES);
     createEReference(elementEClass, ELEMENT__STATIC_PROPERTIES);
+    createEReference(elementEClass, ELEMENT__DEFAULT_CHILDREN);
     createEAttribute(elementEClass, ELEMENT__FACTORY);
     createEReference(elementEClass, ELEMENT__VALUES);
 
@@ -1282,6 +1292,7 @@ public class FXGraphPackageImpl extends EPackageImpl implements FXGraphPackage
     initEAttribute(getElement_Name(), ecorePackage.getEString(), "name", null, 0, 1, Element.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getElement_Properties(), this.getProperty(), null, "properties", null, 0, -1, Element.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getElement_StaticProperties(), this.getStaticValueProperty(), null, "staticProperties", null, 0, -1, Element.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getElement_DefaultChildren(), this.getElement(), null, "defaultChildren", null, 0, -1, Element.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getElement_Factory(), ecorePackage.getEString(), "factory", null, 0, 1, Element.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getElement_Values(), this.getElement(), null, "values", null, 0, -1, Element.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 

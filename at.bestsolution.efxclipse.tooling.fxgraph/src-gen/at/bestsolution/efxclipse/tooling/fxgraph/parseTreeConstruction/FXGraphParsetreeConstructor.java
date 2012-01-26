@@ -1562,16 +1562,16 @@ protected class Import_ImportedNamespaceAssignment_1 extends AssignmentToken  {
  * //;
  * Element:
  * 	type=JvmTypeReference (("(" value=SimpleValueProperty ")")? ("id" name=ValidID)? | ("id" name=ValidID)? "{"
- * 	((properties+=Property | staticProperties+=StaticValueProperty) ("," (properties+=Property |
- * 	staticProperties+=StaticValueProperty))*)? "}" | ("id" name=ValidID)? "createdby" factory=ID "{" values+=Element (","
- * 	values+=Element)* "}");
+ * 	((properties+=Property | staticProperties+=StaticValueProperty | defaultChildren+=Element) ("," (properties+=Property
+ * 	| staticProperties+=StaticValueProperty | defaultChildren+=Element))*)? "}" | ("id" name=ValidID)? "createdby"
+ * 	factory=ID "{" values+=Element ("," values+=Element)* "}");
  *
  **/
 
 // type=JvmTypeReference (("(" value=SimpleValueProperty ")")? ("id" name=ValidID)? | ("id" name=ValidID)? "{"
-// ((properties+=Property | staticProperties+=StaticValueProperty) ("," (properties+=Property |
-// staticProperties+=StaticValueProperty))*)? "}" | ("id" name=ValidID)? "createdby" factory=ID "{" values+=Element (","
-// values+=Element)* "}")
+// ((properties+=Property | staticProperties+=StaticValueProperty | defaultChildren+=Element) ("," (properties+=Property |
+// staticProperties+=StaticValueProperty | defaultChildren+=Element))*)? "}" | ("id" name=ValidID)? "createdby" factory=ID
+// "{" values+=Element ("," values+=Element)* "}")
 protected class Element_Group extends GroupToken {
 	
 	public Element_Group(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -1646,8 +1646,9 @@ protected class Element_TypeAssignment_0 extends AssignmentToken  {
 }
 
 // ("(" value=SimpleValueProperty ")")? ("id" name=ValidID)? | ("id" name=ValidID)? "{" ((properties+=Property |
-// staticProperties+=StaticValueProperty) ("," (properties+=Property | staticProperties+=StaticValueProperty))*)? "}" |
-// ("id" name=ValidID)? "createdby" factory=ID "{" values+=Element ("," values+=Element)* "}"
+// staticProperties+=StaticValueProperty | defaultChildren+=Element) ("," (properties+=Property |
+// staticProperties+=StaticValueProperty | defaultChildren+=Element))*)? "}" | ("id" name=ValidID)? "createdby" factory=ID
+// "{" values+=Element ("," values+=Element)* "}"
 protected class Element_Alternatives_1 extends AlternativesToken {
 
 	public Element_Alternatives_1(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -1889,8 +1890,8 @@ protected class Element_NameAssignment_1_0_1_1 extends AssignmentToken  {
 
 
 
-// ("id" name=ValidID)? "{" ((properties+=Property | staticProperties+=StaticValueProperty) ("," (properties+=Property |
-// staticProperties+=StaticValueProperty))*)? "}"
+// ("id" name=ValidID)? "{" ((properties+=Property | staticProperties+=StaticValueProperty | defaultChildren+=Element) (","
+// (properties+=Property | staticProperties+=StaticValueProperty | defaultChildren+=Element))*)? "}"
 protected class Element_Group_1_1 extends GroupToken {
 	
 	public Element_Group_1_1(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -2014,8 +2015,8 @@ protected class Element_LeftCurlyBracketKeyword_1_1_1 extends KeywordToken  {
 
 }
 
-// ((properties+=Property | staticProperties+=StaticValueProperty) ("," (properties+=Property |
-// staticProperties+=StaticValueProperty))*)?
+// ((properties+=Property | staticProperties+=StaticValueProperty | defaultChildren+=Element) ("," (properties+=Property |
+// staticProperties+=StaticValueProperty | defaultChildren+=Element))*)?
 protected class Element_Group_1_1_2 extends GroupToken {
 	
 	public Element_Group_1_1_2(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -2038,7 +2039,7 @@ protected class Element_Group_1_1_2 extends GroupToken {
 
 }
 
-// properties+=Property | staticProperties+=StaticValueProperty
+// properties+=Property | staticProperties+=StaticValueProperty | defaultChildren+=Element
 protected class Element_Alternatives_1_1_2_0 extends AlternativesToken {
 
 	public Element_Alternatives_1_1_2_0(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -2055,6 +2056,7 @@ protected class Element_Alternatives_1_1_2_0 extends AlternativesToken {
 		switch(index) {
 			case 0: return new Element_PropertiesAssignment_1_1_2_0_0(lastRuleCallOrigin, this, 0, inst);
 			case 1: return new Element_StaticPropertiesAssignment_1_1_2_0_1(lastRuleCallOrigin, this, 1, inst);
+			case 2: return new Element_DefaultChildrenAssignment_1_1_2_0_2(lastRuleCallOrigin, this, 2, inst);
 			default: return null;
 		}	
 	}
@@ -2153,8 +2155,54 @@ protected class Element_StaticPropertiesAssignment_1_1_2_0_1 extends AssignmentT
 	}	
 }
 
+// defaultChildren+=Element
+protected class Element_DefaultChildrenAssignment_1_1_2_0_2 extends AssignmentToken  {
+	
+	public Element_DefaultChildrenAssignment_1_1_2_0_2(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
+	}
+	
+	@Override
+	public Assignment getGrammarElement() {
+		return grammarAccess.getElementAccess().getDefaultChildrenAssignment_1_1_2_0_2();
+	}
 
-// ("," (properties+=Property | staticProperties+=StaticValueProperty))*
+    @Override
+	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
+		switch(index) {
+			case 0: return new Element_Group(this, this, 0, inst);
+			default: return null;
+		}	
+	}
+
+    @Override	
+	public IEObjectConsumer tryConsume() {
+		if((value = eObjectConsumer.getConsumable("defaultChildren",true)) == null) return null;
+		IEObjectConsumer obj = eObjectConsumer.cloneAndConsume("defaultChildren");
+		if(value instanceof EObject) { // org::eclipse::xtext::impl::RuleCallImpl
+			IEObjectConsumer param = createEObjectConsumer((EObject)value);
+			if(param.isInstanceOf(grammarAccess.getElementRule().getType().getClassifier())) {
+				type = AssignmentType.PARSER_RULE_CALL;
+				element = grammarAccess.getElementAccess().getDefaultChildrenElementParserRuleCall_1_1_2_0_2_0(); 
+				consumed = obj;
+				return param;
+			}
+		}
+		return null;
+	}
+
+    @Override
+	public AbstractToken createFollowerAfterReturn(AbstractToken next,	int actIndex, int index, IEObjectConsumer inst) {
+		if(value == inst.getEObject() && !inst.isConsumed()) return null;
+		switch(index) {
+			case 0: return new Element_LeftCurlyBracketKeyword_1_1_1(lastRuleCallOrigin, next, actIndex, consumed);
+			default: return null;
+		}	
+	}	
+}
+
+
+// ("," (properties+=Property | staticProperties+=StaticValueProperty | defaultChildren+=Element))*
 protected class Element_Group_1_1_2_1 extends GroupToken {
 	
 	public Element_Group_1_1_2_1(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -2199,7 +2247,7 @@ protected class Element_CommaKeyword_1_1_2_1_0 extends KeywordToken  {
 
 }
 
-// properties+=Property | staticProperties+=StaticValueProperty
+// properties+=Property | staticProperties+=StaticValueProperty | defaultChildren+=Element
 protected class Element_Alternatives_1_1_2_1_1 extends AlternativesToken {
 
 	public Element_Alternatives_1_1_2_1_1(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -2216,6 +2264,7 @@ protected class Element_Alternatives_1_1_2_1_1 extends AlternativesToken {
 		switch(index) {
 			case 0: return new Element_PropertiesAssignment_1_1_2_1_1_0(lastRuleCallOrigin, this, 0, inst);
 			case 1: return new Element_StaticPropertiesAssignment_1_1_2_1_1_1(lastRuleCallOrigin, this, 1, inst);
+			case 2: return new Element_DefaultChildrenAssignment_1_1_2_1_1_2(lastRuleCallOrigin, this, 2, inst);
 			default: return null;
 		}	
 	}
@@ -2297,6 +2346,52 @@ protected class Element_StaticPropertiesAssignment_1_1_2_1_1_1 extends Assignmen
 			if(param.isInstanceOf(grammarAccess.getStaticValuePropertyRule().getType().getClassifier())) {
 				type = AssignmentType.PARSER_RULE_CALL;
 				element = grammarAccess.getElementAccess().getStaticPropertiesStaticValuePropertyParserRuleCall_1_1_2_1_1_1_0(); 
+				consumed = obj;
+				return param;
+			}
+		}
+		return null;
+	}
+
+    @Override
+	public AbstractToken createFollowerAfterReturn(AbstractToken next,	int actIndex, int index, IEObjectConsumer inst) {
+		if(value == inst.getEObject() && !inst.isConsumed()) return null;
+		switch(index) {
+			case 0: return new Element_CommaKeyword_1_1_2_1_0(lastRuleCallOrigin, next, actIndex, consumed);
+			default: return null;
+		}	
+	}	
+}
+
+// defaultChildren+=Element
+protected class Element_DefaultChildrenAssignment_1_1_2_1_1_2 extends AssignmentToken  {
+	
+	public Element_DefaultChildrenAssignment_1_1_2_1_1_2(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
+	}
+	
+	@Override
+	public Assignment getGrammarElement() {
+		return grammarAccess.getElementAccess().getDefaultChildrenAssignment_1_1_2_1_1_2();
+	}
+
+    @Override
+	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
+		switch(index) {
+			case 0: return new Element_Group(this, this, 0, inst);
+			default: return null;
+		}	
+	}
+
+    @Override	
+	public IEObjectConsumer tryConsume() {
+		if((value = eObjectConsumer.getConsumable("defaultChildren",true)) == null) return null;
+		IEObjectConsumer obj = eObjectConsumer.cloneAndConsume("defaultChildren");
+		if(value instanceof EObject) { // org::eclipse::xtext::impl::RuleCallImpl
+			IEObjectConsumer param = createEObjectConsumer((EObject)value);
+			if(param.isInstanceOf(grammarAccess.getElementRule().getType().getClassifier())) {
+				type = AssignmentType.PARSER_RULE_CALL;
+				element = grammarAccess.getElementAccess().getDefaultChildrenElementParserRuleCall_1_1_2_1_1_2_0(); 
 				consumed = obj;
 				return param;
 			}

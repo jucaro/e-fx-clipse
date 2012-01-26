@@ -2,7 +2,6 @@
  * <copyright>
  * </copyright>
  *
-
  */
 package at.bestsolution.efxclipse.tooling.fxgraph.fXGraph;
 
@@ -347,13 +346,22 @@ public interface FXGraphPackage extends EPackage
   int ELEMENT__STATIC_PROPERTIES = SINGLE_VALUE_PROPERTY_FEATURE_COUNT + 4;
 
   /**
+   * The feature id for the '<em><b>Default Children</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ELEMENT__DEFAULT_CHILDREN = SINGLE_VALUE_PROPERTY_FEATURE_COUNT + 5;
+
+  /**
    * The feature id for the '<em><b>Factory</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int ELEMENT__FACTORY = SINGLE_VALUE_PROPERTY_FEATURE_COUNT + 5;
+  int ELEMENT__FACTORY = SINGLE_VALUE_PROPERTY_FEATURE_COUNT + 6;
 
   /**
    * The feature id for the '<em><b>Values</b></em>' containment reference list.
@@ -362,7 +370,7 @@ public interface FXGraphPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ELEMENT__VALUES = SINGLE_VALUE_PROPERTY_FEATURE_COUNT + 6;
+  int ELEMENT__VALUES = SINGLE_VALUE_PROPERTY_FEATURE_COUNT + 7;
 
   /**
    * The number of structural features of the '<em>Element</em>' class.
@@ -371,7 +379,7 @@ public interface FXGraphPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ELEMENT_FEATURE_COUNT = SINGLE_VALUE_PROPERTY_FEATURE_COUNT + 7;
+  int ELEMENT_FEATURE_COUNT = SINGLE_VALUE_PROPERTY_FEATURE_COUNT + 8;
 
   /**
    * The meta object id for the '{@link at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.impl.DefineImpl <em>Define</em>}' class.
@@ -1264,6 +1272,17 @@ public interface FXGraphPackage extends EPackage
   EReference getElement_StaticProperties();
 
   /**
+   * Returns the meta object for the containment reference list '{@link at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.Element#getDefaultChildren <em>Default Children</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Default Children</em>'.
+   * @see at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.Element#getDefaultChildren()
+   * @see #getElement()
+   * @generated
+   */
+  EReference getElement_DefaultChildren();
+
+  /**
    * Returns the meta object for the attribute '{@link at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.Element#getFactory <em>Factory</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -2040,6 +2059,14 @@ public interface FXGraphPackage extends EPackage
      * @generated
      */
     EReference ELEMENT__STATIC_PROPERTIES = eINSTANCE.getElement_StaticProperties();
+
+    /**
+     * The meta object literal for the '<em><b>Default Children</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference ELEMENT__DEFAULT_CHILDREN = eINSTANCE.getElement_DefaultChildren();
 
     /**
      * The meta object literal for the '<em><b>Factory</b></em>' attribute feature.

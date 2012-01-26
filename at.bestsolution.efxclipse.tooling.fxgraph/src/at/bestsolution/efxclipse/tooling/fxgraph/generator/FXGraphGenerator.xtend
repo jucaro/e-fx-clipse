@@ -146,6 +146,9 @@ class FXGraphGenerator implements IGenerator {
 			«ENDIF»
 		
 			«IF hasNestedProperties(element,preview)»
+				«FOR e : element.defaultChildren»
+					«elementContent(e,importManager,preview,skipController,skipIncludes)»
+				«ENDFOR»
 				«propContents(element.properties,importManager,preview,false,skipController,skipIncludes)»
 				«statPropContent(element.staticProperties,importManager,preview,skipController,skipIncludes)»
 			«ENDIF»
@@ -156,6 +159,9 @@ class FXGraphGenerator implements IGenerator {
 	def elementContent(Element element, ImportManager importManager, boolean preview, boolean skipController, boolean skipIncludes) '''
 		<«element.type.shortName(importManager)»«fxElementAttributes(element,importManager,skipController)»«IF hasAttributeProperties(element,preview)»«elementAttributes(element.properties,preview,skipController)»«ENDIF»«IF ! hasNestedProperties(element,preview)»/«ENDIF»> 
 		«IF hasNestedProperties(element,preview)»
+			«FOR e : element.defaultChildren»
+				«elementContent(e,importManager,preview,skipController,skipIncludes)»
+			«ENDFOR»
 			«propContents(element.properties,importManager,preview,false,skipController,skipIncludes)»
 			«statPropContent(element.staticProperties,importManager,preview,skipController,skipIncludes)»
 			«FOR e : element.values»
@@ -393,6 +399,10 @@ class FXGraphGenerator implements IGenerator {
 	
 	def hasNestedProperties(Element element, boolean preview) {
 		if( element.values.size > 0 ) {
+			return true;
+		}
+		
+		if( element.defaultChildren.size > 0 ) {
 			return true;
 		}
 		

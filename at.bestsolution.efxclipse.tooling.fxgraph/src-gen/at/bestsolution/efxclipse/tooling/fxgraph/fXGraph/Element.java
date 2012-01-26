@@ -2,7 +2,6 @@
  * <copyright>
  * </copyright>
  *
-
  */
 package at.bestsolution.efxclipse.tooling.fxgraph.fXGraph;
 
@@ -23,6 +22,7 @@ import org.eclipse.xtext.common.types.JvmTypeReference;
  *   <li>{@link at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.Element#getName <em>Name</em>}</li>
  *   <li>{@link at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.Element#getProperties <em>Properties</em>}</li>
  *   <li>{@link at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.Element#getStaticProperties <em>Static Properties</em>}</li>
+ *   <li>{@link at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.Element#getDefaultChildren <em>Default Children</em>}</li>
  *   <li>{@link at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.Element#getFactory <em>Factory</em>}</li>
  *   <li>{@link at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.Element#getValues <em>Values</em>}</li>
  * </ul>
@@ -143,6 +143,22 @@ public interface Element extends SingleValueProperty, ListValueElement
    * @generated
    */
   EList<StaticValueProperty> getStaticProperties();
+
+  /**
+   * Returns the value of the '<em><b>Default Children</b></em>' containment reference list.
+   * The list contents are of type {@link at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.Element}.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Default Children</em>' containment reference list isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Default Children</em>' containment reference list.
+   * @see at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.FXGraphPackage#getElement_DefaultChildren()
+   * @model containment="true"
+   * @generated
+   */
+  EList<Element> getDefaultChildren();
 
   /**
    * Returns the value of the '<em><b>Factory</b></em>' attribute.

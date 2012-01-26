@@ -2662,6 +2662,12 @@ rule__Element__Alternatives_1_1_2_0
 { after(grammarAccess.getElementAccess().getStaticPropertiesAssignment_1_1_2_0_1()); }
 )
 
+    |(
+{ before(grammarAccess.getElementAccess().getDefaultChildrenAssignment_1_1_2_0_2()); }
+(rule__Element__DefaultChildrenAssignment_1_1_2_0_2)
+{ after(grammarAccess.getElementAccess().getDefaultChildrenAssignment_1_1_2_0_2()); }
+)
+
 ;
 finally {
 	restoreStackSize(stackSize);
@@ -2682,6 +2688,12 @@ rule__Element__Alternatives_1_1_2_1_1
 { before(grammarAccess.getElementAccess().getStaticPropertiesAssignment_1_1_2_1_1_1()); }
 (rule__Element__StaticPropertiesAssignment_1_1_2_1_1_1)
 { after(grammarAccess.getElementAccess().getStaticPropertiesAssignment_1_1_2_1_1_1()); }
+)
+
+    |(
+{ before(grammarAccess.getElementAccess().getDefaultChildrenAssignment_1_1_2_1_1_2()); }
+(rule__Element__DefaultChildrenAssignment_1_1_2_1_1_2)
+{ after(grammarAccess.getElementAccess().getDefaultChildrenAssignment_1_1_2_1_1_2()); }
 )
 
 ;
@@ -17803,6 +17815,21 @@ finally {
 	restoreStackSize(stackSize);
 }
 
+rule__Element__DefaultChildrenAssignment_1_1_2_0_2
+    @init {
+		int stackSize = keepStackSize();
+    }
+:
+(
+{ before(grammarAccess.getElementAccess().getDefaultChildrenElementParserRuleCall_1_1_2_0_2_0()); }
+	ruleElement{ after(grammarAccess.getElementAccess().getDefaultChildrenElementParserRuleCall_1_1_2_0_2_0()); }
+)
+
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
 rule__Element__PropertiesAssignment_1_1_2_1_1_0
     @init {
 		int stackSize = keepStackSize();
@@ -17826,6 +17853,21 @@ rule__Element__StaticPropertiesAssignment_1_1_2_1_1_1
 (
 { before(grammarAccess.getElementAccess().getStaticPropertiesStaticValuePropertyParserRuleCall_1_1_2_1_1_1_0()); }
 	ruleStaticValueProperty{ after(grammarAccess.getElementAccess().getStaticPropertiesStaticValuePropertyParserRuleCall_1_1_2_1_1_1_0()); }
+)
+
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__Element__DefaultChildrenAssignment_1_1_2_1_1_2
+    @init {
+		int stackSize = keepStackSize();
+    }
+:
+(
+{ before(grammarAccess.getElementAccess().getDefaultChildrenElementParserRuleCall_1_1_2_1_1_2_0()); }
+	ruleElement{ after(grammarAccess.getElementAccess().getDefaultChildrenElementParserRuleCall_1_1_2_1_1_2_0()); }
 )
 
 ;
