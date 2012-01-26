@@ -122,6 +122,18 @@ public class JFXDialectExtension implements CssDialectExtension {
 		PROPERTIES.addAll(NumberAxis.init());
 		PROPERTIES.addAll(PlotSymbol.init());
 		PROPERTIES.addAll(ValueAxis.init());
+		
+		//TODO we have to add validation here
+		PROPERTIES.add(new Property("-fx-font") {
+			@Override
+			public List<Proposal> getInitialTermProposals() {
+				return Collections.emptyList();
+			}
+		});
+		PROPERTIES.add(new StringProperty("-fx-font-family"));
+		PROPERTIES.add(new SizeProperty("-fx-font-size"));
+		PROPERTIES.addAll(CssDialectExtension.Util.createEnumProperties(Arrays.asList("-fx-font-style"), "normal","italic","oblique"));
+		PROPERTIES.addAll(CssDialectExtension.Util.createEnumProperties(Arrays.asList("-fx-font-weight"), "normal","bold","bolder","lighter","100","200","300","400","500","600","700","800","900"));
 	}
 	
 	private static void initColors() {
