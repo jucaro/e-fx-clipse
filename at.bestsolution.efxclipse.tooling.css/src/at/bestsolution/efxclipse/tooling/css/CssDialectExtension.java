@@ -12,7 +12,6 @@ package at.bestsolution.efxclipse.tooling.css;
 
 import static at.bestsolution.efxclipse.tooling.css.CssDialectExtension.Util.fromList;
 
-import java.awt.DisplayMode;
 import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
 import java.net.URISyntaxException;
@@ -23,6 +22,7 @@ import java.util.List;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EStructuralFeature;
+import org.osgi.framework.Version;
 
 import at.bestsolution.efxclipse.tooling.css.cssDsl.CssDslPackage;
 import at.bestsolution.efxclipse.tooling.css.cssDsl.URLType;
@@ -62,14 +62,28 @@ public interface CssDialectExtension {
 	public abstract static class Property {
 		private final String name;
 		private final String description;
+		private final Version minVersion;
 		
 		public Property(String name) {
-			this(name,null);
+			this(name,new Version("2.0.0"));
+		}
+		
+		public Property(String name, Version minVersion) {
+			this(name, null,new Version("2.0.0"));
 		}
 		
 		public Property(String name, String description) {
+			this(name, description,new Version("2.0.0"));
+		}
+		
+		public Property(String name, String description, Version minVersion) {
 			this.name = name;
 			this.description = description;
+			this.minVersion = minVersion == null ? new Version("2.0.0") : minVersion;
+		}
+		
+		public Version getMinVersion() {
+			return minVersion;
 		}
 		
 		public String getName() {
@@ -230,13 +244,21 @@ public interface CssDialectExtension {
 	
 	public static class EnumProperty extends Property {
 		private List<Proposal> proposals = new ArrayList<Proposal>();
-		
+				
 		public EnumProperty(String name, String... enums) {
 			this(name,null,enums);
 		}
 		
+		public EnumProperty(Version minVersion, String name, String... enums) {
+			this(name,null,enums);
+		}
+
 		public EnumProperty(String name, String description, String... enums) {
-			super(name, description);
+			this(null,name,null,enums);
+		}
+		
+		public EnumProperty(Version minVersion, String name, String description, String... enums) {
+			super(name, description, minVersion);
 			proposals.addAll(fromList(enums));
 			proposals.add(new Proposal("inherit"));
 		}
@@ -545,6 +567,17 @@ public interface CssDialectExtension {
 		}
 		
 		public static List<Property> createEnumProperties(List<String> enums, String... names) {
+			List<Property> rv = new ArrayList<Property>(names.length);
+			String[] arEnums = enums.toArray(new String[0]);
+			
+			for( String name : names ) {
+				rv.add(new EnumProperty(name, arEnums));
+			}
+			
+			return rv;
+		}
+		
+		public static List<Property> createEnumProperties(Version minVersion, List<String> enums, String... names) {
 			List<Property> rv = new ArrayList<Property>(names.length);
 			String[] arEnums = enums.toArray(new String[0]);
 			
