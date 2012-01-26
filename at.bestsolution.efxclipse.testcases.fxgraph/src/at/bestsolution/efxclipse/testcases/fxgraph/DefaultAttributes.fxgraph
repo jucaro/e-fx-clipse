@@ -1,0 +1,17 @@
+package at.bestsolution.efxclipse.testcases.fxgraph
+
+import javafx.scene.layout.HBox
+import javafx.scene.control.Label
+import javafx.scene.control.TextField
+
+component BindingTest {
+	HBox {
+		Label {
+			text : "Binding"
+		}, TextField id field1 {
+
+		}, TextField {
+			text : bind field1#text
+		}
+	}
+}
