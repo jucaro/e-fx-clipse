@@ -26,6 +26,7 @@ public class Text {
 		properties.addAll(createReflective(BooleanProperty.class, "-fx-strikethrough","-fx-underline"));
 		properties.addAll(createEnumProperties(Arrays.asList("left","center","right","justify"), "-fx-text-alignment"));
 		properties.addAll(createEnumProperties(Arrays.asList("baseline","top","bottom"), "-fx-text-alignment"));
+		properties.addAll(createEnumProperties(Arrays.asList("gray","lcd"), "-fx-font-smoothing-type"));
 		
 		return properties;
 	}
