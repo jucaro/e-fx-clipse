@@ -17,6 +17,8 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+import org.osgi.framework.Version;
+
 import at.bestsolution.efxclipse.tooling.css.CssDialectExtension.BooleanProperty;
 import at.bestsolution.efxclipse.tooling.css.CssDialectExtension.Property;
 
@@ -26,7 +28,7 @@ public class Text {
 		properties.addAll(createReflective(BooleanProperty.class, "-fx-strikethrough","-fx-underline"));
 		properties.addAll(createEnumProperties(Arrays.asList("left","center","right","justify"), "-fx-text-alignment"));
 		properties.addAll(createEnumProperties(Arrays.asList("baseline","top","bottom"), "-fx-text-alignment"));
-		properties.addAll(createEnumProperties(Arrays.asList("gray","lcd"), "-fx-font-smoothing-type"));
+		properties.addAll(createEnumProperties(new Version("2.1.0"), Arrays.asList("gray","lcd"), "-fx-font-smoothing-type"));
 		
 		return properties;
 	}
