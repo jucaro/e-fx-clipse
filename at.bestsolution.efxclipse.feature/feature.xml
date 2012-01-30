@@ -115,4 +115,8 @@ This Agreement is governed by the laws of the State of New York and the intellec
          id="at.bestsolution.efxclipse.runtime.feature"
          version="0.0.0"/>
 
+   <includes
+         id="at.bestsolution.efxclipse.runtime.osgi.feature"
+         version="0.0.0"/>
+
 </feature>
