@@ -2,7 +2,7 @@ Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: %Bundle-Name
 Bundle-Vendor: %Bundle-Vendor
-Bundle-Version: 0.0.11.qualifier
+Bundle-Version: 0.0.12.qualifier
 Bundle-SymbolicName: at.bestsolution.efxclipse.tooling.fxmlx; singleton:=true
 Bundle-ActivationPolicy: lazy
 Require-Bundle: org.eclipse.xtext;bundle-version="2.1.0";visibility:=reexport,
