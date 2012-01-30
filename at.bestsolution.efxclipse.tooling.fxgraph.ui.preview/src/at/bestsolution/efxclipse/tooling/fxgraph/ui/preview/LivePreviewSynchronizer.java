@@ -12,6 +12,7 @@ import java.util.List;
 import java.util.Properties;
 import java.util.Set;
 
+import org.eclipse.core.resources.IContainer;
 import org.eclipse.core.resources.IFile;
 import org.eclipse.core.resources.IFolder;
 import org.eclipse.core.resources.IProject;
@@ -207,7 +208,7 @@ public class LivePreviewSynchronizer implements IPartListener, IXtextModelListen
 			Path structureFilePath = new Path(uri.toPlatformString(true));
 			IWorkspaceRoot workspaceRoot = jp.getProject().getWorkspace().getRoot();
 			IFile structureFile = workspaceRoot.getFile(structureFilePath); 
-			IFolder file = (IFolder) structureFile.getParent();//workspaceRoot.getFolder(structureFilePath.removeLastSegments(1));
+			IContainer file = structureFile.getParent();//workspaceRoot.getFolder(structureFilePath.removeLastSegments(1));
 			if (file.exists()) {
 				try {
 					relativeUrl = file.getLocation().toFile().getAbsoluteFile().toURI().toURL();
