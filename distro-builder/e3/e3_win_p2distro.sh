@@ -3,7 +3,7 @@ cd `dirname $0`
 # Constatnts
 DIR_ROOT=$PWD # PWD is the working directory var
 DIR_SOURCE_ECLIPSE="$DIR_ROOT/builder"
-DIR_TARGETPLATFORMS="$DIR_ROOT/targetplatforms"
+DIR_TARGETPLATFORMS="$DIR_ROOT/win_targetplatforms"
 DIR_OUTPUT="$DIR_ROOT/output"
 DIR_TMP="$DIR_ROOT/tmp"
 DIR_REPOSITORIES="$DIR_ROOT/repositories"
@@ -26,7 +26,8 @@ org.eclipse.egit.feature.group,org.tigris.subversion.clientadapter.feature.featu
 org.tigris.subversion.clientadapter.javahl.feature.feature.group,\
 org.tigris.subversion.subclipse.feature.group,\
 org.tigris.subversion.clientadapter.svnkit.feature.feature.group,\
-mercurialeclipse.feature.group"
+mercurialeclipse.feature.group,\
+com.intland.hgbinary.win32.feature.group"
 # org.eclipse.e4.core.tools.feature.feature.group,\
 # org.eclipse.e4.tools.e3x.bridge.feature.feature.group"
 # INSTALL_IUS="org.eclipse.xtext.sdk37.feature.feature.group"

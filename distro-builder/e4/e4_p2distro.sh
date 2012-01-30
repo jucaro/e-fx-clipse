@@ -9,7 +9,7 @@ DIR_TMP="$DIR_ROOT/tmp"
 DIR_REPOSITORIES="$DIR_ROOT/repositories"
 DIR_ADDITIONAL_PLUGINS="$DIR_ROOT/additionalplugins"
 
-EFX_VERSION="0.0.8"
+EFX_VERSION="0.0.11"
 IDEPREFIX="eclipse-SDK"
 ZIPSUFFIX=".zip"
 JARSUFFIX=".jar"
@@ -26,7 +26,8 @@ org.eclipse.egit.feature.group,org.tigris.subversion.clientadapter.feature.featu
 org.tigris.subversion.clientadapter.javahl.feature.feature.group,\
 org.tigris.subversion.subclipse.feature.group,\
 org.tigris.subversion.clientadapter.svnkit.feature.feature.group,\
-org.eclipse.e4.core.tools.feature.feature.group"
+org.eclipse.e4.core.tools.feature.feature.group,\
+mercurialeclipse.feature.group"
 #org.eclipse.e4.tools.e3x.bridge.feature.feature.group"
 # INSTALL_IUS="org.eclipse.xtext.sdk37.feature.feature.group"
 #"org.eclipse.emf.all.feature.group,\
@@ -86,7 +87,7 @@ do
 	i=$i+1
  fi
 done
-repository_urls="$repository_urls,http://download.eclipse.org/releases/juno/,http://download.eclipse.org/egit/updates" 
+repository_urls="$repository_urls,http://download.eclipse.org/e4/downloads/drops/S-0.12M4-201112092100/repository,http://download.eclipse.org/releases/juno/,http://download.eclipse.org/egit/updates,http://www.efxclipse.org/p2-repos/releases/0.0.11/,http://download.eclipse.org/modeling/tmf/xtext/updates/composite/releases/,http://cbes.javaforge.com/update" 
 cd $DIR_ROOT
 # we are in root now
 
