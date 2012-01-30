@@ -35,7 +35,7 @@ public class XMLLoader {
 	public static void main(String[] args) {
 		XMLLoader l = new XMLLoader();
 		try {
-			File f = new File("/Users/tomschindl/git/e-fx-clipse/at.bestsolution.efxclipse.formats.svg/samples/oxygen/appointment-new.svg");
+			File f = new File("/Users/tomschindl/git/e-fx-clipse/at.bestsolution.efxclipse.formats.svg/samples/oxygen/color-picker-white.svg");
 			InputStream in;
 			
 			if( f.getName().endsWith("svgz") ) {

@@ -89,20 +89,20 @@ class FXMLConverter {
 	<Rectangle
 		«IF rect.alpha != null»opacity="«rect.alpha»"«ENDIF»
 		«IF rect.blendMode != BlendMode::NOT_SET»blendMode="«rect.blendMode.toFX»"«ENDIF»
-		«IF rect.bottomLeftRadiusX != null»fx:todo="bottomLeftRadiusX"«ENDIF»
-		«IF rect.bottomLeftRadiusY != null»fx:todo="bottomLeftRadiusY"«ENDIF»
-		«IF rect.bottomRightRadiusX != null»fx:todo="bottomRightRadiusX"«ENDIF»
-		«IF rect.bottomRightRadiusY != null»fx:todo="bottomRightRadiusY"«ENDIF»
+«««		«IF rect.bottomLeftRadiusX != null»fx:todo="bottomLeftRadiusX"«ENDIF»
+«««		«IF rect.bottomLeftRadiusY != null»fx:todo="bottomLeftRadiusY"«ENDIF»
+«««		«IF rect.bottomRightRadiusX != null»fx:todo="bottomRightRadiusX"«ENDIF»
+«««		«IF rect.bottomRightRadiusY != null»fx:todo="bottomRightRadiusY"«ENDIF»
 		«IF rect.height != null»height="«rect.height»"«ENDIF»
-		«IF rect.radiusX != null»fx:todo="radiusX"«ENDIF»
-		«IF rect.radiusY != null»fx:todo="radiusY"«ENDIF»
+«««		«IF rect.radiusX != null»fx:todo="radiusX"«ENDIF»
+«««		«IF rect.radiusY != null»fx:todo="radiusY"«ENDIF»
 		«IF rect.rotation != null»rotate="«rect.rotation»"«ENDIF»
 		«IF rect.scaleX != null»scaleX="«rect.scaleX»"«ENDIF»
 		«IF rect.scaleY != null»scaleY="«rect.scaleY»"«ENDIF»
-		«IF rect.topLeftRadiusX != null»fx:todo="topLeftRadiusX"«ENDIF»
-		«IF rect.topLeftRadiusY != null»fx:todo="topLeftRadiusY"«ENDIF»
-		«IF rect.topRightRadiusX != null»fx:todo="topRightRadiusX"«ENDIF»
-		«IF rect.topRightRadiusY != null»fx:todo="topRightRadiusY"«ENDIF»
+«««		«IF rect.topLeftRadiusX != null»fx:todo="topLeftRadiusX"«ENDIF»
+«««		«IF rect.topLeftRadiusY != null»fx:todo="topLeftRadiusY"«ENDIF»
+«««		«IF rect.topRightRadiusX != null»fx:todo="topRightRadiusX"«ENDIF»
+«««		«IF rect.topRightRadiusY != null»fx:todo="topRightRadiusY"«ENDIF»
 		«IF rect.visible != null»visible="«rect.visible»"«ENDIF»
 		«IF rect.width != null»width="«rect.width»"«ENDIF»
 		«IF rect.x != null»x="«rect.x»"«ENDIF»

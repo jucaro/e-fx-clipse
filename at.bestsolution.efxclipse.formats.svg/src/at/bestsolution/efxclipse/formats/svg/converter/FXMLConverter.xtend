@@ -281,19 +281,19 @@ class FXMLConverter {
 				«element.transform.handleTransform»
 			</transforms>
 		«ENDIF»
-		«IF element.filter != null»
-			«val e = resolveElement(element.filter.substring(5,element.filter.length-1).trim) as SvgFilterElement»
-			«IF e != null»
-				«IF e.children.filter(typeof(FilterPrimitiveElement)).size == 1»
-				«val fiElement = e.children.filter(typeof(FilterPrimitiveElement)).head as SvgElement»
-				<filter>
-					«handleFilter(fiElement)»
-				</filter>
-				«ELSE»
-				<!-- Multi filter needs different handling -->
-				«ENDIF»
-			«ENDIF»
-		«ENDIF»
+«««		«IF element.filter != null»
+«««			«val e = resolveElement(element.filter.substring(5,element.filter.length-1).trim) as SvgFilterElement»
+«««			«IF e != null»
+«««				«IF e.children.filter(typeof(FilterPrimitiveElement)).size == 1»
+«««				«val fiElement = e.children.filter(typeof(FilterPrimitiveElement)).head as SvgElement»
+«««				<filter>
+«««					«handleFilter(fiElement)»
+«««				</filter>
+«««				«ELSE»
+«««				<!-- Multi filter needs different handling -->
+«««				«ENDIF»
+«««			«ENDIF»
+«««		«ENDIF»
 		«IF element.clip_path != null && element.clip_path.trim.length > 0 && ! element.clip_path.trim.equals("none")»
 			<clip>
 				«val clipElement = resolveElement(element.clip_path.substring(5,element.clip_path.length-1)) as SvgClipPathElement»
@@ -330,19 +330,19 @@ class FXMLConverter {
 				«element.transform.handleTransform»
 			</transforms>
 		«ENDIF»
-		«IF element.filter != null»
-			«val e = resolveElement(element.filter.substring(5,element.filter.length-1).trim) as SvgFilterElement»
-			«IF e != null»
-				«IF e.children.filter(typeof(FilterPrimitiveElement)).size == 1»
-				«val fiElement = e.children.filter(typeof(FilterPrimitiveElement)).head as SvgElement»
-				<filter>
-					«handleFilter(fiElement)»
-				</filter>
-				«ELSE»
-				<!-- Multi filter needs different handling -->
-				«ENDIF»
-			«ENDIF»
-		«ENDIF»
+«««		«IF element.filter != null»
+«««			«val e = resolveElement(element.filter.substring(5,element.filter.length-1).trim) as SvgFilterElement»
+«««			«IF e != null»
+«««				«IF e.children.filter(typeof(FilterPrimitiveElement)).size == 1»
+«««				«val fiElement = e.children.filter(typeof(FilterPrimitiveElement)).head as SvgElement»
+«««				<filter>
+«««					«handleFilter(fiElement)»
+«««				</filter>
+«««				«ELSE»
+«««				<!-- Multi filter needs different handling -->
+«««				«ENDIF»
+«««			«ENDIF»
+«««		«ENDIF»
 		«IF element.clip_path != null && element.clip_path.trim.length > 0 && ! element.clip_path.trim.equals("none")»
 			<clip>
 				«val clipElement = resolveElement(element.clip_path.substring(5,element.clip_path.length-1)) as SvgClipPathElement»
@@ -382,19 +382,19 @@ class FXMLConverter {
 				«element.transform.handleTransform»
 			</transforms>
 		«ENDIF»
-		«IF element.filter != null»
-			«val e = resolveElement(element.filter.substring(5,element.filter.length-1).trim) as SvgFilterElement»
-			«IF e != null»
-				«IF e.children.filter(typeof(FilterPrimitiveElement)).size == 1»
-				«val fiElement = e.children.filter(typeof(FilterPrimitiveElement)).head as SvgElement»
-				<filter>
-					«handleFilter(fiElement)»
-				</filter>
-				«ELSE»
-				<!-- Multi filter needs different handling -->
-				«ENDIF»
-			«ENDIF»
-		«ENDIF»
+«««		«IF element.filter != null»
+«««			«val e = resolveElement(element.filter.substring(5,element.filter.length-1).trim) as SvgFilterElement»
+«««			«IF e != null»
+«««				«IF e.children.filter(typeof(FilterPrimitiveElement)).size == 1»
+«««				«val fiElement = e.children.filter(typeof(FilterPrimitiveElement)).head as SvgElement»
+«««				<filter>
+«««					«handleFilter(fiElement)»
+«««				</filter>
+«««				«ELSE»
+«««				<!-- Multi filter needs different handling -->
+«««				«ENDIF»
+«««			«ENDIF»
+«««		«ENDIF»
 		«IF element.clip_path != null && element.clip_path.trim.length > 0 && ! element.clip_path.trim.equals("none")»
 			<clip>
 				«val clipElement = resolveElement(element.clip_path.substring(5,element.clip_path.length-1)) as SvgClipPathElement»
@@ -460,19 +460,19 @@ class FXMLConverter {
 				«element.transform.handleTransform»
 			</transforms>
 		«ENDIF»
-		«IF element.filter != null»
-			«val e = resolveElement(element.filter.substring(5,element.filter.length-1).trim) as SvgFilterElement»
-			«IF e != null»
-				«IF e.children.filter(typeof(FilterPrimitiveElement)).size == 1»
-				«val fiElement = e.children.filter(typeof(FilterPrimitiveElement)).head as SvgElement»
-				<filter>
-					«handleFilter(fiElement)»
-				</filter>
-				«ELSE»
-				<!-- Multi filter needs different handling -->
-				«ENDIF»
-			«ENDIF»
-		«ENDIF»
+«««		«IF element.filter != null»
+«««			«val e = resolveElement(element.filter.substring(5,element.filter.length-1).trim) as SvgFilterElement»
+«««			«IF e != null»
+«««				«IF e.children.filter(typeof(FilterPrimitiveElement)).size == 1»
+«««				«val fiElement = e.children.filter(typeof(FilterPrimitiveElement)).head as SvgElement»
+«««				<filter>
+«««					«handleFilter(fiElement)»
+«««				</filter>
+«««				«ELSE»
+«««				<!-- Multi filter needs different handling -->
+«««				«ENDIF»
+«««			«ENDIF»
+«««		«ENDIF»
 		«IF element.clip_path != null && element.clip_path.trim.length > 0 && ! element.clip_path.trim.equals("none")»
 			<clip>
 				«val clipElement = resolveElement(element.clip_path.substring(5,element.clip_path.length-1)) as SvgClipPathElement»
@@ -513,19 +513,19 @@ class FXMLConverter {
 				«element.transform.handleTransform»
 			</transforms>
 		«ENDIF»
-		«IF element.filter != null»
-			«val e = resolveElement(element.filter.substring(5,element.filter.length-1).trim) as SvgFilterElement»
-			«IF e != null»
-				«IF e.children.filter(typeof(FilterPrimitiveElement)).size == 1»
-				«val fiElement = e.children.filter(typeof(FilterPrimitiveElement)).head as SvgElement»
-				<filter>
-					«handleFilter(fiElement)»
-				</filter>
-				«ELSE»
-				<!-- Multi filter needs different handling -->
-				«ENDIF»
-			«ENDIF»
-		«ENDIF»
+«««		«IF element.filter != null»
+«««			«val e = resolveElement(element.filter.substring(5,element.filter.length-1).trim) as SvgFilterElement»
+«««			«IF e != null»
+«««				«IF e.children.filter(typeof(FilterPrimitiveElement)).size == 1»
+«««				«val fiElement = e.children.filter(typeof(FilterPrimitiveElement)).head as SvgElement»
+«««				<filter>
+«««					«handleFilter(fiElement)»
+«««				</filter>
+«««				«ELSE»
+«««				<!-- Multi filter needs different handling -->
+«««				«ENDIF»
+«««			«ENDIF»
+«««		«ENDIF»
 		«IF element.clip_path != null && element.clip_path.trim.length > 0 && ! element.clip_path.trim.equals("none")»
 			<clip>
 				«val clipElement = resolveElement(element.clip_path.substring(5,element.clip_path.length-1)) as SvgClipPathElement»

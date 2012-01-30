@@ -7,7 +7,9 @@ Bundle-ClassPath: .
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
-Export-Package: at.bestsolution.efxclipse.formats.svg.svg,
+Export-Package: at.bestsolution.efxclipse.formats.svg.converter,
+ at.bestsolution.efxclipse.formats.svg.handler,
+ at.bestsolution.efxclipse.formats.svg.svg,
  at.bestsolution.efxclipse.formats.svg.svg.impl,
  at.bestsolution.efxclipse.formats.svg.svg.util
 Require-Bundle: org.eclipse.core.runtime,
