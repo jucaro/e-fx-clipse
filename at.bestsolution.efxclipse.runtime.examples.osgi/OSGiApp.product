@@ -23,14 +23,19 @@
 
    <plugins>
       <plugin id="at.bestsolution.efxclipse.runtime.application"/>
+      <plugin id="at.bestsolution.efxclipse.runtime.databinding"/>
       <plugin id="at.bestsolution.efxclipse.runtime.examples.osgi"/>
       <plugin id="at.bestsolution.efxclipse.runtime.javafx"/>
       <plugin id="at.bestsolution.efxclipse.runtime.osgi" fragment="true"/>
+      <plugin id="com.ibm.icu"/>
       <plugin id="javax.servlet"/>
       <plugin id="org.eclipse.core.contenttype"/>
+      <plugin id="org.eclipse.core.databinding"/>
+      <plugin id="org.eclipse.core.databinding.observable"/>
+      <plugin id="org.eclipse.core.databinding.property"/>
       <plugin id="org.eclipse.core.jobs"/>
       <plugin id="org.eclipse.core.runtime"/>
-      <plugin id="org.eclipse.core.runtime.compatibility.auth"/>
+      <plugin id="org.eclipse.core.runtime.compatibility.auth" fragment=""/>
       <plugin id="org.eclipse.core.runtime.compatibility.registry" fragment="true"/>
       <plugin id="org.eclipse.equinox.app"/>
       <plugin id="org.eclipse.equinox.common"/>
