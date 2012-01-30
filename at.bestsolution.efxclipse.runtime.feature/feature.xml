@@ -2,7 +2,7 @@
 <feature
       id="at.bestsolution.efxclipse.runtime.feature"
       label="FX Runtime"
-      version="0.0.11.qualifier"
+      version="0.0.12.qualifier"
       provider-name="BestSolution.at">
 
    <description url="http://efxclipse.org">
