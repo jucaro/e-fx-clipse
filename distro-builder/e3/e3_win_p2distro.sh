@@ -9,7 +9,7 @@ DIR_TMP="$DIR_ROOT/tmp"
 DIR_REPOSITORIES="$DIR_ROOT/repositories"
 DIR_ADDITIONAL_PLUGINS="$DIR_ROOT/additionalplugins"
 
-EFX_VERSION="0.0.11"
+EFX_VERSION="0.0.12"
 IDEPREFIX="eclipse-SDK"
 ZIPSUFFIX=".zip"
 JARSUFFIX=".jar"
@@ -88,7 +88,7 @@ do
 	i=$i+1
  fi
 done
-repository_urls="$repository_urls,http://download.eclipse.org/e4/downloads/drops/S-0.12M4-201112092100/repository,http://download.eclipse.org/releases/indigo/,http://download.eclipse.org/egit/updates,http://www.efxclipse.org/p2-repos/releases/0.0.11/,http://download.eclipse.org/modeling/tmf/xtext/updates/composite/releases/,http://cbes.javaforge.com/update"
+repository_urls="$repository_urls,http://download.eclipse.org/e4/downloads/drops/S-0.12M5-201201271145/repository,http://download.eclipse.org/releases/indigo/,http://download.eclipse.org/egit/updates,http://www.efxclipse.org/p2-repos/releases/0.0.12/,http://download.eclipse.org/modeling/tmf/xtext/updates/composite/releases/,http://cbes.javaforge.com/update"
 # repository_urls="$repository_urls,http://download.eclipse.org/releases/indigo/,http://download.eclipse.org/egit/updates" 
 cd $DIR_ROOT
 # we are in root now
