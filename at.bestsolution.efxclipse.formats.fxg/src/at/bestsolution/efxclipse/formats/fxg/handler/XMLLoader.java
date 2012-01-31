@@ -1,11 +1,7 @@
 package at.bestsolution.efxclipse.formats.fxg.handler;
 
-import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
-import java.net.MalformedURLException;
-import java.util.Collection;
-import java.util.Collections;
 import java.util.List;
 import java.util.Stack;
 
@@ -18,7 +14,6 @@ import org.eclipse.emf.ecore.EClassifier;
 import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.util.EcoreUtil;
-import org.eclipse.emf.ecore.xmi.impl.XMLResourceImpl;
 import org.xml.sax.Attributes;
 import org.xml.sax.SAXException;
 import org.xml.sax.helpers.DefaultHandler;
@@ -28,11 +23,8 @@ import at.bestsolution.efxclipse.formats.fxg.fxg.Definition;
 import at.bestsolution.efxclipse.formats.fxg.fxg.FXGElement;
 import at.bestsolution.efxclipse.formats.fxg.fxg.FxgPackage;
 import at.bestsolution.efxclipse.formats.fxg.fxg.Graphic;
-import at.bestsolution.efxclipse.formats.fxg.fxg.Group;
 import at.bestsolution.efxclipse.formats.fxg.fxg.Library;
 import at.bestsolution.efxclipse.formats.fxg.fxg.RichText;
-import at.bestsolution.efxclipse.formats.fxg.fxg.RichTextContent;
-import at.bestsolution.efxclipse.formats.fxg.fxg.rawtext;
 
 public class XMLLoader {
 
@@ -220,23 +212,23 @@ public class XMLLoader {
 		}
 	}
 
-	public static void main(String[] args) {
-		XMLLoader l = new XMLLoader();
-		try {
-			// Graphic g = l.loadGrapic(new
-			// File("C:/e-ws/fxclipse/at.bestsolution.efxclipse.formats.fxg/model/banner.fxg").toURL().openStream());
-			// Graphic g = l.loadGrapic(new
-			// File("C:/e-ws/fxclipse/at.bestsolution.efxclipse.formats.fxg/model/Duke Billboard T-Shirt CLEAN.fxg").toURL().openStream());
-			Graphic g = l.loadGrapic(new File("C:/e-ws/fxclipse/fxg-examples/components.fxg").toURL().openStream());
-			XMLResourceImpl r = new XMLResourceImpl();
-			r.getContents().add(g);
-			r.save(System.out, null);
-		} catch (MalformedURLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} catch (Exception e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-	}
+//	public static void main(String[] args) {
+//		XMLLoader l = new XMLLoader();
+//		try {
+//			// Graphic g = l.loadGrapic(new
+//			// File("C:/e-ws/fxclipse/at.bestsolution.efxclipse.formats.fxg/model/banner.fxg").toURL().openStream());
+//			// Graphic g = l.loadGrapic(new
+//			// File("C:/e-ws/fxclipse/at.bestsolution.efxclipse.formats.fxg/model/Duke Billboard T-Shirt CLEAN.fxg").toURL().openStream());
+//			Graphic g = l.loadGrapic(new File("C:/e-ws/fxclipse/fxg-examples/components.fxg").toURL().openStream());
+//			XMLResourceImpl r = new XMLResourceImpl();
+//			r.getContents().add(g);
+//			r.save(System.out, null);
+//		} catch (MalformedURLException e) {
+//			// TODO Auto-generated catch block
+//			e.printStackTrace();
+//		} catch (Exception e) {
+//			// TODO Auto-generated catch block
+//			e.printStackTrace();
+//		}
+//	}
 }
