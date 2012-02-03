@@ -15,6 +15,7 @@ import org.eclipse.jdt.core.IMethod;
 import org.eclipse.jdt.core.IType;
 import org.eclipse.jdt.core.JavaModelException;
 import org.eclipse.jdt.core.Signature;
+import org.eclipse.jdt.internal.core.SourceType;
 import org.eclipse.jface.resource.JFaceResources;
 import org.eclipse.jface.viewers.StyledString;
 import org.eclipse.swt.graphics.Image;
@@ -374,14 +375,28 @@ public class JDTHelper {
 				List<IMethod> allMethods = new ArrayList<IMethod>();
 				allMethods.addAll(Arrays.asList(jdtType.getMethods()));
 
-				while (jdtType != null && jdtType.getSuperclassName() != null) {
-					jdtType = jproject.findType(jdtType.getSuperclassName());
-					if (jdtType != null) {
-						allMethods.addAll(Arrays.asList(jdtType.getMethods()));
+				IType parentType = jdtType;
+				
+				while (parentType != null && parentType.getSuperclassName() != null) {
+					if( parentType instanceof SourceType ) {
+						String[][] typeDefs = parentType.resolveType(parentType.getSuperclassName());
+						if( typeDefs != null ) {
+							for( String[] type : typeDefs ) {
+								parentType = jproject.findType(type[0]+"."+type[1]);
+							}
+						}
+					} else {
+						parentType = jproject.findType(parentType.getSuperclassName());	
+					}
+					
+					if (parentType != null) {
+						allMethods.addAll(Arrays.asList(parentType.getMethods()));
 					}
 				}
 				data = createData(allMethods, jproject);
-				typeCache.put(jdtType.getFullyQualifiedName(), data);
+				if( ! (jdtType instanceof SourceType) ) {
+					typeCache.put(jdtType.getFullyQualifiedName(), data);	
+				}
 			} catch (JavaModelException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();

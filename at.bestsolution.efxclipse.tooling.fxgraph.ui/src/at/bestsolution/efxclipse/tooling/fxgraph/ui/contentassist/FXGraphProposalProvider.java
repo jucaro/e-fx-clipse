@@ -96,6 +96,9 @@ public class FXGraphProposalProvider extends AbstractFXGraphProposalProvider {
 
 	private TypeData getTypeData(IJavaProject jproject, JvmTypeReference typeRef) {
 		try {
+//			System.err.println("project:" + jproject);
+//			System.err.println("typeref:" + typeRef);
+			
 			return helper.getTypeData(jproject,
 					jproject.findType(typeRef.getQualifiedName()));
 		} catch (JavaModelException e) {
@@ -442,6 +445,9 @@ public class FXGraphProposalProvider extends AbstractFXGraphProposalProvider {
 			ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
 		if (context.getCurrentModel() instanceof Element) {
 			Element element = (Element) context.getCurrentModel();
+			if( element.getType() == null ) {
+				return;
+			}
 			TypeData data = getTypeData(getJavaProject(model),
 					element.getType());
 			if (data != null) {
@@ -842,7 +848,7 @@ public class FXGraphProposalProvider extends AbstractFXGraphProposalProvider {
 					}
 			}
 		} else {
-			System.err.println("in else");
+//			System.err.println("in else");
 			super.completeJvmParameterizedTypeReference_Type(model, assignment,
 					context, acceptor);
 		}
