@@ -369,7 +369,7 @@ class FXGraphGenerator implements IGenerator {
 			return value.stringValue;
 		} else if( value.booleanValue != null ) {
 			return value.booleanValue;
-		} else if( (value.realValue as int) != 0 ) {
+		} else if( value.realValue != 0 ) {
 			if( value.negative ) {
 				return "-" + value.realValue;
 			} else {

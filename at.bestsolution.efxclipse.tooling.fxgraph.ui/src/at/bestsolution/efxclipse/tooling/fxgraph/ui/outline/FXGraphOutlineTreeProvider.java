@@ -212,7 +212,7 @@ public class FXGraphOutlineTreeProvider extends DefaultOutlineTreeProvider {
 			b.append(p.getBooleanValue());
 		} else if( p.getStringValue() != null ) {
 			b.append(p.getStringValue());
-		} else if( (int)p.getRealValue() != 0 ) {
+		} else if( p.getRealValue() != 0 ) {
 			if( p.isNegative() ) {
 				b.append("-");
 			}
