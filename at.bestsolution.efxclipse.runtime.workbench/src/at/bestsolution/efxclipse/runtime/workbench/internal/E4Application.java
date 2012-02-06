@@ -15,19 +15,16 @@ import javafx.stage.Stage;
 
 import org.eclipse.core.runtime.Assert;
 import org.eclipse.core.runtime.IExtensionRegistry;
-import org.eclipse.core.runtime.IStatus;
 import org.eclipse.core.runtime.Platform;
 import org.eclipse.core.runtime.RegistryFactory;
-import org.eclipse.core.runtime.Status;
-import org.eclipse.e4.core.contexts.ContextFunction;
 import org.eclipse.e4.core.contexts.ContextInjectionFactory;
+import org.eclipse.e4.core.contexts.EclipseContextFactory;
 import org.eclipse.e4.core.contexts.IEclipseContext;
 import org.eclipse.e4.core.internal.services.EclipseAdapter;
 import org.eclipse.e4.core.services.adapter.Adapter;
 import org.eclipse.e4.core.services.contributions.IContributionFactory;
 import org.eclipse.e4.core.services.log.ILoggerProvider;
 import org.eclipse.e4.core.services.log.Logger;
-import org.eclipse.e4.core.services.statusreporter.StatusReporter;
 import org.eclipse.e4.core.services.translation.TranslationProviderFactory;
 import org.eclipse.e4.core.services.translation.TranslationService;
 import org.eclipse.e4.ui.di.UISynchronize;
@@ -40,13 +37,8 @@ import org.eclipse.e4.ui.internal.workbench.ModelServiceImpl;
 import org.eclipse.e4.ui.internal.workbench.ReflectionContributionFactory;
 import org.eclipse.e4.ui.internal.workbench.ResourceHandler;
 import org.eclipse.e4.ui.internal.workbench.WorkbenchLogger;
+import org.eclipse.e4.ui.model.application.MAddon;
 import org.eclipse.e4.ui.model.application.MApplication;
-import org.eclipse.e4.ui.model.application.MContribution;
-import org.eclipse.e4.ui.model.application.ui.MContext;
-import org.eclipse.e4.ui.model.application.ui.MElementContainer;
-import org.eclipse.e4.ui.model.application.ui.MUIElement;
-import org.eclipse.e4.ui.model.application.ui.advanced.MPerspective;
-import org.eclipse.e4.ui.model.application.ui.basic.MWindow;
 import org.eclipse.e4.ui.services.IServiceConstants;
 import org.eclipse.e4.ui.workbench.IExceptionHandler;
 import org.eclipse.e4.ui.workbench.IModelResourceHandler;
@@ -55,7 +47,6 @@ import org.eclipse.e4.ui.workbench.lifecycle.PreSave;
 import org.eclipse.e4.ui.workbench.lifecycle.ProcessAdditions;
 import org.eclipse.e4.ui.workbench.lifecycle.ProcessRemovals;
 import org.eclipse.e4.ui.workbench.modeling.EModelService;
-import org.eclipse.e4.ui.workbench.modeling.EPartService;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.equinox.app.IApplicationContext;
@@ -208,8 +199,10 @@ public class E4Application extends AbstractJFXApplication {
 		}
 
 		// Create the addons
-		for (MContribution addon : appModel.getAddons()) {
-			Object obj = factory.create(addon.getContributionURI(), appContext);
+		IEclipseContext addonStaticContext = EclipseContextFactory.create();
+		for (MAddon addon : appModel.getAddons()) {
+			addonStaticContext.set(MAddon.class, addon);
+			Object obj = factory.create(addon.getContributionURI(), appContext, addonStaticContext);
 			addon.setObject(obj);
 		}
 
@@ -246,27 +239,6 @@ public class E4Application extends AbstractJFXApplication {
 		// Instantiate the Workbench (which is responsible for
 		// 'running' the UI (if any)...
 		return workbench = new E4Workbench(appModel, appContext);
-	}
-
-	private String getArgValue(String argName, IApplicationContext appContext, boolean singledCmdArgValue) {
-		// Is it in the arg list ?
-		if (argName == null || argName.length() == 0)
-			return null;
-
-		if (singledCmdArgValue) {
-			for (int i = 0; i < args.length; i++) {
-				if (("-" + argName).equals(args[i]))
-					return "true";
-			}
-		} else {
-			for (int i = 0; i < args.length; i++) {
-				if (("-" + argName).equals(args[i]) && i + 1 < args.length)
-					return args[i + 1];
-			}
-		}
-
-		final String brandingProperty = appContext.getBrandingProperty(argName);
-		return brandingProperty == null ? System.getProperty(argName) : brandingProperty;
 	}
 
 	private MApplication loadApplicationModel(IApplicationContext appContext, IEclipseContext eclipseContext) {
@@ -315,6 +287,58 @@ public class E4Application extends AbstractJFXApplication {
 		theApp = (MApplication) resource.getContents().get(0);
 
 		return theApp;
+	}
+	
+	private String getArgValue(String argName, IApplicationContext appContext, boolean singledCmdArgValue) {
+		// Is it in the arg list ?
+		if (argName == null || argName.length() == 0)
+			return null;
+
+		if (singledCmdArgValue) {
+			for (int i = 0; i < args.length; i++) {
+				if (("-" + argName).equals(args[i]))
+					return "true";
+			}
+		} else {
+			for (int i = 0; i < args.length; i++) {
+				if (("-" + argName).equals(args[i]) && i + 1 < args.length)
+					return args[i + 1];
+			}
+		}
+
+		final String brandingProperty = appContext.getBrandingProperty(argName);
+		return brandingProperty == null ? System.getProperty(argName) : brandingProperty;
+	}
+
+	// TODO This should go into a different bundle
+	public static IEclipseContext createDefaultHeadlessContext() {
+			IEclipseContext serviceContext = E4Workbench.getServiceContext();
+
+			IExtensionRegistry registry = RegistryFactory.getRegistry();
+			ExceptionHandler exceptionHandler = new ExceptionHandler();
+			ReflectionContributionFactory contributionFactory = new ReflectionContributionFactory(
+					registry);
+			serviceContext.set(IContributionFactory.class, contributionFactory);
+			serviceContext.set(IExceptionHandler.class, exceptionHandler);
+			serviceContext.set(IExtensionRegistry.class, registry);
+
+			// translation
+			String locale = Locale.getDefault().toString();
+			serviceContext.set(TranslationService.LOCALE, locale);
+			TranslationService bundleTranslationProvider = TranslationProviderFactory
+					.bundleTranslationService(serviceContext);
+			serviceContext.set(TranslationService.class, bundleTranslationProvider);
+
+			serviceContext.set(Adapter.class, ContextInjectionFactory.make(
+					EclipseAdapter.class, serviceContext));
+
+			// No default log provider available
+			if (serviceContext.get(ILoggerProvider.class) == null) {
+				serviceContext.set(ILoggerProvider.class, ContextInjectionFactory
+						.make(DefaultLoggerProvider.class, serviceContext));
+			}
+
+			return serviceContext;
 	}
 
 	public static IEclipseContext createDefaultContext() {
