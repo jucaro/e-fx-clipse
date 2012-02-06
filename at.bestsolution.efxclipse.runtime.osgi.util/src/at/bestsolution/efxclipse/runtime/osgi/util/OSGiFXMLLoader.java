@@ -60,6 +60,7 @@ public class OSGiFXMLLoader {
 			
 			FXMLLoader loader = new FXMLLoader();
 			loader.setLocation(url);
+			loader.setClassLoader(classloader);
 			loader.setBuilderFactory(new JavaFXBuilderFactory());
 			
 			// If we are on 2.0.x we need to use another constructor
