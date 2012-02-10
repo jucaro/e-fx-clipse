@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin>
+
+   <extension
+         id="product"
+         point="org.eclipse.core.runtime.products">
+      <product
+            name="SWT Photo App"
+            application="org.eclipse.e4.ui.workbench.swt.E4Application">
+         <property
+               name="appName"
+               value="SWT Photo App">
+         </property>
+         <property
+               name="applicationXMI"
+               value="at.bestsolution.efxclipse.runtime.example.photoedit.app/Application.e4xmi">
+         </property>
+         <property
+               name="applicationCSS"
+               value="platform:/plugin/at.bestsolution.efxclipse.runtime.example.photoedit.app/css/default.css">
+         </property>
+      </product>
+   </extension>
+   <extension
+         id="fxproduct"
+         point="org.eclipse.core.runtime.products">
+      <product
+            application="at.bestsolution.efxclipse.runtime.workbench.application"
+            name="FX Photo App">
+         <property
+               name="appName"
+               value="FX Photo App">
+         </property>
+         <property
+               name="applicationXMI"
+               value="at.bestsolution.efxclipse.runtime.example.photoedit.app/Application.e4xmi">
+         </property>
+      </product>
+   </extension>
+
+</plugin>

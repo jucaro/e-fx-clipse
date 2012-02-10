@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<application:Application xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:application="http://www.eclipse.org/ui/2010/UIModel/application" xmlns:basic="http://www.eclipse.org/ui/2010/UIModel/application/ui/basic" xmi:id="_n5m88FEDEeGCHIroBKsimQ" elementId="org.eclipse.e4.ide.application" bindingContexts="_n5m88VEDEeGCHIroBKsimQ">
+  <children xsi:type="basic:TrimmedWindow" xmi:id="_n5m9B1EDEeGCHIroBKsimQ" label="at.bestsolution.efxclipse.runtime.example.photoedit.app" x="0" y="0" width="500" height="400">
+    <children xsi:type="basic:PartSashContainer" xmi:id="_3rBKwFEEEeGCHIroBKsimQ" horizontal="true">
+      <children xsi:type="basic:Part" xmi:id="_5HP4MFEEEeGCHIroBKsimQ" containerData="30" contributionURI="bundleclass://at.bestsolution.efxclipse.runtime.example.photoedit.ui/at.bestsolution.efxclipse.runtime.example.photoedit.ui.AlbumListView" label="Albums"/>
+      <children xsi:type="basic:PartSashContainer" xmi:id="_qrsIwFPREeGedONzLVN7rA" containerData="70">
+        <children xsi:type="basic:PartStack" xmi:id="_6PXW0FEEEeGCHIroBKsimQ" containerData="70">
+          <children xsi:type="basic:Part" xmi:id="_8zIUEFEEEeGCHIroBKsimQ" contributionURI="bundleclass://at.bestsolution.efxclipse.runtime.example.photoedit.ui/at.bestsolution.efxclipse.runtime.example.photoedit.ui.MediaEditor" label="Image Editor"/>
+        </children>
+        <children xsi:type="basic:Part" xmi:id="_ytLS8FPREeGedONzLVN7rA" containerData="30" contributionURI="bundleclass://at.bestsolution.efxclipse.runtime.example.photoedit.ui/at.bestsolution.efxclipse.runtime.example.photoedit.ui.AlbumContentView"/>
+      </children>
+    </children>
+    <mainMenu xmi:id="_n5m9CFEDEeGCHIroBKsimQ" elementId="menu:org.eclipse.ui.main.menu"/>
+  </children>
+  <bindingTables xmi:id="_n5m8_FEDEeGCHIroBKsimQ" bindingContext="_n5m88VEDEeGCHIroBKsimQ"/>
+  <rootContext xmi:id="_n5m88VEDEeGCHIroBKsimQ" elementId="org.eclipse.ui.contexts.dialogAndWindow" name="In Dialog and Windows">
+    <children xmi:id="_n5m88lEDEeGCHIroBKsimQ" elementId="org.eclipse.ui.contexts.window" name="In Windows"/>
+    <children xmi:id="_n5m881EDEeGCHIroBKsimQ" elementId="org.eclipse.ui.contexts.dialog" name="In Dialogs"/>
+  </rootContext>
+  <descriptors xmi:id="_HPkdwFEFEeGCHIroBKsimQ" contributionURI="bundleclass://at.bestsolution.efxclipse.runtime.example.photoedit.app/at.bestsolution.efxclipse.runtime.example.photoedit.app.ui.ImageEditorPart"/>
+  <addons xmi:id="_n5m89FEDEeGCHIroBKsimQ" elementId="org.eclipse.e4.core.commands.service" contributionURI="bundleclass://org.eclipse.e4.core.commands/org.eclipse.e4.core.commands.CommandServiceAddon"/>
+  <addons xmi:id="_n5m89VEDEeGCHIroBKsimQ" elementId="org.eclipse.e4.ui.contexts.service" contributionURI="bundleclass://org.eclipse.e4.ui.services/org.eclipse.e4.ui.services.ContextServiceAddon"/>
+  <addons xmi:id="_n5m89lEDEeGCHIroBKsimQ" elementId="org.eclipse.e4.ui.bindings.service" contributionURI="bundleclass://org.eclipse.e4.ui.bindings/org.eclipse.e4.ui.bindings.BindingServiceAddon"/>
+  <addons xmi:id="_n5m891EDEeGCHIroBKsimQ" elementId="org.eclipse.e4.ui.workbench.commands.model" contributionURI="bundleclass://org.eclipse.e4.ui.workbench/org.eclipse.e4.ui.internal.workbench.addons.CommandProcessingAddon"/>
+  <addons xmi:id="_n5m8-FEDEeGCHIroBKsimQ" elementId="org.eclipse.e4.ui.workbench.contexts.model" contributionURI="bundleclass://org.eclipse.e4.ui.workbench/org.eclipse.e4.ui.internal.workbench.addons.ContextProcessingAddon"/>
+  <addons xmi:id="_n5m8-VEDEeGCHIroBKsimQ" elementId="org.eclipse.e4.ui.workbench.bindings.model" contributionURI="bundleclass://org.eclipse.e4.ui.workbench.swt/org.eclipse.e4.ui.workbench.swt.util.BindingProcessingAddon"/>
+</application:Application>
