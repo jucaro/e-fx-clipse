@@ -70,21 +70,30 @@ public class PhotoeditSwitch<T> extends Switch<T> {
 	@Override
 	protected T doSwitch(int classifierID, EObject theEObject) {
 		switch (classifierID) {
+			case PhotoeditPackage.BASE_OBJECT: {
+				BaseObject baseObject = (BaseObject)theEObject;
+				T result = caseBaseObject(baseObject);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
 			case PhotoeditPackage.PHOTO_EDIT_APP: {
 				PhotoEditApp photoEditApp = (PhotoEditApp)theEObject;
 				T result = casePhotoEditApp(photoEditApp);
+				if (result == null) result = caseBaseObject(photoEditApp);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case PhotoeditPackage.ALBUM: {
 				Album album = (Album)theEObject;
 				T result = caseAlbum(album);
+				if (result == null) result = caseBaseObject(album);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case PhotoeditPackage.MEDIA: {
 				Media media = (Media)theEObject;
 				T result = caseMedia(media);
+				if (result == null) result = caseBaseObject(media);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -92,18 +101,21 @@ public class PhotoeditSwitch<T> extends Switch<T> {
 				Photo photo = (Photo)theEObject;
 				T result = casePhoto(photo);
 				if (result == null) result = caseMedia(photo);
+				if (result == null) result = caseBaseObject(photo);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case PhotoeditPackage.PHOTO_AREA: {
 				PhotoArea photoArea = (PhotoArea)theEObject;
 				T result = casePhotoArea(photoArea);
+				if (result == null) result = caseBaseObject(photoArea);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case PhotoeditPackage.SOURCE: {
 				Source source = (Source)theEObject;
 				T result = caseSource(source);
+				if (result == null) result = caseBaseObject(source);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -111,17 +123,42 @@ public class PhotoeditSwitch<T> extends Switch<T> {
 				BinarySource binarySource = (BinarySource)theEObject;
 				T result = caseBinarySource(binarySource);
 				if (result == null) result = caseSource(binarySource);
+				if (result == null) result = caseBaseObject(binarySource);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case PhotoeditPackage.URL_SOURCE: {
+				URLSource urlSource = (URLSource)theEObject;
+				T result = caseURLSource(urlSource);
+				if (result == null) result = caseSource(urlSource);
+				if (result == null) result = caseBaseObject(urlSource);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case PhotoeditPackage.BINARY_OBJECT: {
 				BinaryObject binaryObject = (BinaryObject)theEObject;
 				T result = caseBinaryObject(binaryObject);
+				if (result == null) result = caseBaseObject(binaryObject);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			default: return defaultCase(theEObject);
 		}
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Base Object</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Base Object</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseBaseObject(BaseObject object) {
+		return null;
 	}
 
 	/**
@@ -241,6 +278,21 @@ public class PhotoeditSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseBinaryObject(BinaryObject object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>URL Source</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>URL Source</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseURLSource(URLSource object) {
 		return null;
 	}
 

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<scr:component xmlns:scr="http://www.osgi.org/xmlns/scr/v1.1.0" name="at.bestsolution.efxclipse.runtime.example.photoedit.resource.xmi.resource">
+   <implementation class="at.bestsolution.efxclipse.runtime.example.photoedit.resource.xmi.XMIStorageResource"/>
+   <service>
+      <provide interface="at.bestsolution.efxclipse.runtime.example.photoedit.core.ResourceStore"/>
+   </service>
+</scr:component>

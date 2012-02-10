@@ -61,6 +61,34 @@ public interface PhotoeditPackage extends EPackage {
 	PhotoeditPackage eINSTANCE = at.bestsolution.efxclipse.runtime.example.photoedit.model.photoedit.impl.PhotoeditPackageImpl.init();
 
 	/**
+	 * The meta object id for the '{@link at.bestsolution.efxclipse.runtime.example.photoedit.model.photoedit.impl.BaseObjectImpl <em>Base Object</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see at.bestsolution.efxclipse.runtime.example.photoedit.model.photoedit.impl.BaseObjectImpl
+	 * @see at.bestsolution.efxclipse.runtime.example.photoedit.model.photoedit.impl.PhotoeditPackageImpl#getBaseObject()
+	 * @generated
+	 */
+	int BASE_OBJECT = 0;
+
+	/**
+	 * The feature id for the '<em><b>Uuid</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BASE_OBJECT__UUID = 0;
+
+	/**
+	 * The number of structural features of the '<em>Base Object</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BASE_OBJECT_FEATURE_COUNT = 1;
+
+	/**
 	 * The meta object id for the '{@link at.bestsolution.efxclipse.runtime.example.photoedit.model.photoedit.impl.PhotoEditAppImpl <em>Photo Edit App</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -68,7 +96,16 @@ public interface PhotoeditPackage extends EPackage {
 	 * @see at.bestsolution.efxclipse.runtime.example.photoedit.model.photoedit.impl.PhotoeditPackageImpl#getPhotoEditApp()
 	 * @generated
 	 */
-	int PHOTO_EDIT_APP = 0;
+	int PHOTO_EDIT_APP = 1;
+
+	/**
+	 * The feature id for the '<em><b>Uuid</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PHOTO_EDIT_APP__UUID = BASE_OBJECT__UUID;
 
 	/**
 	 * The feature id for the '<em><b>Albums</b></em>' containment reference list.
@@ -77,7 +114,7 @@ public interface PhotoeditPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PHOTO_EDIT_APP__ALBUMS = 0;
+	int PHOTO_EDIT_APP__ALBUMS = BASE_OBJECT_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of structural features of the '<em>Photo Edit App</em>' class.
@@ -86,7 +123,7 @@ public interface PhotoeditPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PHOTO_EDIT_APP_FEATURE_COUNT = 1;
+	int PHOTO_EDIT_APP_FEATURE_COUNT = BASE_OBJECT_FEATURE_COUNT + 1;
 
 	/**
 	 * The meta object id for the '{@link at.bestsolution.efxclipse.runtime.example.photoedit.model.photoedit.impl.AlbumImpl <em>Album</em>}' class.
@@ -96,16 +133,52 @@ public interface PhotoeditPackage extends EPackage {
 	 * @see at.bestsolution.efxclipse.runtime.example.photoedit.model.photoedit.impl.PhotoeditPackageImpl#getAlbum()
 	 * @generated
 	 */
-	int ALBUM = 1;
+	int ALBUM = 2;
 
 	/**
-	 * The feature id for the '<em><b>Media</b></em>' reference list.
+	 * The feature id for the '<em><b>Uuid</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ALBUM__MEDIA = 0;
+	int ALBUM__UUID = BASE_OBJECT__UUID;
+
+	/**
+	 * The feature id for the '<em><b>Media</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ALBUM__MEDIA = BASE_OBJECT_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Title</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ALBUM__TITLE = BASE_OBJECT_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Description</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ALBUM__DESCRIPTION = BASE_OBJECT_FEATURE_COUNT + 2;
+
+	/**
+	 * The feature id for the '<em><b>Cover Image</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ALBUM__COVER_IMAGE = BASE_OBJECT_FEATURE_COUNT + 3;
 
 	/**
 	 * The number of structural features of the '<em>Album</em>' class.
@@ -114,7 +187,7 @@ public interface PhotoeditPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ALBUM_FEATURE_COUNT = 1;
+	int ALBUM_FEATURE_COUNT = BASE_OBJECT_FEATURE_COUNT + 4;
 
 	/**
 	 * The meta object id for the '{@link at.bestsolution.efxclipse.runtime.example.photoedit.model.photoedit.impl.MediaImpl <em>Media</em>}' class.
@@ -124,7 +197,16 @@ public interface PhotoeditPackage extends EPackage {
 	 * @see at.bestsolution.efxclipse.runtime.example.photoedit.model.photoedit.impl.PhotoeditPackageImpl#getMedia()
 	 * @generated
 	 */
-	int MEDIA = 2;
+	int MEDIA = 3;
+
+	/**
+	 * The feature id for the '<em><b>Uuid</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MEDIA__UUID = BASE_OBJECT__UUID;
 
 	/**
 	 * The number of structural features of the '<em>Media</em>' class.
@@ -133,7 +215,7 @@ public interface PhotoeditPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MEDIA_FEATURE_COUNT = 0;
+	int MEDIA_FEATURE_COUNT = BASE_OBJECT_FEATURE_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link at.bestsolution.efxclipse.runtime.example.photoedit.model.photoedit.impl.PhotoImpl <em>Photo</em>}' class.
@@ -143,10 +225,19 @@ public interface PhotoeditPackage extends EPackage {
 	 * @see at.bestsolution.efxclipse.runtime.example.photoedit.model.photoedit.impl.PhotoeditPackageImpl#getPhoto()
 	 * @generated
 	 */
-	int PHOTO = 3;
+	int PHOTO = 4;
 
 	/**
-	 * The feature id for the '<em><b>Areas</b></em>' reference list.
+	 * The feature id for the '<em><b>Uuid</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PHOTO__UUID = MEDIA__UUID;
+
+	/**
+	 * The feature id for the '<em><b>Areas</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -173,7 +264,7 @@ public interface PhotoeditPackage extends EPackage {
 	int PHOTO__DESCRIPTION = MEDIA_FEATURE_COUNT + 2;
 
 	/**
-	 * The feature id for the '<em><b>Source</b></em>' reference.
+	 * The feature id for the '<em><b>Source</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -198,7 +289,16 @@ public interface PhotoeditPackage extends EPackage {
 	 * @see at.bestsolution.efxclipse.runtime.example.photoedit.model.photoedit.impl.PhotoeditPackageImpl#getPhotoArea()
 	 * @generated
 	 */
-	int PHOTO_AREA = 4;
+	int PHOTO_AREA = 5;
+
+	/**
+	 * The feature id for the '<em><b>Uuid</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PHOTO_AREA__UUID = BASE_OBJECT__UUID;
 
 	/**
 	 * The feature id for the '<em><b>X</b></em>' attribute.
@@ -207,7 +307,7 @@ public interface PhotoeditPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PHOTO_AREA__X = 0;
+	int PHOTO_AREA__X = BASE_OBJECT_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Y</b></em>' attribute.
@@ -216,7 +316,7 @@ public interface PhotoeditPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PHOTO_AREA__Y = 1;
+	int PHOTO_AREA__Y = BASE_OBJECT_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Width</b></em>' attribute.
@@ -225,7 +325,7 @@ public interface PhotoeditPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PHOTO_AREA__WIDTH = 2;
+	int PHOTO_AREA__WIDTH = BASE_OBJECT_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Height</b></em>' attribute.
@@ -234,7 +334,7 @@ public interface PhotoeditPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PHOTO_AREA__HEIGHT = 3;
+	int PHOTO_AREA__HEIGHT = BASE_OBJECT_FEATURE_COUNT + 3;
 
 	/**
 	 * The number of structural features of the '<em>Photo Area</em>' class.
@@ -243,7 +343,7 @@ public interface PhotoeditPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PHOTO_AREA_FEATURE_COUNT = 4;
+	int PHOTO_AREA_FEATURE_COUNT = BASE_OBJECT_FEATURE_COUNT + 4;
 
 	/**
 	 * The meta object id for the '{@link at.bestsolution.efxclipse.runtime.example.photoedit.model.photoedit.impl.SourceImpl <em>Source</em>}' class.
@@ -253,7 +353,16 @@ public interface PhotoeditPackage extends EPackage {
 	 * @see at.bestsolution.efxclipse.runtime.example.photoedit.model.photoedit.impl.PhotoeditPackageImpl#getSource()
 	 * @generated
 	 */
-	int SOURCE = 5;
+	int SOURCE = 6;
+
+	/**
+	 * The feature id for the '<em><b>Uuid</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SOURCE__UUID = BASE_OBJECT__UUID;
 
 	/**
 	 * The number of structural features of the '<em>Source</em>' class.
@@ -262,7 +371,7 @@ public interface PhotoeditPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SOURCE_FEATURE_COUNT = 0;
+	int SOURCE_FEATURE_COUNT = BASE_OBJECT_FEATURE_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link at.bestsolution.efxclipse.runtime.example.photoedit.model.photoedit.impl.BinarySourceImpl <em>Binary Source</em>}' class.
@@ -272,7 +381,16 @@ public interface PhotoeditPackage extends EPackage {
 	 * @see at.bestsolution.efxclipse.runtime.example.photoedit.model.photoedit.impl.PhotoeditPackageImpl#getBinarySource()
 	 * @generated
 	 */
-	int BINARY_SOURCE = 6;
+	int BINARY_SOURCE = 7;
+
+	/**
+	 * The feature id for the '<em><b>Uuid</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BINARY_SOURCE__UUID = SOURCE__UUID;
 
 	/**
 	 * The feature id for the '<em><b>Preview Object</b></em>' containment reference.
@@ -309,7 +427,62 @@ public interface PhotoeditPackage extends EPackage {
 	 * @see at.bestsolution.efxclipse.runtime.example.photoedit.model.photoedit.impl.PhotoeditPackageImpl#getBinaryObject()
 	 * @generated
 	 */
-	int BINARY_OBJECT = 7;
+	int BINARY_OBJECT = 9;
+
+	/**
+	 * The meta object id for the '{@link at.bestsolution.efxclipse.runtime.example.photoedit.model.photoedit.impl.URLSourceImpl <em>URL Source</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see at.bestsolution.efxclipse.runtime.example.photoedit.model.photoedit.impl.URLSourceImpl
+	 * @see at.bestsolution.efxclipse.runtime.example.photoedit.model.photoedit.impl.PhotoeditPackageImpl#getURLSource()
+	 * @generated
+	 */
+	int URL_SOURCE = 8;
+
+	/**
+	 * The feature id for the '<em><b>Uuid</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int URL_SOURCE__UUID = SOURCE__UUID;
+
+	/**
+	 * The feature id for the '<em><b>Preview Object URL</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int URL_SOURCE__PREVIEW_OBJECT_URL = SOURCE_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Object URL</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int URL_SOURCE__OBJECT_URL = SOURCE_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of structural features of the '<em>URL Source</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int URL_SOURCE_FEATURE_COUNT = SOURCE_FEATURE_COUNT + 2;
+
+	/**
+	 * The feature id for the '<em><b>Uuid</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BINARY_OBJECT__UUID = BASE_OBJECT__UUID;
 
 	/**
 	 * The feature id for the '<em><b>Content</b></em>' attribute.
@@ -318,7 +491,7 @@ public interface PhotoeditPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int BINARY_OBJECT__CONTENT = 0;
+	int BINARY_OBJECT__CONTENT = BASE_OBJECT_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of structural features of the '<em>Binary Object</em>' class.
@@ -327,7 +500,7 @@ public interface PhotoeditPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int BINARY_OBJECT_FEATURE_COUNT = 1;
+	int BINARY_OBJECT_FEATURE_COUNT = BASE_OBJECT_FEATURE_COUNT + 1;
 
 	/**
 	 * The meta object id for the '<em>Input Stream</em>' data type.
@@ -337,8 +510,29 @@ public interface PhotoeditPackage extends EPackage {
 	 * @see at.bestsolution.efxclipse.runtime.example.photoedit.model.photoedit.impl.PhotoeditPackageImpl#getInputStream()
 	 * @generated
 	 */
-	int INPUT_STREAM = 8;
+	int INPUT_STREAM = 10;
 
+
+	/**
+	 * Returns the meta object for class '{@link at.bestsolution.efxclipse.runtime.example.photoedit.model.photoedit.BaseObject <em>Base Object</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Base Object</em>'.
+	 * @see at.bestsolution.efxclipse.runtime.example.photoedit.model.photoedit.BaseObject
+	 * @generated
+	 */
+	EClass getBaseObject();
+
+	/**
+	 * Returns the meta object for the attribute '{@link at.bestsolution.efxclipse.runtime.example.photoedit.model.photoedit.BaseObject#getUuid <em>Uuid</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Uuid</em>'.
+	 * @see at.bestsolution.efxclipse.runtime.example.photoedit.model.photoedit.BaseObject#getUuid()
+	 * @see #getBaseObject()
+	 * @generated
+	 */
+	EAttribute getBaseObject_Uuid();
 
 	/**
 	 * Returns the meta object for class '{@link at.bestsolution.efxclipse.runtime.example.photoedit.model.photoedit.PhotoEditApp <em>Photo Edit App</em>}'.
@@ -372,15 +566,48 @@ public interface PhotoeditPackage extends EPackage {
 	EClass getAlbum();
 
 	/**
-	 * Returns the meta object for the reference list '{@link at.bestsolution.efxclipse.runtime.example.photoedit.model.photoedit.Album#getMedia <em>Media</em>}'.
+	 * Returns the meta object for the containment reference list '{@link at.bestsolution.efxclipse.runtime.example.photoedit.model.photoedit.Album#getMedia <em>Media</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Media</em>'.
+	 * @return the meta object for the containment reference list '<em>Media</em>'.
 	 * @see at.bestsolution.efxclipse.runtime.example.photoedit.model.photoedit.Album#getMedia()
 	 * @see #getAlbum()
 	 * @generated
 	 */
 	EReference getAlbum_Media();
+
+	/**
+	 * Returns the meta object for the attribute '{@link at.bestsolution.efxclipse.runtime.example.photoedit.model.photoedit.Album#getTitle <em>Title</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Title</em>'.
+	 * @see at.bestsolution.efxclipse.runtime.example.photoedit.model.photoedit.Album#getTitle()
+	 * @see #getAlbum()
+	 * @generated
+	 */
+	EAttribute getAlbum_Title();
+
+	/**
+	 * Returns the meta object for the attribute '{@link at.bestsolution.efxclipse.runtime.example.photoedit.model.photoedit.Album#getDescription <em>Description</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Description</em>'.
+	 * @see at.bestsolution.efxclipse.runtime.example.photoedit.model.photoedit.Album#getDescription()
+	 * @see #getAlbum()
+	 * @generated
+	 */
+	EAttribute getAlbum_Description();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link at.bestsolution.efxclipse.runtime.example.photoedit.model.photoedit.Album#getCoverImage <em>Cover Image</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Cover Image</em>'.
+	 * @see at.bestsolution.efxclipse.runtime.example.photoedit.model.photoedit.Album#getCoverImage()
+	 * @see #getAlbum()
+	 * @generated
+	 */
+	EReference getAlbum_CoverImage();
 
 	/**
 	 * Returns the meta object for class '{@link at.bestsolution.efxclipse.runtime.example.photoedit.model.photoedit.Media <em>Media</em>}'.
@@ -403,10 +630,10 @@ public interface PhotoeditPackage extends EPackage {
 	EClass getPhoto();
 
 	/**
-	 * Returns the meta object for the reference list '{@link at.bestsolution.efxclipse.runtime.example.photoedit.model.photoedit.Photo#getAreas <em>Areas</em>}'.
+	 * Returns the meta object for the containment reference list '{@link at.bestsolution.efxclipse.runtime.example.photoedit.model.photoedit.Photo#getAreas <em>Areas</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Areas</em>'.
+	 * @return the meta object for the containment reference list '<em>Areas</em>'.
 	 * @see at.bestsolution.efxclipse.runtime.example.photoedit.model.photoedit.Photo#getAreas()
 	 * @see #getPhoto()
 	 * @generated
@@ -436,10 +663,10 @@ public interface PhotoeditPackage extends EPackage {
 	EAttribute getPhoto_Description();
 
 	/**
-	 * Returns the meta object for the reference '{@link at.bestsolution.efxclipse.runtime.example.photoedit.model.photoedit.Photo#getSource <em>Source</em>}'.
+	 * Returns the meta object for the containment reference '{@link at.bestsolution.efxclipse.runtime.example.photoedit.model.photoedit.Photo#getSource <em>Source</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Source</em>'.
+	 * @return the meta object for the containment reference '<em>Source</em>'.
 	 * @see at.bestsolution.efxclipse.runtime.example.photoedit.model.photoedit.Photo#getSource()
 	 * @see #getPhoto()
 	 * @generated
@@ -564,6 +791,38 @@ public interface PhotoeditPackage extends EPackage {
 	EAttribute getBinaryObject_Content();
 
 	/**
+	 * Returns the meta object for class '{@link at.bestsolution.efxclipse.runtime.example.photoedit.model.photoedit.URLSource <em>URL Source</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>URL Source</em>'.
+	 * @see at.bestsolution.efxclipse.runtime.example.photoedit.model.photoedit.URLSource
+	 * @generated
+	 */
+	EClass getURLSource();
+
+	/**
+	 * Returns the meta object for the attribute '{@link at.bestsolution.efxclipse.runtime.example.photoedit.model.photoedit.URLSource#getPreviewObjectURL <em>Preview Object URL</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Preview Object URL</em>'.
+	 * @see at.bestsolution.efxclipse.runtime.example.photoedit.model.photoedit.URLSource#getPreviewObjectURL()
+	 * @see #getURLSource()
+	 * @generated
+	 */
+	EAttribute getURLSource_PreviewObjectURL();
+
+	/**
+	 * Returns the meta object for the attribute '{@link at.bestsolution.efxclipse.runtime.example.photoedit.model.photoedit.URLSource#getObjectURL <em>Object URL</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Object URL</em>'.
+	 * @see at.bestsolution.efxclipse.runtime.example.photoedit.model.photoedit.URLSource#getObjectURL()
+	 * @see #getURLSource()
+	 * @generated
+	 */
+	EAttribute getURLSource_ObjectURL();
+
+	/**
 	 * Returns the meta object for data type '{@link java.io.InputStream <em>Input Stream</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -597,6 +856,24 @@ public interface PhotoeditPackage extends EPackage {
 	 */
 	interface Literals {
 		/**
+		 * The meta object literal for the '{@link at.bestsolution.efxclipse.runtime.example.photoedit.model.photoedit.impl.BaseObjectImpl <em>Base Object</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see at.bestsolution.efxclipse.runtime.example.photoedit.model.photoedit.impl.BaseObjectImpl
+		 * @see at.bestsolution.efxclipse.runtime.example.photoedit.model.photoedit.impl.PhotoeditPackageImpl#getBaseObject()
+		 * @generated
+		 */
+		EClass BASE_OBJECT = eINSTANCE.getBaseObject();
+
+		/**
+		 * The meta object literal for the '<em><b>Uuid</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute BASE_OBJECT__UUID = eINSTANCE.getBaseObject_Uuid();
+
+		/**
 		 * The meta object literal for the '{@link at.bestsolution.efxclipse.runtime.example.photoedit.model.photoedit.impl.PhotoEditAppImpl <em>Photo Edit App</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -625,12 +902,36 @@ public interface PhotoeditPackage extends EPackage {
 		EClass ALBUM = eINSTANCE.getAlbum();
 
 		/**
-		 * The meta object literal for the '<em><b>Media</b></em>' reference list feature.
+		 * The meta object literal for the '<em><b>Media</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
 		EReference ALBUM__MEDIA = eINSTANCE.getAlbum_Media();
+
+		/**
+		 * The meta object literal for the '<em><b>Title</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute ALBUM__TITLE = eINSTANCE.getAlbum_Title();
+
+		/**
+		 * The meta object literal for the '<em><b>Description</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute ALBUM__DESCRIPTION = eINSTANCE.getAlbum_Description();
+
+		/**
+		 * The meta object literal for the '<em><b>Cover Image</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ALBUM__COVER_IMAGE = eINSTANCE.getAlbum_CoverImage();
 
 		/**
 		 * The meta object literal for the '{@link at.bestsolution.efxclipse.runtime.example.photoedit.model.photoedit.impl.MediaImpl <em>Media</em>}' class.
@@ -653,7 +954,7 @@ public interface PhotoeditPackage extends EPackage {
 		EClass PHOTO = eINSTANCE.getPhoto();
 
 		/**
-		 * The meta object literal for the '<em><b>Areas</b></em>' reference list feature.
+		 * The meta object literal for the '<em><b>Areas</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
@@ -677,7 +978,7 @@ public interface PhotoeditPackage extends EPackage {
 		EAttribute PHOTO__DESCRIPTION = eINSTANCE.getPhoto_Description();
 
 		/**
-		 * The meta object literal for the '<em><b>Source</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Source</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
@@ -779,6 +1080,32 @@ public interface PhotoeditPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute BINARY_OBJECT__CONTENT = eINSTANCE.getBinaryObject_Content();
+
+		/**
+		 * The meta object literal for the '{@link at.bestsolution.efxclipse.runtime.example.photoedit.model.photoedit.impl.URLSourceImpl <em>URL Source</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see at.bestsolution.efxclipse.runtime.example.photoedit.model.photoedit.impl.URLSourceImpl
+		 * @see at.bestsolution.efxclipse.runtime.example.photoedit.model.photoedit.impl.PhotoeditPackageImpl#getURLSource()
+		 * @generated
+		 */
+		EClass URL_SOURCE = eINSTANCE.getURLSource();
+
+		/**
+		 * The meta object literal for the '<em><b>Preview Object URL</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute URL_SOURCE__PREVIEW_OBJECT_URL = eINSTANCE.getURLSource_PreviewObjectURL();
+
+		/**
+		 * The meta object literal for the '<em><b>Object URL</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute URL_SOURCE__OBJECT_URL = eINSTANCE.getURLSource_ObjectURL();
 
 		/**
 		 * The meta object literal for the '<em>Input Stream</em>' data type.

@@ -80,6 +80,15 @@ public interface PhotoeditFactory extends EFactory {
 	BinaryObject createBinaryObject();
 
 	/**
+	 * Returns a new object of class '<em>URL Source</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>URL Source</em>'.
+	 * @generated
+	 */
+	URLSource createURLSource();
+
+	/**
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

@@ -20,7 +20,7 @@ import org.eclipse.emf.ecore.EObject;
  * @model abstract="true"
  * @generated
  */
-public interface Source extends EObject {
+public interface Source extends BaseObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

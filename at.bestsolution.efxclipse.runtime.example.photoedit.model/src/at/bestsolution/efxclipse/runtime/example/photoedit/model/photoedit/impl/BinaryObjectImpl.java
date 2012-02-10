@@ -29,7 +29,7 @@ import org.eclipse.emf.ecore.impl.EObjectImpl;
  *
  * @generated
  */
-public class BinaryObjectImpl extends EObjectImpl implements BinaryObject {
+public class BinaryObjectImpl extends BaseObjectImpl implements BinaryObject {
 	/**
 	 * The default value of the '{@link #getContent() <em>Content</em>}' attribute.
 	 * <!-- begin-user-doc -->

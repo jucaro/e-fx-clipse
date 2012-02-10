@@ -26,7 +26,7 @@ import org.eclipse.emf.ecore.EObject;
  * @model
  * @generated
  */
-public interface PhotoEditApp extends EObject {
+public interface PhotoEditApp extends BaseObject {
 	/**
 	 * Returns the value of the '<em><b>Albums</b></em>' containment reference list.
 	 * The list contents are of type {@link at.bestsolution.efxclipse.runtime.example.photoedit.model.photoedit.Album}.

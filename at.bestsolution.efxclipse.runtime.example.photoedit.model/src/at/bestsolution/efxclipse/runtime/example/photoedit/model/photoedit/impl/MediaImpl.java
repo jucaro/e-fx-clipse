@@ -22,7 +22,7 @@ import org.eclipse.emf.ecore.impl.EObjectImpl;
  *
  * @generated
  */
-public abstract class MediaImpl extends EObjectImpl implements Media {
+public abstract class MediaImpl extends BaseObjectImpl implements Media {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

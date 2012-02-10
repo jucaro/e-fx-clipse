@@ -15,6 +15,7 @@ import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
 
+import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
@@ -22,6 +23,8 @@ import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
+import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.InternalEList;
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 
 /**
@@ -42,7 +45,7 @@ import org.eclipse.emf.ecore.util.EObjectResolvingEList;
  */
 public class PhotoImpl extends MediaImpl implements Photo {
 	/**
-	 * The cached value of the '{@link #getAreas() <em>Areas</em>}' reference list.
+	 * The cached value of the '{@link #getAreas() <em>Areas</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getAreas()
@@ -92,7 +95,7 @@ public class PhotoImpl extends MediaImpl implements Photo {
 	protected String description = DESCRIPTION_EDEFAULT;
 
 	/**
-	 * The cached value of the '{@link #getSource() <em>Source</em>}' reference.
+	 * The cached value of the '{@link #getSource() <em>Source</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getSource()
@@ -127,7 +130,7 @@ public class PhotoImpl extends MediaImpl implements Photo {
 	 */
 	public EList<PhotoArea> getAreas() {
 		if (areas == null) {
-			areas = new EObjectResolvingEList<PhotoArea>(PhotoArea.class, this, PhotoeditPackage.PHOTO__AREAS);
+			areas = new EObjectContainmentEList<PhotoArea>(PhotoArea.class, this, PhotoeditPackage.PHOTO__AREAS);
 		}
 		return areas;
 	}
@@ -180,14 +183,6 @@ public class PhotoImpl extends MediaImpl implements Photo {
 	 * @generated
 	 */
 	public Source getSource() {
-		if (source != null && source.eIsProxy()) {
-			InternalEObject oldSource = (InternalEObject)source;
-			source = (Source)eResolveProxy(oldSource);
-			if (source != oldSource) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PhotoeditPackage.PHOTO__SOURCE, oldSource, source));
-			}
-		}
 		return source;
 	}
 
@@ -196,8 +191,14 @@ public class PhotoImpl extends MediaImpl implements Photo {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Source basicGetSource() {
-		return source;
+	public NotificationChain basicSetSource(Source newSource, NotificationChain msgs) {
+		Source oldSource = source;
+		source = newSource;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, PhotoeditPackage.PHOTO__SOURCE, oldSource, newSource);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
 	}
 
 	/**
@@ -206,10 +207,33 @@ public class PhotoImpl extends MediaImpl implements Photo {
 	 * @generated
 	 */
 	public void setSource(Source newSource) {
-		Source oldSource = source;
-		source = newSource;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PhotoeditPackage.PHOTO__SOURCE, oldSource, source));
+		if (newSource != source) {
+			NotificationChain msgs = null;
+			if (source != null)
+				msgs = ((InternalEObject)source).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - PhotoeditPackage.PHOTO__SOURCE, null, msgs);
+			if (newSource != null)
+				msgs = ((InternalEObject)newSource).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - PhotoeditPackage.PHOTO__SOURCE, null, msgs);
+			msgs = basicSetSource(newSource, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PhotoeditPackage.PHOTO__SOURCE, newSource, newSource));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+			case PhotoeditPackage.PHOTO__AREAS:
+				return ((InternalEList<?>)getAreas()).basicRemove(otherEnd, msgs);
+			case PhotoeditPackage.PHOTO__SOURCE:
+				return basicSetSource(null, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
 
 	/**
@@ -227,8 +251,7 @@ public class PhotoImpl extends MediaImpl implements Photo {
 			case PhotoeditPackage.PHOTO__DESCRIPTION:
 				return getDescription();
 			case PhotoeditPackage.PHOTO__SOURCE:
-				if (resolve) return getSource();
-				return basicGetSource();
+				return getSource();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}

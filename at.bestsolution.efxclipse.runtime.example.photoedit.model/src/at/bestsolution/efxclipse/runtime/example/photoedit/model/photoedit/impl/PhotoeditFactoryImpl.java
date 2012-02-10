@@ -68,6 +68,7 @@ public class PhotoeditFactoryImpl extends EFactoryImpl implements PhotoeditFacto
 			case PhotoeditPackage.PHOTO: return createPhoto();
 			case PhotoeditPackage.PHOTO_AREA: return createPhotoArea();
 			case PhotoeditPackage.BINARY_SOURCE: return createBinarySource();
+			case PhotoeditPackage.URL_SOURCE: return createURLSource();
 			case PhotoeditPackage.BINARY_OBJECT: return createBinaryObject();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
@@ -162,6 +163,16 @@ public class PhotoeditFactoryImpl extends EFactoryImpl implements PhotoeditFacto
 	public BinaryObject createBinaryObject() {
 		BinaryObjectImpl binaryObject = new BinaryObjectImpl();
 		return binaryObject;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public URLSource createURLSource() {
+		URLSourceImpl urlSource = new URLSourceImpl();
+		return urlSource;
 	}
 
 	/**

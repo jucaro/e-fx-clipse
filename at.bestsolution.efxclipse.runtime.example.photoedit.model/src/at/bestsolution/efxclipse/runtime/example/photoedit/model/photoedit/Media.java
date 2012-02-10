@@ -18,5 +18,5 @@ import org.eclipse.emf.ecore.EObject;
  * @model abstract="true"
  * @generated
  */
-public interface Media extends EObject {
+public interface Media extends BaseObject {
 } // Media

@@ -37,7 +37,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *
  * @generated
  */
-public class PhotoEditAppImpl extends EObjectImpl implements PhotoEditApp {
+public class PhotoEditAppImpl extends BaseObjectImpl implements PhotoEditApp {
 	/**
 	 * The cached value of the '{@link #getAlbums() <em>Albums</em>}' containment reference list.
 	 * <!-- begin-user-doc -->

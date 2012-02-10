@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="ASCII"?>
+<photoedit:PhotoEditApp
+    xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:photoedit="http://efxclipse.org/examples/photoedit/v1.0"
+    xsi:schemaLocation="http://efxclipse.org/examples/photoedit/v1.0 PhotoEdit.ecore">
+  <albums title="Mountains 2011"
+      description="Photos from hikes in 2011">
+    <media xsi:type="photoedit:Photo"
+        title="Photo 1"
+        description=""/>
+    <coverImage>
+      <source
+          xsi:type="photoedit:URLSource"
+          previewObjectURL="platform:/plugin/at.bestsolution.efxclipse.runtime.example.photoedit.model/model/icons/im-user.png"
+          objectURL="platform:/plugin/at.bestsolution.efxclipse.runtime.example.photoedit.model/model/icons/im-user.png"/>
+    </coverImage>
+  </albums>
+  <albums title="Holiday 2011"
+      description="Holiday pictures 2011">
+    <coverImage>
+      <source
+          xsi:type="photoedit:URLSource"
+          previewObjectURL="platform:/plugin/at.bestsolution.efxclipse.runtime.example.photoedit.model/model/icons/preferences-desktop-wallpaper.png"
+          objectURL="platform:/plugin/at.bestsolution.efxclipse.runtime.example.photoedit.model/model/icons/preferences-desktop-wallpaper.png"/>
+    </coverImage>
+  </albums>
+</photoedit:PhotoEditApp>

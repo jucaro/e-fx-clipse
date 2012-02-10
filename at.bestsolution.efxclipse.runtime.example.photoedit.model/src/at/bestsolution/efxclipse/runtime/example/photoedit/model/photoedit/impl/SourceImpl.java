@@ -24,7 +24,7 @@ import org.eclipse.emf.ecore.impl.EObjectImpl;
  *
  * @generated
  */
-public abstract class SourceImpl extends EObjectImpl implements Source {
+public abstract class SourceImpl extends BaseObjectImpl implements Source {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

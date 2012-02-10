@@ -29,7 +29,7 @@ import org.eclipse.emf.common.util.EList;
  */
 public interface Photo extends Media {
 	/**
-	 * Returns the value of the '<em><b>Areas</b></em>' reference list.
+	 * Returns the value of the '<em><b>Areas</b></em>' containment reference list.
 	 * The list contents are of type {@link at.bestsolution.efxclipse.runtime.example.photoedit.model.photoedit.PhotoArea}.
 	 * <!-- begin-user-doc -->
 	 * <p>
@@ -37,9 +37,9 @@ public interface Photo extends Media {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Areas</em>' reference list.
+	 * @return the value of the '<em>Areas</em>' containment reference list.
 	 * @see at.bestsolution.efxclipse.runtime.example.photoedit.model.photoedit.PhotoeditPackage#getPhoto_Areas()
-	 * @model
+	 * @model containment="true"
 	 * @generated
 	 */
 	EList<PhotoArea> getAreas();
@@ -97,26 +97,26 @@ public interface Photo extends Media {
 	void setDescription(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Source</b></em>' reference.
+	 * Returns the value of the '<em><b>Source</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Source</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Source</em>' reference.
+	 * @return the value of the '<em>Source</em>' containment reference.
 	 * @see #setSource(Source)
 	 * @see at.bestsolution.efxclipse.runtime.example.photoedit.model.photoedit.PhotoeditPackage#getPhoto_Source()
-	 * @model
+	 * @model containment="true"
 	 * @generated
 	 */
 	Source getSource();
 
 	/**
-	 * Sets the value of the '{@link at.bestsolution.efxclipse.runtime.example.photoedit.model.photoedit.Photo#getSource <em>Source</em>}' reference.
+	 * Sets the value of the '{@link at.bestsolution.efxclipse.runtime.example.photoedit.model.photoedit.Photo#getSource <em>Source</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Source</em>' reference.
+	 * @param value the new value of the '<em>Source</em>' containment reference.
 	 * @see #getSource()
 	 * @generated
 	 */

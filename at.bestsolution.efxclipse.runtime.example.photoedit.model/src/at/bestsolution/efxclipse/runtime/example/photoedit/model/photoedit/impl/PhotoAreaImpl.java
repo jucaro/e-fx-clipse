@@ -32,7 +32,7 @@ import org.eclipse.emf.ecore.impl.EObjectImpl;
  *
  * @generated
  */
-public class PhotoAreaImpl extends EObjectImpl implements PhotoArea {
+public class PhotoAreaImpl extends BaseObjectImpl implements PhotoArea {
 	/**
 	 * The default value of the '{@link #getX() <em>X</em>}' attribute.
 	 * <!-- begin-user-doc -->

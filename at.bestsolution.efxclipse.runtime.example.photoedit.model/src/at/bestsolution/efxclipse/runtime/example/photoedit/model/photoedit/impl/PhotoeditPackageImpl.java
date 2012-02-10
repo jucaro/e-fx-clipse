@@ -7,6 +7,7 @@
 package at.bestsolution.efxclipse.runtime.example.photoedit.model.photoedit.impl;
 
 import at.bestsolution.efxclipse.runtime.example.photoedit.model.photoedit.Album;
+import at.bestsolution.efxclipse.runtime.example.photoedit.model.photoedit.BaseObject;
 import at.bestsolution.efxclipse.runtime.example.photoedit.model.photoedit.BinaryObject;
 import at.bestsolution.efxclipse.runtime.example.photoedit.model.photoedit.BinarySource;
 import at.bestsolution.efxclipse.runtime.example.photoedit.model.photoedit.Media;
@@ -17,6 +18,7 @@ import at.bestsolution.efxclipse.runtime.example.photoedit.model.photoedit.Photo
 import at.bestsolution.efxclipse.runtime.example.photoedit.model.photoedit.PhotoeditPackage;
 import at.bestsolution.efxclipse.runtime.example.photoedit.model.photoedit.Source;
 
+import at.bestsolution.efxclipse.runtime.example.photoedit.model.photoedit.URLSource;
 import java.io.InputStream;
 
 import org.eclipse.emf.ecore.EAttribute;
@@ -34,6 +36,13 @@ import org.eclipse.emf.ecore.impl.EPackageImpl;
  * @generated
  */
 public class PhotoeditPackageImpl extends EPackageImpl implements PhotoeditPackage {
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass baseObjectEClass = null;
+
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -89,6 +98,13 @@ public class PhotoeditPackageImpl extends EPackageImpl implements PhotoeditPacka
 	 * @generated
 	 */
 	private EClass binaryObjectEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass urlSourceEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -163,6 +179,24 @@ public class PhotoeditPackageImpl extends EPackageImpl implements PhotoeditPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EClass getBaseObject() {
+		return baseObjectEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getBaseObject_Uuid() {
+		return (EAttribute)baseObjectEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getPhotoEditApp() {
 		return photoEditAppEClass;
 	}
@@ -192,6 +226,33 @@ public class PhotoeditPackageImpl extends EPackageImpl implements PhotoeditPacka
 	 */
 	public EReference getAlbum_Media() {
 		return (EReference)albumEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getAlbum_Title() {
+		return (EAttribute)albumEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getAlbum_Description() {
+		return (EAttribute)albumEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getAlbum_CoverImage() {
+		return (EReference)albumEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -352,6 +413,33 @@ public class PhotoeditPackageImpl extends EPackageImpl implements PhotoeditPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EClass getURLSource() {
+		return urlSourceEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getURLSource_PreviewObjectURL() {
+		return (EAttribute)urlSourceEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getURLSource_ObjectURL() {
+		return (EAttribute)urlSourceEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EDataType getInputStream() {
 		return inputStreamEDataType;
 	}
@@ -384,11 +472,17 @@ public class PhotoeditPackageImpl extends EPackageImpl implements PhotoeditPacka
 		isCreated = true;
 
 		// Create classes and their features
+		baseObjectEClass = createEClass(BASE_OBJECT);
+		createEAttribute(baseObjectEClass, BASE_OBJECT__UUID);
+
 		photoEditAppEClass = createEClass(PHOTO_EDIT_APP);
 		createEReference(photoEditAppEClass, PHOTO_EDIT_APP__ALBUMS);
 
 		albumEClass = createEClass(ALBUM);
 		createEReference(albumEClass, ALBUM__MEDIA);
+		createEAttribute(albumEClass, ALBUM__TITLE);
+		createEAttribute(albumEClass, ALBUM__DESCRIPTION);
+		createEReference(albumEClass, ALBUM__COVER_IMAGE);
 
 		mediaEClass = createEClass(MEDIA);
 
@@ -409,6 +503,10 @@ public class PhotoeditPackageImpl extends EPackageImpl implements PhotoeditPacka
 		binarySourceEClass = createEClass(BINARY_SOURCE);
 		createEReference(binarySourceEClass, BINARY_SOURCE__PREVIEW_OBJECT);
 		createEReference(binarySourceEClass, BINARY_SOURCE__OBJECT);
+
+		urlSourceEClass = createEClass(URL_SOURCE);
+		createEAttribute(urlSourceEClass, URL_SOURCE__PREVIEW_OBJECT_URL);
+		createEAttribute(urlSourceEClass, URL_SOURCE__OBJECT_URL);
 
 		binaryObjectEClass = createEClass(BINARY_OBJECT);
 		createEAttribute(binaryObjectEClass, BINARY_OBJECT__CONTENT);
@@ -445,23 +543,36 @@ public class PhotoeditPackageImpl extends EPackageImpl implements PhotoeditPacka
 		// Set bounds for type parameters
 
 		// Add supertypes to classes
+		photoEditAppEClass.getESuperTypes().add(this.getBaseObject());
+		albumEClass.getESuperTypes().add(this.getBaseObject());
+		mediaEClass.getESuperTypes().add(this.getBaseObject());
 		photoEClass.getESuperTypes().add(this.getMedia());
+		photoAreaEClass.getESuperTypes().add(this.getBaseObject());
+		sourceEClass.getESuperTypes().add(this.getBaseObject());
 		binarySourceEClass.getESuperTypes().add(this.getSource());
+		urlSourceEClass.getESuperTypes().add(this.getSource());
+		binaryObjectEClass.getESuperTypes().add(this.getBaseObject());
 
 		// Initialize classes and features; add operations and parameters
+		initEClass(baseObjectEClass, BaseObject.class, "BaseObject", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getBaseObject_Uuid(), ecorePackage.getEString(), "uuid", null, 0, 1, BaseObject.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
 		initEClass(photoEditAppEClass, PhotoEditApp.class, "PhotoEditApp", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getPhotoEditApp_Albums(), this.getAlbum(), null, "albums", null, 0, -1, PhotoEditApp.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(albumEClass, Album.class, "Album", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getAlbum_Media(), this.getMedia(), null, "media", null, 0, -1, Album.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getAlbum_Media(), this.getMedia(), null, "media", null, 0, -1, Album.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getAlbum_Title(), ecorePackage.getEString(), "title", null, 0, 1, Album.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getAlbum_Description(), ecorePackage.getEString(), "description", null, 0, 1, Album.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getAlbum_CoverImage(), this.getPhoto(), null, "coverImage", null, 0, 1, Album.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(mediaEClass, Media.class, "Media", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(photoEClass, Photo.class, "Photo", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getPhoto_Areas(), this.getPhotoArea(), null, "areas", null, 0, -1, Photo.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getPhoto_Areas(), this.getPhotoArea(), null, "areas", null, 0, -1, Photo.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getPhoto_Title(), ecorePackage.getEString(), "title", null, 0, 1, Photo.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getPhoto_Description(), ecorePackage.getEString(), "description", null, 0, 1, Photo.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getPhoto_Source(), this.getSource(), null, "source", null, 0, 1, Photo.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getPhoto_Source(), this.getSource(), null, "source", null, 0, 1, Photo.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(photoAreaEClass, PhotoArea.class, "PhotoArea", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getPhotoArea_X(), ecorePackage.getEDouble(), "x", null, 0, 1, PhotoArea.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -478,6 +589,10 @@ public class PhotoeditPackageImpl extends EPackageImpl implements PhotoeditPacka
 		initEClass(binarySourceEClass, BinarySource.class, "BinarySource", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getBinarySource_PreviewObject(), this.getBinaryObject(), null, "previewObject", null, 0, 1, BinarySource.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getBinarySource_Object(), this.getBinaryObject(), null, "object", null, 0, 1, BinarySource.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(urlSourceEClass, URLSource.class, "URLSource", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getURLSource_PreviewObjectURL(), ecorePackage.getEString(), "previewObjectURL", null, 0, 1, URLSource.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getURLSource_ObjectURL(), ecorePackage.getEString(), "objectURL", null, 0, 1, URLSource.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(binaryObjectEClass, BinaryObject.class, "BinaryObject", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getBinaryObject_Content(), ecorePackage.getEByteArray(), "content", null, 0, 1, BinaryObject.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

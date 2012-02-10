@@ -24,7 +24,7 @@ import org.eclipse.emf.ecore.EObject;
  * @model
  * @generated
  */
-public interface BinaryObject extends EObject {
+public interface BinaryObject extends BaseObject {
 	/**
 	 * Returns the value of the '<em><b>Content</b></em>' attribute.
 	 * <!-- begin-user-doc -->

@@ -72,6 +72,10 @@ public class PhotoeditAdapterFactory extends AdapterFactoryImpl {
 	protected PhotoeditSwitch<Adapter> modelSwitch =
 		new PhotoeditSwitch<Adapter>() {
 			@Override
+			public Adapter caseBaseObject(BaseObject object) {
+				return createBaseObjectAdapter();
+			}
+			@Override
 			public Adapter casePhotoEditApp(PhotoEditApp object) {
 				return createPhotoEditAppAdapter();
 			}
@@ -100,6 +104,10 @@ public class PhotoeditAdapterFactory extends AdapterFactoryImpl {
 				return createBinarySourceAdapter();
 			}
 			@Override
+			public Adapter caseURLSource(URLSource object) {
+				return createURLSourceAdapter();
+			}
+			@Override
 			public Adapter caseBinaryObject(BinaryObject object) {
 				return createBinaryObjectAdapter();
 			}
@@ -122,6 +130,20 @@ public class PhotoeditAdapterFactory extends AdapterFactoryImpl {
 		return modelSwitch.doSwitch((EObject)target);
 	}
 
+
+	/**
+	 * Creates a new adapter for an object of class '{@link at.bestsolution.efxclipse.runtime.example.photoedit.model.photoedit.BaseObject <em>Base Object</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see at.bestsolution.efxclipse.runtime.example.photoedit.model.photoedit.BaseObject
+	 * @generated
+	 */
+	public Adapter createBaseObjectAdapter() {
+		return null;
+	}
 
 	/**
 	 * Creates a new adapter for an object of class '{@link at.bestsolution.efxclipse.runtime.example.photoedit.model.photoedit.PhotoEditApp <em>Photo Edit App</em>}'.
@@ -232,6 +254,20 @@ public class PhotoeditAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createBinaryObjectAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link at.bestsolution.efxclipse.runtime.example.photoedit.model.photoedit.URLSource <em>URL Source</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see at.bestsolution.efxclipse.runtime.example.photoedit.model.photoedit.URLSource
+	 * @generated
+	 */
+	public Adapter createURLSourceAdapter() {
 		return null;
 	}
 
