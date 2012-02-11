@@ -9,7 +9,20 @@
       description="Photos from hikes in 2011">
     <media xsi:type="photoedit:Photo"
         title="Photo 1"
-        description=""/>
+        description="">
+      <source
+          xsi:type="photoedit:URLSource"
+          previewObjectURL="platform:/plugin/at.bestsolution.efxclipse.runtime.example.photoedit.model/model/album1/1_preview.jpg"
+          objectURL="platform:/plugin/at.bestsolution.efxclipse.runtime.example.photoedit.model/model/album1/1.jpg"/>
+    </media>
+    <media xsi:type="photoedit:Photo"
+        title="Photo 1"
+        description="">
+      <source
+          xsi:type="photoedit:URLSource"
+          previewObjectURL="platform:/plugin/at.bestsolution.efxclipse.runtime.example.photoedit.model/model/album1/2_preview.jpg"
+          objectURL="platform:/plugin/at.bestsolution.efxclipse.runtime.example.photoedit.model/model/album1/2.jpg"/>
+    </media>
     <coverImage>
       <source
           xsi:type="photoedit:URLSource"

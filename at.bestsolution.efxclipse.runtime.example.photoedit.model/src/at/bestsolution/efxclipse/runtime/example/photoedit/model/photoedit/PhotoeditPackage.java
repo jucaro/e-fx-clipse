@@ -209,13 +209,31 @@ public interface PhotoeditPackage extends EPackage {
 	int MEDIA__UUID = BASE_OBJECT__UUID;
 
 	/**
+	 * The feature id for the '<em><b>Title</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MEDIA__TITLE = BASE_OBJECT_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Description</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MEDIA__DESCRIPTION = BASE_OBJECT_FEATURE_COUNT + 1;
+
+	/**
 	 * The number of structural features of the '<em>Media</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int MEDIA_FEATURE_COUNT = BASE_OBJECT_FEATURE_COUNT + 0;
+	int MEDIA_FEATURE_COUNT = BASE_OBJECT_FEATURE_COUNT + 2;
 
 	/**
 	 * The meta object id for the '{@link at.bestsolution.efxclipse.runtime.example.photoedit.model.photoedit.impl.PhotoImpl <em>Photo</em>}' class.
@@ -237,6 +255,24 @@ public interface PhotoeditPackage extends EPackage {
 	int PHOTO__UUID = MEDIA__UUID;
 
 	/**
+	 * The feature id for the '<em><b>Title</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PHOTO__TITLE = MEDIA__TITLE;
+
+	/**
+	 * The feature id for the '<em><b>Description</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PHOTO__DESCRIPTION = MEDIA__DESCRIPTION;
+
+	/**
 	 * The feature id for the '<em><b>Areas</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -246,31 +282,13 @@ public interface PhotoeditPackage extends EPackage {
 	int PHOTO__AREAS = MEDIA_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Title</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PHOTO__TITLE = MEDIA_FEATURE_COUNT + 1;
-
-	/**
-	 * The feature id for the '<em><b>Description</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PHOTO__DESCRIPTION = MEDIA_FEATURE_COUNT + 2;
-
-	/**
 	 * The feature id for the '<em><b>Source</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PHOTO__SOURCE = MEDIA_FEATURE_COUNT + 3;
+	int PHOTO__SOURCE = MEDIA_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of structural features of the '<em>Photo</em>' class.
@@ -279,7 +297,7 @@ public interface PhotoeditPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PHOTO_FEATURE_COUNT = MEDIA_FEATURE_COUNT + 4;
+	int PHOTO_FEATURE_COUNT = MEDIA_FEATURE_COUNT + 2;
 
 	/**
 	 * The meta object id for the '{@link at.bestsolution.efxclipse.runtime.example.photoedit.model.photoedit.impl.PhotoAreaImpl <em>Photo Area</em>}' class.
@@ -620,6 +638,28 @@ public interface PhotoeditPackage extends EPackage {
 	EClass getMedia();
 
 	/**
+	 * Returns the meta object for the attribute '{@link at.bestsolution.efxclipse.runtime.example.photoedit.model.photoedit.Media#getTitle <em>Title</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Title</em>'.
+	 * @see at.bestsolution.efxclipse.runtime.example.photoedit.model.photoedit.Media#getTitle()
+	 * @see #getMedia()
+	 * @generated
+	 */
+	EAttribute getMedia_Title();
+
+	/**
+	 * Returns the meta object for the attribute '{@link at.bestsolution.efxclipse.runtime.example.photoedit.model.photoedit.Media#getDescription <em>Description</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Description</em>'.
+	 * @see at.bestsolution.efxclipse.runtime.example.photoedit.model.photoedit.Media#getDescription()
+	 * @see #getMedia()
+	 * @generated
+	 */
+	EAttribute getMedia_Description();
+
+	/**
 	 * Returns the meta object for class '{@link at.bestsolution.efxclipse.runtime.example.photoedit.model.photoedit.Photo <em>Photo</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -639,28 +679,6 @@ public interface PhotoeditPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getPhoto_Areas();
-
-	/**
-	 * Returns the meta object for the attribute '{@link at.bestsolution.efxclipse.runtime.example.photoedit.model.photoedit.Photo#getTitle <em>Title</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Title</em>'.
-	 * @see at.bestsolution.efxclipse.runtime.example.photoedit.model.photoedit.Photo#getTitle()
-	 * @see #getPhoto()
-	 * @generated
-	 */
-	EAttribute getPhoto_Title();
-
-	/**
-	 * Returns the meta object for the attribute '{@link at.bestsolution.efxclipse.runtime.example.photoedit.model.photoedit.Photo#getDescription <em>Description</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Description</em>'.
-	 * @see at.bestsolution.efxclipse.runtime.example.photoedit.model.photoedit.Photo#getDescription()
-	 * @see #getPhoto()
-	 * @generated
-	 */
-	EAttribute getPhoto_Description();
 
 	/**
 	 * Returns the meta object for the containment reference '{@link at.bestsolution.efxclipse.runtime.example.photoedit.model.photoedit.Photo#getSource <em>Source</em>}'.
@@ -944,6 +962,22 @@ public interface PhotoeditPackage extends EPackage {
 		EClass MEDIA = eINSTANCE.getMedia();
 
 		/**
+		 * The meta object literal for the '<em><b>Title</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute MEDIA__TITLE = eINSTANCE.getMedia_Title();
+
+		/**
+		 * The meta object literal for the '<em><b>Description</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute MEDIA__DESCRIPTION = eINSTANCE.getMedia_Description();
+
+		/**
 		 * The meta object literal for the '{@link at.bestsolution.efxclipse.runtime.example.photoedit.model.photoedit.impl.PhotoImpl <em>Photo</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -960,22 +994,6 @@ public interface PhotoeditPackage extends EPackage {
 		 * @generated
 		 */
 		EReference PHOTO__AREAS = eINSTANCE.getPhoto_Areas();
-
-		/**
-		 * The meta object literal for the '<em><b>Title</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute PHOTO__TITLE = eINSTANCE.getPhoto_Title();
-
-		/**
-		 * The meta object literal for the '<em><b>Description</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute PHOTO__DESCRIPTION = eINSTANCE.getPhoto_Description();
 
 		/**
 		 * The meta object literal for the '<em><b>Source</b></em>' containment reference feature.

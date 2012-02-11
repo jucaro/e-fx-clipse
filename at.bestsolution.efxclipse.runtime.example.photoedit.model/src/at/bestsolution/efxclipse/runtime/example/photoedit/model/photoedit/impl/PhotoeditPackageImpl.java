@@ -269,6 +269,24 @@ public class PhotoeditPackageImpl extends EPackageImpl implements PhotoeditPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EAttribute getMedia_Title() {
+		return (EAttribute)mediaEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getMedia_Description() {
+		return (EAttribute)mediaEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getPhoto() {
 		return photoEClass;
 	}
@@ -287,26 +305,8 @@ public class PhotoeditPackageImpl extends EPackageImpl implements PhotoeditPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getPhoto_Title() {
-		return (EAttribute)photoEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getPhoto_Description() {
-		return (EAttribute)photoEClass.getEStructuralFeatures().get(2);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EReference getPhoto_Source() {
-		return (EReference)photoEClass.getEStructuralFeatures().get(3);
+		return (EReference)photoEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -485,11 +485,11 @@ public class PhotoeditPackageImpl extends EPackageImpl implements PhotoeditPacka
 		createEReference(albumEClass, ALBUM__COVER_IMAGE);
 
 		mediaEClass = createEClass(MEDIA);
+		createEAttribute(mediaEClass, MEDIA__TITLE);
+		createEAttribute(mediaEClass, MEDIA__DESCRIPTION);
 
 		photoEClass = createEClass(PHOTO);
 		createEReference(photoEClass, PHOTO__AREAS);
-		createEAttribute(photoEClass, PHOTO__TITLE);
-		createEAttribute(photoEClass, PHOTO__DESCRIPTION);
 		createEReference(photoEClass, PHOTO__SOURCE);
 
 		photoAreaEClass = createEClass(PHOTO_AREA);
@@ -567,11 +567,11 @@ public class PhotoeditPackageImpl extends EPackageImpl implements PhotoeditPacka
 		initEReference(getAlbum_CoverImage(), this.getPhoto(), null, "coverImage", null, 0, 1, Album.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(mediaEClass, Media.class, "Media", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getMedia_Title(), ecorePackage.getEString(), "title", null, 0, 1, Media.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getMedia_Description(), ecorePackage.getEString(), "description", null, 0, 1, Media.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(photoEClass, Photo.class, "Photo", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getPhoto_Areas(), this.getPhotoArea(), null, "areas", null, 0, -1, Photo.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getPhoto_Title(), ecorePackage.getEString(), "title", null, 0, 1, Photo.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getPhoto_Description(), ecorePackage.getEString(), "description", null, 0, 1, Photo.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getPhoto_Source(), this.getSource(), null, "source", null, 0, 1, Photo.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(photoAreaEClass, PhotoArea.class, "PhotoArea", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
