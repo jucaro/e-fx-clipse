@@ -67,7 +67,6 @@ public class FlingPane extends Region {
 				if (content != null && content.get() != null) {
 					TranslateTransition translate = new TranslateTransition(new Duration(1000), content.get());
 
-					content.get().autosize();
 					final Bounds b = content.get().getLayoutBounds();
 
 					Double backBouncingX = null;
