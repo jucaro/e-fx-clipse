@@ -6,7 +6,9 @@ Bundle-Version: 0.0.12.qualifier
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Bundle-Vendor: %Bundle-Vendor
 Export-Package: at.bestsolution.efxclipse.runtime.panels
-Import-Package: javafx.animation;version="2.0.0",
+Import-Package: com.sun.javafx.scene.control.behavior,
+ com.sun.javafx.scene.control.skin,
+ javafx.animation;version="2.0.0",
  javafx.application;version="2.0.0",
  javafx.beans;version="2.0.0",
  javafx.beans.binding;version="2.0.0",

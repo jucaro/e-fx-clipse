@@ -9,13 +9,13 @@ import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.geometry.Bounds;
 import javafx.scene.Node;
-import javafx.scene.control.Control;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.Region;
 import javafx.scene.shape.Rectangle;
 import javafx.util.Duration;
 import at.bestsolution.efxclipse.runtime.panels.internal.VelocityTracker;
 
-public class FlingPane extends Control {
+public class FlingPane extends Region {
 	private ObjectProperty<Node> content;
 	private Rectangle clipRect = new Rectangle();
 
@@ -184,33 +184,33 @@ public class FlingPane extends Control {
 		clipRect.setHeight(getHeight());
 	}
 
-	@Override
-	protected double computeMaxHeight(double width) {
-		return Double.MAX_VALUE;
-	}
-
-	@Override
-	protected double computeMinWidth(double height) {
-		return 0;
-	}
-
-	@Override
-	protected double computeMaxWidth(double height) {
-		return Double.MAX_VALUE;
-	}
-
-	@Override
-	protected double computeMinHeight(double width) {
-		return 0;
-	}
-
-	@Override
-	protected double computePrefHeight(double width) {
-		return Double.MAX_VALUE;
-	}
-
-	@Override
-	protected double computePrefWidth(double height) {
-		return Double.MAX_VALUE;
-	}
+//	@Override
+//	protected double computeMaxHeight(double width) {
+//		return Double.MAX_VALUE;
+//	}
+//
+//	@Override
+//	protected double computeMinWidth(double height) {
+//		return 0;
+//	}
+//
+//	@Override
+//	protected double computeMaxWidth(double height) {
+//		return Double.MAX_VALUE;
+//	}
+//
+//	@Override
+//	protected double computeMinHeight(double width) {
+//		return 0;
+//	}
+//
+//	@Override
+//	protected double computePrefHeight(double width) {
+//		return Double.MAX_VALUE;
+//	}
+//
+//	@Override
+//	protected double computePrefWidth(double height) {
+//		return Double.MAX_VALUE;
+//	}
 }
