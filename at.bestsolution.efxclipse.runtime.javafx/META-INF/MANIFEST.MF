@@ -7,6 +7,7 @@ Bundle-ActivationPolicy: lazy
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Export-Package: com.sun.javafx.css;x-internal:=true,
  com.sun.javafx.runtime;x-internal:=true,
+ com.sun.javafx.scene.control.behavior;x-internal:=true,
  com.sun.javafx.scene.control.skin;x-internal:=true,
  javafx.animation;version="2.0.0",
  javafx.application;version="2.0.0",
