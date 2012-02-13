@@ -1,0 +1,85 @@
+#iphone-toolbar {
+    -fx-background-color: linear-gradient(#98a8bd 0%, #8195af 25%, #6d86a4 100%);
+    -fx-padding: 5px;
+}
+
+.iphone-header {
+	-fx-text-fill: white;
+	-fx-font-smoothing-type: lcd;
+	-fx-font-weight: bold;
+	-fx-font-family: "Arial";
+    -fx-font-size: 15pt;
+}
+
+.iphone-status {
+	-fx-text-fill: white;
+	-fx-font-smoothing-type: lcd;
+	-fx-font-size: 10pt;
+	-fx-font-family: "Arial";
+}
+
+.iphone-list-entry {
+	-fx-padding: 10px;
+	-fx-border-color: #ccc;
+	-fx-border-style: none none solid none;
+	-fx-border-width: 1px;
+}
+
+.iphone-list-entry-header {
+	-fx-font-smoothing-type: lcd;
+	-fx-font-weight: bold;
+	-fx-font-size: 13pt;
+}
+
+.iphone-list-entry-subheader {
+	-fx-font-smoothing-type: lcd;
+	-fx-font-size: 11pt;
+}
+
+.iphone-list-entry-extra {
+	-fx-font-smoothing-type: lcd;
+	-fx-font-size: 10pt;
+	-fx-text-fill: gray;
+}
+
+.iphone-list-entry-spacer {
+	-fx-padding: 0 40 0 0;
+}
+
+.iphone-button {
+    -fx-background-color: 
+        #a6b5c9,
+        linear-gradient(#303842 0%, #3e5577 20%, #375074 100%),
+        linear-gradient(#768aa5 0%, #849cbb 5%, #5877a2 50%, #486a9a 51%, #4a6c9b 100%);
+    -fx-background-insets: 0 0 -1 0,0,1;
+    -fx-background-radius: 5,5,4;
+    -fx-padding: 7 10 7 10;
+    -fx-font-family: "Arial";
+    -fx-font-size: 12pt;
+    -fx-font-weight: bold;
+    -fx-text-fill: white;
+    -fx-font-smoothing-type: lcd;
+}
+
+.iphone-list-search-entry {
+	-fx-padding: 5px;
+	-fx-background-color: 
+        linear-gradient(#686868 0%, #232723 25%, #373837 75%, #757575 100%),
+        linear-gradient(#020b02, #3a3a3a),
+        linear-gradient(#b9b9b9 0%, #c2c2c2 20%, #afafaf 80%, #c8c8c8 100%),
+        linear-gradient(#f5f5f5 0%, #dbdbdb 50%, #cacaca 51%, #d7d7d7 100%);
+    -fx-border-color: #999;
+	-fx-border-style: none none solid none;
+	-fx-border-width: 1px;
+}
+
+.iphone-search-box {
+	-fx-border-radius: 30px;
+	-fx-background-radius: 10,10,10;
+	-fx-border-radius: 10,10,4;
+	-fx-padding: 5 5 5 20;
+	-fx-font-smoothing-type: lcd;
+	/*-fx-background-image: url("../icons/search.png");
+	-fx-background-image-position: left 10;
+	-fx-background-image-repeat: repeat-y; */
+}
