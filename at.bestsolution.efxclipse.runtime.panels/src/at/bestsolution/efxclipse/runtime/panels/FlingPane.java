@@ -116,6 +116,8 @@ public class FlingPane extends Region {
 							targetX = 0.0;
 						} else if (targetX > 0) {
 							targetX = 0.0;
+						} else if( (targetX < (controlWidth - viewWith) * -1) ) {
+							targetX = (controlWidth - viewWith) * -1;
 						} else {
 							targetX += velocityX;
 							
@@ -142,6 +144,8 @@ public class FlingPane extends Region {
 							targetY = 0.0;
 						} else if (targetY > 0) {
 							targetY = 0.0;
+						} else if(targetY < (controlHeight - viewHeight) * -1) {
+							targetY = (controlHeight - viewHeight) * -1;
 						} else {
 							targetY += velocityY;
 							
