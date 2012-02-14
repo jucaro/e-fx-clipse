@@ -23,6 +23,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.JavaFXBuilderFactory;
 import javafx.scene.Node;
 import javafx.scene.Scene;
+import javafx.scene.layout.BorderPane;
 
 import org.eclipse.core.runtime.preferences.IEclipsePreferences;
 import org.eclipse.core.runtime.preferences.InstanceScope;
@@ -61,7 +62,7 @@ public class LivePreviewPart extends ViewPart {
 	@Inject
 	private LivePreviewSynchronizer synchronizer;
 	
-	private FillLayoutPane rootPane;
+	private BorderPane rootPane;
 
 	private Text logStatement;
 
@@ -257,7 +258,7 @@ public class LivePreviewPart extends ViewPart {
 
 	private void initFX(FXCanvas fxPanel) {
 		// This method is invoked on the JavaFX thread
-		rootPane = new FillLayoutPane();
+		rootPane = new BorderPane();
 		rootPane.getChildren().add(new FillLayoutPane());
 		Scene scene = new Scene(rootPane,1000,1000);
 		fxPanel.setScene(scene);
@@ -380,7 +381,7 @@ public class LivePreviewPart extends ViewPart {
 						//TODO Change this to public API once (RT-17294)
 						StyleManager.getInstance().reloadStylesheets(scene);
 						
-						rootPane.getChildren().add(root);
+						rootPane.setCenter(root);
 						
 					} catch (Exception e) {
 						System.err.println(contentData.contents);
