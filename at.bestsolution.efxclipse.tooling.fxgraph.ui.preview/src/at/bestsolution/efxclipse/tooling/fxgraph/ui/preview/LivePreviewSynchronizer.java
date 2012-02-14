@@ -330,7 +330,7 @@ public class LivePreviewSynchronizer implements IPartListener, IXtextModelListen
 				}
 				
 				return new ContentData(generator.doGeneratePreview(resource, (!preference.getBoolean(PREF_LOAD_CONTROLLER, false)) && (!pluginProject), true),
-						cssFiles, resourcePropertiesFile, extraPaths, relativeUrl);
+						cssFiles, resourcePropertiesFile, extraPaths, relativeUrl,resource.getURI());
 			} else if( rootObject instanceof FXML ) {
 				List<URL> extraPaths = new ArrayList<URL>();
 				// If it is not a plugin project prepend the customized
@@ -426,7 +426,7 @@ public class LivePreviewSynchronizer implements IPartListener, IXtextModelListen
 					}
 				}
 				
-				return new ContentData(fxmlFile, cssFiles, resourcePropertiesFile, extraPaths, relativeUrl);
+				return new ContentData(fxmlFile, cssFiles, resourcePropertiesFile, extraPaths, relativeUrl,resource.getURI());
 			}
 		}
 

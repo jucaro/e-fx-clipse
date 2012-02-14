@@ -7,13 +7,16 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.io.StringWriter;
 import java.lang.reflect.Constructor;
+import java.net.URI;
 import java.net.URL;
 import java.net.URLClassLoader;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.HashMap;
 import java.util.List;
 import java.util.ListResourceBundle;
+import java.util.Map;
 import java.util.Map.Entry;
 import java.util.Properties;
 
@@ -43,6 +46,8 @@ import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Label;
 import org.eclipse.swt.widgets.Menu;
 import org.eclipse.swt.widgets.MenuItem;
+import org.eclipse.swt.widgets.Scale;
+import org.eclipse.swt.widgets.Spinner;
 import org.eclipse.swt.widgets.Text;
 import org.eclipse.ui.IPartListener;
 import org.eclipse.ui.IViewSite;
@@ -98,6 +103,12 @@ public class LivePreviewPart extends ViewPart {
 	private FXCanvas swtFXContainer;
 	
 	private IPartListener listener;
+
+	private Spinner scale;
+	
+	private Map<org.eclipse.emf.common.util.URI, Integer> scaleMap = new HashMap<org.eclipse.emf.common.util.URI, Integer>();
+	
+	private org.eclipse.emf.common.util.URI currentFile;
 	
 	static {
 		JFaceResources.getImageRegistry().put(IMAGE_OK, Activator.imageDescriptorFromPlugin("at.bestsolution.efxclipse.tooling.fxgraph.ui.preview", "/icons/16_16/security-high.png"));
@@ -165,11 +176,11 @@ public class LivePreviewPart extends ViewPart {
 	@Override
 	public void createPartControl(Composite parent) {
 		Composite container = new Composite(parent, SWT.NONE);
-		container.setLayout(new GridLayout(2,false));
+		container.setLayout(new GridLayout(3,false));
 		
 		
 		folder = new CTabFolder(container, SWT.BOTTOM|SWT.BORDER);
-		folder.setLayoutData(new GridData(GridData.FILL,GridData.FILL,true,true,2,1));
+		folder.setLayoutData(new GridData(GridData.FILL,GridData.FILL,true,true,3,1));
 		
 		{
 			CTabItem item = new CTabItem(folder, SWT.NONE);
@@ -218,6 +229,29 @@ public class LivePreviewPart extends ViewPart {
 		statusLabelText = new Label(container, SWT.NONE);
 		statusLabelText.setText(NO_PREVIEW_TEXT);
 		statusLabelText.setLayoutData(new GridData(GridData.FILL_HORIZONTAL));
+		
+		Composite scaleControl = new Composite(container, SWT.NONE);
+		scaleControl.setLayoutData(new GridData(GridData.END,GridData.CENTER,false,false));
+		scaleControl.setLayout(new GridLayout(2,false));
+		
+		Label l = new Label(scaleControl, SWT.NONE);
+		l.setText("Zoom");
+		
+		scale = new Spinner(scaleControl, SWT.BORDER);
+		scale.setMinimum(10);
+		scale.setMaximum(500);
+		scale.setIncrement(10);
+		scale.setSelection(100);
+		scale.addSelectionListener(new SelectionAdapter() {
+			@Override
+			public void widgetSelected(SelectionEvent e) {
+				rootPane.setScaleX(scale.getSelection()/100.0);
+				rootPane.setScaleY(scale.getSelection()/100.0);
+				if( currentFile != null ) {
+					scaleMap.put(currentFile, scale.getSelection());
+				}
+			}
+		});
 		
 		Action loadController = new Action("",IAction.AS_CHECK_BOX) {
 			@Override
@@ -302,24 +336,30 @@ public class LivePreviewPart extends ViewPart {
 				}
 				
 				
-//				PrintStream syserr = System.err;
-//				PrintStream sysout = System.out;
-//				
-//				final ByteArrayOutputStream redirectedError = new ByteArrayOutputStream();
-//				final ByteArrayOutputStream redirectedOut = new ByteArrayOutputStream();
 				String exception = null;
 				
 				try {
-//					System.setErr(new PrintStream(redirectedError));
-//					System.setErr(new PrintStream(redirectedOut));
-					
+					currentFile = contentData.filePath;
 					Scene scene = rootPane.getScene();
 
 					rootPane.getChildren().clear();
 					scene.getStylesheets().clear();
 					
+					if( scaleMap.containsKey(currentFile) ) {
+						int value = scaleMap.get(currentFile).intValue();
+						scale.setSelection(value);
+						
+						rootPane.setScaleX(value/100.0);
+						rootPane.setScaleY(value/100.0);
+						
+					} else {
+						scale.setSelection(100);
+						rootPane.setScaleX(1);
+						rootPane.setScaleY(1);
+					}
+					
+					
 					loader.setStaticLoad(!preference.getBoolean(LivePreviewSynchronizer.PREF_LOAD_CONTROLLER, false));
-//					System.err.println(contentData.relativePath);
 					loader.setLocation(contentData.relativePath);
 					
 					if( contentData.resourceBundle != null ) {
@@ -390,15 +430,12 @@ public class LivePreviewPart extends ViewPart {
 						exception = sw.toString();
 					}
 				} finally {
-//					System.setErr(syserr);
-//					System.setOut(sysout);
-//					
 					if( cl != null ) {
 						Thread.currentThread().setContextClassLoader(cl);
 					}
 				}
 				
-				if( exception != null /*|| redirectedError.size() > 0 || redirectedOut.size() > 0*/ ) {
+				if( exception != null ) {
 					final String innerException = exception;
 					folder.getDisplay().asyncExec(new Runnable() {
 						
@@ -410,11 +447,6 @@ public class LivePreviewPart extends ViewPart {
 								statusLabelText.setText( SimpleDateFormat.getTimeInstance().format(new Date()) + ": Error while updateing preview");
 								setTitleImage(JFaceResources.getImage(IMAGE_TAB_ERROR));
 								folder.setSelection(logItem);
-//							} else {
-//								logItem.setImage(JFaceResources.getImage(IMAGE_WARNING));
-//								statusLabelIcon.setImage(JFaceResources.getImage(IMAGE_STATUS_WARNING));
-//								statusLabelText.setText( SimpleDateFormat.getTimeInstance().format(new Date()) + ": Warning while updateing preview");
-//								setTitleImage(JFaceResources.getImage(IMAGE_TAB_WARNING));
 							}
 							
 							logStatement.setText("");
@@ -429,20 +461,6 @@ public class LivePreviewPart extends ViewPart {
 								logStatement.append(logStatement.getLineDelimiter()+logStatement.getLineDelimiter());
 								logStatement.setSelection(0);
 							}
-							
-//							if( redirectedError.size() > 0 ) {
-//								logStatement.append("STDERR:" + logStatement.getLineDelimiter());
-//								logStatement.append("-------" + logStatement.getLineDelimiter());
-//								logStatement.append(new String(redirectedError.toByteArray())+logStatement.getLineDelimiter());
-//								logStatement.append(logStatement.getLineDelimiter()+logStatement.getLineDelimiter());
-//							}
-//							
-//							if( redirectedOut.size() > 0 ) {
-//								logStatement.append("STDOUT:" + logStatement.getLineDelimiter());
-//								logStatement.append("-------"+logStatement.getLineDelimiter());
-//								logStatement.append(new String(redirectedOut.toByteArray())+logStatement.getLineDelimiter());
-//								logStatement.append(logStatement.getLineDelimiter()+logStatement.getLineDelimiter());
-//							}
 						}
 					});
 					
@@ -493,13 +511,15 @@ public class LivePreviewPart extends ViewPart {
 		public String resourceBundle;
 		public List<URL> extraJarPath;
 		public URL relativePath;
+		public org.eclipse.emf.common.util.URI filePath;
 		
-		public ContentData(String contents, List<String> cssFiles, String resourceBundle, List<URL> extraJarPath, URL relativePath) {
+		public ContentData(String contents, List<String> cssFiles, String resourceBundle, List<URL> extraJarPath, URL relativePath, org.eclipse.emf.common.util.URI filePath) {
 			this.contents = contents;
 			this.cssFiles = new ArrayList<String>(cssFiles);
 			this.resourceBundle = resourceBundle;
 			this.extraJarPath = extraJarPath;
 			this.relativePath = relativePath;
+			this.filePath = filePath;
 		}
 	}
 	
