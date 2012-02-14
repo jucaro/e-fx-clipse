@@ -1,15 +1,8 @@
 package at.bestsolution.efxclipse.tooling.pde.ui;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-
 import org.eclipse.core.resources.IProject;
 import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.IProgressMonitor;
-import org.eclipse.jdt.core.IClasspathEntry;
-import org.eclipse.jdt.core.IJavaProject;
-import org.eclipse.jdt.core.JavaCore;
 import org.eclipse.jface.wizard.Wizard;
 import org.eclipse.jface.wizard.WizardPage;
 import org.eclipse.pde.core.plugin.IPluginModelBase;
@@ -18,8 +11,6 @@ import org.eclipse.pde.internal.core.bundle.BundlePluginBase;
 import org.eclipse.pde.internal.core.ibundle.IBundle;
 import org.eclipse.pde.ui.templates.PluginReference;
 import org.osgi.framework.Constants;
-
-import at.bestsolution.efxclipse.tooling.jdt.core.JavaFXCore;
 
 public class FXOSGiBundleTemplate extends FXPDETemplateSection {
 
