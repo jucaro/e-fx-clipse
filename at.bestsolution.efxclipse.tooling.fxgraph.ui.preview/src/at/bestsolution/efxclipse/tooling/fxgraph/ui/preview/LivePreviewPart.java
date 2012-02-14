@@ -122,7 +122,7 @@ public class LivePreviewPart extends ViewPart {
 	public void init(IViewSite site) throws PartInitException {
 		super.init(site);
 		
-listener = new IPartListener() {
+		listener = new IPartListener() {
 			
 			@Override
 			public void partOpened(IWorkbenchPart part) {
@@ -283,10 +283,21 @@ listener = new IPartListener() {
 			public void run() {
 				ClassLoader cl = null;
 				
+				FXMLLoader loader;
 				if( contentData.extraJarPath != null && ! contentData.extraJarPath.isEmpty() ) {
-					cl = Thread.currentThread().getContextClassLoader();
 					URLClassLoader previewClassLoader = new PreviewURLClassloader(contentData.extraJarPath.toArray(new URL[0]),swtFXContainer.getClass().getClassLoader());
-					Thread.currentThread().setContextClassLoader(previewClassLoader);
+
+					if( isJavaFX20() ) {
+						cl = Thread.currentThread().getContextClassLoader();
+						Thread.currentThread().setContextClassLoader(previewClassLoader);
+						
+						loader = new FXMLLoader();
+					} else {
+						loader = new FXMLLoader();
+						loader.setClassLoader(previewClassLoader);
+					}
+				} else {
+					loader = new FXMLLoader();
 				}
 				
 				
@@ -301,7 +312,11 @@ listener = new IPartListener() {
 //					System.setErr(new PrintStream(redirectedError));
 //					System.setErr(new PrintStream(redirectedOut));
 					
-					FXMLLoader loader = new FXMLLoader();
+					Scene scene = rootPane.getScene();
+
+					rootPane.getChildren().clear();
+					scene.getStylesheets().clear();
+					
 					loader.setStaticLoad(!preference.getBoolean(LivePreviewSynchronizer.PREF_LOAD_CONTROLLER, false));
 //					System.err.println(contentData.relativePath);
 					loader.setLocation(contentData.relativePath);
@@ -339,13 +354,10 @@ listener = new IPartListener() {
 								}
 							}
 						}
-						
 					}
 					
-					loader.setBuilderFactory(new JavaFXBuilderFactory());
-					
 					// If we are on 2.0.x we need to use another constructor
-					if( System.getProperty("javafx.version") != null && System.getProperty("javafx.version").startsWith("2.0") ) {
+					if( isJavaFX20() ) {
 						try {
 							Constructor<JavaFXBuilderFactory> c = JavaFXBuilderFactory.class.getConstructor(boolean.class);
 							loader.setBuilderFactory(c.newInstance(false));
@@ -353,6 +365,8 @@ listener = new IPartListener() {
 							// TODO Auto-generated catch block
 							e.printStackTrace();
 						}
+					} else {
+						loader.setBuilderFactory(new JavaFXBuilderFactory());
 					}
 					
 					try {
@@ -360,11 +374,7 @@ listener = new IPartListener() {
 						ByteArrayInputStream out = new ByteArrayInputStream(contentData.contents.getBytes());
 						Node root = (Node) loader.load(out);
 						out.close();
-						
-						Scene scene = rootPane.getScene();
-						
-						rootPane.getChildren().clear();
-						scene.getStylesheets().clear();
+												
 						scene.getStylesheets().addAll(contentData.cssFiles);
 						
 						//TODO Change this to public API once (RT-17294)
@@ -398,6 +408,7 @@ listener = new IPartListener() {
 								statusLabelIcon.setImage(JFaceResources.getImage(IMAGE_STATUS_ERROR));
 								statusLabelText.setText( SimpleDateFormat.getTimeInstance().format(new Date()) + ": Error while updateing preview");
 								setTitleImage(JFaceResources.getImage(IMAGE_TAB_ERROR));
+								folder.setSelection(logItem);
 //							} else {
 //								logItem.setImage(JFaceResources.getImage(IMAGE_WARNING));
 //								statusLabelIcon.setImage(JFaceResources.getImage(IMAGE_STATUS_WARNING));
@@ -405,6 +416,7 @@ listener = new IPartListener() {
 //								setTitleImage(JFaceResources.getImage(IMAGE_TAB_WARNING));
 							}
 							
+							logStatement.setText("");
 							logStatement.append("================================================================="+logStatement.getLineDelimiter());
 							logStatement.append("Preview loading @ " + new Date() + logStatement.getLineDelimiter());
 							logStatement.append("================================================================="+logStatement.getLineDelimiter());
@@ -414,6 +426,7 @@ listener = new IPartListener() {
 								logStatement.append("----------" + logStatement.getLineDelimiter());
 								logStatement.append(innerException + logStatement.getLineDelimiter());
 								logStatement.append(logStatement.getLineDelimiter()+logStatement.getLineDelimiter());
+								logStatement.setSelection(0);
 							}
 							
 //							if( redirectedError.size() > 0 ) {
@@ -447,6 +460,10 @@ listener = new IPartListener() {
 				}
 			}
 		});
+	}
+	
+	private static boolean  isJavaFX20() {
+		return System.getProperty("javafx.version") != null && System.getProperty("javafx.version").startsWith("2.0");
 	}
 
 	public void setContents(final ContentData contentData) {
