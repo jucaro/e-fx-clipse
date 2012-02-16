@@ -2,7 +2,6 @@ package at.bestsolution.efxclipse.formats.svg.handler;
 
 import java.io.File;
 import java.io.FileOutputStream;
-import java.io.IOException;
 import java.io.InputStream;
 import java.util.HashMap;
 import java.util.Map;
@@ -10,7 +9,6 @@ import java.util.Map.Entry;
 import java.util.Stack;
 import java.util.zip.GZIPInputStream;
 
-import javax.xml.parsers.ParserConfigurationException;
 import javax.xml.parsers.SAXParser;
 import javax.xml.parsers.SAXParserFactory;
 
@@ -71,17 +69,9 @@ public class XMLLoader {
 			parser.parse(in, handler);
 			postProcess(handler.root);
 			return handler.root;
-		} catch (ParserConfigurationException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} catch (SAXException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+		} catch (Throwable e) {
+			throw new RuntimeException(e);
 		}
-		return null;
 	}
 	
 	private void postProcess(SvgSvgElement root) {

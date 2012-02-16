@@ -1,11 +1,9 @@
 package at.bestsolution.efxclipse.formats.fxg.handler;
 
-import java.io.IOException;
 import java.io.InputStream;
 import java.util.List;
 import java.util.Stack;
 
-import javax.xml.parsers.ParserConfigurationException;
 import javax.xml.parsers.SAXParser;
 import javax.xml.parsers.SAXParserFactory;
 
@@ -36,17 +34,9 @@ public class XMLLoader {
 			Handler handler = new Handler();
 			parser.parse(in, handler);
 			return handler.graphic;
-		} catch (ParserConfigurationException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} catch (SAXException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+		} catch (Throwable e) {
+			throw new RuntimeException(e);
 		}
-		return null;
 	}
 
 	static class Handler extends DefaultHandler {
