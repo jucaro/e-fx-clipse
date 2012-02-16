@@ -29,6 +29,7 @@ import at.bestsolution.efxclipse.formats.svg.svg.CoreAttributes
 import java.awt.geom.AffineTransform
 import java.awt.geom.Point2D
 import at.bestsolution.efxclipse.formats.svg.svg.Fill_rule
+import at.bestsolution.efxclipse.formats.svg.svg.SvgPolygonElement
 
 class FXMLConverter {
 	private SvgSvgElement rootElement
@@ -544,6 +545,57 @@ class FXMLConverter {
 		«ENDIF»
 	</Circle>
 	'''
+	
+	def dispatch handle(SvgPolygonElement element) '''
+	<Polygon
+		«IF element.points != null»points="«element.points.replaceAll("\\s+",",")»"«ENDIF»
+«««		«IF element.stroke_dasharray != null»«ENDIF»
+		«IF element.stroke_dashoffset != null»strokeDashOffset="«element.stroke_dashoffset.parseLength»"«ENDIF»
+		«IF element.stroke_linecap != null»strokeLineCap="«element.stroke_linecap.toFx»"«ENDIF»
+		«IF element.stroke_linejoin != null»strokeLineJoin="«element.stroke_linejoin.toFx»"«ENDIF»
+		«IF element.stroke_miterlimit != null»strokeMiterLimit="«element.stroke_miterlimit.parseLength»"«ENDIF»
+		«IF element.stroke_width != null»strokeWidth="«element.stroke_width.parseLength»"«ENDIF»
+		«IF element.opacity != null»opacity="«element.opacity»"«ENDIF»
+	>
+	«handlePaint("fill",element.fill,element.fill_opacity)»
+	«handlePaint("stroke",element.stroke,element.stroke_opacity)»
+	«IF element.transform != null»
+		<transforms>
+			«element.transform.handleTransform»
+		</transforms>
+	«ENDIF»
+«««		«IF element.filter != null»
+«««			«val e = resolveElement(element.filter.substring(5,element.filter.length-1).trim) as SvgFilterElement»
+«««			«IF e != null»
+«««				«IF e.children.filter(typeof(FilterPrimitiveElement)).size == 1»
+«««				«val fiElement = e.children.filter(typeof(FilterPrimitiveElement)).head as SvgElement»
+«««				<filter>
+«««					«handleFilter(fiElement)»
+«««				</filter>
+«««				«ELSE»
+«««				<!-- Multi filter needs different handling -->
+«««				«ENDIF»
+«««			«ENDIF»
+«««		«ENDIF»
+	«IF element.clip_path != null && element.clip_path.trim.length > 0 && ! element.clip_path.trim.equals("none")»
+		<clip>
+			«val clipElement = resolveElement(element.clip_path.substring(5,element.clip_path.length-1)) as SvgClipPathElement»
+			<Group>
+				<children>
+					«FOR e : clipElement.children»
+						«handle(e)»
+					«ENDFOR»
+				</children>
+				«IF clipElement.transform != null && clipElement.transform.trim.length > 0 && ! element.clip_path.equals("none")»
+				<transforms>
+					«handleTransform(clipElement.transform)»
+				</transforms>
+				«ENDIF»
+			</Group>
+		</clip>
+	«ENDIF»
+	</Polygon>
+	'''
 
 	def fillPaint(String fill) {
 		if( fill.startsWith("#") ) {
@@ -678,7 +730,7 @@ class FXMLConverter {
 	def dispatch handle(SvgFeGaussianBlurElement f) {
 		
 	}
-
+	
 	def CycleMethod toFx(SpreadMethod m) {
 		switch(m) {
 			case SpreadMethod::PAD:
