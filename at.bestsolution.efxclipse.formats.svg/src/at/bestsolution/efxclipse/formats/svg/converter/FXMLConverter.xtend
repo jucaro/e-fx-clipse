@@ -110,7 +110,7 @@ class FXMLConverter {
 		} else {
 			val params = transformSpec.substring(transformSpec.indexOf("(")+1,transformSpec.indexOf(")"))
 			if( transformSpec.startsWith("matrix") ) {
-				val parts = params.split(",| ");
+				val parts = params.split("\\s*,\\s*|\\s+");
 				return new AffineTransform(
 					Double::parseDouble(parts.get(0)),
 					Double::parseDouble(parts.get(1)),
@@ -120,7 +120,7 @@ class FXMLConverter {
 					Double::parseDouble(parts.get(5))
 				);
 			} else if( transformSpec.startsWith("translate") ) {
-				val parts = params.split(",| ");
+				val parts = params.split("\\s*,\\s*|\\s+");
 				val rv = new AffineTransform();
 				rv.translate(
 					Double::parseDouble(parts.get(0)),
@@ -128,7 +128,7 @@ class FXMLConverter {
 				);
 				return rv;
 			} else if( transformSpec.startsWith("scale") ) {
-				val parts = params.split(",| ");
+				val parts = params.split("\\s*,\\s*|\\s+");
 				val rv = new AffineTransform();
 				rv.scale(
 					Double::parseDouble(parts.get(0)),
@@ -136,7 +136,7 @@ class FXMLConverter {
 				);
 				return rv;			
 			} else if( transformSpec.startsWith("rotate") ) {
-				val parts = params.split(",| ");
+				val parts = params.split("\\s*,\\s*|\\s+");
 				val rv = new AffineTransform();
 				rv.rotate(
 					Double::parseDouble(parts.get(0)),
