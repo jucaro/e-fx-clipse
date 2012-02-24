@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <feature
       id="at.bestsolution.efxclipse.runtime.osgi.feature"
-      label="Feature"
+      label="OSGi Runtime integration"
       version="0.0.12.qualifier">
 
    <description url="http://efxclipse.org">
