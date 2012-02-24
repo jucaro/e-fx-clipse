@@ -3,15 +3,15 @@ package at.bestsolution.efxclipse.runtime.example.photoedit.ui;
 import java.io.InputStream;
 import java.util.Map.Entry;
 
-import javafx.beans.value.ChangeListener;
-import javafx.beans.value.ObservableValue;
 import javafx.collections.ObservableList;
+import javafx.event.EventHandler;
 import javafx.geometry.Pos;
 import javafx.scene.control.ContentDisplay;
 import javafx.scene.control.ListCell;
 import javafx.scene.control.ListView;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.BorderPane;
 import javafx.util.Callback;
 
@@ -22,7 +22,13 @@ import org.eclipse.e4.core.di.annotations.Optional;
 import org.eclipse.e4.ui.di.UIEventTopic;
 import org.eclipse.e4.ui.model.application.MApplication;
 import org.eclipse.e4.ui.model.application.impl.ApplicationPackageImpl;
+import org.eclipse.e4.ui.model.application.ui.basic.MBasicFactory;
+import org.eclipse.e4.ui.model.application.ui.basic.MInputPart;
 import org.eclipse.e4.ui.model.application.ui.basic.MPart;
+import org.eclipse.e4.ui.model.application.ui.basic.MPartStack;
+import org.eclipse.e4.ui.workbench.modeling.EModelService;
+import org.eclipse.e4.ui.workbench.modeling.EPartService;
+import org.eclipse.e4.ui.workbench.modeling.EPartService.PartState;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.util.EContentAdapter;
@@ -30,6 +36,7 @@ import org.eclipse.emf.ecore.util.EContentAdapter;
 import at.bestsolution.efxclipse.runtime.example.photoedit.core.EventTopics;
 import at.bestsolution.efxclipse.runtime.example.photoedit.core.ResourceStore;
 import at.bestsolution.efxclipse.runtime.example.photoedit.model.photoedit.Album;
+import at.bestsolution.efxclipse.runtime.example.photoedit.model.photoedit.Media;
 import at.bestsolution.efxclipse.runtime.example.photoedit.model.photoedit.PhotoeditPackage;
 
 @SuppressWarnings("restriction")
@@ -44,6 +51,12 @@ public class AlbumListView {
 	
 	@Inject
 	MApplication application;
+	
+	@Inject
+	EModelService modelService;
+	
+	@Inject
+	EPartService partService;
 	
 	private ListView<Album> listView;
 	
@@ -87,15 +100,43 @@ public class AlbumListView {
 				return new AlbumCell();
 			}
 		});
-		listView.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<Album>() {
+		listView.setOnMouseClicked(new EventHandler<MouseEvent>() {
 
 			@Override
-			public void changed(ObservableValue<? extends Album> observable, Album oldValue, Album newValue) {
-				part.getPersistedState().put(PERSISTED_STATE_SELECTED_ALBUM,newValue.getUuid());
+			public void handle(MouseEvent event) {
+				if( event.getClickCount() == 2 ) {
+					handleOpenAlbum(listView.getSelectionModel().getSelectedItem());
+				}
 			}
 		});
 		
 		pane.setCenter(listView);
+	}
+	
+	void handleOpenAlbum(Album album) {
+		part.getPersistedState().put(PERSISTED_STATE_SELECTED_ALBUM,album.getUuid());
+		
+		// Remove old stacks
+		MPartStack stack = (MPartStack) modelService.find("editorcontainer", application);
+		for( MPart p : stack.getChildren().toArray(new MPart[0]) ) {
+			partService.hidePart(p, true);
+		}
+		
+		// Add new stacks
+		for( Media m : album.getMedia() ) {
+			MInputPart p = MBasicFactory.INSTANCE.createInputPart();
+			p.setLabel(m.getTitle());
+			p.setContributionURI("bundleclass://at.bestsolution.efxclipse.runtime.example.photoedit.ui/at.bestsolution.efxclipse.runtime.example.photoedit.ui.MediaEditor");
+			p.setInputURI("cdo-object://" + m.getUuid());
+			stack.getChildren().add(p);
+			System.err.println("Adding part" + p);
+		}
+		
+		if( ! stack.getChildren().isEmpty() ) {
+			System.err.println("Setting selection");
+//			stack.setSelectedElement(stack.getChildren().get(1));
+			partService.activate((MPart)stack.getChildren().get(1), true);
+		}
 	}
 	
 //	@Inject

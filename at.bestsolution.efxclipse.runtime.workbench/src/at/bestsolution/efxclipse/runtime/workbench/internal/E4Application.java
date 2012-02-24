@@ -276,7 +276,7 @@ public class E4Application extends AbstractJFXApplication {
 		String resourceHandler = getArgValue(E4Workbench.MODEL_RESOURCE_HANDLER, appContext, false);
 
 		if (resourceHandler == null) {
-			resourceHandler = "platform:/plugin/org.eclipse.e4.ui.workbench/" + ResourceHandler.class.getName();
+			resourceHandler = "bundleclass://org.eclipse.e4.ui.workbench/" + ResourceHandler.class.getName();
 		}
 
 		IContributionFactory factory = eclipseContext.get(IContributionFactory.class);

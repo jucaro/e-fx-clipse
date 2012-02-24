@@ -77,7 +77,7 @@ public abstract class AbstractPartRenderer {
 	 *            the part to start searching from
 	 * @return the closest context, or global context if none in the hierarchy
 	 */
-	protected IEclipseContext getContext(MUIElement part) {
+	public IEclipseContext getContext(MUIElement part) {
 		if (part instanceof MContext) {
 			return ((MContext) part).getContext();
 		}

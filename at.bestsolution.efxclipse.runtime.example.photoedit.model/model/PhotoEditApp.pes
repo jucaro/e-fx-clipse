@@ -8,6 +8,7 @@
   <albums title="Mountains 2011"
       description="Photos from hikes in 2011">
     <media xsi:type="photoedit:Photo"
+        uuid="_E4nQAF2TEeG-XLz_XksV3w"
         title="Photo 1"
         description="">
       <source
@@ -16,7 +17,8 @@
           objectURL="platform:/plugin/at.bestsolution.efxclipse.runtime.example.photoedit.model/model/album1/1.jpg"/>
     </media>
     <media xsi:type="photoedit:Photo"
-        title="Photo 1"
+        uuid="_E4nQAl2TEeG-XLz_XksV3w"
+        title="Photo 2"
         description="">
       <source
           xsi:type="photoedit:URLSource"

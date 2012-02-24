@@ -79,6 +79,8 @@ public class WorkbenchWindowRenderer extends JFXRenderer {
 			stage.xProperty().addListener(resizeListener);
 			stage.yProperty().addListener(resizeListener);
 
+			context.set(Stage.class, stage);
+			
 			return stage;
 		}
 

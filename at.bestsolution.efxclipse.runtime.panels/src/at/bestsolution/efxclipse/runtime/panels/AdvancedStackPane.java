@@ -4,9 +4,11 @@ import at.bestsolution.efxclipse.runtime.panels.FlingPane.FlingDirection;
 import javafx.collections.FXCollections;
 import javafx.collections.ListChangeListener;
 import javafx.collections.ObservableList;
+import javafx.event.EventHandler;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.HBox;
@@ -22,8 +24,6 @@ public class AdvancedStackPane extends Region {
 	
 	public AdvancedStackPane() {
 		this.container = new BorderPane();
-		this.container.setStyle("-fx-background-color: green;");
-		setStyle("-fx-background-color: red;");
 		
 		initTopTrim();
 		initContentArea();
@@ -35,7 +35,6 @@ public class AdvancedStackPane extends Region {
 		topArea = new BorderPane();
 		topArea.setCenter(new Label("Title Area"));
 		topArea.setRight(new Button("Show Tab Selector"));
-		topArea.setStyle("-fx-background-color: blue;");
 		container.setTop(topArea);
 	}
 	
@@ -56,9 +55,8 @@ public class AdvancedStackPane extends Region {
 		AnchorPane.setRightAnchor(flingPanel, 0.0);
 		AnchorPane.setTopAnchor(flingPanel, 0.0);
 		
-		flingPanel.setStyle("-fx-background-color: white;");
 		final HBox itemsPanel = new HBox();
-		itemsPanel.setStyle("-fx-background-color: green;");
+		itemsPanel.getStyleClass().add("advanced-tab-item-panel");
 		flingPanel.setContent(itemsPanel);
 		items.addListener(new ListChangeListener<AdvancedStackItem>() {
 			@Override
@@ -75,6 +73,16 @@ public class AdvancedStackPane extends Region {
 							for( AdvancedStackItem i : c.getAddedSubList() ) {
 								Label l = new Label(null, new ImageView(i.getIconDescriptorProperty().getImage()));
 								itemsPanel.getChildren().add(l);
+								l.getStyleClass().add("advanced-tab-item");
+								EventHandler<MouseEvent> h = new EventHandler<MouseEvent>() {
+									@Override
+									public void handle(MouseEvent event) {
+										if( event.isStillSincePress() ) {
+											System.err.println("Item clicked");
+										}
+									}
+								};
+								itemsPanel.setOnMouseClicked(h);
 							}
 						}
 					}
@@ -84,7 +92,6 @@ public class AdvancedStackPane extends Region {
 		
 		p.getChildren().add(flingPanel);
 		
-		contentArea.setStyle("-fx-background-color: yellow;");
 		container.setCenter(p);
 	}
 	

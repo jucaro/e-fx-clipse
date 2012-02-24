@@ -11,7 +11,8 @@ Require-Bundle: org.eclipse.core.runtime,
  at.bestsolution.efxclipse.runtime.example.photoedit.model;bundle-version="1.0.0",
  org.eclipse.e4.ui.model.workbench;bundle-version="0.10.0",
  org.eclipse.e4.ui.workbench;bundle-version="0.10.1",
- org.eclipse.e4.core.contexts;bundle-version="1.0.0"
+ org.eclipse.e4.core.contexts;bundle-version="1.0.0",
+ at.bestsolution.efxclipse.runtime.panels;bundle-version="0.0.12"
 Import-Package: javafx.animation;version="2.0.0",
  javafx.application;version="2.0.0",
  javafx.beans;version="2.0.0",
