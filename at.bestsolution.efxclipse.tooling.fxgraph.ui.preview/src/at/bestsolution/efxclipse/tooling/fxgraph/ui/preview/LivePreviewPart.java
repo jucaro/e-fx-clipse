@@ -328,6 +328,10 @@ public class LivePreviewPart extends ViewPart {
 						
 						loader = new FXMLLoader();
 					} else {
+						// Bugfix for jfx betas should be removed maybe later on
+						cl = Thread.currentThread().getContextClassLoader();
+						Thread.currentThread().setContextClassLoader(previewClassLoader);
+						
 						loader = new FXMLLoader();
 						loader.setClassLoader(previewClassLoader);
 					}
@@ -357,7 +361,6 @@ public class LivePreviewPart extends ViewPart {
 						rootPane.setScaleX(1);
 						rootPane.setScaleY(1);
 					}
-					
 					
 					loader.setStaticLoad(!preference.getBoolean(LivePreviewSynchronizer.PREF_LOAD_CONTROLLER, false));
 					loader.setLocation(contentData.relativePath);
