@@ -22,7 +22,7 @@ public class MyController implements Initializable {
 	 */
 	@FXML
 	public void clicked(ActionEvent event) {
-
+		System.err.println("Hello World");
 	}
 
 	/**
