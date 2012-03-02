@@ -82,9 +82,27 @@ public class ImportingTypesProposalProvider extends JdtTypesProposalProvider {
 					return;
 				}
 			}
+			
+			
 			// we could create an import statement if there is no conflict
 			FXML file = (FXML) context.getContents().get(0);
 			ElementDefinition clazz = file.getRootElement();
+			
+			for( ProcessingInstruction p : file.getProcessingInstructions() ) {
+				if( p.getImportedNamespace().getValue().equals(typeName) ) {
+					QualifiedName qualifiedName = qualifiedNameConverter.toQualifiedName(typeName);
+					String shortName = qualifiedName.getLastSegment();
+					
+					String escapedShortname = shortName;
+					if (valueConverter != null) {
+						escapedShortname = valueConverter.toString(shortName);
+					}
+					proposal.setCursorPosition(escapedShortname.length());
+					document.replace(proposal.getReplacementOffset(), proposal.getReplacementLength(), escapedShortname);
+					
+					return;
+				}
+			}
 			
 			QualifiedName qualifiedName = qualifiedNameConverter.toQualifiedName(typeName);			
 			if (qualifiedName.getSegmentCount() == 1) {
