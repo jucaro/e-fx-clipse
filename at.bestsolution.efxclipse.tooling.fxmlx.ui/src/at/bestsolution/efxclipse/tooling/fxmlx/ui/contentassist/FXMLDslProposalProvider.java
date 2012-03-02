@@ -59,6 +59,10 @@ public class FXMLDslProposalProvider extends AbstractFXMLDslProposalProvider {
 	@Inject
 	private IJavaProjectProvider projectProvider;
 	
+	@Inject
+	private IJvmTypeProvider.Factory jvmTypeProviderFactory;
+
+	
 	public FXMLDslProposalProvider() {
 		this.helper = new JDTHelper();
 	}
@@ -304,7 +308,7 @@ public class FXMLDslProposalProvider extends AbstractFXMLDslProposalProvider {
 		return name;
 	}
 	
-	private static IType resolveType(EObject model, IJavaProject jProject) {
+	private IType resolveType(EObject model, IJavaProject jProject) {
 		String name = null;
 		if( model instanceof ContainerElementDefinition ) {
 			ContainerElementDefinition e = (ContainerElementDefinition) model;
@@ -356,40 +360,32 @@ public class FXMLDslProposalProvider extends AbstractFXMLDslProposalProvider {
 		return namespace == null && name != null && Character.isUpperCase(name.charAt(0)) && ! name.contains(".");
 	}
 	
-	private static IType toJavaClass(String name, FXML fxml,
+	private IType toJavaClass(String name, FXML fxml,
 			IJavaProject jProject) {
-		IType type = null;
-
-		for (String imp : getImports(fxml)) {
-			if (imp.endsWith("*")) {
-				try {
-					IType t = jProject.findType(imp.substring(0,
-							imp.length() - 1) + name);
+		IJvmTypeProvider jvmTypeProvider = jvmTypeProviderFactory.createTypeProvider(fxml.eResource().getResourceSet());
+		
+		try  {
+			for (String imp : getImports(fxml)) {
+				if (imp.lastIndexOf(".") > 0 && Character.isLowerCase(imp.charAt(imp.lastIndexOf(".")+1))) {
+					JvmType t = jvmTypeProvider.findTypeByName(imp + "." + name);
 					if (t != null) {
-						return t;
+						return jProject.findType(t.getQualifiedName());
 					}
-				} catch (JavaModelException e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-				}
-			} else {
-				if (imp.endsWith(name)) {
-//					System.err.println("Matched: " + imp);
-					try {
-						IType t = jProject.findType(imp);
-//						System.err.println("Type: " + t);
+				} else {
+					if (imp.endsWith(name)) {
+						JvmType t = jvmTypeProvider.findTypeByName(imp);
 						if (t != null) {
-							return t;
+							return jProject.findType(t.getQualifiedName());
 						}
-					} catch (JavaModelException e) {
-						// TODO Auto-generated catch block
-						e.printStackTrace();
 					}
 				}
 			}
+		} catch (JavaModelException e) {
+			//TODO Log it
+			e.printStackTrace();
 		}
-
-		return type;
+		
+		return null;
 	}
 
 	private static List<String> getImports(FXML fxml) {
