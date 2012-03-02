@@ -1,2 +1,5 @@
-jfx.build.stagingdir = ${workspace}/at.bestsolution.efxclipse.runtime.examples.logo/build
+jfx.build.stagingdir = C:/Users/Tom Schindl/git/e-fx-clipse/at.bestsolution.efxclipse.runtime.examples.logo/build
 jfx.build.apptitle = at.bestsolution.efxclipse.runtime.examples.logo
+jfx.build.vendorname = BestSolution.at
+jfx.build.appversion = 1.0.0
+jfx.build.applicationClass = at.bestsolution.efxclipse.runtime.examples.logo.LogoAnimation
