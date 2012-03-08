@@ -30,6 +30,9 @@ import java.awt.geom.AffineTransform
 import java.awt.geom.Point2D
 import at.bestsolution.efxclipse.formats.svg.svg.Fill_rule
 import at.bestsolution.efxclipse.formats.svg.svg.SvgPolygonElement
+import org.eclipse.emf.ecore.EStructuralFeature
+import at.bestsolution.efxclipse.formats.svg.svg.SvgPackage$Literals
+import at.bestsolution.efxclipse.formats.svg.svg.PresentationAttributes
 
 class FXMLConverter {
 	private SvgSvgElement rootElement
@@ -269,13 +272,14 @@ class FXMLConverter {
 		«IF element.y != null»y="«element.y.parseLength»"«ENDIF»
 		«IF element.width != null»width="«element.width.parseLength»"«ENDIF»
 		«IF element.height != null»height="«element.height.parseLength»"«ENDIF»
-		«IF element.stroke_width != null»strokeWidth="«element.stroke_width.parseLength»"«ENDIF»
-		«IF element.opacity != null»opacity="«element.opacity»"«ENDIF»
 		«IF element.rx != null»arcWidth="«element.rx.parseLength * Double::valueOf("2.0")»"«ENDIF»
 		«IF element.ry != null»arcHeight="«element.ry.parseLength * Double::valueOf("2.0")»"«ENDIF»
+		«IF element.opacity != null»opacity="«element.opacity»"«ENDIF»
+		«handleShapePresentationAttributes(element)»
 		>
-		«handlePaint("fill",element.fill,element.fill_opacity)»
-		«handlePaint("stroke",element.stroke,element.stroke_opacity)»
+		«handlePaint("fill", lookupFeature(SvgPackage$Literals::PRESENTATION_ATTRIBUTES__FILL,element) as String,lookupFeature(SvgPackage$Literals::PRESENTATION_ATTRIBUTES__FILL_OPACITY,element) as String)»
+		«handlePaint("stroke",lookupFeature(SvgPackage$Literals::PRESENTATION_ATTRIBUTES__STROKE,element) as String,lookupFeature(SvgPackage$Literals::PRESENTATION_ATTRIBUTES__STROKE_OPACITY,element) as String)»
+		
 		«IF element.transform != null»
 			<transforms>
 				«element.transform.handleTransform»
@@ -363,20 +367,38 @@ class FXMLConverter {
 	</Group>
 	'''
 	
+	def lookupFeature(EStructuralFeature feature, EObject object) {
+		var eo = object;
+		do {
+			if( eo.eClass.EAllStructuralFeatures.contains(feature) ) {
+				if( eo.eIsSet(feature) ) {
+					return eo.eGet(feature);
+				}
+			}
+			eo = eo.eContainer;
+		} while( eo != null );
+		
+		return null;
+	}
+	
+	def handleShapePresentationAttributes(PresentationAttributes element) '''
+«««		«IF element.stroke_dasharray != null»«ENDIF»
+		«IF lookupFeature(SvgPackage$Literals::PRESENTATION_ATTRIBUTES__STROKE_DASHOFFSET,element) != null»strokeDashOffset="«(lookupFeature(SvgPackage$Literals::PRESENTATION_ATTRIBUTES__STROKE_DASHOFFSET,element) as String).parseLength»"«ENDIF»
+		«IF lookupFeature(SvgPackage$Literals::PRESENTATION_ATTRIBUTES__STROKE_LINECAP,element) != null»strokeLineCap="«(lookupFeature(SvgPackage$Literals::PRESENTATION_ATTRIBUTES__STROKE_LINECAP,element) as Stroke_linecap).toFx»"«ENDIF»
+		«IF lookupFeature(SvgPackage$Literals::PRESENTATION_ATTRIBUTES__STROKE_LINEJOIN,element) != null»strokeLineJoin="«(lookupFeature(SvgPackage$Literals::PRESENTATION_ATTRIBUTES__STROKE_LINEJOIN,element) as Stroke_linejoin).toFx»"«ENDIF»
+		«IF lookupFeature(SvgPackage$Literals::PRESENTATION_ATTRIBUTES__STROKE_MITERLIMIT,element) != null»strokeLineJoin="«(lookupFeature(SvgPackage$Literals::PRESENTATION_ATTRIBUTES__STROKE_MITERLIMIT,element) as String).parseLength»"«ENDIF»
+		«IF lookupFeature(SvgPackage$Literals::PRESENTATION_ATTRIBUTES__STROKE_WIDTH,element) != null»strokeWidth="«(lookupFeature(SvgPackage$Literals::PRESENTATION_ATTRIBUTES__STROKE_WIDTH,element) as String).parseLength»"«ENDIF»
+	'''
+	
 	def dispatch handle(SvgPathElement element) '''
 	<SVGPath
 		«IF element.d != null»content="«element.d»"«ENDIF»
-«««		«IF element.stroke_dasharray != null»«ENDIF»
-		«IF element.stroke_dashoffset != null»strokeDashOffset="«element.stroke_dashoffset.parseLength»"«ENDIF»
-		«IF element.stroke_linecap != null»strokeLineCap="«element.stroke_linecap.toFx»"«ENDIF»
-		«IF element.stroke_linejoin != null»strokeLineJoin="«element.stroke_linejoin.toFx»"«ENDIF»
-		«IF element.stroke_miterlimit != null»strokeMiterLimit="«element.stroke_miterlimit.parseLength»"«ENDIF»
-		«IF element.stroke_width != null»strokeWidth="«element.stroke_width.parseLength»"«ENDIF»
 		«IF element.opacity != null»opacity="«element.opacity»"«ENDIF»
 		«IF element.fill_rule != Fill_rule::NONZERO»fillRule="EVEN_ODD"«ENDIF»
+		«handleShapePresentationAttributes(element)»
 		>
-		«handlePaint("fill",element.fill,element.fill_opacity)»
-		«handlePaint("stroke",element.stroke,element.stroke_opacity)»
+		«handlePaint("fill", lookupFeature(SvgPackage$Literals::PRESENTATION_ATTRIBUTES__FILL,element) as String,lookupFeature(SvgPackage$Literals::PRESENTATION_ATTRIBUTES__FILL_OPACITY,element) as String)»
+		«handlePaint("stroke",lookupFeature(SvgPackage$Literals::PRESENTATION_ATTRIBUTES__STROKE,element) as String,lookupFeature(SvgPackage$Literals::PRESENTATION_ATTRIBUTES__STROKE_OPACITY,element) as String)»
 		«IF element.transform != null»
 			<transforms>
 				«element.transform.handleTransform»
@@ -445,16 +467,11 @@ class FXMLConverter {
 		«IF element.ry != null»radiusY="«element.ry.parseLength»"«ENDIF»
 		«IF element.cx != null»centerX="«element.cx.parseCoordinate»"«ENDIF»
 		«IF element.cy != null»centerY="«element.cy.parseCoordinate»"«ENDIF»
-«««		«IF element.stroke_dasharray != null»«ENDIF»
-		«IF element.stroke_dashoffset != null»strokeDashOffset="«element.stroke_dashoffset.parseLength»"«ENDIF»
-		«IF element.stroke_linecap != null»strokeLineCap="«element.stroke_linecap.toFx»"«ENDIF»
-		«IF element.stroke_linejoin != null»strokeLineJoin="«element.stroke_linejoin.toFx»"«ENDIF»
-		«IF element.stroke_miterlimit != null»strokeMiterLimit="«element.stroke_miterlimit.parseLength»"«ENDIF»
-		«IF element.stroke_width != null»strokeWidth="«element.stroke_width.parseLength»"«ENDIF»
 		«IF element.opacity != null»opacity="«element.opacity»"«ENDIF»
+		«handleShapePresentationAttributes(element)»
 		>
-		«handlePaint("fill",element.fill,element.fill_opacity)»
-		«handlePaint("stroke",element.stroke,element.stroke_opacity)»
+		«handlePaint("fill", lookupFeature(SvgPackage$Literals::PRESENTATION_ATTRIBUTES__FILL,element) as String,lookupFeature(SvgPackage$Literals::PRESENTATION_ATTRIBUTES__FILL_OPACITY,element) as String)»
+		«handlePaint("stroke",lookupFeature(SvgPackage$Literals::PRESENTATION_ATTRIBUTES__STROKE,element) as String,lookupFeature(SvgPackage$Literals::PRESENTATION_ATTRIBUTES__STROKE_OPACITY,element) as String)»
 		«IF element.transform != null»
 			<transforms>
 				«element.transform.handleTransform»
@@ -498,16 +515,12 @@ class FXMLConverter {
 		«IF element.r != null»radius="«element.r.parseLength»"«ENDIF»
 		«IF element.cx != null»centerX="«element.cx.parseCoordinate»"«ENDIF»
 		«IF element.cy != null»centerY="«element.cy.parseCoordinate»"«ENDIF»
-«««		«IF element.stroke_dasharray != null»«ENDIF»
-		«IF element.stroke_dashoffset != null»strokeDashOffset="«element.stroke_dashoffset.parseLength»"«ENDIF»
-		«IF element.stroke_linecap != null»strokeLineCap="«element.stroke_linecap.toFx»"«ENDIF»
-		«IF element.stroke_linejoin != null»strokeLineJoin="«element.stroke_linejoin.toFx»"«ENDIF»
-		«IF element.stroke_miterlimit != null»strokeMiterLimit="«element.stroke_miterlimit.parseLength»"«ENDIF»
-		«IF element.stroke_width != null»strokeWidth="«element.stroke_width.parseLength»"«ENDIF»
 		«IF element.opacity != null»opacity="«element.opacity»"«ENDIF»
+		«handleShapePresentationAttributes(element)»
 		>
-		«handlePaint("fill",element.fill,element.fill_opacity)»
-		«handlePaint("stroke",element.stroke,element.stroke_opacity)»
+		«handlePaint("fill", lookupFeature(SvgPackage$Literals::PRESENTATION_ATTRIBUTES__FILL,element) as String,lookupFeature(SvgPackage$Literals::PRESENTATION_ATTRIBUTES__FILL_OPACITY,element) as String)»
+		«handlePaint("stroke",lookupFeature(SvgPackage$Literals::PRESENTATION_ATTRIBUTES__STROKE,element) as String,lookupFeature(SvgPackage$Literals::PRESENTATION_ATTRIBUTES__STROKE_OPACITY,element) as String)»
+		
 		«IF element.transform != null»
 			<transforms>
 				«element.transform.handleTransform»
@@ -549,16 +562,12 @@ class FXMLConverter {
 	def dispatch handle(SvgPolygonElement element) '''
 	<Polygon
 		«IF element.points != null»points="«element.points.replaceAll("\\s+",",")»"«ENDIF»
-«««		«IF element.stroke_dasharray != null»«ENDIF»
-		«IF element.stroke_dashoffset != null»strokeDashOffset="«element.stroke_dashoffset.parseLength»"«ENDIF»
-		«IF element.stroke_linecap != null»strokeLineCap="«element.stroke_linecap.toFx»"«ENDIF»
-		«IF element.stroke_linejoin != null»strokeLineJoin="«element.stroke_linejoin.toFx»"«ENDIF»
-		«IF element.stroke_miterlimit != null»strokeMiterLimit="«element.stroke_miterlimit.parseLength»"«ENDIF»
-		«IF element.stroke_width != null»strokeWidth="«element.stroke_width.parseLength»"«ENDIF»
 		«IF element.opacity != null»opacity="«element.opacity»"«ENDIF»
+		«handleShapePresentationAttributes(element)»
 	>
-	«handlePaint("fill",element.fill,element.fill_opacity)»
-	«handlePaint("stroke",element.stroke,element.stroke_opacity)»
+	«handlePaint("fill", lookupFeature(SvgPackage$Literals::PRESENTATION_ATTRIBUTES__FILL,element) as String,lookupFeature(SvgPackage$Literals::PRESENTATION_ATTRIBUTES__FILL_OPACITY,element) as String)»
+	«handlePaint("stroke",lookupFeature(SvgPackage$Literals::PRESENTATION_ATTRIBUTES__STROKE,element) as String,lookupFeature(SvgPackage$Literals::PRESENTATION_ATTRIBUTES__STROKE_OPACITY,element) as String)»
+		
 	«IF element.transform != null»
 		<transforms>
 			«element.transform.handleTransform»
@@ -619,8 +628,9 @@ class FXMLConverter {
 	def fillPaint(String fill, Double opacity) {
 		if( fill.startsWith("#") ) {
 			return fill.hexColor(opacity)
-		} else if( fill.startsWith("rgb") ) {
-			
+		} else if( fill.toLowerCase.startsWith("rgb") ) {
+			val c = fill.substring(fill.indexOf("("),fill.indexOf(")"));
+			return c.rgbColor();
 		} else if( fill.startsWith("argb") ) {
 			
 		} else if( fill.startsWith("url") ) {
@@ -637,6 +647,26 @@ class FXMLConverter {
 			}
 			return fill.toUpperCase
 		}
+	}
+	
+	def rgbColor(String fill) '''
+	<Color>
+		<red>«fill.rgbRed»</red>
+		<green>«fill.rgbGreen»</green>
+		<blue>«fill.rgbBlue»</blue>
+	</Color>
+	'''
+	
+	def rgbRed(String color) {
+		return Integer::parseInt(color.split(";").get(0))/Double::parseDouble("255");
+	}
+	
+	def rgbGreen(String color) {
+		return Integer::parseInt(color.split(";").get(1))/Double::parseDouble("255");
+	}
+	
+	def rgbBlue(String color) {
+		return Integer::parseInt(color.split(";").get(2))/Double::parseDouble("255");
 	}
 	
 	def hexColor(String fill) '''
@@ -678,6 +708,7 @@ class FXMLConverter {
 			y="«parts.get(1)»"
 		«ELSE»
 			x="«params»"
+			y="«params»"
 		«ENDIF»
 		>
 	</Translate>
@@ -689,6 +720,7 @@ class FXMLConverter {
 			y="«parts.get(1)»"
 		«ELSE»
 			x="«params»"
+			y="«params»"
 		«ENDIF»
 	>
 	</Scale>
@@ -699,7 +731,8 @@ class FXMLConverter {
 			«IF parts.size == 2»
 				angle="«parts.get(0)»"
 				pivotX="«parts.get(1)»"
-			«ELSEIF parts.size == 2»
+				pivotY="«parts.get(1)»"
+			«ELSEIF parts.size == 3»
 				angle="«parts.get(0)»"
 				pivotX="«parts.get(1)»"
 				pivotY="«parts.get(2)»"

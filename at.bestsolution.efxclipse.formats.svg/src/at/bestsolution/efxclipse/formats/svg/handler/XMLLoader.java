@@ -84,12 +84,12 @@ public class XMLLoader {
 				if( s != null && s.trim().length() > 0 ) {
 					for( Entry<String, String> e : valueMap(s).entrySet() ) {
 						String name = e.getKey().replaceAll("-", "_");
-						EStructuralFeature styleFeature = o.eClass().getEStructuralFeature(name);
+						EStructuralFeature styleFeature = o.eClass().getEStructuralFeature(name.trim());
 						if( styleFeature != null ) {
 							Object value = EcoreUtil.createFromString((EDataType) styleFeature.getEType(), e.getValue());
 							o.eSet(styleFeature, value);
 						} else {
-							System.err.println("Could not find style attribute: " + name);
+							System.err.println("Could not find style attribute: " + name + " on " + o.eClass());
 						}
 					}
 				}
