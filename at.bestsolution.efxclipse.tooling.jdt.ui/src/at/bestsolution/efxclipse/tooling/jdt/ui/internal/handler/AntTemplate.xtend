@@ -213,8 +213,9 @@ class AntTemplate {
 			
 			«IF keyStore != null»
 			<fx:signjar keystore="«keyStore»" alias="«keyStoreAlias»" «IF keyStorePass != null»storepass="«keyStorePass»" «ENDIF»destDir="dist">
-				<fileset dir='dist/*.jar'/>
-				<fileset dir='dist/**/*.jar'/>
+				<fileset dir='dist'>
+					<include name='**/*.jar' />
+				</fileset>
 			</fx:signjar>
 			«ENDIF»
 		
