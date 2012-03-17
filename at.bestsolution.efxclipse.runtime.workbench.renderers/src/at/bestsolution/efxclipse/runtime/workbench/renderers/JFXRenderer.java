@@ -14,8 +14,15 @@ import at.bestsolution.efxclipse.runtime.workbench.AbstractPartRenderer;
 
 @SuppressWarnings("restriction")
 public abstract class JFXRenderer extends AbstractPartRenderer {
+	public static final String FX_EVENT_TOPIC_BASE = "at/bestsolution/efxclipse";
+	public static final String FX_FOCUS_TOPIC = FX_EVENT_TOPIC_BASE + "/FocusElement";
+	
 	@Override
 	public void bindWidget(MUIElement me, Object widget) {
+		if( widget instanceof Node ) {
+			((Node) widget).setUserData(me);
+		}
+		
 		me.setWidget(widget);
 		if (widget instanceof Node && me.getElementId() != null) {
 			((Node) widget).setId(me.getElementId());
@@ -77,8 +84,19 @@ public abstract class JFXRenderer extends AbstractPartRenderer {
 
 	@Override
 	protected boolean requiresFocus(MPart element) {
-		// TODO Auto-generated method stub
-		return false;
+//		MUIElement focussed = getModelElement(Display.getDefault()
+//				.getFocusControl());
+//		if (focussed == null) {
+//			return true;
+//		}
+//		// we ignore menus
+//		do {
+//			if (focussed == element || focussed == element.getToolbar()) {
+//				return false;
+//			}
+//			focussed = focussed.getParent();
+//		} while (focussed != null);
+		return true;
 	}
 
 }

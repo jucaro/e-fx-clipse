@@ -17,8 +17,10 @@ import javafx.stage.StageStyle;
 import javax.inject.Inject;
 
 import org.eclipse.e4.core.di.annotations.Optional;
+import org.eclipse.e4.core.services.events.IEventBroker;
 import org.eclipse.e4.ui.model.application.ui.MElementContainer;
 import org.eclipse.e4.ui.model.application.ui.MUIElement;
+import org.eclipse.e4.ui.model.application.ui.basic.MPartStack;
 import org.eclipse.e4.ui.model.application.ui.basic.MTrimBar;
 import org.eclipse.e4.ui.model.application.ui.basic.MTrimmedWindow;
 import org.eclipse.e4.ui.model.application.ui.basic.MWindow;
@@ -40,6 +42,10 @@ public class WorkbenchWindowRenderer extends JFXRenderer {
 
 	private Registration sceneRegistration;
 
+	@Inject
+	IEventBroker broker;
+	
+	@SuppressWarnings("deprecation")
 	@Override
 	public Object createWidget(MUIElement element, Object parent) {
 		if (element instanceof MWindow) {
@@ -57,6 +63,36 @@ public class WorkbenchWindowRenderer extends JFXRenderer {
 
 			root.setStyle("-fx-background-color: #999;");
 			Scene scene = new Scene(root, Integer.MAX_VALUE, Integer.MAX_VALUE);
+			scene.impl_focusOwnerProperty().addListener(new ChangeListener<Node>() {
+				private Object lastFocusElement;
+				@Override
+				public void changed(ObservableValue<? extends Node> observable, Node oldValue, Node newValue) {
+					if( newValue != null ) {
+						Object element = null;
+						do {
+							if( newValue.getUserData() instanceof MUIElement ) {
+								MUIElement e = (MUIElement) newValue.getUserData();
+								
+								if( e instanceof MPartStack ) {
+									element = e;
+								} else if( (MUIElement)e.getParent() instanceof MPartStack ) {
+									element = e.getParent();
+								} else {
+									element = e;	
+								}
+								
+								break;
+							}
+							
+						} while( (newValue = newValue.getParent()) != null );
+						
+						if( element != lastFocusElement ) {
+							lastFocusElement = element;
+							broker.send(FX_FOCUS_TOPIC, element);
+						}
+					}
+				}
+			});
 
 			if (themeManager != null) {
 				Theme theme = themeManager.getCurrentTheme();
