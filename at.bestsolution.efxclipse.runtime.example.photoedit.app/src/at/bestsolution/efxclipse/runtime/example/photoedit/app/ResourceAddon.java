@@ -50,7 +50,7 @@ public class ResourceAddon {
 			@Override
 			public void notifyChanged(Notification msg) {
 				super.notifyChanged(msg);
-				if( msg.getFeature() == ApplicationPackageImpl.Literals.CONTRIBUTION__PERSISTED_STATE ) {
+				if( msg.getFeature() == ApplicationPackageImpl.Literals.APPLICATION_ELEMENT__PERSISTED_STATE ) {
 					newResourceURI((Entry<String, String>) msg.getNewValue());
 				} else if( msg.getFeature() == ApplicationPackageImpl.Literals.STRING_TO_STRING_MAP__VALUE ) {
 					newResourceURI((Entry<String, String>) msg.getNotifier());
