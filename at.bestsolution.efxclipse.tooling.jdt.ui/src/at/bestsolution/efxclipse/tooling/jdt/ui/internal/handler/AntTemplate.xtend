@@ -221,7 +221,8 @@ class AntTemplate {
 			</fx:jar>
 			
 			«IF keyStore != null»
-			<fx:signjar keystore="«keyStore»" alias="«keyStoreAlias»" «IF keyStorePass != null»storepass="«keyStorePass»" «ENDIF»destDir="dist">
+			<!-- Need to use ${basedir} because somehow the ant task is calculating the directory differently -->
+			<fx:signjar keystore="«keyStore»" alias="«keyStoreAlias»" «IF keyStorePass != null»storepass="«keyStorePass»" «ENDIF»destDir="${basedir}/dist">
 				<fileset dir='dist'>
 					<include name='**/*.jar' />
 				</fileset>
