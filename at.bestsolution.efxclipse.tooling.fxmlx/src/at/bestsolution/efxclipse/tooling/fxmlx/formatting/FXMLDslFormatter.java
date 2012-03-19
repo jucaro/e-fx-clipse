@@ -3,8 +3,15 @@
  */
 package at.bestsolution.efxclipse.tooling.fxmlx.formatting;
 
+import java.util.List;
+
+import org.eclipse.xtext.Keyword;
 import org.eclipse.xtext.formatting.impl.AbstractDeclarativeFormatter;
 import org.eclipse.xtext.formatting.impl.FormattingConfig;
+import org.eclipse.xtext.util.Pair;
+
+import at.bestsolution.efxclipse.tooling.fxmlx.services.FXMLDslGrammarAccess;
+
 
 /**
  * This class contains custom formatting description.
@@ -18,10 +25,27 @@ public class FXMLDslFormatter extends AbstractDeclarativeFormatter {
 	
 	@Override
 	protected void configureFormatting(FormattingConfig c) {
+		FXMLDslGrammarAccess f = (FXMLDslGrammarAccess) getGrammarAccess();
+		
 // It's usually a good idea to activate the following three statements.
 // They will add and preserve newlines around comments
 //		c.setLinewrap(0, 1, 2).before(getGrammarAccess().getSL_COMMENTRule());
 //		c.setLinewrap(0, 1, 2).before(getGrammarAccess().getML_COMMENTRule());
 //		c.setLinewrap(0, 1, 1).after(getGrammarAccess().getML_COMMENTRule());
+//		{
+//			List<Pair<Keyword,Keyword>> pairs = f.findKeywordPairs("<", "/>");
+//			for (Pair<Keyword, Keyword> pair : pairs) {
+//				c.setIndentation(pair.getFirst(), pair.getSecond());
+//			}	
+//		}
+//		
+		for (Keyword comma : f.findKeywords(":","<",">","=")) {
+			c.setNoSpace().around(comma);
+		}
+		
+		c.setIndentationIncrement().after(f.getContainerElementDefinitionAccess().getLessThanSignKeyword_0());
+		c.setIndentationDecrement().before(f.getContainerElementDefinitionAccess().getGreaterThanSignKeyword_10());
+		c.setLinewrap(0, 1, 2).around(f.getContainerElementDefinitionRule());
+		c.setLinewrap(0, 1, 2).around(f.getEmptyElementDefinitionRule());
 	}
 }
