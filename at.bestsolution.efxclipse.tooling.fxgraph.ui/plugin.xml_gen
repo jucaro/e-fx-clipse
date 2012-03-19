@@ -11,6 +11,7 @@
             default="true"
             extensions="fxgraph"
             id="at.bestsolution.efxclipse.tooling.fxgraph.FXGraph"
+            matchingStrategy="at.bestsolution.efxclipse.tooling.fxgraph.ui.FXGraphExecutableExtensionFactory:org.eclipse.xtext.xbase.ui.editor.JavaEditorInputMatcher"
             name="FXGraph Editor">
         </editor>
     </extension>
