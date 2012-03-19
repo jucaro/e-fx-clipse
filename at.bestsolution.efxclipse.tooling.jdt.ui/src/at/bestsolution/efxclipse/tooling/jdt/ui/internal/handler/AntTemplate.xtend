@@ -120,6 +120,7 @@ class AntTemplate {
 				</classpath>
 			</javac>
 			
+			<!-- Copy over none Java-Files -->
 			<copy todir="build/classes">
 			«FOR String s : projectSourceDirs»
 				<fileset dir="project/«s»">
@@ -127,6 +128,14 @@ class AntTemplate {
 				</fileset>
 			«ENDFOR»
 			</copy>
+		
+			«FOR String s : projectRefs»
+			<copy todir="build/classes">
+				<fileset dir="projectRefs/«s»">
+					<exclude name="**/*.java"/>
+				</fileset>
+			</copy>
+			«ENDFOR»
 
 		</target>
 		'''	
