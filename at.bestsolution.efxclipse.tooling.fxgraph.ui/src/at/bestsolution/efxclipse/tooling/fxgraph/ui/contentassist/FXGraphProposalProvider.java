@@ -507,6 +507,9 @@ public class FXGraphProposalProvider extends AbstractFXGraphProposalProvider {
 			at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.Property propertyElement = (at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.Property) context
 					.getCurrentModel();
 			Element element = (Element) context.getCurrentModel().eContainer();
+			
+			System.err.println("Type: " + element.getType());
+			
 			TypeData data = getTypeData(getJavaProject(model),
 					element.getType());
 

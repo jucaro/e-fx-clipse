@@ -10,6 +10,7 @@ import java.util.SortedSet;
 import java.util.TreeSet;
 
 import org.eclipse.jdt.core.Flags;
+import org.eclipse.jdt.core.IField;
 import org.eclipse.jdt.core.IJavaProject;
 import org.eclipse.jdt.core.IMethod;
 import org.eclipse.jdt.core.IType;
@@ -230,6 +231,38 @@ public class JDTHelper {
 		@Override
 		public List<Proposal> getProposals() {
 			return PROPOSALS;
+		}
+	}
+	
+	public static class EnumValueProperty extends JDTHelperSingleValueProperty {
+		
+		private final List<Proposal> proposals = new ArrayList<Proposal>();
+
+		public EnumValueProperty(IMethod method, String name, String owner, String returnType, IType type) {
+			super(method, name, owner, returnType);
+			try {
+				for (IField c : type.getFields()) {
+					if (Flags.isEnum(c.getFlags())) {
+						StyledString s = new StyledString(
+								c.getElementName());
+						s.append(
+								" : "
+										+ type.getElementName(),
+								StyledString.QUALIFIER_STYLER);
+						proposals.add(new Proposal("\"" + c.getElementName()
+								+ "\"", s, JFaceResources
+								.getImage(JDTHelper.ENUM_KEY)));
+					}
+				}
+			} catch (JavaModelException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+		
+		@Override
+		public List<Proposal> getProposals() {
+			return proposals;
 		}
 	}
 
@@ -457,54 +490,61 @@ public class JDTHelper {
 							continue;
 						}
 
-						boolean isLists = false;
-						boolean isMap = false;
-						if ("java.util.List".equals(type.getFullyQualifiedName())) {
-							isLists = true;
-						} else {
-							for (String i : type.getSuperInterfaceNames()) {
-								if (i.equals("java.util.List")) {
-									isLists = true;
-								}
+						if( type.isEnum() ) {
+							if (!isReadonly) {
+								EnumValueProperty p = new EnumValueProperty(m, propName, ownerName, returnSignature, type);
+								d.properties.add(p);
 							}
-						}
-
-						if (!isLists) {
-							if ("java.util.Map".equals(type.getFullyQualifiedName())) {
-								isMap = true;
+						} else {
+							boolean isLists = false;
+							boolean isMap = false;
+							if ("java.util.List".equals(type.getFullyQualifiedName())) {
+								isLists = true;
 							} else {
 								for (String i : type.getSuperInterfaceNames()) {
-									if (i.equals("java.util.Map")) {
-										isMap = true;
+									if (i.equals("java.util.List")) {
+										isLists = true;
 									}
 								}
 							}
-						}
 
-						if (isLists) {
-							String listType;
-							if (returnSignature.indexOf('<') != -1) {
-								listType = returnSignature.substring(returnSignature.indexOf('<') + 1, returnSignature.lastIndexOf('>'));
+							if (!isLists) {
+								if ("java.util.Map".equals(type.getFullyQualifiedName())) {
+									isMap = true;
+								} else {
+									for (String i : type.getSuperInterfaceNames()) {
+										if (i.equals("java.util.Map")) {
+											isMap = true;
+										}
+									}
+								}
+							}
+
+							if (isLists) {
+								String listType;
+								if (returnSignature.indexOf('<') != -1) {
+									listType = returnSignature.substring(returnSignature.indexOf('<') + 1, returnSignature.lastIndexOf('>'));
+								} else {
+									listType = "?";
+								}
+
+								if (!propName.endsWith("Unmodifiable")) {
+									ListValueProperty p = new ListValueProperty(m, propName, ownerName, listType, isReadonly);
+									d.properties.add(p);
+								}
+							} else if (isMap) {
+								MapValueProperty p = new MapValueProperty(m, propName, ownerName);
+								d.properties.add(p);
+							} else if (type.getFullyQualifiedName().equals("java.lang.String")) {
+								if (!isReadonly) {
+									StringValueProperty p = new StringValueProperty(m, propName, ownerName, returnSignature);
+									d.properties.add(p);
+								}
 							} else {
-								listType = "?";
-							}
-
-							if (!propName.endsWith("Unmodifiable")) {
-								ListValueProperty p = new ListValueProperty(m, propName, ownerName, listType, isReadonly);
-								d.properties.add(p);
-							}
-						} else if (isMap) {
-							MapValueProperty p = new MapValueProperty(m, propName, ownerName);
-							d.properties.add(p);
-						} else if (type.getFullyQualifiedName().equals("java.lang.String")) {
-							if (!isReadonly) {
-								StringValueProperty p = new StringValueProperty(m, propName, ownerName, returnSignature);
-								d.properties.add(p);
-							}
-						} else {
-							if (!isReadonly) {
-								ElementValueProperty p = new ElementValueProperty(m, propName, ownerName, returnSignature);
-								d.properties.add(p);
+								if (!isReadonly) {
+									ElementValueProperty p = new ElementValueProperty(m, propName, ownerName, returnSignature);
+									d.properties.add(p);
+								}
 							}
 						}
 					}
