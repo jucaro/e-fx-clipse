@@ -3,17 +3,22 @@
  */
 package at.bestsolution.efxclipse.tooling.fxgraph.generator
 
+import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.BindValueProperty
 import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.ComponentDefinition
 import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.ControllerHandledValueProperty
 import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.CopyValueProperty
 import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.Element
 import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.IncludeValueProperty
 import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.ListValueProperty
+import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.LocationValueProperty
 import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.MapValueProperty
+import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.Model
 import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.Property
 import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.ReferenceValueProperty
+import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.ResourceValueProperty
 import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.ScriptHandlerHandledValueProperty
 import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.ScriptValueExpression
+import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.ScriptValueReference
 import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.SimpleValueProperty
 import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.StaticValueProperty
 import java.util.List
@@ -25,11 +30,6 @@ import org.eclipse.xtext.common.types.JvmTypeReference
 import org.eclipse.xtext.generator.IFileSystemAccess
 import org.eclipse.xtext.generator.IGenerator
 import org.eclipse.xtext.xbase.compiler.ImportManager
-import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.LocationValueProperty
-import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.ResourceValueProperty
-import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.BindValueProperty
-import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.Model
-import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.ScriptValueReference
 
 class FXGraphGenerator implements IGenerator {
 	
@@ -49,6 +49,8 @@ class FXGraphGenerator implements IGenerator {
 //				
 				var i = 0;
 			
+				var jproject = JavaCore::create(project);
+				
 				for( seg : uri.segments ) {
 					if( i >= 1 ) {
 						projectRelativePath = projectRelativePath + "/" + uri.segment(i);
@@ -56,18 +58,22 @@ class FXGraphGenerator implements IGenerator {
 					i = i + 1;
 				}
 			
-				var jproject = JavaCore::create(project);
+				var inSourceFound = false;
+			
 				for( packroot: jproject.rawClasspath ) {
 					if( packroot.entryKind == IClasspathEntry::CPE_SOURCE ) {
 						if( projectRelativePath.startsWith(packroot.path.toString) ) {
 							projectRelativePath = projectRelativePath.substring(packroot.path.toString.length);
+							inSourceFound = true;
 						}
 					}
 				}
 				
-//				System::err.println("The path: " + projectRelativePath);
+				if( inSourceFound ) {
+					return projectRelativePath;
+				}
 				
-				return projectRelativePath;		
+				return null;		
 			} else {
 				return null;
 			}
