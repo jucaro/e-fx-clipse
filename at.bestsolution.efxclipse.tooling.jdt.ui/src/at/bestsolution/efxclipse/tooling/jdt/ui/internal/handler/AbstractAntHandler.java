@@ -73,6 +73,7 @@ public abstract class AbstractAntHandler extends AbstractHandler {
 		map.put("keyStore", properties.getProperty("jfx.sign.keystore") != null ? properties.getProperty("jfx.sign.keystore").replace("${workspace}", workbench) : null);
 		map.put("keyStoreAlias", properties.getProperty("jfx.sign.alias"));
 		map.put("keyStorePass", properties.getProperty("jfx.sign.password"));
+		map.put("keyPass", properties.getProperty("jfx.sign.keypassword"));
 		
 		IJavaProject project = JavaCore.create(f.getProject());
 

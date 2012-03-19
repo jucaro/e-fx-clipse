@@ -138,6 +138,7 @@ public class JFXBuildConfigurationEditor extends MultiPageEditorPart implements
 	public static final String SIGN_KEYSTORE = "signKeystore";
 	public static final String SIGN_ALIAS    = "signAlias";
 	public static final String SIGN_PASSWORD = "signPassword";
+	public static final String SIGN_KEYPASSWOARD = "signKeyPassword";
 	
 	private static final int DELAY = 500;
 	
@@ -162,6 +163,7 @@ public class JFXBuildConfigurationEditor extends MultiPageEditorPart implements
 			put(SIGN_KEYSTORE,"jfx.sign.keystore");
 			put(SIGN_ALIAS,"jfx.sign.alias");
 			put(SIGN_PASSWORD,"jfx.sign.password");
+			put(SIGN_KEYPASSWOARD,"jfx.sign.keypassword");
 		}
 	};
 
@@ -459,6 +461,13 @@ public class JFXBuildConfigurationEditor extends MultiPageEditorPart implements
 				});
 				dbc.bindValue(textModify.observeDelayed(DELAY, t), BeanProperties.value(SIGN_KEYSTORE).observe(bean));
 			}
+
+			{
+				toolkit.createLabel(sectionClient, "Store-Password:");
+				Text t = toolkit.createText(sectionClient, "");
+				t.setLayoutData(new GridData(GridData.FILL,GridData.CENTER,true,false,3,1));
+				dbc.bindValue(textModify.observeDelayed(DELAY, t), BeanProperties.value(SIGN_PASSWORD).observe(bean));
+			}
 			
 			{
 				toolkit.createLabel(sectionClient, "Alias:");
@@ -466,12 +475,12 @@ public class JFXBuildConfigurationEditor extends MultiPageEditorPart implements
 				t.setLayoutData(new GridData(GridData.FILL,GridData.CENTER,true,false,3,1));
 				dbc.bindValue(textModify.observeDelayed(DELAY, t), BeanProperties.value(SIGN_ALIAS).observe(bean));
 			}
-			
+
 			{
-				toolkit.createLabel(sectionClient, "Password:");
+				toolkit.createLabel(sectionClient, "Key-Password:");
 				Text t = toolkit.createText(sectionClient, "");
 				t.setLayoutData(new GridData(GridData.FILL,GridData.CENTER,true,false,3,1));
-				dbc.bindValue(textModify.observeDelayed(DELAY, t), BeanProperties.value(SIGN_PASSWORD).observe(bean));
+				dbc.bindValue(textModify.observeDelayed(DELAY, t), BeanProperties.value(SIGN_KEYPASSWOARD).observe(bean));
 			}
 			
 			section.setClient(sectionClient);
@@ -915,6 +924,14 @@ public class JFXBuildConfigurationEditor extends MultiPageEditorPart implements
 		
 		public String getSignPassword() {
 			return get(SIGN_PASSWORD);
+		}
+		
+		public void setSignKeyPassword(String value) {
+			set(SIGN_KEYPASSWOARD,value);
+		}
+		
+		public String getSignKeyPassword() {
+			return get(SIGN_KEYPASSWOARD);
 		}
 	}
 }

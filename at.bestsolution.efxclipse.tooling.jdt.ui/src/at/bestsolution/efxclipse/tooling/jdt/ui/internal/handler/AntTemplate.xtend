@@ -161,6 +161,7 @@ class AntTemplate {
 		var keyStore = properties.get("keyStore") as String;
 		var keyStoreAlias = properties.get("keyStoreAlias") as String;
 		var keyStorePass = properties.get("keyStorePass") as String;
+		var keyPass = properties.get("keyPass") as String;
 		
 		'''
 		<target name="do-deploy" depends="setup-staging-area, do-compile, init-fx-tasks">
@@ -222,7 +223,7 @@ class AntTemplate {
 			
 			«IF keyStore != null»
 			<!-- Need to use ${basedir} because somehow the ant task is calculating the directory differently -->
-			<fx:signjar keystore="«keyStore»" alias="«keyStoreAlias»" «IF keyStorePass != null»storepass="«keyStorePass»" «ENDIF»destDir="${basedir}/dist">
+			<fx:signjar keystore="«keyStore»" alias="«keyStoreAlias»" «IF keyPass != null»keypass="«keyPass»" «ENDIF»«IF keyStorePass != null»storepass="«keyStorePass»" «ENDIF»destDir="${basedir}/dist">
 				<fileset dir='dist'>
 					<include name='**/*.jar' />
 				</fileset>
