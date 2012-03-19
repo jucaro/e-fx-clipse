@@ -48,6 +48,7 @@ import at.bestsolution.efxclipse.tooling.css.jfx.scene.chart.part.PlotSymbol;
 import at.bestsolution.efxclipse.tooling.css.jfx.scene.chart.part.ValueAxis;
 import at.bestsolution.efxclipse.tooling.css.jfx.scene.control.Label;
 import at.bestsolution.efxclipse.tooling.css.jfx.scene.control.Labeled;
+import at.bestsolution.efxclipse.tooling.css.jfx.scene.control.MenuBar;
 import at.bestsolution.efxclipse.tooling.css.jfx.scene.control.PasswordBox;
 import at.bestsolution.efxclipse.tooling.css.jfx.scene.control.Region;
 import at.bestsolution.efxclipse.tooling.css.jfx.scene.control.ScrollBar;
@@ -122,6 +123,7 @@ public class JFXDialectExtension implements CssDialectExtension {
 		PROPERTIES.addAll(NumberAxis.init());
 		PROPERTIES.addAll(PlotSymbol.init());
 		PROPERTIES.addAll(ValueAxis.init());
+		PROPERTIES.addAll(MenuBar.init());
 		
 		//TODO we have to add validation here
 		PROPERTIES.add(new Property("-fx-font") {
