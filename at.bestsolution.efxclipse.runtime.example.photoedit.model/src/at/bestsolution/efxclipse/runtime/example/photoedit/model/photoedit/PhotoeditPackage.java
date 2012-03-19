@@ -355,13 +355,31 @@ public interface PhotoeditPackage extends EPackage {
 	int PHOTO_AREA__HEIGHT = BASE_OBJECT_FEATURE_COUNT + 3;
 
 	/**
+	 * The feature id for the '<em><b>Color</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PHOTO_AREA__COLOR = BASE_OBJECT_FEATURE_COUNT + 4;
+
+	/**
+	 * The feature id for the '<em><b>Description</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PHOTO_AREA__DESCRIPTION = BASE_OBJECT_FEATURE_COUNT + 5;
+
+	/**
 	 * The number of structural features of the '<em>Photo Area</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PHOTO_AREA_FEATURE_COUNT = BASE_OBJECT_FEATURE_COUNT + 4;
+	int PHOTO_AREA_FEATURE_COUNT = BASE_OBJECT_FEATURE_COUNT + 6;
 
 	/**
 	 * The meta object id for the '{@link at.bestsolution.efxclipse.runtime.example.photoedit.model.photoedit.impl.SourceImpl <em>Source</em>}' class.
@@ -746,6 +764,28 @@ public interface PhotoeditPackage extends EPackage {
 	EAttribute getPhotoArea_Height();
 
 	/**
+	 * Returns the meta object for the attribute '{@link at.bestsolution.efxclipse.runtime.example.photoedit.model.photoedit.PhotoArea#getColor <em>Color</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Color</em>'.
+	 * @see at.bestsolution.efxclipse.runtime.example.photoedit.model.photoedit.PhotoArea#getColor()
+	 * @see #getPhotoArea()
+	 * @generated
+	 */
+	EAttribute getPhotoArea_Color();
+
+	/**
+	 * Returns the meta object for the attribute '{@link at.bestsolution.efxclipse.runtime.example.photoedit.model.photoedit.PhotoArea#getDescription <em>Description</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Description</em>'.
+	 * @see at.bestsolution.efxclipse.runtime.example.photoedit.model.photoedit.PhotoArea#getDescription()
+	 * @see #getPhotoArea()
+	 * @generated
+	 */
+	EAttribute getPhotoArea_Description();
+
+	/**
 	 * Returns the meta object for class '{@link at.bestsolution.efxclipse.runtime.example.photoedit.model.photoedit.Source <em>Source</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1044,6 +1084,22 @@ public interface PhotoeditPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute PHOTO_AREA__HEIGHT = eINSTANCE.getPhotoArea_Height();
+
+		/**
+		 * The meta object literal for the '<em><b>Color</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute PHOTO_AREA__COLOR = eINSTANCE.getPhotoArea_Color();
+
+		/**
+		 * The meta object literal for the '<em><b>Description</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute PHOTO_AREA__DESCRIPTION = eINSTANCE.getPhotoArea_Description();
 
 		/**
 		 * The meta object literal for the '{@link at.bestsolution.efxclipse.runtime.example.photoedit.model.photoedit.impl.SourceImpl <em>Source</em>}' class.

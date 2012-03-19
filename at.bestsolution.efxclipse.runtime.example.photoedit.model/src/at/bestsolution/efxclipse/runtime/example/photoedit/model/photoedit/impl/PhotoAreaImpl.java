@@ -27,6 +27,8 @@ import org.eclipse.emf.ecore.impl.EObjectImpl;
  *   <li>{@link at.bestsolution.efxclipse.runtime.example.photoedit.model.photoedit.impl.PhotoAreaImpl#getY <em>Y</em>}</li>
  *   <li>{@link at.bestsolution.efxclipse.runtime.example.photoedit.model.photoedit.impl.PhotoAreaImpl#getWidth <em>Width</em>}</li>
  *   <li>{@link at.bestsolution.efxclipse.runtime.example.photoedit.model.photoedit.impl.PhotoAreaImpl#getHeight <em>Height</em>}</li>
+ *   <li>{@link at.bestsolution.efxclipse.runtime.example.photoedit.model.photoedit.impl.PhotoAreaImpl#getColor <em>Color</em>}</li>
+ *   <li>{@link at.bestsolution.efxclipse.runtime.example.photoedit.model.photoedit.impl.PhotoAreaImpl#getDescription <em>Description</em>}</li>
  * </ul>
  * </p>
  *
@@ -112,6 +114,46 @@ public class PhotoAreaImpl extends BaseObjectImpl implements PhotoArea {
 	 * @ordered
 	 */
 	protected double height = HEIGHT_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getColor() <em>Color</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getColor()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String COLOR_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getColor() <em>Color</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getColor()
+	 * @generated
+	 * @ordered
+	 */
+	protected String color = COLOR_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getDescription() <em>Description</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getDescription()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String DESCRIPTION_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getDescription() <em>Description</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getDescription()
+	 * @generated
+	 * @ordered
+	 */
+	protected String description = DESCRIPTION_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -221,6 +263,48 @@ public class PhotoAreaImpl extends BaseObjectImpl implements PhotoArea {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public String getColor() {
+		return color;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setColor(String newColor) {
+		String oldColor = color;
+		color = newColor;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PhotoeditPackage.PHOTO_AREA__COLOR, oldColor, color));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String getDescription() {
+		return description;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setDescription(String newDescription) {
+		String oldDescription = description;
+		description = newDescription;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PhotoeditPackage.PHOTO_AREA__DESCRIPTION, oldDescription, description));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
@@ -232,6 +316,10 @@ public class PhotoAreaImpl extends BaseObjectImpl implements PhotoArea {
 				return getWidth();
 			case PhotoeditPackage.PHOTO_AREA__HEIGHT:
 				return getHeight();
+			case PhotoeditPackage.PHOTO_AREA__COLOR:
+				return getColor();
+			case PhotoeditPackage.PHOTO_AREA__DESCRIPTION:
+				return getDescription();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -255,6 +343,12 @@ public class PhotoAreaImpl extends BaseObjectImpl implements PhotoArea {
 				return;
 			case PhotoeditPackage.PHOTO_AREA__HEIGHT:
 				setHeight((Double)newValue);
+				return;
+			case PhotoeditPackage.PHOTO_AREA__COLOR:
+				setColor((String)newValue);
+				return;
+			case PhotoeditPackage.PHOTO_AREA__DESCRIPTION:
+				setDescription((String)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -280,6 +374,12 @@ public class PhotoAreaImpl extends BaseObjectImpl implements PhotoArea {
 			case PhotoeditPackage.PHOTO_AREA__HEIGHT:
 				setHeight(HEIGHT_EDEFAULT);
 				return;
+			case PhotoeditPackage.PHOTO_AREA__COLOR:
+				setColor(COLOR_EDEFAULT);
+				return;
+			case PhotoeditPackage.PHOTO_AREA__DESCRIPTION:
+				setDescription(DESCRIPTION_EDEFAULT);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -300,6 +400,10 @@ public class PhotoAreaImpl extends BaseObjectImpl implements PhotoArea {
 				return width != WIDTH_EDEFAULT;
 			case PhotoeditPackage.PHOTO_AREA__HEIGHT:
 				return height != HEIGHT_EDEFAULT;
+			case PhotoeditPackage.PHOTO_AREA__COLOR:
+				return COLOR_EDEFAULT == null ? color != null : !COLOR_EDEFAULT.equals(color);
+			case PhotoeditPackage.PHOTO_AREA__DESCRIPTION:
+				return DESCRIPTION_EDEFAULT == null ? description != null : !DESCRIPTION_EDEFAULT.equals(description);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -322,6 +426,10 @@ public class PhotoAreaImpl extends BaseObjectImpl implements PhotoArea {
 		result.append(width);
 		result.append(", height: ");
 		result.append(height);
+		result.append(", color: ");
+		result.append(color);
+		result.append(", description: ");
+		result.append(description);
 		result.append(')');
 		return result.toString();
 	}

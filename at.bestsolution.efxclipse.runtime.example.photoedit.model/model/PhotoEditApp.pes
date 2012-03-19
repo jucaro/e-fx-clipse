@@ -9,8 +9,20 @@
       description="Photos from hikes in 2011">
     <media xsi:type="photoedit:Photo"
         uuid="_E4nQAF2TEeG-XLz_XksV3w"
-        title="Photo 1"
-        description="">
+        title="Brandjoch"
+        description="Das Brandjoch &#xfc;ber Innsbruck">
+      <areas
+          x="10.0"
+          y="10.0"
+          width="100.0"
+          height="100.0"
+          description="Bla Bla Bla"/>
+      <areas
+          x="130.0"
+          y="130.0"
+          width="100.0"
+          height="100.0"
+          description="Bla Bla Bla 2"/>
       <source
           xsi:type="photoedit:URLSource"
           previewObjectURL="platform:/plugin/at.bestsolution.efxclipse.runtime.example.photoedit.model/model/album1/1_preview.jpg"
@@ -18,8 +30,8 @@
     </media>
     <media xsi:type="photoedit:Photo"
         uuid="_E4nQAl2TEeG-XLz_XksV3w"
-        title="Photo 2"
-        description="">
+        title="Brandjoch 2"
+        description="2. Photo vom Brandjoch">
       <source
           xsi:type="photoedit:URLSource"
           previewObjectURL="platform:/plugin/at.bestsolution.efxclipse.runtime.example.photoedit.model/model/album1/2_preview.jpg"

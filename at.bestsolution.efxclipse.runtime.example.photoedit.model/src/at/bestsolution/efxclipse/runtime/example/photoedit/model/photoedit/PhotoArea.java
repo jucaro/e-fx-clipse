@@ -20,6 +20,8 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link at.bestsolution.efxclipse.runtime.example.photoedit.model.photoedit.PhotoArea#getY <em>Y</em>}</li>
  *   <li>{@link at.bestsolution.efxclipse.runtime.example.photoedit.model.photoedit.PhotoArea#getWidth <em>Width</em>}</li>
  *   <li>{@link at.bestsolution.efxclipse.runtime.example.photoedit.model.photoedit.PhotoArea#getHeight <em>Height</em>}</li>
+ *   <li>{@link at.bestsolution.efxclipse.runtime.example.photoedit.model.photoedit.PhotoArea#getColor <em>Color</em>}</li>
+ *   <li>{@link at.bestsolution.efxclipse.runtime.example.photoedit.model.photoedit.PhotoArea#getDescription <em>Description</em>}</li>
  * </ul>
  * </p>
  *
@@ -131,5 +133,57 @@ public interface PhotoArea extends BaseObject {
 	 * @generated
 	 */
 	void setHeight(double value);
+
+	/**
+	 * Returns the value of the '<em><b>Color</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Color</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Color</em>' attribute.
+	 * @see #setColor(String)
+	 * @see at.bestsolution.efxclipse.runtime.example.photoedit.model.photoedit.PhotoeditPackage#getPhotoArea_Color()
+	 * @model
+	 * @generated
+	 */
+	String getColor();
+
+	/**
+	 * Sets the value of the '{@link at.bestsolution.efxclipse.runtime.example.photoedit.model.photoedit.PhotoArea#getColor <em>Color</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Color</em>' attribute.
+	 * @see #getColor()
+	 * @generated
+	 */
+	void setColor(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Description</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Description</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Description</em>' attribute.
+	 * @see #setDescription(String)
+	 * @see at.bestsolution.efxclipse.runtime.example.photoedit.model.photoedit.PhotoeditPackage#getPhotoArea_Description()
+	 * @model
+	 * @generated
+	 */
+	String getDescription();
+
+	/**
+	 * Sets the value of the '{@link at.bestsolution.efxclipse.runtime.example.photoedit.model.photoedit.PhotoArea#getDescription <em>Description</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Description</em>' attribute.
+	 * @see #getDescription()
+	 * @generated
+	 */
+	void setDescription(String value);
 
 } // PhotoArea

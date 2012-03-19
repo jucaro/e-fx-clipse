@@ -359,6 +359,24 @@ public class PhotoeditPackageImpl extends EPackageImpl implements PhotoeditPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EAttribute getPhotoArea_Color() {
+		return (EAttribute)photoAreaEClass.getEStructuralFeatures().get(4);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getPhotoArea_Description() {
+		return (EAttribute)photoAreaEClass.getEStructuralFeatures().get(5);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getSource() {
 		return sourceEClass;
 	}
@@ -497,6 +515,8 @@ public class PhotoeditPackageImpl extends EPackageImpl implements PhotoeditPacka
 		createEAttribute(photoAreaEClass, PHOTO_AREA__Y);
 		createEAttribute(photoAreaEClass, PHOTO_AREA__WIDTH);
 		createEAttribute(photoAreaEClass, PHOTO_AREA__HEIGHT);
+		createEAttribute(photoAreaEClass, PHOTO_AREA__COLOR);
+		createEAttribute(photoAreaEClass, PHOTO_AREA__DESCRIPTION);
 
 		sourceEClass = createEClass(SOURCE);
 
@@ -579,6 +599,8 @@ public class PhotoeditPackageImpl extends EPackageImpl implements PhotoeditPacka
 		initEAttribute(getPhotoArea_Y(), ecorePackage.getEDouble(), "y", null, 0, 1, PhotoArea.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getPhotoArea_Width(), ecorePackage.getEDouble(), "width", null, 0, 1, PhotoArea.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getPhotoArea_Height(), ecorePackage.getEDouble(), "height", null, 0, 1, PhotoArea.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getPhotoArea_Color(), ecorePackage.getEString(), "color", null, 0, 1, PhotoArea.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getPhotoArea_Description(), ecorePackage.getEString(), "description", null, 0, 1, PhotoArea.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(sourceEClass, Source.class, "Source", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 

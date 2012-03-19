@@ -2,22 +2,42 @@
 <application:Application xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:application="http://www.eclipse.org/ui/2010/UIModel/application" xmlns:basic="http://www.eclipse.org/ui/2010/UIModel/application/ui/basic" xmlns:menu="http://www.eclipse.org/ui/2010/UIModel/application/ui/menu" xmi:id="_n5m88FEDEeGCHIroBKsimQ" elementId="org.eclipse.e4.ide.application" bindingContexts="_n5m88VEDEeGCHIroBKsimQ">
   <children xsi:type="basic:TrimmedWindow" xmi:id="_n5m9B1EDEeGCHIroBKsimQ" label="at.bestsolution.efxclipse.runtime.example.photoedit.app" x="0" y="0" width="500" height="400">
     <children xsi:type="basic:PartSashContainer" xmi:id="_3rBKwFEEEeGCHIroBKsimQ" horizontal="true">
-      <children xsi:type="basic:Part" xmi:id="_5HP4MFEEEeGCHIroBKsimQ" containerData="30" contributionURI="bundleclass://at.bestsolution.efxclipse.runtime.example.photoedit.ui/at.bestsolution.efxclipse.runtime.example.photoedit.ui.AlbumListView" label="Albums"/>
-      <children xsi:type="basic:PartStack" xmi:id="_6PXW0FEEEeGCHIroBKsimQ" elementId="editorcontainer" containerData="70"/>
+      <children xsi:type="basic:Part" xmi:id="_5HP4MFEEEeGCHIroBKsimQ" containerData="20" contributionURI="bundleclass://at.bestsolution.efxclipse.runtime.example.photoedit.ui/at.bestsolution.efxclipse.runtime.example.photoedit.ui.AlbumListView" label="Albums"/>
+      <children xsi:type="basic:PartSashContainer" xmi:id="_FoHr8F70EeGQev4J1HdQWQ" containerData="80" horizontal="true">
+        <children xsi:type="basic:PartStack" xmi:id="_6PXW0FEEEeGCHIroBKsimQ" elementId="editorcontainer" containerData="60"/>
+        <children xsi:type="basic:PartStack" xmi:id="_50TfMGkxEeGx3s-MwriCpQ">
+          <children xsi:type="basic:Part" xmi:id="_7iRdUF7zEeGQev4J1HdQWQ" containerData="80" contributionURI="bundleclass://at.bestsolution.efxclipse.runtime.example.photoedit.ui/at.bestsolution.efxclipse.runtime.example.photoedit.ui.MediaPropertiesView" label="Properties"/>
+        </children>
+      </children>
     </children>
     <mainMenu xmi:id="_n5m9CFEDEeGCHIroBKsimQ" elementId="menu:org.eclipse.ui.main.menu">
       <children xsi:type="menu:Menu" xmi:id="_SOGd4FPkEeGedONzLVN7rA" label="File">
         <children xsi:type="menu:HandledMenuItem" xmi:id="_dycDwFPkEeGedONzLVN7rA" label="Open Resource ..." command="_Wae-wFPkEeGedONzLVN7rA"/>
       </children>
     </mainMenu>
+    <trimBars xmi:id="_SfI6cHD3EeGfnvz_4TzPtg">
+      <children xsi:type="menu:ToolBar" xmi:id="_TBic4HD3EeGfnvz_4TzPtg">
+        <children xsi:type="menu:HandledToolItem" xmi:id="_wsUDsHD3EeGfnvz_4TzPtg" iconURI="platform:/plugin/at.bestsolution.efxclipse.runtime.example.photoedit.app/icons/document-save.png" command="_VAk8cHD3EeGfnvz_4TzPtg"/>
+      </children>
+      <children xsi:type="menu:ToolBar" xmi:id="_BbztkHD9EeGfnvz_4TzPtg">
+        <children xsi:type="menu:HandledToolItem" xmi:id="_KyeXcHD8EeGfnvz_4TzPtg" iconURI="platform:/plugin/at.bestsolution.efxclipse.runtime.example.photoedit.app/icons/edit-select.png" command="___OQQHD7EeGfnvz_4TzPtg"/>
+        <children xsi:type="menu:HandledToolItem" xmi:id="_z519YHD8EeGfnvz_4TzPtg" iconURI="platform:/plugin/at.bestsolution.efxclipse.runtime.example.photoedit.app/icons/select-rectangular.png" command="_Ei4osHD8EeGfnvz_4TzPtg"/>
+      </children>
+    </trimBars>
   </children>
   <handlers xmi:id="_ZP2pYFPkEeGedONzLVN7rA" contributionURI="bundleclass://at.bestsolution.efxclipse.runtime.example.photoedit.core/at.bestsolution.efxclipse.runtime.example.photoedit.core.handlers.OpenResource" command="_Wae-wFPkEeGedONzLVN7rA"/>
+  <handlers xmi:id="_UBKt4HD3EeGfnvz_4TzPtg" contributionURI="bundleclass://at.bestsolution.efxclipse.runtime.example.photoedit.core/at.bestsolution.efxclipse.runtime.example.photoedit.core.handlers.SaveResource" command="_VAk8cHD3EeGfnvz_4TzPtg"/>
+  <handlers xmi:id="_ZYuhEHD6EeGfnvz_4TzPtg" contributionURI="bundleclass://at.bestsolution.efxclipse.runtime.example.photoedit.core/at.bestsolution.efxclipse.runtime.example.photoedit.core.handlers.ActivateSelectTool" command="___OQQHD7EeGfnvz_4TzPtg"/>
+  <handlers xmi:id="_HYEtIHD8EeGfnvz_4TzPtg" contributionURI="bundleclass://at.bestsolution.efxclipse.runtime.example.photoedit.core/at.bestsolution.efxclipse.runtime.example.photoedit.core.handlers.ActivateAreaTool" command="_Ei4osHD8EeGfnvz_4TzPtg"/>
   <bindingTables xmi:id="_n5m8_FEDEeGCHIroBKsimQ" bindingContext="_n5m88VEDEeGCHIroBKsimQ"/>
   <rootContext xmi:id="_n5m88VEDEeGCHIroBKsimQ" elementId="org.eclipse.ui.contexts.dialogAndWindow" name="In Dialog and Windows">
     <children xmi:id="_n5m88lEDEeGCHIroBKsimQ" elementId="org.eclipse.ui.contexts.window" name="In Windows"/>
     <children xmi:id="_n5m881EDEeGCHIroBKsimQ" elementId="org.eclipse.ui.contexts.dialog" name="In Dialogs"/>
   </rootContext>
   <commands xmi:id="_Wae-wFPkEeGedONzLVN7rA" elementId="open.resource" commandName="Open Resource"/>
+  <commands xmi:id="_VAk8cHD3EeGfnvz_4TzPtg" elementId="save.resource" commandName="Save Resource"/>
+  <commands xmi:id="___OQQHD7EeGfnvz_4TzPtg" elementId="tool.select" commandName="Select Tool"/>
+  <commands xmi:id="_Ei4osHD8EeGfnvz_4TzPtg" elementId="tool.area" commandName="Area Tool"/>
   <addons xmi:id="_n5m89FEDEeGCHIroBKsimQ" elementId="org.eclipse.e4.core.commands.service" contributionURI="bundleclass://org.eclipse.e4.core.commands/org.eclipse.e4.core.commands.CommandServiceAddon"/>
   <addons xmi:id="_n5m89VEDEeGCHIroBKsimQ" elementId="org.eclipse.e4.ui.contexts.service" contributionURI="bundleclass://org.eclipse.e4.ui.services/org.eclipse.e4.ui.services.ContextServiceAddon"/>
   <addons xmi:id="_n5m891EDEeGCHIroBKsimQ" elementId="org.eclipse.e4.ui.workbench.commands.model" contributionURI="bundleclass://org.eclipse.e4.ui.workbench/org.eclipse.e4.ui.internal.workbench.addons.CommandProcessingAddon"/>

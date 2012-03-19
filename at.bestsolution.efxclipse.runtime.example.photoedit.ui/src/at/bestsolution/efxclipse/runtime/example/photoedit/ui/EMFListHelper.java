@@ -190,8 +190,9 @@ public class EMFListHelper  {
 		public void addListener(InvalidationListener listener) {
 			if( invalidationListeners == null ) {
 				invalidationListeners = new ArrayList<InvalidationListener>();
-				invalidationListeners.add(listener);
 			}
+			
+			invalidationListeners.add(listener);
 			
 			handleEMFAdapter();
 		}
@@ -201,8 +202,9 @@ public class EMFListHelper  {
 		public void addListener(ListChangeListener<? super T> listener) {
 			if( changeListeners == null ) {
 				changeListeners = new ArrayList<ListChangeListener<? super T>>();
-				changeListeners.add(listener);
 			}
+			
+			changeListeners.add(listener);
 			
 			handleEMFAdapter();
 		}
