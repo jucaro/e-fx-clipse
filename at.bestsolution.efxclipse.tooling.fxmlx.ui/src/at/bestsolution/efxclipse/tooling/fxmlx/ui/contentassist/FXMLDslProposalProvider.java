@@ -34,6 +34,7 @@ import org.eclipse.xtext.ui.editor.contentassist.ContentAssistContext;
 import org.eclipse.xtext.ui.editor.contentassist.ICompletionProposalAcceptor;
 
 import at.bestsolution.efxclipse.tooling.fxgraph.ui.util.JDTHelper;
+import at.bestsolution.efxclipse.tooling.fxgraph.ui.util.JDTHelper.EventValueProperty;
 import at.bestsolution.efxclipse.tooling.fxgraph.ui.util.JDTHelper.JDTHelperProperty;
 import at.bestsolution.efxclipse.tooling.fxgraph.ui.util.JDTHelper.TypeData;
 import at.bestsolution.efxclipse.tooling.fxmlx.fXMLDsl.ContainerElementDefinition;
@@ -99,6 +100,13 @@ public class FXMLDslProposalProvider extends AbstractFXMLDslProposalProvider {
 				if( typeData != null ) {
 					for( JDTHelperProperty p : typeData.properties ) {
 						if( p instanceof at.bestsolution.efxclipse.tooling.fxgraph.ui.util.JDTHelper.JDTHelperSingleValueProperty ) {
+							ICompletionProposal cp = createCompletionProposal(p.name+"=\"\"", p.getDescription(), p.getIcon(), context);
+							if(cp instanceof ConfigurableCompletionProposal ) {
+								ConfigurableCompletionProposal ccp = (ConfigurableCompletionProposal) cp;
+								ccp.setCursorPosition(ccp.getCursorPosition()-1);
+							}
+							acceptor.accept(cp);
+						} else if( p instanceof EventValueProperty ) {
 							ICompletionProposal cp = createCompletionProposal(p.name+"=\"\"", p.getDescription(), p.getIcon(), context);
 							if(cp instanceof ConfigurableCompletionProposal ) {
 								ConfigurableCompletionProposal ccp = (ConfigurableCompletionProposal) cp;
