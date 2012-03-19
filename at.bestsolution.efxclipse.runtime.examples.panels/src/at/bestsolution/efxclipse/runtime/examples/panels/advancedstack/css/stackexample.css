@@ -1,0 +1,8 @@
+.advanced-tab-item {
+	-fx-padding: 10;
+	-fx-background-color: transparent;
+}
+
+.advanced-tab-item:hover {
+	-fx-background-color: white;
+}

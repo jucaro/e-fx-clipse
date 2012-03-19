@@ -67,6 +67,7 @@ public class AdvancedStackExample extends Application {
 
 		
 		Scene s = new Scene(root);
+		s.getStylesheets().add(AdvancedStackExample.class.getResource("advancedstack/css/stackexample.css").toExternalForm());
 		primaryStage.setScene(s);
 		primaryStage.setWidth(640);
 		primaryStage.setHeight(480);
