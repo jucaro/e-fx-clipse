@@ -74,6 +74,7 @@ class AntTemplate {
 		val externalLibs = properties.get("externalLibs") as Collection<String>;
 		val projectSourceDirs = properties.get("projectSourceDirs") as Collection<String>;
 		val sdkPath = properties.get("jfxSdk") as String;
+		var encoding = properties.get("projectEncoding") as String;
 		
 		'''
 		<target name='do-compile'>
@@ -109,7 +110,7 @@ class AntTemplate {
 			</copy>
 			«ENDFOR»
 		
-			<javac srcdir="build/src" destdir="build/classes">
+			<javac srcdir="build/src" destdir="build/classes"«IF encoding != null» encoding="«encoding»"«ENDIF»>
 				<classpath>
 					<fileset dir="build/libs">
 						<include name="*"/>

@@ -22,6 +22,7 @@ import org.eclipse.core.resources.IFile;
 import org.eclipse.core.resources.IFolder;
 import org.eclipse.core.resources.IProject;
 import org.eclipse.core.resources.ResourcesPlugin;
+import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.IPath;
 import org.eclipse.core.runtime.preferences.IEclipsePreferences;
 import org.eclipse.core.runtime.preferences.InstanceScope;
@@ -74,6 +75,13 @@ public abstract class AbstractAntHandler extends AbstractHandler {
 		map.put("keyStoreAlias", properties.getProperty("jfx.sign.alias"));
 		map.put("keyStorePass", properties.getProperty("jfx.sign.password"));
 		map.put("keyPass", properties.getProperty("jfx.sign.keypassword"));
+		
+		try {
+			map.put("projectEncoding", f.getProject().getDefaultCharset());
+		} catch (CoreException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		
 		IJavaProject project = JavaCore.create(f.getProject());
 
