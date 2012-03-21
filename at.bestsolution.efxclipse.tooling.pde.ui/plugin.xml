@@ -35,6 +35,14 @@
             id="at.bestsolution.efxclipse.tooling.pde.ui.jfxproduct"
             name="%wizard.name.1">
       </wizard>
+      <wizard
+            category="at.bestsolution.efxclipse.tooling"
+            class="at.bestsolution.efxclipse.tooling.pde.ui.RepackageJavaFXWizard"
+            icon="icons/building_link.png"
+            id="at.bestsolution.efxclipse.tooling.pde.ui.createfxbundle"
+            name="Repackage JavaFX for OSGi"
+            project="true">
+      </wizard>
    </extension>
 
 </plugin>
