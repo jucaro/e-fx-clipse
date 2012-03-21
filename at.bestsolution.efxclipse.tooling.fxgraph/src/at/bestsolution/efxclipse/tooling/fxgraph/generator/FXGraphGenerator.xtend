@@ -347,9 +347,7 @@ class FXGraphGenerator implements IGenerator {
 
 	def elementAttributeFilter(Property property) {
 		if( property.value instanceof SimpleValueProperty ) {
-			if( (property.value as SimpleValueProperty).stringValue == null ) {
-				return true;
-			}
+			return true;
 		} else if( property.value instanceof ReferenceValueProperty ) {
 			return true;
 		} else if( property.value instanceof ControllerHandledValueProperty ) {
