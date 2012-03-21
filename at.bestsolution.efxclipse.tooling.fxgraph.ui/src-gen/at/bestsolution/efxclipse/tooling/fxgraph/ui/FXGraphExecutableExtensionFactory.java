@@ -8,6 +8,8 @@ import org.osgi.framework.Bundle;
 
 import com.google.inject.Injector;
 
+import at.bestsolution.efxclipse.tooling.fxgraph.ui.internal.FXGraphActivator;
+
 /**
  * This class was generated. Customizations should only happen in a newly
  * introduced subclass. 
@@ -16,12 +18,12 @@ public class FXGraphExecutableExtensionFactory extends AbstractGuiceAwareExecuta
 
 	@Override
 	protected Bundle getBundle() {
-		return at.bestsolution.efxclipse.tooling.fxgraph.ui.internal.FXGraphActivator.getInstance().getBundle();
+		return FXGraphActivator.getInstance().getBundle();
 	}
 	
 	@Override
 	protected Injector getInjector() {
-		return at.bestsolution.efxclipse.tooling.fxgraph.ui.internal.FXGraphActivator.getInstance().getInjector("at.bestsolution.efxclipse.tooling.fxgraph.FXGraph");
+		return FXGraphActivator.getInstance().getInjector(FXGraphActivator.AT_BESTSOLUTION_EFXCLIPSE_TOOLING_FXGRAPH_FXGRAPH);
 	}
 	
 }

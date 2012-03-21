@@ -32,7 +32,7 @@ import org.eclipse.xtext.generator.IGenerator
 import org.eclipse.xtext.xbase.compiler.ImportManager
 
 class FXGraphGenerator implements IGenerator {
-	
+	 
 	def calculateRelativePath(Resource resource) { 
 		
 			if( resource.URI.platformResource ) {
@@ -141,7 +141,8 @@ class FXGraphGenerator implements IGenerator {
 			</fx:define>
 			«ENDIF»
 			«IF ! skipController»
-			«FOR script : definition.scripts»«languageManager.addLanguage(script.language)»
+			«FOR script : definition.scripts»
+				«languageManager.addLanguage(script.language)»
 				«IF script.sourcecode != null»
 					<fx:script>«script.sourcecode.substring(2,script.sourcecode.length-2)»
 					</fx:script>

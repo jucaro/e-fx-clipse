@@ -1,12 +1,8 @@
 package at.bestsolution.efxclipse.tooling.fxgraph.jvmmodel
- 
-import org.eclipse.xtext.xbase.jvmmodel.IJvmModelInferrer
-import org.eclipse.xtext.xbase.jvmmodel.IJvmModelAssociator
-import org.eclipse.xtext.common.types.JvmDeclaredType
+
 import org.eclipse.emf.ecore.EObject
-import java.util.List
-import com.google.inject.Inject
-import org.eclipse.xtext.util.IAcceptor
+import org.eclipse.xtext.xbase.jvmmodel.IJvmDeclaredTypeAcceptor
+import org.eclipse.xtext.xbase.jvmmodel.IJvmModelInferrer
 
 /**
  * <p>Infers a JVM model from the source model.</p> 
@@ -19,10 +15,15 @@ import org.eclipse.xtext.util.IAcceptor
  */
 class FXGraphJvmModelInferrer implements IJvmModelInferrer {
 
-	@Inject 
-	IJvmModelAssociator jvmModelAssociator
+//	@Inject 
+//	IJvmModelAssociator jvmModelAssociator
+//
+//   	def dispatch infer(EObject e, IAcceptor<JvmDeclaredType> acceptor, boolean prelinkingPhase) {
+//   		
+//   	}
 
-   	def dispatch infer(EObject e, IAcceptor<JvmDeclaredType> acceptor, boolean prelinkingPhase) {
-   		
-   	}
+	override infer(EObject e, IJvmDeclaredTypeAcceptor acceptor, boolean preIndexingPhase) {
+		// throw new UnsupportedOperationException("Auto-generated function stub")
+	}
+	
 }
