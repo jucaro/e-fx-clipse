@@ -14,7 +14,7 @@ component Accelerator {
 				items : [
 					MenuItem {
 						text : "New",
-						accelerator : "CTRL+N"  
+						accelerator : "CTRL+N"
 					}
 				]
 			}

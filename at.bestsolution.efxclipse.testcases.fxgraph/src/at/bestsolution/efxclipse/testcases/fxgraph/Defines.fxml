@@ -12,17 +12,11 @@
 	<fx:define>
 		<ToggleGroup fx:id="myToggleGroup"/> 
 	</fx:define>
-	
+
 	<children>
-		<RadioButton toggleGroup="$myToggleGroup"> 
-			<text>A</text>
-		</RadioButton>
-		<RadioButton toggleGroup="$myToggleGroup"> 
-			<text>B</text>
-		</RadioButton>
-		<RadioButton toggleGroup="$myToggleGroup"> 
-			<text>C</text>
-		</RadioButton>
+		<RadioButton text="A" toggleGroup="$myToggleGroup"/> 
+		<RadioButton text="B" toggleGroup="$myToggleGroup"/> 
+		<RadioButton text="C" toggleGroup="$myToggleGroup"/> 
 	</children>
 
 </VBox>

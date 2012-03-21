@@ -8,11 +8,9 @@
 <?import javafx.scene.layout.BorderPane?>
 
 <BorderPane xmlns:fx="http://javafx.com/fxml">
-	
+
 	<center>
-		<Label> 
-			<text>Hello World Example</text>
-		</Label>
+		<Label text="Hello World Example"/> 
 	</center>
 
 </BorderPane>

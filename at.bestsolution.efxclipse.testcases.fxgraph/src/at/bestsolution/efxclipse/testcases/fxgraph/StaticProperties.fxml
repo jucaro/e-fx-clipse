@@ -9,10 +9,9 @@
 <?import javafx.scene.layout.GridPane?>
 
 <GridPane xmlns:fx="http://javafx.com/fxml">
-	
+
 	<children>
-		<Label> 
-			<text>Firstname:</text>
+		<Label text="Firstname:"> 
 			<GridPane.columnIndex>0</GridPane.columnIndex>
 			<GridPane.rowIndex>0</GridPane.rowIndex>
 		</Label>
@@ -20,8 +19,7 @@
 			<GridPane.columnIndex>1</GridPane.columnIndex>
 			<GridPane.rowIndex>0</GridPane.rowIndex>
 		</TextField>
-		<Label> 
-			<text>Lastname:</text>
+		<Label text="Lastname:"> 
 			<GridPane.columnIndex>0</GridPane.columnIndex>
 			<GridPane.rowIndex>1</GridPane.rowIndex>
 		</Label>

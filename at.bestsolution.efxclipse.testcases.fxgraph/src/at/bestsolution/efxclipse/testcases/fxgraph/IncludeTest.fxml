@@ -7,7 +7,7 @@
 <?import javafx.scene.layout.VBox?>
 
 <VBox xmlns:fx="http://javafx.com/fxml">
-	
+
 	<children>
 		<fx:include source="/at/bestsolution/efxclipse/testcases/fxgraph/Controller.fxml" />
 		<fx:include source="/at/bestsolution/efxclipse/testcases/fxgraph/inc/TestInc.fxml" />

@@ -8,7 +8,7 @@
 <?import javafx.scene.layout.BorderPane?>
 
 <BorderPane xmlns:fx="http://javafx.com/fxml">
-	
+
 	<center>
 		<Button text="%buttonlabel"/> 
 	</center>

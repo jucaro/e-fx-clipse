@@ -11,19 +11,13 @@
 <?import javafx.scene.layout.AnchorPane?>
 
 <AnchorPane xmlns:fx="http://javafx.com/fxml" fx:controller="at.bestsolution.efxclipse.runtime.examples.guice.controller.LoginController">
-	
+
 	<children>
-		<Label layoutX="10" layoutY="10"> 
-			<text>Username</text>
-		</Label>
+		<Label text="Username" layoutX="10" layoutY="10"/> 
 		<TextField fx:id="username" layoutX="80" layoutY="10"/> 
-		<Label layoutX="10" layoutY="40"> 
-			<text>Password</text>
-		</Label>
+		<Label text="Password" layoutX="10" layoutY="40"/> 
 		<PasswordField fx:id="password" layoutX="80" layoutY="40"/> 
-		<Button layoutX="80" layoutY="70" onAction="#login"> 
-			<text>Login</text>
-		</Button>
+		<Button text="Login" layoutX="80" layoutY="70" onAction="#login"/> 
 		<Label fx:id="message" layoutX="80" layoutY="100"/> 
 	</children>
 

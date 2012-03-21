@@ -8,10 +8,9 @@
 <?import javafx.scene.shape.Polyline?>
 
 <BorderPane xmlns:fx="http://javafx.com/fxml">
-	
+
 	<center>
-		<Polyline> 
-			<fill>BLUE</fill>
+		<Polyline fill="BLUE"> 
 			<points>
 				<Double fx:value="10"/> 
 				<Double fx:value="10"/> 

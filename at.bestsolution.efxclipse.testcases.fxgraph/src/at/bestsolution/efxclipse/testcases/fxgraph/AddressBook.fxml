@@ -21,49 +21,37 @@
 <?import javafx.scene.layout.GridPane?>
 
 <BorderPane xmlns:fx="http://javafx.com/fxml">
-	
+
 	<top>
 		<BorderPane> 
 			<top>
 				<MenuBar> 
 					<menus>
-						<Menu> 
-							<text>File</text>
+						<Menu text="File"> 
 							<items>
-								<MenuItem> 
-									<text>New Person</text>
-								</MenuItem>
-								<MenuItem> 
-									<text>Delete Person</text>
-								</MenuItem>
-								<MenuItem> 
-									<text>Save</text>
-								</MenuItem>
+								<MenuItem text="New Person"/> 
+								<MenuItem text="Delete Person"/> 
+								<MenuItem text="Save"/> 
 							</items>
 						</Menu>
-						<Menu> 
-							<text>Help</text>
-						</Menu>
+						<Menu text="Help"/> 
 					</menus>
 				</MenuBar>
 			</top>
 			<bottom>
 				<ToolBar> 
 					<items>
-						<Button fx:id="SaveButton"> 
-							<text>Save</text>
+						<Button fx:id="SaveButton" text="Save"> 
 							<graphic>
 								<ImageView fx:id="SaveButtonImage"/> 
 							</graphic>
 						</Button>
-						<Button fx:id="NewPersonButton"> 
-							<text>New</text>
+						<Button fx:id="NewPersonButton" text="New"> 
 							<graphic>
 								<ImageView fx:id="NewPersonButtonImage"/> 
 							</graphic>
 						</Button>
-						<Button fx:id="RemovePersonButton"> 
-							<text>Remove Person</text>
+						<Button fx:id="RemovePersonButton" text="Remove Person"> 
 							<graphic>
 								<ImageView fx:id="RemovePersonButtonImage"/> 
 							</graphic>
@@ -78,11 +66,10 @@
 			<items>
 				<TabPane> 
 					<tabs>
-						<Tab fx:id="TabList"> 
+						<Tab fx:id="TabList" text="Personlist"> 
 							<content>
 								<ListView/> 
 							</content>
-							<text>Personlist</text>
 							<graphic>
 								<ImageView fx:id="ListViewTabImage"/> 
 							</graphic>
@@ -91,8 +78,7 @@
 				</TabPane>
 				<TabPane> 
 					<tabs>
-						<Tab> 
-							<text>Persondetail</text>
+						<Tab text="Persondetail"> 
 							<graphic>
 								<ImageView fx:id="DetailViewTabImage"/> 
 							</graphic>
@@ -101,8 +87,7 @@
 									<content>
 										<GridPane fx:id="DetailPane"> 
 											<children>
-												<Label> 
-													<text>General</text>
+												<Label text="General"> 
 													<styleClass>
 														<String fx:value="label"/> 
 														<String fx:value="separator-label"/> 
@@ -111,8 +96,7 @@
 													<GridPane.rowIndex>0</GridPane.rowIndex>
 													<GridPane.columnSpan>2</GridPane.columnSpan>
 												</Label>
-												<Label> 
-													<text>Firstname</text>
+												<Label text="Firstname"> 
 													<GridPane.columnIndex>0</GridPane.columnIndex>
 													<GridPane.rowIndex>1</GridPane.rowIndex>
 												</Label>
@@ -121,8 +105,7 @@
 													<GridPane.rowIndex>1</GridPane.rowIndex>
 													<GridPane.hgrow>ALWAYS</GridPane.hgrow>
 												</TextField>
-												<Label> 
-													<text>Lastname</text>
+												<Label text="Lastname"> 
 													<GridPane.columnIndex>0</GridPane.columnIndex>
 													<GridPane.rowIndex>2</GridPane.rowIndex>
 												</Label>
@@ -131,8 +114,7 @@
 													<GridPane.rowIndex>2</GridPane.rowIndex>
 													<GridPane.hgrow>ALWAYS</GridPane.hgrow>
 												</TextField>
-												<Label> 
-													<text>Company</text>
+												<Label text="Company"> 
 													<GridPane.columnIndex>0</GridPane.columnIndex>
 													<GridPane.rowIndex>3</GridPane.rowIndex>
 												</Label>
@@ -141,8 +123,7 @@
 													<GridPane.rowIndex>3</GridPane.rowIndex>
 													<GridPane.hgrow>ALWAYS</GridPane.hgrow>
 												</TextField>
-												<Label> 
-													<text>Job Title</text>
+												<Label text="Job Title"> 
 													<GridPane.columnIndex>0</GridPane.columnIndex>
 													<GridPane.rowIndex>4</GridPane.rowIndex>
 												</Label>
@@ -156,8 +137,7 @@
 													<GridPane.rowIndex>0</GridPane.rowIndex>
 													<GridPane.rowSpan>5</GridPane.rowSpan>
 												</ImageView>
-												<Label> 
-													<text>Note</text>
+												<Label text="Note"> 
 													<GridPane.columnIndex>0</GridPane.columnIndex>
 													<GridPane.rowIndex>5</GridPane.rowIndex>
 												</Label>
@@ -167,8 +147,7 @@
 													<GridPane.columnSpan>2</GridPane.columnSpan>
 													<GridPane.hgrow>ALWAYS</GridPane.hgrow>
 												</TextField>
-												<Label> 
-													<text>Business Address</text>
+												<Label text="Business Address"> 
 													<styleClass>
 														<String fx:value="label"/> 
 														<String fx:value="separator-label"/> 
@@ -177,8 +156,7 @@
 													<GridPane.rowIndex>6</GridPane.rowIndex>
 													<GridPane.columnSpan>2</GridPane.columnSpan>
 												</Label>
-												<Label> 
-													<text>Street</text>
+												<Label text="Street"> 
 													<GridPane.columnIndex>0</GridPane.columnIndex>
 													<GridPane.rowIndex>7</GridPane.rowIndex>
 												</Label>
@@ -188,8 +166,7 @@
 													<GridPane.columnSpan>2</GridPane.columnSpan>
 													<GridPane.hgrow>ALWAYS</GridPane.hgrow>
 												</TextField>
-												<Label> 
-													<text>Zip</text>
+												<Label text="Zip"> 
 													<GridPane.columnIndex>0</GridPane.columnIndex>
 													<GridPane.rowIndex>8</GridPane.rowIndex>
 												</Label>
@@ -199,8 +176,7 @@
 													<GridPane.columnSpan>2</GridPane.columnSpan>
 													<GridPane.hgrow>ALWAYS</GridPane.hgrow>
 												</TextField>
-												<Label> 
-													<text>Country</text>
+												<Label text="Country"> 
 													<GridPane.columnIndex>0</GridPane.columnIndex>
 													<GridPane.rowIndex>9</GridPane.rowIndex>
 												</Label>
@@ -210,8 +186,7 @@
 													<GridPane.columnSpan>2</GridPane.columnSpan>
 													<GridPane.hgrow>ALWAYS</GridPane.hgrow>
 												</TextField>
-												<Label> 
-													<text>Business Phones</text>
+												<Label text="Business Phones"> 
 													<styleClass>
 														<String fx:value="label"/> 
 														<String fx:value="separator-label"/> 
@@ -220,8 +195,7 @@
 													<GridPane.rowIndex>10</GridPane.rowIndex>
 													<GridPane.columnSpan>2</GridPane.columnSpan>
 												</Label>
-												<Label> 
-													<text>Phone</text>
+												<Label text="Phone"> 
 													<GridPane.columnIndex>0</GridPane.columnIndex>
 													<GridPane.rowIndex>11</GridPane.rowIndex>
 												</Label>
@@ -231,8 +205,7 @@
 													<GridPane.columnSpan>2</GridPane.columnSpan>
 													<GridPane.hgrow>ALWAYS</GridPane.hgrow>
 												</TextField>
-												<Label> 
-													<text>Mobile</text>
+												<Label text="Mobile"> 
 													<GridPane.columnIndex>0</GridPane.columnIndex>
 													<GridPane.rowIndex>12</GridPane.rowIndex>
 												</Label>
@@ -242,8 +215,7 @@
 													<GridPane.columnSpan>2</GridPane.columnSpan>
 													<GridPane.hgrow>ALWAYS</GridPane.hgrow>
 												</TextField>
-												<Label> 
-													<text>Business Internet</text>
+												<Label text="Business Internet"> 
 													<styleClass>
 														<String fx:value="label"/> 
 														<String fx:value="separator-label"/> 
@@ -252,8 +224,7 @@
 													<GridPane.rowIndex>13</GridPane.rowIndex>
 													<GridPane.columnSpan>2</GridPane.columnSpan>
 												</Label>
-												<Label> 
-													<text>E-Mail</text>
+												<Label text="E-Mail"> 
 													<GridPane.columnIndex>0</GridPane.columnIndex>
 													<GridPane.rowIndex>14</GridPane.rowIndex>
 												</Label>
@@ -263,13 +234,11 @@
 													<GridPane.columnSpan>2</GridPane.columnSpan>
 													<GridPane.hgrow>ALWAYS</GridPane.hgrow>
 												</TextField>
-												<Label> 
-													<text>Web Site</text>
+												<Label text="Web Site"> 
 													<GridPane.columnIndex>0</GridPane.columnIndex>
 													<GridPane.rowIndex>15</GridPane.rowIndex>
 												</Label>
-												<TextField fx:id="website"> 
-													<text>Bla</text>
+												<TextField fx:id="website" text="Bla"> 
 													<GridPane.columnIndex>1</GridPane.columnIndex>
 													<GridPane.rowIndex>15</GridPane.rowIndex>
 													<GridPane.columnSpan>2</GridPane.columnSpan>

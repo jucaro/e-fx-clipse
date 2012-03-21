@@ -9,7 +9,7 @@
 <?import org.tbee.javafx.scene.layout.fxml.MigPane?>
 
 <MigPane xmlns:fx="http://javafx.com/fxml">
-	
+
 	<children>
 		<MyButton/> 
 		<MyLibButton/> 

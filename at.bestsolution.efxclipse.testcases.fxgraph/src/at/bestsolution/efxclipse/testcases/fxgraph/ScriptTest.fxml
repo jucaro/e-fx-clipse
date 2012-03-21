@@ -9,9 +9,10 @@
 <?language javascript?>
 
 <HBox xmlns:fx="http://javafx.com/fxml">
-		<fx:script>
-				var test = "Hello World!"
-		</fx:script>
+	true
+	<fx:script>
+			var test = "Hello World!"
+	</fx:script>
 
 	<children>
 		<Button text="$test"/> 

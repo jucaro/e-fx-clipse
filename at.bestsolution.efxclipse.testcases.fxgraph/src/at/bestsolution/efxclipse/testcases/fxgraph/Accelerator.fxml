@@ -10,16 +10,12 @@
 <?import javafx.scene.layout.BorderPane?>
 
 <BorderPane xmlns:fx="http://javafx.com/fxml">
-	
+
 	<top>
 		<MenuBar> 
-			<Menu> 
-				<text>File</text>
+			<Menu text="File"> 
 				<items>
-					<MenuItem> 
-						<text>New</text>
-						<accelerator>CTRL+N</accelerator>
-					</MenuItem>
+					<MenuItem text="New" accelerator="CTRL+N"/> 
 				</items>
 			</Menu>
 		</MenuBar>

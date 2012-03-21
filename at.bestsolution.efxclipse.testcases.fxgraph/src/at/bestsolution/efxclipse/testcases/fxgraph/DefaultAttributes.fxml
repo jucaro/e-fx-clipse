@@ -9,10 +9,8 @@
 <?import javafx.scene.layout.HBox?>
 
 <HBox xmlns:fx="http://javafx.com/fxml">
-	
-	<Label> 
-		<text>Binding</text>
-	</Label>
+
+	<Label text="Binding"/> 
 	<TextField fx:id="field1"/> 
 
 </HBox>

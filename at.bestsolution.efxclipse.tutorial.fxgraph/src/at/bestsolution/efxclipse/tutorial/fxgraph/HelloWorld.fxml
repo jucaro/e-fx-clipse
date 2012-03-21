@@ -14,16 +14,12 @@
 	<fx:define>
 		<ToggleGroup fx:id="myRadioGroup"/> 
 	</fx:define>
-	
+
 	<top>
 		<HBox> 
 			<children>
-				<RadioButton toggleGroup="$myRadioGroup"> 
-					<text>Option 1</text>
-				</RadioButton>
-				<RadioButton toggleGroup="$myRadioGroup"> 
-					<text>Option 2</text>
-				</RadioButton>
+				<RadioButton text="Option 1" toggleGroup="$myRadioGroup"/> 
+				<RadioButton text="Option 2" toggleGroup="$myRadioGroup"/> 
 			</children>
 		</HBox>
 	</top>

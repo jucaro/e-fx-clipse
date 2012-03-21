@@ -10,7 +10,7 @@
 <?import javafx.scene.layout.HBox?>
 
 <HBox xmlns:fx="http://javafx.com/fxml">
-	
+
 	<children>
 		<Button fx:id="buttonSettings"> 
 			<graphic>

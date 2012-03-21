@@ -8,11 +8,9 @@
 <?import org.tbee.javafx.scene.layout.fxml.MigPane?>
 
 <MigPane xmlns:fx="http://javafx.com/fxml">
-	
+
 	<children>
-		<Label> 
-			<text>My Label</text>
-		</Label>
+		<Label text="My Label"/> 
 	</children>
 
 </MigPane>
