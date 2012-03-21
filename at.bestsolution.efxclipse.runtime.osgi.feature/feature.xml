@@ -2,7 +2,7 @@
 <feature
       id="at.bestsolution.efxclipse.runtime.osgi.feature"
       label="OSGi Runtime integration"
-      version="0.0.12.qualifier">
+      version="0.0.13.qualifier">
 
    <description url="http://efxclipse.org">
       e(fx)clipse is an open tooling and runtime platform built on top of software provided from Eclipse.org
