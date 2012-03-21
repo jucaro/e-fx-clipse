@@ -301,8 +301,8 @@ public class FXClassLoader implements ClassLoadingHook, AdaptorHook {
 			File installLocation = new File(System.getProperty("osgi.install.area").substring("file:/".length()));
 			
 			File[] fxInstalls = {
-					new File(installLocation, "javafx/"+System.getProperty("osgi.ws")+"/"+System.getProperty("osgi.arch")+"/lib/jfxrt.jar"),
-					new File(installLocation, "javafx/lib/jfxrt.jar")
+					new File(installLocation, "javafx/"+System.getProperty("osgi.os")+"/"+System.getProperty("osgi.arch")+"/rt/lib/jfxrt.jar"),
+					new File(installLocation, "javafx/lib/rt/jfxrt.jar")
 			};
 			
 			for( File fxInstall : fxInstalls ) {
@@ -326,7 +326,7 @@ public class FXClassLoader implements ClassLoadingHook, AdaptorHook {
 		private static URLClassLoader createClassLoaderForDeployedPlugin(ClassLoader parent, PackageAdmin admin, BundleContext context) {
 			try {
 				// check if javafx is bundled inside an OSGi-Package
-				Bundle[] bundles = admin.getBundles("javafx", null);
+				Bundle[] bundles = admin.getBundles("javafx.osgi", null);
 				if (bundles != null) {
 					Bundle b = bundles[0];
 					if ((b.getState() & Bundle.INSTALLED) == 0) {
@@ -350,8 +350,8 @@ public class FXClassLoader implements ClassLoadingHook, AdaptorHook {
 							File installLocation = new File(rootEntry.getPath());
 							
 							File[] fxInstalls = {
-									new File(installLocation, "javafx/"+System.getProperty("osgi.ws")+"/"+System.getProperty("osgi.arch")+"/lib/jfxrt.jar"),
-									new File(installLocation, "javafx/lib/jfxrt.jar")
+									new File(installLocation, "javafx/"+System.getProperty("osgi.os")+"/"+System.getProperty("osgi.arch")+"/rt/lib/jfxrt.jar"),
+									new File(installLocation, "javafx/rt/lib/jfxrt.jar")
 							};
 							
 							for( File fxInstall : fxInstalls ) {
