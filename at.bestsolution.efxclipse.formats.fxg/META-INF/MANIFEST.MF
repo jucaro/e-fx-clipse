@@ -14,7 +14,7 @@ Export-Package: at.bestsolution.efxclipse.formats.fxg.converter,
  at.bestsolution.efxclipse.formats.fxg.handler
 Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.emf.ecore;visibility:=reexport,
- org.eclipse.xtend2.lib;bundle-version="2.2.1"
+ org.eclipse.xtend2.lib
 Bundle-ActivationPolicy: lazy
 Import-Package: javafx.animation;version="2.0.0",
  javafx.application;version="2.0.0",
