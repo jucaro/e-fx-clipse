@@ -123,7 +123,7 @@ public class E4Application extends AbstractJFXApplication {
 		// appContext.set(Realm.class, SWTObservables.getRealm(display));
 		appContext.set(UISynchronize.class, new UISynchronize() {
 
-			public void syncExec(Runnable runnable) {
+			public void syncExec(final Runnable runnable) {
 				if (javafx.application.Platform.isFxApplicationThread()) {
 					runnable.run();
 				} else {
@@ -131,6 +131,7 @@ public class E4Application extends AbstractJFXApplication {
 					Runnable r = new Runnable() {
 
 						public void run() {
+							runnable.run();
 							lock.set(true);
 						}
 					};
