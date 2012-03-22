@@ -26,7 +26,7 @@ public class XMIStorageResource implements ResourceStore {
 	public IStatus loadRoot(URI uri) {
 		ResourceSet set = new ResourceSetImpl();
 		resource = set.getResource(uri, true);
-		eventBroker.send(EventTopics.STORE_NEW_CONTENT, this);
+		eventBroker.send(EventTopics.STORE_NEW_CONTENT, getPhotoEditApp());
 		
 		return Status.OK_STATUS;
 	}

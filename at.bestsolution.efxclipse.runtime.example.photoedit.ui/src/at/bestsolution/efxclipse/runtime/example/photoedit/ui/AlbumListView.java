@@ -37,6 +37,7 @@ import at.bestsolution.efxclipse.runtime.example.photoedit.core.EventTopics;
 import at.bestsolution.efxclipse.runtime.example.photoedit.core.ResourceStore;
 import at.bestsolution.efxclipse.runtime.example.photoedit.model.photoedit.Album;
 import at.bestsolution.efxclipse.runtime.example.photoedit.model.photoedit.Media;
+import at.bestsolution.efxclipse.runtime.example.photoedit.model.photoedit.PhotoEditApp;
 import at.bestsolution.efxclipse.runtime.example.photoedit.model.photoedit.PhotoeditPackage;
 
 @SuppressWarnings("restriction")
@@ -154,7 +155,7 @@ public class AlbumListView {
 	}
 	
 	@Inject
-	void storeContentLoaded(@Optional @UIEventTopic(EventTopics.STORE_NEW_CONTENT) ResourceStore store) {
+	void storeContentLoaded(@Optional @UIEventTopic(EventTopics.STORE_NEW_CONTENT) PhotoEditApp rootElement) {
 		if( store != null && store.getPhotoEditApp() != null ) {
 			ObservableList<Album> list = EMFListHelper.adaptList(PhotoeditPackage.Literals.PHOTO_EDIT_APP__ALBUMS, store.getPhotoEditApp());
 			listView.setItems(list);
