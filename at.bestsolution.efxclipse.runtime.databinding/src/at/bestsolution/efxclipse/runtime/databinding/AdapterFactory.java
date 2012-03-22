@@ -223,6 +223,10 @@ public class AdapterFactory {
 					public void handleListChange(ListChangeEvent event) {
 						final ListDiffEntry[] differences = event.diff.getDifferences();
 						
+						if( differences.length == 0 ) {
+							return;
+						}
+						
 						//TODO We need to make this perform a lot better by calculating range changes
 						for( ListChangeListener<? super E> l : fxChangeListeners.toArray(new ListChangeListener[0]) ) {
 							Change<E> change = new Change<E>(WrappedList.this) {
