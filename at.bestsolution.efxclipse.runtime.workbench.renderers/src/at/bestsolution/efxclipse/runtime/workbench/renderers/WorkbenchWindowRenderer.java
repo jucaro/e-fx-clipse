@@ -94,6 +94,8 @@ public class WorkbenchWindowRenderer extends JFXRenderer {
 				}
 			});
 
+			scene.getStylesheets().add(getClass().getClassLoader().getResource("/css/default.css").toExternalForm());
+			
 			if (themeManager != null) {
 				Theme theme = themeManager.getCurrentTheme();
 				if (theme != null) {

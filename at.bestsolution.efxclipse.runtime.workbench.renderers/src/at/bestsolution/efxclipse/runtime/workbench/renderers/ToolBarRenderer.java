@@ -1,6 +1,6 @@
 package at.bestsolution.efxclipse.runtime.workbench.renderers;
 
-import javafx.scene.control.Button;
+import javafx.scene.Node;
 import javafx.scene.layout.HBox;
 
 import org.eclipse.e4.ui.model.application.ui.MElementContainer;
@@ -13,7 +13,7 @@ public class ToolBarRenderer extends JFXRenderer {
 	public Object createWidget(MUIElement element, Object parent) {
 		// Since we use a JavaFX ToolBar for the TrimBar, each e4 toolbar is
 		// rendered as JavaFX HBox
-		HBox toolBar = new HBox();
+		HBox toolBar = new HBox(5);
 		return toolBar;
 	}
 
@@ -23,7 +23,7 @@ public class ToolBarRenderer extends JFXRenderer {
 
 		HBox toolBar = (HBox) container.getWidget();
 		for (MUIElement element : container.getChildren()) {
-			toolBar.getChildren().add((Button) element.getWidget());
+			toolBar.getChildren().add((Node)element.getWidget());
 		}
 	}
 }
