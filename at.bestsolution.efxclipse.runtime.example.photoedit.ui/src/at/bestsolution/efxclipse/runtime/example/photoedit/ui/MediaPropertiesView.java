@@ -21,6 +21,7 @@ import javafx.scene.control.TitledPane;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.Priority;
+import javafx.scene.layout.VBox;
 import javafx.util.Callback;
 
 import javax.annotation.PostConstruct;
@@ -46,6 +47,8 @@ public class MediaPropertiesView {
 	
 	@PostConstruct
 	void init(BorderPane pane) {
+		VBox box = new VBox();
+		
 		GridPane mediaProperties = new GridPane();
 		
 		EMFDataBindingContext dbc = new EMFDataBindingContext();
@@ -72,9 +75,8 @@ public class MediaPropertiesView {
 			dbc.bindValue(EMFProperties.value(MEDIA__DESCRIPTION).observeDetail(currentSelection), JFXBeanProperties.value("text").observe(area));
 		}
 		
-		
 		TitledPane generalProps = new TitledPane("General Properties",mediaProperties);
-		pane.setTop(generalProps);
+		box.getChildren().add(generalProps);
 		
 		TableView<PhotoArea> photoAreas = new TableView<PhotoArea>();
 		
@@ -126,7 +128,10 @@ public class MediaPropertiesView {
 		photoAreas.setItems(list);
 		
 		TitledPane areaProps = new TitledPane("Media Area Properties",photoAreas);
-		pane.setCenter(areaProps);
+		box.getChildren().add(areaProps);
+		VBox.setVgrow(areaProps, Priority.ALWAYS);
+		
+		pane.setCenter(box);
 	}
 	
 	@Inject
