@@ -1,5 +1,7 @@
 package at.bestsolution.efxclipse.runtime.example.photoedit.app;
 
+import java.util.Collections;
+import java.util.List;
 import java.util.Map.Entry;
 
 import javax.inject.Inject;
@@ -9,8 +11,11 @@ import org.eclipse.e4.core.contexts.IEclipseContext;
 import org.eclipse.e4.core.di.annotations.Optional;
 import org.eclipse.e4.core.di.extensions.EventTopic;
 import org.eclipse.e4.ui.model.application.MAddon;
+import org.eclipse.e4.ui.model.application.MApplication;
 import org.eclipse.e4.ui.model.application.impl.ApplicationPackageImpl;
+import org.eclipse.e4.ui.model.application.ui.menu.MToolItem;
 import org.eclipse.e4.ui.workbench.UIEvents;
+import org.eclipse.e4.ui.workbench.modeling.EModelService;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EObject;
@@ -29,9 +34,29 @@ public class ResourceAddon {
 	ResourceStore store;
 	
 	@Inject
-	public ResourceAddon(IEclipseContext context, MAddon addon, ResourceStore store) {
+	public ResourceAddon(IEclipseContext context, MAddon addon, MApplication application, EModelService service, ResourceStore store) {
 		this.addon = addon;
 		this.store = store;
+		
+		List<MToolItem> items = service.findElements(application, null, MToolItem.class, null);
+		
+		for( MToolItem i : items ) {
+			if( i.isSelected() ) {
+				if( "toolitem.area".equals(i.getElementId()) ) {
+					IEclipseContext c = context;
+					if( c.getParent() != null ) {
+						c = c.getParent();
+					}
+					c.set("activetool", "area");
+				} else {
+					IEclipseContext c = context;
+					if( c.getParent() != null ) {
+						c = c.getParent();
+					}
+					c.set("activetool", "select");
+				}
+			}
+		}
 		
 		// Add the service to the injection system
 		ContextInjectionFactory.inject(store, context);

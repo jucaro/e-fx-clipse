@@ -6,6 +6,7 @@ import static at.bestsolution.efxclipse.runtime.example.photoedit.model.photoedi
 import static at.bestsolution.efxclipse.runtime.example.photoedit.model.photoedit.PhotoeditPackage.Literals.PHOTO_AREA__Y;
 import static at.bestsolution.efxclipse.runtime.example.photoedit.model.photoedit.PhotoeditPackage.Literals.PHOTO__AREAS;
 
+import java.util.Map.Entry;
 import java.util.concurrent.atomic.AtomicReference;
 
 import javafx.event.EventHandler;
@@ -29,10 +30,14 @@ import org.eclipse.core.databinding.observable.list.ListDiffVisitor;
 import org.eclipse.e4.core.di.annotations.Optional;
 import org.eclipse.e4.ui.di.Focus;
 import org.eclipse.e4.ui.model.application.MApplication;
+import org.eclipse.e4.ui.model.application.impl.ApplicationPackageImpl;
 import org.eclipse.e4.ui.model.application.ui.basic.MInputPart;
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.databinding.EMFDataBindingContext;
 import org.eclipse.emf.databinding.EMFProperties;
 import org.eclipse.emf.databinding.IEMFValueProperty;
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.util.EContentAdapter;
 
 import at.bestsolution.efxclipse.runtime.databinding.IJFXBeanValueProperty;
 import at.bestsolution.efxclipse.runtime.databinding.JFXBeanProperties;
@@ -60,6 +65,13 @@ public class MediaEditor {
 	
 	private PhotoArea sizedArea;
 	
+//	private static final String KEY_ACTIVE_TOOL = "activetool";
+	private static final String KEY_TRANSLATE_X = "translateX";
+	private static final String KEY_TRANSLATE_Y = "translateY";
+	private static final String KEY_SCALE_FACTOR = "scale";
+
+	private AnchorPane transformStack;
+	
 	@PostConstruct
 	void init(BorderPane pane) {
 		String uuid = input.getInputURI().substring("cdo-object://".length());
@@ -72,11 +84,56 @@ public class MediaEditor {
 				}
 			}
 		}
+		
+		
+		((EObject)input).eAdapters().add(new EContentAdapter() {
+			@SuppressWarnings("unchecked")
+			@Override
+			public void notifyChanged(Notification msg) {
+				super.notifyChanged(msg);
+				if( msg.getFeature() == ApplicationPackageImpl.Literals.APPLICATION_ELEMENT__PERSISTED_STATE ) {
+					processChange((Entry<String, String>) msg.getNewValue());
+				} else if( msg.getFeature() == ApplicationPackageImpl.Literals.STRING_TO_STRING_MAP__VALUE ) {
+					processChange((Entry<String, String>) msg.getNotifier());
+				}
+			}
+		});
+		
+		if( input.getPersistedState().get(KEY_TRANSLATE_X) != null ) {
+			transformStack.setTranslateX(Double.parseDouble(input.getPersistedState().get(KEY_TRANSLATE_X)));
+		}
+		
+		if( input.getPersistedState().get(KEY_TRANSLATE_Y) != null ) {
+			transformStack.setTranslateY(Double.parseDouble(input.getPersistedState().get(KEY_TRANSLATE_Y)));
+		}
+		
+		if( input.getPersistedState().get(KEY_SCALE_FACTOR) != null ) {
+			double v = Double.parseDouble(input.getPersistedState().get(KEY_SCALE_FACTOR));
+			transformStack.setScaleX(v);
+			transformStack.setScaleY(v);
+		}
+		
+		
 	}
 	
 	@Inject
 	void setTool(@Named("activetool") @Optional String tool){
-		this.tool = tool;
+		this.tool = tool;	
+	}
+	
+	private void processChange(Entry<String, String> e) {
+//		if( KEY_ACTIVE_TOOL.equals(e.getKey()) ) {
+//			this.tool = e.getValue();
+//		} else 
+		if( KEY_TRANSLATE_X.equals(e.getKey()) ) {
+			transformStack.setTranslateX(Double.parseDouble(e.getValue()));
+		} else if( KEY_TRANSLATE_Y.equals(e.getKey()) ) {
+			transformStack.setTranslateY(Double.parseDouble(e.getValue()));
+		} else if( KEY_SCALE_FACTOR.equals(e.getKey()) ) {
+			double v = Double.parseDouble(e.getValue());
+			transformStack.setScaleX(v);
+			transformStack.setScaleY(v);
+		}
 	}
 	
 	@Focus
@@ -85,10 +142,11 @@ public class MediaEditor {
 	}
 	
 	private void initPhoto(final BorderPane pane, final Photo photo) {
+		transformStack = new AnchorPane();
+		
 		Image img = new Image((photo.getSource().getObjectStream()));
 		ImageView v = new ImageView(img);
-		final AnchorPane stack = new AnchorPane();
-		stack.getChildren().add(v);
+		transformStack.getChildren().add(v);
 		
 		final EMFDataBindingContext dbc = new EMFDataBindingContext();
 		
@@ -114,10 +172,10 @@ public class MediaEditor {
 			dbc.bindValue(fwidthProp.observe(r), ewidthProp.observe(a));
 			dbc.bindValue(fheightProp.observe(r), eheightProp.observe(a));
 
-			stack.getChildren().add(r);	
+			transformStack.getChildren().add(r);	
 		}
 		
-		pane.setCenter(stack);
+		pane.setCenter(transformStack);
 		
 		IObservableList l = EMFProperties.list(PHOTO__AREAS).observe(photo);
 		l.addListChangeListener(new IListChangeListener() {
@@ -144,7 +202,7 @@ public class MediaEditor {
 						dbc.bindValue(fwidthProp.observe(r), ewidthProp.observe(element));
 						dbc.bindValue(fheightProp.observe(r), eheightProp.observe(element));
 
-						stack.getChildren().add(r);	
+						transformStack.getChildren().add(r);	
 					}
 				});
 			}
@@ -156,10 +214,9 @@ public class MediaEditor {
 			@Override
 			public void handle(ScrollEvent event) {
 				int direction = event.getDeltaY() < 0 || event.isShiftDown() ? -1 : 1;
-				double v = Math.max(stack.getScaleX() + 0.05 * direction,0.1);
+				double v = Math.max(transformStack.getScaleX() + 0.05 * direction,0.1);
 				
-				stack.setScaleX(v);
-				stack.setScaleY(v);
+				input.getPersistedState().put(KEY_SCALE_FACTOR, Double.toString(v));
 			}
 		});
 		pane.setOnMousePressed(new EventHandler<MouseEvent>() {
@@ -171,7 +228,7 @@ public class MediaEditor {
 				}
 			}
 		});
-		stack.setOnMousePressed(new EventHandler<MouseEvent>() {
+		transformStack.setOnMousePressed(new EventHandler<MouseEvent>() {
 
 			@Override
 			public void handle(MouseEvent event) {
@@ -186,7 +243,7 @@ public class MediaEditor {
 			}
 		});
 		
-		stack.setOnMouseDragged(new EventHandler<MouseEvent>() {
+		transformStack.setOnMouseDragged(new EventHandler<MouseEvent>() {
 
 			@Override
 			public void handle(MouseEvent event) {
@@ -201,11 +258,10 @@ public class MediaEditor {
 			}
 		});
 		
-		stack.setOnMouseReleased(new EventHandler<MouseEvent>() {
+		transformStack.setOnMouseReleased(new EventHandler<MouseEvent>() {
 
 			@Override
 			public void handle(MouseEvent event) {
-				System.err.println("RELEASEDD!!!!!");
 				sizedArea = null;
 			}
 		});
@@ -218,11 +274,14 @@ public class MediaEditor {
 					double deltaX = event.getX() - deltaEvent.get().getX();
 					double deltaY = event.getY() - deltaEvent.get().getY();
 					
-					double targetX = stack.getTranslateX() + deltaX;
-					double targetY = stack.getTranslateY() + deltaY;
+					double targetX = transformStack.getTranslateX() + deltaX;
+					double targetY = transformStack.getTranslateY() + deltaY;
 					
-					stack.setTranslateX(targetX);
-					stack.setTranslateY(targetY);
+					input.getPersistedState().put(KEY_TRANSLATE_X, Double.toString(targetX));
+					input.getPersistedState().put(KEY_TRANSLATE_Y, Double.toString(targetY));
+					
+//					transformStack.setTranslateX(targetX);
+//					transformStack.setTranslateY(targetY);
 					deltaEvent.set(event);
 				}
 				

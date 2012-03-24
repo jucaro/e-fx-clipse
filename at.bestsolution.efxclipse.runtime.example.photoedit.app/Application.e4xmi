@@ -5,9 +5,7 @@
       <children xsi:type="basic:Part" xmi:id="_5HP4MFEEEeGCHIroBKsimQ" containerData="20" contributionURI="bundleclass://at.bestsolution.efxclipse.runtime.example.photoedit.ui/at.bestsolution.efxclipse.runtime.example.photoedit.ui.AlbumListView" label="Albums"/>
       <children xsi:type="basic:PartSashContainer" xmi:id="_FoHr8F70EeGQev4J1HdQWQ" containerData="80" horizontal="true">
         <children xsi:type="basic:PartStack" xmi:id="_6PXW0FEEEeGCHIroBKsimQ" elementId="editorcontainer" containerData="60"/>
-        <children xsi:type="basic:PartStack" xmi:id="_50TfMGkxEeGx3s-MwriCpQ">
-          <children xsi:type="basic:Part" xmi:id="_7iRdUF7zEeGQev4J1HdQWQ" containerData="80" contributionURI="bundleclass://at.bestsolution.efxclipse.runtime.example.photoedit.ui/at.bestsolution.efxclipse.runtime.example.photoedit.ui.MediaPropertiesView" label="Properties"/>
-        </children>
+        <children xsi:type="basic:Part" xmi:id="_7iRdUF7zEeGQev4J1HdQWQ" containerData="40" contributionURI="bundleclass://at.bestsolution.efxclipse.runtime.example.photoedit.ui/at.bestsolution.efxclipse.runtime.example.photoedit.ui.MediaPropertiesView" label="Properties"/>
       </children>
     </children>
     <mainMenu xmi:id="_n5m9CFEDEeGCHIroBKsimQ" elementId="menu:org.eclipse.ui.main.menu">
@@ -20,8 +18,8 @@
         <children xsi:type="menu:HandledToolItem" xmi:id="_wsUDsHD3EeGfnvz_4TzPtg" iconURI="platform:/plugin/at.bestsolution.efxclipse.runtime.example.photoedit.app/icons/document-save.png" command="_VAk8cHD3EeGfnvz_4TzPtg"/>
       </children>
       <children xsi:type="menu:ToolBar" xmi:id="_BbztkHD9EeGfnvz_4TzPtg">
-        <children xsi:type="menu:HandledToolItem" xmi:id="_KyeXcHD8EeGfnvz_4TzPtg" iconURI="platform:/plugin/at.bestsolution.efxclipse.runtime.example.photoedit.app/icons/edit-select.png" command="___OQQHD7EeGfnvz_4TzPtg"/>
-        <children xsi:type="menu:HandledToolItem" xmi:id="_z519YHD8EeGfnvz_4TzPtg" iconURI="platform:/plugin/at.bestsolution.efxclipse.runtime.example.photoedit.app/icons/select-rectangular.png" command="_Ei4osHD8EeGfnvz_4TzPtg"/>
+        <children xsi:type="menu:HandledToolItem" xmi:id="_KyeXcHD8EeGfnvz_4TzPtg" elementId="toolitem.select" iconURI="platform:/plugin/at.bestsolution.efxclipse.runtime.example.photoedit.app/icons/edit-select.png" selected="true" type="Radio" command="___OQQHD7EeGfnvz_4TzPtg"/>
+        <children xsi:type="menu:HandledToolItem" xmi:id="_z519YHD8EeGfnvz_4TzPtg" elementId="toolitem.area" iconURI="platform:/plugin/at.bestsolution.efxclipse.runtime.example.photoedit.app/icons/select-rectangular.png" type="Radio" command="_Ei4osHD8EeGfnvz_4TzPtg"/>
       </children>
     </trimBars>
   </children>
