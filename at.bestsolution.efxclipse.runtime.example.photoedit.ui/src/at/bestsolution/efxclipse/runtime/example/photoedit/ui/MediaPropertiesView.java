@@ -10,10 +10,13 @@ import static at.bestsolution.efxclipse.runtime.example.photoedit.model.photoedi
 import static at.bestsolution.efxclipse.runtime.example.photoedit.model.photoedit.PhotoeditPackage.Literals.PHOTO__AREAS;
 import javafx.beans.value.ObservableValue;
 import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.geometry.VPos;
 import javafx.scene.control.ContentDisplay;
+import javafx.scene.control.ContextMenu;
 import javafx.scene.control.Label;
+import javafx.scene.control.MenuItem;
 import javafx.scene.control.TableCell;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableColumn.CellDataFeatures;
@@ -22,6 +25,8 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.control.TitledPane;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.BorderPane;
@@ -176,9 +181,23 @@ public class MediaPropertiesView {
 					photoAreas.getSelectionModel().getSelectedItem().setDescription(event.getNewValue());
 				}
 			});
-			photoAreas.getColumns().add(col);	
+			photoAreas.getColumns().add(col);
 		}
 		photoAreas.setEditable(true);
+		
+		ContextMenu mCtx = new ContextMenu();
+		MenuItem mItem = new MenuItem("Remove");
+		mItem.setGraphic(new ImageView(new Image(getClass().getClassLoader().getResource("/icons/edit-delete.png").toExternalForm())));
+		mItem.setOnAction(new EventHandler<ActionEvent>() {
+			
+			@Override
+			public void handle(ActionEvent event) {
+				PhotoArea area = photoAreas.getSelectionModel().getSelectedItem();
+				photoAreas.getItems().remove(area);
+			}
+		});
+		mCtx.getItems().add(mItem);
+		photoAreas.setContextMenu(mCtx);
 		
 		ObservableList<PhotoArea> list = AdapterFactory.adapt(EMFProperties.list(PHOTO__AREAS).observeDetail(currentSelection));
 		photoAreas.setItems(list);

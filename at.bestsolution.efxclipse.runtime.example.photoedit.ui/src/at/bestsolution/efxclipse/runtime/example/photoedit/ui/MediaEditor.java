@@ -6,10 +6,13 @@ import static at.bestsolution.efxclipse.runtime.example.photoedit.model.photoedi
 import static at.bestsolution.efxclipse.runtime.example.photoedit.model.photoedit.PhotoeditPackage.Literals.PHOTO_AREA__Y;
 import static at.bestsolution.efxclipse.runtime.example.photoedit.model.photoedit.PhotoeditPackage.Literals.PHOTO__AREAS;
 
+import java.util.Iterator;
 import java.util.Map.Entry;
 import java.util.concurrent.atomic.AtomicReference;
 
 import javafx.event.EventHandler;
+import javafx.scene.Cursor;
+import javafx.scene.Node;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
@@ -64,6 +67,8 @@ public class MediaEditor {
 	private String tool;
 	
 	private PhotoArea sizedArea;
+	
+	private PhotoArea moveArea;
 	
 //	private static final String KEY_ACTIVE_TOOL = "activetool";
 	private static final String KEY_TRANSLATE_X = "translateX";
@@ -122,9 +127,6 @@ public class MediaEditor {
 	}
 	
 	private void processChange(Entry<String, String> e) {
-//		if( KEY_ACTIVE_TOOL.equals(e.getKey()) ) {
-//			this.tool = e.getValue();
-//		} else 
 		if( KEY_TRANSLATE_X.equals(e.getKey()) ) {
 			transformStack.setTranslateX(Double.parseDouble(e.getValue()));
 		} else if( KEY_TRANSLATE_Y.equals(e.getKey()) ) {
@@ -166,6 +168,7 @@ public class MediaEditor {
 			r.setStroke(Color.RED);
 			r.setStrokeWidth(5);
 			r.setUserData(a);
+			r.setCursor(Cursor.MOVE);
 			
 			dbc.bindValue(fxProp.observe(r), exProp.observe(a));
 			dbc.bindValue(fyProp.observe(r), eyProp.observe(a));
@@ -186,7 +189,14 @@ public class MediaEditor {
 					
 					@Override
 					public void handleRemove(int index, Object element) {
-						// TODO clean up bindings
+						Iterator<Node> it = transformStack.getChildren().iterator();
+						while( it.hasNext() ) {
+							Node n = it.next();
+							if( n.getUserData() == element ) {
+								it.remove();
+								break;
+							}
+						}
 					}
 					
 					@Override
@@ -196,6 +206,7 @@ public class MediaEditor {
 						r.setStroke(Color.RED);
 						r.setStrokeWidth(5);
 						r.setUserData(element);
+						r.setCursor(Cursor.MOVE);
 						
 						dbc.bindValue(fxProp.observe(r), exProp.observe(element));
 						dbc.bindValue(fyProp.observe(r), eyProp.observe(element));
@@ -233,6 +244,14 @@ public class MediaEditor {
 			@Override
 			public void handle(MouseEvent event) {
 				if( "area".equals(tool) ) {
+					for( PhotoArea a : photo.getAreas() ) {
+						if( a.contains(event.getX(), event.getY()) ) {
+							moveArea = a;
+							deltaEvent.set(event);
+							return;
+						}
+					}
+					
 					PhotoArea p = PhotoeditFactory.eINSTANCE.createPhotoArea();
 					p.setX(event.getX());
 					p.setY(event.getY());
@@ -247,12 +266,20 @@ public class MediaEditor {
 
 			@Override
 			public void handle(MouseEvent event) {
+				
 				if( "area".equals(tool) ) {
 					if( sizedArea != null ) {
 						double width = event.getX() - sizedArea.getX();
 						double height = event.getY() - sizedArea.getY();
 						sizedArea.setWidth(width);
 						sizedArea.setHeight(height);
+					} else if( moveArea != null ) {
+						double deltaX = event.getX() - deltaEvent.get().getX();
+						double deltaY = event.getY() - deltaEvent.get().getY();
+						
+						moveArea.setX(moveArea.getX() + deltaX);
+						moveArea.setY(moveArea.getY() + deltaY);
+						deltaEvent.set(event);
 					}
 				}
 			}
@@ -262,7 +289,13 @@ public class MediaEditor {
 
 			@Override
 			public void handle(MouseEvent event) {
+				if( sizedArea != null ) {
+					if( sizedArea.getWidth() < 10 || sizedArea.getHeight() < 10 ) {
+						photo.getAreas().remove(sizedArea);
+					}
+				}
 				sizedArea = null;
+				moveArea = null;
 			}
 		});
 		
@@ -280,8 +313,6 @@ public class MediaEditor {
 					input.getPersistedState().put(KEY_TRANSLATE_X, Double.toString(targetX));
 					input.getPersistedState().put(KEY_TRANSLATE_Y, Double.toString(targetY));
 					
-//					transformStack.setTranslateX(targetX);
-//					transformStack.setTranslateY(targetY);
 					deltaEvent.set(event);
 				}
 				
