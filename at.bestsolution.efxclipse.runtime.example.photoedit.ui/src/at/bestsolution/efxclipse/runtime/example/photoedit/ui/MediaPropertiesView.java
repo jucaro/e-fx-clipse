@@ -10,14 +10,20 @@ import static at.bestsolution.efxclipse.runtime.example.photoedit.model.photoedi
 import static at.bestsolution.efxclipse.runtime.example.photoedit.model.photoedit.PhotoeditPackage.Literals.PHOTO__AREAS;
 import javafx.beans.value.ObservableValue;
 import javafx.collections.ObservableList;
+import javafx.event.EventHandler;
 import javafx.geometry.VPos;
+import javafx.scene.control.ContentDisplay;
 import javafx.scene.control.Label;
+import javafx.scene.control.TableCell;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableColumn.CellDataFeatures;
+import javafx.scene.control.TableColumn.CellEditEvent;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.control.TitledPane;
+import javafx.scene.input.KeyCode;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.Priority;
@@ -78,7 +84,7 @@ public class MediaPropertiesView {
 		TitledPane generalProps = new TitledPane("General Properties",mediaProperties);
 		box.getChildren().add(generalProps);
 		
-		TableView<PhotoArea> photoAreas = new TableView<PhotoArea>();
+		final TableView<PhotoArea> photoAreas = new TableView<PhotoArea>();
 		
 		{
 			TableColumn<PhotoArea, String> col = new TableColumn<PhotoArea, String>();
@@ -121,8 +127,23 @@ public class MediaPropertiesView {
 					return AdapterFactory.adapt(v);
 				}
 			});
+			col.setCellFactory(new Callback<TableColumn<PhotoArea,String>, TableCell<PhotoArea,String>>() {
+				
+				@Override
+				public TableCell<PhotoArea, String> call(TableColumn<PhotoArea, String> param) {
+					return new EditingCell();
+				}
+			});
+			col.setOnEditCommit(new EventHandler<TableColumn.CellEditEvent<PhotoArea,String>>() {
+				
+				@Override
+				public void handle(CellEditEvent<PhotoArea, String> event) {
+					photoAreas.getSelectionModel().getSelectedItem().setDescription(event.getNewValue());
+				}
+			});
 			photoAreas.getColumns().add(col);	
 		}
+		photoAreas.setEditable(true);
 		
 		ObservableList<PhotoArea> list = AdapterFactory.adapt(EMFProperties.list(PHOTO__AREAS).observeDetail(currentSelection));
 		photoAreas.setItems(list);
@@ -143,4 +164,72 @@ public class MediaPropertiesView {
 	void focus() {
 		System.err.println("the focus is in the properties area");
 	}
+	
+	static class EditingCell extends TableCell<PhotoArea, String> {
+		 
+        private TextField textField;
+ 
+        public EditingCell() {
+        }
+ 
+        @Override
+        public void startEdit() {
+            super.startEdit();
+ 
+            if (textField == null) {
+                createTextField();
+            }
+            setGraphic(textField);
+            setContentDisplay(ContentDisplay.GRAPHIC_ONLY);
+            textField.selectAll();
+        }
+ 
+        @Override
+        public void cancelEdit() {
+            super.cancelEdit();
+ 
+            setText((String) getItem());
+            setContentDisplay(ContentDisplay.TEXT_ONLY);
+        }
+ 
+        @Override
+        public void updateItem(String item, boolean empty) {
+            super.updateItem(item, empty);
+ 
+            if (empty) {
+                setText(null);
+                setGraphic(null);
+            } else {
+                if (isEditing()) {
+                    if (textField != null) {
+                        textField.setText(getString());
+                    }
+                    setGraphic(textField);
+                    setContentDisplay(ContentDisplay.GRAPHIC_ONLY);
+                } else {
+                    setText(getString());
+                    setContentDisplay(ContentDisplay.TEXT_ONLY);
+                }
+            }
+        }
+ 
+        private void createTextField() {
+ 
+            textField = new TextField(getString());
+            textField.setMinWidth(this.getWidth() - this.getGraphicTextGap()*2);
+            textField.setOnKeyPressed(new EventHandler<KeyEvent>() {
+                @Override
+                public void handle(KeyEvent t) {
+                    if (t.getCode() == KeyCode.ENTER) {
+                        commitEdit(textField.getText());
+                    } else if (t.getCode() == KeyCode.ESCAPE) {
+                        cancelEdit();
+                    }
+                }
+            });
+        }
+        private String getString() {
+            return getItem() == null ? "" : getItem().toString();
+        }
+    }
 }
