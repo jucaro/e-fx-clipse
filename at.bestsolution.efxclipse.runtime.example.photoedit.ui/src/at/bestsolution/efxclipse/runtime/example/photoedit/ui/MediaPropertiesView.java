@@ -54,6 +54,7 @@ import at.bestsolution.efxclipse.runtime.example.photoedit.model.photoedit.Photo
 public class MediaPropertiesView {
 	
 	private WritableValue currentSelection = new WritableValue();
+	private TableView<PhotoArea> photoAreas;
 	
 	@PostConstruct
 	void init(BorderPane pane) {
@@ -88,7 +89,7 @@ public class MediaPropertiesView {
 		TitledPane generalProps = new TitledPane("General Properties",mediaProperties);
 		box.getChildren().add(generalProps);
 		
-		final TableView<PhotoArea> photoAreas = new TableView<PhotoArea>();
+		photoAreas = new TableView<PhotoArea>();
 		
 		{
 			TableColumn<PhotoArea, String> col = new TableColumn<PhotoArea, String>();
@@ -157,7 +158,7 @@ public class MediaPropertiesView {
 		{
 			TableColumn<PhotoArea, String> col = new TableColumn<PhotoArea, String>();
 			col.setText("Description");
-			col.setPrefWidth(100);
+			col.setMaxWidth(100);
 			col.setCellValueFactory(new Callback<TableColumn.CellDataFeatures<PhotoArea,String>, ObservableValue<String>>() {
 				
 				@Override
@@ -217,6 +218,13 @@ public class MediaPropertiesView {
 	@Focus
 	void focus() {
 		System.err.println("the focus is in the properties area");
+	}
+	
+	@Inject
+	void setActivePhotoArea(@Optional PhotoArea area) {
+		if( area != null && photoAreas != null ) {
+			photoAreas.getSelectionModel().select(area);
+		}
 	}
 	
 	static class EditingCell extends TableCell<PhotoArea, String> {

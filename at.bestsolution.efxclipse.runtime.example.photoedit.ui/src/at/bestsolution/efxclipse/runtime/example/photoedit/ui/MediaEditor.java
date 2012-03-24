@@ -247,6 +247,7 @@ public class MediaEditor {
 					for( PhotoArea a : photo.getAreas() ) {
 						if( a.contains(event.getX(), event.getY()) ) {
 							moveArea = a;
+							application.getContext().set(PhotoArea.class, moveArea);
 							deltaEvent.set(event);
 							return;
 						}
@@ -258,6 +259,7 @@ public class MediaEditor {
 					
 					photo.getAreas().add(p);
 					sizedArea = p;
+					application.getContext().set(PhotoArea.class, sizedArea);
 				}
 			}
 		});
