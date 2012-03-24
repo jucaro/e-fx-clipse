@@ -11,16 +11,21 @@ import javafx.scene.control.Tooltip;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 
+import javax.annotation.PostConstruct;
 import javax.inject.Inject;
 
 import org.eclipse.e4.core.services.contributions.IContributionFactory;
+import org.eclipse.e4.core.services.events.IEventBroker;
 import org.eclipse.e4.ui.model.application.ui.MUIElement;
 import org.eclipse.e4.ui.model.application.ui.menu.ItemType;
 import org.eclipse.e4.ui.model.application.ui.menu.MDirectToolItem;
 import org.eclipse.e4.ui.model.application.ui.menu.MHandledItem;
 import org.eclipse.e4.ui.model.application.ui.menu.MHandledToolItem;
 import org.eclipse.e4.ui.model.application.ui.menu.MToolItem;
+import org.eclipse.e4.ui.workbench.UIEvents;
+import org.eclipse.e4.ui.workbench.UIEvents.EventTags;
 import org.eclipse.emf.common.util.URI;
+import org.osgi.service.event.Event;
 
 @SuppressWarnings("restriction")
 public class ToolItemRenderer extends ItemRenderer {
@@ -31,6 +36,29 @@ public class ToolItemRenderer extends ItemRenderer {
 
 	}
 
+	private org.osgi.service.event.EventHandler selectionHandler = new org.osgi.service.event.EventHandler() {
+
+		@Override
+		public void handleEvent(Event event) {
+			ButtonBase button = (ButtonBase) event.getProperty(EventTags.WIDGET);
+			
+			if( Boolean.TRUE.equals(event.getProperty(EventTags.NEW_VALUE)) ) {
+				button.getStyleClass().add("efxSelectedRadioToolButton");
+			} else {
+				button.getStyleClass().remove("efxSelectedRadioToolButton");
+			}
+		}
+		
+	};
+	
+	@Inject
+	IEventBroker eventBroker;
+	
+	@PostConstruct
+	void init() {
+		eventBroker.subscribe(UIEvents.Item.TOPIC_SELECTED, selectionHandler);
+	}
+	
 	@Override
 	public Object createWidget(MUIElement element, Object parent) {
 		MToolItem item = (MToolItem) element;
@@ -39,6 +67,9 @@ public class ToolItemRenderer extends ItemRenderer {
 
 		if (item.getType() == ItemType.RADIO) {
 			button = new RadioButton();
+			if( item.isSelected() ) {
+				button.getStyleClass().add("efxSelectedRadioToolButton");
+			}
 		} else {
 			button = new Button();
 		}
@@ -89,9 +120,12 @@ public class ToolItemRenderer extends ItemRenderer {
 	private void selectButton(ButtonBase button) {
 		for (Node n : button.getParent().getChildrenUnmodifiable()) {
 			if (n instanceof RadioButton) {
-				n.getStyleClass().remove("efxSelectedRadioToolButton");	
+				if( n != button ) {
+					((MToolItem)n.getUserData()).setSelected(false);
+				}
 			}
 		}
-		button.getStyleClass().add("efxSelectedRadioToolButton");
+		System.err.println("Add selection");
+		((MToolItem)button.getUserData()).setSelected(true);
 	}
 }
