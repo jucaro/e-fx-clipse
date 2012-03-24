@@ -91,7 +91,7 @@ public class AdapterFactory {
 
 		@Override
 		public boolean remove(Object o) {
-			return false;
+			return list.remove(o);
 		}
 
 		@Override
