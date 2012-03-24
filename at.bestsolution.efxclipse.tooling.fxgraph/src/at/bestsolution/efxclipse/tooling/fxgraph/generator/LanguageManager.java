@@ -7,9 +7,9 @@ import java.util.Set;
 public class LanguageManager {
 	private Set<String> languages = new HashSet<String>();
 	
-	public boolean addLanguage(String language) {
+	public String addLanguage(String language) {
 		languages.add(language);
-		return true;
+		return "";
 	}
 	
 	public Collection<String> getLanguages() {
