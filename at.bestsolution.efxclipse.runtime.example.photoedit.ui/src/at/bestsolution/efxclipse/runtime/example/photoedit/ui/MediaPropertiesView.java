@@ -90,27 +90,63 @@ public class MediaPropertiesView {
 			TableColumn<PhotoArea, String> col = new TableColumn<PhotoArea, String>();
 			col.setText("Bounds");
 			col.setPrefWidth(100);
-			col.setCellValueFactory(new Callback<TableColumn.CellDataFeatures<PhotoArea,String>, ObservableValue<String>>() {
-				
-				@Override
-				public ObservableValue<String> call(final CellDataFeatures<PhotoArea, String> param) {
-					//TODO We need to remove the dispose the observable created here
-					ComputedValue v = new ComputedValue() {
-						IObservableValue x = EMFProperties.value(PHOTO_AREA__X).observe(param.getValue());	
-						IObservableValue y = EMFProperties.value(PHOTO_AREA__Y).observe(param.getValue());
-						IObservableValue width = EMFProperties.value(PHOTO_AREA__WIDTH).observe(param.getValue());
-						IObservableValue height = EMFProperties.value(PHOTO_AREA__HEIGHT).observe(param.getValue());
-						
-						@Override
-						protected Object calculate() {
-							return x.getValue() + "," + y.getValue() + "," + width.getValue() + "," + height.getValue();
-						}
-					};
+			
+			{
+				TableColumn<PhotoArea, Double> subCol = new TableColumn<PhotoArea, Double>();
+				subCol.setText("x");
+				subCol.setCellValueFactory(new Callback<TableColumn.CellDataFeatures<PhotoArea,Double>, ObservableValue<Double>>() {
 					
-					return AdapterFactory.adapt(v);
-				}
-			});
-
+					@Override
+					public ObservableValue<Double> call(final CellDataFeatures<PhotoArea, Double> param) {
+						return AdapterFactory.adapt(EMFProperties.value(PHOTO_AREA__X).observe(param.getValue()));
+					}
+				});
+				
+				col.getColumns().add(subCol);
+			}
+			
+			{
+				TableColumn<PhotoArea, Double> subCol = new TableColumn<PhotoArea, Double>();
+				subCol.setText("y");
+				subCol.setCellValueFactory(new Callback<TableColumn.CellDataFeatures<PhotoArea,Double>, ObservableValue<Double>>() {
+					
+					@Override
+					public ObservableValue<Double> call(final CellDataFeatures<PhotoArea, Double> param) {
+						return AdapterFactory.adapt(EMFProperties.value(PHOTO_AREA__Y).observe(param.getValue()));
+					}
+				});
+				
+				col.getColumns().add(subCol);
+			}
+			
+			{
+				TableColumn<PhotoArea, Double> subCol = new TableColumn<PhotoArea, Double>();
+				subCol.setText("width");
+				subCol.setCellValueFactory(new Callback<TableColumn.CellDataFeatures<PhotoArea,Double>, ObservableValue<Double>>() {
+					
+					@Override
+					public ObservableValue<Double> call(final CellDataFeatures<PhotoArea, Double> param) {
+						return AdapterFactory.adapt(EMFProperties.value(PHOTO_AREA__WIDTH).observe(param.getValue()));
+					}
+				});
+				
+				col.getColumns().add(subCol);
+			}
+			
+			{
+				TableColumn<PhotoArea, Double> subCol = new TableColumn<PhotoArea, Double>();
+				subCol.setText("heigth");
+				subCol.setCellValueFactory(new Callback<TableColumn.CellDataFeatures<PhotoArea,Double>, ObservableValue<Double>>() {
+					
+					@Override
+					public ObservableValue<Double> call(final CellDataFeatures<PhotoArea, Double> param) {
+						return AdapterFactory.adapt(EMFProperties.value(PHOTO_AREA__HEIGHT).observe(param.getValue()));
+					}
+				});
+				
+				col.getColumns().add(subCol);
+			}
+			
 			photoAreas.getColumns().add(col);
 		}
 		
