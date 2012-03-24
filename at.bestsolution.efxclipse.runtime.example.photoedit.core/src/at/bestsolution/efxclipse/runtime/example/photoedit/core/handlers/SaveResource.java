@@ -11,5 +11,6 @@ public class SaveResource {
 	@Execute
 	public void saveResource(IEclipseContext context, ResourceStore store) {
 		System.err.println("Saving resource");
+		store.save();
 	}
 }
