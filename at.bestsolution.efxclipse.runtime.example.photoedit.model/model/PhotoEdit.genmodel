@@ -1,41 +1,80 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
-    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/at.bestsolution.efxclipse.runtime.example.photoedit.model/src"
-    modelPluginID="at.bestsolution.efxclipse.runtime.example.photoedit.model" modelName="PhotoEdit"
-    importerID="org.eclipse.emf.importer.ecore" complianceLevel="6.0" copyrightFields="false">
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/at.bestsolution.efxclipse.runtime.example.photoedit.model/src" modelPluginID="at.bestsolution.efxclipse.runtime.example.photoedit.model" modelName="PhotoEdit" rootExtendsInterface="org.eclipse.emf.cdo.CDOObject" rootExtendsClass="org.eclipse.emf.internal.cdo.CDOObjectImpl" importerID="org.eclipse.emf.importer.ecore" featureDelegation="Dynamic" complianceLevel="6.0" copyrightFields="false">
   <foreignModel>PhotoEdit.ecore</foreignModel>
-  <genPackages prefix="Photoedit" basePackage="at.bestsolution.efxclipse.runtime.example.photoedit.model"
-      disposableProviderFactory="true" ecorePackage="PhotoEdit.ecore#/">
-    <genDataTypes ecoreDataType="PhotoEdit.ecore#//InputStream"/>
-    <genClasses ecoreClass="PhotoEdit.ecore#//PhotoEditApp">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference PhotoEdit.ecore#//PhotoEditApp/albums"/>
+  <modelPluginVariables>CDO=org.eclipse.emf.cdo</modelPluginVariables>
+  <genPackages prefix="Photoedit" basePackage="at.bestsolution.efxclipse.runtime.example.photoedit.model" disposableProviderFactory="true">
+    <ecorePackage href="PhotoEdit.ecore#/"/>
+    <genDataTypes>
+      <ecoreDataType href="PhotoEdit.ecore#//InputStream"/>
+    </genDataTypes>
+    <genClasses>
+      <ecoreClass href="PhotoEdit.ecore#//PhotoEditApp"/>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="PhotoEdit.ecore#//PhotoEditApp/albums"/>
+      </genFeatures>
     </genClasses>
-    <genClasses ecoreClass="PhotoEdit.ecore#//Album">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference PhotoEdit.ecore#//Album/media"/>
+    <genClasses>
+      <ecoreClass href="PhotoEdit.ecore#//Album"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="PhotoEdit.ecore#//Album/media"/>
+      </genFeatures>
     </genClasses>
-    <genClasses image="false" ecoreClass="PhotoEdit.ecore#//Media"/>
-    <genClasses ecoreClass="PhotoEdit.ecore#//Photo">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference PhotoEdit.ecore#//Photo/areas"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute PhotoEdit.ecore#//Photo/title"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute PhotoEdit.ecore#//Photo/description"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference PhotoEdit.ecore#//Photo/source"/>
+    <genClasses image="false">
+      <ecoreClass href="PhotoEdit.ecore#//Media"/>
     </genClasses>
-    <genClasses ecoreClass="PhotoEdit.ecore#//PhotoArea">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute PhotoEdit.ecore#//PhotoArea/x"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute PhotoEdit.ecore#//PhotoArea/y"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute PhotoEdit.ecore#//PhotoArea/width"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute PhotoEdit.ecore#//PhotoArea/height"/>
+    <genClasses>
+      <ecoreClass href="PhotoEdit.ecore#//Photo"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="PhotoEdit.ecore#//Photo/areas"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="PhotoEdit.ecore#//Photo/title"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="PhotoEdit.ecore#//Photo/description"/>
+      </genFeatures>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="PhotoEdit.ecore#//Photo/source"/>
+      </genFeatures>
     </genClasses>
-    <genClasses image="false" ecoreClass="PhotoEdit.ecore#//Source">
-      <genOperations ecoreOperation="PhotoEdit.ecore#//Source/getPreviewObjectStream"/>
-      <genOperations ecoreOperation="PhotoEdit.ecore#//Source/getObjectStream"/>
+    <genClasses>
+      <ecoreClass href="PhotoEdit.ecore#//PhotoArea"/>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="PhotoEdit.ecore#//PhotoArea/x"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="PhotoEdit.ecore#//PhotoArea/y"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="PhotoEdit.ecore#//PhotoArea/width"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="PhotoEdit.ecore#//PhotoArea/height"/>
+      </genFeatures>
     </genClasses>
-    <genClasses ecoreClass="PhotoEdit.ecore#//BinarySource">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference PhotoEdit.ecore#//BinarySource/previewObject"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference PhotoEdit.ecore#//BinarySource/object"/>
+    <genClasses image="false">
+      <ecoreClass href="PhotoEdit.ecore#//Source"/>
+      <genOperations>
+        <ecoreOperation href="PhotoEdit.ecore#//Source/getPreviewObjectStream"/>
+      </genOperations>
+      <genOperations>
+        <ecoreOperation href="PhotoEdit.ecore#//Source/getObjectStream"/>
+      </genOperations>
     </genClasses>
-    <genClasses ecoreClass="PhotoEdit.ecore#//BinaryObject">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute PhotoEdit.ecore#//BinaryObject/content"/>
+    <genClasses>
+      <ecoreClass href="PhotoEdit.ecore#//BinarySource"/>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="PhotoEdit.ecore#//BinarySource/previewObject"/>
+      </genFeatures>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="PhotoEdit.ecore#//BinarySource/object"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="PhotoEdit.ecore#//BinaryObject"/>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="PhotoEdit.ecore#//BinaryObject/content"/>
+      </genFeatures>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

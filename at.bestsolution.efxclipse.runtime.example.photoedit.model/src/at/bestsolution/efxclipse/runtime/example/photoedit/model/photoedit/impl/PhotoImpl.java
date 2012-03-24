@@ -43,26 +43,6 @@ import org.eclipse.emf.ecore.util.EObjectResolvingEList;
  */
 public class PhotoImpl extends MediaImpl implements Photo {
 	/**
-	 * The cached value of the '{@link #getAreas() <em>Areas</em>}' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getAreas()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<PhotoArea> areas;
-
-	/**
-	 * The cached value of the '{@link #getSource() <em>Source</em>}' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getSource()
-	 * @generated
-	 * @ordered
-	 */
-	protected Source source;
-
-	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -86,11 +66,9 @@ public class PhotoImpl extends MediaImpl implements Photo {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@SuppressWarnings("unchecked")
 	public EList<PhotoArea> getAreas() {
-		if (areas == null) {
-			areas = new EObjectContainmentEList<PhotoArea>(PhotoArea.class, this, PhotoeditPackage.PHOTO__AREAS);
-		}
-		return areas;
+		return (EList<PhotoArea>)eDynamicGet(PhotoeditPackage.PHOTO__AREAS, PhotoeditPackage.Literals.PHOTO__AREAS, true, true);
 	}
 
 	/**
@@ -99,7 +77,7 @@ public class PhotoImpl extends MediaImpl implements Photo {
 	 * @generated
 	 */
 	public Source getSource() {
-		return source;
+		return (Source)eDynamicGet(PhotoeditPackage.PHOTO__SOURCE, PhotoeditPackage.Literals.PHOTO__SOURCE, true, true);
 	}
 
 	/**
@@ -108,12 +86,7 @@ public class PhotoImpl extends MediaImpl implements Photo {
 	 * @generated
 	 */
 	public NotificationChain basicSetSource(Source newSource, NotificationChain msgs) {
-		Source oldSource = source;
-		source = newSource;
-		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, PhotoeditPackage.PHOTO__SOURCE, oldSource, newSource);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
-		}
+		msgs = eDynamicInverseAdd((InternalEObject)newSource, PhotoeditPackage.PHOTO__SOURCE, msgs);
 		return msgs;
 	}
 
@@ -123,17 +96,7 @@ public class PhotoImpl extends MediaImpl implements Photo {
 	 * @generated
 	 */
 	public void setSource(Source newSource) {
-		if (newSource != source) {
-			NotificationChain msgs = null;
-			if (source != null)
-				msgs = ((InternalEObject)source).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - PhotoeditPackage.PHOTO__SOURCE, null, msgs);
-			if (newSource != null)
-				msgs = ((InternalEObject)newSource).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - PhotoeditPackage.PHOTO__SOURCE, null, msgs);
-			msgs = basicSetSource(newSource, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PhotoeditPackage.PHOTO__SOURCE, newSource, newSource));
+		eDynamicSet(PhotoeditPackage.PHOTO__SOURCE, PhotoeditPackage.Literals.PHOTO__SOURCE, newSource);
 	}
 
 	/**
@@ -215,9 +178,9 @@ public class PhotoImpl extends MediaImpl implements Photo {
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 			case PhotoeditPackage.PHOTO__AREAS:
-				return areas != null && !areas.isEmpty();
+				return !getAreas().isEmpty();
 			case PhotoeditPackage.PHOTO__SOURCE:
-				return source != null;
+				return getSource() != null;
 		}
 		return super.eIsSet(featureID);
 	}

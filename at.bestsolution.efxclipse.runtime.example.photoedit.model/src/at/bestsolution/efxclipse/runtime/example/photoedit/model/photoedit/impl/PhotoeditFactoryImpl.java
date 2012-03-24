@@ -63,13 +63,13 @@ public class PhotoeditFactoryImpl extends EFactoryImpl implements PhotoeditFacto
 	@Override
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
-			case PhotoeditPackage.PHOTO_EDIT_APP: return createPhotoEditApp();
-			case PhotoeditPackage.ALBUM: return createAlbum();
-			case PhotoeditPackage.PHOTO: return createPhoto();
-			case PhotoeditPackage.PHOTO_AREA: return createPhotoArea();
-			case PhotoeditPackage.BINARY_SOURCE: return createBinarySource();
-			case PhotoeditPackage.URL_SOURCE: return createURLSource();
-			case PhotoeditPackage.BINARY_OBJECT: return createBinaryObject();
+			case PhotoeditPackage.PHOTO_EDIT_APP: return (EObject)createPhotoEditApp();
+			case PhotoeditPackage.ALBUM: return (EObject)createAlbum();
+			case PhotoeditPackage.PHOTO: return (EObject)createPhoto();
+			case PhotoeditPackage.PHOTO_AREA: return (EObject)createPhotoArea();
+			case PhotoeditPackage.BINARY_SOURCE: return (EObject)createBinarySource();
+			case PhotoeditPackage.URL_SOURCE: return (EObject)createURLSource();
+			case PhotoeditPackage.BINARY_OBJECT: return (EObject)createBinaryObject();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}

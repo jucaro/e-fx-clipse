@@ -6,6 +6,7 @@
  */
 package at.bestsolution.efxclipse.runtime.example.photoedit.model.photoedit;
 
+import org.eclipse.emf.cdo.CDOObject;
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -22,11 +23,13 @@ import org.eclipse.emf.ecore.EObject;
  *
  * @see at.bestsolution.efxclipse.runtime.example.photoedit.model.photoedit.PhotoeditPackage#getBaseObject()
  * @model abstract="true"
+ * @extends CDOObject
  * @generated
  */
-public interface BaseObject extends EObject {
+public interface BaseObject extends CDOObject {
 	/**
 	 * Returns the value of the '<em><b>Uuid</b></em>' attribute.
+	 * The default value is <code>"EcoreUtil.generateUUID()"</code>.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Uuid</em>' attribute isn't clear,
@@ -36,7 +39,7 @@ public interface BaseObject extends EObject {
 	 * @return the value of the '<em>Uuid</em>' attribute.
 	 * @see #setUuid(String)
 	 * @see at.bestsolution.efxclipse.runtime.example.photoedit.model.photoedit.PhotoeditPackage#getBaseObject_Uuid()
-	 * @model
+	 * @model default="EcoreUtil.generateUUID()"
 	 * @generated
 	 */
 	String getUuid();

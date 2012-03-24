@@ -39,16 +39,6 @@ import org.eclipse.emf.ecore.util.InternalEList;
  */
 public class PhotoEditAppImpl extends BaseObjectImpl implements PhotoEditApp {
 	/**
-	 * The cached value of the '{@link #getAlbums() <em>Albums</em>}' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getAlbums()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<Album> albums;
-
-	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -72,11 +62,9 @@ public class PhotoEditAppImpl extends BaseObjectImpl implements PhotoEditApp {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@SuppressWarnings("unchecked")
 	public EList<Album> getAlbums() {
-		if (albums == null) {
-			albums = new EObjectContainmentEList<Album>(Album.class, this, PhotoeditPackage.PHOTO_EDIT_APP__ALBUMS);
-		}
-		return albums;
+		return (EList<Album>)eDynamicGet(PhotoeditPackage.PHOTO_EDIT_APP__ALBUMS, PhotoeditPackage.Literals.PHOTO_EDIT_APP__ALBUMS, true, true);
 	}
 
 	/**
@@ -148,7 +136,7 @@ public class PhotoEditAppImpl extends BaseObjectImpl implements PhotoEditApp {
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 			case PhotoeditPackage.PHOTO_EDIT_APP__ALBUMS:
-				return albums != null && !albums.isEmpty();
+				return !getAlbums().isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

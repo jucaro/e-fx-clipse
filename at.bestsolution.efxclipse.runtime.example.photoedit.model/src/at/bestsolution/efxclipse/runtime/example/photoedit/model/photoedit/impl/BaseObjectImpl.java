@@ -13,6 +13,7 @@ import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
 
+import org.eclipse.emf.internal.cdo.CDOObjectImpl;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.EObjectImpl;
 import org.eclipse.emf.ecore.util.EcoreUtil;
@@ -30,26 +31,16 @@ import org.eclipse.emf.ecore.util.EcoreUtil;
  *
  * @generated
  */
-public abstract class BaseObjectImpl extends EObjectImpl implements BaseObject {
+public abstract class BaseObjectImpl extends CDOObjectImpl implements BaseObject {
 	/**
 	 * The default value of the '{@link #getUuid() <em>Uuid</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getUuid()
-	 * @generated
+	 * @generated NOT
 	 * @ordered
 	 */
-	protected static final String UUID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getUuid() <em>Uuid</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getUuid()
-	 * @generated
-	 * @ordered
-	 */
-	protected String uuid = UUID_EDEFAULT;
+	protected static final String UUID_EDEFAULT = EcoreUtil.generateUUID();
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -73,13 +64,20 @@ public abstract class BaseObjectImpl extends EObjectImpl implements BaseObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated NOT
+	 * @generated
+	 */
+	@Override
+	protected int eStaticFeatureCount() {
+		return 0;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
 	 */
 	public String getUuid() {
-		if( uuid == null ) {
-			uuid = EcoreUtil.generateUUID();
-		}
-		return uuid;
+		return (String)eDynamicGet(PhotoeditPackage.BASE_OBJECT__UUID, PhotoeditPackage.Literals.BASE_OBJECT__UUID, true, true);
 	}
 
 	/**
@@ -88,10 +86,7 @@ public abstract class BaseObjectImpl extends EObjectImpl implements BaseObject {
 	 * @generated
 	 */
 	public void setUuid(String newUuid) {
-		String oldUuid = uuid;
-		uuid = newUuid;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PhotoeditPackage.BASE_OBJECT__UUID, oldUuid, uuid));
+		eDynamicSet(PhotoeditPackage.BASE_OBJECT__UUID, PhotoeditPackage.Literals.BASE_OBJECT__UUID, newUuid);
 	}
 
 	/**
@@ -147,25 +142,9 @@ public abstract class BaseObjectImpl extends EObjectImpl implements BaseObject {
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 			case PhotoeditPackage.BASE_OBJECT__UUID:
-				return UUID_EDEFAULT == null ? uuid != null : !UUID_EDEFAULT.equals(uuid);
+				return UUID_EDEFAULT == null ? getUuid() != null : !UUID_EDEFAULT.equals(getUuid());
 		}
 		return super.eIsSet(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public String toString() {
-		if (eIsProxy()) return super.toString();
-
-		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (uuid: ");
-		result.append(uuid);
-		result.append(')');
-		return result.toString();
 	}
 
 } //BaseObjectImpl

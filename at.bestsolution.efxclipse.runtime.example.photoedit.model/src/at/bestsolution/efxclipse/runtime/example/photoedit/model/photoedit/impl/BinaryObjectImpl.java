@@ -41,16 +41,6 @@ public class BinaryObjectImpl extends BaseObjectImpl implements BinaryObject {
 	protected static final byte[] CONTENT_EDEFAULT = null;
 
 	/**
-	 * The cached value of the '{@link #getContent() <em>Content</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getContent()
-	 * @generated
-	 * @ordered
-	 */
-	protected byte[] content = CONTENT_EDEFAULT;
-
-	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -75,7 +65,7 @@ public class BinaryObjectImpl extends BaseObjectImpl implements BinaryObject {
 	 * @generated
 	 */
 	public byte[] getContent() {
-		return content;
+		return (byte[])eDynamicGet(PhotoeditPackage.BINARY_OBJECT__CONTENT, PhotoeditPackage.Literals.BINARY_OBJECT__CONTENT, true, true);
 	}
 
 	/**
@@ -84,10 +74,7 @@ public class BinaryObjectImpl extends BaseObjectImpl implements BinaryObject {
 	 * @generated
 	 */
 	public void setContent(byte[] newContent) {
-		byte[] oldContent = content;
-		content = newContent;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PhotoeditPackage.BINARY_OBJECT__CONTENT, oldContent, content));
+		eDynamicSet(PhotoeditPackage.BINARY_OBJECT__CONTENT, PhotoeditPackage.Literals.BINARY_OBJECT__CONTENT, newContent);
 	}
 
 	/**
@@ -143,25 +130,9 @@ public class BinaryObjectImpl extends BaseObjectImpl implements BinaryObject {
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 			case PhotoeditPackage.BINARY_OBJECT__CONTENT:
-				return CONTENT_EDEFAULT == null ? content != null : !CONTENT_EDEFAULT.equals(content);
+				return CONTENT_EDEFAULT == null ? getContent() != null : !CONTENT_EDEFAULT.equals(getContent());
 		}
 		return super.eIsSet(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public String toString() {
-		if (eIsProxy()) return super.toString();
-
-		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (content: ");
-		result.append(content);
-		result.append(')');
-		return result.toString();
 	}
 
 } //BinaryObjectImpl

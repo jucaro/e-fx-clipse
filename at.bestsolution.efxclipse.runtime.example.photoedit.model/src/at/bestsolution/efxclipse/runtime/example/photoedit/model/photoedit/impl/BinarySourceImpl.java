@@ -34,26 +34,6 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  */
 public class BinarySourceImpl extends SourceImpl implements BinarySource {
 	/**
-	 * The cached value of the '{@link #getPreviewObject() <em>Preview Object</em>}' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getPreviewObject()
-	 * @generated
-	 * @ordered
-	 */
-	protected BinaryObject previewObject;
-
-	/**
-	 * The cached value of the '{@link #getObject() <em>Object</em>}' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getObject()
-	 * @generated
-	 * @ordered
-	 */
-	protected BinaryObject object;
-
-	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -78,7 +58,7 @@ public class BinarySourceImpl extends SourceImpl implements BinarySource {
 	 * @generated
 	 */
 	public BinaryObject getPreviewObject() {
-		return previewObject;
+		return (BinaryObject)eDynamicGet(PhotoeditPackage.BINARY_SOURCE__PREVIEW_OBJECT, PhotoeditPackage.Literals.BINARY_SOURCE__PREVIEW_OBJECT, true, true);
 	}
 
 	/**
@@ -87,12 +67,7 @@ public class BinarySourceImpl extends SourceImpl implements BinarySource {
 	 * @generated
 	 */
 	public NotificationChain basicSetPreviewObject(BinaryObject newPreviewObject, NotificationChain msgs) {
-		BinaryObject oldPreviewObject = previewObject;
-		previewObject = newPreviewObject;
-		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, PhotoeditPackage.BINARY_SOURCE__PREVIEW_OBJECT, oldPreviewObject, newPreviewObject);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
-		}
+		msgs = eDynamicInverseAdd((InternalEObject)newPreviewObject, PhotoeditPackage.BINARY_SOURCE__PREVIEW_OBJECT, msgs);
 		return msgs;
 	}
 
@@ -102,17 +77,7 @@ public class BinarySourceImpl extends SourceImpl implements BinarySource {
 	 * @generated
 	 */
 	public void setPreviewObject(BinaryObject newPreviewObject) {
-		if (newPreviewObject != previewObject) {
-			NotificationChain msgs = null;
-			if (previewObject != null)
-				msgs = ((InternalEObject)previewObject).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - PhotoeditPackage.BINARY_SOURCE__PREVIEW_OBJECT, null, msgs);
-			if (newPreviewObject != null)
-				msgs = ((InternalEObject)newPreviewObject).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - PhotoeditPackage.BINARY_SOURCE__PREVIEW_OBJECT, null, msgs);
-			msgs = basicSetPreviewObject(newPreviewObject, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PhotoeditPackage.BINARY_SOURCE__PREVIEW_OBJECT, newPreviewObject, newPreviewObject));
+		eDynamicSet(PhotoeditPackage.BINARY_SOURCE__PREVIEW_OBJECT, PhotoeditPackage.Literals.BINARY_SOURCE__PREVIEW_OBJECT, newPreviewObject);
 	}
 
 	/**
@@ -121,7 +86,7 @@ public class BinarySourceImpl extends SourceImpl implements BinarySource {
 	 * @generated
 	 */
 	public BinaryObject getObject() {
-		return object;
+		return (BinaryObject)eDynamicGet(PhotoeditPackage.BINARY_SOURCE__OBJECT, PhotoeditPackage.Literals.BINARY_SOURCE__OBJECT, true, true);
 	}
 
 	/**
@@ -130,12 +95,7 @@ public class BinarySourceImpl extends SourceImpl implements BinarySource {
 	 * @generated
 	 */
 	public NotificationChain basicSetObject(BinaryObject newObject, NotificationChain msgs) {
-		BinaryObject oldObject = object;
-		object = newObject;
-		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, PhotoeditPackage.BINARY_SOURCE__OBJECT, oldObject, newObject);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
-		}
+		msgs = eDynamicInverseAdd((InternalEObject)newObject, PhotoeditPackage.BINARY_SOURCE__OBJECT, msgs);
 		return msgs;
 	}
 
@@ -145,17 +105,7 @@ public class BinarySourceImpl extends SourceImpl implements BinarySource {
 	 * @generated
 	 */
 	public void setObject(BinaryObject newObject) {
-		if (newObject != object) {
-			NotificationChain msgs = null;
-			if (object != null)
-				msgs = ((InternalEObject)object).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - PhotoeditPackage.BINARY_SOURCE__OBJECT, null, msgs);
-			if (newObject != null)
-				msgs = ((InternalEObject)newObject).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - PhotoeditPackage.BINARY_SOURCE__OBJECT, null, msgs);
-			msgs = basicSetObject(newObject, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PhotoeditPackage.BINARY_SOURCE__OBJECT, newObject, newObject));
+		eDynamicSet(PhotoeditPackage.BINARY_SOURCE__OBJECT, PhotoeditPackage.Literals.BINARY_SOURCE__OBJECT, newObject);
 	}
 
 	/**
@@ -235,9 +185,9 @@ public class BinarySourceImpl extends SourceImpl implements BinarySource {
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 			case PhotoeditPackage.BINARY_SOURCE__PREVIEW_OBJECT:
-				return previewObject != null;
+				return getPreviewObject() != null;
 			case PhotoeditPackage.BINARY_SOURCE__OBJECT:
-				return object != null;
+				return getObject() != null;
 		}
 		return super.eIsSet(featureID);
 	}

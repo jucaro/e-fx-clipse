@@ -45,16 +45,6 @@ import org.eclipse.emf.ecore.util.EObjectResolvingEList;
  */
 public class AlbumImpl extends BaseObjectImpl implements Album {
 	/**
-	 * The cached value of the '{@link #getMedia() <em>Media</em>}' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getMedia()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<Media> media;
-
-	/**
 	 * The default value of the '{@link #getTitle() <em>Title</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -64,15 +54,6 @@ public class AlbumImpl extends BaseObjectImpl implements Album {
 	 */
 	protected static final String TITLE_EDEFAULT = null;
 	/**
-	 * The cached value of the '{@link #getTitle() <em>Title</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getTitle()
-	 * @generated
-	 * @ordered
-	 */
-	protected String title = TITLE_EDEFAULT;
-	/**
 	 * The default value of the '{@link #getDescription() <em>Description</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -81,25 +62,6 @@ public class AlbumImpl extends BaseObjectImpl implements Album {
 	 * @ordered
 	 */
 	protected static final String DESCRIPTION_EDEFAULT = null;
-	/**
-	 * The cached value of the '{@link #getDescription() <em>Description</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getDescription()
-	 * @generated
-	 * @ordered
-	 */
-	protected String description = DESCRIPTION_EDEFAULT;
-	/**
-	 * The cached value of the '{@link #getCoverImage() <em>Cover Image</em>}' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getCoverImage()
-	 * @generated
-	 * @ordered
-	 */
-	protected Photo coverImage;
-
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -124,11 +86,9 @@ public class AlbumImpl extends BaseObjectImpl implements Album {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@SuppressWarnings("unchecked")
 	public EList<Media> getMedia() {
-		if (media == null) {
-			media = new EObjectContainmentEList<Media>(Media.class, this, PhotoeditPackage.ALBUM__MEDIA);
-		}
-		return media;
+		return (EList<Media>)eDynamicGet(PhotoeditPackage.ALBUM__MEDIA, PhotoeditPackage.Literals.ALBUM__MEDIA, true, true);
 	}
 
 	/**
@@ -137,7 +97,7 @@ public class AlbumImpl extends BaseObjectImpl implements Album {
 	 * @generated
 	 */
 	public String getTitle() {
-		return title;
+		return (String)eDynamicGet(PhotoeditPackage.ALBUM__TITLE, PhotoeditPackage.Literals.ALBUM__TITLE, true, true);
 	}
 
 	/**
@@ -146,10 +106,7 @@ public class AlbumImpl extends BaseObjectImpl implements Album {
 	 * @generated
 	 */
 	public void setTitle(String newTitle) {
-		String oldTitle = title;
-		title = newTitle;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PhotoeditPackage.ALBUM__TITLE, oldTitle, title));
+		eDynamicSet(PhotoeditPackage.ALBUM__TITLE, PhotoeditPackage.Literals.ALBUM__TITLE, newTitle);
 	}
 
 	/**
@@ -158,7 +115,7 @@ public class AlbumImpl extends BaseObjectImpl implements Album {
 	 * @generated
 	 */
 	public String getDescription() {
-		return description;
+		return (String)eDynamicGet(PhotoeditPackage.ALBUM__DESCRIPTION, PhotoeditPackage.Literals.ALBUM__DESCRIPTION, true, true);
 	}
 
 	/**
@@ -167,10 +124,7 @@ public class AlbumImpl extends BaseObjectImpl implements Album {
 	 * @generated
 	 */
 	public void setDescription(String newDescription) {
-		String oldDescription = description;
-		description = newDescription;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PhotoeditPackage.ALBUM__DESCRIPTION, oldDescription, description));
+		eDynamicSet(PhotoeditPackage.ALBUM__DESCRIPTION, PhotoeditPackage.Literals.ALBUM__DESCRIPTION, newDescription);
 	}
 
 	/**
@@ -179,7 +133,7 @@ public class AlbumImpl extends BaseObjectImpl implements Album {
 	 * @generated
 	 */
 	public Photo getCoverImage() {
-		return coverImage;
+		return (Photo)eDynamicGet(PhotoeditPackage.ALBUM__COVER_IMAGE, PhotoeditPackage.Literals.ALBUM__COVER_IMAGE, true, true);
 	}
 
 	/**
@@ -188,12 +142,7 @@ public class AlbumImpl extends BaseObjectImpl implements Album {
 	 * @generated
 	 */
 	public NotificationChain basicSetCoverImage(Photo newCoverImage, NotificationChain msgs) {
-		Photo oldCoverImage = coverImage;
-		coverImage = newCoverImage;
-		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, PhotoeditPackage.ALBUM__COVER_IMAGE, oldCoverImage, newCoverImage);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
-		}
+		msgs = eDynamicInverseAdd((InternalEObject)newCoverImage, PhotoeditPackage.ALBUM__COVER_IMAGE, msgs);
 		return msgs;
 	}
 
@@ -203,17 +152,7 @@ public class AlbumImpl extends BaseObjectImpl implements Album {
 	 * @generated
 	 */
 	public void setCoverImage(Photo newCoverImage) {
-		if (newCoverImage != coverImage) {
-			NotificationChain msgs = null;
-			if (coverImage != null)
-				msgs = ((InternalEObject)coverImage).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - PhotoeditPackage.ALBUM__COVER_IMAGE, null, msgs);
-			if (newCoverImage != null)
-				msgs = ((InternalEObject)newCoverImage).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - PhotoeditPackage.ALBUM__COVER_IMAGE, null, msgs);
-			msgs = basicSetCoverImage(newCoverImage, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PhotoeditPackage.ALBUM__COVER_IMAGE, newCoverImage, newCoverImage));
+		eDynamicSet(PhotoeditPackage.ALBUM__COVER_IMAGE, PhotoeditPackage.Literals.ALBUM__COVER_IMAGE, newCoverImage);
 	}
 
 	/**
@@ -311,33 +250,15 @@ public class AlbumImpl extends BaseObjectImpl implements Album {
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 			case PhotoeditPackage.ALBUM__MEDIA:
-				return media != null && !media.isEmpty();
+				return !getMedia().isEmpty();
 			case PhotoeditPackage.ALBUM__TITLE:
-				return TITLE_EDEFAULT == null ? title != null : !TITLE_EDEFAULT.equals(title);
+				return TITLE_EDEFAULT == null ? getTitle() != null : !TITLE_EDEFAULT.equals(getTitle());
 			case PhotoeditPackage.ALBUM__DESCRIPTION:
-				return DESCRIPTION_EDEFAULT == null ? description != null : !DESCRIPTION_EDEFAULT.equals(description);
+				return DESCRIPTION_EDEFAULT == null ? getDescription() != null : !DESCRIPTION_EDEFAULT.equals(getDescription());
 			case PhotoeditPackage.ALBUM__COVER_IMAGE:
-				return coverImage != null;
+				return getCoverImage() != null;
 		}
 		return super.eIsSet(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public String toString() {
-		if (eIsProxy()) return super.toString();
-
-		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (title: ");
-		result.append(title);
-		result.append(", description: ");
-		result.append(description);
-		result.append(')');
-		return result.toString();
 	}
 
 } //AlbumImpl

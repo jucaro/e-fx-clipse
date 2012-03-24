@@ -46,16 +46,6 @@ public class URLSourceImpl extends SourceImpl implements URLSource {
 	protected static final String PREVIEW_OBJECT_URL_EDEFAULT = null;
 
 	/**
-	 * The cached value of the '{@link #getPreviewObjectURL() <em>Preview Object URL</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getPreviewObjectURL()
-	 * @generated
-	 * @ordered
-	 */
-	protected String previewObjectURL = PREVIEW_OBJECT_URL_EDEFAULT;
-
-	/**
 	 * The default value of the '{@link #getObjectURL() <em>Object URL</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -64,16 +54,6 @@ public class URLSourceImpl extends SourceImpl implements URLSource {
 	 * @ordered
 	 */
 	protected static final String OBJECT_URL_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getObjectURL() <em>Object URL</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getObjectURL()
-	 * @generated
-	 * @ordered
-	 */
-	protected String objectURL = OBJECT_URL_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -100,7 +80,7 @@ public class URLSourceImpl extends SourceImpl implements URLSource {
 	 * @generated
 	 */
 	public String getPreviewObjectURL() {
-		return previewObjectURL;
+		return (String)eDynamicGet(PhotoeditPackage.URL_SOURCE__PREVIEW_OBJECT_URL, PhotoeditPackage.Literals.URL_SOURCE__PREVIEW_OBJECT_URL, true, true);
 	}
 
 	/**
@@ -109,10 +89,7 @@ public class URLSourceImpl extends SourceImpl implements URLSource {
 	 * @generated
 	 */
 	public void setPreviewObjectURL(String newPreviewObjectURL) {
-		String oldPreviewObjectURL = previewObjectURL;
-		previewObjectURL = newPreviewObjectURL;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PhotoeditPackage.URL_SOURCE__PREVIEW_OBJECT_URL, oldPreviewObjectURL, previewObjectURL));
+		eDynamicSet(PhotoeditPackage.URL_SOURCE__PREVIEW_OBJECT_URL, PhotoeditPackage.Literals.URL_SOURCE__PREVIEW_OBJECT_URL, newPreviewObjectURL);
 	}
 
 	/**
@@ -121,7 +98,7 @@ public class URLSourceImpl extends SourceImpl implements URLSource {
 	 * @generated
 	 */
 	public String getObjectURL() {
-		return objectURL;
+		return (String)eDynamicGet(PhotoeditPackage.URL_SOURCE__OBJECT_URL, PhotoeditPackage.Literals.URL_SOURCE__OBJECT_URL, true, true);
 	}
 
 	/**
@@ -130,10 +107,7 @@ public class URLSourceImpl extends SourceImpl implements URLSource {
 	 * @generated
 	 */
 	public void setObjectURL(String newObjectURL) {
-		String oldObjectURL = objectURL;
-		objectURL = newObjectURL;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PhotoeditPackage.URL_SOURCE__OBJECT_URL, oldObjectURL, objectURL));
+		eDynamicSet(PhotoeditPackage.URL_SOURCE__OBJECT_URL, PhotoeditPackage.Literals.URL_SOURCE__OBJECT_URL, newObjectURL);
 	}
 
 	/**
@@ -197,31 +171,13 @@ public class URLSourceImpl extends SourceImpl implements URLSource {
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 			case PhotoeditPackage.URL_SOURCE__PREVIEW_OBJECT_URL:
-				return PREVIEW_OBJECT_URL_EDEFAULT == null ? previewObjectURL != null : !PREVIEW_OBJECT_URL_EDEFAULT.equals(previewObjectURL);
+				return PREVIEW_OBJECT_URL_EDEFAULT == null ? getPreviewObjectURL() != null : !PREVIEW_OBJECT_URL_EDEFAULT.equals(getPreviewObjectURL());
 			case PhotoeditPackage.URL_SOURCE__OBJECT_URL:
-				return OBJECT_URL_EDEFAULT == null ? objectURL != null : !OBJECT_URL_EDEFAULT.equals(objectURL);
+				return OBJECT_URL_EDEFAULT == null ? getObjectURL() != null : !OBJECT_URL_EDEFAULT.equals(getObjectURL());
 		}
 		return super.eIsSet(featureID);
 	}
 
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public String toString() {
-		if (eIsProxy()) return super.toString();
-
-		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (previewObjectURL: ");
-		result.append(previewObjectURL);
-		result.append(", objectURL: ");
-		result.append(objectURL);
-		result.append(')');
-		return result.toString();
-	}
-	
 	@Override
 	public InputStream getObjectStream() {
 		try {

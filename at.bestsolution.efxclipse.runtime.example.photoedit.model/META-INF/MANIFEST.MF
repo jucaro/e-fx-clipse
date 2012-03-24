@@ -11,5 +11,6 @@ Export-Package: at.bestsolution.efxclipse.runtime.example.photoedit.model.photoe
  at.bestsolution.efxclipse.runtime.example.photoedit.model.photoedit.impl,
  at.bestsolution.efxclipse.runtime.example.photoedit.model.photoedit.util
 Require-Bundle: org.eclipse.core.runtime,
- org.eclipse.emf.ecore;visibility:=reexport
+ org.eclipse.emf.ecore;visibility:=reexport,
+ org.eclipse.emf.cdo;bundle-version="4.1.0";visibility:=reexport
 Bundle-ActivationPolicy: lazy

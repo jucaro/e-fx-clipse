@@ -3,7 +3,8 @@
     xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="photoedit" nsURI="http://efxclipse.org/examples/photoedit/v1.0"
     nsPrefix="photoedit">
   <eClassifiers xsi:type="ecore:EClass" name="BaseObject" abstract="true">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="uuid" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="uuid" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        defaultValueLiteral="EcoreUtil.generateUUID()"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="PhotoEditApp" eSuperTypes="#//BaseObject">
     <eStructuralFeatures xsi:type="ecore:EReference" name="albums" upperBound="-1"

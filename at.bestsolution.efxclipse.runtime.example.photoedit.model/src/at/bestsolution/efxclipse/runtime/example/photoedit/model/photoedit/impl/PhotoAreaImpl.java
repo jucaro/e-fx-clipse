@@ -43,16 +43,6 @@ public class PhotoAreaImpl extends BaseObjectImpl implements PhotoArea {
 	protected static final double X_EDEFAULT = 0.0;
 
 	/**
-	 * The cached value of the '{@link #getX() <em>X</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getX()
-	 * @generated
-	 * @ordered
-	 */
-	protected double x = X_EDEFAULT;
-
-	/**
 	 * The default value of the '{@link #getY() <em>Y</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -61,16 +51,6 @@ public class PhotoAreaImpl extends BaseObjectImpl implements PhotoArea {
 	 * @ordered
 	 */
 	protected static final double Y_EDEFAULT = 0.0;
-
-	/**
-	 * The cached value of the '{@link #getY() <em>Y</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getY()
-	 * @generated
-	 * @ordered
-	 */
-	protected double y = Y_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getWidth() <em>Width</em>}' attribute.
@@ -83,16 +63,6 @@ public class PhotoAreaImpl extends BaseObjectImpl implements PhotoArea {
 	protected static final double WIDTH_EDEFAULT = 0.0;
 
 	/**
-	 * The cached value of the '{@link #getWidth() <em>Width</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getWidth()
-	 * @generated
-	 * @ordered
-	 */
-	protected double width = WIDTH_EDEFAULT;
-
-	/**
 	 * The default value of the '{@link #getHeight() <em>Height</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -101,16 +71,6 @@ public class PhotoAreaImpl extends BaseObjectImpl implements PhotoArea {
 	 * @ordered
 	 */
 	protected static final double HEIGHT_EDEFAULT = 0.0;
-
-	/**
-	 * The cached value of the '{@link #getHeight() <em>Height</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getHeight()
-	 * @generated
-	 * @ordered
-	 */
-	protected double height = HEIGHT_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getColor() <em>Color</em>}' attribute.
@@ -123,16 +83,6 @@ public class PhotoAreaImpl extends BaseObjectImpl implements PhotoArea {
 	protected static final String COLOR_EDEFAULT = null;
 
 	/**
-	 * The cached value of the '{@link #getColor() <em>Color</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getColor()
-	 * @generated
-	 * @ordered
-	 */
-	protected String color = COLOR_EDEFAULT;
-
-	/**
 	 * The default value of the '{@link #getDescription() <em>Description</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -141,16 +91,6 @@ public class PhotoAreaImpl extends BaseObjectImpl implements PhotoArea {
 	 * @ordered
 	 */
 	protected static final String DESCRIPTION_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getDescription() <em>Description</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getDescription()
-	 * @generated
-	 * @ordered
-	 */
-	protected String description = DESCRIPTION_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -177,7 +117,7 @@ public class PhotoAreaImpl extends BaseObjectImpl implements PhotoArea {
 	 * @generated
 	 */
 	public double getX() {
-		return x;
+		return (Double)eDynamicGet(PhotoeditPackage.PHOTO_AREA__X, PhotoeditPackage.Literals.PHOTO_AREA__X, true, true);
 	}
 
 	/**
@@ -186,10 +126,7 @@ public class PhotoAreaImpl extends BaseObjectImpl implements PhotoArea {
 	 * @generated
 	 */
 	public void setX(double newX) {
-		double oldX = x;
-		x = newX;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PhotoeditPackage.PHOTO_AREA__X, oldX, x));
+		eDynamicSet(PhotoeditPackage.PHOTO_AREA__X, PhotoeditPackage.Literals.PHOTO_AREA__X, newX);
 	}
 
 	/**
@@ -198,7 +135,7 @@ public class PhotoAreaImpl extends BaseObjectImpl implements PhotoArea {
 	 * @generated
 	 */
 	public double getY() {
-		return y;
+		return (Double)eDynamicGet(PhotoeditPackage.PHOTO_AREA__Y, PhotoeditPackage.Literals.PHOTO_AREA__Y, true, true);
 	}
 
 	/**
@@ -207,10 +144,7 @@ public class PhotoAreaImpl extends BaseObjectImpl implements PhotoArea {
 	 * @generated
 	 */
 	public void setY(double newY) {
-		double oldY = y;
-		y = newY;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PhotoeditPackage.PHOTO_AREA__Y, oldY, y));
+		eDynamicSet(PhotoeditPackage.PHOTO_AREA__Y, PhotoeditPackage.Literals.PHOTO_AREA__Y, newY);
 	}
 
 	/**
@@ -219,7 +153,7 @@ public class PhotoAreaImpl extends BaseObjectImpl implements PhotoArea {
 	 * @generated
 	 */
 	public double getWidth() {
-		return width;
+		return (Double)eDynamicGet(PhotoeditPackage.PHOTO_AREA__WIDTH, PhotoeditPackage.Literals.PHOTO_AREA__WIDTH, true, true);
 	}
 
 	/**
@@ -228,10 +162,7 @@ public class PhotoAreaImpl extends BaseObjectImpl implements PhotoArea {
 	 * @generated
 	 */
 	public void setWidth(double newWidth) {
-		double oldWidth = width;
-		width = newWidth;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PhotoeditPackage.PHOTO_AREA__WIDTH, oldWidth, width));
+		eDynamicSet(PhotoeditPackage.PHOTO_AREA__WIDTH, PhotoeditPackage.Literals.PHOTO_AREA__WIDTH, newWidth);
 	}
 
 	/**
@@ -240,7 +171,7 @@ public class PhotoAreaImpl extends BaseObjectImpl implements PhotoArea {
 	 * @generated
 	 */
 	public double getHeight() {
-		return height;
+		return (Double)eDynamicGet(PhotoeditPackage.PHOTO_AREA__HEIGHT, PhotoeditPackage.Literals.PHOTO_AREA__HEIGHT, true, true);
 	}
 
 	/**
@@ -249,10 +180,7 @@ public class PhotoAreaImpl extends BaseObjectImpl implements PhotoArea {
 	 * @generated
 	 */
 	public void setHeight(double newHeight) {
-		double oldHeight = height;
-		height = newHeight;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PhotoeditPackage.PHOTO_AREA__HEIGHT, oldHeight, height));
+		eDynamicSet(PhotoeditPackage.PHOTO_AREA__HEIGHT, PhotoeditPackage.Literals.PHOTO_AREA__HEIGHT, newHeight);
 	}
 
 	/**
@@ -261,7 +189,7 @@ public class PhotoAreaImpl extends BaseObjectImpl implements PhotoArea {
 	 * @generated
 	 */
 	public String getColor() {
-		return color;
+		return (String)eDynamicGet(PhotoeditPackage.PHOTO_AREA__COLOR, PhotoeditPackage.Literals.PHOTO_AREA__COLOR, true, true);
 	}
 
 	/**
@@ -270,10 +198,7 @@ public class PhotoAreaImpl extends BaseObjectImpl implements PhotoArea {
 	 * @generated
 	 */
 	public void setColor(String newColor) {
-		String oldColor = color;
-		color = newColor;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PhotoeditPackage.PHOTO_AREA__COLOR, oldColor, color));
+		eDynamicSet(PhotoeditPackage.PHOTO_AREA__COLOR, PhotoeditPackage.Literals.PHOTO_AREA__COLOR, newColor);
 	}
 
 	/**
@@ -282,7 +207,7 @@ public class PhotoAreaImpl extends BaseObjectImpl implements PhotoArea {
 	 * @generated
 	 */
 	public String getDescription() {
-		return description;
+		return (String)eDynamicGet(PhotoeditPackage.PHOTO_AREA__DESCRIPTION, PhotoeditPackage.Literals.PHOTO_AREA__DESCRIPTION, true, true);
 	}
 
 	/**
@@ -291,10 +216,7 @@ public class PhotoAreaImpl extends BaseObjectImpl implements PhotoArea {
 	 * @generated
 	 */
 	public void setDescription(String newDescription) {
-		String oldDescription = description;
-		description = newDescription;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PhotoeditPackage.PHOTO_AREA__DESCRIPTION, oldDescription, description));
+		eDynamicSet(PhotoeditPackage.PHOTO_AREA__DESCRIPTION, PhotoeditPackage.Literals.PHOTO_AREA__DESCRIPTION, newDescription);
 	}
 
 	/**
@@ -416,45 +338,19 @@ public class PhotoAreaImpl extends BaseObjectImpl implements PhotoArea {
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 			case PhotoeditPackage.PHOTO_AREA__X:
-				return x != X_EDEFAULT;
+				return getX() != X_EDEFAULT;
 			case PhotoeditPackage.PHOTO_AREA__Y:
-				return y != Y_EDEFAULT;
+				return getY() != Y_EDEFAULT;
 			case PhotoeditPackage.PHOTO_AREA__WIDTH:
-				return width != WIDTH_EDEFAULT;
+				return getWidth() != WIDTH_EDEFAULT;
 			case PhotoeditPackage.PHOTO_AREA__HEIGHT:
-				return height != HEIGHT_EDEFAULT;
+				return getHeight() != HEIGHT_EDEFAULT;
 			case PhotoeditPackage.PHOTO_AREA__COLOR:
-				return COLOR_EDEFAULT == null ? color != null : !COLOR_EDEFAULT.equals(color);
+				return COLOR_EDEFAULT == null ? getColor() != null : !COLOR_EDEFAULT.equals(getColor());
 			case PhotoeditPackage.PHOTO_AREA__DESCRIPTION:
-				return DESCRIPTION_EDEFAULT == null ? description != null : !DESCRIPTION_EDEFAULT.equals(description);
+				return DESCRIPTION_EDEFAULT == null ? getDescription() != null : !DESCRIPTION_EDEFAULT.equals(getDescription());
 		}
 		return super.eIsSet(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public String toString() {
-		if (eIsProxy()) return super.toString();
-
-		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (x: ");
-		result.append(x);
-		result.append(", y: ");
-		result.append(y);
-		result.append(", width: ");
-		result.append(width);
-		result.append(", height: ");
-		result.append(height);
-		result.append(", color: ");
-		result.append(color);
-		result.append(", description: ");
-		result.append(description);
-		result.append(')');
-		return result.toString();
 	}
 
 } //PhotoAreaImpl
