@@ -6,15 +6,12 @@
  */
 package at.bestsolution.efxclipse.runtime.example.photoedit.model.photoedit.impl;
 
+import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
+
 import at.bestsolution.efxclipse.runtime.example.photoedit.model.photoedit.PhotoArea;
 import at.bestsolution.efxclipse.runtime.example.photoedit.model.photoedit.PhotoeditPackage;
-
-import org.eclipse.emf.common.notify.Notification;
-
-import org.eclipse.emf.ecore.EClass;
-
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.impl.EObjectImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -298,6 +295,32 @@ public class PhotoAreaImpl extends BaseObjectImpl implements PhotoArea {
 		description = newDescription;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, PhotoeditPackage.PHOTO_AREA__DESCRIPTION, oldDescription, description));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated NOT
+	 */
+	public boolean contains(double X, double Y) {
+		double w = this.getWidth();
+		double h = this.getHeight();
+		
+		if( w < 0 || h < 0 ) {
+			// At least one of the dimensions is negative...
+		    return false;
+		}
+		// Note: if either dimension is zero, tests below must return false...
+		double x = this.getX();
+		double y = this.getY();
+		if (X < x || Y < y) {
+		    return false;
+		}
+		w += x;
+		h += y;
+		//    overflow || intersect
+		return ((w < x || w > X) &&
+			(h < y || h > Y));
 	}
 
 	/**

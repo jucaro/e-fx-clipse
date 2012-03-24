@@ -186,4 +186,12 @@ public interface PhotoArea extends BaseObject {
 	 */
 	void setDescription(String value);
 
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model
+	 * @generated
+	 */
+	boolean contains(double x, double y);
+
 } // PhotoArea
