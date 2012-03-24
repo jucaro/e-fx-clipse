@@ -93,7 +93,6 @@ public class AlbumListView {
 	
 	@Inject
 	public AlbumListView(BorderPane pane) {
-		System.err.println("CREATTTTIIIIIIIIIIIIIINNNNNNNNNNNNNNNG");
 		listView = new ListView<Album>();
 		listView.setCellFactory(new Callback<ListView<Album>, ListCell<Album>>() {
 			
