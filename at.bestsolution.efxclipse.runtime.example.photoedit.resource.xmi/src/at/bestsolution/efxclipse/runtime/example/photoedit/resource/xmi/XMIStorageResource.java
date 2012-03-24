@@ -1,5 +1,7 @@
 package at.bestsolution.efxclipse.runtime.example.photoedit.resource.xmi;
 
+import java.io.IOException;
+
 import javax.inject.Inject;
 
 import org.eclipse.core.runtime.IStatus;
@@ -36,5 +38,20 @@ public class XMIStorageResource implements ResourceStore {
 			return (PhotoEditApp) resource.getContents().get(0);
 		}
 		return null;
+	}
+	
+	@Override
+	public IStatus save() {
+		if( resource != null ) {
+			try {
+				resource.save(null);
+				return Status.OK_STATUS;
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+				return new Status(IStatus.ERROR, "at.bestsolution.efxclipse.runtime.example.photoedit.resource.xmi", e.getMessage(),e);
+			}
+		}
+		return Status.CANCEL_STATUS;
 	}
 }

@@ -7,5 +7,6 @@ import at.bestsolution.efxclipse.runtime.example.photoedit.model.photoedit.Photo
 
 public interface ResourceStore {
 	public IStatus loadRoot(URI uri);
+	public IStatus save();
 	public PhotoEditApp getPhotoEditApp();
 }
