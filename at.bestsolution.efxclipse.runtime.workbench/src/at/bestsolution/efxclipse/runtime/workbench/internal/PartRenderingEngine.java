@@ -269,6 +269,13 @@ public class PartRenderingEngine implements IPresentationEngine {
 		if (!element.isToBeRendered()) {
 			return null;
 		}
+		
+		Object currentWidget = element.getWidget();
+		
+		if(currentWidget != null) {
+			//TODO Port SWT code
+			return currentWidget;
+		}
 
 		if (element instanceof MContext) {
 			MContext ctxt = (MContext) element;
