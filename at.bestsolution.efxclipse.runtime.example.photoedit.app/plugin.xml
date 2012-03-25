@@ -35,6 +35,10 @@
                name="applicationXMI"
                value="at.bestsolution.efxclipse.runtime.example.photoedit.app/Application.e4xmi">
          </property>
+         <property
+               name="cssTheme"
+               value="at.bestsolution.efxclipse.runtime.example.photoedit.ui.default">
+         </property>
       </product>
    </extension>
 
