@@ -256,6 +256,7 @@ public class MediaEditor {
 					PhotoArea p = PhotoeditFactory.eINSTANCE.createPhotoArea();
 					p.setX(event.getX());
 					p.setY(event.getY());
+					p.setDescription("New Area");
 					
 					photo.getAreas().add(p);
 					sizedArea = p;
