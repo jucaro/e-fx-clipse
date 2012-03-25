@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+<extension
+         point="at.bestsolution.efxclipse.runtime.theme">
+      <theme
+            basestylesheet="css/app.css"
+            id="at.bestsolution.efxclipse.runtime.example.photoedit.ui.default">
+      </theme>
+   </extension>
+</plugin>
