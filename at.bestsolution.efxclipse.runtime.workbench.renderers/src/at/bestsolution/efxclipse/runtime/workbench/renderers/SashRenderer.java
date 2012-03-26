@@ -1,5 +1,8 @@
 package at.bestsolution.efxclipse.runtime.workbench.renderers;
 
+import java.math.BigDecimal;
+import java.math.MathContext;
+
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.geometry.Orientation;
@@ -58,7 +61,13 @@ public class SashRenderer extends JFXRenderer {
 			splitPane.getDividers().get(0).positionProperty().addListener(new ChangeListener<Number>() {
 				@Override
 				public void changed(ObservableValue<? extends Number> observable, Number oldValue, Number newValue) {
-					container.setContainerData(newValue.toString());
+					//Reduce the noise
+					BigDecimal d1 = new BigDecimal(oldValue.doubleValue());
+					BigDecimal d2 = new BigDecimal(newValue.doubleValue());
+					
+					if( ! d1.round(new MathContext(3)).equals(d2.round(new MathContext(3))) ) {
+						container.setContainerData(newValue.toString());
+					}
 				}
 			});
 
