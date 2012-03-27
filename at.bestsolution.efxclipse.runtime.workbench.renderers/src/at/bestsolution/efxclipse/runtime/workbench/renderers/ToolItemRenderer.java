@@ -74,6 +74,10 @@ public class ToolItemRenderer extends ItemRenderer {
 			button = new Button();
 		}
 
+		if( item.getLocalizedLabel() != null ) {
+			button.setText(item.getLocalizedLabel());
+		}
+		
 		if (item.getIconURI() != null) {
 			URL url = Util.convertToOSGiURL(URI.createURI(item.getIconURI()));
 			Image img = new Image(url.toExternalForm());

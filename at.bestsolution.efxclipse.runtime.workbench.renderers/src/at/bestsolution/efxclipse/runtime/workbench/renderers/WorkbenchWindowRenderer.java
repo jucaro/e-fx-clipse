@@ -33,6 +33,7 @@ import at.bestsolution.efxclipse.runtime.panels.FillLayoutPane;
 import at.bestsolution.efxclipse.runtime.services.theme.Theme;
 import at.bestsolution.efxclipse.runtime.services.theme.ThemeManager;
 import at.bestsolution.efxclipse.runtime.services.theme.ThemeManager.Registration;
+import at.bestsolution.efxclipse.runtime.workbench.renderers.internal.WindowResizeButton;
 
 @SuppressWarnings("restriction")
 public class WorkbenchWindowRenderer extends JFXRenderer {
@@ -44,6 +45,8 @@ public class WorkbenchWindowRenderer extends JFXRenderer {
 
 	@Inject
 	IEventBroker broker;
+
+	private WindowResizeButton windowResizeButton;
 	
 	@SuppressWarnings("deprecation")
 	@Override
@@ -57,11 +60,22 @@ public class WorkbenchWindowRenderer extends JFXRenderer {
 			stage.setHeight(e.getHeight());
 			stage.setTitle(((MWindow) element).getLocalizedLabel());
 
-			BorderPane root = new BorderPane();
+			BorderPane root = new BorderPane() {
+				@Override
+				protected void layoutChildren() {
+					super.layoutChildren();
+					if( windowResizeButton != null ) {
+						windowResizeButton.autosize();
+	                    windowResizeButton.setLayoutX(getWidth() - windowResizeButton.getLayoutBounds().getWidth());
+	                    windowResizeButton.setLayoutY(getHeight() - windowResizeButton.getLayoutBounds().getHeight());
+	                }
+				}
+			};
+			root.getStyleClass().add("MWindow");
 			VBox topAreaBox = new VBox();
 			root.setTop(topAreaBox);
 
-			root.setStyle("-fx-background-color: #999;");
+			//root.setStyle("-fx-background-color: #999;");
 			Scene scene = new Scene(root, Integer.MAX_VALUE, Integer.MAX_VALUE);
 			scene.impl_focusOwnerProperty().addListener(new ChangeListener<Node>() {
 				private Object lastFocusElement;
@@ -155,6 +169,7 @@ public class WorkbenchWindowRenderer extends JFXRenderer {
 			Node topDecoration = createTopDecoration(stage, window);
 			if (topDecoration != null) {
 				topAreaBox.getChildren().add(topDecoration);
+				windowResizeButton = new WindowResizeButton(stage, 1020,700);
 			}
 
 			if (window.getMainMenu() != null) {
@@ -206,6 +221,10 @@ public class WorkbenchWindowRenderer extends JFXRenderer {
 						filllayout.getChildren().add((Node) element);
 					}
 				}
+			}
+			
+			if( windowResizeButton != null ) {
+				rootPane.getChildren().add(windowResizeButton);
 			}
 		}
 	}

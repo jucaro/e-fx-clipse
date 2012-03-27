@@ -49,6 +49,7 @@ public abstract class BaseObjectImpl extends CDOObjectImpl implements BaseObject
 	 */
 	protected BaseObjectImpl() {
 		super();
+		setUuid(EcoreUtil.generateUUID());
 	}
 
 	/**

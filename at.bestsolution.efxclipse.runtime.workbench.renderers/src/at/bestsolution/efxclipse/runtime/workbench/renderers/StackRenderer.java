@@ -199,6 +199,7 @@ public class StackRenderer extends JFXRenderer {
 	@Override
 	public Object createWidget(MUIElement element, Object parent) {
 		TabPane tabPane = new TabPane();
+		tabPane.getStyleClass().add("MPartStack");
 		return tabPane;
 	}
 

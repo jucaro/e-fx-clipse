@@ -13,7 +13,8 @@ public class ToolBarRenderer extends JFXRenderer {
 	public Object createWidget(MUIElement element, Object parent) {
 		// Since we use a JavaFX ToolBar for the TrimBar, each e4 toolbar is
 		// rendered as JavaFX HBox
-		HBox toolBar = new HBox(5);
+		HBox toolBar = new HBox();
+		toolBar.getStyleClass().setAll("segmented-button-bar");
 		return toolBar;
 	}
 

@@ -1,56 +1,24 @@
 <?xml version="1.0" encoding="ASCII"?>
-<photoedit:PhotoEditApp
-    xmi:version="2.0"
-    xmlns:xmi="http://www.omg.org/XMI"
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xmlns:photoedit="http://efxclipse.org/examples/photoedit/v1.0"
-    xsi:schemaLocation="http://efxclipse.org/examples/photoedit/v1.0 PhotoEdit.ecore">
-  <albums title="Mountains 2011"
-      description="Photos from hikes in 2011">
-    <media xsi:type="photoedit:Photo"
-        uuid="_E4nQAF2TEeG-XLz_XksV3w"
-        title="Brandjoch"
-        description="Das Brandjoch &#xfc;ber Innsbruck">
-      <areas
-          x="10.0"
-          y="10.0"
-          width="100.0"
-          height="100.0"
-          description="Bla Bla Bla"/>
-      <areas
-          x="130.0"
-          y="130.0"
-          width="100.0"
-          height="100.0"
-          description="Bla Bla Bla 2"/>
-      <source
-          xsi:type="photoedit:URLSource"
-          previewObjectURL="platform:/plugin/at.bestsolution.efxclipse.runtime.example.photoedit.model/model/album1/1_preview.jpg"
-          objectURL="platform:/plugin/at.bestsolution.efxclipse.runtime.example.photoedit.model/model/album1/1.jpg"/>
+<photoedit:PhotoEditApp xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:photoedit="http://efxclipse.org/examples/photoedit/v1.0" uuid="_yJfW0naeEeGuov7iXTEl6Q">
+  <albums uuid="_yJkPUHaeEeGuov7iXTEl6Q" title="Mountains 2011" description="Photos from hikes in 2011">
+    <media xsi:type="photoedit:Photo" uuid="_E4nQAF2TEeG-XLz_XksV3w" title="Brandjoch" description="Das Brandjoch &#xfc;ber Innsbruck">
+      <source xsi:type="photoedit:URLSource" uuid="_yJmrkHaeEeGuov7iXTEl6Q" previewObjectURL="platform:/plugin/at.bestsolution.efxclipse.runtime.example.photoedit.model/model/album1/1_preview.jpg" objectURL="platform:/plugin/at.bestsolution.efxclipse.runtime.example.photoedit.model/model/album1/1.jpg"/>
     </media>
-    <media xsi:type="photoedit:Photo"
-        uuid="_E4nQAl2TEeG-XLz_XksV3w"
-        title="Brandjoch 2"
-        description="2. Photo vom Brandjoch">
-      <source
-          xsi:type="photoedit:URLSource"
-          previewObjectURL="platform:/plugin/at.bestsolution.efxclipse.runtime.example.photoedit.model/model/album1/2_preview.jpg"
-          objectURL="platform:/plugin/at.bestsolution.efxclipse.runtime.example.photoedit.model/model/album1/2.jpg"/>
+    <media xsi:type="photoedit:Photo" uuid="_E4nQAl2TEeG-XLz_XksV3w" title="Brandjoch 2" description="2. Photo vom Brandjoch">
+      <areas uuid="_yJnSoHaeEeGuov7iXTEl6Q" x="324.6666564941406" y="762.6666870117188" width="420.0000305175781" height="260.0" description="Brandjoch"/>
+      <source xsi:type="photoedit:URLSource" uuid="_yJnSoXaeEeGuov7iXTEl6Q" previewObjectURL="platform:/plugin/at.bestsolution.efxclipse.runtime.example.photoedit.model/model/album1/2_preview.jpg" objectURL="platform:/plugin/at.bestsolution.efxclipse.runtime.example.photoedit.model/model/album1/2.jpg"/>
     </media>
-    <coverImage>
-      <source
-          xsi:type="photoedit:URLSource"
-          previewObjectURL="platform:/plugin/at.bestsolution.efxclipse.runtime.example.photoedit.model/model/icons/im-user.png"
-          objectURL="platform:/plugin/at.bestsolution.efxclipse.runtime.example.photoedit.model/model/icons/im-user.png"/>
+    <coverImage uuid="_yJnSonaeEeGuov7iXTEl6Q">
+      <source xsi:type="photoedit:URLSource" uuid="_yJnSo3aeEeGuov7iXTEl6Q" previewObjectURL="platform:/plugin/at.bestsolution.efxclipse.runtime.example.photoedit.model/model/icons/im-user.png" objectURL="platform:/plugin/at.bestsolution.efxclipse.runtime.example.photoedit.model/model/icons/im-user.png"/>
     </coverImage>
   </albums>
-  <albums title="Holiday 2011"
-      description="Holiday pictures 2011">
-    <coverImage>
-      <source
-          xsi:type="photoedit:URLSource"
-          previewObjectURL="platform:/plugin/at.bestsolution.efxclipse.runtime.example.photoedit.model/model/icons/preferences-desktop-wallpaper.png"
-          objectURL="platform:/plugin/at.bestsolution.efxclipse.runtime.example.photoedit.model/model/icons/preferences-desktop-wallpaper.png"/>
+  <albums uuid="_yJnSpHaeEeGuov7iXTEl6Q" title="Holiday 2011" description="Holiday pictures 2011">
+    <media xsi:type="photoedit:Photo" uuid="_QqZUZXafEeGaovMiEJl7SQ" title="Ruegen" description="Ruegen">
+      <areas uuid="_bHZewHafEeGaovMiEJl7SQ" x="1112.6666259765625" y="861.3333129882812" width="510.0" height="350.00006103515625" description="B&#xe4;ume"/>
+      <source xsi:type="photoedit:URLSource" uuid="_QqZUZnafEeGaovMiEJl7SQ" previewObjectURL="platform:/plugin/at.bestsolution.efxclipse.runtime.example.photoedit.model/model/album2/IMG_0041_preview.jpg" objectURL="platform:/plugin/at.bestsolution.efxclipse.runtime.example.photoedit.model/model/album2/IMG_0041.JPG"/>
+    </media>
+    <coverImage uuid="_yJnSpXaeEeGuov7iXTEl6Q">
+      <source xsi:type="photoedit:URLSource" uuid="_yJnSpnaeEeGuov7iXTEl6Q" previewObjectURL="platform:/plugin/at.bestsolution.efxclipse.runtime.example.photoedit.model/model/icons/preferences-desktop-wallpaper.png" objectURL="platform:/plugin/at.bestsolution.efxclipse.runtime.example.photoedit.model/model/icons/preferences-desktop-wallpaper.png"/>
     </coverImage>
   </albums>
 </photoedit:PhotoEditApp>

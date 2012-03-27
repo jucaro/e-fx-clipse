@@ -94,6 +94,7 @@ public class AlbumListView {
 	@Inject
 	public AlbumListView(BorderPane pane) {
 		listView = new ListView<Album>();
+		listView.getStyleClass().add("album-list");
 		listView.setCellFactory(new Callback<ListView<Album>, ListCell<Album>>() {
 			
 			@Override

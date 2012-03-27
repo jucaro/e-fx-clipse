@@ -3,6 +3,9 @@ package at.bestsolution.efxclipse.runtime.workbench.renderers;
 import javafx.scene.Node;
 import javafx.scene.control.Separator;
 import javafx.scene.control.ToolBar;
+import javafx.scene.layout.HBox;
+import javafx.scene.layout.Priority;
+import javafx.scene.layout.Region;
 
 import org.eclipse.e4.ui.model.application.ui.MElementContainer;
 import org.eclipse.e4.ui.model.application.ui.MUIElement;
@@ -22,6 +25,10 @@ public class TrimBarRenderer extends JFXRenderer {
 		IPresentationEngine renderer = (IPresentationEngine) context.get(IPresentationEngine.class.getName());
 		ToolBar pane = (ToolBar) container.getWidget();
 
+		Region r = new Region();
+		HBox.setHgrow(r, Priority.ALWAYS);
+		pane.getItems().add(r);
+		
 		for (MUIElement e : container.getChildren()) {
 			Node n = (Node) renderer.createGui(e);
 			if (n != null) {
@@ -29,5 +36,9 @@ public class TrimBarRenderer extends JFXRenderer {
 				pane.getItems().add(n);
 			}
 		}
+		
+		r = new Region();
+		HBox.setHgrow(r, Priority.ALWAYS);
+		pane.getItems().add(r);
 	}
 }

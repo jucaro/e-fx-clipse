@@ -19,6 +19,10 @@
                name="applicationCSS"
                value="platform:/plugin/at.bestsolution.efxclipse.runtime.example.photoedit.app/css/default.css">
          </property>
+          <property
+               name="modelResourceHandler"
+               value="bundleclass://org.eclipse.e4.ui.workbench/org.eclipse.e4.ui.internal.workbench.CDOModelLoader">
+         </property>
       </product>
    </extension>
    <extension
@@ -38,6 +42,10 @@
          <property
                name="cssTheme"
                value="at.bestsolution.efxclipse.runtime.example.photoedit.ui.default">
+         </property>
+         <property
+               name="modelResourceHandler"
+               value="bundleclass://org.eclipse.e4.ui.workbench/org.eclipse.e4.ui.internal.workbench.CDOModelLoader">
          </property>
       </product>
    </extension>

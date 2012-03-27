@@ -29,7 +29,7 @@ import org.eclipse.emf.ecore.EObject;
 public interface BaseObject extends CDOObject {
 	/**
 	 * Returns the value of the '<em><b>Uuid</b></em>' attribute.
-	 * The default value is <code>"EcoreUtil.generateUUID()"</code>.
+	 * The default value is <code>""</code>.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Uuid</em>' attribute isn't clear,
@@ -39,7 +39,7 @@ public interface BaseObject extends CDOObject {
 	 * @return the value of the '<em>Uuid</em>' attribute.
 	 * @see #setUuid(String)
 	 * @see at.bestsolution.efxclipse.runtime.example.photoedit.model.photoedit.PhotoeditPackage#getBaseObject_Uuid()
-	 * @model default="EcoreUtil.generateUUID()"
+	 * @model default=""
 	 * @generated
 	 */
 	String getUuid();

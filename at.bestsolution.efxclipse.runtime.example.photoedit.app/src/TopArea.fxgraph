@@ -1,0 +1,36 @@
+package at.bestsolution.efxclipse.runtime.example.photoedit.app
+
+import javafx.scene.layout.AnchorPane
+import javafx.scene.control.ToolBar
+import javafx.scene.layout.Region
+import javafx.scene.layout.HBox
+import javafx.scene.layout.VBox
+import javafx.scene.control.Button
+import at.bestsolution.efxclipse.runtime.example.photoedit.app.DecorationController
+
+component TopArea controlledby DecorationController {
+	ToolBar id decorationArea { 
+		prefHeight : 66, 
+		minHeight : 66,
+		maxHeight : 66,
+		items : [
+			Region {
+				call HBox#hgrow : "ALWAYS"
+			},
+			VBox {
+				spacing : 3,
+				children : [
+					Button id window_close {
+						onAction : controllermethod handleClose
+					},
+					Button id window_min {
+						onAction : controllermethod handleMin
+					},
+					Button id window_max {
+						onAction : controllermethod handleMax
+					}
+				]
+			}
+		]
+	}
+} 

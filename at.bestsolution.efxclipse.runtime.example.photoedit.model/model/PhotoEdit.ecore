@@ -4,7 +4,7 @@
     nsPrefix="photoedit">
   <eClassifiers xsi:type="ecore:EClass" name="BaseObject" abstract="true">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="uuid" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
-        defaultValueLiteral="EcoreUtil.generateUUID()"/>
+        defaultValueLiteral=""/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="PhotoEditApp" eSuperTypes="#//BaseObject">
     <eStructuralFeatures xsi:type="ecore:EReference" name="albums" upperBound="-1"

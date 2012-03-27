@@ -40,6 +40,7 @@ public class PartRenderer extends JFXRenderer {
 	@Override
 	public Object createWidget(final MUIElement element, Object parent) {
 		BorderPane pane = new BorderPane();
+		pane.getStyleClass().add("MPart");
 		
 		final MPart part = (MPart) element;
 

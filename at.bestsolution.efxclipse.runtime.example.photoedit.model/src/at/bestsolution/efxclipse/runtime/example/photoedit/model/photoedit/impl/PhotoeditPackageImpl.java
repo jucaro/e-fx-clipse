@@ -576,7 +576,7 @@ public class PhotoeditPackageImpl extends EPackageImpl implements PhotoeditPacka
 
 		// Initialize classes and features; add operations and parameters
 		initEClass(baseObjectEClass, BaseObject.class, "BaseObject", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getBaseObject_Uuid(), ecorePackage.getEString(), "uuid", "EcoreUtil.generateUUID()", 0, 1, BaseObject.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getBaseObject_Uuid(), ecorePackage.getEString(), "uuid", "", 0, 1, BaseObject.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(photoEditAppEClass, PhotoEditApp.class, "PhotoEditApp", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getPhotoEditApp_Albums(), this.getAlbum(), null, "albums", null, 0, -1, PhotoEditApp.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
