@@ -5,7 +5,7 @@ import javafx.scene.layout.AnchorPane
 import javafx.scene.layout.HBox
 import javafx.scene.control.Button
 
-component ScriptTest {
+component ScriptTest {  
 	script javascript #{
 		var test = "Hello World!"
 	}#
