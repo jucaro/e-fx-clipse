@@ -17,8 +17,6 @@ public class InteroptContextFunction extends ContextFunction {
 
 	@Override
 	public Object compute(IEclipseContext context) {
-		System.err.println("Computing value");
-		
 		Object comp = context.get("org.eclipse.swt.widgets.Composite");
 		
 		if( comp != null ) {

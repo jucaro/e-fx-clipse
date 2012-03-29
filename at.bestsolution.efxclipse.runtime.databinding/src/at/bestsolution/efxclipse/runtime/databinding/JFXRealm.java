@@ -12,5 +12,19 @@ public class JFXRealm extends Realm {
 	@Override
 	public boolean isCurrent() {
 		return Platform.isFxApplicationThread();
-	}	
+	}
+	
+	@Override
+	public void asyncExec(Runnable runnable) {
+		Platform.runLater(runnable);
+	}
+	
+	@Override
+	public void exec(Runnable runnable) {
+		if( isCurrent() ) {
+			runnable.run();
+		} else {
+			Platform.runLater(runnable);
+		}
+	}
 }
