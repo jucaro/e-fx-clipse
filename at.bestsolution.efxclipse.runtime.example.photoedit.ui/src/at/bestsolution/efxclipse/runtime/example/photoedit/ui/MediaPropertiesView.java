@@ -39,13 +39,17 @@ import javax.annotation.PostConstruct;
 import javax.inject.Inject;
 
 import org.eclipse.core.databinding.observable.value.IObservableValue;
+import org.eclipse.core.databinding.observable.value.IValueChangeListener;
+import org.eclipse.core.databinding.observable.value.ValueChangeEvent;
 import org.eclipse.core.databinding.observable.value.WritableValue;
 import org.eclipse.e4.core.di.annotations.Optional;
 import org.eclipse.e4.ui.di.Focus;
 import org.eclipse.emf.databinding.EMFDataBindingContext;
 import org.eclipse.emf.databinding.EMFProperties;
+import org.eclipse.emf.databinding.IEMFValueProperty;
 
 import at.bestsolution.efxclipse.runtime.databinding.AdapterFactory;
+import at.bestsolution.efxclipse.runtime.databinding.IJFXBeanValueProperty;
 import at.bestsolution.efxclipse.runtime.databinding.JFXBeanProperties;
 import at.bestsolution.efxclipse.runtime.example.photoedit.model.photoedit.Media;
 import at.bestsolution.efxclipse.runtime.example.photoedit.model.photoedit.PhotoArea;
@@ -69,9 +73,15 @@ public class MediaPropertiesView {
 			mediaProperties.add(l, 0, 0);
 			
 			TextField f = new TextField();
+			IEMFValueProperty mProp = EMFProperties.value(MEDIA__TITLE);
+			IJFXBeanValueProperty tProp = JFXBeanProperties.value("text");
+			dbc.bindValue(
+					tProp.observe(f),
+					mProp.observeDetail(currentSelection)
+			);
+			
 			mediaProperties.add(f, 1, 0);
 			GridPane.setHgrow(f, Priority.ALWAYS);
-			dbc.bindValue(EMFProperties.value(MEDIA__TITLE).observeDetail(currentSelection), JFXBeanProperties.value("text").observe(f));
 		}
 		
 		{
@@ -80,7 +90,7 @@ public class MediaPropertiesView {
 			GridPane.setValignment(l, VPos.TOP);
 			
 			TextArea area = new TextArea();
-			area.setPrefColumnCount(15);
+			area.setPrefColumnCount(10);
 			mediaProperties.add(area, 1, 1);
 			GridPane.setHgrow(area, Priority.ALWAYS);
 			dbc.bindValue(EMFProperties.value(MEDIA__DESCRIPTION).observeDetail(currentSelection), JFXBeanProperties.value("text").observe(area));
@@ -94,11 +104,12 @@ public class MediaPropertiesView {
 		{
 			TableColumn<PhotoArea, String> col = new TableColumn<PhotoArea, String>();
 			col.setText("Bounds");
-			col.setPrefWidth(100);
+			col.setPrefWidth(50);
 			
 			{
 				TableColumn<PhotoArea, Double> subCol = new TableColumn<PhotoArea, Double>();
 				subCol.setText("x");
+				subCol.setPrefWidth(20);
 				subCol.setCellValueFactory(new Callback<TableColumn.CellDataFeatures<PhotoArea,Double>, ObservableValue<Double>>() {
 					
 					@Override
@@ -113,6 +124,7 @@ public class MediaPropertiesView {
 			{
 				TableColumn<PhotoArea, Double> subCol = new TableColumn<PhotoArea, Double>();
 				subCol.setText("y");
+				subCol.setPrefWidth(20);
 				subCol.setCellValueFactory(new Callback<TableColumn.CellDataFeatures<PhotoArea,Double>, ObservableValue<Double>>() {
 					
 					@Override
@@ -127,6 +139,7 @@ public class MediaPropertiesView {
 			{
 				TableColumn<PhotoArea, Double> subCol = new TableColumn<PhotoArea, Double>();
 				subCol.setText("width");
+				subCol.setPrefWidth(20);
 				subCol.setCellValueFactory(new Callback<TableColumn.CellDataFeatures<PhotoArea,Double>, ObservableValue<Double>>() {
 					
 					@Override
@@ -141,6 +154,7 @@ public class MediaPropertiesView {
 			{
 				TableColumn<PhotoArea, Double> subCol = new TableColumn<PhotoArea, Double>();
 				subCol.setText("heigth");
+				subCol.setPrefWidth(20);
 				subCol.setCellValueFactory(new Callback<TableColumn.CellDataFeatures<PhotoArea,Double>, ObservableValue<Double>>() {
 					
 					@Override

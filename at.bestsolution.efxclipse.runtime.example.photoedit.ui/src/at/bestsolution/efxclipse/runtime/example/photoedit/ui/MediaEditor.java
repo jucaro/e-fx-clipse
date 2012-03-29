@@ -30,6 +30,7 @@ import org.eclipse.core.databinding.observable.list.IListChangeListener;
 import org.eclipse.core.databinding.observable.list.IObservableList;
 import org.eclipse.core.databinding.observable.list.ListChangeEvent;
 import org.eclipse.core.databinding.observable.list.ListDiffVisitor;
+import org.eclipse.e4.core.contexts.IEclipseContext;
 import org.eclipse.e4.core.di.annotations.Optional;
 import org.eclipse.e4.ui.di.Focus;
 import org.eclipse.e4.ui.model.application.MApplication;
@@ -77,6 +78,13 @@ public class MediaEditor {
 
 	private AnchorPane transformStack;
 	
+	private boolean isSWT = false;
+	
+	@Inject
+	public MediaEditor(IEclipseContext context) {
+		isSWT = context.get("org.eclipse.swt.widgets.Composite") != null;
+	}
+	
 	@PostConstruct
 	void init(BorderPane pane) {
 		String uuid = input.getInputURI().substring("cdo-object://".length());
@@ -105,11 +113,11 @@ public class MediaEditor {
 		});
 		
 		if( input.getPersistedState().get(KEY_TRANSLATE_X) != null ) {
-			transformStack.setTranslateX(Double.parseDouble(input.getPersistedState().get(KEY_TRANSLATE_X)));
+			transformStack.setTranslateX(Double.parseDouble(input.getPersistedState().get(KEY_TRANSLATE_X))+(isSWT?750:0));
 		}
 		
 		if( input.getPersistedState().get(KEY_TRANSLATE_Y) != null ) {
-			transformStack.setTranslateY(Double.parseDouble(input.getPersistedState().get(KEY_TRANSLATE_Y)));
+			transformStack.setTranslateY(Double.parseDouble(input.getPersistedState().get(KEY_TRANSLATE_Y))+(isSWT?750:0));
 		}
 		
 		if( input.getPersistedState().get(KEY_SCALE_FACTOR) != null ) {
@@ -128,9 +136,9 @@ public class MediaEditor {
 	
 	private void processChange(Entry<String, String> e) {
 		if( KEY_TRANSLATE_X.equals(e.getKey()) ) {
-			transformStack.setTranslateX(Double.parseDouble(e.getValue()));
+			transformStack.setTranslateX(Double.parseDouble(e.getValue())+(isSWT?750:0));
 		} else if( KEY_TRANSLATE_Y.equals(e.getKey()) ) {
-			transformStack.setTranslateY(Double.parseDouble(e.getValue()));
+			transformStack.setTranslateY(Double.parseDouble(e.getValue())+(isSWT?750:0));
 		} else if( KEY_SCALE_FACTOR.equals(e.getKey()) ) {
 			double v = Double.parseDouble(e.getValue());
 			transformStack.setScaleX(v);
@@ -313,8 +321,10 @@ public class MediaEditor {
 					double targetX = transformStack.getTranslateX() + deltaX;
 					double targetY = transformStack.getTranslateY() + deltaY;
 					
-					input.getPersistedState().put(KEY_TRANSLATE_X, Double.toString(targetX));
-					input.getPersistedState().put(KEY_TRANSLATE_Y, Double.toString(targetY));
+					if(  ! isSWT ) {
+						input.getPersistedState().put(KEY_TRANSLATE_X, Double.toString(targetX-(isSWT?750:0)));
+						input.getPersistedState().put(KEY_TRANSLATE_Y, Double.toString(targetY-(isSWT?650:0)));	
+					}
 					
 					deltaEvent.set(event);
 				}
