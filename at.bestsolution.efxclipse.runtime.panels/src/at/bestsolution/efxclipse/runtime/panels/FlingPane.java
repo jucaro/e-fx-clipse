@@ -18,6 +18,12 @@ import javafx.scene.shape.Rectangle;
 import javafx.util.Duration;
 import at.bestsolution.efxclipse.runtime.panels.internal.VelocityTracker;
 
+/**
+ * Fling pane is a scrollable list container like
+ * you have it on mobile devices
+ * 
+ * @author Tom Schindl
+ */
 public class FlingPane extends Region {
 	private ObjectProperty<Node> content;
 	private Rectangle clipRect = new Rectangle();
