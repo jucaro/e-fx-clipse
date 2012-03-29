@@ -13,6 +13,9 @@ PackageDeclaration:
 	'package' name=QualifiedName
 ;
 
+Import:
+	'import' importedNamespace=QualifiedNameWithWildCard;
+
 ComponentDefinition:
 	'component' name=ValidID ('controlledby' controller=JvmTypeReference)? ('styledwith' (previewCssFiles+=STRING | ('[' previewCssFiles+=STRING (',' previewCssFiles+=STRING)* ']')))? ( 'resourcefile' previewResourceBundle=STRING )? ( 'extraClasspath' '[' previewClasspathEntries+=STRING (',' previewClasspathEntries+=STRING)* ']')? '{'
 		(scripts+=Script)?
@@ -21,14 +24,6 @@ ComponentDefinition:
 	'}'
 ;
 
-Import:
-	'import' importedNamespace=QualifiedNameWithWildCard;
-
-//Element:
-//	type=JvmTypeReference ('(' (value = SimpleValueProperty | 'createdby' factory=STRING) ')')? ('id' name=ValidID)? ('{'
-//		((properties+=Property | staticProperties+=StaticValueProperty) (',' (properties+=Property | staticProperties+=StaticValueProperty))*)?
-//	'}')?
-//;
 
 Element:
 	type=JvmTypeReference ((('(' value = SimpleValueProperty ')')? ('id' name=ValidID)?) | (('id' name=ValidID)? '{'

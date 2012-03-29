@@ -329,7 +329,7 @@ public class LivePreviewSynchronizer implements IPartListener, IXtextModelListen
 					}
 				}
 				
-				return new ContentData(generator.doGeneratePreview(resource, (!preference.getBoolean(PREF_LOAD_CONTROLLER, false)) && (!pluginProject), true),
+				return new ContentData(generator.doGeneratePreview(resource, (!preference.getBoolean(PREF_LOAD_CONTROLLER, false)) && (!pluginProject), false),
 						cssFiles, resourcePropertiesFile, extraPaths, relativeUrl,resource.getURI());
 			} else if( rootObject instanceof FXML ) {
 				List<URL> extraPaths = new ArrayList<URL>();

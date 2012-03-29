@@ -320,6 +320,7 @@ public class LivePreviewPart extends ViewPart {
 				
 				FXMLLoader loader;
 				if( contentData.extraJarPath != null && ! contentData.extraJarPath.isEmpty() ) {
+					System.err.println("Creating special classloader stuff");
 					URLClassLoader previewClassLoader = new PreviewURLClassloader(contentData.extraJarPath.toArray(new URL[0]),swtFXContainer.getClass().getClassLoader());
 
 					if( isJavaFX20() ) {
