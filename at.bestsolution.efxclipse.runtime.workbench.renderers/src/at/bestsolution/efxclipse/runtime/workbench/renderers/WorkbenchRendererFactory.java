@@ -22,6 +22,7 @@ import at.bestsolution.efxclipse.runtime.workbench.IRendererFactory;
 public class WorkbenchRendererFactory implements IRendererFactory {
 	private WorkbenchWindowRenderer workbenchWindowRenderer;
 	private SashRenderer sashRenderer;
+	private SashLayoutPaneRenderer sashLayoutRenderer;
 	private PartRenderer partRenderer;
 	private StackRenderer stackRenderer;
 	private ToolItemRenderer toolItemRenderer;
@@ -49,6 +50,11 @@ public class WorkbenchRendererFactory implements IRendererFactory {
 				sashRenderer = ContextInjectionFactory.make(SashRenderer.class, context);
 			}
 			return sashRenderer;
+//		} else if (uiElement instanceof MPartSashContainer) {
+//			if (sashLayoutRenderer == null) {
+//				sashLayoutRenderer = ContextInjectionFactory.make(SashLayoutPaneRenderer.class, context);
+//			}
+//			return sashRenderer;
 		} else if (uiElement instanceof MPart) {
 			if (partRenderer == null) {
 				partRenderer = ContextInjectionFactory.make(PartRenderer.class, context);

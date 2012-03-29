@@ -6,6 +6,7 @@ package at.bestsolution.efxclipse.runtime.workbench.renderers;
 import java.util.List;
 
 import javafx.scene.Node;
+import javafx.scene.Parent;
 
 import org.eclipse.e4.ui.model.application.ui.MElementContainer;
 import org.eclipse.e4.ui.model.application.ui.MUIElement;
@@ -86,8 +87,8 @@ public class SashLayoutPaneRenderer extends JFXRenderer {
 					}
 				}
 
-				if (parentWidget instanceof SashLayoutPane) {
-					((SashLayoutPane) parentWidget).layout();
+				if (parentWidget instanceof Parent) {
+					((Parent) parentWidget).layout();
 				}
 			}
 		}

@@ -15,6 +15,7 @@ public class Util {
 			}
 			bundlePath.append(uri.segment(i));
 		}
+		System.err.println(uri.segment(1));
 		return b.getResource(bundlePath.toString());
 	}
 }
