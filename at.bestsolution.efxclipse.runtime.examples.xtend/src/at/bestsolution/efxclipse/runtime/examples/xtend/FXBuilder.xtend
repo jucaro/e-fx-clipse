@@ -1,12 +1,11 @@
 package at.bestsolution.efxclipse.runtime.examples.xtend
 
-import java.util.ArrayList
+import java.util.List
 import javafx.scene.Node
 import javafx.scene.control.Button
 import javafx.scene.control.TextField
 import javafx.scene.layout.BorderPane
-import javafx.scene.layout.HBox
-import java.util.List
+import javafx.scene.layout.HBox
 
 class FXBuilder {
 	def FxBorderPane(Node it, (BorderPane)=>void f) {
@@ -39,8 +38,7 @@ class FXBuilder {
 		c
 	}
 	
-	def <N extends Object>FxElement(Object it, Class<N> clazz, List<? extends Object> params, (N)=>void f) {
-		val types = params.map([p|Double::TYPE])
+	def <N extends Object>FxElement(Object it, Class<N> clazz, List<Class<?>> types, List<? extends Object> params, (N)=>void f) {
 		
 		val c = ReflectionHelper::createInstance(clazz, types, params)
 		f.apply(c);
