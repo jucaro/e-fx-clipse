@@ -1,0 +1,4 @@
+jfx.build.stagingdir = ${workspace}/at.bestsolution.efxclipse.runtime.examples.xtend/build
+jfx.build.apptitle = at.bestsolution.efxclipse.runtime.examples.xtend
+jfx.build.vendorname = BestSolution.at
+jfx.build.applicationClass = at.bestsolution.efxclipse.runtime.examples.xtend.MyApplication

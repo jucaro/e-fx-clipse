@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="xtend-gen"/>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.6"/>
+	<classpathentry kind="con" path="at.bestsolution.efxclipse.tooling.jdt.core.JAVAFX_CONTAINER"/>
+	<classpathentry kind="lib" path="C:/e-installs/eclipse-0.0.13/plugins/com.google.guava_10.0.1.v201203051515.jar"/>
+	<classpathentry kind="lib" path="C:/e-installs/eclipse-0.0.13/plugins/org.eclipse.xtext.xbase.lib_2.3.0.v201203201034.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>
