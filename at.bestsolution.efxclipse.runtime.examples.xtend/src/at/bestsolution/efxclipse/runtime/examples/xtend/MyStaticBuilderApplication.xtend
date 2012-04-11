@@ -3,29 +3,26 @@ package at.bestsolution.efxclipse.runtime.examples.xtend
 import java.io.PrintStream
 import javafx.application.Application
 import javafx.scene.Scene
-import javafx.scene.control.Button
 import javafx.scene.control.TextField
-import javafx.scene.layout.HBox
 import javafx.stage.Stage
 
 import static javafx.application.Application.*
 
-class MyBuilderApplication extends Application {
+class MyStaticBuilderApplication extends Application {
 	private extension FXBuilder b = new FXBuilder
 	private extension PrintStream out = System::out
 
 	override start(Stage primaryStage) throws Exception {
-		val p = FxBean(null, typeof(HBox)) [
-			children += FxBean(typeof(TextField)) [
+		val p = FxHBox(null) [
+			children += FxTextfield[
 				id = "helloField"
 			]
-			children += FxBean(typeof(Button))[
+			children += FxButton[
 				text = "Say hello"
 				onAction = [
 					val f = primaryStage.scene.root.lookup("#helloField") as TextField
 					f.text.println
 				]
-				
 			]
 		]
 		
