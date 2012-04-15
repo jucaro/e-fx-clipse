@@ -15,6 +15,10 @@ public abstract class Widget {
 		createWidget();
 		initListeners();
 	}
+	
+	protected void checkWidget () {
+		//FIXME Implement
+	}
 
 	public Display getDisplay() {
 		return display;
@@ -70,5 +74,10 @@ public abstract class Widget {
 	
 	protected static String notNullString(String s) {
 		return s == null ? "" : s;
+	}
+	
+	protected void error(int errorNullArgument) {
+		// FIXME Implement
+		
 	}
 }
