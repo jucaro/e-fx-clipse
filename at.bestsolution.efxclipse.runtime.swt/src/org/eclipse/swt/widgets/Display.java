@@ -1,5 +1,7 @@
 package org.eclipse.swt.widgets;
 
+import javafx.application.Platform;
+
 import org.eclipse.swt.graphics.Device;
 
 public class Display extends Device {
@@ -26,5 +28,9 @@ public class Display extends Device {
 	public boolean filterEvent(Event event) {
 		// TODO Auto-generated method stub
 		return false;
+	}
+
+	public boolean isValidThread() {
+		return Platform.isFxApplicationThread();
 	}
 }

@@ -38,6 +38,10 @@ public class Text extends Scrollable {
 		} else {
 			control = new TextField();	
 		}
+		
+		if( (getStyle() & SWT.READ_ONLY) != 0 ) {
+			control.setEditable(false);
+		}
 	}
 	
 	protected void initListeners() {
@@ -53,28 +57,28 @@ public class Text extends Scrollable {
 		checkWidget ();
 		if (listener == null) error (SWT.ERROR_NULL_ARGUMENT);
 		TypedListener typedListener = new TypedListener (listener);
-		addListener (SWT.Modify, typedListener);
+		registerListener (SWT.Modify, typedListener);
 	}
 	
 	public void addSegmentListener (SegmentListener listener) {
 		checkWidget ();
 		if (listener == null) error (SWT.ERROR_NULL_ARGUMENT);
-		addListener (SWT.Segments, new TypedListener (listener));
+		registerListener (SWT.Segments, new TypedListener (listener));
 	}
 	
 	public void addSelectionListener (SelectionListener listener) {
 		checkWidget ();
 		if (listener == null) error (SWT.ERROR_NULL_ARGUMENT);
 		TypedListener typedListener = new TypedListener (listener);
-		addListener (SWT.Selection,typedListener);
-		addListener (SWT.DefaultSelection,typedListener);
+		registerListener (SWT.Selection,typedListener);
+		registerListener (SWT.DefaultSelection,typedListener);
 	}
 	
 	public void addVerifyListener (VerifyListener listener) {
 		checkWidget ();
 		if (listener == null) error (SWT.ERROR_NULL_ARGUMENT);
 		TypedListener typedListener = new TypedListener (listener);
-		addListener (SWT.Verify, typedListener);
+		registerListener (SWT.Verify, typedListener);
 	}
 	
 	public void append (String string) {
@@ -260,26 +264,26 @@ public class Text extends Scrollable {
 	public void removeModifyListener (ModifyListener listener) {
 		checkWidget ();
 		if (listener == null) error (SWT.ERROR_NULL_ARGUMENT);
-		removeListener(SWT.Modify, listener);
+		unregisterListener(SWT.Modify, listener);
 	}
 	
 	public void removeSegmentListener (SegmentListener listener) {
 		checkWidget ();
 		if (listener == null) error (SWT.ERROR_NULL_ARGUMENT);
-		removeListener (SWT.Segments, listener);
+		unregisterListener (SWT.Segments, listener);
 	}
 	
 	public void removeSelectionListener (SelectionListener listener) {
 		checkWidget ();
 		if (listener == null) error (SWT.ERROR_NULL_ARGUMENT);
-		removeListener (SWT.Selection, listener);
-		removeListener (SWT.DefaultSelection,listener);	
+		unregisterListener (SWT.Selection, listener);
+		unregisterListener (SWT.DefaultSelection,listener);	
 	}
 	
 	public void removeVerifyListener (VerifyListener listener) {
 		checkWidget ();
 		if (listener == null) error (SWT.ERROR_NULL_ARGUMENT);
-		removeListener (SWT.Verify, listener);	
+		unregisterListener (SWT.Verify, listener);	
 	}
 	
 	public void selectAll () {

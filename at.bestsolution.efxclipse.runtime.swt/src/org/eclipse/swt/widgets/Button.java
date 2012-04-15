@@ -1,8 +1,10 @@
 package org.eclipse.swt.widgets;
 
+import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
-import javafx.scene.input.MouseButton;
-import javafx.scene.input.MouseEvent;
+import javafx.geometry.Pos;
+import javafx.scene.control.CheckBox;
+import javafx.scene.control.RadioButton;
 
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.events.SelectionListener;
@@ -11,7 +13,7 @@ import org.eclipse.swt.internal.TypedListener;
 
 
 public class Button extends Control {
-	private javafx.scene.control.Button pushButton;
+	private javafx.scene.control.ButtonBase control;
 	
 	public Button(Composite parent, int style) {
 		super(parent,style);
@@ -19,7 +21,15 @@ public class Button extends Control {
 	
 	@Override
 	protected void createWidget() {
-		pushButton = new javafx.scene.control.Button();
+		if( (style & SWT.RADIO) != 0 ) {
+			control = new RadioButton();
+		} else if( (style & SWT.CHECK) != 0 ) {
+			control = new CheckBox();
+			((CheckBox)control).setAllowIndeterminate(true);
+		} else {
+			control = new javafx.scene.control.Button();	
+		}
+		
 	}
 	
 	public Point computeSize(int wHint, int hHint, boolean flushCache) {
@@ -34,49 +44,132 @@ public class Button extends Control {
 	}
 	
 	protected void initListeners() {
-		pushButton.setOnMouseReleased(new EventHandler<MouseEvent>() {
+		control.setOnAction(new EventHandler<ActionEvent>() {
 
 			@Override
-			public void handle(MouseEvent event) {
+			public void handle(ActionEvent event) {
 				Event evt = new Event();
-				evt.button = event.getButton().ordinal();
-				if (event.isAltDown()) evt.stateMask |= SWT.ALT;
-				if (event.isShiftDown()) evt.stateMask |= SWT.SHIFT;
-				if (event.isControlDown()) evt.stateMask |= SWT.CONTROL;
-				if (event.getButton() == MouseButton.PRIMARY) evt.stateMask |= SWT.BUTTON1;
-				if (event.getButton() == MouseButton.MIDDLE) evt.stateMask |= SWT.BUTTON2;
-				if (event.getButton() == MouseButton.SECONDARY) evt.stateMask |= SWT.BUTTON3;
-				
+//				evt.button = event.getButton().ordinal();
+//				if (event.isAltDown()) evt.stateMask |= SWT.ALT;
+//				if (event.isShiftDown()) evt.stateMask |= SWT.SHIFT;
+//				if (event.isControlDown()) evt.stateMask |= SWT.CONTROL;
+//				if (event.getButton() == MouseButton.PRIMARY) evt.stateMask |= SWT.BUTTON1;
+//				if (event.getButton() == MouseButton.MIDDLE) evt.stateMask |= SWT.BUTTON2;
+//				if (event.getButton() == MouseButton.SECONDARY) evt.stateMask |= SWT.BUTTON3;
+//				
 				sendEvent(SWT.Selection, evt, true);
 			}
 		});
 	}
 
 	@Override
-	public javafx.scene.control.Button internal_getNode() {
-		return pushButton;
+	public javafx.scene.control.ButtonBase internal_getNode() {
+		return control;
 	}
 	
 	public void setText(String string) {
-		pushButton.setText(string);
+		control.setText(string);
 	}
 	
 	public String getText() {
-		return notNullString(pushButton.getText());
+		return notNullString(control.getText());
 	}
 	
 	public void addSelectionListener (SelectionListener listener) {
-//		checkWidget ();
-//		if (listener == null) error (SWT.ERROR_NULL_ARGUMENT);
+		checkWidget ();
+		if (listener == null) error (SWT.ERROR_NULL_ARGUMENT);
 		TypedListener typedListener = new TypedListener (listener);
-		addListener (SWT.Selection,typedListener);
-		addListener (SWT.DefaultSelection,typedListener);
+		registerListener (SWT.Selection,typedListener);
+		registerListener (SWT.DefaultSelection,typedListener);
+	}
+	
+	public int getAlignment () {
+		checkWidget ();
+		if ((style & SWT.ARROW) != 0) {
+			if ((style & SWT.UP) != 0) return SWT.UP;
+			if ((style & SWT.DOWN) != 0) return SWT.DOWN;
+			if ((style & SWT.LEFT) != 0) return SWT.LEFT;
+			if ((style & SWT.RIGHT) != 0) return SWT.RIGHT;
+			return SWT.UP;
+		}
+		if ((style & SWT.LEFT) != 0) return SWT.LEFT;
+		if ((style & SWT.CENTER) != 0) return SWT.CENTER;
+		if ((style & SWT.RIGHT) != 0) return SWT.RIGHT;
+		return SWT.LEFT;
+	}
+	
+	public boolean getGrayed () {
+		if( control instanceof CheckBox ) {
+			return ((CheckBox) control).isIndeterminate();
+		}
+		return false;
+	}
+	
+//	public Image getImage () {
+//		
+//	}
+	
+	public boolean getSelection () {
+		checkWidget ();
+		if( control instanceof RadioButton ) {
+			return ((RadioButton) control).isSelected();
+		} else if( control instanceof CheckBox ) {
+			return ((CheckBox) control).isSelected();
+		}
+		return false;
 	}
 	
 	public void removeSelectionListener(SelectionListener listener) {
-//		checkWidget ();
-//		if (listener == null) error (SWT.ERROR_NULL_ARGUMENT);
-		removeListener(SWT.Selection, listener);
-		removeListener(SWT.DefaultSelection,listener);	
+		checkWidget ();
+		if (listener == null) error (SWT.ERROR_NULL_ARGUMENT);
+		unregisterListener(SWT.Selection, listener);
+		unregisterListener(SWT.DefaultSelection,listener);	
+	}
+	
+	public void setAlignment (int alignment) {
+		checkWidget ();
+		if ((style & SWT.ARROW) != 0) {
+			if ((style & (SWT.UP | SWT.DOWN | SWT.LEFT | SWT.RIGHT)) == 0) return; 
+			style &= ~(SWT.UP | SWT.DOWN | SWT.LEFT | SWT.RIGHT);
+			style |= alignment & (SWT.UP | SWT.DOWN | SWT.LEFT | SWT.RIGHT);
+			return;
+		}
+		
+		if ((alignment & (SWT.LEFT | SWT.RIGHT | SWT.CENTER)) == 0) return;
+		
+		Pos jAlignment;
+		
+		switch (alignment) {
+		case SWT.RIGHT:
+			jAlignment = Pos.CENTER_RIGHT;
+			break;
+		case SWT.CENTER:
+			jAlignment = Pos.CENTER;
+			break;
+		default:
+			jAlignment = Pos.CENTER_LEFT;
+			break;
+		}
+		
+		control.setAlignment(jAlignment);
+	}
+	
+	public void setGrayed (boolean grayed) {
+		if( control instanceof CheckBox ) {
+			((CheckBox)control).setIndeterminate(grayed);
+		}
+	}
+//	
+//	public void setImage (Image image) {
+//		
+//	}
+//	
+	public void setSelection (boolean selected) {
+		checkWidget ();
+		if( control instanceof RadioButton ) {
+			((RadioButton) control).setSelected(selected);
+		} else if( control instanceof CheckBox ) {
+			((CheckBox) control).setSelected(selected);
+		}
 	}
 }

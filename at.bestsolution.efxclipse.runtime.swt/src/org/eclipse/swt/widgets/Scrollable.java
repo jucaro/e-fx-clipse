@@ -17,4 +17,19 @@ public abstract class Scrollable extends Control {
 		return new Rectangle(0, 0, 0, 0);
 	}
 
+//	public Rectangle getClientArea () {
+//		
+//	}
+//	
+//	public ScrollBar getHorizontalBar () {
+//		
+//	}
+//	
+//	public int getScrollbarsMode () {
+//		
+//	}
+//	
+//	public ScrollBar getVerticalBar () {
+//		
+//	}
 }
