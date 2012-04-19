@@ -1,5 +1,8 @@
 package org.eclipse.swt.widgets;
 
+import javafx.scene.Node;
+
+import org.eclipse.swt.graphics.Image;
 import org.eclipse.swt.graphics.Point;
 
 
@@ -15,12 +18,19 @@ public abstract class Control extends Widget {
 	public Control(Display display, int style) {
 		super(display,style);
 	}
+	
+	@Override
+	public abstract Node internal_getNativeObject();
 
 	public void setBounds(int x, int y, int width, int height) {
-		internal_getNode().relocate(x, y);
-		internal_getNode().resize(width, height);
+		internal_getNativeObject().relocate(x, y);
+		internal_getNativeObject().resize(width, height);
 		
 //		System.err.println("Bounds: " + x + "/" +y + " " + width + "/" + height);
+	}
+	
+	public Point computeSize(int wHint, int hHint) {
+		return computeSize(wHint, hHint, true);
 	}
 	
 	public abstract Point computeSize(int wHint, int hHint, boolean flushCache);
@@ -174,10 +184,8 @@ public abstract class Control extends Widget {
 //		
 //	}
 //	
-//	public Point getSize () {
-//		
-//	}
-//	
+	public abstract Point getSize ();
+	
 //	public String getToolTipText () {
 //		
 //	}
@@ -294,9 +302,9 @@ public abstract class Control extends Widget {
 //		
 //	}
 //	
-//	public void setBackgroundImage (Image image) {
-//		
-//	}
+	public void setBackgroundImage (Image image) {
+		//FIXME Implement
+	}
 //		
 //	public void setBounds (Rectangle rect) {
 //		
@@ -318,9 +326,10 @@ public abstract class Control extends Widget {
 //		
 //	}
 //	
-//	public boolean setFocus () {
-//		
-//	}
+	public boolean setFocus () {
+		internal_getNativeObject().requestFocus();
+		return internal_getNativeObject().isFocused();
+	}
 //	
 //	public void setFont (Font font) {
 //		
@@ -362,13 +371,13 @@ public abstract class Control extends Widget {
 //		
 //	}
 //	
-//	public void setSize (int width, int height) {
-//		
-//	}
-//	
-//	public void setSize (Point size) {
-//		
-//	}
+	public void setSize (int width, int height) {
+		internal_getNativeObject().resize(width, height);
+	}
+	
+	public void setSize (Point size) {
+		setSize(size.x,size.y);
+	}
 //	
 //	public void setToolTipText (String string) {
 //		

@@ -5,15 +5,19 @@ import javafx.event.EventHandler;
 import javafx.geometry.Pos;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.RadioButton;
+import javafx.scene.image.ImageView;
 
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.events.SelectionListener;
+import org.eclipse.swt.graphics.Image;
 import org.eclipse.swt.graphics.Point;
 import org.eclipse.swt.internal.TypedListener;
 
 
 public class Button extends Control {
 	private javafx.scene.control.ButtonBase control;
+	
+	private Image image;
 	
 	public Button(Composite parent, int style) {
 		super(parent,style);
@@ -33,8 +37,8 @@ public class Button extends Control {
 	}
 	
 	public Point computeSize(int wHint, int hHint, boolean flushCache) {
-		int width = (int) internal_getNode().prefWidth(javafx.scene.control.Control.USE_COMPUTED_SIZE);
-		int height = (int) internal_getNode().prefHeight(javafx.scene.control.Control.USE_COMPUTED_SIZE);
+		int width = (int) internal_getNativeObject().prefWidth(javafx.scene.control.Control.USE_COMPUTED_SIZE);
+		int height = (int) internal_getNativeObject().prefHeight(javafx.scene.control.Control.USE_COMPUTED_SIZE);
 		
 		if (wHint != SWT.DEFAULT) width = wHint;
 		if (hHint != SWT.DEFAULT) height = hHint;
@@ -63,7 +67,7 @@ public class Button extends Control {
 	}
 
 	@Override
-	public javafx.scene.control.ButtonBase internal_getNode() {
+	public javafx.scene.control.ButtonBase internal_getNativeObject() {
 		return control;
 	}
 	
@@ -105,9 +109,9 @@ public class Button extends Control {
 		return false;
 	}
 	
-//	public Image getImage () {
-//		
-//	}
+	public Image getImage () {
+		return image;
+	}
 	
 	public boolean getSelection () {
 		checkWidget ();
@@ -159,11 +163,17 @@ public class Button extends Control {
 			((CheckBox)control).setIndeterminate(grayed);
 		}
 	}
-//	
-//	public void setImage (Image image) {
-//		
-//	}
-//	
+	
+	public void setImage (Image image) {
+		this.image = image;
+		
+		if( image != null ) {
+			control.setGraphic(new ImageView(image.internal_getImage()));
+		} else {
+			control.setGraphic(null);
+		}
+	}
+	
 	public void setSelection (boolean selected) {
 		checkWidget ();
 		if( control instanceof RadioButton ) {
@@ -171,5 +181,10 @@ public class Button extends Control {
 		} else if( control instanceof CheckBox ) {
 			((CheckBox) control).setSelected(selected);
 		}
+	}
+	
+	@Override
+	public Point getSize() {
+		return new Point((int)control.getWidth(), (int)control.getHeight());
 	}
 }

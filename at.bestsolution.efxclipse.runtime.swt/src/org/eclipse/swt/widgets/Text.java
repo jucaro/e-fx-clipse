@@ -49,7 +49,7 @@ public class Text extends Scrollable {
 	}
 
 	@Override
-	public TextInputControl internal_getNode() {
+	public TextInputControl internal_getNativeObject() {
 		return control;
 	}
 	
@@ -95,8 +95,8 @@ public class Text extends Scrollable {
 	@Override
 	public Point computeSize(int wHint, int hHint, boolean flushCache) {
 		checkWidget ();
-		int width = (int) internal_getNode().prefWidth(javafx.scene.control.Control.USE_COMPUTED_SIZE);
-		int height = (int) internal_getNode().prefHeight(javafx.scene.control.Control.USE_COMPUTED_SIZE);
+		int width = (int) internal_getNativeObject().prefWidth(javafx.scene.control.Control.USE_COMPUTED_SIZE);
+		int height = (int) internal_getNativeObject().prefHeight(javafx.scene.control.Control.USE_COMPUTED_SIZE);
 		
 		if (wHint != SWT.DEFAULT) width = wHint;
 		if (hHint != SWT.DEFAULT) height = hHint;
@@ -357,5 +357,10 @@ public class Text extends Scrollable {
 	public void showSelection () {
 		//TODO No JavaFX API yet
 		throw new UnsupportedOperationException();
+	}
+	
+	@Override
+	public Point getSize() {
+		return new Point((int)control.getWidth(), (int)control.getHeight());
 	}
 }

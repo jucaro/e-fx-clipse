@@ -5,7 +5,8 @@ import javafx.application.Platform;
 import org.eclipse.swt.graphics.Device;
 
 public class Display extends Device {
-
+	private static Display DEFAULT;
+	
 	public Display() {
 
 	}
@@ -32,5 +33,12 @@ public class Display extends Device {
 
 	public boolean isValidThread() {
 		return Platform.isFxApplicationThread();
+	}
+
+	public static Display getDefault() {
+		if( DEFAULT == null ) {
+			DEFAULT = new Display();
+		}
+		return DEFAULT;
 	}
 }

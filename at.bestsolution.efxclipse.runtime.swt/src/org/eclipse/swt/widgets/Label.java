@@ -8,7 +8,7 @@ import org.eclipse.swt.SWT;
 import org.eclipse.swt.graphics.Point;
 
 public class Label extends Control {
-	private javafx.scene.control.Label label;
+	private javafx.scene.control.Label control;
 	private Separator separator;
 	
 	public Label(Composite parent, int style) {
@@ -20,14 +20,14 @@ public class Label extends Control {
 		if( (style & SWT.SEPARATOR) != 0 ) {
 			separator = new Separator();
 		} else {
-			label = new javafx.scene.control.Label();	
+			control = new javafx.scene.control.Label();	
 		}
 	}
 	
 	public Point computeSize(int wHint, int hHint, boolean flushCache) {
 		checkWidget ();
-		int width = (int) internal_getNode().prefWidth(javafx.scene.control.Control.USE_COMPUTED_SIZE);
-		int height = (int) internal_getNode().prefHeight(javafx.scene.control.Control.USE_COMPUTED_SIZE);
+		int width = (int) internal_getNativeObject().prefWidth(javafx.scene.control.Control.USE_COMPUTED_SIZE);
+		int height = (int) internal_getNativeObject().prefHeight(javafx.scene.control.Control.USE_COMPUTED_SIZE);
 
 		if (wHint != SWT.DEFAULT)
 			width = wHint;
@@ -39,8 +39,8 @@ public class Label extends Control {
 	}
 
 	@Override
-	public Node internal_getNode() {
-		return label == null ? separator : label;
+	public Node internal_getNativeObject() {
+		return control == null ? separator : control;
 	}
 
 	public int getAlignment () {
@@ -55,7 +55,7 @@ public class Label extends Control {
 	public String getText () {
 		checkWidget ();
 		if ((style & SWT.SEPARATOR) != 0) return "";
-		return notNullString(label.getText());
+		return notNullString(control.getText());
 	}
 	
 	public void setAlignment (int alignment) {
@@ -77,14 +77,14 @@ public class Label extends Control {
 			p = Pos.CENTER_LEFT;
 			break;
 		}
-		label.setAlignment(p);
+		control.setAlignment(p);
 	}
 	
 	public void setText (String string) {
 		checkWidget ();
 		if (string == null) error (SWT.ERROR_NULL_ARGUMENT);
 		if ((style & SWT.SEPARATOR) != 0) return;
-		label.setText(string);
+		control.setText(string);
 	}
 	
 //	public Image getImage () {
@@ -94,5 +94,10 @@ public class Label extends Control {
 //	public void setImage (Image image) {
 //		
 //	}
+	
+	@Override
+	public Point getSize() {
+		return new Point((int)control.getWidth(), (int)control.getHeight());
+	}
 	
 }
