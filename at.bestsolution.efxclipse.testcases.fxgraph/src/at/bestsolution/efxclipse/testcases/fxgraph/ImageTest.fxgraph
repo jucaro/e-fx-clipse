@@ -1,0 +1,18 @@
+package at.bestsolution.efxclipse.testcases.fxgraph
+
+import javafx.scene.layout.BorderPane
+import javafx.scene.control.Label
+import javafx.scene.image.ImageView
+import javafx.scene.image.Image
+
+component ImageTest {
+	BorderPane {
+		top: Label {
+			graphic : ImageView {
+				image : Image {
+					url : location "efxclipse2_120.png"
+				}
+			}
+		}
+	}
+}
