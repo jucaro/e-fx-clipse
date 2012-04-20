@@ -34,9 +34,7 @@ import org.eclipse.jdt.core.search.IJavaSearchConstants;
 import org.eclipse.jdt.internal.corext.util.JavaModelUtil;
 import org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover;
 import org.eclipse.jface.resource.JFaceResources;
-import org.eclipse.jface.text.IInformationControlCreator;
 import org.eclipse.jface.text.IRegion;
-import org.eclipse.jface.text.ITextHoverExtension;
 import org.eclipse.jface.text.ITextViewer;
 import org.eclipse.jface.text.contentassist.ICompletionProposal;
 import org.eclipse.jface.viewers.StyledString;
@@ -54,7 +52,6 @@ import org.eclipse.xtext.ui.editor.contentassist.ConfigurableCompletionProposal;
 import org.eclipse.xtext.ui.editor.contentassist.ContentAssistContext;
 import org.eclipse.xtext.ui.editor.contentassist.ICompletionProposalAcceptor;
 import org.eclipse.xtext.ui.editor.contentassist.ReplacementTextApplier;
-import org.eclipse.xtext.ui.editor.hover.IEObjectHover;
 
 import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.BindValueProperty;
 import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.ComponentDefinition;
@@ -66,6 +63,7 @@ import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.ResourceValueProperty;
 import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.StaticValueProperty;
 import at.bestsolution.efxclipse.tooling.fxgraph.ui.util.JDTHelper;
 import at.bestsolution.efxclipse.tooling.fxgraph.ui.util.JDTHelper.DialogProposal;
+import at.bestsolution.efxclipse.tooling.fxgraph.ui.util.JDTHelper.HoverImpl;
 import at.bestsolution.efxclipse.tooling.fxgraph.ui.util.JDTHelper.JDTHelperProperty;
 import at.bestsolution.efxclipse.tooling.fxgraph.ui.util.JDTHelper.ProcessedProposal;
 import at.bestsolution.efxclipse.tooling.fxgraph.ui.util.JDTHelper.Proposal;
@@ -758,27 +756,6 @@ public class FXGraphProposalProvider extends AbstractFXGraphProposalProvider {
 		}
 
 		super.completeElement_Factory(model, assignment, context, acceptor);
-	}
-
-	static class HoverImpl implements IEObjectHover, ITextHoverExtension {
-		private JavadocHoverWrapper javadocHover = new JavadocHoverWrapper();
-		private IMethod method;
-
-		public HoverImpl(IMethod method) {
-			this.method = method;
-		}
-
-		@Override
-		public Object getHoverInfo(EObject eObject, ITextViewer textViewer, IRegion hoverRegion) {
-			javadocHover.setJavaElement(method);
-			return javadocHover.getHoverInfo2(textViewer, hoverRegion);
-		}
-
-		@Override
-		public IInformationControlCreator getHoverControlCreator() {
-			return javadocHover.getHoverControlCreator();
-		}
-
 	}
 
 	static class JavadocHoverWrapper extends JavadocHover {

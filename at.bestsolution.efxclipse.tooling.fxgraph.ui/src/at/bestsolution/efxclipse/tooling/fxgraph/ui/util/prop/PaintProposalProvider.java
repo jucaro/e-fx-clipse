@@ -3,12 +3,18 @@ package at.bestsolution.efxclipse.tooling.fxgraph.ui.util.prop;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.eclipse.jdt.core.Flags;
+import org.eclipse.jdt.core.IJavaProject;
+import org.eclipse.jdt.core.IMethod;
+import org.eclipse.jdt.core.IType;
+import org.eclipse.jdt.core.JavaModelException;
 import org.eclipse.jface.viewers.StyledString;
 import org.eclipse.swt.graphics.RGB;
 import org.eclipse.swt.widgets.ColorDialog;
 import org.eclipse.ui.PlatformUI;
 
 import at.bestsolution.efxclipse.tooling.fxgraph.ui.util.JDTHelper.DialogProposal;
+import at.bestsolution.efxclipse.tooling.fxgraph.ui.util.JDTHelper.HoverImpl;
 import at.bestsolution.efxclipse.tooling.fxgraph.ui.util.JDTHelper.ProcessedProposal;
 import at.bestsolution.efxclipse.tooling.fxgraph.ui.util.JDTHelper.Proposal;
 
@@ -249,7 +255,33 @@ public class PaintProposalProvider implements IProposalProvider {
 
 	}
 
-	public List<Proposal> getProposals() {
+	protected IMethod findMethod(IJavaProject jp) {
+		try {
+			IType t = jp.findType("javafx.scene.paint.Color");
+			for( IMethod m : t.getMethods() ) {
+				if( Flags.isStatic(m.getFlags()) && "web".equals(m.getElementName()) && m.getParameters().length == 1 ) {
+					return m;
+				}
+			}
+		} catch (JavaModelException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}	
+		return null;
+	}
+	
+	public List<Proposal> getProposals(IJavaProject jp) {
+		HoverImpl h = null;
+		IMethod m = findMethod(jp);
+		
+		if( m != null ) {
+			h = new HoverImpl(m);	
+		}
+		
+		for( Proposal p : proposals ) {
+			p.hover = h;
+		}
+		
 		return proposals;
 	}
 }

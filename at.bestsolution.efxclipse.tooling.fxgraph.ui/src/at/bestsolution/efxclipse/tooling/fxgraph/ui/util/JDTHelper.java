@@ -9,6 +9,7 @@ import java.util.Map;
 import java.util.SortedSet;
 import java.util.TreeSet;
 
+import org.eclipse.emf.ecore.EObject;
 import org.eclipse.jdt.core.Flags;
 import org.eclipse.jdt.core.IField;
 import org.eclipse.jdt.core.IJavaProject;
@@ -18,8 +19,13 @@ import org.eclipse.jdt.core.JavaModelException;
 import org.eclipse.jdt.core.Signature;
 import org.eclipse.jdt.internal.core.SourceType;
 import org.eclipse.jface.resource.JFaceResources;
+import org.eclipse.jface.text.IInformationControlCreator;
+import org.eclipse.jface.text.IRegion;
+import org.eclipse.jface.text.ITextHoverExtension;
+import org.eclipse.jface.text.ITextViewer;
 import org.eclipse.jface.viewers.StyledString;
 import org.eclipse.swt.graphics.Image;
+import org.eclipse.xtext.common.types.xtext.ui.JdtHoverProvider.JavadocHoverWrapper;
 import org.eclipse.xtext.ui.editor.hover.IEObjectHover;
 
 import at.bestsolution.efxclipse.tooling.fxgraph.ui.contentassist.FXGraphProposalProvider;
@@ -582,7 +588,7 @@ public class JDTHelper {
 								}
 							} else {
 								if (!isReadonly) {
-									List<Proposal> props = getProposals(type.getFullyQualifiedName());
+									List<Proposal> props = getProposals(type, jproject);
 									ElementValueProperty p = new ElementValueProperty(m, propName, ownerName, returnSignature, props);
 									d.properties.add(p);
 								}
@@ -603,9 +609,22 @@ public class JDTHelper {
 		return d;
 	}
 	
-	private List<Proposal> getProposals(String type) {
-		if( PROVIDERS.containsKey(type) ) {
-			return PROVIDERS.get(type).getProposals();
+	private List<Proposal> getProposals(IType type, IJavaProject jp) {
+		if( PROVIDERS.containsKey(type.getFullyQualifiedName()) ) {
+			return PROVIDERS.get(type.getFullyQualifiedName()).getProposals(jp);
+		} else {
+			try {
+				for( IMethod m : type.getMethods() ) {
+					if( Flags.isStatic(m.getFlags()) && "valueOf".equals(m.getElementName()) ) {
+						Proposal p = new Proposal("\"<string>\"");
+						p.hover = new HoverImpl(m);
+						return Collections.singletonList(p);
+					}
+				}
+			} catch (JavaModelException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 		}
 		return Collections.emptyList();
 	}
@@ -636,5 +655,26 @@ public class JDTHelper {
 		}
 
 		return rv;
+	}
+	
+	public static class HoverImpl implements IEObjectHover, ITextHoverExtension { 
+		private JavadocHoverWrapper javadocHover = new JavadocHoverWrapper();
+		private IMethod method;
+
+		public HoverImpl(IMethod method) {
+			this.method = method;
+		}
+
+		@Override
+		public Object getHoverInfo(EObject eObject, ITextViewer textViewer, IRegion hoverRegion) {
+			javadocHover.setJavaElement(method);
+			return javadocHover.getHoverInfo2(textViewer, hoverRegion);
+		}
+
+		@Override
+		public IInformationControlCreator getHoverControlCreator() {
+			return javadocHover.getHoverControlCreator();
+		}
+
 	}
 }
