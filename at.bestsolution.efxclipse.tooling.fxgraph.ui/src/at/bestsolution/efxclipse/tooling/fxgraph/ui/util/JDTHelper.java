@@ -23,6 +23,8 @@ import org.eclipse.swt.graphics.Image;
 
 import at.bestsolution.efxclipse.tooling.fxgraph.ui.contentassist.FXGraphProposalProvider;
 import at.bestsolution.efxclipse.tooling.fxgraph.ui.internal.FXGraphActivator;
+import at.bestsolution.efxclipse.tooling.fxgraph.ui.util.prop.IProposalProvider;
+import at.bestsolution.efxclipse.tooling.fxgraph.ui.util.prop.PaintProposalProvider;
 
 public class JDTHelper {
 	public static final String FIELD_KEY = FXGraphProposalProvider.class.getName() + ".FIELD";
@@ -52,6 +54,7 @@ public class JDTHelper {
 	public static final String DEFINES_KEY = FXGraphProposalProvider.class.getName() + ".DEFINES_KEY";
 	public static final String SCRIPTS_KEY = FXGraphProposalProvider.class.getName() + ".SCRIPTS_KEY";
 	
+	private static final Map<String, IProposalProvider> PROVIDERS = new HashMap<String, IProposalProvider>();
 	
 	private Map<String, TypeData> typeCache = new HashMap<String, TypeData>();
 
@@ -83,9 +86,12 @@ public class JDTHelper {
 		JFaceResources.getImageRegistry().put(DEFINES_KEY, FXGraphActivator.imageDescriptorFromPlugin("at.bestsolution.efxclipse.tooling.fxgraph.ui", "/icons/correction_cast.gif"));
 		JFaceResources.getImageRegistry().put(SCRIPTS_KEY, FXGraphActivator.imageDescriptorFromPlugin("at.bestsolution.efxclipse.tooling.fxgraph.ui", "/icons/classf_generate.gif"));
 		JFaceResources.getImageRegistry().put(ENUM_KEY, FXGraphActivator.imageDescriptorFromPlugin("at.bestsolution.efxclipse.tooling.fxgraph.ui", "/icons/enum_obj.gif"));
-		
-		
 	}
+	
+	static {
+		PROVIDERS.put("javafx.scene.paint.Paint", new PaintProposalProvider());
+	}
+
 
 	public static class TypeData {
 		public SortedSet<JDTHelperProperty> properties = new TreeSet<JDTHelperProperty>();
@@ -143,16 +149,45 @@ public class JDTHelper {
 		public final String value;
 		public final StyledString description;
 		public final Image icon;
+		public final int prio;
 
 		public Proposal(String value) {
 			this(value, null, null);
+		}
+		
+		public Proposal(String value, int prio) {
+			this(value, null, null, prio);
 		}
 
 		public Proposal(String value, StyledString description, Image icon) {
 			this.value = value;
 			this.description = description;
 			this.icon = icon;
+			this.prio = 600;
 		}
+		
+		public Proposal(String value, StyledString description, Image icon, int prio) {
+			this.value = value;
+			this.description = description;
+			this.icon = icon;
+			this.prio = prio;
+		}
+	}
+	
+	public static abstract class DialogProposal extends Proposal {
+		public DialogProposal(int prio, String label) {
+			super(label,prio);
+		}
+				
+		public abstract String openProposal();
+	}
+	
+	public static abstract class ProcessedProposal extends Proposal {
+		public ProcessedProposal(String label) {
+			super(label);
+		}
+				
+		public abstract String getProcessed();
 	}
 
 	public static abstract class JDTHelperSingleValueProperty extends JDTHelperProperty {
@@ -284,14 +319,15 @@ public class JDTHelper {
 	}
 
 	public static class ElementValueProperty extends JDTHelperSingleValueProperty {
-
-		public ElementValueProperty(IMethod method, String name, String owner, String returnType) {
+		private List<Proposal> props;
+		public ElementValueProperty(IMethod method, String name, String owner, String returnType, List<Proposal> props) {
 			super(method, name, owner, returnType);
+			this.props = props;
 		}
 
 		@Override
 		public List<Proposal> getProposals() {
-			return Collections.emptyList();
+			return props;
 		}
 	}
 
@@ -542,7 +578,8 @@ public class JDTHelper {
 								}
 							} else {
 								if (!isReadonly) {
-									ElementValueProperty p = new ElementValueProperty(m, propName, ownerName, returnSignature);
+									List<Proposal> props = getProposals(type.getFullyQualifiedName());
+									ElementValueProperty p = new ElementValueProperty(m, propName, ownerName, returnSignature, props);
 									d.properties.add(p);
 								}
 							}
@@ -560,6 +597,13 @@ public class JDTHelper {
 			}
 		}
 		return d;
+	}
+	
+	private List<Proposal> getProposals(String type) {
+		if( PROVIDERS.containsKey(type) ) {
+			return PROVIDERS.get(type).getProposals();
+		}
+		return Collections.emptyList();
 	}
 
 	private boolean isReadonlySetter(String name, List<IMethod> methods) throws JavaModelException {
