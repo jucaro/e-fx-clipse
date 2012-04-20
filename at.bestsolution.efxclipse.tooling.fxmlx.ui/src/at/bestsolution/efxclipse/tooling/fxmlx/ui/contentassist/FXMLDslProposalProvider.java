@@ -20,6 +20,7 @@ import org.eclipse.jdt.core.Signature;
 import org.eclipse.jface.text.contentassist.ICompletionProposal;
 import org.eclipse.jface.viewers.StyledString;
 import org.eclipse.xtext.Assignment;
+import org.eclipse.xtext.RuleCall;
 import org.eclipse.xtext.common.types.JvmType;
 import org.eclipse.xtext.common.types.TypesPackage;
 import org.eclipse.xtext.common.types.access.IJvmTypeProvider;
@@ -32,11 +33,16 @@ import org.eclipse.xtext.nodemodel.INode;
 import org.eclipse.xtext.ui.editor.contentassist.ConfigurableCompletionProposal;
 import org.eclipse.xtext.ui.editor.contentassist.ContentAssistContext;
 import org.eclipse.xtext.ui.editor.contentassist.ICompletionProposalAcceptor;
+import org.eclipse.xtext.ui.editor.contentassist.ReplacementTextApplier;
 
 import at.bestsolution.efxclipse.tooling.fxgraph.ui.util.JDTHelper;
+import at.bestsolution.efxclipse.tooling.fxgraph.ui.util.JDTHelper.DialogProposal;
 import at.bestsolution.efxclipse.tooling.fxgraph.ui.util.JDTHelper.EventValueProperty;
 import at.bestsolution.efxclipse.tooling.fxgraph.ui.util.JDTHelper.JDTHelperProperty;
+import at.bestsolution.efxclipse.tooling.fxgraph.ui.util.JDTHelper.ProcessedProposal;
+import at.bestsolution.efxclipse.tooling.fxgraph.ui.util.JDTHelper.Proposal;
 import at.bestsolution.efxclipse.tooling.fxgraph.ui.util.JDTHelper.TypeData;
+import at.bestsolution.efxclipse.tooling.fxmlx.fXMLDsl.AttributePropertyDefinition;
 import at.bestsolution.efxclipse.tooling.fxmlx.fXMLDsl.ContainerElementDefinition;
 import at.bestsolution.efxclipse.tooling.fxmlx.fXMLDsl.EmptyElementDefinition;
 import at.bestsolution.efxclipse.tooling.fxmlx.fXMLDsl.FXML;
@@ -74,6 +80,97 @@ public class FXMLDslProposalProvider extends AbstractFXMLDslProposalProvider {
 		IProject project = ResourcesPlugin.getWorkspace().getRoot()
 				.getProject(uri.segment(1));
 		return JavaCore.create(project);
+	}
+	
+	@Override
+	public void complete_STRING(EObject model, RuleCall ruleCall, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
+		super.complete_STRING(model, ruleCall, context, acceptor);
+		System.err.println(model);
+		if( model instanceof AttributePropertyDefinition ) {
+			AttributePropertyDefinition d = (AttributePropertyDefinition) model;
+			String name = null;
+			if( d.eContainer() instanceof ContainerElementDefinition) {
+				name = ((ContainerElementDefinition)d.eContainer()).getName();
+			} else if( d.eContainer() instanceof EmptyElementDefinition ) {
+				name = ((EmptyElementDefinition)d.eContainer()).getName();
+			}
+			
+			IJavaProject jProject = getJavaProject(model);
+			IType type = toJavaClass(name, (FXML) model.eResource().getContents().get(0), jProject);
+		
+			if (type != null) {
+				TypeData data = helper.getTypeData(jProject, type);
+				
+				System.err.println("DATA: " + data);
+				
+				if (data != null) {
+					for (JDTHelperProperty p : data.properties) {
+						if (p.name.equals(d.getName())) {
+							
+							for (Proposal prop : p.getProposals()) {
+								if (prop instanceof DialogProposal) {
+									final DialogProposal dProp = (DialogProposal) prop;
+									ConfigurableCompletionProposal dialogProposal = (ConfigurableCompletionProposal) createCompletionProposal(prop.value, prop.description, prop.icon, prop.prio, context.getPrefix().length() >= 1 ? context.getPrefix().substring(1) : context.getPrefix(), context);
+									System.err.println(dialogProposal);
+									if (dialogProposal != null) {
+										if( prop.hover != null ) {
+											dialogProposal.setAdditionalProposalInfo(model);
+											dialogProposal.setHover(prop.hover);	
+										}
+										dialogProposal.setTextApplier(new ReplacementTextApplier() {
+
+											@Override
+											public String getActualReplacementString(ConfigurableCompletionProposal proposal) {
+												return dProp.openProposal();
+											}
+										});
+									}
+									acceptor.accept(dialogProposal);
+								} else if(prop instanceof ProcessedProposal ) {
+									final ProcessedProposal dProp = (ProcessedProposal) prop;
+									ConfigurableCompletionProposal processedProposal = (ConfigurableCompletionProposal) createCompletionProposal(prop.value, prop.description, prop.icon, prop.prio, context.getPrefix().length() >= 1 ? context.getPrefix().substring(1) : context.getPrefix(), context);
+									if (processedProposal != null) {
+										if( prop.hover != null ) {
+											processedProposal.setAdditionalProposalInfo(model);
+											processedProposal.setHover(prop.hover);	
+										}
+										processedProposal.setTextApplier(new ReplacementTextApplier() {
+
+											@Override
+											public String getActualReplacementString(ConfigurableCompletionProposal proposal) {
+												return dProp.getProcessed().substring(0,dProp.getProcessed().length()-1);
+											}
+										});
+									}
+									acceptor.accept(processedProposal);
+								} else {
+									ConfigurableCompletionProposal cProp = (ConfigurableCompletionProposal) createCompletionProposal(prop.value, prop.description, prop.icon, prop.prio, context.getPrefix().length() >= 1 ? context.getPrefix().substring(1) : context.getPrefix(), context);
+									final Proposal dProp = prop;
+									if( cProp != null ) {
+										if( prop.hover != null ) {
+											cProp.setAdditionalProposalInfo(model);
+											cProp.setHover(prop.hover);	
+										}
+										
+										cProp.setTextApplier(new ReplacementTextApplier() {
+
+											@Override
+											public String getActualReplacementString(ConfigurableCompletionProposal proposal) {
+												return dProp.value.substring(0,dProp.value.length()-1);
+											}
+										});
+									}
+									
+									
+									acceptor.accept(cProp);
+								}
+							}
+							return;
+						}
+					}
+				}
+			}
+		}
 	}
 	
 	@Override

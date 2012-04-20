@@ -27,6 +27,7 @@ public class FXMLDslGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cRootElementElementDefinitionParserRuleCall_2_0 = (RuleCall)cRootElementAssignment_2.eContents().get(0);
 		
 		//FXML:
+		//
 		//	xmlDec=XMLDec processingInstructions+=ProcessingInstruction* rootElement=ElementDefinition;
 		public ParserRule getRule() { return rule; }
 
@@ -61,6 +62,7 @@ public class FXMLDslGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cQuestionMarkGreaterThanSignKeyword_2 = (Keyword)cGroup.eContents().get(2);
 		
 		//XMLDec:
+		//
 		//	"<?xml" props+=AttributePropertyDefinition+ "?>";
 		public ParserRule getRule() { return rule; }
 
@@ -91,6 +93,7 @@ public class FXMLDslGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cQuestionMarkGreaterThanSignKeyword_3 = (Keyword)cGroup.eContents().get(3);
 		
 		//ProcessingInstruction:
+		//
 		//	"<?" type=ID importedNamespace=QualifiedNameWithWildCard "?>";
 		public ParserRule getRule() { return rule; }
 
@@ -123,6 +126,7 @@ public class FXMLDslGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cEmptyElementDefinitionParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
 		
 		//ElementDefinition:
+		//
 		//	ContainerElementDefinition | EmptyElementDefinition;
 		public ParserRule getRule() { return rule; }
 
@@ -163,11 +167,14 @@ public class FXMLDslGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cGreaterThanSignKeyword_10 = (Keyword)cGroup.eContents().get(10);
 		
 		//ContainerElementDefinition:
+		//
 		//	"<" (namespace=ID ":")? name=QualifiedName properties+=AttributePropertyDefinition* ">" content=PCData?
+		//
 		//	children+=ElementDefinition* "</" (endnamespace=ID ":")? endname=QualifiedName ">";
 		public ParserRule getRule() { return rule; }
 
 		//"<" (namespace=ID ":")? name=QualifiedName properties+=AttributePropertyDefinition* ">" content=PCData?
+		//
 		//children+=ElementDefinition* "</" (endnamespace=ID ":")? endname=QualifiedName ">"
 		public Group getGroup() { return cGroup; }
 
@@ -253,6 +260,7 @@ public class FXMLDslGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cSolidusGreaterThanSignKeyword_4 = (Keyword)cGroup.eContents().get(4);
 		
 		//EmptyElementDefinition:
+		//
 		//	"<" (namespace=ID ":")? name=QualifiedName props+=AttributePropertyDefinition* "/>";
 		public ParserRule getRule() { return rule; }
 
@@ -296,6 +304,7 @@ public class FXMLDslGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cContentContentParserRuleCall_0 = (RuleCall)cContentAssignment.eContents().get(0);
 		
 		//PCData:
+		//
 		//	content=Content;
 		public ParserRule getRule() { return rule; }
 
@@ -320,6 +329,7 @@ public class FXMLDslGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cValueSTRINGTerminalRuleCall_3_0 = (RuleCall)cValueAssignment_3.eContents().get(0);
 		
 		//AttributePropertyDefinition:
+		//
 		//	(namespace=ID ":")? name=QualifiedName "=" value=STRING;
 		public ParserRule getRule() { return rule; }
 
@@ -374,6 +384,7 @@ public class FXMLDslGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cEqualsSignKeyword_1_6 = (Keyword)cAlternatives_1.eContents().get(6);
 		
 		//Content hidden(ML_COMMENT):
+		//
 		//	(ID | STRING | ANY_OTHER | "." | ":" | "=") (ID | STRING | ANY_OTHER | WS | "." | ":" | "=")*;
 		public ParserRule getRule() { return rule; }
 
@@ -435,6 +446,7 @@ public class FXMLDslGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cIDTerminalRuleCall_1_1 = (RuleCall)cGroup_1.eContents().get(1);
 		
 		//QualifiedName:
+		//
 		//	ID ("." ID)*;
 		public ParserRule getRule() { return rule; }
 
@@ -464,6 +476,7 @@ public class FXMLDslGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cAsteriskKeyword_1_1 = (Keyword)cGroup_1.eContents().get(1);
 		
 		//QualifiedNameWithWildCard:
+		//
 		//	value=QualifiedName ("." "*")?;
 		public ParserRule getRule() { return rule; }
 
@@ -518,6 +531,7 @@ public class FXMLDslGrammarAccess extends AbstractGrammarElementFinder {
 
 	
 	//FXML:
+	//
 	//	xmlDec=XMLDec processingInstructions+=ProcessingInstruction* rootElement=ElementDefinition;
 	public FXMLElements getFXMLAccess() {
 		return (pFXML != null) ? pFXML : (pFXML = new FXMLElements());
@@ -528,6 +542,7 @@ public class FXMLDslGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//XMLDec:
+	//
 	//	"<?xml" props+=AttributePropertyDefinition+ "?>";
 	public XMLDecElements getXMLDecAccess() {
 		return (pXMLDec != null) ? pXMLDec : (pXMLDec = new XMLDecElements());
@@ -538,6 +553,7 @@ public class FXMLDslGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//ProcessingInstruction:
+	//
 	//	"<?" type=ID importedNamespace=QualifiedNameWithWildCard "?>";
 	public ProcessingInstructionElements getProcessingInstructionAccess() {
 		return (pProcessingInstruction != null) ? pProcessingInstruction : (pProcessingInstruction = new ProcessingInstructionElements());
@@ -548,6 +564,7 @@ public class FXMLDslGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//ElementDefinition:
+	//
 	//	ContainerElementDefinition | EmptyElementDefinition;
 	public ElementDefinitionElements getElementDefinitionAccess() {
 		return (pElementDefinition != null) ? pElementDefinition : (pElementDefinition = new ElementDefinitionElements());
@@ -558,7 +575,9 @@ public class FXMLDslGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//ContainerElementDefinition:
+	//
 	//	"<" (namespace=ID ":")? name=QualifiedName properties+=AttributePropertyDefinition* ">" content=PCData?
+	//
 	//	children+=ElementDefinition* "</" (endnamespace=ID ":")? endname=QualifiedName ">";
 	public ContainerElementDefinitionElements getContainerElementDefinitionAccess() {
 		return (pContainerElementDefinition != null) ? pContainerElementDefinition : (pContainerElementDefinition = new ContainerElementDefinitionElements());
@@ -569,6 +588,7 @@ public class FXMLDslGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//EmptyElementDefinition:
+	//
 	//	"<" (namespace=ID ":")? name=QualifiedName props+=AttributePropertyDefinition* "/>";
 	public EmptyElementDefinitionElements getEmptyElementDefinitionAccess() {
 		return (pEmptyElementDefinition != null) ? pEmptyElementDefinition : (pEmptyElementDefinition = new EmptyElementDefinitionElements());
@@ -579,6 +599,7 @@ public class FXMLDslGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//PCData:
+	//
 	//	content=Content;
 	public PCDataElements getPCDataAccess() {
 		return (pPCData != null) ? pPCData : (pPCData = new PCDataElements());
@@ -589,6 +610,7 @@ public class FXMLDslGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//AttributePropertyDefinition:
+	//
 	//	(namespace=ID ":")? name=QualifiedName "=" value=STRING;
 	public AttributePropertyDefinitionElements getAttributePropertyDefinitionAccess() {
 		return (pAttributePropertyDefinition != null) ? pAttributePropertyDefinition : (pAttributePropertyDefinition = new AttributePropertyDefinitionElements());
@@ -599,6 +621,7 @@ public class FXMLDslGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//Content hidden(ML_COMMENT):
+	//
 	//	(ID | STRING | ANY_OTHER | "." | ":" | "=") (ID | STRING | ANY_OTHER | WS | "." | ":" | "=")*;
 	public ContentElements getContentAccess() {
 		return (pContent != null) ? pContent : (pContent = new ContentElements());
@@ -609,6 +632,7 @@ public class FXMLDslGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//QualifiedName:
+	//
 	//	ID ("." ID)*;
 	public QualifiedNameElements getQualifiedNameAccess() {
 		return (pQualifiedName != null) ? pQualifiedName : (pQualifiedName = new QualifiedNameElements());
@@ -619,6 +643,7 @@ public class FXMLDslGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//QualifiedNameWithWildCard:
+	//
 	//	value=QualifiedName ("." "*")?;
 	public QualifiedNameWithWildCardElements getQualifiedNameWithWildCardAccess() {
 		return (pQualifiedNameWithWildCard != null) ? pQualifiedNameWithWildCard : (pQualifiedNameWithWildCard = new QualifiedNameWithWildCardElements());
@@ -629,31 +654,37 @@ public class FXMLDslGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//terminal ID:
+	//
 	//	"^"? ("a".."z" | "A".."Z" | "_") ("a".."z" | "A".."Z" | "_" | "0".."9")*;
 	public TerminalRule getIDRule() {
 		return (tID != null) ? tID : (tID = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "ID"));
 	} 
 
 	//terminal STRING:
+	//
 	//	"\"" ("\\" ("b" | "t" | "n" | "f" | "r" | "u" | "\"" | "\'" | "\\") | !("\\" | "\""))* "\"" | "\'" ("\\" ("b" | "t" |
+	//
 	//	"n" | "f" | "r" | "u" | "\"" | "\'" | "\\") | !("\\" | "\'"))* "\'";
 	public TerminalRule getSTRINGRule() {
 		return (tSTRING != null) ? tSTRING : (tSTRING = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "STRING"));
 	} 
 
 	//terminal WS:
+	//
 	//	(" " | "\t" | "\r" | "\n")+;
 	public TerminalRule getWSRule() {
 		return (tWS != null) ? tWS : (tWS = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "WS"));
 	} 
 
 	//terminal ANY_OTHER:
+	//
 	//	.;
 	public TerminalRule getANY_OTHERRule() {
 		return (tANY_OTHER != null) ? tANY_OTHER : (tANY_OTHER = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "ANY_OTHER"));
 	} 
 
 	//terminal ML_COMMENT:
+	//
 	//	"<!--"->"-->";
 	public TerminalRule getML_COMMENTRule() {
 		return (tML_COMMENT != null) ? tML_COMMENT : (tML_COMMENT = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "ML_COMMENT"));
