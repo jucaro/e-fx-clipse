@@ -78,6 +78,9 @@ public abstract class AbstractAntHandler extends AbstractHandler {
 		
 		try {
 			map.put("projectEncoding", f.getProject().getDefaultCharset());
+			IJavaProject p = JavaCore.create(f.getProject());
+			map.put("sourceCompliance", p.getOption(JavaCore.COMPILER_SOURCE, true));
+			map.put("targetCompliance", p.getOption(JavaCore.COMPILER_COMPLIANCE, true));
 		} catch (CoreException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
