@@ -601,7 +601,7 @@ public class FXGraphProposalProvider extends AbstractFXGraphProposalProvider {
 			}
 		} else if (model instanceof Element && model.eContainer() instanceof Element) {
 			if (((Element) model.eContainer()).getType() != null && (context.getPrefix() == null || context.getPrefix().length() == 0 || Character.isUpperCase(context.getPrefix().charAt(0)))) {
-				JvmTypeReference t = ((Element) model.eContainer()).getType();
+				JvmTypeReference t = ((Element) model).getType();
 				IJavaProject jProject = getJavaProject(model);
 
 				IType jdtType = (IType) javaElementFinder.findElementFor(t.getType());
@@ -616,6 +616,7 @@ public class FXGraphProposalProvider extends AbstractFXGraphProposalProvider {
 					do {
 						IAnnotation annotation = annotationType.getAnnotation("javafx.beans.DefaultProperty");
 						if (annotation.exists()) {
+//							System.err.println("Found annotation: " + annotationType);
 							try {
 								for (IMemberValuePair pair : annotation.getMemberValuePairs()) {
 									if ("value".equals(pair.getMemberName())) {
@@ -659,7 +660,7 @@ public class FXGraphProposalProvider extends AbstractFXGraphProposalProvider {
 							}
 						}
 					} while (annotationType.getSuperclassName() != null && (annotationType = jProject.findType(annotationType.getSuperclassName())) != null);
-					super.completeJvmParameterizedTypeReference_Type(model, assignment, context, acceptor);
+//					super.completeJvmParameterizedTypeReference_Type(model, assignment, context, acceptor);
 				} catch (JavaModelException e1) {
 					// TODO Auto-generated catch block
 					e1.printStackTrace();
