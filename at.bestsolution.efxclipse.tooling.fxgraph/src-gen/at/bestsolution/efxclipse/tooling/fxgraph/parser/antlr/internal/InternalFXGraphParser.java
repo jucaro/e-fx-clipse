@@ -22,7 +22,7 @@ import java.util.HashMap;
 @SuppressWarnings("all")
 public class InternalFXGraphParser extends AbstractInternalAntlrParser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_STRING", "RULE_ID", "RULE_SCRIPTLITERAL", "RULE_INT", "RULE_REAL", "RULE_HEX", "RULE_DECIMAL", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'package'", "'component'", "'controlledby'", "'styledwith'", "'['", "','", "']'", "'resourcefile'", "'extraClasspath'", "'{'", "'}'", "'import'", "'('", "')'", "'id'", "'createdby'", "'define'", "'script'", "'call'", "'#'", "':'", "'preview'", "'true'", "'false'", "'-'", "'idref'", "'include'", "'copy'", "'controllermethod'", "'scriptmethod'", "'scriptexpression'", "'scriptvalue'", "'location'", "'rstring'", "'bind'", "'.'", "'*'", "'='", "'+='", "'||'", "'&&'", "'=='", "'!='", "'instanceof'", "'>='", "'<='", "'>'", "'<'", "'->'", "'..'", "'+'", "'**'", "'/'", "'%'", "'!'", "'as'", "'?.'", "'*.'", "'|'", "';'", "'if'", "'else'", "'switch'", "'default'", "'case'", "'for'", "'while'", "'do'", "'var'", "'val'", "'super'", "'::'", "'new'", "'null'", "'typeof'", "'throw'", "'return'", "'try'", "'finally'", "'catch'", "'=>'", "'?'", "'extends'", "'&'"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_STRING", "RULE_ID", "RULE_SCRIPTLITERAL", "RULE_INT", "RULE_REAL", "RULE_HEX", "RULE_DECIMAL", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'package'", "'import'", "'component'", "'controlledby'", "'styledwith'", "'['", "','", "']'", "'resourcefile'", "'extraClasspath'", "'{'", "'}'", "'('", "')'", "'id'", "'createdby'", "'define'", "'script'", "'call'", "'#'", "':'", "'preview'", "'true'", "'false'", "'-'", "'idref'", "'include'", "'copy'", "'controllermethod'", "'scriptmethod'", "'scriptexpression'", "'scriptvalue'", "'location'", "'rstring'", "'bind'", "'.'", "'*'", "'='", "'+='", "'||'", "'&&'", "'=='", "'!='", "'instanceof'", "'>='", "'<='", "'>'", "'<'", "'->'", "'..'", "'+'", "'**'", "'/'", "'%'", "'!'", "'as'", "'?.'", "'*.'", "'|'", "';'", "'if'", "'else'", "'switch'", "'default'", "'case'", "'for'", "'while'", "'do'", "'var'", "'val'", "'super'", "'::'", "'new'", "'null'", "'typeof'", "'throw'", "'return'", "'try'", "'finally'", "'catch'", "'=>'", "'?'", "'extends'", "'&'"
     };
     public static final int RULE_ID=5;
     public static final int T__29=29;
@@ -272,7 +272,7 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
                 int alt2=2;
                 int LA2_0 = input.LA(1);
 
-                if ( (LA2_0==26) ) {
+                if ( (LA2_0==16) ) {
                     alt2=1;
                 }
 
@@ -497,798 +497,8 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
     // $ANTLR end "rulePackageDeclaration"
 
 
-    // $ANTLR start "entryRuleComponentDefinition"
-    // ../at.bestsolution.efxclipse.tooling.fxgraph/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/parser/antlr/internal/InternalFXGraph.g:185:1: entryRuleComponentDefinition returns [EObject current=null] : iv_ruleComponentDefinition= ruleComponentDefinition EOF ;
-    public final EObject entryRuleComponentDefinition() throws RecognitionException {
-        EObject current = null;
-
-        EObject iv_ruleComponentDefinition = null;
-
-
-        try {
-            // ../at.bestsolution.efxclipse.tooling.fxgraph/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/parser/antlr/internal/InternalFXGraph.g:186:2: (iv_ruleComponentDefinition= ruleComponentDefinition EOF )
-            // ../at.bestsolution.efxclipse.tooling.fxgraph/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/parser/antlr/internal/InternalFXGraph.g:187:2: iv_ruleComponentDefinition= ruleComponentDefinition EOF
-            {
-            if ( state.backtracking==0 ) {
-               newCompositeNode(grammarAccess.getComponentDefinitionRule()); 
-            }
-            pushFollow(FOLLOW_ruleComponentDefinition_in_entryRuleComponentDefinition315);
-            iv_ruleComponentDefinition=ruleComponentDefinition();
-
-            state._fsp--;
-            if (state.failed) return current;
-            if ( state.backtracking==0 ) {
-               current =iv_ruleComponentDefinition; 
-            }
-            match(input,EOF,FOLLOW_EOF_in_entryRuleComponentDefinition325); if (state.failed) return current;
-
-            }
-
-        }
-         
-            catch (RecognitionException re) { 
-                recover(input,re); 
-                appendSkippedTokens();
-            } 
-        finally {
-        }
-        return current;
-    }
-    // $ANTLR end "entryRuleComponentDefinition"
-
-
-    // $ANTLR start "ruleComponentDefinition"
-    // ../at.bestsolution.efxclipse.tooling.fxgraph/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/parser/antlr/internal/InternalFXGraph.g:194:1: ruleComponentDefinition returns [EObject current=null] : (otherlv_0= 'component' ( (lv_name_1_0= ruleValidID ) ) (otherlv_2= 'controlledby' ( (lv_controller_3_0= ruleJvmTypeReference ) ) )? (otherlv_4= 'styledwith' ( ( (lv_previewCssFiles_5_0= RULE_STRING ) ) | (otherlv_6= '[' ( (lv_previewCssFiles_7_0= RULE_STRING ) ) (otherlv_8= ',' ( (lv_previewCssFiles_9_0= RULE_STRING ) ) )* otherlv_10= ']' ) ) )? (otherlv_11= 'resourcefile' ( (lv_previewResourceBundle_12_0= RULE_STRING ) ) )? (otherlv_13= 'extraClasspath' otherlv_14= '[' ( (lv_previewClasspathEntries_15_0= RULE_STRING ) ) (otherlv_16= ',' ( (lv_previewClasspathEntries_17_0= RULE_STRING ) ) )* otherlv_18= ']' )? otherlv_19= '{' ( (lv_scripts_20_0= ruleScript ) )? ( ( (lv_defines_21_0= ruleDefine ) ) (otherlv_22= ',' ( (lv_defines_23_0= ruleDefine ) ) )* )? ( (lv_rootNode_24_0= ruleElement ) ) otherlv_25= '}' ) ;
-    public final EObject ruleComponentDefinition() throws RecognitionException {
-        EObject current = null;
-
-        Token otherlv_0=null;
-        Token otherlv_2=null;
-        Token otherlv_4=null;
-        Token lv_previewCssFiles_5_0=null;
-        Token otherlv_6=null;
-        Token lv_previewCssFiles_7_0=null;
-        Token otherlv_8=null;
-        Token lv_previewCssFiles_9_0=null;
-        Token otherlv_10=null;
-        Token otherlv_11=null;
-        Token lv_previewResourceBundle_12_0=null;
-        Token otherlv_13=null;
-        Token otherlv_14=null;
-        Token lv_previewClasspathEntries_15_0=null;
-        Token otherlv_16=null;
-        Token lv_previewClasspathEntries_17_0=null;
-        Token otherlv_18=null;
-        Token otherlv_19=null;
-        Token otherlv_22=null;
-        Token otherlv_25=null;
-        AntlrDatatypeRuleToken lv_name_1_0 = null;
-
-        EObject lv_controller_3_0 = null;
-
-        EObject lv_scripts_20_0 = null;
-
-        EObject lv_defines_21_0 = null;
-
-        EObject lv_defines_23_0 = null;
-
-        EObject lv_rootNode_24_0 = null;
-
-
-         enterRule(); 
-            
-        try {
-            // ../at.bestsolution.efxclipse.tooling.fxgraph/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/parser/antlr/internal/InternalFXGraph.g:197:28: ( (otherlv_0= 'component' ( (lv_name_1_0= ruleValidID ) ) (otherlv_2= 'controlledby' ( (lv_controller_3_0= ruleJvmTypeReference ) ) )? (otherlv_4= 'styledwith' ( ( (lv_previewCssFiles_5_0= RULE_STRING ) ) | (otherlv_6= '[' ( (lv_previewCssFiles_7_0= RULE_STRING ) ) (otherlv_8= ',' ( (lv_previewCssFiles_9_0= RULE_STRING ) ) )* otherlv_10= ']' ) ) )? (otherlv_11= 'resourcefile' ( (lv_previewResourceBundle_12_0= RULE_STRING ) ) )? (otherlv_13= 'extraClasspath' otherlv_14= '[' ( (lv_previewClasspathEntries_15_0= RULE_STRING ) ) (otherlv_16= ',' ( (lv_previewClasspathEntries_17_0= RULE_STRING ) ) )* otherlv_18= ']' )? otherlv_19= '{' ( (lv_scripts_20_0= ruleScript ) )? ( ( (lv_defines_21_0= ruleDefine ) ) (otherlv_22= ',' ( (lv_defines_23_0= ruleDefine ) ) )* )? ( (lv_rootNode_24_0= ruleElement ) ) otherlv_25= '}' ) )
-            // ../at.bestsolution.efxclipse.tooling.fxgraph/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/parser/antlr/internal/InternalFXGraph.g:198:1: (otherlv_0= 'component' ( (lv_name_1_0= ruleValidID ) ) (otherlv_2= 'controlledby' ( (lv_controller_3_0= ruleJvmTypeReference ) ) )? (otherlv_4= 'styledwith' ( ( (lv_previewCssFiles_5_0= RULE_STRING ) ) | (otherlv_6= '[' ( (lv_previewCssFiles_7_0= RULE_STRING ) ) (otherlv_8= ',' ( (lv_previewCssFiles_9_0= RULE_STRING ) ) )* otherlv_10= ']' ) ) )? (otherlv_11= 'resourcefile' ( (lv_previewResourceBundle_12_0= RULE_STRING ) ) )? (otherlv_13= 'extraClasspath' otherlv_14= '[' ( (lv_previewClasspathEntries_15_0= RULE_STRING ) ) (otherlv_16= ',' ( (lv_previewClasspathEntries_17_0= RULE_STRING ) ) )* otherlv_18= ']' )? otherlv_19= '{' ( (lv_scripts_20_0= ruleScript ) )? ( ( (lv_defines_21_0= ruleDefine ) ) (otherlv_22= ',' ( (lv_defines_23_0= ruleDefine ) ) )* )? ( (lv_rootNode_24_0= ruleElement ) ) otherlv_25= '}' )
-            {
-            // ../at.bestsolution.efxclipse.tooling.fxgraph/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/parser/antlr/internal/InternalFXGraph.g:198:1: (otherlv_0= 'component' ( (lv_name_1_0= ruleValidID ) ) (otherlv_2= 'controlledby' ( (lv_controller_3_0= ruleJvmTypeReference ) ) )? (otherlv_4= 'styledwith' ( ( (lv_previewCssFiles_5_0= RULE_STRING ) ) | (otherlv_6= '[' ( (lv_previewCssFiles_7_0= RULE_STRING ) ) (otherlv_8= ',' ( (lv_previewCssFiles_9_0= RULE_STRING ) ) )* otherlv_10= ']' ) ) )? (otherlv_11= 'resourcefile' ( (lv_previewResourceBundle_12_0= RULE_STRING ) ) )? (otherlv_13= 'extraClasspath' otherlv_14= '[' ( (lv_previewClasspathEntries_15_0= RULE_STRING ) ) (otherlv_16= ',' ( (lv_previewClasspathEntries_17_0= RULE_STRING ) ) )* otherlv_18= ']' )? otherlv_19= '{' ( (lv_scripts_20_0= ruleScript ) )? ( ( (lv_defines_21_0= ruleDefine ) ) (otherlv_22= ',' ( (lv_defines_23_0= ruleDefine ) ) )* )? ( (lv_rootNode_24_0= ruleElement ) ) otherlv_25= '}' )
-            // ../at.bestsolution.efxclipse.tooling.fxgraph/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/parser/antlr/internal/InternalFXGraph.g:198:3: otherlv_0= 'component' ( (lv_name_1_0= ruleValidID ) ) (otherlv_2= 'controlledby' ( (lv_controller_3_0= ruleJvmTypeReference ) ) )? (otherlv_4= 'styledwith' ( ( (lv_previewCssFiles_5_0= RULE_STRING ) ) | (otherlv_6= '[' ( (lv_previewCssFiles_7_0= RULE_STRING ) ) (otherlv_8= ',' ( (lv_previewCssFiles_9_0= RULE_STRING ) ) )* otherlv_10= ']' ) ) )? (otherlv_11= 'resourcefile' ( (lv_previewResourceBundle_12_0= RULE_STRING ) ) )? (otherlv_13= 'extraClasspath' otherlv_14= '[' ( (lv_previewClasspathEntries_15_0= RULE_STRING ) ) (otherlv_16= ',' ( (lv_previewClasspathEntries_17_0= RULE_STRING ) ) )* otherlv_18= ']' )? otherlv_19= '{' ( (lv_scripts_20_0= ruleScript ) )? ( ( (lv_defines_21_0= ruleDefine ) ) (otherlv_22= ',' ( (lv_defines_23_0= ruleDefine ) ) )* )? ( (lv_rootNode_24_0= ruleElement ) ) otherlv_25= '}'
-            {
-            otherlv_0=(Token)match(input,16,FOLLOW_16_in_ruleComponentDefinition362); if (state.failed) return current;
-            if ( state.backtracking==0 ) {
-
-                  	newLeafNode(otherlv_0, grammarAccess.getComponentDefinitionAccess().getComponentKeyword_0());
-                  
-            }
-            // ../at.bestsolution.efxclipse.tooling.fxgraph/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/parser/antlr/internal/InternalFXGraph.g:202:1: ( (lv_name_1_0= ruleValidID ) )
-            // ../at.bestsolution.efxclipse.tooling.fxgraph/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/parser/antlr/internal/InternalFXGraph.g:203:1: (lv_name_1_0= ruleValidID )
-            {
-            // ../at.bestsolution.efxclipse.tooling.fxgraph/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/parser/antlr/internal/InternalFXGraph.g:203:1: (lv_name_1_0= ruleValidID )
-            // ../at.bestsolution.efxclipse.tooling.fxgraph/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/parser/antlr/internal/InternalFXGraph.g:204:3: lv_name_1_0= ruleValidID
-            {
-            if ( state.backtracking==0 ) {
-               
-              	        newCompositeNode(grammarAccess.getComponentDefinitionAccess().getNameValidIDParserRuleCall_1_0()); 
-              	    
-            }
-            pushFollow(FOLLOW_ruleValidID_in_ruleComponentDefinition383);
-            lv_name_1_0=ruleValidID();
-
-            state._fsp--;
-            if (state.failed) return current;
-            if ( state.backtracking==0 ) {
-
-              	        if (current==null) {
-              	            current = createModelElementForParent(grammarAccess.getComponentDefinitionRule());
-              	        }
-                     		set(
-                     			current, 
-                     			"name",
-                      		lv_name_1_0, 
-                      		"ValidID");
-              	        afterParserOrEnumRuleCall();
-              	    
-            }
-
-            }
-
-
-            }
-
-            // ../at.bestsolution.efxclipse.tooling.fxgraph/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/parser/antlr/internal/InternalFXGraph.g:220:2: (otherlv_2= 'controlledby' ( (lv_controller_3_0= ruleJvmTypeReference ) ) )?
-            int alt3=2;
-            int LA3_0 = input.LA(1);
-
-            if ( (LA3_0==17) ) {
-                alt3=1;
-            }
-            switch (alt3) {
-                case 1 :
-                    // ../at.bestsolution.efxclipse.tooling.fxgraph/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/parser/antlr/internal/InternalFXGraph.g:220:4: otherlv_2= 'controlledby' ( (lv_controller_3_0= ruleJvmTypeReference ) )
-                    {
-                    otherlv_2=(Token)match(input,17,FOLLOW_17_in_ruleComponentDefinition396); if (state.failed) return current;
-                    if ( state.backtracking==0 ) {
-
-                          	newLeafNode(otherlv_2, grammarAccess.getComponentDefinitionAccess().getControlledbyKeyword_2_0());
-                          
-                    }
-                    // ../at.bestsolution.efxclipse.tooling.fxgraph/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/parser/antlr/internal/InternalFXGraph.g:224:1: ( (lv_controller_3_0= ruleJvmTypeReference ) )
-                    // ../at.bestsolution.efxclipse.tooling.fxgraph/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/parser/antlr/internal/InternalFXGraph.g:225:1: (lv_controller_3_0= ruleJvmTypeReference )
-                    {
-                    // ../at.bestsolution.efxclipse.tooling.fxgraph/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/parser/antlr/internal/InternalFXGraph.g:225:1: (lv_controller_3_0= ruleJvmTypeReference )
-                    // ../at.bestsolution.efxclipse.tooling.fxgraph/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/parser/antlr/internal/InternalFXGraph.g:226:3: lv_controller_3_0= ruleJvmTypeReference
-                    {
-                    if ( state.backtracking==0 ) {
-                       
-                      	        newCompositeNode(grammarAccess.getComponentDefinitionAccess().getControllerJvmTypeReferenceParserRuleCall_2_1_0()); 
-                      	    
-                    }
-                    pushFollow(FOLLOW_ruleJvmTypeReference_in_ruleComponentDefinition417);
-                    lv_controller_3_0=ruleJvmTypeReference();
-
-                    state._fsp--;
-                    if (state.failed) return current;
-                    if ( state.backtracking==0 ) {
-
-                      	        if (current==null) {
-                      	            current = createModelElementForParent(grammarAccess.getComponentDefinitionRule());
-                      	        }
-                             		set(
-                             			current, 
-                             			"controller",
-                              		lv_controller_3_0, 
-                              		"JvmTypeReference");
-                      	        afterParserOrEnumRuleCall();
-                      	    
-                    }
-
-                    }
-
-
-                    }
-
-
-                    }
-                    break;
-
-            }
-
-            // ../at.bestsolution.efxclipse.tooling.fxgraph/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/parser/antlr/internal/InternalFXGraph.g:242:4: (otherlv_4= 'styledwith' ( ( (lv_previewCssFiles_5_0= RULE_STRING ) ) | (otherlv_6= '[' ( (lv_previewCssFiles_7_0= RULE_STRING ) ) (otherlv_8= ',' ( (lv_previewCssFiles_9_0= RULE_STRING ) ) )* otherlv_10= ']' ) ) )?
-            int alt6=2;
-            int LA6_0 = input.LA(1);
-
-            if ( (LA6_0==18) ) {
-                alt6=1;
-            }
-            switch (alt6) {
-                case 1 :
-                    // ../at.bestsolution.efxclipse.tooling.fxgraph/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/parser/antlr/internal/InternalFXGraph.g:242:6: otherlv_4= 'styledwith' ( ( (lv_previewCssFiles_5_0= RULE_STRING ) ) | (otherlv_6= '[' ( (lv_previewCssFiles_7_0= RULE_STRING ) ) (otherlv_8= ',' ( (lv_previewCssFiles_9_0= RULE_STRING ) ) )* otherlv_10= ']' ) )
-                    {
-                    otherlv_4=(Token)match(input,18,FOLLOW_18_in_ruleComponentDefinition432); if (state.failed) return current;
-                    if ( state.backtracking==0 ) {
-
-                          	newLeafNode(otherlv_4, grammarAccess.getComponentDefinitionAccess().getStyledwithKeyword_3_0());
-                          
-                    }
-                    // ../at.bestsolution.efxclipse.tooling.fxgraph/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/parser/antlr/internal/InternalFXGraph.g:246:1: ( ( (lv_previewCssFiles_5_0= RULE_STRING ) ) | (otherlv_6= '[' ( (lv_previewCssFiles_7_0= RULE_STRING ) ) (otherlv_8= ',' ( (lv_previewCssFiles_9_0= RULE_STRING ) ) )* otherlv_10= ']' ) )
-                    int alt5=2;
-                    int LA5_0 = input.LA(1);
-
-                    if ( (LA5_0==RULE_STRING) ) {
-                        alt5=1;
-                    }
-                    else if ( (LA5_0==19) ) {
-                        alt5=2;
-                    }
-                    else {
-                        if (state.backtracking>0) {state.failed=true; return current;}
-                        NoViableAltException nvae =
-                            new NoViableAltException("", 5, 0, input);
-
-                        throw nvae;
-                    }
-                    switch (alt5) {
-                        case 1 :
-                            // ../at.bestsolution.efxclipse.tooling.fxgraph/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/parser/antlr/internal/InternalFXGraph.g:246:2: ( (lv_previewCssFiles_5_0= RULE_STRING ) )
-                            {
-                            // ../at.bestsolution.efxclipse.tooling.fxgraph/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/parser/antlr/internal/InternalFXGraph.g:246:2: ( (lv_previewCssFiles_5_0= RULE_STRING ) )
-                            // ../at.bestsolution.efxclipse.tooling.fxgraph/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/parser/antlr/internal/InternalFXGraph.g:247:1: (lv_previewCssFiles_5_0= RULE_STRING )
-                            {
-                            // ../at.bestsolution.efxclipse.tooling.fxgraph/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/parser/antlr/internal/InternalFXGraph.g:247:1: (lv_previewCssFiles_5_0= RULE_STRING )
-                            // ../at.bestsolution.efxclipse.tooling.fxgraph/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/parser/antlr/internal/InternalFXGraph.g:248:3: lv_previewCssFiles_5_0= RULE_STRING
-                            {
-                            lv_previewCssFiles_5_0=(Token)match(input,RULE_STRING,FOLLOW_RULE_STRING_in_ruleComponentDefinition450); if (state.failed) return current;
-                            if ( state.backtracking==0 ) {
-
-                              			newLeafNode(lv_previewCssFiles_5_0, grammarAccess.getComponentDefinitionAccess().getPreviewCssFilesSTRINGTerminalRuleCall_3_1_0_0()); 
-                              		
-                            }
-                            if ( state.backtracking==0 ) {
-
-                              	        if (current==null) {
-                              	            current = createModelElement(grammarAccess.getComponentDefinitionRule());
-                              	        }
-                                     		addWithLastConsumed(
-                                     			current, 
-                                     			"previewCssFiles",
-                                      		lv_previewCssFiles_5_0, 
-                                      		"STRING");
-                              	    
-                            }
-
-                            }
-
-
-                            }
-
-
-                            }
-                            break;
-                        case 2 :
-                            // ../at.bestsolution.efxclipse.tooling.fxgraph/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/parser/antlr/internal/InternalFXGraph.g:265:6: (otherlv_6= '[' ( (lv_previewCssFiles_7_0= RULE_STRING ) ) (otherlv_8= ',' ( (lv_previewCssFiles_9_0= RULE_STRING ) ) )* otherlv_10= ']' )
-                            {
-                            // ../at.bestsolution.efxclipse.tooling.fxgraph/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/parser/antlr/internal/InternalFXGraph.g:265:6: (otherlv_6= '[' ( (lv_previewCssFiles_7_0= RULE_STRING ) ) (otherlv_8= ',' ( (lv_previewCssFiles_9_0= RULE_STRING ) ) )* otherlv_10= ']' )
-                            // ../at.bestsolution.efxclipse.tooling.fxgraph/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/parser/antlr/internal/InternalFXGraph.g:265:8: otherlv_6= '[' ( (lv_previewCssFiles_7_0= RULE_STRING ) ) (otherlv_8= ',' ( (lv_previewCssFiles_9_0= RULE_STRING ) ) )* otherlv_10= ']'
-                            {
-                            otherlv_6=(Token)match(input,19,FOLLOW_19_in_ruleComponentDefinition474); if (state.failed) return current;
-                            if ( state.backtracking==0 ) {
-
-                                  	newLeafNode(otherlv_6, grammarAccess.getComponentDefinitionAccess().getLeftSquareBracketKeyword_3_1_1_0());
-                                  
-                            }
-                            // ../at.bestsolution.efxclipse.tooling.fxgraph/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/parser/antlr/internal/InternalFXGraph.g:269:1: ( (lv_previewCssFiles_7_0= RULE_STRING ) )
-                            // ../at.bestsolution.efxclipse.tooling.fxgraph/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/parser/antlr/internal/InternalFXGraph.g:270:1: (lv_previewCssFiles_7_0= RULE_STRING )
-                            {
-                            // ../at.bestsolution.efxclipse.tooling.fxgraph/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/parser/antlr/internal/InternalFXGraph.g:270:1: (lv_previewCssFiles_7_0= RULE_STRING )
-                            // ../at.bestsolution.efxclipse.tooling.fxgraph/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/parser/antlr/internal/InternalFXGraph.g:271:3: lv_previewCssFiles_7_0= RULE_STRING
-                            {
-                            lv_previewCssFiles_7_0=(Token)match(input,RULE_STRING,FOLLOW_RULE_STRING_in_ruleComponentDefinition491); if (state.failed) return current;
-                            if ( state.backtracking==0 ) {
-
-                              			newLeafNode(lv_previewCssFiles_7_0, grammarAccess.getComponentDefinitionAccess().getPreviewCssFilesSTRINGTerminalRuleCall_3_1_1_1_0()); 
-                              		
-                            }
-                            if ( state.backtracking==0 ) {
-
-                              	        if (current==null) {
-                              	            current = createModelElement(grammarAccess.getComponentDefinitionRule());
-                              	        }
-                                     		addWithLastConsumed(
-                                     			current, 
-                                     			"previewCssFiles",
-                                      		lv_previewCssFiles_7_0, 
-                                      		"STRING");
-                              	    
-                            }
-
-                            }
-
-
-                            }
-
-                            // ../at.bestsolution.efxclipse.tooling.fxgraph/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/parser/antlr/internal/InternalFXGraph.g:287:2: (otherlv_8= ',' ( (lv_previewCssFiles_9_0= RULE_STRING ) ) )*
-                            loop4:
-                            do {
-                                int alt4=2;
-                                int LA4_0 = input.LA(1);
-
-                                if ( (LA4_0==20) ) {
-                                    alt4=1;
-                                }
-
-
-                                switch (alt4) {
-                            	case 1 :
-                            	    // ../at.bestsolution.efxclipse.tooling.fxgraph/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/parser/antlr/internal/InternalFXGraph.g:287:4: otherlv_8= ',' ( (lv_previewCssFiles_9_0= RULE_STRING ) )
-                            	    {
-                            	    otherlv_8=(Token)match(input,20,FOLLOW_20_in_ruleComponentDefinition509); if (state.failed) return current;
-                            	    if ( state.backtracking==0 ) {
-
-                            	          	newLeafNode(otherlv_8, grammarAccess.getComponentDefinitionAccess().getCommaKeyword_3_1_1_2_0());
-                            	          
-                            	    }
-                            	    // ../at.bestsolution.efxclipse.tooling.fxgraph/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/parser/antlr/internal/InternalFXGraph.g:291:1: ( (lv_previewCssFiles_9_0= RULE_STRING ) )
-                            	    // ../at.bestsolution.efxclipse.tooling.fxgraph/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/parser/antlr/internal/InternalFXGraph.g:292:1: (lv_previewCssFiles_9_0= RULE_STRING )
-                            	    {
-                            	    // ../at.bestsolution.efxclipse.tooling.fxgraph/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/parser/antlr/internal/InternalFXGraph.g:292:1: (lv_previewCssFiles_9_0= RULE_STRING )
-                            	    // ../at.bestsolution.efxclipse.tooling.fxgraph/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/parser/antlr/internal/InternalFXGraph.g:293:3: lv_previewCssFiles_9_0= RULE_STRING
-                            	    {
-                            	    lv_previewCssFiles_9_0=(Token)match(input,RULE_STRING,FOLLOW_RULE_STRING_in_ruleComponentDefinition526); if (state.failed) return current;
-                            	    if ( state.backtracking==0 ) {
-
-                            	      			newLeafNode(lv_previewCssFiles_9_0, grammarAccess.getComponentDefinitionAccess().getPreviewCssFilesSTRINGTerminalRuleCall_3_1_1_2_1_0()); 
-                            	      		
-                            	    }
-                            	    if ( state.backtracking==0 ) {
-
-                            	      	        if (current==null) {
-                            	      	            current = createModelElement(grammarAccess.getComponentDefinitionRule());
-                            	      	        }
-                            	             		addWithLastConsumed(
-                            	             			current, 
-                            	             			"previewCssFiles",
-                            	              		lv_previewCssFiles_9_0, 
-                            	              		"STRING");
-                            	      	    
-                            	    }
-
-                            	    }
-
-
-                            	    }
-
-
-                            	    }
-                            	    break;
-
-                            	default :
-                            	    break loop4;
-                                }
-                            } while (true);
-
-                            otherlv_10=(Token)match(input,21,FOLLOW_21_in_ruleComponentDefinition545); if (state.failed) return current;
-                            if ( state.backtracking==0 ) {
-
-                                  	newLeafNode(otherlv_10, grammarAccess.getComponentDefinitionAccess().getRightSquareBracketKeyword_3_1_1_3());
-                                  
-                            }
-
-                            }
-
-
-                            }
-                            break;
-
-                    }
-
-
-                    }
-                    break;
-
-            }
-
-            // ../at.bestsolution.efxclipse.tooling.fxgraph/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/parser/antlr/internal/InternalFXGraph.g:313:5: (otherlv_11= 'resourcefile' ( (lv_previewResourceBundle_12_0= RULE_STRING ) ) )?
-            int alt7=2;
-            int LA7_0 = input.LA(1);
-
-            if ( (LA7_0==22) ) {
-                alt7=1;
-            }
-            switch (alt7) {
-                case 1 :
-                    // ../at.bestsolution.efxclipse.tooling.fxgraph/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/parser/antlr/internal/InternalFXGraph.g:313:7: otherlv_11= 'resourcefile' ( (lv_previewResourceBundle_12_0= RULE_STRING ) )
-                    {
-                    otherlv_11=(Token)match(input,22,FOLLOW_22_in_ruleComponentDefinition562); if (state.failed) return current;
-                    if ( state.backtracking==0 ) {
-
-                          	newLeafNode(otherlv_11, grammarAccess.getComponentDefinitionAccess().getResourcefileKeyword_4_0());
-                          
-                    }
-                    // ../at.bestsolution.efxclipse.tooling.fxgraph/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/parser/antlr/internal/InternalFXGraph.g:317:1: ( (lv_previewResourceBundle_12_0= RULE_STRING ) )
-                    // ../at.bestsolution.efxclipse.tooling.fxgraph/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/parser/antlr/internal/InternalFXGraph.g:318:1: (lv_previewResourceBundle_12_0= RULE_STRING )
-                    {
-                    // ../at.bestsolution.efxclipse.tooling.fxgraph/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/parser/antlr/internal/InternalFXGraph.g:318:1: (lv_previewResourceBundle_12_0= RULE_STRING )
-                    // ../at.bestsolution.efxclipse.tooling.fxgraph/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/parser/antlr/internal/InternalFXGraph.g:319:3: lv_previewResourceBundle_12_0= RULE_STRING
-                    {
-                    lv_previewResourceBundle_12_0=(Token)match(input,RULE_STRING,FOLLOW_RULE_STRING_in_ruleComponentDefinition579); if (state.failed) return current;
-                    if ( state.backtracking==0 ) {
-
-                      			newLeafNode(lv_previewResourceBundle_12_0, grammarAccess.getComponentDefinitionAccess().getPreviewResourceBundleSTRINGTerminalRuleCall_4_1_0()); 
-                      		
-                    }
-                    if ( state.backtracking==0 ) {
-
-                      	        if (current==null) {
-                      	            current = createModelElement(grammarAccess.getComponentDefinitionRule());
-                      	        }
-                             		setWithLastConsumed(
-                             			current, 
-                             			"previewResourceBundle",
-                              		lv_previewResourceBundle_12_0, 
-                              		"STRING");
-                      	    
-                    }
-
-                    }
-
-
-                    }
-
-
-                    }
-                    break;
-
-            }
-
-            // ../at.bestsolution.efxclipse.tooling.fxgraph/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/parser/antlr/internal/InternalFXGraph.g:335:4: (otherlv_13= 'extraClasspath' otherlv_14= '[' ( (lv_previewClasspathEntries_15_0= RULE_STRING ) ) (otherlv_16= ',' ( (lv_previewClasspathEntries_17_0= RULE_STRING ) ) )* otherlv_18= ']' )?
-            int alt9=2;
-            int LA9_0 = input.LA(1);
-
-            if ( (LA9_0==23) ) {
-                alt9=1;
-            }
-            switch (alt9) {
-                case 1 :
-                    // ../at.bestsolution.efxclipse.tooling.fxgraph/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/parser/antlr/internal/InternalFXGraph.g:335:6: otherlv_13= 'extraClasspath' otherlv_14= '[' ( (lv_previewClasspathEntries_15_0= RULE_STRING ) ) (otherlv_16= ',' ( (lv_previewClasspathEntries_17_0= RULE_STRING ) ) )* otherlv_18= ']'
-                    {
-                    otherlv_13=(Token)match(input,23,FOLLOW_23_in_ruleComponentDefinition599); if (state.failed) return current;
-                    if ( state.backtracking==0 ) {
-
-                          	newLeafNode(otherlv_13, grammarAccess.getComponentDefinitionAccess().getExtraClasspathKeyword_5_0());
-                          
-                    }
-                    otherlv_14=(Token)match(input,19,FOLLOW_19_in_ruleComponentDefinition611); if (state.failed) return current;
-                    if ( state.backtracking==0 ) {
-
-                          	newLeafNode(otherlv_14, grammarAccess.getComponentDefinitionAccess().getLeftSquareBracketKeyword_5_1());
-                          
-                    }
-                    // ../at.bestsolution.efxclipse.tooling.fxgraph/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/parser/antlr/internal/InternalFXGraph.g:343:1: ( (lv_previewClasspathEntries_15_0= RULE_STRING ) )
-                    // ../at.bestsolution.efxclipse.tooling.fxgraph/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/parser/antlr/internal/InternalFXGraph.g:344:1: (lv_previewClasspathEntries_15_0= RULE_STRING )
-                    {
-                    // ../at.bestsolution.efxclipse.tooling.fxgraph/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/parser/antlr/internal/InternalFXGraph.g:344:1: (lv_previewClasspathEntries_15_0= RULE_STRING )
-                    // ../at.bestsolution.efxclipse.tooling.fxgraph/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/parser/antlr/internal/InternalFXGraph.g:345:3: lv_previewClasspathEntries_15_0= RULE_STRING
-                    {
-                    lv_previewClasspathEntries_15_0=(Token)match(input,RULE_STRING,FOLLOW_RULE_STRING_in_ruleComponentDefinition628); if (state.failed) return current;
-                    if ( state.backtracking==0 ) {
-
-                      			newLeafNode(lv_previewClasspathEntries_15_0, grammarAccess.getComponentDefinitionAccess().getPreviewClasspathEntriesSTRINGTerminalRuleCall_5_2_0()); 
-                      		
-                    }
-                    if ( state.backtracking==0 ) {
-
-                      	        if (current==null) {
-                      	            current = createModelElement(grammarAccess.getComponentDefinitionRule());
-                      	        }
-                             		addWithLastConsumed(
-                             			current, 
-                             			"previewClasspathEntries",
-                              		lv_previewClasspathEntries_15_0, 
-                              		"STRING");
-                      	    
-                    }
-
-                    }
-
-
-                    }
-
-                    // ../at.bestsolution.efxclipse.tooling.fxgraph/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/parser/antlr/internal/InternalFXGraph.g:361:2: (otherlv_16= ',' ( (lv_previewClasspathEntries_17_0= RULE_STRING ) ) )*
-                    loop8:
-                    do {
-                        int alt8=2;
-                        int LA8_0 = input.LA(1);
-
-                        if ( (LA8_0==20) ) {
-                            alt8=1;
-                        }
-
-
-                        switch (alt8) {
-                    	case 1 :
-                    	    // ../at.bestsolution.efxclipse.tooling.fxgraph/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/parser/antlr/internal/InternalFXGraph.g:361:4: otherlv_16= ',' ( (lv_previewClasspathEntries_17_0= RULE_STRING ) )
-                    	    {
-                    	    otherlv_16=(Token)match(input,20,FOLLOW_20_in_ruleComponentDefinition646); if (state.failed) return current;
-                    	    if ( state.backtracking==0 ) {
-
-                    	          	newLeafNode(otherlv_16, grammarAccess.getComponentDefinitionAccess().getCommaKeyword_5_3_0());
-                    	          
-                    	    }
-                    	    // ../at.bestsolution.efxclipse.tooling.fxgraph/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/parser/antlr/internal/InternalFXGraph.g:365:1: ( (lv_previewClasspathEntries_17_0= RULE_STRING ) )
-                    	    // ../at.bestsolution.efxclipse.tooling.fxgraph/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/parser/antlr/internal/InternalFXGraph.g:366:1: (lv_previewClasspathEntries_17_0= RULE_STRING )
-                    	    {
-                    	    // ../at.bestsolution.efxclipse.tooling.fxgraph/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/parser/antlr/internal/InternalFXGraph.g:366:1: (lv_previewClasspathEntries_17_0= RULE_STRING )
-                    	    // ../at.bestsolution.efxclipse.tooling.fxgraph/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/parser/antlr/internal/InternalFXGraph.g:367:3: lv_previewClasspathEntries_17_0= RULE_STRING
-                    	    {
-                    	    lv_previewClasspathEntries_17_0=(Token)match(input,RULE_STRING,FOLLOW_RULE_STRING_in_ruleComponentDefinition663); if (state.failed) return current;
-                    	    if ( state.backtracking==0 ) {
-
-                    	      			newLeafNode(lv_previewClasspathEntries_17_0, grammarAccess.getComponentDefinitionAccess().getPreviewClasspathEntriesSTRINGTerminalRuleCall_5_3_1_0()); 
-                    	      		
-                    	    }
-                    	    if ( state.backtracking==0 ) {
-
-                    	      	        if (current==null) {
-                    	      	            current = createModelElement(grammarAccess.getComponentDefinitionRule());
-                    	      	        }
-                    	             		addWithLastConsumed(
-                    	             			current, 
-                    	             			"previewClasspathEntries",
-                    	              		lv_previewClasspathEntries_17_0, 
-                    	              		"STRING");
-                    	      	    
-                    	    }
-
-                    	    }
-
-
-                    	    }
-
-
-                    	    }
-                    	    break;
-
-                    	default :
-                    	    break loop8;
-                        }
-                    } while (true);
-
-                    otherlv_18=(Token)match(input,21,FOLLOW_21_in_ruleComponentDefinition682); if (state.failed) return current;
-                    if ( state.backtracking==0 ) {
-
-                          	newLeafNode(otherlv_18, grammarAccess.getComponentDefinitionAccess().getRightSquareBracketKeyword_5_4());
-                          
-                    }
-
-                    }
-                    break;
-
-            }
-
-            otherlv_19=(Token)match(input,24,FOLLOW_24_in_ruleComponentDefinition696); if (state.failed) return current;
-            if ( state.backtracking==0 ) {
-
-                  	newLeafNode(otherlv_19, grammarAccess.getComponentDefinitionAccess().getLeftCurlyBracketKeyword_6());
-                  
-            }
-            // ../at.bestsolution.efxclipse.tooling.fxgraph/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/parser/antlr/internal/InternalFXGraph.g:391:1: ( (lv_scripts_20_0= ruleScript ) )?
-            int alt10=2;
-            int LA10_0 = input.LA(1);
-
-            if ( (LA10_0==32) ) {
-                alt10=1;
-            }
-            switch (alt10) {
-                case 1 :
-                    // ../at.bestsolution.efxclipse.tooling.fxgraph/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/parser/antlr/internal/InternalFXGraph.g:392:1: (lv_scripts_20_0= ruleScript )
-                    {
-                    // ../at.bestsolution.efxclipse.tooling.fxgraph/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/parser/antlr/internal/InternalFXGraph.g:392:1: (lv_scripts_20_0= ruleScript )
-                    // ../at.bestsolution.efxclipse.tooling.fxgraph/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/parser/antlr/internal/InternalFXGraph.g:393:3: lv_scripts_20_0= ruleScript
-                    {
-                    if ( state.backtracking==0 ) {
-                       
-                      	        newCompositeNode(grammarAccess.getComponentDefinitionAccess().getScriptsScriptParserRuleCall_7_0()); 
-                      	    
-                    }
-                    pushFollow(FOLLOW_ruleScript_in_ruleComponentDefinition717);
-                    lv_scripts_20_0=ruleScript();
-
-                    state._fsp--;
-                    if (state.failed) return current;
-                    if ( state.backtracking==0 ) {
-
-                      	        if (current==null) {
-                      	            current = createModelElementForParent(grammarAccess.getComponentDefinitionRule());
-                      	        }
-                             		add(
-                             			current, 
-                             			"scripts",
-                              		lv_scripts_20_0, 
-                              		"Script");
-                      	        afterParserOrEnumRuleCall();
-                      	    
-                    }
-
-                    }
-
-
-                    }
-                    break;
-
-            }
-
-            // ../at.bestsolution.efxclipse.tooling.fxgraph/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/parser/antlr/internal/InternalFXGraph.g:409:3: ( ( (lv_defines_21_0= ruleDefine ) ) (otherlv_22= ',' ( (lv_defines_23_0= ruleDefine ) ) )* )?
-            int alt12=2;
-            int LA12_0 = input.LA(1);
-
-            if ( (LA12_0==31) ) {
-                alt12=1;
-            }
-            switch (alt12) {
-                case 1 :
-                    // ../at.bestsolution.efxclipse.tooling.fxgraph/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/parser/antlr/internal/InternalFXGraph.g:409:4: ( (lv_defines_21_0= ruleDefine ) ) (otherlv_22= ',' ( (lv_defines_23_0= ruleDefine ) ) )*
-                    {
-                    // ../at.bestsolution.efxclipse.tooling.fxgraph/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/parser/antlr/internal/InternalFXGraph.g:409:4: ( (lv_defines_21_0= ruleDefine ) )
-                    // ../at.bestsolution.efxclipse.tooling.fxgraph/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/parser/antlr/internal/InternalFXGraph.g:410:1: (lv_defines_21_0= ruleDefine )
-                    {
-                    // ../at.bestsolution.efxclipse.tooling.fxgraph/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/parser/antlr/internal/InternalFXGraph.g:410:1: (lv_defines_21_0= ruleDefine )
-                    // ../at.bestsolution.efxclipse.tooling.fxgraph/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/parser/antlr/internal/InternalFXGraph.g:411:3: lv_defines_21_0= ruleDefine
-                    {
-                    if ( state.backtracking==0 ) {
-                       
-                      	        newCompositeNode(grammarAccess.getComponentDefinitionAccess().getDefinesDefineParserRuleCall_8_0_0()); 
-                      	    
-                    }
-                    pushFollow(FOLLOW_ruleDefine_in_ruleComponentDefinition740);
-                    lv_defines_21_0=ruleDefine();
-
-                    state._fsp--;
-                    if (state.failed) return current;
-                    if ( state.backtracking==0 ) {
-
-                      	        if (current==null) {
-                      	            current = createModelElementForParent(grammarAccess.getComponentDefinitionRule());
-                      	        }
-                             		add(
-                             			current, 
-                             			"defines",
-                              		lv_defines_21_0, 
-                              		"Define");
-                      	        afterParserOrEnumRuleCall();
-                      	    
-                    }
-
-                    }
-
-
-                    }
-
-                    // ../at.bestsolution.efxclipse.tooling.fxgraph/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/parser/antlr/internal/InternalFXGraph.g:427:2: (otherlv_22= ',' ( (lv_defines_23_0= ruleDefine ) ) )*
-                    loop11:
-                    do {
-                        int alt11=2;
-                        int LA11_0 = input.LA(1);
-
-                        if ( (LA11_0==20) ) {
-                            alt11=1;
-                        }
-
-
-                        switch (alt11) {
-                    	case 1 :
-                    	    // ../at.bestsolution.efxclipse.tooling.fxgraph/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/parser/antlr/internal/InternalFXGraph.g:427:4: otherlv_22= ',' ( (lv_defines_23_0= ruleDefine ) )
-                    	    {
-                    	    otherlv_22=(Token)match(input,20,FOLLOW_20_in_ruleComponentDefinition753); if (state.failed) return current;
-                    	    if ( state.backtracking==0 ) {
-
-                    	          	newLeafNode(otherlv_22, grammarAccess.getComponentDefinitionAccess().getCommaKeyword_8_1_0());
-                    	          
-                    	    }
-                    	    // ../at.bestsolution.efxclipse.tooling.fxgraph/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/parser/antlr/internal/InternalFXGraph.g:431:1: ( (lv_defines_23_0= ruleDefine ) )
-                    	    // ../at.bestsolution.efxclipse.tooling.fxgraph/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/parser/antlr/internal/InternalFXGraph.g:432:1: (lv_defines_23_0= ruleDefine )
-                    	    {
-                    	    // ../at.bestsolution.efxclipse.tooling.fxgraph/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/parser/antlr/internal/InternalFXGraph.g:432:1: (lv_defines_23_0= ruleDefine )
-                    	    // ../at.bestsolution.efxclipse.tooling.fxgraph/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/parser/antlr/internal/InternalFXGraph.g:433:3: lv_defines_23_0= ruleDefine
-                    	    {
-                    	    if ( state.backtracking==0 ) {
-                    	       
-                    	      	        newCompositeNode(grammarAccess.getComponentDefinitionAccess().getDefinesDefineParserRuleCall_8_1_1_0()); 
-                    	      	    
-                    	    }
-                    	    pushFollow(FOLLOW_ruleDefine_in_ruleComponentDefinition774);
-                    	    lv_defines_23_0=ruleDefine();
-
-                    	    state._fsp--;
-                    	    if (state.failed) return current;
-                    	    if ( state.backtracking==0 ) {
-
-                    	      	        if (current==null) {
-                    	      	            current = createModelElementForParent(grammarAccess.getComponentDefinitionRule());
-                    	      	        }
-                    	             		add(
-                    	             			current, 
-                    	             			"defines",
-                    	              		lv_defines_23_0, 
-                    	              		"Define");
-                    	      	        afterParserOrEnumRuleCall();
-                    	      	    
-                    	    }
-
-                    	    }
-
-
-                    	    }
-
-
-                    	    }
-                    	    break;
-
-                    	default :
-                    	    break loop11;
-                        }
-                    } while (true);
-
-
-                    }
-                    break;
-
-            }
-
-            // ../at.bestsolution.efxclipse.tooling.fxgraph/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/parser/antlr/internal/InternalFXGraph.g:449:6: ( (lv_rootNode_24_0= ruleElement ) )
-            // ../at.bestsolution.efxclipse.tooling.fxgraph/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/parser/antlr/internal/InternalFXGraph.g:450:1: (lv_rootNode_24_0= ruleElement )
-            {
-            // ../at.bestsolution.efxclipse.tooling.fxgraph/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/parser/antlr/internal/InternalFXGraph.g:450:1: (lv_rootNode_24_0= ruleElement )
-            // ../at.bestsolution.efxclipse.tooling.fxgraph/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/parser/antlr/internal/InternalFXGraph.g:451:3: lv_rootNode_24_0= ruleElement
-            {
-            if ( state.backtracking==0 ) {
-               
-              	        newCompositeNode(grammarAccess.getComponentDefinitionAccess().getRootNodeElementParserRuleCall_9_0()); 
-              	    
-            }
-            pushFollow(FOLLOW_ruleElement_in_ruleComponentDefinition799);
-            lv_rootNode_24_0=ruleElement();
-
-            state._fsp--;
-            if (state.failed) return current;
-            if ( state.backtracking==0 ) {
-
-              	        if (current==null) {
-              	            current = createModelElementForParent(grammarAccess.getComponentDefinitionRule());
-              	        }
-                     		set(
-                     			current, 
-                     			"rootNode",
-                      		lv_rootNode_24_0, 
-                      		"Element");
-              	        afterParserOrEnumRuleCall();
-              	    
-            }
-
-            }
-
-
-            }
-
-            otherlv_25=(Token)match(input,25,FOLLOW_25_in_ruleComponentDefinition811); if (state.failed) return current;
-            if ( state.backtracking==0 ) {
-
-                  	newLeafNode(otherlv_25, grammarAccess.getComponentDefinitionAccess().getRightCurlyBracketKeyword_10());
-                  
-            }
-
-            }
-
-
-            }
-
-            if ( state.backtracking==0 ) {
-               leaveRule(); 
-            }
-        }
-         
-            catch (RecognitionException re) { 
-                recover(input,re); 
-                appendSkippedTokens();
-            } 
-        finally {
-        }
-        return current;
-    }
-    // $ANTLR end "ruleComponentDefinition"
-
-
     // $ANTLR start "entryRuleImport"
-    // ../at.bestsolution.efxclipse.tooling.fxgraph/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/parser/antlr/internal/InternalFXGraph.g:479:1: entryRuleImport returns [EObject current=null] : iv_ruleImport= ruleImport EOF ;
+    // ../at.bestsolution.efxclipse.tooling.fxgraph/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/parser/antlr/internal/InternalFXGraph.g:185:1: entryRuleImport returns [EObject current=null] : iv_ruleImport= ruleImport EOF ;
     public final EObject entryRuleImport() throws RecognitionException {
         EObject current = null;
 
@@ -1296,13 +506,13 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../at.bestsolution.efxclipse.tooling.fxgraph/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/parser/antlr/internal/InternalFXGraph.g:480:2: (iv_ruleImport= ruleImport EOF )
-            // ../at.bestsolution.efxclipse.tooling.fxgraph/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/parser/antlr/internal/InternalFXGraph.g:481:2: iv_ruleImport= ruleImport EOF
+            // ../at.bestsolution.efxclipse.tooling.fxgraph/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/parser/antlr/internal/InternalFXGraph.g:186:2: (iv_ruleImport= ruleImport EOF )
+            // ../at.bestsolution.efxclipse.tooling.fxgraph/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/parser/antlr/internal/InternalFXGraph.g:187:2: iv_ruleImport= ruleImport EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getImportRule()); 
             }
-            pushFollow(FOLLOW_ruleImport_in_entryRuleImport847);
+            pushFollow(FOLLOW_ruleImport_in_entryRuleImport315);
             iv_ruleImport=ruleImport();
 
             state._fsp--;
@@ -1310,7 +520,7 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
             if ( state.backtracking==0 ) {
                current =iv_ruleImport; 
             }
-            match(input,EOF,FOLLOW_EOF_in_entryRuleImport857); if (state.failed) return current;
+            match(input,EOF,FOLLOW_EOF_in_entryRuleImport325); if (state.failed) return current;
 
             }
 
@@ -1328,7 +538,7 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleImport"
-    // ../at.bestsolution.efxclipse.tooling.fxgraph/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/parser/antlr/internal/InternalFXGraph.g:488:1: ruleImport returns [EObject current=null] : (otherlv_0= 'import' ( (lv_importedNamespace_1_0= ruleQualifiedNameWithWildCard ) ) ) ;
+    // ../at.bestsolution.efxclipse.tooling.fxgraph/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/parser/antlr/internal/InternalFXGraph.g:194:1: ruleImport returns [EObject current=null] : (otherlv_0= 'import' ( (lv_importedNamespace_1_0= ruleQualifiedNameWithWildCard ) ) ) ;
     public final EObject ruleImport() throws RecognitionException {
         EObject current = null;
 
@@ -1339,30 +549,30 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../at.bestsolution.efxclipse.tooling.fxgraph/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/parser/antlr/internal/InternalFXGraph.g:491:28: ( (otherlv_0= 'import' ( (lv_importedNamespace_1_0= ruleQualifiedNameWithWildCard ) ) ) )
-            // ../at.bestsolution.efxclipse.tooling.fxgraph/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/parser/antlr/internal/InternalFXGraph.g:492:1: (otherlv_0= 'import' ( (lv_importedNamespace_1_0= ruleQualifiedNameWithWildCard ) ) )
+            // ../at.bestsolution.efxclipse.tooling.fxgraph/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/parser/antlr/internal/InternalFXGraph.g:197:28: ( (otherlv_0= 'import' ( (lv_importedNamespace_1_0= ruleQualifiedNameWithWildCard ) ) ) )
+            // ../at.bestsolution.efxclipse.tooling.fxgraph/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/parser/antlr/internal/InternalFXGraph.g:198:1: (otherlv_0= 'import' ( (lv_importedNamespace_1_0= ruleQualifiedNameWithWildCard ) ) )
             {
-            // ../at.bestsolution.efxclipse.tooling.fxgraph/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/parser/antlr/internal/InternalFXGraph.g:492:1: (otherlv_0= 'import' ( (lv_importedNamespace_1_0= ruleQualifiedNameWithWildCard ) ) )
-            // ../at.bestsolution.efxclipse.tooling.fxgraph/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/parser/antlr/internal/InternalFXGraph.g:492:3: otherlv_0= 'import' ( (lv_importedNamespace_1_0= ruleQualifiedNameWithWildCard ) )
+            // ../at.bestsolution.efxclipse.tooling.fxgraph/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/parser/antlr/internal/InternalFXGraph.g:198:1: (otherlv_0= 'import' ( (lv_importedNamespace_1_0= ruleQualifiedNameWithWildCard ) ) )
+            // ../at.bestsolution.efxclipse.tooling.fxgraph/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/parser/antlr/internal/InternalFXGraph.g:198:3: otherlv_0= 'import' ( (lv_importedNamespace_1_0= ruleQualifiedNameWithWildCard ) )
             {
-            otherlv_0=(Token)match(input,26,FOLLOW_26_in_ruleImport894); if (state.failed) return current;
+            otherlv_0=(Token)match(input,16,FOLLOW_16_in_ruleImport362); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
                   	newLeafNode(otherlv_0, grammarAccess.getImportAccess().getImportKeyword_0());
                   
             }
-            // ../at.bestsolution.efxclipse.tooling.fxgraph/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/parser/antlr/internal/InternalFXGraph.g:496:1: ( (lv_importedNamespace_1_0= ruleQualifiedNameWithWildCard ) )
-            // ../at.bestsolution.efxclipse.tooling.fxgraph/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/parser/antlr/internal/InternalFXGraph.g:497:1: (lv_importedNamespace_1_0= ruleQualifiedNameWithWildCard )
+            // ../at.bestsolution.efxclipse.tooling.fxgraph/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/parser/antlr/internal/InternalFXGraph.g:202:1: ( (lv_importedNamespace_1_0= ruleQualifiedNameWithWildCard ) )
+            // ../at.bestsolution.efxclipse.tooling.fxgraph/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/parser/antlr/internal/InternalFXGraph.g:203:1: (lv_importedNamespace_1_0= ruleQualifiedNameWithWildCard )
             {
-            // ../at.bestsolution.efxclipse.tooling.fxgraph/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/parser/antlr/internal/InternalFXGraph.g:497:1: (lv_importedNamespace_1_0= ruleQualifiedNameWithWildCard )
-            // ../at.bestsolution.efxclipse.tooling.fxgraph/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/parser/antlr/internal/InternalFXGraph.g:498:3: lv_importedNamespace_1_0= ruleQualifiedNameWithWildCard
+            // ../at.bestsolution.efxclipse.tooling.fxgraph/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/parser/antlr/internal/InternalFXGraph.g:203:1: (lv_importedNamespace_1_0= ruleQualifiedNameWithWildCard )
+            // ../at.bestsolution.efxclipse.tooling.fxgraph/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/parser/antlr/internal/InternalFXGraph.g:204:3: lv_importedNamespace_1_0= ruleQualifiedNameWithWildCard
             {
             if ( state.backtracking==0 ) {
                
               	        newCompositeNode(grammarAccess.getImportAccess().getImportedNamespaceQualifiedNameWithWildCardParserRuleCall_1_0()); 
               	    
             }
-            pushFollow(FOLLOW_ruleQualifiedNameWithWildCard_in_ruleImport915);
+            pushFollow(FOLLOW_ruleQualifiedNameWithWildCard_in_ruleImport383);
             lv_importedNamespace_1_0=ruleQualifiedNameWithWildCard();
 
             state._fsp--;
@@ -1406,6 +616,796 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
         return current;
     }
     // $ANTLR end "ruleImport"
+
+
+    // $ANTLR start "entryRuleComponentDefinition"
+    // ../at.bestsolution.efxclipse.tooling.fxgraph/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/parser/antlr/internal/InternalFXGraph.g:228:1: entryRuleComponentDefinition returns [EObject current=null] : iv_ruleComponentDefinition= ruleComponentDefinition EOF ;
+    public final EObject entryRuleComponentDefinition() throws RecognitionException {
+        EObject current = null;
+
+        EObject iv_ruleComponentDefinition = null;
+
+
+        try {
+            // ../at.bestsolution.efxclipse.tooling.fxgraph/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/parser/antlr/internal/InternalFXGraph.g:229:2: (iv_ruleComponentDefinition= ruleComponentDefinition EOF )
+            // ../at.bestsolution.efxclipse.tooling.fxgraph/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/parser/antlr/internal/InternalFXGraph.g:230:2: iv_ruleComponentDefinition= ruleComponentDefinition EOF
+            {
+            if ( state.backtracking==0 ) {
+               newCompositeNode(grammarAccess.getComponentDefinitionRule()); 
+            }
+            pushFollow(FOLLOW_ruleComponentDefinition_in_entryRuleComponentDefinition419);
+            iv_ruleComponentDefinition=ruleComponentDefinition();
+
+            state._fsp--;
+            if (state.failed) return current;
+            if ( state.backtracking==0 ) {
+               current =iv_ruleComponentDefinition; 
+            }
+            match(input,EOF,FOLLOW_EOF_in_entryRuleComponentDefinition429); if (state.failed) return current;
+
+            }
+
+        }
+         
+            catch (RecognitionException re) { 
+                recover(input,re); 
+                appendSkippedTokens();
+            } 
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "entryRuleComponentDefinition"
+
+
+    // $ANTLR start "ruleComponentDefinition"
+    // ../at.bestsolution.efxclipse.tooling.fxgraph/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/parser/antlr/internal/InternalFXGraph.g:237:1: ruleComponentDefinition returns [EObject current=null] : (otherlv_0= 'component' ( (lv_name_1_0= ruleValidID ) ) (otherlv_2= 'controlledby' ( (lv_controller_3_0= ruleJvmTypeReference ) ) )? (otherlv_4= 'styledwith' ( ( (lv_previewCssFiles_5_0= RULE_STRING ) ) | (otherlv_6= '[' ( (lv_previewCssFiles_7_0= RULE_STRING ) ) (otherlv_8= ',' ( (lv_previewCssFiles_9_0= RULE_STRING ) ) )* otherlv_10= ']' ) ) )? (otherlv_11= 'resourcefile' ( (lv_previewResourceBundle_12_0= RULE_STRING ) ) )? (otherlv_13= 'extraClasspath' otherlv_14= '[' ( (lv_previewClasspathEntries_15_0= RULE_STRING ) ) (otherlv_16= ',' ( (lv_previewClasspathEntries_17_0= RULE_STRING ) ) )* otherlv_18= ']' )? otherlv_19= '{' ( (lv_scripts_20_0= ruleScript ) )? ( ( (lv_defines_21_0= ruleDefine ) ) (otherlv_22= ',' ( (lv_defines_23_0= ruleDefine ) ) )* )? ( (lv_rootNode_24_0= ruleElement ) ) otherlv_25= '}' ) ;
+    public final EObject ruleComponentDefinition() throws RecognitionException {
+        EObject current = null;
+
+        Token otherlv_0=null;
+        Token otherlv_2=null;
+        Token otherlv_4=null;
+        Token lv_previewCssFiles_5_0=null;
+        Token otherlv_6=null;
+        Token lv_previewCssFiles_7_0=null;
+        Token otherlv_8=null;
+        Token lv_previewCssFiles_9_0=null;
+        Token otherlv_10=null;
+        Token otherlv_11=null;
+        Token lv_previewResourceBundle_12_0=null;
+        Token otherlv_13=null;
+        Token otherlv_14=null;
+        Token lv_previewClasspathEntries_15_0=null;
+        Token otherlv_16=null;
+        Token lv_previewClasspathEntries_17_0=null;
+        Token otherlv_18=null;
+        Token otherlv_19=null;
+        Token otherlv_22=null;
+        Token otherlv_25=null;
+        AntlrDatatypeRuleToken lv_name_1_0 = null;
+
+        EObject lv_controller_3_0 = null;
+
+        EObject lv_scripts_20_0 = null;
+
+        EObject lv_defines_21_0 = null;
+
+        EObject lv_defines_23_0 = null;
+
+        EObject lv_rootNode_24_0 = null;
+
+
+         enterRule(); 
+            
+        try {
+            // ../at.bestsolution.efxclipse.tooling.fxgraph/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/parser/antlr/internal/InternalFXGraph.g:240:28: ( (otherlv_0= 'component' ( (lv_name_1_0= ruleValidID ) ) (otherlv_2= 'controlledby' ( (lv_controller_3_0= ruleJvmTypeReference ) ) )? (otherlv_4= 'styledwith' ( ( (lv_previewCssFiles_5_0= RULE_STRING ) ) | (otherlv_6= '[' ( (lv_previewCssFiles_7_0= RULE_STRING ) ) (otherlv_8= ',' ( (lv_previewCssFiles_9_0= RULE_STRING ) ) )* otherlv_10= ']' ) ) )? (otherlv_11= 'resourcefile' ( (lv_previewResourceBundle_12_0= RULE_STRING ) ) )? (otherlv_13= 'extraClasspath' otherlv_14= '[' ( (lv_previewClasspathEntries_15_0= RULE_STRING ) ) (otherlv_16= ',' ( (lv_previewClasspathEntries_17_0= RULE_STRING ) ) )* otherlv_18= ']' )? otherlv_19= '{' ( (lv_scripts_20_0= ruleScript ) )? ( ( (lv_defines_21_0= ruleDefine ) ) (otherlv_22= ',' ( (lv_defines_23_0= ruleDefine ) ) )* )? ( (lv_rootNode_24_0= ruleElement ) ) otherlv_25= '}' ) )
+            // ../at.bestsolution.efxclipse.tooling.fxgraph/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/parser/antlr/internal/InternalFXGraph.g:241:1: (otherlv_0= 'component' ( (lv_name_1_0= ruleValidID ) ) (otherlv_2= 'controlledby' ( (lv_controller_3_0= ruleJvmTypeReference ) ) )? (otherlv_4= 'styledwith' ( ( (lv_previewCssFiles_5_0= RULE_STRING ) ) | (otherlv_6= '[' ( (lv_previewCssFiles_7_0= RULE_STRING ) ) (otherlv_8= ',' ( (lv_previewCssFiles_9_0= RULE_STRING ) ) )* otherlv_10= ']' ) ) )? (otherlv_11= 'resourcefile' ( (lv_previewResourceBundle_12_0= RULE_STRING ) ) )? (otherlv_13= 'extraClasspath' otherlv_14= '[' ( (lv_previewClasspathEntries_15_0= RULE_STRING ) ) (otherlv_16= ',' ( (lv_previewClasspathEntries_17_0= RULE_STRING ) ) )* otherlv_18= ']' )? otherlv_19= '{' ( (lv_scripts_20_0= ruleScript ) )? ( ( (lv_defines_21_0= ruleDefine ) ) (otherlv_22= ',' ( (lv_defines_23_0= ruleDefine ) ) )* )? ( (lv_rootNode_24_0= ruleElement ) ) otherlv_25= '}' )
+            {
+            // ../at.bestsolution.efxclipse.tooling.fxgraph/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/parser/antlr/internal/InternalFXGraph.g:241:1: (otherlv_0= 'component' ( (lv_name_1_0= ruleValidID ) ) (otherlv_2= 'controlledby' ( (lv_controller_3_0= ruleJvmTypeReference ) ) )? (otherlv_4= 'styledwith' ( ( (lv_previewCssFiles_5_0= RULE_STRING ) ) | (otherlv_6= '[' ( (lv_previewCssFiles_7_0= RULE_STRING ) ) (otherlv_8= ',' ( (lv_previewCssFiles_9_0= RULE_STRING ) ) )* otherlv_10= ']' ) ) )? (otherlv_11= 'resourcefile' ( (lv_previewResourceBundle_12_0= RULE_STRING ) ) )? (otherlv_13= 'extraClasspath' otherlv_14= '[' ( (lv_previewClasspathEntries_15_0= RULE_STRING ) ) (otherlv_16= ',' ( (lv_previewClasspathEntries_17_0= RULE_STRING ) ) )* otherlv_18= ']' )? otherlv_19= '{' ( (lv_scripts_20_0= ruleScript ) )? ( ( (lv_defines_21_0= ruleDefine ) ) (otherlv_22= ',' ( (lv_defines_23_0= ruleDefine ) ) )* )? ( (lv_rootNode_24_0= ruleElement ) ) otherlv_25= '}' )
+            // ../at.bestsolution.efxclipse.tooling.fxgraph/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/parser/antlr/internal/InternalFXGraph.g:241:3: otherlv_0= 'component' ( (lv_name_1_0= ruleValidID ) ) (otherlv_2= 'controlledby' ( (lv_controller_3_0= ruleJvmTypeReference ) ) )? (otherlv_4= 'styledwith' ( ( (lv_previewCssFiles_5_0= RULE_STRING ) ) | (otherlv_6= '[' ( (lv_previewCssFiles_7_0= RULE_STRING ) ) (otherlv_8= ',' ( (lv_previewCssFiles_9_0= RULE_STRING ) ) )* otherlv_10= ']' ) ) )? (otherlv_11= 'resourcefile' ( (lv_previewResourceBundle_12_0= RULE_STRING ) ) )? (otherlv_13= 'extraClasspath' otherlv_14= '[' ( (lv_previewClasspathEntries_15_0= RULE_STRING ) ) (otherlv_16= ',' ( (lv_previewClasspathEntries_17_0= RULE_STRING ) ) )* otherlv_18= ']' )? otherlv_19= '{' ( (lv_scripts_20_0= ruleScript ) )? ( ( (lv_defines_21_0= ruleDefine ) ) (otherlv_22= ',' ( (lv_defines_23_0= ruleDefine ) ) )* )? ( (lv_rootNode_24_0= ruleElement ) ) otherlv_25= '}'
+            {
+            otherlv_0=(Token)match(input,17,FOLLOW_17_in_ruleComponentDefinition466); if (state.failed) return current;
+            if ( state.backtracking==0 ) {
+
+                  	newLeafNode(otherlv_0, grammarAccess.getComponentDefinitionAccess().getComponentKeyword_0());
+                  
+            }
+            // ../at.bestsolution.efxclipse.tooling.fxgraph/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/parser/antlr/internal/InternalFXGraph.g:245:1: ( (lv_name_1_0= ruleValidID ) )
+            // ../at.bestsolution.efxclipse.tooling.fxgraph/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/parser/antlr/internal/InternalFXGraph.g:246:1: (lv_name_1_0= ruleValidID )
+            {
+            // ../at.bestsolution.efxclipse.tooling.fxgraph/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/parser/antlr/internal/InternalFXGraph.g:246:1: (lv_name_1_0= ruleValidID )
+            // ../at.bestsolution.efxclipse.tooling.fxgraph/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/parser/antlr/internal/InternalFXGraph.g:247:3: lv_name_1_0= ruleValidID
+            {
+            if ( state.backtracking==0 ) {
+               
+              	        newCompositeNode(grammarAccess.getComponentDefinitionAccess().getNameValidIDParserRuleCall_1_0()); 
+              	    
+            }
+            pushFollow(FOLLOW_ruleValidID_in_ruleComponentDefinition487);
+            lv_name_1_0=ruleValidID();
+
+            state._fsp--;
+            if (state.failed) return current;
+            if ( state.backtracking==0 ) {
+
+              	        if (current==null) {
+              	            current = createModelElementForParent(grammarAccess.getComponentDefinitionRule());
+              	        }
+                     		set(
+                     			current, 
+                     			"name",
+                      		lv_name_1_0, 
+                      		"ValidID");
+              	        afterParserOrEnumRuleCall();
+              	    
+            }
+
+            }
+
+
+            }
+
+            // ../at.bestsolution.efxclipse.tooling.fxgraph/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/parser/antlr/internal/InternalFXGraph.g:263:2: (otherlv_2= 'controlledby' ( (lv_controller_3_0= ruleJvmTypeReference ) ) )?
+            int alt3=2;
+            int LA3_0 = input.LA(1);
+
+            if ( (LA3_0==18) ) {
+                alt3=1;
+            }
+            switch (alt3) {
+                case 1 :
+                    // ../at.bestsolution.efxclipse.tooling.fxgraph/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/parser/antlr/internal/InternalFXGraph.g:263:4: otherlv_2= 'controlledby' ( (lv_controller_3_0= ruleJvmTypeReference ) )
+                    {
+                    otherlv_2=(Token)match(input,18,FOLLOW_18_in_ruleComponentDefinition500); if (state.failed) return current;
+                    if ( state.backtracking==0 ) {
+
+                          	newLeafNode(otherlv_2, grammarAccess.getComponentDefinitionAccess().getControlledbyKeyword_2_0());
+                          
+                    }
+                    // ../at.bestsolution.efxclipse.tooling.fxgraph/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/parser/antlr/internal/InternalFXGraph.g:267:1: ( (lv_controller_3_0= ruleJvmTypeReference ) )
+                    // ../at.bestsolution.efxclipse.tooling.fxgraph/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/parser/antlr/internal/InternalFXGraph.g:268:1: (lv_controller_3_0= ruleJvmTypeReference )
+                    {
+                    // ../at.bestsolution.efxclipse.tooling.fxgraph/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/parser/antlr/internal/InternalFXGraph.g:268:1: (lv_controller_3_0= ruleJvmTypeReference )
+                    // ../at.bestsolution.efxclipse.tooling.fxgraph/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/parser/antlr/internal/InternalFXGraph.g:269:3: lv_controller_3_0= ruleJvmTypeReference
+                    {
+                    if ( state.backtracking==0 ) {
+                       
+                      	        newCompositeNode(grammarAccess.getComponentDefinitionAccess().getControllerJvmTypeReferenceParserRuleCall_2_1_0()); 
+                      	    
+                    }
+                    pushFollow(FOLLOW_ruleJvmTypeReference_in_ruleComponentDefinition521);
+                    lv_controller_3_0=ruleJvmTypeReference();
+
+                    state._fsp--;
+                    if (state.failed) return current;
+                    if ( state.backtracking==0 ) {
+
+                      	        if (current==null) {
+                      	            current = createModelElementForParent(grammarAccess.getComponentDefinitionRule());
+                      	        }
+                             		set(
+                             			current, 
+                             			"controller",
+                              		lv_controller_3_0, 
+                              		"JvmTypeReference");
+                      	        afterParserOrEnumRuleCall();
+                      	    
+                    }
+
+                    }
+
+
+                    }
+
+
+                    }
+                    break;
+
+            }
+
+            // ../at.bestsolution.efxclipse.tooling.fxgraph/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/parser/antlr/internal/InternalFXGraph.g:285:4: (otherlv_4= 'styledwith' ( ( (lv_previewCssFiles_5_0= RULE_STRING ) ) | (otherlv_6= '[' ( (lv_previewCssFiles_7_0= RULE_STRING ) ) (otherlv_8= ',' ( (lv_previewCssFiles_9_0= RULE_STRING ) ) )* otherlv_10= ']' ) ) )?
+            int alt6=2;
+            int LA6_0 = input.LA(1);
+
+            if ( (LA6_0==19) ) {
+                alt6=1;
+            }
+            switch (alt6) {
+                case 1 :
+                    // ../at.bestsolution.efxclipse.tooling.fxgraph/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/parser/antlr/internal/InternalFXGraph.g:285:6: otherlv_4= 'styledwith' ( ( (lv_previewCssFiles_5_0= RULE_STRING ) ) | (otherlv_6= '[' ( (lv_previewCssFiles_7_0= RULE_STRING ) ) (otherlv_8= ',' ( (lv_previewCssFiles_9_0= RULE_STRING ) ) )* otherlv_10= ']' ) )
+                    {
+                    otherlv_4=(Token)match(input,19,FOLLOW_19_in_ruleComponentDefinition536); if (state.failed) return current;
+                    if ( state.backtracking==0 ) {
+
+                          	newLeafNode(otherlv_4, grammarAccess.getComponentDefinitionAccess().getStyledwithKeyword_3_0());
+                          
+                    }
+                    // ../at.bestsolution.efxclipse.tooling.fxgraph/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/parser/antlr/internal/InternalFXGraph.g:289:1: ( ( (lv_previewCssFiles_5_0= RULE_STRING ) ) | (otherlv_6= '[' ( (lv_previewCssFiles_7_0= RULE_STRING ) ) (otherlv_8= ',' ( (lv_previewCssFiles_9_0= RULE_STRING ) ) )* otherlv_10= ']' ) )
+                    int alt5=2;
+                    int LA5_0 = input.LA(1);
+
+                    if ( (LA5_0==RULE_STRING) ) {
+                        alt5=1;
+                    }
+                    else if ( (LA5_0==20) ) {
+                        alt5=2;
+                    }
+                    else {
+                        if (state.backtracking>0) {state.failed=true; return current;}
+                        NoViableAltException nvae =
+                            new NoViableAltException("", 5, 0, input);
+
+                        throw nvae;
+                    }
+                    switch (alt5) {
+                        case 1 :
+                            // ../at.bestsolution.efxclipse.tooling.fxgraph/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/parser/antlr/internal/InternalFXGraph.g:289:2: ( (lv_previewCssFiles_5_0= RULE_STRING ) )
+                            {
+                            // ../at.bestsolution.efxclipse.tooling.fxgraph/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/parser/antlr/internal/InternalFXGraph.g:289:2: ( (lv_previewCssFiles_5_0= RULE_STRING ) )
+                            // ../at.bestsolution.efxclipse.tooling.fxgraph/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/parser/antlr/internal/InternalFXGraph.g:290:1: (lv_previewCssFiles_5_0= RULE_STRING )
+                            {
+                            // ../at.bestsolution.efxclipse.tooling.fxgraph/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/parser/antlr/internal/InternalFXGraph.g:290:1: (lv_previewCssFiles_5_0= RULE_STRING )
+                            // ../at.bestsolution.efxclipse.tooling.fxgraph/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/parser/antlr/internal/InternalFXGraph.g:291:3: lv_previewCssFiles_5_0= RULE_STRING
+                            {
+                            lv_previewCssFiles_5_0=(Token)match(input,RULE_STRING,FOLLOW_RULE_STRING_in_ruleComponentDefinition554); if (state.failed) return current;
+                            if ( state.backtracking==0 ) {
+
+                              			newLeafNode(lv_previewCssFiles_5_0, grammarAccess.getComponentDefinitionAccess().getPreviewCssFilesSTRINGTerminalRuleCall_3_1_0_0()); 
+                              		
+                            }
+                            if ( state.backtracking==0 ) {
+
+                              	        if (current==null) {
+                              	            current = createModelElement(grammarAccess.getComponentDefinitionRule());
+                              	        }
+                                     		addWithLastConsumed(
+                                     			current, 
+                                     			"previewCssFiles",
+                                      		lv_previewCssFiles_5_0, 
+                                      		"STRING");
+                              	    
+                            }
+
+                            }
+
+
+                            }
+
+
+                            }
+                            break;
+                        case 2 :
+                            // ../at.bestsolution.efxclipse.tooling.fxgraph/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/parser/antlr/internal/InternalFXGraph.g:308:6: (otherlv_6= '[' ( (lv_previewCssFiles_7_0= RULE_STRING ) ) (otherlv_8= ',' ( (lv_previewCssFiles_9_0= RULE_STRING ) ) )* otherlv_10= ']' )
+                            {
+                            // ../at.bestsolution.efxclipse.tooling.fxgraph/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/parser/antlr/internal/InternalFXGraph.g:308:6: (otherlv_6= '[' ( (lv_previewCssFiles_7_0= RULE_STRING ) ) (otherlv_8= ',' ( (lv_previewCssFiles_9_0= RULE_STRING ) ) )* otherlv_10= ']' )
+                            // ../at.bestsolution.efxclipse.tooling.fxgraph/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/parser/antlr/internal/InternalFXGraph.g:308:8: otherlv_6= '[' ( (lv_previewCssFiles_7_0= RULE_STRING ) ) (otherlv_8= ',' ( (lv_previewCssFiles_9_0= RULE_STRING ) ) )* otherlv_10= ']'
+                            {
+                            otherlv_6=(Token)match(input,20,FOLLOW_20_in_ruleComponentDefinition578); if (state.failed) return current;
+                            if ( state.backtracking==0 ) {
+
+                                  	newLeafNode(otherlv_6, grammarAccess.getComponentDefinitionAccess().getLeftSquareBracketKeyword_3_1_1_0());
+                                  
+                            }
+                            // ../at.bestsolution.efxclipse.tooling.fxgraph/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/parser/antlr/internal/InternalFXGraph.g:312:1: ( (lv_previewCssFiles_7_0= RULE_STRING ) )
+                            // ../at.bestsolution.efxclipse.tooling.fxgraph/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/parser/antlr/internal/InternalFXGraph.g:313:1: (lv_previewCssFiles_7_0= RULE_STRING )
+                            {
+                            // ../at.bestsolution.efxclipse.tooling.fxgraph/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/parser/antlr/internal/InternalFXGraph.g:313:1: (lv_previewCssFiles_7_0= RULE_STRING )
+                            // ../at.bestsolution.efxclipse.tooling.fxgraph/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/parser/antlr/internal/InternalFXGraph.g:314:3: lv_previewCssFiles_7_0= RULE_STRING
+                            {
+                            lv_previewCssFiles_7_0=(Token)match(input,RULE_STRING,FOLLOW_RULE_STRING_in_ruleComponentDefinition595); if (state.failed) return current;
+                            if ( state.backtracking==0 ) {
+
+                              			newLeafNode(lv_previewCssFiles_7_0, grammarAccess.getComponentDefinitionAccess().getPreviewCssFilesSTRINGTerminalRuleCall_3_1_1_1_0()); 
+                              		
+                            }
+                            if ( state.backtracking==0 ) {
+
+                              	        if (current==null) {
+                              	            current = createModelElement(grammarAccess.getComponentDefinitionRule());
+                              	        }
+                                     		addWithLastConsumed(
+                                     			current, 
+                                     			"previewCssFiles",
+                                      		lv_previewCssFiles_7_0, 
+                                      		"STRING");
+                              	    
+                            }
+
+                            }
+
+
+                            }
+
+                            // ../at.bestsolution.efxclipse.tooling.fxgraph/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/parser/antlr/internal/InternalFXGraph.g:330:2: (otherlv_8= ',' ( (lv_previewCssFiles_9_0= RULE_STRING ) ) )*
+                            loop4:
+                            do {
+                                int alt4=2;
+                                int LA4_0 = input.LA(1);
+
+                                if ( (LA4_0==21) ) {
+                                    alt4=1;
+                                }
+
+
+                                switch (alt4) {
+                            	case 1 :
+                            	    // ../at.bestsolution.efxclipse.tooling.fxgraph/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/parser/antlr/internal/InternalFXGraph.g:330:4: otherlv_8= ',' ( (lv_previewCssFiles_9_0= RULE_STRING ) )
+                            	    {
+                            	    otherlv_8=(Token)match(input,21,FOLLOW_21_in_ruleComponentDefinition613); if (state.failed) return current;
+                            	    if ( state.backtracking==0 ) {
+
+                            	          	newLeafNode(otherlv_8, grammarAccess.getComponentDefinitionAccess().getCommaKeyword_3_1_1_2_0());
+                            	          
+                            	    }
+                            	    // ../at.bestsolution.efxclipse.tooling.fxgraph/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/parser/antlr/internal/InternalFXGraph.g:334:1: ( (lv_previewCssFiles_9_0= RULE_STRING ) )
+                            	    // ../at.bestsolution.efxclipse.tooling.fxgraph/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/parser/antlr/internal/InternalFXGraph.g:335:1: (lv_previewCssFiles_9_0= RULE_STRING )
+                            	    {
+                            	    // ../at.bestsolution.efxclipse.tooling.fxgraph/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/parser/antlr/internal/InternalFXGraph.g:335:1: (lv_previewCssFiles_9_0= RULE_STRING )
+                            	    // ../at.bestsolution.efxclipse.tooling.fxgraph/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/parser/antlr/internal/InternalFXGraph.g:336:3: lv_previewCssFiles_9_0= RULE_STRING
+                            	    {
+                            	    lv_previewCssFiles_9_0=(Token)match(input,RULE_STRING,FOLLOW_RULE_STRING_in_ruleComponentDefinition630); if (state.failed) return current;
+                            	    if ( state.backtracking==0 ) {
+
+                            	      			newLeafNode(lv_previewCssFiles_9_0, grammarAccess.getComponentDefinitionAccess().getPreviewCssFilesSTRINGTerminalRuleCall_3_1_1_2_1_0()); 
+                            	      		
+                            	    }
+                            	    if ( state.backtracking==0 ) {
+
+                            	      	        if (current==null) {
+                            	      	            current = createModelElement(grammarAccess.getComponentDefinitionRule());
+                            	      	        }
+                            	             		addWithLastConsumed(
+                            	             			current, 
+                            	             			"previewCssFiles",
+                            	              		lv_previewCssFiles_9_0, 
+                            	              		"STRING");
+                            	      	    
+                            	    }
+
+                            	    }
+
+
+                            	    }
+
+
+                            	    }
+                            	    break;
+
+                            	default :
+                            	    break loop4;
+                                }
+                            } while (true);
+
+                            otherlv_10=(Token)match(input,22,FOLLOW_22_in_ruleComponentDefinition649); if (state.failed) return current;
+                            if ( state.backtracking==0 ) {
+
+                                  	newLeafNode(otherlv_10, grammarAccess.getComponentDefinitionAccess().getRightSquareBracketKeyword_3_1_1_3());
+                                  
+                            }
+
+                            }
+
+
+                            }
+                            break;
+
+                    }
+
+
+                    }
+                    break;
+
+            }
+
+            // ../at.bestsolution.efxclipse.tooling.fxgraph/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/parser/antlr/internal/InternalFXGraph.g:356:5: (otherlv_11= 'resourcefile' ( (lv_previewResourceBundle_12_0= RULE_STRING ) ) )?
+            int alt7=2;
+            int LA7_0 = input.LA(1);
+
+            if ( (LA7_0==23) ) {
+                alt7=1;
+            }
+            switch (alt7) {
+                case 1 :
+                    // ../at.bestsolution.efxclipse.tooling.fxgraph/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/parser/antlr/internal/InternalFXGraph.g:356:7: otherlv_11= 'resourcefile' ( (lv_previewResourceBundle_12_0= RULE_STRING ) )
+                    {
+                    otherlv_11=(Token)match(input,23,FOLLOW_23_in_ruleComponentDefinition666); if (state.failed) return current;
+                    if ( state.backtracking==0 ) {
+
+                          	newLeafNode(otherlv_11, grammarAccess.getComponentDefinitionAccess().getResourcefileKeyword_4_0());
+                          
+                    }
+                    // ../at.bestsolution.efxclipse.tooling.fxgraph/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/parser/antlr/internal/InternalFXGraph.g:360:1: ( (lv_previewResourceBundle_12_0= RULE_STRING ) )
+                    // ../at.bestsolution.efxclipse.tooling.fxgraph/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/parser/antlr/internal/InternalFXGraph.g:361:1: (lv_previewResourceBundle_12_0= RULE_STRING )
+                    {
+                    // ../at.bestsolution.efxclipse.tooling.fxgraph/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/parser/antlr/internal/InternalFXGraph.g:361:1: (lv_previewResourceBundle_12_0= RULE_STRING )
+                    // ../at.bestsolution.efxclipse.tooling.fxgraph/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/parser/antlr/internal/InternalFXGraph.g:362:3: lv_previewResourceBundle_12_0= RULE_STRING
+                    {
+                    lv_previewResourceBundle_12_0=(Token)match(input,RULE_STRING,FOLLOW_RULE_STRING_in_ruleComponentDefinition683); if (state.failed) return current;
+                    if ( state.backtracking==0 ) {
+
+                      			newLeafNode(lv_previewResourceBundle_12_0, grammarAccess.getComponentDefinitionAccess().getPreviewResourceBundleSTRINGTerminalRuleCall_4_1_0()); 
+                      		
+                    }
+                    if ( state.backtracking==0 ) {
+
+                      	        if (current==null) {
+                      	            current = createModelElement(grammarAccess.getComponentDefinitionRule());
+                      	        }
+                             		setWithLastConsumed(
+                             			current, 
+                             			"previewResourceBundle",
+                              		lv_previewResourceBundle_12_0, 
+                              		"STRING");
+                      	    
+                    }
+
+                    }
+
+
+                    }
+
+
+                    }
+                    break;
+
+            }
+
+            // ../at.bestsolution.efxclipse.tooling.fxgraph/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/parser/antlr/internal/InternalFXGraph.g:378:4: (otherlv_13= 'extraClasspath' otherlv_14= '[' ( (lv_previewClasspathEntries_15_0= RULE_STRING ) ) (otherlv_16= ',' ( (lv_previewClasspathEntries_17_0= RULE_STRING ) ) )* otherlv_18= ']' )?
+            int alt9=2;
+            int LA9_0 = input.LA(1);
+
+            if ( (LA9_0==24) ) {
+                alt9=1;
+            }
+            switch (alt9) {
+                case 1 :
+                    // ../at.bestsolution.efxclipse.tooling.fxgraph/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/parser/antlr/internal/InternalFXGraph.g:378:6: otherlv_13= 'extraClasspath' otherlv_14= '[' ( (lv_previewClasspathEntries_15_0= RULE_STRING ) ) (otherlv_16= ',' ( (lv_previewClasspathEntries_17_0= RULE_STRING ) ) )* otherlv_18= ']'
+                    {
+                    otherlv_13=(Token)match(input,24,FOLLOW_24_in_ruleComponentDefinition703); if (state.failed) return current;
+                    if ( state.backtracking==0 ) {
+
+                          	newLeafNode(otherlv_13, grammarAccess.getComponentDefinitionAccess().getExtraClasspathKeyword_5_0());
+                          
+                    }
+                    otherlv_14=(Token)match(input,20,FOLLOW_20_in_ruleComponentDefinition715); if (state.failed) return current;
+                    if ( state.backtracking==0 ) {
+
+                          	newLeafNode(otherlv_14, grammarAccess.getComponentDefinitionAccess().getLeftSquareBracketKeyword_5_1());
+                          
+                    }
+                    // ../at.bestsolution.efxclipse.tooling.fxgraph/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/parser/antlr/internal/InternalFXGraph.g:386:1: ( (lv_previewClasspathEntries_15_0= RULE_STRING ) )
+                    // ../at.bestsolution.efxclipse.tooling.fxgraph/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/parser/antlr/internal/InternalFXGraph.g:387:1: (lv_previewClasspathEntries_15_0= RULE_STRING )
+                    {
+                    // ../at.bestsolution.efxclipse.tooling.fxgraph/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/parser/antlr/internal/InternalFXGraph.g:387:1: (lv_previewClasspathEntries_15_0= RULE_STRING )
+                    // ../at.bestsolution.efxclipse.tooling.fxgraph/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/parser/antlr/internal/InternalFXGraph.g:388:3: lv_previewClasspathEntries_15_0= RULE_STRING
+                    {
+                    lv_previewClasspathEntries_15_0=(Token)match(input,RULE_STRING,FOLLOW_RULE_STRING_in_ruleComponentDefinition732); if (state.failed) return current;
+                    if ( state.backtracking==0 ) {
+
+                      			newLeafNode(lv_previewClasspathEntries_15_0, grammarAccess.getComponentDefinitionAccess().getPreviewClasspathEntriesSTRINGTerminalRuleCall_5_2_0()); 
+                      		
+                    }
+                    if ( state.backtracking==0 ) {
+
+                      	        if (current==null) {
+                      	            current = createModelElement(grammarAccess.getComponentDefinitionRule());
+                      	        }
+                             		addWithLastConsumed(
+                             			current, 
+                             			"previewClasspathEntries",
+                              		lv_previewClasspathEntries_15_0, 
+                              		"STRING");
+                      	    
+                    }
+
+                    }
+
+
+                    }
+
+                    // ../at.bestsolution.efxclipse.tooling.fxgraph/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/parser/antlr/internal/InternalFXGraph.g:404:2: (otherlv_16= ',' ( (lv_previewClasspathEntries_17_0= RULE_STRING ) ) )*
+                    loop8:
+                    do {
+                        int alt8=2;
+                        int LA8_0 = input.LA(1);
+
+                        if ( (LA8_0==21) ) {
+                            alt8=1;
+                        }
+
+
+                        switch (alt8) {
+                    	case 1 :
+                    	    // ../at.bestsolution.efxclipse.tooling.fxgraph/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/parser/antlr/internal/InternalFXGraph.g:404:4: otherlv_16= ',' ( (lv_previewClasspathEntries_17_0= RULE_STRING ) )
+                    	    {
+                    	    otherlv_16=(Token)match(input,21,FOLLOW_21_in_ruleComponentDefinition750); if (state.failed) return current;
+                    	    if ( state.backtracking==0 ) {
+
+                    	          	newLeafNode(otherlv_16, grammarAccess.getComponentDefinitionAccess().getCommaKeyword_5_3_0());
+                    	          
+                    	    }
+                    	    // ../at.bestsolution.efxclipse.tooling.fxgraph/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/parser/antlr/internal/InternalFXGraph.g:408:1: ( (lv_previewClasspathEntries_17_0= RULE_STRING ) )
+                    	    // ../at.bestsolution.efxclipse.tooling.fxgraph/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/parser/antlr/internal/InternalFXGraph.g:409:1: (lv_previewClasspathEntries_17_0= RULE_STRING )
+                    	    {
+                    	    // ../at.bestsolution.efxclipse.tooling.fxgraph/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/parser/antlr/internal/InternalFXGraph.g:409:1: (lv_previewClasspathEntries_17_0= RULE_STRING )
+                    	    // ../at.bestsolution.efxclipse.tooling.fxgraph/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/parser/antlr/internal/InternalFXGraph.g:410:3: lv_previewClasspathEntries_17_0= RULE_STRING
+                    	    {
+                    	    lv_previewClasspathEntries_17_0=(Token)match(input,RULE_STRING,FOLLOW_RULE_STRING_in_ruleComponentDefinition767); if (state.failed) return current;
+                    	    if ( state.backtracking==0 ) {
+
+                    	      			newLeafNode(lv_previewClasspathEntries_17_0, grammarAccess.getComponentDefinitionAccess().getPreviewClasspathEntriesSTRINGTerminalRuleCall_5_3_1_0()); 
+                    	      		
+                    	    }
+                    	    if ( state.backtracking==0 ) {
+
+                    	      	        if (current==null) {
+                    	      	            current = createModelElement(grammarAccess.getComponentDefinitionRule());
+                    	      	        }
+                    	             		addWithLastConsumed(
+                    	             			current, 
+                    	             			"previewClasspathEntries",
+                    	              		lv_previewClasspathEntries_17_0, 
+                    	              		"STRING");
+                    	      	    
+                    	    }
+
+                    	    }
+
+
+                    	    }
+
+
+                    	    }
+                    	    break;
+
+                    	default :
+                    	    break loop8;
+                        }
+                    } while (true);
+
+                    otherlv_18=(Token)match(input,22,FOLLOW_22_in_ruleComponentDefinition786); if (state.failed) return current;
+                    if ( state.backtracking==0 ) {
+
+                          	newLeafNode(otherlv_18, grammarAccess.getComponentDefinitionAccess().getRightSquareBracketKeyword_5_4());
+                          
+                    }
+
+                    }
+                    break;
+
+            }
+
+            otherlv_19=(Token)match(input,25,FOLLOW_25_in_ruleComponentDefinition800); if (state.failed) return current;
+            if ( state.backtracking==0 ) {
+
+                  	newLeafNode(otherlv_19, grammarAccess.getComponentDefinitionAccess().getLeftCurlyBracketKeyword_6());
+                  
+            }
+            // ../at.bestsolution.efxclipse.tooling.fxgraph/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/parser/antlr/internal/InternalFXGraph.g:434:1: ( (lv_scripts_20_0= ruleScript ) )?
+            int alt10=2;
+            int LA10_0 = input.LA(1);
+
+            if ( (LA10_0==32) ) {
+                alt10=1;
+            }
+            switch (alt10) {
+                case 1 :
+                    // ../at.bestsolution.efxclipse.tooling.fxgraph/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/parser/antlr/internal/InternalFXGraph.g:435:1: (lv_scripts_20_0= ruleScript )
+                    {
+                    // ../at.bestsolution.efxclipse.tooling.fxgraph/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/parser/antlr/internal/InternalFXGraph.g:435:1: (lv_scripts_20_0= ruleScript )
+                    // ../at.bestsolution.efxclipse.tooling.fxgraph/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/parser/antlr/internal/InternalFXGraph.g:436:3: lv_scripts_20_0= ruleScript
+                    {
+                    if ( state.backtracking==0 ) {
+                       
+                      	        newCompositeNode(grammarAccess.getComponentDefinitionAccess().getScriptsScriptParserRuleCall_7_0()); 
+                      	    
+                    }
+                    pushFollow(FOLLOW_ruleScript_in_ruleComponentDefinition821);
+                    lv_scripts_20_0=ruleScript();
+
+                    state._fsp--;
+                    if (state.failed) return current;
+                    if ( state.backtracking==0 ) {
+
+                      	        if (current==null) {
+                      	            current = createModelElementForParent(grammarAccess.getComponentDefinitionRule());
+                      	        }
+                             		add(
+                             			current, 
+                             			"scripts",
+                              		lv_scripts_20_0, 
+                              		"Script");
+                      	        afterParserOrEnumRuleCall();
+                      	    
+                    }
+
+                    }
+
+
+                    }
+                    break;
+
+            }
+
+            // ../at.bestsolution.efxclipse.tooling.fxgraph/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/parser/antlr/internal/InternalFXGraph.g:452:3: ( ( (lv_defines_21_0= ruleDefine ) ) (otherlv_22= ',' ( (lv_defines_23_0= ruleDefine ) ) )* )?
+            int alt12=2;
+            int LA12_0 = input.LA(1);
+
+            if ( (LA12_0==31) ) {
+                alt12=1;
+            }
+            switch (alt12) {
+                case 1 :
+                    // ../at.bestsolution.efxclipse.tooling.fxgraph/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/parser/antlr/internal/InternalFXGraph.g:452:4: ( (lv_defines_21_0= ruleDefine ) ) (otherlv_22= ',' ( (lv_defines_23_0= ruleDefine ) ) )*
+                    {
+                    // ../at.bestsolution.efxclipse.tooling.fxgraph/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/parser/antlr/internal/InternalFXGraph.g:452:4: ( (lv_defines_21_0= ruleDefine ) )
+                    // ../at.bestsolution.efxclipse.tooling.fxgraph/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/parser/antlr/internal/InternalFXGraph.g:453:1: (lv_defines_21_0= ruleDefine )
+                    {
+                    // ../at.bestsolution.efxclipse.tooling.fxgraph/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/parser/antlr/internal/InternalFXGraph.g:453:1: (lv_defines_21_0= ruleDefine )
+                    // ../at.bestsolution.efxclipse.tooling.fxgraph/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/parser/antlr/internal/InternalFXGraph.g:454:3: lv_defines_21_0= ruleDefine
+                    {
+                    if ( state.backtracking==0 ) {
+                       
+                      	        newCompositeNode(grammarAccess.getComponentDefinitionAccess().getDefinesDefineParserRuleCall_8_0_0()); 
+                      	    
+                    }
+                    pushFollow(FOLLOW_ruleDefine_in_ruleComponentDefinition844);
+                    lv_defines_21_0=ruleDefine();
+
+                    state._fsp--;
+                    if (state.failed) return current;
+                    if ( state.backtracking==0 ) {
+
+                      	        if (current==null) {
+                      	            current = createModelElementForParent(grammarAccess.getComponentDefinitionRule());
+                      	        }
+                             		add(
+                             			current, 
+                             			"defines",
+                              		lv_defines_21_0, 
+                              		"Define");
+                      	        afterParserOrEnumRuleCall();
+                      	    
+                    }
+
+                    }
+
+
+                    }
+
+                    // ../at.bestsolution.efxclipse.tooling.fxgraph/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/parser/antlr/internal/InternalFXGraph.g:470:2: (otherlv_22= ',' ( (lv_defines_23_0= ruleDefine ) ) )*
+                    loop11:
+                    do {
+                        int alt11=2;
+                        int LA11_0 = input.LA(1);
+
+                        if ( (LA11_0==21) ) {
+                            alt11=1;
+                        }
+
+
+                        switch (alt11) {
+                    	case 1 :
+                    	    // ../at.bestsolution.efxclipse.tooling.fxgraph/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/parser/antlr/internal/InternalFXGraph.g:470:4: otherlv_22= ',' ( (lv_defines_23_0= ruleDefine ) )
+                    	    {
+                    	    otherlv_22=(Token)match(input,21,FOLLOW_21_in_ruleComponentDefinition857); if (state.failed) return current;
+                    	    if ( state.backtracking==0 ) {
+
+                    	          	newLeafNode(otherlv_22, grammarAccess.getComponentDefinitionAccess().getCommaKeyword_8_1_0());
+                    	          
+                    	    }
+                    	    // ../at.bestsolution.efxclipse.tooling.fxgraph/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/parser/antlr/internal/InternalFXGraph.g:474:1: ( (lv_defines_23_0= ruleDefine ) )
+                    	    // ../at.bestsolution.efxclipse.tooling.fxgraph/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/parser/antlr/internal/InternalFXGraph.g:475:1: (lv_defines_23_0= ruleDefine )
+                    	    {
+                    	    // ../at.bestsolution.efxclipse.tooling.fxgraph/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/parser/antlr/internal/InternalFXGraph.g:475:1: (lv_defines_23_0= ruleDefine )
+                    	    // ../at.bestsolution.efxclipse.tooling.fxgraph/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/parser/antlr/internal/InternalFXGraph.g:476:3: lv_defines_23_0= ruleDefine
+                    	    {
+                    	    if ( state.backtracking==0 ) {
+                    	       
+                    	      	        newCompositeNode(grammarAccess.getComponentDefinitionAccess().getDefinesDefineParserRuleCall_8_1_1_0()); 
+                    	      	    
+                    	    }
+                    	    pushFollow(FOLLOW_ruleDefine_in_ruleComponentDefinition878);
+                    	    lv_defines_23_0=ruleDefine();
+
+                    	    state._fsp--;
+                    	    if (state.failed) return current;
+                    	    if ( state.backtracking==0 ) {
+
+                    	      	        if (current==null) {
+                    	      	            current = createModelElementForParent(grammarAccess.getComponentDefinitionRule());
+                    	      	        }
+                    	             		add(
+                    	             			current, 
+                    	             			"defines",
+                    	              		lv_defines_23_0, 
+                    	              		"Define");
+                    	      	        afterParserOrEnumRuleCall();
+                    	      	    
+                    	    }
+
+                    	    }
+
+
+                    	    }
+
+
+                    	    }
+                    	    break;
+
+                    	default :
+                    	    break loop11;
+                        }
+                    } while (true);
+
+
+                    }
+                    break;
+
+            }
+
+            // ../at.bestsolution.efxclipse.tooling.fxgraph/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/parser/antlr/internal/InternalFXGraph.g:492:6: ( (lv_rootNode_24_0= ruleElement ) )
+            // ../at.bestsolution.efxclipse.tooling.fxgraph/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/parser/antlr/internal/InternalFXGraph.g:493:1: (lv_rootNode_24_0= ruleElement )
+            {
+            // ../at.bestsolution.efxclipse.tooling.fxgraph/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/parser/antlr/internal/InternalFXGraph.g:493:1: (lv_rootNode_24_0= ruleElement )
+            // ../at.bestsolution.efxclipse.tooling.fxgraph/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/parser/antlr/internal/InternalFXGraph.g:494:3: lv_rootNode_24_0= ruleElement
+            {
+            if ( state.backtracking==0 ) {
+               
+              	        newCompositeNode(grammarAccess.getComponentDefinitionAccess().getRootNodeElementParserRuleCall_9_0()); 
+              	    
+            }
+            pushFollow(FOLLOW_ruleElement_in_ruleComponentDefinition903);
+            lv_rootNode_24_0=ruleElement();
+
+            state._fsp--;
+            if (state.failed) return current;
+            if ( state.backtracking==0 ) {
+
+              	        if (current==null) {
+              	            current = createModelElementForParent(grammarAccess.getComponentDefinitionRule());
+              	        }
+                     		set(
+                     			current, 
+                     			"rootNode",
+                      		lv_rootNode_24_0, 
+                      		"Element");
+              	        afterParserOrEnumRuleCall();
+              	    
+            }
+
+            }
+
+
+            }
+
+            otherlv_25=(Token)match(input,26,FOLLOW_26_in_ruleComponentDefinition915); if (state.failed) return current;
+            if ( state.backtracking==0 ) {
+
+                  	newLeafNode(otherlv_25, grammarAccess.getComponentDefinitionAccess().getRightCurlyBracketKeyword_10());
+                  
+            }
+
+            }
+
+
+            }
+
+            if ( state.backtracking==0 ) {
+               leaveRule(); 
+            }
+        }
+         
+            catch (RecognitionException re) { 
+                recover(input,re); 
+                appendSkippedTokens();
+            } 
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "ruleComponentDefinition"
 
 
     // $ANTLR start "entryRuleElement"
@@ -1542,9 +1542,9 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
             switch ( input.LA(1) ) {
             case EOF:
             case RULE_ID:
-            case 20:
             case 21:
-            case 25:
+            case 22:
+            case 26:
             case 27:
             case 95:
                 {
@@ -1557,16 +1557,16 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
 
                 if ( (LA22_2==RULE_ID) ) {
                     switch ( input.LA(3) ) {
-                    case 24:
+                    case 25:
                         {
                         alt22=2;
                         }
                         break;
                     case EOF:
                     case RULE_ID:
-                    case 20:
                     case 21:
-                    case 25:
+                    case 22:
+                    case 26:
                     case 27:
                     case 95:
                         {
@@ -1596,7 +1596,7 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
                 }
                 }
                 break;
-            case 24:
+            case 25:
                 {
                 alt22=2;
                 }
@@ -1817,7 +1817,7 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    otherlv_8=(Token)match(input,24,FOLLOW_24_in_ruleElement1149); if (state.failed) return current;
+                    otherlv_8=(Token)match(input,25,FOLLOW_25_in_ruleElement1149); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                           	newLeafNode(otherlv_8, grammarAccess.getElementAccess().getLeftCurlyBracketKeyword_1_1_1());
@@ -1849,7 +1849,7 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
                                 if ( (LA16_2==35) ) {
                                     alt16=1;
                                 }
-                                else if ( ((LA16_2>=19 && LA16_2<=20)||(LA16_2>=24 && LA16_2<=25)||LA16_2==27||(LA16_2>=29 && LA16_2<=30)||LA16_2==50||LA16_2==62) ) {
+                                else if ( ((LA16_2>=20 && LA16_2<=21)||(LA16_2>=25 && LA16_2<=27)||(LA16_2>=29 && LA16_2<=30)||LA16_2==50||LA16_2==62) ) {
                                     alt16=3;
                                 }
                                 else {
@@ -2013,7 +2013,7 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
                                 int alt18=2;
                                 int LA18_0 = input.LA(1);
 
-                                if ( (LA18_0==20) ) {
+                                if ( (LA18_0==21) ) {
                                     alt18=1;
                                 }
 
@@ -2022,7 +2022,7 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
                             	case 1 :
                             	    // ../at.bestsolution.efxclipse.tooling.fxgraph/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/parser/antlr/internal/InternalFXGraph.g:684:5: otherlv_12= ',' ( ( (lv_properties_13_0= ruleProperty ) ) | ( (lv_staticProperties_14_0= ruleStaticValueProperty ) ) | ( (lv_defaultChildren_15_0= ruleElement ) ) )
                             	    {
-                            	    otherlv_12=(Token)match(input,20,FOLLOW_20_in_ruleElement1240); if (state.failed) return current;
+                            	    otherlv_12=(Token)match(input,21,FOLLOW_21_in_ruleElement1240); if (state.failed) return current;
                             	    if ( state.backtracking==0 ) {
 
                             	          	newLeafNode(otherlv_12, grammarAccess.getElementAccess().getCommaKeyword_1_1_2_1_0());
@@ -2040,7 +2040,7 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
                             	        {
                             	        int LA17_2 = input.LA(2);
 
-                            	        if ( ((LA17_2>=19 && LA17_2<=20)||(LA17_2>=24 && LA17_2<=25)||LA17_2==27||(LA17_2>=29 && LA17_2<=30)||LA17_2==50||LA17_2==62) ) {
+                            	        if ( ((LA17_2>=20 && LA17_2<=21)||(LA17_2>=25 && LA17_2<=27)||(LA17_2>=29 && LA17_2<=30)||LA17_2==50||LA17_2==62) ) {
                             	            alt17=3;
                             	        }
                             	        else if ( (LA17_2==35) ) {
@@ -2216,7 +2216,7 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    otherlv_16=(Token)match(input,25,FOLLOW_25_in_ruleElement1333); if (state.failed) return current;
+                    otherlv_16=(Token)match(input,26,FOLLOW_26_in_ruleElement1333); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                           	newLeafNode(otherlv_16, grammarAccess.getElementAccess().getRightCurlyBracketKeyword_1_1_3());
@@ -2328,7 +2328,7 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    otherlv_21=(Token)match(input,24,FOLLOW_24_in_ruleElement1423); if (state.failed) return current;
+                    otherlv_21=(Token)match(input,25,FOLLOW_25_in_ruleElement1423); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                           	newLeafNode(otherlv_21, grammarAccess.getElementAccess().getLeftCurlyBracketKeyword_1_2_3());
@@ -2375,7 +2375,7 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
                         int alt21=2;
                         int LA21_0 = input.LA(1);
 
-                        if ( (LA21_0==20) ) {
+                        if ( (LA21_0==21) ) {
                             alt21=1;
                         }
 
@@ -2384,7 +2384,7 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
                     	case 1 :
                     	    // ../at.bestsolution.efxclipse.tooling.fxgraph/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/parser/antlr/internal/InternalFXGraph.g:815:4: otherlv_23= ',' ( (lv_values_24_0= ruleElement ) )
                     	    {
-                    	    otherlv_23=(Token)match(input,20,FOLLOW_20_in_ruleElement1457); if (state.failed) return current;
+                    	    otherlv_23=(Token)match(input,21,FOLLOW_21_in_ruleElement1457); if (state.failed) return current;
                     	    if ( state.backtracking==0 ) {
 
                     	          	newLeafNode(otherlv_23, grammarAccess.getElementAccess().getCommaKeyword_1_2_5_0());
@@ -2434,7 +2434,7 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
                         }
                     } while (true);
 
-                    otherlv_25=(Token)match(input,25,FOLLOW_25_in_ruleElement1492); if (state.failed) return current;
+                    otherlv_25=(Token)match(input,26,FOLLOW_26_in_ruleElement1492); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                           	newLeafNode(otherlv_25, grammarAccess.getElementAccess().getRightCurlyBracketKeyword_1_2_6());
@@ -3258,7 +3258,7 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
             if ( ((LA25_0>=RULE_STRING && LA25_0<=RULE_ID)||(LA25_0>=RULE_INT && LA25_0<=RULE_REAL)||LA25_0==27||(LA25_0>=37 && LA25_0<=49)||LA25_0==95) ) {
                 alt25=1;
             }
-            else if ( (LA25_0==19||LA25_0==24) ) {
+            else if ( (LA25_0==20||LA25_0==25) ) {
                 alt25=2;
             }
             else {
@@ -3836,10 +3836,10 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
             int alt27=2;
             int LA27_0 = input.LA(1);
 
-            if ( (LA27_0==19) ) {
+            if ( (LA27_0==20) ) {
                 alt27=1;
             }
-            else if ( (LA27_0==24) ) {
+            else if ( (LA27_0==25) ) {
                 alt27=2;
             }
             else {
@@ -4153,7 +4153,7 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
             // ../at.bestsolution.efxclipse.tooling.fxgraph/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/parser/antlr/internal/InternalFXGraph.g:1418:1: (otherlv_0= '[' ( (lv_value_1_0= ruleListValueElement ) ) (otherlv_2= ',' ( (lv_value_3_0= ruleListValueElement ) ) )* otherlv_4= ']' )
             // ../at.bestsolution.efxclipse.tooling.fxgraph/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/parser/antlr/internal/InternalFXGraph.g:1418:3: otherlv_0= '[' ( (lv_value_1_0= ruleListValueElement ) ) (otherlv_2= ',' ( (lv_value_3_0= ruleListValueElement ) ) )* otherlv_4= ']'
             {
-            otherlv_0=(Token)match(input,19,FOLLOW_19_in_ruleListValueProperty2940); if (state.failed) return current;
+            otherlv_0=(Token)match(input,20,FOLLOW_20_in_ruleListValueProperty2940); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
                   	newLeafNode(otherlv_0, grammarAccess.getListValuePropertyAccess().getLeftSquareBracketKeyword_0());
@@ -4200,7 +4200,7 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
                 int alt29=2;
                 int LA29_0 = input.LA(1);
 
-                if ( (LA29_0==20) ) {
+                if ( (LA29_0==21) ) {
                     alt29=1;
                 }
 
@@ -4209,7 +4209,7 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
             	case 1 :
             	    // ../at.bestsolution.efxclipse.tooling.fxgraph/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/parser/antlr/internal/InternalFXGraph.g:1440:4: otherlv_2= ',' ( (lv_value_3_0= ruleListValueElement ) )
             	    {
-            	    otherlv_2=(Token)match(input,20,FOLLOW_20_in_ruleListValueProperty2974); if (state.failed) return current;
+            	    otherlv_2=(Token)match(input,21,FOLLOW_21_in_ruleListValueProperty2974); if (state.failed) return current;
             	    if ( state.backtracking==0 ) {
 
             	          	newLeafNode(otherlv_2, grammarAccess.getListValuePropertyAccess().getCommaKeyword_2_0());
@@ -4259,7 +4259,7 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
                 }
             } while (true);
 
-            otherlv_4=(Token)match(input,21,FOLLOW_21_in_ruleListValueProperty3009); if (state.failed) return current;
+            otherlv_4=(Token)match(input,22,FOLLOW_22_in_ruleListValueProperty3009); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
                   	newLeafNode(otherlv_4, grammarAccess.getListValuePropertyAccess().getRightSquareBracketKeyword_3());
@@ -4349,7 +4349,7 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
             // ../at.bestsolution.efxclipse.tooling.fxgraph/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/parser/antlr/internal/InternalFXGraph.g:1487:1: (otherlv_0= '{' ( (lv_properties_1_0= ruleProperty ) ) (otherlv_2= ',' ( (lv_properties_3_0= ruleProperty ) ) )* otherlv_4= '}' )
             // ../at.bestsolution.efxclipse.tooling.fxgraph/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/parser/antlr/internal/InternalFXGraph.g:1487:3: otherlv_0= '{' ( (lv_properties_1_0= ruleProperty ) ) (otherlv_2= ',' ( (lv_properties_3_0= ruleProperty ) ) )* otherlv_4= '}'
             {
-            otherlv_0=(Token)match(input,24,FOLLOW_24_in_ruleMapValueProperty3092); if (state.failed) return current;
+            otherlv_0=(Token)match(input,25,FOLLOW_25_in_ruleMapValueProperty3092); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
                   	newLeafNode(otherlv_0, grammarAccess.getMapValuePropertyAccess().getLeftCurlyBracketKeyword_0());
@@ -4396,7 +4396,7 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
                 int alt30=2;
                 int LA30_0 = input.LA(1);
 
-                if ( (LA30_0==20) ) {
+                if ( (LA30_0==21) ) {
                     alt30=1;
                 }
 
@@ -4405,7 +4405,7 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
             	case 1 :
             	    // ../at.bestsolution.efxclipse.tooling.fxgraph/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/parser/antlr/internal/InternalFXGraph.g:1509:4: otherlv_2= ',' ( (lv_properties_3_0= ruleProperty ) )
             	    {
-            	    otherlv_2=(Token)match(input,20,FOLLOW_20_in_ruleMapValueProperty3126); if (state.failed) return current;
+            	    otherlv_2=(Token)match(input,21,FOLLOW_21_in_ruleMapValueProperty3126); if (state.failed) return current;
             	    if ( state.backtracking==0 ) {
 
             	          	newLeafNode(otherlv_2, grammarAccess.getMapValuePropertyAccess().getCommaKeyword_2_0());
@@ -4455,7 +4455,7 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
                 }
             } while (true);
 
-            otherlv_4=(Token)match(input,25,FOLLOW_25_in_ruleMapValueProperty3161); if (state.failed) return current;
+            otherlv_4=(Token)match(input,26,FOLLOW_26_in_ruleMapValueProperty3161); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
                   	newLeafNode(otherlv_4, grammarAccess.getMapValuePropertyAccess().getRightCurlyBracketKeyword_3());
@@ -6443,7 +6443,7 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
             if ( (LA37_0==RULE_ID) ) {
                 int LA37_1 = input.LA(2);
 
-                if ( (LA37_1==EOF||(LA37_1>=RULE_STRING && LA37_1<=RULE_ID)||LA37_1==RULE_INT||(LA37_1>=RULE_HEX && LA37_1<=RULE_DECIMAL)||(LA37_1>=19 && LA37_1<=21)||(LA37_1>=24 && LA37_1<=25)||(LA37_1>=27 && LA37_1<=28)||LA37_1==35||(LA37_1>=37 && LA37_1<=39)||(LA37_1>=50 && LA37_1<=51)||(LA37_1>=53 && LA37_1<=72)||(LA37_1>=74 && LA37_1<=95)) ) {
+                if ( (LA37_1==EOF||(LA37_1>=RULE_STRING && LA37_1<=RULE_ID)||LA37_1==RULE_INT||(LA37_1>=RULE_HEX && LA37_1<=RULE_DECIMAL)||(LA37_1>=20 && LA37_1<=22)||(LA37_1>=25 && LA37_1<=28)||LA37_1==35||(LA37_1>=37 && LA37_1<=39)||(LA37_1>=50 && LA37_1<=51)||(LA37_1>=53 && LA37_1<=72)||(LA37_1>=74 && LA37_1<=95)) ) {
                     alt37=2;
                 }
                 else if ( (LA37_1==52) ) {
@@ -6457,7 +6457,7 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
                     throw nvae;
                 }
             }
-            else if ( (LA37_0==RULE_STRING||LA37_0==RULE_INT||(LA37_0>=RULE_HEX && LA37_0<=RULE_DECIMAL)||LA37_0==19||LA37_0==24||LA37_0==27||(LA37_0>=37 && LA37_0<=39)||LA37_0==62||LA37_0==65||LA37_0==69||LA37_0==75||LA37_0==77||(LA37_0>=80 && LA37_0<=82)||LA37_0==85||(LA37_0>=87 && LA37_0<=92)) ) {
+            else if ( (LA37_0==RULE_STRING||LA37_0==RULE_INT||(LA37_0>=RULE_HEX && LA37_0<=RULE_DECIMAL)||LA37_0==20||LA37_0==25||LA37_0==27||(LA37_0>=37 && LA37_0<=39)||LA37_0==62||LA37_0==65||LA37_0==69||LA37_0==75||LA37_0==77||(LA37_0>=80 && LA37_0<=82)||LA37_0==85||(LA37_0>=87 && LA37_0<=92)) ) {
                 alt37=2;
             }
             else {
@@ -9538,7 +9538,7 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
             if ( (LA50_0==39||LA50_0==65||LA50_0==69) ) {
                 alt50=1;
             }
-            else if ( ((LA50_0>=RULE_STRING && LA50_0<=RULE_ID)||LA50_0==RULE_INT||(LA50_0>=RULE_HEX && LA50_0<=RULE_DECIMAL)||LA50_0==19||LA50_0==24||LA50_0==27||(LA50_0>=37 && LA50_0<=38)||LA50_0==62||LA50_0==75||LA50_0==77||(LA50_0>=80 && LA50_0<=82)||LA50_0==85||(LA50_0>=87 && LA50_0<=92)) ) {
+            else if ( ((LA50_0>=RULE_STRING && LA50_0<=RULE_ID)||LA50_0==RULE_INT||(LA50_0>=RULE_HEX && LA50_0<=RULE_DECIMAL)||LA50_0==20||LA50_0==25||LA50_0==27||(LA50_0>=37 && LA50_0<=38)||LA50_0==62||LA50_0==75||LA50_0==77||(LA50_0>=80 && LA50_0<=82)||LA50_0==85||(LA50_0>=87 && LA50_0<=92)) ) {
                 alt50=2;
             }
             else {
@@ -10486,7 +10486,7 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
             	                int alt54=2;
             	                int LA54_0 = input.LA(1);
 
-            	                if ( (LA54_0==20) ) {
+            	                if ( (LA54_0==21) ) {
             	                    alt54=1;
             	                }
 
@@ -10495,7 +10495,7 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
             	            	case 1 :
             	            	    // ../at.bestsolution.efxclipse.tooling.fxgraph/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/parser/antlr/internal/InternalFXGraph.g:3527:4: otherlv_12= ',' ( (lv_typeArguments_13_0= ruleJvmArgumentTypeReference ) )
             	            	    {
-            	            	    otherlv_12=(Token)match(input,20,FOLLOW_20_in_ruleXMemberFeatureCall8152); if (state.failed) return current;
+            	            	    otherlv_12=(Token)match(input,21,FOLLOW_21_in_ruleXMemberFeatureCall8152); if (state.failed) return current;
             	            	    if ( state.backtracking==0 ) {
 
             	            	          	newLeafNode(otherlv_12, grammarAccess.getXMemberFeatureCallAccess().getCommaKeyword_1_1_1_2_0());
@@ -10716,7 +10716,7 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
             	                        int alt56=2;
             	                        int LA56_0 = input.LA(1);
 
-            	                        if ( (LA56_0==20) ) {
+            	                        if ( (LA56_0==21) ) {
             	                            alt56=1;
             	                        }
 
@@ -10725,7 +10725,7 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
             	                    	case 1 :
             	                    	    // ../at.bestsolution.efxclipse.tooling.fxgraph/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/parser/antlr/internal/InternalFXGraph.g:3642:4: otherlv_19= ',' ( (lv_memberCallArguments_20_0= ruleXExpression ) )
             	                    	    {
-            	                    	    otherlv_19=(Token)match(input,20,FOLLOW_20_in_ruleXMemberFeatureCall8372); if (state.failed) return current;
+            	                    	    otherlv_19=(Token)match(input,21,FOLLOW_21_in_ruleXMemberFeatureCall8372); if (state.failed) return current;
             	                    	    if ( state.backtracking==0 ) {
 
             	                    	          	newLeafNode(otherlv_19, grammarAccess.getXMemberFeatureCallAccess().getCommaKeyword_1_1_3_1_1_1_0());
@@ -10958,7 +10958,7 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
                 alt61=1;
                 }
                 break;
-            case 24:
+            case 25:
                 {
                 alt61=2;
                 }
@@ -10979,7 +10979,7 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
             case RULE_INT:
             case RULE_HEX:
             case RULE_DECIMAL:
-            case 19:
+            case 20:
             case 37:
             case 38:
             case 88:
@@ -11412,7 +11412,7 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
             // ../at.bestsolution.efxclipse.tooling.fxgraph/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/parser/antlr/internal/InternalFXGraph.g:3861:1: (this_XClosure_0= ruleXClosure | this_XBooleanLiteral_1= ruleXBooleanLiteral | this_XNumberLiteral_2= ruleXNumberLiteral | this_XNullLiteral_3= ruleXNullLiteral | this_XStringLiteral_4= ruleXStringLiteral | this_XTypeLiteral_5= ruleXTypeLiteral )
             int alt62=6;
             switch ( input.LA(1) ) {
-            case 19:
+            case 20:
                 {
                 alt62=1;
                 }
@@ -11686,7 +11686,7 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_1=(Token)match(input,19,FOLLOW_19_in_ruleXClosure9182); if (state.failed) return current;
+            otherlv_1=(Token)match(input,20,FOLLOW_20_in_ruleXClosure9182); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
                   	newLeafNode(otherlv_1, grammarAccess.getXClosureAccess().getLeftSquareBracketKeyword_1());
@@ -11754,7 +11754,7 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
                                 int alt63=2;
                                 int LA63_0 = input.LA(1);
 
-                                if ( (LA63_0==20) ) {
+                                if ( (LA63_0==21) ) {
                                     alt63=1;
                                 }
 
@@ -11763,7 +11763,7 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
                             	case 1 :
                             	    // ../at.bestsolution.efxclipse.tooling.fxgraph/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/parser/antlr/internal/InternalFXGraph.g:3984:4: otherlv_3= ',' ( (lv_declaredFormalParameters_4_0= ruleJvmFormalParameter ) )
                             	    {
-                            	    otherlv_3=(Token)match(input,20,FOLLOW_20_in_ruleXClosure9266); if (state.failed) return current;
+                            	    otherlv_3=(Token)match(input,21,FOLLOW_21_in_ruleXClosure9266); if (state.failed) return current;
                             	    if ( state.backtracking==0 ) {
 
                             	          	newLeafNode(otherlv_3, grammarAccess.getXClosureAccess().getCommaKeyword_2_0_0_1_0());
@@ -11889,7 +11889,7 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_7=(Token)match(input,21,FOLLOW_21_in_ruleXClosure9358); if (state.failed) return current;
+            otherlv_7=(Token)match(input,22,FOLLOW_22_in_ruleXClosure9358); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
                   	newLeafNode(otherlv_7, grammarAccess.getXClosureAccess().getRightSquareBracketKeyword_4());
@@ -11994,7 +11994,7 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
                 int alt67=2;
                 int LA67_0 = input.LA(1);
 
-                if ( ((LA67_0>=RULE_STRING && LA67_0<=RULE_ID)||LA67_0==RULE_INT||(LA67_0>=RULE_HEX && LA67_0<=RULE_DECIMAL)||LA67_0==19||LA67_0==24||LA67_0==27||(LA67_0>=37 && LA67_0<=39)||LA67_0==62||LA67_0==65||LA67_0==69||LA67_0==75||LA67_0==77||(LA67_0>=80 && LA67_0<=85)||(LA67_0>=87 && LA67_0<=92)) ) {
+                if ( ((LA67_0>=RULE_STRING && LA67_0<=RULE_ID)||LA67_0==RULE_INT||(LA67_0>=RULE_HEX && LA67_0<=RULE_DECIMAL)||LA67_0==20||LA67_0==25||LA67_0==27||(LA67_0>=37 && LA67_0<=39)||LA67_0==62||LA67_0==65||LA67_0==69||LA67_0==75||LA67_0==77||(LA67_0>=80 && LA67_0<=85)||(LA67_0>=87 && LA67_0<=92)) ) {
                     alt67=1;
                 }
 
@@ -12226,7 +12226,7 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
                         int alt68=2;
                         int LA68_0 = input.LA(1);
 
-                        if ( (LA68_0==20) ) {
+                        if ( (LA68_0==21) ) {
                             alt68=1;
                         }
 
@@ -12235,7 +12235,7 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
                     	case 1 :
                     	    // ../at.bestsolution.efxclipse.tooling.fxgraph/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/parser/antlr/internal/InternalFXGraph.g:4153:4: otherlv_2= ',' ( (lv_declaredFormalParameters_3_0= ruleJvmFormalParameter ) )
                     	    {
-                    	    otherlv_2=(Token)match(input,20,FOLLOW_20_in_ruleXShortClosure9644); if (state.failed) return current;
+                    	    otherlv_2=(Token)match(input,21,FOLLOW_21_in_ruleXShortClosure9644); if (state.failed) return current;
                     	    if ( state.backtracking==0 ) {
 
                     	          	newLeafNode(otherlv_2, grammarAccess.getXShortClosureAccess().getCommaKeyword_0_0_1_1_0());
@@ -12844,7 +12844,7 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
             int alt72=2;
             int LA72_0 = input.LA(1);
 
-            if ( ((LA72_0>=RULE_STRING && LA72_0<=RULE_ID)||LA72_0==RULE_INT||(LA72_0>=RULE_HEX && LA72_0<=RULE_DECIMAL)||LA72_0==19||LA72_0==24||(LA72_0>=37 && LA72_0<=39)||LA72_0==62||LA72_0==65||LA72_0==69||LA72_0==75||LA72_0==77||(LA72_0>=80 && LA72_0<=82)||LA72_0==85||(LA72_0>=87 && LA72_0<=92)) ) {
+            if ( ((LA72_0>=RULE_STRING && LA72_0<=RULE_ID)||LA72_0==RULE_INT||(LA72_0>=RULE_HEX && LA72_0<=RULE_DECIMAL)||LA72_0==20||LA72_0==25||(LA72_0>=37 && LA72_0<=39)||LA72_0==62||LA72_0==65||LA72_0==69||LA72_0==75||LA72_0==77||(LA72_0>=80 && LA72_0<=82)||LA72_0==85||(LA72_0>=87 && LA72_0<=92)) ) {
                 alt72=1;
             }
             else if ( (LA72_0==27) ) {
@@ -12856,7 +12856,7 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
                     if ( (LA72_3==35) && (synpred20_InternalFXGraph())) {
                         alt72=2;
                     }
-                    else if ( (LA72_3==19||(LA72_3>=27 && LA72_3<=28)||LA72_3==39||(LA72_3>=50 && LA72_3<=68)||(LA72_3>=70 && LA72_3<=72)||LA72_3==86) ) {
+                    else if ( (LA72_3==20||(LA72_3>=27 && LA72_3<=28)||LA72_3==39||(LA72_3>=50 && LA72_3<=68)||(LA72_3>=70 && LA72_3<=72)||LA72_3==86) ) {
                         alt72=1;
                     }
                     else {
@@ -12867,7 +12867,7 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
                         throw nvae;
                     }
                 }
-                else if ( (LA72_2==RULE_STRING||LA72_2==RULE_INT||(LA72_2>=RULE_HEX && LA72_2<=RULE_DECIMAL)||LA72_2==19||LA72_2==24||LA72_2==27||(LA72_2>=37 && LA72_2<=39)||LA72_2==62||LA72_2==65||LA72_2==69||LA72_2==75||LA72_2==77||(LA72_2>=80 && LA72_2<=82)||LA72_2==85||(LA72_2>=87 && LA72_2<=92)) ) {
+                else if ( (LA72_2==RULE_STRING||LA72_2==RULE_INT||(LA72_2>=RULE_HEX && LA72_2<=RULE_DECIMAL)||LA72_2==20||LA72_2==25||LA72_2==27||(LA72_2>=37 && LA72_2<=39)||LA72_2==62||LA72_2==65||LA72_2==69||LA72_2==75||LA72_2==77||(LA72_2>=80 && LA72_2<=82)||LA72_2==85||(LA72_2>=87 && LA72_2<=92)) ) {
                     alt72=1;
                 }
                 else {
@@ -13116,7 +13116,7 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_10=(Token)match(input,24,FOLLOW_24_in_ruleXSwitchExpression10339); if (state.failed) return current;
+            otherlv_10=(Token)match(input,25,FOLLOW_25_in_ruleXSwitchExpression10339); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
                   	newLeafNode(otherlv_10, grammarAccess.getXSwitchExpressionAccess().getLeftCurlyBracketKeyword_3());
@@ -13245,7 +13245,7 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_15=(Token)match(input,25,FOLLOW_25_in_ruleXSwitchExpression10421); if (state.failed) return current;
+            otherlv_15=(Token)match(input,26,FOLLOW_26_in_ruleXSwitchExpression10421); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
                   	newLeafNode(otherlv_15, grammarAccess.getXSwitchExpressionAccess().getRightCurlyBracketKeyword_6());
@@ -14182,7 +14182,7 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_1=(Token)match(input,24,FOLLOW_24_in_ruleXBlockExpression11194); if (state.failed) return current;
+            otherlv_1=(Token)match(input,25,FOLLOW_25_in_ruleXBlockExpression11194); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
                   	newLeafNode(otherlv_1, grammarAccess.getXBlockExpressionAccess().getLeftCurlyBracketKeyword_1());
@@ -14194,7 +14194,7 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
                 int alt78=2;
                 int LA78_0 = input.LA(1);
 
-                if ( ((LA78_0>=RULE_STRING && LA78_0<=RULE_ID)||LA78_0==RULE_INT||(LA78_0>=RULE_HEX && LA78_0<=RULE_DECIMAL)||LA78_0==19||LA78_0==24||LA78_0==27||(LA78_0>=37 && LA78_0<=39)||LA78_0==62||LA78_0==65||LA78_0==69||LA78_0==75||LA78_0==77||(LA78_0>=80 && LA78_0<=85)||(LA78_0>=87 && LA78_0<=92)) ) {
+                if ( ((LA78_0>=RULE_STRING && LA78_0<=RULE_ID)||LA78_0==RULE_INT||(LA78_0>=RULE_HEX && LA78_0<=RULE_DECIMAL)||LA78_0==20||LA78_0==25||LA78_0==27||(LA78_0>=37 && LA78_0<=39)||LA78_0==62||LA78_0==65||LA78_0==69||LA78_0==75||LA78_0==77||(LA78_0>=80 && LA78_0<=85)||(LA78_0>=87 && LA78_0<=92)) ) {
                     alt78=1;
                 }
 
@@ -14270,7 +14270,7 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
                 }
             } while (true);
 
-            otherlv_4=(Token)match(input,25,FOLLOW_25_in_ruleXBlockExpression11245); if (state.failed) return current;
+            otherlv_4=(Token)match(input,26,FOLLOW_26_in_ruleXBlockExpression11245); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
                   	newLeafNode(otherlv_4, grammarAccess.getXBlockExpressionAccess().getRightCurlyBracketKeyword_3());
@@ -14361,7 +14361,7 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
             if ( ((LA79_0>=83 && LA79_0<=84)) ) {
                 alt79=1;
             }
-            else if ( ((LA79_0>=RULE_STRING && LA79_0<=RULE_ID)||LA79_0==RULE_INT||(LA79_0>=RULE_HEX && LA79_0<=RULE_DECIMAL)||LA79_0==19||LA79_0==24||LA79_0==27||(LA79_0>=37 && LA79_0<=39)||LA79_0==62||LA79_0==65||LA79_0==69||LA79_0==75||LA79_0==77||(LA79_0>=80 && LA79_0<=82)||LA79_0==85||(LA79_0>=87 && LA79_0<=92)) ) {
+            else if ( ((LA79_0>=RULE_STRING && LA79_0<=RULE_ID)||LA79_0==RULE_INT||(LA79_0>=RULE_HEX && LA79_0<=RULE_DECIMAL)||LA79_0==20||LA79_0==25||LA79_0==27||(LA79_0>=37 && LA79_0<=39)||LA79_0==62||LA79_0==65||LA79_0==69||LA79_0==75||LA79_0==77||(LA79_0>=80 && LA79_0<=82)||LA79_0==85||(LA79_0>=87 && LA79_0<=92)) ) {
                 alt79=2;
             }
             else {
@@ -14895,7 +14895,7 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
             if ( (LA83_0==RULE_ID) ) {
                 int LA83_1 = input.LA(2);
 
-                if ( (LA83_1==RULE_ID||LA83_1==19||LA83_1==50||LA83_1==62) ) {
+                if ( (LA83_1==RULE_ID||LA83_1==20||LA83_1==50||LA83_1==62) ) {
                     alt83=1;
                 }
             }
@@ -15342,7 +15342,7 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
                         int alt85=2;
                         int LA85_0 = input.LA(1);
 
-                        if ( (LA85_0==20) ) {
+                        if ( (LA85_0==21) ) {
                             alt85=1;
                         }
 
@@ -15351,7 +15351,7 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
                     	case 1 :
                     	    // ../at.bestsolution.efxclipse.tooling.fxgraph/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/parser/antlr/internal/InternalFXGraph.g:5268:4: otherlv_4= ',' ( (lv_typeArguments_5_0= ruleJvmArgumentTypeReference ) )
                     	    {
-                    	    otherlv_4=(Token)match(input,20,FOLLOW_20_in_ruleXFeatureCall12007); if (state.failed) return current;
+                    	    otherlv_4=(Token)match(input,21,FOLLOW_21_in_ruleXFeatureCall12007); if (state.failed) return current;
                     	    if ( state.backtracking==0 ) {
 
                     	          	newLeafNode(otherlv_4, grammarAccess.getXFeatureCallAccess().getCommaKeyword_2_2_0());
@@ -15572,7 +15572,7 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
                                 int alt87=2;
                                 int LA87_0 = input.LA(1);
 
-                                if ( (LA87_0==20) ) {
+                                if ( (LA87_0==21) ) {
                                     alt87=1;
                                 }
 
@@ -15581,7 +15581,7 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
                             	case 1 :
                             	    // ../at.bestsolution.efxclipse.tooling.fxgraph/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/parser/antlr/internal/InternalFXGraph.g:5383:4: otherlv_11= ',' ( (lv_featureCallArguments_12_0= ruleXExpression ) )
                             	    {
-                            	    otherlv_11=(Token)match(input,20,FOLLOW_20_in_ruleXFeatureCall12227); if (state.failed) return current;
+                            	    otherlv_11=(Token)match(input,21,FOLLOW_21_in_ruleXFeatureCall12227); if (state.failed) return current;
                             	    if ( state.backtracking==0 ) {
 
                             	          	newLeafNode(otherlv_11, grammarAccess.getXFeatureCallAccess().getCommaKeyword_4_1_1_1_0());
@@ -16174,7 +16174,7 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
                         int alt93=2;
                         int LA93_0 = input.LA(1);
 
-                        if ( (LA93_0==20) ) {
+                        if ( (LA93_0==21) ) {
                             alt93=1;
                         }
 
@@ -16183,7 +16183,7 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
                     	case 1 :
                     	    // ../at.bestsolution.efxclipse.tooling.fxgraph/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/parser/antlr/internal/InternalFXGraph.g:5577:4: otherlv_5= ',' ( (lv_typeArguments_6_0= ruleJvmArgumentTypeReference ) )
                     	    {
-                    	    otherlv_5=(Token)match(input,20,FOLLOW_20_in_ruleXConstructorCall12711); if (state.failed) return current;
+                    	    otherlv_5=(Token)match(input,21,FOLLOW_21_in_ruleXConstructorCall12711); if (state.failed) return current;
                     	    if ( state.backtracking==0 ) {
 
                     	          	newLeafNode(otherlv_5, grammarAccess.getXConstructorCallAccess().getCommaKeyword_3_2_0());
@@ -16356,7 +16356,7 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
                                 int alt95=2;
                                 int LA95_0 = input.LA(1);
 
-                                if ( (LA95_0==20) ) {
+                                if ( (LA95_0==21) ) {
                                     alt95=1;
                                 }
 
@@ -16365,7 +16365,7 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
                             	case 1 :
                             	    // ../at.bestsolution.efxclipse.tooling.fxgraph/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/parser/antlr/internal/InternalFXGraph.g:5661:4: otherlv_11= ',' ( (lv_arguments_12_0= ruleXExpression ) )
                             	    {
-                            	    otherlv_11=(Token)match(input,20,FOLLOW_20_in_ruleXConstructorCall12883); if (state.failed) return current;
+                            	    otherlv_11=(Token)match(input,21,FOLLOW_21_in_ruleXConstructorCall12883); if (state.failed) return current;
                             	    if ( state.backtracking==0 ) {
 
                             	          	newLeafNode(otherlv_11, grammarAccess.getXConstructorCallAccess().getCommaKeyword_4_1_1_1_0());
@@ -18511,10 +18511,10 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
                         int alt109=2;
                         int LA109_0 = input.LA(1);
 
-                        if ( (LA109_0==19) ) {
+                        if ( (LA109_0==20) ) {
                             int LA109_2 = input.LA(2);
 
-                            if ( (LA109_2==21) ) {
+                            if ( (LA109_2==22) ) {
                                 int LA109_3 = input.LA(3);
 
                                 if ( (synpred34_InternalFXGraph()) ) {
@@ -18548,13 +18548,13 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
 
                     	    }
 
-                    	    otherlv_2=(Token)match(input,19,FOLLOW_19_in_ruleJvmTypeReference14667); if (state.failed) return current;
+                    	    otherlv_2=(Token)match(input,20,FOLLOW_20_in_ruleJvmTypeReference14667); if (state.failed) return current;
                     	    if ( state.backtracking==0 ) {
 
                     	          	newLeafNode(otherlv_2, grammarAccess.getJvmTypeReferenceAccess().getLeftSquareBracketKeyword_0_1_0_1());
                     	          
                     	    }
-                    	    otherlv_3=(Token)match(input,21,FOLLOW_21_in_ruleJvmTypeReference14679); if (state.failed) return current;
+                    	    otherlv_3=(Token)match(input,22,FOLLOW_22_in_ruleJvmTypeReference14679); if (state.failed) return current;
                     	    if ( state.backtracking==0 ) {
 
                     	          	newLeafNode(otherlv_3, grammarAccess.getJvmTypeReferenceAccess().getRightSquareBracketKeyword_0_1_0_2());
@@ -18756,7 +18756,7 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
                                 int alt111=2;
                                 int LA111_0 = input.LA(1);
 
-                                if ( (LA111_0==20) ) {
+                                if ( (LA111_0==21) ) {
                                     alt111=1;
                                 }
 
@@ -18765,7 +18765,7 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
                             	case 1 :
                             	    // ../at.bestsolution.efxclipse.tooling.fxgraph/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/parser/antlr/internal/InternalFXGraph.g:6443:4: otherlv_2= ',' ( (lv_paramTypes_3_0= ruleJvmTypeReference ) )
                             	    {
-                            	    otherlv_2=(Token)match(input,20,FOLLOW_20_in_ruleXFunctionTypeRef14829); if (state.failed) return current;
+                            	    otherlv_2=(Token)match(input,21,FOLLOW_21_in_ruleXFunctionTypeRef14829); if (state.failed) return current;
                             	    if ( state.backtracking==0 ) {
 
                             	          	newLeafNode(otherlv_2, grammarAccess.getXFunctionTypeRefAccess().getCommaKeyword_0_1_1_0());
@@ -19052,7 +19052,7 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
                         int alt114=2;
                         int LA114_0 = input.LA(1);
 
-                        if ( (LA114_0==20) ) {
+                        if ( (LA114_0==21) ) {
                             alt114=1;
                         }
 
@@ -19061,7 +19061,7 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
                     	case 1 :
                     	    // ../at.bestsolution.efxclipse.tooling.fxgraph/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/parser/antlr/internal/InternalFXGraph.g:6550:4: otherlv_3= ',' ( (lv_arguments_4_0= ruleJvmArgumentTypeReference ) )
                     	    {
-                    	    otherlv_3=(Token)match(input,20,FOLLOW_20_in_ruleJvmParameterizedTypeReference15051); if (state.failed) return current;
+                    	    otherlv_3=(Token)match(input,21,FOLLOW_21_in_ruleJvmParameterizedTypeReference15051); if (state.failed) return current;
                     	    if ( state.backtracking==0 ) {
 
                     	          	newLeafNode(otherlv_3, grammarAccess.getJvmParameterizedTypeReferenceAccess().getCommaKeyword_1_2_0());
@@ -20479,7 +20479,7 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
                     int alt119=2;
                     int LA119_0 = input.LA(1);
 
-                    if ( (LA119_0==20) ) {
+                    if ( (LA119_0==21) ) {
                         alt119=1;
                     }
 
@@ -20488,7 +20488,7 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
                 	case 1 :
                 	    // ../at.bestsolution.efxclipse.tooling.fxgraph/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/parser/antlr/internal/InternalFXGraph.g:3594:4: ',' ( ( ruleJvmFormalParameter ) )
                 	    {
-                	    match(input,20,FOLLOW_20_in_synpred14_InternalFXGraph8287); if (state.failed) return ;
+                	    match(input,21,FOLLOW_21_in_synpred14_InternalFXGraph8287); if (state.failed) return ;
                 	    // ../at.bestsolution.efxclipse.tooling.fxgraph/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/parser/antlr/internal/InternalFXGraph.g:3595:1: ( ( ruleJvmFormalParameter ) )
                 	    // ../at.bestsolution.efxclipse.tooling.fxgraph/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/parser/antlr/internal/InternalFXGraph.g:3596:1: ( ruleJvmFormalParameter )
                 	    {
@@ -20605,7 +20605,7 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
                     int alt121=2;
                     int LA121_0 = input.LA(1);
 
-                    if ( (LA121_0==20) ) {
+                    if ( (LA121_0==21) ) {
                         alt121=1;
                     }
 
@@ -20614,7 +20614,7 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
                 	case 1 :
                 	    // ../at.bestsolution.efxclipse.tooling.fxgraph/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/parser/antlr/internal/InternalFXGraph.g:3955:4: ',' ( ( ruleJvmFormalParameter ) )
                 	    {
-                	    match(input,20,FOLLOW_20_in_synpred16_InternalFXGraph9206); if (state.failed) return ;
+                	    match(input,21,FOLLOW_21_in_synpred16_InternalFXGraph9206); if (state.failed) return ;
                 	    // ../at.bestsolution.efxclipse.tooling.fxgraph/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/parser/antlr/internal/InternalFXGraph.g:3956:1: ( ( ruleJvmFormalParameter ) )
                 	    // ../at.bestsolution.efxclipse.tooling.fxgraph/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/parser/antlr/internal/InternalFXGraph.g:3957:1: ( ruleJvmFormalParameter )
                 	    {
@@ -20862,7 +20862,7 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
                     int alt125=2;
                     int LA125_0 = input.LA(1);
 
-                    if ( (LA125_0==20) ) {
+                    if ( (LA125_0==21) ) {
                         alt125=1;
                     }
 
@@ -20871,7 +20871,7 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
                 	case 1 :
                 	    // ../at.bestsolution.efxclipse.tooling.fxgraph/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/parser/antlr/internal/InternalFXGraph.g:5335:4: ',' ( ( ruleJvmFormalParameter ) )
                 	    {
-                	    match(input,20,FOLLOW_20_in_synpred23_InternalFXGraph12142); if (state.failed) return ;
+                	    match(input,21,FOLLOW_21_in_synpred23_InternalFXGraph12142); if (state.failed) return ;
                 	    // ../at.bestsolution.efxclipse.tooling.fxgraph/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/parser/antlr/internal/InternalFXGraph.g:5336:1: ( ( ruleJvmFormalParameter ) )
                 	    // ../at.bestsolution.efxclipse.tooling.fxgraph/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/parser/antlr/internal/InternalFXGraph.g:5337:1: ( ruleJvmFormalParameter )
                 	    {
@@ -21015,7 +21015,7 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
                     int alt127=2;
                     int LA127_0 = input.LA(1);
 
-                    if ( (LA127_0==20) ) {
+                    if ( (LA127_0==21) ) {
                         alt127=1;
                     }
 
@@ -21024,7 +21024,7 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
                 	case 1 :
                 	    // ../at.bestsolution.efxclipse.tooling.fxgraph/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/parser/antlr/internal/InternalFXGraph.g:5613:4: ',' ( ( ruleJvmFormalParameter ) )
                 	    {
-                	    match(input,20,FOLLOW_20_in_synpred27_InternalFXGraph12798); if (state.failed) return ;
+                	    match(input,21,FOLLOW_21_in_synpred27_InternalFXGraph12798); if (state.failed) return ;
                 	    // ../at.bestsolution.efxclipse.tooling.fxgraph/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/parser/antlr/internal/InternalFXGraph.g:5614:1: ( ( ruleJvmFormalParameter ) )
                 	    // ../at.bestsolution.efxclipse.tooling.fxgraph/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/parser/antlr/internal/InternalFXGraph.g:5615:1: ( ruleJvmFormalParameter )
                 	    {
@@ -21166,8 +21166,8 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
         {
         }
 
-        match(input,19,FOLLOW_19_in_synpred34_InternalFXGraph14644); if (state.failed) return ;
-        match(input,21,FOLLOW_21_in_synpred34_InternalFXGraph14648); if (state.failed) return ;
+        match(input,20,FOLLOW_20_in_synpred34_InternalFXGraph14644); if (state.failed) return ;
+        match(input,22,FOLLOW_22_in_synpred34_InternalFXGraph14648); if (state.failed) return ;
 
         }
 
@@ -21679,9 +21679,9 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
     static final String DFA58_specialS =
         "\1\uffff\1\0\74\uffff}>";
     static final String[] DFA58_transitionS = {
-            "\2\2\1\uffff\1\2\1\uffff\2\2\10\uffff\3\2\2\uffff\2\2\1\uffff"+
-            "\1\1\1\2\6\uffff\1\2\1\uffff\3\2\12\uffff\2\2\1\uffff\24\2\1"+
-            "\uffff\14\2\1\uffff\11\2",
+            "\2\2\1\uffff\1\2\1\uffff\2\2\11\uffff\3\2\2\uffff\2\2\1\1\1"+
+            "\2\6\uffff\1\2\1\uffff\3\2\12\uffff\2\2\1\uffff\24\2\1\uffff"+
+            "\14\2\1\uffff\11\2",
             "\1\uffff",
             "",
             "",
@@ -21817,7 +21817,7 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
     static final String DFA57_specialS =
         "\1\0\1\1\1\2\33\uffff}>";
     static final String[] DFA57_transitionS = {
-            "\1\5\1\1\1\uffff\1\5\1\uffff\2\5\10\uffff\1\5\4\uffff\1\5\2"+
+            "\1\5\1\1\1\uffff\1\5\1\uffff\2\5\11\uffff\1\5\4\uffff\1\5\1"+
             "\uffff\1\2\1\35\10\uffff\3\5\26\uffff\1\5\2\uffff\1\5\3\uffff"+
             "\1\5\3\uffff\1\4\1\uffff\1\5\1\uffff\1\5\2\uffff\3\5\2\uffff"+
             "\1\5\1\uffff\6\5\2\uffff\1\3",
@@ -21903,7 +21903,7 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
 
                         else if ( (LA57_0==73) && (synpred14_InternalFXGraph())) {s = 4;}
 
-                        else if ( (LA57_0==RULE_STRING||LA57_0==RULE_INT||(LA57_0>=RULE_HEX && LA57_0<=RULE_DECIMAL)||LA57_0==19||LA57_0==24||(LA57_0>=37 && LA57_0<=39)||LA57_0==62||LA57_0==65||LA57_0==69||LA57_0==75||LA57_0==77||(LA57_0>=80 && LA57_0<=82)||LA57_0==85||(LA57_0>=87 && LA57_0<=92)) ) {s = 5;}
+                        else if ( (LA57_0==RULE_STRING||LA57_0==RULE_INT||(LA57_0>=RULE_HEX && LA57_0<=RULE_DECIMAL)||LA57_0==20||LA57_0==25||(LA57_0>=37 && LA57_0<=39)||LA57_0==62||LA57_0==65||LA57_0==69||LA57_0==75||LA57_0==77||(LA57_0>=80 && LA57_0<=82)||LA57_0==85||(LA57_0>=87 && LA57_0<=92)) ) {s = 5;}
 
                         else if ( (LA57_0==28) ) {s = 29;}
 
@@ -21962,9 +21962,9 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
     static final String DFA59_specialS =
         "\1\uffff\1\0\74\uffff}>";
     static final String[] DFA59_transitionS = {
-            "\2\2\1\uffff\1\2\1\uffff\2\2\10\uffff\1\1\2\2\2\uffff\2\2\1"+
-            "\uffff\2\2\6\uffff\1\2\1\uffff\3\2\12\uffff\2\2\1\uffff\24\2"+
-            "\1\uffff\14\2\1\uffff\11\2",
+            "\2\2\1\uffff\1\2\1\uffff\2\2\11\uffff\1\1\2\2\2\uffff\4\2\6"+
+            "\uffff\1\2\1\uffff\3\2\12\uffff\2\2\1\uffff\24\2\1\uffff\14"+
+            "\2\1\uffff\11\2",
             "\1\uffff",
             "",
             "",
@@ -22100,8 +22100,8 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
     static final String DFA65_specialS =
         "\1\0\1\1\1\2\35\uffff}>";
     static final String[] DFA65_transitionS = {
-            "\1\5\1\1\1\uffff\1\5\1\uffff\2\5\10\uffff\1\5\1\uffff\1\5\2"+
-            "\uffff\1\5\2\uffff\1\2\11\uffff\3\5\26\uffff\1\5\2\uffff\1\5"+
+            "\1\5\1\1\1\uffff\1\5\1\uffff\2\5\11\uffff\1\5\1\uffff\1\5\2"+
+            "\uffff\1\5\1\uffff\1\2\11\uffff\3\5\26\uffff\1\5\2\uffff\1\5"+
             "\3\uffff\1\5\3\uffff\1\4\1\uffff\1\5\1\uffff\1\5\2\uffff\6\5"+
             "\1\uffff\6\5\2\uffff\1\3",
             "\1\uffff",
@@ -22188,7 +22188,7 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
 
                         else if ( (LA65_0==73) && (synpred16_InternalFXGraph())) {s = 4;}
 
-                        else if ( (LA65_0==RULE_STRING||LA65_0==RULE_INT||(LA65_0>=RULE_HEX && LA65_0<=RULE_DECIMAL)||LA65_0==19||LA65_0==21||LA65_0==24||(LA65_0>=37 && LA65_0<=39)||LA65_0==62||LA65_0==65||LA65_0==69||LA65_0==75||LA65_0==77||(LA65_0>=80 && LA65_0<=85)||(LA65_0>=87 && LA65_0<=92)) ) {s = 5;}
+                        else if ( (LA65_0==RULE_STRING||LA65_0==RULE_INT||(LA65_0>=RULE_HEX && LA65_0<=RULE_DECIMAL)||LA65_0==20||LA65_0==22||LA65_0==25||(LA65_0>=37 && LA65_0<=39)||LA65_0==62||LA65_0==65||LA65_0==69||LA65_0==75||LA65_0==77||(LA65_0>=80 && LA65_0<=85)||(LA65_0>=87 && LA65_0<=92)) ) {s = 5;}
 
                          
                         input.seek(index65_0);
@@ -22245,9 +22245,9 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
     static final String DFA89_specialS =
         "\1\uffff\1\0\74\uffff}>";
     static final String[] DFA89_transitionS = {
-            "\2\2\1\uffff\1\2\1\uffff\2\2\10\uffff\3\2\2\uffff\2\2\1\uffff"+
-            "\1\1\1\2\6\uffff\1\2\1\uffff\3\2\12\uffff\2\2\1\uffff\24\2\1"+
-            "\uffff\14\2\1\uffff\11\2",
+            "\2\2\1\uffff\1\2\1\uffff\2\2\11\uffff\3\2\2\uffff\2\2\1\1\1"+
+            "\2\6\uffff\1\2\1\uffff\3\2\12\uffff\2\2\1\uffff\24\2\1\uffff"+
+            "\14\2\1\uffff\11\2",
             "\1\uffff",
             "",
             "",
@@ -22383,7 +22383,7 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
     static final String DFA88_specialS =
         "\1\0\1\1\1\2\33\uffff}>";
     static final String[] DFA88_transitionS = {
-            "\1\5\1\1\1\uffff\1\5\1\uffff\2\5\10\uffff\1\5\4\uffff\1\5\2"+
+            "\1\5\1\1\1\uffff\1\5\1\uffff\2\5\11\uffff\1\5\4\uffff\1\5\1"+
             "\uffff\1\2\1\35\10\uffff\3\5\26\uffff\1\5\2\uffff\1\5\3\uffff"+
             "\1\5\3\uffff\1\4\1\uffff\1\5\1\uffff\1\5\2\uffff\3\5\2\uffff"+
             "\1\5\1\uffff\6\5\2\uffff\1\3",
@@ -22469,7 +22469,7 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
 
                         else if ( (LA88_0==73) && (synpred23_InternalFXGraph())) {s = 4;}
 
-                        else if ( (LA88_0==RULE_STRING||LA88_0==RULE_INT||(LA88_0>=RULE_HEX && LA88_0<=RULE_DECIMAL)||LA88_0==19||LA88_0==24||(LA88_0>=37 && LA88_0<=39)||LA88_0==62||LA88_0==65||LA88_0==69||LA88_0==75||LA88_0==77||(LA88_0>=80 && LA88_0<=82)||LA88_0==85||(LA88_0>=87 && LA88_0<=92)) ) {s = 5;}
+                        else if ( (LA88_0==RULE_STRING||LA88_0==RULE_INT||(LA88_0>=RULE_HEX && LA88_0<=RULE_DECIMAL)||LA88_0==20||LA88_0==25||(LA88_0>=37 && LA88_0<=39)||LA88_0==62||LA88_0==65||LA88_0==69||LA88_0==75||LA88_0==77||(LA88_0>=80 && LA88_0<=82)||LA88_0==85||(LA88_0>=87 && LA88_0<=92)) ) {s = 5;}
 
                         else if ( (LA88_0==28) ) {s = 29;}
 
@@ -22528,9 +22528,9 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
     static final String DFA90_specialS =
         "\1\uffff\1\0\74\uffff}>";
     static final String[] DFA90_transitionS = {
-            "\2\2\1\uffff\1\2\1\uffff\2\2\10\uffff\1\1\2\2\2\uffff\2\2\1"+
-            "\uffff\2\2\6\uffff\1\2\1\uffff\3\2\12\uffff\2\2\1\uffff\24\2"+
-            "\1\uffff\14\2\1\uffff\11\2",
+            "\2\2\1\uffff\1\2\1\uffff\2\2\11\uffff\1\1\2\2\2\uffff\4\2\6"+
+            "\uffff\1\2\1\uffff\3\2\12\uffff\2\2\1\uffff\24\2\1\uffff\14"+
+            "\2\1\uffff\11\2",
             "\1\uffff",
             "",
             "",
@@ -22666,9 +22666,9 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
     static final String DFA94_specialS =
         "\1\uffff\1\0\74\uffff}>";
     static final String[] DFA94_transitionS = {
-            "\2\2\1\uffff\1\2\1\uffff\2\2\10\uffff\3\2\2\uffff\2\2\1\uffff"+
-            "\2\2\6\uffff\1\2\1\uffff\3\2\12\uffff\2\2\1\uffff\11\2\1\1\12"+
-            "\2\1\uffff\14\2\1\uffff\11\2",
+            "\2\2\1\uffff\1\2\1\uffff\2\2\11\uffff\3\2\2\uffff\4\2\6\uffff"+
+            "\1\2\1\uffff\3\2\12\uffff\2\2\1\uffff\11\2\1\1\12\2\1\uffff"+
+            "\14\2\1\uffff\11\2",
             "\1\uffff",
             "",
             "",
@@ -22804,9 +22804,9 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
     static final String DFA97_specialS =
         "\1\uffff\1\0\74\uffff}>";
     static final String[] DFA97_transitionS = {
-            "\2\2\1\uffff\1\2\1\uffff\2\2\10\uffff\3\2\2\uffff\2\2\1\uffff"+
-            "\1\1\1\2\6\uffff\1\2\1\uffff\3\2\12\uffff\2\2\1\uffff\24\2\1"+
-            "\uffff\14\2\1\uffff\11\2",
+            "\2\2\1\uffff\1\2\1\uffff\2\2\11\uffff\3\2\2\uffff\2\2\1\1\1"+
+            "\2\6\uffff\1\2\1\uffff\3\2\12\uffff\2\2\1\uffff\24\2\1\uffff"+
+            "\14\2\1\uffff\11\2",
             "\1\uffff",
             "",
             "",
@@ -22942,7 +22942,7 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
     static final String DFA96_specialS =
         "\1\0\1\1\1\2\33\uffff}>";
     static final String[] DFA96_transitionS = {
-            "\1\5\1\1\1\uffff\1\5\1\uffff\2\5\10\uffff\1\5\4\uffff\1\5\2"+
+            "\1\5\1\1\1\uffff\1\5\1\uffff\2\5\11\uffff\1\5\4\uffff\1\5\1"+
             "\uffff\1\2\1\35\10\uffff\3\5\26\uffff\1\5\2\uffff\1\5\3\uffff"+
             "\1\5\3\uffff\1\4\1\uffff\1\5\1\uffff\1\5\2\uffff\3\5\2\uffff"+
             "\1\5\1\uffff\6\5\2\uffff\1\3",
@@ -23028,7 +23028,7 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
 
                         else if ( (LA96_0==73) && (synpred27_InternalFXGraph())) {s = 4;}
 
-                        else if ( (LA96_0==RULE_STRING||LA96_0==RULE_INT||(LA96_0>=RULE_HEX && LA96_0<=RULE_DECIMAL)||LA96_0==19||LA96_0==24||(LA96_0>=37 && LA96_0<=39)||LA96_0==62||LA96_0==65||LA96_0==69||LA96_0==75||LA96_0==77||(LA96_0>=80 && LA96_0<=82)||LA96_0==85||(LA96_0>=87 && LA96_0<=92)) ) {s = 5;}
+                        else if ( (LA96_0==RULE_STRING||LA96_0==RULE_INT||(LA96_0>=RULE_HEX && LA96_0<=RULE_DECIMAL)||LA96_0==20||LA96_0==25||(LA96_0>=37 && LA96_0<=39)||LA96_0==62||LA96_0==65||LA96_0==69||LA96_0==75||LA96_0==77||(LA96_0>=80 && LA96_0<=82)||LA96_0==85||(LA96_0>=87 && LA96_0<=92)) ) {s = 5;}
 
                         else if ( (LA96_0==28) ) {s = 29;}
 
@@ -23087,9 +23087,9 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
     static final String DFA98_specialS =
         "\1\uffff\1\0\74\uffff}>";
     static final String[] DFA98_transitionS = {
-            "\2\2\1\uffff\1\2\1\uffff\2\2\10\uffff\1\1\2\2\2\uffff\2\2\1"+
-            "\uffff\2\2\6\uffff\1\2\1\uffff\3\2\12\uffff\2\2\1\uffff\24\2"+
-            "\1\uffff\14\2\1\uffff\11\2",
+            "\2\2\1\uffff\1\2\1\uffff\2\2\11\uffff\1\1\2\2\2\uffff\4\2\6"+
+            "\uffff\1\2\1\uffff\3\2\12\uffff\2\2\1\uffff\24\2\1\uffff\14"+
+            "\2\1\uffff\11\2",
             "\1\uffff",
             "",
             "",
@@ -23227,11 +23227,11 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
         "\14\1\15\1\16\1\17\1\20\1\21\1\22\1\23\1\24\1\25\1\26\1\27\1\30"+
         "\1\31\43\uffff}>";
     static final String[] DFA100_transitionS = {
-            "\1\21\1\1\1\uffff\1\16\1\uffff\1\15\1\17\10\uffff\1\12\2\33"+
-            "\2\uffff\1\6\1\33\1\uffff\1\32\1\33\6\uffff\1\33\1\uffff\1\14"+
-            "\1\13\1\3\12\uffff\2\33\1\uffff\11\33\1\10\2\33\1\4\3\33\1\2"+
-            "\3\33\1\uffff\1\33\1\23\1\33\1\7\2\33\1\24\1\25\1\26\2\33\1"+
-            "\11\1\uffff\1\5\1\20\1\22\1\27\1\30\1\31\3\33",
+            "\1\21\1\1\1\uffff\1\16\1\uffff\1\15\1\17\11\uffff\1\12\2\33"+
+            "\2\uffff\1\6\1\33\1\32\1\33\6\uffff\1\33\1\uffff\1\14\1\13\1"+
+            "\3\12\uffff\2\33\1\uffff\11\33\1\10\2\33\1\4\3\33\1\2\3\33\1"+
+            "\uffff\1\33\1\23\1\33\1\7\2\33\1\24\1\25\1\26\2\33\1\11\1\uffff"+
+            "\1\5\1\20\1\22\1\27\1\30\1\31\3\33",
             "\1\uffff",
             "\1\uffff",
             "\1\uffff",
@@ -23742,9 +23742,9 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
     static final String DFA115_specialS =
         "\1\uffff\1\0\102\uffff}>";
     static final String[] DFA115_transitionS = {
-            "\2\2\1\uffff\1\2\1\uffff\2\2\7\uffff\10\2\1\uffff\4\2\3\uffff"+
-            "\2\2\1\uffff\3\2\12\uffff\2\2\1\uffff\11\2\1\1\12\2\1\uffff"+
-            "\14\2\1\uffff\11\2",
+            "\2\2\1\uffff\1\2\1\uffff\2\2\10\uffff\14\2\3\uffff\2\2\1\uffff"+
+            "\3\2\12\uffff\2\2\1\uffff\11\2\1\1\12\2\1\uffff\14\2\1\uffff"+
+            "\11\2",
             "\1\uffff",
             "",
             "",
@@ -23877,73 +23877,73 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
 
     public static final BitSet FOLLOW_ruleModel_in_entryRuleModel75 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleModel85 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rulePackageDeclaration_in_ruleModel131 = new BitSet(new long[]{0x0000000004010000L});
-    public static final BitSet FOLLOW_ruleImport_in_ruleModel153 = new BitSet(new long[]{0x0000000004010000L});
+    public static final BitSet FOLLOW_rulePackageDeclaration_in_ruleModel131 = new BitSet(new long[]{0x0000000000030000L});
+    public static final BitSet FOLLOW_ruleImport_in_ruleModel153 = new BitSet(new long[]{0x0000000000030000L});
     public static final BitSet FOLLOW_ruleComponentDefinition_in_ruleModel175 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rulePackageDeclaration_in_entryRulePackageDeclaration211 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRulePackageDeclaration221 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_15_in_rulePackageDeclaration258 = new BitSet(new long[]{0x0000000000000020L});
     public static final BitSet FOLLOW_ruleQualifiedName_in_rulePackageDeclaration279 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleComponentDefinition_in_entryRuleComponentDefinition315 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleComponentDefinition325 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_16_in_ruleComponentDefinition362 = new BitSet(new long[]{0x0000000000000020L});
-    public static final BitSet FOLLOW_ruleValidID_in_ruleComponentDefinition383 = new BitSet(new long[]{0x0000000001C60000L});
-    public static final BitSet FOLLOW_17_in_ruleComponentDefinition396 = new BitSet(new long[]{0x0000000008000020L,0x0000000080000000L});
-    public static final BitSet FOLLOW_ruleJvmTypeReference_in_ruleComponentDefinition417 = new BitSet(new long[]{0x0000000001C40000L});
-    public static final BitSet FOLLOW_18_in_ruleComponentDefinition432 = new BitSet(new long[]{0x0000000000080010L});
-    public static final BitSet FOLLOW_RULE_STRING_in_ruleComponentDefinition450 = new BitSet(new long[]{0x0000000001C00000L});
-    public static final BitSet FOLLOW_19_in_ruleComponentDefinition474 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_RULE_STRING_in_ruleComponentDefinition491 = new BitSet(new long[]{0x0000000000300000L});
-    public static final BitSet FOLLOW_20_in_ruleComponentDefinition509 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_RULE_STRING_in_ruleComponentDefinition526 = new BitSet(new long[]{0x0000000000300000L});
-    public static final BitSet FOLLOW_21_in_ruleComponentDefinition545 = new BitSet(new long[]{0x0000000001C00000L});
-    public static final BitSet FOLLOW_22_in_ruleComponentDefinition562 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_RULE_STRING_in_ruleComponentDefinition579 = new BitSet(new long[]{0x0000000001800000L});
-    public static final BitSet FOLLOW_23_in_ruleComponentDefinition599 = new BitSet(new long[]{0x0000000000080000L});
-    public static final BitSet FOLLOW_19_in_ruleComponentDefinition611 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_RULE_STRING_in_ruleComponentDefinition628 = new BitSet(new long[]{0x0000000000300000L});
-    public static final BitSet FOLLOW_20_in_ruleComponentDefinition646 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_RULE_STRING_in_ruleComponentDefinition663 = new BitSet(new long[]{0x0000000000300000L});
-    public static final BitSet FOLLOW_21_in_ruleComponentDefinition682 = new BitSet(new long[]{0x0000000001000000L});
-    public static final BitSet FOLLOW_24_in_ruleComponentDefinition696 = new BitSet(new long[]{0x0000000188000020L,0x0000000080000000L});
-    public static final BitSet FOLLOW_ruleScript_in_ruleComponentDefinition717 = new BitSet(new long[]{0x0000000188000020L,0x0000000080000000L});
-    public static final BitSet FOLLOW_ruleDefine_in_ruleComponentDefinition740 = new BitSet(new long[]{0x0000000188100020L,0x0000000080000000L});
-    public static final BitSet FOLLOW_20_in_ruleComponentDefinition753 = new BitSet(new long[]{0x0000000080000000L});
-    public static final BitSet FOLLOW_ruleDefine_in_ruleComponentDefinition774 = new BitSet(new long[]{0x0000000188100020L,0x0000000080000000L});
-    public static final BitSet FOLLOW_ruleElement_in_ruleComponentDefinition799 = new BitSet(new long[]{0x0000000002000000L});
-    public static final BitSet FOLLOW_25_in_ruleComponentDefinition811 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleImport_in_entryRuleImport847 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleImport857 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_26_in_ruleImport894 = new BitSet(new long[]{0x0000000000000020L});
-    public static final BitSet FOLLOW_ruleQualifiedNameWithWildCard_in_ruleImport915 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleImport_in_entryRuleImport315 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleImport325 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_16_in_ruleImport362 = new BitSet(new long[]{0x0000000000000020L});
+    public static final BitSet FOLLOW_ruleQualifiedNameWithWildCard_in_ruleImport383 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleComponentDefinition_in_entryRuleComponentDefinition419 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleComponentDefinition429 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_17_in_ruleComponentDefinition466 = new BitSet(new long[]{0x0000000000000020L});
+    public static final BitSet FOLLOW_ruleValidID_in_ruleComponentDefinition487 = new BitSet(new long[]{0x00000000038C0000L});
+    public static final BitSet FOLLOW_18_in_ruleComponentDefinition500 = new BitSet(new long[]{0x0000000008000020L,0x0000000080000000L});
+    public static final BitSet FOLLOW_ruleJvmTypeReference_in_ruleComponentDefinition521 = new BitSet(new long[]{0x0000000003880000L});
+    public static final BitSet FOLLOW_19_in_ruleComponentDefinition536 = new BitSet(new long[]{0x0000000000100010L});
+    public static final BitSet FOLLOW_RULE_STRING_in_ruleComponentDefinition554 = new BitSet(new long[]{0x0000000003800000L});
+    public static final BitSet FOLLOW_20_in_ruleComponentDefinition578 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_RULE_STRING_in_ruleComponentDefinition595 = new BitSet(new long[]{0x0000000000600000L});
+    public static final BitSet FOLLOW_21_in_ruleComponentDefinition613 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_RULE_STRING_in_ruleComponentDefinition630 = new BitSet(new long[]{0x0000000000600000L});
+    public static final BitSet FOLLOW_22_in_ruleComponentDefinition649 = new BitSet(new long[]{0x0000000003800000L});
+    public static final BitSet FOLLOW_23_in_ruleComponentDefinition666 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_RULE_STRING_in_ruleComponentDefinition683 = new BitSet(new long[]{0x0000000003000000L});
+    public static final BitSet FOLLOW_24_in_ruleComponentDefinition703 = new BitSet(new long[]{0x0000000000100000L});
+    public static final BitSet FOLLOW_20_in_ruleComponentDefinition715 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_RULE_STRING_in_ruleComponentDefinition732 = new BitSet(new long[]{0x0000000000600000L});
+    public static final BitSet FOLLOW_21_in_ruleComponentDefinition750 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_RULE_STRING_in_ruleComponentDefinition767 = new BitSet(new long[]{0x0000000000600000L});
+    public static final BitSet FOLLOW_22_in_ruleComponentDefinition786 = new BitSet(new long[]{0x0000000002000000L});
+    public static final BitSet FOLLOW_25_in_ruleComponentDefinition800 = new BitSet(new long[]{0x0000000188000020L,0x0000000080000000L});
+    public static final BitSet FOLLOW_ruleScript_in_ruleComponentDefinition821 = new BitSet(new long[]{0x0000000188000020L,0x0000000080000000L});
+    public static final BitSet FOLLOW_ruleDefine_in_ruleComponentDefinition844 = new BitSet(new long[]{0x0000000188200020L,0x0000000080000000L});
+    public static final BitSet FOLLOW_21_in_ruleComponentDefinition857 = new BitSet(new long[]{0x0000000080000000L});
+    public static final BitSet FOLLOW_ruleDefine_in_ruleComponentDefinition878 = new BitSet(new long[]{0x0000000188200020L,0x0000000080000000L});
+    public static final BitSet FOLLOW_ruleElement_in_ruleComponentDefinition903 = new BitSet(new long[]{0x0000000004000000L});
+    public static final BitSet FOLLOW_26_in_ruleComponentDefinition915 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleElement_in_entryRuleElement951 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleElement961 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleJvmTypeReference_in_ruleElement1007 = new BitSet(new long[]{0x0000000069000002L});
+    public static final BitSet FOLLOW_ruleJvmTypeReference_in_ruleElement1007 = new BitSet(new long[]{0x000000006A000002L});
     public static final BitSet FOLLOW_27_in_ruleElement1022 = new BitSet(new long[]{0x000000E000000190L});
     public static final BitSet FOLLOW_ruleSimpleValueProperty_in_ruleElement1043 = new BitSet(new long[]{0x0000000010000000L});
     public static final BitSet FOLLOW_28_in_ruleElement1055 = new BitSet(new long[]{0x0000000020000002L});
     public static final BitSet FOLLOW_29_in_ruleElement1070 = new BitSet(new long[]{0x0000000000000020L});
     public static final BitSet FOLLOW_ruleValidID_in_ruleElement1091 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_29_in_ruleElement1114 = new BitSet(new long[]{0x0000000000000020L});
-    public static final BitSet FOLLOW_ruleValidID_in_ruleElement1135 = new BitSet(new long[]{0x0000000001000000L});
-    public static final BitSet FOLLOW_24_in_ruleElement1149 = new BitSet(new long[]{0x000000138A000020L,0x0000000080000000L});
-    public static final BitSet FOLLOW_ruleProperty_in_ruleElement1172 = new BitSet(new long[]{0x0000000002100000L});
-    public static final BitSet FOLLOW_ruleStaticValueProperty_in_ruleElement1199 = new BitSet(new long[]{0x0000000002100000L});
-    public static final BitSet FOLLOW_ruleElement_in_ruleElement1226 = new BitSet(new long[]{0x0000000002100000L});
-    public static final BitSet FOLLOW_20_in_ruleElement1240 = new BitSet(new long[]{0x0000001388000020L,0x0000000080000000L});
-    public static final BitSet FOLLOW_ruleProperty_in_ruleElement1262 = new BitSet(new long[]{0x0000000002100000L});
-    public static final BitSet FOLLOW_ruleStaticValueProperty_in_ruleElement1289 = new BitSet(new long[]{0x0000000002100000L});
-    public static final BitSet FOLLOW_ruleElement_in_ruleElement1316 = new BitSet(new long[]{0x0000000002100000L});
-    public static final BitSet FOLLOW_25_in_ruleElement1333 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleValidID_in_ruleElement1135 = new BitSet(new long[]{0x0000000002000000L});
+    public static final BitSet FOLLOW_25_in_ruleElement1149 = new BitSet(new long[]{0x000000138C000020L,0x0000000080000000L});
+    public static final BitSet FOLLOW_ruleProperty_in_ruleElement1172 = new BitSet(new long[]{0x0000000004200000L});
+    public static final BitSet FOLLOW_ruleStaticValueProperty_in_ruleElement1199 = new BitSet(new long[]{0x0000000004200000L});
+    public static final BitSet FOLLOW_ruleElement_in_ruleElement1226 = new BitSet(new long[]{0x0000000004200000L});
+    public static final BitSet FOLLOW_21_in_ruleElement1240 = new BitSet(new long[]{0x0000001388000020L,0x0000000080000000L});
+    public static final BitSet FOLLOW_ruleProperty_in_ruleElement1262 = new BitSet(new long[]{0x0000000004200000L});
+    public static final BitSet FOLLOW_ruleStaticValueProperty_in_ruleElement1289 = new BitSet(new long[]{0x0000000004200000L});
+    public static final BitSet FOLLOW_ruleElement_in_ruleElement1316 = new BitSet(new long[]{0x0000000004200000L});
+    public static final BitSet FOLLOW_26_in_ruleElement1333 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_29_in_ruleElement1354 = new BitSet(new long[]{0x0000000000000020L});
     public static final BitSet FOLLOW_ruleValidID_in_ruleElement1375 = new BitSet(new long[]{0x0000000040000000L});
     public static final BitSet FOLLOW_30_in_ruleElement1389 = new BitSet(new long[]{0x0000000000000020L});
-    public static final BitSet FOLLOW_RULE_ID_in_ruleElement1406 = new BitSet(new long[]{0x0000000001000000L});
-    public static final BitSet FOLLOW_24_in_ruleElement1423 = new BitSet(new long[]{0x0000000188000020L,0x0000000080000000L});
-    public static final BitSet FOLLOW_ruleElement_in_ruleElement1444 = new BitSet(new long[]{0x0000000002100000L});
-    public static final BitSet FOLLOW_20_in_ruleElement1457 = new BitSet(new long[]{0x0000000188000020L,0x0000000080000000L});
-    public static final BitSet FOLLOW_ruleElement_in_ruleElement1478 = new BitSet(new long[]{0x0000000002100000L});
-    public static final BitSet FOLLOW_25_in_ruleElement1492 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_ID_in_ruleElement1406 = new BitSet(new long[]{0x0000000002000000L});
+    public static final BitSet FOLLOW_25_in_ruleElement1423 = new BitSet(new long[]{0x0000000188000020L,0x0000000080000000L});
+    public static final BitSet FOLLOW_ruleElement_in_ruleElement1444 = new BitSet(new long[]{0x0000000004200000L});
+    public static final BitSet FOLLOW_21_in_ruleElement1457 = new BitSet(new long[]{0x0000000188000020L,0x0000000080000000L});
+    public static final BitSet FOLLOW_ruleElement_in_ruleElement1478 = new BitSet(new long[]{0x0000000004200000L});
+    public static final BitSet FOLLOW_26_in_ruleElement1492 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleDefine_in_entryRuleDefine1530 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleDefine1540 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_31_in_ruleDefine1577 = new BitSet(new long[]{0x0000000188000020L,0x0000000080000000L});
@@ -23960,13 +23960,13 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
     public static final BitSet FOLLOW_ruleJvmTypeReference_in_ruleStaticValueProperty1859 = new BitSet(new long[]{0x0000000400000000L});
     public static final BitSet FOLLOW_34_in_ruleStaticValueProperty1871 = new BitSet(new long[]{0x0000000000000020L});
     public static final BitSet FOLLOW_RULE_ID_in_ruleStaticValueProperty1888 = new BitSet(new long[]{0x0000000800000000L});
-    public static final BitSet FOLLOW_35_in_ruleStaticValueProperty1905 = new BitSet(new long[]{0x0003FFE1890801B0L,0x0000000080000000L});
+    public static final BitSet FOLLOW_35_in_ruleStaticValueProperty1905 = new BitSet(new long[]{0x0003FFE18A1001B0L,0x0000000080000000L});
     public static final BitSet FOLLOW_ruleValueProperty_in_ruleStaticValueProperty1926 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleProperty_in_entryRuleProperty1962 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleProperty1972 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_36_in_ruleProperty2015 = new BitSet(new long[]{0x0000000000000020L});
     public static final BitSet FOLLOW_RULE_ID_in_ruleProperty2046 = new BitSet(new long[]{0x0000000800000000L});
-    public static final BitSet FOLLOW_35_in_ruleProperty2063 = new BitSet(new long[]{0x0003FFE1890801B0L,0x0000000080000000L});
+    public static final BitSet FOLLOW_35_in_ruleProperty2063 = new BitSet(new long[]{0x0003FFE18A1001B0L,0x0000000080000000L});
     public static final BitSet FOLLOW_ruleValueProperty_in_ruleProperty2084 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleValueProperty_in_entryRuleValueProperty2120 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleValueProperty2130 = new BitSet(new long[]{0x0000000000000002L});
@@ -23997,18 +23997,18 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
     public static final BitSet FOLLOW_ruleIncludeValueProperty_in_ruleListValueElement2858 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleListValueProperty_in_entryRuleListValueProperty2893 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleListValueProperty2903 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_19_in_ruleListValueProperty2940 = new BitSet(new long[]{0x0000030188000020L,0x0000000080000000L});
-    public static final BitSet FOLLOW_ruleListValueElement_in_ruleListValueProperty2961 = new BitSet(new long[]{0x0000000000300000L});
-    public static final BitSet FOLLOW_20_in_ruleListValueProperty2974 = new BitSet(new long[]{0x0000030188000020L,0x0000000080000000L});
-    public static final BitSet FOLLOW_ruleListValueElement_in_ruleListValueProperty2995 = new BitSet(new long[]{0x0000000000300000L});
-    public static final BitSet FOLLOW_21_in_ruleListValueProperty3009 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_20_in_ruleListValueProperty2940 = new BitSet(new long[]{0x0000030188000020L,0x0000000080000000L});
+    public static final BitSet FOLLOW_ruleListValueElement_in_ruleListValueProperty2961 = new BitSet(new long[]{0x0000000000600000L});
+    public static final BitSet FOLLOW_21_in_ruleListValueProperty2974 = new BitSet(new long[]{0x0000030188000020L,0x0000000080000000L});
+    public static final BitSet FOLLOW_ruleListValueElement_in_ruleListValueProperty2995 = new BitSet(new long[]{0x0000000000600000L});
+    public static final BitSet FOLLOW_22_in_ruleListValueProperty3009 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleMapValueProperty_in_entryRuleMapValueProperty3045 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleMapValueProperty3055 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_24_in_ruleMapValueProperty3092 = new BitSet(new long[]{0x0000001000000020L});
-    public static final BitSet FOLLOW_ruleProperty_in_ruleMapValueProperty3113 = new BitSet(new long[]{0x0000000002100000L});
-    public static final BitSet FOLLOW_20_in_ruleMapValueProperty3126 = new BitSet(new long[]{0x0000001000000020L});
-    public static final BitSet FOLLOW_ruleProperty_in_ruleMapValueProperty3147 = new BitSet(new long[]{0x0000000002100000L});
-    public static final BitSet FOLLOW_25_in_ruleMapValueProperty3161 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_25_in_ruleMapValueProperty3092 = new BitSet(new long[]{0x0000001000000020L});
+    public static final BitSet FOLLOW_ruleProperty_in_ruleMapValueProperty3113 = new BitSet(new long[]{0x0000000004200000L});
+    public static final BitSet FOLLOW_21_in_ruleMapValueProperty3126 = new BitSet(new long[]{0x0000001000000020L});
+    public static final BitSet FOLLOW_ruleProperty_in_ruleMapValueProperty3147 = new BitSet(new long[]{0x0000000004200000L});
+    public static final BitSet FOLLOW_26_in_ruleMapValueProperty3161 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleSimpleValueProperty_in_entryRuleSimpleValueProperty3197 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleSimpleValueProperty3207 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_RULE_STRING_in_ruleSimpleValueProperty3249 = new BitSet(new long[]{0x0000000000000002L});
@@ -24073,10 +24073,10 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
     public static final BitSet FOLLOW_ruleXAssignment_in_entryRuleXAssignment4854 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleXAssignment4864 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleValidID_in_ruleXAssignment4922 = new BitSet(new long[]{0x0010000000000000L});
-    public static final BitSet FOLLOW_ruleOpSingleAssign_in_ruleXAssignment4938 = new BitSet(new long[]{0x400000E0090806B0L,0x000000001FA72822L});
+    public static final BitSet FOLLOW_ruleOpSingleAssign_in_ruleXAssignment4938 = new BitSet(new long[]{0x400000E00A1006B0L,0x000000001FA72822L});
     public static final BitSet FOLLOW_ruleXAssignment_in_ruleXAssignment4958 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleXOrExpression_in_ruleXAssignment4988 = new BitSet(new long[]{0x0020000000000002L});
-    public static final BitSet FOLLOW_ruleOpMultiAssign_in_ruleXAssignment5041 = new BitSet(new long[]{0x400000E0090806B0L,0x000000001FA72822L});
+    public static final BitSet FOLLOW_ruleOpMultiAssign_in_ruleXAssignment5041 = new BitSet(new long[]{0x400000E00A1006B0L,0x000000001FA72822L});
     public static final BitSet FOLLOW_ruleXAssignment_in_ruleXAssignment5064 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleOpSingleAssign_in_entryRuleOpSingleAssign5104 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleOpSingleAssign5115 = new BitSet(new long[]{0x0000000000000002L});
@@ -24087,7 +24087,7 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
     public static final BitSet FOLLOW_ruleXOrExpression_in_entryRuleXOrExpression5279 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleXOrExpression5289 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleXAndExpression_in_ruleXOrExpression5336 = new BitSet(new long[]{0x0040000000000002L});
-    public static final BitSet FOLLOW_ruleOpOr_in_ruleXOrExpression5389 = new BitSet(new long[]{0x400000E0090806B0L,0x000000001FA72822L});
+    public static final BitSet FOLLOW_ruleOpOr_in_ruleXOrExpression5389 = new BitSet(new long[]{0x400000E00A1006B0L,0x000000001FA72822L});
     public static final BitSet FOLLOW_ruleXAndExpression_in_ruleXOrExpression5412 = new BitSet(new long[]{0x0040000000000002L});
     public static final BitSet FOLLOW_ruleOpOr_in_entryRuleOpOr5451 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleOpOr5462 = new BitSet(new long[]{0x0000000000000002L});
@@ -24095,7 +24095,7 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
     public static final BitSet FOLLOW_ruleXAndExpression_in_entryRuleXAndExpression5538 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleXAndExpression5548 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleXEqualityExpression_in_ruleXAndExpression5595 = new BitSet(new long[]{0x0080000000000002L});
-    public static final BitSet FOLLOW_ruleOpAnd_in_ruleXAndExpression5648 = new BitSet(new long[]{0x400000E0090806B0L,0x000000001FA72822L});
+    public static final BitSet FOLLOW_ruleOpAnd_in_ruleXAndExpression5648 = new BitSet(new long[]{0x400000E00A1006B0L,0x000000001FA72822L});
     public static final BitSet FOLLOW_ruleXEqualityExpression_in_ruleXAndExpression5671 = new BitSet(new long[]{0x0080000000000002L});
     public static final BitSet FOLLOW_ruleOpAnd_in_entryRuleOpAnd5710 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleOpAnd5721 = new BitSet(new long[]{0x0000000000000002L});
@@ -24103,7 +24103,7 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
     public static final BitSet FOLLOW_ruleXEqualityExpression_in_entryRuleXEqualityExpression5797 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleXEqualityExpression5807 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleXRelationalExpression_in_ruleXEqualityExpression5854 = new BitSet(new long[]{0x0300000000000002L});
-    public static final BitSet FOLLOW_ruleOpEquality_in_ruleXEqualityExpression5907 = new BitSet(new long[]{0x400000E0090806B0L,0x000000001FA72822L});
+    public static final BitSet FOLLOW_ruleOpEquality_in_ruleXEqualityExpression5907 = new BitSet(new long[]{0x400000E00A1006B0L,0x000000001FA72822L});
     public static final BitSet FOLLOW_ruleXRelationalExpression_in_ruleXEqualityExpression5930 = new BitSet(new long[]{0x0300000000000002L});
     public static final BitSet FOLLOW_ruleOpEquality_in_entryRuleOpEquality5969 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleOpEquality5980 = new BitSet(new long[]{0x0000000000000002L});
@@ -24114,7 +24114,7 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
     public static final BitSet FOLLOW_ruleXOtherOperatorExpression_in_ruleXRelationalExpression6134 = new BitSet(new long[]{0x7C00000000000002L});
     public static final BitSet FOLLOW_58_in_ruleXRelationalExpression6170 = new BitSet(new long[]{0x0000000008000020L,0x0000000080000000L});
     public static final BitSet FOLLOW_ruleJvmTypeReference_in_ruleXRelationalExpression6193 = new BitSet(new long[]{0x7C00000000000002L});
-    public static final BitSet FOLLOW_ruleOpCompare_in_ruleXRelationalExpression6254 = new BitSet(new long[]{0x400000E0090806B0L,0x000000001FA72822L});
+    public static final BitSet FOLLOW_ruleOpCompare_in_ruleXRelationalExpression6254 = new BitSet(new long[]{0x400000E00A1006B0L,0x000000001FA72822L});
     public static final BitSet FOLLOW_ruleXOtherOperatorExpression_in_ruleXRelationalExpression6277 = new BitSet(new long[]{0x7C00000000000002L});
     public static final BitSet FOLLOW_ruleOpCompare_in_entryRuleOpCompare6317 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleOpCompare6328 = new BitSet(new long[]{0x0000000000000002L});
@@ -24125,7 +24125,7 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
     public static final BitSet FOLLOW_ruleXOtherOperatorExpression_in_entryRuleXOtherOperatorExpression6463 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleXOtherOperatorExpression6473 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleXAdditiveExpression_in_ruleXOtherOperatorExpression6520 = new BitSet(new long[]{0x8000000000000002L,0x0000000000000001L});
-    public static final BitSet FOLLOW_ruleOpOther_in_ruleXOtherOperatorExpression6573 = new BitSet(new long[]{0x400000E0090806B0L,0x000000001FA72822L});
+    public static final BitSet FOLLOW_ruleOpOther_in_ruleXOtherOperatorExpression6573 = new BitSet(new long[]{0x400000E00A1006B0L,0x000000001FA72822L});
     public static final BitSet FOLLOW_ruleXAdditiveExpression_in_ruleXOtherOperatorExpression6596 = new BitSet(new long[]{0x8000000000000002L,0x0000000000000001L});
     public static final BitSet FOLLOW_ruleOpOther_in_entryRuleOpOther6635 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleOpOther6646 = new BitSet(new long[]{0x0000000000000002L});
@@ -24134,7 +24134,7 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
     public static final BitSet FOLLOW_ruleXAdditiveExpression_in_entryRuleXAdditiveExpression6743 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleXAdditiveExpression6753 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleXMultiplicativeExpression_in_ruleXAdditiveExpression6800 = new BitSet(new long[]{0x0000008000000002L,0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleOpAdd_in_ruleXAdditiveExpression6853 = new BitSet(new long[]{0x400000E0090806B0L,0x000000001FA72822L});
+    public static final BitSet FOLLOW_ruleOpAdd_in_ruleXAdditiveExpression6853 = new BitSet(new long[]{0x400000E00A1006B0L,0x000000001FA72822L});
     public static final BitSet FOLLOW_ruleXMultiplicativeExpression_in_ruleXAdditiveExpression6876 = new BitSet(new long[]{0x0000008000000002L,0x0000000000000002L});
     public static final BitSet FOLLOW_ruleOpAdd_in_entryRuleOpAdd6915 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleOpAdd6926 = new BitSet(new long[]{0x0000000000000002L});
@@ -24143,7 +24143,7 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
     public static final BitSet FOLLOW_ruleXMultiplicativeExpression_in_entryRuleXMultiplicativeExpression7023 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleXMultiplicativeExpression7033 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleXUnaryOperation_in_ruleXMultiplicativeExpression7080 = new BitSet(new long[]{0x0008000000000002L,0x000000000000001CL});
-    public static final BitSet FOLLOW_ruleOpMulti_in_ruleXMultiplicativeExpression7133 = new BitSet(new long[]{0x400000E0090806B0L,0x000000001FA72822L});
+    public static final BitSet FOLLOW_ruleOpMulti_in_ruleXMultiplicativeExpression7133 = new BitSet(new long[]{0x400000E00A1006B0L,0x000000001FA72822L});
     public static final BitSet FOLLOW_ruleXUnaryOperation_in_ruleXMultiplicativeExpression7156 = new BitSet(new long[]{0x0008000000000002L,0x000000000000001CL});
     public static final BitSet FOLLOW_ruleOpMulti_in_entryRuleOpMulti7195 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleOpMulti7206 = new BitSet(new long[]{0x0000000000000002L});
@@ -24153,7 +24153,7 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
     public static final BitSet FOLLOW_68_in_ruleOpMulti7301 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleXUnaryOperation_in_entryRuleXUnaryOperation7341 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleXUnaryOperation7351 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleOpUnary_in_ruleXUnaryOperation7409 = new BitSet(new long[]{0x400000E0090806B0L,0x000000001FA72822L});
+    public static final BitSet FOLLOW_ruleOpUnary_in_ruleXUnaryOperation7409 = new BitSet(new long[]{0x400000E00A1006B0L,0x000000001FA72822L});
     public static final BitSet FOLLOW_ruleXCastedExpression_in_ruleXUnaryOperation7430 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleXCastedExpression_in_ruleXUnaryOperation7459 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleOpUnary_in_entryRuleOpUnary7495 = new BitSet(new long[]{0x0000000000000000L});
@@ -24171,23 +24171,23 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
     public static final BitSet FOLLOW_ruleXPrimaryExpression_in_ruleXMemberFeatureCall7832 = new BitSet(new long[]{0x0004000000000002L,0x0000000000000180L});
     public static final BitSet FOLLOW_50_in_ruleXMemberFeatureCall7881 = new BitSet(new long[]{0x0000000000000020L});
     public static final BitSet FOLLOW_ruleValidID_in_ruleXMemberFeatureCall7904 = new BitSet(new long[]{0x0010000000000000L});
-    public static final BitSet FOLLOW_ruleOpSingleAssign_in_ruleXMemberFeatureCall7920 = new BitSet(new long[]{0x400000E0090806B0L,0x000000001FA72822L});
+    public static final BitSet FOLLOW_ruleOpSingleAssign_in_ruleXMemberFeatureCall7920 = new BitSet(new long[]{0x400000E00A1006B0L,0x000000001FA72822L});
     public static final BitSet FOLLOW_ruleXAssignment_in_ruleXMemberFeatureCall7942 = new BitSet(new long[]{0x0004000000000002L,0x0000000000000180L});
     public static final BitSet FOLLOW_50_in_ruleXMemberFeatureCall8028 = new BitSet(new long[]{0x4000000000000020L});
     public static final BitSet FOLLOW_71_in_ruleXMemberFeatureCall8052 = new BitSet(new long[]{0x4000000000000020L});
     public static final BitSet FOLLOW_72_in_ruleXMemberFeatureCall8089 = new BitSet(new long[]{0x4000000000000020L});
     public static final BitSet FOLLOW_62_in_ruleXMemberFeatureCall8118 = new BitSet(new long[]{0x0000000008000020L,0x0000000180000000L});
-    public static final BitSet FOLLOW_ruleJvmArgumentTypeReference_in_ruleXMemberFeatureCall8139 = new BitSet(new long[]{0x2000000000100000L});
-    public static final BitSet FOLLOW_20_in_ruleXMemberFeatureCall8152 = new BitSet(new long[]{0x0000000008000020L,0x0000000180000000L});
-    public static final BitSet FOLLOW_ruleJvmArgumentTypeReference_in_ruleXMemberFeatureCall8173 = new BitSet(new long[]{0x2000000000100000L});
+    public static final BitSet FOLLOW_ruleJvmArgumentTypeReference_in_ruleXMemberFeatureCall8139 = new BitSet(new long[]{0x2000000000200000L});
+    public static final BitSet FOLLOW_21_in_ruleXMemberFeatureCall8152 = new BitSet(new long[]{0x0000000008000020L,0x0000000180000000L});
+    public static final BitSet FOLLOW_ruleJvmArgumentTypeReference_in_ruleXMemberFeatureCall8173 = new BitSet(new long[]{0x2000000000200000L});
     public static final BitSet FOLLOW_61_in_ruleXMemberFeatureCall8187 = new BitSet(new long[]{0x0000000000000020L});
-    public static final BitSet FOLLOW_ruleValidID_in_ruleXMemberFeatureCall8212 = new BitSet(new long[]{0x0004000008080002L,0x0000000000000180L});
-    public static final BitSet FOLLOW_27_in_ruleXMemberFeatureCall8246 = new BitSet(new long[]{0x400000E0190806B0L,0x000000009FA72A22L});
+    public static final BitSet FOLLOW_ruleValidID_in_ruleXMemberFeatureCall8212 = new BitSet(new long[]{0x0004000008100002L,0x0000000000000180L});
+    public static final BitSet FOLLOW_27_in_ruleXMemberFeatureCall8246 = new BitSet(new long[]{0x400000E01A1006B0L,0x000000009FA72A22L});
     public static final BitSet FOLLOW_ruleXShortClosure_in_ruleXMemberFeatureCall8331 = new BitSet(new long[]{0x0000000010000000L});
-    public static final BitSet FOLLOW_ruleXExpression_in_ruleXMemberFeatureCall8359 = new BitSet(new long[]{0x0000000010100000L});
-    public static final BitSet FOLLOW_20_in_ruleXMemberFeatureCall8372 = new BitSet(new long[]{0x400000E0090806B0L,0x000000001FA72822L});
-    public static final BitSet FOLLOW_ruleXExpression_in_ruleXMemberFeatureCall8393 = new BitSet(new long[]{0x0000000010100000L});
-    public static final BitSet FOLLOW_28_in_ruleXMemberFeatureCall8410 = new BitSet(new long[]{0x0004000000080002L,0x0000000000000180L});
+    public static final BitSet FOLLOW_ruleXExpression_in_ruleXMemberFeatureCall8359 = new BitSet(new long[]{0x0000000010200000L});
+    public static final BitSet FOLLOW_21_in_ruleXMemberFeatureCall8372 = new BitSet(new long[]{0x400000E00A1006B0L,0x000000001FA72822L});
+    public static final BitSet FOLLOW_ruleXExpression_in_ruleXMemberFeatureCall8393 = new BitSet(new long[]{0x0000000010200000L});
+    public static final BitSet FOLLOW_28_in_ruleXMemberFeatureCall8410 = new BitSet(new long[]{0x0004000000100002L,0x0000000000000180L});
     public static final BitSet FOLLOW_ruleXClosure_in_ruleXMemberFeatureCall8443 = new BitSet(new long[]{0x0004000000000002L,0x0000000000000180L});
     public static final BitSet FOLLOW_ruleXPrimaryExpression_in_entryRuleXPrimaryExpression8483 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleXPrimaryExpression8493 = new BitSet(new long[]{0x0000000000000002L});
@@ -24214,92 +24214,92 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
     public static final BitSet FOLLOW_ruleXTypeLiteral_in_ruleXLiteral9091 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleXClosure_in_entryRuleXClosure9126 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleXClosure9136 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_19_in_ruleXClosure9182 = new BitSet(new long[]{0x400000E0092806B0L,0x000000009FBF2A22L});
-    public static final BitSet FOLLOW_ruleJvmFormalParameter_in_ruleXClosure9253 = new BitSet(new long[]{0x0000000000100000L,0x0000000000000200L});
-    public static final BitSet FOLLOW_20_in_ruleXClosure9266 = new BitSet(new long[]{0x0000000008000020L,0x0000000080000000L});
-    public static final BitSet FOLLOW_ruleJvmFormalParameter_in_ruleXClosure9287 = new BitSet(new long[]{0x0000000000100000L,0x0000000000000200L});
-    public static final BitSet FOLLOW_73_in_ruleXClosure9309 = new BitSet(new long[]{0x400000E0092806B0L,0x000000001FBF2822L});
-    public static final BitSet FOLLOW_ruleXExpressionInClosure_in_ruleXClosure9346 = new BitSet(new long[]{0x0000000000200000L});
-    public static final BitSet FOLLOW_21_in_ruleXClosure9358 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_20_in_ruleXClosure9182 = new BitSet(new long[]{0x400000E00A5006B0L,0x000000009FBF2A22L});
+    public static final BitSet FOLLOW_ruleJvmFormalParameter_in_ruleXClosure9253 = new BitSet(new long[]{0x0000000000200000L,0x0000000000000200L});
+    public static final BitSet FOLLOW_21_in_ruleXClosure9266 = new BitSet(new long[]{0x0000000008000020L,0x0000000080000000L});
+    public static final BitSet FOLLOW_ruleJvmFormalParameter_in_ruleXClosure9287 = new BitSet(new long[]{0x0000000000200000L,0x0000000000000200L});
+    public static final BitSet FOLLOW_73_in_ruleXClosure9309 = new BitSet(new long[]{0x400000E00A5006B0L,0x000000001FBF2822L});
+    public static final BitSet FOLLOW_ruleXExpressionInClosure_in_ruleXClosure9346 = new BitSet(new long[]{0x0000000000400000L});
+    public static final BitSet FOLLOW_22_in_ruleXClosure9358 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleXExpressionInClosure_in_entryRuleXExpressionInClosure9394 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleXExpressionInClosure9404 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleXExpressionInsideBlock_in_ruleXExpressionInClosure9460 = new BitSet(new long[]{0x400000E0090806B2L,0x000000001FBF2C22L});
-    public static final BitSet FOLLOW_74_in_ruleXExpressionInClosure9473 = new BitSet(new long[]{0x400000E0090806B2L,0x000000001FBF2822L});
+    public static final BitSet FOLLOW_ruleXExpressionInsideBlock_in_ruleXExpressionInClosure9460 = new BitSet(new long[]{0x400000E00A1006B2L,0x000000001FBF2C22L});
+    public static final BitSet FOLLOW_74_in_ruleXExpressionInClosure9473 = new BitSet(new long[]{0x400000E00A1006B2L,0x000000001FBF2822L});
     public static final BitSet FOLLOW_ruleXShortClosure_in_entryRuleXShortClosure9513 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleXShortClosure9523 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleJvmFormalParameter_in_ruleXShortClosure9631 = new BitSet(new long[]{0x0000000000100000L,0x0000000000000200L});
-    public static final BitSet FOLLOW_20_in_ruleXShortClosure9644 = new BitSet(new long[]{0x0000000008000020L,0x0000000080000000L});
-    public static final BitSet FOLLOW_ruleJvmFormalParameter_in_ruleXShortClosure9665 = new BitSet(new long[]{0x0000000000100000L,0x0000000000000200L});
-    public static final BitSet FOLLOW_73_in_ruleXShortClosure9687 = new BitSet(new long[]{0x400000E0090806B0L,0x000000001FA72822L});
+    public static final BitSet FOLLOW_ruleJvmFormalParameter_in_ruleXShortClosure9631 = new BitSet(new long[]{0x0000000000200000L,0x0000000000000200L});
+    public static final BitSet FOLLOW_21_in_ruleXShortClosure9644 = new BitSet(new long[]{0x0000000008000020L,0x0000000080000000L});
+    public static final BitSet FOLLOW_ruleJvmFormalParameter_in_ruleXShortClosure9665 = new BitSet(new long[]{0x0000000000200000L,0x0000000000000200L});
+    public static final BitSet FOLLOW_73_in_ruleXShortClosure9687 = new BitSet(new long[]{0x400000E00A1006B0L,0x000000001FA72822L});
     public static final BitSet FOLLOW_ruleXExpression_in_ruleXShortClosure9723 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleXParenthesizedExpression_in_entryRuleXParenthesizedExpression9759 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleXParenthesizedExpression9769 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_27_in_ruleXParenthesizedExpression9806 = new BitSet(new long[]{0x400000E0090806B0L,0x000000001FA72822L});
+    public static final BitSet FOLLOW_27_in_ruleXParenthesizedExpression9806 = new BitSet(new long[]{0x400000E00A1006B0L,0x000000001FA72822L});
     public static final BitSet FOLLOW_ruleXExpression_in_ruleXParenthesizedExpression9828 = new BitSet(new long[]{0x0000000010000000L});
     public static final BitSet FOLLOW_28_in_ruleXParenthesizedExpression9839 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleXIfExpression_in_entryRuleXIfExpression9875 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleXIfExpression9885 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_75_in_ruleXIfExpression9931 = new BitSet(new long[]{0x0000000008000000L});
-    public static final BitSet FOLLOW_27_in_ruleXIfExpression9943 = new BitSet(new long[]{0x400000E0090806B0L,0x000000001FA72822L});
+    public static final BitSet FOLLOW_27_in_ruleXIfExpression9943 = new BitSet(new long[]{0x400000E00A1006B0L,0x000000001FA72822L});
     public static final BitSet FOLLOW_ruleXExpression_in_ruleXIfExpression9964 = new BitSet(new long[]{0x0000000010000000L});
-    public static final BitSet FOLLOW_28_in_ruleXIfExpression9976 = new BitSet(new long[]{0x400000E0090806B0L,0x000000001FA72822L});
+    public static final BitSet FOLLOW_28_in_ruleXIfExpression9976 = new BitSet(new long[]{0x400000E00A1006B0L,0x000000001FA72822L});
     public static final BitSet FOLLOW_ruleXExpression_in_ruleXIfExpression9997 = new BitSet(new long[]{0x0000000000000002L,0x0000000000001000L});
-    public static final BitSet FOLLOW_76_in_ruleXIfExpression10018 = new BitSet(new long[]{0x400000E0090806B0L,0x000000001FA72822L});
+    public static final BitSet FOLLOW_76_in_ruleXIfExpression10018 = new BitSet(new long[]{0x400000E00A1006B0L,0x000000001FA72822L});
     public static final BitSet FOLLOW_ruleXExpression_in_ruleXIfExpression10040 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleXSwitchExpression_in_entryRuleXSwitchExpression10078 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleXSwitchExpression10088 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_77_in_ruleXSwitchExpression10134 = new BitSet(new long[]{0x400000E0090806B0L,0x000000001FA72822L});
+    public static final BitSet FOLLOW_77_in_ruleXSwitchExpression10134 = new BitSet(new long[]{0x400000E00A1006B0L,0x000000001FA72822L});
     public static final BitSet FOLLOW_ruleValidID_in_ruleXSwitchExpression10177 = new BitSet(new long[]{0x0000000800000000L});
-    public static final BitSet FOLLOW_35_in_ruleXSwitchExpression10189 = new BitSet(new long[]{0x400000E0090806B0L,0x000000001FA72822L});
-    public static final BitSet FOLLOW_ruleXExpression_in_ruleXSwitchExpression10213 = new BitSet(new long[]{0x0000000001000000L});
+    public static final BitSet FOLLOW_35_in_ruleXSwitchExpression10189 = new BitSet(new long[]{0x400000E00A1006B0L,0x000000001FA72822L});
+    public static final BitSet FOLLOW_ruleXExpression_in_ruleXSwitchExpression10213 = new BitSet(new long[]{0x0000000002000000L});
     public static final BitSet FOLLOW_27_in_ruleXSwitchExpression10257 = new BitSet(new long[]{0x0000000000000020L});
     public static final BitSet FOLLOW_ruleValidID_in_ruleXSwitchExpression10278 = new BitSet(new long[]{0x0000000800000000L});
-    public static final BitSet FOLLOW_35_in_ruleXSwitchExpression10290 = new BitSet(new long[]{0x400000E0090806B0L,0x000000001FA72822L});
+    public static final BitSet FOLLOW_35_in_ruleXSwitchExpression10290 = new BitSet(new long[]{0x400000E00A1006B0L,0x000000001FA72822L});
     public static final BitSet FOLLOW_ruleXExpression_in_ruleXSwitchExpression10313 = new BitSet(new long[]{0x0000000010000000L});
-    public static final BitSet FOLLOW_28_in_ruleXSwitchExpression10325 = new BitSet(new long[]{0x0000000001000000L});
-    public static final BitSet FOLLOW_24_in_ruleXSwitchExpression10339 = new BitSet(new long[]{0x0000000808000020L,0x0000000080008000L});
-    public static final BitSet FOLLOW_ruleXCasePart_in_ruleXSwitchExpression10360 = new BitSet(new long[]{0x000000080A000020L,0x000000008000C000L});
+    public static final BitSet FOLLOW_28_in_ruleXSwitchExpression10325 = new BitSet(new long[]{0x0000000002000000L});
+    public static final BitSet FOLLOW_25_in_ruleXSwitchExpression10339 = new BitSet(new long[]{0x0000000808000020L,0x0000000080008000L});
+    public static final BitSet FOLLOW_ruleXCasePart_in_ruleXSwitchExpression10360 = new BitSet(new long[]{0x000000080C000020L,0x000000008000C000L});
     public static final BitSet FOLLOW_78_in_ruleXSwitchExpression10374 = new BitSet(new long[]{0x0000000800000000L});
-    public static final BitSet FOLLOW_35_in_ruleXSwitchExpression10386 = new BitSet(new long[]{0x400000E0090806B0L,0x000000001FA72822L});
-    public static final BitSet FOLLOW_ruleXExpression_in_ruleXSwitchExpression10407 = new BitSet(new long[]{0x0000000002000000L});
-    public static final BitSet FOLLOW_25_in_ruleXSwitchExpression10421 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_35_in_ruleXSwitchExpression10386 = new BitSet(new long[]{0x400000E00A1006B0L,0x000000001FA72822L});
+    public static final BitSet FOLLOW_ruleXExpression_in_ruleXSwitchExpression10407 = new BitSet(new long[]{0x0000000004000000L});
+    public static final BitSet FOLLOW_26_in_ruleXSwitchExpression10421 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleXCasePart_in_entryRuleXCasePart10457 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleXCasePart10467 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleJvmTypeReference_in_ruleXCasePart10513 = new BitSet(new long[]{0x0000000800000000L,0x0000000000008000L});
-    public static final BitSet FOLLOW_79_in_ruleXCasePart10527 = new BitSet(new long[]{0x400000E0090806B0L,0x000000001FA72822L});
+    public static final BitSet FOLLOW_79_in_ruleXCasePart10527 = new BitSet(new long[]{0x400000E00A1006B0L,0x000000001FA72822L});
     public static final BitSet FOLLOW_ruleXExpression_in_ruleXCasePart10548 = new BitSet(new long[]{0x0000000800000000L});
-    public static final BitSet FOLLOW_35_in_ruleXCasePart10562 = new BitSet(new long[]{0x400000E0090806B0L,0x000000001FA72822L});
+    public static final BitSet FOLLOW_35_in_ruleXCasePart10562 = new BitSet(new long[]{0x400000E00A1006B0L,0x000000001FA72822L});
     public static final BitSet FOLLOW_ruleXExpression_in_ruleXCasePart10583 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleXForLoopExpression_in_entryRuleXForLoopExpression10619 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleXForLoopExpression10629 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_80_in_ruleXForLoopExpression10675 = new BitSet(new long[]{0x0000000008000000L});
     public static final BitSet FOLLOW_27_in_ruleXForLoopExpression10687 = new BitSet(new long[]{0x0000000008000020L,0x0000000080000000L});
     public static final BitSet FOLLOW_ruleJvmFormalParameter_in_ruleXForLoopExpression10708 = new BitSet(new long[]{0x0000000800000000L});
-    public static final BitSet FOLLOW_35_in_ruleXForLoopExpression10720 = new BitSet(new long[]{0x400000E0090806B0L,0x000000001FA72822L});
+    public static final BitSet FOLLOW_35_in_ruleXForLoopExpression10720 = new BitSet(new long[]{0x400000E00A1006B0L,0x000000001FA72822L});
     public static final BitSet FOLLOW_ruleXExpression_in_ruleXForLoopExpression10741 = new BitSet(new long[]{0x0000000010000000L});
-    public static final BitSet FOLLOW_28_in_ruleXForLoopExpression10753 = new BitSet(new long[]{0x400000E0090806B0L,0x000000001FA72822L});
+    public static final BitSet FOLLOW_28_in_ruleXForLoopExpression10753 = new BitSet(new long[]{0x400000E00A1006B0L,0x000000001FA72822L});
     public static final BitSet FOLLOW_ruleXExpression_in_ruleXForLoopExpression10774 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleXWhileExpression_in_entryRuleXWhileExpression10810 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleXWhileExpression10820 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_81_in_ruleXWhileExpression10866 = new BitSet(new long[]{0x0000000008000000L});
-    public static final BitSet FOLLOW_27_in_ruleXWhileExpression10878 = new BitSet(new long[]{0x400000E0090806B0L,0x000000001FA72822L});
+    public static final BitSet FOLLOW_27_in_ruleXWhileExpression10878 = new BitSet(new long[]{0x400000E00A1006B0L,0x000000001FA72822L});
     public static final BitSet FOLLOW_ruleXExpression_in_ruleXWhileExpression10899 = new BitSet(new long[]{0x0000000010000000L});
-    public static final BitSet FOLLOW_28_in_ruleXWhileExpression10911 = new BitSet(new long[]{0x400000E0090806B0L,0x000000001FA72822L});
+    public static final BitSet FOLLOW_28_in_ruleXWhileExpression10911 = new BitSet(new long[]{0x400000E00A1006B0L,0x000000001FA72822L});
     public static final BitSet FOLLOW_ruleXExpression_in_ruleXWhileExpression10932 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleXDoWhileExpression_in_entryRuleXDoWhileExpression10968 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleXDoWhileExpression10978 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_82_in_ruleXDoWhileExpression11024 = new BitSet(new long[]{0x400000E0090806B0L,0x000000001FA72822L});
+    public static final BitSet FOLLOW_82_in_ruleXDoWhileExpression11024 = new BitSet(new long[]{0x400000E00A1006B0L,0x000000001FA72822L});
     public static final BitSet FOLLOW_ruleXExpression_in_ruleXDoWhileExpression11045 = new BitSet(new long[]{0x0000000000000000L,0x0000000000020000L});
     public static final BitSet FOLLOW_81_in_ruleXDoWhileExpression11057 = new BitSet(new long[]{0x0000000008000000L});
-    public static final BitSet FOLLOW_27_in_ruleXDoWhileExpression11069 = new BitSet(new long[]{0x400000E0090806B0L,0x000000001FA72822L});
+    public static final BitSet FOLLOW_27_in_ruleXDoWhileExpression11069 = new BitSet(new long[]{0x400000E00A1006B0L,0x000000001FA72822L});
     public static final BitSet FOLLOW_ruleXExpression_in_ruleXDoWhileExpression11090 = new BitSet(new long[]{0x0000000010000000L});
     public static final BitSet FOLLOW_28_in_ruleXDoWhileExpression11102 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleXBlockExpression_in_entryRuleXBlockExpression11138 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleXBlockExpression11148 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_24_in_ruleXBlockExpression11194 = new BitSet(new long[]{0x400000E00B0806B0L,0x000000001FBF2822L});
-    public static final BitSet FOLLOW_ruleXExpressionInsideBlock_in_ruleXBlockExpression11216 = new BitSet(new long[]{0x400000E00B0806B0L,0x000000001FBF2C22L});
-    public static final BitSet FOLLOW_74_in_ruleXBlockExpression11229 = new BitSet(new long[]{0x400000E00B0806B0L,0x000000001FBF2822L});
-    public static final BitSet FOLLOW_25_in_ruleXBlockExpression11245 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_25_in_ruleXBlockExpression11194 = new BitSet(new long[]{0x400000E00E1006B0L,0x000000001FBF2822L});
+    public static final BitSet FOLLOW_ruleXExpressionInsideBlock_in_ruleXBlockExpression11216 = new BitSet(new long[]{0x400000E00E1006B0L,0x000000001FBF2C22L});
+    public static final BitSet FOLLOW_74_in_ruleXBlockExpression11229 = new BitSet(new long[]{0x400000E00E1006B0L,0x000000001FBF2822L});
+    public static final BitSet FOLLOW_26_in_ruleXBlockExpression11245 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleXExpressionInsideBlock_in_entryRuleXExpressionInsideBlock11281 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleXExpressionInsideBlock11291 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleXVariableDeclaration_in_ruleXExpressionInsideBlock11338 = new BitSet(new long[]{0x0000000000000002L});
@@ -24311,7 +24311,7 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
     public static final BitSet FOLLOW_ruleJvmTypeReference_in_ruleXVariableDeclaration11542 = new BitSet(new long[]{0x0000000000000020L});
     public static final BitSet FOLLOW_ruleValidID_in_ruleXVariableDeclaration11563 = new BitSet(new long[]{0x0010000000000002L});
     public static final BitSet FOLLOW_ruleValidID_in_ruleXVariableDeclaration11592 = new BitSet(new long[]{0x0010000000000002L});
-    public static final BitSet FOLLOW_52_in_ruleXVariableDeclaration11606 = new BitSet(new long[]{0x400000E0090806B0L,0x000000001FA72822L});
+    public static final BitSet FOLLOW_52_in_ruleXVariableDeclaration11606 = new BitSet(new long[]{0x400000E00A1006B0L,0x000000001FA72822L});
     public static final BitSet FOLLOW_ruleXExpression_in_ruleXVariableDeclaration11627 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleJvmFormalParameter_in_entryRuleJvmFormalParameter11665 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleJvmFormalParameter11675 = new BitSet(new long[]{0x0000000000000002L});
@@ -24325,17 +24325,17 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
     public static final BitSet FOLLOW_EOF_in_entryRuleXFeatureCall11902 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleStaticQualifier_in_ruleXFeatureCall11959 = new BitSet(new long[]{0x4000000000000020L,0x0000000000200000L});
     public static final BitSet FOLLOW_62_in_ruleXFeatureCall11973 = new BitSet(new long[]{0x0000000008000020L,0x0000000180000000L});
-    public static final BitSet FOLLOW_ruleJvmArgumentTypeReference_in_ruleXFeatureCall11994 = new BitSet(new long[]{0x2000000000100000L});
-    public static final BitSet FOLLOW_20_in_ruleXFeatureCall12007 = new BitSet(new long[]{0x0000000008000020L,0x0000000180000000L});
-    public static final BitSet FOLLOW_ruleJvmArgumentTypeReference_in_ruleXFeatureCall12028 = new BitSet(new long[]{0x2000000000100000L});
+    public static final BitSet FOLLOW_ruleJvmArgumentTypeReference_in_ruleXFeatureCall11994 = new BitSet(new long[]{0x2000000000200000L});
+    public static final BitSet FOLLOW_21_in_ruleXFeatureCall12007 = new BitSet(new long[]{0x0000000008000020L,0x0000000180000000L});
+    public static final BitSet FOLLOW_ruleJvmArgumentTypeReference_in_ruleXFeatureCall12028 = new BitSet(new long[]{0x2000000000200000L});
     public static final BitSet FOLLOW_61_in_ruleXFeatureCall12042 = new BitSet(new long[]{0x4000000000000020L,0x0000000000200000L});
-    public static final BitSet FOLLOW_ruleIdOrSuper_in_ruleXFeatureCall12067 = new BitSet(new long[]{0x0000000008080002L});
-    public static final BitSet FOLLOW_27_in_ruleXFeatureCall12101 = new BitSet(new long[]{0x400000E0190806B0L,0x000000009FA72A22L});
+    public static final BitSet FOLLOW_ruleIdOrSuper_in_ruleXFeatureCall12067 = new BitSet(new long[]{0x0000000008100002L});
+    public static final BitSet FOLLOW_27_in_ruleXFeatureCall12101 = new BitSet(new long[]{0x400000E01A1006B0L,0x000000009FA72A22L});
     public static final BitSet FOLLOW_ruleXShortClosure_in_ruleXFeatureCall12186 = new BitSet(new long[]{0x0000000010000000L});
-    public static final BitSet FOLLOW_ruleXExpression_in_ruleXFeatureCall12214 = new BitSet(new long[]{0x0000000010100000L});
-    public static final BitSet FOLLOW_20_in_ruleXFeatureCall12227 = new BitSet(new long[]{0x400000E0090806B0L,0x000000001FA72822L});
-    public static final BitSet FOLLOW_ruleXExpression_in_ruleXFeatureCall12248 = new BitSet(new long[]{0x0000000010100000L});
-    public static final BitSet FOLLOW_28_in_ruleXFeatureCall12265 = new BitSet(new long[]{0x0000000000080002L});
+    public static final BitSet FOLLOW_ruleXExpression_in_ruleXFeatureCall12214 = new BitSet(new long[]{0x0000000010200000L});
+    public static final BitSet FOLLOW_21_in_ruleXFeatureCall12227 = new BitSet(new long[]{0x400000E00A1006B0L,0x000000001FA72822L});
+    public static final BitSet FOLLOW_ruleXExpression_in_ruleXFeatureCall12248 = new BitSet(new long[]{0x0000000010200000L});
+    public static final BitSet FOLLOW_28_in_ruleXFeatureCall12265 = new BitSet(new long[]{0x0000000000100002L});
     public static final BitSet FOLLOW_ruleXClosure_in_ruleXFeatureCall12298 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleIdOrSuper_in_entryRuleIdOrSuper12336 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleIdOrSuper12347 = new BitSet(new long[]{0x0000000000000002L});
@@ -24348,18 +24348,18 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
     public static final BitSet FOLLOW_ruleXConstructorCall_in_entryRuleXConstructorCall12576 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleXConstructorCall12586 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_87_in_ruleXConstructorCall12632 = new BitSet(new long[]{0x0000000000000020L});
-    public static final BitSet FOLLOW_ruleQualifiedName_in_ruleXConstructorCall12655 = new BitSet(new long[]{0x4000000008080002L});
+    public static final BitSet FOLLOW_ruleQualifiedName_in_ruleXConstructorCall12655 = new BitSet(new long[]{0x4000000008100002L});
     public static final BitSet FOLLOW_62_in_ruleXConstructorCall12676 = new BitSet(new long[]{0x0000000008000020L,0x0000000180000000L});
-    public static final BitSet FOLLOW_ruleJvmArgumentTypeReference_in_ruleXConstructorCall12698 = new BitSet(new long[]{0x2000000000100000L});
-    public static final BitSet FOLLOW_20_in_ruleXConstructorCall12711 = new BitSet(new long[]{0x0000000008000020L,0x0000000180000000L});
-    public static final BitSet FOLLOW_ruleJvmArgumentTypeReference_in_ruleXConstructorCall12732 = new BitSet(new long[]{0x2000000000100000L});
-    public static final BitSet FOLLOW_61_in_ruleXConstructorCall12746 = new BitSet(new long[]{0x0000000008080002L});
-    public static final BitSet FOLLOW_27_in_ruleXConstructorCall12769 = new BitSet(new long[]{0x400000E0190806B0L,0x000000009FA72A22L});
+    public static final BitSet FOLLOW_ruleJvmArgumentTypeReference_in_ruleXConstructorCall12698 = new BitSet(new long[]{0x2000000000200000L});
+    public static final BitSet FOLLOW_21_in_ruleXConstructorCall12711 = new BitSet(new long[]{0x0000000008000020L,0x0000000180000000L});
+    public static final BitSet FOLLOW_ruleJvmArgumentTypeReference_in_ruleXConstructorCall12732 = new BitSet(new long[]{0x2000000000200000L});
+    public static final BitSet FOLLOW_61_in_ruleXConstructorCall12746 = new BitSet(new long[]{0x0000000008100002L});
+    public static final BitSet FOLLOW_27_in_ruleXConstructorCall12769 = new BitSet(new long[]{0x400000E01A1006B0L,0x000000009FA72A22L});
     public static final BitSet FOLLOW_ruleXShortClosure_in_ruleXConstructorCall12842 = new BitSet(new long[]{0x0000000010000000L});
-    public static final BitSet FOLLOW_ruleXExpression_in_ruleXConstructorCall12870 = new BitSet(new long[]{0x0000000010100000L});
-    public static final BitSet FOLLOW_20_in_ruleXConstructorCall12883 = new BitSet(new long[]{0x400000E0090806B0L,0x000000001FA72822L});
-    public static final BitSet FOLLOW_ruleXExpression_in_ruleXConstructorCall12904 = new BitSet(new long[]{0x0000000010100000L});
-    public static final BitSet FOLLOW_28_in_ruleXConstructorCall12921 = new BitSet(new long[]{0x0000000000080002L});
+    public static final BitSet FOLLOW_ruleXExpression_in_ruleXConstructorCall12870 = new BitSet(new long[]{0x0000000010200000L});
+    public static final BitSet FOLLOW_21_in_ruleXConstructorCall12883 = new BitSet(new long[]{0x400000E00A1006B0L,0x000000001FA72822L});
+    public static final BitSet FOLLOW_ruleXExpression_in_ruleXConstructorCall12904 = new BitSet(new long[]{0x0000000010200000L});
+    public static final BitSet FOLLOW_28_in_ruleXConstructorCall12921 = new BitSet(new long[]{0x0000000000100002L});
     public static final BitSet FOLLOW_ruleXClosure_in_ruleXConstructorCall12954 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleXBooleanLiteral_in_entryRuleXBooleanLiteral12991 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleXBooleanLiteral13001 = new BitSet(new long[]{0x0000000000000002L});
@@ -24382,27 +24382,27 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
     public static final BitSet FOLLOW_28_in_ruleXTypeLiteral13520 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleXThrowExpression_in_entryRuleXThrowExpression13556 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleXThrowExpression13566 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_90_in_ruleXThrowExpression13612 = new BitSet(new long[]{0x400000E0090806B0L,0x000000001FA72822L});
+    public static final BitSet FOLLOW_90_in_ruleXThrowExpression13612 = new BitSet(new long[]{0x400000E00A1006B0L,0x000000001FA72822L});
     public static final BitSet FOLLOW_ruleXExpression_in_ruleXThrowExpression13633 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleXReturnExpression_in_entryRuleXReturnExpression13669 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleXReturnExpression13679 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_91_in_ruleXReturnExpression13725 = new BitSet(new long[]{0x400000E0090806B2L,0x000000001FA72822L});
+    public static final BitSet FOLLOW_91_in_ruleXReturnExpression13725 = new BitSet(new long[]{0x400000E00A1006B2L,0x000000001FA72822L});
     public static final BitSet FOLLOW_ruleXExpression_in_ruleXReturnExpression13756 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleXTryCatchFinallyExpression_in_entryRuleXTryCatchFinallyExpression13793 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleXTryCatchFinallyExpression13803 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_92_in_ruleXTryCatchFinallyExpression13849 = new BitSet(new long[]{0x400000E0090806B0L,0x000000001FA72822L});
+    public static final BitSet FOLLOW_92_in_ruleXTryCatchFinallyExpression13849 = new BitSet(new long[]{0x400000E00A1006B0L,0x000000001FA72822L});
     public static final BitSet FOLLOW_ruleXExpression_in_ruleXTryCatchFinallyExpression13870 = new BitSet(new long[]{0x0000000000000000L,0x0000000060000000L});
     public static final BitSet FOLLOW_ruleXCatchClause_in_ruleXTryCatchFinallyExpression13900 = new BitSet(new long[]{0x0000000000000002L,0x0000000060000000L});
-    public static final BitSet FOLLOW_93_in_ruleXTryCatchFinallyExpression13922 = new BitSet(new long[]{0x400000E0090806B0L,0x000000001FA72822L});
+    public static final BitSet FOLLOW_93_in_ruleXTryCatchFinallyExpression13922 = new BitSet(new long[]{0x400000E00A1006B0L,0x000000001FA72822L});
     public static final BitSet FOLLOW_ruleXExpression_in_ruleXTryCatchFinallyExpression13944 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_93_in_ruleXTryCatchFinallyExpression13966 = new BitSet(new long[]{0x400000E0090806B0L,0x000000001FA72822L});
+    public static final BitSet FOLLOW_93_in_ruleXTryCatchFinallyExpression13966 = new BitSet(new long[]{0x400000E00A1006B0L,0x000000001FA72822L});
     public static final BitSet FOLLOW_ruleXExpression_in_ruleXTryCatchFinallyExpression13987 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleXCatchClause_in_entryRuleXCatchClause14025 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleXCatchClause14035 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_94_in_ruleXCatchClause14080 = new BitSet(new long[]{0x0000000008000000L});
     public static final BitSet FOLLOW_27_in_ruleXCatchClause14093 = new BitSet(new long[]{0x0000000008000020L,0x0000000080000000L});
     public static final BitSet FOLLOW_ruleFullJvmFormalParameter_in_ruleXCatchClause14114 = new BitSet(new long[]{0x0000000010000000L});
-    public static final BitSet FOLLOW_28_in_ruleXCatchClause14126 = new BitSet(new long[]{0x400000E0090806B0L,0x000000001FA72822L});
+    public static final BitSet FOLLOW_28_in_ruleXCatchClause14126 = new BitSet(new long[]{0x400000E00A1006B0L,0x000000001FA72822L});
     public static final BitSet FOLLOW_ruleXExpression_in_ruleXCatchClause14147 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleQualifiedName_in_entryRuleQualifiedName14184 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleQualifiedName14195 = new BitSet(new long[]{0x0000000000000002L});
@@ -24419,16 +24419,16 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
     public static final BitSet FOLLOW_RULE_DECIMAL_in_ruleNumber14518 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleJvmTypeReference_in_entryRuleJvmTypeReference14571 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleJvmTypeReference14581 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleJvmParameterizedTypeReference_in_ruleJvmTypeReference14629 = new BitSet(new long[]{0x0000000000080002L});
-    public static final BitSet FOLLOW_19_in_ruleJvmTypeReference14667 = new BitSet(new long[]{0x0000000000200000L});
-    public static final BitSet FOLLOW_21_in_ruleJvmTypeReference14679 = new BitSet(new long[]{0x0000000000080002L});
+    public static final BitSet FOLLOW_ruleJvmParameterizedTypeReference_in_ruleJvmTypeReference14629 = new BitSet(new long[]{0x0000000000100002L});
+    public static final BitSet FOLLOW_20_in_ruleJvmTypeReference14667 = new BitSet(new long[]{0x0000000000400000L});
+    public static final BitSet FOLLOW_22_in_ruleJvmTypeReference14679 = new BitSet(new long[]{0x0000000000100002L});
     public static final BitSet FOLLOW_ruleXFunctionTypeRef_in_ruleJvmTypeReference14711 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleXFunctionTypeRef_in_entryRuleXFunctionTypeRef14746 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleXFunctionTypeRef14756 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_27_in_ruleXFunctionTypeRef14794 = new BitSet(new long[]{0x0000000018000020L,0x0000000080000000L});
-    public static final BitSet FOLLOW_ruleJvmTypeReference_in_ruleXFunctionTypeRef14816 = new BitSet(new long[]{0x0000000010100000L});
-    public static final BitSet FOLLOW_20_in_ruleXFunctionTypeRef14829 = new BitSet(new long[]{0x0000000008000020L,0x0000000080000000L});
-    public static final BitSet FOLLOW_ruleJvmTypeReference_in_ruleXFunctionTypeRef14850 = new BitSet(new long[]{0x0000000010100000L});
+    public static final BitSet FOLLOW_ruleJvmTypeReference_in_ruleXFunctionTypeRef14816 = new BitSet(new long[]{0x0000000010200000L});
+    public static final BitSet FOLLOW_21_in_ruleXFunctionTypeRef14829 = new BitSet(new long[]{0x0000000008000020L,0x0000000080000000L});
+    public static final BitSet FOLLOW_ruleJvmTypeReference_in_ruleXFunctionTypeRef14850 = new BitSet(new long[]{0x0000000010200000L});
     public static final BitSet FOLLOW_28_in_ruleXFunctionTypeRef14866 = new BitSet(new long[]{0x0000000000000000L,0x0000000080000000L});
     public static final BitSet FOLLOW_95_in_ruleXFunctionTypeRef14880 = new BitSet(new long[]{0x0000000008000020L,0x0000000080000000L});
     public static final BitSet FOLLOW_ruleJvmTypeReference_in_ruleXFunctionTypeRef14901 = new BitSet(new long[]{0x0000000000000002L});
@@ -24436,9 +24436,9 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
     public static final BitSet FOLLOW_EOF_in_entryRuleJvmParameterizedTypeReference14947 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleQualifiedName_in_ruleJvmParameterizedTypeReference14995 = new BitSet(new long[]{0x4000000000000002L});
     public static final BitSet FOLLOW_62_in_ruleJvmParameterizedTypeReference15016 = new BitSet(new long[]{0x0000000008000020L,0x0000000180000000L});
-    public static final BitSet FOLLOW_ruleJvmArgumentTypeReference_in_ruleJvmParameterizedTypeReference15038 = new BitSet(new long[]{0x2000000000100000L});
-    public static final BitSet FOLLOW_20_in_ruleJvmParameterizedTypeReference15051 = new BitSet(new long[]{0x0000000008000020L,0x0000000180000000L});
-    public static final BitSet FOLLOW_ruleJvmArgumentTypeReference_in_ruleJvmParameterizedTypeReference15072 = new BitSet(new long[]{0x2000000000100000L});
+    public static final BitSet FOLLOW_ruleJvmArgumentTypeReference_in_ruleJvmParameterizedTypeReference15038 = new BitSet(new long[]{0x2000000000200000L});
+    public static final BitSet FOLLOW_21_in_ruleJvmParameterizedTypeReference15051 = new BitSet(new long[]{0x0000000008000020L,0x0000000180000000L});
+    public static final BitSet FOLLOW_ruleJvmArgumentTypeReference_in_ruleJvmParameterizedTypeReference15072 = new BitSet(new long[]{0x2000000000200000L});
     public static final BitSet FOLLOW_61_in_ruleJvmParameterizedTypeReference15086 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleJvmArgumentTypeReference_in_entryRuleJvmArgumentTypeReference15124 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleJvmArgumentTypeReference15134 = new BitSet(new long[]{0x0000000000000002L});
@@ -24481,14 +24481,14 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
     public static final BitSet FOLLOW_71_in_synpred12_InternalFXGraph7981 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_72_in_synpred12_InternalFXGraph8001 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_27_in_synpred13_InternalFXGraph8228 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleJvmFormalParameter_in_synpred14_InternalFXGraph8280 = new BitSet(new long[]{0x0000000000100000L,0x0000000000000200L});
-    public static final BitSet FOLLOW_20_in_synpred14_InternalFXGraph8287 = new BitSet(new long[]{0x0000000008000020L,0x0000000080000000L});
-    public static final BitSet FOLLOW_ruleJvmFormalParameter_in_synpred14_InternalFXGraph8294 = new BitSet(new long[]{0x0000000000100000L,0x0000000000000200L});
+    public static final BitSet FOLLOW_ruleJvmFormalParameter_in_synpred14_InternalFXGraph8280 = new BitSet(new long[]{0x0000000000200000L,0x0000000000000200L});
+    public static final BitSet FOLLOW_21_in_synpred14_InternalFXGraph8287 = new BitSet(new long[]{0x0000000008000020L,0x0000000080000000L});
+    public static final BitSet FOLLOW_ruleJvmFormalParameter_in_synpred14_InternalFXGraph8294 = new BitSet(new long[]{0x0000000000200000L,0x0000000000000200L});
     public static final BitSet FOLLOW_73_in_synpred14_InternalFXGraph8308 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleXClosure_in_synpred15_InternalFXGraph8426 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleJvmFormalParameter_in_synpred16_InternalFXGraph9199 = new BitSet(new long[]{0x0000000000100000L,0x0000000000000200L});
-    public static final BitSet FOLLOW_20_in_synpred16_InternalFXGraph9206 = new BitSet(new long[]{0x0000000008000020L,0x0000000080000000L});
-    public static final BitSet FOLLOW_ruleJvmFormalParameter_in_synpred16_InternalFXGraph9213 = new BitSet(new long[]{0x0000000000100000L,0x0000000000000200L});
+    public static final BitSet FOLLOW_ruleJvmFormalParameter_in_synpred16_InternalFXGraph9199 = new BitSet(new long[]{0x0000000000200000L,0x0000000000000200L});
+    public static final BitSet FOLLOW_21_in_synpred16_InternalFXGraph9206 = new BitSet(new long[]{0x0000000008000020L,0x0000000080000000L});
+    public static final BitSet FOLLOW_ruleJvmFormalParameter_in_synpred16_InternalFXGraph9213 = new BitSet(new long[]{0x0000000000200000L,0x0000000000000200L});
     public static final BitSet FOLLOW_73_in_synpred16_InternalFXGraph9227 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_76_in_synpred18_InternalFXGraph10010 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleValidID_in_synpred19_InternalFXGraph10152 = new BitSet(new long[]{0x0000000800000000L});
@@ -24499,24 +24499,24 @@ public class InternalFXGraphParser extends AbstractInternalAntlrParser {
     public static final BitSet FOLLOW_ruleJvmTypeReference_in_synpred21_InternalFXGraph11512 = new BitSet(new long[]{0x0000000000000020L});
     public static final BitSet FOLLOW_ruleValidID_in_synpred21_InternalFXGraph11521 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_27_in_synpred22_InternalFXGraph12083 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleJvmFormalParameter_in_synpred23_InternalFXGraph12135 = new BitSet(new long[]{0x0000000000100000L,0x0000000000000200L});
-    public static final BitSet FOLLOW_20_in_synpred23_InternalFXGraph12142 = new BitSet(new long[]{0x0000000008000020L,0x0000000080000000L});
-    public static final BitSet FOLLOW_ruleJvmFormalParameter_in_synpred23_InternalFXGraph12149 = new BitSet(new long[]{0x0000000000100000L,0x0000000000000200L});
+    public static final BitSet FOLLOW_ruleJvmFormalParameter_in_synpred23_InternalFXGraph12135 = new BitSet(new long[]{0x0000000000200000L,0x0000000000000200L});
+    public static final BitSet FOLLOW_21_in_synpred23_InternalFXGraph12142 = new BitSet(new long[]{0x0000000008000020L,0x0000000080000000L});
+    public static final BitSet FOLLOW_ruleJvmFormalParameter_in_synpred23_InternalFXGraph12149 = new BitSet(new long[]{0x0000000000200000L,0x0000000000000200L});
     public static final BitSet FOLLOW_73_in_synpred23_InternalFXGraph12163 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleXClosure_in_synpred24_InternalFXGraph12281 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_62_in_synpred25_InternalFXGraph12668 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_27_in_synpred26_InternalFXGraph12761 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleJvmFormalParameter_in_synpred27_InternalFXGraph12791 = new BitSet(new long[]{0x0000000000100000L,0x0000000000000200L});
-    public static final BitSet FOLLOW_20_in_synpred27_InternalFXGraph12798 = new BitSet(new long[]{0x0000000008000020L,0x0000000080000000L});
-    public static final BitSet FOLLOW_ruleJvmFormalParameter_in_synpred27_InternalFXGraph12805 = new BitSet(new long[]{0x0000000000100000L,0x0000000000000200L});
+    public static final BitSet FOLLOW_ruleJvmFormalParameter_in_synpred27_InternalFXGraph12791 = new BitSet(new long[]{0x0000000000200000L,0x0000000000000200L});
+    public static final BitSet FOLLOW_21_in_synpred27_InternalFXGraph12798 = new BitSet(new long[]{0x0000000008000020L,0x0000000080000000L});
+    public static final BitSet FOLLOW_ruleJvmFormalParameter_in_synpred27_InternalFXGraph12805 = new BitSet(new long[]{0x0000000000200000L,0x0000000000000200L});
     public static final BitSet FOLLOW_73_in_synpred27_InternalFXGraph12819 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleXClosure_in_synpred28_InternalFXGraph12937 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleXExpression_in_synpred29_InternalFXGraph13739 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_94_in_synpred30_InternalFXGraph13884 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_93_in_synpred31_InternalFXGraph13914 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_50_in_synpred33_InternalFXGraph14261 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_19_in_synpred34_InternalFXGraph14644 = new BitSet(new long[]{0x0000000000200000L});
-    public static final BitSet FOLLOW_21_in_synpred34_InternalFXGraph14648 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_20_in_synpred34_InternalFXGraph14644 = new BitSet(new long[]{0x0000000000400000L});
+    public static final BitSet FOLLOW_22_in_synpred34_InternalFXGraph14648 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_62_in_synpred35_InternalFXGraph15008 = new BitSet(new long[]{0x0000000000000002L});
 
 }

@@ -80,6 +80,31 @@ public class FXGraphGrammarAccess extends AbstractGrammarElementFinder {
 		public RuleCall getNameQualifiedNameParserRuleCall_1_0() { return cNameQualifiedNameParserRuleCall_1_0; }
 	}
 
+	public class ImportElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Import");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cImportKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Assignment cImportedNamespaceAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cImportedNamespaceQualifiedNameWithWildCardParserRuleCall_1_0 = (RuleCall)cImportedNamespaceAssignment_1.eContents().get(0);
+		
+		//Import:
+		//
+		//	"import" importedNamespace=QualifiedNameWithWildCard;
+		public ParserRule getRule() { return rule; }
+
+		//"import" importedNamespace=QualifiedNameWithWildCard
+		public Group getGroup() { return cGroup; }
+
+		//"import"
+		public Keyword getImportKeyword_0() { return cImportKeyword_0; }
+
+		//importedNamespace=QualifiedNameWithWildCard
+		public Assignment getImportedNamespaceAssignment_1() { return cImportedNamespaceAssignment_1; }
+
+		//QualifiedNameWithWildCard
+		public RuleCall getImportedNamespaceQualifiedNameWithWildCardParserRuleCall_1_0() { return cImportedNamespaceQualifiedNameWithWildCardParserRuleCall_1_0; }
+	}
+
 	public class ComponentDefinitionElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "ComponentDefinition");
 		private final Group cGroup = (Group)rule.eContents().get(1);
@@ -297,31 +322,6 @@ public class FXGraphGrammarAccess extends AbstractGrammarElementFinder {
 		public Keyword getRightCurlyBracketKeyword_10() { return cRightCurlyBracketKeyword_10; }
 	}
 
-	public class ImportElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Import");
-		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Keyword cImportKeyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final Assignment cImportedNamespaceAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final RuleCall cImportedNamespaceQualifiedNameWithWildCardParserRuleCall_1_0 = (RuleCall)cImportedNamespaceAssignment_1.eContents().get(0);
-		
-		//Import:
-		//
-		//	"import" importedNamespace=QualifiedNameWithWildCard;
-		public ParserRule getRule() { return rule; }
-
-		//"import" importedNamespace=QualifiedNameWithWildCard
-		public Group getGroup() { return cGroup; }
-
-		//"import"
-		public Keyword getImportKeyword_0() { return cImportKeyword_0; }
-
-		//importedNamespace=QualifiedNameWithWildCard
-		public Assignment getImportedNamespaceAssignment_1() { return cImportedNamespaceAssignment_1; }
-
-		//QualifiedNameWithWildCard
-		public RuleCall getImportedNamespaceQualifiedNameWithWildCardParserRuleCall_1_0() { return cImportedNamespaceQualifiedNameWithWildCardParserRuleCall_1_0; }
-	}
-
 	public class ElementElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Element");
 		private final Group cGroup = (Group)rule.eContents().get(1);
@@ -379,18 +379,7 @@ public class FXGraphGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cValuesElementParserRuleCall_1_2_5_1_0 = (RuleCall)cValuesAssignment_1_2_5_1.eContents().get(0);
 		private final Keyword cRightCurlyBracketKeyword_1_2_6 = (Keyword)cGroup_1_2.eContents().get(6);
 		
-		////Element:
-		//
-		//
-		////	type=JvmTypeReference ('(' (value = SimpleValueProperty | 'createdby' factory=STRING) ')')? ('id' name=ValidID)? ('{'
-		//
-		//
-		////		((properties+=Property | staticProperties+=StaticValueProperty) (',' (properties+=Property | staticProperties+=StaticValueProperty))*)?
-		//
-		//
-		////	'}')?
-		// //;
-		// Element:
+		//Element:
 		//
 		//	type=JvmTypeReference (("(" value=SimpleValueProperty ")")? ("id" name=ValidID)? | ("id" name=ValidID)? "{"
 		//
@@ -1362,8 +1351,8 @@ public class FXGraphGrammarAccess extends AbstractGrammarElementFinder {
 	
 	private ModelElements pModel;
 	private PackageDeclarationElements pPackageDeclaration;
-	private ComponentDefinitionElements pComponentDefinition;
 	private ImportElements pImport;
+	private ComponentDefinitionElements pComponentDefinition;
 	private ElementElements pElement;
 	private DefineElements pDefine;
 	private ScriptElements pScript;
@@ -1434,6 +1423,17 @@ public class FXGraphGrammarAccess extends AbstractGrammarElementFinder {
 		return getPackageDeclarationAccess().getRule();
 	}
 
+	//Import:
+	//
+	//	"import" importedNamespace=QualifiedNameWithWildCard;
+	public ImportElements getImportAccess() {
+		return (pImport != null) ? pImport : (pImport = new ImportElements());
+	}
+	
+	public ParserRule getImportRule() {
+		return getImportAccess().getRule();
+	}
+
 	//ComponentDefinition:
 	//
 	//	"component" name=ValidID ("controlledby" controller=JvmTypeReference)? ("styledwith" (previewCssFiles+=STRING | "["
@@ -1451,29 +1451,7 @@ public class FXGraphGrammarAccess extends AbstractGrammarElementFinder {
 		return getComponentDefinitionAccess().getRule();
 	}
 
-	//Import:
-	//
-	//	"import" importedNamespace=QualifiedNameWithWildCard;
-	public ImportElements getImportAccess() {
-		return (pImport != null) ? pImport : (pImport = new ImportElements());
-	}
-	
-	public ParserRule getImportRule() {
-		return getImportAccess().getRule();
-	}
-
-	////Element:
-	//
-	//
-	////	type=JvmTypeReference ('(' (value = SimpleValueProperty | 'createdby' factory=STRING) ')')? ('id' name=ValidID)? ('{'
-	//
-	//
-	////		((properties+=Property | staticProperties+=StaticValueProperty) (',' (properties+=Property | staticProperties+=StaticValueProperty))*)?
-	//
-	//
-	////	'}')?
-	// //;
-	// Element:
+	//Element:
 	//
 	//	type=JvmTypeReference (("(" value=SimpleValueProperty ")")? ("id" name=ValidID)? | ("id" name=ValidID)? "{"
 	//

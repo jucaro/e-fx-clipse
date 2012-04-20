@@ -41,15 +41,6 @@ public interface FXGraphFactory extends EFactory
   PackageDeclaration createPackageDeclaration();
 
   /**
-   * Returns a new object of class '<em>Component Definition</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Component Definition</em>'.
-   * @generated
-   */
-  ComponentDefinition createComponentDefinition();
-
-  /**
    * Returns a new object of class '<em>Import</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -57,6 +48,15 @@ public interface FXGraphFactory extends EFactory
    * @generated
    */
   Import createImport();
+
+  /**
+   * Returns a new object of class '<em>Component Definition</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Component Definition</em>'.
+   * @generated
+   */
+  ComponentDefinition createComponentDefinition();
 
   /**
    * Returns a new object of class '<em>Element</em>'.

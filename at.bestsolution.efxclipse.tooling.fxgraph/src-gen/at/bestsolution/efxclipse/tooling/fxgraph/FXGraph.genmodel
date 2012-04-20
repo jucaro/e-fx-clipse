@@ -16,6 +16,9 @@
     <genClasses ecoreClass="FXGraph.ecore#//PackageDeclaration">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute FXGraph.ecore#//PackageDeclaration/name"/>
     </genClasses>
+    <genClasses ecoreClass="FXGraph.ecore#//Import">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute FXGraph.ecore#//Import/importedNamespace"/>
+    </genClasses>
     <genClasses ecoreClass="FXGraph.ecore#//ComponentDefinition">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute FXGraph.ecore#//ComponentDefinition/name"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference FXGraph.ecore#//ComponentDefinition/controller"/>
@@ -25,9 +28,6 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference FXGraph.ecore#//ComponentDefinition/scripts"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference FXGraph.ecore#//ComponentDefinition/defines"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference FXGraph.ecore#//ComponentDefinition/rootNode"/>
-    </genClasses>
-    <genClasses ecoreClass="FXGraph.ecore#//Import">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute FXGraph.ecore#//Import/importedNamespace"/>
     </genClasses>
     <genClasses ecoreClass="FXGraph.ecore#//Element">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference FXGraph.ecore#//Element/type"/>

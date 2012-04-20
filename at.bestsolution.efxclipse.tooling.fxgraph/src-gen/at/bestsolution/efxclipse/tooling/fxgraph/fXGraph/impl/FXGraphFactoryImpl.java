@@ -66,8 +66,8 @@ public class FXGraphFactoryImpl extends EFactoryImpl implements FXGraphFactory
     {
       case FXGraphPackage.MODEL: return createModel();
       case FXGraphPackage.PACKAGE_DECLARATION: return createPackageDeclaration();
-      case FXGraphPackage.COMPONENT_DEFINITION: return createComponentDefinition();
       case FXGraphPackage.IMPORT: return createImport();
+      case FXGraphPackage.COMPONENT_DEFINITION: return createComponentDefinition();
       case FXGraphPackage.ELEMENT: return createElement();
       case FXGraphPackage.DEFINE: return createDefine();
       case FXGraphPackage.SCRIPT: return createScript();
@@ -123,10 +123,10 @@ public class FXGraphFactoryImpl extends EFactoryImpl implements FXGraphFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public ComponentDefinition createComponentDefinition()
+  public Import createImport()
   {
-    ComponentDefinitionImpl componentDefinition = new ComponentDefinitionImpl();
-    return componentDefinition;
+    ImportImpl import_ = new ImportImpl();
+    return import_;
   }
 
   /**
@@ -134,10 +134,10 @@ public class FXGraphFactoryImpl extends EFactoryImpl implements FXGraphFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public Import createImport()
+  public ComponentDefinition createComponentDefinition()
   {
-    ImportImpl import_ = new ImportImpl();
-    return import_;
+    ComponentDefinitionImpl componentDefinition = new ComponentDefinitionImpl();
+    return componentDefinition;
   }
 
   /**
