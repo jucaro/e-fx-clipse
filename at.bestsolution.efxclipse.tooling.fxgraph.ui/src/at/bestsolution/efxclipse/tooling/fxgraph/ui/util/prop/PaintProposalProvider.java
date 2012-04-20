@@ -226,7 +226,6 @@ public class PaintProposalProvider implements IProposalProvider {
 				ColorDialog dialog = new ColorDialog(PlatformUI.getWorkbench().getActiveWorkbenchWindow().getShell());
 				RGB rgb = dialog.open();
 				if (rgb != null) {
-					
 					String r = Integer.toHexString(rgb.red);
 					r = r.length() == 1 ? "0"+r : r;
 					
@@ -243,8 +242,6 @@ public class PaintProposalProvider implements IProposalProvider {
 				return null;
 			}
 		});
-//		proposals.add(new Proposal("\"rgb(<r>,<g>,<b>)\"", new StyledString("#<hex>"), null));
-//		proposals.add(new Proposal("\"rgba(<r>,<g>,<b>,<a>)\"", new StyledString("#<hex>"), null));
 		proposals.add(new Proposal("\"#\"", new StyledString("#<hex>"), null));
 		for (String s : PREDEFINED_COLORS) {
 			proposals.add(new PredefinedColor(s.toUpperCase()));

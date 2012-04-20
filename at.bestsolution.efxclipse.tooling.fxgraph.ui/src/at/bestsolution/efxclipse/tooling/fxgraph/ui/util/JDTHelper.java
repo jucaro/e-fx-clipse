@@ -20,10 +20,12 @@ import org.eclipse.jdt.internal.core.SourceType;
 import org.eclipse.jface.resource.JFaceResources;
 import org.eclipse.jface.viewers.StyledString;
 import org.eclipse.swt.graphics.Image;
+import org.eclipse.xtext.ui.editor.hover.IEObjectHover;
 
 import at.bestsolution.efxclipse.tooling.fxgraph.ui.contentassist.FXGraphProposalProvider;
 import at.bestsolution.efxclipse.tooling.fxgraph.ui.internal.FXGraphActivator;
 import at.bestsolution.efxclipse.tooling.fxgraph.ui.util.prop.IProposalProvider;
+import at.bestsolution.efxclipse.tooling.fxgraph.ui.util.prop.KeyCombinationProvider;
 import at.bestsolution.efxclipse.tooling.fxgraph.ui.util.prop.PaintProposalProvider;
 
 public class JDTHelper {
@@ -90,6 +92,7 @@ public class JDTHelper {
 	
 	static {
 		PROVIDERS.put("javafx.scene.paint.Paint", new PaintProposalProvider());
+		PROVIDERS.put("javafx.scene.input.KeyCombination", new KeyCombinationProvider());
 	}
 
 
@@ -150,6 +153,7 @@ public class JDTHelper {
 		public final StyledString description;
 		public final Image icon;
 		public final int prio;
+		public IEObjectHover hover;
 
 		public Proposal(String value) {
 			this(value, null, null);

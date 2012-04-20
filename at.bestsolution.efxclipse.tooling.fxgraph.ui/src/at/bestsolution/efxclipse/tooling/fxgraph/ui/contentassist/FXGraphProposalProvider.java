@@ -432,6 +432,10 @@ public class FXGraphProposalProvider extends AbstractFXGraphProposalProvider {
 							if (prop instanceof DialogProposal) {
 								final DialogProposal dProp = (DialogProposal) prop;
 								ConfigurableCompletionProposal dialogProposal = (ConfigurableCompletionProposal) createCompletionProposal(prop.value, prop.description, prop.icon, prop.prio, context.getPrefix(), context);
+								if( prop.hover != null ) {
+									dialogProposal.setAdditionalProposalInfo(model);
+									dialogProposal.setHover(prop.hover);	
+								}
 								if (dialogProposal != null) {
 									dialogProposal.setTextApplier(new ReplacementTextApplier() {
 
@@ -445,6 +449,10 @@ public class FXGraphProposalProvider extends AbstractFXGraphProposalProvider {
 							} else if(prop instanceof ProcessedProposal ) {
 								final ProcessedProposal dProp = (ProcessedProposal) prop;
 								ConfigurableCompletionProposal processedProposal = (ConfigurableCompletionProposal) createCompletionProposal(prop.value, prop.description, prop.icon, prop.prio, context.getPrefix(), context);
+								if( prop.hover != null ) {
+									processedProposal.setAdditionalProposalInfo(model);
+									processedProposal.setHover(prop.hover);	
+								}
 								if (processedProposal != null) {
 									processedProposal.setTextApplier(new ReplacementTextApplier() {
 
@@ -456,7 +464,12 @@ public class FXGraphProposalProvider extends AbstractFXGraphProposalProvider {
 								}
 								acceptor.accept(processedProposal);
 							} else {
-								acceptor.accept(createCompletionProposal(prop.value, prop.description, prop.icon, prop.prio, context.getPrefix(), context));
+								ConfigurableCompletionProposal cProp = (ConfigurableCompletionProposal) createCompletionProposal(prop.value, prop.description, prop.icon, prop.prio, context.getPrefix(), context);
+								if( prop.hover != null ) {
+									cProp.setAdditionalProposalInfo(model);
+									cProp.setHover(prop.hover);	
+								}
+								acceptor.accept(cProp);
 							}
 						}
 						return;
