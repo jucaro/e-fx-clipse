@@ -248,7 +248,7 @@ public class PaintProposalProvider implements IProposalProvider {
 				return null;
 			}
 		});
-		proposals.add(new Proposal("\"#\"", new StyledString("#<hex>"), null));
+		proposals.add(new PredefinedColor("#"));
 		for (String s : PREDEFINED_COLORS) {
 			proposals.add(new PredefinedColor(s.toUpperCase()));
 		}
