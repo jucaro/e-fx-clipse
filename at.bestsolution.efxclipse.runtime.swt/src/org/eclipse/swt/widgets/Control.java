@@ -1,5 +1,6 @@
 package org.eclipse.swt.widgets;
 
+import javafx.geometry.Bounds;
 import javafx.scene.Node;
 
 import org.eclipse.swt.graphics.Image;
@@ -9,9 +10,11 @@ import org.eclipse.swt.graphics.Point;
 public abstract class Control extends Widget {
 	
 	private Object layoutData;
+	private Composite parent;
 	
 	public Control(Composite parent, int style) {
 		super(parent.getDisplay(),style);
+		this.parent = parent;
 		parent.internal_controlAdded(this);
 	}
 	
@@ -23,23 +26,24 @@ public abstract class Control extends Widget {
 	public abstract Node internal_getNativeObject();
 
 	public void setBounds(int x, int y, int width, int height) {
-		internal_getNativeObject().relocate(x, y);
-		internal_getNativeObject().resize(width, height);
-		
-//		System.err.println("Bounds: " + x + "/" +y + " " + width + "/" + height);
+		checkWidget();
+		internal_getNativeObject().resizeRelocate(x, y, width, height);
 	}
 	
 	public Point computeSize(int wHint, int hHint) {
+		checkWidget();
 		return computeSize(wHint, hHint, true);
 	}
 	
 	public abstract Point computeSize(int wHint, int hHint, boolean flushCache);
 	
 	public void setLayoutData(Object layoutData) {
+		checkWidget();
 		this.layoutData = layoutData;
 	}
 
 	public Object getLayoutData() {
+		checkWidget();
 		return layoutData;
 	}
 
@@ -148,9 +152,10 @@ public abstract class Control extends Widget {
 //		
 //	}
 //	
-//	public boolean getEnabled () {
-//		
-//	}
+	public boolean getEnabled () {
+		checkWidget();
+		return ! internal_getNativeObject().isDisabled();
+	}
 //	
 //	public Font getFont () {
 //		
@@ -160,9 +165,11 @@ public abstract class Control extends Widget {
 //		
 //	}
 //	
-//	public Point getLocation () {
-//		
-//	}
+	public Point getLocation () {
+		checkWidget();
+		Bounds b = internal_getNativeObject().getBoundsInParent();
+		return new Point((int)b.getMinX(), (int)b.getMinY());
+	}
 //	
 //	public Monitor getMonitor () {
 //		
@@ -172,9 +179,10 @@ public abstract class Control extends Widget {
 //		
 //	}
 //	
-//	public Composite getParent () {
-//		
-//	}
+	public Composite getParent () {
+		checkWidget();
+		return parent;
+	}
 //	
 //	public Region getRegion () {
 //		
@@ -322,11 +330,13 @@ public abstract class Control extends Widget {
 //		
 //	}
 //	
-//	public void setEnabled (boolean enabled) {
-//		
-//	}
-//	
+	public void setEnabled (boolean enabled) {
+		checkWidget();
+		internal_getNativeObject().setDisable(! enabled);
+	}
+	
 	public boolean setFocus () {
+		checkWidget();
 		internal_getNativeObject().requestFocus();
 		return internal_getNativeObject().isFocused();
 	}
@@ -343,14 +353,15 @@ public abstract class Control extends Widget {
 //		
 //	}
 //	
-//	public void setLocation (int x, int y) {
-//		
-//	}
-//	
-//	public void setLocation (Point location) {
-//		
-//	}
-//	
+	public void setLocation (int x, int y) {
+		checkWidget();
+		internal_getNativeObject().relocate(x, y);
+	}
+	
+	public void setLocation (Point location) {
+		setLocation(location.x, location.y);
+	}
+	
 //	public void setMenu (Menu menu) {
 //		
 //	}
