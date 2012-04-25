@@ -4,13 +4,17 @@
 -->
 
 <?import java.lang.*?>
-<?import javafx.scene.Group?>
+<?import javafx.scene.layout.Pane?>
 <?import javafx.scene.shape.Rectangle?>
 
-<Group xmlns:fx="http://javafx.com/fxml">
+<Pane xmlns:fx="http://javafx.com/fxml">
 
 	<children>
 		<Rectangle fx:id="rectangle" x="10" y="10" width="320" height="240" fill="#ff0000"/> 
+		<Rectangle fx:id="rectangle" x="340" y="10" width="320" height="240" fill="#00ff00"/> 
 	</children>
+	<styleClass>
+		<String fx:value="test"/> 
+	</styleClass>
 
-</Group>
+</Pane>

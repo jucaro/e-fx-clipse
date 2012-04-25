@@ -4,8 +4,8 @@ import javafx.scene.*
 import javafx.scene.shape.*
 import javafx.scene.layout.*
 
-component ReadOnlyList {
-	Group {
+component ReadOnlyList styledwith "test.css" {
+	Pane {
 		children : [ 
 			Rectangle id rectangle {
 				x : 10,
@@ -13,7 +13,17 @@ component ReadOnlyList {
 				width : 320,
 				height : 240,
 				fill : "#ff0000"
+			},
+			Rectangle id rectangle {
+				x : 340,
+				y : 10,
+				width : 320,
+				height : 240,
+				fill : "#00ff00"
 			}
+		],
+		styleClass : [
+			String("test")
 		]
 	}
 }
