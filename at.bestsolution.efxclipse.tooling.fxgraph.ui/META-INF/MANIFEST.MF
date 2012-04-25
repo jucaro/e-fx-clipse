@@ -24,7 +24,8 @@ Require-Bundle: at.bestsolution.efxclipse.tooling.fxgraph;visibility:=reexport,
  org.eclipse.core.databinding;bundle-version="1.4.0",
  org.eclipse.jface.databinding;bundle-version="1.5.0",
  org.eclipse.core.databinding.beans;bundle-version="1.2.100",
- org.eclipse.core.databinding.property;bundle-version="1.4.0"
+ org.eclipse.core.databinding.property;bundle-version="1.4.0",
+ at.bestsolution.efxclipse.tooling.model;bundle-version="1.0.0"
 Import-Package: org.apache.log4j,
  org.apache.commons.logging
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
