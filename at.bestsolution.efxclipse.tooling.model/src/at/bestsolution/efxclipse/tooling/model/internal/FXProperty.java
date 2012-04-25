@@ -11,22 +11,23 @@ public abstract class FXProperty implements IFXProperty {
 	
 	private final IJavaElement javaElement;
 	
-	private boolean canWrite;
+	private boolean setable;
 	
 	public FXProperty(FXClass fxClass, String name, IJavaElement javaElement) {
 		this.fxClass = fxClass;
 		this.name = name;
 		this.javaElement = javaElement;
-		this.canWrite = !( javaElement.getElementName().startsWith("get") || javaElement.getElementName().startsWith("is") );
+		this.setable = !( javaElement.getElementName().startsWith("get") || javaElement.getElementName().startsWith("is") );
 	}
 	
-	protected FXClass getFXClass() {
+	@Override
+	public FXClass getFXClass() { 
 		return fxClass;
 	}
 	
 	@Override
-	public boolean canWrite() {
-		return canWrite;
+	public boolean isSetable() {
+		return setable;
 	}
 	
 	@Override

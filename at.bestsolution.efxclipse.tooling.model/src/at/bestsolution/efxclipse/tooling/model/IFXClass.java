@@ -5,6 +5,7 @@ import java.util.Map;
 public interface IFXClass {
 	public IFXProperty getDefaultProperty();
 	public String getFQN();
+	public String getSimpleName();
 	public Map<String,IFXProperty> getAllProperties();
 	public Map<String, IFXProperty> getLocalProperties();
 	public IFXProperty getProperty(String name);

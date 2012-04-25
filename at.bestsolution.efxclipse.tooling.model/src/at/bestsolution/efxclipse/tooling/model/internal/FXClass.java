@@ -56,6 +56,11 @@ public class FXClass implements IFXClass {
 	}
 	
 	@Override
+	public String getSimpleName() {
+		return type.getElementName();
+	}
+	
+	@Override
 	public IFXProperty getDefaultProperty() {
 		if( ! checkStatemask(state, STATE_DEFAULT_RESOLVED) ) {
 			IAnnotation annotation = type.getAnnotation("javafx.beans.DefaultProperty");

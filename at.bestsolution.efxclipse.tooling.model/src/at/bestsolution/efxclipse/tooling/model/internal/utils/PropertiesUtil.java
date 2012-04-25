@@ -65,7 +65,7 @@ public class PropertiesUtil {
 			String name = m.getElementName();
 			
 			// do not use impl methods they are private
-			if( name.startsWith("getImpl") || name.startsWith("isImpl") || name.startsWith("setImpl") ) {
+			if( name.startsWith("getImpl") || name.startsWith("isImpl") || name.startsWith("setImpl") || name.contains("Unmodifiable") ) {
 				continue;
 			}
 			
@@ -111,19 +111,19 @@ public class PropertiesUtil {
 		if( FXPrimitiveProperty.isPrimitive(genericType) ) {
 			p = new FXPrimitiveProperty(fxClass, name, m, Type.parseType(genericType));
 		} else {
-//			System.err.println(m + "==========>" + Signature.getTypeErasure(genericType));
 			String erasedFQNType = Util.getFQNType((IType)m.getParent(), Signature.getTypeErasure(genericType));
-			
-			if( FXEventHandlerProperty.isEventHandler(fxClass.getJavaProject(), erasedFQNType) ) {
-				p = new FXEventHandlerProperty(fxClass, name, m);
-			} else if( FXCollectionProperty.isList(fxClass.getJavaProject(), erasedFQNType) ) {
-				p = new FXCollectionProperty(fxClass, name, m);
-			} else if( FXMapProperty.isMap(fxClass.getJavaProject(), erasedFQNType) ) {
-				p = new FXCollectionProperty(fxClass, name, m);
-			} else if( FXEnumProperty.isEnum(fxClass.getJavaProject(), erasedFQNType) ) {
-				p = new FXEnumProperty(fxClass, name, m);
-			} else {
-				p = new FXObjectPoperty(fxClass, name, m);
+			if( erasedFQNType != null ) {
+				if( FXEventHandlerProperty.isEventHandler(fxClass.getJavaProject(), erasedFQNType) ) {
+					p = new FXEventHandlerProperty(fxClass, name, m);
+				} else if( FXCollectionProperty.isList(fxClass.getJavaProject(), erasedFQNType) ) {
+					p = new FXCollectionProperty(fxClass, name, m, erasedFQNType, genericType);
+				} else if( FXMapProperty.isMap(fxClass.getJavaProject(), erasedFQNType) ) {
+					p = new FXMapProperty(fxClass, name, m);
+				} else if( FXEnumProperty.isEnum(fxClass.getJavaProject(), erasedFQNType) ) {
+					p = new FXEnumProperty(fxClass, name, m, erasedFQNType);
+				} else {
+					p = new FXObjectPoperty(fxClass, name, m, erasedFQNType);
+				}	
 			}
 		}
 			

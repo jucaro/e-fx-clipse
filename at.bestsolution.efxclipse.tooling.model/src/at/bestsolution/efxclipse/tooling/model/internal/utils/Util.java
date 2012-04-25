@@ -22,8 +22,11 @@ public class Util {
 	
 	public static String getFQNType(IType referenceType, String name) throws JavaModelException {
 		String[][] parts = referenceType.resolveType(name);
-		if( parts.length > 0 ) {
+		if( parts != null && parts.length > 0 ) {
 			return toFQN(parts[0]);
+		} else {
+			//FIXME Log it
+			System.err.println("No type for: " + name);
 		}
 		return null;
 	}
