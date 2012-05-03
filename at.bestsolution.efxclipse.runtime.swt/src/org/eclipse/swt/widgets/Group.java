@@ -1,6 +1,7 @@
 package org.eclipse.swt.widgets;
 
 import org.eclipse.swt.SWT;
+import org.eclipse.swt.graphics.Rectangle;
 
 import javafx.scene.control.TitledPane;
 
@@ -18,6 +19,11 @@ public class Group extends Composite {
 		pane.setCollapsible(false);
 		layoutPane = new FXLayoutPane(this);
 		pane.setContent(layoutPane);
+	}
+	
+	@Override
+	public Rectangle getClientArea() {
+		return new Rectangle(0, 0, (int)layoutPane.getWidth(), (int)layoutPane.getHeight());
 	}
 	
 	@Override
