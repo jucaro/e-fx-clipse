@@ -43,12 +43,12 @@ public class Table extends Composite {
 	
 	@Override
 	protected double internal_getPrefHeight() {
-		return view.prefHeight(-1);
+		return view.prefHeight(javafx.scene.control.Control.USE_COMPUTED_SIZE);
 	}
 	
 	@Override
 	protected double internal_getPrefWidth() {
-		return view.prefWidth(-1);
+		return view.prefWidth(javafx.scene.control.Control.USE_COMPUTED_SIZE);
 	}
 	
 	@Override

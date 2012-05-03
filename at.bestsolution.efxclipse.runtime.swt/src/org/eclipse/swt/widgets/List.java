@@ -28,8 +28,8 @@ public class List extends Scrollable {
 
 	@Override
 	public Point computeSize(int wHint, int hHint, boolean flushCache) {
-		int width = (int) control.prefWidth(-1);
-		int height = (int) control.prefHeight(-1);
+		int width = (int) control.prefWidth(javafx.scene.control.Control.USE_COMPUTED_SIZE);
+		int height = (int) control.prefHeight(javafx.scene.control.Control.USE_COMPUTED_SIZE);
 		
 		if (wHint != SWT.DEFAULT) width = wHint;
 		if (hHint != SWT.DEFAULT) height = hHint;

@@ -42,12 +42,12 @@ public class Group extends Composite {
 	
 	@Override
 	protected double internal_getPrefHeight() {
-		return pane.prefHeight(-1);
+		return pane.prefHeight(javafx.scene.control.Control.USE_COMPUTED_SIZE);
 	}
 	
 	@Override
 	protected double internal_getPrefWidth() {
-		return pane.prefWidth(-1);
+		return pane.prefWidth(javafx.scene.control.Control.USE_COMPUTED_SIZE);
 	}
 	
 	@Override

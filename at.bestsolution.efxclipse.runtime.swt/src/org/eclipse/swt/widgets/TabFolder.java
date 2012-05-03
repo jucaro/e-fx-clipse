@@ -56,12 +56,12 @@ public class TabFolder extends Composite {
 	
 	@Override
 	protected double internal_getPrefHeight() {
-		return tabPane.prefHeight(-1);
+		return tabPane.prefHeight(javafx.scene.control.Control.USE_COMPUTED_SIZE);
 	}
 	
 	@Override
 	protected double internal_getPrefWidth() {
-		return tabPane.prefWidth(-1);
+		return tabPane.prefWidth(javafx.scene.control.Control.USE_COMPUTED_SIZE);
 	}
 	
 	public void addSelectionListener(SelectionListener listener) {

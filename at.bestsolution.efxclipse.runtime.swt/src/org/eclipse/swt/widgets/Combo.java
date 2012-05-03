@@ -46,12 +46,12 @@ public class Combo extends Composite {
 	
 	@Override
 	protected double internal_getPrefHeight() {
-		return control.prefHeight(-1);
+		return control.prefHeight(javafx.scene.control.Control.USE_COMPUTED_SIZE);
 	}
 	
 	@Override
 	protected double internal_getPrefWidth() {
-		return control.prefWidth(-1);
+		return control.prefWidth(javafx.scene.control.Control.USE_COMPUTED_SIZE);
 	}
 	
 	@Override
