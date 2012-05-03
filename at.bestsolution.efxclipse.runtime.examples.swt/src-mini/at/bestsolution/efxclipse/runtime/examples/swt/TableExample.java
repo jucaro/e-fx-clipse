@@ -27,7 +27,7 @@ public class TableExample extends SWTApplication {
 		column = new TableColumn(list,SWT.NONE);
 		column.setText("Col 2");
 		
-		for( int i = 0; i < 10; i++ ) {
+		for( int i = 0; i < 30; i++ ) {
 			TableItem item = new TableItem(list, SWT.NONE);
 			item.setText(0, "Cell " + i + "/0");
 			item.setText(1, "Cell " + i + "/1");

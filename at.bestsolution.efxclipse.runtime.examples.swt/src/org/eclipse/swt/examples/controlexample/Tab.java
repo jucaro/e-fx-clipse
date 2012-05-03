@@ -341,7 +341,9 @@ abstract class Tab {
 		colorGroup.setLayoutData (new GridData (SWT.FILL, SWT.FILL, false, false));
 		colorGroup.setText (ControlExample.getResourceString ("Colors"));
 		colorAndFontTable = new Table(colorGroup, SWT.BORDER | SWT.V_SCROLL);
-		colorAndFontTable.setLayoutData(new GridData(SWT.FILL, SWT.BEGINNING, true, false, 2, 1));
+		GridData gd = new GridData(SWT.FILL, SWT.BEGINNING, true, false, 2, 1);
+		gd.heightHint = 100;
+		colorAndFontTable.setLayoutData(gd);
 		TableItem item = new TableItem(colorAndFontTable, SWT.None);
 		item.setText(ControlExample.getResourceString ("Foreground_Color"));
 		colorAndFontTable.setSelection(0);
