@@ -29,7 +29,7 @@ public class Button extends Control {
 			control = new RadioButton();
 		} else if( (style & SWT.CHECK) != 0 ) {
 			control = new CheckBox();
-			((CheckBox)control).setAllowIndeterminate(true);
+			((CheckBox)control).setAllowIndeterminate(false);
 		} else {
 			control = new javafx.scene.control.Button();	
 		}
