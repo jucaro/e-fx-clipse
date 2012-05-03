@@ -21,6 +21,11 @@ public class Util {
 	}
 	
 	public static String getFQNType(IType referenceType, String name) throws JavaModelException {
+		// no need to resolve it is already an FQN
+		if( name.contains(".") ) {
+			return name;
+		}
+		
 		String[][] parts = referenceType.resolveType(name);
 		if( parts != null && parts.length > 0 ) {
 			return toFQN(parts[0]);
