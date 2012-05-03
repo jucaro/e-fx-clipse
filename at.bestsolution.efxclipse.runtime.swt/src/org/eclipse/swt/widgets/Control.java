@@ -188,10 +188,10 @@ public abstract class Control extends Widget {
 //		
 //	}
 //	
-//	public Shell getShell () {
-//		
-//	}
-//	
+	public Shell getShell () {
+		return getParent().getShell();
+	}
+	
 	public abstract Point getSize ();
 	
 //	public String getToolTipText () {

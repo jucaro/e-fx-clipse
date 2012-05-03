@@ -83,4 +83,10 @@ public class Shell extends Decorations {
 		// TODO Does it need another implementation???
 		return super.getParent();
 	}
+	
+	@Override
+	public Shell getShell() {
+		return this;
+	}
+	
 }
