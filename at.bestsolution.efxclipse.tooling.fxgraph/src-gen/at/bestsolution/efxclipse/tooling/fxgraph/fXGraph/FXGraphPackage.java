@@ -509,13 +509,13 @@ public interface FXGraphPackage extends EPackage
   int PROPERTY = 8;
 
   /**
-   * The feature id for the '<em><b>Preview</b></em>' attribute.
+   * The feature id for the '<em><b>Modifier</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int PROPERTY__PREVIEW = 0;
+  int PROPERTY__MODIFIER = 0;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1419,15 +1419,15 @@ public interface FXGraphPackage extends EPackage
   EClass getProperty();
 
   /**
-   * Returns the meta object for the attribute '{@link at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.Property#isPreview <em>Preview</em>}'.
+   * Returns the meta object for the attribute '{@link at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.Property#getModifier <em>Modifier</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Preview</em>'.
-   * @see at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.Property#isPreview()
+   * @return the meta object for the attribute '<em>Modifier</em>'.
+   * @see at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.Property#getModifier()
    * @see #getProperty()
    * @generated
    */
-  EAttribute getProperty_Preview();
+  EAttribute getProperty_Modifier();
 
   /**
    * Returns the meta object for the attribute '{@link at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.Property#getName <em>Name</em>}'.
@@ -2178,12 +2178,12 @@ public interface FXGraphPackage extends EPackage
     EClass PROPERTY = eINSTANCE.getProperty();
 
     /**
-     * The meta object literal for the '<em><b>Preview</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>Modifier</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute PROPERTY__PREVIEW = eINSTANCE.getProperty_Preview();
+    EAttribute PROPERTY__MODIFIER = eINSTANCE.getProperty_Modifier();
 
     /**
      * The meta object literal for the '<em><b>Name</b></em>' attribute feature.

@@ -12,7 +12,7 @@ import org.eclipse.emf.ecore.EObject;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.Property#isPreview <em>Preview</em>}</li>
+ *   <li>{@link at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.Property#getModifier <em>Modifier</em>}</li>
  *   <li>{@link at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.Property#getName <em>Name</em>}</li>
  *   <li>{@link at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.Property#getValue <em>Value</em>}</li>
  * </ul>
@@ -25,30 +25,30 @@ import org.eclipse.emf.ecore.EObject;
 public interface Property extends EObject
 {
   /**
-   * Returns the value of the '<em><b>Preview</b></em>' attribute.
+   * Returns the value of the '<em><b>Modifier</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Preview</em>' attribute isn't clear,
+   * If the meaning of the '<em>Modifier</em>' attribute isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Preview</em>' attribute.
-   * @see #setPreview(boolean)
-   * @see at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.FXGraphPackage#getProperty_Preview()
+   * @return the value of the '<em>Modifier</em>' attribute.
+   * @see #setModifier(String)
+   * @see at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.FXGraphPackage#getProperty_Modifier()
    * @model
    * @generated
    */
-  boolean isPreview();
+  String getModifier();
 
   /**
-   * Sets the value of the '{@link at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.Property#isPreview <em>Preview</em>}' attribute.
+   * Sets the value of the '{@link at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.Property#getModifier <em>Modifier</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Preview</em>' attribute.
-   * @see #isPreview()
+   * @param value the new value of the '<em>Modifier</em>' attribute.
+   * @see #getModifier()
    * @generated
    */
-  void setPreview(boolean value);
+  void setModifier(String value);
 
   /**
    * Returns the value of the '<em><b>Name</b></em>' attribute.

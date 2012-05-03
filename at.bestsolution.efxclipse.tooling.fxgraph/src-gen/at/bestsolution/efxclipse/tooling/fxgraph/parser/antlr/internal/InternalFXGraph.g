@@ -1071,17 +1071,32 @@ ruleProperty returns [EObject current=null]
     @after { leaveRule(); }:
 ((
 (
-		lv_preview_0_0=	'preview' 
+(
+		lv_modifier_0_1=	'preview' 
     {
-        newLeafNode(lv_preview_0_0, grammarAccess.getPropertyAccess().getPreviewPreviewKeyword_0_0());
+        newLeafNode(lv_modifier_0_1, grammarAccess.getPropertyAccess().getModifierPreviewKeyword_0_0_0());
     }
  
 	    {
 	        if ($current==null) {
 	            $current = createModelElement(grammarAccess.getPropertyRule());
 	        }
-       		setWithLastConsumed($current, "preview", true, "preview");
+       		setWithLastConsumed($current, "modifier", lv_modifier_0_1, null);
 	    }
+
+    |		lv_modifier_0_2=	'runtime-only' 
+    {
+        newLeafNode(lv_modifier_0_2, grammarAccess.getPropertyAccess().getModifierRuntimeOnlyKeyword_0_0_1());
+    }
+ 
+	    {
+	        if ($current==null) {
+	            $current = createModelElement(grammarAccess.getPropertyRule());
+	        }
+       		setWithLastConsumed($current, "modifier", lv_modifier_0_2, null);
+	    }
+
+)
 
 )
 )?(

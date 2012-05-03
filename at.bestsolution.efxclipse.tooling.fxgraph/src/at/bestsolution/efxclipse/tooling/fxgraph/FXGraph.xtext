@@ -44,7 +44,7 @@ StaticValueProperty:
 ;
 
 Property:
-	preview?='preview'? name=ID ':' value=ValueProperty 
+	modifier=('preview'|'runtime-only')? name=ID ':' value=ValueProperty 
 ;
 
 ValueProperty:

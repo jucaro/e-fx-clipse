@@ -691,8 +691,10 @@ public class FXGraphGrammarAccess extends AbstractGrammarElementFinder {
 	public class PropertyElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Property");
 		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Assignment cPreviewAssignment_0 = (Assignment)cGroup.eContents().get(0);
-		private final Keyword cPreviewPreviewKeyword_0_0 = (Keyword)cPreviewAssignment_0.eContents().get(0);
+		private final Assignment cModifierAssignment_0 = (Assignment)cGroup.eContents().get(0);
+		private final Alternatives cModifierAlternatives_0_0 = (Alternatives)cModifierAssignment_0.eContents().get(0);
+		private final Keyword cModifierPreviewKeyword_0_0_0 = (Keyword)cModifierAlternatives_0_0.eContents().get(0);
+		private final Keyword cModifierRuntimeOnlyKeyword_0_0_1 = (Keyword)cModifierAlternatives_0_0.eContents().get(1);
 		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final RuleCall cNameIDTerminalRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
 		private final Keyword cColonKeyword_2 = (Keyword)cGroup.eContents().get(2);
@@ -701,17 +703,23 @@ public class FXGraphGrammarAccess extends AbstractGrammarElementFinder {
 		
 		//Property:
 		//
-		//	preview?="preview"? name=ID ":" value=ValueProperty;
+		//	modifier=("preview" | "runtime-only")? name=ID ":" value=ValueProperty;
 		public ParserRule getRule() { return rule; }
 
-		//preview?="preview"? name=ID ":" value=ValueProperty
+		//modifier=("preview" | "runtime-only")? name=ID ":" value=ValueProperty
 		public Group getGroup() { return cGroup; }
 
-		//preview?="preview"?
-		public Assignment getPreviewAssignment_0() { return cPreviewAssignment_0; }
+		//modifier=("preview" | "runtime-only")?
+		public Assignment getModifierAssignment_0() { return cModifierAssignment_0; }
+
+		//"preview" | "runtime-only"
+		public Alternatives getModifierAlternatives_0_0() { return cModifierAlternatives_0_0; }
 
 		//"preview"
-		public Keyword getPreviewPreviewKeyword_0_0() { return cPreviewPreviewKeyword_0_0; }
+		public Keyword getModifierPreviewKeyword_0_0_0() { return cModifierPreviewKeyword_0_0_0; }
+
+		//"runtime-only"
+		public Keyword getModifierRuntimeOnlyKeyword_0_0_1() { return cModifierRuntimeOnlyKeyword_0_0_1; }
 
 		//name=ID
 		public Assignment getNameAssignment_1() { return cNameAssignment_1; }
@@ -1503,7 +1511,7 @@ public class FXGraphGrammarAccess extends AbstractGrammarElementFinder {
 
 	//Property:
 	//
-	//	preview?="preview"? name=ID ":" value=ValueProperty;
+	//	modifier=("preview" | "runtime-only")? name=ID ":" value=ValueProperty;
 	public PropertyElements getPropertyAccess() {
 		return (pProperty != null) ? pProperty : (pProperty = new PropertyElements());
 	}

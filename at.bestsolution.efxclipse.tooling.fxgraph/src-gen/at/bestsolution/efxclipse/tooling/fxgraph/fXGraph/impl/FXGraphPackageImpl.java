@@ -679,7 +679,7 @@ public class FXGraphPackageImpl extends EPackageImpl implements FXGraphPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getProperty_Preview()
+  public EAttribute getProperty_Modifier()
   {
     return (EAttribute)propertyEClass.getEStructuralFeatures().get(0);
   }
@@ -1149,7 +1149,7 @@ public class FXGraphPackageImpl extends EPackageImpl implements FXGraphPackage
     createEReference(staticValuePropertyEClass, STATIC_VALUE_PROPERTY__VALUE);
 
     propertyEClass = createEClass(PROPERTY);
-    createEAttribute(propertyEClass, PROPERTY__PREVIEW);
+    createEAttribute(propertyEClass, PROPERTY__MODIFIER);
     createEAttribute(propertyEClass, PROPERTY__NAME);
     createEReference(propertyEClass, PROPERTY__VALUE);
 
@@ -1307,7 +1307,7 @@ public class FXGraphPackageImpl extends EPackageImpl implements FXGraphPackage
     initEReference(getStaticValueProperty_Value(), this.getValueProperty(), null, "value", null, 0, 1, StaticValueProperty.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(propertyEClass, Property.class, "Property", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getProperty_Preview(), ecorePackage.getEBoolean(), "preview", null, 0, 1, Property.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getProperty_Modifier(), ecorePackage.getEString(), "modifier", null, 0, 1, Property.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getProperty_Name(), ecorePackage.getEString(), "name", null, 0, 1, Property.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getProperty_Value(), this.getValueProperty(), null, "value", null, 0, 1, Property.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 

@@ -263,8 +263,11 @@
         <classifier xsi:type="ecore:EClass" href="http://www.bestsolution.at/efxclipse/tooling/fxgraph/FXGraph#//Property"/>
       </type>
       <alternatives xsi:type="xtext:Group">
-        <elements xsi:type="xtext:Assignment" cardinality="?" feature="preview" operator="?=">
-          <terminal xsi:type="xtext:Keyword" value="preview"/>
+        <elements xsi:type="xtext:Assignment" cardinality="?" feature="modifier" operator="=">
+          <terminal xsi:type="xtext:Alternatives">
+            <elements xsi:type="xtext:Keyword" value="preview"/>
+            <elements xsi:type="xtext:Keyword" value="runtime-only"/>
+          </terminal>
         </elements>
         <elements xsi:type="xtext:Assignment" feature="name" operator="=">
           <terminal xsi:type="xtext:RuleCall" rule="/2/@rules.11"/>

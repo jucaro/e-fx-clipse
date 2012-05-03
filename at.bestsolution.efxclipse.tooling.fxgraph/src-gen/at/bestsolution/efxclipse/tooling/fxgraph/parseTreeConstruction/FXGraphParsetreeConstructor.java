@@ -3332,11 +3332,11 @@ protected class StaticValueProperty_ValueAssignment_5 extends AssignmentToken  {
  *
  * Property:
  * 
- * 	preview?="preview"? name=ID ":" value=ValueProperty;
+ * 	modifier=("preview" | "runtime-only")? name=ID ":" value=ValueProperty;
  *
  **/
 
-// preview?="preview"? name=ID ":" value=ValueProperty
+// modifier=("preview" | "runtime-only")? name=ID ":" value=ValueProperty
 protected class Property_Group extends GroupToken {
 	
 	public Property_Group(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -3365,16 +3365,16 @@ protected class Property_Group extends GroupToken {
 
 }
 
-// preview?="preview"?
-protected class Property_PreviewAssignment_0 extends AssignmentToken  {
+// modifier=("preview" | "runtime-only")?
+protected class Property_ModifierAssignment_0 extends AssignmentToken  {
 	
-	public Property_PreviewAssignment_0(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+	public Property_ModifierAssignment_0(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
 		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
 	}
 	
 	@Override
 	public Assignment getGrammarElement() {
-		return grammarAccess.getPropertyAccess().getPreviewAssignment_0();
+		return grammarAccess.getPropertyAccess().getModifierAssignment_0();
 	}
 
     @Override
@@ -3386,11 +3386,16 @@ protected class Property_PreviewAssignment_0 extends AssignmentToken  {
 
     @Override	
 	public IEObjectConsumer tryConsume() {
-		if((value = eObjectConsumer.getConsumable("preview",false)) == null) return null;
-		IEObjectConsumer obj = eObjectConsumer.cloneAndConsume("preview");
-		if(Boolean.TRUE.equals(value)) { // org::eclipse::xtext::impl::KeywordImpl
+		if((value = eObjectConsumer.getConsumable("modifier",false)) == null) return null;
+		IEObjectConsumer obj = eObjectConsumer.cloneAndConsume("modifier");
+		if(keywordSerializer.isValid(obj.getEObject(), grammarAccess.getPropertyAccess().getModifierPreviewKeyword_0_0_0(), value, null)) {
 			type = AssignmentType.KEYWORD;
-			element = grammarAccess.getPropertyAccess().getPreviewPreviewKeyword_0_0();
+			element = grammarAccess.getPropertyAccess().getModifierPreviewKeyword_0_0_0();
+			return obj;
+		}
+		if(keywordSerializer.isValid(obj.getEObject(), grammarAccess.getPropertyAccess().getModifierRuntimeOnlyKeyword_0_0_1(), value, null)) {
+			type = AssignmentType.KEYWORD;
+			element = grammarAccess.getPropertyAccess().getModifierRuntimeOnlyKeyword_0_0_1();
 			return obj;
 		}
 		return null;
@@ -3413,7 +3418,7 @@ protected class Property_NameAssignment_1 extends AssignmentToken  {
     @Override
 	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
 		switch(index) {
-			case 0: return new Property_PreviewAssignment_0(lastRuleCallOrigin, this, 0, inst);
+			case 0: return new Property_ModifierAssignment_0(lastRuleCallOrigin, this, 0, inst);
 			default: return lastRuleCallOrigin.createFollowerAfterReturn(this, index, index - 1, inst);
 		}	
 	}

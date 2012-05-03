@@ -391,7 +391,11 @@ class FXGraphGenerator implements IGenerator {
 	
 	def previewFilter(Property property, boolean preview) {
 		if( ! preview ) {
-			if( property.preview ) {
+			if( "preview".equals(property.modifier) ) {
+				return false;
+			}
+		} else {
+			if( "runtime-only".equals(property.modifier) ) {
 				return false;
 			}
 		}
