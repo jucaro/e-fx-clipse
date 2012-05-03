@@ -1,6 +1,7 @@
 package org.eclipse.swt.widgets;
 
 import javafx.scene.control.Tab;
+import javafx.scene.control.Tooltip;
 import javafx.scene.image.ImageView;
 
 import org.eclipse.swt.SWT;
@@ -55,5 +56,27 @@ public class TabItem extends Item {
 	
 	public Control getControl() {
 		return control;
+	}
+	
+	public String getToolTipText () {
+		String rv = null;
+		Tooltip t = tab.getTooltip();
+		if( t != null ) {
+			rv = t.getText();
+		}
+		return rv;
+	}
+	
+	public void setToolTipText (String string) {
+		if( string == null || string.isEmpty() ) {
+			tab.setTooltip(null);
+		} else {
+			Tooltip t = tab.getTooltip();
+			if( t == null ) {
+				tab.setTooltip(new Tooltip(string));
+			} else {
+				t.setText(string);
+			}
+		}
 	}
 }
