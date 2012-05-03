@@ -28,8 +28,8 @@ public class List extends Scrollable {
 
 	@Override
 	public Point computeSize(int wHint, int hHint, boolean flushCache) {
-		int width = (int) control.getPrefWidth();
-		int height = (int) control.getPrefHeight();
+		int width = (int) control.prefWidth(-1);
+		int height = (int) control.prefHeight(-1);
 		
 		if (wHint != SWT.DEFAULT) width = wHint;
 		if (hHint != SWT.DEFAULT) height = hHint;
@@ -177,9 +177,7 @@ public class List extends Scrollable {
 	
 	public void remove (int [] indices) {
 		checkWidget ();
-		for( int i : indices ) {
-			items.remove(i);
-		}
+		Util.removeListIndices(items, indices);
 	}
 	
 	public void remove (String string) {
@@ -219,7 +217,6 @@ public class List extends Scrollable {
 			System.arraycopy(indices, 1, rest, 0, indices.length-1);
 			control.getSelectionModel().selectIndices(idx,rest);
 		}
-		
 	}
 	
 	public void selectAll () {
@@ -239,18 +236,20 @@ public class List extends Scrollable {
 	
 	public void setSelection (int index) {
 		checkWidget ();
-		select(index);
+		control.getSelectionModel().clearAndSelect(index);
 		control.getFocusModel().focus(index);
 	}
 	
 	public void setSelection (int start, int end) {
 		checkWidget ();
+		control.getSelectionModel().clearSelection();
 		select(start, end);
 		control.getFocusModel().focus(end);
 	}
 	
 	public void setSelection(int [] indices) {
 		checkWidget ();
+		control.getSelectionModel().clearSelection();
 		select(indices);
 		if( indices.length > 0 ) {
 			int[] sorted = new int[indices.length];

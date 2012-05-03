@@ -77,4 +77,10 @@ public class Shell extends Decorations {
 	public void setFullScreen(boolean selection) {
 		stage.setFullScreen(selection);
 	}
+	
+	@Override
+	public Composite getParent() {
+		// TODO Does it need another implementation???
+		return super.getParent();
+	}
 }

@@ -201,11 +201,11 @@ public abstract class Control extends Widget {
 //	public boolean getTouchEnabled () {
 //		
 //	}
-//	
-//	public boolean getVisible () {
-//		
-//	}
-//	
+	
+	public boolean getVisible () {
+		return internal_getNativeObject().isVisible();
+	}
+	
 //	public boolean isEnabled () {
 //		
 //	}
@@ -398,9 +398,10 @@ public abstract class Control extends Widget {
 //		
 //	}
 //	
-//	public void setVisible (boolean visible) {
-//		
-//	}
+	public void setVisible (boolean visible) {
+		checkWidget();
+		internal_getNativeObject().setVisible(visible);
+	}
 //	
 //	public Point toControl (int x, int y) {
 //		
