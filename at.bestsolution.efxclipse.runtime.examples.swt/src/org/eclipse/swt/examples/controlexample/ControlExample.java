@@ -15,6 +15,10 @@ import java.text.MessageFormat;
 import java.util.MissingResourceException;
 import java.util.ResourceBundle;
 
+import javafx.application.Application;
+import javafx.stage.Stage;
+
+import org.eclipse.equinox.app.IApplicationContext;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.graphics.Image;
 import org.eclipse.swt.graphics.Point;
@@ -24,6 +28,9 @@ import org.eclipse.swt.widgets.Display;
 import org.eclipse.swt.widgets.Shell;
 import org.eclipse.swt.widgets.TabFolder;
 import org.eclipse.swt.widgets.TabItem;
+
+import at.bestsolution.efxclipse.runtime.application.AbstractJFXApplication;
+import at.bestsolution.efxclipse.runtime.examples.swt.SWTApplication;
 
 public class ControlExample {
 	private static ResourceBundle resourceBundle =
@@ -87,7 +94,7 @@ public class ControlExample {
 	 */
 	Tab[] createTabs() {
 		return new Tab [] {
-//			new ButtonTab (this),
+			new ButtonTab (this),
 //			new CanvasTab (this),
 //			new ComboTab (this),
 //			new CoolBarTab (this),
@@ -250,5 +257,7 @@ public class ControlExample {
 //FIXME PORT TO FX		Rectangle monitorArea = shell.getMonitor().getClientArea();
 //		shell.setSize(Math.min(size.x, monitorArea.width), Math.min(size.y, monitorArea.height));
 	}
+	
+	
 }
 

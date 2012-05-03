@@ -49,5 +49,29 @@
          </property>
       </product>
    </extension>
+   <extension
+         id="swtcontrolexample"
+         point="org.eclipse.core.runtime.applications">
+      <application
+            cardinality="singleton-global"
+            thread="main"
+            visible="true">
+         <run
+               class="org.eclipse.swt.examples.controlexample.ControlLauncher">
+         </run>
+      </application>
+   </extension>
+   <extension
+         id="SWTControlExample"
+         point="org.eclipse.core.runtime.products">
+      <product
+            application="at.bestsolution.efxclipse.runtime.examples.swt.swtcontrolexample"
+            name="SWTControlExample">
+         <property
+               name="appName"
+               value="SWTControlExample">
+         </property>
+      </product>
+   </extension>
 
 </plugin>

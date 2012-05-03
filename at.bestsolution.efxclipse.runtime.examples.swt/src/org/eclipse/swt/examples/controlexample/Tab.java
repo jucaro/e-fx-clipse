@@ -66,8 +66,8 @@ abstract class Tab {
 	static final int BACKGROUND_COLOR = 1;
 	static final int FONT = 2;
 	Table colorAndFontTable;
-	ColorDialog colorDialog;
-	FontDialog fontDialog;
+//	ColorDialog colorDialog;
+//	FontDialog fontDialog;
 	Color foregroundColor, backgroundColor;
 	Font font;
 	
@@ -296,28 +296,28 @@ abstract class Tab {
 	 * Append the Set/Get API controls to the "Other" group.
 	 */
 	void createSetGetGroup() {
-		/*
-		 * Create the button to access set/get API functionality.
-		 */
-		final String [] methodNames = getMethodNames ();
-		if (methodNames != null) {
-			final Button setGetButton = new Button (otherGroup, SWT.PUSH);
-			setGetButton.setText (ControlExample.getResourceString ("Set_Get"));
-			setGetButton.setLayoutData(new GridData(SWT.FILL, SWT.CENTER, false, false));
-			setGetButton.addSelectionListener (new SelectionAdapter() {
-				public void widgetSelected (SelectionEvent e) {
-					if (getExampleWidgets().length >  0) {
-						if (setGetDialog == null) {
-							setGetDialog = createSetGetDialog(methodNames);
-						}
-						Point pt = setGetButton.getLocation();
-						pt = display.map(setGetButton.getParent(), null, pt);
-						setGetDialog.setLocation(pt.x, pt.y);
-						setGetDialog.open();
-					}
-				}
-			});
-		}
+//		/*
+//		 * Create the button to access set/get API functionality.
+//		 */
+//		final String [] methodNames = getMethodNames ();
+//		if (methodNames != null) {
+//			final Button setGetButton = new Button (otherGroup, SWT.PUSH);
+//			setGetButton.setText (ControlExample.getResourceString ("Set_Get"));
+//			setGetButton.setLayoutData(new GridData(SWT.FILL, SWT.CENTER, false, false));
+//			setGetButton.addSelectionListener (new SelectionAdapter() {
+//				public void widgetSelected (SelectionEvent e) {
+//					if (getExampleWidgets().length >  0) {
+//						if (setGetDialog == null) {
+//							setGetDialog = createSetGetDialog(methodNames);
+//						}
+//						Point pt = setGetButton.getLocation();
+//						pt = display.map(setGetButton.getParent(), null, pt);
+//						setGetDialog.setLocation(pt.x, pt.y);
+//						setGetDialog.open();
+//					}
+//				}
+//			});
+//		}
 	}
 
 	/**
@@ -356,92 +356,92 @@ abstract class Tab {
 		defaultsButton.setText(ControlExample.getResourceString("Defaults"));
 		defaultsButton.setLayoutData(new GridData(SWT.FILL, SWT.CENTER, false, false));
 
-		/* Add listeners to set/reset colors and fonts. */
-		colorDialog = new ColorDialog (shell);
-		fontDialog = new FontDialog (shell);
-		colorAndFontTable.addSelectionListener(new SelectionAdapter() {
-			public void widgetDefaultSelected(SelectionEvent event) {
-				changeFontOrColor (colorAndFontTable.getSelectionIndex());
-			}
-		});
-		changeButton.addSelectionListener(new SelectionAdapter() {
-			public void widgetSelected(SelectionEvent event) {
-				changeFontOrColor (colorAndFontTable.getSelectionIndex());
-			}
-		});
-		defaultsButton.addSelectionListener(new SelectionAdapter () {
-			public void widgetSelected (SelectionEvent e) {
-				resetColorsAndFonts ();
-			}
-		});
-		shell.addDisposeListener(new DisposeListener() {
-			public void widgetDisposed(DisposeEvent event) {
-				if (foregroundColor != null) foregroundColor.dispose();
-				if (backgroundColor != null) backgroundColor.dispose();
-				if (font != null) font.dispose();
-				foregroundColor = null;
-				backgroundColor = null;
-				font = null;
-				if (colorAndFontTable != null && !colorAndFontTable.isDisposed()) {
-					TableItem [] items = colorAndFontTable.getItems();
-					for (int i = 0; i < items.length; i++) {
-						Image image = items[i].getImage();
-						if (image != null) image.dispose();
-					}
-				}
-			}
-		});
+//		/* Add listeners to set/reset colors and fonts. */
+//		colorDialog = new ColorDialog (shell);
+//		fontDialog = new FontDialog (shell);
+//		colorAndFontTable.addSelectionListener(new SelectionAdapter() {
+//			public void widgetDefaultSelected(SelectionEvent event) {
+//				changeFontOrColor (colorAndFontTable.getSelectionIndex());
+//			}
+//		});
+//		changeButton.addSelectionListener(new SelectionAdapter() {
+//			public void widgetSelected(SelectionEvent event) {
+//				changeFontOrColor (colorAndFontTable.getSelectionIndex());
+//			}
+//		});
+//		defaultsButton.addSelectionListener(new SelectionAdapter () {
+//			public void widgetSelected (SelectionEvent e) {
+//				resetColorsAndFonts ();
+//			}
+//		});
+//		shell.addDisposeListener(new DisposeListener() {
+//			public void widgetDisposed(DisposeEvent event) {
+//				if (foregroundColor != null) foregroundColor.dispose();
+//				if (backgroundColor != null) backgroundColor.dispose();
+//				if (font != null) font.dispose();
+//				foregroundColor = null;
+//				backgroundColor = null;
+//				font = null;
+//				if (colorAndFontTable != null && !colorAndFontTable.isDisposed()) {
+//					TableItem [] items = colorAndFontTable.getItems();
+//					for (int i = 0; i < items.length; i++) {
+//						Image image = items[i].getImage();
+//						if (image != null) image.dispose();
+//					}
+//				}
+//			}
+//		});
 	}
 	
 	void changeFontOrColor(int index) {
-		switch (index) {
-			case FOREGROUND_COLOR: {
-				Color oldColor = foregroundColor;
-				if (oldColor == null) {
-					Control [] controls = getExampleControls ();
-					if (controls.length > 0) oldColor = controls [0].getForeground ();
-				}
-				if (oldColor != null) colorDialog.setRGB(oldColor.getRGB()); // seed dialog with current color
-				RGB rgb = colorDialog.open();
-				if (rgb == null) return;
-				oldColor = foregroundColor; // save old foreground color to dispose when done
-				foregroundColor = new Color (display, rgb);
-				setExampleWidgetForeground ();
-				if (oldColor != null) oldColor.dispose ();
-			}
-			break;
-			case BACKGROUND_COLOR: {
-				Color oldColor = backgroundColor;
-				if (oldColor == null) {
-					Control [] controls = getExampleControls ();
-					if (controls.length > 0) oldColor = controls [0].getBackground (); // seed dialog with current color
-				}
-				if (oldColor != null) colorDialog.setRGB(oldColor.getRGB());
-				RGB rgb = colorDialog.open();
-				if (rgb == null) return;
-				oldColor = backgroundColor; // save old background color to dispose when done
-				backgroundColor = new Color (display, rgb);
-				setExampleWidgetBackground ();
-				if (oldColor != null) oldColor.dispose ();
-			}
-			break;
-			case FONT: {
-				Font oldFont = font;
-				if (oldFont == null) {
-					Control [] controls = getExampleControls ();
-					if (controls.length > 0) oldFont = controls [0].getFont ();
-				}
-				if (oldFont != null) fontDialog.setFontList(oldFont.getFontData()); // seed dialog with current font
-				FontData fontData = fontDialog.open ();
-				if (fontData == null) return;
-				oldFont = font; // dispose old font when done
-				font = new Font (display, fontData);
-				setExampleWidgetFont ();
-				setExampleWidgetSize ();
-				if (oldFont != null) oldFont.dispose ();
-			}
-			break;
-		}
+//		switch (index) {
+//			case FOREGROUND_COLOR: {
+//				Color oldColor = foregroundColor;
+//				if (oldColor == null) {
+//					Control [] controls = getExampleControls ();
+//					if (controls.length > 0) oldColor = controls [0].getForeground ();
+//				}
+//				if (oldColor != null) colorDialog.setRGB(oldColor.getRGB()); // seed dialog with current color
+//				RGB rgb = colorDialog.open();
+//				if (rgb == null) return;
+//				oldColor = foregroundColor; // save old foreground color to dispose when done
+//				foregroundColor = new Color (display, rgb);
+//				setExampleWidgetForeground ();
+//				if (oldColor != null) oldColor.dispose ();
+//			}
+//			break;
+//			case BACKGROUND_COLOR: {
+//				Color oldColor = backgroundColor;
+//				if (oldColor == null) {
+//					Control [] controls = getExampleControls ();
+//					if (controls.length > 0) oldColor = controls [0].getBackground (); // seed dialog with current color
+//				}
+//				if (oldColor != null) colorDialog.setRGB(oldColor.getRGB());
+//				RGB rgb = colorDialog.open();
+//				if (rgb == null) return;
+//				oldColor = backgroundColor; // save old background color to dispose when done
+//				backgroundColor = new Color (display, rgb);
+//				setExampleWidgetBackground ();
+//				if (oldColor != null) oldColor.dispose ();
+//			}
+//			break;
+//			case FONT: {
+//				Font oldFont = font;
+//				if (oldFont == null) {
+//					Control [] controls = getExampleControls ();
+//					if (controls.length > 0) oldFont = controls [0].getFont ();
+//				}
+//				if (oldFont != null) fontDialog.setFontList(oldFont.getFontData()); // seed dialog with current font
+//				FontData fontData = fontDialog.open ();
+//				if (fontData == null) return;
+//				oldFont = font; // dispose old font when done
+//				font = new Font (display, fontData);
+//				setExampleWidgetFont ();
+//				setExampleWidgetSize ();
+//				if (oldFont != null) oldFont.dispose ();
+//			}
+//			break;
+//		}
 	}
 
 	/**
@@ -711,8 +711,8 @@ abstract class Tab {
 			}
 		});
 
-		dialog.setDefaultButton(ok);
-		dialog.pack();
+//		dialog.setDefaultButton(ok);
+//		dialog.pack();
 		dialog.setLocation(x, y);
 		dialog.open();
 	}
@@ -721,38 +721,38 @@ abstract class Tab {
 	 * Create the event console popup menu.
 	 */
 	void createEventConsolePopup () {
-		Menu popup = new Menu (shell, SWT.POP_UP);
-		eventConsole.setMenu (popup);
-
-		MenuItem cut = new MenuItem (popup, SWT.PUSH);
-		cut.setText (ControlExample.getResourceString("MenuItem_Cut"));
-		cut.addListener (SWT.Selection, new Listener () {
-			public void handleEvent (Event event) {
-				eventConsole.cut ();
-			}
-		});
-		MenuItem copy = new MenuItem (popup, SWT.PUSH);
-		copy.setText (ControlExample.getResourceString("MenuItem_Copy"));
-		copy.addListener (SWT.Selection, new Listener () {
-			public void handleEvent (Event event) {
-				eventConsole.copy ();
-			}
-		});
-		MenuItem paste = new MenuItem (popup, SWT.PUSH);
-		paste.setText (ControlExample.getResourceString("MenuItem_Paste"));
-		paste.addListener (SWT.Selection, new Listener () {
-			public void handleEvent (Event event) {
-				eventConsole.paste ();
-			}
-		});
-		new MenuItem (popup, SWT.SEPARATOR);
-		MenuItem selectAll = new MenuItem (popup, SWT.PUSH);
-		selectAll.setText(ControlExample.getResourceString("MenuItem_SelectAll"));
-		selectAll.addListener (SWT.Selection, new Listener () {
-			public void handleEvent (Event event) {
-				eventConsole.selectAll ();
-			}
-		});
+//		Menu popup = new Menu (shell, SWT.POP_UP);
+//		eventConsole.setMenu (popup);
+//
+//		MenuItem cut = new MenuItem (popup, SWT.PUSH);
+//		cut.setText (ControlExample.getResourceString("MenuItem_Cut"));
+//		cut.addListener (SWT.Selection, new Listener () {
+//			public void handleEvent (Event event) {
+//				eventConsole.cut ();
+//			}
+//		});
+//		MenuItem copy = new MenuItem (popup, SWT.PUSH);
+//		copy.setText (ControlExample.getResourceString("MenuItem_Copy"));
+//		copy.addListener (SWT.Selection, new Listener () {
+//			public void handleEvent (Event event) {
+//				eventConsole.copy ();
+//			}
+//		});
+//		MenuItem paste = new MenuItem (popup, SWT.PUSH);
+//		paste.setText (ControlExample.getResourceString("MenuItem_Paste"));
+//		paste.addListener (SWT.Selection, new Listener () {
+//			public void handleEvent (Event event) {
+//				eventConsole.paste ();
+//			}
+//		});
+//		new MenuItem (popup, SWT.SEPARATOR);
+//		MenuItem selectAll = new MenuItem (popup, SWT.PUSH);
+//		selectAll.setText(ControlExample.getResourceString("MenuItem_SelectAll"));
+//		selectAll.addListener (SWT.Selection, new Listener () {
+//			public void handleEvent (Event event) {
+//				eventConsole.selectAll ();
+//			}
+//		});
 	}
 
 	/**
@@ -789,26 +789,26 @@ abstract class Tab {
 		for (int i = 0; i < EVENT_INFO.length; i++) {
 			TableItem item = new TableItem (table, SWT.NONE);
 			item.setText (EVENT_INFO[i].name);
-			item.setChecked (eventsFilter[i]);
+//			item.setChecked (eventsFilter[i]);
 		}
 		final String [] customNames = getCustomEventNames ();
 		for (int i = 0; i < customNames.length; i++) {
 			TableItem item = new TableItem (table, SWT.NONE);
 			item.setText (customNames[i]);
-			item.setChecked (eventsFilter[EVENT_INFO.length + i]);
+//			item.setChecked (eventsFilter[EVENT_INFO.length + i]);
 		}
 		Button selectAll = new Button (dialog, SWT.PUSH);
 		selectAll.setText(ControlExample.getResourceString ("Select_All"));
 		selectAll.setLayoutData(new GridData(GridData.HORIZONTAL_ALIGN_FILL));
 		selectAll.addSelectionListener (new SelectionAdapter() {
 			public void widgetSelected(SelectionEvent e) {
-				TableItem [] items = table.getItems();
-				for (int i = 0; i < EVENT_INFO.length; i++) {
-					items[i].setChecked(true);
-				}
-				for (int i = 0; i < customNames.length; i++) {
-					items[EVENT_INFO.length + i].setChecked(true);
-				}
+//				TableItem [] items = table.getItems();
+//				for (int i = 0; i < EVENT_INFO.length; i++) {
+//					items[i].setChecked(true);
+//				}
+//				for (int i = 0; i < customNames.length; i++) {
+//					items[EVENT_INFO.length + i].setChecked(true);
+//				}
 			}
 		});
 		Button deselectAll = new Button (dialog, SWT.PUSH);
@@ -816,13 +816,13 @@ abstract class Tab {
 		deselectAll.setLayoutData(new GridData(GridData.HORIZONTAL_ALIGN_FILL));
 		deselectAll.addSelectionListener (new SelectionAdapter() {
 			public void widgetSelected(SelectionEvent e) {
-				TableItem [] items = table.getItems();
-				for (int i = 0; i < EVENT_INFO.length; i++) {
-					items[i].setChecked(false);
-				}
-				for (int i = 0; i < customNames.length; i++) {
-					items[EVENT_INFO.length + i].setChecked(false);
-				}
+//				TableItem [] items = table.getItems();
+//				for (int i = 0; i < EVENT_INFO.length; i++) {
+//					items[i].setChecked(false);
+//				}
+//				for (int i = 0; i < customNames.length; i++) {
+//					items[EVENT_INFO.length + i].setChecked(false);
+//				}
 			}
 		});
 		final Button editEvent = new Button (dialog, SWT.PUSH);
@@ -830,69 +830,69 @@ abstract class Tab {
 		editEvent.setLayoutData(new GridData(GridData.HORIZONTAL_ALIGN_FILL | GridData.VERTICAL_ALIGN_BEGINNING));
 		editEvent.addSelectionListener (new SelectionAdapter() {
 			public void widgetSelected (SelectionEvent e) {
-				Point pt = editEvent.getLocation();
-				pt = e.display.map(editEvent, null, pt);
-				int index = table.getSelectionIndex();
-				if (getExampleWidgets().length > 0 && index != -1) {
-					createEditEventDialog(dialog, pt.x, pt.y, index);
-				}
+//				Point pt = editEvent.getLocation();
+//				pt = e.display.map(editEvent, null, pt);
+//				int index = table.getSelectionIndex();
+//				if (getExampleWidgets().length > 0 && index != -1) {
+//					createEditEventDialog(dialog, pt.x, pt.y, index);
+//				}
 			}
 		});
 		editEvent.setEnabled(false);
-		table.addSelectionListener(new SelectionAdapter() {
-			public void widgetSelected(SelectionEvent e) {
-				int fields = 0;
-				int index = table.getSelectionIndex();
-				if (index != -1 && index < EVENT_INFO.length) {  // TODO: Allow custom widgets to specify event info
-					fields = (EVENT_INFO[index].settableFields);
-				}
-				editEvent.setEnabled(fields != 0);
-			}
-			public void widgetDefaultSelected(SelectionEvent e) {
-				if (editEvent.getEnabled()) {
-					Point pt = editEvent.getLocation();
-					pt = e.display.map(editEvent, null, pt);
-					int index = table.getSelectionIndex();
-					if (getExampleWidgets().length > 0 && index != -1 && index < EVENT_INFO.length) {
-						createEditEventDialog(dialog, pt.x, pt.y, index);
-					}
-				}
-			}
-		});
+//		table.addSelectionListener(new SelectionAdapter() {
+//			public void widgetSelected(SelectionEvent e) {
+//				int fields = 0;
+//				int index = table.getSelectionIndex();
+//				if (index != -1 && index < EVENT_INFO.length) {  // TODO: Allow custom widgets to specify event info
+//					fields = (EVENT_INFO[index].settableFields);
+//				}
+//				editEvent.setEnabled(fields != 0);
+//			}
+//			public void widgetDefaultSelected(SelectionEvent e) {
+//				if (editEvent.getEnabled()) {
+//					Point pt = editEvent.getLocation();
+//					pt = e.display.map(editEvent, null, pt);
+//					int index = table.getSelectionIndex();
+//					if (getExampleWidgets().length > 0 && index != -1 && index < EVENT_INFO.length) {
+//						createEditEventDialog(dialog, pt.x, pt.y, index);
+//					}
+//				}
+//			}
+//		});
 
 		new Label(dialog, SWT.NONE); /* Filler */
 		Button ok = new Button (dialog, SWT.PUSH);
 		ok.setText(ControlExample.getResourceString ("OK"));
-		dialog.setDefaultButton(ok);
+//		dialog.setDefaultButton(ok);
 		ok.setLayoutData(new GridData(GridData.HORIZONTAL_ALIGN_FILL));
-		ok.addSelectionListener (new SelectionAdapter() {
-			public void widgetSelected(SelectionEvent e) {
-				TableItem [] items = table.getItems();
-				for (int i = 0; i < EVENT_INFO.length; i++) {
-					eventsFilter[i] = items[i].getChecked();
-				}
-				for (int i = 0; i < customNames.length; i++) {
-					eventsFilter[EVENT_INFO.length + i] = items[EVENT_INFO.length + i].getChecked();
-				}
-				dialog.dispose();
-			}
-		});
-		dialog.pack ();
+//		ok.addSelectionListener (new SelectionAdapter() {
+//			public void widgetSelected(SelectionEvent e) {
+//				TableItem [] items = table.getItems();
+//				for (int i = 0; i < EVENT_INFO.length; i++) {
+//					eventsFilter[i] = items[i].getChecked();
+//				}
+//				for (int i = 0; i < customNames.length; i++) {
+//					eventsFilter[EVENT_INFO.length + i] = items[EVENT_INFO.length + i].getChecked();
+//				}
+//				dialog.dispose();
+//			}
+//		});
+//		dialog.pack ();
 		/*
 		 * If the preferred size of the dialog is too tall for the display,
 		 * then reduce the height, so that the vertical scrollbar will appear.
 		 */
-		Rectangle bounds = dialog.getBounds();
-		Rectangle trim = dialog.computeTrim(0, 0, 0, 0);
-		Rectangle clientArea = display.getClientArea();
-		if (bounds.height > clientArea.height) {
-			dialog.setSize(bounds.width, clientArea.height - trim.height);
-		}
-		dialog.setLocation(bounds.x, clientArea.y);
-		dialog.open ();
-		while (! dialog.isDisposed()) {
-			if (! display.readAndDispatch()) display.sleep();
-		}
+//		Rectangle bounds = dialog.getBounds();
+//		Rectangle trim = dialog.computeTrim(0, 0, 0, 0);
+//		Rectangle clientArea = display.getClientArea();
+//		if (bounds.height > clientArea.height) {
+//			dialog.setSize(bounds.width, clientArea.height - trim.height);
+//		}
+//		dialog.setLocation(bounds.x, clientArea.y);
+//		dialog.open ();
+//		while (! dialog.isDisposed()) {
+//			if (! display.readAndDispatch()) display.sleep();
+//		}
 	}
 
 	/**
@@ -955,14 +955,14 @@ abstract class Tab {
 		data.heightHint = 80;
 		eventConsole.setLayoutData (data);
 		createEventConsolePopup ();
-		eventConsole.addKeyListener (new KeyAdapter () {
-			public void keyPressed (KeyEvent e) {
-				if ((e.keyCode == 'A' || e.keyCode == 'a') && (e.stateMask & SWT.MOD1) != 0) {
-					eventConsole.selectAll ();
-					e.doit = false;
-				}
-			}
-		});
+//		eventConsole.addKeyListener (new KeyAdapter () {
+//			public void keyPressed (KeyEvent e) {
+//				if ((e.keyCode == 'A' || e.keyCode == 'a') && (e.stateMask & SWT.MOD1) != 0) {
+//					eventConsole.selectAll ();
+//					e.doit = false;
+//				}
+//			}
+//		});
 	}
 	
 	/**
@@ -1013,13 +1013,13 @@ abstract class Tab {
 		data.heightHint = 200;
 		getText.setLayoutData(data);
 		resetLabels();
-		dialog.setDefaultButton(setButton);
-		dialog.pack();
-		dialog.addDisposeListener(new DisposeListener() {
-			public void widgetDisposed(DisposeEvent e) {
-				setGetDialog = null;
-			}
-		});
+//		dialog.setDefaultButton(setButton);
+//		dialog.pack();
+//		dialog.addDisposeListener(new DisposeListener() {
+//			public void widgetDisposed(DisposeEvent e) {
+//				setGetDialog = null;
+//			}
+//		});
 		return dialog;
 	}
 
@@ -1263,27 +1263,27 @@ abstract class Tab {
 	}
 	
 	void setExampleWidgetPopupMenu() {
-		Control[] controls = getExampleControls();
-		for (int i = 0; i < controls.length; i++) {
-			final Control control = controls [i];
-			control.addListener(SWT.MenuDetect, new Listener() {
-				public void handleEvent(Event event) {
-		        	Menu menu = control.getMenu();
-		        	if (menu != null && samplePopup) {
-		        		menu.dispose();
-		        		menu = null;
-		        	}
-		        	if (menu == null && popupMenuButton.getSelection()) {
-		        		menu = new Menu(shell, SWT.POP_UP | (control.getStyle() & (SWT.RIGHT_TO_LEFT | SWT.LEFT_TO_RIGHT)));
-			        	MenuItem item = new MenuItem(menu, SWT.PUSH);
-			        	item.setText("Sample popup menu item");
-			        	specialPopupMenuItems(menu, event);
-			        	control.setMenu(menu);
-		        		samplePopup = true;
-		        	}
-				}
-			});
-		}
+//		Control[] controls = getExampleControls();
+//		for (int i = 0; i < controls.length; i++) {
+//			final Control control = controls [i];
+//			control.addListener(SWT.MenuDetect, new Listener() {
+//				public void handleEvent(Event event) {
+//		        	Menu menu = control.getMenu();
+//		        	if (menu != null && samplePopup) {
+//		        		menu.dispose();
+//		        		menu = null;
+//		        	}
+//		        	if (menu == null && popupMenuButton.getSelection()) {
+//		        		menu = new Menu(shell, SWT.POP_UP | (control.getStyle() & (SWT.RIGHT_TO_LEFT | SWT.LEFT_TO_RIGHT)));
+//			        	MenuItem item = new MenuItem(menu, SWT.PUSH);
+//			        	item.setText("Sample popup menu item");
+//			        	specialPopupMenuItems(menu, event);
+//			        	control.setMenu(menu);
+//		        		samplePopup = true;
+//		        	}
+//				}
+//			});
+//		}
 	}
 
 	protected void specialPopupMenuItems(final Menu menu, final Event event) {
@@ -1299,63 +1299,63 @@ abstract class Tab {
 		}
 	}
 	
-	Image colorImage (Color color) {
-		Image image = new Image (display, IMAGE_SIZE, IMAGE_SIZE);
-		GC gc = new GC(image);
-		gc.setBackground(color);
-		Rectangle bounds = image.getBounds();
-		gc.fillRectangle(0, 0, bounds.width, bounds.height);
-		gc.setBackground(display.getSystemColor(SWT.COLOR_BLACK));
-		gc.drawRectangle(0, 0, bounds.width - 1, bounds.height - 1);
-		gc.dispose();
-		return image;
-	}
-	
-	Image fontImage (Font font) {
-		Image image = new Image (display, IMAGE_SIZE, IMAGE_SIZE);
-		GC gc = new GC(image);
-		Rectangle bounds = image.getBounds();
-		gc.setBackground(display.getSystemColor(SWT.COLOR_WHITE));
-		gc.fillRectangle(0, 0, bounds.width, bounds.height);
-		gc.setBackground(display.getSystemColor(SWT.COLOR_BLACK));
-		gc.drawRectangle(0, 0, bounds.width - 1, bounds.height - 1);
-		FontData data[] = font.getFontData();
-		int style = data[0].getStyle();
-		switch (style) {
-		case SWT.NORMAL:
-			gc.drawLine(3, 3, 3, 8);
-			gc.drawLine(4, 3, 7, 8);
-			gc.drawLine(8, 3, 8, 8);
-			break;
-		case SWT.BOLD:
-			gc.drawLine(3, 2, 3, 9);
-			gc.drawLine(4, 2, 4, 9);
-			gc.drawLine(5, 2, 7, 2);
-			gc.drawLine(5, 3, 8, 3);
-			gc.drawLine(5, 5, 7, 5);
-			gc.drawLine(5, 6, 7, 6);
-			gc.drawLine(5, 8, 8, 8);
-			gc.drawLine(5, 9, 7, 9);
-			gc.drawLine(7, 4, 8, 4);
-			gc.drawLine(7, 7, 8, 7);
-			break;
-		case SWT.ITALIC:
-			gc.drawLine(6, 2, 8, 2);
-			gc.drawLine(7, 3, 4, 8);
-			gc.drawLine(3, 9, 5, 9);
-			break;
-		case SWT.BOLD | SWT.ITALIC:
-			gc.drawLine(5, 2, 8, 2);
-			gc.drawLine(5, 3, 8, 3);
-			gc.drawLine(6, 4, 4, 7);
-			gc.drawLine(7, 4, 5, 7);
-			gc.drawLine(3, 8, 6, 8);
-			gc.drawLine(3, 9, 6, 9);
-			break;
-		}
-		gc.dispose();
-		return image;
-	}
+//	Image colorImage (Color color) {
+//		Image image = new Image (display, IMAGE_SIZE, IMAGE_SIZE);
+//		GC gc = new GC(image);
+//		gc.setBackground(color);
+//		Rectangle bounds = image.getBounds();
+//		gc.fillRectangle(0, 0, bounds.width, bounds.height);
+//		gc.setBackground(display.getSystemColor(SWT.COLOR_BLACK));
+//		gc.drawRectangle(0, 0, bounds.width - 1, bounds.height - 1);
+//		gc.dispose();
+//		return image;
+//	}
+//	
+//	Image fontImage (Font font) {
+//		Image image = new Image (display, IMAGE_SIZE, IMAGE_SIZE);
+//		GC gc = new GC(image);
+//		Rectangle bounds = image.getBounds();
+//		gc.setBackground(display.getSystemColor(SWT.COLOR_WHITE));
+//		gc.fillRectangle(0, 0, bounds.width, bounds.height);
+//		gc.setBackground(display.getSystemColor(SWT.COLOR_BLACK));
+//		gc.drawRectangle(0, 0, bounds.width - 1, bounds.height - 1);
+//		FontData data[] = font.getFontData();
+//		int style = data[0].getStyle();
+//		switch (style) {
+//		case SWT.NORMAL:
+//			gc.drawLine(3, 3, 3, 8);
+//			gc.drawLine(4, 3, 7, 8);
+//			gc.drawLine(8, 3, 8, 8);
+//			break;
+//		case SWT.BOLD:
+//			gc.drawLine(3, 2, 3, 9);
+//			gc.drawLine(4, 2, 4, 9);
+//			gc.drawLine(5, 2, 7, 2);
+//			gc.drawLine(5, 3, 8, 3);
+//			gc.drawLine(5, 5, 7, 5);
+//			gc.drawLine(5, 6, 7, 6);
+//			gc.drawLine(5, 8, 8, 8);
+//			gc.drawLine(5, 9, 7, 9);
+//			gc.drawLine(7, 4, 8, 4);
+//			gc.drawLine(7, 7, 8, 7);
+//			break;
+//		case SWT.ITALIC:
+//			gc.drawLine(6, 2, 8, 2);
+//			gc.drawLine(7, 3, 4, 8);
+//			gc.drawLine(3, 9, 5, 9);
+//			break;
+//		case SWT.BOLD | SWT.ITALIC:
+//			gc.drawLine(5, 2, 8, 2);
+//			gc.drawLine(5, 3, 8, 3);
+//			gc.drawLine(6, 4, 4, 7);
+//			gc.drawLine(7, 4, 5, 7);
+//			gc.drawLine(3, 8, 6, 8);
+//			gc.drawLine(3, 9, 6, 9);
+//			break;
+//		}
+//		gc.dispose();
+//		return image;
+//	}
 	
 	/**
 	 * Gets the list of custom event names.
@@ -1492,70 +1492,70 @@ abstract class Tab {
 	 * Logs an untyped event to the event console.
 	 */
 	void log(Event event) {
-		int i = 0;
-		while (i < EVENT_INFO.length) {
-			if (EVENT_INFO[i].type == event.type) break;
-			i++;
-		}
-		String toString = EVENT_INFO[i].name + " [" + event.type + "]: ";
-		switch (event.type) {
-			case SWT.KeyDown:
-			case SWT.KeyUp: toString += new KeyEvent (event).toString (); break;
-			case SWT.MouseDown:
-			case SWT.MouseUp:
-			case SWT.MouseMove:
-			case SWT.MouseEnter:
-			case SWT.MouseExit:
-			case SWT.MouseDoubleClick:
-			case SWT.MouseWheel: 
-			case SWT.MouseHover: toString += new MouseEvent (event).toString (); break;
-			case SWT.Paint: toString += new PaintEvent (event).toString (); break;
-			case SWT.Move:
-			case SWT.Resize: toString += new ControlEvent (event).toString (); break;
-			case SWT.Dispose: toString += new DisposeEvent (event).toString (); break;
-			case SWT.Selection:
-			case SWT.DefaultSelection: toString += new SelectionEvent (event).toString (); break;
-			case SWT.FocusIn:
-			case SWT.FocusOut: toString += new FocusEvent (event).toString (); break;
-			case SWT.Expand:
-			case SWT.Collapse: toString += new TreeEvent (event).toString (); break;
-			case SWT.Iconify:
-			case SWT.Deiconify:
-			case SWT.Close:
-			case SWT.Activate:
-			case SWT.Deactivate: toString += new ShellEvent (event).toString (); break;
-			case SWT.Show:
-			case SWT.Hide: toString += (event.widget instanceof Menu) ? new MenuEvent (event).toString () : event.toString(); break;
-			case SWT.Modify: toString += new ModifyEvent (event).toString (); break;
-			case SWT.Verify: toString += new VerifyEvent (event).toString (); break;
-			case SWT.Help: toString += new HelpEvent (event).toString (); break;
-			case SWT.Arm: toString += new ArmEvent (event).toString (); break;
-			case SWT.Traverse: toString += new TraverseEvent (event).toString (); break;
-			case SWT.HardKeyDown:
-			case SWT.HardKeyUp:
-			case SWT.DragDetect:
-			case SWT.MenuDetect:
-			case SWT.SetData:
-			default: toString += event.toString ();
-		}
-		log (toString);
-		
-		/* Return values for event fields. */
-		int mask = EVENT_INFO[i].setFields;
-		if (!ignore && mask != 0) {
-			Event setFieldsEvent = EVENT_INFO[i].event;
-			if ((mask & DOIT) != 0) event.doit = setFieldsEvent.doit;
-			if ((mask & DETAIL) != 0) event.detail = setFieldsEvent.detail;
-			if ((mask & TEXT) != 0) event.text = setFieldsEvent.text;
-			if ((mask & X) != 0) event.x = setFieldsEvent.x;
-			if ((mask & Y) != 0) event.y = setFieldsEvent.y;
-			if ((mask & WIDTH) != 0) event.width = setFieldsEvent.width;
-			if ((mask & HEIGHT) != 0) event.height = setFieldsEvent.height;
-			eventConsole.append (ControlExample.getResourceString("Returning"));
-			ignore = true;
-			log (event);
-			ignore = false;
-		}
+//		int i = 0;
+//		while (i < EVENT_INFO.length) {
+//			if (EVENT_INFO[i].type == event.type) break;
+//			i++;
+//		}
+//		String toString = EVENT_INFO[i].name + " [" + event.type + "]: ";
+//		switch (event.type) {
+//			case SWT.KeyDown:
+//			case SWT.KeyUp: toString += new KeyEvent (event).toString (); break;
+//			case SWT.MouseDown:
+//			case SWT.MouseUp:
+//			case SWT.MouseMove:
+//			case SWT.MouseEnter:
+//			case SWT.MouseExit:
+//			case SWT.MouseDoubleClick:
+//			case SWT.MouseWheel: 
+//			case SWT.MouseHover: toString += new MouseEvent (event).toString (); break;
+//			case SWT.Paint: toString += new PaintEvent (event).toString (); break;
+//			case SWT.Move:
+//			case SWT.Resize: toString += new ControlEvent (event).toString (); break;
+//			case SWT.Dispose: toString += new DisposeEvent (event).toString (); break;
+//			case SWT.Selection:
+//			case SWT.DefaultSelection: toString += new SelectionEvent (event).toString (); break;
+//			case SWT.FocusIn:
+//			case SWT.FocusOut: toString += new FocusEvent (event).toString (); break;
+//			case SWT.Expand:
+//			case SWT.Collapse: toString += new TreeEvent (event).toString (); break;
+//			case SWT.Iconify:
+//			case SWT.Deiconify:
+//			case SWT.Close:
+//			case SWT.Activate:
+//			case SWT.Deactivate: toString += new ShellEvent (event).toString (); break;
+//			case SWT.Show:
+//			case SWT.Hide: toString += (event.widget instanceof Menu) ? new MenuEvent (event).toString () : event.toString(); break;
+//			case SWT.Modify: toString += new ModifyEvent (event).toString (); break;
+//			case SWT.Verify: toString += new VerifyEvent (event).toString (); break;
+//			case SWT.Help: toString += new HelpEvent (event).toString (); break;
+//			case SWT.Arm: toString += new ArmEvent (event).toString (); break;
+//			case SWT.Traverse: toString += new TraverseEvent (event).toString (); break;
+//			case SWT.HardKeyDown:
+//			case SWT.HardKeyUp:
+//			case SWT.DragDetect:
+//			case SWT.MenuDetect:
+//			case SWT.SetData:
+//			default: toString += event.toString ();
+//		}
+//		log (toString);
+//		
+//		/* Return values for event fields. */
+//		int mask = EVENT_INFO[i].setFields;
+//		if (!ignore && mask != 0) {
+//			Event setFieldsEvent = EVENT_INFO[i].event;
+//			if ((mask & DOIT) != 0) event.doit = setFieldsEvent.doit;
+//			if ((mask & DETAIL) != 0) event.detail = setFieldsEvent.detail;
+//			if ((mask & TEXT) != 0) event.text = setFieldsEvent.text;
+//			if ((mask & X) != 0) event.x = setFieldsEvent.x;
+//			if ((mask & Y) != 0) event.y = setFieldsEvent.y;
+//			if ((mask & WIDTH) != 0) event.width = setFieldsEvent.width;
+//			if ((mask & HEIGHT) != 0) event.height = setFieldsEvent.height;
+//			eventConsole.append (ControlExample.getResourceString("Returning"));
+//			ignore = true;
+//			log (event);
+//			ignore = false;
+//		}
 	}
 	
 	/**
@@ -1592,19 +1592,19 @@ abstract class Tab {
 	 * and fonts to default settings as well.
 	 */
 	void resetColorsAndFonts () {
-		Color oldColor = foregroundColor;
-		foregroundColor = null;
-		setExampleWidgetForeground ();
-		if (oldColor != null) oldColor.dispose();
-		oldColor = backgroundColor;
-		backgroundColor = null;
-		setExampleWidgetBackground ();
-		if (oldColor != null) oldColor.dispose();
-		Font oldFont = font;
-		font = null;
-		setExampleWidgetFont ();
-		setExampleWidgetSize ();
-		if (oldFont != null) oldFont.dispose();
+//		Color oldColor = foregroundColor;
+//		foregroundColor = null;
+//		setExampleWidgetForeground ();
+//		if (oldColor != null) oldColor.dispose();
+//		oldColor = backgroundColor;
+//		backgroundColor = null;
+//		setExampleWidgetBackground ();
+//		if (oldColor != null) oldColor.dispose();
+//		Font oldFont = font;
+//		font = null;
+//		setExampleWidgetFont ();
+//		setExampleWidgetSize ();
+//		if (oldFont != null) oldFont.dispose();
 	}
 	
 	boolean rtlSupport() {
@@ -1615,8 +1615,8 @@ abstract class Tab {
 	 * Sets the background color of the "Example" widgets' parent.
 	 */
 	void setExampleGroupBackgroundColor () {
-		if (backgroundModeGroup == null) return;
-		exampleGroup.setBackground (backgroundModeColorButton.getSelection () ? display.getSystemColor(SWT.COLOR_BLUE) : null);
+//		if (backgroundModeGroup == null) return;
+//		exampleGroup.setBackground (backgroundModeColorButton.getSelection () ? display.getSystemColor(SWT.COLOR_BLUE) : null);
 	}
 	/**
 	 * Sets the background image of the "Example" widgets' parent.
@@ -1642,21 +1642,21 @@ abstract class Tab {
 	 * Sets the background color of the "Example" widgets.
 	 */
 	void setExampleWidgetBackground () {
-		if (colorAndFontTable == null) return; // user cannot change color/font on this tab
-		Control [] controls = getExampleControls ();
-		if (!instance.startup) {
-			for (int i = 0; i < controls.length; i++) {
-				controls[i].setBackground (backgroundColor);
-			}
-		}
-		// Set the background color item's image to match the background color of the example widget(s).
-		Color color = backgroundColor;
-		if (controls.length == 0) return;
-		if (color == null) color = controls [0].getBackground ();
-		TableItem item = colorAndFontTable.getItem(BACKGROUND_COLOR);
-		Image oldImage = item.getImage();
-		if (oldImage != null) oldImage.dispose();
-		item.setImage (colorImage (color));
+//		if (colorAndFontTable == null) return; // user cannot change color/font on this tab
+//		Control [] controls = getExampleControls ();
+//		if (!instance.startup) {
+//			for (int i = 0; i < controls.length; i++) {
+//				controls[i].setBackground (backgroundColor);
+//			}
+//		}
+//		// Set the background color item's image to match the background color of the example widget(s).
+//		Color color = backgroundColor;
+//		if (controls.length == 0) return;
+//		if (color == null) color = controls [0].getBackground ();
+//		TableItem item = colorAndFontTable.getItem(BACKGROUND_COLOR);
+//		Image oldImage = item.getImage();
+//		if (oldImage != null) oldImage.dispose();
+//		item.setImage (colorImage (color));
 	}
 	
 	/**
@@ -1673,66 +1673,66 @@ abstract class Tab {
 	 * Sets the font of the "Example" widgets.
 	 */
 	void setExampleWidgetFont () {
-		if (colorAndFontTable == null) return; // user cannot change color/font on this tab
-		Control [] controls = getExampleControls ();
-		if (!instance.startup) {
-			for (int i = 0; i < controls.length; i++) {
-				controls[i].setFont(font);
-			}
-		}
-		/* Set the font item's image and font to match the font of the example widget(s). */
-		Font ft = font;
-		if (controls.length == 0) return;
-		if (ft == null) ft = controls [0].getFont ();
-		TableItem item = colorAndFontTable.getItem(FONT);
-		Image oldImage = item.getImage();
-		if (oldImage != null) oldImage.dispose();
-		item.setImage (fontImage (ft));
-		item.setFont(ft);
-		colorAndFontTable.layout ();
+//		if (colorAndFontTable == null) return; // user cannot change color/font on this tab
+//		Control [] controls = getExampleControls ();
+//		if (!instance.startup) {
+//			for (int i = 0; i < controls.length; i++) {
+//				controls[i].setFont(font);
+//			}
+//		}
+//		/* Set the font item's image and font to match the font of the example widget(s). */
+//		Font ft = font;
+//		if (controls.length == 0) return;
+//		if (ft == null) ft = controls [0].getFont ();
+//		TableItem item = colorAndFontTable.getItem(FONT);
+//		Image oldImage = item.getImage();
+//		if (oldImage != null) oldImage.dispose();
+//		item.setImage (fontImage (ft));
+//		item.setFont(ft);
+//		colorAndFontTable.layout ();
 	}
 	
 	/**
 	 * Sets the foreground color of the "Example" widgets.
 	 */
 	void setExampleWidgetForeground () {
-		if (colorAndFontTable == null) return; // user cannot change color/font on this tab
-		Control [] controls = getExampleControls ();
-		if (!instance.startup) {
-			for (int i = 0; i < controls.length; i++) {
-				controls[i].setForeground (foregroundColor);
-			}
-		}
-		/* Set the foreground color item's image to match the foreground color of the example widget(s). */
-		Color color = foregroundColor;
-		if (controls.length == 0) return;
-		if (color == null) color = controls [0].getForeground ();
-		TableItem item = colorAndFontTable.getItem(FOREGROUND_COLOR);
-		Image oldImage = item.getImage();
-		if (oldImage != null) oldImage.dispose();
-		item.setImage (colorImage(color));
+//		if (colorAndFontTable == null) return; // user cannot change color/font on this tab
+//		Control [] controls = getExampleControls ();
+//		if (!instance.startup) {
+//			for (int i = 0; i < controls.length; i++) {
+//				controls[i].setForeground (foregroundColor);
+//			}
+//		}
+//		/* Set the foreground color item's image to match the foreground color of the example widget(s). */
+//		Color color = foregroundColor;
+//		if (controls.length == 0) return;
+//		if (color == null) color = controls [0].getForeground ();
+//		TableItem item = colorAndFontTable.getItem(FOREGROUND_COLOR);
+//		Image oldImage = item.getImage();
+//		if (oldImage != null) oldImage.dispose();
+//		item.setImage (colorImage(color));
 	}
 	
 	/**
 	 * Sets the size of the "Example" widgets.
 	 */
 	void setExampleWidgetSize () {
-		int size = SWT.DEFAULT;
-		if (preferredButton == null) return;
-		if (preferredButton.getSelection()) size = SWT.DEFAULT;
-		if (tooSmallButton.getSelection()) size = TOO_SMALL_SIZE;
-		if (smallButton.getSelection()) size = SMALL_SIZE;
-		if (largeButton.getSelection()) size = LARGE_SIZE;
-		Control [] controls = getExampleControls ();
-		for (int i=0; i<controls.length; i++) {
-			GridData gridData = new GridData(size, size); 
-			gridData.grabExcessHorizontalSpace = fillHButton.getSelection();
-			gridData.grabExcessVerticalSpace = fillVButton.getSelection();
-			gridData.horizontalAlignment = fillHButton.getSelection() ? SWT.FILL : SWT.LEFT;
-			gridData.verticalAlignment = fillVButton.getSelection() ? SWT.FILL : SWT.TOP;
-			controls [i].setLayoutData (gridData);
-		}
-		tabFolderPage.layout (controls);
+//		int size = SWT.DEFAULT;
+//		if (preferredButton == null) return;
+//		if (preferredButton.getSelection()) size = SWT.DEFAULT;
+//		if (tooSmallButton.getSelection()) size = TOO_SMALL_SIZE;
+//		if (smallButton.getSelection()) size = SMALL_SIZE;
+//		if (largeButton.getSelection()) size = LARGE_SIZE;
+//		Control [] controls = getExampleControls ();
+//		for (int i=0; i<controls.length; i++) {
+//			GridData gridData = new GridData(size, size); 
+//			gridData.grabExcessHorizontalSpace = fillHButton.getSelection();
+//			gridData.grabExcessVerticalSpace = fillVButton.getSelection();
+//			gridData.horizontalAlignment = fillHButton.getSelection() ? SWT.FILL : SWT.LEFT;
+//			gridData.verticalAlignment = fillVButton.getSelection() ? SWT.FILL : SWT.TOP;
+//			controls [i].setLayoutData (gridData);
+//		}
+//		tabFolderPage.layout (controls);
 	}
 	
 	/**
