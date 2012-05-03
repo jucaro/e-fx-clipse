@@ -1,4 +1,4 @@
-package org.eclipse.swt.events;
+package org.eclipse.swt.internal;
 
 import java.util.EventObject;
 
