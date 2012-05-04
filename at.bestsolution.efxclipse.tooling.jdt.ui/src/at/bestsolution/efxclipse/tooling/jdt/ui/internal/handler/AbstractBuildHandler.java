@@ -20,6 +20,7 @@ import org.eclipse.core.commands.ExecutionException;
 import org.eclipse.core.expressions.IEvaluationContext;
 import org.eclipse.core.externaltools.internal.IExternalToolConstants;
 import org.eclipse.core.resources.IFile;
+import org.eclipse.core.resources.IResource;
 import org.eclipse.core.runtime.CoreException;
 import org.eclipse.debug.core.DebugPlugin;
 import org.eclipse.debug.core.ILaunchConfiguration;
@@ -34,6 +35,7 @@ import org.eclipse.debug.ui.DebugUITools;
  */
 @SuppressWarnings("restriction")
 public abstract class AbstractBuildHandler extends AbstractAntHandler {
+	
 	@Override
 	public Object execute(ExecutionEvent event) throws ExecutionException {
 		IEvaluationContext context = (IEvaluationContext) event.getApplicationContext();
@@ -52,9 +54,12 @@ public abstract class AbstractBuildHandler extends AbstractAntHandler {
 			if( rv != null ) {
 				CreateBuildXML b = new CreateBuildXML();
 				File buildFile = b.run(rv);
+				
+				f.getProject().refreshLocal(IResource.DEPTH_INFINITE, null);
+				
 				ILaunchConfiguration cfg = getLaunchConfig(buildFile, rv, f);
 				
-				if( cfg != null ) {
+				if( cfg != null && launchAnt() ) {
 					DebugUITools.launch(cfg, ILaunchManager.RUN_MODE);
 				}
 			}
@@ -63,6 +68,8 @@ public abstract class AbstractBuildHandler extends AbstractAntHandler {
 		}
 		return null;
 	}
+	
+	protected abstract boolean launchAnt();
 	
 	protected abstract IFile getConfigurationFile(IEvaluationContext context);
 	

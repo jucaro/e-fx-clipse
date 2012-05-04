@@ -49,7 +49,7 @@
             finalPerspective="org.eclipse.jdt.ui.JavaPerspective"
             icon="icons/toggle_breadcrumb.gif"
             id="at.bestsolution.efxclipse.tooling.jdt.ui.newappclass"
-            name="JavaFX Main Class"
+            name="%wizard.name.0"
             preferredPerspectives="org.eclipse.jdt.ui.JavaPerspective,org.eclipse.jdt.ui.JavaBrowsingPerspective,org.eclipse.jdt.ui.JavaHierarchyPerspective"
             project="false">
       </wizard>
@@ -59,13 +59,13 @@
             finalPerspective="org.eclipse.jdt.ui.JavaPerspective"
             icon="icons/history_working_set_obj.gif"
             id="at.bestsolution.efxclipse.tooling.jdt.ui.newpreloader"
-            name="JavaFX Preloader Class"
+            name="%wizard.name.1"
             preferredPerspectives="org.eclipse.jdt.ui.JavaPerspective,org.eclipse.jdt.ui.JavaBrowsingPerspective,org.eclipse.jdt.ui.JavaHierarchyPerspective"
             project="false">
       </wizard>
       <category
             id="at.bestsolution.efxclipse.tooling.clazz"
-            name="Classes"
+            name="%category.name.1"
             parentCategory="at.bestsolution.efxclipse.tooling">
       </category>
    </extension>
@@ -113,6 +113,37 @@
             </or>
          </enabledWhen>
       </handler>
+      <handler
+            class="at.bestsolution.efxclipse.tooling.jdt.ui.internal.handler.CreateAntHandler"
+            commandId="at.bestsolution.efxclipse.tooling.jdt.ui.generateAnt">
+         <enabledWhen>
+            <or>
+               <with
+                     variable="activeMenuSelection">
+                  <iterate
+                        ifEmpty="false"
+                        operator="and">
+                     <adapt
+                           type="org.eclipse.core.resources.IFile">
+                        <test
+                              property="org.eclipse.core.resources.name"
+                              value="*.fxbuild">
+                        </test>
+                     </adapt>
+                  </iterate>
+                  <count
+                        value="1">
+                  </count>
+               </with>
+               <with
+                     variable="activeEditorId">
+                  <equals
+                        value="at.bestsolution.efxclipse.tooling.jdt.ui.fxbuild">
+                  </equals>
+               </with>
+            </or>
+         </enabledWhen>
+      </handler>
    </extension>
    <extension
          point="org.eclipse.ui.menus">
@@ -152,6 +183,10 @@
       <command
             id="at.bestsolution.efxclipse.tooling.jdt.ui.export"
             name="%command.name">
+      </command>
+      <command
+            id="at.bestsolution.efxclipse.tooling.jdt.ui.generateAnt"
+            name="%command.name.0">
       </command>
    </extension>
    <extension

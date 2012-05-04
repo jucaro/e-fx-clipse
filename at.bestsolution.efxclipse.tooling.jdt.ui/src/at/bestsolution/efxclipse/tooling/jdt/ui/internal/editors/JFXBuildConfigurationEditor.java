@@ -96,7 +96,10 @@ import org.eclipse.ui.PlatformUI;
 import org.eclipse.ui.dialogs.ElementTreeSelectionDialog;
 import org.eclipse.ui.dialogs.ISelectionStatusValidator;
 import org.eclipse.ui.dialogs.SelectionDialog;
+import org.eclipse.ui.forms.events.HyperlinkEvent;
+import org.eclipse.ui.forms.events.IHyperlinkListener;
 import org.eclipse.ui.forms.widgets.Form;
+import org.eclipse.ui.forms.widgets.FormText;
 import org.eclipse.ui.forms.widgets.FormToolkit;
 import org.eclipse.ui.forms.widgets.ScrolledForm;
 import org.eclipse.ui.forms.widgets.Section;
@@ -237,7 +240,7 @@ public class JFXBuildConfigurationEditor extends MultiPageEditorPart implements
 		toolkit.decorateFormHeading(form);
 		
 		IToolBarManager mgr = form.getToolBarManager();
-		mgr.add(new Action("Run Build",ImageDescriptor.createFromURL(getClass().getClassLoader().getResource("/icons/exportrunnablejar_wiz.gif"))) {
+		mgr.add(new Action("Build & Export FX Application",ImageDescriptor.createFromURL(getClass().getClassLoader().getResource("/icons/exportrunnablejar_wiz.gif"))) {
 			@Override
 			public void run() {
 				try {
@@ -267,7 +270,7 @@ public class JFXBuildConfigurationEditor extends MultiPageEditorPart implements
 		form.updateToolBar();
 		
 		ScrolledForm scrolledForm = toolkit.createScrolledForm(form.getBody());
-		scrolledForm.getBody().setLayout(new GridLayout());
+		scrolledForm.getBody().setLayout(new GridLayout(2,false));
 		Composite sectionParent = scrolledForm.getBody();
 		
 		dbc = new DataBindingContext();
@@ -388,6 +391,51 @@ public class JFXBuildConfigurationEditor extends MultiPageEditorPart implements
 				dbc.bindValue(textModify.observeDelayed(DELAY, t), BeanProperties.value(BUILD_PRELOADER_CLASS).observe(bean));
 			}
 			
+			
+			section.setClient(sectionClient);
+		}
+		
+		{
+			Section section = toolkit.createSection(sectionParent, 
+					  Section.DESCRIPTION|Section.TITLE_BAR|
+					  Section.TWISTIE|Section.EXPANDED);
+			section.setText("Building & Exporting");
+			section.setLayoutData(new GridData(GridData.FILL,GridData.FILL,false,true,1,2));
+			
+			Composite sectionClient = toolkit.createComposite(section);
+			sectionClient.setLayout(new GridLayout(1, false));
+			
+			{
+				FormText text = toolkit.createFormText(sectionClient, false);
+				text.setText("<p>To generate build instructions and export the project: <li style=\"bullet\" bindent=\"1\">Generate <a href=\"generateAnt\">ant build.xml</a> only</li><li style=\"bullet\" bindent=\"2\">Generate <a href=\"generateAndRun\">ant build.xml and run</a></li></p>", true, false);
+				text.addHyperlinkListener(new IHyperlinkListener() {
+					
+					@Override
+					public void linkExited(HyperlinkEvent e) {
+						
+					}
+					
+					@Override
+					public void linkEntered(HyperlinkEvent e) {
+					}
+					
+					@Override
+					public void linkActivated(HyperlinkEvent e) {
+						try {
+							if( "generateAndRun".equals(e.getHref()) ) {
+								IHandlerService hs = (IHandlerService) PlatformUI.getWorkbench().getService(IHandlerService.class);
+								hs.executeCommand("at.bestsolution.efxclipse.tooling.jdt.ui.export", null);
+							} else {
+								IHandlerService hs = (IHandlerService) PlatformUI.getWorkbench().getService(IHandlerService.class);
+								hs.executeCommand("at.bestsolution.efxclipse.tooling.jdt.ui.generateAnt", null);
+							}
+						} catch (Exception e1) {
+							// TODO Auto-generated catch block
+							e1.printStackTrace();
+						}
+					}
+				});
+			}
 			
 			section.setClient(sectionClient);
 		}

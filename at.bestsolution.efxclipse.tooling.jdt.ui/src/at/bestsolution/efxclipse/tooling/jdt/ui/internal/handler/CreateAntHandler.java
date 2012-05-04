@@ -17,7 +17,11 @@ import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.ui.IFileEditorInput;
 import org.eclipse.ui.ISources;
 
-public class RunBuildHandler extends AbstractBuildHandler {
+/**
+ * @author Tom Schindl
+ *
+ */
+public class CreateAntHandler extends AbstractBuildHandler {
 	@Override
 	protected IFile getConfigurationFile(IEvaluationContext context) {
 		if( "at.bestsolution.efxclipse.tooling.jdt.ui.fxbuild".equals(context.getVariable(ISources.ACTIVE_EDITOR_ID_NAME)) ) {
@@ -37,6 +41,6 @@ public class RunBuildHandler extends AbstractBuildHandler {
 
 	@Override
 	protected boolean launchAnt() {
-		return true;
+		return false;
 	}
 }
