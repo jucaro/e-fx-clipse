@@ -27,15 +27,7 @@ public class OSGiFXMLLoader {
 	}
 	
 	public static <O> O load(ClassLoader classloader, URL url, ResourceBundle resourceBundle, BuilderFactory builderFactory) throws IOException {
-		ClassLoader cl = Thread.currentThread().getContextClassLoader();
-		
-		try {
-			Thread.currentThread().setContextClassLoader(classloader);
-			O o = FXMLLoader.load(url, resourceBundle, builderFactory);
-			return o;
-		} finally {
-			Thread.currentThread().setContextClassLoader(cl);
-		}
+		return load(classloader, url, resourceBundle, builderFactory, null);
 	}
 	
 	public static <O> O load(Class<?> requester, String relativeFxmlPath, ResourceBundle resourceBundle, BuilderFactory builderFactory, FXMLLoaderProcessor postprocessor) throws IOException {
@@ -78,7 +70,9 @@ public class OSGiFXMLLoader {
 			O value = (O) loader.load(in);
 			in.close();
 			
-			postprocessor.postProcess(loader);
+			if( postprocessor != null ) {
+				postprocessor.postProcess(loader);	
+			}
 			
 			return value;
 		} finally {
