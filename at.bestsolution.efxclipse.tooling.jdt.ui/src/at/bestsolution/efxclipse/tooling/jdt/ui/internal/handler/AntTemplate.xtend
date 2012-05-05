@@ -32,7 +32,11 @@ class AntTemplate {
 			<mkdir dir="externalLibs" />
 			
 			«FOR File l : externalLibs»
-			<copyfile dest="externalLibs/«l.name»" src="«l.absolutePath»"/>
+			<copy todir="externalLibs"/>
+				<fileset dir="«l.parent»">
+					<filename name="«l.name»"/>	
+				</fileset>
+			</copy>
 			«ENDFOR»
 			
 			<mkdir dir="project" />
