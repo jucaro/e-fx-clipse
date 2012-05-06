@@ -3,9 +3,15 @@
  */
 package at.bestsolution.efxclipse.tooling.fxgraph.ui.contentassist;
 
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.util.Map;
+import java.util.Properties;
 
 import org.apache.log4j.Logger;
+import org.eclipse.emf.common.util.TreeIterator;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EReference;
 import org.eclipse.jdt.core.Flags;
@@ -36,11 +42,14 @@ import org.eclipse.xtext.ui.editor.contentassist.ContentAssistContext;
 import org.eclipse.xtext.ui.editor.contentassist.ICompletionProposalAcceptor;
 import org.eclipse.xtext.ui.editor.hover.IEObjectHover;
 
+import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.BindValueProperty;
 import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.Element;
 import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.FXGraphPackage;
 import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.MapValueProperty;
+import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.Model;
 import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.Property;
 import at.bestsolution.efxclipse.tooling.fxgraph.ui.util.JDTHelper;
+import at.bestsolution.efxclipse.tooling.fxgraph.util.RelativeFileLocator;
 import at.bestsolution.efxclipse.tooling.model.FXPlugin;
 import at.bestsolution.efxclipse.tooling.model.IFXClass;
 import at.bestsolution.efxclipse.tooling.model.IFXCollectionProperty;
@@ -578,882 +587,132 @@ public class FXGraphProposalProvider extends AbstractFXGraphProposalProvider {
 		// types our own
 	}
 
-	// @Override
-	// public void complete_JvmTypeReference(EObject model, RuleCall ruleCall,
-	// ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
-	// // TODO Auto-generated method stub
-	// // super.complete_JvmTypeReference(model, ruleCall, context, acceptor);
-	// }
-	//
-	// @Override
-	// public void completeElement_Type(EObject model, Assignment assignment,
-	// ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
-	// // TODO Auto-generated method stub
-	// // super.completeElement_Type(model, assignment, context, acceptor);
-	// }
-	//
-	// @Override
-	// public void complete_Element(EObject model, RuleCall ruleCall,
-	// ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
-	// // TODO Auto-generated method stub
-	// // super.complete_Element(model, ruleCall, context, acceptor);
-	// }
-	//
-	// @Override
-	// protected ICompletionProposal createCompletionProposal(String proposal,
-	// ContentAssistContext contentAssistContext) {
-	// // TODO Auto-generated method stub
-	// return super.createCompletionProposal(proposal, contentAssistContext);
-	// }
-	//
-	// @Override
-	// public ICompletionProposal createCompletionProposal(String proposal,
-	// String displayString, Image image, ContentAssistContext
-	// contentAssistContext) {
-	// // TODO Auto-generated method stub
-	// return super.createCompletionProposal(proposal, displayString, image,
-	// contentAssistContext);
-	// }
-	//
-	// @Override
-	// public ICompletionProposal createCompletionProposal(String proposal,
-	// StyledString displayString, Image image, ContentAssistContext
-	// contentAssistContext) {
-	// // TODO Auto-generated method stub
-	// return super.createCompletionProposal(proposal, displayString, image,
-	// contentAssistContext);
-	// }
-	//
-	// @Override
-	// protected ICompletionProposal createCompletionProposal(String proposal,
-	// StyledString displayString, Image image, int priority, String prefix,
-	// ContentAssistContext context) {
-	// // TODO Auto-generated method stub
-	// return super.createCompletionProposal(proposal, displayString, image,
-	// priority, prefix, context);
-	// }
-	//
-	// @Override
-	// public void createProposals(ContentAssistContext context,
-	// ICompletionProposalAcceptor acceptor) {
-	// // TODO Auto-generated method stub
-	// super.createProposals(context, acceptor);
-	// }
-
-	// private TypeData getTypeData(IJavaProject jproject, JvmTypeReference
-	// typeRef) {
-	// try {
-	// // System.err.println("project:" + jproject);
-	// // System.err.println("typeref:" + typeRef);
-	//
-	// return helper.getTypeData(jproject,
-	// jproject.findType(typeRef.getQualifiedName()));
-	// } catch (JavaModelException e) {
-	// // TODO Auto-generated catch block
-	// e.printStackTrace();
-	// }
-	// return null;
-	// }
-	//
-	// private IJavaProject getJavaProject(EObject model) {
-	// // TODO Should we cache that?
-	// URI uri = model.eResource().getURI();
-	// IProject project =
-	// ResourcesPlugin.getWorkspace().getRoot().getProject(uri.segment(1));
-	// return JavaCore.create(project);
-	// }
-	//
-	// @Override
-	// public void complete_STRING(EObject model, RuleCall ruleCall,
-	// ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
-	// if (model instanceof ResourceValueProperty) {
-	// Model m = (Model) model.eResource().getContents().get(0);
-	// String resourceBundle = m.getComponentDef().getPreviewResourceBundle();
-	// Properties p = null;
-	//
-	// if (resourceBundle != null) {
-	// File f = RelativeFileLocator.locateFile(model.eResource().getURI(),
-	// resourceBundle);
-	// if (f != null) {
-	// FileInputStream fi = null;
-	// try {
-	// fi = new FileInputStream(f);
-	// p = new Properties();
-	// p.load(fi);
-	// // TODO Should we build the variants and load them?
-	// } catch (FileNotFoundException e) {
-	// // TODO Auto-generated catch block
-	// e.printStackTrace();
-	// } catch (IOException e) {
-	// // TODO Auto-generated catch block
-	// e.printStackTrace();
-	// } finally {
-	// if (fi != null) {
-	// try {
-	// fi.close();
-	// } catch (IOException e) {
-	// // TODO Auto-generated catch block
-	// e.printStackTrace();
-	// }
-	// }
-	// }
-	// }
-	// }
-	//
-	// if (p != null) {
-	// for (String k : p.stringPropertyNames()) {
-	// StyledString s = new StyledString(k);
-	// s.append(" - " + p.getProperty(k), StyledString.DECORATIONS_STYLER);
-	// acceptor.accept(createCompletionProposal("\"" + k + "\"", s,
-	// JFaceResources.getImage(JDTHelper.EXTERNALIZED_STRING_KEY), context));
-	// }
-	// }
-	// }
-	// }
-	//
-	// @Override
-	// public void completeBindValueProperty_ElementReference(EObject model,
-	// Assignment assignment, ContentAssistContext context,
-	// ICompletionProposalAcceptor acceptor) {
-	// TreeIterator<EObject> it = model.eResource().getAllContents();
-	// while (it.hasNext()) {
-	// EObject o = it.next();
-	// if (o instanceof Element) {
-	// Element e = (Element) o;
-	// if (e.getName() != null && e.getName().trim().length() > 0) {
-	// StyledString s = new StyledString(e.getName());
-	// s.append(" - " + e.getType().getQualifiedName(),
-	// StyledString.DECORATIONS_STYLER);
-	// acceptor.accept(createCompletionProposal(e.getName(), s,
-	// JFaceResources.getImage(JDTHelper.CLASS_KEY), context));
-	// }
-	// }
-	// }
-	// }
-	//
-	// @Override
-	// public void completeBindValueProperty_Attribute(EObject model, Assignment
-	// assignment, ContentAssistContext context, ICompletionProposalAcceptor
-	// acceptor) {
-	// BindValueProperty b = (BindValueProperty) model;
-	// if (b.getElementReference() != null && b.getElementReference().getType()
-	// != null) {
-	// Element element = b.getElementReference();
-	// IJavaProject jproject = getJavaProject(model);
-	// TypeData data = getTypeData(jproject, element.getType());
-	// // TODO Improve by checking assignable type
-	// for (JDTHelperProperty prop : data.properties) {
-	// acceptor.accept(createCompletionProposal(prop.name,
-	// prop.getDescription(), prop.getIcon(), context));
-	// }
-	// }
-	// }
-	//
-	// @Override
-	// public void completeControllerHandledValueProperty_Methodname(EObject
-	// model, Assignment assignment, ContentAssistContext context,
-	// ICompletionProposalAcceptor acceptor) {
-	// Model m = (Model) model.eResource().getContents().get(0);
-	// if (m != null) {
-	// ComponentDefinition def = m.getComponentDef();
-	// if (def != null) {
-	// if (def.getController() != null) {
-	// if (model.eContainer() instanceof
-	// at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.Property) {
-	// at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.Property p =
-	// (at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.Property)
-	// model.eContainer();
-	// if (p.eContainer() instanceof Element) {
-	// Element element = (Element) p.eContainer();
-	// IJavaProject jproject = getJavaProject(model);
-	// TypeData data = getTypeData(jproject, element.getType());
-	// for (JDTHelperProperty prop : data.properties) {
-	// if (p.getName().equals(prop.name)) {
-	// List<IMethod> methods = findControllerJavaMethods(jproject,
-	// def.getController().getType(), prop.method);
-	// for (IMethod me : methods) {
-	// Image img = null;
-	// try {
-	// if (Flags.isPublic(me.getFlags())) {
-	// img = JFaceResources.getImage(JDTHelper.METHOD_PUBLIC_KEY);
-	// } else if (Flags.isProtected(me.getFlags())) {
-	// img = JFaceResources.getImage(JDTHelper.METHOD_PROTECTED_KEY);
-	// } else if (Flags.isPackageDefault(me.getFlags())) {
-	// img = JFaceResources.getImage(JDTHelper.METHOD_DEFAULT_KEY);
-	// } else {
-	// img = JFaceResources.getImage(JDTHelper.METHOD_PRIVATE_KEY);
-	// }
-	// } catch (JavaModelException e) {
-	// // TODO Auto-generated catch block
-	// e.printStackTrace();
-	// }
-	// acceptor.accept(createCompletionProposal(me.getElementName(),
-	// me.getElementName() + "(" +
-	// Signature.getSimpleName(Signature.toString(me.getParameterTypes()[0])) +
-	// ")", img, context));
-	// }
-	//
-	// }
-	// }
-	// }
-	// }
-	// }
-	// }
-	// }
-	// super.completeControllerHandledValueProperty_Methodname(model,
-	// assignment, context, acceptor);
-	// }
-	//
-	// private List<IMethod> findControllerJavaMethods(IJavaProject jproject,
-	// JvmType type, IMethod bindMethod) {
-	// IType jdtType = (IType) javaElementFinder.findElementFor(type);
-	//
-	// List<IMethod> allMethods = new ArrayList<IMethod>();
-	// try {
-	// allMethods.addAll(Arrays.asList(jdtType.getMethods()));
-	//
-	// for (IType t : JavaModelUtil.getAllSuperTypes(jdtType, new
-	// NullProgressMonitor())) {
-	// allMethods.addAll(Arrays.asList(t.getMethods()));
-	// }
-	//
-	// String returnSignature = Signature.toString(bindMethod.getReturnType());
-	// String eventType = null;
-	//
-	// if (returnSignature.startsWith("javafx.event.EventHandler<? super ") ||
-	// returnSignature.startsWith("javafx.event.EventHandler<")) {
-	// if (returnSignature.startsWith("javafx.event.EventHandler<? super ")) {
-	// eventType =
-	// returnSignature.substring("javafx.event.EventHandler<? super ".length(),
-	// returnSignature.length() - 1);
-	// } else {
-	// eventType =
-	// returnSignature.substring("javafx.event.EventHandler<".length(),
-	// returnSignature.length() - 1);
-	// }
-	// }
-	//
-	// List<IMethod> rv = new ArrayList<IMethod>();
-	// for (IMethod m : allMethods) {
-	// boolean found = false;
-	// for (IAnnotation a : m.getAnnotations()) {
-	// if (a.getElementName().endsWith("FXML")) {
-	// found = true;
-	// }
-	// }
-	// if (found) {
-	// String[] types = m.getParameterTypes();
-	// if (types.length == 1) {
-	// String[][] paramType = ((IType)
-	// m.getParent()).resolveType(Signature.toString(types[0]));
-	// String v = Signature.toQualifiedName(paramType[0]);
-	// if (v.equals(eventType)) {
-	// rv.add(m);
-	// }
-	// }
-	// }
-	// }
-	//
-	// return rv;
-	// } catch (JavaModelException e) {
-	// // TODO Auto-generated catch block
-	// e.printStackTrace();
-	// }
-	//
-	// return Collections.emptyList();
-	// }
-	//
-	// @Override
-	// public void completeStaticValueProperty_Name(EObject model, Assignment
-	// assignment, ContentAssistContext context, ICompletionProposalAcceptor
-	// acceptor) {
-	// StaticValueProperty prop = (StaticValueProperty) model;
-	// JvmTypeReference typeRef = prop.getType();
-	// JvmTypeReference parentTypeRef = null;
-	//
-	// if (model.eContainer() instanceof Element) {
-	// Element e = (Element) model.eContainer();
-	// parentTypeRef = e.getType();
-	// }
-	//
-	// if (typeRef != null && parentTypeRef != null) {
-	// IType jdtType = (IType)
-	// javaElementFinder.findElementFor(typeRef.getType());
-	// IType parentJdtType = (IType)
-	// javaElementFinder.findElementFor(parentTypeRef.getType());
-	//
-	// List<IMethod> allMethods = new ArrayList<IMethod>();
-	// try {
-	// allMethods.addAll(Arrays.asList(jdtType.getMethods()));
-	//
-	// for (IType t : JavaModelUtil.getAllSuperTypes(jdtType, new
-	// NullProgressMonitor())) {
-	// allMethods.addAll(Arrays.asList(t.getMethods()));
-	// }
-	//
-	// IJavaProject jproject = getJavaProject(model);
-	// for (IMethod m : allMethods) {
-	// if (Flags.isStatic(m.getFlags()) && Flags.isPublic(m.getFlags()) &&
-	// m.getParameterTypes().length == 2) {
-	// IType t = (IType) m.getParent();
-	// String signature = Signature.toString(m.getParameterTypes()[0]);
-	// if (signature.equals("int") || signature.equals("double")) {
-	// continue;
-	// } else {
-	//
-	// }
-	// String p1FQN =
-	// Signature.toQualifiedName(t.resolveType(Signature.toString(m.getParameterTypes()[0]))[0]);
-	//
-	// IType parameterType = jproject.findType(p1FQN);
-	//
-	// if (canAssign(parameterType, parentJdtType)) {
-	// StyledString s = new
-	// StyledString(JDTHelper.extractAttributename(m.getElementName()) + " : ");
-	// s.append(Signature.toString(m.getParameterTypes()[1]),
-	// StyledString.QUALIFIER_STYLER);
-	//
-	// ICompletionProposal cp =
-	// createCompletionProposal(JDTHelper.extractAttributename(m.getElementName()),
-	// s, JFaceResources.getImage(JDTHelper.STAT_METHOD_PUBLIC_KEY), context);
-	//
-	// if (cp instanceof ConfigurableCompletionProposal) {
-	// ConfigurableCompletionProposal cProposal =
-	// (ConfigurableCompletionProposal) cp;
-	// cProposal.setAdditionalProposalInfo(model);
-	// cProposal.setHover(new HoverImpl(m));
-	// }
-	//
-	// acceptor.accept(cp);
-	// }
-	// }
-	// }
-	// } catch (JavaModelException e) {
-	// // TODO Auto-generated catch block
-	// e.printStackTrace();
-	// }
-	//
-	// }
-	// }
-	//
-	// private static boolean canAssign(IType target, IType targetToAssign) {
-	// if (target.equals(targetToAssign)) {
-	// return true;
-	// }
-	//
-	// try {
-	// for (IType parentType : JavaModelUtil.getAllSuperTypes(targetToAssign,
-	// new NullProgressMonitor())) {
-	// if (parentType.equals(target)) {
-	// return true;
-	// }
-	// }
-	// } catch (JavaModelException e) {
-	// // TODO Auto-generated catch block
-	// e.printStackTrace();
-	// }
-	// return false;
-	// }
-	//
-	// @Override
-	// public void complete_Property(EObject model, RuleCall ruleCall,
-	// ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
-	// if (context.getCurrentModel() instanceof Element) {
-	// Element element = (Element) context.getCurrentModel();
-	// if (element.getType() == null) {
-	// return;
-	// }
-	// TypeData data = getTypeData(getJavaProject(model), element.getType());
-	// if (data != null) {
-	// for (JDTHelperProperty p : data.properties) {
-	// ICompletionProposal proposal = createCompletionProposal(p.name + " : ",
-	// p.getDescription(), p.getIcon(), 1000, context.getPrefix(), context);
-	// if (proposal instanceof ConfigurableCompletionProposal) {
-	// ConfigurableCompletionProposal cProposal =
-	// (ConfigurableCompletionProposal) proposal;
-	// cProposal.setAdditionalProposalInfo(element);
-	// cProposal.setHover(new HoverImpl(p.method));
-	// }
-	// acceptor.accept(proposal);
-	// }
-	// }
-	// }
-	// super.complete_Property(model, ruleCall, context, acceptor);
-	// }
-	//
-	// @Override
-	// public void completeProperty_Name(EObject model, Assignment assignment,
-	// ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
-	// if (context.getCurrentModel() instanceof
-	// at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.Property) {
-	// Element element = (Element)
-	// ((at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.Property)
-	// context.getCurrentModel()).eContainer();
-	// TypeData data = getTypeData(getJavaProject(model), element.getType());
-	// if (data != null) {
-	// for (JDTHelperProperty p : data.properties) {
-	// ICompletionProposal proposal = createCompletionProposal(p.name + " : ",
-	// p.getDescription(), p.getIcon(), context);
-	// if (proposal instanceof ConfigurableCompletionProposal) {
-	// ConfigurableCompletionProposal cProposal =
-	// (ConfigurableCompletionProposal) proposal;
-	// cProposal.setAdditionalProposalInfo(element);
-	// cProposal.setHover(new HoverImpl(p.method));
-	// }
-	// acceptor.accept(proposal);
-	// }
-	// }
-	// }
-	// super.completeProperty_Name(model, assignment, context, acceptor);
-	// }
-	//
-	// @Override
-	// public void completeProperty_Preview(EObject model, Assignment
-	// assignment, ContentAssistContext context, ICompletionProposalAcceptor
-	// acceptor) {
-	// // System.err.println("Property preview completetion");
-	// // TODO Auto-generated method stub
-	// super.completeProperty_Preview(model, assignment, context, acceptor);
-	// }
-	//
-	// @Override
-	// public void completeProperty_Value(EObject model, Assignment assignment,
-	// ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
-	// if (context.getCurrentModel().eContainer() instanceof Element) {
-	// at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.Property
-	// propertyElement =
-	// (at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.Property)
-	// context.getCurrentModel();
-	// Element element = (Element) context.getCurrentModel().eContainer();
-	//
-	// TypeData data = getTypeData(getJavaProject(model), element.getType());
-	//
-	// if (data != null) {
-	// for (JDTHelperProperty p : data.properties) {
-	// if (p.name.equals(propertyElement.getName())) {
-	// for (Proposal prop : p.getProposals()) {
-	// if (prop instanceof DialogProposal) {
-	// final DialogProposal dProp = (DialogProposal) prop;
-	// ConfigurableCompletionProposal dialogProposal =
-	// (ConfigurableCompletionProposal) createCompletionProposal(prop.value,
-	// prop.description, prop.icon, prop.prio, context.getPrefix(), context);
-	// if( prop.hover != null ) {
-	// dialogProposal.setAdditionalProposalInfo(model);
-	// dialogProposal.setHover(prop.hover);
-	// }
-	// if (dialogProposal != null) {
-	// dialogProposal.setTextApplier(new ReplacementTextApplier() {
-	//
-	// @Override
-	// public String getActualReplacementString(ConfigurableCompletionProposal
-	// proposal) {
-	// return dProp.openProposal();
-	// }
-	// });
-	// }
-	// acceptor.accept(dialogProposal);
-	// } else if(prop instanceof ProcessedProposal ) {
-	// final ProcessedProposal dProp = (ProcessedProposal) prop;
-	// ConfigurableCompletionProposal processedProposal =
-	// (ConfigurableCompletionProposal) createCompletionProposal(prop.value,
-	// prop.description, prop.icon, prop.prio, context.getPrefix(), context);
-	// if( prop.hover != null ) {
-	// processedProposal.setAdditionalProposalInfo(model);
-	// processedProposal.setHover(prop.hover);
-	// }
-	// if (processedProposal != null) {
-	// processedProposal.setTextApplier(new ReplacementTextApplier() {
-	//
-	// @Override
-	// public String getActualReplacementString(ConfigurableCompletionProposal
-	// proposal) {
-	// return dProp.getProcessed();
-	// }
-	// });
-	// }
-	// acceptor.accept(processedProposal);
-	// } else {
-	// ConfigurableCompletionProposal cProp = (ConfigurableCompletionProposal)
-	// createCompletionProposal(prop.value, prop.description, prop.icon,
-	// prop.prio, context.getPrefix(), context);
-	// if( prop.hover != null ) {
-	// cProp.setAdditionalProposalInfo(model);
-	// cProp.setHover(prop.hover);
-	// }
-	// acceptor.accept(cProp);
-	// }
-	// }
-	// return;
-	// }
-	// }
-	// }
-	// }
-	//
-	// super.completeProperty_Value(model, assignment, context, acceptor);
-	// }
-	//
-	// @Override
-	// public void completeStaticValueProperty_Value(EObject model, Assignment
-	// assignment, ContentAssistContext context, ICompletionProposalAcceptor
-	// acceptor) {
-	// if (model instanceof StaticValueProperty) {
-	// StaticValueProperty p = (StaticValueProperty) model;
-	// if (p.getType() != null && p.getName() != null) {
-	// IType t = (IType)
-	// javaElementFinder.findElementFor(p.getType().getType());
-	// try {
-	// String methodName = "set" + Character.toUpperCase(p.getName().charAt(0))
-	// + p.getName().substring(1);
-	// for (IMethod m : t.getMethods()) {
-	// if (Flags.isPublic(m.getFlags()) && Flags.isStatic(m.getFlags()) &&
-	// m.getElementName().endsWith(methodName) && m.getParameterTypes().length
-	// == 2) {
-	// String valueType = m.getParameterTypes()[1];
-	// String fqType = Signature.toString(valueType);
-	// IJavaProject jp = getJavaProject(model);
-	//
-	// IType type = jp.findType(fqType);
-	//
-	// if (type != null) {
-	// if (type.isEnum()) {
-	// for (IField c : type.getFields()) {
-	// if (Flags.isEnum(c.getFlags())) {
-	// StyledString s = new StyledString(c.getElementName());
-	// s.append(" : " + type.getElementName(), StyledString.QUALIFIER_STYLER);
-	// acceptor.accept(createCompletionProposal("\"" + c.getElementName() +
-	// "\"", s, JFaceResources.getImage(JDTHelper.ENUM_KEY), context));
-	// }
-	// }
-	// }
-	// }
-	//
-	// break;
-	// }
-	// }
-	// } catch (JavaModelException e) {
-	// // TODO Auto-generated catch block
-	// e.printStackTrace();
-	// }
-	// }
-	//
-	// }
-	//
-	// super.completeStaticValueProperty_Value(model, assignment, context,
-	// acceptor);
-	// }
-	//
-	// @Override
-	// public void completeJvmParameterizedTypeReference_Type(EObject model,
-	// Assignment assignment, ContentAssistContext context,
-	// ICompletionProposalAcceptor acceptor) {
-	// // We are in single property
-	// if (model instanceof Element && model.eContainer() instanceof
-	// ComponentDefinition) {
-	// JvmType superType =
-	// jdtTypeProvider.createTypeProvider(model.eResource().getResourceSet()).findTypeByName("javafx.scene.Parent");
-	// if (superType != null) {
-	// typeProposalProviders.createSubTypeProposals(superType, this, context,
-	// TypesPackage.Literals.JVM_PARAMETERIZED_TYPE_REFERENCE__TYPE, acceptor);
-	// }
-	// } else if (model.eContainer() instanceof ListValueProperty &&
-	// model.eContainer().eContainer() instanceof
-	// at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.Property &&
-	// model.eContainer().eContainer().eContainer() instanceof Element) {
-	// final IJavaProject jp = getJavaProject(model);
-	// at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.Property p =
-	// (at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.Property)
-	// model.eContainer().eContainer();
-	// Element e = (Element) model.eContainer().eContainer().eContainer();
-	//
-	// try {
-	// TypeData typeData = helper.getTypeData(jp,
-	// jp.findType(e.getType().getQualifiedName()));
-	// IType type = null;
-	//
-	// for (JDTHelperProperty jdtProp : typeData.properties) {
-	// if (jdtProp.name.equals(p.getName())) {
-	// String[] t = Signature.getTypeArguments(jdtProp.method.getReturnType());
-	// if (t.length > 0) {
-	// type = jp.findType(Signature.toString(t[0]));
-	// }
-	// break;
-	// }
-	// }
-	//
-	// if (type != null) {
-	// JvmType superType =
-	// jdtTypeProvider.createTypeProvider(model.eResource().getResourceSet()).findTypeByName(type.getFullyQualifiedName());
-	// if (superType != null) {
-	// typeProposalProviders.createSubTypeProposals(superType, this, context,
-	// TypesPackage.Literals.JVM_PARAMETERIZED_TYPE_REFERENCE__TYPE, acceptor);
-	// }
-	// }
-	// } catch (JavaModelException e1) {
-	// // TODO Auto-generated catch block
-	// e1.printStackTrace();
-	// }
-	// } else if (model.eContainer() instanceof
-	// at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.Property) {
-	// final IJavaProject jp = getJavaProject(model);
-	// System.err.println("Proposal");
-	// at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.Property p =
-	// (at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.Property)
-	// model.eContainer();
-	// Element e = (Element) model.eContainer().eContainer();
-	//
-	// try {
-	// TypeData typeData = helper.getTypeData(jp,
-	// jp.findType(e.getType().getQualifiedName()));
-	// IType type = null;
-	//
-	// for (JDTHelperProperty jdtProp : typeData.properties) {
-	// if (jdtProp.name.equals(p.getName())) {
-	// type = jp.findType(Signature.toString(jdtProp.method.getReturnType()));
-	// break;
-	// }
-	// }
-	//
-	// if (type != null) {
-	// JvmType superType =
-	// jdtTypeProvider.createTypeProvider(model.eResource().getResourceSet()).findTypeByName(type.getFullyQualifiedName());
-	//
-	// if (superType != null) {
-	// Filter filter = new Filter() {
-	//
-	// @Override
-	// public int getSearchFor() {
-	// return IJavaSearchConstants.TYPE;
-	// }
-	//
-	// @Override
-	// public boolean accept(int modifiers, char[] packageName, char[]
-	// simpleTypeName, char[][] enclosingTypeNames, String path) {
-	// return !Flags.isAbstract(modifiers) && !new
-	// String(packageName).startsWith("com.sun.javafx");
-	// }
-	// };
-	//
-	// typeProposalProviders.createSubTypeProposals(superType, this, context,
-	// TypesPackage.Literals.JVM_PARAMETERIZED_TYPE_REFERENCE__TYPE, filter,
-	// acceptor);
-	// }
-	// }
-	// } catch (JavaModelException e1) {
-	// // TODO Auto-generated catch block
-	// e1.printStackTrace();
-	// }
-	// } else if (model instanceof Element && model.eContainer() instanceof
-	// Element) {
-	// if (((Element) model.eContainer()).getType() != null &&
-	// (context.getPrefix() == null || context.getPrefix().length() == 0 ||
-	// Character.isUpperCase(context.getPrefix().charAt(0)))) {
-	// JvmTypeReference t = ((Element) model).getType();
-	// IJavaProject jProject = getJavaProject(model);
-	//
-	// IType jdtType = (IType) javaElementFinder.findElementFor(t.getType());
-	// IType annotationType = jdtType;
-	//
-	// if (annotationType == null) {
-	// super.completeJvmParameterizedTypeReference_Type(model, assignment,
-	// context, acceptor);
-	// return;
-	// }
-	//
-	// try {
-	// do {
-	// IAnnotation annotation =
-	// annotationType.getAnnotation("javafx.beans.DefaultProperty");
-	// if (annotation.exists()) {
-	// // System.err.println("Found annotation: " + annotationType);
-	// try {
-	// for (IMemberValuePair pair : annotation.getMemberValuePairs()) {
-	// if ("value".equals(pair.getMemberName())) {
-	// TypeData d = helper.getTypeData(jProject, jdtType);
-	// for (JDTHelperProperty hp : d.properties) {
-	// if (hp.name.equals(pair.getValue())) {
-	// Filter filter = new Filter() {
-	//
-	// @Override
-	// public int getSearchFor() {
-	// return IJavaSearchConstants.TYPE;
-	// }
-	//
-	// @Override
-	// public boolean accept(int modifiers, char[] packageName, char[]
-	// simpleTypeName, char[][] enclosingTypeNames, String path) {
-	// return !Flags.isAbstract(modifiers) && !new
-	// String(packageName).startsWith("com.sun.javafx");
-	// }
-	// };
-	//
-	// if (hp instanceof
-	// at.bestsolution.efxclipse.tooling.fxgraph.ui.util.JDTHelper.ListValueProperty)
-	// {
-	// String[] sig = Signature.getTypeArguments(hp.method.getReturnType());
-	// if (sig.length > 0) {
-	// JvmType superType =
-	// jdtTypeProvider.createTypeProvider(model.eResource().getResourceSet()).findTypeByName(Signature.toString(sig[0]));
-	// typeProposalProviders.createSubTypeProposals(superType, this, context,
-	// TypesPackage.Literals.JVM_PARAMETERIZED_TYPE_REFERENCE__TYPE, filter,
-	// acceptor);
-	// }
-	// } else {
-	// String returnType = hp.method.getReturnType();
-	// JvmType superType =
-	// jdtTypeProvider.createTypeProvider(model.eResource().getResourceSet()).findTypeByName(returnType);
-	// typeProposalProviders.createSubTypeProposals(superType, this, context,
-	// TypesPackage.Literals.JVM_PARAMETERIZED_TYPE_REFERENCE__TYPE, filter,
-	// acceptor);
-	// }
-	//
-	// return;
-	// }
-	// }
-	// return;
-	// }
-	// }
-	// } catch (JavaModelException e1) {
-	// // TODO Auto-generated catch block
-	// e1.printStackTrace();
-	// }
-	// }
-	// } while (annotationType.getSuperclassName() != null && (annotationType =
-	// jProject.findType(annotationType.getSuperclassName())) != null);
-	// // super.completeJvmParameterizedTypeReference_Type(model, assignment,
-	// context, acceptor);
-	// } catch (JavaModelException e1) {
-	// // TODO Auto-generated catch block
-	// e1.printStackTrace();
-	// }
-	// } else if (((Element) model.eContainer()).getType() != null &&
-	// (context.getPrefix() == null || context.getPrefix().length() == 0 ||
-	// Character.isLowerCase(context.getPrefix().charAt(0)))) {
-	// JvmTypeReference t = ((Element) model.eContainer()).getType();
-	// IJavaProject jProject = getJavaProject(model);
-	// try {
-	// IType jdtType = (IType) javaElementFinder.findElementFor(t.getType());
-	// TypeData typeData = helper.getTypeData(jProject, jdtType);
-	// if (typeData != null) {
-	// for (JDTHelperProperty p : typeData.properties) {
-	// ICompletionProposal proposal = createCompletionProposal(p.name + " : ",
-	// p.getDescription(), p.getIcon(), context);
-	// if (proposal instanceof ConfigurableCompletionProposal) {
-	// ConfigurableCompletionProposal cProposal =
-	// (ConfigurableCompletionProposal) proposal;
-	// cProposal.setAdditionalProposalInfo(model);
-	// cProposal.setHover(new HoverImpl(p.method));
-	// }
-	// acceptor.accept(proposal);
-	// }
-	// }
-	// } catch (Exception e) {
-	//
-	// }
-	// }
-	// } else {
-	// // System.err.println("in else");
-	// super.completeJvmParameterizedTypeReference_Type(model, assignment,
-	// context, acceptor);
-	// }
-	// }
-	//
-	// @Override
-	// public void completeElement_DefaultChildren(EObject model, Assignment
-	// assignment, ContentAssistContext context, ICompletionProposalAcceptor
-	// acceptor) {
-	// // System.err.println("Completing default children");
-	// // // TODO Auto-generated method stub
-	// // super.completeElement_DefaultChildren(model, assignment, context,
-	// // acceptor);
-	// }
-	//
-	// @Override
-	// public void completeElement_Factory(EObject model, Assignment assignment,
-	// ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
-	// Element element = (Element) model;
-	//
-	// if (element.getType() != null) {
-	// Property property = (Property) element.eContainer();
-	// Element parentElement = (Element) property.eContainer();
-	//
-	// IType targetType = null;
-	// IJavaProject jProject = getJavaProject(model);
-	//
-	// for (JDTHelperProperty p : getTypeData(getJavaProject(model),
-	// parentElement.getType()).properties) {
-	// if (p.name.equals(property.getName())) {
-	// try {
-	// String rt = p.method.getReturnType();
-	// String typeName = Signature.toString(Signature.getTypeErasure(rt));
-	// targetType = jProject.findType(typeName);
-	// break;
-	// } catch (JavaModelException e) {
-	// // TODO Auto-generated catch block
-	// e.printStackTrace();
-	// }
-	// }
-	// }
-	//
-	// IType type = (IType)
-	// javaElementFinder.findElementFor(element.getType().getType());
-	// if (type != null) {
-	// try {
-	// for (IMethod m : type.getMethods()) {
-	//
-	// if (Flags.isPublic(m.getFlags()) && Flags.isStatic(m.getFlags()) &&
-	// !m.getReturnType().equals("void") && m.getParameterNames().length == 0) {
-	// String rt = m.getReturnType();
-	// String typeName = Signature.toString(Signature.getTypeErasure(rt));
-	// IType returnType = jProject.findType(typeName);
-	//
-	// if (returnType != null && targetType != null && canAssign(returnType,
-	// targetType)) {
-	// StyledString s = new StyledString(m.getElementName() + " : " +
-	// Signature.getSignatureSimpleName(m.getReturnType()));
-	// s.append(" - " + type.getElementName(), StyledString.QUALIFIER_STYLER);
-	//
-	// ICompletionProposal proposal =
-	// createCompletionProposal(m.getElementName(), s,
-	// JFaceResources.getImage(JDTHelper.STAT_METHOD_PUBLIC_KEY), context);
-	// if (proposal instanceof ConfigurableCompletionProposal) {
-	// ConfigurableCompletionProposal cProposal =
-	// (ConfigurableCompletionProposal) proposal;
-	// cProposal.setAdditionalProposalInfo(element);
-	// cProposal.setHover(new HoverImpl(m));
-	// }
-	// acceptor.accept(proposal);
-	// }
-	// }
-	// }
-	// } catch (JavaModelException e) {
-	// // TODO Auto-generated catch block
-	// e.printStackTrace();
-	// }
-	// }
-	// }
-	//
-	// super.completeElement_Factory(model, assignment, context, acceptor);
-	// }
-	//
-	// static class JavadocHoverWrapper extends JavadocHover {
-	//
-	// IJavaElement currentElement;
-	//
-	// void setJavaElement(IJavaElement element) {
-	// currentElement = element;
-	// }
-	//
-	// @Override
-	// protected IJavaElement[] getJavaElementsAt(ITextViewer textViewer,
-	// IRegion hoverRegion) {
-	// // hack: return previously registered element
-	// // required as JavadocHover.getHoverInfo(IJavaElement[]
-	// // elements,...) is private
-	// return new IJavaElement[] { currentElement };
-	// }
-	//
-	// }
-
+	@Override
+	public void completeResourceValueProperty_Value(EObject model, Assignment assignment, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
+		if( ! model.eResource().getContents().isEmpty() ) {
+			Model m = (Model) model.eResource().getContents().get(0);
+			if( m.getComponentDef() != null ) {
+				if( m.getComponentDef().getPreviewResourceBundle() != null ) {
+					File f = RelativeFileLocator.locateFile(model.eResource().getURI(),  m.getComponentDef().getPreviewResourceBundle());
+					Properties p = null;
+					if (f != null) {
+						FileInputStream fi = null;
+						try {
+							fi = new FileInputStream(f);
+							p = new Properties();
+							p.load(fi);
+						} catch (FileNotFoundException e) {
+							LOGGER.warn("Unable to load resource bundle", e);
+						} catch (IOException e) {
+							LOGGER.warn("Unable to load resource bundle", e);
+						} finally {
+							if (fi != null) {
+								try {
+									fi.close();
+								} catch (IOException e) {
+									LOGGER.error("Unable to close resource filehandle", e);
+								}
+							}
+						}
+					}
+					if( p != null ) {
+						for (String k : p.stringPropertyNames()) {
+							StyledString s = new StyledString(k);
+							s.append(" - " + p.getProperty(k), StyledString.DECORATIONS_STYLER);
+							acceptor.accept(createCompletionProposal("\"" + k + "\"", s, JFaceResources.getImage(JDTHelper.EXTERNALIZED_STRING_KEY), context));
+						}
+					}
+				}
+			}
+		}
+	}
+	
+	@Override
+	public void completeBindValueProperty_ElementReference(EObject model, Assignment assignment, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
+		TreeIterator<EObject> it = model.eResource().getAllContents();
+		while (it.hasNext()) {
+			EObject o = it.next();
+			if (o instanceof Element) {
+				Element e = (Element) o;
+				if (e.getName() != null && e.getName().trim().length() > 0) {
+					StyledString s = new StyledString(e.getName());
+					s.append(" - " + e.getType().getQualifiedName(), StyledString.DECORATIONS_STYLER);
+					acceptor.accept(createCompletionProposal(e.getName(), s, JFaceResources.getImage(JDTHelper.CLASS_KEY), context));
+				}
+			}
+		}
+	}
+	
+	@Override
+	public void completeBindValueProperty_Attribute(EObject model, Assignment assignment, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
+		BindValueProperty b = (BindValueProperty) model;
+		if (b.getElementReference() != null && b.getElementReference().getType() != null) {
+			Property property = (Property) b.eContainer();
+			Element targetClass = (Element) property.eContainer();
+			Element element = b.getElementReference();
+			
+			try {
+				IJavaProject javaProject = projectProvider.getJavaProject(element.eResource().getResourceSet());
+				IType sourceType = javaProject.findType(element.getType().getQualifiedName());
+				IType targetType = javaProject.findType(targetClass.getType().getQualifiedName());
+				
+				IFXClass fxSourceClazz = FXPlugin.getClassmodel().findClass(javaProject, sourceType);
+				IFXClass fxTargetClass = FXPlugin.getClassmodel().findClass(javaProject, targetType);
+				IFXProperty targetProperty = fxTargetClass.getProperty(property.getName());
+				
+				if( targetProperty instanceof IFXPrimitiveProperty ) {
+					IFXPrimitiveProperty pp = (IFXPrimitiveProperty) targetProperty;
+					for( IFXProperty sourceProp: fxSourceClazz.getAllProperties().values() ) {
+						if( sourceProp instanceof IFXEventHandlerProperty ) {
+							continue;
+						}
+						
+						boolean select = false;
+						if( pp.getType() == Type.STRING ) {
+							select = true;
+						} else {
+							if( sourceProp instanceof IFXPrimitiveProperty ) {
+								IFXPrimitiveProperty sp = (IFXPrimitiveProperty) sourceProp;
+								if( pp.getType() == Type.BOOLEAN ) {
+									select = sp.getType() == Type.BOOLEAN;
+								} else if( sp.getType() != Type.STRING && sp.getType() != Type.BOOLEAN ) {
+									select = true;
+								}
+							}
+						}
+						
+						if( select ) {
+							String typeName = "";
+							if( sourceProp instanceof IFXPrimitiveProperty ) {
+								IFXPrimitiveProperty sp = (IFXPrimitiveProperty) sourceProp;
+								if( sp.getType() == Type.STRING ) {
+									typeName = "String";
+								} else {
+									typeName = sp.getType().jvmType();
+								}
+							} else if (sourceProp instanceof IFXCollectionProperty ) {
+								typeName = ((IFXCollectionProperty)sourceProp).getCollectionAsString();
+							} else if( sourceProp instanceof IFXEnumProperty ) {
+								typeName = ((IFXEnumProperty)sourceProp).getEnumTypeAsString(false);
+							} else if( sourceProp instanceof IFXMapProperty ) {
+								typeName = "{}";
+							} else if( sourceProp instanceof IFXObjectProperty ) {
+								typeName = ((IFXObjectProperty)sourceProp).getElementTypeAsString(false);
+							}
+							
+							StyledString s = new StyledString(sourceProp.getName() + " : " + typeName);
+							s.append(" - " + sourceProp.getFXClass().getSimpleName(), StyledString.QUALIFIER_STYLER);
+							ICompletionProposal cp = createCompletionProposal(sourceProp.getName(), s, JFaceResources.getImage(JDTHelper.FIELD_KEY), getPropertiesProposalsProposals(), context.getPrefix(), context);
+							acceptor.accept(cp);
+						}
+					}
+				}
+			} catch (JavaModelException e1) {
+				LOGGER.error("Unable to extract java informations", e1);
+			}
+		}
+	}
+	
 	public static class HoverImpl implements IEObjectHover, ITextHoverExtension {
 		private JavadocHoverWrapper javadocHover = new JavadocHoverWrapper();
 		private IJavaElement javaElement;
