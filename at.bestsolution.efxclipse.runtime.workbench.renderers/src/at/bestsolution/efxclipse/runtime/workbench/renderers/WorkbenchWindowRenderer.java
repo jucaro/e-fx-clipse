@@ -132,6 +132,7 @@ public class WorkbenchWindowRenderer extends JFXRenderer {
 			stage.yProperty().addListener(resizeListener);
 
 			context.set(Stage.class, stage);
+			context.set(Scene.class, scene);
 			
 			return stage;
 		}
@@ -169,7 +170,7 @@ public class WorkbenchWindowRenderer extends JFXRenderer {
 			Node topDecoration = createTopDecoration(stage, window);
 			if (topDecoration != null) {
 				topAreaBox.getChildren().add(topDecoration);
-				windowResizeButton = new WindowResizeButton(stage, 1020,700);
+				windowResizeButton = new WindowResizeButton(stage, 30, 30);
 			}
 
 			if (window.getMainMenu() != null) {
