@@ -10,6 +10,7 @@ public class FXClassLoadingConfigurator implements HookConfigurator {
 		FXClassLoader cl = new FXClassLoader();
 		hookRegistry.addAdaptorHook(cl);
 		hookRegistry.addClassLoadingHook(cl);
+		hookRegistry.addClassLoaderDelegateHook(new FXClassLoaderDelegate());
 	}
 
 }

@@ -7,7 +7,6 @@ import java.io.InputStream;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.net.MalformedURLException;
-import java.net.URI;
 import java.net.URL;
 import java.net.URLClassLoader;
 import java.net.URLConnection;
@@ -17,10 +16,9 @@ import java.util.Collection;
 import java.util.Collections;
 import java.util.Enumeration;
 import java.util.List;
-import java.util.Map.Entry;
+import java.util.Properties;
 import java.util.jar.JarEntry;
 import java.util.jar.JarFile;
-import java.util.Properties;
 
 import org.eclipse.osgi.baseadaptor.BaseAdaptor;
 import org.eclipse.osgi.baseadaptor.BaseData;
@@ -60,6 +58,12 @@ public class FXClassLoader implements ClassLoadingHook, AdaptorHook {
 
 	private BundleContext context = null;
 
+	/*
+	 * Remember the classloader for use in post look ups because of native classloading by javafx' native code
+	 * See http://javafx-jira.kenai.com/browse/RT-20883
+	 */
+	static MyBundleClassLoader LOADER;
+	
 	@Override
 	public byte[] processClass(String name, byte[] classbytes, ClasspathEntry classpathEntry, BundleEntry entry, ClasspathManager manager) {
 		return null;
@@ -79,12 +83,14 @@ public class FXClassLoader implements ClassLoadingHook, AdaptorHook {
 	public ClassLoader getBundleClassLoaderParent() {
 		return null;
 	}
-
+	
 	@Override
 	public BaseClassLoader createClassLoader(ClassLoader parent, final ClassLoaderDelegate delegate, BundleProtectionDomain domain, BaseData data, String[] bundleclasspath) {
 		if (data.getBundle().getSymbolicName().equals("at.bestsolution.efxclipse.runtime.javafx")) {
 			try {
-				return new MyBundleClassLoader(getPackageAdmin(), getPreferencesService(), parent, delegate, domain, data, bundleclasspath, context);
+				MyBundleClassLoader cl = new MyBundleClassLoader(getPackageAdmin(), getPreferencesService(), parent, delegate, domain, data, bundleclasspath, context);
+				LOADER = cl;
+				return cl;
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
