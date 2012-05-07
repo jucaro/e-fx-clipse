@@ -50,9 +50,9 @@ public class FXClassLoader implements ClassLoadingHook, AdaptorHook {
 
 	private ServiceTracker<PackageAdmin, PackageAdmin> paTracker;
 
-	private ServiceTracker instanceLocationTracker = null;
+	private ServiceTracker<Location,Location> instanceLocationTracker = null;
 
-	private ServiceTracker preferenceServiceTracker = null;
+	private ServiceTracker<?,?> preferenceServiceTracker = null;
 
 	private ServiceTracker<Location, Location> installLocation = null;
 
@@ -540,7 +540,7 @@ public class FXClassLoader implements ClassLoadingHook, AdaptorHook {
 
 		try {
 			Filter filter = context.createFilter(Location.INSTANCE_FILTER);
-			instanceLocationTracker = new ServiceTracker(context, filter, null);
+			instanceLocationTracker = new ServiceTracker<Location,Location>(context, filter, null);
 			instanceLocationTracker.open();
 		} catch (InvalidSyntaxException e) {
 			// TODO Auto-generated catch block
@@ -549,14 +549,14 @@ public class FXClassLoader implements ClassLoadingHook, AdaptorHook {
 
 		try {
 			Filter filter = context.createFilter(Location.INSTALL_FILTER);
-			installLocation = new ServiceTracker(context, filter, null);
+			installLocation = new ServiceTracker<Location,Location>(context, filter, null);
 			installLocation.open();
 		} catch (InvalidSyntaxException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 
-		preferenceServiceTracker = new ServiceTracker(context, "org.eclipse.core.runtime.preferences.IPreferencesService", null);
+		preferenceServiceTracker = new ServiceTracker<Object,Object>(context, "org.eclipse.core.runtime.preferences.IPreferencesService", null);
 		preferenceServiceTracker.open();
 	}
 
