@@ -186,7 +186,6 @@ public class RepackageJavaFXWizard extends BasicNewResourceWizard {
 		while (entries.hasMoreElements()) {
 			ZipEntry e = entries.nextElement();
 			if (e.getName().contains("/rt/")) {
-				System.err.println("e: " + e.getName());
 				if (e.isDirectory()) {
 					Path fp = new Path(e.getName().substring(e.getName().indexOf("rt/")));
 					IFolder f2 = f.getFolder(fp);
@@ -202,6 +201,7 @@ public class RepackageJavaFXWizard extends BasicNewResourceWizard {
 				}
 			}
 		}
+		zf.close();
 	}
 
 	class WizardPageImpl extends WizardPage {
