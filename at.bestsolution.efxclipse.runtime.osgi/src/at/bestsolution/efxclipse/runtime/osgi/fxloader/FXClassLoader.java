@@ -222,8 +222,9 @@ public class FXClassLoader implements ClassLoadingHook, AdaptorHook {
 				}
 
 				if (outDir.mkdirs()) {
+					JarFile jarFile = null;
 					try {
-						JarFile jarFile = new JarFile(f);
+						jarFile = new JarFile(f);
 						Enumeration<JarEntry> entries = jarFile.entries();
 						while (entries.hasMoreElements()) {
 							JarEntry e = entries.nextElement();
@@ -246,6 +247,15 @@ public class FXClassLoader implements ClassLoadingHook, AdaptorHook {
 					} catch (IOException e) {
 						// TODO Auto-generated catch block
 						e.printStackTrace();
+					} finally {
+						if( jarFile != null ) {
+							try {
+								jarFile.close();
+							} catch (IOException e) {
+								// TODO Auto-generated catch block
+								e.printStackTrace();
+							}
+						}
 					}
 				}
 			}
