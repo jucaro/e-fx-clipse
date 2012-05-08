@@ -27,6 +27,7 @@
       <plugin id="at.bestsolution.efxclipse.runtime.examples.rcp"/>
       <plugin id="at.bestsolution.efxclipse.runtime.javafx"/>
       <plugin id="at.bestsolution.efxclipse.runtime.osgi" fragment="true"/>
+      <plugin id="at.bestsolution.efxclipse.runtime.workbench3"/>
       <plugin id="com.ibm.icu"/>
       <plugin id="javafx.osgi"/>
       <plugin id="javax.annotation"/>
