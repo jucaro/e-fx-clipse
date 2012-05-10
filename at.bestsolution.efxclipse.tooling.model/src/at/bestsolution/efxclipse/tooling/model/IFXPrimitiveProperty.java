@@ -18,6 +18,10 @@ public interface IFXPrimitiveProperty extends IFXProperty {
 			this.jvmType = jvmType;
 		}
 		
+		public String jvmType() {
+			return jvmType;
+		}
+		
 		public static Type parseType(String type) {
 			for( Type t : values() ) {
 				if( t.jvmType.equals(type) ) {
