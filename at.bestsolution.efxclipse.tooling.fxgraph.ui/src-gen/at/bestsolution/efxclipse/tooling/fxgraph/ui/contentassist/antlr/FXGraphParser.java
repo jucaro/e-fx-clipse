@@ -46,6 +46,7 @@ public class FXGraphParser extends AbstractContentAssistParser {
 					put(grammarAccess.getValuePropertyAccess().getAlternatives(), "rule__ValueProperty__Alternatives");
 					put(grammarAccess.getSingleValuePropertyAccess().getAlternatives(), "rule__SingleValueProperty__Alternatives");
 					put(grammarAccess.getMultiValuePropertyAccess().getAlternatives(), "rule__MultiValueProperty__Alternatives");
+					put(grammarAccess.getFactoryValueElementAccess().getAlternatives(), "rule__FactoryValueElement__Alternatives");
 					put(grammarAccess.getListValueElementAccess().getAlternatives(), "rule__ListValueElement__Alternatives");
 					put(grammarAccess.getSimpleValuePropertyAccess().getAlternatives(), "rule__SimpleValueProperty__Alternatives");
 					put(grammarAccess.getSimpleValuePropertyAccess().getBooleanValueAlternatives_1_0(), "rule__SimpleValueProperty__BooleanValueAlternatives_1_0");

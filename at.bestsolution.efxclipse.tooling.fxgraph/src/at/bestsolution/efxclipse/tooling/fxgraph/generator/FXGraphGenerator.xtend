@@ -172,11 +172,35 @@ class FXGraphGenerator implements IGenerator {
 			«propContents(element.properties,importManager,preview,false,skipController,skipIncludes)»
 			«statPropContent(element.staticProperties,importManager,preview,skipController,skipIncludes)»
 			«FOR e : element.values»
-			«elementContent(e,importManager,preview,skipController,skipIncludes)»
+			«IF e instanceof Element»
+				«elementContent(e as Element,importManager,preview,skipController,skipIncludes)»
+			«ELSEIF e instanceof SimpleValueProperty»
+				«objectLiteral(e as SimpleValueProperty)»
+			«ENDIF»
 			«ENDFOR»
 		</«element.type.shortName(importManager)»>
 		«ENDIF»
 	'''
+	
+	def objectLiteral(SimpleValueProperty value) {
+		if( value.stringValue != null ) {
+			return "<String fx:value=\"" + value.stringValue +"\" />";
+		} else if( value.booleanValue != null ) {
+			return "<Boolean fx:value=\"" + value.booleanValue + "\" />";
+		} else if( value.realValue != 0 ) {
+			if( value.negative ) {
+				return "<Double fx:value=\"-" + value.realValue + "\" />";
+			} else {
+				return "<Double fx:value=\"" + value.realValue + "\" />";
+			}
+		} else {
+			if( value.negative ) {
+				return "<Integer fx:value=\"-" + value.intValue + "\" />";
+			} else {
+				return "<Integer fx:value=\"" + value.intValue + "\" />";
+			}
+		}
+	}
 	
 	def propContents(List<Property> properties, ImportManager importManager, boolean preview, boolean simpleAsElement, boolean skipController, boolean skipIncludes) '''
 		«IF simpleAsElement»

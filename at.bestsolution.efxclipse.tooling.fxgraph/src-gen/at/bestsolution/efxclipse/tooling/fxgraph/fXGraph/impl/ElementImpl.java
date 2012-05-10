@@ -4,6 +4,7 @@ package at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.impl;
 
 import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.Element;
 import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.FXGraphPackage;
+import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.FactoryValueElement;
 import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.Property;
 import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.SimpleValueProperty;
 import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.StaticValueProperty;
@@ -145,7 +146,7 @@ public class ElementImpl extends SingleValuePropertyImpl implements Element
    * @generated
    * @ordered
    */
-  protected EList<Element> values;
+  protected EList<FactoryValueElement> values;
 
   /**
    * <!-- begin-user-doc -->
@@ -357,11 +358,11 @@ public class ElementImpl extends SingleValuePropertyImpl implements Element
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<Element> getValues()
+  public EList<FactoryValueElement> getValues()
   {
     if (values == null)
     {
-      values = new EObjectContainmentEList<Element>(Element.class, this, FXGraphPackage.ELEMENT__VALUES);
+      values = new EObjectContainmentEList<FactoryValueElement>(FactoryValueElement.class, this, FXGraphPackage.ELEMENT__VALUES);
     }
     return values;
   }
@@ -459,7 +460,7 @@ public class ElementImpl extends SingleValuePropertyImpl implements Element
         return;
       case FXGraphPackage.ELEMENT__VALUES:
         getValues().clear();
-        getValues().addAll((Collection<? extends Element>)newValue);
+        getValues().addAll((Collection<? extends FactoryValueElement>)newValue);
         return;
     }
     super.eSet(featureID, newValue);

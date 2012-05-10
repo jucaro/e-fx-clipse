@@ -135,6 +135,11 @@ public class FXGraphAdapterFactory extends AdapterFactoryImpl
         return createMultiValuePropertyAdapter();
       }
       @Override
+      public Adapter caseFactoryValueElement(FactoryValueElement object)
+      {
+        return createFactoryValueElementAdapter();
+      }
+      @Override
       public Adapter caseListValueElement(ListValueElement object)
       {
         return createListValueElementAdapter();
@@ -407,6 +412,21 @@ public class FXGraphAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createMultiValuePropertyAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.FactoryValueElement <em>Factory Value Element</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.FactoryValueElement
+   * @generated
+   */
+  public Adapter createFactoryValueElementAdapter()
   {
     return null;
   }

@@ -76,6 +76,7 @@ public class FXGraphFactoryImpl extends EFactoryImpl implements FXGraphFactory
       case FXGraphPackage.VALUE_PROPERTY: return createValueProperty();
       case FXGraphPackage.SINGLE_VALUE_PROPERTY: return createSingleValueProperty();
       case FXGraphPackage.MULTI_VALUE_PROPERTY: return createMultiValueProperty();
+      case FXGraphPackage.FACTORY_VALUE_ELEMENT: return createFactoryValueElement();
       case FXGraphPackage.LIST_VALUE_ELEMENT: return createListValueElement();
       case FXGraphPackage.LIST_VALUE_PROPERTY: return createListValueProperty();
       case FXGraphPackage.MAP_VALUE_PROPERTY: return createMapValueProperty();
@@ -226,6 +227,17 @@ public class FXGraphFactoryImpl extends EFactoryImpl implements FXGraphFactory
   {
     MultiValuePropertyImpl multiValueProperty = new MultiValuePropertyImpl();
     return multiValueProperty;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public FactoryValueElement createFactoryValueElement()
+  {
+    FactoryValueElementImpl factoryValueElement = new FactoryValueElementImpl();
+    return factoryValueElement;
   }
 
   /**

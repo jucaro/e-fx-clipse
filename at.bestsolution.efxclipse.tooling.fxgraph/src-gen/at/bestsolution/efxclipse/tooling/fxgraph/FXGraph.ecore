@@ -33,7 +33,7 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="rootNode" eType="#//Element"
         containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Element" eSuperTypes="#//SingleValueProperty #//ListValueElement">
+  <eClassifiers xsi:type="ecore:EClass" name="Element" eSuperTypes="#//SingleValueProperty #//FactoryValueElement #//ListValueElement">
     <eStructuralFeatures xsi:type="ecore:EReference" name="type" eType="ecore:EClass ../../../../../../../org.eclipse.xtext.common.types/model/JavaVMTypes.ecore#//JvmTypeReference"
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="value" eType="#//SimpleValueProperty"
@@ -47,7 +47,7 @@
         eType="#//Element" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="factory" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="values" upperBound="-1"
-        eType="#//Element" containment="true"/>
+        eType="#//FactoryValueElement" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Define">
     <eStructuralFeatures xsi:type="ecore:EReference" name="element" eType="#//Element"
@@ -74,6 +74,7 @@
   <eClassifiers xsi:type="ecore:EClass" name="ValueProperty"/>
   <eClassifiers xsi:type="ecore:EClass" name="SingleValueProperty" eSuperTypes="#//ValueProperty"/>
   <eClassifiers xsi:type="ecore:EClass" name="MultiValueProperty" eSuperTypes="#//ValueProperty"/>
+  <eClassifiers xsi:type="ecore:EClass" name="FactoryValueElement"/>
   <eClassifiers xsi:type="ecore:EClass" name="ListValueElement"/>
   <eClassifiers xsi:type="ecore:EClass" name="ListValueProperty" eSuperTypes="#//MultiValueProperty">
     <eStructuralFeatures xsi:type="ecore:EReference" name="value" upperBound="-1"
@@ -83,7 +84,7 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="properties" upperBound="-1"
         eType="#//Property" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="SimpleValueProperty" eSuperTypes="#//SingleValueProperty">
+  <eClassifiers xsi:type="ecore:EClass" name="SimpleValueProperty" eSuperTypes="#//SingleValueProperty #//FactoryValueElement #//ListValueElement">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="stringValue" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="booleanValue" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="negative" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>

@@ -45,6 +45,7 @@ import org.eclipse.xtext.ui.editor.hover.IEObjectHover;
 import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.BindValueProperty;
 import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.Element;
 import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.FXGraphPackage;
+import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.ListValueProperty;
 import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.MapValueProperty;
 import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.Model;
 import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.Property;
@@ -711,6 +712,43 @@ public class FXGraphProposalProvider extends AbstractFXGraphProposalProvider {
 				LOGGER.error("Unable to extract java informations", e1);
 			}
 		}
+	}
+	
+	@Override
+	public void completeElement_Type(EObject model, Assignment assignment, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
+//		System.err.println("Complete type");
+//		// TODO Auto-generated method stub
+//		super.completeElement_Type(model, assignment, context, acceptor);
+//		Element e = (Element) model;
+//		if( e.eContainer() instanceof ListValueProperty ) {
+//			System.err.println("Completing List Type");
+//		}
+	}
+	
+	@Override
+	public void completeListValueProperty_Value(EObject model, Assignment assignment, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
+		if( model instanceof ListValueProperty ) {
+			if( model.eContainer() instanceof Property ) {
+				Property property = (Property) model.eContainer();
+				if( property.eContainer() instanceof Element ) {
+					try {
+						Element element = (Element) property.eContainer();
+						IJavaProject javaProject = projectProvider.getJavaProject(element.eResource().getResourceSet());
+						IType ownerType = javaProject.findType(element.getType().getQualifiedName());
+						IFXClass fxOwnerClazz = FXPlugin.getClassmodel().findClass(javaProject, ownerType);
+						IFXProperty ownerProperty = fxOwnerClazz.getProperty(property.getName());
+						
+						if (ownerProperty instanceof IFXCollectionProperty) {
+							createCollectionClassProposals((IFXCollectionProperty) ownerProperty, model, context, FXGraphPackage.Literals.LIST_VALUE_PROPERTY__VALUE, acceptor);
+						}
+						
+					} catch (JavaModelException e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					}
+				}
+			}
+		}	
 	}
 	
 	public static class HoverImpl implements IEObjectHover, ITextHoverExtension {

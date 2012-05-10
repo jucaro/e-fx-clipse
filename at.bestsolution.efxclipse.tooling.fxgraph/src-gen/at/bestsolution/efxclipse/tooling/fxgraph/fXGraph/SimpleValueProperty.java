@@ -23,7 +23,7 @@ package at.bestsolution.efxclipse.tooling.fxgraph.fXGraph;
  * @model
  * @generated
  */
-public interface SimpleValueProperty extends SingleValueProperty
+public interface SimpleValueProperty extends SingleValueProperty, FactoryValueElement, ListValueElement
 {
   /**
    * Returns the value of the '<em><b>String Value</b></em>' attribute.

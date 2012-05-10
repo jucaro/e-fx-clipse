@@ -797,9 +797,9 @@ ruleElement returns [EObject current=null]
 (
 (
 		{ 
-	        newCompositeNode(grammarAccess.getElementAccess().getValuesElementParserRuleCall_1_2_4_0()); 
+	        newCompositeNode(grammarAccess.getElementAccess().getValuesFactoryValueElementParserRuleCall_1_2_4_0()); 
 	    }
-		lv_values_22_0=ruleElement		{
+		lv_values_22_0=ruleFactoryValueElement		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getElementRule());
 	        }
@@ -807,7 +807,7 @@ ruleElement returns [EObject current=null]
        			$current, 
        			"values",
         		lv_values_22_0, 
-        		"Element");
+        		"FactoryValueElement");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -819,9 +819,9 @@ ruleElement returns [EObject current=null]
 (
 (
 		{ 
-	        newCompositeNode(grammarAccess.getElementAccess().getValuesElementParserRuleCall_1_2_5_1_0()); 
+	        newCompositeNode(grammarAccess.getElementAccess().getValuesFactoryValueElementParserRuleCall_1_2_5_1_0()); 
 	    }
-		lv_values_24_0=ruleElement		{
+		lv_values_24_0=ruleFactoryValueElement		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getElementRule());
 	        }
@@ -829,7 +829,7 @@ ruleElement returns [EObject current=null]
        			$current, 
        			"values",
         		lv_values_24_0, 
-        		"Element");
+        		"FactoryValueElement");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -1366,6 +1366,46 @@ ruleMultiValueProperty returns [EObject current=null]
 
 
 
+// Entry rule entryRuleFactoryValueElement
+entryRuleFactoryValueElement returns [EObject current=null] 
+	:
+	{ newCompositeNode(grammarAccess.getFactoryValueElementRule()); }
+	 iv_ruleFactoryValueElement=ruleFactoryValueElement 
+	 { $current=$iv_ruleFactoryValueElement.current; } 
+	 EOF 
+;
+
+// Rule FactoryValueElement
+ruleFactoryValueElement returns [EObject current=null] 
+    @init { enterRule(); 
+    }
+    @after { leaveRule(); }:
+(
+    { 
+        newCompositeNode(grammarAccess.getFactoryValueElementAccess().getSimpleValuePropertyParserRuleCall_0()); 
+    }
+    this_SimpleValueProperty_0=ruleSimpleValueProperty
+    { 
+        $current = $this_SimpleValueProperty_0.current; 
+        afterParserOrEnumRuleCall();
+    }
+
+    |
+    { 
+        newCompositeNode(grammarAccess.getFactoryValueElementAccess().getElementParserRuleCall_1()); 
+    }
+    this_Element_1=ruleElement
+    { 
+        $current = $this_Element_1.current; 
+        afterParserOrEnumRuleCall();
+    }
+)
+;
+
+
+
+
+
 // Entry rule entryRuleListValueElement
 entryRuleListValueElement returns [EObject current=null] 
 	:
@@ -1407,6 +1447,16 @@ ruleListValueElement returns [EObject current=null]
     this_IncludeValueProperty_2=ruleIncludeValueProperty
     { 
         $current = $this_IncludeValueProperty_2.current; 
+        afterParserOrEnumRuleCall();
+    }
+
+    |
+    { 
+        newCompositeNode(grammarAccess.getListValueElementAccess().getSimpleValuePropertyParserRuleCall_3()); 
+    }
+    this_SimpleValueProperty_3=ruleSimpleValueProperty
+    { 
+        $current = $this_SimpleValueProperty_3.current; 
         afterParserOrEnumRuleCall();
     }
 )

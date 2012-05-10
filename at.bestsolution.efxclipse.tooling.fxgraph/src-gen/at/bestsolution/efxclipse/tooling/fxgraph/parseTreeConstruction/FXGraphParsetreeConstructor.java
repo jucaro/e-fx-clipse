@@ -43,70 +43,71 @@ protected class ThisRootNode extends RootToken {
 			case 9: return new ValueProperty_Alternatives(this, this, 9, inst);
 			case 10: return new SingleValueProperty_Alternatives(this, this, 10, inst);
 			case 11: return new MultiValueProperty_Alternatives(this, this, 11, inst);
-			case 12: return new ListValueElement_Alternatives(this, this, 12, inst);
-			case 13: return new ListValueProperty_Group(this, this, 13, inst);
-			case 14: return new MapValueProperty_Group(this, this, 14, inst);
-			case 15: return new SimpleValueProperty_Alternatives(this, this, 15, inst);
-			case 16: return new ReferenceValueProperty_Group(this, this, 16, inst);
-			case 17: return new IncludeValueProperty_Group(this, this, 17, inst);
-			case 18: return new CopyValueProperty_Group(this, this, 18, inst);
-			case 19: return new ControllerHandledValueProperty_Group(this, this, 19, inst);
-			case 20: return new ScriptHandlerHandledValueProperty_Group(this, this, 20, inst);
-			case 21: return new ScriptValueExpression_Group(this, this, 21, inst);
-			case 22: return new ScriptValueReference_Group(this, this, 22, inst);
-			case 23: return new LocationValueProperty_Group(this, this, 23, inst);
-			case 24: return new ResourceValueProperty_Group(this, this, 24, inst);
-			case 25: return new BindValueProperty_Group(this, this, 25, inst);
-			case 26: return new StringValue_ValueAssignment(this, this, 26, inst);
-			case 27: return new XExpression_XAssignmentParserRuleCall(this, this, 27, inst);
-			case 28: return new XAssignment_Alternatives(this, this, 28, inst);
-			case 29: return new XOrExpression_Group(this, this, 29, inst);
-			case 30: return new XAndExpression_Group(this, this, 30, inst);
-			case 31: return new XEqualityExpression_Group(this, this, 31, inst);
-			case 32: return new XRelationalExpression_Group(this, this, 32, inst);
-			case 33: return new XOtherOperatorExpression_Group(this, this, 33, inst);
-			case 34: return new XAdditiveExpression_Group(this, this, 34, inst);
-			case 35: return new XMultiplicativeExpression_Group(this, this, 35, inst);
-			case 36: return new XUnaryOperation_Alternatives(this, this, 36, inst);
-			case 37: return new XCastedExpression_Group(this, this, 37, inst);
-			case 38: return new XMemberFeatureCall_Group(this, this, 38, inst);
-			case 39: return new XPrimaryExpression_Alternatives(this, this, 39, inst);
-			case 40: return new XLiteral_Alternatives(this, this, 40, inst);
-			case 41: return new XClosure_Group(this, this, 41, inst);
-			case 42: return new XExpressionInClosure_Group(this, this, 42, inst);
-			case 43: return new XShortClosure_Group(this, this, 43, inst);
-			case 44: return new XParenthesizedExpression_Group(this, this, 44, inst);
-			case 45: return new XIfExpression_Group(this, this, 45, inst);
-			case 46: return new XSwitchExpression_Group(this, this, 46, inst);
-			case 47: return new XCasePart_Group(this, this, 47, inst);
-			case 48: return new XForLoopExpression_Group(this, this, 48, inst);
-			case 49: return new XWhileExpression_Group(this, this, 49, inst);
-			case 50: return new XDoWhileExpression_Group(this, this, 50, inst);
-			case 51: return new XBlockExpression_Group(this, this, 51, inst);
-			case 52: return new XExpressionInsideBlock_Alternatives(this, this, 52, inst);
-			case 53: return new XVariableDeclaration_Group(this, this, 53, inst);
-			case 54: return new JvmFormalParameter_Group(this, this, 54, inst);
-			case 55: return new FullJvmFormalParameter_Group(this, this, 55, inst);
-			case 56: return new XFeatureCall_Group(this, this, 56, inst);
-			case 57: return new XConstructorCall_Group(this, this, 57, inst);
-			case 58: return new XBooleanLiteral_Group(this, this, 58, inst);
-			case 59: return new XNullLiteral_Group(this, this, 59, inst);
-			case 60: return new XNumberLiteral_Group(this, this, 60, inst);
-			case 61: return new XStringLiteral_Group(this, this, 61, inst);
-			case 62: return new XTypeLiteral_Group(this, this, 62, inst);
-			case 63: return new XThrowExpression_Group(this, this, 63, inst);
-			case 64: return new XReturnExpression_Group(this, this, 64, inst);
-			case 65: return new XTryCatchFinallyExpression_Group(this, this, 65, inst);
-			case 66: return new XCatchClause_Group(this, this, 66, inst);
-			case 67: return new JvmTypeReference_Alternatives(this, this, 67, inst);
-			case 68: return new XFunctionTypeRef_Group(this, this, 68, inst);
-			case 69: return new JvmParameterizedTypeReference_Group(this, this, 69, inst);
-			case 70: return new JvmArgumentTypeReference_Alternatives(this, this, 70, inst);
-			case 71: return new JvmWildcardTypeReference_Group(this, this, 71, inst);
-			case 72: return new JvmUpperBound_Group(this, this, 72, inst);
-			case 73: return new JvmUpperBoundAnded_Group(this, this, 73, inst);
-			case 74: return new JvmLowerBound_Group(this, this, 74, inst);
-			case 75: return new JvmTypeParameter_Group(this, this, 75, inst);
+			case 12: return new FactoryValueElement_Alternatives(this, this, 12, inst);
+			case 13: return new ListValueElement_Alternatives(this, this, 13, inst);
+			case 14: return new ListValueProperty_Group(this, this, 14, inst);
+			case 15: return new MapValueProperty_Group(this, this, 15, inst);
+			case 16: return new SimpleValueProperty_Alternatives(this, this, 16, inst);
+			case 17: return new ReferenceValueProperty_Group(this, this, 17, inst);
+			case 18: return new IncludeValueProperty_Group(this, this, 18, inst);
+			case 19: return new CopyValueProperty_Group(this, this, 19, inst);
+			case 20: return new ControllerHandledValueProperty_Group(this, this, 20, inst);
+			case 21: return new ScriptHandlerHandledValueProperty_Group(this, this, 21, inst);
+			case 22: return new ScriptValueExpression_Group(this, this, 22, inst);
+			case 23: return new ScriptValueReference_Group(this, this, 23, inst);
+			case 24: return new LocationValueProperty_Group(this, this, 24, inst);
+			case 25: return new ResourceValueProperty_Group(this, this, 25, inst);
+			case 26: return new BindValueProperty_Group(this, this, 26, inst);
+			case 27: return new StringValue_ValueAssignment(this, this, 27, inst);
+			case 28: return new XExpression_XAssignmentParserRuleCall(this, this, 28, inst);
+			case 29: return new XAssignment_Alternatives(this, this, 29, inst);
+			case 30: return new XOrExpression_Group(this, this, 30, inst);
+			case 31: return new XAndExpression_Group(this, this, 31, inst);
+			case 32: return new XEqualityExpression_Group(this, this, 32, inst);
+			case 33: return new XRelationalExpression_Group(this, this, 33, inst);
+			case 34: return new XOtherOperatorExpression_Group(this, this, 34, inst);
+			case 35: return new XAdditiveExpression_Group(this, this, 35, inst);
+			case 36: return new XMultiplicativeExpression_Group(this, this, 36, inst);
+			case 37: return new XUnaryOperation_Alternatives(this, this, 37, inst);
+			case 38: return new XCastedExpression_Group(this, this, 38, inst);
+			case 39: return new XMemberFeatureCall_Group(this, this, 39, inst);
+			case 40: return new XPrimaryExpression_Alternatives(this, this, 40, inst);
+			case 41: return new XLiteral_Alternatives(this, this, 41, inst);
+			case 42: return new XClosure_Group(this, this, 42, inst);
+			case 43: return new XExpressionInClosure_Group(this, this, 43, inst);
+			case 44: return new XShortClosure_Group(this, this, 44, inst);
+			case 45: return new XParenthesizedExpression_Group(this, this, 45, inst);
+			case 46: return new XIfExpression_Group(this, this, 46, inst);
+			case 47: return new XSwitchExpression_Group(this, this, 47, inst);
+			case 48: return new XCasePart_Group(this, this, 48, inst);
+			case 49: return new XForLoopExpression_Group(this, this, 49, inst);
+			case 50: return new XWhileExpression_Group(this, this, 50, inst);
+			case 51: return new XDoWhileExpression_Group(this, this, 51, inst);
+			case 52: return new XBlockExpression_Group(this, this, 52, inst);
+			case 53: return new XExpressionInsideBlock_Alternatives(this, this, 53, inst);
+			case 54: return new XVariableDeclaration_Group(this, this, 54, inst);
+			case 55: return new JvmFormalParameter_Group(this, this, 55, inst);
+			case 56: return new FullJvmFormalParameter_Group(this, this, 56, inst);
+			case 57: return new XFeatureCall_Group(this, this, 57, inst);
+			case 58: return new XConstructorCall_Group(this, this, 58, inst);
+			case 59: return new XBooleanLiteral_Group(this, this, 59, inst);
+			case 60: return new XNullLiteral_Group(this, this, 60, inst);
+			case 61: return new XNumberLiteral_Group(this, this, 61, inst);
+			case 62: return new XStringLiteral_Group(this, this, 62, inst);
+			case 63: return new XTypeLiteral_Group(this, this, 63, inst);
+			case 64: return new XThrowExpression_Group(this, this, 64, inst);
+			case 65: return new XReturnExpression_Group(this, this, 65, inst);
+			case 66: return new XTryCatchFinallyExpression_Group(this, this, 66, inst);
+			case 67: return new XCatchClause_Group(this, this, 67, inst);
+			case 68: return new JvmTypeReference_Alternatives(this, this, 68, inst);
+			case 69: return new XFunctionTypeRef_Group(this, this, 69, inst);
+			case 70: return new JvmParameterizedTypeReference_Group(this, this, 70, inst);
+			case 71: return new JvmArgumentTypeReference_Alternatives(this, this, 71, inst);
+			case 72: return new JvmWildcardTypeReference_Group(this, this, 72, inst);
+			case 73: return new JvmUpperBound_Group(this, this, 73, inst);
+			case 74: return new JvmUpperBoundAnded_Group(this, this, 74, inst);
+			case 75: return new JvmLowerBound_Group(this, this, 75, inst);
+			case 76: return new JvmTypeParameter_Group(this, this, 76, inst);
 			default: return null;
 		}	
 	}	
@@ -1573,7 +1574,7 @@ protected class ComponentDefinition_RightCurlyBracketKeyword_10 extends KeywordT
  * 
  * 	| staticProperties+=StaticValueProperty | defaultChildren+=Element))*)? "}" | ("id" name=ValidID)? "createdby"
  * 
- * 	factory=ID "{" values+=Element ("," values+=Element)* "}");
+ * 	factory=ID "{" values+=FactoryValueElement ("," values+=FactoryValueElement)* "}");
  *
  **/
 
@@ -1583,7 +1584,7 @@ protected class ComponentDefinition_RightCurlyBracketKeyword_10 extends KeywordT
 // 
 // | staticProperties+=StaticValueProperty | defaultChildren+=Element))*)? "}" | ("id" name=ValidID)? "createdby"
 // 
-// factory=ID "{" values+=Element ("," values+=Element)* "}")
+// factory=ID "{" values+=FactoryValueElement ("," values+=FactoryValueElement)* "}")
 protected class Element_Group extends GroupToken {
 	
 	public Element_Group(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -1663,7 +1664,7 @@ protected class Element_TypeAssignment_0 extends AssignmentToken  {
 // 
 // staticProperties+=StaticValueProperty | defaultChildren+=Element))*)? "}" | ("id" name=ValidID)? "createdby"
 // 
-// factory=ID "{" values+=Element ("," values+=Element)* "}"
+// factory=ID "{" values+=FactoryValueElement ("," values+=FactoryValueElement)* "}"
 protected class Element_Alternatives_1 extends AlternativesToken {
 
 	public Element_Alternatives_1(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -2453,7 +2454,7 @@ protected class Element_RightCurlyBracketKeyword_1_1_3 extends KeywordToken  {
 }
 
 
-// ("id" name=ValidID)? "createdby" factory=ID "{" values+=Element ("," values+=Element)* "}"
+// ("id" name=ValidID)? "createdby" factory=ID "{" values+=FactoryValueElement ("," values+=FactoryValueElement)* "}"
 protected class Element_Group_1_2 extends GroupToken {
 	
 	public Element_Group_1_2(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -2633,7 +2634,7 @@ protected class Element_LeftCurlyBracketKeyword_1_2_3 extends KeywordToken  {
 
 }
 
-// values+=Element
+// values+=FactoryValueElement
 protected class Element_ValuesAssignment_1_2_4 extends AssignmentToken  {
 	
 	public Element_ValuesAssignment_1_2_4(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -2648,7 +2649,7 @@ protected class Element_ValuesAssignment_1_2_4 extends AssignmentToken  {
     @Override
 	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
 		switch(index) {
-			case 0: return new Element_Group(this, this, 0, inst);
+			case 0: return new FactoryValueElement_Alternatives(this, this, 0, inst);
 			default: return null;
 		}	
 	}
@@ -2659,9 +2660,9 @@ protected class Element_ValuesAssignment_1_2_4 extends AssignmentToken  {
 		IEObjectConsumer obj = eObjectConsumer.cloneAndConsume("values");
 		if(value instanceof EObject) { // org::eclipse::xtext::impl::RuleCallImpl
 			IEObjectConsumer param = createEObjectConsumer((EObject)value);
-			if(param.isInstanceOf(grammarAccess.getElementRule().getType().getClassifier())) {
+			if(param.isInstanceOf(grammarAccess.getFactoryValueElementRule().getType().getClassifier())) {
 				type = AssignmentType.PARSER_RULE_CALL;
-				element = grammarAccess.getElementAccess().getValuesElementParserRuleCall_1_2_4_0(); 
+				element = grammarAccess.getElementAccess().getValuesFactoryValueElementParserRuleCall_1_2_4_0(); 
 				consumed = obj;
 				return param;
 			}
@@ -2679,7 +2680,7 @@ protected class Element_ValuesAssignment_1_2_4 extends AssignmentToken  {
 	}	
 }
 
-// ("," values+=Element)*
+// ("," values+=FactoryValueElement)*
 protected class Element_Group_1_2_5 extends GroupToken {
 	
 	public Element_Group_1_2_5(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -2724,7 +2725,7 @@ protected class Element_CommaKeyword_1_2_5_0 extends KeywordToken  {
 
 }
 
-// values+=Element
+// values+=FactoryValueElement
 protected class Element_ValuesAssignment_1_2_5_1 extends AssignmentToken  {
 	
 	public Element_ValuesAssignment_1_2_5_1(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -2739,7 +2740,7 @@ protected class Element_ValuesAssignment_1_2_5_1 extends AssignmentToken  {
     @Override
 	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
 		switch(index) {
-			case 0: return new Element_Group(this, this, 0, inst);
+			case 0: return new FactoryValueElement_Alternatives(this, this, 0, inst);
 			default: return null;
 		}	
 	}
@@ -2750,9 +2751,9 @@ protected class Element_ValuesAssignment_1_2_5_1 extends AssignmentToken  {
 		IEObjectConsumer obj = eObjectConsumer.cloneAndConsume("values");
 		if(value instanceof EObject) { // org::eclipse::xtext::impl::RuleCallImpl
 			IEObjectConsumer param = createEObjectConsumer((EObject)value);
-			if(param.isInstanceOf(grammarAccess.getElementRule().getType().getClassifier())) {
+			if(param.isInstanceOf(grammarAccess.getFactoryValueElementRule().getType().getClassifier())) {
 				type = AssignmentType.PARSER_RULE_CALL;
-				element = grammarAccess.getElementAccess().getValuesElementParserRuleCall_1_2_5_1_0(); 
+				element = grammarAccess.getElementAccess().getValuesFactoryValueElementParserRuleCall_1_2_5_1_0(); 
 				consumed = obj;
 				return param;
 			}
@@ -4266,15 +4267,130 @@ protected class MultiValueProperty_MapValuePropertyParserRuleCall_1 extends Rule
 /************ end Rule MultiValueProperty ****************/
 
 
+/************ begin Rule FactoryValueElement ****************
+ *
+ * FactoryValueElement:
+ * 
+ * 	SimpleValueProperty | Element;
+ *
+ **/
+
+// SimpleValueProperty | Element
+protected class FactoryValueElement_Alternatives extends AlternativesToken {
+
+	public FactoryValueElement_Alternatives(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
+	}
+	
+	@Override
+	public Alternatives getGrammarElement() {
+		return grammarAccess.getFactoryValueElementAccess().getAlternatives();
+	}
+
+    @Override
+	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
+		switch(index) {
+			case 0: return new FactoryValueElement_SimpleValuePropertyParserRuleCall_0(lastRuleCallOrigin, this, 0, inst);
+			case 1: return new FactoryValueElement_ElementParserRuleCall_1(lastRuleCallOrigin, this, 1, inst);
+			default: return null;
+		}	
+	}
+
+    @Override
+	public IEObjectConsumer tryConsume() {
+		if(getEObject().eClass() != grammarAccess.getElementRule().getType().getClassifier() && 
+		   getEObject().eClass() != grammarAccess.getSimpleValuePropertyRule().getType().getClassifier())
+			return null;
+		return eObjectConsumer;
+	}
+
+}
+
+// SimpleValueProperty
+protected class FactoryValueElement_SimpleValuePropertyParserRuleCall_0 extends RuleCallToken {
+	
+	public FactoryValueElement_SimpleValuePropertyParserRuleCall_0(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
+	}
+	
+	@Override
+	public RuleCall getGrammarElement() {
+		return grammarAccess.getFactoryValueElementAccess().getSimpleValuePropertyParserRuleCall_0();
+	}
+
+    @Override
+	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
+		switch(index) {
+			case 0: return new SimpleValueProperty_Alternatives(this, this, 0, inst);
+			default: return null;
+		}	
+	}
+
+    @Override
+	public IEObjectConsumer tryConsume() {
+		if(getEObject().eClass() != grammarAccess.getSimpleValuePropertyRule().getType().getClassifier())
+			return null;
+		if(checkForRecursion(SimpleValueProperty_Alternatives.class, eObjectConsumer)) return null;
+		return eObjectConsumer;
+	}
+	
+    @Override
+	public AbstractToken createFollowerAfterReturn(AbstractToken next,	int actIndex, int index, IEObjectConsumer inst) {
+		switch(index) {
+			default: return lastRuleCallOrigin.createFollowerAfterReturn(next, actIndex , index, inst);
+		}	
+	}	
+}
+
+// Element
+protected class FactoryValueElement_ElementParserRuleCall_1 extends RuleCallToken {
+	
+	public FactoryValueElement_ElementParserRuleCall_1(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
+	}
+	
+	@Override
+	public RuleCall getGrammarElement() {
+		return grammarAccess.getFactoryValueElementAccess().getElementParserRuleCall_1();
+	}
+
+    @Override
+	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
+		switch(index) {
+			case 0: return new Element_Group(this, this, 0, inst);
+			default: return null;
+		}	
+	}
+
+    @Override
+	public IEObjectConsumer tryConsume() {
+		if(getEObject().eClass() != grammarAccess.getElementRule().getType().getClassifier())
+			return null;
+		if(checkForRecursion(Element_Group.class, eObjectConsumer)) return null;
+		return eObjectConsumer;
+	}
+	
+    @Override
+	public AbstractToken createFollowerAfterReturn(AbstractToken next,	int actIndex, int index, IEObjectConsumer inst) {
+		switch(index) {
+			default: return lastRuleCallOrigin.createFollowerAfterReturn(next, actIndex , index, inst);
+		}	
+	}	
+}
+
+
+/************ end Rule FactoryValueElement ****************/
+
+
 /************ begin Rule ListValueElement ****************
  *
  * ListValueElement:
  * 
- * 	Element | ReferenceValueProperty | IncludeValueProperty;
+ * 	Element | ReferenceValueProperty | IncludeValueProperty | SimpleValueProperty;
  *
  **/
 
-// Element | ReferenceValueProperty | IncludeValueProperty
+// Element | ReferenceValueProperty | IncludeValueProperty | SimpleValueProperty
 protected class ListValueElement_Alternatives extends AlternativesToken {
 
 	public ListValueElement_Alternatives(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -4292,6 +4408,7 @@ protected class ListValueElement_Alternatives extends AlternativesToken {
 			case 0: return new ListValueElement_ElementParserRuleCall_0(lastRuleCallOrigin, this, 0, inst);
 			case 1: return new ListValueElement_ReferenceValuePropertyParserRuleCall_1(lastRuleCallOrigin, this, 1, inst);
 			case 2: return new ListValueElement_IncludeValuePropertyParserRuleCall_2(lastRuleCallOrigin, this, 2, inst);
+			case 3: return new ListValueElement_SimpleValuePropertyParserRuleCall_3(lastRuleCallOrigin, this, 3, inst);
 			default: return null;
 		}	
 	}
@@ -4300,7 +4417,8 @@ protected class ListValueElement_Alternatives extends AlternativesToken {
 	public IEObjectConsumer tryConsume() {
 		if(getEObject().eClass() != grammarAccess.getElementRule().getType().getClassifier() && 
 		   getEObject().eClass() != grammarAccess.getIncludeValuePropertyRule().getType().getClassifier() && 
-		   getEObject().eClass() != grammarAccess.getReferenceValuePropertyRule().getType().getClassifier())
+		   getEObject().eClass() != grammarAccess.getReferenceValuePropertyRule().getType().getClassifier() && 
+		   getEObject().eClass() != grammarAccess.getSimpleValuePropertyRule().getType().getClassifier())
 			return null;
 		return eObjectConsumer;
 	}
@@ -4404,6 +4522,42 @@ protected class ListValueElement_IncludeValuePropertyParserRuleCall_2 extends Ru
 		if(getEObject().eClass() != grammarAccess.getIncludeValuePropertyRule().getType().getClassifier())
 			return null;
 		if(checkForRecursion(IncludeValueProperty_Group.class, eObjectConsumer)) return null;
+		return eObjectConsumer;
+	}
+	
+    @Override
+	public AbstractToken createFollowerAfterReturn(AbstractToken next,	int actIndex, int index, IEObjectConsumer inst) {
+		switch(index) {
+			default: return lastRuleCallOrigin.createFollowerAfterReturn(next, actIndex , index, inst);
+		}	
+	}	
+}
+
+// SimpleValueProperty
+protected class ListValueElement_SimpleValuePropertyParserRuleCall_3 extends RuleCallToken {
+	
+	public ListValueElement_SimpleValuePropertyParserRuleCall_3(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
+	}
+	
+	@Override
+	public RuleCall getGrammarElement() {
+		return grammarAccess.getListValueElementAccess().getSimpleValuePropertyParserRuleCall_3();
+	}
+
+    @Override
+	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
+		switch(index) {
+			case 0: return new SimpleValueProperty_Alternatives(this, this, 0, inst);
+			default: return null;
+		}	
+	}
+
+    @Override
+	public IEObjectConsumer tryConsume() {
+		if(getEObject().eClass() != grammarAccess.getSimpleValuePropertyRule().getType().getClassifier())
+			return null;
+		if(checkForRecursion(SimpleValueProperty_Alternatives.class, eObjectConsumer)) return null;
 		return eObjectConsumer;
 	}
 	

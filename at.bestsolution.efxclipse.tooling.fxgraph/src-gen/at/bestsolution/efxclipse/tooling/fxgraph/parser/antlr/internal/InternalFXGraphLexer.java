@@ -1890,10 +1890,10 @@ public class InternalFXGraphLexer extends Lexer {
         try {
             int _type = RULE_REAL;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.fxgraph/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/parser/antlr/internal/InternalFXGraph.g:6865:11: ( ( '0' .. '9' )* '.' ( '0' .. '9' )+ )
-            // ../at.bestsolution.efxclipse.tooling.fxgraph/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/parser/antlr/internal/InternalFXGraph.g:6865:13: ( '0' .. '9' )* '.' ( '0' .. '9' )+
+            // ../at.bestsolution.efxclipse.tooling.fxgraph/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/parser/antlr/internal/InternalFXGraph.g:6915:11: ( ( '0' .. '9' )* '.' ( '0' .. '9' )+ )
+            // ../at.bestsolution.efxclipse.tooling.fxgraph/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/parser/antlr/internal/InternalFXGraph.g:6915:13: ( '0' .. '9' )* '.' ( '0' .. '9' )+
             {
-            // ../at.bestsolution.efxclipse.tooling.fxgraph/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/parser/antlr/internal/InternalFXGraph.g:6865:13: ( '0' .. '9' )*
+            // ../at.bestsolution.efxclipse.tooling.fxgraph/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/parser/antlr/internal/InternalFXGraph.g:6915:13: ( '0' .. '9' )*
             loop1:
             do {
                 int alt1=2;
@@ -1906,7 +1906,7 @@ public class InternalFXGraphLexer extends Lexer {
 
                 switch (alt1) {
             	case 1 :
-            	    // ../at.bestsolution.efxclipse.tooling.fxgraph/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/parser/antlr/internal/InternalFXGraph.g:6865:14: '0' .. '9'
+            	    // ../at.bestsolution.efxclipse.tooling.fxgraph/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/parser/antlr/internal/InternalFXGraph.g:6915:14: '0' .. '9'
             	    {
             	    matchRange('0','9'); 
 
@@ -1919,7 +1919,7 @@ public class InternalFXGraphLexer extends Lexer {
             } while (true);
 
             match('.'); 
-            // ../at.bestsolution.efxclipse.tooling.fxgraph/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/parser/antlr/internal/InternalFXGraph.g:6865:29: ( '0' .. '9' )+
+            // ../at.bestsolution.efxclipse.tooling.fxgraph/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/parser/antlr/internal/InternalFXGraph.g:6915:29: ( '0' .. '9' )+
             int cnt2=0;
             loop2:
             do {
@@ -1933,7 +1933,7 @@ public class InternalFXGraphLexer extends Lexer {
 
                 switch (alt2) {
             	case 1 :
-            	    // ../at.bestsolution.efxclipse.tooling.fxgraph/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/parser/antlr/internal/InternalFXGraph.g:6865:30: '0' .. '9'
+            	    // ../at.bestsolution.efxclipse.tooling.fxgraph/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/parser/antlr/internal/InternalFXGraph.g:6915:30: '0' .. '9'
             	    {
             	    matchRange('0','9'); 
 
@@ -1965,12 +1965,12 @@ public class InternalFXGraphLexer extends Lexer {
         try {
             int _type = RULE_SCRIPTLITERAL;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.fxgraph/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/parser/antlr/internal/InternalFXGraph.g:6867:20: ( '#{' ( options {greedy=false; } : . )* '}#' )
-            // ../at.bestsolution.efxclipse.tooling.fxgraph/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/parser/antlr/internal/InternalFXGraph.g:6867:22: '#{' ( options {greedy=false; } : . )* '}#'
+            // ../at.bestsolution.efxclipse.tooling.fxgraph/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/parser/antlr/internal/InternalFXGraph.g:6917:20: ( '#{' ( options {greedy=false; } : . )* '}#' )
+            // ../at.bestsolution.efxclipse.tooling.fxgraph/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/parser/antlr/internal/InternalFXGraph.g:6917:22: '#{' ( options {greedy=false; } : . )* '}#'
             {
             match("#{"); 
 
-            // ../at.bestsolution.efxclipse.tooling.fxgraph/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/parser/antlr/internal/InternalFXGraph.g:6867:27: ( options {greedy=false; } : . )*
+            // ../at.bestsolution.efxclipse.tooling.fxgraph/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/parser/antlr/internal/InternalFXGraph.g:6917:27: ( options {greedy=false; } : . )*
             loop3:
             do {
                 int alt3=2;
@@ -1995,7 +1995,7 @@ public class InternalFXGraphLexer extends Lexer {
 
                 switch (alt3) {
             	case 1 :
-            	    // ../at.bestsolution.efxclipse.tooling.fxgraph/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/parser/antlr/internal/InternalFXGraph.g:6867:55: .
+            	    // ../at.bestsolution.efxclipse.tooling.fxgraph/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/parser/antlr/internal/InternalFXGraph.g:6917:55: .
             	    {
             	    matchAny(); 
 
@@ -2025,10 +2025,10 @@ public class InternalFXGraphLexer extends Lexer {
         try {
             int _type = RULE_HEX;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.fxgraph/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/parser/antlr/internal/InternalFXGraph.g:6869:10: ( ( '0x' | '0X' ) ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' | '_' )+ ( '#' ( ( 'b' | 'B' ) ( 'i' | 'I' ) | ( 'l' | 'L' ) ) )? )
-            // ../at.bestsolution.efxclipse.tooling.fxgraph/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/parser/antlr/internal/InternalFXGraph.g:6869:12: ( '0x' | '0X' ) ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' | '_' )+ ( '#' ( ( 'b' | 'B' ) ( 'i' | 'I' ) | ( 'l' | 'L' ) ) )?
+            // ../at.bestsolution.efxclipse.tooling.fxgraph/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/parser/antlr/internal/InternalFXGraph.g:6919:10: ( ( '0x' | '0X' ) ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' | '_' )+ ( '#' ( ( 'b' | 'B' ) ( 'i' | 'I' ) | ( 'l' | 'L' ) ) )? )
+            // ../at.bestsolution.efxclipse.tooling.fxgraph/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/parser/antlr/internal/InternalFXGraph.g:6919:12: ( '0x' | '0X' ) ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' | '_' )+ ( '#' ( ( 'b' | 'B' ) ( 'i' | 'I' ) | ( 'l' | 'L' ) ) )?
             {
-            // ../at.bestsolution.efxclipse.tooling.fxgraph/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/parser/antlr/internal/InternalFXGraph.g:6869:12: ( '0x' | '0X' )
+            // ../at.bestsolution.efxclipse.tooling.fxgraph/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/parser/antlr/internal/InternalFXGraph.g:6919:12: ( '0x' | '0X' )
             int alt4=2;
             int LA4_0 = input.LA(1);
 
@@ -2056,7 +2056,7 @@ public class InternalFXGraphLexer extends Lexer {
             }
             switch (alt4) {
                 case 1 :
-                    // ../at.bestsolution.efxclipse.tooling.fxgraph/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/parser/antlr/internal/InternalFXGraph.g:6869:13: '0x'
+                    // ../at.bestsolution.efxclipse.tooling.fxgraph/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/parser/antlr/internal/InternalFXGraph.g:6919:13: '0x'
                     {
                     match("0x"); 
 
@@ -2064,7 +2064,7 @@ public class InternalFXGraphLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // ../at.bestsolution.efxclipse.tooling.fxgraph/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/parser/antlr/internal/InternalFXGraph.g:6869:18: '0X'
+                    // ../at.bestsolution.efxclipse.tooling.fxgraph/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/parser/antlr/internal/InternalFXGraph.g:6919:18: '0X'
                     {
                     match("0X"); 
 
@@ -2074,7 +2074,7 @@ public class InternalFXGraphLexer extends Lexer {
 
             }
 
-            // ../at.bestsolution.efxclipse.tooling.fxgraph/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/parser/antlr/internal/InternalFXGraph.g:6869:24: ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' | '_' )+
+            // ../at.bestsolution.efxclipse.tooling.fxgraph/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/parser/antlr/internal/InternalFXGraph.g:6919:24: ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' | '_' )+
             int cnt5=0;
             loop5:
             do {
@@ -2112,7 +2112,7 @@ public class InternalFXGraphLexer extends Lexer {
                 cnt5++;
             } while (true);
 
-            // ../at.bestsolution.efxclipse.tooling.fxgraph/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/parser/antlr/internal/InternalFXGraph.g:6869:58: ( '#' ( ( 'b' | 'B' ) ( 'i' | 'I' ) | ( 'l' | 'L' ) ) )?
+            // ../at.bestsolution.efxclipse.tooling.fxgraph/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/parser/antlr/internal/InternalFXGraph.g:6919:58: ( '#' ( ( 'b' | 'B' ) ( 'i' | 'I' ) | ( 'l' | 'L' ) ) )?
             int alt7=2;
             int LA7_0 = input.LA(1);
 
@@ -2121,10 +2121,10 @@ public class InternalFXGraphLexer extends Lexer {
             }
             switch (alt7) {
                 case 1 :
-                    // ../at.bestsolution.efxclipse.tooling.fxgraph/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/parser/antlr/internal/InternalFXGraph.g:6869:59: '#' ( ( 'b' | 'B' ) ( 'i' | 'I' ) | ( 'l' | 'L' ) )
+                    // ../at.bestsolution.efxclipse.tooling.fxgraph/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/parser/antlr/internal/InternalFXGraph.g:6919:59: '#' ( ( 'b' | 'B' ) ( 'i' | 'I' ) | ( 'l' | 'L' ) )
                     {
                     match('#'); 
-                    // ../at.bestsolution.efxclipse.tooling.fxgraph/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/parser/antlr/internal/InternalFXGraph.g:6869:63: ( ( 'b' | 'B' ) ( 'i' | 'I' ) | ( 'l' | 'L' ) )
+                    // ../at.bestsolution.efxclipse.tooling.fxgraph/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/parser/antlr/internal/InternalFXGraph.g:6919:63: ( ( 'b' | 'B' ) ( 'i' | 'I' ) | ( 'l' | 'L' ) )
                     int alt6=2;
                     int LA6_0 = input.LA(1);
 
@@ -2142,7 +2142,7 @@ public class InternalFXGraphLexer extends Lexer {
                     }
                     switch (alt6) {
                         case 1 :
-                            // ../at.bestsolution.efxclipse.tooling.fxgraph/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/parser/antlr/internal/InternalFXGraph.g:6869:64: ( 'b' | 'B' ) ( 'i' | 'I' )
+                            // ../at.bestsolution.efxclipse.tooling.fxgraph/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/parser/antlr/internal/InternalFXGraph.g:6919:64: ( 'b' | 'B' ) ( 'i' | 'I' )
                             {
                             if ( input.LA(1)=='B'||input.LA(1)=='b' ) {
                                 input.consume();
@@ -2166,7 +2166,7 @@ public class InternalFXGraphLexer extends Lexer {
                             }
                             break;
                         case 2 :
-                            // ../at.bestsolution.efxclipse.tooling.fxgraph/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/parser/antlr/internal/InternalFXGraph.g:6869:84: ( 'l' | 'L' )
+                            // ../at.bestsolution.efxclipse.tooling.fxgraph/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/parser/antlr/internal/InternalFXGraph.g:6919:84: ( 'l' | 'L' )
                             {
                             if ( input.LA(1)=='L'||input.LA(1)=='l' ) {
                                 input.consume();
@@ -2205,11 +2205,11 @@ public class InternalFXGraphLexer extends Lexer {
         try {
             int _type = RULE_INT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.fxgraph/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/parser/antlr/internal/InternalFXGraph.g:6871:10: ( '0' .. '9' ( '0' .. '9' | '_' )* )
-            // ../at.bestsolution.efxclipse.tooling.fxgraph/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/parser/antlr/internal/InternalFXGraph.g:6871:12: '0' .. '9' ( '0' .. '9' | '_' )*
+            // ../at.bestsolution.efxclipse.tooling.fxgraph/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/parser/antlr/internal/InternalFXGraph.g:6921:10: ( '0' .. '9' ( '0' .. '9' | '_' )* )
+            // ../at.bestsolution.efxclipse.tooling.fxgraph/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/parser/antlr/internal/InternalFXGraph.g:6921:12: '0' .. '9' ( '0' .. '9' | '_' )*
             {
             matchRange('0','9'); 
-            // ../at.bestsolution.efxclipse.tooling.fxgraph/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/parser/antlr/internal/InternalFXGraph.g:6871:21: ( '0' .. '9' | '_' )*
+            // ../at.bestsolution.efxclipse.tooling.fxgraph/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/parser/antlr/internal/InternalFXGraph.g:6921:21: ( '0' .. '9' | '_' )*
             loop8:
             do {
                 int alt8=2;
@@ -2258,11 +2258,11 @@ public class InternalFXGraphLexer extends Lexer {
         try {
             int _type = RULE_DECIMAL;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.fxgraph/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/parser/antlr/internal/InternalFXGraph.g:6873:14: ( RULE_INT ( ( 'e' | 'E' ) ( '+' | '-' )? RULE_INT )? ( ( 'b' | 'B' ) ( 'i' | 'I' | 'd' | 'D' ) | ( 'l' | 'L' | 'd' | 'D' | 'f' | 'F' ) )? )
-            // ../at.bestsolution.efxclipse.tooling.fxgraph/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/parser/antlr/internal/InternalFXGraph.g:6873:16: RULE_INT ( ( 'e' | 'E' ) ( '+' | '-' )? RULE_INT )? ( ( 'b' | 'B' ) ( 'i' | 'I' | 'd' | 'D' ) | ( 'l' | 'L' | 'd' | 'D' | 'f' | 'F' ) )?
+            // ../at.bestsolution.efxclipse.tooling.fxgraph/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/parser/antlr/internal/InternalFXGraph.g:6923:14: ( RULE_INT ( ( 'e' | 'E' ) ( '+' | '-' )? RULE_INT )? ( ( 'b' | 'B' ) ( 'i' | 'I' | 'd' | 'D' ) | ( 'l' | 'L' | 'd' | 'D' | 'f' | 'F' ) )? )
+            // ../at.bestsolution.efxclipse.tooling.fxgraph/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/parser/antlr/internal/InternalFXGraph.g:6923:16: RULE_INT ( ( 'e' | 'E' ) ( '+' | '-' )? RULE_INT )? ( ( 'b' | 'B' ) ( 'i' | 'I' | 'd' | 'D' ) | ( 'l' | 'L' | 'd' | 'D' | 'f' | 'F' ) )?
             {
             mRULE_INT(); 
-            // ../at.bestsolution.efxclipse.tooling.fxgraph/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/parser/antlr/internal/InternalFXGraph.g:6873:25: ( ( 'e' | 'E' ) ( '+' | '-' )? RULE_INT )?
+            // ../at.bestsolution.efxclipse.tooling.fxgraph/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/parser/antlr/internal/InternalFXGraph.g:6923:25: ( ( 'e' | 'E' ) ( '+' | '-' )? RULE_INT )?
             int alt10=2;
             int LA10_0 = input.LA(1);
 
@@ -2271,7 +2271,7 @@ public class InternalFXGraphLexer extends Lexer {
             }
             switch (alt10) {
                 case 1 :
-                    // ../at.bestsolution.efxclipse.tooling.fxgraph/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/parser/antlr/internal/InternalFXGraph.g:6873:26: ( 'e' | 'E' ) ( '+' | '-' )? RULE_INT
+                    // ../at.bestsolution.efxclipse.tooling.fxgraph/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/parser/antlr/internal/InternalFXGraph.g:6923:26: ( 'e' | 'E' ) ( '+' | '-' )? RULE_INT
                     {
                     if ( input.LA(1)=='E'||input.LA(1)=='e' ) {
                         input.consume();
@@ -2282,7 +2282,7 @@ public class InternalFXGraphLexer extends Lexer {
                         recover(mse);
                         throw mse;}
 
-                    // ../at.bestsolution.efxclipse.tooling.fxgraph/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/parser/antlr/internal/InternalFXGraph.g:6873:36: ( '+' | '-' )?
+                    // ../at.bestsolution.efxclipse.tooling.fxgraph/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/parser/antlr/internal/InternalFXGraph.g:6923:36: ( '+' | '-' )?
                     int alt9=2;
                     int LA9_0 = input.LA(1);
 
@@ -2315,7 +2315,7 @@ public class InternalFXGraphLexer extends Lexer {
 
             }
 
-            // ../at.bestsolution.efxclipse.tooling.fxgraph/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/parser/antlr/internal/InternalFXGraph.g:6873:58: ( ( 'b' | 'B' ) ( 'i' | 'I' | 'd' | 'D' ) | ( 'l' | 'L' | 'd' | 'D' | 'f' | 'F' ) )?
+            // ../at.bestsolution.efxclipse.tooling.fxgraph/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/parser/antlr/internal/InternalFXGraph.g:6923:58: ( ( 'b' | 'B' ) ( 'i' | 'I' | 'd' | 'D' ) | ( 'l' | 'L' | 'd' | 'D' | 'f' | 'F' ) )?
             int alt11=3;
             int LA11_0 = input.LA(1);
 
@@ -2327,7 +2327,7 @@ public class InternalFXGraphLexer extends Lexer {
             }
             switch (alt11) {
                 case 1 :
-                    // ../at.bestsolution.efxclipse.tooling.fxgraph/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/parser/antlr/internal/InternalFXGraph.g:6873:59: ( 'b' | 'B' ) ( 'i' | 'I' | 'd' | 'D' )
+                    // ../at.bestsolution.efxclipse.tooling.fxgraph/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/parser/antlr/internal/InternalFXGraph.g:6923:59: ( 'b' | 'B' ) ( 'i' | 'I' | 'd' | 'D' )
                     {
                     if ( input.LA(1)=='B'||input.LA(1)=='b' ) {
                         input.consume();
@@ -2351,7 +2351,7 @@ public class InternalFXGraphLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // ../at.bestsolution.efxclipse.tooling.fxgraph/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/parser/antlr/internal/InternalFXGraph.g:6873:87: ( 'l' | 'L' | 'd' | 'D' | 'f' | 'F' )
+                    // ../at.bestsolution.efxclipse.tooling.fxgraph/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/parser/antlr/internal/InternalFXGraph.g:6923:87: ( 'l' | 'L' | 'd' | 'D' | 'f' | 'F' )
                     {
                     if ( input.LA(1)=='D'||input.LA(1)=='F'||input.LA(1)=='L'||input.LA(1)=='d'||input.LA(1)=='f'||input.LA(1)=='l' ) {
                         input.consume();
@@ -2384,10 +2384,10 @@ public class InternalFXGraphLexer extends Lexer {
         try {
             int _type = RULE_ID;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.fxgraph/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/parser/antlr/internal/InternalFXGraph.g:6875:9: ( ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '$' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '$' | '_' | '0' .. '9' )* )
-            // ../at.bestsolution.efxclipse.tooling.fxgraph/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/parser/antlr/internal/InternalFXGraph.g:6875:11: ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '$' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '$' | '_' | '0' .. '9' )*
+            // ../at.bestsolution.efxclipse.tooling.fxgraph/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/parser/antlr/internal/InternalFXGraph.g:6925:9: ( ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '$' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '$' | '_' | '0' .. '9' )* )
+            // ../at.bestsolution.efxclipse.tooling.fxgraph/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/parser/antlr/internal/InternalFXGraph.g:6925:11: ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '$' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '$' | '_' | '0' .. '9' )*
             {
-            // ../at.bestsolution.efxclipse.tooling.fxgraph/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/parser/antlr/internal/InternalFXGraph.g:6875:11: ( '^' )?
+            // ../at.bestsolution.efxclipse.tooling.fxgraph/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/parser/antlr/internal/InternalFXGraph.g:6925:11: ( '^' )?
             int alt12=2;
             int LA12_0 = input.LA(1);
 
@@ -2396,7 +2396,7 @@ public class InternalFXGraphLexer extends Lexer {
             }
             switch (alt12) {
                 case 1 :
-                    // ../at.bestsolution.efxclipse.tooling.fxgraph/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/parser/antlr/internal/InternalFXGraph.g:6875:11: '^'
+                    // ../at.bestsolution.efxclipse.tooling.fxgraph/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/parser/antlr/internal/InternalFXGraph.g:6925:11: '^'
                     {
                     match('^'); 
 
@@ -2414,7 +2414,7 @@ public class InternalFXGraphLexer extends Lexer {
                 recover(mse);
                 throw mse;}
 
-            // ../at.bestsolution.efxclipse.tooling.fxgraph/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/parser/antlr/internal/InternalFXGraph.g:6875:44: ( 'a' .. 'z' | 'A' .. 'Z' | '$' | '_' | '0' .. '9' )*
+            // ../at.bestsolution.efxclipse.tooling.fxgraph/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/parser/antlr/internal/InternalFXGraph.g:6925:44: ( 'a' .. 'z' | 'A' .. 'Z' | '$' | '_' | '0' .. '9' )*
             loop13:
             do {
                 int alt13=2;
@@ -2463,10 +2463,10 @@ public class InternalFXGraphLexer extends Lexer {
         try {
             int _type = RULE_STRING;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.fxgraph/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/parser/antlr/internal/InternalFXGraph.g:6877:13: ( ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' ) )
-            // ../at.bestsolution.efxclipse.tooling.fxgraph/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/parser/antlr/internal/InternalFXGraph.g:6877:15: ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
+            // ../at.bestsolution.efxclipse.tooling.fxgraph/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/parser/antlr/internal/InternalFXGraph.g:6927:13: ( ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' ) )
+            // ../at.bestsolution.efxclipse.tooling.fxgraph/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/parser/antlr/internal/InternalFXGraph.g:6927:15: ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
             {
-            // ../at.bestsolution.efxclipse.tooling.fxgraph/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/parser/antlr/internal/InternalFXGraph.g:6877:15: ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
+            // ../at.bestsolution.efxclipse.tooling.fxgraph/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/parser/antlr/internal/InternalFXGraph.g:6927:15: ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
             int alt16=2;
             int LA16_0 = input.LA(1);
 
@@ -2484,10 +2484,10 @@ public class InternalFXGraphLexer extends Lexer {
             }
             switch (alt16) {
                 case 1 :
-                    // ../at.bestsolution.efxclipse.tooling.fxgraph/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/parser/antlr/internal/InternalFXGraph.g:6877:16: '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"'
+                    // ../at.bestsolution.efxclipse.tooling.fxgraph/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/parser/antlr/internal/InternalFXGraph.g:6927:16: '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"'
                     {
                     match('\"'); 
-                    // ../at.bestsolution.efxclipse.tooling.fxgraph/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/parser/antlr/internal/InternalFXGraph.g:6877:20: ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )*
+                    // ../at.bestsolution.efxclipse.tooling.fxgraph/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/parser/antlr/internal/InternalFXGraph.g:6927:20: ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )*
                     loop14:
                     do {
                         int alt14=3;
@@ -2503,7 +2503,7 @@ public class InternalFXGraphLexer extends Lexer {
 
                         switch (alt14) {
                     	case 1 :
-                    	    // ../at.bestsolution.efxclipse.tooling.fxgraph/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/parser/antlr/internal/InternalFXGraph.g:6877:21: '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' )
+                    	    // ../at.bestsolution.efxclipse.tooling.fxgraph/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/parser/antlr/internal/InternalFXGraph.g:6927:21: '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' )
                     	    {
                     	    match('\\'); 
                     	    if ( input.LA(1)=='\"'||input.LA(1)=='\''||input.LA(1)=='\\'||input.LA(1)=='b'||input.LA(1)=='f'||input.LA(1)=='n'||input.LA(1)=='r'||(input.LA(1)>='t' && input.LA(1)<='u') ) {
@@ -2519,7 +2519,7 @@ public class InternalFXGraphLexer extends Lexer {
                     	    }
                     	    break;
                     	case 2 :
-                    	    // ../at.bestsolution.efxclipse.tooling.fxgraph/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/parser/antlr/internal/InternalFXGraph.g:6877:66: ~ ( ( '\\\\' | '\"' ) )
+                    	    // ../at.bestsolution.efxclipse.tooling.fxgraph/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/parser/antlr/internal/InternalFXGraph.g:6927:66: ~ ( ( '\\\\' | '\"' ) )
                     	    {
                     	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='!')||(input.LA(1)>='#' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFF') ) {
                     	        input.consume();
@@ -2544,10 +2544,10 @@ public class InternalFXGraphLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // ../at.bestsolution.efxclipse.tooling.fxgraph/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/parser/antlr/internal/InternalFXGraph.g:6877:86: '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\''
+                    // ../at.bestsolution.efxclipse.tooling.fxgraph/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/parser/antlr/internal/InternalFXGraph.g:6927:86: '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\''
                     {
                     match('\''); 
-                    // ../at.bestsolution.efxclipse.tooling.fxgraph/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/parser/antlr/internal/InternalFXGraph.g:6877:91: ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )*
+                    // ../at.bestsolution.efxclipse.tooling.fxgraph/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/parser/antlr/internal/InternalFXGraph.g:6927:91: ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )*
                     loop15:
                     do {
                         int alt15=3;
@@ -2563,7 +2563,7 @@ public class InternalFXGraphLexer extends Lexer {
 
                         switch (alt15) {
                     	case 1 :
-                    	    // ../at.bestsolution.efxclipse.tooling.fxgraph/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/parser/antlr/internal/InternalFXGraph.g:6877:92: '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' )
+                    	    // ../at.bestsolution.efxclipse.tooling.fxgraph/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/parser/antlr/internal/InternalFXGraph.g:6927:92: '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' )
                     	    {
                     	    match('\\'); 
                     	    if ( input.LA(1)=='\"'||input.LA(1)=='\''||input.LA(1)=='\\'||input.LA(1)=='b'||input.LA(1)=='f'||input.LA(1)=='n'||input.LA(1)=='r'||(input.LA(1)>='t' && input.LA(1)<='u') ) {
@@ -2579,7 +2579,7 @@ public class InternalFXGraphLexer extends Lexer {
                     	    }
                     	    break;
                     	case 2 :
-                    	    // ../at.bestsolution.efxclipse.tooling.fxgraph/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/parser/antlr/internal/InternalFXGraph.g:6877:137: ~ ( ( '\\\\' | '\\'' ) )
+                    	    // ../at.bestsolution.efxclipse.tooling.fxgraph/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/parser/antlr/internal/InternalFXGraph.g:6927:137: ~ ( ( '\\\\' | '\\'' ) )
                     	    {
                     	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='&')||(input.LA(1)>='(' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFF') ) {
                     	        input.consume();
@@ -2622,12 +2622,12 @@ public class InternalFXGraphLexer extends Lexer {
         try {
             int _type = RULE_ML_COMMENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.fxgraph/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/parser/antlr/internal/InternalFXGraph.g:6879:17: ( '/*' ( options {greedy=false; } : . )* '*/' )
-            // ../at.bestsolution.efxclipse.tooling.fxgraph/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/parser/antlr/internal/InternalFXGraph.g:6879:19: '/*' ( options {greedy=false; } : . )* '*/'
+            // ../at.bestsolution.efxclipse.tooling.fxgraph/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/parser/antlr/internal/InternalFXGraph.g:6929:17: ( '/*' ( options {greedy=false; } : . )* '*/' )
+            // ../at.bestsolution.efxclipse.tooling.fxgraph/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/parser/antlr/internal/InternalFXGraph.g:6929:19: '/*' ( options {greedy=false; } : . )* '*/'
             {
             match("/*"); 
 
-            // ../at.bestsolution.efxclipse.tooling.fxgraph/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/parser/antlr/internal/InternalFXGraph.g:6879:24: ( options {greedy=false; } : . )*
+            // ../at.bestsolution.efxclipse.tooling.fxgraph/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/parser/antlr/internal/InternalFXGraph.g:6929:24: ( options {greedy=false; } : . )*
             loop17:
             do {
                 int alt17=2;
@@ -2652,7 +2652,7 @@ public class InternalFXGraphLexer extends Lexer {
 
                 switch (alt17) {
             	case 1 :
-            	    // ../at.bestsolution.efxclipse.tooling.fxgraph/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/parser/antlr/internal/InternalFXGraph.g:6879:52: .
+            	    // ../at.bestsolution.efxclipse.tooling.fxgraph/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/parser/antlr/internal/InternalFXGraph.g:6929:52: .
             	    {
             	    matchAny(); 
 
@@ -2682,12 +2682,12 @@ public class InternalFXGraphLexer extends Lexer {
         try {
             int _type = RULE_SL_COMMENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.fxgraph/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/parser/antlr/internal/InternalFXGraph.g:6881:17: ( '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )? )
-            // ../at.bestsolution.efxclipse.tooling.fxgraph/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/parser/antlr/internal/InternalFXGraph.g:6881:19: '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )?
+            // ../at.bestsolution.efxclipse.tooling.fxgraph/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/parser/antlr/internal/InternalFXGraph.g:6931:17: ( '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )? )
+            // ../at.bestsolution.efxclipse.tooling.fxgraph/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/parser/antlr/internal/InternalFXGraph.g:6931:19: '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )?
             {
             match("//"); 
 
-            // ../at.bestsolution.efxclipse.tooling.fxgraph/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/parser/antlr/internal/InternalFXGraph.g:6881:24: (~ ( ( '\\n' | '\\r' ) ) )*
+            // ../at.bestsolution.efxclipse.tooling.fxgraph/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/parser/antlr/internal/InternalFXGraph.g:6931:24: (~ ( ( '\\n' | '\\r' ) ) )*
             loop18:
             do {
                 int alt18=2;
@@ -2700,7 +2700,7 @@ public class InternalFXGraphLexer extends Lexer {
 
                 switch (alt18) {
             	case 1 :
-            	    // ../at.bestsolution.efxclipse.tooling.fxgraph/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/parser/antlr/internal/InternalFXGraph.g:6881:24: ~ ( ( '\\n' | '\\r' ) )
+            	    // ../at.bestsolution.efxclipse.tooling.fxgraph/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/parser/antlr/internal/InternalFXGraph.g:6931:24: ~ ( ( '\\n' | '\\r' ) )
             	    {
             	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='\t')||(input.LA(1)>='\u000B' && input.LA(1)<='\f')||(input.LA(1)>='\u000E' && input.LA(1)<='\uFFFF') ) {
             	        input.consume();
@@ -2720,7 +2720,7 @@ public class InternalFXGraphLexer extends Lexer {
                 }
             } while (true);
 
-            // ../at.bestsolution.efxclipse.tooling.fxgraph/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/parser/antlr/internal/InternalFXGraph.g:6881:40: ( ( '\\r' )? '\\n' )?
+            // ../at.bestsolution.efxclipse.tooling.fxgraph/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/parser/antlr/internal/InternalFXGraph.g:6931:40: ( ( '\\r' )? '\\n' )?
             int alt20=2;
             int LA20_0 = input.LA(1);
 
@@ -2729,9 +2729,9 @@ public class InternalFXGraphLexer extends Lexer {
             }
             switch (alt20) {
                 case 1 :
-                    // ../at.bestsolution.efxclipse.tooling.fxgraph/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/parser/antlr/internal/InternalFXGraph.g:6881:41: ( '\\r' )? '\\n'
+                    // ../at.bestsolution.efxclipse.tooling.fxgraph/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/parser/antlr/internal/InternalFXGraph.g:6931:41: ( '\\r' )? '\\n'
                     {
-                    // ../at.bestsolution.efxclipse.tooling.fxgraph/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/parser/antlr/internal/InternalFXGraph.g:6881:41: ( '\\r' )?
+                    // ../at.bestsolution.efxclipse.tooling.fxgraph/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/parser/antlr/internal/InternalFXGraph.g:6931:41: ( '\\r' )?
                     int alt19=2;
                     int LA19_0 = input.LA(1);
 
@@ -2740,7 +2740,7 @@ public class InternalFXGraphLexer extends Lexer {
                     }
                     switch (alt19) {
                         case 1 :
-                            // ../at.bestsolution.efxclipse.tooling.fxgraph/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/parser/antlr/internal/InternalFXGraph.g:6881:41: '\\r'
+                            // ../at.bestsolution.efxclipse.tooling.fxgraph/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/parser/antlr/internal/InternalFXGraph.g:6931:41: '\\r'
                             {
                             match('\r'); 
 
@@ -2772,10 +2772,10 @@ public class InternalFXGraphLexer extends Lexer {
         try {
             int _type = RULE_WS;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.fxgraph/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/parser/antlr/internal/InternalFXGraph.g:6883:9: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
-            // ../at.bestsolution.efxclipse.tooling.fxgraph/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/parser/antlr/internal/InternalFXGraph.g:6883:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
+            // ../at.bestsolution.efxclipse.tooling.fxgraph/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/parser/antlr/internal/InternalFXGraph.g:6933:9: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
+            // ../at.bestsolution.efxclipse.tooling.fxgraph/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/parser/antlr/internal/InternalFXGraph.g:6933:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
             {
-            // ../at.bestsolution.efxclipse.tooling.fxgraph/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/parser/antlr/internal/InternalFXGraph.g:6883:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
+            // ../at.bestsolution.efxclipse.tooling.fxgraph/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/parser/antlr/internal/InternalFXGraph.g:6933:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
             int cnt21=0;
             loop21:
             do {
@@ -2829,8 +2829,8 @@ public class InternalFXGraphLexer extends Lexer {
         try {
             int _type = RULE_ANY_OTHER;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.bestsolution.efxclipse.tooling.fxgraph/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/parser/antlr/internal/InternalFXGraph.g:6885:16: ( . )
-            // ../at.bestsolution.efxclipse.tooling.fxgraph/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/parser/antlr/internal/InternalFXGraph.g:6885:18: .
+            // ../at.bestsolution.efxclipse.tooling.fxgraph/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/parser/antlr/internal/InternalFXGraph.g:6935:16: ( . )
+            // ../at.bestsolution.efxclipse.tooling.fxgraph/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/parser/antlr/internal/InternalFXGraph.g:6935:18: .
             {
             matchAny(); 
 

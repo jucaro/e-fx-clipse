@@ -105,6 +105,7 @@ public class FXGraphSwitch<T> extends Switch<T>
         Element element = (Element)theEObject;
         T result = caseElement(element);
         if (result == null) result = caseSingleValueProperty(element);
+        if (result == null) result = caseFactoryValueElement(element);
         if (result == null) result = caseListValueElement(element);
         if (result == null) result = caseValueProperty(element);
         if (result == null) result = defaultCase(theEObject);
@@ -161,6 +162,13 @@ public class FXGraphSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case FXGraphPackage.FACTORY_VALUE_ELEMENT:
+      {
+        FactoryValueElement factoryValueElement = (FactoryValueElement)theEObject;
+        T result = caseFactoryValueElement(factoryValueElement);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       case FXGraphPackage.LIST_VALUE_ELEMENT:
       {
         ListValueElement listValueElement = (ListValueElement)theEObject;
@@ -191,6 +199,8 @@ public class FXGraphSwitch<T> extends Switch<T>
         SimpleValueProperty simpleValueProperty = (SimpleValueProperty)theEObject;
         T result = caseSimpleValueProperty(simpleValueProperty);
         if (result == null) result = caseSingleValueProperty(simpleValueProperty);
+        if (result == null) result = caseFactoryValueElement(simpleValueProperty);
+        if (result == null) result = caseListValueElement(simpleValueProperty);
         if (result == null) result = caseValueProperty(simpleValueProperty);
         if (result == null) result = defaultCase(theEObject);
         return result;
@@ -486,6 +496,22 @@ public class FXGraphSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseMultiValueProperty(MultiValueProperty object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Factory Value Element</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Factory Value Element</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseFactoryValueElement(FactoryValueElement object)
   {
     return null;
   }

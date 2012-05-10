@@ -10,6 +10,7 @@ import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.Define;
 import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.Element;
 import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.FXGraphFactory;
 import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.FXGraphPackage;
+import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.FactoryValueElement;
 import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.Import;
 import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.IncludeValueProperty;
 import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.ListValueElement;
@@ -132,6 +133,13 @@ public class FXGraphPackageImpl extends EPackageImpl implements FXGraphPackage
    * @generated
    */
   private EClass multiValuePropertyEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass factoryValueElementEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -739,6 +747,16 @@ public class FXGraphPackageImpl extends EPackageImpl implements FXGraphPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  public EClass getFactoryValueElement()
+  {
+    return factoryValueElementEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EClass getListValueElement()
   {
     return listValueElementEClass;
@@ -1159,6 +1177,8 @@ public class FXGraphPackageImpl extends EPackageImpl implements FXGraphPackage
 
     multiValuePropertyEClass = createEClass(MULTI_VALUE_PROPERTY);
 
+    factoryValueElementEClass = createEClass(FACTORY_VALUE_ELEMENT);
+
     listValueElementEClass = createEClass(LIST_VALUE_ELEMENT);
 
     listValuePropertyEClass = createEClass(LIST_VALUE_PROPERTY);
@@ -1242,12 +1262,15 @@ public class FXGraphPackageImpl extends EPackageImpl implements FXGraphPackage
 
     // Add supertypes to classes
     elementEClass.getESuperTypes().add(this.getSingleValueProperty());
+    elementEClass.getESuperTypes().add(this.getFactoryValueElement());
     elementEClass.getESuperTypes().add(this.getListValueElement());
     singleValuePropertyEClass.getESuperTypes().add(this.getValueProperty());
     multiValuePropertyEClass.getESuperTypes().add(this.getValueProperty());
     listValuePropertyEClass.getESuperTypes().add(this.getMultiValueProperty());
     mapValuePropertyEClass.getESuperTypes().add(this.getMultiValueProperty());
     simpleValuePropertyEClass.getESuperTypes().add(this.getSingleValueProperty());
+    simpleValuePropertyEClass.getESuperTypes().add(this.getFactoryValueElement());
+    simpleValuePropertyEClass.getESuperTypes().add(this.getListValueElement());
     referenceValuePropertyEClass.getESuperTypes().add(this.getSingleValueProperty());
     referenceValuePropertyEClass.getESuperTypes().add(this.getListValueElement());
     includeValuePropertyEClass.getESuperTypes().add(this.getSingleValueProperty());
@@ -1291,7 +1314,7 @@ public class FXGraphPackageImpl extends EPackageImpl implements FXGraphPackage
     initEReference(getElement_StaticProperties(), this.getStaticValueProperty(), null, "staticProperties", null, 0, -1, Element.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getElement_DefaultChildren(), this.getElement(), null, "defaultChildren", null, 0, -1, Element.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getElement_Factory(), ecorePackage.getEString(), "factory", null, 0, 1, Element.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getElement_Values(), this.getElement(), null, "values", null, 0, -1, Element.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getElement_Values(), this.getFactoryValueElement(), null, "values", null, 0, -1, Element.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(defineEClass, Define.class, "Define", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getDefine_Element(), this.getElement(), null, "element", null, 0, 1, Define.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1316,6 +1339,8 @@ public class FXGraphPackageImpl extends EPackageImpl implements FXGraphPackage
     initEClass(singleValuePropertyEClass, SingleValueProperty.class, "SingleValueProperty", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
     initEClass(multiValuePropertyEClass, MultiValueProperty.class, "MultiValueProperty", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+    initEClass(factoryValueElementEClass, FactoryValueElement.class, "FactoryValueElement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
     initEClass(listValueElementEClass, ListValueElement.class, "ListValueElement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 

@@ -29,7 +29,7 @@ import org.eclipse.xtext.common.types.JvmTypeReference;
  * @model
  * @generated
  */
-public interface Element extends SingleValueProperty, ListValueElement
+public interface Element extends SingleValueProperty, FactoryValueElement, ListValueElement
 {
   /**
    * Returns the value of the '<em><b>Type</b></em>' containment reference.
@@ -185,7 +185,7 @@ public interface Element extends SingleValueProperty, ListValueElement
 
   /**
    * Returns the value of the '<em><b>Values</b></em>' containment reference list.
-   * The list contents are of type {@link at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.Element}.
+   * The list contents are of type {@link at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.FactoryValueElement}.
    * <!-- begin-user-doc -->
    * <p>
    * If the meaning of the '<em>Values</em>' containment reference list isn't clear,
@@ -197,6 +197,6 @@ public interface Element extends SingleValueProperty, ListValueElement
    * @model containment="true"
    * @generated
    */
-  EList<Element> getValues();
+  EList<FactoryValueElement> getValues();
 
 } // Element

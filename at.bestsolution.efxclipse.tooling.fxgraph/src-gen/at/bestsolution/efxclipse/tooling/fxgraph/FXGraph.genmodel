@@ -60,6 +60,7 @@
     <genClasses ecoreClass="FXGraph.ecore#//ValueProperty"/>
     <genClasses ecoreClass="FXGraph.ecore#//SingleValueProperty"/>
     <genClasses ecoreClass="FXGraph.ecore#//MultiValueProperty"/>
+    <genClasses ecoreClass="FXGraph.ecore#//FactoryValueElement"/>
     <genClasses ecoreClass="FXGraph.ecore#//ListValueElement"/>
     <genClasses ecoreClass="FXGraph.ecore#//ListValueProperty">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference FXGraph.ecore#//ListValueProperty/value"/>

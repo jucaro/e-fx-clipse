@@ -28,7 +28,7 @@ ComponentDefinition:
 Element:
 	type=JvmTypeReference ((('(' value = SimpleValueProperty ')')? ('id' name=ValidID)?) | (('id' name=ValidID)? '{'
 		((properties+=Property | staticProperties+=StaticValueProperty | defaultChildren+=Element) (',' (properties+=Property | staticProperties+=StaticValueProperty | defaultChildren+=Element ))*)?
-	'}') | ( ('id' name=ValidID)? 'createdby' factory=ID '{' values+=Element (',' values+=Element)* '}' ) )
+	'}') | ( ('id' name=ValidID)? 'createdby' factory=ID '{' values+=FactoryValueElement (',' values+=FactoryValueElement)* '}' ) )
 ;
 
 Define:
@@ -59,8 +59,12 @@ MultiValueProperty:
 	ListValueProperty | MapValueProperty
 ;
 
+FactoryValueElement:
+	SimpleValueProperty | Element
+;
+
 ListValueElement:
-	Element | ReferenceValueProperty | IncludeValueProperty
+	Element | ReferenceValueProperty | IncludeValueProperty | SimpleValueProperty
 ;
 
 ListValueProperty:
@@ -121,6 +125,10 @@ QualifiedNameWithWildCard :
 StringValue:
 	value=STRING
 ;
+
+/*LiteralObject:
+	'<' value=SimpleValueProperty '>'
+;*/
 
 terminal REAL returns ecore::EDouble: (('0'..'9')*"."('0'..'9')+);
 terminal SCRIPTLITERAL	:  '#{' -> '}#';

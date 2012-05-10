@@ -131,6 +131,15 @@ public interface FXGraphFactory extends EFactory
   MultiValueProperty createMultiValueProperty();
 
   /**
+   * Returns a new object of class '<em>Factory Value Element</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Factory Value Element</em>'.
+   * @generated
+   */
+  FactoryValueElement createFactoryValueElement();
+
+  /**
    * Returns a new object of class '<em>List Value Element</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->

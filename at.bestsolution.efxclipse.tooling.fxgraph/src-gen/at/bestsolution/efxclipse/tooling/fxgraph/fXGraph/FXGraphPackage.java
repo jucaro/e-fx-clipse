@@ -564,6 +564,25 @@ public interface FXGraphPackage extends EPackage
   int MULTI_VALUE_PROPERTY_FEATURE_COUNT = VALUE_PROPERTY_FEATURE_COUNT + 0;
 
   /**
+   * The meta object id for the '{@link at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.impl.FactoryValueElementImpl <em>Factory Value Element</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.impl.FactoryValueElementImpl
+   * @see at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.impl.FXGraphPackageImpl#getFactoryValueElement()
+   * @generated
+   */
+  int FACTORY_VALUE_ELEMENT = 12;
+
+  /**
+   * The number of structural features of the '<em>Factory Value Element</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FACTORY_VALUE_ELEMENT_FEATURE_COUNT = 0;
+
+  /**
    * The meta object id for the '{@link at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.impl.ListValueElementImpl <em>List Value Element</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -571,7 +590,7 @@ public interface FXGraphPackage extends EPackage
    * @see at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.impl.FXGraphPackageImpl#getListValueElement()
    * @generated
    */
-  int LIST_VALUE_ELEMENT = 12;
+  int LIST_VALUE_ELEMENT = 13;
 
   /**
    * The number of structural features of the '<em>List Value Element</em>' class.
@@ -590,7 +609,7 @@ public interface FXGraphPackage extends EPackage
    * @see at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.impl.FXGraphPackageImpl#getListValueProperty()
    * @generated
    */
-  int LIST_VALUE_PROPERTY = 13;
+  int LIST_VALUE_PROPERTY = 14;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' containment reference list.
@@ -618,7 +637,7 @@ public interface FXGraphPackage extends EPackage
    * @see at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.impl.FXGraphPackageImpl#getMapValueProperty()
    * @generated
    */
-  int MAP_VALUE_PROPERTY = 14;
+  int MAP_VALUE_PROPERTY = 15;
 
   /**
    * The feature id for the '<em><b>Properties</b></em>' containment reference list.
@@ -646,7 +665,7 @@ public interface FXGraphPackage extends EPackage
    * @see at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.impl.FXGraphPackageImpl#getSimpleValueProperty()
    * @generated
    */
-  int SIMPLE_VALUE_PROPERTY = 15;
+  int SIMPLE_VALUE_PROPERTY = 16;
 
   /**
    * The feature id for the '<em><b>String Value</b></em>' attribute.
@@ -710,7 +729,7 @@ public interface FXGraphPackage extends EPackage
    * @see at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.impl.FXGraphPackageImpl#getReferenceValueProperty()
    * @generated
    */
-  int REFERENCE_VALUE_PROPERTY = 16;
+  int REFERENCE_VALUE_PROPERTY = 17;
 
   /**
    * The feature id for the '<em><b>Reference</b></em>' reference.
@@ -738,7 +757,7 @@ public interface FXGraphPackage extends EPackage
    * @see at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.impl.FXGraphPackageImpl#getIncludeValueProperty()
    * @generated
    */
-  int INCLUDE_VALUE_PROPERTY = 17;
+  int INCLUDE_VALUE_PROPERTY = 18;
 
   /**
    * The feature id for the '<em><b>Source</b></em>' reference.
@@ -766,7 +785,7 @@ public interface FXGraphPackage extends EPackage
    * @see at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.impl.FXGraphPackageImpl#getCopyValueProperty()
    * @generated
    */
-  int COPY_VALUE_PROPERTY = 18;
+  int COPY_VALUE_PROPERTY = 19;
 
   /**
    * The feature id for the '<em><b>Reference</b></em>' reference.
@@ -794,7 +813,7 @@ public interface FXGraphPackage extends EPackage
    * @see at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.impl.FXGraphPackageImpl#getControllerHandledValueProperty()
    * @generated
    */
-  int CONTROLLER_HANDLED_VALUE_PROPERTY = 19;
+  int CONTROLLER_HANDLED_VALUE_PROPERTY = 20;
 
   /**
    * The feature id for the '<em><b>Methodname</b></em>' attribute.
@@ -822,7 +841,7 @@ public interface FXGraphPackage extends EPackage
    * @see at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.impl.FXGraphPackageImpl#getScriptHandlerHandledValueProperty()
    * @generated
    */
-  int SCRIPT_HANDLER_HANDLED_VALUE_PROPERTY = 20;
+  int SCRIPT_HANDLER_HANDLED_VALUE_PROPERTY = 21;
 
   /**
    * The feature id for the '<em><b>Functionname</b></em>' attribute.
@@ -850,7 +869,7 @@ public interface FXGraphPackage extends EPackage
    * @see at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.impl.FXGraphPackageImpl#getScriptValueExpression()
    * @generated
    */
-  int SCRIPT_VALUE_EXPRESSION = 21;
+  int SCRIPT_VALUE_EXPRESSION = 22;
 
   /**
    * The feature id for the '<em><b>Sourcecode</b></em>' attribute.
@@ -878,7 +897,7 @@ public interface FXGraphPackage extends EPackage
    * @see at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.impl.FXGraphPackageImpl#getScriptValueReference()
    * @generated
    */
-  int SCRIPT_VALUE_REFERENCE = 22;
+  int SCRIPT_VALUE_REFERENCE = 23;
 
   /**
    * The feature id for the '<em><b>Reference</b></em>' attribute.
@@ -906,7 +925,7 @@ public interface FXGraphPackage extends EPackage
    * @see at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.impl.FXGraphPackageImpl#getLocationValueProperty()
    * @generated
    */
-  int LOCATION_VALUE_PROPERTY = 23;
+  int LOCATION_VALUE_PROPERTY = 24;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -934,7 +953,7 @@ public interface FXGraphPackage extends EPackage
    * @see at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.impl.FXGraphPackageImpl#getResourceValueProperty()
    * @generated
    */
-  int RESOURCE_VALUE_PROPERTY = 24;
+  int RESOURCE_VALUE_PROPERTY = 25;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' containment reference.
@@ -962,7 +981,7 @@ public interface FXGraphPackage extends EPackage
    * @see at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.impl.FXGraphPackageImpl#getBindValueProperty()
    * @generated
    */
-  int BIND_VALUE_PROPERTY = 25;
+  int BIND_VALUE_PROPERTY = 26;
 
   /**
    * The feature id for the '<em><b>Element Reference</b></em>' reference.
@@ -999,7 +1018,7 @@ public interface FXGraphPackage extends EPackage
    * @see at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.impl.FXGraphPackageImpl#getStringValue()
    * @generated
    */
-  int STRING_VALUE = 26;
+  int STRING_VALUE = 27;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -1480,6 +1499,16 @@ public interface FXGraphPackage extends EPackage
    * @generated
    */
   EClass getMultiValueProperty();
+
+  /**
+   * Returns the meta object for class '{@link at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.FactoryValueElement <em>Factory Value Element</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Factory Value Element</em>'.
+   * @see at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.FactoryValueElement
+   * @generated
+   */
+  EClass getFactoryValueElement();
 
   /**
    * Returns the meta object for class '{@link at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.ListValueElement <em>List Value Element</em>}'.
@@ -2230,6 +2259,16 @@ public interface FXGraphPackage extends EPackage
      * @generated
      */
     EClass MULTI_VALUE_PROPERTY = eINSTANCE.getMultiValueProperty();
+
+    /**
+     * The meta object literal for the '{@link at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.impl.FactoryValueElementImpl <em>Factory Value Element</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.impl.FactoryValueElementImpl
+     * @see at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.impl.FXGraphPackageImpl#getFactoryValueElement()
+     * @generated
+     */
+    EClass FACTORY_VALUE_ELEMENT = eINSTANCE.getFactoryValueElement();
 
     /**
      * The meta object literal for the '{@link at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.impl.ListValueElementImpl <em>List Value Element</em>}' class.
