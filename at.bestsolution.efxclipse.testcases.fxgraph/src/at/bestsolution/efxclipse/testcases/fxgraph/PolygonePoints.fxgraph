@@ -16,6 +16,13 @@ component PolygonePoints {
 				points: "0,20,20,40,30,0",
 				fill : "RED"
 			},
+			Polygon {
+				layoutX : 60,
+				layoutY : 10,
+				stroke : "BLUE",
+				points: [0,20,20,40,30,0],
+				fill : "RED"
+			},
 			Rectangle {
 				x : 10,
 				y : 100,
