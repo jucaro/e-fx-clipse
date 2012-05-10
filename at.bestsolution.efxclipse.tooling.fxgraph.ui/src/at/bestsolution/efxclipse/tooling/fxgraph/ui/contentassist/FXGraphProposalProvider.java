@@ -739,7 +739,57 @@ public class FXGraphProposalProvider extends AbstractFXGraphProposalProvider {
 						IFXProperty ownerProperty = fxOwnerClazz.getProperty(property.getName());
 						
 						if (ownerProperty instanceof IFXCollectionProperty) {
-							createCollectionClassProposals((IFXCollectionProperty) ownerProperty, model, context, FXGraphPackage.Literals.LIST_VALUE_PROPERTY__VALUE, acceptor);
+							IFXCollectionProperty cp = (IFXCollectionProperty) ownerProperty;
+							String type = cp.getElementType().getElementName();
+							if( "String".equals(type) ) {
+								ICompletionProposal p = createCompletionProposal("\"\"", new StyledString("\"<String>\""), JFaceResources.getImage(JDTHelper.CLASS_KEY), context);
+							
+								if (p instanceof ConfigurableCompletionProposal) {
+									ConfigurableCompletionProposal ccp = (ConfigurableCompletionProposal) p;
+									ccp.setAdditionalProposalInfo(model);
+									ccp.setHover(new HoverImpl(ownerProperty.getJavaElement()));
+									ccp.setCursorPosition(ccp.getCursorPosition() - 1);
+								}
+								acceptor.accept(p);
+							} else if( "Double".equals(type) ) {
+								ICompletionProposal p = createCompletionProposal("1.0", context);
+
+								if (p instanceof ConfigurableCompletionProposal) {
+									ConfigurableCompletionProposal ccp = (ConfigurableCompletionProposal) p;
+									ccp.setAdditionalProposalInfo(model);
+									ccp.setHover(new HoverImpl(ownerProperty.getJavaElement()));
+								}
+								acceptor.accept(p);
+							} else if( "Integer".equals(type) ) {
+								ICompletionProposal p = createCompletionProposal("1", context);
+
+								if (p instanceof ConfigurableCompletionProposal) {
+									ConfigurableCompletionProposal ccp = (ConfigurableCompletionProposal) p;
+									ccp.setAdditionalProposalInfo(model);
+									ccp.setHover(new HoverImpl(ownerProperty.getJavaElement()));
+								}
+								acceptor.accept(p);
+							} else if( "Boolean".equals(type) ) {
+								ICompletionProposal p = createCompletionProposal("true", context);
+
+								if (p instanceof ConfigurableCompletionProposal) {
+									ConfigurableCompletionProposal ccp = (ConfigurableCompletionProposal) p;
+									ccp.setAdditionalProposalInfo(model);
+									ccp.setHover(new HoverImpl(ownerProperty.getJavaElement()));
+								}
+								acceptor.accept(p);
+								
+								p = createCompletionProposal("false", context);
+
+								if (p instanceof ConfigurableCompletionProposal) {
+									ConfigurableCompletionProposal ccp = (ConfigurableCompletionProposal) p;
+									ccp.setAdditionalProposalInfo(model);
+									ccp.setHover(new HoverImpl(ownerProperty.getJavaElement()));
+								}
+								acceptor.accept(p);
+							} else {
+								createCollectionClassProposals(cp, model, context, FXGraphPackage.Literals.LIST_VALUE_PROPERTY__VALUE, acceptor);
+							}
 						}
 						
 					} catch (JavaModelException e) {
