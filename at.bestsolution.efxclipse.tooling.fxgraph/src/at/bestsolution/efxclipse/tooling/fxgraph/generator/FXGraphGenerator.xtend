@@ -30,6 +30,7 @@ import org.eclipse.xtext.common.types.JvmTypeReference
 import org.eclipse.xtext.generator.IFileSystemAccess
 import org.eclipse.xtext.generator.IGenerator
 import org.eclipse.xtext.xbase.compiler.ImportManager
+import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.SimpleValueProperty
 
 class FXGraphGenerator implements IGenerator {
 	 
@@ -300,6 +301,8 @@ class FXGraphGenerator implements IGenerator {
 				«IF !skipIncludes»
 					<fx:include source="/«(e as IncludeValueProperty).source.fullyQualifiedName.replaceAll("\\.","/")».fxml" />
 				«ENDIF»
+			«ELSEIF e instanceof SimpleValueProperty»
+				«objectLiteral(e as SimpleValueProperty)»
 			«ENDIF»
 		«ENDFOR»
 	'''
