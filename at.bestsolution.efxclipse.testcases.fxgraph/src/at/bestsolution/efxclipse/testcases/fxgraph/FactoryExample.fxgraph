@@ -15,6 +15,13 @@ component FactoryExample {
 					"Hello World extra long", 
 					"Hello World extra extra long"
 				}
+			},
+			ChoiceBox {
+				preview items : FXCollections createdby observableArrayList {
+					String("Hello World"),
+					String("Hello World extra long"), 
+					String("Hello World extra extra long")
+				}
 			}
 		]
 	}

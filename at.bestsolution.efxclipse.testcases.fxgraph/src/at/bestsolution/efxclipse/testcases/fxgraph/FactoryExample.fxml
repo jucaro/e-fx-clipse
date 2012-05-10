@@ -11,6 +11,7 @@
 
 	<children>
 		<ChoiceBox/> 
+		<ChoiceBox/> 
 	</children>
 
 </HBox>
