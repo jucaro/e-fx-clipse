@@ -28,6 +28,7 @@ import org.eclipse.jface.text.ITextHoverExtension;
 import org.eclipse.jface.text.ITextViewer;
 import org.eclipse.jface.text.contentassist.ICompletionProposal;
 import org.eclipse.jface.viewers.StyledString;
+import org.eclipse.swt.graphics.Image;
 import org.eclipse.xtext.Assignment;
 import org.eclipse.xtext.common.types.JvmType;
 import org.eclipse.xtext.common.types.access.IJvmTypeProvider;
@@ -54,11 +55,14 @@ import at.bestsolution.efxclipse.tooling.fxgraph.util.RelativeFileLocator;
 import at.bestsolution.efxclipse.tooling.model.FXPlugin;
 import at.bestsolution.efxclipse.tooling.model.IFXClass;
 import at.bestsolution.efxclipse.tooling.model.IFXCollectionProperty;
+import at.bestsolution.efxclipse.tooling.model.IFXCtrlClass;
+import at.bestsolution.efxclipse.tooling.model.IFXCtrlEventMethod;
 import at.bestsolution.efxclipse.tooling.model.IFXEnumProperty;
 import at.bestsolution.efxclipse.tooling.model.IFXEventHandlerProperty;
 import at.bestsolution.efxclipse.tooling.model.IFXMapProperty;
 import at.bestsolution.efxclipse.tooling.model.IFXObjectProperty;
 import at.bestsolution.efxclipse.tooling.model.IFXPrimitiveProperty;
+import at.bestsolution.efxclipse.tooling.model.Util;
 import at.bestsolution.efxclipse.tooling.model.IFXPrimitiveProperty.Type;
 import at.bestsolution.efxclipse.tooling.model.IFXProperty;
 
@@ -793,12 +797,77 @@ public class FXGraphProposalProvider extends AbstractFXGraphProposalProvider {
 						}
 						
 					} catch (JavaModelException e) {
-						// TODO Auto-generated catch block
-						e.printStackTrace();
+						LOGGER.error("Unable to autocomplete list value", e);
 					}
 				}
 			}
 		}	
+	}
+	
+	@Override
+	public void completeControllerHandledValueProperty_Methodname(EObject model, Assignment assignment, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
+		if( ! model.eResource().getContents().isEmpty() ) {
+			Model m = (Model) model.eResource().getContents().get(0);
+			if( m.getComponentDef() != null ) {
+				if( m.getComponentDef().getController() != null ) {
+					if( model.eContainer() instanceof Property ) {
+						Property property = (Property) model.eContainer();
+						if( property.eContainer() instanceof Element ) {
+							try {
+								Element element = (Element) property.eContainer();
+								IJavaProject javaProject = projectProvider.getJavaProject(element.eResource().getResourceSet());
+								IType ownerType = javaProject.findType(element.getType().getQualifiedName());
+								IFXClass fxOwnerClazz = FXPlugin.getClassmodel().findClass(javaProject, ownerType);
+								IFXProperty ownerProperty = fxOwnerClazz.getProperty(property.getName());
+								
+								if( ownerProperty instanceof IFXEventHandlerProperty ) {
+									IFXEventHandlerProperty p = (IFXEventHandlerProperty) ownerProperty;
+									IType ctrlType = javaProject.findType(m.getComponentDef().getController().getQualifiedName());
+									IFXCtrlClass ctrlClass = FXPlugin.getClassmodel().findCtrlClass(javaProject, ctrlType);
+									for( IFXCtrlEventMethod ctrlMethod : ctrlClass.getAllEventMethods().values() ) {
+										StyledString s = null;
+										if( ! ctrlMethod.hasArgument() ) {
+											s = new StyledString(ctrlMethod.getName()+"()");
+										} else {
+											if( Util.assignable(p.getEventType(), ctrlMethod.getArgumentType()) ) {
+												s = new StyledString(ctrlMethod.getName() + "("+p.getEventTypeAsString(false)+")");
+											}
+										}
+										
+										if( s != null ) {
+											s.append(" - " + ctrlClass.getSimpleName(), StyledString.QUALIFIER_STYLER);
+											Image img = null;
+											
+											switch (ctrlMethod.getVisibility()) {
+											case PUBLIC:
+												img = JFaceResources.getImage(JDTHelper.METHOD_PUBLIC_KEY);
+												break;
+											case PACKAGE:
+												img = JFaceResources.getImage(JDTHelper.METHOD_DEFAULT_KEY);
+												break;
+											case PROTECTED:
+												img = JFaceResources.getImage(JDTHelper.METHOD_PROTECTED_KEY);
+												break;
+											default:
+												img = JFaceResources.getImage(JDTHelper.METHOD_PRIVATE_KEY);
+												break;
+											}
+											
+											ICompletionProposal cp = createCompletionProposal(ctrlMethod.getName(), s, img, context);
+											acceptor.accept(cp);
+										}
+										
+									}
+								}
+								
+							} catch(JavaModelException e) {
+								LOGGER.error("Unable to autocomplete list value", e);
+							}	
+						}
+					}
+				}
+			}
+		}
 	}
 	
 	public static class HoverImpl implements IEObjectHover, ITextHoverExtension {

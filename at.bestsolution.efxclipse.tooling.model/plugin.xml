@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="org.eclipse.jdt.core.compilationParticipant">
+      <compilationParticipant
+            class="at.bestsolution.efxclipse.tooling.model.internal.ModelUpdater"
+            createsProblems="false"
+            id="at.bestsolution.efxclipse.tooling.model.compilationParticipant2"
+            modifiesEnvironment="false">
+      </compilationParticipant>
+   </extension>
+
+</plugin>

@@ -1,7 +1,7 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: Model
-Bundle-SymbolicName: at.bestsolution.efxclipse.tooling.model
+Bundle-SymbolicName: at.bestsolution.efxclipse.tooling.model;singleton:=true
 Bundle-Version: 1.0.0.qualifier
 Bundle-Activator: at.bestsolution.efxclipse.tooling.model.FXPlugin
 Require-Bundle: org.eclipse.core.runtime,
