@@ -44,12 +44,15 @@ import org.eclipse.xtext.ui.editor.contentassist.ICompletionProposalAcceptor;
 import org.eclipse.xtext.ui.editor.hover.IEObjectHover;
 
 import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.BindValueProperty;
+import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.Define;
 import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.Element;
 import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.FXGraphPackage;
 import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.ListValueProperty;
 import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.MapValueProperty;
 import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.Model;
 import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.Property;
+import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.ReferenceValueProperty;
+import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.StaticValueProperty;
 import at.bestsolution.efxclipse.tooling.fxgraph.ui.util.JDTHelper;
 import at.bestsolution.efxclipse.tooling.fxgraph.util.RelativeFileLocator;
 import at.bestsolution.efxclipse.tooling.model.FXPlugin;
@@ -62,9 +65,9 @@ import at.bestsolution.efxclipse.tooling.model.IFXEventHandlerProperty;
 import at.bestsolution.efxclipse.tooling.model.IFXMapProperty;
 import at.bestsolution.efxclipse.tooling.model.IFXObjectProperty;
 import at.bestsolution.efxclipse.tooling.model.IFXPrimitiveProperty;
-import at.bestsolution.efxclipse.tooling.model.Util;
 import at.bestsolution.efxclipse.tooling.model.IFXPrimitiveProperty.Type;
 import at.bestsolution.efxclipse.tooling.model.IFXProperty;
+import at.bestsolution.efxclipse.tooling.model.Util;
 
 import com.google.inject.Inject;
 
@@ -868,6 +871,84 @@ public class FXGraphProposalProvider extends AbstractFXGraphProposalProvider {
 				}
 			}
 		}
+	}
+	
+	@Override
+	public void completeDefine_Element(EObject model, Assignment assignment, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
+		typeProposalProviders.createTypeProposals(this, context, FXGraphPackage.Literals.DEFINE__ELEMENT, acceptor);
+	}
+	
+	@Override
+	public void completeReferenceValueProperty_Reference(EObject model, Assignment assignment, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
+		// TODO Auto-generated method stub
+//		super.completeReferenceValueProperty_Reference(model, assignment, context, acceptor);
+//		System.err.println("Complete");
+//		lookupCrossReference((CrossReference)model, context, acceptor, new Function<IEObjectDescription, ICompletionProposal>() {
+//			
+//			@Override
+//			public ICompletionProposal apply(IEObjectDescription input) {
+//				// TODO Auto-generated method stub
+//				return null;
+//			}
+//		});
+		
+		if( ! model.eResource().getContents().isEmpty() ) {
+			Model m = (Model) model.eResource().getContents().get(0);
+			if( m.getComponentDef() != null) {
+				for( Define d : m.getComponentDef().getDefines() ) {
+					Element element = d.getElement();
+					IJavaProject javaProject = projectProvider.getJavaProject(element.eResource().getResourceSet());
+					try {
+						IType defType = javaProject.findType(element.getType().getQualifiedName());
+						ReferenceValueProperty rp = (ReferenceValueProperty) model;
+						
+						IType targetType = null;
+						if( rp.eContainer() instanceof Property ) {
+							Property p = (Property) rp.eContainer();
+							if( p.eContainer() instanceof Element ) {
+								Element e = (Element) p.eContainer();
+								IType ownerType = javaProject.findType(e.getType().getQualifiedName());
+								IFXClass ownerClass = FXPlugin.getClassmodel().findClass(javaProject, ownerType);
+								IFXProperty ownerProp = ownerClass.getProperty(p.getName());
+								if( ownerProp instanceof IFXObjectProperty ) {
+									targetType = ((IFXObjectProperty) ownerProp).getElementType();
+								}
+							}
+						} else if( rp.eContainer() instanceof StaticValueProperty ) {
+							LOGGER.warn("Unable to extract type for " + rp.eContainer());
+						} else if( rp.eContainer() instanceof ListValueProperty ) {
+							ListValueProperty lvp = (ListValueProperty) rp.eContainer();
+							if( lvp.eContainer() instanceof Property ) {
+								Property p = (Property) lvp.eContainer();
+								if( p.eContainer() instanceof Element ) {
+									Element e = (Element) p.eContainer();
+									IType ownerType = javaProject.findType(e.getType().getQualifiedName());
+									IFXClass ownerClass = FXPlugin.getClassmodel().findClass(javaProject, ownerType);
+									IFXProperty ownerProp = ownerClass.getProperty(p.getName());
+									if( ownerProp instanceof IFXCollectionProperty ) {
+										targetType = ((IFXCollectionProperty) ownerProp).getElementType();
+									}
+								}
+							} else {
+								LOGGER.warn("Unable to extract type for " + rp.eContainer());
+							}
+						}
+						
+						if( targetType != null ) {
+							if( Util.assignable(defType, targetType) ) {
+								StyledString s = new StyledString(d.getElement().getName());
+								s.append(" - " + defType.getElementName(), StyledString.QUALIFIER_STYLER);
+								acceptor.accept(createCompletionProposal(d.getElement().getName(), s, JFaceResources.getImage(JDTHelper.CLASS_KEY), context));
+							}	
+						}
+					} catch (JavaModelException e) {
+						LOGGER.error("Unable to extract define type", e);
+					}
+					
+				}
+			}
+		}
+		
 	}
 	
 	public static class HoverImpl implements IEObjectHover, ITextHoverExtension {
