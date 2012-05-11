@@ -11,6 +11,10 @@ import java.util.Map;
 import java.util.Properties;
 
 import org.apache.log4j.Logger;
+import org.eclipse.core.resources.IResource;
+import org.eclipse.core.resources.IResourceVisitor;
+import org.eclipse.core.runtime.CoreException;
+import org.eclipse.core.runtime.IPath;
 import org.eclipse.emf.common.util.TreeIterator;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EReference;
@@ -18,6 +22,7 @@ import org.eclipse.jdt.core.Flags;
 import org.eclipse.jdt.core.IField;
 import org.eclipse.jdt.core.IJavaElement;
 import org.eclipse.jdt.core.IJavaProject;
+import org.eclipse.jdt.core.IPackageFragmentRoot;
 import org.eclipse.jdt.core.IType;
 import org.eclipse.jdt.core.JavaModelException;
 import org.eclipse.jdt.core.search.IJavaSearchConstants;
@@ -880,18 +885,6 @@ public class FXGraphProposalProvider extends AbstractFXGraphProposalProvider {
 	
 	@Override
 	public void completeReferenceValueProperty_Reference(EObject model, Assignment assignment, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
-		// TODO Auto-generated method stub
-//		super.completeReferenceValueProperty_Reference(model, assignment, context, acceptor);
-//		System.err.println("Complete");
-//		lookupCrossReference((CrossReference)model, context, acceptor, new Function<IEObjectDescription, ICompletionProposal>() {
-//			
-//			@Override
-//			public ICompletionProposal apply(IEObjectDescription input) {
-//				// TODO Auto-generated method stub
-//				return null;
-//			}
-//		});
-		
 		if( ! model.eResource().getContents().isEmpty() ) {
 			Model m = (Model) model.eResource().getContents().get(0);
 			if( m.getComponentDef() != null) {
@@ -944,11 +937,44 @@ public class FXGraphProposalProvider extends AbstractFXGraphProposalProvider {
 					} catch (JavaModelException e) {
 						LOGGER.error("Unable to extract define type", e);
 					}
-					
 				}
 			}
 		}
+	}
+
+	@Override
+	public void completeLocationValueProperty_Value(EObject model, Assignment assignment, final ContentAssistContext context, final ICompletionProposalAcceptor acceptor) {
+		IJavaProject javaProject = projectProvider.getJavaProject(model.eResource().getResourceSet());
 		
+		try {
+			for( IPackageFragmentRoot r : javaProject.getPackageFragmentRoots() ) {
+				if( r.getCorrespondingResource() != null ) {
+					final int count = r.getCorrespondingResource().getProjectRelativePath().segmentCount();
+					r.getCorrespondingResource().accept(new IResourceVisitor() {
+						
+						@Override
+						public boolean visit(IResource resource) throws CoreException {
+							if (resource.getType() == IResource.FOLDER || resource.getType() == IResource.PROJECT) {
+								return true;
+							} else if (resource.getType() == IResource.FILE && !resource.isLinked()) {
+								String extension = resource.getProjectRelativePath().getFileExtension();
+								if( extension.equals("png") || extension.equals("jpg") || extension.equals("gif") ) {
+									IPath p = resource.getProjectRelativePath().removeFirstSegments(count);
+									String prefix = "\"/" + (p.segmentCount() > 1 ?  p.removeLastSegments(1).toString() : p.toString()) + "/" + context.getPrefix();
+									ICompletionProposal proposal = createCompletionProposal("\"/" + p.toString() +"\"", new StyledString("/" + p.toString()), null, getPriorityHelper().getDefaultPriority(), prefix, context);
+									acceptor.accept(proposal);
+								}
+							}
+							
+							return false;
+						}
+					});	
+				}
+			}
+		} catch (CoreException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 	
 	public static class HoverImpl implements IEObjectHover, ITextHoverExtension {
