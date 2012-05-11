@@ -174,112 +174,119 @@ public class LivePreviewPart extends ViewPart {
 	}
 
 	@Override
-	public void createPartControl(Composite parent) {
-		Composite container = new Composite(parent, SWT.NONE);
-		container.setLayout(new GridLayout(3,false));
-		
-		
-		folder = new CTabFolder(container, SWT.BOTTOM|SWT.BORDER);
-		folder.setLayoutData(new GridData(GridData.FILL,GridData.FILL,true,true,3,1));
-		
-		{
-			CTabItem item = new CTabItem(folder, SWT.NONE);
+	public void createPartControl(final Composite parent) {
+		parent.getDisplay().asyncExec(new Runnable() {
 			
-			item.setText("Preview");
-			item.setImage(JFaceResources.getImage(IMAGE_PREVIEW));
-			
-			swtFXContainer = new FXCanvas(folder, SWT.NONE);
-			swtFXContainer.setEnabled(false);
-
-			item.setControl(swtFXContainer);
-			
-			Platform.runLater(new Runnable() {
-				@Override
-				public void run() {
-					initFX(swtFXContainer);
-				}
-			});
-		}
-		
-		{
-			logItem = new CTabItem(folder, SWT.NONE);
-			logItem.setText("Error log");
-			logItem.setImage(JFaceResources.getImage(IMAGE_OK));
-			
-			logStatement = new Text(folder, SWT.MULTI|SWT.V_SCROLL|SWT.H_SCROLL);
-			logStatement.setEditable(false);
-			logItem.setControl(logStatement);
-			
-			Menu m = new Menu(logStatement);
-			logStatement.setMenu(m);
-			MenuItem clearItem = new MenuItem(m, SWT.PUSH);
-			clearItem.setText("Clear Log");
-			clearItem.addSelectionListener(new SelectionAdapter() {
-				@Override
-				public void widgetSelected(SelectionEvent e) {
-					logStatement.setText("");
-				}
-			});
-		}
-		folder.setSelection(0);
-		
-		statusLabelIcon = new Label(container, SWT.NONE);
-		statusLabelIcon.setImage(JFaceResources.getImage(IMAGE_STATUS_NOPREVIEW));
-		
-		statusLabelText = new Label(container, SWT.NONE);
-		statusLabelText.setText(NO_PREVIEW_TEXT);
-		statusLabelText.setLayoutData(new GridData(GridData.FILL_HORIZONTAL));
-		
-		Composite scaleControl = new Composite(container, SWT.NONE);
-		scaleControl.setLayoutData(new GridData(GridData.END,GridData.CENTER,false,false));
-		scaleControl.setLayout(new GridLayout(2,false));
-		
-		Label l = new Label(scaleControl, SWT.NONE);
-		l.setText("Zoom");
-		
-		scale = new Spinner(scaleControl, SWT.BORDER);
-		scale.setMinimum(10);
-		scale.setMaximum(500);
-		scale.setIncrement(10);
-		scale.setSelection(100);
-		scale.addSelectionListener(new SelectionAdapter() {
 			@Override
-			public void widgetSelected(SelectionEvent e) {
-				rootPane.setScaleX(scale.getSelection()/100.0);
-				rootPane.setScaleY(scale.getSelection()/100.0);
-				if( currentFile != null ) {
-					scaleMap.put(currentFile, scale.getSelection());
+			public void run() {
+				Composite container = new Composite(parent, SWT.NONE); 
+				container.setLayout(new GridLayout(3,false));
+				
+				
+				folder = new CTabFolder(container, SWT.BOTTOM|SWT.BORDER);
+				folder.setLayoutData(new GridData(GridData.FILL,GridData.FILL,true,true,3,1));
+				
+				{
+					CTabItem item = new CTabItem(folder, SWT.NONE);
+					
+					item.setText("Preview");
+					item.setImage(JFaceResources.getImage(IMAGE_PREVIEW));
+					
+					swtFXContainer = new FXCanvas(folder, SWT.NONE);
+					swtFXContainer.setEnabled(false);
+
+					item.setControl(swtFXContainer);
+					
+					Platform.runLater(new Runnable() {
+						@Override
+						public void run() {
+							initFX(swtFXContainer);
+						}
+					});
 				}
+				
+				{
+					logItem = new CTabItem(folder, SWT.NONE);
+					logItem.setText("Error log");
+					logItem.setImage(JFaceResources.getImage(IMAGE_OK));
+					
+					logStatement = new Text(folder, SWT.MULTI|SWT.V_SCROLL|SWT.H_SCROLL);
+					logStatement.setEditable(false);
+					logItem.setControl(logStatement);
+					
+					Menu m = new Menu(logStatement);
+					logStatement.setMenu(m);
+					MenuItem clearItem = new MenuItem(m, SWT.PUSH);
+					clearItem.setText("Clear Log");
+					clearItem.addSelectionListener(new SelectionAdapter() {
+						@Override
+						public void widgetSelected(SelectionEvent e) {
+							logStatement.setText("");
+						}
+					});
+				}
+				folder.setSelection(0);
+				
+				statusLabelIcon = new Label(container, SWT.NONE);
+				statusLabelIcon.setImage(JFaceResources.getImage(IMAGE_STATUS_NOPREVIEW));
+				
+				statusLabelText = new Label(container, SWT.NONE);
+				statusLabelText.setText(NO_PREVIEW_TEXT);
+				statusLabelText.setLayoutData(new GridData(GridData.FILL_HORIZONTAL));
+				
+				Composite scaleControl = new Composite(container, SWT.NONE);
+				scaleControl.setLayoutData(new GridData(GridData.END,GridData.CENTER,false,false));
+				scaleControl.setLayout(new GridLayout(2,false));
+				
+				Label l = new Label(scaleControl, SWT.NONE);
+				l.setText("Zoom");
+				
+				scale = new Spinner(scaleControl, SWT.BORDER);
+				scale.setMinimum(10);
+				scale.setMaximum(500);
+				scale.setIncrement(10);
+				scale.setSelection(100);
+				scale.addSelectionListener(new SelectionAdapter() {
+					@Override
+					public void widgetSelected(SelectionEvent e) {
+						rootPane.setScaleX(scale.getSelection()/100.0);
+						rootPane.setScaleY(scale.getSelection()/100.0);
+						if( currentFile != null ) {
+							scaleMap.put(currentFile, scale.getSelection());
+						}
+					}
+				});
+				
+				Action loadController = new Action("",IAction.AS_CHECK_BOX) {
+					@Override
+					public void run() {
+						preference.putBoolean(LivePreviewSynchronizer.PREF_LOAD_CONTROLLER, ! preference.getBoolean(LivePreviewSynchronizer.PREF_LOAD_CONTROLLER, false));
+						try {
+							preference.flush();
+							synchronizer.refreshPreview();
+						} catch (BackingStoreException e) {
+							// TODO Auto-generated catch block
+							e.printStackTrace();
+						}
+					}
+				};
+				loadController.setChecked(preference.getBoolean(LivePreviewSynchronizer.PREF_LOAD_CONTROLLER, false));
+				loadController.setImageDescriptor(JFaceResources.getImageRegistry().getDescriptor(IMAGE_LOAD_CONTROLLER));
+				loadController.setToolTipText("Load the controller");
+				
+				Action refresh = new Action("",JFaceResources.getImageRegistry().getDescriptor(IMAGE_REFRESH)) {
+					@Override
+					public void run() {
+						synchronizer.refreshPreview();
+					}
+				};
+				refresh.setToolTipText("Force a refresh");
+				
+				getViewSite().getActionBars().getToolBarManager().add(refresh);
+				getViewSite().getActionBars().getToolBarManager().add(loadController);
+				parent.layout();
 			}
 		});
-		
-		Action loadController = new Action("",IAction.AS_CHECK_BOX) {
-			@Override
-			public void run() {
-				preference.putBoolean(LivePreviewSynchronizer.PREF_LOAD_CONTROLLER, ! preference.getBoolean(LivePreviewSynchronizer.PREF_LOAD_CONTROLLER, false));
-				try {
-					preference.flush();
-					synchronizer.refreshPreview();
-				} catch (BackingStoreException e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-				}
-			}
-		};
-		loadController.setChecked(preference.getBoolean(LivePreviewSynchronizer.PREF_LOAD_CONTROLLER, false));
-		loadController.setImageDescriptor(JFaceResources.getImageRegistry().getDescriptor(IMAGE_LOAD_CONTROLLER));
-		loadController.setToolTipText("Load the controller");
-		
-		Action refresh = new Action("",JFaceResources.getImageRegistry().getDescriptor(IMAGE_REFRESH)) {
-			@Override
-			public void run() {
-				synchronizer.refreshPreview();
-			}
-		};
-		refresh.setToolTipText("Force a refresh");
-		
-		getViewSite().getActionBars().getToolBarManager().add(refresh);
-		getViewSite().getActionBars().getToolBarManager().add(loadController);
 	}
 	
 	@Override
