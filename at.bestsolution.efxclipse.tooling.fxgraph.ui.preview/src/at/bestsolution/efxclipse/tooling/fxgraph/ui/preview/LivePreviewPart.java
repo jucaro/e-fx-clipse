@@ -257,36 +257,37 @@ public class LivePreviewPart extends ViewPart {
 					}
 				});
 				
-				Action loadController = new Action("",IAction.AS_CHECK_BOX) {
-					@Override
-					public void run() {
-						preference.putBoolean(LivePreviewSynchronizer.PREF_LOAD_CONTROLLER, ! preference.getBoolean(LivePreviewSynchronizer.PREF_LOAD_CONTROLLER, false));
-						try {
-							preference.flush();
-							synchronizer.refreshPreview();
-						} catch (BackingStoreException e) {
-							// TODO Auto-generated catch block
-							e.printStackTrace();
-						}
-					}
-				};
-				loadController.setChecked(preference.getBoolean(LivePreviewSynchronizer.PREF_LOAD_CONTROLLER, false));
-				loadController.setImageDescriptor(JFaceResources.getImageRegistry().getDescriptor(IMAGE_LOAD_CONTROLLER));
-				loadController.setToolTipText("Load the controller");
-				
-				Action refresh = new Action("",JFaceResources.getImageRegistry().getDescriptor(IMAGE_REFRESH)) {
-					@Override
-					public void run() {
-						synchronizer.refreshPreview();
-					}
-				};
-				refresh.setToolTipText("Force a refresh");
-				
-				getViewSite().getActionBars().getToolBarManager().add(refresh);
-				getViewSite().getActionBars().getToolBarManager().add(loadController);
 				parent.layout();
 			}
 		});
+		
+		Action loadController = new Action("",IAction.AS_CHECK_BOX) {
+			@Override
+			public void run() {
+				preference.putBoolean(LivePreviewSynchronizer.PREF_LOAD_CONTROLLER, ! preference.getBoolean(LivePreviewSynchronizer.PREF_LOAD_CONTROLLER, false));
+				try {
+					preference.flush();
+					synchronizer.refreshPreview();
+				} catch (BackingStoreException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+			}
+		};
+		loadController.setChecked(preference.getBoolean(LivePreviewSynchronizer.PREF_LOAD_CONTROLLER, false));
+		loadController.setImageDescriptor(JFaceResources.getImageRegistry().getDescriptor(IMAGE_LOAD_CONTROLLER));
+		loadController.setToolTipText("Load the controller");
+		
+		Action refresh = new Action("",JFaceResources.getImageRegistry().getDescriptor(IMAGE_REFRESH)) {
+			@Override
+			public void run() {
+				synchronizer.refreshPreview();
+			}
+		};
+		refresh.setToolTipText("Force a refresh");
+		
+		getViewSite().getActionBars().getToolBarManager().add(refresh);
+		getViewSite().getActionBars().getToolBarManager().add(loadController);
 	}
 	
 	@Override
