@@ -15,9 +15,8 @@ import java.lang.reflect.InvocationTargetException;
 import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.IConfigurationElement;
 import org.eclipse.core.runtime.IExecutableExtension;
+import org.eclipse.core.runtime.IPath;
 import org.eclipse.core.runtime.IProgressMonitor;
-import org.eclipse.core.runtime.preferences.IEclipsePreferences;
-import org.eclipse.core.runtime.preferences.InstanceScope;
 import org.eclipse.jdt.core.IJavaElement;
 import org.eclipse.jdt.internal.ui.JavaPlugin;
 import org.eclipse.jdt.internal.ui.JavaPluginImages;
@@ -38,8 +37,7 @@ import org.eclipse.ui.IWorkingSet;
 import org.eclipse.ui.PlatformUI;
 import org.eclipse.ui.wizards.newresource.BasicNewProjectResourceWizard;
 
-import at.bestsolution.efxclipse.tooling.jdt.core.internal.JavaFXCorePlugin;
-import at.bestsolution.efxclipse.tooling.jdt.core.internal.JavaFXPreferencesConstants;
+import at.bestsolution.efxclipse.tooling.jdt.core.internal.BuildPathSupport;
 
 @SuppressWarnings("restriction")
 public class JavaFXLibraryProjectWizard extends NewElementWizard implements IExecutableExtension {
@@ -61,10 +59,9 @@ public class JavaFXLibraryProjectWizard extends NewElementWizard implements IExe
 		fFirstPage= pageOne;
 		fSecondPage= pageTwo;
 		
-		IEclipsePreferences pref = InstanceScope.INSTANCE.getNode(JavaFXCorePlugin.PLUGIN_ID);
-		String dir = pref.get(JavaFXPreferencesConstants.JAVAFX_DIR,"");
+		IPath[] paths = BuildPathSupport.getPreferencePaths();
 		
-		if( dir.isEmpty() ) {
+		if( paths == null || paths[0] == null ) {
 			MessageBox box = new MessageBox(PlatformUI.getWorkbench().getActiveWorkbenchWindow().getShell(),SWT.ICON_ERROR);
 			box.setText("JavaFX SDK not configured");
 			box.setMessage("It looks like JavaFX is not configured appropriately. Please configure the SDK location in the Preferences before proceeding.");

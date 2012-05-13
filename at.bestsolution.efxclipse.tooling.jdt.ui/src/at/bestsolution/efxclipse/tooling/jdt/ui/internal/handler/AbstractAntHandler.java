@@ -24,8 +24,6 @@ import org.eclipse.core.resources.IProject;
 import org.eclipse.core.resources.ResourcesPlugin;
 import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.IPath;
-import org.eclipse.core.runtime.preferences.IEclipsePreferences;
-import org.eclipse.core.runtime.preferences.InstanceScope;
 import org.eclipse.jdt.core.IClasspathEntry;
 import org.eclipse.jdt.core.IJavaProject;
 import org.eclipse.jdt.core.JavaCore;
@@ -33,8 +31,7 @@ import org.eclipse.jdt.core.JavaModelException;
 import org.eclipse.swt.widgets.DirectoryDialog;
 import org.eclipse.ui.PlatformUI;
 
-import at.bestsolution.efxclipse.tooling.jdt.core.internal.JavaFXCorePlugin;
-import at.bestsolution.efxclipse.tooling.jdt.core.internal.JavaFXPreferencesConstants;
+import at.bestsolution.efxclipse.tooling.jdt.core.internal.BuildPathSupport;
 
 public abstract class AbstractAntHandler extends AbstractHandler {
 
@@ -42,10 +39,11 @@ public abstract class AbstractAntHandler extends AbstractHandler {
 		Map<String,Object> map = new HashMap<String, Object>();
 		String workbench = ResourcesPlugin.getWorkspace().getRoot().getLocation().toString();
 		
-		IEclipsePreferences pref = InstanceScope.INSTANCE.getNode(JavaFXCorePlugin.PLUGIN_ID);
-		String dir = pref.get(JavaFXPreferencesConstants.JAVAFX_DIR,"");
-		
-		map.put("jfxSdk", properties.getProperty("jfx.build.jfxsdk",dir));
+		IPath[] paths = BuildPathSupport.getPreferencePaths();
+		if( paths != null ) {
+			map.put("jfxjar", paths[0].toFile().getAbsolutePath());
+			map.put("jfxantjar", paths[2].toFile().getAbsolutePath());
+		}
 		
 		if( properties.getProperty("jfx.build.stagingdir") == null ) {
 			DirectoryDialog dialog = new DirectoryDialog(PlatformUI.getWorkbench().getActiveWorkbenchWindow().getShell());

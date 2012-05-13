@@ -61,10 +61,10 @@ class AntTemplate {
 	}
 	
 	def createInitTaskTarget(Map<String,Object> properties) {
-		val sdkPath = properties.get("jfxSdk") as String;
+		val sdkAntPath = properties.get("jfxantjar") as String;
 		'''
 		<target name="init-fx-tasks">
-			<property name="javafx.tools.ant.jar" value="«sdkPath»/tools/ant-javafx.jar"/>
+			<property name="javafx.tools.ant.jar" value="«sdkAntPath»"/>
 			
 			<taskdef resource="com/sun/javafx/tools/ant/antlib.xml"      
 				uri="javafx:com.sun.javafx.tools.ant"
@@ -77,7 +77,7 @@ class AntTemplate {
 		val projectRefs = properties.get("projectRefSourceDirs") as Collection<String>;
 		val externalLibs = properties.get("externalLibs") as Collection<String>;
 		val projectSourceDirs = properties.get("projectSourceDirs") as Collection<String>;
-		val sdkPath = properties.get("jfxSdk") as String;
+		val fxJarPath = properties.get("jfxjar") as String;
 		var encoding = properties.get("projectEncoding") as String;
 		var sourceCompliance = properties.get("sourceCompliance") as String;
 		var targetCompliance = properties.get("targetCompliance") as String;
@@ -116,14 +116,16 @@ class AntTemplate {
 			</copy>
 			«ENDFOR»
 		
-			<javac source="«sourceCompliance»" target="«targetCompliance»" srcdir="build/src" destdir="build/classes"«IF encoding != null» encoding="«encoding»"«ENDIF»>
+			<javac includeantruntime="false" source="«sourceCompliance»" target="«targetCompliance»" srcdir="build/src" destdir="build/classes"«IF encoding != null» encoding="«encoding»"«ENDIF»>
 				<classpath>
 					<fileset dir="build/libs">
 						<include name="*"/>
 					</fileset>
+					«IF fxJarPath != null»
 					<filelist>
-						<file name="«sdkPath»\rt\lib\jfxrt.jar"/>
+						<file name="«fxJarPath»"/>
 					</filelist>
+					«ENDIF»
 				</classpath>
 			</javac>
 			

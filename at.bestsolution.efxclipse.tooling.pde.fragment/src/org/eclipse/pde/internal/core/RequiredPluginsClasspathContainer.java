@@ -283,12 +283,12 @@ public class RequiredPluginsClasspathContainer extends PDEClasspathContainer imp
 					
 					if( c.attributes == null ) {
 						if( c.javaDocLocation != null ) {
-							attributes = new IClasspathAttribute[] {JavaCore.newClasspathAttribute(IClasspathAttribute.JAVADOC_LOCATION_ATTRIBUTE_NAME, c.javaDocLocation.toFile().toURI().toString())};
+							attributes = new IClasspathAttribute[] {JavaCore.newClasspathAttribute(IClasspathAttribute.JAVADOC_LOCATION_ATTRIBUTE_NAME, c.javaDocLocation)};
 						}
 					} else {
 						if( c.javaDocLocation != null ) {
 							attributes = new IClasspathAttribute[c.attributes.length+1];
-							attributes[attributes.length-1] = JavaCore.newClasspathAttribute(IClasspathAttribute.JAVADOC_LOCATION_ATTRIBUTE_NAME, c.javaDocLocation.toFile().toURI().toString());
+							attributes[attributes.length-1] = JavaCore.newClasspathAttribute(IClasspathAttribute.JAVADOC_LOCATION_ATTRIBUTE_NAME, c.javaDocLocation);
 						} else {
 							attributes = new IClasspathAttribute[c.attributes.length];
 						}

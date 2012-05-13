@@ -9,11 +9,11 @@ import org.eclipse.osgi.service.resolver.BundleDescription;
 public interface IClasspathContributor {
 	public static class Contribution {
 		public final IPath jarLocation;
-		public final IPath javaDocLocation;
+		public final String javaDocLocation;
 		public final IPath sourceLocation;
 		public final IClasspathAttribute[] attributes;
 		
-		public Contribution(IPath jarLocation, IPath javaDocLocation, IPath sourceLocation, IClasspathAttribute[] attributes) {
+		public Contribution(IPath jarLocation, String javaDocLocation, IPath sourceLocation, IClasspathAttribute[] attributes) {
 			super();
 			this.jarLocation = jarLocation;
 			this.javaDocLocation = javaDocLocation;
