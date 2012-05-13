@@ -24,7 +24,7 @@ public class BuildPathSupport {
 			
 			IClasspathAttribute[] attributes;
 			IAccessRule[] accessRules= { };
-			if (!javadocLocation.toFile().exists()) {
+			if (javadocLocation == null || !javadocLocation.toFile().exists()) {
 				attributes= new IClasspathAttribute[] { JavaCore.newClasspathAttribute(IClasspathAttribute.JAVADOC_LOCATION_ATTRIBUTE_NAME, WEB_JAVADOC_LOCATION) };
 			} else {
 				attributes= new IClasspathAttribute[] { JavaCore.newClasspathAttribute(IClasspathAttribute.JAVADOC_LOCATION_ATTRIBUTE_NAME, javadocLocation.toFile().toURI().toString()) };
