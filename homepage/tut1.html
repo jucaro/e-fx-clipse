@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html>
+<head>
+<META HTTP-EQUIV="CACHE-CONTROL" CONTENT="NO-CACHE">
+<link rel="stylesheet" href="bootstrap/bootstrap.min.css">
+<link rel="stylesheet" href="bootstrap/assets/css/docs.css">
+<title>e(fx)clipse - JavaFX 2.0 Tooling and Runtime for Eclipse</title>
+</head>
+<body>
+<div class="topbar" data-scrollspy="scrollspy" >
+ <div class="topbar-inner">
+  <div class="container">
+   <a class="brand" href="index.html">e(fx)clipse</a>
+   <ul class="nav">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="install.html">Installation</a></li>
+    <li><a href="fxgraph.html">FXGraph</a></li>
+    <li class="active"><a href="tutorials.html">Tutorials</a></li>
+    <li><a href="releases.html">Releases</a></li>
+    <li><a href="/trac">BugTracker</a></li>
+    <li><a href="https://groups.google.com/forum/?fromgroups#!forum/efxclipse">Forum</a></li>
+   </ul>
+  </div>
+ </div>
+</div>
+
+<header class="jumbotron masthead" id="overview">
+ <div class="inner">
+  <div class="container">
+   <h1>e(fx)clipse, from BestSolution.at</h1>
+   <p class="lead">
+     JavaFX 2.0 Tooling and Runtime for Eclipse and OSGi
+   </p>
+   </div>
+ </div>
+</header>
+
+<div class="container">
+ <section id="sdk-install">
+  <div class="page-header">
+   <h1>Configure as external SDK <small>Windows Users or Preview SDK zips</small></h1>
+  </div>
+  <div>
+   <div class="span16">
+   <p>
+    In cases where the JavaFX SDK is installed not as part of the JDK (e.g. on windows even
+    with JDK-7) or if you want to use a preview SDK provided as zip or through an extra installer
+   </p>
+   </div>
+  </div>
+  <div class="row">
+  	<div class="span1">
+  	1.
+  	</div>
+  	<div class="span7">
+     <ul class="media-grid">
+      <li>
+       <a>
+        <img class="thumbnail" src="tut1/step_1_sdk.png" />
+       </a>
+      </li>
+     </ul>
+    </div>
+    <div class="span8">
+     <p>
+      Open Window &gt; Preferences 
+     </p>
+    </div>
+  </div>
+  <div class="row">
+  	<div class="span1">
+  	2.
+  	</div>
+  	<div class="span7">
+     <ul class="media-grid">
+      <li>
+       <a>
+        <img class="thumbnail" src="tut1/step_2_sdk.png" />
+       </a>
+      </li>
+     </ul>
+    </div>
+    <div class="span8">
+     <p>
+      Open "JavaFX" preference page 
+     </p>
+    </div>
+  </div>
+  <div class="row">
+  	<div class="span1">
+  	3.
+  	</div>
+  	<div class="span7">
+     <ul class="media-grid">
+      <li>
+       <a>
+        <img class="thumbnail" src="tut1/step_3_sdk.png" />
+       </a>
+      </li>
+     </ul>
+    </div>
+    <div class="span8">
+     <p>
+      Select browse button and navigate to the SDK-Root-Directory (e.g. C:/Program Files (x86)/Oracle/JavaFX 2.1 SDK for the win32 32bit install).<br>
+      <b>Make sure the SDK matches the bitness of the JDK Eclipse is running in!</b>
+     </p>
+    </div>
+  </div>
+  <div class="row">
+  	<div class="span1">
+  	4.
+  	</div>
+  	<div class="span7">
+     <ul class="media-grid">
+      <li>
+       <a>
+        <img class="thumbnail" src="tut1/step_4_sdk.png" />
+       </a>
+      </li>
+     </ul>
+    </div>
+    <div class="span8">
+     <p>
+      Select Ok. You are now ready to create your <a href="tut2.html">first JavaFX application</a>
+     </p>
+    </div>
+  </div>
+ </section>
+</div>
+
+<div class="container">
+ <section id="jdk-install">
+  <div class="page-header">
+   <h1>Configure as part of JDK (since 0.0.14 only) <small>MacOS-X users with JDK-7</small></h1>
+  </div>
+  <div class="span16">
+    <p>
+    For installations where the JavaFX-Artifacts are installed in the JDK-Directory structure
+    this easy setup option can be used. Currently this option is only available to Mac-OS-X users who use 
+    &gt;= JDK-7u4
+    </p>
+  </div>
+
+  <div class="row">
+  	<div class="span1">
+  	1.
+  	</div>
+  	<div class="span7">
+     <ul class="media-grid">
+      <li>
+       <a>
+        <img class="thumbnail" src="tut1/step_1_jdk.png" />
+       </a>
+      </li>
+     </ul>
+    </div>
+    <div class="span8">
+     <p>
+      Open Eclipse &gt; Preferences ...
+     </p>
+    </div>
+  </div>
+  <div class="row">
+  	<div class="span1">
+  	2.
+  	</div>
+  	<div class="span7">
+     <ul class="media-grid">
+      <li>
+       <a>
+        <img class="thumbnail" src="tut1/step_2_jdk.png" />
+       </a>
+      </li>
+     </ul>
+    </div>
+    <div class="span8">
+     <p>
+      Ensure that JDK Built-in is selected (which should be the default for Mac)
+     </p>
+    </div>
+  </div>
+ </section>
+</div>
+
+<footer class="footer">
+ <div class="container">
+  <p class="pull-right">
+   <a href="#">Back to top</a>
+  </p>
+  <p>
+   Created by <a target="_blank" href="http://www.bestsolution.at">BestSolution.at</a> with use of <a target="_blank" href="http://twitter.github.com/bootstrap/">Bootstrap</a> from twitter.
+  </p>
+ </div>
+</footer>
+
+</body>
+</html>
