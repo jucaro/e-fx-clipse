@@ -33,6 +33,7 @@ import org.eclipse.osgi.framework.adaptor.ClassLoaderDelegate;
 import org.eclipse.osgi.framework.log.FrameworkLog;
 import org.eclipse.osgi.internal.baseadaptor.DefaultClassLoader;
 import org.eclipse.osgi.service.datalocation.Location;
+import org.eclipse.osgi.service.environment.Constants;
 import org.eclipse.osgi.service.urlconversion.URLConverter;
 import org.osgi.framework.Bundle;
 import org.osgi.framework.BundleContext;
@@ -396,8 +397,6 @@ public class FXClassLoader implements ClassLoadingHook, AdaptorHook {
 		}
 
 		private static URLClassLoader createClassloader(ClassLoader parent, ReflectivePreferenceService prefService, PackageAdmin admin, BaseData bundledata, BundleContext context) throws Exception {
-			String osname = System.getProperty("os.name").toLowerCase();
-
 			URLClassLoader loader = createClassLoaderForIDE(parent, prefService);
 			if (loader != null) {
 				return loader;
@@ -417,19 +416,24 @@ public class FXClassLoader implements ClassLoadingHook, AdaptorHook {
 			if (loader != null) {
 				return loader;
 			}
-
-			if (osname.indexOf("mac") != -1) {
-				String installPath = System.getenv().get("JAVAFX_HOME");
-				if (installPath != null) {
-					File f = new File(installPath + "/lib/jfxrt.jar");
-					if (f.exists()) {
-						URL url = f.getCanonicalFile().toURI().toURL();
-						return new URLClassLoader(new URL[] { url }, parent);
-					} else {
-						throw new IllegalStateException("Could not locate lib/jfxrt.jar in the installation path '" + installPath + "'");
-					}
+			
+			if (Constants.OS_MACOSX.equals(context.getProperty("osgi.os"))) {
+				File javaHome; 
+				try {
+					javaHome= new File (System.getProperty("java.home")).getCanonicalFile(); //$NON-NLS-1$
+				} catch (IOException e) {
+					throw new IllegalStateException("Unable to locate java home", e);
+				}
+				if (!javaHome.exists()) {
+					throw new IllegalStateException("The java home '"+javaHome.getAbsolutePath()+"' does not exits");
+				}
+				
+				File jarFile = new File(new File(javaHome.getAbsolutePath(),"lib"),"jfxrt.jar");
+				if( jarFile.exists() ) {
+					URL url = jarFile.getCanonicalFile().toURI().toURL();
+					return new URLClassLoader(new URL[] { url }, parent);
 				} else {
-					throw new IllegalStateException("Could not find a JavaFX 2.0 Installation. Environment variable JAVAFX_HOME is not set.");
+					throw new IllegalStateException("The javafx.jar not found at '"+jarFile.getAbsolutePath()+"'");
 				}
 			} else {
 				Version minVersion = bundledata.getVersion();
@@ -482,7 +486,10 @@ public class FXClassLoader implements ClassLoadingHook, AdaptorHook {
 		@Override
 		public Class<?> findLocalClass(String classname) throws ClassNotFoundException {
 			try {
-				return fxClassLoader.loadClass(classname);
+				System.err.println("Loading file: " + classname);
+				Class<?> cl = fxClassLoader.loadClass(classname);
+//				System.err.println("Class: " + cl);
+				return cl;
 			} catch (ClassNotFoundException e) {
 				return super.findLocalClass(classname);
 			} catch (NoClassDefFoundError e) {

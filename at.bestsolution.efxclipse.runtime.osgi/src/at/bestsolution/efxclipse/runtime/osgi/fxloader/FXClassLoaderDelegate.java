@@ -13,7 +13,8 @@ import org.eclipse.osgi.framework.adaptor.ClassLoaderDelegateHook;
  * See http://javafx-jira.kenai.com/browse/RT-20883
  */
 public class FXClassLoaderDelegate implements ClassLoaderDelegateHook {
-
+	private boolean flag;
+	
 	@Override
 	public Class<?> preFindClass(String name, BundleClassLoader classLoader, BundleData data) throws ClassNotFoundException {
 		return null;
@@ -22,10 +23,15 @@ public class FXClassLoaderDelegate implements ClassLoaderDelegateHook {
 	@Override
 	public Class<?> postFindClass(String name, BundleClassLoader classLoader, BundleData data) throws ClassNotFoundException {
 		if ("org.eclipse.swt".equals(data.getSymbolicName())) {
-			if (FXClassLoader.LOADER != null && name.startsWith("com.sun.glass")) {
+			if (FXClassLoader.LOADER != null && name.startsWith("com.sun.glass") && !flag) {
 				try {
+					// Avoid endless loop
+					flag = true;
 					return FXClassLoader.LOADER.loadClass(name);
 				} catch (Throwable t) {
+					t.printStackTrace();
+				} finally {
+					flag = false;
 				}
 			}
 		}
