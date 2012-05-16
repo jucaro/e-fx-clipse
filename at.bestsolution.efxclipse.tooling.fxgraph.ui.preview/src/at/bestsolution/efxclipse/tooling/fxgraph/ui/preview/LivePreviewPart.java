@@ -347,24 +347,6 @@ public class LivePreviewPart extends ViewPart {
 				
 				try {
 					currentFile = contentData.filePath;
-//					Scene scene = rootPane.getScene();
-//
-//					rootPane.getChildren().clear();
-//					scene.getStylesheets().clear();
-//					
-//					if( scaleMap.containsKey(currentFile) ) {
-//						int value = scaleMap.get(currentFile).intValue();
-//						scale.setSelection(value);
-//						
-//						rootPane.setScaleX(value/100.0);
-//						rootPane.setScaleY(value/100.0);
-//						
-//					} else {
-//						scale.setSelection(100);
-//						rootPane.setScaleX(1);
-//						rootPane.setScaleY(1);
-//					}
-					
 					loader.setStaticLoad(!preference.getBoolean(LivePreviewSynchronizer.PREF_LOAD_CONTROLLER, false));
 					loader.setLocation(contentData.relativePath);
 					
