@@ -9,15 +9,13 @@ import org.eclipse.jdt.core.IMethod;
 import org.eclipse.jdt.core.IType;
 import org.eclipse.jdt.core.JavaModelException;
 import org.eclipse.jdt.core.Signature;
-import org.osgi.service.log.LogService;
 
 import at.bestsolution.efxclipse.tooling.model.IFXPrimitiveProperty.Type;
-import at.bestsolution.efxclipse.tooling.model.FXPlugin;
 import at.bestsolution.efxclipse.tooling.model.IFXProperty;
 import at.bestsolution.efxclipse.tooling.model.internal.FXClass;
+import at.bestsolution.efxclipse.tooling.model.internal.FXCollectionProperty;
 import at.bestsolution.efxclipse.tooling.model.internal.FXEnumProperty;
 import at.bestsolution.efxclipse.tooling.model.internal.FXEventHandlerProperty;
-import at.bestsolution.efxclipse.tooling.model.internal.FXCollectionProperty;
 import at.bestsolution.efxclipse.tooling.model.internal.FXMapProperty;
 import at.bestsolution.efxclipse.tooling.model.internal.FXObjectPoperty;
 import at.bestsolution.efxclipse.tooling.model.internal.FXPrimitiveProperty;
@@ -34,29 +32,28 @@ public class PropertiesUtil {
 		
 		Map<String,IMethod> beanProperties = new HashMap<String, IMethod>();
 		
-
-//FIXME Need to implement builder support
-//		String builder = fxClass.getType().getFullyQualifiedName() + "Builder";
-//		IType builderType = fxClass.getJavaProject().findType(builder);
-//		if( builderType != null ) {
-//			for( IMethod m : builderType.getMethods() ) {
-//				// Only public and none static methods
-//				if( ! Flags.isPublic(m.getFlags()) || Flags.isStatic(m.getFlags()) ) {
-//					continue;
-//				}
-//				
-//				String name = m.getElementName();
-//				
-//				// omit the build method
-//				if( "build".equals(name) ) {
-//					continue;
-//				}
-//				
-//				if( m.getParameterNames().length == 1 ) {
-//					beanProperties.put(name, m);	
-//				}
-//			}
-//		}
+		
+		String builder = fxClass.getType().getFullyQualifiedName() + "Builder";
+		IType builderType = fxClass.getJavaProject().findType(builder);
+		if( builderType != null ) {
+			for( IMethod m : builderType.getMethods() ) {
+				// Only public and none static methods
+				if( ! Flags.isPublic(m.getFlags()) || Flags.isStatic(m.getFlags()) ) {
+					continue;
+				}
+				
+				String name = m.getElementName();
+				
+				// omit the build method
+				if( "build".equals(name) ) {
+					continue;
+				}
+				
+				if( m.getParameterNames().length == 1 ) {
+					beanProperties.put(name, m);	
+				}
+			}
+		}
 		
 		for( IMethod m : fxClass.getType().getMethods() ) {
 			// Only public and none static methods
