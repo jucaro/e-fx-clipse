@@ -486,9 +486,7 @@ public class FXClassLoader implements ClassLoadingHook, AdaptorHook {
 		@Override
 		public Class<?> findLocalClass(String classname) throws ClassNotFoundException {
 			try {
-				System.err.println("Loading file: " + classname);
 				Class<?> cl = fxClassLoader.loadClass(classname);
-//				System.err.println("Class: " + cl);
 				return cl;
 			} catch (ClassNotFoundException e) {
 				return super.findLocalClass(classname);
