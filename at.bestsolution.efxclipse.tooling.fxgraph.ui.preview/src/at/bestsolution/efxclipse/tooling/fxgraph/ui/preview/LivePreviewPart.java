@@ -19,6 +19,7 @@ import java.util.Map;
 import java.util.Map.Entry;
 import java.util.Properties;
 
+import javafx.application.ConditionalFeature;
 import javafx.application.Platform;
 import javafx.embed.swt.FXCanvas;
 import javafx.fxml.FXMLLoader;
@@ -410,7 +411,7 @@ public class LivePreviewPart extends ViewPart {
 							rootPane_new = scene.getRoot();
 						} else {
 							rootPane_new = (Parent) root;
-							scene = new Scene(rootPane_new);
+							scene = new Scene(rootPane_new,10000,10000,Platform.isSupported(ConditionalFeature.SCENE3D));
 						}
 						
 						if( scaleMap.containsKey(currentFile) ) {
