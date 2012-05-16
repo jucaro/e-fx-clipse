@@ -5,6 +5,9 @@ import org.eclipse.jdt.core.IMemberValuePair;
 import org.eclipse.jdt.core.IType;
 import org.eclipse.jdt.core.JavaModelException;
 
+import at.bestsolution.efxclipse.tooling.model.IFXPrimitiveProperty;
+import at.bestsolution.efxclipse.tooling.model.IFXPrimitiveProperty.Type;
+
 public class Util {
 	@SuppressWarnings("unchecked")
 	public static <R> R getAnnotationMemberValue(IAnnotation annotation, String name) throws JavaModelException {
@@ -24,6 +27,13 @@ public class Util {
 		// no need to resolve it is already an FQN
 		if( name.contains(".") ) {
 			return name;
+		}
+		
+		// This is a primitive type
+		for( Type t : IFXPrimitiveProperty.Type.values() ) {
+			if( t.jvmType().equals(name) ) {
+				return null;
+			}
 		}
 		
 		String[][] parts = referenceType.resolveType(name);

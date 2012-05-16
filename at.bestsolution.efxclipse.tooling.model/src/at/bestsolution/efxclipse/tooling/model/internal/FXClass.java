@@ -26,6 +26,7 @@ public class FXClass implements IFXClass {
 	private int state = 0;
 	private IFXProperty defaultProperty;
 	private Map<String,IFXProperty> properties;
+	private Map<String, IFXProperty> staticProperties;
 	
 	public FXClass(IJavaProject jp, IType type) {
 		this.type = type;
@@ -110,5 +111,33 @@ public class FXClass implements IFXClass {
 			}
 		}
 		return Collections.unmodifiableMap(properties);
+	}
+	
+	@Override
+	public Map<String, IFXProperty> getAllStaticProperties() {
+		Map<String, IFXProperty> rv = new HashMap<String, IFXProperty>();
+		if( superClass != null ) {
+			rv.putAll(superClass.getAllStaticProperties());
+		}
+		rv.putAll(getLocalStaticProperties());
+		return Collections.unmodifiableMap(rv);
+	}
+	
+	@Override
+	public Map<String, IFXProperty> getLocalStaticProperties() {
+		if( staticProperties == null ) {
+			try {
+				staticProperties = resolveStaticProperties(this);
+			} catch (JavaModelException e) {
+				FXPlugin.getLogger().log(LogService.LOG_ERROR, "Unable to static retrieve properties of '"+type.getFullyQualifiedName()+"'", e);
+			}
+		}
+		return Collections.unmodifiableMap(staticProperties);
+	}
+	
+	@Override
+	public IFXProperty getStaticProperty(String name) {
+		Map<String, IFXProperty> map = getLocalStaticProperties();
+		return map.get(name);
 	}
 }

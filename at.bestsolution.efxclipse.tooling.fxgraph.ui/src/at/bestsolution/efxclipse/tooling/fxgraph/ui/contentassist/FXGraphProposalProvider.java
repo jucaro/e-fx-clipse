@@ -18,6 +18,7 @@ import org.eclipse.core.runtime.IPath;
 import org.eclipse.emf.common.util.TreeIterator;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EReference;
+import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.jdt.core.Flags;
 import org.eclipse.jdt.core.IField;
 import org.eclipse.jdt.core.IJavaElement;
@@ -135,10 +136,6 @@ public class FXGraphProposalProvider extends AbstractFXGraphProposalProvider {
 		}
 	}
 	
-	// private int getDefaultChildrenProposalsPriority() {
-	// return getPriorityHelper().getDefaultPriority();
-	// }
-
 	private int getPropertiesProposalsProposals() {
 		return getPriorityHelper().getDefaultPriority() + 1;
 	}
@@ -226,7 +223,7 @@ public class FXGraphProposalProvider extends AbstractFXGraphProposalProvider {
 
 	}
 
-	private void completeElement_PropertiesProposals(IFXProperty prop, EObject model, ContentAssistContext context, EReference typeReference, ICompletionProposalAcceptor acceptor) {
+	private void completeElement_PropertiesProposals(IFXProperty prop, EObject model, ContentAssistContext context, EStructuralFeature typeReference, ICompletionProposalAcceptor acceptor) {
 		if (prop instanceof IFXCollectionProperty) {
 			createCollectionPropnameProposals((IFXCollectionProperty) prop, model, context, typeReference, acceptor);
 		} else if (prop instanceof IFXMapProperty) {
@@ -244,7 +241,7 @@ public class FXGraphProposalProvider extends AbstractFXGraphProposalProvider {
 		}
 	}
 
-	private void createCollectionPropnameProposals(IFXCollectionProperty prop, EObject model, ContentAssistContext context, EReference typeReference, ICompletionProposalAcceptor acceptor) {
+	private void createCollectionPropnameProposals(IFXCollectionProperty prop, EObject model, ContentAssistContext context, EStructuralFeature typeReference, ICompletionProposalAcceptor acceptor) {
 		ICompletionProposal p;
 		if (prop.isSetable()) {
 			StyledString s = new StyledString(prop.getName() + " : " + prop.getCollectionAsString());
@@ -269,7 +266,7 @@ public class FXGraphProposalProvider extends AbstractFXGraphProposalProvider {
 		acceptor.accept(p);
 	}
 
-	private void createMapPropnameProposals(IFXMapProperty prop, EObject model, ContentAssistContext context, EReference typeReference, ICompletionProposalAcceptor acceptor) {
+	private void createMapPropnameProposals(IFXMapProperty prop, EObject model, ContentAssistContext context, EStructuralFeature typeReference, ICompletionProposalAcceptor acceptor) {
 		StyledString s = new StyledString(prop.getName() + " : {}");
 		s.append(" - " + prop.getFXClass().getSimpleName(), StyledString.QUALIFIER_STYLER);
 		ICompletionProposal p = createCompletionProposal(prop.getName() + " : ", s, JFaceResources.getImage(JDTHelper.MAP_KEY), getPropertiesProposalsProposals(), context.getPrefix(), context);
@@ -283,7 +280,7 @@ public class FXGraphProposalProvider extends AbstractFXGraphProposalProvider {
 		acceptor.accept(p);
 	}
 
-	private void createEnumPropnameProposals(IFXEnumProperty prop, EObject model, ContentAssistContext context, EReference typeReference, ICompletionProposalAcceptor acceptor) {
+	private void createEnumPropnameProposals(IFXEnumProperty prop, EObject model, ContentAssistContext context, EStructuralFeature typeReference, ICompletionProposalAcceptor acceptor) {
 		StyledString s = new StyledString(prop.getName() + " : " + prop.getEnumTypeAsString(false));
 		s.append(" - " + prop.getFXClass().getSimpleName(), StyledString.QUALIFIER_STYLER);
 		ICompletionProposal p = createCompletionProposal(prop.getName() + " : ", s, JFaceResources.getImage(JDTHelper.FIELD_KEY), getPropertiesProposalsProposals(), context.getPrefix(), context);
@@ -297,7 +294,7 @@ public class FXGraphProposalProvider extends AbstractFXGraphProposalProvider {
 		acceptor.accept(p);
 	}
 
-	private void createEventHandlerPropnameProposals(IFXEventHandlerProperty prop, EObject model, ContentAssistContext context, EReference typeReference, ICompletionProposalAcceptor acceptor) {
+	private void createEventHandlerPropnameProposals(IFXEventHandlerProperty prop, EObject model, ContentAssistContext context, EStructuralFeature typeReference, ICompletionProposalAcceptor acceptor) {
 		StyledString s = new StyledString(prop.getName() + " : " + prop.getEventTypeAsString(false));
 		s.append(" - " + prop.getFXClass().getSimpleName(), StyledString.QUALIFIER_STYLER);
 		ICompletionProposal p = createCompletionProposal(prop.getName() + " : ", s, JFaceResources.getImage(JDTHelper.EVENT_KEY), getPropertiesProposalsProposals(), context.getPrefix(), context);
@@ -311,7 +308,7 @@ public class FXGraphProposalProvider extends AbstractFXGraphProposalProvider {
 		acceptor.accept(p);
 	}
 
-	private void createObjectPropnameProposals(IFXObjectProperty prop, EObject model, ContentAssistContext context, EReference typeReference, ICompletionProposalAcceptor acceptor) {
+	private void createObjectPropnameProposals(IFXObjectProperty prop, EObject model, ContentAssistContext context, EStructuralFeature typeReference, ICompletionProposalAcceptor acceptor) {
 		StyledString s = new StyledString(prop.getName() + " : " + prop.getElementTypeAsString(false));
 		s.append(" - " + prop.getFXClass().getSimpleName(), StyledString.QUALIFIER_STYLER);
 		ICompletionProposal p = createCompletionProposal(prop.getName() + " : ", s, JFaceResources.getImage(JDTHelper.FIELD_KEY), getPropertiesProposalsProposals(), context.getPrefix(), context);
@@ -325,7 +322,7 @@ public class FXGraphProposalProvider extends AbstractFXGraphProposalProvider {
 		acceptor.accept(p);
 	}
 
-	private void createPrimitivePropnameProposals(IFXPrimitiveProperty prop, EObject model, ContentAssistContext context, EReference typeReference, ICompletionProposalAcceptor acceptor) {
+	private void createPrimitivePropnameProposals(IFXPrimitiveProperty prop, EObject model, ContentAssistContext context, EStructuralFeature typeReference, ICompletionProposalAcceptor acceptor) {
 		String typeName;
 		String proposalValue = prop.getName() + " : ";
 		switch (prop.getType()) {
@@ -377,7 +374,6 @@ public class FXGraphProposalProvider extends AbstractFXGraphProposalProvider {
 
 	@Override
 	public void completeProperty_Value(EObject model, Assignment assignment, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
-		Object ownerElement;
 		Property prop;
 		
 		if( model instanceof Property ) {
@@ -391,9 +387,7 @@ public class FXGraphProposalProvider extends AbstractFXGraphProposalProvider {
 			return;
 		}
 		
-		ownerElement = (Element) prop.eContainer();
-		
-		if (ownerElement instanceof Element) {
+		if (prop.eContainer() instanceof Element) {
 			Element el = (Element) prop.eContainer();
 
 			try {
@@ -456,74 +450,24 @@ public class FXGraphProposalProvider extends AbstractFXGraphProposalProvider {
 			acceptor.accept(p);
 			break;
 		}
-		case BYTE: {
-			ICompletionProposal p = createCompletionProposal("1", context);
-
-			if (p instanceof ConfigurableCompletionProposal) {
-				ConfigurableCompletionProposal cp = (ConfigurableCompletionProposal) p;
-				cp.setAdditionalProposalInfo(model);
-				cp.setHover(new HoverImpl(prop.getJavaElement()));
-			}
-			acceptor.accept(p);
-			break;
-		}
-		case CHAR: {
-			ICompletionProposal p = createCompletionProposal("\"a\"", context);
-
-			if (p instanceof ConfigurableCompletionProposal) {
-				ConfigurableCompletionProposal cp = (ConfigurableCompletionProposal) p;
-				cp.setAdditionalProposalInfo(model);
-				cp.setHover(new HoverImpl(prop.getJavaElement()));
-			}
-			acceptor.accept(p);
-			break;
-		}
-		case DOUBLE: {
-			ICompletionProposal p = createCompletionProposal("1.0", context);
-
-			if (p instanceof ConfigurableCompletionProposal) {
-				ConfigurableCompletionProposal cp = (ConfigurableCompletionProposal) p;
-				cp.setAdditionalProposalInfo(model);
-				cp.setHover(new HoverImpl(prop.getJavaElement()));
-			}
-			acceptor.accept(p);
-			break;
-		}
-		case FLOAT: {
-			ICompletionProposal p = createCompletionProposal("1.0", context);
-
-			if (p instanceof ConfigurableCompletionProposal) {
-				ConfigurableCompletionProposal cp = (ConfigurableCompletionProposal) p;
-				cp.setAdditionalProposalInfo(model);
-				cp.setHover(new HoverImpl(prop.getJavaElement()));
-			}
-			acceptor.accept(p);
-			break;
-		}
-		case INTEGER: {
-			ICompletionProposal p = createCompletionProposal("1", context);
-
-			if (p instanceof ConfigurableCompletionProposal) {
-				ConfigurableCompletionProposal cp = (ConfigurableCompletionProposal) p;
-				cp.setAdditionalProposalInfo(model);
-				cp.setHover(new HoverImpl(prop.getJavaElement()));
-			}
-			acceptor.accept(p);
-			break;
-		}
-		case LONG: {
-			ICompletionProposal p = createCompletionProposal("1", context);
-
-			if (p instanceof ConfigurableCompletionProposal) {
-				ConfigurableCompletionProposal cp = (ConfigurableCompletionProposal) p;
-				cp.setAdditionalProposalInfo(model);
-				cp.setHover(new HoverImpl(prop.getJavaElement()));
-			}
-			acceptor.accept(p);
-			break;
-		}
+		case BYTE:
+		case CHAR:
+		case INTEGER:
+		case LONG:
 		case SHORT: {
 			ICompletionProposal p = createCompletionProposal("1", context);
+
+			if (p instanceof ConfigurableCompletionProposal) {
+				ConfigurableCompletionProposal cp = (ConfigurableCompletionProposal) p;
+				cp.setAdditionalProposalInfo(model);
+				cp.setHover(new HoverImpl(prop.getJavaElement()));
+			}
+			acceptor.accept(p);
+			break;
+		}
+		case DOUBLE:
+		case FLOAT: {
+			ICompletionProposal p = createCompletionProposal("1.0", context);
 
 			if (p instanceof ConfigurableCompletionProposal) {
 				ConfigurableCompletionProposal cp = (ConfigurableCompletionProposal) p;
@@ -573,25 +517,85 @@ public class FXGraphProposalProvider extends AbstractFXGraphProposalProvider {
 		}
 	}
 
+	private static boolean isIntegerType(String fqnType) {
+		if( "java.lang.Integer".equals(fqnType) ) {
+			return true;
+		} else if( "java.lang.Long".equals(fqnType) ) {
+			return true;
+		} else if( "java.lang.Short".equals(fqnType) ) {
+			return true;
+		} else if( "java.lang.Byte".equals(fqnType) ) {
+			return true;
+		}
+		return false;
+	}
+	
+	private static boolean isDoubleType(String fqnType) {
+		if( "java.lang.Float".equals(fqnType) ) {
+			return true;
+		} else if( "java.lang.Double".equals(fqnType) ) {
+			return true;
+		}
+		return false;
+	}
+	
 	private void createObjectPropvalueProposals(IFXObjectProperty prop, final EObject model, ContentAssistContext context, EReference typeReference, ICompletionProposalAcceptor acceptor) {
-		if (prop.hasValueOf()) {
-			ICompletionProposal p = createCompletionProposal("\"\"", new StyledString("\"<String>\""), null, getPriorityHelper().getDefaultPriority() + 1, context.getPrefix(), context);
-			
+		String type = prop.getElementTypeAsString(true);
+		
+		if( "java.lang.Boolean".equals(type) ) {
+			ICompletionProposal p = createCompletionProposal("true", context);
 			if( p instanceof ConfigurableCompletionProposal ) {
 				ConfigurableCompletionProposal cp = (ConfigurableCompletionProposal) p;
 				cp.setAdditionalProposalInfo(model);
 				cp.setHover(new HoverImpl(prop.getValueOfMethod()));
 			}
-			
 			acceptor.accept(p);
-		}
+			
+			p = createCompletionProposal("false", context);
+			if( p instanceof ConfigurableCompletionProposal ) {
+				ConfigurableCompletionProposal cp = (ConfigurableCompletionProposal) p;
+				cp.setAdditionalProposalInfo(model);
+				cp.setHover(new HoverImpl(prop.getValueOfMethod()));
+			}
+			acceptor.accept(p);
+		} else if(isIntegerType(type)) {
+			ICompletionProposal p = createCompletionProposal("1", context);
 
-		IType jdtSuperType = prop.getElementType();
-		if (jdtSuperType != null) {
-			final IJvmTypeProvider tProvider = jdtTypeProvider.createTypeProvider(model.eResource().getResourceSet());
-			JvmType superType = tProvider.findTypeByName(jdtSuperType.getFullyQualifiedName());
-			Filter f = new FXClassFilter(projectProvider.getJavaProject(model.eResource().getResourceSet()));
-			typeProposalProviders.createSubTypeProposals(superType, this, context, typeReference, f, acceptor);
+			if (p instanceof ConfigurableCompletionProposal) {
+				ConfigurableCompletionProposal cp = (ConfigurableCompletionProposal) p;
+				cp.setAdditionalProposalInfo(model);
+				cp.setHover(new HoverImpl(prop.getJavaElement()));
+			}
+			acceptor.accept(p);
+		} else if(isDoubleType(type)) {
+			ICompletionProposal p = createCompletionProposal("1.0", context);
+
+			if (p instanceof ConfigurableCompletionProposal) {
+				ConfigurableCompletionProposal cp = (ConfigurableCompletionProposal) p;
+				cp.setAdditionalProposalInfo(model);
+				cp.setHover(new HoverImpl(prop.getJavaElement()));
+			}
+			acceptor.accept(p);
+		} else {
+			if (prop.hasValueOf()) {
+				ICompletionProposal p = createCompletionProposal("\"\"", new StyledString("\"<String>\""), null, getPriorityHelper().getDefaultPriority() + 1, context.getPrefix(), context);
+				
+				if( p instanceof ConfigurableCompletionProposal ) {
+					ConfigurableCompletionProposal cp = (ConfigurableCompletionProposal) p;
+					cp.setAdditionalProposalInfo(model);
+					cp.setHover(new HoverImpl(prop.getValueOfMethod()));
+				}
+				
+				acceptor.accept(p);
+			}
+
+			IType jdtSuperType = prop.getElementType();
+			if (jdtSuperType != null) {
+				final IJvmTypeProvider tProvider = jdtTypeProvider.createTypeProvider(model.eResource().getResourceSet());
+				JvmType superType = tProvider.findTypeByName(jdtSuperType.getFullyQualifiedName());
+				Filter f = new FXClassFilter(projectProvider.getJavaProject(model.eResource().getResourceSet()));
+				typeProposalProviders.createSubTypeProposals(superType, this, context, typeReference, f, acceptor);
+			}
 		}
 	}
 
@@ -975,6 +979,68 @@ public class FXGraphProposalProvider extends AbstractFXGraphProposalProvider {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+	}
+	
+	@Override
+	public void completeStaticValueProperty_Type(EObject model, Assignment assignment, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
+		//TODO Should we should all classes?
+		JvmType superType = jdtTypeProvider.createTypeProvider(model.eResource().getResourceSet()).findTypeByName("javafx.scene.Parent");
+		Filter f = new FXClassFilter(projectProvider.getJavaProject(model.eResource().getResourceSet()));
+		typeProposalProviders.createSubTypeProposals(superType, this, context, FXGraphPackage.Literals.STATIC_VALUE_PROPERTY__TYPE, f, acceptor);
+	}
+	
+	@Override
+	public void completeStaticValueProperty_Name(EObject model, Assignment assignment, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
+		StaticValueProperty staticProperty = (StaticValueProperty) model;
+		
+		try {
+			IJavaProject javaProject = projectProvider.getJavaProject(staticProperty.eResource().getResourceSet());
+			IType type = javaProject.findType(staticProperty.getType().getQualifiedName());
+			
+			if (type != null) {
+				IFXClass fxClazz = FXPlugin.getClassmodel().findClass(javaProject, type);
+				if (fxClazz != null) {
+					Map<String, IFXProperty> map = fxClazz.getAllStaticProperties();
+					for (IFXProperty p : map.values()) {
+						completeElement_PropertiesProposals(p, model, context, FXGraphPackage.Literals.STATIC_VALUE_PROPERTY__NAME, acceptor);
+					}
+				}
+			}
+		} catch (JavaModelException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+		
+	}
+	
+	@Override
+	public void completeStaticValueProperty_Value(EObject model, Assignment assignment, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
+		StaticValueProperty staticProperty = (StaticValueProperty) model;
+		
+		try {
+			IJavaProject javaProject = projectProvider.getJavaProject(staticProperty.eResource().getResourceSet());
+			IType type = javaProject.findType(staticProperty.getType().getQualifiedName());
+			
+			if (type != null) {
+				IFXClass fxClazz = FXPlugin.getClassmodel().findClass(javaProject, type);
+				if (fxClazz != null) {
+					IFXProperty fxProp = fxClazz.getStaticProperty(staticProperty.getName());
+					if (fxProp != null) {
+						completeProperty_ValueProposals(fxProp, model, context, FXGraphPackage.Literals.PROPERTY__VALUE, acceptor);
+					}
+				}
+			}
+		} catch (JavaModelException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+	
+	@Override
+	public void completeComponentDefinition_RootNode(EObject model, Assignment assignment, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
+		JvmType superType = jdtTypeProvider.createTypeProvider(model.eResource().getResourceSet()).findTypeByName("javafx.scene.Parent");
+		typeProposalProviders.createSubTypeProposals(superType, this, context, FXGraphPackage.Literals.COMPONENT_DEFINITION__ROOT_NODE, acceptor);
 	}
 	
 	public static class HoverImpl implements IEObjectHover, ITextHoverExtension {

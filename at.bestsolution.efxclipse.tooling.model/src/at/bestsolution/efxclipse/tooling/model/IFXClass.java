@@ -9,4 +9,8 @@ public interface IFXClass {
 	public Map<String,IFXProperty> getAllProperties();
 	public Map<String, IFXProperty> getLocalProperties();
 	public IFXProperty getProperty(String name);
+	
+	public Map<String,IFXProperty> getAllStaticProperties();
+	public Map<String,IFXProperty> getLocalStaticProperties();
+	public IFXProperty getStaticProperty(String name);
 }

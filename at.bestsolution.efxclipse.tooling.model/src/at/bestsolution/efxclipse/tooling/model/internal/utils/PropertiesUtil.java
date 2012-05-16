@@ -9,8 +9,10 @@ import org.eclipse.jdt.core.IMethod;
 import org.eclipse.jdt.core.IType;
 import org.eclipse.jdt.core.JavaModelException;
 import org.eclipse.jdt.core.Signature;
+import org.osgi.service.log.LogService;
 
 import at.bestsolution.efxclipse.tooling.model.IFXPrimitiveProperty.Type;
+import at.bestsolution.efxclipse.tooling.model.FXPlugin;
 import at.bestsolution.efxclipse.tooling.model.IFXProperty;
 import at.bestsolution.efxclipse.tooling.model.internal.FXClass;
 import at.bestsolution.efxclipse.tooling.model.internal.FXEnumProperty;
@@ -130,4 +132,53 @@ public class PropertiesUtil {
 		return p;
 	}
 	
+	public static Map<String, IFXProperty> resolveStaticProperties(FXClass fxClass) throws JavaModelException {
+		Map<String,IFXProperty> rv = new HashMap<String, IFXProperty>();
+		
+		if( "java.lang.Object".equals(fxClass.getFQN()) ) {
+			return rv;
+		}
+		
+		for( IMethod m : fxClass.getType().getMethods() ) {
+			if( ! Flags.isPublic(m.getFlags()) || ! Flags.isStatic(m.getFlags()) ) {
+				continue;
+			}
+			
+			String name = m.getElementName();
+			
+			if( name.startsWith("setImpl") ) {
+				continue;
+			}
+			
+			if( name.startsWith("set") && m.getParameterTypes().length == 2 ) {
+				name = name.substring(3);
+				name = Character.toLowerCase(name.charAt(0)) + name.substring(1);
+				
+				FXProperty p = null;
+				
+				String signature = m.getParameterTypes()[1];
+				
+				String genericType = Signature.toString(signature);
+				
+				if( FXPrimitiveProperty.isPrimitive(genericType) ) {
+					p = new FXPrimitiveProperty(fxClass, name, m, Type.parseType(genericType));
+				} else {
+					String erasedFQNType = Util.getFQNType((IType)m.getParent(), Signature.getTypeErasure(genericType));
+					if( erasedFQNType != null ) {
+						if( FXEnumProperty.isEnum(fxClass.getJavaProject(), erasedFQNType) ) {
+							p = new FXEnumProperty(fxClass, name, m, erasedFQNType);
+						} else {
+							p = new FXObjectPoperty(fxClass, name, m, erasedFQNType);
+						}
+					} 
+				}
+				
+				if( p != null ) {
+					rv.put(p.getName(), p);
+				}
+			}
+		}
+		
+		return rv;
+	}
 }
