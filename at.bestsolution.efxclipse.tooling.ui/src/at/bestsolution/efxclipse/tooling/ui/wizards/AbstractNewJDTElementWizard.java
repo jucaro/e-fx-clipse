@@ -24,6 +24,7 @@ import org.eclipse.jdt.core.IPackageFragment;
 import org.eclipse.jdt.core.IPackageFragmentRoot;
 import org.eclipse.jdt.core.JavaCore;
 import org.eclipse.jdt.core.JavaModelException;
+import org.eclipse.jface.dialogs.MessageDialog;
 import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.jface.wizard.Wizard;
 import org.eclipse.ui.INewWizard;
@@ -149,8 +150,12 @@ public abstract class AbstractNewJDTElementWizard<O extends JDTElement> extends 
 					file.create(new ByteArrayInputStream(content.getBytes()),
 							true, null);
 				} else {
-					file.setContents(new ByteArrayInputStream(content.getBytes()),
-							IFile.FORCE | IFile.KEEP_HISTORY, null);
+					if( MessageDialog.openQuestion(getShell(), "File exists", "The file " + file.getName() + " already exists. Would you like to proceed?") ) {
+						file.setContents(new ByteArrayInputStream(content.getBytes()),
+								IFile.FORCE | IFile.KEEP_HISTORY, null);
+					} else {
+						return false;
+					}
 				}
 				IDE.openEditor(PlatformUI.getWorkbench().getActiveWorkbenchWindow().getActivePage(), file);
 			} catch (CoreException e) {
