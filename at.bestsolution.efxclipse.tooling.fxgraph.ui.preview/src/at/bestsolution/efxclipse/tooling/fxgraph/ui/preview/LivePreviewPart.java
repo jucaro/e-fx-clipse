@@ -7,7 +7,6 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.io.StringWriter;
 import java.lang.reflect.Constructor;
-import java.net.URI;
 import java.net.URL;
 import java.net.URLClassLoader;
 import java.text.SimpleDateFormat;
@@ -24,7 +23,7 @@ import javafx.application.Platform;
 import javafx.embed.swt.FXCanvas;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.JavaFXBuilderFactory;
-import javafx.scene.Node;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.layout.BorderPane;
 
@@ -46,7 +45,6 @@ import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Label;
 import org.eclipse.swt.widgets.Menu;
 import org.eclipse.swt.widgets.MenuItem;
-import org.eclipse.swt.widgets.Scale;
 import org.eclipse.swt.widgets.Spinner;
 import org.eclipse.swt.widgets.Text;
 import org.eclipse.ui.IPartListener;
@@ -56,18 +54,16 @@ import org.eclipse.ui.PartInitException;
 import org.eclipse.ui.part.ViewPart;
 import org.osgi.service.prefs.BackingStoreException;
 
-import at.bestsolution.efxclipse.runtime.panels.FillLayoutPane;
 import at.bestsolution.efxclipse.tooling.fxgraph.ui.preview.bundle.Activator;
 
 import com.google.inject.Inject;
-import com.sun.javafx.css.StyleManager;
 
 public class LivePreviewPart extends ViewPart {
 	
 	@Inject
 	private LivePreviewSynchronizer synchronizer;
 	
-	private BorderPane rootPane;
+	private Parent rootPane_new;
 
 	private Text logStatement;
 
@@ -175,16 +171,16 @@ public class LivePreviewPart extends ViewPart {
 
 	@Override
 	public void createPartControl(final Composite parent) {
+		final Composite container = new Composite(parent, SWT.NONE); 
+		container.setLayout(new GridLayout(3,false));
+		
+		folder = new CTabFolder(container, SWT.BOTTOM|SWT.BORDER);
+		folder.setLayoutData(new GridData(GridData.FILL,GridData.FILL,true,true,3,1));
+		
 		parent.getDisplay().asyncExec(new Runnable() {
 			
 			@Override
 			public void run() {
-				Composite container = new Composite(parent, SWT.NONE); 
-				container.setLayout(new GridLayout(3,false));
-				
-				
-				folder = new CTabFolder(container, SWT.BOTTOM|SWT.BORDER);
-				folder.setLayoutData(new GridData(GridData.FILL,GridData.FILL,true,true,3,1));
 				
 				{
 					CTabItem item = new CTabItem(folder, SWT.NONE);
@@ -249,8 +245,8 @@ public class LivePreviewPart extends ViewPart {
 				scale.addSelectionListener(new SelectionAdapter() {
 					@Override
 					public void widgetSelected(SelectionEvent e) {
-						rootPane.setScaleX(scale.getSelection()/100.0);
-						rootPane.setScaleY(scale.getSelection()/100.0);
+						rootPane_new.setScaleX(scale.getSelection()/100.0);
+						rootPane_new.setScaleY(scale.getSelection()/100.0);
 						if( currentFile != null ) {
 							scaleMap.put(currentFile, scale.getSelection());
 						}
@@ -300,9 +296,8 @@ public class LivePreviewPart extends ViewPart {
 
 	private void initFX(FXCanvas fxPanel) {
 		// This method is invoked on the JavaFX thread
-		rootPane = new BorderPane();
-		rootPane.getChildren().add(new FillLayoutPane());
-		Scene scene = new Scene(rootPane,1000,1000);
+		rootPane_new = new BorderPane();
+		Scene scene = new Scene(rootPane_new,1000,1000);
 		fxPanel.setScene(scene);
 	}
 
@@ -328,7 +323,6 @@ public class LivePreviewPart extends ViewPart {
 				
 				FXMLLoader loader;
 				if( contentData.extraJarPath != null && ! contentData.extraJarPath.isEmpty() ) {
-					System.err.println("Creating special classloader stuff");
 					URLClassLoader previewClassLoader = new PreviewURLClassloader(contentData.extraJarPath.toArray(new URL[0]),swtFXContainer.getClass().getClassLoader());
 
 					if( isJavaFX20() ) {
@@ -353,23 +347,23 @@ public class LivePreviewPart extends ViewPart {
 				
 				try {
 					currentFile = contentData.filePath;
-					Scene scene = rootPane.getScene();
-
-					rootPane.getChildren().clear();
-					scene.getStylesheets().clear();
-					
-					if( scaleMap.containsKey(currentFile) ) {
-						int value = scaleMap.get(currentFile).intValue();
-						scale.setSelection(value);
-						
-						rootPane.setScaleX(value/100.0);
-						rootPane.setScaleY(value/100.0);
-						
-					} else {
-						scale.setSelection(100);
-						rootPane.setScaleX(1);
-						rootPane.setScaleY(1);
-					}
+//					Scene scene = rootPane.getScene();
+//
+//					rootPane.getChildren().clear();
+//					scene.getStylesheets().clear();
+//					
+//					if( scaleMap.containsKey(currentFile) ) {
+//						int value = scaleMap.get(currentFile).intValue();
+//						scale.setSelection(value);
+//						
+//						rootPane.setScaleX(value/100.0);
+//						rootPane.setScaleY(value/100.0);
+//						
+//					} else {
+//						scale.setSelection(100);
+//						rootPane.setScaleX(1);
+//						rootPane.setScaleY(1);
+//					}
 					
 					loader.setStaticLoad(!preference.getBoolean(LivePreviewSynchronizer.PREF_LOAD_CONTROLLER, false));
 					loader.setLocation(contentData.relativePath);
@@ -425,18 +419,36 @@ public class LivePreviewPart extends ViewPart {
 					try {
 						
 						ByteArrayInputStream out = new ByteArrayInputStream(contentData.contents.getBytes());
-						Node root = (Node) loader.load(out);
+						Object root = loader.load(out);
 						out.close();
-												
+						
+						Scene scene = null;
+						if( root instanceof Scene ) {
+							scene = (Scene) root;
+							rootPane_new = scene.getRoot();
+						} else {
+							rootPane_new = (Parent) root;
+							scene = new Scene(rootPane_new);
+						}
+						
+						if( scaleMap.containsKey(currentFile) ) {
+							int value = scaleMap.get(currentFile).intValue();
+							scale.setSelection(value);
+						
+							rootPane_new.setScaleX(value/100.0);
+							rootPane_new.setScaleY(value/100.0);
+						
+						} else {
+							scale.setSelection(100);
+							rootPane_new.setScaleX(1);
+							rootPane_new.setScaleY(1);
+						}
+						
+						swtFXContainer.setScene(scene);
+						
 						scene.getStylesheets().addAll(contentData.cssFiles);
 						
-						//TODO Change this to public API once (RT-17294)
-						StyleManager.getInstance().reloadStylesheets(scene);
-						
-						rootPane.setCenter(root);
-						
 					} catch (Exception e) {
-						System.err.println(contentData.contents);
 						StringWriter sw = new StringWriter();
 						e.printStackTrace(new PrintWriter(sw));
 						exception = sw.toString();
@@ -504,7 +516,7 @@ public class LivePreviewPart extends ViewPart {
 		
 		if (contentData != null && contentData.contents != null) {
 			refreshContent(contentData);
-		} else if( rootPane != null ) {
+		} else if( rootPane_new != null ) {
 			folder.getDisplay().syncExec(new Runnable() {
 				
 				@Override
