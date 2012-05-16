@@ -1,0 +1,16 @@
+package at.bestsolution.efxclipse.testcases.fxgraph
+
+import javafx.scene.Scene
+import javafx.scene.layout.AnchorPane
+import javafx.scene.layout.BorderPane
+import javafx.scene.control.Label
+
+component SceneExample {
+	Scene {
+		root : BorderPane {
+			center : Label {
+				text : "Hello My Scene"
+			}
+		}
+	}
+}
