@@ -69,7 +69,9 @@ public class ImportingTypesProposalProvider extends JdtTypesProposalProvider {
 			String typeName = proposalReplacementString;
 			if (valueConverter != null)
 				typeName = valueConverter.toValue(proposalReplacementString, null);
+			
 			String replacementString = getActualReplacementString(proposal);
+			
 			// there is an import statement - apply computed replacementString
 			if (!proposalReplacementString.equals(replacementString)) {
 				String shortTypeName = replacementString;
@@ -100,6 +102,14 @@ public class ImportingTypesProposalProvider extends JdtTypesProposalProvider {
 				proposal.setCursorPosition(proposalReplacementString.length());
 				document.replace(proposal.getReplacementOffset(), proposal.getReplacementLength(), proposalReplacementString);
 				return;
+			}
+			
+			String fqnName = importConverter.toString(typeName);
+			boolean found = false;
+			for( Import i : file.getImports() ) {
+				if( i.getImportedNamespace().equals(fqnName) ) {
+					found = true;
+				}
 			}
 			
 			// Import does not introduce ambiguities - add import and insert short name
@@ -146,12 +156,14 @@ public class ImportingTypesProposalProvider extends JdtTypesProposalProvider {
 				proposal.setCursorPosition(escapedShortname.length());
 				document.replace(proposal.getReplacementOffset(), proposal.getReplacementLength(), escapedShortname);
 			
-				// add import statement
-				String importStatement = (startWithLineBreak ? "\nimport " : "import ") + importConverter.toString(typeName);
-				if (endWithLineBreak)
-					importStatement += "\n\n";
-				document.replace(offset, 0, importStatement.toString());
-				proposal.setCursorPosition(proposal.getCursorPosition() + importStatement.length());
+				if( ! found ) {
+					// add import statement
+					String importStatement = (startWithLineBreak ? "\nimport " : "import ") + importConverter.toString(typeName);
+					if (endWithLineBreak)
+						importStatement += "\n\n";
+					document.replace(offset, 0, importStatement.toString());
+					proposal.setCursorPosition(proposal.getCursorPosition() + importStatement.length());	
+				}
 				
 				// set the pixel coordinates
 				if (widget != null) {

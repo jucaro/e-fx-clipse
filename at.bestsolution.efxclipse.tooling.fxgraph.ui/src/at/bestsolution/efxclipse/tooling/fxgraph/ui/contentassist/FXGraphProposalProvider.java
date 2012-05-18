@@ -1044,6 +1044,12 @@ public class FXGraphProposalProvider extends AbstractFXGraphProposalProvider {
 		typeProposalProviders.createSubTypeProposals(superType, this, context, FXGraphPackage.Literals.COMPONENT_DEFINITION__ROOT_NODE, acceptor);
 	}
 	
+	@Override
+	public void completeComponentDefinition_Controller(EObject model, Assignment assignment, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
+		typeProposalProviders.createTypeProposals(this, context, FXGraphPackage.Literals.COMPONENT_DEFINITION__CONTROLLER, acceptor);
+	
+	}
+	
 	public static class HoverImpl implements IEObjectHover, ITextHoverExtension {
 		private JavadocHoverWrapper javadocHover = new JavadocHoverWrapper();
 		private IJavaElement javaElement;
