@@ -1,7 +1,6 @@
 package at.bestsolution.efxclipse.tooling.model.internal;
 
 import org.eclipse.jdt.core.ICompilationUnit;
-import org.eclipse.jdt.core.IJavaElement;
 import org.eclipse.jdt.core.IJavaElementDelta;
 import org.eclipse.jdt.core.IJavaProject;
 import org.eclipse.jdt.core.IType;
@@ -10,7 +9,6 @@ import org.eclipse.jdt.core.compiler.CompilationParticipant;
 import org.eclipse.jdt.core.compiler.ReconcileContext;
 
 import at.bestsolution.efxclipse.tooling.model.FXPlugin;
-import at.bestsolution.efxclipse.tooling.model.internal.utils.Util;
 
 public class ModelUpdater extends CompilationParticipant {
 
