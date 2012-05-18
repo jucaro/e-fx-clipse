@@ -233,5 +233,15 @@
             extensions="css">
     </provider>
   </extension>
+  <extension
+        point="org.eclipse.core.runtime.adapters">
+     <factory
+           adaptableType="org.eclipse.xtext.ui.editor.XtextEditor"
+           class="at.bestsolution.efxclipse.tooling.css.ui.internal.PreviewAdapterFactory">
+        <adapter
+              type="at.bestsolution.efxclipse.tooling.ui.editor.IFXPreviewAdapter">
+        </adapter>
+     </factory>
+  </extension>
 
 </plugin>

@@ -1,20 +1,32 @@
 package at.bestsolution.efxclipse.tooling.fxgraph.ui.preview;
 
+import java.io.File;
+import java.io.IOException;
+import java.io.InputStream;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashSet;
 import java.util.List;
+import java.util.Properties;
 import java.util.Set;
 
+import org.eclipse.core.resources.IContainer;
 import org.eclipse.core.resources.IFile;
 import org.eclipse.core.resources.IFolder;
 import org.eclipse.core.resources.IProject;
+import org.eclipse.core.resources.IResource;
 import org.eclipse.core.resources.IWorkspaceRoot;
 import org.eclipse.core.resources.ResourcesPlugin;
+import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.IPath;
+import org.eclipse.core.runtime.Path;
 import org.eclipse.core.runtime.preferences.IEclipsePreferences;
 import org.eclipse.core.runtime.preferences.InstanceScope;
+import org.eclipse.emf.common.util.EList;
+import org.eclipse.emf.common.util.URI;
+import org.eclipse.emf.ecore.EObject;
 import org.eclipse.jdt.core.IClasspathEntry;
 import org.eclipse.jdt.core.IJavaProject;
 import org.eclipse.jdt.core.JavaCore;
@@ -24,26 +36,32 @@ import org.eclipse.ui.IPropertyListener;
 import org.eclipse.ui.IWorkbenchPart;
 import org.eclipse.ui.IWorkbenchPartConstants;
 import org.eclipse.ui.part.EditorPart;
+import org.eclipse.xtext.resource.XtextResource;
+import org.eclipse.xtext.ui.editor.XtextEditor;
+import org.eclipse.xtext.ui.editor.model.IXtextModelListener;
+import org.eclipse.xtext.util.concurrent.IUnitOfWork;
 
+import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.ComponentDefinition;
+import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.Model;
+import at.bestsolution.efxclipse.tooling.fxgraph.generator.FXGraphGenerator;
 import at.bestsolution.efxclipse.tooling.fxgraph.ui.preview.LivePreviewPart.ContentData;
 import at.bestsolution.efxclipse.tooling.fxgraph.ui.preview.bundle.Activator;
-import at.bestsolution.efxclipse.tooling.ui.editor.IFXMLProviderAdapter;
-import at.bestsolution.efxclipse.tooling.ui.editor.IFXPreviewAdapter;
 
 import com.google.inject.Inject;
 
-public class LivePreviewSynchronizer implements IPartListener, IPropertyListener {
+public class OldLivePreviewSynchronizer implements IPartListener, IXtextModelListener, IPropertyListener {
 	@Inject
 	private LivePreviewPart view;
 
 	private Type currentEditorType = Type.UNKNOWN;
+	private XtextEditor currentEditor;
+	private XtextEditor lastStructureEditor;
+	
+	
 	private IEclipsePreferences preference = InstanceScope.INSTANCE.getNode(Activator.PLUGIN_ID);
 
 	public static final String PREF_LOAD_CONTROLLER = "PREF_LOAD_CONTROLLER";
 
-	private IFXPreviewAdapter currentEditor;
-	private IFXMLProviderAdapter currentContentProvider;
-	
 	static enum Type {
 		UNKNOWN, CSS, FXGRAPH, FXML
 	}
@@ -53,76 +71,63 @@ public class LivePreviewSynchronizer implements IPartListener, IPropertyListener
 	}
 
 	private void updateView(IWorkbenchPart part) {
-//		System.err.println("Adapting: " + part);
-		IFXPreviewAdapter adapted;
-		if( part instanceof IFXPreviewAdapter ) {
-			adapted = (IFXPreviewAdapter) part;
-		} else {
-			adapted = (IFXPreviewAdapter) part.getAdapter(IFXPreviewAdapter.class);
-		}
-		
-//		System.err.println("Adapted: " + adapted);
-		if( adapted != null ) {
-			if( currentEditor == null || ! currentEditor.getEditorPart().equals(adapted.getEditorPart()) ) {
-				if( currentEditor != null ) {
-					currentEditor.getEditorPart().removePropertyListener(this);
-				}
-				currentEditor = (IFXPreviewAdapter) adapted;
-				
-				if( currentEditor != null ) {
-					currentEditor.getEditorPart().addPropertyListener(this);	
-				}
-				
-				if( currentEditor instanceof IFXMLProviderAdapter && ( currentContentProvider == null || ! currentContentProvider.getEditorPart().equals(currentEditor.getEditorPart()) ) ) {
-					currentContentProvider = (IFXMLProviderAdapter) currentEditor;
-					view.setContents(createContentData(currentContentProvider));
-				}	
-			}
-		} else if( part instanceof EditorPart ) {
-			if( currentEditor != null ) {
-				currentEditor.getEditorPart().removePropertyListener(this);
+		if (part instanceof XtextEditor) {
+			XtextEditor xtextEditor = (XtextEditor) part;
+			
+			if( "at.bestsolution.efxclipse.tooling.fxmlx.FXMLDsl".equals(xtextEditor.getLanguageName()) ) {
+				currentEditorType = Type.FXGRAPH;
+			} else if( "at.bestsolution.efxclipse.tooling.fxgraph.FXGraph".equals(xtextEditor.getLanguageName()) ) {
+				currentEditorType = Type.FXML;
+			} else if( "at.bestsolution.efxclipse.tooling.css.CssDsl".equals(xtextEditor.getLanguageName()) ) {
+				currentEditorType = Type.CSS;
+			} else {
+				currentEditorType = Type.UNKNOWN;
 			}
 			
-			currentContentProvider = null;
-			currentEditor = null;
+			if (currentEditorType == Type.FXGRAPH || currentEditorType == Type.FXML) {
+				if (currentEditor != part) {
+					if (currentEditor != null) {
+						currentEditor.removePropertyListener(this);
+					}
+
+					currentEditor = xtextEditor;
+					currentEditor.addPropertyListener(this);
+				
+					lastStructureEditor = xtextEditor;
+					view.setContents(currentEditor.getDocument().readOnly(new IUnitOfWork<ContentData, XtextResource>() {
+						public ContentData exec(XtextResource resource) throws Exception {
+							System.err.println("Updating UI");
+							return createContents(resource);
+						}
+					}));
+				}
+				currentEditor = xtextEditor;
+				lastStructureEditor = xtextEditor;				
+			} else if (currentEditorType == Type.CSS) {
+				if (currentEditor != part) {
+					if (currentEditor != null) {
+						currentEditor.removePropertyListener(this);
+					}
+
+					currentEditor = xtextEditor;
+					currentEditor.addPropertyListener(this);
+				}
+			} else {
+				view.setContents(null);
+			}
+		} else if (part instanceof EditorPart) {
+			if (currentEditor != part) {
+				if (currentEditor != null) {
+					currentEditor.removePropertyListener(this);
+				}
+
+				currentEditor = null;
+			}
+			
 			view.setContents(null);
 		}
 	}
-	
-	@Override
-	public void propertyChanged(Object source, int propId) {
-		if( propId == IWorkbenchPartConstants.PROP_DIRTY ) {
-			if( currentEditor != null && ! currentEditor.getEditorPart().isDirty() && currentContentProvider != null ) {
-				view.setContents(createContentData(currentContentProvider));
-			}
-		}
-	}
 
-	public void refreshPreview() {
-		if( currentContentProvider != null ) {
-			view.setContents(createContentData(currentContentProvider));
-		}
-	}
-
-	
-	
-	private ContentData createContentData(IFXMLProviderAdapter contentProvider) {
-		String contents = contentProvider.getPreviewFXML();
-		List<String> cssFiles = contentProvider.getPreviewCSSFiles();
-		String resourceBundle = contentProvider.getPreviewResourceBundle();
-		List<URL> previewUrls = contentProvider.getPreviewClasspath();
-		IFile file = contentProvider.getFile();
-		
-		//TODO implement
-		List<URL> extraJarPath = new ArrayList<URL>();
-		extraJarPath.addAll(previewUrls);
-		
-		System.err.println(contents);
-		
-		return new ContentData(contents, cssFiles, resourceBundle, extraJarPath, file);
-	}
-
-	
 	private void resolveDataProject(IJavaProject project, Set<IPath> outputPath, Set<IPath> listRefLibraries) {
 		try {
 			IClasspathEntry[] entries = project.getRawClasspath();
@@ -178,7 +183,7 @@ public class LivePreviewSynchronizer implements IPartListener, IPropertyListener
 		return rv;
 	}
 
-//	private ContentData createContents(XtextResource resource) {
+	private ContentData createContents(XtextResource resource) {
 //		EList<EObject> contents = resource.getContents();
 //		if (!contents.isEmpty()) {
 //
@@ -422,9 +427,16 @@ public class LivePreviewSynchronizer implements IPartListener, IPropertyListener
 //				return new ContentData(fxmlFile, cssFiles, resourcePropertiesFile, extraPaths, relativeUrl,resource.getURI());
 //			}*/
 //		}
-//
-//		return null;
-//	}
+
+		return null;
+	}
+
+	@Override
+	public void modelChanged(XtextResource resource) {
+		// if( preference.getBoolean(PREF_REFRESH_WHILE_TYPE, false) ) {
+		// view.setContents(createContents(resource));
+		// }
+	}
 
 	@Override
 	public void partBroughtToTop(IWorkbenchPart part) {
@@ -440,5 +452,34 @@ public class LivePreviewSynchronizer implements IPartListener, IPropertyListener
 
 	@Override
 	public void partOpened(IWorkbenchPart part) {
+	}
+
+	@Override
+	public void propertyChanged(Object source, int propId) {
+		if (propId == IWorkbenchPartConstants.PROP_DIRTY) {
+			if( currentEditorType == Type.CSS && ! currentEditor.isDirty() && lastStructureEditor != null ) {
+				view.setContents(lastStructureEditor.getDocument().readOnly(new IUnitOfWork<ContentData, XtextResource>() {
+					public ContentData exec(XtextResource resource) throws Exception {
+						return createContents(resource);
+					}
+				}));
+			} else if( (currentEditorType == Type.FXGRAPH || currentEditorType == Type.FXML) && ! currentEditor.isDirty() && lastStructureEditor != null ) {
+				view.setContents(lastStructureEditor.getDocument().readOnly(new IUnitOfWork<ContentData, XtextResource>() {
+					public ContentData exec(XtextResource resource) throws Exception {
+						return createContents(resource);
+					}
+				}));
+			}
+		}
+	}
+
+	public void refreshPreview() {
+		if ( currentEditorType != Type.UNKNOWN && lastStructureEditor != null && !lastStructureEditor.isDirty() ) {
+			view.setContents(lastStructureEditor.getDocument().readOnly(new IUnitOfWork<ContentData, XtextResource>() {
+				public ContentData exec(XtextResource resource) throws Exception {
+					return createContents(resource);
+				}
+			}));
+		}
 	}
 }

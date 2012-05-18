@@ -68,7 +68,7 @@ import at.bestsolution.efxclipse.tooling.fxgraph.ui.util.JDTHelper.JDTHelperProp
 import at.bestsolution.efxclipse.tooling.fxgraph.ui.util.JDTHelper.ProcessedProposal;
 import at.bestsolution.efxclipse.tooling.fxgraph.ui.util.JDTHelper.Proposal;
 import at.bestsolution.efxclipse.tooling.fxgraph.ui.util.JDTHelper.TypeData;
-import at.bestsolution.efxclipse.tooling.fxgraph.util.RelativeFileLocator;
+import at.bestsolution.efxclipse.tooling.ui.util.RelativeFileLocator;
 
 import com.google.inject.Inject;
 

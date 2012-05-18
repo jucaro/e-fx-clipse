@@ -16,7 +16,7 @@ Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.jdt.core;bundle-version="3.7.0",
  at.bestsolution.efxclipse.tooling.css;bundle-version="0.0.13",
  at.bestsolution.efxclipse.tooling.fxgraph.ui;bundle-version="0.0.13",
- at.bestsolution.efxclipse.tooling.fxmlx;bundle-version="0.0.13"
+ at.bestsolution.efxclipse.tooling.ui;bundle-version="0.0.13"
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Import-Package: com.sun.javafx.css,
  javafx.animation;version="2.0.0",

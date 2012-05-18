@@ -7,6 +7,7 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.io.StringWriter;
 import java.lang.reflect.Constructor;
+import java.net.MalformedURLException;
 import java.net.URL;
 import java.net.URLClassLoader;
 import java.text.SimpleDateFormat;
@@ -28,6 +29,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.layout.BorderPane;
 
+import org.eclipse.core.resources.IFile;
 import org.eclipse.core.runtime.preferences.IEclipsePreferences;
 import org.eclipse.core.runtime.preferences.InstanceScope;
 import org.eclipse.jface.action.Action;
@@ -103,9 +105,9 @@ public class LivePreviewPart extends ViewPart {
 
 	private Spinner scale;
 	
-	private Map<org.eclipse.emf.common.util.URI, Integer> scaleMap = new HashMap<org.eclipse.emf.common.util.URI, Integer>();
+	private Map<IFile, Integer> scaleMap = new HashMap<IFile, Integer>();
 	
-	private org.eclipse.emf.common.util.URI currentFile;
+	private IFile currentFile;
 	
 	static {
 		JFaceResources.getImageRegistry().put(IMAGE_OK, Activator.imageDescriptorFromPlugin("at.bestsolution.efxclipse.tooling.fxgraph.ui.preview", "/icons/16_16/security-high.png"));
@@ -160,7 +162,7 @@ public class LivePreviewPart extends ViewPart {
 			
 			@Override
 			public void partActivated(IWorkbenchPart part) {
-				if( part == LivePreviewPart.this ) {
+				if( part == LivePreviewPart.this && swtFXContainer != null ) {
 					swtFXContainer.setEnabled(true);	
 				}
 			}
@@ -347,9 +349,15 @@ public class LivePreviewPart extends ViewPart {
 				String exception = null;
 				
 				try {
-					currentFile = contentData.filePath;
+					currentFile = contentData.file;
 					loader.setStaticLoad(!preference.getBoolean(LivePreviewSynchronizer.PREF_LOAD_CONTROLLER, false));
-					loader.setLocation(contentData.relativePath);
+					try {
+						//TODO Should we set this to the bin-Folder??
+						loader.setLocation(contentData.file.getParent().getLocation().toFile().getAbsoluteFile().toURI().toURL());
+					} catch (MalformedURLException e1) {
+						// TODO Auto-generated catch block
+						e1.printStackTrace();
+					}
 					
 					if( contentData.resourceBundle != null ) {
 						FileInputStream in = null;
@@ -444,6 +452,10 @@ public class LivePreviewPart extends ViewPart {
 				
 				if( exception != null ) {
 					final String innerException = exception;
+					if( folder.isDisposed() ) {
+						return;
+					}
+					
 					folder.getDisplay().asyncExec(new Runnable() {
 						
 						@Override
@@ -517,16 +529,16 @@ public class LivePreviewPart extends ViewPart {
 		public List<String> cssFiles;
 		public String resourceBundle;
 		public List<URL> extraJarPath;
-		public URL relativePath;
-		public org.eclipse.emf.common.util.URI filePath;
+		public IFile file;
 		
-		public ContentData(String contents, List<String> cssFiles, String resourceBundle, List<URL> extraJarPath, URL relativePath, org.eclipse.emf.common.util.URI filePath) {
+		public ContentData(String contents, List<String> cssFiles, String resourceBundle, List<URL> extraJarPath, IFile file) {
 			this.contents = contents;
 			this.cssFiles = new ArrayList<String>(cssFiles);
 			this.resourceBundle = resourceBundle;
 			this.extraJarPath = extraJarPath;
-			this.relativePath = relativePath;
-			this.filePath = filePath;
+			this.file = file;
+//			this.relativePath = relativePath;
+//			this.filePath = filePath;
 		}
 	}
 	

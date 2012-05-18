@@ -7,7 +7,7 @@ import org.eclipse.xtext.validation.Check;
 import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.ComponentDefinition;
 import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.FXGraphPackage;
 import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.Model;
-import at.bestsolution.efxclipse.tooling.fxgraph.util.RelativeFileLocator;
+import at.bestsolution.efxclipse.tooling.ui.util.RelativeFileLocator;
  
 
 public class FXGraphJavaValidator extends AbstractFXGraphJavaValidator {

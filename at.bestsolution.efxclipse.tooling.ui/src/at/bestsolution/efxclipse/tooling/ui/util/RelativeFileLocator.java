@@ -1,4 +1,4 @@
-package at.bestsolution.efxclipse.tooling.fxgraph.util;
+package at.bestsolution.efxclipse.tooling.ui.util;
 
 import java.io.File;
 
@@ -16,6 +16,11 @@ import org.eclipse.jdt.core.JavaCore;
 import org.eclipse.jdt.core.JavaModelException;
 
 public class RelativeFileLocator {
+	public static File locateFile(IFile file, String filePath) {
+		URI uri = URI.createPlatformResourceURI(file.getProject().getName() + "/" + file.getProjectRelativePath().toString(),true);
+		return locateFile(uri, filePath);
+	}
+	
 	public static File locateFile(URI uri, String filePath) {
 		IProject p = ResourcesPlugin.getWorkspace().getRoot().getProject(uri.segment(1));
 		IJavaProject jp = JavaCore.create(p);

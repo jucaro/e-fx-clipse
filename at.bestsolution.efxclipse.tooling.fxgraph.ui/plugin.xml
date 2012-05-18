@@ -248,5 +248,18 @@
             name="%wizard.name">
       </wizard>
    </extension>
+   <extension
+         point="org.eclipse.core.runtime.adapters">
+      <factory
+            adaptableType="org.eclipse.xtext.xbase.ui.editor.XbaseEditor"
+            class="at.bestsolution.efxclipse.tooling.fxgraph.ui.internal.FXMLAdapterFactory">
+         <adapter
+               type="at.bestsolution.efxclipse.tooling.ui.editor.IFXPreviewAdapter">
+         </adapter>
+         <adapter
+               type="at.bestsolution.efxclipse.tooling.ui.editor.IFXMLProviderAdapter">
+         </adapter>
+      </factory>
+   </extension>
 
 </plugin>

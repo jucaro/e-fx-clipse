@@ -60,7 +60,6 @@ import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.Property;
 import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.ReferenceValueProperty;
 import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.StaticValueProperty;
 import at.bestsolution.efxclipse.tooling.fxgraph.ui.util.JDTHelper;
-import at.bestsolution.efxclipse.tooling.fxgraph.util.RelativeFileLocator;
 import at.bestsolution.efxclipse.tooling.model.FXPlugin;
 import at.bestsolution.efxclipse.tooling.model.IFXClass;
 import at.bestsolution.efxclipse.tooling.model.IFXCollectionProperty;
@@ -74,6 +73,7 @@ import at.bestsolution.efxclipse.tooling.model.IFXPrimitiveProperty;
 import at.bestsolution.efxclipse.tooling.model.IFXPrimitiveProperty.Type;
 import at.bestsolution.efxclipse.tooling.model.IFXProperty;
 import at.bestsolution.efxclipse.tooling.model.Util;
+import at.bestsolution.efxclipse.tooling.ui.util.RelativeFileLocator;
 
 import com.google.inject.Inject;
 
@@ -163,6 +163,7 @@ public class FXGraphProposalProvider extends AbstractFXGraphProposalProvider {
 				if (fxClazz != null) {
 					IFXProperty prop = fxClazz.getDefaultProperty();
 					if (prop != null) {
+						System.err.println("The property: " + prop);
 						completeElement_DefaultChildrenProposals(prop, el, context, FXGraphPackage.Literals.ELEMENT__DEFAULT_CHILDREN, acceptor);
 					}
 				}
