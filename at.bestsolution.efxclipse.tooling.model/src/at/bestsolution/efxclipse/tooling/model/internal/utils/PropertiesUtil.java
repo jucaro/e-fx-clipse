@@ -10,6 +10,7 @@ import org.eclipse.jdt.core.IType;
 import org.eclipse.jdt.core.JavaModelException;
 import org.eclipse.jdt.core.Signature;
 
+import at.bestsolution.efxclipse.tooling.model.IFXCollectionProperty;
 import at.bestsolution.efxclipse.tooling.model.IFXPrimitiveProperty.Type;
 import at.bestsolution.efxclipse.tooling.model.IFXProperty;
 import at.bestsolution.efxclipse.tooling.model.internal.FXClass;
@@ -31,7 +32,7 @@ public class PropertiesUtil {
 		}
 		
 		Map<String,IMethod> beanProperties = new HashMap<String, IMethod>();
-		
+		Map<String,IMethod> builderProperties = new HashMap<String, IMethod>();
 		
 		String builder = fxClass.getType().getFullyQualifiedName() + "Builder";
 		IType builderType = fxClass.getJavaProject().findType(builder);
@@ -50,7 +51,10 @@ public class PropertiesUtil {
 				}
 				
 				if( m.getParameterNames().length == 1 ) {
-					beanProperties.put(name, m);	
+					String param = m.getParameterTypes()[0];
+					if( Signature.getArrayCount(param) == 0 ) {
+						builderProperties.put(name, m);		
+					}
 				}
 			}
 		}
@@ -87,6 +91,18 @@ public class PropertiesUtil {
 			FXProperty p = getProperty(fxClass, e.getKey(), e.getValue());
 			if( p != null ) {
 				rv.put(e.getKey(), p);	
+			}
+		}
+		
+		for( Entry<String, IMethod> e : builderProperties.entrySet() ) {
+			IFXProperty p = rv.get(e.getKey());
+			if( ! (p instanceof IFXCollectionProperty) ) {
+				if( ! p.isSetable() ) {
+					p = getProperty(fxClass, e.getKey(), e.getValue());
+					if( p != null ) {
+						rv.put(e.getKey(), p);	
+					}
+				}
 			}
 		}
 		

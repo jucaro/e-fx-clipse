@@ -24,7 +24,7 @@ public class FXCollectionProperty extends FXProperty implements IFXCollectionPro
 		String checkType = erasedFQNType;
 
 		do {
-			if ("javafx.collections.ObservableList".equals(checkType) || "javafx.collections.ObservableSet".equals(checkType)) {
+			if ("javafx.collections.ObservableList".equals(checkType) || "javafx.collections.ObservableSet".equals(checkType) || "java.util.Collection".equals(checkType)) {
 				return true;
 			}
 
@@ -69,7 +69,17 @@ public class FXCollectionProperty extends FXProperty implements IFXCollectionPro
 				//TODO if the value is a generic parameter we need to resolve it
 				//using the class' generic parameter
 				String genericType = Signature.toString(signature);
-				String eType = genericType.substring(genericType.indexOf('<')+1, genericType.indexOf('>'));
+				
+				String eType;
+				if( genericType.contains("extends") ) {
+					eType = genericType.substring(genericType.indexOf("extends")+"extends".length(), genericType.indexOf('>'));
+				} else if( genericType.contains("super") ) {
+					eType = genericType.substring(genericType.indexOf("super")+"super".length(), genericType.indexOf('>'));
+				} else {
+					eType = genericType.substring(genericType.indexOf('<')+1, genericType.indexOf('>'));	
+				}
+				
+				eType = eType.trim();
 				
 				IType t = (IType) m.getParent();
 				String fqnType = Util.getFQNType(t,eType);
