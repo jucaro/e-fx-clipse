@@ -46,7 +46,7 @@ public class PropertiesUtil {
 				String name = m.getElementName();
 				
 				// omit the build method
-				if( "build".equals(name) ) {
+				if( "build".equals(name) || "applyTo".equals("name") ) {
 					continue;
 				}
 				
@@ -96,6 +96,10 @@ public class PropertiesUtil {
 		
 		for( Entry<String, IMethod> e : builderProperties.entrySet() ) {
 			IFXProperty p = rv.get(e.getKey());
+			if( p == null ) {
+				System.err.println("Unable to find getter for: " + e.getKey());
+			}
+			
 			if( ! (p instanceof IFXCollectionProperty) ) {
 				if( ! p.isSetable() ) {
 					p = getProperty(fxClass, e.getKey(), e.getValue());
