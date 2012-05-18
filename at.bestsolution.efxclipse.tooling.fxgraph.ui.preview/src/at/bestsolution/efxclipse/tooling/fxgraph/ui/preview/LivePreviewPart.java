@@ -62,7 +62,7 @@ import at.bestsolution.efxclipse.tooling.fxgraph.ui.preview.bundle.Activator;
 import com.google.inject.Inject;
 
 public class LivePreviewPart extends ViewPart {
-	
+	public static final String PREF_LOAD_CONTROLLER = "PREF_LOAD_CONTROLLER";
 	@Inject
 	private LivePreviewSynchronizer synchronizer;
 	
@@ -263,7 +263,7 @@ public class LivePreviewPart extends ViewPart {
 		Action loadController = new Action("",IAction.AS_CHECK_BOX) {
 			@Override
 			public void run() {
-				preference.putBoolean(LivePreviewSynchronizer.PREF_LOAD_CONTROLLER, ! preference.getBoolean(LivePreviewSynchronizer.PREF_LOAD_CONTROLLER, false));
+				preference.putBoolean(PREF_LOAD_CONTROLLER, ! preference.getBoolean(PREF_LOAD_CONTROLLER, false));
 				try {
 					preference.flush();
 					synchronizer.refreshPreview();
@@ -273,7 +273,7 @@ public class LivePreviewPart extends ViewPart {
 				}
 			}
 		};
-		loadController.setChecked(preference.getBoolean(LivePreviewSynchronizer.PREF_LOAD_CONTROLLER, false));
+		loadController.setChecked(preference.getBoolean(PREF_LOAD_CONTROLLER, false));
 		loadController.setImageDescriptor(JFaceResources.getImageRegistry().getDescriptor(IMAGE_LOAD_CONTROLLER));
 		loadController.setToolTipText("Load the controller");
 		
@@ -350,7 +350,7 @@ public class LivePreviewPart extends ViewPart {
 				
 				try {
 					currentFile = contentData.file;
-					loader.setStaticLoad(!preference.getBoolean(LivePreviewSynchronizer.PREF_LOAD_CONTROLLER, false));
+					loader.setStaticLoad(!preference.getBoolean(PREF_LOAD_CONTROLLER, false));
 					try {
 						//TODO Should we set this to the bin-Folder??
 						loader.setLocation(contentData.file.getParent().getLocation().toFile().getAbsoluteFile().toURI().toURL());
