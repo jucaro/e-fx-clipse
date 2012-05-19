@@ -12,6 +12,8 @@ import org.eclipse.core.runtime.NullProgressMonitor;
 import org.eclipse.core.runtime.Path;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EcoreFactory;
+import org.eclipse.jdt.core.Flags;
+import org.eclipse.jdt.core.IField;
 import org.eclipse.jdt.core.IJavaElement;
 import org.eclipse.jdt.core.IJavaProject;
 import org.eclipse.jdt.core.IType;
@@ -49,6 +51,7 @@ import org.eclipse.xtext.ui.editor.contentassist.PrefixMatcher;
 import org.eclipse.xtext.ui.editor.contentassist.PrefixMatcher.CamelCase;
 import org.eclipse.xtext.ui.editor.hover.IEObjectHover;
 import org.w3c.dom.Document;
+import org.w3c.dom.NamedNodeMap;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 import org.w3c.dom.ProcessingInstruction;
@@ -66,12 +69,20 @@ import at.bestsolution.efxclipse.tooling.ui.util.IconKeys;
 @SuppressWarnings("restriction")
 public class FXMLCompletionProposalComputer extends AbstractXMLCompletionProposalComputer implements ICompletionProposalComputer {
 	private static final CamelCase MATCHER = new CamelCase();
+	private static final PrefixMatcher ATTRIBUTE_MATCHER = new CamelCase() {
+		public boolean isCandidateMatchingPrefix(String name, String prefix) {
+			return super.isCandidateMatchingPrefix(name.startsWith("\"") ? name.substring(1) : name, prefix.startsWith("\"") ? prefix.substring(1) : prefix);
+		}
+	};
+	
 	private static final FQNPrefixMatcher FQN_MATCHER = new FQNPrefixMatcher();
 	
 	{
 		FQN_MATCHER.setLastSegmentFinder(new FQNPrefixMatcher.DefaultLastSegmentFinder());
 		FQN_MATCHER.setDelegate(MATCHER);
 	}
+	
+	
 	
 	@Override
 	public void sessionStarted() {
@@ -130,7 +141,7 @@ public class FXMLCompletionProposalComputer extends AbstractXMLCompletionProposa
 		
 		String propValue = prop.getName() + "=\"\"";
 		
-		FXMLCompletionProposal cp = createAttributeProposal(contentAssistRequest, context, propValue, s);
+		FXMLCompletionProposal cp = createAttributeProposal(contentAssistRequest, context, propValue, s, IconKeys.getIcon(IconKeys.FIELD_KEY));
 		if( cp != null ) {
 			cp.setAdditionalProposalInfo(EcoreFactory.eINSTANCE.createEClass());
 			cp.setHover(new HoverImpl(prop.getJavaElement()));
@@ -145,7 +156,7 @@ public class FXMLCompletionProposalComputer extends AbstractXMLCompletionProposa
 		
 		String propValue = prop.getName() + "=\"#\"";
 		
-		FXMLCompletionProposal cp = createAttributeProposal(contentAssistRequest, context, propValue, s); 
+		FXMLCompletionProposal cp = createAttributeProposal(contentAssistRequest, context, propValue, s,IconKeys.getIcon(IconKeys.EVENT_KEY)); 
 		if( cp != null ) {
 			cp.setAdditionalProposalInfo(EcoreFactory.eINSTANCE.createEClass());
 			cp.setHover(new HoverImpl(prop.getJavaElement()));
@@ -163,7 +174,7 @@ public class FXMLCompletionProposalComputer extends AbstractXMLCompletionProposa
 			s.append(" - " + prop.getFXClass().getSimpleName(), StyledString.QUALIFIER_STYLER);
 
 			String propValue = prop.getName() + "=\"\"";
-			FXMLCompletionProposal cp = createAttributeProposal(contentAssistRequest, context, propValue, s); 
+			FXMLCompletionProposal cp = createAttributeProposal(contentAssistRequest, context, propValue, s, IconKeys.getIcon(IconKeys.FIELD_KEY)); 
 			if( cp != null ) {
 				cp.setAdditionalProposalInfo(EcoreFactory.eINSTANCE.createEClass());
 				cp.setHover(new HoverImpl(prop.getJavaElement()));
@@ -203,14 +214,13 @@ public class FXMLCompletionProposalComputer extends AbstractXMLCompletionProposa
 			break;
 		default:
 			typeName = "String";
-			proposalValue += "\"\"";
 			break;
 		}
 
 		StyledString s = new StyledString(fxProperty.getName() + " : " + typeName);
 		s.append(" - " + fxProperty.getFXClass().getSimpleName(), StyledString.QUALIFIER_STYLER);
 		
-		FXMLCompletionProposal cp = createAttributeProposal(contentAssistRequest, context, proposalValue, s);
+		FXMLCompletionProposal cp = createAttributeProposal(contentAssistRequest, context, proposalValue, s, IconKeys.getIcon(IconKeys.FIELD_KEY));
 		if( cp != null ) {
 			cp.setAdditionalProposalInfo(EcoreFactory.eINSTANCE.createEClass());
 			cp.setHover(new HoverImpl(fxProperty.getJavaElement()));
@@ -219,10 +229,19 @@ public class FXMLCompletionProposalComputer extends AbstractXMLCompletionProposa
 		}
 	}
 	
-	private FXMLCompletionProposal createAttributeProposal(ContentAssistRequest contentAssistRequest, CompletionProposalInvocationContext context, String proposalValue, StyledString s) {
+	private FXMLCompletionProposal createAttributeProposal(ContentAssistRequest contentAssistRequest, CompletionProposalInvocationContext context, String proposalValue, StyledString s, Image image) {
 		if( MATCHER.isCandidateMatchingPrefix(proposalValue, contentAssistRequest.getMatchString()) ) {
-			FXMLCompletionProposal cp = new FXMLCompletionProposal(proposalValue, context.getInvocationOffset()-contentAssistRequest.getMatchString().length(), proposalValue.length(), proposalValue.length()-1, IconKeys.getIcon(IconKeys.FIELD_KEY), s, null);
+			FXMLCompletionProposal cp = new FXMLCompletionProposal(proposalValue, context.getInvocationOffset()-contentAssistRequest.getMatchString().length(), proposalValue.length(), proposalValue.length()-1, image, s, null);
 			cp.setMatcher(new CamelCase());
+			return cp;	
+		}
+		return null;
+	}
+	
+	private FXMLCompletionProposal createProposal(ContentAssistRequest contentAssistRequest, CompletionProposalInvocationContext context, String proposalValue, StyledString s, Image img, PrefixMatcher matcher) {
+		if( matcher.isCandidateMatchingPrefix(proposalValue, contentAssistRequest.getMatchString()) ) {
+			FXMLCompletionProposal cp = new FXMLCompletionProposal(proposalValue, context.getInvocationOffset()-contentAssistRequest.getMatchString().length(), proposalValue.length(), proposalValue.length(), img, s, null);
+			cp.setMatcher(matcher);
 			return cp;	
 		}
 		return null;
@@ -254,7 +273,7 @@ public class FXMLCompletionProposalComputer extends AbstractXMLCompletionProposa
 					} catch (JavaModelException e) {
 						// TODO Auto-generated catch block
 						e.printStackTrace();
-					}
+					}					
 				} else {
 					IJavaProject jproject = findProject(contentAssistRequest);
 					try {
@@ -276,6 +295,19 @@ public class FXMLCompletionProposalComputer extends AbstractXMLCompletionProposa
 							}
 						}
 					}					
+				}
+				
+				IType type = findType(parent.getNodeName(), contentAssistRequest, context);
+				if( type != null ) {
+					IFXClass fxClass = FXPlugin.getClassmodel().findClass(type.getJavaProject(), type);
+					if( fxClass != null ) {
+						IFXProperty p = fxClass.getDefaultProperty();
+						if( p instanceof IFXObjectProperty ) {
+							createSubtypeProposals(contentAssistRequest, context, ((IFXObjectProperty)p).getElementType());	
+						} else if( p instanceof IFXCollectionProperty ) {
+							createSubtypeProposals(contentAssistRequest, context, ((IFXCollectionProperty)p).getElementType());
+						}
+					}
 				}
 			} else {
 				createClassElementNameProposal(contentAssistRequest, context);
@@ -429,8 +461,6 @@ public class FXMLCompletionProposalComputer extends AbstractXMLCompletionProposa
 												importStatement += "\n\n";
 											document.replace(offset, 0, importStatement.toString());
 											proposal.setCursorPosition(proposal.getCursorPosition() + importStatement.length());	
-											
-//											document.replace(proposal.getReplacementOffset(), proposal.getReplacementLength(), proposal.getReplacementString());	
 										}
 									}
 								});
@@ -445,7 +475,6 @@ public class FXMLCompletionProposalComputer extends AbstractXMLCompletionProposa
 		
 	}
 	
-	
 	@Override
 	protected void addStartDocumentProposals(ContentAssistRequest contentAssistRequest, CompletionProposalInvocationContext context) {
 		IJavaProject jproject = findProject(contentAssistRequest);
@@ -458,6 +487,123 @@ public class FXMLCompletionProposalComputer extends AbstractXMLCompletionProposa
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+	}
+	
+	@Override
+	protected void addAttributeValueProposals(ContentAssistRequest contentAssistRequest, CompletionProposalInvocationContext context) {
+		IDOMNode n = (IDOMNode) contentAssistRequest.getNode();
+		
+		if( Character.isUpperCase(n.getNodeName().charAt(0)) ) {
+			NamedNodeMap m = n.getAttributes();
+			IDOMNode attribute = null;
+			for( int i = 0; i < m.getLength(); i++ ) {
+				IDOMNode a = (IDOMNode) m.item(i);
+				if( a.contains(contentAssistRequest.getStartOffset()) ) {
+					attribute = a;
+				}
+			}
+			
+			if( attribute != null ) {
+				IType type = findType(n.getNodeName(), contentAssistRequest, context);
+				IFXClass fxClass = FXPlugin.getClassmodel().findClass(type.getJavaProject(), type);
+				if( fxClass != null ) {
+					IFXProperty p = fxClass.getProperty(attribute.getNodeName());
+					if( p instanceof IFXPrimitiveProperty ) {
+						createAttributeValuePrimitiveProposals(contentAssistRequest, context, (IFXPrimitiveProperty) p);
+					} else if( p instanceof IFXEnumProperty ) {
+						createAttributeValueEnumProposals(contentAssistRequest, context, (IFXEnumProperty) p);
+					} else if( p instanceof IFXObjectProperty ) {
+						createAttributeValueObjectProposals(contentAssistRequest, context, (IFXObjectProperty) p);
+					}
+				}
+			}	
+		}
+	}
+	
+	private void createAttributeValuePrimitiveProposals(ContentAssistRequest contentAssistRequest, CompletionProposalInvocationContext context, IFXPrimitiveProperty p) {
+		switch (p.getType()) {
+		case BOOLEAN: {
+			FXMLCompletionProposal cp = createProposal(contentAssistRequest,context, "\"true", new StyledString("true"), null, ATTRIBUTE_MATCHER);
+			
+			if (cp != null) {
+				cp.setAdditionalProposalInfo(EcoreFactory.eINSTANCE.createEClass());
+				cp.setHover(new HoverImpl(p.getJavaElement()));
+				contentAssistRequest.addProposal(cp);
+			}
+
+			cp = createProposal(contentAssistRequest,context, "\"false", new StyledString("false"), null, ATTRIBUTE_MATCHER);
+
+			if (cp != null) {
+				cp.setAdditionalProposalInfo(EcoreFactory.eINSTANCE.createEClass());
+				cp.setHover(new HoverImpl(p.getJavaElement()));
+				contentAssistRequest.addProposal(cp);
+			}
+			
+			break;
+		}
+//		case BYTE:
+//		case CHAR:
+//		case INTEGER:
+//		case LONG:
+//		case SHORT: {
+//			FXMLCompletionProposal cp = createProposal(contentAssistRequest,context, "1", new StyledString("1"), null, ATTRIBUTE_MATCHER);
+//
+//			if (cp != null) {
+//				cp.setAdditionalProposalInfo(EcoreFactory.eINSTANCE.createEClass());
+//				cp.setHover(new HoverImpl(p.getJavaElement()));
+//				contentAssistRequest.addProposal(cp);
+//			}
+//			break;
+//		}
+//		case DOUBLE:
+//		case FLOAT: {
+//			FXMLCompletionProposal cp = createProposal(contentAssistRequest,context, "1.0", new StyledString("1.0"), null, ATTRIBUTE_MATCHER);
+//
+//			if (cp != null) {
+//				cp.setAdditionalProposalInfo(EcoreFactory.eINSTANCE.createEClass());
+//				cp.setHover(new HoverImpl(p.getJavaElement()));
+//				contentAssistRequest.addProposal(cp);
+//			}
+//			break;
+//		}
+//		case STRING: {
+//			FXMLCompletionProposal cp = createProposal(contentAssistRequest,context, "<String>", new StyledString("<String>"), null, ATTRIBUTE_MATCHER);
+//
+//			if (cp != null) {
+//				cp.setAdditionalProposalInfo(EcoreFactory.eINSTANCE.createEClass());
+//				cp.setHover(new HoverImpl(p.getJavaElement()));
+//				contentAssistRequest.addProposal(cp);
+//			}
+//			break;
+//		}
+		default:
+			break;
+		}
+	}
+	
+	private void createAttributeValueEnumProposals(ContentAssistRequest contentAssistRequest, CompletionProposalInvocationContext context, IFXEnumProperty p) {
+		IType t = p.getEnumType();
+		if (t != null) {
+			try {
+				for (IField f : t.getFields()) {
+					if (Flags.isEnum(f.getFlags())) {
+						FXMLCompletionProposal cp = createProposal(contentAssistRequest, context, "\""+ f.getElementName(), new StyledString(f.getElementName()).append(" - " + p.getEnumTypeAsString(false), StyledString.QUALIFIER_STYLER), IconKeys.getIcon(IconKeys.ENUM_KEY), ATTRIBUTE_MATCHER);
+						if( cp != null ) {
+							cp.setAdditionalProposalInfo(EcoreFactory.eINSTANCE.createEClass());
+							cp.setHover(new HoverImpl(f));
+							contentAssistRequest.addProposal(cp);
+						}
+					}
+				}
+			} catch (JavaModelException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+	}
+	
+	private void createAttributeValueObjectProposals(ContentAssistRequest contentAssistRequest, CompletionProposalInvocationContext context, IFXObjectProperty p) {
+		
 	}
 	
 	private static boolean isIntegerType(String fqnType) {
@@ -559,10 +705,6 @@ public class FXMLCompletionProposalComputer extends AbstractXMLCompletionProposa
 			}
 		}
 		return imports;
-	}
-
-	@Override
-	protected void addAttributeValueProposals(ContentAssistRequest contentAssistRequest, CompletionProposalInvocationContext context) {
 	}
 
 	@Override
