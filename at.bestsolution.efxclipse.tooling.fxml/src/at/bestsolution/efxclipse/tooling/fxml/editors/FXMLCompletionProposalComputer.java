@@ -5,11 +5,7 @@ import java.util.List;
 import java.util.Properties;
 import java.util.Vector;
 
-import org.eclipse.core.resources.IFile;
-import org.eclipse.core.resources.IProject;
-import org.eclipse.core.resources.ResourcesPlugin;
 import org.eclipse.core.runtime.NullProgressMonitor;
-import org.eclipse.core.runtime.Path;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EcoreFactory;
 import org.eclipse.jdt.core.Flags;
@@ -17,7 +13,6 @@ import org.eclipse.jdt.core.IField;
 import org.eclipse.jdt.core.IJavaElement;
 import org.eclipse.jdt.core.IJavaProject;
 import org.eclipse.jdt.core.IType;
-import org.eclipse.jdt.core.JavaCore;
 import org.eclipse.jdt.core.JavaModelException;
 import org.eclipse.jdt.core.search.IJavaSearchConstants;
 import org.eclipse.jdt.core.search.IJavaSearchScope;
@@ -54,7 +49,6 @@ import org.w3c.dom.Document;
 import org.w3c.dom.NamedNodeMap;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
-import org.w3c.dom.ProcessingInstruction;
 
 import at.bestsolution.efxclipse.tooling.model.FXPlugin;
 import at.bestsolution.efxclipse.tooling.model.IFXClass;
@@ -63,6 +57,7 @@ import at.bestsolution.efxclipse.tooling.model.IFXEnumProperty;
 import at.bestsolution.efxclipse.tooling.model.IFXEventHandlerProperty;
 import at.bestsolution.efxclipse.tooling.model.IFXObjectProperty;
 import at.bestsolution.efxclipse.tooling.model.IFXPrimitiveProperty;
+import at.bestsolution.efxclipse.tooling.model.IFXPrimitiveProperty.Type;
 import at.bestsolution.efxclipse.tooling.model.IFXProperty;
 import at.bestsolution.efxclipse.tooling.ui.util.IconKeys;
 
@@ -72,6 +67,14 @@ public class FXMLCompletionProposalComputer extends AbstractXMLCompletionProposa
 	private static final PrefixMatcher ATTRIBUTE_MATCHER = new CamelCase() {
 		public boolean isCandidateMatchingPrefix(String name, String prefix) {
 			return super.isCandidateMatchingPrefix(name.startsWith("\"") ? name.substring(1) : name, prefix.startsWith("\"") ? prefix.substring(1) : prefix);
+		}
+	};
+	
+	private static final PrefixMatcher STATIC_ELEMENT_MATCHER = new CamelCase() {
+		public boolean isCandidateMatchingPrefix(String name, String prefix) {
+			name = name.substring(name.indexOf('.')+1, name.indexOf('>')).trim();
+			System.err.println(name);
+			return super.isCandidateMatchingPrefix(name, prefix);
 		}
 	};
 	
@@ -262,28 +265,69 @@ public class FXMLCompletionProposalComputer extends AbstractXMLCompletionProposa
 		Node parent = contentAssistRequest.getParent();
 		
 		if( parent.getNodeType() == Node.ELEMENT_NODE ) {
-			if( Character.isUpperCase(parent.getNodeName().charAt(0)) ) {
+			if(parent.getNodeName().contains(".") ) {
+				String[] parts = parent.getNodeName().split("\\.");
+				IType ownerType = Util.findType(parts[0], parent.getOwnerDocument());
+				if( ownerType != null ) {
+					IFXClass fxClass = FXPlugin.getClassmodel().findClass(ownerType.getJavaProject(), ownerType);
+					if( fxClass != null ) {
+						IFXProperty p = fxClass.getStaticProperty(parts[1]);
+						if( p != null ) {
+							if( p instanceof IFXObjectProperty ) {
+								IFXObjectProperty op = (IFXObjectProperty) p;
+								createSubtypeProposals(contentAssistRequest, context, op.getElementType());
+							} else if( p instanceof IFXCollectionProperty ) {
+								IFXCollectionProperty cp = (IFXCollectionProperty) p;
+								createSubtypeProposals(contentAssistRequest, context, cp.getElementType());
+							}
+						}
+					}
+				}
+			} else if( Character.isUpperCase(parent.getNodeName().charAt(0)) ) {
 				if( !contentAssistRequest.getMatchString().isEmpty() && Character.isUpperCase(contentAssistRequest.getMatchString().charAt(0)) ) {
-					IJavaProject jproject = findProject(contentAssistRequest);
-					try {
-						IType superType = jproject.findType("javafx.scene.Parent");
-						if( superType != null ) {
-							createSubtypeProposals(contentAssistRequest, context, superType);	
-						}
-					} catch (JavaModelException e) {
-						// TODO Auto-generated catch block
-						e.printStackTrace();
-					}					
+//TODO This means we are static?					
+//					IJavaProject jproject = findProject(contentAssistRequest);
+//					try {
+//						IType superType = jproject.findType("javafx.scene.Parent");
+//						if( superType != null ) {
+//							createSubtypeProposals(contentAssistRequest, context, superType);	
+//						}
+//					} catch (JavaModelException e) {
+//						// TODO Auto-generated catch block
+//						e.printStackTrace();
+//					}
 				} else {
-					IJavaProject jproject = findProject(contentAssistRequest);
-					try {
-						IType superType = jproject.findType("javafx.scene.Parent");
-						if( superType != null ) {
-							createSubtypeProposals(contentAssistRequest, context, superType);	
+					if( parent.getParentNode() != null ) {
+						IType type = Util.findType(parent.getParentNode().getNodeName(), parent.getOwnerDocument());
+						if( type != null ) {
+							IFXClass fxclass = FXPlugin.getClassmodel().findClass(type.getJavaProject(), type);
+							if(fxclass != null) {
+								for( IFXProperty p : fxclass.getAllStaticProperties().values() ) {
+									String proposalValue = fxclass.getSimpleName() + "." + p.getName() +">"+"</" + fxclass.getSimpleName() + "." + p.getName() +">";
+									String sType;
+									
+									if( p instanceof IFXPrimitiveProperty ) {
+										IFXPrimitiveProperty pp = (IFXPrimitiveProperty) p;
+										sType = pp.getType() == Type.STRING ? "String" : pp.getType().jvmType();
+									} else if( p instanceof IFXObjectProperty ) {
+										IFXObjectProperty op = (IFXObjectProperty) p;
+										sType = op.getElementTypeAsString(false); 
+									} else if( p instanceof IFXEnumProperty ) {
+										IFXEnumProperty ep = (IFXEnumProperty) p;
+										sType = ep.getEnumTypeAsString(false);
+									} else {
+										sType = "<unknown>";
+									}
+									
+									FXMLCompletionProposal cp = createElementProposal(contentAssistRequest, context, proposalValue, new StyledString().append("(static) ", StyledString.COUNTER_STYLER).append(p.getFXClass().getSimpleName() + "." + p.getName()).append(" - " + sType, StyledString.QUALIFIER_STYLER), true, 100, null, STATIC_ELEMENT_MATCHER);
+									if( cp != null ) {
+										cp.setAdditionalProposalInfo(EcoreFactory.eINSTANCE.createEClass());
+										cp.setHover(new HoverImpl(p.getJavaElement()));
+										contentAssistRequest.addProposal(cp);
+									}
+								}
+							}
 						}
-					} catch (JavaModelException e) {
-						// TODO Auto-generated catch block
-						e.printStackTrace();
 					}
 					
 					IType type = findType(parent.getNodeName(), contentAssistRequest, context);
@@ -630,81 +674,16 @@ public class FXMLCompletionProposalComputer extends AbstractXMLCompletionProposa
 
 	private IJavaProject findProject(ContentAssistRequest contentAssistRequest) {
 		Document xmlDoc = contentAssistRequest.getNode().getOwnerDocument();
-
-		String baseLocation = ((IDOMNode) xmlDoc).getModel().getBaseLocation();
-		IFile f = ResourcesPlugin.getWorkspace().getRoot().getFile(new Path(baseLocation));
-		return JavaCore.create(f.getProject());
+		return Util.findProject(xmlDoc);
 	}
 	
 	private IType findType(String name, ContentAssistRequest contentAssistRequest, CompletionProposalInvocationContext context) {
-		Document xmlDoc = contentAssistRequest.getNode().getOwnerDocument();
-		NodeList list = xmlDoc.getChildNodes();
-
-		String baseLocation = ((IDOMNode) xmlDoc).getModel().getBaseLocation();
-		IFile f = ResourcesPlugin.getWorkspace().getRoot().getFile(new Path(baseLocation));
-		IProject project = f.getProject();
-		IJavaProject jpProject = JavaCore.create(project);
-
-		List<String> imports = new ArrayList<String>();
-		for (int i = 0; i < list.getLength(); i++) {
-			Node n = list.item(i);
-			if (n.getNodeType() == Node.PROCESSING_INSTRUCTION_NODE) {
-				String data = ((ProcessingInstruction) n).getData();
-				if (data.endsWith("?")) {
-					data = data.substring(0, data.length() - 1);
-				}
-				imports.add(data);
-			}
-		}
-
-		for (String i : imports) {
-			if (i.endsWith("." + name)) {
-				try {
-					IType t = jpProject.findType(i);
-					if( t != null ) {
-						return t;
-					}
-				} catch (JavaModelException e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-				}
-			}
-		}
-
-		for (String i : imports) {
-			if (i.endsWith("*")) {
-				try {
-					IType t = jpProject.findType(i.substring(0,i.length()-1)+name);
-					if( t != null ) {
-						return t;
-					}
-				} catch (JavaModelException e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-				}
-				
-			}
-		}
-
-		return null;
+		return Util.findType(name, contentAssistRequest.getNode().getOwnerDocument());
 	}
 	
 	private List<String> getImportedTypes(ContentAssistRequest contentAssistRequest) {
 		Document xmlDoc = contentAssistRequest.getNode().getOwnerDocument();
-		NodeList list = xmlDoc.getChildNodes();
-
-		List<String> imports = new ArrayList<String>();
-		for (int i = 0; i < list.getLength(); i++) {
-			Node n = list.item(i);
-			if (n.getNodeType() == Node.PROCESSING_INSTRUCTION_NODE) {
-				String data = ((ProcessingInstruction) n).getData();
-				if (data.endsWith("?")) {
-					data = data.substring(0, data.length() - 1);
-				}
-				imports.add(data);
-			}
-		}
-		return imports;
+		return Util.getImportedTypes(xmlDoc);
 	}
 
 	@Override
@@ -744,6 +723,10 @@ public class FXMLCompletionProposalComputer extends AbstractXMLCompletionProposa
 	@Override
 	protected void addEntityProposals(Vector proposals, Properties map, String key, int nodeOffset, IStructuredDocumentRegion sdRegion, ITextRegion completionRegion, CompletionProposalInvocationContext context) {
 
+	}
+	
+	static abstract class Filter {
+		public abstract boolean select(String fqnName);
 	}
 
 	public static class HoverImpl implements IEObjectHover, ITextHoverExtension {
