@@ -24,6 +24,7 @@ import org.eclipse.core.resources.IProject;
 import org.eclipse.core.resources.ResourcesPlugin;
 import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.IPath;
+import org.eclipse.jdt.core.IClasspathContainer;
 import org.eclipse.jdt.core.IClasspathEntry;
 import org.eclipse.jdt.core.IJavaProject;
 import org.eclipse.jdt.core.JavaCore;
@@ -154,6 +155,18 @@ public abstract class AbstractAntHandler extends AbstractHandler {
 					listRefLibraries.add(e.getPath());
 				} else if( e.getEntryKind() == IClasspathEntry.CPE_SOURCE ) {
 					listProjectSourceDirs.add(e.getPath());
+				} else if( e.getEntryKind() == IClasspathEntry.CPE_CONTAINER ) {
+					String start = e.getPath().segment(0);
+					if( !"org.eclipse.jdt.launching.JRE_CONTAINER".equals(start)
+							&& ! "at.bestsolution.efxclipse.tooling.jdt.core.JAVAFX_CONTAINER".equals(start)) {
+						IClasspathContainer cpe = JavaCore.getClasspathContainer(e.getPath(), project);
+						IClasspathEntry[] cpEntries = cpe.getClasspathEntries();
+						for( IClasspathEntry tmp : cpEntries ) {
+							if( tmp.getEntryKind() == IClasspathEntry.CPE_LIBRARY ) {
+								listRefLibraries.add(tmp.getPath());
+							}
+						}
+					}
 				}
 			}
 		} catch (JavaModelException e) {
