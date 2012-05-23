@@ -16,6 +16,7 @@ import org.eclipse.pde.core.plugin.IPluginBase;
 import org.eclipse.pde.core.plugin.IPluginElement;
 import org.eclipse.pde.core.plugin.IPluginExtension;
 import org.eclipse.pde.core.plugin.IPluginModelBase;
+import org.eclipse.pde.core.plugin.IPluginModelFactory;
 import org.eclipse.pde.core.plugin.IPluginReference;
 import org.eclipse.pde.internal.core.bundle.BundlePluginBase;
 import org.eclipse.pde.internal.core.ibundle.IBundle;
@@ -25,108 +26,100 @@ import org.osgi.framework.Constants;
 
 import at.bestsolution.efxclipse.tooling.jdt.core.JavaFXCore;
 
-@SuppressWarnings("restriction")
-public class FXOSGiAppTemplate extends FXPDETemplateSection {
-	public static final String KEY_APPLICATION_CLASS = "applicationClass"; //$NON-NLS-1$
-	public static final String KEY_WINDOW_TITLE = "windowTitle"; //$NON-NLS-1$
+public class E3PluginTemplate extends FXPDETemplateSection {
+	public static final String KEY_VIEW_PART_CLASS = "viewPartClass"; //$NON-NLS-1$
+	public static final String KEY_VIEW_NAME = "viewName";
 
-	public FXOSGiAppTemplate() {
+	public E3PluginTemplate() {
 		setPageCount(1);
 		createOptions();
 	}
 	
-	private void createOptions() {
-		addOption(KEY_WINDOW_TITLE, "Title", "Hello JavaFX", 0); //$NON-NLS-1$ 
-		addOption(KEY_PACKAGE_NAME, "Package", (String) null, 0);
-		addOption(KEY_APPLICATION_CLASS, "Application class", "Application", 0); //$NON-NLS-1$
-		
-		createBrandingOptions();
-	}
-	
-	public void addPages(Wizard wizard) {
-		WizardPage page = createPage(0);
-		page.setTitle("JavaFX Application");
-		page.setDescription("Template to create JavaFX application");
-		wizard.addPage(page);
-		markPagesAdded();
+	public int getNumberOfWorkUnits() {
+		return super.getNumberOfWorkUnits() + 1;
 	}
 	
 	protected void initializeFields(IFieldData data) {
 		// In a new project wizard, we don't know this yet - the
 		// model has not been created
-		String packageName = getFormattedPackageName(data.getId());
-		initializeOption(KEY_PACKAGE_NAME, packageName);
+		initializeFields(data.getId());
+
+	}
+
+	public void initializeFields(IPluginModelBase model) {
+		// In the new extension wizard, the model exists so 
+		// we can initialize directly from it
+		initializeFields(model.getPluginBase().getId());
+	}
+
+	public void initializeFields(String id) {
+		initializeOption(KEY_PACKAGE_NAME, getFormattedPackageName(id));
 	}
 	
-	public void initializeFields(IPluginModelBase model) {
-		String packageName = getFormattedPackageName(model.getPluginBase().getId());
-		initializeOption(KEY_PACKAGE_NAME, packageName);
+	public boolean isDependentOnParentWizard() {
+		return true;
+	}
+	
+	private void createOptions() {
+		addOption(KEY_PACKAGE_NAME, "Package", (String) null, 0);
+		addOption(KEY_VIEW_PART_CLASS, "ViewPart class", "MyViewPart", 0); //$NON-NLS-1$
+		addOption(KEY_VIEW_NAME, "Name", "My FX View", 0);
+	}
+
+	@Override
+	public void addPages(Wizard wizard) {
+		WizardPage page = createPage(0);
+		page.setTitle("Eclipse 3.x ViewPart plugin");
+		page.setDescription("Template to create an Eclipse 3.x ViewPart plugin");
+		wizard.addPage(page);
+		markPagesAdded();
 	}
 	
 	@Override
 	public String getUsedExtensionPoint() {
-		return null;
+		return "org.eclipse.ui.views";
 	}
 
 	@Override
 	public String getSectionId() {
-		return "javaFXApp"; //$NON-NLS-1$
+		return "eclipse3xplugin";
 	}
 
 	@Override
 	protected void updateModel(IProgressMonitor monitor) throws CoreException {
-		createApplicationExtension();
-		
-		if (getBooleanOption(KEY_PRODUCT_BRANDING))
-			createProductExtension();
-		
-		updateBuildModel();
-	}
-
-	private void createApplicationExtension() throws CoreException {
 		IPluginBase plugin = model.getPluginBase();
-
-		IPluginExtension extension = createExtension("org.eclipse.core.runtime.applications", true); //$NON-NLS-1$
-		extension.setId(VALUE_APPLICATION_ID);
-
-		IPluginElement element = model.getPluginFactory().createElement(extension);
-		element.setName("application"); //$NON-NLS-1$
-		extension.add(element);
-
-		IPluginElement run = model.getPluginFactory().createElement(element);
-		run.setName("run"); //$NON-NLS-1$
-		run.setAttribute("class", getStringOption(KEY_PACKAGE_NAME) + "." + getStringOption(KEY_APPLICATION_CLASS)); //$NON-NLS-1$ //$NON-NLS-2$
-		element.add(run);
-
+		IPluginExtension extension = createExtension("org.eclipse.ui.views", true); //$NON-NLS-1$
+		IPluginModelFactory factory = model.getPluginFactory();
+		
+		String fullClassName = getStringOption(KEY_PACKAGE_NAME) + "." + getStringOption(KEY_VIEW_PART_CLASS); //$NON-NLS-1$ //$NON-NLS-2$
+		IPluginElement viewElement = factory.createElement(extension);
+		viewElement.setName("view"); //$NON-NLS-1$
+		viewElement.setAttribute("id", fullClassName); //$NON-NLS-1$
+		viewElement.setAttribute("name", getStringOption(KEY_VIEW_NAME)); //$NON-NLS-1$ //$NON-NLS-2$
+		viewElement.setAttribute("icon", "icons/sample.gif"); //$NON-NLS-1$ //$NON-NLS-2$
+		viewElement.setAttribute("class", fullClassName); //$NON-NLS-1$
+		extension.add(viewElement);
+		
 		if (!extension.isInTheModel())
 			plugin.add(extension);
 	}
 	
-	private void createProductExtension() throws CoreException {
-		IPluginBase plugin = model.getPluginBase();
-		IPluginExtension extension = createExtension("org.eclipse.core.runtime.products", true); //$NON-NLS-1$
-		extension.setId(VALUE_PRODUCT_ID);
+	public IPluginReference[] getDependencies(String schemaVersion) {
+		ArrayList<IPluginReference> result = new ArrayList<IPluginReference>();
+		if (schemaVersion != null)
+			result.add(new PluginReference("org.eclipse.core.runtime", null, 0)); //$NON-NLS-1$
+		result.add(new PluginReference("org.eclipse.ui", null, 0)); //$NON-NLS-1$
+		result.add(new PluginReference("at.bestsolution.efxclipse.runtime.workbench3", null, 0));
+		return (IPluginReference[]) result.toArray(new IPluginReference[result.size()]);
+	}
 
-		IPluginElement element = model.getFactory().createElement(extension);
-		element.setName("product"); //$NON-NLS-1$
-		element.setAttribute("name", getStringOption(KEY_WINDOW_TITLE)); //$NON-NLS-1$  
-		element.setAttribute("application", plugin.getId() + "." + VALUE_APPLICATION_ID); //$NON-NLS-1$ //$NON-NLS-2$
-
-		IPluginElement property = model.getFactory().createElement(element);
-
-		property = model.getFactory().createElement(element);
-		property.setName("property"); //$NON-NLS-1$
-		property.setAttribute("name", "windowImages"); //$NON-NLS-1$ //$NON-NLS-2$
-		property.setAttribute("value", "icons/alt_window_16.gif,icons/alt_window_32.gif"); //$NON-NLS-1$ //$NON-NLS-2$
-		element.add(property);
-
-		extension.add(element);
-
-		if (!extension.isInTheModel())
-			plugin.add(extension);
+	protected String getFormattedPackageName(String id) {
+		String packageName = super.getFormattedPackageName(id);
+		if (packageName.length() != 0)
+			return packageName + ".views"; //$NON-NLS-1$
+		return "views"; //$NON-NLS-1$
 	}
 	
-	@Override
 	public void execute(IProject project, IPluginModelBase model,
 			IProgressMonitor monitor) throws CoreException {
 //		IJavaProject jProject = JavaCore.create(project);
@@ -148,28 +141,6 @@ public class FXOSGiAppTemplate extends FXPDETemplateSection {
 		}
 		
 		super.execute(project, model, monitor);
-	}
-	
-	public IPluginReference[] getDependencies(String schemaVersion) {
-		IPluginReference[] dep = new IPluginReference[2];
-		dep[0] = new PluginReference("org.eclipse.core.runtime", null, 0); //$NON-NLS-1$
-		dep[1] = new PluginReference("at.bestsolution.efxclipse.runtime.application", null, 0); //$NON-NLS-1$
-		
-		return dep;
-	}
-	
-	public boolean isDependentOnParentWizard() {
-		return true;
-	}
-	
-	public int getNumberOfWorkUnits() {
-		return super.getNumberOfWorkUnits() + 1;
-	}
-	
-	public String[] getNewFiles() {
-		if (copyBrandingDirectory())
-			return new String[] {"icons/", "splash.bmp"}; //$NON-NLS-1$ //$NON-NLS-2$
-		return super.getNewFiles();
 	}
 	
 	protected String getCommaValuesFromPackagesArray(String[] values, String version) {

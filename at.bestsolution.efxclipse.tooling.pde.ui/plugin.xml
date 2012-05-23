@@ -25,6 +25,16 @@
             requiresActivator="false"
             ui-content="false">
       </wizard>
+      <wizard
+            class="at.bestsolution.efxclipse.tooling.pde.ui.E3PluginWizard"
+            id="at.bestsolution.efxclipse.tooling.pde.ui.3xpart"
+            java="true"
+            name="JavaFX Eclipse 3.x ViewPart"
+            pureOSGi="false"
+            rcp="false"
+            requiresActivator="false"
+            ui-content="true">
+      </wizard>
    </extension>
    <extension
          point="org.eclipse.ui.newWizards">
