@@ -16,8 +16,8 @@ public class FXObjectPoperty extends FXProperty implements IFXObjectProperty {
 	private IMethod valueOfMethod;
 	private boolean valueOfMethodResolved;
 
-	public FXObjectPoperty(FXClass fxClass, String name, IJavaElement javaElement, String erasedFQNType) {
-		super(fxClass, name, javaElement);
+	public FXObjectPoperty(FXClass fxClass, String name, IJavaElement javaElement, String erasedFQNType, boolean isStatic) {
+		super(fxClass, name, javaElement, isStatic);
 		this.erasedFQNType = erasedFQNType;
 	}
 

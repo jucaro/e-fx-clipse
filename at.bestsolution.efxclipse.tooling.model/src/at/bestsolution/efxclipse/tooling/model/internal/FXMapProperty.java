@@ -10,8 +10,8 @@ import at.bestsolution.efxclipse.tooling.model.internal.utils.Util;
 
 public class FXMapProperty extends FXProperty implements IFXMapProperty {
 
-	public FXMapProperty(FXClass fxClass, String name, IJavaElement javaElement) {
-		super(fxClass, name, javaElement);
+	public FXMapProperty(FXClass fxClass, String name, IJavaElement javaElement, boolean isStatic) {
+		super(fxClass, name, javaElement, isStatic);
 	}
 
 	public static boolean isMap(IJavaProject jp, String erasedFQNType) throws JavaModelException {

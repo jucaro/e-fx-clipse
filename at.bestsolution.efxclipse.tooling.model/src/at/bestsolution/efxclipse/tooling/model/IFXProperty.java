@@ -8,5 +8,6 @@ public interface IFXProperty {
 	public IJavaElement getJavaElement();
 	public boolean isSetable();
 	public IFXClass getFXClass();
+	public boolean isStatic();
 //	public IStatus validateValue(IJavaProject jp, Object value);
 }

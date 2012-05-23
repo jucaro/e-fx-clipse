@@ -129,20 +129,20 @@ public class PropertiesUtil {
 		String genericType = Signature.toString(signature);
 		
 		if( FXPrimitiveProperty.isPrimitive(genericType) ) {
-			p = new FXPrimitiveProperty(fxClass, name, m, Type.parseType(genericType));
+			p = new FXPrimitiveProperty(fxClass, name, m, Type.parseType(genericType),false);
 		} else {
 			String erasedFQNType = Util.getFQNType((IType)m.getParent(), Signature.getTypeErasure(genericType));
 			if( erasedFQNType != null ) {
 				if( FXEventHandlerProperty.isEventHandler(fxClass.getJavaProject(), erasedFQNType) ) {
-					p = new FXEventHandlerProperty(fxClass, name, m);
+					p = new FXEventHandlerProperty(fxClass, name, m,false);
 				} else if( FXCollectionProperty.isList(fxClass.getJavaProject(), erasedFQNType) ) {
-					p = new FXCollectionProperty(fxClass, name, m, erasedFQNType, genericType);
+					p = new FXCollectionProperty(fxClass, name, m, erasedFQNType, genericType,false);
 				} else if( FXMapProperty.isMap(fxClass.getJavaProject(), erasedFQNType) ) {
-					p = new FXMapProperty(fxClass, name, m);
+					p = new FXMapProperty(fxClass, name, m,false);
 				} else if( FXEnumProperty.isEnum(fxClass.getJavaProject(), erasedFQNType) ) {
-					p = new FXEnumProperty(fxClass, name, m, erasedFQNType);
+					p = new FXEnumProperty(fxClass, name, m, erasedFQNType,false);
 				} else {
-					p = new FXObjectPoperty(fxClass, name, m, erasedFQNType);
+					p = new FXObjectPoperty(fxClass, name, m, erasedFQNType,false);
 				}	
 			}
 		}
@@ -179,14 +179,14 @@ public class PropertiesUtil {
 				String genericType = Signature.toString(signature);
 				
 				if( FXPrimitiveProperty.isPrimitive(genericType) ) {
-					p = new FXPrimitiveProperty(fxClass, name, m, Type.parseType(genericType));
+					p = new FXPrimitiveProperty(fxClass, name, m, Type.parseType(genericType),true);
 				} else {
 					String erasedFQNType = Util.getFQNType((IType)m.getParent(), Signature.getTypeErasure(genericType));
 					if( erasedFQNType != null ) {
 						if( FXEnumProperty.isEnum(fxClass.getJavaProject(), erasedFQNType) ) {
-							p = new FXEnumProperty(fxClass, name, m, erasedFQNType);
+							p = new FXEnumProperty(fxClass, name, m, erasedFQNType,true);
 						} else {
-							p = new FXObjectPoperty(fxClass, name, m, erasedFQNType);
+							p = new FXObjectPoperty(fxClass, name, m, erasedFQNType,true);
 						}
 					} 
 				}

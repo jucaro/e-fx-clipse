@@ -14,8 +14,8 @@ public class FXCollectionProperty extends FXProperty implements IFXCollectionPro
 	private String genericType;
 	private IType elementType;
 	
-	public FXCollectionProperty(FXClass fxClass, String name, IMethod javaElement, String erasedFQNType, String genericType) {
-		super(fxClass, name, javaElement);
+	public FXCollectionProperty(FXClass fxClass, String name, IMethod javaElement, String erasedFQNType, String genericType, boolean isStatic) {
+		super(fxClass, name, javaElement, isStatic);
 		this.collectionTypeAsString = erasedFQNType;
 		this.genericType = genericType;
 	}

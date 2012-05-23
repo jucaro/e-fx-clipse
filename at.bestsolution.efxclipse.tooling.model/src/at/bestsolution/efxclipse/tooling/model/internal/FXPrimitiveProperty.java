@@ -7,8 +7,8 @@ import at.bestsolution.efxclipse.tooling.model.IFXPrimitiveProperty;
 public class FXPrimitiveProperty extends FXProperty implements IFXPrimitiveProperty {
 	private final Type type;
 	
-	public FXPrimitiveProperty(FXClass fxClass, String name, IMethod javaElement, Type type) {
-		super(fxClass, name, javaElement);
+	public FXPrimitiveProperty(FXClass fxClass, String name, IMethod javaElement, Type type, boolean isStatic) {
+		super(fxClass, name, javaElement, isStatic);
 		this.type = type;
 	}
 

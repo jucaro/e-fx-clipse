@@ -12,8 +12,8 @@ public class FXEnumProperty extends FXProperty implements IFXEnumProperty {
 	private String enumTypeAsString;
 	private IType enumType;
 	
-	public FXEnumProperty(FXClass fxClass, String name, IJavaElement javaElement, String erasedFQNType) {
-		super(fxClass, name, javaElement);
+	public FXEnumProperty(FXClass fxClass, String name, IJavaElement javaElement, String erasedFQNType, boolean isStatic) {
+		super(fxClass, name, javaElement, isStatic);
 		this.enumTypeAsString = erasedFQNType;
 	}
 

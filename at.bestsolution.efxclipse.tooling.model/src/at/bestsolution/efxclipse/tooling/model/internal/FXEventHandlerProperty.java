@@ -13,8 +13,8 @@ import at.bestsolution.efxclipse.tooling.model.internal.utils.Util;
 public class FXEventHandlerProperty extends FXProperty implements IFXEventHandlerProperty {
 	private IType eventType;
 	
-	public FXEventHandlerProperty(FXClass fxClass, String name, IJavaElement javaElement) {
-		super(fxClass, name, javaElement);
+	public FXEventHandlerProperty(FXClass fxClass, String name, IJavaElement javaElement, boolean isStatic) {
+		super(fxClass, name, javaElement, isStatic);
 	}
 
 	public static boolean isEventHandler(IJavaProject jp, String erasedFQNType) throws JavaModelException {
