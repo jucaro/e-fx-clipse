@@ -43,6 +43,11 @@
             name="Repackage JavaFX for OSGi"
             project="true">
       </wizard>
+      <wizard
+            class="at.bestsolution.efxclipse.tooling.pde.ui.E3ViewPartClassWizard"
+            id="at.bestsolution.efxclipse.tooling.pde.ui.fxviewpart"
+            name="Eclipse 3.x ViewPart">
+      </wizard>
    </extension>
 
 </plugin>
