@@ -97,7 +97,7 @@ public abstract class FXPDETemplateSection extends OptionTemplateSection {
 	}
 
 	protected void createBrandingOptions() {
-		addOption(KEY_PRODUCT_BRANDING, "Product Branding", false, 0);
+		addOption(KEY_PRODUCT_BRANDING, "Product Branding", true, 0);
 	}
 	
 	protected void updateBuildModel() throws CoreException {
