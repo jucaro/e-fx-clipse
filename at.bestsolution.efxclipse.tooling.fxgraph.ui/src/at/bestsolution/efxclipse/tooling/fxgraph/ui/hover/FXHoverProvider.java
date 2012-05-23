@@ -5,16 +5,13 @@ import org.eclipse.jdt.core.Flags;
 import org.eclipse.jdt.core.IField;
 import org.eclipse.jdt.core.IJavaElement;
 import org.eclipse.jdt.core.IJavaProject;
-import org.eclipse.jdt.core.IMethod;
 import org.eclipse.jdt.core.IType;
 import org.eclipse.jdt.core.JavaModelException;
-import org.eclipse.jdt.core.Signature;
 import org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover;
 import org.eclipse.jface.text.IInformationControlCreator;
 import org.eclipse.jface.text.IRegion;
 import org.eclipse.jface.text.ITextViewer;
 import org.eclipse.xtext.common.types.JvmType;
-import org.eclipse.xtext.common.types.JvmTypeReference;
 import org.eclipse.xtext.common.types.access.jdt.IJavaProjectProvider;
 import org.eclipse.xtext.common.types.util.jdt.IJavaElementFinder;
 import org.eclipse.xtext.xbase.ui.hover.XbaseHoverProvider;
@@ -26,30 +23,18 @@ import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.Model;
 import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.Property;
 import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.SimpleValueProperty;
 import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.StaticValueProperty;
-import at.bestsolution.efxclipse.tooling.fxgraph.ui.util.JDTHelper;
+import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.ValueProperty;
+import at.bestsolution.efxclipse.tooling.model.FXPlugin;
+import at.bestsolution.efxclipse.tooling.model.IFXClass;
+import at.bestsolution.efxclipse.tooling.model.IFXCtrlClass;
+import at.bestsolution.efxclipse.tooling.model.IFXCtrlEventMethod;
+import at.bestsolution.efxclipse.tooling.model.IFXEnumProperty;
+import at.bestsolution.efxclipse.tooling.model.IFXProperty;
 
 import com.google.inject.Inject;
 
 @SuppressWarnings("restriction")
 public class FXHoverProvider extends XbaseHoverProvider {
-	
-//	@Override
-//	protected String getFirstLine(EObject o) {
-//		if( o instanceof Property ) {
-//			return "FIRSTLINE DOCU " + o;
-//		}
-//		// TODO Auto-generated method stub
-//		return super.getFirstLine(o);
-//	}
-//	
-//	@Override
-//	protected String getDocumentation(EObject o) {
-//		if( o instanceof Property ) {
-//			return "DOKU: " + o;
-//		}
-////		System.err.println("Getting documentation: " + o);
-//		return super.getDocumentation(o);
-//	}
 	
 	@Inject
 	private IJavaElementFinder javaElementFinder;
@@ -59,189 +44,118 @@ public class FXHoverProvider extends XbaseHoverProvider {
 	
 	private JavadocHoverWrapper javadocHover = new JavadocHoverWrapper ();
 	
+	private IType getJDTType(JvmType jvmTypeRef) {
+		try {
+			IJavaProject javaProject = javaProjectProvider.getJavaProject(jvmTypeRef.eResource().getResourceSet());
+			return javaProject.findType(jvmTypeRef.getQualifiedName());			
+		} catch(JavaModelException e) {
+			//TODO Logging
+			e.printStackTrace();
+		}
+		return null;
+	}
+	
 	@Override
 	public IInformationControlCreatorProvider getHoverInfo(EObject object, ITextViewer viewer, IRegion region) {
-		if( object instanceof SimpleValueProperty ) {
-			SimpleValueProperty v = (SimpleValueProperty) object;
-			if( v.getStringValue() != null ) {
-				if( v.eContainer() instanceof StaticValueProperty ) {
-					StaticValueProperty sProp = (StaticValueProperty) v.eContainer();
-					IType type = getEnumType(sProp);
-					if( type != null ) {
-						return findFieldJavaDoc(type, v.getStringValue(), object, viewer, region);
-					}
+		if( object instanceof Element ) {
+			Element e = (Element) object;
+			if( e.getType() != null ) {
+				IType t = getJDTType(e.getType().getType());
+				if( t != null ) {
+					return createHover(t, object, viewer, region);
 				}
 			}
-		}
-		
-		if( object instanceof Property ) {
-			if( object.eContainer() instanceof Element ) {
-				Property property = (Property) object;
-				Element element = (Element) object.eContainer();
-				
-				IInformationControlCreatorProvider rv = handleElementProperty(element, property, object, viewer, region);
-				if( rv != null ) {
-					return rv;
-				}
-			}
-		} else if( object instanceof ControllerHandledValueProperty ) {
-			ControllerHandledValueProperty prop = (ControllerHandledValueProperty) object;
-			Model m = (Model) object.eResource().getContents().get(0);
-			
-			if( m != null ) {
-				ComponentDefinition def = m.getComponentDef();
-				if( def != null ) {
-					if( def.getController() != null ) {
-						IInformationControlCreatorProvider rv = findMethodJavaDoc(def.getController().getType(), prop.getMethodname(), object, viewer, region);
-						if( rv != null ) {
-							return rv;
-						}
-					}
-				}
-			}
-		} else if( object instanceof Element ) {
-			Element element = (Element) object;
-			if( element.getName() != null ) {
-				Model m = (Model) object.eResource().getContents().get(0);
-				
-				if( m != null ) {
-					ComponentDefinition def = m.getComponentDef();
-					if( def.getController() != null ) {
-						IType jdtType = (IType) javaElementFinder.findElementFor(def.getController().getType());
-						IInformationControlCreatorProvider rv = findFieldJavaDoc(jdtType, element.getName(),object,viewer,region);
-						if( rv != null ) {
-							return rv; 
+		} else if( object instanceof Property ) {
+			Property p = (Property) object;
+			if( p.eContainer() instanceof Element ) {
+				Element e = (Element) p.eContainer();
+				if( e.getType() != null ) {
+					IType t = getJDTType(e.getType().getType());
+					if( t != null ) {
+						IFXClass fxClass = FXPlugin.getClassmodel().findClass(t.getJavaProject(), t);
+						if( fxClass != null ) {
+							IFXProperty fxp = fxClass.getProperty(p.getName());
+							if( fxp != null ) {
+								return createHover(fxp.getJavaElement(), object, viewer, region);
+							}
 						}
 					}
 				}
 			}
 		} else if( object instanceof StaticValueProperty ) {
-			StaticValueProperty p = (StaticValueProperty) object;
-			if( p.getName() != null ) {
-				JvmTypeReference typeRef = p.getType();
-				if( typeRef != null ) {
-					return findMethodJavaDoc(typeRef.getType(), "set" + Character.toUpperCase(p.getName().charAt(0))+p.getName().substring(1), object, viewer, region);
+			StaticValueProperty sp = (StaticValueProperty) object;
+			if( sp.getType() != null ) {
+				IType t = getJDTType(sp.getType().getType());
+				if( t != null ) {
+					IFXClass fxClass = FXPlugin.getClassmodel().findClass(t.getJavaProject(), t);
+					if( fxClass != null ) {
+						IFXProperty fxp = fxClass.getStaticProperty(sp.getName());
+						if( fxp != null ) {
+							return createHover(fxp.getJavaElement(), object, viewer, region);
+						}
+					}
 				}
 			}
-		}
-		
+		} else if( object instanceof ValueProperty ) {
+			if( object instanceof ControllerHandledValueProperty ) {
+				ControllerHandledValueProperty cp = (ControllerHandledValueProperty) object;
+				
+				Model m = (Model) object.eResource().getContents().get(0);
+				
+				if( m != null ) {
+					ComponentDefinition def = m.getComponentDef();
+					if( def != null ) {
+						if( def.getController() != null && def.getController().getType() != null) {
+							IType t = getJDTType(def.getController().getType());
+							if( t != null ) {
+								IFXCtrlClass fxClass = FXPlugin.getClassmodel().findCtrlClass(t.getJavaProject(), t);
+								if( fxClass != null ) {
+									IFXCtrlEventMethod fxp = fxClass.getAllEventMethods().get(cp.getMethodname());
+									if( fxp != null ) {
+										return createHover(fxp.getJavaElement(), object, viewer, region);
+									}
+								}
+							}
+						}
+					}
+				}
+			} else if( object instanceof SimpleValueProperty ) {
+				SimpleValueProperty sp = (SimpleValueProperty) object;
+				if( sp.eContainer() instanceof Property && sp.getStringValue() != null ) {
+					Property p = (Property) sp.eContainer();
+					
+					if( p.eContainer() instanceof Element ) {
+						Element e = (Element) p.eContainer();
+						if( e.getType() != null ) {
+							IType t = getJDTType(e.getType().getType());
+							if( t != null ) {
+								IFXClass fxClass = FXPlugin.getClassmodel().findClass(t.getJavaProject(), t);
+								if( fxClass != null ) {
+									IFXProperty fxp = fxClass.getProperty(p.getName());
+									if( fxp instanceof IFXEnumProperty ) {
+										IType enumType = ((IFXEnumProperty) fxp).getEnumType();
+										try {
+											for (IField f : enumType.getFields()) {
+												if (Flags.isEnum(f.getFlags())) {
+													if( f.getElementName().equals(sp.getStringValue()) ) {
+														return createHover(f, object, viewer, region);
+													}
+												}
+											}
+										} catch (JavaModelException ex) {
+											// TODO Auto-generated catch block
+											ex.printStackTrace();
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		} 
+
 		return super.getHoverInfo(object, viewer, region);
-	}
-	
-	private IInformationControlCreatorProvider findFieldJavaDoc(IType jdtType, String fieldname, EObject object, ITextViewer viewer, IRegion region) {
-		try {
-			for( IField f : jdtType.getFields() ) {
-				if( f.getElementName().equals(fieldname) ) {
-					return createHover(f, object, viewer, region);
-				}
-			}
-			
-			
-			while (jdtType != null
-					&& jdtType.getSuperclassName() != null) {
-				jdtType = jdtType.getJavaProject()
-						.findType(jdtType.getSuperclassName());
-				if (jdtType != null) {
-					for( IField f : jdtType.getFields() ) {
-						if( f.getElementName().equals(fieldname) ) {
-							return createHover(f, object, viewer, region);
-						}
-					}
-				}
-			}
-		} catch (JavaModelException e) {
-			// TODO: handle exception
-			e.printStackTrace();
-		}
-		
-		return null;
-	}
-	
-	private IInformationControlCreatorProvider findMethodJavaDoc(JvmType t, String method, EObject object, ITextViewer viewer, IRegion region) {
-		IType jdtType = (IType) javaElementFinder.findElementFor(t);
-		
-		try {
-			for( IMethod m : jdtType.getMethods() ) {
-				if( m.getElementName().equals(method) ) {
-					return createHover(m, object, viewer, region);
-				}
-			}
-			
-			while (jdtType != null
-					&& jdtType.getSuperclassName() != null) {
-				jdtType = jdtType.getJavaProject()
-						.findType(jdtType.getSuperclassName());
-				if (jdtType != null) {
-					for( IMethod m : jdtType.getMethods() ) {
-						if( m.getElementName().equals(method) ) {
-							return createHover(m, object, viewer, region);
-						}
-					}
-				}
-			}
-		} catch (JavaModelException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		
-		return null;
-	}
-	
-	private IInformationControlCreatorProvider handleElementProperty(Element element, Property property, EObject object, ITextViewer viewer, IRegion region) {
-		JvmType t = element.getType().getType();
-		IType originalType = (IType) javaElementFinder.findElementFor(t); 
-		IType jdtType = originalType;
-		
-		try {
-			
-			// First check if there's a setter
-			for( IMethod m : jdtType.getMethods() ) {
-				if( m.getElementName().startsWith("set") && property.getName().equals(JDTHelper.extractAttributename(m.getElementName())) ) {
-					return createHover(m, object, viewer, region);
-				}
-			}
-			
-			while (jdtType != null
-					&& jdtType.getSuperclassName() != null) {
-				jdtType = jdtType.getJavaProject()
-						.findType(jdtType.getSuperclassName());
-				if (jdtType != null) {
-					for( IMethod m : jdtType.getMethods() ) {
-						if( m.getElementName().startsWith("set") && property.getName().equals(JDTHelper.extractAttributename(m.getElementName())) ) {
-							return createHover(m, object, viewer, region);
-						}
-					}
-				}
-			}
-			
-			jdtType = originalType;
-			
-			// Check if there's a getter
-			for( IMethod m : jdtType.getMethods() ) {
-				if( (m.getElementName().startsWith("get") || m.getElementName().startsWith("is")) && property.getName().equals(JDTHelper.extractAttributename(m.getElementName())) ) {
-					return createHover(m, object, viewer, region);
-				}
-			}
-			
-			while (jdtType != null
-					&& jdtType.getSuperclassName() != null) {
-				jdtType = jdtType.getJavaProject()
-						.findType(jdtType.getSuperclassName());
-				if (jdtType != null) {
-					for( IMethod m : jdtType.getMethods() ) {
-						if( (m.getElementName().startsWith("get") || m.getElementName().startsWith("is")) && property.getName().equals(JDTHelper.extractAttributename(m.getElementName())) ) {
-							return createHover(m, object, viewer, region);
-						}
-					}
-				}
-			}
-			
-		} catch (JavaModelException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		
-		return null;
 	}
 	
 	private IInformationControlCreatorProvider createHover(IJavaElement javaElement, EObject eObject, ITextViewer viewer, IRegion region) {
@@ -262,42 +176,7 @@ public class FXHoverProvider extends XbaseHoverProvider {
 	
 	@Override
 	protected boolean hasHover(EObject o) {
-		if( o instanceof SimpleValueProperty ) {
-			SimpleValueProperty v = (SimpleValueProperty) o;
-			if( v.getStringValue() != null ) {
-				if( v.eContainer() instanceof StaticValueProperty ) {
-					StaticValueProperty sProp = (StaticValueProperty) v.eContainer();
-					return getEnumType(sProp) != null;
-				}
-			}
-		}
 		return super.hasHover(o);
-	}
-	
-	private IType getEnumType(StaticValueProperty sProp) {
-		IType t = (IType) javaElementFinder.findElementFor(sProp.getType().getType());
-		String methodName = "set" + Character.toUpperCase(sProp.getName().charAt(0)) + sProp.getName().substring(1);
-		try {
-			for( IMethod m : t.getMethods() ) {
-				if( Flags.isPublic(m.getFlags()) && Flags.isStatic(m.getFlags()) && m.getElementName().endsWith(methodName) && m.getParameterTypes().length == 2 ) {
-					String valueType = m.getParameterTypes()[1];
-					String fqType = Signature.toString(valueType);
-					IJavaProject jp = javaProjectProvider.getJavaProject(sProp.eResource().getResourceSet());
-					
-					IType type = jp.findType(fqType);
-					
-					if( type != null ) {
-						if( type.isEnum() ) {
-							return type;
-						}
-					}
-				}
-			}
-		} catch (JavaModelException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		return null;
 	}
 	
 	static class JavadocHoverWrapper extends JavadocHover {

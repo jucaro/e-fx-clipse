@@ -25,6 +25,7 @@ import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.ResourceValueProperty;
 import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.SimpleValueProperty;
 import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.StaticValueProperty;
 import at.bestsolution.efxclipse.tooling.fxgraph.ui.util.JDTHelper;
+import at.bestsolution.efxclipse.tooling.ui.util.IconKeys;
 
 /**
  * customization of the default outline structure
@@ -38,11 +39,11 @@ public class FXGraphOutlineTreeProvider extends DefaultOutlineTreeProvider {
 		if( model.getPackage() != null ) {
 			createNode(parentNode, model.getPackage());
 		} else {
-			createEStructuralFeatureNode(parentNode, modelElement, FXGraphPackage.Literals.MODEL__PACKAGE, JFaceResources.getImage(JDTHelper.PACKAGE_KEY), "default", true);
+			createEStructuralFeatureNode(parentNode, modelElement, FXGraphPackage.Literals.MODEL__PACKAGE, IconKeys.getIcon(IconKeys.PACKAGE_KEY), "default", true);
 		}
 		
 		if( ! model.getImports().isEmpty() ) {
-			createEStructuralFeatureNode(parentNode, modelElement, FXGraphPackage.Literals.MODEL__IMPORTS, JFaceResources.getImage(JDTHelper.IMPORT_LIST_KEY), "import declarations", false);
+			createEStructuralFeatureNode(parentNode, modelElement, FXGraphPackage.Literals.MODEL__IMPORTS, IconKeys.getIcon(IconKeys.IMPORT_LIST_KEY), "import declarations", false);
 		}
 		
 		if( model.getComponentDef() != null ) {
@@ -56,11 +57,11 @@ public class FXGraphOutlineTreeProvider extends DefaultOutlineTreeProvider {
 		if( modelElement instanceof ComponentDefinition ) {
 			ComponentDefinition def = (ComponentDefinition) modelElement;
 			if( ! def.getDefines().isEmpty() ) {
-				createEStructuralFeatureNode(parentNode, def, FXGraphPackage.Literals.COMPONENT_DEFINITION__DEFINES, JFaceResources.getImage(JDTHelper.DEFINES_KEY), "Defines", false);
+				createEStructuralFeatureNode(parentNode, def, FXGraphPackage.Literals.COMPONENT_DEFINITION__DEFINES, IconKeys.getIcon(IconKeys.DEFINES_KEY), "Defines", false);
 			}
 			
 			if( ! def.getScripts().isEmpty() ) {
-				createEStructuralFeatureNode(parentNode, def, FXGraphPackage.Literals.COMPONENT_DEFINITION__SCRIPTS, JFaceResources.getImage(JDTHelper.SCRIPTS_KEY), "Scripts", false);
+				createEStructuralFeatureNode(parentNode, def, FXGraphPackage.Literals.COMPONENT_DEFINITION__SCRIPTS, IconKeys.getIcon(IconKeys.SCRIPTS_KEY), "Scripts", false);
 			}
 			
 			if( def.getRootNode() != null ) {

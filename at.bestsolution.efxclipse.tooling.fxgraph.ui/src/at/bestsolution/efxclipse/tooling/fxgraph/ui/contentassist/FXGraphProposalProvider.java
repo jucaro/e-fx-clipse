@@ -27,7 +27,6 @@ import org.eclipse.jdt.core.IPackageFragmentRoot;
 import org.eclipse.jdt.core.IType;
 import org.eclipse.jdt.core.JavaModelException;
 import org.eclipse.jdt.core.search.IJavaSearchConstants;
-import org.eclipse.jface.resource.JFaceResources;
 import org.eclipse.jface.text.IInformationControlCreator;
 import org.eclipse.jface.text.IRegion;
 import org.eclipse.jface.text.ITextHoverExtension;
@@ -60,7 +59,6 @@ import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.Model;
 import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.Property;
 import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.ReferenceValueProperty;
 import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.StaticValueProperty;
-import at.bestsolution.efxclipse.tooling.fxgraph.ui.util.JDTHelper;
 import at.bestsolution.efxclipse.tooling.model.FXPlugin;
 import at.bestsolution.efxclipse.tooling.model.IFXClass;
 import at.bestsolution.efxclipse.tooling.model.IFXCollectionProperty;
@@ -74,6 +72,7 @@ import at.bestsolution.efxclipse.tooling.model.IFXPrimitiveProperty;
 import at.bestsolution.efxclipse.tooling.model.IFXPrimitiveProperty.Type;
 import at.bestsolution.efxclipse.tooling.model.IFXProperty;
 import at.bestsolution.efxclipse.tooling.model.Util;
+import at.bestsolution.efxclipse.tooling.ui.util.IconKeys;
 import at.bestsolution.efxclipse.tooling.ui.util.RelativeFileLocator;
 
 import com.google.inject.Inject;
@@ -295,11 +294,11 @@ public class FXGraphProposalProvider extends AbstractFXGraphProposalProvider {
 		if (prop.isSetable()) {
 			StyledString s = new StyledString(prop.getName() + " : " + prop.getCollectionAsString());
 			s.append(" - " + prop.getFXClass().getSimpleName(), StyledString.QUALIFIER_STYLER);
-			p = createCompletionProposal(prop.getName() + " : ", s, JFaceResources.getImage(JDTHelper.LIST_KEY), getPropertiesProposalsProposals(), context.getPrefix(), context);
+			p = createCompletionProposal(prop.getName() + " : ", s, IconKeys.getIcon(IconKeys.LIST_KEY), getPropertiesProposalsProposals(), context.getPrefix(), context);
 		} else {
 			StyledString s = new StyledString(prop.getName() + " : [" + prop.getElementType().getElementName() + "]");
 			s.append(" - " + prop.getFXClass().getSimpleName(), StyledString.QUALIFIER_STYLER);
-			p = createCompletionProposal(prop.getName() + " : []", s, JFaceResources.getImage(JDTHelper.LIST_KEY), getPropertiesProposalsProposals(), context.getPrefix(), context);
+			p = createCompletionProposal(prop.getName() + " : []", s, IconKeys.getIcon(IconKeys.LIST_KEY), getPropertiesProposalsProposals(), context.getPrefix(), context);
 		}
 
 		if (p instanceof ConfigurableCompletionProposal) {
@@ -318,7 +317,7 @@ public class FXGraphProposalProvider extends AbstractFXGraphProposalProvider {
 	private void createMapPropnameProposals(IFXMapProperty prop, EObject model, ContentAssistContext context, EStructuralFeature typeReference, ICompletionProposalAcceptor acceptor) {
 		StyledString s = new StyledString(prop.getName() + " : {}");
 		s.append(" - " + prop.getFXClass().getSimpleName(), StyledString.QUALIFIER_STYLER);
-		ICompletionProposal p = createCompletionProposal(prop.getName() + " : ", s, JFaceResources.getImage(JDTHelper.MAP_KEY), getPropertiesProposalsProposals(), context.getPrefix(), context);
+		ICompletionProposal p = createCompletionProposal(prop.getName() + " : ", s, IconKeys.getIcon(IconKeys.MAP_KEY), getPropertiesProposalsProposals(), context.getPrefix(), context);
 
 		if (p instanceof ConfigurableCompletionProposal) {
 			ConfigurableCompletionProposal cp = (ConfigurableCompletionProposal) p;
@@ -336,7 +335,7 @@ public class FXGraphProposalProvider extends AbstractFXGraphProposalProvider {
 			s.append(prop.getFXClass().getSimpleName() + "." + prop.getName() + " : " + prop.getEnumTypeAsString(false));
 			s.append(" - " + prop.getFXClass().getSimpleName(), StyledString.QUALIFIER_STYLER);
 			
-			ICompletionProposal p = createCompletionProposal("call " + prop.getFXClass().getSimpleName() + "#" + prop.getName() + " : ", s, JFaceResources.getImage(JDTHelper.FIELD_KEY), getPropertiesProposalsProposals()-10, context.getPrefix(), context);
+			ICompletionProposal p = createCompletionProposal("call " + prop.getFXClass().getSimpleName() + "#" + prop.getName() + " : ", s, IconKeys.getIcon(IconKeys.FIELD_KEY), getPropertiesProposalsProposals()-10, context.getPrefix(), context);
 			
 			if (p instanceof ConfigurableCompletionProposal) {
 				ConfigurableCompletionProposal cp = (ConfigurableCompletionProposal) p;
@@ -349,7 +348,7 @@ public class FXGraphProposalProvider extends AbstractFXGraphProposalProvider {
 		} else {
 			StyledString s = new StyledString(prop.getName() + " : " + prop.getEnumTypeAsString(false));
 			s.append(" - " + prop.getFXClass().getSimpleName(), StyledString.QUALIFIER_STYLER);
-			ICompletionProposal p = createCompletionProposal(prop.getName() + " : ", s, JFaceResources.getImage(JDTHelper.FIELD_KEY), getPropertiesProposalsProposals(), context.getPrefix(), context);
+			ICompletionProposal p = createCompletionProposal(prop.getName() + " : ", s, IconKeys.getIcon(IconKeys.FIELD_KEY), getPropertiesProposalsProposals(), context.getPrefix(), context);
 
 			if (p instanceof ConfigurableCompletionProposal) {
 				ConfigurableCompletionProposal cp = (ConfigurableCompletionProposal) p;
@@ -364,7 +363,7 @@ public class FXGraphProposalProvider extends AbstractFXGraphProposalProvider {
 	private void createEventHandlerPropnameProposals(IFXEventHandlerProperty prop, EObject model, ContentAssistContext context, EStructuralFeature typeReference, ICompletionProposalAcceptor acceptor) {
 		StyledString s = new StyledString(prop.getName() + " : " + prop.getEventTypeAsString(false));
 		s.append(" - " + prop.getFXClass().getSimpleName(), StyledString.QUALIFIER_STYLER);
-		ICompletionProposal p = createCompletionProposal(prop.getName() + " : ", s, JFaceResources.getImage(JDTHelper.EVENT_KEY), getPropertiesProposalsProposals(), context.getPrefix(), context);
+		ICompletionProposal p = createCompletionProposal(prop.getName() + " : ", s, IconKeys.getIcon(IconKeys.EVENT_KEY), getPropertiesProposalsProposals(), context.getPrefix(), context);
 
 		if (p instanceof ConfigurableCompletionProposal) {
 			ConfigurableCompletionProposal cp = (ConfigurableCompletionProposal) p;
@@ -382,7 +381,7 @@ public class FXGraphProposalProvider extends AbstractFXGraphProposalProvider {
 			s.append(prop.getFXClass().getSimpleName() + "." + prop.getName() + " : " + prop.getElementTypeAsString(false));
 			s.append(" - " + prop.getFXClass().getSimpleName(), StyledString.QUALIFIER_STYLER);
 			
-			ICompletionProposal p = createCompletionProposal("call " + prop.getFXClass().getSimpleName() + "#" + prop.getName() + " : ", s, JFaceResources.getImage(JDTHelper.FIELD_KEY), getPropertiesProposalsProposals()-10, context.getPrefix(), context);
+			ICompletionProposal p = createCompletionProposal("call " + prop.getFXClass().getSimpleName() + "#" + prop.getName() + " : ", s, IconKeys.getIcon(IconKeys.FIELD_KEY), getPropertiesProposalsProposals()-10, context.getPrefix(), context);
 			
 			if (p instanceof ConfigurableCompletionProposal) {
 				ConfigurableCompletionProposal cp = (ConfigurableCompletionProposal) p;
@@ -395,7 +394,7 @@ public class FXGraphProposalProvider extends AbstractFXGraphProposalProvider {
 		} else {
 			StyledString s = new StyledString(prop.getName() + " : " + prop.getElementTypeAsString(false));
 			s.append(" - " + prop.getFXClass().getSimpleName(), StyledString.QUALIFIER_STYLER);
-			ICompletionProposal p = createCompletionProposal(prop.getName() + " : ", s, JFaceResources.getImage(JDTHelper.FIELD_KEY), getPropertiesProposalsProposals(), context.getPrefix(), context);
+			ICompletionProposal p = createCompletionProposal(prop.getName() + " : ", s, IconKeys.getIcon(IconKeys.FIELD_KEY), getPropertiesProposalsProposals(), context.getPrefix(), context);
 
 			if (p instanceof ConfigurableCompletionProposal) {
 				ConfigurableCompletionProposal cp = (ConfigurableCompletionProposal) p;
@@ -449,7 +448,7 @@ public class FXGraphProposalProvider extends AbstractFXGraphProposalProvider {
 			
 			proposalValue = "call " + prop.getFXClass().getSimpleName() + "#" + proposalValue;
 			
-			ICompletionProposal p = createCompletionProposal(proposalValue, s, JFaceResources.getImage(JDTHelper.FIELD_KEY), getPropertiesProposalsProposals()-10, context.getPrefix(), context);
+			ICompletionProposal p = createCompletionProposal(proposalValue, s, IconKeys.getIcon(IconKeys.FIELD_KEY), getPropertiesProposalsProposals()-10, context.getPrefix(), context);
 			
 			if (p instanceof ConfigurableCompletionProposal) {
 				ConfigurableCompletionProposal cp = (ConfigurableCompletionProposal) p;
@@ -462,7 +461,7 @@ public class FXGraphProposalProvider extends AbstractFXGraphProposalProvider {
 		} else {
 			StyledString s = new StyledString(prop.getName() + " : " + typeName);
 			s.append(" - " + prop.getFXClass().getSimpleName(), StyledString.QUALIFIER_STYLER);
-			ICompletionProposal p = createCompletionProposal(proposalValue, s, JFaceResources.getImage(JDTHelper.FIELD_KEY), getPropertiesProposalsProposals(), context.getPrefix(), context);
+			ICompletionProposal p = createCompletionProposal(proposalValue, s, IconKeys.getIcon(IconKeys.FIELD_KEY), getPropertiesProposalsProposals(), context.getPrefix(), context);
 
 			if (p instanceof ConfigurableCompletionProposal) {
 				ConfigurableCompletionProposal cp = (ConfigurableCompletionProposal) p;
@@ -604,7 +603,7 @@ public class FXGraphProposalProvider extends AbstractFXGraphProposalProvider {
 			try {
 				for (IField f : t.getFields()) {
 					if (Flags.isEnum(f.getFlags())) {
-						ICompletionProposal p = createCompletionProposal("\"" + f.getElementName() + "\"", new StyledString(f.getElementName()).append(" - " + prop.getEnumTypeAsString(false), StyledString.QUALIFIER_STYLER), JFaceResources.getImage(JDTHelper.ENUM_KEY), getPriorityHelper()
+						ICompletionProposal p = createCompletionProposal("\"" + f.getElementName() + "\"", new StyledString(f.getElementName()).append(" - " + prop.getEnumTypeAsString(false), StyledString.QUALIFIER_STYLER), IconKeys.getIcon(IconKeys.ENUM_KEY), getPriorityHelper()
 								.getDefaultPriority(), "\"" + context.getPrefix(), context);
 						if (p instanceof ConfigurableCompletionProposal) {
 							ConfigurableCompletionProposal cp = (ConfigurableCompletionProposal) p;
@@ -741,7 +740,7 @@ public class FXGraphProposalProvider extends AbstractFXGraphProposalProvider {
 						for (String k : p.stringPropertyNames()) {
 							StyledString s = new StyledString(k);
 							s.append(" - " + p.getProperty(k), StyledString.DECORATIONS_STYLER);
-							acceptor.accept(createCompletionProposal("\"" + k + "\"", s, JFaceResources.getImage(JDTHelper.EXTERNALIZED_STRING_KEY), context));
+							acceptor.accept(createCompletionProposal("\"" + k + "\"", s, IconKeys.getIcon(IconKeys.EXTERNALIZED_STRING_KEY), context));
 						}
 					}
 				}
@@ -759,7 +758,7 @@ public class FXGraphProposalProvider extends AbstractFXGraphProposalProvider {
 				if (e.getName() != null && e.getName().trim().length() > 0) {
 					StyledString s = new StyledString(e.getName());
 					s.append(" - " + e.getType().getQualifiedName(), StyledString.DECORATIONS_STYLER);
-					acceptor.accept(createCompletionProposal(e.getName(), s, JFaceResources.getImage(JDTHelper.CLASS_KEY), context));
+					acceptor.accept(createCompletionProposal(e.getName(), s, IconKeys.getIcon(IconKeys.CLASS_KEY), context));
 				}
 			}
 		}
@@ -824,7 +823,7 @@ public class FXGraphProposalProvider extends AbstractFXGraphProposalProvider {
 							
 							StyledString s = new StyledString(sourceProp.getName() + " : " + typeName);
 							s.append(" - " + sourceProp.getFXClass().getSimpleName(), StyledString.QUALIFIER_STYLER);
-							ICompletionProposal cp = createCompletionProposal(sourceProp.getName(), s, JFaceResources.getImage(JDTHelper.FIELD_KEY), getPropertiesProposalsProposals(), context.getPrefix(), context);
+							ICompletionProposal cp = createCompletionProposal(sourceProp.getName(), s, IconKeys.getIcon(IconKeys.FIELD_KEY), getPropertiesProposalsProposals(), context.getPrefix(), context);
 							acceptor.accept(cp);
 						}
 					}
@@ -863,7 +862,7 @@ public class FXGraphProposalProvider extends AbstractFXGraphProposalProvider {
 							IFXCollectionProperty cp = (IFXCollectionProperty) ownerProperty;
 							String type = cp.getElementType().getElementName();
 							if( "String".equals(type) ) {
-								ICompletionProposal p = createCompletionProposal("\"\"", new StyledString("\"<String>\""), JFaceResources.getImage(JDTHelper.CLASS_KEY), context);
+								ICompletionProposal p = createCompletionProposal("\"\"", new StyledString("\"<String>\""), IconKeys.getIcon(IconKeys.CLASS_KEY), context);
 							
 								if (p instanceof ConfigurableCompletionProposal) {
 									ConfigurableCompletionProposal ccp = (ConfigurableCompletionProposal) p;
@@ -957,16 +956,16 @@ public class FXGraphProposalProvider extends AbstractFXGraphProposalProvider {
 											
 											switch (ctrlMethod.getVisibility()) {
 											case PUBLIC:
-												img = JFaceResources.getImage(JDTHelper.METHOD_PUBLIC_KEY);
+												img = IconKeys.getIcon(IconKeys.METHOD_PUBLIC_KEY);
 												break;
 											case PACKAGE:
-												img = JFaceResources.getImage(JDTHelper.METHOD_DEFAULT_KEY);
+												img = IconKeys.getIcon(IconKeys.METHOD_DEFAULT_KEY);
 												break;
 											case PROTECTED:
-												img = JFaceResources.getImage(JDTHelper.METHOD_PROTECTED_KEY);
+												img = IconKeys.getIcon(IconKeys.METHOD_PROTECTED_KEY);
 												break;
 											default:
-												img = JFaceResources.getImage(JDTHelper.METHOD_PRIVATE_KEY);
+												img = IconKeys.getIcon(IconKeys.METHOD_PRIVATE_KEY);
 												break;
 											}
 											
@@ -1040,7 +1039,7 @@ public class FXGraphProposalProvider extends AbstractFXGraphProposalProvider {
 							if( Util.assignable(defType, targetType) ) {
 								StyledString s = new StyledString(d.getElement().getName());
 								s.append(" - " + defType.getElementName(), StyledString.QUALIFIER_STYLER);
-								acceptor.accept(createCompletionProposal(d.getElement().getName(), s, JFaceResources.getImage(JDTHelper.CLASS_KEY), context));
+								acceptor.accept(createCompletionProposal(d.getElement().getName(), s, IconKeys.getIcon(IconKeys.CLASS_KEY), context));
 							}	
 						}
 					} catch (JavaModelException e) {

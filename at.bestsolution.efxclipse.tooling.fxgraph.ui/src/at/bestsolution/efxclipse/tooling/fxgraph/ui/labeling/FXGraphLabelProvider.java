@@ -29,6 +29,7 @@ import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.ScriptHandlerHandledVal
 import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.SimpleValueProperty;
 import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.StaticValueProperty;
 import at.bestsolution.efxclipse.tooling.fxgraph.ui.util.JDTHelper;
+import at.bestsolution.efxclipse.tooling.ui.util.IconKeys;
 
 import com.google.inject.Inject;
 
@@ -49,11 +50,11 @@ public class FXGraphLabelProvider extends DefaultEObjectLabelProvider {
 	}
 	
 	Image image(IncludeValueProperty element) {
-		return JFaceResources.getImage(JDTHelper.INCLUDE_KEY);
+		return IconKeys.getIcon(IconKeys.INCLUDE_KEY);
 	}
 	
 	Image image(StaticValueProperty element) {
-		return JFaceResources.getImage(JDTHelper.STAT_METHOD_PUBLIC_KEY);
+		return IconKeys.getIcon(IconKeys.STAT_METHOD_PUBLIC_KEY);
 	}
 	
 	String text(PackageDeclaration element) {
@@ -61,7 +62,7 @@ public class FXGraphLabelProvider extends DefaultEObjectLabelProvider {
 	}
 	
 	Image image(PackageDeclaration element) {
-		return JFaceResources.getImage(JDTHelper.PACKAGE_KEY);
+		return IconKeys.getIcon(IconKeys.PACKAGE_KEY);
 	}
 
 	String text(Import element) {
@@ -69,7 +70,7 @@ public class FXGraphLabelProvider extends DefaultEObjectLabelProvider {
 	}
 	
 	Image image(Import element) {
-		return JFaceResources.getImage(JDTHelper.IMPORT_KEY);
+		return IconKeys.getIcon(IconKeys.IMPORT_KEY);
 	}
 
 	String text(ComponentDefinition def) {
@@ -77,7 +78,7 @@ public class FXGraphLabelProvider extends DefaultEObjectLabelProvider {
 	}
 	
 	Image image(ComponentDefinition def) {
-		return JFaceResources.getImage(JDTHelper.COMPONENT_KEY);
+		return IconKeys.getIcon(IconKeys.COMPONENT_KEY);
 	}
 	
 	String text(Element element) {
@@ -85,42 +86,42 @@ public class FXGraphLabelProvider extends DefaultEObjectLabelProvider {
 	}
 	
 	Image image(Element element) {
-		return JFaceResources.getImage(JDTHelper.CLASS_KEY);
+		return IconKeys.getIcon(IconKeys.CLASS_KEY);
 	}
 	
 	Image image(Define element) {
-		return JFaceResources.getImage(JDTHelper.DEFINES_KEY);
+		return IconKeys.getIcon(IconKeys.DEFINES_KEY);
 	}
 	
 	Image image(Script script) {
-		return JFaceResources.getImage(JDTHelper.SCRIPTS_KEY);
+		return IconKeys.getIcon(IconKeys.SCRIPTS_KEY);
 	}
 	
 	Image image(Property element) {
 		if( element.getValue() instanceof Element ) {
-			return JFaceResources.getImage(JDTHelper.FIELD_KEY);
+			return IconKeys.getIcon(IconKeys.FIELD_KEY);
 		} else if( element.getValue() instanceof IncludeValueProperty ) {
-			return JFaceResources.getImage(JDTHelper.INCLUDE_KEY);
+			return IconKeys.getIcon(IconKeys.INCLUDE_KEY);
 		} else if( element.getValue() instanceof ReferenceValueProperty ) {
-			return JFaceResources.getImage(JDTHelper.REFERENCE_KEY);
+			return IconKeys.getIcon(IconKeys.REFERENCE_KEY);
 		} else if( element.getValue() instanceof ListValueProperty ) {
-			return JFaceResources.getImage(JDTHelper.LIST_KEY);
+			return IconKeys.getIcon(IconKeys.LIST_KEY);
 		} else if( element.getValue() instanceof MapValueProperty ) {
-			return JFaceResources.getImage(JDTHelper.MAP_KEY);
+			return IconKeys.getIcon(IconKeys.MAP_KEY);
 		} else if( element.getValue() instanceof BindValueProperty ) {
-			return JFaceResources.getImage(JDTHelper.BINDING_KEY);
+			return IconKeys.getIcon(IconKeys.BINDING_KEY);
 		} else if( element.getValue() instanceof ControllerHandledValueProperty ) {
-			return JFaceResources.getImage(JDTHelper.EVENT_KEY);
+			return IconKeys.getIcon(IconKeys.EVENT_KEY);
 		} else if( element.getValue() instanceof CopyValueProperty ) {
-			return JFaceResources.getImage(JDTHelper.COPY_KEY);
+			return IconKeys.getIcon(IconKeys.COPY_KEY);
 		} else  if( element.getValue() instanceof LocationValueProperty ) {
-			return JFaceResources.getImage(JDTHelper.LOCATION_KEY);
+			return IconKeys.getIcon(IconKeys.LOCATION_KEY);
 		} else if( element.getValue() instanceof ResourceValueProperty ) {
-			return JFaceResources.getImage(JDTHelper.EXTERNALIZED_STRING_KEY);
+			return IconKeys.getIcon(IconKeys.EXTERNALIZED_STRING_KEY);
 		} else if( element.getValue() instanceof ScriptHandlerHandledValueProperty ) {
-			return JFaceResources.getImage(JDTHelper.EVENT_KEY);
+			return IconKeys.getIcon(IconKeys.EVENT_KEY);
 		} else if( element.getValue() instanceof SimpleValueProperty ) {
-			return JFaceResources.getImage(JDTHelper.FIELD_KEY);
+			return IconKeys.getIcon(IconKeys.FIELD_KEY);
 		}
 		
 		System.err.println("Unknown for: " + element.getValue());
