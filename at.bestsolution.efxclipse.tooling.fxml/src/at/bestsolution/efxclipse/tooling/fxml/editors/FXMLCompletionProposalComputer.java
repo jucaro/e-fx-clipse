@@ -116,17 +116,18 @@ public class FXMLCompletionProposalComputer extends AbstractXMLCompletionProposa
 		if (parent.getNodeType() == Node.ELEMENT_NODE) {
 			typeName = parent.getNodeName();
 		}
-
+		
 		if (typeName != null) {
+			if( Character.isLowerCase(typeName.charAt(0)) || typeName.contains(".") ) {
+				// no proposal for static elements and attribute definitions
+				return;
+			}
+			
 			IType type = findType(typeName, contentAssistRequest, context);
 			if( type != null ) {
 				IFXClass fxClass = FXPlugin.getClassmodel().findClass(type.getJavaProject(), type);
 				for( IFXProperty property : fxClass.getAllProperties().values() ) {
-					if( "id".equals(property.getName()) ) {
-						
-					} else {
-						createAttributeNameProposal(contentAssistRequest, context, property);
-					}
+					createAttributeNameProposal(contentAssistRequest, context, property);
 				}
 				
 				if( parent.getParentNode() != null ) {
