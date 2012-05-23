@@ -1,16 +1,13 @@
 package at.bestsolution.efxclipse.tooling.pde.ui;
 
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
 
 import org.eclipse.core.resources.IProject;
 import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.IProgressMonitor;
-import org.eclipse.jdt.core.IClasspathEntry;
-import org.eclipse.jdt.core.IJavaProject;
-import org.eclipse.jdt.core.JavaCore;
+import org.eclipse.jface.dialogs.MessageDialog;
 import org.eclipse.jface.wizard.Wizard;
+import org.eclipse.jface.wizard.WizardDialog;
 import org.eclipse.jface.wizard.WizardPage;
 import org.eclipse.pde.core.plugin.IPluginBase;
 import org.eclipse.pde.core.plugin.IPluginElement;
@@ -18,18 +15,20 @@ import org.eclipse.pde.core.plugin.IPluginExtension;
 import org.eclipse.pde.core.plugin.IPluginModelBase;
 import org.eclipse.pde.core.plugin.IPluginModelFactory;
 import org.eclipse.pde.core.plugin.IPluginReference;
+import org.eclipse.pde.core.plugin.PluginRegistry;
+import org.eclipse.pde.core.project.IBundleProjectService;
 import org.eclipse.pde.internal.core.bundle.BundlePluginBase;
 import org.eclipse.pde.internal.core.ibundle.IBundle;
 import org.eclipse.pde.ui.IFieldData;
 import org.eclipse.pde.ui.templates.PluginReference;
+import org.eclipse.swt.widgets.MessageBox;
 import org.osgi.framework.Constants;
-
-import at.bestsolution.efxclipse.tooling.jdt.core.JavaFXCore;
 
 public class E3PluginTemplate extends FXPDETemplateSection {
 	public static final String KEY_VIEW_PART_CLASS = "viewPartClass"; //$NON-NLS-1$
 	public static final String KEY_VIEW_NAME = "viewName";
-
+	public static final String KEY_SHIP_WITH_JAVAFX = "shipWithFX";
+	
 	public E3PluginTemplate() {
 		setPageCount(1);
 		createOptions();
@@ -45,7 +44,7 @@ public class E3PluginTemplate extends FXPDETemplateSection {
 		initializeFields(data.getId());
 
 	}
-
+	
 	public void initializeFields(IPluginModelBase model) {
 		// In the new extension wizard, the model exists so 
 		// we can initialize directly from it
@@ -64,6 +63,7 @@ public class E3PluginTemplate extends FXPDETemplateSection {
 		addOption(KEY_PACKAGE_NAME, "Package", (String) null, 0);
 		addOption(KEY_VIEW_PART_CLASS, "ViewPart class", "MyViewPart", 0); //$NON-NLS-1$
 		addOption(KEY_VIEW_NAME, "Name", "My FX View", 0);
+		addOption(KEY_SHIP_WITH_JAVAFX, "With repackaged JavaFX", true, 0);
 	}
 
 	@Override
@@ -87,6 +87,8 @@ public class E3PluginTemplate extends FXPDETemplateSection {
 
 	@Override
 	protected void updateModel(IProgressMonitor monitor) throws CoreException {
+		Activator.getDefault().acquireService(IBundleProjectService.class);
+		
 		IPluginBase plugin = model.getPluginBase();
 		IPluginExtension extension = createExtension("org.eclipse.ui.views", true); //$NON-NLS-1$
 		IPluginModelFactory factory = model.getPluginFactory();
@@ -110,6 +112,11 @@ public class E3PluginTemplate extends FXPDETemplateSection {
 			result.add(new PluginReference("org.eclipse.core.runtime", null, 0)); //$NON-NLS-1$
 		result.add(new PluginReference("org.eclipse.ui", null, 0)); //$NON-NLS-1$
 		result.add(new PluginReference("at.bestsolution.efxclipse.runtime.workbench3", null, 0));
+		
+//		if( getBooleanOption(KEY_SHIP_WITH_JAVAFX) ) {
+//			result.add(new PluginReference("javafx.osgi", null, 0));
+//		}
+		
 		return (IPluginReference[]) result.toArray(new IPluginReference[result.size()]);
 	}
 
@@ -122,10 +129,15 @@ public class E3PluginTemplate extends FXPDETemplateSection {
 	
 	public void execute(IProject project, IPluginModelBase model,
 			IProgressMonitor monitor) throws CoreException {
-//		IJavaProject jProject = JavaCore.create(project);
-//		List<IClasspathEntry> entries = new ArrayList<IClasspathEntry>(Arrays.asList(jProject.getRawClasspath()));
-//		entries.add(JavaCore.newContainerEntry(JavaFXCore.JAVAFX_CONTAINER_PATH));
-//		jProject.setRawClasspath(entries.toArray(new IClasspathEntry[0]), monitor);
+		
+		if( getBooleanOption(KEY_SHIP_WITH_JAVAFX) ) {
+			if( PluginRegistry.findModel("javafx.osgi") == null ) {
+				if( MessageDialog.openQuestion(getPage(0).getShell(), "No javafx.osgi bundle", "There's currently no javafx.osgi bundle in your workspace or target platform. Would you like to create one?") ) {
+					WizardDialog d = new WizardDialog(getPage(0).getShell(), new RepackageJavaFXWizard());
+					d.open();
+				}
+			}
+		}
 		
 		if( model.getPluginBase() instanceof BundlePluginBase ) {
 			IBundle bundle = ((BundlePluginBase) model.getPluginBase()).getBundle();
@@ -157,6 +169,7 @@ public class E3PluginTemplate extends FXPDETemplateSection {
 		}
 		return buffer.toString();
 	}
+	
 	
 	private static String[] getImports() {
 		return new String[] {

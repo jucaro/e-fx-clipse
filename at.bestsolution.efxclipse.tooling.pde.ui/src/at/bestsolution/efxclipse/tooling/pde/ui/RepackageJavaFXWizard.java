@@ -13,6 +13,7 @@ import org.eclipse.core.resources.IFolder;
 import org.eclipse.core.resources.IProject;
 import org.eclipse.core.resources.ResourcesPlugin;
 import org.eclipse.core.runtime.CoreException;
+import org.eclipse.core.runtime.IPath;
 import org.eclipse.core.runtime.IStatus;
 import org.eclipse.core.runtime.NullProgressMonitor;
 import org.eclipse.core.runtime.Path;
@@ -28,6 +29,8 @@ import org.eclipse.pde.core.build.IBuildEntry;
 import org.eclipse.pde.core.build.IBuildModel;
 import org.eclipse.pde.core.plugin.IPluginModelBase;
 import org.eclipse.pde.core.plugin.PluginRegistry;
+import org.eclipse.pde.core.project.IBundleProjectDescription;
+import org.eclipse.pde.core.project.IBundleProjectService;
 import org.eclipse.pde.internal.core.PDECore;
 import org.eclipse.pde.internal.core.bundle.BundlePluginBase;
 import org.eclipse.pde.internal.core.ibundle.IBundle;
@@ -45,6 +48,7 @@ import org.eclipse.swt.widgets.FileDialog;
 import org.eclipse.swt.widgets.Label;
 import org.eclipse.swt.widgets.Text;
 import org.eclipse.ui.wizards.newresource.BasicNewResourceWizard;
+import org.osgi.framework.Version;
 
 @SuppressWarnings("restriction")
 public class RepackageJavaFXWizard extends BasicNewResourceWizard {
@@ -79,44 +83,25 @@ public class RepackageJavaFXWizard extends BasicNewResourceWizard {
 					}
 				}
 
-				if (!PDE.hasPluginNature(p)) {
-					IRunnableWithProgress convertOperation;
-					convertOperation = new ConvertProjectToPluginOperation(new IProject[] { p }, false);
-					getContainer().run(false, true, convertOperation);
-				}
-
-				IPluginModelBase m = PDECore.getDefault().getModelManager().findModel(p);
-				IBundle bundle = ((BundlePluginBase) m.getPluginBase()).getBundle();
-
-				IBuildModel bm = PluginRegistry.createBuildModel(m);
-				IBuild b = bm.getBuild();
-				IBuildEntry entry = b.getEntry("bin.includes");
-				boolean found = false;
-				for (String t : entry.getTokens()) {
-					if ("javafx".equals(t)) {
-						found = true;
-						break;
-					}
-				}
-				
-				if (!found) {
-					entry.addToken("javafx/");
-				}
-
-				((IEditableModel) bm).save();
+				IBundleProjectService bpService = Activator.getDefault().acquireService(IBundleProjectService.class);
+				IBundleProjectDescription bpd = bpService.getDescription(p);
+				bpd.setSymbolicName("javafx.osgi");
+				bpd.setBundleVersion(new Version(page.version.getText()));
+				bpd.setBinIncludes(new IPath[] {
+					new Path("javafx/")
+				});
 				
 				String shape = "jar";
-				if (bundle.getHeader("Eclipse-BundleShape") != null) {
-					shape = bundle.getHeader("Eclipse-BundleShape");
+				if (bpd.getHeader("Eclipse-BundleShape") != null) {
+					shape = bpd.getHeader("Eclipse-BundleShape");
 				}
 
 				String v = page.combo.getItem(page.combo.getSelectionIndex());
 				if (!shape.equals(v)) {
-					bundle.setHeader("Eclipse-BundleShape", v);
+					bpd.setHeader("Eclipse-BundleShape", v);
 				}
 
-				bundle.setHeader("Bundle-Version", page.version.getText());
-				((IEditableModel) bundle.getModel()).save();
+				bpd.apply(new NullProgressMonitor());
 
 				IFolder rootFolder = p.getFolder(new Path("javafx"));
 				if (rootFolder.exists()) {
