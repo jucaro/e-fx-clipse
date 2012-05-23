@@ -35,3 +35,10 @@ Bundle-ActivationPolicy: lazy
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Bundle-Vendor: %Bundle-Vendor
 Bundle-ClassPath: .
+Export-Package: at.bestsolution.efxclipse.tooling.jdt.ui.internal;x-internal:=true,
+ at.bestsolution.efxclipse.tooling.jdt.ui.internal.buildpath;x-internal:=true,
+ at.bestsolution.efxclipse.tooling.jdt.ui.internal.editors;x-internal:=true,
+ at.bestsolution.efxclipse.tooling.jdt.ui.internal.editors.outline;x-internal:=true,
+ at.bestsolution.efxclipse.tooling.jdt.ui.internal.handler;x-internal:=true,
+ at.bestsolution.efxclipse.tooling.jdt.ui.internal.wizard;x-internal:=true,
+ at.bestsolution.efxclipse.tooling.jdt.ui.internal.wizard.clazz;x-internal:=true
