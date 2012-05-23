@@ -1,15 +1,12 @@
 package at.bestsolution.efxclipse.tooling.pde.ui;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
+import java.lang.reflect.InvocationTargetException;
 
+import org.eclipse.core.resources.IFile;
 import org.eclipse.core.resources.IProject;
 import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.IProgressMonitor;
-import org.eclipse.jdt.core.IClasspathEntry;
-import org.eclipse.jdt.core.IJavaProject;
-import org.eclipse.jdt.core.JavaCore;
+import org.eclipse.core.runtime.NullProgressMonitor;
 import org.eclipse.jface.wizard.Wizard;
 import org.eclipse.jface.wizard.WizardPage;
 import org.eclipse.pde.core.plugin.IPluginBase;
@@ -19,11 +16,13 @@ import org.eclipse.pde.core.plugin.IPluginModelBase;
 import org.eclipse.pde.core.plugin.IPluginReference;
 import org.eclipse.pde.internal.core.bundle.BundlePluginBase;
 import org.eclipse.pde.internal.core.ibundle.IBundle;
+import org.eclipse.pde.internal.core.iproduct.IArgumentsInfo;
+import org.eclipse.pde.internal.core.iproduct.IProduct;
+import org.eclipse.pde.internal.core.iproduct.IProductModelFactory;
+import org.eclipse.pde.internal.ui.wizards.product.BaseProductCreationOperation;
 import org.eclipse.pde.ui.IFieldData;
 import org.eclipse.pde.ui.templates.PluginReference;
 import org.osgi.framework.Constants;
-
-import at.bestsolution.efxclipse.tooling.jdt.core.JavaFXCore;
 
 @SuppressWarnings("restriction")
 public class FXOSGiAppTemplate extends FXPDETemplateSection {
@@ -127,13 +126,8 @@ public class FXOSGiAppTemplate extends FXPDETemplateSection {
 	}
 	
 	@Override
-	public void execute(IProject project, IPluginModelBase model,
+	public void execute(IProject project, final IPluginModelBase model,
 			IProgressMonitor monitor) throws CoreException {
-//		IJavaProject jProject = JavaCore.create(project);
-//		List<IClasspathEntry> entries = new ArrayList<IClasspathEntry>(Arrays.asList(jProject.getRawClasspath()));
-//		entries.add(JavaCore.newContainerEntry(JavaFXCore.JAVAFX_CONTAINER_PATH));
-//		jProject.setRawClasspath(entries.toArray(new IClasspathEntry[0]), monitor);
-		
 		if( model.getPluginBase() instanceof BundlePluginBase ) {
 			IBundle bundle = ((BundlePluginBase) model.getPluginBase()).getBundle();
 			
@@ -148,12 +142,81 @@ public class FXOSGiAppTemplate extends FXPDETemplateSection {
 		}
 		
 		super.execute(project, model, monitor);
+		
+		if (getBooleanOption(KEY_PRODUCT_BRANDING)) {
+			
+			IFile file = project.getFile(new org.eclipse.core.runtime.Path(model.getPluginBase().getName() + ".product" + ".product"));
+			
+			try {
+				new BaseProductCreationOperation(file) {
+					@Override
+					protected void initializeProduct(IProduct product) {
+						super.initializeProduct(product);
+						String args = product.getLauncherArguments().getVMArguments(IArgumentsInfo.L_ARGS_ALL);
+						if( args == null ) {
+							args = "";
+						}
+						args = "-Dosgi.framework.extensions=at.bestsolution.efxclipse.runtime.osgi";
+						product.getLauncherArguments().setVMArguments(args, IArgumentsInfo.L_ARGS_ALL);
+						
+						IProductModelFactory factory = product.getModel().getFactory();
+						product.setProductId(model.getPluginBase().getName() + "." + VALUE_PRODUCT_ID);
+						product.setApplication(model.getPluginBase().getName() + "." + VALUE_APPLICATION_ID);
+						
+						addPlugins(factory, product, new String[] {
+								model.getPluginBase().getName(),
+								"at.bestsolution.efxclipse.runtime.osgi",
+								"at.bestsolution.efxclipse.runtime.javafx",
+								"at.bestsolution.efxclipse.runtime.application",
+								"at.bestsolution.efxclipse.runtime.databinding",
+								"org.eclipse.core.databinding",
+								"org.eclipse.core.databinding.observable",
+								"org.eclipse.core.databinding.property",
+								"org.eclipse.equinox.app",
+								"org.eclipse.osgi",
+								"org.eclipse.equinox.common",
+								"org.eclipse.equinox.registry",
+								"com.ibm.icu", //TODO Can we replace this please???
+								
+								"org.eclipse.core.runtime", //TODO Should be removed!
+								"org.eclipse.core.jobs",
+								"org.eclipse.equinox.preferences",
+								"org.eclipse.core.contenttype"
+						});
+					}
+				}.run(new NullProgressMonitor());
+				
+//				new ProductFromExtensionOperation(file, model.getPluginBase().getName() + "." + VALUE_PRODUCT_ID) {
+//					@Override
+//					protected void initializeProduct(IProduct product) {
+//						super.initializeProduct(product);
+//						
+//						String args = product.getLauncherArguments().getVMArguments(IArgumentsInfo.L_ARGS_ALL);
+//						if( args == null ) {
+//							args = "";
+//						}
+//						args = "-Dosgi.framework.extensions=at.bestsolution.efxclipse.runtime.osgi";
+//						product.getLauncherArguments().setVMArguments(args, IArgumentsInfo.L_ARGS_ALL);
+//						
+//						IProductModelFactory factory = product.getModel().getFactory();
+//						addPlugins(factory, product, new String[] {"at.bestsolution.efxclipse.runtime.osgi"});
+//					}
+//				}.run(new NullProgressMonitor());
+			} catch (InvocationTargetException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			} catch (InterruptedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
 	}
 	
 	public IPluginReference[] getDependencies(String schemaVersion) {
-		IPluginReference[] dep = new IPluginReference[2];
-		dep[0] = new PluginReference("org.eclipse.core.runtime", null, 0); //$NON-NLS-1$
-		dep[1] = new PluginReference("at.bestsolution.efxclipse.runtime.application", null, 0); //$NON-NLS-1$
+		IPluginReference[] dep = new IPluginReference[3];
+		dep[0] = new PluginReference("org.eclipse.equinox.app", null, 0); //$NON-NLS-1$
+		dep[1] = new PluginReference("org.eclipse.osgi", null, 0); //$NON-NLS-1$
+		dep[2] = new PluginReference("at.bestsolution.efxclipse.runtime.application", null, 0); //$NON-NLS-1$
 		
 		return dep;
 	}

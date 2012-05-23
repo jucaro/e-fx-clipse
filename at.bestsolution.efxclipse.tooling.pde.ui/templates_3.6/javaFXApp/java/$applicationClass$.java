@@ -11,5 +11,6 @@ import at.bestsolution.efxclipse.runtime.application.AbstractJFXApplication;
 public class $applicationClass$ extends AbstractJFXApplication {
 	protected void jfxStart(IApplicationContext applicationContext, javafx.application.Application jfxApplication, Stage primaryStage) {
 		primaryStage.setTitle("$windowTitle$");
+		primaryStage.show();
 	}
 }
