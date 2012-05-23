@@ -27,6 +27,7 @@
       </wizard>
       <wizard
             class="at.bestsolution.efxclipse.tooling.pde.ui.E3PluginWizard"
+            icon="icons/application_lightning.png"
             id="at.bestsolution.efxclipse.tooling.pde.ui.3xpart"
             java="true"
             name="JavaFX Eclipse 3.x ViewPart"
@@ -54,10 +55,12 @@
             project="true">
       </wizard>
       <wizard
+            category="at.bestsolution.efxclipse.tooling/at.bestsolution.efxclipse.tooling.clazz"
             class="at.bestsolution.efxclipse.tooling.pde.ui.E3ViewPartClassWizard"
             icon="icons/application_lightning.png"
             id="at.bestsolution.efxclipse.tooling.pde.ui.fxviewpart"
-            name="Eclipse 3.x ViewPart">
+            name="Eclipse 3.x ViewPart"
+            project="false">
       </wizard>
    </extension>
 
