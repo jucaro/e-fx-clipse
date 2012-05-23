@@ -47,6 +47,7 @@ import org.eclipse.xtext.common.types.xtext.ui.TypeMatchFilters;
 import org.eclipse.xtext.ui.editor.contentassist.ConfigurableCompletionProposal;
 import org.eclipse.xtext.ui.editor.contentassist.ContentAssistContext;
 import org.eclipse.xtext.ui.editor.contentassist.ICompletionProposalAcceptor;
+import org.eclipse.xtext.ui.editor.contentassist.PrefixMatcher;
 import org.eclipse.xtext.ui.editor.hover.IEObjectHover;
 
 import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.BindValueProperty;
@@ -98,6 +99,20 @@ public class FXGraphProposalProvider extends AbstractFXGraphProposalProvider {
 	@Inject
 	private IJavaProjectProvider projectProvider;
 
+	static class StaticPrefixMatcher extends PrefixMatcher {
+		private final PrefixMatcher original;
+		
+		public StaticPrefixMatcher(PrefixMatcher original) {
+			this.original = original;
+		}
+		
+		@Override
+		public boolean isCandidateMatchingPrefix(String name, String prefix) {
+			name = name.substring(name.indexOf("#")+1);
+			return original.isCandidateMatchingPrefix(name, prefix);
+		}
+	}
+	
 	class FXClassFilter implements Filter {
 		private final IJavaProject jp;
 		
@@ -202,17 +217,50 @@ public class FXGraphProposalProvider extends AbstractFXGraphProposalProvider {
 				el = (Element) model.eContainer();
 			}
 
-			IJavaProject javaProject = projectProvider.getJavaProject(el.eResource().getResourceSet());
-			IType type = javaProject.findType(el.getType().getQualifiedName());
-			if (type != null) {
-				IFXClass fxClazz = FXPlugin.getClassmodel().findClass(javaProject, type);
+			{
+				IJavaProject javaProject = projectProvider.getJavaProject(el.eResource().getResourceSet());
+				IType type = javaProject.findType(el.getType().getQualifiedName());
+				if (type != null) {
+					IFXClass fxClazz = FXPlugin.getClassmodel().findClass(javaProject, type);
 
-				if (fxClazz != null) {
-					Map<String, IFXProperty> map = fxClazz.getAllProperties();
-					for (IFXProperty p : map.values()) {
-						// The id-attribute is defined through the id keyword
-						if (!"id".equals(p.getName())) {
-							completeElement_PropertiesProposals(p, el, context, FXGraphPackage.Literals.ELEMENT__PROPERTIES, acceptor);
+					if (fxClazz != null) {
+						Map<String, IFXProperty> map = fxClazz.getAllProperties();
+						for (IFXProperty p : map.values()) {
+							// The id-attribute is defined through the id keyword
+							if (!"id".equals(p.getName())) {
+								completeElement_PropertiesProposals(p, el, context, FXGraphPackage.Literals.ELEMENT__PROPERTIES, acceptor);
+							}
+						}
+					}
+				}				
+			}
+			
+			EObject o = el.eContainer();
+			el = null;
+			
+			while( o.eContainer() != null ) {
+				if( o.eContainer() instanceof Element ) {
+					el = (Element) o.eContainer();
+					break;
+				}
+				if( o.eContainer() instanceof MapValueProperty ) {
+					el = null;
+					break;
+				}
+				o = o.eContainer();
+			}
+			
+			if( el instanceof Element) {
+				el = (Element) el;
+				IJavaProject javaProject = projectProvider.getJavaProject(el.eResource().getResourceSet());
+				IType type = javaProject.findType(el.getType().getQualifiedName());
+				if (type != null) {
+					IFXClass fxClazz = FXPlugin.getClassmodel().findClass(javaProject, type);
+
+					if (fxClazz != null) {
+						Map<String, IFXProperty> map = fxClazz.getAllStaticProperties();
+						for (IFXProperty p : map.values()) {
+							completeElement_PropertiesProposals(p, el, context, FXGraphPackage.Literals.ELEMENT__STATIC_PROPERTIES, acceptor);
 						}
 					}
 				}
@@ -282,17 +330,35 @@ public class FXGraphProposalProvider extends AbstractFXGraphProposalProvider {
 	}
 
 	private void createEnumPropnameProposals(IFXEnumProperty prop, EObject model, ContentAssistContext context, EStructuralFeature typeReference, ICompletionProposalAcceptor acceptor) {
-		StyledString s = new StyledString(prop.getName() + " : " + prop.getEnumTypeAsString(false));
-		s.append(" - " + prop.getFXClass().getSimpleName(), StyledString.QUALIFIER_STYLER);
-		ICompletionProposal p = createCompletionProposal(prop.getName() + " : ", s, JFaceResources.getImage(JDTHelper.FIELD_KEY), getPropertiesProposalsProposals(), context.getPrefix(), context);
+		if( prop.isStatic() ) {
+			StyledString s = new StyledString();
+			s.append("(static) ", StyledString.COUNTER_STYLER);
+			s.append(prop.getFXClass().getSimpleName() + "." + prop.getName() + " : " + prop.getEnumTypeAsString(false));
+			s.append(" - " + prop.getFXClass().getSimpleName(), StyledString.QUALIFIER_STYLER);
+			
+			ICompletionProposal p = createCompletionProposal("call " + prop.getFXClass().getSimpleName() + "#" + prop.getName() + " : ", s, JFaceResources.getImage(JDTHelper.FIELD_KEY), getPropertiesProposalsProposals()-10, context.getPrefix(), context);
+			
+			if (p instanceof ConfigurableCompletionProposal) {
+				ConfigurableCompletionProposal cp = (ConfigurableCompletionProposal) p;
+				cp.setAdditionalProposalInfo(model);
+				cp.setHover(new HoverImpl(prop.getJavaElement()));
+				cp.setMatcher(new StaticPrefixMatcher(cp.getMatcher()));
+			}
 
-		if (p instanceof ConfigurableCompletionProposal) {
-			ConfigurableCompletionProposal cp = (ConfigurableCompletionProposal) p;
-			cp.setAdditionalProposalInfo(model);
-			cp.setHover(new HoverImpl(prop.getJavaElement()));
+			acceptor.accept(p);
+		} else {
+			StyledString s = new StyledString(prop.getName() + " : " + prop.getEnumTypeAsString(false));
+			s.append(" - " + prop.getFXClass().getSimpleName(), StyledString.QUALIFIER_STYLER);
+			ICompletionProposal p = createCompletionProposal(prop.getName() + " : ", s, JFaceResources.getImage(JDTHelper.FIELD_KEY), getPropertiesProposalsProposals(), context.getPrefix(), context);
+
+			if (p instanceof ConfigurableCompletionProposal) {
+				ConfigurableCompletionProposal cp = (ConfigurableCompletionProposal) p;
+				cp.setAdditionalProposalInfo(model);
+				cp.setHover(new HoverImpl(prop.getJavaElement()));
+			}
+
+			acceptor.accept(p);			
 		}
-
-		acceptor.accept(p);
 	}
 
 	private void createEventHandlerPropnameProposals(IFXEventHandlerProperty prop, EObject model, ContentAssistContext context, EStructuralFeature typeReference, ICompletionProposalAcceptor acceptor) {
@@ -310,17 +376,35 @@ public class FXGraphProposalProvider extends AbstractFXGraphProposalProvider {
 	}
 
 	private void createObjectPropnameProposals(IFXObjectProperty prop, EObject model, ContentAssistContext context, EStructuralFeature typeReference, ICompletionProposalAcceptor acceptor) {
-		StyledString s = new StyledString(prop.getName() + " : " + prop.getElementTypeAsString(false));
-		s.append(" - " + prop.getFXClass().getSimpleName(), StyledString.QUALIFIER_STYLER);
-		ICompletionProposal p = createCompletionProposal(prop.getName() + " : ", s, JFaceResources.getImage(JDTHelper.FIELD_KEY), getPropertiesProposalsProposals(), context.getPrefix(), context);
+		if( prop.isStatic() ) {
+			StyledString s = new StyledString();
+			s.append("(static) ", StyledString.COUNTER_STYLER);
+			s.append(prop.getFXClass().getSimpleName() + "." + prop.getName() + " : " + prop.getElementTypeAsString(false));
+			s.append(" - " + prop.getFXClass().getSimpleName(), StyledString.QUALIFIER_STYLER);
+			
+			ICompletionProposal p = createCompletionProposal("call " + prop.getFXClass().getSimpleName() + "#" + prop.getName() + " : ", s, JFaceResources.getImage(JDTHelper.FIELD_KEY), getPropertiesProposalsProposals()-10, context.getPrefix(), context);
+			
+			if (p instanceof ConfigurableCompletionProposal) {
+				ConfigurableCompletionProposal cp = (ConfigurableCompletionProposal) p;
+				cp.setAdditionalProposalInfo(model);
+				cp.setHover(new HoverImpl(prop.getJavaElement()));
+				cp.setMatcher(new StaticPrefixMatcher(cp.getMatcher()));
+			}
 
-		if (p instanceof ConfigurableCompletionProposal) {
-			ConfigurableCompletionProposal cp = (ConfigurableCompletionProposal) p;
-			cp.setAdditionalProposalInfo(model);
-			cp.setHover(new HoverImpl(prop.getJavaElement()));
+			acceptor.accept(p);
+		} else {
+			StyledString s = new StyledString(prop.getName() + " : " + prop.getElementTypeAsString(false));
+			s.append(" - " + prop.getFXClass().getSimpleName(), StyledString.QUALIFIER_STYLER);
+			ICompletionProposal p = createCompletionProposal(prop.getName() + " : ", s, JFaceResources.getImage(JDTHelper.FIELD_KEY), getPropertiesProposalsProposals(), context.getPrefix(), context);
+
+			if (p instanceof ConfigurableCompletionProposal) {
+				ConfigurableCompletionProposal cp = (ConfigurableCompletionProposal) p;
+				cp.setAdditionalProposalInfo(model);
+				cp.setHover(new HoverImpl(prop.getJavaElement()));
+			}
+
+			acceptor.accept(p);	
 		}
-
-		acceptor.accept(p);
 	}
 
 	private void createPrimitivePropnameProposals(IFXPrimitiveProperty prop, EObject model, ContentAssistContext context, EStructuralFeature typeReference, ICompletionProposalAcceptor acceptor) {
@@ -357,20 +441,40 @@ public class FXGraphProposalProvider extends AbstractFXGraphProposalProvider {
 			break;
 		}
 
-		StyledString s = new StyledString(prop.getName() + " : " + typeName);
-		s.append(" - " + prop.getFXClass().getSimpleName(), StyledString.QUALIFIER_STYLER);
-		ICompletionProposal p = createCompletionProposal(proposalValue, s, JFaceResources.getImage(JDTHelper.FIELD_KEY), getPropertiesProposalsProposals(), context.getPrefix(), context);
-
-		if (p instanceof ConfigurableCompletionProposal) {
-			ConfigurableCompletionProposal cp = (ConfigurableCompletionProposal) p;
-			cp.setAdditionalProposalInfo(model);
-			cp.setHover(new HoverImpl(prop.getJavaElement()));
-			if (prop.getType() == Type.STRING) {
-				cp.setCursorPosition(cp.getCursorPosition() - 1);
+		if( prop.isStatic() ) {
+			StyledString s = new StyledString();
+			s.append("(static) ", StyledString.COUNTER_STYLER);
+			s.append(prop.getFXClass().getSimpleName() + "." + prop.getName() + " : " + typeName);
+			s.append(" - " + prop.getFXClass().getSimpleName(), StyledString.QUALIFIER_STYLER);
+			
+			proposalValue = "call " + prop.getFXClass().getSimpleName() + "#" + proposalValue;
+			
+			ICompletionProposal p = createCompletionProposal(proposalValue, s, JFaceResources.getImage(JDTHelper.FIELD_KEY), getPropertiesProposalsProposals()-10, context.getPrefix(), context);
+			
+			if (p instanceof ConfigurableCompletionProposal) {
+				ConfigurableCompletionProposal cp = (ConfigurableCompletionProposal) p;
+				cp.setAdditionalProposalInfo(model);
+				cp.setHover(new HoverImpl(prop.getJavaElement()));
+				cp.setMatcher(new StaticPrefixMatcher(cp.getMatcher()));
 			}
-		}
 
-		acceptor.accept(p);
+			acceptor.accept(p);
+		} else {
+			StyledString s = new StyledString(prop.getName() + " : " + typeName);
+			s.append(" - " + prop.getFXClass().getSimpleName(), StyledString.QUALIFIER_STYLER);
+			ICompletionProposal p = createCompletionProposal(proposalValue, s, JFaceResources.getImage(JDTHelper.FIELD_KEY), getPropertiesProposalsProposals(), context.getPrefix(), context);
+
+			if (p instanceof ConfigurableCompletionProposal) {
+				ConfigurableCompletionProposal cp = (ConfigurableCompletionProposal) p;
+				cp.setAdditionalProposalInfo(model);
+				cp.setHover(new HoverImpl(prop.getJavaElement()));
+				if (prop.getType() == Type.STRING) {
+					cp.setCursorPosition(cp.getCursorPosition() - 1);
+				}
+			}
+
+			acceptor.accept(p);
+		}
 	}
 
 	@Override
