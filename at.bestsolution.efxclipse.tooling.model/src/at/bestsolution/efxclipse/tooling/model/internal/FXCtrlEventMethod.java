@@ -1,6 +1,7 @@
 package at.bestsolution.efxclipse.tooling.model.internal;
 
 import org.eclipse.jdt.core.Flags;
+import org.eclipse.jdt.core.IJavaElement;
 import org.eclipse.jdt.core.IJavaProject;
 import org.eclipse.jdt.core.IMethod;
 import org.eclipse.jdt.core.IType;
@@ -21,6 +22,11 @@ public class FXCtrlEventMethod implements IFXCtrlEventMethod {
 		this.clazz = clazz;
 		this.method = method;
 		this.erasedFQNType = erasedFQNType;
+	}
+	
+	@Override
+	public IJavaElement getJavaElement() {
+		return method;
 	}
 	
 	@Override
