@@ -73,7 +73,6 @@ public class FXMLCompletionProposalComputer extends AbstractXMLCompletionProposa
 	private static final PrefixMatcher STATIC_ELEMENT_MATCHER = new CamelCase() {
 		public boolean isCandidateMatchingPrefix(String name, String prefix) {
 			name = name.substring(name.indexOf('.')+1, name.indexOf('>')).trim();
-			System.err.println(name);
 			return super.isCandidateMatchingPrefix(name, prefix);
 		}
 	};
@@ -638,16 +637,37 @@ public class FXMLCompletionProposalComputer extends AbstractXMLCompletionProposa
 			}
 			
 			if( attribute != null ) {
-				IType type = findType(n.getNodeName(), contentAssistRequest, context);
-				IFXClass fxClass = FXPlugin.getClassmodel().findClass(type.getJavaProject(), type);
-				if( fxClass != null ) {
-					IFXProperty p = fxClass.getProperty(attribute.getNodeName());
-					if( p instanceof IFXPrimitiveProperty ) {
-						createAttributeValuePrimitiveProposals(contentAssistRequest, context, (IFXPrimitiveProperty) p);
-					} else if( p instanceof IFXEnumProperty ) {
-						createAttributeValueEnumProposals(contentAssistRequest, context, (IFXEnumProperty) p);
-					} else if( p instanceof IFXObjectProperty ) {
-						createAttributeValueObjectProposals(contentAssistRequest, context, (IFXObjectProperty) p);
+				if( attribute.getNodeName().contains(".") ) {
+					String[] parts = attribute.getNodeName().split("\\.");
+					
+					IType type = findType(parts[0], contentAssistRequest, context);
+					if( type != null ) {
+						IFXClass fxClass = FXPlugin.getClassmodel().findClass(type.getJavaProject(), type);
+						if(fxClass != null) {
+							IFXProperty p = fxClass.getStaticProperty(parts[1]);
+							if( p instanceof IFXPrimitiveProperty ) {
+								createAttributeValuePrimitiveProposals(contentAssistRequest, context, (IFXPrimitiveProperty) p);
+							} else if( p instanceof IFXEnumProperty ) {
+								createAttributeValueEnumProposals(contentAssistRequest, context, (IFXEnumProperty) p);
+							} else if( p instanceof IFXObjectProperty ) {
+								createAttributeValueObjectProposals(contentAssistRequest, context, (IFXObjectProperty) p);
+							}
+						}
+					}
+				} else {
+					IType type = findType(n.getNodeName(), contentAssistRequest, context);
+					if( type != null ) {
+						IFXClass fxClass = FXPlugin.getClassmodel().findClass(type.getJavaProject(), type);
+						if( fxClass != null ) {
+							IFXProperty p = fxClass.getProperty(attribute.getNodeName());
+							if( p instanceof IFXPrimitiveProperty ) {
+								createAttributeValuePrimitiveProposals(contentAssistRequest, context, (IFXPrimitiveProperty) p);
+							} else if( p instanceof IFXEnumProperty ) {
+								createAttributeValueEnumProposals(contentAssistRequest, context, (IFXEnumProperty) p);
+							} else if( p instanceof IFXObjectProperty ) {
+								createAttributeValueObjectProposals(contentAssistRequest, context, (IFXObjectProperty) p);
+							}
+						}	
 					}
 				}
 			}	
