@@ -138,13 +138,28 @@ public class FXMLTextHover implements ITextHover, ITextHoverExtension, ITextHove
 		
 		if( attribute != null ) {
 			Node parent = xmlnode;
-			IType ownerType = Util.findType(parent.getNodeName(), parent.getOwnerDocument());
-			if( ownerType != null ) {
-				IFXClass fxClass = FXPlugin.getClassmodel().findClass(ownerType.getJavaProject(), ownerType);
-				if( fxClass != null ) {
-					IFXProperty p = fxClass.getProperty(attribute.getNodeName());
-					if( p != null ) {
-						return p.getJavaElement();
+			
+			if( attribute.getNodeName().contains(".") ) {
+				String[] parts = attribute.getNodeName().split("\\.");
+				IType ownerType = Util.findType(parts[0], parent.getOwnerDocument());
+				if( ownerType != null ) {
+					IFXClass fxClass = FXPlugin.getClassmodel().findClass(ownerType.getJavaProject(), ownerType);
+					if( fxClass != null ) {
+						IFXProperty p = fxClass.getStaticProperty(parts[1]);
+						if( p != null ) {
+							return p.getJavaElement();
+						}
+					}
+				}
+			} else {
+				IType ownerType = Util.findType(parent.getNodeName(), parent.getOwnerDocument());
+				if( ownerType != null ) {
+					IFXClass fxClass = FXPlugin.getClassmodel().findClass(ownerType.getJavaProject(), ownerType);
+					if( fxClass != null ) {
+						IFXProperty p = fxClass.getProperty(attribute.getNodeName());
+						if( p != null ) {
+							return p.getJavaElement();
+						}
 					}
 				}
 			}
@@ -165,26 +180,42 @@ public class FXMLTextHover implements ITextHover, ITextHoverExtension, ITextHove
 		
 		if( attribute != null ) {
 			Node parent = xmlnode;
-			IType ownerType = Util.findType(parent.getNodeName(), parent.getOwnerDocument());
-			if( ownerType != null ) {
-				IFXClass fxClass = FXPlugin.getClassmodel().findClass(ownerType.getJavaProject(), ownerType);
-				if( fxClass != null ) {
-					IFXProperty p = fxClass.getProperty(attribute.getNodeName());
-					if( p instanceof IFXEnumProperty ) {
-						IType t = ((IFXEnumProperty) p).getEnumType();
-						try {
-							for (IField f : t.getFields()) {
-								if (Flags.isEnum(f.getFlags())) {
-									if( f.getElementName().equals(attribute.getNodeValue()) ) {
-										return f;
-									}
-								}
+			IFXProperty p = null;
+			
+			if( attribute.getNodeName().contains(".") ) {
+				String[] parts = attribute.getNodeName().split("\\.");
+				IType ownerType = Util.findType(parts[0], parent.getOwnerDocument());
+				if( ownerType != null ) {
+					IFXClass fxClass = FXPlugin.getClassmodel().findClass(ownerType.getJavaProject(), ownerType);
+					if( fxClass != null ) {
+						p = fxClass.getStaticProperty(parts[1]);
+						
+					}
+				}
+			} else {
+				IType ownerType = Util.findType(parent.getNodeName(), parent.getOwnerDocument());
+				if( ownerType != null ) {
+					IFXClass fxClass = FXPlugin.getClassmodel().findClass(ownerType.getJavaProject(), ownerType);
+					if( fxClass != null ) {
+						p = fxClass.getProperty(attribute.getNodeName());
+						
+					}
+				}
+			}
+			
+			if( p instanceof IFXEnumProperty ) {
+				IType t = ((IFXEnumProperty) p).getEnumType();
+				try {
+					for (IField f : t.getFields()) {
+						if (Flags.isEnum(f.getFlags())) {
+							if( f.getElementName().equals(attribute.getNodeValue()) ) {
+								return f;
 							}
-						} catch (JavaModelException e) {
-							// TODO Auto-generated catch block
-							e.printStackTrace();
 						}
 					}
+				} catch (JavaModelException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
 				}
 			}
 		}

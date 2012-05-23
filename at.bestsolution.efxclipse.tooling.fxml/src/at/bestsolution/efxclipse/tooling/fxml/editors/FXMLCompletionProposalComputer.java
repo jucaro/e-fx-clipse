@@ -154,7 +154,6 @@ public class FXMLCompletionProposalComputer extends AbstractXMLCompletionProposa
 				}
 			}
 		}
-
 	}
 	
 	private void createAttributeNameProposal(ContentAssistRequest contentAssistRequest, CompletionProposalInvocationContext context, IFXProperty fxProperty) {
