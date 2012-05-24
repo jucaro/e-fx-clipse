@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <feature
       id="at.bestsolution.efxclipse.feature"
-      label="e(fx)clipse - all in one"
+      label="e(fx)clipse - All in One"
       version="0.0.14.qualifier"
       provider-name="BestSolution.at">
 
