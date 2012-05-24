@@ -64,7 +64,6 @@ import org.eclipse.ui.PartInitException;
 import org.eclipse.ui.part.ViewPart;
 import org.osgi.service.prefs.BackingStoreException;
 
-
 import at.bestsolution.efxclipse.tooling.ui.preview.bundle.Activator;
 import at.bestsolution.efxclipse.tooling.ui.preview.text.AnnotationAccess;
 import at.bestsolution.efxclipse.tooling.ui.preview.text.ColorManager;
@@ -77,37 +76,37 @@ public class LivePreviewPart extends ViewPart {
 	public static final String PREF_LOAD_CONTROLLER = "PREF_LOAD_CONTROLLER";
 	@Inject
 	private LivePreviewSynchronizer synchronizer;
-	
+
 	private Parent rootPane_new;
 
 	private Text logStatement;
 
 	private CTabFolder folder;
-	
+
 	private static final String IMAGE_OK = LivePreviewPart.class.getName() + ".IMAGE_OK";
 	private static final String IMAGE_WARNING = LivePreviewPart.class.getName() + ".IMAGE_WARNING";
 	private static final String IMAGE_ERROR = LivePreviewPart.class.getName() + ".IMAGE_ERROR";
 	private static final String IMAGE_PREVIEW = LivePreviewPart.class.getName() + ".IMAGE_PREVIEW";
-	
+
 	private static final String IMAGE_TAB_ERROR = LivePreviewPart.class.getName() + ".IMAGE_TAB_ERROR";
 	private static final String IMAGE_TAB_WARNING = LivePreviewPart.class.getName() + ".IMAGE_TAB_WARNING";
 	private static final String IMAGE_TAB_NORMAL = LivePreviewPart.class.getName() + ".IMAGE_TAB_NORMAL";
-	
+
 	private static final String IMAGE_STATUS_ERROR = LivePreviewPart.class.getName() + ".IMAGE_STATUS_ERROR";
 	private static final String IMAGE_STATUS_WARNING = LivePreviewPart.class.getName() + ".IMAGE_STATUS_WARNING";
 	private static final String IMAGE_STATUS_OK = LivePreviewPart.class.getName() + ".IMAGE_STATUS_OK";
 	private static final String IMAGE_STATUS_NOPREVIEW = LivePreviewPart.class.getName() + ".IMAGE_STATUS_NOPREVIEW";
-	
+
 	private static final String IMAGE_LOAD_CONTROLLER = LivePreviewPart.class.getName() + ".IMAGE_LOAD_CONTROLLER";
 	private static final String IMAGE_REFRESH = LivePreviewPart.class.getName() + ".IMAGE_REFRESH";
-	
+
 	private static final String IMAGE_FXML_CONTENT = LivePreviewPart.class.getName() + ".IMAGE_FXML_CONTENT";
-	
+
 	private static final String NO_PREVIEW_TEXT = "No preview available";
 	protected static final int VERTICAL_RULER_WIDTH = 20;
 
 	private IEclipsePreferences preference = InstanceScope.INSTANCE.getNode(Activator.PLUGIN_ID);
-	
+
 	private CTabItem logItem;
 
 	private Label statusLabelIcon;
@@ -115,17 +114,17 @@ public class LivePreviewPart extends ViewPart {
 	private Label statusLabelText;
 
 	private FXCanvas swtFXContainer;
-	
+
 	private IPartListener listener;
 
 	private Spinner scale;
-	
+
 	private Map<IFile, Integer> scaleMap = new HashMap<IFile, Integer>();
-	
+
 	private IFile currentFile;
-	
+
 	private IDocument document;
-	
+
 	static {
 		JFaceResources.getImageRegistry().put(IMAGE_OK, Activator.imageDescriptorFromPlugin(Activator.PLUGIN_ID, "/icons/16_16/security-high.png"));
 		JFaceResources.getImageRegistry().put(IMAGE_WARNING, Activator.imageDescriptorFromPlugin(Activator.PLUGIN_ID, "/icons/16_16/security-medium.png"));
@@ -133,88 +132,88 @@ public class LivePreviewPart extends ViewPart {
 		JFaceResources.getImageRegistry().put(IMAGE_PREVIEW, Activator.imageDescriptorFromPlugin(Activator.PLUGIN_ID, "/icons/16_16/view-ldap-resource.png"));
 
 		JFaceResources.getImageRegistry().put(IMAGE_TAB_NORMAL, Activator.imageDescriptorFromPlugin(Activator.PLUGIN_ID, "/icons/16_16/view-presentation.png"));
-		JFaceResources.getImageRegistry().put(IMAGE_TAB_ERROR, new DecorationOverlayIcon(JFaceResources.getImage(IMAGE_TAB_NORMAL),Activator.imageDescriptorFromPlugin(Activator.PLUGIN_ID, "/icons/ovr/error_co.gif"),IDecoration.BOTTOM_LEFT));
-		JFaceResources.getImageRegistry().put(IMAGE_TAB_WARNING, new DecorationOverlayIcon(JFaceResources.getImage(IMAGE_TAB_NORMAL),Activator.imageDescriptorFromPlugin(Activator.PLUGIN_ID, "/icons/ovr/warning_co.gif"),IDecoration.BOTTOM_LEFT));
-		
+		JFaceResources.getImageRegistry().put(IMAGE_TAB_ERROR, new DecorationOverlayIcon(JFaceResources.getImage(IMAGE_TAB_NORMAL), Activator.imageDescriptorFromPlugin(Activator.PLUGIN_ID, "/icons/ovr/error_co.gif"), IDecoration.BOTTOM_LEFT));
+		JFaceResources.getImageRegistry().put(IMAGE_TAB_WARNING, new DecorationOverlayIcon(JFaceResources.getImage(IMAGE_TAB_NORMAL), Activator.imageDescriptorFromPlugin(Activator.PLUGIN_ID, "/icons/ovr/warning_co.gif"), IDecoration.BOTTOM_LEFT));
+
 		JFaceResources.getImageRegistry().put(IMAGE_STATUS_ERROR, Activator.imageDescriptorFromPlugin(Activator.PLUGIN_ID, "/icons/16_16/task-reject.png"));
 		JFaceResources.getImageRegistry().put(IMAGE_STATUS_WARNING, Activator.imageDescriptorFromPlugin(Activator.PLUGIN_ID, "/icons/16_16/task-attempt.png"));
 		JFaceResources.getImageRegistry().put(IMAGE_STATUS_OK, Activator.imageDescriptorFromPlugin(Activator.PLUGIN_ID, "/icons/16_16/task-complete.png"));
 		JFaceResources.getImageRegistry().put(IMAGE_STATUS_NOPREVIEW, Activator.imageDescriptorFromPlugin(Activator.PLUGIN_ID, "/icons/16_16/dialog-information.png"));
-	
+
 		JFaceResources.getImageRegistry().put(IMAGE_LOAD_CONTROLLER, Activator.imageDescriptorFromPlugin(Activator.PLUGIN_ID, "/icons/16_16/debug-step-into.png"));
 		JFaceResources.getImageRegistry().put(IMAGE_REFRESH, Activator.imageDescriptorFromPlugin(Activator.PLUGIN_ID, "/icons/16_16/run-build-clean.png"));
-		
+
 		JFaceResources.getImageRegistry().put(IMAGE_FXML_CONTENT, Activator.imageDescriptorFromPlugin(Activator.PLUGIN_ID, "/icons/16_16/application-xhtml+xml.png"));
-		
+
 	}
 
 	@Override
 	public void init(IViewSite site) throws PartInitException {
 		super.init(site);
-		
+
 		listener = new IPartListener() {
-			
+
 			@Override
 			public void partOpened(IWorkbenchPart part) {
 				// TODO Auto-generated method stub
-				
+
 			}
-			
+
 			@Override
 			public void partDeactivated(IWorkbenchPart part) {
-				if( part == LivePreviewPart.this && swtFXContainer != null ) {
+				if (part == LivePreviewPart.this && swtFXContainer != null) {
 					swtFXContainer.setEnabled(false);
 				}
 			}
-			
+
 			@Override
 			public void partClosed(IWorkbenchPart part) {
 				// TODO Auto-generated method stub
-				
+
 			}
-			
+
 			@Override
 			public void partBroughtToTop(IWorkbenchPart part) {
 				// TODO Auto-generated method stub
-				
+
 			}
-			
+
 			@Override
 			public void partActivated(IWorkbenchPart part) {
-				if( part == LivePreviewPart.this && swtFXContainer != null ) {
-					swtFXContainer.setEnabled(true);	
+				if (part == LivePreviewPart.this && swtFXContainer != null) {
+					swtFXContainer.setEnabled(true);
 				}
 			}
 		};
-		
+
 		site.getWorkbenchWindow().getPartService().addPartListener(synchronizer);
 		site.getWorkbenchWindow().getPartService().addPartListener(listener);
 	}
 
 	@Override
 	public void createPartControl(final Composite parent) {
-		final Composite container = new Composite(parent, SWT.NONE); 
-		container.setLayout(new GridLayout(3,false));
-		
-		folder = new CTabFolder(container, SWT.BOTTOM|SWT.BORDER);
-		folder.setLayoutData(new GridData(GridData.FILL,GridData.FILL,true,true,3,1));
-		
+		final Composite container = new Composite(parent, SWT.NONE);
+		container.setLayout(new GridLayout(3, false));
+
+		folder = new CTabFolder(container, SWT.BOTTOM | SWT.BORDER);
+		folder.setLayoutData(new GridData(GridData.FILL, GridData.FILL, true, true, 3, 1));
+
 		parent.getDisplay().asyncExec(new Runnable() {
-			
+
 			@Override
 			public void run() {
-				
+
 				{
 					CTabItem item = new CTabItem(folder, SWT.NONE);
-					
+
 					item.setText("Preview");
 					item.setImage(JFaceResources.getImage(IMAGE_PREVIEW));
-					
+
 					swtFXContainer = new FXCanvas(folder, SWT.NONE);
 					swtFXContainer.setEnabled(false);
 
 					item.setControl(swtFXContainer);
-					
+
 					Platform.runLater(new Runnable() {
 						@Override
 						public void run() {
@@ -222,16 +221,16 @@ public class LivePreviewPart extends ViewPart {
 						}
 					});
 				}
-				
+
 				{
 					logItem = new CTabItem(folder, SWT.NONE);
 					logItem.setText("Error log");
 					logItem.setImage(JFaceResources.getImage(IMAGE_OK));
-					
-					logStatement = new Text(folder, SWT.MULTI|SWT.V_SCROLL|SWT.H_SCROLL);
+
+					logStatement = new Text(folder, SWT.MULTI | SWT.V_SCROLL | SWT.H_SCROLL);
 					logStatement.setEditable(false);
 					logItem.setControl(logStatement);
-					
+
 					Menu m = new Menu(logStatement);
 					logStatement.setMenu(m);
 					MenuItem clearItem = new MenuItem(m, SWT.PUSH);
@@ -243,12 +242,12 @@ public class LivePreviewPart extends ViewPart {
 						}
 					});
 				}
-				
+
 				{
 					CTabItem fxmlContent = new CTabItem(folder, SWT.NONE);
 					fxmlContent.setText("FXML-Source");
 					fxmlContent.setImage(JFaceResources.getImage(IMAGE_FXML_CONTENT));
-					
+
 					final AnnotationModel model = new AnnotationModel();
 					VerticalRuler verticalRuler = new VerticalRuler(VERTICAL_RULER_WIDTH, new AnnotationAccess());
 					int styles = SWT.V_SCROLL | SWT.H_SCROLL | SWT.MULTI | SWT.BORDER | SWT.FULL_SELECTION;
@@ -265,23 +264,23 @@ public class LivePreviewPart extends ViewPart {
 					verticalRuler.setModel(model);
 					fxmlContent.setControl(sourceViewer.getControl());
 				}
-				
+
 				folder.setSelection(0);
-				
+
 				statusLabelIcon = new Label(container, SWT.NONE);
 				statusLabelIcon.setImage(JFaceResources.getImage(IMAGE_STATUS_NOPREVIEW));
-				
+
 				statusLabelText = new Label(container, SWT.NONE);
 				statusLabelText.setText(NO_PREVIEW_TEXT);
 				statusLabelText.setLayoutData(new GridData(GridData.FILL_HORIZONTAL));
-				
+
 				Composite scaleControl = new Composite(container, SWT.NONE);
-				scaleControl.setLayoutData(new GridData(GridData.END,GridData.CENTER,false,false));
-				scaleControl.setLayout(new GridLayout(2,false));
-				
+				scaleControl.setLayoutData(new GridData(GridData.END, GridData.CENTER, false, false));
+				scaleControl.setLayout(new GridLayout(2, false));
+
 				Label l = new Label(scaleControl, SWT.NONE);
 				l.setText("Zoom");
-				
+
 				scale = new Spinner(scaleControl, SWT.BORDER);
 				scale.setMinimum(10);
 				scale.setMaximum(500);
@@ -290,22 +289,22 @@ public class LivePreviewPart extends ViewPart {
 				scale.addSelectionListener(new SelectionAdapter() {
 					@Override
 					public void widgetSelected(SelectionEvent e) {
-						rootPane_new.setScaleX(scale.getSelection()/100.0);
-						rootPane_new.setScaleY(scale.getSelection()/100.0);
-						if( currentFile != null ) {
+						rootPane_new.setScaleX(scale.getSelection() / 100.0);
+						rootPane_new.setScaleY(scale.getSelection() / 100.0);
+						if (currentFile != null) {
 							scaleMap.put(currentFile, scale.getSelection());
 						}
 					}
 				});
-				
+
 				parent.layout();
 			}
 		});
-		
-		Action loadController = new Action("",IAction.AS_CHECK_BOX) {
+
+		Action loadController = new Action("", IAction.AS_CHECK_BOX) {
 			@Override
 			public void run() {
-				preference.putBoolean(PREF_LOAD_CONTROLLER, ! preference.getBoolean(PREF_LOAD_CONTROLLER, false));
+				preference.putBoolean(PREF_LOAD_CONTROLLER, !preference.getBoolean(PREF_LOAD_CONTROLLER, false));
 				try {
 					preference.flush();
 					synchronizer.refreshPreview();
@@ -318,31 +317,31 @@ public class LivePreviewPart extends ViewPart {
 		loadController.setChecked(preference.getBoolean(PREF_LOAD_CONTROLLER, false));
 		loadController.setImageDescriptor(JFaceResources.getImageRegistry().getDescriptor(IMAGE_LOAD_CONTROLLER));
 		loadController.setToolTipText("Load the controller");
-		
-		Action refresh = new Action("",JFaceResources.getImageRegistry().getDescriptor(IMAGE_REFRESH)) {
+
+		Action refresh = new Action("", JFaceResources.getImageRegistry().getDescriptor(IMAGE_REFRESH)) {
 			@Override
 			public void run() {
 				synchronizer.refreshPreview();
 			}
 		};
 		refresh.setToolTipText("Force a refresh");
-		
+
 		getViewSite().getActionBars().getToolBarManager().add(refresh);
 		getViewSite().getActionBars().getToolBarManager().add(loadController);
 	}
-	
+
 	@Override
 	public void dispose() {
 		getSite().getWorkbenchWindow().getPartService().removePartListener(synchronizer);
 		getSite().getWorkbenchWindow().getPartService().addPartListener(listener);
-		
+
 		super.dispose();
 	}
 
 	private void initFX(FXCanvas fxPanel) {
 		// This method is invoked on the JavaFX thread
 		rootPane_new = new BorderPane();
-		Scene scene = new Scene(rootPane_new,1000,1000);
+		Scene scene = new Scene(rootPane_new, 1000, 1000);
 		fxPanel.setScene(scene);
 	}
 
@@ -352,210 +351,213 @@ public class LivePreviewPart extends ViewPart {
 	}
 
 	private void refreshContent(final ContentData contentData) {
-		folder.getDisplay().syncExec(new Runnable() {
-			
-			@Override
-			public void run() {
-				folder.setVisible(true);
-			}
-		});
-		
-		Platform.runLater(new Runnable() {
+		if (folder != null && !folder.isDisposed()) {
+			folder.getDisplay().syncExec(new Runnable() {
 
-			@Override
-			public void run() {
-				ClassLoader cl = null;
-				
-				FXMLLoader loader;
-				if( contentData.extraJarPath != null && ! contentData.extraJarPath.isEmpty() ) {
-					URLClassLoader previewClassLoader = new PreviewURLClassloader(contentData.extraJarPath.toArray(new URL[0]),swtFXContainer.getClass().getClassLoader());
-
-					if( isJavaFX20() ) {
-						cl = Thread.currentThread().getContextClassLoader();
-						Thread.currentThread().setContextClassLoader(previewClassLoader);
-						
-						loader = new FXMLLoader();
-					} else {
-						// Bugfix for jfx betas should be removed maybe later on
-						cl = Thread.currentThread().getContextClassLoader();
-						Thread.currentThread().setContextClassLoader(previewClassLoader);
-						
-						loader = new FXMLLoader();
-						loader.setClassLoader(previewClassLoader);
-					}
-				} else {
-					loader = new FXMLLoader();
-				}
-				
-				
-				String exception = null;
-				
-				try {
-					currentFile = contentData.file;
-					loader.setStaticLoad(!preference.getBoolean(PREF_LOAD_CONTROLLER, false));
+				@Override
+				public void run() {
 					try {
-						//TODO Should we set this to the bin-Folder??
-						loader.setLocation(contentData.file.getParent().getLocation().toFile().getAbsoluteFile().toURI().toURL());
-					} catch (MalformedURLException e1) {
-						// TODO Auto-generated catch block
-						e1.printStackTrace();
+						saveRefreshContent(contentData);	
+					} catch(Throwable t) {
+						t.printStackTrace();
 					}
-					
-					if( contentData.resourceBundle != null ) {
-						FileInputStream in = null;
-						try {
-							in = new FileInputStream(new File(contentData.resourceBundle));
-							Properties p = new Properties();
-							p.load(in);
-							
-							final Object[][] entries = new Object[p.entrySet().size()][];
-							int i = 0;
-							for( Entry<Object,Object> e : p.entrySet() ) {
-								entries[i++] = new Object[]{e.getKey(),e.getValue()};
-							}
-							
-							ListResourceBundle b = new ListResourceBundle() {
-								
-								@Override
-								protected Object[][] getContents() {
-									return entries;
-								}
-							};	
-							loader.setResources(b);
-						} catch(Exception e) {
-							e.printStackTrace();
-						} finally {
-							if( in != null ) {
-								try {
-									in.close();
-								} catch (IOException e) {
-									// TODO Auto-generated catch block
-									e.printStackTrace();
-								}
-							}
+				}
+			});
+		}
+	}
+
+	private void saveRefreshContent(final ContentData contentData) {
+		folder.setVisible(true);
+
+		ClassLoader cl = null;
+
+		FXMLLoader loader;
+		if (contentData.extraJarPath != null && !contentData.extraJarPath.isEmpty()) {
+			URLClassLoader previewClassLoader = new PreviewURLClassloader(contentData.extraJarPath.toArray(new URL[0]), swtFXContainer.getClass().getClassLoader());
+
+			if (isJavaFX20()) {
+				cl = Thread.currentThread().getContextClassLoader();
+				Thread.currentThread().setContextClassLoader(previewClassLoader);
+
+				loader = new FXMLLoader();
+			} else {
+				// Bugfix for jfx betas should be removed maybe later on
+				cl = Thread.currentThread().getContextClassLoader();
+				Thread.currentThread().setContextClassLoader(previewClassLoader);
+
+				loader = new FXMLLoader();
+				loader.setClassLoader(previewClassLoader);
+			}
+		} else {
+			loader = new FXMLLoader();
+		}
+
+		String exception = null;
+
+		try {
+			currentFile = contentData.file;
+			loader.setStaticLoad(!preference.getBoolean(PREF_LOAD_CONTROLLER, false));
+			try {
+				// TODO Should we set this to the bin-Folder??
+				loader.setLocation(contentData.file.getParent().getLocation().toFile().getAbsoluteFile().toURI().toURL());
+			} catch (MalformedURLException e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			}
+
+			if (contentData.resourceBundle != null) {
+				FileInputStream in = null;
+				try {
+					in = new FileInputStream(new File(contentData.resourceBundle));
+					Properties p = new Properties();
+					p.load(in);
+
+					final Object[][] entries = new Object[p.entrySet().size()][];
+					int i = 0;
+					for (Entry<Object, Object> e : p.entrySet()) {
+						entries[i++] = new Object[] { e.getKey(), e.getValue() };
+					}
+
+					ListResourceBundle b = new ListResourceBundle() {
+
+						@Override
+						protected Object[][] getContents() {
+							return entries;
 						}
-					}
-					
-					// If we are on 2.0.x we need to use another constructor
-					if( isJavaFX20() ) {
+					};
+					loader.setResources(b);
+				} catch (Exception e) {
+					e.printStackTrace();
+				} finally {
+					if (in != null) {
 						try {
-							Constructor<JavaFXBuilderFactory> c = JavaFXBuilderFactory.class.getConstructor(boolean.class);
-							loader.setBuilderFactory(c.newInstance(false));
-						} catch (Throwable e) {
+							in.close();
+						} catch (IOException e) {
 							// TODO Auto-generated catch block
 							e.printStackTrace();
 						}
-					} else {
-						loader.setBuilderFactory(new JavaFXBuilderFactory());
 					}
-					
-					try {
-						document.set(contentData.contents);
-						ByteArrayInputStream out = new ByteArrayInputStream(contentData.contents.getBytes());
-						Object root = loader.load(out);
-						out.close();
-						
-						Scene scene = null;
-						if( root instanceof Scene ) {
-							scene = (Scene) root;
-							rootPane_new = scene.getRoot();
-						} else {
-							rootPane_new = (Parent) root;
-							scene = new Scene(rootPane_new,10000,10000,Platform.isSupported(ConditionalFeature.SCENE3D));
-						}
-						
-						if( scaleMap.containsKey(currentFile) ) {
-							int value = scaleMap.get(currentFile).intValue();
-							scale.setSelection(value);
-						
-							rootPane_new.setScaleX(value/100.0);
-							rootPane_new.setScaleY(value/100.0);
-						
-						} else {
-							scale.setSelection(100);
-							rootPane_new.setScaleX(1);
-							rootPane_new.setScaleY(1);
-						}
-						
-						swtFXContainer.setScene(scene);
-						
-						scene.getStylesheets().addAll(contentData.cssFiles);
-						
-					} catch (Exception e) {
-						StringWriter sw = new StringWriter();
-						e.printStackTrace(new PrintWriter(sw));
-						exception = sw.toString();
-					}
-				} finally {
-					if( cl != null ) {
-						Thread.currentThread().setContextClassLoader(cl);
-					}
-				}
-				
-				if( exception != null ) {
-					final String innerException = exception;
-					if( folder.isDisposed() ) {
-						return;
-					}
-					
-					folder.getDisplay().asyncExec(new Runnable() {
-						
-						@Override
-						public void run() {
-							if( innerException != null ) {
-								logItem.setImage(JFaceResources.getImage(IMAGE_ERROR));
-								statusLabelIcon.setImage(JFaceResources.getImage(IMAGE_STATUS_ERROR));
-								statusLabelText.setText( SimpleDateFormat.getTimeInstance().format(new Date()) + ": Error while updateing preview");
-								setTitleImage(JFaceResources.getImage(IMAGE_TAB_ERROR));
-								folder.setSelection(logItem);
-							}
-							
-							logStatement.setText("");
-							logStatement.append("================================================================="+logStatement.getLineDelimiter());
-							logStatement.append("Preview loading @ " + new Date() + logStatement.getLineDelimiter());
-							logStatement.append("================================================================="+logStatement.getLineDelimiter());
-							
-							if( innerException != null ) {
-								logStatement.append("Exception:" + logStatement.getLineDelimiter());
-								logStatement.append("----------" + logStatement.getLineDelimiter());
-								logStatement.append(innerException + logStatement.getLineDelimiter());
-								logStatement.append(logStatement.getLineDelimiter()+logStatement.getLineDelimiter());
-								logStatement.setSelection(0);
-							}
-						}
-					});
-					
-				} else {
-					folder.getDisplay().asyncExec(new Runnable() {
-						
-						@Override
-						public void run() {
-							folder.setSelection(0);
-							logItem.setImage(JFaceResources.getImage(IMAGE_OK));
-							statusLabelIcon.setImage(JFaceResources.getImage(IMAGE_STATUS_OK));
-							statusLabelText.setText( SimpleDateFormat.getTimeInstance().format(new Date()) + ": Preview updated");
-							setTitleImage(JFaceResources.getImage(IMAGE_TAB_NORMAL));
-						}
-					});
 				}
 			}
-		});
+
+			// If we are on 2.0.x we need to use another constructor
+			if (isJavaFX20()) {
+				try {
+					Constructor<JavaFXBuilderFactory> c = JavaFXBuilderFactory.class.getConstructor(boolean.class);
+					loader.setBuilderFactory(c.newInstance(false));
+				} catch (Throwable e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+			} else {
+				loader.setBuilderFactory(new JavaFXBuilderFactory());
+			}
+
+			try {
+				document.set(contentData.contents);
+				ByteArrayInputStream out = new ByteArrayInputStream(contentData.contents.getBytes());
+				Object root = loader.load(out);
+				out.close();
+
+				Scene scene = null;
+				if (root instanceof Scene) {
+					scene = (Scene) root;
+					rootPane_new = scene.getRoot();
+				} else {
+					rootPane_new = (Parent) root;
+					scene = new Scene(rootPane_new, 10000, 10000, Platform.isSupported(ConditionalFeature.SCENE3D));
+				}
+
+				if (scaleMap.containsKey(currentFile)) {
+					int value = scaleMap.get(currentFile).intValue();
+					scale.setSelection(value);
+
+					rootPane_new.setScaleX(value / 100.0);
+					rootPane_new.setScaleY(value / 100.0);
+
+				} else {
+					scale.setSelection(100);
+					rootPane_new.setScaleX(1);
+					rootPane_new.setScaleY(1);
+				}
+
+				swtFXContainer.setScene(scene);
+
+				scene.getStylesheets().addAll(contentData.cssFiles);
+
+			} catch (Exception e) {
+				StringWriter sw = new StringWriter();
+				e.printStackTrace(new PrintWriter(sw));
+				exception = sw.toString();
+			}
+		} finally {
+			if (cl != null) {
+				Thread.currentThread().setContextClassLoader(cl);
+			}
+		}
+
+		if (exception != null) {
+			final String innerException = exception;
+			if (folder.isDisposed()) {
+				return;
+			}
+
+			folder.getDisplay().asyncExec(new Runnable() {
+
+				@Override
+				public void run() {
+					if (innerException != null) {
+						logItem.setImage(JFaceResources.getImage(IMAGE_ERROR));
+						statusLabelIcon.setImage(JFaceResources.getImage(IMAGE_STATUS_ERROR));
+						statusLabelText.setText(SimpleDateFormat.getTimeInstance().format(new Date()) + ": Error while updateing preview");
+						setTitleImage(JFaceResources.getImage(IMAGE_TAB_ERROR));
+						folder.setSelection(logItem);
+					}
+
+					logStatement.setText("");
+					logStatement.append("=================================================================" + logStatement.getLineDelimiter());
+					logStatement.append("Preview loading @ " + new Date() + logStatement.getLineDelimiter());
+					logStatement.append("=================================================================" + logStatement.getLineDelimiter());
+
+					if (innerException != null) {
+						logStatement.append("Exception:" + logStatement.getLineDelimiter());
+						logStatement.append("----------" + logStatement.getLineDelimiter());
+						logStatement.append(innerException + logStatement.getLineDelimiter());
+						logStatement.append(logStatement.getLineDelimiter() + logStatement.getLineDelimiter());
+						logStatement.setSelection(0);
+					}
+				}
+			});
+
+		} else {
+			folder.getDisplay().asyncExec(new Runnable() {
+
+				@Override
+				public void run() {
+					folder.setSelection(0);
+					logItem.setImage(JFaceResources.getImage(IMAGE_OK));
+					statusLabelIcon.setImage(JFaceResources.getImage(IMAGE_STATUS_OK));
+					statusLabelText.setText(SimpleDateFormat.getTimeInstance().format(new Date()) + ": Preview updated");
+					setTitleImage(JFaceResources.getImage(IMAGE_TAB_NORMAL));
+				}
+			});
+		}
 	}
-	
-	private static boolean  isJavaFX20() {
+
+	private static boolean isJavaFX20() {
 		return System.getProperty("javafx.version") != null && System.getProperty("javafx.version").startsWith("2.0");
 	}
 
 	public void setContents(final ContentData contentData) {
-		if( folder.isDisposed() ) {
+		if (folder.isDisposed()) {
 			return;
 		}
-		
+
 		if (contentData != null && contentData.contents != null) {
 			refreshContent(contentData);
-		} else if( rootPane_new != null ) {
+		} else if (rootPane_new != null) {
 			folder.getDisplay().syncExec(new Runnable() {
-				
+
 				@Override
 				public void run() {
 					statusLabelIcon.setImage(JFaceResources.getImage(IMAGE_STATUS_NOPREVIEW));
@@ -572,7 +574,7 @@ public class LivePreviewPart extends ViewPart {
 		public String resourceBundle;
 		public List<URL> extraJarPath;
 		public IFile file;
-		
+
 		public ContentData(String contents, List<String> cssFiles, String resourceBundle, List<URL> extraJarPath, IFile file) {
 			this.contents = contents;
 			this.cssFiles = new ArrayList<String>(cssFiles);
@@ -581,7 +583,7 @@ public class LivePreviewPart extends ViewPart {
 			this.file = file;
 		}
 	}
-	
+
 	static class PreviewURLClassloader extends URLClassLoader {
 
 		public PreviewURLClassloader(URL[] urls, ClassLoader parent) {
