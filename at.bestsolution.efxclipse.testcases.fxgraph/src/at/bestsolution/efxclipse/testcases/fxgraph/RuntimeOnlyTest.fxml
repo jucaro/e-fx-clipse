@@ -14,9 +14,9 @@
 		<ChoiceBox> 
 			<items>
 				<FXCollections fx:factory="observableArrayList"> 
-					<String fx:value="Hello World"/> 
-					<String fx:value="Hello World extra long"/> 
-					<String fx:value="Hello World extra extra long"/> 
+					<String fx:value="Hello World" />
+					<String fx:value="Hello World extra long" />
+					<String fx:value="Hello World extra extra long" />
 				</FXCollections>
 			</items>
 		</ChoiceBox>
