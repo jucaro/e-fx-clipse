@@ -6,7 +6,7 @@
       provider-name="BestSolution.at">
 
    <description url="http://efxclipse.org">
-      e(fx)clipse is an open tooling and runtime platform built on top of software provided from Eclipse.org
+      This feature provides the core runtime support so that JavaFX can run inside OSGi
    </description>
 
    <copyright url="http://www.bestsolution.at">
