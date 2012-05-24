@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <feature
       id="at.bestsolution.efxclipse.runtime.e3.feature"
-      label="e(fx)clipse - Single - Eclipse 3x Integration"
+      label="e(fx)clipse - Single - Eclipse 3x Integration - (do not install)"
       version="0.0.14.qualifier"
       provider-name="BestSolution.at">
 
