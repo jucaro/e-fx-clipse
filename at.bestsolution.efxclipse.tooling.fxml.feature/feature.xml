@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <feature
       id="at.bestsolution.efxclipse.tooling.fxml.feature"
-      label="Feature"
+      label="FXML editing support"
       version="0.0.14.qualifier"
       provider-name="BestSolution.at">
 
