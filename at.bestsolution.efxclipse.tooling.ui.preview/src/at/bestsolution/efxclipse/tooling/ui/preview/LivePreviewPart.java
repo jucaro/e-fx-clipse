@@ -26,6 +26,7 @@ import javafx.embed.swt.FXCanvas;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.JavaFXBuilderFactory;
 import javafx.scene.Parent;
+import javafx.scene.PerspectiveCamera;
 import javafx.scene.Scene;
 import javafx.scene.layout.BorderPane;
 
@@ -296,10 +297,12 @@ public class LivePreviewPart extends ViewPart {
 						}
 					}
 				});
-
-				parent.layout();
+				
+				parent.layout(true, true);
 			}
 		});
+		
+		parent.layout(true, true);
 
 		Action loadController = new Action("", IAction.AS_CHECK_BOX) {
 			@Override
@@ -466,6 +469,9 @@ public class LivePreviewPart extends ViewPart {
 				} else {
 					rootPane_new = (Parent) root;
 					scene = new Scene(rootPane_new, 10000, 10000, Platform.isSupported(ConditionalFeature.SCENE3D));
+					if( Platform.isSupported(ConditionalFeature.SCENE3D) ) {
+						scene.setCamera(new PerspectiveCamera());
+					}
 				}
 
 				if (scaleMap.containsKey(currentFile)) {
