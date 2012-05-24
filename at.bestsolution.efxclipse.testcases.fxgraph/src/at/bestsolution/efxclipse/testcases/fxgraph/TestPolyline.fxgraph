@@ -15,7 +15,10 @@ component TestPolyline {
 				Double(90),
 				Double(30),
 				Double(70),
-				Double(90)
+				Double(90),
+				100,
+				170,
+				100
 			]
 		}
 	}

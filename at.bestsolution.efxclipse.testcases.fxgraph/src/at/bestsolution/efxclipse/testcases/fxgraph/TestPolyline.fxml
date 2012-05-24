@@ -18,6 +18,9 @@
 				<Double fx:value="30"/> 
 				<Double fx:value="70"/> 
 				<Double fx:value="90"/> 
+				<Integer fx:value="100" />
+				<Integer fx:value="170" />
+				<Integer fx:value="100" />
 			</points>
 		</Polyline>
 	</center>
