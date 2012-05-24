@@ -110,6 +110,7 @@ This Agreement is governed by the laws of the State of New York and the intellec
 
    <requires>
       <import feature="org.eclipse.xtext.sdk" version="2.3.0" match="greaterOrEqual"/>
+      <import feature="at.bestsolution.efxclipse.runtime.osgi.feature" version="0.0.14" match="greaterOrEqual"/>
    </requires>
 
    <plugin
@@ -135,6 +136,13 @@ This Agreement is governed by the laws of the State of New York and the intellec
 
    <plugin
          id="at.bestsolution.efxclipse.tooling.model"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="at.bestsolution.efxclipse.tooling.ui.preview"
          download-size="0"
          install-size="0"
          version="0.0.0"

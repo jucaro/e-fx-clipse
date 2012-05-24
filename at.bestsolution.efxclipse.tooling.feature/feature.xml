@@ -134,6 +134,7 @@ This Agreement is governed by the laws of the State of New York and the intellec
 
    <requires>
       <import feature="org.eclipse.xtext.sdk" version="2.3.0" match="greaterOrEqual"/>
+      <import feature="at.bestsolution.efxclipse.runtime.osgi.feature" version="0.0.14" match="greaterOrEqual"/>
    </requires>
 
    <plugin
