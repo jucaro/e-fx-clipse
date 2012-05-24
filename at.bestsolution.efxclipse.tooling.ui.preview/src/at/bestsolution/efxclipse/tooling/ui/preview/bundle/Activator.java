@@ -1,4 +1,4 @@
-package at.bestsolution.efxclipse.tooling.fxgraph.ui.preview.bundle;
+package at.bestsolution.efxclipse.tooling.ui.preview.bundle;
 
 import org.eclipse.ui.plugin.AbstractUIPlugin;
 import org.eclipse.xtext.ui.shared.SharedStateModule;

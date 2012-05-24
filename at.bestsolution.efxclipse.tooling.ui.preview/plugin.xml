@@ -5,7 +5,7 @@
          point="org.eclipse.ui.views">
       <view
             category="at.bestsolution.efxclipse.tooling"
-            class="at.bestsolution.efxclipse.tooling.fxgraph.ui.preview.bundle.LivePreviewViewExecutableExtensionRegistry:at.bestsolution.efxclipse.tooling.fxgraph.ui.preview.LivePreviewPart"
+            class="at.bestsolution.efxclipse.tooling.ui.preview.bundle.LivePreviewViewExecutableExtensionRegistry:at.bestsolution.efxclipse.tooling.ui.preview.LivePreviewPart"
             icon="icons/16_16/view-presentation.png"
             id="at.bestsolution.efxclipse.tooling.ui.preview"
             name="%view.name"

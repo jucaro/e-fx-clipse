@@ -1,4 +1,4 @@
-package at.bestsolution.efxclipse.tooling.fxgraph.ui.preview.bundle;
+package at.bestsolution.efxclipse.tooling.ui.preview.bundle;
 
 import com.google.inject.Binder;
 import com.google.inject.Module;

@@ -1,4 +1,4 @@
-package at.bestsolution.efxclipse.tooling.fxgraph.ui.preview.bundle;
+package at.bestsolution.efxclipse.tooling.ui.preview.bundle;
 
 import org.eclipse.xtext.ui.guice.AbstractGuiceAwareExecutableExtensionFactory;
 import org.osgi.framework.Bundle;

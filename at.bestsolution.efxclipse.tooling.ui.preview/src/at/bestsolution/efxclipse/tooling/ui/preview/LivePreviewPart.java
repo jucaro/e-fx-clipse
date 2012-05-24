@@ -1,4 +1,4 @@
-package at.bestsolution.efxclipse.tooling.fxgraph.ui.preview;
+package at.bestsolution.efxclipse.tooling.ui.preview;
 
 import java.io.ByteArrayInputStream;
 import java.io.File;
@@ -64,11 +64,12 @@ import org.eclipse.ui.PartInitException;
 import org.eclipse.ui.part.ViewPart;
 import org.osgi.service.prefs.BackingStoreException;
 
-import at.bestsolution.efxclipse.tooling.fxgraph.ui.preview.bundle.Activator;
-import at.bestsolution.efxclipse.tooling.fxgraph.ui.preview.text.AnnotationAccess;
-import at.bestsolution.efxclipse.tooling.fxgraph.ui.preview.text.ColorManager;
-import at.bestsolution.efxclipse.tooling.fxgraph.ui.preview.text.XMLConfiguration;
-import at.bestsolution.efxclipse.tooling.fxgraph.ui.preview.text.XMLPartitionScanner;
+
+import at.bestsolution.efxclipse.tooling.ui.preview.bundle.Activator;
+import at.bestsolution.efxclipse.tooling.ui.preview.text.AnnotationAccess;
+import at.bestsolution.efxclipse.tooling.ui.preview.text.ColorManager;
+import at.bestsolution.efxclipse.tooling.ui.preview.text.XMLConfiguration;
+import at.bestsolution.efxclipse.tooling.ui.preview.text.XMLPartitionScanner;
 
 import com.google.inject.Inject;
 
@@ -578,8 +579,6 @@ public class LivePreviewPart extends ViewPart {
 			this.resourceBundle = resourceBundle;
 			this.extraJarPath = extraJarPath;
 			this.file = file;
-//			this.relativePath = relativePath;
-//			this.filePath = filePath;
 		}
 	}
 	
@@ -588,28 +587,5 @@ public class LivePreviewPart extends ViewPart {
 		public PreviewURLClassloader(URL[] urls, ClassLoader parent) {
 			super(urls, parent);
 		}
-		
-//		public URL getResource(String name) {
-//			URL url = super.getResource(name);
-//			System.err.println("Get resource is called: " + name + " => " + url);
-//			// If the value is not found retry with removed leading '/'
-//			if( url == null && name.startsWith("/") ) {
-//				url = super.getResource(name.substring(1));
-//			}
-//			
-//			return url;
-//		}
-//		
-//		public URL findResource(String name) {
-//			URL url = super.findResource(name);
-//			
-//			System.err.println("Find resource is called: " + name + " => " + url);
-//			// If the value is not found retry with removed leading '/'
-//			if( url == null && name.startsWith("/") ) {
-//				url = super.findResource(name.substring(1));
-//			}
-//			
-//			return url;
-//		}
 	}
 }

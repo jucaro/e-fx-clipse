@@ -1,15 +1,10 @@
-package at.bestsolution.efxclipse.tooling.fxgraph.ui.preview;
+package at.bestsolution.efxclipse.tooling.ui.preview;
 
 import org.eclipse.core.commands.AbstractHandler;
 import org.eclipse.core.commands.Command;
 import org.eclipse.core.commands.ExecutionEvent;
 import org.eclipse.core.commands.ExecutionException;
-import org.eclipse.core.runtime.preferences.IEclipsePreferences;
-import org.eclipse.core.runtime.preferences.InstanceScope;
 import org.eclipse.ui.handlers.HandlerUtil;
-import org.osgi.service.prefs.BackingStoreException;
-
-import at.bestsolution.efxclipse.tooling.fxgraph.ui.preview.bundle.Activator;
 
 public class SwitchUpdatePreferenceHandler extends AbstractHandler {
 

@@ -1,4 +1,4 @@
-package at.bestsolution.efxclipse.tooling.fxgraph.ui.preview;
+package at.bestsolution.efxclipse.tooling.ui.preview;
 
 import java.net.MalformedURLException;
 import java.net.URL;
@@ -24,9 +24,9 @@ import org.eclipse.ui.IWorkbenchPart;
 import org.eclipse.ui.IWorkbenchPartConstants;
 import org.eclipse.ui.part.EditorPart;
 
-import at.bestsolution.efxclipse.tooling.fxgraph.ui.preview.LivePreviewPart.ContentData;
 import at.bestsolution.efxclipse.tooling.ui.editor.IFXMLProviderAdapter;
 import at.bestsolution.efxclipse.tooling.ui.editor.IFXPreviewAdapter;
+import at.bestsolution.efxclipse.tooling.ui.preview.LivePreviewPart.ContentData;
 
 import com.google.inject.Inject;
 

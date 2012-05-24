@@ -1,4 +1,4 @@
-package at.bestsolution.efxclipse.tooling.fxgraph.ui.preview.text;
+package at.bestsolution.efxclipse.tooling.ui.preview.text;
 
 import org.eclipse.jface.text.*;
 
