@@ -1,8 +1,4 @@
 /**
- * <copyright>
- * </copyright>
- *
-
  */
 package at.bestsolution.efxclipse.tooling.css.cssDsl.impl;
 

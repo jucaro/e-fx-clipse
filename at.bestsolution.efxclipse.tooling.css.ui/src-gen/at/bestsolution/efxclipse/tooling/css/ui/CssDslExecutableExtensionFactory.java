@@ -8,6 +8,8 @@ import org.osgi.framework.Bundle;
 
 import com.google.inject.Injector;
 
+import at.bestsolution.efxclipse.tooling.css.ui.internal.CssDslActivator;
+
 /**
  * This class was generated. Customizations should only happen in a newly
  * introduced subclass. 
@@ -16,12 +18,12 @@ public class CssDslExecutableExtensionFactory extends AbstractGuiceAwareExecutab
 
 	@Override
 	protected Bundle getBundle() {
-		return at.bestsolution.efxclipse.tooling.css.ui.internal.CssDslActivator.getInstance().getBundle();
+		return CssDslActivator.getInstance().getBundle();
 	}
 	
 	@Override
 	protected Injector getInjector() {
-		return at.bestsolution.efxclipse.tooling.css.ui.internal.CssDslActivator.getInstance().getInjector("at.bestsolution.efxclipse.tooling.css.CssDsl");
+		return CssDslActivator.getInstance().getInjector(CssDslActivator.AT_BESTSOLUTION_EFXCLIPSE_TOOLING_CSS_CSSDSL);
 	}
 	
 }

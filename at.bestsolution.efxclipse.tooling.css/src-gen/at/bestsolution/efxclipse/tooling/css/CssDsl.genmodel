@@ -5,7 +5,7 @@
     modelPluginID="at.bestsolution.efxclipse.tooling.css" forceOverwrite="true" modelName="CssDsl"
     updateClasspath="false" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
     complianceLevel="5.0" copyrightFields="false" editPluginID="at.bestsolution.efxclipse.tooling.css.edit"
-    editorPluginID="at.bestsolution.efxclipse.tooling.css.editor">
+    editorPluginID="at.bestsolution.efxclipse.tooling.css.editor" runtimeVersion="2.8">
   <genPackages prefix="CssDsl" basePackage="at.bestsolution.efxclipse.tooling.css"
       disposableProviderFactory="true" ecorePackage="CssDsl.ecore#/">
     <genClasses ecoreClass="CssDsl.ecore#//stylesheet">
