@@ -5,7 +5,8 @@
     modelPluginID="at.bestsolution.efxclipse.tooling.fxgraph" forceOverwrite="true"
     modelName="FXGraph" updateClasspath="false" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
     complianceLevel="5.0" copyrightFields="false" editPluginID="at.bestsolution.efxclipse.tooling.fxgraph.edit"
-    editorPluginID="at.bestsolution.efxclipse.tooling.fxgraph.editor" usedGenPackages="../../../../../../../org.eclipse.xtext.common.types/model/JavaVMTypes.genmodel#//types">
+    editorPluginID="at.bestsolution.efxclipse.tooling.fxgraph.editor" runtimeVersion="2.8"
+    usedGenPackages="../../../../../../../org.eclipse.xtext.common.types/model/JavaVMTypes.genmodel#//types">
   <genPackages prefix="FXGraph" basePackage="at.bestsolution.efxclipse.tooling.fxgraph"
       disposableProviderFactory="true" ecorePackage="FXGraph.ecore#/">
     <genClasses ecoreClass="FXGraph.ecore#//Model">
