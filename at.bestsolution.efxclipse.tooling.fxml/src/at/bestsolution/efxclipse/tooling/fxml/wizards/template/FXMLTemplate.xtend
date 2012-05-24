@@ -8,7 +8,7 @@ class FXMLTemplate implements IGenerator<at.bestsolution.efxclipse.tooling.fxml.
 		
 		<?import «element.getRootElement.fullyQualifiedName»?>
 		
-		<«element.getRootElement.elementName»>
+		<«element.getRootElement.elementName» xmlns:fx="http://javafx.com/fxml">
 			<!-- TODO Add Nodes -->
 		</«element.getRootElement.elementName»>
 		
