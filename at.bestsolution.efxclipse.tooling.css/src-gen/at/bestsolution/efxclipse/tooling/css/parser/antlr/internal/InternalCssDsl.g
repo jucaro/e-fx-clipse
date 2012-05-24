@@ -2491,20 +2491,20 @@ rulenum returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()]
     @init { enterRule(); 
     }
     @after { leaveRule(); }:
-(    this_integer_0=RULE_INTEGER    {
-		$current.merge(this_integer_0);
+(    this_INTEGER_0=RULE_INTEGER    {
+		$current.merge(this_INTEGER_0);
     }
 
     { 
-    newLeafNode(this_integer_0, grammarAccess.getNumAccess().getIntegerTerminalRuleCall_0()); 
+    newLeafNode(this_INTEGER_0, grammarAccess.getNumAccess().getINTEGERTerminalRuleCall_0()); 
     }
 
-    |    this_real_1=RULE_REAL    {
-		$current.merge(this_real_1);
+    |    this_REAL_1=RULE_REAL    {
+		$current.merge(this_REAL_1);
     }
 
     { 
-    newLeafNode(this_real_1, grammarAccess.getNumAccess().getRealTerminalRuleCall_1()); 
+    newLeafNode(this_REAL_1, grammarAccess.getNumAccess().getREALTerminalRuleCall_1()); 
     }
 )
     ;

@@ -6741,20 +6741,20 @@ public class InternalCssDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "rulenum"
-    // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:2490:1: rulenum returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (this_integer_0= RULE_INTEGER | this_real_1= RULE_REAL ) ;
+    // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:2490:1: rulenum returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (this_INTEGER_0= RULE_INTEGER | this_REAL_1= RULE_REAL ) ;
     public final AntlrDatatypeRuleToken rulenum() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
-        Token this_integer_0=null;
-        Token this_real_1=null;
+        Token this_INTEGER_0=null;
+        Token this_REAL_1=null;
 
          enterRule(); 
             
         try {
-            // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:2493:28: ( (this_integer_0= RULE_INTEGER | this_real_1= RULE_REAL ) )
-            // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:2494:1: (this_integer_0= RULE_INTEGER | this_real_1= RULE_REAL )
+            // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:2493:28: ( (this_INTEGER_0= RULE_INTEGER | this_REAL_1= RULE_REAL ) )
+            // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:2494:1: (this_INTEGER_0= RULE_INTEGER | this_REAL_1= RULE_REAL )
             {
-            // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:2494:1: (this_integer_0= RULE_INTEGER | this_real_1= RULE_REAL )
+            // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:2494:1: (this_INTEGER_0= RULE_INTEGER | this_REAL_1= RULE_REAL )
             int alt53=2;
             int LA53_0 = input.LA(1);
 
@@ -6772,27 +6772,27 @@ public class InternalCssDslParser extends AbstractInternalAntlrParser {
             }
             switch (alt53) {
                 case 1 :
-                    // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:2494:6: this_integer_0= RULE_INTEGER
+                    // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:2494:6: this_INTEGER_0= RULE_INTEGER
                     {
-                    this_integer_0=(Token)match(input,RULE_INTEGER,FOLLOW_RULE_INTEGER_in_rulenum6217); 
+                    this_INTEGER_0=(Token)match(input,RULE_INTEGER,FOLLOW_RULE_INTEGER_in_rulenum6217); 
 
-                    		current.merge(this_integer_0);
+                    		current.merge(this_INTEGER_0);
                         
                      
-                        newLeafNode(this_integer_0, grammarAccess.getNumAccess().getIntegerTerminalRuleCall_0()); 
+                        newLeafNode(this_INTEGER_0, grammarAccess.getNumAccess().getINTEGERTerminalRuleCall_0()); 
                         
 
                     }
                     break;
                 case 2 :
-                    // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:2502:10: this_real_1= RULE_REAL
+                    // ../at.bestsolution.efxclipse.tooling.css/src-gen/at/bestsolution/efxclipse/tooling/css/parser/antlr/internal/InternalCssDsl.g:2502:10: this_REAL_1= RULE_REAL
                     {
-                    this_real_1=(Token)match(input,RULE_REAL,FOLLOW_RULE_REAL_in_rulenum6243); 
+                    this_REAL_1=(Token)match(input,RULE_REAL,FOLLOW_RULE_REAL_in_rulenum6243); 
 
-                    		current.merge(this_real_1);
+                    		current.merge(this_REAL_1);
                         
                      
-                        newLeafNode(this_real_1, grammarAccess.getNumAccess().getRealTerminalRuleCall_1()); 
+                        newLeafNode(this_REAL_1, grammarAccess.getNumAccess().getREALTerminalRuleCall_1()); 
                         
 
                     }

@@ -1395,22 +1395,22 @@ public class CssDslGrammarAccess extends AbstractGrammarElementFinder {
 	public class NumElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "num");
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
-		private final RuleCall cIntegerTerminalRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
-		private final RuleCall cRealTerminalRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
+		private final RuleCall cINTEGERTerminalRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
+		private final RuleCall cREALTerminalRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
 		
 		//num:
 		//
-		//	integer | real;
+		//	INTEGER | REAL;
 		public ParserRule getRule() { return rule; }
 
-		//integer | real
+		//INTEGER | REAL
 		public Alternatives getAlternatives() { return cAlternatives; }
 
-		//integer
-		public RuleCall getIntegerTerminalRuleCall_0() { return cIntegerTerminalRuleCall_0; }
+		//INTEGER
+		public RuleCall getINTEGERTerminalRuleCall_0() { return cINTEGERTerminalRuleCall_0; }
 
-		//real
-		public RuleCall getRealTerminalRuleCall_1() { return cRealTerminalRuleCall_1; }
+		//REAL
+		public RuleCall getREALTerminalRuleCall_1() { return cREALTerminalRuleCall_1; }
 	}
 
 	public class FunctionElements extends AbstractParserRuleElementFinder {
@@ -1857,8 +1857,8 @@ public class CssDslGrammarAccess extends AbstractGrammarElementFinder {
 	private FREQElements pFREQ;
 	private IMPORTANT_SYMElements pIMPORTANT_SYM;
 	private ReservedWordsElements pReservedWords;
-	private TerminalRule tInteger;
-	private TerminalRule tReal;
+	private TerminalRule tINTEGER;
+	private TerminalRule tREAL;
 	private TerminalRule tHASH;
 	private TerminalRule tIDENT;
 	private TerminalRule tCOMMA;
@@ -2337,7 +2337,7 @@ public class CssDslGrammarAccess extends AbstractGrammarElementFinder {
 
 	//num:
 	//
-	//	integer | real;
+	//	INTEGER | REAL;
 	public NumElements getNumAccess() {
 		return (pNum != null) ? pNum : (pNum = new NumElements());
 	}
@@ -2489,18 +2489,18 @@ public class CssDslGrammarAccess extends AbstractGrammarElementFinder {
 		return getReservedWordsAccess().getRule();
 	}
 
-	//terminal integer:
+	//terminal INTEGER:
 	//
 	//	"0".."9"+;
-	public TerminalRule getIntegerRule() {
-		return (tInteger != null) ? tInteger : (tInteger = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "integer"));
+	public TerminalRule getINTEGERRule() {
+		return (tINTEGER != null) ? tINTEGER : (tINTEGER = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "INTEGER"));
 	} 
 
-	//terminal real:
+	//terminal REAL:
 	//
 	//	"0".."9"* "." "0".."9"+;
-	public TerminalRule getRealRule() {
-		return (tReal != null) ? tReal : (tReal = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "real"));
+	public TerminalRule getREALRule() {
+		return (tREAL != null) ? tREAL : (tREAL = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "REAL"));
 	} 
 
 	//terminal HASH:

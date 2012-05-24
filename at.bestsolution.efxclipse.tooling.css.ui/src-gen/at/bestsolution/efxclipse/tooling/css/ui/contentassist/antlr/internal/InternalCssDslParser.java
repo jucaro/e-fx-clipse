@@ -6999,9 +6999,9 @@ public class InternalCssDslParser extends AbstractInternalContentAssistParser {
                     // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:2350:1: ( RULE_INTEGER )
                     // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:2351:1: RULE_INTEGER
                     {
-                     before(grammarAccess.getNumAccess().getIntegerTerminalRuleCall_0()); 
+                     before(grammarAccess.getNumAccess().getINTEGERTerminalRuleCall_0()); 
                     match(input,RULE_INTEGER,FOLLOW_RULE_INTEGER_in_rule__Num__Alternatives5084); 
-                     after(grammarAccess.getNumAccess().getIntegerTerminalRuleCall_0()); 
+                     after(grammarAccess.getNumAccess().getINTEGERTerminalRuleCall_0()); 
 
                     }
 
@@ -7014,9 +7014,9 @@ public class InternalCssDslParser extends AbstractInternalContentAssistParser {
                     // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:2356:6: ( RULE_REAL )
                     // ../at.bestsolution.efxclipse.tooling.css.ui/src-gen/at/bestsolution/efxclipse/tooling/css/ui/contentassist/antlr/internal/InternalCssDsl.g:2357:1: RULE_REAL
                     {
-                     before(grammarAccess.getNumAccess().getRealTerminalRuleCall_1()); 
+                     before(grammarAccess.getNumAccess().getREALTerminalRuleCall_1()); 
                     match(input,RULE_REAL,FOLLOW_RULE_REAL_in_rule__Num__Alternatives5101); 
-                     after(grammarAccess.getNumAccess().getRealTerminalRuleCall_1()); 
+                     after(grammarAccess.getNumAccess().getREALTerminalRuleCall_1()); 
 
                     }
 

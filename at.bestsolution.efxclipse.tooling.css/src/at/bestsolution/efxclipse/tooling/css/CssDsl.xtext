@@ -201,7 +201,7 @@ numberTerm hidden():
 ;
   
 num:
-	integer | real
+	INTEGER | REAL
 ;
 
 function hidden():
@@ -240,8 +240,8 @@ ReservedWords:
 	| 'hz' | 'khz'
 ;
 
-terminal integer:('0'..'9')+;
-terminal real: (('0'..'9')*"."('0'..'9')+);
+terminal INTEGER:('0'..'9')+;
+terminal REAL: (('0'..'9')*"."('0'..'9')+);
 terminal HASH: '#' ('_' | '-' | 'a'..'z' | 'A'..'Z' | '0'..'9' )+;
 
 terminal IDENT: ('_' | 'a'..'z' | 'A'..'Z' ) ('_' | '-' | 'a'..'z' | 'A'..'Z' | '0'..'9' )*;

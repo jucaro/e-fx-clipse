@@ -2348,15 +2348,15 @@ rule__Num__Alternatives
     }
 :
 (
-{ before(grammarAccess.getNumAccess().getIntegerTerminalRuleCall_0()); }
+{ before(grammarAccess.getNumAccess().getINTEGERTerminalRuleCall_0()); }
 	RULE_INTEGER
-{ after(grammarAccess.getNumAccess().getIntegerTerminalRuleCall_0()); }
+{ after(grammarAccess.getNumAccess().getINTEGERTerminalRuleCall_0()); }
 )
 
     |(
-{ before(grammarAccess.getNumAccess().getRealTerminalRuleCall_1()); }
+{ before(grammarAccess.getNumAccess().getREALTerminalRuleCall_1()); }
 	RULE_REAL
-{ after(grammarAccess.getNumAccess().getRealTerminalRuleCall_1()); }
+{ after(grammarAccess.getNumAccess().getREALTerminalRuleCall_1()); }
 )
 
 ;

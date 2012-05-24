@@ -702,7 +702,7 @@
       <elements xsi:type="xtext:Keyword" value="khz"/>
     </alternatives>
   </rules>
-  <rules xsi:type="xtext:TerminalRule" name="integer">
+  <rules xsi:type="xtext:TerminalRule" name="INTEGER">
     <type metamodel="//@metamodelDeclarations.0">
       <classifier xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     </type>
@@ -711,7 +711,7 @@
       <right value="9"/>
     </alternatives>
   </rules>
-  <rules xsi:type="xtext:TerminalRule" name="real">
+  <rules xsi:type="xtext:TerminalRule" name="REAL">
     <type metamodel="//@metamodelDeclarations.0">
       <classifier xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     </type>
