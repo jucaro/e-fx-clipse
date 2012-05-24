@@ -11,9 +11,10 @@
 
 	<properties>
 		<foo>
-			<Color red="10" green="10" blue="10"/> 
+			<Color red="0.1" green="0.1" blue="0.2"/> 
 		</foo>
 		<bar>456</bar>
+		<test>Hello</test>
 	</properties>
 
 </Button>
