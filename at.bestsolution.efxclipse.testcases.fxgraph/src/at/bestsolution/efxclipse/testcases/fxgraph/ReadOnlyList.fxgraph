@@ -23,7 +23,7 @@ component ReadOnlyList styledwith "test.css" {
 			}
 		],
 		styleClass : [
-			String("test")
+			"test"
 		]
 	}
 }

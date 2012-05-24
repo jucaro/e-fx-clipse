@@ -14,7 +14,7 @@
 		<Rectangle fx:id="rectangle" x="340" y="10" width="320" height="240" fill="#00ff00"/> 
 	</children>
 	<styleClass>
-		<String fx:value="test"/> 
+		<String fx:value="test" />
 	</styleClass>
 
 </Pane>
