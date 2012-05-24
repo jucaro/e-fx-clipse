@@ -3,9 +3,6 @@
    <feature url="features/at.bestsolution.efxclipse.runtime.osgi.feature_0.0.14.qualifier.jar" id="at.bestsolution.efxclipse.runtime.osgi.feature" version="0.0.14.qualifier">
       <category name="e(fx)clipse"/>
    </feature>
-   <feature url="features/at.bestsolution.efxclipse.runtime.e3.feature_0.0.14.qualifier.jar" id="at.bestsolution.efxclipse.runtime.e3.feature" version="0.0.14.qualifier">
-      <category name="e(fx)clipse"/>
-   </feature>
    <feature url="features/at.bestsolution.efxclipse.tooling.convert.feature_0.0.14.qualifier.jar" id="at.bestsolution.efxclipse.tooling.convert.feature" version="0.0.14.qualifier">
       <category name="e(fx)clipse"/>
    </feature>
@@ -25,6 +22,15 @@
       <category name="e(fx)clipse"/>
    </feature>
    <feature url="features/at.bestsolution.efxclipse.tooling.feature_0.0.14.qualifier.jar" id="at.bestsolution.efxclipse.tooling.feature" version="0.0.14.qualifier">
+      <category name="e(fx)clipse"/>
+   </feature>
+   <feature url="features/at.bestsolution.efxclipse.feature_0.0.14.qualifier.jar" id="at.bestsolution.efxclipse.feature" version="0.0.14.qualifier">
+      <category name="e(fx)clipse"/>
+   </feature>
+   <feature url="features/at.bestsolution.efxclipse.runtime.e3.feature_0.0.14.qualifier.jar" id="at.bestsolution.efxclipse.runtime.e3.feature" version="0.0.14.qualifier">
+      <category name="e(fx)clipse"/>
+   </feature>
+   <feature url="features/at.bestsolution.efxclipse.runtime.feature_0.0.14.qualifier.jar" id="at.bestsolution.efxclipse.runtime.feature" version="0.0.14.qualifier">
       <category name="e(fx)clipse"/>
    </feature>
    <category-def name="e(fx)clipse" label="e(fx)clipse"/>
