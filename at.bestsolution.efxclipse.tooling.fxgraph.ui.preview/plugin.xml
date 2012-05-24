@@ -7,7 +7,7 @@
             category="at.bestsolution.efxclipse.tooling"
             class="at.bestsolution.efxclipse.tooling.fxgraph.ui.preview.bundle.LivePreviewViewExecutableExtensionRegistry:at.bestsolution.efxclipse.tooling.fxgraph.ui.preview.LivePreviewPart"
             icon="icons/16_16/view-presentation.png"
-            id="at.bestsolution.efxclipse.tooling.fxgraph.ui.preview"
+            id="at.bestsolution.efxclipse.tooling.ui.preview"
             name="%view.name"
             restorable="true">
       </view>

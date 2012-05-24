@@ -13,7 +13,7 @@ public class Activator extends AbstractUIPlugin {
 	
 	private static Activator plugin;
 	
-	public static final String PLUGIN_ID = "at.bestsolution.efxclipse.tooling.fxgraph.ui.preview";
+	public static final String PLUGIN_ID = "at.bestsolution.efxclipse.tooling.ui.preview";
 	
 	/*
 	 * (non-Javadoc)
