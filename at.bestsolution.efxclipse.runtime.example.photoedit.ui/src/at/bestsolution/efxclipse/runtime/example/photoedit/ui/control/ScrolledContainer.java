@@ -1,21 +1,11 @@
 package at.bestsolution.efxclipse.runtime.example.photoedit.ui.control;
 
-import javafx.animation.TranslateTransition;
-import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
-import javafx.geometry.Bounds;
-import javafx.scene.Node;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import javafx.scene.input.DragEvent;
-import javafx.scene.input.MouseDragEvent;
-import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.HBox;
-import javafx.scene.layout.VBox;
-import javafx.util.Duration;
 
 public class ScrolledContainer extends HBox {
-	private VelocityTracker tracker = new VelocityTracker();
+	private VelocityTracker tracker = new VelocityTracker(); 
 	
 	public ScrolledContainer() {
 //		setStyle("-fx-background-color: red");

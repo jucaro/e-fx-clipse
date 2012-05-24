@@ -5,7 +5,7 @@ Bundle-SymbolicName: at.bestsolution.efxclipse.runtime.examples.swt;singleton:=t
 Bundle-Version: 1.0.0.qualifier
 Require-Bundle: org.eclipse.core.runtime,
  at.bestsolution.efxclipse.runtime.swt;bundle-version="1.0.0",
- at.bestsolution.efxclipse.runtime.application;bundle-version="0.0.13"
+ at.bestsolution.efxclipse.runtime.application;bundle-version="0.0.14"
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Import-Package: javafx.animation;version="2.0.0",
  javafx.application;version="2.0.0",

@@ -18,7 +18,7 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EStructuralFeature;
 
 public class EMFListHelper  {
-	static class WrappedList<T> implements ObservableList<T> {
+	static class WrappedList<T> implements ObservableList<T> { 
 		private EObject owner;
 		private final EList<T> wrappedList;
 		private List<InvalidationListener> invalidationListeners;

@@ -6,7 +6,7 @@ import javafx.collections.ObservableList;
 
 public class TestListChange {
 	public static void main(String[] args) {
-		ObservableList<String> list = FXCollections.observableArrayList();
+		ObservableList<String> list = FXCollections.observableArrayList(); 
 		list.addListener(new ListChangeListener<String>() {
 
 			@Override

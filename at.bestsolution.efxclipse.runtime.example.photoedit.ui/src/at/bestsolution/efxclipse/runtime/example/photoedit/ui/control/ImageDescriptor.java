@@ -5,7 +5,7 @@ import java.io.InputStream;
 import javafx.scene.image.Image;
 
 public abstract class ImageDescriptor {
-	public interface InputStreamProvider {
+	public interface InputStreamProvider { 
 		public InputStream getStream();
 	}
 	

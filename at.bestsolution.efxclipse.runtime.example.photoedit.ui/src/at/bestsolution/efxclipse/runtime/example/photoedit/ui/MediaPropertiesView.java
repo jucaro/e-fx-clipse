@@ -39,8 +39,6 @@ import javax.annotation.PostConstruct;
 import javax.inject.Inject;
 
 import org.eclipse.core.databinding.observable.value.IObservableValue;
-import org.eclipse.core.databinding.observable.value.IValueChangeListener;
-import org.eclipse.core.databinding.observable.value.ValueChangeEvent;
 import org.eclipse.core.databinding.observable.value.WritableValue;
 import org.eclipse.e4.core.di.annotations.Optional;
 import org.eclipse.e4.ui.di.Focus;
@@ -55,7 +53,7 @@ import at.bestsolution.efxclipse.runtime.example.photoedit.model.photoedit.Media
 import at.bestsolution.efxclipse.runtime.example.photoedit.model.photoedit.PhotoArea;
 
 @SuppressWarnings("restriction")
-public class MediaPropertiesView {
+public class MediaPropertiesView { 
 	
 	private WritableValue currentSelection = new WritableValue();
 	private TableView<PhotoArea> photoAreas;
@@ -90,7 +88,7 @@ public class MediaPropertiesView {
 			GridPane.setValignment(l, VPos.TOP);
 			
 			TextArea area = new TextArea();
-			area.setPrefColumnCount(10);
+			area.setPrefColumnCount(5);
 			mediaProperties.add(area, 1, 1);
 			GridPane.setHgrow(area, Priority.ALWAYS);
 			dbc.bindValue(EMFProperties.value(MEDIA__DESCRIPTION).observeDetail(currentSelection), JFXBeanProperties.value("text").observe(area));

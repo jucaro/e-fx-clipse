@@ -30,7 +30,7 @@ import javafx.scene.input.MouseEvent;
  * {@link #computeCurrentVelocity(int)} and then {@link #getXVelocity()}
  * and {@link #getXVelocity()}.
  */
-public final class VelocityTracker {
+public final class VelocityTracker { 
     private static final boolean DEBUG = false;
     private static final boolean localLOGV = DEBUG;
 

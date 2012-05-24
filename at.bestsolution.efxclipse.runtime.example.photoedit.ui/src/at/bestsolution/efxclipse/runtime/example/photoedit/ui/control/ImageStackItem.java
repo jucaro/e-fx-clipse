@@ -4,7 +4,7 @@ import javafx.scene.Node;
 import javafx.scene.layout.AnchorPane;
 
 
-public class ImageStackItem {
+public class ImageStackItem { 
 	private String title;
 	private ImageDescriptor descriptor;
 	private AnchorPane layoutContainer = new AnchorPane();

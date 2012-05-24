@@ -9,7 +9,7 @@ import at.bestsolution.efxclipse.runtime.panels.AdvancedStackPane;
 public class TestApplication extends Application {
 
 	@Override
-	public void start(Stage primaryStage) throws Exception {
+	public void start(Stage primaryStage) throws Exception { 
 //		ImageStackPane pane = new ImageStackPane();
 //		
 //		{

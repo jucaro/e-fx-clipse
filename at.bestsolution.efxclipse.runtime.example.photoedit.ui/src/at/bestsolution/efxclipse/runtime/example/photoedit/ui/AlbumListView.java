@@ -42,7 +42,7 @@ import at.bestsolution.efxclipse.runtime.example.photoedit.model.photoedit.Photo
 
 @SuppressWarnings("restriction")
 public class AlbumListView {
-	private static final String PERSISTED_STATE_SELECTED_ALBUM = "PERSISTED_STATE_SELECTED_ALBUM";
+	private static final String PERSISTED_STATE_SELECTED_ALBUM = "PERSISTED_STATE_SELECTED_ALBUM"; 
 	
 	@Inject
 	ResourceStore store;

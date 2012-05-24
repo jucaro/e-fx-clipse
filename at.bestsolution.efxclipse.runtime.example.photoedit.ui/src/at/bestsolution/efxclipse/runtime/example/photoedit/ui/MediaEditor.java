@@ -54,7 +54,7 @@ import at.bestsolution.efxclipse.runtime.example.photoedit.model.photoedit.Photo
 
 @SuppressWarnings("restriction")
 public class MediaEditor {
-	@Inject
+	@Inject 
 	ResourceStore store;
 	
 	@Inject
@@ -113,7 +113,7 @@ public class MediaEditor {
 		});
 		
 		if( input.getPersistedState().get(KEY_TRANSLATE_X) != null ) {
-			transformStack.setTranslateX(Double.parseDouble(input.getPersistedState().get(KEY_TRANSLATE_X))+(isSWT?750:0));
+			transformStack.setTranslateX(Double.parseDouble(input.getPersistedState().get(KEY_TRANSLATE_X))+(isSWT?1100:0));
 		}
 		
 		if( input.getPersistedState().get(KEY_TRANSLATE_Y) != null ) {
@@ -136,7 +136,7 @@ public class MediaEditor {
 	
 	private void processChange(Entry<String, String> e) {
 		if( KEY_TRANSLATE_X.equals(e.getKey()) ) {
-			transformStack.setTranslateX(Double.parseDouble(e.getValue())+(isSWT?750:0));
+			transformStack.setTranslateX(Double.parseDouble(e.getValue())+(isSWT?1100:0));
 		} else if( KEY_TRANSLATE_Y.equals(e.getKey()) ) {
 			transformStack.setTranslateY(Double.parseDouble(e.getValue())+(isSWT?750:0));
 		} else if( KEY_SCALE_FACTOR.equals(e.getKey()) ) {

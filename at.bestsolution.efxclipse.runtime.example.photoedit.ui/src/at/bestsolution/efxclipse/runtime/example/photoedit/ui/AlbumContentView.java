@@ -27,7 +27,7 @@ public class AlbumContentView {
 	
 	private ListView<Media> listView;
 
-	static class MediaCell extends ListCell<Media> {
+	static class MediaCell extends ListCell<Media> { 
 		@Override
 		protected void updateItem(Media item, boolean empty) {
 			if( item != null ) {

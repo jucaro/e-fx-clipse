@@ -4,7 +4,7 @@ Bundle-Name: Panels
 Bundle-SymbolicName: at.bestsolution.efxclipse.runtime.examples.panels
 Bundle-Version: 1.0.0.qualifier
 Require-Bundle: org.eclipse.core.runtime,
- at.bestsolution.efxclipse.runtime.panels;bundle-version="0.0.13"
+ at.bestsolution.efxclipse.runtime.panels;bundle-version="0.0.14"
 Import-Package: javafx.animation;version="2.0.0",
  javafx.application;version="2.0.0",
  javafx.beans;version="2.0.0",

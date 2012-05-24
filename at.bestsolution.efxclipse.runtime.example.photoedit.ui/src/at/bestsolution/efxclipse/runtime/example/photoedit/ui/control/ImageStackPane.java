@@ -26,7 +26,7 @@ import javafx.util.Callback;
 import javafx.util.Duration;
 
 public class ImageStackPane extends BorderPane {
-	private ObservableList<ImageStackItem> items = FXCollections.observableArrayList();
+	private ObservableList<ImageStackItem> items = FXCollections.observableArrayList(); 
 	
 	private ToolBar headerBar;
 	private ListView<ImageStackItem> stackItemsBar;
