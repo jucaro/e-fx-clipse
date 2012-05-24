@@ -2,9 +2,13 @@ package at.bestsolution.efxclipse.testcases.fxgraph
 
 import javafx.scene.layout.*
 import javafx.scene.control.*
+import javafx.scene.control.RadioButton
 
 component Defines {
-	define ToggleGroup id myToggleGroup
+	define ToggleGroup id myToggleGroup,
+	define RadioButton id testRadio {
+		text : "D"
+	}
 	VBox {
 		children : [
 			RadioButton {
@@ -18,7 +22,8 @@ component Defines {
 			RadioButton {
 				text : "C",
 				toggleGroup : idref myToggleGroup
-			}
+			},
+			idref testRadio
 		]
 	}
 }

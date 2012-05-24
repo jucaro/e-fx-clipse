@@ -11,12 +11,14 @@
 <VBox xmlns:fx="http://javafx.com/fxml">
 	<fx:define>
 		<ToggleGroup fx:id="myToggleGroup"/> 
+		<RadioButton fx:id="testRadio" text="D"/> 
 	</fx:define>
 
 	<children>
 		<RadioButton text="A" toggleGroup="$myToggleGroup"/> 
 		<RadioButton text="B" toggleGroup="$myToggleGroup"/> 
 		<RadioButton text="C" toggleGroup="$myToggleGroup"/> 
+		<fx:reference source="testRadio" />
 	</children>
 
 </VBox>
