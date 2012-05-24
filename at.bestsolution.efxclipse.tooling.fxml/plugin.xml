@@ -5,12 +5,13 @@
    <extension
          point="org.eclipse.ui.editors">
       <editor
-            name="FXML Editor"
-            extensions="fxml"
-            icon="icons/sample.gif"
-            contributorClass="org.eclipse.ui.texteditor.BasicTextEditorActionContributor"
             class="at.bestsolution.efxclipse.tooling.fxml.editors.FXMLEditor"
-            id="at.bestsolution.efxclipse.tooling.fxml.editors.FXMLEditor">
+            contributorClass="org.eclipse.ui.texteditor.BasicTextEditorActionContributor"
+            default="true"
+            extensions="fxml"
+            icon="icons/application-xhtml+xml.png"
+            id="at.bestsolution.efxclipse.tooling.fxml.editors.FXMLEditor"
+            name="FXML Editor">
       </editor>
    </extension>
    <extension
@@ -42,6 +43,17 @@
             class="at.bestsolution.efxclipse.tooling.fxml.editors.FXMLTextHover"
             target="org.eclipse.wst.xml.XML_DEFAULT">
       </documentationTextHover>
+   </extension>
+   <extension
+         point="org.eclipse.ui.newWizards">
+      <wizard
+            category="at.bestsolution.efxclipse.tooling"
+            class="at.bestsolution.efxclipse.tooling.fxml.wizards.NewFXMLWizard"
+            icon="icons/application-xhtml+xml.png"
+            id="at.bestsolution.efxclipse.tooling.fxml.wizard1"
+            name="New FXML Document"
+            project="false">
+      </wizard>
    </extension>
 
 </plugin>

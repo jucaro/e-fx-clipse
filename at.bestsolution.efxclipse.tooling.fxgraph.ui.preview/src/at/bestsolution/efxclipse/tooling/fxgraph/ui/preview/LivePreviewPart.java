@@ -35,6 +35,13 @@ import org.eclipse.core.runtime.preferences.InstanceScope;
 import org.eclipse.jface.action.Action;
 import org.eclipse.jface.action.IAction;
 import org.eclipse.jface.resource.JFaceResources;
+import org.eclipse.jface.text.Document;
+import org.eclipse.jface.text.IDocument;
+import org.eclipse.jface.text.IDocumentPartitioner;
+import org.eclipse.jface.text.rules.FastPartitioner;
+import org.eclipse.jface.text.source.AnnotationModel;
+import org.eclipse.jface.text.source.SourceViewer;
+import org.eclipse.jface.text.source.VerticalRuler;
 import org.eclipse.jface.viewers.DecorationOverlayIcon;
 import org.eclipse.jface.viewers.IDecoration;
 import org.eclipse.swt.SWT;
@@ -58,6 +65,10 @@ import org.eclipse.ui.part.ViewPart;
 import org.osgi.service.prefs.BackingStoreException;
 
 import at.bestsolution.efxclipse.tooling.fxgraph.ui.preview.bundle.Activator;
+import at.bestsolution.efxclipse.tooling.fxgraph.ui.preview.text.AnnotationAccess;
+import at.bestsolution.efxclipse.tooling.fxgraph.ui.preview.text.ColorManager;
+import at.bestsolution.efxclipse.tooling.fxgraph.ui.preview.text.XMLConfiguration;
+import at.bestsolution.efxclipse.tooling.fxgraph.ui.preview.text.XMLPartitionScanner;
 
 import com.google.inject.Inject;
 
@@ -89,7 +100,10 @@ public class LivePreviewPart extends ViewPart {
 	private static final String IMAGE_LOAD_CONTROLLER = LivePreviewPart.class.getName() + ".IMAGE_LOAD_CONTROLLER";
 	private static final String IMAGE_REFRESH = LivePreviewPart.class.getName() + ".IMAGE_REFRESH";
 	
+	private static final String IMAGE_FXML_CONTENT = LivePreviewPart.class.getName() + ".IMAGE_FXML_CONTENT";
+	
 	private static final String NO_PREVIEW_TEXT = "No preview available";
+	protected static final int VERTICAL_RULER_WIDTH = 20;
 
 	private IEclipsePreferences preference = InstanceScope.INSTANCE.getNode(Activator.PLUGIN_ID);
 	
@@ -109,6 +123,8 @@ public class LivePreviewPart extends ViewPart {
 	
 	private IFile currentFile;
 	
+	private IDocument document;
+	
 	static {
 		JFaceResources.getImageRegistry().put(IMAGE_OK, Activator.imageDescriptorFromPlugin("at.bestsolution.efxclipse.tooling.fxgraph.ui.preview", "/icons/16_16/security-high.png"));
 		JFaceResources.getImageRegistry().put(IMAGE_WARNING, Activator.imageDescriptorFromPlugin("at.bestsolution.efxclipse.tooling.fxgraph.ui.preview", "/icons/16_16/security-medium.png"));
@@ -126,6 +142,8 @@ public class LivePreviewPart extends ViewPart {
 	
 		JFaceResources.getImageRegistry().put(IMAGE_LOAD_CONTROLLER, Activator.imageDescriptorFromPlugin("at.bestsolution.efxclipse.tooling.fxgraph.ui.preview", "/icons/16_16/debug-step-into.png"));
 		JFaceResources.getImageRegistry().put(IMAGE_REFRESH, Activator.imageDescriptorFromPlugin("at.bestsolution.efxclipse.tooling.fxgraph.ui.preview", "/icons/16_16/run-build-clean.png"));
+		
+		JFaceResources.getImageRegistry().put(IMAGE_FXML_CONTENT, Activator.imageDescriptorFromPlugin("at.bestsolution.efxclipse.tooling.fxgraph.ui.preview", "/icons/16_16/application-xhtml+xml.png"));
 		
 	}
 
@@ -224,6 +242,29 @@ public class LivePreviewPart extends ViewPart {
 						}
 					});
 				}
+				
+				{
+					CTabItem fxmlContent = new CTabItem(folder, SWT.NONE);
+					fxmlContent.setText("FXML-Source");
+					fxmlContent.setImage(JFaceResources.getImage(IMAGE_FXML_CONTENT));
+					
+					final AnnotationModel model = new AnnotationModel();
+					VerticalRuler verticalRuler = new VerticalRuler(VERTICAL_RULER_WIDTH, new AnnotationAccess());
+					int styles = SWT.V_SCROLL | SWT.H_SCROLL | SWT.MULTI | SWT.BORDER | SWT.FULL_SELECTION;
+					SourceViewer sourceViewer = new SourceViewer(folder, verticalRuler, styles);
+					sourceViewer.configure(new XMLConfiguration(new ColorManager()));
+					sourceViewer.setEditable(false);
+					sourceViewer.getTextWidget().setFont(JFaceResources.getTextFont());
+
+					document = new Document();
+					IDocumentPartitioner partitioner = new FastPartitioner(new XMLPartitionScanner(), new String[] { XMLPartitionScanner.XML_TAG, XMLPartitionScanner.XML_COMMENT });
+					partitioner.connect(document);
+					document.setDocumentPartitioner(partitioner);
+					sourceViewer.setDocument(document);
+					verticalRuler.setModel(model);
+					fxmlContent.setControl(sourceViewer.getControl());
+				}
+				
 				folder.setSelection(0);
 				
 				statusLabelIcon = new Label(container, SWT.NONE);
@@ -408,7 +449,7 @@ public class LivePreviewPart extends ViewPart {
 					}
 					
 					try {
-						
+						document.set(contentData.contents);
 						ByteArrayInputStream out = new ByteArrayInputStream(contentData.contents.getBytes());
 						Object root = loader.load(out);
 						out.close();
