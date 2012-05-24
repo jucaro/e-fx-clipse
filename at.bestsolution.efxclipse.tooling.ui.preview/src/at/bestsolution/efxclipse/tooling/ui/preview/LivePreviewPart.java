@@ -162,7 +162,7 @@ public class LivePreviewPart extends ViewPart {
 			
 			@Override
 			public void partDeactivated(IWorkbenchPart part) {
-				if( part == LivePreviewPart.this ) {
+				if( part == LivePreviewPart.this && swtFXContainer != null ) {
 					swtFXContainer.setEnabled(false);
 				}
 			}
