@@ -2,7 +2,7 @@
 <feature
       id="at.bestsolution.efxclipse.runtime.e3.feature"
       label="Eclipse 3x Integration"
-      version="0.0.13.qualifier"
+      version="0.0.14.qualifier"
       provider-name="BestSolution.at">
 
    <description url="http://efxclipse.org">
