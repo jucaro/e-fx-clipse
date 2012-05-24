@@ -37,7 +37,8 @@ public class FXMLTextHover implements ITextHover, ITextHoverExtension, ITextHove
 	
 	@Override
 	public String getHoverInfo(ITextViewer textViewer, IRegion hoverRegion) {
-		return "__DUMMY__";
+		Object o = getHoverInfo2(textViewer, hoverRegion);
+		return o != null ? o.toString() : null;
 	}
 	
 	@Override
@@ -226,6 +227,7 @@ public class FXMLTextHover implements ITextHover, ITextHoverExtension, ITextHove
 	
 	@Override
 	public IInformationControlCreator getHoverControlCreator() {
+//		System.err.println("getHoverControlCreator(): " + element);
 		if( element != null ) {
 			javadocWrapper.setJavaElement(element);
 			return javadocWrapper.getHoverControlCreator();
@@ -235,6 +237,7 @@ public class FXMLTextHover implements ITextHover, ITextHoverExtension, ITextHove
 
 	@Override
 	public Object getHoverInfo2(ITextViewer textViewer, IRegion hoverRegion) {
+		System.err.println("getHoverInfo2()");
 		if ((hoverRegion == null) || (textViewer == null) || (textViewer.getDocument() == null)) {
 			return null;
 		}
