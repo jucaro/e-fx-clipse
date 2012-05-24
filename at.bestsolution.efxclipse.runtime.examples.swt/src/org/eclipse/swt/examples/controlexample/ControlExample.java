@@ -112,7 +112,7 @@ public class ControlExample {
 			shellTab = new ShellTab(this),
 			new SliderTab (this),
 //			new SpinnerTab (this),
-//			new TabFolderTab (this),
+			new TabFolderTab (this),
 //			new TableTab (this),
 			new TextTab (this),
 //			new ToolBarTab (this),
