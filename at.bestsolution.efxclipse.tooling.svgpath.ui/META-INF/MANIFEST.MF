@@ -2,7 +2,7 @@ Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: at.bestsolution.efxclipse.tooling.svgpath.ui
 Bundle-Vendor: My Company
-Bundle-Version: 0.0.13.qualifier
+Bundle-Version: 0.0.14.qualifier
 Bundle-SymbolicName: at.bestsolution.efxclipse.tooling.svgpath.ui; singleton:=true
 Bundle-ActivationPolicy: lazy
 Require-Bundle: at.bestsolution.efxclipse.tooling.svgpath;visibility:=reexport,

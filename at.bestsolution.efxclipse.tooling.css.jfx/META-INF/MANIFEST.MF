@@ -2,9 +2,9 @@ Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: %Bundle-Name
 Bundle-SymbolicName: at.bestsolution.efxclipse.tooling.css.jfx
-Bundle-Version: 0.0.13.qualifier
+Bundle-Version: 0.0.14.qualifier
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
-Require-Bundle: at.bestsolution.efxclipse.tooling.css.ui;bundle-version="0.0.13",
+Require-Bundle: at.bestsolution.efxclipse.tooling.css.ui;bundle-version="0.0.14",
  org.eclipse.swt;bundle-version="3.7.0",
  org.eclipse.ui;bundle-version="3.7.0",
  org.eclipse.osgi;bundle-version="3.7.0"
