@@ -125,6 +125,8 @@ public class LivePreviewPart extends ViewPart {
 	private IFile currentFile;
 
 	private IDocument document;
+	
+	private ContentData currentData;
 
 	static {
 		JFaceResources.getImageRegistry().put(IMAGE_OK, Activator.imageDescriptorFromPlugin(Activator.PLUGIN_ID, "/icons/16_16/security-high.png"));
@@ -215,12 +217,9 @@ public class LivePreviewPart extends ViewPart {
 
 					item.setControl(swtFXContainer);
 
-					Platform.runLater(new Runnable() {
-						@Override
-						public void run() {
-							initFX(swtFXContainer);
-						}
-					});
+					rootPane_new = new BorderPane();
+					Scene scene = new Scene(rootPane_new, 1000, 1000);
+					swtFXContainer.setScene(scene);
 				}
 
 				{
@@ -299,6 +298,10 @@ public class LivePreviewPart extends ViewPart {
 				});
 				
 				parent.layout(true, true);
+				
+				if( currentData != null ) {
+					refreshContent(currentData);
+				}
 			}
 		});
 		
@@ -341,19 +344,13 @@ public class LivePreviewPart extends ViewPart {
 		super.dispose();
 	}
 
-	private void initFX(FXCanvas fxPanel) {
-		// This method is invoked on the JavaFX thread
-		rootPane_new = new BorderPane();
-		Scene scene = new Scene(rootPane_new, 1000, 1000);
-		fxPanel.setScene(scene);
-	}
-
 	@Override
 	public void setFocus() {
 		folder.setFocus();
 	}
 
 	private void refreshContent(final ContentData contentData) {
+		this.currentData = contentData;
 		if (folder != null && !folder.isDisposed()) {
 			folder.getDisplay().syncExec(new Runnable() {
 
