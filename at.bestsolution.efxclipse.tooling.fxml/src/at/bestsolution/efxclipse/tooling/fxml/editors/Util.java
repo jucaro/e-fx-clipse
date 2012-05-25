@@ -44,6 +44,19 @@ public class Util {
 	public static IType findType(String name, Document xmlDoc) {
 		IJavaProject jpProject = findProject(xmlDoc);
 		List<String> imports = getImportedTypes(xmlDoc);
+		
+		if( name.contains(".") ) {
+			try {
+				IType t = jpProject.findType(name);
+				if (t != null) {
+					return t;
+				}
+			} catch (JavaModelException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			
+		}
 
 		for (String i : imports) {
 			if (i.endsWith("." + name)) {

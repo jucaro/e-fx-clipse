@@ -45,7 +45,9 @@ import org.eclipse.xtext.ui.editor.contentassist.FQNPrefixMatcher;
 import org.eclipse.xtext.ui.editor.contentassist.PrefixMatcher;
 import org.eclipse.xtext.ui.editor.contentassist.PrefixMatcher.CamelCase;
 import org.eclipse.xtext.ui.editor.hover.IEObjectHover;
+import org.w3c.dom.Attr;
 import org.w3c.dom.Document;
+import org.w3c.dom.Element;
 import org.w3c.dom.NamedNodeMap;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
@@ -53,6 +55,8 @@ import org.w3c.dom.NodeList;
 import at.bestsolution.efxclipse.tooling.model.FXPlugin;
 import at.bestsolution.efxclipse.tooling.model.IFXClass;
 import at.bestsolution.efxclipse.tooling.model.IFXCollectionProperty;
+import at.bestsolution.efxclipse.tooling.model.IFXCtrlClass;
+import at.bestsolution.efxclipse.tooling.model.IFXCtrlEventMethod;
 import at.bestsolution.efxclipse.tooling.model.IFXEnumProperty;
 import at.bestsolution.efxclipse.tooling.model.IFXEventHandlerProperty;
 import at.bestsolution.efxclipse.tooling.model.IFXObjectProperty;
@@ -82,6 +86,19 @@ public class FXMLCompletionProposalComputer extends AbstractXMLCompletionProposa
 			name = name.substring(name.indexOf('.')+1);
 			prefix = prefix.startsWith("\"") ? prefix.substring(1) : prefix;
 			return super.isCandidateMatchingPrefix(name, prefix);
+		}
+	};
+	
+	private static final PrefixMatcher EVENT_ATTRIBUTE_MATCHER = new CamelCase() {
+		public boolean isCandidateMatchingPrefix(String name, String prefix) {
+			return super.isCandidateMatchingPrefix(normalize(name), normalize(prefix));
+		}
+		
+		private String normalize(String value) {
+			value = value.startsWith("\"") ? value.substring(1) : value;
+			value = value.startsWith("#") ? value.substring(1) : value;
+			
+			return value;
 		}
 	};
 	
@@ -666,11 +683,67 @@ public class FXMLCompletionProposalComputer extends AbstractXMLCompletionProposa
 								createAttributeValueEnumProposals(contentAssistRequest, context, (IFXEnumProperty) p);
 							} else if( p instanceof IFXObjectProperty ) {
 								createAttributeValueObjectProposals(contentAssistRequest, context, (IFXObjectProperty) p);
+							} else if( p instanceof IFXEventHandlerProperty ) {
+								createAttributeValueEventHandlerProposals(contentAssistRequest, context, (IFXEventHandlerProperty) p);
 							}
 						}	
 					}
 				}
 			}	
+		}
+	}
+	
+	private void createAttributeValueEventHandlerProposals(ContentAssistRequest contentAssistRequest, CompletionProposalInvocationContext context, IFXEventHandlerProperty p) {
+		Document d = contentAssistRequest.getNode().getOwnerDocument();
+		Element e = d.getDocumentElement();
+		Attr a = e.getAttributeNodeNS("http://javafx.com/fxml", "controller");
+		System.err.println(a);
+		if( a != null ) {
+			IType t = Util.findType(a.getValue(), d);
+			System.err.println(t);
+			if( t != null ) {
+				IFXCtrlClass ctrlClass = FXPlugin.getClassmodel().findCtrlClass(t.getJavaProject(), t);
+				if( ctrlClass != null ) {
+					
+					for( IFXCtrlEventMethod ctrlMethod : ctrlClass.getAllEventMethods().values() ) {
+						StyledString s = null;
+						if( ! ctrlMethod.hasArgument() ) {
+							s = new StyledString(ctrlMethod.getName()+"()");
+						} else {
+							if( at.bestsolution.efxclipse.tooling.model.Util.assignable(p.getEventType(), ctrlMethod.getArgumentType()) ) {
+								s = new StyledString(ctrlMethod.getName() + "("+p.getEventTypeAsString(false)+")");
+							}
+						}
+						
+						if( s != null ) {
+							s.append(" - " + ctrlClass.getSimpleName(), StyledString.QUALIFIER_STYLER);
+							Image img = null;
+							
+							switch (ctrlMethod.getVisibility()) {
+							case PUBLIC:
+								img = IconKeys.getIcon(IconKeys.METHOD_PUBLIC_KEY);
+								break;
+							case PACKAGE:
+								img = IconKeys.getIcon(IconKeys.METHOD_DEFAULT_KEY);
+								break;
+							case PROTECTED:
+								img = IconKeys.getIcon(IconKeys.METHOD_PROTECTED_KEY);
+								break;
+							default:
+								img = IconKeys.getIcon(IconKeys.METHOD_PRIVATE_KEY);
+								break;
+							}
+							
+							FXMLCompletionProposal cp = createProposal(contentAssistRequest, context, "\"#"+ctrlMethod.getName(), s, img, EVENT_ATTRIBUTE_MATCHER);
+							
+							if( cp != null ) {
+								contentAssistRequest.addProposal(cp);
+							}
+						}
+					}
+					
+				}
+			}
 		}
 	}
 	
