@@ -465,7 +465,9 @@ public class LivePreviewPart extends ViewPart {
 					rootPane_new = scene.getRoot();
 				} else {
 					rootPane_new = (Parent) root;
-					scene = new Scene(rootPane_new, 10000, 10000, Platform.isSupported(ConditionalFeature.SCENE3D));
+					BorderPane p = new BorderPane();
+					p.setCenter(rootPane_new);
+					scene = new Scene(p, 10000, 10000, Platform.isSupported(ConditionalFeature.SCENE3D));
 					if( Platform.isSupported(ConditionalFeature.SCENE3D) ) {
 						scene.setCamera(new PerspectiveCamera());
 					}
