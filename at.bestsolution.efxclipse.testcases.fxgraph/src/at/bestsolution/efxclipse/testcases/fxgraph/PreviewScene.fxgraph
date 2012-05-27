@@ -1,0 +1,17 @@
+package at.bestsolution.efxclipse.testcases.fxgraph
+
+import javafx.scene.Scene
+import javafx.scene.layout.BorderPane
+import javafx.scene.control.Label
+
+component PreviewScene {
+	Scene {
+		root : BorderPane id previewcontainer {
+			userData : "bottom",
+			top : Label {
+				text : "I'm a custom scene"
+			}
+		},
+		fill : "LIGHTBLUE"
+	}
+}
