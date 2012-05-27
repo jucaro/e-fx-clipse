@@ -139,4 +139,9 @@ public class FXMLEditor extends StructuredTextEditor implements IFXMLProviderAda
 		return null;
 	}
 
+	@Override
+	public String getPreviewSceneFXML() {
+		return null;
+	}
+
 }

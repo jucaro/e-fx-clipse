@@ -22,7 +22,8 @@ ComponentDefinition:
 			('controlledby' controller=JvmTypeReference)? & 
 			('styledwith' (previewCssFiles+=STRING | ('[' previewCssFiles+=STRING (',' previewCssFiles+=STRING)* ']')))? & 
 			( 'resourcefile' previewResourceBundle=STRING )? &
-			( 'extraClasspath' '[' previewClasspathEntries+=STRING (',' previewClasspathEntries+=STRING)* ']')?
+			( 'extraClasspath' '[' previewClasspathEntries+=STRING (',' previewClasspathEntries+=STRING)* ']')? &
+			( 'sceneSetup' sceneDefinition=[ComponentDefinition|QualifiedName] )?
 		) 
 	'{'
 		(scripts+=Script)?

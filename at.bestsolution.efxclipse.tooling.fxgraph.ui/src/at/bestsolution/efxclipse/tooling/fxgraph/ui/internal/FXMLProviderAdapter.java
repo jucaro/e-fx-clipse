@@ -63,6 +63,27 @@ public class FXMLProviderAdapter implements IFXMLProviderAdapter {
 			 
 		});
 	}
+	
+	@Override
+	public String getPreviewSceneFXML() {
+		return editor.getDocument().readOnly(new IUnitOfWork<String, XtextResource>() {
+
+			@Override
+			public String exec(XtextResource resource) throws Exception {
+				if( ! resource.getContents().isEmpty() && ((Model)resource.getContents().get(0)).getComponentDef() != null ) {
+					ComponentDefinition def = ((Model)resource.getContents().get(0)).getComponentDef();
+					if( def.getSceneDefinition() != null ) {
+						FXGraphGenerator generator = new FXGraphGenerator();
+						System.err.println("=================> " + def.getSceneDefinition().eResource());
+						return generator.doGeneratePreview(def.getSceneDefinition().eResource(), false, false);
+					}
+				}
+				
+				return null;
+			}
+			 
+		});
+	}
 
 	@Override
 	public List<String> getPreviewCSSFiles() {

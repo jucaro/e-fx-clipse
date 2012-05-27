@@ -21,6 +21,7 @@ import org.eclipse.xtext.common.types.JvmTypeReference;
  *   <li>{@link at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.ComponentDefinition#getPreviewCssFiles <em>Preview Css Files</em>}</li>
  *   <li>{@link at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.ComponentDefinition#getPreviewResourceBundle <em>Preview Resource Bundle</em>}</li>
  *   <li>{@link at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.ComponentDefinition#getPreviewClasspathEntries <em>Preview Classpath Entries</em>}</li>
+ *   <li>{@link at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.ComponentDefinition#getSceneDefinition <em>Scene Definition</em>}</li>
  *   <li>{@link at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.ComponentDefinition#getScripts <em>Scripts</em>}</li>
  *   <li>{@link at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.ComponentDefinition#getDefines <em>Defines</em>}</li>
  *   <li>{@link at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.ComponentDefinition#getRootNode <em>Root Node</em>}</li>
@@ -142,6 +143,32 @@ public interface ComponentDefinition extends EObject
    * @generated
    */
   EList<String> getPreviewClasspathEntries();
+
+  /**
+   * Returns the value of the '<em><b>Scene Definition</b></em>' reference.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Scene Definition</em>' reference isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Scene Definition</em>' reference.
+   * @see #setSceneDefinition(ComponentDefinition)
+   * @see at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.FXGraphPackage#getComponentDefinition_SceneDefinition()
+   * @model
+   * @generated
+   */
+  ComponentDefinition getSceneDefinition();
+
+  /**
+   * Sets the value of the '{@link at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.ComponentDefinition#getSceneDefinition <em>Scene Definition</em>}' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Scene Definition</em>' reference.
+   * @see #getSceneDefinition()
+   * @generated
+   */
+  void setSceneDefinition(ComponentDefinition value);
 
   /**
    * Returns the value of the '<em><b>Scripts</b></em>' containment reference list.

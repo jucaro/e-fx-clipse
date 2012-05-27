@@ -146,6 +146,11 @@ public class FXGraphGrammarAccess extends AbstractGrammarElementFinder {
 		private final Assignment cPreviewClasspathEntriesAssignment_2_3_3_1 = (Assignment)cGroup_2_3_3.eContents().get(1);
 		private final RuleCall cPreviewClasspathEntriesSTRINGTerminalRuleCall_2_3_3_1_0 = (RuleCall)cPreviewClasspathEntriesAssignment_2_3_3_1.eContents().get(0);
 		private final Keyword cRightSquareBracketKeyword_2_3_4 = (Keyword)cGroup_2_3.eContents().get(4);
+		private final Group cGroup_2_4 = (Group)cUnorderedGroup_2.eContents().get(4);
+		private final Keyword cSceneSetupKeyword_2_4_0 = (Keyword)cGroup_2_4.eContents().get(0);
+		private final Assignment cSceneDefinitionAssignment_2_4_1 = (Assignment)cGroup_2_4.eContents().get(1);
+		private final CrossReference cSceneDefinitionComponentDefinitionCrossReference_2_4_1_0 = (CrossReference)cSceneDefinitionAssignment_2_4_1.eContents().get(0);
+		private final RuleCall cSceneDefinitionComponentDefinitionQualifiedNameParserRuleCall_2_4_1_0_1 = (RuleCall)cSceneDefinitionComponentDefinitionCrossReference_2_4_1_0.eContents().get(1);
 		private final Keyword cLeftCurlyBracketKeyword_3 = (Keyword)cGroup.eContents().get(3);
 		private final Assignment cScriptsAssignment_4 = (Assignment)cGroup.eContents().get(4);
 		private final RuleCall cScriptsScriptParserRuleCall_4_0 = (RuleCall)cScriptsAssignment_4.eContents().get(0);
@@ -166,18 +171,22 @@ public class FXGraphGrammarAccess extends AbstractGrammarElementFinder {
 		//
 		//	"[" previewCssFiles+=STRING ("," previewCssFiles+=STRING)* "]"))? & ("resourcefile" previewResourceBundle=STRING)? &
 		//
-		//	("extraClasspath" "[" previewClasspathEntries+=STRING ("," previewClasspathEntries+=STRING)* "]")?) "{"
+		//	("extraClasspath" "[" previewClasspathEntries+=STRING ("," previewClasspathEntries+=STRING)* "]")? & ("sceneSetup"
 		//
-		//	scripts+=Script? (defines+=Define ("," defines+=Define)*)? rootNode=Element "}";
+		//	sceneDefinition=[ComponentDefinition|QualifiedName])?) "{" scripts+=Script? (defines+=Define ("," defines+=Define)*)?
+		//
+		//	rootNode=Element "}";
 		public ParserRule getRule() { return rule; }
 
 		//"component" name=ValidID (("controlledby" controller=JvmTypeReference)? & ("styledwith" (previewCssFiles+=STRING | "["
 		//
 		//previewCssFiles+=STRING ("," previewCssFiles+=STRING)* "]"))? & ("resourcefile" previewResourceBundle=STRING)? &
 		//
-		//("extraClasspath" "[" previewClasspathEntries+=STRING ("," previewClasspathEntries+=STRING)* "]")?) "{"
+		//("extraClasspath" "[" previewClasspathEntries+=STRING ("," previewClasspathEntries+=STRING)* "]")? & ("sceneSetup"
 		//
-		//scripts+=Script? (defines+=Define ("," defines+=Define)*)? rootNode=Element "}"
+		//sceneDefinition=[ComponentDefinition|QualifiedName])?) "{" scripts+=Script? (defines+=Define ("," defines+=Define)*)?
+		//
+		//rootNode=Element "}"
 		public Group getGroup() { return cGroup; }
 
 		//"component"
@@ -193,7 +202,9 @@ public class FXGraphGrammarAccess extends AbstractGrammarElementFinder {
 		//
 		//("," previewCssFiles+=STRING)* "]"))? & ("resourcefile" previewResourceBundle=STRING)? & ("extraClasspath" "["
 		//
-		//previewClasspathEntries+=STRING ("," previewClasspathEntries+=STRING)* "]")?
+		//previewClasspathEntries+=STRING ("," previewClasspathEntries+=STRING)* "]")? & ("sceneSetup"
+		//
+		//sceneDefinition=[ComponentDefinition|QualifiedName])?
 		public UnorderedGroup getUnorderedGroup_2() { return cUnorderedGroup_2; }
 
 		//("controlledby" controller=JvmTypeReference)?
@@ -291,6 +302,21 @@ public class FXGraphGrammarAccess extends AbstractGrammarElementFinder {
 
 		//"]"
 		public Keyword getRightSquareBracketKeyword_2_3_4() { return cRightSquareBracketKeyword_2_3_4; }
+
+		//("sceneSetup" sceneDefinition=[ComponentDefinition|QualifiedName])?
+		public Group getGroup_2_4() { return cGroup_2_4; }
+
+		//"sceneSetup"
+		public Keyword getSceneSetupKeyword_2_4_0() { return cSceneSetupKeyword_2_4_0; }
+
+		//sceneDefinition=[ComponentDefinition|QualifiedName]
+		public Assignment getSceneDefinitionAssignment_2_4_1() { return cSceneDefinitionAssignment_2_4_1; }
+
+		//[ComponentDefinition|QualifiedName]
+		public CrossReference getSceneDefinitionComponentDefinitionCrossReference_2_4_1_0() { return cSceneDefinitionComponentDefinitionCrossReference_2_4_1_0; }
+
+		//QualifiedName
+		public RuleCall getSceneDefinitionComponentDefinitionQualifiedNameParserRuleCall_2_4_1_0_1() { return cSceneDefinitionComponentDefinitionQualifiedNameParserRuleCall_2_4_1_0_1; }
 
 		//"{"
 		public Keyword getLeftCurlyBracketKeyword_3() { return cLeftCurlyBracketKeyword_3; }
@@ -1501,9 +1527,11 @@ public class FXGraphGrammarAccess extends AbstractGrammarElementFinder {
 	//
 	//	"[" previewCssFiles+=STRING ("," previewCssFiles+=STRING)* "]"))? & ("resourcefile" previewResourceBundle=STRING)? &
 	//
-	//	("extraClasspath" "[" previewClasspathEntries+=STRING ("," previewClasspathEntries+=STRING)* "]")?) "{"
+	//	("extraClasspath" "[" previewClasspathEntries+=STRING ("," previewClasspathEntries+=STRING)* "]")? & ("sceneSetup"
 	//
-	//	scripts+=Script? (defines+=Define ("," defines+=Define)*)? rootNode=Element "}";
+	//	sceneDefinition=[ComponentDefinition|QualifiedName])?) "{" scripts+=Script? (defines+=Define ("," defines+=Define)*)?
+	//
+	//	rootNode=Element "}";
 	public ComponentDefinitionElements getComponentDefinitionAccess() {
 		return (pComponentDefinition != null) ? pComponentDefinition : (pComponentDefinition = new ComponentDefinitionElements());
 	}

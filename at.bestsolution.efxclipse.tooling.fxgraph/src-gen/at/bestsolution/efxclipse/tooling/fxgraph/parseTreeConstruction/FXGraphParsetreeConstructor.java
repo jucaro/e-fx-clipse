@@ -494,9 +494,11 @@ protected class Import_ImportedNamespaceAssignment_1 extends AssignmentToken  {
  * 
  * 	"[" previewCssFiles+=STRING ("," previewCssFiles+=STRING)* "]"))? & ("resourcefile" previewResourceBundle=STRING)? &
  * 
- * 	("extraClasspath" "[" previewClasspathEntries+=STRING ("," previewClasspathEntries+=STRING)* "]")?) "{"
+ * 	("extraClasspath" "[" previewClasspathEntries+=STRING ("," previewClasspathEntries+=STRING)* "]")? & ("sceneSetup"
  * 
- * 	scripts+=Script? (defines+=Define ("," defines+=Define)*)? rootNode=Element "}";
+ * 	sceneDefinition=[ComponentDefinition|QualifiedName])?) "{" scripts+=Script? (defines+=Define ("," defines+=Define)*)?
+ * 
+ * 	rootNode=Element "}";
  *
  **/
 
@@ -504,9 +506,11 @@ protected class Import_ImportedNamespaceAssignment_1 extends AssignmentToken  {
 // 
 // previewCssFiles+=STRING ("," previewCssFiles+=STRING)* "]"))? & ("resourcefile" previewResourceBundle=STRING)? &
 // 
-// ("extraClasspath" "[" previewClasspathEntries+=STRING ("," previewClasspathEntries+=STRING)* "]")?) "{"
+// ("extraClasspath" "[" previewClasspathEntries+=STRING ("," previewClasspathEntries+=STRING)* "]")? & ("sceneSetup"
 // 
-// scripts+=Script? (defines+=Define ("," defines+=Define)*)? rootNode=Element "}"
+// sceneDefinition=[ComponentDefinition|QualifiedName])?) "{" scripts+=Script? (defines+=Define ("," defines+=Define)*)?
+// 
+// rootNode=Element "}"
 protected class ComponentDefinition_Group extends GroupToken {
 	
 	public ComponentDefinition_Group(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -594,7 +598,9 @@ protected class ComponentDefinition_NameAssignment_1 extends AssignmentToken  {
 // 
 // ("," previewCssFiles+=STRING)* "]"))? & ("resourcefile" previewResourceBundle=STRING)? & ("extraClasspath" "["
 // 
-// previewClasspathEntries+=STRING ("," previewClasspathEntries+=STRING)* "]")?
+// previewClasspathEntries+=STRING ("," previewClasspathEntries+=STRING)* "]")? & ("sceneSetup"
+// 
+// sceneDefinition=[ComponentDefinition|QualifiedName])?
 protected class ComponentDefinition_UnorderedGroup_2 extends UnorderedGroupToken {
 	
 	public ComponentDefinition_UnorderedGroup_2(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -609,11 +615,12 @@ protected class ComponentDefinition_UnorderedGroup_2 extends UnorderedGroupToken
     @Override
 	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
 		switch(index) {
-			case 0: return new ComponentDefinition_Group_2_3(lastRuleCallOrigin, this, 0, inst);
-			case 1: return new ComponentDefinition_Group_2_2(lastRuleCallOrigin, this, 1, inst);
-			case 2: return new ComponentDefinition_Group_2_1(lastRuleCallOrigin, this, 2, inst);
-			case 3: return new ComponentDefinition_Group_2_0(lastRuleCallOrigin, this, 3, inst);
-			case 4: return new ComponentDefinition_NameAssignment_1(lastRuleCallOrigin, this, 4, inst);
+			case 0: return new ComponentDefinition_Group_2_4(lastRuleCallOrigin, this, 0, inst);
+			case 1: return new ComponentDefinition_Group_2_3(lastRuleCallOrigin, this, 1, inst);
+			case 2: return new ComponentDefinition_Group_2_2(lastRuleCallOrigin, this, 2, inst);
+			case 3: return new ComponentDefinition_Group_2_1(lastRuleCallOrigin, this, 3, inst);
+			case 4: return new ComponentDefinition_Group_2_0(lastRuleCallOrigin, this, 4, inst);
+			case 5: return new ComponentDefinition_NameAssignment_1(lastRuleCallOrigin, this, 5, inst);
 			default: return null;
 		}	
 	}
@@ -1280,6 +1287,92 @@ protected class ComponentDefinition_RightSquareBracketKeyword_2_3_4 extends Keyw
 			case 1: return new ComponentDefinition_PreviewClasspathEntriesAssignment_2_3_2(lastRuleCallOrigin, this, 1, inst);
 			default: return null;
 		}	
+	}
+
+}
+
+
+// ("sceneSetup" sceneDefinition=[ComponentDefinition|QualifiedName])?
+protected class ComponentDefinition_Group_2_4 extends GroupToken {
+	
+	public ComponentDefinition_Group_2_4(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
+	}
+	
+	@Override
+	public Group getGrammarElement() {
+		return grammarAccess.getComponentDefinitionAccess().getGroup_2_4();
+	}
+
+    @Override
+	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
+		switch(index) {
+			case 0: return new ComponentDefinition_SceneDefinitionAssignment_2_4_1(lastRuleCallOrigin, this, 0, inst);
+			default: return null;
+		}	
+	}
+
+}
+
+// "sceneSetup"
+protected class ComponentDefinition_SceneSetupKeyword_2_4_0 extends KeywordToken  {
+	
+	public ComponentDefinition_SceneSetupKeyword_2_4_0(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
+	}
+	
+	@Override
+	public Keyword getGrammarElement() {
+		return grammarAccess.getComponentDefinitionAccess().getSceneSetupKeyword_2_4_0();
+	}
+
+    @Override
+	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
+		switch(index) {
+			case 0: return new ComponentDefinition_Group_2_3(lastRuleCallOrigin, this, 0, inst);
+			case 1: return new ComponentDefinition_Group_2_2(lastRuleCallOrigin, this, 1, inst);
+			case 2: return new ComponentDefinition_Group_2_1(lastRuleCallOrigin, this, 2, inst);
+			case 3: return new ComponentDefinition_Group_2_0(lastRuleCallOrigin, this, 3, inst);
+			case 4: return new ComponentDefinition_NameAssignment_1(lastRuleCallOrigin, this, 4, inst);
+			default: return null;
+		}	
+	}
+
+}
+
+// sceneDefinition=[ComponentDefinition|QualifiedName]
+protected class ComponentDefinition_SceneDefinitionAssignment_2_4_1 extends AssignmentToken  {
+	
+	public ComponentDefinition_SceneDefinitionAssignment_2_4_1(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
+	}
+	
+	@Override
+	public Assignment getGrammarElement() {
+		return grammarAccess.getComponentDefinitionAccess().getSceneDefinitionAssignment_2_4_1();
+	}
+
+    @Override
+	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
+		switch(index) {
+			case 0: return new ComponentDefinition_SceneSetupKeyword_2_4_0(lastRuleCallOrigin, this, 0, inst);
+			default: return null;
+		}	
+	}
+
+    @Override	
+	public IEObjectConsumer tryConsume() {
+		if((value = eObjectConsumer.getConsumable("sceneDefinition",false)) == null) return null;
+		IEObjectConsumer obj = eObjectConsumer.cloneAndConsume("sceneDefinition");
+		if(value instanceof EObject) { // org::eclipse::xtext::impl::CrossReferenceImpl
+			IEObjectConsumer param = createEObjectConsumer((EObject)value);
+			if(param.isInstanceOf(grammarAccess.getComponentDefinitionAccess().getSceneDefinitionComponentDefinitionCrossReference_2_4_1_0().getType().getClassifier())) {
+				type = AssignmentType.CROSS_REFERENCE;
+				element = grammarAccess.getComponentDefinitionAccess().getSceneDefinitionComponentDefinitionCrossReference_2_4_1_0(); 
+				return obj;
+			}
+		}
+		return null;
 	}
 
 }

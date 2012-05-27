@@ -7,6 +7,7 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.io.StringWriter;
 import java.lang.reflect.Constructor;
+import java.lang.reflect.Method;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.net.URLClassLoader;
@@ -25,10 +26,12 @@ import javafx.application.Platform;
 import javafx.embed.swt.FXCanvas;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.JavaFXBuilderFactory;
+import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.PerspectiveCamera;
 import javafx.scene.Scene;
 import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.Pane;
 
 import org.eclipse.core.resources.IFile;
 import org.eclipse.core.runtime.preferences.IEclipsePreferences;
@@ -78,7 +81,7 @@ public class LivePreviewPart extends ViewPart {
 	@Inject
 	private LivePreviewSynchronizer synchronizer;
 
-	private Parent rootPane_new;
+	private Node rootPane_new;
 
 	private Text logStatement;
 
@@ -218,7 +221,7 @@ public class LivePreviewPart extends ViewPart {
 					item.setControl(swtFXContainer);
 
 					rootPane_new = new BorderPane();
-					Scene scene = new Scene(rootPane_new, 1000, 1000);
+					Scene scene = new Scene((Parent) rootPane_new, 1000, 1000);
 					swtFXContainer.setScene(scene);
 				}
 
@@ -464,27 +467,76 @@ public class LivePreviewPart extends ViewPart {
 					scene = (Scene) root;
 					rootPane_new = scene.getRoot();
 				} else {
-					rootPane_new = (Parent) root;
-					BorderPane p = new BorderPane();
-					p.setCenter(rootPane_new);
-					scene = new Scene(p, 10000, 10000, Platform.isSupported(ConditionalFeature.SCENE3D));
-					if( Platform.isSupported(ConditionalFeature.SCENE3D) ) {
-						scene.setCamera(new PerspectiveCamera());
+					System.err.println("=================> "+ contentData.previewSceneSetup);
+					if( contentData.previewSceneSetup != null ) {
+						ByteArrayInputStream sceneOut = new ByteArrayInputStream(contentData.previewSceneSetup.getBytes());
+						Object sceneRoot = loader.load(sceneOut);
+						if( sceneRoot instanceof Scene ) {
+							scene = (Scene) sceneRoot;
+						}
+					}
+					
+					rootPane_new = (Node) root;
+					
+					if( scene == null ) {
+						BorderPane p = new BorderPane();
+						p.setCenter(rootPane_new);
+						scene = new Scene(p, 10000, 10000, Platform.isSupported(ConditionalFeature.SCENE3D));
+						if( Platform.isSupported(ConditionalFeature.SCENE3D) ) {
+							scene.setCamera(new PerspectiveCamera());
+						}	
+					} else {
+						Node n = scene.getRoot().lookup("#previewcontainer");
+						if( n == null || ! (n instanceof Parent) ) {
+							n = scene.getRoot();
+						}
+						
+						String previewFeature = null;
+						
+						if( n.getUserData() != null && n.getUserData().toString().startsWith("previewproperty:") ) {
+							previewFeature = n.getUserData().toString().substring("previewproperty:".length()).trim();
+						}
+						
+						if( previewFeature != null ) {
+							try {
+								String mName = "set" + Character.toUpperCase(previewFeature.charAt(0)) + previewFeature.substring(1);
+								Method m = n.getClass().getMethod(mName, Node.class);
+								m.invoke(n, rootPane_new);
+							} catch(Throwable t) {
+								String mName = "get" + Character.toUpperCase(previewFeature.charAt(0)) + previewFeature.substring(1);
+								Method m = n.getClass().getMethod(mName);
+								Object o = m.invoke(n);
+								if( o instanceof List ) {
+									((List<Object>)o).add(rootPane_new);
+								}
+							}
+						} else {
+							if( n instanceof BorderPane ) {
+								((BorderPane)n).setCenter(rootPane_new);
+							} else if( n instanceof Pane ) {
+								((Pane)n).getChildren().add(rootPane_new);
+							} else {
+								throw new IllegalStateException("The parent in the scene is not a Pane. Set a preview-property styleclass on the control");
+							}
+						}
 					}
 				}
 
-				if (scaleMap.containsKey(currentFile)) {
-					int value = scaleMap.get(currentFile).intValue();
-					scale.setSelection(value);
+				if( rootPane_new != null ) {
+					if (scaleMap.containsKey(currentFile)) {
+						int value = scaleMap.get(currentFile).intValue();
+						scale.setSelection(value);
 
-					rootPane_new.setScaleX(value / 100.0);
-					rootPane_new.setScaleY(value / 100.0);
+						rootPane_new.setScaleX(value / 100.0);
+						rootPane_new.setScaleY(value / 100.0);
 
-				} else {
-					scale.setSelection(100);
-					rootPane_new.setScaleX(1);
-					rootPane_new.setScaleY(1);
+					} else {
+						scale.setSelection(100);
+						rootPane_new.setScaleX(1);
+						rootPane_new.setScaleY(1);
+					}
 				}
+				
 
 				swtFXContainer.setScene(scene);
 
@@ -575,13 +627,15 @@ public class LivePreviewPart extends ViewPart {
 
 	public static class ContentData {
 		public String contents;
+		public String previewSceneSetup;
 		public List<String> cssFiles;
 		public String resourceBundle;
 		public List<URL> extraJarPath;
 		public IFile file;
 
-		public ContentData(String contents, List<String> cssFiles, String resourceBundle, List<URL> extraJarPath, IFile file) {
+		public ContentData(String contents, String previewSceneSetup, List<String> cssFiles, String resourceBundle, List<URL> extraJarPath, IFile file) {
 			this.contents = contents;
+			this.previewSceneSetup = previewSceneSetup;
 			this.cssFiles = new ArrayList<String>(cssFiles);
 			this.resourceBundle = resourceBundle;
 			this.extraJarPath = extraJarPath;
