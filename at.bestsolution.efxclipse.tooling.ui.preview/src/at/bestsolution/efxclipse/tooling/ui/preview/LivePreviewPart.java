@@ -467,7 +467,6 @@ public class LivePreviewPart extends ViewPart {
 					scene = (Scene) root;
 					rootPane_new = scene.getRoot();
 				} else {
-					System.err.println("=================> "+ contentData.previewSceneSetup);
 					if( contentData.previewSceneSetup != null ) {
 						ByteArrayInputStream sceneOut = new ByteArrayInputStream(contentData.previewSceneSetup.getBytes());
 						Object sceneRoot = loader.load(sceneOut);
@@ -493,8 +492,8 @@ public class LivePreviewPart extends ViewPart {
 						
 						String previewFeature = null;
 						
-						if( n.getUserData() != null && n.getUserData().toString().startsWith("previewproperty:") ) {
-							previewFeature = n.getUserData().toString().substring("previewproperty:".length()).trim();
+						if( n.getUserData() != null && n.getUserData() != null ) {
+							previewFeature = n.getUserData().toString().trim();
 						}
 						
 						if( previewFeature != null ) {
