@@ -158,7 +158,7 @@ public class FXGraphWizardPage extends AbstractJDTElementPage<FXGraphElement> {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
 				}
-			}
+			}			
 			
 			if( getDialogSettings() != null ) {
 				if( getDialogSettings().getArray(NewFXGraphWizard.KEY_LAST_SELECTIONS) != null ) {
@@ -176,9 +176,20 @@ public class FXGraphWizardPage extends AbstractJDTElementPage<FXGraphElement> {
 				}
 			}
 			
-			for(String s : new String[] {"AnchorPane", "BorderPane", "FlowPane", "GridPane", "HBox", "Region", "StackPane", "TilePane", "VBox"}) {
+			for(String s : new String[] {
+					"javafx.scene.layout.AnchorPane", 
+					"javafx.scene.layout.BorderPane", 
+					"javafx.scene.layout.FlowPane", 
+					"javafx.scene.layout.GridPane", 
+					"javafx.scene.layout.HBox", 
+					"javafx.scene.layout.Region", 
+					"javafx.scene.layout.StackPane", 
+					"javafx.scene.layout.TilePane", 
+					"javafx.scene.layout.VBox",
+					"javafx.scene.Scene"
+				}) {
 				try {
-					IType t = jp.findType("javafx.scene.layout."+s);
+					IType t = jp.findType(s);
 					if( t != null && ! list.contains(t) ) {
 						list.add(t);
 					}
