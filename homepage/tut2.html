@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html>
+<head>
+<META HTTP-EQUIV="CACHE-CONTROL" CONTENT="NO-CACHE">
+<link rel="stylesheet" href="bootstrap/bootstrap.min.css">
+<link rel="stylesheet" href="bootstrap/assets/css/docs.css">
+<title>e(fx)clipse - JavaFX 2.0 Tooling and Runtime for Eclipse</title>
+</head>
+<body>
+<div class="topbar" data-scrollspy="scrollspy" >
+ <div class="topbar-inner">
+  <div class="container">
+   <a class="brand" href="index.html">e(fx)clipse</a>
+   <ul class="nav">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="install.html">Installation</a></li>
+    <li><a href="fxgraph.html">FXGraph</a></li>
+    <li class="active"><a href="tutorials.html">Tutorials</a></li>
+    <li><a href="releases.html">Releases</a></li>
+    <li><a href="/trac">BugTracker</a></li>
+    <li><a href="https://groups.google.com/forum/?fromgroups#!forum/efxclipse">Forum</a></li>
+   </ul>
+  </div>
+ </div>
+</div>
+
+<header class="jumbotron masthead" id="overview">
+ <div class="inner">
+  <div class="container">
+   <h1>e(fx)clipse, from BestSolution.at</h1>
+   <p class="lead">
+     JavaFX 2.0 Tooling and Runtime for Eclipse and OSGi
+   </p>
+   </div>
+ </div>
+</header>
+
+<div class="container">
+ <section id="create-fx-app">
+  <div class="page-header">
+   <h1>From creation to deployment <small>Your first JavaFX app</small></h1>
+  </div>
+  <div class="span16">
+    <p>
+    The following tutorial will guide you from the creation of a JavaFX project to its final export and deployment
+    </p>
+  </div>
+  
+  <div class="row">
+  	<div class="span1">
+  	1.
+  	</div>
+  	<div class="span7">
+     <ul class="media-grid">
+      <li>
+       <a>
+        <img class="thumbnail" src="tut2/img_01.png" />
+       </a>
+      </li>
+     </ul>
+    </div>
+    <div class="span8">
+     <p>
+      File &gt; New &gt; Project ...
+     </p>
+    </div>
+  </div>
+  
+  <div class="row">
+  	<div class="span1">
+  	2.
+  	</div>
+  	<div class="span7">
+     <ul class="media-grid">
+      <li>
+       <a>
+        <img class="thumbnail" src="tut2/img_02.png" />
+       </a>
+      </li>
+     </ul>
+    </div>
+    <div class="span8">
+     <p>
+      Select the "JavaFX Project" entry
+     </p>
+    </div>
+  </div>
+  
+  <div class="row">
+  	<div class="span1">
+  	3.
+  	</div>
+  	<div class="span7">
+     <ul class="media-grid">
+      <li>
+       <a>
+        <img class="thumbnail" src="tut2/img_03.png" />
+       </a>
+      </li>
+     </ul>
+    </div>
+    <div class="span8">
+     <p>
+      Enter a project name e.g. "MyJavaFXApp" and click "Finish"
+     </p>
+    </div>
+  </div>
+  
+  <div class="row">
+  	<div class="span1">
+  	4.
+  	</div>
+  	<div class="span7">
+     <ul class="media-grid">
+      <li>
+       <a>
+        <img class="thumbnail" src="tut2/img_04.png" />
+       </a>
+      </li>
+     </ul>
+    </div>
+    <div class="span8">
+     <p>
+      Create a package e.g. "myapp"
+     </p>
+    </div>
+  </div>
+  
+  <div class="row">
+  	<div class="span1">
+  	5.
+  	</div>
+  	<div class="span7">
+     <ul class="media-grid">
+      <li>
+       <a>
+        <img class="thumbnail" src="tut2/img_05.png" />
+       </a>
+      </li>
+     </ul>
+    </div>
+    <div class="span8">
+     <p>
+      Open the context menu on the "myapp" package and select New &gt; Other ...
+     </p>
+    </div>
+  </div>
+  
+  <div class="row">
+  	<div class="span1">
+  	6.
+  	</div>
+  	<div class="span7">
+     <ul class="media-grid">
+      <li>
+       <a>
+        <img class="thumbnail" src="tut2/img_06.png" />
+       </a>
+      </li>
+     </ul>
+    </div>
+    <div class="span8">
+     <p>
+      Select "JavaFX Main Class"
+     </p>
+    </div>
+  </div>
+  
+  <div class="row">
+  	<div class="span1">
+  	7.
+  	</div>
+  	<div class="span7">
+     <ul class="media-grid">
+      <li>
+       <a>
+        <img class="thumbnail" src="tut2/img_07.png" />
+       </a>
+      </li>
+     </ul>
+    </div>
+    <div class="span8">
+     <p>
+      Enter a name e.g. "MyApplication"
+     </p>
+    </div>
+  </div>
+  
+  <div class="row">
+  	<div class="span1">
+  	8.
+  	</div>
+  	<div class="span7">
+     <ul class="media-grid">
+      <li>
+       <a>
+        <img class="thumbnail" src="tut2/img_08.png" />
+       </a>
+      </li>
+     </ul>
+    </div>
+    <div class="span8">
+     <p>
+      Add some JavaFX code
+     </p>
+    </div>
+  </div>
+  
+  <div class="row">
+  	<div class="span1">
+  	9.
+  	</div>
+  	<div class="span7">
+     <ul class="media-grid">
+      <li>
+       <a>
+        <img class="thumbnail" src="tut2/img_09.png" />
+       </a>
+      </li>
+     </ul>
+    </div>
+    <div class="span8">
+     <p>
+      Set the selection on the "MyApplication" entry and hit the "Run"-Toolbar item
+     </p>
+    </div>
+  </div>
+  
+  <div class="row">
+  	<div class="span1">
+  	10.
+  	</div>
+  	<div class="span7">
+     <ul class="media-grid">
+      <li>
+       <a>
+        <img class="thumbnail" src="tut2/img_10.png" />
+       </a>
+      </li>
+     </ul>
+    </div>
+    <div class="span8">
+     <p>
+      Open the build.fxbuild file and fill in the following fields:
+      <ul>
+       <li>Vendor name</li>
+       <li>Application version</li>
+      </ul>
+      and select the "Browse..." button next to the "Application class" entry
+     </p>
+    </div>
+  </div>
+  
+  <div class="row">
+  	<div class="span1">
+  	11.
+  	</div>
+  	<div class="span7">
+     <ul class="media-grid">
+      <li>
+       <a>
+        <img class="thumbnail" src="tut2/img_11.png" />
+       </a>
+      </li>
+     </ul>
+    </div>
+    <div class="span8">
+     <p>
+      Click on the "ant build.xml and run" Link in the Build section of the editor
+     </p>
+    </div>
+  </div>
+  
+  <div class="row">
+  	<div class="span1">
+  	12.
+  	</div>
+  	<div class="span7">
+     <ul class="media-grid">
+      <li>
+       <a>
+        <img class="thumbnail" src="tut2/img_12.png" />
+       </a>
+      </li>
+     </ul>
+    </div>
+    <div class="span8">
+     <p>
+      Expand the folders in the "Package Explorer" and double click on "MyJavaFXApp.jar"
+     </p>
+    </div>
+  </div>
+ </section>
+</div>
+
+<footer class="footer">
+ <div class="container">
+  <p class="pull-right">
+   <a href="#">Back to top</a>
+  </p>
+  <p>
+   Created by <a target="_blank" href="http://www.bestsolution.at">BestSolution.at</a> with use of <a target="_blank" href="http://twitter.github.com/bootstrap/">Bootstrap</a> from twitter.
+  </p>
+ </div>
+</footer>
+
+</body>
+</html>
