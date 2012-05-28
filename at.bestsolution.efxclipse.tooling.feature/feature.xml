@@ -3,7 +3,8 @@
       id="at.bestsolution.efxclipse.tooling.feature"
       label="e(fx)clipse - Composite - FX Tooling"
       version="0.0.14.qualifier"
-      provider-name="BestSolution.at">
+      provider-name="BestSolution.at"
+      plugin="at.bestsolution.efxclipse.tooling.ui">
 
    <description url="http://efxclipse.org">
       e(fx)clipse is an open tooling and runtime platform built on
