@@ -1,6 +1,6 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
-Bundle-Name: Ui
+Bundle-Name: %Bundle-Name
 Bundle-SymbolicName: at.bestsolution.efxclipse.tooling.ui;singleton:=true
 Bundle-Version: 0.0.14.qualifier
 Bundle-Activator: at.bestsolution.efxclipse.tooling.ui.Activator
@@ -22,3 +22,4 @@ Export-Package: at.bestsolution.efxclipse.tooling.ui.editor,
  at.bestsolution.efxclipse.tooling.ui.util,
  at.bestsolution.efxclipse.tooling.ui.wizards,
  at.bestsolution.efxclipse.tooling.ui.wizards.template
+Bundle-Vendor: %Bundle-Vendor

@@ -8,7 +8,7 @@
             locationURI="popup:org.eclipse.ui.popup.any?after=group.open">
          <command
                commandId="at.bestsolution.efxclipse.tooling.ui.openwithsceneb"
-               label="Open with SceneBuilder"
+               label="%command.label"
                style="push">
             <visibleWhen
                   checkEnabled="false">
@@ -37,7 +37,7 @@
          point="org.eclipse.ui.commands">
       <command
             id="at.bestsolution.efxclipse.tooling.ui.openwithsceneb"
-            name="Open FXML with SceneBuilder">
+            name="%command.name">
       </command>
    </extension>
    <extension
