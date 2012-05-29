@@ -76,7 +76,7 @@ do
 	i=$i+1
  fi
 done
-repository_urls="$repository_urls,http://download.eclipse.org/e4/downloads/drops/I20120523-2300/repository,http://download.eclipse.org/releases/juno/,http://download.eclipse.org/egit/updates,http://download.eclipse.org/egit/updates,http://www.efxclipse.org/p2-repos/releases/0.0.13/,http://download.eclipse.org/modeling/tmf/xtext/updates/composite/latest/,http://cbes.javaforge.com/update" 
+repository_urls="$repository_urls,http://cbes.javaforge.com/update" 
 cd $DIR_ROOT
 # we are in root now
 
