@@ -915,7 +915,7 @@ public class JFXDialectExtension implements CssDialectExtension {
 	public static void validateColor(term t, List<ValidationResult> list) {
 			if( t.getIdentifier() != null ) {
 				for( Proposal color: PREDEFINED_COLORS ) {
-					if( t.getIdentifier().equals(color.getProposal()) ) {
+					if( t.getIdentifier().equalsIgnoreCase(color.getProposal()) ) {
 						return;
 					}
 				}
