@@ -77,7 +77,7 @@ public class WorkbenchWindowRenderer extends JFXRenderer {
 
 			//root.setStyle("-fx-background-color: #999;");
 			Scene scene = new Scene(root, Integer.MAX_VALUE, Integer.MAX_VALUE);
-			scene.impl_focusOwnerProperty().addListener(new ChangeListener<Node>() {
+			scene.focusOwnerProperty().addListener(new ChangeListener<Node>() {
 				private Object lastFocusElement;
 				@Override
 				public void changed(ObservableValue<? extends Node> observable, Node oldValue, Node newValue) {
