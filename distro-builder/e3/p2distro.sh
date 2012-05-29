@@ -3,42 +3,28 @@ cd `dirname $0`
 # Constatnts
 DIR_ROOT=$PWD # PWD is the working directory var
 DIR_SOURCE_ECLIPSE="$DIR_ROOT/builder"
-DIR_TARGETPLATFORMS="$DIR_ROOT/win_targetplatforms"
+DIR_TARGETPLATFORMS="$DIR_ROOT/targetplatforms"
 DIR_OUTPUT="$DIR_ROOT/output"
 DIR_TMP="$DIR_ROOT/tmp"
 DIR_REPOSITORIES="$DIR_ROOT/repositories"
 DIR_ADDITIONAL_PLUGINS="$DIR_ROOT/additionalplugins"
 
-EFX_VERSION="0.0.12"
+EFX_VERSION="0.0.14"
 IDEPREFIX="eclipse-SDK"
 ZIPSUFFIX=".zip"
 JARSUFFIX=".jar"
 SEDEXPRESSION="s/^$IDEPREFIX-\([0-9\.]*\)\([^-]*\)-\(.*\)/$IDEPREFIX-\1\2-efxclipse-$EFX_VERSION-\3/"
 
-#STATIC_IUS="org.eclipse.team.svn.feature.group,\
-#org.polarion.eclipse.team.svn.connector.feature.group,\
-#org.polarion.eclipse.team.svn.connector.javahl16.feature.group,\
-#org.polarion.eclipse.team.svn.connector.svnkit16.feature.group"
-
 INSTALL_IUS="org.eclipse.emf.sdk.feature.group,org.eclipse.xtext.sdk.feature.group,\
-org.eclipse.xtext.xtend2.sdk.feature.group,org.eclipse.emf.mwe2.runtime.sdk.feature.group,at.bestsolution.efxclipse.feature.feature.group,\
+org.eclipse.emf.mwe2.runtime.sdk.feature.group,\
+at.bestsolution.efxclipse.tooling.feature.feature.group,\
+at.bestsolution.efxclipse.runtime.e3.feature.feature.group,\
+org.eclipse.wst.xml_ui.feature.feature.group,\
 org.eclipse.egit.feature.group,org.tigris.subversion.clientadapter.feature.feature.group,\
 org.tigris.subversion.clientadapter.javahl.feature.feature.group,\
 org.tigris.subversion.subclipse.feature.group,\
 org.tigris.subversion.clientadapter.svnkit.feature.feature.group,\
-mercurialeclipse.feature.group,\
-com.intland.hgbinary.win32.feature.group"
-# org.eclipse.e4.core.tools.feature.feature.group,\
-# org.eclipse.e4.tools.e3x.bridge.feature.feature.group"
-# INSTALL_IUS="org.eclipse.xtext.sdk37.feature.feature.group"
-#"org.eclipse.emf.all.feature.group,\
-#org.eclipse.emf.mwe2.runtime.sdk.feature.group,\
-#org.eclipse.emf.mwe.sdk.feature.group,\
-#org.eclipse.xpand.sdk.feature.group,\
-#org.eclipse.xtext.sdk.feature.group,\
-#de.itemis.xtext.antlr.sdk.feature.group,\
-#org.eclipse.emf.mwe2.language.sdk.feature.group,\
-#org.eclipse.emf.compare.sdk.feature.group,$STATIC_IUS"
+mercurialeclipse.feature.group"
 
 # uncompress to tmp folder
 # USAGE: uncompress file [ todir ]
@@ -88,8 +74,7 @@ do
 	i=$i+1
  fi
 done
-repository_urls="$repository_urls,http://download.eclipse.org/e4/downloads/drops/S-0.12M5-201201271145/repository,http://download.eclipse.org/releases/indigo/,http://download.eclipse.org/egit/updates,http://www.efxclipse.org/p2-repos/releases/0.0.12/,http://download.eclipse.org/modeling/tmf/xtext/updates/composite/releases/,http://cbes.javaforge.com/update"
-# repository_urls="$repository_urls,http://download.eclipse.org/releases/indigo/,http://download.eclipse.org/egit/updates" 
+repository_urls="$repository_urls,http://cbes.javaforge.com/update"
 cd $DIR_ROOT
 # we are in root now
 
