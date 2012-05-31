@@ -6,7 +6,6 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.io.StringWriter;
-import java.lang.reflect.Constructor;
 import java.lang.reflect.Method;
 import java.net.MalformedURLException;
 import java.net.URL;
@@ -32,6 +31,8 @@ import javafx.scene.PerspectiveCamera;
 import javafx.scene.Scene;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.Pane;
+import javafx.util.Builder;
+import javafx.util.BuilderFactory;
 
 import org.eclipse.core.resources.IFile;
 import org.eclipse.core.runtime.preferences.IEclipsePreferences;
@@ -376,21 +377,20 @@ public class LivePreviewPart extends ViewPart {
 
 		FXMLLoader loader;
 		if (contentData.extraJarPath != null && !contentData.extraJarPath.isEmpty()) {
-			URLClassLoader previewClassLoader = new PreviewURLClassloader(contentData.extraJarPath.toArray(new URL[0]), swtFXContainer.getClass().getClassLoader());
+			final URLClassLoader previewClassLoader = new PreviewURLClassloader(contentData.extraJarPath.toArray(new URL[0]), swtFXContainer.getClass().getClassLoader());
 
-			if (isJavaFX20()) {
-				cl = Thread.currentThread().getContextClassLoader();
+			cl = Thread.currentThread().getContextClassLoader();
 				Thread.currentThread().setContextClassLoader(previewClassLoader);
 
 				loader = new FXMLLoader();
-			} else {
-				// Bugfix for jfx betas should be removed maybe later on
-				cl = Thread.currentThread().getContextClassLoader();
-				Thread.currentThread().setContextClassLoader(previewClassLoader);
-
-				loader = new FXMLLoader();
+				loader.setBuilderFactory(new BuilderFactory() {
+					private BuilderFactory f = new JavaFXBuilderFactory(previewClassLoader);
+					@Override
+					public Builder<?> getBuilder(Class<?> type) {
+						return f.getBuilder(type);
+					}
+				});
 				loader.setClassLoader(previewClassLoader);
-			}
 		} else {
 			loader = new FXMLLoader();
 		}
@@ -441,19 +441,6 @@ public class LivePreviewPart extends ViewPart {
 						}
 					}
 				}
-			}
-
-			// If we are on 2.0.x we need to use another constructor
-			if (isJavaFX20()) {
-				try {
-					Constructor<JavaFXBuilderFactory> c = JavaFXBuilderFactory.class.getConstructor(boolean.class);
-					loader.setBuilderFactory(c.newInstance(false));
-				} catch (Throwable e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-				}
-			} else {
-				loader.setBuilderFactory(new JavaFXBuilderFactory());
 			}
 
 			try {
@@ -600,10 +587,6 @@ public class LivePreviewPart extends ViewPart {
 		}
 	}
 
-	private static boolean isJavaFX20() {
-		return System.getProperty("javafx.version") != null && System.getProperty("javafx.version").startsWith("2.0");
-	}
-
 	public void setContents(final ContentData contentData) {
 		if (folder.isDisposed()) {
 			return;
@@ -646,6 +629,11 @@ public class LivePreviewPart extends ViewPart {
 
 		public PreviewURLClassloader(URL[] urls, ClassLoader parent) {
 			super(urls, parent);
+		}
+		
+		@Override
+		public Class<?> loadClass(String name) throws ClassNotFoundException {
+			return super.loadClass(name);
 		}
 	}
 }
