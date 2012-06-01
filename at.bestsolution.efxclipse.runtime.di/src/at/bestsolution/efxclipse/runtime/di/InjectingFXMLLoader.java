@@ -4,16 +4,15 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-import javafx.fxml.FXMLLoader;
 import javafx.fxml.JavaFXBuilderFactory;
 import javafx.util.BuilderFactory;
+import javafx.util.Callback;
 
 import org.eclipse.e4.core.contexts.ContextInjectionFactory;
 import org.eclipse.e4.core.contexts.IEclipseContext;
 import org.osgi.framework.Bundle;
 
 import at.bestsolution.efxclipse.runtime.osgi.util.OSGiFXMLLoader;
-import at.bestsolution.efxclipse.runtime.osgi.util.OSGiFXMLLoader.FXMLLoaderProcessor;
 
 
 @SuppressWarnings("restriction")
@@ -25,7 +24,7 @@ public abstract class InjectingFXMLLoader<N> implements FXMLBuilder<N> {
 		return new InjectingFXMLLoader<N>() {
 
 			public N load() throws IOException {
-				return OSGiFXMLLoader.load(requester, relativeFxmlPath, resourceBundle, builderFactory, new Postprocessor(context));
+				return OSGiFXMLLoader.load(requester, relativeFxmlPath, resourceBundle, builderFactory, new ControllerFactory(context));
 			}
 			
 		};
@@ -35,7 +34,7 @@ public abstract class InjectingFXMLLoader<N> implements FXMLBuilder<N> {
 		return new InjectingFXMLLoader<N>() {
 
 			public N load() throws IOException {
-				return OSGiFXMLLoader.load(bundle, bundleRelativeFxmlPath, resourceBundle, builderFactory, new Postprocessor(context));
+				return OSGiFXMLLoader.load(bundle, bundleRelativeFxmlPath, resourceBundle, builderFactory, new ControllerFactory(context));
 			}
 			
 		};
@@ -45,7 +44,7 @@ public abstract class InjectingFXMLLoader<N> implements FXMLBuilder<N> {
 		return new InjectingFXMLLoader<N>() {
 
 			public N load() throws IOException {
-				return OSGiFXMLLoader.load(classloader, url, null, new JavaFXBuilderFactory(), new Postprocessor(context));
+				return OSGiFXMLLoader.load(classloader, url, null, new JavaFXBuilderFactory(), new ControllerFactory(context));
 			}
 			
 		};
@@ -61,35 +60,17 @@ public abstract class InjectingFXMLLoader<N> implements FXMLBuilder<N> {
 		return this;
 	}
 	
-	static class Postprocessor implements FXMLLoaderProcessor {
+	static class ControllerFactory implements Callback<Class<?>, Object> {
+
 		private final IEclipseContext context;
 		
-		public Postprocessor(IEclipseContext context) {
+		public ControllerFactory(IEclipseContext context) {
 			this.context = context;
 		}
 		
-		public void postProcess(FXMLLoader loader) {
-			if( loader.getController() != null ) {
-				context.set(FXMLLoaderFactory.CONTEXT_KEY, loader.getRoot());
-				context.set(loader.getController().getClass().getName(), loader.getController());
-				ContextInjectionFactory.inject(loader.getController(), context);
-			}
-			
-			injectLoaders(loader, context);
+		public Object call(Class<?> param) {
+			return ContextInjectionFactory.make(param, context);
 		}
 		
-		private static void injectLoaders(FXMLLoader parentLoader, IEclipseContext context) {
-			for( FXMLLoader l : parentLoader.getIncludes() ) {
-				if( l.getController() != null ) {
-					IEclipseContext localContext = context.createChild();
-					localContext.set(FXMLLoaderFactory.CONTEXT_KEY, l.getRoot());
-					localContext.set(l.getController().getClass().getName(), l.getController());
-					ContextInjectionFactory.inject(l.getController(), localContext);
-					injectLoaders(l, localContext);
-				}
-			}
-		}
 	}
-	
-	
 }

@@ -25,17 +25,19 @@ public class ModelUpdater extends CompilationParticipant {
 	@Override
 	public void reconcile(ReconcileContext context) {
 		IJavaElementDelta delta = context.getDelta();
-		if( delta.getElement() instanceof ICompilationUnit ) {
-			
-			ICompilationUnit u = (ICompilationUnit) delta.getElement();
-			try {
-				for( IType t : u.getTypes() ) {
-					FXPlugin.getClassmodel().clearCache(t);
+		if( delta != null ) {
+			if( delta.getElement() instanceof ICompilationUnit ) {
+				
+				ICompilationUnit u = (ICompilationUnit) delta.getElement();
+				try {
+					for( IType t : u.getTypes() ) {
+						FXPlugin.getClassmodel().clearCache(t);
+					}
+				} catch (JavaModelException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
 				}
-			} catch (JavaModelException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
+			}			
 		}
 		super.reconcile(context);
 	}

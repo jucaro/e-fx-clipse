@@ -5,9 +5,12 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 
+import javafx.application.ConditionalFeature;
+import javafx.application.Platform;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.scene.Node;
+import javafx.scene.PerspectiveCamera;
 import javafx.scene.Scene;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.VBox;
@@ -76,7 +79,11 @@ public class WorkbenchWindowRenderer extends JFXRenderer {
 			root.setTop(topAreaBox);
 
 			//root.setStyle("-fx-background-color: #999;");
-			Scene scene = new Scene(root, Integer.MAX_VALUE, Integer.MAX_VALUE);
+			Scene scene = new Scene(root, Integer.MAX_VALUE, Integer.MAX_VALUE, Platform.isSupported(ConditionalFeature.SCENE3D));
+			if( Platform.isSupported(ConditionalFeature.SCENE3D) ) {
+				scene.setCamera(new PerspectiveCamera());
+			}
+			
 			scene.focusOwnerProperty().addListener(new ChangeListener<Node>() {
 				private Object lastFocusElement;
 				@Override
