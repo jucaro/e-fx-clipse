@@ -1,0 +1,15 @@
+package at.bestsolution.efxclipse.runtime.examples.osgi.di
+
+import javafx.scene.layout.BorderPane
+import at.bestsolution.efxclipse.runtime.examples.osgi.di.FXController
+import javafx.scene.control.Button
+
+component ExampleGraph controlledby FXController {
+	BorderPane {
+		center: Button id button {
+			text : "Hello World!",
+			onAction : controllermethod sayHello
+		},
+		bottom : include at.bestsolution.efxclipse.runtime.examples.osgi.di.SubGraph
+	}
+}

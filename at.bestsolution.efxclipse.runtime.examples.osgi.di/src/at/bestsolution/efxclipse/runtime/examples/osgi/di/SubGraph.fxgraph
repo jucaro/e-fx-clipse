@@ -1,0 +1,13 @@
+package at.bestsolution.efxclipse.runtime.examples.osgi.di
+
+import javafx.scene.layout.BorderPane
+import javafx.scene.control.Button
+import at.bestsolution.efxclipse.runtime.examples.osgi.di.FXSubController
+
+component SubGraph controlledby FXSubController {
+	BorderPane {
+		center : Button id subbutton {
+			text : "Sub Button"
+		}
+	}
+}
