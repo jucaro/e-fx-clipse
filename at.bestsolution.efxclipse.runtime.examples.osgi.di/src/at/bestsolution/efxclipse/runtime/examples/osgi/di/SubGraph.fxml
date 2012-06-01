@@ -10,7 +10,7 @@
 <BorderPane xmlns:fx="http://javafx.com/fxml" fx:controller="at.bestsolution.efxclipse.runtime.examples.osgi.di.FXSubController">
 
 	<center>
-		<Button fx:id="subbutton" text="Sub Button"/> 
+		<Button fx:id="subbutton" text="Sub Button" onAction="#sayHello"/> 
 	</center>
 
 </BorderPane>

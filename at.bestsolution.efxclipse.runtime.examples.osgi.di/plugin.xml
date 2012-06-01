@@ -8,7 +8,8 @@
       <application
             thread="any">
          <run
-               class="at.bestsolution.efxclipse.runtime.examples.osgi.di.Application">
+               class="at.bestsolution.efxclipse.runtime.di.DIApplication">
+               <parameter name="mainClass" value="at.bestsolution.efxclipse.runtime.examples.osgi.di.MainApplication" />
          </run>
       </application>
    </extension>

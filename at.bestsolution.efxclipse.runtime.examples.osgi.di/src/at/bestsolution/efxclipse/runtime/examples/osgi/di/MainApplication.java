@@ -15,7 +15,7 @@ import at.bestsolution.efxclipse.runtime.di.FXMLBuilder;
 import at.bestsolution.efxclipse.runtime.di.FXMLLoader;
 import at.bestsolution.efxclipse.runtime.di.FXMLLoaderFactory;
 
-public class DIApplication {
+public class MainApplication {
 	@Inject
 	@FXMLLoader
 	FXMLLoaderFactory loaderFactory;
