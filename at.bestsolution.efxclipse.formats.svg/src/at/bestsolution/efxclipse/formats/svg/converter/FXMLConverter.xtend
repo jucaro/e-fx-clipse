@@ -161,6 +161,7 @@ class FXMLConverter {
 		«IF element.cy != null»centerY="«t.transform( new Point2D$Double(0,element.cy.parseCoordinate), null).y»"«ENDIF»
 		«IF element.r != null»radius="«element.r.parseLength»"«ENDIF»
 		«IF element.fx != null || element.fy != null»focusDistance="«calculateFocusDistance(t,element.cx.parseCoordinate,element.cy.parseCoordinate,element.fx.parseCoordinate,element.fy.parseCoordinate)»"«ENDIF»
+««« Is the Focus Radius calculation really correct???
 		«IF element.fx != null || element.fy != null»focusAngle="«calculateFocusAngle(t,element.cx.parseCoordinate,element.cy.parseCoordinate,element.fx.parseCoordinate,element.fy.parseCoordinate)»"«ENDIF»
 		«IF element.spreadMethod != SpreadMethod::PAD»cycleMethod="«element.spreadMethod.toFx»"«ENDIF»
 		«IF element.gradientUnits != null»proportional="«element.gradientUnits != GradientUnits::USER_SPACE_ON_USE»"«ENDIF»
