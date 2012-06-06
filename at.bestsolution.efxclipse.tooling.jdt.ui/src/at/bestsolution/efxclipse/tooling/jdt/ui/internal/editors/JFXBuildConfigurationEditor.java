@@ -45,8 +45,6 @@ import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.core.runtime.IStatus;
 import org.eclipse.core.runtime.Status;
-import org.eclipse.core.runtime.preferences.IEclipsePreferences;
-import org.eclipse.core.runtime.preferences.InstanceScope;
 import org.eclipse.jdt.core.IJavaElement;
 import org.eclipse.jdt.core.IJavaProject;
 import org.eclipse.jdt.core.IType;
@@ -110,8 +108,6 @@ import org.eclipse.ui.part.FileEditorInput;
 import org.eclipse.ui.part.MultiPageEditorPart;
 import org.eclipse.ui.views.contentoutline.IContentOutlinePage;
 
-import at.bestsolution.efxclipse.tooling.jdt.core.internal.JavaFXCorePlugin;
-import at.bestsolution.efxclipse.tooling.jdt.core.internal.JavaFXPreferencesConstants;
 import at.bestsolution.efxclipse.tooling.jdt.ui.internal.buildpath.JavaFXPreferencePage;
 import at.bestsolution.efxclipse.tooling.jdt.ui.internal.editors.outline.PropertyContentOutlinePage;
 
@@ -127,7 +123,7 @@ public class JFXBuildConfigurationEditor extends MultiPageEditorPart implements
 	private BuildPropertyBean bean = new BuildPropertyBean(properties);
 	private boolean syncForm = true;
 	
-	public static final String BUILD_JFXSDK = "buildJfxSDK";
+//	public static final String BUILD_JFXSDK = "buildJfxSDK";
 	public static final String BUILD_DIRECTORY = "buildDirectory";
 	public static final String BUILD_VENDOR_NAME = "buildVendorName";
 	public static final String BUILD_APP_TITLE = "buildAppTitle";
@@ -152,7 +148,7 @@ public class JFXBuildConfigurationEditor extends MultiPageEditorPart implements
 		private static final long serialVersionUID = 1L;
 
 		{
-			put(BUILD_JFXSDK,"jfx.build.jfxsdkdir");
+//			put(BUILD_JFXSDK,"jfx.build.jfxsdkdir");
 			put(BUILD_DIRECTORY,"jfx.build.stagingdir");
 			put(BUILD_VENDOR_NAME, "jfx.build.vendorname");
 			put(BUILD_APP_TITLE,"jfx.build.apptitle");
@@ -312,27 +308,27 @@ public class JFXBuildConfigurationEditor extends MultiPageEditorPart implements
 				dbc.bindValue(textModify.observeDelayed(DELAY, t), BeanProperties.value(BUILD_DIRECTORY).observe(bean));
 			}
 			
-			{
-				IEclipsePreferences pref = InstanceScope.INSTANCE.getNode(JavaFXCorePlugin.PLUGIN_ID);
-				final String prefDir = pref.get(JavaFXPreferencesConstants.JAVAFX_DIR,"");
-				
-				toolkit.createLabel(sectionClient, "JFX-SDK Directory:");
-				final Text t = toolkit.createText(sectionClient, "");
-				t.setMessage(prefDir);
-				t.setLayoutData(new GridData(GridData.FILL,GridData.CENTER,true,false,2,1));
-				Button b = toolkit.createButton(sectionClient, "Browse ...", SWT.PUSH);
-				b.addSelectionListener(new SelectionAdapter() {
-					@Override
-					public void widgetSelected(SelectionEvent e) {
-						String dir = handleJFxSDKDirectorySelection(t.getShell(),prefDir);
-						if( dir != null ) {
-							t.setText(dir);	
-						}
-					}
-				});
-				b.setLayoutData(new GridData(GridData.FILL, GridData.CENTER, false, false));
-				dbc.bindValue(textModify.observeDelayed(DELAY, t), BeanProperties.value(BUILD_JFXSDK).observe(bean));
-			}
+//			{
+//				IEclipsePreferences pref = InstanceScope.INSTANCE.getNode(JavaFXCorePlugin.PLUGIN_ID);
+//				final String prefDir = pref.get(JavaFXPreferencesConstants.JAVAFX_DIR,"");
+//				
+//				toolkit.createLabel(sectionClient, "JFX-SDK Directory:");
+//				final Text t = toolkit.createText(sectionClient, "");
+//				t.setMessage(prefDir);
+//				t.setLayoutData(new GridData(GridData.FILL,GridData.CENTER,true,false,2,1));
+//				Button b = toolkit.createButton(sectionClient, "Browse ...", SWT.PUSH);
+//				b.addSelectionListener(new SelectionAdapter() {
+//					@Override
+//					public void widgetSelected(SelectionEvent e) {
+//						String dir = handleJFxSDKDirectorySelection(t.getShell(),prefDir);
+//						if( dir != null ) {
+//							t.setText(dir);	
+//						}
+//					}
+//				});
+//				b.setLayoutData(new GridData(GridData.FILL, GridData.CENTER, false, false));
+//				dbc.bindValue(textModify.observeDelayed(DELAY, t), BeanProperties.value(BUILD_JFXSDK).observe(bean));
+//			}
 			
 			{
 				toolkit.createLabel(sectionClient, "Vendor name*:");
@@ -942,13 +938,13 @@ public class JFXBuildConfigurationEditor extends MultiPageEditorPart implements
 			return get(DEPLOY_APPLET_HEIGHT);
 		}
 		
-		public void setBuildJfxSDK(String value) {
-			set(BUILD_JFXSDK,value);
-		}
-		
-		public String getBuildJfxSDK() {
-			return get(BUILD_JFXSDK);
-		}
+//		public void setBuildJfxSDK(String value) {
+//			set(BUILD_JFXSDK,value);
+//		}
+//		
+//		public String getBuildJfxSDK() {
+//			return get(BUILD_JFXSDK);
+//		}
 		
 		public void setSignKeystore(String value) {
 			set(SIGN_KEYSTORE,value);
