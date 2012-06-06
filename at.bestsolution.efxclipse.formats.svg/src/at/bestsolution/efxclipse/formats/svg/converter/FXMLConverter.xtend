@@ -159,7 +159,7 @@ class FXMLConverter {
 		«val t = createAffineTransform(element.gradientTransform) as AffineTransform»
 		«IF element.cx != null»centerX="«t.transform( new Point2D$Double(element.cx.parseCoordinate,0), null).x»"«ENDIF»
 		«IF element.cy != null»centerY="«t.transform( new Point2D$Double(0,element.cy.parseCoordinate), null).y»"«ENDIF»
-		«IF element.r != null»radius="«element.r.parseLength»"«ENDIF»
+		«IF element.r != null»radius="«element.r.parseLength*t.scaleX»"«ENDIF»
 		«IF element.fx != null || element.fy != null»focusDistance="«calculateFocusDistance(t,element.cx.parseCoordinate,element.cy.parseCoordinate,element.fx.parseCoordinate,element.fy.parseCoordinate)»"«ENDIF»
 ««« Is the Focus Radius calculation really correct???
 		«IF element.fx != null || element.fy != null»focusAngle="«calculateFocusAngle(t,element.cx.parseCoordinate,element.cy.parseCoordinate,element.fx.parseCoordinate,element.fy.parseCoordinate)»"«ENDIF»
