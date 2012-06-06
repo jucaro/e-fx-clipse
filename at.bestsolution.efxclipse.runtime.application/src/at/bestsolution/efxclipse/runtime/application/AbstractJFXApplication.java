@@ -39,6 +39,9 @@ public abstract class AbstractJFXApplication implements IApplication {
 		this.applicationContext = context;
 		this.applicationContext.applicationRunning();
 		
+		// Looks like OS-X wants to have the context class loader to locate FX-Classes
+		Thread.currentThread().setContextClassLoader(Application.class.getClassLoader());
+		
 		Application.launch(JFXApp.class, null);
 		
 		try {
