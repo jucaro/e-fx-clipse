@@ -4,7 +4,6 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-import javafx.fxml.JavaFXBuilderFactory;
 import javafx.util.BuilderFactory;
 import javafx.util.Callback;
 
@@ -18,7 +17,7 @@ import at.bestsolution.efxclipse.runtime.osgi.util.OSGiFXMLLoader;
 @SuppressWarnings("restriction")
 public abstract class InjectingFXMLLoader<N> implements FXMLBuilder<N> {
 	ResourceBundle resourceBundle;
-	BuilderFactory builderFactory = new JavaFXBuilderFactory();
+	BuilderFactory builderFactory;
 	
 	public static <N> InjectingFXMLLoader<N> create(final IEclipseContext context, final Class<?> requester, final String relativeFxmlPath) {
 		return new InjectingFXMLLoader<N>() {
@@ -44,7 +43,7 @@ public abstract class InjectingFXMLLoader<N> implements FXMLBuilder<N> {
 		return new InjectingFXMLLoader<N>() {
 
 			public N load() throws IOException {
-				return OSGiFXMLLoader.load(classloader, url, null, new JavaFXBuilderFactory(), new ControllerFactory(context));
+				return OSGiFXMLLoader.load(classloader, url, resourceBundle, builderFactory, new ControllerFactory(context));
 			}
 			
 		};

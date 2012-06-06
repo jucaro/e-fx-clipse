@@ -7,6 +7,7 @@ import java.util.ResourceBundle;
 
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.JavaFXBuilderFactory;
+import javafx.util.Builder;
 import javafx.util.BuilderFactory;
 import javafx.util.Callback;
 
@@ -42,7 +43,7 @@ public class OSGiFXMLLoader {
 		return load(loader, url, resourceBundle, builderFactory, controllerFactory);
 	}
 	
-	public static <O> O load(ClassLoader classloader, URL url, ResourceBundle resourceBundle, BuilderFactory builderFactory, Callback<Class<?>, Object> controllerFactory) throws IOException {
+	public static <O> O load(final ClassLoader classloader, URL url, ResourceBundle resourceBundle, final BuilderFactory builderFactory, Callback<Class<?>, Object> controllerFactory) throws IOException {
 		InputStream in = null;
 		
 		try {
@@ -51,7 +52,22 @@ public class OSGiFXMLLoader {
 			loader.setLocation(url);
 			loader.setClassLoader(classloader);
 			loader.setResources(resourceBundle);
-			loader.setBuilderFactory(new JavaFXBuilderFactory(classloader));
+			if( builderFactory == null ) {
+				loader.setBuilderFactory(new JavaFXBuilderFactory(classloader));	
+			} else {
+				loader.setBuilderFactory(new BuilderFactory() {
+					JavaFXBuilderFactory orgBuilder = new JavaFXBuilderFactory(classloader);
+					@Override
+					public Builder<?> getBuilder(Class<?> type) {
+						Builder<?> b = builderFactory.getBuilder(type);
+						if( b == null ) {
+							b = orgBuilder.getBuilder(type);
+						}
+						return b;
+					}
+				});
+			}
+			
 			if( controllerFactory != null ) {
 				loader.setControllerFactory(controllerFactory);	
 			}
