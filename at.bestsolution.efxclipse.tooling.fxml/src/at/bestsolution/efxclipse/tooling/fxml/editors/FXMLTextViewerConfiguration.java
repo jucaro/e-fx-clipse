@@ -7,7 +7,7 @@ import org.eclipse.wst.xml.ui.StructuredTextViewerConfigurationXML;
 public class FXMLTextViewerConfiguration extends StructuredTextViewerConfigurationXML {
 	
 	public FXMLTextViewerConfiguration() {
-		System.err.println("Created ::::::");
+//		System.err.println("Created ::::::");
 	}
 	
 	@Override
