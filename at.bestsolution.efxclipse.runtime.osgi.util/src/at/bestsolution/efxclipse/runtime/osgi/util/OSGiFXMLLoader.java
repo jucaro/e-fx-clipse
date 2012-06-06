@@ -50,6 +50,7 @@ public class OSGiFXMLLoader {
 			FXMLLoader loader = new FXMLLoader();
 			loader.setLocation(url);
 			loader.setClassLoader(classloader);
+			loader.setResources(resourceBundle);
 			loader.setBuilderFactory(new JavaFXBuilderFactory(classloader));
 			if( controllerFactory != null ) {
 				loader.setControllerFactory(controllerFactory);	
