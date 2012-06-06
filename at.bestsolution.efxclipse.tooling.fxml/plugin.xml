@@ -39,6 +39,9 @@
    </extension>
    <extension
          point="org.eclipse.wst.sse.ui.editorConfiguration">
+      <sourceViewerConfiguration
+        	class="at.bestsolution.efxclipse.tooling.fxml.editors.FXMLTextViewerConfiguration"
+        	target="at.bestsolution.efxclipse.tooling.fxml.file"/>
       <documentationTextHover
             class="at.bestsolution.efxclipse.tooling.fxml.editors.FXMLTextHover"
             target="org.eclipse.wst.xml.XML_DEFAULT">
