@@ -407,7 +407,7 @@ public class JFXBuildConfigurationEditor extends MultiPageEditorPart implements
 			
 			{
 				FormText text = toolkit.createFormText(sectionClient, false);
-				text.setText("<p>To generate build instructions and export the project: <li style=\"bullet\" bindent=\"1\">Generate <a href=\"generateAnt\">ant build.xml</a> only</li><li style=\"bullet\" bindent=\"2\">Generate <a href=\"generateAndRun\">ant build.xml and run</a></li></p>", true, false);
+				text.setText("<p>To generate build instructions and export the project: <li style=\"bullet\" bindent=\"1\">Generate <a href=\"generateAnt\">ant build.xml</a> only</li><li style=\"bullet\" bindent=\"2\">Generate <a href=\"generateAndRun\">ant build.xml and run</a></li>&#160;</p>", true, false);
 				text.addHyperlinkListener(new IHyperlinkListener() {
 					
 					@Override
