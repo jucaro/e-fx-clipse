@@ -329,7 +329,7 @@ public class FXGraphProposalProvider extends AbstractFXGraphProposalProvider {
 	}
 
 	private void createEnumPropnameProposals(IFXEnumProperty prop, EObject model, ContentAssistContext context, EStructuralFeature typeReference, ICompletionProposalAcceptor acceptor) {
-		if( prop.isStatic() ) {
+		if( prop.isStatic() && ! typeReference.equals(FXGraphPackage.Literals.STATIC_VALUE_PROPERTY__NAME) ) {
 			StyledString s = new StyledString();
 			s.append("(static) ", StyledString.COUNTER_STYLER);
 			s.append(prop.getFXClass().getSimpleName() + "." + prop.getName() + " : " + prop.getEnumTypeAsString(false));
@@ -375,7 +375,7 @@ public class FXGraphProposalProvider extends AbstractFXGraphProposalProvider {
 	}
 
 	private void createObjectPropnameProposals(IFXObjectProperty prop, EObject model, ContentAssistContext context, EStructuralFeature typeReference, ICompletionProposalAcceptor acceptor) {
-		if( prop.isStatic() ) {
+		if( prop.isStatic() && ! typeReference.equals(FXGraphPackage.Literals.STATIC_VALUE_PROPERTY__NAME) ) {
 			StyledString s = new StyledString();
 			s.append("(static) ", StyledString.COUNTER_STYLER);
 			s.append(prop.getFXClass().getSimpleName() + "." + prop.getName() + " : " + prop.getElementTypeAsString(false));
@@ -440,7 +440,7 @@ public class FXGraphProposalProvider extends AbstractFXGraphProposalProvider {
 			break;
 		}
 
-		if( prop.isStatic() ) {
+		if( prop.isStatic() && ! typeReference.equals(FXGraphPackage.Literals.STATIC_VALUE_PROPERTY__NAME) ) {
 			StyledString s = new StyledString();
 			s.append("(static) ", StyledString.COUNTER_STYLER);
 			s.append(prop.getFXClass().getSimpleName() + "." + prop.getName() + " : " + typeName);
