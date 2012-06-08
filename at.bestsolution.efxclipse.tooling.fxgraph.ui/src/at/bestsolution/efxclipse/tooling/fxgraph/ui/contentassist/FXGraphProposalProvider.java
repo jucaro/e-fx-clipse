@@ -234,7 +234,7 @@ public class FXGraphProposalProvider extends AbstractFXGraphProposalProvider {
 				}				
 			}
 			
-			EObject o = el.eContainer();
+			EObject o = el;
 			el = null;
 			
 			while( o.eContainer() != null ) {
