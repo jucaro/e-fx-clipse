@@ -97,7 +97,7 @@ public class FXGraphProposalProvider extends AbstractFXGraphProposalProvider {
 
 	@Inject
 	private IJavaProjectProvider projectProvider;
-
+	
 	static class StaticPrefixMatcher extends PrefixMatcher {
 		private final PrefixMatcher original;
 		
@@ -108,6 +108,7 @@ public class FXGraphProposalProvider extends AbstractFXGraphProposalProvider {
 		@Override
 		public boolean isCandidateMatchingPrefix(String name, String prefix) {
 			name = name.substring(name.indexOf("#")+1);
+//			System.err.println("compare: " + name + " => " + prefix);
 			return original.isCandidateMatchingPrefix(name, prefix);
 		}
 	}
@@ -205,6 +206,7 @@ public class FXGraphProposalProvider extends AbstractFXGraphProposalProvider {
 	@Override
 	public void completeElement_Properties(EObject model, Assignment assignment, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
 		try {
+			System.err.println("property proposal: " + model);
 			Element el = (Element) model;
 			// Happens when we are in the default section and user typed
 			// something
@@ -234,6 +236,7 @@ public class FXGraphProposalProvider extends AbstractFXGraphProposalProvider {
 				}				
 			}
 			
+			
 			EObject o = el;
 			el = null;
 			
@@ -251,6 +254,7 @@ public class FXGraphProposalProvider extends AbstractFXGraphProposalProvider {
 			
 			if( el instanceof Element) {
 				el = (Element) el;
+				System.err.println("Statics for: " + el.getType());
 				IJavaProject javaProject = projectProvider.getJavaProject(el.eResource().getResourceSet());
 				IType type = javaProject.findType(el.getType().getQualifiedName());
 				if (type != null) {
@@ -334,6 +338,8 @@ public class FXGraphProposalProvider extends AbstractFXGraphProposalProvider {
 			s.append("(static) ", StyledString.COUNTER_STYLER);
 			s.append(prop.getFXClass().getSimpleName() + "." + prop.getName() + " : " + prop.getEnumTypeAsString(false));
 			s.append(" - " + prop.getFXClass().getSimpleName(), StyledString.QUALIFIER_STYLER);
+						
+			context = context.copy().setMatcher(new StaticPrefixMatcher(context.getMatcher())).toContext();
 			
 			ICompletionProposal p = createCompletionProposal("call " + prop.getFXClass().getSimpleName() + "#" + prop.getName() + " : ", s, IconKeys.getIcon(IconKeys.FIELD_KEY), getPropertiesProposalsProposals()-10, context.getPrefix(), context);
 			
@@ -341,9 +347,8 @@ public class FXGraphProposalProvider extends AbstractFXGraphProposalProvider {
 				ConfigurableCompletionProposal cp = (ConfigurableCompletionProposal) p;
 				cp.setAdditionalProposalInfo(model);
 				cp.setHover(new HoverImpl(prop.getJavaElement()));
-				cp.setMatcher(new StaticPrefixMatcher(cp.getMatcher()));
 			}
-
+			
 			acceptor.accept(p);
 		} else {
 			StyledString s = new StyledString(prop.getName() + " : " + prop.getEnumTypeAsString(false));
@@ -381,13 +386,14 @@ public class FXGraphProposalProvider extends AbstractFXGraphProposalProvider {
 			s.append(prop.getFXClass().getSimpleName() + "." + prop.getName() + " : " + prop.getElementTypeAsString(false));
 			s.append(" - " + prop.getFXClass().getSimpleName(), StyledString.QUALIFIER_STYLER);
 			
+			context = context.copy().setMatcher(new StaticPrefixMatcher(context.getMatcher())).toContext();
+			
 			ICompletionProposal p = createCompletionProposal("call " + prop.getFXClass().getSimpleName() + "#" + prop.getName() + " : ", s, IconKeys.getIcon(IconKeys.FIELD_KEY), getPropertiesProposalsProposals()-10, context.getPrefix(), context);
 			
 			if (p instanceof ConfigurableCompletionProposal) {
 				ConfigurableCompletionProposal cp = (ConfigurableCompletionProposal) p;
 				cp.setAdditionalProposalInfo(model);
 				cp.setHover(new HoverImpl(prop.getJavaElement()));
-				cp.setMatcher(new StaticPrefixMatcher(cp.getMatcher()));
 			}
 
 			acceptor.accept(p);
@@ -448,13 +454,14 @@ public class FXGraphProposalProvider extends AbstractFXGraphProposalProvider {
 			
 			proposalValue = "call " + prop.getFXClass().getSimpleName() + "#" + proposalValue;
 			
+			context = context.copy().setMatcher(new StaticPrefixMatcher(context.getMatcher())).toContext();
+			
 			ICompletionProposal p = createCompletionProposal(proposalValue, s, IconKeys.getIcon(IconKeys.FIELD_KEY), getPropertiesProposalsProposals()-10, context.getPrefix(), context);
 			
 			if (p instanceof ConfigurableCompletionProposal) {
 				ConfigurableCompletionProposal cp = (ConfigurableCompletionProposal) p;
 				cp.setAdditionalProposalInfo(model);
 				cp.setHover(new HoverImpl(prop.getJavaElement()));
-				cp.setMatcher(new StaticPrefixMatcher(cp.getMatcher()));
 			}
 
 			acceptor.accept(p);
