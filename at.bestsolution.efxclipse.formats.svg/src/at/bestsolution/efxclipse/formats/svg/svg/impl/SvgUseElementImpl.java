@@ -157,6 +157,8 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link at.bestsolution.efxclipse.formats.svg.svg.impl.SvgUseElementImpl#getTransform <em>Transform</em>}</li>
  *   <li>{@link at.bestsolution.efxclipse.formats.svg.svg.impl.SvgUseElementImpl#getWidth <em>Width</em>}</li>
  *   <li>{@link at.bestsolution.efxclipse.formats.svg.svg.impl.SvgUseElementImpl#getHeight <em>Height</em>}</li>
+ *   <li>{@link at.bestsolution.efxclipse.formats.svg.svg.impl.SvgUseElementImpl#getX <em>X</em>}</li>
+ *   <li>{@link at.bestsolution.efxclipse.formats.svg.svg.impl.SvgUseElementImpl#getY <em>Y</em>}</li>
  * </ul>
  * </p>
  *
@@ -1962,6 +1964,46 @@ public class SvgUseElementImpl extends EObjectImpl implements SvgUseElement {
 	 * @ordered
 	 */
 	protected String height = HEIGHT_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getX() <em>X</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getX()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String X_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getX() <em>X</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getX()
+	 * @generated
+	 * @ordered
+	 */
+	protected String x = X_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getY() <em>Y</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getY()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String Y_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getY() <em>Y</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getY()
+	 * @generated
+	 * @ordered
+	 */
+	protected String y = Y_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -3906,6 +3948,48 @@ public class SvgUseElementImpl extends EObjectImpl implements SvgUseElement {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public String getX() {
+		return x;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setX(String newX) {
+		String oldX = x;
+		x = newX;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, SvgPackage.SVG_USE_ELEMENT__X, oldX, x));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String getY() {
+		return y;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setY(String newY) {
+		String oldY = y;
+		y = newY;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, SvgPackage.SVG_USE_ELEMENT__Y, oldY, y));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
@@ -4106,6 +4190,10 @@ public class SvgUseElementImpl extends EObjectImpl implements SvgUseElement {
 				return getWidth();
 			case SvgPackage.SVG_USE_ELEMENT__HEIGHT:
 				return getHeight();
+			case SvgPackage.SVG_USE_ELEMENT__X:
+				return getX();
+			case SvgPackage.SVG_USE_ELEMENT__Y:
+				return getY();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -4393,6 +4481,12 @@ public class SvgUseElementImpl extends EObjectImpl implements SvgUseElement {
 			case SvgPackage.SVG_USE_ELEMENT__HEIGHT:
 				setHeight((String)newValue);
 				return;
+			case SvgPackage.SVG_USE_ELEMENT__X:
+				setX((String)newValue);
+				return;
+			case SvgPackage.SVG_USE_ELEMENT__Y:
+				setY((String)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -4678,6 +4772,12 @@ public class SvgUseElementImpl extends EObjectImpl implements SvgUseElement {
 			case SvgPackage.SVG_USE_ELEMENT__HEIGHT:
 				setHeight(HEIGHT_EDEFAULT);
 				return;
+			case SvgPackage.SVG_USE_ELEMENT__X:
+				setX(X_EDEFAULT);
+				return;
+			case SvgPackage.SVG_USE_ELEMENT__Y:
+				setY(Y_EDEFAULT);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -4872,6 +4972,10 @@ public class SvgUseElementImpl extends EObjectImpl implements SvgUseElement {
 				return WIDTH_EDEFAULT == null ? width != null : !WIDTH_EDEFAULT.equals(width);
 			case SvgPackage.SVG_USE_ELEMENT__HEIGHT:
 				return HEIGHT_EDEFAULT == null ? height != null : !HEIGHT_EDEFAULT.equals(height);
+			case SvgPackage.SVG_USE_ELEMENT__X:
+				return X_EDEFAULT == null ? x != null : !X_EDEFAULT.equals(x);
+			case SvgPackage.SVG_USE_ELEMENT__Y:
+				return Y_EDEFAULT == null ? y != null : !Y_EDEFAULT.equals(y);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -5344,6 +5448,10 @@ public class SvgUseElementImpl extends EObjectImpl implements SvgUseElement {
 		result.append(width);
 		result.append(", height: ");
 		result.append(height);
+		result.append(", x: ");
+		result.append(x);
+		result.append(", y: ");
+		result.append(y);
 		result.append(')');
 		return result.toString();
 	}

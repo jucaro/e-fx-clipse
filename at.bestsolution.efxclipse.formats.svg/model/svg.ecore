@@ -683,6 +683,8 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="transform" eType="#//Transform"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="width" eType="#//Length"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="height" eType="#//Length"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="x" eType="#//Coordinate"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="y" eType="#//Coordinate"/>
     <eGenericSuperTypes eClassifier="#//SvgElement"/>
     <eGenericSuperTypes eClassifier="#//GraphicsElement"/>
     <eGenericSuperTypes eClassifier="#//GraphicsReferencingElement"/>

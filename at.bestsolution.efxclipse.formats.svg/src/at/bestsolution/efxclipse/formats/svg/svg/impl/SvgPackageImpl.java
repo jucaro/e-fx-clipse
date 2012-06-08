@@ -3031,6 +3031,24 @@ public class SvgPackageImpl extends EPackageImpl implements SvgPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EAttribute getSvgUseElement_X() {
+		return (EAttribute)svgUseElementEClass.getEStructuralFeatures().get(6);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getSvgUseElement_Y() {
+		return (EAttribute)svgUseElementEClass.getEStructuralFeatures().get(7);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getSvgImageElement() {
 		return svgImageElementEClass;
 	}
@@ -7053,6 +7071,8 @@ public class SvgPackageImpl extends EPackageImpl implements SvgPackage {
 		createEAttribute(svgUseElementEClass, SVG_USE_ELEMENT__TRANSFORM);
 		createEAttribute(svgUseElementEClass, SVG_USE_ELEMENT__WIDTH);
 		createEAttribute(svgUseElementEClass, SVG_USE_ELEMENT__HEIGHT);
+		createEAttribute(svgUseElementEClass, SVG_USE_ELEMENT__X);
+		createEAttribute(svgUseElementEClass, SVG_USE_ELEMENT__Y);
 
 		svgImageElementEClass = createEClass(SVG_IMAGE_ELEMENT);
 		createEAttribute(svgImageElementEClass, SVG_IMAGE_ELEMENT__CLASS);
@@ -8586,6 +8606,8 @@ public class SvgPackageImpl extends EPackageImpl implements SvgPackage {
 		initEAttribute(getSvgUseElement_Transform(), this.getTransform(), "transform", null, 0, 1, SvgUseElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getSvgUseElement_Width(), this.getLength(), "width", null, 0, 1, SvgUseElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getSvgUseElement_Height(), this.getLength(), "height", null, 0, 1, SvgUseElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getSvgUseElement_X(), this.getCoordinate(), "x", null, 0, 1, SvgUseElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getSvgUseElement_Y(), this.getCoordinate(), "y", null, 0, 1, SvgUseElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(svgImageElementEClass, SvgImageElement.class, "SvgImageElement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getSvgImageElement_Class(), ecorePackage.getEString(), "class", null, 0, 1, SvgImageElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

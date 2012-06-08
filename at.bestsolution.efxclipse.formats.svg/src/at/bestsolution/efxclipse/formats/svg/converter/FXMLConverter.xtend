@@ -34,6 +34,7 @@ import org.eclipse.emf.ecore.EStructuralFeature
 import at.bestsolution.efxclipse.formats.svg.svg.SvgPackage$Literals
 import at.bestsolution.efxclipse.formats.svg.svg.PresentationAttributes
 import at.bestsolution.efxclipse.formats.svg.svg.FilterPrimitiveElement
+import at.bestsolution.efxclipse.formats.svg.svg.SvgUseElement
 
 class FXMLConverter {
 	private SvgSvgElement rootElement
@@ -90,10 +91,15 @@ class FXMLConverter {
 	def handleGradient(SvgLinearGradientElement element, Double opacity) '''
 	<LinearGradient
 		«val t = createAffineTransform(element.gradientTransform) as AffineTransform»
-		«IF element.x1 != null»startX="«t.transform( new Point2D$Double(element.x1.parseCoordinate,0), null).x»"«ENDIF»
-		«IF element.y1 != null»startY="«t.transform( new Point2D$Double(0,element.y1.parseCoordinate),null).y»"«ENDIF»
-		«IF element.x2 != null»endX="«t.transform( new Point2D$Double(element.x2.parseCoordinate,0), null).x»"«ENDIF»
-		«IF element.y2 != null»endY="«t.transform( new Point2D$Double(0,element.y2.parseCoordinate), null).y»"«ENDIF»
+		«var x1 = element.x1.parseCoordinate»
+		«var y1 = element.y1.parseCoordinate»
+		«var x2 = element.x2.parseCoordinate»
+		«var y2 = element.y2.parseCoordinate»
+		
+		«IF element.x1 != null»startX="«t.transform( new Point2D$Double(x1,y1), null).x»"«ENDIF»
+		«IF element.y1 != null»startY="«t.transform( new Point2D$Double(x1,y1),null).y»"«ENDIF»
+		«IF element.x2 != null»endX="«t.transform( new Point2D$Double(x2,y2), null).x»"«ENDIF»
+		«IF element.y2 != null»endY="«t.transform( new Point2D$Double(x2,y2), null).y»"«ENDIF»
 		«IF element.spreadMethod != SpreadMethod::PAD»cycleMethod="«element.spreadMethod.toFx»"«ENDIF»
 		«IF element.id != null»fx:id="«element.id»"«ENDIF»
 		«IF element.gradientUnits != null»proportional="«element.gradientUnits != GradientUnits::USER_SPACE_ON_USE»"«ENDIF»
@@ -109,6 +115,36 @@ class FXMLConverter {
 	</LinearGradient>
 	'''
 	
+	
+	def handleGradient(SvgRadialGradientElement element, Double opacity) '''
+	<RadialGradient
+		«val t = createAffineTransform(element.gradientTransform) as AffineTransform»
+		«var cx = element.cx.parseCoordinate»
+		«var cy = element.cy.parseCoordinate»
+		«var fx = element.fx.parseCoordinate»
+		«var fy = element.fy.parseCoordinate»
+		
+		«IF element.cx != null»centerX="«t.transform(new Point2D$Double(cx,cy),null).x»"«ENDIF»
+		«IF element.cy != null»centerY="«t.transform(new Point2D$Double(cx,cy),null).y»"«ENDIF»
+		«IF element.r != null»radius="«element.r.parseLength*t.scaleX»"«ENDIF»
+		«IF element.fx != null || element.fy != null»focusDistance="«calculateFocusDistance(t,cx,cy,fx,fy)»"«ENDIF»
+««« Is the Focus Radius calculation really correct???
+		«IF element.fx != null || element.fy != null»focusAngle="«calculateFocusAngle(t,cx,cy,fx,fy)»"«ENDIF»
+		«IF element.spreadMethod != SpreadMethod::PAD»cycleMethod="«element.spreadMethod.toFx»"«ENDIF»
+		«IF element.gradientUnits != null»proportional="«element.gradientUnits != GradientUnits::USER_SPACE_ON_USE»"«ENDIF»
+		«IF element.id != null»fx:id="«element.id»"«ENDIF»
+		>
+		«val owner = resolveGradientStopElement(element)» 
+		«IF owner != null»
+			<stops>
+			«FOR o : (owner as ContentElement).children.filter(typeof(SvgStopElement))»
+				«handleStop(o,opacity)»
+			«ENDFOR»
+			</stops>
+		«ENDIF»
+	</RadialGradient>
+	'''
+	
 	def createAffineTransform(String transformSpec) {
 		if( transformSpec == null ) {
 			return new AffineTransform();
@@ -116,7 +152,7 @@ class FXMLConverter {
 			val params = transformSpec.substring(transformSpec.indexOf("(")+1,transformSpec.indexOf(")"))
 			if( transformSpec.startsWith("matrix") ) {
 				val parts = params.split("\\s*,\\s*|\\s+");
-				return new AffineTransform(
+				val rv = new AffineTransform(
 					Double::parseDouble(parts.get(0)),
 					Double::parseDouble(parts.get(1)),
 					Double::parseDouble(parts.get(2)),
@@ -124,6 +160,9 @@ class FXMLConverter {
 					Double::parseDouble(parts.get(4)),
 					Double::parseDouble(parts.get(5))
 				);
+				
+                return rv;
+
 			} else if( transformSpec.startsWith("translate") ) {
 				val parts = params.split("\\s*,\\s*|\\s+");
 				val rv = new AffineTransform();
@@ -155,29 +194,27 @@ class FXMLConverter {
 		return new AffineTransform();
 	}
 	
-	def handleGradient(SvgRadialGradientElement element, Double opacity) '''
-	<RadialGradient
-		«val t = createAffineTransform(element.gradientTransform) as AffineTransform»
-		«IF element.cx != null»centerX="«t.transform( new Point2D$Double(element.cx.parseCoordinate,0), null).x»"«ENDIF»
-		«IF element.cy != null»centerY="«t.transform( new Point2D$Double(0,element.cy.parseCoordinate), null).y»"«ENDIF»
-		«IF element.r != null»radius="«element.r.parseLength*t.scaleX»"«ENDIF»
-		«IF element.fx != null || element.fy != null»focusDistance="«calculateFocusDistance(t,element.cx.parseCoordinate,element.cy.parseCoordinate,element.fx.parseCoordinate,element.fy.parseCoordinate)»"«ENDIF»
-««« Is the Focus Radius calculation really correct???
-		«IF element.fx != null || element.fy != null»focusAngle="«calculateFocusAngle(t,element.cx.parseCoordinate,element.cy.parseCoordinate,element.fx.parseCoordinate,element.fy.parseCoordinate)»"«ENDIF»
-		«IF element.spreadMethod != SpreadMethod::PAD»cycleMethod="«element.spreadMethod.toFx»"«ENDIF»
-		«IF element.gradientUnits != null»proportional="«element.gradientUnits != GradientUnits::USER_SPACE_ON_USE»"«ENDIF»
-		«IF element.id != null»fx:id="«element.id»"«ENDIF»
-		>
-		«val owner = resolveGradientStopElement(element)» 
-		«IF owner != null»
-			<stops>
-			«FOR o : (owner as ContentElement).children.filter(typeof(SvgStopElement))»
-				«handleStop(o,opacity)»
-			«ENDFOR»
-			</stops>
-		«ENDIF»
-	</RadialGradient>
-	'''
+	
+//	def calculateFocusDistance(AffineTransform transform, double cx, double cy, double fx, double fy) {
+//		if( fx == cx && fy == cy ) {
+//			return 0;
+//		} else {
+//			val c = transform.transform(new Point2D$Double(cx,cy),null)
+//			val f = transform.transform(new Point2D$Double(fx,fy),null)
+//			
+//			return Math::sqrt(((f.x-c.x)*(f.x-c.x))+((f.y-c.y)*(f.y-c.y)));
+//		}
+//	}
+//	
+//	def calculateFocusAngle(AffineTransform transform, double cx, double cy, double fx, double fy) {
+//		if( fx == cx && fy == cy ) {
+//			return 0;
+//		} else {
+//			val c = transform.transform(new Point2D$Double(cx,cy),null)
+//			val f = transform.transform(new Point2D$Double(fx,fy),null)
+//			return Math::atan2(f.y-c.y, f.x-c.x)*180*0.31830989;
+//		}
+//	}
 	
 	def calculateFocusDistance(AffineTransform transform, double cx, double cy, double fx, double fy) {
 		if( fx == cx && fy == cy ) {
@@ -369,6 +406,54 @@ class FXMLConverter {
 	</Group>
 	'''
 	
+	def dispatch handle(SvgUseElement element) '''
+	<Group
+		«IF element.x != null»translateX="«element.x.parseCoordinate»"«ENDIF»
+		«IF element.y != null»translateY="«element.y.parseCoordinate»"«ENDIF»
+		«IF element.opacity != null»opacity="«element.opacity.parseDouble * element.fill_opacity.parseDouble»"«ENDIF»>
+		«IF element.resolvedInstance != null»
+		<children>
+			«handle(element.resolvedInstance)»
+		</children>
+		«ENDIF»
+		«IF element.transform != null»
+			<transforms>
+				«element.transform.handleTransform»
+			</transforms>
+		«ENDIF»
+		«IF element.filter != null»
+			«val e = resolveElement(element.filter.substring(5,element.filter.length-1).trim) as SvgFilterElement»
+			«IF e != null»
+				«IF e.children.filter(typeof(FilterPrimitiveElement)).size == 1»
+				«val fiElement = e.children.filter(typeof(FilterPrimitiveElement)).head as SvgElement»
+				<effect>
+					«handleFilter(fiElement)»
+				</effect>
+				«ELSE»
+				<!-- Multi filter needs different handling -->
+				«ENDIF»
+			«ENDIF»
+		«ENDIF»
+		«IF element.clip_path != null && element.clip_path.trim.length > 0 && ! element.clip_path.trim.equals("none")»
+			<clip>
+				«val clipElement = resolveElement(element.clip_path.substring(5,element.clip_path.length-1)) as SvgClipPathElement»
+				<Group>
+					<children>
+						«FOR e : clipElement.children»
+							«handle(e)»
+						«ENDFOR»
+					</children>
+					«IF clipElement.transform != null && clipElement.transform.trim.length > 0 && ! element.clip_path.equals("none")»
+					<transforms>
+						«handleTransform(clipElement.transform)»
+					</transforms>
+					«ENDIF»
+				</Group>
+			</clip>
+		«ENDIF»
+	</Group>
+	'''
+	
 	def lookupFeature(EStructuralFeature feature, EObject object) {
 		var eo = object;
 		do {
@@ -398,6 +483,7 @@ class FXMLConverter {
 		«IF element.opacity != null»opacity="«element.opacity»"«ENDIF»
 		«IF element.fill_rule != Fill_rule::NONZERO»fillRule="EVEN_ODD"«ENDIF»
 		«handleShapePresentationAttributes(element)»
+		«IF element.id != null»fx:id="«element.id»"«ENDIF»
 		>
 		«handlePaint("fill", lookupFeature(SvgPackage$Literals::PRESENTATION_ATTRIBUTES__FILL,element) as String,lookupFeature(SvgPackage$Literals::PRESENTATION_ATTRIBUTES__FILL_OPACITY,element) as String)»
 		«handlePaint("stroke",lookupFeature(SvgPackage$Literals::PRESENTATION_ATTRIBUTES__STROKE,element) as String,lookupFeature(SvgPackage$Literals::PRESENTATION_ATTRIBUTES__STROKE_OPACITY,element) as String)»
@@ -805,22 +891,34 @@ class FXMLConverter {
 	}
 	
 	def parseLength(String length) {
-		if( length.endsWith("px") ) {
-			return Double::parseDouble(length.substring(0,length.length - 2)); 
-		} else {
-			return Double::parseDouble(length);	
+		if( length != null ) {
+			if( length.endsWith("px") ) {
+				return Double::parseDouble(length.substring(0,length.length - 2)); 
+			} else {
+				return Double::parseDouble(length);	
+			}			
 		}
+		return 0.0;
 	}
 	
 	def parseCoordinate(String coordinate) {
-		return Double::parseDouble(coordinate);
+		if( coordinate != null ) {
+			return Double::parseDouble(coordinate);	
+		}
+		return 0.0;
 	}
 	
-	def parsePercentage(String perecentage) {
-		return Double::parseDouble(perecentage);
+	def parsePercentage(String percentage) {
+		if( percentage != null ) {
+			return Double::parseDouble(percentage);	
+		}
+		return 0.0;
 	}
 	
 	def parseDouble(String value) {
-		return Double::parseDouble(value)
+		if( value != null ) {
+			return Double::parseDouble(value)
+		}
+		return 0.0;
 	}
 }

@@ -5567,13 +5567,31 @@ public interface SvgPackage extends EPackage {
 	int SVG_USE_ELEMENT__HEIGHT = SVG_ELEMENT_FEATURE_COUNT + 90;
 
 	/**
+	 * The feature id for the '<em><b>X</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SVG_USE_ELEMENT__X = SVG_ELEMENT_FEATURE_COUNT + 91;
+
+	/**
+	 * The feature id for the '<em><b>Y</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SVG_USE_ELEMENT__Y = SVG_ELEMENT_FEATURE_COUNT + 92;
+
+	/**
 	 * The number of structural features of the '<em>Use Element</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SVG_USE_ELEMENT_FEATURE_COUNT = SVG_ELEMENT_FEATURE_COUNT + 91;
+	int SVG_USE_ELEMENT_FEATURE_COUNT = SVG_ELEMENT_FEATURE_COUNT + 93;
 
 	/**
 	 * The meta object id for the '{@link at.bestsolution.efxclipse.formats.svg.svg.impl.SvgImageElementImpl <em>Image Element</em>}' class.
@@ -40846,6 +40864,28 @@ public interface SvgPackage extends EPackage {
 	EAttribute getSvgUseElement_Height();
 
 	/**
+	 * Returns the meta object for the attribute '{@link at.bestsolution.efxclipse.formats.svg.svg.SvgUseElement#getX <em>X</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>X</em>'.
+	 * @see at.bestsolution.efxclipse.formats.svg.svg.SvgUseElement#getX()
+	 * @see #getSvgUseElement()
+	 * @generated
+	 */
+	EAttribute getSvgUseElement_X();
+
+	/**
+	 * Returns the meta object for the attribute '{@link at.bestsolution.efxclipse.formats.svg.svg.SvgUseElement#getY <em>Y</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Y</em>'.
+	 * @see at.bestsolution.efxclipse.formats.svg.svg.SvgUseElement#getY()
+	 * @see #getSvgUseElement()
+	 * @generated
+	 */
+	EAttribute getSvgUseElement_Y();
+
+	/**
 	 * Returns the meta object for class '{@link at.bestsolution.efxclipse.formats.svg.svg.SvgImageElement <em>Image Element</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -46830,6 +46870,22 @@ public interface SvgPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute SVG_USE_ELEMENT__HEIGHT = eINSTANCE.getSvgUseElement_Height();
+
+		/**
+		 * The meta object literal for the '<em><b>X</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute SVG_USE_ELEMENT__X = eINSTANCE.getSvgUseElement_X();
+
+		/**
+		 * The meta object literal for the '<em><b>Y</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute SVG_USE_ELEMENT__Y = eINSTANCE.getSvgUseElement_Y();
 
 		/**
 		 * The meta object literal for the '{@link at.bestsolution.efxclipse.formats.svg.svg.impl.SvgImageElementImpl <em>Image Element</em>}' class.
