@@ -24,7 +24,6 @@ import at.bestsolution.efxclipse.formats.svg.svg.SvgEllipseElement
 import at.bestsolution.efxclipse.formats.svg.svg.SvgCircleElement
 import org.eclipse.emf.ecore.util.EcoreUtil
 import at.bestsolution.efxclipse.formats.svg.svg.SvgClipPathElement
-import at.bestsolution.efxclipse.formats.svg.svg.GradientUnits
 import at.bestsolution.efxclipse.formats.svg.svg.CoreAttributes
 import java.awt.geom.AffineTransform
 import java.awt.geom.Point2D
@@ -102,8 +101,7 @@ class FXMLConverter {
 		«IF element.y2 != null»endY="«t.transform( new Point2D$Double(x2,y2), null).y»"«ENDIF»
 		«IF element.spreadMethod != SpreadMethod::PAD»cycleMethod="«element.spreadMethod.toFx»"«ENDIF»
 		«IF element.id != null»fx:id="«element.id»"«ENDIF»
-		«IF element.gradientUnits != null»proportional="«element.gradientUnits != GradientUnits::USER_SPACE_ON_USE»"«ENDIF»
-		>
+		proportional="false">
 		«val owner = resolveGradientStopElement(element)»
 		«IF owner != null»
 			<stops>
@@ -131,9 +129,8 @@ class FXMLConverter {
 ««« Is the Focus Radius calculation really correct???
 		«IF element.fx != null || element.fy != null»focusAngle="«calculateFocusAngle(t,cx,cy,fx,fy)»"«ENDIF»
 		«IF element.spreadMethod != SpreadMethod::PAD»cycleMethod="«element.spreadMethod.toFx»"«ENDIF»
-		«IF element.gradientUnits != null»proportional="«element.gradientUnits != GradientUnits::USER_SPACE_ON_USE»"«ENDIF»
 		«IF element.id != null»fx:id="«element.id»"«ENDIF»
-		>
+		proportional="false">
 		«val owner = resolveGradientStopElement(element)» 
 		«IF owner != null»
 			<stops>
