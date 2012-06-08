@@ -30,6 +30,7 @@ import org.eclipse.xtext.common.types.JvmTypeReference
 import org.eclipse.xtext.generator.IFileSystemAccess
 import org.eclipse.xtext.generator.IGenerator
 import org.eclipse.xtext.xbase.compiler.ImportManager
+import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.ValueProperty
 
 class FXGraphGenerator implements IGenerator {
 	 
@@ -132,7 +133,7 @@ class FXGraphGenerator implements IGenerator {
 	
 	def componentDefinition(ComponentDefinition definition, ImportManager importManager, LanguageManager languageManager, boolean preview, boolean skipController, boolean skipIncludes) '''
 		«val element = definition.rootNode»
-		<«element.type.shortName(importManager)» xmlns:fx="http://javafx.com/fxml"«fxElementAttributes(element,importManager,skipController)»«IF definition.controller != null && ! skipController » fx:controller="«definition.controller.qualifiedName»"«ENDIF»«IF hasAttributeProperties(element,preview)»«elementAttributes(element.properties,preview,skipController)»«ENDIF»>
+		<«element.type.shortName(importManager)» xmlns:fx="http://javafx.com/fxml"«fxElementAttributes(element,importManager,skipController)»«IF definition.controller != null && ! skipController » fx:controller="«definition.controller.qualifiedName»"«ENDIF»«IF hasAttributeProperties(element,preview)»«elementAttributes(element.properties,preview,skipController)»«elementStaticAttributes(element.staticProperties,importManager,preview,skipController)»«ENDIF»>
 			«IF definition.defines.size > 0»
 			<fx:define>
 				«FOR define : definition.defines»
@@ -164,7 +165,7 @@ class FXGraphGenerator implements IGenerator {
 	'''
 	
 	def elementContent(Element element, ImportManager importManager, boolean preview, boolean skipController, boolean skipIncludes) '''
-		<«element.type.shortName(importManager)»«fxElementAttributes(element,importManager,skipController)»«IF hasAttributeProperties(element,preview)»«elementAttributes(element.properties,preview,skipController)»«ENDIF»«IF ! hasNestedProperties(element,preview)»/«ENDIF»> 
+		<«element.type.shortName(importManager)»«fxElementAttributes(element,importManager,skipController)»«IF hasAttributeProperties(element,preview)»«elementAttributes(element.properties,preview,skipController)»«elementStaticAttributes(element.staticProperties,importManager,preview,skipController)»«ENDIF»«IF ! hasNestedProperties(element,preview)»/«ENDIF»> 
 		«IF hasNestedProperties(element,preview)»
 			«FOR e : element.defaultChildren»
 				«elementContent(e,importManager,preview,skipController,skipIncludes)»
@@ -253,7 +254,7 @@ class FXGraphGenerator implements IGenerator {
 	'''
 	
 	def statPropContent(List<StaticValueProperty> properties, ImportManager importManager, boolean preview, boolean skipController, boolean skipIncludes) '''
-		«FOR prop : properties»
+		«FOR prop : properties.filter([StaticValueProperty p|previewFilter(p,preview)]).filter([StaticValueProperty p|subelementFilter(p)])»
 		«IF prop.value instanceof SimpleValueProperty»
 			«IF (prop.value as SimpleValueProperty).stringValue != null»
 				<«prop.type.shortName(importManager)».«prop.name»>«(prop.value as SimpleValueProperty).stringValue»</«prop.type.shortName(importManager)».«prop.name»>
@@ -368,28 +369,76 @@ class FXGraphGenerator implements IGenerator {
 		return builder;
 	}
 	
+	def elementStaticAttributes(List<StaticValueProperty> properties, ImportManager importManager, boolean preview, boolean skipController) {
+		var builder = new StringBuilder();
+		
+		for( p : properties.filter([StaticValueProperty p|previewFilter(p,preview)]).filter([StaticValueProperty p|elementAttributeFilter(p)]) ) {
+			if( p.value instanceof SimpleValueProperty ) {
+				builder.append(" " + p.type.shortName(importManager) + "." + p.name + "=\""+simpleAttributeValue(p.value as SimpleValueProperty)+"\"");
+			} else if( p.value instanceof ReferenceValueProperty ) {
+				builder.append(" " + p.type.shortName(importManager) + "." + p.name + "=\"$"+(p.value as ReferenceValueProperty).reference.name+"\"");
+			} else if( p.value instanceof ControllerHandledValueProperty ) {
+				if( ! skipController ) {
+					builder.append(" " + p.type.shortName(importManager) + "." + p.name + "=\"#"+(p.value as ControllerHandledValueProperty).methodname +"\"");
+				}
+			} else if( p.value instanceof ScriptHandlerHandledValueProperty ) {
+				if( ! skipController ) {
+					builder.append(" " + p.type.shortName(importManager) + "." + p.name + "=\""+(p.value as ScriptHandlerHandledValueProperty).functionname +"\"");
+				}
+			} else if( p.value instanceof ScriptValueExpression ) {
+				if( ! skipController ) {
+					builder.append(" " + p.type.shortName(importManager) + "." + p.name + "=\""+(p.value as ScriptValueExpression).sourcecode.substring(2,(p.value as ScriptValueExpression).sourcecode.length-2).trim() +";\"");	
+				}
+			} else if( p.value instanceof ScriptValueReference ) {
+				if( ! skipController ) {
+					builder.append(" " + p.type.shortName(importManager) + "." + p.name + "=\"$"+(p.value as ScriptValueReference).reference + "\"");	
+				}
+			} else if( p.value instanceof LocationValueProperty ) {
+				builder.append(" " + p.type.shortName(importManager) + "." + p.name + "=\"@"+(p.value as LocationValueProperty).value+"\"");
+			} else if( p.value instanceof ResourceValueProperty ) {
+				builder.append(" " + p.type.shortName(importManager) + "." + p.name + "=\"%"+(p.value as ResourceValueProperty).value.value+"\"");
+			} else if( p.value instanceof BindValueProperty ) {
+				builder.append(" " + p.type.shortName(importManager) + "." + p.name + "=\"${"+(p.value as BindValueProperty).elementReference.name+"."+(p.value as BindValueProperty).attribute+"}\"");
+			}
+		}
+		
+		return builder;
+	}
+	
 	def subelementFilter(Property property) {
 		return ! elementAttributeFilter(property);
 	}
-
+	
 	def elementAttributeFilter(Property property) {
-		if( property.value instanceof SimpleValueProperty ) {
+		return elementAttributeFilter(property.value);
+	}
+	
+	def subelementFilter(StaticValueProperty property) {
+		return ! elementAttributeFilter(property);
+	}
+
+	def elementAttributeFilter(StaticValueProperty property) {
+		return elementAttributeFilter(property.value);
+	}
+	
+	def elementAttributeFilter(ValueProperty value) {
+		if( value instanceof SimpleValueProperty ) {
 			return true;
-		} else if( property.value instanceof ReferenceValueProperty ) {
+		} else if( value instanceof ReferenceValueProperty ) {
 			return true;
-		} else if( property.value instanceof ControllerHandledValueProperty ) {
+		} else if( value instanceof ControllerHandledValueProperty ) {
 			return true;
-		} else if( property.value instanceof ScriptHandlerHandledValueProperty ) {
+		} else if( value instanceof ScriptHandlerHandledValueProperty ) {
 			return true;
-		} else if( property.value instanceof ScriptValueReference ) {
+		} else if( value instanceof ScriptValueReference ) {
 			return true;
-		} else if( property.value instanceof ScriptValueExpression ) {
+		} else if( value instanceof ScriptValueExpression ) {
 			return true;
-		} else if( property.value instanceof LocationValueProperty ) {
+		} else if( value instanceof LocationValueProperty ) {
 			return true;
-		} else if( property.value instanceof ResourceValueProperty ) {
+		} else if( value instanceof ResourceValueProperty ) {
 			return true;
-		} else if( property.value instanceof BindValueProperty ) {
+		} else if( value instanceof BindValueProperty ) {
 			return true;
 		}
 		return false;
@@ -428,8 +477,30 @@ class FXGraphGenerator implements IGenerator {
 		return true;
 	}
 	
+	def previewFilter(StaticValueProperty property, boolean preview) {
+		if( ! preview ) {
+			if( "preview".equals(property.modifier) ) {
+				return false;
+			}
+		} else {
+			if( "runtime-only".equals(property.modifier) ) {
+				return false;
+			}
+		}
+		return true;
+	}
+	
 	def hasAttributeProperties(Element element, boolean preview) {
-		return element.properties.size > 0 && ! element.properties.filter([Property p|previewFilter(p,preview)]).filter([Property p|elementAttributeFilter(p)]).nullOrEmpty;
+		return 
+			(
+				element.properties.size > 0 
+				&& ! element.properties.filter([Property p|previewFilter(p,preview)]).filter([Property p|elementAttributeFilter(p)]).nullOrEmpty
+			)
+			|| 
+			(
+				element.staticProperties.size > 0
+				&& ! element.staticProperties.filter([StaticValueProperty p|previewFilter(p,preview)]).filter([StaticValueProperty p|elementAttributeFilter(p)]).nullOrEmpty
+			);
 	}
 	
 	def hasNestedProperties(Element element, boolean preview) {
@@ -442,7 +513,7 @@ class FXGraphGenerator implements IGenerator {
 		}
 		
 		if( element.staticProperties.size > 0) {
-			return true;
+			return ! element.staticProperties.filter([StaticValueProperty p|previewFilter(p,preview)]).filter([StaticValueProperty p|subelementFilter(p)]).nullOrEmpty;
 		}
 		
 		if( element.properties.size > 0 ) {

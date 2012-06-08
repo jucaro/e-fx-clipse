@@ -472,13 +472,22 @@ public interface FXGraphPackage extends EPackage
   int STATIC_VALUE_PROPERTY = 7;
 
   /**
+   * The feature id for the '<em><b>Modifier</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int STATIC_VALUE_PROPERTY__MODIFIER = 0;
+
+  /**
    * The feature id for the '<em><b>Type</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int STATIC_VALUE_PROPERTY__TYPE = 0;
+  int STATIC_VALUE_PROPERTY__TYPE = 1;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -487,7 +496,7 @@ public interface FXGraphPackage extends EPackage
    * @generated
    * @ordered
    */
-  int STATIC_VALUE_PROPERTY__NAME = 1;
+  int STATIC_VALUE_PROPERTY__NAME = 2;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' containment reference.
@@ -496,7 +505,7 @@ public interface FXGraphPackage extends EPackage
    * @generated
    * @ordered
    */
-  int STATIC_VALUE_PROPERTY__VALUE = 2;
+  int STATIC_VALUE_PROPERTY__VALUE = 3;
 
   /**
    * The number of structural features of the '<em>Static Value Property</em>' class.
@@ -505,7 +514,7 @@ public interface FXGraphPackage extends EPackage
    * @generated
    * @ordered
    */
-  int STATIC_VALUE_PROPERTY_FEATURE_COUNT = 3;
+  int STATIC_VALUE_PROPERTY_FEATURE_COUNT = 4;
 
   /**
    * The meta object id for the '{@link at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.impl.PropertyImpl <em>Property</em>}' class.
@@ -1415,6 +1424,17 @@ public interface FXGraphPackage extends EPackage
   EClass getStaticValueProperty();
 
   /**
+   * Returns the meta object for the attribute '{@link at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.StaticValueProperty#getModifier <em>Modifier</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Modifier</em>'.
+   * @see at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.StaticValueProperty#getModifier()
+   * @see #getStaticValueProperty()
+   * @generated
+   */
+  EAttribute getStaticValueProperty_Modifier();
+
+  /**
    * Returns the meta object for the containment reference '{@link at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.StaticValueProperty#getType <em>Type</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -2199,6 +2219,14 @@ public interface FXGraphPackage extends EPackage
      * @generated
      */
     EClass STATIC_VALUE_PROPERTY = eINSTANCE.getStaticValueProperty();
+
+    /**
+     * The meta object literal for the '<em><b>Modifier</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute STATIC_VALUE_PROPERTY__MODIFIER = eINSTANCE.getStaticValueProperty_Modifier();
 
     /**
      * The meta object literal for the '<em><b>Type</b></em>' containment reference feature.

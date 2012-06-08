@@ -117,7 +117,6 @@ protected class ThisRootNode extends RootToken {
 /************ begin Rule Model ****************
  *
  * Model:
- * 
  * 	package=PackageDeclaration? imports+=Import* componentDef=ComponentDefinition;
  *
  **/
@@ -297,7 +296,6 @@ protected class Model_ComponentDefAssignment_2 extends AssignmentToken  {
 /************ begin Rule PackageDeclaration ****************
  *
  * PackageDeclaration:
- * 
  * 	"package" name=QualifiedName;
  *
  **/
@@ -393,7 +391,6 @@ protected class PackageDeclaration_NameAssignment_1 extends AssignmentToken  {
 /************ begin Rule Import ****************
  *
  * Import:
- * 
  * 	"import" importedNamespace=QualifiedNameWithWildCard;
  *
  **/
@@ -489,27 +486,18 @@ protected class Import_ImportedNamespaceAssignment_1 extends AssignmentToken  {
 /************ begin Rule ComponentDefinition ****************
  *
  * ComponentDefinition:
- * 
- * 	"component" name=ValidID (("controlledby" controller=JvmTypeReference)? & ("styledwith" (previewCssFiles+=STRING |
- * 
- * 	"[" previewCssFiles+=STRING ("," previewCssFiles+=STRING)* "]"))? & ("resourcefile" previewResourceBundle=STRING)? &
- * 
+ * 	"component" name=ValidID (("controlledby" controller=JvmTypeReference)? & ("styledwith" (previewCssFiles+=STRING | "["
+ * 	previewCssFiles+=STRING ("," previewCssFiles+=STRING)* "]"))? & ("resourcefile" previewResourceBundle=STRING)? &
  * 	("extraClasspath" "[" previewClasspathEntries+=STRING ("," previewClasspathEntries+=STRING)* "]")? & ("sceneSetup"
- * 
  * 	sceneDefinition=[ComponentDefinition|QualifiedName])?) "{" scripts+=Script? (defines+=Define ("," defines+=Define)*)?
- * 
  * 	rootNode=Element "}";
  *
  **/
 
 // "component" name=ValidID (("controlledby" controller=JvmTypeReference)? & ("styledwith" (previewCssFiles+=STRING | "["
-// 
 // previewCssFiles+=STRING ("," previewCssFiles+=STRING)* "]"))? & ("resourcefile" previewResourceBundle=STRING)? &
-// 
 // ("extraClasspath" "[" previewClasspathEntries+=STRING ("," previewClasspathEntries+=STRING)* "]")? & ("sceneSetup"
-// 
 // sceneDefinition=[ComponentDefinition|QualifiedName])?) "{" scripts+=Script? (defines+=Define ("," defines+=Define)*)?
-// 
 // rootNode=Element "}"
 protected class ComponentDefinition_Group extends GroupToken {
 	
@@ -595,11 +583,8 @@ protected class ComponentDefinition_NameAssignment_1 extends AssignmentToken  {
 }
 
 // ("controlledby" controller=JvmTypeReference)? & ("styledwith" (previewCssFiles+=STRING | "[" previewCssFiles+=STRING
-// 
 // ("," previewCssFiles+=STRING)* "]"))? & ("resourcefile" previewResourceBundle=STRING)? & ("extraClasspath" "["
-// 
 // previewClasspathEntries+=STRING ("," previewClasspathEntries+=STRING)* "]")? & ("sceneSetup"
-// 
 // sceneDefinition=[ComponentDefinition|QualifiedName])?
 protected class ComponentDefinition_UnorderedGroup_2 extends UnorderedGroupToken {
 	
@@ -1687,24 +1672,17 @@ protected class ComponentDefinition_RightCurlyBracketKeyword_7 extends KeywordTo
 /************ begin Rule Element ****************
  *
  * Element:
- * 
  * 	type=JvmTypeReference (("(" value=SimpleValueProperty ")")? ("id" name=ValidID)? | ("id" name=ValidID)? "{"
- * 
  * 	((properties+=Property | staticProperties+=StaticValueProperty | defaultChildren+=Element) ("," (properties+=Property
- * 
  * 	| staticProperties+=StaticValueProperty | defaultChildren+=Element))*)? "}" | ("id" name=ValidID)? "createdby"
- * 
  * 	factory=ID "{" values+=FactoryValueElement ("," values+=FactoryValueElement)* "}");
  *
  **/
 
 // type=JvmTypeReference (("(" value=SimpleValueProperty ")")? ("id" name=ValidID)? | ("id" name=ValidID)? "{"
-// 
-// ((properties+=Property | staticProperties+=StaticValueProperty | defaultChildren+=Element) ("," (properties+=Property
-// 
-// | staticProperties+=StaticValueProperty | defaultChildren+=Element))*)? "}" | ("id" name=ValidID)? "createdby"
-// 
-// factory=ID "{" values+=FactoryValueElement ("," values+=FactoryValueElement)* "}")
+// ((properties+=Property | staticProperties+=StaticValueProperty | defaultChildren+=Element) ("," (properties+=Property |
+// staticProperties+=StaticValueProperty | defaultChildren+=Element))*)? "}" | ("id" name=ValidID)? "createdby" factory=ID
+// "{" values+=FactoryValueElement ("," values+=FactoryValueElement)* "}")
 protected class Element_Group extends GroupToken {
 	
 	public Element_Group(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -1779,12 +1757,9 @@ protected class Element_TypeAssignment_0 extends AssignmentToken  {
 }
 
 // ("(" value=SimpleValueProperty ")")? ("id" name=ValidID)? | ("id" name=ValidID)? "{" ((properties+=Property |
-// 
 // staticProperties+=StaticValueProperty | defaultChildren+=Element) ("," (properties+=Property |
-// 
-// staticProperties+=StaticValueProperty | defaultChildren+=Element))*)? "}" | ("id" name=ValidID)? "createdby"
-// 
-// factory=ID "{" values+=FactoryValueElement ("," values+=FactoryValueElement)* "}"
+// staticProperties+=StaticValueProperty | defaultChildren+=Element))*)? "}" | ("id" name=ValidID)? "createdby" factory=ID
+// "{" values+=FactoryValueElement ("," values+=FactoryValueElement)* "}"
 protected class Element_Alternatives_1 extends AlternativesToken {
 
 	public Element_Alternatives_1(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -2027,7 +2002,6 @@ protected class Element_NameAssignment_1_0_1_1 extends AssignmentToken  {
 
 
 // ("id" name=ValidID)? "{" ((properties+=Property | staticProperties+=StaticValueProperty | defaultChildren+=Element) (","
-// 
 // (properties+=Property | staticProperties+=StaticValueProperty | defaultChildren+=Element))*)? "}"
 protected class Element_Group_1_1 extends GroupToken {
 	
@@ -2153,7 +2127,6 @@ protected class Element_LeftCurlyBracketKeyword_1_1_1 extends KeywordToken  {
 }
 
 // ((properties+=Property | staticProperties+=StaticValueProperty | defaultChildren+=Element) ("," (properties+=Property |
-// 
 // staticProperties+=StaticValueProperty | defaultChildren+=Element))*)?
 protected class Element_Group_1_1_2 extends GroupToken {
 	
@@ -2924,7 +2897,6 @@ protected class Element_RightCurlyBracketKeyword_1_2_6 extends KeywordToken  {
 /************ begin Rule Define ****************
  *
  * Define:
- * 
  * 	"define" element=Element;
  *
  **/
@@ -3032,7 +3004,6 @@ protected class Define_ElementAssignment_1 extends AssignmentToken  {
 /************ begin Rule Script ****************
  *
  * Script:
- * 
  * 	"script" language=ID (source=STRING | sourcecode=SCRIPTLITERAL);
  *
  **/
@@ -3220,12 +3191,11 @@ protected class Script_SourcecodeAssignment_2_1 extends AssignmentToken  {
 /************ begin Rule StaticValueProperty ****************
  *
  * StaticValueProperty:
- * 
- * 	"call" type=JvmTypeReference "#" name=ID ":" value=ValueProperty;
+ * 	modifier=("preview" | "runtime-only")? "call" type=JvmTypeReference "#" name=ID ":" value=ValueProperty;
  *
  **/
 
-// "call" type=JvmTypeReference "#" name=ID ":" value=ValueProperty
+// modifier=("preview" | "runtime-only")? "call" type=JvmTypeReference "#" name=ID ":" value=ValueProperty
 protected class StaticValueProperty_Group extends GroupToken {
 	
 	public StaticValueProperty_Group(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -3240,7 +3210,7 @@ protected class StaticValueProperty_Group extends GroupToken {
     @Override
 	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
 		switch(index) {
-			case 0: return new StaticValueProperty_ValueAssignment_5(lastRuleCallOrigin, this, 0, inst);
+			case 0: return new StaticValueProperty_ValueAssignment_6(lastRuleCallOrigin, this, 0, inst);
 			default: return null;
 		}	
 	}
@@ -3254,16 +3224,16 @@ protected class StaticValueProperty_Group extends GroupToken {
 
 }
 
-// "call"
-protected class StaticValueProperty_CallKeyword_0 extends KeywordToken  {
+// modifier=("preview" | "runtime-only")?
+protected class StaticValueProperty_ModifierAssignment_0 extends AssignmentToken  {
 	
-	public StaticValueProperty_CallKeyword_0(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+	public StaticValueProperty_ModifierAssignment_0(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
 		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
 	}
 	
 	@Override
-	public Keyword getGrammarElement() {
-		return grammarAccess.getStaticValuePropertyAccess().getCallKeyword_0();
+	public Assignment getGrammarElement() {
+		return grammarAccess.getStaticValuePropertyAccess().getModifierAssignment_0();
 	}
 
     @Override
@@ -3273,18 +3243,57 @@ protected class StaticValueProperty_CallKeyword_0 extends KeywordToken  {
 		}	
 	}
 
+    @Override	
+	public IEObjectConsumer tryConsume() {
+		if((value = eObjectConsumer.getConsumable("modifier",false)) == null) return null;
+		IEObjectConsumer obj = eObjectConsumer.cloneAndConsume("modifier");
+		if(keywordSerializer.isValid(obj.getEObject(), grammarAccess.getStaticValuePropertyAccess().getModifierPreviewKeyword_0_0_0(), value, null)) {
+			type = AssignmentType.KEYWORD;
+			element = grammarAccess.getStaticValuePropertyAccess().getModifierPreviewKeyword_0_0_0();
+			return obj;
+		}
+		if(keywordSerializer.isValid(obj.getEObject(), grammarAccess.getStaticValuePropertyAccess().getModifierRuntimeOnlyKeyword_0_0_1(), value, null)) {
+			type = AssignmentType.KEYWORD;
+			element = grammarAccess.getStaticValuePropertyAccess().getModifierRuntimeOnlyKeyword_0_0_1();
+			return obj;
+		}
+		return null;
+	}
+
+}
+
+// "call"
+protected class StaticValueProperty_CallKeyword_1 extends KeywordToken  {
+	
+	public StaticValueProperty_CallKeyword_1(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
+	}
+	
+	@Override
+	public Keyword getGrammarElement() {
+		return grammarAccess.getStaticValuePropertyAccess().getCallKeyword_1();
+	}
+
+    @Override
+	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
+		switch(index) {
+			case 0: return new StaticValueProperty_ModifierAssignment_0(lastRuleCallOrigin, this, 0, inst);
+			default: return lastRuleCallOrigin.createFollowerAfterReturn(this, index, index - 1, inst);
+		}	
+	}
+
 }
 
 // type=JvmTypeReference
-protected class StaticValueProperty_TypeAssignment_1 extends AssignmentToken  {
+protected class StaticValueProperty_TypeAssignment_2 extends AssignmentToken  {
 	
-	public StaticValueProperty_TypeAssignment_1(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+	public StaticValueProperty_TypeAssignment_2(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
 		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
 	}
 	
 	@Override
 	public Assignment getGrammarElement() {
-		return grammarAccess.getStaticValuePropertyAccess().getTypeAssignment_1();
+		return grammarAccess.getStaticValuePropertyAccess().getTypeAssignment_2();
 	}
 
     @Override
@@ -3303,7 +3312,7 @@ protected class StaticValueProperty_TypeAssignment_1 extends AssignmentToken  {
 			IEObjectConsumer param = createEObjectConsumer((EObject)value);
 			if(param.isInstanceOf(grammarAccess.getJvmTypeReferenceRule().getType().getClassifier())) {
 				type = AssignmentType.PARSER_RULE_CALL;
-				element = grammarAccess.getStaticValuePropertyAccess().getTypeJvmTypeReferenceParserRuleCall_1_0(); 
+				element = grammarAccess.getStaticValuePropertyAccess().getTypeJvmTypeReferenceParserRuleCall_2_0(); 
 				consumed = obj;
 				return param;
 			}
@@ -3315,28 +3324,28 @@ protected class StaticValueProperty_TypeAssignment_1 extends AssignmentToken  {
 	public AbstractToken createFollowerAfterReturn(AbstractToken next,	int actIndex, int index, IEObjectConsumer inst) {
 		if(value == inst.getEObject() && !inst.isConsumed()) return null;
 		switch(index) {
-			case 0: return new StaticValueProperty_CallKeyword_0(lastRuleCallOrigin, next, actIndex, consumed);
+			case 0: return new StaticValueProperty_CallKeyword_1(lastRuleCallOrigin, next, actIndex, consumed);
 			default: return null;
 		}	
 	}	
 }
 
 // "#"
-protected class StaticValueProperty_NumberSignKeyword_2 extends KeywordToken  {
+protected class StaticValueProperty_NumberSignKeyword_3 extends KeywordToken  {
 	
-	public StaticValueProperty_NumberSignKeyword_2(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+	public StaticValueProperty_NumberSignKeyword_3(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
 		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
 	}
 	
 	@Override
 	public Keyword getGrammarElement() {
-		return grammarAccess.getStaticValuePropertyAccess().getNumberSignKeyword_2();
+		return grammarAccess.getStaticValuePropertyAccess().getNumberSignKeyword_3();
 	}
 
     @Override
 	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
 		switch(index) {
-			case 0: return new StaticValueProperty_TypeAssignment_1(lastRuleCallOrigin, this, 0, inst);
+			case 0: return new StaticValueProperty_TypeAssignment_2(lastRuleCallOrigin, this, 0, inst);
 			default: return null;
 		}	
 	}
@@ -3344,21 +3353,21 @@ protected class StaticValueProperty_NumberSignKeyword_2 extends KeywordToken  {
 }
 
 // name=ID
-protected class StaticValueProperty_NameAssignment_3 extends AssignmentToken  {
+protected class StaticValueProperty_NameAssignment_4 extends AssignmentToken  {
 	
-	public StaticValueProperty_NameAssignment_3(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+	public StaticValueProperty_NameAssignment_4(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
 		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
 	}
 	
 	@Override
 	public Assignment getGrammarElement() {
-		return grammarAccess.getStaticValuePropertyAccess().getNameAssignment_3();
+		return grammarAccess.getStaticValuePropertyAccess().getNameAssignment_4();
 	}
 
     @Override
 	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
 		switch(index) {
-			case 0: return new StaticValueProperty_NumberSignKeyword_2(lastRuleCallOrigin, this, 0, inst);
+			case 0: return new StaticValueProperty_NumberSignKeyword_3(lastRuleCallOrigin, this, 0, inst);
 			default: return null;
 		}	
 	}
@@ -3367,9 +3376,9 @@ protected class StaticValueProperty_NameAssignment_3 extends AssignmentToken  {
 	public IEObjectConsumer tryConsume() {
 		if((value = eObjectConsumer.getConsumable("name",true)) == null) return null;
 		IEObjectConsumer obj = eObjectConsumer.cloneAndConsume("name");
-		if(valueSerializer.isValid(obj.getEObject(), grammarAccess.getStaticValuePropertyAccess().getNameIDTerminalRuleCall_3_0(), value, null)) {
+		if(valueSerializer.isValid(obj.getEObject(), grammarAccess.getStaticValuePropertyAccess().getNameIDTerminalRuleCall_4_0(), value, null)) {
 			type = AssignmentType.TERMINAL_RULE_CALL;
-			element = grammarAccess.getStaticValuePropertyAccess().getNameIDTerminalRuleCall_3_0();
+			element = grammarAccess.getStaticValuePropertyAccess().getNameIDTerminalRuleCall_4_0();
 			return obj;
 		}
 		return null;
@@ -3378,21 +3387,21 @@ protected class StaticValueProperty_NameAssignment_3 extends AssignmentToken  {
 }
 
 // ":"
-protected class StaticValueProperty_ColonKeyword_4 extends KeywordToken  {
+protected class StaticValueProperty_ColonKeyword_5 extends KeywordToken  {
 	
-	public StaticValueProperty_ColonKeyword_4(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+	public StaticValueProperty_ColonKeyword_5(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
 		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
 	}
 	
 	@Override
 	public Keyword getGrammarElement() {
-		return grammarAccess.getStaticValuePropertyAccess().getColonKeyword_4();
+		return grammarAccess.getStaticValuePropertyAccess().getColonKeyword_5();
 	}
 
     @Override
 	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
 		switch(index) {
-			case 0: return new StaticValueProperty_NameAssignment_3(lastRuleCallOrigin, this, 0, inst);
+			case 0: return new StaticValueProperty_NameAssignment_4(lastRuleCallOrigin, this, 0, inst);
 			default: return null;
 		}	
 	}
@@ -3400,15 +3409,15 @@ protected class StaticValueProperty_ColonKeyword_4 extends KeywordToken  {
 }
 
 // value=ValueProperty
-protected class StaticValueProperty_ValueAssignment_5 extends AssignmentToken  {
+protected class StaticValueProperty_ValueAssignment_6 extends AssignmentToken  {
 	
-	public StaticValueProperty_ValueAssignment_5(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+	public StaticValueProperty_ValueAssignment_6(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
 		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
 	}
 	
 	@Override
 	public Assignment getGrammarElement() {
-		return grammarAccess.getStaticValuePropertyAccess().getValueAssignment_5();
+		return grammarAccess.getStaticValuePropertyAccess().getValueAssignment_6();
 	}
 
     @Override
@@ -3427,7 +3436,7 @@ protected class StaticValueProperty_ValueAssignment_5 extends AssignmentToken  {
 			IEObjectConsumer param = createEObjectConsumer((EObject)value);
 			if(param.isInstanceOf(grammarAccess.getValuePropertyRule().getType().getClassifier())) {
 				type = AssignmentType.PARSER_RULE_CALL;
-				element = grammarAccess.getStaticValuePropertyAccess().getValueValuePropertyParserRuleCall_5_0(); 
+				element = grammarAccess.getStaticValuePropertyAccess().getValueValuePropertyParserRuleCall_6_0(); 
 				consumed = obj;
 				return param;
 			}
@@ -3439,7 +3448,7 @@ protected class StaticValueProperty_ValueAssignment_5 extends AssignmentToken  {
 	public AbstractToken createFollowerAfterReturn(AbstractToken next,	int actIndex, int index, IEObjectConsumer inst) {
 		if(value == inst.getEObject() && !inst.isConsumed()) return null;
 		switch(index) {
-			case 0: return new StaticValueProperty_ColonKeyword_4(lastRuleCallOrigin, next, actIndex, consumed);
+			case 0: return new StaticValueProperty_ColonKeyword_5(lastRuleCallOrigin, next, actIndex, consumed);
 			default: return null;
 		}	
 	}	
@@ -3452,7 +3461,6 @@ protected class StaticValueProperty_ValueAssignment_5 extends AssignmentToken  {
 /************ begin Rule Property ****************
  *
  * Property:
- * 
  * 	modifier=("preview" | "runtime-only")? name=ID ":" value=ValueProperty;
  *
  **/
@@ -3633,7 +3641,6 @@ protected class Property_ValueAssignment_3 extends AssignmentToken  {
 /************ begin Rule ValueProperty ****************
  *
  * ValueProperty:
- * 
  * 	SingleValueProperty | MultiValueProperty;
  *
  **/
@@ -3772,19 +3779,14 @@ protected class ValueProperty_MultiValuePropertyParserRuleCall_1 extends RuleCal
 /************ begin Rule SingleValueProperty ****************
  *
  * SingleValueProperty:
- * 
  * 	SimpleValueProperty | Element | ReferenceValueProperty | IncludeValueProperty | CopyValueProperty |
- * 
  * 	ControllerHandledValueProperty | ScriptValueExpression | ScriptHandlerHandledValueProperty | ScriptValueReference |
- * 
  * 	LocationValueProperty | ResourceValueProperty | BindValueProperty;
  *
  **/
 
 // SimpleValueProperty | Element | ReferenceValueProperty | IncludeValueProperty | CopyValueProperty |
-// 
 // ControllerHandledValueProperty | ScriptValueExpression | ScriptHandlerHandledValueProperty | ScriptValueReference |
-// 
 // LocationValueProperty | ResourceValueProperty | BindValueProperty
 protected class SingleValueProperty_Alternatives extends AlternativesToken {
 
@@ -4275,7 +4277,6 @@ protected class SingleValueProperty_BindValuePropertyParserRuleCall_11 extends R
 /************ begin Rule MultiValueProperty ****************
  *
  * MultiValueProperty:
- * 
  * 	ListValueProperty | MapValueProperty;
  *
  **/
@@ -4390,7 +4391,6 @@ protected class MultiValueProperty_MapValuePropertyParserRuleCall_1 extends Rule
 /************ begin Rule FactoryValueElement ****************
  *
  * FactoryValueElement:
- * 
  * 	SimpleValueProperty | Element;
  *
  **/
@@ -4505,7 +4505,6 @@ protected class FactoryValueElement_ElementParserRuleCall_1 extends RuleCallToke
 /************ begin Rule ListValueElement ****************
  *
  * ListValueElement:
- * 
  * 	Element | ReferenceValueProperty | IncludeValueProperty | SimpleValueProperty;
  *
  **/
@@ -4696,7 +4695,6 @@ protected class ListValueElement_SimpleValuePropertyParserRuleCall_3 extends Rul
 /************ begin Rule ListValueProperty ****************
  *
  * ListValueProperty:
- * 
  * 	"[" value+=ListValueElement ("," value+=ListValueElement)* "]";
  *
  **/
@@ -4919,7 +4917,6 @@ protected class ListValueProperty_RightSquareBracketKeyword_3 extends KeywordTok
 /************ begin Rule MapValueProperty ****************
  *
  * MapValueProperty:
- * 
  * 	"{" properties+=Property ("," properties+=Property)* "}";
  *
  **/
@@ -5142,7 +5139,6 @@ protected class MapValueProperty_RightCurlyBracketKeyword_3 extends KeywordToken
 /************ begin Rule SimpleValueProperty ****************
  *
  * SimpleValueProperty:
- * 
  * 	stringValue=STRING | booleanValue=("true" | "false") | negative?="-"? (intValue=INT | realValue=REAL);
  *
  **/
@@ -5404,7 +5400,6 @@ protected class SimpleValueProperty_RealValueAssignment_2_1_1 extends Assignment
 /************ begin Rule ReferenceValueProperty ****************
  *
  * ReferenceValueProperty:
- * 
  * 	"idref" reference=[Element|ValidID];
  *
  **/
@@ -5503,7 +5498,6 @@ protected class ReferenceValueProperty_ReferenceAssignment_1 extends AssignmentT
 /************ begin Rule IncludeValueProperty ****************
  *
  * IncludeValueProperty:
- * 
  * 	"include" source=[ComponentDefinition|QualifiedName];
  *
  **/
@@ -5602,7 +5596,6 @@ protected class IncludeValueProperty_SourceAssignment_1 extends AssignmentToken 
 /************ begin Rule CopyValueProperty ****************
  *
  * CopyValueProperty:
- * 
  * 	"copy" reference=[Element|ValidID];
  *
  **/
@@ -5701,7 +5694,6 @@ protected class CopyValueProperty_ReferenceAssignment_1 extends AssignmentToken 
 /************ begin Rule ControllerHandledValueProperty ****************
  *
  * ControllerHandledValueProperty:
- * 
  * 	"controllermethod" methodname=ID;
  *
  **/
@@ -5797,7 +5789,6 @@ protected class ControllerHandledValueProperty_MethodnameAssignment_1 extends As
 /************ begin Rule ScriptHandlerHandledValueProperty ****************
  *
  * ScriptHandlerHandledValueProperty:
- * 
  * 	"scriptmethod" functionname=STRING;
  *
  **/
@@ -5893,7 +5884,6 @@ protected class ScriptHandlerHandledValueProperty_FunctionnameAssignment_1 exten
 /************ begin Rule ScriptValueExpression ****************
  *
  * ScriptValueExpression:
- * 
  * 	"scriptexpression" sourcecode=SCRIPTLITERAL;
  *
  **/
@@ -5989,7 +5979,6 @@ protected class ScriptValueExpression_SourcecodeAssignment_1 extends AssignmentT
 /************ begin Rule ScriptValueReference ****************
  *
  * ScriptValueReference:
- * 
  * 	"scriptvalue" reference=ID;
  *
  **/
@@ -6085,7 +6074,6 @@ protected class ScriptValueReference_ReferenceAssignment_1 extends AssignmentTok
 /************ begin Rule LocationValueProperty ****************
  *
  * LocationValueProperty:
- * 
  * 	"location" value=STRING;
  *
  **/
@@ -6181,7 +6169,6 @@ protected class LocationValueProperty_ValueAssignment_1 extends AssignmentToken 
 /************ begin Rule ResourceValueProperty ****************
  *
  * ResourceValueProperty:
- * 
  * 	"rstring" value=StringValue;
  *
  **/
@@ -6289,7 +6276,6 @@ protected class ResourceValueProperty_ValueAssignment_1 extends AssignmentToken 
 /************ begin Rule BindValueProperty ****************
  *
  * BindValueProperty:
- * 
  * 	"bind" elementReference=[Element|ValidID] "#" attribute=ID;
  *
  **/
@@ -6445,7 +6431,6 @@ protected class BindValueProperty_AttributeAssignment_3 extends AssignmentToken 
 /************ begin Rule StringValue ****************
  *
  * StringValue:
- * 
  * 	value=STRING;
  *
  **/
@@ -6491,7 +6476,6 @@ protected class StringValue_ValueAssignment extends AssignmentToken  {
 /************ begin Rule XExpression ****************
  *
  * XExpression:
- * 
  * 	XAssignment;
  *
  **/
@@ -6560,19 +6544,14 @@ protected class XExpression_XAssignmentParserRuleCall extends RuleCallToken {
 /************ begin Rule XAssignment ****************
  *
  * XAssignment returns XExpression:
- * 
  * 	{XAssignment} / * (declaringType=[types::JvmDeclaredType] '::')? * / feature=[types::JvmIdentifiableElement|ValidID]
- * 
  * 	OpSingleAssign value=XAssignment | XOrExpression (=> ({XBinaryOperation.leftOperand=current}
- * 
  * 	feature=[types::JvmIdentifiableElement|OpMultiAssign]) rightOperand=XAssignment)?;
  *
  **/
 
 // {XAssignment} / * (declaringType=[types::JvmDeclaredType] '::')? * / feature=[types::JvmIdentifiableElement|ValidID]
-// 
 // OpSingleAssign value=XAssignment | XOrExpression (=> ({XBinaryOperation.leftOperand=current}
-// 
 // feature=[types::JvmIdentifiableElement|OpMultiAssign]) rightOperand=XAssignment)?
 protected class XAssignment_Alternatives extends AlternativesToken {
 
@@ -6626,7 +6605,6 @@ protected class XAssignment_Alternatives extends AlternativesToken {
 }
 
 // {XAssignment} / * (declaringType=[types::JvmDeclaredType] '::')? * / feature=[types::JvmIdentifiableElement|ValidID]
-// 
 // OpSingleAssign value=XAssignment
 protected class XAssignment_Group_0 extends GroupToken {
 	
@@ -6789,7 +6767,6 @@ protected class XAssignment_ValueAssignment_0_3 extends AssignmentToken  {
 
 
 // XOrExpression (=> ({XBinaryOperation.leftOperand=current} feature=[types::JvmIdentifiableElement|OpMultiAssign])
-// 
 // rightOperand=XAssignment)?
 protected class XAssignment_Group_1 extends GroupToken {
 	
@@ -6848,7 +6825,6 @@ protected class XAssignment_XOrExpressionParserRuleCall_1_0 extends RuleCallToke
 }
 
 // (=> ({XBinaryOperation.leftOperand=current} feature=[types::JvmIdentifiableElement|OpMultiAssign])
-// 
 // rightOperand=XAssignment)?
 protected class XAssignment_Group_1_1 extends GroupToken {
 	
@@ -7047,15 +7023,12 @@ protected class XAssignment_RightOperandAssignment_1_1_1 extends AssignmentToken
 /************ begin Rule XOrExpression ****************
  *
  * XOrExpression returns XExpression:
- * 
  * 	XAndExpression (=> ({XBinaryOperation.leftOperand=current} feature=[types::JvmIdentifiableElement|OpOr])
- * 
  * 	rightOperand=XAndExpression)*;
  *
  **/
 
 // XAndExpression (=> ({XBinaryOperation.leftOperand=current} feature=[types::JvmIdentifiableElement|OpOr])
-// 
 // rightOperand=XAndExpression)*
 protected class XOrExpression_Group extends GroupToken {
 	
@@ -7339,15 +7312,12 @@ protected class XOrExpression_RightOperandAssignment_1_1 extends AssignmentToken
 /************ begin Rule XAndExpression ****************
  *
  * XAndExpression returns XExpression:
- * 
  * 	XEqualityExpression (=> ({XBinaryOperation.leftOperand=current} feature=[types::JvmIdentifiableElement|OpAnd])
- * 
  * 	rightOperand=XEqualityExpression)*;
  *
  **/
 
 // XEqualityExpression (=> ({XBinaryOperation.leftOperand=current} feature=[types::JvmIdentifiableElement|OpAnd])
-// 
 // rightOperand=XEqualityExpression)*
 protected class XAndExpression_Group extends GroupToken {
 	
@@ -7435,7 +7405,6 @@ protected class XAndExpression_XEqualityExpressionParserRuleCall_0 extends RuleC
 }
 
 // (=> ({XBinaryOperation.leftOperand=current} feature=[types::JvmIdentifiableElement|OpAnd])
-// 
 // rightOperand=XEqualityExpression)*
 protected class XAndExpression_Group_1 extends GroupToken {
 	
@@ -7633,15 +7602,12 @@ protected class XAndExpression_RightOperandAssignment_1_1 extends AssignmentToke
 /************ begin Rule XEqualityExpression ****************
  *
  * XEqualityExpression returns XExpression:
- * 
  * 	XRelationalExpression (=> ({XBinaryOperation.leftOperand=current} feature=[types::JvmIdentifiableElement|OpEquality])
- * 
  * 	rightOperand=XRelationalExpression)*;
  *
  **/
 
 // XRelationalExpression (=> ({XBinaryOperation.leftOperand=current} feature=[types::JvmIdentifiableElement|OpEquality])
-// 
 // rightOperand=XRelationalExpression)*
 protected class XEqualityExpression_Group extends GroupToken {
 	
@@ -7729,7 +7695,6 @@ protected class XEqualityExpression_XRelationalExpressionParserRuleCall_0 extend
 }
 
 // (=> ({XBinaryOperation.leftOperand=current} feature=[types::JvmIdentifiableElement|OpEquality])
-// 
 // rightOperand=XRelationalExpression)*
 protected class XEqualityExpression_Group_1 extends GroupToken {
 	
@@ -7927,19 +7892,14 @@ protected class XEqualityExpression_RightOperandAssignment_1_1 extends Assignmen
 /************ begin Rule XRelationalExpression ****************
  *
  * XRelationalExpression returns XExpression:
- * 
  * 	XOtherOperatorExpression (=> ({XInstanceOfExpression.expression=current} "instanceof") type=JvmTypeReference | =>
- * 
  * 	({XBinaryOperation.leftOperand=current} feature=[types::JvmIdentifiableElement|OpCompare])
- * 
  * 	rightOperand=XOtherOperatorExpression)*;
  *
  **/
 
 // XOtherOperatorExpression (=> ({XInstanceOfExpression.expression=current} "instanceof") type=JvmTypeReference | =>
-// 
 // ({XBinaryOperation.leftOperand=current} feature=[types::JvmIdentifiableElement|OpCompare])
-// 
 // rightOperand=XOtherOperatorExpression)*
 protected class XRelationalExpression_Group extends GroupToken {
 	
@@ -8027,9 +7987,7 @@ protected class XRelationalExpression_XOtherOperatorExpressionParserRuleCall_0 e
 }
 
 // (=> ({XInstanceOfExpression.expression=current} "instanceof") type=JvmTypeReference | =>
-// 
 // ({XBinaryOperation.leftOperand=current} feature=[types::JvmIdentifiableElement|OpCompare])
-// 
 // rightOperand=XOtherOperatorExpression)*
 protected class XRelationalExpression_Alternatives_1 extends AlternativesToken {
 
@@ -8236,7 +8194,6 @@ protected class XRelationalExpression_TypeAssignment_1_0_1 extends AssignmentTok
 
 
 // => ({XBinaryOperation.leftOperand=current} feature=[types::JvmIdentifiableElement|OpCompare])
-// 
 // rightOperand=XOtherOperatorExpression
 protected class XRelationalExpression_Group_1_1 extends GroupToken {
 	
@@ -8435,15 +8392,12 @@ protected class XRelationalExpression_RightOperandAssignment_1_1_1 extends Assig
 /************ begin Rule XOtherOperatorExpression ****************
  *
  * XOtherOperatorExpression returns XExpression:
- * 
  * 	XAdditiveExpression (=> ({XBinaryOperation.leftOperand=current} feature=[types::JvmIdentifiableElement|OpOther])
- * 
  * 	rightOperand=XAdditiveExpression)*;
  *
  **/
 
 // XAdditiveExpression (=> ({XBinaryOperation.leftOperand=current} feature=[types::JvmIdentifiableElement|OpOther])
-// 
 // rightOperand=XAdditiveExpression)*
 protected class XOtherOperatorExpression_Group extends GroupToken {
 	
@@ -8531,7 +8485,6 @@ protected class XOtherOperatorExpression_XAdditiveExpressionParserRuleCall_0 ext
 }
 
 // (=> ({XBinaryOperation.leftOperand=current} feature=[types::JvmIdentifiableElement|OpOther])
-// 
 // rightOperand=XAdditiveExpression)*
 protected class XOtherOperatorExpression_Group_1 extends GroupToken {
 	
@@ -8729,15 +8682,12 @@ protected class XOtherOperatorExpression_RightOperandAssignment_1_1 extends Assi
 /************ begin Rule XAdditiveExpression ****************
  *
  * XAdditiveExpression returns XExpression:
- * 
  * 	XMultiplicativeExpression (=> ({XBinaryOperation.leftOperand=current} feature=[types::JvmIdentifiableElement|OpAdd])
- * 
  * 	rightOperand=XMultiplicativeExpression)*;
  *
  **/
 
 // XMultiplicativeExpression (=> ({XBinaryOperation.leftOperand=current} feature=[types::JvmIdentifiableElement|OpAdd])
-// 
 // rightOperand=XMultiplicativeExpression)*
 protected class XAdditiveExpression_Group extends GroupToken {
 	
@@ -8825,7 +8775,6 @@ protected class XAdditiveExpression_XMultiplicativeExpressionParserRuleCall_0 ex
 }
 
 // (=> ({XBinaryOperation.leftOperand=current} feature=[types::JvmIdentifiableElement|OpAdd])
-// 
 // rightOperand=XMultiplicativeExpression)*
 protected class XAdditiveExpression_Group_1 extends GroupToken {
 	
@@ -9023,15 +8972,12 @@ protected class XAdditiveExpression_RightOperandAssignment_1_1 extends Assignmen
 /************ begin Rule XMultiplicativeExpression ****************
  *
  * XMultiplicativeExpression returns XExpression:
- * 
  * 	XUnaryOperation (=> ({XBinaryOperation.leftOperand=current} feature=[types::JvmIdentifiableElement|OpMulti])
- * 
  * 	rightOperand=XUnaryOperation)*;
  *
  **/
 
 // XUnaryOperation (=> ({XBinaryOperation.leftOperand=current} feature=[types::JvmIdentifiableElement|OpMulti])
-// 
 // rightOperand=XUnaryOperation)*
 protected class XMultiplicativeExpression_Group extends GroupToken {
 	
@@ -9119,7 +9065,6 @@ protected class XMultiplicativeExpression_XUnaryOperationParserRuleCall_0 extend
 }
 
 // (=> ({XBinaryOperation.leftOperand=current} feature=[types::JvmIdentifiableElement|OpMulti])
-// 
 // rightOperand=XUnaryOperation)*
 protected class XMultiplicativeExpression_Group_1 extends GroupToken {
 	
@@ -9317,7 +9262,6 @@ protected class XMultiplicativeExpression_RightOperandAssignment_1_1 extends Ass
 /************ begin Rule XUnaryOperation ****************
  *
  * XUnaryOperation returns XExpression:
- * 
  * 	{XUnaryOperation} feature=[types::JvmIdentifiableElement|OpUnary] operand=XCastedExpression | XCastedExpression;
  *
  **/
@@ -9555,7 +9499,6 @@ protected class XUnaryOperation_XCastedExpressionParserRuleCall_1 extends RuleCa
 /************ begin Rule XCastedExpression ****************
  *
  * XCastedExpression returns XExpression:
- * 
  * 	XMemberFeatureCall (=> ({XCastedExpression.target=current} "as") type=JvmTypeReference)*;
  *
  **/
@@ -9827,27 +9770,18 @@ protected class XCastedExpression_TypeAssignment_1_1 extends AssignmentToken  {
 /************ begin Rule XMemberFeatureCall ****************
  *
  * XMemberFeatureCall returns XExpression:
- * 
  * 	XPrimaryExpression (=> ({XAssignment.assignable=current} "." feature=[types::JvmIdentifiableElement|ValidID]
- * 
  * 	OpSingleAssign) value=XAssignment | => ({XMemberFeatureCall.memberCallTarget=current} ("." | nullSafe?="?." |
- * 
  * 	spreading?="*.")) ("<" typeArguments+=JvmArgumentTypeReference ("," typeArguments+=JvmArgumentTypeReference)* ">")?
- * 
  * 	feature=[types::JvmIdentifiableElement|ValidID] (=> explicitOperationCall?="(" (memberCallArguments+=XShortClosure |
- * 
  * 	memberCallArguments+=XExpression ("," memberCallArguments+=XExpression)*)? ")")? => memberCallArguments+=XClosure?)*;
  *
  **/
 
 // XPrimaryExpression (=> ({XAssignment.assignable=current} "." feature=[types::JvmIdentifiableElement|ValidID]
-// 
 // OpSingleAssign) value=XAssignment | => ({XMemberFeatureCall.memberCallTarget=current} ("." | nullSafe?="?." |
-// 
 // spreading?="*.")) ("<" typeArguments+=JvmArgumentTypeReference ("," typeArguments+=JvmArgumentTypeReference)* ">")?
-// 
 // feature=[types::JvmIdentifiableElement|ValidID] (=> explicitOperationCall?="(" (memberCallArguments+=XShortClosure |
-// 
 // memberCallArguments+=XExpression ("," memberCallArguments+=XExpression)*)? ")")? => memberCallArguments+=XClosure?)*
 protected class XMemberFeatureCall_Group extends GroupToken {
 	
@@ -9935,13 +9869,9 @@ protected class XMemberFeatureCall_XPrimaryExpressionParserRuleCall_0 extends Ru
 }
 
 // (=> ({XAssignment.assignable=current} "." feature=[types::JvmIdentifiableElement|ValidID] OpSingleAssign)
-// 
 // value=XAssignment | => ({XMemberFeatureCall.memberCallTarget=current} ("." | nullSafe?="?." | spreading?="*.")) ("<"
-// 
 // typeArguments+=JvmArgumentTypeReference ("," typeArguments+=JvmArgumentTypeReference)* ">")?
-// 
 // feature=[types::JvmIdentifiableElement|ValidID] (=> explicitOperationCall?="(" (memberCallArguments+=XShortClosure |
-// 
 // memberCallArguments+=XExpression ("," memberCallArguments+=XExpression)*)? ")")? => memberCallArguments+=XClosure?)*
 protected class XMemberFeatureCall_Alternatives_1 extends AlternativesToken {
 
@@ -9974,7 +9904,6 @@ protected class XMemberFeatureCall_Alternatives_1 extends AlternativesToken {
 }
 
 // => ({XAssignment.assignable=current} "." feature=[types::JvmIdentifiableElement|ValidID] OpSingleAssign)
-// 
 // value=XAssignment
 protected class XMemberFeatureCall_Group_1_0 extends GroupToken {
 	
@@ -10209,11 +10138,8 @@ protected class XMemberFeatureCall_ValueAssignment_1_0_1 extends AssignmentToken
 
 
 // => ({XMemberFeatureCall.memberCallTarget=current} ("." | nullSafe?="?." | spreading?="*.")) ("<"
-// 
 // typeArguments+=JvmArgumentTypeReference ("," typeArguments+=JvmArgumentTypeReference)* ">")?
-// 
 // feature=[types::JvmIdentifiableElement|ValidID] (=> explicitOperationCall?="(" (memberCallArguments+=XShortClosure |
-// 
 // memberCallArguments+=XExpression ("," memberCallArguments+=XExpression)*)? ")")? => memberCallArguments+=XClosure?
 protected class XMemberFeatureCall_Group_1_1 extends GroupToken {
 	
@@ -10681,7 +10607,6 @@ protected class XMemberFeatureCall_FeatureAssignment_1_1_2 extends AssignmentTok
 }
 
 // (=> explicitOperationCall?="(" (memberCallArguments+=XShortClosure | memberCallArguments+=XExpression (","
-// 
 // memberCallArguments+=XExpression)*)? ")")?
 protected class XMemberFeatureCall_Group_1_1_3 extends GroupToken {
 	
@@ -11050,19 +10975,14 @@ protected class XMemberFeatureCall_MemberCallArgumentsAssignment_1_1_4 extends A
 /************ begin Rule XPrimaryExpression ****************
  *
  * XPrimaryExpression returns XExpression:
- * 
- * 	XConstructorCall | XBlockExpression | XSwitchExpression | XFeatureCall | XLiteral | XIfExpression |
- * 
- * 	XForLoopExpression | XWhileExpression | XDoWhileExpression | XThrowExpression | XReturnExpression |
- * 
- * 	XTryCatchFinallyExpression | XParenthesizedExpression;
+ * 	XConstructorCall | XBlockExpression | XSwitchExpression | XFeatureCall | XLiteral | XIfExpression | XForLoopExpression
+ * 	| XWhileExpression | XDoWhileExpression | XThrowExpression | XReturnExpression | XTryCatchFinallyExpression |
+ * 	XParenthesizedExpression;
  *
  **/
 
 // XConstructorCall | XBlockExpression | XSwitchExpression | XFeatureCall | XLiteral | XIfExpression | XForLoopExpression |
-// 
 // XWhileExpression | XDoWhileExpression | XThrowExpression | XReturnExpression | XTryCatchFinallyExpression |
-// 
 // XParenthesizedExpression
 protected class XPrimaryExpression_Alternatives extends AlternativesToken {
 
@@ -11604,7 +11524,6 @@ protected class XPrimaryExpression_XParenthesizedExpressionParserRuleCall_12 ext
 /************ begin Rule XLiteral ****************
  *
  * XLiteral returns XExpression:
- * 
  * 	XClosure | XBooleanLiteral | XNumberLiteral | XNullLiteral | XStringLiteral | XTypeLiteral;
  *
  **/
@@ -11871,15 +11790,12 @@ protected class XLiteral_XTypeLiteralParserRuleCall_5 extends RuleCallToken {
 /************ begin Rule XClosure ****************
  *
  * XClosure returns XExpression:
- * 
- * 	{XClosure} "[" => ((declaredFormalParameters+=JvmFormalParameter (","
- * 
- * 	declaredFormalParameters+=JvmFormalParameter)*)? explicitSyntax?="|")? expression=XExpressionInClosure "]";
+ * 	{XClosure} "[" => ((declaredFormalParameters+=JvmFormalParameter ("," declaredFormalParameters+=JvmFormalParameter)*)?
+ * 	explicitSyntax?="|")? expression=XExpressionInClosure "]";
  *
  **/
 
 // {XClosure} "[" => ((declaredFormalParameters+=JvmFormalParameter ("," declaredFormalParameters+=JvmFormalParameter)*)?
-// 
 // explicitSyntax?="|")? expression=XExpressionInClosure "]"
 protected class XClosure_Group extends GroupToken {
 	
@@ -11958,7 +11874,6 @@ protected class XClosure_LeftSquareBracketKeyword_1 extends KeywordToken  {
 }
 
 // => ((declaredFormalParameters+=JvmFormalParameter ("," declaredFormalParameters+=JvmFormalParameter)*)?
-// 
 // explicitSyntax?="|")?
 protected class XClosure_Group_2 extends GroupToken {
 	
@@ -12278,7 +12193,6 @@ protected class XClosure_RightSquareBracketKeyword_4 extends KeywordToken  {
 /************ begin Rule XExpressionInClosure ****************
  *
  * XExpressionInClosure returns XExpression:
- * 
  * 	{XBlockExpression} (expressions+=XExpressionInsideBlock ";"?)*;
  *
  **/
@@ -12416,15 +12330,12 @@ protected class XExpressionInClosure_ExpressionsAssignment_1_0 extends Assignmen
 /************ begin Rule XShortClosure ****************
  *
  * XShortClosure returns XExpression:
- * 
  * 	=> ({XClosure} (declaredFormalParameters+=JvmFormalParameter ("," declaredFormalParameters+=JvmFormalParameter)*)?
- * 
  * 	explicitSyntax?="|") expression=XExpression;
  *
  **/
 
 // => ({XClosure} (declaredFormalParameters+=JvmFormalParameter ("," declaredFormalParameters+=JvmFormalParameter)*)?
-// 
 // explicitSyntax?="|") expression=XExpression
 protected class XShortClosure_Group extends GroupToken {
 	
@@ -12455,7 +12366,6 @@ protected class XShortClosure_Group extends GroupToken {
 }
 
 // => ({XClosure} (declaredFormalParameters+=JvmFormalParameter ("," declaredFormalParameters+=JvmFormalParameter)*)?
-// 
 // explicitSyntax?="|")
 protected class XShortClosure_Group_0 extends GroupToken {
 	
@@ -12479,7 +12389,6 @@ protected class XShortClosure_Group_0 extends GroupToken {
 }
 
 // {XClosure} (declaredFormalParameters+=JvmFormalParameter ("," declaredFormalParameters+=JvmFormalParameter)*)?
-// 
 // explicitSyntax?="|"
 protected class XShortClosure_Group_0_0 extends GroupToken {
 	
@@ -12780,7 +12689,6 @@ protected class XShortClosure_ExpressionAssignment_1 extends AssignmentToken  {
 /************ begin Rule XParenthesizedExpression ****************
  *
  * XParenthesizedExpression returns XExpression:
- * 
  * 	"(" XExpression ")";
  *
  **/
@@ -12921,7 +12829,6 @@ protected class XParenthesizedExpression_RightParenthesisKeyword_2 extends Keywo
 /************ begin Rule XIfExpression ****************
  *
  * XIfExpression returns XExpression:
- * 
  * 	{XIfExpression} "if" "(" if=XExpression ")" then=XExpression ("else" else=XExpression)?;
  *
  **/
@@ -13238,15 +13145,12 @@ protected class XIfExpression_ElseAssignment_6_1 extends AssignmentToken  {
 /************ begin Rule XSwitchExpression ****************
  *
  * XSwitchExpression returns XExpression:
- * 
  * 	{XSwitchExpression} "switch" (=> (localVarName=ValidID ":")? switch=XExpression | => ("(" localVarName=ValidID ":")
- * 
  * 	switch=XExpression ")") "{" cases+=XCasePart+ ("default" ":" default=XExpression)? "}";
  *
  **/
 
 // {XSwitchExpression} "switch" (=> (localVarName=ValidID ":")? switch=XExpression | => ("(" localVarName=ValidID ":")
-// 
 // switch=XExpression ")") "{" cases+=XCasePart+ ("default" ":" default=XExpression)? "}"
 protected class XSwitchExpression_Group extends GroupToken {
 	
@@ -13947,7 +13851,6 @@ protected class XSwitchExpression_RightCurlyBracketKeyword_6 extends KeywordToke
 /************ begin Rule XCasePart ****************
  *
  * XCasePart:
- * 
  * 	typeGuard=JvmTypeReference? ("case" case=XExpression)? ":" then=XExpression;
  *
  **/
@@ -14193,15 +14096,12 @@ protected class XCasePart_ThenAssignment_3 extends AssignmentToken  {
 /************ begin Rule XForLoopExpression ****************
  *
  * XForLoopExpression returns XExpression:
- * 
  * 	{XForLoopExpression} "for" "(" declaredParam=JvmFormalParameter ":" forExpression=XExpression ")"
- * 
  * 	eachExpression=XExpression;
  *
  **/
 
 // {XForLoopExpression} "for" "(" declaredParam=JvmFormalParameter ":" forExpression=XExpression ")"
-// 
 // eachExpression=XExpression
 protected class XForLoopExpression_Group extends GroupToken {
 	
@@ -14490,7 +14390,6 @@ protected class XForLoopExpression_EachExpressionAssignment_7 extends Assignment
 /************ begin Rule XWhileExpression ****************
  *
  * XWhileExpression returns XExpression:
- * 
  * 	{XWhileExpression} "while" "(" predicate=XExpression ")" body=XExpression;
  *
  **/
@@ -14715,7 +14614,6 @@ protected class XWhileExpression_BodyAssignment_5 extends AssignmentToken  {
 /************ begin Rule XDoWhileExpression ****************
  *
  * XDoWhileExpression returns XExpression:
- * 
  * 	{XDoWhileExpression} "do" body=XExpression "while" "(" predicate=XExpression ")";
  *
  **/
@@ -14962,7 +14860,6 @@ protected class XDoWhileExpression_RightParenthesisKeyword_6 extends KeywordToke
 /************ begin Rule XBlockExpression ****************
  *
  * XBlockExpression returns XExpression:
- * 
  * 	{XBlockExpression} "{" (expressions+=XExpressionInsideBlock ";"?)* "}";
  *
  **/
@@ -15144,7 +15041,6 @@ protected class XBlockExpression_RightCurlyBracketKeyword_3 extends KeywordToken
 /************ begin Rule XExpressionInsideBlock ****************
  *
  * XExpressionInsideBlock returns XExpression:
- * 
  * 	XVariableDeclaration | XExpression;
  *
  **/
@@ -15303,15 +15199,12 @@ protected class XExpressionInsideBlock_XExpressionParserRuleCall_1 extends RuleC
 /************ begin Rule XVariableDeclaration ****************
  *
  * XVariableDeclaration returns XExpression:
- * 
  * 	{XVariableDeclaration} (writeable?="var" | "val") (=> (type=JvmTypeReference name=ValidID) | name=ValidID) ("="
- * 
  * 	right=XExpression)?;
  *
  **/
 
 // {XVariableDeclaration} (writeable?="var" | "val") (=> (type=JvmTypeReference name=ValidID) | name=ValidID) ("="
-// 
 // right=XExpression)?
 protected class XVariableDeclaration_Group extends GroupToken {
 	
@@ -15730,7 +15623,6 @@ protected class XVariableDeclaration_RightAssignment_3_1 extends AssignmentToken
 /************ begin Rule JvmFormalParameter ****************
  *
  * JvmFormalParameter returns types::JvmFormalParameter:
- * 
  * 	parameterType=JvmTypeReference? name=ValidID;
  *
  **/
@@ -15850,7 +15742,6 @@ protected class JvmFormalParameter_NameAssignment_1 extends AssignmentToken  {
 /************ begin Rule FullJvmFormalParameter ****************
  *
  * FullJvmFormalParameter returns types::JvmFormalParameter:
- * 
  * 	parameterType=JvmTypeReference name=ValidID;
  *
  **/
@@ -15970,23 +15861,16 @@ protected class FullJvmFormalParameter_NameAssignment_1 extends AssignmentToken 
 /************ begin Rule XFeatureCall ****************
  *
  * XFeatureCall returns XExpression:
- * 
  * 	{XFeatureCall} declaringType=[types::JvmDeclaredType|StaticQualifier]? ("<" typeArguments+=JvmArgumentTypeReference
- * 
  * 	("," typeArguments+=JvmArgumentTypeReference)* ">")? feature=[types::JvmIdentifiableElement|IdOrSuper] (=>
- * 
  * 	explicitOperationCall?="(" (featureCallArguments+=XShortClosure | featureCallArguments+=XExpression (","
- * 
  * 	featureCallArguments+=XExpression)*)? ")")? => featureCallArguments+=XClosure?;
  *
  **/
 
 // {XFeatureCall} declaringType=[types::JvmDeclaredType|StaticQualifier]? ("<" typeArguments+=JvmArgumentTypeReference (","
-// 
 // typeArguments+=JvmArgumentTypeReference)* ">")? feature=[types::JvmIdentifiableElement|IdOrSuper] (=>
-// 
 // explicitOperationCall?="(" (featureCallArguments+=XShortClosure | featureCallArguments+=XExpression (","
-// 
 // featureCallArguments+=XExpression)*)? ")")? => featureCallArguments+=XClosure?
 protected class XFeatureCall_Group extends GroupToken {
 	
@@ -16328,7 +16212,6 @@ protected class XFeatureCall_FeatureAssignment_3 extends AssignmentToken  {
 }
 
 // (=> explicitOperationCall?="(" (featureCallArguments+=XShortClosure | featureCallArguments+=XExpression (","
-// 
 // featureCallArguments+=XExpression)*)? ")")?
 protected class XFeatureCall_Group_4 extends GroupToken {
 	
@@ -16697,19 +16580,14 @@ protected class XFeatureCall_FeatureCallArgumentsAssignment_5 extends Assignment
 /************ begin Rule XConstructorCall ****************
  *
  * XConstructorCall returns XExpression:
- * 
  * 	{XConstructorCall} "new" constructor=[types::JvmConstructor|QualifiedName] ("<"
- * 
  * 	typeArguments+=JvmArgumentTypeReference ("," typeArguments+=JvmArgumentTypeReference)* ">")? ("("
- * 
  * 	(arguments+=XShortClosure | arguments+=XExpression ("," arguments+=XExpression)*)? ")")? => arguments+=XClosure?;
  *
  **/
 
 // {XConstructorCall} "new" constructor=[types::JvmConstructor|QualifiedName] ("<" typeArguments+=JvmArgumentTypeReference
-// 
 // ("," typeArguments+=JvmArgumentTypeReference)* ">")? ("(" (arguments+=XShortClosure | arguments+=XExpression (","
-// 
 // arguments+=XExpression)*)? ")")? => arguments+=XClosure?
 protected class XConstructorCall_Group extends GroupToken {
 	
@@ -17388,7 +17266,6 @@ protected class XConstructorCall_ArgumentsAssignment_5 extends AssignmentToken  
 /************ begin Rule XBooleanLiteral ****************
  *
  * XBooleanLiteral returns XExpression:
- * 
  * 	{XBooleanLiteral} ("false" | isTrue?="true");
  *
  **/
@@ -17535,7 +17412,6 @@ protected class XBooleanLiteral_IsTrueAssignment_1_1 extends AssignmentToken  {
 /************ begin Rule XNullLiteral ****************
  *
  * XNullLiteral returns XExpression:
- * 
  * 	{XNullLiteral} "null";
  *
  **/
@@ -17624,7 +17500,6 @@ protected class XNullLiteral_NullKeyword_1 extends KeywordToken  {
 /************ begin Rule XNumberLiteral ****************
  *
  * XNumberLiteral returns XExpression:
- * 
  * 	{XNumberLiteral} value=Number;
  *
  **/
@@ -17725,7 +17600,6 @@ protected class XNumberLiteral_ValueAssignment_1 extends AssignmentToken  {
 /************ begin Rule XStringLiteral ****************
  *
  * XStringLiteral returns XExpression:
- * 
  * 	{XStringLiteral} value=STRING;
  *
  **/
@@ -17826,7 +17700,6 @@ protected class XStringLiteral_ValueAssignment_1 extends AssignmentToken  {
 /************ begin Rule XTypeLiteral ****************
  *
  * XTypeLiteral returns XExpression:
- * 
  * 	{XTypeLiteral} "typeof" "(" type=[types::JvmType|QualifiedName] ")";
  *
  **/
@@ -17996,7 +17869,6 @@ protected class XTypeLiteral_RightParenthesisKeyword_4 extends KeywordToken  {
 /************ begin Rule XThrowExpression ****************
  *
  * XThrowExpression returns XExpression:
- * 
  * 	{XThrowExpression} "throw" expression=XExpression;
  *
  **/
@@ -18131,7 +18003,6 @@ protected class XThrowExpression_ExpressionAssignment_2 extends AssignmentToken 
 /************ begin Rule XReturnExpression ****************
  *
  * XReturnExpression returns XExpression:
- * 
  * 	{XReturnExpression} "return" => expression=XExpression?;
  *
  **/
@@ -18267,15 +18138,12 @@ protected class XReturnExpression_ExpressionAssignment_2 extends AssignmentToken
 /************ begin Rule XTryCatchFinallyExpression ****************
  *
  * XTryCatchFinallyExpression returns XExpression:
- * 
  * 	{XTryCatchFinallyExpression} "try" expression=XExpression (catchClauses+=XCatchClause+ ("finally"
- * 
  * 	finallyExpression=XExpression)? | "finally" finallyExpression=XExpression);
  *
  **/
 
 // {XTryCatchFinallyExpression} "try" expression=XExpression (catchClauses+=XCatchClause+ ("finally"
-// 
 // finallyExpression=XExpression)? | "finally" finallyExpression=XExpression)
 protected class XTryCatchFinallyExpression_Group extends GroupToken {
 	
@@ -18683,7 +18551,6 @@ protected class XTryCatchFinallyExpression_FinallyExpressionAssignment_3_1_1 ext
 /************ begin Rule XCatchClause ****************
  *
  * XCatchClause:
- * 
  * 	"catch" "(" declaredParam=FullJvmFormalParameter ")" expression=XExpression;
  *
  **/
@@ -18883,7 +18750,6 @@ protected class XCatchClause_ExpressionAssignment_4 extends AssignmentToken  {
 /************ begin Rule JvmTypeReference ****************
  *
  * JvmTypeReference:
- * 
  * 	JvmParameterizedTypeReference => ({JvmGenericArrayTypeReference.componentType=current} "[" "]")* | XFunctionTypeRef;
  *
  **/
@@ -19158,7 +19024,6 @@ protected class JvmTypeReference_XFunctionTypeRefParserRuleCall_1 extends RuleCa
 /************ begin Rule XFunctionTypeRef ****************
  *
  * XFunctionTypeRef:
- * 
  * 	("(" (paramTypes+=JvmTypeReference ("," paramTypes+=JvmTypeReference)*)? ")")? "=>" returnType=JvmTypeReference;
  *
  **/
@@ -19496,9 +19361,7 @@ protected class XFunctionTypeRef_ReturnTypeAssignment_2 extends AssignmentToken 
 /************ begin Rule JvmParameterizedTypeReference ****************
  *
  * JvmParameterizedTypeReference:
- * 
  * 	type=[JvmType|QualifiedName] ("<" arguments+=JvmArgumentTypeReference ("," arguments+=JvmArgumentTypeReference)*
- * 
  * 	">")?;
  *
  **/
@@ -19782,7 +19645,6 @@ protected class JvmParameterizedTypeReference_GreaterThanSignKeyword_1_3 extends
 /************ begin Rule JvmArgumentTypeReference ****************
  *
  * JvmArgumentTypeReference returns JvmTypeReference:
- * 
  * 	JvmTypeReference | JvmWildcardTypeReference;
  *
  **/
@@ -19901,7 +19763,6 @@ protected class JvmArgumentTypeReference_JvmWildcardTypeReferenceParserRuleCall_
 /************ begin Rule JvmWildcardTypeReference ****************
  *
  * JvmWildcardTypeReference:
- * 
  * 	{JvmWildcardTypeReference} "?" (constraints+=JvmUpperBound | constraints+=JvmLowerBound)?;
  *
  **/
@@ -20107,7 +19968,6 @@ protected class JvmWildcardTypeReference_ConstraintsAssignment_2_1 extends Assig
 /************ begin Rule JvmUpperBound ****************
  *
  * JvmUpperBound:
- * 
  * 	"extends" typeReference=JvmTypeReference;
  *
  **/
@@ -20215,7 +20075,6 @@ protected class JvmUpperBound_TypeReferenceAssignment_1 extends AssignmentToken 
 /************ begin Rule JvmUpperBoundAnded ****************
  *
  * JvmUpperBoundAnded returns JvmUpperBound:
- * 
  * 	"&" typeReference=JvmTypeReference;
  *
  **/
@@ -20323,7 +20182,6 @@ protected class JvmUpperBoundAnded_TypeReferenceAssignment_1 extends AssignmentT
 /************ begin Rule JvmLowerBound ****************
  *
  * JvmLowerBound:
- * 
  * 	"super" typeReference=JvmTypeReference;
  *
  **/
@@ -20431,7 +20289,6 @@ protected class JvmLowerBound_TypeReferenceAssignment_1 extends AssignmentToken 
 /************ begin Rule JvmTypeParameter ****************
  *
  * JvmTypeParameter:
- * 
  * 	name=ValidID (constraints+=JvmUpperBound constraints+=JvmUpperBoundAnded* | constraints+=JvmLowerBound)?;
  *
  **/

@@ -24,6 +24,7 @@ import org.eclipse.xtext.common.types.JvmTypeReference;
  * <p>
  * The following features are implemented:
  * <ul>
+ *   <li>{@link at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.impl.StaticValuePropertyImpl#getModifier <em>Modifier</em>}</li>
  *   <li>{@link at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.impl.StaticValuePropertyImpl#getType <em>Type</em>}</li>
  *   <li>{@link at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.impl.StaticValuePropertyImpl#getName <em>Name</em>}</li>
  *   <li>{@link at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.impl.StaticValuePropertyImpl#getValue <em>Value</em>}</li>
@@ -34,6 +35,26 @@ import org.eclipse.xtext.common.types.JvmTypeReference;
  */
 public class StaticValuePropertyImpl extends MinimalEObjectImpl.Container implements StaticValueProperty
 {
+  /**
+   * The default value of the '{@link #getModifier() <em>Modifier</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getModifier()
+   * @generated
+   * @ordered
+   */
+  protected static final String MODIFIER_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getModifier() <em>Modifier</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getModifier()
+   * @generated
+   * @ordered
+   */
+  protected String modifier = MODIFIER_EDEFAULT;
+
   /**
    * The cached value of the '{@link #getType() <em>Type</em>}' containment reference.
    * <!-- begin-user-doc -->
@@ -93,6 +114,29 @@ public class StaticValuePropertyImpl extends MinimalEObjectImpl.Container implem
   protected EClass eStaticClass()
   {
     return FXGraphPackage.Literals.STATIC_VALUE_PROPERTY;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public String getModifier()
+  {
+    return modifier;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setModifier(String newModifier)
+  {
+    String oldModifier = modifier;
+    modifier = newModifier;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, FXGraphPackage.STATIC_VALUE_PROPERTY__MODIFIER, oldModifier, modifier));
   }
 
   /**
@@ -242,6 +286,8 @@ public class StaticValuePropertyImpl extends MinimalEObjectImpl.Container implem
   {
     switch (featureID)
     {
+      case FXGraphPackage.STATIC_VALUE_PROPERTY__MODIFIER:
+        return getModifier();
       case FXGraphPackage.STATIC_VALUE_PROPERTY__TYPE:
         return getType();
       case FXGraphPackage.STATIC_VALUE_PROPERTY__NAME:
@@ -262,6 +308,9 @@ public class StaticValuePropertyImpl extends MinimalEObjectImpl.Container implem
   {
     switch (featureID)
     {
+      case FXGraphPackage.STATIC_VALUE_PROPERTY__MODIFIER:
+        setModifier((String)newValue);
+        return;
       case FXGraphPackage.STATIC_VALUE_PROPERTY__TYPE:
         setType((JvmTypeReference)newValue);
         return;
@@ -285,6 +334,9 @@ public class StaticValuePropertyImpl extends MinimalEObjectImpl.Container implem
   {
     switch (featureID)
     {
+      case FXGraphPackage.STATIC_VALUE_PROPERTY__MODIFIER:
+        setModifier(MODIFIER_EDEFAULT);
+        return;
       case FXGraphPackage.STATIC_VALUE_PROPERTY__TYPE:
         setType((JvmTypeReference)null);
         return;
@@ -308,6 +360,8 @@ public class StaticValuePropertyImpl extends MinimalEObjectImpl.Container implem
   {
     switch (featureID)
     {
+      case FXGraphPackage.STATIC_VALUE_PROPERTY__MODIFIER:
+        return MODIFIER_EDEFAULT == null ? modifier != null : !MODIFIER_EDEFAULT.equals(modifier);
       case FXGraphPackage.STATIC_VALUE_PROPERTY__TYPE:
         return type != null;
       case FXGraphPackage.STATIC_VALUE_PROPERTY__NAME:
@@ -329,7 +383,9 @@ public class StaticValuePropertyImpl extends MinimalEObjectImpl.Container implem
     if (eIsProxy()) return super.toString();
 
     StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (name: ");
+    result.append(" (modifier: ");
+    result.append(modifier);
+    result.append(", name: ");
     result.append(name);
     result.append(')');
     return result.toString();

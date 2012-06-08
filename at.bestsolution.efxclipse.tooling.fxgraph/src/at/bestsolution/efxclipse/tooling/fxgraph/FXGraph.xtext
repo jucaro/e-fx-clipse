@@ -48,7 +48,7 @@ Script:
 ;
 
 StaticValueProperty:
-	'call' type=JvmTypeReference '#' name=ID ':' value=ValueProperty
+	modifier=('preview'|'runtime-only')? 'call' type=JvmTypeReference '#' name=ID ':' value=ValueProperty
 ;
 
 Property:
