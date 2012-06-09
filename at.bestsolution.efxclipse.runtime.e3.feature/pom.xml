@@ -1,0 +1,16 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<name>e(fx)clipse - Features - e3 Feature</name>
+	<groupId>at.bestsolution.efxclipse.runtime</groupId>
+	<artifactId>at.bestsolution.efxclipse.runtime.e3.feature</artifactId>
+	<packaging>eclipse-feature</packaging>
+	
+	<parent>
+		<groupId>at.bestsolution</groupId>
+		<artifactId>efxclipse</artifactId>
+		<relativePath>../at.bestsolution.efxclipse.releng/pom.xml</relativePath>
+		<version>0.0.14-SNAPSHOT</version>
+	</parent>
+
+</project>
