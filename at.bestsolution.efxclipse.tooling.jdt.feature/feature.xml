@@ -2,7 +2,7 @@
 <feature
       id="at.bestsolution.efxclipse.tooling.jdt.feature"
       label="e(fx)clipse - Single - JDT Support"
-      version="0.0.14.qualifier"
+      version="0.1.0.qualifier"
       provider-name="BestSolution.at">
 
    <description url="http://efxclipse.org">

@@ -2,7 +2,7 @@
 <feature
       id="at.bestsolution.efxclipse.tooling.feature"
       label="e(fx)clipse - Composite - FX Tooling"
-      version="0.0.14.qualifier"
+      version="0.1.0.qualifier"
       provider-name="BestSolution.at"
       plugin="at.bestsolution.efxclipse.tooling.ui">
 

@@ -2,7 +2,7 @@
 <feature
       id="at.bestsolution.efxclipse.tooling.fxml.feature"
       label="e(fx)clipse - Single - FXML editing support"
-      version="0.0.14.qualifier"
+      version="0.1.0.qualifier"
       provider-name="BestSolution.at">
 
    <description url="http://efxclipse.org">
