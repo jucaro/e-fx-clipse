@@ -1,0 +1,263 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"
+	xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<modelVersion>4.0.0</modelVersion>
+	<name>e(fx)clipse build</name>
+
+	<prerequisites>
+		<maven>3.0</maven>
+	</prerequisites>
+
+	<groupId>at.bestsolution</groupId>
+	<artifactId>efxclipse</artifactId>
+	<version>0.0.14-SNAPSHOT</version>
+	<packaging>pom</packaging>
+	<properties>
+		<tycho-version>0.14.1</tycho-version>
+		<junit-version>4.8.1</junit-version>
+		<mockito-version>1.8.4</mockito-version>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<platform-version>[3.7,3.8)</platform-version>
+	</properties>
+
+	<modules>
+		<module>../at.bestsolution.efxclipse.runtime.osgi</module>
+		<module>../at.bestsolution.efxclipse.runtime.javafx</module>
+		<module>../at.bestsolution.efxclipse.runtime.databinding</module>
+		<module>../at.bestsolution.efxclipse.runtime.application</module>
+		<module>../at.bestsolution.efxclipse.runtime.di</module>
+		<module>../at.bestsolution.efxclipse.runtime.guice</module>
+		<module>../at.bestsolution.efxclipse.runtime.osgi.util</module>
+		<module>../at.bestsolution.efxclipse.runtime.panels</module>
+		<module>../at.bestsolution.efxclipse.runtime.services</module>
+		<module>../at.bestsolution.efxclipse.runtime.theme</module>
+		<module>../at.bestsolution.efxclipse.runtime.workbench</module>
+		<module>../at.bestsolution.efxclipse.runtime.workbench.renderers</module>
+		<module>../at.bestsolution.efxclipse.runtime.workbench3</module>
+		
+		<module>../at.bestsolution.efxclipse.formats.svg</module>
+		<module>../at.bestsolution.efxclipse.formats.fxg</module>
+		
+		<module>../at.bestsolution.efxclipse.tooling.converter</module>
+		<module>../at.bestsolution.efxclipse.tooling.css</module>
+		<module>../at.bestsolution.efxclipse.tooling.css.ui</module>
+		<module>../at.bestsolution.efxclipse.tooling.css.jfx</module>
+		<module>../at.bestsolution.efxclipse.tooling.css.web</module>
+		<module>../at.bestsolution.efxclipse.tooling.jdt.core</module>
+		<module>../at.bestsolution.efxclipse.tooling.jdt.ui</module>
+		<module>../at.bestsolution.efxclipse.tooling.ui</module>
+		<module>../at.bestsolution.efxclipse.tooling.fxml</module>
+		<module>../at.bestsolution.efxclipse.tooling.model</module>
+		<module>../at.bestsolution.efxclipse.tooling.fxgraph</module>
+		<module>../at.bestsolution.efxclipse.tooling.fxgraph.ui</module>
+		<module>../at.bestsolution.efxclipse.tooling.pde.adaptor</module>
+		<module>../at.bestsolution.efxclipse.tooling.pde.fragment</module>
+		<module>../at.bestsolution.efxclipse.tooling.pde.ui</module>
+		<module>../at.bestsolution.efxclipse.tooling.ui.preview</module>
+		
+		<!-- 
+			
+			at.bestsolution.efxclipse.feature
+			at.bestsolution.efxclipse.runtime.feature
+			at.bestsolution.efxclipse.runtime.osgi.feature
+			at.bestsolution.efxclipse.tooling.convert.feature
+			at.bestsolution.efxclipse.tooling.css.feature
+			at.bestsolution.efxclipse.tooling.feature
+			at.bestsolution.efxclipse.tooling.fxgraph.feature
+			at.bestsolution.efxclipse.tooling.fxml.feature
+			at.bestsolution.efxclipse.tooling.jdt.feature
+			at.bestsolution.efxclipse.runtime.e3.feature
+			at.bestsolution.efxclipse.tooling.pde.feature
+			at.bestsolution.efxclipse.tooling.updatesite
+			
+			
+			### at.bestsolution.efxclipse.formats.fxg
+			### at.bestsolution.efxclipse.formats.svg
+			
+			### at.bestsolution.efxclipse.runtime.application
+			### at.bestsolution.efxclipse.runtime.databinding
+			### at.bestsolution.efxclipse.runtime.di
+			### at.bestsolution.efxclipse.runtime.guice
+			### at.bestsolution.efxclipse.runtime.javafx
+			### at.bestsolution.efxclipse.runtime.osgi
+			### at.bestsolution.efxclipse.runtime.osgi.util
+			### at.bestsolution.efxclipse.runtime.panels
+			### at.bestsolution.efxclipse.runtime.services
+			at.bestsolution.efxclipse.runtime.swt
+			### at.bestsolution.efxclipse.runtime.theme
+			### at.bestsolution.efxclipse.runtime.workbench
+			### at.bestsolution.efxclipse.runtime.workbench.renderers
+			### at.bestsolution.efxclipse.runtime.workbench3
+			
+			at.bestsolution.efxclipse.tooling.converter
+			### at.bestsolution.efxclipse.tooling.css
+			### at.bestsolution.efxclipse.tooling.css.jfx
+			at.bestsolution.efxclipse.tooling.css.jfx.test
+			at.bestsolution.efxclipse.tooling.css.tests
+			### at.bestsolution.efxclipse.tooling.css.ui
+			### at.bestsolution.efxclipse.tooling.css.web
+			### at.bestsolution.efxclipse.tooling.fxgraph
+			at.bestsolution.efxclipse.tooling.fxgraph.tests
+			### at.bestsolution.efxclipse.tooling.fxgraph.ui
+			### at.bestsolution.efxclipse.tooling.fxml
+			### at.bestsolution.efxclipse.tooling.jdt.core
+			### at.bestsolution.efxclipse.tooling.jdt.ui
+			### at.bestsolution.efxclipse.tooling.model
+			### at.bestsolution.efxclipse.tooling.pde.adaptor
+			### at.bestsolution.efxclipse.tooling.pde.fragment
+			### at.bestsolution.efxclipse.tooling.pde.ui
+			at.bestsolution.efxclipse.tooling.svgpath
+			at.bestsolution.efxclipse.tooling.svgpath.tests
+			at.bestsolution.efxclipse.tooling.svgpath.ui
+			### at.bestsolution.efxclipse.tooling.ui
+			### at.bestsolution.efxclipse.tooling.ui.preview
+		 -->
+		
+	</modules>
+
+	<repositories>
+		<repository>
+			<id>indigo</id>
+			<layout>p2</layout>
+			<url>http://download.eclipse.org/releases/indigo</url>
+		</repository>
+		<repository>
+			<id>xtext</id>
+			<layout>p2</layout>
+			<url>http://download.eclipse.org/modeling/tmf/xtext/updates/composite/latest</url>
+		</repository>	
+		
+		<repository>
+			<id>e4</id>
+			<layout>p2</layout>
+			<url>http://download.eclipse.org/e4/updates/0.12-I-builds/</url>
+		</repository>	
+			
+	</repositories>
+
+	<pluginRepositories>
+		<pluginRepository>
+			<id>tycho</id>
+			<url>http://repository.sonatype.org/content/groups/sonatype-public-grid</url>
+			<snapshots>
+				<enabled>true</enabled>
+			</snapshots>
+		</pluginRepository>
+	</pluginRepositories>
+
+	<build>
+
+		<!-- build plugins -->
+		<plugins>
+			<plugin>
+				<groupId>org.eclipse.tycho</groupId>
+				<artifactId>tycho-maven-plugin</artifactId>
+				<version>${tycho-version}</version>
+				<extensions>true</extensions>
+			</plugin>
+
+			<plugin>
+				<groupId>org.eclipse.tycho</groupId>
+				<artifactId>target-platform-configuration</artifactId>
+				<version>${tycho-version}</version>
+				<configuration>
+					<resolver>p2</resolver>
+					<pomDependencies>consider</pomDependencies>
+					<environments>
+						<environment>
+							<os>linux</os>
+							<ws>gtk</ws>
+							<arch>x86</arch>
+						</environment>
+						<environment>
+							<os>linux</os>
+							<ws>gtk</ws>
+							<arch>x86_64</arch>
+						</environment>
+						<environment>
+							<os>win32</os>
+							<ws>win32</ws>
+							<arch>x86</arch>
+						</environment>
+						<environment>
+							<os>win32</os>
+							<ws>win32</ws>
+							<arch>x86_64</arch>
+						</environment>
+						<environment>
+							<os>macosx</os>
+							<ws>cocoa</ws>
+							<arch>x86_64</arch>
+						</environment>
+					</environments>
+				</configuration>
+			</plugin>
+		</plugins>
+
+
+		<!-- defines the default settings for the used plugins -->
+		<pluginManagement>
+			<plugins>
+				<plugin>
+					<groupId>org.eclipse.tycho</groupId>
+					<artifactId>tycho-compiler-plugin</artifactId>
+					<version>${tycho-version}</version>
+					<configuration>
+						<encoding>UTF-8</encoding>
+						<source>1.6</source>
+						<target>1.6</target>
+						<compilerArgument>-verbose -bootclasspath /Users/tomschindl/Applications/javafx-sdk2.2.0-beta/rt/lib/jfxrt.jar</compilerArgument>
+					</configuration>
+				</plugin>
+				<plugin>
+					<groupId>org.eclipse.tycho</groupId>
+					<artifactId>tycho-source-plugin</artifactId>
+					<version>${tycho-version}</version>
+					<executions>
+						<execution>
+							<id>plugin-source</id>
+							<goals>
+								<goal>plugin-source</goal>
+							</goals>
+						</execution>
+					</executions>
+				</plugin>
+				<plugin>
+				<groupId>org.eclipse.tycho</groupId>
+				<artifactId>tycho-packaging-plugin</artifactId>
+				<version>${tycho-version}</version>
+				<configuration>
+					<archiveSite>true</archiveSite>
+				</configuration>
+			</plugin>
+			</plugins>
+		</pluginManagement>
+	</build>
+
+	<dependencyManagement>
+		<dependencies>
+			<dependency>
+				<groupId>junit</groupId>
+				<artifactId>junit</artifactId>
+				<version>${junit-version}</version>
+				<scope>test</scope>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
+
+	<dependencies>
+		<dependency>
+			<groupId>org.mockito</groupId>
+			<artifactId>mockito-core</artifactId>
+			<version>${mockito-version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<scope>test</scope>
+		</dependency>
+	</dependencies>
+
+</project>
