@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://web.resource.org/cc/"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   sodipodi:docname="color-picker-white.svgz"
+   sodipodi:docbase="/home/johann/Developpement/KDE Digikam/color"
+   inkscape:version="0.45.1"
+   sodipodi:version="0.32"
+   id="svg1592"
+   height="1000"
+   width="1000"
+   inkscape:export-filename="/home/pinheiro/artwork/oooicons/crystalsvg/colorpicker248.png"
+   inkscape:export-xdpi="196.36363"
+   inkscape:export-ydpi="196.36363"
+   version="1.0"
+   inkscape:output_extension="org.inkscape.output.svgz.inkscape">
+   <defs
+     id="defs3">
+     <!--  linearGradient
+       id="linearGradient4417"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="matrix(0.7071067811865476,0.7071067811865475,-0.7071067811865475,0.7071067811865476,0.0,0.0)"
+       x1="0"
+       y1="0"
+       x2="100"
+       y2="0"
+       >
+       <stop
+         style="stop-color:#ff0000"
+         offset="0.0000000"
+         id="stop3155" />
+      <stop
+         style="stop-color:#0000ff"
+         offset="1.0"
+         id="stop3156" />
+     </linearGradient-->
+     
+     <linearGradient
+       id="linearGradient4417"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="matrix(1.239845,-0.594423,0.150736,0.662307,-131.3924,-8.023885e-2)"
+       x1="111.31033"
+       y1="198.13455"
+       x2="135.19012"
+       y2="235.01132"
+       >
+       <stop
+         style="stop-color:#ff0000"
+         offset="0.0000000"
+         id="stop3155" />
+      <stop
+         style="stop-color:#0000ff"
+         offset="0.33462518"
+         id="stop3156" />
+      <stop
+         style="stop-color:#00ff00"
+         offset="0.55554277"
+         id="stop3157" />
+      <stop
+         style="stop-color:#00ffff"
+         offset="0.74528182"
+         id="stop3158" />
+      <stop
+         style="stop-color:#ffff00"
+         offset="1.0000000"
+         id="stop3159" />
+     </linearGradient>
+     
+     
+     </defs>
+   <g>
+   	<rect width="1000" height="1000" style="fill:url(#linearGradient4417);"></rect>
+   	<path
+       id="path2000"
+       d="M 3.3992754,95.081802 C 9.3802319,89.565091 15.990611,90.668576 21.106763,94.749222 C 25.417604,98.187531 29.770145,105.2679 24.117361,110.29857 C 44.273957,92.01005 64.517125,73.679986 84.673669,55.391463 C 90.409069,50.875099 83.896764,45.393532 80.19591,41.516374 C 75.702769,36.809182 67.857637,36.771835 62.285009,41.48738 C 42.314057,59.677053 23.370125,76.892124 3.3992754,95.081802 z "
+       style="stroke:#000; stroke-width:1;" />
+   	
+   </g>
+</svg>

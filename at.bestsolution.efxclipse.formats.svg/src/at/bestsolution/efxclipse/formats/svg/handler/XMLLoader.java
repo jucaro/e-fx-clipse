@@ -33,7 +33,7 @@ public class XMLLoader {
 	public static void main(String[] args) {
 		XMLLoader l = new XMLLoader();
 		try {
-			File f = new File("/Users/tomschindl/git/e-fx-clipse/at.bestsolution.efxclipse.formats.svg/samples/metalorbs.svg");
+			File f = new File("/Users/tomschindl/git/e-fx-clipse/at.bestsolution.efxclipse.formats.svg/samples/oxygen/test2.svg");
 			InputStream in;
 			
 			if( f.getName().endsWith("svgz") ) {
