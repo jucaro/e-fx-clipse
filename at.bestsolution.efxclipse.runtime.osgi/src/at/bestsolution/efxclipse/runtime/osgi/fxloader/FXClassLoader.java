@@ -58,7 +58,7 @@ public class FXClassLoader implements ClassLoadingHook, AdaptorHook {
 	private ServiceTracker<Location, Location> installLocation = null;
 
 	private BundleContext context = null;
-
+	
 	/*
 	 * Remember the classloader for use in post look ups because of native classloading by javafx' native code
 	 * See http://javafx-jira.kenai.com/browse/RT-20883
@@ -264,25 +264,47 @@ public class FXClassLoader implements ClassLoadingHook, AdaptorHook {
 		}
 
 		private static URLClassLoader createClassLoaderForIDE(ClassLoader parent, ReflectivePreferenceService prefService) {
-			String pluginId = "at.bestsolution.efxclipse.tooling.jdt.core";
-			String key = pluginId + ".javafx.dirlocation";
+			if( FXClassLoadingConfigurator.DEBUG ) {
+				System.err.println("MyBundleClassLoader#createClassLoaderForIDE - Started");
+			}
+			
+			try {
+				String pluginId = "at.bestsolution.efxclipse.tooling.jdt.core";
+				String key = pluginId + ".javafx.dirlocation";
 
-			String installPath = prefService.getInstanceValue(pluginId, key, null);
-			if (installPath != null) {
-				File f = new File(new File(new File(installPath, "rt"), "lib"), "jfxrt.jar");
-				if (f.exists()) {
-					try {
-						URL url = f.getCanonicalFile().toURI().toURL();
-						return new URLClassLoader(new URL[] { url }, parent);
-					} catch (MalformedURLException e) {
-						// TODO Auto-generated catch block
-						e.printStackTrace();
-					} catch (IOException e) {
-						// TODO Auto-generated catch block
-						e.printStackTrace();
+				String installPath = prefService.getInstanceValue(pluginId, key, null);
+				if (installPath != null) {
+					File f = new File(new File(new File(installPath, "rt"), "lib"), "jfxrt.jar");
+					
+					if( FXClassLoadingConfigurator.DEBUG ) {
+						System.err.println("MyBundleClassLoader#createClassLoaderForIDE - Assumed location: " + f.getAbsolutePath());
 					}
-				} else {
-					System.err.println("Could not locate rt/lib/jfxrt.jar in the installation path '" + installPath + "'");
+					
+					if (f.exists()) {
+						if( FXClassLoadingConfigurator.DEBUG ) {
+							System.err.println("MyBundleClassLoader#createClassLoaderForIDE - Found javafxrt.");
+						}
+						
+						try {
+							URL url = f.getCanonicalFile().toURI().toURL();
+							return new URLClassLoader(new URL[] { url }, parent);
+						} catch (MalformedURLException e) {
+							// TODO Auto-generated catch block
+							e.printStackTrace();
+						} catch (IOException e) {
+							// TODO Auto-generated catch block
+							e.printStackTrace();
+						}
+					} else {
+						System.err.println("Could not locate rt/lib/jfxrt.jar in the installation path '" + installPath + "'");
+					}
+				}				
+			} catch (Exception e) {
+				// TODO: handle exception
+				e.printStackTrace();
+			} finally {
+				if( FXClassLoadingConfigurator.DEBUG ) {
+					System.err.println("MyBundleClassLoader#createClassLoaderForIDE - Ended");
 				}
 			}
 
@@ -290,50 +312,100 @@ public class FXClassLoader implements ClassLoadingHook, AdaptorHook {
 		}
 
 		private static URLClassLoader createClassLoaderForSystemProperty(ClassLoader parent) {
-			if (System.getProperty("javafx.home") != null) {
-				String installPath = System.getProperty("javafx.home");
-				File f = new File(installPath + "/lib/jfxrt.jar");
-				if (f.exists()) {
-					try {
-						URL url = f.getCanonicalFile().toURI().toURL();
-						return new URLClassLoader(new URL[] { url }, parent);
-					} catch (MalformedURLException e) {
-						// TODO Auto-generated catch block
-						e.printStackTrace();
-					} catch (IOException e) {
-						// TODO Auto-generated catch block
-						e.printStackTrace();
+			if( FXClassLoadingConfigurator.DEBUG ) {
+				System.err.println("MyBundleClassLoader#createClassLoaderForSystemProperty - Started");
+			}
+			try {
+				if (System.getProperty("javafx.home") != null) {
+					String installPath = System.getProperty("javafx.home");
+					File f = new File(installPath + "/lib/jfxrt.jar");
+					
+					if( FXClassLoadingConfigurator.DEBUG ) {
+						System.err.println("MyBundleClassLoader#createClassLoaderForSystemProperty - Assumed location: " + f.getAbsolutePath());
 					}
-				} else {
-					System.err.println("Could not locate lib/jfxrt.jar in the installation path '" + installPath + "'");
+					
+					if (f.exists()) {
+						if( FXClassLoadingConfigurator.DEBUG ) {
+							System.err.println("MyBundleClassLoader#createClassLoaderForSystemProperty - Found javafxrt.");
+						}
+						
+						try {
+							URL url = f.getCanonicalFile().toURI().toURL();
+							return new URLClassLoader(new URL[] { url }, parent);
+						} catch (MalformedURLException e) {
+							// TODO Auto-generated catch block
+							e.printStackTrace();
+						} catch (IOException e) {
+							// TODO Auto-generated catch block
+							e.printStackTrace();
+						}
+					} else {
+						System.err.println("Could not locate lib/jfxrt.jar in the installation path '" + installPath + "'");
+					}
+				}				
+			} catch (Exception e) {
+				// TODO: handle exception
+				e.printStackTrace();
+			} finally {
+				if( FXClassLoadingConfigurator.DEBUG ) {
+					System.err.println("MyBundleClassLoader#createClassLoaderForSystemProperty - Ended");
 				}
 			}
 
 			return null;
 		}
 
-		private static URLClassLoader createClassLoaderForNextInstall(ClassLoader parent) {
-			// TODO Should we use the same as
-			// Platform.getInstall/InstanceLocation()
-			File installLocation = new File(System.getProperty("osgi.install.area").substring("file:/".length()));
+		private static URLClassLoader createClassLoaderForNextInstall(ClassLoader parent, BundleContext context) {
+			if( FXClassLoadingConfigurator.DEBUG ) {
+				System.err.println("MyBundleClassLoader#createClassLoaderForNextInstall - Started");
+			}
 			
-			File[] fxInstalls = {
-					new File(installLocation, "javafx/"+System.getProperty("osgi.os")+"/"+System.getProperty("osgi.arch")+"/rt/lib/jfxrt.jar"),
-					new File(installLocation, "javafx/lib/rt/jfxrt.jar")
-			};
-			
-			for( File fxInstall : fxInstalls ) {
-				if (fxInstall.exists()) {
-					try {
-						URL url = fxInstall.getCanonicalFile().toURI().toURL();
-						return new URLClassLoader(new URL[] { url }, parent);
-					} catch (MalformedURLException e) {
-						// TODO Auto-generated catch block
-						e.printStackTrace();
-					} catch (IOException e) {
-						// TODO Auto-generated catch block
-						e.printStackTrace();
+			try {
+				// TODO Should we use the same as
+				// Platform.getInstall/InstanceLocation()
+				File installLocation = new File(System.getProperty("osgi.install.area").substring("file:/".length()));
+				
+				List<File> osArchLocations = new ArrayList<File>();
+				// On OS-X we can check different locations because there 32/64 bit binaries are
+				// in one native lib
+				if( Constants.OS_MACOSX.equals(context.getProperty("osgi.os")) ) {
+					osArchLocations.add(new File(installLocation, "javafx/"+System.getProperty("osgi.os")+"/noarch/rt/lib/jfxrt.jar"));
+					osArchLocations.add(new File(installLocation, "javafx/"+System.getProperty("osgi.os")+"/x86_64/rt/lib/jfxrt.jar"));
+					osArchLocations.add(new File(installLocation, "javafx/"+System.getProperty("osgi.os")+"/x86/rt/lib/jfxrt.jar"));
+				} else {
+					osArchLocations.add(new File(installLocation, "javafx/"+System.getProperty("osgi.os")+"/"+System.getProperty("osgi.arch")+"/rt/lib/jfxrt.jar"));	
+				}
+				
+				osArchLocations.add(new File(installLocation, "javafx/rt/lib/jfxrt.jar"));
+				
+				for( File fxInstall : osArchLocations ) {
+					if( FXClassLoadingConfigurator.DEBUG ) {
+						System.err.println("MyBundleClassLoader#createClassLoaderForNextInstall - Install location is: " + installLocation.getAbsolutePath());	
 					}
+					
+					if (fxInstall.exists()) {
+						if( FXClassLoadingConfigurator.DEBUG ) {
+							System.err.println("MyBundleClassLoader#createClassLoaderForNextInstall - Found javafxrt!");	
+						}
+						
+						try {
+							URL url = fxInstall.getCanonicalFile().toURI().toURL();
+							return new URLClassLoader(new URL[] { url }, parent);
+						} catch (MalformedURLException e) {
+							// TODO Auto-generated catch block
+							e.printStackTrace();
+						} catch (IOException e) {
+							// TODO Auto-generated catch block
+							e.printStackTrace();
+						}
+					}
+				}
+			} catch(Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			} finally {
+				if( FXClassLoadingConfigurator.DEBUG ) {
+					System.err.println("MyBundleClassLoader#createClassLoaderForNextInstall - Ended");
 				}
 			}
 			
@@ -341,38 +413,97 @@ public class FXClassLoader implements ClassLoadingHook, AdaptorHook {
 		}
 
 		private static URLClassLoader createClassLoaderForDeployedPlugin(ClassLoader parent, PackageAdmin admin, BundleContext context) {
+			if( FXClassLoadingConfigurator.DEBUG ) {
+				System.err.println("MyBundleClassLoader#createClassLoaderForDeployedPlugin - Started");
+			}
+			
 			try {
+				if( FXClassLoadingConfigurator.DEBUG ) {
+					System.err.println("MyBundleClassLoader#createClassLoaderForDeployedPlugin - Searching for bundles ...");	
+				}
+				
 				// check if javafx is bundled inside an OSGi-Package
 				Bundle[] bundles = admin.getBundles("javafx.osgi", null);
+				
 				if (bundles != null) {
 					Bundle b = bundles[0];
+					if( FXClassLoadingConfigurator.DEBUG ) {
+						System.err.println("MyBundleClassLoader#createClassLoaderForDeployedPlugin - Found bundles checking if installed: " + b);	
+					}
+					
 					if ((b.getState() & Bundle.INSTALLED) == 0) {
+						if( FXClassLoadingConfigurator.DEBUG ) {
+							System.err.println("MyBundleClassLoader#createClassLoaderForDeployedPlugin - javafx.osgi is installed");	
+						}
+						
 						// Ensure the bundle is started else we are unable to
 						// extract the
 						// classloader
+						if( FXClassLoadingConfigurator.DEBUG ) {
+							System.err.println("MyBundleClassLoader#createClassLoaderForDeployedPlugin - checking if active");
+						}
+						
 						if ((b.getState() & Bundle.ACTIVE) != 0) {
+							if( FXClassLoadingConfigurator.DEBUG ) {
+								System.err.println("MyBundleClassLoader#createClassLoaderForDeployedPlugin - Bundle not active we need to start it");
+							}
+							
 							b.start();
 						}
 					}
 					URL rootEntry = b.getEntry("/");
 					URLConverter converter = getURLConverter(context, rootEntry);
+					if( FXClassLoadingConfigurator.DEBUG ) {
+						System.err.println("MyBundleClassLoader#createClassLoaderForDeployedPlugin - checking for url converter");	
+					}
+					
 					if (converter != null) {
+						if( FXClassLoadingConfigurator.DEBUG ) {
+							System.err.println("MyBundleClassLoader#createClassLoaderForDeployedPlugin - Converting root entry");	
+						}
+						
 						rootEntry = converter.resolve(rootEntry);
 
+						if( FXClassLoadingConfigurator.DEBUG ) {
+							System.err.println("MyBundleClassLoader#createClassLoaderForDeployedPlugin - root entry is: " + rootEntry);	
+						}
+						
 						if ("jar".equals(rootEntry.getProtocol())) {
+							if( FXClassLoadingConfigurator.DEBUG ) {
+								System.err.println("MyBundleClassLoader#createClassLoaderForDeployedPlugin - packaged as a jar need to explod it.");	
+							}
 							rootEntry = explodJavaFXBundle(rootEntry.getPath());
 						}
 
 						if (rootEntry != null && "file".equals(rootEntry.getProtocol())) {
 							File installLocation = new File(rootEntry.getPath());
 							
-							File[] fxInstalls = {
-									new File(installLocation, "javafx/"+System.getProperty("osgi.os")+"/"+System.getProperty("osgi.arch")+"/rt/lib/jfxrt.jar"),
-									new File(installLocation, "javafx/rt/lib/jfxrt.jar")
-							};
+							if( FXClassLoadingConfigurator.DEBUG ) {
+								System.err.println("MyBundleClassLoader#createClassLoaderForDeployedPlugin - Install location is: " + installLocation.getAbsolutePath());	
+							}
 							
-							for( File fxInstall : fxInstalls ) {
+							List<File> osArchLocations = new ArrayList<File>();
+							
+							// On OS-X we can check different locations because there 32/64 bit binaries are
+							// in one native lib
+							if( Constants.OS_MACOSX.equals(context.getProperty("osgi.os")) ) {
+								osArchLocations.add(new File(installLocation, "javafx/"+System.getProperty("osgi.os")+"/noarch/rt/lib/jfxrt.jar"));
+								osArchLocations.add(new File(installLocation, "javafx/"+System.getProperty("osgi.os")+"/x86_64/rt/lib/jfxrt.jar"));
+								osArchLocations.add(new File(installLocation, "javafx/"+System.getProperty("osgi.os")+"/x86/rt/lib/jfxrt.jar"));
+							} else {
+								osArchLocations.add(new File(installLocation, "javafx/"+System.getProperty("osgi.os")+"/"+System.getProperty("osgi.arch")+"/rt/lib/jfxrt.jar"));	
+							}
+							
+							osArchLocations.add(new File(installLocation, "javafx/rt/lib/jfxrt.jar"));
+							
+							for( File fxInstall : osArchLocations ) {
+								if( FXClassLoadingConfigurator.DEBUG ) {
+									System.err.println("MyBundleClassLoader#createClassLoaderForDeployedPlugin - Install location is: " + installLocation.getAbsolutePath());	
+								}
 								if (fxInstall.exists()) {
+									if( FXClassLoadingConfigurator.DEBUG ) {
+										System.err.println("MyBundleClassLoader#createClassLoaderForDeployedPlugin - Found javafxrt!");	
+									}
 									try {
 										URL url = fxInstall.getCanonicalFile().toURI().toURL();
 										return new URLClassLoader(new URL[] { url }, parent);
@@ -386,38 +517,34 @@ public class FXClassLoader implements ClassLoadingHook, AdaptorHook {
 								}
 							}
 						}
+					} else {
+						if( FXClassLoadingConfigurator.DEBUG ) {
+							System.err.println("MyBundleClassLoader#createClassLoaderForDeployedPlugin - Could not find an URL-Converter.");	
+						}
+					}
+				} else {
+					if( FXClassLoadingConfigurator.DEBUG ) {
+						System.err.println("MyBundleClassLoader#createClassLoaderForDeployedPlugin - No javafx.osgi bundles found in the installation.");	
 					}
 				}
 			} catch (Exception e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
+			} finally {
+				if( FXClassLoadingConfigurator.DEBUG ) {
+					System.err.println("MyBundleClassLoader#createClassLoaderForDeployedPlugin - Ended");
+				}
 			}
 
 			return null;
 		}
-
-		private static URLClassLoader createClassloader(ClassLoader parent, ReflectivePreferenceService prefService, PackageAdmin admin, BaseData bundledata, BundleContext context) throws Exception {
-			URLClassLoader loader = createClassLoaderForIDE(parent, prefService);
-			if (loader != null) {
-				return loader;
-			}
-
-			loader = createClassLoaderForSystemProperty(parent);
-			if (loader != null) {
-				return loader;
-			}
-
-			loader = createClassLoaderForNextInstall(parent);
-			if (loader != null) {
-				return loader;
+		
+		private static URLClassLoader createJREBundledClassloader(ClassLoader parent) {
+			if( FXClassLoadingConfigurator.DEBUG ) {
+				System.err.println("MyBundleClassLoader#createJREBundledClassloader - Started");
 			}
 			
-			loader = createClassLoaderForDeployedPlugin(parent,admin,context);
-			if (loader != null) {
-				return loader;
-			}
-			
-			if (Constants.OS_MACOSX.equals(context.getProperty("osgi.os"))) {
+			try {
 				File javaHome; 
 				try {
 					javaHome= new File (System.getProperty("java.home")).getCanonicalFile(); //$NON-NLS-1$
@@ -429,13 +556,91 @@ public class FXClassLoader implements ClassLoadingHook, AdaptorHook {
 				}
 				
 				File jarFile = new File(new File(javaHome.getAbsolutePath(),"lib"),"jfxrt.jar");
+				if( FXClassLoadingConfigurator.DEBUG ) {
+					System.err.println("MyBundleClassLoader#createJREBundledClassloader - Assumed location: " + jarFile.getAbsolutePath());
+				}
+				
 				if( jarFile.exists() ) {
 					URL url = jarFile.getCanonicalFile().toURI().toURL();
 					return new URLClassLoader(new URL[] { url }, parent);
 				} else {
-					throw new IllegalStateException("The javafx.jar not found at '"+jarFile.getAbsolutePath()+"'");
+					if( FXClassLoadingConfigurator.DEBUG ) {
+						System.err.println("MyBundleClassLoader#createJREBundledClassloader - File does not exist.");
+					}
 				}
-			} else {
+			} catch (Exception e) {
+				// TODO: handle exception
+				e.printStackTrace();
+			} finally {
+				if( FXClassLoadingConfigurator.DEBUG ) {
+					System.err.println("MyBundleClassLoader#createJREBundledClassloader - Ended");
+				}
+			}
+			
+			return null;
+		}
+
+		private static URLClassLoader createClassloader(ClassLoader parent, ReflectivePreferenceService prefService, PackageAdmin admin, BaseData bundledata, BundleContext context) throws Exception {
+			URLClassLoader loader;
+			
+			{
+				if( FXClassLoadingConfigurator.DEBUG ) {
+					System.err.println("MyBundleClassLoader#createClassloader - Checking for IDE preference");	
+				}
+				
+				loader = createClassLoaderForIDE(parent, prefService);
+				if (loader != null) {
+					return loader;
+				}
+				
+			}
+
+			{
+				if( FXClassLoadingConfigurator.DEBUG ) {
+					System.err.println("MyBundleClassLoader#createClassloader - checking for system property");
+				}
+				
+				loader = createClassLoaderForSystemProperty(parent);
+				if (loader != null) {
+					return loader;
+				}				
+			}
+
+			{
+				if( FXClassLoadingConfigurator.DEBUG ) {
+					System.err.println("MyBundleClassLoader#createClassloader - checking for javafx next to install");
+				}
+				
+				loader = createClassLoaderForNextInstall(parent,context);
+				if (loader != null) {
+					return loader;
+				}				
+			}
+			
+			{
+				if( FXClassLoadingConfigurator.DEBUG ) {
+					System.err.println("MyBundleClassLoader#createClassloader - checking for javafx deployed as javafx.osgi");
+				}
+				loader = createClassLoaderForDeployedPlugin(parent,admin,context);				
+			}
+			
+			{
+				if( FXClassLoadingConfigurator.DEBUG ) {
+					System.err.println("MyBundleClassLoader#createClassloader - checking for JRE bundled javafx");
+				}
+				
+				loader = createJREBundledClassloader(parent);
+			}
+			
+			if (loader != null) {
+				return loader;
+			}
+			
+			if( Constants.OS_WIN32.equals(context.getProperty("osgi.os")) ) {
+				if( FXClassLoadingConfigurator.DEBUG ) {
+					System.err.println("MyBundleClassLoader#createClassloader - Windows fallback to check registry");	
+				}
+				
 				Version minVersion = bundledata.getVersion();
 
 				List<Version> versions = new ArrayList<Version>();
@@ -475,11 +680,13 @@ public class FXClassLoader implements ClassLoadingHook, AdaptorHook {
 						URL url = f.getCanonicalFile().toURI().toURL();
 						return new URLClassLoader(new URL[] { url }, parent);
 					} else {
-						throw new IllegalStateException("Could not locate lib/jfxrt.jar in the installation path '" + installPath + "'");
+						throw new IllegalStateException("Could not locate lib/jfxrt.jar in the installation path '" + installPath + "'. Run with -Defxclipse.osgi.hook.debug=true to get debug output.");
 					}
 				} else {
-					throw new IllegalStateException("Could not find a JavaFX " + versionString + " Installation");
+					throw new IllegalStateException("Could not find a JavaFX " + versionString + " Installation. Run with -Defxclipse.osgi.hook.debug=true to get debug output.");
 				}
+			} else {
+				throw new IllegalStateException("Could not find a JavaFX installation. Run with -Defxclipse.osgi.hook.debug=true to get debug output.");
 			}
 		}
 
