@@ -853,10 +853,20 @@ public class FXGraphProposalProvider extends AbstractFXGraphProposalProvider {
 	}
 	
 	@Override
-	public void completeListValueProperty_Value(EObject model, Assignment assignment, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
-		if( model instanceof ListValueProperty ) {
-			if( model.eContainer() instanceof Property ) {
-				Property property = (Property) model.eContainer();
+	public void completeListValueProperty_Value(EObject m, Assignment assignment, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
+		
+		ListValueProperty listProp = null;
+		
+		if( m instanceof ListValueProperty ) {
+			listProp = (ListValueProperty) m;
+		} else if( m instanceof Element && m.eContainer() instanceof ListValueProperty ) {
+			// If at least one char is already typed
+			listProp = (ListValueProperty) m.eContainer();
+		}
+		
+		if( listProp != null ) {
+			if( listProp.eContainer() instanceof Property ) {
+				Property property = (Property) listProp.eContainer();
 				if( property.eContainer() instanceof Element ) {
 					try {
 						Element element = (Element) property.eContainer();
@@ -873,7 +883,7 @@ public class FXGraphProposalProvider extends AbstractFXGraphProposalProvider {
 							
 								if (p instanceof ConfigurableCompletionProposal) {
 									ConfigurableCompletionProposal ccp = (ConfigurableCompletionProposal) p;
-									ccp.setAdditionalProposalInfo(model);
+									ccp.setAdditionalProposalInfo(listProp);
 									ccp.setHover(new HoverImpl(ownerProperty.getJavaElement()));
 									ccp.setCursorPosition(ccp.getCursorPosition() - 1);
 								}
@@ -883,7 +893,7 @@ public class FXGraphProposalProvider extends AbstractFXGraphProposalProvider {
 
 								if (p instanceof ConfigurableCompletionProposal) {
 									ConfigurableCompletionProposal ccp = (ConfigurableCompletionProposal) p;
-									ccp.setAdditionalProposalInfo(model);
+									ccp.setAdditionalProposalInfo(listProp);
 									ccp.setHover(new HoverImpl(ownerProperty.getJavaElement()));
 								}
 								acceptor.accept(p);
@@ -892,7 +902,7 @@ public class FXGraphProposalProvider extends AbstractFXGraphProposalProvider {
 
 								if (p instanceof ConfigurableCompletionProposal) {
 									ConfigurableCompletionProposal ccp = (ConfigurableCompletionProposal) p;
-									ccp.setAdditionalProposalInfo(model);
+									ccp.setAdditionalProposalInfo(listProp);
 									ccp.setHover(new HoverImpl(ownerProperty.getJavaElement()));
 								}
 								acceptor.accept(p);
@@ -901,7 +911,7 @@ public class FXGraphProposalProvider extends AbstractFXGraphProposalProvider {
 
 								if (p instanceof ConfigurableCompletionProposal) {
 									ConfigurableCompletionProposal ccp = (ConfigurableCompletionProposal) p;
-									ccp.setAdditionalProposalInfo(model);
+									ccp.setAdditionalProposalInfo(listProp);
 									ccp.setHover(new HoverImpl(ownerProperty.getJavaElement()));
 								}
 								acceptor.accept(p);
@@ -910,12 +920,12 @@ public class FXGraphProposalProvider extends AbstractFXGraphProposalProvider {
 
 								if (p instanceof ConfigurableCompletionProposal) {
 									ConfigurableCompletionProposal ccp = (ConfigurableCompletionProposal) p;
-									ccp.setAdditionalProposalInfo(model);
+									ccp.setAdditionalProposalInfo(listProp);
 									ccp.setHover(new HoverImpl(ownerProperty.getJavaElement()));
 								}
 								acceptor.accept(p);
 							} else {
-								createCollectionClassProposals(cp, model, context, FXGraphPackage.Literals.LIST_VALUE_PROPERTY__VALUE, acceptor);
+								createCollectionClassProposals(cp, listProp, context, FXGraphPackage.Literals.LIST_VALUE_PROPERTY__VALUE, acceptor);
 							}
 						}
 						
