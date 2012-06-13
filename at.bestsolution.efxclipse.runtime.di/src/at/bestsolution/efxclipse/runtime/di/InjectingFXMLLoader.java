@@ -1,6 +1,7 @@
 package at.bestsolution.efxclipse.runtime.di;
 
 import java.io.IOException;
+import java.lang.reflect.Modifier;
 import java.net.URL;
 import java.util.ResourceBundle;
 
@@ -68,8 +69,14 @@ public abstract class InjectingFXMLLoader<N> implements FXMLBuilder<N> {
 		}
 		
 		public Object call(Class<?> param) {
-			Object o = ContextInjectionFactory.make(param, context);
-			context.set(o.getClass().getName(), o);
+			Object o;
+			if( param.isInterface() || (param.getModifiers() & Modifier.ABSTRACT) == Modifier.ABSTRACT ) {
+				o = context.get(param.getName());
+			} else {
+				o = ContextInjectionFactory.make(param, context);
+				context.set(o.getClass().getName(), o);
+			}
+			
 			return o;
 		}
 		
