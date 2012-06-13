@@ -137,7 +137,11 @@ class FXGraphGenerator implements IGenerator {
 			«IF definition.defines.size > 0»
 			<fx:define>
 				«FOR define : definition.defines»
-				«elementContent(define.element,importManager,preview,skipController,skipIncludes)»
+				«IF define.element != null»
+					«elementContent(define.element,importManager,preview,skipController,skipIncludes)»
+				«ELSEIF define.includeElement != null»
+					<fx:include«IF define.includeElement.name != null» fx:id="«define.includeElement.name»"«ENDIF» source="/«define.includeElement.source.fullyQualifiedName.replaceAll("\\.","/")».fxml" />
+				«ENDIF»
 				«ENDFOR»
 			</fx:define>
 			«ENDIF»
@@ -243,7 +247,7 @@ class FXGraphGenerator implements IGenerator {
 		«ELSEIF prop.value instanceof IncludeValueProperty»
 			«IF !skipIncludes»
 				<«prop.name»>
-					<fx:include source="/«(prop.value as IncludeValueProperty).source.fullyQualifiedName.replaceAll("\\.","/")».fxml" />
+					<fx:include«IF (prop.value as IncludeValueProperty).name != null» fx:id="«(prop.value as IncludeValueProperty).name»"«ENDIF» source="/«(prop.value as IncludeValueProperty).source.fullyQualifiedName.replaceAll("\\.","/")».fxml" />
 				</«prop.name»>
 			«ENDIF»
 		«ELSEIF prop.value instanceof CopyValueProperty»
@@ -280,7 +284,7 @@ class FXGraphGenerator implements IGenerator {
 		«ELSEIF prop.value instanceof IncludeValueProperty»
 			«IF ! skipIncludes»
 				<«prop.type.shortName(importManager)».«prop.name»>
-					<fx:include source="/«(prop.value as IncludeValueProperty).source.fullyQualifiedName.replaceAll("\\.","/")».fxml" />
+					<fx:include«IF (prop.value as IncludeValueProperty).name != null» fx:id="«(prop.value as IncludeValueProperty).name»"«ENDIF» source="/«(prop.value as IncludeValueProperty).source.fullyQualifiedName.replaceAll("\\.","/")».fxml" />
 				</«prop.type.shortName(importManager)».«prop.name»>
 			«ENDIF»
 		«ELSEIF prop.value instanceof CopyValueProperty»
@@ -299,7 +303,7 @@ class FXGraphGenerator implements IGenerator {
 				<fx:reference source="«(e as ReferenceValueProperty).reference.name»" />
 			«ELSEIF e instanceof IncludeValueProperty»
 				«IF !skipIncludes»
-					<fx:include source="/«(e as IncludeValueProperty).source.fullyQualifiedName.replaceAll("\\.","/")».fxml" />
+					<fx:include«IF (e as IncludeValueProperty).name != null» fx:id="«(e as IncludeValueProperty).name»"«ENDIF» source="/«(e as IncludeValueProperty).source.fullyQualifiedName.replaceAll("\\.","/")».fxml" />
 				«ENDIF»
 			«ELSEIF e instanceof SimpleValueProperty»
 				«objectLiteral(e as SimpleValueProperty)»

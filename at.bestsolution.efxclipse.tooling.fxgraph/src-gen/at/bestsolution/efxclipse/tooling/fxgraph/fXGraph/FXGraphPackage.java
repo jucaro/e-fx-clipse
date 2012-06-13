@@ -407,13 +407,22 @@ public interface FXGraphPackage extends EPackage
   int DEFINE__ELEMENT = 0;
 
   /**
+   * The feature id for the '<em><b>Include Element</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DEFINE__INCLUDE_ELEMENT = 1;
+
+  /**
    * The number of structural features of the '<em>Define</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int DEFINE_FEATURE_COUNT = 1;
+  int DEFINE_FEATURE_COUNT = 2;
 
   /**
    * The meta object id for the '{@link at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.impl.ScriptImpl <em>Script</em>}' class.
@@ -787,13 +796,22 @@ public interface FXGraphPackage extends EPackage
   int INCLUDE_VALUE_PROPERTY__SOURCE = SINGLE_VALUE_PROPERTY_FEATURE_COUNT + 0;
 
   /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int INCLUDE_VALUE_PROPERTY__NAME = SINGLE_VALUE_PROPERTY_FEATURE_COUNT + 1;
+
+  /**
    * The number of structural features of the '<em>Include Value Property</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int INCLUDE_VALUE_PROPERTY_FEATURE_COUNT = SINGLE_VALUE_PROPERTY_FEATURE_COUNT + 1;
+  int INCLUDE_VALUE_PROPERTY_FEATURE_COUNT = SINGLE_VALUE_PROPERTY_FEATURE_COUNT + 2;
 
   /**
    * The meta object id for the '{@link at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.impl.CopyValuePropertyImpl <em>Copy Value Property</em>}' class.
@@ -1371,6 +1389,17 @@ public interface FXGraphPackage extends EPackage
   EReference getDefine_Element();
 
   /**
+   * Returns the meta object for the containment reference '{@link at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.Define#getIncludeElement <em>Include Element</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Include Element</em>'.
+   * @see at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.Define#getIncludeElement()
+   * @see #getDefine()
+   * @generated
+   */
+  EReference getDefine_IncludeElement();
+
+  /**
    * Returns the meta object for class '{@link at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.Script <em>Script</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -1708,6 +1737,17 @@ public interface FXGraphPackage extends EPackage
    * @generated
    */
   EReference getIncludeValueProperty_Source();
+
+  /**
+   * Returns the meta object for the attribute '{@link at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.IncludeValueProperty#getName <em>Name</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Name</em>'.
+   * @see at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.IncludeValueProperty#getName()
+   * @see #getIncludeValueProperty()
+   * @generated
+   */
+  EAttribute getIncludeValueProperty_Name();
 
   /**
    * Returns the meta object for class '{@link at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.CopyValueProperty <em>Copy Value Property</em>}'.
@@ -2177,6 +2217,14 @@ public interface FXGraphPackage extends EPackage
     EReference DEFINE__ELEMENT = eINSTANCE.getDefine_Element();
 
     /**
+     * The meta object literal for the '<em><b>Include Element</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference DEFINE__INCLUDE_ELEMENT = eINSTANCE.getDefine_IncludeElement();
+
+    /**
      * The meta object literal for the '{@link at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.impl.ScriptImpl <em>Script</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -2457,6 +2505,14 @@ public interface FXGraphPackage extends EPackage
      * @generated
      */
     EReference INCLUDE_VALUE_PROPERTY__SOURCE = eINSTANCE.getIncludeValueProperty_Source();
+
+    /**
+     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute INCLUDE_VALUE_PROPERTY__NAME = eINSTANCE.getIncludeValueProperty_Name();
 
     /**
      * The meta object literal for the '{@link at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.impl.CopyValuePropertyImpl <em>Copy Value Property</em>}' class.

@@ -41,6 +41,7 @@ public class FXGraphParser extends AbstractContentAssistParser {
 					put(grammarAccess.getElementAccess().getAlternatives_1(), "rule__Element__Alternatives_1");
 					put(grammarAccess.getElementAccess().getAlternatives_1_1_2_0(), "rule__Element__Alternatives_1_1_2_0");
 					put(grammarAccess.getElementAccess().getAlternatives_1_1_2_1_1(), "rule__Element__Alternatives_1_1_2_1_1");
+					put(grammarAccess.getDefineAccess().getAlternatives_1(), "rule__Define__Alternatives_1");
 					put(grammarAccess.getScriptAccess().getAlternatives_2(), "rule__Script__Alternatives_2");
 					put(grammarAccess.getStaticValuePropertyAccess().getModifierAlternatives_0_0(), "rule__StaticValueProperty__ModifierAlternatives_0_0");
 					put(grammarAccess.getPropertyAccess().getModifierAlternatives_0_0(), "rule__Property__ModifierAlternatives_0_0");
@@ -120,6 +121,7 @@ public class FXGraphParser extends AbstractContentAssistParser {
 					put(grammarAccess.getSimpleValuePropertyAccess().getGroup_2(), "rule__SimpleValueProperty__Group_2__0");
 					put(grammarAccess.getReferenceValuePropertyAccess().getGroup(), "rule__ReferenceValueProperty__Group__0");
 					put(grammarAccess.getIncludeValuePropertyAccess().getGroup(), "rule__IncludeValueProperty__Group__0");
+					put(grammarAccess.getIncludeValuePropertyAccess().getGroup_2(), "rule__IncludeValueProperty__Group_2__0");
 					put(grammarAccess.getCopyValuePropertyAccess().getGroup(), "rule__CopyValueProperty__Group__0");
 					put(grammarAccess.getControllerHandledValuePropertyAccess().getGroup(), "rule__ControllerHandledValueProperty__Group__0");
 					put(grammarAccess.getScriptHandlerHandledValuePropertyAccess().getGroup(), "rule__ScriptHandlerHandledValueProperty__Group__0");
@@ -304,7 +306,8 @@ public class FXGraphParser extends AbstractContentAssistParser {
 					put(grammarAccess.getElementAccess().getFactoryAssignment_1_2_2(), "rule__Element__FactoryAssignment_1_2_2");
 					put(grammarAccess.getElementAccess().getValuesAssignment_1_2_4(), "rule__Element__ValuesAssignment_1_2_4");
 					put(grammarAccess.getElementAccess().getValuesAssignment_1_2_5_1(), "rule__Element__ValuesAssignment_1_2_5_1");
-					put(grammarAccess.getDefineAccess().getElementAssignment_1(), "rule__Define__ElementAssignment_1");
+					put(grammarAccess.getDefineAccess().getElementAssignment_1_0(), "rule__Define__ElementAssignment_1_0");
+					put(grammarAccess.getDefineAccess().getIncludeElementAssignment_1_1(), "rule__Define__IncludeElementAssignment_1_1");
 					put(grammarAccess.getScriptAccess().getLanguageAssignment_1(), "rule__Script__LanguageAssignment_1");
 					put(grammarAccess.getScriptAccess().getSourceAssignment_2_0(), "rule__Script__SourceAssignment_2_0");
 					put(grammarAccess.getScriptAccess().getSourcecodeAssignment_2_1(), "rule__Script__SourcecodeAssignment_2_1");
@@ -326,6 +329,7 @@ public class FXGraphParser extends AbstractContentAssistParser {
 					put(grammarAccess.getSimpleValuePropertyAccess().getRealValueAssignment_2_1_1(), "rule__SimpleValueProperty__RealValueAssignment_2_1_1");
 					put(grammarAccess.getReferenceValuePropertyAccess().getReferenceAssignment_1(), "rule__ReferenceValueProperty__ReferenceAssignment_1");
 					put(grammarAccess.getIncludeValuePropertyAccess().getSourceAssignment_1(), "rule__IncludeValueProperty__SourceAssignment_1");
+					put(grammarAccess.getIncludeValuePropertyAccess().getNameAssignment_2_1(), "rule__IncludeValueProperty__NameAssignment_2_1");
 					put(grammarAccess.getCopyValuePropertyAccess().getReferenceAssignment_1(), "rule__CopyValueProperty__ReferenceAssignment_1");
 					put(grammarAccess.getControllerHandledValuePropertyAccess().getMethodnameAssignment_1(), "rule__ControllerHandledValueProperty__MethodnameAssignment_1");
 					put(grammarAccess.getScriptHandlerHandledValuePropertyAccess().getFunctionnameAssignment_1(), "rule__ScriptHandlerHandledValueProperty__FunctionnameAssignment_1");

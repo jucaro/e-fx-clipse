@@ -607,6 +607,16 @@ public class FXGraphPackageImpl extends EPackageImpl implements FXGraphPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  public EReference getDefine_IncludeElement()
+  {
+    return (EReference)defineEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EClass getScript()
   {
     return scriptEClass;
@@ -927,6 +937,16 @@ public class FXGraphPackageImpl extends EPackageImpl implements FXGraphPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  public EAttribute getIncludeValueProperty_Name()
+  {
+    return (EAttribute)includeValuePropertyEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EClass getCopyValueProperty()
   {
     return copyValuePropertyEClass;
@@ -1176,6 +1196,7 @@ public class FXGraphPackageImpl extends EPackageImpl implements FXGraphPackage
 
     defineEClass = createEClass(DEFINE);
     createEReference(defineEClass, DEFINE__ELEMENT);
+    createEReference(defineEClass, DEFINE__INCLUDE_ELEMENT);
 
     scriptEClass = createEClass(SCRIPT);
     createEAttribute(scriptEClass, SCRIPT__LANGUAGE);
@@ -1221,6 +1242,7 @@ public class FXGraphPackageImpl extends EPackageImpl implements FXGraphPackage
 
     includeValuePropertyEClass = createEClass(INCLUDE_VALUE_PROPERTY);
     createEReference(includeValuePropertyEClass, INCLUDE_VALUE_PROPERTY__SOURCE);
+    createEAttribute(includeValuePropertyEClass, INCLUDE_VALUE_PROPERTY__NAME);
 
     copyValuePropertyEClass = createEClass(COPY_VALUE_PROPERTY);
     createEReference(copyValuePropertyEClass, COPY_VALUE_PROPERTY__REFERENCE);
@@ -1341,6 +1363,7 @@ public class FXGraphPackageImpl extends EPackageImpl implements FXGraphPackage
 
     initEClass(defineEClass, Define.class, "Define", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getDefine_Element(), this.getElement(), null, "element", null, 0, 1, Define.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getDefine_IncludeElement(), this.getIncludeValueProperty(), null, "includeElement", null, 0, 1, Define.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(scriptEClass, Script.class, "Script", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getScript_Language(), ecorePackage.getEString(), "language", null, 0, 1, Script.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1386,6 +1409,7 @@ public class FXGraphPackageImpl extends EPackageImpl implements FXGraphPackage
 
     initEClass(includeValuePropertyEClass, IncludeValueProperty.class, "IncludeValueProperty", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getIncludeValueProperty_Source(), this.getComponentDefinition(), null, "source", null, 0, 1, IncludeValueProperty.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getIncludeValueProperty_Name(), ecorePackage.getEString(), "name", null, 0, 1, IncludeValueProperty.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(copyValuePropertyEClass, CopyValueProperty.class, "CopyValueProperty", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getCopyValueProperty_Reference(), this.getElement(), null, "reference", null, 0, 1, CopyValueProperty.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

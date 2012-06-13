@@ -958,10 +958,10 @@ ruleDefine returns [EObject current=null]
     {
     	newLeafNode(otherlv_0, grammarAccess.getDefineAccess().getDefineKeyword_0());
     }
-(
+((
 (
 		{ 
-	        newCompositeNode(grammarAccess.getDefineAccess().getElementElementParserRuleCall_1_0()); 
+	        newCompositeNode(grammarAccess.getDefineAccess().getElementElementParserRuleCall_1_0_0()); 
 	    }
 		lv_element_1_0=ruleElement		{
 	        if ($current==null) {
@@ -976,7 +976,26 @@ ruleDefine returns [EObject current=null]
 	    }
 
 )
-))
+)
+    |(
+(
+		{ 
+	        newCompositeNode(grammarAccess.getDefineAccess().getIncludeElementIncludeValuePropertyParserRuleCall_1_1_0()); 
+	    }
+		lv_includeElement_2_0=ruleIncludeValueProperty		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getDefineRule());
+	        }
+       		set(
+       			$current, 
+       			"includeElement",
+        		lv_includeElement_2_0, 
+        		"IncludeValueProperty");
+	        afterParserOrEnumRuleCall();
+	    }
+
+)
+)))
 ;
 
 
@@ -1925,7 +1944,29 @@ ruleIncludeValueProperty returns [EObject current=null]
 	    }
 
 )
-))
+)(	otherlv_2='as' 
+    {
+    	newLeafNode(otherlv_2, grammarAccess.getIncludeValuePropertyAccess().getAsKeyword_2_0());
+    }
+(
+(
+		{ 
+	        newCompositeNode(grammarAccess.getIncludeValuePropertyAccess().getNameValidIDParserRuleCall_2_1_0()); 
+	    }
+		lv_name_3_0=ruleValidID		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getIncludeValuePropertyRule());
+	        }
+       		set(
+       			$current, 
+       			"name",
+        		lv_name_3_0, 
+        		"ValidID");
+	        afterParserOrEnumRuleCall();
+	    }
+
+)
+))?)
 ;
 
 

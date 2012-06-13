@@ -5,6 +5,7 @@ package at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.impl;
 import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.Define;
 import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.Element;
 import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.FXGraphPackage;
+import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.IncludeValueProperty;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
@@ -23,6 +24,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * The following features are implemented:
  * <ul>
  *   <li>{@link at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.impl.DefineImpl#getElement <em>Element</em>}</li>
+ *   <li>{@link at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.impl.DefineImpl#getIncludeElement <em>Include Element</em>}</li>
  * </ul>
  * </p>
  *
@@ -39,6 +41,16 @@ public class DefineImpl extends MinimalEObjectImpl.Container implements Define
    * @ordered
    */
   protected Element element;
+
+  /**
+   * The cached value of the '{@link #getIncludeElement() <em>Include Element</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getIncludeElement()
+   * @generated
+   * @ordered
+   */
+  protected IncludeValueProperty includeElement;
 
   /**
    * <!-- begin-user-doc -->
@@ -114,6 +126,54 @@ public class DefineImpl extends MinimalEObjectImpl.Container implements Define
    * <!-- end-user-doc -->
    * @generated
    */
+  public IncludeValueProperty getIncludeElement()
+  {
+    return includeElement;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NotificationChain basicSetIncludeElement(IncludeValueProperty newIncludeElement, NotificationChain msgs)
+  {
+    IncludeValueProperty oldIncludeElement = includeElement;
+    includeElement = newIncludeElement;
+    if (eNotificationRequired())
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, FXGraphPackage.DEFINE__INCLUDE_ELEMENT, oldIncludeElement, newIncludeElement);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setIncludeElement(IncludeValueProperty newIncludeElement)
+  {
+    if (newIncludeElement != includeElement)
+    {
+      NotificationChain msgs = null;
+      if (includeElement != null)
+        msgs = ((InternalEObject)includeElement).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - FXGraphPackage.DEFINE__INCLUDE_ELEMENT, null, msgs);
+      if (newIncludeElement != null)
+        msgs = ((InternalEObject)newIncludeElement).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - FXGraphPackage.DEFINE__INCLUDE_ELEMENT, null, msgs);
+      msgs = basicSetIncludeElement(newIncludeElement, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, FXGraphPackage.DEFINE__INCLUDE_ELEMENT, newIncludeElement, newIncludeElement));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   @Override
   public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
   {
@@ -121,6 +181,8 @@ public class DefineImpl extends MinimalEObjectImpl.Container implements Define
     {
       case FXGraphPackage.DEFINE__ELEMENT:
         return basicSetElement(null, msgs);
+      case FXGraphPackage.DEFINE__INCLUDE_ELEMENT:
+        return basicSetIncludeElement(null, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -137,6 +199,8 @@ public class DefineImpl extends MinimalEObjectImpl.Container implements Define
     {
       case FXGraphPackage.DEFINE__ELEMENT:
         return getElement();
+      case FXGraphPackage.DEFINE__INCLUDE_ELEMENT:
+        return getIncludeElement();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -153,6 +217,9 @@ public class DefineImpl extends MinimalEObjectImpl.Container implements Define
     {
       case FXGraphPackage.DEFINE__ELEMENT:
         setElement((Element)newValue);
+        return;
+      case FXGraphPackage.DEFINE__INCLUDE_ELEMENT:
+        setIncludeElement((IncludeValueProperty)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -171,6 +238,9 @@ public class DefineImpl extends MinimalEObjectImpl.Container implements Define
       case FXGraphPackage.DEFINE__ELEMENT:
         setElement((Element)null);
         return;
+      case FXGraphPackage.DEFINE__INCLUDE_ELEMENT:
+        setIncludeElement((IncludeValueProperty)null);
+        return;
     }
     super.eUnset(featureID);
   }
@@ -187,6 +257,8 @@ public class DefineImpl extends MinimalEObjectImpl.Container implements Define
     {
       case FXGraphPackage.DEFINE__ELEMENT:
         return element != null;
+      case FXGraphPackage.DEFINE__INCLUDE_ELEMENT:
+        return includeElement != null;
     }
     return super.eIsSet(featureID);
   }

@@ -40,7 +40,7 @@ Element:
 ;
 
 Define:
-	'define' element=Element
+	'define' ( element=Element | includeElement=IncludeValueProperty )
 ;
 
 Script:
@@ -92,7 +92,7 @@ ReferenceValueProperty:
 ;
 
 IncludeValueProperty:
-	'include' source=[ComponentDefinition|QualifiedName]
+	'include' source=[ComponentDefinition|QualifiedName] ('as' name=ValidID)?
 ;
 
 CopyValueProperty:

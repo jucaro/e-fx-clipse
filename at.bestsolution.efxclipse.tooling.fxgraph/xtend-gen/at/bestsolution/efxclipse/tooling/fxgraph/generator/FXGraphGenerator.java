@@ -256,12 +256,46 @@ public class FXGraphGenerator implements IGenerator {
         {
           EList<Define> _defines_1 = definition.getDefines();
           for(final Define define : _defines_1) {
-            _builder.append("\t");
-            _builder.append("\t");
-            Element _element = define.getElement();
-            CharSequence _elementContent = this.elementContent(_element, importManager, preview, skipController, skipIncludes);
-            _builder.append(_elementContent, "		");
-            _builder.newLineIfNotEmpty();
+            {
+              Element _element = define.getElement();
+              boolean _notEquals_1 = (!Objects.equal(_element, null));
+              if (_notEquals_1) {
+                _builder.append("\t");
+                _builder.append("\t");
+                Element _element_1 = define.getElement();
+                CharSequence _elementContent = this.elementContent(_element_1, importManager, preview, skipController, skipIncludes);
+                _builder.append(_elementContent, "		");
+                _builder.newLineIfNotEmpty();
+              } else {
+                IncludeValueProperty _includeElement = define.getIncludeElement();
+                boolean _notEquals_2 = (!Objects.equal(_includeElement, null));
+                if (_notEquals_2) {
+                  _builder.append("\t");
+                  _builder.append("\t");
+                  _builder.append("<fx:include");
+                  {
+                    IncludeValueProperty _includeElement_1 = define.getIncludeElement();
+                    String _name = _includeElement_1.getName();
+                    boolean _notEquals_3 = (!Objects.equal(_name, null));
+                    if (_notEquals_3) {
+                      _builder.append(" fx:id=\"");
+                      IncludeValueProperty _includeElement_2 = define.getIncludeElement();
+                      String _name_1 = _includeElement_2.getName();
+                      _builder.append(_name_1, "		");
+                      _builder.append("\"");
+                    }
+                  }
+                  _builder.append(" source=\"/");
+                  IncludeValueProperty _includeElement_3 = define.getIncludeElement();
+                  ComponentDefinition _source = _includeElement_3.getSource();
+                  String _fullyQualifiedName = this.fullyQualifiedName(_source);
+                  String _replaceAll = _fullyQualifiedName.replaceAll("\\.", "/");
+                  _builder.append(_replaceAll, "		");
+                  _builder.append(".fxml\" />");
+                  _builder.newLineIfNotEmpty();
+                }
+              }
+            }
           }
         }
         _builder.append("\t");
@@ -282,8 +316,8 @@ public class FXGraphGenerator implements IGenerator {
             _builder.newLineIfNotEmpty();
             {
               String _sourcecode = script.getSourcecode();
-              boolean _notEquals_1 = (!Objects.equal(_sourcecode, null));
-              if (_notEquals_1) {
+              boolean _notEquals_4 = (!Objects.equal(_sourcecode, null));
+              if (_notEquals_4) {
                 _builder.append("\t");
                 _builder.append("<fx:script>");
                 String _sourcecode_1 = script.getSourcecode();
@@ -299,8 +333,8 @@ public class FXGraphGenerator implements IGenerator {
               } else {
                 _builder.append("\t");
                 _builder.append("<fx:script source=\"");
-                String _source = script.getSource();
-                _builder.append(_source, "	");
+                String _source_1 = script.getSource();
+                _builder.append(_source_1, "	");
                 _builder.append("\"/>");
                 _builder.newLineIfNotEmpty();
               }
@@ -639,40 +673,53 @@ public class FXGraphGenerator implements IGenerator {
                       _builder.append(">");
                       _builder.newLineIfNotEmpty();
                       _builder.append("\t");
-                      _builder.append("<fx:include source=\"/");
-                      ValueProperty _value_13 = prop.getValue();
-                      ComponentDefinition _source = ((IncludeValueProperty) _value_13).getSource();
+                      _builder.append("<fx:include");
+                      {
+                        ValueProperty _value_13 = prop.getValue();
+                        String _name_14 = ((IncludeValueProperty) _value_13).getName();
+                        boolean _notEquals_1 = (!Objects.equal(_name_14, null));
+                        if (_notEquals_1) {
+                          _builder.append(" fx:id=\"");
+                          ValueProperty _value_14 = prop.getValue();
+                          String _name_15 = ((IncludeValueProperty) _value_14).getName();
+                          _builder.append(_name_15, "	");
+                          _builder.append("\"");
+                        }
+                      }
+                      _builder.append(" source=\"/");
+                      ValueProperty _value_15 = prop.getValue();
+                      ComponentDefinition _source = ((IncludeValueProperty) _value_15).getSource();
                       String _fullyQualifiedName = this.fullyQualifiedName(_source);
                       String _replaceAll = _fullyQualifiedName.replaceAll("\\.", "/");
                       _builder.append(_replaceAll, "	");
                       _builder.append(".fxml\" />");
                       _builder.newLineIfNotEmpty();
                       _builder.append("</");
-                      String _name_14 = prop.getName();
-                      _builder.append(_name_14, "");
+                      String _name_16 = prop.getName();
+                      _builder.append(_name_16, "");
                       _builder.append(">");
                       _builder.newLineIfNotEmpty();
                     }
                   }
                 } else {
-                  ValueProperty _value_14 = prop.getValue();
-                  if ((_value_14 instanceof CopyValueProperty)) {
+                  ValueProperty _value_16 = prop.getValue();
+                  if ((_value_16 instanceof CopyValueProperty)) {
                     _builder.append("<");
-                    String _name_15 = prop.getName();
-                    _builder.append(_name_15, "");
+                    String _name_17 = prop.getName();
+                    _builder.append(_name_17, "");
                     _builder.append(">");
                     _builder.newLineIfNotEmpty();
                     _builder.append("\t");
                     _builder.append("<fx:copy source=\"");
-                    ValueProperty _value_15 = prop.getValue();
-                    Element _reference_1 = ((CopyValueProperty) _value_15).getReference();
-                    String _name_16 = _reference_1.getName();
-                    _builder.append(_name_16, "	");
+                    ValueProperty _value_17 = prop.getValue();
+                    Element _reference_1 = ((CopyValueProperty) _value_17).getReference();
+                    String _name_18 = _reference_1.getName();
+                    _builder.append(_name_18, "	");
                     _builder.append("\" />");
                     _builder.newLineIfNotEmpty();
                     _builder.append("</");
-                    String _name_17 = prop.getName();
-                    _builder.append(_name_17, "");
+                    String _name_19 = prop.getName();
+                    _builder.append(_name_19, "");
                     _builder.append(">");
                     _builder.newLineIfNotEmpty();
                   }
@@ -879,9 +926,22 @@ public class FXGraphGenerator implements IGenerator {
                           _builder.append(">");
                           _builder.newLineIfNotEmpty();
                           _builder.append("\t");
-                          _builder.append("<fx:include source=\"/");
-                          ValueProperty _value_13 = prop.getValue();
-                          ComponentDefinition _source = ((IncludeValueProperty) _value_13).getSource();
+                          _builder.append("<fx:include");
+                          {
+                            ValueProperty _value_13 = prop.getValue();
+                            String _name_14 = ((IncludeValueProperty) _value_13).getName();
+                            boolean _notEquals_1 = (!Objects.equal(_name_14, null));
+                            if (_notEquals_1) {
+                              _builder.append(" fx:id=\"");
+                              ValueProperty _value_14 = prop.getValue();
+                              String _name_15 = ((IncludeValueProperty) _value_14).getName();
+                              _builder.append(_name_15, "	");
+                              _builder.append("\"");
+                            }
+                          }
+                          _builder.append(" source=\"/");
+                          ValueProperty _value_15 = prop.getValue();
+                          ComponentDefinition _source = ((IncludeValueProperty) _value_15).getSource();
                           String _fullyQualifiedName = this.fullyQualifiedName(_source);
                           String _replaceAll = _fullyQualifiedName.replaceAll("\\.", "/");
                           _builder.append(_replaceAll, "	");
@@ -892,30 +952,30 @@ public class FXGraphGenerator implements IGenerator {
                           String _shortName_13 = this.shortName(_type_13, importManager);
                           _builder.append(_shortName_13, "");
                           _builder.append(".");
-                          String _name_14 = prop.getName();
-                          _builder.append(_name_14, "");
+                          String _name_16 = prop.getName();
+                          _builder.append(_name_16, "");
                           _builder.append(">");
                           _builder.newLineIfNotEmpty();
                         }
                       }
                     } else {
-                      ValueProperty _value_14 = prop.getValue();
-                      if ((_value_14 instanceof CopyValueProperty)) {
+                      ValueProperty _value_16 = prop.getValue();
+                      if ((_value_16 instanceof CopyValueProperty)) {
                         _builder.append("<");
                         JvmTypeReference _type_14 = prop.getType();
                         String _shortName_14 = this.shortName(_type_14, importManager);
                         _builder.append(_shortName_14, "");
                         _builder.append(".");
-                        String _name_15 = prop.getName();
-                        _builder.append(_name_15, "");
+                        String _name_17 = prop.getName();
+                        _builder.append(_name_17, "");
                         _builder.append(">");
                         _builder.newLineIfNotEmpty();
                         _builder.append("\t");
                         _builder.append("<fx:copy source=\"");
-                        ValueProperty _value_15 = prop.getValue();
-                        Element _reference_1 = ((CopyValueProperty) _value_15).getReference();
-                        String _name_16 = _reference_1.getName();
-                        _builder.append(_name_16, "	");
+                        ValueProperty _value_17 = prop.getValue();
+                        Element _reference_1 = ((CopyValueProperty) _value_17).getReference();
+                        String _name_18 = _reference_1.getName();
+                        _builder.append(_name_18, "	");
                         _builder.append("\" />");
                         _builder.newLineIfNotEmpty();
                         _builder.append("</");
@@ -923,8 +983,8 @@ public class FXGraphGenerator implements IGenerator {
                         String _shortName_15 = this.shortName(_type_15, importManager);
                         _builder.append(_shortName_15, "");
                         _builder.append(".");
-                        String _name_17 = prop.getName();
-                        _builder.append(_name_17, "");
+                        String _name_19 = prop.getName();
+                        _builder.append(_name_19, "");
                         _builder.append(">");
                         _builder.newLineIfNotEmpty();
                       }
@@ -963,7 +1023,18 @@ public class FXGraphGenerator implements IGenerator {
                 {
                   boolean _not = (!skipIncludes);
                   if (_not) {
-                    _builder.append("<fx:include source=\"/");
+                    _builder.append("<fx:include");
+                    {
+                      String _name_1 = ((IncludeValueProperty) e).getName();
+                      boolean _notEquals = (!Objects.equal(_name_1, null));
+                      if (_notEquals) {
+                        _builder.append(" fx:id=\"");
+                        String _name_2 = ((IncludeValueProperty) e).getName();
+                        _builder.append(_name_2, "");
+                        _builder.append("\"");
+                      }
+                    }
+                    _builder.append(" source=\"/");
                     ComponentDefinition _source = ((IncludeValueProperty) e).getSource();
                     String _fullyQualifiedName = this.fullyQualifiedName(_source);
                     String _replaceAll = _fullyQualifiedName.replaceAll("\\.", "/");

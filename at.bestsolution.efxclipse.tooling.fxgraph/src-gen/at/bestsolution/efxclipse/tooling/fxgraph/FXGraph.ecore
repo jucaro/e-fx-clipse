@@ -53,6 +53,8 @@
   <eClassifiers xsi:type="ecore:EClass" name="Define">
     <eStructuralFeatures xsi:type="ecore:EReference" name="element" eType="#//Element"
         containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="includeElement" eType="#//IncludeValueProperty"
+        containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Script">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="language" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
@@ -98,6 +100,7 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="IncludeValueProperty" eSuperTypes="#//SingleValueProperty #//ListValueElement">
     <eStructuralFeatures xsi:type="ecore:EReference" name="source" eType="#//ComponentDefinition"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="CopyValueProperty" eSuperTypes="#//SingleValueProperty">
     <eStructuralFeatures xsi:type="ecore:EReference" name="reference" eType="#//Element"/>
