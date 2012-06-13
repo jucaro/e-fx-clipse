@@ -2,8 +2,8 @@
  */
 package at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.impl;
 
-import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.Element;
 import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.FXGraphPackage;
+import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.ReferenceType;
 import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.ReferenceValueProperty;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -36,7 +36,7 @@ public class ReferenceValuePropertyImpl extends SingleValuePropertyImpl implemen
    * @generated
    * @ordered
    */
-  protected Element reference;
+  protected ReferenceType reference;
 
   /**
    * <!-- begin-user-doc -->
@@ -64,12 +64,12 @@ public class ReferenceValuePropertyImpl extends SingleValuePropertyImpl implemen
    * <!-- end-user-doc -->
    * @generated
    */
-  public Element getReference()
+  public ReferenceType getReference()
   {
     if (reference != null && reference.eIsProxy())
     {
       InternalEObject oldReference = (InternalEObject)reference;
-      reference = (Element)eResolveProxy(oldReference);
+      reference = (ReferenceType)eResolveProxy(oldReference);
       if (reference != oldReference)
       {
         if (eNotificationRequired())
@@ -84,7 +84,7 @@ public class ReferenceValuePropertyImpl extends SingleValuePropertyImpl implemen
    * <!-- end-user-doc -->
    * @generated
    */
-  public Element basicGetReference()
+  public ReferenceType basicGetReference()
   {
     return reference;
   }
@@ -94,9 +94,9 @@ public class ReferenceValuePropertyImpl extends SingleValuePropertyImpl implemen
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setReference(Element newReference)
+  public void setReference(ReferenceType newReference)
   {
-    Element oldReference = reference;
+    ReferenceType oldReference = reference;
     reference = newReference;
     if (eNotificationRequired())
       eNotify(new ENotificationImpl(this, Notification.SET, FXGraphPackage.REFERENCE_VALUE_PROPERTY__REFERENCE, oldReference, reference));
@@ -130,7 +130,7 @@ public class ReferenceValuePropertyImpl extends SingleValuePropertyImpl implemen
     switch (featureID)
     {
       case FXGraphPackage.REFERENCE_VALUE_PROPERTY__REFERENCE:
-        setReference((Element)newValue);
+        setReference((ReferenceType)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -147,7 +147,7 @@ public class ReferenceValuePropertyImpl extends SingleValuePropertyImpl implemen
     switch (featureID)
     {
       case FXGraphPackage.REFERENCE_VALUE_PROPERTY__REFERENCE:
-        setReference((Element)null);
+        setReference((ReferenceType)null);
         return;
     }
     super.eUnset(featureID);

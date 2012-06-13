@@ -21,6 +21,7 @@ import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.Model;
 import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.MultiValueProperty;
 import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.PackageDeclaration;
 import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.Property;
+import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.ReferenceType;
 import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.ReferenceValueProperty;
 import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.ResourceValueProperty;
 import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.Script;
@@ -168,6 +169,13 @@ public class FXGraphPackageImpl extends EPackageImpl implements FXGraphPackage
    * @generated
    */
   private EClass simpleValuePropertyEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass referenceTypeEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -897,6 +905,16 @@ public class FXGraphPackageImpl extends EPackageImpl implements FXGraphPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  public EClass getReferenceType()
+  {
+    return referenceTypeEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EClass getReferenceValueProperty()
   {
     return referenceValuePropertyEClass;
@@ -1237,6 +1255,8 @@ public class FXGraphPackageImpl extends EPackageImpl implements FXGraphPackage
     createEAttribute(simpleValuePropertyEClass, SIMPLE_VALUE_PROPERTY__INT_VALUE);
     createEAttribute(simpleValuePropertyEClass, SIMPLE_VALUE_PROPERTY__REAL_VALUE);
 
+    referenceTypeEClass = createEClass(REFERENCE_TYPE);
+
     referenceValuePropertyEClass = createEClass(REFERENCE_VALUE_PROPERTY);
     createEReference(referenceValuePropertyEClass, REFERENCE_VALUE_PROPERTY__REFERENCE);
 
@@ -1308,6 +1328,7 @@ public class FXGraphPackageImpl extends EPackageImpl implements FXGraphPackage
     elementEClass.getESuperTypes().add(this.getSingleValueProperty());
     elementEClass.getESuperTypes().add(this.getFactoryValueElement());
     elementEClass.getESuperTypes().add(this.getListValueElement());
+    elementEClass.getESuperTypes().add(this.getReferenceType());
     singleValuePropertyEClass.getESuperTypes().add(this.getValueProperty());
     multiValuePropertyEClass.getESuperTypes().add(this.getValueProperty());
     listValuePropertyEClass.getESuperTypes().add(this.getMultiValueProperty());
@@ -1319,6 +1340,7 @@ public class FXGraphPackageImpl extends EPackageImpl implements FXGraphPackage
     referenceValuePropertyEClass.getESuperTypes().add(this.getListValueElement());
     includeValuePropertyEClass.getESuperTypes().add(this.getSingleValueProperty());
     includeValuePropertyEClass.getESuperTypes().add(this.getListValueElement());
+    includeValuePropertyEClass.getESuperTypes().add(this.getReferenceType());
     copyValuePropertyEClass.getESuperTypes().add(this.getSingleValueProperty());
     controllerHandledValuePropertyEClass.getESuperTypes().add(this.getSingleValueProperty());
     scriptHandlerHandledValuePropertyEClass.getESuperTypes().add(this.getSingleValueProperty());
@@ -1404,8 +1426,10 @@ public class FXGraphPackageImpl extends EPackageImpl implements FXGraphPackage
     initEAttribute(getSimpleValueProperty_IntValue(), ecorePackage.getEInt(), "intValue", null, 0, 1, SimpleValueProperty.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getSimpleValueProperty_RealValue(), ecorePackage.getEDouble(), "realValue", null, 0, 1, SimpleValueProperty.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
+    initEClass(referenceTypeEClass, ReferenceType.class, "ReferenceType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
     initEClass(referenceValuePropertyEClass, ReferenceValueProperty.class, "ReferenceValueProperty", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getReferenceValueProperty_Reference(), this.getElement(), null, "reference", null, 0, 1, ReferenceValueProperty.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getReferenceValueProperty_Reference(), this.getReferenceType(), null, "reference", null, 0, 1, ReferenceValueProperty.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(includeValuePropertyEClass, IncludeValueProperty.class, "IncludeValueProperty", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getIncludeValueProperty_Source(), this.getComponentDefinition(), null, "source", null, 0, 1, IncludeValueProperty.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

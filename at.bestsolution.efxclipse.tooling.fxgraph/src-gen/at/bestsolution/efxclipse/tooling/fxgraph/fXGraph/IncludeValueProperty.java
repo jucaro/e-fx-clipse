@@ -20,7 +20,7 @@ package at.bestsolution.efxclipse.tooling.fxgraph.fXGraph;
  * @model
  * @generated
  */
-public interface IncludeValueProperty extends SingleValueProperty, ListValueElement
+public interface IncludeValueProperty extends SingleValueProperty, ListValueElement, ReferenceType
 {
   /**
    * Returns the value of the '<em><b>Source</b></em>' reference.

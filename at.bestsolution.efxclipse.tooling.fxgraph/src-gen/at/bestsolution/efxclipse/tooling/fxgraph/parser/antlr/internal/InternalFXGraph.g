@@ -1871,6 +1871,8 @@ ruleSimpleValueProperty returns [EObject current=null]
 
 
 
+
+
 // Entry rule entryRuleReferenceValueProperty
 entryRuleReferenceValueProperty returns [EObject current=null] 
 	:
@@ -1897,7 +1899,7 @@ ruleReferenceValueProperty returns [EObject current=null]
 	        }
         }
 		{ 
-	        newCompositeNode(grammarAccess.getReferenceValuePropertyAccess().getReferenceElementCrossReference_1_0()); 
+	        newCompositeNode(grammarAccess.getReferenceValuePropertyAccess().getReferenceReferenceTypeCrossReference_1_0()); 
 	    }
 		ruleValidID		{ 
 	        afterParserOrEnumRuleCall();

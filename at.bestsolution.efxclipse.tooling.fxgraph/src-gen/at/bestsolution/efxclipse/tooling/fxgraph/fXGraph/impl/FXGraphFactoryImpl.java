@@ -81,6 +81,7 @@ public class FXGraphFactoryImpl extends EFactoryImpl implements FXGraphFactory
       case FXGraphPackage.LIST_VALUE_PROPERTY: return createListValueProperty();
       case FXGraphPackage.MAP_VALUE_PROPERTY: return createMapValueProperty();
       case FXGraphPackage.SIMPLE_VALUE_PROPERTY: return createSimpleValueProperty();
+      case FXGraphPackage.REFERENCE_TYPE: return createReferenceType();
       case FXGraphPackage.REFERENCE_VALUE_PROPERTY: return createReferenceValueProperty();
       case FXGraphPackage.INCLUDE_VALUE_PROPERTY: return createIncludeValueProperty();
       case FXGraphPackage.COPY_VALUE_PROPERTY: return createCopyValueProperty();
@@ -282,6 +283,17 @@ public class FXGraphFactoryImpl extends EFactoryImpl implements FXGraphFactory
   {
     SimpleValuePropertyImpl simpleValueProperty = new SimpleValuePropertyImpl();
     return simpleValueProperty;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public ReferenceType createReferenceType()
+  {
+    ReferenceTypeImpl referenceType = new ReferenceTypeImpl();
+    return referenceType;
   }
 
   /**

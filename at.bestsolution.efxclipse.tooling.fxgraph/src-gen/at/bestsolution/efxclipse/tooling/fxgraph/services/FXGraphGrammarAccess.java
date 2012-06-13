@@ -1121,33 +1121,54 @@ public class FXGraphGrammarAccess extends AbstractGrammarElementFinder {
 		public RuleCall getRealValueREALTerminalRuleCall_2_1_1_0() { return cRealValueREALTerminalRuleCall_2_1_1_0; }
 	}
 
+	public class ReferenceTypeElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "ReferenceType");
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final RuleCall cElementParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
+		private final RuleCall cIncludeValuePropertyParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
+		
+		//ReferenceType:
+		//
+		//	Element | IncludeValueProperty;
+		public ParserRule getRule() { return rule; }
+
+		//Element | IncludeValueProperty
+		public Alternatives getAlternatives() { return cAlternatives; }
+
+		//Element
+		public RuleCall getElementParserRuleCall_0() { return cElementParserRuleCall_0; }
+
+		//IncludeValueProperty
+		public RuleCall getIncludeValuePropertyParserRuleCall_1() { return cIncludeValuePropertyParserRuleCall_1; }
+	}
+
 	public class ReferenceValuePropertyElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "ReferenceValueProperty");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Keyword cIdrefKeyword_0 = (Keyword)cGroup.eContents().get(0);
 		private final Assignment cReferenceAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final CrossReference cReferenceElementCrossReference_1_0 = (CrossReference)cReferenceAssignment_1.eContents().get(0);
-		private final RuleCall cReferenceElementValidIDParserRuleCall_1_0_1 = (RuleCall)cReferenceElementCrossReference_1_0.eContents().get(1);
+		private final CrossReference cReferenceReferenceTypeCrossReference_1_0 = (CrossReference)cReferenceAssignment_1.eContents().get(0);
+		private final RuleCall cReferenceReferenceTypeValidIDParserRuleCall_1_0_1 = (RuleCall)cReferenceReferenceTypeCrossReference_1_0.eContents().get(1);
 		
 		//ReferenceValueProperty:
 		//
-		//	"idref" reference=[Element|ValidID];
+		//	"idref" reference=[ReferenceType|ValidID];
 		public ParserRule getRule() { return rule; }
 
-		//"idref" reference=[Element|ValidID]
+		//"idref" reference=[ReferenceType|ValidID]
 		public Group getGroup() { return cGroup; }
 
 		//"idref"
 		public Keyword getIdrefKeyword_0() { return cIdrefKeyword_0; }
 
-		//reference=[Element|ValidID]
+		//reference=[ReferenceType|ValidID]
 		public Assignment getReferenceAssignment_1() { return cReferenceAssignment_1; }
 
-		//[Element|ValidID]
-		public CrossReference getReferenceElementCrossReference_1_0() { return cReferenceElementCrossReference_1_0; }
+		//[ReferenceType|ValidID]
+		public CrossReference getReferenceReferenceTypeCrossReference_1_0() { return cReferenceReferenceTypeCrossReference_1_0; }
 
 		//ValidID
-		public RuleCall getReferenceElementValidIDParserRuleCall_1_0_1() { return cReferenceElementValidIDParserRuleCall_1_0_1; }
+		public RuleCall getReferenceReferenceTypeValidIDParserRuleCall_1_0_1() { return cReferenceReferenceTypeValidIDParserRuleCall_1_0_1; }
 	}
 
 	public class IncludeValuePropertyElements extends AbstractParserRuleElementFinder {
@@ -1479,6 +1500,7 @@ public class FXGraphGrammarAccess extends AbstractGrammarElementFinder {
 	private ListValuePropertyElements pListValueProperty;
 	private MapValuePropertyElements pMapValueProperty;
 	private SimpleValuePropertyElements pSimpleValueProperty;
+	private ReferenceTypeElements pReferenceType;
 	private ReferenceValuePropertyElements pReferenceValueProperty;
 	private IncludeValuePropertyElements pIncludeValueProperty;
 	private CopyValuePropertyElements pCopyValueProperty;
@@ -1737,9 +1759,20 @@ public class FXGraphGrammarAccess extends AbstractGrammarElementFinder {
 		return getSimpleValuePropertyAccess().getRule();
 	}
 
+	//ReferenceType:
+	//
+	//	Element | IncludeValueProperty;
+	public ReferenceTypeElements getReferenceTypeAccess() {
+		return (pReferenceType != null) ? pReferenceType : (pReferenceType = new ReferenceTypeElements());
+	}
+	
+	public ParserRule getReferenceTypeRule() {
+		return getReferenceTypeAccess().getRule();
+	}
+
 	//ReferenceValueProperty:
 	//
-	//	"idref" reference=[Element|ValidID];
+	//	"idref" reference=[ReferenceType|ValidID];
 	public ReferenceValuePropertyElements getReferenceValuePropertyAccess() {
 		return (pReferenceValueProperty != null) ? pReferenceValueProperty : (pReferenceValueProperty = new ReferenceValuePropertyElements());
 	}

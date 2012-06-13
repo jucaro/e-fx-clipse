@@ -533,6 +533,8 @@ finally {
 
 
 
+
+
 // Entry rule entryRuleReferenceValueProperty
 entryRuleReferenceValueProperty 
 :
@@ -3118,6 +3120,7 @@ rule__SimpleValueProperty__Alternatives_2_1
 finally {
 	restoreStackSize(stackSize);
 }
+
 
 rule__XAssignment__Alternatives
     @init {
@@ -19699,12 +19702,12 @@ rule__ReferenceValueProperty__ReferenceAssignment_1
     }
 :
 (
-{ before(grammarAccess.getReferenceValuePropertyAccess().getReferenceElementCrossReference_1_0()); }
+{ before(grammarAccess.getReferenceValuePropertyAccess().getReferenceReferenceTypeCrossReference_1_0()); }
 (
-{ before(grammarAccess.getReferenceValuePropertyAccess().getReferenceElementValidIDParserRuleCall_1_0_1()); }
-	ruleValidID{ after(grammarAccess.getReferenceValuePropertyAccess().getReferenceElementValidIDParserRuleCall_1_0_1()); }
+{ before(grammarAccess.getReferenceValuePropertyAccess().getReferenceReferenceTypeValidIDParserRuleCall_1_0_1()); }
+	ruleValidID{ after(grammarAccess.getReferenceValuePropertyAccess().getReferenceReferenceTypeValidIDParserRuleCall_1_0_1()); }
 )
-{ after(grammarAccess.getReferenceValuePropertyAccess().getReferenceElementCrossReference_1_0()); }
+{ after(grammarAccess.getReferenceValuePropertyAccess().getReferenceReferenceTypeCrossReference_1_0()); }
 )
 
 ;

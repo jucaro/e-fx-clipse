@@ -1015,53 +1015,58 @@ public class FXGraphProposalProvider extends AbstractFXGraphProposalProvider {
 			if( m.getComponentDef() != null) {
 				for( Define d : m.getComponentDef().getDefines() ) {
 					Element element = d.getElement();
-					IJavaProject javaProject = projectProvider.getJavaProject(element.eResource().getResourceSet());
-					try {
-						IType defType = javaProject.findType(element.getType().getQualifiedName());
-						ReferenceValueProperty rp = (ReferenceValueProperty) model;
-						
-						IType targetType = null;
-						if( rp.eContainer() instanceof Property ) {
-							Property p = (Property) rp.eContainer();
-							if( p.eContainer() instanceof Element ) {
-								Element e = (Element) p.eContainer();
-								IType ownerType = javaProject.findType(e.getType().getQualifiedName());
-								IFXClass ownerClass = FXPlugin.getClassmodel().findClass(javaProject, ownerType);
-								IFXProperty ownerProp = ownerClass.getProperty(p.getName());
-								if( ownerProp instanceof IFXObjectProperty ) {
-									targetType = ((IFXObjectProperty) ownerProp).getElementType();
-								}
-							}
-						} else if( rp.eContainer() instanceof StaticValueProperty ) {
-							LOGGER.warn("Unable to extract type for " + rp.eContainer());
-						} else if( rp.eContainer() instanceof ListValueProperty ) {
-							ListValueProperty lvp = (ListValueProperty) rp.eContainer();
-							if( lvp.eContainer() instanceof Property ) {
-								Property p = (Property) lvp.eContainer();
+					boolean includeType = false;
+					if( element == null ) {
+						element = d.getIncludeElement().getSource().getRootNode();
+						includeType = true;
+					}
+						IJavaProject javaProject = projectProvider.getJavaProject(element.eResource().getResourceSet());
+						try {
+							IType defType = javaProject.findType(element.getType().getQualifiedName());
+							ReferenceValueProperty rp = (ReferenceValueProperty) model;
+							
+							IType targetType = null;
+							if( rp.eContainer() instanceof Property ) {
+								Property p = (Property) rp.eContainer();
 								if( p.eContainer() instanceof Element ) {
 									Element e = (Element) p.eContainer();
 									IType ownerType = javaProject.findType(e.getType().getQualifiedName());
 									IFXClass ownerClass = FXPlugin.getClassmodel().findClass(javaProject, ownerType);
 									IFXProperty ownerProp = ownerClass.getProperty(p.getName());
-									if( ownerProp instanceof IFXCollectionProperty ) {
-										targetType = ((IFXCollectionProperty) ownerProp).getElementType();
+									if( ownerProp instanceof IFXObjectProperty ) {
+										targetType = ((IFXObjectProperty) ownerProp).getElementType();
 									}
 								}
-							} else {
+							} else if( rp.eContainer() instanceof StaticValueProperty ) {
 								LOGGER.warn("Unable to extract type for " + rp.eContainer());
+							} else if( rp.eContainer() instanceof ListValueProperty ) {
+								ListValueProperty lvp = (ListValueProperty) rp.eContainer();
+								if( lvp.eContainer() instanceof Property ) {
+									Property p = (Property) lvp.eContainer();
+									if( p.eContainer() instanceof Element ) {
+										Element e = (Element) p.eContainer();
+										IType ownerType = javaProject.findType(e.getType().getQualifiedName());
+										IFXClass ownerClass = FXPlugin.getClassmodel().findClass(javaProject, ownerType);
+										IFXProperty ownerProp = ownerClass.getProperty(p.getName());
+										if( ownerProp instanceof IFXCollectionProperty ) {
+											targetType = ((IFXCollectionProperty) ownerProp).getElementType();
+										}
+									}
+								} else {
+									LOGGER.warn("Unable to extract type for " + rp.eContainer());
+								}
 							}
+							
+							if( targetType != null ) {
+								if( Util.assignable(defType, targetType) ) {
+									StyledString s = new StyledString(includeType ? d.getIncludeElement().getName() : element.getName());
+									s.append(" - " + defType.getElementName(), StyledString.QUALIFIER_STYLER);
+									acceptor.accept(createCompletionProposal(includeType ? d.getIncludeElement().getName() : element.getName(), s, IconKeys.getIcon(IconKeys.CLASS_KEY), context));
+								}	
+							}
+						} catch (JavaModelException e) {
+							LOGGER.error("Unable to extract define type", e);
 						}
-						
-						if( targetType != null ) {
-							if( Util.assignable(defType, targetType) ) {
-								StyledString s = new StyledString(d.getElement().getName());
-								s.append(" - " + defType.getElementName(), StyledString.QUALIFIER_STYLER);
-								acceptor.accept(createCompletionProposal(d.getElement().getName(), s, IconKeys.getIcon(IconKeys.CLASS_KEY), context));
-							}	
-						}
-					} catch (JavaModelException e) {
-						LOGGER.error("Unable to extract define type", e);
-					}
 				}
 			}
 		}

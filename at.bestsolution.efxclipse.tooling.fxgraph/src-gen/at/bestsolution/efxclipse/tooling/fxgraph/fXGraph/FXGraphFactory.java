@@ -176,6 +176,15 @@ public interface FXGraphFactory extends EFactory
   SimpleValueProperty createSimpleValueProperty();
 
   /**
+   * Returns a new object of class '<em>Reference Type</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Reference Type</em>'.
+   * @generated
+   */
+  ReferenceType createReferenceType();
+
+  /**
    * Returns a new object of class '<em>Reference Value Property</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->

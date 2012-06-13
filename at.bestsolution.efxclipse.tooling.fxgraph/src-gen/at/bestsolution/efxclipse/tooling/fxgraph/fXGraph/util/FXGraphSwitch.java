@@ -107,6 +107,7 @@ public class FXGraphSwitch<T> extends Switch<T>
         if (result == null) result = caseSingleValueProperty(element);
         if (result == null) result = caseFactoryValueElement(element);
         if (result == null) result = caseListValueElement(element);
+        if (result == null) result = caseReferenceType(element);
         if (result == null) result = caseValueProperty(element);
         if (result == null) result = defaultCase(theEObject);
         return result;
@@ -205,6 +206,13 @@ public class FXGraphSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case FXGraphPackage.REFERENCE_TYPE:
+      {
+        ReferenceType referenceType = (ReferenceType)theEObject;
+        T result = caseReferenceType(referenceType);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       case FXGraphPackage.REFERENCE_VALUE_PROPERTY:
       {
         ReferenceValueProperty referenceValueProperty = (ReferenceValueProperty)theEObject;
@@ -221,6 +229,7 @@ public class FXGraphSwitch<T> extends Switch<T>
         T result = caseIncludeValueProperty(includeValueProperty);
         if (result == null) result = caseSingleValueProperty(includeValueProperty);
         if (result == null) result = caseListValueElement(includeValueProperty);
+        if (result == null) result = caseReferenceType(includeValueProperty);
         if (result == null) result = caseValueProperty(includeValueProperty);
         if (result == null) result = defaultCase(theEObject);
         return result;
@@ -576,6 +585,22 @@ public class FXGraphSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseSimpleValueProperty(SimpleValueProperty object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Reference Type</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Reference Type</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseReferenceType(ReferenceType object)
   {
     return null;
   }

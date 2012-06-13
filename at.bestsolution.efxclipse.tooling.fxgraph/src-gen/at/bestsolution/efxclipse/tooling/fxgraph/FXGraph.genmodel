@@ -79,6 +79,7 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute FXGraph.ecore#//SimpleValueProperty/intValue"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute FXGraph.ecore#//SimpleValueProperty/realValue"/>
     </genClasses>
+    <genClasses ecoreClass="FXGraph.ecore#//ReferenceType"/>
     <genClasses ecoreClass="FXGraph.ecore#//ReferenceValueProperty">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference FXGraph.ecore#//ReferenceValueProperty/reference"/>
     </genClasses>

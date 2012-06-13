@@ -30,12 +30,12 @@ public interface ReferenceValueProperty extends SingleValueProperty, ListValueEl
    * </p>
    * <!-- end-user-doc -->
    * @return the value of the '<em>Reference</em>' reference.
-   * @see #setReference(Element)
+   * @see #setReference(ReferenceType)
    * @see at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.FXGraphPackage#getReferenceValueProperty_Reference()
    * @model
    * @generated
    */
-  Element getReference();
+  ReferenceType getReference();
 
   /**
    * Sets the value of the '{@link at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.ReferenceValueProperty#getReference <em>Reference</em>}' reference.
@@ -45,6 +45,6 @@ public interface ReferenceValueProperty extends SingleValueProperty, ListValueEl
    * @see #getReference()
    * @generated
    */
-  void setReference(Element value);
+  void setReference(ReferenceType value);
 
 } // ReferenceValueProperty

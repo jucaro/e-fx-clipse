@@ -29,7 +29,7 @@ import org.eclipse.xtext.common.types.JvmTypeReference;
  * @model
  * @generated
  */
-public interface Element extends SingleValueProperty, FactoryValueElement, ListValueElement
+public interface Element extends SingleValueProperty, FactoryValueElement, ListValueElement, ReferenceType
 {
   /**
    * Returns the value of the '<em><b>Type</b></em>' containment reference.

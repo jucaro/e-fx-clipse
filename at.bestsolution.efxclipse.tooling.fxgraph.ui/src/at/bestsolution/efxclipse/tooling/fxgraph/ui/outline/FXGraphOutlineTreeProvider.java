@@ -4,7 +4,6 @@
 package at.bestsolution.efxclipse.tooling.fxgraph.ui.outline;
 
 import org.eclipse.emf.ecore.EObject;
-import org.eclipse.jface.resource.JFaceResources;
 import org.eclipse.jface.viewers.StyledString;
 import org.eclipse.xtext.ui.editor.outline.IOutlineNode;
 import org.eclipse.xtext.ui.editor.outline.impl.DefaultOutlineTreeProvider;
@@ -15,6 +14,7 @@ import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.ControllerHandledValueP
 import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.Define;
 import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.Element;
 import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.FXGraphPackage;
+import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.IncludeValueProperty;
 import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.ListValueElement;
 import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.ListValueProperty;
 import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.MapValueProperty;
@@ -24,7 +24,6 @@ import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.ReferenceValueProperty;
 import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.ResourceValueProperty;
 import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.SimpleValueProperty;
 import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.StaticValueProperty;
-import at.bestsolution.efxclipse.tooling.fxgraph.ui.util.JDTHelper;
 import at.bestsolution.efxclipse.tooling.ui.util.IconKeys;
 
 /**
@@ -156,7 +155,7 @@ public class FXGraphOutlineTreeProvider extends DefaultOutlineTreeProvider {
 			ReferenceValueProperty p = (ReferenceValueProperty) property.getValue();
 			
 			if( p.getReference() != null ) {
-				s.append(" : " + p.getReference().getName(),StyledString.QUALIFIER_STYLER);	
+				s.append(" : " + (p.getReference() instanceof Element ? ((Element)p.getReference()).getName() : ((IncludeValueProperty)p.getReference()).getName()),StyledString.QUALIFIER_STYLER);	
 			}
 			
 			return s;

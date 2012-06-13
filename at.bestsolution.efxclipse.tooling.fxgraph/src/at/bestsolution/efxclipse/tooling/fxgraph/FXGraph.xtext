@@ -87,8 +87,12 @@ SimpleValueProperty:
 	stringValue=STRING | booleanValue=("true"|"false") | ( (negative?='-')? (intValue=INT | realValue=REAL))
 ;
 
+ReferenceType:
+	Element | IncludeValueProperty
+;
+
 ReferenceValueProperty:
-	'idref' reference=[Element|ValidID]
+	'idref' reference=[ReferenceType|ValidID]
 ;
 
 IncludeValueProperty:

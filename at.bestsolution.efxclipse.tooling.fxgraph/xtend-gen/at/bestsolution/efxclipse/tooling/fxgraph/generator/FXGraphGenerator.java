@@ -15,6 +15,7 @@ import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.MapValueProperty;
 import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.Model;
 import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.PackageDeclaration;
 import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.Property;
+import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.ReferenceType;
 import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.ReferenceValueProperty;
 import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.ResourceValueProperty;
 import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.Script;
@@ -649,14 +650,14 @@ public class FXGraphGenerator implements IGenerator {
                     _builder.append("\t");
                     _builder.append("<fx:reference source=\"");
                     ValueProperty _value_11 = prop.getValue();
-                    Element _reference = ((ReferenceValueProperty) _value_11).getReference();
-                    String _name_11 = _reference.getName();
-                    _builder.append(_name_11, "	");
+                    ReferenceType _reference = ((ReferenceValueProperty) _value_11).getReference();
+                    String _refname = this.refname(_reference);
+                    _builder.append(_refname, "	");
                     _builder.append("\" />");
                     _builder.newLineIfNotEmpty();
                     _builder.append("</");
-                    String _name_12 = prop.getName();
-                    _builder.append(_name_12, "");
+                    String _name_11 = prop.getName();
+                    _builder.append(_name_11, "");
                     _builder.append(">");
                     _builder.newLineIfNotEmpty();
                   }
@@ -668,21 +669,21 @@ public class FXGraphGenerator implements IGenerator {
                     boolean _not_1 = (!skipIncludes);
                     if (_not_1) {
                       _builder.append("<");
-                      String _name_13 = prop.getName();
-                      _builder.append(_name_13, "");
+                      String _name_12 = prop.getName();
+                      _builder.append(_name_12, "");
                       _builder.append(">");
                       _builder.newLineIfNotEmpty();
                       _builder.append("\t");
                       _builder.append("<fx:include");
                       {
                         ValueProperty _value_13 = prop.getValue();
-                        String _name_14 = ((IncludeValueProperty) _value_13).getName();
-                        boolean _notEquals_1 = (!Objects.equal(_name_14, null));
+                        String _name_13 = ((IncludeValueProperty) _value_13).getName();
+                        boolean _notEquals_1 = (!Objects.equal(_name_13, null));
                         if (_notEquals_1) {
                           _builder.append(" fx:id=\"");
                           ValueProperty _value_14 = prop.getValue();
-                          String _name_15 = ((IncludeValueProperty) _value_14).getName();
-                          _builder.append(_name_15, "	");
+                          String _name_14 = ((IncludeValueProperty) _value_14).getName();
+                          _builder.append(_name_14, "	");
                           _builder.append("\"");
                         }
                       }
@@ -695,8 +696,8 @@ public class FXGraphGenerator implements IGenerator {
                       _builder.append(".fxml\" />");
                       _builder.newLineIfNotEmpty();
                       _builder.append("</");
-                      String _name_16 = prop.getName();
-                      _builder.append(_name_16, "");
+                      String _name_15 = prop.getName();
+                      _builder.append(_name_15, "");
                       _builder.append(">");
                       _builder.newLineIfNotEmpty();
                     }
@@ -705,21 +706,21 @@ public class FXGraphGenerator implements IGenerator {
                   ValueProperty _value_16 = prop.getValue();
                   if ((_value_16 instanceof CopyValueProperty)) {
                     _builder.append("<");
-                    String _name_17 = prop.getName();
-                    _builder.append(_name_17, "");
+                    String _name_16 = prop.getName();
+                    _builder.append(_name_16, "");
                     _builder.append(">");
                     _builder.newLineIfNotEmpty();
                     _builder.append("\t");
                     _builder.append("<fx:copy source=\"");
                     ValueProperty _value_17 = prop.getValue();
                     Element _reference_1 = ((CopyValueProperty) _value_17).getReference();
-                    String _name_18 = _reference_1.getName();
-                    _builder.append(_name_18, "	");
+                    String _name_17 = _reference_1.getName();
+                    _builder.append(_name_17, "	");
                     _builder.append("\" />");
                     _builder.newLineIfNotEmpty();
                     _builder.append("</");
-                    String _name_19 = prop.getName();
-                    _builder.append(_name_19, "");
+                    String _name_18 = prop.getName();
+                    _builder.append(_name_18, "");
                     _builder.append(">");
                     _builder.newLineIfNotEmpty();
                   }
@@ -896,9 +897,9 @@ public class FXGraphGenerator implements IGenerator {
                     _builder.append("\t");
                     _builder.append("<fx:reference source=\"");
                     ValueProperty _value_11 = prop.getValue();
-                    Element _reference = ((ReferenceValueProperty) _value_11).getReference();
-                    String _name_11 = _reference.getName();
-                    _builder.append(_name_11, "	");
+                    ReferenceType _reference = ((ReferenceValueProperty) _value_11).getReference();
+                    String _refname = this.refname(_reference);
+                    _builder.append(_refname, "	");
                     _builder.append("\" />");
                     _builder.newLineIfNotEmpty();
                     _builder.append("</");
@@ -906,8 +907,8 @@ public class FXGraphGenerator implements IGenerator {
                     String _shortName_11 = this.shortName(_type_11, importManager);
                     _builder.append(_shortName_11, "");
                     _builder.append(".");
-                    String _name_12 = prop.getName();
-                    _builder.append(_name_12, "");
+                    String _name_11 = prop.getName();
+                    _builder.append(_name_11, "");
                     _builder.append(">");
                     _builder.newLineIfNotEmpty();
                   } else {
@@ -921,21 +922,21 @@ public class FXGraphGenerator implements IGenerator {
                           String _shortName_12 = this.shortName(_type_12, importManager);
                           _builder.append(_shortName_12, "");
                           _builder.append(".");
-                          String _name_13 = prop.getName();
-                          _builder.append(_name_13, "");
+                          String _name_12 = prop.getName();
+                          _builder.append(_name_12, "");
                           _builder.append(">");
                           _builder.newLineIfNotEmpty();
                           _builder.append("\t");
                           _builder.append("<fx:include");
                           {
                             ValueProperty _value_13 = prop.getValue();
-                            String _name_14 = ((IncludeValueProperty) _value_13).getName();
-                            boolean _notEquals_1 = (!Objects.equal(_name_14, null));
+                            String _name_13 = ((IncludeValueProperty) _value_13).getName();
+                            boolean _notEquals_1 = (!Objects.equal(_name_13, null));
                             if (_notEquals_1) {
                               _builder.append(" fx:id=\"");
                               ValueProperty _value_14 = prop.getValue();
-                              String _name_15 = ((IncludeValueProperty) _value_14).getName();
-                              _builder.append(_name_15, "	");
+                              String _name_14 = ((IncludeValueProperty) _value_14).getName();
+                              _builder.append(_name_14, "	");
                               _builder.append("\"");
                             }
                           }
@@ -952,8 +953,8 @@ public class FXGraphGenerator implements IGenerator {
                           String _shortName_13 = this.shortName(_type_13, importManager);
                           _builder.append(_shortName_13, "");
                           _builder.append(".");
-                          String _name_16 = prop.getName();
-                          _builder.append(_name_16, "");
+                          String _name_15 = prop.getName();
+                          _builder.append(_name_15, "");
                           _builder.append(">");
                           _builder.newLineIfNotEmpty();
                         }
@@ -966,16 +967,16 @@ public class FXGraphGenerator implements IGenerator {
                         String _shortName_14 = this.shortName(_type_14, importManager);
                         _builder.append(_shortName_14, "");
                         _builder.append(".");
-                        String _name_17 = prop.getName();
-                        _builder.append(_name_17, "");
+                        String _name_16 = prop.getName();
+                        _builder.append(_name_16, "");
                         _builder.append(">");
                         _builder.newLineIfNotEmpty();
                         _builder.append("\t");
                         _builder.append("<fx:copy source=\"");
                         ValueProperty _value_17 = prop.getValue();
                         Element _reference_1 = ((CopyValueProperty) _value_17).getReference();
-                        String _name_18 = _reference_1.getName();
-                        _builder.append(_name_18, "	");
+                        String _name_17 = _reference_1.getName();
+                        _builder.append(_name_17, "	");
                         _builder.append("\" />");
                         _builder.newLineIfNotEmpty();
                         _builder.append("</");
@@ -983,8 +984,8 @@ public class FXGraphGenerator implements IGenerator {
                         String _shortName_15 = this.shortName(_type_15, importManager);
                         _builder.append(_shortName_15, "");
                         _builder.append(".");
-                        String _name_19 = prop.getName();
-                        _builder.append(_name_19, "");
+                        String _name_18 = prop.getName();
+                        _builder.append(_name_18, "");
                         _builder.append(">");
                         _builder.newLineIfNotEmpty();
                       }
@@ -1000,6 +1001,14 @@ public class FXGraphGenerator implements IGenerator {
     return _builder;
   }
   
+  public String refname(final ReferenceType e) {
+    if ((e instanceof Element)) {
+      return ((Element) e).getName();
+    } else {
+      return ((IncludeValueProperty) e).getName();
+    }
+  }
+  
   public CharSequence propListContent(final ListValueProperty listProp, final ImportManager importManager, final boolean preview, final boolean skipController, final boolean skipIncludes) {
     StringConcatenation _builder = new StringConcatenation();
     {
@@ -1013,9 +1022,9 @@ public class FXGraphGenerator implements IGenerator {
           } else {
             if ((e instanceof ReferenceValueProperty)) {
               _builder.append("<fx:reference source=\"");
-              Element _reference = ((ReferenceValueProperty) e).getReference();
-              String _name = _reference.getName();
-              _builder.append(_name, "");
+              ReferenceType _reference = ((ReferenceValueProperty) e).getReference();
+              String _refname = this.refname(_reference);
+              _builder.append(_refname, "");
               _builder.append("\" />");
               _builder.newLineIfNotEmpty();
             } else {
@@ -1025,12 +1034,12 @@ public class FXGraphGenerator implements IGenerator {
                   if (_not) {
                     _builder.append("<fx:include");
                     {
-                      String _name_1 = ((IncludeValueProperty) e).getName();
-                      boolean _notEquals = (!Objects.equal(_name_1, null));
+                      String _name = ((IncludeValueProperty) e).getName();
+                      boolean _notEquals = (!Objects.equal(_name, null));
                       if (_notEquals) {
                         _builder.append(" fx:id=\"");
-                        String _name_2 = ((IncludeValueProperty) e).getName();
-                        _builder.append(_name_2, "");
+                        String _name_1 = ((IncludeValueProperty) e).getName();
+                        _builder.append(_name_1, "");
                         _builder.append("\"");
                       }
                     }
@@ -1143,9 +1152,9 @@ public class FXGraphGenerator implements IGenerator {
           String _plus_4 = (" " + _name_1);
           String _plus_5 = (_plus_4 + "=\"$");
           ValueProperty _value_3 = p.getValue();
-          Element _reference = ((ReferenceValueProperty) _value_3).getReference();
-          String _name_2 = _reference.getName();
-          String _plus_6 = (_plus_5 + _name_2);
+          ReferenceType _reference = ((ReferenceValueProperty) _value_3).getReference();
+          String _refname = this.refname(_reference);
+          String _plus_6 = (_plus_5 + _refname);
           String _plus_7 = (_plus_6 + "\"");
           builder.append(_plus_7);
         } else {
@@ -1153,8 +1162,8 @@ public class FXGraphGenerator implements IGenerator {
           if ((_value_4 instanceof ControllerHandledValueProperty)) {
             boolean _not = (!skipController);
             if (_not) {
-              String _name_3 = p.getName();
-              String _plus_8 = (" " + _name_3);
+              String _name_2 = p.getName();
+              String _plus_8 = (" " + _name_2);
               String _plus_9 = (_plus_8 + "=\"#");
               ValueProperty _value_5 = p.getValue();
               String _methodname = ((ControllerHandledValueProperty) _value_5).getMethodname();
@@ -1167,8 +1176,8 @@ public class FXGraphGenerator implements IGenerator {
             if ((_value_6 instanceof ScriptHandlerHandledValueProperty)) {
               boolean _not_1 = (!skipController);
               if (_not_1) {
-                String _name_4 = p.getName();
-                String _plus_12 = (" " + _name_4);
+                String _name_3 = p.getName();
+                String _plus_12 = (" " + _name_3);
                 String _plus_13 = (_plus_12 + "=\"");
                 ValueProperty _value_7 = p.getValue();
                 String _functionname = ((ScriptHandlerHandledValueProperty) _value_7).getFunctionname();
@@ -1181,8 +1190,8 @@ public class FXGraphGenerator implements IGenerator {
               if ((_value_8 instanceof ScriptValueExpression)) {
                 boolean _not_2 = (!skipController);
                 if (_not_2) {
-                  String _name_5 = p.getName();
-                  String _plus_16 = (" " + _name_5);
+                  String _name_4 = p.getName();
+                  String _plus_16 = (" " + _name_4);
                   String _plus_17 = (_plus_16 + "=\"");
                   ValueProperty _value_9 = p.getValue();
                   String _sourcecode = ((ScriptValueExpression) _value_9).getSourcecode();
@@ -1201,8 +1210,8 @@ public class FXGraphGenerator implements IGenerator {
                 if ((_value_11 instanceof ScriptValueReference)) {
                   boolean _not_3 = (!skipController);
                   if (_not_3) {
-                    String _name_6 = p.getName();
-                    String _plus_20 = (" " + _name_6);
+                    String _name_5 = p.getName();
+                    String _plus_20 = (" " + _name_5);
                     String _plus_21 = (_plus_20 + "=\"$");
                     ValueProperty _value_12 = p.getValue();
                     String _reference_1 = ((ScriptValueReference) _value_12).getReference();
@@ -1213,8 +1222,8 @@ public class FXGraphGenerator implements IGenerator {
                 } else {
                   ValueProperty _value_13 = p.getValue();
                   if ((_value_13 instanceof LocationValueProperty)) {
-                    String _name_7 = p.getName();
-                    String _plus_24 = (" " + _name_7);
+                    String _name_6 = p.getName();
+                    String _plus_24 = (" " + _name_6);
                     String _plus_25 = (_plus_24 + "=\"@");
                     ValueProperty _value_14 = p.getValue();
                     String _value_15 = ((LocationValueProperty) _value_14).getValue();
@@ -1224,8 +1233,8 @@ public class FXGraphGenerator implements IGenerator {
                   } else {
                     ValueProperty _value_16 = p.getValue();
                     if ((_value_16 instanceof ResourceValueProperty)) {
-                      String _name_8 = p.getName();
-                      String _plus_28 = (" " + _name_8);
+                      String _name_7 = p.getName();
+                      String _plus_28 = (" " + _name_7);
                       String _plus_29 = (_plus_28 + "=\"%");
                       ValueProperty _value_17 = p.getValue();
                       StringValue _value_18 = ((ResourceValueProperty) _value_17).getValue();
@@ -1236,13 +1245,13 @@ public class FXGraphGenerator implements IGenerator {
                     } else {
                       ValueProperty _value_20 = p.getValue();
                       if ((_value_20 instanceof BindValueProperty)) {
-                        String _name_9 = p.getName();
-                        String _plus_32 = (" " + _name_9);
+                        String _name_8 = p.getName();
+                        String _plus_32 = (" " + _name_8);
                         String _plus_33 = (_plus_32 + "=\"${");
                         ValueProperty _value_21 = p.getValue();
                         Element _elementReference = ((BindValueProperty) _value_21).getElementReference();
-                        String _name_10 = _elementReference.getName();
-                        String _plus_34 = (_plus_33 + _name_10);
+                        String _name_9 = _elementReference.getName();
+                        String _plus_34 = (_plus_33 + _name_9);
                         String _plus_35 = (_plus_34 + ".");
                         ValueProperty _value_22 = p.getValue();
                         String _attribute = ((BindValueProperty) _value_22).getAttribute();
@@ -1305,9 +1314,9 @@ public class FXGraphGenerator implements IGenerator {
           String _plus_8 = (_plus_7 + _name_1);
           String _plus_9 = (_plus_8 + "=\"$");
           ValueProperty _value_3 = p.getValue();
-          Element _reference = ((ReferenceValueProperty) _value_3).getReference();
-          String _name_2 = _reference.getName();
-          String _plus_10 = (_plus_9 + _name_2);
+          ReferenceType _reference = ((ReferenceValueProperty) _value_3).getReference();
+          String _refname = this.refname(_reference);
+          String _plus_10 = (_plus_9 + _refname);
           String _plus_11 = (_plus_10 + "\"");
           builder.append(_plus_11);
         } else {
@@ -1319,8 +1328,8 @@ public class FXGraphGenerator implements IGenerator {
               String _shortName_2 = this.shortName(_type_2, importManager);
               String _plus_12 = (" " + _shortName_2);
               String _plus_13 = (_plus_12 + ".");
-              String _name_3 = p.getName();
-              String _plus_14 = (_plus_13 + _name_3);
+              String _name_2 = p.getName();
+              String _plus_14 = (_plus_13 + _name_2);
               String _plus_15 = (_plus_14 + "=\"#");
               ValueProperty _value_5 = p.getValue();
               String _methodname = ((ControllerHandledValueProperty) _value_5).getMethodname();
@@ -1337,8 +1346,8 @@ public class FXGraphGenerator implements IGenerator {
                 String _shortName_3 = this.shortName(_type_3, importManager);
                 String _plus_18 = (" " + _shortName_3);
                 String _plus_19 = (_plus_18 + ".");
-                String _name_4 = p.getName();
-                String _plus_20 = (_plus_19 + _name_4);
+                String _name_3 = p.getName();
+                String _plus_20 = (_plus_19 + _name_3);
                 String _plus_21 = (_plus_20 + "=\"");
                 ValueProperty _value_7 = p.getValue();
                 String _functionname = ((ScriptHandlerHandledValueProperty) _value_7).getFunctionname();
@@ -1355,8 +1364,8 @@ public class FXGraphGenerator implements IGenerator {
                   String _shortName_4 = this.shortName(_type_4, importManager);
                   String _plus_24 = (" " + _shortName_4);
                   String _plus_25 = (_plus_24 + ".");
-                  String _name_5 = p.getName();
-                  String _plus_26 = (_plus_25 + _name_5);
+                  String _name_4 = p.getName();
+                  String _plus_26 = (_plus_25 + _name_4);
                   String _plus_27 = (_plus_26 + "=\"");
                   ValueProperty _value_9 = p.getValue();
                   String _sourcecode = ((ScriptValueExpression) _value_9).getSourcecode();
@@ -1379,8 +1388,8 @@ public class FXGraphGenerator implements IGenerator {
                     String _shortName_5 = this.shortName(_type_5, importManager);
                     String _plus_30 = (" " + _shortName_5);
                     String _plus_31 = (_plus_30 + ".");
-                    String _name_6 = p.getName();
-                    String _plus_32 = (_plus_31 + _name_6);
+                    String _name_5 = p.getName();
+                    String _plus_32 = (_plus_31 + _name_5);
                     String _plus_33 = (_plus_32 + "=\"$");
                     ValueProperty _value_12 = p.getValue();
                     String _reference_1 = ((ScriptValueReference) _value_12).getReference();
@@ -1395,8 +1404,8 @@ public class FXGraphGenerator implements IGenerator {
                     String _shortName_6 = this.shortName(_type_6, importManager);
                     String _plus_36 = (" " + _shortName_6);
                     String _plus_37 = (_plus_36 + ".");
-                    String _name_7 = p.getName();
-                    String _plus_38 = (_plus_37 + _name_7);
+                    String _name_6 = p.getName();
+                    String _plus_38 = (_plus_37 + _name_6);
                     String _plus_39 = (_plus_38 + "=\"@");
                     ValueProperty _value_14 = p.getValue();
                     String _value_15 = ((LocationValueProperty) _value_14).getValue();
@@ -1410,8 +1419,8 @@ public class FXGraphGenerator implements IGenerator {
                       String _shortName_7 = this.shortName(_type_7, importManager);
                       String _plus_42 = (" " + _shortName_7);
                       String _plus_43 = (_plus_42 + ".");
-                      String _name_8 = p.getName();
-                      String _plus_44 = (_plus_43 + _name_8);
+                      String _name_7 = p.getName();
+                      String _plus_44 = (_plus_43 + _name_7);
                       String _plus_45 = (_plus_44 + "=\"%");
                       ValueProperty _value_17 = p.getValue();
                       StringValue _value_18 = ((ResourceValueProperty) _value_17).getValue();
@@ -1426,13 +1435,13 @@ public class FXGraphGenerator implements IGenerator {
                         String _shortName_8 = this.shortName(_type_8, importManager);
                         String _plus_48 = (" " + _shortName_8);
                         String _plus_49 = (_plus_48 + ".");
-                        String _name_9 = p.getName();
-                        String _plus_50 = (_plus_49 + _name_9);
+                        String _name_8 = p.getName();
+                        String _plus_50 = (_plus_49 + _name_8);
                         String _plus_51 = (_plus_50 + "=\"${");
                         ValueProperty _value_21 = p.getValue();
                         Element _elementReference = ((BindValueProperty) _value_21).getElementReference();
-                        String _name_10 = _elementReference.getName();
-                        String _plus_52 = (_plus_51 + _name_10);
+                        String _name_9 = _elementReference.getName();
+                        String _plus_52 = (_plus_51 + _name_9);
                         String _plus_53 = (_plus_52 + ".");
                         ValueProperty _value_22 = p.getValue();
                         String _attribute = ((BindValueProperty) _value_22).getAttribute();

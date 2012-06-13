@@ -31,10 +31,12 @@ import org.eclipse.xtext.generator.IFileSystemAccess
 import org.eclipse.xtext.generator.IGenerator
 import org.eclipse.xtext.xbase.compiler.ImportManager
 import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.ValueProperty
+import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.ReferenceType
+import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.Element
 
 class FXGraphGenerator implements IGenerator {
 	 
-	def calculateRelativePath(Resource resource) { 
+	def calculateRelativePath(Resource resource) {
 		
 			if( resource.URI.platformResource ) {
 				var uri = resource.URI;
@@ -241,7 +243,7 @@ class FXGraphGenerator implements IGenerator {
 		«ELSEIF prop.value instanceof ReferenceValueProperty»
 			«IF !skipIncludes»
 				<«prop.name»>
-					<fx:reference source="«(prop.value as ReferenceValueProperty).reference.name»" />
+					<fx:reference source="«(prop.value as ReferenceValueProperty).reference.refname»" />
 				</«prop.name»>
 			«ENDIF»
 		«ELSEIF prop.value instanceof IncludeValueProperty»
@@ -279,7 +281,7 @@ class FXGraphGenerator implements IGenerator {
 			</«prop.type.shortName(importManager)».«prop.name»>
 		«ELSEIF prop.value instanceof ReferenceValueProperty»
 			<«prop.type.shortName(importManager)».«prop.name»>
-				<fx:reference source="«(prop.value as ReferenceValueProperty).reference.name»" />
+				<fx:reference source="«(prop.value as ReferenceValueProperty).reference.refname»" />
 			</«prop.type.shortName(importManager)».«prop.name»>
 		«ELSEIF prop.value instanceof IncludeValueProperty»
 			«IF ! skipIncludes»
@@ -295,12 +297,20 @@ class FXGraphGenerator implements IGenerator {
 		«ENDFOR»
 	'''
 	
+	def refname(ReferenceType e) {
+		if( e instanceof Element ) {
+			return (e as Element).name;
+		} else {
+			return (e as IncludeValueProperty).name;
+		}
+	}
+	
 	def propListContent(ListValueProperty listProp, ImportManager importManager, boolean preview, boolean skipController, boolean skipIncludes) '''
 		«FOR e : listProp.value»
 			«IF e instanceof Element»
 				«elementContent(e as Element,importManager,preview, skipController, skipIncludes)»
 			«ELSEIF e instanceof ReferenceValueProperty»
-				<fx:reference source="«(e as ReferenceValueProperty).reference.name»" />
+				<fx:reference source="«(e as ReferenceValueProperty).reference.refname»" />
 			«ELSEIF e instanceof IncludeValueProperty»
 				«IF !skipIncludes»
 					<fx:include«IF (e as IncludeValueProperty).name != null» fx:id="«(e as IncludeValueProperty).name»"«ENDIF» source="/«(e as IncludeValueProperty).source.fullyQualifiedName.replaceAll("\\.","/")».fxml" />
@@ -344,7 +354,7 @@ class FXGraphGenerator implements IGenerator {
 			if( p.value instanceof SimpleValueProperty ) {
 				builder.append(" " + p.name + "=\""+simpleAttributeValue(p.value as SimpleValueProperty)+"\"");
 			} else if( p.value instanceof ReferenceValueProperty ) {
-				builder.append(" " + p.name + "=\"$"+(p.value as ReferenceValueProperty).reference.name+"\"");
+				builder.append(" " + p.name + "=\"$"+(p.value as ReferenceValueProperty).reference.refname+"\"");
 			} else if( p.value instanceof ControllerHandledValueProperty ) {
 				if( ! skipController ) {
 					builder.append(" " + p.name + "=\"#"+(p.value as ControllerHandledValueProperty).methodname +"\"");
@@ -380,7 +390,7 @@ class FXGraphGenerator implements IGenerator {
 			if( p.value instanceof SimpleValueProperty ) {
 				builder.append(" " + p.type.shortName(importManager) + "." + p.name + "=\""+simpleAttributeValue(p.value as SimpleValueProperty)+"\"");
 			} else if( p.value instanceof ReferenceValueProperty ) {
-				builder.append(" " + p.type.shortName(importManager) + "." + p.name + "=\"$"+(p.value as ReferenceValueProperty).reference.name+"\"");
+				builder.append(" " + p.type.shortName(importManager) + "." + p.name + "=\"$"+(p.value as ReferenceValueProperty).reference.refname+"\"");
 			} else if( p.value instanceof ControllerHandledValueProperty ) {
 				if( ! skipController ) {
 					builder.append(" " + p.type.shortName(importManager) + "." + p.name + "=\"#"+(p.value as ControllerHandledValueProperty).methodname +"\"");
