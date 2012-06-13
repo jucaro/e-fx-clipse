@@ -79,7 +79,7 @@ public class WorkbenchWindowRenderer extends JFXRenderer {
 			root.setTop(topAreaBox);
 
 			//root.setStyle("-fx-background-color: #999;");
-			Scene scene = new Scene(root, Integer.MAX_VALUE, Integer.MAX_VALUE, Platform.isSupported(ConditionalFeature.SCENE3D));
+			Scene scene = new Scene(root,-1,-1, Platform.isSupported(ConditionalFeature.SCENE3D));
 			if( Platform.isSupported(ConditionalFeature.SCENE3D) ) {
 				scene.setCamera(new PerspectiveCamera());
 			}
