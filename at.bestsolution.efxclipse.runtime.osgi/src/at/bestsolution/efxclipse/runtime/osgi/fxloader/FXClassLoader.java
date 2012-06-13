@@ -498,7 +498,7 @@ public class FXClassLoader implements ClassLoadingHook, AdaptorHook {
 							
 							for( File fxInstall : osArchLocations ) {
 								if( FXClassLoadingConfigurator.DEBUG ) {
-									System.err.println("MyBundleClassLoader#createClassLoaderForDeployedPlugin - Install location is: " + installLocation.getAbsolutePath());	
+									System.err.println("MyBundleClassLoader#createClassLoaderForDeployedPlugin - Install location is: " + fxInstall.getAbsolutePath());	
 								}
 								if (fxInstall.exists()) {
 									if( FXClassLoadingConfigurator.DEBUG ) {
@@ -622,6 +622,10 @@ public class FXClassLoader implements ClassLoadingHook, AdaptorHook {
 					System.err.println("MyBundleClassLoader#createClassloader - checking for javafx deployed as javafx.osgi");
 				}
 				loader = createClassLoaderForDeployedPlugin(parent,admin,context);				
+			}
+			
+			if (loader != null) {
+				return loader;
 			}
 			
 			{
