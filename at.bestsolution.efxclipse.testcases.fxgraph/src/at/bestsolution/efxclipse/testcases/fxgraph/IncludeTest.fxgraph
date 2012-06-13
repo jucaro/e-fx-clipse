@@ -3,12 +3,19 @@ package at.bestsolution.efxclipse.testcases.fxgraph
 import javafx.scene.layout.*
 import at.bestsolution.efxclipse.testcases.fxgraph.*
 import at.bestsolution.efxclipse.testcases.fxgraph.inc.*
+import javafx.scene.control.Button
 
-component IncludeTest { 
+component IncludeTest {
+	define Button id testButton {
+		text : "Hello Define"
+	},
+	define include ImageTest as imageInc
 	VBox {
 		children : [
-			include Controller,
-			include TestInc 
+			include Controller as test1,
+			include TestInc,
+			idref testButton,
+			idref imageInc
 		]
 	}
 }
