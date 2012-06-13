@@ -68,7 +68,9 @@ public abstract class InjectingFXMLLoader<N> implements FXMLBuilder<N> {
 		}
 		
 		public Object call(Class<?> param) {
-			return ContextInjectionFactory.make(param, context);
+			Object o = ContextInjectionFactory.make(param, context);
+			context.set(o.getClass().getName(), o);
+			return o;
 		}
 		
 	}
