@@ -9,6 +9,7 @@ import org.eclipse.osgi.service.resolver.BundleDescription;
 import at.bestsolution.efxclipse.tooling.jdt.core.internal.BuildPathSupport;
 import at.bestsolution.efxclipse.tooling.pde.adaptor.IClasspathContributor;
 
+@SuppressWarnings("restriction")
 public class JavaFXClassPathExtender implements IClasspathContributor {
 
 	@Override
