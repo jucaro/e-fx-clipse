@@ -1,9 +1,13 @@
 package at.bestsolution.efxclipse.runtime.examples.e4;
 
+import java.net.URL;
+import java.util.ResourceBundle;
+
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
 import javafx.geometry.Rectangle2D;
 import javafx.scene.control.ToolBar;
 import javafx.scene.input.MouseEvent;
@@ -12,7 +16,7 @@ import javafx.stage.Stage;
 
 import javax.annotation.PostConstruct;
 
-public class DecorationController {
+public class DecorationController implements Initializable {
 	private double mouseDragOffsetX = 0;
 	private double mouseDragOffsetY = 0;
 
@@ -25,8 +29,7 @@ public class DecorationController {
 		System.err.println("Creating controller ....");
 	}
 
-	@PostConstruct
-	void init() {
+	public void initialize(URL location, ResourceBundle resources) {
 		decorationArea.setOnMousePressed(new EventHandler<MouseEvent>() {
 			public void handle(MouseEvent event) {
 				mouseDragOffsetX = event.getSceneX();
