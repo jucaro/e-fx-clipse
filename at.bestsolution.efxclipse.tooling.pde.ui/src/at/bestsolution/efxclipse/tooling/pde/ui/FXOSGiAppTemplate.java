@@ -1,19 +1,25 @@
 package at.bestsolution.efxclipse.tooling.pde.ui;
 
 import java.lang.reflect.InvocationTargetException;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 import org.eclipse.core.resources.IFile;
 import org.eclipse.core.resources.IProject;
 import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.core.runtime.NullProgressMonitor;
+import org.eclipse.jface.dialogs.MessageDialog;
 import org.eclipse.jface.wizard.Wizard;
+import org.eclipse.jface.wizard.WizardDialog;
 import org.eclipse.jface.wizard.WizardPage;
 import org.eclipse.pde.core.plugin.IPluginBase;
 import org.eclipse.pde.core.plugin.IPluginElement;
 import org.eclipse.pde.core.plugin.IPluginExtension;
 import org.eclipse.pde.core.plugin.IPluginModelBase;
 import org.eclipse.pde.core.plugin.IPluginReference;
+import org.eclipse.pde.core.plugin.PluginRegistry;
 import org.eclipse.pde.internal.core.bundle.BundlePluginBase;
 import org.eclipse.pde.internal.core.ibundle.IBundle;
 import org.eclipse.pde.internal.core.iproduct.IArgumentsInfo;
@@ -28,6 +34,7 @@ import org.osgi.framework.Constants;
 public class FXOSGiAppTemplate extends FXPDETemplateSection {
 	public static final String KEY_APPLICATION_CLASS = "applicationClass"; //$NON-NLS-1$
 	public static final String KEY_WINDOW_TITLE = "windowTitle"; //$NON-NLS-1$
+	public static final String KEY_PACKAGE_JAVAFX = "packageJavaFX";
 
 	public FXOSGiAppTemplate() {
 		setPageCount(1);
@@ -38,6 +45,7 @@ public class FXOSGiAppTemplate extends FXPDETemplateSection {
 		addOption(KEY_WINDOW_TITLE, "Title", "Hello JavaFX", 0); //$NON-NLS-1$ 
 		addOption(KEY_PACKAGE_NAME, "Package", (String) null, 0);
 		addOption(KEY_APPLICATION_CLASS, "Application class", "Application", 0); //$NON-NLS-1$
+		addOption(KEY_PACKAGE_JAVAFX, "Package JavaFX", true, 0);
 		
 		createBrandingOptions();
 	}
@@ -143,28 +151,55 @@ public class FXOSGiAppTemplate extends FXPDETemplateSection {
 		
 		super.execute(project, model, monitor);
 		
+		if( getBooleanOption(KEY_PACKAGE_JAVAFX) ) {
+			if( PluginRegistry.findModel("javafx.osgi") == null ) {
+				if( MessageDialog.openQuestion(getPage(0).getShell(), "No javafx.osgi bundle", "There's currently no javafx.osgi bundle in your workspace or target platform. Would you like to create one?") ) {
+					WizardDialog d = new WizardDialog(getPage(0).getShell(), new RepackageJavaFXWizard());
+					d.open();
+				}
+			}
+		}
+		
 		if (getBooleanOption(KEY_PRODUCT_BRANDING)) {
 			
-			IFile file = project.getFile(new org.eclipse.core.runtime.Path(model.getPluginBase().getName() + ".product" + ".product"));
+			IFile file = project.getFile(new org.eclipse.core.runtime.Path(model.getPluginBase().getId() + ".product"));
 			
 			try {
 				new BaseProductCreationOperation(file) {
 					@Override
 					protected void initializeProduct(IProduct product) {
 						super.initializeProduct(product);
-						String args = product.getLauncherArguments().getVMArguments(IArgumentsInfo.L_ARGS_ALL);
-						if( args == null ) {
-							args = "";
+						
+						{
+							String args = product.getLauncherArguments().getVMArguments(IArgumentsInfo.L_ARGS_ALL);
+							if( args == null ) {
+								args = "";
+							}
+							args += "-Dosgi.framework.extensions=at.bestsolution.efxclipse.runtime.osgi";
+							product.getLauncherArguments().setVMArguments(args, IArgumentsInfo.L_ARGS_ALL);
 						}
-						args = "-Dosgi.framework.extensions=at.bestsolution.efxclipse.runtime.osgi";
-						product.getLauncherArguments().setVMArguments(args, IArgumentsInfo.L_ARGS_ALL);
+						
+						{
+							String args = product.getLauncherArguments().getProgramArguments(IArgumentsInfo.L_ARGS_ALL);
+							if( args == null ) {
+								args = "";
+							}
+							args += "-nosplash";
+							product.getLauncherArguments().setProgramArguments(args, IArgumentsInfo.L_ARGS_ALL);
+						}
+						
+						{
+							// No Mac Flags
+							product.getLauncherArguments().setVMArguments("", IArgumentsInfo.L_ARGS_MACOS);
+						}
 						
 						IProductModelFactory factory = product.getModel().getFactory();
-						product.setProductId(model.getPluginBase().getName() + "." + VALUE_PRODUCT_ID);
-						product.setApplication(model.getPluginBase().getName() + "." + VALUE_APPLICATION_ID);
+						product.setProductId(model.getPluginBase().getId() + "." + VALUE_PRODUCT_ID);
+						product.setApplication(model.getPluginBase().getId() + "." + VALUE_APPLICATION_ID);
+						product.setName("product");
 						
-						addPlugins(factory, product, new String[] {
-								model.getPluginBase().getName(),
+						List<String> l = new ArrayList<String>();
+						l.addAll(Arrays.asList(model.getPluginBase().getId(),
 								"at.bestsolution.efxclipse.runtime.osgi",
 								"at.bestsolution.efxclipse.runtime.javafx",
 								"at.bestsolution.efxclipse.runtime.application",
@@ -181,27 +216,14 @@ public class FXOSGiAppTemplate extends FXPDETemplateSection {
 								"org.eclipse.core.runtime", //TODO Should be removed!
 								"org.eclipse.core.jobs",
 								"org.eclipse.equinox.preferences",
-								"org.eclipse.core.contenttype"
-						});
+								"org.eclipse.core.contenttype"));
+						if( getBooleanOption(KEY_PACKAGE_JAVAFX) ) {
+							l.add("javafx.osgi");
+						}
+						
+						addPlugins(factory, product, l.toArray(new String[0]));
 					}
-				}.run(new NullProgressMonitor());
-				
-//				new ProductFromExtensionOperation(file, model.getPluginBase().getName() + "." + VALUE_PRODUCT_ID) {
-//					@Override
-//					protected void initializeProduct(IProduct product) {
-//						super.initializeProduct(product);
-//						
-//						String args = product.getLauncherArguments().getVMArguments(IArgumentsInfo.L_ARGS_ALL);
-//						if( args == null ) {
-//							args = "";
-//						}
-//						args = "-Dosgi.framework.extensions=at.bestsolution.efxclipse.runtime.osgi";
-//						product.getLauncherArguments().setVMArguments(args, IArgumentsInfo.L_ARGS_ALL);
-//						
-//						IProductModelFactory factory = product.getModel().getFactory();
-//						addPlugins(factory, product, new String[] {"at.bestsolution.efxclipse.runtime.osgi"});
-//					}
-//				}.run(new NullProgressMonitor());
+				}.run(new NullProgressMonitor());				
 			} catch (InvocationTargetException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
