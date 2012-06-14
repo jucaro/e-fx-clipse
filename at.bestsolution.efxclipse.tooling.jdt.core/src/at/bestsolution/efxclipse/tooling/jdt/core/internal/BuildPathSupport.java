@@ -53,7 +53,7 @@ public class BuildPathSupport {
 			if( dir.length() > 0 ) {
 				jarLocationPath = new Path(dir).append("rt").append("lib").append("jfxrt.jar");
 				javadocLocation = new Path(dir).append("docs").append("api");
-				antJarLocationPath = new Path(dir).append("tools").append("ant-javafx.jar");
+				antJarLocationPath = new Path(dir).append("lib").append("ant-javafx.jar");
 			}	
 		} else if( type.equals(JavaFXPreferencesConstants.CONFIG_TYPE_BUILTIN) ) {
 			File javaHome; 
