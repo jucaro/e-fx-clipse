@@ -21,7 +21,6 @@ import org.eclipse.pde.internal.core.bundle.BundlePluginBase;
 import org.eclipse.pde.internal.core.ibundle.IBundle;
 import org.eclipse.pde.ui.IFieldData;
 import org.eclipse.pde.ui.templates.PluginReference;
-import org.eclipse.swt.widgets.MessageBox;
 import org.osgi.framework.Constants;
 
 public class E3PluginTemplate extends FXPDETemplateSection {
