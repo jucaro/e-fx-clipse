@@ -35,7 +35,8 @@ import org.eclipse.ui.PlatformUI;
 import at.bestsolution.efxclipse.tooling.jdt.core.internal.BuildPathSupport;
 
 public abstract class AbstractAntHandler extends AbstractHandler {
-
+	protected IJavaProject project;
+	
 	protected Map<String,Object> prepareBuild(IFile f, Properties properties) {
 		Map<String,Object> map = new HashMap<String, Object>();
 		String workbench = ResourcesPlugin.getWorkspace().getRoot().getLocation().toString();
@@ -85,7 +86,7 @@ public abstract class AbstractAntHandler extends AbstractHandler {
 			e.printStackTrace();
 		}
 		
-		IJavaProject project = JavaCore.create(f.getProject());
+		project = JavaCore.create(f.getProject());
 
 		Set<IPath> listProjectSourceDirs = new HashSet<IPath>();
 		Set<IPath> listRefProjectSourceDirs = new HashSet<IPath>();

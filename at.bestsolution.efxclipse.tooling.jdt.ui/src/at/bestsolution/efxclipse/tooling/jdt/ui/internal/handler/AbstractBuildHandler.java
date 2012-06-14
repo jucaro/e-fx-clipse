@@ -15,6 +15,7 @@ import java.io.InputStream;
 import java.util.Map;
 import java.util.Properties;
 
+import org.eclipse.ant.launching.IAntLaunchConstants;
 import org.eclipse.core.commands.ExecutionEvent;
 import org.eclipse.core.commands.ExecutionException;
 import org.eclipse.core.expressions.IEvaluationContext;
@@ -28,6 +29,10 @@ import org.eclipse.debug.core.ILaunchConfigurationType;
 import org.eclipse.debug.core.ILaunchConfigurationWorkingCopy;
 import org.eclipse.debug.core.ILaunchManager;
 import org.eclipse.debug.ui.DebugUITools;
+import org.eclipse.jdt.core.IClasspathContainer;
+import org.eclipse.jdt.core.IClasspathEntry;
+import org.eclipse.jdt.core.JavaCore;
+import org.eclipse.jdt.launching.IJavaLaunchConfigurationConstants;
 
 /**
  * @author Tom Schindl
@@ -99,6 +104,16 @@ public abstract class AbstractBuildHandler extends AbstractAntHandler {
 			ILaunchConfigurationWorkingCopy cfg = type.newInstance(null,  name);
 			cfg.setAttribute(IExternalToolConstants.ATTR_LOCATION, buildFile.getAbsolutePath());
 			cfg.setAttribute(IExternalToolConstants.ATTR_WORKING_DIRECTORY, buildFile.getParentFile().getAbsolutePath());
+			cfg.setAttribute(IAntLaunchConstants.ATTR_DEFAULT_VM_INSTALL,false);
+			
+			for( IClasspathEntry e : project.getRawClasspath() ) {
+				String start = e.getPath().segment(0);
+				if( "org.eclipse.jdt.launching.JRE_CONTAINER".equals(start)) {
+					cfg.setAttribute(IJavaLaunchConfigurationConstants.ATTR_JRE_CONTAINER_PATH, e.getPath().toString());
+				}
+			}
+			
+			
 			cfg.doSave();
 			
 			return cfg;
