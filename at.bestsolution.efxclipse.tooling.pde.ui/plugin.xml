@@ -36,6 +36,13 @@
             requiresActivator="false"
             ui-content="true">
       </wizard>
+      <wizard
+            class="at.bestsolution.efxclipse.tooling.pde.ui.HelloRCPNewWizard"
+            icon="icons/application_lightning.png"
+            id="at.bestsolution.efxclipse.tooling.pde.ui.newfxrcp"
+            name="JavaFX Eclipse 3.x RCP"
+            rcp="true">
+      </wizard>
    </extension>
    <extension
          point="org.eclipse.ui.newWizards">
