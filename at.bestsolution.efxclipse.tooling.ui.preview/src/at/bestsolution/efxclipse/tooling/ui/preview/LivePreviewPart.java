@@ -552,7 +552,7 @@ public class LivePreviewPart extends ViewPart {
 					if (innerException != null) {
 						logItem.setImage(JFaceResources.getImage(IMAGE_ERROR));
 						statusLabelIcon.setImage(JFaceResources.getImage(IMAGE_STATUS_ERROR));
-						statusLabelText.setText(SimpleDateFormat.getTimeInstance().format(new Date()) + ": Error while updateing preview");
+						statusLabelText.setText(SimpleDateFormat.getTimeInstance().format(new Date()) + ": Error while updating preview");
 						setTitleImage(JFaceResources.getImage(IMAGE_TAB_ERROR));
 						folder.setSelection(logItem);
 					}
