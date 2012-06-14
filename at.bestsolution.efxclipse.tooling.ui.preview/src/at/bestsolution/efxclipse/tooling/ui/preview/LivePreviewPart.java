@@ -76,6 +76,7 @@ import at.bestsolution.efxclipse.tooling.ui.preview.text.XMLConfiguration;
 import at.bestsolution.efxclipse.tooling.ui.preview.text.XMLPartitionScanner;
 
 import com.google.inject.Inject;
+import com.sun.javafx.css.StyleManager;
 
 public class LivePreviewPart extends ViewPart {
 	public static final String PREF_LOAD_CONTROLLER = "PREF_LOAD_CONTROLLER";
@@ -370,6 +371,7 @@ public class LivePreviewPart extends ViewPart {
 		}
 	}
 
+	@SuppressWarnings("restriction")
 	private void saveRefreshContent(final ContentData contentData) {
 		folder.setVisible(true);
 
@@ -523,7 +525,8 @@ public class LivePreviewPart extends ViewPart {
 					}
 				}
 				
-
+				// Force CSS-Reloading
+				StyleManager.getInstance().reloadStylesheets(scene);
 				swtFXContainer.setScene(scene);
 
 				scene.getStylesheets().addAll(contentData.cssFiles);

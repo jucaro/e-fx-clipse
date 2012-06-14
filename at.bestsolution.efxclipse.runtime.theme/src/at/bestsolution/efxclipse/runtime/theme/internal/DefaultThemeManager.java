@@ -12,6 +12,8 @@ import org.eclipse.core.runtime.Platform;
 import org.eclipse.core.runtime.RegistryFactory;
 import org.osgi.framework.Bundle;
 
+import com.sun.javafx.css.StyleManager;
+
 import at.bestsolution.efxclipse.runtime.services.theme.Theme;
 import at.bestsolution.efxclipse.runtime.services.theme.ThemeManager;
 
@@ -128,6 +130,7 @@ public class DefaultThemeManager implements ThemeManager {
 		return themes;
 	}
 
+	@SuppressWarnings("restriction")
 	@Override
 	public void setCurrentThemeId(String id) {
 		for (Theme t : themes) {
@@ -148,7 +151,10 @@ public class DefaultThemeManager implements ThemeManager {
 							}
 						}
 					}
+					
+					StyleManager.getInstance().reloadStylesheets(scene);
 				}
+				
 				return;
 			}
 		}
