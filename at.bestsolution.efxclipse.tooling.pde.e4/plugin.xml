@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="org.eclipse.ui.newWizards">
+      <wizard
+            category="at.bestsolution.efxclipse.tooling"
+            class="at.bestsolution.efxclipse.tooling.pde.e4.project.E4NewProjectWizard"
+            icon="platform:/plugin/org.eclipse.pde.ui/icons/etool16/newpprj_wiz.gif"
+            id="at.bestsolution.efxclipse.tooling.pde.e4.app"
+            name="JavaFX Eclipse 4 Application"
+            project="true">
+      </wizard>
+   </extension>
+
+</plugin>
