@@ -126,10 +126,10 @@ public class FXGraphSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case FXGraphPackage.STATIC_VALUE_PROPERTY:
+      case FXGraphPackage.STATIC_CALL_VALUE_PROPERTY:
       {
-        StaticValueProperty staticValueProperty = (StaticValueProperty)theEObject;
-        T result = caseStaticValueProperty(staticValueProperty);
+        StaticCallValueProperty staticCallValueProperty = (StaticCallValueProperty)theEObject;
+        T result = caseStaticCallValueProperty(staticCallValueProperty);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -430,17 +430,17 @@ public class FXGraphSwitch<T> extends Switch<T>
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Static Value Property</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Static Call Value Property</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Static Value Property</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Static Call Value Property</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseStaticValueProperty(StaticValueProperty object)
+  public T caseStaticCallValueProperty(StaticCallValueProperty object)
   {
     return null;
   }

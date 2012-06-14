@@ -742,17 +742,17 @@ ruleElement returns [EObject current=null]
     |(
 (
 		{ 
-	        newCompositeNode(grammarAccess.getElementAccess().getStaticPropertiesStaticValuePropertyParserRuleCall_1_1_2_0_1_0()); 
+	        newCompositeNode(grammarAccess.getElementAccess().getStaticCallPropertiesStaticCallValuePropertyParserRuleCall_1_1_2_0_1_0()); 
 	    }
-		lv_staticProperties_10_0=ruleStaticValueProperty		{
+		lv_staticCallProperties_10_0=ruleStaticCallValueProperty		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getElementRule());
 	        }
        		add(
        			$current, 
-       			"staticProperties",
-        		lv_staticProperties_10_0, 
-        		"StaticValueProperty");
+       			"staticCallProperties",
+        		lv_staticCallProperties_10_0, 
+        		"StaticCallValueProperty");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -802,17 +802,17 @@ ruleElement returns [EObject current=null]
     |(
 (
 		{ 
-	        newCompositeNode(grammarAccess.getElementAccess().getStaticPropertiesStaticValuePropertyParserRuleCall_1_1_2_1_1_1_0()); 
+	        newCompositeNode(grammarAccess.getElementAccess().getStaticCallPropertiesStaticCallValuePropertyParserRuleCall_1_1_2_1_1_1_0()); 
 	    }
-		lv_staticProperties_14_0=ruleStaticValueProperty		{
+		lv_staticCallProperties_14_0=ruleStaticCallValueProperty		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getElementRule());
 	        }
        		add(
        			$current, 
-       			"staticProperties",
-        		lv_staticProperties_14_0, 
-        		"StaticValueProperty");
+       			"staticCallProperties",
+        		lv_staticCallProperties_14_0, 
+        		"StaticCallValueProperty");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -1082,17 +1082,17 @@ ruleScript returns [EObject current=null]
 
 
 
-// Entry rule entryRuleStaticValueProperty
-entryRuleStaticValueProperty returns [EObject current=null] 
+// Entry rule entryRuleStaticCallValueProperty
+entryRuleStaticCallValueProperty returns [EObject current=null] 
 	:
-	{ newCompositeNode(grammarAccess.getStaticValuePropertyRule()); }
-	 iv_ruleStaticValueProperty=ruleStaticValueProperty 
-	 { $current=$iv_ruleStaticValueProperty.current; } 
+	{ newCompositeNode(grammarAccess.getStaticCallValuePropertyRule()); }
+	 iv_ruleStaticCallValueProperty=ruleStaticCallValueProperty 
+	 { $current=$iv_ruleStaticCallValueProperty.current; } 
 	 EOF 
 ;
 
-// Rule StaticValueProperty
-ruleStaticValueProperty returns [EObject current=null] 
+// Rule StaticCallValueProperty
+ruleStaticCallValueProperty returns [EObject current=null] 
     @init { enterRule(); 
     }
     @after { leaveRule(); }:
@@ -1101,24 +1101,24 @@ ruleStaticValueProperty returns [EObject current=null]
 (
 		lv_modifier_0_1=	'preview' 
     {
-        newLeafNode(lv_modifier_0_1, grammarAccess.getStaticValuePropertyAccess().getModifierPreviewKeyword_0_0_0());
+        newLeafNode(lv_modifier_0_1, grammarAccess.getStaticCallValuePropertyAccess().getModifierPreviewKeyword_0_0_0());
     }
  
 	    {
 	        if ($current==null) {
-	            $current = createModelElement(grammarAccess.getStaticValuePropertyRule());
+	            $current = createModelElement(grammarAccess.getStaticCallValuePropertyRule());
 	        }
        		setWithLastConsumed($current, "modifier", lv_modifier_0_1, null);
 	    }
 
     |		lv_modifier_0_2=	'runtime-only' 
     {
-        newLeafNode(lv_modifier_0_2, grammarAccess.getStaticValuePropertyAccess().getModifierRuntimeOnlyKeyword_0_0_1());
+        newLeafNode(lv_modifier_0_2, grammarAccess.getStaticCallValuePropertyAccess().getModifierRuntimeOnlyKeyword_0_0_1());
     }
  
 	    {
 	        if ($current==null) {
-	            $current = createModelElement(grammarAccess.getStaticValuePropertyRule());
+	            $current = createModelElement(grammarAccess.getStaticCallValuePropertyRule());
 	        }
        		setWithLastConsumed($current, "modifier", lv_modifier_0_2, null);
 	    }
@@ -1128,16 +1128,16 @@ ruleStaticValueProperty returns [EObject current=null]
 )
 )?	otherlv_1='call' 
     {
-    	newLeafNode(otherlv_1, grammarAccess.getStaticValuePropertyAccess().getCallKeyword_1());
+    	newLeafNode(otherlv_1, grammarAccess.getStaticCallValuePropertyAccess().getCallKeyword_1());
     }
 (
 (
 		{ 
-	        newCompositeNode(grammarAccess.getStaticValuePropertyAccess().getTypeJvmTypeReferenceParserRuleCall_2_0()); 
+	        newCompositeNode(grammarAccess.getStaticCallValuePropertyAccess().getTypeJvmTypeReferenceParserRuleCall_2_0()); 
 	    }
 		lv_type_2_0=ruleJvmTypeReference		{
 	        if ($current==null) {
-	            $current = createModelElementForParent(grammarAccess.getStaticValuePropertyRule());
+	            $current = createModelElementForParent(grammarAccess.getStaticCallValuePropertyRule());
 	        }
        		set(
        			$current, 
@@ -1150,17 +1150,17 @@ ruleStaticValueProperty returns [EObject current=null]
 )
 )	otherlv_3='#' 
     {
-    	newLeafNode(otherlv_3, grammarAccess.getStaticValuePropertyAccess().getNumberSignKeyword_3());
+    	newLeafNode(otherlv_3, grammarAccess.getStaticCallValuePropertyAccess().getNumberSignKeyword_3());
     }
 (
 (
 		lv_name_4_0=RULE_ID
 		{
-			newLeafNode(lv_name_4_0, grammarAccess.getStaticValuePropertyAccess().getNameIDTerminalRuleCall_4_0()); 
+			newLeafNode(lv_name_4_0, grammarAccess.getStaticCallValuePropertyAccess().getNameIDTerminalRuleCall_4_0()); 
 		}
 		{
 	        if ($current==null) {
-	            $current = createModelElement(grammarAccess.getStaticValuePropertyRule());
+	            $current = createModelElement(grammarAccess.getStaticCallValuePropertyRule());
 	        }
        		setWithLastConsumed(
        			$current, 
@@ -1172,16 +1172,16 @@ ruleStaticValueProperty returns [EObject current=null]
 )
 )	otherlv_5=':' 
     {
-    	newLeafNode(otherlv_5, grammarAccess.getStaticValuePropertyAccess().getColonKeyword_5());
+    	newLeafNode(otherlv_5, grammarAccess.getStaticCallValuePropertyAccess().getColonKeyword_5());
     }
 (
 (
 		{ 
-	        newCompositeNode(grammarAccess.getStaticValuePropertyAccess().getValueValuePropertyParserRuleCall_6_0()); 
+	        newCompositeNode(grammarAccess.getStaticCallValuePropertyAccess().getValueValuePropertyParserRuleCall_6_0()); 
 	    }
 		lv_value_6_0=ruleValueProperty		{
 	        if ($current==null) {
-	            $current = createModelElementForParent(grammarAccess.getStaticValuePropertyRule());
+	            $current = createModelElementForParent(grammarAccess.getStaticCallValuePropertyRule());
 	        }
        		set(
        			$current, 

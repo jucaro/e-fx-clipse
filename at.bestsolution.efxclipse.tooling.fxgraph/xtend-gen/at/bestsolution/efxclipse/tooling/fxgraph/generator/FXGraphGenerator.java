@@ -23,7 +23,7 @@ import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.ScriptHandlerHandledVal
 import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.ScriptValueExpression;
 import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.ScriptValueReference;
 import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.SimpleValueProperty;
-import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.StaticValueProperty;
+import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.StaticCallValueProperty;
 import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.StringValue;
 import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.ValueProperty;
 import at.bestsolution.efxclipse.tooling.fxgraph.generator.LanguageManager;
@@ -239,8 +239,8 @@ public class FXGraphGenerator implements IGenerator {
         EList<Property> _properties = element.getProperties();
         StringBuilder _elementAttributes = this.elementAttributes(_properties, preview, skipController);
         _builder.append(_elementAttributes, "");
-        EList<StaticValueProperty> _staticProperties = element.getStaticProperties();
-        StringBuilder _elementStaticAttributes = this.elementStaticAttributes(_staticProperties, importManager, preview, skipController);
+        EList<StaticCallValueProperty> _staticCallProperties = element.getStaticCallProperties();
+        StringBuilder _elementStaticAttributes = this.elementStaticAttributes(_staticCallProperties, importManager, preview, skipController);
         _builder.append(_elementStaticAttributes, "");
       }
     }
@@ -363,8 +363,8 @@ public class FXGraphGenerator implements IGenerator {
         _builder.append(_propContents, "	");
         _builder.newLineIfNotEmpty();
         _builder.append("\t");
-        EList<StaticValueProperty> _staticProperties_1 = element.getStaticProperties();
-        CharSequence _statPropContent = this.statPropContent(_staticProperties_1, importManager, preview, skipController, skipIncludes);
+        EList<StaticCallValueProperty> _staticCallProperties_1 = element.getStaticCallProperties();
+        CharSequence _statPropContent = this.statPropContent(_staticCallProperties_1, importManager, preview, skipController, skipIncludes);
         _builder.append(_statPropContent, "	");
         _builder.newLineIfNotEmpty();
       }
@@ -393,8 +393,8 @@ public class FXGraphGenerator implements IGenerator {
         EList<Property> _properties = element.getProperties();
         StringBuilder _elementAttributes = this.elementAttributes(_properties, preview, skipController);
         _builder.append(_elementAttributes, "");
-        EList<StaticValueProperty> _staticProperties = element.getStaticProperties();
-        StringBuilder _elementStaticAttributes = this.elementStaticAttributes(_staticProperties, importManager, preview, skipController);
+        EList<StaticCallValueProperty> _staticCallProperties = element.getStaticCallProperties();
+        StringBuilder _elementStaticAttributes = this.elementStaticAttributes(_staticCallProperties, importManager, preview, skipController);
         _builder.append(_elementStaticAttributes, "");
       }
     }
@@ -425,8 +425,8 @@ public class FXGraphGenerator implements IGenerator {
         _builder.append(_propContents, "	");
         _builder.newLineIfNotEmpty();
         _builder.append("\t");
-        EList<StaticValueProperty> _staticProperties_1 = element.getStaticProperties();
-        CharSequence _statPropContent = this.statPropContent(_staticProperties_1, importManager, preview, skipController, skipIncludes);
+        EList<StaticCallValueProperty> _staticCallProperties_1 = element.getStaticCallProperties();
+        CharSequence _statPropContent = this.statPropContent(_staticCallProperties_1, importManager, preview, skipController, skipIncludes);
         _builder.append(_statPropContent, "	");
         _builder.newLineIfNotEmpty();
         {
@@ -734,24 +734,24 @@ public class FXGraphGenerator implements IGenerator {
     return _builder;
   }
   
-  public CharSequence statPropContent(final List<StaticValueProperty> properties, final ImportManager importManager, final boolean preview, final boolean skipController, final boolean skipIncludes) {
+  public CharSequence statPropContent(final List<StaticCallValueProperty> properties, final ImportManager importManager, final boolean preview, final boolean skipController, final boolean skipIncludes) {
     StringConcatenation _builder = new StringConcatenation();
     {
-      final Function1<StaticValueProperty,Boolean> _function = new Function1<StaticValueProperty,Boolean>() {
-          public Boolean apply(final StaticValueProperty p) {
+      final Function1<StaticCallValueProperty,Boolean> _function = new Function1<StaticCallValueProperty,Boolean>() {
+          public Boolean apply(final StaticCallValueProperty p) {
             boolean _previewFilter = FXGraphGenerator.this.previewFilter(p, preview);
             return Boolean.valueOf(_previewFilter);
           }
         };
-      Iterable<StaticValueProperty> _filter = IterableExtensions.<StaticValueProperty>filter(properties, _function);
-      final Function1<StaticValueProperty,Boolean> _function_1 = new Function1<StaticValueProperty,Boolean>() {
-          public Boolean apply(final StaticValueProperty p) {
+      Iterable<StaticCallValueProperty> _filter = IterableExtensions.<StaticCallValueProperty>filter(properties, _function);
+      final Function1<StaticCallValueProperty,Boolean> _function_1 = new Function1<StaticCallValueProperty,Boolean>() {
+          public Boolean apply(final StaticCallValueProperty p) {
             boolean _subelementFilter = FXGraphGenerator.this.subelementFilter(p);
             return Boolean.valueOf(_subelementFilter);
           }
         };
-      Iterable<StaticValueProperty> _filter_1 = IterableExtensions.<StaticValueProperty>filter(_filter, _function_1);
-      for(final StaticValueProperty prop : _filter_1) {
+      Iterable<StaticCallValueProperty> _filter_1 = IterableExtensions.<StaticCallValueProperty>filter(_filter, _function_1);
+      for(final StaticCallValueProperty prop : _filter_1) {
         {
           ValueProperty _value = prop.getValue();
           if ((_value instanceof SimpleValueProperty)) {
@@ -1271,24 +1271,24 @@ public class FXGraphGenerator implements IGenerator {
     return builder;
   }
   
-  public StringBuilder elementStaticAttributes(final List<StaticValueProperty> properties, final ImportManager importManager, final boolean preview, final boolean skipController) {
+  public StringBuilder elementStaticAttributes(final List<StaticCallValueProperty> properties, final ImportManager importManager, final boolean preview, final boolean skipController) {
     StringBuilder _stringBuilder = new StringBuilder();
     StringBuilder builder = _stringBuilder;
-    final Function1<StaticValueProperty,Boolean> _function = new Function1<StaticValueProperty,Boolean>() {
-        public Boolean apply(final StaticValueProperty p) {
+    final Function1<StaticCallValueProperty,Boolean> _function = new Function1<StaticCallValueProperty,Boolean>() {
+        public Boolean apply(final StaticCallValueProperty p) {
           boolean _previewFilter = FXGraphGenerator.this.previewFilter(p, preview);
           return Boolean.valueOf(_previewFilter);
         }
       };
-    Iterable<StaticValueProperty> _filter = IterableExtensions.<StaticValueProperty>filter(properties, _function);
-    final Function1<StaticValueProperty,Boolean> _function_1 = new Function1<StaticValueProperty,Boolean>() {
-        public Boolean apply(final StaticValueProperty p) {
+    Iterable<StaticCallValueProperty> _filter = IterableExtensions.<StaticCallValueProperty>filter(properties, _function);
+    final Function1<StaticCallValueProperty,Boolean> _function_1 = new Function1<StaticCallValueProperty,Boolean>() {
+        public Boolean apply(final StaticCallValueProperty p) {
           boolean _elementAttributeFilter = FXGraphGenerator.this.elementAttributeFilter(p);
           return Boolean.valueOf(_elementAttributeFilter);
         }
       };
-    Iterable<StaticValueProperty> _filter_1 = IterableExtensions.<StaticValueProperty>filter(_filter, _function_1);
-    for (final StaticValueProperty p : _filter_1) {
+    Iterable<StaticCallValueProperty> _filter_1 = IterableExtensions.<StaticCallValueProperty>filter(_filter, _function_1);
+    for (final StaticCallValueProperty p : _filter_1) {
       ValueProperty _value = p.getValue();
       if ((_value instanceof SimpleValueProperty)) {
         JvmTypeReference _type = p.getType();
@@ -1471,12 +1471,12 @@ public class FXGraphGenerator implements IGenerator {
     return this.elementAttributeFilter(_value);
   }
   
-  public boolean subelementFilter(final StaticValueProperty property) {
+  public boolean subelementFilter(final StaticCallValueProperty property) {
     boolean _elementAttributeFilter = this.elementAttributeFilter(property);
     return (!_elementAttributeFilter);
   }
   
-  public boolean elementAttributeFilter(final StaticValueProperty property) {
+  public boolean elementAttributeFilter(final StaticCallValueProperty property) {
     ValueProperty _value = property.getValue();
     return this.elementAttributeFilter(_value);
   }
@@ -1572,7 +1572,7 @@ public class FXGraphGenerator implements IGenerator {
     return true;
   }
   
-  public boolean previewFilter(final StaticValueProperty property, final boolean preview) {
+  public boolean previewFilter(final StaticCallValueProperty property, final boolean preview) {
     boolean _not = (!preview);
     if (_not) {
       String _modifier = property.getModifier();
@@ -1622,27 +1622,27 @@ public class FXGraphGenerator implements IGenerator {
       _or = true;
     } else {
       boolean _and_1 = false;
-      EList<StaticValueProperty> _staticProperties = element.getStaticProperties();
-      int _size_1 = _staticProperties.size();
+      EList<StaticCallValueProperty> _staticCallProperties = element.getStaticCallProperties();
+      int _size_1 = _staticCallProperties.size();
       boolean _greaterThan_1 = (_size_1 > 0);
       if (!_greaterThan_1) {
         _and_1 = false;
       } else {
-        EList<StaticValueProperty> _staticProperties_1 = element.getStaticProperties();
-        final Function1<StaticValueProperty,Boolean> _function_2 = new Function1<StaticValueProperty,Boolean>() {
-            public Boolean apply(final StaticValueProperty p) {
+        EList<StaticCallValueProperty> _staticCallProperties_1 = element.getStaticCallProperties();
+        final Function1<StaticCallValueProperty,Boolean> _function_2 = new Function1<StaticCallValueProperty,Boolean>() {
+            public Boolean apply(final StaticCallValueProperty p) {
               boolean _previewFilter = FXGraphGenerator.this.previewFilter(p, preview);
               return Boolean.valueOf(_previewFilter);
             }
           };
-        Iterable<StaticValueProperty> _filter_2 = IterableExtensions.<StaticValueProperty>filter(_staticProperties_1, _function_2);
-        final Function1<StaticValueProperty,Boolean> _function_3 = new Function1<StaticValueProperty,Boolean>() {
-            public Boolean apply(final StaticValueProperty p) {
+        Iterable<StaticCallValueProperty> _filter_2 = IterableExtensions.<StaticCallValueProperty>filter(_staticCallProperties_1, _function_2);
+        final Function1<StaticCallValueProperty,Boolean> _function_3 = new Function1<StaticCallValueProperty,Boolean>() {
+            public Boolean apply(final StaticCallValueProperty p) {
               boolean _elementAttributeFilter = FXGraphGenerator.this.elementAttributeFilter(p);
               return Boolean.valueOf(_elementAttributeFilter);
             }
           };
-        Iterable<StaticValueProperty> _filter_3 = IterableExtensions.<StaticValueProperty>filter(_filter_2, _function_3);
+        Iterable<StaticCallValueProperty> _filter_3 = IterableExtensions.<StaticCallValueProperty>filter(_filter_2, _function_3);
         boolean _isNullOrEmpty_1 = IterableExtensions.isNullOrEmpty(_filter_3);
         boolean _not_1 = (!_isNullOrEmpty_1);
         _and_1 = (_greaterThan_1 && _not_1);
@@ -1665,25 +1665,25 @@ public class FXGraphGenerator implements IGenerator {
     if (_greaterThan_1) {
       return true;
     }
-    EList<StaticValueProperty> _staticProperties = element.getStaticProperties();
-    int _size_2 = _staticProperties.size();
+    EList<StaticCallValueProperty> _staticCallProperties = element.getStaticCallProperties();
+    int _size_2 = _staticCallProperties.size();
     boolean _greaterThan_2 = (_size_2 > 0);
     if (_greaterThan_2) {
-      EList<StaticValueProperty> _staticProperties_1 = element.getStaticProperties();
-      final Function1<StaticValueProperty,Boolean> _function = new Function1<StaticValueProperty,Boolean>() {
-          public Boolean apply(final StaticValueProperty p) {
+      EList<StaticCallValueProperty> _staticCallProperties_1 = element.getStaticCallProperties();
+      final Function1<StaticCallValueProperty,Boolean> _function = new Function1<StaticCallValueProperty,Boolean>() {
+          public Boolean apply(final StaticCallValueProperty p) {
             boolean _previewFilter = FXGraphGenerator.this.previewFilter(p, preview);
             return Boolean.valueOf(_previewFilter);
           }
         };
-      Iterable<StaticValueProperty> _filter = IterableExtensions.<StaticValueProperty>filter(_staticProperties_1, _function);
-      final Function1<StaticValueProperty,Boolean> _function_1 = new Function1<StaticValueProperty,Boolean>() {
-          public Boolean apply(final StaticValueProperty p) {
+      Iterable<StaticCallValueProperty> _filter = IterableExtensions.<StaticCallValueProperty>filter(_staticCallProperties_1, _function);
+      final Function1<StaticCallValueProperty,Boolean> _function_1 = new Function1<StaticCallValueProperty,Boolean>() {
+          public Boolean apply(final StaticCallValueProperty p) {
             boolean _subelementFilter = FXGraphGenerator.this.subelementFilter(p);
             return Boolean.valueOf(_subelementFilter);
           }
         };
-      Iterable<StaticValueProperty> _filter_1 = IterableExtensions.<StaticValueProperty>filter(_filter, _function_1);
+      Iterable<StaticCallValueProperty> _filter_1 = IterableExtensions.<StaticCallValueProperty>filter(_filter, _function_1);
       boolean _isNullOrEmpty = IterableExtensions.isNullOrEmpty(_filter_1);
       return (!_isNullOrEmpty);
     }

@@ -58,7 +58,7 @@ import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.MapValueProperty;
 import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.Model;
 import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.Property;
 import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.ReferenceValueProperty;
-import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.StaticValueProperty;
+import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.StaticCallValueProperty;
 import at.bestsolution.efxclipse.tooling.model.FXPlugin;
 import at.bestsolution.efxclipse.tooling.model.IFXClass;
 import at.bestsolution.efxclipse.tooling.model.IFXCollectionProperty;
@@ -263,7 +263,7 @@ public class FXGraphProposalProvider extends AbstractFXGraphProposalProvider {
 					if (fxClazz != null) {
 						Map<String, IFXProperty> map = fxClazz.getAllStaticProperties();
 						for (IFXProperty p : map.values()) {
-							completeElement_PropertiesProposals(p, el, context, FXGraphPackage.Literals.ELEMENT__STATIC_PROPERTIES, acceptor);
+							completeElement_PropertiesProposals(p, el, context, FXGraphPackage.Literals.ELEMENT__STATIC_CALL_PROPERTIES, acceptor);
 						}
 					}
 				}
@@ -333,7 +333,7 @@ public class FXGraphProposalProvider extends AbstractFXGraphProposalProvider {
 	}
 
 	private void createEnumPropnameProposals(IFXEnumProperty prop, EObject model, ContentAssistContext context, EStructuralFeature typeReference, ICompletionProposalAcceptor acceptor) {
-		if( prop.isStatic() && ! typeReference.equals(FXGraphPackage.Literals.STATIC_VALUE_PROPERTY__NAME) ) {
+		if( prop.isStatic() && ! typeReference.equals(FXGraphPackage.Literals.STATIC_CALL_VALUE_PROPERTY__NAME) ) {
 			StyledString s = new StyledString();
 			s.append("(static) ", StyledString.COUNTER_STYLER);
 			s.append(prop.getFXClass().getSimpleName() + "." + prop.getName() + " : " + prop.getEnumTypeAsString(false));
@@ -380,7 +380,7 @@ public class FXGraphProposalProvider extends AbstractFXGraphProposalProvider {
 	}
 
 	private void createObjectPropnameProposals(IFXObjectProperty prop, EObject model, ContentAssistContext context, EStructuralFeature typeReference, ICompletionProposalAcceptor acceptor) {
-		if( prop.isStatic() && ! typeReference.equals(FXGraphPackage.Literals.STATIC_VALUE_PROPERTY__NAME) ) {
+		if( prop.isStatic() && ! typeReference.equals(FXGraphPackage.Literals.STATIC_CALL_VALUE_PROPERTY__NAME) ) {
 			StyledString s = new StyledString();
 			s.append("(static) ", StyledString.COUNTER_STYLER);
 			s.append(prop.getFXClass().getSimpleName() + "." + prop.getName() + " : " + prop.getElementTypeAsString(false));
@@ -446,7 +446,7 @@ public class FXGraphProposalProvider extends AbstractFXGraphProposalProvider {
 			break;
 		}
 
-		if( prop.isStatic() && ! typeReference.equals(FXGraphPackage.Literals.STATIC_VALUE_PROPERTY__NAME) ) {
+		if( prop.isStatic() && ! typeReference.equals(FXGraphPackage.Literals.STATIC_CALL_VALUE_PROPERTY__NAME) ) {
 			StyledString s = new StyledString();
 			s.append("(static) ", StyledString.COUNTER_STYLER);
 			s.append(prop.getFXClass().getSimpleName() + "." + prop.getName() + " : " + typeName);
@@ -1037,7 +1037,7 @@ public class FXGraphProposalProvider extends AbstractFXGraphProposalProvider {
 										targetType = ((IFXObjectProperty) ownerProp).getElementType();
 									}
 								}
-							} else if( rp.eContainer() instanceof StaticValueProperty ) {
+							} else if( rp.eContainer() instanceof StaticCallValueProperty ) {
 								LOGGER.warn("Unable to extract type for " + rp.eContainer());
 							} else if( rp.eContainer() instanceof ListValueProperty ) {
 								ListValueProperty lvp = (ListValueProperty) rp.eContainer();
@@ -1108,16 +1108,16 @@ public class FXGraphProposalProvider extends AbstractFXGraphProposalProvider {
 	}
 	
 	@Override
-	public void completeStaticValueProperty_Type(EObject model, Assignment assignment, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
+	public void completeStaticCallValueProperty_Type(EObject model, Assignment assignment, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
 		//TODO Should we should all classes?
 		JvmType superType = jdtTypeProvider.createTypeProvider(model.eResource().getResourceSet()).findTypeByName("javafx.scene.Parent");
 		Filter f = new FXClassFilter(projectProvider.getJavaProject(model.eResource().getResourceSet()));
-		typeProposalProviders.createSubTypeProposals(superType, this, context, FXGraphPackage.Literals.STATIC_VALUE_PROPERTY__TYPE, f, acceptor);
+		typeProposalProviders.createSubTypeProposals(superType, this, context, FXGraphPackage.Literals.STATIC_CALL_VALUE_PROPERTY__TYPE, f, acceptor);
 	}
 	
 	@Override
-	public void completeStaticValueProperty_Name(EObject model, Assignment assignment, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
-		StaticValueProperty staticProperty = (StaticValueProperty) model;
+	public void completeStaticCallValueProperty_Name(EObject model, Assignment assignment, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
+		StaticCallValueProperty staticProperty = (StaticCallValueProperty) model;
 		
 		try {
 			IJavaProject javaProject = projectProvider.getJavaProject(staticProperty.eResource().getResourceSet());
@@ -1128,7 +1128,7 @@ public class FXGraphProposalProvider extends AbstractFXGraphProposalProvider {
 				if (fxClazz != null) {
 					Map<String, IFXProperty> map = fxClazz.getAllStaticProperties();
 					for (IFXProperty p : map.values()) {
-						completeElement_PropertiesProposals(p, model, context, FXGraphPackage.Literals.STATIC_VALUE_PROPERTY__NAME, acceptor);
+						completeElement_PropertiesProposals(p, model, context, FXGraphPackage.Literals.STATIC_CALL_VALUE_PROPERTY__NAME, acceptor);
 					}
 				}
 			}
@@ -1141,8 +1141,8 @@ public class FXGraphProposalProvider extends AbstractFXGraphProposalProvider {
 	}
 	
 	@Override
-	public void completeStaticValueProperty_Value(EObject model, Assignment assignment, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
-		StaticValueProperty staticProperty = (StaticValueProperty) model;
+	public void completeStaticCallValueProperty_Value(EObject model, Assignment assignment, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
+		StaticCallValueProperty staticProperty = (StaticCallValueProperty) model;
 		
 		try {
 			IJavaProject javaProject = projectProvider.getJavaProject(staticProperty.eResource().getResourceSet());

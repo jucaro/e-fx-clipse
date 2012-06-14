@@ -35,7 +35,7 @@ ComponentDefinition:
 
 Element:
 	type=JvmTypeReference ((('(' value = SimpleValueProperty ')')? ('id' name=ValidID)?) | (('id' name=ValidID)? '{'
-		((properties+=Property | staticProperties+=StaticValueProperty | defaultChildren+=Element) (',' (properties+=Property | staticProperties+=StaticValueProperty | defaultChildren+=Element ))*)?
+		((properties+=Property | staticCallProperties+=StaticCallValueProperty | defaultChildren+=Element) (',' (properties+=Property | staticCallProperties+=StaticCallValueProperty | defaultChildren+=Element ))*)?
 	'}') | ( ('id' name=ValidID)? 'createdby' factory=ID '{' values+=FactoryValueElement (',' values+=FactoryValueElement)* '}' ) )
 ;
 
@@ -47,7 +47,7 @@ Script:
 	'script' language=ID (source=STRING | sourcecode=SCRIPTLITERAL)
 ;
 
-StaticValueProperty:
+StaticCallValueProperty:
 	modifier=('preview'|'runtime-only')? 'call' type=JvmTypeReference '#' name=ID ':' value=ValueProperty
 ;
 

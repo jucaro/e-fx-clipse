@@ -18,7 +18,7 @@ import org.eclipse.xtext.common.types.JvmTypeReference;
  *   <li>{@link at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.Element#getValue <em>Value</em>}</li>
  *   <li>{@link at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.Element#getName <em>Name</em>}</li>
  *   <li>{@link at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.Element#getProperties <em>Properties</em>}</li>
- *   <li>{@link at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.Element#getStaticProperties <em>Static Properties</em>}</li>
+ *   <li>{@link at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.Element#getStaticCallProperties <em>Static Call Properties</em>}</li>
  *   <li>{@link at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.Element#getDefaultChildren <em>Default Children</em>}</li>
  *   <li>{@link at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.Element#getFactory <em>Factory</em>}</li>
  *   <li>{@link at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.Element#getValues <em>Values</em>}</li>
@@ -126,20 +126,20 @@ public interface Element extends SingleValueProperty, FactoryValueElement, ListV
   EList<Property> getProperties();
 
   /**
-   * Returns the value of the '<em><b>Static Properties</b></em>' containment reference list.
-   * The list contents are of type {@link at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.StaticValueProperty}.
+   * Returns the value of the '<em><b>Static Call Properties</b></em>' containment reference list.
+   * The list contents are of type {@link at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.StaticCallValueProperty}.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Static Properties</em>' containment reference list isn't clear,
+   * If the meaning of the '<em>Static Call Properties</em>' containment reference list isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Static Properties</em>' containment reference list.
-   * @see at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.FXGraphPackage#getElement_StaticProperties()
+   * @return the value of the '<em>Static Call Properties</em>' containment reference list.
+   * @see at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.FXGraphPackage#getElement_StaticCallProperties()
    * @model containment="true"
    * @generated
    */
-  EList<StaticValueProperty> getStaticProperties();
+  EList<StaticCallValueProperty> getStaticCallProperties();
 
   /**
    * Returns the value of the '<em><b>Default Children</b></em>' containment reference list.

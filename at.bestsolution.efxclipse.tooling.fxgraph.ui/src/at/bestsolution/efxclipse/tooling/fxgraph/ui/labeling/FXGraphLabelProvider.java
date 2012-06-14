@@ -27,7 +27,7 @@ import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.ResourceValueProperty;
 import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.Script;
 import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.ScriptHandlerHandledValueProperty;
 import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.SimpleValueProperty;
-import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.StaticValueProperty;
+import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.StaticCallValueProperty;
 import at.bestsolution.efxclipse.tooling.fxgraph.ui.util.JDTHelper;
 import at.bestsolution.efxclipse.tooling.ui.util.IconKeys;
 
@@ -53,7 +53,7 @@ public class FXGraphLabelProvider extends DefaultEObjectLabelProvider {
 		return IconKeys.getIcon(IconKeys.INCLUDE_KEY);
 	}
 	
-	Image image(StaticValueProperty element) {
+	Image image(StaticCallValueProperty element) {
 		return IconKeys.getIcon(IconKeys.STAT_METHOD_PUBLIC_KEY);
 	}
 	

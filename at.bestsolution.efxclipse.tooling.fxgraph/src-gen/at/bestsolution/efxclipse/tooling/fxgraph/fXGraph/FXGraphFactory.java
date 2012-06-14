@@ -86,13 +86,13 @@ public interface FXGraphFactory extends EFactory
   Script createScript();
 
   /**
-   * Returns a new object of class '<em>Static Value Property</em>'.
+   * Returns a new object of class '<em>Static Call Value Property</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Static Value Property</em>'.
+   * @return a new object of class '<em>Static Call Value Property</em>'.
    * @generated
    */
-  StaticValueProperty createStaticValueProperty();
+  StaticCallValueProperty createStaticCallValueProperty();
 
   /**
    * Returns a new object of class '<em>Property</em>'.

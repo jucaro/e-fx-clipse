@@ -110,9 +110,9 @@ public class FXGraphAdapterFactory extends AdapterFactoryImpl
         return createScriptAdapter();
       }
       @Override
-      public Adapter caseStaticValueProperty(StaticValueProperty object)
+      public Adapter caseStaticCallValueProperty(StaticCallValueProperty object)
       {
-        return createStaticValuePropertyAdapter();
+        return createStaticCallValuePropertyAdapter();
       }
       @Override
       public Adapter caseProperty(Property object)
@@ -347,16 +347,16 @@ public class FXGraphAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.StaticValueProperty <em>Static Value Property</em>}'.
+   * Creates a new adapter for an object of class '{@link at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.StaticCallValueProperty <em>Static Call Value Property</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.StaticValueProperty
+   * @see at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.StaticCallValueProperty
    * @generated
    */
-  public Adapter createStaticValuePropertyAdapter()
+  public Adapter createStaticCallValuePropertyAdapter()
   {
     return null;
   }

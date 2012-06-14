@@ -71,7 +71,7 @@ public class FXGraphFactoryImpl extends EFactoryImpl implements FXGraphFactory
       case FXGraphPackage.ELEMENT: return createElement();
       case FXGraphPackage.DEFINE: return createDefine();
       case FXGraphPackage.SCRIPT: return createScript();
-      case FXGraphPackage.STATIC_VALUE_PROPERTY: return createStaticValueProperty();
+      case FXGraphPackage.STATIC_CALL_VALUE_PROPERTY: return createStaticCallValueProperty();
       case FXGraphPackage.PROPERTY: return createProperty();
       case FXGraphPackage.VALUE_PROPERTY: return createValueProperty();
       case FXGraphPackage.SINGLE_VALUE_PROPERTY: return createSingleValueProperty();
@@ -180,10 +180,10 @@ public class FXGraphFactoryImpl extends EFactoryImpl implements FXGraphFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public StaticValueProperty createStaticValueProperty()
+  public StaticCallValueProperty createStaticCallValueProperty()
   {
-    StaticValuePropertyImpl staticValueProperty = new StaticValuePropertyImpl();
-    return staticValueProperty;
+    StaticCallValuePropertyImpl staticCallValueProperty = new StaticCallValuePropertyImpl();
+    return staticCallValueProperty;
   }
 
   /**

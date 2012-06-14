@@ -172,7 +172,7 @@
                 <elements xsi:type="xtext:Assignment" feature="properties" operator="+=">
                   <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.8"/>
                 </elements>
-                <elements xsi:type="xtext:Assignment" feature="staticProperties" operator="+=">
+                <elements xsi:type="xtext:Assignment" feature="staticCallProperties" operator="+=">
                   <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.7"/>
                 </elements>
                 <elements xsi:type="xtext:Assignment" feature="defaultChildren" operator="+=">
@@ -185,7 +185,7 @@
                   <elements xsi:type="xtext:Assignment" feature="properties" operator="+=">
                     <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.8"/>
                   </elements>
-                  <elements xsi:type="xtext:Assignment" feature="staticProperties" operator="+=">
+                  <elements xsi:type="xtext:Assignment" feature="staticCallProperties" operator="+=">
                     <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.7"/>
                   </elements>
                   <elements xsi:type="xtext:Assignment" feature="defaultChildren" operator="+=">
@@ -257,9 +257,9 @@
         </elements>
       </alternatives>
     </rules>
-    <rules xsi:type="xtext:ParserRule" name="StaticValueProperty">
+    <rules xsi:type="xtext:ParserRule" name="StaticCallValueProperty">
       <type metamodel="/0/@metamodelDeclarations.1">
-        <classifier xsi:type="ecore:EClass" href="http://www.bestsolution.at/efxclipse/tooling/fxgraph/FXGraph#//StaticValueProperty"/>
+        <classifier xsi:type="ecore:EClass" href="http://www.bestsolution.at/efxclipse/tooling/fxgraph/FXGraph#//StaticCallValueProperty"/>
       </type>
       <alternatives xsi:type="xtext:Group">
         <elements xsi:type="xtext:Assignment" cardinality="?" feature="modifier" operator="=">

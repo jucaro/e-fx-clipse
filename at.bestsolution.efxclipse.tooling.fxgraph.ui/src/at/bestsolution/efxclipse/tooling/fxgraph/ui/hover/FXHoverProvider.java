@@ -22,7 +22,7 @@ import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.Element;
 import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.Model;
 import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.Property;
 import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.SimpleValueProperty;
-import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.StaticValueProperty;
+import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.StaticCallValueProperty;
 import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.ValueProperty;
 import at.bestsolution.efxclipse.tooling.model.FXPlugin;
 import at.bestsolution.efxclipse.tooling.model.IFXClass;
@@ -82,8 +82,8 @@ public class FXHoverProvider extends XbaseHoverProvider {
 					}
 				}
 			}
-		} else if( object instanceof StaticValueProperty ) {
-			StaticValueProperty sp = (StaticValueProperty) object;
+		} else if( object instanceof StaticCallValueProperty ) {
+			StaticCallValueProperty sp = (StaticCallValueProperty) object;
 			if( sp.getType() != null ) {
 				IType t = getJDTType(sp.getType().getType());
 				if( t != null ) {

@@ -759,25 +759,25 @@ public class InternalFXGraphParser extends AbstractInternalContentAssistParser {
     // $ANTLR end "ruleScript"
 
 
-    // $ANTLR start "entryRuleStaticValueProperty"
-    // ../at.bestsolution.efxclipse.tooling.fxgraph.ui/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/ui/contentassist/antlr/internal/InternalFXGraph.g:257:1: entryRuleStaticValueProperty : ruleStaticValueProperty EOF ;
-    public final void entryRuleStaticValueProperty() throws RecognitionException {
+    // $ANTLR start "entryRuleStaticCallValueProperty"
+    // ../at.bestsolution.efxclipse.tooling.fxgraph.ui/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/ui/contentassist/antlr/internal/InternalFXGraph.g:257:1: entryRuleStaticCallValueProperty : ruleStaticCallValueProperty EOF ;
+    public final void entryRuleStaticCallValueProperty() throws RecognitionException {
         try {
-            // ../at.bestsolution.efxclipse.tooling.fxgraph.ui/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/ui/contentassist/antlr/internal/InternalFXGraph.g:258:1: ( ruleStaticValueProperty EOF )
-            // ../at.bestsolution.efxclipse.tooling.fxgraph.ui/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/ui/contentassist/antlr/internal/InternalFXGraph.g:259:1: ruleStaticValueProperty EOF
+            // ../at.bestsolution.efxclipse.tooling.fxgraph.ui/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/ui/contentassist/antlr/internal/InternalFXGraph.g:258:1: ( ruleStaticCallValueProperty EOF )
+            // ../at.bestsolution.efxclipse.tooling.fxgraph.ui/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/ui/contentassist/antlr/internal/InternalFXGraph.g:259:1: ruleStaticCallValueProperty EOF
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getStaticValuePropertyRule()); 
+               before(grammarAccess.getStaticCallValuePropertyRule()); 
             }
-            pushFollow(FOLLOW_ruleStaticValueProperty_in_entryRuleStaticValueProperty487);
-            ruleStaticValueProperty();
+            pushFollow(FOLLOW_ruleStaticCallValueProperty_in_entryRuleStaticCallValueProperty487);
+            ruleStaticCallValueProperty();
 
             state._fsp--;
             if (state.failed) return ;
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getStaticValuePropertyRule()); 
+               after(grammarAccess.getStaticCallValuePropertyRule()); 
             }
-            match(input,EOF,FOLLOW_EOF_in_entryRuleStaticValueProperty494); if (state.failed) return ;
+            match(input,EOF,FOLLOW_EOF_in_entryRuleStaticCallValueProperty494); if (state.failed) return ;
 
             }
 
@@ -790,30 +790,30 @@ public class InternalFXGraphParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "entryRuleStaticValueProperty"
+    // $ANTLR end "entryRuleStaticCallValueProperty"
 
 
-    // $ANTLR start "ruleStaticValueProperty"
-    // ../at.bestsolution.efxclipse.tooling.fxgraph.ui/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/ui/contentassist/antlr/internal/InternalFXGraph.g:266:1: ruleStaticValueProperty : ( ( rule__StaticValueProperty__Group__0 ) ) ;
-    public final void ruleStaticValueProperty() throws RecognitionException {
+    // $ANTLR start "ruleStaticCallValueProperty"
+    // ../at.bestsolution.efxclipse.tooling.fxgraph.ui/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/ui/contentassist/antlr/internal/InternalFXGraph.g:266:1: ruleStaticCallValueProperty : ( ( rule__StaticCallValueProperty__Group__0 ) ) ;
+    public final void ruleStaticCallValueProperty() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../at.bestsolution.efxclipse.tooling.fxgraph.ui/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/ui/contentassist/antlr/internal/InternalFXGraph.g:270:2: ( ( ( rule__StaticValueProperty__Group__0 ) ) )
-            // ../at.bestsolution.efxclipse.tooling.fxgraph.ui/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/ui/contentassist/antlr/internal/InternalFXGraph.g:271:1: ( ( rule__StaticValueProperty__Group__0 ) )
+            // ../at.bestsolution.efxclipse.tooling.fxgraph.ui/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/ui/contentassist/antlr/internal/InternalFXGraph.g:270:2: ( ( ( rule__StaticCallValueProperty__Group__0 ) ) )
+            // ../at.bestsolution.efxclipse.tooling.fxgraph.ui/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/ui/contentassist/antlr/internal/InternalFXGraph.g:271:1: ( ( rule__StaticCallValueProperty__Group__0 ) )
             {
-            // ../at.bestsolution.efxclipse.tooling.fxgraph.ui/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/ui/contentassist/antlr/internal/InternalFXGraph.g:271:1: ( ( rule__StaticValueProperty__Group__0 ) )
-            // ../at.bestsolution.efxclipse.tooling.fxgraph.ui/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/ui/contentassist/antlr/internal/InternalFXGraph.g:272:1: ( rule__StaticValueProperty__Group__0 )
+            // ../at.bestsolution.efxclipse.tooling.fxgraph.ui/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/ui/contentassist/antlr/internal/InternalFXGraph.g:271:1: ( ( rule__StaticCallValueProperty__Group__0 ) )
+            // ../at.bestsolution.efxclipse.tooling.fxgraph.ui/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/ui/contentassist/antlr/internal/InternalFXGraph.g:272:1: ( rule__StaticCallValueProperty__Group__0 )
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getStaticValuePropertyAccess().getGroup()); 
+               before(grammarAccess.getStaticCallValuePropertyAccess().getGroup()); 
             }
-            // ../at.bestsolution.efxclipse.tooling.fxgraph.ui/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/ui/contentassist/antlr/internal/InternalFXGraph.g:273:1: ( rule__StaticValueProperty__Group__0 )
-            // ../at.bestsolution.efxclipse.tooling.fxgraph.ui/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/ui/contentassist/antlr/internal/InternalFXGraph.g:273:2: rule__StaticValueProperty__Group__0
+            // ../at.bestsolution.efxclipse.tooling.fxgraph.ui/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/ui/contentassist/antlr/internal/InternalFXGraph.g:273:1: ( rule__StaticCallValueProperty__Group__0 )
+            // ../at.bestsolution.efxclipse.tooling.fxgraph.ui/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/ui/contentassist/antlr/internal/InternalFXGraph.g:273:2: rule__StaticCallValueProperty__Group__0
             {
-            pushFollow(FOLLOW_rule__StaticValueProperty__Group__0_in_ruleStaticValueProperty520);
-            rule__StaticValueProperty__Group__0();
+            pushFollow(FOLLOW_rule__StaticCallValueProperty__Group__0_in_ruleStaticCallValueProperty520);
+            rule__StaticCallValueProperty__Group__0();
 
             state._fsp--;
             if (state.failed) return ;
@@ -821,7 +821,7 @@ public class InternalFXGraphParser extends AbstractInternalContentAssistParser {
             }
 
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getStaticValuePropertyAccess().getGroup()); 
+               after(grammarAccess.getStaticCallValuePropertyAccess().getGroup()); 
             }
 
             }
@@ -841,7 +841,7 @@ public class InternalFXGraphParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "ruleStaticValueProperty"
+    // $ANTLR end "ruleStaticCallValueProperty"
 
 
     // $ANTLR start "entryRuleProperty"
@@ -8279,13 +8279,13 @@ public class InternalFXGraphParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Element__Alternatives_1_1_2_0"
-    // ../at.bestsolution.efxclipse.tooling.fxgraph.ui/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/ui/contentassist/antlr/internal/InternalFXGraph.g:2714:1: rule__Element__Alternatives_1_1_2_0 : ( ( ( rule__Element__PropertiesAssignment_1_1_2_0_0 ) ) | ( ( rule__Element__StaticPropertiesAssignment_1_1_2_0_1 ) ) | ( ( rule__Element__DefaultChildrenAssignment_1_1_2_0_2 ) ) );
+    // ../at.bestsolution.efxclipse.tooling.fxgraph.ui/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/ui/contentassist/antlr/internal/InternalFXGraph.g:2714:1: rule__Element__Alternatives_1_1_2_0 : ( ( ( rule__Element__PropertiesAssignment_1_1_2_0_0 ) ) | ( ( rule__Element__StaticCallPropertiesAssignment_1_1_2_0_1 ) ) | ( ( rule__Element__DefaultChildrenAssignment_1_1_2_0_2 ) ) );
     public final void rule__Element__Alternatives_1_1_2_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../at.bestsolution.efxclipse.tooling.fxgraph.ui/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/ui/contentassist/antlr/internal/InternalFXGraph.g:2718:1: ( ( ( rule__Element__PropertiesAssignment_1_1_2_0_0 ) ) | ( ( rule__Element__StaticPropertiesAssignment_1_1_2_0_1 ) ) | ( ( rule__Element__DefaultChildrenAssignment_1_1_2_0_2 ) ) )
+            // ../at.bestsolution.efxclipse.tooling.fxgraph.ui/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/ui/contentassist/antlr/internal/InternalFXGraph.g:2718:1: ( ( ( rule__Element__PropertiesAssignment_1_1_2_0_0 ) ) | ( ( rule__Element__StaticCallPropertiesAssignment_1_1_2_0_1 ) ) | ( ( rule__Element__DefaultChildrenAssignment_1_1_2_0_2 ) ) )
             int alt4=3;
             switch ( input.LA(1) ) {
             case 19:
@@ -8395,19 +8395,19 @@ public class InternalFXGraphParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 2 :
-                    // ../at.bestsolution.efxclipse.tooling.fxgraph.ui/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/ui/contentassist/antlr/internal/InternalFXGraph.g:2725:6: ( ( rule__Element__StaticPropertiesAssignment_1_1_2_0_1 ) )
+                    // ../at.bestsolution.efxclipse.tooling.fxgraph.ui/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/ui/contentassist/antlr/internal/InternalFXGraph.g:2725:6: ( ( rule__Element__StaticCallPropertiesAssignment_1_1_2_0_1 ) )
                     {
-                    // ../at.bestsolution.efxclipse.tooling.fxgraph.ui/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/ui/contentassist/antlr/internal/InternalFXGraph.g:2725:6: ( ( rule__Element__StaticPropertiesAssignment_1_1_2_0_1 ) )
-                    // ../at.bestsolution.efxclipse.tooling.fxgraph.ui/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/ui/contentassist/antlr/internal/InternalFXGraph.g:2726:1: ( rule__Element__StaticPropertiesAssignment_1_1_2_0_1 )
+                    // ../at.bestsolution.efxclipse.tooling.fxgraph.ui/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/ui/contentassist/antlr/internal/InternalFXGraph.g:2725:6: ( ( rule__Element__StaticCallPropertiesAssignment_1_1_2_0_1 ) )
+                    // ../at.bestsolution.efxclipse.tooling.fxgraph.ui/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/ui/contentassist/antlr/internal/InternalFXGraph.g:2726:1: ( rule__Element__StaticCallPropertiesAssignment_1_1_2_0_1 )
                     {
                     if ( state.backtracking==0 ) {
-                       before(grammarAccess.getElementAccess().getStaticPropertiesAssignment_1_1_2_0_1()); 
+                       before(grammarAccess.getElementAccess().getStaticCallPropertiesAssignment_1_1_2_0_1()); 
                     }
-                    // ../at.bestsolution.efxclipse.tooling.fxgraph.ui/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/ui/contentassist/antlr/internal/InternalFXGraph.g:2727:1: ( rule__Element__StaticPropertiesAssignment_1_1_2_0_1 )
-                    // ../at.bestsolution.efxclipse.tooling.fxgraph.ui/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/ui/contentassist/antlr/internal/InternalFXGraph.g:2727:2: rule__Element__StaticPropertiesAssignment_1_1_2_0_1
+                    // ../at.bestsolution.efxclipse.tooling.fxgraph.ui/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/ui/contentassist/antlr/internal/InternalFXGraph.g:2727:1: ( rule__Element__StaticCallPropertiesAssignment_1_1_2_0_1 )
+                    // ../at.bestsolution.efxclipse.tooling.fxgraph.ui/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/ui/contentassist/antlr/internal/InternalFXGraph.g:2727:2: rule__Element__StaticCallPropertiesAssignment_1_1_2_0_1
                     {
-                    pushFollow(FOLLOW_rule__Element__StaticPropertiesAssignment_1_1_2_0_1_in_rule__Element__Alternatives_1_1_2_05770);
-                    rule__Element__StaticPropertiesAssignment_1_1_2_0_1();
+                    pushFollow(FOLLOW_rule__Element__StaticCallPropertiesAssignment_1_1_2_0_1_in_rule__Element__Alternatives_1_1_2_05770);
+                    rule__Element__StaticCallPropertiesAssignment_1_1_2_0_1();
 
                     state._fsp--;
                     if (state.failed) return ;
@@ -8415,7 +8415,7 @@ public class InternalFXGraphParser extends AbstractInternalContentAssistParser {
                     }
 
                     if ( state.backtracking==0 ) {
-                       after(grammarAccess.getElementAccess().getStaticPropertiesAssignment_1_1_2_0_1()); 
+                       after(grammarAccess.getElementAccess().getStaticCallPropertiesAssignment_1_1_2_0_1()); 
                     }
 
                     }
@@ -8470,13 +8470,13 @@ public class InternalFXGraphParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Element__Alternatives_1_1_2_1_1"
-    // ../at.bestsolution.efxclipse.tooling.fxgraph.ui/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/ui/contentassist/antlr/internal/InternalFXGraph.g:2742:1: rule__Element__Alternatives_1_1_2_1_1 : ( ( ( rule__Element__PropertiesAssignment_1_1_2_1_1_0 ) ) | ( ( rule__Element__StaticPropertiesAssignment_1_1_2_1_1_1 ) ) | ( ( rule__Element__DefaultChildrenAssignment_1_1_2_1_1_2 ) ) );
+    // ../at.bestsolution.efxclipse.tooling.fxgraph.ui/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/ui/contentassist/antlr/internal/InternalFXGraph.g:2742:1: rule__Element__Alternatives_1_1_2_1_1 : ( ( ( rule__Element__PropertiesAssignment_1_1_2_1_1_0 ) ) | ( ( rule__Element__StaticCallPropertiesAssignment_1_1_2_1_1_1 ) ) | ( ( rule__Element__DefaultChildrenAssignment_1_1_2_1_1_2 ) ) );
     public final void rule__Element__Alternatives_1_1_2_1_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../at.bestsolution.efxclipse.tooling.fxgraph.ui/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/ui/contentassist/antlr/internal/InternalFXGraph.g:2746:1: ( ( ( rule__Element__PropertiesAssignment_1_1_2_1_1_0 ) ) | ( ( rule__Element__StaticPropertiesAssignment_1_1_2_1_1_1 ) ) | ( ( rule__Element__DefaultChildrenAssignment_1_1_2_1_1_2 ) ) )
+            // ../at.bestsolution.efxclipse.tooling.fxgraph.ui/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/ui/contentassist/antlr/internal/InternalFXGraph.g:2746:1: ( ( ( rule__Element__PropertiesAssignment_1_1_2_1_1_0 ) ) | ( ( rule__Element__StaticCallPropertiesAssignment_1_1_2_1_1_1 ) ) | ( ( rule__Element__DefaultChildrenAssignment_1_1_2_1_1_2 ) ) )
             int alt5=3;
             switch ( input.LA(1) ) {
             case 19:
@@ -8586,19 +8586,19 @@ public class InternalFXGraphParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 2 :
-                    // ../at.bestsolution.efxclipse.tooling.fxgraph.ui/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/ui/contentassist/antlr/internal/InternalFXGraph.g:2753:6: ( ( rule__Element__StaticPropertiesAssignment_1_1_2_1_1_1 ) )
+                    // ../at.bestsolution.efxclipse.tooling.fxgraph.ui/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/ui/contentassist/antlr/internal/InternalFXGraph.g:2753:6: ( ( rule__Element__StaticCallPropertiesAssignment_1_1_2_1_1_1 ) )
                     {
-                    // ../at.bestsolution.efxclipse.tooling.fxgraph.ui/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/ui/contentassist/antlr/internal/InternalFXGraph.g:2753:6: ( ( rule__Element__StaticPropertiesAssignment_1_1_2_1_1_1 ) )
-                    // ../at.bestsolution.efxclipse.tooling.fxgraph.ui/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/ui/contentassist/antlr/internal/InternalFXGraph.g:2754:1: ( rule__Element__StaticPropertiesAssignment_1_1_2_1_1_1 )
+                    // ../at.bestsolution.efxclipse.tooling.fxgraph.ui/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/ui/contentassist/antlr/internal/InternalFXGraph.g:2753:6: ( ( rule__Element__StaticCallPropertiesAssignment_1_1_2_1_1_1 ) )
+                    // ../at.bestsolution.efxclipse.tooling.fxgraph.ui/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/ui/contentassist/antlr/internal/InternalFXGraph.g:2754:1: ( rule__Element__StaticCallPropertiesAssignment_1_1_2_1_1_1 )
                     {
                     if ( state.backtracking==0 ) {
-                       before(grammarAccess.getElementAccess().getStaticPropertiesAssignment_1_1_2_1_1_1()); 
+                       before(grammarAccess.getElementAccess().getStaticCallPropertiesAssignment_1_1_2_1_1_1()); 
                     }
-                    // ../at.bestsolution.efxclipse.tooling.fxgraph.ui/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/ui/contentassist/antlr/internal/InternalFXGraph.g:2755:1: ( rule__Element__StaticPropertiesAssignment_1_1_2_1_1_1 )
-                    // ../at.bestsolution.efxclipse.tooling.fxgraph.ui/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/ui/contentassist/antlr/internal/InternalFXGraph.g:2755:2: rule__Element__StaticPropertiesAssignment_1_1_2_1_1_1
+                    // ../at.bestsolution.efxclipse.tooling.fxgraph.ui/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/ui/contentassist/antlr/internal/InternalFXGraph.g:2755:1: ( rule__Element__StaticCallPropertiesAssignment_1_1_2_1_1_1 )
+                    // ../at.bestsolution.efxclipse.tooling.fxgraph.ui/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/ui/contentassist/antlr/internal/InternalFXGraph.g:2755:2: rule__Element__StaticCallPropertiesAssignment_1_1_2_1_1_1
                     {
-                    pushFollow(FOLLOW_rule__Element__StaticPropertiesAssignment_1_1_2_1_1_1_in_rule__Element__Alternatives_1_1_2_1_15839);
-                    rule__Element__StaticPropertiesAssignment_1_1_2_1_1_1();
+                    pushFollow(FOLLOW_rule__Element__StaticCallPropertiesAssignment_1_1_2_1_1_1_in_rule__Element__Alternatives_1_1_2_1_15839);
+                    rule__Element__StaticCallPropertiesAssignment_1_1_2_1_1_1();
 
                     state._fsp--;
                     if (state.failed) return ;
@@ -8606,7 +8606,7 @@ public class InternalFXGraphParser extends AbstractInternalContentAssistParser {
                     }
 
                     if ( state.backtracking==0 ) {
-                       after(grammarAccess.getElementAccess().getStaticPropertiesAssignment_1_1_2_1_1_1()); 
+                       after(grammarAccess.getElementAccess().getStaticCallPropertiesAssignment_1_1_2_1_1_1()); 
                     }
 
                     }
@@ -8860,9 +8860,9 @@ public class InternalFXGraphParser extends AbstractInternalContentAssistParser {
     // $ANTLR end "rule__Script__Alternatives_2"
 
 
-    // $ANTLR start "rule__StaticValueProperty__ModifierAlternatives_0_0"
-    // ../at.bestsolution.efxclipse.tooling.fxgraph.ui/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/ui/contentassist/antlr/internal/InternalFXGraph.g:2814:1: rule__StaticValueProperty__ModifierAlternatives_0_0 : ( ( 'preview' ) | ( 'runtime-only' ) );
-    public final void rule__StaticValueProperty__ModifierAlternatives_0_0() throws RecognitionException {
+    // $ANTLR start "rule__StaticCallValueProperty__ModifierAlternatives_0_0"
+    // ../at.bestsolution.efxclipse.tooling.fxgraph.ui/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/ui/contentassist/antlr/internal/InternalFXGraph.g:2814:1: rule__StaticCallValueProperty__ModifierAlternatives_0_0 : ( ( 'preview' ) | ( 'runtime-only' ) );
+    public final void rule__StaticCallValueProperty__ModifierAlternatives_0_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
@@ -8892,11 +8892,11 @@ public class InternalFXGraphParser extends AbstractInternalContentAssistParser {
                     // ../at.bestsolution.efxclipse.tooling.fxgraph.ui/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/ui/contentassist/antlr/internal/InternalFXGraph.g:2820:1: 'preview'
                     {
                     if ( state.backtracking==0 ) {
-                       before(grammarAccess.getStaticValuePropertyAccess().getModifierPreviewKeyword_0_0_0()); 
+                       before(grammarAccess.getStaticCallValuePropertyAccess().getModifierPreviewKeyword_0_0_0()); 
                     }
-                    match(input,19,FOLLOW_19_in_rule__StaticValueProperty__ModifierAlternatives_0_05993); if (state.failed) return ;
+                    match(input,19,FOLLOW_19_in_rule__StaticCallValueProperty__ModifierAlternatives_0_05993); if (state.failed) return ;
                     if ( state.backtracking==0 ) {
-                       after(grammarAccess.getStaticValuePropertyAccess().getModifierPreviewKeyword_0_0_0()); 
+                       after(grammarAccess.getStaticCallValuePropertyAccess().getModifierPreviewKeyword_0_0_0()); 
                     }
 
                     }
@@ -8911,11 +8911,11 @@ public class InternalFXGraphParser extends AbstractInternalContentAssistParser {
                     // ../at.bestsolution.efxclipse.tooling.fxgraph.ui/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/ui/contentassist/antlr/internal/InternalFXGraph.g:2828:1: 'runtime-only'
                     {
                     if ( state.backtracking==0 ) {
-                       before(grammarAccess.getStaticValuePropertyAccess().getModifierRuntimeOnlyKeyword_0_0_1()); 
+                       before(grammarAccess.getStaticCallValuePropertyAccess().getModifierRuntimeOnlyKeyword_0_0_1()); 
                     }
-                    match(input,20,FOLLOW_20_in_rule__StaticValueProperty__ModifierAlternatives_0_06013); if (state.failed) return ;
+                    match(input,20,FOLLOW_20_in_rule__StaticCallValueProperty__ModifierAlternatives_0_06013); if (state.failed) return ;
                     if ( state.backtracking==0 ) {
-                       after(grammarAccess.getStaticValuePropertyAccess().getModifierRuntimeOnlyKeyword_0_0_1()); 
+                       after(grammarAccess.getStaticCallValuePropertyAccess().getModifierRuntimeOnlyKeyword_0_0_1()); 
                     }
 
                     }
@@ -8937,7 +8937,7 @@ public class InternalFXGraphParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__StaticValueProperty__ModifierAlternatives_0_0"
+    // $ANTLR end "rule__StaticCallValueProperty__ModifierAlternatives_0_0"
 
 
     // $ANTLR start "rule__Property__ModifierAlternatives_0_0"
@@ -20222,23 +20222,23 @@ public class InternalFXGraphParser extends AbstractInternalContentAssistParser {
     // $ANTLR end "rule__Script__Group__2__Impl"
 
 
-    // $ANTLR start "rule__StaticValueProperty__Group__0"
-    // ../at.bestsolution.efxclipse.tooling.fxgraph.ui/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/ui/contentassist/antlr/internal/InternalFXGraph.g:6386:1: rule__StaticValueProperty__Group__0 : rule__StaticValueProperty__Group__0__Impl rule__StaticValueProperty__Group__1 ;
-    public final void rule__StaticValueProperty__Group__0() throws RecognitionException {
+    // $ANTLR start "rule__StaticCallValueProperty__Group__0"
+    // ../at.bestsolution.efxclipse.tooling.fxgraph.ui/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/ui/contentassist/antlr/internal/InternalFXGraph.g:6386:1: rule__StaticCallValueProperty__Group__0 : rule__StaticCallValueProperty__Group__0__Impl rule__StaticCallValueProperty__Group__1 ;
+    public final void rule__StaticCallValueProperty__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../at.bestsolution.efxclipse.tooling.fxgraph.ui/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/ui/contentassist/antlr/internal/InternalFXGraph.g:6390:1: ( rule__StaticValueProperty__Group__0__Impl rule__StaticValueProperty__Group__1 )
-            // ../at.bestsolution.efxclipse.tooling.fxgraph.ui/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/ui/contentassist/antlr/internal/InternalFXGraph.g:6391:2: rule__StaticValueProperty__Group__0__Impl rule__StaticValueProperty__Group__1
+            // ../at.bestsolution.efxclipse.tooling.fxgraph.ui/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/ui/contentassist/antlr/internal/InternalFXGraph.g:6390:1: ( rule__StaticCallValueProperty__Group__0__Impl rule__StaticCallValueProperty__Group__1 )
+            // ../at.bestsolution.efxclipse.tooling.fxgraph.ui/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/ui/contentassist/antlr/internal/InternalFXGraph.g:6391:2: rule__StaticCallValueProperty__Group__0__Impl rule__StaticCallValueProperty__Group__1
             {
-            pushFollow(FOLLOW_rule__StaticValueProperty__Group__0__Impl_in_rule__StaticValueProperty__Group__013463);
-            rule__StaticValueProperty__Group__0__Impl();
+            pushFollow(FOLLOW_rule__StaticCallValueProperty__Group__0__Impl_in_rule__StaticCallValueProperty__Group__013463);
+            rule__StaticCallValueProperty__Group__0__Impl();
 
             state._fsp--;
             if (state.failed) return ;
-            pushFollow(FOLLOW_rule__StaticValueProperty__Group__1_in_rule__StaticValueProperty__Group__013466);
-            rule__StaticValueProperty__Group__1();
+            pushFollow(FOLLOW_rule__StaticCallValueProperty__Group__1_in_rule__StaticCallValueProperty__Group__013466);
+            rule__StaticCallValueProperty__Group__1();
 
             state._fsp--;
             if (state.failed) return ;
@@ -20257,26 +20257,26 @@ public class InternalFXGraphParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__StaticValueProperty__Group__0"
+    // $ANTLR end "rule__StaticCallValueProperty__Group__0"
 
 
-    // $ANTLR start "rule__StaticValueProperty__Group__0__Impl"
-    // ../at.bestsolution.efxclipse.tooling.fxgraph.ui/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/ui/contentassist/antlr/internal/InternalFXGraph.g:6398:1: rule__StaticValueProperty__Group__0__Impl : ( ( rule__StaticValueProperty__ModifierAssignment_0 )? ) ;
-    public final void rule__StaticValueProperty__Group__0__Impl() throws RecognitionException {
+    // $ANTLR start "rule__StaticCallValueProperty__Group__0__Impl"
+    // ../at.bestsolution.efxclipse.tooling.fxgraph.ui/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/ui/contentassist/antlr/internal/InternalFXGraph.g:6398:1: rule__StaticCallValueProperty__Group__0__Impl : ( ( rule__StaticCallValueProperty__ModifierAssignment_0 )? ) ;
+    public final void rule__StaticCallValueProperty__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../at.bestsolution.efxclipse.tooling.fxgraph.ui/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/ui/contentassist/antlr/internal/InternalFXGraph.g:6402:1: ( ( ( rule__StaticValueProperty__ModifierAssignment_0 )? ) )
-            // ../at.bestsolution.efxclipse.tooling.fxgraph.ui/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/ui/contentassist/antlr/internal/InternalFXGraph.g:6403:1: ( ( rule__StaticValueProperty__ModifierAssignment_0 )? )
+            // ../at.bestsolution.efxclipse.tooling.fxgraph.ui/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/ui/contentassist/antlr/internal/InternalFXGraph.g:6402:1: ( ( ( rule__StaticCallValueProperty__ModifierAssignment_0 )? ) )
+            // ../at.bestsolution.efxclipse.tooling.fxgraph.ui/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/ui/contentassist/antlr/internal/InternalFXGraph.g:6403:1: ( ( rule__StaticCallValueProperty__ModifierAssignment_0 )? )
             {
-            // ../at.bestsolution.efxclipse.tooling.fxgraph.ui/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/ui/contentassist/antlr/internal/InternalFXGraph.g:6403:1: ( ( rule__StaticValueProperty__ModifierAssignment_0 )? )
-            // ../at.bestsolution.efxclipse.tooling.fxgraph.ui/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/ui/contentassist/antlr/internal/InternalFXGraph.g:6404:1: ( rule__StaticValueProperty__ModifierAssignment_0 )?
+            // ../at.bestsolution.efxclipse.tooling.fxgraph.ui/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/ui/contentassist/antlr/internal/InternalFXGraph.g:6403:1: ( ( rule__StaticCallValueProperty__ModifierAssignment_0 )? )
+            // ../at.bestsolution.efxclipse.tooling.fxgraph.ui/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/ui/contentassist/antlr/internal/InternalFXGraph.g:6404:1: ( rule__StaticCallValueProperty__ModifierAssignment_0 )?
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getStaticValuePropertyAccess().getModifierAssignment_0()); 
+               before(grammarAccess.getStaticCallValuePropertyAccess().getModifierAssignment_0()); 
             }
-            // ../at.bestsolution.efxclipse.tooling.fxgraph.ui/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/ui/contentassist/antlr/internal/InternalFXGraph.g:6405:1: ( rule__StaticValueProperty__ModifierAssignment_0 )?
+            // ../at.bestsolution.efxclipse.tooling.fxgraph.ui/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/ui/contentassist/antlr/internal/InternalFXGraph.g:6405:1: ( rule__StaticCallValueProperty__ModifierAssignment_0 )?
             int alt63=2;
             int LA63_0 = input.LA(1);
 
@@ -20285,10 +20285,10 @@ public class InternalFXGraphParser extends AbstractInternalContentAssistParser {
             }
             switch (alt63) {
                 case 1 :
-                    // ../at.bestsolution.efxclipse.tooling.fxgraph.ui/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/ui/contentassist/antlr/internal/InternalFXGraph.g:6405:2: rule__StaticValueProperty__ModifierAssignment_0
+                    // ../at.bestsolution.efxclipse.tooling.fxgraph.ui/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/ui/contentassist/antlr/internal/InternalFXGraph.g:6405:2: rule__StaticCallValueProperty__ModifierAssignment_0
                     {
-                    pushFollow(FOLLOW_rule__StaticValueProperty__ModifierAssignment_0_in_rule__StaticValueProperty__Group__0__Impl13493);
-                    rule__StaticValueProperty__ModifierAssignment_0();
+                    pushFollow(FOLLOW_rule__StaticCallValueProperty__ModifierAssignment_0_in_rule__StaticCallValueProperty__Group__0__Impl13493);
+                    rule__StaticCallValueProperty__ModifierAssignment_0();
 
                     state._fsp--;
                     if (state.failed) return ;
@@ -20299,7 +20299,7 @@ public class InternalFXGraphParser extends AbstractInternalContentAssistParser {
             }
 
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getStaticValuePropertyAccess().getModifierAssignment_0()); 
+               after(grammarAccess.getStaticCallValuePropertyAccess().getModifierAssignment_0()); 
             }
 
             }
@@ -20319,26 +20319,26 @@ public class InternalFXGraphParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__StaticValueProperty__Group__0__Impl"
+    // $ANTLR end "rule__StaticCallValueProperty__Group__0__Impl"
 
 
-    // $ANTLR start "rule__StaticValueProperty__Group__1"
-    // ../at.bestsolution.efxclipse.tooling.fxgraph.ui/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/ui/contentassist/antlr/internal/InternalFXGraph.g:6415:1: rule__StaticValueProperty__Group__1 : rule__StaticValueProperty__Group__1__Impl rule__StaticValueProperty__Group__2 ;
-    public final void rule__StaticValueProperty__Group__1() throws RecognitionException {
+    // $ANTLR start "rule__StaticCallValueProperty__Group__1"
+    // ../at.bestsolution.efxclipse.tooling.fxgraph.ui/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/ui/contentassist/antlr/internal/InternalFXGraph.g:6415:1: rule__StaticCallValueProperty__Group__1 : rule__StaticCallValueProperty__Group__1__Impl rule__StaticCallValueProperty__Group__2 ;
+    public final void rule__StaticCallValueProperty__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../at.bestsolution.efxclipse.tooling.fxgraph.ui/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/ui/contentassist/antlr/internal/InternalFXGraph.g:6419:1: ( rule__StaticValueProperty__Group__1__Impl rule__StaticValueProperty__Group__2 )
-            // ../at.bestsolution.efxclipse.tooling.fxgraph.ui/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/ui/contentassist/antlr/internal/InternalFXGraph.g:6420:2: rule__StaticValueProperty__Group__1__Impl rule__StaticValueProperty__Group__2
+            // ../at.bestsolution.efxclipse.tooling.fxgraph.ui/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/ui/contentassist/antlr/internal/InternalFXGraph.g:6419:1: ( rule__StaticCallValueProperty__Group__1__Impl rule__StaticCallValueProperty__Group__2 )
+            // ../at.bestsolution.efxclipse.tooling.fxgraph.ui/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/ui/contentassist/antlr/internal/InternalFXGraph.g:6420:2: rule__StaticCallValueProperty__Group__1__Impl rule__StaticCallValueProperty__Group__2
             {
-            pushFollow(FOLLOW_rule__StaticValueProperty__Group__1__Impl_in_rule__StaticValueProperty__Group__113524);
-            rule__StaticValueProperty__Group__1__Impl();
+            pushFollow(FOLLOW_rule__StaticCallValueProperty__Group__1__Impl_in_rule__StaticCallValueProperty__Group__113524);
+            rule__StaticCallValueProperty__Group__1__Impl();
 
             state._fsp--;
             if (state.failed) return ;
-            pushFollow(FOLLOW_rule__StaticValueProperty__Group__2_in_rule__StaticValueProperty__Group__113527);
-            rule__StaticValueProperty__Group__2();
+            pushFollow(FOLLOW_rule__StaticCallValueProperty__Group__2_in_rule__StaticCallValueProperty__Group__113527);
+            rule__StaticCallValueProperty__Group__2();
 
             state._fsp--;
             if (state.failed) return ;
@@ -20357,12 +20357,12 @@ public class InternalFXGraphParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__StaticValueProperty__Group__1"
+    // $ANTLR end "rule__StaticCallValueProperty__Group__1"
 
 
-    // $ANTLR start "rule__StaticValueProperty__Group__1__Impl"
-    // ../at.bestsolution.efxclipse.tooling.fxgraph.ui/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/ui/contentassist/antlr/internal/InternalFXGraph.g:6427:1: rule__StaticValueProperty__Group__1__Impl : ( 'call' ) ;
-    public final void rule__StaticValueProperty__Group__1__Impl() throws RecognitionException {
+    // $ANTLR start "rule__StaticCallValueProperty__Group__1__Impl"
+    // ../at.bestsolution.efxclipse.tooling.fxgraph.ui/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/ui/contentassist/antlr/internal/InternalFXGraph.g:6427:1: rule__StaticCallValueProperty__Group__1__Impl : ( 'call' ) ;
+    public final void rule__StaticCallValueProperty__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
@@ -20374,11 +20374,11 @@ public class InternalFXGraphParser extends AbstractInternalContentAssistParser {
             // ../at.bestsolution.efxclipse.tooling.fxgraph.ui/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/ui/contentassist/antlr/internal/InternalFXGraph.g:6433:1: 'call'
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getStaticValuePropertyAccess().getCallKeyword_1()); 
+               before(grammarAccess.getStaticCallValuePropertyAccess().getCallKeyword_1()); 
             }
-            match(input,64,FOLLOW_64_in_rule__StaticValueProperty__Group__1__Impl13555); if (state.failed) return ;
+            match(input,64,FOLLOW_64_in_rule__StaticCallValueProperty__Group__1__Impl13555); if (state.failed) return ;
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getStaticValuePropertyAccess().getCallKeyword_1()); 
+               after(grammarAccess.getStaticCallValuePropertyAccess().getCallKeyword_1()); 
             }
 
             }
@@ -20398,26 +20398,26 @@ public class InternalFXGraphParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__StaticValueProperty__Group__1__Impl"
+    // $ANTLR end "rule__StaticCallValueProperty__Group__1__Impl"
 
 
-    // $ANTLR start "rule__StaticValueProperty__Group__2"
-    // ../at.bestsolution.efxclipse.tooling.fxgraph.ui/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/ui/contentassist/antlr/internal/InternalFXGraph.g:6446:1: rule__StaticValueProperty__Group__2 : rule__StaticValueProperty__Group__2__Impl rule__StaticValueProperty__Group__3 ;
-    public final void rule__StaticValueProperty__Group__2() throws RecognitionException {
+    // $ANTLR start "rule__StaticCallValueProperty__Group__2"
+    // ../at.bestsolution.efxclipse.tooling.fxgraph.ui/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/ui/contentassist/antlr/internal/InternalFXGraph.g:6446:1: rule__StaticCallValueProperty__Group__2 : rule__StaticCallValueProperty__Group__2__Impl rule__StaticCallValueProperty__Group__3 ;
+    public final void rule__StaticCallValueProperty__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../at.bestsolution.efxclipse.tooling.fxgraph.ui/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/ui/contentassist/antlr/internal/InternalFXGraph.g:6450:1: ( rule__StaticValueProperty__Group__2__Impl rule__StaticValueProperty__Group__3 )
-            // ../at.bestsolution.efxclipse.tooling.fxgraph.ui/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/ui/contentassist/antlr/internal/InternalFXGraph.g:6451:2: rule__StaticValueProperty__Group__2__Impl rule__StaticValueProperty__Group__3
+            // ../at.bestsolution.efxclipse.tooling.fxgraph.ui/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/ui/contentassist/antlr/internal/InternalFXGraph.g:6450:1: ( rule__StaticCallValueProperty__Group__2__Impl rule__StaticCallValueProperty__Group__3 )
+            // ../at.bestsolution.efxclipse.tooling.fxgraph.ui/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/ui/contentassist/antlr/internal/InternalFXGraph.g:6451:2: rule__StaticCallValueProperty__Group__2__Impl rule__StaticCallValueProperty__Group__3
             {
-            pushFollow(FOLLOW_rule__StaticValueProperty__Group__2__Impl_in_rule__StaticValueProperty__Group__213586);
-            rule__StaticValueProperty__Group__2__Impl();
+            pushFollow(FOLLOW_rule__StaticCallValueProperty__Group__2__Impl_in_rule__StaticCallValueProperty__Group__213586);
+            rule__StaticCallValueProperty__Group__2__Impl();
 
             state._fsp--;
             if (state.failed) return ;
-            pushFollow(FOLLOW_rule__StaticValueProperty__Group__3_in_rule__StaticValueProperty__Group__213589);
-            rule__StaticValueProperty__Group__3();
+            pushFollow(FOLLOW_rule__StaticCallValueProperty__Group__3_in_rule__StaticCallValueProperty__Group__213589);
+            rule__StaticCallValueProperty__Group__3();
 
             state._fsp--;
             if (state.failed) return ;
@@ -20436,30 +20436,30 @@ public class InternalFXGraphParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__StaticValueProperty__Group__2"
+    // $ANTLR end "rule__StaticCallValueProperty__Group__2"
 
 
-    // $ANTLR start "rule__StaticValueProperty__Group__2__Impl"
-    // ../at.bestsolution.efxclipse.tooling.fxgraph.ui/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/ui/contentassist/antlr/internal/InternalFXGraph.g:6458:1: rule__StaticValueProperty__Group__2__Impl : ( ( rule__StaticValueProperty__TypeAssignment_2 ) ) ;
-    public final void rule__StaticValueProperty__Group__2__Impl() throws RecognitionException {
+    // $ANTLR start "rule__StaticCallValueProperty__Group__2__Impl"
+    // ../at.bestsolution.efxclipse.tooling.fxgraph.ui/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/ui/contentassist/antlr/internal/InternalFXGraph.g:6458:1: rule__StaticCallValueProperty__Group__2__Impl : ( ( rule__StaticCallValueProperty__TypeAssignment_2 ) ) ;
+    public final void rule__StaticCallValueProperty__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../at.bestsolution.efxclipse.tooling.fxgraph.ui/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/ui/contentassist/antlr/internal/InternalFXGraph.g:6462:1: ( ( ( rule__StaticValueProperty__TypeAssignment_2 ) ) )
-            // ../at.bestsolution.efxclipse.tooling.fxgraph.ui/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/ui/contentassist/antlr/internal/InternalFXGraph.g:6463:1: ( ( rule__StaticValueProperty__TypeAssignment_2 ) )
+            // ../at.bestsolution.efxclipse.tooling.fxgraph.ui/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/ui/contentassist/antlr/internal/InternalFXGraph.g:6462:1: ( ( ( rule__StaticCallValueProperty__TypeAssignment_2 ) ) )
+            // ../at.bestsolution.efxclipse.tooling.fxgraph.ui/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/ui/contentassist/antlr/internal/InternalFXGraph.g:6463:1: ( ( rule__StaticCallValueProperty__TypeAssignment_2 ) )
             {
-            // ../at.bestsolution.efxclipse.tooling.fxgraph.ui/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/ui/contentassist/antlr/internal/InternalFXGraph.g:6463:1: ( ( rule__StaticValueProperty__TypeAssignment_2 ) )
-            // ../at.bestsolution.efxclipse.tooling.fxgraph.ui/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/ui/contentassist/antlr/internal/InternalFXGraph.g:6464:1: ( rule__StaticValueProperty__TypeAssignment_2 )
+            // ../at.bestsolution.efxclipse.tooling.fxgraph.ui/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/ui/contentassist/antlr/internal/InternalFXGraph.g:6463:1: ( ( rule__StaticCallValueProperty__TypeAssignment_2 ) )
+            // ../at.bestsolution.efxclipse.tooling.fxgraph.ui/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/ui/contentassist/antlr/internal/InternalFXGraph.g:6464:1: ( rule__StaticCallValueProperty__TypeAssignment_2 )
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getStaticValuePropertyAccess().getTypeAssignment_2()); 
+               before(grammarAccess.getStaticCallValuePropertyAccess().getTypeAssignment_2()); 
             }
-            // ../at.bestsolution.efxclipse.tooling.fxgraph.ui/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/ui/contentassist/antlr/internal/InternalFXGraph.g:6465:1: ( rule__StaticValueProperty__TypeAssignment_2 )
-            // ../at.bestsolution.efxclipse.tooling.fxgraph.ui/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/ui/contentassist/antlr/internal/InternalFXGraph.g:6465:2: rule__StaticValueProperty__TypeAssignment_2
+            // ../at.bestsolution.efxclipse.tooling.fxgraph.ui/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/ui/contentassist/antlr/internal/InternalFXGraph.g:6465:1: ( rule__StaticCallValueProperty__TypeAssignment_2 )
+            // ../at.bestsolution.efxclipse.tooling.fxgraph.ui/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/ui/contentassist/antlr/internal/InternalFXGraph.g:6465:2: rule__StaticCallValueProperty__TypeAssignment_2
             {
-            pushFollow(FOLLOW_rule__StaticValueProperty__TypeAssignment_2_in_rule__StaticValueProperty__Group__2__Impl13616);
-            rule__StaticValueProperty__TypeAssignment_2();
+            pushFollow(FOLLOW_rule__StaticCallValueProperty__TypeAssignment_2_in_rule__StaticCallValueProperty__Group__2__Impl13616);
+            rule__StaticCallValueProperty__TypeAssignment_2();
 
             state._fsp--;
             if (state.failed) return ;
@@ -20467,7 +20467,7 @@ public class InternalFXGraphParser extends AbstractInternalContentAssistParser {
             }
 
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getStaticValuePropertyAccess().getTypeAssignment_2()); 
+               after(grammarAccess.getStaticCallValuePropertyAccess().getTypeAssignment_2()); 
             }
 
             }
@@ -20487,26 +20487,26 @@ public class InternalFXGraphParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__StaticValueProperty__Group__2__Impl"
+    // $ANTLR end "rule__StaticCallValueProperty__Group__2__Impl"
 
 
-    // $ANTLR start "rule__StaticValueProperty__Group__3"
-    // ../at.bestsolution.efxclipse.tooling.fxgraph.ui/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/ui/contentassist/antlr/internal/InternalFXGraph.g:6475:1: rule__StaticValueProperty__Group__3 : rule__StaticValueProperty__Group__3__Impl rule__StaticValueProperty__Group__4 ;
-    public final void rule__StaticValueProperty__Group__3() throws RecognitionException {
+    // $ANTLR start "rule__StaticCallValueProperty__Group__3"
+    // ../at.bestsolution.efxclipse.tooling.fxgraph.ui/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/ui/contentassist/antlr/internal/InternalFXGraph.g:6475:1: rule__StaticCallValueProperty__Group__3 : rule__StaticCallValueProperty__Group__3__Impl rule__StaticCallValueProperty__Group__4 ;
+    public final void rule__StaticCallValueProperty__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../at.bestsolution.efxclipse.tooling.fxgraph.ui/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/ui/contentassist/antlr/internal/InternalFXGraph.g:6479:1: ( rule__StaticValueProperty__Group__3__Impl rule__StaticValueProperty__Group__4 )
-            // ../at.bestsolution.efxclipse.tooling.fxgraph.ui/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/ui/contentassist/antlr/internal/InternalFXGraph.g:6480:2: rule__StaticValueProperty__Group__3__Impl rule__StaticValueProperty__Group__4
+            // ../at.bestsolution.efxclipse.tooling.fxgraph.ui/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/ui/contentassist/antlr/internal/InternalFXGraph.g:6479:1: ( rule__StaticCallValueProperty__Group__3__Impl rule__StaticCallValueProperty__Group__4 )
+            // ../at.bestsolution.efxclipse.tooling.fxgraph.ui/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/ui/contentassist/antlr/internal/InternalFXGraph.g:6480:2: rule__StaticCallValueProperty__Group__3__Impl rule__StaticCallValueProperty__Group__4
             {
-            pushFollow(FOLLOW_rule__StaticValueProperty__Group__3__Impl_in_rule__StaticValueProperty__Group__313646);
-            rule__StaticValueProperty__Group__3__Impl();
+            pushFollow(FOLLOW_rule__StaticCallValueProperty__Group__3__Impl_in_rule__StaticCallValueProperty__Group__313646);
+            rule__StaticCallValueProperty__Group__3__Impl();
 
             state._fsp--;
             if (state.failed) return ;
-            pushFollow(FOLLOW_rule__StaticValueProperty__Group__4_in_rule__StaticValueProperty__Group__313649);
-            rule__StaticValueProperty__Group__4();
+            pushFollow(FOLLOW_rule__StaticCallValueProperty__Group__4_in_rule__StaticCallValueProperty__Group__313649);
+            rule__StaticCallValueProperty__Group__4();
 
             state._fsp--;
             if (state.failed) return ;
@@ -20525,12 +20525,12 @@ public class InternalFXGraphParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__StaticValueProperty__Group__3"
+    // $ANTLR end "rule__StaticCallValueProperty__Group__3"
 
 
-    // $ANTLR start "rule__StaticValueProperty__Group__3__Impl"
-    // ../at.bestsolution.efxclipse.tooling.fxgraph.ui/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/ui/contentassist/antlr/internal/InternalFXGraph.g:6487:1: rule__StaticValueProperty__Group__3__Impl : ( '#' ) ;
-    public final void rule__StaticValueProperty__Group__3__Impl() throws RecognitionException {
+    // $ANTLR start "rule__StaticCallValueProperty__Group__3__Impl"
+    // ../at.bestsolution.efxclipse.tooling.fxgraph.ui/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/ui/contentassist/antlr/internal/InternalFXGraph.g:6487:1: rule__StaticCallValueProperty__Group__3__Impl : ( '#' ) ;
+    public final void rule__StaticCallValueProperty__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
@@ -20542,11 +20542,11 @@ public class InternalFXGraphParser extends AbstractInternalContentAssistParser {
             // ../at.bestsolution.efxclipse.tooling.fxgraph.ui/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/ui/contentassist/antlr/internal/InternalFXGraph.g:6493:1: '#'
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getStaticValuePropertyAccess().getNumberSignKeyword_3()); 
+               before(grammarAccess.getStaticCallValuePropertyAccess().getNumberSignKeyword_3()); 
             }
-            match(input,65,FOLLOW_65_in_rule__StaticValueProperty__Group__3__Impl13677); if (state.failed) return ;
+            match(input,65,FOLLOW_65_in_rule__StaticCallValueProperty__Group__3__Impl13677); if (state.failed) return ;
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getStaticValuePropertyAccess().getNumberSignKeyword_3()); 
+               after(grammarAccess.getStaticCallValuePropertyAccess().getNumberSignKeyword_3()); 
             }
 
             }
@@ -20566,26 +20566,26 @@ public class InternalFXGraphParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__StaticValueProperty__Group__3__Impl"
+    // $ANTLR end "rule__StaticCallValueProperty__Group__3__Impl"
 
 
-    // $ANTLR start "rule__StaticValueProperty__Group__4"
-    // ../at.bestsolution.efxclipse.tooling.fxgraph.ui/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/ui/contentassist/antlr/internal/InternalFXGraph.g:6506:1: rule__StaticValueProperty__Group__4 : rule__StaticValueProperty__Group__4__Impl rule__StaticValueProperty__Group__5 ;
-    public final void rule__StaticValueProperty__Group__4() throws RecognitionException {
+    // $ANTLR start "rule__StaticCallValueProperty__Group__4"
+    // ../at.bestsolution.efxclipse.tooling.fxgraph.ui/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/ui/contentassist/antlr/internal/InternalFXGraph.g:6506:1: rule__StaticCallValueProperty__Group__4 : rule__StaticCallValueProperty__Group__4__Impl rule__StaticCallValueProperty__Group__5 ;
+    public final void rule__StaticCallValueProperty__Group__4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../at.bestsolution.efxclipse.tooling.fxgraph.ui/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/ui/contentassist/antlr/internal/InternalFXGraph.g:6510:1: ( rule__StaticValueProperty__Group__4__Impl rule__StaticValueProperty__Group__5 )
-            // ../at.bestsolution.efxclipse.tooling.fxgraph.ui/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/ui/contentassist/antlr/internal/InternalFXGraph.g:6511:2: rule__StaticValueProperty__Group__4__Impl rule__StaticValueProperty__Group__5
+            // ../at.bestsolution.efxclipse.tooling.fxgraph.ui/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/ui/contentassist/antlr/internal/InternalFXGraph.g:6510:1: ( rule__StaticCallValueProperty__Group__4__Impl rule__StaticCallValueProperty__Group__5 )
+            // ../at.bestsolution.efxclipse.tooling.fxgraph.ui/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/ui/contentassist/antlr/internal/InternalFXGraph.g:6511:2: rule__StaticCallValueProperty__Group__4__Impl rule__StaticCallValueProperty__Group__5
             {
-            pushFollow(FOLLOW_rule__StaticValueProperty__Group__4__Impl_in_rule__StaticValueProperty__Group__413708);
-            rule__StaticValueProperty__Group__4__Impl();
+            pushFollow(FOLLOW_rule__StaticCallValueProperty__Group__4__Impl_in_rule__StaticCallValueProperty__Group__413708);
+            rule__StaticCallValueProperty__Group__4__Impl();
 
             state._fsp--;
             if (state.failed) return ;
-            pushFollow(FOLLOW_rule__StaticValueProperty__Group__5_in_rule__StaticValueProperty__Group__413711);
-            rule__StaticValueProperty__Group__5();
+            pushFollow(FOLLOW_rule__StaticCallValueProperty__Group__5_in_rule__StaticCallValueProperty__Group__413711);
+            rule__StaticCallValueProperty__Group__5();
 
             state._fsp--;
             if (state.failed) return ;
@@ -20604,30 +20604,30 @@ public class InternalFXGraphParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__StaticValueProperty__Group__4"
+    // $ANTLR end "rule__StaticCallValueProperty__Group__4"
 
 
-    // $ANTLR start "rule__StaticValueProperty__Group__4__Impl"
-    // ../at.bestsolution.efxclipse.tooling.fxgraph.ui/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/ui/contentassist/antlr/internal/InternalFXGraph.g:6518:1: rule__StaticValueProperty__Group__4__Impl : ( ( rule__StaticValueProperty__NameAssignment_4 ) ) ;
-    public final void rule__StaticValueProperty__Group__4__Impl() throws RecognitionException {
+    // $ANTLR start "rule__StaticCallValueProperty__Group__4__Impl"
+    // ../at.bestsolution.efxclipse.tooling.fxgraph.ui/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/ui/contentassist/antlr/internal/InternalFXGraph.g:6518:1: rule__StaticCallValueProperty__Group__4__Impl : ( ( rule__StaticCallValueProperty__NameAssignment_4 ) ) ;
+    public final void rule__StaticCallValueProperty__Group__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../at.bestsolution.efxclipse.tooling.fxgraph.ui/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/ui/contentassist/antlr/internal/InternalFXGraph.g:6522:1: ( ( ( rule__StaticValueProperty__NameAssignment_4 ) ) )
-            // ../at.bestsolution.efxclipse.tooling.fxgraph.ui/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/ui/contentassist/antlr/internal/InternalFXGraph.g:6523:1: ( ( rule__StaticValueProperty__NameAssignment_4 ) )
+            // ../at.bestsolution.efxclipse.tooling.fxgraph.ui/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/ui/contentassist/antlr/internal/InternalFXGraph.g:6522:1: ( ( ( rule__StaticCallValueProperty__NameAssignment_4 ) ) )
+            // ../at.bestsolution.efxclipse.tooling.fxgraph.ui/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/ui/contentassist/antlr/internal/InternalFXGraph.g:6523:1: ( ( rule__StaticCallValueProperty__NameAssignment_4 ) )
             {
-            // ../at.bestsolution.efxclipse.tooling.fxgraph.ui/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/ui/contentassist/antlr/internal/InternalFXGraph.g:6523:1: ( ( rule__StaticValueProperty__NameAssignment_4 ) )
-            // ../at.bestsolution.efxclipse.tooling.fxgraph.ui/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/ui/contentassist/antlr/internal/InternalFXGraph.g:6524:1: ( rule__StaticValueProperty__NameAssignment_4 )
+            // ../at.bestsolution.efxclipse.tooling.fxgraph.ui/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/ui/contentassist/antlr/internal/InternalFXGraph.g:6523:1: ( ( rule__StaticCallValueProperty__NameAssignment_4 ) )
+            // ../at.bestsolution.efxclipse.tooling.fxgraph.ui/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/ui/contentassist/antlr/internal/InternalFXGraph.g:6524:1: ( rule__StaticCallValueProperty__NameAssignment_4 )
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getStaticValuePropertyAccess().getNameAssignment_4()); 
+               before(grammarAccess.getStaticCallValuePropertyAccess().getNameAssignment_4()); 
             }
-            // ../at.bestsolution.efxclipse.tooling.fxgraph.ui/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/ui/contentassist/antlr/internal/InternalFXGraph.g:6525:1: ( rule__StaticValueProperty__NameAssignment_4 )
-            // ../at.bestsolution.efxclipse.tooling.fxgraph.ui/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/ui/contentassist/antlr/internal/InternalFXGraph.g:6525:2: rule__StaticValueProperty__NameAssignment_4
+            // ../at.bestsolution.efxclipse.tooling.fxgraph.ui/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/ui/contentassist/antlr/internal/InternalFXGraph.g:6525:1: ( rule__StaticCallValueProperty__NameAssignment_4 )
+            // ../at.bestsolution.efxclipse.tooling.fxgraph.ui/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/ui/contentassist/antlr/internal/InternalFXGraph.g:6525:2: rule__StaticCallValueProperty__NameAssignment_4
             {
-            pushFollow(FOLLOW_rule__StaticValueProperty__NameAssignment_4_in_rule__StaticValueProperty__Group__4__Impl13738);
-            rule__StaticValueProperty__NameAssignment_4();
+            pushFollow(FOLLOW_rule__StaticCallValueProperty__NameAssignment_4_in_rule__StaticCallValueProperty__Group__4__Impl13738);
+            rule__StaticCallValueProperty__NameAssignment_4();
 
             state._fsp--;
             if (state.failed) return ;
@@ -20635,7 +20635,7 @@ public class InternalFXGraphParser extends AbstractInternalContentAssistParser {
             }
 
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getStaticValuePropertyAccess().getNameAssignment_4()); 
+               after(grammarAccess.getStaticCallValuePropertyAccess().getNameAssignment_4()); 
             }
 
             }
@@ -20655,26 +20655,26 @@ public class InternalFXGraphParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__StaticValueProperty__Group__4__Impl"
+    // $ANTLR end "rule__StaticCallValueProperty__Group__4__Impl"
 
 
-    // $ANTLR start "rule__StaticValueProperty__Group__5"
-    // ../at.bestsolution.efxclipse.tooling.fxgraph.ui/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/ui/contentassist/antlr/internal/InternalFXGraph.g:6535:1: rule__StaticValueProperty__Group__5 : rule__StaticValueProperty__Group__5__Impl rule__StaticValueProperty__Group__6 ;
-    public final void rule__StaticValueProperty__Group__5() throws RecognitionException {
+    // $ANTLR start "rule__StaticCallValueProperty__Group__5"
+    // ../at.bestsolution.efxclipse.tooling.fxgraph.ui/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/ui/contentassist/antlr/internal/InternalFXGraph.g:6535:1: rule__StaticCallValueProperty__Group__5 : rule__StaticCallValueProperty__Group__5__Impl rule__StaticCallValueProperty__Group__6 ;
+    public final void rule__StaticCallValueProperty__Group__5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../at.bestsolution.efxclipse.tooling.fxgraph.ui/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/ui/contentassist/antlr/internal/InternalFXGraph.g:6539:1: ( rule__StaticValueProperty__Group__5__Impl rule__StaticValueProperty__Group__6 )
-            // ../at.bestsolution.efxclipse.tooling.fxgraph.ui/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/ui/contentassist/antlr/internal/InternalFXGraph.g:6540:2: rule__StaticValueProperty__Group__5__Impl rule__StaticValueProperty__Group__6
+            // ../at.bestsolution.efxclipse.tooling.fxgraph.ui/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/ui/contentassist/antlr/internal/InternalFXGraph.g:6539:1: ( rule__StaticCallValueProperty__Group__5__Impl rule__StaticCallValueProperty__Group__6 )
+            // ../at.bestsolution.efxclipse.tooling.fxgraph.ui/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/ui/contentassist/antlr/internal/InternalFXGraph.g:6540:2: rule__StaticCallValueProperty__Group__5__Impl rule__StaticCallValueProperty__Group__6
             {
-            pushFollow(FOLLOW_rule__StaticValueProperty__Group__5__Impl_in_rule__StaticValueProperty__Group__513768);
-            rule__StaticValueProperty__Group__5__Impl();
+            pushFollow(FOLLOW_rule__StaticCallValueProperty__Group__5__Impl_in_rule__StaticCallValueProperty__Group__513768);
+            rule__StaticCallValueProperty__Group__5__Impl();
 
             state._fsp--;
             if (state.failed) return ;
-            pushFollow(FOLLOW_rule__StaticValueProperty__Group__6_in_rule__StaticValueProperty__Group__513771);
-            rule__StaticValueProperty__Group__6();
+            pushFollow(FOLLOW_rule__StaticCallValueProperty__Group__6_in_rule__StaticCallValueProperty__Group__513771);
+            rule__StaticCallValueProperty__Group__6();
 
             state._fsp--;
             if (state.failed) return ;
@@ -20693,12 +20693,12 @@ public class InternalFXGraphParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__StaticValueProperty__Group__5"
+    // $ANTLR end "rule__StaticCallValueProperty__Group__5"
 
 
-    // $ANTLR start "rule__StaticValueProperty__Group__5__Impl"
-    // ../at.bestsolution.efxclipse.tooling.fxgraph.ui/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/ui/contentassist/antlr/internal/InternalFXGraph.g:6547:1: rule__StaticValueProperty__Group__5__Impl : ( ':' ) ;
-    public final void rule__StaticValueProperty__Group__5__Impl() throws RecognitionException {
+    // $ANTLR start "rule__StaticCallValueProperty__Group__5__Impl"
+    // ../at.bestsolution.efxclipse.tooling.fxgraph.ui/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/ui/contentassist/antlr/internal/InternalFXGraph.g:6547:1: rule__StaticCallValueProperty__Group__5__Impl : ( ':' ) ;
+    public final void rule__StaticCallValueProperty__Group__5__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
@@ -20710,11 +20710,11 @@ public class InternalFXGraphParser extends AbstractInternalContentAssistParser {
             // ../at.bestsolution.efxclipse.tooling.fxgraph.ui/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/ui/contentassist/antlr/internal/InternalFXGraph.g:6553:1: ':'
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getStaticValuePropertyAccess().getColonKeyword_5()); 
+               before(grammarAccess.getStaticCallValuePropertyAccess().getColonKeyword_5()); 
             }
-            match(input,66,FOLLOW_66_in_rule__StaticValueProperty__Group__5__Impl13799); if (state.failed) return ;
+            match(input,66,FOLLOW_66_in_rule__StaticCallValueProperty__Group__5__Impl13799); if (state.failed) return ;
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getStaticValuePropertyAccess().getColonKeyword_5()); 
+               after(grammarAccess.getStaticCallValuePropertyAccess().getColonKeyword_5()); 
             }
 
             }
@@ -20734,21 +20734,21 @@ public class InternalFXGraphParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__StaticValueProperty__Group__5__Impl"
+    // $ANTLR end "rule__StaticCallValueProperty__Group__5__Impl"
 
 
-    // $ANTLR start "rule__StaticValueProperty__Group__6"
-    // ../at.bestsolution.efxclipse.tooling.fxgraph.ui/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/ui/contentassist/antlr/internal/InternalFXGraph.g:6566:1: rule__StaticValueProperty__Group__6 : rule__StaticValueProperty__Group__6__Impl ;
-    public final void rule__StaticValueProperty__Group__6() throws RecognitionException {
+    // $ANTLR start "rule__StaticCallValueProperty__Group__6"
+    // ../at.bestsolution.efxclipse.tooling.fxgraph.ui/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/ui/contentassist/antlr/internal/InternalFXGraph.g:6566:1: rule__StaticCallValueProperty__Group__6 : rule__StaticCallValueProperty__Group__6__Impl ;
+    public final void rule__StaticCallValueProperty__Group__6() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../at.bestsolution.efxclipse.tooling.fxgraph.ui/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/ui/contentassist/antlr/internal/InternalFXGraph.g:6570:1: ( rule__StaticValueProperty__Group__6__Impl )
-            // ../at.bestsolution.efxclipse.tooling.fxgraph.ui/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/ui/contentassist/antlr/internal/InternalFXGraph.g:6571:2: rule__StaticValueProperty__Group__6__Impl
+            // ../at.bestsolution.efxclipse.tooling.fxgraph.ui/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/ui/contentassist/antlr/internal/InternalFXGraph.g:6570:1: ( rule__StaticCallValueProperty__Group__6__Impl )
+            // ../at.bestsolution.efxclipse.tooling.fxgraph.ui/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/ui/contentassist/antlr/internal/InternalFXGraph.g:6571:2: rule__StaticCallValueProperty__Group__6__Impl
             {
-            pushFollow(FOLLOW_rule__StaticValueProperty__Group__6__Impl_in_rule__StaticValueProperty__Group__613830);
-            rule__StaticValueProperty__Group__6__Impl();
+            pushFollow(FOLLOW_rule__StaticCallValueProperty__Group__6__Impl_in_rule__StaticCallValueProperty__Group__613830);
+            rule__StaticCallValueProperty__Group__6__Impl();
 
             state._fsp--;
             if (state.failed) return ;
@@ -20767,30 +20767,30 @@ public class InternalFXGraphParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__StaticValueProperty__Group__6"
+    // $ANTLR end "rule__StaticCallValueProperty__Group__6"
 
 
-    // $ANTLR start "rule__StaticValueProperty__Group__6__Impl"
-    // ../at.bestsolution.efxclipse.tooling.fxgraph.ui/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/ui/contentassist/antlr/internal/InternalFXGraph.g:6577:1: rule__StaticValueProperty__Group__6__Impl : ( ( rule__StaticValueProperty__ValueAssignment_6 ) ) ;
-    public final void rule__StaticValueProperty__Group__6__Impl() throws RecognitionException {
+    // $ANTLR start "rule__StaticCallValueProperty__Group__6__Impl"
+    // ../at.bestsolution.efxclipse.tooling.fxgraph.ui/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/ui/contentassist/antlr/internal/InternalFXGraph.g:6577:1: rule__StaticCallValueProperty__Group__6__Impl : ( ( rule__StaticCallValueProperty__ValueAssignment_6 ) ) ;
+    public final void rule__StaticCallValueProperty__Group__6__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../at.bestsolution.efxclipse.tooling.fxgraph.ui/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/ui/contentassist/antlr/internal/InternalFXGraph.g:6581:1: ( ( ( rule__StaticValueProperty__ValueAssignment_6 ) ) )
-            // ../at.bestsolution.efxclipse.tooling.fxgraph.ui/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/ui/contentassist/antlr/internal/InternalFXGraph.g:6582:1: ( ( rule__StaticValueProperty__ValueAssignment_6 ) )
+            // ../at.bestsolution.efxclipse.tooling.fxgraph.ui/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/ui/contentassist/antlr/internal/InternalFXGraph.g:6581:1: ( ( ( rule__StaticCallValueProperty__ValueAssignment_6 ) ) )
+            // ../at.bestsolution.efxclipse.tooling.fxgraph.ui/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/ui/contentassist/antlr/internal/InternalFXGraph.g:6582:1: ( ( rule__StaticCallValueProperty__ValueAssignment_6 ) )
             {
-            // ../at.bestsolution.efxclipse.tooling.fxgraph.ui/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/ui/contentassist/antlr/internal/InternalFXGraph.g:6582:1: ( ( rule__StaticValueProperty__ValueAssignment_6 ) )
-            // ../at.bestsolution.efxclipse.tooling.fxgraph.ui/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/ui/contentassist/antlr/internal/InternalFXGraph.g:6583:1: ( rule__StaticValueProperty__ValueAssignment_6 )
+            // ../at.bestsolution.efxclipse.tooling.fxgraph.ui/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/ui/contentassist/antlr/internal/InternalFXGraph.g:6582:1: ( ( rule__StaticCallValueProperty__ValueAssignment_6 ) )
+            // ../at.bestsolution.efxclipse.tooling.fxgraph.ui/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/ui/contentassist/antlr/internal/InternalFXGraph.g:6583:1: ( rule__StaticCallValueProperty__ValueAssignment_6 )
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getStaticValuePropertyAccess().getValueAssignment_6()); 
+               before(grammarAccess.getStaticCallValuePropertyAccess().getValueAssignment_6()); 
             }
-            // ../at.bestsolution.efxclipse.tooling.fxgraph.ui/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/ui/contentassist/antlr/internal/InternalFXGraph.g:6584:1: ( rule__StaticValueProperty__ValueAssignment_6 )
-            // ../at.bestsolution.efxclipse.tooling.fxgraph.ui/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/ui/contentassist/antlr/internal/InternalFXGraph.g:6584:2: rule__StaticValueProperty__ValueAssignment_6
+            // ../at.bestsolution.efxclipse.tooling.fxgraph.ui/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/ui/contentassist/antlr/internal/InternalFXGraph.g:6584:1: ( rule__StaticCallValueProperty__ValueAssignment_6 )
+            // ../at.bestsolution.efxclipse.tooling.fxgraph.ui/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/ui/contentassist/antlr/internal/InternalFXGraph.g:6584:2: rule__StaticCallValueProperty__ValueAssignment_6
             {
-            pushFollow(FOLLOW_rule__StaticValueProperty__ValueAssignment_6_in_rule__StaticValueProperty__Group__6__Impl13857);
-            rule__StaticValueProperty__ValueAssignment_6();
+            pushFollow(FOLLOW_rule__StaticCallValueProperty__ValueAssignment_6_in_rule__StaticCallValueProperty__Group__6__Impl13857);
+            rule__StaticCallValueProperty__ValueAssignment_6();
 
             state._fsp--;
             if (state.failed) return ;
@@ -20798,7 +20798,7 @@ public class InternalFXGraphParser extends AbstractInternalContentAssistParser {
             }
 
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getStaticValuePropertyAccess().getValueAssignment_6()); 
+               after(grammarAccess.getStaticCallValuePropertyAccess().getValueAssignment_6()); 
             }
 
             }
@@ -20818,7 +20818,7 @@ public class InternalFXGraphParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__StaticValueProperty__Group__6__Impl"
+    // $ANTLR end "rule__StaticCallValueProperty__Group__6__Impl"
 
 
     // $ANTLR start "rule__Property__Group__0"
@@ -55578,29 +55578,29 @@ public class InternalFXGraphParser extends AbstractInternalContentAssistParser {
     // $ANTLR end "rule__Element__PropertiesAssignment_1_1_2_0_0"
 
 
-    // $ANTLR start "rule__Element__StaticPropertiesAssignment_1_1_2_0_1"
-    // ../at.bestsolution.efxclipse.tooling.fxgraph.ui/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/ui/contentassist/antlr/internal/InternalFXGraph.g:19238:1: rule__Element__StaticPropertiesAssignment_1_1_2_0_1 : ( ruleStaticValueProperty ) ;
-    public final void rule__Element__StaticPropertiesAssignment_1_1_2_0_1() throws RecognitionException {
+    // $ANTLR start "rule__Element__StaticCallPropertiesAssignment_1_1_2_0_1"
+    // ../at.bestsolution.efxclipse.tooling.fxgraph.ui/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/ui/contentassist/antlr/internal/InternalFXGraph.g:19238:1: rule__Element__StaticCallPropertiesAssignment_1_1_2_0_1 : ( ruleStaticCallValueProperty ) ;
+    public final void rule__Element__StaticCallPropertiesAssignment_1_1_2_0_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../at.bestsolution.efxclipse.tooling.fxgraph.ui/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/ui/contentassist/antlr/internal/InternalFXGraph.g:19242:1: ( ( ruleStaticValueProperty ) )
-            // ../at.bestsolution.efxclipse.tooling.fxgraph.ui/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/ui/contentassist/antlr/internal/InternalFXGraph.g:19243:1: ( ruleStaticValueProperty )
+            // ../at.bestsolution.efxclipse.tooling.fxgraph.ui/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/ui/contentassist/antlr/internal/InternalFXGraph.g:19242:1: ( ( ruleStaticCallValueProperty ) )
+            // ../at.bestsolution.efxclipse.tooling.fxgraph.ui/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/ui/contentassist/antlr/internal/InternalFXGraph.g:19243:1: ( ruleStaticCallValueProperty )
             {
-            // ../at.bestsolution.efxclipse.tooling.fxgraph.ui/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/ui/contentassist/antlr/internal/InternalFXGraph.g:19243:1: ( ruleStaticValueProperty )
-            // ../at.bestsolution.efxclipse.tooling.fxgraph.ui/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/ui/contentassist/antlr/internal/InternalFXGraph.g:19244:1: ruleStaticValueProperty
+            // ../at.bestsolution.efxclipse.tooling.fxgraph.ui/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/ui/contentassist/antlr/internal/InternalFXGraph.g:19243:1: ( ruleStaticCallValueProperty )
+            // ../at.bestsolution.efxclipse.tooling.fxgraph.ui/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/ui/contentassist/antlr/internal/InternalFXGraph.g:19244:1: ruleStaticCallValueProperty
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getElementAccess().getStaticPropertiesStaticValuePropertyParserRuleCall_1_1_2_0_1_0()); 
+               before(grammarAccess.getElementAccess().getStaticCallPropertiesStaticCallValuePropertyParserRuleCall_1_1_2_0_1_0()); 
             }
-            pushFollow(FOLLOW_ruleStaticValueProperty_in_rule__Element__StaticPropertiesAssignment_1_1_2_0_139034);
-            ruleStaticValueProperty();
+            pushFollow(FOLLOW_ruleStaticCallValueProperty_in_rule__Element__StaticCallPropertiesAssignment_1_1_2_0_139034);
+            ruleStaticCallValueProperty();
 
             state._fsp--;
             if (state.failed) return ;
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getElementAccess().getStaticPropertiesStaticValuePropertyParserRuleCall_1_1_2_0_1_0()); 
+               after(grammarAccess.getElementAccess().getStaticCallPropertiesStaticCallValuePropertyParserRuleCall_1_1_2_0_1_0()); 
             }
 
             }
@@ -55620,7 +55620,7 @@ public class InternalFXGraphParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__Element__StaticPropertiesAssignment_1_1_2_0_1"
+    // $ANTLR end "rule__Element__StaticCallPropertiesAssignment_1_1_2_0_1"
 
 
     // $ANTLR start "rule__Element__DefaultChildrenAssignment_1_1_2_0_2"
@@ -55713,29 +55713,29 @@ public class InternalFXGraphParser extends AbstractInternalContentAssistParser {
     // $ANTLR end "rule__Element__PropertiesAssignment_1_1_2_1_1_0"
 
 
-    // $ANTLR start "rule__Element__StaticPropertiesAssignment_1_1_2_1_1_1"
-    // ../at.bestsolution.efxclipse.tooling.fxgraph.ui/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/ui/contentassist/antlr/internal/InternalFXGraph.g:19283:1: rule__Element__StaticPropertiesAssignment_1_1_2_1_1_1 : ( ruleStaticValueProperty ) ;
-    public final void rule__Element__StaticPropertiesAssignment_1_1_2_1_1_1() throws RecognitionException {
+    // $ANTLR start "rule__Element__StaticCallPropertiesAssignment_1_1_2_1_1_1"
+    // ../at.bestsolution.efxclipse.tooling.fxgraph.ui/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/ui/contentassist/antlr/internal/InternalFXGraph.g:19283:1: rule__Element__StaticCallPropertiesAssignment_1_1_2_1_1_1 : ( ruleStaticCallValueProperty ) ;
+    public final void rule__Element__StaticCallPropertiesAssignment_1_1_2_1_1_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../at.bestsolution.efxclipse.tooling.fxgraph.ui/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/ui/contentassist/antlr/internal/InternalFXGraph.g:19287:1: ( ( ruleStaticValueProperty ) )
-            // ../at.bestsolution.efxclipse.tooling.fxgraph.ui/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/ui/contentassist/antlr/internal/InternalFXGraph.g:19288:1: ( ruleStaticValueProperty )
+            // ../at.bestsolution.efxclipse.tooling.fxgraph.ui/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/ui/contentassist/antlr/internal/InternalFXGraph.g:19287:1: ( ( ruleStaticCallValueProperty ) )
+            // ../at.bestsolution.efxclipse.tooling.fxgraph.ui/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/ui/contentassist/antlr/internal/InternalFXGraph.g:19288:1: ( ruleStaticCallValueProperty )
             {
-            // ../at.bestsolution.efxclipse.tooling.fxgraph.ui/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/ui/contentassist/antlr/internal/InternalFXGraph.g:19288:1: ( ruleStaticValueProperty )
-            // ../at.bestsolution.efxclipse.tooling.fxgraph.ui/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/ui/contentassist/antlr/internal/InternalFXGraph.g:19289:1: ruleStaticValueProperty
+            // ../at.bestsolution.efxclipse.tooling.fxgraph.ui/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/ui/contentassist/antlr/internal/InternalFXGraph.g:19288:1: ( ruleStaticCallValueProperty )
+            // ../at.bestsolution.efxclipse.tooling.fxgraph.ui/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/ui/contentassist/antlr/internal/InternalFXGraph.g:19289:1: ruleStaticCallValueProperty
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getElementAccess().getStaticPropertiesStaticValuePropertyParserRuleCall_1_1_2_1_1_1_0()); 
+               before(grammarAccess.getElementAccess().getStaticCallPropertiesStaticCallValuePropertyParserRuleCall_1_1_2_1_1_1_0()); 
             }
-            pushFollow(FOLLOW_ruleStaticValueProperty_in_rule__Element__StaticPropertiesAssignment_1_1_2_1_1_139127);
-            ruleStaticValueProperty();
+            pushFollow(FOLLOW_ruleStaticCallValueProperty_in_rule__Element__StaticCallPropertiesAssignment_1_1_2_1_1_139127);
+            ruleStaticCallValueProperty();
 
             state._fsp--;
             if (state.failed) return ;
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getElementAccess().getStaticPropertiesStaticValuePropertyParserRuleCall_1_1_2_1_1_1_0()); 
+               after(grammarAccess.getElementAccess().getStaticCallPropertiesStaticCallValuePropertyParserRuleCall_1_1_2_1_1_1_0()); 
             }
 
             }
@@ -55755,7 +55755,7 @@ public class InternalFXGraphParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__Element__StaticPropertiesAssignment_1_1_2_1_1_1"
+    // $ANTLR end "rule__Element__StaticCallPropertiesAssignment_1_1_2_1_1_1"
 
 
     // $ANTLR start "rule__Element__DefaultChildrenAssignment_1_1_2_1_1_2"
@@ -56192,27 +56192,27 @@ public class InternalFXGraphParser extends AbstractInternalContentAssistParser {
     // $ANTLR end "rule__Script__SourcecodeAssignment_2_1"
 
 
-    // $ANTLR start "rule__StaticValueProperty__ModifierAssignment_0"
-    // ../at.bestsolution.efxclipse.tooling.fxgraph.ui/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/ui/contentassist/antlr/internal/InternalFXGraph.g:19448:1: rule__StaticValueProperty__ModifierAssignment_0 : ( ( rule__StaticValueProperty__ModifierAlternatives_0_0 ) ) ;
-    public final void rule__StaticValueProperty__ModifierAssignment_0() throws RecognitionException {
+    // $ANTLR start "rule__StaticCallValueProperty__ModifierAssignment_0"
+    // ../at.bestsolution.efxclipse.tooling.fxgraph.ui/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/ui/contentassist/antlr/internal/InternalFXGraph.g:19448:1: rule__StaticCallValueProperty__ModifierAssignment_0 : ( ( rule__StaticCallValueProperty__ModifierAlternatives_0_0 ) ) ;
+    public final void rule__StaticCallValueProperty__ModifierAssignment_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../at.bestsolution.efxclipse.tooling.fxgraph.ui/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/ui/contentassist/antlr/internal/InternalFXGraph.g:19452:1: ( ( ( rule__StaticValueProperty__ModifierAlternatives_0_0 ) ) )
-            // ../at.bestsolution.efxclipse.tooling.fxgraph.ui/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/ui/contentassist/antlr/internal/InternalFXGraph.g:19453:1: ( ( rule__StaticValueProperty__ModifierAlternatives_0_0 ) )
+            // ../at.bestsolution.efxclipse.tooling.fxgraph.ui/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/ui/contentassist/antlr/internal/InternalFXGraph.g:19452:1: ( ( ( rule__StaticCallValueProperty__ModifierAlternatives_0_0 ) ) )
+            // ../at.bestsolution.efxclipse.tooling.fxgraph.ui/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/ui/contentassist/antlr/internal/InternalFXGraph.g:19453:1: ( ( rule__StaticCallValueProperty__ModifierAlternatives_0_0 ) )
             {
-            // ../at.bestsolution.efxclipse.tooling.fxgraph.ui/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/ui/contentassist/antlr/internal/InternalFXGraph.g:19453:1: ( ( rule__StaticValueProperty__ModifierAlternatives_0_0 ) )
-            // ../at.bestsolution.efxclipse.tooling.fxgraph.ui/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/ui/contentassist/antlr/internal/InternalFXGraph.g:19454:1: ( rule__StaticValueProperty__ModifierAlternatives_0_0 )
+            // ../at.bestsolution.efxclipse.tooling.fxgraph.ui/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/ui/contentassist/antlr/internal/InternalFXGraph.g:19453:1: ( ( rule__StaticCallValueProperty__ModifierAlternatives_0_0 ) )
+            // ../at.bestsolution.efxclipse.tooling.fxgraph.ui/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/ui/contentassist/antlr/internal/InternalFXGraph.g:19454:1: ( rule__StaticCallValueProperty__ModifierAlternatives_0_0 )
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getStaticValuePropertyAccess().getModifierAlternatives_0_0()); 
+               before(grammarAccess.getStaticCallValuePropertyAccess().getModifierAlternatives_0_0()); 
             }
-            // ../at.bestsolution.efxclipse.tooling.fxgraph.ui/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/ui/contentassist/antlr/internal/InternalFXGraph.g:19455:1: ( rule__StaticValueProperty__ModifierAlternatives_0_0 )
-            // ../at.bestsolution.efxclipse.tooling.fxgraph.ui/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/ui/contentassist/antlr/internal/InternalFXGraph.g:19455:2: rule__StaticValueProperty__ModifierAlternatives_0_0
+            // ../at.bestsolution.efxclipse.tooling.fxgraph.ui/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/ui/contentassist/antlr/internal/InternalFXGraph.g:19455:1: ( rule__StaticCallValueProperty__ModifierAlternatives_0_0 )
+            // ../at.bestsolution.efxclipse.tooling.fxgraph.ui/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/ui/contentassist/antlr/internal/InternalFXGraph.g:19455:2: rule__StaticCallValueProperty__ModifierAlternatives_0_0
             {
-            pushFollow(FOLLOW_rule__StaticValueProperty__ModifierAlternatives_0_0_in_rule__StaticValueProperty__ModifierAssignment_039468);
-            rule__StaticValueProperty__ModifierAlternatives_0_0();
+            pushFollow(FOLLOW_rule__StaticCallValueProperty__ModifierAlternatives_0_0_in_rule__StaticCallValueProperty__ModifierAssignment_039468);
+            rule__StaticCallValueProperty__ModifierAlternatives_0_0();
 
             state._fsp--;
             if (state.failed) return ;
@@ -56220,7 +56220,7 @@ public class InternalFXGraphParser extends AbstractInternalContentAssistParser {
             }
 
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getStaticValuePropertyAccess().getModifierAlternatives_0_0()); 
+               after(grammarAccess.getStaticCallValuePropertyAccess().getModifierAlternatives_0_0()); 
             }
 
             }
@@ -56240,12 +56240,12 @@ public class InternalFXGraphParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__StaticValueProperty__ModifierAssignment_0"
+    // $ANTLR end "rule__StaticCallValueProperty__ModifierAssignment_0"
 
 
-    // $ANTLR start "rule__StaticValueProperty__TypeAssignment_2"
-    // ../at.bestsolution.efxclipse.tooling.fxgraph.ui/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/ui/contentassist/antlr/internal/InternalFXGraph.g:19464:1: rule__StaticValueProperty__TypeAssignment_2 : ( ruleJvmTypeReference ) ;
-    public final void rule__StaticValueProperty__TypeAssignment_2() throws RecognitionException {
+    // $ANTLR start "rule__StaticCallValueProperty__TypeAssignment_2"
+    // ../at.bestsolution.efxclipse.tooling.fxgraph.ui/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/ui/contentassist/antlr/internal/InternalFXGraph.g:19464:1: rule__StaticCallValueProperty__TypeAssignment_2 : ( ruleJvmTypeReference ) ;
+    public final void rule__StaticCallValueProperty__TypeAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
@@ -56257,15 +56257,15 @@ public class InternalFXGraphParser extends AbstractInternalContentAssistParser {
             // ../at.bestsolution.efxclipse.tooling.fxgraph.ui/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/ui/contentassist/antlr/internal/InternalFXGraph.g:19470:1: ruleJvmTypeReference
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getStaticValuePropertyAccess().getTypeJvmTypeReferenceParserRuleCall_2_0()); 
+               before(grammarAccess.getStaticCallValuePropertyAccess().getTypeJvmTypeReferenceParserRuleCall_2_0()); 
             }
-            pushFollow(FOLLOW_ruleJvmTypeReference_in_rule__StaticValueProperty__TypeAssignment_239501);
+            pushFollow(FOLLOW_ruleJvmTypeReference_in_rule__StaticCallValueProperty__TypeAssignment_239501);
             ruleJvmTypeReference();
 
             state._fsp--;
             if (state.failed) return ;
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getStaticValuePropertyAccess().getTypeJvmTypeReferenceParserRuleCall_2_0()); 
+               after(grammarAccess.getStaticCallValuePropertyAccess().getTypeJvmTypeReferenceParserRuleCall_2_0()); 
             }
 
             }
@@ -56285,12 +56285,12 @@ public class InternalFXGraphParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__StaticValueProperty__TypeAssignment_2"
+    // $ANTLR end "rule__StaticCallValueProperty__TypeAssignment_2"
 
 
-    // $ANTLR start "rule__StaticValueProperty__NameAssignment_4"
-    // ../at.bestsolution.efxclipse.tooling.fxgraph.ui/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/ui/contentassist/antlr/internal/InternalFXGraph.g:19479:1: rule__StaticValueProperty__NameAssignment_4 : ( RULE_ID ) ;
-    public final void rule__StaticValueProperty__NameAssignment_4() throws RecognitionException {
+    // $ANTLR start "rule__StaticCallValueProperty__NameAssignment_4"
+    // ../at.bestsolution.efxclipse.tooling.fxgraph.ui/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/ui/contentassist/antlr/internal/InternalFXGraph.g:19479:1: rule__StaticCallValueProperty__NameAssignment_4 : ( RULE_ID ) ;
+    public final void rule__StaticCallValueProperty__NameAssignment_4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
@@ -56302,11 +56302,11 @@ public class InternalFXGraphParser extends AbstractInternalContentAssistParser {
             // ../at.bestsolution.efxclipse.tooling.fxgraph.ui/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/ui/contentassist/antlr/internal/InternalFXGraph.g:19485:1: RULE_ID
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getStaticValuePropertyAccess().getNameIDTerminalRuleCall_4_0()); 
+               before(grammarAccess.getStaticCallValuePropertyAccess().getNameIDTerminalRuleCall_4_0()); 
             }
-            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__StaticValueProperty__NameAssignment_439532); if (state.failed) return ;
+            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__StaticCallValueProperty__NameAssignment_439532); if (state.failed) return ;
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getStaticValuePropertyAccess().getNameIDTerminalRuleCall_4_0()); 
+               after(grammarAccess.getStaticCallValuePropertyAccess().getNameIDTerminalRuleCall_4_0()); 
             }
 
             }
@@ -56326,12 +56326,12 @@ public class InternalFXGraphParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__StaticValueProperty__NameAssignment_4"
+    // $ANTLR end "rule__StaticCallValueProperty__NameAssignment_4"
 
 
-    // $ANTLR start "rule__StaticValueProperty__ValueAssignment_6"
-    // ../at.bestsolution.efxclipse.tooling.fxgraph.ui/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/ui/contentassist/antlr/internal/InternalFXGraph.g:19494:1: rule__StaticValueProperty__ValueAssignment_6 : ( ruleValueProperty ) ;
-    public final void rule__StaticValueProperty__ValueAssignment_6() throws RecognitionException {
+    // $ANTLR start "rule__StaticCallValueProperty__ValueAssignment_6"
+    // ../at.bestsolution.efxclipse.tooling.fxgraph.ui/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/ui/contentassist/antlr/internal/InternalFXGraph.g:19494:1: rule__StaticCallValueProperty__ValueAssignment_6 : ( ruleValueProperty ) ;
+    public final void rule__StaticCallValueProperty__ValueAssignment_6() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
@@ -56343,15 +56343,15 @@ public class InternalFXGraphParser extends AbstractInternalContentAssistParser {
             // ../at.bestsolution.efxclipse.tooling.fxgraph.ui/src-gen/at/bestsolution/efxclipse/tooling/fxgraph/ui/contentassist/antlr/internal/InternalFXGraph.g:19500:1: ruleValueProperty
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getStaticValuePropertyAccess().getValueValuePropertyParserRuleCall_6_0()); 
+               before(grammarAccess.getStaticCallValuePropertyAccess().getValueValuePropertyParserRuleCall_6_0()); 
             }
-            pushFollow(FOLLOW_ruleValueProperty_in_rule__StaticValueProperty__ValueAssignment_639563);
+            pushFollow(FOLLOW_ruleValueProperty_in_rule__StaticCallValueProperty__ValueAssignment_639563);
             ruleValueProperty();
 
             state._fsp--;
             if (state.failed) return ;
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getStaticValuePropertyAccess().getValueValuePropertyParserRuleCall_6_0()); 
+               after(grammarAccess.getStaticCallValuePropertyAccess().getValueValuePropertyParserRuleCall_6_0()); 
             }
 
             }
@@ -56371,7 +56371,7 @@ public class InternalFXGraphParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__StaticValueProperty__ValueAssignment_6"
+    // $ANTLR end "rule__StaticCallValueProperty__ValueAssignment_6"
 
 
     // $ANTLR start "rule__Property__ModifierAssignment_0"
@@ -65807,9 +65807,9 @@ public class InternalFXGraphParser extends AbstractInternalContentAssistParser {
     static final String DFA116_acceptS =
         "\33\uffff\1\2\44\uffff\1\1";
     static final String DFA116_specialS =
-        "\1\uffff\1\0\1\1\1\2\1\3\1\4\1\5\1\6\1\7\1\10\1\11\1\12\1\13\1"+
-        "\14\1\15\1\16\1\17\1\20\1\21\1\22\1\23\1\24\1\25\1\26\1\27\1\30"+
-        "\1\31\46\uffff}>";
+        "\1\uffff\1\0\1\1\1\2\1\3\1\4\1\5\1\6\1\7\1\10\1\11\1\12\1\13\1\14"+
+        "\1\15\1\16\1\17\1\20\1\21\1\22\1\23\1\24\1\25\1\26\1\27\1\30\1\31"+
+        "\46\uffff}>";
     static final String[] DFA116_transitionS = {
             "\1\1\1\15\1\16\1\17\1\21\7\uffff\3\33\2\uffff\1\14\1\13\5\33"+
             "\1\10\6\33\1\4\1\3\4\33\1\2\2\33\1\11\3\uffff\1\6\1\33\2\uffff"+
@@ -66329,8 +66329,8 @@ public class InternalFXGraphParser extends AbstractInternalContentAssistParser {
     static final String DFA125_specialS =
         "\1\uffff\1\0\107\uffff}>";
     static final String[] DFA125_transitionS = {
-            "\5\2\7\uffff\3\2\2\uffff\7\2\1\1\20\2\3\uffff\16\2\3\uffff"+
-            "\2\2\2\uffff\1\2\10\uffff\12\2\1\uffff\10\2\3\uffff\2\2\1\uffff"+
+            "\5\2\7\uffff\3\2\2\uffff\7\2\1\1\20\2\3\uffff\16\2\3\uffff\2"+
+            "\2\2\uffff\1\2\10\uffff\12\2\1\uffff\10\2\3\uffff\2\2\1\uffff"+
             "\1\2",
             "\1\uffff",
             "",
@@ -66488,9 +66488,9 @@ public class InternalFXGraphParser extends AbstractInternalContentAssistParser {
     public static final BitSet FOLLOW_ruleScript_in_entryRuleScript427 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleScript434 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__Script__Group__0_in_ruleScript460 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleStaticValueProperty_in_entryRuleStaticValueProperty487 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleStaticValueProperty494 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__StaticValueProperty__Group__0_in_ruleStaticValueProperty520 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleStaticCallValueProperty_in_entryRuleStaticCallValueProperty487 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleStaticCallValueProperty494 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__StaticCallValueProperty__Group__0_in_ruleStaticCallValueProperty520 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleProperty_in_entryRuleProperty547 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleProperty554 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__Property__Group__0_in_ruleProperty580 = new BitSet(new long[]{0x0000000000000002L});
@@ -66750,17 +66750,17 @@ public class InternalFXGraphParser extends AbstractInternalContentAssistParser {
     public static final BitSet FOLLOW_rule__Element__Group_1_1__0_in_rule__Element__Alternatives_15701 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__Element__Group_1_2__0_in_rule__Element__Alternatives_15719 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__Element__PropertiesAssignment_1_1_2_0_0_in_rule__Element__Alternatives_1_1_2_05752 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Element__StaticPropertiesAssignment_1_1_2_0_1_in_rule__Element__Alternatives_1_1_2_05770 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Element__StaticCallPropertiesAssignment_1_1_2_0_1_in_rule__Element__Alternatives_1_1_2_05770 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__Element__DefaultChildrenAssignment_1_1_2_0_2_in_rule__Element__Alternatives_1_1_2_05788 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__Element__PropertiesAssignment_1_1_2_1_1_0_in_rule__Element__Alternatives_1_1_2_1_15821 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Element__StaticPropertiesAssignment_1_1_2_1_1_1_in_rule__Element__Alternatives_1_1_2_1_15839 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Element__StaticCallPropertiesAssignment_1_1_2_1_1_1_in_rule__Element__Alternatives_1_1_2_1_15839 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__Element__DefaultChildrenAssignment_1_1_2_1_1_2_in_rule__Element__Alternatives_1_1_2_1_15857 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__Define__ElementAssignment_1_0_in_rule__Define__Alternatives_15890 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__Define__IncludeElementAssignment_1_1_in_rule__Define__Alternatives_15908 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__Script__SourceAssignment_2_0_in_rule__Script__Alternatives_25941 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__Script__SourcecodeAssignment_2_1_in_rule__Script__Alternatives_25959 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_19_in_rule__StaticValueProperty__ModifierAlternatives_0_05993 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_20_in_rule__StaticValueProperty__ModifierAlternatives_0_06013 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_19_in_rule__StaticCallValueProperty__ModifierAlternatives_0_05993 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_20_in_rule__StaticCallValueProperty__ModifierAlternatives_0_06013 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_19_in_rule__Property__ModifierAlternatives_0_06048 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_20_in_rule__Property__ModifierAlternatives_0_06068 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleSingleValueProperty_in_rule__ValueProperty__Alternatives6102 = new BitSet(new long[]{0x0000000000000002L});
@@ -67079,26 +67079,26 @@ public class InternalFXGraphParser extends AbstractInternalContentAssistParser {
     public static final BitSet FOLLOW_rule__Script__LanguageAssignment_1_in_rule__Script__Group__1__Impl13370 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__Script__Group__2__Impl_in_rule__Script__Group__213400 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__Script__Alternatives_2_in_rule__Script__Group__2__Impl13427 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__StaticValueProperty__Group__0__Impl_in_rule__StaticValueProperty__Group__013463 = new BitSet(new long[]{0x0000000000180000L,0x0000000000000001L});
-    public static final BitSet FOLLOW_rule__StaticValueProperty__Group__1_in_rule__StaticValueProperty__Group__013466 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__StaticValueProperty__ModifierAssignment_0_in_rule__StaticValueProperty__Group__0__Impl13493 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__StaticValueProperty__Group__1__Impl_in_rule__StaticValueProperty__Group__113524 = new BitSet(new long[]{0xC400000080000010L});
-    public static final BitSet FOLLOW_rule__StaticValueProperty__Group__2_in_rule__StaticValueProperty__Group__113527 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_64_in_rule__StaticValueProperty__Group__1__Impl13555 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__StaticValueProperty__Group__2__Impl_in_rule__StaticValueProperty__Group__213586 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__StaticValueProperty__Group__3_in_rule__StaticValueProperty__Group__213589 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__StaticValueProperty__TypeAssignment_2_in_rule__StaticValueProperty__Group__2__Impl13616 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__StaticValueProperty__Group__3__Impl_in_rule__StaticValueProperty__Group__313646 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_rule__StaticValueProperty__Group__4_in_rule__StaticValueProperty__Group__313649 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_65_in_rule__StaticValueProperty__Group__3__Impl13677 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__StaticValueProperty__Group__4__Impl_in_rule__StaticValueProperty__Group__413708 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000004L});
-    public static final BitSet FOLLOW_rule__StaticValueProperty__Group__5_in_rule__StaticValueProperty__Group__413711 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__StaticValueProperty__NameAssignment_4_in_rule__StaticValueProperty__Group__4__Impl13738 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__StaticValueProperty__Group__5__Impl_in_rule__StaticValueProperty__Group__513768 = new BitSet(new long[]{0xC411001080600550L,0x0000000000003FD8L});
-    public static final BitSet FOLLOW_rule__StaticValueProperty__Group__6_in_rule__StaticValueProperty__Group__513771 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_66_in_rule__StaticValueProperty__Group__5__Impl13799 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__StaticValueProperty__Group__6__Impl_in_rule__StaticValueProperty__Group__613830 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__StaticValueProperty__ValueAssignment_6_in_rule__StaticValueProperty__Group__6__Impl13857 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__StaticCallValueProperty__Group__0__Impl_in_rule__StaticCallValueProperty__Group__013463 = new BitSet(new long[]{0x0000000000180000L,0x0000000000000001L});
+    public static final BitSet FOLLOW_rule__StaticCallValueProperty__Group__1_in_rule__StaticCallValueProperty__Group__013466 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__StaticCallValueProperty__ModifierAssignment_0_in_rule__StaticCallValueProperty__Group__0__Impl13493 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__StaticCallValueProperty__Group__1__Impl_in_rule__StaticCallValueProperty__Group__113524 = new BitSet(new long[]{0xC400000080000010L});
+    public static final BitSet FOLLOW_rule__StaticCallValueProperty__Group__2_in_rule__StaticCallValueProperty__Group__113527 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_64_in_rule__StaticCallValueProperty__Group__1__Impl13555 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__StaticCallValueProperty__Group__2__Impl_in_rule__StaticCallValueProperty__Group__213586 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__StaticCallValueProperty__Group__3_in_rule__StaticCallValueProperty__Group__213589 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__StaticCallValueProperty__TypeAssignment_2_in_rule__StaticCallValueProperty__Group__2__Impl13616 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__StaticCallValueProperty__Group__3__Impl_in_rule__StaticCallValueProperty__Group__313646 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_rule__StaticCallValueProperty__Group__4_in_rule__StaticCallValueProperty__Group__313649 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_65_in_rule__StaticCallValueProperty__Group__3__Impl13677 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__StaticCallValueProperty__Group__4__Impl_in_rule__StaticCallValueProperty__Group__413708 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000004L});
+    public static final BitSet FOLLOW_rule__StaticCallValueProperty__Group__5_in_rule__StaticCallValueProperty__Group__413711 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__StaticCallValueProperty__NameAssignment_4_in_rule__StaticCallValueProperty__Group__4__Impl13738 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__StaticCallValueProperty__Group__5__Impl_in_rule__StaticCallValueProperty__Group__513768 = new BitSet(new long[]{0xC411001080600550L,0x0000000000003FD8L});
+    public static final BitSet FOLLOW_rule__StaticCallValueProperty__Group__6_in_rule__StaticCallValueProperty__Group__513771 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_66_in_rule__StaticCallValueProperty__Group__5__Impl13799 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__StaticCallValueProperty__Group__6__Impl_in_rule__StaticCallValueProperty__Group__613830 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__StaticCallValueProperty__ValueAssignment_6_in_rule__StaticCallValueProperty__Group__6__Impl13857 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__Property__Group__0__Impl_in_rule__Property__Group__013901 = new BitSet(new long[]{0x0000000000180010L});
     public static final BitSet FOLLOW_rule__Property__Group__1_in_rule__Property__Group__013904 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__Property__ModifierAssignment_0_in_rule__Property__Group__0__Impl13931 = new BitSet(new long[]{0x0000000000000002L});
@@ -68099,10 +68099,10 @@ public class InternalFXGraphParser extends AbstractInternalContentAssistParser {
     public static final BitSet FOLLOW_ruleValidID_in_rule__Element__NameAssignment_1_0_1_138941 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleValidID_in_rule__Element__NameAssignment_1_1_0_138972 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleProperty_in_rule__Element__PropertiesAssignment_1_1_2_0_039003 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleStaticValueProperty_in_rule__Element__StaticPropertiesAssignment_1_1_2_0_139034 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleStaticCallValueProperty_in_rule__Element__StaticCallPropertiesAssignment_1_1_2_0_139034 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleElement_in_rule__Element__DefaultChildrenAssignment_1_1_2_0_239065 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleProperty_in_rule__Element__PropertiesAssignment_1_1_2_1_1_039096 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleStaticValueProperty_in_rule__Element__StaticPropertiesAssignment_1_1_2_1_1_139127 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleStaticCallValueProperty_in_rule__Element__StaticCallPropertiesAssignment_1_1_2_1_1_139127 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleElement_in_rule__Element__DefaultChildrenAssignment_1_1_2_1_1_239158 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleValidID_in_rule__Element__NameAssignment_1_2_0_139189 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_RULE_ID_in_rule__Element__FactoryAssignment_1_2_239220 = new BitSet(new long[]{0x0000000000000002L});
@@ -68113,10 +68113,10 @@ public class InternalFXGraphParser extends AbstractInternalContentAssistParser {
     public static final BitSet FOLLOW_RULE_ID_in_rule__Script__LanguageAssignment_139375 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_RULE_STRING_in_rule__Script__SourceAssignment_2_039406 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_RULE_SCRIPTLITERAL_in_rule__Script__SourcecodeAssignment_2_139437 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__StaticValueProperty__ModifierAlternatives_0_0_in_rule__StaticValueProperty__ModifierAssignment_039468 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleJvmTypeReference_in_rule__StaticValueProperty__TypeAssignment_239501 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_ID_in_rule__StaticValueProperty__NameAssignment_439532 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleValueProperty_in_rule__StaticValueProperty__ValueAssignment_639563 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__StaticCallValueProperty__ModifierAlternatives_0_0_in_rule__StaticCallValueProperty__ModifierAssignment_039468 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleJvmTypeReference_in_rule__StaticCallValueProperty__TypeAssignment_239501 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_ID_in_rule__StaticCallValueProperty__NameAssignment_439532 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleValueProperty_in_rule__StaticCallValueProperty__ValueAssignment_639563 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__Property__ModifierAlternatives_0_0_in_rule__Property__ModifierAssignment_039594 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_RULE_ID_in_rule__Property__NameAssignment_139627 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleValueProperty_in_rule__Property__ValueAssignment_339658 = new BitSet(new long[]{0x0000000000000002L});

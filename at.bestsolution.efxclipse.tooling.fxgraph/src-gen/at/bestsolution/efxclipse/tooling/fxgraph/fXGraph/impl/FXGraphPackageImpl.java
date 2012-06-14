@@ -30,7 +30,7 @@ import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.ScriptValueExpression;
 import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.ScriptValueReference;
 import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.SimpleValueProperty;
 import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.SingleValueProperty;
-import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.StaticValueProperty;
+import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.StaticCallValueProperty;
 import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.StringValue;
 import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.ValueProperty;
 
@@ -105,7 +105,7 @@ public class FXGraphPackageImpl extends EPackageImpl implements FXGraphPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass staticValuePropertyEClass = null;
+  private EClass staticCallValuePropertyEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -555,7 +555,7 @@ public class FXGraphPackageImpl extends EPackageImpl implements FXGraphPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getElement_StaticProperties()
+  public EReference getElement_StaticCallProperties()
   {
     return (EReference)elementEClass.getEStructuralFeatures().get(4);
   }
@@ -665,9 +665,9 @@ public class FXGraphPackageImpl extends EPackageImpl implements FXGraphPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getStaticValueProperty()
+  public EClass getStaticCallValueProperty()
   {
-    return staticValuePropertyEClass;
+    return staticCallValuePropertyEClass;
   }
 
   /**
@@ -675,9 +675,9 @@ public class FXGraphPackageImpl extends EPackageImpl implements FXGraphPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getStaticValueProperty_Modifier()
+  public EAttribute getStaticCallValueProperty_Modifier()
   {
-    return (EAttribute)staticValuePropertyEClass.getEStructuralFeatures().get(0);
+    return (EAttribute)staticCallValuePropertyEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -685,9 +685,9 @@ public class FXGraphPackageImpl extends EPackageImpl implements FXGraphPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getStaticValueProperty_Type()
+  public EReference getStaticCallValueProperty_Type()
   {
-    return (EReference)staticValuePropertyEClass.getEStructuralFeatures().get(1);
+    return (EReference)staticCallValuePropertyEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -695,9 +695,9 @@ public class FXGraphPackageImpl extends EPackageImpl implements FXGraphPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getStaticValueProperty_Name()
+  public EAttribute getStaticCallValueProperty_Name()
   {
-    return (EAttribute)staticValuePropertyEClass.getEStructuralFeatures().get(2);
+    return (EAttribute)staticCallValuePropertyEClass.getEStructuralFeatures().get(2);
   }
 
   /**
@@ -705,9 +705,9 @@ public class FXGraphPackageImpl extends EPackageImpl implements FXGraphPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getStaticValueProperty_Value()
+  public EReference getStaticCallValueProperty_Value()
   {
-    return (EReference)staticValuePropertyEClass.getEStructuralFeatures().get(3);
+    return (EReference)staticCallValuePropertyEClass.getEStructuralFeatures().get(3);
   }
 
   /**
@@ -1207,7 +1207,7 @@ public class FXGraphPackageImpl extends EPackageImpl implements FXGraphPackage
     createEReference(elementEClass, ELEMENT__VALUE);
     createEAttribute(elementEClass, ELEMENT__NAME);
     createEReference(elementEClass, ELEMENT__PROPERTIES);
-    createEReference(elementEClass, ELEMENT__STATIC_PROPERTIES);
+    createEReference(elementEClass, ELEMENT__STATIC_CALL_PROPERTIES);
     createEReference(elementEClass, ELEMENT__DEFAULT_CHILDREN);
     createEAttribute(elementEClass, ELEMENT__FACTORY);
     createEReference(elementEClass, ELEMENT__VALUES);
@@ -1221,11 +1221,11 @@ public class FXGraphPackageImpl extends EPackageImpl implements FXGraphPackage
     createEAttribute(scriptEClass, SCRIPT__SOURCE);
     createEAttribute(scriptEClass, SCRIPT__SOURCECODE);
 
-    staticValuePropertyEClass = createEClass(STATIC_VALUE_PROPERTY);
-    createEAttribute(staticValuePropertyEClass, STATIC_VALUE_PROPERTY__MODIFIER);
-    createEReference(staticValuePropertyEClass, STATIC_VALUE_PROPERTY__TYPE);
-    createEAttribute(staticValuePropertyEClass, STATIC_VALUE_PROPERTY__NAME);
-    createEReference(staticValuePropertyEClass, STATIC_VALUE_PROPERTY__VALUE);
+    staticCallValuePropertyEClass = createEClass(STATIC_CALL_VALUE_PROPERTY);
+    createEAttribute(staticCallValuePropertyEClass, STATIC_CALL_VALUE_PROPERTY__MODIFIER);
+    createEReference(staticCallValuePropertyEClass, STATIC_CALL_VALUE_PROPERTY__TYPE);
+    createEAttribute(staticCallValuePropertyEClass, STATIC_CALL_VALUE_PROPERTY__NAME);
+    createEReference(staticCallValuePropertyEClass, STATIC_CALL_VALUE_PROPERTY__VALUE);
 
     propertyEClass = createEClass(PROPERTY);
     createEAttribute(propertyEClass, PROPERTY__MODIFIER);
@@ -1378,7 +1378,7 @@ public class FXGraphPackageImpl extends EPackageImpl implements FXGraphPackage
     initEReference(getElement_Value(), this.getSimpleValueProperty(), null, "value", null, 0, 1, Element.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getElement_Name(), ecorePackage.getEString(), "name", null, 0, 1, Element.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getElement_Properties(), this.getProperty(), null, "properties", null, 0, -1, Element.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getElement_StaticProperties(), this.getStaticValueProperty(), null, "staticProperties", null, 0, -1, Element.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getElement_StaticCallProperties(), this.getStaticCallValueProperty(), null, "staticCallProperties", null, 0, -1, Element.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getElement_DefaultChildren(), this.getElement(), null, "defaultChildren", null, 0, -1, Element.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getElement_Factory(), ecorePackage.getEString(), "factory", null, 0, 1, Element.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getElement_Values(), this.getFactoryValueElement(), null, "values", null, 0, -1, Element.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1392,11 +1392,11 @@ public class FXGraphPackageImpl extends EPackageImpl implements FXGraphPackage
     initEAttribute(getScript_Source(), ecorePackage.getEString(), "source", null, 0, 1, Script.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getScript_Sourcecode(), ecorePackage.getEString(), "sourcecode", null, 0, 1, Script.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-    initEClass(staticValuePropertyEClass, StaticValueProperty.class, "StaticValueProperty", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getStaticValueProperty_Modifier(), ecorePackage.getEString(), "modifier", null, 0, 1, StaticValueProperty.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getStaticValueProperty_Type(), theTypesPackage.getJvmTypeReference(), null, "type", null, 0, 1, StaticValueProperty.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getStaticValueProperty_Name(), ecorePackage.getEString(), "name", null, 0, 1, StaticValueProperty.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getStaticValueProperty_Value(), this.getValueProperty(), null, "value", null, 0, 1, StaticValueProperty.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEClass(staticCallValuePropertyEClass, StaticCallValueProperty.class, "StaticCallValueProperty", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getStaticCallValueProperty_Modifier(), ecorePackage.getEString(), "modifier", null, 0, 1, StaticCallValueProperty.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getStaticCallValueProperty_Type(), theTypesPackage.getJvmTypeReference(), null, "type", null, 0, 1, StaticCallValueProperty.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getStaticCallValueProperty_Name(), ecorePackage.getEString(), "name", null, 0, 1, StaticCallValueProperty.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getStaticCallValueProperty_Value(), this.getValueProperty(), null, "value", null, 0, 1, StaticCallValueProperty.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(propertyEClass, Property.class, "Property", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getProperty_Modifier(), ecorePackage.getEString(), "modifier", null, 0, 1, Property.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

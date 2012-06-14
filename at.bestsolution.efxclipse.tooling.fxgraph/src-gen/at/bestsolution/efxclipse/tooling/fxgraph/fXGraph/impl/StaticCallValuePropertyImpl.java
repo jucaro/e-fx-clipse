@@ -3,7 +3,7 @@
 package at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.impl;
 
 import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.FXGraphPackage;
-import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.Property;
+import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.StaticCallValueProperty;
 import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.ValueProperty;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -15,22 +15,25 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
+import org.eclipse.xtext.common.types.JvmTypeReference;
+
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Property</b></em>'.
+ * An implementation of the model object '<em><b>Static Call Value Property</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.impl.PropertyImpl#getModifier <em>Modifier</em>}</li>
- *   <li>{@link at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.impl.PropertyImpl#getName <em>Name</em>}</li>
- *   <li>{@link at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.impl.PropertyImpl#getValue <em>Value</em>}</li>
+ *   <li>{@link at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.impl.StaticCallValuePropertyImpl#getModifier <em>Modifier</em>}</li>
+ *   <li>{@link at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.impl.StaticCallValuePropertyImpl#getType <em>Type</em>}</li>
+ *   <li>{@link at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.impl.StaticCallValuePropertyImpl#getName <em>Name</em>}</li>
+ *   <li>{@link at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.impl.StaticCallValuePropertyImpl#getValue <em>Value</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
-public class PropertyImpl extends MinimalEObjectImpl.Container implements Property
+public class StaticCallValuePropertyImpl extends MinimalEObjectImpl.Container implements StaticCallValueProperty
 {
   /**
    * The default value of the '{@link #getModifier() <em>Modifier</em>}' attribute.
@@ -51,6 +54,16 @@ public class PropertyImpl extends MinimalEObjectImpl.Container implements Proper
    * @ordered
    */
   protected String modifier = MODIFIER_EDEFAULT;
+
+  /**
+   * The cached value of the '{@link #getType() <em>Type</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getType()
+   * @generated
+   * @ordered
+   */
+  protected JvmTypeReference type;
 
   /**
    * The default value of the '{@link #getName() <em>Name</em>}' attribute.
@@ -87,7 +100,7 @@ public class PropertyImpl extends MinimalEObjectImpl.Container implements Proper
    * <!-- end-user-doc -->
    * @generated
    */
-  protected PropertyImpl()
+  protected StaticCallValuePropertyImpl()
   {
     super();
   }
@@ -100,7 +113,7 @@ public class PropertyImpl extends MinimalEObjectImpl.Container implements Proper
   @Override
   protected EClass eStaticClass()
   {
-    return FXGraphPackage.Literals.PROPERTY;
+    return FXGraphPackage.Literals.STATIC_CALL_VALUE_PROPERTY;
   }
 
   /**
@@ -123,7 +136,55 @@ public class PropertyImpl extends MinimalEObjectImpl.Container implements Proper
     String oldModifier = modifier;
     modifier = newModifier;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, FXGraphPackage.PROPERTY__MODIFIER, oldModifier, modifier));
+      eNotify(new ENotificationImpl(this, Notification.SET, FXGraphPackage.STATIC_CALL_VALUE_PROPERTY__MODIFIER, oldModifier, modifier));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public JvmTypeReference getType()
+  {
+    return type;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NotificationChain basicSetType(JvmTypeReference newType, NotificationChain msgs)
+  {
+    JvmTypeReference oldType = type;
+    type = newType;
+    if (eNotificationRequired())
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, FXGraphPackage.STATIC_CALL_VALUE_PROPERTY__TYPE, oldType, newType);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setType(JvmTypeReference newType)
+  {
+    if (newType != type)
+    {
+      NotificationChain msgs = null;
+      if (type != null)
+        msgs = ((InternalEObject)type).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - FXGraphPackage.STATIC_CALL_VALUE_PROPERTY__TYPE, null, msgs);
+      if (newType != null)
+        msgs = ((InternalEObject)newType).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - FXGraphPackage.STATIC_CALL_VALUE_PROPERTY__TYPE, null, msgs);
+      msgs = basicSetType(newType, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, FXGraphPackage.STATIC_CALL_VALUE_PROPERTY__TYPE, newType, newType));
   }
 
   /**
@@ -146,7 +207,7 @@ public class PropertyImpl extends MinimalEObjectImpl.Container implements Proper
     String oldName = name;
     name = newName;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, FXGraphPackage.PROPERTY__NAME, oldName, name));
+      eNotify(new ENotificationImpl(this, Notification.SET, FXGraphPackage.STATIC_CALL_VALUE_PROPERTY__NAME, oldName, name));
   }
 
   /**
@@ -170,7 +231,7 @@ public class PropertyImpl extends MinimalEObjectImpl.Container implements Proper
     value = newValue;
     if (eNotificationRequired())
     {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, FXGraphPackage.PROPERTY__VALUE, oldValue, newValue);
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, FXGraphPackage.STATIC_CALL_VALUE_PROPERTY__VALUE, oldValue, newValue);
       if (msgs == null) msgs = notification; else msgs.add(notification);
     }
     return msgs;
@@ -187,14 +248,14 @@ public class PropertyImpl extends MinimalEObjectImpl.Container implements Proper
     {
       NotificationChain msgs = null;
       if (value != null)
-        msgs = ((InternalEObject)value).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - FXGraphPackage.PROPERTY__VALUE, null, msgs);
+        msgs = ((InternalEObject)value).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - FXGraphPackage.STATIC_CALL_VALUE_PROPERTY__VALUE, null, msgs);
       if (newValue != null)
-        msgs = ((InternalEObject)newValue).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - FXGraphPackage.PROPERTY__VALUE, null, msgs);
+        msgs = ((InternalEObject)newValue).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - FXGraphPackage.STATIC_CALL_VALUE_PROPERTY__VALUE, null, msgs);
       msgs = basicSetValue(newValue, msgs);
       if (msgs != null) msgs.dispatch();
     }
     else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, FXGraphPackage.PROPERTY__VALUE, newValue, newValue));
+      eNotify(new ENotificationImpl(this, Notification.SET, FXGraphPackage.STATIC_CALL_VALUE_PROPERTY__VALUE, newValue, newValue));
   }
 
   /**
@@ -207,7 +268,9 @@ public class PropertyImpl extends MinimalEObjectImpl.Container implements Proper
   {
     switch (featureID)
     {
-      case FXGraphPackage.PROPERTY__VALUE:
+      case FXGraphPackage.STATIC_CALL_VALUE_PROPERTY__TYPE:
+        return basicSetType(null, msgs);
+      case FXGraphPackage.STATIC_CALL_VALUE_PROPERTY__VALUE:
         return basicSetValue(null, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
@@ -223,11 +286,13 @@ public class PropertyImpl extends MinimalEObjectImpl.Container implements Proper
   {
     switch (featureID)
     {
-      case FXGraphPackage.PROPERTY__MODIFIER:
+      case FXGraphPackage.STATIC_CALL_VALUE_PROPERTY__MODIFIER:
         return getModifier();
-      case FXGraphPackage.PROPERTY__NAME:
+      case FXGraphPackage.STATIC_CALL_VALUE_PROPERTY__TYPE:
+        return getType();
+      case FXGraphPackage.STATIC_CALL_VALUE_PROPERTY__NAME:
         return getName();
-      case FXGraphPackage.PROPERTY__VALUE:
+      case FXGraphPackage.STATIC_CALL_VALUE_PROPERTY__VALUE:
         return getValue();
     }
     return super.eGet(featureID, resolve, coreType);
@@ -243,13 +308,16 @@ public class PropertyImpl extends MinimalEObjectImpl.Container implements Proper
   {
     switch (featureID)
     {
-      case FXGraphPackage.PROPERTY__MODIFIER:
+      case FXGraphPackage.STATIC_CALL_VALUE_PROPERTY__MODIFIER:
         setModifier((String)newValue);
         return;
-      case FXGraphPackage.PROPERTY__NAME:
+      case FXGraphPackage.STATIC_CALL_VALUE_PROPERTY__TYPE:
+        setType((JvmTypeReference)newValue);
+        return;
+      case FXGraphPackage.STATIC_CALL_VALUE_PROPERTY__NAME:
         setName((String)newValue);
         return;
-      case FXGraphPackage.PROPERTY__VALUE:
+      case FXGraphPackage.STATIC_CALL_VALUE_PROPERTY__VALUE:
         setValue((ValueProperty)newValue);
         return;
     }
@@ -266,13 +334,16 @@ public class PropertyImpl extends MinimalEObjectImpl.Container implements Proper
   {
     switch (featureID)
     {
-      case FXGraphPackage.PROPERTY__MODIFIER:
+      case FXGraphPackage.STATIC_CALL_VALUE_PROPERTY__MODIFIER:
         setModifier(MODIFIER_EDEFAULT);
         return;
-      case FXGraphPackage.PROPERTY__NAME:
+      case FXGraphPackage.STATIC_CALL_VALUE_PROPERTY__TYPE:
+        setType((JvmTypeReference)null);
+        return;
+      case FXGraphPackage.STATIC_CALL_VALUE_PROPERTY__NAME:
         setName(NAME_EDEFAULT);
         return;
-      case FXGraphPackage.PROPERTY__VALUE:
+      case FXGraphPackage.STATIC_CALL_VALUE_PROPERTY__VALUE:
         setValue((ValueProperty)null);
         return;
     }
@@ -289,11 +360,13 @@ public class PropertyImpl extends MinimalEObjectImpl.Container implements Proper
   {
     switch (featureID)
     {
-      case FXGraphPackage.PROPERTY__MODIFIER:
+      case FXGraphPackage.STATIC_CALL_VALUE_PROPERTY__MODIFIER:
         return MODIFIER_EDEFAULT == null ? modifier != null : !MODIFIER_EDEFAULT.equals(modifier);
-      case FXGraphPackage.PROPERTY__NAME:
+      case FXGraphPackage.STATIC_CALL_VALUE_PROPERTY__TYPE:
+        return type != null;
+      case FXGraphPackage.STATIC_CALL_VALUE_PROPERTY__NAME:
         return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
-      case FXGraphPackage.PROPERTY__VALUE:
+      case FXGraphPackage.STATIC_CALL_VALUE_PROPERTY__VALUE:
         return value != null;
     }
     return super.eIsSet(featureID);
@@ -318,4 +391,4 @@ public class PropertyImpl extends MinimalEObjectImpl.Container implements Proper
     return result.toString();
   }
 
-} //PropertyImpl
+} //StaticCallValuePropertyImpl

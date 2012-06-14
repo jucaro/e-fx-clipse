@@ -20,7 +20,6 @@ import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.ScriptHandlerHandledVal
 import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.ScriptValueExpression
 import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.ScriptValueReference
 import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.SimpleValueProperty
-import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.StaticValueProperty
 import java.util.List
 import org.eclipse.core.resources.ResourcesPlugin
 import org.eclipse.emf.ecore.resource.Resource
@@ -33,6 +32,7 @@ import org.eclipse.xtext.xbase.compiler.ImportManager
 import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.ValueProperty
 import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.ReferenceType
 import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.Element
+import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.StaticCallValueProperty
 
 class FXGraphGenerator implements IGenerator {
 	 
@@ -135,7 +135,7 @@ class FXGraphGenerator implements IGenerator {
 	
 	def componentDefinition(ComponentDefinition definition, ImportManager importManager, LanguageManager languageManager, boolean preview, boolean skipController, boolean skipIncludes) '''
 		«val element = definition.rootNode»
-		<«element.type.shortName(importManager)» xmlns:fx="http://javafx.com/fxml"«fxElementAttributes(element,importManager,skipController)»«IF definition.controller != null && ! skipController » fx:controller="«definition.controller.qualifiedName»"«ENDIF»«IF hasAttributeProperties(element,preview)»«elementAttributes(element.properties,preview,skipController)»«elementStaticAttributes(element.staticProperties,importManager,preview,skipController)»«ENDIF»>
+		<«element.type.shortName(importManager)» xmlns:fx="http://javafx.com/fxml"«fxElementAttributes(element,importManager,skipController)»«IF definition.controller != null && ! skipController » fx:controller="«definition.controller.qualifiedName»"«ENDIF»«IF hasAttributeProperties(element,preview)»«elementAttributes(element.properties,preview,skipController)»«elementStaticAttributes(element.staticCallProperties,importManager,preview,skipController)»«ENDIF»>
 			«IF definition.defines.size > 0»
 			<fx:define>
 				«FOR define : definition.defines»
@@ -164,20 +164,20 @@ class FXGraphGenerator implements IGenerator {
 					«elementContent(e,importManager,preview,skipController,skipIncludes)»
 				«ENDFOR»
 				«propContents(element.properties,importManager,preview,false,skipController,skipIncludes)»
-				«statPropContent(element.staticProperties,importManager,preview,skipController,skipIncludes)»
+				«statPropContent(element.staticCallProperties,importManager,preview,skipController,skipIncludes)»
 			«ENDIF»
 		
 		</«element.type.shortName(importManager)»>
 	'''
 	
 	def elementContent(Element element, ImportManager importManager, boolean preview, boolean skipController, boolean skipIncludes) '''
-		<«element.type.shortName(importManager)»«fxElementAttributes(element,importManager,skipController)»«IF hasAttributeProperties(element,preview)»«elementAttributes(element.properties,preview,skipController)»«elementStaticAttributes(element.staticProperties,importManager,preview,skipController)»«ENDIF»«IF ! hasNestedProperties(element,preview)»/«ENDIF»> 
+		<«element.type.shortName(importManager)»«fxElementAttributes(element,importManager,skipController)»«IF hasAttributeProperties(element,preview)»«elementAttributes(element.properties,preview,skipController)»«elementStaticAttributes(element.staticCallProperties,importManager,preview,skipController)»«ENDIF»«IF ! hasNestedProperties(element,preview)»/«ENDIF»> 
 		«IF hasNestedProperties(element,preview)»
 			«FOR e : element.defaultChildren»
 				«elementContent(e,importManager,preview,skipController,skipIncludes)»
 			«ENDFOR»
 			«propContents(element.properties,importManager,preview,false,skipController,skipIncludes)»
-			«statPropContent(element.staticProperties,importManager,preview,skipController,skipIncludes)»
+			«statPropContent(element.staticCallProperties,importManager,preview,skipController,skipIncludes)»
 			«FOR e : element.values»
 			«IF e instanceof Element»
 				«elementContent(e as Element,importManager,preview,skipController,skipIncludes)»
@@ -259,8 +259,8 @@ class FXGraphGenerator implements IGenerator {
 		«ENDIF»
 	'''
 	
-	def statPropContent(List<StaticValueProperty> properties, ImportManager importManager, boolean preview, boolean skipController, boolean skipIncludes) '''
-		«FOR prop : properties.filter([StaticValueProperty p|previewFilter(p,preview)]).filter([StaticValueProperty p|subelementFilter(p)])»
+	def statPropContent(List<StaticCallValueProperty> properties, ImportManager importManager, boolean preview, boolean skipController, boolean skipIncludes) '''
+		«FOR prop : properties.filter([StaticCallValueProperty p|previewFilter(p,preview)]).filter([StaticCallValueProperty p|subelementFilter(p)])»
 		«IF prop.value instanceof SimpleValueProperty»
 			«IF (prop.value as SimpleValueProperty).stringValue != null»
 				<«prop.type.shortName(importManager)».«prop.name»>«(prop.value as SimpleValueProperty).stringValue»</«prop.type.shortName(importManager)».«prop.name»>
@@ -383,10 +383,10 @@ class FXGraphGenerator implements IGenerator {
 		return builder;
 	}
 	
-	def elementStaticAttributes(List<StaticValueProperty> properties, ImportManager importManager, boolean preview, boolean skipController) {
+	def elementStaticAttributes(List<StaticCallValueProperty> properties, ImportManager importManager, boolean preview, boolean skipController) {
 		var builder = new StringBuilder();
 		
-		for( p : properties.filter([StaticValueProperty p|previewFilter(p,preview)]).filter([StaticValueProperty p|elementAttributeFilter(p)]) ) {
+		for( p : properties.filter([StaticCallValueProperty p|previewFilter(p,preview)]).filter([StaticCallValueProperty p|elementAttributeFilter(p)]) ) {
 			if( p.value instanceof SimpleValueProperty ) {
 				builder.append(" " + p.type.shortName(importManager) + "." + p.name + "=\""+simpleAttributeValue(p.value as SimpleValueProperty)+"\"");
 			} else if( p.value instanceof ReferenceValueProperty ) {
@@ -427,11 +427,11 @@ class FXGraphGenerator implements IGenerator {
 		return elementAttributeFilter(property.value);
 	}
 	
-	def subelementFilter(StaticValueProperty property) {
+	def subelementFilter(StaticCallValueProperty property) {
 		return ! elementAttributeFilter(property);
 	}
 
-	def elementAttributeFilter(StaticValueProperty property) {
+	def elementAttributeFilter(StaticCallValueProperty property) {
 		return elementAttributeFilter(property.value);
 	}
 	
@@ -491,7 +491,7 @@ class FXGraphGenerator implements IGenerator {
 		return true;
 	}
 	
-	def previewFilter(StaticValueProperty property, boolean preview) {
+	def previewFilter(StaticCallValueProperty property, boolean preview) {
 		if( ! preview ) {
 			if( "preview".equals(property.modifier) ) {
 				return false;
@@ -512,8 +512,8 @@ class FXGraphGenerator implements IGenerator {
 			)
 			|| 
 			(
-				element.staticProperties.size > 0
-				&& ! element.staticProperties.filter([StaticValueProperty p|previewFilter(p,preview)]).filter([StaticValueProperty p|elementAttributeFilter(p)]).nullOrEmpty
+				element.staticCallProperties.size > 0
+				&& ! element.staticCallProperties.filter([StaticCallValueProperty p|previewFilter(p,preview)]).filter([StaticCallValueProperty p|elementAttributeFilter(p)]).nullOrEmpty
 			);
 	}
 	
@@ -526,8 +526,8 @@ class FXGraphGenerator implements IGenerator {
 			return true;
 		}
 		
-		if( element.staticProperties.size > 0) {
-			return ! element.staticProperties.filter([StaticValueProperty p|previewFilter(p,preview)]).filter([StaticValueProperty p|subelementFilter(p)]).nullOrEmpty;
+		if( element.staticCallProperties.size > 0) {
+			return ! element.staticCallProperties.filter([StaticCallValueProperty p|previewFilter(p,preview)]).filter([StaticCallValueProperty p|subelementFilter(p)]).nullOrEmpty;
 		}
 		
 		if( element.properties.size > 0 ) {

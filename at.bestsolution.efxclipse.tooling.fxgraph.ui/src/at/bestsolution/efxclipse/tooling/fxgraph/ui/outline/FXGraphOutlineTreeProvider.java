@@ -23,7 +23,7 @@ import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.Property;
 import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.ReferenceValueProperty;
 import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.ResourceValueProperty;
 import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.SimpleValueProperty;
-import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.StaticValueProperty;
+import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.StaticCallValueProperty;
 import at.bestsolution.efxclipse.tooling.ui.util.IconKeys;
 
 /**
@@ -70,7 +70,7 @@ public class FXGraphOutlineTreeProvider extends DefaultOutlineTreeProvider {
 			return;
 		} else if( modelElement instanceof Element ) {
 			for( EObject o : modelElement.eContents() ) {
-				if( o instanceof StaticValueProperty ) {
+				if( o instanceof StaticCallValueProperty ) {
 					createNode(parentNode, o);
 				} else if( o instanceof Property ) {
 					createNode(parentNode, o);
@@ -100,8 +100,8 @@ public class FXGraphOutlineTreeProvider extends DefaultOutlineTreeProvider {
 				}
 				return;
 			}
-		} else if( modelElement instanceof StaticValueProperty ) {
-			StaticValueProperty p = (StaticValueProperty) modelElement;
+		} else if( modelElement instanceof StaticCallValueProperty ) {
+			StaticCallValueProperty p = (StaticCallValueProperty) modelElement;
 			if( p.getValue() instanceof SimpleValueProperty ) {
 				return;
 			} else {
@@ -196,7 +196,7 @@ public class FXGraphOutlineTreeProvider extends DefaultOutlineTreeProvider {
 		return element.getType() != null ? element.getType().getSimpleName() : "";
 	}
 	
-	public Object _text(StaticValueProperty element) {
+	public Object _text(StaticCallValueProperty element) {
 		String name = (element.getType() != null ? element.getType().getSimpleName() : "<unknown>") + "#" + (element.getName() !=null ? element.getName() : "<unkown>");
 		if( element.getValue() instanceof SimpleValueProperty ) {
 			StyledString s = new StyledString(name);
