@@ -14,6 +14,7 @@ package at.bestsolution.efxclipse.tooling.pde.e4.project;
 import java.io.IOException;
 import java.lang.reflect.InvocationTargetException;
 import java.net.URL;
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Iterator;
@@ -21,6 +22,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
 import java.util.Set;
+import java.util.TreeSet;
 
 import org.eclipse.core.resources.IContainer;
 import org.eclipse.core.resources.IFile;
@@ -41,16 +43,13 @@ import org.eclipse.e4.ui.model.application.commands.MCommand;
 import org.eclipse.e4.ui.model.application.commands.MCommandsFactory;
 import org.eclipse.e4.ui.model.application.commands.MHandler;
 import org.eclipse.e4.ui.model.application.commands.MKeyBinding;
-import org.eclipse.e4.ui.model.application.ui.advanced.MAdvancedFactory;
-import org.eclipse.e4.ui.model.application.ui.advanced.MPerspective;
-import org.eclipse.e4.ui.model.application.ui.advanced.MPerspectiveStack;
 import org.eclipse.e4.ui.model.application.ui.basic.MBasicFactory;
+import org.eclipse.e4.ui.model.application.ui.basic.MPart;
 import org.eclipse.e4.ui.model.application.ui.basic.MPartSashContainer;
 import org.eclipse.e4.ui.model.application.ui.basic.MPartStack;
 import org.eclipse.e4.ui.model.application.ui.basic.MTrimBar;
 import org.eclipse.e4.ui.model.application.ui.basic.MTrimmedWindow;
 import org.eclipse.e4.ui.model.application.ui.menu.MHandledMenuItem;
-import org.eclipse.e4.ui.model.application.ui.menu.MHandledToolItem;
 import org.eclipse.e4.ui.model.application.ui.menu.MMenu;
 import org.eclipse.e4.ui.model.application.ui.menu.MMenuFactory;
 import org.eclipse.e4.ui.model.application.ui.menu.MToolBar;
@@ -75,6 +74,8 @@ import org.eclipse.pde.core.plugin.IPluginImport;
 import org.eclipse.pde.internal.core.ICoreConstants;
 import org.eclipse.pde.internal.core.build.WorkspaceBuildModel;
 import org.eclipse.pde.internal.core.bundle.WorkspaceBundlePluginModel;
+import org.eclipse.pde.internal.core.bundle.WorkspaceBundlePluginModelBase;
+import org.eclipse.pde.internal.core.ibundle.IBundle;
 import org.eclipse.pde.internal.core.plugin.WorkspacePluginModelBase;
 import org.eclipse.pde.internal.core.project.PDEProject;
 import org.eclipse.pde.internal.core.util.CoreUtility;
@@ -86,6 +87,7 @@ import org.eclipse.pde.internal.ui.wizards.plugin.NewProjectCreationOperation;
 import org.eclipse.pde.internal.ui.wizards.plugin.PluginFieldData;
 import org.eclipse.ui.IWorkingSet;
 import org.osgi.framework.Bundle;
+import org.osgi.framework.Constants;
 import org.osgi.framework.Version;
 
 /**
@@ -165,8 +167,12 @@ public class E4NewProjectWizard extends NewPluginProjectWizard {
 						}
 						pluginBase.add(iimport);
 					}
+					
+					IBundle iBundle = ((WorkspaceBundlePluginModelBase) model).getBundleModel().getBundle();
+					TreeSet<String> imports = new TreeSet<String>(Arrays.asList(getImports()));
+					iBundle.setHeader(Constants.IMPORT_PACKAGE, iBundle.getHeader(Constants.IMPORT_PACKAGE) + "," + getCommaValuesFromPackagesSet(imports, "2.0.0"));
 				}
-
+				
 				@Override
 				protected void setPluginLibraries(WorkspacePluginModelBase model) throws CoreException {
 					this.model = model;
@@ -179,12 +185,12 @@ public class E4NewProjectWizard extends NewPluginProjectWizard {
 				getWorkbench().getWorkingSetManager().addToWorkingSets(fProjectProvider.getProject(), workingSets);
 
 			WorkspacePluginModelBase fmodel = new WorkspaceBundlePluginModel(fProjectProvider.getProject().getFile(ICoreConstants.BUNDLE_FILENAME_DESCRIPTOR), fProjectProvider.getProject().getFile(ICoreConstants.PLUGIN_FILENAME_DESCRIPTOR));
-			
+
 			this.createProductsExtension(fmodel);
 			this.createThemeExtension(fmodel);
 
 			fmodel.save();
-			
+
 			this.createApplicationResources(fProjectProvider.getProject(), new NullProgressMonitor());
 			// Add the product sources
 			adjustBuildPropertiesFile(fProjectProvider.getProject());
@@ -198,6 +204,39 @@ public class E4NewProjectWizard extends NewPluginProjectWizard {
 		return false;
 	}
 
+	private String[] getImports() {
+		return new String[] {
+				"javafx.animation;version=\"2.0.0\"",
+				"javafx.application;version=\"2.0.0\"",
+				"javafx.beans;version=\"2.0.0\"",
+				"javafx.beans.binding;version=\"2.0.0\"",
+				"javafx.beans.property;version=\"2.0.0\"",
+				"javafx.beans.value;version=\"2.0.0\"",
+				"javafx.collections;version=\"2.0.0\"",
+				"javafx.concurrent;version=\"2.0.0\"",
+				"javafx.embed.swing;version=\"2.0.0\"",
+				"javafx.event;version=\"2.0.0\"",
+				"javafx.fxml;version=\"2.0.0\"",
+				"javafx.geometry;version=\"2.0.0\"",
+				"javafx.scene;version=\"2.0.0\"",
+				"javafx.scene.chart;version=\"2.0.0\"",
+				"javafx.scene.control;version=\"2.0.0\"",
+				"javafx.scene.control.cell;version=\"2.0.0\"",
+				"javafx.scene.effect;version=\"2.0.0\"",
+				"javafx.scene.image;version=\"2.0.0\"",
+				"javafx.scene.input;version=\"2.0.0\"",
+				"javafx.scene.layout;version=\"2.0.0\"",
+				"javafx.scene.media;version=\"2.0.0\"",
+				"javafx.scene.paint;version=\"2.0.0\"",
+				"javafx.scene.shape;version=\"2.0.0\"",
+				"javafx.scene.text;version=\"2.0.0\"",
+				"javafx.scene.transform;version=\"2.0.0\"",
+				"javafx.scene.web;version=\"2.0.0\"",
+				"javafx.stage;version=\"2.0.0\"",
+				"javafx.util;version=\"2.0.0\""
+			};
+	}
+	
 	private void adjustBuildPropertiesFile(IProject project) throws CoreException {
 		IFile file = PDEProject.getBuildProperties(project);
 		if (file.exists()) {
@@ -220,19 +259,19 @@ public class E4NewProjectWizard extends NewPluginProjectWizard {
 			model.save();
 		}
 	}
-	
+
 	private void createThemeExtension(WorkspacePluginModelBase fmodel) {
 		try {
 			IPluginExtension extension = fmodel.getFactory().createExtension();
 			extension.setPoint("at.bestsolution.efxclipse.runtime.theme");
-			
+
 			IPluginElement themeElement = fmodel.getFactory().createElement(extension);
 			themeElement.setName("theme");
 			themeElement.setAttribute("basestylesheet", "css/default.css");
 			themeElement.setAttribute("id", "default.theme");
 			extension.add(themeElement);
 			fmodel.getPluginBase().add(extension);
-			
+
 		} catch (CoreException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -391,11 +430,6 @@ public class E4NewProjectWizard extends NewPluginProjectWizard {
 			addon.setContributionURI("bundleclass://org.eclipse.e4.ui.workbench/org.eclipse.e4.ui.internal.workbench.addons.ContextProcessingAddon");
 			application.getAddons().add(addon);
 
-			// addon = MApplicationFactory.INSTANCE.createAddon();
-			// addon.setElementId("org.eclipse.e4.ui.workbench.bindings.model");
-			// addon.setContributionURI("bundleclass://org.eclipse.e4.ui.workbench.swt/org.eclipse.e4.ui.workbench.swt.util.BindingProcessingAddon");
-			// application.getAddons().add(addon);
-
 			MBindingContext rootContext = MCommandsFactory.INSTANCE.createBindingContext();
 			rootContext.setElementId("org.eclipse.ui.contexts.dialogAndWindow");
 			rootContext.setName("In Dialog and Windows");
@@ -418,16 +452,18 @@ public class E4NewProjectWizard extends NewPluginProjectWizard {
 			// Create Quit command
 			MCommand quitCommand = createCommand("org.eclipse.ui.file.exit", "quitCommand", "QuitHandler", "M1+Q", pluginName, fragment, application);
 
-			MCommand openCommand = createCommand(pluginName + ".open", "openCommand", "OpenHandler", "M1+O", pluginName, fragment, application);
-
-			MCommand saveCommand = createCommand("org.eclipse.ui.file.save", "saveCommand", "SaveHandler", "M1+S", pluginName, fragment, application);
-
+//			MCommand openCommand = createCommand(pluginName + ".open", "openCommand", "OpenHandler", "M1+O", pluginName, fragment, application);
+//
+//			MCommand saveCommand = createCommand("org.eclipse.ui.file.save", "saveCommand", "SaveHandler", "M1+S", pluginName, fragment, application);
+//
 			MCommand aboutCommand = createCommand("org.eclipse.ui.help.aboutAction", "aboutCommand", "AboutHandler", "M1+A", pluginName, fragment, application);
 
 			MTrimmedWindow mainWindow = MBasicFactory.INSTANCE.createTrimmedWindow();
 			application.getChildren().add(mainWindow);
 			{
 				mainWindow.setLabel(pluginName);
+				mainWindow.setX(0);
+				mainWindow.setY(0);
 				mainWindow.setWidth(500);
 				mainWindow.setHeight(400);
 
@@ -435,23 +471,23 @@ public class E4NewProjectWizard extends NewPluginProjectWizard {
 				{
 					MMenu menu = MMenuFactory.INSTANCE.createMenu();
 					mainWindow.setMainMenu(menu);
-					menu.setElementId("menu:org.eclipse.ui.main.menu");
+					menu.setElementId("org.efxclipse.e4.mainmenu");
 
 					MMenu fileMenuItem = MMenuFactory.INSTANCE.createMenu();
 					menu.getChildren().add(fileMenuItem);
 					fileMenuItem.setLabel("File");
 					{
-						MHandledMenuItem menuItemOpen = MMenuFactory.INSTANCE.createHandledMenuItem();
-						fileMenuItem.getChildren().add(menuItemOpen);
-						menuItemOpen.setLabel("Open");
-						menuItemOpen.setIconURI("platform:/plugin/" + pluginName + "/icons/sample.gif");
-						menuItemOpen.setCommand(openCommand);
-
-						MHandledMenuItem menuItemSave = MMenuFactory.INSTANCE.createHandledMenuItem();
-						fileMenuItem.getChildren().add(menuItemSave);
-						menuItemSave.setLabel("Save");
-						menuItemSave.setIconURI("platform:/plugin/" + pluginName + "/icons/save_edit.gif");
-						menuItemSave.setCommand(saveCommand);
+//						MHandledMenuItem menuItemOpen = MMenuFactory.INSTANCE.createHandledMenuItem();
+//						fileMenuItem.getChildren().add(menuItemOpen);
+//						menuItemOpen.setLabel("Open");
+//						menuItemOpen.setIconURI("platform:/plugin/" + pluginName + "/icons/sample.gif");
+//						menuItemOpen.setCommand(openCommand);
+//
+//						MHandledMenuItem menuItemSave = MMenuFactory.INSTANCE.createHandledMenuItem();
+//						fileMenuItem.getChildren().add(menuItemSave);
+//						menuItemSave.setLabel("Save");
+//						menuItemSave.setIconURI("platform:/plugin/" + pluginName + "/icons/save_edit.gif");
+//						menuItemSave.setCommand(saveCommand);
 
 						MHandledMenuItem menuItemQuit = MMenuFactory.INSTANCE.createHandledMenuItem();
 						fileMenuItem.getChildren().add(menuItemQuit);
@@ -469,48 +505,49 @@ public class E4NewProjectWizard extends NewPluginProjectWizard {
 					}
 				}
 
-				// PerspectiveStack
+				// Top-Sash
 				{
-					MPerspectiveStack perspectiveStack = MAdvancedFactory.INSTANCE.createPerspectiveStack();
-					mainWindow.getChildren().add(perspectiveStack);
+					MPartSashContainer sash = MBasicFactory.INSTANCE.createPartSashContainer();
+					sash.setHorizontal(true);
 
-					MPerspective perspective = MAdvancedFactory.INSTANCE.createPerspective();
-					perspectiveStack.getChildren().add(perspective);
+					// Create a left part
 					{
-						// Part Container
-						MPartSashContainer partSashContainer = MBasicFactory.INSTANCE.createPartSashContainer();
-						perspective.getChildren().add(partSashContainer);
-
-						MPartStack partStack = MBasicFactory.INSTANCE.createPartStack();
-						partSashContainer.getChildren().add(partStack);
-						//
-						// MPart part =
-						// MApplicationFactory.eINSTANCE.createPart();
-						// partStack.getChildren().add(part);
-						// part.setLabel("Main");
+						MPart part = MBasicFactory.INSTANCE.createPart();
+						part.setContributionURI("bundleclass://" + pluginName + "/" + fragment.getElementName() + ".parts.MediaListPart");
+						sash.getChildren().add(part);
 					}
 
-					// WindowTrim
+					// Create a right a stack
 					{
-						MTrimBar trimBar = MBasicFactory.INSTANCE.createTrimBar();
-						mainWindow.getTrimBars().add(trimBar);
-
-						MToolBar toolBar = MMenuFactory.INSTANCE.createToolBar();
-						toolBar.setElementId("toolbar:org.eclipse.ui.main.toolbar");
-						trimBar.getChildren().add(toolBar);
-
-						MHandledToolItem toolItemOpen = MMenuFactory.INSTANCE.createHandledToolItem();
-						toolBar.getChildren().add(toolItemOpen);
-						toolItemOpen.setIconURI("platform:/plugin/" + pluginName + "/icons/sample.gif");
-						toolItemOpen.setCommand(openCommand);
-
-						MHandledToolItem toolItemSave = MMenuFactory.INSTANCE.createHandledToolItem();
-						toolBar.getChildren().add(toolItemSave);
-						toolItemSave.setIconURI("platform:/plugin/" + pluginName + "/icons/save_edit.gif");
-						toolItemSave.setCommand(saveCommand);
+						MPartStack stack = MBasicFactory.INSTANCE.createPartStack();
+						stack.setElementId("content.stack");
+						sash.getChildren().add(stack);
 					}
+					
+					mainWindow.getChildren().add(sash);
+				}
+
+				// WindowTrim
+				{
+					MTrimBar trimBar = MBasicFactory.INSTANCE.createTrimBar();
+					mainWindow.getTrimBars().add(trimBar);
+
+					MToolBar toolBar = MMenuFactory.INSTANCE.createToolBar();
+					toolBar.setElementId("org.efxclipse.e4.maintoolbar");
+					trimBar.getChildren().add(toolBar);
+
+//					MHandledToolItem toolItemOpen = MMenuFactory.INSTANCE.createHandledToolItem();
+//					toolBar.getChildren().add(toolItemOpen);
+//					toolItemOpen.setIconURI("platform:/plugin/" + pluginName + "/icons/sample.gif");
+//					toolItemOpen.setCommand(openCommand);
+//
+//					MHandledToolItem toolItemSave = MMenuFactory.INSTANCE.createHandledToolItem();
+//					toolBar.getChildren().add(toolItemSave);
+//					toolItemSave.setIconURI("platform:/plugin/" + pluginName + "/icons/save_edit.gif");
+//					toolItemSave.setCommand(saveCommand);
 				}
 			}
+			
 			Map<Object, Object> options = new HashMap<Object, Object>();
 			options.put(XMLResource.OPTION_ENCODING, "UTF-8");
 			try {
@@ -556,10 +593,14 @@ public class E4NewProjectWizard extends NewPluginProjectWizard {
 		Set<String> binaryExtentions = new HashSet<String>();
 		binaryExtentions.add(".gif");
 		binaryExtentions.add(".png");
+		binaryExtentions.add(".jpg");
+		binaryExtentions.add(".flv");
 
 		Map<String, String> keys = new HashMap<String, String>();
 		keys.put("projectName", pluginName);
 		keys.put("packageName", fragment.getElementName() + ".handlers");
+		keys.put("packageName_parts", fragment.getElementName() + ".parts");
+		keys.put("packageName_model", fragment.getElementName() + ".model");
 
 		try {
 			URL corePath = ResourceLocator.getProjectTemplateFiles(template_id);
