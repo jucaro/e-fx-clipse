@@ -1,28 +1,28 @@
 /*******************************************************************************
- * Copyright (c) 2010 IBM Corporation and others.
+ * Copyright (c) 2012 BestSolution.at and others.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
  *
  * Contributors:
- *     IBM Corporation - initial API and implementation
+ *     Tom Schindl - initial API and implementation
  *******************************************************************************/
 package @@packageName@@;
 
 import java.lang.reflect.InvocationTargetException;
+import java.util.UUID;
 
-import javax.inject.Named;
-
-import org.eclipse.e4.core.contexts.IEclipseContext;
 import org.eclipse.e4.core.di.annotations.Execute;
-import org.eclipse.e4.ui.services.IServiceConstants;
-import org.eclipse.e4.ui.workbench.IWorkbench;
+import org.eclipse.e4.core.services.events.IEventBroker;
 
-public class QuitHandler {
+@SuppressWarnings({ "restriction" })
+public class RefreshHandler {
+	public static final String REFRESH_EVENT = "media/refresh";
+	
 	@Execute
-	public void execute(IWorkbench workbench, IEclipseContext context)
+	public void execute(IEventBroker broker)
 			throws InvocationTargetException, InterruptedException {
-		
+		broker.send(REFRESH_EVENT, UUID.randomUUID().toString());
 	}
 }

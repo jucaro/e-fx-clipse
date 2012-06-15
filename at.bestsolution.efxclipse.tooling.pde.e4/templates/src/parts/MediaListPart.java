@@ -13,6 +13,9 @@ import javafx.util.Callback;
 import javax.annotation.PostConstruct;
 import javax.inject.Inject;
 
+import org.eclipse.e4.core.di.annotations.Optional;
+import org.eclipse.e4.ui.di.Focus;
+import org.eclipse.e4.ui.di.UIEventTopic;
 import org.eclipse.e4.ui.model.application.MApplication;
 import org.eclipse.e4.ui.model.application.ui.basic.MBasicFactory;
 import org.eclipse.e4.ui.model.application.ui.basic.MPart;
@@ -21,6 +24,7 @@ import org.eclipse.e4.ui.model.application.ui.basic.MStackElement;
 import org.eclipse.e4.ui.workbench.modeling.EModelService;
 import org.eclipse.e4.ui.workbench.modeling.EPartService;
 
+import @@packageName@@.OpenHandler;
 import @@packageName_model@@.Media;
 import @@packageName_model@@.MediaType;
 
@@ -111,8 +115,15 @@ public class MediaListPart {
 		partService.activate(p,true);
 	}
 	
+	@Focus
 	void focus() {
 		list.requestFocus();
+	}
+	
+	@Inject
+	@Optional
+	public void openMedia(@UIEventTopic(OpenHandler.OPEN_EVENT) String event) {
+		handleOpen();
 	}
 	
 	private static ObservableList<Media> createList() {

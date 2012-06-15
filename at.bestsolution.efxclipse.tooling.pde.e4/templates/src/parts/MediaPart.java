@@ -9,6 +9,7 @@ import java.net.URL;
 import java.util.concurrent.atomic.AtomicReference;
 
 import javafx.event.EventHandler;
+import javafx.scene.Node;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.input.ScrollEvent;
@@ -20,8 +21,12 @@ import javafx.scene.media.MediaView;
 import javax.annotation.PostConstruct;
 import javax.inject.Inject;
 
+import org.eclipse.e4.core.di.annotations.Optional;
+import org.eclipse.e4.ui.di.Focus;
+import org.eclipse.e4.ui.di.UIEventTopic;
 import org.eclipse.e4.ui.model.application.ui.basic.MPart;
 
+import @@packageName@@.RefreshHandler;
 import @@packageName_model@@.Media;
 import @@packageName_model@@.MediaType;
 
@@ -35,6 +40,10 @@ public class MediaPart {
 	
 	@Inject
 	MPart part;
+
+	private MediaPlayer mediaPlayer;
+	
+	private Node focusNode;
 	
 	@PostConstruct
 	void init(BorderPane p) {
@@ -69,6 +78,7 @@ public class MediaPart {
 		
 		
 		final ImageView v = new ImageView(m.getUrl());
+		focusNode = v;
 		transformStack.getChildren().add(v);
 		p.setCenter(transformStack);
 		p.setOnScroll(new EventHandler<ScrollEvent>() {
@@ -112,11 +122,41 @@ public class MediaPart {
 	}
 	
 	private void initMovie(BorderPane p, Media m) {
-		MediaPlayer mediaPlayer = new MediaPlayer(new javafx.scene.media.Media(platformUriFix(m.getUrl())));
+		mediaPlayer = new MediaPlayer(new javafx.scene.media.Media(platformUriFix(m.getUrl())));
 		mediaPlayer.setAutoPlay(true);
 		
-		MediaView mediaView = new MediaView(mediaPlayer);
+		final MediaView mediaView = new MediaView(mediaPlayer);
+		focusNode = mediaView;
 		p.setCenter(mediaView);
+		
+		p.setOnScroll(new EventHandler<ScrollEvent>() {
+
+			@Override
+			public void handle(ScrollEvent event) {
+				int direction = event.getDeltaY() < 0 || event.isShiftDown() ? -1 : 1; 
+				double val = Math.max(mediaView.getScaleX() + 0.05 * direction,0.1);
+				mediaView.setScaleX(val);
+				mediaView.setScaleY(val);
+				part.getPersistedState().put(KEY_SCALE_FACTOR, val+"");
+			}
+		});
+	}
+	
+	@Inject
+	@Optional
+	void refresh(@UIEventTopic(RefreshHandler.REFRESH_EVENT) String event) {
+		if( part.getParent().getSelectedElement() == part ) {
+			if( mediaPlayer != null ) {
+				mediaPlayer.seek(mediaPlayer.getStartTime());
+			}			
+		}
+	}
+	
+	@Focus
+	void focus() {
+		if( focusNode != null ) {
+			focusNode.requestFocus();
+		}
 	}
 	
 	private String platformUriFix(String uri) {

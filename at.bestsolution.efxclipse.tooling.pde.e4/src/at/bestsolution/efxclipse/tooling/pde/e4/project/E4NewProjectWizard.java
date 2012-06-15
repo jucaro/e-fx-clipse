@@ -50,6 +50,7 @@ import org.eclipse.e4.ui.model.application.ui.basic.MPartStack;
 import org.eclipse.e4.ui.model.application.ui.basic.MTrimBar;
 import org.eclipse.e4.ui.model.application.ui.basic.MTrimmedWindow;
 import org.eclipse.e4.ui.model.application.ui.menu.MHandledMenuItem;
+import org.eclipse.e4.ui.model.application.ui.menu.MHandledToolItem;
 import org.eclipse.e4.ui.model.application.ui.menu.MMenu;
 import org.eclipse.e4.ui.model.application.ui.menu.MMenuFactory;
 import org.eclipse.e4.ui.model.application.ui.menu.MToolBar;
@@ -152,7 +153,7 @@ public class E4NewProjectWizard extends NewPluginProjectWizard {
 				protected void adjustManifests(IProgressMonitor monitor, IProject project, IPluginBase bundle) throws CoreException {
 					super.adjustManifests(monitor, project, bundle);
 					IPluginBase pluginBase = model.getPluginBase();
-					String[] dependencyId = new String[] { "javax.inject", "at.bestsolution.efxclipse.runtime.application", "at.bestsolution.efxclipse.runtime.workbench", "org.eclipse.e4.ui.model.workbench", "org.eclipse.e4.core.services", "org.eclipse.e4.core.di",
+					String[] dependencyId = new String[] { "javax.inject", "at.bestsolution.efxclipse.runtime.application", "at.bestsolution.efxclipse.runtime.workbench", "org.eclipse.e4.ui.model.workbench", "org.eclipse.e4.core.services", "org.eclipse.e4.core.di", "org.eclipse.e4.ui.di",
 							"org.eclipse.e4.core.di.extensions", "at.bestsolution.efxclipse.runtime.theme", "at.bestsolution.efxclipse.runtime.di", "org.eclipse.e4.core.contexts", "at.bestsolution.efxclipse.runtime.databinding", "org.eclipse.core.databinding",
 							"org.eclipse.core.databinding.observable", "org.eclipse.core.databinding.property", "org.eclipse.e4.ui.workbench", "org.eclipse.equinox.common", "org.eclipse.e4.ui.services" };
 					for (String id : dependencyId) {
@@ -449,16 +450,17 @@ public class E4NewProjectWizard extends NewPluginProjectWizard {
 
 			resource.getContents().add((EObject) application);
 
-			// Create Quit command
-			MCommand quitCommand = createCommand("org.eclipse.ui.file.exit", "quitCommand", "QuitHandler", "M1+Q", pluginName, fragment, application);
+			MCommand openCommand = createCommand("media.open", "openMedia", "OpenHandler", "M1+O", pluginName, fragment, application);
+			MCommand refreshCommand = createCommand("media.refresh", "refreshMedia", "RefreshHandler", "M1+O", pluginName, fragment, application);
 
-//			MCommand openCommand = createCommand(pluginName + ".open", "openCommand", "OpenHandler", "M1+O", pluginName, fragment, application);
-//
-//			MCommand saveCommand = createCommand("org.eclipse.ui.file.save", "saveCommand", "SaveHandler", "M1+S", pluginName, fragment, application);
-//
-			MCommand aboutCommand = createCommand("org.eclipse.ui.help.aboutAction", "aboutCommand", "AboutHandler", "M1+A", pluginName, fragment, application);
+////			MCommand openCommand = createCommand(pluginName + ".open", "openCommand", "OpenHandler", "M1+O", pluginName, fragment, application);
+////
+////			MCommand saveCommand = createCommand("org.eclipse.ui.file.save", "saveCommand", "SaveHandler", "M1+S", pluginName, fragment, application);
+////
+//			MCommand aboutCommand = createCommand("org.eclipse.ui.help.aboutAction", "aboutCommand", "AboutHandler", "M1+A", pluginName, fragment, application);
 
 			MTrimmedWindow mainWindow = MBasicFactory.INSTANCE.createTrimmedWindow();
+			mainWindow.getTags().add("decoration#"+fragment.getElementName().replace('.', '/')+"/decoration/TopArea.fxml");
 			application.getChildren().add(mainWindow);
 			{
 				mainWindow.setLabel(pluginName);
@@ -467,43 +469,43 @@ public class E4NewProjectWizard extends NewPluginProjectWizard {
 				mainWindow.setWidth(500);
 				mainWindow.setHeight(400);
 
-				// Menu
-				{
-					MMenu menu = MMenuFactory.INSTANCE.createMenu();
-					mainWindow.setMainMenu(menu);
-					menu.setElementId("org.efxclipse.e4.mainmenu");
-
-					MMenu fileMenuItem = MMenuFactory.INSTANCE.createMenu();
-					menu.getChildren().add(fileMenuItem);
-					fileMenuItem.setLabel("File");
-					{
-//						MHandledMenuItem menuItemOpen = MMenuFactory.INSTANCE.createHandledMenuItem();
-//						fileMenuItem.getChildren().add(menuItemOpen);
-//						menuItemOpen.setLabel("Open");
-//						menuItemOpen.setIconURI("platform:/plugin/" + pluginName + "/icons/sample.gif");
-//						menuItemOpen.setCommand(openCommand);
+//				// Menu
+//				{
+//					MMenu menu = MMenuFactory.INSTANCE.createMenu();
+//					mainWindow.setMainMenu(menu);
+//					menu.setElementId("org.efxclipse.e4.mainmenu");
 //
-//						MHandledMenuItem menuItemSave = MMenuFactory.INSTANCE.createHandledMenuItem();
-//						fileMenuItem.getChildren().add(menuItemSave);
-//						menuItemSave.setLabel("Save");
-//						menuItemSave.setIconURI("platform:/plugin/" + pluginName + "/icons/save_edit.gif");
-//						menuItemSave.setCommand(saveCommand);
-
-						MHandledMenuItem menuItemQuit = MMenuFactory.INSTANCE.createHandledMenuItem();
-						fileMenuItem.getChildren().add(menuItemQuit);
-						menuItemQuit.setLabel("Quit");
-						menuItemQuit.setCommand(quitCommand);
-					}
-					MMenu helpMenuItem = MMenuFactory.INSTANCE.createMenu();
-					menu.getChildren().add(helpMenuItem);
-					helpMenuItem.setLabel("Help");
-					{
-						MHandledMenuItem menuItemAbout = MMenuFactory.INSTANCE.createHandledMenuItem();
-						helpMenuItem.getChildren().add(menuItemAbout);
-						menuItemAbout.setLabel("About");
-						menuItemAbout.setCommand(aboutCommand);
-					}
-				}
+//					MMenu fileMenuItem = MMenuFactory.INSTANCE.createMenu();
+//					menu.getChildren().add(fileMenuItem);
+//					fileMenuItem.setLabel("File");
+//					{
+////						MHandledMenuItem menuItemOpen = MMenuFactory.INSTANCE.createHandledMenuItem();
+////						fileMenuItem.getChildren().add(menuItemOpen);
+////						menuItemOpen.setLabel("Open");
+////						menuItemOpen.setIconURI("platform:/plugin/" + pluginName + "/icons/sample.gif");
+////						menuItemOpen.setCommand(openCommand);
+////
+////						MHandledMenuItem menuItemSave = MMenuFactory.INSTANCE.createHandledMenuItem();
+////						fileMenuItem.getChildren().add(menuItemSave);
+////						menuItemSave.setLabel("Save");
+////						menuItemSave.setIconURI("platform:/plugin/" + pluginName + "/icons/save_edit.gif");
+////						menuItemSave.setCommand(saveCommand);
+//
+//						MHandledMenuItem menuItemQuit = MMenuFactory.INSTANCE.createHandledMenuItem();
+//						fileMenuItem.getChildren().add(menuItemQuit);
+//						menuItemQuit.setLabel("Quit");
+//						menuItemQuit.setCommand(quitCommand);
+//					}
+//					MMenu helpMenuItem = MMenuFactory.INSTANCE.createMenu();
+//					menu.getChildren().add(helpMenuItem);
+//					helpMenuItem.setLabel("Help");
+//					{
+//						MHandledMenuItem menuItemAbout = MMenuFactory.INSTANCE.createHandledMenuItem();
+//						helpMenuItem.getChildren().add(menuItemAbout);
+//						menuItemAbout.setLabel("About");
+//						menuItemAbout.setCommand(aboutCommand);
+//					}
+//				}
 
 				// Top-Sash
 				{
@@ -536,15 +538,15 @@ public class E4NewProjectWizard extends NewPluginProjectWizard {
 					toolBar.setElementId("org.efxclipse.e4.maintoolbar");
 					trimBar.getChildren().add(toolBar);
 
-//					MHandledToolItem toolItemOpen = MMenuFactory.INSTANCE.createHandledToolItem();
-//					toolBar.getChildren().add(toolItemOpen);
-//					toolItemOpen.setIconURI("platform:/plugin/" + pluginName + "/icons/sample.gif");
-//					toolItemOpen.setCommand(openCommand);
-//
-//					MHandledToolItem toolItemSave = MMenuFactory.INSTANCE.createHandledToolItem();
-//					toolBar.getChildren().add(toolItemSave);
-//					toolItemSave.setIconURI("platform:/plugin/" + pluginName + "/icons/save_edit.gif");
-//					toolItemSave.setCommand(saveCommand);
+					MHandledToolItem toolItemOpen = MMenuFactory.INSTANCE.createHandledToolItem();
+					toolBar.getChildren().add(toolItemOpen);
+					toolItemOpen.setIconURI("platform:/plugin/" + pluginName + "/icons/edit-image-face-show.png");
+					toolItemOpen.setCommand(openCommand);
+
+					MHandledToolItem toolItemSave = MMenuFactory.INSTANCE.createHandledToolItem();
+					toolBar.getChildren().add(toolItemSave);
+					toolItemSave.setIconURI("platform:/plugin/" + pluginName + "/icons/system-reboot.png");
+					toolItemSave.setCommand(refreshCommand);
 				}
 			}
 			
@@ -601,6 +603,7 @@ public class E4NewProjectWizard extends NewPluginProjectWizard {
 		keys.put("packageName", fragment.getElementName() + ".handlers");
 		keys.put("packageName_parts", fragment.getElementName() + ".parts");
 		keys.put("packageName_model", fragment.getElementName() + ".model");
+		keys.put("packageName_decoration", fragment.getElementName() + ".decoration");
 
 		try {
 			URL corePath = ResourceLocator.getProjectTemplateFiles(template_id);
