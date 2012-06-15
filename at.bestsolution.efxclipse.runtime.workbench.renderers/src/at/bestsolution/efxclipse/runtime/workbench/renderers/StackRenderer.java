@@ -14,6 +14,7 @@ import javafx.event.EventHandler;
 import javafx.scene.Node;
 import javafx.scene.control.Tab;
 import javafx.scene.control.TabPane;
+import javafx.scene.image.ImageView;
 
 import org.eclipse.e4.core.contexts.IEclipseContext;
 import org.eclipse.e4.core.services.events.IEventBroker;
@@ -300,6 +301,9 @@ public class StackRenderer extends JFXRenderer {
 		}
 		
 		final ExtendedTab tab = new ExtendedTab(getLabel(part, part.getLocalizedLabel()));
+		if( part.getIconURI() != null ) {
+			tab.setGraphic(new ImageView(part.getIconURI()));
+		}
 		tab.setData(element);
 		tab.setClosable(isClosable(part));
 		tab.setOnSelectionChanged(new EventHandler<Event>() {
