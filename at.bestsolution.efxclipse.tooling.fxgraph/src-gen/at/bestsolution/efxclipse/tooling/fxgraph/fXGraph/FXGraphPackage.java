@@ -266,7 +266,7 @@ public interface FXGraphPackage extends EPackage
    * @see at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.impl.FXGraphPackageImpl#getValueProperty()
    * @generated
    */
-  int VALUE_PROPERTY = 9;
+  int VALUE_PROPERTY = 10;
 
   /**
    * The number of structural features of the '<em>Value Property</em>' class.
@@ -285,7 +285,7 @@ public interface FXGraphPackage extends EPackage
    * @see at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.impl.FXGraphPackageImpl#getSingleValueProperty()
    * @generated
    */
-  int SINGLE_VALUE_PROPERTY = 10;
+  int SINGLE_VALUE_PROPERTY = 11;
 
   /**
    * The number of structural features of the '<em>Single Value Property</em>' class.
@@ -343,13 +343,22 @@ public interface FXGraphPackage extends EPackage
   int ELEMENT__PROPERTIES = SINGLE_VALUE_PROPERTY_FEATURE_COUNT + 3;
 
   /**
+   * The feature id for the '<em><b>Static Properties</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ELEMENT__STATIC_PROPERTIES = SINGLE_VALUE_PROPERTY_FEATURE_COUNT + 4;
+
+  /**
    * The feature id for the '<em><b>Static Call Properties</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int ELEMENT__STATIC_CALL_PROPERTIES = SINGLE_VALUE_PROPERTY_FEATURE_COUNT + 4;
+  int ELEMENT__STATIC_CALL_PROPERTIES = SINGLE_VALUE_PROPERTY_FEATURE_COUNT + 5;
 
   /**
    * The feature id for the '<em><b>Default Children</b></em>' containment reference list.
@@ -358,7 +367,7 @@ public interface FXGraphPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ELEMENT__DEFAULT_CHILDREN = SINGLE_VALUE_PROPERTY_FEATURE_COUNT + 5;
+  int ELEMENT__DEFAULT_CHILDREN = SINGLE_VALUE_PROPERTY_FEATURE_COUNT + 6;
 
   /**
    * The feature id for the '<em><b>Factory</b></em>' attribute.
@@ -367,7 +376,7 @@ public interface FXGraphPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ELEMENT__FACTORY = SINGLE_VALUE_PROPERTY_FEATURE_COUNT + 6;
+  int ELEMENT__FACTORY = SINGLE_VALUE_PROPERTY_FEATURE_COUNT + 7;
 
   /**
    * The feature id for the '<em><b>Values</b></em>' containment reference list.
@@ -376,7 +385,7 @@ public interface FXGraphPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ELEMENT__VALUES = SINGLE_VALUE_PROPERTY_FEATURE_COUNT + 7;
+  int ELEMENT__VALUES = SINGLE_VALUE_PROPERTY_FEATURE_COUNT + 8;
 
   /**
    * The number of structural features of the '<em>Element</em>' class.
@@ -385,7 +394,7 @@ public interface FXGraphPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ELEMENT_FEATURE_COUNT = SINGLE_VALUE_PROPERTY_FEATURE_COUNT + 8;
+  int ELEMENT_FEATURE_COUNT = SINGLE_VALUE_PROPERTY_FEATURE_COUNT + 9;
 
   /**
    * The meta object id for the '{@link at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.impl.DefineImpl <em>Define</em>}' class.
@@ -526,6 +535,52 @@ public interface FXGraphPackage extends EPackage
   int STATIC_CALL_VALUE_PROPERTY_FEATURE_COUNT = 4;
 
   /**
+   * The meta object id for the '{@link at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.impl.StaticValuePropertyImpl <em>Static Value Property</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.impl.StaticValuePropertyImpl
+   * @see at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.impl.FXGraphPackageImpl#getStaticValueProperty()
+   * @generated
+   */
+  int STATIC_VALUE_PROPERTY = 8;
+
+  /**
+   * The feature id for the '<em><b>Modifier</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int STATIC_VALUE_PROPERTY__MODIFIER = 0;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int STATIC_VALUE_PROPERTY__NAME = 1;
+
+  /**
+   * The feature id for the '<em><b>Value</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int STATIC_VALUE_PROPERTY__VALUE = 2;
+
+  /**
+   * The number of structural features of the '<em>Static Value Property</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int STATIC_VALUE_PROPERTY_FEATURE_COUNT = 3;
+
+  /**
    * The meta object id for the '{@link at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.impl.PropertyImpl <em>Property</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -533,7 +588,7 @@ public interface FXGraphPackage extends EPackage
    * @see at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.impl.FXGraphPackageImpl#getProperty()
    * @generated
    */
-  int PROPERTY = 8;
+  int PROPERTY = 9;
 
   /**
    * The feature id for the '<em><b>Modifier</b></em>' attribute.
@@ -579,7 +634,7 @@ public interface FXGraphPackage extends EPackage
    * @see at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.impl.FXGraphPackageImpl#getMultiValueProperty()
    * @generated
    */
-  int MULTI_VALUE_PROPERTY = 11;
+  int MULTI_VALUE_PROPERTY = 12;
 
   /**
    * The number of structural features of the '<em>Multi Value Property</em>' class.
@@ -598,7 +653,7 @@ public interface FXGraphPackage extends EPackage
    * @see at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.impl.FXGraphPackageImpl#getFactoryValueElement()
    * @generated
    */
-  int FACTORY_VALUE_ELEMENT = 12;
+  int FACTORY_VALUE_ELEMENT = 13;
 
   /**
    * The number of structural features of the '<em>Factory Value Element</em>' class.
@@ -617,7 +672,7 @@ public interface FXGraphPackage extends EPackage
    * @see at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.impl.FXGraphPackageImpl#getListValueElement()
    * @generated
    */
-  int LIST_VALUE_ELEMENT = 13;
+  int LIST_VALUE_ELEMENT = 14;
 
   /**
    * The number of structural features of the '<em>List Value Element</em>' class.
@@ -636,7 +691,7 @@ public interface FXGraphPackage extends EPackage
    * @see at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.impl.FXGraphPackageImpl#getListValueProperty()
    * @generated
    */
-  int LIST_VALUE_PROPERTY = 14;
+  int LIST_VALUE_PROPERTY = 15;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' containment reference list.
@@ -664,7 +719,7 @@ public interface FXGraphPackage extends EPackage
    * @see at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.impl.FXGraphPackageImpl#getMapValueProperty()
    * @generated
    */
-  int MAP_VALUE_PROPERTY = 15;
+  int MAP_VALUE_PROPERTY = 16;
 
   /**
    * The feature id for the '<em><b>Properties</b></em>' containment reference list.
@@ -692,7 +747,7 @@ public interface FXGraphPackage extends EPackage
    * @see at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.impl.FXGraphPackageImpl#getSimpleValueProperty()
    * @generated
    */
-  int SIMPLE_VALUE_PROPERTY = 16;
+  int SIMPLE_VALUE_PROPERTY = 17;
 
   /**
    * The feature id for the '<em><b>String Value</b></em>' attribute.
@@ -756,7 +811,7 @@ public interface FXGraphPackage extends EPackage
    * @see at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.impl.FXGraphPackageImpl#getReferenceType()
    * @generated
    */
-  int REFERENCE_TYPE = 17;
+  int REFERENCE_TYPE = 18;
 
   /**
    * The number of structural features of the '<em>Reference Type</em>' class.
@@ -775,7 +830,7 @@ public interface FXGraphPackage extends EPackage
    * @see at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.impl.FXGraphPackageImpl#getReferenceValueProperty()
    * @generated
    */
-  int REFERENCE_VALUE_PROPERTY = 18;
+  int REFERENCE_VALUE_PROPERTY = 19;
 
   /**
    * The feature id for the '<em><b>Reference</b></em>' reference.
@@ -803,7 +858,7 @@ public interface FXGraphPackage extends EPackage
    * @see at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.impl.FXGraphPackageImpl#getIncludeValueProperty()
    * @generated
    */
-  int INCLUDE_VALUE_PROPERTY = 19;
+  int INCLUDE_VALUE_PROPERTY = 20;
 
   /**
    * The feature id for the '<em><b>Source</b></em>' reference.
@@ -840,7 +895,7 @@ public interface FXGraphPackage extends EPackage
    * @see at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.impl.FXGraphPackageImpl#getCopyValueProperty()
    * @generated
    */
-  int COPY_VALUE_PROPERTY = 20;
+  int COPY_VALUE_PROPERTY = 21;
 
   /**
    * The feature id for the '<em><b>Reference</b></em>' reference.
@@ -868,7 +923,7 @@ public interface FXGraphPackage extends EPackage
    * @see at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.impl.FXGraphPackageImpl#getControllerHandledValueProperty()
    * @generated
    */
-  int CONTROLLER_HANDLED_VALUE_PROPERTY = 21;
+  int CONTROLLER_HANDLED_VALUE_PROPERTY = 22;
 
   /**
    * The feature id for the '<em><b>Methodname</b></em>' attribute.
@@ -896,7 +951,7 @@ public interface FXGraphPackage extends EPackage
    * @see at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.impl.FXGraphPackageImpl#getScriptHandlerHandledValueProperty()
    * @generated
    */
-  int SCRIPT_HANDLER_HANDLED_VALUE_PROPERTY = 22;
+  int SCRIPT_HANDLER_HANDLED_VALUE_PROPERTY = 23;
 
   /**
    * The feature id for the '<em><b>Functionname</b></em>' attribute.
@@ -924,7 +979,7 @@ public interface FXGraphPackage extends EPackage
    * @see at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.impl.FXGraphPackageImpl#getScriptValueExpression()
    * @generated
    */
-  int SCRIPT_VALUE_EXPRESSION = 23;
+  int SCRIPT_VALUE_EXPRESSION = 24;
 
   /**
    * The feature id for the '<em><b>Sourcecode</b></em>' attribute.
@@ -952,7 +1007,7 @@ public interface FXGraphPackage extends EPackage
    * @see at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.impl.FXGraphPackageImpl#getScriptValueReference()
    * @generated
    */
-  int SCRIPT_VALUE_REFERENCE = 24;
+  int SCRIPT_VALUE_REFERENCE = 25;
 
   /**
    * The feature id for the '<em><b>Reference</b></em>' attribute.
@@ -980,7 +1035,7 @@ public interface FXGraphPackage extends EPackage
    * @see at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.impl.FXGraphPackageImpl#getLocationValueProperty()
    * @generated
    */
-  int LOCATION_VALUE_PROPERTY = 25;
+  int LOCATION_VALUE_PROPERTY = 26;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -1008,7 +1063,7 @@ public interface FXGraphPackage extends EPackage
    * @see at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.impl.FXGraphPackageImpl#getResourceValueProperty()
    * @generated
    */
-  int RESOURCE_VALUE_PROPERTY = 26;
+  int RESOURCE_VALUE_PROPERTY = 27;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' containment reference.
@@ -1036,7 +1091,7 @@ public interface FXGraphPackage extends EPackage
    * @see at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.impl.FXGraphPackageImpl#getBindValueProperty()
    * @generated
    */
-  int BIND_VALUE_PROPERTY = 27;
+  int BIND_VALUE_PROPERTY = 28;
 
   /**
    * The feature id for the '<em><b>Element Reference</b></em>' reference.
@@ -1073,7 +1128,7 @@ public interface FXGraphPackage extends EPackage
    * @see at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.impl.FXGraphPackageImpl#getStringValue()
    * @generated
    */
-  int STRING_VALUE = 28;
+  int STRING_VALUE = 29;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -1343,6 +1398,17 @@ public interface FXGraphPackage extends EPackage
   EReference getElement_Properties();
 
   /**
+   * Returns the meta object for the containment reference list '{@link at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.Element#getStaticProperties <em>Static Properties</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Static Properties</em>'.
+   * @see at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.Element#getStaticProperties()
+   * @see #getElement()
+   * @generated
+   */
+  EReference getElement_StaticProperties();
+
+  /**
    * Returns the meta object for the containment reference list '{@link at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.Element#getStaticCallProperties <em>Static Call Properties</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -1514,6 +1580,49 @@ public interface FXGraphPackage extends EPackage
    * @generated
    */
   EReference getStaticCallValueProperty_Value();
+
+  /**
+   * Returns the meta object for class '{@link at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.StaticValueProperty <em>Static Value Property</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Static Value Property</em>'.
+   * @see at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.StaticValueProperty
+   * @generated
+   */
+  EClass getStaticValueProperty();
+
+  /**
+   * Returns the meta object for the attribute '{@link at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.StaticValueProperty#getModifier <em>Modifier</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Modifier</em>'.
+   * @see at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.StaticValueProperty#getModifier()
+   * @see #getStaticValueProperty()
+   * @generated
+   */
+  EAttribute getStaticValueProperty_Modifier();
+
+  /**
+   * Returns the meta object for the attribute '{@link at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.StaticValueProperty#getName <em>Name</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Name</em>'.
+   * @see at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.StaticValueProperty#getName()
+   * @see #getStaticValueProperty()
+   * @generated
+   */
+  EAttribute getStaticValueProperty_Name();
+
+  /**
+   * Returns the meta object for the containment reference '{@link at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.StaticValueProperty#getValue <em>Value</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Value</em>'.
+   * @see at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.StaticValueProperty#getValue()
+   * @see #getStaticValueProperty()
+   * @generated
+   */
+  EReference getStaticValueProperty_Value();
 
   /**
    * Returns the meta object for class '{@link at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.Property <em>Property</em>}'.
@@ -2196,6 +2305,14 @@ public interface FXGraphPackage extends EPackage
     EReference ELEMENT__PROPERTIES = eINSTANCE.getElement_Properties();
 
     /**
+     * The meta object literal for the '<em><b>Static Properties</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference ELEMENT__STATIC_PROPERTIES = eINSTANCE.getElement_StaticProperties();
+
+    /**
      * The meta object literal for the '<em><b>Static Call Properties</b></em>' containment reference list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -2328,6 +2445,40 @@ public interface FXGraphPackage extends EPackage
      * @generated
      */
     EReference STATIC_CALL_VALUE_PROPERTY__VALUE = eINSTANCE.getStaticCallValueProperty_Value();
+
+    /**
+     * The meta object literal for the '{@link at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.impl.StaticValuePropertyImpl <em>Static Value Property</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.impl.StaticValuePropertyImpl
+     * @see at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.impl.FXGraphPackageImpl#getStaticValueProperty()
+     * @generated
+     */
+    EClass STATIC_VALUE_PROPERTY = eINSTANCE.getStaticValueProperty();
+
+    /**
+     * The meta object literal for the '<em><b>Modifier</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute STATIC_VALUE_PROPERTY__MODIFIER = eINSTANCE.getStaticValueProperty_Modifier();
+
+    /**
+     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute STATIC_VALUE_PROPERTY__NAME = eINSTANCE.getStaticValueProperty_Name();
+
+    /**
+     * The meta object literal for the '<em><b>Value</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference STATIC_VALUE_PROPERTY__VALUE = eINSTANCE.getStaticValueProperty_Value();
 
     /**
      * The meta object literal for the '{@link at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.impl.PropertyImpl <em>Property</em>}' class.

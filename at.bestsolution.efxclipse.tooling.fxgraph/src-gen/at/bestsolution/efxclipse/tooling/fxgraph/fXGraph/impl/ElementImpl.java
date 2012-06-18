@@ -8,6 +8,7 @@ import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.FactoryValueElement;
 import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.Property;
 import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.SimpleValueProperty;
 import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.StaticCallValueProperty;
+import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.StaticValueProperty;
 
 import java.util.Collection;
 
@@ -37,6 +38,7 @@ import org.eclipse.xtext.common.types.JvmTypeReference;
  *   <li>{@link at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.impl.ElementImpl#getValue <em>Value</em>}</li>
  *   <li>{@link at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.impl.ElementImpl#getName <em>Name</em>}</li>
  *   <li>{@link at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.impl.ElementImpl#getProperties <em>Properties</em>}</li>
+ *   <li>{@link at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.impl.ElementImpl#getStaticProperties <em>Static Properties</em>}</li>
  *   <li>{@link at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.impl.ElementImpl#getStaticCallProperties <em>Static Call Properties</em>}</li>
  *   <li>{@link at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.impl.ElementImpl#getDefaultChildren <em>Default Children</em>}</li>
  *   <li>{@link at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.impl.ElementImpl#getFactory <em>Factory</em>}</li>
@@ -97,6 +99,16 @@ public class ElementImpl extends SingleValuePropertyImpl implements Element
    * @ordered
    */
   protected EList<Property> properties;
+
+  /**
+   * The cached value of the '{@link #getStaticProperties() <em>Static Properties</em>}' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getStaticProperties()
+   * @generated
+   * @ordered
+   */
+  protected EList<StaticValueProperty> staticProperties;
 
   /**
    * The cached value of the '{@link #getStaticCallProperties() <em>Static Call Properties</em>}' containment reference list.
@@ -307,6 +319,20 @@ public class ElementImpl extends SingleValuePropertyImpl implements Element
    * <!-- end-user-doc -->
    * @generated
    */
+  public EList<StaticValueProperty> getStaticProperties()
+  {
+    if (staticProperties == null)
+    {
+      staticProperties = new EObjectContainmentEList<StaticValueProperty>(StaticValueProperty.class, this, FXGraphPackage.ELEMENT__STATIC_PROPERTIES);
+    }
+    return staticProperties;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EList<StaticCallValueProperty> getStaticCallProperties()
   {
     if (staticCallProperties == null)
@@ -383,6 +409,8 @@ public class ElementImpl extends SingleValuePropertyImpl implements Element
         return basicSetValue(null, msgs);
       case FXGraphPackage.ELEMENT__PROPERTIES:
         return ((InternalEList<?>)getProperties()).basicRemove(otherEnd, msgs);
+      case FXGraphPackage.ELEMENT__STATIC_PROPERTIES:
+        return ((InternalEList<?>)getStaticProperties()).basicRemove(otherEnd, msgs);
       case FXGraphPackage.ELEMENT__STATIC_CALL_PROPERTIES:
         return ((InternalEList<?>)getStaticCallProperties()).basicRemove(otherEnd, msgs);
       case FXGraphPackage.ELEMENT__DEFAULT_CHILDREN:
@@ -411,6 +439,8 @@ public class ElementImpl extends SingleValuePropertyImpl implements Element
         return getName();
       case FXGraphPackage.ELEMENT__PROPERTIES:
         return getProperties();
+      case FXGraphPackage.ELEMENT__STATIC_PROPERTIES:
+        return getStaticProperties();
       case FXGraphPackage.ELEMENT__STATIC_CALL_PROPERTIES:
         return getStaticCallProperties();
       case FXGraphPackage.ELEMENT__DEFAULT_CHILDREN:
@@ -446,6 +476,10 @@ public class ElementImpl extends SingleValuePropertyImpl implements Element
       case FXGraphPackage.ELEMENT__PROPERTIES:
         getProperties().clear();
         getProperties().addAll((Collection<? extends Property>)newValue);
+        return;
+      case FXGraphPackage.ELEMENT__STATIC_PROPERTIES:
+        getStaticProperties().clear();
+        getStaticProperties().addAll((Collection<? extends StaticValueProperty>)newValue);
         return;
       case FXGraphPackage.ELEMENT__STATIC_CALL_PROPERTIES:
         getStaticCallProperties().clear();
@@ -488,6 +522,9 @@ public class ElementImpl extends SingleValuePropertyImpl implements Element
       case FXGraphPackage.ELEMENT__PROPERTIES:
         getProperties().clear();
         return;
+      case FXGraphPackage.ELEMENT__STATIC_PROPERTIES:
+        getStaticProperties().clear();
+        return;
       case FXGraphPackage.ELEMENT__STATIC_CALL_PROPERTIES:
         getStaticCallProperties().clear();
         return;
@@ -522,6 +559,8 @@ public class ElementImpl extends SingleValuePropertyImpl implements Element
         return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
       case FXGraphPackage.ELEMENT__PROPERTIES:
         return properties != null && !properties.isEmpty();
+      case FXGraphPackage.ELEMENT__STATIC_PROPERTIES:
+        return staticProperties != null && !staticProperties.isEmpty();
       case FXGraphPackage.ELEMENT__STATIC_CALL_PROPERTIES:
         return staticCallProperties != null && !staticCallProperties.isEmpty();
       case FXGraphPackage.ELEMENT__DEFAULT_CHILDREN:

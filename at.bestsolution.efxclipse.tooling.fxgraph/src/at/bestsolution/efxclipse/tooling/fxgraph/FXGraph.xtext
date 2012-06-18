@@ -35,7 +35,7 @@ ComponentDefinition:
 
 Element:
 	type=JvmTypeReference ((('(' value = SimpleValueProperty ')')? ('id' name=ValidID)?) | (('id' name=ValidID)? '{'
-		((properties+=Property | staticCallProperties+=StaticCallValueProperty | defaultChildren+=Element) (',' (properties+=Property | staticCallProperties+=StaticCallValueProperty | defaultChildren+=Element ))*)?
+		((properties+=Property | staticProperties+=StaticValueProperty | staticCallProperties+=StaticCallValueProperty | defaultChildren+=Element) (',' (properties+=Property | staticProperties+=StaticValueProperty | staticCallProperties+=StaticCallValueProperty | defaultChildren+=Element ))*)?
 	'}') | ( ('id' name=ValidID)? 'createdby' factory=ID '{' values+=FactoryValueElement (',' values+=FactoryValueElement)* '}' ) )
 ;
 
@@ -49,6 +49,10 @@ Script:
 
 StaticCallValueProperty:
 	modifier=('preview'|'runtime-only')? 'call' type=JvmTypeReference '#' name=ID ':' value=ValueProperty
+;
+
+StaticValueProperty:
+	modifier=('preview'|'runtime-only')? 'static' name=ID ':' value=ValueProperty
 ;
 
 Property:
@@ -137,10 +141,6 @@ QualifiedNameWithWildCard :
 StringValue:
 	value=STRING
 ;
-
-/*LiteralObject:
-	'<' value=SimpleValueProperty '>'
-;*/
 
 terminal REAL returns ecore::EDouble: (('0'..'9')*"."('0'..'9')+);
 terminal SCRIPTLITERAL	:  '#{' -> '}#';

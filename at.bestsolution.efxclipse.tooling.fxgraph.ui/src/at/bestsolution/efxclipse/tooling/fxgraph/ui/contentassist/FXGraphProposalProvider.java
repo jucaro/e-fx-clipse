@@ -59,6 +59,7 @@ import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.Model;
 import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.Property;
 import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.ReferenceValueProperty;
 import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.StaticCallValueProperty;
+import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.StaticValueProperty;
 import at.bestsolution.efxclipse.tooling.model.FXPlugin;
 import at.bestsolution.efxclipse.tooling.model.IFXClass;
 import at.bestsolution.efxclipse.tooling.model.IFXCollectionProperty;
@@ -107,8 +108,8 @@ public class FXGraphProposalProvider extends AbstractFXGraphProposalProvider {
 		
 		@Override
 		public boolean isCandidateMatchingPrefix(String name, String prefix) {
-			name = name.substring(name.indexOf("#")+1);
-//			System.err.println("compare: " + name + " => " + prefix);
+			name = name.substring(name.indexOf("static")+"static".length()+1);
+			name = name.trim();
 			return original.isCandidateMatchingPrefix(name, prefix);
 		}
 	}
@@ -254,7 +255,6 @@ public class FXGraphProposalProvider extends AbstractFXGraphProposalProvider {
 			
 			if( el instanceof Element) {
 				el = (Element) el;
-				System.err.println("Statics for: " + el.getType());
 				IJavaProject javaProject = projectProvider.getJavaProject(el.eResource().getResourceSet());
 				IType type = javaProject.findType(el.getType().getQualifiedName());
 				if (type != null) {
@@ -263,7 +263,7 @@ public class FXGraphProposalProvider extends AbstractFXGraphProposalProvider {
 					if (fxClazz != null) {
 						Map<String, IFXProperty> map = fxClazz.getAllStaticProperties();
 						for (IFXProperty p : map.values()) {
-							completeElement_PropertiesProposals(p, el, context, FXGraphPackage.Literals.ELEMENT__STATIC_CALL_PROPERTIES, acceptor);
+							completeElement_PropertiesProposals(p, el, context, FXGraphPackage.Literals.ELEMENT__STATIC_PROPERTIES, acceptor);
 						}
 					}
 				}
@@ -333,15 +333,15 @@ public class FXGraphProposalProvider extends AbstractFXGraphProposalProvider {
 	}
 
 	private void createEnumPropnameProposals(IFXEnumProperty prop, EObject model, ContentAssistContext context, EStructuralFeature typeReference, ICompletionProposalAcceptor acceptor) {
-		if( prop.isStatic() && ! typeReference.equals(FXGraphPackage.Literals.STATIC_CALL_VALUE_PROPERTY__NAME) ) {
+		if( prop.isStatic() && typeReference.equals(FXGraphPackage.Literals.ELEMENT__STATIC_PROPERTIES) ) {
 			StyledString s = new StyledString();
 			s.append("(static) ", StyledString.COUNTER_STYLER);
 			s.append(prop.getFXClass().getSimpleName() + "." + prop.getName() + " : " + prop.getEnumTypeAsString(false));
 			s.append(" - " + prop.getFXClass().getSimpleName(), StyledString.QUALIFIER_STYLER);
-						
+			
 			context = context.copy().setMatcher(new StaticPrefixMatcher(context.getMatcher())).toContext();
 			
-			ICompletionProposal p = createCompletionProposal("call " + prop.getFXClass().getSimpleName() + "#" + prop.getName() + " : ", s, IconKeys.getIcon(IconKeys.FIELD_KEY), getPropertiesProposalsProposals()-10, context.getPrefix(), context);
+			ICompletionProposal p = createCompletionProposal("static " + prop.getName() + " : ", s, IconKeys.getIcon(IconKeys.FIELD_KEY), getPropertiesProposalsProposals()-10, context.getPrefix(), context);
 			
 			if (p instanceof ConfigurableCompletionProposal) {
 				ConfigurableCompletionProposal cp = (ConfigurableCompletionProposal) p;
@@ -380,7 +380,7 @@ public class FXGraphProposalProvider extends AbstractFXGraphProposalProvider {
 	}
 
 	private void createObjectPropnameProposals(IFXObjectProperty prop, EObject model, ContentAssistContext context, EStructuralFeature typeReference, ICompletionProposalAcceptor acceptor) {
-		if( prop.isStatic() && ! typeReference.equals(FXGraphPackage.Literals.STATIC_CALL_VALUE_PROPERTY__NAME) ) {
+		if( prop.isStatic() && typeReference.equals(FXGraphPackage.Literals.ELEMENT__STATIC_PROPERTIES) ) {
 			StyledString s = new StyledString();
 			s.append("(static) ", StyledString.COUNTER_STYLER);
 			s.append(prop.getFXClass().getSimpleName() + "." + prop.getName() + " : " + prop.getElementTypeAsString(false));
@@ -388,7 +388,7 @@ public class FXGraphProposalProvider extends AbstractFXGraphProposalProvider {
 			
 			context = context.copy().setMatcher(new StaticPrefixMatcher(context.getMatcher())).toContext();
 			
-			ICompletionProposal p = createCompletionProposal("call " + prop.getFXClass().getSimpleName() + "#" + prop.getName() + " : ", s, IconKeys.getIcon(IconKeys.FIELD_KEY), getPropertiesProposalsProposals()-10, context.getPrefix(), context);
+			ICompletionProposal p = createCompletionProposal("static " + prop.getName() + " : ", s, IconKeys.getIcon(IconKeys.FIELD_KEY), getPropertiesProposalsProposals()-10, context.getPrefix(), context);
 			
 			if (p instanceof ConfigurableCompletionProposal) {
 				ConfigurableCompletionProposal cp = (ConfigurableCompletionProposal) p;
@@ -446,13 +446,13 @@ public class FXGraphProposalProvider extends AbstractFXGraphProposalProvider {
 			break;
 		}
 
-		if( prop.isStatic() && ! typeReference.equals(FXGraphPackage.Literals.STATIC_CALL_VALUE_PROPERTY__NAME) ) {
+		if( prop.isStatic() && typeReference.equals(FXGraphPackage.Literals.ELEMENT__STATIC_PROPERTIES) ) {
 			StyledString s = new StyledString();
 			s.append("(static) ", StyledString.COUNTER_STYLER);
 			s.append(prop.getFXClass().getSimpleName() + "." + prop.getName() + " : " + typeName);
 			s.append(" - " + prop.getFXClass().getSimpleName(), StyledString.QUALIFIER_STYLER);
 			
-			proposalValue = "call " + prop.getFXClass().getSimpleName() + "#" + proposalValue;
+			proposalValue = "static " + proposalValue;
 			
 			context = context.copy().setMatcher(new StaticPrefixMatcher(context.getMatcher())).toContext();
 			
@@ -1136,13 +1136,16 @@ public class FXGraphProposalProvider extends AbstractFXGraphProposalProvider {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-
-		
 	}
 	
 	@Override
 	public void completeStaticCallValueProperty_Value(EObject model, Assignment assignment, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
-		StaticCallValueProperty staticProperty = (StaticCallValueProperty) model;
+		StaticCallValueProperty staticProperty = null;
+		if( model instanceof Element ) {
+			staticProperty = (StaticCallValueProperty) model.eContainer();
+		} else {
+			staticProperty = (StaticCallValueProperty) model;	
+		}
 		
 		try {
 			IJavaProject javaProject = projectProvider.getJavaProject(staticProperty.eResource().getResourceSet());
@@ -1153,7 +1156,94 @@ public class FXGraphProposalProvider extends AbstractFXGraphProposalProvider {
 				if (fxClazz != null) {
 					IFXProperty fxProp = fxClazz.getStaticProperty(staticProperty.getName());
 					if (fxProp != null) {
-						completeProperty_ValueProposals(fxProp, model, context, FXGraphPackage.Literals.PROPERTY__VALUE, acceptor);
+						completeProperty_ValueProposals(fxProp, model, context, FXGraphPackage.Literals.STATIC_CALL_VALUE_PROPERTY__VALUE, acceptor);
+					}
+				}
+			}
+		} catch (JavaModelException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+	
+	@Override
+	public void completeStaticValueProperty_Name(EObject model, Assignment assignment, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
+		EObject eo;
+		
+		if( model instanceof StaticValueProperty ) {
+			eo = model.eContainer();	
+		} else {
+			eo = model;
+		}
+		
+		Element target = null;
+		
+		while( eo.eContainer() != null ) {
+			if( eo.eContainer() instanceof Element ) {
+				target = (Element) eo.eContainer();
+				break;
+			}
+			eo = eo.eContainer();
+		}
+		
+		if( target == null ) {
+			return;
+		}
+		
+		try {
+			IJavaProject javaProject = projectProvider.getJavaProject(model.eResource().getResourceSet());
+			IType type = javaProject.findType(target.getType().getQualifiedName());
+			
+			if (type != null) {
+				IFXClass fxClazz = FXPlugin.getClassmodel().findClass(javaProject, type);
+				if (fxClazz != null) {
+					Map<String, IFXProperty> map = fxClazz.getAllStaticProperties();
+					for (IFXProperty p : map.values()) {
+						completeElement_PropertiesProposals(p, model, context, FXGraphPackage.Literals.STATIC_VALUE_PROPERTY__NAME, acceptor);
+					}
+				}
+			}
+		} catch (JavaModelException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+	
+	@Override
+	public void completeStaticValueProperty_Value(EObject model, Assignment assignment, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
+		StaticValueProperty staticProperty = null;
+		if( model instanceof Element ) {
+			staticProperty = (StaticValueProperty) model.eContainer();
+		} else {
+			staticProperty = (StaticValueProperty) model;
+		}
+		
+		EObject eo = staticProperty.eContainer();
+		Element target = null;
+		
+		while( eo.eContainer() != null ) {
+			if( eo.eContainer() instanceof Element ) {
+				target = (Element) eo.eContainer();
+				break;
+			}
+			eo = eo.eContainer();
+		}
+				
+		if( target == null ) {
+			return;
+		}
+		
+		try {
+			IJavaProject javaProject = projectProvider.getJavaProject(staticProperty.eResource().getResourceSet());
+			IType type = javaProject.findType(target.getType().getQualifiedName());
+			
+			if (type != null) {
+				IFXClass fxClazz = FXPlugin.getClassmodel().findClass(javaProject, type);
+				if (fxClazz != null) {
+					IFXProperty fxProp = fxClazz.getStaticProperty(staticProperty.getName());
+					System.err.println(fxProp);
+					if (fxProp != null) {
+						completeProperty_ValueProposals(fxProp, model, context, FXGraphPackage.Literals.STATIC_VALUE_PROPERTY__VALUE, acceptor);
 					}
 				}
 			}

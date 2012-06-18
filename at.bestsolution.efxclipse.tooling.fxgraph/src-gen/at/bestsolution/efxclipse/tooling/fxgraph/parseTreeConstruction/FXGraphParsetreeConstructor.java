@@ -39,76 +39,77 @@ protected class ThisRootNode extends RootToken {
 			case 5: return new Define_Group(this, this, 5, inst);
 			case 6: return new Script_Group(this, this, 6, inst);
 			case 7: return new StaticCallValueProperty_Group(this, this, 7, inst);
-			case 8: return new Property_Group(this, this, 8, inst);
-			case 9: return new ValueProperty_Alternatives(this, this, 9, inst);
-			case 10: return new SingleValueProperty_Alternatives(this, this, 10, inst);
-			case 11: return new MultiValueProperty_Alternatives(this, this, 11, inst);
-			case 12: return new FactoryValueElement_Alternatives(this, this, 12, inst);
-			case 13: return new ListValueElement_Alternatives(this, this, 13, inst);
-			case 14: return new ListValueProperty_Group(this, this, 14, inst);
-			case 15: return new MapValueProperty_Group(this, this, 15, inst);
-			case 16: return new SimpleValueProperty_Alternatives(this, this, 16, inst);
-			case 17: return new ReferenceType_Alternatives(this, this, 17, inst);
-			case 18: return new ReferenceValueProperty_Group(this, this, 18, inst);
-			case 19: return new IncludeValueProperty_Group(this, this, 19, inst);
-			case 20: return new CopyValueProperty_Group(this, this, 20, inst);
-			case 21: return new ControllerHandledValueProperty_Group(this, this, 21, inst);
-			case 22: return new ScriptHandlerHandledValueProperty_Group(this, this, 22, inst);
-			case 23: return new ScriptValueExpression_Group(this, this, 23, inst);
-			case 24: return new ScriptValueReference_Group(this, this, 24, inst);
-			case 25: return new LocationValueProperty_Group(this, this, 25, inst);
-			case 26: return new ResourceValueProperty_Group(this, this, 26, inst);
-			case 27: return new BindValueProperty_Group(this, this, 27, inst);
-			case 28: return new StringValue_ValueAssignment(this, this, 28, inst);
-			case 29: return new XExpression_XAssignmentParserRuleCall(this, this, 29, inst);
-			case 30: return new XAssignment_Alternatives(this, this, 30, inst);
-			case 31: return new XOrExpression_Group(this, this, 31, inst);
-			case 32: return new XAndExpression_Group(this, this, 32, inst);
-			case 33: return new XEqualityExpression_Group(this, this, 33, inst);
-			case 34: return new XRelationalExpression_Group(this, this, 34, inst);
-			case 35: return new XOtherOperatorExpression_Group(this, this, 35, inst);
-			case 36: return new XAdditiveExpression_Group(this, this, 36, inst);
-			case 37: return new XMultiplicativeExpression_Group(this, this, 37, inst);
-			case 38: return new XUnaryOperation_Alternatives(this, this, 38, inst);
-			case 39: return new XCastedExpression_Group(this, this, 39, inst);
-			case 40: return new XMemberFeatureCall_Group(this, this, 40, inst);
-			case 41: return new XPrimaryExpression_Alternatives(this, this, 41, inst);
-			case 42: return new XLiteral_Alternatives(this, this, 42, inst);
-			case 43: return new XClosure_Group(this, this, 43, inst);
-			case 44: return new XExpressionInClosure_Group(this, this, 44, inst);
-			case 45: return new XShortClosure_Group(this, this, 45, inst);
-			case 46: return new XParenthesizedExpression_Group(this, this, 46, inst);
-			case 47: return new XIfExpression_Group(this, this, 47, inst);
-			case 48: return new XSwitchExpression_Group(this, this, 48, inst);
-			case 49: return new XCasePart_Group(this, this, 49, inst);
-			case 50: return new XForLoopExpression_Group(this, this, 50, inst);
-			case 51: return new XWhileExpression_Group(this, this, 51, inst);
-			case 52: return new XDoWhileExpression_Group(this, this, 52, inst);
-			case 53: return new XBlockExpression_Group(this, this, 53, inst);
-			case 54: return new XExpressionInsideBlock_Alternatives(this, this, 54, inst);
-			case 55: return new XVariableDeclaration_Group(this, this, 55, inst);
-			case 56: return new JvmFormalParameter_Group(this, this, 56, inst);
-			case 57: return new FullJvmFormalParameter_Group(this, this, 57, inst);
-			case 58: return new XFeatureCall_Group(this, this, 58, inst);
-			case 59: return new XConstructorCall_Group(this, this, 59, inst);
-			case 60: return new XBooleanLiteral_Group(this, this, 60, inst);
-			case 61: return new XNullLiteral_Group(this, this, 61, inst);
-			case 62: return new XNumberLiteral_Group(this, this, 62, inst);
-			case 63: return new XStringLiteral_Group(this, this, 63, inst);
-			case 64: return new XTypeLiteral_Group(this, this, 64, inst);
-			case 65: return new XThrowExpression_Group(this, this, 65, inst);
-			case 66: return new XReturnExpression_Group(this, this, 66, inst);
-			case 67: return new XTryCatchFinallyExpression_Group(this, this, 67, inst);
-			case 68: return new XCatchClause_Group(this, this, 68, inst);
-			case 69: return new JvmTypeReference_Alternatives(this, this, 69, inst);
-			case 70: return new XFunctionTypeRef_Group(this, this, 70, inst);
-			case 71: return new JvmParameterizedTypeReference_Group(this, this, 71, inst);
-			case 72: return new JvmArgumentTypeReference_Alternatives(this, this, 72, inst);
-			case 73: return new JvmWildcardTypeReference_Group(this, this, 73, inst);
-			case 74: return new JvmUpperBound_Group(this, this, 74, inst);
-			case 75: return new JvmUpperBoundAnded_Group(this, this, 75, inst);
-			case 76: return new JvmLowerBound_Group(this, this, 76, inst);
-			case 77: return new JvmTypeParameter_Group(this, this, 77, inst);
+			case 8: return new StaticValueProperty_Group(this, this, 8, inst);
+			case 9: return new Property_Group(this, this, 9, inst);
+			case 10: return new ValueProperty_Alternatives(this, this, 10, inst);
+			case 11: return new SingleValueProperty_Alternatives(this, this, 11, inst);
+			case 12: return new MultiValueProperty_Alternatives(this, this, 12, inst);
+			case 13: return new FactoryValueElement_Alternatives(this, this, 13, inst);
+			case 14: return new ListValueElement_Alternatives(this, this, 14, inst);
+			case 15: return new ListValueProperty_Group(this, this, 15, inst);
+			case 16: return new MapValueProperty_Group(this, this, 16, inst);
+			case 17: return new SimpleValueProperty_Alternatives(this, this, 17, inst);
+			case 18: return new ReferenceType_Alternatives(this, this, 18, inst);
+			case 19: return new ReferenceValueProperty_Group(this, this, 19, inst);
+			case 20: return new IncludeValueProperty_Group(this, this, 20, inst);
+			case 21: return new CopyValueProperty_Group(this, this, 21, inst);
+			case 22: return new ControllerHandledValueProperty_Group(this, this, 22, inst);
+			case 23: return new ScriptHandlerHandledValueProperty_Group(this, this, 23, inst);
+			case 24: return new ScriptValueExpression_Group(this, this, 24, inst);
+			case 25: return new ScriptValueReference_Group(this, this, 25, inst);
+			case 26: return new LocationValueProperty_Group(this, this, 26, inst);
+			case 27: return new ResourceValueProperty_Group(this, this, 27, inst);
+			case 28: return new BindValueProperty_Group(this, this, 28, inst);
+			case 29: return new StringValue_ValueAssignment(this, this, 29, inst);
+			case 30: return new XExpression_XAssignmentParserRuleCall(this, this, 30, inst);
+			case 31: return new XAssignment_Alternatives(this, this, 31, inst);
+			case 32: return new XOrExpression_Group(this, this, 32, inst);
+			case 33: return new XAndExpression_Group(this, this, 33, inst);
+			case 34: return new XEqualityExpression_Group(this, this, 34, inst);
+			case 35: return new XRelationalExpression_Group(this, this, 35, inst);
+			case 36: return new XOtherOperatorExpression_Group(this, this, 36, inst);
+			case 37: return new XAdditiveExpression_Group(this, this, 37, inst);
+			case 38: return new XMultiplicativeExpression_Group(this, this, 38, inst);
+			case 39: return new XUnaryOperation_Alternatives(this, this, 39, inst);
+			case 40: return new XCastedExpression_Group(this, this, 40, inst);
+			case 41: return new XMemberFeatureCall_Group(this, this, 41, inst);
+			case 42: return new XPrimaryExpression_Alternatives(this, this, 42, inst);
+			case 43: return new XLiteral_Alternatives(this, this, 43, inst);
+			case 44: return new XClosure_Group(this, this, 44, inst);
+			case 45: return new XExpressionInClosure_Group(this, this, 45, inst);
+			case 46: return new XShortClosure_Group(this, this, 46, inst);
+			case 47: return new XParenthesizedExpression_Group(this, this, 47, inst);
+			case 48: return new XIfExpression_Group(this, this, 48, inst);
+			case 49: return new XSwitchExpression_Group(this, this, 49, inst);
+			case 50: return new XCasePart_Group(this, this, 50, inst);
+			case 51: return new XForLoopExpression_Group(this, this, 51, inst);
+			case 52: return new XWhileExpression_Group(this, this, 52, inst);
+			case 53: return new XDoWhileExpression_Group(this, this, 53, inst);
+			case 54: return new XBlockExpression_Group(this, this, 54, inst);
+			case 55: return new XExpressionInsideBlock_Alternatives(this, this, 55, inst);
+			case 56: return new XVariableDeclaration_Group(this, this, 56, inst);
+			case 57: return new JvmFormalParameter_Group(this, this, 57, inst);
+			case 58: return new FullJvmFormalParameter_Group(this, this, 58, inst);
+			case 59: return new XFeatureCall_Group(this, this, 59, inst);
+			case 60: return new XConstructorCall_Group(this, this, 60, inst);
+			case 61: return new XBooleanLiteral_Group(this, this, 61, inst);
+			case 62: return new XNullLiteral_Group(this, this, 62, inst);
+			case 63: return new XNumberLiteral_Group(this, this, 63, inst);
+			case 64: return new XStringLiteral_Group(this, this, 64, inst);
+			case 65: return new XTypeLiteral_Group(this, this, 65, inst);
+			case 66: return new XThrowExpression_Group(this, this, 66, inst);
+			case 67: return new XReturnExpression_Group(this, this, 67, inst);
+			case 68: return new XTryCatchFinallyExpression_Group(this, this, 68, inst);
+			case 69: return new XCatchClause_Group(this, this, 69, inst);
+			case 70: return new JvmTypeReference_Alternatives(this, this, 70, inst);
+			case 71: return new XFunctionTypeRef_Group(this, this, 71, inst);
+			case 72: return new JvmParameterizedTypeReference_Group(this, this, 72, inst);
+			case 73: return new JvmArgumentTypeReference_Alternatives(this, this, 73, inst);
+			case 74: return new JvmWildcardTypeReference_Group(this, this, 74, inst);
+			case 75: return new JvmUpperBound_Group(this, this, 75, inst);
+			case 76: return new JvmUpperBoundAnded_Group(this, this, 76, inst);
+			case 77: return new JvmLowerBound_Group(this, this, 77, inst);
+			case 78: return new JvmTypeParameter_Group(this, this, 78, inst);
 			default: return null;
 		}	
 	}	
@@ -1674,16 +1675,18 @@ protected class ComponentDefinition_RightCurlyBracketKeyword_7 extends KeywordTo
  *
  * Element:
  * 	type=JvmTypeReference (("(" value=SimpleValueProperty ")")? ("id" name=ValidID)? | ("id" name=ValidID)? "{"
- * 	((properties+=Property | staticCallProperties+=StaticCallValueProperty | defaultChildren+=Element) (","
- * 	(properties+=Property | staticCallProperties+=StaticCallValueProperty | defaultChildren+=Element))*)? "}" | ("id"
- * 	name=ValidID)? "createdby" factory=ID "{" values+=FactoryValueElement ("," values+=FactoryValueElement)* "}");
+ * 	((properties+=Property | staticProperties+=StaticValueProperty | staticCallProperties+=StaticCallValueProperty |
+ * 	defaultChildren+=Element) ("," (properties+=Property | staticProperties+=StaticValueProperty |
+ * 	staticCallProperties+=StaticCallValueProperty | defaultChildren+=Element))*)? "}" | ("id" name=ValidID)? "createdby"
+ * 	factory=ID "{" values+=FactoryValueElement ("," values+=FactoryValueElement)* "}");
  *
  **/
 
 // type=JvmTypeReference (("(" value=SimpleValueProperty ")")? ("id" name=ValidID)? | ("id" name=ValidID)? "{"
-// ((properties+=Property | staticCallProperties+=StaticCallValueProperty | defaultChildren+=Element) (","
-// (properties+=Property | staticCallProperties+=StaticCallValueProperty | defaultChildren+=Element))*)? "}" | ("id"
-// name=ValidID)? "createdby" factory=ID "{" values+=FactoryValueElement ("," values+=FactoryValueElement)* "}")
+// ((properties+=Property | staticProperties+=StaticValueProperty | staticCallProperties+=StaticCallValueProperty |
+// defaultChildren+=Element) ("," (properties+=Property | staticProperties+=StaticValueProperty |
+// staticCallProperties+=StaticCallValueProperty | defaultChildren+=Element))*)? "}" | ("id" name=ValidID)? "createdby"
+// factory=ID "{" values+=FactoryValueElement ("," values+=FactoryValueElement)* "}")
 protected class Element_Group extends GroupToken {
 	
 	public Element_Group(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -1758,9 +1761,10 @@ protected class Element_TypeAssignment_0 extends AssignmentToken  {
 }
 
 // ("(" value=SimpleValueProperty ")")? ("id" name=ValidID)? | ("id" name=ValidID)? "{" ((properties+=Property |
-// staticCallProperties+=StaticCallValueProperty | defaultChildren+=Element) ("," (properties+=Property |
-// staticCallProperties+=StaticCallValueProperty | defaultChildren+=Element))*)? "}" | ("id" name=ValidID)? "createdby"
-// factory=ID "{" values+=FactoryValueElement ("," values+=FactoryValueElement)* "}"
+// staticProperties+=StaticValueProperty | staticCallProperties+=StaticCallValueProperty | defaultChildren+=Element) (","
+// (properties+=Property | staticProperties+=StaticValueProperty | staticCallProperties+=StaticCallValueProperty |
+// defaultChildren+=Element))*)? "}" | ("id" name=ValidID)? "createdby" factory=ID "{" values+=FactoryValueElement (","
+// values+=FactoryValueElement)* "}"
 protected class Element_Alternatives_1 extends AlternativesToken {
 
 	public Element_Alternatives_1(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -2002,9 +2006,10 @@ protected class Element_NameAssignment_1_0_1_1 extends AssignmentToken  {
 
 
 
-// ("id" name=ValidID)? "{" ((properties+=Property | staticCallProperties+=StaticCallValueProperty |
-// defaultChildren+=Element) ("," (properties+=Property | staticCallProperties+=StaticCallValueProperty |
-// defaultChildren+=Element))*)? "}"
+// ("id" name=ValidID)? "{" ((properties+=Property | staticProperties+=StaticValueProperty |
+// staticCallProperties+=StaticCallValueProperty | defaultChildren+=Element) ("," (properties+=Property |
+// staticProperties+=StaticValueProperty | staticCallProperties+=StaticCallValueProperty | defaultChildren+=Element))*)?
+// "}"
 protected class Element_Group_1_1 extends GroupToken {
 	
 	public Element_Group_1_1(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -2128,8 +2133,9 @@ protected class Element_LeftCurlyBracketKeyword_1_1_1 extends KeywordToken  {
 
 }
 
-// ((properties+=Property | staticCallProperties+=StaticCallValueProperty | defaultChildren+=Element) (","
-// (properties+=Property | staticCallProperties+=StaticCallValueProperty | defaultChildren+=Element))*)?
+// ((properties+=Property | staticProperties+=StaticValueProperty | staticCallProperties+=StaticCallValueProperty |
+// defaultChildren+=Element) ("," (properties+=Property | staticProperties+=StaticValueProperty |
+// staticCallProperties+=StaticCallValueProperty | defaultChildren+=Element))*)?
 protected class Element_Group_1_1_2 extends GroupToken {
 	
 	public Element_Group_1_1_2(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -2152,7 +2158,8 @@ protected class Element_Group_1_1_2 extends GroupToken {
 
 }
 
-// properties+=Property | staticCallProperties+=StaticCallValueProperty | defaultChildren+=Element
+// properties+=Property | staticProperties+=StaticValueProperty | staticCallProperties+=StaticCallValueProperty |
+// defaultChildren+=Element
 protected class Element_Alternatives_1_1_2_0 extends AlternativesToken {
 
 	public Element_Alternatives_1_1_2_0(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -2168,8 +2175,9 @@ protected class Element_Alternatives_1_1_2_0 extends AlternativesToken {
 	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
 		switch(index) {
 			case 0: return new Element_PropertiesAssignment_1_1_2_0_0(lastRuleCallOrigin, this, 0, inst);
-			case 1: return new Element_StaticCallPropertiesAssignment_1_1_2_0_1(lastRuleCallOrigin, this, 1, inst);
-			case 2: return new Element_DefaultChildrenAssignment_1_1_2_0_2(lastRuleCallOrigin, this, 2, inst);
+			case 1: return new Element_StaticPropertiesAssignment_1_1_2_0_1(lastRuleCallOrigin, this, 1, inst);
+			case 2: return new Element_StaticCallPropertiesAssignment_1_1_2_0_2(lastRuleCallOrigin, this, 2, inst);
+			case 3: return new Element_DefaultChildrenAssignment_1_1_2_0_3(lastRuleCallOrigin, this, 3, inst);
 			default: return null;
 		}	
 	}
@@ -2222,16 +2230,62 @@ protected class Element_PropertiesAssignment_1_1_2_0_0 extends AssignmentToken  
 	}	
 }
 
-// staticCallProperties+=StaticCallValueProperty
-protected class Element_StaticCallPropertiesAssignment_1_1_2_0_1 extends AssignmentToken  {
+// staticProperties+=StaticValueProperty
+protected class Element_StaticPropertiesAssignment_1_1_2_0_1 extends AssignmentToken  {
 	
-	public Element_StaticCallPropertiesAssignment_1_1_2_0_1(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+	public Element_StaticPropertiesAssignment_1_1_2_0_1(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
 		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
 	}
 	
 	@Override
 	public Assignment getGrammarElement() {
-		return grammarAccess.getElementAccess().getStaticCallPropertiesAssignment_1_1_2_0_1();
+		return grammarAccess.getElementAccess().getStaticPropertiesAssignment_1_1_2_0_1();
+	}
+
+    @Override
+	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
+		switch(index) {
+			case 0: return new StaticValueProperty_Group(this, this, 0, inst);
+			default: return null;
+		}	
+	}
+
+    @Override	
+	public IEObjectConsumer tryConsume() {
+		if((value = eObjectConsumer.getConsumable("staticProperties",true)) == null) return null;
+		IEObjectConsumer obj = eObjectConsumer.cloneAndConsume("staticProperties");
+		if(value instanceof EObject) { // org::eclipse::xtext::impl::RuleCallImpl
+			IEObjectConsumer param = createEObjectConsumer((EObject)value);
+			if(param.isInstanceOf(grammarAccess.getStaticValuePropertyRule().getType().getClassifier())) {
+				type = AssignmentType.PARSER_RULE_CALL;
+				element = grammarAccess.getElementAccess().getStaticPropertiesStaticValuePropertyParserRuleCall_1_1_2_0_1_0(); 
+				consumed = obj;
+				return param;
+			}
+		}
+		return null;
+	}
+
+    @Override
+	public AbstractToken createFollowerAfterReturn(AbstractToken next,	int actIndex, int index, IEObjectConsumer inst) {
+		if(value == inst.getEObject() && !inst.isConsumed()) return null;
+		switch(index) {
+			case 0: return new Element_LeftCurlyBracketKeyword_1_1_1(lastRuleCallOrigin, next, actIndex, consumed);
+			default: return null;
+		}	
+	}	
+}
+
+// staticCallProperties+=StaticCallValueProperty
+protected class Element_StaticCallPropertiesAssignment_1_1_2_0_2 extends AssignmentToken  {
+	
+	public Element_StaticCallPropertiesAssignment_1_1_2_0_2(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
+	}
+	
+	@Override
+	public Assignment getGrammarElement() {
+		return grammarAccess.getElementAccess().getStaticCallPropertiesAssignment_1_1_2_0_2();
 	}
 
     @Override
@@ -2250,7 +2304,7 @@ protected class Element_StaticCallPropertiesAssignment_1_1_2_0_1 extends Assignm
 			IEObjectConsumer param = createEObjectConsumer((EObject)value);
 			if(param.isInstanceOf(grammarAccess.getStaticCallValuePropertyRule().getType().getClassifier())) {
 				type = AssignmentType.PARSER_RULE_CALL;
-				element = grammarAccess.getElementAccess().getStaticCallPropertiesStaticCallValuePropertyParserRuleCall_1_1_2_0_1_0(); 
+				element = grammarAccess.getElementAccess().getStaticCallPropertiesStaticCallValuePropertyParserRuleCall_1_1_2_0_2_0(); 
 				consumed = obj;
 				return param;
 			}
@@ -2269,15 +2323,15 @@ protected class Element_StaticCallPropertiesAssignment_1_1_2_0_1 extends Assignm
 }
 
 // defaultChildren+=Element
-protected class Element_DefaultChildrenAssignment_1_1_2_0_2 extends AssignmentToken  {
+protected class Element_DefaultChildrenAssignment_1_1_2_0_3 extends AssignmentToken  {
 	
-	public Element_DefaultChildrenAssignment_1_1_2_0_2(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+	public Element_DefaultChildrenAssignment_1_1_2_0_3(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
 		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
 	}
 	
 	@Override
 	public Assignment getGrammarElement() {
-		return grammarAccess.getElementAccess().getDefaultChildrenAssignment_1_1_2_0_2();
+		return grammarAccess.getElementAccess().getDefaultChildrenAssignment_1_1_2_0_3();
 	}
 
     @Override
@@ -2296,7 +2350,7 @@ protected class Element_DefaultChildrenAssignment_1_1_2_0_2 extends AssignmentTo
 			IEObjectConsumer param = createEObjectConsumer((EObject)value);
 			if(param.isInstanceOf(grammarAccess.getElementRule().getType().getClassifier())) {
 				type = AssignmentType.PARSER_RULE_CALL;
-				element = grammarAccess.getElementAccess().getDefaultChildrenElementParserRuleCall_1_1_2_0_2_0(); 
+				element = grammarAccess.getElementAccess().getDefaultChildrenElementParserRuleCall_1_1_2_0_3_0(); 
 				consumed = obj;
 				return param;
 			}
@@ -2315,7 +2369,8 @@ protected class Element_DefaultChildrenAssignment_1_1_2_0_2 extends AssignmentTo
 }
 
 
-// ("," (properties+=Property | staticCallProperties+=StaticCallValueProperty | defaultChildren+=Element))*
+// ("," (properties+=Property | staticProperties+=StaticValueProperty | staticCallProperties+=StaticCallValueProperty |
+// defaultChildren+=Element))*
 protected class Element_Group_1_1_2_1 extends GroupToken {
 	
 	public Element_Group_1_1_2_1(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -2360,7 +2415,8 @@ protected class Element_CommaKeyword_1_1_2_1_0 extends KeywordToken  {
 
 }
 
-// properties+=Property | staticCallProperties+=StaticCallValueProperty | defaultChildren+=Element
+// properties+=Property | staticProperties+=StaticValueProperty | staticCallProperties+=StaticCallValueProperty |
+// defaultChildren+=Element
 protected class Element_Alternatives_1_1_2_1_1 extends AlternativesToken {
 
 	public Element_Alternatives_1_1_2_1_1(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -2376,8 +2432,9 @@ protected class Element_Alternatives_1_1_2_1_1 extends AlternativesToken {
 	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
 		switch(index) {
 			case 0: return new Element_PropertiesAssignment_1_1_2_1_1_0(lastRuleCallOrigin, this, 0, inst);
-			case 1: return new Element_StaticCallPropertiesAssignment_1_1_2_1_1_1(lastRuleCallOrigin, this, 1, inst);
-			case 2: return new Element_DefaultChildrenAssignment_1_1_2_1_1_2(lastRuleCallOrigin, this, 2, inst);
+			case 1: return new Element_StaticPropertiesAssignment_1_1_2_1_1_1(lastRuleCallOrigin, this, 1, inst);
+			case 2: return new Element_StaticCallPropertiesAssignment_1_1_2_1_1_2(lastRuleCallOrigin, this, 2, inst);
+			case 3: return new Element_DefaultChildrenAssignment_1_1_2_1_1_3(lastRuleCallOrigin, this, 3, inst);
 			default: return null;
 		}	
 	}
@@ -2430,16 +2487,62 @@ protected class Element_PropertiesAssignment_1_1_2_1_1_0 extends AssignmentToken
 	}	
 }
 
-// staticCallProperties+=StaticCallValueProperty
-protected class Element_StaticCallPropertiesAssignment_1_1_2_1_1_1 extends AssignmentToken  {
+// staticProperties+=StaticValueProperty
+protected class Element_StaticPropertiesAssignment_1_1_2_1_1_1 extends AssignmentToken  {
 	
-	public Element_StaticCallPropertiesAssignment_1_1_2_1_1_1(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+	public Element_StaticPropertiesAssignment_1_1_2_1_1_1(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
 		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
 	}
 	
 	@Override
 	public Assignment getGrammarElement() {
-		return grammarAccess.getElementAccess().getStaticCallPropertiesAssignment_1_1_2_1_1_1();
+		return grammarAccess.getElementAccess().getStaticPropertiesAssignment_1_1_2_1_1_1();
+	}
+
+    @Override
+	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
+		switch(index) {
+			case 0: return new StaticValueProperty_Group(this, this, 0, inst);
+			default: return null;
+		}	
+	}
+
+    @Override	
+	public IEObjectConsumer tryConsume() {
+		if((value = eObjectConsumer.getConsumable("staticProperties",true)) == null) return null;
+		IEObjectConsumer obj = eObjectConsumer.cloneAndConsume("staticProperties");
+		if(value instanceof EObject) { // org::eclipse::xtext::impl::RuleCallImpl
+			IEObjectConsumer param = createEObjectConsumer((EObject)value);
+			if(param.isInstanceOf(grammarAccess.getStaticValuePropertyRule().getType().getClassifier())) {
+				type = AssignmentType.PARSER_RULE_CALL;
+				element = grammarAccess.getElementAccess().getStaticPropertiesStaticValuePropertyParserRuleCall_1_1_2_1_1_1_0(); 
+				consumed = obj;
+				return param;
+			}
+		}
+		return null;
+	}
+
+    @Override
+	public AbstractToken createFollowerAfterReturn(AbstractToken next,	int actIndex, int index, IEObjectConsumer inst) {
+		if(value == inst.getEObject() && !inst.isConsumed()) return null;
+		switch(index) {
+			case 0: return new Element_CommaKeyword_1_1_2_1_0(lastRuleCallOrigin, next, actIndex, consumed);
+			default: return null;
+		}	
+	}	
+}
+
+// staticCallProperties+=StaticCallValueProperty
+protected class Element_StaticCallPropertiesAssignment_1_1_2_1_1_2 extends AssignmentToken  {
+	
+	public Element_StaticCallPropertiesAssignment_1_1_2_1_1_2(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
+	}
+	
+	@Override
+	public Assignment getGrammarElement() {
+		return grammarAccess.getElementAccess().getStaticCallPropertiesAssignment_1_1_2_1_1_2();
 	}
 
     @Override
@@ -2458,7 +2561,7 @@ protected class Element_StaticCallPropertiesAssignment_1_1_2_1_1_1 extends Assig
 			IEObjectConsumer param = createEObjectConsumer((EObject)value);
 			if(param.isInstanceOf(grammarAccess.getStaticCallValuePropertyRule().getType().getClassifier())) {
 				type = AssignmentType.PARSER_RULE_CALL;
-				element = grammarAccess.getElementAccess().getStaticCallPropertiesStaticCallValuePropertyParserRuleCall_1_1_2_1_1_1_0(); 
+				element = grammarAccess.getElementAccess().getStaticCallPropertiesStaticCallValuePropertyParserRuleCall_1_1_2_1_1_2_0(); 
 				consumed = obj;
 				return param;
 			}
@@ -2477,15 +2580,15 @@ protected class Element_StaticCallPropertiesAssignment_1_1_2_1_1_1 extends Assig
 }
 
 // defaultChildren+=Element
-protected class Element_DefaultChildrenAssignment_1_1_2_1_1_2 extends AssignmentToken  {
+protected class Element_DefaultChildrenAssignment_1_1_2_1_1_3 extends AssignmentToken  {
 	
-	public Element_DefaultChildrenAssignment_1_1_2_1_1_2(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+	public Element_DefaultChildrenAssignment_1_1_2_1_1_3(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
 		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
 	}
 	
 	@Override
 	public Assignment getGrammarElement() {
-		return grammarAccess.getElementAccess().getDefaultChildrenAssignment_1_1_2_1_1_2();
+		return grammarAccess.getElementAccess().getDefaultChildrenAssignment_1_1_2_1_1_3();
 	}
 
     @Override
@@ -2504,7 +2607,7 @@ protected class Element_DefaultChildrenAssignment_1_1_2_1_1_2 extends Assignment
 			IEObjectConsumer param = createEObjectConsumer((EObject)value);
 			if(param.isInstanceOf(grammarAccess.getElementRule().getType().getClassifier())) {
 				type = AssignmentType.PARSER_RULE_CALL;
-				element = grammarAccess.getElementAccess().getDefaultChildrenElementParserRuleCall_1_1_2_1_1_2_0(); 
+				element = grammarAccess.getElementAccess().getDefaultChildrenElementParserRuleCall_1_1_2_1_1_3_0(); 
 				consumed = obj;
 				return param;
 			}
@@ -3528,6 +3631,208 @@ protected class StaticCallValueProperty_ValueAssignment_6 extends AssignmentToke
 
 
 /************ end Rule StaticCallValueProperty ****************/
+
+
+/************ begin Rule StaticValueProperty ****************
+ *
+ * StaticValueProperty:
+ * 	modifier=("preview" | "runtime-only")? "static" name=ID ":" value=ValueProperty;
+ *
+ **/
+
+// modifier=("preview" | "runtime-only")? "static" name=ID ":" value=ValueProperty
+protected class StaticValueProperty_Group extends GroupToken {
+	
+	public StaticValueProperty_Group(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
+	}
+	
+	@Override
+	public Group getGrammarElement() {
+		return grammarAccess.getStaticValuePropertyAccess().getGroup();
+	}
+
+    @Override
+	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
+		switch(index) {
+			case 0: return new StaticValueProperty_ValueAssignment_4(lastRuleCallOrigin, this, 0, inst);
+			default: return null;
+		}	
+	}
+
+    @Override
+	public IEObjectConsumer tryConsume() {
+		if(getEObject().eClass() != grammarAccess.getStaticValuePropertyRule().getType().getClassifier())
+			return null;
+		return eObjectConsumer;
+	}
+
+}
+
+// modifier=("preview" | "runtime-only")?
+protected class StaticValueProperty_ModifierAssignment_0 extends AssignmentToken  {
+	
+	public StaticValueProperty_ModifierAssignment_0(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
+	}
+	
+	@Override
+	public Assignment getGrammarElement() {
+		return grammarAccess.getStaticValuePropertyAccess().getModifierAssignment_0();
+	}
+
+    @Override
+	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
+		switch(index) {
+			default: return lastRuleCallOrigin.createFollowerAfterReturn(this, index, index, inst);
+		}	
+	}
+
+    @Override	
+	public IEObjectConsumer tryConsume() {
+		if((value = eObjectConsumer.getConsumable("modifier",false)) == null) return null;
+		IEObjectConsumer obj = eObjectConsumer.cloneAndConsume("modifier");
+		if(keywordSerializer.isValid(obj.getEObject(), grammarAccess.getStaticValuePropertyAccess().getModifierPreviewKeyword_0_0_0(), value, null)) {
+			type = AssignmentType.KEYWORD;
+			element = grammarAccess.getStaticValuePropertyAccess().getModifierPreviewKeyword_0_0_0();
+			return obj;
+		}
+		if(keywordSerializer.isValid(obj.getEObject(), grammarAccess.getStaticValuePropertyAccess().getModifierRuntimeOnlyKeyword_0_0_1(), value, null)) {
+			type = AssignmentType.KEYWORD;
+			element = grammarAccess.getStaticValuePropertyAccess().getModifierRuntimeOnlyKeyword_0_0_1();
+			return obj;
+		}
+		return null;
+	}
+
+}
+
+// "static"
+protected class StaticValueProperty_StaticKeyword_1 extends KeywordToken  {
+	
+	public StaticValueProperty_StaticKeyword_1(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
+	}
+	
+	@Override
+	public Keyword getGrammarElement() {
+		return grammarAccess.getStaticValuePropertyAccess().getStaticKeyword_1();
+	}
+
+    @Override
+	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
+		switch(index) {
+			case 0: return new StaticValueProperty_ModifierAssignment_0(lastRuleCallOrigin, this, 0, inst);
+			default: return lastRuleCallOrigin.createFollowerAfterReturn(this, index, index - 1, inst);
+		}	
+	}
+
+}
+
+// name=ID
+protected class StaticValueProperty_NameAssignment_2 extends AssignmentToken  {
+	
+	public StaticValueProperty_NameAssignment_2(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
+	}
+	
+	@Override
+	public Assignment getGrammarElement() {
+		return grammarAccess.getStaticValuePropertyAccess().getNameAssignment_2();
+	}
+
+    @Override
+	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
+		switch(index) {
+			case 0: return new StaticValueProperty_StaticKeyword_1(lastRuleCallOrigin, this, 0, inst);
+			default: return null;
+		}	
+	}
+
+    @Override	
+	public IEObjectConsumer tryConsume() {
+		if((value = eObjectConsumer.getConsumable("name",true)) == null) return null;
+		IEObjectConsumer obj = eObjectConsumer.cloneAndConsume("name");
+		if(valueSerializer.isValid(obj.getEObject(), grammarAccess.getStaticValuePropertyAccess().getNameIDTerminalRuleCall_2_0(), value, null)) {
+			type = AssignmentType.TERMINAL_RULE_CALL;
+			element = grammarAccess.getStaticValuePropertyAccess().getNameIDTerminalRuleCall_2_0();
+			return obj;
+		}
+		return null;
+	}
+
+}
+
+// ":"
+protected class StaticValueProperty_ColonKeyword_3 extends KeywordToken  {
+	
+	public StaticValueProperty_ColonKeyword_3(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
+	}
+	
+	@Override
+	public Keyword getGrammarElement() {
+		return grammarAccess.getStaticValuePropertyAccess().getColonKeyword_3();
+	}
+
+    @Override
+	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
+		switch(index) {
+			case 0: return new StaticValueProperty_NameAssignment_2(lastRuleCallOrigin, this, 0, inst);
+			default: return null;
+		}	
+	}
+
+}
+
+// value=ValueProperty
+protected class StaticValueProperty_ValueAssignment_4 extends AssignmentToken  {
+	
+	public StaticValueProperty_ValueAssignment_4(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
+	}
+	
+	@Override
+	public Assignment getGrammarElement() {
+		return grammarAccess.getStaticValuePropertyAccess().getValueAssignment_4();
+	}
+
+    @Override
+	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
+		switch(index) {
+			case 0: return new ValueProperty_Alternatives(this, this, 0, inst);
+			default: return null;
+		}	
+	}
+
+    @Override	
+	public IEObjectConsumer tryConsume() {
+		if((value = eObjectConsumer.getConsumable("value",true)) == null) return null;
+		IEObjectConsumer obj = eObjectConsumer.cloneAndConsume("value");
+		if(value instanceof EObject) { // org::eclipse::xtext::impl::RuleCallImpl
+			IEObjectConsumer param = createEObjectConsumer((EObject)value);
+			if(param.isInstanceOf(grammarAccess.getValuePropertyRule().getType().getClassifier())) {
+				type = AssignmentType.PARSER_RULE_CALL;
+				element = grammarAccess.getStaticValuePropertyAccess().getValueValuePropertyParserRuleCall_4_0(); 
+				consumed = obj;
+				return param;
+			}
+		}
+		return null;
+	}
+
+    @Override
+	public AbstractToken createFollowerAfterReturn(AbstractToken next,	int actIndex, int index, IEObjectConsumer inst) {
+		if(value == inst.getEObject() && !inst.isConsumed()) return null;
+		switch(index) {
+			case 0: return new StaticValueProperty_ColonKeyword_3(lastRuleCallOrigin, next, actIndex, consumed);
+			default: return null;
+		}	
+	}	
+}
+
+
+/************ end Rule StaticValueProperty ****************/
 
 
 /************ begin Rule Property ****************

@@ -95,6 +95,15 @@ public interface FXGraphFactory extends EFactory
   StaticCallValueProperty createStaticCallValueProperty();
 
   /**
+   * Returns a new object of class '<em>Static Value Property</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Static Value Property</em>'.
+   * @generated
+   */
+  StaticValueProperty createStaticValueProperty();
+
+  /**
    * Returns a new object of class '<em>Property</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->

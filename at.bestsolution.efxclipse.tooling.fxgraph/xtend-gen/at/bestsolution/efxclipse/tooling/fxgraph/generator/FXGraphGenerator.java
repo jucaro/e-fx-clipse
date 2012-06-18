@@ -24,6 +24,7 @@ import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.ScriptValueExpression;
 import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.ScriptValueReference;
 import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.SimpleValueProperty;
 import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.StaticCallValueProperty;
+import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.StaticValueProperty;
 import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.StringValue;
 import at.bestsolution.efxclipse.tooling.fxgraph.fXGraph.ValueProperty;
 import at.bestsolution.efxclipse.tooling.fxgraph.generator.LanguageManager;
@@ -239,9 +240,12 @@ public class FXGraphGenerator implements IGenerator {
         EList<Property> _properties = element.getProperties();
         StringBuilder _elementAttributes = this.elementAttributes(_properties, preview, skipController);
         _builder.append(_elementAttributes, "");
-        EList<StaticCallValueProperty> _staticCallProperties = element.getStaticCallProperties();
-        StringBuilder _elementStaticAttributes = this.elementStaticAttributes(_staticCallProperties, importManager, preview, skipController);
+        EList<StaticValueProperty> _staticProperties = element.getStaticProperties();
+        StringBuilder _elementStaticAttributes = this.elementStaticAttributes(_staticProperties, importManager, preview, skipController);
         _builder.append(_elementStaticAttributes, "");
+        EList<StaticCallValueProperty> _staticCallProperties = element.getStaticCallProperties();
+        StringBuilder _elementStaticCallAttributes = this.elementStaticCallAttributes(_staticCallProperties, importManager, preview, skipController);
+        _builder.append(_elementStaticCallAttributes, "");
       }
     }
     _builder.append(">");
@@ -363,9 +367,14 @@ public class FXGraphGenerator implements IGenerator {
         _builder.append(_propContents, "	");
         _builder.newLineIfNotEmpty();
         _builder.append("\t");
-        EList<StaticCallValueProperty> _staticCallProperties_1 = element.getStaticCallProperties();
-        CharSequence _statPropContent = this.statPropContent(_staticCallProperties_1, importManager, preview, skipController, skipIncludes);
+        EList<StaticValueProperty> _staticProperties_1 = element.getStaticProperties();
+        CharSequence _statPropContent = this.statPropContent(_staticProperties_1, importManager, preview, skipController, skipIncludes);
         _builder.append(_statPropContent, "	");
+        _builder.newLineIfNotEmpty();
+        _builder.append("\t");
+        EList<StaticCallValueProperty> _staticCallProperties_1 = element.getStaticCallProperties();
+        CharSequence _statCallPropContent = this.statCallPropContent(_staticCallProperties_1, importManager, preview, skipController, skipIncludes);
+        _builder.append(_statCallPropContent, "	");
         _builder.newLineIfNotEmpty();
       }
     }
@@ -393,9 +402,12 @@ public class FXGraphGenerator implements IGenerator {
         EList<Property> _properties = element.getProperties();
         StringBuilder _elementAttributes = this.elementAttributes(_properties, preview, skipController);
         _builder.append(_elementAttributes, "");
-        EList<StaticCallValueProperty> _staticCallProperties = element.getStaticCallProperties();
-        StringBuilder _elementStaticAttributes = this.elementStaticAttributes(_staticCallProperties, importManager, preview, skipController);
+        EList<StaticValueProperty> _staticProperties = element.getStaticProperties();
+        StringBuilder _elementStaticAttributes = this.elementStaticAttributes(_staticProperties, importManager, preview, skipController);
         _builder.append(_elementStaticAttributes, "");
+        EList<StaticCallValueProperty> _staticCallProperties = element.getStaticCallProperties();
+        StringBuilder _elementStaticCallAttributes = this.elementStaticCallAttributes(_staticCallProperties, importManager, preview, skipController);
+        _builder.append(_elementStaticCallAttributes, "");
       }
     }
     {
@@ -425,9 +437,14 @@ public class FXGraphGenerator implements IGenerator {
         _builder.append(_propContents, "	");
         _builder.newLineIfNotEmpty();
         _builder.append("\t");
-        EList<StaticCallValueProperty> _staticCallProperties_1 = element.getStaticCallProperties();
-        CharSequence _statPropContent = this.statPropContent(_staticCallProperties_1, importManager, preview, skipController, skipIncludes);
+        EList<StaticValueProperty> _staticProperties_1 = element.getStaticProperties();
+        CharSequence _statPropContent = this.statPropContent(_staticProperties_1, importManager, preview, skipController, skipIncludes);
         _builder.append(_statPropContent, "	");
+        _builder.newLineIfNotEmpty();
+        _builder.append("\t");
+        EList<StaticCallValueProperty> _staticCallProperties_1 = element.getStaticCallProperties();
+        CharSequence _statCallPropContent = this.statCallPropContent(_staticCallProperties_1, importManager, preview, skipController, skipIncludes);
+        _builder.append(_statCallPropContent, "	");
         _builder.newLineIfNotEmpty();
         {
           EList<FactoryValueElement> _values = element.getValues();
@@ -734,7 +751,7 @@ public class FXGraphGenerator implements IGenerator {
     return _builder;
   }
   
-  public CharSequence statPropContent(final List<StaticCallValueProperty> properties, final ImportManager importManager, final boolean preview, final boolean skipController, final boolean skipIncludes) {
+  public CharSequence statCallPropContent(final List<StaticCallValueProperty> properties, final ImportManager importManager, final boolean preview, final boolean skipController, final boolean skipIncludes) {
     StringConcatenation _builder = new StringConcatenation();
     {
       final Function1<StaticCallValueProperty,Boolean> _function = new Function1<StaticCallValueProperty,Boolean>() {
@@ -999,6 +1016,296 @@ public class FXGraphGenerator implements IGenerator {
       }
     }
     return _builder;
+  }
+  
+  public CharSequence statPropContent(final List<StaticValueProperty> properties, final ImportManager importManager, final boolean preview, final boolean skipController, final boolean skipIncludes) {
+    StringConcatenation _builder = new StringConcatenation();
+    {
+      final Function1<StaticValueProperty,Boolean> _function = new Function1<StaticValueProperty,Boolean>() {
+          public Boolean apply(final StaticValueProperty p) {
+            boolean _previewFilter = FXGraphGenerator.this.previewFilter(p, preview);
+            return Boolean.valueOf(_previewFilter);
+          }
+        };
+      Iterable<StaticValueProperty> _filter = IterableExtensions.<StaticValueProperty>filter(properties, _function);
+      final Function1<StaticValueProperty,Boolean> _function_1 = new Function1<StaticValueProperty,Boolean>() {
+          public Boolean apply(final StaticValueProperty p) {
+            boolean _subelementFilter = FXGraphGenerator.this.subelementFilter(p);
+            return Boolean.valueOf(_subelementFilter);
+          }
+        };
+      Iterable<StaticValueProperty> _filter_1 = IterableExtensions.<StaticValueProperty>filter(_filter, _function_1);
+      for(final StaticValueProperty prop : _filter_1) {
+        {
+          ValueProperty _value = prop.getValue();
+          if ((_value instanceof SimpleValueProperty)) {
+            {
+              ValueProperty _value_1 = prop.getValue();
+              String _stringValue = ((SimpleValueProperty) _value_1).getStringValue();
+              boolean _notEquals = (!Objects.equal(_stringValue, null));
+              if (_notEquals) {
+                _builder.append("<");
+                JvmTypeReference _type = this.type(prop);
+                String _shortName = this.shortName(_type, importManager);
+                _builder.append(_shortName, "");
+                _builder.append(".");
+                String _name = prop.getName();
+                _builder.append(_name, "");
+                _builder.append(">");
+                ValueProperty _value_2 = prop.getValue();
+                String _stringValue_1 = ((SimpleValueProperty) _value_2).getStringValue();
+                _builder.append(_stringValue_1, "");
+                _builder.append("</");
+                JvmTypeReference _type_1 = this.type(prop);
+                String _shortName_1 = this.shortName(_type_1, importManager);
+                _builder.append(_shortName_1, "");
+                _builder.append(".");
+                String _name_1 = prop.getName();
+                _builder.append(_name_1, "");
+                _builder.append(">");
+                _builder.newLineIfNotEmpty();
+              } else {
+                _builder.append("<");
+                JvmTypeReference _type_2 = this.type(prop);
+                String _shortName_2 = this.shortName(_type_2, importManager);
+                _builder.append(_shortName_2, "");
+                _builder.append(".");
+                String _name_2 = prop.getName();
+                _builder.append(_name_2, "");
+                _builder.append(">");
+                ValueProperty _value_3 = prop.getValue();
+                Object _simpleAttributeValue = this.simpleAttributeValue(((SimpleValueProperty) _value_3));
+                _builder.append(_simpleAttributeValue, "");
+                _builder.append("</");
+                JvmTypeReference _type_3 = this.type(prop);
+                String _shortName_3 = this.shortName(_type_3, importManager);
+                _builder.append(_shortName_3, "");
+                _builder.append(".");
+                String _name_3 = prop.getName();
+                _builder.append(_name_3, "");
+                _builder.append(">");
+                _builder.newLineIfNotEmpty();
+              }
+            }
+          } else {
+            ValueProperty _value_4 = prop.getValue();
+            if ((_value_4 instanceof ListValueProperty)) {
+              _builder.append("<");
+              JvmTypeReference _type_4 = this.type(prop);
+              String _shortName_4 = this.shortName(_type_4, importManager);
+              _builder.append(_shortName_4, "");
+              _builder.append(".");
+              String _name_4 = prop.getName();
+              _builder.append(_name_4, "");
+              _builder.append(">");
+              _builder.newLineIfNotEmpty();
+              _builder.append("\t");
+              ValueProperty _value_5 = prop.getValue();
+              CharSequence _propListContent = this.propListContent(((ListValueProperty) _value_5), importManager, preview, skipController, skipIncludes);
+              _builder.append(_propListContent, "	");
+              _builder.newLineIfNotEmpty();
+              _builder.append("</");
+              JvmTypeReference _type_5 = this.type(prop);
+              String _shortName_5 = this.shortName(_type_5, importManager);
+              _builder.append(_shortName_5, "");
+              _builder.append(".");
+              String _name_5 = prop.getName();
+              _builder.append(_name_5, "");
+              _builder.append(">");
+              _builder.newLineIfNotEmpty();
+            } else {
+              ValueProperty _value_6 = prop.getValue();
+              if ((_value_6 instanceof MapValueProperty)) {
+                _builder.append("<");
+                JvmTypeReference _type_6 = this.type(prop);
+                String _shortName_6 = this.shortName(_type_6, importManager);
+                _builder.append(_shortName_6, "");
+                _builder.append(".");
+                String _name_6 = prop.getName();
+                _builder.append(_name_6, "");
+                _builder.append(">");
+                _builder.newLineIfNotEmpty();
+                _builder.append("\t");
+                ValueProperty _value_7 = prop.getValue();
+                EList<Property> _properties = ((MapValueProperty) _value_7).getProperties();
+                CharSequence _propContents = this.propContents(_properties, importManager, preview, true, skipController, skipIncludes);
+                _builder.append(_propContents, "	");
+                _builder.newLineIfNotEmpty();
+                _builder.append("</");
+                JvmTypeReference _type_7 = this.type(prop);
+                String _shortName_7 = this.shortName(_type_7, importManager);
+                _builder.append(_shortName_7, "");
+                _builder.append(".");
+                String _name_7 = prop.getName();
+                _builder.append(_name_7, "");
+                _builder.append(">");
+                _builder.newLineIfNotEmpty();
+              } else {
+                ValueProperty _value_8 = prop.getValue();
+                if ((_value_8 instanceof Element)) {
+                  _builder.append("<");
+                  JvmTypeReference _type_8 = this.type(prop);
+                  String _shortName_8 = this.shortName(_type_8, importManager);
+                  _builder.append(_shortName_8, "");
+                  _builder.append(".");
+                  String _name_8 = prop.getName();
+                  _builder.append(_name_8, "");
+                  _builder.append(">");
+                  _builder.newLineIfNotEmpty();
+                  _builder.append("\t");
+                  ValueProperty _value_9 = prop.getValue();
+                  CharSequence _elementContent = this.elementContent(((Element) _value_9), importManager, preview, skipController, skipIncludes);
+                  _builder.append(_elementContent, "	");
+                  _builder.newLineIfNotEmpty();
+                  _builder.append("</");
+                  JvmTypeReference _type_9 = this.type(prop);
+                  String _shortName_9 = this.shortName(_type_9, importManager);
+                  _builder.append(_shortName_9, "");
+                  _builder.append(".");
+                  String _name_9 = prop.getName();
+                  _builder.append(_name_9, "");
+                  _builder.append(">");
+                  _builder.newLineIfNotEmpty();
+                } else {
+                  ValueProperty _value_10 = prop.getValue();
+                  if ((_value_10 instanceof ReferenceValueProperty)) {
+                    _builder.append("<");
+                    JvmTypeReference _type_10 = this.type(prop);
+                    String _shortName_10 = this.shortName(_type_10, importManager);
+                    _builder.append(_shortName_10, "");
+                    _builder.append(".");
+                    String _name_10 = prop.getName();
+                    _builder.append(_name_10, "");
+                    _builder.append(">");
+                    _builder.newLineIfNotEmpty();
+                    _builder.append("\t");
+                    _builder.append("<fx:reference source=\"");
+                    ValueProperty _value_11 = prop.getValue();
+                    ReferenceType _reference = ((ReferenceValueProperty) _value_11).getReference();
+                    String _refname = this.refname(_reference);
+                    _builder.append(_refname, "	");
+                    _builder.append("\" />");
+                    _builder.newLineIfNotEmpty();
+                    _builder.append("</");
+                    JvmTypeReference _type_11 = this.type(prop);
+                    String _shortName_11 = this.shortName(_type_11, importManager);
+                    _builder.append(_shortName_11, "");
+                    _builder.append(".");
+                    String _name_11 = prop.getName();
+                    _builder.append(_name_11, "");
+                    _builder.append(">");
+                    _builder.newLineIfNotEmpty();
+                  } else {
+                    ValueProperty _value_12 = prop.getValue();
+                    if ((_value_12 instanceof IncludeValueProperty)) {
+                      {
+                        boolean _not = (!skipIncludes);
+                        if (_not) {
+                          _builder.append("<");
+                          JvmTypeReference _type_12 = this.type(prop);
+                          String _shortName_12 = this.shortName(_type_12, importManager);
+                          _builder.append(_shortName_12, "");
+                          _builder.append(".");
+                          String _name_12 = prop.getName();
+                          _builder.append(_name_12, "");
+                          _builder.append(">");
+                          _builder.newLineIfNotEmpty();
+                          _builder.append("\t");
+                          _builder.append("<fx:include");
+                          {
+                            ValueProperty _value_13 = prop.getValue();
+                            String _name_13 = ((IncludeValueProperty) _value_13).getName();
+                            boolean _notEquals_1 = (!Objects.equal(_name_13, null));
+                            if (_notEquals_1) {
+                              _builder.append(" fx:id=\"");
+                              ValueProperty _value_14 = prop.getValue();
+                              String _name_14 = ((IncludeValueProperty) _value_14).getName();
+                              _builder.append(_name_14, "	");
+                              _builder.append("\"");
+                            }
+                          }
+                          _builder.append(" source=\"/");
+                          ValueProperty _value_15 = prop.getValue();
+                          ComponentDefinition _source = ((IncludeValueProperty) _value_15).getSource();
+                          String _fullyQualifiedName = this.fullyQualifiedName(_source);
+                          String _replaceAll = _fullyQualifiedName.replaceAll("\\.", "/");
+                          _builder.append(_replaceAll, "	");
+                          _builder.append(".fxml\" />");
+                          _builder.newLineIfNotEmpty();
+                          _builder.append("</");
+                          JvmTypeReference _type_13 = this.type(prop);
+                          String _shortName_13 = this.shortName(_type_13, importManager);
+                          _builder.append(_shortName_13, "");
+                          _builder.append(".");
+                          String _name_15 = prop.getName();
+                          _builder.append(_name_15, "");
+                          _builder.append(">");
+                          _builder.newLineIfNotEmpty();
+                        }
+                      }
+                    } else {
+                      ValueProperty _value_16 = prop.getValue();
+                      if ((_value_16 instanceof CopyValueProperty)) {
+                        _builder.append("<");
+                        JvmTypeReference _type_14 = this.type(prop);
+                        String _shortName_14 = this.shortName(_type_14, importManager);
+                        _builder.append(_shortName_14, "");
+                        _builder.append(".");
+                        String _name_16 = prop.getName();
+                        _builder.append(_name_16, "");
+                        _builder.append(">");
+                        _builder.newLineIfNotEmpty();
+                        _builder.append("\t");
+                        _builder.append("<fx:copy source=\"");
+                        ValueProperty _value_17 = prop.getValue();
+                        Element _reference_1 = ((CopyValueProperty) _value_17).getReference();
+                        String _name_17 = _reference_1.getName();
+                        _builder.append(_name_17, "	");
+                        _builder.append("\" />");
+                        _builder.newLineIfNotEmpty();
+                        _builder.append("</");
+                        JvmTypeReference _type_15 = this.type(prop);
+                        String _shortName_15 = this.shortName(_type_15, importManager);
+                        _builder.append(_shortName_15, "");
+                        _builder.append(".");
+                        String _name_18 = prop.getName();
+                        _builder.append(_name_18, "");
+                        _builder.append(">");
+                        _builder.newLineIfNotEmpty();
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+    return _builder;
+  }
+  
+  public JvmTypeReference type(final StaticValueProperty prop) {
+    EObject el = prop.eContainer();
+    EObject _eContainer = el.eContainer();
+    boolean _notEquals = (!Objects.equal(_eContainer, null));
+    boolean _while = _notEquals;
+    while (_while) {
+      {
+        EObject _eContainer_1 = el.eContainer();
+        if ((_eContainer_1 instanceof Element)) {
+          EObject _eContainer_2 = el.eContainer();
+          final Element e = ((Element) _eContainer_2);
+          return e.getType();
+        }
+        EObject _eContainer_3 = el.eContainer();
+        el = _eContainer_3;
+      }
+      EObject _eContainer_1 = el.eContainer();
+      boolean _notEquals_1 = (!Objects.equal(_eContainer_1, null));
+      _while = _notEquals_1;
+    }
+    return null;
   }
   
   public String refname(final ReferenceType e) {
@@ -1271,7 +1578,7 @@ public class FXGraphGenerator implements IGenerator {
     return builder;
   }
   
-  public StringBuilder elementStaticAttributes(final List<StaticCallValueProperty> properties, final ImportManager importManager, final boolean preview, final boolean skipController) {
+  public StringBuilder elementStaticCallAttributes(final List<StaticCallValueProperty> properties, final ImportManager importManager, final boolean preview, final boolean skipController) {
     StringBuilder _stringBuilder = new StringBuilder();
     StringBuilder builder = _stringBuilder;
     final Function1<StaticCallValueProperty,Boolean> _function = new Function1<StaticCallValueProperty,Boolean>() {
@@ -1461,6 +1768,196 @@ public class FXGraphGenerator implements IGenerator {
     return builder;
   }
   
+  public StringBuilder elementStaticAttributes(final List<StaticValueProperty> properties, final ImportManager importManager, final boolean preview, final boolean skipController) {
+    StringBuilder _stringBuilder = new StringBuilder();
+    StringBuilder builder = _stringBuilder;
+    final Function1<StaticValueProperty,Boolean> _function = new Function1<StaticValueProperty,Boolean>() {
+        public Boolean apply(final StaticValueProperty p) {
+          boolean _previewFilter = FXGraphGenerator.this.previewFilter(p, preview);
+          return Boolean.valueOf(_previewFilter);
+        }
+      };
+    Iterable<StaticValueProperty> _filter = IterableExtensions.<StaticValueProperty>filter(properties, _function);
+    final Function1<StaticValueProperty,Boolean> _function_1 = new Function1<StaticValueProperty,Boolean>() {
+        public Boolean apply(final StaticValueProperty p) {
+          boolean _elementAttributeFilter = FXGraphGenerator.this.elementAttributeFilter(p);
+          return Boolean.valueOf(_elementAttributeFilter);
+        }
+      };
+    Iterable<StaticValueProperty> _filter_1 = IterableExtensions.<StaticValueProperty>filter(_filter, _function_1);
+    for (final StaticValueProperty p : _filter_1) {
+      ValueProperty _value = p.getValue();
+      if ((_value instanceof SimpleValueProperty)) {
+        JvmTypeReference _type = this.type(p);
+        String _shortName = this.shortName(_type, importManager);
+        String _plus = (" " + _shortName);
+        String _plus_1 = (_plus + ".");
+        String _name = p.getName();
+        String _plus_2 = (_plus_1 + _name);
+        String _plus_3 = (_plus_2 + "=\"");
+        ValueProperty _value_1 = p.getValue();
+        Object _simpleAttributeValue = this.simpleAttributeValue(((SimpleValueProperty) _value_1));
+        String _plus_4 = (_plus_3 + ((Comparable<Object>)_simpleAttributeValue));
+        String _plus_5 = (_plus_4 + "\"");
+        builder.append(_plus_5);
+      } else {
+        ValueProperty _value_2 = p.getValue();
+        if ((_value_2 instanceof ReferenceValueProperty)) {
+          JvmTypeReference _type_1 = this.type(p);
+          String _shortName_1 = this.shortName(_type_1, importManager);
+          String _plus_6 = (" " + _shortName_1);
+          String _plus_7 = (_plus_6 + ".");
+          String _name_1 = p.getName();
+          String _plus_8 = (_plus_7 + _name_1);
+          String _plus_9 = (_plus_8 + "=\"$");
+          ValueProperty _value_3 = p.getValue();
+          ReferenceType _reference = ((ReferenceValueProperty) _value_3).getReference();
+          String _refname = this.refname(_reference);
+          String _plus_10 = (_plus_9 + _refname);
+          String _plus_11 = (_plus_10 + "\"");
+          builder.append(_plus_11);
+        } else {
+          ValueProperty _value_4 = p.getValue();
+          if ((_value_4 instanceof ControllerHandledValueProperty)) {
+            boolean _not = (!skipController);
+            if (_not) {
+              JvmTypeReference _type_2 = this.type(p);
+              String _shortName_2 = this.shortName(_type_2, importManager);
+              String _plus_12 = (" " + _shortName_2);
+              String _plus_13 = (_plus_12 + ".");
+              String _name_2 = p.getName();
+              String _plus_14 = (_plus_13 + _name_2);
+              String _plus_15 = (_plus_14 + "=\"#");
+              ValueProperty _value_5 = p.getValue();
+              String _methodname = ((ControllerHandledValueProperty) _value_5).getMethodname();
+              String _plus_16 = (_plus_15 + _methodname);
+              String _plus_17 = (_plus_16 + "\"");
+              builder.append(_plus_17);
+            }
+          } else {
+            ValueProperty _value_6 = p.getValue();
+            if ((_value_6 instanceof ScriptHandlerHandledValueProperty)) {
+              boolean _not_1 = (!skipController);
+              if (_not_1) {
+                JvmTypeReference _type_3 = this.type(p);
+                String _shortName_3 = this.shortName(_type_3, importManager);
+                String _plus_18 = (" " + _shortName_3);
+                String _plus_19 = (_plus_18 + ".");
+                String _name_3 = p.getName();
+                String _plus_20 = (_plus_19 + _name_3);
+                String _plus_21 = (_plus_20 + "=\"");
+                ValueProperty _value_7 = p.getValue();
+                String _functionname = ((ScriptHandlerHandledValueProperty) _value_7).getFunctionname();
+                String _plus_22 = (_plus_21 + _functionname);
+                String _plus_23 = (_plus_22 + "\"");
+                builder.append(_plus_23);
+              }
+            } else {
+              ValueProperty _value_8 = p.getValue();
+              if ((_value_8 instanceof ScriptValueExpression)) {
+                boolean _not_2 = (!skipController);
+                if (_not_2) {
+                  JvmTypeReference _type_4 = this.type(p);
+                  String _shortName_4 = this.shortName(_type_4, importManager);
+                  String _plus_24 = (" " + _shortName_4);
+                  String _plus_25 = (_plus_24 + ".");
+                  String _name_4 = p.getName();
+                  String _plus_26 = (_plus_25 + _name_4);
+                  String _plus_27 = (_plus_26 + "=\"");
+                  ValueProperty _value_9 = p.getValue();
+                  String _sourcecode = ((ScriptValueExpression) _value_9).getSourcecode();
+                  ValueProperty _value_10 = p.getValue();
+                  String _sourcecode_1 = ((ScriptValueExpression) _value_10).getSourcecode();
+                  int _length = _sourcecode_1.length();
+                  int _minus = (_length - 2);
+                  String _substring = _sourcecode.substring(2, _minus);
+                  String _trim = _substring.trim();
+                  String _plus_28 = (_plus_27 + _trim);
+                  String _plus_29 = (_plus_28 + ";\"");
+                  builder.append(_plus_29);
+                }
+              } else {
+                ValueProperty _value_11 = p.getValue();
+                if ((_value_11 instanceof ScriptValueReference)) {
+                  boolean _not_3 = (!skipController);
+                  if (_not_3) {
+                    JvmTypeReference _type_5 = this.type(p);
+                    String _shortName_5 = this.shortName(_type_5, importManager);
+                    String _plus_30 = (" " + _shortName_5);
+                    String _plus_31 = (_plus_30 + ".");
+                    String _name_5 = p.getName();
+                    String _plus_32 = (_plus_31 + _name_5);
+                    String _plus_33 = (_plus_32 + "=\"$");
+                    ValueProperty _value_12 = p.getValue();
+                    String _reference_1 = ((ScriptValueReference) _value_12).getReference();
+                    String _plus_34 = (_plus_33 + _reference_1);
+                    String _plus_35 = (_plus_34 + "\"");
+                    builder.append(_plus_35);
+                  }
+                } else {
+                  ValueProperty _value_13 = p.getValue();
+                  if ((_value_13 instanceof LocationValueProperty)) {
+                    JvmTypeReference _type_6 = this.type(p);
+                    String _shortName_6 = this.shortName(_type_6, importManager);
+                    String _plus_36 = (" " + _shortName_6);
+                    String _plus_37 = (_plus_36 + ".");
+                    String _name_6 = p.getName();
+                    String _plus_38 = (_plus_37 + _name_6);
+                    String _plus_39 = (_plus_38 + "=\"@");
+                    ValueProperty _value_14 = p.getValue();
+                    String _value_15 = ((LocationValueProperty) _value_14).getValue();
+                    String _plus_40 = (_plus_39 + _value_15);
+                    String _plus_41 = (_plus_40 + "\"");
+                    builder.append(_plus_41);
+                  } else {
+                    ValueProperty _value_16 = p.getValue();
+                    if ((_value_16 instanceof ResourceValueProperty)) {
+                      JvmTypeReference _type_7 = this.type(p);
+                      String _shortName_7 = this.shortName(_type_7, importManager);
+                      String _plus_42 = (" " + _shortName_7);
+                      String _plus_43 = (_plus_42 + ".");
+                      String _name_7 = p.getName();
+                      String _plus_44 = (_plus_43 + _name_7);
+                      String _plus_45 = (_plus_44 + "=\"%");
+                      ValueProperty _value_17 = p.getValue();
+                      StringValue _value_18 = ((ResourceValueProperty) _value_17).getValue();
+                      String _value_19 = _value_18.getValue();
+                      String _plus_46 = (_plus_45 + _value_19);
+                      String _plus_47 = (_plus_46 + "\"");
+                      builder.append(_plus_47);
+                    } else {
+                      ValueProperty _value_20 = p.getValue();
+                      if ((_value_20 instanceof BindValueProperty)) {
+                        JvmTypeReference _type_8 = this.type(p);
+                        String _shortName_8 = this.shortName(_type_8, importManager);
+                        String _plus_48 = (" " + _shortName_8);
+                        String _plus_49 = (_plus_48 + ".");
+                        String _name_8 = p.getName();
+                        String _plus_50 = (_plus_49 + _name_8);
+                        String _plus_51 = (_plus_50 + "=\"${");
+                        ValueProperty _value_21 = p.getValue();
+                        Element _elementReference = ((BindValueProperty) _value_21).getElementReference();
+                        String _name_9 = _elementReference.getName();
+                        String _plus_52 = (_plus_51 + _name_9);
+                        String _plus_53 = (_plus_52 + ".");
+                        ValueProperty _value_22 = p.getValue();
+                        String _attribute = ((BindValueProperty) _value_22).getAttribute();
+                        String _plus_54 = (_plus_53 + _attribute);
+                        String _plus_55 = (_plus_54 + "}\"");
+                        builder.append(_plus_55);
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+    return builder;
+  }
+  
   public boolean subelementFilter(final Property property) {
     boolean _elementAttributeFilter = this.elementAttributeFilter(property);
     return (!_elementAttributeFilter);
@@ -1477,6 +1974,16 @@ public class FXGraphGenerator implements IGenerator {
   }
   
   public boolean elementAttributeFilter(final StaticCallValueProperty property) {
+    ValueProperty _value = property.getValue();
+    return this.elementAttributeFilter(_value);
+  }
+  
+  public boolean subelementFilter(final StaticValueProperty property) {
+    boolean _elementAttributeFilter = this.elementAttributeFilter(property);
+    return (!_elementAttributeFilter);
+  }
+  
+  public boolean elementAttributeFilter(final StaticValueProperty property) {
     ValueProperty _value = property.getValue();
     return this.elementAttributeFilter(_value);
   }
@@ -1590,8 +2097,27 @@ public class FXGraphGenerator implements IGenerator {
     return true;
   }
   
+  public boolean previewFilter(final StaticValueProperty property, final boolean preview) {
+    boolean _not = (!preview);
+    if (_not) {
+      String _modifier = property.getModifier();
+      boolean _equals = "preview".equals(_modifier);
+      if (_equals) {
+        return false;
+      }
+    } else {
+      String _modifier_1 = property.getModifier();
+      boolean _equals_1 = "runtime-only".equals(_modifier_1);
+      if (_equals_1) {
+        return false;
+      }
+    }
+    return true;
+  }
+  
   public boolean hasAttributeProperties(final Element element, final boolean preview) {
     boolean _or = false;
+    boolean _or_1 = false;
     boolean _and = false;
     EList<Property> _properties = element.getProperties();
     int _size = _properties.size();
@@ -1619,7 +2145,7 @@ public class FXGraphGenerator implements IGenerator {
       _and = (_greaterThan && _not);
     }
     if (_and) {
-      _or = true;
+      _or_1 = true;
     } else {
       boolean _and_1 = false;
       EList<StaticCallValueProperty> _staticCallProperties = element.getStaticCallProperties();
@@ -1647,7 +2173,38 @@ public class FXGraphGenerator implements IGenerator {
         boolean _not_1 = (!_isNullOrEmpty_1);
         _and_1 = (_greaterThan_1 && _not_1);
       }
-      _or = (_and || _and_1);
+      _or_1 = (_and || _and_1);
+    }
+    if (_or_1) {
+      _or = true;
+    } else {
+      boolean _and_2 = false;
+      EList<StaticValueProperty> _staticProperties = element.getStaticProperties();
+      int _size_2 = _staticProperties.size();
+      boolean _greaterThan_2 = (_size_2 > 0);
+      if (!_greaterThan_2) {
+        _and_2 = false;
+      } else {
+        EList<StaticValueProperty> _staticProperties_1 = element.getStaticProperties();
+        final Function1<StaticValueProperty,Boolean> _function_4 = new Function1<StaticValueProperty,Boolean>() {
+            public Boolean apply(final StaticValueProperty p) {
+              boolean _previewFilter = FXGraphGenerator.this.previewFilter(p, preview);
+              return Boolean.valueOf(_previewFilter);
+            }
+          };
+        Iterable<StaticValueProperty> _filter_4 = IterableExtensions.<StaticValueProperty>filter(_staticProperties_1, _function_4);
+        final Function1<StaticValueProperty,Boolean> _function_5 = new Function1<StaticValueProperty,Boolean>() {
+            public Boolean apply(final StaticValueProperty p) {
+              boolean _elementAttributeFilter = FXGraphGenerator.this.elementAttributeFilter(p);
+              return Boolean.valueOf(_elementAttributeFilter);
+            }
+          };
+        Iterable<StaticValueProperty> _filter_5 = IterableExtensions.<StaticValueProperty>filter(_filter_4, _function_5);
+        boolean _isNullOrEmpty_2 = IterableExtensions.isNullOrEmpty(_filter_5);
+        boolean _not_2 = (!_isNullOrEmpty_2);
+        _and_2 = (_greaterThan_2 && _not_2);
+      }
+      _or = (_or_1 || _and_2);
     }
     return _or;
   }
@@ -1687,27 +2244,49 @@ public class FXGraphGenerator implements IGenerator {
       boolean _isNullOrEmpty = IterableExtensions.isNullOrEmpty(_filter_1);
       return (!_isNullOrEmpty);
     }
-    EList<Property> _properties = element.getProperties();
-    int _size_3 = _properties.size();
+    EList<StaticValueProperty> _staticProperties = element.getStaticProperties();
+    int _size_3 = _staticProperties.size();
     boolean _greaterThan_3 = (_size_3 > 0);
     if (_greaterThan_3) {
+      EList<StaticValueProperty> _staticProperties_1 = element.getStaticProperties();
+      final Function1<StaticValueProperty,Boolean> _function_2 = new Function1<StaticValueProperty,Boolean>() {
+          public Boolean apply(final StaticValueProperty p) {
+            boolean _previewFilter = FXGraphGenerator.this.previewFilter(p, preview);
+            return Boolean.valueOf(_previewFilter);
+          }
+        };
+      Iterable<StaticValueProperty> _filter_2 = IterableExtensions.<StaticValueProperty>filter(_staticProperties_1, _function_2);
+      final Function1<StaticValueProperty,Boolean> _function_3 = new Function1<StaticValueProperty,Boolean>() {
+          public Boolean apply(final StaticValueProperty p) {
+            boolean _subelementFilter = FXGraphGenerator.this.subelementFilter(p);
+            return Boolean.valueOf(_subelementFilter);
+          }
+        };
+      Iterable<StaticValueProperty> _filter_3 = IterableExtensions.<StaticValueProperty>filter(_filter_2, _function_3);
+      boolean _isNullOrEmpty_1 = IterableExtensions.isNullOrEmpty(_filter_3);
+      return (!_isNullOrEmpty_1);
+    }
+    EList<Property> _properties = element.getProperties();
+    int _size_4 = _properties.size();
+    boolean _greaterThan_4 = (_size_4 > 0);
+    if (_greaterThan_4) {
       EList<Property> _properties_1 = element.getProperties();
-      final Function1<Property,Boolean> _function_2 = new Function1<Property,Boolean>() {
+      final Function1<Property,Boolean> _function_4 = new Function1<Property,Boolean>() {
           public Boolean apply(final Property p) {
             boolean _previewFilter = FXGraphGenerator.this.previewFilter(p, preview);
             return Boolean.valueOf(_previewFilter);
           }
         };
-      Iterable<Property> _filter_2 = IterableExtensions.<Property>filter(_properties_1, _function_2);
-      final Function1<Property,Boolean> _function_3 = new Function1<Property,Boolean>() {
+      Iterable<Property> _filter_4 = IterableExtensions.<Property>filter(_properties_1, _function_4);
+      final Function1<Property,Boolean> _function_5 = new Function1<Property,Boolean>() {
           public Boolean apply(final Property p) {
             boolean _subelementFilter = FXGraphGenerator.this.subelementFilter(p);
             return Boolean.valueOf(_subelementFilter);
           }
         };
-      Iterable<Property> _filter_3 = IterableExtensions.<Property>filter(_filter_2, _function_3);
-      boolean _isNullOrEmpty_1 = IterableExtensions.isNullOrEmpty(_filter_3);
-      return (!_isNullOrEmpty_1);
+      Iterable<Property> _filter_5 = IterableExtensions.<Property>filter(_filter_4, _function_5);
+      boolean _isNullOrEmpty_2 = IterableExtensions.isNullOrEmpty(_filter_5);
+      return (!_isNullOrEmpty_2);
     }
     return false;
   }
