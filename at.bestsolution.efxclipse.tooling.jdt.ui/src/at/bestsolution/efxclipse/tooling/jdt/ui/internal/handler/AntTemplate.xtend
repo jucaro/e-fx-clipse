@@ -159,6 +159,8 @@ class AntTemplate {
 		val appTitle = properties.get("appTitle") as String;
 		val appVersion = properties.get("appVersion") as String;
 		val preloaderClass = properties.get("preloaderClass") as String;
+		val nativePackage = Boolean::valueOf(properties.get("nativePackage") as String);
+		
 		var preloaderPath = "";
 		if( preloaderClass == null ) {
 			preloaderPath = null;
@@ -239,10 +241,10 @@ class AntTemplate {
 			</fx:signjar>
 			«ENDIF»
 		
-			«IF appletWidth != null && appletHeight != null»
+			«IF (appletWidth != null && appletHeight != null) || nativePackage»
 			<mkdir dir="deploy" />
 			<!-- Need to use ${basedir} because somehow the ant task is calculating the directory differently -->
-			<fx:deploy width="«appletWidth»" height="«appletHeight»" outdir="${basedir}/deploy" embedJNLP="true" outfile="«projectName»">
+			<fx:deploy «IF appletWidth != null && appletHeight != null»width="«appletWidth»" height="«appletHeight»" embedJNLP="true"«ENDIF» outdir="${basedir}/deploy" outfile="«projectName»" «IF nativePackage»nativeBundles="all"«ENDIF»>
 				<fx:info title="«projectName»" vendor="«appVendor»"/>
 				<fx:application refId="fxApplication"/>
 				<fx:resources refid="appRes"/>

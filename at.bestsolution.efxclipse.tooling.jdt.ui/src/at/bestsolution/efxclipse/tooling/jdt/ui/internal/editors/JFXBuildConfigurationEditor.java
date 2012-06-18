@@ -133,11 +133,13 @@ public class JFXBuildConfigurationEditor extends MultiPageEditorPart implements
 	
 	public static final String DEPLOY_APPLET_WIDTH = "deployAppletWith";
 	public static final String DEPLOY_APPLET_HEIGHT = "deployAppletHeight";
+	public static final String DEPLOY_NATIVE_PACKAGE = "deployNativePackage";
 	
 	public static final String SIGN_KEYSTORE = "signKeystore";
 	public static final String SIGN_ALIAS    = "signAlias";
 	public static final String SIGN_PASSWORD = "signPassword";
 	public static final String SIGN_KEYPASSWOARD = "signKeyPassword";
+	
 	
 	private static final int DELAY = 500;
 	
@@ -158,6 +160,7 @@ public class JFXBuildConfigurationEditor extends MultiPageEditorPart implements
 			
 			put(DEPLOY_APPLET_WIDTH,"jfx.deploy.appletWith");
 			put(DEPLOY_APPLET_HEIGHT,"jfx.deploy.appletHeight");
+			put(DEPLOY_NATIVE_PACKAGE,"jfx.deploy.nativePackage");
 			
 			put(SIGN_KEYSTORE,"jfx.sign.keystore");
 			put(SIGN_ALIAS,"jfx.sign.alias");
@@ -271,6 +274,7 @@ public class JFXBuildConfigurationEditor extends MultiPageEditorPart implements
 		
 		dbc = new DataBindingContext();
 		IWidgetValueProperty textModify = WidgetProperties.text(SWT.Modify);
+		IWidgetValueProperty selChange = WidgetProperties.selection();
 		
 		{
 			Section section = toolkit.createSection(sectionParent, 
@@ -446,6 +450,12 @@ public class JFXBuildConfigurationEditor extends MultiPageEditorPart implements
 			
 			Composite sectionClient = toolkit.createComposite(section);
 			sectionClient.setLayout(new GridLayout(2, false));
+			
+			{
+				toolkit.createLabel(sectionClient, "Native Package:");
+				Button b = toolkit.createButton(sectionClient, "", SWT.CHECK);
+				dbc.bindValue(selChange.observe(b), BeanProperties.value(DEPLOY_NATIVE_PACKAGE).observe(bean));
+			}
 			
 			{
 				toolkit.createLabel(sectionClient, "Applet Width:");
@@ -976,6 +986,14 @@ public class JFXBuildConfigurationEditor extends MultiPageEditorPart implements
 		
 		public String getSignKeyPassword() {
 			return get(SIGN_KEYPASSWOARD);
+		}
+		
+		public void setDeployNativePackage(String value) {
+			set(DEPLOY_NATIVE_PACKAGE, value);
+		}
+		
+		public String getDeployNativePackage() {
+			return get(DEPLOY_NATIVE_PACKAGE);
 		}
 	}
 }

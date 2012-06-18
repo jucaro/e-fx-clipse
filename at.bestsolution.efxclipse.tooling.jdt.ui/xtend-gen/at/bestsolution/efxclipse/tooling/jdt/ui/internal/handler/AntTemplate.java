@@ -450,6 +450,8 @@ public class AntTemplate {
       final String appVersion = ((String) _get_6);
       Object _get_7 = properties.get("preloaderClass");
       final String preloaderClass = ((String) _get_7);
+      Object _get_8 = properties.get("nativePackage");
+      final Boolean nativePackage = Boolean.valueOf(((String) _get_8));
       String preloaderPath = "";
       boolean _equals = Objects.equal(preloaderClass, null);
       if (_equals) {
@@ -458,16 +460,16 @@ public class AntTemplate {
         String _replace = preloaderClass.replace(".", "/");
         preloaderPath = _replace;
       }
-      Object _get_8 = properties.get("fallbackClass");
-      final String fallBackClass = ((String) _get_8);
-      Object _get_9 = properties.get("keyStore");
-      String keyStore = ((String) _get_9);
-      Object _get_10 = properties.get("keyStoreAlias");
-      String keyStoreAlias = ((String) _get_10);
-      Object _get_11 = properties.get("keyStorePass");
-      String keyStorePass = ((String) _get_11);
-      Object _get_12 = properties.get("keyPass");
-      String keyPass = ((String) _get_12);
+      Object _get_9 = properties.get("fallbackClass");
+      final String fallBackClass = ((String) _get_9);
+      Object _get_10 = properties.get("keyStore");
+      String keyStore = ((String) _get_10);
+      Object _get_11 = properties.get("keyStoreAlias");
+      String keyStoreAlias = ((String) _get_11);
+      Object _get_12 = properties.get("keyStorePass");
+      String keyStorePass = ((String) _get_12);
+      Object _get_13 = properties.get("keyPass");
+      String keyPass = ((String) _get_13);
       StringConcatenation _builder = new StringConcatenation();
       _builder.append("<target name=\"do-deploy\" depends=\"setup-staging-area, do-compile, init-fx-tasks\">");
       _builder.newLine();
@@ -705,6 +707,7 @@ public class AntTemplate {
       }
       _builder.newLine();
       {
+        boolean _or = false;
         boolean _and = false;
         boolean _notEquals_8 = (!Objects.equal(appletWidth, null));
         if (!_notEquals_8) {
@@ -714,6 +717,11 @@ public class AntTemplate {
           _and = (_notEquals_8 && _notEquals_9);
         }
         if (_and) {
+          _or = true;
+        } else {
+          _or = (_and || (nativePackage).booleanValue());
+        }
+        if (_or) {
           _builder.append("\t");
           _builder.append("<mkdir dir=\"deploy\" />");
           _builder.newLine();
@@ -721,13 +729,33 @@ public class AntTemplate {
           _builder.append("<!-- Need to use ${basedir} because somehow the ant task is calculating the directory differently -->");
           _builder.newLine();
           _builder.append("\t");
-          _builder.append("<fx:deploy width=\"");
-          _builder.append(appletWidth, "	");
-          _builder.append("\" height=\"");
-          _builder.append(appletHeight, "	");
-          _builder.append("\" outdir=\"${basedir}/deploy\" embedJNLP=\"true\" outfile=\"");
+          _builder.append("<fx:deploy ");
+          {
+            boolean _and_1 = false;
+            boolean _notEquals_10 = (!Objects.equal(appletWidth, null));
+            if (!_notEquals_10) {
+              _and_1 = false;
+            } else {
+              boolean _notEquals_11 = (!Objects.equal(appletHeight, null));
+              _and_1 = (_notEquals_10 && _notEquals_11);
+            }
+            if (_and_1) {
+              _builder.append("width=\"");
+              _builder.append(appletWidth, "	");
+              _builder.append("\" height=\"");
+              _builder.append(appletHeight, "	");
+              _builder.append("\" embedJNLP=\"true\"");
+            }
+          }
+          _builder.append(" outdir=\"${basedir}/deploy\" outfile=\"");
           _builder.append(projectName, "	");
-          _builder.append("\">");
+          _builder.append("\" ");
+          {
+            if ((nativePackage).booleanValue()) {
+              _builder.append("nativeBundles=\"all\"");
+            }
+          }
+          _builder.append(">");
           _builder.newLineIfNotEmpty();
           _builder.append("\t");
           _builder.append("\t");
