@@ -21,6 +21,8 @@ public class BuildPathSupport {
 		if( paths != null ) {
 			IPath jarLocationPath = paths[0];
 			IPath javadocLocation = paths[1];
+//			IPath fxjarPath = paths[2];
+			IPath fxSource = paths[3];
 			
 			IClasspathAttribute[] attributes;
 			IAccessRule[] accessRules= { };
@@ -31,7 +33,7 @@ public class BuildPathSupport {
 			}
 			
 			if( jarLocationPath.toFile().exists() ) {
-				return JavaCore.newLibraryEntry(jarLocationPath, null, null, accessRules, attributes, false);	
+				return JavaCore.newLibraryEntry(jarLocationPath, fxSource, null, accessRules, attributes, false);	
 			}	
 		}
 		
@@ -46,6 +48,7 @@ public class BuildPathSupport {
 		IPath jarLocationPath = null;
 		IPath javadocLocation = null;
 		IPath antJarLocationPath = null;
+		IPath sourceLocationPath = null;
 		
 		if( type.equals(JavaFXPreferencesConstants.CONFIG_TYPE_SDK) ) {
 			String dir = pref.get(JavaFXPreferencesConstants.JAVAFX_DIR,"");
@@ -89,6 +92,6 @@ public class BuildPathSupport {
 			}
 		}
 		
-		return new IPath[] { jarLocationPath, javadocLocation, antJarLocationPath };
+		return new IPath[] { jarLocationPath, javadocLocation, antJarLocationPath, sourceLocationPath };
 	}
 }
