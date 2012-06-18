@@ -40,10 +40,6 @@ public class JavaFXPreferencesConstants {
 		} else if( Platform.getOS().equals(Constants.OS_MACOSX) ) {
 			return v.getMinor() >= 7 && v.getMicro() >= 0;
 		} else if( Platform.getOS().equals(Constants.OS_WIN32) ) {
-			System.err.println(v.getMinor());
-			System.err.println(v.getMicro());
-			System.err.println(v.getQualifier());
-			System.err.println("Checking win32: " + (v.getMinor() >= 7 && (v.getMicro() == 0 && parseQualifier(v.getQualifier()) >= 6) || v.getMicro() > 0));
 			return v.getMinor() >= 7 && (v.getMicro() == 0 && parseQualifier(v.getQualifier()) >= 6) || v.getMicro() > 0;
 		}
 		return false;
