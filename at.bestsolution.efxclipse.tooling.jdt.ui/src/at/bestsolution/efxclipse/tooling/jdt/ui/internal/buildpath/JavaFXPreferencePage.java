@@ -12,11 +12,9 @@ package at.bestsolution.efxclipse.tooling.jdt.ui.internal.buildpath;
 
 import java.io.File;
 
-import org.eclipse.core.runtime.Platform;
 import org.eclipse.core.runtime.preferences.IEclipsePreferences;
 import org.eclipse.core.runtime.preferences.InstanceScope;
 import org.eclipse.jface.preference.PreferencePage;
-import org.eclipse.osgi.service.environment.Constants;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.events.SelectionAdapter;
 import org.eclipse.swt.events.SelectionEvent;
@@ -50,7 +48,7 @@ public class JavaFXPreferencePage extends PreferencePage implements IWorkbenchPr
 	public void init(IWorkbench workbench) {
 		
 	}
-
+	
 	@Override
 	protected Control createContents(Composite parent) {
 		Composite container = new Composite(parent, SWT.NONE);
@@ -59,7 +57,7 @@ public class JavaFXPreferencePage extends PreferencePage implements IWorkbenchPr
 		IEclipsePreferences pref = InstanceScope.INSTANCE.getNode(JavaFXCorePlugin.PLUGIN_ID);
 		String type = pref.get(JavaFXPreferencesConstants.JAVAFX_CONFIGTYPE, JavaFXPreferencesConstants.DEFAULT_TYPE);
 		
-		if( Platform.getOS().equals(Constants.OS_MACOSX) )
+		if( JavaFXPreferencesConstants.isJDKBuiltin() )
 		{
 			builtinType = new Button(container, SWT.RADIO);
 			builtinType.setText("JDK Built-in");
@@ -70,7 +68,7 @@ public class JavaFXPreferencePage extends PreferencePage implements IWorkbenchPr
 				public void widgetSelected(SelectionEvent e) {
 					updateSelection();
 				}
-			});
+			});				
 		}
 		
 		new Label(container, SWT.NONE).setLayoutData(new GridData(SWT.FILL,SWT.CENTER,true,false,3,1));
