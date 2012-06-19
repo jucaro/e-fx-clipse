@@ -3,12 +3,18 @@ package at.bestsolution.efxclipse.tooling.fxml.editors;
 import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
+import java.io.StringReader;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 import java.util.Properties;
+import java.util.concurrent.atomic.AtomicReference;
+
+import javax.xml.parsers.ParserConfigurationException;
+import javax.xml.parsers.SAXParser;
+import javax.xml.parsers.SAXParserFactory;
 
 import org.eclipse.core.resources.IFile;
 import org.eclipse.core.resources.IProject;
@@ -16,6 +22,9 @@ import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.Path;
 import org.eclipse.ui.IFileEditorInput;
 import org.eclipse.wst.sse.ui.StructuredTextEditor;
+import org.xml.sax.InputSource;
+import org.xml.sax.SAXException;
+import org.xml.sax.helpers.DefaultHandler;
 
 import at.bestsolution.efxclipse.tooling.ui.editor.IFXMLProviderAdapter;
 import at.bestsolution.efxclipse.tooling.ui.util.RelativeFileLocator;
@@ -29,8 +38,8 @@ public class FXMLEditor extends StructuredTextEditor implements IFXMLProviderAda
 
 	@Override
 	public List<String> getPreviewCSSFiles() {
-		IFile file = getFile();
-		List<String> cssFiles = new ArrayList<String>();
+		final IFile file = getFile();
+		final List<String> cssFiles = new ArrayList<String>();
 		Properties propFile = getProperties();
 
 		if (propFile != null) {
@@ -63,15 +72,76 @@ public class FXMLEditor extends StructuredTextEditor implements IFXMLProviderAda
 				}
 			}
 		}
+		
+		try {
+			SAXParser p = SAXParserFactory.newInstance().newSAXParser();
+			p.parse(new InputSource(new StringReader(getModel().getStructuredDocument().get())), new DefaultHandler() {
+				@Override
+				public void processingInstruction(String target, String data) throws SAXException {
+					if( "scenebuilder-stylesheet".equals(target) ) {
+						File absFile = RelativeFileLocator.locateFile(file, data);
+						if( absFile != null ) {
+							try {
+								cssFiles.add(absFile.toURI().toURL().toExternalForm());
+							} catch (MalformedURLException e) {
+								// TODO Auto-generated catch block
+								e.printStackTrace();
+							}
+						}
+					}
+				}
+			});
+		} catch (ParserConfigurationException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (SAXException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 
 		return cssFiles;
 	}
 
 	@Override
 	public String getPreviewResourceBundle() {
+		final IFile file = getFile();
+		final AtomicReference<String> ref = new AtomicReference<String>();
+		
+		try {
+			SAXParser p = SAXParserFactory.newInstance().newSAXParser();
+			p.parse(new InputSource(new StringReader(getModel().getStructuredDocument().get())), new DefaultHandler() {
+				@Override
+				public void processingInstruction(String target, String data) throws SAXException {
+					if( "scenebuilder-preview-i18n-resource".equals(target) ) {
+						File absFile = RelativeFileLocator.locateFile(file, data);
+						if( absFile != null && absFile.exists() ) {
+							ref.set(absFile.getAbsolutePath());
+							return;
+						}
+					}
+				}
+			});
+		} catch (ParserConfigurationException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (SAXException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		if( ref.get() != null ) {
+			return ref.get();
+		}
+		
 		Properties propFile = getProperties();
 
-		IFile file = getFile();
+		
 		if (propFile != null) {
 			String fileConfig = "fxmlpreview.file." + file.getName().substring(0, file.getName().length() - 5);
 
