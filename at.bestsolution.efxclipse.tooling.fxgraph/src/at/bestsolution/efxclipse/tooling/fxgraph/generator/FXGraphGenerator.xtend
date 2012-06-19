@@ -130,6 +130,12 @@ class FXGraphGenerator implements IGenerator {
 		«FOR i:languageManager.languages»
 			<?language «i»?>
 		«ENDFOR»
+		«IF (resource.contents.get(0) as Model).componentDef.previewResourceBundle != null»
+		<?scenebuilder-preview-i18n-resource «(resource.contents.get(0) as Model).componentDef.previewResourceBundle»?>
+		«ENDIF»
+		«FOR css: (resource.contents.get(0) as Model).componentDef.previewCssFiles»
+		<?scenebuilder-stylesheet «css»?>
+		«ENDFOR»
 		
 		«body»
 		«ENDFOR»

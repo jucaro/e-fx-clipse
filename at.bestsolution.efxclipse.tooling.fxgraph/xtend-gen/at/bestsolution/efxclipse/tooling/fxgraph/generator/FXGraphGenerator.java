@@ -197,6 +197,35 @@ public class FXGraphGenerator implements IGenerator {
             _builder.newLineIfNotEmpty();
           }
         }
+        {
+          EList<EObject> _contents_1 = resource.getContents();
+          EObject _get_1 = _contents_1.get(0);
+          ComponentDefinition _componentDef = ((Model) _get_1).getComponentDef();
+          String _previewResourceBundle = _componentDef.getPreviewResourceBundle();
+          boolean _notEquals = (!Objects.equal(_previewResourceBundle, null));
+          if (_notEquals) {
+            _builder.append("<?scenebuilder-preview-i18n-resource ");
+            EList<EObject> _contents_2 = resource.getContents();
+            EObject _get_2 = _contents_2.get(0);
+            ComponentDefinition _componentDef_1 = ((Model) _get_2).getComponentDef();
+            String _previewResourceBundle_1 = _componentDef_1.getPreviewResourceBundle();
+            _builder.append(_previewResourceBundle_1, "");
+            _builder.append("?>");
+            _builder.newLineIfNotEmpty();
+          }
+        }
+        {
+          EList<EObject> _contents_3 = resource.getContents();
+          EObject _get_3 = _contents_3.get(0);
+          ComponentDefinition _componentDef_2 = ((Model) _get_3).getComponentDef();
+          EList<String> _previewCssFiles = _componentDef_2.getPreviewCssFiles();
+          for(final String css : _previewCssFiles) {
+            _builder.append("<?scenebuilder-stylesheet ");
+            _builder.append(css, "");
+            _builder.append("?>");
+            _builder.newLineIfNotEmpty();
+          }
+        }
         _builder.newLine();
         _builder.append(body, "");
         _builder.newLineIfNotEmpty();
