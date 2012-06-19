@@ -6,9 +6,9 @@ import javafx.scene.layout.BorderPane
 import javafx.scene.control.Label
 import javafx.scene.control.Slider
 import javafx.scene.Scene
-import static extension at.bestsolution.efxclipse.runtime.examples.xtend.PropertyExtension.*
 import javafx.geometry.Insets
- 
+import static extension at.bestsolution.efxclipse.runtime.examples.xtend.PropertyExtension.* 
+
 class BindingSample extends Application {
 	
 	override start(Stage stage) throws Exception {
