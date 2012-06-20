@@ -222,7 +222,14 @@
 						<encoding>UTF-8</encoding>
 						<source>1.6</source>
 						<target>1.6</target>
-						<compilerArgument>-verbose -bootclasspath /Users/tomschindl/Applications/javafx-sdk2.2.0-beta/rt/lib/jfxrt.jar</compilerArgument>
+						<!-- mvn install:install-file -Dfile=/Users/tomschindl/Applications/javafx-sdk2.2.0-beta/rt/lib/jfxrt.jar -DgroupId=javafx -DartifactId=javafx.mvn -Dversion=2.2.0-SNAPSHOT -Dpackaging=jar -DgeneratePom=true -->
+						<extraClasspathElements>
+							<extraClasspathElement>
+								<groupId>javafx</groupId>
+								<artifactId>javafx.mvn</artifactId>
+								<version>2.2.0-SNAPSHOT</version>
+							</extraClasspathElement>
+						</extraClasspathElements>
 					</configuration>
 				</plugin>
 				<plugin>
