@@ -4,7 +4,7 @@ import javafx.scene.layout.*
 import javafx.scene.control.*
 
 component PersonDetail controlledby at.bestsolution.efxclipse.runtime.examples.e4.parts.controllers.PersonDetailPartController {
-	GridPane  {
+	GridPane id personroot {
 		vgap : 10,
 		hgap : 10,
 		children : [

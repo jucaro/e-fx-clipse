@@ -8,7 +8,7 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.GridPane?>
 
-<GridPane xmlns:fx="http://javafx.com/fxml" fx:controller="at.bestsolution.efxclipse.runtime.examples.e4.parts.controllers.PersonDetailPartController" vgap="10" hgap="10">
+<GridPane xmlns:fx="http://javafx.com/fxml" fx:id="personroot" fx:controller="at.bestsolution.efxclipse.runtime.examples.e4.parts.controllers.PersonDetailPartController" vgap="10" hgap="10">
 
 	<children>
 		<Label text="Firstname"> 
